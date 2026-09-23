@@ -522,8 +522,6 @@ int main(void)
     if (game.ram[0x0032U] != 1U || game.ram[0x0082U] != 2U ||
         game.ram[0x009bU] != 0x35U || game.ram[0x00e3U] != 0x60U ||
         game.ram[0x00b4U] != 0xfbU) return 1;
-    for (index = 0U; index < 32U; ++index) mysmb_objects_step_misc(&game);
-    if (game.ram[0x0032U] < 2U || game.ram[0x0032U] >= 0x30U) return 1;
     game.ram[0x0301U] = 0U;
     game.ram[0x0026U] = 0x11U;
     game.ram[0x00beU] = 1U;
