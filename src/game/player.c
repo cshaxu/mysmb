@@ -16,6 +16,18 @@ enum {
     MYSMB_PLAYER_Y_FORCE = 0x0433U
 };
 
+enum {
+    MYSMB_PLAYER_STATE = 0x001dU,
+    MYSMB_PLAYER_X_SPEED_ABSOLUTE = 0x0700U,
+    MYSMB_SWIMMING = 0x0704U,
+    MYSMB_DIFF_HALT_JUMP = 0x0706U,
+    MYSMB_JUMP_ORIGIN_HIGH = 0x0707U,
+    MYSMB_JUMP_ORIGIN_Y = 0x0708U,
+    MYSMB_VERTICAL_FORCE = 0x0709U,
+    MYSMB_VERTICAL_FORCE_DOWN = 0x070aU,
+    MYSMB_JUMP_SWIM_TIMER = 0x0782U
+};
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 void mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -101,4 +113,37 @@ void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
         game->ram[MYSMB_PLAYER_Y_SPEED] = lower_limit;
         game->ram[MYSMB_PLAYER_Y_FORCE] = 0xffU;
     }
+}
+
+/* Translation of PlayerPhysicsSub ProcJumping/InitJS, with source force data. */
+void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool)
+{
+    static const mysmb_u8 jump_force[7] = { 0x20U, 0x20U, 0x1eU, 0x28U,
+                                             0x28U, 0x0dU, 0x04U };
+    static const mysmb_u8 fall_force[7] = { 0x70U, 0x70U, 0x60U, 0x90U,
+                                             0x90U, 0x0aU, 0x09U };
+    static const mysmb_u8 initial_force[7] = { 0U, 0U, 0U, 0U, 0U, 0x80U, 0U };
+    static const mysmb_u8 initial_speed[7] = { 0xfcU, 0xfcU, 0xfcU, 0xfbU,
+                                                0xfbU, 0xfeU, 0xffU };
+    mysmb_u8 index;
+
+    index = 0U;
+    if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 9U) index++;
+    if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x10U) index++;
+    if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x19U) index++;
+    if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x1cU) index++;
+    if (game->ram[MYSMB_SWIMMING] != 0U) {
+        index = whirlpool != 0U ? 6U : 5U;
+    }
+    game->ram[MYSMB_JUMP_SWIM_TIMER] = 0x20U;
+    game->ram[MYSMB_PLAYER_Y_DUMMY] = 0U;
+    game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
+    game->ram[MYSMB_JUMP_ORIGIN_HIGH] = game->ram[MYSMB_PLAYER_Y_HIGH];
+    game->ram[MYSMB_JUMP_ORIGIN_Y] = game->ram[MYSMB_PLAYER_Y];
+    game->ram[MYSMB_PLAYER_STATE] = 1U;
+    game->ram[MYSMB_DIFF_HALT_JUMP] = 1U;
+    game->ram[MYSMB_VERTICAL_FORCE] = jump_force[index];
+    game->ram[MYSMB_VERTICAL_FORCE_DOWN] = fall_force[index];
+    game->ram[MYSMB_PLAYER_Y_FORCE] = initial_force[index];
+    game->ram[MYSMB_PLAYER_Y_SPEED] = initial_speed[index];
 }
