@@ -21,6 +21,9 @@ static COLORREF mysmb_win32_title_color(unsigned char palette, unsigned char col
     static const COLORREF colors[4] = {
         RGB(92, 148, 252), RGB(0, 0, 0), RGB(228, 92, 16), RGB(252, 188, 60)
     };
+    if (color == 0U) {
+        return colors[0];
+    }
     return colors[(palette + color) & 3U];
 }
 
