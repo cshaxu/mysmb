@@ -447,9 +447,21 @@ int main(void)
     game.ram[0x00cfU] = 0x50U;
     game.ram[0x0046U] = 1U;
     game.ram[0x0058U] = 0x10U;
+    game.ram[0x0543U] = 0x61U;
     game.ram[0x0544U] = 0x61U;
     mysmb_objects_step_normal_enemies(&game);
-    if (game.ram[0x0046U] != 2U || game.ram[0x0058U] != 0xf0U) return 1;
+    if (game.ram[0x0046U] != 2U || game.ram[0x0058U] != 0xf0U ||
+        game.ram[0x00cfU] != 0x58U || (game.ram[0x001eU] & 0x40U) != 0U) return 1;
+    game.ram[0x0543U] = 0U;
+    game.ram[0x0544U] = 0U;
+    game.ram[0x001eU] = 0x40U;
+    game.ram[0x00cfU] = 0x50U;
+    game.ram[0x00a0U] = 0U;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0xffU;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x00cfU] != 0x50U || game.ram[0x00a0U] != 1U ||
+        game.ram[0x0434U] != 0x3cU || (game.ram[0x001eU] & 0x40U) == 0U) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
