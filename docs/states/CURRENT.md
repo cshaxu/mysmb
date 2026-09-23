@@ -6,7 +6,7 @@
 
 ## Current Technical Baseline
 
-- `mysmb` is a C90 skeleton only. Its primary target is a 25 MHz 486SX running real-mode MS-DOS 5.0 or later; the desired compatibility floor is MS-DOS 3.3. The OpenNT 16-bit C toolchain and NTVDM64 are M1 validation/build inputs. No ROM, disassembly, translated game logic, native renderer, oracle, or ROM-derived executable is admitted.
+- `mysmb` is a C90 skeleton only. The first runnable target is a native Win32 window built as x86 and x64. The core must remain compatible with the later 25 MHz 486SX real-mode DOS target, MS-DOS 5.0 or later, with DOS 3.3 desired. The OpenNT 16-bit C toolchain checks DOS compatibility; NTVDM64 is not a DOS graphics validation platform. No ROM, disassembly, translated game logic, native renderer, oracle, or ROM-derived executable is admitted.
 
 ## Recent M0 Closures
 
@@ -16,4 +16,4 @@
 
 ## Recent Governance
 
-- **M0 Td S1 P1:** Set real-mode DOS on a 25 MHz 486SX as the primary target; make the OpenNT 16-bit compiler and NTVDM64 part of the M1 build/validation route.
+- **M0 Td S2 P1:** Correct the platform plan: Win32 x86/x64 windows run the first native game; the shared C90 core remains 16-bit compatible, while DOS VGA awaits its dedicated adapter and 486SX validation.

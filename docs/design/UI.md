@@ -1,8 +1,12 @@
 # Product UX
 
+## Windows Native Game
+
+The first graphical product is a native Win32 window built for x86 and x64. It launches directly into the game and has no emulator monitor, runtime ROM picker, or required configuration menu.
+
 ## DOS Native Game
 
-The primary graphical product is a real-mode DOS game for a 25 MHz 486SX. It launches directly into the game and has no emulator monitor, runtime ROM picker, or required configuration menu. MS-DOS 5.0 is the required baseline; DOS 3.3 compatibility is pursued when it requires no compromise.
+The later DOS graphical product targets a 25 MHz 486SX. MS-DOS 5.0 is the required baseline; DOS 3.3 compatibility is pursued when it requires no compromise.
 
 ## Text Presentation
 
@@ -10,4 +14,4 @@ The text product uses an 80×25 colored character scene. It draws known game obj
 
 ## Host Resources
 
-The DOS adapter uses VGA Mode X 320×240, BIOS keyboard input, PIT-based 60 Hz timing, and a lightweight PC Speaker sound path. NTVDM64 is the Windows integration host for the same DOS executable; the 486SX remains the performance authority. Windows later supplies native graphical/full-screen and colored text presentations.
+The Win32 adapter supplies the development window and normal graphical/full-screen presentation. The DOS adapter later uses VGA Mode X 320×240, BIOS keyboard input, PIT-based 60 Hz timing, and a lightweight PC Speaker sound path. NTVDM64 may run non-graphical DOS checks but is not a DOS graphics validation platform; the 486SX remains the DOS graphics and performance authority.
