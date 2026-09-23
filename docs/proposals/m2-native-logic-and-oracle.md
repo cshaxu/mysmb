@@ -9,22 +9,26 @@ game layer, the Win32 x86/x64 product, and OpenNT large-model core compile.
 
 ## Candidate Order
 
-1. **Title progression and deterministic checkpoint core.** Translate the
-   title selection/start route, add game-owned input latching and a neutral
-   checkpoint schema, and prove the first state transition against bounded
-   local reference runs. This is admitted as M2 T1.
-2. **Area bootstrap and background/object command route.** Translate area
+1. **Complete static PRG analysis.** Directly disassemble and classify the
+   full owner-local PRG, build its control-flow and state/data architecture,
+   reconcile any local listing only against matching bytes, and record a
+   neutral source-address inventory. Completed in M2 T1.
+2. **Title progression and deterministic checkpoint core.** Translate the
+   title selection/start route using the T1 inventory, add game-owned input
+   latching and a neutral checkpoint schema, and prove the first state
+   transition against bounded local reference runs.
+3. **Area bootstrap and background/object command route.** Translate area
    headers, page state, background commands, and object-parser setup needed
    after a title start.
-3. **Player route and collision.** Translate player movement, collision,
+4. **Player route and collision.** Translate player movement, collision,
    scrolling, and player-object state with fixed-input checkpoints.
-4. **Object route.** Translate enemy, item, projectile, timer, score, and
+5. **Object route.** Translate enemy, item, projectile, timer, score, and
    power-state ownership in bounded source-address slices.
-5. **Mode route.** Translate death, restart, warp, continue, and completion
+6. **Mode route.** Translate death, restart, warp, continue, and completion
    transitions, including their original state preservation requirements.
-6. **Audio command route.** Translate music and sound-effect command state as
+7. **Audio command route.** Translate music and sound-effect command state as
    neutral game commands; host playback remains a later adapter concern.
-7. **End-to-end oracle and Win32 route.** Run a bounded playable route through
+8. **End-to-end oracle and Win32 route.** Run a bounded playable route through
    title, level, death or completion, and compare named native/reference
    checkpoints before M2 closes.
 

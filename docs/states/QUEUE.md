@@ -9,10 +9,11 @@
 
 ## M2 Candidates
 
-1. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — M2 T1 is admitted for title progression, deterministic input, and the first transition checkpoint.
-2. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — area bootstrap and background/object command route.
-3. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — player route and collision.
-4. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — object route: enemies, items, projectiles, timer, score, and power state.
-5. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — death, restart, warp, continue, and completion mode routes.
-6. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — neutral audio command route.
-7. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — end-to-end playable-route oracle and Win32 validation.
+1. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — complete direct-ROM PRG analysis and architecture inventory closed in M2 T1.
+2. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — title progression, deterministic input, and the first transition checkpoint.
+3. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — area bootstrap and background/object command route.
+4. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — player route and collision.
+5. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — object route: enemies, items, projectiles, timer, score, and power state.
+6. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — death, restart, warp, continue, and completion mode routes.
+7. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — neutral audio command route.
+8. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — end-to-end playable-route oracle and Win32 validation.

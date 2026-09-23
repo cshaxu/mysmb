@@ -70,6 +70,14 @@ add_test(NAME mysmb.boot-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_boot_codegen.py)
 add_test(NAME mysmb.title-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_title_codegen.py)
+add_test(NAME mysmb.static-analysis
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_static_analysis.py)
+add_test(NAME mysmb.listing-layout
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_listing_layout.py)
+add_test(NAME mysmb.listing-reconcile
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_listing_reconcile.py)
+add_test(NAME mysmb.complete-analysis
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_complete_analysis.py)
 
 if(MYSMB_ROM_PATH)
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
