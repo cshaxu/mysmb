@@ -340,7 +340,6 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     mysmb_u8 old_value;
     mysmb_u8 carry;
     mysmb_u8 page_delta;
-
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state == 0U) return;
     if ((state & 0x80U) != 0U) {
