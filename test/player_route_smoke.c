@@ -19,6 +19,14 @@ int main(void)
     for (index = 0U; index < 16U; ++index) {
         game.ram[(mysmb_u16)(0x0600U + index)] = 0x61U;
     }
+    game.ram[0x0754U] = 0U;
+    mysmb_player_latch_input(&game,
+                             (mysmb_u8)(MYSMB_BUTTON_DOWN | MYSMB_BUTTON_RIGHT));
+    if (game.ram[0x0714U] != MYSMB_BUTTON_DOWN ||
+        game.ram[0x000cU] != MYSMB_BUTTON_RIGHT) {
+        return 1;
+    }
+    game.ram[0x0754U] = 1U;
     for (index = 0U; index < 8U; ++index) {
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }

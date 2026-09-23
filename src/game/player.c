@@ -247,15 +247,10 @@ void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
         (mysmb_u8)(buttons & (MYSMB_BUTTON_A | MYSMB_BUTTON_B));
     left_right = (mysmb_u8)(buttons & (MYSMB_BUTTON_LEFT | MYSMB_BUTTON_RIGHT));
     up_down = (mysmb_u8)(buttons & (MYSMB_BUTTON_UP | MYSMB_BUTTON_DOWN));
-    if ((up_down & MYSMB_BUTTON_DOWN) != 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        left_right != 0U) {
-        left_right = 0U;
-        up_down = 0U;
-    }
     game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] = left_right;
     game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] = up_down;
     game->ram[MYSMB_PLAYER_CROUCHING] =
-        game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        game->ram[MYSMB_PLAYER_SIZE] == 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
         (up_down & MYSMB_BUTTON_DOWN) != 0U ? 4U : 0U;
 }
 
