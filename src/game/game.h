@@ -12,6 +12,8 @@ enum {
     /* ROM $8e5c stores the NES serial order as these bit positions. */
     MYSMB_BUTTON_RIGHT = 0x01,
     MYSMB_BUTTON_LEFT = 0x02,
+    MYSMB_BUTTON_DOWN = 0x04,
+    MYSMB_BUTTON_UP = 0x08,
     MYSMB_BUTTON_START = 0x10,
     MYSMB_BUTTON_SELECT = 0x20,
     MYSMB_BUTTON_B = 0x40,

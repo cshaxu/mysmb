@@ -124,17 +124,27 @@ static void mysmb_win32_step(HWND window)
     }
 
     g_last_tick.QuadPart += frame_period;
+    input.buttons = 0U;
     if ((GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) {
-        input.buttons = MYSMB_BUTTON_LEFT;
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_LEFT);
     }
-    else if ((GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) {
-        input.buttons = MYSMB_BUTTON_RIGHT;
+    if ((GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_RIGHT);
     }
-    else {
-        input.buttons = 0U;
+    if ((GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_DOWN);
+    }
+    if ((GetAsyncKeyState(VK_UP) & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_UP);
     }
     if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_START);
+    }
+    if ((GetAsyncKeyState('Z') & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
+    }
+    if ((GetAsyncKeyState('X') & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
     }
     mysmb_game_tick(&g_game, &input, &g_frame);
     InvalidateRect(window, NULL, FALSE);
