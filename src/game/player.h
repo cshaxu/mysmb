@@ -15,5 +15,6 @@ void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool);
 void mysmb_player_impose_friction(struct mysmb_game *game);
 /* ROM PlayerCtrlRoutine controller split before movement dispatch. */
 void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons);
+void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 
 #endif

@@ -45,6 +45,8 @@ enum {
     MYSMB_PLAYER_CROUCHING = 0x0714U
 };
 
+enum { MYSMB_PREVIOUS_A_B_BUTTONS = 0x000dU };
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 void mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -224,4 +226,27 @@ void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
     game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] = up_down;
     game->ram[MYSMB_PLAYER_CROUCHING] =
         game->ram[MYSMB_PLAYER_STATE] == 0U && (up_down & 0x04U) != 0U ? 4U : 0U;
+}
+
+/* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
+void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    mysmb_u8 a_b;
+
+    mysmb_player_latch_input(game, buttons);
+    a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U && (a_b & MYSMB_BUTTON_A) != 0U &&
+        (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {
+        mysmb_player_start_jump(game, 0U);
+    }
+    if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
+        game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
+        mysmb_player_impose_friction(game);
+        mysmb_player_move_horizontally(game);
+    }
+    if (game->ram[MYSMB_PLAYER_STATE] != 0U) {
+        mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE_DOWN],
+                                    game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
+    }
+    game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
