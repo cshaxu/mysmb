@@ -31,5 +31,14 @@ int main(void)
         game.ram[0x009fU] < 0x80U || game.ram[0x0782U] != 0x20U) {
         return 1;
     }
+    mysmb_player_step(&game, (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_RIGHT));
+    if (game.ram[0x0709U] == game.ram[0x070aU] ||
+        game.ram[0x0433U] != 0x40U) {
+        return 1;
+    }
+    mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
+    if (game.ram[0x0709U] != game.ram[0x070aU]) {
+        return 1;
+    }
     return 0;
 }

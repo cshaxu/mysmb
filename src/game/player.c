@@ -297,6 +297,8 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
 {
     mysmb_u8 a_b;
+    mysmb_u8 a_held;
+    mysmb_u8 jump_height;
 
     mysmb_player_latch_input(game, buttons);
     a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
@@ -317,8 +319,23 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     }
     mysmb_player_update_scroll(game);
     if (game->ram[MYSMB_PLAYER_STATE] != 0U) {
-        mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE_DOWN],
-                                    game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
+        /* JumpSwimSub switches to the fall force after a released A button
+         * has carried the player beyond the minimum jump height. */
+        a_held = (mysmb_u8)(a_b & game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] &
+                             MYSMB_BUTTON_A);
+        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U && a_held == 0U) {
+            jump_height = (mysmb_u8)(game->ram[MYSMB_JUMP_ORIGIN_Y] -
+                                      game->ram[MYSMB_PLAYER_Y]);
+            if (jump_height >= game->ram[MYSMB_DIFF_HALT_JUMP]) {
+                game->ram[MYSMB_VERTICAL_FORCE] =
+                    game->ram[MYSMB_VERTICAL_FORCE_DOWN];
+            }
+        }
+        /* MovePlayerVertically enters ImposeGravity through
+         * ImposeGravitySprObj: VerticalForce is the downward force and the
+         * generic upward-force branch is disabled. */
+        mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
+                                    0U, 4U, 0U);
     }
     (void)mysmb_player_check_head(game);
     (void)mysmb_player_check_feet(game);
