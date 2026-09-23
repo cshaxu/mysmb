@@ -728,19 +728,23 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
                                          y_adder[(mysmb_u8)(base + 1U)], 0U, &left);
     have_right = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 2U)],
                                           y_adder[(mysmb_u8)(base + 2U)], 0U, &right);
+    /* ChkFootMTile consumes the left sample when it is nonzero; it visits
+     * the right sample only when the left is empty.  A climbable sample
+     * hands off to the side route instead of becoming a landing surface. */
     if (have_left != 0U && left.metatile != 0U) {
+        if (mysmb_player_is_climbable(left.metatile) != 0U) return 0U;
         if (mysmb_player_land_on_solid(game, left.metatile,
-                                       left.contact_low_nibble) != 0U) {
-            (void)mysmb_player_handle_vertical_pipe(game, left.metatile,
-                                                    have_right != 0U ? right.metatile : 0U);
-            return 1U;
+                                       left.contact_low_nibble) == 0U) {
+            return 0U;
         }
+        (void)mysmb_player_handle_vertical_pipe(game, left.metatile,
+                                                have_right != 0U ? right.metatile : 0U);
+        return 1U;
     }
     if (have_right != 0U && right.metatile != 0U) {
-        if (mysmb_player_land_on_solid(game, right.metatile,
-                                       right.contact_low_nibble) != 0U) {
-            return 1U;
-        }
+        if (mysmb_player_is_climbable(right.metatile) != 0U) return 0U;
+        return mysmb_player_land_on_solid(game, right.metatile,
+                                          right.contact_low_nibble);
     }
     return 0U;
 }

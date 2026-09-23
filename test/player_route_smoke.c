@@ -140,6 +140,19 @@ int main(void)
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U) {
         return 1;
     }
+    game.ram[0x001dU] = 2U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x0603U] = 0x26U;
+    if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
+        return 1;
+    }
+    game.ram[0x0603U] = 1U;
+    game.ram[0x0602U] = 0x61U;
+    if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
+        return 1;
+    }
+    game.ram[0x0603U] = 0x61U;
+    game.ram[0x0602U] = 0U;
     game.ram[0x0754U] = 0U;
     game.ram[0x001dU] = 0U;
     mysmb_player_step(&game, MYSMB_BUTTON_DOWN);
