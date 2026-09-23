@@ -12,7 +12,8 @@ set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
 set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 
-add_library(mysmb_game STATIC src/game/game.c)
+set(MYSMB_GAME_SOURCES src/game/game.c src/game/area.c)
+add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
 if(MSVC)
@@ -26,7 +27,7 @@ target_link_libraries(mysmb_core_smoke PRIVATE mysmb_game)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
-add_library(mysmb_dos16_core OBJECT src/game/game.c)
+add_library(mysmb_dos16_core OBJECT ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_dos16_core PRIVATE src)
 
 if(MYSMB_OPENNT_CL16)
@@ -37,6 +38,12 @@ if(MYSMB_OPENNT_CL16)
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/game.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/area.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         VERBATIM
     )

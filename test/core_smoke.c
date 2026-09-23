@@ -63,6 +63,11 @@ int main(void)
     if (frame.start_pressed != 0U) {
         return 1;
     }
+    if (frame.operating_mode_task != 1U || game.ram[0x0720U] != 0x20U ||
+        game.ram[0x0721U] != 0x80U || game.ram[0x0730U] != 0xffU ||
+        game.ram[0x0732U] != 0xffU || game.ram[0x071eU] != 0x0bU) {
+        return 1;
+    }
 
     mysmb_game_initialize(&game);
     input.buttons = MYSMB_BUTTON_SELECT;

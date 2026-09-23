@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/area.h"
 
 enum {
     MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,
@@ -196,8 +197,16 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {
+    mysmb_u8 mode_before;
+    mysmb_u8 task_before;
+
+    mode_before = game->ram[MYSMB_RAM_OPER_MODE];
+    task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
     mysmb_game_title_step(game, input);
+    if (mode_before == 1U && task_before == 0U) {
+        mysmb_area_initialize(game);
+    }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];
     frame->start_pressed =
