@@ -38,8 +38,14 @@ enum {
     MYSMB_MISC_Y_SPEED = 0x00acU,
     MYSMB_MISC_Y_HIGH = 0x00c2U,
     MYSMB_MISC_Y = 0x00dbU,
+    MYSMB_MISC_X_SPEED = 0x0064U,
+    MYSMB_MISC_X_FORCE = 0x0407U,
     MYSMB_MISC_Y_DUMMY = 0x0424U,
     MYSMB_MISC_Y_FORCE = 0x0440U,
+    MYSMB_MISC_BOUND_BOX = 0x04a2U,
+    MYSMB_MISC_COLLISION_FLAG = 0x06beU,
+    MYSMB_HAMMER_ENEMY_OFFSET = 0x06aeU,
+    MYSMB_HAMMER_THROWING_TIMER = 0x03a2U,
     MYSMB_SCROLL_AMOUNT = 0x0775U,
     MYSMB_OPERATING_MODE = 0x0770U,
     MYSMB_DISPLAY_DIGITS = 0x07d7U,
@@ -133,6 +139,16 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
 static void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
                                               mysmb_u8 slot, mysmb_u8 amount,
                                               mysmb_u8 maximum_speed);
+static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
+                                                 mysmb_u8 slot);
+static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
+                                             mysmb_u8 slot, mysmb_u8 amount,
+                                             mysmb_u8 maximum_speed);
+static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
+                                           mysmb_u8 enemy_slot);
+static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
+static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
+                                                 mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
 
@@ -343,15 +359,20 @@ void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
     game->ram[MYSMB_MISC_STATE + slot] = 1U;
 }
 
-/* ROM $bb96-$bbd0 ProcJumpCoin, excluding draw and score presentation. */
+/* ROM $bb96-$bbd0 ProcJumpCoin and $bac4 ProcHammerObj, excluding OAM.
+ * Misc_State d7 selects the hammer route exactly as MiscObjectsCore does. */
 void mysmb_objects_step_misc(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     mysmb_u8 old_value;
     mysmb_u8 carry;
 
-    for (slot = 6U; slot <= 8U; ++slot) {
+    for (slot = 0U; slot <= 8U; ++slot) {
         if (game->ram[MYSMB_MISC_STATE + slot] == 0U) continue;
+        if ((game->ram[MYSMB_MISC_STATE + slot] & 0x80U) != 0U) {
+            mysmb_objects_step_hammer(game, slot);
+            continue;
+        }
         if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
             old_value = game->ram[MYSMB_MISC_Y_DUMMY + slot];
             game->ram[MYSMB_MISC_Y_DUMMY + slot] =
@@ -1359,7 +1380,7 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
     }
 }
 
-/* ROM ProcHammerBro through MoveHammerBroXDir, excluding SpawnHammerObj. */
+/* ROM $c12d ProcHammerBro through MoveHammerBroXDir. */
 void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -1367,14 +1388,24 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
     mysmb_u16 enemy_world;
     mysmb_u8 jump_choice;
 
-    for (slot = 0U; slot < 5U; ++slot) {
+    for (slot = 0U; slot < 6U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 5U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
             continue;
         }
-        if (game->ram[0x003cU + slot] != 0U) game->ram[0x003cU + slot]--;
+        if (game->ram[0x003cU + slot] != 0U) {
+            game->ram[0x003cU + slot]--;
+            if (game->ram[MYSMB_HAMMER_THROWING_TIMER + slot] == 0U) {
+                game->ram[MYSMB_HAMMER_THROWING_TIMER + slot] =
+                    game->ram[MYSMB_PRIMARY_HARD] == 0U ? 0x30U : 0x1cU;
+                if (mysmb_objects_spawn_hammer(game, slot) != 0U) {
+                    game->ram[MYSMB_ENEMY_STATE + slot] |= 8U;
+                }
+            }
+            else game->ram[MYSMB_HAMMER_THROWING_TIMER + slot]--;
+        }
         else if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) != 1U) {
             jump_choice = 0U;
             if (game->ram[MYSMB_ENEMY_Y + slot] < 0x80U) {
@@ -1754,6 +1785,174 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
     game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = 0x30U;
     game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[MYSMB_ENEMY_X + slot];
+}
+
+/* ROM $dc96 MoveObjectHorizontally for the separate misc-object arrays. */
+static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
+                                                 mysmb_u8 slot)
+{
+    mysmb_u8 speed;
+    mysmb_u8 old_force;
+    mysmb_u8 old_x;
+    mysmb_u8 integer;
+    mysmb_u8 page_delta;
+    mysmb_u8 carry;
+
+    speed = game->ram[MYSMB_MISC_X_SPEED + slot];
+    integer = (mysmb_u8)(speed >> 4U);
+    if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
+    page_delta = integer >= 0x80U ? 0xffU : 0U;
+    old_force = game->ram[MYSMB_MISC_X_FORCE + slot];
+    game->ram[MYSMB_MISC_X_FORCE + slot] =
+        (mysmb_u8)(old_force + (mysmb_u8)(speed << 4U));
+    carry = game->ram[MYSMB_MISC_X_FORCE + slot] < old_force ? 1U : 0U;
+    old_x = game->ram[MYSMB_MISC_X + slot];
+    game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(old_x + integer + carry);
+    if (game->ram[MYSMB_MISC_X + slot] < old_x) {
+        game->ram[MYSMB_MISC_PAGE + slot] =
+            (mysmb_u8)(game->ram[MYSMB_MISC_PAGE + slot] + page_delta + 1U);
+    }
+    else game->ram[MYSMB_MISC_PAGE + slot] =
+        (mysmb_u8)(game->ram[MYSMB_MISC_PAGE + slot] + page_delta);
+}
+
+/* ROM $bb28 ImposeGravity with the misc-object array layout. */
+static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
+                                             mysmb_u8 slot, mysmb_u8 amount,
+                                             mysmb_u8 maximum_speed)
+{
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+
+    old_value = game->ram[MYSMB_MISC_Y_DUMMY + slot];
+    game->ram[MYSMB_MISC_Y_DUMMY + slot] =
+        (mysmb_u8)(old_value + game->ram[MYSMB_MISC_Y_FORCE + slot]);
+    carry = game->ram[MYSMB_MISC_Y_DUMMY + slot] < old_value ? 1U : 0U;
+    old_value = game->ram[MYSMB_MISC_Y + slot];
+    game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(old_value +
+        game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
+    if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= 0x80U) game->ram[MYSMB_MISC_Y_HIGH + slot]--;
+    if (game->ram[MYSMB_MISC_Y + slot] < old_value) game->ram[MYSMB_MISC_Y_HIGH + slot]++;
+    old_value = game->ram[MYSMB_MISC_Y_FORCE + slot];
+    game->ram[MYSMB_MISC_Y_FORCE + slot] = (mysmb_u8)(old_value + amount);
+    carry = game->ram[MYSMB_MISC_Y_FORCE + slot] < old_value ? 1U : 0U;
+    game->ram[MYSMB_MISC_Y_SPEED + slot] =
+        (mysmb_u8)(game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
+    if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= maximum_speed &&
+        game->ram[MYSMB_MISC_Y_SPEED + slot] < 0x80U &&
+        game->ram[MYSMB_MISC_Y_FORCE + slot] >= 0x80U) {
+        game->ram[MYSMB_MISC_Y_SPEED + slot] = maximum_speed;
+        game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
+    }
+}
+
+/* ROM $ba81 SpawnHammerObj.  The source's six regular enemy slots make the
+ * table entries for offsets six through eight naturally unavailable here. */
+static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
+                                           mysmb_u8 enemy_slot)
+{
+    static const mysmb_u8 hammer_enemy_offsets[9] = {
+        4U, 4U, 4U, 5U, 5U, 5U, 6U, 6U, 6U
+    };
+    mysmb_u8 slot;
+    mysmb_u8 random_value;
+
+    random_value = game->ram[0x07a8U + enemy_slot];
+    slot = (mysmb_u8)(random_value & 7U);
+    if (slot == 0U) slot = (mysmb_u8)(random_value & 8U);
+    if (game->ram[MYSMB_MISC_STATE + slot] != 0U ||
+        hammer_enemy_offsets[slot] >= 6U ||
+        game->ram[MYSMB_ENEMY_FLAG + hammer_enemy_offsets[slot]] != 0U) return 0U;
+    game->ram[MYSMB_HAMMER_ENEMY_OFFSET + slot] = enemy_slot;
+    game->ram[MYSMB_MISC_STATE + slot] = 0x90U;
+    game->ram[MYSMB_MISC_BOUND_BOX + slot] = 7U;
+    game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 0U;
+    return 1U;
+}
+
+/* ROM $bac4 ProcHammerObj, excluding the display and player collision calls.
+ * The 16-frame hand attachment is represented by state $90 through $82. */
+static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 state;
+    mysmb_u8 enemy_slot;
+    mysmb_u8 old_x;
+
+    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
+    state = (mysmb_u8)(game->ram[MYSMB_MISC_STATE + slot] & 0x7fU);
+    enemy_slot = game->ram[MYSMB_HAMMER_ENEMY_OFFSET + slot];
+    if (enemy_slot >= 6U || game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U) {
+        game->ram[MYSMB_MISC_STATE + slot] = 0U;
+        return;
+    }
+    if (state < 2U) {
+        mysmb_objects_move_misc_downward(game, slot, 0x10U, 4U);
+        mysmb_objects_move_misc_horizontally(game, slot);
+        mysmb_objects_check_hammer_collision(game, slot);
+        return;
+    }
+    if (state == 2U) {
+        game->ram[MYSMB_MISC_Y_SPEED + slot] = 0xfeU;
+        game->ram[MYSMB_ENEMY_STATE + enemy_slot] &= 0xf7U;
+        game->ram[MYSMB_MISC_X_SPEED + slot] =
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] == 1U ? 0x10U : 0xf0U;
+    }
+    game->ram[MYSMB_MISC_STATE + slot]--;
+    old_x = game->ram[MYSMB_ENEMY_X + enemy_slot];
+    game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(old_x + 2U);
+    game->ram[MYSMB_MISC_PAGE + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + enemy_slot] +
+        (game->ram[MYSMB_MISC_X + slot] < old_x ? 1U : 0U));
+    game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] - 0x0aU);
+    game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
+}
+
+/* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
+ * nine through seventeen after the player box at $04ac. */
+static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
+                                                 mysmb_u8 slot)
+{
+    mysmb_u16 player_world;
+    mysmb_u16 hammer_world;
+    mysmb_u16 screen_world;
+    mysmb_u16 hammer_box;
+
+    if (((mysmb_u8)game->frame_number & 1U) == 0U ||
+        game->ram[MYSMB_TIMER_CONTROL] != 0U ||
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return;
+    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                game->ram[MYSMB_PLAYER_X]);
+    hammer_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_MISC_PAGE + slot] << 8U) |
+                                game->ram[MYSMB_MISC_X + slot]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    if (player_world < screen_world || hammer_world < screen_world ||
+        (mysmb_u16)(player_world - screen_world) >= 0x100U ||
+        (mysmb_u16)(hammer_world - screen_world) >= 0x100U) return;
+    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+        game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
+        game->ram[MYSMB_PLAYER_Y]);
+    hammer_box = (mysmb_u16)(0x04d0U + slot * 4U);
+    mysmb_objects_set_bounding_box(game, hammer_box,
+        game->ram[MYSMB_MISC_BOUND_BOX + slot], (mysmb_u8)(hammer_world - screen_world),
+        game->ram[MYSMB_MISC_Y + slot]);
+    if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, hammer_box) == 0U) {
+        game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_MISC_COLLISION_FLAG + slot] != 0U) return;
+    game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 1U;
+    game->ram[MYSMB_MISC_X_SPEED + slot] =
+        (mysmb_u8)(0U - game->ram[MYSMB_MISC_X_SPEED + slot]);
+    if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U ||
+        game->ram[MYSMB_PLAYER_STATUS] == 0U || game->ram[MYSMB_INJURY_TIMER] != 0U) return;
+    game->ram[MYSMB_PLAYER_STATUS] = 0U;
+    game->ram[MYSMB_INJURY_TIMER] = 8U;
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 10U;
+    game->ram[MYSMB_PLAYER_STATE] = 1U;
+    game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
+    game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
 }
 
 /* ROM PlayerCollisionCore receives relative X coordinates.  Keep every
