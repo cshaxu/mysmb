@@ -5,6 +5,10 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
+    const mysmb_u8 title_commands[] = {
+        0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
+        0x20U, 0x21U, 0xc2U, 0x33U, 0x00U
+    };
     unsigned int index;
 
     mysmb_game_initialize(&game);
@@ -28,6 +32,14 @@ int main(void)
     game.ram[0x07d7U] = 0xffU;
     mysmb_game_initialize_memory(&game, 0xd6U);
     if (game.ram[0x07d6U] != 0U || game.ram[0x07d7U] != 0xffU) {
+        return 1;
+    }
+
+    if (mysmb_game_apply_title_commands(&game, title_commands,
+                                        (mysmb_u16)sizeof(title_commands)) == 0U ||
+        game.name_table[0][0U] != 0x11U || game.name_table[0][1U] != 0x12U ||
+        game.name_table[0][0x21U] != 0x33U ||
+        game.name_table[0][0x41U] != 0x33U) {
         return 1;
     }
 

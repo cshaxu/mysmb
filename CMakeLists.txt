@@ -123,6 +123,11 @@ if(MYSMB_ROM_PATH)
     )
     add_dependencies(mysmb_local_title_data mysmb_local_title)
     target_include_directories(mysmb_local_title_data PRIVATE "${MYSMB_LOCAL_TITLE_DIR}")
+    add_executable(mysmb_local_title_smoke test/local_title_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_local_title_smoke PRIVATE src "${MYSMB_LOCAL_TITLE_DIR}")
+    target_link_libraries(mysmb_local_title_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.local-title-smoke COMMAND mysmb_local_title_smoke)
 
     if(MYSMB_ASM_PATH)
         add_custom_command(

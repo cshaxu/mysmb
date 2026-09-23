@@ -38,6 +38,10 @@ void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
 /* ROM $8e19-$8e5b. */
 void mysmb_game_initialize_name_tables(struct mysmb_game *game);
+/* ROM $8e92-$8eec, limited to the title command stream's name-table writes. */
+mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
+                                         const mysmb_u8 *commands,
+                                         mysmb_u16 command_size);
 void mysmb_game_initialize(struct mysmb_game *game);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);

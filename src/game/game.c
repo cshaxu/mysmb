@@ -64,6 +64,60 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ram[0x0740U] = 0U;
 }
 
+/* Translation of the name-table portion of ROM $8e92-$8eec. */
+mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
+                                         const mysmb_u8 *commands,
+                                         mysmb_u16 command_size)
+{
+    mysmb_u16 cursor;
+    mysmb_u16 address;
+    mysmb_u16 offset;
+    mysmb_u8 control;
+    mysmb_u8 count;
+    mysmb_u8 index;
+    mysmb_u8 table;
+    mysmb_u8 value;
+
+    cursor = 0U;
+    while (cursor < command_size && commands[cursor] != 0U) {
+        if ((mysmb_u16)(command_size - cursor) < 3U) {
+            return 0U;
+        }
+        address = (mysmb_u16)(((mysmb_u16)commands[cursor] << 8) |
+                              commands[(mysmb_u16)(cursor + 1U)]);
+        control = commands[(mysmb_u16)(cursor + 2U)];
+        count = (mysmb_u8)(control & 0x3fU);
+        if (count == 0U || (mysmb_u16)(command_size - cursor) <
+            (mysmb_u16)(3U + ((control & 0x40U) != 0U ? 1U : count))) {
+            return 0U;
+        }
+        if (address < 0x2000U || address >= 0x2800U) {
+            return 0U;
+        }
+        table = (mysmb_u8)((address - 0x2000U) / 0x0400U);
+        offset = (mysmb_u16)(address & 0x03ffU);
+        value = commands[(mysmb_u16)(cursor + 3U)];
+        for (index = 0U; index < count; ++index) {
+            if (offset >= 0x0400U) {
+                return 0U;
+            }
+            game->name_table[table][offset] = value;
+            if ((control & 0x80U) != 0U) {
+                offset = (mysmb_u16)(offset + 32U);
+            }
+            else {
+                offset++;
+            }
+            if ((control & 0x40U) == 0U && (mysmb_u8)(index + 1U) < count) {
+                value = commands[(mysmb_u16)(cursor + 3U + index + 1U)];
+            }
+        }
+        cursor = (mysmb_u16)(cursor + 3U +
+                              ((control & 0x40U) != 0U ? 1U : count));
+    }
+    return cursor < command_size ? 1U : 0U;
+}
+
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {

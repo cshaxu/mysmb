@@ -2,26 +2,26 @@
 
 ## Current Work
 
-M1 T3 S3 is admitted to prepare the owner-local title command stream for native consumption.
+M1 T3 S4 is admitted to apply the title stream to the native name-table state.
 
-## M1 T3 S3 Packet
+## M1 T3 S4 Packet
 
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | Continuation |
 | Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 S2 established original reset state at `f187bf2`. |
-| Objective | Extract the byte-verified title command stream read by `$86ff-$8731` from owner-local CHR into an ignored C90 unit, with a deterministic extent and no runtime ROM reader. |
+| Objective | Translate the name-table portion of `$8e92-$8eec` as a title-stream-specific C90 writer and verify it consumes the ignored local title unit without a runtime ROM reader or generic PPU. |
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not introduce a CPU, PPU, APU, instruction decoder, or generic memory bus. |
-| Reference Baseline | T3 S2 `f187bf2`; owner-local ROM; byte-verified title read at PPU `$1ec0` for `$013a` bytes; public sources remain local research references only. |
+| Reference Baseline | T3 S3 `c5da0e3`; owner-local ROM; byte-verified title command format and `$013a` input extent; public sources remain local research references only. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
-| Files And ABI Surface | Project-owned title extractor, ignored local C90 title data unit, root CMake target, and synthetic extractor test. |
+| Files And ABI Surface | `src/game/` title command writer, local-only title integration smoke, root CMake integration, and project-owned command-format test. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
-| Verification | Verify the `$013a` extent with a synthetic NROM, build the ignored generated C90 unit, and run CMake tests. |
-| Expected Markers | Local title data generator, local C90 target, and neutral extent test exist without protected material in Git. |
+| Verification | Unit-test sequential, vertical, and repeated title writes; build the ignored local title unit and run an integration smoke against the native name tables. |
+| Expected Markers | Native ROM-specific title command writer and local title integration smoke exist without protected material in Git. |
 | Asset Needs | Owner-local ROM only for extraction verification; no ROM-derived payload enters tracked files. |
-| Reporting Requirements | Report verified source span, local-output containment, build/test result, and title-transfer dependency still deferred. |
-| Stop Conditions | Stop for owner direction if verified ROM bytes disagree with the stated title span or if extraction cannot remain local. |
-| Exit Criteria | The title command stream has a reproducible ignored C90 generation path with no runtime ROM reader. |
+| Reporting Requirements | Report command format, state ownership, local-output containment, and build/test result. |
+| Stop Conditions | Stop for owner direction if title transfer requires a generic PPU abstraction or an uncontained ROM dependency. |
+| Exit Criteria | The local title stream reaches native name-table state through verified C90 logic, without runtime instruction interpretation or a generic PPU. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
 | Similar-Issue Sweep | Search all tracked files for ROM paths, ROM extensions, generated output references, and third-party listing text; retain only policy-approved neutral tooling and ignore rules. |
 
