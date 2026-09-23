@@ -1903,6 +1903,24 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[MYSMB_ENEMY_X + slot];
 }
 
+/* ROM $b3c2 MoveFlyingCheepCheep, excluding OAM priority output. */
+void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 20U) continue;
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
+            mysmb_objects_move_enemy_downward(game, slot, 0x1cU, 3U);
+            continue;
+        }
+        if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
+        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_objects_move_enemy_downward(game, slot, 0x0dU, 5U);
+    }
+}
+
 /* ROM $d747 HandleEnemyFBallCol through EnemySmackScore, excluding audio.
  * FireballEnemyCollision has already changed the fireball to its explosion
  * state before this handler, including for fireproof Buzzy Beetles. */
