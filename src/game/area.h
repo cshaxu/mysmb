@@ -24,11 +24,17 @@ struct mysmb_area_object {
     mysmb_u8 page;
     mysmb_u8 behind_current_page;
     mysmb_u8 is_page_control;
+    mysmb_u8 column;
+    mysmb_u8 row;
+    mysmb_u8 dispatch_id;
+    mysmb_u8 is_loop_command;
 };
 
 /* ROM $9508-$958f stream-selection subset; object decoding remains separate. */
 mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
                                 const struct mysmb_area_source *source,
                                 struct mysmb_area_object *object);
+/* ROM $958f-$961f DecodeAreaData classification before object dispatch. */
+void mysmb_area_decode_object(struct mysmb_area_object *object);
 
 #endif

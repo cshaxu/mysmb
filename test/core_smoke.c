@@ -58,10 +58,12 @@ int main(void)
         return 1;
     }
     if (mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
-        area_object.is_page_control != 1U || area_object.page != 3U ||
+        area_object.is_page_control != 1U || area_object.dispatch_id != 0xffU ||
+        area_object.page != 3U ||
         game.ram[0x072cU] != 2U ||
         mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
-        area_object.page != 4U || area_object.behind_current_page != 0U ||
+        area_object.page != 4U || area_object.dispatch_id != 0x17U ||
+        area_object.behind_current_page != 0U ||
         game.ram[0x072cU] != 4U ||
         mysmb_area_next_object(&game, &area_source, &area_object) != 0U) {
         return 1;

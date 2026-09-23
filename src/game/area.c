@@ -196,6 +196,7 @@ mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
     object->first = first;
     object->second = second;
     object->is_page_control = 0U;
+    object->is_loop_command = 0U;
     if ((first & 0x0fU) == 0x0dU && (second & 0x40U) == 0U &&
         game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
         game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
@@ -204,9 +205,52 @@ mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
     }
     object->page = game->ram[MYSMB_AREA_OBJECT_PAGE];
     object->behind_current_page = object->page < game->ram[MYSMB_AREA_CURRENT_PAGE] ? 1U : 0U;
+    mysmb_area_decode_object(object);
     game->ram[MYSMB_AREA_PARSER_BEHIND] = object->behind_current_page;
     game->ram[MYSMB_AREA_DATA_OFFSET] =
         (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
     return 1U;
+}
+
+/* Translation of ROM DecodeAreaData's object-ID selection, before JumpEngine. */
+void mysmb_area_decode_object(struct mysmb_area_object *object)
+{
+    mysmb_u8 code;
+
+    object->column = (mysmb_u8)(object->first >> 4U);
+    object->row = (mysmb_u8)(object->first & 0x0fU);
+    object->dispatch_id = 0xffU;
+    if (object->row == 0x0dU) {
+        if ((object->second & 0x40U) == 0U) {
+            object->is_page_control = 1U;
+            return;
+        }
+        code = (mysmb_u8)(object->second & 0x3fU);
+        object->is_loop_command = (object->second & 0x7fU) == 0x4bU ? 1U : 0U;
+        object->dispatch_id = (mysmb_u8)(code + 0x22U);
+        return;
+    }
+    if (object->row == 0x0eU) {
+        object->dispatch_id = 0x2eU;
+        return;
+    }
+    if (object->row == 0x0cU) {
+        object->dispatch_id = (mysmb_u8)(((object->second & 0x70U) >> 4U) + 0x08U);
+        return;
+    }
+    if (object->row == 0x0fU) {
+        object->dispatch_id = (mysmb_u8)(((object->second & 0x70U) >> 4U) + 0x10U);
+        return;
+    }
+    code = (mysmb_u8)((object->second & 0x70U) >> 4U);
+    if (code == 0U) {
+        object->dispatch_id = (mysmb_u8)((object->second & 0x0fU) + 0x16U);
+    }
+    else {
+        if (code == 7U && (object->second & 0x08U) != 0U) {
+            code = 0U;
+        }
+        object->dispatch_id = code;
+    }
 }
