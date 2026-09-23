@@ -73,5 +73,14 @@ int main(void)
     mysmb_objects_check_hazard_enemy_collision(&game);
     if (game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
         game.ram[0x000eU] != 10U || game.ram[0x0491U] != 1U) return 1;
+    game.ram[0x0756U] = 1U;
+    game.ram[0x079eU] = 0U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x0747U] = 0U;
+    game.ram[0x0491U] = 0U;
+    game.ram[0x0016U] = 10U;
+    mysmb_objects_check_hazard_enemy_collision(&game);
+    if (game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
+        game.ram[0x000eU] != 10U || game.ram[0x0491U] != 1U) return 1;
     return 0;
 }

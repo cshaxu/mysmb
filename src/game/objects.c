@@ -176,7 +176,8 @@ void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-            (game->ram[MYSMB_ENEMY_ID + slot] != 12U && game->ram[MYSMB_ENEMY_ID + slot] != 13U &&
+            (game->ram[MYSMB_ENEMY_ID + slot] != 10U && game->ram[MYSMB_ENEMY_ID + slot] != 11U &&
+             game->ram[MYSMB_ENEMY_ID + slot] != 12U && game->ram[MYSMB_ENEMY_ID + slot] != 13U &&
              game->ram[MYSMB_ENEMY_ID + slot] != 18U) ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
