@@ -59,11 +59,18 @@ enum {
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_PLAYER_STATUS = 0x0756U,
+    MYSMB_GAME_ENGINE_SUBROUTINE = 0x000eU,
+    MYSMB_PLAYER_STATE = 0x001dU,
+    MYSMB_TIMER_CONTROL = 0x0747U,
+    MYSMB_STAR_INVINCIBLE_TIMER = 0x079fU,
     MYSMB_VINE_FLAG_OFFSET = 0x0398U,
     MYSMB_VINE_HEIGHT = 0x0399U,
     MYSMB_VINE_OBJECT_OFFSET = 0x039aU,
     MYSMB_VINE_START_Y = 0x039dU
 };
+
+static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
+                                               mysmb_u8 digit_offset);
 
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
@@ -162,6 +169,42 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
     }
+}
+
+/* ROM $ddcd HandlePowerUpCollision.  The Floatey-number visual and delayed
+ * 1-up award remain with the later enemy/floatey route; its pending type is
+ * deliberately retained rather than converted to an immediate life. */
+void mysmb_objects_collect_power_up(struct mysmb_game *game)
+{
+    const mysmb_u8 slot = 5U;
+    mysmb_u8 type;
+
+    type = game->ram[MYSMB_POWER_UP_TYPE];
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+    game->ram[MYSMB_ENEMY_ID + slot] = 0U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
+    game->ram[MYSMB_DIGIT_MODIFIER + 3U] = 1U;
+    mysmb_objects_apply_digit_modifier(game,
+                                       game->ram[MYSMB_CURRENT_PLAYER] == 0U ?
+                                       0x0bU : 0x11U);
+    if (type == 2U) {
+        game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0x23U;
+        return;
+    }
+    if (type == 3U) return;
+    if (game->ram[MYSMB_PLAYER_STATUS] == 0U) {
+        game->ram[MYSMB_PLAYER_STATUS] = 1U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 9U;
+    }
+    else if (game->ram[MYSMB_PLAYER_STATUS] == 1U) {
+        game->ram[MYSMB_PLAYER_STATUS] = 2U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 12U;
+    }
+    else return;
+    game->ram[MYSMB_PLAYER_STATE] = 0U;
+    game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
+    game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
 }
 
 /* ROM $ba55 Setup_Vine.  The original reserves enemy slot five for this

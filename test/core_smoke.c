@@ -677,6 +677,22 @@ int main(void)
     mysmb_player_step_fire_flower(&game);
     if (game.ram[0x0747U] != 0U || game.ram[0x000eU] != 8U ||
         game.ram[0x03c4U] != 0x20U) return 1;
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0753U] = 0U;
+    game.ram[0x0756U] = 0U;
+    game.ram[0x0039U] = 0U;
+    game.ram[0x0014U] = 1U;
+    game.ram[0x001bU] = 0x2eU;
+    game.ram[0x07e0U] = 0U;
+    game.ram[0x07e1U] = 0U;
+    mysmb_objects_collect_power_up(&game);
+    if (game.ram[0x0014U] != 0U || game.ram[0x001bU] != 0U ||
+        game.ram[0x0756U] != 1U || game.ram[0x000eU] != 9U ||
+        game.ram[0x0747U] != 0xffU || game.ram[0x07e0U] != 1U) return 1;
+    game.ram[0x0039U] = 2U;
+    game.ram[0x079fU] = 0U;
+    mysmb_objects_collect_power_up(&game);
+    if (game.ram[0x079fU] != 0x23U) return 1;
     game.ram[0x0301U] = 0U;
     game.ram[0x0026U] = 0x11U;
     game.ram[0x00beU] = 1U;
