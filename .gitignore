@@ -1,0 +1,16 @@
+# Owner-local Nintendo ROM input and its build-time derivatives.
+assets/roms/
+generated/
+
+# Build products.
+build/
+out/
+*.exe
+*.obj
+*.map
+*.pdb
+
+# Local tools and IDE state.
+.vs/
+.idea/
+*.swp
