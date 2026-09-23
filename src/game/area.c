@@ -132,6 +132,35 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
     game->area_prg_size = prg_size;
 }
 
+/* ROM QuestionBlock/BrickWithItem, limited to one-column small objects. */
+static void mysmb_area_apply_single_block(struct mysmb_game *game,
+                                          const struct mysmb_area_object *object)
+{
+    static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
+    static const mysmb_u8 ground_brick[5] = { 0x55U, 0x56U, 0x57U, 0x58U, 0x59U };
+    mysmb_u8 value;
+    mysmb_u8 column;
+    mysmb_u16 address;
+
+    if (object->row >= 13U) return;
+    if (object->page > 1U) return;
+    column = (mysmb_u8)(object->column + (object->page << 4U));
+    if (object->dispatch_id >= 0x16U && object->dispatch_id <= 0x18U) {
+        value = question[(mysmb_u8)(object->dispatch_id - 0x16U)];
+    }
+    else if (object->dispatch_id >= 0x1aU && object->dispatch_id <= 0x1eU) {
+        value = ground_brick[(mysmb_u8)(object->dispatch_id - 0x1aU)];
+        if (game->ram[MYSMB_AREA_TYPE] != 1U) value = (mysmb_u8)(value + 5U);
+    }
+    else if (object->dispatch_id == 0x20U) {
+        value = 0x60U;
+    }
+    else return;
+    address = (mysmb_u16)(column < 16U ? 0x0500U + column :
+                          0x05d0U + (column - 16U));
+    game->ram[(mysmb_u16)(address + (mysmb_u16)object->row * 16U)] = value;
+}
+
 /* One neutral command per game frame, derived from the original area stream. */
 mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
 {
@@ -153,6 +182,7 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     command->page = object.page;
     command->dispatch_id = object.dispatch_id;
     game->area_command_count++;
+    mysmb_area_apply_single_block(game, &object);
     return 1U;
 }
 

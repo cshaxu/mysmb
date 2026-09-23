@@ -37,6 +37,9 @@ int main(void)
         game.ram[0x00b5U] != 1U || game.ram[0x00ceU] != 0xb0U) {
         return 1;
     }
+    if (game.area_commands[0].page != 1U || game.area_commands[0].column != 0U ||
+        game.area_commands[0].row != 7U || game.area_commands[0].dispatch_id != 0x17U ||
+        game.ram[0x0640U] != 0xc0U) return 1;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x000eU] != 8U || game.ram[0x001dU] != 0U) {
         return 1;
