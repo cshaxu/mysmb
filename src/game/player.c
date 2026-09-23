@@ -72,6 +72,10 @@ enum {
     MYSMB_HORIZONTAL_SCROLL = 0x073fU
 };
 
+enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
+
+enum { MYSMB_PLAYER_SIZE = 0x0756U };
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -279,6 +283,9 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                                     game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
     }
     (void)mysmb_player_check_feet(game);
+    game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
+        game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
+    (void)mysmb_player_check_sides(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
@@ -450,4 +457,72 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
         game->ram[MYSMB_SCREEN_RIGHT_PAGE]++;
     }
     game->ram[MYSMB_PLATFORM_X_SCROLL] = 0U;
+}
+
+/* Translation of ROM $df4b-$df7d ImpedePlayerMove. */
+void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 moving_direction)
+{
+    mysmb_u8 speed;
+    mysmb_u8 correction;
+    mysmb_u8 page_delta;
+
+    speed = game->ram[MYSMB_PLAYER_X_SPEED];
+    if (moving_direction == 1U) {
+        if (speed >= 0x80U) return;
+        correction = 0xffU;
+        page_delta = 0xffU;
+        game->ram[MYSMB_PLAYER_COLLISION_BITS] &= 0xfeU;
+    }
+    else if (moving_direction == 2U) {
+        if (speed != 0U && speed < 0x80U) return;
+        correction = 1U;
+        page_delta = 0U;
+        game->ram[MYSMB_PLAYER_COLLISION_BITS] &= 0xfdU;
+    }
+    else {
+        return;
+    }
+    game->ram[MYSMB_SIDE_COLLISION_TIMER] = 0x10U;
+    game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+    if (correction == 0xffU) {
+        page_delta = game->ram[MYSMB_PLAYER_X] == 0U ? 0xffU : 0U;
+    }
+    else {
+        page_delta = game->ram[MYSMB_PLAYER_X] == 0xffU ? 1U : 0U;
+    }
+    game->ram[MYSMB_PLAYER_X] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] + correction);
+    game->ram[MYSMB_PLAYER_PAGE] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta);
+}
+
+/* Translation of ROM $dd5e-$de46's four side samples.  Coin, climbing,
+ * jumpspring, and pipe cases retain their object-specific routes. */
+mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
+{
+    static const mysmb_u8 x_adder[4] = { 2U, 2U, 0x0dU, 0x0dU };
+    static const mysmb_u8 y_adder[4] = { 8U, 0x18U, 8U, 0x18U };
+    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
+    struct mysmb_player_terrain terrain;
+    mysmb_u8 index;
+    mysmb_u8 group;
+
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
+        game->ram[MYSMB_PLAYER_Y] >= 0xd0U) {
+        return 0U;
+    }
+    game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
+    for (index = 0U; index < 4U; ++index) {
+        if (mysmb_player_query_block(game, x_adder[index], y_adder[index], 1U,
+                                     &terrain) == 0U || terrain.metatile == 0U) {
+            continue;
+        }
+        group = (mysmb_u8)(terrain.metatile >> 6U);
+        if (terrain.metatile >= solid_upper[group]) {
+            mysmb_player_impede_move(game,
+                                     game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
+            return 1U;
+        }
+    }
+    return 0U;
 }
