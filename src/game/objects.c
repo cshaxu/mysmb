@@ -323,6 +323,10 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
     mysmb_u8 state;
+    mysmb_u8 x;
+    mysmb_u8 row;
+    mysmb_u16 address;
+    mysmb_u8 tile;
 
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state == 0U) return;
@@ -331,6 +335,16 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
             (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
              game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
             mysmb_objects_move_enemy_horizontally(game, slot);
+            x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
+                (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x14U : 4U));
+            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
+            address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
+            tile = address < 0x0800U ? game->ram[address] : 0U;
+            if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0xf0U;
+            }
         }
         return;
     }
