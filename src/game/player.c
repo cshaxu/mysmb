@@ -279,3 +279,22 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0x0fU);
     return 1U;
 }
+
+/* Translation of CheckForSolidMTiles and LandPlyr's state update. */
+mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
+                                    mysmb_u8 metatile, mysmb_u8 contact)
+{
+    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
+    mysmb_u8 group;
+
+    group = (mysmb_u8)(metatile >> 6U);
+    if (metatile < solid_upper[group] || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ||
+        contact >= 5U) {
+        return 0U;
+    }
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0xf0U);
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
+    game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
+    game->ram[MYSMB_PLAYER_STATE] = 0U;
+    return 1U;
+}
