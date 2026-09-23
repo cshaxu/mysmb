@@ -41,6 +41,7 @@ void mysmb_objects_step_red_paratroopas(struct mysmb_game *game);
 void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);
 void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game);
+void mysmb_objects_check_bloober_stomp(struct mysmb_game *game);
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $ddcd HandlePowerUpCollision state effect. */
