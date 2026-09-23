@@ -167,6 +167,10 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u8 speed;
     mysmb_u8 fraction;
     mysmb_u8 integer;
+    mysmb_u8 x;
+    mysmb_u8 row;
+    mysmb_u16 address;
+    mysmb_u8 tile;
 
     if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
         (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
@@ -234,6 +238,21 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         carry = game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U;
         game->ram[MYSMB_FIREBALL_PAGE + slot] =
             (mysmb_u8)(game->ram[MYSMB_FIREBALL_PAGE + slot] + page_delta + carry);
+        if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
+            x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
+            row = (mysmb_u8)(((game->ram[MYSMB_FIREBALL_Y + slot] + 8U) & 0xf0U) - 0x20U);
+            address = (mysmb_u16)(((game->ram[MYSMB_FIREBALL_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
+            tile = address < 0x0800U ? game->ram[address] : 0U;
+            if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
+                if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U || game->ram[MYSMB_FIREBALL_BOUNCE + slot] != 0U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
+                else {
+                    game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 0xfdU;
+                    game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 1U;
+                    game->ram[MYSMB_FIREBALL_Y + slot] &= 0xf8U;
+                }
+            }
+            else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
+        }
     }
 }
 /* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object
