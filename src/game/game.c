@@ -323,6 +323,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_power_up(game);
         mysmb_objects_check_power_up_collision(game);
         mysmb_objects_step_normal_enemies(game);
+        mysmb_objects_step_enemy_collisions(game);
         mysmb_objects_check_hazard_enemy_collision(game);
         mysmb_objects_check_bullet_bill_stomp(game);
         mysmb_objects_check_bloober_stomp(game);

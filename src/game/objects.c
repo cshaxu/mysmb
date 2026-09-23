@@ -86,6 +86,8 @@ enum {
     MYSMB_STOMP_CHAIN_COUNTER = 0x0484U,
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
+    MYSMB_SHELL_CHAIN_COUNTER = 0x0125U,
+    MYSMB_AREA_TYPE = 0x074eU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
     MYSMB_LAKITU_REAPPEAR_TIMER = 0x06d1U,
     MYSMB_FRENZY_ENEMY_TIMER = 0x078fU,
@@ -154,6 +156,8 @@ static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot);
 static void mysmb_objects_handle_fireball_enemy_collision(struct mysmb_game *game,
                                                            mysmb_u8 enemy_slot);
+static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
+                                          mysmb_u8 enemy_slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
 
@@ -1159,6 +1163,74 @@ void mysmb_objects_step_bloobers(struct mysmb_game *game)
     }
 }
 
+/* ROM $dcfd EnemiesCollision/ProcEnemyCollisions for the five regular
+ * enemy slots.  The power-up/vine slot remains excluded by the source loop. */
+void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
+{
+    mysmb_u8 first;
+    mysmb_u8 second;
+    mysmb_u16 first_world;
+    mysmb_u16 second_world;
+    mysmb_u16 screen_world;
+    mysmb_u16 first_box;
+    mysmb_u16 second_box;
+
+    if (((mysmb_u8)game->frame_number & 1U) == 0U || game->ram[MYSMB_AREA_TYPE] == 0U) return;
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    for (first = 1U; first < 5U; ++first) {
+        if (game->ram[MYSMB_ENEMY_FLAG + first] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + first] >= 0x15U ||
+            game->ram[MYSMB_ENEMY_ID + first] == 13U ||
+            game->ram[MYSMB_ENEMY_ID + first] == 17U) continue;
+        first_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + first] << 8U) |
+                                  game->ram[MYSMB_ENEMY_X + first]);
+        if (first_world < screen_world || (mysmb_u16)(first_world - screen_world) >= 0x100U) continue;
+        first_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + first * 4U);
+        mysmb_objects_set_bounding_box(game, first_box,
+            game->ram[MYSMB_ENEMY_BOUND_BOX + first],
+            (mysmb_u8)(first_world - screen_world), game->ram[MYSMB_ENEMY_Y + first]);
+        for (second = 0U; second < first; ++second) {
+            if (game->ram[MYSMB_ENEMY_FLAG + second] == 0U ||
+                game->ram[MYSMB_ENEMY_ID + second] >= 0x15U ||
+                game->ram[MYSMB_ENEMY_ID + second] == 13U ||
+                game->ram[MYSMB_ENEMY_ID + second] == 17U) continue;
+            second_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + second] << 8U) |
+                                       game->ram[MYSMB_ENEMY_X + second]);
+            if (second_world < screen_world || (mysmb_u16)(second_world - screen_world) >= 0x100U) continue;
+            second_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + second * 4U);
+            mysmb_objects_set_bounding_box(game, second_box,
+                game->ram[MYSMB_ENEMY_BOUND_BOX + second],
+                (mysmb_u8)(second_world - screen_world), game->ram[MYSMB_ENEMY_Y + second]);
+            if (mysmb_objects_boxes_collide(game, first_box, second_box) == 0U ||
+                (game->ram[MYSMB_ENEMY_STATE + first] & 0x20U) != 0U ||
+                (game->ram[MYSMB_ENEMY_STATE + second] & 0x20U) != 0U) continue;
+            if (game->ram[MYSMB_ENEMY_STATE + first] >= 6U &&
+                game->ram[MYSMB_ENEMY_ID + first] != 5U) {
+                mysmb_objects_defeat_by_shell(game, second);
+                mysmb_objects_setup_floatey_number(game, second,
+                    (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + first] + 4U));
+                game->ram[MYSMB_SHELL_CHAIN_COUNTER + first]++;
+            }
+            else if (game->ram[MYSMB_ENEMY_STATE + second] >= 6U &&
+                     game->ram[MYSMB_ENEMY_ID + second] != 5U) {
+                mysmb_objects_defeat_by_shell(game, first);
+                mysmb_objects_setup_floatey_number(game, first,
+                    (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + second] + 4U));
+                game->ram[MYSMB_SHELL_CHAIN_COUNTER + second]++;
+            }
+            else {
+                game->ram[MYSMB_ENEMY_X_SPEED + first] =
+                    (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + first]);
+                game->ram[MYSMB_ENEMY_X_SPEED + second] =
+                    (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + second]);
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + first] ^= 3U;
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + second] ^= 3U;
+            }
+        }
+    }
+}
+
 /* ROM $bb28 SetHiMax/ImposeGravitySprObj, expressed against the translated
  * per-slot arrays.  MoveD_EnemyVertically supplies $3d for defeated enemies
  * and $20 for Spinies while they are eggs. */
@@ -1828,6 +1900,19 @@ static void mysmb_objects_handle_fireball_enemy_collision(struct mysmb_game *gam
         (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
     score = id == 5U ? 6U : (id == 0U ? 1U : 2U);
     mysmb_objects_setup_floatey_number(game, enemy_slot, score);
+}
+
+/* ROM $d7a9 ShellOrBlockDefeat, excluding audio. */
+static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
+                                          mysmb_u8 enemy_slot)
+{
+    if (game->ram[MYSMB_ENEMY_ID + enemy_slot] == 13U) game->ram[MYSMB_ENEMY_Y + enemy_slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] + 0x18U);
+    game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfdU;
+    game->ram[MYSMB_ENEMY_Y_DUMMY + enemy_slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
+    game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
+        (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
 }
 
 /* ROM $dc96 MoveObjectHorizontally for the separate misc-object arrays. */
