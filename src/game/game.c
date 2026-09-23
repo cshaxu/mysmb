@@ -265,6 +265,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     game->frame_number++;
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
+    mysmb_objects_step_blocks(game);
     mysmb_objects_apply_block_replacements(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {

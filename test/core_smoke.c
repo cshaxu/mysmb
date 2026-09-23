@@ -500,5 +500,17 @@ int main(void)
     game.ram[0x03ecU] = 1U;
     game.ram[0x0524U] = 0U;
     mysmb_objects_apply_block_replacements(&game);
-    return game.ram[0x0524U] == 0U && game.ram[0x03ecU] == 1U ? 0 : 1;
+    if (game.ram[0x0524U] != 0U || game.ram[0x03ecU] != 1U) return 1;
+    game.ram[0x0301U] = 0U;
+    game.ram[0x0026U] = 0x11U;
+    game.ram[0x00beU] = 1U;
+    game.ram[0x00d7U] = 0x20U;
+    game.ram[0x00a8U] = 0xfcU;
+    game.ram[0x0420U] = 0U;
+    game.ram[0x043cU] = 0U;
+    game.ram[0x03ecU] = 0U;
+    for (index = 0U; index < 64U && game.ram[0x0026U] != 0U; ++index) {
+        mysmb_objects_step_blocks(&game);
+    }
+    return game.ram[0x0026U] == 0U && game.ram[0x03ecU] == 1U ? 0 : 1;
 }
