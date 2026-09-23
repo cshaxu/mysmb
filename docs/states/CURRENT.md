@@ -14,9 +14,9 @@ M1 T4 S1 is admitted to display the native title state in the local Win32 build.
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not introduce a CPU, PPU, APU, instruction decoder, or generic memory bus. |
 | Reference Baseline | T3 `417780b`; owner-local ROM; native title state; title CHR page `$1000-$1fff`; public sources remain local research references only. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
-| Files And ABI Surface | Win32 platform renderer and local-only target wiring; no game-layer Windows dependency. |
+| Files And ABI Surface | Win32 platform renderer, local-only target wiring, and optional owner-local OpenNT C90 core-compile target; no game-layer Windows dependency. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
-| Verification | Build x64 owner-local Win32 target with embedded ignored artifacts; run all project tests; verify the normal target still configures without `MYSMB_ROM_PATH`. |
+| Verification | Build x64 owner-local Win32 target with embedded ignored artifacts; run all project tests; verify the normal target still configures without `MYSMB_ROM_PATH`; compile `src/game/game.c` with OpenNT `/AL /c` through an owner-local compiler path. |
 | Expected Markers | Conditional local Win32 target linkage and native 2bpp title renderer exist without protected material in Git. |
 | Asset Needs | Owner-local ROM only for extraction verification; no ROM-derived payload enters tracked files. |
 | Reporting Requirements | Report target containment, native rendering inputs, build/test results, and visual-validation gap if any. |
