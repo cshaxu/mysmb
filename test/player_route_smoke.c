@@ -93,6 +93,25 @@ int main(void)
     if (game.ram[0x0709U] != game.ram[0x070aU]) {
         return 1;
     }
+    game.ram[0x001dU] = 2U;
+    game.ram[0x0709U] = 0x20U;
+    game.ram[0x070aU] = 0x28U;
+    game.ram[0x009fU] = 1U;
+    game.ram[0x0433U] = 0U;
+    game.ram[0x0416U] = 0U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0709U] != 0x28U || game.ram[0x0433U] != 0x28U) {
+        return 1;
+    }
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0709U] = 0x20U;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x0433U] = 0U;
+    game.ram[0x0416U] = 0U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0709U] != 0x28U || game.ram[0x0433U] != 0x28U) {
+        return 1;
+    }
     game.ram[0x001dU] = 3U;
     game.ram[0x0490U] = MYSMB_BUTTON_UP;
     game.ram[0x000cU] = 0U;

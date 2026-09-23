@@ -489,16 +489,25 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     }
     mysmb_player_update_scroll(game);
     if (game->ram[MYSMB_PLAYER_STATE] != 0U) {
-        /* JumpSwimSub switches to the fall force after a released A button
-         * has carried the player beyond the minimum jump height. */
-        a_held = (mysmb_u8)(a_b & game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] &
-                             MYSMB_BUTTON_A);
-        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U && a_held == 0U) {
-            jump_height = (mysmb_u8)(game->ram[MYSMB_JUMP_ORIGIN_Y] -
-                                      game->ram[MYSMB_PLAYER_Y]);
-            if (jump_height >= game->ram[MYSMB_DIFF_HALT_JUMP]) {
-                game->ram[MYSMB_VERTICAL_FORCE] =
-                    game->ram[MYSMB_VERTICAL_FORCE_DOWN];
+        if (game->ram[MYSMB_PLAYER_STATE] == 2U ||
+            game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
+            /* FallingSub and JumpSwimSub's non-rising branch both select
+             * the downward force before vertical movement. */
+            game->ram[MYSMB_VERTICAL_FORCE] =
+                game->ram[MYSMB_VERTICAL_FORCE_DOWN];
+        }
+        else {
+            /* JumpSwimSub switches after a released A button has carried
+             * the player beyond the minimum jump height. */
+            a_held = (mysmb_u8)(a_b & game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] &
+                                 MYSMB_BUTTON_A);
+            if (a_held == 0U) {
+                jump_height = (mysmb_u8)(game->ram[MYSMB_JUMP_ORIGIN_Y] -
+                                          game->ram[MYSMB_PLAYER_Y]);
+                if (jump_height >= game->ram[MYSMB_DIFF_HALT_JUMP]) {
+                    game->ram[MYSMB_VERTICAL_FORCE] =
+                        game->ram[MYSMB_VERTICAL_FORCE_DOWN];
+                }
             }
         }
         if (game->ram[MYSMB_SWIMMING] != 0U) {
