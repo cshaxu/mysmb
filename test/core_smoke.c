@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/area.h"
+#include "game/player.h"
 
 int main(void)
 {
@@ -38,6 +39,22 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    game.ram[0x0057U] = 0x11U;
+    game.ram[0x0086U] = 0xfeU;
+    game.ram[0x006dU] = 2U;
+    game.ram[0x0705U] = 0xf0U;
+    mysmb_player_move_horizontally(&game);
+    if (game.ram[0x0086U] != 0U || game.ram[0x006dU] != 3U ||
+        game.ram[0x0705U] != 0U) {
+        return 1;
+    }
+    game.ram[0x0057U] = 0xf0U;
+    game.ram[0x0086U] = 0U;
+    game.ram[0x006dU] = 3U;
+    mysmb_player_move_horizontally(&game);
+    if (game.ram[0x0086U] != 0xffU || game.ram[0x006dU] != 2U) {
+        return 1;
+    }
     game.ram[0x075fU] = 0U;
     game.ram[0x0760U] = 0U;
     if (mysmb_area_load_pointers(&game, &area_source) == 0U ||
