@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/area.h"
 
 int main(void)
 {
@@ -6,13 +7,38 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     struct mysmb_checkpoint checkpoint;
+    struct mysmb_area_source area_source;
+    static mysmb_u8 area_prg[0x2000U];
     const mysmb_u8 title_commands[] = {
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
         0x20U, 0x21U, 0xc2U, 0x33U, 0x00U
     };
     unsigned int index;
 
+    for (index = 0U; index < sizeof(area_prg); ++index) {
+        area_prg[index] = 0U;
+    }
+    area_prg[0x1cb4U] = 2U;
+    area_prg[0x1cbeU] = 0x45U;
+    area_prg[0x1ce2U] = 0U;
+    area_prg[0x1ce9U] = 0x34U;
+    area_prg[0x1d0bU] = 0x12U;
+    area_prg[0x1d2aU] = 0U;
+    area_prg[0x1d31U] = 0x78U;
+    area_prg[0x1d53U] = 0x56U;
+    area_source.prg = area_prg;
+    area_source.prg_size = (mysmb_u16)sizeof(area_prg);
+
     mysmb_game_initialize(&game);
+    game.ram[0x075fU] = 0U;
+    game.ram[0x0760U] = 0U;
+    if (mysmb_area_load_pointers(&game, &area_source) == 0U ||
+        game.ram[0x0750U] != 0x45U || game.ram[0x074eU] != 2U ||
+        game.ram[0x074fU] != 5U || game.ram[0x00e9U] != 0x34U ||
+        game.ram[0x00eaU] != 0x12U || game.ram[0x00e7U] != 0x78U ||
+        game.ram[0x00e8U] != 0x56U) {
+        return 1;
+    }
     input.buttons = 0U;
     for (index = 0U; index < 120U; ++index) {
         mysmb_game_tick(&game, &input, &frame);
