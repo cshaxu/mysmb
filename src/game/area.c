@@ -181,10 +181,10 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
         if (world > (mysmb_u16)(right + 0x30U)) return 0U;
         if (world < right) return 0U;
-        /* ROM InitEnemyFrenzy routes object ID $12 to
-         * LakituAndSpinyHandler; it is a controller, never a Spiny slot. */
-        if ((second & 0x3fU) == 18U) {
-            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
+        /* ROM InitEnemyFrenzy routes IDs $12 and $14 to persistent frenzy
+         * controllers.  Neither byte denotes an ordinary stream enemy. */
+        if ((second & 0x3fU) == 18U || (second & 0x3fU) == 20U) {
+            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = (mysmb_u8)(second & 0x3fU);
             game->ram[MYSMB_ENEMY_DATA_OFFSET] =
                 (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
