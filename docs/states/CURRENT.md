@@ -2,38 +2,44 @@
 
 ## Current Work
 
-M1 T2 S2 is admitted to implement the platform foundation.
+M1 T2 S3 is admitted to close the platform foundation.
 
-## M1 T2 S2 Packet
+## M1 T2 S3 Packet
 
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | Continuation |
-| Admission And Approval | Owner approved M1 admission and requested a Win32-first, 16-bit-compatible C foundation on 2026-09-22; S1 task breakdown committed at `e6a6859`. |
-| Objective | Implement the shared C90 core, native Win32 window/event loop, fixed 60 Hz host contract, CMake target split, and a non-ROM visible smoke scene. |
-| Non-goals | Do not inspect or import ROMs, disassemblies, third-party translations, generated code, or assets; do not add a NES CPU/PPU/APU emulator or DOS VGA implementation. |
-| Reference Baseline | M1 S1 plan `e6a6859`; current C90 skeleton; OpenNT and NTVDM64 worktrees may be inspected but are not linked or imported. |
+| Admission And Approval | Owner approved M1 admission and requested a Win32-first, 16-bit-compatible C foundation on 2026-09-22; S2 implementation committed at `62e2d22`. |
+| Objective | Review and close the platform foundation, retaining its concrete OpenNT tool-availability finding for the later DOS adapter work. |
+| Non-goals | Do not add ROM logic, third-party source, DOS VGA code, or a NES emulator. |
+| Reference Baseline | T2 S2 implementation `62e2d22`; x64 and x86 MinGW build trees. |
 | Candidate Proposal | [M1 Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) |
-| Files And ABI Surface | Root CMake; `src/game`; `src/platform/win32`; target-specific mains; core smoke test; current packet. |
-| Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, and Coding rules. Source policy: no protected input enters S2. |
-| Verification | Configure/build core and Win32 targets with current x64 compiler; run headless core smoke; inspect include/dependency graph; run documentation gate; identify a real OpenNT 16-bit compiler command or report that specific missing host prerequisite. |
-| Expected Markers | `mysmb_game` core, `mysmb_win32` window target, neutral input/frame/render contracts, 60 Hz scheduler, and smoke scene exist. |
-| Asset Needs | None. The later source-pipeline candidate alone requires owner-local ROM and reviewed source admission. |
-| Reporting Requirements | Report x64 build/run evidence, any x86/OpenNT availability finding, dependency-boundary review, and absence of ROM/third-party material. |
-| Stop Conditions | Stop for owner direction only if the shared core cannot compile without platform headers or if an available OpenNT compiler cannot produce a C90 large-model object for it. |
-| Exit Criteria | Win32 target compiles; headless core smoke proves the 60 Hz frame path; game code has no platform include; and OpenNT tool availability is either proven with a compile or identified as a concrete missing prerequisite. |
+| Files And ABI Surface | Current status and T2 history record only. |
+| Applicable Rules | Task Reading Set; Execution and Documentation rules. |
+| Verification | Re-run documentation governance, x64/x86 builds, CTest smoke, PE architecture inspection, and source-boundary search. |
+| Expected Markers | T2 history records `mysmb_game`, `mysmb_win32`, x86/x64 PE evidence, and the unbuilt OpenNT compiler prerequisite. |
+| Asset Needs | None. |
+| Reporting Requirements | Preserve truthful build, test, architecture, and OpenNT availability results. |
+| Stop Conditions | Stop for owner direction only if closure evidence contradicts the S2 implementation. |
+| Exit Criteria | T2 history is complete and the next queued source-pipeline task can be admitted. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
-| Similar-Issue Sweep | Inspect all production sources and CMake targets for host API includes or platform macros outside platform roots; fix each in this foundation scope. |
+| Similar-Issue Sweep | Completed in S2: `rg` found the sole `windows.h` include under `src/platform/win32`; no platform macro occurs beneath `src/game`. |
 
 ## Current Technical Baseline
 
-- `mysmb` is a C90 skeleton only. The first runnable target is a native Win32 window built as x86 and x64. The core must remain compatible with the later 25 MHz 486SX real-mode DOS target, MS-DOS 5.0 or later, with DOS 3.3 desired. The OpenNT 16-bit C toolchain checks DOS compatibility; NTVDM64 is not a DOS graphics validation platform. No ROM, disassembly, translated game logic, native renderer, oracle, or ROM-derived executable is admitted.
+- `mysmb_game` is a C90 non-ROM foundation with a neutral frame/input contract. `mysmb_win32` builds x86 and x64 PE windows around that core; `mysmb_dos16_core` is its host-free DOS compiler input. The OpenNT source checkout has no discovered built compiler binary, so its large-model compile remains a local-host prerequisite. No ROM, disassembly, translated game logic, native renderer, oracle, or ROM-derived executable is admitted.
 
 ## Recent M0 Closures
 
 | Task | Compact result |
 | --- | --- |
 | T1 | M0 governance, source boundary, MTSP lifecycle, roadmap, and local documentation gate established at `3771fbc`; no ROM or third-party material admitted. [History](../history/M0-T1-governance-and-translation-plan.md). |
+
+## Recent M1 Closures
+
+| Task | Compact result |
+| --- | --- |
+| T2 | Shared C90 core, x64/x86 Win32 window builds, and DOS16 compiler input established at `62e2d22`; both core smoke tests pass. [History](../history/M1-T2-win32-platform-foundation.md). |
 
 ## Recent Governance
 
