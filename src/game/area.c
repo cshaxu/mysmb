@@ -222,6 +222,10 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
         }
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 7U) {
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+        }
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
         game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
         return 1U;

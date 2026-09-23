@@ -27,6 +27,7 @@ enum {
     MYSMB_PLAYER_Y = 0x00ceU,
     MYSMB_PLAYER_Y_HIGH = 0x00b5U,
     MYSMB_PLAYER_Y_SPEED = 0x009fU
+    ,MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U
 };
 
 enum {
@@ -807,6 +808,101 @@ void mysmb_objects_step_podoboos(struct mysmb_game *game)
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        }
+    }
+}
+
+/* ROM $b004-$b09a MoveBloober and ProcSwimmingB.  BlooberMoveSpeed aliases
+ * Enemy_X_Speed, BlooberMoveCounter aliases Enemy_Y_Speed, and its vertical
+ * swim amount aliases Enemy_Y_MoveForce in the original RAM layout. */
+void mysmb_objects_step_bloobers(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 random_value;
+    mysmb_u8 counter;
+    mysmb_u8 old_value;
+    mysmb_u8 speed;
+    mysmb_u8 direction;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 7U) continue;
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
+            old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+                (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+            speed = game->ram[MYSMB_ENEMY_Y_SPEED + slot];
+            old_value = game->ram[MYSMB_ENEMY_Y + slot];
+            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value + speed);
+            if (speed >= 0x80U) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
+            if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
+            old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x0fU);
+            if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value) game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
+            if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 2U &&
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 2U;
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+            }
+            continue;
+        }
+        random_value = (mysmb_u8)(game->ram[0x07a8U + slot] &
+            (game->ram[0x06ccU] != 0U ? 3U : 0x3fU));
+        if (random_value == 0U) {
+            if ((slot & 1U) != 0U) {
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
+                    game->ram[MYSMB_PLAYER_MOVING_DIRECTION];
+            }
+            else {
+                direction = 2U;
+                if (game->ram[MYSMB_ENEMY_PAGE + slot] < game->ram[MYSMB_PLAYER_PAGE] ||
+                    (game->ram[MYSMB_ENEMY_PAGE + slot] == game->ram[MYSMB_PLAYER_PAGE] &&
+                     game->ram[MYSMB_ENEMY_X + slot] < game->ram[MYSMB_PLAYER_X])) direction = 1U;
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = direction;
+            }
+        }
+        counter = game->ram[MYSMB_ENEMY_Y_SPEED + slot];
+        if ((counter & 2U) != 0U) {
+            if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] != 0U) {
+                if (((mysmb_u8)game->frame_number & 1U) == 0U) game->ram[MYSMB_ENEMY_Y + slot]++;
+            }
+            else if ((mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x10U) >=
+                     game->ram[MYSMB_PLAYER_Y]) {
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            }
+        }
+        else if (((mysmb_u8)game->frame_number & 7U) == 0U) {
+            if ((counter & 1U) == 0U) {
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot]++;
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+                if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] == 2U) game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
+            }
+            else {
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot]--;
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+                if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] == 0U) {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
+                    game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 2U;
+                }
+            }
+        }
+        speed = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+        if (game->ram[MYSMB_ENEMY_Y + slot] >= speed &&
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - speed) >= 0x20U) {
+            game->ram[MYSMB_ENEMY_Y + slot] =
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - speed);
+        }
+        speed = game->ram[MYSMB_ENEMY_X_SPEED + slot];
+        if (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U) {
+            old_value = game->ram[MYSMB_ENEMY_X + slot];
+            game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_value + speed);
+            if (game->ram[MYSMB_ENEMY_X + slot] < old_value) game->ram[MYSMB_ENEMY_PAGE + slot]++;
+        }
+        else {
+            old_value = game->ram[MYSMB_ENEMY_X + slot];
+            game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_value - speed);
+            if (old_value < speed) game->ram[MYSMB_ENEMY_PAGE + slot]--;
         }
     }
 }
