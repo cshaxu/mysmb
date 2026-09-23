@@ -149,6 +149,9 @@ static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
 static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
                                                  mysmb_u8 slot);
+static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
+static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
+                                              mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
 
@@ -1395,6 +1398,7 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
             mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
             continue;
         }
+        mysmb_objects_step_hammer_terrain(game, slot);
         if (game->ram[0x003cU + slot] != 0U) {
             game->ram[0x003cU + slot]--;
             if (game->ram[MYSMB_HAMMER_THROWING_TIMER + slot] == 0U) {
@@ -1421,6 +1425,7 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
             game->ram[0x078aU + slot] = jump_choice != 0U ? 0x37U : 0x20U;
             game->ram[0x003cU + slot] = (mysmb_u8)(game->ram[0x07a8U + slot] | 0xc0U);
         }
+        if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
         game->ram[MYSMB_ENEMY_X_SPEED + slot] =
             ((mysmb_u8)game->frame_number & 0x40U) != 0U ? 0xfcU : 4U;
         player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
@@ -1431,6 +1436,11 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
             enemy_world < player_world ? 1U : 2U;
         if (enemy_world >= player_world && game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
+        }
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U ||
+            (((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) != 0U) &&
+             ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) < 3U))) {
+            mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
         }
         mysmb_objects_move_enemy_horizontally(game, slot);
     }
@@ -1844,6 +1854,44 @@ static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
         game->ram[MYSMB_MISC_Y_SPEED + slot] = maximum_speed;
         game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
     }
+}
+
+/* The admitted background buffer stores these pass-through metatiles as in
+ * EnemyToBGCollisionDet. */
+static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
+{
+    return tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
+           tile != 0x5fU && tile != 0x60U;
+}
+
+/* ROM $d9bd HammerBroBGColl.  This is deliberately run before the Hammer
+ * movement route, matching RunNormalEnemies' EnemyToBGCollisionDet order. */
+static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
+                                              mysmb_u8 slot)
+{
+    mysmb_u8 x;
+    mysmb_u8 row;
+    mysmb_u16 address;
+    mysmb_u8 tile;
+
+    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
+        game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
+    x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
+    row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
+    address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ?
+                            0x05d0U : 0x0500U) + (x >> 4U) + row);
+    tile = address < 0x0800U ? game->ram[address] : 0U;
+    if (mysmb_objects_is_solid_terrain(tile) == 0U) {
+        game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
+        return;
+    }
+    if (game->ram[0x078aU + slot] != 0U) return;
+    game->ram[MYSMB_ENEMY_STATE + slot] &= 0x88U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y + slot] =
+        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
 }
 
 /* ROM $ba81 SpawnHammerObj.  The source's six regular enemy slots make the

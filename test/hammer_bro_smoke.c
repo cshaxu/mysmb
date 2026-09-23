@@ -8,29 +8,44 @@ int main(void)
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 5U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x80U;
     game.ram[0x00cfU] = 0x60U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x0796U] = 1U;
     game.ram[0x07a8U] = 0U;
+    game.ram[0x003cU] = 0U;
+    game.ram[0x078aU] = 0U;
+    game.ram[0x0747U] = 0U;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    game.ram[0x0558U] = 1U;
     mysmb_objects_step_hammer_bros(&game);
-    if (game.ram[0x001eU] != 1U || game.ram[0x00a0U] != 0xfdU ||
-        game.ram[0x078aU] != 0x20U || game.ram[0x003cU] != 0xc0U ||
-        game.ram[0x0046U] != 2U || game.ram[0x0058U] != 4U) return 1;
+    if (game.ram[0x001eU] != 1U) return 11;
+    if (game.ram[0x00a0U] != 0xfdU) return 12;
+    if (game.ram[0x078aU] != 0x20U) return 13;
+    if (game.ram[0x003cU] != 0xc0U) return 14;
+    if (game.ram[0x0046U] != 2U) return 15;
+    if (game.ram[0x0058U] != 4U) return 16;
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 5U;
+    game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x80U;
     game.ram[0x00cfU] = 0x60U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x003cU] = 1U;
     game.ram[0x07a8U] = 1U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x078aU] = 0x20U;
     game.ram[0x0747U] = 0U;
     game.ram[0x0013U] = 0U;
     game.ram[0x0014U] = 0U;
+    game.ram[0x0558U] = 1U;
     mysmb_objects_step_hammer_bros(&game);
     if (game.ram[0x03a2U] != 0x30U || game.ram[0x001eU] != 8U ||
         game.ram[0x002bU] != 0x90U || game.ram[0x06afU] != 0U ||
