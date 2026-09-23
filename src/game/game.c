@@ -90,6 +90,9 @@ void mysmb_game_initialize(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
+    game->ram[0x0754U] = 1U;
+    game->ram[0x075aU] = 2U;
+    game->ram[0x0761U] = 2U;
     game->frame_number = 0UL;
 }
 

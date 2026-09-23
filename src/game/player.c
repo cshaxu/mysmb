@@ -74,7 +74,7 @@ enum {
 
 enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 
-enum { MYSMB_PLAYER_SIZE = 0x0756U };
+enum { MYSMB_PLAYER_SIZE = 0x0754U };
 
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
@@ -258,6 +258,40 @@ void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
         game->ram[MYSMB_PLAYER_STATE] == 0U && (up_down & 0x04U) != 0U ? 4U : 0U;
 }
 
+/* Translation of the X_Physics parameter route in ROM $b50b-$b5cb.
+ * Running-timer and animation ownership are translated separately. */
+void mysmb_player_configure_horizontal(struct mysmb_game *game)
+{
+    static const mysmb_u8 max_left[3] = { 0xd8U, 0xe8U, 0xf0U };
+    static const mysmb_u8 max_right[3] = { 0x28U, 0x18U, 0x10U };
+    static const mysmb_u8 friction[3] = { 0xe4U, 0x98U, 0xd0U };
+    mysmb_u8 speed_index;
+    mysmb_u8 friction_index;
+    mysmb_u8 friction_value;
+
+    speed_index = 1U;
+    friction_index = 1U;
+    if (game->ram[MYSMB_PLAYER_STATE] != 0U &&
+        game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x19U) {
+        speed_index = 0U;
+        friction_index = 0U;
+    }
+    else if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U ||
+             game->ram[0x0703U] != 0U) {
+        friction_index = 2U;
+    }
+    game->ram[MYSMB_MAX_LEFT] = max_left[speed_index];
+    game->ram[MYSMB_MAX_RIGHT] = max_right[speed_index];
+    friction_value = friction[friction_index];
+    game->ram[MYSMB_FRICTION_LOW] = friction_value;
+    game->ram[MYSMB_FRICTION_HIGH] = 0U;
+    if (game->ram[MYSMB_PLAYER_FACING] !=
+        game->ram[MYSMB_PLAYER_MOVING_DIRECTION]) {
+        game->ram[MYSMB_FRICTION_HIGH] = (mysmb_u8)(friction_value >> 7U);
+        game->ram[MYSMB_FRICTION_LOW] = (mysmb_u8)(friction_value << 1U);
+    }
+}
+
 /* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
 {
@@ -269,6 +303,9 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {
         mysmb_player_start_jump(game, 0U);
     }
+    game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
+        game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
+    mysmb_player_configure_horizontal(game);
     if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
         game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
         mysmb_player_impose_friction(game);
@@ -284,8 +321,6 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     }
     (void)mysmb_player_check_head(game);
     (void)mysmb_player_check_feet(game);
-    game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
-        game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
     (void)mysmb_player_check_sides(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
