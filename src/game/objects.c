@@ -996,6 +996,50 @@ void mysmb_objects_step_red_paratroopas(struct mysmb_game *game)
     }
 }
 
+/* ROM $afe2 MoveFlyGreenPTroopa through $b003 MoveWithXMCntrs.  The original
+ * aliases the two X movement counters to Enemy_Y_Speed and Enemy_X_Speed. */
+void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 primary;
+    mysmb_u8 secondary;
+    mysmb_u8 effective_speed;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 16U) continue;
+        primary = game->ram[MYSMB_ENEMY_Y_SPEED + slot];
+        secondary = game->ram[MYSMB_ENEMY_X_SPEED + slot];
+        if (((mysmb_u8)game->frame_number & 3U) == 0U) {
+            if ((primary & 1U) == 0U) {
+                if (secondary == 0x13U) primary++;
+                else secondary++;
+            }
+            else {
+                if (secondary == 0U) primary++;
+                else secondary--;
+            }
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = primary;
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = secondary;
+        }
+        if ((primary & 2U) != 0U) {
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+            effective_speed = secondary;
+        }
+        else {
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+            effective_speed = (mysmb_u8)(0U - secondary);
+        }
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = effective_speed;
+        mysmb_objects_move_enemy_horizontally(game, slot);
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = secondary;
+        if (((mysmb_u8)game->frame_number & 3U) == 0U) {
+            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] +
+                (((mysmb_u8)game->frame_number & 0x40U) != 0U ? 1U : 0xffU));
+        }
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */
