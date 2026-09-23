@@ -452,9 +452,13 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
         mysmb_player_configure_climb(game);
         mysmb_player_climb(game);
-        (void)mysmb_player_check_head(game);
-        (void)mysmb_player_check_feet(game);
-        (void)mysmb_player_check_sides(game);
+        if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] >= 4U &&
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
+            (void)mysmb_player_check_head(game);
+            (void)mysmb_player_check_feet(game);
+            (void)mysmb_player_check_sides(game);
+        }
         game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
         return;
     }
@@ -537,18 +541,24 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
         game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
     mysmb_player_update_scroll(game);
-    /* PlayerBGCollision establishes falling/swimming before its on-screen
-     * guard, so a player leaving the visible vertical range cannot retain
-     * the ground state. */
-    if (game->ram[MYSMB_SWIMMING] != 0U) {
-        game->ram[MYSMB_PLAYER_STATE] = 1U;
+    /* PlayerBGCollision is disabled for the control/pipe routines below 4,
+     * player death (0x0b), and explicit collision suppression. */
+    if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] >= 4U &&
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
+        /* PlayerBGCollision establishes falling/swimming before its
+         * on-screen guard, so an eligible player leaving the visible
+         * vertical range cannot retain the ground state. */
+        if (game->ram[MYSMB_SWIMMING] != 0U) {
+            game->ram[MYSMB_PLAYER_STATE] = 1U;
+        }
+        else if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
+            game->ram[MYSMB_PLAYER_STATE] = 2U;
+        }
+        (void)mysmb_player_check_head(game);
+        (void)mysmb_player_check_feet(game);
+        (void)mysmb_player_check_sides(game);
     }
-    else if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
-        game->ram[MYSMB_PLAYER_STATE] = 2U;
-    }
-    (void)mysmb_player_check_head(game);
-    (void)mysmb_player_check_feet(game);
-    (void)mysmb_player_check_sides(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 

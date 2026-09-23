@@ -10,6 +10,7 @@ int main(void)
     mysmb_game_initialize(&game);
     game.ram[0x0754U] = 1U;
     game.ram[0x074eU] = 1U;
+    game.ram[0x000eU] = 8U;
     game.ram[0x0490U] = 0xffU;
     game.ram[0x0033U] = 1U;
     game.ram[0x006dU] = 1U;
@@ -160,6 +161,9 @@ int main(void)
     game.ram[0x000eU] = 1U;
     mysmb_player_step_auto_climb(&game);
     if (game.ram[0x001dU] != 3U || game.ram[0x00ceU] != 0x2fU) {
+        return 1;
+    }
+    if (game.ram[0x0490U] != MYSMB_BUTTON_UP) {
         return 1;
     }
     game.ram[0x00b5U] = 0U;
