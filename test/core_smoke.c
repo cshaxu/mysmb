@@ -10,6 +10,7 @@ int main(void)
     struct mysmb_checkpoint checkpoint;
     struct mysmb_area_source area_source;
     struct mysmb_area_object area_object;
+    struct mysmb_player_terrain terrain;
     static mysmb_u8 area_prg[0x2000U];
     const mysmb_u8 title_commands[] = {
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
@@ -39,6 +40,14 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x05e2U] = 0x61U;
+    if (mysmb_player_query_block(&game, 0U, 0U, 0U, &terrain) == 0U ||
+        terrain.metatile != 0x61U || terrain.contact_low_nibble != 0U) {
+        return 1;
+    }
     game.ram[0x0490U] = 3U;
     game.ram[0x0450U] = 0xf0U;
     game.ram[0x0456U] = 4U;

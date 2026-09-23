@@ -17,4 +17,14 @@ void mysmb_player_impose_friction(struct mysmb_game *game);
 void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons);
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 
+struct mysmb_player_terrain {
+    mysmb_u8 metatile;
+    mysmb_u8 contact_low_nibble;
+};
+/* ROM BlockBufferCollision/GetBlockBufferAddr coordinate query. */
+mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
+                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
+                                  mysmb_u8 horizontal_contact,
+                                  struct mysmb_player_terrain *terrain);
+
 #endif

@@ -250,3 +250,32 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     }
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
+
+/* Translation of BlockBufferCollision address construction for player offset zero. */
+mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
+                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
+                                  mysmb_u8 horizontal_contact,
+                                  struct mysmb_player_terrain *terrain)
+{
+    mysmb_u8 x;
+    mysmb_u8 page;
+    mysmb_u8 column;
+    mysmb_u8 y;
+    mysmb_u16 address;
+
+    if (terrain == 0) return 0U;
+    x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] + x_adder);
+    page = (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] +
+                      (x < game->ram[MYSMB_PLAYER_X] ? 1U : 0U));
+    column = (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U));
+    y = (mysmb_u8)(((game->ram[MYSMB_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
+    if ((game->ram[MYSMB_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
+    address = (mysmb_u16)((column & 0x10U) != 0U ? 0x05d0U : 0x0500U);
+    address = (mysmb_u16)(address + (column & 0x0fU) + y);
+    if (address >= 0x0800U) return 0U;
+    terrain->metatile = game->ram[address];
+    terrain->contact_low_nibble = horizontal_contact != 0U ?
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] & 0x0fU) :
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0x0fU);
+    return 1U;
+}
