@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/area.h"
+#include "game/audio.h"
 #include "game/player.h"
 #include "game/objects.h"
 
@@ -466,6 +467,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
+    mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
     mysmb_game_title_step(game, input);

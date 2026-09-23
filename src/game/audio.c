@@ -1,0 +1,195 @@
+#include "game/audio.h"
+
+enum {
+    MYSMB_RAM_SQUARE1_BUFFER = 0x00f1U,
+    MYSMB_RAM_SQUARE2_BUFFER = 0x00f2U,
+    MYSMB_RAM_NOISE_BUFFER = 0x00f3U,
+    MYSMB_RAM_AREA_MUSIC_BUFFER = 0x00f4U,
+    MYSMB_RAM_EVENT_MUSIC_BUFFER = 0x07b1U,
+    MYSMB_RAM_PAUSE_BUFFER = 0x07b2U,
+    MYSMB_RAM_SQUARE1_LENGTH = 0x07bbU,
+    MYSMB_RAM_SQUARE2_LENGTH = 0x07bdU,
+    MYSMB_RAM_SFX_SECONDARY = 0x07beU,
+    MYSMB_RAM_NOISE_LENGTH = 0x07bfU,
+    MYSMB_RAM_AREA_MUSIC_ALT = 0x07c5U,
+    MYSMB_RAM_PAUSE_MODE = 0x07c6U,
+    MYSMB_RAM_PAUSE_QUEUE = 0x00faU,
+    MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU,
+    MYSMB_RAM_EVENT_MUSIC_QUEUE = 0x00fcU,
+    MYSMB_RAM_NOISE_QUEUE = 0x00fdU,
+    MYSMB_RAM_SQUARE2_QUEUE = 0x00feU,
+    MYSMB_RAM_SQUARE1_QUEUE = 0x00ffU,
+    MYSMB_RAM_OPERATING_MODE = 0x0770U,
+    MYSMB_EVENT_DEATH_MUSIC = 0x01U,
+    MYSMB_SFX_EXTRA_LIFE = 0x40U
+};
+
+static mysmb_u8 mysmb_audio_first_square1(mysmb_u8 queue)
+{
+    if ((queue & 0x80U) != 0U) return 0x80U;
+    if ((queue & 0x01U) != 0U) return 0x01U;
+    if ((queue & 0x02U) != 0U) return 0x02U;
+    if ((queue & 0x04U) != 0U) return 0x04U;
+    if ((queue & 0x08U) != 0U) return 0x08U;
+    if ((queue & 0x10U) != 0U) return 0x10U;
+    if ((queue & 0x20U) != 0U) return 0x20U;
+    return 0x40U;
+}
+
+static mysmb_u8 mysmb_audio_square1_length(mysmb_u8 effect)
+{
+    if (effect == 0x04U || effect == 0x08U) return 0x0eU;
+    if (effect == 0x10U) return 0x2fU;
+    if (effect == 0x20U) return 0x05U;
+    if (effect == 0x40U) return 0x40U;
+    if (effect == 0x02U) return 0x0aU;
+    return 0x28U;
+}
+
+static mysmb_u8 mysmb_audio_first_square2(mysmb_u8 queue)
+{
+    if ((queue & 0x80U) != 0U) return 0x80U;
+    if ((queue & 0x01U) != 0U) return 0x01U;
+    if ((queue & 0x02U) != 0U) return 0x02U;
+    if ((queue & 0x04U) != 0U) return 0x04U;
+    if ((queue & 0x08U) != 0U) return 0x08U;
+    if ((queue & 0x10U) != 0U) return 0x10U;
+    if ((queue & 0x20U) != 0U) return 0x20U;
+    return 0x40U;
+}
+
+static mysmb_u8 mysmb_audio_square2_length(mysmb_u8 effect)
+{
+    if (effect == 0x80U) return 0x38U;
+    if (effect == 0x01U) return 0x35U;
+    if (effect == 0x02U) return 0x20U;
+    if (effect == 0x04U) return 0x40U;
+    if (effect == 0x08U) return 0x20U;
+    if (effect == 0x10U) return 0x06U;
+    if (effect == 0x20U) return 0x36U;
+    return 0x30U;
+}
+
+static void mysmb_audio_step_square1(struct mysmb_game *game)
+{
+    mysmb_u8 queue;
+    mysmb_u8 effect;
+
+    queue = game->ram[MYSMB_RAM_SQUARE1_QUEUE];
+    if (queue != 0U) {
+        effect = mysmb_audio_first_square1(queue);
+        /* The ROM retains the complete bitset in the buffer.  The selected
+         * bit decides this frame's effect, while the raw command remains
+         * observable to a future audio adapter. */
+        game->ram[MYSMB_RAM_SQUARE1_BUFFER] = queue;
+        game->ram[MYSMB_RAM_SQUARE1_LENGTH] = mysmb_audio_square1_length(effect);
+    }
+    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) return;
+    game->ram[MYSMB_RAM_SQUARE1_LENGTH]--;
+    if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0U) {
+        game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
+    }
+}
+
+static void mysmb_audio_step_square2(struct mysmb_game *game)
+{
+    mysmb_u8 queue;
+    mysmb_u8 effect;
+
+    if ((game->ram[MYSMB_RAM_SQUARE2_BUFFER] & MYSMB_SFX_EXTRA_LIFE) == 0U) {
+        queue = game->ram[MYSMB_RAM_SQUARE2_QUEUE];
+        if (queue != 0U) {
+            effect = mysmb_audio_first_square2(queue);
+            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = queue;
+            game->ram[MYSMB_RAM_SQUARE2_LENGTH] = mysmb_audio_square2_length(effect);
+            game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+        }
+    }
+    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) return;
+    game->ram[MYSMB_RAM_SQUARE2_LENGTH]--;
+    if (game->ram[MYSMB_RAM_SQUARE2_LENGTH] == 0U) {
+        game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
+    }
+}
+
+static void mysmb_audio_step_noise(struct mysmb_game *game)
+{
+    mysmb_u8 queue;
+
+    queue = game->ram[MYSMB_RAM_NOISE_QUEUE];
+    if (queue != 0U) {
+        if ((queue & 0x01U) != 0U) {
+            game->ram[MYSMB_RAM_NOISE_BUFFER] = queue;
+            game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x20U;
+        }
+        else {
+            game->ram[MYSMB_RAM_NOISE_BUFFER] = queue;
+            game->ram[MYSMB_RAM_NOISE_LENGTH] = 0x40U;
+        }
+    }
+    if (game->ram[MYSMB_RAM_NOISE_BUFFER] == 0U) return;
+    game->ram[MYSMB_RAM_NOISE_LENGTH]--;
+    if (game->ram[MYSMB_RAM_NOISE_LENGTH] == 0U) {
+        game->ram[MYSMB_RAM_NOISE_BUFFER] = 0U;
+    }
+}
+
+static void mysmb_audio_step_music(struct mysmb_game *game)
+{
+    mysmb_u8 event;
+    mysmb_u8 area;
+
+    event = game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE];
+    area = game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE];
+    if (event != 0U) {
+        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = event;
+        if (event == MYSMB_EVENT_DEATH_MUSIC) {
+            game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
+            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
+        }
+        game->ram[MYSMB_RAM_AREA_MUSIC_ALT] = game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER];
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
+    }
+    else if (area != 0U) {
+        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
+    }
+}
+
+void mysmb_audio_step(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_OPERATING_MODE] == 0U) return;
+    if (game->ram[MYSMB_RAM_PAUSE_MODE] != 0U ||
+        game->ram[MYSMB_RAM_PAUSE_QUEUE] == 1U) {
+        if (game->ram[MYSMB_RAM_PAUSE_BUFFER] == 0U &&
+            game->ram[MYSMB_RAM_PAUSE_QUEUE] != 0U) {
+            game->ram[MYSMB_RAM_PAUSE_BUFFER] = game->ram[MYSMB_RAM_PAUSE_QUEUE];
+            game->ram[MYSMB_RAM_PAUSE_MODE] = game->ram[MYSMB_RAM_PAUSE_QUEUE];
+            game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
+            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
+            game->ram[MYSMB_RAM_NOISE_BUFFER] = 0U;
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH] = 0x2aU;
+        }
+        else if (game->ram[MYSMB_RAM_PAUSE_BUFFER] != 0U) {
+            game->ram[MYSMB_RAM_SQUARE1_LENGTH]--;
+            if (game->ram[MYSMB_RAM_SQUARE1_LENGTH] == 0U) {
+                if (game->ram[MYSMB_RAM_PAUSE_BUFFER] == 2U) {
+                    game->ram[MYSMB_RAM_PAUSE_MODE] = 0U;
+                }
+                game->ram[MYSMB_RAM_PAUSE_BUFFER] = 0U;
+            }
+        }
+    }
+    else {
+        mysmb_audio_step_square1(game);
+        mysmb_audio_step_square2(game);
+        mysmb_audio_step_noise(game);
+        mysmb_audio_step_music(game);
+    }
+    game->ram[MYSMB_RAM_SQUARE1_QUEUE] = 0U;
+    game->ram[MYSMB_RAM_SQUARE2_QUEUE] = 0U;
+    game->ram[MYSMB_RAM_NOISE_QUEUE] = 0U;
+    game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE] = 0U;
+    game->ram[MYSMB_RAM_PAUSE_QUEUE] = 0U;
+}
