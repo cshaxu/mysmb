@@ -50,6 +50,13 @@ enum {
     MYSMB_AREA_BACKGROUND_COLOR = 0x0744U
 };
 
+enum {
+    MYSMB_AREA_PARSER_BEHIND = 0x0729U,
+    MYSMB_AREA_OBJECT_PAGE = 0x072aU,
+    MYSMB_AREA_OBJECT_PAGE_SELECT = 0x072bU,
+    MYSMB_AREA_DATA_OFFSET = 0x072cU
+};
+
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
 void mysmb_area_initialize(struct mysmb_game *game)
@@ -154,5 +161,52 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
     address = (mysmb_u16)(address + 2U);
     game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
     game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));
+    return 1U;
+}
+
+/* Translation of the selection/control portion of ROM $9508-$958f.
+ * Each successful call consumes one two-byte stream entry. */
+mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
+                                const struct mysmb_area_source *source,
+                                struct mysmb_area_object *object)
+{
+    mysmb_u16 address;
+    mysmb_u8 first;
+    mysmb_u8 second;
+
+    if (source == 0 || source->prg == 0 || object == 0 ||
+        game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) {
+        return 0U;
+    }
+    address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8) |
+                           game->ram[MYSMB_AREA_DATA_LOW]);
+    address = (mysmb_u16)(address + game->ram[MYSMB_AREA_DATA_OFFSET]);
+    if (address >= source->prg_size || (mysmb_u16)(source->prg_size - address) < 2U) {
+        return 0U;
+    }
+    first = source->prg[address];
+    if (first == 0xfdU) {
+        return 0U;
+    }
+    second = source->prg[(mysmb_u16)(address + 1U)];
+    if ((second & 0x80U) != 0U && game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT]++;
+        game->ram[MYSMB_AREA_OBJECT_PAGE]++;
+    }
+    object->first = first;
+    object->second = second;
+    object->is_page_control = 0U;
+    if ((first & 0x0fU) == 0x0dU && (second & 0x40U) == 0U &&
+        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+        game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
+        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT]++;
+        object->is_page_control = 1U;
+    }
+    object->page = game->ram[MYSMB_AREA_OBJECT_PAGE];
+    object->behind_current_page = object->page < game->ram[MYSMB_AREA_CURRENT_PAGE] ? 1U : 0U;
+    game->ram[MYSMB_AREA_PARSER_BEHIND] = object->behind_current_page;
+    game->ram[MYSMB_AREA_DATA_OFFSET] =
+        (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
     return 1U;
 }

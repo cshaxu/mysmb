@@ -18,4 +18,17 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
 mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source);
 
+struct mysmb_area_object {
+    mysmb_u8 first;
+    mysmb_u8 second;
+    mysmb_u8 page;
+    mysmb_u8 behind_current_page;
+    mysmb_u8 is_page_control;
+};
+
+/* ROM $9508-$958f stream-selection subset; object decoding remains separate. */
+mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
+                                const struct mysmb_area_source *source,
+                                struct mysmb_area_object *object);
+
 #endif

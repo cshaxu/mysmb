@@ -8,6 +8,7 @@ int main(void)
     struct mysmb_frame frame;
     struct mysmb_checkpoint checkpoint;
     struct mysmb_area_source area_source;
+    struct mysmb_area_object area_object;
     static mysmb_u8 area_prg[0x2000U];
     const mysmb_u8 title_commands[] = {
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
@@ -28,6 +29,11 @@ int main(void)
     area_prg[0x1d53U] = 0x56U;
     area_prg[0x1f00U] = 0xedU;
     area_prg[0x1f01U] = 0xb9U;
+    area_prg[0x1f02U] = 0x1dU;
+    area_prg[0x1f03U] = 0x03U;
+    area_prg[0x1f04U] = 0x22U;
+    area_prg[0x1f05U] = 0x81U;
+    area_prg[0x1f06U] = 0xfdU;
     area_source.prg = area_prg;
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
@@ -49,6 +55,15 @@ int main(void)
         game.ram[0x0727U] != 9U || game.ram[0x0742U] != 3U ||
         game.ram[0x0743U] != 0U || game.ram[0x0733U] != 2U ||
         game.ram[0x00e7U] != 2U || game.ram[0x00e8U] != 0x9fU) {
+        return 1;
+    }
+    if (mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
+        area_object.is_page_control != 1U || area_object.page != 3U ||
+        game.ram[0x072cU] != 2U ||
+        mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
+        area_object.page != 4U || area_object.behind_current_page != 0U ||
+        game.ram[0x072cU] != 4U ||
+        mysmb_area_next_object(&game, &area_source, &area_object) != 0U) {
         return 1;
     }
     input.buttons = 0U;
