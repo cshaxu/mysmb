@@ -2,26 +2,26 @@
 
 ## Current Work
 
-M1 T3 S4 is admitted to apply the title stream to the native name-table state.
+M1 T4 S1 is admitted to display the native title state in the local Win32 build.
 
-## M1 T3 S4 Packet
+## M1 T4 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation |
-| Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 S2 established original reset state at `f187bf2`. |
-| Objective | Translate the name-table portion of `$8e92-$8eec` as a title-stream-specific C90 writer and verify it consumes the ignored local title unit without a runtime ROM reader or generic PPU. |
+| Identifier Mode | New |
+| Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 produced the local title-data and native name-table path at `417780b`. |
+| Objective | Build the owner-local Win32 title target from native game state, title command data, and CHR graphics; preserve a ROM-free foundation target. |
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not introduce a CPU, PPU, APU, instruction decoder, or generic memory bus. |
-| Reference Baseline | T3 S3 `c5da0e3`; owner-local ROM; byte-verified title command format and `$013a` input extent; public sources remain local research references only. |
+| Reference Baseline | T3 `417780b`; owner-local ROM; native title state; title CHR page `$1000-$1fff`; public sources remain local research references only. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
-| Files And ABI Surface | `src/game/` title command writer, local-only title integration smoke, root CMake integration, and project-owned command-format test. |
+| Files And ABI Surface | Win32 platform renderer and local-only target wiring; no game-layer Windows dependency. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
-| Verification | Unit-test sequential, vertical, and repeated title writes; build the ignored local title unit and run an integration smoke against the native name tables. |
-| Expected Markers | Native ROM-specific title command writer and local title integration smoke exist without protected material in Git. |
+| Verification | Build x64 owner-local Win32 target with embedded ignored artifacts; run all project tests; verify the normal target still configures without `MYSMB_ROM_PATH`. |
+| Expected Markers | Conditional local Win32 target linkage and native 2bpp title renderer exist without protected material in Git. |
 | Asset Needs | Owner-local ROM only for extraction verification; no ROM-derived payload enters tracked files. |
-| Reporting Requirements | Report command format, state ownership, local-output containment, and build/test result. |
-| Stop Conditions | Stop for owner direction if title transfer requires a generic PPU abstraction or an uncontained ROM dependency. |
-| Exit Criteria | The local title stream reaches native name-table state through verified C90 logic, without runtime instruction interpretation or a generic PPU. |
+| Reporting Requirements | Report target containment, native rendering inputs, build/test results, and visual-validation gap if any. |
+| Stop Conditions | Stop for owner direction if the renderer requires game-layer host APIs, a generic PPU, or a distributable ROM-embedded executable. |
+| Exit Criteria | A local Win32 executable builds from native title state and local CHR/title data while the default build remains ROM-free. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
 | Similar-Issue Sweep | Search all tracked files for ROM paths, ROM extensions, generated output references, and third-party listing text; retain only policy-approved neutral tooling and ignore rules. |
 

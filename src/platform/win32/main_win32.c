@@ -2,6 +2,11 @@
 
 #include "game/game.h"
 
+#ifdef MYSMB_LOCAL_TITLE
+#include "smb1_local_rom.h"
+#include "smb1_local_title.h"
+#endif
+
 #define MYSMB_CLASS_NAME "MySMBWindow"
 #define MYSMB_SCALE 2
 
@@ -9,6 +14,58 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
+
+#ifdef MYSMB_LOCAL_TITLE
+static COLORREF mysmb_win32_title_color(unsigned char palette, unsigned char color)
+{
+    static const COLORREF colors[4] = {
+        RGB(92, 148, 252), RGB(0, 0, 0), RGB(228, 92, 16), RGB(252, 188, 60)
+    };
+    return colors[(palette + color) & 3U];
+}
+
+static void mysmb_win32_draw_title(HDC dc)
+{
+    unsigned int row;
+    unsigned int column;
+    unsigned int pixel_y;
+    unsigned int pixel_x;
+    unsigned int tile;
+    unsigned int attribute;
+    unsigned char low;
+    unsigned char high;
+    unsigned char color;
+    unsigned char palette;
+
+    for (row = 0U; row < 30U; ++row) {
+        for (column = 0U; column < 32U; ++column) {
+            tile = g_game.name_table[0][row * 32U + column];
+            attribute = g_game.name_table[0][0x03c0U + (row / 4U) * 8U + column / 4U];
+            palette = (unsigned char)((attribute >> (((row & 2U) << 1U) + (column & 2U))) & 3U);
+            for (pixel_y = 0U; pixel_y < 8U; ++pixel_y) {
+                low = mysmb_local_chr[0x1000U + tile * 16U + pixel_y];
+                high = mysmb_local_chr[0x1000U + tile * 16U + pixel_y + 8U];
+                for (pixel_x = 0U; pixel_x < 8U; ++pixel_x) {
+                    color = (unsigned char)(((low >> (7U - pixel_x)) & 1U) |
+                                            (((high >> (7U - pixel_x)) & 1U) << 1U));
+                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE),
+                             (int)((row * 8U + pixel_y) * MYSMB_SCALE),
+                             mysmb_win32_title_color(palette, color));
+                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE + 1U),
+                             (int)((row * 8U + pixel_y) * MYSMB_SCALE),
+                             mysmb_win32_title_color(palette, color));
+                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE),
+                             (int)((row * 8U + pixel_y) * MYSMB_SCALE + 1U),
+                             mysmb_win32_title_color(palette, color));
+                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE + 1U),
+                             (int)((row * 8U + pixel_y) * MYSMB_SCALE + 1U),
+                             mysmb_win32_title_color(palette, color));
+                }
+            }
+        }
+    }
+}
+#endif
 
 static void mysmb_win32_paint(HWND window)
 {
@@ -20,6 +77,9 @@ static void mysmb_win32_paint(HWND window)
     RECT rect;
 
     dc = BeginPaint(window, &paint);
+#ifdef MYSMB_LOCAL_TITLE
+    mysmb_win32_draw_title(dc);
+#else
     sky = CreateSolidBrush(RGB(92, 148, 252));
     ground = CreateSolidBrush(RGB(0, 168, 0));
     actor = CreateSolidBrush(g_frame.start_pressed != 0U ? RGB(255, 216, 0) : RGB(220, 48, 32));
@@ -42,6 +102,7 @@ static void mysmb_win32_paint(HWND window)
     DeleteObject(actor);
     DeleteObject(ground);
     DeleteObject(sky);
+#endif
     EndPaint(window, &paint);
 }
 
@@ -110,6 +171,12 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     }
 
     mysmb_game_initialize(&g_game);
+#ifdef MYSMB_LOCAL_TITLE
+    if (mysmb_game_apply_title_commands(&g_game, mysmb_local_title_data,
+                                        MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U) {
+        return 1;
+    }
+#endif
     ZeroMemory(&g_frame, sizeof(g_frame));
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
