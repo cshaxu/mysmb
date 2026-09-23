@@ -338,7 +338,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state == 0U) return;
     if ((state & 0x80U) != 0U) {
-        if (game->ram[MYSMB_TIMER_CONTROL] != 0U &&
+        if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
             (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
              game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
             mysmb_objects_move_enemy_horizontally(game, slot);

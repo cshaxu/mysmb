@@ -692,13 +692,13 @@ int main(void)
     if (game.ram[0x0039U] != 1U) return 1;
     mysmb_objects_start_power_up(&game, 0U, 2U);
     if (game.ram[0x0039U] != 2U) return 1;
-    game.ram[0x0747U] = 0xffU;
+    game.ram[0x0747U] = 0U;
     game.ram[0x0023U] = 0x80U;
     game.ram[0x0039U] = 0U;
     game.ram[0x008cU] = 0x40U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x008cU] != 0x41U) return 1;
-    game.ram[0x0747U] = 0xffU;
+    game.ram[0x0747U] = 0U;
     game.ram[0x0023U] = 0x80U;
     game.ram[0x0039U] = 0U;
     game.ram[0x0073U] = 0U;
