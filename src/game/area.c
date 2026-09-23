@@ -76,6 +76,8 @@ enum {
     MYSMB_ENEMY_Y_DUMMY = 0x0417U,
     MYSMB_ENEMY_Y_FORCE = 0x0434U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
+    MYSMB_FIREBAR_SPIN_SPEED = 0x0388U,
+    MYSMB_FIREBAR_SPIN_DIRECTION = 0x0034U,
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
@@ -271,6 +273,23 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
             game->ram[0x06d1U] = 0U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        }
+        /* ROM InitShortFirebar/InitLongFirebar.  The long variant's
+         * duplicate slot is OAM-only; its physical balls share this anchor. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] >= 27U &&
+            game->ram[MYSMB_ENEMY_ID + slot] <= 31U) {
+            static const mysmb_u8 spin_speed[5] = { 0x28U, 0x38U, 0x28U, 0x38U, 0x28U };
+            static const mysmb_u8 spin_direction[5] = { 0U, 0U, 0x10U, 0x10U, 0U };
+            mysmb_u8 old_x = game->ram[MYSMB_ENEMY_X + slot];
+            mysmb_u8 index = (mysmb_u8)(game->ram[MYSMB_ENEMY_ID + slot] - 27U);
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[MYSMB_FIREBAR_SPIN_SPEED + slot] = spin_speed[index];
+            game->ram[MYSMB_FIREBAR_SPIN_DIRECTION + slot] = spin_direction[index];
+            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 4U);
+            game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
+            if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
         }
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);

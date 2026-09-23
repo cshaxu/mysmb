@@ -45,6 +45,8 @@ void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game);
 void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game);
 /* ROM InitEnemyFrenzy/InitFlyingCheepCheep. */
 void mysmb_objects_step_flying_cheep_frenzy(struct mysmb_game *game);
+/* ROM InitShortFirebar/InitLongFirebar and ProcFirebar, sans drawing. */
+void mysmb_objects_step_firebars(struct mysmb_game *game);
 /* ROM MoveLakitu/PlayerLakituDiff and MoveD_EnemyVertically. */
 void mysmb_objects_step_lakitus(struct mysmb_game *game);
 /* ROM LakituAndSpinyHandler, using the active EnemyFrenzyBuffer request. */
