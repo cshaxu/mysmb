@@ -4,6 +4,7 @@ generated/
 
 # Build products.
 build/
+build*/
 out/
 *.exe
 *.obj
