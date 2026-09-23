@@ -668,6 +668,43 @@ void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
     }
 }
 
+/* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant.  Its dedicated arrays
+ * alias the normal enemy X-speed/Y-speed and vertical-physics arrays. */
+void mysmb_objects_step_piranha_plants(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 distance;
+    mysmb_u8 target;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 13U ||
+            game->ram[MYSMB_ENEMY_STATE + slot] != 0U ||
+            game->ram[0x078aU + slot] != 0U) continue;
+        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] < 0x80U) {
+            distance = game->ram[MYSMB_ENEMY_X + slot] > game->ram[MYSMB_PLAYER_X] ?
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - game->ram[MYSMB_PLAYER_X]) :
+                (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_ENEMY_X + slot]);
+            if (distance < 0x21U) continue;
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
+        }
+        if (((mysmb_u8)game->frame_number & 1U) == 0U ||
+            game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
+        target = game->ram[MYSMB_ENEMY_X_SPEED + slot] >= 0x80U ?
+            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] :
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+        game->ram[MYSMB_ENEMY_Y + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+        if (game->ram[MYSMB_ENEMY_Y + slot] == target) {
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[0x078aU + slot] = 0x40U;
+        }
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */

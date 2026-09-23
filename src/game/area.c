@@ -71,6 +71,7 @@ enum {
     MYSMB_ENEMY_Y_SPEED = 0x00a0U,
     MYSMB_ENEMY_Y_HIGH = 0x00b6U,
     MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_Y_DUMMY = 0x0417U,
     MYSMB_ENEMY_Y_FORCE = 0x0434U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_PRIMARY_HARD = 0x076aU,
@@ -193,6 +194,14 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
         if (game->ram[MYSMB_ENEMY_ID + slot] == 8U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+        }
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 13U) {
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 1U;
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
         }
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
