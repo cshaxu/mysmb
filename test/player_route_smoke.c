@@ -22,8 +22,8 @@ int main(void)
     game.ram[0x0754U] = 0U;
     mysmb_player_latch_input(&game,
                              (mysmb_u8)(MYSMB_BUTTON_DOWN | MYSMB_BUTTON_RIGHT));
-    if (game.ram[0x0714U] != MYSMB_BUTTON_DOWN ||
-        game.ram[0x000cU] != MYSMB_BUTTON_RIGHT) {
+    if (game.ram[0x0714U] != 0U || game.ram[0x000bU] != 0U ||
+        game.ram[0x000cU] != 0U) {
         return 1;
     }
     game.ram[0x0754U] = 1U;
