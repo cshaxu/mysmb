@@ -40,5 +40,7 @@ void mysmb_player_update_scroll(struct mysmb_game *game);
 void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 moving_direction);
 /* ROM $dd5e-$de46 side samples, restricted to solid metatile blocking. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game);
+/* ROM $dcba-$dcf5 head sample, restricted to solid-metatile velocity stop. */
+mysmb_u8 mysmb_player_check_head(struct mysmb_game *game);
 
 #endif

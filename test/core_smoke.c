@@ -105,6 +105,18 @@ int main(void)
         game.ram[0x0057U] != 0U || game.ram[0x0490U] != 0xfeU) {
         return 1;
     }
+    game.ram[0x0756U] = 1U;
+    game.ram[0x0714U] = 0U;
+    game.ram[0x0704U] = 0U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x05f2U] = 0x61U;
+    if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U) {
+        return 1;
+    }
     game.ram[0x009fU] = 2U;
     game.ram[0x00ceU] = 0x3fU;
     game.ram[0x0433U] = 0x80U;

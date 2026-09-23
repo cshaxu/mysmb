@@ -282,6 +282,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE_DOWN],
                                     game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
     }
+    (void)mysmb_player_check_head(game);
     (void)mysmb_player_check_feet(game);
     game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
         game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
@@ -525,4 +526,43 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
         }
     }
     return 0U;
+}
+
+/* Translation of ROM $dcba-$dcf5 HeadChk through NYSpd.  Question blocks,
+ * breakable bricks, coins, and sound commands remain with block ownership. */
+mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
+{
+    static const mysmb_u8 x_adder[3] = { 8U, 8U, 8U };
+    static const mysmb_u8 y_adder[3] = { 4U, 2U, 0x12U };
+    static const mysmb_u8 upper_extent[2] = { 0x20U, 0x10U };
+    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
+    struct mysmb_player_terrain terrain;
+    mysmb_u8 adder_index;
+    mysmb_u8 extent_index;
+    mysmb_u8 group;
+
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U) return 0U;
+    extent_index = game->ram[MYSMB_PLAYER_SIZE] != 0U ? 1U : 0U;
+    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) extent_index = 1U;
+    if (game->ram[MYSMB_PLAYER_Y] < upper_extent[extent_index] ||
+        game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U ||
+        (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
+        return 0U;
+    }
+    adder_index = 0U;
+    if (game->ram[MYSMB_PLAYER_SIZE] != 0U ||
+        game->ram[MYSMB_PLAYER_CROUCHING] != 0U) {
+        adder_index = 2U;
+    }
+    else if (game->ram[MYSMB_SWIMMING] != 0U) {
+        adder_index = 1U;
+    }
+    if (mysmb_player_query_block(game, x_adder[adder_index], y_adder[adder_index],
+                                 0U, &terrain) == 0U || terrain.metatile == 0U) {
+        return 0U;
+    }
+    group = (mysmb_u8)(terrain.metatile >> 6U);
+    if (terrain.metatile < solid_upper[group]) return 0U;
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
+    return 1U;
 }
