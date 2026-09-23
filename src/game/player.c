@@ -57,7 +57,9 @@ enum {
     MYSMB_PLAYER_ATTRIBUTES = 0x03c4U,
     MYSMB_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_PLAYER_ENTRANCE = 0x0710U,
+    MYSMB_DISABLE_COLLISION = 0x0716U,
     MYSMB_ALT_ENTRANCE = 0x0752U,
+    MYSMB_JOYPAD_OVERRIDE = 0x0758U,
     MYSMB_HALF_WAY_PAGE = 0x075bU,
     MYSMB_AREA_TYPE = 0x074eU
 };
@@ -838,18 +840,26 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
 }
 
-/* Translation of the normal PlayerEntrance branch for headers other than
- * side-pipe entry. */
+/* Translation of ROM $b069-$b0e5 PlayerEntrance after InitializeArea.  The
+ * object-owned alternate entrance 3 waits for vine growth; normal and pipe
+ * entrances complete here, while alternate entrance 2 rises from its pipe
+ * until the original PlayerRdy threshold. */
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_ALT_ENTRANCE] != 0U ||
+    if (game->ram[MYSMB_ALT_ENTRANCE] == 3U ||
         game->ram[MYSMB_PLAYER_ENTRANCE] == 6U ||
         game->ram[MYSMB_PLAYER_ENTRANCE] == 7U) {
         return;
     }
+    if (game->ram[MYSMB_ALT_ENTRANCE] == 2U) {
+        game->ram[MYSMB_PLAYER_Y]--;
+        if (game->ram[MYSMB_PLAYER_Y] >= 0x91U) return;
+    }
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
     game->ram[MYSMB_PLAYER_FACING] = 1U;
     game->ram[MYSMB_ALT_ENTRANCE] = 0U;
+    game->ram[MYSMB_DISABLE_COLLISION] = 0U;
+    game->ram[MYSMB_JOYPAD_OVERRIDE] = 0U;
 }
 
 /* Translation of ScrollHandler's ChkPOffscr through KeepOnscr. */
