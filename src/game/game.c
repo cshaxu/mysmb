@@ -336,6 +336,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_jumping_paratroopas(game);
         mysmb_objects_step_red_paratroopas(game);
         mysmb_objects_step_flying_green_paratroopas(game);
+        mysmb_objects_step_lakitu_frenzy(game);
         mysmb_objects_step_lakitus(game);
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_floatey_numbers(game);

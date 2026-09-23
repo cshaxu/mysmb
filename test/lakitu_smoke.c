@@ -7,7 +7,7 @@ int main(void)
 
     /* PlayerLakituDiff: 64 pixels is capped at $3c, then $15-$10 yields
      * $05.  Direction zero selects the negated horizontal speed. */
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
     game.ram[0x006eU] = 0U;
@@ -21,7 +21,7 @@ int main(void)
         game.ram[0x0401U] != 0xb0U) return 1;
 
     /* Beyond $3c, a left-moving Lakitu decelerates before reversing. */
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
     game.ram[0x006eU] = 1U;
@@ -32,10 +32,10 @@ int main(void)
     game.ram[0x0086U] = 0x10U;
     mysmb_objects_step_lakitus(&game);
     if (game.ram[0x0058U] != 1U || game.ram[0x00a0U] != 1U ||
-        game.ram[0x0087U] != 0U) return 1;
+        game.ram[0x0087U] != 0U) return 2;
 
     /* A stomped Lakitu follows MoveD_EnemyVertically's $3d gravity route. */
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
     game.ram[0x001eU] = 0x20U;
@@ -43,17 +43,46 @@ int main(void)
     game.ram[0x00cfU] = 0x70U;
     mysmb_objects_step_lakitus(&game);
     if (game.ram[0x00cfU] != 0x70U || game.ram[0x0417U] != 0U ||
-        game.ram[0x0434U] != 0x3dU) return 1;
+        game.ram[0x0434U] != 0x3dU) return 3;
+
+    /* The active frenzy request recreates Lakitu after seven timer periods. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x06cbU] = 18U;
+    game.ram[0x06d1U] = 6U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0xf0U;
+    mysmb_objects_step_lakitu_frenzy(&game);
+    if (game.ram[0x078fU] != 0x80U || game.ram[0x06d1U] != 0U ||
+        game.ram[0x0013U] != 1U || game.ram[0x001aU] != 17U ||
+        game.ram[0x0072U] != 2U || game.ram[0x008bU] != 0x10U ||
+        game.ram[0x00d3U] != 0x20U) return 4;
+
+    /* A normal Lakitu creates an egg in a free ordinary slot. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x06cbU] = 18U;
+    game.ram[0x00ceU] = 0x2cU;
+    game.ram[0x0013U] = 1U;
+    game.ram[0x001aU] = 17U;
+    game.ram[0x0022U] = 0U;
+    game.ram[0x0072U] = 1U;
+    game.ram[0x008bU] = 0x90U;
+    game.ram[0x00d3U] = 0x80U;
+    mysmb_objects_step_lakitu_frenzy(&game);
+    if (game.ram[0x0012U] != 1U || game.ram[0x0019U] != 18U ||
+        game.ram[0x0021U] != 5U || game.ram[0x0071U] != 1U ||
+        game.ram[0x008aU] != 0x90U || game.ram[0x00d2U] != 0x78U ||
+        game.ram[0x00a3U] != 0xfdU || game.ram[0x0049U] != 2U) return 1;
 
     /* Spiny eggs select the same routine with the original $20 force. */
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 18U;
     game.ram[0x001eU] = 5U;
     game.ram[0x00b6U] = 1U;
     game.ram[0x00cfU] = 0x70U;
+    game.ram[0x00a0U] = 0xfdU;
     mysmb_objects_step_spiny_eggs(&game);
-    if (game.ram[0x00cfU] != 0x70U || game.ram[0x0417U] != 0U ||
-        game.ram[0x0434U] != 0x20U) return 1;
+    if (game.ram[0x00cfU] != 0x6dU || game.ram[0x0417U] != 0U ||
+        game.ram[0x0434U] != 0x20U) return 6;
     return 0;
 }

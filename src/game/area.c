@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/objects.h"
 
 enum {
     MYSMB_AREA_SCREEN_LEFT_PAGE = 0x071aU,
@@ -76,7 +77,8 @@ enum {
     MYSMB_ENEMY_Y_FORCE = 0x0434U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_PRIMARY_HARD = 0x076aU,
-    MYSMB_SECONDARY_HARD = 0x06ccU
+    MYSMB_SECONDARY_HARD = 0x06ccU,
+    MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
 };
 
 /* Translation of ROM InitializeArea within the $92b0 area task route.
@@ -179,6 +181,15 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
         if (world > (mysmb_u16)(right + 0x30U)) return 0U;
         if (world < right) return 0U;
+        /* ROM InitEnemyFrenzy routes object ID $12 to
+         * LakituAndSpinyHandler; it is a controller, never a Spiny slot. */
+        if ((second & 0x3fU) == 18U) {
+            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
+            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
+            return 1U;
+        }
         for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
         if (slot == 5U) return 0U;
         game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];

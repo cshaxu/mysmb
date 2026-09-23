@@ -81,6 +81,10 @@ enum {
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
+    MYSMB_LAKITU_REAPPEAR_TIMER = 0x06d1U,
+    MYSMB_FRENZY_ENEMY_TIMER = 0x078fU,
+    MYSMB_SCREEN_RIGHT_PAGE = 0x071bU,
+    MYSMB_SCREEN_RIGHT_X = 0x071dU,
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_VINE_FLAG_OFFSET = 0x0398U,
     MYSMB_VINE_HEIGHT = 0x0399U,
@@ -1249,6 +1253,68 @@ void mysmb_objects_step_lakitus(struct mysmb_game *game)
         }
         mysmb_objects_move_enemy_horizontally(game, slot);
     }
+}
+
+/* ROM LakituAndSpinyHandler.  EnemyFrenzyBuffer is the persistent request
+ * produced by InitEnemyFrenzy and by a living Lakitu's MoveLakitu route. */
+void mysmb_objects_step_lakitu_frenzy(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 lakitu_slot;
+    mysmb_u8 old_x;
+
+    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 18U ||
+        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x80U;
+    lakitu_slot = 5U;
+    for (slot = 5U; slot != 0U; ) {
+        slot--;
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
+            lakitu_slot = slot;
+            break;
+        }
+    }
+    if (lakitu_slot == 5U) {
+        game->ram[MYSMB_LAKITU_REAPPEAR_TIMER]++;
+        if (game->ram[MYSMB_LAKITU_REAPPEAR_TIMER] < 7U) return;
+        for (slot = 5U; slot != 0U; ) {
+            slot--;
+            if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
+        }
+        if (slot == 0U && game->ram[MYSMB_ENEMY_FLAG] != 0U) return;
+        game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_ID + slot] = 17U;
+        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        old_x = game->ram[MYSMB_SCREEN_RIGHT_X];
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_SCREEN_RIGHT_PAGE];
+        if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
+        game->ram[MYSMB_ENEMY_Y + slot] = 0x20U;
+        game->ram[MYSMB_LAKITU_REAPPEAR_TIMER] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_PLAYER_Y] < 0x2cU ||
+        game->ram[MYSMB_ENEMY_STATE + lakitu_slot] != 0U) return;
+    for (slot = 5U; slot != 0U; ) {
+        slot--;
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
+    }
+    if (slot == 0U && game->ram[MYSMB_ENEMY_FLAG] != 0U) return;
+    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + lakitu_slot];
+    game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_ENEMY_X + lakitu_slot];
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y + slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + lakitu_slot] - 8U);
+    game->ram[MYSMB_ENEMY_ID + slot] = 18U;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 5U;
 }
 
 /* ROM $bb28 MoveD_EnemyVertically, selected by Enemy_State=$05 for eggs. */
