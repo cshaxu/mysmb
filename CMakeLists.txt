@@ -9,6 +9,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 set(MYSMB_WIN32_ARCH "host" CACHE STRING "Win32 target label: x86, x64, or host")
 set_property(CACHE MYSMB_WIN32_ARCH PROPERTY STRINGS host x86 x64)
 set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
+set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 
 add_library(mysmb_game STATIC src/game/game.c)
 target_include_directories(mysmb_game PUBLIC src)
@@ -49,6 +50,10 @@ add_test(NAME mysmb.core-smoke COMMAND mysmb_core_smoke)
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_rom_codegen.py)
+add_test(NAME mysmb.asm-index
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_asm_index.py)
+add_test(NAME mysmb.boot-codegen
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_boot_codegen.py)
 
 if(MYSMB_ROM_PATH)
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
@@ -72,4 +77,44 @@ if(MYSMB_ROM_PATH)
     )
     add_dependencies(mysmb_local_rom_data mysmb_local_rom)
     target_include_directories(mysmb_local_rom_data PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
+
+    set(MYSMB_STATIC_BOOT_DIR "${MYSMB_LOCAL_ROM_DIR}/static")
+    add_custom_command(
+        OUTPUT
+            "${MYSMB_STATIC_BOOT_DIR}/smb1_static_boot.h"
+            "${MYSMB_STATIC_BOOT_DIR}/smb1_static_boot.c"
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_boot_codegen.py
+            --rom "${MYSMB_ROM_PATH}" --output "${MYSMB_STATIC_BOOT_DIR}"
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_boot_codegen.py
+                ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_rom_codegen.py
+                "${MYSMB_ROM_PATH}"
+        VERBATIM
+    )
+    add_custom_target(mysmb_static_boot DEPENDS
+        "${MYSMB_STATIC_BOOT_DIR}/smb1_static_boot.h"
+        "${MYSMB_STATIC_BOOT_DIR}/smb1_static_boot.c"
+    )
+    add_library(mysmb_static_boot_data OBJECT
+        "${MYSMB_STATIC_BOOT_DIR}/smb1_static_boot.c"
+    )
+    add_dependencies(mysmb_static_boot_data mysmb_static_boot)
+    target_include_directories(mysmb_static_boot_data PRIVATE "${MYSMB_STATIC_BOOT_DIR}")
+
+    if(MYSMB_ASM_PATH)
+        add_custom_command(
+            OUTPUT "${MYSMB_LOCAL_ROM_DIR}/smb1_symbols.txt"
+            COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_asm_index.py
+                --rom "${MYSMB_ROM_PATH}" --asm "${MYSMB_ASM_PATH}"
+                --output "${MYSMB_LOCAL_ROM_DIR}/smb1_symbols.txt"
+            DEPENDS
+                ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_asm_index.py
+                ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_rom_codegen.py
+                "${MYSMB_ROM_PATH}" "${MYSMB_ASM_PATH}"
+            VERBATIM
+        )
+        add_custom_target(mysmb_local_symbols DEPENDS
+            "${MYSMB_LOCAL_ROM_DIR}/smb1_symbols.txt"
+        )
+        add_dependencies(mysmb_local_symbols mysmb_local_rom)
+    endif()
 endif()
