@@ -528,6 +528,15 @@ int main(void)
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x001eU] != 0U || game.ram[0x0046U] != 1U ||
         game.ram[0x0058U] != 8U) return 1;
+    game.ram[0x001eU] = 4U;
+    game.ram[0x0796U] = 1U;
+    game.ram[0x0491U] = 0U;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x0756U] = 0U;
+    game.frame_number = 0UL;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x001eU] != 0x84U || game.ram[0x0046U] != 2U ||
+        game.ram[0x0058U] != 0xd0U || game.ram[0x0110U] != 5U) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
