@@ -68,6 +68,27 @@ int main(void)
     }
     game.ram[0x074eU] = 1U;
     game.ram[0x00ceU] = 0x30U;
+    /* PlayerCtrlRoutine updates Player_MovingDir after PlayerMovementSubs.
+     * With no direction held, a leftward slide must select its friction from
+     * the stored previous direction, then publish its new direction. */
+    game.ram[0x001dU] = 0U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0057U] = 0xf0U;
+    game.ram[0x0705U] = 0U;
+    game.ram[0x0700U] = 0x10U;
+    game.ram[0x0703U] = 0U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0701U] != 0U || game.ram[0x0702U] != 0x98U ||
+        game.ram[0x0045U] != MYSMB_BUTTON_LEFT) {
+        return 1;
+    }
+    game.ram[0x001dU] = 0U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0057U] = 0U;
+    game.ram[0x0705U] = 0U;
+    game.ram[0x0700U] = 0U;
     for (index = 0U; index < 8U; ++index) {
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }
