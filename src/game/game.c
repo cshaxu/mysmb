@@ -501,6 +501,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             area_source.prg_size = game->area_prg_size;
             (void)mysmb_area_spawn_next_enemy(game, &area_source);
         }
+        /* AreaParserCore owns a two-page circular collision buffer.  The
+         * initial task prepared its lead-in; move that window before this
+         * frame's player collision reads an entering page. */
+        mysmb_area_prepare_player_pages(game, game->ram[MYSMB_RAM_PLAYER_PAGE]);
         if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
