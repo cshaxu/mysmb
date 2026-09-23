@@ -6,3 +6,13 @@
 2. [Static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) — closed in M1.
 3. [Native title-scene runtime](../proposals/m1-native-title-runtime.md) — closed in M1.
 4. [Title-scene oracle](../proposals/m1-title-oracle.md) — closed in M1; title-route equality transfers to M2.
+
+## M2 Candidates
+
+1. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — M2 T1 is admitted for title progression, deterministic input, and the first transition checkpoint.
+2. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — area bootstrap and background/object command route.
+3. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — player route and collision.
+4. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — object route: enemies, items, projectiles, timer, score, and power state.
+5. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — death, restart, warp, continue, and completion mode routes.
+6. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — neutral audio command route.
+7. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — end-to-end playable-route oracle and Win32 validation.

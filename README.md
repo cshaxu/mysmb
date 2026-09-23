@@ -6,7 +6,7 @@ then compile the shared C implementation for 16-bit, 32-bit, and 64-bit hosts.
 
 ## Start Here
 
-Project authorities, task lifecycle, and active work are in the [Documentation Guide](docs/README.md). The product is intentionally at M0: there is no admitted ROM import or game translation yet.
+Project authorities, task lifecycle, and active work are in the [Documentation Guide](docs/README.md). M2 is translating the native C game route after the M1 title foundation; owner-local ROM inputs remain outside the tracked product.
 
 ## Project Boundary
 
