@@ -173,6 +173,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u8 tile;
     mysmb_u16 fireball_world;
     mysmb_u16 screen_world;
+    mysmb_u8 enemy_slot;
 
     if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
         (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
@@ -257,7 +258,25 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         }
         fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) | game->ram[MYSMB_FIREBALL_X + slot]);
         screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) | game->ram[MYSMB_SCREEN_LEFT_X]);
-        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
+        if (((mysmb_u8)game->frame_number & 1U) == 0U &&
+            game->ram[MYSMB_FIREBALL_STATE + slot] == 1U) {
+            for (enemy_slot = 0U; enemy_slot < 5U; ++enemy_slot) {
+                if (game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U ||
+                    (game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x20U) != 0U ||
+                    game->ram[MYSMB_ENEMY_ID + enemy_slot] == 2U ||
+                    (game->ram[MYSMB_ENEMY_ID + enemy_slot] >= 0x24U &&
+                     game->ram[MYSMB_ENEMY_ID + enemy_slot] < 0x2bU)) continue;
+                if (game->ram[MYSMB_FIREBALL_PAGE + slot] == game->ram[MYSMB_ENEMY_PAGE + enemy_slot] &&
+                    game->ram[MYSMB_FIREBALL_X + slot] + 12U >= game->ram[MYSMB_ENEMY_X + enemy_slot] &&
+                    game->ram[MYSMB_FIREBALL_X + slot] <= game->ram[MYSMB_ENEMY_X + enemy_slot] + 16U &&
+                    game->ram[MYSMB_FIREBALL_Y + slot] + 8U >= game->ram[MYSMB_ENEMY_Y + enemy_slot] &&
+                    game->ram[MYSMB_FIREBALL_Y + slot] <= game->ram[MYSMB_ENEMY_Y + enemy_slot] + 24U) {
+                    game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
+                    game->ram[MYSMB_ENEMY_STATE + enemy_slot] |= 0x20U;
+                    break;
+                }
+            }
+        }        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
             game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U ||
             fireball_world < screen_world || (mysmb_u16)(fireball_world - screen_world) >= 0x100U) {
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
