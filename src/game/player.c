@@ -38,6 +38,13 @@ enum {
     MYSMB_MAX_RIGHT = 0x0456U
 };
 
+enum {
+    MYSMB_PLAYER_A_B_BUTTONS = 0x000aU,
+    MYSMB_PLAYER_UP_DOWN_BUTTONS = 0x000bU,
+    MYSMB_PLAYER_LEFT_RIGHT_BUTTONS = 0x000cU,
+    MYSMB_PLAYER_CROUCHING = 0x0714U
+};
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 void mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -196,4 +203,25 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_X_SPEED] = speed;
     game->ram[MYSMB_PLAYER_X_ABSOLUTE] = speed >= 0x80U ?
         (mysmb_u8)(0U - speed) : speed;
+}
+
+/* Translation of PlayerCtrlRoutine's input partition and ground crouch gate. */
+void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    mysmb_u8 left_right;
+    mysmb_u8 up_down;
+
+    game->ram[MYSMB_PLAYER_A_B_BUTTONS] =
+        (mysmb_u8)(buttons & (MYSMB_BUTTON_A | MYSMB_BUTTON_B));
+    left_right = (mysmb_u8)(buttons & (MYSMB_BUTTON_LEFT | MYSMB_BUTTON_RIGHT));
+    up_down = (mysmb_u8)(buttons & 0x0cU);
+    if ((up_down & 0x04U) != 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        left_right != 0U) {
+        left_right = 0U;
+        up_down = 0U;
+    }
+    game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] = left_right;
+    game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] = up_down;
+    game->ram[MYSMB_PLAYER_CROUCHING] =
+        game->ram[MYSMB_PLAYER_STATE] == 0U && (up_down & 0x04U) != 0U ? 4U : 0U;
 }
