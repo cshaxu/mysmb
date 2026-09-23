@@ -5,6 +5,7 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
+    struct mysmb_checkpoint checkpoint;
     const mysmb_u8 title_commands[] = {
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
         0x20U, 0x21U, 0xc2U, 0x33U, 0x00U
@@ -34,6 +35,10 @@ int main(void)
     if (game.ram[0x07d6U] != 0U || game.ram[0x07d7U] != 0xffU) {
         return 1;
     }
+    /* InitializeGame restores this after its partial RAM clear. */
+    game.ram[0x07a2U] = 0x18U;
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 3U;
 
     if (mysmb_game_apply_title_commands(&game, title_commands,
                                         (mysmb_u16)sizeof(title_commands)) == 0U ||
@@ -45,5 +50,15 @@ int main(void)
 
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
-    return frame.start_pressed == 1U ? 0 : 1;
+    mysmb_game_checkpoint(&game, &checkpoint);
+    if (frame.start_pressed != 1U || frame.operating_mode != 1U ||
+        frame.operating_mode_task != 0U || checkpoint.demo_timer != 0U ||
+        checkpoint.operating_mode != 1U || checkpoint.operating_mode_task != 0U ||
+        game.ram[0x0757U] != 1U || game.ram[0x075dU] != 1U ||
+        game.ram[0x0764U] != 1U) {
+        return 1;
+    }
+
+    mysmb_game_tick(&game, &input, &frame);
+    return frame.start_pressed == 0U ? 0 : 1;
 }

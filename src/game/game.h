@@ -9,9 +9,13 @@ typedef unsigned long mysmb_u32;
 enum {
     MYSMB_SCREEN_WIDTH = 256,
     MYSMB_SCREEN_HEIGHT = 240,
-    MYSMB_BUTTON_LEFT = 0x01,
-    MYSMB_BUTTON_RIGHT = 0x02,
-    MYSMB_BUTTON_START = 0x04
+    /* ROM $8e5c stores the NES serial order as these bit positions. */
+    MYSMB_BUTTON_RIGHT = 0x01,
+    MYSMB_BUTTON_LEFT = 0x02,
+    MYSMB_BUTTON_START = 0x10,
+    MYSMB_BUTTON_SELECT = 0x20,
+    MYSMB_BUTTON_B = 0x40,
+    MYSMB_BUTTON_A = 0x80
 };
 
 struct mysmb_input {
@@ -30,6 +34,18 @@ struct mysmb_frame {
     mysmb_u16 sprite0_x;
     mysmb_u16 sprite0_y;
     mysmb_u8 start_pressed;
+    mysmb_u8 operating_mode;
+    mysmb_u8 operating_mode_task;
+};
+
+struct mysmb_checkpoint {
+    mysmb_u32 frame_number;
+    mysmb_u8 operating_mode;
+    mysmb_u8 operating_mode_task;
+    mysmb_u8 saved_joypad1_bits;
+    mysmb_u8 demo_timer;
+    mysmb_u8 world_number;
+    mysmb_u8 area_number;
 };
 
 /* ROM $90cc-$90e6, with Y supplied by its verified caller. */
@@ -43,6 +59,10 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size);
 void mysmb_game_initialize(struct mysmb_game *game);
+/* ROM $8231/$8245/$8255, title-menu state and title-to-game-mode transfer. */
+void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);
+void mysmb_game_checkpoint(const struct mysmb_game *game,
+                           struct mysmb_checkpoint *checkpoint);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);
 

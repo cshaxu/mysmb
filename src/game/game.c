@@ -1,5 +1,71 @@
 #include "game/game.h"
 
+enum {
+    MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,
+    MYSMB_RAM_SAVED_JOYPAD1 = 0x06fcU,
+    MYSMB_RAM_JOYPAD_MASK1 = 0x074aU,
+    MYSMB_RAM_FETCH_NEW_TIMER = 0x0757U,
+    MYSMB_RAM_HIDDEN_1UP = 0x075dU,
+    MYSMB_RAM_WORLD = 0x075fU,
+    MYSMB_RAM_AREA = 0x0760U,
+    MYSMB_RAM_OFFSCREEN_HIDDEN_1UP = 0x0764U,
+    MYSMB_RAM_PRIMARY_HARD = 0x076aU,
+    MYSMB_RAM_NUMBER_OF_PLAYERS = 0x077aU,
+    MYSMB_RAM_OPER_MODE = 0x0770U,
+    MYSMB_RAM_OPER_MODE_TASK = 0x0772U,
+    MYSMB_RAM_SELECT_TIMER = 0x0780U,
+    MYSMB_RAM_DEMO_TIMER = 0x07a2U,
+    MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
+    MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
+    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
+};
+
+/* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
+static mysmb_u8 mysmb_game_latch_joypad1(struct mysmb_game *game,
+                                         mysmb_u8 buttons)
+{
+    mysmb_u8 select_start;
+
+    select_start = (mysmb_u8)(buttons & (MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
+    if ((select_start & game->ram[MYSMB_RAM_JOYPAD_MASK1]) != 0U) {
+        buttons = (mysmb_u8)(buttons & ~(MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
+    }
+    else {
+        game->ram[MYSMB_RAM_JOYPAD_MASK1] = buttons;
+    }
+    game->ram[MYSMB_RAM_SAVED_JOYPAD1] = buttons;
+    return buttons;
+}
+
+/* ROM $8255, ChkContinue through StartWorld1; pointer loading is M2 T3. */
+static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    mysmb_u8 offset;
+
+    if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
+        game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+        return;
+    }
+    if ((buttons & MYSMB_BUTTON_A) != 0U) {
+        game->ram[MYSMB_RAM_WORLD] = game->ram[MYSMB_RAM_CONTINUE_WORLD];
+        game->ram[MYSMB_RAM_AREA] = 0U;
+    }
+    game->ram[MYSMB_RAM_HIDDEN_1UP]++;
+    game->ram[MYSMB_RAM_OFFSCREEN_HIDDEN_1UP]++;
+    game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
+    game->ram[MYSMB_RAM_OPER_MODE]++;
+    game->ram[MYSMB_RAM_PRIMARY_HARD] =
+        game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE];
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    game->ram[MYSMB_RAM_DEMO_TIMER] = 0U;
+    offset = 0x17U;
+    do {
+        game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
+        offset--;
+    } while (offset != 0xffU);
+}
+
 void mysmb_game_initialize(struct mysmb_game *game)
 {
     mysmb_u16 index;
@@ -10,6 +76,10 @@ void mysmb_game_initialize(struct mysmb_game *game)
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
+    /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
+    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+    game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
     game->frame_number = 0UL;
 }
 
@@ -122,7 +192,46 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {
     game->frame_number++;
+    mysmb_game_title_step(game, input);
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];
-    frame->start_pressed = (input->buttons & MYSMB_BUTTON_START) != 0U;
+    frame->start_pressed =
+        (game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_START) != 0U;
+    frame->operating_mode = game->ram[MYSMB_RAM_OPER_MODE];
+    frame->operating_mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+}
+
+/* ROM $8231/$8245/$8255, limited to the admitted title-menu start route. */
+void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)
+{
+    mysmb_u8 buttons;
+
+    buttons = mysmb_game_latch_joypad1(game, input->buttons);
+    if (game->ram[MYSMB_RAM_OPER_MODE] != 0U ||
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] != 3U) {
+        return;
+    }
+    if (buttons == MYSMB_BUTTON_START ||
+        buttons == (MYSMB_BUTTON_A | MYSMB_BUTTON_START)) {
+        mysmb_game_start_from_title(game, buttons);
+    }
+    else if (buttons == MYSMB_BUTTON_SELECT &&
+             game->ram[MYSMB_RAM_DEMO_TIMER] != 0U &&
+             game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+        game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
+        game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
+        game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] ^= 1U;
+    }
+}
+
+void mysmb_game_checkpoint(const struct mysmb_game *game,
+                           struct mysmb_checkpoint *checkpoint)
+{
+    checkpoint->frame_number = game->frame_number;
+    checkpoint->operating_mode = game->ram[MYSMB_RAM_OPER_MODE];
+    checkpoint->operating_mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+    checkpoint->saved_joypad1_bits = game->ram[MYSMB_RAM_SAVED_JOYPAD1];
+    checkpoint->demo_timer = game->ram[MYSMB_RAM_DEMO_TIMER];
+    checkpoint->world_number = game->ram[MYSMB_RAM_WORLD];
+    checkpoint->area_number = game->ram[MYSMB_RAM_AREA];
 }
