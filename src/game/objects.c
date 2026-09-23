@@ -1880,6 +1880,7 @@ static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
     mysmb_u8 old_x;
     mysmb_u8 carry;
     mysmb_u8 page_delta;
+    mysmb_u16 x_sum;
 
     speed = game->ram[MYSMB_ENEMY_X_SPEED + slot];
     fraction = (mysmb_u8)(speed << 4U);
@@ -1890,15 +1891,10 @@ static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
     game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_force + fraction);
     carry = game->ram[MYSMB_ENEMY_X_FORCE + slot] < old_force ? 1U : 0U;
     old_x = game->ram[MYSMB_ENEMY_X + slot];
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + integer + carry);
-    if (game->ram[MYSMB_ENEMY_X + slot] < old_x) {
-        game->ram[MYSMB_ENEMY_PAGE + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta + 1U);
-    }
-    else {
-        game->ram[MYSMB_ENEMY_PAGE + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta);
-    }
+    x_sum = (mysmb_u16)old_x + integer + carry;
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)x_sum;
+    game->ram[MYSMB_ENEMY_PAGE + slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta + (x_sum >> 8U));
 }
 
 /* SetupFloateyNumber.  Rendering later consumes the saved position. */
