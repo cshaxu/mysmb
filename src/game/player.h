@@ -51,6 +51,8 @@ struct mysmb_player_terrain {
     mysmb_u8 contact_low_nibble;
     /* Low byte of ROM $06-$07 before the row offset is applied. */
     mysmb_u8 block_address_low;
+    /* ROM $02: the selected row offset in the block buffer. */
+    mysmb_u8 block_row_offset;
 };
 /* ROM BlockBufferCollision/GetBlockBufferAddr coordinate query. */
 mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,

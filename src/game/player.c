@@ -1,4 +1,5 @@
 #include "game/player.h"
+#include "game/objects.h"
 
 enum {
     MYSMB_PLAYER_X_SPEED = 0x0057U,
@@ -636,6 +637,7 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
     terrain->contact_low_nibble = horizontal_contact != 0U ?
         (mysmb_u8)(game->ram[MYSMB_PLAYER_X] & 0x0fU) :
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0x0fU);
+    terrain->block_row_offset = y;
     return 1U;
 }
 
@@ -1080,8 +1082,8 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
     return 0U;
 }
 
-/* Translation of ROM $dcba-$dcf5 HeadChk through NYSpd.  Question blocks,
- * breakable bricks, coins, and sound commands remain with block ownership. */
+/* Translation of ROM $dcba-$dcf5 HeadChk through NYSpd.  Matched bumpable
+ * blocks hand their original collision coordinates to the object owner. */
 mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
 {
     static const mysmb_u8 x_adder[22] = {
@@ -1112,6 +1114,13 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
     if (mysmb_player_query_block(game, x_adder[base], y_adder[base],
                                  0U, &terrain) == 0U || terrain.metatile == 0U) {
         return 0U;
+    }
+    if (game->ram[0x0784U] == 0U) {
+        if (mysmb_objects_start_head_bump(game, terrain.metatile,
+                                          terrain.block_address_low,
+                                          terrain.block_row_offset) != 0U) {
+            return 1U;
+        }
     }
     group = (mysmb_u8)(terrain.metatile >> 6U);
     if (terrain.metatile < solid_upper[group]) return 0U;
