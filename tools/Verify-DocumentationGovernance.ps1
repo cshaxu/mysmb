@@ -41,9 +41,15 @@ Require-Title (Join-Path $docs 'states/TODO.md') 'Long-Term Review Ledger'
 
 $current = Get-Content -Raw -LiteralPath (Join-Path $docs 'states/CURRENT.md')
 Require (($current | Select-String -AllMatches -Pattern '(?m)^## Current Technical Baseline$').Matches.Count -eq 1) 'CURRENT.md must have exactly one Current Technical Baseline section.'
-Require (($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T\d+ S\d+ Packet$').Matches.Count -eq 1) 'CURRENT.md must contain exactly one active M/T/S packet.'
-foreach ($field in @('Identifier Mode', 'Admission And Approval', 'Objective', 'Non-goals', 'Reference Baseline', 'Candidate Proposal', 'Files And ABI Surface', 'Applicable Rules', 'Verification', 'Expected Markers', 'Asset Needs', 'Reporting Requirements', 'Stop Conditions', 'Exit Criteria', 'Original Owner Request', 'Similar-Issue Sweep')) {
-    Require ($current -match ('(?m)^\|\s*' + [regex]::Escape($field) + '\s*\|\s*\S.+\|\s*$')) "CURRENT.md packet is missing '$field'."
+$packetCount = ($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T\d+ S\d+ Packet$').Matches.Count
+if ($current -match '(?m)^\*\*Idle\.\*\*$') {
+    Require ($packetCount -eq 0) 'Idle CURRENT.md must not retain an active packet.'
+}
+else {
+    Require ($packetCount -eq 1) 'Active CURRENT.md must contain exactly one M/T/S packet.'
+    foreach ($field in @('Identifier Mode', 'Admission And Approval', 'Objective', 'Non-goals', 'Reference Baseline', 'Candidate Proposal', 'Files And ABI Surface', 'Applicable Rules', 'Verification', 'Expected Markers', 'Asset Needs', 'Reporting Requirements', 'Stop Conditions', 'Exit Criteria', 'Original Owner Request', 'Similar-Issue Sweep')) {
+        Require ($current -match ('(?m)^\|\s*' + [regex]::Escape($field) + '\s*\|\s*\S.+\|\s*$')) "CURRENT.md packet is missing '$field'."
+    }
 }
 
 $queue = Get-Content -Raw -LiteralPath (Join-Path $docs 'states/QUEUE.md')
