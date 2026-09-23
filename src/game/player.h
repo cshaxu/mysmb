@@ -36,6 +36,9 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
                                   struct mysmb_player_terrain *terrain);
 mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
                                     mysmb_u8 metatile, mysmb_u8 contact);
+mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
+                                           mysmb_u8 left, mysmb_u8 right);
+void mysmb_player_step_vertical_pipe(struct mysmb_game *game);
 /* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 /* ROM $9131-$9196 Entrance_GameTimerSetup, excluding timers and object setup. */

@@ -230,6 +230,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 7U) {
             mysmb_player_finish_normal_entrance(game);
         }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 3U) {
+            mysmb_player_step_vertical_pipe(game);
+        }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 8U) {
             mysmb_player_step(game, input->buttons);
         }

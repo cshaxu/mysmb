@@ -82,6 +82,12 @@ enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 enum { MYSMB_PLAYER_SIZE = 0x0754U };
 enum { MYSMB_PLAYER_BOUND_BOX = 0x0499U };
 enum { MYSMB_RUNNING_SPEED = 0x0703U };
+enum {
+    MYSMB_CHANGE_AREA_TIMER = 0x06deU,
+    MYSMB_WARP_ZONE_CONTROL = 0x06d6U,
+    MYSMB_DISABLE_SCREEN = 0x0774U,
+    MYSMB_OPER_MODE_TASK = 0x0772U
+};
 
 /* ROM BlockBufferAdderData and the player portion of the coordinate tables.
  * The three bases are normal big, swimming big, and small/crouching. */
@@ -566,6 +572,41 @@ mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
     return 1U;
 }
 
+/* Translation of HandlePipeEntry, excluding the separate warp destination
+ * tables owned by the area-transition route. */
+mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
+                                           mysmb_u8 left, mysmb_u8 right)
+{
+    if ((game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] & MYSMB_BUTTON_DOWN) == 0U ||
+        left != 0x10U || right != 0x11U) return 0U;
+    game->ram[MYSMB_CHANGE_AREA_TIMER] = 0x30U;
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 3U;
+    game->ram[MYSMB_PLAYER_ATTRIBUTES] = 0x20U;
+    return 1U;
+}
+
+/* Translation of VerticalPipeEntry through ChgAreaMode, excluding the
+ * destination-pointer update that the area-transition owner performs. */
+void mysmb_player_step_vertical_pipe(struct mysmb_game *game)
+{
+    mysmb_u8 entrance;
+
+    game->ram[MYSMB_PLAYER_Y]++;
+    mysmb_player_update_scroll(game);
+    entrance = 0U;
+    if (game->ram[MYSMB_WARP_ZONE_CONTROL] == 0U) {
+        entrance = game->ram[MYSMB_AREA_TYPE] == 3U ? 2U : 1U;
+    }
+    if (game->ram[MYSMB_CHANGE_AREA_TIMER] != 0U) {
+        game->ram[MYSMB_CHANGE_AREA_TIMER]--;
+    }
+    if (game->ram[MYSMB_CHANGE_AREA_TIMER] == 0U) {
+        game->ram[MYSMB_ALT_ENTRANCE] = entrance;
+        game->ram[MYSMB_DISABLE_SCREEN]++;
+        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
+    }
+}
+
 /* Translation of ROM $dc64-$dd5a PlayerBGCollision's DoFootCheck through LandPlyr.
  * The original selects an adder from size/crouch/swim state, but both feet
  * ultimately use X+3/X+12 and Y+32.  It reads left first for the landing
@@ -601,12 +642,18 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     have_right = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 2U)],
                                           y_adder[(mysmb_u8)(base + 2U)], 0U, &right);
     if (have_left != 0U && left.metatile != 0U) {
-        return mysmb_player_land_on_solid(game, left.metatile,
-                                          left.contact_low_nibble);
+        if (mysmb_player_land_on_solid(game, left.metatile,
+                                       left.contact_low_nibble) != 0U) {
+            (void)mysmb_player_handle_vertical_pipe(game, left.metatile,
+                                                    have_right != 0U ? right.metatile : 0U);
+            return 1U;
+        }
     }
     if (have_right != 0U && right.metatile != 0U) {
-        return mysmb_player_land_on_solid(game, right.metatile,
-                                          right.contact_low_nibble);
+        if (mysmb_player_land_on_solid(game, right.metatile,
+                                       right.contact_low_nibble) != 0U) {
+            return 1U;
+        }
     }
     return 0U;
 }
