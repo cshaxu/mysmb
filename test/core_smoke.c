@@ -39,6 +39,19 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    game.ram[0x000cU] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0490U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0057U] = 0U;
+    game.ram[0x0705U] = 0xf0U;
+    game.ram[0x0701U] = 0U;
+    game.ram[0x0702U] = 0x20U;
+    game.ram[0x0456U] = 4U;
+    game.ram[0x0450U] = 0xf0U;
+    mysmb_player_impose_friction(&game);
+    if (game.ram[0x0057U] != 1U || game.ram[0x0705U] != 0x10U ||
+        game.ram[0x0700U] != 1U) {
+        return 1;
+    }
     game.ram[0x0700U] = 0x1cU;
     game.ram[0x00b5U] = 2U;
     game.ram[0x00ceU] = 0x90U;

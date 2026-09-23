@@ -28,6 +28,16 @@ enum {
     MYSMB_JUMP_SWIM_TIMER = 0x0782U
 };
 
+enum {
+    MYSMB_LEFT_RIGHT_BUTTONS = 0x000cU,
+    MYSMB_PLAYER_COLLISION_BITS = 0x0490U,
+    MYSMB_PLAYER_X_ABSOLUTE = 0x0700U,
+    MYSMB_FRICTION_HIGH = 0x0701U,
+    MYSMB_FRICTION_LOW = 0x0702U,
+    MYSMB_MAX_LEFT = 0x0450U,
+    MYSMB_MAX_RIGHT = 0x0456U
+};
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 void mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -146,4 +156,44 @@ void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool)
     game->ram[MYSMB_VERTICAL_FORCE_DOWN] = fall_force[index];
     game->ram[MYSMB_PLAYER_Y_FORCE] = initial_force[index];
     game->ram[MYSMB_PLAYER_Y_SPEED] = initial_speed[index];
+}
+
+/* Translation of ROM ImposeFriction. */
+void mysmb_player_impose_friction(struct mysmb_game *game)
+{
+    mysmb_u8 buttons;
+    mysmb_u8 old_force;
+    mysmb_u8 carry;
+    mysmb_u8 speed;
+
+    buttons = (mysmb_u8)(game->ram[MYSMB_LEFT_RIGHT_BUTTONS] &
+                         game->ram[MYSMB_PLAYER_COLLISION_BITS]);
+    speed = game->ram[MYSMB_PLAYER_X_SPEED];
+    if (buttons == 0U && speed == 0U) {
+        game->ram[MYSMB_PLAYER_X_ABSOLUTE] = 0U;
+        return;
+    }
+    if (buttons != 0U && (buttons & MYSMB_BUTTON_RIGHT) != 0U) {
+        old_force = game->ram[MYSMB_PLAYER_X_FORCE];
+        game->ram[MYSMB_PLAYER_X_FORCE] =
+            (mysmb_u8)(old_force + game->ram[MYSMB_FRICTION_LOW]);
+        carry = game->ram[MYSMB_PLAYER_X_FORCE] < old_force ? 1U : 0U;
+        speed = (mysmb_u8)(speed + game->ram[MYSMB_FRICTION_HIGH] + carry);
+        if (speed < 0x80U && speed >= game->ram[MYSMB_MAX_RIGHT]) {
+            speed = game->ram[MYSMB_MAX_RIGHT];
+        }
+    }
+    else {
+        old_force = game->ram[MYSMB_PLAYER_X_FORCE];
+        game->ram[MYSMB_PLAYER_X_FORCE] =
+            (mysmb_u8)(old_force - game->ram[MYSMB_FRICTION_LOW]);
+        carry = old_force < game->ram[MYSMB_FRICTION_LOW] ? 1U : 0U;
+        speed = (mysmb_u8)(speed - game->ram[MYSMB_FRICTION_HIGH] - carry);
+        if (speed >= 0x80U && speed < game->ram[MYSMB_MAX_LEFT]) {
+            speed = game->ram[MYSMB_MAX_LEFT];
+        }
+    }
+    game->ram[MYSMB_PLAYER_X_SPEED] = speed;
+    game->ram[MYSMB_PLAYER_X_ABSOLUTE] = speed >= 0x80U ?
+        (mysmb_u8)(0U - speed) : speed;
 }
