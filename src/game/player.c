@@ -819,8 +819,39 @@ void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
     game->ram[MYSMB_ALT_ENTRANCE] = 0U;
 }
 
-/* Translation of ROM $af93-$b068 ScrollHandler through GetScreenPosition.
- * Offscreen-edge correction belongs with the later side-collision route. */
+/* Translation of ScrollHandler's ChkPOffscr through KeepOnscr. */
+static void mysmb_player_clamp_screen_edge(struct mysmb_game *game)
+{
+    mysmb_u8 right_x;
+    mysmb_u8 right_page;
+    mysmb_u8 target_x;
+    mysmb_u8 target_page;
+    mysmb_u8 buttons;
+
+    right_x = game->ram[MYSMB_SCREEN_RIGHT_X];
+    right_page = game->ram[MYSMB_SCREEN_RIGHT_PAGE];
+    buttons = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
+    if (game->ram[MYSMB_PLAYER_PAGE] < game->ram[MYSMB_SCREEN_LEFT_PAGE] ||
+        (game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_SCREEN_LEFT_PAGE] &&
+         game->ram[MYSMB_PLAYER_X] < game->ram[MYSMB_SCREEN_LEFT_X])) {
+        game->ram[MYSMB_PLAYER_X] = game->ram[MYSMB_SCREEN_LEFT_X];
+        game->ram[MYSMB_PLAYER_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+        if (buttons != MYSMB_BUTTON_RIGHT) game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_PLAYER_PAGE] > right_page ||
+        (game->ram[MYSMB_PLAYER_PAGE] == right_page &&
+         game->ram[MYSMB_PLAYER_X] > right_x)) {
+        target_x = (mysmb_u8)(right_x - 0x10U);
+        target_page = right_page;
+        if (right_x < 0x10U) target_page--;
+        game->ram[MYSMB_PLAYER_X] = target_x;
+        game->ram[MYSMB_PLAYER_PAGE] = target_page;
+        if (buttons != MYSMB_BUTTON_LEFT) game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+    }
+}
+
+/* Translation of ROM $af93-$b068 ScrollHandler through GetScreenPosition. */
 void mysmb_player_update_scroll(struct mysmb_game *game)
 {
     mysmb_u8 force;
@@ -856,6 +887,7 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
     if (game->ram[MYSMB_SCREEN_RIGHT_X] < game->ram[MYSMB_SCREEN_LEFT_X]) {
         game->ram[MYSMB_SCREEN_RIGHT_PAGE]++;
     }
+    mysmb_player_clamp_screen_edge(game);
     game->ram[MYSMB_PLATFORM_X_SCROLL] = 0U;
 }
 
