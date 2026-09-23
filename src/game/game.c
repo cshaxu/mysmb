@@ -8,6 +8,7 @@ void mysmb_game_initialize(struct mysmb_game *game)
         game->ram[index] = 0xffU;
     }
     mysmb_game_initialize_memory(game, 0xfeU);
+    mysmb_game_move_all_sprites_offscreen(game);
     game->frame_number = 0UL;
 }
 
@@ -28,6 +29,18 @@ void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y)
         } while (offset != 0xffU);
         page = (mysmb_u8)(page - 1U);
     } while (page != 0xffU);
+}
+
+/* Translation of ROM $8220-$8230 (MoveAllSpritesOffscreen). */
+void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+
+    offset = 0U;
+    do {
+        game->ram[(mysmb_u16)(0x0200U + offset)] = 0xf8U;
+        offset = (mysmb_u8)(offset + 4U);
+    } while (offset != 0U);
 }
 
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,

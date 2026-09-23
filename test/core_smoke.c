@@ -16,7 +16,8 @@ int main(void)
     if (game.frame_number != 120UL || game.ram[0x07feU] != 0U ||
         game.ram[0x07ffU] != 0xffU || game.ram[0x015fU] != 0U ||
         game.ram[0x0160U] != 0xffU || game.ram[0x01feU] != 0xffU ||
-        game.ram[0x0200U] != 0U || game.ram[0x02ffU] != 0U) {
+        game.ram[0x0200U] != 0xf8U || game.ram[0x0204U] != 0xf8U ||
+        game.ram[0x02fcU] != 0xf8U || game.ram[0x0201U] != 0U) {
         return 1;
     }
 

@@ -32,6 +32,8 @@ struct mysmb_frame {
 
 /* ROM $90cc-$90e6, with Y supplied by its verified caller. */
 void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
+/* ROM $8220-$8230. */
+void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
 void mysmb_game_initialize(struct mysmb_game *game);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);
