@@ -28,6 +28,8 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 struct mysmb_player_terrain {
     mysmb_u8 metatile;
     mysmb_u8 contact_low_nibble;
+    /* Low byte of ROM $06-$07 before the row offset is applied. */
+    mysmb_u8 block_address_low;
 };
 /* ROM BlockBufferCollision/GetBlockBufferAddr coordinate query. */
 mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,

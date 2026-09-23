@@ -553,12 +553,68 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
     y = (mysmb_u8)(((game->ram[MYSMB_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
     if ((game->ram[MYSMB_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
     address = (mysmb_u16)((column & 0x10U) != 0U ? 0x05d0U : 0x0500U);
-    address = (mysmb_u16)(address + (column & 0x0fU) + y);
+    address = (mysmb_u16)(address + (column & 0x0fU));
+    terrain->block_address_low = (mysmb_u8)(address & 0x00ffU);
+    address = (mysmb_u16)(address + y);
     if (address >= 0x0800U) return 0U;
     terrain->metatile = game->ram[address];
     terrain->contact_low_nibble = horizontal_contact != 0U ?
         (mysmb_u8)(game->ram[MYSMB_PLAYER_X] & 0x0fU) :
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0x0fU);
+    return 1U;
+}
+
+/* Translation of CheckForClimbMTiles. */
+static mysmb_u8 mysmb_player_is_climbable(mysmb_u8 metatile)
+{
+    static const mysmb_u8 upper[4] = { 0x24U, 0x6dU, 0x8aU, 0xc6U };
+
+    return metatile >= upper[(mysmb_u8)(metatile >> 6U)] ? 1U : 0U;
+}
+
+/* Translation of HandleClimbing through PutPlayerOnVine.  The caller passes
+ * the collision helper's $04 and $06 values as terrain metadata. */
+static mysmb_u8 mysmb_player_handle_climbing(struct mysmb_game *game,
+                                              const struct mysmb_player_terrain *terrain)
+{
+    static const mysmb_u8 x_adder[2] = { 0xf9U, 0x07U };
+    static const mysmb_u8 page_adder[2] = { 0xffU, 0U };
+    mysmb_u8 facing_index;
+    mysmb_u8 relative_x;
+
+    if (terrain->contact_low_nibble < 6U ||
+        terrain->contact_low_nibble >= 0x0aU) {
+        return 0U;
+    }
+    if (terrain->metatile == 0x24U || terrain->metatile == 0x25U) {
+        /* Flagpole score, sound, and completion sequencing are owned by M2
+         * T6.  Its collision handoff still places Mario on the pole. */
+        game->ram[MYSMB_PLAYER_FACING] = MYSMB_BUTTON_RIGHT;
+        game->ram[MYSMB_SCROLL_LOCK]++;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 4U;
+    }
+    else if (terrain->metatile == 0x26U &&
+             game->ram[MYSMB_PLAYER_Y] < 0x20U) {
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 1U;
+    }
+    else if (terrain->metatile != 0x26U) {
+        return 0U;
+    }
+    game->ram[MYSMB_PLAYER_STATE] = 3U;
+    game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+    game->ram[MYSMB_PLAYER_X_FORCE] = 0U;
+    relative_x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] -
+                            game->ram[MYSMB_SCREEN_LEFT_X]);
+    if (relative_x < 0x10U) {
+        game->ram[MYSMB_PLAYER_FACING] = MYSMB_BUTTON_LEFT;
+    }
+    facing_index = game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0U : 1U;
+    game->ram[MYSMB_PLAYER_X] =
+        (mysmb_u8)((terrain->block_address_low << 4U) + x_adder[facing_index]);
+    if (terrain->block_address_low == 0U) {
+        game->ram[MYSMB_PLAYER_PAGE] =
+            (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] + page_adder[facing_index]);
+    }
     return 1U;
 }
 
@@ -859,6 +915,10 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
                     game->ram[MYSMB_SCREEN_LEFT_PAGE] == 0U ? 0xa0U : 0x34U;
             }
             game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 2U;
+            return 1U;
+        }
+        if (mysmb_player_is_climbable(terrain.metatile) != 0U &&
+            mysmb_player_handle_climbing(game, &terrain) != 0U) {
             return 1U;
         }
         if (terrain.metatile >= solid_upper[group]) {

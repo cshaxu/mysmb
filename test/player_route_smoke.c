@@ -167,5 +167,27 @@ int main(void)
     if (game.ram[0x0752U] != 2U || game.ram[0x0772U] != 0U) {
         return 1;
     }
+    for (index = 0U; index < 0x0100U; ++index) {
+        game.ram[(mysmb_u16)(0x0500U + index)] = 0U;
+    }
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0704U] = 0U;
+    game.ram[0x0714U] = 0U;
+    game.ram[0x001dU] = 2U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0057U] = 0x10U;
+    game.ram[0x0705U] = 0x80U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x28U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x05f3U] = 0x26U;
+    if (mysmb_player_check_sides(&game) == 0U || game.ram[0x001dU] != 3U ||
+        game.ram[0x0086U] != 0x29U || game.ram[0x0057U] != 0U ||
+        game.ram[0x0705U] != 0U) {
+        return 1;
+    }
     return 0;
 }
