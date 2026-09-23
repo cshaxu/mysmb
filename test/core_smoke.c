@@ -667,6 +667,20 @@ int main(void)
     if (game.ram[0x0087U] != 0x3fU || game.ram[0x0401U] != 0x80U ||
         game.ram[0x00cfU] != 0x70U || game.ram[0x0434U] != 0x1cU) return 1;
     game.ram[0x000fU] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 15U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x00b6U] = 1U;
+    game.ram[0x00cfU] = 0x70U;
+    game.ram[0x0401U] = 0x70U;
+    game.ram[0x0058U] = 0xa0U;
+    game.ram[0x00a0U] = 0U;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    mysmb_objects_step_red_paratroopas(&game);
+    if (game.ram[0x00cfU] != 0x70U || game.ram[0x00a0U] != 0U ||
+        game.ram[0x0434U] != 3U) return 1;
+    game.ram[0x000fU] = 0U;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
