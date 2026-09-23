@@ -126,7 +126,8 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
                                                             mysmb_u8 slot);
 
 /* ROM $dcfd-$dd4b PlayerEnemyCollision direct-injury branches: Podoboo,
- * Piranha Plant, flying Paratroopas, Lakitu, and Spiny. */
+ * Piranha Plant, and Spiny.  The ROM literal #$15 is hexadecimal: the
+ * Paratroopas and Lakitu below it still reach the stomp path. */
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -139,8 +140,7 @@ void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
             (game->ram[MYSMB_ENEMY_ID + slot] != 12U && game->ram[MYSMB_ENEMY_ID + slot] != 13U &&
-             game->ram[MYSMB_ENEMY_ID + slot] != 15U && game->ram[MYSMB_ENEMY_ID + slot] != 16U &&
-             game->ram[MYSMB_ENEMY_ID + slot] != 17U && game->ram[MYSMB_ENEMY_ID + slot] != 18U) ||
+             game->ram[MYSMB_ENEMY_ID + slot] != 18U) ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
         if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
@@ -223,9 +223,8 @@ void mysmb_objects_check_bloober_stomp(struct mysmb_game *game)
     }
 }
 
-/* ROM $dcfd-$ddcb PlayerEnemyCollision and $e06a ChkForDemoteKoopa,
- * bounded to the jumping green Paratroopa. */
-void mysmb_objects_check_jumping_paratroopa_stomp(struct mysmb_game *game)
+/* ROM $dcfd-$ddcb PlayerEnemyCollision and $e06a ChkForDemoteKoopa. */
+void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
 {
     mysmb_u16 player_world;
     mysmb_u16 enemy_world;
@@ -248,7 +247,9 @@ void mysmb_objects_check_jumping_paratroopa_stomp(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_Y]);
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-            game->ram[MYSMB_ENEMY_ID + slot] != 14U ||
+            (game->ram[MYSMB_ENEMY_ID + slot] != 14U &&
+             game->ram[MYSMB_ENEMY_ID + slot] != 15U &&
+             game->ram[MYSMB_ENEMY_ID + slot] != 16U) ||
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) continue;
         enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
                                    game->ram[MYSMB_ENEMY_X + slot]);
@@ -262,13 +263,13 @@ void mysmb_objects_check_jumping_paratroopa_stomp(struct mysmb_game *game)
         }
         if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) continue;
         game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-        game->ram[MYSMB_ENEMY_ID + slot] = 0U;
+        game->ram[MYSMB_ENEMY_ID + slot] &= 1U;
         game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
         game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
-            enemy_world > player_world ? 1U : 2U;
+            enemy_world >= player_world ? 1U : 2U;
         game->ram[MYSMB_ENEMY_X_SPEED + slot] =
             game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
         mysmb_objects_setup_floatey_number(game, slot, 3U);

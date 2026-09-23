@@ -64,7 +64,7 @@ int main(void)
     game.ram[0x0756U] = 1U;
     game.ram[0x079eU] = 0U;
     game.ram[0x000fU] = 1U;
-    game.ram[0x0016U] = 15U;
+    game.ram[0x0016U] = 18U;
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00b6U] = 1U;
