@@ -60,5 +60,23 @@ int main(void)
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x0753U] != 1U || game.ram[0x075aU] != 2U ||
         game.ram[0x075fU] != 6U) return 6;
+
+    /* PlayerEndLevel owns the level increment while NextArea owns the new
+     * area task, timer reload request, screen gate, and checkpoint reset. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 1U;
+    game.ram[0x000eU] = 5U;
+    game.ram[0x0746U] = 5U;
+    game.ram[0x075cU] = 1U;
+    game.ram[0x0760U] = 2U;
+    game.ram[0x075bU] = 6U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x90U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x075cU] != 2U || game.ram[0x0760U] != 3U ||
+        game.ram[0x0772U] != 0U || game.ram[0x075bU] != 0U ||
+        game.ram[0x0757U] == 0U) return 7;
     return 0;
 }

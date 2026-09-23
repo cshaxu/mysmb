@@ -42,6 +42,8 @@ enum {
     MYSMB_RAM_NUMBER_OF_LIVES = 0x075aU,
     MYSMB_RAM_HALFWAY_PAGE = 0x075bU,
     MYSMB_RAM_LEVEL = 0x075cU,
+    MYSMB_RAM_STAR_FLAG_TASK = 0x0746U,
+    MYSMB_RAM_PLAYER_Y = 0x00ceU,
     MYSMB_RAM_CURRENT_PLAYER = 0x0753U,
     MYSMB_RAM_OFFSCREEN_LIVES = 0x0761U
 };
@@ -50,6 +52,7 @@ static void mysmb_game_continue_game(struct mysmb_game *game);
 static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game);
 static void mysmb_game_lose_life(struct mysmb_game *game);
 static void mysmb_game_step_game_over(struct mysmb_game *game);
+static void mysmb_game_next_area(struct mysmb_game *game);
 
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
@@ -131,6 +134,18 @@ static void mysmb_game_continue_game(struct mysmb_game *game)
     game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE] = 1U;
+}
+
+/* ROM NextArea.  LoadAreaPointer remains the following mode-task zero owner. */
+static void mysmb_game_next_area(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_AREA]++;
+    game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    game->ram[MYSMB_RAM_HALFWAY_PAGE] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
+    game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+    game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
 }
 
 /* ROM PlayerLoseLife.  The half-way table stays here because it is game-mode
@@ -421,6 +436,24 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 3U) {
             mysmb_player_step_vertical_pipe(game);
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 4U) {
+            /* ROM FlagpoleSlide: force Down until the slide reaches $9e. */
+            if (game->ram[MYSMB_RAM_PLAYER_Y] < 0x9eU) {
+                mysmb_player_step(game, MYSMB_BUTTON_DOWN);
+            }
+            else {
+                game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] = 5U;
+            }
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 5U) {
+            /* ROM PlayerEndLevel.  The star/flag task is the original
+             * object-side completion handoff; the mode route owns NextArea. */
+            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
+            if (game->ram[MYSMB_RAM_STAR_FLAG_TASK] == 5U) {
+                game->ram[MYSMB_RAM_LEVEL]++;
+                mysmb_game_next_area(game);
+            }
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 2U) {
             mysmb_player_step_side_pipe(game);
