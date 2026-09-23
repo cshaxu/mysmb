@@ -171,6 +171,8 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
+    mysmb_u16 fireball_world;
+    mysmb_u16 screen_world;
 
     if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
         (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
@@ -252,6 +254,13 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
                 }
             }
             else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
+        }
+        fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) | game->ram[MYSMB_FIREBALL_X + slot]);
+        screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) | game->ram[MYSMB_SCREEN_LEFT_X]);
+        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
+            game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U ||
+            fireball_world < screen_world || (mysmb_u16)(fireball_world - screen_world) >= 0x100U) {
+            game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
         }
     }
 }
