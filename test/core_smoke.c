@@ -39,6 +39,26 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    game.ram[0x009fU] = 1U;
+    game.ram[0x00b5U] = 2U;
+    game.ram[0x00ceU] = 0xffU;
+    game.ram[0x0416U] = 0U;
+    game.ram[0x0433U] = 0x80U;
+    mysmb_player_impose_gravity(&game, 0x80U, 0U, 4U, 0U);
+    if (game.ram[0x00ceU] != 0U || game.ram[0x00b5U] != 3U ||
+        game.ram[0x009fU] != 2U || game.ram[0x0433U] != 0U) {
+        return 1;
+    }
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x00b5U] = 3U;
+    game.ram[0x00ceU] = 0U;
+    game.ram[0x0416U] = 0U;
+    game.ram[0x0433U] = 0U;
+    mysmb_player_impose_gravity(&game, 0U, 0x20U, 4U, 1U);
+    if (game.ram[0x00ceU] != 0xf0U || game.ram[0x00b5U] != 2U ||
+        game.ram[0x009fU] != 0xefU || game.ram[0x0433U] != 0xe0U) {
+        return 1;
+    }
     game.ram[0x0057U] = 0x11U;
     game.ram[0x0086U] = 0xfeU;
     game.ram[0x006dU] = 2U;
