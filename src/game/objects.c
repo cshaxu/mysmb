@@ -223,6 +223,41 @@ void mysmb_objects_check_bloober_stomp(struct mysmb_game *game)
     }
 }
 
+/* ROM $dcfd-$ddcb PlayerEnemyCollision and EnemyStomped, bounded to Lakitu.
+ * EnemyStomped preserves Lakitu's direction, calls SetStun, then replaces its
+ * state with d5 and clears movement physics through InitVStf. */
+void mysmb_objects_check_lakitu_stomp(struct mysmb_game *game)
+{
+    mysmb_u16 enemy_box;
+    mysmb_u8 slot;
+
+    if (((mysmb_u8)game->frame_number & 1U) != 0U ||
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
+        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return;
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 17U ||
+            (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
+            mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
+        enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+            game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
+            continue;
+        }
+        if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) continue;
+        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
+        mysmb_objects_setup_floatey_number(game, slot, 5U);
+        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
+        game->ram[MYSMB_ENEMY_STATE + slot] = 0x20U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+        game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
+        return;
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision and $e06a ChkForDemoteKoopa. */
 void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
 {
