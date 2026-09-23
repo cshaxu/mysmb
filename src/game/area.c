@@ -132,19 +132,35 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
     game->area_prg_size = prg_size;
 }
 
-/* ROM QuestionBlock/BrickWithItem, limited to one-column small objects. */
+/* ROM QuestionBlock/BrickWithItem and the horizontal brick-row subset. */
 static void mysmb_area_apply_single_block(struct mysmb_game *game,
                                           const struct mysmb_area_object *object)
 {
     static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
     static const mysmb_u8 ground_brick[5] = { 0x55U, 0x56U, 0x57U, 0x58U, 0x59U };
+    static const mysmb_u8 row_brick[4] = { 0x22U, 0x51U, 0x52U, 0x52U };
     mysmb_u8 value;
     mysmb_u8 column;
+    mysmb_u8 length;
+    mysmb_u8 offset;
+    mysmb_u8 target;
     mysmb_u16 address;
 
     if (object->row >= 13U) return;
-    if (object->page > 1U) return;
-    column = (mysmb_u8)(object->column + (object->page << 4U));
+    column = (mysmb_u8)(object->column + ((object->page & 1U) << 4U));
+    if (object->dispatch_id == 2U) {
+        value = row_brick[game->ram[MYSMB_AREA_TYPE] & 3U];
+        if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) value = 0x88U;
+        length = (mysmb_u8)(object->second & 0x0fU);
+        for (offset = 0U; offset < length; ++offset) {
+            target = (mysmb_u8)(column + offset);
+            if (target >= 32U) break;
+            address = (mysmb_u16)(target < 16U ? 0x0500U + target :
+                                  0x05d0U + (target - 16U));
+            game->ram[(mysmb_u16)(address + (mysmb_u16)object->row * 16U)] = value;
+        }
+        return;
+    }
     if (object->dispatch_id >= 0x16U && object->dispatch_id <= 0x18U) {
         value = question[(mysmb_u8)(object->dispatch_id - 0x16U)];
     }
@@ -168,7 +184,7 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     struct mysmb_area_object object;
     struct mysmb_area_command *command;
 
-    if (game->area_prg == 0 || game->area_command_count >= 16U) {
+    if (game->area_prg == 0) {
         return 0U;
     }
     source.prg = game->area_prg;
@@ -176,12 +192,14 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     if (mysmb_area_next_object(game, &source, &object) == 0U) {
         return 0U;
     }
-    command = &game->area_commands[game->area_command_count];
-    command->column = object.column;
-    command->row = object.row;
-    command->page = object.page;
-    command->dispatch_id = object.dispatch_id;
-    game->area_command_count++;
+    if (game->area_command_count < 16U) {
+        command = &game->area_commands[game->area_command_count];
+        command->column = object.column;
+        command->row = object.row;
+        command->page = object.page;
+        command->dispatch_id = object.dispatch_id;
+        game->area_command_count++;
+    }
     mysmb_area_apply_single_block(game, &object);
     return 1U;
 }
@@ -528,6 +546,31 @@ void mysmb_area_render_initial_terrain(struct mysmb_game *game)
                 game->ram[address] = terrain;
             }
         }
+    }
+}
+
+/* ROM AreaParserCore's pre-play look-ahead is represented here by a
+ * side-effect-free scan of the ordered stream.  Only small one-column
+ * metatiles plus horizontal brick rows are admitted until the persistent
+ * large-object parser arrives;
+ * scanning a copy preserves the live stream cursor for the game loop. */
+void mysmb_area_render_initial_objects(struct mysmb_game *game)
+{
+    struct mysmb_game scan;
+    struct mysmb_area_source source;
+    struct mysmb_area_object object;
+    mysmb_u8 count;
+
+    if (game->area_prg == 0) return;
+    scan = *game;
+    source.prg = game->area_prg;
+    source.prg_size = game->area_prg_size;
+    count = 0U;
+    while (count < 128U && mysmb_area_next_object(&scan, &source, &object) != 0U) {
+        count++;
+        if (object.page > 1U) break;
+        if (object.page == 1U && object.column > 8U) continue;
+        mysmb_area_apply_single_block(game, &object);
     }
 }
 

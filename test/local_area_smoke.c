@@ -26,7 +26,10 @@ int main(void)
         game.ram[0x0710U] != 2U || game.ram[0x0727U] != 1U ||
         game.ram[0x0742U] != 2U || game.ram[0x05b0U] != 0x54U ||
         game.ram[0x05c0U] != 0x54U || game.ram[0x0687U] != 0x54U ||
-        game.ram[0x0688U] != 0U) {
+        game.ram[0x0688U] != 0U || game.ram[0x0606U] != 0xc0U ||
+        game.ram[0x0640U] != 0xc0U || game.ram[0x0644U] != 0x51U ||
+        game.ram[0x0645U] != 0xc1U || game.ram[0x0646U] != 0x51U ||
+        game.ram[0x0647U] != 0xc0U || game.ram[0x0648U] != 0U) {
         return 1;
     }
     input.buttons = MYSMB_BUTTON_A;

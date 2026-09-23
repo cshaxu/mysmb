@@ -22,6 +22,8 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source);
 /* ROM AreaParserCore terrain pass for the 24 columns prepared before play. */
 void mysmb_area_render_initial_terrain(struct mysmb_game *game);
+/* ROM AreaParserCore initial object pass for the two prepared block pages. */
+void mysmb_area_render_initial_objects(struct mysmb_game *game);
 
 struct mysmb_area_object {
     mysmb_u8 first;

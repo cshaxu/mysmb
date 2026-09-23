@@ -485,6 +485,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             if (mysmb_area_load_pointers(game, &area_source) != 0U) {
                 if (mysmb_area_parse_header(game, &area_source) != 0U) {
                     mysmb_area_render_initial_terrain(game);
+                    mysmb_area_render_initial_objects(game);
                 }
             }
         }
