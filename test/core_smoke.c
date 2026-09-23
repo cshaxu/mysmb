@@ -49,6 +49,11 @@ int main(void)
         game.ram[0x000dU] != MYSMB_BUTTON_A) {
         return 1;
     }
+    game.ram[0x0782U] = 7U;
+    mysmb_player_step(&game, MYSMB_BUTTON_A);
+    if (game.ram[0x0782U] != 7U) {
+        return 1;
+    }
     game.ram[0x001dU] = 0U;
     mysmb_player_latch_input(&game, (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_RIGHT));
     if (game.ram[0x000aU] != MYSMB_BUTTON_A ||
