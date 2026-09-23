@@ -58,7 +58,11 @@ enum {
     MYSMB_ENEMY_Y = 0x00cfU,
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
-    MYSMB_PLAYER_STATUS = 0x0756U
+    MYSMB_PLAYER_STATUS = 0x0756U,
+    MYSMB_VINE_FLAG_OFFSET = 0x0398U,
+    MYSMB_VINE_HEIGHT = 0x0399U,
+    MYSMB_VINE_OBJECT_OFFSET = 0x039aU,
+    MYSMB_VINE_START_Y = 0x039dU
 };
 
 /* ROM $bb51 SetupJumpCoin. */
@@ -160,6 +164,63 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     }
 }
 
+/* ROM $ba55 Setup_Vine.  The original reserves enemy slot five for this
+ * object, which is also the power-up slot and therefore cannot coexist. */
+void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot)
+{
+    const mysmb_u8 slot = 5U;
+    mysmb_u8 vine_slot;
+
+    game->ram[MYSMB_ENEMY_ID + slot] = 0x2fU;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_BLOCK_PAGE + block_slot];
+    game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_BLOCK_X + block_slot];
+    game->ram[MYSMB_ENEMY_Y + slot] = game->ram[MYSMB_BLOCK_Y + block_slot];
+    vine_slot = game->ram[MYSMB_VINE_FLAG_OFFSET];
+    if (vine_slot == 0U) {
+        game->ram[MYSMB_VINE_START_Y] = game->ram[MYSMB_ENEMY_Y + slot];
+    }
+    if (vine_slot < 2U) {
+        game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_slot] = slot;
+        game->ram[MYSMB_VINE_FLAG_OFFSET]++;
+    }
+}
+
+/* ROM $ba71 VineObjectHandler.  This retains growth and the authoritative
+ * block-buffer metatile write; OAM drawing/offscreen retirement are renderer
+ * responsibilities. */
+void mysmb_objects_step_vine(struct mysmb_game *game)
+{
+    static const mysmb_u8 maximum_height[2] = { 0x30U, 0x60U };
+    const mysmb_u8 slot = 5U;
+    mysmb_u8 vine_slot;
+    mysmb_u8 x;
+    mysmb_u8 page;
+    mysmb_u8 row;
+    mysmb_u16 address;
+
+    if (game->ram[MYSMB_ENEMY_ID + slot] != 0x2fU ||
+        game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+        game->ram[MYSMB_VINE_FLAG_OFFSET] == 0U) return;
+    vine_slot = (mysmb_u8)(game->ram[MYSMB_VINE_FLAG_OFFSET] - 1U);
+    if (vine_slot > 1U) vine_slot = 1U;
+    if (game->ram[MYSMB_VINE_HEIGHT] != maximum_height[vine_slot] &&
+        (((mysmb_u8)game->frame_number & 2U) != 0U)) {
+        game->ram[MYSMB_ENEMY_Y + slot]--;
+        game->ram[MYSMB_VINE_HEIGHT]++;
+    }
+    if (game->ram[MYSMB_VINE_HEIGHT] < 0x20U) return;
+    x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 4U);
+    page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
+                      (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
+    row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x10U) & 0xf0U) -
+                      0x20U);
+    if (row >= 0xd0U) return;
+    address = (mysmb_u16)((page & 1U) != 0U ? 0x05d0U : 0x0500U);
+    address = (mysmb_u16)(address + (x >> 4U) + row);
+    if (address < 0x0800U && game->ram[address] == 0U) game->ram[address] = 0x26U;
+}
+
 /* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
  * byte; the modifier is cleared after every calculation exactly as the ROM
  * routine does. */
@@ -251,6 +312,11 @@ static mysmb_u8 mysmb_objects_power_up_for_block(mysmb_u8 metatile,
     return 0U;
 }
 
+static mysmb_u8 mysmb_objects_is_vine_block(mysmb_u8 metatile)
+{
+    return metatile == 0x56U || metatile == 0x5bU ? 1U : 0U;
+}
+
 /* ROM $bd9b BrickShatter/SpawnBrickChunks, excluding draw and audio output. */
 static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
                                              mysmb_u8 slot)
@@ -324,6 +390,9 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     }
     else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
         mysmb_objects_start_power_up(game, slot, power_up_type);
+    }
+    else if (is_bumpable != 0U && mysmb_objects_is_vine_block(metatile) != 0U) {
+        mysmb_objects_start_vine(game, slot);
     }
     game->ram[MYSMB_BLOCK_SLOT_CONTROL] ^= 1U;
     return 1U;

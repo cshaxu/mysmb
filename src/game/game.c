@@ -269,6 +269,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_objects_step_blocks(game);
     mysmb_objects_step_misc(game);
     mysmb_objects_step_power_up(game);
+    mysmb_objects_step_vine(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);

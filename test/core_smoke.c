@@ -266,6 +266,13 @@ int main(void)
         game.ram[0x0039U] != 0U) {
         return 1;
     }
+    game.ram[0x0784U] = 0U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x05f2U] = 0x56U;
+    if (mysmb_player_check_head(&game) == 0U || game.ram[0x001bU] != 0x2fU ||
+        game.ram[0x0014U] != 1U || game.ram[0x0398U] != 1U) {
+        return 1;
+    }
     game.ram[0x0754U] = 0U;
     game.ram[0x0784U] = 0U;
     game.ram[0x03eeU] = 0U;
@@ -631,6 +638,25 @@ int main(void)
     if (game.ram[0x0039U] != 1U) return 1;
     mysmb_objects_start_power_up(&game, 0U, 2U);
     if (game.ram[0x0039U] != 2U) return 1;
+    game.ram[0x0076U] = 1U;
+    game.ram[0x008fU] = 0x30U;
+    game.ram[0x00d7U] = 0x60U;
+    game.ram[0x0398U] = 0U;
+    game.ram[0x0399U] = 0U;
+    mysmb_objects_start_vine(&game, 0U);
+    if (game.ram[0x001bU] != 0x2fU || game.ram[0x0014U] != 1U ||
+        game.ram[0x0073U] != 1U || game.ram[0x008cU] != 0x30U ||
+        game.ram[0x00d4U] != 0x60U || game.ram[0x039dU] != 0x60U ||
+        game.ram[0x039aU] != 5U || game.ram[0x0398U] != 1U) return 1;
+    game.frame_number = 2UL;
+    mysmb_objects_step_vine(&game);
+    if (game.ram[0x00d4U] != 0x5fU || game.ram[0x0399U] != 1U) return 1;
+    game.ram[0x0399U] = 0x1fU;
+    game.ram[0x00d4U] = 0x60U;
+    game.ram[0x0613U] = 0U;
+    mysmb_objects_step_vine(&game);
+    if (game.ram[0x0399U] != 0x20U || game.ram[0x00d4U] != 0x5fU ||
+        game.ram[0x0613U] != 0x26U) return 1;
     game.ram[0x0301U] = 0U;
     game.ram[0x0026U] = 0x11U;
     game.ram[0x00beU] = 1U;

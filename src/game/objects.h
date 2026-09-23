@@ -20,6 +20,9 @@ void mysmb_objects_step_misc(struct mysmb_game *game);
 void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
                                   mysmb_u8 power_up_type);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
+/* ROM $ba55-$bad2 Setup_Vine/VineObjectHandler, excluding drawing. */
+void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot);
+void mysmb_objects_step_vine(struct mysmb_game *game);
 /* ROM HandleCoinMetatile/GiveOneCoin. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
                                 mysmb_u8 block_row);
