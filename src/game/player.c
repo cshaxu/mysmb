@@ -29,6 +29,8 @@ enum {
     MYSMB_JUMP_SWIM_TIMER = 0x0782U
 };
 
+enum { MYSMB_WHIRLPOOL = 0x047dU };
+
 enum {
     MYSMB_LEFT_RIGHT_BUTTONS = 0x000cU,
     MYSMB_PLAYER_COLLISION_BITS = 0x0490U,
@@ -372,9 +374,19 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
         return;
     }
-    if (game->ram[MYSMB_PLAYER_STATE] == 0U && (a_b & MYSMB_BUTTON_A) != 0U &&
+    if (game->ram[MYSMB_JUMPSPRING_ANIM] == 0U &&
+        (a_b & MYSMB_BUTTON_A) != 0U &&
         (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {
-        mysmb_player_start_jump(game, 0U);
+        if (game->ram[MYSMB_PLAYER_STATE] == 0U ||
+            (game->ram[MYSMB_SWIMMING] != 0U &&
+             (game->ram[MYSMB_JUMP_SWIM_TIMER] != 0U ||
+              game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U))) {
+            mysmb_player_start_jump(game, game->ram[MYSMB_WHIRLPOOL]);
+        }
+    }
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+        game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
     }
     game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
         game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
@@ -399,6 +411,15 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             if (jump_height >= game->ram[MYSMB_DIFF_HALT_JUMP]) {
                 game->ram[MYSMB_VERTICAL_FORCE] =
                     game->ram[MYSMB_VERTICAL_FORCE_DOWN];
+            }
+        }
+        if (game->ram[MYSMB_SWIMMING] != 0U) {
+            if (game->ram[MYSMB_PLAYER_Y] < 0x14U) {
+                game->ram[MYSMB_VERTICAL_FORCE] = 0x18U;
+            }
+            if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+                game->ram[MYSMB_PLAYER_FACING] =
+                    game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
             }
         }
         /* MovePlayerVertically enters ImposeGravity through
