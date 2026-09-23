@@ -91,7 +91,11 @@ enum {
     MYSMB_PREVIOUS_A_B = 0x000dU,
     MYSMB_PLAYER_FACING = 0x0033U,
     MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
-    MYSMB_PLAYER_ANIMATION = 0x070dU
+    MYSMB_PLAYER_ANIMATION = 0x070dU,
+    MYSMB_FLOATEY_NUM_CONTROL = 0x0110U,
+    MYSMB_FLOATEY_NUM_X = 0x0117U,
+    MYSMB_FLOATEY_NUM_Y = 0x011eU,
+    MYSMB_FLOATEY_NUM_TIMER = 0x012cU
 };
 
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
@@ -103,6 +107,9 @@ static void mysmb_objects_set_bounding_box(struct mysmb_game *game,
                                            mysmb_u8 x, mysmb_u8 y);
 static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
                                             mysmb_u16 first, mysmb_u16 second);
+static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 control);
 
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
@@ -402,9 +409,8 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
     }
 }
 
-/* ROM $ddcd HandlePowerUpCollision.  The Floatey-number visual and delayed
- * 1-up award remain with the later enemy/floatey route; its pending type is
- * deliberately retained rather than converted to an immediate life. */
+/* ROM $ddcd HandlePowerUpCollision.  The score or 1-up is deliberately
+ * deferred to FloateyNumbersRoutine, as in the original. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
@@ -415,10 +421,8 @@ void mysmb_objects_collect_power_up(struct mysmb_game *game)
     game->ram[MYSMB_ENEMY_ID + slot] = 0U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
-    game->ram[MYSMB_DIGIT_MODIFIER + 3U] = 1U;
-    mysmb_objects_apply_digit_modifier(game,
-                                       game->ram[MYSMB_CURRENT_PLAYER] == 0U ?
-                                       0x0bU : 0x11U);
+    mysmb_objects_setup_floatey_number(game, slot,
+                                       type == 3U ? 0x0bU : 6U);
     if (type == 2U) {
         game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0x23U;
         return;
@@ -436,6 +440,48 @@ void mysmb_objects_collect_power_up(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_STATE] = 0U;
     game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
     game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
+}
+
+/* ROM $84c3 FloateyNumbersRoutine, excluding OAM output.  The original has
+ * six enemy-associated entries; only slot five is currently produced by the
+ * admitted power-up route, but processing all entries keeps the RAM contract
+ * ready for the later enemy-score routes. */
+void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
+{
+    static const mysmb_u8 score_data[12] = {
+        0xffU, 0x41U, 0x42U, 0x44U, 0x45U, 0x48U,
+        0x31U, 0x32U, 0x34U, 0x35U, 0x38U, 0x00U
+    };
+    mysmb_u8 slot;
+    mysmb_u8 control;
+    mysmb_u8 score;
+
+    for (slot = 0U; slot < 6U; ++slot) {
+        control = game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot];
+        if (control == 0U) continue;
+        if (control >= 0x0bU) {
+            control = 0x0bU;
+            game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
+        }
+        if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0U) {
+            game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
+            continue;
+        }
+        if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0x2bU) {
+            if (control == 0x0bU) {
+                game->ram[MYSMB_NUMBER_OF_LIVES]++;
+            }
+            score = score_data[control];
+            game->ram[MYSMB_DIGIT_MODIFIER + (score >> 4U)] =
+                (mysmb_u8)(score & 0x0fU);
+            mysmb_objects_apply_digit_modifier(game,
+                game->ram[MYSMB_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
+        }
+        game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
+        if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
+            game->ram[MYSMB_FLOATEY_NUM_Y + slot]--;
+        }
+    }
 }
 
 /* ROM $ba55 Setup_Vine.  The original reserves enemy slot five for this
@@ -525,6 +571,17 @@ static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_PAGE + slot] =
             (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta);
     }
+}
+
+/* SetupFloateyNumber.  Rendering later consumes the saved position. */
+static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 control)
+{
+    game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
+    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = 0x30U;
+    game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[MYSMB_ENEMY_X + slot];
 }
 
 /* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
