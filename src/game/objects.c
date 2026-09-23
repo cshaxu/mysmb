@@ -56,6 +56,9 @@ enum {
     MYSMB_ENEMY_X = 0x0087U,
     MYSMB_ENEMY_Y_HIGH = 0x00b6U,
     MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_Y_SPEED = 0x00a0U,
+    MYSMB_ENEMY_Y_DUMMY = 0x0417U,
+    MYSMB_ENEMY_Y_FORCE = 0x0434U,
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_ENEMY_X_FORCE = 0x0401U,
@@ -334,6 +337,9 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+    mysmb_u8 page_delta;
 
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state == 0U) return;
@@ -341,7 +347,50 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
             (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
              game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
+            if ((state & 0x40U) != 0U) {
+                old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+                game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+                    (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+                carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
+                page_delta = game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
+                old_value = game->ram[MYSMB_ENEMY_Y + slot];
+                game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+                carry = game->ram[MYSMB_ENEMY_Y + slot] < old_value ? 1U : 0U;
+                game->ram[MYSMB_ENEMY_Y_HIGH + slot] =
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_HIGH + slot] + page_delta + carry);
+                old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] =
+                    (mysmb_u8)(old_value + 0x3dU);
+                if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value) {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
+                }
+                if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 3U &&
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+                }
+            }
             mysmb_objects_move_enemy_horizontally(game, slot);
+            x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
+            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
+            address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
+            tile = address < 0x0800U ? game->ram[address] : 0U;
+            if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
+                tile != 0U && tile != 0x26U && tile != 0xc2U &&
+                tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
+                if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
+                    game->ram[MYSMB_ENEMY_Y + slot] =
+                        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+                    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+                    game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
+                }
+            }
+            else {
+                game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+            }
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
                 (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x14U : 4U));
             row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
