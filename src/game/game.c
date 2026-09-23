@@ -44,6 +44,14 @@ enum {
     MYSMB_RAM_LEVEL = 0x075cU,
     MYSMB_RAM_STAR_FLAG_TASK = 0x0746U,
     MYSMB_RAM_PLAYER_Y = 0x00ceU,
+    MYSMB_RAM_PLAYER_X = 0x0086U,
+    MYSMB_RAM_PLAYER_PAGE = 0x006dU,
+    MYSMB_RAM_SCREEN_RIGHT_PAGE = 0x071bU,
+    MYSMB_RAM_DESTINATION_PAGE = 0x0034U,
+    MYSMB_RAM_VICTORY_WALK = 0x0035U,
+    MYSMB_RAM_PRIMARY_MESSAGE = 0x0719U,
+    MYSMB_RAM_SECONDARY_MESSAGE = 0x0749U,
+    MYSMB_RAM_WORLD_END_TIMER = 0x07a1U,
     MYSMB_RAM_CURRENT_PLAYER = 0x0753U,
     MYSMB_RAM_OFFSCREEN_LIVES = 0x0761U
 };
@@ -53,6 +61,7 @@ static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game);
 static void mysmb_game_lose_life(struct mysmb_game *game);
 static void mysmb_game_step_game_over(struct mysmb_game *game);
 static void mysmb_game_next_area(struct mysmb_game *game);
+static void mysmb_game_step_victory(struct mysmb_game *game);
 
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
@@ -209,6 +218,65 @@ static void mysmb_game_step_game_over(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_SCREEN_TIMER] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+}
+
+/* ROM VictoryModeSubroutines.  The bridge's tile/OAM presentation is outside
+ * this core; mode ownership starts with the same setup task after it falls. */
+static void mysmb_game_step_victory(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
+        game->ram[MYSMB_RAM_DESTINATION_PAGE] =
+            (mysmb_u8)(game->ram[MYSMB_RAM_SCREEN_RIGHT_PAGE] + 1U);
+        game->ram[MYSMB_RAM_EVENT_MUSIC] = 8U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 2U) {
+        game->ram[MYSMB_RAM_VICTORY_WALK] = 0U;
+        if (game->ram[MYSMB_RAM_PLAYER_PAGE] != game->ram[MYSMB_RAM_DESTINATION_PAGE] ||
+            game->ram[MYSMB_RAM_PLAYER_X] < 0x60U) {
+            game->ram[MYSMB_RAM_VICTORY_WALK] = 1U;
+            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
+            return;
+        }
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 3U) {
+        game->ram[MYSMB_RAM_SECONDARY_MESSAGE] =
+            (mysmb_u8)(game->ram[MYSMB_RAM_SECONDARY_MESSAGE] + 4U);
+        if (game->ram[MYSMB_RAM_SECONDARY_MESSAGE] < 4U) game->ram[MYSMB_RAM_PRIMARY_MESSAGE]++;
+        if (game->ram[MYSMB_RAM_PRIMARY_MESSAGE] >= 7U) {
+            game->ram[MYSMB_RAM_WORLD_END_TIMER] = 6U;
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 4U;
+        }
+        return;
+    }
+    if (game->ram[MYSMB_RAM_WORLD_END_TIMER] != 0U) {
+        game->ram[MYSMB_RAM_WORLD_END_TIMER]--;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_WORLD] < 7U) {
+        game->ram[MYSMB_RAM_AREA] = 0U;
+        game->ram[MYSMB_RAM_LEVEL] = 0U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+        game->ram[MYSMB_RAM_WORLD]++;
+        game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
+        game->ram[MYSMB_RAM_OPER_MODE] = 1U;
+    }
+    else if ((game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_B) != 0U) {
+        game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE] = 1U;
+        game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 0xffU;
+        if (mysmb_game_transpose_players(game) != 0U) mysmb_game_continue_game(game);
+        else {
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+            game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+        }
+    }
 }
 
 /* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
@@ -401,7 +469,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
     mysmb_game_title_step(game, input);
-    if (mode_before == 3U) {
+    if (mode_before == 2U) {
+        mysmb_game_step_victory(game);
+    }
+    else if (mode_before == 3U) {
         mysmb_game_step_game_over(game);
     }
     else if (mode_before == 1U && task_before == 0U) {

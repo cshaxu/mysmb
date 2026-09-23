@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/player.h"
 
 int main(void)
 {
@@ -78,5 +79,32 @@ int main(void)
     if (game.ram[0x075cU] != 2U || game.ram[0x0760U] != 3U ||
         game.ram[0x0772U] != 0U || game.ram[0x075bU] != 0U ||
         game.ram[0x0757U] == 0U) return 7;
+
+    /* PlayerEndWorld returns worlds one through seven to game mode with the
+     * first area and level records reset for the following world. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 4U;
+    game.ram[0x075fU] = 2U;
+    game.ram[0x0760U] = 3U;
+    game.ram[0x075cU] = 2U;
+    game.ram[0x07a1U] = 0U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
+        game.ram[0x075fU] != 3U || game.ram[0x0760U] != 0U ||
+        game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 8;
+
+    /* HandlePipeEntry selects the original middle-pipe destination before
+     * VerticalPipeEntry starts its 48-frame transition. */
+    mysmb_game_initialize(&game);
+    game.ram[0x000bU] = MYSMB_BUTTON_DOWN;
+    game.ram[0x06d6U] = 1U;
+    game.ram[0x0086U] = 0x80U;
+    game.ram[0x075fU] = 0U;
+    if (mysmb_player_handle_vertical_pipe(&game, 0x10U, 0x11U) == 0U ||
+        game.ram[0x075fU] != 4U || game.ram[0x0760U] != 0U ||
+        game.ram[0x075cU] != 0U || game.ram[0x000eU] != 3U ||
+        game.ram[0x06deU] != 0x30U) return 9;
     return 0;
 }
