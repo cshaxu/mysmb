@@ -720,6 +720,8 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
     }
     state = (mysmb_u8)(game->ram[MYSMB_ENEMY_STATE + slot] & 7U);
     if (state >= 2U && game->ram[MYSMB_ENEMY_ID + slot] != 6U) {
+        /* ROM HandlePECollisions: a defeated Goomba has no shell to kick. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 0U) return 1U;
         game->ram[MYSMB_ENEMY_STATE + slot] |= 0x80U;
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
             enemy_world > player_world ? 2U : 1U;

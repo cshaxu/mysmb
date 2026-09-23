@@ -535,8 +535,8 @@ int main(void)
     game.ram[0x0756U] = 0U;
     game.frame_number = 0UL;
     mysmb_objects_step_normal_enemies(&game);
-    if (game.ram[0x001eU] != 0x84U || game.ram[0x0046U] != 2U ||
-        game.ram[0x0058U] != 0xd0U || game.ram[0x0110U] != 5U) return 1;
+    if (game.ram[0x001eU] != 4U || game.ram[0x0046U] != 1U ||
+        game.ram[0x0058U] != 8U) return 1;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 6U;
     game.ram[0x001eU] = 0U;
