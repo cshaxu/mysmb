@@ -17,12 +17,32 @@ enum {
     MYSMB_RAM_NUMBER_OF_PLAYERS = 0x077aU,
     MYSMB_RAM_OPER_MODE = 0x0770U,
     MYSMB_RAM_OPER_MODE_TASK = 0x0772U,
+    MYSMB_RAM_TIMER_CONTROL = 0x0747U,
     MYSMB_RAM_SELECT_TIMER = 0x0780U,
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
 };
+
+/* ROM NMI DecTimers, restricted to timers observed by the player route.
+ * Object, score, and music timers retain their later subsystem owners. */
+static void mysmb_game_tick_player_timers(struct mysmb_game *game)
+{
+    static const mysmb_u16 timer_address[] = {
+        0x0781U, 0x0782U, 0x0783U, 0x0785U, 0x0789U
+    };
+    mysmb_u8 index;
+
+    if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) {
+        game->ram[MYSMB_RAM_TIMER_CONTROL]--;
+        if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) return;
+    }
+    for (index = 0U; index < sizeof(timer_address) / sizeof(timer_address[0]);
+         ++index) {
+        if (game->ram[timer_address[index]] != 0U) game->ram[timer_address[index]]--;
+    }
+}
 
 /* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
 static mysmb_u8 mysmb_game_latch_joypad1(struct mysmb_game *game,
@@ -211,6 +231,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
+    mysmb_game_tick_player_timers(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);

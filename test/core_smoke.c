@@ -374,6 +374,38 @@ int main(void)
     game.ram[0x07fdU] = 6U;
     input.buttons = (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_START);
     mysmb_game_tick(&game, &input, &frame);
-    return game.ram[0x075fU] == 6U && game.ram[0x0760U] == 0U &&
-           game.ram[0x0766U] == 6U && game.ram[0x0767U] == 0U ? 0 : 1;
+    if (game.ram[0x075fU] != 6U || game.ram[0x0760U] != 0U ||
+        game.ram[0x0766U] != 6U || game.ram[0x0767U] != 0U) {
+        return 1;
+    }
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 0U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x001dU] = 3U;
+    game.ram[0x0490U] = 0U;
+    game.ram[0x071aU] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x0781U] = 2U;
+    game.ram[0x0782U] = 2U;
+    game.ram[0x0783U] = 2U;
+    game.ram[0x0785U] = 2U;
+    game.ram[0x0789U] = 2U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0781U] != 1U || game.ram[0x0782U] != 1U ||
+        game.ram[0x0783U] != 1U || game.ram[0x0785U] != 1U ||
+        game.ram[0x0789U] != 1U) {
+        return 1;
+    }
+    game.ram[0x0747U] = 2U;
+    game.ram[0x0782U] = 2U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0747U] != 1U || game.ram[0x0782U] != 2U) {
+        return 1;
+    }
+    mysmb_game_tick(&game, &input, &frame);
+    return game.ram[0x0747U] == 0U && game.ram[0x0782U] == 1U ? 0 : 1;
 }
