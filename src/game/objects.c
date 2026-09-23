@@ -58,6 +58,13 @@ enum {
     MYSMB_ENEMY_Y = 0x00cfU,
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
+    MYSMB_ENEMY_X_FORCE = 0x0401U,
+    MYSMB_PLAYER_BOUND_BOX = 0x0499U,
+    MYSMB_PLAYER_OFFSCREEN_BITS = 0x03d0U,
+    MYSMB_SCREEN_LEFT_PAGE = 0x071dU,
+    MYSMB_SCREEN_LEFT_X = 0x071aU,
+    MYSMB_BOUNDING_BOX_PLAYER = 0x04acU,
+    MYSMB_BOUNDING_BOX_ENEMY = 0x04b0U,
     MYSMB_PLAYER_STATUS = 0x0756U,
     MYSMB_GAME_ENGINE_SUBROUTINE = 0x000eU,
     MYSMB_PLAYER_STATE = 0x001dU,
@@ -71,6 +78,13 @@ enum {
 
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
+static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
+                                                  mysmb_u8 slot);
+static void mysmb_objects_set_bounding_box(struct mysmb_game *game,
+                                           mysmb_u16 address, mysmb_u8 control,
+                                           mysmb_u8 x, mysmb_u8 y);
+static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
+                                            mysmb_u16 first, mysmb_u16 second);
 
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
@@ -151,15 +165,23 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0x20U;
 }
 
-/* ROM $bbef-$bc15 GrowThePowerUp.  Rendering, collection, and the mature
- * mushroom/star movement branches belong to their later enemy-object route. */
+/* ROM $bbef-$bc15 GrowThePowerUp and $dc96 MoveObjectHorizontally.  Terrain
+ * response remains in the later EnemyToBGCollisionDet route. */
 void mysmb_objects_step_power_up(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
     mysmb_u8 state;
 
     state = game->ram[MYSMB_ENEMY_STATE + slot];
-    if (state == 0U || (state & 0x80U) != 0U) return;
+    if (state == 0U) return;
+    if ((state & 0x80U) != 0U) {
+        if (game->ram[MYSMB_TIMER_CONTROL] != 0U &&
+            (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
+             game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
+            mysmb_objects_move_enemy_horizontally(game, slot);
+        }
+        return;
+    }
     if (((mysmb_u8)game->frame_number & 3U) != 0U) return;
     game->ram[MYSMB_ENEMY_Y + slot]--;
     game->ram[MYSMB_ENEMY_STATE + slot]++;
@@ -168,6 +190,49 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_STATE + slot] = 0x80U;
         game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+    }
+}
+
+/* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
+ * slot.  The original uses screen-relative one-byte boxes; the same entries
+ * are retained in RAM so later enemy-object routes can share them. */
+void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
+{
+    const mysmb_u8 slot = 5U;
+    mysmb_u16 player_world;
+    mysmb_u16 enemy_world;
+    mysmb_u16 screen_world;
+
+    if (((mysmb_u8)game->frame_number & 1U) != 0U ||
+        game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
+        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) == 0U ||
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
+        game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return;
+
+    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                game->ram[MYSMB_PLAYER_X]);
+    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                               game->ram[MYSMB_ENEMY_X + slot]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    if (player_world < screen_world || enemy_world < screen_world ||
+        (mysmb_u16)(player_world - screen_world) >= 0x100U ||
+        (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return;
+
+    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+                                   game->ram[MYSMB_PLAYER_BOUND_BOX],
+                                   (mysmb_u8)(player_world - screen_world),
+                                   game->ram[MYSMB_PLAYER_Y]);
+    mysmb_objects_set_bounding_box(game,
+                                   (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U),
+                                   game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+                                   (mysmb_u8)(enemy_world - screen_world),
+                                   game->ram[MYSMB_ENEMY_Y + slot]);
+    if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
+                                    (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U))) {
+        mysmb_objects_collect_power_up(game);
     }
 }
 
@@ -264,6 +329,71 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
     if (address < 0x0800U && game->ram[address] == 0U) game->ram[address] = 0x26U;
 }
 
+/* ROM $dc96 MoveObjectHorizontally, with the enemy-object offset applied. */
+static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
+                                                  mysmb_u8 slot)
+{
+    mysmb_u8 speed;
+    mysmb_u8 fraction;
+    mysmb_u8 integer;
+    mysmb_u8 old_force;
+    mysmb_u8 old_x;
+    mysmb_u8 carry;
+    mysmb_u8 page_delta;
+
+    speed = game->ram[MYSMB_ENEMY_X_SPEED + slot];
+    fraction = (mysmb_u8)(speed << 4U);
+    integer = (mysmb_u8)(speed >> 4U);
+    if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
+    page_delta = integer >= 0x80U ? 0xffU : 0U;
+    old_force = game->ram[MYSMB_ENEMY_X_FORCE + slot];
+    game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_force + fraction);
+    carry = game->ram[MYSMB_ENEMY_X_FORCE + slot] < old_force ? 1U : 0U;
+    old_x = game->ram[MYSMB_ENEMY_X + slot];
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + integer + carry);
+    if (game->ram[MYSMB_ENEMY_X + slot] < old_x) {
+        game->ram[MYSMB_ENEMY_PAGE + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta + 1U);
+    }
+    else {
+        game->ram[MYSMB_ENEMY_PAGE + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta);
+    }
+}
+
+/* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
+static void mysmb_objects_set_bounding_box(struct mysmb_game *game,
+                                           mysmb_u16 address, mysmb_u8 control,
+                                           mysmb_u8 x, mysmb_u8 y)
+{
+    static const mysmb_u8 bounds[48] = {
+        0x02U, 0x08U, 0x0eU, 0x20U, 0x03U, 0x14U, 0x0dU, 0x20U,
+        0x02U, 0x14U, 0x0eU, 0x20U, 0x02U, 0x09U, 0x0eU, 0x15U,
+        0x00U, 0x00U, 0x18U, 0x06U, 0x00U, 0x00U, 0x20U, 0x0dU,
+        0x00U, 0x00U, 0x30U, 0x0dU, 0x00U, 0x00U, 0x08U, 0x08U,
+        0x06U, 0x04U, 0x0aU, 0x08U, 0x03U, 0x0eU, 0x0dU, 0x14U,
+        0x00U, 0x02U, 0x10U, 0x15U, 0x04U, 0x04U, 0x0cU, 0x1cU
+    };
+    mysmb_u8 offset;
+
+    if (control >= 12U) control = 0U;
+    offset = (mysmb_u8)(control * 4U);
+    game->ram[address] = (mysmb_u8)(x + bounds[offset]);
+    game->ram[address + 1U] = (mysmb_u8)(y + bounds[offset + 1U]);
+    game->ram[address + 2U] = (mysmb_u8)(x + bounds[offset + 2U]);
+    game->ram[address + 3U] = (mysmb_u8)(y + bounds[offset + 3U]);
+}
+
+/* ROM $dcf6 PlayerCollisionCore, for same-screen power-up boxes. */
+static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
+                                            mysmb_u16 first, mysmb_u16 second)
+{
+    if (game->ram[first] > game->ram[second + 2U] ||
+        game->ram[first + 2U] < game->ram[second] ||
+        game->ram[first + 1U] > game->ram[second + 3U] ||
+        game->ram[first + 3U] < game->ram[second + 1U]) return 0U;
+    return 1U;
+}
 /* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
  * byte; the modifier is cleared after every calculation exactly as the ROM
  * routine does. */

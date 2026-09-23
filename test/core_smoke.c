@@ -638,6 +638,35 @@ int main(void)
     if (game.ram[0x0039U] != 1U) return 1;
     mysmb_objects_start_power_up(&game, 0U, 2U);
     if (game.ram[0x0039U] != 2U) return 1;
+    game.ram[0x0747U] = 0xffU;
+    game.ram[0x0023U] = 0x80U;
+    game.ram[0x0039U] = 0U;
+    game.ram[0x008cU] = 0x40U;
+    mysmb_objects_step_power_up(&game);
+    if (game.ram[0x008cU] != 0x41U) return 1;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x30U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x50U;
+    game.ram[0x0499U] = 1U;
+    game.ram[0x03d0U] = 0U;
+    game.ram[0x071dU] = 1U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x001bU] = 0x2eU;
+    game.ram[0x0023U] = 0x80U;
+    game.ram[0x0014U] = 1U;
+    game.ram[0x0073U] = 1U;
+    game.ram[0x008cU] = 0x30U;
+    game.ram[0x00d4U] = 0x50U;
+    game.ram[0x049fU] = 3U;
+    game.ram[0x0039U] = 2U;
+    game.ram[0x079fU] = 0U;
+    game.frame_number = 0UL;
+    mysmb_objects_check_power_up_collision(&game);
+    if (game.ram[0x04acU] != 0x33U || game.ram[0x04adU] != 0x64U ||
+        game.ram[0x04c4U] != 0x32U || game.ram[0x04c5U] != 0x59U ||
+        game.ram[0x0014U] != 0U || game.ram[0x079fU] != 0x23U) return 1;
     game.ram[0x0076U] = 1U;
     game.ram[0x008fU] = 0x30U;
     game.ram[0x00d7U] = 0x60U;
