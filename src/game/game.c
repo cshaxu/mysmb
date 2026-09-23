@@ -272,14 +272,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     game->frame_number++;
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
-    mysmb_objects_apply_block_replacements(game);
-    mysmb_objects_step_blocks(game);
-    mysmb_objects_step_misc(game);
-    mysmb_objects_step_fireballs(game);
-    mysmb_objects_step_power_up(game);
-    mysmb_objects_step_normal_enemies(game);
-    mysmb_objects_step_floatey_numbers(game);
-    mysmb_objects_step_vine(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);
@@ -322,7 +314,17 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
             mysmb_player_step_fire_flower(game);
         }
+        /* ROM $94a5 GameEngine: GameRoutines (above) runs before the
+         * object loop, so object collisions see this frame's player state. */
+        mysmb_objects_step_fireballs(game);
+        mysmb_objects_step_power_up(game);
         mysmb_objects_check_power_up_collision(game);
+        mysmb_objects_step_normal_enemies(game);
+        mysmb_objects_step_floatey_numbers(game);
+        mysmb_objects_step_vine(game);
+        mysmb_objects_apply_block_replacements(game);
+        mysmb_objects_step_blocks(game);
+        mysmb_objects_step_misc(game);
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];
