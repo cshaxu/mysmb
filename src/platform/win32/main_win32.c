@@ -22,7 +22,7 @@ static void mysmb_win32_paint(HWND window)
     dc = BeginPaint(window, &paint);
     sky = CreateSolidBrush(RGB(92, 148, 252));
     ground = CreateSolidBrush(RGB(0, 168, 0));
-    actor = CreateSolidBrush(g_frame.title_started != 0U ? RGB(255, 216, 0) : RGB(220, 48, 32));
+    actor = CreateSolidBrush(g_frame.start_pressed != 0U ? RGB(255, 216, 0) : RGB(220, 48, 32));
 
     rect.left = 0;
     rect.top = 0;
@@ -33,8 +33,8 @@ static void mysmb_win32_paint(HWND window)
     rect.top = 200 * MYSMB_SCALE;
     FillRect(dc, &rect, ground);
 
-    rect.left = (int)g_frame.actor_x * MYSMB_SCALE;
-    rect.top = (int)g_frame.actor_y * MYSMB_SCALE;
+    rect.left = (int)g_frame.sprite0_x * MYSMB_SCALE;
+    rect.top = (int)g_frame.sprite0_y * MYSMB_SCALE;
     rect.right = rect.left + (16 * MYSMB_SCALE);
     rect.bottom = rect.top + (16 * MYSMB_SCALE);
     FillRect(dc, &rect, actor);

@@ -18,20 +18,20 @@ struct mysmb_input {
     mysmb_u8 buttons;
 };
 
-/* M1 T3 replaces this non-ROM state with the provenance-mapped SMB1 RAM model. */
 struct mysmb_game {
     mysmb_u32 frame_number;
-    mysmb_u16 actor_x;
-    mysmb_u8 actor_direction;
-    mysmb_u8 title_started;
+    /* Original CPU RAM $0000-$07ff; OAM is RAM[$0200-$02ff]. */
+    mysmb_u8 ram[0x0800U];
 };
 
 struct mysmb_frame {
-    mysmb_u16 actor_x;
-    mysmb_u16 actor_y;
-    mysmb_u8 title_started;
+    mysmb_u16 sprite0_x;
+    mysmb_u16 sprite0_y;
+    mysmb_u8 start_pressed;
 };
 
+/* ROM $90cc-$90e6, with Y supplied by its verified caller. */
+void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 void mysmb_game_initialize(struct mysmb_game *game);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);

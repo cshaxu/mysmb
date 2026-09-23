@@ -13,12 +13,20 @@ int main(void)
         mysmb_game_tick(&game, &input, &frame);
     }
 
-    if (game.frame_number != 120UL || frame.actor_y != 184U ||
-        frame.actor_x <= 24U) {
+    if (game.frame_number != 120UL || game.ram[0x07feU] != 0U ||
+        game.ram[0x07ffU] != 0xffU || game.ram[0x015fU] != 0U ||
+        game.ram[0x0160U] != 0xffU || game.ram[0x01feU] != 0xffU ||
+        game.ram[0x0200U] != 0U || game.ram[0x02ffU] != 0U) {
+        return 1;
+    }
+
+    game.ram[0x07d7U] = 0xffU;
+    mysmb_game_initialize_memory(&game, 0xd6U);
+    if (game.ram[0x07d6U] != 0U || game.ram[0x07d7U] != 0xffU) {
         return 1;
     }
 
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
-    return frame.title_started == 1U ? 0 : 1;
+    return frame.start_pressed == 1U ? 0 : 1;
 }
