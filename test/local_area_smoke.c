@@ -9,11 +9,26 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_area_source source;
     struct mysmb_area_object object;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
     mysmb_u8 count;
 
     mysmb_game_initialize(&game);
     source.prg = mysmb_local_prg;
     source.prg_size = MYSMB_LOCAL_PRG_SIZE;
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    input.buttons = MYSMB_BUTTON_START;
+    mysmb_game_tick(&game, &input, &frame);
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (frame.operating_mode != 1U || frame.operating_mode_task != 1U ||
+        game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
+        game.ram[0x0710U] != 2U || game.ram[0x0727U] != 1U ||
+        game.ram[0x0742U] != 2U) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
     if (mysmb_area_load_pointers(&game, &source) == 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
         mysmb_area_parse_header(&game, &source) == 0U) {

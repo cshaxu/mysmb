@@ -28,6 +28,9 @@ struct mysmb_game {
     mysmb_u8 ram[0x0800U];
     /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
     mysmb_u8 name_table[2][0x0400U];
+    /* Owner-local NROM data binding; null in ROM-free builds and tests. */
+    const mysmb_u8 *area_prg;
+    mysmb_u16 area_prg_size;
 };
 
 struct mysmb_frame {

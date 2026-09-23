@@ -175,6 +175,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
 
     mysmb_game_initialize(&g_game);
 #ifdef MYSMB_LOCAL_TITLE
+    mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     if (mysmb_game_apply_title_commands(&g_game, mysmb_local_title_data,
                                         MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U) {
         return 1;

@@ -82,6 +82,8 @@ void mysmb_game_initialize(struct mysmb_game *game)
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
+    game->area_prg = 0;
+    game->area_prg_size = 0U;
     /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
@@ -199,6 +201,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
 {
     mysmb_u8 mode_before;
     mysmb_u8 task_before;
+    struct mysmb_area_source area_source;
 
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
@@ -206,6 +209,13 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);
+        if (game->area_prg != 0) {
+            area_source.prg = game->area_prg;
+            area_source.prg_size = game->area_prg_size;
+            if (mysmb_area_load_pointers(game, &area_source) != 0U) {
+                (void)mysmb_area_parse_header(game, &area_source);
+            }
+        }
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

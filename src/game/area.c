@@ -86,6 +86,13 @@ void mysmb_area_initialize(struct mysmb_game *game)
     game->ram[MYSMB_AREA_OPER_MODE_TASK]++;
 }
 
+void mysmb_game_bind_area_source(struct mysmb_game *game,
+                                 const mysmb_u8 *prg, mysmb_u16 prg_size)
+{
+    game->area_prg = prg;
+    game->area_prg_size = prg_size;
+}
+
 /* Translation of ROM $9c03-$9c2b (LoadAreaPointer/GetAreaDataAddrs).
  * ROM CPU addresses are converted to NROM PRG offsets at this owner boundary. */
 mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
