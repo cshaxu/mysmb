@@ -37,6 +37,9 @@ int main(void)
     area_prg[0x1f04U] = 0x22U;
     area_prg[0x1f05U] = 0x81U;
     area_prg[0x1f06U] = 0xfdU;
+    area_prg[0x1234U] = 0x12U;
+    area_prg[0x1235U] = 0x00U;
+    area_prg[0x1236U] = 0xffU;
     area_source.prg = area_prg;
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
@@ -422,6 +425,15 @@ int main(void)
         game.ram[0x00e8U] != 0x56U) {
         return 1;
     }
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x00e9U] = 0x34U;
+    game.ram[0x00eaU] = 0x92U;
+    if (mysmb_area_spawn_next_enemy(&game, &area_source) == 0U ||
+        game.ram[0x000fU] != 1U || game.ram[0x0016U] != 0U ||
+        game.ram[0x006eU] != 0U || game.ram[0x0087U] != 0x10U ||
+        game.ram[0x00cfU] != 0x28U || game.ram[0x0058U] != 0xf8U ||
+        game.ram[0x049aU] != 3U || game.ram[0x0739U] != 2U) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||

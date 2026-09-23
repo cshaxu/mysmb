@@ -285,6 +285,11 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     }
     else if (mode_before == 1U && task_before == 1U) {
         (void)mysmb_area_emit_next_command(game);
+        if (game->area_prg != 0) {
+            area_source.prg = game->area_prg;
+            area_source.prg_size = game->area_prg_size;
+            (void)mysmb_area_spawn_next_enemy(game, &area_source);
+        }
         if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }

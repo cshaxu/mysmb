@@ -57,6 +57,26 @@ enum {
     MYSMB_AREA_DATA_OFFSET = 0x072cU
 };
 
+enum {
+    MYSMB_ENEMY_DATA_OFFSET = 0x0739U,
+    MYSMB_ENEMY_OBJECT_PAGE = 0x073aU,
+    MYSMB_ENEMY_OBJECT_PAGE_SELECT = 0x073bU,
+    MYSMB_ENEMY_FLAG = 0x000fU,
+    MYSMB_ENEMY_ID = 0x0016U,
+    MYSMB_ENEMY_STATE = 0x001eU,
+    MYSMB_ENEMY_MOVING_DIRECTION = 0x0046U,
+    MYSMB_ENEMY_X_SPEED = 0x0058U,
+    MYSMB_ENEMY_PAGE = 0x006eU,
+    MYSMB_ENEMY_X = 0x0087U,
+    MYSMB_ENEMY_Y_SPEED = 0x00a0U,
+    MYSMB_ENEMY_Y_HIGH = 0x00b6U,
+    MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_Y_FORCE = 0x0434U,
+    MYSMB_ENEMY_BOUND_BOX = 0x049aU,
+    MYSMB_PRIMARY_HARD = 0x076aU,
+    MYSMB_SECONDARY_HARD = 0x06ccU
+};
+
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
 void mysmb_area_initialize(struct mysmb_game *game)
@@ -115,6 +135,67 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     command->dispatch_id = object.dispatch_id;
     game->area_command_count++;
     return 1U;
+}
+
+/* ROM $c0f7-$c1f4 ProcessEnemyData through InitNormalEnemy, limited to
+ * ordinary enemy IDs.  Special objects retain their dedicated initializers. */
+mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
+                                     const struct mysmb_area_source *source)
+{
+    mysmb_u16 address;
+    mysmb_u16 world;
+    mysmb_u16 right;
+    mysmb_u8 first;
+    mysmb_u8 second;
+    mysmb_u8 slot;
+    mysmb_u8 row;
+
+    if (source == 0 || source->prg == 0 || game->ram[MYSMB_ENEMY_DATA_HIGH] < 0x80U) return 0U;
+    address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_ENEMY_DATA_HIGH] - 0x80U) << 8U) |
+                          game->ram[MYSMB_ENEMY_DATA_LOW]);
+    address = (mysmb_u16)(address + game->ram[MYSMB_ENEMY_DATA_OFFSET]);
+    while (address < source->prg_size && source->prg[address] != 0xffU) {
+        first = source->prg[address];
+        if ((first & 0x0fU) == 0x0fU && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
+            if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE] = (mysmb_u8)(source->prg[address + 1U] & 0x3fU);
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 1U;
+            game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
+            address = (mysmb_u16)(address + 2U);
+            continue;
+        }
+        if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
+        second = source->prg[address + 1U];
+        if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
+        row = (mysmb_u8)(first & 0x0fU);
+        if (row >= 0x0eU || ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U)) {
+            game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + (row == 0x0eU ? 3U : 2U));
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
+            return 0U;
+        }
+        world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_OBJECT_PAGE] << 8U) | (first & 0xf0U));
+        right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
+        if (world > (mysmb_u16)(right + 0x30U)) return 0U;
+        if (world < right) return 0U;
+        for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
+        if (slot == 5U) return 0U;
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
+        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
+        game->ram[MYSMB_ENEMY_ID + slot] = (mysmb_u8)(second & 0x3fU);
+        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+        game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
+        game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
+        return 1U;
+    }
+    return 0U;
 }
 
 /* Translation of ROM $9c03-$9c2b (LoadAreaPointer/GetAreaDataAddrs).
