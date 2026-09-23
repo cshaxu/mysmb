@@ -39,6 +39,10 @@ void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game);
 void mysmb_objects_step_red_paratroopas(struct mysmb_game *game);
 /* ROM $afe2-$b003 MoveFlyGreenPTroopa, sans rendering. */
 void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game);
+/* ROM MoveLakitu/PlayerLakituDiff and MoveD_EnemyVertically. */
+void mysmb_objects_step_lakitus(struct mysmb_game *game);
+/* ROM MoveD_EnemyVertically, bounded to the Spiny egg state. */
+void mysmb_objects_step_spiny_eggs(struct mysmb_game *game);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);
 void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game);
 void mysmb_objects_check_bloober_stomp(struct mysmb_game *game);
