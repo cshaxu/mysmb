@@ -40,6 +40,21 @@ int main(void)
         game.ram[0x0456U] != 0x28U || game.ram[0x0702U] != 0xe4U) {
         return 1;
     }
+    game.ram[0x0700U] = 0x0aU;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0033U] = MYSMB_BUTTON_LEFT;
+    game.ram[0x0057U] = 4U;
+    game.ram[0x0705U] = 0x80U;
+    mysmb_player_update_animation_speed(&game, MYSMB_BUTTON_LEFT);
+    if (game.ram[0x0045U] != MYSMB_BUTTON_LEFT || game.ram[0x0057U] != 0U ||
+        game.ram[0x0705U] != 0U || game.ram[0x070cU] != 7U) {
+        return 1;
+    }
+    game.ram[0x0700U] = 0x1cU;
+    mysmb_player_update_animation_speed(&game, 0U);
+    if (game.ram[0x0703U] != 0x1cU || game.ram[0x070cU] != 2U) {
+        return 1;
+    }
     game.ram[0x074eU] = 0U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0xd0U;

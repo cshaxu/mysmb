@@ -20,6 +20,9 @@ void mysmb_player_configure_climb(struct mysmb_game *game);
 void mysmb_player_climb(struct mysmb_game *game);
 /* ROM $b50b-$b5cb X_Physics setup for friction and horizontal speed limits. */
 void mysmb_player_configure_horizontal(struct mysmb_game *game);
+/* ROM GetPlayerAnimSpeed, including running and low-speed skid state. */
+void mysmb_player_update_animation_speed(struct mysmb_game *game,
+                                         mysmb_u8 buttons);
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 
 struct mysmb_player_terrain {

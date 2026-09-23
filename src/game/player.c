@@ -81,6 +81,7 @@ enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 
 enum { MYSMB_PLAYER_SIZE = 0x0754U };
 enum { MYSMB_PLAYER_BOUND_BOX = 0x0499U };
+enum { MYSMB_RUNNING_SPEED = 0x0703U };
 
 /* ROM BlockBufferAdderData and the player portion of the coordinate tables.
  * The three bases are normal big, swimming big, and small/crouching. */
@@ -380,7 +381,7 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
         speed_index++;
         friction_index++;
     }
-    if (game->ram[0x0703U] != 0U ||
+    if (game->ram[MYSMB_RUNNING_SPEED] != 0U ||
         game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U) {
         friction_index++;
     }
@@ -396,6 +397,39 @@ configure_limits:
         game->ram[MYSMB_FRICTION_HIGH] = (mysmb_u8)(friction_value >> 7U);
         game->ram[MYSMB_FRICTION_LOW] = (mysmb_u8)(friction_value << 1U);
     }
+}
+
+/* Translation of GetPlayerAnimSpeed.  The caller supplies SavedJoypadBits
+ * before the original routine partitions controller state. */
+void mysmb_player_update_animation_speed(struct mysmb_game *game,
+                                         mysmb_u8 buttons)
+{
+    static const mysmb_u8 timer[3] = { 2U, 4U, 7U };
+    mysmb_u8 index;
+    mysmb_u8 speed;
+
+    speed = game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE];
+    index = 0U;
+    if (speed >= 0x1cU) {
+        game->ram[MYSMB_RUNNING_SPEED] = speed;
+        game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
+        return;
+    }
+    index = 1U;
+    if (speed < 0x0eU) index = 2U;
+    if ((buttons & 0x7fU) != 0U) {
+        if ((buttons & (MYSMB_BUTTON_LEFT | MYSMB_BUTTON_RIGHT)) ==
+            game->ram[MYSMB_PLAYER_MOVING_DIRECTION]) {
+            game->ram[MYSMB_RUNNING_SPEED] = 0U;
+        }
+        else if (speed < 0x0bU) {
+            game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
+                game->ram[MYSMB_PLAYER_FACING];
+            game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+            game->ram[MYSMB_PLAYER_X_FORCE] = 0U;
+        }
+    }
+    game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
 }
 
 /* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
@@ -433,6 +467,9 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
         game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
     mysmb_player_configure_horizontal(game);
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U || game->ram[MYSMB_SWIMMING] != 0U) {
+        mysmb_player_update_animation_speed(game, buttons);
+    }
     if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
         game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
         mysmb_player_impose_friction(game);
