@@ -8,6 +8,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 
 set(MYSMB_WIN32_ARCH "host" CACHE STRING "Win32 target label: x86, x64, or host")
 set_property(CACHE MYSMB_WIN32_ARCH PROPERTY STRINGS host x86 x64)
+set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
 
 add_library(mysmb_game STATIC src/game/game.c)
 target_include_directories(mysmb_game PUBLIC src)
@@ -44,3 +45,31 @@ endif()
 
 enable_testing()
 add_test(NAME mysmb.core-smoke COMMAND mysmb_core_smoke)
+
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME mysmb.rom-codegen
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_rom_codegen.py)
+
+if(MYSMB_ROM_PATH)
+    set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
+    add_custom_command(
+        OUTPUT
+            "${MYSMB_LOCAL_ROM_DIR}/smb1_local_rom.h"
+            "${MYSMB_LOCAL_ROM_DIR}/smb1_local_rom.c"
+            "${MYSMB_LOCAL_ROM_DIR}/smb1_local_map.txt"
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_rom_codegen.py
+            --rom "${MYSMB_ROM_PATH}" --output "${MYSMB_LOCAL_ROM_DIR}"
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_rom_codegen.py "${MYSMB_ROM_PATH}"
+        VERBATIM
+    )
+    add_custom_target(mysmb_local_rom DEPENDS
+        "${MYSMB_LOCAL_ROM_DIR}/smb1_local_rom.h"
+        "${MYSMB_LOCAL_ROM_DIR}/smb1_local_rom.c"
+        "${MYSMB_LOCAL_ROM_DIR}/smb1_local_map.txt"
+    )
+    add_library(mysmb_local_rom_data OBJECT
+        "${MYSMB_LOCAL_ROM_DIR}/smb1_local_rom.c"
+    )
+    add_dependencies(mysmb_local_rom_data mysmb_local_rom)
+    target_include_directories(mysmb_local_rom_data PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
+endif()

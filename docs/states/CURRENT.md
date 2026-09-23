@@ -2,28 +2,28 @@
 
 ## Current Work
 
-M1 T2 S3 is admitted to close the platform foundation.
+M1 T3 S1 is admitted to implement the local static-C source pipeline.
 
-## M1 T2 S3 Packet
+## M1 T3 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation |
-| Admission And Approval | Owner approved M1 admission and requested a Win32-first, 16-bit-compatible C foundation on 2026-09-22; S2 implementation committed at `62e2d22`. |
-| Objective | Review and close the platform foundation, retaining its concrete OpenNT tool-availability finding for the later DOS adapter work. |
-| Non-goals | Do not add ROM logic, third-party source, DOS VGA code, or a NES emulator. |
-| Reference Baseline | T2 S2 implementation `62e2d22`; x64 and x86 MinGW build trees. |
-| Candidate Proposal | [M1 Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) |
-| Files And ABI Surface | Current status and T2 history record only. |
-| Applicable Rules | Task Reading Set; Execution and Documentation rules. |
-| Verification | Re-run documentation governance, x64/x86 builds, CTest smoke, PE architecture inspection, and source-boundary search. |
-| Expected Markers | T2 history records `mysmb_game`, `mysmb_win32`, x86/x64 PE evidence, and the unbuilt OpenNT compiler prerequisite. |
-| Asset Needs | None. |
-| Reporting Requirements | Preserve truthful build, test, architecture, and OpenNT availability results. |
-| Stop Conditions | Stop for owner direction only if closure evidence contradicts the S2 implementation. |
-| Exit Criteria | T2 history is complete and the next queued source-pipeline task can be admitted. |
+| Identifier Mode | New |
+| Admission And Approval | Owner approved M1 execution and specified the owner-local SMB1 ROM route on 2026-09-22; T2 closed at `5cb6ff4`. |
+| Objective | Bind the selected owner-local ROM and a reviewed SMB1 assembly listing to a bounded parser/generator that emits ignored C90 translation units and an address map for the boot/title dependency slice. |
+| Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not run a 6502 emulator in the product. |
+| Reference Baseline | T2 foundation `5cb6ff4`; owner-local ROM route `nxvm-assets/roms-mynes/smario1.nes`; `nnes` is a later validation-only reference. |
+| Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
+| Files And ABI Surface | Ignored local input binding and generated output; project-owned parser/generator, address-map metadata format, root CMake integration, and tests. |
+| Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
+| Verification | Identify ROM header and mapper locally; verify each generated output is ignored; run generator deterministically; compile generated C through `mysmb_game`; inspect address-map coverage for its admitted boot/title slice. |
+| Expected Markers | Local input configuration, project-owned generator, generated C90 unit, neutral address map, and build target exist without protected material in Git. |
+| Asset Needs | One owner-local ROM and one separately reviewed assembly listing, neither committed. |
+| Reporting Requirements | Record input identity only in local ignored metadata; report provenance review, generated slice coverage, build/test result, output containment, and unresolved listing/tool gaps. |
+| Stop Conditions | Stop for owner direction if the selected ROM does not match the reviewed listing, the listing lacks a clear redistribution/reuse basis, or generated output cannot be contained locally. |
+| Exit Criteria | The boot/title dependency slice has a reproducible local C90 generation path, provenance/address mapping, and a successful compile without a runtime 6502 emulator. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
-| Similar-Issue Sweep | Completed in S2: `rg` found the sole `windows.h` include under `src/platform/win32`; no platform macro occurs beneath `src/game`. |
+| Similar-Issue Sweep | Search all tracked files for ROM paths, ROM extensions, generated output references, and third-party listing text; retain only policy-approved neutral tooling and ignore rules. |
 
 ## Current Technical Baseline
 

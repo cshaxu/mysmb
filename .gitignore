@@ -10,6 +10,8 @@ out/
 *.obj
 *.map
 *.pdb
+__pycache__/
+*.pyc
 
 # Local tools and IDE state.
 .vs/
