@@ -89,6 +89,14 @@ def index_listing(rom_path, asm_path):
         source = raw_line.split(";", 1)[0].rstrip()
         if not source.strip():
             continue
+        continuation = source.strip()
+        if pc is not None and continuation.startswith("+"):
+            count = len(re.findall(r"\$[0-9a-fA-F]{2}", continuation))
+            if count == 0:
+                unknown.append((line_number, source))
+            else:
+                pc += count
+            continue
         directive = directive_pattern.match(source)
         if directive:
             name = directive.group(1).lower()

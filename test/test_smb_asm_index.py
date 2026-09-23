@@ -32,7 +32,8 @@ def main():
             ".org $8000\n"
             "Start: sei\n"
             "Loop: bpl Loop\n"
-            ".db $00, $00\n"
+            ".db $00\n"
+            "+ $00\n"
             "AfterData: rts\n",
             encoding="ascii",
         )

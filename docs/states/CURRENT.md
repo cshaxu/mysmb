@@ -12,13 +12,13 @@ M1 T3 S1 is admitted to implement the local static-C source pipeline.
 | Admission And Approval | Owner approved M1 execution and specified the owner-local SMB1 ROM route on 2026-09-22; T2 closed at `5cb6ff4`. |
 | Objective | Bind the selected owner-local ROM and a reviewed SMB1 assembly listing to a bounded parser/generator that emits ignored C90 translation units and an address map for the boot/title dependency slice. |
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not run a 6502 emulator in the product. |
-| Reference Baseline | T2 foundation `5cb6ff4`; owner-local ROM `nxvm-assets/roms-mynes/smb1.nes`; local-only SMBDIS.ASM from doppelganger's own-use listing; `nnes` is a later validation-only reference. |
+| Reference Baseline | T2 foundation `5cb6ff4`; owner-local ROM `nxvm-assets/roms-mynes/smb1.nes`; doppelganger's own-use SMBDIS.ASM is local symbol research only because it diverges from this ROM at `$AEB8`; address authority is byte-for-byte local ROM verification with the matching public address view kept local-only. `nnes` is a later validation-only reference. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
 | Files And ABI Surface | Ignored local input binding and generated output; project-owned parser/generator, address-map metadata format, root CMake integration, and tests. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
 | Verification | Identify ROM header and mapper locally; verify each generated output is ignored; run generator deterministically; compile generated C through `mysmb_game`; inspect address-map coverage for its admitted boot/title slice. |
 | Expected Markers | Local input configuration, project-owned generator, generated C90 unit, neutral address map, and build target exist without protected material in Git. |
-| Asset Needs | One owner-local ROM and SMBDIS.ASM listing, both under ignored local build output and never committed. The listing states it is provided for personal use and requires user-supplied character ROM/header. |
+| Asset Needs | One owner-local ROM and local-only disassembly references, never committed. The doppelganger listing states it is provided for personal use and requires user-supplied character ROM/header; it supplies symbols but cannot supply unverified addresses. |
 | Reporting Requirements | Record input identity only in local ignored metadata; report provenance review, generated slice coverage, build/test result, output containment, and unresolved listing/tool gaps. |
 | Stop Conditions | Stop for owner direction if the selected ROM does not match the reviewed listing, the listing lacks a clear redistribution/reuse basis, or generated output cannot be contained locally. |
 | Exit Criteria | The boot/title dependency slice has a reproducible local C90 generation path, provenance/address mapping, and a successful compile without a runtime 6502 emulator. |
