@@ -42,7 +42,20 @@ enum {
     MYSMB_CURRENT_PLAYER = 0x0753U,
     MYSMB_COIN_TALLY_FOR_1UPS = 0x0748U,
     MYSMB_COIN_TALLY = 0x075eU,
-    MYSMB_NUMBER_OF_LIVES = 0x075aU
+    MYSMB_NUMBER_OF_LIVES = 0x075aU,
+    MYSMB_POWER_UP_TYPE = 0x0039U,
+    MYSMB_ENEMY_FLAG = 0x000fU,
+    MYSMB_ENEMY_ID = 0x0016U,
+    MYSMB_ENEMY_STATE = 0x001eU,
+    MYSMB_ENEMY_MOVING_DIRECTION = 0x0046U,
+    MYSMB_ENEMY_X_SPEED = 0x0058U,
+    MYSMB_ENEMY_PAGE = 0x006eU,
+    MYSMB_ENEMY_X = 0x0087U,
+    MYSMB_ENEMY_Y_HIGH = 0x00b6U,
+    MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
+    MYSMB_ENEMY_BOUND_BOX = 0x049aU,
+    MYSMB_PLAYER_STATUS = 0x0756U
 };
 
 /* ROM $bb51 SetupJumpCoin. */
@@ -93,6 +106,54 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] + game->ram[MYSMB_SCROLL_AMOUNT]);
             if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
         }
+    }
+}
+
+/* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object
+ * buffer for the one active power-up. */
+void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
+                                  mysmb_u8 power_up_type)
+{
+    const mysmb_u8 slot = 5U;
+
+    game->ram[MYSMB_ENEMY_ID + slot] = 0x2eU;
+    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_BLOCK_PAGE + block_slot];
+    game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_BLOCK_X + block_slot];
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y + slot] =
+        (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + block_slot] - 8U);
+    game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    game->ram[MYSMB_POWER_UP_TYPE] = power_up_type;
+    if (power_up_type < 2U) {
+        if (game->ram[MYSMB_PLAYER_STATUS] < 2U) {
+            game->ram[MYSMB_POWER_UP_TYPE] = game->ram[MYSMB_PLAYER_STATUS];
+        }
+        else {
+            game->ram[MYSMB_POWER_UP_TYPE] = 1U;
+        }
+    }
+    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0x20U;
+}
+
+/* ROM $bbef-$bc15 GrowThePowerUp.  Rendering, collection, and the mature
+ * mushroom/star movement branches belong to their later enemy-object route. */
+void mysmb_objects_step_power_up(struct mysmb_game *game)
+{
+    const mysmb_u8 slot = 5U;
+    mysmb_u8 state;
+
+    state = game->ram[MYSMB_ENEMY_STATE + slot];
+    if (state == 0U || (state & 0x80U) != 0U) return;
+    if (((mysmb_u8)game->frame_number & 3U) != 0U) return;
+    game->ram[MYSMB_ENEMY_Y + slot]--;
+    game->ram[MYSMB_ENEMY_STATE + slot]++;
+    if (state >= 0x11U) {
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0x10U;
+        game->ram[MYSMB_ENEMY_STATE + slot] = 0x80U;
+        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
     }
 }
 
@@ -168,6 +229,25 @@ static mysmb_u8 mysmb_objects_is_bumpable(mysmb_u8 metatile)
     return 0U;
 }
 
+/* ROM $bd8b BlockCode, restricted to the entries which invoke SetupPowerUp. */
+static mysmb_u8 mysmb_objects_power_up_for_block(mysmb_u8 metatile,
+                                                  mysmb_u8 *power_up_type)
+{
+    if (metatile == 0xc1U || metatile == 0x55U || metatile == 0x5aU) {
+        *power_up_type = 0U;
+        return 1U;
+    }
+    if (metatile == 0x57U || metatile == 0x5cU) {
+        *power_up_type = 2U;
+        return 1U;
+    }
+    if (metatile == 0x60U || metatile == 0x59U || metatile == 0x5eU) {
+        *power_up_type = 3U;
+        return 1U;
+    }
+    return 0U;
+}
+
 /* Translation of ROM $bced-$bd9b's matched-block path.  The caller retains
  * unmatched bricks for the later brick-chunk route. */
 mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
@@ -178,6 +258,7 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     mysmb_u8 slot;
     mysmb_u8 old_x;
     mysmb_u8 y_adder;
+    mysmb_u8 power_up_type;
     mysmb_u16 address;
 
     if (mysmb_objects_is_bumpable(metatile) == 0U) return 0U;
@@ -208,6 +289,9 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
+    if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
+        mysmb_objects_start_power_up(game, slot, power_up_type);
+    }
     game->ram[MYSMB_BLOCK_SLOT_CONTROL] ^= 1U;
     return 1U;
 }
