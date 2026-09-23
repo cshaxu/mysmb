@@ -18,6 +18,11 @@ enum {
     MYSMB_RAM_OPER_MODE = 0x0770U,
     MYSMB_RAM_OPER_MODE_TASK = 0x0772U,
     MYSMB_RAM_TIMER_CONTROL = 0x0747U,
+    MYSMB_RAM_PLAYER_Y_HIGH = 0x00b5U,
+    MYSMB_RAM_PLAYER_STATUS = 0x0756U,
+    MYSMB_RAM_TIMER_EXPIRED = 0x0759U,
+    MYSMB_RAM_GAME_TIMER_CONTROL = 0x0787U,
+    MYSMB_RAM_GAME_TIMER_HUNDREDS = 0x07f8U,
     MYSMB_RAM_SELECT_TIMER = 0x0780U,
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
@@ -42,6 +47,32 @@ static void mysmb_game_tick_player_timers(struct mysmb_game *game)
          ++index) {
         if (game->ram[timer_address[index]] != 0U) game->ram[timer_address[index]]--;
     }
+}
+
+/* ROM RunGameTimer, excluding its status-bar, audio, and death-mode owners. */
+static void mysmb_game_run_timer(struct mysmb_game *game)
+{
+    mysmb_u16 digit;
+
+    if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
+        game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] < 8U ||
+        game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
+        game->ram[MYSMB_RAM_PLAYER_Y_HIGH] >= 2U ||
+        game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] != 0U) return;
+    if ((game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS] |
+         game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] |
+         game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U]) == 0U) {
+        game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
+        game->ram[MYSMB_RAM_TIMER_EXPIRED]++;
+        return;
+    }
+    game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] = 0x18U;
+    digit = MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U;
+    while (game->ram[digit] == 0U) {
+        game->ram[digit] = 9U;
+        digit--;
+    }
+    game->ram[digit]--;
 }
 
 /* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
@@ -232,6 +263,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
     mysmb_game_tick_player_timers(game);
+    mysmb_game_run_timer(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);
