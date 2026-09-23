@@ -46,6 +46,8 @@ add_executable(mysmb_bowser_smoke test/bowser_smoke.c)
 target_link_libraries(mysmb_bowser_smoke PRIVATE mysmb_game)
 add_executable(mysmb_platform_smoke test/platform_smoke.c)
 target_link_libraries(mysmb_platform_smoke PRIVATE mysmb_game)
+add_executable(mysmb_mode_smoke test/mode_smoke.c)
+target_link_libraries(mysmb_mode_smoke PRIVATE mysmb_game)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -112,6 +114,7 @@ add_test(NAME mysmb.flying-cheep-smoke COMMAND mysmb_flying_cheep_smoke)
 add_test(NAME mysmb.firebar-smoke COMMAND mysmb_firebar_smoke)
 add_test(NAME mysmb.bowser-smoke COMMAND mysmb_bowser_smoke)
 add_test(NAME mysmb.platform-smoke COMMAND mysmb_platform_smoke)
+add_test(NAME mysmb.mode-smoke COMMAND mysmb_mode_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen

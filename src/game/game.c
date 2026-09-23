@@ -33,6 +33,24 @@ enum {
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
 };
 
+enum {
+    MYSMB_RAM_SCREEN_ROUTINE_TASK = 0x073cU,
+    MYSMB_RAM_SPRITE0_HIT = 0x0722U,
+    MYSMB_RAM_DISABLE_SCREEN = 0x0774U,
+    MYSMB_RAM_EVENT_MUSIC = 0x00fcU,
+    MYSMB_RAM_SCREEN_TIMER = 0x07a0U,
+    MYSMB_RAM_NUMBER_OF_LIVES = 0x075aU,
+    MYSMB_RAM_HALFWAY_PAGE = 0x075bU,
+    MYSMB_RAM_LEVEL = 0x075cU,
+    MYSMB_RAM_CURRENT_PLAYER = 0x0753U,
+    MYSMB_RAM_OFFSCREEN_LIVES = 0x0761U
+};
+
+static void mysmb_game_continue_game(struct mysmb_game *game);
+static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game);
+static void mysmb_game_lose_life(struct mysmb_game *game);
+static void mysmb_game_step_game_over(struct mysmb_game *game);
+
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
 static void mysmb_game_tick_player_timers(struct mysmb_game *game)
@@ -81,6 +99,101 @@ static void mysmb_game_run_timer(struct mysmb_game *game)
         digit--;
     }
     game->ram[digit]--;
+}
+
+/* ROM TransposePlayers.  The seven-byte player records deliberately include
+ * life, checkpoint, level, coin tally, world, and area as one transaction. */
+static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+    mysmb_u8 saved;
+
+    if (game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] == 0U ||
+        game->ram[MYSMB_RAM_OFFSCREEN_LIVES] >= 0x80U) return 0U;
+    game->ram[MYSMB_RAM_CURRENT_PLAYER] ^= 1U;
+    for (offset = 0U; offset < 7U; ++offset) {
+        saved = game->ram[MYSMB_RAM_NUMBER_OF_LIVES + offset];
+        game->ram[MYSMB_RAM_NUMBER_OF_LIVES + offset] =
+            game->ram[MYSMB_RAM_OFFSCREEN_LIVES + offset];
+        game->ram[MYSMB_RAM_OFFSCREEN_LIVES + offset] = saved;
+    }
+    return 1U;
+}
+
+/* ROM ContinueGame.  Area initialization remains the existing mode-task zero
+ * owner, so this routine only restores the original preserved game state. */
+static void mysmb_game_continue_game(struct mysmb_game *game)
+{
+    game->ram[0x0754U] = 1U;
+    game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
+    game->ram[MYSMB_RAM_TIMER_CONTROL] = 0U;
+    game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
+    game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE] = 1U;
+}
+
+/* ROM PlayerLoseLife.  The half-way table stays here because it is game-mode
+ * ownership, not an area renderer concern. */
+static void mysmb_game_lose_life(struct mysmb_game *game)
+{
+    static const mysmb_u8 halfway_nybbles[16] = {
+        0x56U, 0x40U, 0x65U, 0x70U, 0x66U, 0x40U, 0x66U, 0x40U,
+        0x66U, 0x40U, 0x66U, 0x60U, 0x65U, 0x70U, 0x00U, 0x00U
+    };
+    mysmb_u8 index;
+    mysmb_u8 checkpoint;
+
+    game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+    game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
+    game->ram[MYSMB_RAM_NUMBER_OF_LIVES]--;
+    if (game->ram[MYSMB_RAM_NUMBER_OF_LIVES] >= 0x80U) {
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+        game->ram[MYSMB_RAM_OPER_MODE] = 3U;
+        return;
+    }
+    index = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] << 1U);
+    if ((game->ram[MYSMB_RAM_LEVEL] & 2U) != 0U) index++;
+    checkpoint = halfway_nybbles[index];
+    if ((game->ram[MYSMB_RAM_LEVEL] & 1U) == 0U) checkpoint >>= 4U;
+    checkpoint &= 0x0fU;
+    if (checkpoint > game->ram[0x071aU]) checkpoint = 0U;
+    game->ram[MYSMB_RAM_HALFWAY_PAGE] = checkpoint;
+    (void)mysmb_game_transpose_players(game);
+    mysmb_game_continue_game(game);
+}
+
+/* ROM SetupGameOver, ScreenRoutines, and RunGameOver.  Rendering text is a
+ * later adapter concern; the original 18-frame screen gate is preserved. */
+static void mysmb_game_step_game_over(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
+        game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
+        game->ram[MYSMB_RAM_EVENT_MUSIC] = 2U;
+        game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+        game->ram[MYSMB_RAM_SCREEN_TIMER] = 0x12U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
+        if (game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) game->ram[MYSMB_RAM_SCREEN_TIMER]--;
+        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        return;
+    }
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+    if ((game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_START) == 0U &&
+        game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) return;
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
+    if (mysmb_game_transpose_players(game) != 0U) {
+        mysmb_game_continue_game(game);
+        return;
+    }
+    game->ram[MYSMB_RAM_CONTINUE_WORLD] = game->ram[MYSMB_RAM_WORLD];
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    game->ram[MYSMB_RAM_SCREEN_TIMER] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
 }
 
 /* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
@@ -273,7 +386,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
     mysmb_game_title_step(game, input);
-    if (mode_before == 1U && task_before == 0U) {
+    if (mode_before == 3U) {
+        mysmb_game_step_game_over(game);
+    }
+    else if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);
         if (game->area_prg != 0) {
             area_source.prg = game->area_prg;
@@ -282,6 +398,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 (void)mysmb_area_parse_header(game, &area_source);
             }
         }
+    }
+    else if (mode_before == 1U && task_before == 1U &&
+             game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 6U) {
+        mysmb_game_lose_life(game);
     }
     else if (mode_before == 1U && task_before == 1U) {
         (void)mysmb_area_emit_next_command(game);
@@ -313,6 +433,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 10U) {
             mysmb_player_step_injury_blink(game, input->buttons);
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 11U &&
+                 game->ram[MYSMB_RAM_TIMER_CONTROL] < 0xf0U) {
+            mysmb_player_step(game, input->buttons);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
             mysmb_player_step_fire_flower(game);
