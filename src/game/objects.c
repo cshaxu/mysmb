@@ -27,6 +27,7 @@ enum {
     MYSMB_PLAYER_Y = 0x00ceU,
     MYSMB_PLAYER_Y_HIGH = 0x00b5U,
     MYSMB_PLAYER_Y_SPEED = 0x009fU,
+    MYSMB_PLAYER_Y_FORCE = 0x0433U,
     MYSMB_PLAYER_X_SPEED = 0x0057U,
     MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U
 };
@@ -2103,6 +2104,113 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
                 game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
             }
             return;
+        }
+    }
+}
+
+/* ROM RunLargePlatform through RunSmallPlatform.  Platforms are ordinary
+ * enemy slots in the original program: their Y fraction shares the enemy
+ * vertical workspace, while the player receives the resulting deck motion. */
+void mysmb_objects_step_platforms(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 id;
+    mysmb_u8 old_y;
+    mysmb_u8 old_x;
+    mysmb_u8 old_player_x;
+    mysmb_u8 old_force;
+    mysmb_u8 carry;
+    mysmb_u8 landed;
+    mysmb_u8 peer;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) continue;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id < 36U || id > 44U) continue;
+        landed = 0U;
+        if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
+            game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
+            game->ram[MYSMB_PLAYER_X] + 16U >= game->ram[MYSMB_ENEMY_X + slot] &&
+            game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] +
+                                        (id == 43U || id == 44U ? 16U : 32U) &&
+            game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U &&
+            game->ram[MYSMB_PLAYER_Y] + 0x20U >= game->ram[MYSMB_ENEMY_Y + slot] &&
+            game->ram[MYSMB_PLAYER_Y] + 0x20U <= game->ram[MYSMB_ENEMY_Y + slot] + 6U) {
+            game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x20U);
+            game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
+            game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
+            game->ram[MYSMB_PLAYER_STATE] = 0U;
+            landed = 1U;
+        }
+        if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
+        if (id == 36U && landed != 0U) {
+            /* BalancePlatform: state is the partner slot selected by
+             * InitBalPlatform.  The rope is drawing-only; its two decks move
+             * oppositely by the shared falling-platform increment. */
+            peer = game->ram[MYSMB_ENEMY_STATE + slot];
+            game->ram[MYSMB_ENEMY_Y + slot]++;
+            if (peer < 5U && game->ram[MYSMB_ENEMY_FLAG + peer] != 0U &&
+                game->ram[MYSMB_ENEMY_ID + peer] == 36U) {
+                game->ram[MYSMB_ENEMY_Y + peer]--;
+            }
+        }
+        else if (id == 37U) {
+            /* YMovingPlatform: wait above its source top, then cycle between
+             * top and centre using the native 8-bit vertical integrator. */
+            if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] == 0U &&
+                game->ram[MYSMB_ENEMY_Y + slot] < game->ram[MYSMB_ENEMY_X_FORCE + slot]) {
+                if (((mysmb_u8)game->frame_number & 7U) == 0U) game->ram[MYSMB_ENEMY_Y + slot]++;
+            }
+            else {
+                if (game->ram[MYSMB_ENEMY_Y + slot] >= game->ram[MYSMB_ENEMY_X_SPEED + slot]) {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
+                }
+                else {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
+                }
+                old_force = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+                game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_force +
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+                carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_force ? 1U : 0U;
+                old_y = game->ram[MYSMB_ENEMY_Y + slot];
+                game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_y +
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+            }
+        }
+        else if (id == 38U || id == 39U || id == 43U || id == 44U) {
+            /* MoveLiftPlatforms: fractional force plus signed whole speed. */
+            old_force = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_force +
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+            carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_force ? 1U : 0U;
+            old_y = game->ram[MYSMB_ENEMY_Y + slot];
+            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_y +
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+            if (landed != 0U) {
+                game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
+                    game->ram[MYSMB_ENEMY_Y + slot] - old_y);
+            }
+        }
+        else if (id == 40U || id == 42U) {
+            /* XMovingPlatform/RightPlatform: preserve the exact native
+             * whole-pixel delta for both player world position and scroll. */
+            old_x = game->ram[MYSMB_ENEMY_X + slot];
+            old_player_x = game->ram[MYSMB_PLAYER_X];
+            mysmb_objects_move_enemy_horizontally(game, slot);
+            if (landed != 0U) {
+                game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_player_x +
+                    game->ram[MYSMB_ENEMY_X + slot] - old_x);
+                if (game->ram[MYSMB_PLAYER_X] < old_player_x) game->ram[MYSMB_PLAYER_PAGE]++;
+                game->ram[0x03a1U] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - old_x);
+            }
+        }
+        else if (id == 41U && landed != 0U) {
+            /* DropPlatform switches to its falling route only after contact. */
+            game->ram[MYSMB_ENEMY_Y + slot]++;
+            game->ram[MYSMB_PLAYER_Y]++;
         }
     }
 }

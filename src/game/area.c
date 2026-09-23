@@ -87,6 +87,10 @@ enum {
     MYSMB_BOWSER_FRONT_SLOT = 0x0368U,
     MYSMB_BOWSER_HIT_POINTS = 0x0483U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x078aU,
+    MYSMB_BALANCE_PLATFORM_ALIGNMENT = 0x03a0U,
+    MYSMB_PLATFORM_COLLISION_FLAG = 0x03a2U,
+    MYSMB_PLATFORM_TOP_Y = 0x0401U,
+    MYSMB_PLATFORM_CENTER_Y = 0x0058U,
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
@@ -300,6 +304,68 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
             if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        }
+        /* ROM InitBalPlatform through InitSmallPlatform.  The drawing-only
+         * rope partner is absent; each physical deck keeps its 6502 state. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] >= 36U &&
+            game->ram[MYSMB_ENEMY_ID + slot] <= 44U) {
+            mysmb_u8 platform_id;
+            mysmb_u8 old_x;
+
+            platform_id = game->ram[MYSMB_ENEMY_ID + slot];
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
+            game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] =
+                (platform_id == 43U || platform_id == 44U) ? 4U : 5U;
+            if (platform_id != 43U && platform_id != 44U &&
+                game->ram[MYSMB_AREA_TYPE] != 3U &&
+                game->ram[MYSMB_SECONDARY_HARD] == 0U) {
+                game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 6U;
+            }
+            if (platform_id == 38U || platform_id == 39U) {
+                game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 5U;
+            }
+            if (platform_id == 36U) {
+                old_x = game->ram[MYSMB_ENEMY_X + slot];
+                game->ram[MYSMB_ENEMY_Y + slot] =
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
+                if (game->ram[MYSMB_SECONDARY_HARD] == 0U) {
+                    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x - 8U);
+                    if (old_x < 8U) game->ram[MYSMB_ENEMY_PAGE + slot]--;
+                    old_x = game->ram[MYSMB_ENEMY_X + slot];
+                }
+                game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 8U);
+                if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
+                game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT];
+                game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] =
+                    game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] >= 0x80U ? slot : 0xffU;
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0U;
+            }
+            else if (platform_id == 37U) {
+                game->ram[MYSMB_PLATFORM_TOP_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+                game->ram[MYSMB_PLATFORM_CENTER_Y + slot] =
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x40U);
+                if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
+                    game->ram[MYSMB_ENEMY_Y + slot] = 0xc0U;
+                }
+            }
+            else if (platform_id == 38U || platform_id == 43U) {
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
+            }
+            else if (platform_id == 39U || platform_id == 44U) {
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            }
+            else if (platform_id == 40U || platform_id == 42U) {
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0x10U;
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+            }
+            else if (platform_id == 41U) {
+                game->ram[MYSMB_PLATFORM_COLLISION_FLAG + slot] = 0xffU;
+            }
         }
         /* ROM InitBowser, excluding its OAM-only duplicate rear half. */
         if (game->ram[MYSMB_ENEMY_ID + slot] == 45U) {
