@@ -87,5 +87,25 @@ int main(void)
         game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
         game.ram[0x000eU] != 10U || game.ram[0x001dU] != 1U ||
         game.ram[0x0747U] != 0xffU) return 6;
+
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 5U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x40U;
+    game.ram[0x00cfU] = 0x70U;
+    game.ram[0x049aU] = 0U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0086U] = 0x40U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x009fU] = 1U;
+    game.ram[0x000eU] = 8U;
+    game.frame_number = 0U;
+    mysmb_objects_check_hammer_bro_stomp(&game);
+    if (game.ram[0x001eU] != 0x20U || game.ram[0x00cfU] != 0x6eU ||
+        game.ram[0x00a0U] != 0U || game.ram[0x0058U] != 0U ||
+        game.ram[0x0110U] != 6U || game.ram[0x009fU] != 0xfdU) return 7;
     return 0;
 }
