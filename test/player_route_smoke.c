@@ -99,5 +99,21 @@ int main(void)
     if (game.ram[0x0709U] != 0x18U || game.ram[0x0033U] != MYSMB_BUTTON_RIGHT) {
         return 1;
     }
+    for (index = 0U; index < 0x0100U; ++index) {
+        game.ram[(mysmb_u16)(0x0500U + index)] = 0U;
+    }
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0704U] = 0U;
+    game.ram[0x0714U] = 0U;
+    game.ram[0x001dU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x28U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x0603U] = 0x61U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U) {
+        return 1;
+    }
     return 0;
 }

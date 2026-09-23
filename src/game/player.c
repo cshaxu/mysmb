@@ -81,6 +81,17 @@ enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 
 enum { MYSMB_PLAYER_SIZE = 0x0754U };
 
+/* ROM BlockBufferAdderData and the player portion of the coordinate tables.
+ * The three bases are normal big, swimming big, and small/crouching. */
+static mysmb_u8 mysmb_player_collision_base(const struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U ||
+        game->ram[MYSMB_PLAYER_SIZE] != 0U) {
+        return 0x0eU;
+    }
+    return game->ram[MYSMB_SWIMMING] != 0U ? 7U : 0U;
+}
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -513,10 +524,20 @@ mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
  * decision after sampling both positions. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
 {
+    static const mysmb_u8 x_adder[22] = {
+        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
+        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+    };
+    static const mysmb_u8 y_adder[22] = {
+        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
+        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
+        0x18U, 0x18U, 0x18U
+    };
     struct mysmb_player_terrain left;
     struct mysmb_player_terrain right;
     mysmb_u8 have_left;
     mysmb_u8 have_right;
+    mysmb_u8 base;
 
     if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
         game->ram[MYSMB_PLAYER_Y] >= 0xcfU) {
@@ -526,8 +547,11 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_STATE] =
             game->ram[MYSMB_SWIMMING] != 0U ? 1U : 2U;
     }
-    have_left = mysmb_player_query_block(game, 3U, 0x20U, 0U, &left);
-    have_right = mysmb_player_query_block(game, 0x0cU, 0x20U, 0U, &right);
+    base = mysmb_player_collision_base(game);
+    have_left = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 1U)],
+                                         y_adder[(mysmb_u8)(base + 1U)], 0U, &left);
+    have_right = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 2U)],
+                                          y_adder[(mysmb_u8)(base + 2U)], 0U, &right);
     if (have_left != 0U && left.metatile != 0U) {
         return mysmb_player_land_on_solid(game, left.metatile,
                                           left.contact_low_nibble);
@@ -670,20 +694,31 @@ void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 moving_direction
  * jumpspring, and pipe cases retain their object-specific routes. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
 {
-    static const mysmb_u8 x_adder[4] = { 2U, 2U, 0x0dU, 0x0dU };
-    static const mysmb_u8 y_adder[4] = { 8U, 0x18U, 8U, 0x18U };
+    static const mysmb_u8 x_adder[22] = {
+        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
+        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+    };
+    static const mysmb_u8 y_adder[22] = {
+        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
+        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
+        0x18U, 0x18U, 0x18U
+    };
     static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
     struct mysmb_player_terrain terrain;
     mysmb_u8 index;
     mysmb_u8 group;
+    mysmb_u8 base;
 
     if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
         game->ram[MYSMB_PLAYER_Y] >= 0xd0U) {
         return 0U;
     }
     game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
+    base = mysmb_player_collision_base(game);
     for (index = 0U; index < 4U; ++index) {
-        if (mysmb_player_query_block(game, x_adder[index], y_adder[index], 1U,
+        if (mysmb_player_query_block(game,
+                                     x_adder[(mysmb_u8)(base + 3U + index)],
+                                     y_adder[(mysmb_u8)(base + 3U + index)], 1U,
                                      &terrain) == 0U || terrain.metatile == 0U) {
             continue;
         }
@@ -701,14 +736,21 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
  * breakable bricks, coins, and sound commands remain with block ownership. */
 mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
 {
-    static const mysmb_u8 x_adder[3] = { 8U, 8U, 8U };
-    static const mysmb_u8 y_adder[3] = { 4U, 2U, 0x12U };
+    static const mysmb_u8 x_adder[22] = {
+        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
+        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+    };
+    static const mysmb_u8 y_adder[22] = {
+        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
+        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
+        0x18U, 0x18U, 0x18U
+    };
     static const mysmb_u8 upper_extent[2] = { 0x20U, 0x10U };
     static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
     struct mysmb_player_terrain terrain;
-    mysmb_u8 adder_index;
     mysmb_u8 extent_index;
     mysmb_u8 group;
+    mysmb_u8 base;
 
     if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U) return 0U;
     extent_index = game->ram[MYSMB_PLAYER_SIZE] != 0U ? 1U : 0U;
@@ -718,15 +760,8 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
         return 0U;
     }
-    adder_index = 0U;
-    if (game->ram[MYSMB_PLAYER_SIZE] != 0U ||
-        game->ram[MYSMB_PLAYER_CROUCHING] != 0U) {
-        adder_index = 2U;
-    }
-    else if (game->ram[MYSMB_SWIMMING] != 0U) {
-        adder_index = 1U;
-    }
-    if (mysmb_player_query_block(game, x_adder[adder_index], y_adder[adder_index],
+    base = mysmb_player_collision_base(game);
+    if (mysmb_player_query_block(game, x_adder[base], y_adder[base],
                                  0U, &terrain) == 0U || terrain.metatile == 0U) {
         return 0U;
     }
