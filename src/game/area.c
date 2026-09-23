@@ -204,6 +204,15 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        /* ROM InitHammerBro.  Its independent movement route owns the
+         * jump/throw timers after this source-side object initialization. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 5U) {
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+            game->ram[0x03a2U + slot] = 0U;
+            game->ram[0x0796U + slot] =
+                game->ram[MYSMB_SECONDARY_HARD] != 0U ? 0x50U : 0x80U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 0x0bU;
+        }
         if (game->ram[MYSMB_ENEMY_ID + slot] == 8U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;

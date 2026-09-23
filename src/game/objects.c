@@ -1359,6 +1359,52 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
     }
 }
 
+/* ROM ProcHammerBro through MoveHammerBroXDir, excluding SpawnHammerObj. */
+void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u16 player_world;
+    mysmb_u16 enemy_world;
+    mysmb_u8 jump_choice;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 5U) continue;
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
+            mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
+            continue;
+        }
+        if (game->ram[0x003cU + slot] != 0U) game->ram[0x003cU + slot]--;
+        else if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) != 1U) {
+            jump_choice = 0U;
+            if (game->ram[MYSMB_ENEMY_Y + slot] < 0x80U) {
+                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
+                if (game->ram[MYSMB_ENEMY_Y + slot] < 0x70U) jump_choice = 1U;
+                else if ((game->ram[0x07a8U + slot] & 1U) == 0U) {
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfaU;
+                }
+            }
+            else game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfaU;
+            game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
+            if (game->ram[MYSMB_PRIMARY_HARD] == 0U) jump_choice = 0U;
+            game->ram[0x078aU + slot] = jump_choice != 0U ? 0x37U : 0x20U;
+            game->ram[0x003cU + slot] = (mysmb_u8)(game->ram[0x07a8U + slot] | 0xc0U);
+        }
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+            ((mysmb_u8)game->frame_number & 0x40U) != 0U ? 0xfcU : 4U;
+        player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                    game->ram[MYSMB_PLAYER_X]);
+        enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                                   game->ram[MYSMB_ENEMY_X + slot]);
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
+            enemy_world < player_world ? 1U : 2U;
+        if (enemy_world >= player_world && game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
+        }
+        mysmb_objects_move_enemy_horizontally(game, slot);
+    }
+}
+
 /* ROM $afbd MoveJumpingEnemy via $bb28 MoveJ_EnemyVertically. */
 void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
 {

@@ -45,6 +45,8 @@ void mysmb_objects_step_lakitus(struct mysmb_game *game);
 void mysmb_objects_step_lakitu_frenzy(struct mysmb_game *game);
 /* ROM EnemyToBGCollisionDet/MoveD_EnemyVertically, Spiny egg to walker. */
 void mysmb_objects_step_spiny_eggs(struct mysmb_game *game);
+/* ROM ProcHammerBro through MoveHammerBroXDir, before hammer misc objects. */
+void mysmb_objects_step_hammer_bros(struct mysmb_game *game);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);
 void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game);
 void mysmb_objects_check_bloober_stomp(struct mysmb_game *game);

@@ -34,6 +34,8 @@ add_executable(mysmb_paratroopa_smoke test/paratroopa_smoke.c)
 target_link_libraries(mysmb_paratroopa_smoke PRIVATE mysmb_game)
 add_executable(mysmb_lakitu_smoke test/lakitu_smoke.c)
 target_link_libraries(mysmb_lakitu_smoke PRIVATE mysmb_game)
+add_executable(mysmb_hammer_bro_smoke test/hammer_bro_smoke.c)
+target_link_libraries(mysmb_hammer_bro_smoke PRIVATE mysmb_game)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -94,6 +96,7 @@ add_test(NAME mysmb.hazard-collision-smoke COMMAND mysmb_hazard_collision_smoke)
 add_test(NAME mysmb.bullet-bill-smoke COMMAND mysmb_bullet_bill_smoke)
 add_test(NAME mysmb.paratroopa-smoke COMMAND mysmb_paratroopa_smoke)
 add_test(NAME mysmb.lakitu-smoke COMMAND mysmb_lakitu_smoke)
+add_test(NAME mysmb.hammer-bro-smoke COMMAND mysmb_hammer_bro_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen
