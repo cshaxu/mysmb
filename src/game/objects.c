@@ -152,6 +152,8 @@ static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
 static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
 static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot);
+static void mysmb_objects_handle_fireball_enemy_collision(struct mysmb_game *game,
+                                                           mysmb_u8 enemy_slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
 
@@ -399,8 +401,8 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
     }
 }
 
-/* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM and the
- * later enemy collision route.  Both objects use the original fixed slots. */
+/* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
+ * Both objects use the original fixed slots. */
 void mysmb_objects_step_fireballs(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -513,7 +515,6 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             for (enemy_slot = 0U; enemy_slot < 5U; ++enemy_slot) {
                 if (game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U ||
                     (game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x20U) != 0U ||
-                    game->ram[MYSMB_ENEMY_ID + enemy_slot] == 2U ||
                     (game->ram[MYSMB_ENEMY_ID + enemy_slot] >= 0x24U &&
                      game->ram[MYSMB_ENEMY_ID + enemy_slot] < 0x2bU)) continue;
                 if (game->ram[MYSMB_FIREBALL_PAGE + slot] == game->ram[MYSMB_ENEMY_PAGE + enemy_slot] &&
@@ -522,7 +523,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
                     game->ram[MYSMB_FIREBALL_Y + slot] + 8U >= game->ram[MYSMB_ENEMY_Y + enemy_slot] &&
                     game->ram[MYSMB_FIREBALL_Y + slot] <= game->ram[MYSMB_ENEMY_Y + enemy_slot] + 24U) {
                     game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
-                    game->ram[MYSMB_ENEMY_STATE + enemy_slot] |= 0x20U;
+                    mysmb_objects_handle_fireball_enemy_collision(game, enemy_slot);
                     break;
                 }
             }
@@ -1795,6 +1796,38 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
     game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = 0x30U;
     game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[MYSMB_ENEMY_X + slot];
+}
+
+/* ROM $d747 HandleEnemyFBallCol through EnemySmackScore, excluding audio.
+ * FireballEnemyCollision has already changed the fireball to its explosion
+ * state before this handler, including for fireproof Buzzy Beetles. */
+static void mysmb_objects_handle_fireball_enemy_collision(struct mysmb_game *game,
+                                                           mysmb_u8 enemy_slot)
+{
+    mysmb_u8 id;
+    mysmb_u8 score;
+    mysmb_u16 player_world;
+    mysmb_u16 enemy_world;
+
+    id = game->ram[MYSMB_ENEMY_ID + enemy_slot];
+    if (id == 2U || id == 9U || id == 12U || id >= 0x15U) return;
+    if (id == 13U) game->ram[MYSMB_ENEMY_Y + enemy_slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] + 0x18U);
+    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                game->ram[MYSMB_PLAYER_X]);
+    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + enemy_slot] << 8U) |
+                               game->ram[MYSMB_ENEMY_X + enemy_slot]);
+    game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfdU;
+    game->ram[MYSMB_ENEMY_Y_DUMMY + enemy_slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] =
+        enemy_world > player_world ? 1U : 2U;
+    game->ram[MYSMB_ENEMY_X_SPEED + enemy_slot] =
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] == 1U ? 0x10U : 0xf0U;
+    game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
+        (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
+    score = id == 5U ? 6U : (id == 0U ? 1U : 2U);
+    mysmb_objects_setup_floatey_number(game, enemy_slot, score);
 }
 
 /* ROM $dc96 MoveObjectHorizontally for the separate misc-object arrays. */
