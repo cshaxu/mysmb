@@ -73,7 +73,25 @@ enum {
     MYSMB_VINE_FLAG_OFFSET = 0x0398U,
     MYSMB_VINE_HEIGHT = 0x0399U,
     MYSMB_VINE_OBJECT_OFFSET = 0x039aU,
-    MYSMB_VINE_START_Y = 0x039dU
+    MYSMB_VINE_START_Y = 0x039dU,
+    MYSMB_FIREBALL_STATE = 0x0024U,
+    MYSMB_FIREBALL_X_SPEED = 0x005eU,
+    MYSMB_FIREBALL_PAGE = 0x0074U,
+    MYSMB_FIREBALL_X = 0x008dU,
+    MYSMB_FIREBALL_Y_SPEED = 0x00a6U,
+    MYSMB_FIREBALL_Y_HIGH = 0x00bcU,
+    MYSMB_FIREBALL_Y = 0x00d5U,
+    MYSMB_FIREBALL_X_FORCE = 0x0407U,
+    MYSMB_FIREBALL_Y_DUMMY = 0x041dU,
+    MYSMB_FIREBALL_Y_FORCE = 0x043aU,
+    MYSMB_FIREBALL_BOUNCE = 0x003aU,
+    MYSMB_FIREBALL_COUNTER = 0x06ceU,
+    MYSMB_FIREBALL_BOUND_BOX = 0x04a0U,
+    MYSMB_PLAYER_A_B = 0x000aU,
+    MYSMB_PREVIOUS_A_B = 0x000dU,
+    MYSMB_PLAYER_FACING = 0x0033U,
+    MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
+    MYSMB_PLAYER_ANIMATION = 0x070dU
 };
 
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
@@ -137,6 +155,87 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
     }
 }
 
+/* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM and the
+ * later enemy collision route.  Both objects use the original fixed slots. */
+void mysmb_objects_step_fireballs(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 state;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+    mysmb_u8 page_delta;
+    mysmb_u8 speed;
+    mysmb_u8 fraction;
+    mysmb_u8 integer;
+
+    if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
+        (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
+        (game->ram[MYSMB_PREVIOUS_A_B] & MYSMB_BUTTON_B) == 0U &&
+        game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
+        game->ram[MYSMB_PLAYER_CROUCHING] == 0U &&
+        game->ram[MYSMB_PLAYER_STATE] != 3U) {
+        slot = (mysmb_u8)(game->ram[MYSMB_FIREBALL_COUNTER] & 1U);
+        if (game->ram[MYSMB_FIREBALL_STATE + slot] == 0U) {
+            game->ram[MYSMB_FIREBALL_STATE + slot] = 2U;
+            game->ram[MYSMB_FIREBALL_COUNTER]++;
+            game->ram[MYSMB_PLAYER_ANIMATION] =
+                (mysmb_u8)(game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] - 1U);
+        }
+    }
+    for (slot = 0U; slot < 2U; ++slot) {
+        state = game->ram[MYSMB_FIREBALL_STATE + slot];
+        if (state == 0U || (state & 0x80U) != 0U) continue;
+        if (state == 2U) {
+            old_value = game->ram[MYSMB_PLAYER_X];
+            game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + 4U);
+            game->ram[MYSMB_FIREBALL_PAGE + slot] =
+                (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] +
+                            (game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U));
+            game->ram[MYSMB_FIREBALL_Y + slot] = game->ram[MYSMB_PLAYER_Y];
+            game->ram[MYSMB_FIREBALL_Y_HIGH + slot] = 1U;
+            game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
+                game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0x40U : 0xc0U;
+            game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 4U;
+            game->ram[MYSMB_FIREBALL_BOUND_BOX + slot] = 7U;
+            game->ram[MYSMB_FIREBALL_STATE + slot] = 1U;
+        }
+        old_value = game->ram[MYSMB_FIREBALL_Y_DUMMY + slot];
+        game->ram[MYSMB_FIREBALL_Y_DUMMY + slot] =
+            (mysmb_u8)(old_value + game->ram[MYSMB_FIREBALL_Y_FORCE + slot]);
+        carry = game->ram[MYSMB_FIREBALL_Y_DUMMY + slot] < old_value ? 1U : 0U;
+        page_delta = game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
+        old_value = game->ram[MYSMB_FIREBALL_Y + slot];
+        game->ram[MYSMB_FIREBALL_Y + slot] = (mysmb_u8)(old_value +
+            game->ram[MYSMB_FIREBALL_Y_SPEED + slot] + carry);
+        carry = game->ram[MYSMB_FIREBALL_Y + slot] < old_value ? 1U : 0U;
+        game->ram[MYSMB_FIREBALL_Y_HIGH + slot] =
+            (mysmb_u8)(game->ram[MYSMB_FIREBALL_Y_HIGH + slot] + page_delta + carry);
+        old_value = game->ram[MYSMB_FIREBALL_Y_FORCE + slot];
+        game->ram[MYSMB_FIREBALL_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x50U);
+        if (game->ram[MYSMB_FIREBALL_Y_FORCE + slot] < old_value) {
+            game->ram[MYSMB_FIREBALL_Y_SPEED + slot]++;
+        }
+        if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 3U &&
+            game->ram[MYSMB_FIREBALL_Y_SPEED + slot] < 0x80U &&
+            game->ram[MYSMB_FIREBALL_Y_FORCE + slot] >= 0x80U) {
+            game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 3U;
+            game->ram[MYSMB_FIREBALL_Y_FORCE + slot] = 0U;
+        }
+        speed = game->ram[MYSMB_FIREBALL_X_SPEED + slot];
+        fraction = (mysmb_u8)(speed << 4U);
+        integer = (mysmb_u8)(speed >> 4U);
+        if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
+        page_delta = integer >= 0x80U ? 0xffU : 0U;
+        old_value = game->ram[MYSMB_FIREBALL_X_FORCE + slot];
+        game->ram[MYSMB_FIREBALL_X_FORCE + slot] = (mysmb_u8)(old_value + fraction);
+        carry = game->ram[MYSMB_FIREBALL_X_FORCE + slot] < old_value ? 1U : 0U;
+        old_value = game->ram[MYSMB_FIREBALL_X + slot];
+        game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + integer + carry);
+        carry = game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U;
+        game->ram[MYSMB_FIREBALL_PAGE + slot] =
+            (mysmb_u8)(game->ram[MYSMB_FIREBALL_PAGE + slot] + page_delta + carry);
+    }
+}
 /* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object
  * buffer for the one active power-up. */
 void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
