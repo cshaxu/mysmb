@@ -122,6 +122,7 @@ int main(void)
     game.ram[0x071cU] = 0U;
     game.ram[0x071aU] = 0U;
     game.ram[0x06ffU] = 2U;
+    game.ram[0x0755U] = 0x60U;
     mysmb_player_update_scroll(&game);
     if (game.ram[0x0755U] != 0x60U || game.ram[0x0775U] != 1U ||
         game.ram[0x071cU] != 1U || game.ram[0x071aU] != 0U ||
@@ -132,6 +133,7 @@ int main(void)
     game.ram[0x071cU] = 0xffU;
     game.ram[0x071aU] = 2U;
     game.ram[0x06ffU] = 2U;
+    game.ram[0x0755U] = 0x81U;
     mysmb_player_update_scroll(&game);
     if (game.ram[0x0775U] != 2U || game.ram[0x071cU] != 1U ||
         game.ram[0x071aU] != 3U || game.ram[0x071dU] != 0U ||

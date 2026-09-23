@@ -440,6 +440,14 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
 }
 
+/* GameEngine's RelativePlayerPosition supplies ScrollHandler on the next
+ * frame. */
+static void mysmb_player_update_relative_position(struct mysmb_game *game)
+{
+    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
+}
+
 /* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
 {
@@ -459,6 +467,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             (void)mysmb_player_check_feet(game);
             (void)mysmb_player_check_sides(game);
         }
+        mysmb_player_update_relative_position(game);
         game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
         return;
     }
@@ -559,6 +568,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         (void)mysmb_player_check_feet(game);
         (void)mysmb_player_check_sides(game);
     }
+    mysmb_player_update_relative_position(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
@@ -923,9 +933,9 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
     mysmb_u8 old_x;
     mysmb_u8 relative_x;
 
-    relative_x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] -
-                            game->ram[MYSMB_SCREEN_LEFT_X]);
-    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = relative_x;
+    /* ScrollHandler consumes Player_Pos_ForScroll written by the preceding
+     * frame's RelativePlayerPosition, not the position just moved here. */
+    relative_x = game->ram[MYSMB_PLAYER_POS_FOR_SCROLL];
     force = (mysmb_u8)(game->ram[MYSMB_PLAYER_X_SCROLL] +
                         game->ram[MYSMB_PLATFORM_X_SCROLL]);
     game->ram[MYSMB_PLAYER_X_SCROLL] = force;
