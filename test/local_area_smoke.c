@@ -46,6 +46,26 @@ int main(void)
         return 1;
     }
     mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    input.buttons = MYSMB_BUTTON_START;
+    mysmb_game_tick(&game, &input, &frame);
+    input.buttons = 0U;
+    for (count = 0U; count < 3U; ++count) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    if (game.ram[0x000eU] != 8U || game.ram[0x001dU] != 0U ||
+        game.ram[0x0086U] != 0x28U || game.ram[0x00ceU] != 0xb0U) return 1;
+    input.buttons = MYSMB_BUTTON_RIGHT;
+    for (count = 0U; count < 156U; ++count) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    if (game.ram[0x001dU] != 0U || game.ram[0x006dU] != 0U ||
+        game.ram[0x0086U] != 0xf6U || game.ram[0x00b5U] != 1U ||
+        game.ram[0x00ceU] != 0xb0U || game.ram[0x0057U] != 0x18U ||
+        game.ram[0x009fU] != 0U || game.ram[0x071aU] != 0U ||
+        game.ram[0x071cU] != 0x86U) return 1;
+
+    mysmb_game_initialize(&game);
     if (mysmb_area_load_pointers(&game, &source) == 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
         mysmb_area_parse_header(&game, &source) == 0U) {
