@@ -425,6 +425,23 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     }
 }
 
+/* ROM $d68b RunNormalEnemies, bounded to ordinary walking IDs.  The shared
+ * terrain-state portion is introduced separately; this preserves the ROM's
+ * timer gate and fixed-point horizontal movement for spawned objects. */
+void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 id;
+
+    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
+    for (slot = 0U; slot < 5U; ++slot) {
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || id > 6U || id == 5U ||
+            (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) continue;
+        mysmb_objects_move_enemy_horizontally(game, slot);
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */

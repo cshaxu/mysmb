@@ -22,6 +22,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game);
 void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
                                   mysmb_u8 power_up_type);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
+void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $ddcd HandlePowerUpCollision state effect. */

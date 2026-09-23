@@ -434,6 +434,12 @@ int main(void)
         game.ram[0x006eU] != 0U || game.ram[0x0087U] != 0x10U ||
         game.ram[0x00cfU] != 0x28U || game.ram[0x0058U] != 0xf8U ||
         game.ram[0x049aU] != 3U || game.ram[0x0739U] != 2U) return 1;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x0087U] != 0x0fU) return 1;
+    game.ram[0x0747U] = 1U;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x0087U] != 0x0fU) return 1;
+    game.ram[0x0747U] = 0U;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
