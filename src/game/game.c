@@ -84,6 +84,7 @@ void mysmb_game_initialize(struct mysmb_game *game)
     mysmb_game_initialize_name_tables(game);
     game->area_prg = 0;
     game->area_prg_size = 0U;
+    game->area_command_count = 0U;
     /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
@@ -216,6 +217,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 (void)mysmb_area_parse_header(game, &area_source);
             }
         }
+    }
+    else if (mode_before == 1U && task_before == 1U) {
+        (void)mysmb_area_emit_next_command(game);
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

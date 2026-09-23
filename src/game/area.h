@@ -39,5 +39,6 @@ mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
                                 struct mysmb_area_object *object);
 /* ROM $958f-$961f DecodeAreaData classification before object dispatch. */
 void mysmb_area_decode_object(struct mysmb_area_object *object);
+mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game);
 
 #endif

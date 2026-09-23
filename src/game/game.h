@@ -22,6 +22,13 @@ struct mysmb_input {
     mysmb_u8 buttons;
 };
 
+struct mysmb_area_command {
+    mysmb_u8 column;
+    mysmb_u8 row;
+    mysmb_u8 page;
+    mysmb_u8 dispatch_id;
+};
+
 struct mysmb_game {
     mysmb_u32 frame_number;
     /* Original CPU RAM $0000-$07ff; OAM is RAM[$0200-$02ff]. */
@@ -31,6 +38,8 @@ struct mysmb_game {
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;
+    mysmb_u8 area_command_count;
+    struct mysmb_area_command area_commands[16];
 };
 
 struct mysmb_frame {

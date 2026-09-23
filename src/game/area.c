@@ -93,6 +93,30 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
     game->area_prg_size = prg_size;
 }
 
+/* One neutral command per game frame, derived from the original area stream. */
+mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
+{
+    struct mysmb_area_source source;
+    struct mysmb_area_object object;
+    struct mysmb_area_command *command;
+
+    if (game->area_prg == 0 || game->area_command_count >= 16U) {
+        return 0U;
+    }
+    source.prg = game->area_prg;
+    source.prg_size = game->area_prg_size;
+    if (mysmb_area_next_object(game, &source, &object) == 0U) {
+        return 0U;
+    }
+    command = &game->area_commands[game->area_command_count];
+    command->column = object.column;
+    command->row = object.row;
+    command->page = object.page;
+    command->dispatch_id = object.dispatch_id;
+    game->area_command_count++;
+    return 1U;
+}
+
 /* Translation of ROM $9c03-$9c2b (LoadAreaPointer/GetAreaDataAddrs).
  * ROM CPU addresses are converted to NROM PRG offsets at this owner boundary. */
 mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,

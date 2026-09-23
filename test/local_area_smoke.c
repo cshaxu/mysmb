@@ -27,6 +27,11 @@ int main(void)
         game.ram[0x0742U] != 2U) {
         return 1;
     }
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.area_command_count != 1U ||
+        game.area_commands[0].dispatch_id == 0xffU) {
+        return 1;
+    }
 
     mysmb_game_initialize(&game);
     if (mysmb_area_load_pointers(&game, &source) == 0U ||
