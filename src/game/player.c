@@ -518,6 +518,15 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         game->ram[MYSMB_PLAYER_BOUND_BOX] =
             game->ram[MYSMB_PLAYER_CROUCHING] != 0U ? 2U : 0U;
     }
+    /* PlayerBGCollision establishes falling/swimming before its on-screen
+     * guard, so a player leaving the visible vertical range cannot retain
+     * the ground state. */
+    if (game->ram[MYSMB_SWIMMING] != 0U) {
+        game->ram[MYSMB_PLAYER_STATE] = 1U;
+    }
+    else if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
+        game->ram[MYSMB_PLAYER_STATE] = 2U;
+    }
     (void)mysmb_player_check_head(game);
     (void)mysmb_player_check_feet(game);
     (void)mysmb_player_check_sides(game);
