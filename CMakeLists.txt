@@ -26,6 +26,8 @@ add_executable(mysmb_core_smoke test/core_smoke.c)
 target_link_libraries(mysmb_core_smoke PRIVATE mysmb_game)
 add_executable(mysmb_player_route_smoke test/player_route_smoke.c)
 target_link_libraries(mysmb_player_route_smoke PRIVATE mysmb_game)
+add_executable(mysmb_hazard_collision_smoke test/hazard_collision_smoke.c)
+target_link_libraries(mysmb_hazard_collision_smoke PRIVATE mysmb_game)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -82,6 +84,7 @@ endif()
 enable_testing()
 add_test(NAME mysmb.core-smoke COMMAND mysmb_core_smoke)
 add_test(NAME mysmb.player-route-smoke COMMAND mysmb_player_route_smoke)
+add_test(NAME mysmb.hazard-collision-smoke COMMAND mysmb_hazard_collision_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen

@@ -123,6 +123,37 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
 static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot);
 
+void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u16 player_box;
+    mysmb_u16 enemy_box;
+
+    if (((mysmb_u8)game->frame_number & 1U) != 0U || game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_INJURY_TIMER] != 0U) return;
+    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER, game->ram[MYSMB_PLAYER_BOUND_BOX],
+        game->ram[MYSMB_PLAYER_X], game->ram[MYSMB_PLAYER_Y]);
+    player_box = MYSMB_BOUNDING_BOX_PLAYER;
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            (game->ram[MYSMB_ENEMY_ID + slot] != 12U && game->ram[MYSMB_ENEMY_ID + slot] != 13U)) continue;
+        enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+        mysmb_objects_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+            game->ram[MYSMB_ENEMY_X + slot], game->ram[MYSMB_ENEMY_Y + slot]);
+        if (mysmb_objects_boxes_collide(game, player_box, enemy_box) == 0U) continue;
+        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
+        if (game->ram[MYSMB_PLAYER_STATUS] != 0U) {
+            game->ram[MYSMB_PLAYER_STATUS] = 0U;
+            game->ram[MYSMB_INJURY_TIMER] = 8U;
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 10U;
+            game->ram[MYSMB_PLAYER_STATE] = 1U;
+            game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
+            game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
+        }
+        return;
+    }
+}
+
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
                                    mysmb_u8 x, mysmb_u8 y)
