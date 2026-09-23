@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T6 S1 is active.**
+**M2 T7 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -14,26 +14,26 @@
   output. `nnes` is a validation-only local reference and is never linked into
   MySMB.
 
-## M2 T6 S1 Packet
+## M2 T7 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T6 S1, New. |
+| Identifier Mode | M2 T7 S1, New. |
 | Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Translate original death, restart, warp, continue, and level-completion mode transitions into bounded portable C90 state routes. |
-| Non-goals | Audio playback, DOS graphics, a CPU/PPU/APU emulator, and visual-only replacements are outside this S. |
-| Reference Baseline | M2 T1 architecture record; T2 title modes; T3 area bootstrap; T4 player handoffs; T5 object ownership; actual mode roots. |
-| Candidate Proposal | [M2 Native Logic And Oracle](../proposals/m2-native-logic-and-oracle.md), candidate 6. |
-| Files And ABI Surface | Portable `src/game` C90 mode state, focused project-owned tests, local-only validation tooling as needed, and M2 history evidence. |
+| Objective | Translate original music and sound-effect queue ownership into bounded portable C90 audio commands without host playback. |
+| Non-goals | Host audio playback, DOS graphics, a CPU/PPU/APU emulator, and visual-only replacements are outside this S. |
+| Reference Baseline | M2 T1 architecture record; T5 object and event queues; T6 mode routes; actual APU command roots. |
+| Candidate Proposal | [M2 Native Logic And Oracle](../proposals/m2-native-logic-and-oracle.md), candidate 7. |
+| Files And ABI Surface | Portable `src/game` C90 audio-command state, focused project-owned tests, local-only validation tooling as needed, and M2 history evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; bounded owner-local reference comparison with neutral checkpoint summary; documentation gate and diff check. |
-| Expected Markers | Explicit actual-ROM address provenance; engine subroutine and operating-mode changes; player/life/world/area preservation; fixed-input checkpoints. |
+| Expected Markers | Explicit actual-ROM address provenance; queue/buffer/channel command changes; fixed-input checkpoints. |
 | Asset Needs | Owner-local admitted ROM and optional reconciled listing are research/validation input only. Generated data, traces, and embedded binaries remain ignored. |
 | Reporting Requirements | Record address ranges, input script, checkpoints, reference disposition, source containment, and any unresolved semantic branch in history before closure. |
 | Stop Conditions | Stop and revise scope if a route needs an emulator, a protected artifact would enter Git, the measured ROM/listing mapping is contradicted, or a state difference cannot be bounded. |
-| Exit Criteria | Reviewed C90 mode routes preserve bounded state across death, restart, warp, continue, and completion with local-reference evidence. |
+| Exit Criteria | Reviewed C90 audio command routes preserve original queue priority and event ownership with local-reference evidence. |
 | Original Owner Request | M2 must run the game in Win32 and every translated code path must have validation. |
-| Similar-Issue Sweep | Before closure, search the portable game layer for host input reads, non-C90 widths, unproven mode transitions, and stale listing-address provenance; record every production hit and disposition. |
+| Similar-Issue Sweep | Before closure, search the portable game layer for host playback imports, unproven queue routes, and stale listing-address provenance; record every production hit and disposition. |
 
 ## Recent M2 Closures
 
@@ -44,6 +44,7 @@
 | T3 | Area bootstrap, actual area-pointer/header parsing, object stream classification, and native command queue closed. [History](../history/M2-T3-area-bootstrap-and-commands.md). |
 | T4 | Player physics, terrain collision, entrances, scrolling, and bounded owner-local checkpoint closed. [History](../history/M2-T4-player-route-and-collision.md). |
 | T5 | Blocks, items, enemies, projectiles, score/timer/power, firebars, Bowser, and platform routes closed. [History](../history/M2-T5-object-routes.md). |
+| T6 | Death, restart, two-player exchange, Warp Zone, and completion modes closed. [History](../history/M2-T6-mode-routes.md). |
 
 ## Recent Governance
 
