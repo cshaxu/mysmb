@@ -75,8 +75,37 @@ int main(void)
         game.ram[0x00ceU] != 0x90U) {
         return 1;
     }
+    game.ram[0x000eU] = 7U;
+    game.ram[0x0710U] = 6U;
     game.ram[0x001dU] = 0U;
+    game.ram[0x03c4U] = 0U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x0057U] = 0U;
+    game.ram[0x0705U] = 0U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    for (index = 0U; index < 40U; ++index) {
+        mysmb_player_finish_normal_entrance(&game);
+    }
+    if (game.ram[0x000eU] != 7U || game.ram[0x0086U] <= 0x20U) {
+        return 1;
+    }
+    game.ram[0x03c4U] = 0x20U;
+    game.ram[0x06deU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    mysmb_player_finish_normal_entrance(&game);
+    if (game.ram[0x0752U] != 2U || game.ram[0x0772U] != 0U) {
+        return 1;
+    }
+    game.ram[0x0710U] = 2U;
+    game.ram[0x001dU] = 0U;
+    game.ram[0x000cU] = 0U;
+    game.ram[0x000aU] = 0U;
+    game.ram[0x0057U] = 0U;
+    game.ram[0x0705U] = 0U;
     game.ram[0x0700U] = 0U;
+    game.ram[0x0703U] = 0U;
+    game.ram[0x000eU] = 8U;
     game.ram[0x0033U] = 1U;
     game.ram[0x0045U] = 1U;
     mysmb_player_configure_horizontal(&game);

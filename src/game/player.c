@@ -846,9 +846,20 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
  * until the original PlayerRdy threshold. */
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_ALT_ENTRANCE] == 3U ||
-        game->ram[MYSMB_PLAYER_ENTRANCE] == 6U ||
+    if (game->ram[MYSMB_ALT_ENTRANCE] == 3U) {
+        return;
+    }
+    if (game->ram[MYSMB_PLAYER_ENTRANCE] == 6U ||
         game->ram[MYSMB_PLAYER_ENTRANCE] == 7U) {
+        /* PlayerEntrance's ChkBehPipe: before the pipe contact has set the
+         * priority bit, the original forces a rightward PlayerCtrlRoutine.
+         * Once set, its IntroEntr branch uses EnterSidePipe and the timer. */
+        if (game->ram[MYSMB_PLAYER_ATTRIBUTES] == 0U) {
+            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
+        }
+        else {
+            mysmb_player_step_side_pipe(game);
+        }
         return;
     }
     if (game->ram[MYSMB_ALT_ENTRANCE] == 2U) {
