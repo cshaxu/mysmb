@@ -483,7 +483,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;
             if (mysmb_area_load_pointers(game, &area_source) != 0U) {
-                (void)mysmb_area_parse_header(game, &area_source);
+                if (mysmb_area_parse_header(game, &area_source) != 0U) {
+                    mysmb_area_render_initial_terrain(game);
+                }
             }
         }
     }

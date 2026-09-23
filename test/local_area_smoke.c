@@ -24,7 +24,9 @@ int main(void)
     if (frame.operating_mode != 1U || frame.operating_mode_task != 1U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
         game.ram[0x0710U] != 2U || game.ram[0x0727U] != 1U ||
-        game.ram[0x0742U] != 2U) {
+        game.ram[0x0742U] != 2U || game.ram[0x05b0U] != 0x54U ||
+        game.ram[0x05c0U] != 0x54U || game.ram[0x0687U] != 0x54U ||
+        game.ram[0x0688U] != 0U) {
         return 1;
     }
     input.buttons = MYSMB_BUTTON_A;
@@ -43,7 +45,6 @@ int main(void)
     if (game.ram[0x001dU] != 1U) {
         return 1;
     }
-
     mysmb_game_initialize(&game);
     if (mysmb_area_load_pointers(&game, &source) == 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
