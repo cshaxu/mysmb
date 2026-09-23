@@ -12,11 +12,14 @@ enum {
     MYSMB_BLOCK_Y = 0x00d7U,
     MYSMB_BLOCK_Y_DUMMY = 0x0420U,
     MYSMB_BLOCK_Y_FORCE = 0x043cU,
+    MYSMB_BLOCK_X_SPEED = 0x0060U,
+    MYSMB_BLOCK_X_FORCE = 0x0409U,
     MYSMB_BLOCK_PAGE = 0x0076U,
     MYSMB_BLOCK_X = 0x008fU,
     MYSMB_BLOCK_PAGE_COPY = 0x03eaU,
     MYSMB_BLOCK_SLOT_CONTROL = 0x03eeU,
     MYSMB_BLOCK_BOUNCE_TIMER = 0x0784U,
+    MYSMB_BLOCK_ORIGINAL_X = 0x03f1U,
     MYSMB_PLAYER_SIZE = 0x0754U,
     MYSMB_PLAYER_CROUCHING = 0x0714U,
     MYSMB_PLAYER_PAGE = 0x006dU,
@@ -248,6 +251,31 @@ static mysmb_u8 mysmb_objects_power_up_for_block(mysmb_u8 metatile,
     return 0U;
 }
 
+/* ROM $bd9b BrickShatter/SpawnBrickChunks, excluding draw and audio output. */
+static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
+                                             mysmb_u8 slot)
+{
+    game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
+    game->ram[MYSMB_BLOCK_ORIGINAL_X + slot] = game->ram[MYSMB_BLOCK_X + slot];
+    game->ram[MYSMB_BLOCK_X_SPEED + slot] = 0xf0U;
+    game->ram[MYSMB_BLOCK_X_SPEED + slot + 2U] = 0xf0U;
+    game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfaU;
+    game->ram[MYSMB_BLOCK_Y_SPEED + slot + 2U] = 0xfcU;
+    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_BLOCK_Y_FORCE + slot + 2U] = 0U;
+    game->ram[MYSMB_BLOCK_PAGE + slot + 2U] = game->ram[MYSMB_BLOCK_PAGE + slot];
+    game->ram[MYSMB_BLOCK_X + slot + 2U] = game->ram[MYSMB_BLOCK_X + slot];
+    game->ram[MYSMB_BLOCK_Y_HIGH + slot + 2U] =
+        game->ram[MYSMB_BLOCK_Y_HIGH + slot];
+    game->ram[MYSMB_BLOCK_Y + slot + 2U] =
+        (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] + 8U);
+    game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 5U;
+    mysmb_objects_apply_digit_modifier(game,
+                                       game->ram[MYSMB_CURRENT_PLAYER] == 0U ?
+                                       0x0bU : 0x11U);
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
+}
+
 /* Translation of ROM $bced-$bd9b's matched-block path.  The caller retains
  * unmatched bricks for the later brick-chunk route. */
 mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
@@ -259,15 +287,17 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     mysmb_u8 old_x;
     mysmb_u8 y_adder;
     mysmb_u8 power_up_type;
+    mysmb_u8 is_bumpable;
     mysmb_u16 address;
 
-    if (mysmb_objects_is_bumpable(metatile) == 0U) return 0U;
+    is_bumpable = mysmb_objects_is_bumpable(metatile);
+    if (is_bumpable == 0U && game->ram[MYSMB_PLAYER_SIZE] != 0U) return 0U;
     slot = (mysmb_u8)(game->ram[MYSMB_BLOCK_SLOT_CONTROL] & 1U);
-    game->ram[MYSMB_BLOCK_STATE + slot] = 0x11U;
+    game->ram[MYSMB_BLOCK_STATE + slot] = is_bumpable != 0U ? 0x11U : 0x12U;
     game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot] = block_row;
     game->ram[MYSMB_BLOCK_BUFFER_LOW + slot] = block_low;
-    game->ram[MYSMB_BLOCK_METATILE + slot] = 0xc4U;
-    if (metatile == 0x58U || metatile == 0x5dU) {
+    game->ram[MYSMB_BLOCK_METATILE + slot] = is_bumpable != 0U ? 0xc4U : 0U;
+    if (is_bumpable != 0U && (metatile == 0x58U || metatile == 0x5dU)) {
         game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
     }
     address = (mysmb_u16)(0x0500U + block_low + block_row);
@@ -289,11 +319,44 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
-    if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
+    if (is_bumpable == 0U) {
+        mysmb_objects_start_brick_chunks(game, slot);
+    }
+    else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
         mysmb_objects_start_power_up(game, slot, power_up_type);
     }
     game->ram[MYSMB_BLOCK_SLOT_CONTROL] ^= 1U;
     return 1U;
+}
+
+/* ROM $c076 MoveObjectHorizontally for the block-object array. */
+static void mysmb_objects_move_block_horizontally(struct mysmb_game *game,
+                                                  mysmb_u8 slot)
+{
+    mysmb_u8 speed;
+    mysmb_u8 old_force;
+    mysmb_u8 old_x;
+    mysmb_u8 carry_force;
+    mysmb_u8 carry_x;
+    mysmb_u8 whole;
+    mysmb_u8 page_delta;
+
+    speed = game->ram[MYSMB_BLOCK_X_SPEED + slot];
+    old_force = game->ram[MYSMB_BLOCK_X_FORCE + slot];
+    game->ram[MYSMB_BLOCK_X_FORCE + slot] =
+        (mysmb_u8)(old_force + (mysmb_u8)((speed & 0x0fU) << 4U));
+    carry_force = game->ram[MYSMB_BLOCK_X_FORCE + slot] < old_force ? 1U : 0U;
+    whole = (mysmb_u8)(speed >> 4U);
+    page_delta = 0U;
+    if (whole >= 8U) {
+        whole = (mysmb_u8)(whole | 0xf0U);
+        page_delta = 0xffU;
+    }
+    old_x = game->ram[MYSMB_BLOCK_X + slot];
+    game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)(old_x + whole + carry_force);
+    carry_x = game->ram[MYSMB_BLOCK_X + slot] < old_x ? 1U : 0U;
+    game->ram[MYSMB_BLOCK_PAGE + slot] =
+        (mysmb_u8)(game->ram[MYSMB_BLOCK_PAGE + slot] + page_delta + carry_x);
 }
 
 /* ROM $bfa4 ImposeGravityBlock / ImposeGravity for a block-object slot.
@@ -330,8 +393,8 @@ static void mysmb_objects_impose_block_gravity(struct mysmb_game *game,
     }
 }
 
-/* Translation of ROM $be70 BlockObjectsCore's bouncing-block branch.  Brick chunks
- * use its separate multi-object branch and remain with the brick route. */
+/* Translation of ROM $be70 BlockObjectsCore's bouncing-block and brick-chunk
+ * branches, excluding relative positioning and drawing. */
 void mysmb_objects_step_blocks(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -339,11 +402,26 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
 
     for (slot = 0U; slot < 2U; ++slot) {
         state = game->ram[MYSMB_BLOCK_STATE + slot];
-        if ((state & 0x0fU) != 1U) continue;
-        mysmb_objects_impose_block_gravity(game, slot);
-        if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
-            game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
-            game->ram[MYSMB_BLOCK_STATE + slot] = 0U;
+        if ((state & 0x0fU) == 1U) {
+            mysmb_objects_impose_block_gravity(game, slot);
+            if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
+                game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
+                game->ram[MYSMB_BLOCK_STATE + slot] = 0U;
+            }
+        }
+        else {
+            mysmb_objects_impose_block_gravity(game, slot);
+            mysmb_objects_move_block_horizontally(game, slot);
+            mysmb_objects_impose_block_gravity(game, (mysmb_u8)(slot + 2U));
+            mysmb_objects_move_block_horizontally(game, (mysmb_u8)(slot + 2U));
+            if (game->ram[MYSMB_BLOCK_Y_HIGH + slot] != 0U) {
+                if (game->ram[MYSMB_BLOCK_Y + slot + 2U] >= 0xf0U) {
+                    game->ram[MYSMB_BLOCK_Y + slot + 2U] = 0xf0U;
+                }
+                if (game->ram[MYSMB_BLOCK_Y + slot] >= 0xf0U) {
+                    game->ram[MYSMB_BLOCK_STATE + slot] = 0U;
+                }
+            }
         }
     }
 }

@@ -1136,6 +1136,11 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
         return 0U;
     }
+    group = (mysmb_u8)(terrain.metatile >> 6U);
+    if (terrain.metatile >= solid_upper[group]) {
+        game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
+        return 1U;
+    }
     if (game->ram[0x0784U] == 0U) {
         if (mysmb_objects_start_head_bump(game, terrain.metatile,
                                           terrain.block_address_low,
@@ -1143,8 +1148,5 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
             return 1U;
         }
     }
-    group = (mysmb_u8)(terrain.metatile >> 6U);
-    if (terrain.metatile < solid_upper[group]) return 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
-    return 1U;
+    return 0U;
 }
