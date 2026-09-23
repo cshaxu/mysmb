@@ -883,6 +883,17 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     if (have_left != 0U && left.metatile != 0U) {
         if (mysmb_player_is_climbable(left.metatile) != 0U) return 0U;
+        /* ROM HandleAxeMetatile runs from the foot sample before ordinary
+         * landing.  Its cleared metatile is enough for the C core; the
+         * bridge presentation is owned by VictoryMode task zero. */
+        if (left.metatile == 0xc5U && game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
+            game->ram[0x0772U] = 0U;
+            game->ram[0x0770U] = 2U;
+            game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
+            game->ram[(mysmb_u16)(0x0500U + left.block_address_low +
+                                   left.block_row_offset)] = 0U;
+            return 1U;
+        }
         if (mysmb_player_land_on_solid(game, left.metatile,
                                        left.contact_low_nibble) == 0U) {
             return 0U;
