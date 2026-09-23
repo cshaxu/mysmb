@@ -83,6 +83,22 @@ int main(void)
     game.ram[0x00a0U] = 0xfdU;
     mysmb_objects_step_spiny_eggs(&game);
     if (game.ram[0x00cfU] != 0x6dU || game.ram[0x0417U] != 0U ||
-        game.ram[0x0434U] != 0x20U) return 6;
+        game.ram[0x0434U] != 0x20U) return 1;
+
+    /* EnemyToBGCollisionDet lands the egg and restores ordinary Spiny state. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 18U;
+    game.ram[0x001eU] = 5U;
+    game.ram[0x0087U] = 0x40U;
+    game.ram[0x00b6U] = 1U;
+    game.ram[0x00cfU] = 0x70U;
+    game.ram[0x00a0U] = 0xfdU;
+    game.ram[0x0434U] = 0x20U;
+    game.ram[0x0564U] = 1U;
+    mysmb_objects_step_spiny_eggs(&game);
+    if (game.ram[0x001eU] != 0U || game.ram[0x00cfU] != 0x78U ||
+        game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||
+        game.ram[0x0046U] != 1U || game.ram[0x0058U] != 8U) return 1;
     return 0;
 }
