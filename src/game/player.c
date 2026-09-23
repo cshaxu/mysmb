@@ -456,6 +456,9 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
         return;
     }
+    /* PlayerMovementSubs reloads this before dispatching every non-climbing
+     * state.  A later HandleClimbing therefore begins with the delay active. */
+    game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0x18U;
     if (game->ram[MYSMB_JUMPSPRING_ANIM] == 0U &&
         (a_b & MYSMB_BUTTON_A) != 0U &&
         (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {

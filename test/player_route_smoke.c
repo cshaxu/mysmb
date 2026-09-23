@@ -194,6 +194,7 @@ int main(void)
     game.ram[0x0704U] = 0U;
     game.ram[0x0714U] = 0U;
     game.ram[0x001dU] = 2U;
+    game.ram[0x0789U] = 0U;
     game.ram[0x000eU] = 8U;
     game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x0057U] = 0x10U;
@@ -208,6 +209,16 @@ int main(void)
     if (mysmb_player_check_sides(&game) == 0U || game.ram[0x001dU] != 3U ||
         game.ram[0x0086U] != 0x19U || game.ram[0x0057U] != 0U ||
         game.ram[0x0705U] != 0U) {
+        return 1;
+    }
+    game.ram[0x001dU] = 2U;
+    game.ram[0x0789U] = 0U;
+    game.ram[0x0086U] = 0x28U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x0057U] = 0U;
+    game.ram[0x009fU] = 0U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0789U] != 0x18U) {
         return 1;
     }
     return 0;
