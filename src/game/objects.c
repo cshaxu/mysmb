@@ -154,6 +154,30 @@ void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
     }
 }
 
+/* ROM $dcfd PlayerEnemyCollision and $e069 SetStun, bounded to ID 8. */
+void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game)
+{
+    mysmb_u16 player_box;
+    mysmb_u16 enemy_box;
+
+    if (((mysmb_u8)game->frame_number & 1U) != 0U || game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ||
+        game->ram[MYSMB_ENEMY_FLAG] == 0U || game->ram[MYSMB_ENEMY_ID] != 8U) return;
+    player_box = MYSMB_BOUNDING_BOX_PLAYER;
+    enemy_box = MYSMB_BOUNDING_BOX_ENEMY;
+    mysmb_objects_set_bounding_box(game, player_box, game->ram[MYSMB_PLAYER_BOUND_BOX],
+        game->ram[MYSMB_PLAYER_X], game->ram[MYSMB_PLAYER_Y]);
+    mysmb_objects_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX],
+        game->ram[MYSMB_ENEMY_X], game->ram[MYSMB_ENEMY_Y]);
+    if (mysmb_objects_boxes_collide(game, player_box, enemy_box) == 0U) return;
+    game->ram[MYSMB_ENEMY_Y] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y] - 2U);
+    game->ram[MYSMB_ENEMY_STATE] = 0x20U;
+    game->ram[MYSMB_ENEMY_Y_SPEED] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE] = 0U;
+    game->ram[MYSMB_ENEMY_X_SPEED] = 0U;
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
+}
+
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
                                    mysmb_u8 x, mysmb_u8 y)

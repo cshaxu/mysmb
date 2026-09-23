@@ -324,6 +324,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_check_power_up_collision(game);
         mysmb_objects_step_normal_enemies(game);
         mysmb_objects_check_hazard_enemy_collision(game);
+        mysmb_objects_check_bullet_bill_stomp(game);
         mysmb_objects_step_bullet_bills(game);
         mysmb_objects_step_piranha_plants(game);
         mysmb_objects_step_swimming_cheep_cheeps(game);
