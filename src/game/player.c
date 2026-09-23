@@ -876,8 +876,40 @@ void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 moving_direction
         (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta);
 }
 
-/* Translation of ROM $dd5e-$de46's four side samples.  Coin, climbing,
- * jumpspring, and pipe cases retain their object-specific routes. */
+/* Translation of CheckSideMTiles.  Coins and jumpsprings have their own
+ * object route, but they still consume this collision without a wall stop. */
+static mysmb_u8 mysmb_player_handle_side_metatile(
+    struct mysmb_game *game, const struct mysmb_player_terrain *terrain)
+{
+    if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U ||
+        terrain->metatile == 0xc2U || terrain->metatile == 0xc3U ||
+        terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
+        return 1U;
+    }
+    if (mysmb_player_is_climbable(terrain->metatile) != 0U) {
+        (void)mysmb_player_handle_climbing(game, terrain);
+        return 1U;
+    }
+    if ((terrain->metatile == 0x6cU || terrain->metatile == 0x1fU) &&
+        game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT) {
+        game->ram[MYSMB_PLAYER_ATTRIBUTES] |= 0x20U;
+        if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) != 0U) {
+            game->ram[MYSMB_CHANGE_AREA_TIMER] =
+                game->ram[MYSMB_SCREEN_LEFT_PAGE] == 0U ? 0xa0U : 0x34U;
+        }
+        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 8U) {
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 2U;
+        }
+        return 1U;
+    }
+    mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
+    return 1U;
+}
+
+/* Translation of ROM $dd5e-$de46 SideCheckLoop.  Each upper sample can
+ * defer to the lower half, which prevents a thin vine or pipe cap from
+ * producing a side collision on its own. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
 {
     static const mysmb_u8 x_adder[22] = {
@@ -889,10 +921,8 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
         8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
         0x18U, 0x18U, 0x18U
     };
-    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
     struct mysmb_player_terrain terrain;
     mysmb_u8 index;
-    mysmb_u8 group;
     mysmb_u8 base;
 
     if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
@@ -901,34 +931,24 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
     }
     game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
     base = mysmb_player_collision_base(game);
-    for (index = 0U; index < 4U; ++index) {
-        if (mysmb_player_query_block(game,
-                                     x_adder[(mysmb_u8)(base + 3U + index)],
-                                     y_adder[(mysmb_u8)(base + 3U + index)], 1U,
-                                     &terrain) == 0U || terrain.metatile == 0U) {
-            continue;
+    for (index = 0U; index < 2U; ++index) {
+        mysmb_u8 top;
+
+        top = (mysmb_u8)(base + 3U + index * 2U);
+        if (game->ram[MYSMB_PLAYER_Y] >= 0xe4U) return 0U;
+        if (game->ram[MYSMB_PLAYER_Y] >= 0x20U &&
+            mysmb_player_query_block(game, x_adder[top], y_adder[top], 1U,
+                                     &terrain) != 0U && terrain.metatile != 0U &&
+            terrain.metatile != 0x1cU && terrain.metatile != 0x6bU &&
+            mysmb_player_is_climbable(terrain.metatile) == 0U) {
+            return mysmb_player_handle_side_metatile(game, &terrain);
         }
-        group = (mysmb_u8)(terrain.metatile >> 6U);
-        if ((terrain.metatile == 0x6cU || terrain.metatile == 0x1fU) &&
-            game->ram[MYSMB_PLAYER_STATE] == 0U &&
-            game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT &&
-            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 8U) {
-            game->ram[MYSMB_PLAYER_ATTRIBUTES] |= 0x20U;
-            if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) != 0U) {
-                game->ram[MYSMB_CHANGE_AREA_TIMER] =
-                    game->ram[MYSMB_SCREEN_LEFT_PAGE] == 0U ? 0xa0U : 0x34U;
-            }
-            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 2U;
-            return 1U;
-        }
-        if (mysmb_player_is_climbable(terrain.metatile) != 0U &&
-            mysmb_player_handle_climbing(game, &terrain) != 0U) {
-            return 1U;
-        }
-        if (terrain.metatile >= solid_upper[group]) {
-            mysmb_player_impede_move(game,
-                                     game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
-            return 1U;
+        if (game->ram[MYSMB_PLAYER_Y] < 8U ||
+            game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return 0U;
+        top++;
+        if (mysmb_player_query_block(game, x_adder[top], y_adder[top], 1U,
+                                     &terrain) != 0U && terrain.metatile != 0U) {
+            return mysmb_player_handle_side_metatile(game, &terrain);
         }
     }
     return 0U;

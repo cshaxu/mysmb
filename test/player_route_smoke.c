@@ -197,8 +197,9 @@ int main(void)
     game.ram[0x00ceU] = 0x30U;
     game.ram[0x071cU] = 0U;
     game.ram[0x05f3U] = 0x26U;
+    game.ram[0x05f2U] = 0x26U;
     if (mysmb_player_check_sides(&game) == 0U || game.ram[0x001dU] != 3U ||
-        game.ram[0x0086U] != 0x29U || game.ram[0x0057U] != 0U ||
+        game.ram[0x0086U] != 0x19U || game.ram[0x0057U] != 0U ||
         game.ram[0x0705U] != 0U) {
         return 1;
     }
