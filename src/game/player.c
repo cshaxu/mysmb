@@ -248,6 +248,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE_DOWN],
                                     game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
     }
+    (void)mysmb_player_check_feet(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
@@ -297,4 +298,36 @@ mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
     game->ram[MYSMB_PLAYER_STATE] = 0U;
     return 1U;
+}
+
+/* Translation of ROM $dc64-$dd5a PlayerBGCollision's DoFootCheck through LandPlyr.
+ * The original selects an adder from size/crouch/swim state, but both feet
+ * ultimately use X+3/X+12 and Y+32.  It reads left first for the landing
+ * decision after sampling both positions. */
+mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
+{
+    struct mysmb_player_terrain left;
+    struct mysmb_player_terrain right;
+    mysmb_u8 have_left;
+    mysmb_u8 have_right;
+
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
+        game->ram[MYSMB_PLAYER_Y] >= 0xcfU) {
+        return 0U;
+    }
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
+        game->ram[MYSMB_PLAYER_STATE] =
+            game->ram[MYSMB_SWIMMING] != 0U ? 1U : 2U;
+    }
+    have_left = mysmb_player_query_block(game, 3U, 0x20U, 0U, &left);
+    have_right = mysmb_player_query_block(game, 0x0cU, 0x20U, 0U, &right);
+    if (have_left != 0U && left.metatile != 0U) {
+        return mysmb_player_land_on_solid(game, left.metatile,
+                                          left.contact_low_nibble);
+    }
+    if (have_right != 0U && right.metatile != 0U) {
+        return mysmb_player_land_on_solid(game, right.metatile,
+                                          right.contact_low_nibble);
+    }
+    return 0U;
 }

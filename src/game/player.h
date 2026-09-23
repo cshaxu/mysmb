@@ -28,5 +28,7 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
                                   struct mysmb_player_terrain *terrain);
 mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
                                     mysmb_u8 metatile, mysmb_u8 contact);
+/* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
+mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 
 #endif

@@ -57,6 +57,21 @@ int main(void)
         terrain.metatile != 0x61U || terrain.contact_low_nibble != 0U) {
         return 1;
     }
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x0416U] = 0U;
+    game.ram[0x0433U] = 0U;
+    game.ram[0x001dU] = 2U;
+    game.ram[0x0601U] = 0U;
+    game.ram[0x0602U] = 0x61U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x00ceU] != 0x30U || game.ram[0x009fU] != 0U ||
+        game.ram[0x0433U] != 0U || game.ram[0x001dU] != 0U) {
+        return 1;
+    }
     game.ram[0x0490U] = 3U;
     game.ram[0x0450U] = 0xf0U;
     game.ram[0x0456U] = 4U;
