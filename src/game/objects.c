@@ -757,6 +757,60 @@ void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game)
     }
 }
 
+/* ROM $af13-$af25 MovePodoboo through $bb38 ImposeGravitySprObj.  The
+ * original uses enemy slot plus one as the shared sprite vertical arrays;
+ * the translated RAM aliases already use the enemy slot directly. */
+void mysmb_objects_step_podoboos(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+    mysmb_u8 random_value;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 12U) continue;
+        if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
+            game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 2U;
+            game->ram[MYSMB_ENEMY_Y + slot] = 2U;
+            game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 1U;
+            game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+            random_value = game->ram[0x07a8U + slot];
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(random_value | 0x80U);
+            game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] =
+                (mysmb_u8)((random_value & 0x0fU) | 6U);
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xf9U;
+        }
+        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+            (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
+        old_value = game->ram[MYSMB_ENEMY_Y + slot];
+        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) {
+            game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
+        }
+        if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) {
+            game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
+        }
+        old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x1cU);
+        carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 3U &&
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        }
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */

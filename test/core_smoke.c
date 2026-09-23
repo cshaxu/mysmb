@@ -619,6 +619,22 @@ int main(void)
         game.ram[0x0419U] != 0xe0U || game.ram[0x00d1U] != 0x6fU ||
         game.ram[0x00b8U] != 1U) return 1;
     game.ram[0x0011U] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 12U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0796U] = 0U;
+    game.ram[0x00b6U] = 0U;
+    game.ram[0x00cfU] = 0U;
+    game.ram[0x00a0U] = 0U;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    game.ram[0x07a8U] = 0x09U;
+    mysmb_objects_step_podoboos(&game);
+    if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0xfbU ||
+        game.ram[0x00a0U] != 0xf9U || game.ram[0x0417U] != 0x89U ||
+        game.ram[0x0434U] != 0xa5U || game.ram[0x0796U] != 0x0fU ||
+        game.ram[0x049aU] != 9U) return 1;
+    game.ram[0x000fU] = 0U;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
