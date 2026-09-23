@@ -210,6 +210,60 @@ void mysmb_objects_check_bloober_stomp(struct mysmb_game *game)
     }
 }
 
+/* ROM $dcfd-$ddcb PlayerEnemyCollision and $e06a ChkForDemoteKoopa,
+ * bounded to the jumping green Paratroopa. */
+void mysmb_objects_check_jumping_paratroopa_stomp(struct mysmb_game *game)
+{
+    mysmb_u16 player_world;
+    mysmb_u16 enemy_world;
+    mysmb_u16 screen_world;
+    mysmb_u16 enemy_box;
+    mysmb_u8 slot;
+
+    if (((mysmb_u8)game->frame_number & 1U) != 0U ||
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
+        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
+        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return;
+    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                game->ram[MYSMB_PLAYER_X]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    if (player_world < screen_world || (mysmb_u16)(player_world - screen_world) >= 0x100U) return;
+    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+        game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
+        game->ram[MYSMB_PLAYER_Y]);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 14U ||
+            (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) continue;
+        enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                                   game->ram[MYSMB_ENEMY_X + slot]);
+        if (enemy_world < screen_world || (mysmb_u16)(enemy_world - screen_world) >= 0x100U) continue;
+        enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+        mysmb_objects_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+            (mysmb_u8)(enemy_world - screen_world), game->ram[MYSMB_ENEMY_Y + slot]);
+        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+            game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
+            continue;
+        }
+        if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) continue;
+        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
+        game->ram[MYSMB_ENEMY_ID + slot] = 0U;
+        game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
+            enemy_world > player_world ? 1U : 2U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
+        mysmb_objects_setup_floatey_number(game, slot, 3U);
+        game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
+        return;
+    }
+}
+
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
                                    mysmb_u8 x, mysmb_u8 y)
