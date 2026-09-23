@@ -550,6 +550,22 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
+/* Translation of ROM $b069-$b07c Vine_AutoClimb.  The vine object's growth
+ * and drawing are owned by the object route; this is only the player-side
+ * forced-up input and the area-transition handoff after reaching its top. */
+void mysmb_player_step_auto_climb(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] == 0U &&
+        game->ram[MYSMB_PLAYER_Y] < 0xe4U) {
+        game->ram[MYSMB_ALT_ENTRANCE] = 2U;
+        game->ram[MYSMB_DISABLE_SCREEN]++;
+        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
+        return;
+    }
+    game->ram[MYSMB_PLAYER_STATE] = 3U;
+    mysmb_player_step(game, MYSMB_BUTTON_UP);
+}
+
 /* Snapshot only translated RAM state; no platform state participates. */
 void mysmb_player_checkpoint(const struct mysmb_game *game,
                              struct mysmb_player_checkpoint *checkpoint)

@@ -248,6 +248,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 1U) {
+            mysmb_player_step_auto_climb(game);
+        }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 7U) {
             mysmb_player_finish_normal_entrance(game);
         }
