@@ -22,6 +22,8 @@ struct mysmb_game {
     mysmb_u32 frame_number;
     /* Original CPU RAM $0000-$07ff; OAM is RAM[$0200-$02ff]. */
     mysmb_u8 ram[0x0800U];
+    /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
+    mysmb_u8 name_table[2][0x0400U];
 };
 
 struct mysmb_frame {
@@ -34,6 +36,8 @@ struct mysmb_frame {
 void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 /* ROM $8220-$8230. */
 void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
+/* ROM $8e19-$8e5b. */
+void mysmb_game_initialize_name_tables(struct mysmb_game *game);
 void mysmb_game_initialize(struct mysmb_game *game);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);

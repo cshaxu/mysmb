@@ -10,18 +10,18 @@ M1 T3 S2 is admitted to convert the verified reset-memory dependency into portab
 | --- | --- |
 | Identifier Mode | Continuation |
 | Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 S1 established local containment and verified the reset slice. |
-| Objective | Replace the T2 placeholder state with a portable C90 owner for original `$0000-$07ff` RAM and OAM, and translate the verified `$90cc-$90e6` reset-memory routine as named native logic. |
+| Objective | Replace the T2 placeholder state with portable C90 owners for original `$0000-$07ff` RAM, OAM, and both initial name tables; translate verified reset dependencies `$90cc-$90e6`, `$8220-$8230`, and `$8e19-$8e5b` as named native logic. |
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not introduce a CPU, PPU, APU, instruction decoder, or generic memory bus. |
 | Reference Baseline | T3 S1 `1af9abf`; owner-local ROM; byte-for-byte verified `$90cc-$90e6` reset routine; public sources remain local research references only. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
-| Files And ABI Surface | `src/game/` portable RAM/OAM state and reset routine; neutral game frame contract; project-owned unit test. |
+| Files And ABI Surface | `src/game/` portable RAM/OAM/name-table state and reset routines; neutral game frame contract; project-owned unit test. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
-| Verification | Unit-test cold and warm reset ranges, preserved stack range, and OAM ownership; run CMake C90 builds and inspect for no platform dependencies in `src/game/`. |
-| Expected Markers | Named RAM/OAM state, address provenance, static reset implementation, and neutral test exist without protected material in Git. |
+| Verification | Unit-test cold and warm reset ranges, preserved stack range, OAM ownership, and both name-table clears; run CMake C90 builds and inspect for no platform dependencies in `src/game/`. |
+| Expected Markers | Named RAM/OAM/name-table state, address provenance, static reset implementation, and neutral test exist without protected material in Git. |
 | Asset Needs | Owner-local ROM only for address verification; no ROM-derived payload enters tracked files. |
 | Reporting Requirements | Report verified address span, reset semantics, build/test result, source containment, and any deferred reset dependency. |
 | Stop Conditions | Stop for owner direction if verified ROM bytes disagree with the stated routine span or if conversion requires a generic emulator abstraction. |
-| Exit Criteria | The portable game core owns the required original RAM/OAM state and reproduces the verified reset-memory writes as native C without runtime instruction interpretation. |
+| Exit Criteria | The portable game core owns the required original RAM/OAM/name-table state and reproduces the verified reset writes as native C without runtime instruction interpretation. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
 | Similar-Issue Sweep | Search all tracked files for ROM paths, ROM extensions, generated output references, and third-party listing text; retain only policy-approved neutral tooling and ignore rules. |
 

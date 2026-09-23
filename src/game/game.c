@@ -9,6 +9,7 @@ void mysmb_game_initialize(struct mysmb_game *game)
     }
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
+    mysmb_game_initialize_name_tables(game);
     game->frame_number = 0UL;
 }
 
@@ -41,6 +42,26 @@ void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
         game->ram[(mysmb_u16)(0x0200U + offset)] = 0xf8U;
         offset = (mysmb_u8)(offset + 4U);
     } while (offset != 0U);
+}
+
+/* Translation of ROM $8e19-$8e5b (InitializeNameTables). */
+void mysmb_game_initialize_name_tables(struct mysmb_game *game)
+{
+    mysmb_u8 table;
+    mysmb_u16 offset;
+
+    for (table = 0U; table < 2U; ++table) {
+        for (offset = 0U; offset < 0x0300U; ++offset) {
+            game->name_table[table][offset] = 0x24U;
+        }
+        for (offset = 0x0300U; offset < 0x0340U; ++offset) {
+            game->name_table[table][offset] = 0U;
+        }
+    }
+    game->ram[0x0300U] = 0U;
+    game->ram[0x0301U] = 0U;
+    game->ram[0x073fU] = 0U;
+    game->ram[0x0740U] = 0U;
 }
 
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
