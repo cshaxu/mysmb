@@ -327,8 +327,8 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0x20U;
 }
 
-/* ROM $bbef-$bc15 GrowThePowerUp and $dc96 MoveObjectHorizontally.  Terrain
- * response remains in the later EnemyToBGCollisionDet route. */
+/* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
+ * movement and EnemyToBGCollisionDet state paths. */
 void mysmb_objects_step_power_up(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
@@ -346,8 +346,10 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
     if ((state & 0x80U) != 0U) {
         if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
             (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
+             game->ram[MYSMB_POWER_UP_TYPE] == 2U ||
              game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
-            if ((state & 0x40U) != 0U) {
+            if (game->ram[MYSMB_POWER_UP_TYPE] == 2U ||
+                (state & 0x40U) != 0U) {
                 old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
                 game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
                     (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
@@ -360,8 +362,8 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                 game->ram[MYSMB_ENEMY_Y_HIGH + slot] =
                     (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_HIGH + slot] + page_delta + carry);
                 old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] =
-                    (mysmb_u8)(old_value + 0x3dU);
+                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value +
+                    (game->ram[MYSMB_POWER_UP_TYPE] == 2U ? 0x1cU : 0x3dU));
                 if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value) {
                     game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
                 }
@@ -379,7 +381,15 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
             if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
                 tile != 0U && tile != 0x26U && tile != 0xc2U &&
                 tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-                if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
+                if (game->ram[MYSMB_POWER_UP_TYPE] == 2U &&
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + 2U) >= 3U) {
+                    game->ram[MYSMB_ENEMY_Y + slot] =
+                        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
+                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+                }
+                else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U &&
+                         (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
                     game->ram[MYSMB_ENEMY_Y + slot] =
                         (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
                     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
@@ -388,7 +398,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
                 }
             }
-            else {
+            else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
                 game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
             }
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
