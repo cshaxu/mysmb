@@ -158,6 +158,7 @@ static void mysmb_objects_handle_fireball_enemy_collision(struct mysmb_game *gam
                                                            mysmb_u8 enemy_slot);
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
+static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
 
@@ -1220,12 +1221,8 @@ void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
                 game->ram[MYSMB_SHELL_CHAIN_COUNTER + second]++;
             }
             else {
-                game->ram[MYSMB_ENEMY_X_SPEED + first] =
-                    (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + first]);
-                game->ram[MYSMB_ENEMY_X_SPEED + second] =
-                    (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + second]);
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + first] ^= 3U;
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + second] ^= 3U;
+                mysmb_objects_turn_enemy(game, first);
+                mysmb_objects_turn_enemy(game, second);
             }
         }
     }
@@ -1913,6 +1910,18 @@ static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
     game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
     game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
         (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
+}
+
+/* ROM $dd04 EnemyTurnAround. */
+static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 id;
+
+    id = game->ram[MYSMB_ENEMY_ID + slot];
+    if (id == 5U || (id >= 7U && id != 14U && id != 18U)) return;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
 }
 
 /* ROM $dc96 MoveObjectHorizontally for the separate misc-object arrays. */
