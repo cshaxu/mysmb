@@ -612,6 +612,19 @@ void mysmb_player_step_change_size(struct mysmb_game *game)
     }
 }
 
+/* ROM $b114-$b138 PlayerInjuryBlink.  The palette cycle is a renderer-owned
+ * effect; the player-control and timer handoff are native gameplay state. */
+void mysmb_player_step_injury_blink(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    if (game->ram[MYSMB_TIMER_CONTROL] >= 0xf0U) return;
+    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc8U) {
+        game->ram[MYSMB_TIMER_CONTROL] = 0U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
+        return;
+    }
+    mysmb_player_step(game, buttons);
+}
+
 /* ROM $b139-$b154 PlayerFireFlower, excluding palette upload. */
 void mysmb_player_step_fire_flower(struct mysmb_game *game)
 {

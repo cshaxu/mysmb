@@ -74,6 +74,7 @@ enum {
     MYSMB_PLAYER_STATE = 0x001dU,
     MYSMB_TIMER_CONTROL = 0x0747U,
     MYSMB_STAR_INVINCIBLE_TIMER = 0x079fU,
+    MYSMB_INJURY_TIMER = 0x079eU,
     MYSMB_STOMP_CHAIN_COUNTER = 0x0484U,
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
@@ -471,15 +472,26 @@ static mysmb_u8 mysmb_objects_check_goomba_stomp(struct mysmb_game *game,
     }
     if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
     game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    if (game->ram[MYSMB_PLAYER_Y_SPEED] == 0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 4U;
-    game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x10U;
-    game->ram[MYSMB_STOMP_CHAIN_COUNTER]++;
-    mysmb_objects_setup_floatey_number(game, slot,
-        (mysmb_u8)(game->ram[MYSMB_STOMP_CHAIN_COUNTER] + game->ram[MYSMB_STOMP_TIMER]));
-    game->ram[MYSMB_STOMP_TIMER]++;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
+    if (game->ram[MYSMB_PLAYER_Y_SPEED] != 0U &&
+        game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
+        game->ram[MYSMB_ENEMY_STATE + slot] = 4U;
+        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x10U;
+        game->ram[MYSMB_STOMP_CHAIN_COUNTER]++;
+        mysmb_objects_setup_floatey_number(game, slot,
+            (mysmb_u8)(game->ram[MYSMB_STOMP_CHAIN_COUNTER] + game->ram[MYSMB_STOMP_TIMER]));
+        game->ram[MYSMB_STOMP_TIMER]++;
+        game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
+        return 1U;
+    }
+    if (game->ram[MYSMB_PLAYER_STATUS] != 0U &&
+        game->ram[MYSMB_INJURY_TIMER] == 0U) {
+        game->ram[MYSMB_PLAYER_STATUS] = 0U;
+        game->ram[MYSMB_INJURY_TIMER] = 8U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 10U;
+        game->ram[MYSMB_PLAYER_STATE] = 1U;
+        game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
+        game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
+    }
     return 1U;
 }
 

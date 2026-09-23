@@ -311,6 +311,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 9U) {
             mysmb_player_step_change_size(game);
         }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 10U) {
+            mysmb_player_step_injury_blink(game, input->buttons);
+        }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
             mysmb_player_step_fire_flower(game);
         }
