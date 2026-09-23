@@ -26,16 +26,16 @@ int main(void)
     game.ram[0x00ceU] = 0x60U;
     game.ram[0x009fU] = 1U;
     game.ram[0x0499U] = 0U;
-    game.ram[0x000fU] = 1U;
-    game.ram[0x0016U] = 8U;
-    game.ram[0x0087U] = 0x40U;
-    game.ram[0x00b6U] = 1U;
-    game.ram[0x00cfU] = 0x70U;
-    game.ram[0x049aU] = 9U;
-    game.ram[0x0058U] = 0x18U;
+    game.ram[0x0011U] = 1U;
+    game.ram[0x0018U] = 8U;
+    game.ram[0x0089U] = 0x40U;
+    game.ram[0x00b8U] = 1U;
+    game.ram[0x00d1U] = 0x70U;
+    game.ram[0x049bU] = 9U;
+    game.ram[0x005aU] = 0x18U;
     mysmb_objects_check_bullet_bill_stomp(&game);
-    if (game.ram[0x001eU] != 0x20U || game.ram[0x00cfU] != 0x6eU ||
-        game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||
-        game.ram[0x0058U] != 0U || game.ram[0x009fU] != 0xfdU) return 1;
+    if (game.ram[0x0020U] != 0x20U || game.ram[0x00d1U] != 0x6eU ||
+        game.ram[0x00a2U] != 0U || game.ram[0x0436U] != 0U ||
+        game.ram[0x005aU] != 0U || game.ram[0x009fU] != 0xfdU) return 1;
     return 0;
 }
