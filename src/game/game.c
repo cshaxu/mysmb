@@ -25,28 +25,35 @@ enum {
     MYSMB_RAM_GAME_TIMER_CONTROL = 0x0787U,
     MYSMB_RAM_GAME_TIMER_HUNDREDS = 0x07f8U,
     MYSMB_RAM_SELECT_TIMER = 0x0780U,
+    MYSMB_RAM_INTERVAL_TIMER_CONTROL = 0x077fU,
+    MYSMB_RAM_TIMERS = 0x0780U,
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
 };
 
-/* ROM NMI DecTimers, restricted to timers observed by the player route.
- * Object, score, and music timers retain their later subsystem owners. */
+/* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
+ * interval timers run each time IntervalTimerControl rolls under zero. */
 static void mysmb_game_tick_player_timers(struct mysmb_game *game)
 {
-    static const mysmb_u16 timer_address[] = {
-        0x0781U, 0x0782U, 0x0783U, 0x0785U, 0x0787U, 0x0789U
-    };
     mysmb_u8 index;
+    mysmb_u8 last_timer;
 
     if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) {
         game->ram[MYSMB_RAM_TIMER_CONTROL]--;
         if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) return;
     }
-    for (index = 0U; index < sizeof(timer_address) / sizeof(timer_address[0]);
-         ++index) {
-        if (game->ram[timer_address[index]] != 0U) game->ram[timer_address[index]]--;
+    game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL]--;
+    last_timer = 0x14U;
+    if (game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL] >= 0x80U) {
+        game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL] = 0x14U;
+        last_timer = 0x23U;
+    }
+    for (index = 0U; index <= last_timer; ++index) {
+        if (game->ram[MYSMB_RAM_TIMERS + index] != 0U) {
+            game->ram[MYSMB_RAM_TIMERS + index]--;
+        }
     }
 }
 
