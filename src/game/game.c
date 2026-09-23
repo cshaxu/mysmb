@@ -9,6 +9,8 @@ enum {
     MYSMB_RAM_WORLD = 0x075fU,
     MYSMB_RAM_AREA = 0x0760U,
     MYSMB_RAM_OFFSCREEN_HIDDEN_1UP = 0x0764U,
+    MYSMB_RAM_OFFSCREEN_WORLD = 0x0766U,
+    MYSMB_RAM_OFFSCREEN_AREA = 0x0767U,
     MYSMB_RAM_PRIMARY_HARD = 0x076aU,
     MYSMB_RAM_NUMBER_OF_PLAYERS = 0x077aU,
     MYSMB_RAM_OPER_MODE = 0x0770U,
@@ -49,7 +51,10 @@ static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 button
     }
     if ((buttons & MYSMB_BUTTON_A) != 0U) {
         game->ram[MYSMB_RAM_WORLD] = game->ram[MYSMB_RAM_CONTINUE_WORLD];
+        game->ram[MYSMB_RAM_OFFSCREEN_WORLD] =
+            game->ram[MYSMB_RAM_CONTINUE_WORLD];
         game->ram[MYSMB_RAM_AREA] = 0U;
+        game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
     }
     game->ram[MYSMB_RAM_HIDDEN_1UP]++;
     game->ram[MYSMB_RAM_OFFSCREEN_HIDDEN_1UP]++;

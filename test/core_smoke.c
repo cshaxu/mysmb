@@ -60,5 +60,25 @@ int main(void)
     }
 
     mysmb_game_tick(&game, &input, &frame);
-    return frame.start_pressed == 0U ? 0 : 1;
+    if (frame.start_pressed != 0U) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
+    input.buttons = MYSMB_BUTTON_SELECT;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x077aU] != 1U || game.ram[0x0780U] != 0x10U) {
+        return 1;
+    }
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x077aU] != 1U) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
+    game.ram[0x07fdU] = 6U;
+    input.buttons = (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_START);
+    mysmb_game_tick(&game, &input, &frame);
+    return game.ram[0x075fU] == 6U && game.ram[0x0760U] == 0U &&
+           game.ram[0x0766U] == 6U && game.ram[0x0767U] == 0U ? 0 : 1;
 }
