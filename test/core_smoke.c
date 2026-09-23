@@ -537,6 +537,35 @@ int main(void)
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x001eU] != 0x84U || game.ram[0x0046U] != 2U ||
         game.ram[0x0058U] != 0xd0U || game.ram[0x0110U] != 5U) return 1;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 6U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0491U] = 0U;
+    game.ram[0x00cfU] = 0x70U;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    game.ram[0x079fU] = 0x23U;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x001eU] != 0x22U || game.ram[0x00cfU] != 0x6eU ||
+        game.ram[0x00a0U] != 0xfdU || game.ram[0x0046U] != 1U ||
+        game.ram[0x0058U] != 0x10U || game.ram[0x0110U] != 1U) return 1;
+    game.ram[0x079fU] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 6U;
+    game.ram[0x001eU] = 0x22U;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x42U;
+    game.ram[0x00b6U] = 1U;
+    game.ram[0x00cfU] = 0x6eU;
+    game.ram[0x00a0U] = 0xfdU;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    game.ram[0x0046U] = 1U;
+    game.ram[0x0058U] = 0x10U;
+    game.ram[0x0401U] = 0U;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0x6bU ||
+        game.ram[0x0434U] != 0x3dU) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
