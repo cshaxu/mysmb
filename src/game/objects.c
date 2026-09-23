@@ -191,7 +191,13 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     }
     for (slot = 0U; slot < 2U; ++slot) {
         state = game->ram[MYSMB_FIREBALL_STATE + slot];
-        if (state == 0U || (state & 0x80U) != 0U) continue;
+        if (state == 0U) continue;
+        if ((state & 0x80U) != 0U) {
+            state++;
+            game->ram[MYSMB_FIREBALL_STATE + slot] = state;
+            if (((state >> 1U) & 7U) >= 3U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
+            continue;
+        }
         if (state == 2U) {
             old_value = game->ram[MYSMB_PLAYER_X];
             game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + 4U);
