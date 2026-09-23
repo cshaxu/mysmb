@@ -152,6 +152,10 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_local_title_smoke PRIVATE src "${MYSMB_LOCAL_TITLE_DIR}")
     target_link_libraries(mysmb_local_title_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.local-title-smoke COMMAND mysmb_local_title_smoke)
+    add_executable(mysmb_local_title_oracle test/local_title_oracle.c
+        $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_local_title_oracle PRIVATE src "${MYSMB_LOCAL_TITLE_DIR}")
+    target_link_libraries(mysmb_local_title_oracle PRIVATE mysmb_game)
 
     if(MYSMB_ASM_PATH)
         add_custom_command(

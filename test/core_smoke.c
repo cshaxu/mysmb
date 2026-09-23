@@ -23,9 +23,9 @@ int main(void)
         game.ram[0x0200U] != 0xf8U || game.ram[0x0204U] != 0xf8U ||
         game.ram[0x02fcU] != 0xf8U || game.ram[0x0201U] != 0U ||
         game.name_table[0][0U] != 0x24U ||
-        game.name_table[1][0x02ffU] != 0x24U ||
-        game.name_table[0][0x0300U] != 0U ||
-        game.name_table[1][0x033fU] != 0U) {
+        game.name_table[1][0x03bfU] != 0x24U ||
+        game.name_table[0][0x03c0U] != 0U ||
+        game.name_table[1][0x03ffU] != 0U) {
         return 1;
     }
 
