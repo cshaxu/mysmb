@@ -566,6 +566,26 @@ int main(void)
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0x6bU ||
         game.ram[0x0434U] != 0x3dU) return 1;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 8U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x40U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0086U] = 0x80U;
+    game.ram[0x0747U] = 0U;
+    game.ram[0x0401U] = 0U;
+    mysmb_objects_step_bullet_bills(&game);
+    if (game.ram[0x001eU] != 1U || game.ram[0x0046U] != 1U ||
+        game.ram[0x0058U] != 0x18U || game.ram[0x078aU] != 0x0aU ||
+        game.ram[0x0087U] != 0x41U) return 1;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0087U] = 0x80U;
+    game.ram[0x0086U] = 0x40U;
+    game.ram[0x0401U] = 0U;
+    mysmb_objects_step_bullet_bills(&game);
+    if (game.ram[0x0046U] != 2U || game.ram[0x0058U] != 0xe8U ||
+        game.ram[0x0087U] != 0x7eU) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||

@@ -638,6 +638,36 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
     }
 }
 
+/* ROM $aa0f-$aa4c InitBulletBill/BulletBillHandler, excluding OAM and the
+ * cannon scheduler.  Enemy-stream Bullet Bills use the normal object slots. */
+void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u16 player_world;
+    mysmb_u16 enemy_world;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 8U) continue;
+        if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
+            game->ram[MYSMB_ENEMY_STATE + slot] == 0U) {
+            player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                                        game->ram[MYSMB_PLAYER_X]);
+            enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                                       game->ram[MYSMB_ENEMY_X + slot]);
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
+                enemy_world < player_world ? 1U : 2U;
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x18U : 0xe8U;
+            game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
+            game->ram[0x078aU + slot] = 0x0aU;
+        }
+        if (game->ram[MYSMB_TIMER_CONTROL] == 0U) {
+            mysmb_objects_move_enemy_horizontally(game, slot);
+        }
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */
