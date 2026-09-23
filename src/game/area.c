@@ -78,6 +78,15 @@ enum {
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_FIREBAR_SPIN_SPEED = 0x0388U,
     MYSMB_FIREBAR_SPIN_DIRECTION = 0x0034U,
+    MYSMB_BOWSER_BODY_CONTROLS = 0x0363U,
+    MYSMB_BOWSER_FEET_TIMER = 0x0364U,
+    MYSMB_BOWSER_MOVE_SPEED = 0x0365U,
+    MYSMB_BOWSER_ORIGIN_X = 0x0366U,
+    MYSMB_BOWSER_FLAME_TIMER = 0x0367U,
+    MYSMB_BOWSER_BREATH_TIMER = 0x0790U,
+    MYSMB_BOWSER_FRONT_SLOT = 0x0368U,
+    MYSMB_BOWSER_HIT_POINTS = 0x0483U,
+    MYSMB_ENEMY_INTERVAL_TIMER = 0x078aU,
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
@@ -291,6 +300,20 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
             if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        }
+        /* ROM InitBowser, excluding its OAM-only duplicate rear half. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 45U) {
+            game->ram[MYSMB_BOWSER_BODY_CONTROLS] = 0U;
+            game->ram[MYSMB_BOWSER_ORIGIN_X] = game->ram[MYSMB_ENEMY_X + slot];
+            game->ram[MYSMB_BOWSER_FLAME_TIMER] = 0U;
+            game->ram[MYSMB_BOWSER_BREATH_TIMER] = 0xdfU;
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0xdfU;
+            game->ram[MYSMB_BOWSER_FEET_TIMER] = 0x20U;
+            game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x20U;
+            game->ram[MYSMB_BOWSER_HIT_POINTS] = 5U;
+            game->ram[MYSMB_BOWSER_MOVE_SPEED] = 2U;
+            game->ram[MYSMB_BOWSER_FRONT_SLOT] = slot;
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 10U;
         }
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
         game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
