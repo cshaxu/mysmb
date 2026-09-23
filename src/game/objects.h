@@ -27,6 +27,8 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
+/* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep, sans rendering. */
+void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $ddcd HandlePowerUpCollision state effect. */

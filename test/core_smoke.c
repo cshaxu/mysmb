@@ -603,6 +603,22 @@ int main(void)
         game.ram[0x00cfU] != 0x6fU) return 1;
     game.ram[0x000fU] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0011U] = 1U;
+    game.ram[0x0018U] = 10U;
+    game.ram[0x0020U] = 0U;
+    game.ram[0x0070U] = 1U;
+    game.ram[0x0089U] = 0x10U;
+    game.ram[0x00b8U] = 1U;
+    game.ram[0x00d1U] = 0x70U;
+    game.ram[0x005aU] = 0U;
+    game.ram[0x0403U] = 0U;
+    game.ram[0x0419U] = 0U;
+    game.ram[0x0436U] = 0x70U;
+    mysmb_objects_step_swimming_cheep_cheeps(&game);
+    if (game.ram[0x0403U] != 0xc0U || game.ram[0x0089U] != 0x0fU ||
+        game.ram[0x0419U] != 0xe0U || game.ram[0x00d1U] != 0x6fU ||
+        game.ram[0x00b8U] != 1U) return 1;
+    game.ram[0x0011U] = 0U;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||
