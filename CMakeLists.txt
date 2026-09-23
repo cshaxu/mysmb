@@ -54,6 +54,8 @@ add_test(NAME mysmb.asm-index
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_asm_index.py)
 add_test(NAME mysmb.boot-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_boot_codegen.py)
+add_test(NAME mysmb.title-codegen
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_title_codegen.py)
 
 if(MYSMB_ROM_PATH)
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
@@ -99,6 +101,28 @@ if(MYSMB_ROM_PATH)
     )
     add_dependencies(mysmb_static_boot_data mysmb_static_boot)
     target_include_directories(mysmb_static_boot_data PRIVATE "${MYSMB_STATIC_BOOT_DIR}")
+
+    set(MYSMB_LOCAL_TITLE_DIR "${MYSMB_LOCAL_ROM_DIR}/title")
+    add_custom_command(
+        OUTPUT
+            "${MYSMB_LOCAL_TITLE_DIR}/smb1_local_title.h"
+            "${MYSMB_LOCAL_TITLE_DIR}/smb1_local_title.c"
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_title_codegen.py
+            --rom "${MYSMB_ROM_PATH}" --output "${MYSMB_LOCAL_TITLE_DIR}"
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_title_codegen.py
+                ${CMAKE_CURRENT_SOURCE_DIR}/tools/smb_rom_codegen.py
+                "${MYSMB_ROM_PATH}"
+        VERBATIM
+    )
+    add_custom_target(mysmb_local_title DEPENDS
+        "${MYSMB_LOCAL_TITLE_DIR}/smb1_local_title.h"
+        "${MYSMB_LOCAL_TITLE_DIR}/smb1_local_title.c"
+    )
+    add_library(mysmb_local_title_data OBJECT
+        "${MYSMB_LOCAL_TITLE_DIR}/smb1_local_title.c"
+    )
+    add_dependencies(mysmb_local_title_data mysmb_local_title)
+    target_include_directories(mysmb_local_title_data PRIVATE "${MYSMB_LOCAL_TITLE_DIR}")
 
     if(MYSMB_ASM_PATH)
         add_custom_command(

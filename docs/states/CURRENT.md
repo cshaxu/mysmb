@@ -2,26 +2,26 @@
 
 ## Current Work
 
-M1 T3 S2 is admitted to convert the verified reset-memory dependency into portable native C.
+M1 T3 S3 is admitted to prepare the owner-local title command stream for native consumption.
 
-## M1 T3 S2 Packet
+## M1 T3 S3 Packet
 
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | Continuation |
-| Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 S1 established local containment and verified the reset slice. |
-| Objective | Replace the T2 placeholder state with portable C90 owners for original `$0000-$07ff` RAM, OAM, and both initial name tables; translate verified reset dependencies `$90cc-$90e6`, `$8220-$8230`, and `$8e19-$8e5b` as named native logic. |
+| Admission And Approval | Owner approved M1 execution and the native-C/no-emulator route on 2026-09-22; T3 S2 established original reset state at `f187bf2`. |
+| Objective | Extract the byte-verified title command stream read by `$86ff-$8731` from owner-local CHR into an ignored C90 unit, with a deterministic extent and no runtime ROM reader. |
 | Non-goals | Do not commit ROM bytes, CHR, source listing, generated code/data, screenshots, traces, or ROM-embedded executable; do not introduce a CPU, PPU, APU, instruction decoder, or generic memory bus. |
-| Reference Baseline | T3 S1 `1af9abf`; owner-local ROM; byte-for-byte verified `$90cc-$90e6` reset routine; public sources remain local research references only. |
+| Reference Baseline | T3 S2 `f187bf2`; owner-local ROM; byte-verified title read at PPU `$1ec0` for `$013a` bytes; public sources remain local research references only. |
 | Candidate Proposal | [M1 static-C source pipeline](../proposals/m1-source-corpus-and-local-toolchain.md) |
-| Files And ABI Surface | `src/game/` portable RAM/OAM/name-table state and reset routines; neutral game frame contract; project-owned unit test. |
+| Files And ABI Surface | Project-owned title extractor, ignored local C90 title data unit, root CMake target, and synthetic extractor test. |
 | Applicable Rules | Task Reading Set; Execution, Documentation, Architecture, Coding, and source/research policies. |
-| Verification | Unit-test cold and warm reset ranges, preserved stack range, OAM ownership, and both name-table clears; run CMake C90 builds and inspect for no platform dependencies in `src/game/`. |
-| Expected Markers | Named RAM/OAM/name-table state, address provenance, static reset implementation, and neutral test exist without protected material in Git. |
-| Asset Needs | Owner-local ROM only for address verification; no ROM-derived payload enters tracked files. |
-| Reporting Requirements | Report verified address span, reset semantics, build/test result, source containment, and any deferred reset dependency. |
-| Stop Conditions | Stop for owner direction if verified ROM bytes disagree with the stated routine span or if conversion requires a generic emulator abstraction. |
-| Exit Criteria | The portable game core owns the required original RAM/OAM/name-table state and reproduces the verified reset writes as native C without runtime instruction interpretation. |
+| Verification | Verify the `$013a` extent with a synthetic NROM, build the ignored generated C90 unit, and run CMake tests. |
+| Expected Markers | Local title data generator, local C90 target, and neutral extent test exist without protected material in Git. |
+| Asset Needs | Owner-local ROM only for extraction verification; no ROM-derived payload enters tracked files. |
+| Reporting Requirements | Report verified source span, local-output containment, build/test result, and title-transfer dependency still deferred. |
+| Stop Conditions | Stop for owner direction if verified ROM bytes disagree with the stated title span or if extraction cannot remain local. |
+| Exit Criteria | The title command stream has a reproducible ignored C90 generation path with no runtime ROM reader. |
 | Original Owner Request | Execute M1 and establish the SMB foundation: native C, Win32 first, 16-bit compatible, with no runtime NES emulator. |
 | Similar-Issue Sweep | Search all tracked files for ROM paths, ROM extensions, generated output references, and third-party listing text; retain only policy-approved neutral tooling and ignore rules. |
 
