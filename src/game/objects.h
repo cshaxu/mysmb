@@ -33,6 +33,8 @@ void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 void mysmb_objects_step_podoboos(struct mysmb_game *game);
 /* ROM $ad3e-$ad59 InitBloober and $b004-$b09a MoveBloober, sans rendering. */
 void mysmb_objects_step_bloobers(struct mysmb_game *game);
+/* ROM $aea4-$aeb0 InitJumpGPTroopa and $afbd-$afc2 MoveJumpingEnemy. */
+void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game);
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $ddcd HandlePowerUpCollision state effect. */

@@ -907,6 +907,40 @@ void mysmb_objects_step_bloobers(struct mysmb_game *game)
     }
 }
 
+/* ROM $afbd MoveJumpingEnemy via $bb28 MoveJ_EnemyVertically. */
+void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + slot] != 14U) continue;
+        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
+        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+            (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
+        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
+        old_value = game->ram[MYSMB_ENEMY_Y + slot];
+        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
+        if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
+        old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x1cU);
+        carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 3U &&
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        }
+        mysmb_objects_move_enemy_horizontally(game, slot);
+    }
+}
+
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
  * slot.  The original uses screen-relative one-byte boxes; the same entries
  * are retained in RAM so later enemy-object routes can share them. */
