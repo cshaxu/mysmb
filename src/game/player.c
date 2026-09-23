@@ -26,7 +26,8 @@ enum {
     MYSMB_VERTICAL_FORCE = 0x0709U,
     MYSMB_VERTICAL_FORCE_DOWN = 0x070aU,
     MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
-    MYSMB_JUMP_SWIM_TIMER = 0x0782U
+    MYSMB_JUMP_SWIM_TIMER = 0x0782U,
+    MYSMB_RUNNING_TIMER = 0x0783U
 };
 
 enum { MYSMB_WHIRLPOOL = 0x047dU };
@@ -323,28 +324,47 @@ void mysmb_player_climb(struct mysmb_game *game)
 }
 
 /* Translation of the X_Physics parameter route in ROM $b50b-$b5cb.
- * Running-timer and animation ownership are translated separately. */
+ * Player animation timing is owned by GetPlayerAnimSpeed. */
 void mysmb_player_configure_horizontal(struct mysmb_game *game)
 {
     static const mysmb_u8 max_left[3] = { 0xd8U, 0xe8U, 0xf0U };
-    static const mysmb_u8 max_right[3] = { 0x28U, 0x18U, 0x10U };
+    static const mysmb_u8 max_right[4] = { 0x28U, 0x18U, 0x10U, 0x0cU };
     static const mysmb_u8 friction[3] = { 0xe4U, 0x98U, 0xd0U };
     mysmb_u8 speed_index;
     mysmb_u8 friction_index;
     mysmb_u8 friction_value;
 
-    speed_index = 1U;
-    friction_index = 1U;
-    if (game->ram[MYSMB_PLAYER_STATE] != 0U &&
-        game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x19U) {
-        speed_index = 0U;
-        friction_index = 0U;
+    speed_index = 0U;
+    friction_index = 0U;
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
+        speed_index = 1U;
+        if (game->ram[MYSMB_AREA_TYPE] != 0U) {
+            speed_index = 0U;
+            if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] ==
+                game->ram[MYSMB_PLAYER_MOVING_DIRECTION]) {
+                if ((game->ram[MYSMB_PLAYER_A_B_BUTTONS] & MYSMB_BUTTON_B) != 0U) {
+                    game->ram[MYSMB_RUNNING_TIMER] = 0x0aU;
+                    goto configure_limits;
+                }
+                if (game->ram[MYSMB_RUNNING_TIMER] != 0U) {
+                    goto configure_limits;
+                }
+            }
+        }
+        speed_index++;
+        friction_index++;
     }
-    else if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U ||
-             game->ram[0x0703U] != 0U) {
-        friction_index = 2U;
+    else if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] < 0x19U) {
+        speed_index++;
+        friction_index++;
     }
+    if (game->ram[0x0703U] != 0U ||
+        game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U) {
+        friction_index++;
+    }
+configure_limits:
     game->ram[MYSMB_MAX_LEFT] = max_left[speed_index];
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 7U) speed_index = 3U;
     game->ram[MYSMB_MAX_RIGHT] = max_right[speed_index];
     friction_value = friction[friction_index];
     game->ram[MYSMB_FRICTION_LOW] = friction_value;

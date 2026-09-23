@@ -27,6 +27,19 @@ int main(void)
         return 1;
     }
     game.ram[0x0754U] = 1U;
+    game.ram[0x001dU] = 0U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x000aU] = MYSMB_BUTTON_B;
+    game.ram[0x000cU] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0700U] = 0U;
+    game.ram[0x0783U] = 0U;
+    game.ram[0x000eU] = 0U;
+    mysmb_player_configure_horizontal(&game);
+    if (game.ram[0x0783U] != 0x0aU || game.ram[0x0450U] != 0xd8U ||
+        game.ram[0x0456U] != 0x28U || game.ram[0x0702U] != 0xe4U) {
+        return 1;
+    }
     for (index = 0U; index < 8U; ++index) {
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }
