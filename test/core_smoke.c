@@ -379,6 +379,22 @@ int main(void)
         return 1;
     }
     mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 1U;
+    game.ram[0x000eU] = 1U;
+    game.ram[0x001dU] = 0U;
+    game.ram[0x0490U] = MYSMB_BUTTON_UP;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x071aU] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x001dU] != 3U || game.ram[0x00ceU] != 0x2fU) {
+        return 1;
+    }
+    mysmb_game_initialize(&game);
     game.ram[0x0770U] = 0U;
     game.ram[0x0772U] = 0U;
     game.ram[0x000eU] = 8U;
