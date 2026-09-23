@@ -39,6 +39,17 @@ enum {
     MYSMB_ROM_AREA_HIGH = 0x1d4eU
 };
 
+enum {
+    MYSMB_AREA_ENTRANCE = 0x0710U,
+    MYSMB_AREA_TIMER_SETTING = 0x0715U,
+    MYSMB_AREA_TERRAIN = 0x0727U,
+    MYSMB_AREA_STYLE = 0x0733U,
+    MYSMB_AREA_FOREGROUND = 0x0741U,
+    MYSMB_AREA_BACKGROUND = 0x0742U,
+    MYSMB_AREA_CLOUD_OVERRIDE = 0x0743U,
+    MYSMB_AREA_BACKGROUND_COLOR = 0x0744U
+};
+
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
 void mysmb_area_initialize(struct mysmb_game *game)
@@ -108,5 +119,40 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
     }
     game->ram[MYSMB_AREA_DATA_LOW] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_LOW + table_index)];
     game->ram[MYSMB_AREA_DATA_HIGH] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_HIGH + table_index)];
+    return 1U;
+}
+
+/* Translation of the area-header tail of ROM $9c1c-$9c4a. */
+mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
+                                 const struct mysmb_area_source *source)
+{
+    mysmb_u16 address;
+    mysmb_u8 first;
+    mysmb_u8 second;
+    mysmb_u8 value;
+
+    if (source == 0 || source->prg == 0 || game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) {
+        return 0U;
+    }
+    address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8) |
+                           game->ram[MYSMB_AREA_DATA_LOW]);
+    if (address >= source->prg_size || (mysmb_u16)(source->prg_size - address) < 2U) {
+        return 0U;
+    }
+    first = source->prg[address];
+    second = source->prg[(mysmb_u16)(address + 1U)];
+    value = (mysmb_u8)(first & 0x07U);
+    game->ram[MYSMB_AREA_BACKGROUND_COLOR] = value >= 4U ? value : 0U;
+    game->ram[MYSMB_AREA_FOREGROUND] = value < 4U ? value : 0U;
+    game->ram[MYSMB_AREA_ENTRANCE] = (mysmb_u8)((first & 0x38U) >> 3U);
+    game->ram[MYSMB_AREA_TIMER_SETTING] = (mysmb_u8)(first >> 6U);
+    game->ram[MYSMB_AREA_TERRAIN] = (mysmb_u8)(second & 0x0fU);
+    game->ram[MYSMB_AREA_BACKGROUND] = (mysmb_u8)((second & 0x30U) >> 4U);
+    value = (mysmb_u8)(second >> 6U);
+    game->ram[MYSMB_AREA_CLOUD_OVERRIDE] = value == 3U ? value : 0U;
+    game->ram[MYSMB_AREA_STYLE] = value == 3U ? 0U : value;
+    address = (mysmb_u16)(address + 2U);
+    game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
+    game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));
     return 1U;
 }

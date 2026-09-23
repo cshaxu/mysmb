@@ -26,6 +26,8 @@ int main(void)
     area_prg[0x1d2aU] = 0U;
     area_prg[0x1d31U] = 0x78U;
     area_prg[0x1d53U] = 0x56U;
+    area_prg[0x1f00U] = 0xedU;
+    area_prg[0x1f01U] = 0xb9U;
     area_source.prg = area_prg;
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
@@ -37,6 +39,16 @@ int main(void)
         game.ram[0x074fU] != 5U || game.ram[0x00e9U] != 0x34U ||
         game.ram[0x00eaU] != 0x12U || game.ram[0x00e7U] != 0x78U ||
         game.ram[0x00e8U] != 0x56U) {
+        return 1;
+    }
+    game.ram[0x00e7U] = 0U;
+    game.ram[0x00e8U] = 0x9fU;
+    if (mysmb_area_parse_header(&game, &area_source) == 0U ||
+        game.ram[0x0744U] != 5U || game.ram[0x0741U] != 0U ||
+        game.ram[0x0710U] != 5U || game.ram[0x0715U] != 3U ||
+        game.ram[0x0727U] != 9U || game.ram[0x0742U] != 3U ||
+        game.ram[0x0743U] != 0U || game.ram[0x0733U] != 2U ||
+        game.ram[0x00e7U] != 2U || game.ram[0x00e8U] != 0x9fU) {
         return 1;
     }
     input.buttons = 0U;
