@@ -462,7 +462,12 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_u8 a_held;
     mysmb_u8 jump_height;
 
-    mysmb_player_latch_input(game, buttons);
+    /* PlayerDeath jumps into PlayerCtrlRoutine after its engine-$0b guard,
+     * which deliberately skips the controller partition.  Death motion uses
+     * the input latched by the collision frame rather than a new host sample. */
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
+        mysmb_player_latch_input(game, buttons);
+    }
     a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
     if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
         mysmb_player_configure_climb(game);

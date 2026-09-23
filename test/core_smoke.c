@@ -122,6 +122,18 @@ int main(void)
     if (game.ram[0x0701U] != 1U || game.ram[0x0702U] != 0x30U) {
         return 1;
     }
+    mysmb_player_latch_input(&game, MYSMB_BUTTON_RIGHT);
+    game.ram[0x000eU] = 0x0bU;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x80U;
+    game.ram[0x009fU] = 0U;
+    mysmb_player_step(&game, MYSMB_BUTTON_LEFT);
+    if (game.ram[0x000cU] != MYSMB_BUTTON_RIGHT) {
+        return 1;
+    }
+    game.ram[0x000eU] = 8U;
+    game.ram[0x000cU] = MYSMB_BUTTON_LEFT;
     game.ram[0x0086U] = 0x60U;
     game.ram[0x071cU] = 0U;
     game.ram[0x071aU] = 0U;
