@@ -808,6 +808,11 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     /* ChkFootMTile consumes the left sample when it is nonzero; it visits
      * the right sample only when the left is empty.  A climbable sample
      * hands off to the side route instead of becoming a landing surface. */
+    if (have_left != 0U && (left.metatile == 0xc2U || left.metatile == 0xc3U)) {
+        mysmb_objects_collect_coin(game, left.block_address_low,
+                                   left.block_row_offset);
+        return 1U;
+    }
     if (have_left != 0U && left.metatile != 0U) {
         if (mysmb_player_is_climbable(left.metatile) != 0U) return 0U;
         if (mysmb_player_land_on_solid(game, left.metatile,
@@ -816,6 +821,11 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         }
         (void)mysmb_player_handle_vertical_pipe(game, left.metatile,
                                                 have_right != 0U ? right.metatile : 0U);
+        return 1U;
+    }
+    if (have_right != 0U && (right.metatile == 0xc2U || right.metatile == 0xc3U)) {
+        mysmb_objects_collect_coin(game, right.block_address_low,
+                                   right.block_row_offset);
         return 1U;
     }
     if (have_right != 0U && right.metatile != 0U) {
@@ -1009,8 +1019,12 @@ void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 moving_direction
 static mysmb_u8 mysmb_player_handle_side_metatile(
     struct mysmb_game *game, const struct mysmb_player_terrain *terrain)
 {
+    if (terrain->metatile == 0xc2U || terrain->metatile == 0xc3U) {
+        mysmb_objects_collect_coin(game, terrain->block_address_low,
+                                   terrain->block_row_offset);
+        return 1U;
+    }
     if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U ||
-        terrain->metatile == 0xc2U || terrain->metatile == 0xc3U ||
         terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
         return 1U;
     }
@@ -1105,14 +1119,21 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
     if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U) return 0U;
     extent_index = game->ram[MYSMB_PLAYER_SIZE] != 0U ? 1U : 0U;
     if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) extent_index = 1U;
-    if (game->ram[MYSMB_PLAYER_Y] < upper_extent[extent_index] ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U ||
-        (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
+    if (game->ram[MYSMB_PLAYER_Y] < upper_extent[extent_index]) {
         return 0U;
     }
     base = mysmb_player_collision_base(game);
     if (mysmb_player_query_block(game, x_adder[base], y_adder[base],
                                  0U, &terrain) == 0U || terrain.metatile == 0U) {
+        return 0U;
+    }
+    if (terrain.metatile == 0xc2U || terrain.metatile == 0xc3U) {
+        mysmb_objects_collect_coin(game, terrain.block_address_low,
+                                   terrain.block_row_offset);
+        return 1U;
+    }
+    if (game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U ||
+        (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
         return 0U;
     }
     if (game->ram[0x0784U] == 0U) {

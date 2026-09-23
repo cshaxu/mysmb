@@ -35,7 +35,14 @@ enum {
     MYSMB_MISC_Y = 0x00dbU,
     MYSMB_MISC_Y_DUMMY = 0x0424U,
     MYSMB_MISC_Y_FORCE = 0x0440U,
-    MYSMB_SCROLL_AMOUNT = 0x0775U
+    MYSMB_SCROLL_AMOUNT = 0x0775U,
+    MYSMB_OPERATING_MODE = 0x0770U,
+    MYSMB_DISPLAY_DIGITS = 0x07d7U,
+    MYSMB_DIGIT_MODIFIER = 0x0134U,
+    MYSMB_CURRENT_PLAYER = 0x0753U,
+    MYSMB_COIN_TALLY_FOR_1UPS = 0x0748U,
+    MYSMB_COIN_TALLY = 0x075eU,
+    MYSMB_NUMBER_OF_LIVES = 0x075aU
 };
 
 /* ROM $bb51 SetupJumpCoin. */
@@ -87,6 +94,63 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
         }
     }
+}
+
+/* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
+ * byte; the modifier is cleared after every calculation exactly as the ROM
+ * routine does. */
+static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
+                                               mysmb_u8 digit_offset)
+{
+    mysmb_u8 index;
+    mysmb_u8 value;
+
+    if (game->ram[MYSMB_OPERATING_MODE] != 0U) {
+        index = 5U;
+        while (1) {
+            value = (mysmb_u8)(game->ram[MYSMB_DIGIT_MODIFIER + index] +
+                               game->ram[MYSMB_DISPLAY_DIGITS + digit_offset]);
+            if (value >= 0x80U) {
+                game->ram[MYSMB_DIGIT_MODIFIER + index - 1U]--;
+                value = 9U;
+            }
+            else if (value >= 10U) {
+                value = (mysmb_u8)(value - 10U);
+                game->ram[MYSMB_DIGIT_MODIFIER + index - 1U]++;
+            }
+            game->ram[MYSMB_DISPLAY_DIGITS + digit_offset] = value;
+            if (index == 0U) break;
+            --index;
+            --digit_offset;
+        }
+    }
+    for (index = 0U; index <= 6U; ++index) {
+        game->ram[MYSMB_DIGIT_MODIFIER + index] = 0U;
+    }
+}
+
+/* ROM $dedd HandleCoinMetatile and $bbb6 GiveOneCoin.  Presentation and
+ * sound-buffer writes belong to the renderer/audio owners; this routine
+ * preserves the block-buffer, decimal score, tally, and life state. */
+void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
+                                mysmb_u8 block_row)
+{
+    mysmb_u16 address;
+    mysmb_u8 player;
+
+    address = (mysmb_u16)(0x0500U + block_low + block_row);
+    if (address < 0x0800U) game->ram[address] = 0U;
+    game->ram[MYSMB_COIN_TALLY_FOR_1UPS]++;
+    player = game->ram[MYSMB_CURRENT_PLAYER];
+    game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 1U;
+    mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x17U : 0x1dU);
+    game->ram[MYSMB_COIN_TALLY]++;
+    if (game->ram[MYSMB_COIN_TALLY] == 100U) {
+        game->ram[MYSMB_COIN_TALLY] = 0U;
+        game->ram[MYSMB_NUMBER_OF_LIVES]++;
+    }
+    game->ram[MYSMB_DIGIT_MODIFIER + 4U] = 2U;
+    mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x0bU : 0x11U);
 }
 
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
