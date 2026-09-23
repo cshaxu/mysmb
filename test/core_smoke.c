@@ -514,6 +514,20 @@ int main(void)
     game.ram[0x0747U] = 0xc8U;
     mysmb_player_step_injury_blink(&game, 0U);
     if (game.ram[0x000eU] != 8U || game.ram[0x0747U] != 0U) return 1;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 0U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0491U] = 0U;
+    game.ram[0x009fU] = 1U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x076aU] = 1U;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x001eU] != 4U || game.ram[0x0796U] != 0x0bU ||
+        game.ram[0x009fU] != 0xfcU) return 1;
+    game.ram[0x0796U] = 0U;
+    mysmb_objects_step_normal_enemies(&game);
+    if (game.ram[0x001eU] != 0U || game.ram[0x0046U] != 1U ||
+        game.ram[0x0058U] != 8U) return 1;
     game.ram[0x00e7U] = 0U;
     game.ram[0x00e8U] = 0x9fU;
     if (mysmb_area_parse_header(&game, &area_source) == 0U ||

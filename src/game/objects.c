@@ -78,6 +78,7 @@ enum {
     MYSMB_STOMP_CHAIN_COUNTER = 0x0484U,
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
+    MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_VINE_FLAG_OFFSET = 0x0398U,
     MYSMB_VINE_HEIGHT = 0x0399U,
     MYSMB_VINE_OBJECT_OFFSET = 0x039aU,
@@ -118,8 +119,8 @@ static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                                mysmb_u8 slot,
                                                mysmb_u8 control);
-static mysmb_u8 mysmb_objects_check_goomba_stomp(struct mysmb_game *game,
-                                                 mysmb_u8 slot);
+static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
+                                                            mysmb_u8 slot);
 
 /* ROM $bb51 SetupJumpCoin. */
 void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
@@ -432,11 +433,9 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 }
 
 /* ROM $dcfd-$ddcb PlayerEnemyCollision and $e069-$e08a EnemyStomped,
- * bounded to a normal Goomba.  Collision precedes the TimerControl movement
- * gate in the ROM.  The Goomba's short defeated interval is represented here
- * because its later graphic-only state has no gameplay movement. */
-static mysmb_u8 mysmb_objects_check_goomba_stomp(struct mysmb_game *game,
-                                                 mysmb_u8 slot)
+ * bounded to ordinary walking enemies. */
+static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
+                                                            mysmb_u8 slot)
 {
     mysmb_u16 player_world;
     mysmb_u16 enemy_world;
@@ -475,7 +474,8 @@ static mysmb_u8 mysmb_objects_check_goomba_stomp(struct mysmb_game *game,
     if (game->ram[MYSMB_PLAYER_Y_SPEED] != 0U &&
         game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
         game->ram[MYSMB_ENEMY_STATE + slot] = 4U;
-        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x10U;
+        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] =
+            game->ram[MYSMB_PRIMARY_HARD] == 0U ? 0x10U : 0x0bU;
         game->ram[MYSMB_STOMP_CHAIN_COUNTER]++;
         mysmb_objects_setup_floatey_number(game, slot,
             (mysmb_u8)(game->ram[MYSMB_STOMP_CHAIN_COUNTER] + game->ram[MYSMB_STOMP_TIMER]));
@@ -514,15 +514,22 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
         id = game->ram[MYSMB_ENEMY_ID + slot];
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || id > 6U || id == 5U ||
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) continue;
-        if (id == 6U) {
-            if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) == 4U) {
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) == 4U) {
+            if (id == 6U) {
                 if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0x0eU) {
                     game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
                 }
-                continue;
             }
-            if (mysmb_objects_check_goomba_stomp(game, slot) != 0U) continue;
+            else if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
+                game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
+                    ((mysmb_u8)game->frame_number & 1U) + 1U;
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
+            }
+            continue;
         }
+        if (mysmb_objects_check_normal_enemy_collision(game, slot) != 0U) continue;
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
