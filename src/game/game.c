@@ -36,7 +36,7 @@ enum {
 static void mysmb_game_tick_player_timers(struct mysmb_game *game)
 {
     static const mysmb_u16 timer_address[] = {
-        0x0781U, 0x0782U, 0x0783U, 0x0785U, 0x0789U
+        0x0781U, 0x0782U, 0x0783U, 0x0785U, 0x0787U, 0x0789U
     };
     mysmb_u8 index;
 

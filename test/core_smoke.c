@@ -572,6 +572,8 @@ int main(void)
     game.ram[0x07faU] = 1U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0787U] != 0x18U || game.ram[0x07faU] != 0U) return 1;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0787U] != 0x17U) return 1;
     game.ram[0x0787U] = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0759U] != 1U || game.ram[0x0756U] != 0U) return 1;
