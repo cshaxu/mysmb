@@ -221,7 +221,15 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     }
     else if (mode_before == 1U && task_before == 1U) {
         (void)mysmb_area_emit_next_command(game);
-        mysmb_player_step(game, input->buttons);
+        if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
+            mysmb_player_initialize_entrance(game);
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 7U) {
+            mysmb_player_finish_normal_entrance(game);
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 8U) {
+            mysmb_player_step(game, input->buttons);
+        }
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

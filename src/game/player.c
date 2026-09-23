@@ -47,6 +47,17 @@ enum {
 
 enum { MYSMB_PREVIOUS_A_B_BUTTONS = 0x000dU };
 
+enum {
+    MYSMB_GAME_ENGINE_SUBROUTINE = 0x000eU,
+    MYSMB_PLAYER_FACING = 0x0033U,
+    MYSMB_PLAYER_ATTRIBUTES = 0x03c4U,
+    MYSMB_SCREEN_LEFT_PAGE = 0x071aU,
+    MYSMB_PLAYER_ENTRANCE = 0x0710U,
+    MYSMB_ALT_ENTRANCE = 0x0752U,
+    MYSMB_HALF_WAY_PAGE = 0x075bU,
+    MYSMB_AREA_TYPE = 0x074eU
+};
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
 void mysmb_player_move_horizontally(struct mysmb_game *game)
@@ -330,4 +341,54 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
                                           right.contact_low_nibble);
     }
     return 0U;
+}
+
+/* Translation of ROM $9131-$9196 Entrance_GameTimerSetup, restricted to
+ * player state.  Timer digits, palettes, vine setup, and bubbles retain
+ * their own owners. */
+void mysmb_player_initialize_entrance(struct mysmb_game *game)
+{
+    static const mysmb_u8 start_x[4] = { 0x28U, 0x18U, 0x38U, 0x28U };
+    static const mysmb_u8 alternate_y[2] = { 0x08U, 0x00U };
+    static const mysmb_u8 start_y[9] = { 0x00U, 0x20U, 0xb0U, 0x50U,
+                                         0x00U, 0x00U, 0xb0U, 0xb0U, 0xf0U };
+    static const mysmb_u8 background_priority[8] = {
+        0U, 0x20U, 0U, 0U, 0U, 0U, 0U, 0U
+    };
+    mysmb_u8 alternate;
+    mysmb_u8 entrance;
+
+    game->ram[MYSMB_PLAYER_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+    game->ram[MYSMB_VERTICAL_FORCE_DOWN] = 0x28U;
+    game->ram[MYSMB_PLAYER_FACING] = 1U;
+    game->ram[MYSMB_PLAYER_Y_HIGH] = 1U;
+    game->ram[MYSMB_PLAYER_STATE] = 0U;
+    game->ram[MYSMB_PLAYER_COLLISION_BITS]--;
+    game->ram[MYSMB_HALF_WAY_PAGE] = 0U;
+    game->ram[MYSMB_SWIMMING] = game->ram[MYSMB_AREA_TYPE] == 0U ? 1U : 0U;
+    alternate = game->ram[MYSMB_ALT_ENTRANCE];
+    entrance = game->ram[MYSMB_PLAYER_ENTRANCE];
+    if (alternate > 1U) {
+        if (alternate > 3U) return;
+        entrance = alternate_y[(mysmb_u8)(alternate - 2U)];
+    }
+    if (alternate >= 4U || entrance >= 9U) return;
+    game->ram[MYSMB_PLAYER_X] = start_x[alternate];
+    game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
+    game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
+}
+
+/* Translation of the normal PlayerEntrance branch for headers other than
+ * side-pipe entry. */
+void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_ALT_ENTRANCE] != 0U ||
+        game->ram[MYSMB_PLAYER_ENTRANCE] == 6U ||
+        game->ram[MYSMB_PLAYER_ENTRANCE] == 7U) {
+        return;
+    }
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
+    game->ram[MYSMB_PLAYER_FACING] = 1U;
+    game->ram[MYSMB_ALT_ENTRANCE] = 0U;
 }

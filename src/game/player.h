@@ -30,5 +30,9 @@ mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
                                     mysmb_u8 metatile, mysmb_u8 contact);
 /* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
+/* ROM $9131-$9196 Entrance_GameTimerSetup, excluding timers and object setup. */
+void mysmb_player_initialize_entrance(struct mysmb_game *game);
+/* ROM $b069-$b0e5 PlayerEntrance normal-entry completion. */
+void mysmb_player_finish_normal_entrance(struct mysmb_game *game);
 
 #endif
