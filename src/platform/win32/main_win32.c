@@ -81,8 +81,12 @@ static void mysmb_win32_paint(HWND window)
 
     dc = BeginPaint(window, &paint);
 #ifdef MYSMB_LOCAL_TITLE
-    mysmb_win32_draw_title(dc);
-#else
+    if (g_game.ram[0x0770U] == 0U) {
+        mysmb_win32_draw_title(dc);
+        EndPaint(window, &paint);
+        return;
+    }
+#endif
     sky = CreateSolidBrush(RGB(92, 148, 252));
     ground = CreateSolidBrush(RGB(0, 168, 0));
     actor = CreateSolidBrush(g_frame.start_pressed != 0U ? RGB(255, 216, 0) : RGB(220, 48, 32));
@@ -105,7 +109,6 @@ static void mysmb_win32_paint(HWND window)
     DeleteObject(actor);
     DeleteObject(ground);
     DeleteObject(sky);
-#endif
     EndPaint(window, &paint);
 }
 

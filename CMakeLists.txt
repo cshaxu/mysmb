@@ -50,6 +50,8 @@ add_executable(mysmb_mode_smoke test/mode_smoke.c)
 target_link_libraries(mysmb_mode_smoke PRIVATE mysmb_game)
 add_executable(mysmb_audio_smoke test/audio_smoke.c)
 target_link_libraries(mysmb_audio_smoke PRIVATE mysmb_game)
+add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
+target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_game)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -124,6 +126,7 @@ add_test(NAME mysmb.bowser-smoke COMMAND mysmb_bowser_smoke)
 add_test(NAME mysmb.platform-smoke COMMAND mysmb_platform_smoke)
 add_test(NAME mysmb.mode-smoke COMMAND mysmb_mode_smoke)
 add_test(NAME mysmb.audio-smoke COMMAND mysmb_audio_smoke)
+add_test(NAME mysmb.end-to-end-smoke COMMAND mysmb_end_to_end_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen
