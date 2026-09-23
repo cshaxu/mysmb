@@ -4,7 +4,7 @@
 #include "game/game.h"
 
 /* ROM $e? MovePlayerHorizontally through MoveObjectHorizontally. */
-void mysmb_player_move_horizontally(struct mysmb_game *game);
+mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game);
 /* ROM ImposeGravity, with the caller-supplied force and speed limit. */
 void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
                                  mysmb_u8 upward, mysmb_u8 maximum,
@@ -34,5 +34,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 void mysmb_player_initialize_entrance(struct mysmb_game *game);
 /* ROM $b069-$b0e5 PlayerEntrance normal-entry completion. */
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game);
+/* ROM $af93-$b068 ScrollHandler, excluding offscreen-edge clamping. */
+void mysmb_player_update_scroll(struct mysmb_game *game);
 
 #endif

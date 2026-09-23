@@ -58,9 +58,23 @@ enum {
     MYSMB_AREA_TYPE = 0x074eU
 };
 
+enum {
+    MYSMB_PLAYER_X_SCROLL = 0x06ffU,
+    MYSMB_PLATFORM_X_SCROLL = 0x03a1U,
+    MYSMB_SCROLL_LOCK = 0x0723U,
+    MYSMB_SCROLL_THIRTY_TWO = 0x073dU,
+    MYSMB_SCREEN_LEFT_X = 0x071cU,
+    MYSMB_SCREEN_RIGHT_PAGE = 0x071bU,
+    MYSMB_SCREEN_RIGHT_X = 0x071dU,
+    MYSMB_PLAYER_POS_FOR_SCROLL = 0x0755U,
+    MYSMB_SCROLL_AMOUNT = 0x0775U,
+    MYSMB_SIDE_COLLISION_TIMER = 0x0785U,
+    MYSMB_HORIZONTAL_SCROLL = 0x073fU
+};
+
 /* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
  * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
-void mysmb_player_move_horizontally(struct mysmb_game *game)
+mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
 {
     mysmb_u8 speed;
     mysmb_u8 fraction;
@@ -72,7 +86,7 @@ void mysmb_player_move_horizontally(struct mysmb_game *game)
     mysmb_u8 page_delta;
 
     if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
-        return;
+        return game->ram[MYSMB_JUMPSPRING_ANIM];
     }
     speed = game->ram[MYSMB_PLAYER_X_SPEED];
     fraction = (mysmb_u8)((speed & 0x0fU) << 4U);
@@ -92,6 +106,7 @@ void mysmb_player_move_horizontally(struct mysmb_game *game)
     carry_x = game->ram[MYSMB_PLAYER_X] < old_x ? 1U : 0U;
     game->ram[MYSMB_PLAYER_PAGE] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta + carry_x);
+    return (mysmb_u8)(integer + carry_force);
 }
 
 /* Translation of ROM ImposeGravity for player offset zero. */
@@ -253,8 +268,12 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
         game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
         mysmb_player_impose_friction(game);
-        mysmb_player_move_horizontally(game);
+        game->ram[MYSMB_PLAYER_X_SCROLL] = mysmb_player_move_horizontally(game);
     }
+    else {
+        game->ram[MYSMB_PLAYER_X_SCROLL] = 0U;
+    }
+    mysmb_player_update_scroll(game);
     if (game->ram[MYSMB_PLAYER_STATE] != 0U) {
         mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE_DOWN],
                                     game->ram[MYSMB_VERTICAL_FORCE], 4U, 1U);
@@ -391,4 +410,44 @@ void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
     game->ram[MYSMB_PLAYER_FACING] = 1U;
     game->ram[MYSMB_ALT_ENTRANCE] = 0U;
+}
+
+/* Translation of ROM $af93-$b068 ScrollHandler through GetScreenPosition.
+ * Offscreen-edge correction belongs with the later side-collision route. */
+void mysmb_player_update_scroll(struct mysmb_game *game)
+{
+    mysmb_u8 force;
+    mysmb_u8 amount;
+    mysmb_u8 old_x;
+    mysmb_u8 relative_x;
+
+    relative_x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] -
+                            game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = relative_x;
+    force = (mysmb_u8)(game->ram[MYSMB_PLAYER_X_SCROLL] +
+                        game->ram[MYSMB_PLATFORM_X_SCROLL]);
+    game->ram[MYSMB_PLAYER_X_SCROLL] = force;
+    amount = 0U;
+    if (game->ram[MYSMB_SCROLL_LOCK] == 0U && relative_x >= 0x50U &&
+        game->ram[MYSMB_SIDE_COLLISION_TIMER] == 0U && force != 0U &&
+        force < 0x80U) {
+        amount = force;
+        if (amount >= 2U && relative_x < 0x70U) amount--;
+    }
+    game->ram[MYSMB_SCROLL_AMOUNT] = amount;
+    game->ram[MYSMB_SCROLL_THIRTY_TWO] =
+        (mysmb_u8)(game->ram[MYSMB_SCROLL_THIRTY_TWO] + amount);
+    old_x = game->ram[MYSMB_SCREEN_LEFT_X];
+    game->ram[MYSMB_SCREEN_LEFT_X] = (mysmb_u8)(old_x + amount);
+    game->ram[MYSMB_HORIZONTAL_SCROLL] = game->ram[MYSMB_SCREEN_LEFT_X];
+    if (game->ram[MYSMB_SCREEN_LEFT_X] < old_x) {
+        game->ram[MYSMB_SCREEN_LEFT_PAGE]++;
+    }
+    game->ram[MYSMB_SCREEN_RIGHT_X] =
+        (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_X] + 0xffU);
+    game->ram[MYSMB_SCREEN_RIGHT_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+    if (game->ram[MYSMB_SCREEN_RIGHT_X] < game->ram[MYSMB_SCREEN_LEFT_X]) {
+        game->ram[MYSMB_SCREEN_RIGHT_PAGE]++;
+    }
+    game->ram[MYSMB_PLATFORM_X_SCROLL] = 0U;
 }
