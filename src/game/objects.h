@@ -12,5 +12,9 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
                                        mysmb_u8 metatile,
                                        mysmb_u8 block_low,
                                        mysmb_u8 block_row);
+/* ROM $bb51-$bbd0 jumping-coin misc-object route. */
+void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
+                                   mysmb_u8 x, mysmb_u8 y);
+void mysmb_objects_step_misc(struct mysmb_game *game);
 
 #endif

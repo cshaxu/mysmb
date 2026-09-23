@@ -26,6 +26,69 @@ enum {
     MYSMB_PLAYER_Y_SPEED = 0x009fU
 };
 
+enum {
+    MYSMB_MISC_STATE = 0x002aU,
+    MYSMB_MISC_PAGE = 0x007aU,
+    MYSMB_MISC_X = 0x0093U,
+    MYSMB_MISC_Y_SPEED = 0x00acU,
+    MYSMB_MISC_Y_HIGH = 0x00c2U,
+    MYSMB_MISC_Y = 0x00dbU,
+    MYSMB_MISC_Y_DUMMY = 0x0424U,
+    MYSMB_MISC_Y_FORCE = 0x0440U,
+    MYSMB_SCROLL_AMOUNT = 0x0775U
+};
+
+/* ROM $bb51 SetupJumpCoin. */
+void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
+                                   mysmb_u8 x, mysmb_u8 y)
+{
+    mysmb_u8 slot;
+
+    slot = 8U;
+    while (slot > 5U && game->ram[MYSMB_MISC_STATE + slot] != 0U) --slot;
+    if (slot == 5U) slot = 8U;
+    game->ram[MYSMB_MISC_PAGE + slot] = page;
+    game->ram[MYSMB_MISC_X + slot] = x;
+    game->ram[MYSMB_MISC_Y + slot] = y;
+    game->ram[MYSMB_MISC_Y_SPEED + slot] = 0xfbU;
+    game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_MISC_Y_DUMMY + slot] = 0U;
+    game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_MISC_STATE + slot] = 1U;
+}
+
+/* ROM $bb96-$bbd0 ProcJumpCoin, excluding draw and score presentation. */
+void mysmb_objects_step_misc(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+
+    for (slot = 6U; slot <= 8U; ++slot) {
+        if (game->ram[MYSMB_MISC_STATE + slot] == 0U) continue;
+        if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
+            old_value = game->ram[MYSMB_MISC_Y_DUMMY + slot];
+            game->ram[MYSMB_MISC_Y_DUMMY + slot] =
+                (mysmb_u8)(old_value + game->ram[MYSMB_MISC_Y_FORCE + slot]);
+            carry = game->ram[MYSMB_MISC_Y_DUMMY + slot] < old_value ? 1U : 0U;
+            old_value = game->ram[MYSMB_MISC_Y + slot];
+            game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(old_value +
+                game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
+            if (game->ram[MYSMB_MISC_Y + slot] < old_value &&
+                game->ram[MYSMB_MISC_Y_SPEED + slot] >= 0x80U) --game->ram[MYSMB_MISC_Y_HIGH + slot];
+            old_value = game->ram[MYSMB_MISC_Y_FORCE + slot];
+            game->ram[MYSMB_MISC_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x50U);
+            if (game->ram[MYSMB_MISC_Y_FORCE + slot] < old_value) game->ram[MYSMB_MISC_Y_SPEED + slot]++;
+            if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= 6U && game->ram[MYSMB_MISC_Y_SPEED + slot] < 0x80U) game->ram[MYSMB_MISC_STATE + slot]++;
+        }
+        else {
+            game->ram[MYSMB_MISC_STATE + slot]++;
+            game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] + game->ram[MYSMB_SCROLL_AMOUNT]);
+            if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
+        }
+    }
+}
+
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
 static mysmb_u8 mysmb_objects_is_bumpable(mysmb_u8 metatile)
 {
