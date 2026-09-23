@@ -27,9 +27,10 @@ int main(void)
         game.ram[0x0742U] != 2U) {
         return 1;
     }
+    input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
     if (game.area_command_count != 1U ||
-        game.area_commands[0].dispatch_id == 0xffU) {
+        game.area_commands[0].dispatch_id == 0xffU || game.ram[0x001dU] != 1U) {
         return 1;
     }
 
