@@ -40,6 +40,16 @@ int main(void)
         game.ram[0x0456U] != 0x28U || game.ram[0x0702U] != 0xe4U) {
         return 1;
     }
+    game.ram[0x074eU] = 0U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0xd0U;
+    mysmb_player_latch_input(&game, MYSMB_BUTTON_A);
+    if (game.ram[0x000aU] != 0U || game.ram[0x000bU] != 0U ||
+        game.ram[0x000cU] != 0U) {
+        return 1;
+    }
+    game.ram[0x074eU] = 1U;
+    game.ram[0x00ceU] = 0x30U;
     for (index = 0U; index < 8U; ++index) {
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }
@@ -113,6 +123,12 @@ int main(void)
     game.ram[0x009fU] = 0U;
     game.ram[0x0603U] = 0x61U;
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U) {
+        return 1;
+    }
+    game.ram[0x0754U] = 0U;
+    game.ram[0x001dU] = 0U;
+    mysmb_player_step(&game, MYSMB_BUTTON_DOWN);
+    if (game.ram[0x0499U] != 2U) {
         return 1;
     }
     return 0;

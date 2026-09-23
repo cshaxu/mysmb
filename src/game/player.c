@@ -80,6 +80,7 @@ enum {
 enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 
 enum { MYSMB_PLAYER_SIZE = 0x0754U };
+enum { MYSMB_PLAYER_BOUND_BOX = 0x0499U };
 
 /* ROM BlockBufferAdderData and the player portion of the coordinate tables.
  * The three bases are normal big, swimming big, and small/crouching. */
@@ -259,6 +260,11 @@ void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_u8 left_right;
     mysmb_u8 up_down;
 
+    if (game->ram[MYSMB_AREA_TYPE] == 0U &&
+        (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
+         game->ram[MYSMB_PLAYER_Y] >= 0xd0U)) {
+        buttons = 0U;
+    }
     game->ram[MYSMB_PLAYER_A_B_BUTTONS] =
         (mysmb_u8)(buttons & (MYSMB_BUTTON_A | MYSMB_BUTTON_B));
     left_right = (mysmb_u8)(buttons & (MYSMB_BUTTON_LEFT | MYSMB_BUTTON_RIGHT));
@@ -463,6 +469,11 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
          * generic upward-force branch is disabled. */
         mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
                                     0U, 4U, 0U);
+    }
+    game->ram[MYSMB_PLAYER_BOUND_BOX] = 1U;
+    if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
+        game->ram[MYSMB_PLAYER_BOUND_BOX] =
+            game->ram[MYSMB_PLAYER_CROUCHING] != 0U ? 2U : 0U;
     }
     (void)mysmb_player_check_head(game);
     (void)mysmb_player_check_feet(game);
