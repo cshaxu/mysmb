@@ -650,8 +650,8 @@ int main(void)
     game.ram[0x00ceU] = 0x50U;
     game.ram[0x0499U] = 1U;
     game.ram[0x03d0U] = 0U;
-    game.ram[0x071dU] = 1U;
-    game.ram[0x071aU] = 0U;
+    game.ram[0x071aU] = 1U;
+    game.ram[0x071cU] = 0U;
     game.ram[0x000eU] = 8U;
     game.ram[0x001bU] = 0x2eU;
     game.ram[0x0023U] = 0x80U;
