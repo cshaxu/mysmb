@@ -48,5 +48,25 @@ int main(void)
     if (game.ram[0x0709U] != game.ram[0x070aU]) {
         return 1;
     }
+    game.ram[0x001dU] = 3U;
+    game.ram[0x0490U] = MYSMB_BUTTON_UP;
+    game.ram[0x000cU] = 0U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x0416U] = 0U;
+    mysmb_player_step(&game, MYSMB_BUTTON_UP);
+    if (game.ram[0x009fU] != 0xffU || game.ram[0x0433U] != 0x20U ||
+        game.ram[0x070cU] != 4U || game.ram[0x00ceU] != 0x2fU) {
+        return 1;
+    }
+    game.ram[0x0490U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0789U] = 0U;
+    mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
+    if (game.ram[0x0086U] != 0x2eU || game.ram[0x006dU] != 1U ||
+        game.ram[0x0789U] != 0x18U || game.ram[0x0033U] != MYSMB_BUTTON_LEFT) {
+        return 1;
+    }
     return 0;
 }

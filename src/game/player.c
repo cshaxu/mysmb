@@ -25,6 +25,7 @@ enum {
     MYSMB_JUMP_ORIGIN_Y = 0x0708U,
     MYSMB_VERTICAL_FORCE = 0x0709U,
     MYSMB_VERTICAL_FORCE_DOWN = 0x070aU,
+    MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
     MYSMB_JUMP_SWIM_TIMER = 0x0782U
 };
 
@@ -69,6 +70,7 @@ enum {
     MYSMB_PLAYER_POS_FOR_SCROLL = 0x0755U,
     MYSMB_SCROLL_AMOUNT = 0x0775U,
     MYSMB_SIDE_COLLISION_TIMER = 0x0785U,
+    MYSMB_CLIMB_SIDE_TIMER = 0x0789U,
     MYSMB_HORIZONTAL_SCROLL = 0x073fU
 };
 
@@ -254,6 +256,70 @@ void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
         (up_down & MYSMB_BUTTON_DOWN) != 0U ? 4U : 0U;
 }
 
+/* Translation of PlayerPhysicsSub's Player_State == $03 branch. */
+void mysmb_player_configure_climb(struct mysmb_game *game)
+{
+    static const mysmb_u8 move_force[3] = { 0U, 0x20U, 0xffU };
+    static const mysmb_u8 speed[3] = { 0U, 0xffU, 1U };
+    mysmb_u8 index;
+    mysmb_u8 vertical;
+
+    index = 0U;
+    vertical = (mysmb_u8)(game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] &
+                          game->ram[MYSMB_PLAYER_COLLISION_BITS]);
+    if (vertical != 0U) {
+        index = (vertical & MYSMB_BUTTON_UP) != 0U ? 1U : 2U;
+    }
+    game->ram[MYSMB_PLAYER_Y_FORCE] = move_force[index];
+    game->ram[MYSMB_PLAYER_Y_SPEED] = speed[index];
+    game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = speed[index] >= 0x80U ? 4U : 8U;
+}
+
+/* Translation of ClimbingSub.  Timer decrement remains in the shared timer
+ * owner; this routine only observes and reloads ClimbSideTimer. */
+void mysmb_player_climb(struct mysmb_game *game)
+{
+    static const mysmb_u8 x_low[4] = { 0x0eU, 0x04U, 0xfcU, 0xf2U };
+    static const mysmb_u8 x_high[4] = { 0U, 0U, 0xffU, 0xffU };
+    mysmb_u8 old_value;
+    mysmb_u8 carry_dummy;
+    mysmb_u8 carry_y;
+    mysmb_u8 page_delta;
+    mysmb_u8 index;
+    mysmb_u8 facing;
+
+    old_value = game->ram[MYSMB_PLAYER_Y_DUMMY];
+    game->ram[MYSMB_PLAYER_Y_DUMMY] =
+        (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_FORCE]);
+    carry_dummy = game->ram[MYSMB_PLAYER_Y_DUMMY] < old_value ? 1U : 0U;
+    page_delta = game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ? 0xffU : 0U;
+    old_value = game->ram[MYSMB_PLAYER_Y];
+    game->ram[MYSMB_PLAYER_Y] =
+        (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_SPEED] + carry_dummy);
+    carry_y = game->ram[MYSMB_PLAYER_Y] < old_value ? 1U : 0U;
+    game->ram[MYSMB_PLAYER_Y_HIGH] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_HIGH] + page_delta + carry_y);
+    if ((game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] &
+         game->ram[MYSMB_PLAYER_COLLISION_BITS]) == 0U) {
+        game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_CLIMB_SIDE_TIMER] != 0U) return;
+    game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0x18U;
+    facing = game->ram[MYSMB_PLAYER_FACING];
+    if ((facing & MYSMB_BUTTON_RIGHT) != 0U) {
+        index = 0U;
+    }
+    else index = 3U;
+    old_value = game->ram[MYSMB_PLAYER_X];
+    game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_value + x_low[index]);
+    carry_y = game->ram[MYSMB_PLAYER_X] < old_value ? 1U : 0U;
+    game->ram[MYSMB_PLAYER_PAGE] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + x_high[index] + carry_y);
+    game->ram[MYSMB_PLAYER_FACING] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] ^ 3U);
+}
+
 /* Translation of the X_Physics parameter route in ROM $b50b-$b5cb.
  * Running-timer and animation ownership are translated separately. */
 void mysmb_player_configure_horizontal(struct mysmb_game *game)
@@ -297,6 +363,15 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
 
     mysmb_player_latch_input(game, buttons);
     a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
+    if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
+        mysmb_player_configure_climb(game);
+        mysmb_player_climb(game);
+        (void)mysmb_player_check_head(game);
+        (void)mysmb_player_check_feet(game);
+        (void)mysmb_player_check_sides(game);
+        game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
+        return;
+    }
     if (game->ram[MYSMB_PLAYER_STATE] == 0U && (a_b & MYSMB_BUTTON_A) != 0U &&
         (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {
         mysmb_player_start_jump(game, 0U);
