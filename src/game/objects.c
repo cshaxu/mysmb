@@ -540,8 +540,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         fraction = (mysmb_u8)(speed << 4U);
         integer = (mysmb_u8)(speed >> 4U);
         if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
-        page_delta = integer >= 0x80U ? 0xffU : 0U;
-        old_value = game->ram[MYSMB_FIREBALL_X_FORCE + slot];
+            old_value = game->ram[MYSMB_FIREBALL_X_FORCE + slot];
         game->ram[MYSMB_FIREBALL_X_FORCE + slot] = (mysmb_u8)(old_value + fraction);
         carry = game->ram[MYSMB_FIREBALL_X_FORCE + slot] < old_value ? 1U : 0U;
         old_value = game->ram[MYSMB_FIREBALL_X + slot];
@@ -1879,25 +1878,22 @@ static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
     mysmb_u8 old_force;
     mysmb_u8 old_x;
     mysmb_u8 carry;
-    mysmb_u8 page_delta;
 
     speed = game->ram[MYSMB_ENEMY_X_SPEED + slot];
     fraction = (mysmb_u8)(speed << 4U);
     integer = (mysmb_u8)(speed >> 4U);
     if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
-    page_delta = integer >= 0x80U ? 0xffU : 0U;
     old_force = game->ram[MYSMB_ENEMY_X_FORCE + slot];
     game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_force + fraction);
     carry = game->ram[MYSMB_ENEMY_X_FORCE + slot] < old_force ? 1U : 0U;
     old_x = game->ram[MYSMB_ENEMY_X + slot];
     game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + integer + carry);
-    if (game->ram[MYSMB_ENEMY_X + slot] < old_x) {
-        game->ram[MYSMB_ENEMY_PAGE + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta + 1U);
+    /* A signed high-byte delta changes the page only when X wraps. */
+    if ((mysmb_u8)(integer + carry) >= 0x80U) {
+        if (game->ram[MYSMB_ENEMY_X + slot] > old_x) game->ram[MYSMB_ENEMY_PAGE + slot]--;
     }
-    else {
-        game->ram[MYSMB_ENEMY_PAGE + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta);
+    else if (game->ram[MYSMB_ENEMY_X + slot] < old_x) {
+        game->ram[MYSMB_ENEMY_PAGE + slot]++;
     }
 }
 
