@@ -301,6 +301,12 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 8U) {
             mysmb_player_step(game, input->buttons);
         }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 9U) {
+            mysmb_player_step_change_size(game);
+        }
+        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
+            mysmb_player_step_fire_flower(game);
+        }
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

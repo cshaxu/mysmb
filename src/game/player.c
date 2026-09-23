@@ -31,6 +31,12 @@ enum {
     MYSMB_RUNNING_TIMER = 0x0783U
 };
 
+enum {
+    MYSMB_TIMER_CONTROL = 0x0747U,
+    MYSMB_PLAYER_CHANGE_SIZE = 0x070bU,
+    MYSMB_PLAYER_ANIMATION = 0x070dU
+};
+
 enum { MYSMB_WHIRLPOOL = 0x047dU };
 
 enum {
@@ -587,6 +593,37 @@ void mysmb_player_step_auto_climb(struct mysmb_game *game)
     }
     game->ram[MYSMB_PLAYER_STATE] = 3U;
     mysmb_player_step(game, MYSMB_BUTTON_UP);
+}
+
+/* ROM $b0f4-$b113 PlayerChangeSize. */
+void mysmb_player_step_change_size(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_TIMER_CONTROL] == 0xf8U) {
+        if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] == 0U) {
+            game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
+            game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 1U;
+            game->ram[MYSMB_PLAYER_SIZE] ^= 1U;
+        }
+        return;
+    }
+    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc4U) {
+        game->ram[MYSMB_TIMER_CONTROL] = 0U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
+    }
+}
+
+/* ROM $b139-$b154 PlayerFireFlower, excluding palette upload. */
+void mysmb_player_step_fire_flower(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc0U) {
+        game->ram[MYSMB_TIMER_CONTROL] = 0U;
+        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
+        game->ram[MYSMB_PLAYER_ATTRIBUTES] &= 0xfcU;
+        return;
+    }
+    game->ram[MYSMB_PLAYER_ATTRIBUTES] =
+        (mysmb_u8)((game->ram[MYSMB_PLAYER_ATTRIBUTES] & 0xfcU) |
+                   ((mysmb_u8)(game->frame_number >> 2U) & 3U));
 }
 
 /* Snapshot only translated RAM state; no platform state participates. */

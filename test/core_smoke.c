@@ -657,6 +657,26 @@ int main(void)
     mysmb_objects_step_vine(&game);
     if (game.ram[0x0399U] != 0x20U || game.ram[0x00d4U] != 0x5fU ||
         game.ram[0x0613U] != 0x26U) return 1;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x070bU] = 0U;
+    game.ram[0x070dU] = 7U;
+    game.ram[0x0747U] = 0xf8U;
+    mysmb_player_step_change_size(&game);
+    if (game.ram[0x0754U] != 0U || game.ram[0x070bU] != 1U ||
+        game.ram[0x070dU] != 0U) return 1;
+    game.ram[0x0747U] = 0xc4U;
+    mysmb_player_step_change_size(&game);
+    if (game.ram[0x0747U] != 0U || game.ram[0x000eU] != 8U) return 1;
+    game.ram[0x000eU] = 12U;
+    game.ram[0x0747U] = 0U;
+    game.ram[0x03c4U] = 0x20U;
+    game.frame_number = 8UL;
+    mysmb_player_step_fire_flower(&game);
+    if (game.ram[0x03c4U] != 0x22U) return 1;
+    game.ram[0x0747U] = 0xc0U;
+    mysmb_player_step_fire_flower(&game);
+    if (game.ram[0x0747U] != 0U || game.ram[0x000eU] != 8U ||
+        game.ram[0x03c4U] != 0x20U) return 1;
     game.ram[0x0301U] = 0U;
     game.ram[0x0026U] = 0x11U;
     game.ram[0x00beU] = 1U;
