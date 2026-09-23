@@ -70,6 +70,11 @@ int main(void)
         game.ram[0x00ceU] != 0xb0U || game.ram[0x0057U] != 0x18U ||
         game.ram[0x009fU] != 0U || game.ram[0x071aU] != 0U ||
         game.ram[0x071cU] != 0x86U) return 1;
+    for (count = 0U; count < 84U; ++count) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    if (game.ram[0x0770U] != 1U || game.ram[0x000eU] != 11U ||
+        game.ram[0x001dU] != 1U) return 1;
 
     mysmb_game_initialize(&game);
     if (mysmb_area_load_pointers(&game, &source) == 0U ||
