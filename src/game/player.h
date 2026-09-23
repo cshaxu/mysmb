@@ -25,6 +25,25 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
                                          mysmb_u8 buttons);
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 
+/* Neutral fixed-input checkpoint for the translated player route. */
+struct mysmb_player_checkpoint {
+    mysmb_u32 frame_number;
+    mysmb_u8 engine_subroutine;
+    mysmb_u8 state;
+    mysmb_u8 page;
+    mysmb_u8 x;
+    mysmb_u8 y_high;
+    mysmb_u8 y;
+    mysmb_u8 x_speed;
+    mysmb_u8 y_speed;
+    mysmb_u8 x_force;
+    mysmb_u8 y_force;
+    mysmb_u8 screen_left_page;
+    mysmb_u8 screen_left_x;
+};
+void mysmb_player_checkpoint(const struct mysmb_game *game,
+                             struct mysmb_player_checkpoint *checkpoint);
+
 struct mysmb_player_terrain {
     mysmb_u8 metatile;
     mysmb_u8 contact_low_nibble;

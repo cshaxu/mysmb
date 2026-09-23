@@ -533,6 +533,26 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
+/* Snapshot only translated RAM state; no platform state participates. */
+void mysmb_player_checkpoint(const struct mysmb_game *game,
+                             struct mysmb_player_checkpoint *checkpoint)
+{
+    if (checkpoint == 0) return;
+    checkpoint->frame_number = game->frame_number;
+    checkpoint->engine_subroutine = game->ram[MYSMB_GAME_ENGINE_SUBROUTINE];
+    checkpoint->state = game->ram[MYSMB_PLAYER_STATE];
+    checkpoint->page = game->ram[MYSMB_PLAYER_PAGE];
+    checkpoint->x = game->ram[MYSMB_PLAYER_X];
+    checkpoint->y_high = game->ram[MYSMB_PLAYER_Y_HIGH];
+    checkpoint->y = game->ram[MYSMB_PLAYER_Y];
+    checkpoint->x_speed = game->ram[MYSMB_PLAYER_X_SPEED];
+    checkpoint->y_speed = game->ram[MYSMB_PLAYER_Y_SPEED];
+    checkpoint->x_force = game->ram[MYSMB_PLAYER_X_FORCE];
+    checkpoint->y_force = game->ram[MYSMB_PLAYER_Y_FORCE];
+    checkpoint->screen_left_page = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+    checkpoint->screen_left_x = game->ram[MYSMB_SCREEN_LEFT_X];
+}
+
 /* Translation of BlockBufferCollision address construction for player offset zero. */
 mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
                                   mysmb_u8 x_adder, mysmb_u8 y_adder,

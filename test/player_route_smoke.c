@@ -4,6 +4,7 @@
 int main(void)
 {
     struct mysmb_game game;
+    struct mysmb_player_checkpoint checkpoint;
     unsigned int index;
 
     mysmb_game_initialize(&game);
@@ -68,8 +69,12 @@ int main(void)
     for (index = 0U; index < 8U; ++index) {
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }
+    mysmb_player_checkpoint(&game, &checkpoint);
     if (game.ram[0x0086U] <= 0x20U || game.ram[0x0057U] == 0U ||
-        game.ram[0x001dU] != 0U || game.ram[0x00ceU] != 0x30U) {
+        game.ram[0x001dU] != 0U || game.ram[0x00ceU] != 0x30U ||
+        checkpoint.state != 0U || checkpoint.x != game.ram[0x0086U] ||
+        checkpoint.x_speed != game.ram[0x0057U] ||
+        checkpoint.y != 0x30U || checkpoint.y_high != 1U) {
         return 1;
     }
     mysmb_player_step(&game, (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_RIGHT));
