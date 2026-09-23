@@ -1,6 +1,7 @@
 #include "game/game.h"
 #include "game/area.h"
 #include "game/player.h"
+#include "game/objects.h"
 
 enum {
     MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,
@@ -264,6 +265,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     game->frame_number++;
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
+    mysmb_objects_apply_block_replacements(game);
     mysmb_game_title_step(game, input);
     if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);

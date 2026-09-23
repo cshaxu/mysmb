@@ -12,7 +12,7 @@ set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
 set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 
-set(MYSMB_GAME_SOURCES src/game/game.c src/game/area.c src/game/player.c)
+set(MYSMB_GAME_SOURCES src/game/game.c src/game/area.c src/game/player.c src/game/objects.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 

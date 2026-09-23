@@ -1,6 +1,7 @@
 #include "game/game.h"
 #include "game/area.h"
 #include "game/player.h"
+#include "game/objects.h"
 
 int main(void)
 {
@@ -482,5 +483,22 @@ int main(void)
     if (game.ram[0x0787U] != 0x18U || game.ram[0x07faU] != 0U) return 1;
     game.ram[0x0787U] = 0U;
     mysmb_game_tick(&game, &input, &frame);
-    return game.ram[0x0759U] == 1U && game.ram[0x0756U] == 0U ? 0 : 1;
+    if (game.ram[0x0759U] != 1U || game.ram[0x0756U] != 0U) return 1;
+    mysmb_game_initialize(&game);
+    game.ram[0x03e4U] = 0x20U;
+    game.ram[0x03e5U] = 0x30U;
+    game.ram[0x03e6U] = 4U;
+    game.ram[0x03e7U] = 5U;
+    game.ram[0x03e8U] = 0x61U;
+    game.ram[0x03e9U] = 0x62U;
+    game.ram[0x03ecU] = 1U;
+    game.ram[0x03edU] = 1U;
+    mysmb_objects_apply_block_replacements(&game);
+    if (game.ram[0x0524U] != 0x61U || game.ram[0x0535U] != 0x62U ||
+        game.ram[0x03ecU] != 0U || game.ram[0x03edU] != 0U) return 1;
+    game.ram[0x0301U] = 1U;
+    game.ram[0x03ecU] = 1U;
+    game.ram[0x0524U] = 0U;
+    mysmb_objects_apply_block_replacements(&game);
+    return game.ram[0x0524U] == 0U && game.ram[0x03ecU] == 1U ? 0 : 1;
 }
