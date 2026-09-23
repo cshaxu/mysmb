@@ -160,5 +160,12 @@ int main(void)
         game.ram[0x0772U] != 0U) {
         return 1;
     }
+    game.ram[0x000eU] = 2U;
+    game.ram[0x06deU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    mysmb_player_step_side_pipe(&game);
+    if (game.ram[0x0752U] != 2U || game.ram[0x0772U] != 0U) {
+        return 1;
+    }
     return 0;
 }

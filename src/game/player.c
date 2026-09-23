@@ -607,6 +607,28 @@ void mysmb_player_step_vertical_pipe(struct mysmb_game *game)
     }
 }
 
+/* Translation of SideExitPipeEntry/EnterSidePipe. */
+void mysmb_player_step_side_pipe(struct mysmb_game *game)
+{
+    mysmb_u8 forced_buttons;
+
+    game->ram[MYSMB_PLAYER_X_SPEED] = 8U;
+    forced_buttons = MYSMB_BUTTON_RIGHT;
+    if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) == 0U) {
+        game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
+        forced_buttons = 0U;
+    }
+    mysmb_player_step(game, forced_buttons);
+    if (game->ram[MYSMB_CHANGE_AREA_TIMER] != 0U) {
+        game->ram[MYSMB_CHANGE_AREA_TIMER]--;
+    }
+    if (game->ram[MYSMB_CHANGE_AREA_TIMER] == 0U) {
+        game->ram[MYSMB_ALT_ENTRANCE] = 2U;
+        game->ram[MYSMB_DISABLE_SCREEN]++;
+        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
+    }
+}
+
 /* Translation of ROM $dc64-$dd5a PlayerBGCollision's DoFootCheck through LandPlyr.
  * The original selects an adder from size/crouch/swim state, but both feet
  * ultimately use X+3/X+12 and Y+32.  It reads left first for the landing
@@ -818,6 +840,18 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
             continue;
         }
         group = (mysmb_u8)(terrain.metatile >> 6U);
+        if ((terrain.metatile == 0x6cU || terrain.metatile == 0x1fU) &&
+            game->ram[MYSMB_PLAYER_STATE] == 0U &&
+            game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT &&
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 8U) {
+            game->ram[MYSMB_PLAYER_ATTRIBUTES] |= 0x20U;
+            if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) != 0U) {
+                game->ram[MYSMB_CHANGE_AREA_TIMER] =
+                    game->ram[MYSMB_SCREEN_LEFT_PAGE] == 0U ? 0xa0U : 0x34U;
+            }
+            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 2U;
+            return 1U;
+        }
         if (terrain.metatile >= solid_upper[group]) {
             mysmb_player_impede_move(game,
                                      game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
