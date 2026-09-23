@@ -53,6 +53,12 @@ if(MYSMB_OPENNT_CL16)
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/objects.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         VERBATIM
     )
 endif()
