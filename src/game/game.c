@@ -38,7 +38,9 @@ enum {
     MYSMB_RAM_VRAM_BUFFER1 = 0x0301U,
     MYSMB_RAM_VRAM_BUFFER2_OFFSET = 0x0340U,
     MYSMB_RAM_VRAM_BUFFER2 = 0x0341U,
-    MYSMB_RAM_VRAM_ADDRESS_CONTROL = 0x0773U
+    MYSMB_RAM_VRAM_ADDRESS_CONTROL = 0x0773U,
+    MYSMB_RAM_PARSER_TASK = 0x071fU,
+    MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU
 };
 
 enum {
@@ -73,6 +75,7 @@ static void mysmb_game_step_victory(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
+static void mysmb_game_step_area_parser(struct mysmb_game *game);
 
 /* ROM title ScreenRoutines task 8 renders the title-demo area's lead-in
  * before DrawTitleScreen overlays its own stream.  Keep the title-menu task
@@ -651,6 +654,24 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
     game->ram[MYSMB_RAM_VRAM_BUFFER1] = 0U;
 }
 
+/* ROM $94a5-$9539 GameEngine's UpdScrollVar/RunParser tail.  NMI has already
+ * committed a pending buffer at the start of this tick.  The source performs
+ * exactly one parser subtask while one is active, or starts one after each
+ * accumulated 32 pixels of scroll. */
+static void mysmb_game_step_area_parser(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) return;
+    if (game->ram[MYSMB_RAM_PARSER_TASK] != 0U) {
+        (void)mysmb_area_parser_task_step(game);
+        return;
+    }
+    if (game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] < 0x20U) return;
+    game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] =
+        (mysmb_u8)(game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] - 0x20U);
+    game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
+    (void)mysmb_area_parser_task_step(game);
+}
+
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size)
@@ -735,10 +756,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             area_source.prg_size = game->area_prg_size;
             (void)mysmb_area_spawn_next_enemy(game, &area_source);
         }
-        /* AreaParserCore owns a two-page circular collision buffer.  The
-         * initial task prepared its lead-in; move that window before this
-         * frame's player collision reads an entering page. */
-        mysmb_area_prepare_player_pages(game, game->ram[MYSMB_RAM_PLAYER_PAGE]);
         if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
@@ -832,6 +849,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
          * that selects PlayerDeath leaves its following physics frame with
          * zero horizontal input and the KillPlayer-cleared speed. */
         game->ram[MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
+        mysmb_game_step_area_parser(game);
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

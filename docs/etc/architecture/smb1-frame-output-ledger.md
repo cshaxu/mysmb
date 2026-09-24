@@ -368,3 +368,20 @@ The row-13 low-six-bit dispatcher now distinguishes background metatile codes
 zero through four from flag, warp, scroll-lock, frenzy, and victory state.
 Only the static PPU-address-control write owned by `AxeObj` is retained here;
 game-mode, enemy, and transition effects remain deferred.
+
+## T10 S1 P18 Continuous Parser Scheduling
+
+The GameCore tail now translates the original `$94a5-$9539` parser trigger:
+after NMI has committed pending column output, it executes one active parser
+subtask per frame or begins one after each 32 accumulated scroll pixels. This
+replaces the native game tick's bulk `prepare_player_pages` fallback, so
+scrolling advances the same persistent `ProcessAreaData` state that generated
+the initial lead-in. The source's VRAM-buffer-controller guard and buffer-two
+reset are preserved.
+
+### Similar-Issue Sweep
+
+The game path no longer calls bulk terrain-page preparation. The legacy bulk
+functions remain only for title/diagnostic compatibility and are explicitly
+outside the gameplay parser route. Their callers must not be used as output
+equivalence evidence.
