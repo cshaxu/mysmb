@@ -417,3 +417,21 @@ height-two object and the retained empty slot.
 This residual renderer is kept separate from `FlagpoleObject`: the latter's
 flag actor, score, and OAM work remain deferred dynamic owners. No flag
 object state is created by this background-only route.
+
+## T10 S1 P21 NMI Display-State Commit
+
+The native NMI boundary now translates the PPU-control details in
+`$740-$842` and the command increment selection in `$2457-$2478`. Every VRAM
+command records d7 as the `$2000` d2 address-increment state; after the game
+route, the frame boundary restores the source display-mask bits according to
+`DisableScreenFlag` and sets `$2000` d7 for NMI. These values are therefore
+captured by the canonical PPU snapshot rather than inferred by a host
+consumer. The snapshot smoke test covers vertical command increment, enabled
+display, and the disabled-screen mask result.
+
+### Similar-Issue Sweep
+
+The change only commits scalar PPU-visible state after existing native logic
+has updated its scroll/name-table fields. It does not submit OAM graphics,
+invent a host PPU, or claim reference-frame verification; those remain owned
+by T11 and T13.

@@ -76,6 +76,7 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
+static void mysmb_game_commit_display_state(struct mysmb_game *game);
 
 /* ROM title ScreenRoutines task 8 renders the title-demo area's lead-in
  * before DrawTitleScreen overlays its own stream.  Keep the title-menu task
@@ -607,6 +608,13 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             offset = (mysmb_u16)(address & 0x001fU);
         }
         value = commands[(mysmb_u16)(cursor + 3U)];
+        /* WriteBufferToScreen ($2457-$2478) selects the PPU address
+         * increment before each command: d7 means 32, otherwise one.  The
+         * portable field records the same $2000 d2 state for the snapshot. */
+        if ((control & 0x80U) != 0U)
+            game->ppu_control_0 |= 0x04U;
+        else
+            game->ppu_control_0 &= (mysmb_u8)~0x04U;
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
                 if (offset >= 0x20U) return 0U;
@@ -670,6 +678,18 @@ static void mysmb_game_step_area_parser(struct mysmb_game *game)
         (mysmb_u8)(game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] - 0x20U);
     game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
     (void)mysmb_area_parser_task_step(game);
+}
+
+/* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
+ * commits scroll/name-table state, then re-enables NMI on $2000.  Gameplay
+ * has already changed the source-owned scroll fields when this is called. */
+static void mysmb_game_commit_display_state(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_DISABLE_SCREEN] != 0U)
+        game->ppu_mask &= 0xe6U;
+    else
+        game->ppu_mask |= 0x1eU;
+    game->ppu_control_0 |= 0x80U;
 }
 
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
@@ -851,6 +871,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         game->ram[MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
         mysmb_game_step_area_parser(game);
     }
+    mysmb_game_commit_display_state(game);
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];
     frame->start_pressed =

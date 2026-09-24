@@ -3,7 +3,12 @@
 int main(void)
 {
     struct mysmb_game game;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
     struct mysmb_frame_snapshot snapshot;
+    const mysmb_u8 vertical_vram_command[] = {
+        0x20U, 0x00U, 0x81U, 0x5aU, 0U
+    };
 
     mysmb_game_initialize(&game);
     game.frame_number = 42UL;
@@ -30,5 +35,22 @@ int main(void)
         mysmb_frame_snapshot_is_complete(&snapshot) != 0U) return 2;
     snapshot.captured_fields = MYSMB_FRAME_SNAPSHOT_REQUIRED;
     snapshot.verified_fields = MYSMB_FRAME_SNAPSHOT_REQUIRED;
-    return mysmb_frame_snapshot_is_complete(&snapshot) != 0U ? 0 : 3;
+    if (mysmb_frame_snapshot_is_complete(&snapshot) == 0U) return 3;
+
+    /* NMI WriteBufferToScreen derives $2000 d2 from a command's d7, then
+     * its tail restores the display mask and enables NMI for the snapshot. */
+    input.buttons = 0U;
+    game.ppu_control_0 = 0x90U;
+    game.ppu_mask = 0U;
+    game.ram[0x0774U] = 0U;
+    if (mysmb_game_apply_vram_commands(&game, vertical_vram_command,
+            (mysmb_u16)sizeof(vertical_vram_command)) == 0U ||
+        game.ppu_control_0 != 0x94U) return 4;
+    mysmb_game_tick(&game, &input, &frame);
+    mysmb_frame_snapshot_capture(&game, &snapshot);
+    if (snapshot.ppu_control_0 != 0x94U || snapshot.ppu_mask != 0x1eU) return 5;
+    game.ram[0x0774U] = 1U;
+    mysmb_game_tick(&game, &input, &frame);
+    mysmb_frame_snapshot_capture(&game, &snapshot);
+    return snapshot.ppu_mask == 0x06U ? 0 : 6;
 }
