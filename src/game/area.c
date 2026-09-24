@@ -810,10 +810,6 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
 mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source)
 {
-    static const mysmb_u16 palette_offsets[4] = {
-        MYSMB_AREA_WATER_PALETTE, MYSMB_AREA_GROUND_PALETTE,
-        MYSMB_AREA_UNDERGROUND_PALETTE, MYSMB_AREA_CASTLE_PALETTE
-    };
     mysmb_u16 address;
     mysmb_u8 first;
     mysmb_u8 second;
@@ -839,15 +835,28 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
     value = (mysmb_u8)(second >> 6U);
     game->ram[MYSMB_AREA_CLOUD_OVERRIDE] = value == 3U ? value : 0U;
     game->ram[MYSMB_AREA_STYLE] = value == 3U ? 0U : value;
-    value = game->ram[MYSMB_AREA_TYPE];
-    if (value < 4U && palette_offsets[value] < source->prg_size) {
-        (void)mysmb_game_apply_vram_commands(game, &source->prg[palette_offsets[value]],
-            (mysmb_u16)(source->prg_size - palette_offsets[value]));
-    }
+    (void)mysmb_area_apply_palette(game, game->ram[MYSMB_AREA_TYPE]);
     address = (mysmb_u16)(address + 2U);
     game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
     game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));
     return 1U;
+}
+
+/* ROM $8567 SetVRAMAddr_A selects one of the four static area palette streams.
+ * The bound owner-local PRG is the source; no palette bytes enter tracked C. */
+mysmb_u8 mysmb_area_apply_palette(struct mysmb_game *game, mysmb_u8 area_type)
+{
+    static const mysmb_u16 palette_offsets[4] = {
+        MYSMB_AREA_WATER_PALETTE, MYSMB_AREA_GROUND_PALETTE,
+        MYSMB_AREA_UNDERGROUND_PALETTE, MYSMB_AREA_CASTLE_PALETTE
+    };
+    mysmb_u16 offset;
+
+    if (game->area_prg == 0 || area_type >= 4U) return 0U;
+    offset = palette_offsets[area_type];
+    if (offset >= game->area_prg_size) return 0U;
+    return mysmb_game_apply_vram_commands(game, &game->area_prg[offset],
+        (mysmb_u16)(game->area_prg_size - offset));
 }
 
 /* ROM AreaParserCore RenderSceneryTerrain through RendBBuf, restricted to the

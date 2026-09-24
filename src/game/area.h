@@ -13,6 +13,8 @@ struct mysmb_area_source {
 
 void mysmb_game_bind_area_source(struct mysmb_game *game,
                                  const mysmb_u8 *prg, mysmb_u16 prg_size);
+/* Apply one ROM palette stream through the portable PPU snapshot. */
+mysmb_u8 mysmb_area_apply_palette(struct mysmb_game *game, mysmb_u8 area_type);
 
 /* ROM $9c03-$9c2b, pointer tables only; caller owns owner-local data binding. */
 mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,

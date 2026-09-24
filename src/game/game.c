@@ -69,6 +69,7 @@ static void mysmb_game_next_area(struct mysmb_game *game);
 static void mysmb_game_step_victory(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
+static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 
 /* The 2C02 mirrors sprite entries $3f10/$14/$18/$1c onto the matching
  * universal/background entries.  The portable snapshot deliberately keeps
@@ -572,13 +573,13 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             offset = (mysmb_u16)(address & 0x03ffU);
         }
         else {
-            offset = mysmb_game_palette_offset(address);
+            offset = (mysmb_u16)(address & 0x001fU);
         }
         value = commands[(mysmb_u16)(cursor + 3U)];
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
                 if (offset >= 0x20U) return 0U;
-                game->palette[offset] = value;
+                game->palette[mysmb_game_palette_offset(offset)] = value;
             }
             else {
                 if (offset >= 0x0400U) return 0U;
@@ -616,7 +617,19 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size)
 {
-    return mysmb_game_apply_vram_commands(game, commands, command_size);
+    if (mysmb_game_apply_vram_commands(game, commands, command_size) == 0U) {
+        return 0U;
+    }
+    /* Title ScreenRoutines reaches the ground palette then GetPlayerColors
+     * before DrawTitleScreen.  The explicit title loader presents their
+     * committed state, matching the first visible title frame. */
+    if (game->area_prg == 0) return 1U;
+    if (mysmb_area_apply_palette(game, 1U) == 0U ||
+        mysmb_area_queue_player_palette(game) == 0U) {
+        return 0U;
+    }
+    mysmb_game_commit_vram_buffer(game);
+    return 1U;
 }
 
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
