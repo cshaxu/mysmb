@@ -78,6 +78,8 @@ int main(int argument_count, char **arguments)
     lib_u32 requested_frames;
     lib_u32 recorded;
     lib_u32 run_count;
+    lib_u32 last_frame_revision;
+    lib_bool have_frame_revision;
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 1u, 0u, 0u, 0u };
 
@@ -104,6 +106,8 @@ int main(int argument_count, char **arguments)
     core_driver_set_heartbeat(driver, LIB_TRUE);
     recorded = 0u;
     run_count = 0u;
+    last_frame_revision = 0u;
+    have_frame_revision = LIB_FALSE;
     while (recorded < requested_frames &&
            run_count < requested_frames * MYSMB_REFERENCE_MAX_RUNS_PER_FRAME) {
         if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
@@ -112,7 +116,14 @@ int main(int argument_count, char **arguments)
         if (!core_driver_run(driver) || driver->machine->trap.trap_valid) break;
         ++run_count;
         if (driver->machine->pc != MYSMB_REFERENCE_NMI_RETURN) continue;
+        /* A breakpoint resume can return at the same NMI RTI before the PPU
+         * reaches its next frame.  A trace record is a PPU frame boundary,
+         * so reject that duplicate instead of advancing the script/index. */
+        if (have_frame_revision &&
+            driver->machine->ppu.frame_revision == last_frame_revision) continue;
         if (!mysmb_reference_write_frame(output, driver->machine)) break;
+        last_frame_revision = driver->machine->ppu.frame_revision;
+        have_frame_revision = LIB_TRUE;
         ++recorded;
     }
     core_driver_set_heartbeat(driver, LIB_FALSE);

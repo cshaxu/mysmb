@@ -40,8 +40,8 @@ int main(void)
     snapshot.verified_fields = MYSMB_FRAME_SNAPSHOT_REQUIRED;
     if (mysmb_frame_snapshot_is_complete(&snapshot) == 0U) return 3;
 
-    /* NMI WriteBufferToScreen derives $2000 d2 from a command's d7, then
-     * its tail restores the display mask and enables NMI for the snapshot. */
+    /* NMI WriteBufferToScreen derives $2000 d2 from a command's d7.  The
+     * source mirror keeps that bit when the NMI restores output. */
     input.buttons = 0U;
     game.ppu_control_0 = 0x90U;
     game.ppu_mask = 0U;
@@ -51,7 +51,7 @@ int main(void)
         game.ppu_control_0 != 0x94U) return 4;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);
-    if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU ||
+    if (snapshot.ppu_control_0 != 0x94U || snapshot.ppu_mask != 0x1eU ||
         game.ram[0x0778U] != 0x14U || game.ram[0x0779U] != 0x1eU) return 5;
     game.ram[0x0774U] = 1U;
     mysmb_game_tick(&game, &input, &frame);

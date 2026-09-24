@@ -655,3 +655,22 @@ the route smoke. Only the primitive used the wrong owner; friction and skid
 continue to own `$0705`. The zero-speed direction assignment was the only
 native unconditional `Player_MovingDir` publication; it now retains the
 source value. No PPU renderer, OAM producer, or host input path changed.
+
+## T10 S1 P33 Reference Frame Uniqueness And PPU d2
+
+The reference recorder could accept a second return at the same NMI RTI
+without a new PPU frame. Its record 354 duplicated record 353 with the same
+`frame_revision` 360, which falsely appeared to be a skipped original player
+frame. The recorder now accepts a record only when `frame_revision` advances.
+A new bounded 600-frame right route has zero non-increasing revisions; the
+former frame-354 player/scroll discrepancy is therefore rejected as invalid
+evidence.
+
+That corrected route exposed the next real display difference: original
+`Mirror_PPU_CTRL_REG1` and physical `$2000` retain d2 after a vertical VRAM
+command (`$14` and `$94` at frames 373--375). Native code had cleared d2 at
+every display commit. The native NMI model now preserves it, and the
+ROM-free snapshot smoke asserts `$94` after a vertical command. At frame 376
+the original returns d2 to zero through its next horizontal command while the
+native route still retains it. This remaining queue-consumption difference is
+open T10 work; the fix does not claim full right-route equality.

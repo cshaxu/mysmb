@@ -700,10 +700,9 @@ static void mysmb_game_commit_display_state(struct mysmb_game *game)
     else
         game->ppu_mask |= 0x1eU;
     game->ram[MYSMB_RAM_PPU_MASK_MIRROR] = game->ppu_mask;
-    /* WriteBufferToScreen temporarily selects d2 for an individual command.
-     * NMI later reloads Mirror_PPU_CTRL_REG1 before RTI, so that increment
-     * bit cannot persist into the canonical NMI-boundary snapshot. */
-    game->ppu_control_0 &= (mysmb_u8)~0x04U;
+    /* WriteBufferToScreen persists its selected d2 in the $2000 mirror.
+     * At RTI the source restores that mirror with NMI enabled, so a vertical
+     * command remains visible in subsequent empty-NMI snapshots. */
     game->ppu_control_0 |= 0x80U;
 }
 
