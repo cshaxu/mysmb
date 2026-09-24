@@ -70,7 +70,12 @@ enum {
     MYSMB_RAM_SECONDARY_MESSAGE = 0x0749U,
     MYSMB_RAM_WORLD_END_TIMER = 0x07a1U,
     MYSMB_RAM_CURRENT_PLAYER = 0x0753U,
-    MYSMB_RAM_OFFSCREEN_LIVES = 0x0761U
+    MYSMB_RAM_OFFSCREEN_LIVES = 0x0761U,
+    MYSMB_RAM_SPRITE_SHUFFLE_CONTROL = 0x06e0U,
+    MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS = 0x06e1U,
+    MYSMB_RAM_SPRITE_OFFSETS = 0x06e4U,
+    MYSMB_RAM_MISC_SPRITE_OFFSETS = 0x06f3U,
+    MYSMB_RAM_OAM = 0x0200U
 };
 
 static void mysmb_game_continue_game(struct mysmb_game *game);
@@ -86,6 +91,7 @@ static void mysmb_game_secondary_setup(struct mysmb_game *game);
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
 static void mysmb_game_commit_display_state(struct mysmb_game *game);
+static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
 
 /* DrawTitleScreen copies this many bytes into CPU RAM $0300-$0439. */
 enum {
@@ -463,9 +469,42 @@ void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
 
     offset = 0U;
     do {
-        game->ram[(mysmb_u16)(0x0200U + offset)] = 0xf8U;
+        game->ram[(mysmb_u16)(MYSMB_RAM_OAM + offset)] = 0xf8U;
         offset = (mysmb_u8)(offset + 4U);
     } while (offset != 0U);
+}
+
+/* ROM $81c6-$81f9 SpriteShuffler. */
+static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+    mysmb_u16 offset;
+    mysmb_u8 value;
+    mysmb_u16 sum;
+
+    for (index = 15U; index != 0U; --index) {
+        offset = (mysmb_u8)(index - 1U);
+        value = game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + offset)];
+        if (value >= 0x28U) {
+            sum = (mysmb_u16)value + game->ram[(mysmb_u16)(
+                MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS +
+                game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL])];
+            value = (mysmb_u8)sum;
+            if (sum > 0xffU) value = (mysmb_u8)(value + 0x28U);
+            game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + offset)] = value;
+        }
+    }
+    game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL]++;
+    if (game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL] == 3U)
+        game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL] = 0U;
+    for (index = 0U; index < 3U; ++index) {
+        value = game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + 5U + index)];
+        offset = (mysmb_u16)(MYSMB_RAM_MISC_SPRITE_OFFSETS + index * 3U);
+        game->ram[offset] = value;
+        value = (mysmb_u8)(value + 8U);
+        game->ram[(mysmb_u16)(offset + 1U)] = value;
+        game->ram[(mysmb_u16)(offset + 2U)] = (mysmb_u8)(value + 8U);
+    }
 }
 
 /* Translation of ROM $8e19-$8e5b (InitializeNameTables). */
@@ -716,10 +755,25 @@ static void mysmb_game_primary_setup(struct mysmb_game *game)
  * from ScreenRoutines to GameCoreRoutine. */
 static void mysmb_game_secondary_setup(struct mysmb_game *game)
 {
+    static const mysmb_u8 default_offsets[15] = {
+        0x04U, 0x30U, 0x48U, 0x60U, 0x78U, 0x90U, 0xa8U, 0xc0U,
+        0xd8U, 0xe8U, 0x24U, 0xf8U, 0xfcU, 0x28U, 0x2cU
+    };
+    static const mysmb_u8 sprite0_data[4] = { 0x18U, 0xffU, 0x23U, 0x58U };
+    mysmb_u8 index;
+
     game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
     game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
     game->ram[0x0769U] = 0U;
     game->ram[0x0728U] = 0U;
+    game->ram[MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS] = 0x58U;
+    game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 1U)] = 0x48U;
+    game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 2U)] = 0x38U;
+    for (index = 0U; index < 15U; ++index)
+        game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + index)] = default_offsets[index];
+    for (index = 0U; index < 4U; ++index)
+        game->ram[(mysmb_u16)(MYSMB_RAM_OAM + index)] = sprite0_data[index];
+    game->ram[MYSMB_RAM_SPRITE0_HIT]++;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
 }
 
@@ -980,6 +1034,16 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
+    if (game->ram[MYSMB_RAM_SPRITE0_HIT] != 0U) {
+        mysmb_u8 oam_offset;
+
+        oam_offset = 4U;
+        do {
+            game->ram[(mysmb_u16)(MYSMB_RAM_OAM + oam_offset)] = 0xf8U;
+            oam_offset = (mysmb_u8)(oam_offset + 4U);
+        } while (oam_offset != 0U);
+        mysmb_game_shuffle_sprite_offsets(game);
+    }
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);

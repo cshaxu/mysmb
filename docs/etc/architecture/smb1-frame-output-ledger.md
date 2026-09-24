@@ -36,8 +36,8 @@ valid merely because its storage happens to be zero.
 | ROM range | Original owner | Required snapshot effect | Current C disposition |
 | --- | --- | --- | --- |
 | `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Partial**; the portable tick consumes the selected VRAM buffer at its NMI boundary, commits `$2000` increment/NMI and display-mask state into the snapshot, and retains source-owned scroll/name-table fields. OAM submission remains T11 work. |
-| `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Missing**; the helper is not translated as output ownership. |
-| `$8220-$8227` | Move all sprites offscreen | OAM offscreen entries | **Partial**; RAM clear exists, but it is not submitted as OAM output. |
+| `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Translated, partial OAM scope**; the source arithmetic, three-way rotation, and `Misc_SprDataOffset` derivation now write canonical OAM inputs. Draw families remain T11 work. |
+| `$8220-$8230` | Move all/all-but-sprite-zero sprites offscreen | OAM offscreen entries | **Translated, partial OAM scope**; both source loops write `$0200` backing state, which the canonical snapshot copies to OAM. Draw families remain T11 work. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; the owner-local title generator extracts the icon's VRAM command and the title loader applies it after the title transfer. Its OAM-related title work remains T11 ownership. |
 | `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Missing**; logic explicitly excludes OAM. |
 | `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Translated, background scope**; tasks 0--14, controls 1--18, player/background palettes, title transfer, and the mushroom alternate palette route have translated C owners. Sprite preparation remains T11 work. |
@@ -1365,3 +1365,24 @@ uses the normal screen-task and parser path. T10 therefore closes its
 background scope. OAM RAM and hardware OAM remain explicitly unverified and
 move to T11; this record does not claim an OAM, renderer, Win32-playability,
 or M2 closure result.
+
+## T11 S1 P1 NMI OAM Initialization And Shuffle
+
+`SpriteShuffler` at `$81c6-$81f9` and `MoveSpritesOffscreen` at
+`$8220-$8230` now have C90 owners in `game.c`. `SecondaryGameSetup` installs
+the original fifteen `$06e4-$06f2` offsets, three shuffle amounts, and sprite
+zero data; each following native NMI phase hides sprite entries 1--63 and
+rotates the offsets with the original 8-bit carry rule. The routine then
+derives `$06f3-$06fb` in the source order. `frame_snapshot_capture` copies
+the resulting `$0200-$02ff` data to the canonical OAM field.
+
+The ROM-free `mysmb.sprite-oam-smoke` verifies source defaults, sprite-zero
+preservation, all-but-zero offscreen initialization, the first shuffle
+rotation, and all nine derived misc offsets. A bounded owner-local 600-sample
+title-bootstrap route presses Start on frames 40--41 and otherwise uses
+neutral input. At the shared NMI boundary it retained exact CIRAM pages,
+palette, and all seven PPU-visible scalars; OAM still differed in 571 samples
+(14,290 bytes, first sample 0) and CPU OAM RAM differed in 568 samples
+(14,048 bytes, first sample 26). These are the unimplemented source draw
+families, not a claim of OAM equivalence. The two raw 2,637,012-byte traces
+were deleted after this summary.
