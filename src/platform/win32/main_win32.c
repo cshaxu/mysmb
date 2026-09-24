@@ -330,11 +330,11 @@ static void mysmb_win32_step(HWND window)
     }
     if ((GetAsyncKeyState('J') & 0x8000) != 0 ||
         (GetAsyncKeyState('Z') & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
     }
     if ((GetAsyncKeyState('K') & 0x8000) != 0 ||
         (GetAsyncKeyState('X') & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
     }
     steps = 0U;
     do {
