@@ -39,6 +39,8 @@ enum {
     MYSMB_RAM_VRAM_BUFFER2_OFFSET = 0x0340U,
     MYSMB_RAM_VRAM_BUFFER2 = 0x0341U,
     MYSMB_RAM_VRAM_ADDRESS_CONTROL = 0x0773U,
+    MYSMB_RAM_PPU_CONTROL_MIRROR = 0x0778U,
+    MYSMB_RAM_PPU_MASK_MIRROR = 0x0779U,
     MYSMB_RAM_PARSER_TASK = 0x071fU,
     MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU
 };
@@ -473,6 +475,7 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
      * InitScroll commits zero scroll.  Palette values remain the domain of
      * ScreenRoutines/ColorRotation and are initialized separately by T10. */
     game->ppu_control_0 = 0x10U;
+    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = 0x10U;
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
@@ -687,10 +690,16 @@ static void mysmb_game_step_area_parser(struct mysmb_game *game)
  * has already changed the source-owned scroll fields when this is called. */
 static void mysmb_game_commit_display_state(struct mysmb_game *game)
 {
+    /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
+     * may have selected d2 in that mirror, whereas the physical register at
+     * RTI is restored from the pre-command value with NMI enabled. */
+    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] =
+        (mysmb_u8)(game->ppu_control_0 & 0x7fU);
     if (game->ram[MYSMB_RAM_DISABLE_SCREEN] != 0U)
         game->ppu_mask &= 0xe6U;
     else
         game->ppu_mask |= 0x1eU;
+    game->ram[MYSMB_RAM_PPU_MASK_MIRROR] = game->ppu_mask;
     /* WriteBufferToScreen temporarily selects d2 for an individual command.
      * NMI later reloads Mirror_PPU_CTRL_REG1 before RTI, so that increment
      * bit cannot persist into the canonical NMI-boundary snapshot. */

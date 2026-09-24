@@ -13,7 +13,7 @@ int main(void)
     mysmb_game_initialize(&game);
     game.ppu_mask = 0x06U;
     mysmb_game_initialize_name_tables(&game);
-    if (game.ppu_mask != 0x06U) return 7;
+    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x10U) return 7;
     game.frame_number = 42UL;
     game.ram[0x0200U] = 0x12U;
     game.ram[0x00f1U] = 0x34U;
@@ -51,9 +51,10 @@ int main(void)
         game.ppu_control_0 != 0x94U) return 4;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);
-    if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU) return 5;
+    if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU ||
+        game.ram[0x0778U] != 0x14U || game.ram[0x0779U] != 0x1eU) return 5;
     game.ram[0x0774U] = 1U;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);
-    return snapshot.ppu_mask == 0x06U ? 0 : 6;
+    return snapshot.ppu_mask == 0x06U && game.ram[0x0779U] == 0x06U ? 0 : 6;
 }

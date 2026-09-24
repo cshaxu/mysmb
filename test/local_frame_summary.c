@@ -43,7 +43,10 @@ int main(int argument_count, char **arguments)
     if (mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
                                        MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U)
         return 65;
-    printf("frame,mode,task,ppu_address,ciram_fnv1a,palette_fnv1a,oam_fnv1a\n");
+    printf("frame,mode,task,ram_ppu_control,ram_ppu_mask,disable_screen,"
+           "horizontal_scroll,vertical_scroll,ppu_control,ppu_mask,"
+           "ppu_name_table,scroll_x,scroll_y,ppu_address,ciram_fnv1a,"
+           "palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
         /* NES serial Start is bit 3; MySMB's decoded RAM representation is $10. */
         input.buttons = index >= start_frame && index < release_frame ?
@@ -52,8 +55,19 @@ int main(int argument_count, char **arguments)
         mysmb_frame_snapshot_capture(&game, &snapshot);
         hash = mysmb_summary_hash(snapshot.name_table[0], 0x0400U, 2166136261UL);
         hash = mysmb_summary_hash(snapshot.name_table[1], 0x0400U, hash);
-        printf("%lu,%u,%u,%04x,%08lx,", index, (unsigned int)frame.operating_mode,
+        printf("%lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%04x,%08lx,",
+               index, (unsigned int)frame.operating_mode,
                (unsigned int)frame.operating_mode_task,
+               (unsigned int)game.ram[0x0778U],
+               (unsigned int)game.ram[0x0779U],
+               (unsigned int)game.ram[0x0774U],
+               (unsigned int)game.ram[0x073fU],
+               (unsigned int)game.ram[0x0740U],
+               (unsigned int)snapshot.ppu_control_0,
+               (unsigned int)snapshot.ppu_mask,
+               (unsigned int)snapshot.ppu_name_table,
+               (unsigned int)snapshot.scroll_x,
+               (unsigned int)snapshot.scroll_y,
                (unsigned int)snapshot.ppu_address, hash);
         hash = mysmb_summary_hash(snapshot.palette, 0x20U, 2166136261UL);
         printf("%08lx,", hash);

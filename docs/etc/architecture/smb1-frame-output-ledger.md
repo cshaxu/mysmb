@@ -586,3 +586,37 @@ is not a valid substitute for the completed palette-owner checkpoint.
 This records only the palette bytes. Scroll, PPU scalar state, OAM, and
 later-frame equality remain open T10/T11 work. The temporary reference trace
 and native snapshot were deleted after the neutral count.
+
+## T10 S1 P31 NMI Display Mirrors
+
+The original NMI owner at `$0740-$0842` keeps two different results: the
+physical `$2000` value at RTI has NMI re-enabled, while RAM `$0778`
+(`Mirror_PPU_CTRL_REG1`) retains the pre-RTI mirror without d7. RAM `$0779`
+(`Mirror_PPU_CTRL_REG2`) retains the selected display mask. Native code had
+only maintained its portable visible fields, leaving both RAM bytes zero.
+
+`mysmb_game_commit_display_state` now saves the pre-restoration control
+mirror, including a command-selected d2 when present, and saves the resolved
+mask. `InitializeNameTables` establishes the source `$10` control mirror.
+The ROM-free snapshot smoke covers initialization, a vertical command, NMI
+restoration, and both mask outcomes. The owner-local summary was extended to
+print only display-mirror and scroll metadata. Across frames 201--210 of the
+admitted Start route, original and native agree on `$0778`, `$0779`,
+`DisableScreenFlag`, `HorizontalScroll`, and `VerticalScroll`.
+
+The recorder's physical PPU address is not used as a camera oracle: at the
+NMI return it can reflect a preceding VRAM-address write rather than the
+source scroll variables. The canonical snapshot's semantic scroll record and
+later scrolling routes remain T10 work. The bounded raw trace was deleted
+after the neutral metadata comparison.
+
+### Similar-Issue Sweep
+
+The display-field sweep covered every production and test reference to
+`ppu_control_0`, `ppu_mask`, `$0778`, and `$0779`. Initialization and the NMI
+commit were the two missing RAM-mirror writers and are corrected here.
+`WriteBufferToScreen` keeps its command-local d2 selection so the NMI can
+preserve the source mirror before restoring the physical output. The player
+scroll owner supplies the name-table bit before that commit. Snapshot capture
+remains a read-only copy and needs no writer. No host renderer or OAM path was
+changed; those remain outside T10.
