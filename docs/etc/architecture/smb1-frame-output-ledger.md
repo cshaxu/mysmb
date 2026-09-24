@@ -1642,3 +1642,17 @@ On the corrected 380-sample trace, CPU-RAM differences fall to 101,692 and
 zero-page differences to 6,679; 32 `$fb` area-music queue differences are
 removed. Header expansion and per-channel music-state ownership remain open,
 while PPU and OAM results remain exact.
+
+## T13 S1 P20 ROM Music Header Loading
+
+SoundEngine now translates `LoadHeader` from the owner-bound ROM PRG. When an
+area or event music queue is accepted, it resolves `MusicHeaderData` at PRG
+`$790d`, initializes the length-table offset, music address, square/triangle/
+noise stream offsets, noise loopback, counters, and alternate-register flag.
+Ground music uses its separate `$07c7` layout selector. A synthetic owner-local
+PRG smoke verifies the table indirection and all initialized RAM fields.
+
+The corrected 380-sample trace reduces CPU-RAM differences to 100,826,
+zero-page differences to 6,147, and working-RAM differences to 33,879. PPU and
+OAM fields remain exact. Per-channel note/beat handlers and music loopbacks
+remain open M2 work.

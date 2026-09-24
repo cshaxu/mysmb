@@ -30,16 +30,73 @@ enum {
      * area binding; no music data is tracked in this repository. */
     MYSMB_ROM_DEATH_MUSIC_DATA = 0x7b72U,
     MYSMB_ROM_MUSIC_LENGTH_TABLE = 0x7f66U,
+    MYSMB_ROM_MUSIC_HEADER_DATA = 0x790dU,
     MYSMB_RAM_MUSIC_LENGTH_OFFSET = 0x00f0U,
     MYSMB_RAM_MUSIC_OFFSET_SQUARE2 = 0x00f7U,
+    MYSMB_RAM_MUSIC_OFFSET_SQUARE1 = 0x00f8U,
+    MYSMB_RAM_MUSIC_OFFSET_TRIANGLE = 0x00f9U,
+    MYSMB_RAM_MUSIC_OFFSET_NOISE = 0x07b0U,
+    MYSMB_RAM_NOISE_LOOPBACK_OFFSET = 0x07c1U,
+    MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET = 0x07c7U,
+    MYSMB_RAM_ALT_REGISTER_CONTENT = 0x07caU,
     MYSMB_RAM_SQUARE2_NOTE_LENGTH = 0x07b3U,
-    MYSMB_RAM_SQUARE2_NOTE_COUNTER = 0x07b4U
+    MYSMB_RAM_SQUARE2_NOTE_COUNTER = 0x07b4U,
+    MYSMB_RAM_SQUARE1_NOTE_COUNTER = 0x07b6U,
+    MYSMB_RAM_TRIANGLE_NOTE_COUNTER = 0x07b9U,
+    MYSMB_RAM_NOISE_BEAT_COUNTER = 0x07baU
 };
 
 /* ROM HandleSquare2Music's death-event stream.  The existing audio command
  * model owns presentation elsewhere, but PlayerHole observes EventMusicBuffer
  * as real gameplay state.  Advance the original Square 2 length stream until
  * its terminator clears that buffer, exactly as EndOfMusicData does. */
+/* ROM LoadHeader. Header selectors address MusicHeaderData directly, while
+ * each byte in that table is an offset from the same PRG base. */
+static mysmb_u8 mysmb_audio_load_header(struct mysmb_game *game,
+                                        mysmb_u8 selector)
+{
+    mysmb_u16 table_offset;
+    mysmb_u16 header_offset;
+
+    if (game->area_prg == 0 || selector >= 0x40U) return 0U;
+    table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA + selector);
+    if (table_offset >= game->area_prg_size) return 0U;
+    header_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA +
+                                 game->area_prg[table_offset]);
+    if (header_offset >= game->area_prg_size ||
+        (mysmb_u16)(game->area_prg_size - header_offset) < 6U) return 0U;
+    game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] = game->area_prg[header_offset];
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 0U;
+    game->ram[0x00f5U] = game->area_prg[(mysmb_u16)(header_offset + 1U)];
+    game->ram[0x00f6U] = game->area_prg[(mysmb_u16)(header_offset + 2U)];
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE] =
+        game->area_prg[(mysmb_u16)(header_offset + 3U)];
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1] =
+        game->area_prg[(mysmb_u16)(header_offset + 4U)];
+    game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE] =
+        game->area_prg[(mysmb_u16)(header_offset + 5U)];
+    game->ram[MYSMB_RAM_NOISE_LOOPBACK_OFFSET] =
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_NOISE];
+    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] = 1U;
+    game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = 1U;
+    game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] = 1U;
+    game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = 1U;
+    game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0U;
+    return 1U;
+}
+
+static mysmb_u8 mysmb_audio_find_header_selector(mysmb_u8 music,
+                                                   mysmb_u8 base)
+{
+    mysmb_u8 selector;
+
+    selector = base;
+    while ((music & 1U) == 0U) {
+        music >>= 1U;
+        selector++;
+    }
+    return selector;
+}
 static void mysmb_audio_step_death_music(struct mysmb_game *game)
 {
     mysmb_u16 offset;
@@ -198,17 +255,25 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         if (event == MYSMB_EVENT_DEATH_MUSIC) {
             game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
             game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
-            game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET] = 0x18U;
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 0U;
-            game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = 0U;
-            game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] = 1U;
         }
+        (void)mysmb_audio_load_header(game,
+            mysmb_audio_find_header_selector(event, 0U));
         game->ram[MYSMB_RAM_AREA_MUSIC_ALT] = game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER];
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
     }
     else if (area != 0U) {
         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
+        if (area == 1U) {
+            game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x10U;
+            game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
+            (void)mysmb_audio_load_header(game, (mysmb_u8)(
+                game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] - 1U));
+        }
+        else {
+            (void)mysmb_audio_load_header(game,
+                mysmb_audio_find_header_selector(area, 8U));
+        }
     }
     mysmb_audio_step_death_music(game);
 }
