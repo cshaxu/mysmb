@@ -1821,3 +1821,22 @@ The audio owner and retained source listing were searched for `DAC_Counter`
 and `$07c0`. SoundEngine is the sole writer and `mysmb_audio_step` is the sole
 native audio scheduler; the counter is now updated once per non-title audio
 pass after queue clearing. No platform adapter writes it.
+## T11 S1 P6 Player Animation Timer Address
+
+The local matched symbol map assigns `Timers/SelectTimer` to `$0780` and
+`PlayerAnimTimer` to `$0781`. Native player graphics had incorrectly used
+`$0780` for the animation countdown, corrupting the timer-bank byte while
+leaving `$0781` idle. The player graphics owner now reads and reloads `$0781`,
+while the existing timer owner continues to decrement it at the NMI phase.
+
+On the bounded 380-sample title Start/right route, CPU-RAM differences fall
+from 68,925 to 68,541 and working-RAM differences fall from 2,633 to 2,249.
+CIRAM, palette, CPU OAM backing RAM, visible OAM, and every PPU scalar remain
+exact.
+
+### Similar-Issue Sweep
+
+The player owner, timer owner, symbol map, and all `$0780/$0781` production
+references were reviewed. `$0780` remains the select-timer alias and `$0781`
+is the one player-animation owner; no other graphics route uses the wrong
+alias.
