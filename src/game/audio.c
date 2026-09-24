@@ -44,7 +44,8 @@ enum {
     MYSMB_RAM_SQUARE1_NOTE_COUNTER = 0x07b6U,
     MYSMB_RAM_TRIANGLE_NOTE_BUFFER = 0x07b8U,
     MYSMB_RAM_TRIANGLE_NOTE_COUNTER = 0x07b9U,
-    MYSMB_RAM_NOISE_BEAT_COUNTER = 0x07baU
+    MYSMB_RAM_NOISE_BEAT_COUNTER = 0x07baU,
+    MYSMB_RAM_DAC_COUNTER = 0x07c0U
 };
 
 /* ROM HandleSquare2Music's death-event stream.  The existing audio command
@@ -464,4 +465,11 @@ void mysmb_audio_step(struct mysmb_game *game)
     game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0U;
     game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE] = 0U;
     game->ram[MYSMB_RAM_PAUSE_QUEUE] = 0U;
+    /* ROM SoundEngine's final DAC_Counter update follows queue clearing. */
+    if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 3U) != 0U) {
+        game->ram[MYSMB_RAM_DAC_COUNTER]++;
+    }
+    else if (game->ram[MYSMB_RAM_DAC_COUNTER] != 0U) {
+        game->ram[MYSMB_RAM_DAC_COUNTER]--;
+    }
 }

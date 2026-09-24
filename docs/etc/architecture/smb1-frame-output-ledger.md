@@ -1801,3 +1801,23 @@ exact.
 The local source mapping has one writer of `$06c9`: `DoNothing1`, invoked only
 by `SecondaryGameSetup`. The native secondary-setup owner now carries that
 side effect; no duplicate production writer or host-side replacement exists.
+## T11 S1 P5 SoundEngine DAC Counter
+
+The owner-local `SoundEngine` tail reads `DAC_Counter` (`$07c0`) after it
+clears sound queues. It increments the counter when `AreaMusicBuffer & 3` is
+nonzero; otherwise it decrements a nonzero counter. Native C now carries that
+state transition at the end of `mysmb_audio_step`. The existing music-header
+fixture proves the first ground-music increment and the following silence-path
+decrement.
+
+On the bounded 380-sample title Start/right route, CPU-RAM differences fall
+from 68,973 to 68,925 and working-RAM differences fall from 2,681 to 2,633.
+CIRAM, palette, CPU OAM backing RAM, visible OAM, and every PPU scalar remain
+exact.
+
+### Similar-Issue Sweep
+
+The audio owner and retained source listing were searched for `DAC_Counter`
+and `$07c0`. SoundEngine is the sole writer and `mysmb_audio_step` is the sole
+native audio scheduler; the counter is now updated once per non-title audio
+pass after queue clearing. No platform adapter writes it.
