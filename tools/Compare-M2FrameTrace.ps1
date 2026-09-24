@@ -90,9 +90,9 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     # not comparable output because a native tick has no physical PPU revision.
     Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4) ($nativeRecord + 4) 2048 $sample $ram
     Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4) ($nativeRecord + 4) 256 $sample $zeroPage
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 260) ($record + 260) 256 $sample $stack
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 516) ($record + 516) 256 $sample $oamRam
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 772) ($record + 772) 1280 $sample $workRam
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 260) ($nativeRecord + 260) 256 $sample $stack
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 516) ($nativeRecord + 516) 256 $sample $oamRam
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 772) ($nativeRecord + 772) 1280 $sample $workRam
     for ($offset = 0; $offset -lt 2048; ++$offset) {
         if ($reference.Bytes[$referenceRecord + 4 + $offset] -ne
             $native.Bytes[$nativeRecord + 4 + $offset]) {
