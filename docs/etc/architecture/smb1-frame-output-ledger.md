@@ -35,7 +35,8 @@ valid merely because its storage happens to be zero.
 
 | ROM range | Original owner | Required snapshot effect | Current C disposition |
 | --- | --- | --- | --- |
-| `$8082-$81f9` | NMI display synchronization, sprite sequencing, and sprite-offset shuffle | Frame boundary, PPU control/scroll commit, OAM ordering | **Missing**; game tick has no NMI-output phase. |
+| `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Missing**; game tick has no NMI-output phase. |
+| `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Missing**; the helper is not translated as output ownership. |
 | `$8220-$8227` | Move all sprites offscreen | OAM offscreen entries | **Partial**; RAM clear exists, but it is not submitted as OAM output. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; title command data is consumed, icon/OAM route is absent. |
 | `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Missing**; logic explicitly excludes OAM. |
@@ -47,7 +48,11 @@ valid merely because its storage happens to be zero.
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Partial**; parser state is translated, visible metatile output is not. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Missing**. |
-| Later object-graphics families | Blocks, coins, fireballs, bubbles, platforms, Bowser, flame, and effects | Their OAM and dynamic VRAM output | **Missing**; exact subranges remain T9 direct-decode work. |
+| `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Missing**. |
+| `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
+| `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
+| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Missing**. |
+| `$ee17-$f2cf` | Player tile table, action selection, player draw, and common sprite-row writer | Player/intermediate OAM tiles, attributes, priority, and animation | **Missing**. |
 
 ## Current Product Disqualification
 
@@ -58,9 +63,18 @@ not valid M2 gameplay output and cannot satisfy the snapshot contract.
 
 ## T9 Remaining Work
 
-1. Resolve each later object-graphics source range directly from the admitted
-   PRG and record its exact source address and RAM/OAM ownership.
-2. Define the project-owned recorder serialization and bounded scripts without
-   retaining raw reference traces.
-3. Add a source-level snapshot ABI and tests that reject missing fields before
-   T10 begins background-output translation.
+1. Use `tools/reference_frame_recorder.c` through the isolated
+   `Build-ReferenceFrameRecorder.ps1` build to record reference frames at
+   ROM `$8181`, immediately before the NMI `RTI`. Its `MSFR` v1 raw record is
+   eight magic/version bytes and a 32-bit requested-frame count, followed by
+   a 32-bit PPU frame sequence, 2048-byte CPU RAM, 2048-byte CIRAM, 32-byte
+   palette, 256-byte OAM, PPU control/mask/name-table/scroll bytes, and a
+   16-bit PPU address for each sample. This is 4,395 bytes per sample.
+2. A recorder invocation is limited to 600 samples (2,637,012 bytes including
+   header) and 512 reference-run calls without a sample per requested frame.
+   It writes only to one caller-declared ignored output directory. The task
+   executor deletes the raw trace after its neutral mismatch summary is
+   recorded; no raw trace is evidence or a fixture.
+3. The snapshot ABI and its smoke test reject complete status until every
+   visible field is captured and reference-verified. T10 starts only after
+   this contract is used by a translated background owner.

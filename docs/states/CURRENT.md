@@ -27,7 +27,7 @@
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | Owner-local output-ledger and recorder tests; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
 | Expected Markers | Every PPU/OAM-facing PRG writer has a source owner and disposition; canonical snapshot fields and reference sampling phase are explicit; no flat-marker path remains accepted as gameplay proof. |
-| Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
+| Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Each reference trace uses one unique ignored output directory, is limited to 600 frames, 2,637,012 bytes, and 512 no-progress reference runs per requested frame, then is deleted by the task executor after a neutral summary. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
 | Reporting Requirements | Record source ranges, input scripts, frame phase, snapshot fields, hashes where lawful, every difference, and whether it is translated, deferred, or rejected. |
 | Stop Conditions | Stop and revise if the work substitutes host drawing for translated output, requires a runtime emulator, embeds protected data in tracked output, or cannot name a source owner for a visible result. |
 | Exit Criteria | T9 closes only with an audited output ledger and an executable bounded oracle contract; it does not close M2. |
