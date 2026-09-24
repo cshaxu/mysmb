@@ -694,6 +694,29 @@ void mysmb_player_draw_oam(struct mysmb_game *game)
     }
 }
 
+void mysmb_player_draw_intermediate_oam(struct mysmb_game *game)
+{
+    mysmb_u8 row;
+    mysmb_u8 oam_offset;
+    mysmb_u8 y;
+
+    if (game->area_prg == 0 ||
+        game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
+    oam_offset = 4U;
+    y = 0x58U;
+    for (row = 0U; row < 4U; ++row) {
+        mysmb_player_draw_row(game, &oam_offset, &y, 0x60U,
+            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U +
+                                        row * 2U)],
+            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U +
+                                        row * 2U + 1U)],
+            0U, MYSMB_BUTTON_RIGHT);
+    }
+    /* DrawPlayer_Intermediate flips its bottom-right sprite after the four
+     * rows have been emitted. */
+    game->ram[0x0222U] = (mysmb_u8)(game->ram[0x0222U] | 0x40U);
+}
+
 /* Translation of PlayerCtrlRoutine's PlayerHole tail.  The falling player
  * reaches GameEngineSubroutine 6 only after the source's vertical threshold
  * and event-music gate, where GameCoreRoutine dispatches PlayerLoseLife. */

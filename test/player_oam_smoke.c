@@ -28,5 +28,13 @@ int main(void)
     mysmb_player_draw_oam(&game);
     if (game.ram[0x0205U] != 0x21U || game.ram[0x0206U] != 0x42U ||
         game.ram[0x0209U] != 0x20U || game.ram[0x020aU] != 0x42U) return 1;
+    for (index = 0U; index < 8U; ++index)
+        prg[(mysmb_u16)(0x6e17U + 0xb8U + index)] = (mysmb_u8)(0x40U + index);
+    mysmb_player_draw_intermediate_oam(&game);
+    if (game.ram[0x0204U] != 0x58U || game.ram[0x0205U] != 0x40U ||
+        game.ram[0x0207U] != 0x60U || game.ram[0x0208U] != 0x58U ||
+        game.ram[0x0209U] != 0x41U || game.ram[0x020bU] != 0x68U ||
+        game.ram[0x021cU] != 0x70U || game.ram[0x021dU] != 0x46U ||
+        game.ram[0x021fU] != 0x60U || game.ram[0x0222U] != 0x40U) return 1;
     return 0;
 }

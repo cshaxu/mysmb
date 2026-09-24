@@ -34,6 +34,8 @@ void mysmb_player_step_fire_flower(struct mysmb_game *game);
 /* ROM $ee35-$f12a PlayerGfxHandler through DrawSpriteObject.  Tile data is
  * read from the owner-local PRG binding; it is never tracked as C data. */
 void mysmb_player_draw_oam(struct mysmb_game *game);
+/* ROM $f02b-$f047 DrawPlayer_Intermediate. */
+void mysmb_player_draw_intermediate_oam(struct mysmb_game *game);
 
 /* Neutral fixed-input checkpoint for the translated player route. */
 struct mysmb_player_checkpoint {

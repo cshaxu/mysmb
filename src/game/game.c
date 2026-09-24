@@ -651,6 +651,7 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
         else if (mysmb_area_queue_game_text(game, 1U) != 0U) {
+            mysmb_player_draw_intermediate_oam(game);
             game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
             game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;

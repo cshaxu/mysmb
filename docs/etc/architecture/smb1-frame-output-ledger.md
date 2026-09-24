@@ -1410,3 +1410,20 @@ The remaining differences belong to title, enemy, item, projectile, effect,
 score, platform, and boss draw owners. CIRAM pages, palette, and all seven
 PPU-visible scalars remained exact. Raw 600-sample traces were deleted after
 the comparison.
+
+## T11 S1 P3 Intermediate-Player OAM And DMA Boundary
+
+`DrawPlayer_Intermediate` at `$f02b-$f047` now uses the same owner-local
+player graphics table to write its four small-standing rows at OAM offset
+four, including the source's bottom-right horizontal flip. `DisplayIntermediate`
+invokes that owner only on the normal lives-display route; title, alternate
+entrance, and skip-intermediate routes retain their source exclusions. The
+player OAM smoke extends its synthetic-table check through this path.
+
+The same bounded 600-sample title-bootstrap route makes CPU OAM RAM
+`$0200-$02ff` exact at every NMI sample. Hardware OAM still differs in 366
+bytes across eleven transition samples (0, 1, 25, 26, 40--42, 47, 189,
+206, and 207). This isolates the remaining discrepancy to the portable
+snapshot's NMI/DMA submission phase rather than an unimplemented player or
+intermediate draw writer. CIRAM pages, palette, and all seven PPU-visible
+scalars remain exact. Raw traces were deleted after the comparison.
