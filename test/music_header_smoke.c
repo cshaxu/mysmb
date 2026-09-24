@@ -10,6 +10,7 @@ int main(void)
     /* Ground music's first layout selector is MusicHeaderData+$10. */
     prg[0x791dU] = 0x40U;
     prg[0x791cU] = 0x50U;
+    prg[0x791eU] = 0x40U;
     prg[0x794dU] = 0x18U;
     prg[0x794eU] = 0x01U;
     prg[0x794fU] = 0xfaU;
@@ -47,5 +48,15 @@ int main(void)
     if (game.ram[0x00f4U] != 0U || game.ram[0x07b1U] != 0U ||
         game.ram[0x00f5U] != 0x10U || game.ram[0x00f6U] != 0xfaU ||
         game.ram[0x00f7U] != 1U || game.ram[0x00fbU] != 0U) return 1;
+    game.ram[0x00f4U] = 1U;
+    game.ram[0x00f0U] = 0x18U;
+    game.ram[0x00f5U] = 1U;
+    game.ram[0x00f6U] = 0xfaU;
+    game.ram[0x00f7U] = 2U;
+    game.ram[0x07b4U] = 1U;
+    game.ram[0x07c7U] = 0x11U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f4U] != 1U || game.ram[0x00f7U] != 2U ||
+        game.ram[0x07b4U] != 9U || game.ram[0x07c7U] != 0x12U) return 1;
     return 0;
 }

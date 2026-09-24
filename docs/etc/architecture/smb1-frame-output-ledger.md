@@ -1721,3 +1721,16 @@ cleared buffers; the title bootstrap smoke asserts the initial queue.
 The corrected 380-sample trace reduces CPU-RAM differences to 98,662 and
 working-RAM differences to 32,130. PPU, CIRAM, palette, and OAM remain exact.
 Ground-music section loopback and non-audio RAM producers remain open.
+## T13 S1 P26 Ground Music Section Loopback
+
+`HandleSquare2Music` now follows `EndOfMusicData` into
+`HandleAreaMusicLoopB` for looping area music. Ground music retains `$f4`,
+clears `$07b1`, advances `$07c7`, wraps the ROM layout counter at `$32` to
+`$11`, resolves the next header, and processes its first Square 2 datum in the
+same audio pass. The focused owner-local fixture forces a Square 2 terminator
+and proves `$07c7: $11 -> $12`, header reload, and `$07b4=9`.
+
+The corrected 380-sample trace reduces CPU-RAM differences to 97,994,
+zero-page differences to 5,492, and working-RAM differences to 31,702. PPU,
+CIRAM, palette, and OAM remain exact. Title Silence header propagation and
+non-audio RAM producers remain open.
