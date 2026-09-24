@@ -1081,4 +1081,5 @@ status at the setup boundary. With Start held at samples 40--41 and Right held
 from sample 240, a bounded 600-sample comparison has exact CIRAM pages,
 palette, and all seven PPU scalar bytes across samples 0--599. CPU RAM and OAM
 remain different under T11 ownership; this background result does not close
-M2.
+M2. An independent 600-sample Start-only route has the same background, palette,
+and PPU-scalar result.
