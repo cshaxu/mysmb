@@ -725,3 +725,31 @@ tail, screen-routine transition, and `RunGameTimer` eligibility. Both buffer
 paths are source-aligned over the declared window. OAM and host rendering
 remain separately incomplete T11/T12 owners; the reference runtime is
 validation-only and remains outside the product.
+
+## T10 S1 P36 First Dynamic-Column Difference
+
+An automated 600-sample Start/right comparison uses the exact NMI-return
+sequence for both routes and compares CPU RAM, both name tables, palette,
+OAM, and PPU scalar fields independently. Name tables match through sample
+376; the first CIRAM difference is sample 377, when the prior sample's
+`VRAM_Buffer2` column reaches visible state. Palette still matches at the
+declared completed palette checkpoint (sample 206). OAM differs and remains
+T11 work.
+
+At sample 376 the two buffer offsets and command headers agree, but the
+effective column payload differs at offsets `$16-$19`. The source staging
+column at `$06a1` differs only at rows 9 and 10: original values are
+`$13/$15`, native values are `$12/$14`. The active stream entry is `$68,$f2`.
+The original pipe-table reads are at `$9898` and `$9929`, with the table at
+`$98dd`; the native static pipe decoder must recover that source index and
+row rule before the column can be changed. Bytes after the source terminator
+are stale buffer storage and are excluded from this output comparison.
+
+### Similar-Issue Sweep
+
+The sweep covered the parser staging buffer, graphics-column writer,
+attribute writer, buffer terminator, active object slots, and every native
+pipe-table use. The table bytes themselves are not changed. The identified
+defect is the source object-encoding decoder for the `$68,$f2` pipe route;
+other pipe encodings require a controlled parser-state comparison before any
+shared formula is modified.
