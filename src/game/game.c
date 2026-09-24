@@ -6,6 +6,7 @@
 
 enum {
     MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,
+    MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS = 0x000cU,
     MYSMB_RAM_SAVED_JOYPAD1 = 0x06fcU,
     MYSMB_RAM_JOYPAD_MASK1 = 0x074aU,
     MYSMB_RAM_FETCH_NEW_TIMER = 0x0757U,
@@ -591,6 +592,11 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);
         mysmb_objects_step_misc(game);
+        /* ROM GameEngine's SaveAB tail clears the transient directional
+         * partition after object collisions.  In particular, a collision
+         * that selects PlayerDeath leaves its following physics frame with
+         * zero horizontal input and the KillPlayer-cleared speed. */
+        game->ram[MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
     }
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];

@@ -27,7 +27,9 @@ int main(void)
     }
     if (game.ram[0x000eU] != 8U) return 31;
     if (game.ram[0x0754U] != 1U) return 32;
-    if (game.ram[0x000cU] != MYSMB_BUTTON_RIGHT) return 33;
+    /* GameEngine clears its transient directional partition after the frame;
+     * the next player-control phase latches the current host input again. */
+    if (game.ram[0x000cU] != 0U) return 33;
     if (frame.operating_mode != 1U) return 34;
     return 0;
 }
