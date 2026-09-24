@@ -828,3 +828,16 @@ title tests. The Win32 product root is the only product consumer and now uses
 the staged route. Direct command application remains only in unit and
 validation harnesses whose stated phase is prebuilt title state. No host
 renderer, OAM producer, or runtime reference dependency was added.
+
+## T10 S1 P40 Post-Title-Route Background Regression
+
+The title VRAM task change was rechecked against the admitted 380-sample
+Start/right script. The owner-local comparison covered samples 240--379 and
+found zero differing bytes in both CIRAM pages, palette, PPU control, mask,
+name-table selection, scroll coordinates, and reconstructed PPU address.
+
+CPU RAM differs in every sampled frame, including OAM-backed RAM and working
+RAM. OAM also differs in every sampled frame. Those results preserve the
+ledger's T11 boundary and do not support an OAM or complete-state claim. The
+raw traces were created in one ignored diagnostic directory and deleted by
+the command that performed the comparison.
