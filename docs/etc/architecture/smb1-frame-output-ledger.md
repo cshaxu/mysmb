@@ -46,7 +46,7 @@ valid merely because its storage happens to be zero.
 | `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Translated, background scope**; palette rotation, block replacement, coin removal, and bridge collapse submit their source-shaped commands. Their animated sprites remain T11 work. |
 | `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Translated, background scope**; initialization, controls 1--18, both VRAM buffers, display mask, scroll, name-table selection, and committed PPU address are owned by the portable NMI boundary. OAM draw writers remain T11 work. |
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Translated, background scope**; persistent parser slots, scenery, terrain, all static object metatile families, attributes, and incremental column scheduling reach the snapshot. Object graphics remain T11 work. |
-| `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
+| `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Translated, partial OAM scope**; the Goomba writer emits the six ROM tiles, pair ordering, palette attributes, direction flip, world-to-screen X, and three-row OAM layout. Other enemy families remain T11 work. |
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Translated, partial OAM scope**; normal player action selection, ROM-table tile rows, horizontal flip, attributes, injury blink, and prepared vertical-offscreen rows write OAM. Fireball-throw supplement and title/intermediate paths remain T11 work. |
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Translated**; the dedicated slot-five power-up writer emits the original two-row sprite square, type tiles, palette cadence, mirror flags, and world-to-screen X position. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
@@ -1499,3 +1499,12 @@ T11 owners.
 ## T11 S1 P10 Block and Brick-Chunk OAM
 
 DrawBlock and DrawBrickChunks now have a separate portable C owner to preserve the 16-bit code-segment limit. The OAM smoke checks a used bouncing block and the four fragment layout. Coin/debris writers remain distinct.
+
+## T11 S1 P11 Goomba OAM
+
+The portable Goomba writer now follows the ROM graphics table and the
+`CheckForGoomba`/row-draw path. It writes all six tiles into the enemy slot's
+three OAM rows, uses the ROM palette base and horizontal mirror behavior, and
+computes X from the world and screen positions. The smoke test compares all
+24 OAM bytes in both flipped and normal animation phases; the remaining enemy
+families are separate T11 owners.
