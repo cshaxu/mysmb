@@ -136,6 +136,25 @@ int main(void)
         game.ram[0x0320U] != mysmb_local_prg[0x07f3U] ||
         game.ram[0x0324U] != mysmb_local_prg[0x07f4U]) return 1;
 
+    /* GetPlayerColors selects fiery colors, but preserves the original
+     * background-color source for the first `$3f10` palette byte. */
+    game.ram[0x0300U] = 0U;
+    game.ram[0x0753U] = 1U;
+    game.ram[0x0756U] = 2U;
+    game.ram[0x0744U] = 0U;
+    game.ram[0x074eU] = 1U;
+    if (mysmb_area_queue_player_palette(&game) == 0U || game.ram[0x0300U] != 7U ||
+        game.ram[0x0301U] != 0x3fU || game.ram[0x0302U] != 0x10U ||
+        game.ram[0x0303U] != 4U || game.ram[0x0304U] != mysmb_local_prg[0x05d0U] ||
+        game.ram[0x0305U] != mysmb_local_prg[0x05e0U] ||
+        game.ram[0x0306U] != mysmb_local_prg[0x05e1U] ||
+        game.ram[0x0307U] != mysmb_local_prg[0x05e2U]) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
+        game.palette[0x10U] != mysmb_local_prg[0x05d0U] ||
+        game.palette[0x11U] != mysmb_local_prg[0x05e0U] ||
+        game.palette[0x12U] != mysmb_local_prg[0x05e1U] ||
+        game.palette[0x13U] != mysmb_local_prg[0x05e2U]) return 1;
+
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
     input.buttons = MYSMB_BUTTON_START;

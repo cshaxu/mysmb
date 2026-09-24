@@ -29,7 +29,9 @@ enum {
     MYSMB_AREA_GAME_TEXT = 0x0752U,
     MYSMB_AREA_GAME_TEXT_OFFSETS = 0x07feU,
     MYSMB_AREA_LUIGI_NAME = 0x07e1U,
-    MYSMB_AREA_WARP_ZONE_NUMBERS = 0x07f2U
+    MYSMB_AREA_WARP_ZONE_NUMBERS = 0x07f2U,
+    MYSMB_AREA_BACKGROUND_COLORS = 0x05cfU,
+    MYSMB_AREA_PLAYER_COLORS = 0x05d7U
 };
 
 enum {
@@ -394,6 +396,39 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
         offset = 0x2cU;
         game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset] = 0U;
     }
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
+/* Translation of GetPlayerColors.  The original writes one `$3f10`, length
+ * four command into VRAM_Buffer1 and leaves the terminator just after it. */
+mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+    mysmb_u8 color_offset;
+    mysmb_u8 background_index;
+
+    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
+    if (offset > 0xf8U || game->area_prg == 0 ||
+        game->area_prg_size <= MYSMB_AREA_PLAYER_COLORS + 11U) return 0U;
+    color_offset = game->ram[MYSMB_AREA_CURRENT_PLAYER] == 0U ? 0U : 4U;
+    if (game->ram[0x0756U] == 2U) color_offset = 8U;
+    background_index = game->ram[MYSMB_AREA_BACKGROUND_COLOR] != 0U ?
+        game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
+    if (background_index >= 8U || game->area_prg_size <=
+        MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 0x3fU;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 0x10U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] = 4U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] =
+        game->area_prg[MYSMB_AREA_BACKGROUND_COLORS + background_index];
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] =
+        game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 1U];
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] =
+        game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 2U];
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset++] =
+        game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 3U];
+    game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }

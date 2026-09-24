@@ -536,6 +536,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                     mysmb_area_render_initial_terrain(game);
                     mysmb_area_render_initial_objects(game);
                     (void)mysmb_area_queue_top_status_line(game);
+                    (void)mysmb_area_queue_player_palette(game);
                     game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
                 }
             }
