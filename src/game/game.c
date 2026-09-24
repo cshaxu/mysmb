@@ -1194,6 +1194,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
         mysmb_objects_step_floatey_numbers(game);
+        mysmb_objects_draw_goombas(game);
         mysmb_player_draw_oam(game);
         mysmb_objects_step_vine(game);
         mysmb_objects_apply_block_replacements(game);

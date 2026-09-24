@@ -4,7 +4,6 @@
 void mysmb_objects_draw_power_up(struct mysmb_game *game);
 void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_objects_draw_goombas(struct mysmb_game *game);
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
@@ -1111,7 +1110,6 @@ void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
             mysmb_objects_move_enemy_horizontally(game, slot);
         }
     }
-    mysmb_objects_draw_goombas(game);
 }
 
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant.  Its dedicated arrays
