@@ -2,6 +2,8 @@
 #include "game/area.h"
 
 void mysmb_objects_draw_power_up(struct mysmb_game *game);
+void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
@@ -3199,6 +3201,7 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
         state &= 0x0fU;
         if (state == 1U) {
             mysmb_objects_impose_block_gravity(game, slot);
+            mysmb_objects_draw_bouncing_block(game, slot);
             if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
                 game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
                 state = 0U;
@@ -3209,6 +3212,7 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
             mysmb_objects_move_block_horizontally(game, slot);
             mysmb_objects_impose_block_gravity(game, (mysmb_u8)(slot + 2U));
             mysmb_objects_move_block_horizontally(game, (mysmb_u8)(slot + 2U));
+            mysmb_objects_draw_brick_chunks(game, slot);
             if (game->ram[MYSMB_BLOCK_Y_HIGH + slot] != 0U) {
                 if (game->ram[MYSMB_BLOCK_Y + slot + 2U] >= 0xf0U) {
                     game->ram[MYSMB_BLOCK_Y + slot + 2U] = 0xf0U;

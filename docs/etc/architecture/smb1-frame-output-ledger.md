@@ -50,7 +50,7 @@ valid merely because its storage happens to be zero.
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Translated, partial OAM scope**; normal player action selection, ROM-table tile rows, horizontal flip, attributes, injury blink, and prepared vertical-offscreen rows write OAM. Fireball-throw supplement and title/intermediate paths remain T11 work. |
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Translated**; the dedicated slot-five power-up writer emits the original two-row sprite square, type tiles, palette cadence, mirror flags, and world-to-screen X position. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
-| `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
+| `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Translated, partial OAM scope**; bouncing blocks and four brick chunks use source tiles, frame attributes, coordinates, and screen-edge clipping. Coin and other debris routes remain T11 work. |
 | `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball and fireball-explosion OAM are translated; firebar, bubble, and other effects remain T11 work. |
 | `$ee17-$f2cf` | Player tile table, action selection, player draw, and common sprite-row writer | Player/intermediate OAM tiles, attributes, priority, and animation | **Missing**. |
 
@@ -1495,3 +1495,7 @@ cadence, horizontal mirrors, and emergence threshold follow the source writer.
 The ROM-free power-up OAM smoke covers a star, a flower, and the first visible
 mushroom-emergence frame.  Enemy and firebar/bubble writers remain separate
 T11 owners.
+
+## T11 S1 P10 Block and Brick-Chunk OAM
+
+DrawBlock and DrawBrickChunks now have a separate portable C owner to preserve the 16-bit code-segment limit. The OAM smoke checks a used bouncing block and the four fragment layout. Coin/debris writers remain distinct.
