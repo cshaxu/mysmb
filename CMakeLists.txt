@@ -306,6 +306,10 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_local_area_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_local_area_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.local-area-smoke COMMAND mysmb_local_area_smoke)
+    add_executable(mysmb_local_frame_summary test/local_frame_summary.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_local_frame_summary PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_local_frame_summary PRIVATE mysmb_game)
 
     if(MYSMB_ASM_PATH)
         add_custom_command(
