@@ -2246,7 +2246,10 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
     mysmb_u8 carry;
     mysmb_u16 enemy_world;
     mysmb_u16 screen_world;
-
+    mysmb_u8 oam_offset;
+    mysmb_u8 oam_base;
+    mysmb_u8 fire_tile;
+    mysmb_u8 fire_attribute;
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] < 27U ||
@@ -2294,6 +2297,23 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
                                              (mysmb_u8)(0U - horizontal)));
             ball_y = (mysmb_u8)(anchor_y + ((mirror_bits & 2U) != 0U ? vertical :
                                              (mysmb_u8)(0U - vertical)));
+            /* ROM ProcFirebar/DrawFirebar_Collision: anchor uses the first
+             * entry; short bars use its next five entries and long bars
+             * continue in the duplicate OAM group after ball four. */
+            oam_base = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
+            if (ball >= 5U) oam_base = game->ram[MYSMB_ALT_SPRITE_OFFSET +
+                game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
+            oam_offset = (mysmb_u8)(oam_base + (ball < 5U ?
+                (ball + 1U) * 4U : (ball - 5U) * 4U));
+            fire_tile = (mysmb_u8)(0x64U ^
+                ((game->ram[MYSMB_FRAME_COUNTER] >> 2U) & 1U));
+            fire_attribute = (mysmb_u8)(2U |
+                (((game->ram[MYSMB_FRAME_COUNTER] >> 3U) & 1U) != 0U ? 0xc0U : 0U));
+            game->ram[(mysmb_u16)(0x0200U + oam_offset)] =
+                (mysmb_u8)((ball_x >= 0xf0U || anchor_y == 0xf8U) ? 0xf8U : ball_y);
+            game->ram[(mysmb_u16)(0x0201U + oam_offset)] = fire_tile;
+            game->ram[(mysmb_u16)(0x0202U + oam_offset)] = fire_attribute;
+            game->ram[(mysmb_u16)(0x0203U + oam_offset)] = ball_x;
             if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U ||
                 game->ram[MYSMB_TIMER_CONTROL] != 0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
                 ball_x >= 0xf0U) continue;
@@ -2820,7 +2840,15 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
     }
     mysmb_objects_draw_hammer(game, slot);
 }
+    mysmb_u8 oam_offset;
+    mysmb_u8 oam_base;
+    mysmb_u8 fire_tile;
+    mysmb_u8 fire_attribute;
 
+    mysmb_u8 oam_offset;
+    mysmb_u8 oam_base;
+    mysmb_u8 fire_tile;
+    mysmb_u8 fire_attribute;
 /* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
  * nine through seventeen after the player box at $04ac. */
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
