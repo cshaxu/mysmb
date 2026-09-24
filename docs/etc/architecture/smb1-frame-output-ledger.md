@@ -318,3 +318,23 @@ The row-15 table was checked for a generic staircase or rope fallthrough.
 Exit-pipe length and vertical geometry are now independent from the source
 location-byte row selector. Intro pipe, transition state, and warp routing
 remain deferred.
+
+## T10 S1 P15 Formal Parser-Column Integration
+
+`RenderSceneryTerrain` now follows the original `$936f-$9376` order: it first
+creates the scenery/terrain staging column, then runs `ProcessAreaData`, and
+only then writes collision-qualified metatiles to the physical block buffer.
+The eight-step parser task therefore owns the initial visible area output; the
+game tick no longer consumes the same area stream through the incompatible
+one-object-per-frame diagnostic producer. A ROM-free test establishes that an
+admitted brick-row object changes both the staging column and its committed
+block-buffer cell. The owner-local ROM smoke continues through screen task 8
+using the formal parser state.
+
+### Similar-Issue Sweep
+
+`mysmb_area_emit_next_command` remains as a diagnostic API only and is no
+longer called by the native game path. The older bulk page preparation and
+initial object preload remain separate migration work; they are not evidence
+for the incremental parser route and must be removed or replaced before T10
+can close.

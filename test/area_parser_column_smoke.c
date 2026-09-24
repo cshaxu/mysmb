@@ -52,6 +52,27 @@ int main(void)
         game.ram[0x0570U] != 0x51U || game.ram[0x05b0U] != 0x54U ||
         game.ram[0x05c0U] != 0x54U) return 1;
 
+    /* AreaParserCore processes the admitted object stream after terrain and
+     * before block-buffer commit, so a row object changes collision output. */
+    prg[0x0040U] = 0x25U;
+    prg[0x0041U] = 0x22U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x06a0U] = 2U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_render_scenery_terrain_column(&game) == 0U ||
+        game.ram[0x06a6U] != 0x51U || game.ram[0x0552U] != 0x51U ||
+        game.ram[0x0732U] != 1U) return 1;
+    game.ram[0x00e8U] = 0U;
+
     game.ram[0x06a0U] = 1U;
     game.ram[0x0742U] = 0U;
     game.ram[0x0741U] = 0U;

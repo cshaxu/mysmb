@@ -954,9 +954,9 @@ void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page)
 }
 
 /* Translation of the RenderSceneryTerrain portion of ROM AreaParserCore
- * ($92f7-$9376).  It builds exactly one 13-metatile column and copies its
- * collision-qualified values into the physical 32-column block buffer.  The
- * caller owns ProcessAreaData and the eight-step graphics/attribute schedule. */
+ * ($92f7-$9376).  It builds exactly one 13-metatile column, runs the original
+ * ProcessAreaData owner over that staging column, then copies its
+ * collision-qualified values into the physical 32-column block buffer. */
 mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
 {
     mysmb_u8 metatiles[13];
@@ -1019,12 +1019,20 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
         if ((bits & (mysmb_u8)(1U << (row & 7U))) != 0U) metatiles[row] = terrain;
     }
 
+    for (row = 0U; row < 13U; ++row)
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatiles[row];
+    /* Unit routes may exercise scenery without an admitted area pointer.
+     * A loaded area always has a $80-$ff PRG high byte and therefore follows
+     * the source's unconditional ProcessAreaData call. */
+    if (game->ram[MYSMB_AREA_DATA_HIGH] >= 0x80U &&
+        mysmb_area_process_object_state(game) == 0U) return 0U;
+
     column = (mysmb_u8)(game->ram[MYSMB_AREA_BLOCK_COLUMN] & 0x1fU);
     address = (mysmb_u16)(column < 16U ? 0x0500U + column :
                           0x05d0U + (column - 16U));
     for (row = 0U; row < 13U; ++row) {
+        metatiles[row] = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
         bound_index = (mysmb_u8)(metatiles[row] >> 6U);
-        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatiles[row];
         game->ram[(mysmb_u16)(address + (mysmb_u16)row * 16U)] =
             metatiles[row] < game->area_prg[(mysmb_u16)(
                 MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS + bound_index)] ?
@@ -1118,10 +1126,10 @@ static mysmb_u8 mysmb_area_queue_attribute_tables(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM $92b0-$92e8 AreaParserTaskHandler.  ProcessAreaData is deliberately
- * not called here yet: its persistent three-object state has a separate
- * owner, so this function owns only the already-translated scenery core and
- * the exact graphics/attribute task cadence. */
+/* ROM $92b0-$92e8 AreaParserTaskHandler.  The scenery task calls
+ * RenderSceneryTerrain, whose source order includes ProcessAreaData before
+ * the physical block-buffer write; this handler owns the graphics/attribute
+ * cadence around those two output columns. */
 mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
 {
     mysmb_u8 task;

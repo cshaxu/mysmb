@@ -533,10 +533,6 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         break;
     case 8U:
         if (mysmb_area_parser_task_control(game) != 0U) {
-            /* ProcessAreaData has not yet replaced the bounded object preload.
-             * Keep the existing translated object state alive after the
-             * source-ordered scenery/terrain column sets complete. */
-            mysmb_area_render_initial_objects(game);
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 9U;
         }
         break;
@@ -734,7 +730,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
         }
-        (void)mysmb_area_emit_next_command(game);
         if (game->area_prg != 0) {
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;

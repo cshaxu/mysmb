@@ -81,15 +81,11 @@ int main(void)
         game.palette[15U] != mysmb_local_prg[0x09d8U] || rotation != 1U) return 1;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.area_command_count != 1U ||
-        game.area_commands[0].dispatch_id == 0xffU || game.ram[0x000eU] != 7U ||
+    if (game.ram[0x000eU] != 7U ||
         game.ram[0x006dU] != 0U || game.ram[0x0086U] != 0x28U ||
         game.ram[0x00b5U] != 1U || game.ram[0x00ceU] != 0xb0U) {
         return 1;
     }
-    if (game.area_commands[0].page != 1U || game.area_commands[0].column != 0U ||
-        game.area_commands[0].row != 7U || game.area_commands[0].dispatch_id != 0x17U ||
-        game.ram[0x0640U] != 0xc0U) return 1;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x000eU] != 8U || game.ram[0x001dU] != 0U) {
         return 1;
