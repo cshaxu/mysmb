@@ -139,10 +139,10 @@ enum {
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
 };
 
-static void mysmb_area_apply_parser_row_object(struct mysmb_game *game,
-                                               mysmb_u8 slot,
-                                               mysmb_u8 first,
-                                               mysmb_u8 second);
+static void mysmb_area_apply_parser_object(struct mysmb_game *game,
+                                           mysmb_u8 slot,
+                                           mysmb_u8 first,
+                                           mysmb_u8 second);
 
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
@@ -1167,31 +1167,64 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
 /* ROM $4054-$4077 RowOfBricks/RowOfSolidBlocks. The caller has already
  * admitted the object to a persistent parser slot and filled the terrain
  * column; these handlers overwrite only the selected metatile row. */
-static void mysmb_area_apply_parser_row_object(struct mysmb_game *game,
-                                               mysmb_u8 slot,
-                                               mysmb_u8 first,
-                                               mysmb_u8 second)
+static void mysmb_area_apply_parser_object(struct mysmb_game *game,
+                                           mysmb_u8 slot,
+                                           mysmb_u8 first,
+                                           mysmb_u8 second)
 {
     static const mysmb_u8 brick[5] = { 0x22U, 0x51U, 0x52U, 0x52U, 0x88U };
     static const mysmb_u8 solid[4] = { 0x69U, 0x61U, 0x61U, 0x62U };
+    static const mysmb_u8 coin[4] = { 0xc3U, 0xc2U, 0xc2U, 0xc2U };
+    static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
+    static const mysmb_u8 block[10] = {
+        0U, 0U, 0U, 0U, 0x55U, 0x56U, 0x57U, 0x58U, 0x59U, 0U
+    };
     mysmb_u8 row;
     mysmb_u8 kind;
     mysmb_u8 area_type;
+    mysmb_u8 value;
+    mysmb_u8 height;
+    mysmb_u8 existing;
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
-    if (row >= 12U || (kind != 2U && kind != 3U)) return;
-    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+    if (row >= 13U) return;
     area_type = game->ram[MYSMB_AREA_TYPE];
     if (area_type >= 4U) return;
-    if (kind == 2U) {
-        if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) area_type = 4U;
-        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = brick[area_type];
+    if (kind == 0U) {
+        value = (mysmb_u8)(second & 0x0fU);
+        if (value <= 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = question[value];
+        else if (value >= 4U && value <= 8U) {
+            value = block[value];
+            if (area_type != 1U) value = (mysmb_u8)(value + 5U);
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
+        }
+        else if (value == 10U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x60U;
+        return;
     }
-    else {
-        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = solid[area_type];
+    if (kind == 2U || kind == 3U || kind == 4U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        if (kind == 2U && game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U)
+            area_type = 4U;
+        if (kind == 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = brick[area_type];
+        else if (kind == 3U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = solid[area_type];
+        else game->ram[MYSMB_AREA_METATILE_BUFFER + row] = coin[area_type];
+        return;
     }
+    if (kind != 5U && kind != 6U) return;
+    value = kind == 5U ? brick[area_type] : solid[area_type];
+    height = (mysmb_u8)(second & 0x0fU);
+    do {
+        existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
+        if (existing != 0x17U && existing != 0x1aU && existing != 0xc0U &&
+            existing != 0x4cU && existing != 0x50U)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
+        if (row == 12U || height == 0U) break;
+        row++;
+        height--;
+    }
+    while (1);
 }
 
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
@@ -1268,8 +1301,9 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                 run_object = 1U;
             }
             if (run_object != 0U) {
-                mysmb_area_apply_parser_row_object(game, slot, first, second);
-                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
+                mysmb_area_apply_parser_object(game, slot, first, second);
+                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
+                    game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
             }
             if (slot == 0U) break;
             slot--;

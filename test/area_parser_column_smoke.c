@@ -131,5 +131,24 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x0732U] != 0U || game.ram[0x06a8U] != 0x51U ||
         game.ram[0x072cU] != 2U) return 1;
+
+    /* Small objects and vertical columns render once and retain an empty
+     * parser length slot, unlike horizontal row families. */
+    prg[0x0040U] = 0x34U;
+    prg[0x0041U] = 0x04U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x0726U] = 3U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a5U] != 0x55U || game.ram[0x0732U] != 0xffU) return 1;
+    prg[0x0040U] = 0x45U;
+    prg[0x0041U] = 0x53U;
+    game.ram[0x0726U] = 4U;
+    game.ram[0x072cU] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a6U] != 0x51U || game.ram[0x06a7U] != 0x51U ||
+        game.ram[0x06a8U] != 0x51U || game.ram[0x06a9U] != 0x51U ||
+        game.ram[0x0732U] != 0xffU) return 1;
     return 0;
 }

@@ -174,3 +174,21 @@ scenery clear or after block-buffer transfer. The attempted partial connection
 was rejected because it changed owner-local block-buffer state for unsupported
 families. Other object families and the retained bulk preload remain deferred;
 this change does not claim that their pixels or collision output are translated.
+
+## T10 S1 P6 Small Blocks And Columns
+
+The parser owner now translates the static metatile portions of normal question
+and brick blocks, coin rows, brick columns, and solid-block columns. Their
+address owners are `$4014-$4020`, `$4054-$4091`, and `$4179-$4201`. The
+ROM-free parser test proves that small and vertical objects render once while
+retaining an empty `AreaObjectLength` slot; horizontal rows alone create and
+count down a persistent length. The handlers remain off the formal column path
+until the object-family set is complete.
+
+### Similar-Issue Sweep
+
+The object decoder and parser handler were checked for treating the second
+byte's d6-d4 selector as a length or treating every rendered object as
+persistent. Small blocks and vertical columns now leave their slot at `ff`;
+horizontal rows retain the low-nibble length. Animated block effects, pipes,
+style objects, and special rows remain deferred.
