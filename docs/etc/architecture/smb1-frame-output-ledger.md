@@ -484,3 +484,24 @@ the `$2000` arrangement but does not write the display-mask mirror; cold boot
 alone initializes that field. The snapshot smoke test covers preservation,
 and the owner-local phase probe now observes `$2001=$06` at local screen task
 one, matching the recorded disabled-screen reference phase.
+
+## T10 S1 P25 Live Coin and Score Status Commands
+
+The missing `GiveOneCoin`/`AddToScore` continuation is translated from
+`PrintStatusBarNumbers` at `$8ebe-$8ef7`. Coin collection, brick score, and
+floatey-score settlement now append the source's two commands to
+`VRAM_Buffer1`: current-player coins at `$206d` followed by the six-digit
+score at `$2062`. The selector offsets are source-derived: Mario reads coin
+digits 22--23 and score digits 6--11 from `DisplayDigits`; Luigi reads
+28--29 and 12--17. The initial bottom-status writer uses the same corrected
+coin offsets. The first emitted zero score digit becomes tile `$24`, as in
+the ROM.
+
+The core smoke test checks the queued bytes and applies them through the NMI
+command consumer, proving the two live values reach the canonical name table.
+
+### Similar-Issue Sweep
+
+The timer remains its own selector `$a4` command and may share a pending NMI
+list. This repair does not draw the coin or score sprites, produce OAM, or
+interpret presentation on the host; those boundaries remain T11 work.

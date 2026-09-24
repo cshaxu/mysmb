@@ -1804,6 +1804,7 @@ void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
                 (mysmb_u8)(score & 0x0fU);
             mysmb_objects_apply_digit_modifier(game,
                 game->ram[MYSMB_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
+            (void)mysmb_area_queue_score_coin_status(game);
         }
         game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
         if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
@@ -2763,6 +2764,7 @@ void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
     }
     game->ram[MYSMB_DIGIT_MODIFIER + 4U] = 2U;
     mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x0bU : 0x11U);
+    (void)mysmb_area_queue_score_coin_status(game);
 }
 
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
@@ -2826,6 +2828,7 @@ static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
     mysmb_objects_apply_digit_modifier(game,
                                        game->ram[MYSMB_CURRENT_PLAYER] == 0U ?
                                        0x0bU : 0x11U);
+    (void)mysmb_area_queue_score_coin_status(game);
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
 }
 

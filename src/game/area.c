@@ -321,7 +321,8 @@ mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
     game->ram[0x0301U + offset++] = 0x20U;
     game->ram[0x0301U + offset++] = 0x6dU;
     game->ram[0x0301U + offset++] = 2U;
-    index = (mysmb_u8)(player != 0U ? 28U : 16U);
+    /* StatusBarOffset selector 3/4 points at DisplayDigits 22/28. */
+    index = (mysmb_u8)(player != 0U ? 28U : 22U);
     game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
     game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index];
     game->ram[0x0301U + offset++] = 0x20U;
@@ -353,6 +354,57 @@ mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game)
         game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 1U];
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
         game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 2U];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
+/* Translation of ROM $8ebe-$8ef7 PrintStatusBarNumbers, invoked through
+ * StatusBarNybbles $02/$13 by GiveOneCoin and AddToScore.  Unlike the
+ * initial status writer, this appends to a command list already waiting for
+ * NMI.  The source changes the first score digit to blank after emitting it
+ * when it is zero; retain that byte-level rule in the queued command. */
+mysmb_u8 mysmb_area_queue_score_coin_status(struct mysmb_game *game)
+{
+    static const mysmb_u8 status_low[6] = {
+        0xf0U, 0x62U, 0x62U, 0x6dU, 0x6dU, 0x7aU
+    };
+    static const mysmb_u8 status_length[6] = {
+        6U, 6U, 6U, 2U, 2U, 3U
+    };
+    static const mysmb_u8 status_offset[6] = {
+        6U, 12U, 18U, 24U, 30U, 36U
+    };
+    mysmb_u8 player;
+    mysmb_u8 coin_selector;
+    mysmb_u8 score_selector;
+    mysmb_u8 selector;
+    mysmb_u8 offset;
+    mysmb_u8 digit;
+    mysmb_u8 index;
+
+    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
+    if (offset > 0xf1U) return 0U;
+    player = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PLAYER] & 1U);
+    coin_selector = player != 0U ? 4U : 3U;
+    score_selector = player != 0U ? 2U : 1U;
+    for (index = 0U; index < 2U; ++index) {
+        selector = index == 0U ? coin_selector : score_selector;
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x20U;
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+            status_low[selector];
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+            status_length[selector];
+        digit = (mysmb_u8)(status_offset[selector] - status_length[selector]);
+        while (digit < status_offset[selector]) {
+            game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+                game->ram[(mysmb_u16)(MYSMB_AREA_DISPLAY_DIGITS + digit)];
+            digit++;
+        }
+    }
+    if (game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] == 0U) {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] = 0x24U;
+    }
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;

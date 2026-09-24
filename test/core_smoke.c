@@ -956,11 +956,26 @@ int main(void)
     game.ram[0x0770U] = 1U;
     game.ram[0x0753U] = 0U;
     game.ram[0x05f2U] = 0xc2U;
+    game.ram[0x0300U] = 0U;
+    game.ram[0x0301U] = 0U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
     if (game.ram[0x05f2U] != 0U || game.ram[0x0748U] != 1U ||
         game.ram[0x075eU] != 1U || game.ram[0x07eeU] != 1U ||
         game.ram[0x07e1U] != 2U || game.ram[0x0134U] != 0U ||
         game.ram[0x0139U] != 0U) return 1;
+    if (game.ram[0x0300U] != 14U || game.ram[0x0301U] != 0x20U ||
+        game.ram[0x0302U] != 0x6dU || game.ram[0x0303U] != 2U ||
+        game.ram[0x0304U] != game.ram[0x07edU] ||
+        game.ram[0x0305U] != game.ram[0x07eeU] ||
+        game.ram[0x0306U] != 0x20U || game.ram[0x0307U] != 0x62U ||
+        game.ram[0x0308U] != 6U || game.ram[0x0309U] != 0x24U ||
+        game.ram[0x030fU] != 0U) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 15U) == 0U ||
+        game.name_table[0][0x006dU] != game.ram[0x07edU] ||
+        game.name_table[0][0x006eU] != game.ram[0x07eeU] ||
+        game.name_table[0][0x0062U] != 0x24U) return 1;
+    game.ram[0x0300U] = 0U;
+    game.ram[0x0301U] = 0U;
     game.ram[0x075eU] = 99U;
     game.ram[0x075aU] = 2U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
