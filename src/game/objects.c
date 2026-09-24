@@ -2294,6 +2294,7 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
                                              (mysmb_u8)(0U - horizontal)));
             ball_y = (mysmb_u8)(anchor_y + ((mirror_bits & 2U) != 0U ? vertical :
                                              (mysmb_u8)(0U - vertical)));
+            mysmb_objects_draw_firebar_ball(game, slot, ball, ball_x, ball_y, anchor_y);
             if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U ||
                 game->ram[MYSMB_TIMER_CONTROL] != 0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
                 ball_x >= 0xf0U) continue;

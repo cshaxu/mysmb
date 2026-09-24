@@ -114,7 +114,7 @@ static COLORREF mysmb_win32_nes_color(mysmb_u8 index)
 static COLORREF mysmb_win32_background_color(unsigned char palette,
                                               unsigned char color)
 {
-    return mysmb_win32_nes_color(g_game.palette[(palette << 2U) + color]);
+    return mysmb_win32_nes_color(g_game.palette[color == 0U ? 0U : (palette << 2U) + color]);
 }
 
 static COLORREF mysmb_win32_sprite_color(unsigned char palette,
@@ -199,7 +199,7 @@ static void mysmb_win32_draw_oam(void)
     unsigned char high;
     unsigned char color;
 
-    for (sprite = 64U; sprite != 0U; --sprite) {
+    for (sprite = 64U; sprite != 0U;) {
         --sprite;
         y = g_game.visible_oam[sprite * 4U] + 1U;
         tile = g_game.visible_oam[sprite * 4U + 1U];

@@ -63,6 +63,7 @@ void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game);
 void mysmb_objects_step_flying_cheep_frenzy(struct mysmb_game *game);
 /* ROM InitShortFirebar/InitLongFirebar and ProcFirebar, sans drawing. */
 void mysmb_objects_step_firebars(struct mysmb_game *game);
+void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 ball, mysmb_u8 x, mysmb_u8 y, mysmb_u8 anchor_y);
 /* ROM RunLargePlatform through RunSmallPlatform, excluding OAM ropes. */
 void mysmb_objects_step_platforms(struct mysmb_game *game);
 /* ROM InitBowser/RunBowser, excluding OAM output. */
