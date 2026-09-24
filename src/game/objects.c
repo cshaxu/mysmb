@@ -2840,15 +2840,6 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
     }
     mysmb_objects_draw_hammer(game, slot);
 }
-    mysmb_u8 oam_offset;
-    mysmb_u8 oam_base;
-    mysmb_u8 fire_tile;
-    mysmb_u8 fire_attribute;
-
-    mysmb_u8 oam_offset;
-    mysmb_u8 oam_base;
-    mysmb_u8 fire_tile;
-    mysmb_u8 fire_attribute;
 /* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
  * nine through seventeen after the player box at $04ac. */
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
