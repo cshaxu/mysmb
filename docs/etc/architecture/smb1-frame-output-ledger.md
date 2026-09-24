@@ -529,3 +529,20 @@ are tracked.
 Initial name-table and palette checksums still differ after phase alignment.
 Those differences remain T10 background-route work; this record does not
 claim frame equivalence or M2 closure.
+
+## T10 S1 P27 Initial Attribute-Table Difference Isolation
+
+The admitted 240-frame Start route was sampled at frame 202, when both
+implementations have completed the initial two-page block-buffer load while
+screen output is disabled. The two source-compatible `Block_Buffer` pages
+match byte-for-byte (512 of 512 bytes). Name-table comparison has 61 differing
+bytes: one tile byte and 60 attribute-table bytes (45 in page zero and 16 in
+page one). The differences are therefore downstream of metatile parsing.
+
+An adjacent native-frame sweep against the original frame-202 NMI record
+produced 144, 121, 89, 61, 61, and 61 differences for native frames
+199 through 204. The stable residual rejects a one-frame VRAM commit offset;
+the next owner is the attribute-byte construction/address path.
+
+All temporary original and native snapshots were deleted after these neutral
+counts were produced. No snapshot bytes or ROM-derived graphics are tracked.
