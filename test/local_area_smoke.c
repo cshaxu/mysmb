@@ -51,6 +51,13 @@ int main(void)
      * not a host palette choice. */
     if (game.palette[0U] != mysmb_local_prg[0x0ccbU] ||
         game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
+    /* Screen task 2 queues the ROM-owned top-status command stream. */
+    if (game.ram[0x0300U] == 0U || game.ram[0x0301U] != mysmb_local_prg[0x0752U] ||
+        game.ram[0x0302U] != mysmb_local_prg[0x0753U]) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U) return 1;
+    game.ram[0x0300U] = 0U;
+    if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
+        game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
     /* ColorRotation queues a $3f0c update and the following NMI commits it. */
     game.ram[0x0009U] = 0U;
     game.ram[0x06d4U] = 0U;

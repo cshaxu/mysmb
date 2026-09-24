@@ -32,10 +32,10 @@ enum {
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
-    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
-    ,MYSMB_RAM_FRAME_COUNTER = 0x0009U
-    ,MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U
-    ,MYSMB_RAM_VRAM_BUFFER1 = 0x0301U
+    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
+    MYSMB_RAM_FRAME_COUNTER = 0x0009U,
+    MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U,
+    MYSMB_RAM_VRAM_BUFFER1 = 0x0301U
 };
 
 enum {
@@ -532,6 +532,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 if (mysmb_area_parse_header(game, &area_source) != 0U) {
                     mysmb_area_render_initial_terrain(game);
                     mysmb_area_render_initial_objects(game);
+                    (void)mysmb_area_queue_top_status_line(game);
                 }
             }
         }

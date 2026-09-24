@@ -23,9 +23,11 @@ enum {
     MYSMB_AREA_WATER_PALETTE = 0x0ca4U,
     MYSMB_AREA_GROUND_PALETTE = 0x0cc8U,
     MYSMB_AREA_UNDERGROUND_PALETTE = 0x0cecU,
-    MYSMB_AREA_CASTLE_PALETTE = 0x0d10U
-    ,MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U
-    ,MYSMB_AREA_PALETTE3_DATA = 0x09d1U
+    MYSMB_AREA_CASTLE_PALETTE = 0x0d10U,
+    MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U,
+    MYSMB_AREA_PALETTE3_DATA = 0x09d1U,
+    MYSMB_AREA_GAME_TEXT = 0x0752U,
+    MYSMB_AREA_GAME_TEXT_OFFSETS = 0x07feU
 };
 
 enum {
@@ -56,11 +58,11 @@ enum {
     MYSMB_AREA_FOREGROUND = 0x0741U,
     MYSMB_AREA_BACKGROUND = 0x0742U,
     MYSMB_AREA_CLOUD_OVERRIDE = 0x0743U,
-    MYSMB_AREA_BACKGROUND_COLOR = 0x0744U
-    ,MYSMB_AREA_COLOR_ROTATE_OFFSET = 0x06d4U
-    ,MYSMB_AREA_FRAME_COUNTER = 0x0009U
-    ,MYSMB_AREA_VRAM_BUFFER1_OFFSET = 0x0300U
-    ,MYSMB_AREA_VRAM_BUFFER1 = 0x0301U
+    MYSMB_AREA_BACKGROUND_COLOR = 0x0744U,
+    MYSMB_AREA_COLOR_ROTATE_OFFSET = 0x06d4U,
+    MYSMB_AREA_FRAME_COUNTER = 0x0009U,
+    MYSMB_AREA_VRAM_BUFFER1_OFFSET = 0x0300U,
+    MYSMB_AREA_VRAM_BUFFER1 = 0x0301U
 };
 
 enum {
@@ -235,6 +237,32 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
     rotation_offset++;
     game->ram[MYSMB_AREA_COLOR_ROTATE_OFFSET] =
         rotation_offset < 6U ? rotation_offset : 0U;
+}
+
+/* Translation of ROM $8752-$882e (TopStatusBarLine/WriteGameText).  The
+ * status-text stream is ROM-owned data but remains local through area_prg.
+ * Score and coin placeholders retain their source tiles until their number
+ * writers are translated; this routine owns only the fixed command stream. */
+mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
+{
+    mysmb_u16 source;
+    mysmb_u8 offset;
+
+    if (game->area_prg == 0 || game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U ||
+        game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS) return 0U;
+    source = MYSMB_AREA_GAME_TEXT;
+    offset = 0U;
+    while (source < MYSMB_AREA_GAME_TEXT_OFFSETS &&
+           game->area_prg[source] != 0xffU) {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] =
+            game->area_prg[source];
+        source++;
+        offset++;
+    }
+    if (source == MYSMB_AREA_GAME_TEXT_OFFSETS || offset == 0U) return 0U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
 }
 
 /* ROM QuestionBlock/BrickWithItem and the horizontal brick-row subset. */

@@ -28,6 +28,8 @@ void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page);
 void mysmb_area_refresh_background_page(struct mysmb_game *game, mysmb_u8 page);
 /* ROM $89c3-$8a15: queue the every-eighth-frame palette-3 update. */
 void mysmb_area_step_palette_rotation(struct mysmb_game *game);
+/* ROM $8752-$883e: queue the fixed portion of the gameplay top status bar. */
+mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game);
 /* Advance the two-page collision window to the player page. */
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page);
 /* ROM AreaParserCore initial object pass for the two prepared block pages. */
