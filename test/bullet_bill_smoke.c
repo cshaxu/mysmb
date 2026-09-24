@@ -5,7 +5,7 @@ int main(void)
 {
     struct mysmb_game game;
 
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize(&game);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 8U;
     game.ram[0x001eU] = 0x20U;
@@ -17,7 +17,7 @@ int main(void)
     mysmb_objects_step_bullet_bills(&game);
     if (game.ram[0x00b6U] != 0U || game.ram[0x00cfU] != 0x6dU ||
         game.ram[0x00a0U] != 0xfdU || game.ram[0x0434U] != 0x1cU) return 1;
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize(&game);
     game.frame_number = 0UL;
     game.ram[0x000eU] = 8U;
     game.ram[0x006dU] = 0U;
@@ -37,7 +37,7 @@ int main(void)
     if (game.ram[0x0020U] != 0x20U || game.ram[0x00d1U] != 0x6eU ||
         game.ram[0x00a2U] != 0U || game.ram[0x0436U] != 0U ||
         game.ram[0x005aU] != 0U || game.ram[0x009fU] != 0xfdU) return 1;
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize(&game);
     game.frame_number = 0UL;
     game.ram[0x000eU] = 8U;
     game.ram[0x0086U] = 0x40U;
@@ -56,7 +56,7 @@ int main(void)
     if (game.ram[0x0020U] != 0x20U || game.ram[0x00d1U] != 0x6eU ||
         game.ram[0x00a2U] != 0U || game.ram[0x0436U] != 0U ||
         game.ram[0x005aU] != 0U || game.ram[0x009fU] != 0xfdU) return 1;
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize(&game);
     game.frame_number = 0UL;
     game.ram[0x000eU] = 8U;
     game.ram[0x0086U] = 0x40U;
@@ -73,7 +73,7 @@ int main(void)
     game.ram[0x049bU] = 9U;
     mysmb_objects_check_bullet_bill_stomp(&game);
     if (game.ram[0x0020U] != 0U || game.ram[0x009fU] != 1U || game.ram[0x0493U] != 0U) return 1;
-    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_game_initialize(&game);
     game.frame_number = 0UL;
     game.ram[0x000eU] = 8U;
     game.ram[0x006dU] = 0U;

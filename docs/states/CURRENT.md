@@ -28,7 +28,7 @@
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
 | Expected Markers | Measured host facts, three route outcomes, timing samples, and VGA/text observations. |
-| Asset Needs | Owner authorized a local SoftPC executable, adjacent configuration, and a bootable DOS floppy solely as an untracked compatibility probe. Their redistributability is not reviewed; copied media and every injected binary remain outside this repository, are used only for the bounded host run, and are never committed, published, or treated as physical-host evidence. |
+| Asset Needs | Owner authorized a local SoftPC executable, adjacent configuration, bootable DOS floppy, and SMB1 ROM. The ROM is owner-supplied and non-redistributable; it may generate an ignored local Win32 package solely for this compatibility probe. Copied media and every injected or ROM-bound binary remain outside this repository, are never committed or published, and are never treated as physical-host evidence. |
 | Reporting Requirements | Record machine/DOS/VGA facts, measured route checkpoints, all deviations, and any missing physical-host capability before closure. |
 | Stop Conditions | Stop and revise scope if qualification lacks actual physical measurement, requires unreviewed media, changes gameplay behavior, or embeds protected data. |
 | Exit Criteria | The physical host completes the protocol with recorded observations, or the exact physical-host access gap is recorded. |
