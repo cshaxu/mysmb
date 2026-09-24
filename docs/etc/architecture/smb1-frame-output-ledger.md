@@ -1873,3 +1873,28 @@ now owns both source writes.  `mysmb_area_load_pointers` remains the separate
 area-table initializer for `$0750`, and the player pipe route separately clears
 `$0751` after consuming an entry.  No second discarded row-$0e path or
 host-owned substitute was found.
+
+## T11 S1 P8 Enemy Stream Page-Select Latch
+
+ROM `ProcessEnemyData`/`CheckRightBounds` treats bit 7 of an enemy record's
+second byte as a page transition: when `EnemyObjectPageSel` is clear, it sets
+that latch and increments `EnemyObjectPageLoc`.  Native C incremented `$073a`
+but omitted the `$073b` latch.  A record outside the extended right boundary
+was consequently revisited every frame and advanced the native page repeatedly.
+`mysmb_area_spawn_next_enemy` now sets `$073b` before incrementing `$073a`.
+The enemy-stream smoke verifies that the `$8b,$86` record advances page 1 to 2
+once, keeps its stream cursor unchanged while it remains out of range, and
+does not advance again on the next call.
+
+On the same reproducible 380-sample owner-ROM route recorded for P7, CPU-RAM
+differences fall from 68,344 to 68,155 and working-RAM differences from 2,052
+to 1,863.  CPU OAM backing RAM, visible OAM, both CIRAM pages, palette, and
+all PPU scalar fields remain exact.
+
+### Similar-Issue Sweep
+
+The matched listing and all production/test references to `EnemyObjectPageSel`,
+`EnemyObjectPageLoc`, `$073a`, and `$073b` were reviewed.  The native enemy
+stream has one bit-7 transition owner and now preserves both writes.  Row-$0f
+absolute page controls and row-$0e area entries retain their separate owners;
+no other repeated bit-7 page increment or host-owned page state was found.

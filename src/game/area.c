@@ -685,7 +685,10 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         }
         if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
         second = source->prg[address + 1U];
-        if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
+        if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT]++;
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
+        }
         row = (mysmb_u8)(first & 0x0fU);
         if (row >= 0x0eU || ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U)) {
             /* ROM ParseRow0e consumes a three-byte area-entry record.  It

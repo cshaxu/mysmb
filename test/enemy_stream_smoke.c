@@ -32,5 +32,19 @@ int main(void)
     if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x0751U] != 0U ||
         game.ram[0x0739U] != 3U || game.ram[0x073bU] != 0U) return 1;
+
+    prg[0x20U] = 0x8bU;
+    prg[0x21U] = 0x86U;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 1U;
+    game.ram[0x073bU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0x30U;
+    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+        game.ram[0x0739U] != 0U || game.ram[0x073aU] != 2U ||
+        game.ram[0x073bU] != 1U) return 1;
+    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+        game.ram[0x0739U] != 0U || game.ram[0x073aU] != 2U ||
+        game.ram[0x073bU] != 1U) return 1;
     return 0;
 }
