@@ -1,6 +1,7 @@
 #include <windows.h>
 
 #include "game/game.h"
+#include "game/render.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -12,6 +13,7 @@
 
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
+static struct mysmb_render_frame g_render_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 
@@ -89,7 +91,7 @@ static void mysmb_win32_paint(HWND window)
 #endif
     sky = CreateSolidBrush(RGB(92, 148, 252));
     ground = CreateSolidBrush(RGB(0, 168, 0));
-    actor = CreateSolidBrush(g_frame.start_pressed != 0U ? RGB(255, 216, 0) : RGB(220, 48, 32));
+    actor = CreateSolidBrush(RGB(220, 48, 32));
 
     rect.left = 0;
     rect.top = 0;
@@ -100,11 +102,14 @@ static void mysmb_win32_paint(HWND window)
     rect.top = 200 * MYSMB_SCALE;
     FillRect(dc, &rect, ground);
 
-    rect.left = (int)g_frame.sprite0_x * MYSMB_SCALE;
-    rect.top = (int)g_frame.sprite0_y * MYSMB_SCALE;
-    rect.right = rect.left + (16 * MYSMB_SCALE);
-    rect.bottom = rect.top + (16 * MYSMB_SCALE);
-    FillRect(dc, &rect, actor);
+    if (g_render_frame.command_count > MYSMB_RENDER_TILE_ROWS &&
+        g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].kind == MYSMB_RENDER_COMMAND_ACTOR) {
+        rect.left = (int)g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].x * MYSMB_SCALE;
+        rect.top = (int)g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].y * MYSMB_SCALE;
+        rect.right = rect.left + (16 * MYSMB_SCALE);
+        rect.bottom = rect.top + (16 * MYSMB_SCALE);
+        FillRect(dc, &rect, actor);
+    }
 
     DeleteObject(actor);
     DeleteObject(ground);
@@ -150,6 +155,7 @@ static void mysmb_win32_step(HWND window)
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
     }
     mysmb_game_tick(&g_game, &input, &g_frame);
+    mysmb_render_build(&g_game, &g_render_frame);
     InvalidateRect(window, NULL, FALSE);
 }
 
@@ -195,6 +201,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     }
 #endif
     ZeroMemory(&g_frame, sizeof(g_frame));
+    mysmb_render_build(&g_game, &g_render_frame);
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,

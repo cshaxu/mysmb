@@ -2,6 +2,7 @@
 #include "game/area.h"
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/render.h"
 
 int main(void)
 {
@@ -12,6 +13,7 @@ int main(void)
     struct mysmb_area_source area_source;
     struct mysmb_area_object area_object;
     struct mysmb_player_terrain terrain;
+    struct mysmb_render_frame render_frame;
     static mysmb_u8 area_prg[0x2000U];
     const mysmb_u8 title_commands[] = {
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
@@ -44,6 +46,13 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    mysmb_render_build(&game, &render_frame);
+    if (render_frame.command_count != MYSMB_RENDER_TILE_ROWS ||
+        render_frame.commands[0].kind != MYSMB_RENDER_COMMAND_TILE_ROW ||
+        render_frame.commands[0].length != MYSMB_RENDER_TILE_COLUMNS ||
+        render_frame.tile_data[0] != 0x24U) {
+        return 1;
+    }
     if (game.ram[0x0754U] != 1U || game.ram[0x075aU] != 2U ||
         game.ram[0x0761U] != 2U) {
         return 1;
