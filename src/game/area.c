@@ -922,7 +922,7 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
     value = (mysmb_u8)(second >> 6U);
     game->ram[MYSMB_AREA_CLOUD_OVERRIDE] = value == 3U ? value : 0U;
     game->ram[MYSMB_AREA_STYLE] = value == 3U ? 0U : value;
-    (void)mysmb_area_apply_palette(game, game->ram[MYSMB_AREA_TYPE]);
+    /* Static palettes are selected by ScreenRoutines and committed by NMI. */
     address = (mysmb_u16)(address + 2U);
     game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
     game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));

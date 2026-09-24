@@ -774,3 +774,24 @@ committed address. CPU RAM and OAM still differ in the gameplay window. OAM
 is T11 ownership; RAM differences require field-by-field ownership before
 they can be assigned to T10 or a later task. This comparator replaces
 summary-hash claims for all subsequent M2 frame evidence.
+
+## T10 S1 P38 Static Screen-Routine Palette Chain
+
+The source ScreenRoutines chain at `$8567-$864c` does not make a static
+palette visible when the area header is parsed. `InitScreen` selects its
+initial static stream through the address-control table, `SetupIntermediate`
+queues player colors, and `GetAreaPalette` later selects the final area stream.
+NMI `UpdateScreen` owns each selected stream's visible transfer.
+
+The native route now preserves that ownership: area-header parsing leaves
+palette transfer pending; screen tasks 0 and 9 select the source-defined
+static table entries; and the translated NMI buffer transfer consumes entries
+1--4 before ordinary buffer paths. A local timing smoke test reaches the
+post-SecondaryGameSetup NMI boundary before checking the resulting palette,
+rather than treating the header parser as a PPU writer.
+
+The owner-local 0--239 Start route reduced palette byte differences from
+2,432 to 673 while retaining the existing exact 240--379 gameplay palette,
+CIRAM, and PPU-scalar window. The remaining title/intermediate palette
+differences are separate screen-task and title-path owners; they are not
+hidden by a direct header write.

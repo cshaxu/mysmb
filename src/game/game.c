@@ -44,7 +44,8 @@ enum {
     MYSMB_RAM_PARSER_TASK = 0x071fU,
     MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU,
     MYSMB_RAM_HORIZONTAL_SCROLL = 0x073fU,
-    MYSMB_RAM_VERTICAL_SCROLL = 0x0740U
+    MYSMB_RAM_VERTICAL_SCROLL = 0x0740U,
+    MYSMB_RAM_AREA_TYPE = 0x074eU
 };
 
 enum {
@@ -497,6 +498,9 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
     case 0U:
         mysmb_game_move_all_sprites_offscreen(game);
         mysmb_game_initialize_name_tables(game);
+        /* ROM InitScreen selects the initial static palette through the
+         * $0773 address-control table; the following NMI owns its transfer. */
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 3U;
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 1U;
         break;
     case 1U:
@@ -553,6 +557,10 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         }
         break;
     case 9U:
+        /* ROM GetAreaPalette selects the final area stream for the next
+         * NMI after AreaParserTaskControl has completed. */
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] =
+            (mysmb_u8)(game->ram[MYSMB_RAM_AREA_TYPE] + 1U);
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 10U;
         break;
     case 10U:
@@ -657,6 +665,13 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
  * cleared only after its terminal command has reached PPU-visible state. */
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
 {
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 1U &&
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 4U) {
+        (void)mysmb_area_apply_palette(game, (mysmb_u8)(
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] - 1U));
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
+        return;
+    }
     if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) {
         if (game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] != 0U) {
             (void)mysmb_game_apply_vram_commands(game,

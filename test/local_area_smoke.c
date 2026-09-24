@@ -53,10 +53,6 @@ int main(void)
         game.name_table[0][0x0341U] != mysmb_local_prg[(mysmb_u16)(graphics + 2U)] ||
         game.name_table[0][0x0360U] != mysmb_local_prg[(mysmb_u16)(graphics + 1U)] ||
         game.name_table[0][0x0361U] != mysmb_local_prg[(mysmb_u16)(graphics + 3U)]) return 1;
-    /* The ground stream supplies most entries, while the later ROM $85f1
-     * `$3f10` write aliases the universal slot at index zero. */
-    if (game.palette[0U] != mysmb_local_prg[0x05d0U] ||
-        game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
     /* Screen task 2 has already committed the ROM-owned top status stream. */
     if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
         game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
