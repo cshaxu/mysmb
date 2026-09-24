@@ -54,6 +54,21 @@ int main(void)
         game.ram[0x0456U] != 0x28U || game.ram[0x0702U] != 0xe4U) {
         return 1;
     }
+    /* X_Physics branches straight to GetXPhy while airborne at $19 or
+     * faster.  RunningSpeed and the $21 check are not reached on that path. */
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0700U] = 0x21U;
+    game.ram[0x0703U] = 1U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x0783U] = 0U;
+    game.ram[0x000eU] = 0U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    mysmb_player_configure_horizontal(&game);
+    if (game.ram[0x0450U] != 0xd8U || game.ram[0x0456U] != 0x28U ||
+        game.ram[0x0701U] != 0U || game.ram[0x0702U] != 0xe4U) {
+        return 1;
+    }
     game.ram[0x0700U] = 0x0aU;
     game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x0033U] = MYSMB_BUTTON_LEFT;

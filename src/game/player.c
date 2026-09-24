@@ -399,9 +399,11 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
     mysmb_u8 speed_index;
     mysmb_u8 friction_index;
     mysmb_u8 friction_value;
+    mysmb_u8 check_fast_friction;
 
     speed_index = 0U;
     friction_index = 0U;
+    check_fast_friction = 0U;
     if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
         speed_index = 1U;
         if (game->ram[MYSMB_AREA_TYPE] != 0U) {
@@ -419,13 +421,19 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game)
         }
         speed_index++;
         friction_index++;
+        check_fast_friction = 1U;
     }
     else if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] < 0x19U) {
         speed_index++;
         friction_index++;
+        check_fast_friction = 1U;
     }
-    if (game->ram[MYSMB_RUNNING_SPEED] != 0U ||
-        game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U) {
+    /* X_Physics reaches FastXSp only through ChkRFast.  An airborne player
+     * already at $19 or faster branches directly to GetXPhy and retains
+     * FrictionData[0], even when its absolute speed is at least $21. */
+    if (check_fast_friction != 0U &&
+        (game->ram[MYSMB_RUNNING_SPEED] != 0U ||
+         game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 0x21U)) {
         friction_index++;
     }
 configure_limits:

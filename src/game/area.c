@@ -717,6 +717,10 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+        /* InitGoomba calls InitNormalEnemy, then SmallBBox. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 6U) {
+            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+        }
         /* ROM InitHammerBro.  Its independent movement route owns the
          * jump/throw timers after this source-side object initialization. */
         if (game->ram[MYSMB_ENEMY_ID + slot] == 5U) {

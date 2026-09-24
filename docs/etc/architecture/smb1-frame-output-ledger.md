@@ -1296,3 +1296,26 @@ and the masked block state. The repaired 600-sample route has exact CIRAM
 pages, palette, PPU control, mask, selected name table, scroll pair, and
 reconstructed PPU address. CPU RAM and OAM differences remain deferred T11
 ownership. Raw captures were discarded after this neutral summary.
+
+## T10 S1 P70 Sprint-Hop Physics And Goomba Initialization Sweep
+
+A bounded owner-local route selects Start on frame 40, releases it on frame
+42, then alternates short Right-plus-A-plus-B presses through sample 599. Its
+initial comparison found two source-control defects before the first visible
+background difference. `X_Physics` reaches `FastXSp` only through `ChkRFast`:
+an airborne player already at absolute speed `$19` branches straight to
+`GetXPhy` and retains `FrictionData[0]=$e4`. The C implementation had applied
+the later running-speed / `$21` condition to that unreachable branch.
+
+The same route then exposed an early stomp of enemy ID `$06`. ROM
+`InitGoomba` runs `InitNormalEnemy` and then `SmallBBox`, setting
+`Enemy_BoundBoxCtrl=$09`; the generic C initializer had left `$03`. Its taller
+collision box changed the stomp frame and the following jump trajectory. The
+translation now keeps the source friction reachability and applies the Goomba
+bounding-box override. The complete 38-test ROM-enabled suite passes.
+
+The repair moves the first name-table difference from sample 369 to sample
+391. At that point player position, scroll, palette, and every compared PPU
+scalar are equal; the remaining difference is a newly generated name-table
+column. It remains a T10 area-column/commit owner and is not an exact-route or
+M2-closure claim. Raw captures were discarded after this neutral summary.
