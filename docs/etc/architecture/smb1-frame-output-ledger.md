@@ -674,3 +674,38 @@ ROM-free snapshot smoke asserts `$94` after a vertical command. At frame 376
 the original returns d2 to zero through its next horizontal command while the
 native route still retains it. This remaining queue-consumption difference is
 open T10 work; the fix does not claim full right-route equality.
+
+## T10 S1 P34 Recorder Boundary Audit And Timer Ordering
+
+The recorder samples at the NMI RTI, not at every physical PPU frame. Its
+`frame_revision` therefore has to be strictly increasing, but it is not a
+contiguous frame-index contract while NMI output is not enabled. A bounded
+boot/title probe observed revision transitions `11 -> 13` at sample 6 and
+`47 -> 49` at sample 41. These are gaps in an NMI-RTI sample sequence, not
+duplicate records. The prior duplicate filter remains necessary: it rejects a
+second sample at the same NMI RTI with the same revision.
+
+Consequently, the recorder sample ordinal must never be used as a physical
+PPU-frame index. A native/reference comparison must declare its NMI boundary,
+reference revision, input phase, and semantic milestone before comparing
+state. The former ordinal-only timer and right-scroll comparisons are
+diagnostic leads, not frame-equivalence evidence.
+
+The local summary now exposes the source-owned scheduler bytes needed to make
+that alignment reviewable: `$073c`, `$0747`, `$077f`, `$0787`, `$07a0`, the
+three game-timer digits, and the pending VRAM-buffer header. During this
+audit, `RunGameTimer` was moved after the translated game-engine dispatcher:
+the source state can enter subroutine 8 and load its first 24-frame game
+timer interval in that same NMI-owned frame. This preserves the ROM-observed
+state dependency, but does not establish an ordinal match until the revised
+comparison contract is exercised.
+
+### Similar-Issue Sweep
+
+The scheduler sweep covered every production caller of `mysmb_game_run_timer`,
+the shared timer decrement owner, the screen-task timer state, and the
+owner-local summary. `game.c` has one timer-route caller, so no parallel
+production ordering path remains. The summary is test-only and contains no
+ROM data. The ROM-free suite passed 34 of 34 tests after the change, and the
+Win32 x86 Debug target built successfully. No OAM producer, host renderer, or
+runtime reference dependency changed.

@@ -757,9 +757,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_commit_vram_buffer(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
-    if (mysmb_game_run_timer(game) != 0U) {
-        (void)mysmb_area_queue_timer_status(game);
-    }
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
@@ -893,6 +890,12 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
          * zero horizontal input and the KillPlayer-cleared speed. */
         game->ram[MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
         mysmb_game_step_area_parser(game);
+    }
+    /* GameEngine may advance the entrance dispatcher to subroutine 8 on this
+     * frame.  The ROM's game-timer pass observes that new state, so it can
+     * load its first 24-frame interval without an extra frame of delay. */
+    if (mysmb_game_run_timer(game) != 0U) {
+        (void)mysmb_area_queue_timer_status(game);
     }
     mysmb_game_commit_display_state(game);
     frame->sprite0_y = game->ram[0x0200U];

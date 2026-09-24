@@ -80,7 +80,9 @@ int main(int argument_count, char **arguments)
            "ppu_name_table,scroll_x,scroll_y,screen_left_page,screen_left_x,"
            "player_page,player_x,player_pos_for_scroll,player_x_scroll,"
            "player_x_speed,player_facing,player_moving_direction,"
-           "player_x_force,friction_high,friction_low,game_engine_subroutine,"
+           "player_x_force,friction_high,friction_low,game_engine_subroutine,screen_routine_task,screen_timer,timer_control,interval_timer_control,"
+           "game_timer_control,game_timer_hundreds,game_timer_tens,game_timer_ones,"
+           "vram_buffer_offset,vram_header_0,vram_header_1,vram_header_2,"
            "ppu_address,ciram_fnv1a,"
            "palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
@@ -93,7 +95,9 @@ int main(int argument_count, char **arguments)
         mysmb_frame_snapshot_capture(&game, &snapshot);
         hash = mysmb_summary_hash(snapshot.name_table[0], 0x0400U, 2166136261UL);
         hash = mysmb_summary_hash(snapshot.name_table[1], 0x0400U, hash);
-        printf("%lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%04x,%08lx,",
+        printf("%lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,"
+               "%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,"
+               "%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%04x,%08lx,",
                index, (unsigned int)frame.operating_mode,
                (unsigned int)frame.operating_mode_task,
                (unsigned int)game.ram[0x0778U],
@@ -119,6 +123,18 @@ int main(int argument_count, char **arguments)
                (unsigned int)game.ram[0x0701U],
                (unsigned int)game.ram[0x0702U],
                (unsigned int)game.ram[0x000eU],
+               (unsigned int)game.ram[0x073cU],
+               (unsigned int)game.ram[0x07a0U],
+               (unsigned int)game.ram[0x0747U],
+               (unsigned int)game.ram[0x077fU],
+               (unsigned int)game.ram[0x0787U],
+               (unsigned int)game.ram[0x07f8U],
+               (unsigned int)game.ram[0x07f9U],
+               (unsigned int)game.ram[0x07faU],
+               (unsigned int)game.ram[0x0300U],
+               (unsigned int)game.ram[0x0301U],
+               (unsigned int)game.ram[0x0302U],
+               (unsigned int)game.ram[0x0303U],
                (unsigned int)snapshot.ppu_address, hash);
         hash = mysmb_summary_hash(snapshot.palette, 0x20U, 2166136261UL);
         printf("%08lx,", hash);
