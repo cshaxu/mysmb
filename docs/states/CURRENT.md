@@ -41,6 +41,12 @@
 | --- | --- |
 | T1 | The physical 486SX qualification protocol defines build identity, host facts, scripted routes, timing samples, and acceptance evidence without any fabricated measurement. [History](../history/M4-T1-486sx-qualification-protocol.md). |
 
+## Current M4 Evidence
+
+- An isolated SoftPC compatibility probe booted the ROM-free DOS MZ for a
+  bounded fifteen seconds without host-process exit. It is not physical-host,
+  performance, visual, or gameplay evidence. [Record](../history/M4-T2-S1-softpc-compatibility-probe.md).
+
 ## Recent M3 Closures
 
 | Task | Compact result |
