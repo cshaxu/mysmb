@@ -1163,6 +1163,24 @@ world-1 retainer message, the world-8 princess message and music boundary, and
 the final world-select stream directly against their PRG command tiles. Bridge
 metatile replacement remains a separate T10 owner.
 
+## T10 S1 P63 Bridge-Collapse Name-Table Output
+
+Victory-mode task zero is `BridgeCollapse` at ROM `$d8aa-$d91d`, not an
+immediate handoff to the victory walk. While Bowser is alive, every fourth
+call removes the next axe, chain, or bridge metatile by appending two
+two-tile blank commands to `VRAM_Buffer1`; the following NMI makes those
+commands visible. Native C skipped task zero entirely, so the castle bridge
+never changed in its portable name-table snapshot.
+
+The translated owner uses the original 15-entry `$1a,$58,$98..$80` address
+sequence, four-call feet timer, blank metatile command form, collapse audio
+queues, and defeated-Bowser transition before allowing victory mode to advance.
+The Bowser smoke verifies the first queued pair and its following NMI name-table
+updates, plus the final entry's defeated state and end handoff. The related
+block-replacement writer was searched: it owns only bouncing blocks and keeps
+its separate buffer form; no duplicate bridge path remains. OAM rendering of
+Bowser remains T11 ownership.
+
 ## T10 S1 P60 Title-Area Display Evidence
 
 Title `ScreenRoutines` task 8 first invokes the title demo area's ordinary

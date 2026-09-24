@@ -6,6 +6,8 @@ int main(void)
 {
     struct mysmb_game game;
     struct mysmb_area_source source;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
     mysmb_u8 bowser_data[2] = { 0U, 45U };
 
     /* InitBowser establishes the front-half state owners; its rear half is
@@ -78,5 +80,42 @@ int main(void)
     if (game.ram[0x0483U] != 0U || game.ram[0x0016U] != 6U ||
         game.ram[0x001eU] != 0x23U || game.ram[0x00a0U] != 0xfeU ||
         game.ram[0x0024U] != 0x80U) return 4;
+
+    /* BridgeCollapse erases its axe/chain/bridge metatiles in the ordinary
+     * NMI buffer, two name-table rows at a time, every four calls. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0368U] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 45U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0364U] = 1U;
+    if (mysmb_objects_step_bridge_collapse(&game) != 0U ||
+        game.ram[0x0300U] != 10U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0302U] != 0x1aU || game.ram[0x0303U] != 2U ||
+        game.ram[0x0304U] != 0x24U || game.ram[0x0305U] != 0x24U ||
+        game.ram[0x0306U] != 0x22U || game.ram[0x0307U] != 0x3aU ||
+        game.ram[0x030aU] != 0x24U || game.ram[0x030bU] != 0U ||
+        game.ram[0x0369U] != 1U || game.ram[0x00feU] != 8U ||
+        game.ram[0x00fdU] != 1U) return 5;
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 1U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.name_table[0U][0x021aU] != 0x24U ||
+        game.name_table[0U][0x023aU] != 0x24U) return 6;
+
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0368U] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 45U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0364U] = 1U;
+    game.ram[0x0369U] = 14U;
+    if (mysmb_objects_step_bridge_collapse(&game) != 0U ||
+        game.ram[0x0369U] != 15U || game.ram[0x001eU] != 0x40U ||
+        game.ram[0x00feU] != 0x80U) return 7;
+    game.ram[0x00cfU] = 0xe0U;
+    if (mysmb_objects_step_bridge_collapse(&game) == 0U ||
+        game.ram[0x000fU] != 0U || game.ram[0x00fcU] != 0x80U) return 8;
     return 0;
 }

@@ -301,7 +301,8 @@ static void mysmb_game_step_game_over(struct mysmb_game *game)
 static void mysmb_game_step_victory(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+        if (mysmb_objects_step_bridge_collapse(game) != 0U)
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
         return;
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
