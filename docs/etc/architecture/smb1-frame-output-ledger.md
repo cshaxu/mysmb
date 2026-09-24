@@ -89,11 +89,24 @@ terrain selector. The project-owned smoke test uses synthetic table data to
 cover background placement, foreground overwrite, terrain bits, cloud terrain
 exception, and the four `BlockBuffLowBounds` filters.
 
-This part is intentionally not wired to the gameplay tick yet. `ProcessAreaData`,
-the original eight-step `AreaParserTaskHandler`, `VRAM_Buffer2` writes, and
-attribute submission are still separate T10 work. Therefore it changes none
-of the partial/disqualification conclusions above and is not frame-equivalence
-evidence.
+This part was initially isolated for unit testing. P2 now connects the original
+eight-step `AreaParserTaskHandler`, `$0341` `VRAM_Buffer2` column/attribute
+commands, `$0773` buffer selection, and the next-NMI transfer to screen task
+8. It remains partial: `ProcessAreaData` and its persistent object state are
+not yet part of that parser core, so the pre-existing bounded object preload
+still runs after the source-ordered scenery/terrain sets complete. This is not
+frame-equivalence evidence.
+
+### P2 Reference Check
+
+A bounded owner-local 30-frame recorder probe sampled the original at the NMI
+RTI under neutral input. During screen task 8, the original parser advances
+`CurrentPageLoc`, `CurrentColumnPos`, `BlockBufferColumnPos`, and `ColumnSets`
+as `00/00/00/0b` through `01/08/18/ff`. The native task control now follows
+that same 12-set progression. A separate ten-frame probe established that the
+first completed set fills terrain in physical columns zero and one; this caught
+and corrected a reversed `JumpEngine` dispatch interpretation. Raw owner-ROM
+traces were deleted after this neutral summary.
 
 ### Similar-Issue Sweep
 
@@ -102,6 +115,7 @@ generation, one-object-per-frame output, parser-task state, and physical block
 buffer writes. `mysmb_area_render_initial_terrain`,
 `mysmb_area_render_terrain_page`, `mysmb_area_render_initial_objects`,
 `mysmb_area_emit_next_command`, and `mysmb_area_prepare_player_pages` remain
-the older bulk or bounded routes. They are deliberately retained until the
-task scheduler and object parser can replace them together; none is claimed as
-the original incremental parser path.
+the older bulk or bounded routes. Task 8 no longer calls the terrain bulk
+route. The bounded object preload remains only until `ProcessAreaData` replaces
+it; none of these retained paths is claimed as the original incremental parser
+path.

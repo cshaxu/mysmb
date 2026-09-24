@@ -29,6 +29,10 @@ void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page);
 /* ROM $92f7-$9376 AreaParserCore scenery/terrain pass for one physical column.
  * Object-stream processing and VRAM-buffer scheduling remain separate owners. */
 mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game);
+/* ROM $92b0-$92e8: execute exactly one AreaParserTaskHandler subtask. */
+mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game);
+/* ROM $86e6-$86ff: finish one two-column parser set while the screen is off. */
+mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game);
 /* ROM $88ae-$8990: expand one physical metatile page into PPU-visible state. */
 void mysmb_area_refresh_background_page(struct mysmb_game *game, mysmb_u8 page);
 /* ROM $89c3-$8a15: queue the every-eighth-frame palette-3 update. */

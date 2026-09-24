@@ -84,7 +84,13 @@ enum {
     MYSMB_AREA_TERRAIN_METATILES = 0x13d8U,
     MYSMB_AREA_TERRAIN_RENDER_BITS = 0x13dcU,
     MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS = 0x1504U,
-    MYSMB_AREA_CURRENT_COLUMN = 0x0726U
+    MYSMB_AREA_CURRENT_COLUMN = 0x0726U,
+    MYSMB_AREA_PARSER_TASK = 0x071fU,
+    MYSMB_AREA_METATILE_BUFFER = 0x06a1U,
+    MYSMB_AREA_ATTRIBUTE_BUFFER = 0x03f9U,
+    MYSMB_AREA_VRAM_BUFFER2_OFFSET = 0x0340U,
+    MYSMB_AREA_VRAM_BUFFER2 = 0x0341U,
+    MYSMB_AREA_VRAM_ADDRESS_CONTROL = 0x0773U
 };
 
 enum {
@@ -1010,12 +1016,142 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
                           0x05d0U + (column - 16U));
     for (row = 0U; row < 13U; ++row) {
         bound_index = (mysmb_u8)(metatiles[row] >> 6U);
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatiles[row];
         game->ram[(mysmb_u16)(address + (mysmb_u16)row * 16U)] =
             metatiles[row] < game->area_prg[(mysmb_u16)(
                 MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS + bound_index)] ?
             0U : metatiles[row];
     }
     return 1U;
+}
+
+/* ROM $88ae-$889c RenderAreaGraphics.  The original writes two vertical
+ * tiles for every metatile into VRAM_Buffer2, then accumulates seven
+ * attribute bytes for RenderAttributeTables. */
+static mysmb_u8 mysmb_area_queue_graphics_column(struct mysmb_game *game)
+{
+    mysmb_u8 buffer_offset;
+    mysmb_u8 row;
+    mysmb_u8 metatile;
+    mysmb_u8 palette;
+    mysmb_u8 side;
+    mysmb_u8 attribute_shift;
+    mysmb_u16 graphics;
+    mysmb_u16 source;
+
+    if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_METATILE_HIGH + 3U)
+        return 0U;
+    buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET];
+    if (buffer_offset > 0xd6U) return 0U;
+    side = (game->ram[MYSMB_AREA_PARSER_TASK] & 1U) != 0U ? 0U : 2U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = game->ram[MYSMB_AREA_NT_HIGH];
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 1U] = game->ram[MYSMB_AREA_NT_LOW];
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 2U] = 0x9aU;
+    for (row = 0U; row < 13U; ++row) {
+        metatile = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
+        palette = (mysmb_u8)(metatile >> 6U);
+        graphics = (mysmb_u16)(game->area_prg[MYSMB_AREA_METATILE_LOW + palette] |
+            ((mysmb_u16)game->area_prg[MYSMB_AREA_METATILE_HIGH + palette] << 8U));
+        if (graphics < 0x8000U) return 0U;
+        source = (mysmb_u16)(graphics - 0x8000U +
+            (mysmb_u16)(metatile & 0x3fU) * 4U + side);
+        if ((mysmb_u16)(source + 1U) >= game->area_prg_size) return 0U;
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 3U +
+            (mysmb_u16)row * 2U)] = game->area_prg[source];
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 4U +
+            (mysmb_u16)row * 2U)] = game->area_prg[(mysmb_u16)(source + 1U)];
+        attribute_shift = (mysmb_u8)(((row & 1U) << 2U) |
+            ((game->ram[MYSMB_AREA_CURRENT_COLUMN] & 1U) << 1U));
+        game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + (row >> 1U)] |=
+            (mysmb_u8)(palette << attribute_shift);
+    }
+    buffer_offset = (mysmb_u8)(buffer_offset + 29U);
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET] = buffer_offset;
+    game->ram[MYSMB_AREA_NT_LOW]++;
+    if ((game->ram[MYSMB_AREA_NT_LOW] & 0x1fU) == 0U) {
+        game->ram[MYSMB_AREA_NT_LOW] = 0x80U;
+        game->ram[MYSMB_AREA_NT_HIGH] ^= 0x04U;
+    }
+    game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 6U;
+    return 1U;
+}
+
+/* ROM $896a-$89a6 RenderAttributeTables. */
+static mysmb_u8 mysmb_area_queue_attribute_tables(struct mysmb_game *game)
+{
+    mysmb_u8 buffer_offset;
+    mysmb_u8 row;
+    mysmb_u8 low;
+    mysmb_u8 high;
+    mysmb_u8 borrow;
+
+    buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET];
+    if (buffer_offset > 0xdeU) return 0U;
+    low = (mysmb_u8)(game->ram[MYSMB_AREA_NT_LOW] & 0x1fU);
+    borrow = low < 4U ? 1U : 0U;
+    low = (mysmb_u8)((low - 4U) & 0x1fU);
+    high = game->ram[MYSMB_AREA_NT_HIGH];
+    if (borrow != 0U) high ^= 0x04U;
+    high = (mysmb_u8)((high & 0x04U) | 0x23U);
+    low = (mysmb_u8)(0xc0U + (low >> 2U) + ((low & 0x02U) != 0U ? 1U : 0U));
+    for (row = 0U; row < 7U; ++row) {
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = high;
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = (mysmb_u8)(low + 8U);
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = 1U;
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] =
+            game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row];
+        game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row] = 0U;
+        low++;
+    }
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET] = buffer_offset;
+    game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 6U;
+    return 1U;
+}
+
+/* ROM $92b0-$92e8 AreaParserTaskHandler.  ProcessAreaData is deliberately
+ * not called here yet: its persistent three-object state has a separate
+ * owner, so this function owns only the already-translated scenery core and
+ * the exact graphics/attribute task cadence. */
+mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
+{
+    mysmb_u8 task;
+
+    task = game->ram[MYSMB_AREA_PARSER_TASK];
+    if (task == 0U) task = 8U;
+    game->ram[MYSMB_AREA_PARSER_TASK] = task;
+    task--;
+    if (task == 4U || task == 0U) {
+        game->ram[MYSMB_AREA_CURRENT_COLUMN]++;
+        if ((game->ram[MYSMB_AREA_CURRENT_COLUMN] & 0x0fU) == 0U) {
+            game->ram[MYSMB_AREA_CURRENT_COLUMN] = 0U;
+            game->ram[MYSMB_AREA_CURRENT_PAGE]++;
+        }
+        game->ram[MYSMB_AREA_BLOCK_COLUMN] =
+            (mysmb_u8)((game->ram[MYSMB_AREA_BLOCK_COLUMN] + 1U) & 0x1fU);
+    }
+    else if (task == 6U || task == 5U || task == 2U || task == 1U) {
+        if (mysmb_area_queue_graphics_column(game) == 0U) return 0U;
+    }
+    else if (mysmb_area_render_scenery_terrain_column(game) == 0U) {
+        return 0U;
+    }
+    game->ram[MYSMB_AREA_PARSER_TASK] = task;
+    if (task == 0U) return mysmb_area_queue_attribute_tables(game);
+    return 1U;
+}
+
+/* ROM $86e6-$86ff AreaParserTaskControl.  One call completes exactly the
+ * eight task slots that produce a two-column set; NMI owns its later transfer. */
+mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
+{
+    do {
+        if (mysmb_area_parser_task_step(game) == 0U) return 0U;
+    } while (game->ram[MYSMB_AREA_PARSER_TASK] != 0U);
+    game->ram[MYSMB_AREA_COLUMN_SETS]--;
+    game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 6U;
+    return (game->ram[MYSMB_AREA_COLUMN_SETS] & 0x80U) != 0U ? 1U : 0U;
 }
 
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page)

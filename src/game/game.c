@@ -35,7 +35,10 @@ enum {
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
     MYSMB_RAM_FRAME_COUNTER = 0x0009U,
     MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U,
-    MYSMB_RAM_VRAM_BUFFER1 = 0x0301U
+    MYSMB_RAM_VRAM_BUFFER1 = 0x0301U,
+    MYSMB_RAM_VRAM_BUFFER2_OFFSET = 0x0340U,
+    MYSMB_RAM_VRAM_BUFFER2 = 0x0341U,
+    MYSMB_RAM_VRAM_ADDRESS_CONTROL = 0x0773U
 };
 
 enum {
@@ -529,9 +532,13 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         }
         break;
     case 8U:
-        mysmb_area_render_initial_terrain(game);
-        mysmb_area_render_initial_objects(game);
-        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 9U;
+        if (mysmb_area_parser_task_control(game) != 0U) {
+            /* ProcessAreaData has not yet replaced the bounded object preload.
+             * Keep the existing translated object state alive after the
+             * source-ordered scenery/terrain column sets complete. */
+            mysmb_area_render_initial_objects(game);
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 9U;
+        }
         break;
     case 9U:
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 10U;
@@ -631,6 +638,16 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
  * cleared only after its terminal command has reached PPU-visible state. */
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
 {
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) {
+        if (game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] != 0U) {
+            (void)mysmb_game_apply_vram_commands(game,
+                &game->ram[MYSMB_RAM_VRAM_BUFFER2], 0x00c0U);
+            game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
+            game->ram[MYSMB_RAM_VRAM_BUFFER2] = 0U;
+        }
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
+        return;
+    }
     if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U) return;
     (void)mysmb_game_apply_vram_commands(game,
         &game->ram[MYSMB_RAM_VRAM_BUFFER1], 0x0100U);
