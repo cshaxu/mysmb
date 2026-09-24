@@ -950,8 +950,6 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
     mysmb_u8 old_value;
     mysmb_u8 carry;
     mysmb_u8 page_delta;
-    mysmb_u16 enemy_world;
-    mysmb_u16 screen_world;
 
     for (slot = 0U; slot < 5U; ++slot) {
         id = game->ram[MYSMB_ENEMY_ID + slot];
@@ -964,16 +962,10 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
         /* RunNormalEnemies calculates relative coordinates and draws before
          * EnemyMovementSubs updates the world position.  Preserve that draw
          * phase for the OAM writers scheduled later in this portable frame. */
-        enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                                   game->ram[MYSMB_ENEMY_X + slot]);
-        screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                    game->ram[MYSMB_SCREEN_LEFT_X]);
         game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
                                                 game->ram[MYSMB_SCREEN_LEFT_X]);
         game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[0x03d1U + slot] = enemy_world < screen_world ||
-            enemy_world >= (mysmb_u16)(screen_world + 0x0100U) ? 0x0fU :
-            (game->ram[0x03aeU + slot] >= 0xf8U ? 0x07U : 0U);
+        game->ram[0x03d1U + slot] = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
         mysmb_objects_update_enemy_bounding_box(game, slot);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
