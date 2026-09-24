@@ -97,7 +97,8 @@ enum {
     MYSMB_AREA_PARSER_BEHIND = 0x0729U,
     MYSMB_AREA_OBJECT_PAGE = 0x072aU,
     MYSMB_AREA_OBJECT_PAGE_SELECT = 0x072bU,
-    MYSMB_AREA_DATA_OFFSET = 0x072cU
+    MYSMB_AREA_DATA_OFFSET = 0x072cU,
+    MYSMB_AREA_OBJECT_OFFSET_BUFFER = 0x072dU
 };
 
 enum {
@@ -1152,6 +1153,88 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
     game->ram[MYSMB_AREA_COLUMN_SETS]--;
     game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 6U;
     return (game->ram[MYSMB_AREA_COLUMN_SETS] & 0x80U) != 0U ? 1U : 0U;
+}
+
+/* Translation of the stream/slot-control part of ROM $9508-$958f
+ * ProcessAreaData. It intentionally stops before JumpEngine: each object
+ * family must own its own metatile writes. The result is the original three
+ * slot state ($072d/$0730), page selector, and stream offset. */
+mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    mysmb_u8 first;
+    mysmb_u8 second;
+    mysmb_u8 row;
+    mysmb_u8 column;
+    mysmb_u8 offset;
+    mysmb_u16 address;
+    mysmb_u8 rerun;
+    mysmb_u8 passes;
+
+    if (game == 0 || game->area_prg == 0 ||
+        game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) return 0U;
+    passes = 0U;
+    do {
+        rerun = 0U;
+        slot = 2U;
+        for (;;) {
+            game->ram[MYSMB_AREA_PARSER_BEHIND] = 0U;
+            offset = game->ram[MYSMB_AREA_DATA_OFFSET];
+            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
+                offset = game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot];
+            address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8U) |
+                game->ram[MYSMB_AREA_DATA_LOW]);
+            address = (mysmb_u16)(address + offset);
+            if (address >= game->area_prg_size ||
+                (mysmb_u16)(game->area_prg_size - address) < 2U) return 0U;
+            first = game->area_prg[address];
+            if (first == 0xfdU) return 1U;
+            second = game->area_prg[(mysmb_u16)(address + 1U)];
+            row = (mysmb_u8)(first & 0x0fU);
+
+            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+                if ((second & 0x80U) != 0U &&
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
+                    game->ram[MYSMB_AREA_OBJECT_PAGE]++;
+                }
+                if (row == 0x0dU && (second & 0x40U) == 0U &&
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+                    game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
+                    game->ram[MYSMB_AREA_DATA_OFFSET] =
+                        (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                }
+                else if ((row != 0x0eU || game->ram[MYSMB_AREA_BACKLOADING] == 0U) &&
+                    game->ram[MYSMB_AREA_OBJECT_PAGE] < game->ram[MYSMB_AREA_CURRENT_PAGE]) {
+                    game->ram[MYSMB_AREA_PARSER_BEHIND] = 1U;
+                    rerun = 1U;
+                    game->ram[MYSMB_AREA_DATA_OFFSET] =
+                        (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                }
+                else if (game->ram[MYSMB_AREA_OBJECT_PAGE] ==
+                    game->ram[MYSMB_AREA_CURRENT_PAGE]) {
+                    column = (mysmb_u8)(first >> 4U);
+                    if (column == game->ram[MYSMB_AREA_CURRENT_COLUMN]) {
+                        game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot] =
+                            game->ram[MYSMB_AREA_DATA_OFFSET];
+                        game->ram[MYSMB_AREA_DATA_OFFSET] =
+                            (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                    }
+                }
+            }
+            else {
+                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
+            }
+            if (slot == 0U) break;
+            slot--;
+        }
+        passes++;
+    } while (rerun != 0U && passes != 0xffU);
+    return rerun == 0U ? 1U : 0U;
 }
 
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page)

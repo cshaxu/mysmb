@@ -137,3 +137,21 @@ This disproves the prior proposed shortcut of consuming one stream object per
 parser column. P3 must translate page control, behind-renderer handling, and
 the three persistent length slots before any family-specific object handler is
 admitted. The old preload and one-object path remain explicitly partial.
+
+## T10 S1 P4 Parser Slot State
+
+`ProcessAreaData` stream control is now a portable C90 routine with the ROM
+owners `$9508-$958f`: it maintains the three `$072d/$0730` parser slots,
+page-select state, row-13 page-control advancement, column admission, and
+active-slot length countdown. Family-specific handlers remain outside this
+part, so this does not yet replace the temporary object preload or claim visual
+equivalence. The ROM-free smoke test covers page control, column-matched
+admission, and an active slot's subsequent countdown.
+
+### Similar-Issue Sweep
+
+The parser code and tests were searched for stream reads that advance once per
+frame, page-control entries stored as regular objects, and direct block-buffer
+writes before a family handler. The old `mysmb_area_next_object` and initial
+preload remain retained compatibility paths and are explicitly excluded from
+the new state owner until their callers move to the translated parser route.
