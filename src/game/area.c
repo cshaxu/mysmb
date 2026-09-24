@@ -1214,6 +1214,9 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     static const mysmb_u8 staircase_height[9] = {
         7U, 7U, 6U, 5U, 4U, 3U, 2U, 1U, 0U
     };
+    static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
+    static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
+    static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
     mysmb_u8 row;
     mysmb_u8 kind;
     mysmb_u8 area_type;
@@ -1303,6 +1306,22 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             row++;
             height--;
         } while (1);
+        return;
+    }
+    if (row == 15U && kind == 4U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 3U;
+        value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+        height = (mysmb_u8)(second & 0x0fU);
+        if (value > 3U || height < 2U) return;
+        height = (mysmb_u8)(height - 1U);
+        if (side_pipe_shaft[value] != 0U)
+            mysmb_area_render_under_part(game, 0U, (mysmb_u8)(height - 1U),
+                                         side_pipe_shaft[value]);
+        game->ram[MYSMB_AREA_METATILE_BUFFER + height] = side_pipe_top[value];
+        if (height < 12U)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + height + 1U] =
+                side_pipe_bottom[value];
         return;
     }
     if (kind == 1U) {

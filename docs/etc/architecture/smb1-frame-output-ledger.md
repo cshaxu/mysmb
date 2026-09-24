@@ -302,3 +302,19 @@ The pipe shaft and both brick/solid column paths now call one C90 helper with
 the original row/height stop condition. Direct top and cap writes remain with
 their owning object routines; dynamic objects and the formal column transfer
 remain deferred.
+
+## T10 S1 P14 Exit-Pipe Metatiles
+
+The row-15 `ExitPipe` static renderer is translated from `$3810-$3835`. It
+uses the original fixed length of three, the four-column sideways-pipe tables,
+and the two trailing shaft columns through the shared `RenderUnderPart` rule.
+The parser smoke test proves the first three source columns, their countdown,
+and the first shaft metatile. Player entrance/exit state remains a dynamic
+logic owner and is not claimed by this background implementation.
+
+### Similar-Issue Sweep
+
+The row-15 table was checked for a generic staircase or rope fallthrough.
+Exit-pipe length and vertical geometry are now independent from the source
+location-byte row selector. Intro pipe, transition state, and warp routing
+remain deferred.

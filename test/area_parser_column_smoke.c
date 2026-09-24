@@ -162,9 +162,34 @@ int main(void)
         game.ram[0x06a8U] != 0x12U || game.ram[0x06a9U] != 0x14U ||
         game.ram[0x0732U] != 0U) return 1;
 
+    /* Row-15 exit pipes use their fixed four-column side-pipe table; the
+     * final two columns also grow a source-defined shaft above the elbow. */
+    prg[0x0040U] = 0x0fU;
+    prg[0x0041U] = 0x44U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a4U] != 0x1cU || game.ram[0x06a5U] != 0x1fU ||
+        game.ram[0x0732U] != 2U) return 1;
+    game.ram[0x0726U] = 1U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a4U] != 0x1dU || game.ram[0x06a5U] != 0x20U ||
+        game.ram[0x0732U] != 1U) return 1;
+    game.ram[0x0726U] = 2U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x14U || game.ram[0x06a4U] != 0x1eU ||
+        game.ram[0x06a5U] != 0x21U || game.ram[0x0732U] != 0U) return 1;
+
     /* Special row 12 selector seven is a question-block row, not a pipe. */
     prg[0x0040U] = 0x7cU;
     prg[0x0041U] = 0x71U;
+    game.ram[0x0725U] = 1U;
     game.ram[0x0726U] = 7U;
     game.ram[0x072cU] = 0U;
     game.ram[0x072aU] = 1U;
