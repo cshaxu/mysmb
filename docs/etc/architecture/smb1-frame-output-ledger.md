@@ -1457,3 +1457,13 @@ from `CMP #$18` into `SBC #$08`. The ROM-free floatey OAM smoke covers a tall
 enemy's regular group and an ordinary living enemy's alternate group, including
 the status-region carry case. Other enemy, item, projectile, block, and
 screen-support draw writers remain open T11 owners.
+
+## T11 S1 P6 Jumping-Coin OAM
+
+`ProcJumpCoin`, `JCoinGfxHandler`, and `DrawFloateyNumber_Coin` now emit their
+source-selected misc OAM pairs. The owner uses `Misc_SprDataOffset`, saves the
+world-to-screen X coordinate, maintains the two coin rows or the two score
+glyphs, selects the four-frame coin tile cycle, and retains the every-other-
+frame score rise. The ROM-free misc OAM smoke verifies both the jumping-coin
+and score forms. Hammer OAM remains a distinct owner despite sharing the misc
+object loop.

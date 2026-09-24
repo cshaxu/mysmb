@@ -57,6 +57,7 @@ enum {
     MYSMB_MISC_Y_FORCE = 0x0440U,
     MYSMB_MISC_BOUND_BOX = 0x04a2U,
     MYSMB_MISC_COLLISION_FLAG = 0x06beU,
+    MYSMB_MISC_SPRITE_OFFSET = 0x06f3U,
     MYSMB_HAMMER_ENEMY_OFFSET = 0x06aeU,
     MYSMB_HAMMER_THROWING_TIMER = 0x03a2U,
     MYSMB_SCROLL_AMOUNT = 0x0775U,
@@ -158,6 +159,7 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
 static void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
                                               mysmb_u8 slot, mysmb_u8 amount,
                                               mysmb_u8 maximum_speed);
+static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
                                                  mysmb_u8 slot);
 static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
@@ -438,6 +440,46 @@ void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
     game->ram[MYSMB_MISC_STATE + slot] = 1U;
 }
 
+/* ROM JCoinGfxHandler / DrawFloateyNumber_Coin. */
+static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 oam_offset;
+    mysmb_u8 relative_x;
+    mysmb_u8 state;
+    mysmb_u16 misc_world;
+    mysmb_u16 screen_world;
+
+    oam_offset = game->ram[MYSMB_MISC_SPRITE_OFFSET + slot];
+    misc_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_MISC_PAGE + slot] << 8U) |
+                              game->ram[MYSMB_MISC_X + slot]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    relative_x = (mysmb_u8)(misc_world - screen_world);
+    state = game->ram[MYSMB_MISC_STATE + slot];
+    if (state >= 2U) {
+        if (((mysmb_u8)game->frame_number & 1U) == 0U) game->ram[MYSMB_MISC_Y + slot]--;
+        game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
+        game->ram[(mysmb_u16)(0x0204U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
+        game->ram[(mysmb_u16)(0x0201U + oam_offset)] = 0xf7U;
+        game->ram[(mysmb_u16)(0x0205U + oam_offset)] = 0xfbU;
+        game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+        game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 2U;
+        game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
+        game->ram[(mysmb_u16)(0x0207U + oam_offset)] = (mysmb_u8)(relative_x + 8U);
+        return;
+    }
+    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
+    game->ram[(mysmb_u16)(0x0204U + oam_offset)] =
+        (mysmb_u8)(game->ram[MYSMB_MISC_Y + slot] + 8U);
+    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
+        (mysmb_u8)(0x60U + (((mysmb_u8)game->frame_number >> 1U) & 3U));
+    game->ram[(mysmb_u16)(0x0205U + oam_offset)] =
+        game->ram[(mysmb_u16)(0x0201U + oam_offset)];
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 0x82U;
+    game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
+    game->ram[(mysmb_u16)(0x0207U + oam_offset)] = relative_x;
+}
 /* ROM $bb96-$bbd0 ProcJumpCoin and $bac4 ProcHammerObj, excluding OAM.
  * Misc_State d7 selects the hammer route exactly as MiscObjectsCore does. */
 void mysmb_objects_step_misc(struct mysmb_game *game)
@@ -471,6 +513,9 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             game->ram[MYSMB_MISC_STATE + slot]++;
             game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] + game->ram[MYSMB_SCROLL_AMOUNT]);
             if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
+        }
+        if (game->ram[MYSMB_MISC_STATE + slot] != 0U) {
+            mysmb_objects_draw_jump_coin(game, slot);
         }
     }
 }
@@ -2504,6 +2549,7 @@ static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot)
 }
 
 /* ROM $dc96 MoveObjectHorizontally for the separate misc-object arrays. */
+static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
                                                  mysmb_u8 slot)
 {
