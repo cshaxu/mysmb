@@ -1134,12 +1134,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_u8 mode_before;
     mysmb_u8 task_before;
     mysmb_u8 enemy_slot;
-    mysmb_u8 newly_spawned_normal;
     struct mysmb_area_source area_source;
 
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
-    newly_spawned_normal = 0U;
     game->frame_number++;
     game->ram[MYSMB_RAM_FRAME_COUNTER]++;
     if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
@@ -1273,7 +1271,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                     if (mysmb_area_spawn_enemy_in_slot(game, &area_source,
                                                        enemy_slot) != 0U &&
                         game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
-                        newly_spawned_normal |= (mysmb_u8)(1U << enemy_slot);
                     }
                 }
                 else {
@@ -1311,7 +1308,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
         mysmb_objects_step_floatey_numbers(game);
-        mysmb_objects_draw_goombas_mask(game, newly_spawned_normal);
         mysmb_player_draw_oam(game);
         mysmb_objects_step_vine(game);
         mysmb_objects_apply_block_replacements(game);
