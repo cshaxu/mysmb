@@ -2,37 +2,39 @@
 
 ## Current Work
 
-**M2 T10 S1 is active.**
+**M2 T11 S1 is active.**
 
 ## Current Technical Baseline
 
 - `mysmb_game` is a C90 native logic foundation with translated title, area,
-  player, object, mode, and audio-command routes. Its previous M2 completion
-  claim is withdrawn: gameplay output is a bounded marker frame, not a
-  translated PPU/OAM result. `mysmb_win32` builds x86 and x64 PE windows;
-  owner-local title data and CHR are generated only into ignored output.
-  `nnes` is validation-only and is never linked into MySMB.
+  player, object, mode, audio-command, and background-output routes. Its
+  canonical snapshot now has translated name-table, attribute, palette,
+  scroll, status, and PPU-state ownership. OAM producers and faithful Win32
+  frame consumption remain absent, so M2 is still open. `mysmb_win32` builds
+  x86 and x64 PE windows; owner-local title data and CHR are generated only
+  into ignored output. `nnes` is validation-only and is never linked into
+  MySMB.
 
-## M2 T10 S1 Packet
+## M2 T11 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T10 S1, New. |
-| Admission And Approval | Owner reopened M2 and admitted the dependency-ordered recovery queue. M2 T9 closed its output ledger and bounded reference-recorder contract. |
-| Objective | Translate the original background-output route: VRAM-buffer state, dynamic name tables, attributes, palettes, scroll, status text, and metatile replacement into the canonical native frame snapshot. |
-| Non-goals | A generic NES CPU/PPU/APU emulator, OAM/player/enemy graphics work, visual approximation, bitmap-to-text conversion, protected tracked output, and any M2 closure claim are outside this S. |
-| Reference Baseline | M2 T9 frame-output ledger and recorder contract, M2 T1 PRG ledger, and the reopened frame-equivalence proposal. |
+| Identifier Mode | M2 T11 S1, New. |
+| Admission And Approval | Owner reopened M2 and admitted the dependency-ordered recovery queue. T10 closed the translated background-output route and its bounded PPU evidence. |
+| Objective | Translate the original OAM output route: sprite offsets, player, enemy, item, projectile, effect, score, platform, boss, priority, animation, offscreen initialization, and NMI OAM submission into the canonical native frame snapshot. |
+| Non-goals | A generic NES CPU/PPU/APU emulator, host-owned sprites, visual approximation, bitmap-to-text conversion, protected tracked output, CHR decoding in the Win32 consumer, and any M2 closure claim are outside this S. |
+| Reference Baseline | M2 T9 frame-output ledger and recorder contract, M2 T10 background closure, M2 T1 PRG ledger, and the reopened frame-equivalence proposal. |
 | Candidate Proposal | [M2 Reopened Frame Equivalence](../proposals/m2-reopened-frame-equivalence.md). |
-| Files And ABI Surface | Portable background-output state and routines, canonical frame-snapshot palette/PPU fields, source-address mappings, owner-local background-reference inputs, and corrected M2 evidence. |
+| Files And ABI Surface | Portable OAM backing state and writers, canonical frame-snapshot OAM fields, source-address mappings, owner-local OAM-reference inputs, and corrected M2 evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
-| Verification | Owner-local background-route probes at the T9 NMI boundary; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
-| Expected Markers | The snapshot carries translated palette, PPU controls, scroll, dynamic name-table, and attribute state from named ROM owners; no host renderer invents gameplay background state. |
+| Verification | Owner-local OAM-route probes at the T9 NMI boundary; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
+| Expected Markers | The snapshot carries source-ordered OAM bytes from named ROM writers, including offscreen and priority state; no host renderer invents sprite state. |
 | Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Each reference trace uses one unique ignored output directory, is limited to 600 NMI-return samples and 2,637,012 bytes. Its exact sampler is bounded to 131,072 instruction steps per requested sample, equivalent to the former 512 driver calls of at most 256 instructions, then the task executor deletes the trace after a neutral summary. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
 | Reporting Requirements | Record source ranges, input scripts, frame phase, snapshot fields, hashes where lawful, every difference, and whether it is translated, deferred, or rejected. |
 | Stop Conditions | Stop and revise if the work substitutes host drawing for translated output, requires a runtime emulator, embeds protected data in tracked output, or cannot name a source owner for a visible result. |
-| Exit Criteria | T10 closes only when all admitted background owners write the portable snapshot through translated C and route tests establish their source semantics; it does not verify visual equality or close M2. |
+| Exit Criteria | T11 closes only when all admitted OAM owners write the portable snapshot through translated C and route tests establish their source semantics; it does not verify CHR consumption or close M2. |
 | Original Owner Request | Make the native C result and logic match the original ROM, then close M2 only with evidence. |
-| Similar-Issue Sweep | Search all production and test output paths for omitted OAM/PPU work, simplified markers, host-owned game state, incomplete button mapping, unsupported playable claims, and local-path leakage; record every hit and disposition. |
+| Similar-Issue Sweep | Search all production and test output paths for placeholder OAM, source-range omissions, host-owned sprite state, incomplete button mapping, unsupported playable claims, and local-path leakage; record every hit and disposition. |
 
 ## Recent M4 Closures
 
@@ -74,6 +76,12 @@ completion. T9 audits and replaces the insufficient frame/output proof.
 | T6 | Death, restart, two-player exchange, Warp Zone, and completion modes closed. [History](../history/M2-T6-mode-routes.md). |
 | T7 | Original audio queues, priorities, buffers, and neutral command state closed. [History](../history/M2-T7-audio-command-routes.md). |
 | T8 | Bounded title-to-play oracle, Win32 composition audit, and two original frame-order repairs were recorded; the output proof is superseded by T9. [History](../history/M2-T8-end-to-end-oracle-and-win32-route.md). |
+
+## Recent M2 Closures
+
+| Task | Compact result |
+| --- | --- |
+| T10 | Source-owned name tables, attributes, palettes, status, scroll, and PPU commit state now reach the canonical snapshot through native C; OAM remains deferred to T11. [History](../history/M2-T10-translated-background-output.md). |
 
 ## Recent Governance
 
