@@ -65,7 +65,7 @@ int main(void)
         if (game.ram[0x0770U] == 0U && game.ram[0x0772U] == 3U &&
             game.ram[0x000eU] != 0U) saw_menu_game_core = 1U;
         if (game.ram[0x0770U] == 0U && game.ram[0x0772U] == 3U &&
-            game.ram[0x0756U] == 1U && game.ram[0x075aU] == 2U &&
+            game.ram[0x0754U] == 1U && game.ram[0x0756U] == 0U && game.ram[0x075aU] == 2U &&
             game.ram[0x0761U] == 2U) saw_primary_setup = 1U;
         if (game.ram[0x073cU] == 11U && game.ram[0x0300U] == 7U &&
             game.ram[0x0301U] == 0x3fU && game.ram[0x0302U] == 0x10U &&

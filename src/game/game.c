@@ -22,6 +22,7 @@ enum {
     MYSMB_RAM_OPER_MODE_TASK = 0x0772U,
     MYSMB_RAM_TIMER_CONTROL = 0x0747U,
     MYSMB_RAM_PLAYER_Y_HIGH = 0x00b5U,
+    MYSMB_RAM_PLAYER_SIZE = 0x0754U,
     MYSMB_RAM_PLAYER_STATUS = 0x0756U,
     MYSMB_RAM_TIMER_EXPIRED = 0x0759U,
     MYSMB_RAM_GAME_TIMER_CONTROL = 0x0787U,
@@ -662,7 +663,7 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
 static void mysmb_game_primary_setup(struct mysmb_game *game)
 {
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER] = 1U;
-    game->ram[MYSMB_RAM_PLAYER_STATUS] = 1U;
+    game->ram[MYSMB_RAM_PLAYER_SIZE] = 1U;
     game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 2U;
     game->ram[MYSMB_RAM_OFFSCREEN_LIVES] = 2U;
 }

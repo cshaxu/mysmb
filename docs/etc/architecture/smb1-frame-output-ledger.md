@@ -978,7 +978,7 @@ After title task 14, the source enters title-mode `PrimaryGameSetup` and then
 falls through to `SecondaryGameSetup` before it reaches menu task 3. Native C
 had skipped both tasks, leaving the title parser's screen-disable state active
 through the menu and later game start. The translated title task now enters
-task 2; the title-mode task-2 route applies the primary player/life setup and
+task 2; the title-mode task-2 route applies the primary player-size/life setup and
 the shared secondary setup, including its screen-enable handoff.
 
 The corrected 100-sample cold-start route, with Start held at samples 40--41,
@@ -1057,9 +1057,28 @@ derived its scalar fields from nnes's internal PPU temporary latch. During
 `DrawTitleScreen`, direct `$2006/$2007` reads temporarily mutate that latch,
 although the source's `$0778/$073f/$0740` display owners remain unchanged.
 
-The recorder now derives name-table, scroll, and address from those three
-source-owned RAM mirrors, matching the native snapshot contract without adding
-a PPU emulator to the product. The rebuilt owner-local reference recorder and
-the corrected 380-sample Start route have exact CIRAM pages, palette, and all
-seven PPU scalar bytes across samples 0--379. CPU RAM and OAM remain different
-and retain their declared T11 ownership.
+The recorder retains nnes's committed temporary latch and fine-X value on
+ordinary frames. It reconstructs name-table, scroll, and address from those
+three source-owned RAM mirrors only while the source is in title task 13 with
+`VRAM_Buffer_AddrCtrl` 5, the direct-read exception. This matches the native
+snapshot contract without adding a PPU emulator to the product. The rebuilt
+owner-local reference recorder and the corrected 380-sample Start route have
+exact CIRAM pages, palette, and all seven PPU scalar bytes across samples
+0--379. CPU RAM and OAM remain different and retain their declared T11
+ownership.
+
+## T10 S1 P56 PrimaryGameSetup Player-Size Mapping
+
+`PrimaryGameSetup` stores `$01` in `PlayerSize` at `$0754`; it does not store
+that value in `PlayerStatus` at `$0756`. Native C had made the latter mapping
+error. On a held-Right route, the original therefore selected the small-player
+death route after an early collision while native C selected the powered-player
+injury-blink route, which later altered movement and background updates.
+
+The translated setup now writes `$0754` and preserves `$0756`. The title
+bootstrap smoke requires both the small-player value and the zero player
+status at the setup boundary. With Start held at samples 40--41 and Right held
+from sample 240, a bounded 600-sample comparison has exact CIRAM pages,
+palette, and all seven PPU scalar bytes across samples 0--599. CPU RAM and OAM
+remain different under T11 ownership; this background result does not close
+M2.
