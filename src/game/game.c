@@ -79,6 +79,7 @@ static void mysmb_game_step_game_over(struct mysmb_game *game);
 static void mysmb_game_next_area(struct mysmb_game *game);
 static void mysmb_game_step_victory(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
+static void mysmb_game_primary_setup(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
@@ -638,7 +639,7 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
     case 14U:
         if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) {
             (void)mysmb_area_queue_title_score(game);
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         }
         else
             game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
@@ -647,6 +648,15 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         break;
     }
+}
+
+/* ROM PrimaryGameSetup immediately falls through to SecondaryGameSetup. */
+static void mysmb_game_primary_setup(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_FETCH_NEW_TIMER] = 1U;
+    game->ram[MYSMB_RAM_PLAYER_STATUS] = 1U;
+    game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 2U;
+    game->ram[MYSMB_RAM_OFFSCREEN_LIVES] = 2U;
 }
 
 /* Translation of SecondaryGameSetup's game-mode fields.  OAM shuffle data
@@ -934,7 +944,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
              game->area_prg != 0) {
         mysmb_game_step_screen_routine(game);
     }
-    else if (mode_before == 1U && task_before == 2U && game->area_prg != 0) {
+    else if ((mode_before == 1U || mode_before == 0U) && task_before == 2U &&
+             game->area_prg != 0) {
+        if (mode_before == 0U) mysmb_game_primary_setup(game);
         mysmb_game_secondary_setup(game);
     }
     else if (mode_before == 1U && task_before == 1U &&

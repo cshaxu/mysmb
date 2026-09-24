@@ -970,3 +970,19 @@ The 80-sample cold-start comparison now has no CIRAM difference before sample
 42 and no PPU-control difference across the window. The bootstrap smoke covers
 the command's bounded buffer layout and zero suppression. Palette, later
 title/demo CIRAM, display-mask, and OAM differences remain open owners.
+
+## T10 S1 P50 Title Primary And Secondary Setup
+
+After title task 14, the source enters title-mode `PrimaryGameSetup` and then
+falls through to `SecondaryGameSetup` before it reaches menu task 3. Native C
+had skipped both tasks, leaving the title parser's screen-disable state active
+through the menu and later game start. The translated title task now enters
+task 2; the title-mode task-2 route applies the primary player/life setup and
+the shared secondary setup, including its screen-enable handoff.
+
+The corrected 100-sample cold-start route, with Start held at samples 40--41,
+has exact PPU control, name-table selection, and horizontal scroll. CIRAM page
+1 is exact in all samples; page 0 differs in only three bytes at sample 41.
+The display mask differs once at sample 42. The bootstrap smoke requires the
+primary setup state before menu GameCore begins. These bounded residuals and
+all OAM differences remain open; they do not establish M2 closure.
