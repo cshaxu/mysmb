@@ -80,6 +80,8 @@ void mysmb_objects_step_lakitu_frenzy(struct mysmb_game *game);
 void mysmb_objects_step_spiny_eggs(struct mysmb_game *game);
 /* ROM ProcHammerBro through MoveHammerBroXDir, before hammer misc objects. */
 void mysmb_objects_step_hammer_bros(struct mysmb_game *game);
+/* ROM DrawHammer and its misc-coordinate producers. */
+void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);
 /* ROM ForceInjury: shared by collision and timer-expiry routes. */
 void mysmb_objects_force_injury(struct mysmb_game *game);

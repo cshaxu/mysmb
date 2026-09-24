@@ -2782,7 +2782,7 @@ static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
     return 1U;
 }
 
-/* ROM $bac4 ProcHammerObj, excluding the display and player collision calls.
+/* ROM $bac4 ProcHammerObj and the player collision path.
  * The 16-frame hand attachment is represented by state $90 through $82. */
 static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
 {
@@ -2790,32 +2790,35 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 enemy_slot;
     mysmb_u8 old_x;
 
-    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-    state = (mysmb_u8)(game->ram[MYSMB_MISC_STATE + slot] & 0x7fU);
-    enemy_slot = game->ram[MYSMB_HAMMER_ENEMY_OFFSET + slot];
-    if (enemy_slot >= 6U || game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U) {
-        game->ram[MYSMB_MISC_STATE + slot] = 0U;
-        return;
+    if (game->ram[MYSMB_TIMER_CONTROL] == 0U) {
+        state = (mysmb_u8)(game->ram[MYSMB_MISC_STATE + slot] & 0x7fU);
+        enemy_slot = game->ram[MYSMB_HAMMER_ENEMY_OFFSET + slot];
+        if (enemy_slot >= 6U || game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U) {
+            game->ram[MYSMB_MISC_STATE + slot] = 0U;
+            return;
+        }
+        if (state < 2U) {
+            mysmb_objects_move_misc_downward(game, slot, 0x10U, 4U);
+            mysmb_objects_move_misc_horizontally(game, slot);
+            mysmb_objects_check_hammer_collision(game, slot);
+        }
+        else {
+            if (state == 2U) {
+                game->ram[MYSMB_MISC_Y_SPEED + slot] = 0xfeU;
+                game->ram[MYSMB_ENEMY_STATE + enemy_slot] &= 0xf7U;
+                game->ram[MYSMB_MISC_X_SPEED + slot] =
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] == 1U ? 0x10U : 0xf0U;
+            }
+            game->ram[MYSMB_MISC_STATE + slot]--;
+            old_x = game->ram[MYSMB_ENEMY_X + enemy_slot];
+            game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(old_x + 2U);
+            game->ram[MYSMB_MISC_PAGE + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + enemy_slot] +
+                (game->ram[MYSMB_MISC_X + slot] < old_x ? 1U : 0U));
+            game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] - 0x0aU);
+            game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
+        }
     }
-    if (state < 2U) {
-        mysmb_objects_move_misc_downward(game, slot, 0x10U, 4U);
-        mysmb_objects_move_misc_horizontally(game, slot);
-        mysmb_objects_check_hammer_collision(game, slot);
-        return;
-    }
-    if (state == 2U) {
-        game->ram[MYSMB_MISC_Y_SPEED + slot] = 0xfeU;
-        game->ram[MYSMB_ENEMY_STATE + enemy_slot] &= 0xf7U;
-        game->ram[MYSMB_MISC_X_SPEED + slot] =
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] == 1U ? 0x10U : 0xf0U;
-    }
-    game->ram[MYSMB_MISC_STATE + slot]--;
-    old_x = game->ram[MYSMB_ENEMY_X + enemy_slot];
-    game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(old_x + 2U);
-    game->ram[MYSMB_MISC_PAGE + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + enemy_slot] +
-        (game->ram[MYSMB_MISC_X + slot] < old_x ? 1U : 0U));
-    game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] - 0x0aU);
-    game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
+    mysmb_objects_draw_hammer(game, slot);
 }
 
 /* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
