@@ -1783,3 +1783,21 @@ all $03a0 references were reviewed. This assignment has one production owner
 and one task-2 smoke assertion. Balance-platform runtime behavior remains owned
 by the existing object route; no second initializer or host-side substitute was
 found.
+
+## T11 S1 P4 Secondary Setup DoNothing1 Side Effect
+
+The matched source shows that `SecondaryGameSetup` ends with `DoNothing2` and
+`DoNothing1`; despite its name, `DoNothing1` stores `$ff` to CPU RAM `$06c9`.
+Native C had omitted that observable legacy write. The task-2 setup/OAM smoke
+now asserts `$06c9=$ff` with the other source-owned setup fields.
+
+On the bounded 380-sample title Start/right route, CPU-RAM differences fall
+from 69,174 to 68,973 and working-RAM differences fall from 2,882 to 2,681.
+CIRAM, palette, CPU OAM backing RAM, visible OAM, and every PPU scalar remain
+exact.
+
+### Similar-Issue Sweep
+
+The local source mapping has one writer of `$06c9`: `DoNothing1`, invoked only
+by `SecondaryGameSetup`. The native secondary-setup owner now carries that
+side effect; no duplicate production writer or host-side replacement exists.
