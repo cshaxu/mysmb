@@ -2012,3 +2012,32 @@ Player control is now the primary-box owner.  Object collision paths retain
 their source-specific enemy, power-up, fireball, hammer, and platform box
 writes, and the late OAM route now merely refreshes the same relative fields.
 No other ordinary player-control path leaves the primary collision box stale.
+## T11 S1 P13 SoundEngine Square Envelope Counters
+
+The matched `SoundEngine` routes `Squ2NoteHandler` and `Squ1NoteHandler`
+through `LoadControlRegs`.  For ordinary area music this loads `$08` as the
+square-channel envelope offset; the following `MiscSqu2MusicTasks` and
+`MiscSqu1MusicTasks` decrement the saved offsets unless SFX or the
+death/castle event route owns the channel.  Native music preserved note
+lengths but omitted `Squ2_EnvelopeDataCtrl` (`$07b5`) and
+`Squ1_EnvelopeDataCtrl` (`$07b7`), leaving both at zero.
+
+The audio owner now commits `$08` when either square music note is loaded and
+runs the source's guarded post-note decrement.  The music-header fixture
+asserts both counters are `$07` after the first ordinary ground-music frame.
+
+On the reproducible 380-sample owner-ROM route (SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de`; NES
+input `30:$08,31:0,60:$80`, native input `30:$10,31:0,60:$01`), CPU-RAM
+differences fall from 66,363 to 66,265 and working-RAM differences from 688
+to 590. CPU OAM backing RAM, visible OAM, both CIRAM pages, palette, and every
+PPU scalar remain exact.
+
+### Similar-Issue Sweep
+
+The ROM listing and production/test references to `LoadControlRegs`,
+`MiscSqu2MusicTasks`, `MiscSqu1MusicTasks`, `$07b5`, `$07b7`, the square
+SFX buffers, and event-music buffer were reviewed. The audio dispatcher is
+the sole owner of these counters; the guards preserve the source's SFX and
+death/castle ownership boundaries. No duplicate envelope-counter owner was
+found.

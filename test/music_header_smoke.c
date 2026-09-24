@@ -39,7 +39,8 @@ int main(void)
         game.ram[0x00f7U] != 2U || game.ram[0x00f8U] != 0x1dU ||
         game.ram[0x00f9U] != 0x2fU || game.ram[0x07b0U] != 0xb9U ||
         game.ram[0x07b3U] != 9U || game.ram[0x07b4U] != 9U ||
-        game.ram[0x07b6U] != 7U || game.ram[0x07b8U] != 9U ||
+        game.ram[0x07b5U] != 7U ||
+        game.ram[0x07b7U] != 7U || game.ram[0x07b6U] != 7U || game.ram[0x07b8U] != 9U ||
         game.ram[0x07b9U] != 9U || game.ram[0x07baU] != 7U ||
         game.ram[0x07c1U] != 0xb8U || game.ram[0x07c7U] != 0x11U ||
         game.ram[0x07caU] != 0U || game.ram[0x07c0U] != 1U ||

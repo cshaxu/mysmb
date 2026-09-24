@@ -41,7 +41,9 @@ enum {
     MYSMB_RAM_ALT_REGISTER_CONTENT = 0x07caU,
     MYSMB_RAM_SQUARE2_NOTE_LENGTH = 0x07b3U,
     MYSMB_RAM_SQUARE2_NOTE_COUNTER = 0x07b4U,
+    MYSMB_RAM_SQUARE2_ENVELOPE = 0x07b5U,
     MYSMB_RAM_SQUARE1_NOTE_COUNTER = 0x07b6U,
+    MYSMB_RAM_SQUARE1_ENVELOPE = 0x07b7U,
     MYSMB_RAM_TRIANGLE_NOTE_BUFFER = 0x07b8U,
     MYSMB_RAM_TRIANGLE_NOTE_COUNTER = 0x07b9U,
     MYSMB_RAM_NOISE_BEAT_COUNTER = 0x07baU,
@@ -293,6 +295,7 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
         if (length_address >= game->area_prg_size) return;
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = game->area_prg[length_address];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] = 8U;
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
@@ -356,6 +359,7 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
     if (length_address >= game->area_prg_size) return;
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
+    game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] = 8U;
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */
 static void mysmb_audio_step_noise_music(struct mysmb_game *game)
@@ -389,6 +393,22 @@ static void mysmb_audio_step_noise_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
     if (length_address >= game->area_prg_size) return;
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = game->area_prg[length_address];
+}
+/* ROM MiscSqu2MusicTasks and MiscSqu1MusicTasks decrement each envelope
+ * offset after a note load, except while the channel is owned by SFX or
+ * the death/castle event route. */
+static void mysmb_audio_step_square_envelopes(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U &&
+        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] != 0U) {
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE]--;
+    }
+    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U &&
+        (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x91U) == 0U &&
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] != 0U) {
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE]--;
+    }
 }
 static void mysmb_audio_step_music(struct mysmb_game *game)
 {
@@ -426,6 +446,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
     }
     mysmb_audio_step_square2_music(game);
     mysmb_audio_step_square1_music(game);
+    mysmb_audio_step_square_envelopes(game);
     mysmb_audio_step_triangle_music(game);
     mysmb_audio_step_noise_music(game);
     mysmb_audio_step_death_music(game);
