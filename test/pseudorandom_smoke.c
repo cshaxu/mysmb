@@ -19,5 +19,8 @@ int main(void)
         if (game.ram[0x07a7U] != expected[index][0] ||
             game.ram[0x07a8U] != expected[index][1]) return 1;
     }
-    return 0;
+    for (; index < 48U; ++index) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    return game.ram[0x07aeU] == 0U ? 0 : 1;
 }

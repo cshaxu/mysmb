@@ -1608,3 +1608,12 @@ same 380-sample trace removes the `$07ff` difference on every sample: CPU-RAM
 differences are 102,364 bytes and working-RAM differences are 34,692 bytes;
 all previously exact PPU and OAM fields remain exact. This narrows the state
 gap but does not close M2.
+
+## T13 S1 P17 Seven-Byte LFSR Footprint
+
+`RotPRandomBit` begins with `Y=$07` and uses `DEY/BNE`, so it executes seven
+ROR operations (`$07a7-$07ad`), leaving `$07ae` untouched. The initial C loop
+incorrectly rotated eight bytes. A 48-frame regression asserts that the tail
+byte stays zero; the corrected 380-sample trace removes all 332 differences at
+`$07ae`, leaving 102,032 CPU-RAM and 34,360 working-RAM differences. PPU and
+OAM output remains exact; M2 stays open.

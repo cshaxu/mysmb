@@ -143,7 +143,7 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
 }
 
 /* ROM NMI RotPRandomBit.  The carry derives from d1 of the first two
- * registers, then propagates through eight consecutive ROR instructions. */
+ * registers, then propagates through seven consecutive ROR instructions. */
 static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
 {
     mysmb_u8 index;
@@ -153,7 +153,7 @@ static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
 
     carry = ((game->ram[MYSMB_RAM_PSEUDORANDOM] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
         1U : 0U;
-    for (index = 0U; index < 8U; ++index) {
+    for (index = 0U; index < 7U; ++index) {
         value = game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)];
         next_carry = value & 1U;
         game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)] = (mysmb_u8)((value >> 1U) |
