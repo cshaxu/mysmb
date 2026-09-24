@@ -1629,3 +1629,16 @@ In the corrected 380-sample trace, all 145 `$0795` differences disappear:
 CPU-RAM differences are 101,887 and working-RAM differences are 34,215. Every
 PPU and OAM comparison remains exact. M2 is still open for remaining state
 owners and longer scripted routes.
+
+## T13 S1 P19 Area Music Selection
+
+`SecondaryGameSetup` now calls the ROM `GetAreaMusic` translation before it
+hands control to GameCore. The queue selection covers the four area types, the
+cloud override, pipe-intro entrances, and alternate entrance 2. The dedicated
+smoke drives the real task-2 scheduler and checks ground, cloud, pipe, and
+alternate-entry choices.
+
+On the corrected 380-sample trace, CPU-RAM differences fall to 101,692 and
+zero-page differences to 6,679; 32 `$fb` area-music queue differences are
+removed. Header expansion and per-channel music-state ownership remain open,
+while PPU and OAM results remain exact.

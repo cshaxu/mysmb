@@ -49,7 +49,11 @@ enum {
     MYSMB_RAM_HORIZONTAL_SCROLL = 0x073fU,
     MYSMB_RAM_VERTICAL_SCROLL = 0x0740U,
     MYSMB_RAM_BACKGROUND_COLOR = 0x0744U,
-    MYSMB_RAM_AREA_TYPE = 0x074eU
+    MYSMB_RAM_AREA_TYPE = 0x074eU,
+    MYSMB_RAM_PLAYER_ENTRANCE = 0x0710U,
+    MYSMB_RAM_CLOUD_OVERRIDE = 0x0743U,
+    MYSMB_RAM_ALT_ENTRANCE = 0x0769U,
+    MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU
 };
 
 enum {
@@ -779,6 +783,28 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
     }
 }
 
+/* ROM GetAreaMusic.  SecondaryGameSetup and the invincibility-expiry path
+ * queue the source area tune; SoundEngine owns its later header expansion. */
+static void mysmb_game_get_area_music(struct mysmb_game *game)
+{
+    static const mysmb_u8 music_select_data[6] = {
+        0x02U, 0x01U, 0x04U, 0x08U, 0x10U, 0x20U
+    };
+    mysmb_u8 selection;
+
+    if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) return;
+    selection = game->ram[MYSMB_RAM_AREA_TYPE];
+    if (game->ram[MYSMB_RAM_ALT_ENTRANCE] != 2U) {
+        if (game->ram[MYSMB_RAM_PLAYER_ENTRANCE] == 6U ||
+            game->ram[MYSMB_RAM_PLAYER_ENTRANCE] == 7U) {
+            selection = 5U;
+        }
+    }
+    if (game->ram[MYSMB_RAM_CLOUD_OVERRIDE] != 0U) selection = 4U;
+    if (selection < 6U)
+        game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = music_select_data[selection];
+}
+
 /* ROM PrimaryGameSetup immediately falls through to SecondaryGameSetup. */
 static void mysmb_game_primary_setup(struct mysmb_game *game)
 {
@@ -801,6 +827,7 @@ static void mysmb_game_secondary_setup(struct mysmb_game *game)
     mysmb_u8 index;
 
     game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+    mysmb_game_get_area_music(game);
     game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
     game->ram[0x0769U] = 0U;
     game->ram[0x0728U] = 0U;
