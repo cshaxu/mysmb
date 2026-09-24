@@ -22,7 +22,7 @@ int main(void)
         game.ram[0x0201U] != 0xffU || game.ram[0x0202U] != 0x23U ||
         game.ram[0x0203U] != 0x58U || game.ram[0x0722U] != 1U ||
         game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
-        game.ram[0x03ffU] != 0U) return 1;
+        game.ram[0x03ffU] != 0U || game.ram[0x03a0U] != 0xffU) return 1;
 
     game.ram[0x0204U] = 1U;
     game.ram[0x0770U] = 4U;

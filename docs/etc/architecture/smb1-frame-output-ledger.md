@@ -1762,3 +1762,24 @@ terminator semantics, and parser buffer 2 remains a separately owned
 `$0340` route. The setup/OAM smoke is the sole task-2 unit owner and now
 covers the full-page reset; no further duplicate reset implementation was
 found.
+
+## T11 S1 P3 Secondary Setup Balance Platform Seed
+
+The same owner-local `SecondaryGameSetup` range `$9071-$90b7` loads `$ff` into
+`BalancePlatformAlignment` (`$03a0`) after the VRAM reset and before its PPU
+name-table selection. Native C had omitted this source write. The existing
+task-2 setup/OAM smoke now asserts `$03a0=$ff` alongside the full command-page
+reset.
+
+On the bounded 380-sample title Start/right route, CPU-RAM differences fall
+from 69,375 to 69,174 and working-RAM differences fall from 3,083 to 2,882.
+CIRAM, palette, CPU OAM backing RAM, visible OAM, and every PPU scalar remain
+exact.
+
+### Similar-Issue Sweep
+
+The SecondaryGameSetup implementation, the matched local source range, and
+all $03a0 references were reviewed. This assignment has one production owner
+and one task-2 smoke assertion. Balance-platform runtime behavior remains owned
+by the existing object route; no second initializer or host-side substitute was
+found.
