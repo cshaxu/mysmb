@@ -421,6 +421,31 @@ mysmb_u8 mysmb_area_queue_score_coin_status(struct mysmb_game *game)
     return 1U;
 }
 
+/* ROM PrintStatusBarNumbers through WriteTopScore.  Title status uses the
+ * dedicated $22f0 destination and the six persistent TopScoreDisplay digits.
+ * The leading zero is rendered as the source blank tile. */
+mysmb_u8 mysmb_area_queue_title_score(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+    mysmb_u8 index;
+
+    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
+    if (offset > 0xf6U) return 0U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x22U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0xf0U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 6U;
+    for (index = 0U; index < 6U; ++index) {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+            game->ram[(mysmb_u16)(MYSMB_AREA_DISPLAY_DIGITS + index)];
+    }
+    if (game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] == 0U) {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] = 0x24U;
+    }
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
 /* Translation of WriteGameText.  The selector chooses a ROM-authored command
  * stream; mutable numbers occupy the exact byte offsets patched by the ROM. */
 mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)

@@ -636,8 +636,10 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 14U;
         break;
     case 14U:
-        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U)
+        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) {
+            (void)mysmb_area_queue_title_score(game);
             game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+        }
         else
             game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         break;

@@ -957,3 +957,16 @@ to one title-transfer boundary sample. The title-bootstrap smoke now requires
 the translated GameCore dispatcher to advance after the menu handoff. Remaining
 title palette, CIRAM, display-mask, and OAM differences are retained as open
 owners; this is not a frame-equivalence claim.
+
+## T10 S1 P49 Title Top-Score Buffer Command
+
+`WriteTopScore` reaches the title-only `PrintStatusBarNumbers` destination at
+PPU `$22f0`. Native C had ended task 14 at the mode handoff without producing
+that six-digit command. The translated route now appends the source-shaped
+command from persistent top-score digits and applies the source leading-zero
+blank rule before entering title menu mode.
+
+The 80-sample cold-start comparison now has no CIRAM difference before sample
+42 and no PPU-control difference across the window. The bootstrap smoke covers
+the command's bounded buffer layout and zero suppression. Palette, later
+title/demo CIRAM, display-mask, and OAM differences remain open owners.

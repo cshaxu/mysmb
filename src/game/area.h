@@ -52,6 +52,8 @@ mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game);
 /* ROM $8ebe-$8ef7, StatusBarNybbles $02/$13: append the current player's
  * live coin and score digits to an existing NMI command list. */
 mysmb_u8 mysmb_area_queue_score_coin_status(struct mysmb_game *game);
+/* ROM $8ebe-$8ef7, title-only top-score command at PPU $22f0. */
+mysmb_u8 mysmb_area_queue_title_score(struct mysmb_game *game);
 /* ROM $8808-$889c: queue one GameText selector (0-4, plus Warp variants). */
 mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector);
 /* ROM $85f1-$863c: append the current player's sprite-palette command. */

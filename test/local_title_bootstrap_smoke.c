@@ -29,6 +29,17 @@ int main(void)
     unsigned long title_hash;
 
     mysmb_game_initialize(&game);
+    game.ram[0x07d7U] = 0U;
+    game.ram[0x07d8U] = 1U;
+    game.ram[0x07d9U] = 2U;
+    game.ram[0x07daU] = 3U;
+    game.ram[0x07dbU] = 4U;
+    game.ram[0x07dcU] = 5U;
+    if (mysmb_area_queue_title_score(&game) == 0U ||
+        game.ram[0x0300U] != 9U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0302U] != 0xf0U || game.ram[0x0303U] != 6U ||
+        game.ram[0x0304U] != 0x24U || game.ram[0x0309U] != 5U ||
+        game.ram[0x030aU] != 0U) return 1;
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_title_source(&game, mysmb_local_title_data,
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
