@@ -299,6 +299,40 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_TRIANGLE_NOTE_BUFFER];
 }
+/* ROM HandleSquare1Music through AlternateLengthHandler.  Square 1 encodes
+ * its three-bit duration selector in bits 0, 7 and 6, unlike Square 2 and
+ * Triangle which use the low three bits directly. */
+static void mysmb_audio_step_square1_music(struct mysmb_game *game)
+{
+    mysmb_u16 address;
+    mysmb_u16 length_address;
+    mysmb_u8 data;
+    mysmb_u8 length_index;
+
+    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U ||
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U ||
+        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
+    game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER]--;
+    if (game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] != 0U) return;
+    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
+                          game->ram[0x00f5U]);
+    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++);
+    if (address >= game->area_prg_size) return;
+    data = game->area_prg[address];
+    while (data == 0U) {
+        game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0x94U;
+        address = (mysmb_u16)(address + 1U);
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++;
+        if (address >= game->area_prg_size) return;
+        data = game->area_prg[address];
+    }
+    length_index = (mysmb_u8)(((data & 1U) << 2U) |
+        ((data & 0x80U) >> 6U) | ((data & 0x40U) >> 6U));
+    length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE + length_index +
+        game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
+    if (length_address >= game->area_prg_size) return;
+    game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
+}
 static void mysmb_audio_step_music(struct mysmb_game *game)
 {
     mysmb_u8 event;
@@ -332,6 +366,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         }
     }
     mysmb_audio_step_square2_music(game);
+    mysmb_audio_step_square1_music(game);
     mysmb_audio_step_triangle_music(game);
     mysmb_audio_step_death_music(game);
 }

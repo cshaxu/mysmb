@@ -1683,3 +1683,16 @@ same-frame offset/counter state.
 The 380-sample trace reduces CPU-RAM differences to 99,979, zero-page to
 5,859, and working-RAM to 33,320. PPU and OAM stay exact. Square 1, noise, and
 loopback processing remain open.
+
+## T13 S1 P23 Square 1 Music Stream
+
+The portable audio owner now translates the data-side `HandleSquare1Music` and
+`AlternateLengthHandler` path for area music. It advances `$f8`, skips the ROM
+zero marker while setting `$07ca`, permutes encoded duration bits 0/7/6, looks
+up the resulting duration, and reloads `$07b6`. The focused ROM fixture proves
+the first `$c1` Square 1 datum advances `$f8` to `$1d` and loads `$07b6=7`.
+
+The corrected 380-sample trace reduces CPU-RAM differences to 99,700,
+zero-page differences to 5,715, and working-RAM differences to 33,185. All
+PPU, CIRAM, palette, and OAM fields remain exact. Noise, event-stream behavior,
+and music loopbacks remain open.
