@@ -352,6 +352,15 @@ mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
     if (game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U) return 0U;
     player = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PLAYER] & 1U);
     offset = 0U;
+    /* ROM GetSBNybbles calls PrintStatusBarNumbers with the low nybble
+     * first, so the coin command precedes the score command in Buffer1. */
+    game->ram[0x0301U + offset++] = 0x20U;
+    game->ram[0x0301U + offset++] = 0x6dU;
+    game->ram[0x0301U + offset++] = 2U;
+    /* StatusBarOffset selector 3/4 points at DisplayDigits 22/28. */
+    index = (mysmb_u8)(player != 0U ? 28U : 22U);
+    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
+    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index];
     game->ram[0x0301U + offset++] = 0x20U;
     game->ram[0x0301U + offset++] = 0x62U;
     game->ram[0x0301U + offset++] = 6U;
@@ -366,13 +375,6 @@ mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
     if (game->ram[0x0301U + score_offset] == 0U) {
         game->ram[0x0301U + score_offset] = 0x24U;
     }
-    game->ram[0x0301U + offset++] = 0x20U;
-    game->ram[0x0301U + offset++] = 0x6dU;
-    game->ram[0x0301U + offset++] = 2U;
-    /* StatusBarOffset selector 3/4 points at DisplayDigits 22/28. */
-    index = (mysmb_u8)(player != 0U ? 28U : 22U);
-    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
-    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index];
     game->ram[0x0301U + offset++] = 0x20U;
     game->ram[0x0301U + offset++] = 0x73U;
     game->ram[0x0301U + offset++] = 3U;
