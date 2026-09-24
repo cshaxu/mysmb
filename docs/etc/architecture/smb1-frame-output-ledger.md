@@ -352,3 +352,19 @@ separate dynamic owners.
 The row-12 dispatcher was checked for treating selector one as a bridge or a
 normal-row style object. It now has an explicit static pulley route; no
 platform state is synthesized in the background parser.
+
+## T10 S1 P17 Row-13 Static Pipe And Castle Objects
+
+The static row-13 table now translates `IntroPipe` (`$3785-$3798`) and the
+`AxeObj`/`ChainObj`/`CastleBridgeObj` metatile route (`$4024-$4050`). Intro
+pipe retains the source's fixed four-column sideways data, its late vertical
+cap/shaft column, and the original slot countdown. Axe, chain, and bridge use
+the source row/metatile table, with the bridge's fixed length of twelve. The
+parser smoke test covers the pipe sequence and the axe/bridge entries.
+
+### Similar-Issue Sweep
+
+The row-13 low-six-bit dispatcher now distinguishes background metatile codes
+zero through four from flag, warp, scroll-lock, frenzy, and victory state.
+Only the static PPU-address-control write owned by `AxeObj` is retained here;
+game-mode, enemy, and transition effects remain deferred.

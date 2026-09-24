@@ -286,6 +286,45 @@ int main(void)
         game.ram[0x06a1U] != 0x24U || game.ram[0x06a2U] != 0x25U ||
         game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 0xffU) return 1;
 
+    /* Row-13 intro pipes share the source's four-column sideways-pipe data,
+     * and its late columns establish the vertical-pipe cap and shaft. */
+    prg[0x0040U] = 0x0dU;
+    prg[0x0041U] = 0x40U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06aaU] != 0x1cU || game.ram[0x06abU] != 0x1fU ||
+        game.ram[0x0732U] != 2U) return 1;
+    game.ram[0x0726U] = 1U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06aaU] != 0x1dU || game.ram[0x06abU] != 0x20U ||
+        game.ram[0x0732U] != 1U) return 1;
+    game.ram[0x0726U] = 2U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0x10U || game.ram[0x06a9U] != 0x14U ||
+        game.ram[0x06aaU] != 0x1eU || game.ram[0x06abU] != 0x21U ||
+        game.ram[0x0732U] != 0U) return 1;
+
+    /* Axe, chain, and castle bridge retain their row-13 metatile table. */
+    prg[0x0040U] = 0x0dU;
+    prg[0x0041U] = 0x42U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a7U] != 0xc5U || game.ram[0x0773U] != 8U) return 1;
+    prg[0x0041U] = 0x44U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a9U] != 0x89U || game.ram[0x0732U] != 11U) return 1;
+
     /* AreaStyleObject chooses the header-selected tree/mushroom/cannon
      * family and tree/mushroom rows persist through their length slots. */
     prg[0x0040U] = 0x25U;

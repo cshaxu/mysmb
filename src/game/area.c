@@ -1234,14 +1234,36 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
     if (row == 13U) {
-        /* Row 13 has a dedicated low-six-bit object table. FlagpoleObject
-         * writes the static ball, shaft, and base; its flag/enemy state is
-         * a separate dynamic owner. */
-        if ((second & 0x7fU) == 0x41U) {
+        /* Row 13 has a dedicated low-six-bit object table.  Dynamic flag,
+         * victory, and warp state remains outside this static renderer. */
+        value = (mysmb_u8)(second & 0x3fU);
+        if (value == 0U) {
+            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 3U;
+            value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+            if (value > 3U) return;
+            if (side_pipe_shaft[value] != 0U) {
+                mysmb_area_render_under_part(game, 0U, 8U, side_pipe_shaft[value]);
+                for (row = 0U; row < 7U; ++row)
+                    game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0U;
+                game->ram[MYSMB_AREA_METATILE_BUFFER + 7U] = pipe[value];
+            }
+            game->ram[MYSMB_AREA_METATILE_BUFFER + 9U] = side_pipe_top[value];
+            game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = side_pipe_bottom[value];
+        }
+        else if (value == 1U) {
             game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x24U;
             for (row = 1U; row < 10U; ++row)
                 game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x25U;
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x61U;
+        }
+        else if (value >= 2U && value <= 4U) {
+            if (value == 4U && game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 12U;
+            if (value == 2U) game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 8U;
+            row = value == 2U ? 6U : (value == 3U ? 7U : 8U);
+            height = value == 2U ? 0xc5U : (value == 3U ? 0x0cU : 0x89U);
+            mysmb_area_render_under_part(game, row, 0U, height);
         }
         return;
     }
