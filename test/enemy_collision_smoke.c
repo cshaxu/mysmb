@@ -73,7 +73,7 @@ int main(void)
     game.ram[0x071cU] = 0U;
     game.ram[0x071dU] = 0xffU;
     mysmb_objects_step_normal_enemies(&game);
-    if (game.ram[0x03d1U] != 3U) return 5;
+    if (game.ram[0x03d1U] != 3U || game.ram[0x04b2U] != 0xffU) return 5;
     game.ram[0x0087U] = 0xeeU;
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x03d1U] != 1U) return 6;

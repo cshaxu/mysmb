@@ -91,4 +91,27 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
     mysmb_objects_set_bounding_box(game, address,
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
         game->ram[0x03aeU + slot], game->ram[0x03b9U + slot]);
+
+    /* ROM CheckRightScreenBBox / CheckLeftScreenBBox clips the two
+     * horizontal collision corners after BoundingBoxCore. */
+    x_difference = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_X] + 0x80U);
+    borrow = game->ram[MYSMB_SCREEN_LEFT_X] >= 0x80U ? 1U : 0U;
+    page_difference = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] + borrow);
+    if (((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U |
+         game->ram[MYSMB_ENEMY_X + slot]) >=
+        ((mysmb_u16)page_difference << 8U | x_difference)) {
+        if ((game->ram[address + 2U] & 0x80U) == 0U) {
+            if ((game->ram[address] & 0x80U) == 0U) {
+                game->ram[address] = 0xffU;
+            }
+            game->ram[address + 2U] = 0xffU;
+        }
+    }
+    else if ((game->ram[address] & 0x80U) != 0U &&
+             game->ram[address] >= 0xa0U) {
+        if ((game->ram[address + 2U] & 0x80U) != 0U) {
+            game->ram[address + 2U] = 0U;
+        }
+        game->ram[address] = 0U;
+    }
 }
