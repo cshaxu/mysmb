@@ -1569,3 +1569,19 @@ samples 280--379 fell from 864 to 12 bytes; hardware OAM differs in only four
 samples and twelve bytes, first at sample 312. CIRAM, palette, and all seven
 PPU-visible scalars remain exact throughout. The small remaining OAM set and
 full CPU-RAM ownership work keep M2 open.
+
+## T11 S1 P14 Exact Goomba OAM Edge Mask
+
+`DrawEnemyObject` interprets `Enemy_OffscreenBits` by sprite column and row:
+d2 hides the right column, d3 the left column, d5 the third row, d6 the lower
+two rows, and d7 every row. The portable Goomba writer now applies those bits
+rather than treating any nonzero value as a full-object hide. Its graphics
+phase also records the source-shaped `$07` right-edge condition when the
+relative X coordinate enters `$f8-$ff`. The smoke covers the `$07` case: left
+column visible, right column hidden.
+
+The corrected 380-sample Start/Right ROM trace now has zero differences in
+CPU OAM RAM, hardware OAM, both CIRAM pages, palette, and every PPU-visible
+scalar. CPU RAM still differs in scratch, stack, and working fields, so M2
+remains open pending complete persistent-state ownership and longer-path
+coverage.

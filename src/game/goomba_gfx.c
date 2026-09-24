@@ -36,6 +36,8 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
     mysmb_u8 row_offset;
     mysmb_u8 state;
     mysmb_u8 offscreen;
+    mysmb_u8 left_y;
+    mysmb_u8 right_y;
     const mysmb_u8 *tiles;
 
     for (slot = 0U; slot < 5U; ++slot) {
@@ -53,11 +55,11 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_RELATIVE_Y + slot] != 0U) {
             x = game->ram[MYSMB_ENEMY_RELATIVE_X + slot];
             y = game->ram[MYSMB_ENEMY_RELATIVE_Y + slot];
-            offscreen = game->ram[MYSMB_ENEMY_OFFSCREEN + slot] != 0U ? 1U : 0U;
+            offscreen = game->ram[MYSMB_ENEMY_OFFSCREEN + slot];
         }
         else {
             offscreen = world < screen || world >= (mysmb_u16)(screen + 0x0100U) ?
-                1U : 0U;
+                0x0fU : 0U;
         }
         state = game->ram[MYSMB_ENEMY_STATE + slot];
         tiles = normal_tiles;
@@ -86,10 +88,20 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
                 game->ram[0x0202U + row_offset] = attributes;
                 game->ram[0x0206U + row_offset] = attributes;
             }
-            game->ram[0x0200U + row_offset] = offscreen != 0U ? 0xf8U :
-                (mysmb_u8)(y + row * 8U);
-            game->ram[0x0204U + row_offset] = offscreen != 0U ? 0xf8U :
-                (mysmb_u8)(y + row * 8U);
+            left_y = (mysmb_u8)(y + row * 8U);
+            right_y = left_y;
+            if ((offscreen & 0x80U) != 0U ||
+                ((offscreen & 0x40U) != 0U && row >= 1U) ||
+                ((offscreen & 0x20U) != 0U && row == 2U)) {
+                left_y = 0xf8U;
+                right_y = 0xf8U;
+            }
+            else {
+                if ((offscreen & 0x08U) != 0U) left_y = 0xf8U;
+                if ((offscreen & 0x04U) != 0U) right_y = 0xf8U;
+            }
+            game->ram[0x0200U + row_offset] = left_y;
+            game->ram[0x0204U + row_offset] = right_y;
             game->ram[0x0203U + row_offset] = x;
             game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
         }

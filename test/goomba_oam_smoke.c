@@ -60,5 +60,10 @@ int main(void)
     if (game.ram[0x0223U] != 0x2eU || game.ram[0x0227U] != 0x36U ||
         game.ram[0x022bU] != 0x2eU || game.ram[0x022fU] != 0x36U ||
         game.ram[0x0233U] != 0x2eU || game.ram[0x0237U] != 0x36U) return 1;
+    game.ram[0x03d1U] = 0x07U;
+    mysmb_objects_draw_goombas(&game);
+    if (game.ram[0x0220U] != 0xb8U || game.ram[0x0224U] != 0xf8U ||
+        game.ram[0x0228U] != 0xc0U || game.ram[0x022cU] != 0xf8U ||
+        game.ram[0x0230U] != 0xc8U || game.ram[0x0234U] != 0xf8U) return 1;
     return 0;
 }

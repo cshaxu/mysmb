@@ -975,7 +975,8 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
                                                 game->ram[MYSMB_SCREEN_LEFT_X]);
         game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
         game->ram[0x03d1U + slot] = enemy_world < screen_world ||
-            enemy_world >= (mysmb_u16)(screen_world + 0x0100U) ? 0x0fU : 0U;
+            enemy_world >= (mysmb_u16)(screen_world + 0x0100U) ? 0x0fU :
+            (game->ram[0x03aeU + slot] >= 0xf8U ? 0x07U : 0U);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
             game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
