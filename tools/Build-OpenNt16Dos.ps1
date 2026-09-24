@@ -13,7 +13,7 @@ $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
 $sources = @(
     'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
-    'game/objects.c', 'game/bullet_bill_gfx.c', 'game/hammer_gfx.c', 'game/firebar_gfx.c', 'game/enemy_bounds.c',
+    'game/objects.c', 'game/bullet_bill_gfx.c', 'game/hammer_gfx.c', 'game/firebar_gfx.c', 'game/vine_gfx.c', 'game/enemy_bounds.c',
     'game/power_up_gfx.c', 'game/block_gfx.c', 'game/goomba_gfx.c',
     'game/render.c', 'game/frame_snapshot.c', 'platform/text/text_frame.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',

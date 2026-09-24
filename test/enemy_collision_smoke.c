@@ -28,6 +28,7 @@ int main(void)
     game.ram[0x0058U] = 0xf0U;
     game.ram[0x0059U] = 0x10U;
     game.frame_number = 1U;
+    game.ram[0x0009U] = (mysmb_u8)(1U);
     mysmb_objects_step_enemy_collisions(&game);
     if (game.ram[0x0058U] != 0x10U || game.ram[0x0059U] != 0xf0U ||
         game.ram[0x0046U] != 1U || game.ram[0x0047U] != 2U) return 1;

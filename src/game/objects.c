@@ -2064,6 +2064,22 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_Y + slot]--;
         game->ram[MYSMB_VINE_HEIGHT]++;
     }
+    if (game->ram[MYSMB_VINE_HEIGHT] >= 8U) {
+        mysmb_u8 draw_index;
+        mysmb_u8 count;
+
+        count = game->ram[MYSMB_VINE_FLAG_OFFSET];
+        if (count > 2U) count = 2U;
+        for (draw_index = 0U; draw_index < count; ++draw_index) {
+            mysmb_u8 vine_slot;
+
+            vine_slot = game->ram[MYSMB_VINE_OBJECT_OFFSET + draw_index];
+            if (vine_slot < 6U &&
+                game->ram[MYSMB_ENEMY_ID + vine_slot] == 0x2fU) {
+                mysmb_objects_draw_vine(game, draw_index);
+            }
+        }
+    }
     if (game->ram[MYSMB_VINE_HEIGHT] < 0x20U) return;
     x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 4U);
     page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +

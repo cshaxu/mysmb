@@ -23,7 +23,9 @@ int main(void)
     mysmb_u8 i;
 
     for (pass = 0U; pass < 3U; ++pass) {
-        mysmb_game_initialize_memory(&game, 0U);
+        mysmb_game_initialize_memory(&game, 0xfeU);
+        game.ram[0x071aU] = 0U;
+        game.ram[0x071cU] = 0U;
         game.ram[0x000fU] = 1U;
         game.ram[0x0016U] = 6U;
         game.ram[0x0046U] = 1U;

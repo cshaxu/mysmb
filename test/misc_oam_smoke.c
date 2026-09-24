@@ -6,6 +6,7 @@ int main(void)
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 2UL;
+    game.ram[0x0009U] = (mysmb_u8)(2UL);
     game.ram[0x002aU] = 2U;
     game.ram[0x007aU] = 1U;
     game.ram[0x0093U] = 0x50U;
@@ -21,6 +22,7 @@ int main(void)
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 4UL;
+    game.ram[0x0009U] = (mysmb_u8)(4UL);
     game.ram[0x002aU] = 1U;
     game.ram[0x007aU] = 0U;
     game.ram[0x0093U] = 0x30U;

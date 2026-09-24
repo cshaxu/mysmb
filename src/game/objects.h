@@ -103,6 +103,7 @@ void mysmb_objects_step_floatey_numbers(struct mysmb_game *game);
 /* ROM $ba55-$bad2 Setup_Vine/VineObjectHandler, excluding drawing. */
 void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot);
 void mysmb_objects_step_vine(struct mysmb_game *game);
+void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index);
 /* ROM HandleCoinMetatile/GiveOneCoin. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
                                 mysmb_u8 block_row);

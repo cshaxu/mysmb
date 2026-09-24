@@ -6,6 +6,7 @@ int main(void)
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 2UL;
+    game.ram[0x0009U] = (mysmb_u8)(2UL);
     game.ram[0x0747U] = 0xffU;
     game.ram[0x0039U] = 2U;
     game.ram[0x071aU] = 0U;
@@ -27,6 +28,7 @@ int main(void)
         game.ram[0x022eU] != 0x61U || game.ram[0x022fU] != 0x48U) return 1;
 
     game.frame_number = 6UL;
+    game.ram[0x0009U] = (mysmb_u8)(6UL);
     game.ram[0x0039U] = 1U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0221U] != 0xd6U || game.ram[0x0225U] != 0xd6U ||
@@ -36,6 +38,7 @@ int main(void)
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 0UL;
+    game.ram[0x0009U] = (mysmb_u8)(0UL);
     game.ram[0x0747U] = 0U;
     game.ram[0x0039U] = 0U;
     game.ram[0x071aU] = 0U;
