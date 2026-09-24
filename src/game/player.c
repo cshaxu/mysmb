@@ -162,6 +162,7 @@ mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
     mysmb_u8 integer;
     mysmb_u8 carry_force;
     mysmb_u8 carry_x;
+    mysmb_u16 x_sum;
     mysmb_u8 old_force;
     mysmb_u8 old_x;
     mysmb_u8 page_delta;
@@ -184,8 +185,10 @@ mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
         (mysmb_u8)(old_force + fraction);
     carry_force = game->ram[MYSMB_PLAYER_X_MOVE_FORCE] < old_force ? 1U : 0U;
     old_x = game->ram[MYSMB_PLAYER_X];
-    game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_x + integer + carry_force);
-    carry_x = game->ram[MYSMB_PLAYER_X] < old_x ? 1U : 0U;
+    x_sum = (mysmb_u16)old_x + (mysmb_u16)integer +
+        (mysmb_u16)carry_force;
+    game->ram[MYSMB_PLAYER_X] = (mysmb_u8)x_sum;
+    carry_x = x_sum > 0x00ffU ? 1U : 0U;
     game->ram[MYSMB_PLAYER_PAGE] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta + carry_x);
     return (mysmb_u8)(integer + carry_force);
