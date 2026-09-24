@@ -13,7 +13,9 @@ $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
 $sources = @(
     'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
-    'game/objects.c', 'game/render.c', 'platform/text/text_frame.c',
+    'game/objects.c', 'game/bullet_bill_gfx.c', 'game/enemy_bounds.c',
+    'game/power_up_gfx.c', 'game/block_gfx.c', 'game/goomba_gfx.c',
+    'game/render.c', 'game/frame_snapshot.c', 'platform/text/text_frame.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )
@@ -32,7 +34,10 @@ try {
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += [System.IO.Path]::GetFileNameWithoutExtension($source) + '.obj'
     }
-    $objectLine = ($objects -join '+') + '+' + $stackObject
+    # LINK 5.60 has a short physical-line limit even inside response files.
+    # Keep every continuation line short and stage the stack object locally.
+    Copy-Item -LiteralPath $stackObject -Destination 'mysmb-stack.obj' -Force
+    $objectLine = (($objects + 'mysmb-stack.obj') -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
     & $Linker /nologo '@mysmb-dos16.rsp'

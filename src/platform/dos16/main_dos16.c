@@ -23,28 +23,24 @@ static mysmb_u8 mysmb_dos16_read_buttons(void *context)
 {
 #ifdef MYSMB_DOS16_TARGET
     unsigned key;
+    mysmb_u8 scan_code;
+    mysmb_u8 shift_status;
     struct mysmb_dos16_host *host;
 
     host = (struct mysmb_dos16_host *)context;
-    if (_bios_keybrd(_KEYBRD_READY) == 0U) return 0U;
-    key = _bios_keybrd(_KEYBRD_READ);
-    switch ((key >> 8U) & 0xffU) {
-    case 0x3bU: host->text_mode = host->text_mode == 0U ? 1U : 0U; return 0U;
-    case 0x4bU: return MYSMB_BUTTON_LEFT;
-    case 0x4dU: return MYSMB_BUTTON_RIGHT;
-    case 0x48U: return MYSMB_BUTTON_UP;
-    case 0x50U: return MYSMB_BUTTON_DOWN;
-    case 0x1cU: return MYSMB_BUTTON_START;
-    case 0x2cU: return MYSMB_BUTTON_A;
-    case 0x2dU: return MYSMB_BUTTON_B;
-    default: return 0U;
+    shift_status = (mysmb_u8)_bios_keybrd(_KEYBRD_SHIFTSTATUS);
+    scan_code = 0U;
+    if (_bios_keybrd(_KEYBRD_READY) != 0U) {
+        key = _bios_keybrd(_KEYBRD_READ);
+        scan_code = (mysmb_u8)((key >> 8U) & 0xffU);
     }
+    return mysmb_dos16_decode_bios_key(scan_code, shift_status,
+                                       &host->text_mode);
 #else
     (void)context;
     return 0U;
 #endif
 }
-
 static void mysmb_dos16_present_vga(void *context, const struct mysmb_vga_frame *frame)
 {
 #ifdef MYSMB_DOS16_TARGET

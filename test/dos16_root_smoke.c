@@ -41,7 +41,18 @@ int main(void)
     struct mysmb_dos16_root root;
     struct mysmb_dos16_test_host host;
     struct mysmb_dos16_hooks hooks;
-
+    mysmb_u8 text_mode;
+    text_mode = 0U;
+    if (mysmb_dos16_decode_bios_key(0x11U, 0U, &text_mode) != MYSMB_BUTTON_UP ||
+        mysmb_dos16_decode_bios_key(0x1fU, 0U, &text_mode) != MYSMB_BUTTON_DOWN ||
+        mysmb_dos16_decode_bios_key(0x1eU, 0U, &text_mode) != MYSMB_BUTTON_LEFT ||
+        mysmb_dos16_decode_bios_key(0x20U, 0U, &text_mode) != MYSMB_BUTTON_RIGHT ||
+        mysmb_dos16_decode_bios_key(0x24U, 0U, &text_mode) != MYSMB_BUTTON_A ||
+        mysmb_dos16_decode_bios_key(0x25U, 0U, &text_mode) != MYSMB_BUTTON_B ||
+        mysmb_dos16_decode_bios_key(0x1cU, 0U, &text_mode) != MYSMB_BUTTON_START ||
+        mysmb_dos16_decode_bios_key(0U, 1U, &text_mode) != MYSMB_BUTTON_SELECT ||
+        mysmb_dos16_decode_bios_key(0U, 2U, &text_mode) != MYSMB_BUTTON_SELECT ||
+        mysmb_dos16_decode_bios_key(0x3bU, 0U, &text_mode) != 0U || text_mode != 1U) return 1;
     host.buttons = 0U;
     host.vga_calls = 0U;
     host.text_calls = 0U;

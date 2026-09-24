@@ -22,6 +22,11 @@ struct mysmb_dos16_root {
     struct mysmb_dos16_hooks hooks;
 };
 
+/* BIOS scan-code decoder shared by the real DOS root and ROM-free tests. */
+mysmb_u8 mysmb_dos16_decode_bios_key(mysmb_u8 scan_code,
+                                      mysmb_u8 shift_status,
+                                      mysmb_u8 *text_mode);
+
 void mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
                                  const struct mysmb_dos16_hooks *hooks,
                                  mysmb_u8 MYSMB_VGA_FAR *vga_page0,
