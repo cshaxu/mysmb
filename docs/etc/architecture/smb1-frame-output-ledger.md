@@ -1979,3 +1979,36 @@ were reviewed.  The area initializer is the sole start-page owner; the player
 scroll owner independently recomputes the same right boundary after movement
 and already follows the carry rule.  No additional hard-coded initial screen
 boundary or start-page substitute remains.
+## T11 S1 P12 PlayerCtrlRoutine Bounding-Box Commit
+
+The matched ROM `PlayerCtrlRoutine` calls `RelativePlayerPosition` and then
+`BoundingBoxCore` on every player-control frame, before background collision.
+`RelativePlayerPosition` writes the player-relative coordinates at `$03ad` and
+`$03b8`; for the normal player control value `$01`, `BoundingBoxCore` writes
+`x+3`, `y+$14`, `x+$0d`, and `y+$20` to `$04ac-$04af`.  Native C updated
+relative coordinates only in its later OAM draw route and constructed this
+collision box only when an object collision happened, leaving the shared box
+at zero in ordinary play.
+
+`mysmb_player_step` now commits the relative coordinates and matching bounding
+box immediately after the player movement route, including the climbing path.
+The ROM-free `player-bounding-box-smoke` drives a normal player-control frame
+at `(x,y) = ($28,$b0)` and asserts the source result
+`$2b,$c4,$35,$d0`.
+
+On the reproducible 380-sample owner-ROM route (SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de`; NES
+input `30:$08,31:0,60:$80`, native input `30:$10,31:0,60:$01`), CPU-RAM
+differences fall from 66,867 to 66,363 and working-RAM differences from 1,192
+to 688.  This removes all 126 mismatches at each of `$04ac-$04af`.  CPU OAM
+backing RAM, visible OAM, both CIRAM pages, palette, and every PPU scalar
+remain exact.
+
+### Similar-Issue Sweep
+
+The matched listing and production/test references to `RelativePlayerPosition`,
+`BoundingBoxCore`, `$03ad`, `$03b8`, `$0499`, and `$04ac-$04af` were reviewed.
+Player control is now the primary-box owner.  Object collision paths retain
+their source-specific enemy, power-up, fireball, hammer, and platform box
+writes, and the late OAM route now merely refreshes the same relative fields.
+No other ordinary player-control path leaves the primary collision box stale.
