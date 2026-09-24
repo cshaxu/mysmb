@@ -1081,6 +1081,7 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
      * that frame boundary so title VRAM commands have the same phase. */
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
+    game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0x80U;
     return 1U;
 }
 

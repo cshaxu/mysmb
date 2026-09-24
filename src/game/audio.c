@@ -262,6 +262,11 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
     address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
     if (address >= game->area_prg_size) return;
     data = game->area_prg[address];
+    if (data == 0U) {
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
+        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+        return;
+    }
     if ((data & 0x80U) != 0U) {
         length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
             (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
@@ -289,7 +294,7 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
     address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_TRIANGLE]++);
     if (address >= game->area_prg_size) return;
     data = game->area_prg[address];
-    if ((data & 0x80U) != 0U) {
+if ((data & 0x80U) != 0U) {
         length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
             (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
         if (length_address >= game->area_prg_size) return;

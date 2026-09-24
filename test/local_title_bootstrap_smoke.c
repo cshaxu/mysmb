@@ -48,6 +48,7 @@ int main(void)
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
     if (mysmb_game_begin_title_bootstrap(&game) == 0U) return 1;
+    if (game.ram[0x00fbU] != 0x80U) return 1;
     input.buttons = 0U;
     saw_title_transfer = 0U;
     saw_icon_queue = 0U;

@@ -1709,3 +1709,15 @@ The corrected 380-sample trace reduces CPU-RAM differences to 99,405 and
 working-RAM differences to 32,890; zero-page stays at 5,715. PPU, CIRAM,
 palette, and OAM remain exact. Event-stream behavior and cross-section music
 loopback remain open.
+## T13 S1 P25 Title Silence Music Lifecycle
+
+The title bootstrap now carries the ROM `InitializeGame` Silence queue through
+the native area-initialization boundary: `$fb=$80` persists until the first
+post-Start SoundEngine pass. Square 2 now recognizes its ROM zero terminator
+and clears the primary/event music buffers. The owner-local music fixture
+covers the Silence header, its zero data byte, `$f7` advancement, and the
+cleared buffers; the title bootstrap smoke asserts the initial queue.
+
+The corrected 380-sample trace reduces CPU-RAM differences to 98,662 and
+working-RAM differences to 32,130. PPU, CIRAM, palette, and OAM remain exact.
+Ground-music section loopback and non-audio RAM producers remain open.
