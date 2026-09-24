@@ -11,6 +11,9 @@
 #include "core/machine.h"
 
 #define MYSMB_REFERENCE_NMI_RETURN 0x8181u
+#define MYSMB_REFERENCE_PPU_CONTROL_MIRROR 0x0778u
+#define MYSMB_REFERENCE_HORIZONTAL_SCROLL 0x073fu
+#define MYSMB_REFERENCE_VERTICAL_SCROLL 0x0740u
 /* This retains the existing 512 driver-run budget in instruction work:
  * core_driver_run executes at most 256 instructions per call. */
 #define MYSMB_REFERENCE_MAX_STEPS_PER_FRAME 131072u
@@ -23,14 +26,18 @@ static int mysmb_reference_write(FILE *output, const void *bytes, size_t count)
 static int mysmb_reference_write_frame(FILE *output, const core_machine *machine)
 {
     const core_ppu *ppu = &machine->ppu;
-    /* At NMI RTI, v may still be the renderer's timed fetch address.  SMB1
-     * has just written $2005 then $2000, so t plus fine_x is the committed
-     * next-frame scroll/name-table state. */
-    lib_u16 display_address = ppu->temporary_address;
-    lib_u8 name_table = (lib_u8)((display_address >> 10u) & 3u);
-    lib_u8 scroll_x = (lib_u8)(((display_address & 0x001fu) << 3u) | ppu->fine_x);
-    lib_u8 scroll_y = (lib_u8)((((display_address >> 5u) & 0x001fu) << 3u) |
-        ((display_address >> 12u) & 7u));
+    /* The snapshot contract records the display state reconstructed from
+     * SMB1's committed mirrors, not the PPU's timed internal fetch latch.
+     * Direct $2006 title-data reads may temporarily alter t without changing
+     * the source-owned scroll for the next displayed frame. */
+    lib_u8 name_table = (lib_u8)(machine->ram[MYSMB_REFERENCE_PPU_CONTROL_MIRROR] & 3u);
+    lib_u8 scroll_x = machine->ram[MYSMB_REFERENCE_HORIZONTAL_SCROLL];
+    lib_u8 scroll_y = machine->ram[MYSMB_REFERENCE_VERTICAL_SCROLL];
+    lib_u16 display_address = (lib_u16)(
+        ((lib_u16)(scroll_y & 7u) << 12u) |
+        ((lib_u16)name_table << 10u) |
+        ((lib_u16)((scroll_y >> 3u) & 0x1fu) << 5u) |
+        (lib_u16)(scroll_x >> 3u));
 
     return mysmb_reference_write(output, &ppu->frame_revision,
             sizeof(ppu->frame_revision)) &&

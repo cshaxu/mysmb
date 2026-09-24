@@ -762,10 +762,11 @@ an ignored build directory and deleted immediately after comparison.
 enforces the 600-sample limit, and compares CPU RAM, each CIRAM page, palette,
 OAM, and PPU scalar fields independently. SMB1's mapper-0 vertical mirroring
 maps the two physical CIRAM pages directly to the two native name tables. The
-recorder reads nnes PPU `t` plus fine X at RTI, rather than render-time `v`:
-the source has just written `$2005/$2000`, so `t` is its next-frame committed
-scroll/name-table state. The leading reference PPU revision and native tick
-sequence are labels, not output bytes, and are therefore not compared.
+reference recorder reconstructs name-table selection, scroll, and address from
+SMB1's `$0778/$073f/$0740` committed mirrors at RTI. Direct title-data reads
+can alter nnes's internal PPU latch without changing that source-owned display
+state. The leading reference PPU revision and native tick sequence are labels,
+not output bytes, and are therefore not compared.
 
 The comparison report also splits CPU RAM into zero page, 6502 stack,
 OAM-backed RAM, and `$0300-$07ff` working RAM. Stack bytes are reported for
@@ -1047,3 +1048,18 @@ mask and vertical scroll value. The 100-sample cold-start comparison has exact
 name tables, palette, PPU control, mask, name-table selection, and horizontal
 scroll. Only the title-data-read frame's transient vertical-scroll and PPU
 address values, plus OAM, remain open.
+
+## T10 S1 P55 Reconstructed PPU Address Contract
+
+The frame contract defines the PPU address as a reconstruction of SMB1's
+committed name-table and scroll state. The reference recorder had instead
+derived its scalar fields from nnes's internal PPU temporary latch. During
+`DrawTitleScreen`, direct `$2006/$2007` reads temporarily mutate that latch,
+although the source's `$0778/$073f/$0740` display owners remain unchanged.
+
+The recorder now derives name-table, scroll, and address from those three
+source-owned RAM mirrors, matching the native snapshot contract without adding
+a PPU emulator to the product. The rebuilt owner-local reference recorder and
+the corrected 380-sample Start route have exact CIRAM pages, palette, and all
+seven PPU scalar bytes across samples 0--379. CPU RAM and OAM remain different
+and retain their declared T11 ownership.
