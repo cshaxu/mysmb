@@ -119,15 +119,17 @@ int main(void)
     /* A matching stream object occupies the last free slot and the existing
      * slot is revisited, not read from the stream, on the next column. */
     prg[0x0040U] = 0x27U;
-    prg[0x0041U] = 0x02U;
+    prg[0x0041U] = 0x22U;
     prg[0x0042U] = 0xfdU;
     game.ram[0x072aU] = 1U;
     game.ram[0x072cU] = 0U;
+    game.ram[0x0743U] = 0U;
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x072fU] != 0U || game.ram[0x072cU] != 2U) return 1;
-    game.ram[0x0732U] = 2U;
+        game.ram[0x072fU] != 0U || game.ram[0x0732U] != 1U ||
+        game.ram[0x06a8U] != 0x51U || game.ram[0x072cU] != 2U) return 1;
     game.ram[0x0726U] = 3U;
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0732U] != 1U || game.ram[0x072cU] != 2U) return 1;
+        game.ram[0x0732U] != 0U || game.ram[0x06a8U] != 0x51U ||
+        game.ram[0x072cU] != 2U) return 1;
     return 0;
 }

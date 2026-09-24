@@ -139,6 +139,11 @@ enum {
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
 };
 
+static void mysmb_area_apply_parser_row_object(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 first,
+                                               mysmb_u8 second);
+
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
 void mysmb_area_initialize(struct mysmb_game *game)
@@ -1159,6 +1164,36 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
  * ProcessAreaData. It intentionally stops before JumpEngine: each object
  * family must own its own metatile writes. The result is the original three
  * slot state ($072d/$0730), page selector, and stream offset. */
+/* ROM $4054-$4077 RowOfBricks/RowOfSolidBlocks. The caller has already
+ * admitted the object to a persistent parser slot and filled the terrain
+ * column; these handlers overwrite only the selected metatile row. */
+static void mysmb_area_apply_parser_row_object(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 first,
+                                               mysmb_u8 second)
+{
+    static const mysmb_u8 brick[5] = { 0x22U, 0x51U, 0x52U, 0x52U, 0x88U };
+    static const mysmb_u8 solid[4] = { 0x69U, 0x61U, 0x61U, 0x62U };
+    mysmb_u8 row;
+    mysmb_u8 kind;
+    mysmb_u8 area_type;
+
+    row = (mysmb_u8)(first & 0x0fU);
+    kind = (mysmb_u8)((second & 0x70U) >> 4U);
+    if (row >= 12U || (kind != 2U && kind != 3U)) return;
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+    area_type = game->ram[MYSMB_AREA_TYPE];
+    if (area_type >= 4U) return;
+    if (kind == 2U) {
+        if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) area_type = 4U;
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = brick[area_type];
+    }
+    else {
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = solid[area_type];
+    }
+}
+
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -1170,6 +1205,7 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
     mysmb_u16 address;
     mysmb_u8 rerun;
     mysmb_u8 passes;
+    mysmb_u8 run_object;
 
     if (game == 0 || game->area_prg == 0 ||
         game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) return 0U;
@@ -1178,6 +1214,7 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
         rerun = 0U;
         slot = 2U;
         for (;;) {
+            run_object = 0U;
             game->ram[MYSMB_AREA_PARSER_BEHIND] = 0U;
             offset = game->ram[MYSMB_AREA_DATA_OFFSET];
             if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
@@ -1223,10 +1260,15 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                         game->ram[MYSMB_AREA_DATA_OFFSET] =
                             (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
                         game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                        run_object = 1U;
                     }
                 }
             }
             else {
+                run_object = 1U;
+            }
+            if (run_object != 0U) {
+                mysmb_area_apply_parser_row_object(game, slot, first, second);
                 game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
             }
             if (slot == 0U) break;

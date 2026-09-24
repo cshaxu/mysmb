@@ -155,3 +155,22 @@ frame, page-control entries stored as regular objects, and direct block-buffer
 writes before a family handler. The old `mysmb_area_next_object` and initial
 preload remain retained compatibility paths and are explicitly excluded from
 the new state owner until their callers move to the translated parser route.
+
+## T10 S1 P5 Brick And Solid Rows
+
+The `RowOfBricks` and `RowOfSolidBlocks` owners (`$4054-$4077`) are translated
+within the parser-state owner: a newly admitted row object initializes its slot
+length from the second byte's low nibble, overwrites its selected metatile row,
+and then receives the original end-of-pass countdown. The smoke route covers a
+ground-area brick row across its initial and next parser column. They remain
+disconnected from the formal column transfer until the other loaded object
+families have handlers; connecting only this subset overwrites valid existing
+objects and fails the owner-local area route.
+
+### Similar-Issue Sweep
+
+The AreaParserCore path was checked for metatile writes occurring before the
+scenery clear or after block-buffer transfer. The attempted partial connection
+was rejected because it changed owner-local block-buffer state for unsupported
+families. Other object families and the retained bulk preload remain deferred;
+this change does not claim that their pixels or collision output are translated.
