@@ -67,6 +67,8 @@ static void mysmb_game_lose_life(struct mysmb_game *game);
 static void mysmb_game_step_game_over(struct mysmb_game *game);
 static void mysmb_game_next_area(struct mysmb_game *game);
 static void mysmb_game_step_victory(struct mysmb_game *game);
+static void mysmb_game_step_screen_routine(struct mysmb_game *game);
+static void mysmb_game_secondary_setup(struct mysmb_game *game);
 
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
@@ -414,7 +416,97 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
-    for (offset = 0U; offset < 0x20U; ++offset) game->palette[offset] = 0U;
+}
+
+/* Translation of the game-mode portion of ScreenRoutines.  The original
+ * advances one task per main-loop frame; command-producing tasks wait for
+ * the following NMI to consume VRAM_Buffer1 before writing another stream. */
+static void mysmb_game_step_screen_routine(struct mysmb_game *game)
+{
+    switch (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]) {
+    case 0U:
+        mysmb_game_move_all_sprites_offscreen(game);
+        mysmb_game_initialize_name_tables(game);
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 1U;
+        break;
+    case 1U:
+        (void)mysmb_area_queue_player_palette(game);
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 2U;
+        break;
+    case 2U:
+        if (mysmb_area_queue_top_status_line(game) != 0U)
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
+        break;
+    case 3U:
+        if (mysmb_area_queue_bottom_status_line(game) != 0U)
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
+        break;
+    case 4U:
+        if (game->ram[MYSMB_RAM_TIMER_EXPIRED] != 0U) {
+            if (mysmb_area_queue_game_text(game, 2U) != 0U) {
+                game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
+                game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+                game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 5U;
+            }
+        }
+        else {
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 6U;
+        }
+        break;
+    case 5U:
+        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) {
+            mysmb_game_move_all_sprites_offscreen(game);
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 6U;
+        }
+        break;
+    case 6U:
+        if (game->ram[0x0752U] != 0U || game->ram[0x0769U] != 0U) {
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
+        }
+        else if (mysmb_area_queue_game_text(game, 1U) != 0U) {
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
+        }
+        break;
+    case 7U:
+        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) {
+            mysmb_game_move_all_sprites_offscreen(game);
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
+        }
+        break;
+    case 8U:
+        mysmb_area_render_initial_terrain(game);
+        mysmb_area_render_initial_objects(game);
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 9U;
+        break;
+    case 9U:
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 10U;
+        break;
+    case 10U:
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
+        break;
+    case 11U:
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 12U;
+        break;
+    default:
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        break;
+    }
+}
+
+/* Translation of SecondaryGameSetup's game-mode fields.  OAM shuffle data
+ * remains T11 ownership, while this task establishes the original transition
+ * from ScreenRoutines to GameCoreRoutine. */
+static void mysmb_game_secondary_setup(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+    game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
+    game->ram[0x0769U] = 0U;
+    game->ram[0x0728U] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
 }
 
 /* Translation of the name-table portion of ROM $8e92-$8eec. */
@@ -533,20 +625,22 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             area_source.prg_size = game->area_prg_size;
             if (mysmb_area_load_pointers(game, &area_source) != 0U) {
                 if (mysmb_area_parse_header(game, &area_source) != 0U) {
-                    mysmb_area_render_initial_terrain(game);
-                    mysmb_area_render_initial_objects(game);
-                    (void)mysmb_area_queue_top_status_line(game);
-                    (void)mysmb_area_queue_player_palette(game);
-                    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
                 }
             }
         }
+    }
+    else if (mode_before == 1U && task_before == 1U && game->area_prg != 0) {
+        mysmb_game_step_screen_routine(game);
+    }
+    else if (mode_before == 1U && task_before == 2U && game->area_prg != 0) {
+        mysmb_game_secondary_setup(game);
     }
     else if (mode_before == 1U && task_before == 1U &&
              game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 6U) {
         mysmb_game_lose_life(game);
     }
-    else if (mode_before == 1U && task_before == 1U) {
+    else if (mode_before == 1U &&
+             (task_before == 3U || (task_before == 1U && game->area_prg == 0))) {
         if (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] == 3U &&
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;

@@ -28,14 +28,20 @@ int main(void)
     if (frame.operating_mode != 1U || frame.operating_mode_task != 1U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
         game.ram[0x0710U] != 2U || game.ram[0x0727U] != 1U ||
-        game.ram[0x0742U] != 2U || game.ram[0x05b0U] != 0x54U ||
+        game.ram[0x0742U] != 2U) {
+        return 1;
+    }
+    /* The original ScreenRoutines task chain owns screen clearing, status
+     * text, intermediate display, and area graphics before GameCoreRoutine. */
+    for (count = 0U; count < 200U && game.ram[0x0772U] != 3U; ++count) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    if (game.ram[0x0772U] != 3U || game.ram[0x05b0U] != 0x54U ||
         game.ram[0x05c0U] != 0x54U || game.ram[0x0687U] != 0x54U ||
         game.ram[0x0688U] != 0U || game.ram[0x0606U] != 0xc0U ||
         game.ram[0x0640U] != 0xc0U || game.ram[0x0644U] != 0x51U ||
         game.ram[0x0645U] != 0xc1U || game.ram[0x0646U] != 0x51U ||
-        game.ram[0x0647U] != 0xc0U || game.ram[0x0648U] != 0U) {
-        return 1;
-    }
+        game.ram[0x0647U] != 0xc0U || game.ram[0x0648U] != 0U) return 1;
     /* ROM $88ae uses the $8b08 metatile graphics pointer table to turn the
      * collision metatile at page 0, column 0, row 11 into four PPU tiles. */
     metatile = game.ram[0x05b0U];
@@ -51,11 +57,7 @@ int main(void)
      * not a host palette choice. */
     if (game.palette[0U] != mysmb_local_prg[0x0ccbU] ||
         game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
-    /* Screen task 2 queues the ROM-owned top-status command stream. */
-    if (game.ram[0x0300U] == 0U || game.ram[0x0301U] != mysmb_local_prg[0x0752U] ||
-        game.ram[0x0302U] != mysmb_local_prg[0x0753U]) return 1;
-    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U) return 1;
-    game.ram[0x0300U] = 0U;
+    /* Screen task 2 has already committed the ROM-owned top status stream. */
     if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
         game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
     mysmb_area_queue_bottom_status_line(&game);
@@ -166,6 +168,10 @@ int main(void)
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     input.buttons = 0U;
+    for (count = 0U; count < 200U && game.ram[0x0772U] != 3U; ++count) {
+        mysmb_game_tick(&game, &input, &frame);
+    }
+    if (game.ram[0x0772U] != 3U) return 1;
     for (count = 0U; count < 3U; ++count) {
         mysmb_game_tick(&game, &input, &frame);
     }
@@ -176,10 +182,10 @@ int main(void)
         mysmb_game_tick(&game, &input, &frame);
     }
     if (game.ram[0x001dU] != 0U || game.ram[0x006dU] != 0U ||
-        game.ram[0x0086U] != 0xf6U || game.ram[0x00b5U] != 1U ||
+        game.ram[0x0086U] != 0xf4U || game.ram[0x00b5U] != 1U ||
         game.ram[0x00ceU] != 0xb0U || game.ram[0x0057U] != 0x18U ||
         game.ram[0x009fU] != 0U || game.ram[0x071aU] != 0U ||
-        game.ram[0x071cU] != 0x86U) return 1;
+        game.ram[0x071cU] != 0x84U) return 1;
     for (count = 0U; count < 84U; ++count) {
         mysmb_game_tick(&game, &input, &frame);
     }
