@@ -112,6 +112,16 @@ static mysmb_u8 mysmb_audio_note_is_audible(const struct mysmb_game *game,
     if (game->area_prg == 0 || address >= game->area_prg_size) return 0U;
     return game->area_prg[address] != 0U ? 1U : 0U;
 }
+/* ROM LoadControlRegs: a rest retains no envelope.  Audible event music
+ * follows the water/event branch ($28); end-castle has its dedicated $04. */
+static mysmb_u8 mysmb_audio_envelope_control(const struct mysmb_game *game,
+                                              mysmb_u8 data)
+{
+    if (mysmb_audio_note_is_audible(game, data) == 0U) return 0U;
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x08U) != 0U) return 4U;
+    if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x7dU) == 0U) return 0x28U;
+    return 8U;
+}
 
 static void mysmb_audio_step_death_music(struct mysmb_game *game)
 {
@@ -144,6 +154,11 @@ static void mysmb_audio_step_death_music(struct mysmb_game *game)
         offset = (mysmb_u16)(MYSMB_ROM_DEATH_MUSIC_DATA +
             game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
         if (offset >= game->area_prg_size) return;
+        data = game->area_prg[offset];
+    }
+    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] =
+            mysmb_audio_envelope_control(game, data);
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
@@ -313,7 +328,7 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
      * audible note; a zero rest retains zero. */
     if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
         game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] =
-            mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
+            mysmb_audio_envelope_control(game, data);
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
@@ -383,13 +398,8 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
     /* SetFreq_Squ1 returns zero for a rest, bypassing LoadControlRegs. */
     if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
-        if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
-            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] = 0x28U;
-        }
-        else {
-            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
-                mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
-        }
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
+            mysmb_audio_envelope_control(game, data);
     }
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */

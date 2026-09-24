@@ -63,6 +63,9 @@ enum {
 
 enum { MYSMB_PREVIOUS_A_B_BUTTONS = 0x000dU };
 
+/* ROM PJumpSnd writes this before the SoundEngine runs. */
+enum { MYSMB_SQUARE1_SOUND_QUEUE = 0x00ffU };
+
 enum {
     MYSMB_GAME_ENGINE_SUBROUTINE = 0x000eU,
     MYSMB_PLAYER_FACING = 0x0033U,
@@ -276,6 +279,14 @@ void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool)
     game->ram[MYSMB_VERTICAL_FORCE_DOWN] = fall_force[index];
     game->ram[MYSMB_PLAYER_Y_FORCE] = initial_force[index];
     game->ram[MYSMB_PLAYER_Y_SPEED] = initial_speed[index];
+    /* ROM PJumpSnd: swimming reuses stomp; dry jumps select small/big.
+     * SoundEngine consumes the queue later in this same frame. */
+    if (game->ram[MYSMB_SWIMMING] != 0U) {
+        game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x04U;
+    } else {
+        game->ram[MYSMB_SQUARE1_SOUND_QUEUE] =
+            game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0x80U : 0x01U;
+    }
 }
 
 /* Translation of ROM ImposeFriction. */

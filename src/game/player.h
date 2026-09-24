@@ -9,7 +9,7 @@ mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game);
 void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
                                  mysmb_u8 upward, mysmb_u8 maximum,
                                  mysmb_u8 apply_upward);
-/* ROM PlayerPhysicsSub ProcJumping/InitJS, excluding audio output. */
+/* ROM PlayerPhysicsSub ProcJumping/InitJS and PJumpSnd queue output. */
 void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool);
 /* ROM ImposeFriction. Physics setup supplies friction and directional limits. */
 void mysmb_player_impose_friction(struct mysmb_game *game);
