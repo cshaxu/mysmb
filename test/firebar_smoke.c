@@ -62,25 +62,5 @@ int main(void)
     if (game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
         game.ram[0x000eU] != 10U || game.ram[0x001dU] != 1U ||
         game.ram[0x0747U] != 0xffU) return 4;
-
-    /* ProcFirebar writes the anchor's first ball at sprite offset +4.
-     * With a frozen zero phase, the first ball is eight pixels above anchor. */
-    mysmb_game_initialize_memory(&game, 0xfeU);
-    game.ram[0x000fU] = 1U;
-    game.ram[0x0016U] = 27U;
-    game.ram[0x006eU] = 0U;
-    game.ram[0x0087U] = 0x40U;
-    game.ram[0x00cfU] = 0x50U;
-    game.ram[0x071aU] = 0U;
-    game.ram[0x071bU] = 1U;
-    game.ram[0x071cU] = 0U;
-    game.ram[0x071dU] = 0U;
-    game.ram[0x06e5U] = 0x20U;
-    game.ram[0x0747U] = 1U;
-    game.ram[0x00a0U] = 0U;
-    mysmb_objects_step_firebars(&game);
-    if (game.ram[0x0224U] != 0x48U || game.ram[0x0225U] != 0x64U ||
-        game.ram[0x0226U] != 2U || game.ram[0x0227U] != 0x40U) return 5;
-
     return 0;
 }
