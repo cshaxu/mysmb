@@ -7,6 +7,7 @@ param(
     [string]$Mirroring = 'vertical',
     [int]$StartSample = 0,
     [int]$EndSample = -1,
+    [int]$NativeSampleOffset = 0,
     [ValidateRange(1, 64)]
     [int]$TopRamOffsets = 16
 )
@@ -83,17 +84,18 @@ $ppu = @(
     (New-M2Result 'ppu-address-high')
 )
 for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
-    $record = $headerSize + $sample * $recordSize
+    $referenceRecord = $headerSize + $sample * $recordSize
+    $nativeRecord = $headerSize + ($sample + $NativeSampleOffset) * $recordSize
     # Both traces reserve four leading ordinal bytes.  They are timing labels,
     # not comparable output because a native tick has no physical PPU revision.
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 4) ($record + 4) 2048 $sample $ram
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 4) ($record + 4) 256 $sample $zeroPage
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4) ($nativeRecord + 4) 2048 $sample $ram
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4) ($nativeRecord + 4) 256 $sample $zeroPage
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 260) ($record + 260) 256 $sample $stack
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 516) ($record + 516) 256 $sample $oamRam
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 772) ($record + 772) 1280 $sample $workRam
     for ($offset = 0; $offset -lt 2048; ++$offset) {
-        if ($reference.Bytes[$record + 4 + $offset] -ne
-            $native.Bytes[$record + 4 + $offset]) {
+        if ($reference.Bytes[$referenceRecord + 4 + $offset] -ne
+            $native.Bytes[$nativeRecord + 4 + $offset]) {
             if ($ramDifferenceCounts.ContainsKey($offset)) {
                 ++$ramDifferenceCounts[$offset]
             }
@@ -104,12 +106,12 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     }
     # SMB1 mapper 0 is vertically mirrored: the two physical CIRAM pages map
     # directly to MySMB's two canonical name tables.
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 2052) ($record + 2052) 1024 $sample $nameTable0
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 3076) ($record + 3076) 1024 $sample $nameTable1
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 4100) ($record + 4100) 32 $sample $palette
-    Compare-M2Range $reference.Bytes $native.Bytes ($record + 4132) ($record + 4132) 256 $sample $oam
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 2052) ($nativeRecord + 2052) 1024 $sample $nameTable0
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 3076) ($nativeRecord + 3076) 1024 $sample $nameTable1
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4100) ($nativeRecord + 4100) 32 $sample $palette
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4132) ($nativeRecord + 4132) 256 $sample $oam
     for ($scalar = 0; $scalar -lt 7; ++$scalar) {
-        Compare-M2Range $reference.Bytes $native.Bytes ($record + 4388 + $scalar) ($record + 4388 + $scalar) 1 $sample $ppu[$scalar]
+        Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4388 + $scalar) ($nativeRecord + 4388 + $scalar) 1 $sample $ppu[$scalar]
     }
 }
 
@@ -117,6 +119,7 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     Samples = $reference.Count
     StartSample = $StartSample
     EndSample = $EndSample
+    NativeSampleOffset = $NativeSampleOffset
     Mirroring = $Mirroring
     TopRamDifferences = @($ramDifferenceCounts.GetEnumerator() |
         Sort-Object -Property @{ Expression = 'Value'; Descending = $true },
