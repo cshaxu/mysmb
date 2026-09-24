@@ -48,7 +48,8 @@ int main(void)
     mysmb_audio_step(&game);
     if (game.ram[0x00f4U] != 0U || game.ram[0x07b1U] != 0U ||
         game.ram[0x00f5U] != 0x10U || game.ram[0x00f6U] != 0xfaU ||
-        game.ram[0x00f7U] != 1U || game.ram[0x07c0U] != 0U ||
+        game.ram[0x00f7U] != 1U || game.ram[0x07c7U] != 0x10U ||
+        game.ram[0x07c0U] != 0U ||
         game.ram[0x00fbU] != 0U) return 1;
     game.ram[0x00f4U] = 1U;
     game.ram[0x00f0U] = 0x18U;

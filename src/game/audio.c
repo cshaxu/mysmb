@@ -409,10 +409,12 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
     }
     else if (area != 0U) {
+        /* ROM LoadAreaMusic seeds this counter before selecting any area
+         * header, including the Silence header used by setup transitions. */
+        game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x10U;
         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
         if (area == 1U) {
-            game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x10U;
             game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
             (void)mysmb_audio_load_header(game, (mysmb_u8)(
                 game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] - 1U));

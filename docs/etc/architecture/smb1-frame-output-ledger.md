@@ -1921,3 +1921,25 @@ and `SoundEngine` were reviewed.  SoundEngine remains the sole native update
 owner; queue clearing and the zero-counter decrement path remain in the same
 routine.  No second DAC counter, adapter-owned update, or missed `$30` limit
 was found.
+## T11 S1 P10 LoadAreaMusic Header-Counter Seed
+
+ROM `LoadAreaMusic` loads `$10` into Y and writes it to
+`GroundMusicHeaderOfs` (`$07c7`) before it distinguishes ground music from
+other area headers.  This includes the Silence queue issued by the Start/area
+setup transition.  Native `mysmb_audio_step_music` seeded the value only for
+ground music, leaving zero through the transition despite selecting the same
+Silence header.  It now performs the common seed before the area-type branch.
+The music-header smoke asserts that the Silence path resets `$07c7` to `$10`.
+
+On the reproducible 380-sample owner-ROM route, CPU-RAM differences fall from
+68,009 to 67,854 and working-RAM differences from 1,717 to 1,562.  CPU OAM
+backing RAM, visible OAM, both CIRAM pages, palette, and all PPU scalar fields
+remain exact.
+
+### Similar-Issue Sweep
+
+The matched listing and production/test references to `LoadAreaMusic`,
+`GroundMusicHeaderOfs`, `$07c7`, and the Silence queue were reviewed.  The
+native music dispatcher is the single queue-to-header owner.  Ground loopback
+retains its separate increment and wrap owner, and no alternate Silence route
+or adapter-owned header counter was found.
