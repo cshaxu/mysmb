@@ -909,3 +909,17 @@ On the 80-sample cold-start comparison, palette differences fell from 77
 samples and 473 bytes to 61 samples and 457 bytes. The first palette
 difference remains at sample 2, so later title palette/task ordering is still
 open T10 work. The comparison traces were deleted immediately.
+
+## T10 S1 P46 Cold-Start InitializeGame Frame
+
+The reference cold boot spends its first NMI in title `InitializeGame` before
+ScreenRoutines task 0. The native bootstrap had prepared the same area state
+but immediately executed task 0, advancing title VRAM work one frame early.
+It now preserves the initialization frame before entering the screen-task
+chain.
+
+On the 80-sample cold-start comparison, the first CIRAM-page-0 difference
+moved from sample 3 to sample 25 and the first palette difference moved from
+sample 2 to sample 21. The early background/PPU phase is therefore aligned;
+the later title area/parser and display-state differences remain T10 work.
+The bounded traces were deleted immediately.

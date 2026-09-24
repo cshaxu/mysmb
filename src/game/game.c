@@ -868,7 +868,10 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
         return 0U;
     }
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+    /* The reference cold boot spends its first NMI in InitializeGame before
+     * ScreenRoutines task 0.  Area state is already prepared above, but keep
+     * that frame boundary so title VRAM commands have the same phase. */
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
     return 1U;
 }
@@ -905,6 +908,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 }
             }
         }
+    }
+    else if (mode_before == 0U && task_before == 0U) {
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
     }
     else if (((mode_before == 1U && task_before == 1U) ||
               (mode_before == 0U && task_before == 1U)) &&
