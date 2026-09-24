@@ -72,6 +72,13 @@ enum {
 };
 
 enum {
+    MYSMB_GAME_TIMER_SETTING = 0x0715U,
+    MYSMB_FETCH_NEW_GAME_TIMER = 0x0757U,
+    MYSMB_STAR_INVINCIBLE_TIMER = 0x079fU,
+    MYSMB_GAME_TIMER_DISPLAY = 0x07f8U
+};
+
+enum {
     MYSMB_PLAYER_X_SCROLL = 0x06ffU,
     MYSMB_PLATFORM_X_SCROLL = 0x03a1U,
     MYSMB_SCROLL_LOCK = 0x0723U,
@@ -920,9 +927,8 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     return 0U;
 }
 
-/* Translation of ROM $9131-$9196 Entrance_GameTimerSetup, restricted to
- * player state.  Timer digits, palettes, vine setup, and bubbles retain
- * their own owners. */
+/* Translation of ROM $9131-$9196 Entrance_GameTimerSetup.  Palette, vine,
+ * and bubble work retain their separate output and object owners. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game)
 {
     static const mysmb_u8 start_x[4] = { 0x28U, 0x18U, 0x38U, 0x28U };
@@ -932,6 +938,7 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     static const mysmb_u8 background_priority[8] = {
         0U, 0x20U, 0U, 0U, 0U, 0U, 0U, 0U
     };
+    static const mysmb_u8 game_timer_data[4] = { 0x20U, 4U, 3U, 2U };
     mysmb_u8 alternate;
     mysmb_u8 entrance;
 
@@ -953,6 +960,15 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_X] = start_x[alternate];
     game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
+    if (game->ram[MYSMB_GAME_TIMER_SETTING] != 0U &&
+        game->ram[MYSMB_FETCH_NEW_GAME_TIMER] != 0U) {
+        game->ram[MYSMB_GAME_TIMER_DISPLAY] =
+            game_timer_data[game->ram[MYSMB_GAME_TIMER_SETTING]];
+        game->ram[MYSMB_GAME_TIMER_DISPLAY + 1U] = 0U;
+        game->ram[MYSMB_GAME_TIMER_DISPLAY + 2U] = 1U;
+        game->ram[MYSMB_FETCH_NEW_GAME_TIMER] = 0U;
+        game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0U;
+    }
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
 }
 

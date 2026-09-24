@@ -94,7 +94,8 @@ static void mysmb_game_tick_player_timers(struct mysmb_game *game)
     }
 }
 
-/* ROM RunGameTimer, excluding its running-out audio and death-mode owners. */
+/* ROM RunGameTimer.  The audio subsystem consumes its queue on a following
+ * frame; ForceInjury retains collision's single death-state owner. */
 static mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
 {
     mysmb_u16 digit;
@@ -108,8 +109,14 @@ static mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
          game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] |
          game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U]) == 0U) {
         game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
+        mysmb_objects_force_injury(game);
         game->ram[MYSMB_RAM_TIMER_EXPIRED]++;
         return 0U;
+    }
+    if (game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS] == 1U &&
+        game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] == 0U &&
+        game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U] == 0U) {
+        game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x40U;
     }
     game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] = 0x18U;
     digit = MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U;

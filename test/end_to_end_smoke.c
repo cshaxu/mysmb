@@ -20,7 +20,10 @@ int main(void)
         game.ram[0x0774U] != 1U) return 2;
 
     /* Continue through the production entrance path.  This test intentionally
-     * does not construct terrain: real area-object rendering owns that state. */
+     * does not construct terrain or an area header.  Supply the header-owned
+     * timer state that a ROM-bound area parse normally provides. */
+    game.ram[0x0715U] = 1U;
+    game.ram[0x0757U] = 1U;
     input.buttons = MYSMB_BUTTON_RIGHT;
     for (index = 0U; index < 3U; ++index) {
         mysmb_game_tick(&game, &input, &frame);

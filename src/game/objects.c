@@ -164,11 +164,9 @@ static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
-static void mysmb_objects_injure_player(struct mysmb_game *game);
-
 /* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
  * here so a small player enters the death route rather than becoming immune. */
-static void mysmb_objects_injure_player(struct mysmb_game *game)
+void mysmb_objects_force_injury(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_INJURY_TIMER] != 0U) return;
     if (game->ram[MYSMB_PLAYER_STATUS] == 0U) {
@@ -212,7 +210,7 @@ void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
         }
         if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) continue;
         game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-        mysmb_objects_injure_player(game);
+        mysmb_objects_force_injury(game);
         return;
     }
 }
@@ -795,7 +793,7 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
         game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
         return 1U;
     }
-    mysmb_objects_injure_player(game);
+    mysmb_objects_force_injury(game);
     return 1U;
 }
 
@@ -2099,7 +2097,7 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
             }
             if ((mysmb_u8)(player_x > ball_x ? player_x - ball_x : ball_x - player_x) >= 8U) continue;
             game->ram[MYSMB_ENEMY_MOVING_DIRECTION] = player_x >= ball_x ? 1U : 2U;
-            mysmb_objects_injure_player(game);
+            mysmb_objects_force_injury(game);
             return;
         }
     }
@@ -2301,7 +2299,7 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] + 24U &&
             game->ram[MYSMB_PLAYER_Y] + 24U >= game->ram[MYSMB_ENEMY_Y + slot] &&
             game->ram[MYSMB_PLAYER_Y] <= game->ram[MYSMB_ENEMY_Y + slot] + 24U) {
-            mysmb_objects_injure_player(game);
+            mysmb_objects_force_injury(game);
         }
     }
 }
@@ -2369,7 +2367,7 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] + 16U &&
             game->ram[MYSMB_PLAYER_Y] + 16U >= game->ram[MYSMB_ENEMY_Y + slot] &&
             game->ram[MYSMB_PLAYER_Y] <= game->ram[MYSMB_ENEMY_Y + slot] + 16U) {
-            mysmb_objects_injure_player(game);
+            mysmb_objects_force_injury(game);
         }
     }
 }
@@ -2644,7 +2642,7 @@ static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
     game->ram[MYSMB_MISC_X_SPEED + slot] =
         (mysmb_u8)(0U - game->ram[MYSMB_MISC_X_SPEED + slot]);
     if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U) return;
-    mysmb_objects_injure_player(game);
+    mysmb_objects_force_injury(game);
 }
 
 /* ROM PlayerCollisionCore receives relative X coordinates.  Keep every

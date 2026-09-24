@@ -72,7 +72,7 @@ void mysmb_player_step_vertical_pipe(struct mysmb_game *game);
 void mysmb_player_step_side_pipe(struct mysmb_game *game);
 /* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
-/* ROM $9131-$9196 Entrance_GameTimerSetup, excluding timers and object setup. */
+/* ROM $9131-$9196 Entrance_GameTimerSetup, excluding palette/object owners. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game);
 /* ROM $b069-$b0e5 PlayerEntrance normal-entry completion. */
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game);
