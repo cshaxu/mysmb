@@ -218,5 +218,20 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a1U] != 0x24U || game.ram[0x06a2U] != 0x25U ||
         game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 0xffU) return 1;
+
+    /* AreaStyleObject chooses the header-selected tree/mushroom/cannon
+     * family and tree/mushroom rows persist through their length slots. */
+    prg[0x0040U] = 0x25U;
+    prg[0x0041U] = 0x13U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x0733U] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a6U] != 0x16U || game.ram[0x0732U] != 2U) return 1;
+    game.ram[0x0726U] = 3U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a6U] != 0x17U || game.ram[0x06a7U] != 0x4cU ||
+        game.ram[0x0732U] != 1U) return 1;
     return 0;
 }

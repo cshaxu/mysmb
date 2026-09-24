@@ -268,3 +268,18 @@ object selector table.
 Row-13 parsing was checked for interpreting d6-d4 as a normal object family.
 The static flagpole now dispatches by its dedicated object code. Intro pipe,
 axe, castle bridge, and frenzy objects remain deferred.
+
+## T10 S1 P12 Area-Style Objects
+
+The normal-row `AreaStyleObject` static metatile paths now translate the tree,
+mushroom, and cannon choices from `$3621-$3676` and `$4095-$4109`. Tree and
+mushroom ledges initialize and revisit their persistent slots; cannon visual
+segments are static only. The parser smoke test covers a tree start and its
+following middle-column replay from the saved object offset.
+
+### Similar-Issue Sweep
+
+Style object handling was checked for treating selector one as an empty family
+or rereading a later stream record while its slot is active. The parser now
+uses the saved object offset for persistent ledges. Cannon firing and dynamic
+platform behavior remain deferred.

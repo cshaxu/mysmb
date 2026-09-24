@@ -99,7 +99,8 @@ enum {
     MYSMB_AREA_OBJECT_PAGE_SELECT = 0x072bU,
     MYSMB_AREA_DATA_OFFSET = 0x072cU,
     MYSMB_AREA_OBJECT_OFFSET_BUFFER = 0x072dU,
-    MYSMB_AREA_STAIRCASE_CONTROL = 0x0734U
+    MYSMB_AREA_STAIRCASE_CONTROL = 0x0734U,
+    MYSMB_AREA_MUSHROOM_HALF_LENGTH = 0x0736U
 };
 
 enum {
@@ -1280,6 +1281,49 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             row++;
             height--;
         } while (1);
+        return;
+    }
+    if (kind == 1U) {
+        value = game->ram[MYSMB_AREA_STYLE];
+        if (value == 0U) {
+            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x16U;
+            }
+            else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x18U;
+            }
+            else {
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x17U;
+                if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x4cU;
+            }
+            return;
+        }
+        if (value == 1U) {
+            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+                game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] =
+                    (mysmb_u8)(game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >> 1U);
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x19U;
+            }
+            else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x1bU;
+            }
+            else {
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x1aU;
+                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] ==
+                    game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] && row < 11U) {
+                    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x4fU;
+                    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 2U] = 0x50U;
+                }
+            }
+            return;
+        }
+        if (value == 2U) {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x64U;
+            if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x65U;
+            if (row < 11U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 2U] = 0x66U;
+        }
         return;
     }
     if (kind == 0U) {
