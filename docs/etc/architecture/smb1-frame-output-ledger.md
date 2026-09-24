@@ -1247,3 +1247,20 @@ palette, PPU control, mask, selected name table, scroll pair, and reconstructed
 PPU address, including the death fall and screen rebuild. CPU RAM and OAM
 differences remain T11 ownership. Raw captures were discarded after this
 summary.
+
+## T10 S1 P67 Sustained Jump Death Physics
+
+A second bounded local route selects Start on frame 40, releases it on frame
+42, and holds Right plus A from frame 120 through sample 599. The first
+comparison diverged at sample 582 after the native player entered the
+life-loss rebuild early. Source inspection found the omitted `LRAir` branch:
+when `GameEngineSubroutine` is `$0b`, it writes `$28` to `VerticalForce`
+immediately before `MovePlayerVertically`. The ordinary C falling path had
+left the previous `$70` force in place.
+
+The translated player step now applies that source-owned death force before
+the shared vertical movement primitive, with a direct route-smoke regression.
+The repaired 600-sample route has exact CIRAM pages, palette, PPU control,
+mask, selected name table, scroll pair, and reconstructed PPU address. CPU
+RAM and OAM differences remain deferred T11 ownership. Raw captures were
+discarded after this neutral summary.

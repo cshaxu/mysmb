@@ -204,6 +204,19 @@ int main(void)
     if (game.ram[0x0709U] != 0x18U || game.ram[0x0033U] != MYSMB_BUTTON_RIGHT) {
         return 1;
     }
+    /* LRAir fixes the gravity force during the PlayerDeath engine state,
+     * regardless of the ordinary falling force selected above it. */
+    game.ram[0x000eU] = 0x0bU;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x009fU] = 0xfcU;
+    game.ram[0x0709U] = 0x70U;
+    game.ram[0x070aU] = 0x70U;
+    game.ram[0x000aU] = MYSMB_BUTTON_A;
+    game.ram[0x000dU] = MYSMB_BUTTON_A;
+    mysmb_player_step(&game, MYSMB_BUTTON_A);
+    if (game.ram[0x0709U] != 0x28U) {
+        return 1;
+    }
     /* PlayerHole changes a completed death fall to the PlayerLoseLife
      * dispatcher only after its event-music gate is clear. */
     game.ram[0x000eU] = 0x0bU;

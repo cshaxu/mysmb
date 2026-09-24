@@ -610,6 +610,10 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                     game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
             }
         }
+        /* LRAir forces the death fall rate before MovePlayerVertically. */
+        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
+            game->ram[MYSMB_VERTICAL_FORCE] = 0x28U;
+        }
         /* MovePlayerVertically enters ImposeGravity through
          * ImposeGravitySprObj: VerticalForce is the downward force and the
          * generic upward-force branch is disabled. */
