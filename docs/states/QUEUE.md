@@ -17,3 +17,7 @@
 6. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — death, restart, warp, continue, and completion mode routes.
 7. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — neutral audio command route.
 8. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — end-to-end playable-route oracle and Win32 validation.
+
+## M3 Candidates
+
+1. [Presentation adapters](../proposals/m3-presentation-adapters.md) — neutral render-command seam and deterministic core ownership.
