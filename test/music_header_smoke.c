@@ -60,5 +60,8 @@ int main(void)
     mysmb_audio_step(&game);
     if (game.ram[0x00f4U] != 1U || game.ram[0x00f7U] != 2U ||
         game.ram[0x07b4U] != 9U || game.ram[0x07c7U] != 0x12U) return 1;
+    game.ram[0x07c0U] = 0x30U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07c0U] != 0x30U) return 1;
     return 0;
 }

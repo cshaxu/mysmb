@@ -1898,3 +1898,26 @@ The matched listing and all production/test references to `EnemyObjectPageSel`,
 stream has one bit-7 transition owner and now preserves both writes.  Row-$0f
 absolute page controls and row-$0e area entries retain their separate owners;
 no other repeated bit-7 page increment or host-owned page state was found.
+## T11 S1 P9 SoundEngine DAC Counter Saturation
+
+The matched SoundEngine tail loads the prior `DAC_Counter`, increments the RAM
+counter for area music whose low two bits are nonzero, then branches directly
+only when the prior value is below `$30`.  At `$30` or above it falls through
+to the decrement path, so the net result is saturation at `$30`.  Native C had
+implemented only the increment/decrement polarity and allowed `$07c0` to grow
+past `$30`.  `mysmb_audio_step` now increments only below that limit.  The
+music-header fixture retains the existing increment/decrement checks and adds
+the `$30` saturation case.
+
+On the reproducible 380-sample owner-ROM route, CPU-RAM differences fall from
+68,155 to 68,009 and working-RAM differences from 1,863 to 1,717.  CPU OAM
+backing RAM, visible OAM, both CIRAM pages, palette, and all PPU scalar fields
+remain exact.
+
+### Similar-Issue Sweep
+
+The matched listing and production/test references to `DAC_Counter`, `$07c0`,
+and `SoundEngine` were reviewed.  SoundEngine remains the sole native update
+owner; queue clearing and the zero-counter decrement path remain in the same
+routine.  No second DAC counter, adapter-owned update, or missed `$30` limit
+was found.

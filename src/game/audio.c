@@ -467,7 +467,8 @@ void mysmb_audio_step(struct mysmb_game *game)
     game->ram[MYSMB_RAM_PAUSE_QUEUE] = 0U;
     /* ROM SoundEngine's final DAC_Counter update follows queue clearing. */
     if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 3U) != 0U) {
-        game->ram[MYSMB_RAM_DAC_COUNTER]++;
+        if (game->ram[MYSMB_RAM_DAC_COUNTER] < 0x30U)
+            game->ram[MYSMB_RAM_DAC_COUNTER]++;
     }
     else if (game->ram[MYSMB_RAM_DAC_COUNTER] != 0U) {
         game->ram[MYSMB_RAM_DAC_COUNTER]--;
