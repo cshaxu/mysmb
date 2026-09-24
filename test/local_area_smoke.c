@@ -119,6 +119,23 @@ int main(void)
     if (game.name_table[0][0x007aU] != 3U || game.name_table[0][0x007bU] != 4U ||
         game.name_table[0][0x007cU] != 4U) return 1;
 
+    /* WriteGameText selector one copies the ROM lives screen and patches
+     * its life/world/level positions before the normal VRAM transfer. */
+    game.ram[0x075aU] = 2U;
+    game.ram[0x075fU] = 1U;
+    game.ram[0x075cU] = 3U;
+    if (mysmb_area_queue_game_text(&game, 1U) == 0U || game.ram[0x0301U] != 0x21U ||
+        game.ram[0x0302U] != 0xcdU || game.ram[0x0309U] != 3U ||
+        game.ram[0x0314U] != 2U || game.ram[0x0316U] != 4U) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
+        game.name_table[0][0x01d2U] != 3U || game.name_table[0][0x0151U] != 2U ||
+        game.name_table[0][0x0153U] != 4U) return 1;
+    game.ram[0x0300U] = 0U;
+    if (mysmb_area_queue_game_text(&game, 4U) == 0U || game.ram[0x0300U] != 0x2cU ||
+        game.ram[0x031cU] != mysmb_local_prg[0x07f2U] ||
+        game.ram[0x0320U] != mysmb_local_prg[0x07f3U] ||
+        game.ram[0x0324U] != mysmb_local_prg[0x07f4U]) return 1;
+
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
     input.buttons = MYSMB_BUTTON_START;

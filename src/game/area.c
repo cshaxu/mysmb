@@ -27,7 +27,9 @@ enum {
     MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U,
     MYSMB_AREA_PALETTE3_DATA = 0x09d1U,
     MYSMB_AREA_GAME_TEXT = 0x0752U,
-    MYSMB_AREA_GAME_TEXT_OFFSETS = 0x07feU
+    MYSMB_AREA_GAME_TEXT_OFFSETS = 0x07feU,
+    MYSMB_AREA_LUIGI_NAME = 0x07e1U,
+    MYSMB_AREA_WARP_ZONE_NUMBERS = 0x07f2U
 };
 
 enum {
@@ -323,6 +325,75 @@ mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game)
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
         game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 2U];
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
+/* Translation of WriteGameText.  The selector chooses a ROM-authored command
+ * stream; mutable numbers occupy the exact byte offsets patched by the ROM. */
+mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
+{
+    mysmb_u8 offset_index;
+    mysmb_u16 source;
+    mysmb_u8 offset;
+    mysmb_u8 index;
+
+    if (game->area_prg == 0 || game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U ||
+        game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS + 9U) return 0U;
+    if (selector < 2U) {
+        offset_index = (mysmb_u8)(selector << 1U);
+    }
+    else if (selector < 4U) {
+        offset_index = (mysmb_u8)(selector << 1U);
+        if (game->ram[0x077aU] == 0U) offset_index++;
+    }
+    else {
+        offset_index = 8U;
+    }
+    source = (mysmb_u16)(MYSMB_AREA_GAME_TEXT +
+        game->area_prg[MYSMB_AREA_GAME_TEXT_OFFSETS + offset_index]);
+    offset = 0U;
+    while (source < game->area_prg_size && game->area_prg[source] != 0xffU) {
+        if (offset == 0xffU) return 0U;
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] =
+            game->area_prg[source];
+        source++;
+        offset++;
+    }
+    if (source >= game->area_prg_size) return 0U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    if (selector == 1U) {
+        if (offset <= 21U) return 0U;
+        game->ram[MYSMB_AREA_VRAM_BUFFER1 + 8U] =
+            (mysmb_u8)(game->ram[0x075aU] + 1U);
+        game->ram[MYSMB_AREA_VRAM_BUFFER1 + 19U] =
+            (mysmb_u8)(game->ram[MYSMB_AREA_WORLD_NUMBER] + 1U);
+        game->ram[MYSMB_AREA_VRAM_BUFFER1 + 21U] =
+            (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
+    }
+    if ((selector == 2U && game->ram[0x077aU] != 0U &&
+         game->ram[MYSMB_AREA_CURRENT_PLAYER] == 0U) ||
+        (selector == 3U && game->ram[0x077aU] != 0U &&
+         game->ram[MYSMB_AREA_CURRENT_PLAYER] != 0U)) {
+        if (offset <= 7U || game->area_prg_size <= MYSMB_AREA_LUIGI_NAME + 4U)
+            return 0U;
+        for (index = 0U; index < 5U; ++index) {
+            game->ram[MYSMB_AREA_VRAM_BUFFER1 + 3U + index] =
+                game->area_prg[MYSMB_AREA_LUIGI_NAME + index];
+        }
+    }
+    if (selector >= 4U) {
+        if (selector > 6U || offset <= 38U ||
+            game->area_prg_size <= MYSMB_AREA_WARP_ZONE_NUMBERS +
+            (mysmb_u16)(selector - 4U) * 4U + 2U) return 0U;
+        for (index = 0U; index < 3U; ++index) {
+            game->ram[MYSMB_AREA_VRAM_BUFFER1 + 27U + (mysmb_u16)index * 4U] =
+                game->area_prg[MYSMB_AREA_WARP_ZONE_NUMBERS +
+                    (mysmb_u16)(selector - 4U) * 4U + index];
+        }
+        offset = 0x2cU;
+        game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset] = 0U;
+    }
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }
