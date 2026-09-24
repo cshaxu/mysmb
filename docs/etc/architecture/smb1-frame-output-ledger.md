@@ -1001,3 +1001,18 @@ corrected 100-sample cold-start route, both CIRAM pages are exact. Remaining
 PPU scalar residuals are vertical scroll and reconstructed address at sample
 22, plus one display-mask byte at sample 42; title palette and OAM residuals
 remain separately open.
+
+## T10 S1 P52 Title Player-Palette Handoff
+
+After `GetAreaPalette` transfers the title ground stream, the title route
+queues `GetPlayerColors` into `VRAM_Buffer1` for the following NMI. Native C
+had selected the ground stream but did not restore that player-palette command
+at the title-only task-10 handoff, leaving the universal palette entry at the
+ground value for six extra frames.
+
+The task-10 route now queues the existing source-shaped player palette only
+when title mode has no overriding background-color stream. The title bootstrap
+smoke observes the resulting `$3f10` command and its universal `$22` entry.
+On the corrected 100-sample cold-start route, both CIRAM pages and all 32
+palette bytes are exact. The three PPU scalar residuals from P51 and all OAM
+differences remain open.

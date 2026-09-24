@@ -599,6 +599,13 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = background_controls[
                 game->ram[MYSMB_RAM_BACKGROUND_COLOR] - 4U];
         }
+        else if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) {
+            /* GetAreaPalette's ground stream has just reached the PPU.  The
+             * title route then restores GetPlayerColors through Buffer1 for
+             * the following NMI, so its universal background color becomes
+             * the title's $3f00 value before DrawTitleScreen. */
+            (void)mysmb_area_sync_player_palette(game);
+        }
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         break;
     case 11U:
