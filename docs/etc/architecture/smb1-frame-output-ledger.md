@@ -24,6 +24,13 @@ contains:
 The snapshot is an output record, not a PPU emulation API. The portable C
 route owns the record; Win32, VGA, and text consumers only read it.
 
+The source-level `game/frame_snapshot.h` contract separates `captured_fields`
+from `verified_fields`. The first states that a byte range was copied from the
+native state. The second remains clear until its source owner has passed the
+owner-local reference comparison. A full M2 frame requires every contract
+field in both masks, so an unimplemented PPU/palette/scroll path cannot become
+valid merely because its storage happens to be zero.
+
 ## Audited Output Owners
 
 | ROM range | Original owner | Required snapshot effect | Current C disposition |

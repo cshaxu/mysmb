@@ -13,7 +13,7 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/render.c)
+set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/render.c src/game/frame_snapshot.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -55,6 +55,8 @@ add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
 target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_game)
 add_executable(mysmb_render_smoke test/render_smoke.c)
 target_link_libraries(mysmb_render_smoke PRIVATE mysmb_game)
+add_executable(mysmb_frame_snapshot_smoke test/frame_snapshot_smoke.c)
+target_link_libraries(mysmb_frame_snapshot_smoke PRIVATE mysmb_game)
 add_library(mysmb_text_frame STATIC src/platform/text/text_frame.c)
 target_include_directories(mysmb_text_frame PUBLIC src)
 target_link_libraries(mysmb_text_frame PUBLIC mysmb_game)
@@ -114,6 +116,12 @@ if(MYSMB_OPENNT_CL16)
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/render.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/frame_snapshot.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -185,6 +193,7 @@ add_test(NAME mysmb.mode-smoke COMMAND mysmb_mode_smoke)
 add_test(NAME mysmb.audio-smoke COMMAND mysmb_audio_smoke)
 add_test(NAME mysmb.end-to-end-smoke COMMAND mysmb_end_to_end_smoke)
 add_test(NAME mysmb.render-smoke COMMAND mysmb_render_smoke)
+add_test(NAME mysmb.frame-snapshot-smoke COMMAND mysmb_frame_snapshot_smoke)
 add_test(NAME mysmb.text-frame-smoke COMMAND mysmb_text_frame_smoke)
 add_test(NAME mysmb.vga-frame-smoke COMMAND mysmb_vga_frame_smoke)
 add_test(NAME mysmb.dos16-root-smoke COMMAND mysmb_dos16_root_smoke)
