@@ -123,7 +123,9 @@ static mysmb_u8 mysmb_audio_envelope_control(const struct mysmb_game *game,
     return 8U;
 }
 
-static void mysmb_audio_step_death_music(struct mysmb_game *game)
+/* Return nonzero only when ROM EndOfMusicData returns from SoundEngine.
+ * The caller must then skip the later channel handlers for this frame. */
+static mysmb_u8 mysmb_audio_step_death_music(struct mysmb_game *game)
 {
     mysmb_u16 offset;
     mysmb_u16 table_offset;
@@ -132,28 +134,28 @@ static void mysmb_audio_step_death_music(struct mysmb_game *game)
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC ||
         game->area_prg == 0 ||
         game->area_prg_size <= MYSMB_ROM_MUSIC_LENGTH_TABLE + 0x1fU) {
-        return;
+        return 0U;
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
-    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return;
+    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return 0U;
     offset = (mysmb_u16)(MYSMB_ROM_DEATH_MUSIC_DATA +
                          game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-    if (offset >= game->area_prg_size) return;
+    if (offset >= game->area_prg_size) return 0U;
     data = game->area_prg[offset];
     if (data == 0U) {
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-        return;
+        return 1U;
     }
     if ((data & 0x80U) != 0U) {
         table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
             (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-        if (table_offset >= game->area_prg_size) return;
+        if (table_offset >= game->area_prg_size) return 0U;
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] =
             game->area_prg[table_offset];
         offset = (mysmb_u16)(MYSMB_ROM_DEATH_MUSIC_DATA +
             game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-        if (offset >= game->area_prg_size) return;
+        if (offset >= game->area_prg_size) return 0U;
         data = game->area_prg[offset];
     }
     if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
@@ -162,6 +164,7 @@ static void mysmb_audio_step_death_music(struct mysmb_game *game)
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
+    return 0U;
 }
 
 static mysmb_u8 mysmb_audio_first_square1(mysmb_u8 queue)
@@ -332,7 +335,10 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
-}/* ROM HandleTriangleMusic through TriNoteHandler, excluding the APU writes. */
+    return;
+}
+
+/* ROM HandleTriangleMusic through TriNoteHandler, excluding the APU writes. */
 static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
 {
     mysmb_u16 address;
@@ -485,12 +491,16 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
                 mysmb_audio_find_header_selector(area, 8U));
         }
     }
-    mysmb_audio_step_square2_music(game);
+    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
+        if (mysmb_audio_step_death_music(game) != 0U) return;
+    }
+    else {
+        mysmb_audio_step_square2_music(game);
+    }
     mysmb_audio_step_square1_music(game);
     mysmb_audio_step_square_envelopes(game);
     mysmb_audio_step_triangle_music(game);
     mysmb_audio_step_noise_music(game);
-    mysmb_audio_step_death_music(game);
 }
 
 void mysmb_audio_step(struct mysmb_game *game)

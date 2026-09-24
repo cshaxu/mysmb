@@ -24,6 +24,10 @@ int main(void)
     for (index = 0U; index < 179U; ++index) mysmb_audio_step(&game);
     if (game.ram[0x07b1U] != 1U) return 1;
     mysmb_audio_step(&game);
-    if (game.ram[0x07b1U] != 0U || game.ram[0x00f4U] != 0U) return 1;
+    /* EndOfMusicData returns directly from SoundEngine.  Square 1 and
+     * triangle counters therefore retain their pre-termination values. */
+    if (game.ram[0x07b1U] != 0U || game.ram[0x00f4U] != 0U ||
+        game.ram[0x07b6U] != 1U || game.ram[0x07b7U] != 0x28U ||
+        game.ram[0x07b9U] != 1U) return 1;
     return 0;
 }
