@@ -1319,3 +1319,24 @@ The repair moves the first name-table difference from sample 369 to sample
 scalar are equal; the remaining difference is a newly generated name-table
 column. It remains a T10 area-column/commit owner and is not an exact-route or
 M2-closure claim. Raw captures were discarded after this neutral summary.
+
+## T10 S1 P71 Vertical-Pipe Table Index
+
+The generated column at sample 391 belongs to `VerticalPipe` at ROM
+`$3843-$3894`. `GetPipeHeight` stores the object's three-bit vertical extent,
+but then reloads the fixed two-column object's remaining-length byte before
+the non-warp table adjustment. The first pass therefore selects table index
+five and the second pass index four, regardless of the vertical extent. Native
+C had selected the entry from the extent itself, which deferred the pipe's
+left half by one parser column and consequently wrote the wrong name-table
+column.
+
+The parser now selects the pipe table from its initialized or decremented
+length slot. A ROM-free two-pass smoke uses a height-two pipe to distinguish
+that source rule from the old accidental height-one case. The bounded route
+starts on frame 40, releases on frame 42, and alternates short
+Right-plus-A-plus-B presses from frame 120 through sample 599. After the
+repair, both CIRAM pages, palette, and all seven compared PPU scalar fields
+are exact for samples 380--599. CPU RAM and OAM remain deferred T11 owners;
+this is neither OAM evidence nor an M2-closure claim. Raw captures were
+discarded after this neutral summary.

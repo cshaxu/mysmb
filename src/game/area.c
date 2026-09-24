@@ -1611,12 +1611,12 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             1U : 0U;
         if (continuation == 0U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 1U;
-        value = (mysmb_u8)(second & 0x07U);
-        /* RenderPipe reads table index five for the first column, then index
-         * four after its one-column length slot becomes active.  ROM $9929
-         * observes Y=5 then Y=4 across those two parser passes. */
+        /* GetPipeHeight preserves the three-bit vertical extent separately,
+         * then reloads Y from the fixed one-column length slot.  That slot,
+         * not the object height, selects the left/right pipe-table entry. */
+        value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
         if ((second & 0x08U) == 0U)
-            value = (mysmb_u8)(value + (continuation != 0U ? 3U : 4U));
+            value = (mysmb_u8)(value + 4U);
         if (value > 5U) return;
         game->ram[MYSMB_AREA_METATILE_BUFFER + row] = pipe[value];
         if (row == 12U) return;
