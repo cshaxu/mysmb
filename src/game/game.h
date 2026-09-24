@@ -87,7 +87,8 @@ struct mysmb_checkpoint {
 void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 /* ROM $8220-$8230. */
 void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
-/* ROM $8e19-$8e5b: name tables plus the committed output-state reset. */
+/* ROM $8e19-$8e5b: name tables and scroll variables.  It must not overwrite
+ * output already committed by the current NMI. */
 void mysmb_game_initialize_name_tables(struct mysmb_game *game);
 /* ROM $8e92-$8eec, portable execution of an admitted VRAM command stream. */
 mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,

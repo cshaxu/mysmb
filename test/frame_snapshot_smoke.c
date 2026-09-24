@@ -12,8 +12,12 @@ int main(void)
 
     mysmb_game_initialize(&game);
     game.ppu_mask = 0x06U;
+    game.visible_ppu_mask = 0x1eU;
+    game.visible_scroll_y = 0x80U;
     mysmb_game_initialize_name_tables(&game);
-    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x10U) return 7;
+    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x10U ||
+        game.visible_ppu_mask != 0x1eU || game.visible_scroll_y != 0x80U)
+        return 7;
     game.frame_number = 42UL;
     game.ram[0x0200U] = 0x12U;
     game.ram[0x00f1U] = 0x34U;

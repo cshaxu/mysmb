@@ -421,6 +421,11 @@ void mysmb_game_initialize(struct mysmb_game *game)
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
+    game->visible_ppu_control_0 = 0x90U;
+    game->visible_ppu_mask = 0U;
+    game->visible_ppu_name_table = 0U;
+    game->visible_scroll_x = 0U;
+    game->visible_scroll_y = 0U;
     game->area_prg = 0;
     game->area_prg_size = 0U;
     game->title_data = 0;
@@ -495,11 +500,6 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
-    game->visible_ppu_control_0 = 0x90U;
-    game->visible_ppu_mask = 0U;
-    game->visible_ppu_name_table = 0U;
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
 }
 
 /* Translation of the game-mode portion of ScreenRoutines.  The original

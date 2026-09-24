@@ -1031,3 +1031,19 @@ Start held at samples 40--41, has exact CIRAM pages, palette, PPU control,
 mask, name-table selection, scroll, and reconstructed PPU address throughout
 samples 100--239. CPU RAM and OAM remain different and retain their T11
 ownership; this background-window result does not close M2.
+
+## T10 S1 P54 Preserve NMI-Committed Display State
+
+`InitScreen` calls `InitializeNameTables` from the main operating-mode route,
+after the NMI has already committed its physical display state. Native C had
+made that helper reset the visible PPU fields as well as the source-owned name
+tables and scroll variables. At game start this erased the current NMI's
+screen-disabled `$2001` value, producing one display-mask mismatch.
+
+Cold initialization now establishes the initial visible state explicitly;
+later `InitializeNameTables` calls preserve the current NMI snapshot. The
+frame-snapshot smoke verifies that the helper retains an already committed
+mask and vertical scroll value. The 100-sample cold-start comparison has exact
+name tables, palette, PPU control, mask, name-table selection, and horizontal
+scroll. Only the title-data-read frame's transient vertical-scroll and PPU
+address values, plus OAM, remain open.
