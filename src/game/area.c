@@ -1182,6 +1182,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     static const mysmb_u8 pipe[8] = {
         0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
+    static const mysmb_u8 hole[4] = { 0x87U, 0U, 0U, 0U };
     mysmb_u8 row;
     mysmb_u8 kind;
     mysmb_u8 area_type;
@@ -1197,6 +1198,29 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     /* Rows 12-15 select a different JumpEngine table.  In particular, the
      * two question-block rows use selector 6/7 and must not enter the
      * large-object vertical-pipe family. */
+    if (row == 12U && kind == 0U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        for (row = 8U; row < 13U; ++row)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = hole[area_type];
+        return;
+    }
+    if (row == 12U && kind == 5U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x86U;
+        game->ram[MYSMB_AREA_METATILE_BUFFER + 11U] = 0x87U;
+        game->ram[MYSMB_AREA_METATILE_BUFFER + 12U] = 0x87U;
+        return;
+    }
+    if (row == 12U && (kind == 2U || kind == 3U || kind == 4U)) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        row = kind == 2U ? 6U : (kind == 3U ? 7U : 9U);
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x0bU;
+        if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x63U;
+        return;
+    }
     if (row == 12U && (kind == 6U || kind == 7U)) {
         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);

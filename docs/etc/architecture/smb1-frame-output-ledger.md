@@ -224,3 +224,18 @@ The object handler was searched for direct d6-d4 selector dispatch without a
 row-table distinction. Normal-row selector seven remains vertical pipe; row-12
 selectors six and seven now route to question-block rows. Other special rows
 remain deferred.
+
+## T10 S1 P9 Special-Row Holes And Bridges
+
+The row-12 static `Hole_Empty`, `Hole_Water`, and three bridge handlers are
+translated from `$3908-$3954` and `$4212-$4244`. They install original
+hole/water/bridge metatiles at their fixed rows and initialize only the
+horizontal length families. The parser smoke test covers a ground hole and a
+high bridge across the parser slot state.
+
+### Similar-Issue Sweep
+
+The special-row handler was checked for normal-row fallthrough and for using
+the source byte's lower nibble as vertical height. Holes and bridges now use
+their special fixed row positions and horizontal length. Whirlpool allocation,
+pulley ropes, and collapse behavior remain deferred dynamic owners.

@@ -172,5 +172,24 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a8U] != 0xc0U || game.ram[0x0732U] != 0U) return 1;
+
+    /* Row-12 holes and bridges use their special table, fixed rows, and
+     * horizontal length slots rather than normal-row object decoding. */
+    prg[0x0040U] = 0x8cU;
+    prg[0x0041U] = 0x00U;
+    game.ram[0x0726U] = 8U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a9U] != 0U || game.ram[0x06adU] != 0U ||
+        game.ram[0x0732U] != 0xffU) return 1;
+    prg[0x0040U] = 0x9cU;
+    prg[0x0041U] = 0x22U;
+    game.ram[0x0726U] = 9U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a7U] != 0x0bU || game.ram[0x06a8U] != 0x63U ||
+        game.ram[0x0732U] != 1U) return 1;
     return 0;
 }
