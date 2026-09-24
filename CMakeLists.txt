@@ -11,6 +11,7 @@ set_property(CACHE MYSMB_WIN32_ARCH PROPERTY STRINGS host x86 x64)
 set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
 set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
+set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
 set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/render.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
@@ -134,6 +135,21 @@ if(MYSMB_OPENNT_CL16)
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         VERBATIM
     )
+    if(MYSMB_DOS_RUNTIME_DIR)
+        get_filename_component(MYSMB_OPENNT_LINK16 "${MYSMB_OPENNT_CL16}" DIRECTORY)
+        set(MYSMB_OPENNT_LINK16 "${MYSMB_OPENNT_LINK16}/link16.exe")
+        add_custom_target(mysmb_opennt16_dos
+            COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+                "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Dos.ps1"
+                -Compiler "${MYSMB_OPENNT_CL16}"
+                -Linker "${MYSMB_OPENNT_LINK16}"
+                -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+                -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}/dos"
+                -RuntimeDirectory "${MYSMB_DOS_RUNTIME_DIR}"
+                -SourceRoot "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            VERBATIM
+        )
+    endif()
 endif()
 
 if(WIN32)
