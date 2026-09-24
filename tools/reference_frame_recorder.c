@@ -11,7 +11,9 @@
 #include "core/machine.h"
 
 #define MYSMB_REFERENCE_NMI_RETURN 0x8181u
-#define MYSMB_REFERENCE_MAX_RUNS_PER_FRAME 512u
+/* This retains the existing 512 driver-run budget in instruction work:
+ * core_driver_run executes at most 256 instructions per call. */
+#define MYSMB_REFERENCE_MAX_STEPS_PER_FRAME 131072u
 
 static int mysmb_reference_write(FILE *output, const void *bytes, size_t count)
 {
@@ -77,7 +79,7 @@ int main(int argument_count, char **arguments)
     unsigned long parsed_frames;
     lib_u32 requested_frames;
     lib_u32 recorded;
-    lib_u32 run_count;
+    lib_u32 step_count;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
@@ -103,30 +105,43 @@ int main(int argument_count, char **arguments)
         fclose(output);
         return 67;
     }
-    core_driver_set_heartbeat(driver, LIB_TRUE);
     recorded = 0u;
-    run_count = 0u;
+    step_count = 0u;
     last_frame_revision = 0u;
     have_frame_revision = LIB_FALSE;
-    while (recorded < requested_frames &&
-           run_count < requested_frames * MYSMB_REFERENCE_MAX_RUNS_PER_FRAME) {
-        if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
-                                            recorded, &buttons)) break;
-        core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
-        if (!core_driver_run(driver) || driver->machine->trap.trap_valid) break;
-        ++run_count;
-        if (driver->machine->pc != MYSMB_REFERENCE_NMI_RETURN) continue;
-        /* A breakpoint resume can return at the same NMI RTI before the PPU
-         * reaches its next frame.  A trace record is a PPU frame boundary,
-         * so reject that duplicate instead of advancing the script/index. */
-        if (have_frame_revision &&
-            driver->machine->ppu.frame_revision == last_frame_revision) continue;
-        if (!mysmb_reference_write_frame(output, driver->machine)) break;
-        last_frame_revision = driver->machine->ppu.frame_revision;
-        have_frame_revision = LIB_TRUE;
-        ++recorded;
+    if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
+                                        recorded, &buttons)) {
+        fclose(output);
+        (void)core_driver_destroy(driver);
+        return 68;
     }
-    core_driver_set_heartbeat(driver, LIB_FALSE);
+    core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
+    while (recorded < requested_frames &&
+           step_count < requested_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
+        core_run_result result;
+
+        if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
+            /* Sample before RTI.  Stepping the RTI below clears this program
+             * counter, so every subsequent return is independently visible.
+             * The frame ordinal is an NMI-return sequence: two returns can
+             * share a PPU revision yet have different RAM timer state.  PPU
+             * revisions may also have gaps while NMI is masked; only a
+             * regression invalidates the sequence. */
+            if (have_frame_revision &&
+                driver->machine->ppu.frame_revision < last_frame_revision) break;
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            last_frame_revision = driver->machine->ppu.frame_revision;
+            have_frame_revision = LIB_TRUE;
+            ++recorded;
+            if (recorded == requested_frames) break;
+            if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
+                                                recorded, &buttons)) break;
+            core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
+        }
+        if (core_machine_debug_step(driver->machine, 1u, 1024u, &result) !=
+            LIB_STATUS_OK || result.trap_valid) break;
+        ++step_count;
+    }
     fclose(output);
     (void)core_driver_destroy(driver);
     return recorded == requested_frames ? 0 : 68;

@@ -70,11 +70,13 @@ not valid M2 gameplay output and cannot satisfy the snapshot contract.
    a 32-bit PPU frame sequence, 2048-byte CPU RAM, 2048-byte CIRAM, 32-byte
    palette, 256-byte OAM, PPU control/mask/name-table/scroll bytes, and a
    16-bit PPU address for each sample. This is 4,395 bytes per sample.
-2. A recorder invocation is limited to 600 samples (2,637,012 bytes including
-   header) and 512 reference-run calls without a sample per requested frame.
-   It writes only to one caller-declared ignored output directory. The task
-   executor deletes the raw trace after its neutral mismatch summary is
-   recorded; no raw trace is evidence or a fixture.
+2. A recorder invocation is limited to 600 NMI-return samples (2,637,012
+   bytes including header) and 131,072 exact instruction steps per requested
+   sample. This is the same maximum instruction work as the former 512
+   driver calls of at most 256 instructions. It writes only to one
+   caller-declared ignored output directory. The task executor deletes the
+   raw trace after its neutral mismatch summary is recorded; no raw trace is
+   evidence or a fixture.
 3. The snapshot ABI and its smoke test reject complete status until every
    visible field is captured and reference-verified. T10 starts only after
    this contract is used by a translated background owner.
@@ -658,73 +660,59 @@ source value. No PPU renderer, OAM producer, or host input path changed.
 
 ## T10 S1 P33 Reference Frame Uniqueness And PPU d2
 
-The reference recorder could accept a second return at the same NMI RTI
-without a new PPU frame. Its record 354 duplicated record 353 with the same
-`frame_revision` 360, which falsely appeared to be a skipped original player
-frame. The recorder now accepts a record only when `frame_revision` advances.
-A new bounded 600-frame right route has zero non-increasing revisions; the
-former frame-354 player/scroll discrepancy is therefore rejected as invalid
-evidence.
+The earlier `frame_revision` de-duplication rule is withdrawn. A direct
+instruction-step recorder audit shows two distinct returns at `$8181` can
+share one PPU revision: at revision 11, the first return leaves `$077f` at
+`$0f` and the next leaves it at `$0e`. They are two source timer states and
+must be recorded separately. The reference frame ordinal is therefore the
+NMI-return sequence; `frame_revision` remains metadata and may repeat or
+have gaps.
 
-That corrected route exposed the next real display difference: original
-`Mirror_PPU_CTRL_REG1` and physical `$2000` retain d2 after a vertical VRAM
-command (`$14` and `$94` at frames 373--375). Native code had cleared d2 at
-every display commit. The native NMI model now preserves it, and the
-ROM-free snapshot smoke asserts `$94` after a vertical command. At frame 376
-the original returns d2 to zero through its next horizontal command while the
-native route still retains it. This remaining queue-consumption difference is
-open T10 work; the fix does not claim full right-route equality.
+The recorder now steps past every observed RTI and records each return unless
+the PPU revision regresses. It no longer uses the driver/breakpoint batch
+loop, which could hide a same-revision return. This local validation tool is
+not part of the native product.
+
+The d2 repair remains valid. With the corrected sequence, original and native
+both retain `$14/$94` after the vertical command and both return to `$10/$90`
+after the following horizontal command in the admitted right-route window.
 
 ## T10 S1 P34 Recorder Boundary Audit And Timer Ordering
 
-The recorder samples at the NMI RTI, not at every physical PPU frame. Its
-`frame_revision` therefore has to be strictly increasing, but it is not a
-contiguous frame-index contract while NMI output is not enabled. A bounded
-boot/title probe observed revision transitions `11 -> 13` at sample 6 and
-`47 -> 49` at sample 41. These are gaps in an NMI-RTI sample sequence, not
-duplicate records. The prior duplicate filter remains necessary: it rejects a
-second sample at the same NMI RTI with the same revision.
-
-Consequently, the recorder sample ordinal must never be used as a physical
-PPU-frame index. A native/reference comparison must declare its NMI boundary,
-reference revision, input phase, and semantic milestone before comparing
-state. The former ordinal-only timer and right-scroll comparisons are
-diagnostic leads, not frame-equivalence evidence.
+The recorder samples immediately before the NMI RTI and advances its input
+script only after that sample. A comparison declares its NMI-return ordinal,
+input script, and source state fields; it does not use physical PPU-frame
+count as the game-tick index. The bounded Start route now aligns the original
+and native screen task, operating-mode task, game-engine subroutine, `$077f`,
+and `$0787` through the entrance-to-play transition at samples 204--211.
 
 The local summary now exposes the source-owned scheduler bytes needed to make
 that alignment reviewable: `$073c`, `$0747`, `$077f`, `$0787`, `$07a0`, the
 three game-timer digits, and the pending VRAM-buffer header. During this
 audit, `RunGameTimer` was moved after the translated game-engine dispatcher:
 the source state can enter subroutine 8 and load its first 24-frame game
-timer interval in that same NMI-owned frame. This preserves the ROM-observed
-state dependency, but does not establish an ordinal match until the revised
-comparison contract is exercised.
+timer interval in that same NMI-owned frame. The corrected exact-NMI trace
+now verifies that dependency instead of leaving it as an inference.
 
 ### Similar-Issue Sweep
 
 The scheduler sweep covered every production caller of `mysmb_game_run_timer`,
 the shared timer decrement owner, the screen-task timer state, and the
 owner-local summary. `game.c` has one timer-route caller, so no parallel
-production ordering path remains. The summary is test-only and contains no
-ROM data. The ROM-free suite passed 34 of 34 tests after the change, and the
-Win32 x86 Debug target built successfully. No OAM producer, host renderer, or
-runtime reference dependency changed.
+production ordering path remains. The recorder sweep covered duplicate,
+equal, increasing, and regressing PPU revisions at `$8181`. The summary is
+test-only and contains no ROM data. No OAM producer, host renderer, or runtime
+reference dependency changed.
 
 ## T10 S1 P35 Dynamic Buffer Separation
 
 The admitted Start/right route has a stable comparable window at NMI samples
 370--379. In that window the original and native values agree for parser task
-`$071f`, scroll accumulator `$073d`, and every checked byte of
-`VRAM_Buffer2` (`$0340` onward), including the `$2498`, `$2499`, `$249a`,
-`$249b`, and `$27ce` command sequence. This establishes that the dynamic
-column/attribute owner is not the cause of the remaining status update delay.
-
-The independent `VRAM_Buffer1` timer owner remains one NMI sample late:
-the original reloads `$0787` and queues `$207a/03:09:03` at sample 375;
-native does so at sample 376. The original consumes that buffer on its next
-NMI while continuing the matching `VRAM_Buffer2` sequence. This rules out a
-buffer-priority patch. The delay is upstream in the translated screen/entrance
-transition that makes `RunGameTimer` eligible, and remains open T10 work.
+`$071f`, scroll accumulator `$073d`, both VRAM-buffer offsets and checked
+command bytes, game-timer control and digits, and the PPU control mirror.
+The matched command sequence includes `$2498`, `$2499`, `$249a`, `$249b`,
+`$27ce`, and the live status update `$207a/03:09:03`. The apparent one-sample
+timer delay was caused solely by dropping the same-revision NMI return.
 
 The local diagnostic summary now also reports both VRAM buffers plus parser
 task and scroll-accumulator state. It is a ROM-free test executable: it emits
@@ -733,7 +721,7 @@ only native state and hashes, never owner-ROM bytes.
 ### Similar-Issue Sweep
 
 The separation sweep covered both buffer offsets and producers, the parser
-tail, screen-routine transition, and `RunGameTimer` eligibility. The second
-buffer path is source-aligned over the declared window and needs no change.
-The first-buffer timer writer is the only remaining production discrepancy in
-this slice. OAM, host rendering, and the reference runtime were not changed.
+tail, screen-routine transition, and `RunGameTimer` eligibility. Both buffer
+paths are source-aligned over the declared window. OAM and host rendering
+remain separately incomplete T11/T12 owners; the reference runtime is
+validation-only and remains outside the product.
