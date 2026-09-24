@@ -249,6 +249,9 @@ static void mysmb_win32_step(HWND window)
     if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_START);
     }
+    if ((GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0) {
+        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_SELECT);
+    }
     if ((GetAsyncKeyState('Z') & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
     }
