@@ -76,6 +76,14 @@ enum {
 };
 
 enum {
+    MYSMB_CLOUD_TYPE_OVERRIDE = 0x0743U,
+    MYSMB_DEATH_MUSIC_LOADED = 0x0712U,
+    MYSMB_TIMER_EXPIRED = 0x0759U,
+    MYSMB_EVENT_MUSIC_QUEUE = 0x00fcU,
+    MYSMB_EVENT_MUSIC_BUFFER = 0x07b1U
+};
+
+enum {
     MYSMB_GAME_TIMER_SETTING = 0x0715U,
     MYSMB_FETCH_NEW_GAME_TIMER = 0x0757U,
     MYSMB_STAR_INVINCIBLE_TIMER = 0x079fU,
@@ -475,6 +483,41 @@ static void mysmb_player_update_relative_position(struct mysmb_game *game)
         (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
 }
 
+/* Translation of PlayerCtrlRoutine's PlayerHole tail.  The falling player
+ * reaches GameEngineSubroutine 6 only after the source's vertical threshold
+ * and event-music gate, where GameCoreRoutine dispatches PlayerLoseLife. */
+static void mysmb_player_handle_hole(struct mysmb_game *game)
+{
+    mysmb_u8 threshold;
+    mysmb_u8 death_route;
+
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] < 2U) return;
+    game->ram[MYSMB_SCROLL_LOCK] = 1U;
+    threshold = 4U;
+    death_route = 0U;
+    if (game->ram[MYSMB_TIMER_EXPIRED] != 0U ||
+        game->ram[MYSMB_CLOUD_TYPE_OVERRIDE] == 0U) {
+        death_route = 1U;
+        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
+            if (game->ram[MYSMB_DEATH_MUSIC_LOADED] == 0U) {
+                game->ram[MYSMB_EVENT_MUSIC_QUEUE] = 1U;
+                game->ram[MYSMB_DEATH_MUSIC_LOADED] = 1U;
+            }
+            threshold = 6U;
+        }
+    }
+    if (game->ram[MYSMB_PLAYER_Y_HIGH] < threshold) return;
+    if (death_route == 0U) {
+        game->ram[MYSMB_JOYPAD_OVERRIDE] = 0U;
+        game->ram[MYSMB_ALT_ENTRANCE] = 3U;
+        game->ram[MYSMB_DISABLE_SCREEN]++;
+        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_EVENT_MUSIC_BUFFER] != 0U) return;
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 6U;
+}
+
 /* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
 {
@@ -605,6 +648,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         (void)mysmb_player_check_sides(game);
     }
     mysmb_player_update_relative_position(game);
+    mysmb_player_handle_hole(game);
     game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 

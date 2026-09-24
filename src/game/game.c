@@ -1011,7 +1011,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         if (mode_before == 0U) mysmb_game_primary_setup(game);
         mysmb_game_secondary_setup(game);
     }
-    else if (mode_before == 1U && task_before == 1U &&
+    else if (mode_before == 1U &&
+             (task_before == 3U ||
+              (task_before == 1U && game->area_prg == 0)) &&
              game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 6U) {
         mysmb_game_lose_life(game);
     }

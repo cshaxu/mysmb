@@ -204,6 +204,24 @@ int main(void)
     if (game.ram[0x0709U] != 0x18U || game.ram[0x0033U] != MYSMB_BUTTON_RIGHT) {
         return 1;
     }
+    /* PlayerHole changes a completed death fall to the PlayerLoseLife
+     * dispatcher only after its event-music gate is clear. */
+    game.ram[0x000eU] = 0x0bU;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x00b5U] = 4U;
+    game.ram[0x00ceU] = 0x20U;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x0416U] = 0U;
+    game.ram[0x0433U] = 0U;
+    game.ram[0x0709U] = 0U;
+    game.ram[0x0759U] = 0U;
+    game.ram[0x0743U] = 0U;
+    game.ram[0x07b1U] = 0U;
+    game.ram[0x0723U] = 0U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x000eU] != 6U || game.ram[0x0723U] != 1U) {
+        return 1;
+    }
     for (index = 0U; index < 0x0100U; ++index) {
         game.ram[(mysmb_u16)(0x0500U + index)] = 0U;
     }

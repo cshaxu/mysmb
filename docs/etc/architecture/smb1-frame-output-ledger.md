@@ -1223,3 +1223,22 @@ name table, scroll pair, and reconstructed PPU address. CPU RAM and OAM are
 still outside this result: their remaining differences are T11 ownership and
 do not constitute background-output evidence. Raw captures were discarded
 after this neutral summary.
+
+## T10 S1 P66 Running Route And Death-Transition Gap
+
+The bounded running route selects Start on frame 40, releases it on frame 42,
+and holds Right plus B from frame 120 through sample 599. It reaches a normal
+death fall and therefore exercises `PlayerHole` at ROM `$aeed-$af35`, followed
+by `PlayerLoseLife` and the screen-task background reset. The first comparison
+found that native C omitted `PlayerHole` and had attached the life-loss
+dispatcher to screen task 1 rather than the real game-core task 3. Those two
+source control-flow defects are now translated and covered by the player and
+mode route smokes.
+
+The repaired route still differs after the death fall because its pre-existing
+native audio command model leaves `EventMusicBuffer` set after death music.
+The original clears that source-owned gate before `PlayerHole` selects
+`PlayerLoseLife`; native C therefore correctly continues waiting on a now
+incorrect audio state. The resulting name-table, palette, mask, and horizontal
+scroll differences are recorded as an unresolved cross-owner dependency,
+not accepted T10 evidence. Raw captures were discarded after this summary.
