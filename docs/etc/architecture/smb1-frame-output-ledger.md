@@ -47,7 +47,7 @@ valid merely because its storage happens to be zero.
 | `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Translated, background scope**; initialization, controls 1--18, both VRAM buffers, display mask, scroll, name-table selection, and committed PPU address are owned by the portable NMI boundary. OAM DMA remains T11 work. |
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Translated, background scope**; persistent parser slots, scenery, terrain, all static object metatile families, attributes, and incremental column scheduling reach the snapshot. Object graphics remain T11 work. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
-| `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Missing**. |
+| `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Translated, partial OAM scope**; normal player action selection, ROM-table tile rows, horizontal flip, attributes, injury blink, and prepared vertical-offscreen rows write OAM. Fireball-throw supplement and title/intermediate paths remain T11 work. |
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Missing**. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
 | `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
@@ -1386,3 +1386,27 @@ palette, and all seven PPU-visible scalars; OAM still differed in 571 samples
 (14,048 bytes, first sample 26). These are the unimplemented source draw
 families, not a claim of OAM equivalence. The two raw 2,637,012-byte traces
 were deleted after this summary.
+
+## T11 S1 P2 Player OAM Rows
+
+`PlayerGfxHandler`, `PlayerGfxProcessing`, `RenderPlayerSub`,
+`DrawPlayerLoop`, `DrawSpriteObject`, and `ChkForPlayerAttrib` are translated
+into the portable player owner. The normal player route reads the original
+tile-offset and graphics tables from owner-local PRG CPU addresses `$ee07` and
+`$ee17`; no ROM-derived tile table is tracked. It writes the original four
+two-sprite rows at the shuffled player OAM offset, including left-facing tile
+order and horizontal-flip bits, big/small/standing/jump/fall/skid/swim/climb
+selection, injury blinking, size-change selection, and the prepared vertical
+offscreen-row mask.
+
+The ROM-free `mysmb.player-oam-smoke` supplies a synthetic PRG table and
+checks source row order, coordinates, attributes, and left-facing flip. A
+bounded owner-local title-bootstrap route presses Start on frames 40--41 and
+otherwise uses neutral input. At NMI samples 300, 400, 500, and 599, the
+player's 32-byte OAM range is exact. Across all 600 samples, total OAM
+differences fell from 14,290 before player rows to 4,172 bytes in 167 samples;
+CPU OAM-RAM differences fell from 14,048 to 3,856 bytes in 160 samples.
+The remaining differences belong to title, enemy, item, projectile, effect,
+score, platform, and boss draw owners. CIRAM pages, palette, and all seven
+PPU-visible scalars remained exact. Raw 600-sample traces were deleted after
+the comparison.

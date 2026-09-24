@@ -108,6 +108,24 @@ enum {
 enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
 
 enum { MYSMB_PLAYER_SIZE = 0x0754U };
+enum {
+    MYSMB_PLAYER_RELATIVE_X = 0x03adU,
+    MYSMB_PLAYER_RELATIVE_Y = 0x03b8U,
+    MYSMB_PLAYER_SPRITE_ATTRIBUTES = 0x03c4U,
+    MYSMB_PLAYER_OFFSCREEN_BITS = 0x03d0U,
+    MYSMB_PLAYER_GFX_OFFSET = 0x06d5U,
+    MYSMB_PLAYER_SPRITE_OFFSET = 0x06e4U,
+    MYSMB_PLAYER_INJURY_TIMER = 0x079eU,
+    MYSMB_PLAYER_ANIM_TIMER = 0x0780U,
+    MYSMB_PLAYER_FRAME_COUNTER = 0x0009U
+};
+enum {
+    /* Owner-local PRG offsets for PlayerGfxTblOffsets and
+     * PlayerGraphicsTable.  These map CPU $ee07 and $ee17. */
+    MYSMB_PLAYER_GFX_TABLE_OFFSETS = 0x6e07U,
+    MYSMB_PLAYER_GRAPHICS_TABLE = 0x6e17U,
+    MYSMB_PLAYER_GRAPHICS_TABLE_END = 0x6ee7U
+};
 enum { MYSMB_PLAYER_BOUND_BOX = 0x0499U };
 enum { MYSMB_RUNNING_SPEED = 0x0703U };
 enum {
@@ -489,6 +507,191 @@ static void mysmb_player_update_relative_position(struct mysmb_game *game)
 {
     game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
+}
+
+/* ROM $ee35-$ef25 action selection.  The source table remains in the
+ * owner-local PRG binding, rather than becoming tracked C data. */
+static mysmb_u8 mysmb_player_select_gfx(struct mysmb_game *game)
+{
+    mysmb_u8 action;
+    mysmb_u8 animation;
+    mysmb_u8 extent;
+    mysmb_u8 animated;
+    mysmb_u8 offset;
+
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
+        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 14U];
+    }
+    if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] != 0U) {
+        static const mysmb_u8 change_size_offset[20] = {
+            0U, 1U, 0U, 1U, 0U, 1U, 2U, 0U, 1U, 2U,
+            2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U, 2U, 0U
+        };
+
+        animation = game->ram[MYSMB_PLAYER_ANIMATION];
+        if ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 3U) == 0U) {
+            animation++;
+            if (animation == 10U) {
+                animation = 0U;
+                game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 0U;
+            }
+            game->ram[MYSMB_PLAYER_ANIMATION] = animation;
+        }
+        if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
+            return (mysmb_u8)(game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 15U] +
+                change_size_offset[animation] * 8U);
+        }
+        animation = (mysmb_u8)(animation + 10U);
+        action = change_size_offset[animation] == 0U ? 1U : 9U;
+        return game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
+    }
+    action = 2U;
+    animated = 0U;
+    extent = 0U;
+    if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
+        action = 5U;
+        if (game->ram[MYSMB_PLAYER_Y_SPEED] != 0U) {
+            animated = 1U;
+            extent = 2U;
+        }
+    }
+    else if (game->ram[MYSMB_PLAYER_STATE] == 2U) {
+        action = 4U;
+        animated = 1U;
+        extent = 0U;
+    }
+    else if (game->ram[MYSMB_PLAYER_STATE] == 1U) {
+        if (game->ram[MYSMB_SWIMMING] != 0U) {
+            action = 1U;
+            animated = 1U;
+            extent = 3U;
+        }
+        else if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) {
+            action = 6U;
+        }
+        else {
+            action = 0U;
+        }
+    }
+    else if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) {
+        action = 6U;
+    }
+    else if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U ||
+             game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+        action = 4U;
+        if (game->ram[MYSMB_PLAYER_X_SPEED_ABSOLUTE] >= 9U &&
+            (game->ram[MYSMB_PLAYER_MOVING_DIRECTION] &
+             game->ram[MYSMB_PLAYER_FACING]) == 0U) action = 3U;
+        if (action == 4U) {
+            animated = 1U;
+            extent = 3U;
+        }
+    }
+    if (game->ram[MYSMB_PLAYER_SIZE] != 0U) action = (mysmb_u8)(action + 8U);
+    offset = game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
+    if (animated == 0U) {
+        game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
+        return offset;
+    }
+    animation = game->ram[MYSMB_PLAYER_ANIMATION];
+    offset = (mysmb_u8)(offset + animation * 8U);
+    if (game->ram[MYSMB_PLAYER_ANIM_TIMER] == 0U) {
+        game->ram[MYSMB_PLAYER_ANIM_TIMER] = game->ram[MYSMB_PLAYER_ANIM_TIMER_SET];
+        animation++;
+        if (animation >= extent) animation = 0U;
+        game->ram[MYSMB_PLAYER_ANIMATION] = animation;
+    }
+    return offset;
+}
+
+/* ROM DrawSpriteObject: write a two-sprite OAM row and advance the row. */
+static void mysmb_player_draw_row(struct mysmb_game *game, mysmb_u8 *oam_offset,
+                                  mysmb_u8 *y, mysmb_u8 x, mysmb_u8 left_tile,
+                                  mysmb_u8 right_tile, mysmb_u8 attributes,
+                                  mysmb_u8 facing)
+{
+    mysmb_u16 first;
+    mysmb_u16 second;
+
+    first = (mysmb_u16)(0x0200U + *oam_offset);
+    second = (mysmb_u16)(first + 4U);
+    if (facing == MYSMB_BUTTON_LEFT) {
+        game->ram[(mysmb_u16)(first + 1U)] = right_tile;
+        game->ram[(mysmb_u16)(second + 1U)] = left_tile;
+        attributes = (mysmb_u8)(attributes | 0x40U);
+    }
+    else {
+        game->ram[(mysmb_u16)(first + 1U)] = left_tile;
+        game->ram[(mysmb_u16)(second + 1U)] = right_tile;
+    }
+    game->ram[first] = *y;
+    game->ram[second] = *y;
+    game->ram[(mysmb_u16)(first + 2U)] = attributes;
+    game->ram[(mysmb_u16)(second + 2U)] = attributes;
+    game->ram[(mysmb_u16)(first + 3U)] = x;
+    game->ram[(mysmb_u16)(second + 3U)] = (mysmb_u8)(x + 8U);
+    *y = (mysmb_u8)(*y + 8U);
+    *oam_offset = (mysmb_u8)(*oam_offset + 8U);
+}
+
+void mysmb_player_draw_oam(struct mysmb_game *game)
+{
+    mysmb_u8 graphics_offset;
+    mysmb_u8 row;
+    mysmb_u8 oam_offset;
+    mysmb_u8 y;
+    mysmb_u8 attributes;
+    mysmb_u8 offscreen;
+
+    if (game->area_prg == 0 ||
+        game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
+    if (game->ram[MYSMB_PLAYER_INJURY_TIMER] != 0U &&
+        (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
+    game->ram[MYSMB_PLAYER_RELATIVE_X] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[MYSMB_PLAYER_RELATIVE_Y] = game->ram[MYSMB_PLAYER_Y];
+    graphics_offset = mysmb_player_select_gfx(game);
+    game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
+    oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
+    y = game->ram[MYSMB_PLAYER_RELATIVE_Y];
+    attributes = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
+    for (row = 0U; row < 4U; ++row) {
+        mysmb_player_draw_row(game, &oam_offset, &y,
+            game->ram[MYSMB_PLAYER_RELATIVE_X],
+            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE +
+                                        graphics_offset + row * 2U)],
+            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE +
+                                        graphics_offset + row * 2U + 1U)],
+            attributes, game->ram[MYSMB_PLAYER_FACING]);
+    }
+    /* PlayerOffscreenChk consumes the vertical nibble prepared by the source
+     * offscreen route.  Preserve its one-row-at-a-time mask when present. */
+    offscreen = (mysmb_u8)(game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >> 4U);
+    oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
+    for (row = 0U; row < 4U; ++row) {
+        if ((offscreen & 1U) != 0U) {
+            game->ram[(mysmb_u16)(0x0200U + oam_offset)] = 0xf8U;
+            game->ram[(mysmb_u16)(0x0204U + oam_offset)] = 0xf8U;
+        }
+        offscreen >>= 1U;
+        oam_offset = (mysmb_u8)(oam_offset - 8U);
+    }
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
+        oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 16U);
+        game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
+        game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
+            (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
+                      0x40U);
+    }
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
+        graphics_offset == 0x50U || graphics_offset == 0xb8U ||
+        graphics_offset == 0xc0U) {
+        oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
+        game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
+        game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
+            (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
+                      0x40U);
+    }
 }
 
 /* Translation of PlayerCtrlRoutine's PlayerHole tail.  The falling player
