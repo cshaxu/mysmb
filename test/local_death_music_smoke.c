@@ -29,5 +29,7 @@ int main(void)
     if (game.ram[0x07b1U] != 0U || game.ram[0x00f4U] != 0U ||
         game.ram[0x07b6U] != 1U || game.ram[0x07b7U] != 0x28U ||
         game.ram[0x07b9U] != 1U) return 1;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07b7U] != 0x28U) return 1;
     return 0;
 }

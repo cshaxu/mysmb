@@ -491,6 +491,11 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
                 mysmb_audio_find_header_selector(area, 8U));
         }
     }
+    /* SoundEngine leaves the music-channel tasks once both queues and both
+     * active music buffers are clear.  This also retains final envelopes. */
+    if (event == 0U && area == 0U &&
+        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) return;
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
         if (mysmb_audio_step_death_music(game) != 0U) return;
     }
