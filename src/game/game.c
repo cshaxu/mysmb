@@ -140,6 +140,25 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
     return offset;
 }
 
+/* ROM NMI RotPRandomBit.  The carry derives from d1 of the first two
+ * registers, then propagates through eight consecutive ROR instructions. */
+static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+    mysmb_u8 carry;
+    mysmb_u8 next_carry;
+    mysmb_u8 value;
+
+    carry = ((game->ram[0x07a7U] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
+        1U : 0U;
+    for (index = 0U; index < 8U; ++index) {
+        value = game->ram[(mysmb_u16)(0x07a7U + index)];
+        next_carry = value & 1U;
+        game->ram[(mysmb_u16)(0x07a7U + index)] = (mysmb_u8)((value >> 1U) |
+            (carry != 0U ? 0x80U : 0U));
+        carry = next_carry;
+    }
+}
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
 static void mysmb_game_tick_player_timers(struct mysmb_game *game)
@@ -441,6 +460,7 @@ void mysmb_game_initialize(struct mysmb_game *game)
     /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+    game->ram[0x07a7U] = 0xa5U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
     game->ram[0x0754U] = 1U;
     game->ram[0x075aU] = 2U;
@@ -1051,6 +1071,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
+    mysmb_game_rotate_pseudorandom(game);
     if (game->ram[MYSMB_RAM_SPRITE0_HIT] != 0U) {
         mysmb_u8 oam_offset;
 

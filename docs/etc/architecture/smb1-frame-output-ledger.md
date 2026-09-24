@@ -1585,3 +1585,17 @@ CPU OAM RAM, hardware OAM, both CIRAM pages, palette, and every PPU-visible
 scalar. CPU RAM still differs in scratch, stack, and working fields, so M2
 remains open pending complete persistent-state ownership and longer-path
 coverage.
+
+## T13 S1 P15 NMI Pseudorandom Chain
+
+The ROM NMI `RotPRandomBit` seeds `$07a7` to `$a5` during cold initialization,
+then rotates the eight-byte LFSR after timer processing. The portable routine
+uses the source d1 XOR carry and the same byte order. A five-frame smoke test
+matches the reference leading pair (`52/80`, `a9/40`, `54/a0`, `2a/50`,
+`95/28`).
+
+On the corrected 380-sample Start/Right trace, CPU-RAM differences fall from
+104,952 to 102,744 bytes and working-RAM differences from 37,280 to 35,072.
+CPU OAM RAM, hardware OAM, both CIRAM pages, palette, and all seven PPU scalar
+values remain exact. The 6502 call-stack page and other working-state bytes
+still differ; this is one verified state-owner correction and does not close M2.
