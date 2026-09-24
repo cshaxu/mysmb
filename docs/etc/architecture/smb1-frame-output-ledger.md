@@ -119,3 +119,21 @@ the older bulk or bounded routes. Task 8 no longer calls the terrain bulk
 route. The bounded object preload remains only until `ProcessAreaData` replaces
 it; none of these retained paths is claimed as the original incremental parser
 path.
+
+## T10 S1 P3 Object-Stream Baseline
+
+A bounded owner-local 30-frame NMI probe captured the parser object state for
+the first title-demo area load. The source begins with a page-control entry:
+the header-following bytes are `07 81`, followed by `47 24`, `57 00`, and
+`63 01`. The first entry advances `AreaObjectPageLoc` to one without occupying
+an object slot. During the initial 12 column sets, all three length bytes stay
+`ff` through page one, column four. At page one, column six, the ROM has
+`AreaDataOffset=06`, slot offsets `00/04/02`, and lengths `ff/ff/02`; two
+columns later it advances to offset `0a` and decrements the active slot to
+zero. The corresponding 13-byte metatile buffers were summarized locally and
+the raw trace was deleted.
+
+This disproves the prior proposed shortcut of consuming one stream object per
+parser column. P3 must translate page control, behind-renderer handling, and
+the three persistent length slots before any family-specific object handler is
+admitted. The old preload and one-object path remain explicitly partial.
