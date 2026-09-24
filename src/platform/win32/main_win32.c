@@ -18,7 +18,7 @@ static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 
 #ifdef MYSMB_LOCAL_TITLE
-static void mysmb_win32_draw_title(HDC dc);
+static void mysmb_win32_draw_background(HDC dc);
 static void mysmb_win32_plot(HDC dc, unsigned int x, unsigned int y,
                              COLORREF color)
 {
@@ -52,7 +52,7 @@ static void mysmb_win32_draw_gameplay(HDC dc)
     /* The ROM-enabled build consumes CHR-backed name-table pixels instead of
      * the diagnostic color buckets below.  Sprite/OAM composition follows in
      * the next renderer slice. */
-    mysmb_win32_draw_title(dc);
+    mysmb_win32_draw_background(dc);
     mysmb_win32_draw_oam(dc);
 #else
     unsigned int index;
@@ -89,14 +89,15 @@ static void mysmb_win32_draw_gameplay(HDC dc)
 #ifdef MYSMB_LOCAL_TITLE
 static COLORREF mysmb_win32_nes_color(mysmb_u8 index)
 {
-    static const COLORREF colors[16] = {
-        RGB(84, 84, 84), RGB(0, 30, 116), RGB(8, 16, 144), RGB(48, 0, 136),
-        RGB(68, 0, 100), RGB(92, 0, 48), RGB(84, 4, 0), RGB(60, 24, 0),
-        RGB(32, 42, 0), RGB(8, 58, 0), RGB(0, 64, 0), RGB(0, 60, 0),
-        RGB(0, 50, 60), RGB(0, 0, 0), RGB(236, 238, 236), RGB(252, 188, 60)
+    /* The 2C02 master palette encoded by SMB1's $3f00-$3f1f entries. */
+    static const COLORREF colors[64] = {
+        RGB(84,84,84), RGB(0,30,116), RGB(8,16,144), RGB(48,0,136), RGB(68,0,100), RGB(92,0,48), RGB(84,4,0), RGB(60,24,0), RGB(32,42,0), RGB(8,58,0), RGB(0,64,0), RGB(0,60,0), RGB(0,50,60), RGB(0,0,0), RGB(0,0,0), RGB(0,0,0),
+        RGB(152,150,152), RGB(8,76,196), RGB(48,50,236), RGB(92,30,228), RGB(136,20,176), RGB(160,20,100), RGB(152,34,32), RGB(120,60,0), RGB(84,90,0), RGB(40,114,0), RGB(8,124,0), RGB(0,118,40), RGB(0,102,120), RGB(0,0,0), RGB(0,0,0), RGB(0,0,0),
+        RGB(236,238,236), RGB(76,154,236), RGB(120,124,236), RGB(176,98,236), RGB(228,84,236), RGB(236,88,180), RGB(236,106,100), RGB(212,136,32), RGB(160,170,0), RGB(116,196,0), RGB(76,208,32), RGB(56,204,108), RGB(56,180,204), RGB(60,60,60), RGB(0,0,0), RGB(0,0,0),
+        RGB(236,238,236), RGB(168,204,236), RGB(188,188,236), RGB(212,178,236), RGB(236,174,236), RGB(236,174,212), RGB(236,180,176), RGB(228,196,144), RGB(204,210,120), RGB(180,222,120), RGB(168,226,144), RGB(152,226,180), RGB(160,214,228), RGB(160,162,160), RGB(0,0,0), RGB(0,0,0)
     };
 
-    return colors[index & 15U];
+    return colors[index & 0x3fU];
 }
 
 static COLORREF mysmb_win32_background_color(unsigned char palette,
@@ -110,59 +111,69 @@ static COLORREF mysmb_win32_sprite_color(unsigned char palette,
 {
     return mysmb_win32_nes_color(g_game.palette[0x10U + (palette << 2U) + color]);
 }
-static COLORREF mysmb_win32_title_color(unsigned char palette, unsigned char color)
+static unsigned char mysmb_win32_background_pixel(unsigned int x, unsigned int y)
 {
-    static const COLORREF colors[4] = {
-        RGB(92, 148, 252), RGB(0, 0, 0), RGB(228, 92, 16), RGB(252, 188, 60)
-    };
-    if (color == 0U) {
-        return colors[0];
-    }
-    return colors[(palette + color) & 3U];
-}
-
-static void mysmb_win32_draw_title(HDC dc)
-{
+    unsigned int source_x;
+    unsigned int source_y;
     unsigned int row;
     unsigned int column;
-    unsigned int pixel_y;
-    unsigned int pixel_x;
+    unsigned int table;
     unsigned int tile;
-    unsigned int attribute;
     unsigned char low;
     unsigned char high;
-    unsigned char color;
-    unsigned char palette;
+    unsigned int pixel_x;
+    unsigned int pixel_y;
+    unsigned int pattern_base;
 
-    for (row = 0U; row < 30U; ++row) {
-        for (column = 0U; column < 32U; ++column) {
-            tile = g_game.name_table[0][row * 32U + column];
-            attribute = g_game.name_table[0][0x03c0U + (row / 4U) * 8U + column / 4U];
+    source_x = (x + g_game.visible_scroll_x) & 0x01ffU;
+    source_y = (y + g_game.visible_scroll_y) % 480U;
+    table = (unsigned int)(g_game.visible_ppu_name_table & 3U);
+    if (source_x >= 256U) table ^= 1U;
+    if (source_y >= 240U) table ^= 2U;
+    row = (source_y % 240U) / 8U;
+    column = (source_x & 0xffU) / 8U;
+    /* SMB1 uses vertical mirroring: logical tables 0/2 and 1/3 share CIRAM. */
+    table &= 1U;
+    tile = g_game.name_table[table][row * 32U + column];
+    pixel_y = source_y & 7U;
+    pixel_x = source_x & 7U;
+    pattern_base = (g_game.visible_ppu_control_0 & 0x10U) != 0U ? 0x1000U : 0U;
+    low = mysmb_local_chr[pattern_base + tile * 16U + pixel_y];
+    high = mysmb_local_chr[pattern_base + tile * 16U + pixel_y + 8U];
+    return (unsigned char)(((low >> (7U - pixel_x)) & 1U) |
+                           (((high >> (7U - pixel_x)) & 1U) << 1U));
+}
+
+static void mysmb_win32_draw_background(HDC dc)
+{
+    unsigned int y;
+    unsigned int x;
+    unsigned int source_x;
+    unsigned int source_y;
+    unsigned int row;
+    unsigned int column;
+    unsigned int table;
+    unsigned int attribute;
+    unsigned char palette;
+    unsigned char color;
+
+    for (y = 0U; y < MYSMB_SCREEN_HEIGHT; ++y) {
+        for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
+            source_x = (x + g_game.visible_scroll_x) & 0x01ffU;
+            source_y = (y + g_game.visible_scroll_y) % 480U;
+            table = (unsigned int)(g_game.visible_ppu_name_table & 3U);
+            if (source_x >= 256U) table ^= 1U;
+            if (source_y >= 240U) table ^= 2U;
+            row = (source_y % 240U) / 8U;
+            column = (source_x & 0xffU) / 8U;
+            table &= 1U;
+            attribute = g_game.name_table[table][0x03c0U + (row / 4U) * 8U + column / 4U];
             palette = (unsigned char)((attribute >> (((row & 2U) << 1U) + (column & 2U))) & 3U);
-            for (pixel_y = 0U; pixel_y < 8U; ++pixel_y) {
-                low = mysmb_local_chr[0x1000U + tile * 16U + pixel_y];
-                high = mysmb_local_chr[0x1000U + tile * 16U + pixel_y + 8U];
-                for (pixel_x = 0U; pixel_x < 8U; ++pixel_x) {
-                    color = (unsigned char)(((low >> (7U - pixel_x)) & 1U) |
-                                            (((high >> (7U - pixel_x)) & 1U) << 1U));
-                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE),
-                             (int)((row * 8U + pixel_y) * MYSMB_SCALE),
-                             mysmb_win32_title_color(palette, color));
-                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE + 1U),
-                             (int)((row * 8U + pixel_y) * MYSMB_SCALE),
-                             mysmb_win32_title_color(palette, color));
-                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE),
-                             (int)((row * 8U + pixel_y) * MYSMB_SCALE + 1U),
-                             mysmb_win32_title_color(palette, color));
-                    SetPixel(dc, (int)((column * 8U + pixel_x) * MYSMB_SCALE + 1U),
-                             (int)((row * 8U + pixel_y) * MYSMB_SCALE + 1U),
-                             mysmb_win32_title_color(palette, color));
-                }
-            }
+            color = mysmb_win32_background_pixel(x, y);
+            mysmb_win32_plot(dc, x, y, mysmb_win32_background_color(palette, color));
         }
     }
 }
-
 static void mysmb_win32_draw_oam(HDC dc)
 {
     unsigned int sprite;
@@ -177,21 +188,23 @@ static void mysmb_win32_draw_oam(HDC dc)
     unsigned char high;
     unsigned char color;
 
-    for (sprite = 0U; sprite < 64U; ++sprite) {
+    for (sprite = 64U; sprite != 0U; --sprite) {
+        --sprite;
         y = g_game.visible_oam[sprite * 4U] + 1U;
         tile = g_game.visible_oam[sprite * 4U + 1U];
         attributes = g_game.visible_oam[sprite * 4U + 2U];
         x = g_game.visible_oam[sprite * 4U + 3U];
         if (y >= MYSMB_SCREEN_HEIGHT) continue;
         for (pixel_y = 0U; pixel_y < 8U && y + pixel_y < MYSMB_SCREEN_HEIGHT; ++pixel_y) {
-            low = mysmb_local_chr[tile * 16U +
+            low = mysmb_local_chr[((g_game.visible_ppu_control_0 & 0x08U) != 0U ? 0x1000U : 0U) + tile * 16U +
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y)];
-            high = mysmb_local_chr[tile * 16U + 8U +
+            high = mysmb_local_chr[((g_game.visible_ppu_control_0 & 0x08U) != 0U ? 0x1000U : 0U) + tile * 16U + 8U +
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y)];
             for (pixel_x = 0U; pixel_x < 8U && x + pixel_x < MYSMB_SCREEN_WIDTH; ++pixel_x) {
                 bit = (attributes & 0x40U) != 0U ? pixel_x : 7U - pixel_x;
                 color = (unsigned char)(((low >> bit) & 1U) | (((high >> bit) & 1U) << 1U));
-                if (color != 0U) {
+                if (color != 0U && ((attributes & 0x20U) == 0U ||
+                    mysmb_win32_background_pixel(x + pixel_x, y + pixel_y) == 0U)) {
                     mysmb_win32_plot(dc, x + pixel_x, y + pixel_y,
                         mysmb_win32_sprite_color((unsigned char)(attributes & 3U), color));
                 }
@@ -208,11 +221,10 @@ static void mysmb_win32_paint(HWND window)
 
     dc = BeginPaint(window, &paint);
 #ifdef MYSMB_LOCAL_TITLE
-    if (g_game.ram[0x0770U] == 0U) {
-        mysmb_win32_draw_title(dc);
-        EndPaint(window, &paint);
-        return;
-    }
+    mysmb_win32_draw_background(dc);
+    mysmb_win32_draw_oam(dc);
+    EndPaint(window, &paint);
+    return;
 #endif
     mysmb_win32_draw_gameplay(dc);
     EndPaint(window, &paint);
