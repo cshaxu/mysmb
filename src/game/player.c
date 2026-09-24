@@ -1,5 +1,6 @@
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/area.h"
 
 enum {
     MYSMB_PLAYER_X_SPEED = 0x0057U,
@@ -1290,6 +1291,9 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_X] = start_x[alternate];
     game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
+    /* ROM Entrance_GameTimerSetup calls GetPlayerColors even when the four
+     * colors already match the committed palette. */
+    (void)mysmb_area_queue_player_palette(game);
     if (game->ram[MYSMB_GAME_TIMER_SETTING] != 0U &&
         game->ram[MYSMB_FETCH_NEW_GAME_TIMER] != 0U) {
         game->ram[MYSMB_GAME_TIMER_DISPLAY] =
