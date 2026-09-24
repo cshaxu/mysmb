@@ -43,7 +43,7 @@ valid merely because its storage happens to be zero.
 | `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Partial**; the ROM-bound game path now executes screen tasks 0–12 before entering `GameCoreRoutine`: name-table initialization, player palette, top/bottom status, intermediate text/timers, title-area display, and area setup transition have native owners. `$85f1 GetPlayerColors` derives and queues the ROM `$3f10` sprite-palette command during area initialization and after a PPU-visible player-state change, including its background-color first byte. Title loading applies the ground palette followed by that player command, and the portable 32-byte palette backing state observes the 2C02 `$3f10/$14/$18/$1c` aliases. Alternate-entry branches and buffer-address control remain incomplete. |
 | `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Partial**; title plus initial gameplay top and bottom status commands reach the buffer and name table, including score, coin, world, and level digits. The title loader commits both status streams before its owner-local title transfer. `$9131` installs the header-selected three-digit timer on a new entrance; `RunGameTimer` queues time-running-out music at 100, appends its live three-digit `$207a` update, and calls the translated `ForceInjury` route at zero. The following NMI commits pending commands. The native `WriteGameText` route copies the ROM-authored lives, Time Up, Game Over, and Warp streams and patches their source-defined mutable bytes. |
 | `$88ae-$89bd` | Area metatile rows and attributes | Dynamic name-table and attribute updates | **Partial**; the admitted metatile table now expands collision pages and attributes into both name tables, while original incremental buffer scheduling and all scenery families remain incomplete. |
-| `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Partial**; area palette streams, queued palette-3 rotation, and block replacement refresh now reach the snapshot; bridge routes remain incomplete. |
+| `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Partial**; area palette streams, queued palette-3 rotation, block replacement, and the victory bridge-collapse writer now reach the snapshot. |
 | `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Partial**; initialization and the admitted `VRAM_Buffer1` transfer now reach the snapshot; status/title/gameplay screen tasks remain incomplete. |
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Partial**; admitted terrain/object metatiles expand into visible name-table and attribute state. The title loader invokes the same initial area route before overlaying the title stream, matching the original title task's ownership boundary. Incremental scenery families remain incomplete. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
@@ -1143,8 +1143,8 @@ The special-palette reader now maps control 8 to the source-owned Bowser
 stream, and the NMI buffer-commit route accepts controls 8--11. The owner-local
 palette smoke verifies all four resulting palette bytes against the PRG stream,
 then sets `$0773` to 8 and verifies the following native tick commits and
-clears it. Message controls 12--18 and bridge metatile replacement remain
-separate T10 owners.
+clears it. Message controls 12--18 and bridge metatile replacement were
+separate T10 owners and are recorded below.
 
 ## T10 S1 P62 Victory Message Address Controls
 
@@ -1160,8 +1160,8 @@ world-1--7 retainer branch, world-8 music/message sequence, and end-timer
 handoff. Its NMI path dispatches controls 12--18 to source-owned PRG streams.
 The owner-local victory-message smoke verifies Mario's first message, the
 world-1 retainer message, the world-8 princess message and music boundary, and
-the final world-select stream directly against their PRG command tiles. Bridge
-metatile replacement remains a separate T10 owner.
+the final world-select stream directly against their PRG command tiles. The
+bridge metatile replacement is recorded by P63.
 
 ## T10 S1 P63 Bridge-Collapse Name-Table Output
 
