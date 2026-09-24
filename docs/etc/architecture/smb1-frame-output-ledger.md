@@ -1840,3 +1840,36 @@ The player owner, timer owner, symbol map, and all `$0780/$0781` production
 references were reviewed. `$0780` remains the select-timer alias and `$0781`
 is the one player-animation owner; no other graphics route uses the wrong
 alias.
+## T11 S1 P7 Enemy Stream Area-Entry State
+
+The matched owner-local listing's `ParseRow0e` follows `ProcessEnemyData` and
+consumes a three-byte enemy-stream area-entry record.  When the third byte's
+three high bits select the current world, it writes the second byte to
+`AreaPointer` (`$0750`) and the low five bits of the third byte to
+`EntrancePage` (`$0751`).  Native `mysmb_area_spawn_next_enemy` had advanced
+its `$0739` cursor by three bytes but discarded those observable side effects.
+It now preserves them, with a bounds check before reading the third byte.  The
+new ROM-free enemy-stream smoke covers both a matching-world record
+(`$c2/$11`) and a nonmatching-world record that must preserve the previous
+values.
+
+The 380-sample owner-ROM trace is reproducible from SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de` with
+reference script `30:$08,31:0,60:$80` (NES serial order) and native script
+`30:$10,31:0,60:$01` (MySMB decoded order).  It removes the later gameplay
+`$0750` mismatch at sample 186 and reduces CPU-RAM differences from 68,541 to
+68,344 and working-RAM differences from 2,249 to 2,052.  CPU OAM backing RAM,
+visible OAM, both CIRAM pages, palette, and all PPU scalar fields remain exact.
+A one-sample non-visible `$0750` timing difference remains at sample 30 during
+the Start transition: the ROM resets it to `$25` one sample before the native
+route.  It remains open rather than being hidden by trace alignment.
+
+### Similar-Issue Sweep
+
+The matched listing, generated symbol map, production sources, and tests were
+searched for `ParseRow0e`, `AreaPointer`, `$0750`, and `$0751`.  The enemy
+stream owner is the only native reader that formerly consumed row `$0e`; it
+now owns both source writes.  `mysmb_area_load_pointers` remains the separate
+area-table initializer for `$0750`, and the player pipe route separately clears
+`$0751` after consuming an entry.  No second discarded row-$0e path or
+host-owned substitute was found.

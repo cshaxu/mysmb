@@ -47,6 +47,7 @@ enum {
 
 enum {
     MYSMB_AREA_POINTER = 0x0750U,
+    MYSMB_AREA_ENTRANCE_PAGE = 0x0751U,
     MYSMB_AREA_TYPE = 0x074eU,
     MYSMB_AREA_LOW_OFFSET = 0x074fU,
     MYSMB_AREA_DATA_LOW = 0x00e7U,
@@ -664,6 +665,7 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
     mysmb_u16 right;
     mysmb_u8 first;
     mysmb_u8 second;
+    mysmb_u8 third;
     mysmb_u8 slot;
     mysmb_u8 row;
 
@@ -686,6 +688,17 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
         row = (mysmb_u8)(first & 0x0fU);
         if (row >= 0x0eU || ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U)) {
+            /* ROM ParseRow0e consumes a three-byte area-entry record.  It
+             * preserves its destination for a later pipe entry only when
+             * the record's three high bits select this world. */
+            if (row == 0x0eU) {
+                if ((mysmb_u16)(address + 2U) >= source->prg_size) return 0U;
+                third = source->prg[(mysmb_u16)(address + 2U)];
+                if ((third >> 5U) == game->ram[MYSMB_WORLD_NUMBER]) {
+                    game->ram[MYSMB_AREA_POINTER] = second;
+                    game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
+                }
+            }
             game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + (row == 0x0eU ? 3U : 2U));
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 0U;

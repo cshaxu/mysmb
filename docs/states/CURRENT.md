@@ -9,8 +9,9 @@
 - `mysmb_game` is a C90 native logic foundation with translated title, area,
   player, object, mode, audio-command, and background-output routes. Its
   canonical snapshot now has translated name-table, attribute, palette,
-  scroll, status, and PPU-state ownership. OAM producers and faithful Win32
-  frame consumption remain absent, so M2 is still open. `mysmb_win32` builds
+  scroll, status, PPU state, and the currently admitted OAM output. The bounded
+  trace has exact visible output, but remaining raw-state and route coverage keep
+  M2 open. `mysmb_win32` builds
   x86 and x64 PE windows; owner-local title data and CHR are generated only
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
