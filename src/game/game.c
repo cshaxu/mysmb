@@ -648,6 +648,8 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
         if (mysmb_area_queue_top_status_line(game) == 0U) return 0U;
         mysmb_game_commit_vram_buffer(game);
         if (mysmb_game_apply_title_area(game) == 0U) return 0U;
+        if (mysmb_area_queue_bottom_status_line(game) == 0U) return 0U;
+        mysmb_game_commit_vram_buffer(game);
     }
     if (mysmb_game_apply_vram_commands(game, commands, command_size) == 0U) {
         return 0U;
