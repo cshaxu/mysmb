@@ -1214,6 +1214,10 @@ mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
  * eight task slots that produce a two-column set; NMI owns its later transfer. */
 mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
 {
+    /* ROM $86e6 disables output before every two-column parser set.  The
+     * pending buffer is still consumed by the following NMI, but its mask
+     * remains in the source's screen-off state until later screen tasks. */
+    game->ram[MYSMB_AREA_DISABLE_SCREEN]++;
     do {
         if (mysmb_area_parser_task_step(game) == 0U) return 0U;
     } while (game->ram[MYSMB_AREA_PARSER_TASK] != 0U);

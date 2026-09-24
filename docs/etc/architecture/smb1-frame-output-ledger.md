@@ -421,13 +421,13 @@ object state is created by this background-only route.
 ## T10 S1 P21 NMI Display-State Commit
 
 The native NMI boundary now translates the PPU-control details in
-`$740-$842` and the command increment selection in `$2457-$2478`. Every VRAM
-command records d7 as the `$2000` d2 address-increment state; after the game
-route, the frame boundary restores the source display-mask bits according to
-`DisableScreenFlag` and sets `$2000` d7 for NMI. These values are therefore
-captured by the canonical PPU snapshot rather than inferred by a host
-consumer. The snapshot smoke test covers vertical command increment, enabled
-display, and the disabled-screen mask result.
+`$740-$842` and the command increment selection in `$2457-$2478`. A VRAM
+command selects `$2000` d2 only while it transfers; the NMI tail restores the
+mirror control byte, clears that transient d2 state, and sets `$2000` d7 for
+the canonical RTI-boundary snapshot. The same boundary restores the source
+display-mask bits according to `DisableScreenFlag`. The snapshot smoke test
+covers vertical command increment during transfer, enabled display, and the
+disabled-screen mask result.
 
 ### Similar-Issue Sweep
 
@@ -505,3 +505,27 @@ command consumer, proving the two live values reach the canonical name table.
 The timer remains its own selector `$a4` command and may share a pending NMI
 list. This repair does not draw the coin or score sprites, produce OAM, or
 interpret presentation on the host; those boundaries remain T11 work.
+
+## T10 S1 P26 Initial Area Display-Mask Phase
+
+The owner-local 240-frame NMI probe used the admitted Start script
+`40:0x08,42:0` and retained only neutral summaries. At original checkpoints
+41--42 the game is in mode one, task one with `$2000=$90` and `$2001=$06`.
+The translated route had `$2001=$00`, because title completion never restored
+the visible mask and `AreaParserTaskControl` omitted its source `inc
+DisableScreenFlag` at `$86e6`. The title completion now restores the visible
+mask, and the parser owner increments the disable flag before a two-column
+set. Native checkpoints 41--42 now carry `$2000=$90/$2001=$06`; after setup,
+task three carries `$90/$1e`.
+
+The audit also corrected a NMI-boundary capture error: d2 is temporary for a
+VRAM command and must be cleared when the source reloads its `$2000` mirror
+before RTI. The frame snapshot test proves this restoration. The probe's raw
+trace was deleted immediately after summary; no ROM bytes or frame records
+are tracked.
+
+### Remaining Difference Owner
+
+Initial name-table and palette checksums still differ after phase alignment.
+Those differences remain T10 background-route work; this record does not
+claim frame equivalence or M2 closure.

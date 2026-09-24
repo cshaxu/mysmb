@@ -51,7 +51,7 @@ int main(void)
         game.ppu_control_0 != 0x94U) return 4;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);
-    if (snapshot.ppu_control_0 != 0x94U || snapshot.ppu_mask != 0x1eU) return 5;
+    if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU) return 5;
     game.ram[0x0774U] = 1U;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);

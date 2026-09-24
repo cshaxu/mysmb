@@ -691,6 +691,10 @@ static void mysmb_game_commit_display_state(struct mysmb_game *game)
         game->ppu_mask &= 0xe6U;
     else
         game->ppu_mask |= 0x1eU;
+    /* WriteBufferToScreen temporarily selects d2 for an individual command.
+     * NMI later reloads Mirror_PPU_CTRL_REG1 before RTI, so that increment
+     * bit cannot persist into the canonical NMI-boundary snapshot. */
+    game->ppu_control_0 &= (mysmb_u8)~0x04U;
     game->ppu_control_0 |= 0x80U;
 }
 
@@ -713,12 +717,21 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
     /* Title ScreenRoutines reaches the ground palette then GetPlayerColors
      * before DrawTitleScreen.  The explicit title loader presents their
      * committed state, matching the first visible title frame. */
-    if (game->area_prg == 0) return 1U;
+    if (game->area_prg == 0) {
+        game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+        mysmb_game_commit_display_state(game);
+        return 1U;
+    }
     if (mysmb_area_apply_palette(game, 1U) == 0U ||
         mysmb_area_queue_player_palette(game) == 0U) {
         return 0U;
     }
     mysmb_game_commit_vram_buffer(game);
+    /* The title route has completed its name-table and palette transfers.
+     * Its next NMI restores the normal visible mask before Start can begin
+     * the game-area sequence. */
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+    mysmb_game_commit_display_state(game);
     return 1U;
 }
 
