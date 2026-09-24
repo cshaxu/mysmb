@@ -39,7 +39,9 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
 void mysmb_objects_draw_goombas(struct mysmb_game *game);
 /* ROM EnemiesCollision/ProcEnemyCollisions for regular enemy slots. */
 void mysmb_objects_step_enemy_collisions(struct mysmb_game *game);
-/* ROM $aa0f-$aa4c InitBulletBill/BulletBillHandler, sans rendering. */
+/* ROM EnemyGfxHandler/DrawEnemyObject for Bullet Bills. */
+void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM $aa0f-$aa4c InitBulletBill/BulletBillHandler and its OAM output. */
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
