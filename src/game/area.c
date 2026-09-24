@@ -1194,6 +1194,15 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (row >= 13U) return;
     area_type = game->ram[MYSMB_AREA_TYPE];
     if (area_type >= 4U) return;
+    /* Rows 12-15 select a different JumpEngine table.  In particular, the
+     * two question-block rows use selector 6/7 and must not enter the
+     * large-object vertical-pipe family. */
+    if (row == 12U && (kind == 6U || kind == 7U)) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        game->ram[MYSMB_AREA_METATILE_BUFFER + (kind == 6U ? 3U : 7U)] = 0xc0U;
+        return;
+    }
     if (kind == 0U) {
         value = (mysmb_u8)(second & 0x0fU);
         if (value <= 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = question[value];

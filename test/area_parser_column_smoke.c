@@ -161,5 +161,16 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a8U] != 0x12U || game.ram[0x06a9U] != 0x14U ||
         game.ram[0x0732U] != 0U) return 1;
+
+    /* Special row 12 selector seven is a question-block row, not a pipe. */
+    prg[0x0040U] = 0x7cU;
+    prg[0x0041U] = 0x71U;
+    game.ram[0x0726U] = 7U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x072aU] = 1U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0xc0U || game.ram[0x0732U] != 0U) return 1;
     return 0;
 }

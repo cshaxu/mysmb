@@ -209,3 +209,18 @@ Pipe processing was checked for incorrectly treating its low nibble as a
 generic row length, and for updating enemy state from a static renderer. The
 fixed-length parser slot and static metatiles are translated here. Dynamic
 piranha creation, sideways pipes, and transition semantics remain deferred.
+
+## T10 S1 P8 Special-Row Question Blocks
+
+The parser now distinguishes the row-12/13/14/15 JumpEngine table from the
+normal-row table. The two row-12 question-block row owners (`$3919-$3931`) use
+selectors six and seven, set their fixed rows three and seven, and retain the
+horizontal length slot. The parser smoke test covers selector seven specifically
+so it cannot regress into the normal-row vertical-pipe handler.
+
+### Similar-Issue Sweep
+
+The object handler was searched for direct d6-d4 selector dispatch without a
+row-table distinction. Normal-row selector seven remains vertical pipe; row-12
+selectors six and seven now route to question-block rows. Other special rows
+remain deferred.
