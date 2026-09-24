@@ -6,7 +6,9 @@ param(
     [ValidateSet('vertical')]
     [string]$Mirroring = 'vertical',
     [int]$StartSample = 0,
-    [int]$EndSample = -1
+    [int]$EndSample = -1,
+    [ValidateRange(1, 64)]
+    [int]$TopRamOffsets = 16
 )
 
 $ErrorActionPreference = 'Stop'
@@ -66,6 +68,7 @@ $zeroPage = New-M2Result 'cpu-zero-page'
 $stack = New-M2Result 'cpu-stack'
 $oamRam = New-M2Result 'cpu-oam-ram'
 $workRam = New-M2Result 'cpu-work-0300-07ff'
+$ramDifferenceCounts = @{}
 $nameTable0 = New-M2Result 'ciram-page-0'
 $nameTable1 = New-M2Result 'ciram-page-1'
 $palette = New-M2Result 'palette'
@@ -88,6 +91,17 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 260) ($record + 260) 256 $sample $stack
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 516) ($record + 516) 256 $sample $oamRam
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 772) ($record + 772) 1280 $sample $workRam
+    for ($offset = 0; $offset -lt 2048; ++$offset) {
+        if ($reference.Bytes[$record + 4 + $offset] -ne
+            $native.Bytes[$record + 4 + $offset]) {
+            if ($ramDifferenceCounts.ContainsKey($offset)) {
+                ++$ramDifferenceCounts[$offset]
+            }
+            else {
+                $ramDifferenceCounts[$offset] = 1
+            }
+        }
+    }
     # SMB1 mapper 0 is vertically mirrored: the two physical CIRAM pages map
     # directly to MySMB's two canonical name tables.
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 2052) ($record + 2052) 1024 $sample $nameTable0
@@ -104,6 +118,16 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     StartSample = $StartSample
     EndSample = $EndSample
     Mirroring = $Mirroring
+    TopRamDifferences = @($ramDifferenceCounts.GetEnumerator() |
+        Sort-Object -Property @{ Expression = 'Value'; Descending = $true },
+            @{ Expression = 'Key'; Descending = $false } |
+        Select-Object -First $TopRamOffsets |
+        ForEach-Object {
+            [pscustomobject]@{
+                Address = ('0x{0:x4}' -f [int]$_.Key)
+                DifferentSamples = $_.Value
+            }
+        })
     Results = @($ram, $zeroPage, $stack, $oamRam, $workRam, $nameTable0,
         $nameTable1, $palette, $oam) + $ppu
 } | ConvertTo-Json -Depth 3

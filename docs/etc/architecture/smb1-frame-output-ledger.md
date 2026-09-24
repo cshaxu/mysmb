@@ -841,3 +841,17 @@ RAM. OAM also differs in every sampled frame. Those results preserve the
 ledger's T11 boundary and do not support an OAM or complete-state claim. The
 raw traces were created in one ignored diagnostic directory and deleted by
 the command that performed the comparison.
+
+## T10 S1 P41 CPU-RAM Difference Ownership
+
+The trace comparator now reports the most frequently differing CPU-RAM
+addresses as neutral address/count pairs. On the admitted gameplay window,
+the persistent low-RAM differences include `$006f-$0072` and `$0088-$008b`,
+the enemy page and horizontal-position slots, plus `$00a8-$00ab`, the block
+and miscellaneous vertical-motion slots. They are actor-state owners whose
+visible output is OAM work, rather than background name-table ownership.
+
+The remaining frequent entries at `$0001` and `$0006` are source scratch
+bytes at the NMI return boundary. Stack and scratch bytes remain trace
+transparency data, not translated persistent-state targets. This classifier
+does not suppress any difference; it makes the T10/T11 handoff reviewable.
