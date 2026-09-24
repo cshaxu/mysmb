@@ -12,7 +12,10 @@ int main(void)
     for (index = 0U; index < 8U; ++index)
         prg[(mysmb_u16)(0x6e17U + index)] = (mysmb_u8)(0x20U + index);
     game.ram[0x06e4U] = 4U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
     game.ram[0x0086U] = 0x40U;
+    game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x60U;
     game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x03c4U] = 2U;

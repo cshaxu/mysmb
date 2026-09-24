@@ -37,6 +37,8 @@ enum {
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
     MYSMB_RAM_FRAME_COUNTER = 0x0009U,
+    MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES = 0x03c4U,
+    MYSMB_RAM_STAR_INVINCIBLE_TIMER = 0x079fU,
     MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U,
     MYSMB_RAM_VRAM_BUFFER1 = 0x0301U,
     MYSMB_RAM_VRAM_BUFFER2_OFFSET = 0x0340U,
@@ -101,6 +103,28 @@ static void mysmb_game_commit_display_state(struct mysmb_game *game);
 static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
 static void mysmb_game_submit_oam(struct mysmb_game *game);
 
+/* ROM GameEngine: NoChgMus / CyclePlayerPalette / ResetPalStar.
+ * PlayerGfxHandler has already consumed this attribute for the current OAM
+ * DMA; this tail updates it for the following frame. */
+static void mysmb_game_cycle_player_palette(struct mysmb_game *game)
+{
+    mysmb_u8 color;
+
+    if (game->ram[MYSMB_RAM_PLAYER_Y_HIGH] < 2U &&
+        game->ram[MYSMB_RAM_STAR_INVINCIBLE_TIMER] == 0U) {
+        game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] &= 0xfcU;
+        return;
+    }
+
+    color = game->ram[MYSMB_RAM_FRAME_COUNTER];
+    if (game->ram[MYSMB_RAM_STAR_INVINCIBLE_TIMER] < 8U) {
+        color = (mysmb_u8)(color >> 2U);
+    }
+    color = (mysmb_u8)((color >> 1U) & 3U);
+    game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] =
+        (mysmb_u8)((game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] & 0xfcU) |
+                   color);
+}
 /* DrawTitleScreen copies this many bytes into CPU RAM $0300-$0439. */
 enum {
     MYSMB_TITLE_BUFFER_SIZE = 0x013aU,
@@ -1295,6 +1319,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_misc(game);
         mysmb_area_step_palette_rotation(game);
         (void)mysmb_area_sync_player_palette(game);
+        mysmb_game_cycle_player_palette(game);
         /* ROM GameEngine's SaveAB tail clears the transient directional
          * partition after object collisions.  In particular, a collision
          * that selects PlayerDeath leaves its following physics frame with
