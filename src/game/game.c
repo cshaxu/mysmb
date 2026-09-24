@@ -404,6 +404,7 @@ static mysmb_u8 mysmb_game_latch_joypad1(struct mysmb_game *game,
 static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 buttons)
 {
     mysmb_u8 offset;
+    struct mysmb_area_source source;
 
     if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
         game->ram[MYSMB_RAM_OPER_MODE] = 0U;
@@ -425,6 +426,13 @@ static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 button
         game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE];
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0U;
+    /* ChkContinue falls through InitializeGame, which calls
+     * LoadAreaPointer before the first later InitializeArea frame. */
+    if (game->area_prg != 0) {
+        source.prg = game->area_prg;
+        source.prg_size = game->area_prg_size;
+        (void)mysmb_area_load_pointers(game, &source);
+    }
     offset = 0x17U;
     do {
         game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
