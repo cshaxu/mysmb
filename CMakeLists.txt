@@ -54,6 +54,11 @@ add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
 target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_game)
 add_executable(mysmb_render_smoke test/render_smoke.c)
 target_link_libraries(mysmb_render_smoke PRIVATE mysmb_game)
+add_library(mysmb_text_frame STATIC src/platform/text/text_frame.c)
+target_include_directories(mysmb_text_frame PUBLIC src)
+target_link_libraries(mysmb_text_frame PUBLIC mysmb_game)
+add_executable(mysmb_text_frame_smoke test/text_frame_smoke.c)
+target_link_libraries(mysmb_text_frame_smoke PRIVATE mysmb_text_frame)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -136,6 +141,7 @@ add_test(NAME mysmb.mode-smoke COMMAND mysmb_mode_smoke)
 add_test(NAME mysmb.audio-smoke COMMAND mysmb_audio_smoke)
 add_test(NAME mysmb.end-to-end-smoke COMMAND mysmb_end_to_end_smoke)
 add_test(NAME mysmb.render-smoke COMMAND mysmb_render_smoke)
+add_test(NAME mysmb.text-frame-smoke COMMAND mysmb_text_frame_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen
