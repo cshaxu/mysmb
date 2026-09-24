@@ -17,7 +17,9 @@ enum {
     MYSMB_AREA_TIMERS = 0x0780U,
     MYSMB_AREA_DISABLE_SCREEN = 0x0774U,
     MYSMB_AREA_OPER_MODE_TASK = 0x0772U,
-    MYSMB_AREA_BLOCK_COLUMN = 0x06a0U
+    MYSMB_AREA_BLOCK_COLUMN = 0x06a0U,
+    MYSMB_AREA_METATILE_LOW = 0x0b08U,
+    MYSMB_AREA_METATILE_HIGH = 0x0b0cU
 };
 
 enum {
@@ -132,6 +134,60 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
     game->area_prg_size = prg_size;
 }
 
+/* ROM $88ae-$8990 RenderAreaGraphics/RenderAttributeTables.  The collision
+ * block buffer stores a 16-by-13 metatile page; the original graphics tables
+ * at $8b08 select four CHR tile numbers for each encoded metatile. */
+static void mysmb_area_render_background_page(struct mysmb_game *game,
+                                              mysmb_u8 page)
+{
+    mysmb_u8 column;
+    mysmb_u8 row;
+    mysmb_u8 metatile;
+    mysmb_u8 palette;
+    mysmb_u8 table;
+    mysmb_u8 attribute_shift;
+    mysmb_u16 block_address;
+    mysmb_u16 graphics_address;
+    mysmb_u16 tile_offset;
+    mysmb_u16 attribute_offset;
+
+    if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_METATILE_HIGH + 3U)
+        return;
+    table = (mysmb_u8)(page & 1U);
+    for (column = 0U; column < 16U; ++column) {
+        for (row = 0U; row < 13U; ++row) {
+            block_address = (mysmb_u16)((table != 0U ? 0x05d0U : 0x0500U) +
+                column + (mysmb_u16)row * 16U);
+            metatile = game->ram[block_address];
+            palette = (mysmb_u8)(metatile >> 6U);
+            graphics_address = (mysmb_u16)(game->area_prg[
+                MYSMB_AREA_METATILE_LOW + palette] |
+                ((mysmb_u16)game->area_prg[MYSMB_AREA_METATILE_HIGH + palette] << 8U));
+            if (graphics_address < 0x8000U) continue;
+            graphics_address = (mysmb_u16)(graphics_address - 0x8000U);
+            tile_offset = (mysmb_u16)(graphics_address +
+                (mysmb_u16)(metatile & 0x3fU) * 4U);
+            if ((mysmb_u16)(tile_offset + 3U) >= game->area_prg_size) continue;
+            tile_offset = (mysmb_u16)(4U * 32U + (mysmb_u16)row * 2U * 32U +
+                (mysmb_u16)column * 2U);
+            game->name_table[table][tile_offset] = game->area_prg[(mysmb_u16)(graphics_address +
+                (mysmb_u16)(metatile & 0x3fU) * 4U)];
+            game->name_table[table][(mysmb_u16)(tile_offset + 1U)] = game->area_prg[
+                (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 2U)];
+            game->name_table[table][(mysmb_u16)(tile_offset + 32U)] = game->area_prg[
+                (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 1U)];
+            game->name_table[table][(mysmb_u16)(tile_offset + 33U)] = game->area_prg[
+                (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 3U)];
+            attribute_offset = (mysmb_u16)(0x03c0U + ((row >> 1U) + 1U) * 8U +
+                (column >> 1U));
+            attribute_shift = (mysmb_u8)(((row & 1U) << 2U) | ((column & 1U) << 1U));
+            game->name_table[table][attribute_offset] = (mysmb_u8)(
+                (game->name_table[table][attribute_offset] &
+                (mysmb_u8)~(0x03U << attribute_shift)) | (palette << attribute_shift));
+        }
+    }
+}
+
 /* ROM QuestionBlock/BrickWithItem and the horizontal brick-row subset. */
 static void mysmb_area_apply_single_block(struct mysmb_game *game,
                                           const struct mysmb_area_object *object)
@@ -201,6 +257,7 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
         game->area_command_count++;
     }
     mysmb_area_apply_single_block(game, &object);
+    mysmb_area_render_background_page(game, object.page);
     return 1U;
 }
 
@@ -586,11 +643,14 @@ void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_pa
     while (game->ram[MYSMB_AREA_CURRENT_PAGE] < player_page) {
         game->ram[MYSMB_AREA_CURRENT_PAGE]++;
         mysmb_area_render_terrain_page(game, game->ram[MYSMB_AREA_CURRENT_PAGE]);
+        mysmb_area_render_background_page(game, game->ram[MYSMB_AREA_CURRENT_PAGE]);
         if (game->ram[MYSMB_AREA_CURRENT_PAGE] == 1U) {
             mysmb_area_render_initial_objects(game);
         }
         mysmb_area_render_terrain_page(game,
                                        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] + 1U));
+        mysmb_area_render_background_page(game,
+            (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] + 1U));
     }
 }
 
@@ -617,6 +677,8 @@ void mysmb_area_render_initial_objects(struct mysmb_game *game)
         if (object.page == 1U && object.column > 8U) continue;
         mysmb_area_apply_single_block(game, &object);
     }
+    mysmb_area_render_background_page(game, 0U);
+    mysmb_area_render_background_page(game, 1U);
 }
 
 /* Translation of the selection/control portion of ROM $9508-$958f.

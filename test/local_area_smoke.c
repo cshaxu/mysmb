@@ -12,6 +12,9 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     mysmb_u8 count;
+    mysmb_u8 metatile;
+    mysmb_u8 palette;
+    mysmb_u16 graphics;
 
     mysmb_game_initialize(&game);
     source.prg = mysmb_local_prg;
@@ -32,6 +35,17 @@ int main(void)
         game.ram[0x0647U] != 0xc0U || game.ram[0x0648U] != 0U) {
         return 1;
     }
+    /* ROM $88ae uses the $8b08 metatile graphics pointer table to turn the
+     * collision metatile at page 0, column 0, row 11 into four PPU tiles. */
+    metatile = game.ram[0x05b0U];
+    palette = (mysmb_u8)(metatile >> 6U);
+    graphics = (mysmb_u16)(mysmb_local_prg[0x0b08U + palette] |
+        ((mysmb_u16)mysmb_local_prg[0x0b0cU + palette] << 8U));
+    graphics = (mysmb_u16)(graphics - 0x8000U + (mysmb_u16)(metatile & 0x3fU) * 4U);
+    if (game.name_table[0][0x0340U] != mysmb_local_prg[graphics] ||
+        game.name_table[0][0x0341U] != mysmb_local_prg[(mysmb_u16)(graphics + 2U)] ||
+        game.name_table[0][0x0360U] != mysmb_local_prg[(mysmb_u16)(graphics + 1U)] ||
+        game.name_table[0][0x0361U] != mysmb_local_prg[(mysmb_u16)(graphics + 3U)]) return 1;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
     if (game.area_command_count != 1U ||
