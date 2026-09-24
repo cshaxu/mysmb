@@ -1696,3 +1696,16 @@ The corrected 380-sample trace reduces CPU-RAM differences to 99,700,
 zero-page differences to 5,715, and working-RAM differences to 33,185. All
 PPU, CIRAM, palette, and OAM fields remain exact. Noise, event-stream behavior,
 and music loopbacks remain open.
+## T13 S1 P24 Noise Music Stream
+
+The portable audio owner now translates `HandleNoiseMusic`'s data-side beat
+progression for applicable area music. It preserves the ROM's area-type gate,
+advances `$07b0`, uses the same 0/7/6 duration encoding as Square 1, reloads
+`$07ba`, and restarts from `$07c1` at a stream terminator. The focused fixture
+proves the first noise datum advances `$07b0` from `$b8` to `$b9` and reloads
+`$07ba=7`.
+
+The corrected 380-sample trace reduces CPU-RAM differences to 99,405 and
+working-RAM differences to 32,890; zero-page stays at 5,715. PPU, CIRAM,
+palette, and OAM remain exact. Event-stream behavior and cross-section music
+loopback remain open.
