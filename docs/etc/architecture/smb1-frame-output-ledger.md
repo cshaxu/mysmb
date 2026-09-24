@@ -1509,3 +1509,16 @@ uses the ROM palette base and horizontal mirror behavior, and computes X from
 the world and screen positions. The smoke test compares all 24 OAM bytes in
 flipped, normal, and stomped animation states; the remaining enemy families are
 separate T11 owners.
+
+
+## T13 S1 P12 First Frame-Trace Baseline
+
+A fresh owner-local 60-sample trace used a one-frame Start input at samples 30--31.
+The source recorder was built against the current MyNES-only NXVM route; the
+native recorder used the same script and title bootstrap. Raw traces were kept
+only in an ignored build directory. The neutral comparison first reports CPU
+RAM differences at sample 0. PPU-visible output differences begin after Start:
+CPU OAM RAM at sample 30, hardware OAM at sample 31, both CIRAM pages at
+sample 32, palette at sample 33, and PPU mask at sample 32. In this bounded
+route, PPU control, name-table selection, scroll X/Y, and PPU address match.
+This is an active mismatch baseline, not M2 equivalence evidence.
