@@ -20,6 +20,7 @@ int main(void)
         return 7;
     game.frame_number = 42UL;
     game.ram[0x0200U] = 0x12U;
+    game.visible_oam[0U] = 0x34U;
     game.ram[0x00f1U] = 0x34U;
     game.name_table[1][0x03ffU] = 0x56U;
     game.palette[3U] = 0x21U;
@@ -35,7 +36,7 @@ int main(void)
     game.visible_scroll_y = 0x80U;
     mysmb_frame_snapshot_capture(&game, &snapshot);
     if (snapshot.sequence != 42UL || snapshot.cpu_ram[0x0200U] != 0x12U ||
-        snapshot.oam[0U] != 0x12U || snapshot.audio[0U] != 0x34U ||
+        snapshot.oam[0U] != 0x34U || snapshot.audio[0U] != 0x34U ||
         snapshot.name_table[1][0x03ffU] != 0x56U || snapshot.palette[3U] != 0x21U ||
         snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU ||
         snapshot.ppu_name_table != 2U || snapshot.scroll_x != 0x40U ||

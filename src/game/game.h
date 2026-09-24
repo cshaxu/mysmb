@@ -37,6 +37,10 @@ struct mysmb_game {
     mysmb_u8 ram[0x0800U];
     /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
     mysmb_u8 name_table[2][0x0400U];
+    /* PPU sprite RAM after the source NMI's $4014 transfer.  CPU RAM
+     * $0200-$02ff remains the following frame's producer backing store. */
+    mysmb_u8 visible_oam[0x0100U];
+    mysmb_u8 oam_dma_primed;
     /* Translated PPU-visible output state; never a host PPU API. */
     mysmb_u8 palette[0x20U];
     mysmb_u8 ppu_control_0;

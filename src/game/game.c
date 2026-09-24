@@ -92,6 +92,7 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
 static void mysmb_game_commit_display_state(struct mysmb_game *game);
 static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
+static void mysmb_game_submit_oam(struct mysmb_game *game);
 
 /* DrawTitleScreen copies this many bytes into CPU RAM $0300-$0439. */
 enum {
@@ -420,6 +421,10 @@ void mysmb_game_initialize(struct mysmb_game *game)
     game->ppu_mask = 0U;
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
+    /* Cold boot has already made the initial $4014 transfer before the
+     * first recorder-visible NMI. */
+    mysmb_game_submit_oam(game);
+    game->oam_dma_primed = 0U;
     mysmb_game_initialize_name_tables(game);
     game->visible_ppu_control_0 = 0x90U;
     game->visible_ppu_mask = 0U;
@@ -472,6 +477,15 @@ void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
         game->ram[(mysmb_u16)(MYSMB_RAM_OAM + offset)] = 0xf8U;
         offset = (mysmb_u8)(offset + 4U);
     } while (offset != 0U);
+}
+
+/* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */
+static void mysmb_game_submit_oam(struct mysmb_game *game)
+{
+    mysmb_u16 offset;
+
+    for (offset = 0U; offset < 0x0100U; ++offset)
+        game->visible_oam[offset] = game->ram[(mysmb_u16)(MYSMB_RAM_OAM + offset)];
 }
 
 /* ROM $81c6-$81f9 SpriteShuffler. */
@@ -1031,6 +1045,8 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
     game->ram[MYSMB_RAM_FRAME_COUNTER]++;
+    if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
+    else game->oam_dma_primed = 1U;
     mysmb_game_commit_vram_buffer(game);
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);

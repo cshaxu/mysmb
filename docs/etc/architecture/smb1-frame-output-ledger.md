@@ -35,16 +35,16 @@ valid merely because its storage happens to be zero.
 
 | ROM range | Original owner | Required snapshot effect | Current C disposition |
 | --- | --- | --- | --- |
-| `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Partial**; the portable tick consumes the selected VRAM buffer at its NMI boundary, commits `$2000` increment/NMI and display-mask state into the snapshot, and retains source-owned scroll/name-table fields. OAM submission remains T11 work. |
+| `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Translated, partial OAM scope**; the portable tick consumes the selected VRAM buffer at its NMI boundary, commits `$2000` increment/NMI and display-mask state into the snapshot, retains source-owned scroll/name-table fields, and submits CPU `$0200-$02ff` to distinct hardware OAM state before the source frame writers run. Remaining OAM draw writers remain T11 work. |
 | `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Translated, partial OAM scope**; the source arithmetic, three-way rotation, and `Misc_SprDataOffset` derivation now write canonical OAM inputs. Draw families remain T11 work. |
-| `$8220-$8230` | Move all/all-but-sprite-zero sprites offscreen | OAM offscreen entries | **Translated, partial OAM scope**; both source loops write `$0200` backing state, which the canonical snapshot copies to OAM. Draw families remain T11 work. |
+| `$8220-$8230` | Move all/all-but-sprite-zero sprites offscreen | OAM offscreen entries | **Translated, partial OAM scope**; both source loops write `$0200` backing state, which the NMI submission boundary transfers to canonical hardware OAM state. Draw families remain T11 work. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; the owner-local title generator extracts the icon's VRAM command and the title loader applies it after the title transfer. Its OAM-related title work remains T11 ownership. |
 | `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Missing**; logic explicitly excludes OAM. |
 | `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Translated, background scope**; tasks 0--14, controls 1--18, player/background palettes, title transfer, and the mushroom alternate palette route have translated C owners. Sprite preparation remains T11 work. |
 | `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Translated, background scope**; title/status/live-number, intermediate, Time Up, Game Over, Warp, and parser-display commands use the source-shaped buffers and NMI transfer. Intermediate player sprites remain T11 work. |
 | `$88ae-$89bd` | Area metatile rows and attributes | Dynamic name-table and attribute updates | **Translated, background scope**; the incremental parser emits metatile rows, attributes, and buffer-two commands through the canonical snapshot. |
 | `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Translated, background scope**; palette rotation, block replacement, coin removal, and bridge collapse submit their source-shaped commands. Their animated sprites remain T11 work. |
-| `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Translated, background scope**; initialization, controls 1--18, both VRAM buffers, display mask, scroll, name-table selection, and committed PPU address are owned by the portable NMI boundary. OAM DMA remains T11 work. |
+| `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Translated, background scope**; initialization, controls 1--18, both VRAM buffers, display mask, scroll, name-table selection, and committed PPU address are owned by the portable NMI boundary. OAM draw writers remain T11 work. |
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Translated, background scope**; persistent parser slots, scenery, terrain, all static object metatile families, attributes, and incremental column scheduling reach the snapshot. Object graphics remain T11 work. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Translated, partial OAM scope**; normal player action selection, ROM-table tile rows, horizontal flip, attributes, injury blink, and prepared vertical-offscreen rows write OAM. Fireball-throw supplement and title/intermediate paths remain T11 work. |
@@ -1411,7 +1411,7 @@ score, platform, and boss draw owners. CIRAM pages, palette, and all seven
 PPU-visible scalars remained exact. Raw 600-sample traces were deleted after
 the comparison.
 
-## T11 S1 P3 Intermediate-Player OAM And DMA Boundary
+## T11 S1 P3 Intermediate-Player OAM
 
 `DrawPlayer_Intermediate` at `$f02b-$f047` now uses the same owner-local
 player graphics table to write its four small-standing rows at OAM offset
@@ -1427,3 +1427,23 @@ bytes across eleven transition samples (0, 1, 25, 26, 40--42, 47, 189,
 snapshot's NMI/DMA submission phase rather than an unimplemented player or
 intermediate draw writer. CIRAM pages, palette, and all seven PPU-visible
 scalars remain exact. Raw traces were deleted after the comparison.
+
+## T11 S1 P4 NMI OAM DMA Submission
+
+`NonMaskableInterrupt` resets the PPU sprite address and writes `$02` to
+`$4014` before `UpdateScreen`, controller dispatch, sprite hiding, and game
+mode execution. The portable game state now preserves that boundary explicitly:
+`visible_oam` is the hardware OAM image sampled by the snapshot, while CPU RAM
+`$0200-$02ff` remains the producer backing store for the following frame. Cold
+boot submits the initialized image before the first recorder-visible NMI; each
+subsequent native tick submits the prior producer image before the translated
+writers execute.
+
+The frame-snapshot smoke deliberately stores distinct CPU and hardware OAM
+bytes, so a future direct CPU-RAM copy cannot pass. On the same bounded
+600-sample title-bootstrap route as P1--P3, CPU OAM RAM and hardware OAM are
+both exact for every sample. Both CIRAM pages, palette, and all seven
+PPU-visible scalar fields remain exact. This resolves P3's eleven
+DMA-boundary-only samples; unimplemented OAM writer families remain open and
+no M2 or renderer closure is claimed. Raw captures were deleted after the
+neutral comparison summary.

@@ -47,8 +47,7 @@ void mysmb_frame_snapshot_capture(const struct mysmb_game *game,
     mysmb_frame_snapshot_copy(snapshot->name_table[0], game->name_table[0], 0x0400U);
     mysmb_frame_snapshot_copy(snapshot->name_table[1], game->name_table[1], 0x0400U);
     mysmb_frame_snapshot_copy(snapshot->palette, game->palette, 0x20U);
-    mysmb_frame_snapshot_copy(snapshot->oam,
-                              &game->ram[MYSMB_SNAPSHOT_OAM_RAM], 0x0100U);
+    mysmb_frame_snapshot_copy(snapshot->oam, game->visible_oam, 0x0100U);
     snapshot->ppu_control_0 = game->visible_ppu_control_0;
     snapshot->ppu_control_1 = game->visible_ppu_control_0;
     snapshot->ppu_name_table = game->visible_ppu_name_table;

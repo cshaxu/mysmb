@@ -6,6 +6,7 @@ int main(void)
     struct mysmb_game game;
 
     mysmb_game_initialize_memory(&game, 0xfeU);
+    game.frame_number = 0UL;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 5U;
     game.ram[0x001eU] = 0U;
