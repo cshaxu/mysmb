@@ -17,6 +17,55 @@ static struct mysmb_render_frame g_render_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 
+static COLORREF mysmb_win32_tile_color(mysmb_u8 tile)
+{
+    if (tile == 0x24U) return RGB(92, 148, 252);
+    if (tile >= 0x80U) return RGB(0, 168, 0);
+    if (tile >= 0x50U) return RGB(180, 92, 24);
+    if (tile >= 0x30U) return RGB(252, 188, 60);
+    return RGB(92, 148, 252);
+}
+
+static COLORREF mysmb_win32_actor_color(mysmb_u8 identity)
+{
+    if (identity == 0U) return RGB(220, 48, 32);
+    if ((identity & 1U) != 0U) return RGB(252, 188, 60);
+    return RGB(112, 48, 24);
+}
+
+static void mysmb_win32_draw_gameplay(HDC dc)
+{
+    unsigned int index;
+    unsigned int tile_index;
+    struct mysmb_render_command *command;
+    HBRUSH brush;
+    RECT rect;
+
+    for (index = 0U; index < g_render_frame.command_count; ++index) {
+        command = &g_render_frame.commands[index];
+        if (command->kind == MYSMB_RENDER_COMMAND_TILE_ROW) {
+            for (tile_index = 0U; tile_index < command->length; ++tile_index) {
+                brush = CreateSolidBrush(mysmb_win32_tile_color(
+                    g_render_frame.tile_data[command->data_offset + tile_index]));
+                rect.left = (int)((command->x + tile_index) * 8U * MYSMB_SCALE);
+                rect.top = (int)(command->y * 8U * MYSMB_SCALE);
+                rect.right = rect.left + 8 * MYSMB_SCALE;
+                rect.bottom = rect.top + 8 * MYSMB_SCALE;
+                FillRect(dc, &rect, brush);
+                DeleteObject(brush);
+            }
+        } else if (command->kind == MYSMB_RENDER_COMMAND_ACTOR) {
+            brush = CreateSolidBrush(mysmb_win32_actor_color(command->identity));
+            rect.left = (int)command->x * MYSMB_SCALE;
+            rect.top = (int)command->y * MYSMB_SCALE;
+            rect.right = rect.left + (command->length * MYSMB_SCALE);
+            rect.bottom = rect.top + (command->length * MYSMB_SCALE);
+            FillRect(dc, &rect, brush);
+            DeleteObject(brush);
+        }
+    }
+}
+
 #ifdef MYSMB_LOCAL_TITLE
 static COLORREF mysmb_win32_title_color(unsigned char palette, unsigned char color)
 {
@@ -76,10 +125,6 @@ static void mysmb_win32_paint(HWND window)
 {
     PAINTSTRUCT paint;
     HDC dc;
-    HBRUSH sky;
-    HBRUSH ground;
-    HBRUSH actor;
-    RECT rect;
 
     dc = BeginPaint(window, &paint);
 #ifdef MYSMB_LOCAL_TITLE
@@ -89,31 +134,7 @@ static void mysmb_win32_paint(HWND window)
         return;
     }
 #endif
-    sky = CreateSolidBrush(RGB(92, 148, 252));
-    ground = CreateSolidBrush(RGB(0, 168, 0));
-    actor = CreateSolidBrush(RGB(220, 48, 32));
-
-    rect.left = 0;
-    rect.top = 0;
-    rect.right = MYSMB_SCREEN_WIDTH * MYSMB_SCALE;
-    rect.bottom = MYSMB_SCREEN_HEIGHT * MYSMB_SCALE;
-    FillRect(dc, &rect, sky);
-
-    rect.top = 200 * MYSMB_SCALE;
-    FillRect(dc, &rect, ground);
-
-    if (g_render_frame.command_count > MYSMB_RENDER_TILE_ROWS &&
-        g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].kind == MYSMB_RENDER_COMMAND_ACTOR) {
-        rect.left = (int)g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].x * MYSMB_SCALE;
-        rect.top = (int)g_render_frame.commands[MYSMB_RENDER_TILE_ROWS].y * MYSMB_SCALE;
-        rect.right = rect.left + (16 * MYSMB_SCALE);
-        rect.bottom = rect.top + (16 * MYSMB_SCALE);
-        FillRect(dc, &rect, actor);
-    }
-
-    DeleteObject(actor);
-    DeleteObject(ground);
-    DeleteObject(sky);
+    mysmb_win32_draw_gameplay(dc);
     EndPaint(window, &paint);
 }
 
