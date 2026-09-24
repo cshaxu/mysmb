@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M3 T4 S1 is active.**
+**M3 T5 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -14,26 +14,26 @@
   output. `nnes` is a validation-only local reference and is never linked into
   MySMB.
 
-## M3 T4 S1 Packet
+## M3 T5 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T4 S1, New. |
+| Identifier Mode | M3 T5 S1, New. |
 | Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Define and compile the DOS VGA presentation adapter boundary over the neutral render commands, retaining a host-independent pixel/frame contract suitable for later real-mode linking. |
-| Non-goals | A complete DOS executable, sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, hardware execution, and changes to validated gameplay logic are outside this S. |
-| Reference Baseline | M3 T1 neutral commands, M3 T2 Win32 consumer, and M3 T3 colored text frame. |
-| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), candidate 3 continuation. |
-| Files And ABI Surface | DOS VGA frame adapter contract, project-owned deterministic tests, OpenNT compilation coverage, and M3 history evidence. |
+| Objective | Create a minimal real-mode DOS composition root that drives the existing native game, neutral VGA frame, and colored text frame through isolated hardware hooks. |
+| Non-goals | Sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, 486SX hardware qualification, and changes to validated gameplay logic are outside this S. |
+| Reference Baseline | M3 neutral render, text, and VGA frames. |
+| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), DOS composition continuation. |
+| Files And ABI Surface | DOS16 composition root, hardware hook contract, OpenNT link evidence, and M3 history evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
-| Expected Markers | A 320x200 indexed-color frame derived solely from neutral commands, no DOS interrupt use in the game core, and an OpenNT-compilable adapter unit. |
+| Expected Markers | An isolated DOS platform root, BIOS keyboard/timer and VGA writer hooks outside the game core, and an OpenNT-linked MZ executable when local tools permit. |
 | Asset Needs | No protected asset is required; owner-local inputs remain outside tracked output. |
-| Reporting Requirements | Record pixel/palette policy, command-to-frame mapping, fixed-input checks, source containment, and deferred hardware/linking work before closure. |
+| Reporting Requirements | Record DOS memory/hardware ownership, input/timing policy, link result, source containment, and deferred sound/qualification work before closure. |
 | Stop Conditions | Stop and revise scope if the adapter requires an emulator, changes gameplay behavior, embeds protected data, or introduces a host-specific game-state path. |
-| Exit Criteria | A deterministic indexed 320x200 frame is built from neutral commands, has project-owned tests, and the adapter unit compiles under OpenNT. |
+| Exit Criteria | The project has a 16-bit DOS composition root whose portable and hardware boundaries are documented and whose local OpenNT executable link succeeds when the toolchain supports it. |
 | Original Owner Request | Deliver a native C SMB1 suitable for future colored text and DOS presentation without contaminating the core. |
-| Similar-Issue Sweep | Before closure, search for gameplay-RAM reads in the VGA adapter, DOS interrupt leakage into the core, command bypasses, host-owned game mutation, and protected asset leakage; record every production hit and disposition. |
+| Similar-Issue Sweep | Before closure, search for DOS API leakage into the game layer, platform-owned game mutation, duplicate scheduler/input paths, host-specific state, and protected asset leakage; record every production hit and disposition. |
 
 ## Recent M3 Closures
 
@@ -42,6 +42,7 @@
 | T1 | Neutral tile-row and actor commands are generated read-only from the native C state; a bounded Win32 consumer and C90/OpenNT verification are in place. [History](../history/M3-T1-neutral-render-command-seam.md). |
 | T2 | Win32 consumes every neutral tile-row and actor command with a deterministic host palette, without a second gameplay path. [History](../history/M3-T2-win32-command-consumer.md). |
 | T3 | A neutral render frame now yields a deterministic 80x25 character/color frame with full background fill and object glyph/color overlays. [History](../history/M3-T3-colored-text-frame.md). |
+| T4 | A 320x200 indexed frame is generated from neutral commands using explicit 16-bit-safe pages and compiles under OpenNT. [History](../history/M3-T4-vga-indexed-frame.md). |
 
 ## Recent M2 Closures
 
