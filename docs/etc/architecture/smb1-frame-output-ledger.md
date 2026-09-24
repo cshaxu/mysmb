@@ -1943,3 +1943,39 @@ The matched listing and production/test references to `LoadAreaMusic`,
 native music dispatcher is the single queue-to-header owner.  Ground loopback
 retains its separate increment and wrap owner, and no alternate Silence route
 or adapter-owned header counter was found.
+## T11 S1 P11 InitializeArea Start-Page and Screen Boundaries
+
+The matched owner-local ROM listing's `InitializeArea` selects `HalfwayPage`
+(`$075b`) unless `AltEntranceControl` (`$0752`) is set, in which case it
+uses `EntrancePage` (`$0751`).  It copies that start page to
+`ScreenLeft_PageLoc`, `CurrentPageLoc`, and `BackloadingFlag`, then calls
+`GetScreenPosition`.  That routine adds `$ff` to `ScreenLeft_X_Pos` and adds
+the carry to the page, so a fresh page has right boundary `$xxff`, not the
+next page at `$xx00`.  The same source route selects `$2080` or `$2480`,
+seeds the block-buffer column from the page high nybble, applies the
+secondary-hard-mode condition, converts a halfway restart to entrance two,
+and queues Silence.
+
+Native `mysmb_area_initialize` had hard-coded page zero, name table `$2080`,
+block column zero, and right boundary `$0100`.  It now follows the complete
+source initialization sequence.  The ROM-free `area-initialize-smoke` covers
+the normal page-zero boundary, a halfway-page restart, and an alternate
+entrance with primary hard mode.
+
+On the reproducible 380-sample owner-ROM route (SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de`; NES
+input `30:$08,31:0,60:$80`, native input `30:$10,31:0,60:$01`), CPU-RAM
+differences fall from 67,854 to 66,867 and working-RAM differences from 1,562
+to 1,192.  This removes all 185 mismatches each at `$071b` and `$071d` during
+the Start/entrance phase.  CPU OAM backing RAM, visible OAM, both CIRAM pages,
+palette, and every PPU scalar remain exact.
+
+### Similar-Issue Sweep
+
+The matched listing and production/test references to `InitializeArea`,
+`GetScreenPosition`, `HalfwayPage`, `AltEntranceControl`, `EntrancePage`,
+`ScreenLeft_PageLoc`, `ScreenRight_PageLoc`, `$071d`, and `BlockBufferColumnPos`
+were reviewed.  The area initializer is the sole start-page owner; the player
+scroll owner independently recomputes the same right boundary after movement
+and already follows the carry rule.  No additional hard-coded initial screen
+boundary or start-page substitute remains.

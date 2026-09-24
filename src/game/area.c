@@ -38,6 +38,8 @@ enum {
     MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U,
     MYSMB_AREA_PALETTE3_DATA = 0x09d1U,
     MYSMB_AREA_GAME_TEXT = 0x0752U,
+    MYSMB_AREA_ALT_ENTRANCE = 0x0752U,
+    MYSMB_AREA_HALFWAY_PAGE = 0x075bU,
     MYSMB_AREA_GAME_TEXT_OFFSETS = 0x07feU,
     MYSMB_AREA_LUIGI_NAME = 0x07e1U,
     MYSMB_AREA_WARP_ZONE_NUMBERS = 0x07f2U,
@@ -56,6 +58,8 @@ enum {
     MYSMB_ENEMY_DATA_HIGH = 0x00eaU,
     MYSMB_WORLD_NUMBER = 0x075fU,
     MYSMB_AREA_NUMBER = 0x0760U,
+    MYSMB_AREA_PLAYER_ENTRANCE = 0x0710U,
+    MYSMB_AREA_MUSIC_QUEUE = 0x00fbU,
     MYSMB_ROM_WORLD_OFFSETS = 0x1cb4U,
     MYSMB_ROM_AREA_OFFSETS = 0x1cbcU,
     MYSMB_ROM_ENEMY_HIGH_OFFSETS = 0x1ce0U,
@@ -163,26 +167,50 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
 void mysmb_area_initialize(struct mysmb_game *game)
 {
     mysmb_u8 index;
+    mysmb_u8 start_page;
 
     mysmb_game_initialize_memory(game, 0x4bU);
     for (index = 0U; index < 0x22U; ++index) {
         game->ram[(mysmb_u16)(MYSMB_AREA_TIMERS + index)] = 0U;
     }
-    game->ram[MYSMB_AREA_SCREEN_LEFT_PAGE] = 0U;
-    game->ram[MYSMB_AREA_CURRENT_PAGE] = 0U;
-    game->ram[MYSMB_AREA_BACKLOADING] = 0U;
+    /* ROM InitializeArea selects the saved halfway page unless an alternate
+     * entrance requests the stream's saved entrance page. */
+    start_page = game->ram[MYSMB_AREA_HALFWAY_PAGE];
+    if (game->ram[MYSMB_AREA_ALT_ENTRANCE] != 0U) {
+        start_page = game->ram[MYSMB_AREA_ENTRANCE_PAGE];
+    }
+    game->ram[MYSMB_AREA_SCREEN_LEFT_PAGE] = start_page;
+    game->ram[MYSMB_AREA_CURRENT_PAGE] = start_page;
+    game->ram[MYSMB_AREA_BACKLOADING] = start_page;
     game->ram[MYSMB_AREA_SCREEN_LEFT_X] = 0U;
-    game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] = 1U;
-    game->ram[MYSMB_AREA_SCREEN_RIGHT_X] = 0U;
-    game->ram[MYSMB_AREA_NT_HIGH] = 0x20U;
+    /* GetScreenPosition: left X plus $ff, and the resulting carry advances
+     * the right page.  A fresh page therefore has right edge $xxff. */
+    game->ram[MYSMB_AREA_SCREEN_RIGHT_X] =
+        (mysmb_u8)(game->ram[MYSMB_AREA_SCREEN_LEFT_X] + 0xffU);
+    game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] = start_page;
+    if (game->ram[MYSMB_AREA_SCREEN_RIGHT_X] <
+        game->ram[MYSMB_AREA_SCREEN_LEFT_X]) {
+        game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE]++;
+    }
+    game->ram[MYSMB_AREA_NT_HIGH] = (start_page & 1U) != 0U ? 0x24U : 0x20U;
     game->ram[MYSMB_AREA_NT_LOW] = 0x80U;
-    game->ram[MYSMB_AREA_BLOCK_COLUMN] = 0U;
+    game->ram[MYSMB_AREA_BLOCK_COLUMN] = (mysmb_u8)(start_page << 4U);
     game->ram[MYSMB_AREA_OBJECT_LENGTH] = 0xffU;
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 1U)] = 0xffU;
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 2U)] = 0xffU;
     game->ram[MYSMB_AREA_COLUMN_SETS] = 0x0bU;
     game->ram[MYSMB_AREA_SCROLL_X] = 0U;
     game->ram[MYSMB_AREA_SCROLL_Y] = 0U;
+    if (game->ram[MYSMB_PRIMARY_HARD] != 0U ||
+        game->ram[MYSMB_WORLD_NUMBER] > 4U ||
+        (game->ram[MYSMB_WORLD_NUMBER] == 4U &&
+         game->ram[MYSMB_AREA_LEVEL_NUMBER] >= 2U)) {
+        game->ram[MYSMB_SECONDARY_HARD]++;
+    }
+    if (game->ram[MYSMB_AREA_HALFWAY_PAGE] != 0U) {
+        game->ram[MYSMB_AREA_PLAYER_ENTRANCE] = 2U;
+    }
+    game->ram[MYSMB_AREA_MUSIC_QUEUE] = 0x80U;
     game->ram[MYSMB_AREA_DISABLE_SCREEN] = 1U;
     game->ram[MYSMB_AREA_OPER_MODE_TASK]++;
 }
