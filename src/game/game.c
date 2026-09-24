@@ -533,6 +533,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                     mysmb_area_render_initial_terrain(game);
                     mysmb_area_render_initial_objects(game);
                     (void)mysmb_area_queue_top_status_line(game);
+                    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
                 }
             }
         }
@@ -542,6 +543,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_game_lose_life(game);
     }
     else if (mode_before == 1U && task_before == 1U) {
+        if (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] == 3U &&
+            mysmb_area_queue_bottom_status_line(game) != 0U) {
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
+        }
         (void)mysmb_area_emit_next_command(game);
         if (game->area_prg != 0) {
             area_source.prg = game->area_prg;

@@ -58,6 +58,9 @@ int main(void)
     game.ram[0x0300U] = 0U;
     if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
         game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
+    mysmb_area_queue_bottom_status_line(&game);
+    if (game.ram[0x0300U] != 20U || game.ram[0x0301U] != 0x20U ||
+        game.ram[0x0302U] != 0x62U || game.ram[0x0303U] != 6U) return 1;
     /* ColorRotation queues a $3f0c update and the following NMI commits it. */
     game.ram[0x0009U] = 0U;
     game.ram[0x06d4U] = 0U;

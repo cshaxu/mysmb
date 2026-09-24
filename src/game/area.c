@@ -63,6 +63,10 @@ enum {
     MYSMB_AREA_FRAME_COUNTER = 0x0009U,
     MYSMB_AREA_VRAM_BUFFER1_OFFSET = 0x0300U,
     MYSMB_AREA_VRAM_BUFFER1 = 0x0301U
+    ,MYSMB_AREA_CURRENT_PLAYER = 0x0753U
+    ,MYSMB_AREA_WORLD_NUMBER = 0x075fU
+    ,MYSMB_AREA_LEVEL_NUMBER = 0x075cU
+    ,MYSMB_AREA_DISPLAY_DIGITS = 0x07d7U
 };
 
 enum {
@@ -261,6 +265,40 @@ mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
     }
     if (source == MYSMB_AREA_GAME_TEXT_OFFSETS || offset == 0U) return 0U;
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
+/* Translation of ROM WriteBottomStatusLine plus PrintStatusBarNumbers. */
+mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+    mysmb_u8 index;
+    mysmb_u8 player;
+
+    if (game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U) return 0U;
+    player = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PLAYER] & 1U);
+    offset = 0U;
+    game->ram[0x0301U + offset++] = 0x20U;
+    game->ram[0x0301U + offset++] = 0x62U;
+    game->ram[0x0301U + offset++] = 6U;
+    index = (mysmb_u8)(player != 0U ? 12U : 6U);
+    while (index < (mysmb_u8)(player != 0U ? 18U : 12U)) {
+        game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
+    }
+    game->ram[0x0301U + offset++] = 0x20U;
+    game->ram[0x0301U + offset++] = 0x6dU;
+    game->ram[0x0301U + offset++] = 2U;
+    index = (mysmb_u8)(player != 0U ? 28U : 16U);
+    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
+    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index];
+    game->ram[0x0301U + offset++] = 0x20U;
+    game->ram[0x0301U + offset++] = 0x73U;
+    game->ram[0x0301U + offset++] = 3U;
+    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[MYSMB_AREA_WORLD_NUMBER] + 1U);
+    game->ram[0x0301U + offset++] = 0x28U;
+    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
+    game->ram[0x0301U + offset] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }
