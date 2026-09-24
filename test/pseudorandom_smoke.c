@@ -12,6 +12,7 @@ int main(void)
     mysmb_u8 index;
 
     mysmb_game_initialize(&game);
+    if (game.ram[0x07ffU] != 0xa5U) return 1;
     input.buttons = 0U;
     for (index = 0U; index < 5U; ++index) {
         mysmb_game_tick(&game, &input, &frame);

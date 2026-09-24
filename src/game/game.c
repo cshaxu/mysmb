@@ -31,6 +31,8 @@ enum {
     MYSMB_RAM_INTERVAL_TIMER_CONTROL = 0x077fU,
     MYSMB_RAM_TIMERS = 0x0780U,
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
+    MYSMB_RAM_PSEUDORANDOM = 0x07a7U,
+    MYSMB_RAM_WARM_BOOT_VALIDATION = 0x07ffU,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
@@ -149,12 +151,12 @@ static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
     mysmb_u8 next_carry;
     mysmb_u8 value;
 
-    carry = ((game->ram[0x07a7U] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
+    carry = ((game->ram[MYSMB_RAM_PSEUDORANDOM] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
         1U : 0U;
     for (index = 0U; index < 8U; ++index) {
-        value = game->ram[(mysmb_u16)(0x07a7U + index)];
+        value = game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)];
         next_carry = value & 1U;
-        game->ram[(mysmb_u16)(0x07a7U + index)] = (mysmb_u8)((value >> 1U) |
+        game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)] = (mysmb_u8)((value >> 1U) |
             (carry != 0U ? 0x80U : 0U));
         carry = next_carry;
     }
@@ -460,7 +462,8 @@ void mysmb_game_initialize(struct mysmb_game *game)
     /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
-    game->ram[0x07a7U] = 0xa5U;
+    game->ram[MYSMB_RAM_WARM_BOOT_VALIDATION] = 0xa5U;
+    game->ram[MYSMB_RAM_PSEUDORANDOM] = 0xa5U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
     game->ram[0x0754U] = 1U;
     game->ram[0x075aU] = 2U;

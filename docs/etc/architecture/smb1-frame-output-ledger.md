@@ -1599,3 +1599,12 @@ On the corrected 380-sample Start/Right trace, CPU-RAM differences fall from
 CPU OAM RAM, hardware OAM, both CIRAM pages, palette, and all seven PPU scalar
 values remain exact. The 6502 call-stack page and other working-state bytes
 still differ; this is one verified state-owner correction and does not close M2.
+
+## T13 S1 P16 Cold-Boot Validation Seed
+
+`InitializeMemory` writes `$a5` to both `WarmBootValidation` (`$07ff`) and the
+first pseudorandom register. The native cold-start path now does the same. The
+same 380-sample trace removes the `$07ff` difference on every sample: CPU-RAM
+differences are 102,364 bytes and working-RAM differences are 34,692 bytes;
+all previously exact PPU and OAM fields remain exact. This narrows the state
+gap but does not close M2.
