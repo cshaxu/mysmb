@@ -295,7 +295,12 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
         if (length_address >= game->area_prg_size) return;
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = game->area_prg[length_address];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] = 8U;
+        data = game->area_prg[address + 1U];
+    }
+    /* Squ2NoteHandler's LoadControlRegs returns envelope offset 8 for each
+     * audible note; a zero rest retains zero. */
+    if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] = data != 0U ? 8U : 0U;
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
@@ -359,7 +364,11 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
         game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
     if (length_address >= game->area_prg_size) return;
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
-    game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] = 8U;
+    /* SetFreq_Squ1 returns zero for a rest, bypassing LoadControlRegs. */
+    if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
+        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
+            (data & 0x3eU) != 0U ? 8U : 0U;
+    }
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */
 static void mysmb_audio_step_noise_music(struct mysmb_game *game)
