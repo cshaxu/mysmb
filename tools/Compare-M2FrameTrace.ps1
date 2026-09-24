@@ -61,8 +61,13 @@ $reference = Read-M2Trace $ReferenceTrace ([byte[]](77,83,70,82,1,0,0,0))
 $native = Read-M2Trace $NativeTrace ([byte[]](77,83,70,78,1,0,0,0))
 if ($reference.Count -ne $native.Count) { throw 'Trace sample counts differ.' }
 if ($EndSample -lt 0) { $EndSample = [int]$reference.Count - 1 }
+$nativeStart = $StartSample + $NativeSampleOffset
+$nativeEnd = $EndSample + $NativeSampleOffset
 if ($StartSample -lt 0 -or $EndSample -lt $StartSample -or
-    $EndSample -ge $reference.Count) { throw 'Sample range is outside the trace.' }
+    $EndSample -ge $reference.Count -or $nativeStart -lt 0 -or
+    $nativeEnd -ge $native.Count) {
+    throw 'Sample range is outside the trace after applying the native offset.'
+}
 
 $ram = New-M2Result 'cpu-ram'
 $zeroPage = New-M2Result 'cpu-zero-page'
