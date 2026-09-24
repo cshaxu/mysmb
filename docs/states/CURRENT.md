@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T9 S1 is active.**
+**M2 T10 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -13,24 +13,24 @@
   owner-local title data and CHR are generated only into ignored output.
   `nnes` is validation-only and is never linked into MySMB.
 
-## M2 T9 S1 Packet
+## M2 T10 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T9 S1, New. |
-| Admission And Approval | Owner reopened M2 after rejecting the unsupported playable-product claim and directed a technical audit, task queue, and M2 closure plan. |
-| Objective | Establish the source-address output ledger and frame-oracle contract required to translate and prove original ROM PPU/OAM-visible results. |
-| Non-goals | A generic NES CPU/PPU/APU emulator, visual approximation, bitmap-to-text conversion, protected tracked output, and any M2 closure claim are outside this S. |
-| Reference Baseline | M2 T1 PRG ledger, M2 T8 bounded oracle record, and the reopened frame-equivalence proposal. |
+| Identifier Mode | M2 T10 S1, New. |
+| Admission And Approval | Owner reopened M2 and admitted the dependency-ordered recovery queue. M2 T9 closed its output ledger and bounded reference-recorder contract. |
+| Objective | Translate the original background-output route: VRAM-buffer state, dynamic name tables, attributes, palettes, scroll, status text, and metatile replacement into the canonical native frame snapshot. |
+| Non-goals | A generic NES CPU/PPU/APU emulator, OAM/player/enemy graphics work, visual approximation, bitmap-to-text conversion, protected tracked output, and any M2 closure claim are outside this S. |
+| Reference Baseline | M2 T9 frame-output ledger and recorder contract, M2 T1 PRG ledger, and the reopened frame-equivalence proposal. |
 | Candidate Proposal | [M2 Reopened Frame Equivalence](../proposals/m2-reopened-frame-equivalence.md). |
-| Files And ABI Surface | PRG output ownership ledger, canonical portable frame-snapshot contract, local reference recorder contract, and corrected M2 evidence. |
+| Files And ABI Surface | Portable background-output state and routines, canonical frame-snapshot palette/PPU fields, source-address mappings, owner-local background-reference inputs, and corrected M2 evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
-| Verification | Owner-local output-ledger and recorder tests; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
-| Expected Markers | Every PPU/OAM-facing PRG writer has a source owner and disposition; canonical snapshot fields and reference sampling phase are explicit; no flat-marker path remains accepted as gameplay proof. |
+| Verification | Owner-local background-route probes at the T9 NMI boundary; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
+| Expected Markers | The snapshot carries translated palette, PPU controls, scroll, dynamic name-table, and attribute state from named ROM owners; no host renderer invents gameplay background state. |
 | Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Each reference trace uses one unique ignored output directory, is limited to 600 frames, 2,637,012 bytes, and 512 no-progress reference runs per requested frame, then is deleted by the task executor after a neutral summary. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
 | Reporting Requirements | Record source ranges, input scripts, frame phase, snapshot fields, hashes where lawful, every difference, and whether it is translated, deferred, or rejected. |
 | Stop Conditions | Stop and revise if the work substitutes host drawing for translated output, requires a runtime emulator, embeds protected data in tracked output, or cannot name a source owner for a visible result. |
-| Exit Criteria | T9 closes only with an audited output ledger and an executable bounded oracle contract; it does not close M2. |
+| Exit Criteria | T10 closes only when all admitted background owners write the portable snapshot through translated C and route tests establish their source semantics; it does not verify visual equality or close M2. |
 | Original Owner Request | Make the native C result and logic match the original ROM, then close M2 only with evidence. |
 | Similar-Issue Sweep | Search all production and test output paths for omitted OAM/PPU work, simplified markers, host-owned game state, incomplete button mapping, unsupported playable claims, and local-path leakage; record every hit and disposition. |
 
