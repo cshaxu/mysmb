@@ -15,7 +15,8 @@ enum {
     MYSMB_ENEMY_SPRITE_OFFSET = 0x06e5U,
     MYSMB_SCREEN_PAGE = 0x071aU,
     MYSMB_SCREEN_X = 0x071cU,
-    MYSMB_TIMER_CONTROL = 0x0747U
+    MYSMB_TIMER_CONTROL = 0x0747U,
+    MYSMB_FRAME_COUNTER = 0x0009U
 };
 
 void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
@@ -73,7 +74,7 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
         direction = game->ram[MYSMB_ENEMY_DIRECTION + slot];
         if ((state & 0x20U) == 0U &&
             game->ram[MYSMB_TIMER_CONTROL] == 0U &&
-            ((mysmb_u8)game->frame_number & 8U) == 0U) direction ^= 3U;
+            (game->ram[MYSMB_FRAME_COUNTER] & 8U) == 0U) direction ^= 3U;
         attributes = (mysmb_u8)(3U | game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
         for (row = 0U; row < 3U; ++row) {
             left = tiles[(mysmb_u8)(row * 2U)];

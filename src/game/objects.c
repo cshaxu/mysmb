@@ -972,6 +972,13 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                                                 game->ram[MYSMB_SCREEN_LEFT_X]);
         game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
         game->ram[0x03d1U + slot] = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+        /* EnemyGfxHandler runs before the collision that can set
+         * TimerControl.  Draw this Goomba in its owning slot now rather
+         * than re-reading the post-collision state at the frame tail. */
+        if (id == 6U) {
+            mysmb_objects_draw_goombas_mask(game,
+                (mysmb_u8)(0x1fU & (mysmb_u8)~(mysmb_u8)(1U << slot)));
+        }
         mysmb_objects_update_enemy_bounding_box(game, slot);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];

@@ -31,6 +31,7 @@ int main(void)
         game.ram[0x00cfU] = 0x50U;
         game.ram[0x06e5U] = 0x20U;
         game.frame_number = pass == 0U ? 0UL : 8UL;
+        game.ram[0x0009U] = pass == 0U ? 0U : 8U;
         if (pass == 2U) game.ram[0x001eU] = 4U;
         mysmb_objects_draw_goombas(&game);
         expected = pass == 0U ? expected_flipped :
