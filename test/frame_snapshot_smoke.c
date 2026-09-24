@@ -22,7 +22,7 @@ int main(void)
         snapshot.name_table[1][0x03ffU] != 0x56U || snapshot.palette[3U] != 0x21U ||
         snapshot.ppu_control_0 != 0x90U || snapshot.ppu_mask != 0x1eU ||
         snapshot.ppu_name_table != 2U || snapshot.scroll_x != 0x40U ||
-        snapshot.scroll_y != 0x80U) return 1;
+        snapshot.scroll_y != 0x80U || snapshot.ppu_address != 0x0a08U) return 1;
     if (snapshot.captured_fields != (MYSMB_FRAME_SNAPSHOT_CPU_RAM |
         MYSMB_FRAME_SNAPSHOT_NAME_TABLES | MYSMB_FRAME_SNAPSHOT_PALETTE |
         MYSMB_FRAME_SNAPSHOT_OAM | MYSMB_FRAME_SNAPSHOT_PPU_STATE |

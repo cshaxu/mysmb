@@ -35,6 +35,8 @@ struct mysmb_frame_snapshot {
     mysmb_u8 scroll_x;
     mysmb_u8 scroll_y;
     mysmb_u8 ppu_mask;
+    /* PPU v after the committed scroll/name-table transfer. */
+    mysmb_u16 ppu_address;
     mysmb_u8 audio[MYSMB_FRAME_SNAPSHOT_AUDIO_BYTES];
 };
 

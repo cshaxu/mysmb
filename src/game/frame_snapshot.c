@@ -55,6 +55,11 @@ void mysmb_frame_snapshot_capture(const struct mysmb_game *game,
     snapshot->scroll_x = game->scroll_x;
     snapshot->scroll_y = game->scroll_y;
     snapshot->ppu_mask = game->ppu_mask;
+    snapshot->ppu_address = (mysmb_u16)(
+        ((mysmb_u16)(game->scroll_y & 7U) << 12U) |
+        ((mysmb_u16)(game->ppu_name_table & 3U) << 10U) |
+        ((mysmb_u16)((game->scroll_y >> 3U) & 0x1fU) << 5U) |
+        (mysmb_u16)(game->scroll_x >> 3U));
     for (index = 0U; index < MYSMB_FRAME_SNAPSHOT_AUDIO_BYTES; ++index) {
         snapshot->audio[index] = game->ram[audio_offsets[index]];
     }

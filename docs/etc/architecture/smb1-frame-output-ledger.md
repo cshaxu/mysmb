@@ -18,7 +18,7 @@ contains:
 | Name tables | 2 × 1024 bytes | PPU `$2000-$27ff`, including attributes. |
 | Palette | 32 bytes | PPU palette state. |
 | OAM | 256 bytes | Sprite Y, tile, attribute, and X entries in hardware order. |
-| PPU controls and scroll | 6 bytes | Mirrored `$2000/$2001`, name-table selection, and committed scroll pair. |
+| PPU controls and scroll | 8 bytes | Mirrored `$2000/$2001`, name-table selection, committed scroll pair, and reconstructed PPU `v` address. |
 | Audio command state | bounded neutral fields | Game-owned queues, events, and channel command state. |
 
 The snapshot is an output record, not a PPU emulation API. The portable C
