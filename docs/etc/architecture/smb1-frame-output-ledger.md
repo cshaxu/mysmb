@@ -923,3 +923,15 @@ moved from sample 3 to sample 25 and the first palette difference moved from
 sample 2 to sample 21. The early background/PPU phase is therefore aligned;
 the later title area/parser and display-state differences remain T10 work.
 The bounded traces were deleted immediately.
+
+## T10 S1 P47 Background And Alternate Palette Controls
+
+Screen tasks 10 and 11 now translate `GetBackgroundColor` and
+`GetAlternatePalette1`. Their address-control selections are consumed by the
+same NMI palette-transfer owner as controls 1--4. The owner-local PRG binding
+supplies the day-snow, night-snow, and mushroom streams; no palette data is
+tracked in C.
+
+The title area does not select those overrides, so this does not alter its
+open cold-start differences. It completes the missing task-10/task-11 branch
+semantics for qualifying area headers and styles.

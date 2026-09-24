@@ -591,9 +591,17 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 10U;
         break;
     case 10U:
+        if (game->ram[MYSMB_RAM_BACKGROUND_COLOR] >= 4U &&
+            game->ram[MYSMB_RAM_BACKGROUND_COLOR] <= 7U) {
+            static const mysmb_u8 background_controls[4] = { 0U, 9U, 10U, 4U };
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = background_controls[
+                game->ram[MYSMB_RAM_BACKGROUND_COLOR] - 4U];
+        }
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         break;
     case 11U:
+        if (game->ram[0x0733U] == 1U)
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 11U;
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 12U;
         break;
     case 12U:
@@ -733,6 +741,13 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 4U) {
         (void)mysmb_area_apply_palette(game, (mysmb_u8)(
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] - 1U));
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 9U &&
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 11U) {
+        (void)mysmb_area_apply_special_palette(game,
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
