@@ -452,3 +452,26 @@ The old whole-page `refresh_background_page` shortcut was removed from this
 dynamic replacement owner. Palette choice uses the original five
 `BlockGfxData` cases and no platform renderer decides the result. Bouncing
 block, brick debris, coin, and item sprites remain T11 OAM owners.
+
+## T10 S1 P23 Owner-Local NMI Phase Baseline
+
+An isolated recorder build ran the admitted owner ROM at the NMI RTI boundary.
+The accepted controller script was `40:0x08,42:0`: the recorder uses NES
+serial order, so Start is bit three rather than the portable game's internal
+button representation. At sampled frame 40 the original enters game mode
+task zero; frame 41 is game task one with screen task zero; frame 42 has
+screen output disabled (`$2001=$06`); and by frame 220 it is game task three,
+engine subroutine eight, with parser page/column `01/08`. The sampled final
+PPU control is `$90`, and screen-visible phases use `$2001=$1e`.
+
+The probes were limited to 120, 180, and 600 frames respectively. Each raw
+`MSFR` trace stayed in its unique ignored output directory and was deleted
+immediately after this neutral summary; no ROM bytes, trace data, or
+recoverable graphics were retained.
+
+### Next Difference Owner
+
+The next owner-local comparison must drive the translated Start route to the
+same screen-task and parser checkpoints, then compare canonical RAM,
+name-table, palette, scroll, and PPU fields at the declared NMI boundary.
+OAM is deliberately recorded but remains T11 scope.
