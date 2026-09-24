@@ -822,7 +822,10 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) {
+    /* VRAM_AddrTable entries 6 and 7 both select VRAM_Buffer2.  The source
+     * parser guard distinguishes only 6; NMI transfer itself does not. */
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U ||
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 7U) {
         if (game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] != 0U) {
             (void)mysmb_game_apply_vram_commands(game,
                 &game->ram[MYSMB_RAM_VRAM_BUFFER2], 0x00c0U);

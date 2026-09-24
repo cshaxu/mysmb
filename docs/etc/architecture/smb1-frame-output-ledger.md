@@ -1181,6 +1181,16 @@ block-replacement writer was searched: it owns only bouncing blocks and keeps
 its separate buffer form; no duplicate bridge path remains. OAM rendering of
 Bowser remains T11 ownership.
 
+## T10 S1 P64 Alternate Buffer-Two Address Control
+
+The NMI address table at ROM `$805a-$807f` maps both controls 6 and 7 to
+`VRAM_Buffer2`. Native C recognized only control 6; if an original route
+selected control 7, it would incorrectly consume `VRAM_Buffer1` instead of
+the `$0341` level-graphics stream. The NMI commit now treats both controls as
+buffer two while preserving `UpdScrollVar`'s source-specific control-6 parser
+guard. The parser-buffer smoke commits distinct commands through controls 6
+and 7 and verifies both selected name-table bytes and buffer reset behavior.
+
 ## T10 S1 P60 Title-Area Display Evidence
 
 Title `ScreenRoutines` task 8 first invokes the title demo area's ordinary
