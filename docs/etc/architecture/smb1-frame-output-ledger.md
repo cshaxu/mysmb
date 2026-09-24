@@ -51,7 +51,7 @@ valid merely because its storage happens to be zero.
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Missing**. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
 | `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
-| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Missing**. |
+| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball OAM is translated; explosion, firebar, bubble, and other effects remain T11 work. |
 | `$ee17-$f2cf` | Player tile table, action selection, player draw, and common sprite-row writer | Player/intermediate OAM tiles, attributes, priority, and animation | **Missing**. |
 
 ## Current Product Disqualification
@@ -1467,3 +1467,12 @@ glyphs, selects the four-frame coin tile cycle, and retains the every-other-
 frame score rise. The ROM-free misc OAM smoke verifies both the jumping-coin
 and score forms. Hammer OAM remains a distinct owner despite sharing the misc
 object loop.
+
+## T11 S1 P7 Regular-Fireball OAM
+
+`FireballObjCore` now reaches the source-shaped one-sprite `DrawFireball`
+output after its collision path. It uses the original `FBall_SprDataOffset`,
+world-to-screen X coordinate, two-frame tile cadence, and eight-frame flip
+cadence. The ROM-free fireball OAM smoke verifies both visual phases. The
+four-sprite explosion route is deliberately deferred to the next T11 slice;
+firebar, bubble, and other effects remain open owners.

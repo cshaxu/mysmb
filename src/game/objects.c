@@ -126,6 +126,7 @@ enum {
     MYSMB_FIREBALL_BOUNCE = 0x003aU,
     MYSMB_FIREBALL_COUNTER = 0x06ceU,
     MYSMB_FIREBALL_BOUND_BOX = 0x04a0U,
+    MYSMB_FIREBALL_SPRITE_OFFSET = 0x06f1U,
     MYSMB_PLAYER_A_B = 0x000aU,
     MYSMB_PREVIOUS_A_B = 0x000dU,
     MYSMB_PLAYER_FACING = 0x0033U,
@@ -520,6 +521,28 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
     }
 }
 
+/* ROM DrawFireball / DrawFirebar. */
+static void mysmb_objects_draw_fireball(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u16 fireball_world;
+    mysmb_u16 screen_world;
+    mysmb_u8 oam_offset;
+    mysmb_u8 relative_x;
+    mysmb_u8 attributes;
+
+    fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) |
+                                  game->ram[MYSMB_FIREBALL_X + slot]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
+                                game->ram[MYSMB_SCREEN_LEFT_X]);
+    relative_x = (mysmb_u8)(fireball_world - screen_world);
+    oam_offset = game->ram[MYSMB_FIREBALL_SPRITE_OFFSET + slot];
+    attributes = ((mysmb_u8)game->frame_number & 0x10U) != 0U ? 0xc2U : 2U;
+    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_FIREBALL_Y + slot];
+    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
+        (mysmb_u8)(0x64U ^ (((mysmb_u8)game->frame_number >> 2U) & 1U));
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = attributes;
+    game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
+}
 /* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
  * Both objects use the original fixed slots. */
 void mysmb_objects_step_fireballs(struct mysmb_game *game)
@@ -646,10 +669,16 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
                     break;
                 }
             }
-        }        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
+        }
+        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
             game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U ||
             fireball_world < screen_world || (mysmb_u16)(fireball_world - screen_world) >= 0x100U) {
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
+        }
+        else {
+            /* FireballObjCore enters DrawFireball after collision handling;
+             * a collision may set the next-frame explosion state here. */
+            mysmb_objects_draw_fireball(game, slot);
         }
     }
 }
