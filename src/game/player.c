@@ -102,7 +102,8 @@ enum {
     MYSMB_SCROLL_AMOUNT = 0x0775U,
     MYSMB_SIDE_COLLISION_TIMER = 0x0785U,
     MYSMB_CLIMB_SIDE_TIMER = 0x0789U,
-    MYSMB_HORIZONTAL_SCROLL = 0x073fU
+    MYSMB_HORIZONTAL_SCROLL = 0x073fU,
+    MYSMB_SCROLL_INTERVAL_TIMER = 0x0795U
 };
 
 enum { MYSMB_PLAYER_MOVING_DIRECTION = 0x0045U };
@@ -1369,6 +1370,7 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
     game->ram[MYSMB_SCREEN_RIGHT_X] =
         (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_X] + 0xffU);
     game->ram[MYSMB_SCREEN_RIGHT_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+    if (amount != 0U) game->ram[MYSMB_SCROLL_INTERVAL_TIMER] = 8U;
     if (game->ram[MYSMB_SCREEN_RIGHT_X] < game->ram[MYSMB_SCREEN_LEFT_X]) {
         game->ram[MYSMB_SCREEN_RIGHT_PAGE]++;
     }

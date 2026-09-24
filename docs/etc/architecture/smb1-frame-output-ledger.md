@@ -1617,3 +1617,15 @@ incorrectly rotated eight bytes. A 48-frame regression asserts that the tail
 byte stays zero; the corrected 380-sample trace removes all 332 differences at
 `$07ae`, leaving 102,032 CPU-RAM and 34,360 working-RAM differences. PPU and
 OAM output remains exact; M2 stays open.
+
+## T13 S1 P18 Scroll Interval Timer
+
+ROM `ScrollHandler` calls `GetScreenPosition` and then writes `$08` to
+`ScrollIntervalTimer` whenever it scrolls. The C owner now performs that write
+only when a nonzero scroll amount was accepted; the existing NMI timer owner
+then decrements it. The player-route smoke asserts the initial `$08` value.
+
+In the corrected 380-sample trace, all 145 `$0795` differences disappear:
+CPU-RAM differences are 101,887 and working-RAM differences are 34,215. Every
+PPU and OAM comparison remains exact. M2 is still open for remaining state
+owners and longer scripted routes.
