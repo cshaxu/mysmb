@@ -40,6 +40,36 @@ static int mysmb_reference_write_frame(FILE *output, const core_machine *machine
         mysmb_reference_write(output, &ppu->address, sizeof(ppu->address));
 }
 
+/* Optional script syntax is `frame:buttons[,frame:buttons...]`.  A later
+ * entry replaces the held byte from its frame onward, allowing a one-frame
+ * Start press without introducing a host input path into the product. */
+static int mysmb_reference_script_buttons(const char *script,
+                                          lib_u32 frame,
+                                          unsigned int *buttons)
+{
+    const char *cursor;
+    char *next;
+    unsigned long change_frame;
+    unsigned long change_buttons;
+
+    if (script == NULL) return 1;
+    cursor = script;
+    while (*cursor != '\0') {
+        change_frame = strtoul(cursor, &next, 10);
+        if (next == cursor || *next != ':') return 0;
+        cursor = next + 1;
+        change_buttons = strtoul(cursor, &next, 0);
+        if (next == cursor || change_buttons > 0xffu) return 0;
+        if (change_frame > 600u) return 0;
+        if ((lib_u32)change_frame > frame) return 1;
+        *buttons = (unsigned int)change_buttons;
+        if (*next == '\0') return 1;
+        if (*next != ',') return 0;
+        cursor = next + 1;
+    }
+    return 1;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -51,7 +81,7 @@ int main(int argument_count, char **arguments)
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 1u, 0u, 0u, 0u };
 
-    if (argument_count != 5) return 64;
+    if (argument_count != 5 && argument_count != 6) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
     buttons = (unsigned int)strtoul(arguments[4], LIB_NULL, 0);
     if (parsed_frames == 0u || parsed_frames > 600u || buttons > 0xffu)
@@ -76,6 +106,8 @@ int main(int argument_count, char **arguments)
     run_count = 0u;
     while (recorded < requested_frames &&
            run_count < requested_frames * MYSMB_REFERENCE_MAX_RUNS_PER_FRAME) {
+        if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
+                                            recorded, &buttons)) break;
         core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         if (!core_driver_run(driver) || driver->machine->trap.trap_valid) break;
         ++run_count;

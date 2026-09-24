@@ -34,8 +34,11 @@ owner-local-reference verified.
 The project-owned recorder source builds only in an isolated local `nnes`
 reference build. It samples at `$8181`, limits a run to 600 frames and
 2,637,012 bytes, and enforces a 512-run no-progress budget per requested
-frame. A two-frame no-input run produced the specified 8,802-byte raw record;
-that raw trace was then deleted. The product has no `nnes` link dependency.
+frame. It accepts either one constant controller byte or an optional bounded
+`frame:buttons` transition script, which permits a press/release script while
+retaining one isolated trace run. A two-frame no-input run produced the
+specified 8,802-byte raw record; that raw trace was then deleted. The product
+has no `nnes` link dependency.
 
 ## Verification
 
