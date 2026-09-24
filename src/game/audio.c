@@ -101,6 +101,18 @@ static mysmb_u8 mysmb_audio_find_header_selector(mysmb_u8 music,
     }
     return selector;
 }
+/* ROM $ff00 FreqRegLookupTbl: a zero low frequency byte makes SetFreq
+ * return through NoTone, so LoadControlRegs must not set an envelope. */
+static mysmb_u8 mysmb_audio_note_is_audible(const struct mysmb_game *game,
+                                            mysmb_u8 data)
+{
+    mysmb_u16 address;
+
+    address = (mysmb_u16)(0x7f00U + (data & 0x3eU) + 1U);
+    if (game->area_prg == 0 || address >= game->area_prg_size) return 0U;
+    return game->area_prg[address] != 0U ? 1U : 0U;
+}
+
 static void mysmb_audio_step_death_music(struct mysmb_game *game)
 {
     mysmb_u16 offset;
@@ -300,7 +312,8 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
     /* Squ2NoteHandler's LoadControlRegs returns envelope offset 8 for each
      * audible note; a zero rest retains zero. */
     if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
-        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] = data != 0U ? 8U : 0U;
+        game->ram[MYSMB_RAM_SQUARE2_ENVELOPE] =
+            mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
@@ -367,7 +380,7 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     /* SetFreq_Squ1 returns zero for a rest, bypassing LoadControlRegs. */
     if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
         game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
-            (data & 0x3eU) != 0U ? 8U : 0U;
+            mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
     }
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */

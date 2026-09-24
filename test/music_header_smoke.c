@@ -27,6 +27,8 @@ int main(void)
     prg[0x7a2eU] = 0x81U;
     prg[0x7a2fU] = 0x35U;
     prg[0x7ab9U] = 0xc1U;
+    /* FreqRegLookupTbl+1 for Square 2 note  is nonzero. */
+    prg[0x7f35U] = 1U;
     prg[0x7f7fU] = 9U;
     prg[0x7f85U] = 7U;
     mysmb_game_initialize(&game);
