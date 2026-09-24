@@ -1258,6 +1258,19 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = hole[area_type];
         return;
     }
+    if (row == 12U && kind == 1U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x42U;
+        }
+        else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
+            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x43U;
+        }
+        else {
+            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x41U;
+        }
+        return;
+    }
     if (row == 12U && kind == 5U) {
         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);

@@ -338,3 +338,17 @@ longer called by the native game path. The older bulk page preparation and
 initial object preload remain separate migration work; they are not evidence
 for the incremental parser route and must be removed or replaced before T10
 can close.
+
+## T10 S1 P16 Pulley-Rope Metatiles
+
+The static row-12 `PulleyRopeObject` route at `$3680-$3694` now emits its
+source-defined left pulley, rope, and right pulley sequence at row zero while
+using the existing parser slot length. The smoke test covers all three columns
+and their countdown states. Balance-platform movement and collision state are
+separate dynamic owners.
+
+### Similar-Issue Sweep
+
+The row-12 dispatcher was checked for treating selector one as a bridge or a
+normal-row style object. It now has an explicit static pulley route; no
+platform state is synthesized in the background parser.

@@ -238,6 +238,27 @@ int main(void)
         game.ram[0x06a7U] != 0x0bU || game.ram[0x06a8U] != 0x63U ||
         game.ram[0x0732U] != 1U) return 1;
 
+    /* A row-12 pulley has its own first/rope/last metatile sequence while
+     * using the ordinary horizontal parser-length countdown. */
+    prg[0x0040U] = 0x0cU;
+    prg[0x0041U] = 0x12U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x42U || game.ram[0x0732U] != 1U) return 1;
+    game.ram[0x0726U] = 1U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x41U || game.ram[0x0732U] != 0U) return 1;
+    game.ram[0x0726U] = 2U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x43U || game.ram[0x0732U] != 0xffU) return 1;
+
     /* Special row 15 has its own rope and staircase table. */
     prg[0x0040U] = 0xafU;
     prg[0x0041U] = 0x00U;
