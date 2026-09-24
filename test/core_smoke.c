@@ -451,10 +451,10 @@ int main(void)
     game.ram[0x0057U] = 0x11U;
     game.ram[0x0086U] = 0xfeU;
     game.ram[0x006dU] = 2U;
-    game.ram[0x0705U] = 0xf0U;
+    game.ram[0x0400U] = 0xf0U;
     mysmb_player_move_horizontally(&game);
     if (game.ram[0x0086U] != 0U || game.ram[0x006dU] != 3U ||
-        game.ram[0x0705U] != 0U) {
+        game.ram[0x0400U] != 0U) {
         return 1;
     }
     game.ram[0x0057U] = 0xf0U;

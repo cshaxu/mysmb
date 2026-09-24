@@ -5,6 +5,10 @@ enum {
     MYSMB_PLAYER_X_SPEED = 0x0057U,
     MYSMB_PLAYER_PAGE = 0x006dU,
     MYSMB_PLAYER_X = 0x0086U,
+    /* MoveObjectHorizontally uses SprObject_X_MoveForce,x.  For player
+     * offset zero that is $0400; Player_X_MoveForce at $0705 belongs only
+     * to ImposeFriction. */
+    MYSMB_PLAYER_X_MOVE_FORCE = 0x0400U,
     MYSMB_PLAYER_X_FORCE = 0x0705U,
     MYSMB_JUMPSPRING_ANIM = 0x070eU
 };
@@ -142,9 +146,10 @@ mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
     else {
         page_delta = 0U;
     }
-    old_force = game->ram[MYSMB_PLAYER_X_FORCE];
-    game->ram[MYSMB_PLAYER_X_FORCE] = (mysmb_u8)(old_force + fraction);
-    carry_force = game->ram[MYSMB_PLAYER_X_FORCE] < old_force ? 1U : 0U;
+    old_force = game->ram[MYSMB_PLAYER_X_MOVE_FORCE];
+    game->ram[MYSMB_PLAYER_X_MOVE_FORCE] =
+        (mysmb_u8)(old_force + fraction);
+    carry_force = game->ram[MYSMB_PLAYER_X_MOVE_FORCE] < old_force ? 1U : 0U;
     old_x = game->ram[MYSMB_PLAYER_X];
     game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_x + integer + carry_force);
     carry_x = game->ram[MYSMB_PLAYER_X] < old_x ? 1U : 0U;
@@ -503,16 +508,17 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             mysmb_player_start_jump(game, game->ram[MYSMB_WHIRLPOOL]);
         }
     }
-    if (game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
-        game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
-    }
-    /* PlayerCtrlRoutine assigns Player_MovingDir only after
-     * PlayerMovementSubs returns.  Horizontal physics therefore observes
-     * the prior frame's direction while it selects friction. */
+    /* PlayerPhysicsSub reaches X_Physics before OnGroundStateSub updates
+     * PlayerFacingDir.  Horizontal setup must therefore see the preceding
+     * facing direction; the ground branch changes it immediately before
+     * ImposeFriction and movement. */
     mysmb_player_configure_horizontal(game);
     if (game->ram[MYSMB_PLAYER_STATE] == 0U || game->ram[MYSMB_SWIMMING] != 0U) {
         mysmb_player_update_animation_speed(game, buttons);
+    }
+    if (game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+        game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
     }
     if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
         game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
@@ -564,10 +570,13 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         game->ram[MYSMB_PLAYER_BOUND_BOX] =
             game->ram[MYSMB_PLAYER_CROUCHING] != 0U ? 2U : 0U;
     }
-    /* PlayerCtrlRoutine updates movement direction and then invokes
-     * ScrollHandler, after both horizontal and vertical movement have run. */
-    game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
-        game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
+    /* PlayerCtrlRoutine leaves Player_MovingDir untouched at zero speed;
+     * only a nonzero Y register reaches SetMoveDir before ScrollHandler.
+     * That retained direction selects the first input frame's friction. */
+    if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
+        game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
+            game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
+    }
     mysmb_player_update_scroll(game);
     /* PlayerBGCollision is disabled for the control/pipe routines below 4,
      * player death (0x0b), and explicit collision suppression. */

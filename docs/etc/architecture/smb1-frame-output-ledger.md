@@ -620,3 +620,38 @@ preserve the source mirror before restoring the physical output. The player
 scroll owner supplies the name-table bit before that commit. Snapshot capture
 remains a read-only copy and needs no writer. No host renderer or OAM path was
 changed; those remain outside T10.
+
+## T10 S1 P32 Right-Scroll Physics Isolation
+
+The local summary now accepts the recorder's bounded `frame:buttons` syntax
+and reports neutral player/scroll metadata. Its values are MySMB decoded masks;
+the validation recorder uses controller serial masks, so the admitted right
+route is `240:0x01` for native and `240:0x80` for the reference.
+
+The route exposed two translation errors in the `PlayerCtrlRoutine`,
+`PlayerMovementSubs`, `X_Physics`, `ImposeFriction`, and
+`MovePlayerHorizontally` owners. First, zero player speed falls through
+`beq PlayerSubs` without changing `Player_MovingDir`; native C had forced it
+to right. Second, original `MoveObjectHorizontally` uses
+`SprObject_X_MoveForce` at `$0400` for player offset zero, while
+`Player_X_MoveForce` at `$0705` belongs to friction. Native C had combined
+the two accumulators. The direct smoke test now proves that movement carries
+through `$0400` without changing `$0705`.
+
+With Start at frames 40--41 and held right from frame 240, native and original
+match every checked player position/page, relative position, speed, movement
+force, screen-left coordinate, horizontal scroll, and display mirror through
+frame 353. The next comparison finds a remaining first difference at frame
+354: source `ScreenLeft_X_Pos` is `$45`, native is `$47`. At that frame the
+original also holds player position at `$b5`, while native advances it to
+`$b7`. This is recorded as an open player/object-frame owner, not masked as a
+scroll rounding adjustment.
+
+### Similar-Issue Sweep
+
+The movement-force sweep covered every native writer of `$0400` and `$0705`,
+the direct movement primitive, friction, skid handling, player collision, and
+the route smoke. Only the primitive used the wrong owner; friction and skid
+continue to own `$0705`. The zero-speed direction assignment was the only
+native unconditional `Player_MovingDir` publication; it now retains the
+source value. No PPU renderer, OAM producer, or host input path changed.

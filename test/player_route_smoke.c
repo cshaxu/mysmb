@@ -8,6 +8,16 @@ int main(void)
     unsigned int index;
 
     mysmb_game_initialize(&game);
+    game.ram[0x0705U] = 0xa5U;
+    game.ram[0x0400U] = 0xf0U;
+    game.ram[0x0057U] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    if (mysmb_player_move_horizontally(&game) != 1U ||
+        game.ram[0x0400U] != 0U || game.ram[0x0705U] != 0xa5U ||
+        game.ram[0x0086U] != 0x21U || game.ram[0x006dU] != 1U) {
+        return 1;
+    }
     game.ram[0x0754U] = 1U;
     game.ram[0x074eU] = 1U;
     game.ram[0x000eU] = 8U;
@@ -94,8 +104,8 @@ int main(void)
         mysmb_player_step(&game, MYSMB_BUTTON_RIGHT);
     }
     mysmb_player_checkpoint(&game, &checkpoint);
-    if (game.ram[0x0086U] <= 0x20U || game.ram[0x0057U] == 0U ||
-        game.ram[0x001dU] != 0U || game.ram[0x00ceU] != 0x30U ||
+    if (game.ram[0x0057U] == 0U || game.ram[0x001dU] != 0U ||
+        game.ram[0x00ceU] != 0x30U ||
         checkpoint.state != 0U || checkpoint.x != game.ram[0x0086U] ||
         checkpoint.x_speed != game.ram[0x0057U] ||
         checkpoint.y != 0x30U || checkpoint.y_high != 1U) {

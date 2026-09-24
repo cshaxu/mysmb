@@ -17,6 +17,38 @@ static mysmb_u32 mysmb_summary_hash(const mysmb_u8 *bytes, mysmb_u16 count,
     return value;
 }
 
+/* Keep the owner-local native summary on the reference recorder's bounded
+ * `frame:buttons[,frame:buttons...]` input syntax.  Values use MySMB's
+ * decoded button masks; the three mandatory arguments retain the original
+ * one-frame Start route, and an optional script replaces its held byte from
+ * its declared frame onward. */
+static mysmb_u8 mysmb_summary_script_buttons(const char *script,
+                                             unsigned long frame,
+                                             mysmb_u8 *buttons)
+{
+    const char *cursor;
+    char *next;
+    unsigned long change_frame;
+    unsigned long change_buttons;
+
+    if (script == 0) return 1U;
+    cursor = script;
+    while (*cursor != '\0') {
+        change_frame = strtoul(cursor, &next, 10);
+        if (next == cursor || *next != ':') return 0U;
+        cursor = next + 1;
+        change_buttons = strtoul(cursor, &next, 0);
+        if (next == cursor || change_frame > 600UL ||
+            change_buttons > 0xffUL) return 0U;
+        if (change_frame > frame) return 1U;
+        *buttons = (mysmb_u8)change_buttons;
+        if (*next == '\0') return 1U;
+        if (*next != ',') return 0U;
+        cursor = next + 1;
+    }
+    return 1U;
+}
+
 int main(int argument_count, char **arguments)
 {
     struct mysmb_game game;
@@ -29,7 +61,7 @@ int main(int argument_count, char **arguments)
     unsigned long index;
     mysmb_u32 hash;
 
-    if (argument_count != 4) return 64;
+    if (argument_count != 4 && argument_count != 5) return 64;
     frames = strtoul(arguments[1], 0, 10);
     start_frame = strtoul(arguments[2], 0, 10);
     release_frame = strtoul(arguments[3], 0, 10);
@@ -45,17 +77,23 @@ int main(int argument_count, char **arguments)
         return 65;
     printf("frame,mode,task,ram_ppu_control,ram_ppu_mask,disable_screen,"
            "horizontal_scroll,vertical_scroll,ppu_control,ppu_mask,"
-           "ppu_name_table,scroll_x,scroll_y,ppu_address,ciram_fnv1a,"
+           "ppu_name_table,scroll_x,scroll_y,screen_left_page,screen_left_x,"
+           "player_page,player_x,player_pos_for_scroll,player_x_scroll,"
+           "player_x_speed,player_facing,player_moving_direction,"
+           "player_x_force,friction_high,friction_low,game_engine_subroutine,"
+           "ppu_address,ciram_fnv1a,"
            "palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
         /* NES serial Start is bit 3; MySMB's decoded RAM representation is $10. */
         input.buttons = index >= start_frame && index < release_frame ?
             MYSMB_BUTTON_START : 0U;
+        if (mysmb_summary_script_buttons(argument_count == 5 ? arguments[4] : 0,
+                                         index, &input.buttons) == 0U) return 64;
         mysmb_game_tick(&game, &input, &frame);
         mysmb_frame_snapshot_capture(&game, &snapshot);
         hash = mysmb_summary_hash(snapshot.name_table[0], 0x0400U, 2166136261UL);
         hash = mysmb_summary_hash(snapshot.name_table[1], 0x0400U, hash);
-        printf("%lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%04x,%08lx,",
+        printf("%lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%04x,%08lx,",
                index, (unsigned int)frame.operating_mode,
                (unsigned int)frame.operating_mode_task,
                (unsigned int)game.ram[0x0778U],
@@ -68,6 +106,19 @@ int main(int argument_count, char **arguments)
                (unsigned int)snapshot.ppu_name_table,
                (unsigned int)snapshot.scroll_x,
                (unsigned int)snapshot.scroll_y,
+               (unsigned int)game.ram[0x071aU],
+               (unsigned int)game.ram[0x071cU],
+               (unsigned int)game.ram[0x006dU],
+               (unsigned int)game.ram[0x0086U],
+               (unsigned int)game.ram[0x0755U],
+               (unsigned int)game.ram[0x06ffU],
+               (unsigned int)game.ram[0x0057U],
+               (unsigned int)game.ram[0x0033U],
+               (unsigned int)game.ram[0x0045U],
+               (unsigned int)game.ram[0x0705U],
+               (unsigned int)game.ram[0x0701U],
+               (unsigned int)game.ram[0x0702U],
+               (unsigned int)game.ram[0x000eU],
                (unsigned int)snapshot.ppu_address, hash);
         hash = mysmb_summary_hash(snapshot.palette, 0x20U, 2166136261UL);
         printf("%08lx,", hash);
