@@ -475,3 +475,12 @@ The next owner-local comparison must drive the translated Start route to the
 same screen-task and parser checkpoints, then compare canonical RAM,
 name-table, palette, scroll, and PPU fields at the declared NMI boundary.
 OAM is deliberately recorded but remains T11 scope.
+
+## T10 S1 P24 Preserve Display Mask Through Name-Table Setup
+
+The native `InitializeNameTables` owner no longer clears the portable `$2001`
+state. The original `$8e19-$8e5b` clears name/attribute tables and commits
+the `$2000` arrangement but does not write the display-mask mirror; cold boot
+alone initializes that field. The snapshot smoke test covers preservation,
+and the owner-local phase probe now observes `$2001=$06` at local screen task
+one, matching the recorded disabled-screen reference phase.

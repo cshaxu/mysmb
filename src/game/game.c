@@ -401,6 +401,9 @@ void mysmb_game_initialize(struct mysmb_game *game)
     for (index = 0U; index < 0x0020U; ++index) {
         game->palette[index] = 0U;
     }
+    /* Cold boot supplies the initial display state.  Later
+     * InitializeNameTables calls must retain the NMI-owned $2001 mirror. */
+    game->ppu_mask = 0U;
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
@@ -470,7 +473,6 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
      * InitScroll commits zero scroll.  Palette values remain the domain of
      * ScreenRoutines/ColorRotation and are initialized separately by T10. */
     game->ppu_control_0 = 0x10U;
-    game->ppu_mask = 0U;
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
