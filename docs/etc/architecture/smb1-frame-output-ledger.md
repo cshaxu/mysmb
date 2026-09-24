@@ -1670,3 +1670,16 @@ same-frame `$f7=2`, `$07b3=$07b4=9` transition.
 The corrected trace has 100,402 CPU-RAM, 6,003 zero-page, and 33,599
 working-RAM differences. PPU/OAM remain exact; Square 1, triangle, noise, and
 music-loop handlers remain open.
+
+## T13 S1 P22 Triangle Music Stream
+
+The portable audio owner now translates `HandleTriangleMusic`'s stream-side
+length and note progression. It advances the triangle offset, resolves a ROM
+length byte through the existing lookup table, stores `Tri_NoteLenBuffer`, and
+reloads `Tri_NoteLenCounter`; APU control-register choices remain platform
+work. The header smoke verifies the first triangle length/note pair and its
+same-frame offset/counter state.
+
+The 380-sample trace reduces CPU-RAM differences to 99,979, zero-page to
+5,859, and working-RAM to 33,320. PPU and OAM stay exact. Square 1, noise, and
+loopback processing remain open.

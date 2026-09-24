@@ -17,6 +17,8 @@ int main(void)
     prg[0x7952U] = 0xb8U;
     prg[0x7a01U] = 0x81U;
     prg[0x7a02U] = 0x34U;
+    prg[0x7a2eU] = 0x81U;
+    prg[0x7a2fU] = 0x35U;
     prg[0x7f7fU] = 9U;
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
@@ -26,10 +28,10 @@ int main(void)
     if (game.ram[0x00f4U] != 1U || game.ram[0x00f0U] != 0x18U ||
         game.ram[0x00f5U] != 1U || game.ram[0x00f6U] != 0xfaU ||
         game.ram[0x00f7U] != 2U || game.ram[0x00f8U] != 0x1cU ||
-        game.ram[0x00f9U] != 0x2dU || game.ram[0x07b0U] != 0xb8U ||
+        game.ram[0x00f9U] != 0x2fU || game.ram[0x07b0U] != 0xb8U ||
         game.ram[0x07b3U] != 9U || game.ram[0x07b4U] != 9U ||
-        game.ram[0x07b6U] != 1U ||
-        game.ram[0x07b9U] != 1U || game.ram[0x07baU] != 1U ||
+        game.ram[0x07b6U] != 1U || game.ram[0x07b8U] != 9U ||
+        game.ram[0x07b9U] != 9U || game.ram[0x07baU] != 1U ||
         game.ram[0x07c1U] != 0xb8U || game.ram[0x07c7U] != 0x11U ||
         game.ram[0x07caU] != 0U || game.ram[0x00fbU] != 0U) return 1;
     return 0;
