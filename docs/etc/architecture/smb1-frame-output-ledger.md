@@ -574,3 +574,15 @@ This establishes the initial 1-1 background tile and attribute state at the
 declared NMI boundary; it does not establish palette, scroll, OAM, or later
 gameplay-frame equivalence. The temporary reference trace and native snapshot
 were deleted immediately after the neutral count.
+
+## T10 S1 P30 Initial Palette Phase
+
+The same admitted Start route was checked after the initial palette-owner flow
+at frame 206. The original and translated 32-byte PPU palette snapshots have
+zero differing offsets at that checkpoint. An earlier frame-202 check had 12
+differences while the parser/display transition was still in progress, so it
+is not a valid substitute for the completed palette-owner checkpoint.
+
+This records only the palette bytes. Scroll, PPU scalar state, OAM, and
+later-frame equality remain open T10/T11 work. The temporary reference trace
+and native snapshot were deleted after the neutral count.
