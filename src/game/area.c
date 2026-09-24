@@ -98,7 +98,8 @@ enum {
     MYSMB_AREA_OBJECT_PAGE = 0x072aU,
     MYSMB_AREA_OBJECT_PAGE_SELECT = 0x072bU,
     MYSMB_AREA_DATA_OFFSET = 0x072cU,
-    MYSMB_AREA_OBJECT_OFFSET_BUFFER = 0x072dU
+    MYSMB_AREA_OBJECT_OFFSET_BUFFER = 0x072dU,
+    MYSMB_AREA_STAIRCASE_CONTROL = 0x0734U
 };
 
 enum {
@@ -1183,6 +1184,12 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
     static const mysmb_u8 hole[4] = { 0x87U, 0U, 0U, 0U };
+    static const mysmb_u8 staircase_row[9] = {
+        3U, 3U, 4U, 5U, 6U, 7U, 8U, 9U, 10U
+    };
+    static const mysmb_u8 staircase_height[9] = {
+        7U, 7U, 6U, 5U, 4U, 3U, 2U, 1U, 0U
+    };
     mysmb_u8 row;
     mysmb_u8 kind;
     mysmb_u8 area_type;
@@ -1192,7 +1199,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
-    if (row >= 13U) return;
+    if (row == 13U || row == 14U) return;
     area_type = game->ram[MYSMB_AREA_TYPE];
     if (area_type >= 4U) return;
     /* Rows 12-15 select a different JumpEngine table.  In particular, the
@@ -1225,6 +1232,42 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
         game->ram[MYSMB_AREA_METATILE_BUFFER + (kind == 6U ? 3U : 7U)] = 0xc0U;
+        return;
+    }
+    if (row == 15U && kind == 0U) {
+        for (row = 0U; row < 13U; ++row)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x40U;
+        return;
+    }
+    if (row == 15U && kind == 1U) {
+        height = (mysmb_u8)(second & 0x0fU);
+        for (row = 1U; row < 13U; ++row)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x44U;
+        row = 1U;
+        do {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x40U;
+            if (row == 12U || height == 0U) break;
+            row++;
+            height--;
+        } while (1);
+        return;
+    }
+    if (row == 15U && kind == 3U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+            game->ram[MYSMB_AREA_STAIRCASE_CONTROL] = 9U;
+        }
+        game->ram[MYSMB_AREA_STAIRCASE_CONTROL]--;
+        value = game->ram[MYSMB_AREA_STAIRCASE_CONTROL];
+        if (value >= 9U) return;
+        row = staircase_row[value];
+        height = staircase_height[value];
+        do {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x61U;
+            if (row == 12U || height == 0U) break;
+            row++;
+            height--;
+        } while (1);
         return;
     }
     if (kind == 0U) {

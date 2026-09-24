@@ -191,5 +191,22 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a7U] != 0x0bU || game.ram[0x06a8U] != 0x63U ||
         game.ram[0x0732U] != 1U) return 1;
+
+    /* Special row 15 has its own rope and staircase table. */
+    prg[0x0040U] = 0xafU;
+    prg[0x0041U] = 0x00U;
+    game.ram[0x0726U] = 10U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x40U || game.ram[0x06adU] != 0x40U ||
+        game.ram[0x0732U] != 0xffU) return 1;
+    prg[0x0040U] = 0x0fU;
+    prg[0x0041U] = 0x33U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 2U) return 1;
     return 0;
 }

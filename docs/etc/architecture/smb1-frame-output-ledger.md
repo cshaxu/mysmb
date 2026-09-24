@@ -239,3 +239,18 @@ The special-row handler was checked for normal-row fallthrough and for using
 the source byte's lower nibble as vertical height. Holes and bridges now use
 their special fixed row positions and horizontal length. Whirlpool allocation,
 pulley ropes, and collapse behavior remain deferred dynamic owners.
+
+## T10 S1 P10 Row-15 Ropes And Staircases
+
+The row-15 dispatcher now admits the static `EndlessRope`, `BalancePlatRope`,
+and `StaircaseObject` metatile paths (`$3993-$4010`, `$4126-$4143`). Ropes use
+their original top-to-bottom or bounded height rules; a staircase initializes
+its source-owned control byte and consumes one original step per parser column.
+The parser smoke test covers both a full rope and a newly started staircase.
+
+### Similar-Issue Sweep
+
+The dispatcher was checked for a generic row-range rejection masking the
+row-15 JumpEngine table. It now rejects only unimplemented rows 13 and 14.
+Row-15 rope and staircase paths are explicit. Castle, exit-pipe, and dynamic
+balance-platform behavior remain deferred.
