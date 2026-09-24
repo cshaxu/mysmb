@@ -87,6 +87,29 @@ static void mysmb_win32_draw_gameplay(HDC dc)
 #endif
 }
 #ifdef MYSMB_LOCAL_TITLE
+static COLORREF mysmb_win32_nes_color(mysmb_u8 index)
+{
+    static const COLORREF colors[16] = {
+        RGB(84, 84, 84), RGB(0, 30, 116), RGB(8, 16, 144), RGB(48, 0, 136),
+        RGB(68, 0, 100), RGB(92, 0, 48), RGB(84, 4, 0), RGB(60, 24, 0),
+        RGB(32, 42, 0), RGB(8, 58, 0), RGB(0, 64, 0), RGB(0, 60, 0),
+        RGB(0, 50, 60), RGB(0, 0, 0), RGB(236, 238, 236), RGB(252, 188, 60)
+    };
+
+    return colors[index & 15U];
+}
+
+static COLORREF mysmb_win32_background_color(unsigned char palette,
+                                              unsigned char color)
+{
+    return mysmb_win32_nes_color(g_game.palette[(palette << 2U) + color]);
+}
+
+static COLORREF mysmb_win32_sprite_color(unsigned char palette,
+                                          unsigned char color)
+{
+    return mysmb_win32_nes_color(g_game.palette[0x10U + (palette << 2U) + color]);
+}
 static COLORREF mysmb_win32_title_color(unsigned char palette, unsigned char color)
 {
     static const COLORREF colors[4] = {
@@ -170,7 +193,7 @@ static void mysmb_win32_draw_oam(HDC dc)
                 color = (unsigned char)(((low >> bit) & 1U) | (((high >> bit) & 1U) << 1U));
                 if (color != 0U) {
                     mysmb_win32_plot(dc, x + pixel_x, y + pixel_y,
-                        mysmb_win32_title_color((unsigned char)(attributes & 3U), color));
+                        mysmb_win32_sprite_color((unsigned char)(attributes & 3U), color));
                 }
             }
         }
