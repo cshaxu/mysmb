@@ -870,3 +870,16 @@ for the established gameplay reference phase. It must not be used to assert
 title-frame equality or to overwrite the bootstrap result. A title-phase ROM
 oracle needs a separately aligned source checkpoint before T10 can make a
 title-output equality claim.
+
+## T10 S1 P43 Title Intermediate-Display Branch
+
+The source `DisplayIntermediate` route bypasses intermediate-lives text and
+its screen-timer waits when operating in title mode, proceeding directly to
+the area-parser task. The native screen-task translation had missed that
+condition, delaying the product title menu beyond the reference Start phase.
+It now branches directly for title mode.
+
+The local bootstrap smoke verifies that the staged title transfer, icon queue,
+and title-menu handoff all complete before frame 40, the admitted Start-input
+phase. The full x64 suite and x86 build passed after the repair. This proves
+title input readiness, not title-frame equality.
