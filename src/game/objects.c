@@ -149,6 +149,8 @@ static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
 static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
                                                   mysmb_u8 slot);
+static void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
+                                                    mysmb_u8 slot);
 static void mysmb_objects_set_bounding_box(struct mysmb_game *game,
                                            mysmb_u16 address, mysmb_u8 control,
                                            mysmb_u8 x, mysmb_u8 y);
@@ -977,6 +979,7 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
         game->ram[0x03d1U + slot] = enemy_world < screen_world ||
             enemy_world >= (mysmb_u16)(screen_world + 0x0100U) ? 0x0fU :
             (game->ram[0x03aeU + slot] >= 0xf8U ? 0x07U : 0U);
+        mysmb_objects_update_enemy_bounding_box(game, slot);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
             game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
@@ -2874,7 +2877,42 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
     return 1U;
 }
 
+/*/* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
+static void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
+                                                    mysmb_u8 slot)
+{
+    mysmb_u8 x_difference;
+    mysmb_u8 page_difference;
+    mysmb_u8 mask;
+    mysmb_u8 masked;
+    mysmb_u16 address;
+
+    x_difference = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                              game->ram[MYSMB_SCREEN_LEFT_X]);
+    page_difference = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] -
+        game->ram[MYSMB_SCREEN_LEFT_PAGE] -
+        (game->ram[MYSMB_ENEMY_X + slot] < game->ram[MYSMB_SCREEN_LEFT_X] ? 1U : 0U));
+    mask = 0x44U;
+    if (page_difference < 0x80U && (page_difference != 0U || x_difference != 0U)) {
+        mask = 0x48U;
+    }
+    masked = (mysmb_u8)(mask & game->ram[0x03d1U + slot]);
+    game->ram[0x03d8U + slot] = masked;
+    address = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+    if (masked != 0U) {
+        game->ram[address] = 0xffU;
+        game->ram[address + 1U] = 0xffU;
+        game->ram[address + 2U] = 0xffU;
+        game->ram[address + 3U] = 0xffU;
+        return;
+    }
+    mysmb_objects_set_bounding_box(game, address,
+        game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+        game->ram[0x03aeU + slot], game->ram[0x03b9U + slot]);
+}
 /* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
+static void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
+                                                    mysmb_u8 slot);
 static void mysmb_objects_set_bounding_box(struct mysmb_game *game,
                                            mysmb_u16 address, mysmb_u8 control,
                                            mysmb_u8 x, mysmb_u8 y)

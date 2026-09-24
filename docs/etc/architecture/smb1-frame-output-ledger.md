@@ -2041,3 +2041,31 @@ SFX buffers, and event-music buffer were reviewed. The audio dispatcher is
 the sole owner of these counters; the guards preserve the source's SFX and
 death/castle ownership boundaries. No duplicate envelope-counter owner was
 found.
+## T11 S1 P14 Normal-Enemy Offscreen Bounding Boxes
+
+ROM `RunNormalEnemies` calls `GetEnemyBoundBox` after it computes enemy
+relative coordinates. `GetMaskedOffScrBits` selects the `$44` or `$48` mask
+from page/X position, stores the masked result in `EnemyOffscrBitsMasked`
+(`$03d8+slot`), and routes a nonzero result to `MoveBoundBoxOffscreen`, which
+stores `$ff` in all four enemy bounding-box bytes.
+
+Native normal-enemy processing wrote `Enemy_OffscreenBits` and relative
+coordinates but omitted this follow-up state. The enemy owner now translates
+that mask selection and commits either the offscreen `$ff` box or the standard
+`BoundBoxCtrlData` box. On the owner-ROM trace's first Goomba entry, this
+matches `$03d8=$08` and `$04b0-$04b3=$ff`.
+
+On the reproducible 380-sample owner-ROM route (SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de`; NES
+input `30:$08,31:0,60:$80`, native input `30:$10,31:0,60:$01`), CPU-RAM
+differences fall from 66,265 to 66,067 and working-RAM differences from 590
+to 392. CPU OAM backing RAM, visible OAM, both CIRAM pages, palette, and every
+PPU scalar remain exact.
+
+### Similar-Issue Sweep
+
+The ROM listing and native references to `RunNormalEnemies`,
+`GetEnemyBoundBox`, `GetMaskedOffScrBits`, `EnemyOffscrBitsMasked`, `$03d1`,
+`$03d8`, and `EnemyBoundingBoxCoord` were reviewed. Normal enemies now own the
+same mask-to-box transition as the source. Dedicated power-up, projectile,
+platform, and special-enemy paths retain their distinct bounding-box owners.
