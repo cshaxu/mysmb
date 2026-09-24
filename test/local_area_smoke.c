@@ -16,6 +16,8 @@ int main(void)
     mysmb_u8 palette;
     mysmb_u8 rotation;
     mysmb_u16 graphics;
+    mysmb_u16 copy_offset;
+    static mysmb_u8 warp_prg[0x8000U];
 
     mysmb_game_initialize(&game);
     source.prg = mysmb_local_prg;
@@ -213,6 +215,31 @@ int main(void)
         game.ram[0x0774U] != 0U ||
         game.name_table[0][0x020bU] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 7U] + 3U]) return 1;
+
+    /* Row-13 object 5 is ScrollLockObject_Warp.  Supply the original local
+     * text tables with one synthetic area-stream entry so the persistent
+     * parser, rather than a direct helper call, selects the warp text. */
+    for (copy_offset = 0U; copy_offset < MYSMB_LOCAL_PRG_SIZE; ++copy_offset)
+        warp_prg[copy_offset] = mysmb_local_prg[copy_offset];
+    warp_prg[0x1ff0U] = 0x0dU;
+    warp_prg[0x1ff1U] = 0x45U;
+    warp_prg[0x1ff2U] = 0xfdU;
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, warp_prg, MYSMB_LOCAL_PRG_SIZE);
+    game.ram[0x00e7U] = 0xf0U;
+    game.ram[0x00e8U] = 0x9fU;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x074eU] = 1U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06d6U] != 4U || game.ram[0x0300U] != 0x2cU ||
+        mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
+        game.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
+            mysmb_local_prg[0x07feU + 8U] + 3U]) return 1;
 
     printf("area_pointer=%02x type=%u enemy=%02x%02x area=%02x%02x header=%u/%u/%u objects=%u\n",
            game.ram[0x0750U], game.ram[0x074eU], game.ram[0x00eaU],

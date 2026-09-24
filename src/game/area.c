@@ -1376,6 +1376,15 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             height = value == 2U ? 0xc5U : (value == 3U ? 0x0cU : 0x89U);
             mysmb_area_render_under_part(game, row, 0U, height);
         }
+        else if (value == 5U) {
+            /* ScrollLockObject_Warp ($3b9d): the source derives the text
+             * selector from world and area type before WriteGameText. */
+            value = 4U;
+            if (game->ram[MYSMB_AREA_WORLD_NUMBER] != 0U) value++;
+            if (game->ram[MYSMB_AREA_TYPE] != 1U) value++;
+            game->ram[0x06d6U] = value;
+            (void)mysmb_area_queue_game_text(game, value);
+        }
         return;
     }
     if (row == 14U) {

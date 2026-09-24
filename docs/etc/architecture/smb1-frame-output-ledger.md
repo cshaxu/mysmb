@@ -1100,3 +1100,19 @@ admitted PRG, drives the complete task-0-to-task-2 route, and verifies the
 committed `$220b` first Game Over text tile against its source command. The
 ROM-free mode smoke retains only mode-transition coverage because it has no
 admitted text source. OAM reset/output remains T11 ownership.
+
+## T10 S1 P58 Warp-Zone Object Text Dispatch
+
+`ScrollLockObject_Warp` at ROM `$3b9d-$3bb7` is row-13 object 5. It derives
+one of `WriteGameText` selectors 4, 5, or 6 from `WorldNumber` and `AreaType`,
+stores it in `WarpZoneControl` (`$06d6`), and submits the Warp Zone text.
+The native persistent parser had rendered neither that control state nor the
+VRAM command.
+
+The row-13 handler now makes the source selection and invokes the existing
+translated `WriteGameText` route. The owner-local area smoke copies the local
+PRG only into process memory, inserts one row-13 object-5 stream entry in that
+test copy, and verifies the `$06d6` selector, the `$2c` command length, and the
+next command transfer's first `$2584` Warp Zone text tile against the local
+source table. No generated or ROM-derived data is tracked. Piranha removal and
+the movement-side WarpZoneObject remain object/OAM work outside T10.
