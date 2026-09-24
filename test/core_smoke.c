@@ -889,7 +889,7 @@ int main(void)
     mysmb_objects_apply_block_replacements(&game);
     if (game.ram[0x0524U] != 0x61U || game.ram[0x0535U] != 0x62U ||
         game.ram[0x03ecU] != 0U || game.ram[0x03edU] != 0U) return 1;
-    game.ram[0x0301U] = 1U;
+    game.ram[0x0300U] = 1U;
     game.ram[0x03ecU] = 1U;
     game.ram[0x0524U] = 0U;
     mysmb_objects_apply_block_replacements(&game);
@@ -1163,7 +1163,7 @@ int main(void)
     game.ram[0x079fU] = 0U;
     mysmb_objects_collect_power_up(&game);
     if (game.ram[0x079fU] != 0x23U) return 1;
-    game.ram[0x0301U] = 0U;
+    game.ram[0x0300U] = 0U;
     game.ram[0x0026U] = 0x11U;
     game.ram[0x00beU] = 1U;
     game.ram[0x00d7U] = 0x20U;
@@ -1174,5 +1174,20 @@ int main(void)
     for (index = 0U; index < 64U && game.ram[0x0026U] != 0U; ++index) {
         mysmb_objects_step_blocks(&game);
     }
-    return game.ram[0x0026U] == 0U && game.ram[0x03ecU] == 1U ? 0 : 1;
+    if (game.ram[0x0026U] != 0U || game.ram[0x03ecU] != 1U) return 1;
+    /* NMI UpdateScreen consumes the prior frame's buffered palette command. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0300U] = 7U;
+    game.ram[0x0301U] = 0x3fU;
+    game.ram[0x0302U] = 0x0cU;
+    game.ram[0x0303U] = 4U;
+    game.ram[0x0304U] = 1U;
+    game.ram[0x0305U] = 2U;
+    game.ram[0x0306U] = 3U;
+    game.ram[0x0307U] = 4U;
+    game.ram[0x0308U] = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    return game.ram[0x0300U] == 0U && game.palette[12U] == 1U &&
+        game.palette[13U] == 2U && game.palette[14U] == 3U &&
+        game.palette[15U] == 4U ? 0 : 1;
 }

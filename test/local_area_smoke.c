@@ -14,6 +14,7 @@ int main(void)
     mysmb_u8 count;
     mysmb_u8 metatile;
     mysmb_u8 palette;
+    mysmb_u8 rotation;
     mysmb_u16 graphics;
 
     mysmb_game_initialize(&game);
@@ -50,6 +51,22 @@ int main(void)
      * not a host palette choice. */
     if (game.palette[0U] != mysmb_local_prg[0x0ccbU] ||
         game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
+    /* ColorRotation queues a $3f0c update and the following NMI commits it. */
+    game.ram[0x0009U] = 0U;
+    game.ram[0x06d4U] = 0U;
+    game.ram[0x0300U] = 0U;
+    mysmb_area_step_palette_rotation(&game);
+    if (game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x3fU ||
+        game.ram[0x0302U] != 0x0cU || game.ram[0x0303U] != 4U ||
+        game.ram[0x0304U] != mysmb_local_prg[0x09d1U + 4U] ||
+        game.ram[0x0305U] != mysmb_local_prg[0x09c3U]) return 1;
+    rotation = game.ram[0x06d4U];
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 8U) == 0U) return 1;
+    game.ram[0x0300U] = 0U;
+    if (game.ram[0x0300U] != 0U || game.palette[12U] != mysmb_local_prg[0x09d5U] ||
+        game.palette[13U] != mysmb_local_prg[0x09c3U] ||
+        game.palette[14U] != mysmb_local_prg[0x09d7U] ||
+        game.palette[15U] != mysmb_local_prg[0x09d8U] || rotation != 1U) return 1;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
     if (game.area_command_count != 1U ||

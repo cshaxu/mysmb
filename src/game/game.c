@@ -33,6 +33,9 @@ enum {
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
+    ,MYSMB_RAM_FRAME_COUNTER = 0x0009U
+    ,MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U
+    ,MYSMB_RAM_VRAM_BUFFER1 = 0x0301U
 };
 
 enum {
@@ -450,6 +453,9 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             table = (mysmb_u8)((address - 0x2000U) / 0x0400U);
             offset = (mysmb_u16)(address & 0x03ffU);
         }
+        else {
+            offset = (mysmb_u16)(address & 0x001fU);
+        }
         value = commands[(mysmb_u16)(cursor + 3U)];
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
@@ -476,6 +482,18 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
     return cursor < command_size ? 1U : 0U;
 }
 
+/* ROM $8e92-$8eb6 UpdateScreen/WriteBufferToScreen at the NMI boundary.
+ * The buffer is owned by game routines during the preceding frame and is
+ * cleared only after its terminal command has reached PPU-visible state. */
+static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U) return;
+    (void)mysmb_game_apply_vram_commands(game,
+        &game->ram[MYSMB_RAM_VRAM_BUFFER1], 0x0100U);
+    game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] = 0U;
+    game->ram[MYSMB_RAM_VRAM_BUFFER1] = 0U;
+}
+
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size)
@@ -493,6 +511,8 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
     game->frame_number++;
+    game->ram[MYSMB_RAM_FRAME_COUNTER]++;
+    mysmb_game_commit_vram_buffer(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
     mysmb_game_run_timer(game);
@@ -617,6 +637,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);
         mysmb_objects_step_misc(game);
+        mysmb_area_step_palette_rotation(game);
         /* ROM GameEngine's SaveAB tail clears the transient directional
          * partition after object collisions.  In particular, a collision
          * that selects PlayerDeath leaves its following physics frame with

@@ -24,6 +24,8 @@ enum {
     MYSMB_AREA_GROUND_PALETTE = 0x0cc8U,
     MYSMB_AREA_UNDERGROUND_PALETTE = 0x0cecU,
     MYSMB_AREA_CASTLE_PALETTE = 0x0d10U
+    ,MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U
+    ,MYSMB_AREA_PALETTE3_DATA = 0x09d1U
 };
 
 enum {
@@ -55,6 +57,10 @@ enum {
     MYSMB_AREA_BACKGROUND = 0x0742U,
     MYSMB_AREA_CLOUD_OVERRIDE = 0x0743U,
     MYSMB_AREA_BACKGROUND_COLOR = 0x0744U
+    ,MYSMB_AREA_COLOR_ROTATE_OFFSET = 0x06d4U
+    ,MYSMB_AREA_FRAME_COUNTER = 0x0009U
+    ,MYSMB_AREA_VRAM_BUFFER1_OFFSET = 0x0300U
+    ,MYSMB_AREA_VRAM_BUFFER1 = 0x0301U
 };
 
 enum {
@@ -190,6 +196,45 @@ void mysmb_area_refresh_background_page(struct mysmb_game *game,
                 (mysmb_u8)~(0x03U << attribute_shift)) | (palette << attribute_shift));
         }
     }
+}
+
+/* Translation of ROM $89d9-$8a15 (ColorRotation).  The original leaves the
+ * completed command in VRAM_Buffer1 for the following NMI UpdateScreen;
+ * this function therefore queues data and does not change the palette. */
+void mysmb_area_step_palette_rotation(struct mysmb_game *game)
+{
+    mysmb_u8 buffer_offset;
+    mysmb_u8 palette_offset;
+    mysmb_u8 rotation_offset;
+    mysmb_u8 area_type;
+
+    if ((game->ram[MYSMB_AREA_FRAME_COUNTER] & 7U) != 0U) return;
+    buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
+    if (buffer_offset >= 0x31U || game->area_prg == 0) return;
+    area_type = game->ram[MYSMB_AREA_TYPE];
+    if (area_type >= 4U || game->area_prg_size <= MYSMB_AREA_PALETTE3_DATA +
+        (mysmb_u16)area_type * 4U + 3U) return;
+    rotation_offset = game->ram[MYSMB_AREA_COLOR_ROTATE_OFFSET];
+    if (rotation_offset >= 6U || game->area_prg_size <=
+        MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset) return;
+    palette_offset = (mysmb_u8)(area_type * 4U);
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset)] = 0x3fU;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 1U)] = 0x0cU;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 2U)] = 4U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 3U)] =
+        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset)];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 4U)] =
+        game->area_prg[(mysmb_u16)(MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset)];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 5U)] =
+        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset + 2U)];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 6U)] =
+        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset + 3U)];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 7U)] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] =
+        (mysmb_u8)(buffer_offset + 7U);
+    rotation_offset++;
+    game->ram[MYSMB_AREA_COLOR_ROTATE_OFFSET] =
+        rotation_offset < 6U ? rotation_offset : 0U;
 }
 
 /* ROM QuestionBlock/BrickWithItem and the horizontal brick-row subset. */
