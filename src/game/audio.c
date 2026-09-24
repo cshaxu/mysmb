@@ -324,8 +324,10 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
     mysmb_u16 length_address;
     mysmb_u8 data;
 
-    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U ||
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U ||
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U &&
+         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC) ||
+        (game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U &&
+         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC) ||
         game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER]--;
     if (game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] != 0U) return;
@@ -354,8 +356,10 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     mysmb_u8 data;
     mysmb_u8 length_index;
 
-    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U ||
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U ||
+    if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U &&
+         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC) ||
+        (game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U &&
+         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != MYSMB_EVENT_DEATH_MUSIC) ||
         game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER]--;
     if (game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] != 0U) return;
@@ -379,8 +383,13 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] = game->area_prg[length_address];
     /* SetFreq_Squ1 returns zero for a rest, bypassing LoadControlRegs. */
     if (game->ram[MYSMB_RAM_SQUARE1_BUFFER] == 0U) {
-        game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
-            mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
+        if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
+            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] = 0x28U;
+        }
+        else {
+            game->ram[MYSMB_RAM_SQUARE1_ENVELOPE] =
+                mysmb_audio_note_is_audible(game, data) != 0U ? 8U : 0U;
+        }
     }
 }
 /* ROM HandleNoiseMusic through NoiseBeatHandler, excluding APU writes. */
