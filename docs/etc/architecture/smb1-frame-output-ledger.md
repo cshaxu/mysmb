@@ -801,3 +801,30 @@ The owner-local 0--239 Start route reduced palette byte differences from
 CIRAM, and PPU-scalar window. The remaining title/intermediate palette
 differences are separate screen-task and title-path owners; they are not
 hidden by a direct header write.
+
+## T10 S1 P39 Title VRAM Task And NMI Route
+
+The product Win32 composition root no longer writes title commands directly to
+the portable name tables. It binds its owner-local title streams and begins
+the translated title ScreenRoutines route. Task 12 copies the title stream to
+the original CPU-RAM title buffer, selects address-control 5, and the next
+translated NMI transfers that buffer. Task 13 clears the same buffer space,
+queues the player-selection icon in the normal VRAM buffer, and the following
+NMI consumes that command. Task 14 then hands control to the title menu.
+
+The local bootstrap smoke drives the route through its source timer waits and
+proves all three boundaries: address-control 5 is observed, the icon buffer
+is queued, and the resulting state is title-menu mode. The frame summary and
+trace recorder intentionally retain their prebuilt-title harness because the
+current admitted reference script starts at that phase. They are validation
+tools, never the product path, and this change makes no title-frame equality
+claim.
+
+### Similar-Issue Sweep
+
+The sweep covered every product consumer of the generated title data, every
+title command direct-write call, all address-control branches, and the local
+title tests. The Win32 product root is the only product consumer and now uses
+the staged route. Direct command application remains only in unit and
+validation harnesses whose stated phase is prebuilt title state. No host
+renderer, OAM producer, or runtime reference dependency was added.

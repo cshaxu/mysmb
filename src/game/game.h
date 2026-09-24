@@ -55,6 +55,12 @@ struct mysmb_game {
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;
+    /* Owner-local title streams.  The translated title tasks copy these
+     * into original CPU-RAM buffers before the NMI transfer consumes them. */
+    const mysmb_u8 *title_data;
+    mysmb_u16 title_data_size;
+    const mysmb_u8 *title_icon_data;
+    mysmb_u16 title_icon_data_size;
     mysmb_u8 area_command_count;
     struct mysmb_area_command area_commands[16];
 };
@@ -87,10 +93,18 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game);
 mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
                                         const mysmb_u8 *commands,
                                         mysmb_u16 command_size);
-/* Title compatibility entry point. */
+/* Test-only title compatibility entry point; product roots use the translated
+ * ScreenRoutines bootstrap below. */
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size);
+/* Owner-local bindings and the original title ScreenRoutines bootstrap. */
+void mysmb_game_bind_title_source(struct mysmb_game *game,
+                                  const mysmb_u8 *title_data,
+                                  mysmb_u16 title_data_size,
+                                  const mysmb_u8 *icon_data,
+                                  mysmb_u16 icon_data_size);
+mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game);
 void mysmb_game_initialize(struct mysmb_game *game);
 /* ROM $8231/$8245/$8255, title-menu state and title-to-game-mode transfer. */
 void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);

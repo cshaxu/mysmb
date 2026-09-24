@@ -83,6 +83,12 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
 static void mysmb_game_commit_display_state(struct mysmb_game *game);
 
+/* DrawTitleScreen copies this many bytes into CPU RAM $0300-$0439. */
+enum {
+    MYSMB_TITLE_BUFFER_SIZE = 0x013aU,
+    MYSMB_TITLE_ICON_BUFFER_OFFSET = 0x0301U
+};
+
 /* ROM title ScreenRoutines task 8 renders the title-demo area's lead-in
  * before DrawTitleScreen overlays its own stream.  Keep the title-menu task
  * owner intact after borrowing the shared area-output route. */
@@ -414,6 +420,10 @@ void mysmb_game_initialize(struct mysmb_game *game)
     mysmb_game_initialize_name_tables(game);
     game->area_prg = 0;
     game->area_prg_size = 0U;
+    game->title_data = 0;
+    game->title_data_size = 0U;
+    game->title_icon_data = 0;
+    game->title_icon_data_size = 0U;
     game->area_command_count = 0U;
     /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
@@ -494,13 +504,16 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
  * the following NMI to consume VRAM_Buffer1 before writing another stream. */
 static void mysmb_game_step_screen_routine(struct mysmb_game *game)
 {
+    mysmb_u16 index;
+
     switch (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]) {
     case 0U:
         mysmb_game_move_all_sprites_offscreen(game);
         mysmb_game_initialize_name_tables(game);
         /* ROM InitScreen selects the initial static palette through the
          * $0773 address-control table; the following NMI owns its transfer. */
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 3U;
+        if (game->ram[MYSMB_RAM_OPER_MODE] != 0U)
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 3U;
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 1U;
         break;
     case 1U:
@@ -568,6 +581,43 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         break;
     case 11U:
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 12U;
+        break;
+    case 12U:
+        if (game->ram[MYSMB_RAM_OPER_MODE] != 0U) {
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            break;
+        }
+        if (game->title_data == 0 ||
+            game->title_data_size != MYSMB_TITLE_BUFFER_SIZE) {
+            break;
+        }
+        for (index = 0U; index < MYSMB_TITLE_BUFFER_SIZE; ++index)
+            game->ram[(mysmb_u16)(0x0300U + index)] = game->title_data[index];
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 5U;
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 13U;
+        break;
+    case 13U:
+        if (game->ram[MYSMB_RAM_OPER_MODE] != 0U) {
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            break;
+        }
+        if (game->title_icon_data == 0 || game->title_icon_data_size == 0U ||
+            game->title_icon_data_size > 0x00ffU) {
+            break;
+        }
+        for (index = 0U; index < 0x0200U; ++index)
+            game->ram[(mysmb_u16)(0x0300U + index)] = 0U;
+        game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] = game->title_icon_data_size;
+        for (index = 0U; index < game->title_icon_data_size; ++index)
+            game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
+                game->title_icon_data[index];
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 14U;
+        break;
+    case 14U:
+        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U)
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+        else
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         break;
     default:
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
@@ -682,6 +732,12 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 5U) {
+        (void)mysmb_game_apply_vram_commands(game, &game->ram[0x0300U],
+                                              MYSMB_TITLE_BUFFER_SIZE);
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
+        return;
+    }
     if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U) return;
     (void)mysmb_game_apply_vram_commands(game,
         &game->ram[MYSMB_RAM_VRAM_BUFFER1], 0x0100U);
@@ -769,6 +825,40 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
     return 1U;
 }
 
+void mysmb_game_bind_title_source(struct mysmb_game *game,
+                                  const mysmb_u8 *title_data,
+                                  mysmb_u16 title_data_size,
+                                  const mysmb_u8 *icon_data,
+                                  mysmb_u16 icon_data_size)
+{
+    game->title_data = title_data;
+    game->title_data_size = title_data_size;
+    game->title_icon_data = icon_data;
+    game->title_icon_data_size = icon_data_size;
+}
+
+mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
+{
+    struct mysmb_area_source source;
+
+    if (game->area_prg == 0 || game->title_data == 0 ||
+        game->title_data_size != MYSMB_TITLE_BUFFER_SIZE ||
+        game->title_icon_data == 0 || game->title_icon_data_size == 0U) {
+        return 0U;
+    }
+    source.prg = game->area_prg;
+    source.prg_size = game->area_prg_size;
+    mysmb_area_initialize(game);
+    if (mysmb_area_load_pointers(game, &source) == 0U ||
+        mysmb_area_parse_header(game, &source) == 0U) {
+        return 0U;
+    }
+    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
+    return 1U;
+}
+
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {
@@ -802,7 +892,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             }
         }
     }
-    else if (mode_before == 1U && task_before == 1U && game->area_prg != 0) {
+    else if (((mode_before == 1U && task_before == 1U) ||
+              (mode_before == 0U && task_before == 1U)) &&
+             game->area_prg != 0) {
         mysmb_game_step_screen_routine(game);
     }
     else if (mode_before == 1U && task_before == 2U && game->area_prg != 0) {
