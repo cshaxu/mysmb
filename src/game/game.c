@@ -402,6 +402,15 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ram[0x0301U] = 0U;
     game->ram[0x073fU] = 0U;
     game->ram[0x0740U] = 0U;
+    /* InitializeNameTables sets the PPU pattern-table arrangement then
+     * InitScroll commits zero scroll.  Palette values remain the domain of
+     * ScreenRoutines/ColorRotation and are initialized separately by T10. */
+    game->ppu_control_0 = 0x10U;
+    game->ppu_mask = 0U;
+    game->ppu_name_table = 0U;
+    game->scroll_x = 0U;
+    game->scroll_y = 0U;
+    for (offset = 0U; offset < 0x20U; ++offset) game->palette[offset] = 0U;
 }
 
 /* Translation of the name-table portion of ROM $8e92-$8eec. */

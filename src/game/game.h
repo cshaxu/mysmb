@@ -37,6 +37,13 @@ struct mysmb_game {
     mysmb_u8 ram[0x0800U];
     /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
     mysmb_u8 name_table[2][0x0400U];
+    /* Translated PPU-visible output state; never a host PPU API. */
+    mysmb_u8 palette[0x20U];
+    mysmb_u8 ppu_control_0;
+    mysmb_u8 ppu_mask;
+    mysmb_u8 ppu_name_table;
+    mysmb_u8 scroll_x;
+    mysmb_u8 scroll_y;
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;
@@ -66,7 +73,7 @@ struct mysmb_checkpoint {
 void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 /* ROM $8220-$8230. */
 void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
-/* ROM $8e19-$8e5b. */
+/* ROM $8e19-$8e5b: name tables plus the committed output-state reset. */
 void mysmb_game_initialize_name_tables(struct mysmb_game *game);
 /* ROM $8e92-$8eec, limited to the title command stream's name-table writes. */
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,

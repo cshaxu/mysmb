@@ -46,13 +46,21 @@ void mysmb_frame_snapshot_capture(const struct mysmb_game *game,
     mysmb_frame_snapshot_copy(snapshot->cpu_ram, game->ram, 0x0800U);
     mysmb_frame_snapshot_copy(snapshot->name_table[0], game->name_table[0], 0x0400U);
     mysmb_frame_snapshot_copy(snapshot->name_table[1], game->name_table[1], 0x0400U);
+    mysmb_frame_snapshot_copy(snapshot->palette, game->palette, 0x20U);
     mysmb_frame_snapshot_copy(snapshot->oam,
                               &game->ram[MYSMB_SNAPSHOT_OAM_RAM], 0x0100U);
+    snapshot->ppu_control_0 = game->ppu_control_0;
+    snapshot->ppu_control_1 = game->ppu_control_0;
+    snapshot->ppu_name_table = game->ppu_name_table;
+    snapshot->scroll_x = game->scroll_x;
+    snapshot->scroll_y = game->scroll_y;
+    snapshot->ppu_mask = game->ppu_mask;
     for (index = 0U; index < MYSMB_FRAME_SNAPSHOT_AUDIO_BYTES; ++index) {
         snapshot->audio[index] = game->ram[audio_offsets[index]];
     }
     snapshot->captured_fields = (mysmb_u16)(MYSMB_FRAME_SNAPSHOT_CPU_RAM |
-        MYSMB_FRAME_SNAPSHOT_NAME_TABLES | MYSMB_FRAME_SNAPSHOT_OAM |
+        MYSMB_FRAME_SNAPSHOT_NAME_TABLES | MYSMB_FRAME_SNAPSHOT_PALETTE |
+        MYSMB_FRAME_SNAPSHOT_OAM | MYSMB_FRAME_SNAPSHOT_PPU_STATE |
         MYSMB_FRAME_SNAPSHOT_AUDIO);
 }
 

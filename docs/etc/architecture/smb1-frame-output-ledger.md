@@ -44,7 +44,7 @@ valid merely because its storage happens to be zero.
 | `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Partial**; title-only command stream is present. |
 | `$88ae-$89bd` | Area metatile rows and attributes | Dynamic name-table and attribute updates | **Missing**; current area code does not emit the original output buffers. |
 | `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Missing**; replacement logic retains collision state only. |
-| `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Partial**; initialization/title subset only. |
+| `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Partial**; `$8e19-$8e5b` initialization now reaches the snapshot, while dynamic transfer, scroll commit, and title/gameplay updates remain absent. |
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Partial**; parser state is translated, visible metatile output is not. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Missing**. |
