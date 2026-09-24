@@ -257,28 +257,39 @@ static void mysmb_win32_step(HWND window)
     if (elapsed < frame_period) return;
 
     input.buttons = 0U;
-    if ((GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) {
+    /* Virtual-key polling is layout-independent and is delivered by both a
+     * console session and RDP.  Keep the cursor/Z/X bindings as secondary
+     * compatibility keys; the documented controls are WASD, J/K, Enter and
+     * either Shift key. */
+    if ((GetAsyncKeyState('A') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_LEFT);
     }
-    if ((GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) {
+    if ((GetAsyncKeyState('D') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_RIGHT);
     }
-    if ((GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) {
+    if ((GetAsyncKeyState('S') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_DOWN);
     }
-    if ((GetAsyncKeyState(VK_UP) & 0x8000) != 0) {
+    if ((GetAsyncKeyState('W') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_UP) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_UP);
     }
     if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_START);
     }
-    if ((GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0) {
+    if ((GetAsyncKeyState(VK_LSHIFT) & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_RSHIFT) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_SELECT);
     }
-    if ((GetAsyncKeyState('Z') & 0x8000) != 0) {
+    if ((GetAsyncKeyState('J') & 0x8000) != 0 ||
+        (GetAsyncKeyState('Z') & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
     }
-    if ((GetAsyncKeyState('X') & 0x8000) != 0) {
+    if ((GetAsyncKeyState('K') & 0x8000) != 0 ||
+        (GetAsyncKeyState('X') & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
     }
     steps = 0U;
