@@ -939,8 +939,11 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
              game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 6U) {
         mysmb_game_lose_life(game);
     }
-    else if (mode_before == 1U &&
-             (task_before == 3U || (task_before == 1U && game->area_prg == 0))) {
+    else if ((mode_before == 1U &&
+              (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
+             (mode_before == 0U && task_before == 3U &&
+              game->ram[MYSMB_RAM_OPER_MODE] == 0U &&
+              game->ram[MYSMB_RAM_OPER_MODE_TASK] == 3U)) {
         if (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] == 3U &&
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;

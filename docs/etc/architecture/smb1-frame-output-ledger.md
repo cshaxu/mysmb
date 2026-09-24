@@ -941,3 +941,19 @@ boundary, verifies the existing ordinary palette transfer, then applies each
 of controls 9--11 through the same portable palette state. It also rejects
 the adjacent non-special controls. The test compares only outcomes within the
 locally generated binding and retains no ROM palette bytes or derived output.
+
+## T10 S1 P48 Title Menu GameCore Dispatch
+
+After `WriteTopScore` hands title mode to its menu task, the source menu
+routine continues into `GameCoreRoutine` on every non-start frame. Native C
+had returned after latching title input, leaving its entrance dispatcher and
+then display-state writers behind the source. The existing game-core route now
+also runs when title mode remains in menu task 3 after input handling; a Start
+transition remains excluded from that frame, matching the source branch.
+
+An owner-local 80-sample cold-start comparison keeps the title scheduler
+bytes aligned and reduces the persistent PPU-control mismatch from 55 samples
+to one title-transfer boundary sample. The title-bootstrap smoke now requires
+the translated GameCore dispatcher to advance after the menu handoff. Remaining
+title palette, CIRAM, display-mask, and OAM differences are retained as open
+owners; this is not a frame-equivalence claim.
