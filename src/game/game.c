@@ -70,6 +70,21 @@ static void mysmb_game_step_victory(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
 
+/* The 2C02 mirrors sprite entries $3f10/$14/$18/$1c onto the matching
+ * universal/background entries.  The portable snapshot deliberately keeps
+ * all 32 backing bytes, so the four mirrored source slots remain untouched. */
+static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
+{
+    mysmb_u8 offset;
+
+    offset = (mysmb_u8)(address & 0x001fU);
+    if (offset == 0x10U || offset == 0x14U || offset == 0x18U ||
+        offset == 0x1cU) {
+        offset = (mysmb_u8)(offset - 0x10U);
+    }
+    return offset;
+}
+
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
 static void mysmb_game_tick_player_timers(struct mysmb_game *game)
@@ -350,6 +365,9 @@ void mysmb_game_initialize(struct mysmb_game *game)
     for (index = 0U; index < 0x0800U; ++index) {
         game->ram[index] = 0xffU;
     }
+    for (index = 0U; index < 0x0020U; ++index) {
+        game->palette[index] = 0U;
+    }
     mysmb_game_initialize_memory(game, 0xfeU);
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
@@ -554,7 +572,7 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             offset = (mysmb_u16)(address & 0x03ffU);
         }
         else {
-            offset = (mysmb_u16)(address & 0x001fU);
+            offset = mysmb_game_palette_offset(address);
         }
         value = commands[(mysmb_u16)(cursor + 3U)];
         for (index = 0U; index < count; ++index) {

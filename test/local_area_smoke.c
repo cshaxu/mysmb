@@ -152,10 +152,11 @@ int main(void)
         game.ram[0x0306U] != mysmb_local_prg[0x05e1U] ||
         game.ram[0x0307U] != mysmb_local_prg[0x05e2U]) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
-        game.palette[0x10U] != mysmb_local_prg[0x05d0U] ||
+        game.palette[0U] != mysmb_local_prg[0x05d0U] ||
         game.palette[0x11U] != mysmb_local_prg[0x05e0U] ||
         game.palette[0x12U] != mysmb_local_prg[0x05e1U] ||
-        game.palette[0x13U] != mysmb_local_prg[0x05e2U]) return 1;
+        game.palette[0x13U] != mysmb_local_prg[0x05e2U] ||
+        game.palette[0x10U] != 0U) return 1;
     game.ram[0x0300U] = 0U;
     if (mysmb_area_sync_player_palette(&game) != 0U || game.ram[0x0300U] != 0U)
         return 1;

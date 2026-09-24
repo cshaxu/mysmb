@@ -449,7 +449,7 @@ mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
         game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
     if (background_index >= 8U || game->area_prg_size <=
         MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
-    if (game->palette[0x10U] ==
+    if (game->palette[0U] ==
         game->area_prg[MYSMB_AREA_BACKGROUND_COLORS + background_index] &&
         game->palette[0x11U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 1U] &&
         game->palette[0x12U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 2U] &&

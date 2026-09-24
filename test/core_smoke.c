@@ -19,6 +19,10 @@ int main(void)
         0x20U, 0x00U, 0x02U, 0x11U, 0x12U,
         0x20U, 0x21U, 0xc2U, 0x33U, 0x00U
     };
+    const mysmb_u8 palette_commands[] = {
+        0x3fU, 0x10U, 0x04U, 0x26U, 0x16U, 0x27U, 0x18U,
+        0x3fU, 0x14U, 0x01U, 0x30U, 0x00U
+    };
     unsigned int index;
 
     for (index = 0U; index < sizeof(area_prg); ++index) {
@@ -46,6 +50,15 @@ int main(void)
     area_source.prg_size = (mysmb_u16)sizeof(area_prg);
 
     mysmb_game_initialize(&game);
+    if (mysmb_game_apply_vram_commands(&game, palette_commands,
+            (mysmb_u16)sizeof(palette_commands)) == 0U ||
+        game.palette[0U] != 0x26U || game.palette[4U] != 0x30U ||
+        game.palette[0x11U] != 0x16U || game.palette[0x12U] != 0x27U ||
+        game.palette[0x13U] != 0x18U || game.palette[0x10U] != 0U ||
+        game.palette[0x14U] != 0U || game.palette[0x18U] != 0U ||
+        game.palette[0x1cU] != 0U) {
+        return 1;
+    }
     mysmb_render_build(&game, &render_frame);
     if (render_frame.command_count != MYSMB_RENDER_TILE_ROWS ||
         render_frame.commands[0].kind != MYSMB_RENDER_COMMAND_TILE_ROW ||
