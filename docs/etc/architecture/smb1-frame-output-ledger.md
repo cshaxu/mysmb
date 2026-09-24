@@ -192,3 +192,20 @@ byte's d6-d4 selector as a length or treating every rendered object as
 persistent. Small blocks and vertical columns now leave their slot at `ff`;
 horizontal rows retain the low-nibble length. Animated block effects, pipes,
 style objects, and special rows remain deferred.
+
+## T10 S1 P7 Vertical Pipe Metatiles
+
+The static `GetPipeHeight`/`VerticalPipe` metatile route (`$3837-$3894`) now
+uses its original fixed horizontal length of one, low-three-bit shaft height,
+and pipe-top/shaft table selection. The parser smoke test exercises the first
+pipe column from a `0x71` object byte and verifies both metatiles and slot
+countdown. Piranha-plant allocation and pipe transitions remain separate
+dynamic-object owners; the pipe handler is not yet connected to formal column
+output.
+
+### Similar-Issue Sweep
+
+Pipe processing was checked for incorrectly treating its low nibble as a
+generic row length, and for updating enemy state from a static renderer. The
+fixed-length parser slot and static metatiles are translated here. Dynamic
+piranha creation, sideways pipes, and transition semantics remain deferred.

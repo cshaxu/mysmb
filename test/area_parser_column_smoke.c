@@ -150,5 +150,16 @@ int main(void)
         game.ram[0x06a6U] != 0x51U || game.ram[0x06a7U] != 0x51U ||
         game.ram[0x06a8U] != 0x51U || game.ram[0x06a9U] != 0x51U ||
         game.ram[0x0732U] != 0xffU) return 1;
+
+    /* Vertical pipes are two parser columns wide and use the fixed length
+     * one slot convention before drawing their top and shaft metatiles. */
+    prg[0x0040U] = 0x67U;
+    prg[0x0041U] = 0x71U;
+    game.ram[0x0726U] = 6U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0x12U || game.ram[0x06a9U] != 0x14U ||
+        game.ram[0x0732U] != 0U) return 1;
     return 0;
 }

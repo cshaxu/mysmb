@@ -1164,9 +1164,9 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
  * ProcessAreaData. It intentionally stops before JumpEngine: each object
  * family must own its own metatile writes. The result is the original three
  * slot state ($072d/$0730), page selector, and stream offset. */
-/* ROM $4054-$4077 RowOfBricks/RowOfSolidBlocks. The caller has already
- * admitted the object to a persistent parser slot and filled the terrain
- * column; these handlers overwrite only the selected metatile row. */
+/* ROM $4014-$4091 static object handlers. The caller has already admitted the
+ * object to a persistent parser slot and filled the terrain column; these
+ * handlers overwrite only its selected metatile rows. */
 static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 slot,
                                            mysmb_u8 first,
@@ -1178,6 +1178,9 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
     static const mysmb_u8 block[10] = {
         0U, 0U, 0U, 0U, 0x55U, 0x56U, 0x57U, 0x58U, 0x59U, 0U
+    };
+    static const mysmb_u8 pipe[8] = {
+        0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
     mysmb_u8 row;
     mysmb_u8 kind;
@@ -1210,6 +1213,30 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         if (kind == 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = brick[area_type];
         else if (kind == 3U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = solid[area_type];
         else game->ram[MYSMB_AREA_METATILE_BUFFER + row] = coin[area_type];
+        return;
+    }
+    if (kind == 7U) {
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 1U;
+        value = (mysmb_u8)(second & 0x07U);
+        if ((second & 0x08U) == 0U) value = (mysmb_u8)(value + 4U);
+        if (value > 5U) return;
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = pipe[value];
+        if (row == 12U) return;
+        row++;
+        value = pipe[(mysmb_u8)(value + 2U)];
+        height = (mysmb_u8)(second & 0x07U);
+        if (height == 0U) height = (mysmb_u8)(12U - row);
+        else height--;
+        do {
+            existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
+            if (existing != 0x17U && existing != 0x1aU && existing != 0xc0U &&
+                existing != 0x4cU && existing != 0x50U)
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
+            if (row == 12U || height == 0U) break;
+            row++;
+            height--;
+        } while (1);
         return;
     }
     if (kind != 5U && kind != 6U) return;
