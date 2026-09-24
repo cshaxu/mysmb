@@ -51,7 +51,7 @@ valid merely because its storage happens to be zero.
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Missing**. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
 | `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
-| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball OAM is translated; explosion, firebar, bubble, and other effects remain T11 work. |
+| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball and fireball-explosion OAM are translated; firebar, bubble, and other effects remain T11 work. |
 | `$ee17-$f2cf` | Player tile table, action selection, player draw, and common sprite-row writer | Player/intermediate OAM tiles, attributes, priority, and animation | **Missing**. |
 
 ## Current Product Disqualification
@@ -1476,3 +1476,13 @@ world-to-screen X coordinate, two-frame tile cadence, and eight-frame flip
 cadence. The ROM-free fireball OAM smoke verifies both visual phases. The
 four-sprite explosion route is deliberately deferred to the next T11 slice;
 firebar, bubble, and other effects remain open owners.
+
+## T11 S1 P8 Fireball-Explosion OAM
+
+`DrawExplosion_Fireball` now writes the original four-sprite square through
+`Alt_SprDataOffset`, with its three tile frames, mirrored attributes, and
+relative four-pixel expansion. The translation selects its frame from the
+pre-increment state, then stores the incremented state, matching the ROM's
+`LDA`/`INC` ordering. The fireball OAM smoke verifies the first explosion
+frame and its next state. Firebar, bubble, and fireworks remain separate T11
+owners.
