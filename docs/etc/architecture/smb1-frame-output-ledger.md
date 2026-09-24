@@ -39,7 +39,7 @@ valid merely because its storage happens to be zero.
 | `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Translated, partial OAM scope**; the source arithmetic, three-way rotation, and `Misc_SprDataOffset` derivation now write canonical OAM inputs. Draw families remain T11 work. |
 | `$8220-$8230` | Move all/all-but-sprite-zero sprites offscreen | OAM offscreen entries | **Translated, partial OAM scope**; both source loops write `$0200` backing state, which the NMI submission boundary transfers to canonical hardware OAM state. Draw families remain T11 work. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; the owner-local title generator extracts the icon's VRAM command and the title loader applies it after the title transfer. Its OAM-related title work remains T11 ownership. |
-| `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Missing**; logic explicitly excludes OAM. |
+| `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Translated, partial OAM scope**; FloateyNumbersRoutine writes its source-selected two-sprite score entries, while title and other screen-support sprites remain T11 work. |
 | `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Translated, background scope**; tasks 0--14, controls 1--18, player/background palettes, title transfer, and the mushroom alternate palette route have translated C owners. Sprite preparation remains T11 work. |
 | `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Translated, background scope**; title/status/live-number, intermediate, Time Up, Game Over, Warp, and parser-display commands use the source-shaped buffers and NMI transfer. Intermediate player sprites remain T11 work. |
 | `$88ae-$89bd` | Area metatile rows and attributes | Dynamic name-table and attribute updates | **Translated, background scope**; the incremental parser emits metatile rows, attributes, and buffer-two commands through the canonical snapshot. |
@@ -1447,3 +1447,13 @@ PPU-visible scalar fields remain exact. This resolves P3's eleven
 DMA-boundary-only samples; unimplemented OAM writer families remain open and
 no M2 or renderer closure is claimed. Raw captures were deleted after the
 neutral comparison summary.
+
+## T11 S1 P5 Floatey-Number OAM
+
+`FloateyNumbersRoutine` at `$84c3-$8566` now preserves its two-sprite score
+entry: regular and alternate OAM-group selection, timer and vertical motion,
+tile pairs, palette attributes, saved relative X coordinate, and the carry
+from `CMP #$18` into `SBC #$08`. The ROM-free floatey OAM smoke covers a tall
+enemy's regular group and an ordinary living enemy's alternate group, including
+the status-region carry case. Other enemy, item, projectile, block, and
+screen-support draw writers remain open T11 owners.
