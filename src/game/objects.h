@@ -23,6 +23,12 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
                                   mysmb_u8 power_up_type);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
+/* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
+void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM $dc71 BoundingBoxCore, shared by object collision routes. */
+void mysmb_objects_set_bounding_box(struct mysmb_game *game,
+                                    mysmb_u16 address, mysmb_u8 control,
+                                    mysmb_u8 x, mysmb_u8 y);
 /* ROM EnemyGfxHandler, currently Goomba row-draw subset. */
 void mysmb_objects_draw_goombas(struct mysmb_game *game);
 /* ROM EnemiesCollision/ProcEnemyCollisions for regular enemy slots. */

@@ -2069,3 +2069,12 @@ The ROM listing and native references to `RunNormalEnemies`,
 `$03d8`, and `EnemyBoundingBoxCoord` were reviewed. Normal enemies now own the
 same mask-to-box transition as the source. Dedicated power-up, projectile,
 platform, and special-enemy paths retain their distinct bounding-box owners.
+## T11 S1 P14 16-Bit Code-Segment Split
+
+The GetEnemyBoundBox translation is compiled in src/game/enemy_bounds.c;
+BoundingBoxCore remains a shared C90 routine. This preserves the ROM's
+negative-page BMI path ($44 mask) while keeping objects.c below the OpenNT
+16-bit compiler's 64 KiB code-segment limit. The normal-enemy collision smoke
+now asserts the source trace's $03d8=$08 and $04b0-$04b3=$ff result. The
+380-sample trace remains at 392 working-range byte differences; all
+PPU-visible output remains exact.
