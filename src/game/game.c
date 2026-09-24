@@ -45,6 +45,7 @@ enum {
     MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU,
     MYSMB_RAM_HORIZONTAL_SCROLL = 0x073fU,
     MYSMB_RAM_VERTICAL_SCROLL = 0x0740U,
+    MYSMB_RAM_BACKGROUND_COLOR = 0x0744U,
     MYSMB_RAM_AREA_TYPE = 0x074eU
 };
 
@@ -505,6 +506,8 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
 static void mysmb_game_step_screen_routine(struct mysmb_game *game)
 {
     mysmb_u16 index;
+    mysmb_u8 saved_background_color;
+    mysmb_u8 saved_player_status;
 
     switch (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]) {
     case 0U:
@@ -517,7 +520,15 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 1U;
         break;
     case 1U:
+        /* ROM SetupIntermediate temporarily uses the standard player colors
+         * and background-color control 2 before restoring title/area state. */
+        saved_background_color = game->ram[MYSMB_RAM_BACKGROUND_COLOR];
+        saved_player_status = game->ram[MYSMB_RAM_PLAYER_STATUS];
+        game->ram[MYSMB_RAM_BACKGROUND_COLOR] = 2U;
+        game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
         (void)mysmb_area_queue_player_palette(game);
+        game->ram[MYSMB_RAM_PLAYER_STATUS] = saved_player_status;
+        game->ram[MYSMB_RAM_BACKGROUND_COLOR] = saved_background_color;
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 2U;
         break;
     case 2U:

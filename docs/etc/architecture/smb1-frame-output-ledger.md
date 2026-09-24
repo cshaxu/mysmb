@@ -897,3 +897,15 @@ This is the first direct product-startup comparison; it disproves any claim
 that title menu input readiness establishes title-output equality. The bounded
 raw traces were deleted in the comparison command. The remaining title-task
 and palette route is T10 work; OAM differences remain T11 work.
+
+## T10 S1 P45 Title SetupIntermediate Palette State
+
+Title `SetupIntermediate` temporarily selects background-color control 2 and
+normal player status before it queues the player palette, then restores both
+state fields. The native title task now follows that sequence instead of
+using the area-header values directly.
+
+On the 80-sample cold-start comparison, palette differences fell from 77
+samples and 473 bytes to 61 samples and 457 bytes. The first palette
+difference remains at sample 2, so later title palette/task ordering is still
+open T10 work. The comparison traces were deleted immediately.
