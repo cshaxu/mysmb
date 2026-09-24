@@ -17,7 +17,8 @@ enum {
 
 void mysmb_objects_draw_goombas(struct mysmb_game *game)
 {
-    static const mysmb_u8 tiles[6] = { 0xfcU, 0xfcU, 0x70U, 0x71U, 0x72U, 0x73U };
+    static const mysmb_u8 normal_tiles[6] = { 0xfcU, 0xfcU, 0x70U, 0x71U, 0x72U, 0x73U };
+    static const mysmb_u8 defeated_tiles[6] = { 0xfcU, 0xfcU, 0xfcU, 0xfcU, 0xefU, 0xefU };
     mysmb_u8 slot;
     mysmb_u8 row;
     mysmb_u8 offset;
@@ -30,6 +31,8 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
     mysmb_u8 left;
     mysmb_u8 right;
     mysmb_u8 row_offset;
+    mysmb_u8 state;
+    const mysmb_u8 *tiles;
 
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
@@ -40,9 +43,15 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
                                game->ram[MYSMB_SCREEN_X]);
         x = (mysmb_u8)(world - screen);
         y = game->ram[MYSMB_ENEMY_Y + slot];
+        state = game->ram[MYSMB_ENEMY_STATE + slot];
+        tiles = normal_tiles;
+        if ((state & 0x1fU) >= 2U && (state & 0x20U) == 0U) {
+            tiles = defeated_tiles;
+            y--;
+        }
         offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
         direction = game->ram[MYSMB_ENEMY_DIRECTION + slot];
-        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) == 0U &&
+        if ((state & 0x20U) == 0U &&
             game->ram[MYSMB_TIMER_CONTROL] == 0U &&
             ((mysmb_u8)game->frame_number & 8U) == 0U) direction ^= 3U;
         attributes = (mysmb_u8)(3U | game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);

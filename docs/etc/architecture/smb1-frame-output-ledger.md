@@ -1503,8 +1503,9 @@ DrawBlock and DrawBrickChunks now have a separate portable C owner to preserve t
 ## T11 S1 P11 Goomba OAM
 
 The portable Goomba writer now follows the ROM graphics table and the
-`CheckForGoomba`/row-draw path. It writes all six tiles into the enemy slot's
-three OAM rows, uses the ROM palette base and horizontal mirror behavior, and
-computes X from the world and screen positions. The smoke test compares all
-24 OAM bytes in both flipped and normal animation phases; the remaining enemy
-families are separate T11 owners.
+CheckForGoomba/row-draw path. It writes all six tiles into the enemy slot's
+three OAM rows, including the stomped-goomba record and its one-pixel Y shift,
+uses the ROM palette base and horizontal mirror behavior, and computes X from
+the world and screen positions. The smoke test compares all 24 OAM bytes in
+flipped, normal, and stomped animation states; the remaining enemy families are
+separate T11 owners.
