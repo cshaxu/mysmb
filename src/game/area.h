@@ -38,6 +38,8 @@ mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game);
 mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector);
 /* ROM $85f1-$863c: append the current player's sprite-palette command. */
 mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game);
+/* Queue the player palette only when PPU-visible state differs from the ROM result. */
+mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game);
 /* Advance the two-page collision window to the player page. */
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page);
 /* ROM AreaParserCore initial object pass for the two prepared block pages. */

@@ -433,6 +433,31 @@ mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game)
     return 1U;
 }
 
+/* The main game path uses this after a player-state update.  It avoids
+ * host-invented timing by emitting the same command only when the canonical
+ * PPU palette still differs from the ROM-selected four bytes. */
+mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
+{
+    mysmb_u8 color_offset;
+    mysmb_u8 background_index;
+
+    if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_PLAYER_COLORS + 11U)
+        return 0U;
+    color_offset = game->ram[MYSMB_AREA_CURRENT_PLAYER] == 0U ? 0U : 4U;
+    if (game->ram[0x0756U] == 2U) color_offset = 8U;
+    background_index = game->ram[MYSMB_AREA_BACKGROUND_COLOR] != 0U ?
+        game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
+    if (background_index >= 8U || game->area_prg_size <=
+        MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
+    if (game->palette[0x10U] ==
+        game->area_prg[MYSMB_AREA_BACKGROUND_COLORS + background_index] &&
+        game->palette[0x11U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 1U] &&
+        game->palette[0x12U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 2U] &&
+        game->palette[0x13U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 3U])
+        return 0U;
+    return mysmb_area_queue_player_palette(game);
+}
+
 /* ROM QuestionBlock/BrickWithItem and the horizontal brick-row subset. */
 static void mysmb_area_apply_single_block(struct mysmb_game *game,
                                           const struct mysmb_area_object *object)

@@ -154,6 +154,12 @@ int main(void)
         game.palette[0x11U] != mysmb_local_prg[0x05e0U] ||
         game.palette[0x12U] != mysmb_local_prg[0x05e1U] ||
         game.palette[0x13U] != mysmb_local_prg[0x05e2U]) return 1;
+    game.ram[0x0300U] = 0U;
+    if (mysmb_area_sync_player_palette(&game) != 0U || game.ram[0x0300U] != 0U)
+        return 1;
+    game.ram[0x0756U] = 0U;
+    if (mysmb_area_sync_player_palette(&game) == 0U || game.ram[0x0300U] != 7U ||
+        game.ram[0x0305U] != mysmb_local_prg[0x05dcU]) return 1;
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);

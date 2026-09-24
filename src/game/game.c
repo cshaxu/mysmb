@@ -648,6 +648,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_blocks(game);
         mysmb_objects_step_misc(game);
         mysmb_area_step_palette_rotation(game);
+        (void)mysmb_area_sync_player_palette(game);
         /* ROM GameEngine's SaveAB tail clears the transient directional
          * partition after object collisions.  In particular, a collision
          * that selects PlayerDeath leaves its following physics frame with
