@@ -767,6 +767,12 @@ the source has just written `$2005/$2000`, so `t` is its next-frame committed
 scroll/name-table state. The leading reference PPU revision and native tick
 sequence are labels, not output bytes, and are therefore not compared.
 
+The comparison report also splits CPU RAM into zero page, 6502 stack,
+OAM-backed RAM, and `$0300-$07ff` working RAM. Stack bytes are reported for
+trace transparency but are not a translated persistent-state target; the
+other three groups retain source ownership and must be assigned before M2
+closure.
+
 On the admitted 380-sample Start/right route, title samples 0--41 still have
 background differences. Samples 42--379 have exact CIRAM pages; samples
 240--379 have exact palette and all PPU scalar state, including the reconstructed

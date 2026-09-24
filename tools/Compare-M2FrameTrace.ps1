@@ -62,6 +62,10 @@ if ($StartSample -lt 0 -or $EndSample -lt $StartSample -or
     $EndSample -ge $reference.Count) { throw 'Sample range is outside the trace.' }
 
 $ram = New-M2Result 'cpu-ram'
+$zeroPage = New-M2Result 'cpu-zero-page'
+$stack = New-M2Result 'cpu-stack'
+$oamRam = New-M2Result 'cpu-oam-ram'
+$workRam = New-M2Result 'cpu-work-0300-07ff'
 $nameTable0 = New-M2Result 'ciram-page-0'
 $nameTable1 = New-M2Result 'ciram-page-1'
 $palette = New-M2Result 'palette'
@@ -80,6 +84,10 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     # Both traces reserve four leading ordinal bytes.  They are timing labels,
     # not comparable output because a native tick has no physical PPU revision.
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 4) ($record + 4) 2048 $sample $ram
+    Compare-M2Range $reference.Bytes $native.Bytes ($record + 4) ($record + 4) 256 $sample $zeroPage
+    Compare-M2Range $reference.Bytes $native.Bytes ($record + 260) ($record + 260) 256 $sample $stack
+    Compare-M2Range $reference.Bytes $native.Bytes ($record + 516) ($record + 516) 256 $sample $oamRam
+    Compare-M2Range $reference.Bytes $native.Bytes ($record + 772) ($record + 772) 1280 $sample $workRam
     # SMB1 mapper 0 is vertically mirrored: the two physical CIRAM pages map
     # directly to MySMB's two canonical name tables.
     Compare-M2Range $reference.Bytes $native.Bytes ($record + 2052) ($record + 2052) 1024 $sample $nameTable0
@@ -96,5 +104,6 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     StartSample = $StartSample
     EndSample = $EndSample
     Mirroring = $Mirroring
-    Results = @($ram, $nameTable0, $nameTable1, $palette, $oam) + $ppu
+    Results = @($ram, $zeroPage, $stack, $oamRam, $workRam, $nameTable0,
+        $nameTable1, $palette, $oam) + $ppu
 } | ConvertTo-Json -Depth 3
