@@ -32,6 +32,7 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
     mysmb_u8 right;
     mysmb_u8 row_offset;
     mysmb_u8 state;
+    mysmb_u8 offscreen;
     const mysmb_u8 *tiles;
 
     for (slot = 0U; slot < 5U; ++slot) {
@@ -43,6 +44,10 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
                                game->ram[MYSMB_SCREEN_X]);
         x = (mysmb_u8)(world - screen);
         y = game->ram[MYSMB_ENEMY_Y + slot];
+        /* DrawEnemyObject keeps tiles and attributes for an offscreen object,
+         * but Enemy_OffscreenBits masks every sprite-row Y coordinate. */
+        offscreen = world < screen || world >= (mysmb_u16)(screen + 0x0100U) ?
+            1U : 0U;
         state = game->ram[MYSMB_ENEMY_STATE + slot];
         tiles = normal_tiles;
         if ((state & 0x1fU) >= 2U && (state & 0x20U) == 0U) {
@@ -70,8 +75,10 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
                 game->ram[0x0202U + row_offset] = attributes;
                 game->ram[0x0206U + row_offset] = attributes;
             }
-            game->ram[0x0200U + row_offset] = (mysmb_u8)(y + row * 8U);
-            game->ram[0x0204U + row_offset] = (mysmb_u8)(y + row * 8U);
+            game->ram[0x0200U + row_offset] = offscreen != 0U ? 0xf8U :
+                (mysmb_u8)(y + row * 8U);
+            game->ram[0x0204U + row_offset] = offscreen != 0U ? 0xf8U :
+                (mysmb_u8)(y + row * 8U);
             game->ram[0x0203U + row_offset] = x;
             game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
         }

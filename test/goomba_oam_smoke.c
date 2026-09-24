@@ -39,5 +39,20 @@ int main(void)
             if (game.ram[0x0220U + i] != expected[i]) return 1;
         }
     }
+    mysmb_game_initialize(&game);
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 6U;
+    game.ram[0x0046U] = 2U;
+    game.ram[0x006eU] = 1U;
+    game.ram[0x0087U] = 0x60U;
+    game.ram[0x00cfU] = 0xb8U;
+    game.ram[0x03c5U] = 0x24U;
+    game.ram[0x06e5U] = 0x20U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071cU] = 0x30U;
+    mysmb_objects_draw_goombas(&game);
+    for (i = 0U; i < 24U; i = (mysmb_u8)(i + 4U)) {
+        if (game.ram[0x0220U + i] != 0xf8U) return 1;
+    }
     return 0;
 }

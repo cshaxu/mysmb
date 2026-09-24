@@ -959,6 +959,9 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (id > 6U && id != 18U) || id == 5U ||
             (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) continue;
+        /* RunNormalEnemies clears Enemy_SprAttrib before EnemyGfxHandler
+         * selects the ID-specific palette and any required flip bit. */
+        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
             game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =

@@ -1539,3 +1539,18 @@ through sample 284. The first real gameplay OAM difference is sprite 12 at
 sample 285, leaving the enemy lifecycle/draw owner open. CPU RAM still differs
 in source scratch, stack, and untranslated working-state bytes, so this is
 valid output evidence only and does not close M2.
+
+## T11 S1 P12 Goomba Offscreen Rows
+
+`RunNormalEnemies` clears `Enemy_SprAttrib` before `EnemyGfxHandler` selects
+the Goomba palette, and `DrawEnemyObject` writes `$f8` to every OAM row when
+`Enemy_OffscreenBits` marks the object beyond a horizontal screen edge. The
+portable normal-enemy and Goomba paths now preserve those two dependencies.
+The Goomba smoke includes a right-edge offscreen object with stale attributes.
+
+Against the corrected 380-sample Start/Right trace, OAM differences in samples
+280--379 fell from 2,712 to 864 bytes. The first remaining byte is the
+newborn Goomba's relative X coordinate, which is one pixel behind the ROM
+because the C path has not yet translated `RelativeEnemyPosition`'s pre-scroll
+frame ordering. All CIRAM, palette, and PPU-visible scalar results remain
+exact; this is an incremental T11 result, not M2 closure.
