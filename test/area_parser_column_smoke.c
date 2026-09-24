@@ -208,5 +208,15 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 2U) return 1;
+
+    /* Row 13 flagpole uses its low-six-bit special-object code. */
+    prg[0x0040U] = 0x0dU;
+    prg[0x0041U] = 0x41U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a1U] != 0x24U || game.ram[0x06a2U] != 0x25U ||
+        game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 0xffU) return 1;
     return 0;
 }

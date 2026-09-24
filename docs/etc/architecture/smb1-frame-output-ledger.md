@@ -254,3 +254,17 @@ The dispatcher was checked for a generic row-range rejection masking the
 row-15 JumpEngine table. It now rejects only unimplemented rows 13 and 14.
 Row-15 rope and staircase paths are explicit. Castle, exit-pipe, and dynamic
 balance-platform behavior remain deferred.
+
+## T10 S1 P11 Row-13 Flagpole Metatiles
+
+The row-13 low-six-bit object table now translates the static `FlagpoleObject`
+metatile writes at `$3966-$3974`: ball, shaft, and base. Its owner-specific
+flag object, floatey number, and score state remain dynamic-object work. The
+parser smoke test verifies row-13 code one cannot fall through the ordinary
+object selector table.
+
+### Similar-Issue Sweep
+
+Row-13 parsing was checked for interpreting d6-d4 as a normal object family.
+The static flagpole now dispatches by its dedicated object code. Intro pipe,
+axe, castle bridge, and frenzy objects remain deferred.

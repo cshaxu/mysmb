@@ -1199,7 +1199,19 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
-    if (row == 13U || row == 14U) return;
+    if (row == 13U) {
+        /* Row 13 has a dedicated low-six-bit object table. FlagpoleObject
+         * writes the static ball, shaft, and base; its flag/enemy state is
+         * a separate dynamic owner. */
+        if ((second & 0x7fU) == 0x41U) {
+            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x24U;
+            for (row = 1U; row < 10U; ++row)
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x25U;
+            game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x61U;
+        }
+        return;
+    }
+    if (row == 14U) return;
     area_type = game->ram[MYSMB_AREA_TYPE];
     if (area_type >= 4U) return;
     /* Rows 12-15 select a different JumpEngine table.  In particular, the
