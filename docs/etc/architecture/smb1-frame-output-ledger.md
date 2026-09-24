@@ -563,3 +563,14 @@ from 61 differences to one. The remaining byte is name-table zero offset
 `$062`, the leading Mario score-status tile, and is a separate status-number
 owner. Original and native temporary snapshots were deleted after producing
 this neutral result.
+
+## T10 S1 P29 Initial Name-Table Match
+
+`WriteBottomStatusLine` now applies the same first-score-zero blanking rule
+as `UpdateNumber`, replacing the emitted zero with tile `$24`. A fresh
+owner-local reference run with the admitted `40:0x08,42:0` Start script
+compared both 1024-byte name tables at frame 202 and found zero differences.
+This establishes the initial 1-1 background tile and attribute state at the
+declared NMI boundary; it does not establish palette, scroll, OAM, or later
+gameplay-frame equivalence. The temporary reference trace and native snapshot
+were deleted immediately after the neutral count.
