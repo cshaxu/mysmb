@@ -8,6 +8,9 @@ enum {
     MYSMB_ENEMY_PAGE = 0x006eU,
     MYSMB_ENEMY_X = 0x0087U,
     MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_RELATIVE_X = 0x03aeU,
+    MYSMB_ENEMY_RELATIVE_Y = 0x03b9U,
+    MYSMB_ENEMY_OFFSCREEN = 0x03d1U,
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_SPRITE_OFFSET = 0x06e5U,
     MYSMB_SCREEN_PAGE = 0x071aU,
@@ -44,10 +47,18 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
                                game->ram[MYSMB_SCREEN_X]);
         x = (mysmb_u8)(world - screen);
         y = game->ram[MYSMB_ENEMY_Y + slot];
-        /* DrawEnemyObject keeps tiles and attributes for an offscreen object,
-         * but Enemy_OffscreenBits masks every sprite-row Y coordinate. */
-        offscreen = world < screen || world >= (mysmb_u16)(screen + 0x0100U) ?
-            1U : 0U;
+        /* RunNormalEnemies preserves these pre-movement coordinates for the
+         * delayed portable OAM phase.  Direct OAM unit calls retain the raw
+         * world-coordinate fallback when no graphics phase has run. */
+        if (game->ram[MYSMB_ENEMY_RELATIVE_Y + slot] != 0U) {
+            x = game->ram[MYSMB_ENEMY_RELATIVE_X + slot];
+            y = game->ram[MYSMB_ENEMY_RELATIVE_Y + slot];
+            offscreen = game->ram[MYSMB_ENEMY_OFFSCREEN + slot] != 0U ? 1U : 0U;
+        }
+        else {
+            offscreen = world < screen || world >= (mysmb_u16)(screen + 0x0100U) ?
+                1U : 0U;
+        }
         state = game->ram[MYSMB_ENEMY_STATE + slot];
         tiles = normal_tiles;
         if ((state & 0x1fU) >= 2U && (state & 0x20U) == 0U) {

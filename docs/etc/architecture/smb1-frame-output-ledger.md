@@ -1554,3 +1554,18 @@ newborn Goomba's relative X coordinate, which is one pixel behind the ROM
 because the C path has not yet translated `RelativeEnemyPosition`'s pre-scroll
 frame ordering. All CIRAM, palette, and PPU-visible scalar results remain
 exact; this is an incremental T11 result, not M2 closure.
+
+## T11 S1 P13 Goomba Pre-Movement Coordinates
+
+The ROM calculates `Enemy_Rel_XPos` and `Enemy_Rel_YPos`, writes Goomba OAM,
+and only then executes `EnemyMovementSubs`. The portable normal-enemy path now
+captures those source-phase relative coordinates and offscreen bits before its
+movement step; the later Goomba OAM pass consumes that snapshot. The OAM smoke
+checks that a cached pre-movement right-edge coordinate controls the hidden
+sprite rows.
+
+On the corrected 380-sample Start/Right trace, CPU OAM-RAM differences in
+samples 280--379 fell from 864 to 12 bytes; hardware OAM differs in only four
+samples and twelve bytes, first at sample 312. CIRAM, palette, and all seven
+PPU-visible scalars remain exact throughout. The small remaining OAM set and
+full CPU-RAM ownership work keep M2 open.

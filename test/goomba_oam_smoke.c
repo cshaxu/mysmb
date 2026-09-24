@@ -46,6 +46,9 @@ int main(void)
     game.ram[0x006eU] = 1U;
     game.ram[0x0087U] = 0x60U;
     game.ram[0x00cfU] = 0xb8U;
+    game.ram[0x03aeU] = 0x2eU;
+    game.ram[0x03b9U] = 0xb8U;
+    game.ram[0x03d1U] = 0x0fU;
     game.ram[0x03c5U] = 0x24U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x071aU] = 0U;
@@ -54,5 +57,8 @@ int main(void)
     for (i = 0U; i < 24U; i = (mysmb_u8)(i + 4U)) {
         if (game.ram[0x0220U + i] != 0xf8U) return 1;
     }
+    if (game.ram[0x0223U] != 0x2eU || game.ram[0x0227U] != 0x36U ||
+        game.ram[0x022bU] != 0x2eU || game.ram[0x022fU] != 0x36U ||
+        game.ram[0x0233U] != 0x2eU || game.ram[0x0237U] != 0x36U) return 1;
     return 0;
 }
