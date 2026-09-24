@@ -468,10 +468,9 @@ void mysmb_game_initialize(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
     game->ram[MYSMB_RAM_WARM_BOOT_VALIDATION] = 0xa5U;
     game->ram[MYSMB_RAM_PSEUDORANDOM] = 0xa5U;
-    game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
-    game->ram[0x0754U] = 1U;
-    game->ram[0x075aU] = 2U;
-    game->ram[0x0761U] = 2U;
+    /* The first recorder-visible title NMI follows InitializeGame before the
+     * native tick decrements the title countdown. */
+    game->ram[MYSMB_RAM_DEMO_TIMER] = 0x19U;
     game->frame_number = 0UL;
 }
 

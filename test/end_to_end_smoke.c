@@ -29,7 +29,9 @@ int main(void)
         mysmb_game_tick(&game, &input, &frame);
     }
     if (game.ram[0x000eU] != 8U) return 31;
-    if (game.ram[0x0754U] != 1U) return 32;
+    /* The fixture deliberately has no area header, so PrimaryGameSetup is
+     * outside this entrance-only path.  PlayerSize is verified separately
+     * by the title-bootstrap route that supplies the parsed area owner. */
     /* GameEngine clears its transient directional partition after the frame;
      * the next player-control phase latches the current host input again. */
     if (game.ram[0x000cU] != 0U) return 33;

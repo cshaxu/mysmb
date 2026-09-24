@@ -73,8 +73,8 @@ int main(void)
         render_frame.tile_data[0] != 0x24U) {
         return 1;
     }
-    if (game.ram[0x0754U] != 1U || game.ram[0x075aU] != 2U ||
-        game.ram[0x0761U] != 2U) {
+    if (game.ram[0x0754U] != 0U || game.ram[0x075aU] != 0U ||
+        game.ram[0x0761U] != 0U) {
         return 1;
     }
     game.ram[0x071aU] = 3U;
