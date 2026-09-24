@@ -3,6 +3,7 @@
 
 #include "game/frame_snapshot.h"
 #include "smb1_local_rom.h"
+#include "smb1_local_title.h"
 
 static mysmb_u32 mysmb_summary_hash(const mysmb_u8 *bytes, mysmb_u16 count,
                                     mysmb_u32 value)
@@ -36,6 +37,9 @@ int main(int argument_count, char **arguments)
         release_frame > frames) return 64;
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    if (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
+                                        MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U)
+        return 65;
     printf("frame,mode,task,ppu_address,ciram_fnv1a,palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
         /* NES serial Start is bit 3; MySMB's decoded RAM representation is $10. */
