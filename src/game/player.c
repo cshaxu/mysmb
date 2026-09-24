@@ -1059,6 +1059,14 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
     }
     mysmb_player_clamp_screen_edge(game);
     game->ram[MYSMB_PLATFORM_X_SCROLL] = 0U;
+    /* ROM $8178 commits HorizontalScroll/VerticalScroll and the active name
+     * table during NMI.  Keep that portable output state with the translated
+     * scroll owner; host adapters only consume this committed record. */
+    game->scroll_x = game->ram[MYSMB_HORIZONTAL_SCROLL];
+    game->scroll_y = game->ram[0x0740U];
+    game->ppu_name_table = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] & 1U);
+    game->ppu_control_0 = (mysmb_u8)((game->ppu_control_0 & 0xfcU) |
+                                     game->ppu_name_table);
 }
 
 /* Translation of ROM $df4b-$df7d ImpedePlayerMove. */

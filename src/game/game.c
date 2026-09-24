@@ -414,9 +414,9 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
 }
 
 /* Translation of the name-table portion of ROM $8e92-$8eec. */
-mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
-                                         const mysmb_u8 *commands,
-                                         mysmb_u16 command_size)
+mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
+                                        const mysmb_u8 *commands,
+                                        mysmb_u16 command_size)
 {
     mysmb_u16 cursor;
     mysmb_u16 address;
@@ -440,17 +440,26 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
             (mysmb_u16)(3U + ((control & 0x40U) != 0U ? 1U : count))) {
             return 0U;
         }
-        if (address < 0x2000U || address >= 0x2800U) {
+        if ((address < 0x2000U || address >= 0x2800U) &&
+            (address < 0x3f00U || address >= 0x3f20U)) {
             return 0U;
         }
-        table = (mysmb_u8)((address - 0x2000U) / 0x0400U);
-        offset = (mysmb_u16)(address & 0x03ffU);
+        table = 0U;
+        offset = 0U;
+        if (address < 0x2800U) {
+            table = (mysmb_u8)((address - 0x2000U) / 0x0400U);
+            offset = (mysmb_u16)(address & 0x03ffU);
+        }
         value = commands[(mysmb_u16)(cursor + 3U)];
         for (index = 0U; index < count; ++index) {
-            if (offset >= 0x0400U) {
-                return 0U;
+            if (address >= 0x3f00U) {
+                if (offset >= 0x20U) return 0U;
+                game->palette[offset] = value;
             }
-            game->name_table[table][offset] = value;
+            else {
+                if (offset >= 0x0400U) return 0U;
+                game->name_table[table][offset] = value;
+            }
             if ((control & 0x80U) != 0U) {
                 offset = (mysmb_u16)(offset + 32U);
             }
@@ -465,6 +474,13 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                               ((control & 0x40U) != 0U ? 1U : count));
     }
     return cursor < command_size ? 1U : 0U;
+}
+
+mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
+                                         const mysmb_u8 *commands,
+                                         mysmb_u16 command_size)
+{
+    return mysmb_game_apply_vram_commands(game, commands, command_size);
 }
 
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,

@@ -19,7 +19,11 @@ enum {
     MYSMB_AREA_OPER_MODE_TASK = 0x0772U,
     MYSMB_AREA_BLOCK_COLUMN = 0x06a0U,
     MYSMB_AREA_METATILE_LOW = 0x0b08U,
-    MYSMB_AREA_METATILE_HIGH = 0x0b0cU
+    MYSMB_AREA_METATILE_HIGH = 0x0b0cU,
+    MYSMB_AREA_WATER_PALETTE = 0x0ca4U,
+    MYSMB_AREA_GROUND_PALETTE = 0x0cc8U,
+    MYSMB_AREA_UNDERGROUND_PALETTE = 0x0cecU,
+    MYSMB_AREA_CASTLE_PALETTE = 0x0d10U
 };
 
 enum {
@@ -137,8 +141,8 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
 /* ROM $88ae-$8990 RenderAreaGraphics/RenderAttributeTables.  The collision
  * block buffer stores a 16-by-13 metatile page; the original graphics tables
  * at $8b08 select four CHR tile numbers for each encoded metatile. */
-static void mysmb_area_render_background_page(struct mysmb_game *game,
-                                              mysmb_u8 page)
+void mysmb_area_refresh_background_page(struct mysmb_game *game,
+                                        mysmb_u8 page)
 {
     mysmb_u8 column;
     mysmb_u8 row;
@@ -257,7 +261,7 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
         game->area_command_count++;
     }
     mysmb_area_apply_single_block(game, &object);
-    mysmb_area_render_background_page(game, object.page);
+    mysmb_area_refresh_background_page(game, object.page);
     return 1U;
 }
 
@@ -540,6 +544,10 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
 mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source)
 {
+    static const mysmb_u16 palette_offsets[4] = {
+        MYSMB_AREA_WATER_PALETTE, MYSMB_AREA_GROUND_PALETTE,
+        MYSMB_AREA_UNDERGROUND_PALETTE, MYSMB_AREA_CASTLE_PALETTE
+    };
     mysmb_u16 address;
     mysmb_u8 first;
     mysmb_u8 second;
@@ -565,6 +573,11 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
     value = (mysmb_u8)(second >> 6U);
     game->ram[MYSMB_AREA_CLOUD_OVERRIDE] = value == 3U ? value : 0U;
     game->ram[MYSMB_AREA_STYLE] = value == 3U ? 0U : value;
+    value = game->ram[MYSMB_AREA_TYPE];
+    if (value < 4U && palette_offsets[value] < source->prg_size) {
+        (void)mysmb_game_apply_vram_commands(game, &source->prg[palette_offsets[value]],
+            (mysmb_u16)(source->prg_size - palette_offsets[value]));
+    }
     address = (mysmb_u16)(address + 2U);
     game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
     game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));
@@ -643,13 +656,13 @@ void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_pa
     while (game->ram[MYSMB_AREA_CURRENT_PAGE] < player_page) {
         game->ram[MYSMB_AREA_CURRENT_PAGE]++;
         mysmb_area_render_terrain_page(game, game->ram[MYSMB_AREA_CURRENT_PAGE]);
-        mysmb_area_render_background_page(game, game->ram[MYSMB_AREA_CURRENT_PAGE]);
+        mysmb_area_refresh_background_page(game, game->ram[MYSMB_AREA_CURRENT_PAGE]);
         if (game->ram[MYSMB_AREA_CURRENT_PAGE] == 1U) {
             mysmb_area_render_initial_objects(game);
         }
         mysmb_area_render_terrain_page(game,
                                        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] + 1U));
-        mysmb_area_render_background_page(game,
+        mysmb_area_refresh_background_page(game,
             (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] + 1U));
     }
 }
@@ -677,8 +690,8 @@ void mysmb_area_render_initial_objects(struct mysmb_game *game)
         if (object.page == 1U && object.column > 8U) continue;
         mysmb_area_apply_single_block(game, &object);
     }
-    mysmb_area_render_background_page(game, 0U);
-    mysmb_area_render_background_page(game, 1U);
+    mysmb_area_refresh_background_page(game, 0U);
+    mysmb_area_refresh_background_page(game, 1U);
 }
 
 /* Translation of the selection/control portion of ROM $9508-$958f.

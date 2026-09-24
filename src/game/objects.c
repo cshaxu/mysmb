@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/area.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0301U,
@@ -2997,6 +2998,10 @@ void mysmb_objects_apply_block_replacements(struct mysmb_game *game)
                               game->ram[MYSMB_BLOCK_ORIGINAL_Y + index]);
         if (address < 0x0800U) game->ram[address] =
             game->ram[MYSMB_BLOCK_METATILE + index];
+        if (address >= 0x0500U && address < 0x06a0U) {
+            mysmb_area_refresh_background_page(game,
+                (mysmb_u8)(address >= 0x05d0U ? 1U : 0U));
+        }
         game->ram[MYSMB_BLOCK_REPLACE_FLAG + index] = 0U;
     }
 }

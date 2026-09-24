@@ -46,6 +46,10 @@ int main(void)
         game.name_table[0][0x0341U] != mysmb_local_prg[(mysmb_u16)(graphics + 2U)] ||
         game.name_table[0][0x0360U] != mysmb_local_prg[(mysmb_u16)(graphics + 1U)] ||
         game.name_table[0][0x0361U] != mysmb_local_prg[(mysmb_u16)(graphics + 3U)]) return 1;
+    /* The selected ground-area palette is a ROM $8cc8 VRAM command stream,
+     * not a host palette choice. */
+    if (game.palette[0U] != mysmb_local_prg[0x0ccbU] ||
+        game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
     if (game.area_command_count != 1U ||
