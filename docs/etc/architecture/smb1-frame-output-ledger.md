@@ -78,3 +78,30 @@ not valid M2 gameplay output and cannot satisfy the snapshot contract.
 3. The snapshot ABI and its smoke test reject complete status until every
    visible field is captured and reference-verified. T10 starts only after
    this contract is used by a translated background owner.
+
+## T10 S1 P1 Parser-Column Foundation
+
+`mysmb_area_render_scenery_terrain_column` is a C90 translation of the
+`RenderSceneryTerrain` portion of `AreaParserCore`, with its source-owned
+tables at `$92f7-$9507`. It produces one collision-qualified 13-metatile
+column from the current page, current column, header scenery selectors, and
+terrain selector. The project-owned smoke test uses synthetic table data to
+cover background placement, foreground overwrite, terrain bits, cloud terrain
+exception, and the four `BlockBuffLowBounds` filters.
+
+This part is intentionally not wired to the gameplay tick yet. `ProcessAreaData`,
+the original eight-step `AreaParserTaskHandler`, `VRAM_Buffer2` writes, and
+attribute submission are still separate T10 work. Therefore it changes none
+of the partial/disqualification conclusions above and is not frame-equivalence
+evidence.
+
+### Similar-Issue Sweep
+
+The repair sweep searched `area.c`, `game.c`, and tests for bulk terrain page
+generation, one-object-per-frame output, parser-task state, and physical block
+buffer writes. `mysmb_area_render_initial_terrain`,
+`mysmb_area_render_terrain_page`, `mysmb_area_render_initial_objects`,
+`mysmb_area_emit_next_command`, and `mysmb_area_prepare_player_pages` remain
+the older bulk or bounded routes. They are deliberately retained until the
+task scheduler and object parser can replace them together; none is claimed as
+the original incremental parser path.

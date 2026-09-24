@@ -26,6 +26,9 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
 void mysmb_area_render_initial_terrain(struct mysmb_game *game);
 /* ROM AreaParserCore terrain pass when a later circular block page is loaded. */
 void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page);
+/* ROM $92f7-$9376 AreaParserCore scenery/terrain pass for one physical column.
+ * Object-stream processing and VRAM-buffer scheduling remain separate owners. */
+mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game);
 /* ROM $88ae-$8990: expand one physical metatile page into PPU-visible state. */
 void mysmb_area_refresh_background_page(struct mysmb_game *game, mysmb_u8 page);
 /* ROM $89c3-$8a15: queue the every-eighth-frame palette-3 update. */

@@ -75,6 +75,19 @@ enum {
 };
 
 enum {
+    /* NROM PRG offsets for ROM $92f7-$9507 AreaParserCore data. */
+    MYSMB_AREA_BACKGROUND_SCENE_OFFSETS = 0x12f7U,
+    MYSMB_AREA_BACKGROUND_SCENE_DATA = 0x12faU,
+    MYSMB_AREA_BACKGROUND_METATILES = 0x138aU,
+    MYSMB_AREA_FOREGROUND_SCENE_OFFSETS = 0x13aeU,
+    MYSMB_AREA_FOREGROUND_SCENE_DATA = 0x13b1U,
+    MYSMB_AREA_TERRAIN_METATILES = 0x13d8U,
+    MYSMB_AREA_TERRAIN_RENDER_BITS = 0x13dcU,
+    MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS = 0x1504U,
+    MYSMB_AREA_CURRENT_COLUMN = 0x0726U
+};
+
+enum {
     MYSMB_AREA_PARSER_BEHIND = 0x0729U,
     MYSMB_AREA_OBJECT_PAGE = 0x072aU,
     MYSMB_AREA_OBJECT_PAGE_SELECT = 0x072bU,
@@ -924,6 +937,85 @@ void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page)
             game->ram[address] = (bits & (mysmb_u8)(1U << (row & 7U))) != 0U ? terrain : 0U;
         }
     }
+}
+
+/* Translation of the RenderSceneryTerrain portion of ROM AreaParserCore
+ * ($92f7-$9376).  It builds exactly one 13-metatile column and copies its
+ * collision-qualified values into the physical 32-column block buffer.  The
+ * caller owns ProcessAreaData and the eight-step graphics/attribute schedule. */
+mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
+{
+    mysmb_u8 metatiles[13];
+    mysmb_u8 index;
+    mysmb_u8 scene;
+    mysmb_u8 row;
+    mysmb_u8 terrain;
+    mysmb_u8 bits;
+    mysmb_u8 bound_index;
+    mysmb_u8 column;
+    mysmb_u16 source;
+    mysmb_u16 address;
+
+    if (game->area_prg == 0 || game->area_prg_size <=
+        MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS + 3U ||
+        game->ram[MYSMB_AREA_TYPE] >= 4U) return 0U;
+    for (index = 0U; index < 13U; ++index) metatiles[index] = 0U;
+
+    scene = game->ram[MYSMB_AREA_BACKGROUND];
+    if (scene != 0U && scene <= 3U) {
+        source = (mysmb_u16)(MYSMB_AREA_BACKGROUND_SCENE_DATA +
+            (mysmb_u16)(game->ram[MYSMB_AREA_CURRENT_PAGE] % 3U) * 16U +
+            game->area_prg[(mysmb_u16)(MYSMB_AREA_BACKGROUND_SCENE_OFFSETS + scene - 1U)] +
+            (game->ram[MYSMB_AREA_CURRENT_COLUMN] & 0x0fU));
+        if (source < game->area_prg_size) {
+            scene = game->area_prg[source];
+            if ((scene & 0x0fU) != 0U) {
+                source = (mysmb_u16)(MYSMB_AREA_BACKGROUND_METATILES +
+                    (mysmb_u16)((scene & 0x0fU) - 1U) * 3U);
+                row = (mysmb_u8)(scene >> 4U);
+                for (index = 0U; index < 3U && row < 11U; ++index, ++row) {
+                    if ((mysmb_u16)(source + index) >= game->area_prg_size) return 0U;
+                    metatiles[row] = game->area_prg[(mysmb_u16)(source + index)];
+                }
+            }
+        }
+    }
+
+    scene = game->ram[MYSMB_AREA_FOREGROUND];
+    if (scene != 0U && scene <= 3U) {
+        source = (mysmb_u16)(MYSMB_AREA_FOREGROUND_SCENE_DATA +
+            game->area_prg[(mysmb_u16)(MYSMB_AREA_FOREGROUND_SCENE_OFFSETS + scene - 1U)]);
+        for (index = 0U; index < 13U; ++index) {
+            if ((mysmb_u16)(source + index) >= game->area_prg_size) return 0U;
+            scene = game->area_prg[(mysmb_u16)(source + index)];
+            if (scene != 0U) metatiles[index] = scene;
+        }
+    }
+
+    terrain = game->area_prg[(mysmb_u16)(MYSMB_AREA_TERRAIN_METATILES +
+        game->ram[MYSMB_AREA_TYPE])];
+    if (game->ram[MYSMB_AREA_TYPE] == 0U && game->ram[MYSMB_AREA_WORLD_NUMBER] == 7U)
+        terrain = 0x62U;
+    if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) terrain = 0x88U;
+    for (row = 0U; row < 13U; ++row) {
+        bits = game->area_prg[(mysmb_u16)(MYSMB_AREA_TERRAIN_RENDER_BITS +
+            (mysmb_u16)(game->ram[MYSMB_AREA_TERRAIN] & 0x0fU) * 2U + (row >> 3U))];
+        if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U && row >= 8U) bits &= 0x08U;
+        if (game->ram[MYSMB_AREA_TYPE] == 2U && row == 11U) terrain = 0x54U;
+        if ((bits & (mysmb_u8)(1U << (row & 7U))) != 0U) metatiles[row] = terrain;
+    }
+
+    column = (mysmb_u8)(game->ram[MYSMB_AREA_BLOCK_COLUMN] & 0x1fU);
+    address = (mysmb_u16)(column < 16U ? 0x0500U + column :
+                          0x05d0U + (column - 16U));
+    for (row = 0U; row < 13U; ++row) {
+        bound_index = (mysmb_u8)(metatiles[row] >> 6U);
+        game->ram[(mysmb_u16)(address + (mysmb_u16)row * 16U)] =
+            metatiles[row] < game->area_prg[(mysmb_u16)(
+                MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS + bound_index)] ?
+            0U : metatiles[row];
+    }
+    return 1U;
 }
 
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page)
