@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M3 T1 S1 is active.**
+**M3 T2 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -14,26 +14,32 @@
   output. `nnes` is a validation-only local reference and is never linked into
   MySMB.
 
-## M3 T1 S1 Packet
+## M3 T2 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T1 S1, New. |
+| Identifier Mode | M3 T2 S1, New. |
 | Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Define and implement the first presentation-neutral render-command seam needed to replace the temporary Win32 gameplay placeholder and later drive the DOS VGA and 80x25 colored-object adapters. |
-| Non-goals | DOS graphics/sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, and changes to validated gameplay logic are outside this S. |
-| Reference Baseline | Completed M2 native game/oracle route and its Win32 composition audit. |
-| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), candidate 1. |
-| Files And ABI Surface | Portable C90 neutral render commands, focused project-owned tests, and M3 history evidence. |
+| Objective | Make the Win32 adapter consume the complete neutral render-command frame for deterministic gameplay presentation, replacing its single player-marker placeholder without changing game logic. |
+| Non-goals | DOS graphics/sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, sprite-faithful artwork, and changes to validated gameplay logic are outside this S. |
+| Reference Baseline | M3 T1 neutral render-command seam and completed M2 native game/oracle route. |
+| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), candidate 2. |
+| Files And ABI Surface | Win32 command consumer, focused project-owned tests, and M3 history evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
-| Expected Markers | Game-owned command schema, deterministic command generation, no renderer-owned gameplay state, and a Win32 consumer boundary. |
+| Expected Markers | Tile-row and actor command consumption, deterministic host palette policy, no direct gameplay-state drawing path, and a visible active gameplay scene. |
 | Asset Needs | No protected asset is required; owner-local inputs remain outside tracked output. |
-| Reporting Requirements | Record command ownership, fixed-input checks, source containment, presentation boundary, and deferred DOS adapter work before closure. |
-| Stop Conditions | Stop and revise scope if the seam requires an emulator, changes gameplay behavior, embeds protected data, or requires a host-specific state path. |
-| Exit Criteria | The portable core emits deterministic neutral commands that a Win32 adapter can consume without changing gameplay state. |
+| Reporting Requirements | Record consumed command classes, palette policy, fixed-input checks, source containment, and deferred DOS/text adapter work before closure. |
+| Stop Conditions | Stop and revise scope if the adapter requires an emulator, changes gameplay behavior, embeds protected data, or introduces a host-specific game-state path. |
+| Exit Criteria | Win32 consumes the neutral tile-row and actor commands for active gameplay while the core and its oracle behavior remain unchanged. |
 | Original Owner Request | Deliver a native C SMB1 suitable for future colored text and DOS presentation without contaminating the core. |
-| Similar-Issue Sweep | Before closure, search for renderer-owned game mutation, host-specific command state, duplicated frame logic, and protected asset leakage; record every production hit and disposition. |
+| Similar-Issue Sweep | Before closure, search for direct Win32 gameplay-state drawing, command bypasses, host-owned game mutation, duplicated palette logic, and protected asset leakage; record every production hit and disposition. |
+
+## Recent M3 Closures
+
+| Task | Compact result |
+| --- | --- |
+| T1 | Neutral tile-row and actor commands are generated read-only from the native C state; a bounded Win32 consumer and C90/OpenNT verification are in place. [History](../history/M3-T1-neutral-render-command-seam.md). |
 
 ## Recent M2 Closures
 
