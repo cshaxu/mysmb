@@ -85,7 +85,8 @@ int main(void)
     game.ram[0x079fU] = 0x23U;
     mysmb_player_initialize_entrance(&game);
     if (game.ram[0x006dU] != 3U || game.ram[0x0086U] != 0x28U ||
-        game.ram[0x00b5U] != 1U || game.ram[0x00ceU] != 0xb0U ||
+        game.ram[0x0755U] != 0x28U || game.ram[0x00b5U] != 1U ||
+        game.ram[0x00ceU] != 0xb0U ||
         game.ram[0x070aU] != 0x28U || game.ram[0x0490U] != 0xffU ||
         game.ram[0x000eU] != 7U || game.ram[0x07f8U] != 3U ||
         game.ram[0x07f9U] != 0U || game.ram[0x07faU] != 1U ||

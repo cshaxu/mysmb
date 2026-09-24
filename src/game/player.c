@@ -1289,6 +1289,9 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     }
     if (alternate >= 4U || entrance >= 9U) return;
     game->ram[MYSMB_PLAYER_X] = start_x[alternate];
+    /* Entrance_GameTimerSetup seeds the scroll owner's preceding-frame
+     * player position before PlayerCtrlRoutine first runs. */
+    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_X];
     game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
     /* ROM Entrance_GameTimerSetup calls GetPlayerColors even when the four
