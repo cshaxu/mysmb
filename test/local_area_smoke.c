@@ -241,6 +241,22 @@ int main(void)
         game.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 8U] + 3U]) return 1;
 
+    /* After a timer death restarts game mode, ScreenRoutines task 4 takes
+     * DisplayTimeUp's OutputInter route before the normal area parser. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 1U;
+    game.ram[0x073cU] = 4U;
+    game.ram[0x0759U] = 1U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0759U] != 0U || game.ram[0x073cU] != 5U ||
+        game.ram[0x07a0U] != 7U || game.ram[0x0300U] == 0U) return 1;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.name_table[0][0x020cU] != mysmb_local_prg[0x0752U +
+        mysmb_local_prg[0x07feU + 5U] + 3U]) return 1;
+
     printf("area_pointer=%02x type=%u enemy=%02x%02x area=%02x%02x header=%u/%u/%u objects=%u\n",
            game.ram[0x0750U], game.ram[0x074eU], game.ram[0x00eaU],
            game.ram[0x00e9U], game.ram[0x00e8U], game.ram[0x00e7U],
