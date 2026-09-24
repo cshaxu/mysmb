@@ -27,6 +27,7 @@ enum {
     MYSMB_AREA_DAY_SNOW_PALETTE = 0x0d34U,
     MYSMB_AREA_NIGHT_SNOW_PALETTE = 0x0d3cU,
     MYSMB_AREA_MUSHROOM_PALETTE = 0x0d44U,
+    MYSMB_AREA_BOWSER_PALETTE = 0x0d4cU,
     MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U,
     MYSMB_AREA_PALETTE3_DATA = 0x09d1U,
     MYSMB_AREA_GAME_TEXT = 0x0752U,
@@ -979,7 +980,8 @@ mysmb_u8 mysmb_area_apply_special_palette(struct mysmb_game *game,
 {
     mysmb_u16 offset;
 
-    if (address_control == 9U) offset = MYSMB_AREA_DAY_SNOW_PALETTE;
+    if (address_control == 8U) offset = MYSMB_AREA_BOWSER_PALETTE;
+    else if (address_control == 9U) offset = MYSMB_AREA_DAY_SNOW_PALETTE;
     else if (address_control == 10U) offset = MYSMB_AREA_NIGHT_SNOW_PALETTE;
     else if (address_control == 11U) offset = MYSMB_AREA_MUSHROOM_PALETTE;
     else return 0U;

@@ -15,7 +15,7 @@ void mysmb_game_bind_area_source(struct mysmb_game *game,
                                  const mysmb_u8 *prg, mysmb_u16 prg_size);
 /* Apply one ROM palette stream through the portable PPU snapshot. */
 mysmb_u8 mysmb_area_apply_palette(struct mysmb_game *game, mysmb_u8 area_type);
-/* ROM VRAM address controls 9-11 select snow and mushroom overrides. */
+/* ROM VRAM address controls 8-11 select Bowser, snow, and mushroom palettes. */
 mysmb_u8 mysmb_area_apply_special_palette(struct mysmb_game *game,
                                           mysmb_u8 address_control);
 

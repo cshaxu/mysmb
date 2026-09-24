@@ -767,7 +767,7 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 9U &&
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 8U &&
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 11U) {
         (void)mysmb_area_apply_special_palette(game,
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);

@@ -36,8 +36,27 @@ int main(void)
     if (game.palette[0U] != mysmb_local_prg[0x05d0U] ||
         game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
 
-    if (mysmb_area_apply_special_palette(&game, 8U) != 0U ||
-        mysmb_area_apply_special_palette(&game, 12U) != 0U) return 1;
+    if (mysmb_area_apply_special_palette(&game, 8U) == 0U) return 1;
+    if (game.palette[4U] != mysmb_local_prg[0x0d4fU]) return 1;
+    if (game.palette[0x15U] != mysmb_local_prg[0x0d50U]) return 1;
+    if (game.palette[0x16U] != mysmb_local_prg[0x0d51U]) return 1;
+    if (game.palette[0x17U] != mysmb_local_prg[0x0d52U]) return 1;
+    if (mysmb_area_apply_special_palette(&game, 12U) != 0U) return 1;
+
+    /* Address control is consumed at the next NMI boundary.  Exercise that
+     * boundary in a fresh state so the active game parser cannot queue an
+     * unrelated address control during the same gameplay frame. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    input.buttons = 0U;
+    game.palette[4U] = 0U;
+    game.ram[0x0773U] = 8U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.palette[4U] != mysmb_local_prg[0x0d4fU] ||
+        game.palette[0x15U] != mysmb_local_prg[0x0d50U] ||
+        game.palette[0x16U] != mysmb_local_prg[0x0d51U] ||
+        game.palette[0x17U] != mysmb_local_prg[0x0d52U] ||
+        game.ram[0x0773U] != 0U) return 1;
     if (mysmb_area_apply_special_palette(&game, 9U) == 0U) return 1;
     for (index = 0U; index < 0x20U; ++index)
         day_palette[index] = game.palette[index];

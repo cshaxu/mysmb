@@ -1131,6 +1131,21 @@ seven-tick gate, and next-NMI `$220c` text tile against the selector-2 source
 stream. This confirms the Time Up background output path; sprite reset remains
 T11 ownership.
 
+## T10 S1 P61 Bowser Palette Address Control
+
+The row-13 `AxeObj` route sets `VRAM_Buffer_AddrCtrl` to 8. The original
+address table maps that control to `BowserPaletteData` at ROM `$8d4c`, whose
+`$3f14` command updates the aliased sprite-palette slot at `$3f04`. Native C
+implemented controls 9--11 but silently ignored control 8, leaving the castle
+palette stale after the axe object.
+
+The special-palette reader now maps control 8 to the source-owned Bowser
+stream, and the NMI buffer-commit route accepts controls 8--11. The owner-local
+palette smoke verifies all four resulting palette bytes against the PRG stream,
+then sets `$0773` to 8 and verifies the following native tick commits and
+clears it. Message controls 12--18 and bridge metatile replacement remain
+separate T10 owners.
+
 ## T10 S1 P60 Title-Area Display Evidence
 
 Title `ScreenRoutines` task 8 first invokes the title demo area's ordinary
