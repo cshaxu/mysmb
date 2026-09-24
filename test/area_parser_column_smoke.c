@@ -104,7 +104,10 @@ int main(void)
     if (game.ram[0x071fU] != 0U || game.ram[0x0340U] != 144U ||
         game.ram[0x037bU] != 0x20U || game.ram[0x037cU] != 0x82U ||
         game.ram[0x037dU] != 0x9aU || game.ram[0x03b5U] != 0x23U ||
-        game.ram[0x03b7U] != 1U || game.ram[0x03f9U] != 0U ||
+        game.ram[0x03b7U] != 1U || game.ram[0x03b9U] != 0x23U ||
+        game.ram[0x03bbU] != 1U ||
+        (mysmb_u8)(game.ram[0x03baU] - game.ram[0x03b6U]) != 8U ||
+        game.ram[0x03f9U] != 0U ||
         game.ram[0x03ffU] != 0U) return 1;
     game.ram[0x071eU] = 0U;
     game.ram[0x071fU] = 0U;

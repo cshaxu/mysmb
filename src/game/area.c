@@ -1164,13 +1164,17 @@ static mysmb_u8 mysmb_area_queue_attribute_tables(struct mysmb_game *game)
     high = (mysmb_u8)((high & 0x04U) | 0x23U);
     low = (mysmb_u8)(0xc0U + (low >> 2U) + ((low & 0x02U) != 0U ? 1U : 0U));
     for (row = 0U; row < 7U; ++row) {
+        /* ROM $8985-$898c reloads the prior attribute low byte and adds
+         * eight for each row.  These writes are vertically spaced in the
+         * attribute table; advancing by one misaddresses rows two through
+         * seven while leaving the first command deceptively correct. */
+        low = (mysmb_u8)(low + 8U);
         game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = high;
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = (mysmb_u8)(low + 8U);
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = low;
         game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = 1U;
         game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] =
             game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row];
         game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row] = 0U;
-        low++;
     }
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET] = buffer_offset;

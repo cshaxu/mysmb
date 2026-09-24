@@ -546,3 +546,20 @@ the next owner is the attribute-byte construction/address path.
 
 All temporary original and native snapshots were deleted after these neutral
 counts were produced. No snapshot bytes or ROM-derived graphics are tracked.
+
+## T10 S1 P28 Attribute Command Vertical Address Step
+
+The effective frame-201 `VRAM_Buffer2` comparison isolated six differences
+at the low-address header byte of consecutive attribute commands. Source
+`RenderAttributeTables` at `$8985-$898c` reloads its low byte and adds eight
+for every attribute row. The native route instead emitted `low + 8` once and
+then advanced the saved value by one, leaving the first command correct and
+misaddressing the following six rows. The queue now advances its saved low
+address by eight before each command; the parser smoke test asserts the
+vertical low-address step.
+
+With the same bounded Start script, the frame-202 name-table comparison fell
+from 61 differences to one. The remaining byte is name-table zero offset
+`$062`, the leading Mario score-status tile, and is a separate status-number
+owner. Original and native temporary snapshots were deleted after producing
+this neutral result.
