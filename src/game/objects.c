@@ -1,6 +1,8 @@
 #include "game/objects.h"
 #include "game/area.h"
 
+void mysmb_objects_draw_power_up(struct mysmb_game *game);
+
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
     MYSMB_VRAM_BUFFER1_DATA = 0x0301U,
@@ -835,6 +837,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0xf0U;
             }
         }
+        mysmb_objects_draw_power_up(game);
         return;
     }
     if (((mysmb_u8)game->frame_number & 3U) != 0U) return;
@@ -845,6 +848,9 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_STATE + slot] = 0x80U;
         game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+    }
+    if (game->ram[MYSMB_ENEMY_STATE + slot] >= 6U) {
+        mysmb_objects_draw_power_up(game);
     }
 }
 

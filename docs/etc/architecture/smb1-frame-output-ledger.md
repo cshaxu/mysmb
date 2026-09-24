@@ -48,7 +48,7 @@ valid merely because its storage happens to be zero.
 | `$92b0-$9bff` | Area parser and scenery/object metatile generation | Background page output and updates | **Translated, background scope**; persistent parser slots, scenery, terrain, all static object metatile families, attributes, and incremental column scheduling reach the snapshot. Object graphics remain T11 work. |
 | `$e700-$edff` | Enemy graphics and draw families | Enemy OAM tiles, attributes, ordering, and animation | **Missing**; current routes state that OAM is excluded. |
 | `$eee9-$f12a` | Player graphics, action selection, offscreen calculation, and draw | Player OAM tiles, attributes, priority, and animation | **Translated, partial OAM scope**; normal player action selection, ROM-table tile rows, horizontal flip, attributes, injury blink, and prepared vertical-offscreen rows write OAM. Fireball-throw supplement and title/intermediate paths remain T11 work. |
-| `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Missing**. |
+| `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Translated**; the dedicated slot-five power-up writer emits the original two-row sprite square, type tiles, palette cadence, mirror flags, and world-to-screen X position. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
 | `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Missing**. |
 | `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball and fireball-explosion OAM are translated; firebar, bubble, and other effects remain T11 work. |
@@ -1486,3 +1486,12 @@ pre-increment state, then stores the incremented state, matching the ROM's
 `LDA`/`INC` ordering. The fireball OAM smoke verifies the first explosion
 frame and its next state. Firebar, bubble, and fireworks remain separate T11
 owners.
+
+## T11 S1 P9 Power-Up OAM
+
+`DrawPowerUp` now owns the slot-five power-up sprite square in portable C.  Its
+four type-specific tile groups, base palette attributes, flower/star palette
+cadence, horizontal mirrors, and emergence threshold follow the source writer.
+The ROM-free power-up OAM smoke covers a star, a flower, and the first visible
+mushroom-emergence frame.  Enemy and firebar/bubble writers remain separate
+T11 owners.
