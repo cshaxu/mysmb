@@ -157,7 +157,8 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                                mysmb_u8 slot,
                                                mysmb_u8 control);
 static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot);
+                                                            mysmb_u8 slot,
+                                                            mysmb_u8 preserve_collision_boxes);
 static void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
                                               mysmb_u8 slot, mysmb_u8 amount,
                                               mysmb_u8 maximum_speed);
@@ -856,7 +857,8 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 /* ROM $dcfd-$ddcb PlayerEnemyCollision and $e069-$e08a EnemyStomped,
  * bounded to ordinary walking enemies. */
 static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot)
+                                                            mysmb_u8 slot,
+                                                            mysmb_u8 preserve_collision_boxes)
 {
     mysmb_u16 player_world;
     mysmb_u16 enemy_world;
@@ -879,14 +881,19 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
         (mysmb_u16)(player_world - screen_world) >= 0x100U ||
         (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-                                   game->ram[MYSMB_PLAYER_BOUND_BOX],
-                                   (mysmb_u8)(player_world - screen_world),
-                                   game->ram[MYSMB_PLAYER_Y]);
-    mysmb_objects_set_bounding_box(game, enemy_box,
-                                   game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
-                                   (mysmb_u8)(enemy_world - screen_world),
-                                   game->ram[MYSMB_ENEMY_Y + slot]);
+    /* PlayerEnemyCollision consumes the persistent bounding boxes produced
+     * by PlayerGfxHandler and GetEnemyBoundBox.  The standalone owner test
+     * path has no preceding PlayerGfxHandler, so it initializes its boxes. */
+    if (preserve_collision_boxes == 0U) {
+        mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+                                       game->ram[MYSMB_PLAYER_BOUND_BOX],
+                                       (mysmb_u8)(player_world - screen_world),
+                                       game->ram[MYSMB_PLAYER_Y]);
+        mysmb_objects_set_bounding_box(game, enemy_box,
+                                       game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+                                       (mysmb_u8)(enemy_world - screen_world),
+                                       game->ram[MYSMB_ENEMY_Y + slot]);
+    }
     if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
         game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
         return 0U;
@@ -939,9 +946,9 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
 /* ROM $d68b RunNormalEnemies, bounded to ordinary walking IDs.  The shared
  * terrain-state portion is introduced separately; this preserves the ROM's
  * collision phase, timer gate, and fixed-point horizontal movement. */
-void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
+static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_u8 slot,
+                                                  mysmb_u8 preserve_collision_boxes)
 {
-    mysmb_u8 slot;
     mysmb_u8 id;
     mysmb_u8 x;
     mysmb_u8 row;
@@ -951,11 +958,10 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
     mysmb_u8 carry;
     mysmb_u8 page_delta;
 
-    for (slot = 0U; slot < 5U; ++slot) {
         id = game->ram[MYSMB_ENEMY_ID + slot];
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (id > 6U && id != 18U) || id == 5U ||
-            (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) continue;
+            (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) return;
         /* RunNormalEnemies clears Enemy_SprAttrib before EnemyGfxHandler
          * selects the ID-specific palette and any required flip bit. */
         game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
@@ -993,7 +999,7 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
             if (game->ram[MYSMB_ENEMY_Y_HIGH + slot] >= 2U) {
                 game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
             }
-            continue;
+            return;
         }
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) == 4U) {
             if (id == 6U) {
@@ -1009,12 +1015,12 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
             }
             else {
-                (void)mysmb_objects_check_normal_enemy_collision(game, slot);
+                (void)mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes);
             }
-            continue;
+            return;
         }
-        if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot) != 0U) continue;
-        if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
+        if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes) != 0U) return;
+        if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
             game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
@@ -1063,6 +1069,19 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
             }
         }
         else game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+}
+
+void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_objects_step_normal_enemy_core(game, slot, 1U);
+}
+
+void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        mysmb_objects_step_normal_enemy_core(game, slot, 0U);
     }
 }
 

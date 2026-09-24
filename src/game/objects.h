@@ -22,6 +22,8 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game);
 void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
                                   mysmb_u8 power_up_type);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
+/* RunNormalEnemies for one ObjectOffset; GameEngine uses this with stream parsing. */
+void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
@@ -31,6 +33,9 @@ void mysmb_objects_set_bounding_box(struct mysmb_game *game,
                                     mysmb_u16 address, mysmb_u8 control,
                                     mysmb_u8 x, mysmb_u8 y);
 /* ROM EnemyGfxHandler, currently Goomba row-draw subset. */
+/* Suppress newly initialized ObjectOffset slots until their next RunNormalEnemies pass. */
+void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
+                                    mysmb_u8 suppress_mask);
 void mysmb_objects_draw_goombas(struct mysmb_game *game);
 /* ROM EnemiesCollision/ProcEnemyCollisions for regular enemy slots. */
 void mysmb_objects_step_enemy_collisions(struct mysmb_game *game);

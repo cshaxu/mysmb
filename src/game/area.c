@@ -687,6 +687,31 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
 
 /* ROM $c0f7-$c1f4 ProcessEnemyData through InitNormalEnemy, limited to
  * ordinary enemy IDs.  Special objects retain their dedicated initializers. */
+/* ProcessEnemyData is called with the current ObjectOffset.  This adapter
+ * keeps the original public stream probe while reserving earlier empty slots
+ * so a GameEngine pass can initialize exactly the requested normal slot. */
+mysmb_u8 mysmb_area_spawn_enemy_in_slot(struct mysmb_game *game,
+                                           const struct mysmb_area_source *source,
+                                           mysmb_u8 slot)
+{
+    mysmb_u8 flags[5];
+    mysmb_u8 index;
+    mysmb_u8 result;
+
+    if (slot >= 5U || game->ram[MYSMB_ENEMY_FLAG + slot] != 0U) return 0U;
+    for (index = 0U; index < 5U; ++index) {
+        flags[index] = game->ram[MYSMB_ENEMY_FLAG + index];
+        if (index != slot && flags[index] == 0U) {
+            game->ram[MYSMB_ENEMY_FLAG + index] = 1U;
+        }
+    }
+    result = mysmb_area_spawn_next_enemy(game, source);
+    for (index = 0U; index < 5U; ++index) {
+        if (index != slot) game->ram[MYSMB_ENEMY_FLAG + index] = flags[index];
+    }
+    return result;
+}
+
 mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
                                      const struct mysmb_area_source *source)
 {
@@ -756,6 +781,11 @@ mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
         game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
         game->ram[MYSMB_ENEMY_ID + slot] = (mysmb_u8)(second & 0x3fU);
+        /* ROM CheckpointEnemyID marks ordinary objects before their first
+         * RunNormalEnemies pass. */
+        if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
+            game->ram[0x03d8U + slot] = 1U;
+        }
         game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
         game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
         game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;

@@ -46,5 +46,21 @@ int main(void)
     if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
         game.ram[0x0739U] != 0U || game.ram[0x073aU] != 2U ||
         game.ram[0x073bU] != 1U) return 1;
+    /* ProcELoop passes its current ObjectOffset: an earlier empty slot
+     * must not be selected while the requested slot is being initialized. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 6U;
+    prg[0x22U] = 0xffU;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0010U] = 0U;
+    game.ram[0x0011U] = 0U;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 0U;
+    game.ram[0x073bU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0U;
+    if (mysmb_area_spawn_enemy_in_slot(&game, &source, 2U) != 1U ||
+        game.ram[0x000fU] != 1U || game.ram[0x0010U] != 0U ||
+        game.ram[0x0011U] != 1U || game.ram[0x0018U] != 6U) return 1;
     return 0;
 }

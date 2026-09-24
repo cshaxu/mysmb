@@ -1110,10 +1110,12 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_u8 mode_before;
     mysmb_u8 task_before;
     mysmb_u8 enemy_slot;
+    mysmb_u8 newly_spawned_normal;
     struct mysmb_area_source area_source;
 
     mode_before = game->ram[MYSMB_RAM_OPER_MODE];
     task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+    newly_spawned_normal = 0U;
     game->frame_number++;
     game->ram[MYSMB_RAM_FRAME_COUNTER]++;
     if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
@@ -1179,19 +1181,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
         }
-        if (game->area_prg != 0) {
-            area_source.prg = game->area_prg;
-            area_source.prg_size = game->area_prg_size;
-            /* ROM GameEngine enters EnemiesAndLoopsCore once for every
-             * ObjectOffset.  Only an empty slot reaches ProcessEnemyData;
-             * a stream page-control record can therefore be consumed by a
-             * later empty slot in the same frame. */
-            for (enemy_slot = 0U; enemy_slot < 6U; ++enemy_slot) {
-                if (game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] == 0U) {
-                    (void)mysmb_area_spawn_next_enemy(game, &area_source);
-                }
-            }
-        }
         if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
@@ -1243,10 +1232,34 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         }
         /* ROM $94a5 GameEngine: GameRoutines (above) runs before the
          * object loop, so object collisions see this frame's player state. */
+        if (game->area_prg != 0) {
+            area_source.prg = game->area_prg;
+            area_source.prg_size = game->area_prg_size;
+            /* ROM GameEngine enters EnemiesAndLoopsCore once for every
+             * ObjectOffset.  Only an empty slot reaches ProcessEnemyData;
+             * a stream page-control record can therefore be consumed by a
+             * later empty slot in the same frame. */
+            for (enemy_slot = 0U; enemy_slot < 6U; ++enemy_slot) {
+                if (game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
+                    if (enemy_slot < 5U) {
+                        mysmb_objects_step_normal_enemy(game, enemy_slot);
+                    }
+                }
+                else if (enemy_slot < 5U) {
+                    if (mysmb_area_spawn_enemy_in_slot(game, &area_source,
+                                                       enemy_slot) != 0U &&
+                        game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
+                        newly_spawned_normal |= (mysmb_u8)(1U << enemy_slot);
+                    }
+                }
+                else {
+                    (void)mysmb_area_spawn_next_enemy(game, &area_source);
+                }
+            }
+        }
         mysmb_objects_step_fireballs(game);
         mysmb_objects_step_power_up(game);
         mysmb_objects_check_power_up_collision(game);
-        mysmb_objects_step_normal_enemies(game);
         mysmb_objects_step_enemy_collisions(game);
         mysmb_objects_check_hazard_enemy_collision(game);
         mysmb_objects_check_bullet_bill_stomp(game);
@@ -1274,7 +1287,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
         mysmb_objects_step_floatey_numbers(game);
-        mysmb_objects_draw_goombas(game);
+        mysmb_objects_draw_goombas_mask(game, newly_spawned_normal);
         mysmb_player_draw_oam(game);
         mysmb_objects_step_vine(game);
         mysmb_objects_apply_block_replacements(game);

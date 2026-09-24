@@ -18,7 +18,8 @@ enum {
     MYSMB_TIMER_CONTROL = 0x0747U
 };
 
-void mysmb_objects_draw_goombas(struct mysmb_game *game)
+void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
+                                          mysmb_u8 suppress_mask)
 {
     static const mysmb_u8 normal_tiles[6] = { 0xfcU, 0xfcU, 0x70U, 0x71U, 0x72U, 0x73U };
     static const mysmb_u8 defeated_tiles[6] = { 0xfcU, 0xfcU, 0xfcU, 0xfcU, 0xefU, 0xefU };
@@ -41,7 +42,8 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
     const mysmb_u8 *tiles;
 
     for (slot = 0U; slot < 5U; ++slot) {
-        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+        if ((suppress_mask & (mysmb_u8)(1U << slot)) != 0U ||
+            game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 6U) continue;
         world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
                               game->ram[MYSMB_ENEMY_X + slot]);
@@ -106,4 +108,9 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
             game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
         }
     }
+}
+
+void mysmb_objects_draw_goombas(struct mysmb_game *game)
+{
+    mysmb_objects_draw_goombas_mask(game, 0U);
 }
