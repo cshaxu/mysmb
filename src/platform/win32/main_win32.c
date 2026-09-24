@@ -16,18 +16,40 @@ static struct mysmb_frame g_frame;
 static struct mysmb_render_frame g_render_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
+static BITMAPINFO g_bitmap_info;
+static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
+
+static DWORD mysmb_win32_dib_color(COLORREF color)
+{
+    return ((DWORD)(color & 0x000000ffUL) << 16U) |
+           (DWORD)(color & 0x0000ff00UL) |
+           ((DWORD)(color & 0x00ff0000UL) >> 16U);
+}
+
+static void mysmb_win32_plot(unsigned int x, unsigned int y, COLORREF color)
+{
+    if (x >= MYSMB_SCREEN_WIDTH || y >= MYSMB_SCREEN_HEIGHT) return;
+    g_pixels[y * MYSMB_SCREEN_WIDTH + x] = mysmb_win32_dib_color(color);
+}
+
+static void mysmb_win32_fill_rect(unsigned int x, unsigned int y,
+                                   unsigned int width, unsigned int height,
+                                   COLORREF color)
+{
+    unsigned int row;
+    unsigned int column;
+
+    for (row = y; row < y + height && row < MYSMB_SCREEN_HEIGHT; ++row) {
+        for (column = x; column < x + width && column < MYSMB_SCREEN_WIDTH;
+             ++column) {
+            mysmb_win32_plot(column, row, color);
+        }
+    }
+}
 
 #ifdef MYSMB_LOCAL_TITLE
-static void mysmb_win32_draw_background(HDC dc);
-static void mysmb_win32_plot(HDC dc, unsigned int x, unsigned int y,
-                             COLORREF color)
-{
-    SetPixel(dc, (int)(x * MYSMB_SCALE), (int)(y * MYSMB_SCALE), color);
-    SetPixel(dc, (int)(x * MYSMB_SCALE + 1U), (int)(y * MYSMB_SCALE), color);
-    SetPixel(dc, (int)(x * MYSMB_SCALE), (int)(y * MYSMB_SCALE + 1U), color);
-    SetPixel(dc, (int)(x * MYSMB_SCALE + 1U), (int)(y * MYSMB_SCALE + 1U), color);
-}
-static void mysmb_win32_draw_oam(HDC dc);
+static void mysmb_win32_draw_background(void);
+static void mysmb_win32_draw_oam(void);
 #endif
 
 static COLORREF mysmb_win32_tile_color(mysmb_u8 tile)
@@ -46,42 +68,31 @@ static COLORREF mysmb_win32_actor_color(mysmb_u8 identity)
     return RGB(112, 48, 24);
 }
 
-static void mysmb_win32_draw_gameplay(HDC dc)
+static void mysmb_win32_draw_gameplay(void)
 {
 #ifdef MYSMB_LOCAL_TITLE
     /* The ROM-enabled build consumes CHR-backed name-table pixels instead of
      * the diagnostic color buckets below.  Sprite/OAM composition follows in
      * the next renderer slice. */
-    mysmb_win32_draw_background(dc);
-    mysmb_win32_draw_oam(dc);
+    mysmb_win32_draw_background();
+    mysmb_win32_draw_oam();
 #else
     unsigned int index;
     unsigned int tile_index;
     struct mysmb_render_command *command;
-    HBRUSH brush;
-    RECT rect;
 
     for (index = 0U; index < g_render_frame.command_count; ++index) {
         command = &g_render_frame.commands[index];
         if (command->kind == MYSMB_RENDER_COMMAND_TILE_ROW) {
             for (tile_index = 0U; tile_index < command->length; ++tile_index) {
-                brush = CreateSolidBrush(mysmb_win32_tile_color(
-                    g_render_frame.tile_data[command->data_offset + tile_index]));
-                rect.left = (int)((command->x + tile_index) * 8U * MYSMB_SCALE);
-                rect.top = (int)(command->y * 8U * MYSMB_SCALE);
-                rect.right = rect.left + 8 * MYSMB_SCALE;
-                rect.bottom = rect.top + 8 * MYSMB_SCALE;
-                FillRect(dc, &rect, brush);
-                DeleteObject(brush);
+                mysmb_win32_fill_rect((command->x + tile_index) * 8U,
+                    command->y * 8U, 8U, 8U,
+                    mysmb_win32_tile_color(g_render_frame.tile_data[
+                        command->data_offset + tile_index]));
             }
         } else if (command->kind == MYSMB_RENDER_COMMAND_ACTOR) {
-            brush = CreateSolidBrush(mysmb_win32_actor_color(command->identity));
-            rect.left = (int)command->x * MYSMB_SCALE;
-            rect.top = (int)command->y * MYSMB_SCALE;
-            rect.right = rect.left + (command->length * MYSMB_SCALE);
-            rect.bottom = rect.top + (command->length * MYSMB_SCALE);
-            FillRect(dc, &rect, brush);
-            DeleteObject(brush);
+            mysmb_win32_fill_rect(command->x, command->y, command->length,
+                command->length, mysmb_win32_actor_color(command->identity));
         }
     }
 #endif
@@ -144,7 +155,7 @@ static unsigned char mysmb_win32_background_pixel(unsigned int x, unsigned int y
                            (((high >> (7U - pixel_x)) & 1U) << 1U));
 }
 
-static void mysmb_win32_draw_background(HDC dc)
+static void mysmb_win32_draw_background(void)
 {
     unsigned int y;
     unsigned int x;
@@ -170,11 +181,11 @@ static void mysmb_win32_draw_background(HDC dc)
             attribute = g_game.name_table[table][0x03c0U + (row / 4U) * 8U + column / 4U];
             palette = (unsigned char)((attribute >> (((row & 2U) << 1U) + (column & 2U))) & 3U);
             color = mysmb_win32_background_pixel(x, y);
-            mysmb_win32_plot(dc, x, y, mysmb_win32_background_color(palette, color));
+            mysmb_win32_plot(x, y, mysmb_win32_background_color(palette, color));
         }
     }
 }
-static void mysmb_win32_draw_oam(HDC dc)
+static void mysmb_win32_draw_oam(void)
 {
     unsigned int sprite;
     unsigned int pixel_y;
@@ -205,7 +216,7 @@ static void mysmb_win32_draw_oam(HDC dc)
                 color = (unsigned char)(((low >> bit) & 1U) | (((high >> bit) & 1U) << 1U));
                 if (color != 0U && ((attributes & 0x20U) == 0U ||
                     mysmb_win32_background_pixel(x + pixel_x, y + pixel_y) == 0U)) {
-                    mysmb_win32_plot(dc, x + pixel_x, y + pixel_y,
+                    mysmb_win32_plot(x + pixel_x, y + pixel_y,
                         mysmb_win32_sprite_color((unsigned char)(attributes & 3U), color));
                 }
             }
@@ -214,37 +225,37 @@ static void mysmb_win32_draw_oam(HDC dc)
 }
 #endif
 
+static void mysmb_win32_build_frame(void)
+{
+    ZeroMemory(g_pixels, sizeof(g_pixels));
+    mysmb_win32_draw_gameplay();
+}
+
 static void mysmb_win32_paint(HWND window)
 {
     PAINTSTRUCT paint;
     HDC dc;
 
     dc = BeginPaint(window, &paint);
-#ifdef MYSMB_LOCAL_TITLE
-    mysmb_win32_draw_background(dc);
-    mysmb_win32_draw_oam(dc);
-    EndPaint(window, &paint);
-    return;
-#endif
-    mysmb_win32_draw_gameplay(dc);
+    StretchDIBits(dc, 0, 0, MYSMB_SCREEN_WIDTH * MYSMB_SCALE,
+                  MYSMB_SCREEN_HEIGHT * MYSMB_SCALE, 0, 0,
+                  MYSMB_SCREEN_WIDTH, MYSMB_SCREEN_HEIGHT, g_pixels,
+                  &g_bitmap_info, DIB_RGB_COLORS, SRCCOPY);
     EndPaint(window, &paint);
 }
-
 static void mysmb_win32_step(HWND window)
 {
     LARGE_INTEGER now;
     LONGLONG elapsed;
     LONGLONG frame_period;
     struct mysmb_input input;
+    unsigned int steps;
 
     QueryPerformanceCounter(&now);
     elapsed = now.QuadPart - g_last_tick.QuadPart;
     frame_period = g_frequency.QuadPart / 60;
-    if (elapsed < frame_period) {
-        return;
-    }
+    if (elapsed < frame_period) return;
 
-    g_last_tick.QuadPart += frame_period;
     input.buttons = 0U;
     if ((GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_LEFT);
@@ -270,8 +281,18 @@ static void mysmb_win32_step(HWND window)
     if ((GetAsyncKeyState('X') & 0x8000) != 0) {
         input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
     }
-    mysmb_game_tick(&g_game, &input, &g_frame);
+    steps = 0U;
+    do {
+        g_last_tick.QuadPart += frame_period;
+        mysmb_game_tick(&g_game, &input, &g_frame);
+        ++steps;
+        elapsed = now.QuadPart - g_last_tick.QuadPart;
+    } while (elapsed >= frame_period && steps < 4U);
+    /* Discard excess wall-clock debt after four logical frames.  This keeps
+     * the message pump responsive instead of attempting an unbounded catch-up. */
+    if (elapsed >= frame_period) g_last_tick = now;
     mysmb_render_build(&g_game, &g_render_frame);
+    mysmb_win32_build_frame();
     InvalidateRect(window, NULL, FALSE);
 }
 
@@ -319,8 +340,16 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         return 1;
     }
 #endif
+    ZeroMemory(&g_bitmap_info, sizeof(g_bitmap_info));
+    g_bitmap_info.bmiHeader.biSize = sizeof(g_bitmap_info.bmiHeader);
+    g_bitmap_info.bmiHeader.biWidth = MYSMB_SCREEN_WIDTH;
+    g_bitmap_info.bmiHeader.biHeight = -(LONG)MYSMB_SCREEN_HEIGHT;
+    g_bitmap_info.bmiHeader.biPlanes = 1U;
+    g_bitmap_info.bmiHeader.biBitCount = 32U;
+    g_bitmap_info.bmiHeader.biCompression = BI_RGB;
     ZeroMemory(&g_frame, sizeof(g_frame));
     mysmb_render_build(&g_game, &g_render_frame);
+    mysmb_win32_build_frame();
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
