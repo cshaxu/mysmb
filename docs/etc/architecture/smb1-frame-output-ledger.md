@@ -1016,3 +1016,18 @@ smoke observes the resulting `$3f10` command and its universal `$22` entry.
 On the corrected 100-sample cold-start route, both CIRAM pages and all 32
 palette bytes are exact. The three PPU scalar residuals from P51 and all OAM
 differences remain open.
+
+## T10 S1 P53 Game Player-Palette Handoff
+
+The same `GetAreaPalette` to `GetPlayerColors` handoff is shared by the normal
+game-mode setup route when no special background stream supersedes it. The
+title-only repair left that game route at the ground universal color until its
+later game-core synchronization. The task-10 handoff now queues the player
+palette for either mode when no special stream was selected.
+
+The palette-timing smoke observes the game-mode `$3f10` command at the
+task-10/task-11 boundary. A corrected 380-sample cold-start comparison, with
+Start held at samples 40--41, has exact CIRAM pages, palette, PPU control,
+mask, name-table selection, scroll, and reconstructed PPU address throughout
+samples 100--239. CPU RAM and OAM remain different and retain their T11
+ownership; this background-window result does not close M2.
