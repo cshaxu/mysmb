@@ -1656,3 +1656,17 @@ The corrected 380-sample trace reduces CPU-RAM differences to 100,826,
 zero-page differences to 6,147, and working-RAM differences to 33,879. PPU and
 OAM fields remain exact. Per-channel note/beat handlers and music loopbacks
 remain open M2 work.
+
+## T13 S1 P21 Square 2 Music Stream
+
+The portable SoundEngine now performs `HandleSquare2Music`'s data-side path for
+area music: it decrements the note counter, converts the ROM CPU music address
+to a PRG offset, accepts a length byte, looks it up through
+`MusicLengthLookupTbl`, skips that byte, and reloads the counter from
+`Squ2_NoteLenBuffer`. APU register writes remain in the platform audio owner.
+The header smoke includes an initial length byte and first note, proving the
+same-frame `$f7=2`, `$07b3=$07b4=9` transition.
+
+The corrected trace has 100,402 CPU-RAM, 6,003 zero-page, and 33,599
+working-RAM differences. PPU/OAM remain exact; Square 1, triangle, noise, and
+music-loop handlers remain open.

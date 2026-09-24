@@ -243,6 +243,34 @@ static void mysmb_audio_step_noise(struct mysmb_game *game)
     }
 }
 
+/* ROM HandleSquare2Music through Squ2NoteHandler, excluding APU register
+ * writes. The source stream stores CPU addresses; NROM PRG is $8000-based. */
+static void mysmb_audio_step_square2_music(struct mysmb_game *game)
+{
+    mysmb_u16 address;
+    mysmb_u16 length_address;
+    mysmb_u8 data;
+
+    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U ||
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U ||
+        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
+    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
+    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return;
+    address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
+                          game->ram[0x00f5U]);
+    address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
+    if (address >= game->area_prg_size) return;
+    data = game->area_prg[address];
+    if ((data & 0x80U) != 0U) {
+        length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
+            (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
+        if (length_address >= game->area_prg_size) return;
+        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = game->area_prg[length_address];
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
+    }
+    game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
+        game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
+}
 static void mysmb_audio_step_music(struct mysmb_game *game)
 {
     mysmb_u8 event;
@@ -275,6 +303,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
                 mysmb_audio_find_header_selector(area, 8U));
         }
     }
+    mysmb_audio_step_square2_music(game);
     mysmb_audio_step_death_music(game);
 }
 
