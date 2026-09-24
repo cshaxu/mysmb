@@ -548,7 +548,10 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
         }
         break;
     case 6U:
-        if (game->ram[0x0752U] != 0U || game->ram[0x0769U] != 0U) {
+        /* ROM DisplayIntermediate: title mode skips the intermediate-lives
+         * text/timer path and immediately continues at AreaParserTaskControl. */
+        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
+            game->ram[0x0752U] != 0U || game->ram[0x0769U] != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
         else if (mysmb_area_queue_game_text(game, 1U) != 0U) {
