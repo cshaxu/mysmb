@@ -17,6 +17,13 @@
 6. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — death, restart, warp, continue, and completion mode routes.
 7. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — neutral audio command route.
 8. [Native logic and oracle](../proposals/m2-native-logic-and-oracle.md) — end-to-end playable-route oracle and Win32 validation.
+9. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — active T9 output-ownership ledger and local frame-oracle contract; prior M2 closure claims are under correction.
+10. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — translated background output.
+11. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — translated OAM output.
+12. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — Win32 native frame consumer and complete controller mapping.
+13. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — frame-indexed owner-local oracle.
+14. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — cross-width route proof.
+15. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — closure audit.
 
 ## M3 Candidates
 

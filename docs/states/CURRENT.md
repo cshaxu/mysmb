@@ -2,38 +2,37 @@
 
 ## Current Work
 
-**M4 T2 S1 is active.**
+**M2 T9 S1 is active.**
 
 ## Current Technical Baseline
 
-- `mysmb_game` is a C90 native title foundation with translated reset, OAM,
-  name-table, title-command, area, player, and object routes. `mysmb_win32`
-  builds x86 and x64 PE windows around that core; `mysmb_dos16_core` is its
-  host-free DOS compiler input and has passed a local OpenNT large-model
-  compile. Owner-local title data and CHR are generated only into ignored
-  output. `nnes` is a validation-only local reference and is never linked into
-  MySMB.
+- `mysmb_game` is a C90 native logic foundation with translated title, area,
+  player, object, mode, and audio-command routes. Its previous M2 completion
+  claim is withdrawn: gameplay output is a bounded marker frame, not a
+  translated PPU/OAM result. `mysmb_win32` builds x86 and x64 PE windows;
+  owner-local title data and CHR are generated only into ignored output.
+  `nnes` is validation-only and is never linked into MySMB.
 
-## M4 T2 S1 Packet
+## M2 T9 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M4 T2 S1, New. |
-| Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Execute the approved physical 25MHz 486SX/MS-DOS qualification protocol and record measured DOS/VGA route evidence. |
-| Non-goals | New gameplay behavior, a CPU/PPU/APU emulator, ROM-derived presentation assets, and inferred performance claims are outside this S. |
-| Reference Baseline | M4 T1 physical-host qualification protocol. |
-| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), M4 qualification continuation. |
-| Files And ABI Surface | Physical-host run evidence, M4 history evidence, and ignored local package outputs `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`. |
+| Identifier Mode | M2 T9 S1, New. |
+| Admission And Approval | Owner reopened M2 after rejecting the unsupported playable-product claim and directed a technical audit, task queue, and M2 closure plan. |
+| Objective | Establish the source-address output ledger and frame-oracle contract required to translate and prove original ROM PPU/OAM-visible results. |
+| Non-goals | A generic NES CPU/PPU/APU emulator, visual approximation, bitmap-to-text conversion, protected tracked output, and any M2 closure claim are outside this S. |
+| Reference Baseline | M2 T1 PRG ledger, M2 T8 bounded oracle record, and the reopened frame-equivalence proposal. |
+| Candidate Proposal | [M2 Reopened Frame Equivalence](../proposals/m2-reopened-frame-equivalence.md). |
+| Files And ABI Surface | PRG output ownership ledger, canonical portable frame-snapshot contract, local reference recorder contract, and corrected M2 evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
-| Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
-| Expected Markers | Measured host facts, three route outcomes, timing samples, and VGA/text observations. |
-| Asset Needs | Owner authorized a local SoftPC executable, adjacent configuration, bootable DOS floppy, and SMB1 ROM. The ROM is owner-supplied and non-redistributable; it may generate an ignored local Win32 package solely for this compatibility probe. Copied media and every injected or ROM-bound binary remain outside this repository, are never committed or published, and are never treated as physical-host evidence. |
-| Reporting Requirements | Record machine/DOS/VGA facts, measured route checkpoints, all deviations, and any missing physical-host capability before closure. |
-| Stop Conditions | Stop and revise scope if qualification lacks actual physical measurement, requires unreviewed media, changes gameplay behavior, or embeds protected data. |
-| Exit Criteria | The physical host completes the protocol with recorded observations, or the exact physical-host access gap is recorded. |
-| Original Owner Request | Deliver a native C SMB1 suitable for future colored text and DOS presentation without contaminating the core. |
-| Similar-Issue Sweep | Before closure, search for unsupported performance claims, unreviewed media, tracked binaries, local-path leakage in records, and product/runtime coupling; record every production hit and disposition. |
+| Verification | Owner-local output-ledger and recorder tests; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
+| Expected Markers | Every PPU/OAM-facing PRG writer has a source owner and disposition; canonical snapshot fields and reference sampling phase are explicit; no flat-marker path remains accepted as gameplay proof. |
+| Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
+| Reporting Requirements | Record source ranges, input scripts, frame phase, snapshot fields, hashes where lawful, every difference, and whether it is translated, deferred, or rejected. |
+| Stop Conditions | Stop and revise if the work substitutes host drawing for translated output, requires a runtime emulator, embeds protected data in tracked output, or cannot name a source owner for a visible result. |
+| Exit Criteria | T9 closes only with an audited output ledger and an executable bounded oracle contract; it does not close M2. |
+| Original Owner Request | Make the native C result and logic match the original ROM, then close M2 only with evidence. |
+| Similar-Issue Sweep | Search all production and test output paths for omitted OAM/PPU work, simplified markers, host-owned game state, incomplete button mapping, unsupported playable claims, and local-path leakage; record every hit and disposition. |
 
 ## Recent M4 Closures
 
@@ -41,7 +40,7 @@
 | --- | --- |
 | T1 | The physical 486SX qualification protocol defines build identity, host facts, scripted routes, timing samples, and acceptance evidence without any fabricated measurement. [History](../history/M4-T1-486sx-qualification-protocol.md). |
 
-## Current M4 Evidence
+## Deferred M4 Evidence
 
 - An isolated SoftPC compatibility probe booted the ROM-free DOS MZ for a
   bounded fifteen seconds without host-process exit. It is not physical-host,
@@ -60,7 +59,10 @@
 | T7 | BIOS input/timing plus Mode 13h and colored-text hardware hooks are linked into the DOS root while remaining outside game code. [History](../history/M3-T7-dos-hardware-hooks.md). |
 | T8 | MZ/map structural evidence is reproducible; the local host's documented lack of graphical DOS presentation prevents a false runtime claim. [History](../history/M3-T8-dos-runtime-structural-evidence.md). |
 
-## Recent M2 Closures
+## Prior M2 Records Under Correction
+
+These records retain their original task evidence but no longer establish M2
+completion. T9 audits and replaces the insufficient frame/output proof.
 
 | Task | Compact result |
 | --- | --- |
@@ -71,7 +73,7 @@
 | T5 | Blocks, items, enemies, projectiles, score/timer/power, firebars, Bowser, and platform routes closed. [History](../history/M2-T5-object-routes.md). |
 | T6 | Death, restart, two-player exchange, Warp Zone, and completion modes closed. [History](../history/M2-T6-mode-routes.md). |
 | T7 | Original audio queues, priorities, buffers, and neutral command state closed. [History](../history/M2-T7-audio-command-routes.md). |
-| T8 | Bounded title-to-play oracle, Win32 composition audit, and two original frame-order repairs closed. [History](../history/M2-T8-end-to-end-oracle-and-win32-route.md). |
+| T8 | Bounded title-to-play oracle, Win32 composition audit, and two original frame-order repairs were recorded; the output proof is superseded by T9. [History](../history/M2-T8-end-to-end-oracle-and-win32-route.md). |
 
 ## Recent Governance
 
