@@ -1083,3 +1083,20 @@ palette, and all seven PPU scalar bytes across samples 0--599. CPU RAM and OAM
 remain different under T11 ownership; this background result does not close
 M2. An independent 600-sample Start-only route has the same background, palette,
 and PPU-scalar result.
+
+## T10 S1 P57 Game-Over ScreenRoutines Dispatch
+
+Original `GameOverMode` dispatches `SetupGameOver`, `ScreenRoutines`, and then
+`RunGameOver` through operating-mode tasks 0, 1, and 2. Native C had replaced
+task 1 with a local countdown, so it never reached `DisplayIntermediate` at
+ROM `$8652-$889c` and never submitted selector 3 (`Game Over`) to
+`VRAM_Buffer1`.
+
+Game-over task 1 now runs the shared translated screen routine. Its task-6
+GameOver branch sets the original `$07a0` 18-tick gate, queues `WriteGameText`
+selector 3, and advances to `RunGameOver`; the following NMI transfers that
+command into the canonical name table. The owner-local area smoke binds the
+admitted PRG, drives the complete task-0-to-task-2 route, and verifies the
+committed `$220b` first Game Over text tile against its source command. The
+ROM-free mode smoke retains only mode-transition coverage because it has no
+admitted text source. OAM reset/output remains T11 ownership.

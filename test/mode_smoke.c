@@ -6,8 +6,6 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
-    unsigned int index;
-
     /* PlayerLoseLife keeps a surviving solo player in the same world, derives
      * the original half-way page, and hands area setup to mode task zero. */
     mysmb_game_initialize(&game);
@@ -36,14 +34,15 @@ int main(void)
     if (game.ram[0x0770U] != 3U || game.ram[0x0772U] != 0U ||
         game.ram[0x075aU] != 0xffU) return 2;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0772U] != 1U || game.ram[0x07a0U] != 0x12U ||
-        game.ram[0x00fcU] != 2U) return 3;
-    for (index = 0U; index < 18U; ++index) mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0772U] != 2U) return 4;
+    if (game.ram[0x0772U] != 1U || game.ram[0x00fcU] != 2U) return 3;
+    /* The ROM-free mode smoke has no owner-local text source.  The dedicated
+     * local area smoke verifies its ScreenRoutines-to-GameOver output route. */
+    game.ram[0x0772U] = 2U;
+    game.ram[0x07a0U] = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
-        game.ram[0x07fdU] != 4U) return 5;
+        game.ram[0x07fdU] != 4U) return 4;
 
     /* Game-over termination transposes an eligible second player and resumes
      * their complete seven-byte record rather than returning to title. */
@@ -60,7 +59,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x0753U] != 1U || game.ram[0x075aU] != 2U ||
-        game.ram[0x075fU] != 6U) return 6;
+        game.ram[0x075fU] != 6U) return 5;
 
     /* PlayerEndLevel owns the level increment while NextArea owns the new
      * area task, timer reload request, screen gate, and checkpoint reset. */
@@ -78,7 +77,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x075cU] != 2U || game.ram[0x0760U] != 3U ||
         game.ram[0x0772U] != 0U || game.ram[0x075bU] != 0U ||
-        game.ram[0x0757U] == 0U) return 7;
+        game.ram[0x0757U] == 0U) return 6;
 
     /* PlayerEndWorld returns worlds one through seven to game mode with the
      * first area and level records reset for the following world. */
@@ -93,7 +92,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x075fU] != 3U || game.ram[0x0760U] != 0U ||
-        game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 8;
+        game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 7;
 
     /* HandlePipeEntry selects the original middle-pipe destination before
      * VerticalPipeEntry starts its 48-frame transition. */
@@ -105,6 +104,6 @@ int main(void)
     if (mysmb_player_handle_vertical_pipe(&game, 0x10U, 0x11U) == 0U ||
         game.ram[0x075fU] != 4U || game.ram[0x0760U] != 0U ||
         game.ram[0x075cU] != 0U || game.ram[0x000eU] != 3U ||
-        game.ram[0x06deU] != 0x30U) return 9;
+        game.ram[0x06deU] != 0x30U) return 8;
     return 0;
 }

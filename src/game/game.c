@@ -266,8 +266,7 @@ static void mysmb_game_lose_life(struct mysmb_game *game)
     mysmb_game_continue_game(game);
 }
 
-/* ROM SetupGameOver, ScreenRoutines, and RunGameOver.  Rendering text is a
- * later adapter concern; the original 18-frame screen gate is preserved. */
+/* ROM SetupGameOver, ScreenRoutines, and RunGameOver. */
 static void mysmb_game_step_game_over(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
@@ -275,13 +274,11 @@ static void mysmb_game_step_game_over(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
         game->ram[MYSMB_RAM_EVENT_MUSIC] = 2U;
         game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
-        game->ram[MYSMB_RAM_SCREEN_TIMER] = 0x12U;
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
         return;
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
-        if (game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) game->ram[MYSMB_RAM_SCREEN_TIMER]--;
-        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        mysmb_game_step_screen_routine(game);
         return;
     }
     game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
@@ -564,7 +561,12 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
     case 6U:
         /* ROM DisplayIntermediate: title mode skips the intermediate-lives
          * text/timer path and immediately continues at AreaParserTaskControl. */
-        if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
+        if (game->ram[MYSMB_RAM_OPER_MODE] == 3U) {
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 0x12U;
+            if (mysmb_area_queue_game_text(game, 3U) != 0U)
+                game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+        }
+        else if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
             game->ram[0x0752U] != 0U || game->ram[0x0769U] != 0U) {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }

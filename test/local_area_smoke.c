@@ -56,6 +56,7 @@ int main(void)
     /* Screen task 2 has already committed the ROM-owned top status stream. */
     if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
         game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
+
     mysmb_area_queue_bottom_status_line(&game);
     if (game.ram[0x0300U] != 20U || game.ram[0x0301U] != 0x20U ||
         game.ram[0x0302U] != 0x62U || game.ram[0x0303U] != 6U) return 1;
@@ -198,6 +199,21 @@ int main(void)
     if (count == 0U) {
         return 1;
     }
+
+    /* SetupGameOver dispatches the same ScreenRoutines chain.  At task 6,
+     * DisplayIntermediate selects GameOverInter, queues selector 3, and
+     * advances the operating-mode task before the next NMI commits the text. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    game.ram[0x0770U] = 3U;
+    game.ram[0x0772U] = 0U;
+    input.buttons = 0U;
+    for (count = 0U; count < 8U; ++count) mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0772U] != 2U || game.ram[0x07a0U] != 0x12U ||
+        game.ram[0x0774U] != 0U ||
+        game.name_table[0][0x020bU] != mysmb_local_prg[0x0752U +
+            mysmb_local_prg[0x07feU + 7U] + 3U]) return 1;
+
     printf("area_pointer=%02x type=%u enemy=%02x%02x area=%02x%02x header=%u/%u/%u objects=%u\n",
            game.ram[0x0750U], game.ram[0x074eU], game.ram[0x00eaU],
            game.ram[0x00e9U], game.ram[0x00e8U], game.ram[0x00e7U],
