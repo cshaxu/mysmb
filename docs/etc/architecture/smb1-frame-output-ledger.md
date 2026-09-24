@@ -1235,10 +1235,15 @@ dispatcher to screen task 1 rather than the real game-core task 3. Those two
 source control-flow defects are now translated and covered by the player and
 mode route smokes.
 
-The repaired route still differs after the death fall because its pre-existing
-native audio command model leaves `EventMusicBuffer` set after death music.
-The original clears that source-owned gate before `PlayerHole` selects
-`PlayerLoseLife`; native C therefore correctly continues waiting on a now
-incorrect audio state. The resulting name-table, palette, mask, and horizontal
-scroll differences are recorded as an unresolved cross-owner dependency,
-not accepted T10 evidence. Raw captures were discarded after this summary.
+The original `HandleSquare2Music` path controls the observed gate: its death
+event stream at ROM `$fb72` uses the length table at `$ff66`, then its zero
+terminator reaches `EndOfMusicData` and clears `EventMusicBuffer`. Native C
+now advances that source stream through the owner-local PRG binding, retaining
+the original counter fields and clearing the buffer only at the terminator.
+The owner-local death-music smoke verifies the 181-step stream lifetime.
+
+With the repair, the same 600-sample running route has exact CIRAM pages,
+palette, PPU control, mask, selected name table, scroll pair, and reconstructed
+PPU address, including the death fall and screen rebuild. CPU RAM and OAM
+differences remain T11 ownership. Raw captures were discarded after this
+summary.

@@ -340,6 +340,13 @@ if(MYSMB_ROM_PATH)
     target_link_libraries(mysmb_local_victory_message_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.local-victory-message-smoke
              COMMAND mysmb_local_victory_message_smoke)
+    add_executable(mysmb_local_death_music_smoke test/local_death_music_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_local_death_music_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_local_death_music_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.local-death-music-smoke
+             COMMAND mysmb_local_death_music_smoke)
     add_executable(mysmb_local_frame_summary test/local_frame_summary.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
