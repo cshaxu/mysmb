@@ -92,8 +92,8 @@ static void mysmb_game_tick_player_timers(struct mysmb_game *game)
     }
 }
 
-/* ROM RunGameTimer, excluding its status-bar, audio, and death-mode owners. */
-static void mysmb_game_run_timer(struct mysmb_game *game)
+/* ROM RunGameTimer, excluding its running-out audio and death-mode owners. */
+static mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
 {
     mysmb_u16 digit;
 
@@ -101,13 +101,13 @@ static void mysmb_game_run_timer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] < 8U ||
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         game->ram[MYSMB_RAM_PLAYER_Y_HIGH] >= 2U ||
-        game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] != 0U) return;
+        game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] != 0U) return 0U;
     if ((game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS] |
          game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] |
          game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U]) == 0U) {
         game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
         game->ram[MYSMB_RAM_TIMER_EXPIRED]++;
-        return;
+        return 0U;
     }
     game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] = 0x18U;
     digit = MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U;
@@ -116,6 +116,7 @@ static void mysmb_game_run_timer(struct mysmb_game *game)
         digit--;
     }
     game->ram[digit]--;
+    return 1U;
 }
 
 /* ROM TransposePlayers.  The seven-byte player records deliberately include
@@ -515,7 +516,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_commit_vram_buffer(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
-    mysmb_game_run_timer(game);
+    if (mysmb_game_run_timer(game) != 0U) {
+        (void)mysmb_area_queue_timer_status(game);
+    }
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);

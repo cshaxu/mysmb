@@ -96,6 +96,29 @@ int main(void)
     if (game.ram[0x001dU] != 1U) {
         return 1;
     }
+    /* RunGameTimer decrements the live digits and appends its $207a command;
+     * the following frame's NMI consumes it into the PPU name table. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 0x7fU;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x00b5U] = 0U;
+    game.ram[0x0787U] = 0U;
+    game.ram[0x07f8U] = 3U;
+    game.ram[0x07f9U] = 4U;
+    game.ram[0x07faU] = 5U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x07f8U] != 3U || game.ram[0x07f9U] != 4U ||
+        game.ram[0x07faU] != 4U || game.ram[0x0300U] != 6U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x7aU ||
+        game.ram[0x0303U] != 3U || game.ram[0x0304U] != 3U ||
+        game.ram[0x0305U] != 4U || game.ram[0x0306U] != 4U) return 1;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.name_table[0][0x007aU] != 3U || game.name_table[0][0x007bU] != 4U ||
+        game.name_table[0][0x007cU] != 4U) return 1;
+
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
     input.buttons = MYSMB_BUTTON_START;

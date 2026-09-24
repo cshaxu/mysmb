@@ -67,6 +67,7 @@ enum {
     ,MYSMB_AREA_WORLD_NUMBER = 0x075fU
     ,MYSMB_AREA_LEVEL_NUMBER = 0x075cU
     ,MYSMB_AREA_DISPLAY_DIGITS = 0x07d7U
+    ,MYSMB_AREA_GAME_TIMER_DISPLAY = 0x07f8U
 };
 
 enum {
@@ -299,6 +300,29 @@ mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
     game->ram[0x0301U + offset++] = 0x28U;
     game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
     game->ram[0x0301U + offset] = 0U;
+    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
+    return 1U;
+}
+
+/* Translation of RunGameTimer's PrintStatusBarNumbers($a4).  Unlike the
+ * initial screen writers, the ROM appends this command to any pending NMI
+ * list, then lets the following NMI consume the whole list. */
+mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+
+    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
+    if (offset > 0xf8U) return 0U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x20U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x7aU;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 3U;
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 1U];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
+        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 2U];
+    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }
