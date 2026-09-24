@@ -1522,3 +1522,20 @@ CPU OAM RAM at sample 30, hardware OAM at sample 31, both CIRAM pages at
 sample 32, palette at sample 33, and PPU mask at sample 32. In this bounded
 route, PPU control, name-table selection, scroll X/Y, and PPU address match.
 This is an active mismatch baseline, not M2 equivalence evidence.
+
+## T13 S1 P13 Corrected Start/Right Frame Trace
+
+The reference recorder consumes NES serial controller bits (`Start=$08`,
+`Right=$80`), while the native recorder consumes MySMB's decoded input masks
+(`Start=$10`, `Right=$01`). An earlier 60-sample baseline incorrectly passed
+the native Start byte to MyNES, which pressed Up and did not exercise the ROM
+Start route; it is superseded.
+
+A fresh 380-sample owner-local trace pressed Start for one frame at sample 30
+and then held Right from sample 60. With the correct encoding on both sides,
+CIRAM pages, palette, and all seven PPU-visible scalar values are exact at all
+380 samples. CPU OAM RAM is exact through sample 283; hardware OAM is exact
+through sample 284. The first real gameplay OAM difference is sprite 12 at
+sample 285, leaving the enemy lifecycle/draw owner open. CPU RAM still differs
+in source scratch, stack, and untranslated working-state bytes, so this is
+valid output evidence only and does not close M2.

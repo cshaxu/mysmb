@@ -69,9 +69,11 @@ static int mysmb_reference_write_frame(FILE *output, const core_machine *machine
         mysmb_reference_write(output, &display_address, sizeof(display_address));
 }
 
-/* Optional script syntax is `frame:buttons[,frame:buttons...]`.  A later
- * entry replaces the held byte from its frame onward, allowing a one-frame
- * Start press without introducing a host input path into the product. */
+/* Optional script syntax is `frame:buttons[,frame:buttons...]`.  The byte is
+ * the NES controller's serial bit order: A=$01, B=$02, Select=$04,
+ * Start=$08, Up=$10, Down=$20, Left=$40, Right=$80.  A later entry replaces
+ * the held byte from its frame onward, allowing a one-frame Start press
+ * without introducing a host input path into the product. */
 static int mysmb_reference_script_buttons(const char *script,
                                           lib_u32 frame,
                                           unsigned int *buttons)

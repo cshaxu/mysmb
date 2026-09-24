@@ -7,8 +7,11 @@
 
 /* Owner-local trace writer for M2 T10.  Its record body deliberately matches
  * the reference recorder: ordinal, RAM, two physical CIRAM pages, palette,
- * OAM, then the seven PPU-visible scalar bytes.  The output is protected
- * derived data and must be written only below an ignored build directory. */
+ * OAM, then the seven PPU-visible scalar bytes.  Its script byte uses MySMB's
+ * decoded masks, where Start=$10 and Right=$01; this intentionally differs
+ * from the reference recorder's NES serial controller bit order.  The output
+ * is protected derived data and must be written only below an ignored build
+ * directory. */
 static mysmb_u8 mysmb_recorder_write(FILE *output, const void *bytes,
                                      unsigned long count)
 {
