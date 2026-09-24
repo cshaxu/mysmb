@@ -935,3 +935,9 @@ tracked in C.
 The title area does not select those overrides, so this does not alter its
 open cold-start differences. It completes the missing task-10/task-11 branch
 semantics for qualifying area headers and styles.
+
+The owner-local palette timing smoke reaches the post-SecondaryGameSetup NMI
+boundary, verifies the existing ordinary palette transfer, then applies each
+of controls 9--11 through the same portable palette state. It also rejects
+the adjacent non-special controls. The test compares only outcomes within the
+locally generated binding and retains no ROM palette bytes or derived output.

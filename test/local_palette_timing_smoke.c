@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/area.h"
 #include "smb1_local_rom.h"
 
 int main(void)
@@ -6,6 +7,10 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
+    mysmb_u8 day_palette[0x20U];
+    mysmb_u8 night_palette[0x20U];
+    mysmb_u8 index;
+    mysmb_u8 differs;
     mysmb_u8 count;
 
     mysmb_game_initialize(&game);
@@ -20,6 +25,25 @@ int main(void)
      * transfers after ScreenRoutines hands off to SecondaryGameSetup. */
     for (count = 0U; count < 4U; ++count)
         mysmb_game_tick(&game, &input, &frame);
-    return game.palette[0U] == mysmb_local_prg[0x05d0U] &&
-        game.palette[31U] == mysmb_local_prg[0x0ceaU] ? 0 : 1;
+    if (game.palette[0U] != mysmb_local_prg[0x05d0U] ||
+        game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
+
+    if (mysmb_area_apply_special_palette(&game, 8U) != 0U ||
+        mysmb_area_apply_special_palette(&game, 12U) != 0U) return 1;
+    if (mysmb_area_apply_special_palette(&game, 9U) == 0U) return 1;
+    for (index = 0U; index < 0x20U; ++index)
+        day_palette[index] = game.palette[index];
+    if (mysmb_area_apply_special_palette(&game, 10U) == 0U) return 1;
+    differs = 0U;
+    for (index = 0U; index < 0x20U; ++index) {
+        night_palette[index] = game.palette[index];
+        if (night_palette[index] != day_palette[index]) differs = 1U;
+    }
+    if (differs == 0U || mysmb_area_apply_special_palette(&game, 11U) == 0U)
+        return 1;
+    differs = 0U;
+    for (index = 0U; index < 0x20U; ++index) {
+        if (game.palette[index] != night_palette[index]) differs = 1U;
+    }
+    return differs != 0U ? 0 : 1;
 }
