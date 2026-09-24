@@ -44,6 +44,14 @@ struct mysmb_game {
     mysmb_u8 ppu_name_table;
     mysmb_u8 scroll_x;
     mysmb_u8 scroll_y;
+    /* Physical PPU state committed at the NMI boundary.  The translated
+     * game mutates the mirror/scroll fields during OperModeExecutionTree;
+     * source NMI presents those mutations on the following boundary. */
+    mysmb_u8 visible_ppu_control_0;
+    mysmb_u8 visible_ppu_mask;
+    mysmb_u8 visible_ppu_name_table;
+    mysmb_u8 visible_scroll_x;
+    mysmb_u8 visible_scroll_y;
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;

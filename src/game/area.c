@@ -1298,6 +1298,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     mysmb_u8 area_type;
     mysmb_u8 value;
     mysmb_u8 height;
+    mysmb_u8 continuation;
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
@@ -1522,10 +1523,16 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (kind == 7U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+        continuation = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U ?
+            1U : 0U;
+        if (continuation == 0U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 1U;
         value = (mysmb_u8)(second & 0x07U);
-        if ((second & 0x08U) == 0U) value = (mysmb_u8)(value + 4U);
+        /* RenderPipe reads table index five for the first column, then index
+         * four after its one-column length slot becomes active.  ROM $9929
+         * observes Y=5 then Y=4 across those two parser passes. */
+        if ((second & 0x08U) == 0U)
+            value = (mysmb_u8)(value + (continuation != 0U ? 3U : 4U));
         if (value > 5U) return;
         game->ram[MYSMB_AREA_METATILE_BUFFER + row] = pipe[value];
         if (row == 12U) return;

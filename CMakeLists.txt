@@ -324,6 +324,12 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_local_frame_summary PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
     target_link_libraries(mysmb_local_frame_summary PRIVATE mysmb_game)
+    add_executable(mysmb_local_frame_recorder test/local_frame_recorder.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>
+        $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_local_frame_recorder PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+    target_link_libraries(mysmb_local_frame_recorder PRIVATE mysmb_game)
 
     if(MYSMB_ASM_PATH)
         add_custom_command(

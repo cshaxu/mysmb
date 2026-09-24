@@ -213,6 +213,10 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a8U] != 0x12U || game.ram[0x06a9U] != 0x14U ||
         game.ram[0x0732U] != 0U) return 1;
+    game.ram[0x0726U] = 7U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a8U] != 0x13U || game.ram[0x06a9U] != 0x15U ||
+        game.ram[0x0732U] != 0xffU) return 1;
 
     /* Row-15 exit pipes use their fixed four-column side-pipe table; the
      * final two columns also grow a source-defined shaft above the elbow. */

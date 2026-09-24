@@ -23,10 +23,14 @@ static int mysmb_reference_write(FILE *output, const void *bytes, size_t count)
 static int mysmb_reference_write_frame(FILE *output, const core_machine *machine)
 {
     const core_ppu *ppu = &machine->ppu;
-    lib_u8 name_table = (lib_u8)((ppu->address >> 10u) & 3u);
-    lib_u8 scroll_x = (lib_u8)(((ppu->address & 0x001fu) << 3u) | ppu->fine_x);
-    lib_u8 scroll_y = (lib_u8)((((ppu->address >> 5u) & 0x001fu) << 3u) |
-        ((ppu->address >> 12u) & 7u));
+    /* At NMI RTI, v may still be the renderer's timed fetch address.  SMB1
+     * has just written $2005 then $2000, so t plus fine_x is the committed
+     * next-frame scroll/name-table state. */
+    lib_u16 display_address = ppu->temporary_address;
+    lib_u8 name_table = (lib_u8)((display_address >> 10u) & 3u);
+    lib_u8 scroll_x = (lib_u8)(((display_address & 0x001fu) << 3u) | ppu->fine_x);
+    lib_u8 scroll_y = (lib_u8)((((display_address >> 5u) & 0x001fu) << 3u) |
+        ((display_address >> 12u) & 7u));
 
     return mysmb_reference_write(output, &ppu->frame_revision,
             sizeof(ppu->frame_revision)) &&
@@ -39,7 +43,7 @@ static int mysmb_reference_write_frame(FILE *output, const core_machine *machine
         mysmb_reference_write(output, &name_table, sizeof(name_table)) &&
         mysmb_reference_write(output, &scroll_x, sizeof(scroll_x)) &&
         mysmb_reference_write(output, &scroll_y, sizeof(scroll_y)) &&
-        mysmb_reference_write(output, &ppu->address, sizeof(ppu->address));
+        mysmb_reference_write(output, &display_address, sizeof(display_address));
 }
 
 /* Optional script syntax is `frame:buttons[,frame:buttons...]`.  A later

@@ -42,7 +42,9 @@ enum {
     MYSMB_RAM_PPU_CONTROL_MIRROR = 0x0778U,
     MYSMB_RAM_PPU_MASK_MIRROR = 0x0779U,
     MYSMB_RAM_PARSER_TASK = 0x071fU,
-    MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU
+    MYSMB_RAM_SCROLL_THIRTY_TWO = 0x073dU,
+    MYSMB_RAM_HORIZONTAL_SCROLL = 0x073fU,
+    MYSMB_RAM_VERTICAL_SCROLL = 0x0740U
 };
 
 enum {
@@ -479,6 +481,11 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
+    game->visible_ppu_control_0 = 0x90U;
+    game->visible_ppu_mask = 0U;
+    game->visible_ppu_name_table = 0U;
+    game->visible_scroll_x = 0U;
+    game->visible_scroll_y = 0U;
 }
 
 /* Translation of the game-mode portion of ScreenRoutines.  The original
@@ -693,17 +700,21 @@ static void mysmb_game_commit_display_state(struct mysmb_game *game)
     /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
      * may have selected d2 in that mirror, whereas the physical register at
      * RTI is restored from the pre-command value with NMI enabled. */
-    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] =
-        (mysmb_u8)(game->ppu_control_0 & 0x7fU);
+    game->ppu_control_0 &= 0x7fU;
+    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = game->ppu_control_0;
     if (game->ram[MYSMB_RAM_DISABLE_SCREEN] != 0U)
         game->ppu_mask &= 0xe6U;
     else
         game->ppu_mask |= 0x1eU;
     game->ram[MYSMB_RAM_PPU_MASK_MIRROR] = game->ppu_mask;
-    /* WriteBufferToScreen persists its selected d2 in the $2000 mirror.
-     * At RTI the source restores that mirror with NMI enabled, so a vertical
-     * command remains visible in subsequent empty-NMI snapshots. */
-    game->ppu_control_0 |= 0x80U;
+    /* The original writes these values before OperModeExecutionTree.  That
+     * routine may change the mirrors and scroll variables, but the physical
+     * PPU does not show those changes until the following NMI. */
+    game->visible_ppu_control_0 = (mysmb_u8)(game->ppu_control_0 | 0x80U);
+    game->visible_ppu_mask = game->ppu_mask;
+    game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
+    game->visible_scroll_x = game->ram[MYSMB_RAM_HORIZONTAL_SCROLL];
+    game->visible_scroll_y = game->ram[MYSMB_RAM_VERTICAL_SCROLL];
 }
 
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
@@ -755,6 +766,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     game->frame_number++;
     game->ram[MYSMB_RAM_FRAME_COUNTER]++;
     mysmb_game_commit_vram_buffer(game);
+    mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
     mysmb_game_tick_player_timers(game);
     mysmb_game_title_step(game, input);
@@ -897,7 +909,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     if (mysmb_game_run_timer(game) != 0U) {
         (void)mysmb_area_queue_timer_status(game);
     }
-    mysmb_game_commit_display_state(game);
     frame->sprite0_y = game->ram[0x0200U];
     frame->sprite0_x = game->ram[0x0203U];
     frame->start_pressed =

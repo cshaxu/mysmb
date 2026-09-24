@@ -24,6 +24,11 @@ int main(void)
     game.ppu_name_table = 2U;
     game.scroll_x = 0x40U;
     game.scroll_y = 0x80U;
+    game.visible_ppu_control_0 = 0x90U;
+    game.visible_ppu_mask = 0x1eU;
+    game.visible_ppu_name_table = 2U;
+    game.visible_scroll_x = 0x40U;
+    game.visible_scroll_y = 0x80U;
     mysmb_frame_snapshot_capture(&game, &snapshot);
     if (snapshot.sequence != 42UL || snapshot.cpu_ram[0x0200U] != 0x12U ||
         snapshot.oam[0U] != 0x12U || snapshot.audio[0U] != 0x34U ||

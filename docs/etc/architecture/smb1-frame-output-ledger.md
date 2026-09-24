@@ -726,30 +726,51 @@ paths are source-aligned over the declared window. OAM and host rendering
 remain separately incomplete T11/T12 owners; the reference runtime is
 validation-only and remains outside the product.
 
-## T10 S1 P36 First Dynamic-Column Difference
+## T10 S1 P36 Dynamic Pipe Continuation
 
-An automated 600-sample Start/right comparison uses the exact NMI-return
-sequence for both routes and compares CPU RAM, both name tables, palette,
-OAM, and PPU scalar fields independently. Name tables match through sample
-376; the first CIRAM difference is sample 377, when the prior sample's
-`VRAM_Buffer2` column reaches visible state. Palette still matches at the
-declared completed palette checkpoint (sample 206). OAM differs and remains
-T11 work.
+The stable Start/right route has an exact background window at NMI samples
+370--379: both vertically mirrored CIRAM pages and palette match the native
+snapshot. The earlier claim that sample 377 was the first CIRAM difference
+was based on a temporary native dump that accidentally omitted the held-right
+input script; it is withdrawn.
 
-At sample 376 the two buffer offsets and command headers agree, but the
-effective column payload differs at offsets `$16-$19`. The source staging
-column at `$06a1` differs only at rows 9 and 10: original values are
-`$13/$15`, native values are `$12/$14`. The active stream entry is `$68,$f2`.
-The original pipe-table reads are at `$9898` and `$9929`, with the table at
-`$98dd`; the native static pipe decoder must recover that source index and
-row rule before the column can be changed. Bytes after the source terminator
-are stale buffer storage and are excluded from this output comparison.
+The source parser's vertical-pipe continuation at `$9929` selects a different
+pipe-table row from its first-column pass. The C parser now preserves the
+one-column object length state before selecting that row. A synthetic two-pass
+smoke test covers both the new-object and continuation values, without
+containing owner-ROM data. This correction is source-semantic; the table and
+its data remain owner-local inputs.
 
 ### Similar-Issue Sweep
 
 The sweep covered the parser staging buffer, graphics-column writer,
 attribute writer, buffer terminator, active object slots, and every native
-pipe-table use. The table bytes themselves are not changed. The identified
-defect is the source object-encoding decoder for the `$68,$f2` pipe route;
-other pipe encodings require a controlled parser-state comparison before any
-shared formula is modified.
+pipe-table use. The table data is unchanged. Other pipe encodings remain
+subject to the same stateful parser comparison before any shared formula is
+altered.
+
+## T10 S1 P37 Exact Trace Comparator
+
+`test/local_frame_recorder.c` writes a bounded owner-local `MSFN` v1 native
+trace in the reference recorder's 4,395-byte record layout. It samples one
+native tick after the translated NMI output phase and accepts the same bounded
+Start/release plus held-input syntax as the local summary tool. The trace is
+not a product path, fixture, or evidence artifact; it is written only under
+an ignored build directory and deleted immediately after comparison.
+
+`tools/Compare-M2FrameTrace.ps1` validates both trace headers and lengths,
+enforces the 600-sample limit, and compares CPU RAM, each CIRAM page, palette,
+OAM, and PPU scalar fields independently. SMB1's mapper-0 vertical mirroring
+maps the two physical CIRAM pages directly to the two native name tables. The
+recorder reads nnes PPU `t` plus fine X at RTI, rather than render-time `v`:
+the source has just written `$2005/$2000`, so `t` is its next-frame committed
+scroll/name-table state. The leading reference PPU revision and native tick
+sequence are labels, not output bytes, and are therefore not compared.
+
+On the admitted 380-sample Start/right route, title samples 0--41 still have
+background differences. Samples 42--379 have exact CIRAM pages; samples
+240--379 have exact palette and all PPU scalar state, including the reconstructed
+committed address. CPU RAM and OAM still differ in the gameplay window. OAM
+is T11 ownership; RAM differences require field-by-field ownership before
+they can be assigned to T10 or a later task. This comparator replaces
+summary-hash claims for all subsequent M2 frame evidence.
