@@ -35,7 +35,7 @@ valid merely because its storage happens to be zero.
 
 | ROM range | Original owner | Required snapshot effect | Current C disposition |
 | --- | --- | --- | --- |
-| `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Missing**; game tick has no NMI-output phase. |
+| `$8082-$8181` | NMI display synchronization, controller/timer dispatch, and PPU control/scroll commit | Frame boundary, PPU control/scroll commit, OAM submission boundary | **Partial**; the portable tick consumes the selected VRAM buffer at its NMI boundary, commits `$2000` increment/NMI and display-mask state into the snapshot, and retains source-owned scroll/name-table fields. OAM submission remains T11 work. |
 | `$81c6-$81f9` | Sprite-offset shuffle and misc-sprite offset preparation | OAM ordering inputs | **Missing**; the helper is not translated as output ownership. |
 | `$8220-$8227` | Move all sprites offscreen | OAM offscreen entries | **Partial**; RAM clear exists, but it is not submitted as OAM output. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; the owner-local title generator extracts the icon's VRAM command and the title loader applies it after the title transfer. Its OAM-related title work remains T11 ownership. |
@@ -435,3 +435,20 @@ The change only commits scalar PPU-visible state after existing native logic
 has updated its scroll/name-table fields. It does not submit OAM graphics,
 invent a host PPU, or claim reference-frame verification; those remain owned
 by T11 and T13.
+
+## T10 S1 P22 Incremental Block Metatile Updates
+
+`BlockObjMT_Updater` and its `WriteBlockMetatile`/`PutBlockMetatile` output
+route (`$bed4`, `$2027-$209d`) now update the collision block buffer and queue
+the original pair of two-tile name-table commands in `VRAM_Buffer1`. The
+source loop starts with block slot one and stops its other slot while the
+first command occupies the buffer; the following NMI is the only path that
+makes the update PPU-visible. The core smoke test covers command bytes,
+slot ordering, collision state, and the two committed name-table rows.
+
+### Similar-Issue Sweep
+
+The old whole-page `refresh_background_page` shortcut was removed from this
+dynamic replacement owner. Palette choice uses the original five
+`BlockGfxData` cases and no platform renderer decides the result. Bouncing
+block, brick debris, coin, and item sprites remain T11 OAM owners.

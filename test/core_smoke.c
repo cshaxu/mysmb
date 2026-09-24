@@ -924,8 +924,26 @@ int main(void)
     game.ram[0x03ecU] = 1U;
     game.ram[0x03edU] = 1U;
     mysmb_objects_apply_block_replacements(&game);
-    if (game.ram[0x0524U] != 0x61U || game.ram[0x0535U] != 0x62U ||
-        game.ram[0x03ecU] != 0U || game.ram[0x03edU] != 0U) return 1;
+    /* BlockObjMT_Updater handles slot one first, queues its pair of PPU
+     * writes, then leaves slot zero for the next NMI-cleared buffer. */
+    if (game.ram[0x0524U] != 0U || game.ram[0x0535U] != 0x62U ||
+        game.ram[0x03ecU] != 1U || game.ram[0x03edU] != 0U ||
+        game.ram[0x0300U] != 10U || game.ram[0x0301U] != 0x21U ||
+        game.ram[0x0302U] != 0x4aU || game.ram[0x0303U] != 2U ||
+        game.ram[0x0304U] != 0x57U || game.ram[0x0305U] != 0x58U ||
+        game.ram[0x0306U] != 0x21U || game.ram[0x0307U] != 0x6aU ||
+        game.ram[0x0308U] != 2U || game.ram[0x0309U] != 0x59U ||
+        game.ram[0x030aU] != 0x5aU || game.ram[0x030bU] != 0U) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 11U) == 0U ||
+        game.name_table[0][0x014aU] != 0x57U ||
+        game.name_table[0][0x014bU] != 0x58U ||
+        game.name_table[0][0x016aU] != 0x59U ||
+        game.name_table[0][0x016bU] != 0x5aU) return 1;
+    game.ram[0x0300U] = 0U;
+    game.ram[0x0301U] = 0U;
+    mysmb_objects_apply_block_replacements(&game);
+    if (game.ram[0x0524U] != 0x61U || game.ram[0x03ecU] != 0U ||
+        game.ram[0x0300U] != 10U) return 1;
     game.ram[0x0300U] = 1U;
     game.ram[0x03ecU] = 1U;
     game.ram[0x0524U] = 0U;
