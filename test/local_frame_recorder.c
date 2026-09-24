@@ -42,6 +42,15 @@ static mysmb_u8 mysmb_recorder_script_buttons(const char *script,
     return 1U;
 }
 
+static mysmb_u8 mysmb_recorder_equals(const char *left, const char *right)
+{
+    while (*left != '\0' && *right != '\0' && *left == *right) {
+        ++left;
+        ++right;
+    }
+    return *left == '\0' && *right == '\0' ? 1U : 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -76,13 +85,28 @@ int main(int argument_count, char **arguments)
     unsigned long release_frame;
     unsigned long index;
     mysmb_u32 frames;
+    const char *script;
+    mysmb_u8 bootstrap_title;
 
-    if (argument_count != 5 && argument_count != 6) return 64;
+    if (argument_count < 5 || argument_count > 7) return 64;
     parsed_frames = strtoul(arguments[2], 0, 10);
     start_frame = strtoul(arguments[3], 0, 10);
     release_frame = strtoul(arguments[4], 0, 10);
     if (parsed_frames == 0UL || parsed_frames > 600UL ||
         start_frame >= release_frame || release_frame > parsed_frames) return 64;
+    script = 0;
+    bootstrap_title = 0U;
+    for (index = 5UL; index < (unsigned long)argument_count; ++index) {
+        if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
+            bootstrap_title = 1U;
+        }
+        else if (script == 0) {
+            script = arguments[index];
+        }
+        else {
+            return 64;
+        }
+    }
     frames = (mysmb_u32)parsed_frames;
     output = fopen(arguments[1], "wb");
     if (output == 0) return 65;
@@ -93,17 +117,27 @@ int main(int argument_count, char **arguments)
     }
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    if (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
-                                        MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||
-        mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
-                                       MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
+    mysmb_game_bind_title_source(&game, mysmb_local_title_data,
+                                 MYSMB_LOCAL_TITLE_DATA_SIZE,
+                                 mysmb_local_title_icon_data,
+                                 MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
+    if (bootstrap_title != 0U) {
+        if (mysmb_game_begin_title_bootstrap(&game) == 0U) {
+            fclose(output);
+            return 65;
+        }
+    }
+    else if (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
+                                             MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||
+             mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
+                                            MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
         fclose(output);
         return 65;
     }
     for (index = 0UL; index < parsed_frames; ++index) {
         input.buttons = index >= start_frame && index < release_frame ?
             MYSMB_BUTTON_START : 0U;
-        if (mysmb_recorder_script_buttons(argument_count == 6 ? arguments[5] : 0,
+        if (mysmb_recorder_script_buttons(script,
                                           index, &input.buttons) == 0U) {
             fclose(output);
             return 64;

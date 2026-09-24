@@ -883,3 +883,17 @@ The local bootstrap smoke verifies that the staged title transfer, icon queue,
 and title-menu handoff all complete before frame 40, the admitted Start-input
 phase. The full x64 suite and x86 build passed after the repair. This proves
 title input readiness, not title-frame equality.
+
+## T10 S1 P44 Cold-Start Title Trace
+
+The owner-local native recorder now has an explicit bootstrap-title diagnostic
+mode while retaining its existing prebuilt-title default. An 80-sample cold
+start comparison used the same frame-40 Start/release script on both sides.
+It found the first CIRAM-page-0 difference at sample 3, the first palette
+difference at sample 2, and later PPU-control and mask differences. Name-table
+selection and horizontal scroll remained aligned in this short window.
+
+This is the first direct product-startup comparison; it disproves any claim
+that title menu input readiness establishes title-output equality. The bounded
+raw traces were deleted in the comparison command. The remaining title-task
+and palette route is T10 work; OAM differences remain T11 work.
