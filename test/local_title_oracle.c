@@ -28,6 +28,10 @@ int main(void)
                                         MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U) {
         return 1;
     }
+    if (mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
+                                       MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
+        return 1;
+    }
     hash = fnv1a(game.name_table[0], 0x0400U, 2166136261UL);
     hash = fnv1a(game.name_table[1], 0x0400U, hash);
     printf("native_ciram_fnv1a=%08lx\n", hash);

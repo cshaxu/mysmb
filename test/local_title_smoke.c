@@ -12,6 +12,10 @@ int main(void)
                                         MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U) {
         return 1;
     }
+    if (mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
+                                       MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
+        return 1;
+    }
     changed = 0U;
     for (index = 0U; index < 0x0300U; ++index) {
         if (game.name_table[0][index] != 0x24U) {

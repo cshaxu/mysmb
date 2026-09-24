@@ -220,6 +220,10 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
                                         MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U) {
         return 1;
     }
+    if (mysmb_game_apply_vram_commands(&g_game, mysmb_local_title_icon_data,
+                                       MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
+        return 1;
+    }
 #endif
     ZeroMemory(&g_frame, sizeof(g_frame));
     mysmb_render_build(&g_game, &g_render_frame);

@@ -40,6 +40,9 @@ int main(int argument_count, char **arguments)
     if (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
                                         MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U)
         return 65;
+    if (mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
+                                       MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U)
+        return 65;
     printf("frame,mode,task,ppu_address,ciram_fnv1a,palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
         /* NES serial Start is bit 3; MySMB's decoded RAM representation is $10. */
