@@ -448,6 +448,29 @@ int main(void)
         game.ram[0x009fU] != 0xefU || game.ram[0x0433U] != 0xe0U) {
         return 1;
     }
+    /* 6502 ADC preserves the fractional carry when the signed vertical
+     * speed returns the low byte to its starting value: $6f + $ff + 1.
+     * The carry must keep Player_Y_HighPos on page 1. */
+    game.ram[0x009fU] = 0xffU;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x6fU;
+    game.ram[0x0416U] = 0xe0U;
+    game.ram[0x0433U] = 0x80U;
+    mysmb_player_impose_gravity(&game, 0U, 0U, 4U, 0U);
+    if (game.ram[0x00ceU] != 0x6fU || game.ram[0x00b5U] != 1U) {
+        return 1;
+    }
+    game.ram[0x009fU] = 0xffU;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x6fU;
+    game.ram[0x0416U] = 0xe0U;
+    game.ram[0x0433U] = 0x80U;
+    game.ram[0x000cU] = 0U;
+    game.ram[0x0490U] = 0U;
+    mysmb_player_climb(&game);
+    if (game.ram[0x00ceU] != 0x6fU || game.ram[0x00b5U] != 1U) {
+        return 1;
+    }
     game.ram[0x0057U] = 0x11U;
     game.ram[0x0086U] = 0xfeU;
     game.ram[0x006dU] = 2U;

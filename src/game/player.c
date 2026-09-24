@@ -169,6 +169,7 @@ void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
     mysmb_u8 page_delta;
     mysmb_u8 lower_limit;
     mysmb_u8 borrow;
+    mysmb_u16 y_sum;
 
     old_value = game->ram[MYSMB_PLAYER_Y_DUMMY];
     game->ram[MYSMB_PLAYER_Y_DUMMY] =
@@ -176,9 +177,14 @@ void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
     carry_dummy = game->ram[MYSMB_PLAYER_Y_DUMMY] < old_value ? 1U : 0U;
     page_delta = game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ? 0xffU : 0U;
     old_value = game->ram[MYSMB_PLAYER_Y];
-    game->ram[MYSMB_PLAYER_Y] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_SPEED] + carry_dummy);
-    carry_y = game->ram[MYSMB_PLAYER_Y] < old_value ? 1U : 0U;
+    /* The carry into ADC Player_Y_Position comes from the fractional
+     * addition above.  Comparing the byte result with old_value loses that
+     * carry when the signed speed and fractional carry return to old_value
+     * (for example $6f + $ff + 1 = $16f). */
+    y_sum = (mysmb_u16)old_value + game->ram[MYSMB_PLAYER_Y_SPEED] +
+        carry_dummy;
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)y_sum;
+    carry_y = y_sum > 0xffU ? 1U : 0U;
     game->ram[MYSMB_PLAYER_Y_HIGH] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_HIGH] + page_delta + carry_y);
     old_value = game->ram[MYSMB_PLAYER_Y_FORCE];
@@ -340,6 +346,7 @@ void mysmb_player_climb(struct mysmb_game *game)
     mysmb_u8 page_delta;
     mysmb_u8 index;
     mysmb_u8 facing;
+    mysmb_u16 y_sum;
 
     old_value = game->ram[MYSMB_PLAYER_Y_DUMMY];
     game->ram[MYSMB_PLAYER_Y_DUMMY] =
@@ -347,9 +354,10 @@ void mysmb_player_climb(struct mysmb_game *game)
     carry_dummy = game->ram[MYSMB_PLAYER_Y_DUMMY] < old_value ? 1U : 0U;
     page_delta = game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ? 0xffU : 0U;
     old_value = game->ram[MYSMB_PLAYER_Y];
-    game->ram[MYSMB_PLAYER_Y] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_SPEED] + carry_dummy);
-    carry_y = game->ram[MYSMB_PLAYER_Y] < old_value ? 1U : 0U;
+    y_sum = (mysmb_u16)old_value + game->ram[MYSMB_PLAYER_Y_SPEED] +
+        carry_dummy;
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)y_sum;
+    carry_y = y_sum > 0xffU ? 1U : 0U;
     game->ram[MYSMB_PLAYER_Y_HIGH] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_HIGH] + page_delta + carry_y);
     if ((game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] &

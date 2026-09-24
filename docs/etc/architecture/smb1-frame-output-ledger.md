@@ -1205,3 +1205,21 @@ The bounded Start route independently has exact CIRAM pages, palette, and PPU
 scalars through 600 samples. Therefore title-area display is no longer an open
 background owner. This evidence does not cover alternate entry branches or
 the remaining buffer-address controls.
+
+## T10 S1 P65 Jumping Gameplay Background Route
+
+A bounded local reference route selects Start on frame 40, releases it on
+frame 42, and holds Right plus A from frame 240 through sample 599. The first
+comparison exposed a native vertical-position carry defect: the C translation
+inferred the low-byte carry by comparing its result with the old byte. That
+loses the 6502 `ADC` carry for `$6f + $ff + 1 = $16f`, changing
+`Player_Y_HighPos` from the original value 1 and then suppressing the status
+timer's name-table update.
+
+Both player vertical movement owners now retain the full 16-bit intermediate
+sum before deriving the carry, matching the source `ADC` chain. The repaired
+600-sample route has exact CIRAM pages, palette, PPU control, mask, selected
+name table, scroll pair, and reconstructed PPU address. CPU RAM and OAM are
+still outside this result: their remaining differences are T11 ownership and
+do not constitute background-output evidence. Raw captures were discarded
+after this neutral summary.
