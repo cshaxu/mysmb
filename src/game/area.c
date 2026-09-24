@@ -1267,7 +1267,23 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         }
         return;
     }
-    if (row == 14U) return;
+    if (row == 14U) {
+        if ((second & 0x40U) == 0U) {
+            game->ram[MYSMB_AREA_TERRAIN] = (mysmb_u8)(second & 0x0fU);
+            game->ram[MYSMB_AREA_BACKGROUND] = (mysmb_u8)((second & 0x30U) >> 4U);
+        }
+        else {
+            value = (mysmb_u8)(second & 0x07U);
+            if (value >= 4U) {
+                game->ram[MYSMB_AREA_BACKGROUND_COLOR] = value;
+                game->ram[MYSMB_AREA_FOREGROUND] = 0U;
+            }
+            else {
+                game->ram[MYSMB_AREA_FOREGROUND] = value;
+            }
+        }
+        return;
+    }
     area_type = game->ram[MYSMB_AREA_TYPE];
     if (area_type >= 4U) return;
     /* Rows 12-15 select a different JumpEngine table.  In particular, the

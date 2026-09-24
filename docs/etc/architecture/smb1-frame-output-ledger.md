@@ -385,3 +385,20 @@ The game path no longer calls bulk terrain-page preparation. The legacy bulk
 functions remain only for title/diagnostic compatibility and are explicitly
 outside the gameplay parser route. Their callers must not be used as output
 equivalence evidence.
+
+## T10 S1 P19 Area Attribute Objects
+
+The row-14 `AlterAreaAttributes` branch is translated from `$3536-$3562`.
+With bit 6 clear it writes the terrain selector from the low nibble and the
+background selector from bits 5-4. With bit 6 set it writes a foreground
+selector below four, or writes background color four through seven while
+clearing foreground, exactly as the source branch does. The ROM-free parser
+smoke test covers all three observable attribute outcomes through the public
+parser state owner.
+
+### Similar-Issue Sweep
+
+Row 14 remains an attribute-only stream item: it neither allocates a parser
+slot length nor emits a metatile. Palette application and scenery generation
+continue to own the later consumption of these fields; dynamic graphics and
+PPU output remain outside this parser slice.

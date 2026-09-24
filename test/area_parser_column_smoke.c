@@ -137,11 +137,37 @@ int main(void)
         game.ram[0x072dU] != 0U || game.ram[0x072eU] != 0U ||
         game.ram[0x072fU] != 0U) return 1;
 
+    /* Row-14 changes the source-owned terrain/scenery attributes used by
+     * following columns; d6 selects foreground/background-color semantics. */
+    prg[0x0040U] = 0x0eU;
+    prg[0x0041U] = 0x25U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0727U] != 5U || game.ram[0x0742U] != 2U) return 1;
+    prg[0x0041U] = 0x45U;
+    game.ram[0x072cU] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0744U] != 5U || game.ram[0x0741U] != 0U) return 1;
+    prg[0x0041U] = 0x42U;
+    game.ram[0x072cU] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x0741U] != 2U)
+        return 1;
+
     /* A matching stream object occupies the last free slot and the existing
      * slot is revisited, not read from the stream, on the next column. */
     prg[0x0040U] = 0x27U;
     prg[0x0041U] = 0x22U;
     prg[0x0042U] = 0xfdU;
+    game.ram[0x0725U] = 1U;
+    game.ram[0x0726U] = 2U;
     game.ram[0x072aU] = 1U;
     game.ram[0x072cU] = 0U;
     game.ram[0x0743U] = 0U;
