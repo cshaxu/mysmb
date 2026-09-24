@@ -162,6 +162,7 @@ static mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
     mysmb_u16 digit;
 
     if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] < 2U ||
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] < 8U ||
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         game->ram[MYSMB_RAM_PLAYER_Y_HIGH] >= 2U ||

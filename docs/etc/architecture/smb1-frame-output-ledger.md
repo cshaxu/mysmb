@@ -986,3 +986,18 @@ has exact PPU control, name-table selection, and horizontal scroll. CIRAM page
 The display mask differs once at sample 42. The bootstrap smoke requires the
 primary setup state before menu GameCore begins. These bounded residuals and
 all OAM differences remain open; they do not establish M2 closure.
+
+## T10 S1 P51 Game-Timer Transition Guard
+
+`RunGameTimer` is reachable only after the game-mode setup has advanced beyond
+tasks 0 and 1. Native C had allowed a title-menu engine-subroutine value to
+queue the live `$207a` timer command immediately after Start, before original
+game-area initialization could reach its game core. The timer route now rejects
+those two setup tasks while retaining the established task-2 timing route.
+
+The core smoke exercises a game-mode task-0 state with otherwise eligible timer
+fields and requires that it leave the timer and audio queue untouched. On the
+corrected 100-sample cold-start route, both CIRAM pages are exact. Remaining
+PPU scalar residuals are vertical scroll and reconstructed address at sample
+22, plus one display-mask byte at sample 42; title palette and OAM residuals
+remain separately open.

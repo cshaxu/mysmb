@@ -889,6 +889,18 @@ int main(void)
     }
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0747U] != 0U || game.ram[0x0782U] != 1U) return 1;
+    /* The title-to-game handoff has not reached GameCore in setup task 0. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 0U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x07f8U] = 1U;
+    game.ram[0x07f9U] = 0U;
+    game.ram[0x07faU] = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0787U] != 0U || game.ram[0x07f8U] != 1U ||
+        game.ram[0x00fcU] != 0U) return 1;
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
     game.ram[0x0772U] = 2U;
