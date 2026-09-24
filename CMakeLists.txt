@@ -64,6 +64,11 @@ target_include_directories(mysmb_vga_frame PUBLIC src)
 target_link_libraries(mysmb_vga_frame PUBLIC mysmb_game)
 add_executable(mysmb_vga_frame_smoke test/vga_frame_smoke.c)
 target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_vga_frame)
+add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c)
+target_include_directories(mysmb_dos16_root PUBLIC src)
+target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_text_frame mysmb_vga_frame)
+add_executable(mysmb_dos16_root_smoke test/dos16_root_smoke.c)
+target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -115,6 +120,18 @@ if(MYSMB_OPENNT_CL16)
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/vga/vga_frame.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/text/text_frame.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/dos16/dos16_root.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         VERBATIM
     )
 endif()
@@ -154,6 +171,7 @@ add_test(NAME mysmb.end-to-end-smoke COMMAND mysmb_end_to_end_smoke)
 add_test(NAME mysmb.render-smoke COMMAND mysmb_render_smoke)
 add_test(NAME mysmb.text-frame-smoke COMMAND mysmb_text_frame_smoke)
 add_test(NAME mysmb.vga-frame-smoke COMMAND mysmb_vga_frame_smoke)
+add_test(NAME mysmb.dos16-root-smoke COMMAND mysmb_dos16_root_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mysmb.rom-codegen

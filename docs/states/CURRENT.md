@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M3 T5 S1 is active.**
+**M3 T6 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -14,26 +14,26 @@
   output. `nnes` is a validation-only local reference and is never linked into
   MySMB.
 
-## M3 T5 S1 Packet
+## M3 T6 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T5 S1, New. |
+| Identifier Mode | M3 T6 S1, New. |
 | Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Create a minimal real-mode DOS composition root that drives the existing native game, neutral VGA frame, and colored text frame through isolated hardware hooks. |
-| Non-goals | Sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, 486SX hardware qualification, and changes to validated gameplay logic are outside this S. |
-| Reference Baseline | M3 neutral render, text, and VGA frames. |
-| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), DOS composition continuation. |
-| Files And ABI Surface | DOS16 composition root, hardware hook contract, OpenNT link evidence, and M3 history evidence. |
+| Objective | Recover a reviewed local 16-bit DOS C runtime/link path and produce the first MZ executable for the existing DOS composition root. |
+| Non-goals | Sound, a CPU/PPU/APU emulator, ROM-derived presentation assets, 486SX qualification, and changes to validated gameplay logic are outside this S. |
+| Reference Baseline | M3 T5 DOS composition root and OpenNT compile-only evidence. |
+| Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), DOS toolchain continuation. |
+| Files And ABI Surface | Toolchain discovery/build wrapper, MZ link evidence, and M3 history evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
-| Expected Markers | An isolated DOS platform root, BIOS keyboard/timer and VGA writer hooks outside the game core, and an OpenNT-linked MZ executable when local tools permit. |
+| Expected Markers | A reviewed local runtime provenance record, reproducible MZ link command, and an ignored local executable artifact. |
 | Asset Needs | No protected asset is required; owner-local inputs remain outside tracked output. |
-| Reporting Requirements | Record DOS memory/hardware ownership, input/timing policy, link result, source containment, and deferred sound/qualification work before closure. |
-| Stop Conditions | Stop and revise scope if the adapter requires an emulator, changes gameplay behavior, embeds protected data, or introduces a host-specific game-state path. |
-| Exit Criteria | The project has a 16-bit DOS composition root whose portable and hardware boundaries are documented and whose local OpenNT executable link succeeds when the toolchain supports it. |
+| Reporting Requirements | Record runtime provenance, redistributability, toolchain command, local-artifact containment, and deferred hardware work before closure. |
+| Stop Conditions | Stop and revise scope if a runtime cannot be lawfully reviewed/localized, requires emulator coupling, changes gameplay behavior, or embeds protected data. |
+| Exit Criteria | A local 16-bit MZ executable is linked from the native DOS root with reviewed runtime inputs, or the exact reproducible missing-toolchain condition is recorded. |
 | Original Owner Request | Deliver a native C SMB1 suitable for future colored text and DOS presentation without contaminating the core. |
-| Similar-Issue Sweep | Before closure, search for DOS API leakage into the game layer, platform-owned game mutation, duplicate scheduler/input paths, host-specific state, and protected asset leakage; record every production hit and disposition. |
+| Similar-Issue Sweep | Before closure, search for unreviewed runtime import, tracked binaries, local-path leakage in records, product/runtime coupling, and protected asset leakage; record every production hit and disposition. |
 
 ## Recent M3 Closures
 
@@ -43,6 +43,7 @@
 | T2 | Win32 consumes every neutral tile-row and actor command with a deterministic host palette, without a second gameplay path. [History](../history/M3-T2-win32-command-consumer.md). |
 | T3 | A neutral render frame now yields a deterministic 80x25 character/color frame with full background fill and object glyph/color overlays. [History](../history/M3-T3-colored-text-frame.md). |
 | T4 | A 320x200 indexed frame is generated from neutral commands using explicit 16-bit-safe pages and compiles under OpenNT. [History](../history/M3-T4-vga-indexed-frame.md). |
+| T5 | The DOS16 root owns one native tick and both presentation-frame submissions through isolated hooks; its source compiles under OpenNT. [History](../history/M3-T5-dos16-composition-root.md). |
 
 ## Recent M2 Closures
 
