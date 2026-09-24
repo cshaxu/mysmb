@@ -3,6 +3,12 @@
 
 #include "game/render.h"
 
+#ifdef MYSMB_DOS16_TARGET
+#define MYSMB_VGA_FAR __far
+#else
+#define MYSMB_VGA_FAR
+#endif
+
 enum {
     MYSMB_VGA_WIDTH = 320,
     MYSMB_VGA_HEIGHT = 200,
@@ -16,12 +22,14 @@ enum {
 };
 
 struct mysmb_vga_frame {
-    mysmb_u8 *pages[MYSMB_VGA_PAGE_COUNT];
+    mysmb_u8 MYSMB_VGA_FAR *pages[MYSMB_VGA_PAGE_COUNT];
 };
 
 void mysmb_vga_frame_initialize(struct mysmb_vga_frame *vga_frame,
-                                mysmb_u8 *page0, mysmb_u8 *page1,
-                                mysmb_u8 *page2, mysmb_u8 *page3);
+                                mysmb_u8 MYSMB_VGA_FAR *page0,
+                                mysmb_u8 MYSMB_VGA_FAR *page1,
+                                mysmb_u8 MYSMB_VGA_FAR *page2,
+                                mysmb_u8 MYSMB_VGA_FAR *page3);
 void mysmb_vga_frame_build(const struct mysmb_render_frame *render_frame,
                            struct mysmb_vga_frame *vga_frame);
 

@@ -24,8 +24,10 @@ struct mysmb_dos16_root {
 
 void mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
                                  const struct mysmb_dos16_hooks *hooks,
-                                 mysmb_u8 *vga_page0, mysmb_u8 *vga_page1,
-                                 mysmb_u8 *vga_page2, mysmb_u8 *vga_page3);
+                                 mysmb_u8 MYSMB_VGA_FAR *vga_page0,
+                                 mysmb_u8 MYSMB_VGA_FAR *vga_page1,
+                                 mysmb_u8 MYSMB_VGA_FAR *vga_page2,
+                                 mysmb_u8 MYSMB_VGA_FAR *vga_page3);
 void mysmb_dos16_root_step(struct mysmb_dos16_root *root);
 
 #endif

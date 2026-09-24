@@ -68,8 +68,10 @@ static void mysmb_vga_draw_actor(const struct mysmb_render_command *command,
 }
 
 void mysmb_vga_frame_initialize(struct mysmb_vga_frame *vga_frame,
-                                mysmb_u8 *page0, mysmb_u8 *page1,
-                                mysmb_u8 *page2, mysmb_u8 *page3)
+                                mysmb_u8 MYSMB_VGA_FAR *page0,
+                                mysmb_u8 MYSMB_VGA_FAR *page1,
+                                mysmb_u8 MYSMB_VGA_FAR *page2,
+                                mysmb_u8 MYSMB_VGA_FAR *page3)
 {
     vga_frame->pages[0] = page0;
     vga_frame->pages[1] = page1;

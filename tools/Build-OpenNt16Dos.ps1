@@ -10,14 +10,16 @@ param(
 $toolDirectory = Split-Path -Parent $Compiler
 $runtimeLibrary = Join-Path $RuntimeDirectory 'LLIBCE.LIB'
 $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
+$runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
 $sources = @(
     'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
     'game/objects.c', 'game/render.c', 'platform/text/text_frame.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )
-if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stackObject)) {
-    throw 'The configured DOS runtime directory lacks LLIBCE.LIB or LVARSTCK.OBJ.'
+if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stackObject) -or
+    !(Test-Path -LiteralPath $runtimeIncludeDirectory)) {
+    throw 'The configured DOS runtime lacks LLIBCE.LIB, LVARSTCK.OBJ, or its INC directory.'
 }
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 Push-Location $OutputDirectory
@@ -26,7 +28,7 @@ try {
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
-        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /I $IncludeDirectory $source
+        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /I $IncludeDirectory /I $runtimeIncludeDirectory $source
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += [System.IO.Path]::GetFileNameWithoutExtension($source) + '.obj'
     }
