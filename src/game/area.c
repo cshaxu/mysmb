@@ -1166,6 +1166,29 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
  * ProcessAreaData. It intentionally stops before JumpEngine: each object
  * family must own its own metatile writes. The result is the original three
  * slot state ($072d/$0730), page selector, and stream offset. */
+/* ROM $4247-$4273 RenderUnderPart.  A foreground object may fill downward,
+ * but the source preserves ledge centers, palette-three objects, and the
+ * mushroom stem/top interaction in the metatile staging column. */
+static void mysmb_area_render_under_part(struct mysmb_game *game,
+                                         mysmb_u8 row,
+                                         mysmb_u8 height,
+                                         mysmb_u8 metatile)
+{
+    mysmb_u8 existing;
+
+    do {
+        existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
+        if (existing == 0U || existing == 0xc0U ||
+            (existing != 0x17U && existing != 0x1aU && existing < 0xc0U &&
+             (existing != 0x54U || metatile != 0x50U))) {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatile;
+        }
+        if (row == 12U || height == 0U) break;
+        row++;
+        height--;
+    } while (1);
+}
+
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
@@ -1196,7 +1219,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     mysmb_u8 area_type;
     mysmb_u8 value;
     mysmb_u8 height;
-    mysmb_u8 existing;
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
@@ -1360,30 +1382,13 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         height = (mysmb_u8)(second & 0x07U);
         if (height == 0U) height = (mysmb_u8)(12U - row);
         else height--;
-        do {
-            existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
-            if (existing != 0x17U && existing != 0x1aU && existing != 0xc0U &&
-                existing != 0x4cU && existing != 0x50U)
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
-            if (row == 12U || height == 0U) break;
-            row++;
-            height--;
-        } while (1);
+        mysmb_area_render_under_part(game, row, height, value);
         return;
     }
     if (kind != 5U && kind != 6U) return;
     value = kind == 5U ? brick[area_type] : solid[area_type];
     height = (mysmb_u8)(second & 0x0fU);
-    do {
-        existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
-        if (existing != 0x17U && existing != 0x1aU && existing != 0xc0U &&
-            existing != 0x4cU && existing != 0x50U)
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
-        if (row == 12U || height == 0U) break;
-        row++;
-        height--;
-    }
-    while (1);
+    mysmb_area_render_under_part(game, row, height, value);
 }
 
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)

@@ -283,3 +283,22 @@ Style object handling was checked for treating selector one as an empty family
 or rereading a later stream record while its slot is active. The parser now
 uses the saved object offset for persistent ledges. Cannon firing and dynamic
 platform behavior remain deferred.
+
+## T10 S1 P13 Metatile Overlap Rules
+
+The parser now shares the exact `RenderUnderPart` staging-column rule from
+`$4247-$4273` for vertical pipe shafts and brick/solid columns. It preserves
+tree and mushroom ledge centers and palette-three foreground metatiles, while
+allowing a coin block (`$c0`) and ordinary scenery to be overwritten. The
+special cracked-rock/mushroom-stem condition is retained as the source's
+comparison of an existing `$54` against an incoming `$50`. The ROM-free parser
+smoke test seeds each relevant existing metatile and verifies the replacement
+or preservation result through the public parser owner.
+
+### Similar-Issue Sweep
+
+The static handlers were searched for duplicated vertical overwrite loops.
+The pipe shaft and both brick/solid column paths now call one C90 helper with
+the original row/height stop condition. Direct top and cap writes remain with
+their owning object routines; dynamic objects and the formal column transfer
+remain deferred.

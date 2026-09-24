@@ -233,5 +233,32 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a6U] != 0x17U || game.ram[0x06a7U] != 0x4cU ||
         game.ram[0x0732U] != 1U) return 1;
+
+    /* RenderUnderPart keeps ledge centers and palette-three foreground
+     * objects, but must replace a coin block and ordinary scenery. */
+    prg[0x0040U] = 0x05U;
+    prg[0x0041U] = 0x57U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x06a6U] = 0x17U;
+    game.ram[0x06a7U] = 0x1aU;
+    game.ram[0x06a8U] = 0xc0U;
+    game.ram[0x06a9U] = 0xc1U;
+    game.ram[0x06aaU] = 0x4cU;
+    game.ram[0x06abU] = 0x54U;
+    game.ram[0x06acU] = 0x50U;
+    game.ram[0x06adU] = 0x54U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a6U] != 0x17U || game.ram[0x06a7U] != 0x1aU ||
+        game.ram[0x06a8U] != 0x51U || game.ram[0x06a9U] != 0xc1U ||
+        game.ram[0x06aaU] != 0x51U || game.ram[0x06abU] != 0x51U ||
+        game.ram[0x06acU] != 0x51U || game.ram[0x06adU] != 0x51U) return 1;
     return 0;
 }
