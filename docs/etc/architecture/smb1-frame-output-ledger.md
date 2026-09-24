@@ -402,3 +402,18 @@ Row 14 remains an attribute-only stream item: it neither allocates a parser
 slot length nor emits a metatile. Palette application and scenery generation
 continue to own the later consumption of these fields; dynamic graphics and
 PPU output remain outside this parser slice.
+
+## T10 S1 P20 Flagball Residual Metatiles
+
+The row-15 selector-five `FlagBalls_Residual` path is translated from
+`$3958-$3964`. It begins at metatile row two and invokes the shared
+`RenderUnderPart` rule with the second object's low nibble as its downward
+extent and `$6d` as its source metatile. It does not allocate a parser-length
+slot. The ROM-free parser smoke test proves the three metatiles produced by a
+height-two object and the retained empty slot.
+
+### Similar-Issue Sweep
+
+This residual renderer is kept separate from `FlagpoleObject`: the latter's
+flag actor, score, and OAM work remain deferred dynamic owners. No flag
+object state is created by this background-only route.

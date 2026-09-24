@@ -1383,6 +1383,12 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                 side_pipe_bottom[value];
         return;
     }
+    if (row == 15U && kind == 5U) {
+        /* FlagBalls_Residual ($3958-$3964) starts at the fixed third
+         * metatile row and uses the low nibble as its downward extent. */
+        mysmb_area_render_under_part(game, 2U, (mysmb_u8)(second & 0x0fU), 0x6dU);
+        return;
+    }
     if (kind == 1U) {
         value = game->ram[MYSMB_AREA_STYLE];
         if (value == 0U) {

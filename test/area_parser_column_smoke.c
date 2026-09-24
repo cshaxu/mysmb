@@ -233,6 +233,23 @@ int main(void)
         game.ram[0x06a1U] != 0x14U || game.ram[0x06a4U] != 0x1eU ||
         game.ram[0x06a5U] != 0x21U || game.ram[0x0732U] != 0U) return 1;
 
+    /* FlagBalls_Residual starts at its fixed third metatile row and treats
+     * the low nibble as its downward render extent without a parser slot. */
+    prg[0x0040U] = 0x0fU;
+    prg[0x0041U] = 0x52U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a3U] != 0x6dU || game.ram[0x06a4U] != 0x6dU ||
+        game.ram[0x06a5U] != 0x6dU || game.ram[0x0732U] != 0xffU) return 1;
+
     /* Special row 12 selector seven is a question-block row, not a pipe. */
     prg[0x0040U] = 0x7cU;
     prg[0x0041U] = 0x71U;
