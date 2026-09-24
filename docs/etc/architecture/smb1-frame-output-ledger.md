@@ -40,8 +40,8 @@ valid merely because its storage happens to be zero.
 | `$8220-$8227` | Move all sprites offscreen | OAM offscreen entries | **Partial**; RAM clear exists, but it is not submitted as OAM output. |
 | `$8325-$833f` | Title mushroom icon | Tile/OAM title visual | **Partial**; the owner-local title generator extracts the icon's VRAM command and the title loader applies it after the title transfer. Its OAM-related title work remains T11 ownership. |
 | `$84c3-$8566` | Floatey score numbers and screen-support sprites | OAM entries and score updates | **Missing**; logic explicitly excludes OAM. |
-| `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Partial**; the ROM-bound game path now executes screen tasks 0–12 before entering `GameCoreRoutine`: name-table initialization, player palette, top/bottom status, intermediate text/timers, and area setup transition have native owners. `$85f1 GetPlayerColors` derives and queues the ROM `$3f10` sprite-palette command during area initialization and after a PPU-visible player-state change, including its background-color first byte. Title loading applies the ground palette followed by that player command, and the portable 32-byte palette backing state observes the 2C02 `$3f10/$14/$18/$1c` aliases. The injected native title state has no verified ROM title-phase equality checkpoint; alternate-entry branches, title-area display, and buffer-address control remain incomplete. |
-| `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Partial**; title plus initial gameplay top and bottom status commands reach the buffer and name table, including score, coin, world, and level digits. The title loader commits both status streams before its owner-local title transfer. `$9131` installs the header-selected three-digit timer on a new entrance; `RunGameTimer` queues time-running-out music at 100, appends its live three-digit `$207a` update, and calls the translated `ForceInjury` route at zero. The following NMI commits pending commands. The native `WriteGameText` route copies the ROM-authored lives, Time Up, Game Over, and Warp streams and patches their source-defined mutable bytes; title area-display tasks remain incomplete. |
+| `$8567-$864c` | Screen tasks, area/player palettes, and VRAM buffer addressing | Palette, buffer selection, name-table updates | **Partial**; the ROM-bound game path now executes screen tasks 0–12 before entering `GameCoreRoutine`: name-table initialization, player palette, top/bottom status, intermediate text/timers, title-area display, and area setup transition have native owners. `$85f1 GetPlayerColors` derives and queues the ROM `$3f10` sprite-palette command during area initialization and after a PPU-visible player-state change, including its background-color first byte. Title loading applies the ground palette followed by that player command, and the portable 32-byte palette backing state observes the 2C02 `$3f10/$14/$18/$1c` aliases. Alternate-entry branches and buffer-address control remain incomplete. |
+| `$8652-$889c` | Status text, two-player text, title, intermediate, and area display tasks | VRAM buffer writes, name-table and palette state | **Partial**; title plus initial gameplay top and bottom status commands reach the buffer and name table, including score, coin, world, and level digits. The title loader commits both status streams before its owner-local title transfer. `$9131` installs the header-selected three-digit timer on a new entrance; `RunGameTimer` queues time-running-out music at 100, appends its live three-digit `$207a` update, and calls the translated `ForceInjury` route at zero. The following NMI commits pending commands. The native `WriteGameText` route copies the ROM-authored lives, Time Up, Game Over, and Warp streams and patches their source-defined mutable bytes. |
 | `$88ae-$89bd` | Area metatile rows and attributes | Dynamic name-table and attribute updates | **Partial**; the admitted metatile table now expands collision pages and attributes into both name tables, while original incremental buffer scheduling and all scenery families remain incomplete. |
 | `$89c3-$8acd` | Palette rotation and block/bridge metatile replacement | Palette and dynamic tile updates | **Partial**; area palette streams, queued palette-3 rotation, and block replacement refresh now reach the snapshot; bridge routes remain incomplete. |
 | `$8e19-$8eed` | Name-table initialization, VRAM-buffer transfer, scroll, and PPU-control commit | All PPU-visible background state | **Partial**; initialization and the admitted `VRAM_Buffer1` transfer now reach the snapshot; status/title/gameplay screen tasks remain incomplete. |
@@ -1130,3 +1130,18 @@ screen-task 4 with `$0759` set, and verifies its reset, task-5 transition,
 seven-tick gate, and next-NMI `$220c` text tile against the selector-2 source
 stream. This confirms the Time Up background output path; sprite reset remains
 T11 ownership.
+
+## T10 S1 P60 Title-Area Display Evidence
+
+Title `ScreenRoutines` task 8 first invokes the title demo area's ordinary
+area-output route, then `DrawTitleScreen` overlays its title stream. Native C
+implements this through `mysmb_game_apply_title_area`: it preserves the title
+mode task, initializes the title area, loads the original pointer/header,
+renders initial terrain and objects, and returns to the title stream.
+
+The owner-local title-bootstrap smoke observes task progression, the title
+transfer, icon queue, palette handoff, title score, and title menu handoff.
+The bounded Start route independently has exact CIRAM pages, palette, and PPU
+scalars through 600 samples. Therefore title-area display is no longer an open
+background owner. This evidence does not cover alternate entry branches or
+the remaining buffer-address controls.
