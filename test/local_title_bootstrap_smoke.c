@@ -50,6 +50,8 @@ int main(void)
     if (mysmb_game_begin_title_bootstrap(&game) == 0U) return 1;
     if (game.ram[0x00fbU] != 0x80U) return 1;
     input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0009U] != 0U) return 1;
     saw_title_transfer = 0U;
     saw_icon_queue = 0U;
     saw_title_palette_queue = 0U;
@@ -57,7 +59,7 @@ int main(void)
     saw_primary_setup = 0U;
     menu_frame = 0xffffU;
     title_hash = 0UL;
-    for (index = 0U; index < 80U; ++index) {
+    for (index = 0U; index < 79U; ++index) {
         if (game.ram[0x0773U] == 5U) title_hash = mysmb_title_table_hash(&game);
         if (game.ram[0x0300U] == 7U) saw_icon_queue = 1U;
         mysmb_game_tick(&game, &input, &frame);

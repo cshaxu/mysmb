@@ -231,6 +231,50 @@ static void mysmb_win32_build_frame(void)
     mysmb_win32_draw_gameplay();
 }
 
+static int mysmb_win32_argument_is_self_test(const char *command)
+{
+    static const char self_test[] = "--self-test";
+    unsigned int index;
+
+    while (*command == ' ') command++;
+    for (index = 0U; self_test[index] != '\0'; ++index) {
+        if (command[index] != self_test[index]) return 0;
+    }
+    return command[index] == '\0' ? 1 : 0;
+}
+
+#ifdef MYSMB_LOCAL_TITLE
+/* Runs the composition root without a visible window, exercising embedded-ROM
+ * startup, title input, GameCore entry, and software frame generation. */
+static int mysmb_win32_run_self_test(void)
+{
+    struct mysmb_input input;
+    unsigned int index;
+
+    mysmb_game_initialize(&g_game);
+    mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    mysmb_game_bind_title_source(&g_game, mysmb_local_title_data,
+                                 MYSMB_LOCAL_TITLE_DATA_SIZE,
+                                 mysmb_local_title_icon_data,
+                                 MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
+    if (mysmb_game_begin_title_bootstrap(&g_game) == 0U) return 10;
+    ZeroMemory(&g_frame, sizeof(g_frame));
+    for (index = 0U; index < 280U; ++index) {
+        input.buttons = 0U;
+        if (index == 40U) input.buttons = MYSMB_BUTTON_START;
+        else if (index > 41U) input.buttons = MYSMB_BUTTON_RIGHT;
+        mysmb_game_tick(&g_game, &input, &g_frame);
+    }
+    if (g_game.ram[0x0770U] != 1U) return 11;
+    if (g_game.ram[0x0772U] != 3U) return 12;
+    if ((g_game.visible_ppu_mask & 0x18U) != 0x18U) return 13;
+    mysmb_render_build(&g_game, &g_render_frame);
+    mysmb_win32_build_frame();
+    /* This intentionally avoids a desktop DC; presentation itself remains the
+     * same single-DIB transfer used by mysmb_win32_paint. */
+    return 0;
+}
+#endif
 static void mysmb_win32_paint(HWND window)
 {
     PAINTSTRUCT paint;
@@ -330,7 +374,13 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     MSG message;
 
     (void)previous;
-    (void)command;
+    if (mysmb_win32_argument_is_self_test(command) != 0) {
+#ifdef MYSMB_LOCAL_TITLE
+        return mysmb_win32_run_self_test();
+#else
+        return 2;
+#endif
+    }
     ZeroMemory(&window_class, sizeof(window_class));
     window_class.lpfnWndProc = mysmb_win32_window_proc;
     window_class.hInstance = instance;

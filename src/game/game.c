@@ -1119,6 +1119,9 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
         return 0U;
     }
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+    /* The recorder observes the first NMI after its frame-counter increment.
+     * Seed the prior byte so the cold-boot snapshot is the ROM's 0x00. */
+    game->ram[MYSMB_RAM_FRAME_COUNTER] = 0xffU;
     /* The reference cold boot spends its first NMI in InitializeGame before
      * ScreenRoutines task 0.  Area state is already prepared above, but keep
      * that frame boundary so title VRAM commands have the same phase. */

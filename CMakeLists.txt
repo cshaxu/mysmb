@@ -372,6 +372,8 @@ if(MYSMB_ROM_PATH)
             "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}"
         )
         target_compile_definitions(mysmb_win32 PRIVATE MYSMB_LOCAL_TITLE=1)
+        add_test(NAME mysmb.win32-${MYSMB_WIN32_ARCH}-self-test
+                 COMMAND $<TARGET_FILE:mysmb_win32> --self-test)
     endif()
     add_executable(mysmb_local_title_smoke test/local_title_smoke.c
         $<TARGET_OBJECTS:mysmb_local_title_data>)
