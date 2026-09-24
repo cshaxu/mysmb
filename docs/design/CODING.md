@@ -10,6 +10,7 @@ src/platform/   win32 and dos16 host adapters
 src/main-*.c    one small composition root per host target
 test/           project-owned unit and integration harnesses
 tools/          local generators and governance checks
+assets/         ignored local package outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
 ```
 
 ## Files And Names

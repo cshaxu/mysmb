@@ -24,11 +24,11 @@
 | Non-goals | New gameplay behavior, a CPU/PPU/APU emulator, ROM-derived presentation assets, and inferred performance claims are outside this S. |
 | Reference Baseline | M4 T1 physical-host qualification protocol. |
 | Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), M4 qualification continuation. |
-| Files And ABI Surface | Physical-host run evidence and M4 history evidence. |
+| Files And ABI Surface | Physical-host run evidence, M4 history evidence, and ignored local package outputs `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
 | Expected Markers | Measured host facts, three route outcomes, timing samples, and VGA/text observations. |
-| Asset Needs | No protected asset is required; owner-local inputs remain outside tracked output. |
+| Asset Needs | Owner authorized a local SoftPC executable, adjacent configuration, and a bootable DOS floppy solely as an untracked compatibility probe. Their redistributability is not reviewed; copied media and every injected binary remain outside this repository, are used only for the bounded host run, and are never committed, published, or treated as physical-host evidence. |
 | Reporting Requirements | Record machine/DOS/VGA facts, measured route checkpoints, all deviations, and any missing physical-host capability before closure. |
 | Stop Conditions | Stop and revise scope if qualification lacks actual physical measurement, requires unreviewed media, changes gameplay behavior, or embeds protected data. |
 | Exit Criteria | The physical host completes the protocol with recorded observations, or the exact physical-host access gap is recorded. |
