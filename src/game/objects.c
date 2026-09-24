@@ -175,6 +175,11 @@ static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot);
+static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile);
+static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
+                                             mysmb_u8 slot,
+                                             mysmb_u8 block_low,
+                                             mysmb_u8 block_row);
 /* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
  * here so a small player enters the death route rather than becoming immune. */
 void mysmb_objects_force_injury(struct mysmb_game *game)
@@ -2752,17 +2757,12 @@ static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
     }
 }
 
-/* ROM $dedd HandleCoinMetatile and $bbb6 GiveOneCoin.  Presentation and
- * sound-buffer writes belong to the renderer/audio owners; this routine
- * preserves the block-buffer, decimal score, tally, and life state. */
-void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
-                                mysmb_u8 block_row)
+/* ROM $bbb6 GiveOneCoin.  Coin collection paths share this tally and status
+ * command tail; the caller retains ownership of the metatile removal. */
+static void mysmb_objects_give_one_coin(struct mysmb_game *game)
 {
-    mysmb_u16 address;
     mysmb_u8 player;
 
-    address = (mysmb_u16)(0x0500U + block_low + block_row);
-    if (address < 0x0800U) game->ram[address] = 0U;
     game->ram[MYSMB_COIN_TALLY_FOR_1UPS]++;
     player = game->ram[MYSMB_CURRENT_PLAYER];
     game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 1U;
@@ -2775,6 +2775,54 @@ void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
     game->ram[MYSMB_DIGIT_MODIFIER + 4U] = 2U;
     mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x0bU : 0x11U);
     (void)mysmb_area_queue_score_coin_status(game);
+}
+
+/* ROM RemoveCoin_Axe/PutBlockMetatile.  A removed coin writes two blank
+ * metatile rows to the ordinary pending VRAM list before GiveOneCoin appends
+ * its score and tally commands. */
+static void mysmb_objects_queue_blank_metatile(struct mysmb_game *game,
+                                               mysmb_u8 block_low,
+                                               mysmb_u8 block_row)
+{
+    mysmb_u8 buffer_offset;
+    mysmb_u8 low;
+    mysmb_u8 high;
+    mysmb_u8 blank;
+    mysmb_u16 address;
+
+    buffer_offset = game->ram[MYSMB_VRAM_BUFFER1];
+    if (buffer_offset > 0xf5U) return;
+    blank = game->ram[MYSMB_AREA_TYPE] == 0U ? 0x26U : 0x24U;
+    low = (mysmb_u8)((block_low & 0x0fU) << 1U);
+    address = (mysmb_u16)(((mysmb_u16)(block_row + 0x20U) << 2U) + low);
+    high = block_low < 0xd0U ? 0x20U : 0x24U;
+    high = (mysmb_u8)(high + (address >> 8U));
+    low = (mysmb_u8)address;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset] = high;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 1U] = low;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 2U] = 2U;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 3U] = blank;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 4U] = blank;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 5U] = high;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 6U] =
+        (mysmb_u8)(low + 0x20U);
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 7U] = 2U;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 8U] = blank;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 9U] = blank;
+    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 10U] = 0U;
+    game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
+}
+
+/* ROM $dedd HandleCoinMetatile. */
+void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
+                                mysmb_u8 block_row)
+{
+    mysmb_u16 address;
+
+    address = (mysmb_u16)(0x0500U + block_low + block_row);
+    if (address < 0x0800U) game->ram[address] = 0U;
+    mysmb_objects_queue_blank_metatile(game, block_low, block_row);
+    mysmb_objects_give_one_coin(game);
 }
 
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
@@ -2885,8 +2933,20 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
+    if (is_bumpable != 0U) {
+        mysmb_objects_check_top_of_block(game, slot, block_low, block_row);
+    }
     if (is_bumpable == 0U) {
         mysmb_objects_start_brick_chunks(game, slot);
+    }
+    else if (mysmb_objects_is_coin_block(metatile) != 0U) {
+        /* CoinBlock leaves the collision cell blank and submits the matching
+         * two-row blank metatile before GiveOneCoin appends status output. */
+        mysmb_objects_queue_blank_metatile(game, block_low, block_row);
+        mysmb_objects_start_jump_coin(game, game->ram[MYSMB_BLOCK_PAGE + slot],
+            (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot] | 5U),
+            (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] - 0x10U));
+        mysmb_objects_give_one_coin(game);
     }
     else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
         mysmb_objects_start_power_up(game, slot, power_up_type);
@@ -2969,13 +3029,16 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
     mysmb_u8 slot;
     mysmb_u8 state;
 
-    for (slot = 0U; slot < 2U; ++slot) {
+    for (slot = 2U; slot != 0U; ) {
+        --slot;
         state = game->ram[MYSMB_BLOCK_STATE + slot];
-        if ((state & 0x0fU) == 1U) {
+        if (state == 0U) continue;
+        state &= 0x0fU;
+        if (state == 1U) {
             mysmb_objects_impose_block_gravity(game, slot);
             if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
                 game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
-                game->ram[MYSMB_BLOCK_STATE + slot] = 0U;
+                state = 0U;
             }
         }
         else {
@@ -2988,10 +3051,11 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
                     game->ram[MYSMB_BLOCK_Y + slot + 2U] = 0xf0U;
                 }
                 if (game->ram[MYSMB_BLOCK_Y + slot] >= 0xf0U) {
-                    game->ram[MYSMB_BLOCK_STATE + slot] = 0U;
+                    state = 0U;
                 }
             }
         }
+        game->ram[MYSMB_BLOCK_STATE + slot] = state;
     }
 }
 
@@ -3065,6 +3129,32 @@ void mysmb_objects_apply_block_replacements(struct mysmb_game *game)
         game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
         game->ram[MYSMB_BLOCK_REPLACE_FLAG + index] = 0U;
     }
+}
+
+static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile)
+{
+    return metatile == 0xc0U || metatile == 0x5fU ? 1U : 0U;
+}
+
+/* ROM CheckTopOfBlock.  The source removes a coin directly over a bumped
+ * block before it dispatches the bumped block's own CoinBlock behavior. */
+static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
+                                             mysmb_u8 slot,
+                                             mysmb_u8 block_low,
+                                             mysmb_u8 block_row)
+{
+    mysmb_u8 top_row;
+    mysmb_u16 address;
+
+    if (block_row == 0U) return;
+    top_row = (mysmb_u8)(block_row - 0x10U);
+    address = (mysmb_u16)(0x0500U + block_low + top_row);
+    if (address >= 0x0800U || game->ram[address] != 0xc2U) return;
+    mysmb_objects_start_jump_coin(game,
+        game->ram[MYSMB_BLOCK_PAGE_COPY + slot],
+        (mysmb_u8)((block_low << 4U) | 5U),
+        (mysmb_u8)(top_row + 0x20U));
+    mysmb_objects_collect_coin(game, block_low, top_row);
 }
 
 /* ROM $d8aa-$d91d BridgeCollapse.  The collapse owns the first victory-mode

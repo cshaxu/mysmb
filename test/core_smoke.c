@@ -343,7 +343,7 @@ int main(void)
         return 1;
     }
     mysmb_objects_step_blocks(&game);
-    if (game.ram[0x0026U] != 0x12U || game.ram[0x008fU] != 0x1fU ||
+    if (game.ram[0x0026U] != 2U || game.ram[0x008fU] != 0x1fU ||
         game.ram[0x0091U] != 0x1fU || game.ram[0x00d7U] != 0x2aU ||
         game.ram[0x00d9U] != 0x34U) {
         return 1;
@@ -998,14 +998,21 @@ int main(void)
         game.ram[0x075eU] != 1U || game.ram[0x07eeU] != 1U ||
         game.ram[0x07e1U] != 2U || game.ram[0x0134U] != 0U ||
         game.ram[0x0139U] != 0U) return 1;
-    if (game.ram[0x0300U] != 14U || game.ram[0x0301U] != 0x20U ||
-        game.ram[0x0302U] != 0x6dU || game.ram[0x0303U] != 2U ||
-        game.ram[0x0304U] != game.ram[0x07edU] ||
-        game.ram[0x0305U] != game.ram[0x07eeU] ||
-        game.ram[0x0306U] != 0x20U || game.ram[0x0307U] != 0x62U ||
-        game.ram[0x0308U] != 6U || game.ram[0x0309U] != 0x24U ||
-        game.ram[0x030fU] != 0U) return 1;
-    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 15U) == 0U ||
+    /* HandleCoinMetatile removes its two-tile metatile first, then appends
+     * GiveOneCoin's tally and score commands to the same NMI list. */
+    if (game.ram[0x0300U] != 24U || game.ram[0x0301U] != 0x25U ||
+        game.ram[0x0302U] != 4U || game.ram[0x0303U] != 2U ||
+        game.ram[0x0304U] != 0x26U || game.ram[0x0305U] != 0x26U ||
+        game.ram[0x0306U] != 0x25U || game.ram[0x0307U] != 0x24U ||
+        game.ram[0x0308U] != 2U || game.ram[0x0309U] != 0x26U ||
+        game.ram[0x030aU] != 0x26U || game.ram[0x030bU] != 0x20U ||
+        game.ram[0x030cU] != 0x6dU || game.ram[0x030dU] != 2U ||
+        game.ram[0x030eU] != game.ram[0x07edU] ||
+        game.ram[0x030fU] != game.ram[0x07eeU] ||
+        game.ram[0x0319U] != 0U) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 25U) == 0U ||
+        game.name_table[1][0x0104U] != 0x26U ||
+        game.name_table[1][0x0124U] != 0x26U ||
         game.name_table[0][0x006dU] != game.ram[0x07edU] ||
         game.name_table[0][0x006eU] != game.ram[0x07eeU] ||
         game.name_table[0][0x0062U] != 0x24U) return 1;

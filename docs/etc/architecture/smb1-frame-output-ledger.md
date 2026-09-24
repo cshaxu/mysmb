@@ -1264,3 +1264,35 @@ The repaired 600-sample route has exact CIRAM pages, palette, PPU control,
 mask, selected name table, scroll pair, and reconstructed PPU address. CPU
 RAM and OAM differences remain deferred T11 ownership. Raw captures were
 discarded after this neutral summary.
+
+## T10 S1 P68 Opposite-Direction Jump Route
+
+A bounded local reference route selects Start on frame 40, releases it on
+frame 42, and holds Left plus A from frame 120 through sample 599. This is the
+opposite-direction counterpart to P67 and exercises the left-facing movement,
+jump, death, and rebuild path. Across all 600 samples, both CIRAM pages,
+palette, PPU control, mask, selected name table, scroll pair, and reconstructed
+PPU address are exact. CPU RAM and OAM differences remain deferred T11
+ownership. Raw captures were discarded after this neutral summary.
+
+## T10 S1 P69 CoinBlock And Block-Object Background Output
+
+A bounded local route selects Start on frame 40, releases it on frame 42,
+then uses alternating short Right-plus-A jumps from frame 120 through sample
+599. Its first comparison found a name-table difference at sample 370. The
+source had appended two `$2640/$2660` blank-metatile commands and the coin
+and score status commands after a `CoinBlock` collision, while native C
+emitted only the status commands. This was the visible `RemoveCoin_Axe` /
+`PutBlockMetatile` owner reached from the `BumpBlock` path. The same review
+found native `BlockObjectsCore` processed state zero and retained the high
+state nibble, whereas the source skips zero and stores its masked low-nibble
+state after each object pass.
+
+The native block owner now queues the source-shaped two-row blank metatile
+before the shared coin/status tail, covers water-area blank graphics, handles
+the direct-above-coin branch, and preserves the source block-state pass
+semantics. The ROM-free core smoke verifies queued metatile plus status order
+and the masked block state. The repaired 600-sample route has exact CIRAM
+pages, palette, PPU control, mask, selected name table, scroll pair, and
+reconstructed PPU address. CPU RAM and OAM differences remain deferred T11
+ownership. Raw captures were discarded after this neutral summary.
