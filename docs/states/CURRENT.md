@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M4 T1 S1 is active.**
+**M4 T2 S1 is active.**
 
 ## Current Technical Baseline
 
@@ -14,26 +14,32 @@
   output. `nnes` is a validation-only local reference and is never linked into
   MySMB.
 
-## M4 T1 S1 Packet
+## M4 T2 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M4 T1 S1, New. |
+| Identifier Mode | M4 T2 S1, New. |
 | Admission And Approval | Owner directed continuous M2 execution with automatic audit, repair, and next-task admission. |
-| Objective | Prepare repeatable 25MHz 486SX/MS-DOS physical-host qualification inputs for the linked native DOS executable. |
-| Non-goals | New gameplay behavior, a CPU/PPU/APU emulator, ROM-derived presentation assets, and unverified performance claims are outside this S. |
-| Reference Baseline | Completed M3 native render, DOS frame, MZ link, hardware-hook, and structural-host evidence. |
+| Objective | Execute the approved physical 25MHz 486SX/MS-DOS qualification protocol and record measured DOS/VGA route evidence. |
+| Non-goals | New gameplay behavior, a CPU/PPU/APU emulator, ROM-derived presentation assets, and inferred performance claims are outside this S. |
+| Reference Baseline | M4 T1 physical-host qualification protocol. |
 | Candidate Proposal | [M3 Presentation Adapters](../proposals/m3-presentation-adapters.md), M4 qualification continuation. |
-| Files And ABI Surface | Physical-host test protocol, local measurement wrapper, and M4 history evidence. |
+| Files And ABI Surface | Physical-host run evidence and M4 history evidence. |
 | Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
 | Verification | ROM-free unit tests; x86/x64 Win32 build; OpenNT large-model core compile when locally available; documentation gate and diff check. |
-| Expected Markers | Reproducible physical-host launch inputs, measurement schema, and no claimed result without hardware evidence. |
+| Expected Markers | Measured host facts, three route outcomes, timing samples, and VGA/text observations. |
 | Asset Needs | No protected asset is required; owner-local inputs remain outside tracked output. |
-| Reporting Requirements | Record machine/DOS/VGA input facts, measured route checkpoints, and any missing physical-host capability before closure. |
+| Reporting Requirements | Record machine/DOS/VGA facts, measured route checkpoints, all deviations, and any missing physical-host capability before closure. |
 | Stop Conditions | Stop and revise scope if qualification lacks actual physical measurement, requires unreviewed media, changes gameplay behavior, or embeds protected data. |
-| Exit Criteria | A physical-host qualification protocol is ready and no performance claim is made without measured evidence. |
+| Exit Criteria | The physical host completes the protocol with recorded observations, or the exact physical-host access gap is recorded. |
 | Original Owner Request | Deliver a native C SMB1 suitable for future colored text and DOS presentation without contaminating the core. |
 | Similar-Issue Sweep | Before closure, search for unsupported performance claims, unreviewed media, tracked binaries, local-path leakage in records, and product/runtime coupling; record every production hit and disposition. |
+
+## Recent M4 Closures
+
+| Task | Compact result |
+| --- | --- |
+| T1 | The physical 486SX qualification protocol defines build identity, host facts, scripted routes, timing samples, and acceptance evidence without any fabricated measurement. [History](../history/M4-T1-486sx-qualification-protocol.md). |
 
 ## Recent M3 Closures
 

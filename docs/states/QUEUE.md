@@ -32,3 +32,4 @@
 ## M4 Candidates
 
 1. [486SX qualification](../design/ROADMAP.md) — physical host protocol and measured DOS/VGA route evidence.
+2. [486SX qualification](../design/ROADMAP.md) — execute the physical-host protocol and record measured route evidence.
