@@ -1734,3 +1734,31 @@ The corrected 380-sample trace reduces CPU-RAM differences to 97,994,
 zero-page differences to 5,492, and working-RAM differences to 31,702. PPU,
 CIRAM, palette, and OAM remain exact. Title Silence header propagation and
 non-audio RAM producers remain open.
+
+## T11 S1 P2 Secondary Setup VRAM Buffer Reset
+
+The owner-local matched disassembly identifies `SecondaryGameSetup` at ROM
+`$9071-$90b7`. Its `ClearVRLoop` stores zero through every byte of
+`VRAM_Buffer1-1,y`, which is CPU RAM `$0300-$03ff`, before it enables display
+output and initializes OAM shuffle state. Native C had retained title-command
+body bytes across this mode transition because it translated only the later
+NMI terminator clear. `mysmb_game_secondary_setup` now clears the complete
+source page, and the existing setup/OAM smoke seeds all 256 bytes with `$5a`
+before proving the first, second, and final bytes are zero after task 2.
+
+On the bounded 380-sample title Start/right route, CPU-RAM differences fall
+from 97,994 to 69,375 and working-RAM differences fall from 31,702 to 3,083.
+CIRAM pages, palette, CPU OAM backing RAM, visible OAM, and all PPU scalar
+fields remain exact. The CPU stack page remains a recorder-visible 6502 call
+stack and is not asserted as translated persistent state.
+
+### Similar-Issue Sweep
+
+The sweep searched production and test references to `SecondaryGameSetup`,
+`ClearVRLoop`, and the `$0300-$03ff` buffer range. There is one production
+owner, `mysmb_game_secondary_setup`; its complete-page reset is now translated.
+`mysmb_game_commit_vram_buffer` retains its separate ROM NMI per-command
+terminator semantics, and parser buffer 2 remains a separately owned
+`$0340` route. The setup/OAM smoke is the sole task-2 unit owner and now
+covers the full-page reset; no further duplicate reset implementation was
+found.

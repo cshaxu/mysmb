@@ -6,18 +6,23 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     static mysmb_u8 prg[1] = { 0U };
+    mysmb_u16 offset;
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
     input.buttons = 0U;
     game.ram[0x0770U] = 1U;
     game.ram[0x0772U] = 2U;
+    for (offset = 0x0300U; offset < 0x0400U; ++offset)
+        game.ram[offset] = 0x5aU;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x06e1U] != 0x58U || game.ram[0x06e2U] != 0x48U ||
         game.ram[0x06e3U] != 0x38U || game.ram[0x06e4U] != 0x04U ||
         game.ram[0x06f2U] != 0x2cU || game.ram[0x0200U] != 0x18U ||
         game.ram[0x0201U] != 0xffU || game.ram[0x0202U] != 0x23U ||
-        game.ram[0x0203U] != 0x58U || game.ram[0x0722U] != 1U) return 1;
+        game.ram[0x0203U] != 0x58U || game.ram[0x0722U] != 1U ||
+        game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
+        game.ram[0x03ffU] != 0U) return 1;
 
     game.ram[0x0204U] = 1U;
     game.ram[0x0770U] = 4U;

@@ -825,6 +825,15 @@ static void mysmb_game_secondary_setup(struct mysmb_game *game)
     };
     static const mysmb_u8 sprite0_data[4] = { 0x18U, 0xffU, 0x23U, 0x58U };
     mysmb_u8 index;
+    mysmb_u16 buffer_offset;
+
+    /* ROM SecondaryGameSetup ClearVRLoop clears the complete VRAM command
+     * buffer page before it enables the game route.  This is distinct from
+     * UpdateScreen's per-command terminator clear: title data remains here
+     * until the setup transition, then cannot become incidental input to
+     * game-mode producers. */
+    for (buffer_offset = 0x0300U; buffer_offset < 0x0400U; ++buffer_offset)
+        game->ram[buffer_offset] = 0U;
 
     game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
     mysmb_game_get_area_music(game);
