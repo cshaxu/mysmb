@@ -33,7 +33,7 @@ try {
         $objects += [System.IO.Path]::GetFileNameWithoutExtension($source) + '.obj'
     }
     $objectLine = ($objects -join '+') + '+' + $stackObject
-    @($objectLine, 'mysmb-dos16.exe', 'nul.map', $runtimeLibrary) |
+    @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
     & $Linker /nologo '@mysmb-dos16.rsp'
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
