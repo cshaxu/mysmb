@@ -71,6 +71,31 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
 static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 
+/* ROM title ScreenRoutines task 8 renders the title-demo area's lead-in
+ * before DrawTitleScreen overlays its own stream.  Keep the title-menu task
+ * owner intact after borrowing the shared area-output route. */
+static mysmb_u8 mysmb_game_apply_title_area(struct mysmb_game *game)
+{
+    struct mysmb_area_source source;
+    mysmb_u8 mode_task;
+
+    if (game->area_prg == 0) return 0U;
+    source.prg = game->area_prg;
+    source.prg_size = game->area_prg_size;
+    mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+    mysmb_area_initialize(game);
+    mysmb_game_move_all_sprites_offscreen(game);
+    if (mysmb_area_load_pointers(game, &source) == 0U ||
+        mysmb_area_parse_header(game, &source) == 0U) {
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
+        return 0U;
+    }
+    mysmb_area_render_initial_terrain(game);
+    mysmb_area_render_initial_objects(game);
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
+    return 1U;
+}
+
 /* The 2C02 mirrors sprite entries $3f10/$14/$18/$1c onto the matching
  * universal/background entries.  The portable snapshot deliberately keeps
  * all 32 backing bytes, so the four mirrored source slots remain untouched. */
@@ -622,6 +647,7 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
     if (game->area_prg != 0) {
         if (mysmb_area_queue_top_status_line(game) == 0U) return 0U;
         mysmb_game_commit_vram_buffer(game);
+        if (mysmb_game_apply_title_area(game) == 0U) return 0U;
     }
     if (mysmb_game_apply_vram_commands(game, commands, command_size) == 0U) {
         return 0U;
