@@ -709,3 +709,31 @@ production ordering path remains. The summary is test-only and contains no
 ROM data. The ROM-free suite passed 34 of 34 tests after the change, and the
 Win32 x86 Debug target built successfully. No OAM producer, host renderer, or
 runtime reference dependency changed.
+
+## T10 S1 P35 Dynamic Buffer Separation
+
+The admitted Start/right route has a stable comparable window at NMI samples
+370--379. In that window the original and native values agree for parser task
+`$071f`, scroll accumulator `$073d`, and every checked byte of
+`VRAM_Buffer2` (`$0340` onward), including the `$2498`, `$2499`, `$249a`,
+`$249b`, and `$27ce` command sequence. This establishes that the dynamic
+column/attribute owner is not the cause of the remaining status update delay.
+
+The independent `VRAM_Buffer1` timer owner remains one NMI sample late:
+the original reloads `$0787` and queues `$207a/03:09:03` at sample 375;
+native does so at sample 376. The original consumes that buffer on its next
+NMI while continuing the matching `VRAM_Buffer2` sequence. This rules out a
+buffer-priority patch. The delay is upstream in the translated screen/entrance
+transition that makes `RunGameTimer` eligible, and remains open T10 work.
+
+The local diagnostic summary now also reports both VRAM buffers plus parser
+task and scroll-accumulator state. It is a ROM-free test executable: it emits
+only native state and hashes, never owner-ROM bytes.
+
+### Similar-Issue Sweep
+
+The separation sweep covered both buffer offsets and producers, the parser
+tail, screen-routine transition, and `RunGameTimer` eligibility. The second
+buffer path is source-aligned over the declared window and needs no change.
+The first-buffer timer writer is the only remaining production discrepancy in
+this slice. OAM, host rendering, and the reference runtime were not changed.
