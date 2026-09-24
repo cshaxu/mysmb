@@ -855,3 +855,18 @@ The remaining frequent entries at `$0001` and `$0006` are source scratch
 bytes at the NMI return boundary. Stack and scratch bytes remain trace
 transparency data, not translated persistent-state targets. This classifier
 does not suppress any difference; it makes the T10/T11 handoff reviewable.
+
+## T10 S1 P42 Title Baseline Limitation
+
+The prebuilt-title helper and the translated ScreenRoutines bootstrap both
+reach title-menu mode, but they are not interchangeable output baselines. A
+local comparison found 64 name-table positions and one palette position
+different after the bootstrap completes. The first name-table difference is
+at its first position, so this is a construction-order difference rather than
+a late timer race.
+
+The product uses the translated bootstrap. The prebuilt helper remains only
+for the established gameplay reference phase. It must not be used to assert
+title-frame equality or to overwrite the bootstrap result. A title-phase ROM
+oracle needs a separately aligned source checkpoint before T10 can make a
+title-output equality claim.
