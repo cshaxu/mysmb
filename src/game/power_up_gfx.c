@@ -9,7 +9,8 @@ enum {
     MYSMB_ENEMY_SPRITE_OFFSET = 0x06e5U,
     MYSMB_POWER_UP_SLOT = 5U,
     MYSMB_SCREEN_LEFT_PAGE = 0x071aU,
-    MYSMB_SCREEN_LEFT_X = 0x071cU
+    MYSMB_SCREEN_LEFT_X = 0x071cU,
+    MYSMB_FRAME_COUNTER = 0x0009U
 };
 /* ROM DrawPowerUp. */
 void mysmb_objects_draw_power_up(struct mysmb_game *game)
@@ -57,7 +58,7 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     game->ram[(mysmb_u16)(0x020aU + offset)] = base_attributes;
     game->ram[(mysmb_u16)(0x020eU + offset)] = base_attributes;
     if (type == 1U || type == 2U) {
-        phase_attributes = (mysmb_u8)((((mysmb_u8)game->frame_number >> 1U) & 3U) |
+        phase_attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] >> 1U) & 3U) |
                                        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
         game->ram[(mysmb_u16)(0x0202U + offset)] = phase_attributes;
         game->ram[(mysmb_u16)(0x0206U + offset)] = (mysmb_u8)(phase_attributes | 0x40U);

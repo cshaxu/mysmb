@@ -537,6 +537,7 @@ int main(void)
     if (game.ram[0x00cfU] != 0x50U || game.ram[0x00a0U] != 1U ||
         game.ram[0x0434U] != 0x3cU || (game.ram[0x001eU] & 0x40U) == 0U) return 1;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     game.ram[0x0747U] = 0xffU;
     game.ram[0x000eU] = 8U;
     game.ram[0x03d0U] = 0U;
@@ -608,6 +609,7 @@ int main(void)
     game.ram[0x009fU] = 0U;
     game.ram[0x0756U] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x001eU] != 4U || game.ram[0x0046U] != 1U ||
         game.ram[0x0058U] != 8U) return 1;
@@ -672,11 +674,13 @@ int main(void)
     game.ram[0x078aU] = 0U;
     game.ram[0x0086U] = 0x80U;
     game.frame_number = 1UL;
+    game.ram[0x0009U] = 1U;
     mysmb_objects_step_piranha_plants(&game);
     if (game.ram[0x0058U] != 0xffU || game.ram[0x00a0U] != 1U ||
         game.ram[0x00cfU] != 0x6fU) return 1;
     game.ram[0x000fU] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     game.ram[0x0011U] = 1U;
     game.ram[0x0018U] = 10U;
     game.ram[0x0020U] = 0U;
@@ -721,6 +725,7 @@ int main(void)
     game.ram[0x0796U] = 0U;
     game.ram[0x07a8U] = 1U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_bloobers(&game);
     if (game.ram[0x0058U] != 1U || game.ram[0x0434U] != 1U ||
         game.ram[0x00cfU] != 0x6fU || game.ram[0x0087U] != 0x3fU) return 1;
@@ -765,6 +770,7 @@ int main(void)
     game.ram[0x00a0U] = 0U;
     game.ram[0x0401U] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_flying_green_paratroopas(&game);
     if (game.ram[0x0058U] != 1U || game.ram[0x00a0U] != 0U ||
         game.ram[0x0046U] != 2U || game.ram[0x0087U] != 0x3fU ||
@@ -1040,6 +1046,7 @@ int main(void)
         game.ram[0x0014U] != 1U || game.ram[0x049fU] != 3U ||
         game.ram[0x0039U] != 0U || game.ram[0x03caU] != 0x20U) return 1;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0023U] != 2U || game.ram[0x00d4U] != 0x57U) return 1;
     game.ram[0x0023U] = 0x11U;
@@ -1098,6 +1105,7 @@ int main(void)
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0024U] != 0x80U || (game.ram[0x001eU] & 0x20U) == 0U) return 1;
     game.ram[0x0024U] = 1U;
@@ -1117,6 +1125,7 @@ int main(void)
     game.ram[0x00cfU] = 0x50U;
     game.ram[0x0110U] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0024U] != 0x80U || game.ram[0x001eU] != 0U ||
         game.ram[0x0110U] != 0U) return 1;
@@ -1201,6 +1210,7 @@ int main(void)
     game.ram[0x0039U] = 2U;
     game.ram[0x079fU] = 0U;
     game.frame_number = 0UL;
+    game.ram[0x0009U] = 0U;
     mysmb_objects_check_power_up_collision(&game);
     if (game.ram[0x04acU] != 0x33U || game.ram[0x04adU] != 0x64U ||
         game.ram[0x04c4U] != 0x32U || game.ram[0x04c5U] != 0x59U ||
@@ -1216,6 +1226,7 @@ int main(void)
         game.ram[0x00d4U] != 0x60U || game.ram[0x039dU] != 0x60U ||
         game.ram[0x039aU] != 5U || game.ram[0x0398U] != 1U) return 1;
     game.frame_number = 2UL;
+    game.ram[0x0009U] = 2U;
     mysmb_objects_step_vine(&game);
     if (game.ram[0x00d4U] != 0x5fU || game.ram[0x0399U] != 1U) return 1;
     game.ram[0x0399U] = 0x1fU;
@@ -1238,6 +1249,7 @@ int main(void)
     game.ram[0x0747U] = 0U;
     game.ram[0x03c4U] = 0x20U;
     game.frame_number = 8UL;
+    game.ram[0x0009U] = 8U;
     mysmb_player_step_fire_flower(&game);
     if (game.ram[0x03c4U] != 0x22U) return 1;
     game.ram[0x0747U] = 0xc0U;

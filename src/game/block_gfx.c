@@ -10,7 +10,8 @@ enum {
     MYSMB_BLOCK_Y = 0x00d7U,
     MYSMB_BLOCK_SPRITE_OFFSET = 0x06ecU,
     MYSMB_SCREEN_EDGE_PAGE = 0x071aU,
-    MYSMB_SCREEN_EDGE_X = 0x071cU
+    MYSMB_SCREEN_EDGE_X = 0x071cU,
+    MYSMB_FRAME_COUNTER = 0x0009U
 };
 
 static mysmb_u8 mysmb_block_relative_x(const struct mysmb_game *game,
@@ -100,7 +101,7 @@ void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 original_x;
 
     offset = game->ram[MYSMB_BLOCK_SPRITE_OFFSET + slot];
-    attributes = (mysmb_u8)((((mysmb_u8)game->frame_number << 4U) & 0xc0U) |
+    attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] << 4U) & 0xc0U) |
         (game->ram[MYSMB_AREA_TYPE] == 5U ? 2U : 3U));
     x0 = mysmb_block_relative_x(game, slot);
     x1 = mysmb_block_relative_x(game, (mysmb_u8)(slot + 2U));

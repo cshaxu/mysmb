@@ -1044,7 +1044,7 @@ void mysmb_player_step_fire_flower(struct mysmb_game *game)
     }
     game->ram[MYSMB_PLAYER_ATTRIBUTES] =
         (mysmb_u8)((game->ram[MYSMB_PLAYER_ATTRIBUTES] & 0xfcU) |
-                   ((mysmb_u8)(game->frame_number >> 2U) & 3U));
+                   ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] >> 2U) & 3U));
 }
 
 /* Snapshot only translated RAM state; no platform state participates. */
