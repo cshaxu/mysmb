@@ -1146,6 +1146,23 @@ then sets `$0773` to 8 and verifies the following native tick commits and
 clears it. Message controls 12--18 and bridge metatile replacement remain
 separate T10 owners.
 
+## T10 S1 P62 Victory Message Address Controls
+
+`PrintVictoryMessages` at ROM `$83c9-$8426` selects address controls 12--18
+from its primary and secondary message counters. The original NMI resolves
+those controls through `VRAM_AddrTable` to the Mario/Luigi thanks, retainer,
+princess, and world-select command streams. Native C advanced its counters
+without submitting an address control, and its NMI treated all those values as
+ordinary buffer-1 traffic, so no victory text reached the name table.
+
+The victory route now preserves the source's 64-call secondary-counter divider,
+world-1--7 retainer branch, world-8 music/message sequence, and end-timer
+handoff. Its NMI path dispatches controls 12--18 to source-owned PRG streams.
+The owner-local victory-message smoke verifies Mario's first message, the
+world-1 retainer message, the world-8 princess message and music boundary, and
+the final world-select stream directly against their PRG command tiles. Bridge
+metatile replacement remains a separate T10 owner.
+
 ## T10 S1 P60 Title-Area Display Evidence
 
 Title `ScreenRoutines` task 8 first invokes the title demo area's ordinary

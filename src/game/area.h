@@ -18,6 +18,9 @@ mysmb_u8 mysmb_area_apply_palette(struct mysmb_game *game, mysmb_u8 area_type);
 /* ROM VRAM address controls 8-11 select Bowser, snow, and mushroom palettes. */
 mysmb_u8 mysmb_area_apply_special_palette(struct mysmb_game *game,
                                           mysmb_u8 address_control);
+/* ROM VRAM address controls 12-18 select the victory and world-select text. */
+mysmb_u8 mysmb_area_apply_message(struct mysmb_game *game,
+                                  mysmb_u8 address_control);
 
 /* ROM $9c03-$9c2b, pointer tables only; caller owns owner-local data binding. */
 mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,

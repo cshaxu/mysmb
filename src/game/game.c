@@ -79,6 +79,7 @@ static void mysmb_game_lose_life(struct mysmb_game *game);
 static void mysmb_game_step_game_over(struct mysmb_game *game);
 static void mysmb_game_next_area(struct mysmb_game *game);
 static void mysmb_game_step_victory(struct mysmb_game *game);
+static void mysmb_game_print_victory_messages(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_primary_setup(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
@@ -322,13 +323,7 @@ static void mysmb_game_step_victory(struct mysmb_game *game)
         return;
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 3U) {
-        game->ram[MYSMB_RAM_SECONDARY_MESSAGE] =
-            (mysmb_u8)(game->ram[MYSMB_RAM_SECONDARY_MESSAGE] + 4U);
-        if (game->ram[MYSMB_RAM_SECONDARY_MESSAGE] < 4U) game->ram[MYSMB_RAM_PRIMARY_MESSAGE]++;
-        if (game->ram[MYSMB_RAM_PRIMARY_MESSAGE] >= 7U) {
-            game->ram[MYSMB_RAM_WORLD_END_TIMER] = 6U;
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 4U;
-        }
+        mysmb_game_print_victory_messages(game);
         return;
     }
     if (game->ram[MYSMB_RAM_WORLD_END_TIMER] != 0U) {
@@ -498,6 +493,51 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
+}
+
+/* ROM $83c9-$8426 PrintVictoryMessages.  Its secondary counter is a frame
+ * divider: a message is selected only when it is zero, then the add-four
+ * carries into the primary counter every 64 calls. */
+static void mysmb_game_print_victory_messages(struct mysmb_game *game)
+{
+    mysmb_u8 primary;
+    mysmb_u8 secondary;
+    mysmb_u8 message;
+    mysmb_u8 carry;
+
+    secondary = game->ram[MYSMB_RAM_SECONDARY_MESSAGE];
+    primary = game->ram[MYSMB_RAM_PRIMARY_MESSAGE];
+    if (secondary == 0U) {
+        if (primary == 0U) {
+            message = game->ram[MYSMB_RAM_CURRENT_PLAYER] == 0U ? 0U : 1U;
+            game->ram[0x0773U] = (mysmb_u8)(message + 12U);
+        }
+        else if (primary < 9U) {
+            if (game->ram[MYSMB_RAM_WORLD] == 7U) {
+                if (primary >= 3U) {
+                    message = primary;
+                    if (message == 3U) game->ram[MYSMB_RAM_EVENT_MUSIC] = 4U;
+                    game->ram[0x0773U] = (mysmb_u8)(message + 12U);
+                }
+            }
+            else if (primary == 2U) {
+                game->ram[0x0773U] = 14U;
+            }
+            else if (primary >= 4U) {
+                game->ram[MYSMB_RAM_WORLD_END_TIMER] = 6U;
+                game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
+                return;
+            }
+        }
+    }
+    carry = secondary >= 0xfcU ? 1U : 0U;
+    game->ram[MYSMB_RAM_SECONDARY_MESSAGE] = (mysmb_u8)(secondary + 4U);
+    primary = (mysmb_u8)(primary + carry);
+    game->ram[MYSMB_RAM_PRIMARY_MESSAGE] = primary;
+    if (primary >= 7U) {
+        game->ram[MYSMB_RAM_WORLD_END_TIMER] = 6U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
+    }
 }
 
 /* Translation of the game-mode portion of ScreenRoutines.  The original
@@ -770,6 +810,13 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
     if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 8U &&
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 11U) {
         (void)mysmb_area_apply_special_palette(game,
+            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 12U &&
+        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 18U) {
+        (void)mysmb_area_apply_message(game,
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;

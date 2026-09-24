@@ -28,6 +28,13 @@ enum {
     MYSMB_AREA_NIGHT_SNOW_PALETTE = 0x0d3cU,
     MYSMB_AREA_MUSHROOM_PALETTE = 0x0d44U,
     MYSMB_AREA_BOWSER_PALETTE = 0x0d4cU,
+    MYSMB_AREA_MARIO_THANKS = 0x0d54U,
+    MYSMB_AREA_LUIGI_THANKS = 0x0d68U,
+    MYSMB_AREA_RETAINER_SAVED = 0x0d7cU,
+    MYSMB_AREA_PRINCESS_SAVED1 = 0x0da8U,
+    MYSMB_AREA_PRINCESS_SAVED2 = 0x0dbfU,
+    MYSMB_AREA_WORLD_SELECT1 = 0x0ddeU,
+    MYSMB_AREA_WORLD_SELECT2 = 0x0defU,
     MYSMB_AREA_COLOR_ROTATE_PALETTE = 0x09c3U,
     MYSMB_AREA_PALETTE3_DATA = 0x09d1U,
     MYSMB_AREA_GAME_TEXT = 0x0752U,
@@ -985,6 +992,26 @@ mysmb_u8 mysmb_area_apply_special_palette(struct mysmb_game *game,
     else if (address_control == 10U) offset = MYSMB_AREA_NIGHT_SNOW_PALETTE;
     else if (address_control == 11U) offset = MYSMB_AREA_MUSHROOM_PALETTE;
     else return 0U;
+    if (game->area_prg == 0 || offset >= game->area_prg_size) return 0U;
+    return mysmb_game_apply_vram_commands(game, &game->area_prg[offset],
+                                          (mysmb_u16)(game->area_prg_size - offset));
+}
+
+/* ROM $805a VRAM_AddrTable entries 12--18.  The NMI owns their transfer;
+ * these streams remain in the admitted owner-local PRG. */
+mysmb_u8 mysmb_area_apply_message(struct mysmb_game *game,
+                                  mysmb_u8 address_control)
+{
+    static const mysmb_u16 message_offsets[7] = {
+        MYSMB_AREA_MARIO_THANKS, MYSMB_AREA_LUIGI_THANKS,
+        MYSMB_AREA_RETAINER_SAVED, MYSMB_AREA_PRINCESS_SAVED1,
+        MYSMB_AREA_PRINCESS_SAVED2, MYSMB_AREA_WORLD_SELECT1,
+        MYSMB_AREA_WORLD_SELECT2
+    };
+    mysmb_u16 offset;
+
+    if (address_control < 12U || address_control > 18U) return 0U;
+    offset = message_offsets[(mysmb_u8)(address_control - 12U)];
     if (game->area_prg == 0 || offset >= game->area_prg_size) return 0U;
     return mysmb_game_apply_vram_commands(game, &game->area_prg[offset],
                                           (mysmb_u16)(game->area_prg_size - offset));
