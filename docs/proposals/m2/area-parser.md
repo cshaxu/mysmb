@@ -1,30 +1,27 @@
-# M2 candidate: Area graphics and parser
+# M2 T18: Area graphics and parser
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+**M2 T18 active — S2/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
 
 ## ROM scope
 
-ROM lines 1825-5314 except InitializeMemory: metatiles, attributes, palettes, headers, parser tasks/core, block buffer and scrolling setup.
-
-## Existing-code disposition
-
-Refactor src/game/area.c by source ownership; replace synthetic parser/spawn shortcuts. Actor behavior stays outside this slice.
+ROM lines 1825-5314 except `InitializeMemory`: metatiles, attributes, palettes, headers, parser tasks/core, block buffer and scrolling setup. The initial boundary is `ReplaceBlockMetatile -> WriteBlockMetatile -> PutBlockMetatile` (lines 2052-2099) and its caller `BlockObjMT_Updater` (7527-7548).
 
 ## Graph contract
 
-Feeds area state, collision block buffer, CIRAM, palette and parse schedule to gameplay.
+Area code owns block-buffer and VRAM-command mutations. It consumes a completed block replacement request and emits only area RAM/VRAM-buffer state; it never decides player, actor, OAM, or platform behavior.
 
-## Admission S plan
+## Formal S breakdown
 
-1. **S1 after admission** - Inventory area tables, headers, parser-task branches, renderer branches and current C owners.
-2. **S2 after admission** - Translate header/bootstrap and parser core with source-identical offsets and page semantics.
-3. **S3 after admission** - Translate metatile, attribute, palette, name-table and block-buffer mutations.
-4. **S4 after admission** - Translate column/scroll scheduling and compare area entry, columns, hidden-block and pipe routes.
+1. **S1 complete (P1) — source ownership boundary.** Map metatile command labels and move the block-metatile writer from object routing to `src/game/area/` without changing bytes. Evidence: bounded trace unchanged.
+2. **S2 active (P1) — headers and parser core.** Translate source offsets, page semantics, and parser task branches.
+3. **S3 planned — metatile/block-buffer mutations.** Translate `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `PutBlockMetatile`, attributes, palette and name-table writes. Evidence: hidden-block, question-block, coin, and pipe traces.
+4. **S4 planned — column/scroll scheduling and closure.** Translate column scheduling and prove area entry and scroll routes by reference trace.
 
 ## Acceptance
 
-Area RAM, parser offsets, block buffer, CIRAM, attributes, palette and scroll state match reference. Parser does not invent actor initialization.
+Area RAM, parser offsets, block buffer, CIRAM, attributes, palette and scroll state match reference. Platform code may not read or write these game decisions. Replaced code is removed in the same admitted P after its trace proves the replacement.
+## S1 P1: block metatile writer boundary
 
-Platform code may not read or write these game decisions. Delete replaced code in the same admitted task once its ROM trace proves the replacement.
+BlockObjMT_Updater and its ReplaceBlockMetatile command writer now live in src/game/area/block_metatile.c; frame root and tests call the area API. The 600-sample continuation is unchanged: first work-RAM mismatch remains sample 82 / $03f0, with 2,893 differing work-RAM bytes; CIRAM, palette, audio and PPU remain zero-difference. x64/x86 pass 78/78; OpenNT links DOS MZ with its existing OLDNAMES.LIB warning. Artifacts: 16 00AB5AD16398B908135E17BACB05A7A92B0B1C0C188AF38C974E801350AD6982, 32 79F8BFBBFE71F70F1D2E9F18E1C1D97370B2D5B993F991031D719A443C912CA3, 64 CD71364ADF964DC81F27183D727417F3180761DB66A423AC3DD7B556F9353ED8.

@@ -94,4 +94,7 @@ mysmb_u8 mysmb_area_spawn_enemy_in_slot(struct mysmb_game *game,
                                       const struct mysmb_area_source *source,
                                       mysmb_u8 slot);
 
+/* ROM BlockObjMT_Updater -> ReplaceBlockMetatile. */
+void mysmb_area_apply_block_replacements(struct mysmb_game *game);
+
 #endif

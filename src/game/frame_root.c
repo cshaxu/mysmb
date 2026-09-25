@@ -345,7 +345,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_objects_step_hammer_bros(game);
         mysmb_player_draw_oam(game);
         mysmb_objects_step_vine(game);
-        mysmb_objects_apply_block_replacements(game);
+        mysmb_area_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);
         mysmb_objects_step_misc(game);
         mysmb_area_step_palette_rotation(game);

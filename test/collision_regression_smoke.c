@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "game/objects.h"
+#include "game/area.h"
 #include "game/player.h"
 
 static void mysmb_clear_block_buffers(struct mysmb_game *game)
@@ -121,7 +122,7 @@ int main(void)
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 14;
     for (step = 0U; step < 24U; ++step) {
-        mysmb_objects_apply_block_replacements(&game);
+        mysmb_area_apply_block_replacements(&game);
         /* NMI has consumed the previous VRAM command before the next frame. */
         game.ram[0x0301U] = 0U;
         mysmb_objects_step_blocks(&game);

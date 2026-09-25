@@ -32,7 +32,7 @@ These candidates exhaustively map the ROM executable source index. They are orde
 1. **Frame root** — active as M2 T14 S1: reset/NMI/input/timing/PPU phase/mode dispatch.
 2. **Title and terminal modes** — active as M2 T15 S4: source-reachable title-start, demo, victory and game-over NMI routes.
 3. **Screen, text and status** — lines 1386–1824: status, text, screen routines and parser scheduling.
-4. **Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
+4. **M2 T18 active — Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
 5. **Game frame dispatcher** — lines 5315–5582: game mode/core/engine and ROM call order.
 6. **Player route** — lines 5583–6297: control, physics, player state, pipes/vines/scroll and block actions.
 7. **Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
