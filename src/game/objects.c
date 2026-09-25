@@ -159,8 +159,6 @@ static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
                                                   mysmb_u8 slot);
 static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot);
-static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
-                                            mysmb_u16 first, mysmb_u16 second);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
                                                                 mysmb_u8 slot);
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
@@ -195,15 +193,6 @@ static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
                                              mysmb_u8 slot,
                                              mysmb_u8 block_low,
                                              mysmb_u8 block_row);
-
-/* BlockBufferCollision adds its X adder with ADC, then immediately adds that
- * carry to SprObject_PageLoc before selecting $0500/$05d0.  Keep that
- * source-level operation explicit at every direct object collision probe. */
-static mysmb_u8 mysmb_objects_collision_page(mysmb_u8 page, mysmb_u8 object_x,
-                                             mysmb_u8 probed_x)
-{
-    return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
-}
 
 /* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
  * here so a small player enters the death route rather than becoming immune. */
@@ -245,7 +234,7 @@ void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
              game->ram[MYSMB_ENEMY_ID + slot] != 18U) ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -271,7 +260,7 @@ void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game)
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -302,7 +291,7 @@ void mysmb_objects_check_bloober_stomp(struct mysmb_game *game)
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -336,7 +325,7 @@ void mysmb_objects_check_lakitu_stomp(struct mysmb_game *game)
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -369,7 +358,7 @@ void mysmb_objects_check_hammer_bro_stomp(struct mysmb_game *game)
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
             mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -405,7 +394,7 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
     screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
                                 game->ram[MYSMB_SCREEN_LEFT_X]);
     if (player_world < screen_world || (mysmb_u16)(player_world - screen_world) >= 0x100U) return;
-    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
         game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
         game->ram[MYSMB_PLAYER_Y]);
     for (slot = 0U; slot < 5U; ++slot) {
@@ -418,9 +407,9 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
                                    game->ram[MYSMB_ENEMY_X + slot]);
         if (enemy_world < screen_world || (mysmb_u16)(enemy_world - screen_world) >= 0x100U) continue;
         enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-        mysmb_objects_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+        mysmb_world_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
             (mysmb_u8)(enemy_world - screen_world), game->ram[MYSMB_ENEMY_Y + slot]);
-        if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+        if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
             game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
             continue;
         }
@@ -519,7 +508,7 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
         if (game->ram[MYSMB_MISC_STATE + slot] != 0U) {
             mysmb_oam_relative_misc_position(game, slot);
             mysmb_oam_get_misc_offscreen_bits(game, slot);
-            mysmb_objects_set_bounding_box(game,
+            mysmb_world_set_bounding_box(game,
                 (mysmb_u16)(0x04d0U + slot * 4U),
                 game->ram[MYSMB_MISC_BOUND_BOX + slot],
                 game->ram[0x03b3U], game->ram[0x03beU]);
@@ -675,7 +664,7 @@ static void mysmb_objects_get_fireball_offscreen_bits(struct mysmb_game *game,
 static void mysmb_objects_get_fireball_bounding_box(struct mysmb_game *game,
                                                      mysmb_u8 slot)
 {
-    mysmb_objects_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
+    mysmb_world_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
 }
 /* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
  * Both objects use the original fixed slots. */
@@ -781,7 +770,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         mysmb_objects_get_fireball_bounding_box(game, slot);
         if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
             x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
-            page = mysmb_objects_collision_page(game->ram[MYSMB_FIREBALL_PAGE + slot],
+            page = mysmb_world_collision_page(game->ram[MYSMB_FIREBALL_PAGE + slot],
                 game->ram[MYSMB_FIREBALL_X + slot], x);
             row = (mysmb_u8)(((game->ram[MYSMB_FIREBALL_Y + slot] + 8U) & 0xf0U) - 0x20U);
             address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
@@ -826,7 +815,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
                 enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + enemy_slot * 4U);
                 fireball_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER +
                                             (7U + slot) * 4U);
-                if (mysmb_objects_boxes_collide(game, enemy_box, fireball_box) != 0U) {
+                if (mysmb_world_boxes_collide(game, enemy_box, fireball_box) != 0U) {
                     game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
                     mysmb_objects_handle_fireball_enemy_collision(game, enemy_slot);
                     break;
@@ -1046,16 +1035,16 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
      * by PlayerGfxHandler and GetEnemyBoundBox.  The standalone owner test
      * path has no preceding PlayerGfxHandler, so it initializes its boxes. */
     if (preserve_collision_boxes == 0U) {
-        mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+        mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
                                        game->ram[MYSMB_PLAYER_BOUND_BOX],
                                        (mysmb_u8)(player_world - screen_world),
                                        game->ram[MYSMB_PLAYER_Y]);
-        mysmb_objects_set_bounding_box(game, enemy_box,
+        mysmb_world_set_bounding_box(game, enemy_box,
                                        game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
                                        (mysmb_u8)(enemy_world - screen_world),
                                        game->ram[MYSMB_ENEMY_Y + slot]);
     }
-    if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
+    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
         game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
         return 0U;
     }
@@ -1245,7 +1234,7 @@ static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *g
     mysmb_u8 tile;
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
             (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
-        page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+        page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
             game->ram[MYSMB_ENEMY_X + slot], x);
         row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
         address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
@@ -1262,7 +1251,7 @@ static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *g
                 (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
         }
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-        page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+        page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
             game->ram[MYSMB_ENEMY_X + slot], x);
         row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
         address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
@@ -1624,7 +1613,7 @@ void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
                                   game->ram[MYSMB_ENEMY_X + first]);
         if (first_world < screen_world || (mysmb_u16)(first_world - screen_world) >= 0x100U) continue;
         first_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + first * 4U);
-        mysmb_objects_set_bounding_box(game, first_box,
+        mysmb_world_set_bounding_box(game, first_box,
             game->ram[MYSMB_ENEMY_BOUND_BOX + first],
             (mysmb_u8)(first_world - screen_world), game->ram[MYSMB_ENEMY_Y + first]);
         for (second = 0U; second < first; ++second) {
@@ -1636,10 +1625,10 @@ void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
                                        game->ram[MYSMB_ENEMY_X + second]);
             if (second_world < screen_world || (mysmb_u16)(second_world - screen_world) >= 0x100U) continue;
             second_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + second * 4U);
-            mysmb_objects_set_bounding_box(game, second_box,
+            mysmb_world_set_bounding_box(game, second_box,
                 game->ram[MYSMB_ENEMY_BOUND_BOX + second],
                 (mysmb_u8)(second_world - screen_world), game->ram[MYSMB_ENEMY_Y + second]);
-            if (mysmb_objects_boxes_collide(game, first_box, second_box) == 0U ||
+            if (mysmb_world_boxes_collide(game, first_box, second_box) == 0U ||
                 (game->ram[MYSMB_ENEMY_STATE + first] & 0x20U) != 0U ||
                 (game->ram[MYSMB_ENEMY_STATE + second] & 0x20U) != 0U) continue;
             if (game->ram[MYSMB_ENEMY_STATE + first] >= 6U &&
@@ -1867,7 +1856,7 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
              * ProcEnemyDirection.  A landed egg is reset to ordinary Spiny
              * state before RunNormalEnemies takes ownership next frame. */
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-            page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+            page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
                 game->ram[MYSMB_ENEMY_X + slot], x);
             row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) &
                                0xf0U) - 0x20U);
@@ -2109,7 +2098,7 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] != 0U) return;
 
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
+    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
                                     enemy_box)) {
         mysmb_objects_collect_power_up(game);
     }
@@ -2967,7 +2956,7 @@ static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
         game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
     x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-    page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+    page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
         game->ram[MYSMB_ENEMY_X + slot], x);
     row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
     address = (mysmb_u16)(((page & 1U) != 0U ?
@@ -3072,14 +3061,14 @@ static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
     if (player_world < screen_world || hammer_world < screen_world ||
         (mysmb_u16)(player_world - screen_world) >= 0x100U ||
         (mysmb_u16)(hammer_world - screen_world) >= 0x100U) return;
-    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
         game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
         game->ram[MYSMB_PLAYER_Y]);
     hammer_box = (mysmb_u16)(0x04d0U + slot * 4U);
-    mysmb_objects_set_bounding_box(game, hammer_box,
+    mysmb_world_set_bounding_box(game, hammer_box,
         game->ram[MYSMB_MISC_BOUND_BOX + slot], (mysmb_u8)(hammer_world - screen_world),
         game->ram[MYSMB_MISC_Y + slot]);
-    if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, hammer_box) == 0U) {
+    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, hammer_box) == 0U) {
         game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 0U;
         return;
     }
@@ -3111,81 +3100,15 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
     if (player_world < screen_world || enemy_world < screen_world ||
         (mysmb_u16)(player_world - screen_world) >= 0x100U ||
         (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
-    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
+    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
         game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
         game->ram[MYSMB_PLAYER_Y]);
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    mysmb_objects_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+    mysmb_world_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
         (mysmb_u8)(enemy_world - screen_world), game->ram[MYSMB_ENEMY_Y + slot]);
     return 1U;
 }
 
-/* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
-void mysmb_objects_set_bounding_box(struct mysmb_game *game,
-                                    mysmb_u16 address, mysmb_u8 control,
-                                    mysmb_u8 x, mysmb_u8 y)
-{
-    static const mysmb_u8 bounds[48] = {
-        0x02U, 0x08U, 0x0eU, 0x20U, 0x03U, 0x14U, 0x0dU, 0x20U,
-        0x02U, 0x14U, 0x0eU, 0x20U, 0x02U, 0x09U, 0x0eU, 0x15U,
-        0x00U, 0x00U, 0x18U, 0x06U, 0x00U, 0x00U, 0x20U, 0x0dU,
-        0x00U, 0x00U, 0x30U, 0x0dU, 0x00U, 0x00U, 0x08U, 0x08U,
-        0x06U, 0x04U, 0x0aU, 0x08U, 0x03U, 0x0eU, 0x0dU, 0x14U,
-        0x00U, 0x02U, 0x10U, 0x15U, 0x04U, 0x04U, 0x0cU, 0x1cU
-    };
-    mysmb_u8 offset;
-
-    if (control >= 12U) control = 0U;
-    offset = (mysmb_u8)(control * 4U);
-    game->ram[address] = (mysmb_u8)(x + bounds[offset]);
-    game->ram[address + 1U] = (mysmb_u8)(y + bounds[offset + 1U]);
-    game->ram[address + 2U] = (mysmb_u8)(x + bounds[offset + 2U]);
-    game->ram[address + 3U] = (mysmb_u8)(y + bounds[offset + 3U]);
-}
-
-/* ROM $dcf6 PlayerCollisionCore, for same-screen power-up boxes. */
-static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
-                                            mysmb_u16 first, mysmb_u16 second)
-{
-    mysmb_u8 coordinate;
-
-    /* `first` is the player box (X in PlayerCollisionCore) and `second`
-     * is the sprite box (Y).  Preserve the 6502 comparisons, including
-     * their intentional one-byte-wrap branches. */
-    for (coordinate = 0U; coordinate < 2U; ++coordinate) {
-        mysmb_u8 player_upper;
-        mysmb_u8 player_lower;
-        mysmb_u8 enemy_upper;
-        mysmb_u8 enemy_lower;
-
-        player_upper = game->ram[(mysmb_u16)(first + coordinate)];
-        player_lower = game->ram[(mysmb_u16)(first + coordinate + 2U)];
-        enemy_upper = game->ram[(mysmb_u16)(second + coordinate)];
-        enemy_lower = game->ram[(mysmb_u16)(second + coordinate + 2U)];
-
-        if (enemy_upper >= player_upper) {
-            /* FirstBoxGreater. */
-            if (enemy_upper == player_upper) continue;
-            if (enemy_upper < player_lower) continue;
-            if (enemy_upper == player_lower) continue;
-            if (enemy_upper <= enemy_lower) return 0U;
-            if (enemy_lower >= player_upper) continue;
-            return 0U;
-        }
-
-        if (enemy_upper < player_lower) {
-            /* SecondBoxVerticalChk. */
-            if (player_lower < player_upper) continue;
-            if (enemy_lower >= player_upper) continue;
-            return 0U;
-        }
-        if (enemy_upper == player_lower) continue;
-        if (enemy_lower < enemy_upper) continue;
-        if (enemy_lower >= player_upper) continue;
-        return 0U;
-    }
-    return 1U;
-}
 /* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
  * byte; the modifier is cleared after every calculation exactly as the ROM
  * routine does. */

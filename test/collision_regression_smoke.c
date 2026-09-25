@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "game/objects.h"
+#include "game/world/world.h"
 #include "game/area.h"
 #include "game/player.h"
 
@@ -156,9 +157,9 @@ int main(void)
     /* PlayerEnemyCollision consumes boxes prepared by PlayerGfxHandler and
      * RunPUSubs.  This isolated fixture supplies that source-owned RAM. */
     game.ram[0x03d8U + 5U] = 0U;
-    mysmb_objects_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
+    mysmb_world_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
                                    0x30U, game.ram[0x00ceU]);
-    mysmb_objects_set_bounding_box(&game, 0x04b0U + 5U * 4U,
+    mysmb_world_set_bounding_box(&game, 0x04b0U + 5U * 4U,
                                    game.ram[0x049fU], 0x30U,
                                    game.ram[0x00d4U]);
     mysmb_objects_check_power_up_collision(&game);

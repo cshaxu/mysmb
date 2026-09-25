@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/world/world.h"
 
 enum {
     MYSMB_SCREEN_LEFT_X = 0x071cU,
@@ -142,7 +143,7 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
         game->ram[address + 3U] = 0xffU;
         return;
     }
-    mysmb_objects_set_bounding_box(game, address,
+    mysmb_world_set_bounding_box(game, address,
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
         game->ram[0x03aeU + slot], game->ram[0x03b9U + slot]);
 
