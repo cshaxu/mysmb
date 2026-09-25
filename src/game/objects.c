@@ -875,6 +875,22 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
     game->ram[MYSMB_SQUARE2_SOUND] = 2U;
 }
 
+/* ROM RunPUSubs: once the object has emerged at least six pixels, this
+ * runs every frame, including the three GrowThePowerUp frames that do not
+ * decrement its Y coordinate. */
+static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
+{
+    const mysmb_u8 slot = 5U;
+
+    game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                                            game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[0x03d1U + slot] =
+        mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+    mysmb_objects_update_enemy_bounding_box(game, slot);
+    mysmb_objects_draw_power_up(game);
+}
+
 /* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
  * movement and EnemyToBGCollisionDet state paths. */
 void mysmb_objects_step_power_up(struct mysmb_game *game)
@@ -982,18 +998,13 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                 (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
             }
         }
-        /* RunPUSubs prepares the same relative/offscreen/bounding-box RAM
-         * consumed by PlayerEnemyCollision before it draws this object. */
-        game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                                                game->ram[MYSMB_SCREEN_LEFT_X]);
-        game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[0x03d1U + slot] =
-            mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-        mysmb_objects_update_enemy_bounding_box(game, slot);
-        mysmb_objects_draw_power_up(game);
+        mysmb_objects_prepare_power_up_subs(game);
         return;
     }
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 3U) != 0U) return;
+    if ((game->ram[MYSMB_FRAME_COUNTER] & 3U) != 0U) {
+        if (state >= 6U) mysmb_objects_prepare_power_up_subs(game);
+        return;
+    }
     game->ram[MYSMB_ENEMY_Y + slot]--;
     game->ram[MYSMB_ENEMY_STATE + slot]++;
     if (state >= 0x11U) {
@@ -1003,13 +1014,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
     }
     if (game->ram[MYSMB_ENEMY_STATE + slot] >= 6U) {
-        game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                                                game->ram[MYSMB_SCREEN_LEFT_X]);
-        game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[0x03d1U + slot] =
-            mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-        mysmb_objects_update_enemy_bounding_box(game, slot);
-        mysmb_objects_draw_power_up(game);
+        mysmb_objects_prepare_power_up_subs(game);
     }
 }
 
@@ -2142,80 +2147,85 @@ void mysmb_objects_collect_power_up(struct mysmb_game *game)
     game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
 }
 
-/* ROM $84c3 FloateyNumbersRoutine.  The original has six enemy-associated
- * entries; only slot five is currently produced by the admitted power-up
- * route, but processing all entries preserves the RAM and OAM contracts for
- * later enemy-score routes. */
-void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
+/* ROM $84c3 FloateyNumbersRoutine.  GameEngine invokes this once immediately
+ * after EnemiesAndLoopsCore for the same ObjectOffset. */
+void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 score_data[12] = {
         0xffU, 0x41U, 0x42U, 0x44U, 0x45U, 0x48U,
         0x31U, 0x32U, 0x34U, 0x35U, 0x38U, 0x00U
     };
-    mysmb_u8 slot;
     mysmb_u8 control;
     mysmb_u8 score;
     mysmb_u8 oam_offset;
     mysmb_u8 enemy_id;
     mysmb_u8 y;
 
+    control = game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot];
+    if (control == 0U) return;
+    if (control >= 0x0bU) {
+        control = 0x0bU;
+        game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
+    }
+    if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0U) {
+        game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
+        return;
+    }
+    if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0x2bU) {
+        if (control == 0x0bU) game->ram[MYSMB_NUMBER_OF_LIVES]++;
+        score = score_data[control];
+        game->ram[MYSMB_DIGIT_MODIFIER + (score >> 4U)] =
+            (mysmb_u8)(score & 0x0fU);
+        mysmb_objects_apply_digit_modifier(game,
+            game->ram[MYSMB_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
+        (void)mysmb_area_queue_score_coin_status(game);
+    }
+    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
+    if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
+        game->ram[MYSMB_FLOATEY_NUM_Y + slot]--;
+    }
+
+    /* FloateyNumbersRoutine selects an alternate OAM group for ordinary
+     * living enemies, Hammer Bros, and the larger enemy families. */
+    oam_offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
+    enemy_id = game->ram[MYSMB_ENEMY_ID + slot];
+    if (enemy_id == 5U ||
+        (enemy_id != 9U && enemy_id != 10U && enemy_id != 11U &&
+         enemy_id != 13U &&
+         (enemy_id >= 9U || game->ram[MYSMB_ENEMY_STATE + slot] < 2U))) {
+        oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET +
+            game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
+    }
+
+    /* CMP #$18 supplies the carry to the following SBC #$08: a number
+     * in the status region subtracts nine; every other number subtracts
+     * eight after its possible one-pixel rise. */
+    y = game->ram[MYSMB_FLOATEY_NUM_Y + slot];
+    y = (mysmb_u8)(y - (y < 0x18U ? 9U : 8U));
+    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
+    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
+        (mysmb_u8)(0xf4U + control);
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
+        game->ram[MYSMB_FLOATEY_NUM_X + slot];
+    oam_offset = (mysmb_u8)(oam_offset + 4U);
+    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
+    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
+        control == 6U ? 0x50U : (control == 0x0bU ? 0xfeU : 0xfbU);
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
+        (mysmb_u8)(game->ram[MYSMB_FLOATEY_NUM_X + slot] + 8U);
+}
+/* Direct owner test helper: production GameEngine uses the per-slot entry. */
+void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+
     for (slot = 0U; slot < 6U; ++slot) {
-        control = game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot];
-        if (control == 0U) continue;
-        if (control >= 0x0bU) {
-            control = 0x0bU;
-            game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
-        }
-        if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0U) {
-            game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
-            continue;
-        }
-        if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0x2bU) {
-            if (control == 0x0bU) game->ram[MYSMB_NUMBER_OF_LIVES]++;
-            score = score_data[control];
-            game->ram[MYSMB_DIGIT_MODIFIER + (score >> 4U)] =
-                (mysmb_u8)(score & 0x0fU);
-            mysmb_objects_apply_digit_modifier(game,
-                game->ram[MYSMB_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
-            (void)mysmb_area_queue_score_coin_status(game);
-        }
-        game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
-        if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
-            game->ram[MYSMB_FLOATEY_NUM_Y + slot]--;
-        }
-
-        /* FloateyNumbersRoutine selects an alternate OAM group for ordinary
-         * living enemies, Hammer Bros, and the larger enemy families. */
-        oam_offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
-        enemy_id = game->ram[MYSMB_ENEMY_ID + slot];
-        if (enemy_id == 5U ||
-            (enemy_id != 9U && enemy_id != 10U && enemy_id != 11U &&
-             enemy_id != 13U &&
-             (enemy_id >= 9U || game->ram[MYSMB_ENEMY_STATE + slot] < 2U))) {
-            oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET +
-                game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
-        }
-
-        /* CMP #$18 supplies the carry to the following SBC #$08: a number
-         * in the status region subtracts nine; every other number subtracts
-         * eight after its possible one-pixel rise. */
-        y = game->ram[MYSMB_FLOATEY_NUM_Y + slot];
-        y = (mysmb_u8)(y - (y < 0x18U ? 9U : 8U));
-        game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
-        game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-            (mysmb_u8)(0xf4U + control);
-        game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
-        game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
-            game->ram[MYSMB_FLOATEY_NUM_X + slot];
-        oam_offset = (mysmb_u8)(oam_offset + 4U);
-        game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
-        game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-            control == 6U ? 0x50U : (control == 0x0bU ? 0xfeU : 0xfbU);
-        game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
-        game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
-            (mysmb_u8)(game->ram[MYSMB_FLOATEY_NUM_X + slot] + 8U);
+        mysmb_objects_step_floatey_number(game, slot);
     }
 }
+
 /* ROM $ba55 Setup_Vine.  The original reserves enemy slot five for this
  * object, which is also the power-up slot and therefore cannot coexist. */
 void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot)

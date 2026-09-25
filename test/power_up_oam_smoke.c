@@ -55,5 +55,13 @@ int main(void)
         game.ram[0x0222U] != 0x22U || game.ram[0x0223U] != 0x40U) return 4;
     if (game.ram[0x0228U] != 0x5fU || game.ram[0x0229U] != 0x78U ||
         game.ram[0x022fU] != 0x48U) return 5;
+    /* ROM RunPUSubs executes on all post-emergence frames, not only on
+     * GrowThePowerUp's every-fourth-frame Y update. */
+    game.frame_number = 1UL;
+    game.ram[0x0009U] = 1U;
+    mysmb_objects_step_power_up(&game);
+    if (game.ram[0x0023U] != 6U || game.ram[0x00d4U] != 0x4fU) return 6;
+    if (game.ram[0x0220U] != 0x57U || game.ram[0x0221U] != 0x76U ||
+        game.ram[0x0222U] != 0x22U || game.ram[0x0223U] != 0x40U) return 7;
     return 0;
 }

@@ -1332,6 +1332,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 else {
                     (void)mysmb_area_spawn_next_enemy(game, &area_source);
                 }
+                /* ROM GameEngine calls FloateyNumbersRoutine before
+                 * incrementing ObjectOffset. */
+                mysmb_objects_step_floatey_number(game, enemy_slot);
             }
         }
         mysmb_objects_step_enemy_collisions(game);
@@ -1364,7 +1367,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_lakitus(game);
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
-        mysmb_objects_step_floatey_numbers(game);
         mysmb_player_draw_oam(game);
         mysmb_objects_step_vine(game);
         mysmb_objects_apply_block_replacements(game);
