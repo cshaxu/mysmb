@@ -2,7 +2,7 @@
 
 ## Status
 
-`M2 Td S3` governance work. M2 T17 and M2 T18 are admitted for the Collision/world and Area graphics/parser slices; all other listed slices remain candidates unless their status says otherwise. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
+`M2 Td S3` governance work. M2 T17, M2 T18, and M2 T19 are admitted for the Collision/world, Area graphics/parser, and Enemy stream/actors slices; all other listed slices remain candidates unless their status says otherwise. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
 
 ## How the map is complete
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+**M2 T19 active — S1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -18,11 +18,11 @@ Six ROM slots are dispatched by GameEngine; consumes area stream/block state and
 
 ## Admission S plan
 
-1. **S1 after admission** - Map stream labels, ObjectOffset/PageLoc fields, tables and current C entry points.
-2. **S2 after admission** - Translate loops, bounds/pages, two/three-byte records and position-before-bounds semantics.
-3. **S3 after admission** - Translate group, frenzy and initialization dispatch including special IDs.
-4. **S4 after admission** - Translate normal and special enemy handler paths using shared collision contracts.
-5. **S5 after admission** - Compare W1-1 stream, group/frenzy, pipe enemy and representative special actor routes.
+1. **S1 active — source ownership and stream boundary.** Map `EnemiesAndLoopsCore`, `ProcessEnemyData`, `ObjectOffset`, `Enemy_PageLoc`, stream tables, and all current C entry points; move stream ownership out of `area.c` without changing bytes. Evidence: the bounded title/demo route remains unchanged before source fixes.
+2. **S2 planned — loops, bounds, records, and position semantics.** Translate `LoopCommand`, page control, `ProcessEnemyData`, two/three-byte records, and position-before-bounds semantics. Evidence: sample 172 free-slot producer input and controlled page-crossing records.
+3. **S3 planned — group, frenzy, and initialization dispatch.** Translate group/frenzy paths and initialization dispatch including special IDs.
+4. **S4 planned — normal and special handlers.** Translate normal and special enemy handler paths using shared collision contracts.
+5. **S5 planned — source-route closure.** Compare W1-1 stream, group/frenzy, pipe enemy and representative special actor routes.
 
 ## Acceptance
 
