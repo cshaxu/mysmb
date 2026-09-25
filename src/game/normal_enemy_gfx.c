@@ -188,6 +188,23 @@ static mysmb_u8 mysmb_draw_paratroopa(struct mysmb_game *g, mysmb_u8 n)
     mysmb_normal_apply_offscreen(g,o,bits); return 1U;
 }
 
+/* ROM EnemyGfxHandler Lakitu branch: $90/$96 plus cloud-row mirroring. */
+static mysmb_u8 mysmb_draw_lakitu(struct mysmb_game *g, mysmb_u8 n)
+{
+    static const mysmb_u8 first[6]={0xb9U,0xb8U,0xbbU,0xbaU,0xbcU,0xbcU};
+    static const mysmb_u8 second[6]={0xfcU,0xfcU,0xbdU,0xbdU,0xbcU,0xbcU};
+    const mysmb_u8 *t; mysmb_u16 w,z; mysmb_u8 st,b,o,r,q,l,rr;
+    if(g->ram[MYSMB_NORMAL_FLAG+n]==0U || g->ram[MYSMB_NORMAL_ID+n]!=17U)return 0U;
+    w=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_PAGE+n]<<8U)|g->ram[MYSMB_NORMAL_X+n]);
+    z=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_SCREEN_PAGE]<<8U)|g->ram[MYSMB_NORMAL_SCREEN_X]);
+    g->ram[MYSMB_NORMAL_ATTRIBUTES+n]=0U; g->ram[MYSMB_NORMAL_REL_X+n]=(mysmb_u8)(w-z);g->ram[MYSMB_NORMAL_REL_Y+n]=g->ram[MYSMB_NORMAL_Y+n];
+    b=mysmb_objects_get_enemy_x_offscreen_bits(g,n);g->ram[MYSMB_NORMAL_OFFSCREEN+n]=b;st=g->ram[MYSMB_NORMAL_STATE+n];
+    t=((st&0x20U)==0U && g->ram[0x078fU]<0x10U)?second:first;o=g->ram[MYSMB_NORMAL_SPRITE+n];
+    for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=1U;g->ram[0x0206U+q]=1U;g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y+n]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X+n]+8U);}
+    q=(mysmb_u8)(o+16U);g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;
+    if(g->ram[0x078fU]<0x10U){g->ram[0x0202U+o+8U]=g->ram[0x0202U+q];g->ram[0x0206U+o+8U]=g->ram[0x0206U+q];}
+    mysmb_normal_apply_offscreen(g,o,b);return 1U;
+}
 /* Shared RunNormalEnemies graphics phase.  A return value of one means this
  * slot belongs to a separately scheduled movement owner. */
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
@@ -197,5 +214,6 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
     (void)mysmb_objects_draw_koopa_buzzy(game, slot);
     if (mysmb_objects_draw_spiny(game, slot) == 2U) return 1U;
     if (mysmb_draw_paratroopa(game, slot) != 0U) return 1U;
+    if (mysmb_draw_lakitu(game, slot) != 0U) return 1U;
     return 0U;
 }
