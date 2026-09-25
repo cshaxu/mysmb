@@ -19,6 +19,17 @@ enum {
     MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U
 };
 
+/* ROM RelativePlayerPosition.  This belongs with the other
+ * GetObjRelativePosition outputs: player control calls it, while the
+ * source-defined relative scratch remains a single game-owned result. */
+void mysmb_oam_relative_player_position(struct mysmb_game *game)
+{
+    game->ram[0x03adU] = (mysmb_u8)(game->ram[0x0086U] -
+                                    game->ram[MYSMB_SCREEN_EDGE_X]);
+    game->ram[0x03b8U] = game->ram[0x00ceU];
+    game->ram[0x0755U] = game->ram[0x03adU];
+}
+
 /* ROM GetXOffscreenBits.  Returns the source table byte before
  * RunOffscrBitsSubs moves its high nybble to the final low nybble. */
 static mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,

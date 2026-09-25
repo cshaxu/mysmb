@@ -2,6 +2,7 @@
 #include "game/objects.h"
 #include "game/area.h"
 #include "game/world/world.h"
+#include "game/oam/oam.h"
 
 enum {
     MYSMB_PLAYER_X_SPEED = 0x0057U,
@@ -146,8 +147,6 @@ enum {
     MYSMB_DISABLE_SCREEN = 0x0774U,
     MYSMB_OPER_MODE_TASK = 0x0772U
 };
-
-static void mysmb_player_update_bounding_box(struct mysmb_game *game);
 
 /* ROM PlayerBGCollision selects BlockBufferAdderData before entering the
  * head, feet, and side probes.  The bases are normal big=$00, swimming
@@ -528,16 +527,6 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
 }
 
-/* GameEngine's RelativePlayerPosition supplies ScrollHandler on the next
- * frame. */
-static void mysmb_player_update_relative_position(struct mysmb_game *game)
-{
-    game->ram[MYSMB_PLAYER_RELATIVE_X] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
-    game->ram[MYSMB_PLAYER_RELATIVE_Y] = game->ram[MYSMB_PLAYER_Y];
-    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_RELATIVE_X];
-}
-
 /* ROM $ee35-$ef25 action selection.  The source table remains in the
  * owner-local PRG binding, rather than becoming tracked C data. */
 static mysmb_u8 mysmb_player_select_gfx(struct mysmb_game *game)
@@ -882,8 +871,11 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             (void)mysmb_player_check_feet(game);
             (void)mysmb_player_check_sides(game);
         }
-        mysmb_player_update_relative_position(game);
-        mysmb_player_update_bounding_box(game);
+        mysmb_oam_relative_player_position(game);
+        mysmb_world_set_bounding_box(game, MYSMB_PLAYER_BOUNDING_BOX,
+                                     game->ram[MYSMB_PLAYER_BOUND_BOX],
+                                     game->ram[MYSMB_PLAYER_RELATIVE_X],
+                                     game->ram[MYSMB_PLAYER_RELATIVE_Y]);
         return;
     }
     /* PlayerMovementSubs reloads this before dispatching every non-climbing
@@ -978,8 +970,11 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_player_update_scroll(game);
     /* PlayerCtrlRoutine computes this collision box before PlayerBGCollision.
      * The relative coordinates are refreshed again below for later drawing. */
-    mysmb_player_update_relative_position(game);
-    mysmb_player_update_bounding_box(game);
+    mysmb_oam_relative_player_position(game);
+    mysmb_world_set_bounding_box(game, MYSMB_PLAYER_BOUNDING_BOX,
+                                 game->ram[MYSMB_PLAYER_BOUND_BOX],
+                                 game->ram[MYSMB_PLAYER_RELATIVE_X],
+                                 game->ram[MYSMB_PLAYER_RELATIVE_Y]);
     /* PlayerBGCollision is disabled for the control/pipe routines below 4,
      * player death (0x0b), and explicit collision suppression. */
     if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
@@ -998,7 +993,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         (void)mysmb_player_check_feet(game);
         (void)mysmb_player_check_sides(game);
     }
-    mysmb_player_update_relative_position(game);
+    mysmb_oam_relative_player_position(game);
     mysmb_player_handle_hole(game);
 }
 
@@ -1016,30 +1011,6 @@ void mysmb_player_step_auto_climb(struct mysmb_game *game)
     }
     game->ram[MYSMB_PLAYER_STATE] = 3U;
     mysmb_player_step(game, MYSMB_BUTTON_UP);
-}
-
-/* ROM BoundingBoxCore invoked by PlayerCtrlRoutine after RelativePlayerPosition. */
-static void mysmb_player_update_bounding_box(struct mysmb_game *game)
-{
-    static const mysmb_u8 bounds[48] = {
-        0x02U, 0x08U, 0x0eU, 0x20U, 0x03U, 0x14U, 0x0dU, 0x20U,
-        0x02U, 0x14U, 0x0eU, 0x20U, 0x02U, 0x09U, 0x0eU, 0x15U,
-        0x00U, 0x00U, 0x18U, 0x06U, 0x00U, 0x00U, 0x20U, 0x0dU,
-        0x00U, 0x00U, 0x30U, 0x0dU, 0x00U, 0x00U, 0x08U, 0x08U,
-        0x06U, 0x04U, 0x0aU, 0x08U, 0x03U, 0x0eU, 0x0dU, 0x14U,
-        0x00U, 0x02U, 0x10U, 0x15U, 0x04U, 0x04U, 0x0cU, 0x1cU
-    };
-    mysmb_u8 offset;
-
-    offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_BOUND_BOX] * 4U);
-    game->ram[MYSMB_PLAYER_BOUNDING_BOX] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_RELATIVE_X] + bounds[offset]);
-    game->ram[MYSMB_PLAYER_BOUNDING_BOX + 1U] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_RELATIVE_Y] + bounds[offset + 1U]);
-    game->ram[MYSMB_PLAYER_BOUNDING_BOX + 2U] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_RELATIVE_X] + bounds[offset + 2U]);
-    game->ram[MYSMB_PLAYER_BOUNDING_BOX + 3U] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_RELATIVE_Y] + bounds[offset + 3U]);
 }
 
 /* ROM $b0f4-$b113 PlayerChangeSize. */

@@ -7,6 +7,7 @@
  * the canonical $0200 OAM backing store plus ROM-defined relative/offscreen
  * work bytes.  Motion, collision and mode decisions remain outside this API. */
 /* ROM RelativeBlockPosition and GetBlockOffscreenBits. */
+void mysmb_oam_relative_player_position(struct mysmb_game *game);
 void mysmb_oam_relative_block_position(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM RelativeMiscPosition and GetMiscOffscreenBits. */
