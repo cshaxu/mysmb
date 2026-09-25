@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 Td S3 active.**
+**M2 Td S3 completed.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Governance |
 | Objective | Audit every M2 structural-recovery candidate into an admission S plan without allocating numeric implementation work. |
 | Scope | the M2 structural-recovery coverage proposal, its twelve candidate packets, and the ROM migration inventory. |
-| Result | Pending: create one audited admission S plan per candidate, with ROM scope, current-code disposition, graph contract and reference acceptance. |
+| Result | Complete: twelve candidate packets contain 53 admission-time S steps. Each has ROM scope, existing-code disposition, graph contract, ROM-reference acceptance and the no-platform-logic invariant. |
 | Stop condition | Stop if mapping requires assigning behavior by inference instead of the ROM source index, changing product source, assets, or task history. |
 
 ## Current Technical Baseline
