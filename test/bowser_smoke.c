@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/enemy/stream.h"
 #include "game/game.h"
 #include "game/objects.h"
 
@@ -16,7 +17,7 @@ int main(void)
     source.prg = bowser_data;
     source.prg_size = 2U;
     game.ram[0x00eaU] = 0x80U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 1U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x0016U] != 45U || game.ram[0x0366U] != 0U ||
         game.ram[0x0364U] != 0x20U || game.ram[0x0365U] != 2U ||
         game.ram[0x0790U] != 0xdfU || game.ram[0x0483U] != 5U ||

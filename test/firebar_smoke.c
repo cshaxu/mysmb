@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/enemy/stream.h"
 #include "game/game.h"
 #include "game/objects.h"
 
@@ -14,7 +15,7 @@ int main(void)
     source.prg = short_firebar;
     source.prg_size = 2U;
     game.ram[0x00eaU] = 0x80U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 1U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x0016U] != 27U || game.ram[0x0087U] != 4U ||
         game.ram[0x00cfU] != 12U || game.ram[0x0388U] != 0x28U ||
         game.ram[0x0034U] != 0U || game.ram[0x049aU] != 3U) return 1;

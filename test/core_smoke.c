@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/area.h"
+#include "game/enemy/stream.h"
 #include "game/player.h"
 #include "game/objects.h"
 #include "game/world/world.h"
@@ -508,7 +509,7 @@ int main(void)
     game.ram[0x071dU] = 0U;
     game.ram[0x00e9U] = 0x34U;
     game.ram[0x00eaU] = 0x92U;
-    if (mysmb_area_spawn_next_enemy(&game, &area_source) == 0U ||
+    if (mysmb_enemy_stream_process_next(&game, &area_source) == 0U ||
         game.ram[0x000fU] != 1U || game.ram[0x0016U] != 0U ||
         game.ram[0x006eU] != 0U || game.ram[0x0087U] != 0x10U ||
         game.ram[0x00cfU] != 0x28U || game.ram[0x0058U] != 0xf8U ||

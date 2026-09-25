@@ -87,13 +87,6 @@ mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
 /* ROM $958f-$961f DecodeAreaData classification before object dispatch. */
 void mysmb_area_decode_object(struct mysmb_area_object *object);
 mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game);
-mysmb_u8 mysmb_area_spawn_next_enemy(struct mysmb_game *game,
-                                     const struct mysmb_area_source *source);
-/* Process one enemy stream record for the supplied normal ObjectOffset. */
-mysmb_u8 mysmb_area_spawn_enemy_in_slot(struct mysmb_game *game,
-                                      const struct mysmb_area_source *source,
-                                      mysmb_u8 slot);
-
 /* ROM BlockObjMT_Updater -> ReplaceBlockMetatile. */
 void mysmb_area_apply_block_replacements(struct mysmb_game *game);
 

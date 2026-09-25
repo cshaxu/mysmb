@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/area.h"
+#include "game/enemy/stream.h"
 #include "game/objects.h"
 
 int main(void)
@@ -14,7 +15,7 @@ int main(void)
     source.prg = frenzy_data;
     source.prg_size = 2U;
     game.ram[0x00eaU] = 0x80U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 1U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x06cbU] != 20U || game.ram[0x0739U] != 2U ||
         game.ram[0x000fU] != 0U) return 1;
 

@@ -1,6 +1,7 @@
 #include "game/frame_root.h"
 #include "game/audio.h"
 #include "game/area.h"
+#include "game/enemy/stream.h"
 #include "game/player.h"
 #include "game/objects.h"
 #include "game/oam/oam.h"
@@ -300,13 +301,13 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
                     }
                 }
                 else if (enemy_slot < 5U) {
-                    if (mysmb_area_spawn_enemy_in_slot(game, &area_source,
+                    if (mysmb_enemy_stream_process_slot(game, &area_source,
                                                        enemy_slot) != 0U &&
                         game->ram[MYSMB_FRAME_ENEMY_FLAG + enemy_slot] != 0U) {
                     }
                 }
                 else {
-                    (void)mysmb_area_spawn_next_enemy(game, &area_source);
+                    (void)mysmb_enemy_stream_process_next(game, &area_source);
                 }
                 /* ROM GameEngine calls FloateyNumbersRoutine before
                  * incrementing ObjectOffset. */

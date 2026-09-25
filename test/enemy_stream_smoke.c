@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/enemy/stream.h"
 
 int main(void)
 {
@@ -20,7 +21,7 @@ int main(void)
     game.ram[0x0750U] = 0x25U;
     game.ram[0x0751U] = 0U;
     game.ram[0x075fU] = 2U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 0U ||
         game.ram[0x0750U] != 0xc2U || game.ram[0x0751U] != 0x11U ||
         game.ram[0x0739U] != 3U || game.ram[0x073bU] != 0U) return 1;
 
@@ -29,7 +30,7 @@ int main(void)
     game.ram[0x0750U] = 0x25U;
     game.ram[0x0751U] = 0U;
     game.ram[0x075fU] = 1U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x0751U] != 0U ||
         game.ram[0x0739U] != 3U || game.ram[0x073bU] != 0U) return 1;
 
@@ -40,10 +41,10 @@ int main(void)
     game.ram[0x073bU] = 0U;
     game.ram[0x071bU] = 1U;
     game.ram[0x071dU] = 0x30U;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 0U ||
         game.ram[0x0739U] != 0U || game.ram[0x073aU] != 2U ||
         game.ram[0x073bU] != 1U) return 1;
-    if (mysmb_area_spawn_next_enemy(&game, &source) != 0U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 0U ||
         game.ram[0x0739U] != 0U || game.ram[0x073aU] != 2U ||
         game.ram[0x073bU] != 1U) return 1;
     /* ProcELoop passes its current ObjectOffset: an earlier empty slot
@@ -59,7 +60,7 @@ int main(void)
     game.ram[0x073bU] = 0U;
     game.ram[0x071bU] = 0U;
     game.ram[0x071dU] = 0U;
-    if (mysmb_area_spawn_enemy_in_slot(&game, &source, 2U) != 1U ||
+    if (mysmb_enemy_stream_process_slot(&game, &source, 2U) != 1U ||
         game.ram[0x000fU] != 1U || game.ram[0x0010U] != 0U ||
         game.ram[0x0011U] != 1U || game.ram[0x0018U] != 6U) return 1;
     /* ProcessEnemyData consumes an ordinary record that has already passed
@@ -75,7 +76,7 @@ int main(void)
     game.ram[0x073bU] = 0U;
     game.ram[0x071bU] = 0U;
     game.ram[0x071dU] = 0x20U;
-    if (mysmb_area_spawn_enemy_in_slot(&game, &source, 0U) != 0U ||
+    if (mysmb_enemy_stream_process_slot(&game, &source, 0U) != 0U ||
         game.ram[0x0739U] != 2U || game.ram[0x006eU] != 0U ||
         game.ram[0x0087U] != 0x10U) return 2;
     return 0;
