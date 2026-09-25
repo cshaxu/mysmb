@@ -38,12 +38,14 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     if (paused == 0U) mysmb_game_tick_player_timers(game);
     mysmb_game_rotate_pseudorandom(game);
     if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return paused;
-    oam_offset = 4U;
-    do {
-        game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
-        oam_offset = (mysmb_u8)(oam_offset + 4U);
-    } while (oam_offset != 0U);
-    if (paused == 0U) mysmb_game_shuffle_sprite_offsets(game);
+    if (paused == 0U) {
+        oam_offset = 4U;
+        do {
+            game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
+            oam_offset = (mysmb_u8)(oam_offset + 4U);
+        } while (oam_offset != 0U);
+        mysmb_game_shuffle_sprite_offsets(game);
+    }
     return paused;
 }
 
