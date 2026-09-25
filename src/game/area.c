@@ -1476,6 +1476,9 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             for (row = 1U; row < 10U; ++row)
                 game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x25U;
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x61U;
+            mysmb_objects_start_flagpole(game,
+                game->ram[MYSMB_AREA_CURRENT_PAGE],
+                (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U));
         }
         else if (value >= 2U && value <= 4U) {
             if (value == 4U && game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)

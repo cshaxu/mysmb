@@ -341,7 +341,10 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a1U] != 0x24U || game.ram[0x06a2U] != 0x25U ||
-        game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 0xffU) return 1;
+        game.ram[0x06abU] != 0x61U || game.ram[0x0732U] != 0xffU ||
+        game.ram[0x0087U + 5U] != 0xf8U || game.ram[0x006eU + 5U] != 0xffU ||
+        game.ram[0x00cfU + 5U] != 0x30U || game.ram[0x0016U + 5U] != 48U ||
+        game.ram[0x000fU + 5U] != 1U || game.ram[0x010dU] != 0xb0U) return 1;
 
     /* Row-13 intro pipes share the source's four-column sideways-pipe data,
      * and its late columns establish the vertical-pipe cap and shaft. */
