@@ -15,6 +15,7 @@ enum {
     MYSMB_RAM_OFFSCREEN_WORLD = 0x0766U,
     MYSMB_RAM_OFFSCREEN_AREA = 0x0767U,
     MYSMB_RAM_PRIMARY_HARD = 0x076aU,
+    MYSMB_RAM_WORLD_SELECT_NUMBER = 0x076bU,
     MYSMB_RAM_OPER_MODE = 0x0770U,
     MYSMB_RAM_OPER_MODE_TASK = 0x0772U,
     MYSMB_RAM_DISABLE_SCREEN = 0x0774U,
@@ -30,7 +31,8 @@ enum {
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_FETCH_NEW_TIMER = 0x0757U,
-    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU
+    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
+    MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U
 };
 
 /* ROM title ScreenRoutines task 8 renders the title-demo area's lead-in
@@ -176,6 +178,37 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
     return 1U;
 }
 
+/* ROM $8575-$8588, DrawMushroomIcon.  The eight-byte source is bound
+ * owner-local; its first byte is the Buffer1 offset and the next seven are
+ * the transfer command. */
+void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
+{
+    mysmb_u16 index;
+
+    if (game->title_icon_data == 0 || game->title_icon_data_size != 7U) {
+        return;
+    }
+    game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] =
+        (mysmb_u8)game->title_icon_data_size;
+    for (index = 0U; index < game->title_icon_data_size; ++index) {
+        game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
+            game->title_icon_data[index];
+    }
+    if (game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] != 0U) {
+        game->ram[0x0304U] = 0x24U;
+        game->ram[0x0306U] = 0xceU;
+    }
+}
+
+/* ROM $8224, ResetTitle. */
+static void mysmb_game_reset_title(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
+    game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+}
+
 /* ROM $82b3-$82ca DemoEngine.  It returns one only after the terminal zero
  * timing byte, which sends GameMenuRoutine back through ResetTitle. */
 static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
@@ -211,7 +244,12 @@ static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
  * latched controller byte before that common route consumes it. */
 void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)
 {
+    static const mysmb_u8 world_select_template[6] = {
+        0x04U, 0x20U, 0x73U, 0x01U, 0x00U, 0x00U
+    };
     mysmb_u8 buttons;
+    mysmb_u8 index;
+    mysmb_u8 world;
 
     (void)input;
     buttons = game->ram[MYSMB_RAM_SAVED_JOYPAD1];
@@ -224,12 +262,42 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_game_start_from_title(game, buttons);
         return;
     }
-    if (buttons == MYSMB_BUTTON_SELECT &&
-        game->ram[MYSMB_RAM_DEMO_TIMER] != 0U &&
-        game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+    if (buttons == MYSMB_BUTTON_SELECT) {
+        if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
+            mysmb_game_reset_title(game);
+            return;
+        }
         game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
-        game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
-        game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] ^= 1U;
+        if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+            game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
+            game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] ^= 1U;
+            mysmb_game_draw_mushroom_icon(game);
+        }
+    }
+    else if (game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE] != 0U &&
+             buttons == MYSMB_BUTTON_B) {
+        if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
+            mysmb_game_reset_title(game);
+            return;
+        }
+        game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
+        if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+            game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
+            index = (mysmb_u8)((game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] +
+                                 1U) & 7U);
+            game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] = index;
+            game->ram[MYSMB_RAM_WORLD] = index;
+            game->ram[MYSMB_RAM_OFFSCREEN_WORLD] = index;
+            game->ram[MYSMB_RAM_AREA] = 0U;
+            game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
+            while (index < 6U) {
+                game->ram[(mysmb_u16)(MYSMB_RAM_VRAM_BUFFER1_OFFSET + index)] =
+                    world_select_template[index];
+                index++;
+            }
+            world = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] + 1U);
+            game->ram[0x0304U] = world;
+        }
     }
     if (game->ram[MYSMB_RAM_DEMO_TIMER] != 0U) {
         game->ram[MYSMB_RAM_SAVED_JOYPAD1] = 0U;
@@ -237,10 +305,7 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     game->ram[MYSMB_RAM_SELECT_TIMER] = buttons;
     if (mysmb_game_step_title_demo(game) != 0U) {
-        game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
-        game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
-        game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+        mysmb_game_reset_title(game);
     }
 }
 

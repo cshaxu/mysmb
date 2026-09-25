@@ -536,14 +536,7 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         }
         for (index = 0U; index < 0x0200U; ++index)
             game->ram[(mysmb_u16)(0x0300U + index)] = 0U;
-        /* DrawMushroomIcon copies its eight-byte source backwards to
-         * $0300..$0307.  The resource owns the seven command bytes while
-         * its length is the first source byte, $07, at Buffer1_Offset. */
-        game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] =
-            (mysmb_u8)game->title_icon_data_size;
-        for (index = 0U; index < game->title_icon_data_size; ++index)
-            game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
-                game->title_icon_data[index];
+        mysmb_game_draw_mushroom_icon(game);
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 14U;
         break;
     case 14U:

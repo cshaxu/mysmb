@@ -2,6 +2,9 @@
 
 int main(void)
 {
+    static const mysmb_u8 icon_data[7] = {
+        0x22U, 0x49U, 0x83U, 0xceU, 0x24U, 0x24U, 0x00U
+    };
     struct mysmb_game game;
     struct mysmb_input input;
 
@@ -39,6 +42,54 @@ int main(void)
     game.ram[0x0718U] = 0U;
     game.ram[0x0722U] = 1U;
     game.ram[0x0774U] = 0U;
+    mysmb_game_title_step(&game, &input);
+    if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
+        game.ram[0x0722U] != 0U || game.ram[0x0774U] != 1U) {
+        return 1;
+    }
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_title_source(&game, 0, 0U, icon_data, 7U);
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 3U;
+    game.ram[0x07a2U] = 0x55U;
+    game.ram[0x0780U] = 0U;
+    game.ram[0x06fcU] = MYSMB_BUTTON_SELECT;
+    mysmb_game_title_step(&game, &input);
+    if (game.ram[0x077aU] != 1U || game.ram[0x07a2U] != 0x18U ||
+        game.ram[0x0780U] != 0x10U || game.ram[0x06fcU] != 0U ||
+        game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0304U] != 0x24U || game.ram[0x0306U] != 0xceU) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 3U;
+    game.ram[0x07a2U] = 0x55U;
+    game.ram[0x0780U] = 0U;
+    game.ram[0x07fcU] = 1U;
+    game.ram[0x076bU] = 0U;
+    game.ram[0x075fU] = 4U;
+    game.ram[0x06fcU] = MYSMB_BUTTON_B;
+    game.ram[0x0300U] = 0xaaU;
+    mysmb_game_title_step(&game, &input);
+    if (game.ram[0x076bU] != 1U || game.ram[0x075fU] != 1U ||
+        game.ram[0x0766U] != 1U || game.ram[0x0760U] != 0U ||
+        game.ram[0x0767U] != 0U || game.ram[0x0300U] != 0xaaU ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x73U ||
+        game.ram[0x0303U] != 1U || game.ram[0x0304U] != 2U ||
+        game.ram[0x0305U] != 0U || game.ram[0x07a2U] != 0x18U ||
+        game.ram[0x0780U] != 0x10U || game.ram[0x06fcU] != 0U) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0772U] = 3U;
+    game.ram[0x07a2U] = 0U;
+    game.ram[0x0722U] = 1U;
+    game.ram[0x0774U] = 0U;
+    game.ram[0x06fcU] = MYSMB_BUTTON_SELECT;
     mysmb_game_title_step(&game, &input);
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
         game.ram[0x0722U] != 0U || game.ram[0x0774U] != 1U) {
