@@ -63,6 +63,51 @@ $out.Add('|---:|---|---|---|---|')
 foreach ($l in $labels) { $out.Add('| ' + $l.Line + ' | `' + $l.Label + '` | unassigned | open | none |') }
 $dir = Split-Path -Parent $OutputPath
 if (!(Test-Path -LiteralPath $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
+$dot = New-Object System.Collections.Generic.List[string]
+$dot.Add('digraph smb1_rom {')
+$dot.Add('  rankdir=LR;')
+$dot.Add('  node [shape=box,fontname="Consolas",fontsize=9];')
+$current = $null
+$edges = New-Object System.Collections.Generic.HashSet[string]
+for ($i = 0; $i -lt $asm.Count; $i++) {
+    if ($asm[$i] -match '^([A-Za-z_][A-Za-z0-9_]*):') { $current = $Matches[1] }
+    if ($null -ne $current -and $asm[$i] -match '^\s*(jsr|jmp)\s+([A-Za-z_][A-Za-z0-9_]*)\b') {
+        $kind = $Matches[1].ToUpperInvariant(); $target = $Matches[2]
+        if (($labels.Label -contains $target) -and $target -ne $current) {
+            [void]$edges.Add('  "' + $current + '" -> "' + $target + '" [label="' + $kind + '"];')
+        }
+    }
+}
+foreach ($edge in ($edges | Sort-Object)) { $dot.Add($edge) }
+$dot.Add('}')
+$dotPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-callgraph.dot'
+$gameFiles = Get-ChildItem -LiteralPath 'src/game' -Recurse -File -Include '*.c','*.h'
+$gameText = ($gameFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
+$covered = New-Object System.Collections.Generic.HashSet[string]
+foreach ($l in $labels) {
+    if ($gameText -match ('(?<![A-Za-z0-9_])' + [regex]::Escape($l.Label) + '(?![A-Za-z0-9_])')) { [void]$covered.Add($l.Label) }
+}
+$audit = New-Object System.Collections.Generic.List[string]
+$audit.Add('# ROM migration baseline audit')
+$audit.Add('')
+$audit.Add('- ROM symbols: ' + $labels.Count)
+$audit.Add('- Symbols mentioned anywhere in `src/game`: ' + $covered.Count)
+$audit.Add('- A mention is not migration proof. All items remain open until the inventory records a C owner, state-write map, and frame-reference evidence.')
+$audit.Add('')
+$audit.Add('## Mentioned ROM symbols')
+$audit.Add('')
+foreach ($name in ($covered | Sort-Object)) { $audit.Add('- `' + $name + '`') }
+$audit.Add('')
+$audit.Add('## Unmentioned ROM symbols — mandatory classification backlog')
+$audit.Add('')
+foreach ($l in $labels) { if (!$covered.Contains($l.Label)) { $audit.Add('- ROM line ' + $l.Line + ': `' + $l.Label + '`') } }
+$auditPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-migration-baseline-audit.md'
+[IO.File]::WriteAllLines($auditPath, $audit, [Text.UTF8Encoding]::new($false))
+[IO.File]::WriteAllLines($dotPath, $dot, [Text.UTF8Encoding]::new($false))
 [IO.File]::WriteAllLines($OutputPath, $out, [Text.UTF8Encoding]::new($false))
+Write-Output ('mentioned=' + $covered.Count)
+Write-Output ('baselineAudit=' + (Resolve-Path -LiteralPath $auditPath))
+Write-Output ('edges=' + $edges.Count)
+Write-Output ('callgraph=' + (Resolve-Path -LiteralPath $dotPath))
 Write-Output ('labels=' + $labels.Count)
 Write-Output ('output=' + (Resolve-Path -LiteralPath $OutputPath))
