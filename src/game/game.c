@@ -76,6 +76,7 @@ enum {
     MYSMB_RAM_PLAYER_X = 0x0086U,
     MYSMB_RAM_PLAYER_PAGE = 0x006dU,
     MYSMB_RAM_ENEMY_FLAG = 0x000fU,
+    MYSMB_RAM_ENEMY_STATE = 0x001eU,
     MYSMB_RAM_SCREEN_RIGHT_PAGE = 0x071bU,
     MYSMB_RAM_DESTINATION_PAGE = 0x0034U,
     MYSMB_RAM_VICTORY_WALK = 0x0035U,
@@ -1321,6 +1322,11 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_step_fireballs(game);
         mysmb_objects_step_power_up(game);
         mysmb_objects_check_power_up_collision(game);
+        /* PowerUpObjHandler: RunPUSubs performs PlayerEnemyCollision,
+         * then OffscreenBoundsCheck for every emerged state ($06 and up). */
+        if (game->ram[MYSMB_RAM_ENEMY_STATE + 5U] >= 6U) {
+            mysmb_objects_check_enemy_offscreen_bounds(game, 5U);
+        }
         mysmb_objects_step_enemy_collisions(game);
         mysmb_objects_check_hazard_enemy_collision(game);
         mysmb_objects_check_bullet_bill_stomp(game);

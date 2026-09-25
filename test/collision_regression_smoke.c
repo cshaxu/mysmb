@@ -250,5 +250,41 @@ int main(void)
     mysmb_objects_check_power_up_collision(&game);
     if (game.ram[0x001bU] != 0U || game.ram[0x0014U] != 0U ||
         game.ram[0x0756U] != 2U || game.ram[0x000eU] != 12U) return 17;
+    /* OffscreenBoundsCheck clears the full enemy-object record when an
+     * ordinary enemy passes the ROM's bytewise left boundary. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071aU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 6U;
+    game.ram[0x001eU] = 0x33U;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0xb6U;
+    game.ram[0x0110U] = 1U;
+    game.ram[0x0796U] = 2U;
+    game.ram[0x0125U] = 3U;
+    game.ram[0x03c5U] = 4U;
+    game.ram[0x078eU] = 5U;
+    mysmb_objects_check_enemy_offscreen_bounds(&game, 0U);
+    if (game.ram[0x000fU] != 0U || game.ram[0x0016U] != 0U ||
+        game.ram[0x001eU] != 0U || game.ram[0x0110U] != 0U ||
+        game.ram[0x0796U] != 0U || game.ram[0x0125U] != 0U ||
+        game.ram[0x03c5U] != 0U || game.ram[0x078eU] != 0U) return 18;
+
+    /* Right-side piranha plants are a source exemption and must retain the
+     * object record even when beyond ScreenRight + $48. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071aU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 13U;
+    game.ram[0x006eU] = 2U;
+    game.ram[0x0087U] = 0x50U;
+    mysmb_objects_check_enemy_offscreen_bounds(&game, 0U);
+    if (game.ram[0x000fU] == 0U || game.ram[0x0016U] != 13U) return 19;
     return 0;
 }

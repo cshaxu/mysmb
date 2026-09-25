@@ -1240,6 +1240,11 @@ void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot)
         return;
     }
     mysmb_objects_step_normal_enemy_core(game, slot, 1U);
+    if (slot < 5U && ((game->ram[MYSMB_ENEMY_ID + slot] <= 6U &&
+                       game->ram[MYSMB_ENEMY_ID + slot] != 5U) ||
+                      game->ram[MYSMB_ENEMY_ID + slot] == 18U)) {
+        mysmb_objects_check_enemy_offscreen_bounds(game, slot);
+    }
 }
 
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
@@ -1248,6 +1253,11 @@ void mysmb_objects_step_normal_enemies(struct mysmb_game *game)
 
     for (slot = 0U; slot < 5U; ++slot) {
         mysmb_objects_step_normal_enemy_core(game, slot, 0U);
+        if ((game->ram[MYSMB_ENEMY_ID + slot] <= 6U &&
+             game->ram[MYSMB_ENEMY_ID + slot] != 5U) ||
+            game->ram[MYSMB_ENEMY_ID + slot] == 18U) {
+            mysmb_objects_check_enemy_offscreen_bounds(game, slot);
+        }
     }
 }
 
