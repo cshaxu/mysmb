@@ -25,5 +25,10 @@ int main(void)
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0777U] != 0x2aU) return 7;
+    game.ram[0x0776U] = 0U;
+    game.ram[0x0777U] = 0U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0009U] != 0x40U) return 8;
     return 0;
 }
