@@ -357,8 +357,7 @@ static void mysmb_game_step_game_over(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
 }
 
-/* ROM VictoryModeSubroutines.  The bridge's tile/OAM presentation is outside
- * this core; mode ownership starts with the same setup task after it falls. */
+/* ROM VictoryModeSubroutines. */
 static void mysmb_game_step_victory(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
@@ -1167,6 +1166,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
+        /* ROM VictoryMode always ends at RelativePlayerPosition and
+         * PlayerGfxHandler, including bridge-collapse task zero. */
+        mysmb_player_draw_oam(game);
     }
     else if (mode_before == 3U) {
         mysmb_game_step_game_over(game);
