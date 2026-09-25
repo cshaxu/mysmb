@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T12 is active.**
+**M2 T13 is active.**
 
 ## Current Technical Baseline
 
@@ -84,6 +84,7 @@ completion. T9 audits and replaces the insufficient frame/output proof.
 | --- | --- |
 | T10 | Source-owned name tables, attributes, palettes, status, scroll, and PPU commit state now reach the canonical snapshot through native C. [History](../history/M2-T10-translated-background-output.md). |
 | T11 | Source-owned player, object, and special-route OAM reaches the native snapshot; bounded Start/right reference evidence has zero OAM and PPU-visible differences. [History](../history/M2-T11-translated-oam-output.md). |
+| T12 | The ROM-enabled Win32 composition root decodes native CHR, nametables, palettes, and OAM; its self-test verifies all eight NES controller actions on x86 and x64. |
 
 ## Recent Governance
 

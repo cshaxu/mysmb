@@ -20,8 +20,8 @@
 9. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — active T9 output-ownership ledger and local frame-oracle contract; prior M2 closure claims are under correction.
 10. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — translated background output; closed in M2 T10.
 11. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — translated OAM output; closed in M2 T11.
-12. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — Win32 native frame consumer and complete controller mapping; active in M2 T12.
-13. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — frame-indexed owner-local oracle.
+12. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — Win32 native frame consumer and complete controller mapping; closed in M2 T12.
+13. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — frame-indexed owner-local oracle; active in M2 T13.
 14. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — cross-width route proof.
 15. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — closure audit.
 
