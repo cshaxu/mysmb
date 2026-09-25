@@ -132,6 +132,9 @@ enum {
     MYSMB_FIREBALL_BOUNCE = 0x003aU,
     MYSMB_FIREBALL_COUNTER = 0x06ceU,
     MYSMB_FIREBALL_BOUND_BOX = 0x04a0U,
+    MYSMB_FIREBALL_REL_X = 0x03afU,
+    MYSMB_FIREBALL_REL_Y = 0x03baU,
+    MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U,
     MYSMB_FIREBALL_SPRITE_OFFSET = 0x06f1U,
     MYSMB_PLAYER_A_B = 0x000aU,
     MYSMB_PREVIOUS_A_B = 0x000dU,
@@ -538,11 +541,11 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
 /* ROM DrawFireball / DrawFirebar. */
 static void mysmb_objects_draw_fireball(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u16 fireball_world;
-    mysmb_u16 screen_world;
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
     mysmb_u8 attributes;
+    mysmb_u16 fireball_world;
+    mysmb_u16 screen_world;
 
     fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) |
                                   game->ram[MYSMB_FIREBALL_X + slot]);
@@ -561,11 +564,11 @@ static void mysmb_objects_draw_fireball(struct mysmb_game *game, mysmb_u8 slot)
 static void mysmb_objects_draw_fireball_explosion(struct mysmb_game *game,
                                                   mysmb_u8 slot, mysmb_u8 tile)
 {
-    mysmb_u16 fireball_world;
-    mysmb_u16 screen_world;
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
     mysmb_u8 y;
+    mysmb_u16 fireball_world;
+    mysmb_u16 screen_world;
 
     fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) |
                                   game->ram[MYSMB_FIREBALL_X + slot]);
@@ -594,6 +597,37 @@ static void mysmb_objects_draw_fireball_explosion(struct mysmb_game *game,
     game->ram[(mysmb_u16)(0x020bU + oam_offset)] = relative_x;
     game->ram[(mysmb_u16)(0x020fU + oam_offset)] = relative_x;
 }
+/* ROM RelativeFireballPosition, GetFireballOffscreenBits and
+ * GetFireballBoundBox.  The relative bytes are PPU/collision scratch RAM;
+ * the state lifetime below is determined solely by the original $cc mask. */
+static void mysmb_objects_relative_fireball_position(struct mysmb_game *game,
+                                                      mysmb_u8 slot)
+{
+    game->ram[MYSMB_FIREBALL_REL_X + slot] = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] - game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[MYSMB_FIREBALL_REL_Y + slot] = game->ram[MYSMB_FIREBALL_Y + slot];
+}
+
+static void mysmb_objects_get_fireball_offscreen_bits(struct mysmb_game *game,
+                                                       mysmb_u8 slot)
+{
+    mysmb_u16 object_world;
+    mysmb_u16 screen_world;
+    mysmb_u8 bits;
+
+    object_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) | game->ram[MYSMB_FIREBALL_X + slot]);
+    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) | game->ram[MYSMB_SCREEN_LEFT_X]);
+    bits = 0U;
+    if (object_world < screen_world) bits = 0x0fU;
+    else if ((mysmb_u16)(object_world - screen_world) >= 0x100U) bits = 0xf0U;
+    if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U || game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U) bits = (mysmb_u8)(bits | 0xc0U);
+    game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] = bits;
+}
+
+static void mysmb_objects_get_fireball_bounding_box(struct mysmb_game *game,
+                                                     mysmb_u8 slot)
+{
+    mysmb_objects_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
+}
 /* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
  * Both objects use the original fixed slots. */
 void mysmb_objects_step_fireballs(struct mysmb_game *game)
@@ -611,8 +645,6 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
-    mysmb_u16 fireball_world;
-    mysmb_u16 screen_world;
     mysmb_u8 enemy_slot;
 
     if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
@@ -708,8 +740,13 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             }
             else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
         }
-        fireball_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) | game->ram[MYSMB_FIREBALL_X + slot]);
-        screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) | game->ram[MYSMB_SCREEN_LEFT_X]);
+        mysmb_objects_relative_fireball_position(game, slot);
+        mysmb_objects_get_fireball_offscreen_bits(game, slot);
+        mysmb_objects_get_fireball_bounding_box(game, slot);
+        if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] & 0xccU) != 0U) {
+            game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
+            continue;
+        }
         if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U &&
             game->ram[MYSMB_FIREBALL_STATE + slot] == 1U) {
             for (enemy_slot = 0U; enemy_slot < 5U; ++enemy_slot) {
@@ -728,16 +765,8 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
                 }
             }
         }
-        if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U ||
-            game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U ||
-            fireball_world < screen_world || (mysmb_u16)(fireball_world - screen_world) >= 0x100U) {
-            game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
-        }
-        else {
-            /* FireballObjCore enters DrawFireball after collision handling;
-             * a collision may set the next-frame explosion state here. */
-            mysmb_objects_draw_fireball(game, slot);
-        }
+        /* FireballObjCore draws only after background and enemy collision. */
+        mysmb_objects_draw_fireball(game, slot);
     }
     mysmb_objects_step_bubbles(game);
 }
@@ -819,9 +848,11 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
             page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
                 (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
-            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
+            /* ChkUnderEnemy probes the bottom middle at (X+8,Y+15). */
+            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x15U) & 0xf0U) - 0x20U);
             address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
             tile = address < 0x0800U ? game->ram[address] : 0U;
+
             if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
                 tile != 0U && tile != 0x26U && tile != 0xc2U &&
                 tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
@@ -832,21 +863,30 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
                     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
                 }
-                else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U &&
-                         (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
-                    game->ram[MYSMB_ENEMY_Y + slot] =
-                        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-                    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-                    game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
+                else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
+                    /* LandEnemyProperly first routes Y low nybbles D-F to
+                     * ChkForRedKoopa, which gives active objects the d6
+                     * falling bit.  It can align to Y|8 only on 8-C after
+                     * that bit was already set. */
+                    if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 0x0dU) {
+                        game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+                    }
+                    else if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U &&
+                             (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 8U) {
+                        game->ram[MYSMB_ENEMY_Y + slot] =
+                            (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+                        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+                        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
+                        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+                        game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
+                    }
                 }
             }
             else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
                 game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
             }
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
-                (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x14U : 4U));
+                (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
             page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
                 (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
             row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
@@ -1074,7 +1114,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         }
         mysmb_objects_move_enemy_horizontally(game, slot);
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
-            (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x14U : 4U));
+            (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
         page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
             game->ram[MYSMB_ENEMY_X + slot], x);
         row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
@@ -1916,7 +1956,7 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
 
     if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
         game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) == 0U ||
+        game->ram[MYSMB_ENEMY_STATE + slot] < 6U ||
         game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
         game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
         game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||

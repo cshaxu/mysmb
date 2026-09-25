@@ -2,7 +2,7 @@
 #define MYSMB_PLATFORM_DOS16_ROOT_H
 
 #include "game/game.h"
-#include "game/render.h"
+#include "game/ppu_frame.h"
 #include "platform/text/text_frame.h"
 #include "platform/vga/vga_frame.h"
 
@@ -16,7 +16,7 @@ struct mysmb_dos16_hooks {
 struct mysmb_dos16_root {
     struct mysmb_game game;
     struct mysmb_frame game_frame;
-    struct mysmb_render_frame render_frame;
+    struct mysmb_ppu_frame ppu_frame;
     struct mysmb_text_frame text_frame;
     struct mysmb_vga_frame vga_frame;
     struct mysmb_dos16_hooks hooks;

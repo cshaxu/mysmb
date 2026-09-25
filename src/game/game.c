@@ -1093,6 +1093,12 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
     return 1U;
 }
 
+void mysmb_game_bind_chr_source(struct mysmb_game *game,
+                                 const mysmb_u8 *chr_data, mysmb_u16 chr_data_size)
+{
+    game->chr_data = chr_data;
+    game->chr_data_size = chr_data_size;
+}
 void mysmb_game_bind_title_source(struct mysmb_game *game,
                                   const mysmb_u8 *title_data,
                                   mysmb_u16 title_data_size,
@@ -1134,6 +1140,14 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
     return 1U;
 }
 
+void mysmb_game_frame_initialize(struct mysmb_frame *frame)
+{
+    frame->sprite0_x = 0U;
+    frame->sprite0_y = 0U;
+    frame->start_pressed = 0U;
+    frame->operating_mode = 0U;
+    frame->operating_mode_task = 0U;
+}
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {

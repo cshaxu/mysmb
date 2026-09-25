@@ -57,6 +57,9 @@ struct mysmb_game {
     mysmb_u8 visible_scroll_x;
     mysmb_u8 visible_scroll_y;
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
+    /* Immutable owner-local CHR pattern data used by the shared PPU compositor. */
+    const mysmb_u8 *chr_data;
+    mysmb_u16 chr_data_size;
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;
     /* Owner-local title streams.  The translated title tasks copy these
@@ -104,6 +107,8 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
                                          const mysmb_u8 *commands,
                                          mysmb_u16 command_size);
 /* Owner-local bindings and the original title ScreenRoutines bootstrap. */
+void mysmb_game_bind_chr_source(struct mysmb_game *game,
+                                 const mysmb_u8 *chr_data, mysmb_u16 chr_data_size);
 void mysmb_game_bind_title_source(struct mysmb_game *game,
                                   const mysmb_u8 *title_data,
                                   mysmb_u16 title_data_size,
@@ -115,6 +120,7 @@ void mysmb_game_initialize(struct mysmb_game *game);
 void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);
 void mysmb_game_checkpoint(const struct mysmb_game *game,
                            struct mysmb_checkpoint *checkpoint);
+void mysmb_game_frame_initialize(struct mysmb_frame *frame);
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame);
 

@@ -1,9 +1,7 @@
 #include <windows.h>
 
 #include "game/game.h"
-#ifndef MYSMB_LOCAL_TITLE
-#include "game/render.h"
-#endif
+#include "game/ppu_frame.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -23,9 +21,7 @@
 
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
-#ifndef MYSMB_LOCAL_TITLE
-static struct mysmb_render_frame g_render_frame;
-#endif
+static struct mysmb_ppu_frame g_ppu_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static BITMAPINFO g_bitmap_info;
@@ -73,217 +69,26 @@ static unsigned int mysmb_win32_poll_keys(void)
     return keys;
 }
 
-static DWORD mysmb_win32_dib_color(COLORREF color)
+static DWORD mysmb_win32_dib_color(mysmb_u8 color)
 {
-    return ((DWORD)(color & 0x000000ffUL) << 16U) |
-           (DWORD)(color & 0x0000ff00UL) |
-           ((DWORD)(color & 0x00ff0000UL) >> 16U);
+    static const DWORD colors[64] = {
+        0x545454UL,0x001e74UL,0x081090UL,0x300088UL,0x440064UL,0x5c0030UL,0x540400UL,0x3c1800UL,0x202a00UL,0x083a00UL,0x004000UL,0x003c00UL,0x00323cUL,0,0,0,
+        0x989698UL,0x084cc4UL,0x3032ecUL,0x5c1ee4UL,0x8814b0UL,0xa01464UL,0x982220UL,0x783c00UL,0x545a00UL,0x287200UL,0x087c00UL,0x007628UL,0x006678UL,0,0,0,
+        0xeceeeeUL,0x4c9aecUL,0x787cecUL,0xb062ecUL,0xe454ecUL,0xec58b4UL,0xec6a64UL,0xd48820UL,0xa0aa00UL,0x74c400UL,0x4cd020UL,0x38c06cUL,0x38b4ccUL,0x3c3c3cUL,0,0,
+        0xeceeeeUL,0xa8ccecUL,0xbcbcecUL,0xd4b2ecUL,0xecaeecUL,0xecaed4UL,0xecb4b0UL,0xe4c690UL,0xccd278UL,0xb4de78UL,0xa8e290UL,0x98e2b4UL,0xa0d6e4UL,0xa0a2a0UL,0,0
+    };
+    DWORD rgb;
+    rgb=colors[color&0x3fU];
+    return ((rgb&0x000000ffUL)<<16U)|(rgb&0x0000ff00UL)|((rgb&0x00ff0000UL)>>16U);
 }
-
-static void mysmb_win32_plot(unsigned int x, unsigned int y, COLORREF color)
-{
-    if (x >= MYSMB_SCREEN_WIDTH || y >= MYSMB_SCREEN_HEIGHT) return;
-    g_pixels[y * MYSMB_SCREEN_WIDTH + x] = mysmb_win32_dib_color(color);
-}
-
-static void mysmb_win32_fill_rect(unsigned int x, unsigned int y,
-                                   unsigned int width, unsigned int height,
-                                   COLORREF color)
-{
-    unsigned int row;
-    unsigned int column;
-
-    for (row = y; row < y + height && row < MYSMB_SCREEN_HEIGHT; ++row) {
-        for (column = x; column < x + width && column < MYSMB_SCREEN_WIDTH;
-             ++column) {
-            mysmb_win32_plot(column, row, color);
-        }
-    }
-}
-
-#ifdef MYSMB_LOCAL_TITLE
-static void mysmb_win32_draw_background(void);
-static void mysmb_win32_draw_oam(void);
-#endif
-
-#ifndef MYSMB_LOCAL_TITLE
-static COLORREF mysmb_win32_tile_color(mysmb_u8 tile)
-{
-    if (tile == 0x24U) return RGB(92, 148, 252);
-    if (tile >= 0x80U) return RGB(0, 168, 0);
-    if (tile >= 0x50U) return RGB(180, 92, 24);
-    if (tile >= 0x30U) return RGB(252, 188, 60);
-    return RGB(92, 148, 252);
-}
-
-static COLORREF mysmb_win32_actor_color(mysmb_u8 identity)
-{
-    if (identity == 0U) return RGB(220, 48, 32);
-    if ((identity & 1U) != 0U) return RGB(252, 188, 60);
-    return RGB(112, 48, 24);
-}
-#endif
-
 static void mysmb_win32_draw_gameplay(void)
 {
-#ifdef MYSMB_LOCAL_TITLE
-    /* The ROM-enabled build consumes CHR-backed name-table pixels instead of
-     * the diagnostic color buckets below.  Sprite/OAM composition follows in
-     * the next renderer slice. */
-    mysmb_win32_draw_background();
-    mysmb_win32_draw_oam();
-#else
     unsigned int index;
-    unsigned int tile_index;
-    struct mysmb_render_command *command;
-
-    for (index = 0U; index < g_render_frame.command_count; ++index) {
-        command = &g_render_frame.commands[index];
-        if (command->kind == MYSMB_RENDER_COMMAND_TILE_ROW) {
-            for (tile_index = 0U; tile_index < command->length; ++tile_index) {
-                mysmb_win32_fill_rect((command->x + tile_index) * 8U,
-                    command->y * 8U, 8U, 8U,
-                    mysmb_win32_tile_color(g_render_frame.tile_data[
-                        command->data_offset + tile_index]));
-            }
-        } else if (command->kind == MYSMB_RENDER_COMMAND_ACTOR) {
-            mysmb_win32_fill_rect(command->x, command->y, command->length,
-                command->length, mysmb_win32_actor_color(command->identity));
-        }
-    }
-#endif
+    for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index) g_pixels[index]=mysmb_win32_dib_color(g_ppu_frame.pixels[index]);
 }
-#ifdef MYSMB_LOCAL_TITLE
-static COLORREF mysmb_win32_nes_color(mysmb_u8 index)
-{
-    /* The 2C02 master palette encoded by SMB1's $3f00-$3f1f entries. */
-    static const COLORREF colors[64] = {
-        RGB(84,84,84), RGB(0,30,116), RGB(8,16,144), RGB(48,0,136), RGB(68,0,100), RGB(92,0,48), RGB(84,4,0), RGB(60,24,0), RGB(32,42,0), RGB(8,58,0), RGB(0,64,0), RGB(0,60,0), RGB(0,50,60), RGB(0,0,0), RGB(0,0,0), RGB(0,0,0),
-        RGB(152,150,152), RGB(8,76,196), RGB(48,50,236), RGB(92,30,228), RGB(136,20,176), RGB(160,20,100), RGB(152,34,32), RGB(120,60,0), RGB(84,90,0), RGB(40,114,0), RGB(8,124,0), RGB(0,118,40), RGB(0,102,120), RGB(0,0,0), RGB(0,0,0), RGB(0,0,0),
-        RGB(236,238,236), RGB(76,154,236), RGB(120,124,236), RGB(176,98,236), RGB(228,84,236), RGB(236,88,180), RGB(236,106,100), RGB(212,136,32), RGB(160,170,0), RGB(116,196,0), RGB(76,208,32), RGB(56,204,108), RGB(56,180,204), RGB(60,60,60), RGB(0,0,0), RGB(0,0,0),
-        RGB(236,238,236), RGB(168,204,236), RGB(188,188,236), RGB(212,178,236), RGB(236,174,236), RGB(236,174,212), RGB(236,180,176), RGB(228,196,144), RGB(204,210,120), RGB(180,222,120), RGB(168,226,144), RGB(152,226,180), RGB(160,214,228), RGB(160,162,160), RGB(0,0,0), RGB(0,0,0)
-    };
-
-    return colors[index & 0x3fU];
-}
-
-static COLORREF mysmb_win32_background_color(unsigned char palette,
-                                              unsigned char color)
-{
-    return mysmb_win32_nes_color(g_game.palette[color == 0U ? 0U : (palette << 2U) + color]);
-}
-
-static COLORREF mysmb_win32_sprite_color(unsigned char palette,
-                                          unsigned char color)
-{
-    return mysmb_win32_nes_color(g_game.palette[0x10U + (palette << 2U) + color]);
-}
-static unsigned char mysmb_win32_background_pixel(unsigned int x, unsigned int y)
-{
-    unsigned int source_x;
-    unsigned int source_y;
-    unsigned int row;
-    unsigned int column;
-    unsigned int table;
-    unsigned int tile;
-    unsigned char low;
-    unsigned char high;
-    unsigned int pixel_x;
-    unsigned int pixel_y;
-    unsigned int pattern_base;
-
-    source_x = (x + g_game.visible_scroll_x) & 0x01ffU;
-    source_y = (y + g_game.visible_scroll_y) % 480U;
-    table = (unsigned int)(g_game.visible_ppu_name_table & 3U);
-    if (source_x >= 256U) table ^= 1U;
-    if (source_y >= 240U) table ^= 2U;
-    row = (source_y % 240U) / 8U;
-    column = (source_x & 0xffU) / 8U;
-    /* SMB1 uses vertical mirroring: logical tables 0/2 and 1/3 share CIRAM. */
-    table &= 1U;
-    tile = g_game.name_table[table][row * 32U + column];
-    pixel_y = source_y & 7U;
-    pixel_x = source_x & 7U;
-    pattern_base = (g_game.visible_ppu_control_0 & 0x10U) != 0U ? 0x1000U : 0U;
-    low = mysmb_local_chr[pattern_base + tile * 16U + pixel_y];
-    high = mysmb_local_chr[pattern_base + tile * 16U + pixel_y + 8U];
-    return (unsigned char)(((low >> (7U - pixel_x)) & 1U) |
-                           (((high >> (7U - pixel_x)) & 1U) << 1U));
-}
-
-static void mysmb_win32_draw_background(void)
-{
-    unsigned int y;
-    unsigned int x;
-    unsigned int source_x;
-    unsigned int source_y;
-    unsigned int row;
-    unsigned int column;
-    unsigned int table;
-    unsigned int attribute;
-    unsigned char palette;
-    unsigned char color;
-
-    for (y = 0U; y < MYSMB_SCREEN_HEIGHT; ++y) {
-        for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
-            source_x = (x + g_game.visible_scroll_x) & 0x01ffU;
-            source_y = (y + g_game.visible_scroll_y) % 480U;
-            table = (unsigned int)(g_game.visible_ppu_name_table & 3U);
-            if (source_x >= 256U) table ^= 1U;
-            if (source_y >= 240U) table ^= 2U;
-            row = (source_y % 240U) / 8U;
-            column = (source_x & 0xffU) / 8U;
-            table &= 1U;
-            attribute = g_game.name_table[table][0x03c0U + (row / 4U) * 8U + column / 4U];
-            palette = (unsigned char)((attribute >> (((row & 2U) << 1U) + (column & 2U))) & 3U);
-            color = mysmb_win32_background_pixel(x, y);
-            mysmb_win32_plot(x, y, mysmb_win32_background_color(palette, color));
-        }
-    }
-}
-static void mysmb_win32_draw_oam(void)
-{
-    unsigned int sprite;
-    unsigned int pixel_y;
-    unsigned int pixel_x;
-    unsigned int x;
-    unsigned int y;
-    unsigned int tile;
-    unsigned int attributes;
-    unsigned int bit;
-    unsigned char low;
-    unsigned char high;
-    unsigned char color;
-
-    for (sprite = 64U; sprite != 0U;) {
-        --sprite;
-        y = g_game.visible_oam[sprite * 4U] + 1U;
-        tile = g_game.visible_oam[sprite * 4U + 1U];
-        attributes = g_game.visible_oam[sprite * 4U + 2U];
-        x = g_game.visible_oam[sprite * 4U + 3U];
-        if (y >= MYSMB_SCREEN_HEIGHT) continue;
-        for (pixel_y = 0U; pixel_y < 8U && y + pixel_y < MYSMB_SCREEN_HEIGHT; ++pixel_y) {
-            low = mysmb_local_chr[((g_game.visible_ppu_control_0 & 0x08U) != 0U ? 0x1000U : 0U) + tile * 16U +
-                ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y)];
-            high = mysmb_local_chr[((g_game.visible_ppu_control_0 & 0x08U) != 0U ? 0x1000U : 0U) + tile * 16U + 8U +
-                ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y)];
-            for (pixel_x = 0U; pixel_x < 8U && x + pixel_x < MYSMB_SCREEN_WIDTH; ++pixel_x) {
-                bit = (attributes & 0x40U) != 0U ? pixel_x : 7U - pixel_x;
-                color = (unsigned char)(((low >> bit) & 1U) | (((high >> bit) & 1U) << 1U));
-                if (color != 0U && ((attributes & 0x20U) == 0U ||
-                    mysmb_win32_background_pixel(x + pixel_x, y + pixel_y) == 0U)) {
-                    mysmb_win32_plot(x + pixel_x, y + pixel_y,
-                        mysmb_win32_sprite_color((unsigned char)(attributes & 3U), color));
-                }
-            }
-        }
-    }
-}
-#endif
-
 static void mysmb_win32_build_frame(void)
 {
-    ZeroMemory(g_pixels, sizeof(g_pixels));
+    mysmb_ppu_frame_build(&g_game, &g_ppu_frame);
     mysmb_win32_draw_gameplay();
 }
 
@@ -300,30 +105,10 @@ static int mysmb_win32_argument_is_self_test(const char *command)
 }
 
 #ifdef MYSMB_LOCAL_TITLE
-/* Runs the composition root without a visible window, exercising embedded-ROM
- * startup, title input, GameCore entry, and software frame generation. */
+/* Platform check: it exercises only the physical keyboard adapter and the
+ * common pixel submission path; translated game behavior is tested in game. */
 static int mysmb_win32_run_self_test(void)
 {
-    struct mysmb_input input;
-    unsigned int index;
-
-    mysmb_game_initialize(&g_game);
-    mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    mysmb_game_bind_title_source(&g_game, mysmb_local_title_data,
-                                 MYSMB_LOCAL_TITLE_DATA_SIZE,
-                                 mysmb_local_title_icon_data,
-                                 MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
-    if (mysmb_game_begin_title_bootstrap(&g_game) == 0U) return 10;
-    ZeroMemory(&g_frame, sizeof(g_frame));
-    for (index = 0U; index < 280U; ++index) {
-        input.buttons = 0U;
-        if (index == 40U) input.buttons = MYSMB_BUTTON_START;
-        else if (index > 41U) input.buttons = MYSMB_BUTTON_RIGHT;
-        mysmb_game_tick(&g_game, &input, &g_frame);
-    }
-    if (g_game.ram[0x0770U] != 1U) return 11;
-    if (g_game.ram[0x0772U] != 3U) return 12;
-    if ((g_game.visible_ppu_mask & 0x18U) != 0x18U) return 13;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_LEFT) != MYSMB_BUTTON_LEFT) return 14;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_RIGHT) != MYSMB_BUTTON_RIGHT) return 15;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_DOWN) != MYSMB_BUTTON_DOWN) return 16;
@@ -332,9 +117,6 @@ static int mysmb_win32_run_self_test(void)
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
-    mysmb_win32_build_frame();
-    /* This intentionally avoids a desktop DC; presentation itself remains the
-     * same single-DIB transfer used by mysmb_win32_paint. */
     return 0;
 }
 #endif
@@ -374,9 +156,6 @@ static void mysmb_win32_step(HWND window)
     /* Discard excess wall-clock debt after four logical frames.  This keeps
      * the message pump responsive instead of attempting an unbounded catch-up. */
     if (elapsed >= frame_period) g_last_tick = now;
-#ifndef MYSMB_LOCAL_TITLE
-    mysmb_render_build(&g_game, &g_render_frame);
-#endif
     mysmb_win32_build_frame();
     InvalidateRect(window, NULL, FALSE);
 }
@@ -423,6 +202,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     mysmb_game_initialize(&g_game);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    mysmb_game_bind_chr_source(&g_game, mysmb_local_chr, MYSMB_LOCAL_CHR_SIZE);
     mysmb_game_bind_title_source(&g_game, mysmb_local_title_data,
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
@@ -439,9 +219,6 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_bitmap_info.bmiHeader.biBitCount = 32U;
     g_bitmap_info.bmiHeader.biCompression = BI_RGB;
     ZeroMemory(&g_frame, sizeof(g_frame));
-#ifndef MYSMB_LOCAL_TITLE
-    mysmb_render_build(&g_game, &g_render_frame);
-#endif
     mysmb_win32_build_frame();
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
