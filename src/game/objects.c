@@ -46,7 +46,8 @@ enum {
     MYSMB_BRIDGE_COLLAPSE_OFFSET = 0x0369U,
     MYSMB_EVENT_MUSIC = 0x00fcU,
     MYSMB_NOISE_SOUND = 0x00fdU,
-    MYSMB_SQUARE2_SOUND = 0x00feU
+    MYSMB_SQUARE2_SOUND = 0x00feU,
+    MYSMB_SQUARE1_SOUND = 0x00ffU
 };
 
 enum {
@@ -1095,6 +1096,9 @@ static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *ga
     }
     if (game->ram[MYSMB_PLAYER_Y_SPEED] != 0U &&
         game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
+        /* ROM EnemyStomped queues Sfx_EnemyStomp before it changes the
+         * defeated object state or allocates its floatey score. */
+        game->ram[MYSMB_SQUARE1_SOUND] = 4U;
         game->ram[MYSMB_ENEMY_STATE + slot] = 4U;
         game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] =
             game->ram[MYSMB_PRIMARY_HARD] == 0U ? 0x10U : 0x0bU;
