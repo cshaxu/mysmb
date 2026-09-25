@@ -809,9 +809,8 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->title_icon_data_size > 0x00ffU) {
             break;
         }
-        for (index = 0U; index < 0x0200U; ++index)
+        for (index = 0U; index < 0x0100U; ++index)
             game->ram[(mysmb_u16)(0x0300U + index)] = 0U;
-        game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] = game->title_icon_data_size;
         for (index = 0U; index < game->title_icon_data_size; ++index)
             game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
                 game->title_icon_data[index];
@@ -1019,7 +1018,8 @@ static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
-    if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U) return;
+    if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U &&
+        game->ram[MYSMB_RAM_VRAM_BUFFER1] == 0U) return;
     (void)mysmb_game_apply_vram_commands(game,
         &game->ram[MYSMB_RAM_VRAM_BUFFER1], 0x0100U);
     game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] = 0U;
