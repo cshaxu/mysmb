@@ -435,6 +435,8 @@ add_test(NAME mysmb.boot-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_boot_codegen.py)
 add_test(NAME mysmb.title-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_title_codegen.py)
+add_test(NAME mysmb.platform-purity
+         COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_platform_purity.py)
 add_test(NAME mysmb.static-analysis
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_static_analysis.py)
 add_test(NAME mysmb.listing-layout
