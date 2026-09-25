@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T16 S2 active; M2 T15 S4 is gated at its cross-slice OAM/block prerequisite.**
+**M2 T17 S1 active; M2 T16 S3 is planned, and M2 T15 S4 remains gated at its cross-slice block prerequisite.**
 
 | Field | Record |
 | --- | --- |

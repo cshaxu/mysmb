@@ -2,7 +2,7 @@
 
 ## Status
 
-`M2 Td S3` governance work. This is a complete candidate map of the ROM executable structure, not a numeric implementation-task allocation. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
+`M2 Td S3` governance work. M2 T17 is admitted for the Collision and world primitives slice; all other listed slices remain candidates unless their status says otherwise. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
 
 ## How the map is complete
 

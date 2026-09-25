@@ -1,5 +1,6 @@
 #include "game/objects.h"
 #include "game/oam/oam.h"
+#include "game/world/world.h"
 #include "game/area.h"
 
 void mysmb_objects_step_bubbles(struct mysmb_game *game);
@@ -3503,40 +3504,6 @@ static void mysmb_objects_move_block_horizontally(struct mysmb_game *game,
         (mysmb_u8)(game->ram[MYSMB_BLOCK_PAGE + slot] + page_delta + carry_x);
 }
 
-/* ROM $bfa4 ImposeGravityBlock / ImposeGravity for a block-object slot.
- * Block objects use downward force $50 and maximum speed $08. */
-static void mysmb_objects_impose_block_gravity(struct mysmb_game *game,
-                                               mysmb_u8 slot)
-{
-    mysmb_u8 old_value;
-    mysmb_u8 carry_dummy;
-    mysmb_u8 carry_y;
-    mysmb_u8 page_delta;
-
-    old_value = game->ram[MYSMB_BLOCK_Y_DUMMY + slot];
-    game->ram[MYSMB_BLOCK_Y_DUMMY + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_BLOCK_Y_FORCE + slot]);
-    carry_dummy = game->ram[MYSMB_BLOCK_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    page_delta = game->ram[MYSMB_BLOCK_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
-    old_value = game->ram[MYSMB_BLOCK_Y + slot];
-    game->ram[MYSMB_BLOCK_Y + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_BLOCK_Y_SPEED + slot] + carry_dummy);
-    carry_y = game->ram[MYSMB_BLOCK_Y + slot] < old_value ? 1U : 0U;
-    game->ram[MYSMB_BLOCK_Y_HIGH + slot] =
-        (mysmb_u8)(game->ram[MYSMB_BLOCK_Y_HIGH + slot] + page_delta + carry_y);
-    old_value = game->ram[MYSMB_BLOCK_Y_FORCE + slot];
-    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x50U);
-    if (game->ram[MYSMB_BLOCK_Y_FORCE + slot] < old_value) {
-        game->ram[MYSMB_BLOCK_Y_SPEED + slot]++;
-    }
-    if (game->ram[MYSMB_BLOCK_Y_SPEED + slot] < 0x80U &&
-        game->ram[MYSMB_BLOCK_Y_SPEED + slot] >= 8U &&
-        game->ram[MYSMB_BLOCK_Y_FORCE + slot] >= 0x80U) {
-        game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 8U;
-        game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
-    }
-}
-
 /* Translation of ROM $be70 BlockObjectsCore's bouncing-block and brick-chunk
  * branches, excluding relative positioning and drawing. */
 void mysmb_objects_step_blocks(struct mysmb_game *game)
@@ -3550,7 +3517,7 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
         if (state == 0U) continue;
         state &= 0x0fU;
         if (state == 1U) {
-            mysmb_objects_impose_block_gravity(game, slot);
+            mysmb_world_impose_gravity_block(game, slot);
             mysmb_oam_relative_block_position(game, slot);
             mysmb_oam_get_block_offscreen_bits(game, slot);
             mysmb_objects_draw_bouncing_block(game, slot);
@@ -3560,9 +3527,9 @@ void mysmb_objects_step_blocks(struct mysmb_game *game)
             }
         }
         else {
-            mysmb_objects_impose_block_gravity(game, slot);
+            mysmb_world_impose_gravity_block(game, slot);
             mysmb_objects_move_block_horizontally(game, slot);
-            mysmb_objects_impose_block_gravity(game, (mysmb_u8)(slot + 2U));
+            mysmb_world_impose_gravity_block(game, (mysmb_u8)(slot + 2U));
             mysmb_objects_move_block_horizontally(game, (mysmb_u8)(slot + 2U));
             mysmb_oam_relative_block_position(game, slot);
             mysmb_oam_get_block_offscreen_bits(game, slot);
