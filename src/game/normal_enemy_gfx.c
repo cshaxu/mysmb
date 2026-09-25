@@ -16,7 +16,8 @@ enum {
     MYSMB_NORMAL_SCREEN_PAGE = 0x071aU,
     MYSMB_NORMAL_SCREEN_X = 0x071cU,
     MYSMB_NORMAL_TIMER_CONTROL = 0x0747U,
-    MYSMB_NORMAL_FRAME_COUNTER = 0x0009U
+    MYSMB_NORMAL_FRAME_COUNTER = 0x0009U,
+    MYSMB_NORMAL_WORLD = 0x075fU
 };
 
 static void mysmb_normal_apply_offscreen(struct mysmb_game *game,
@@ -217,4 +218,56 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
     if (mysmb_draw_paratroopa(game, slot) != 0U) return 1U;
     if (mysmb_draw_lakitu(game, slot) != 0U) return 1U;
     return 0U;
+}
+
+/* ROM RunRetainerObj through EnemyGfxHandler for RetainerObject ($35). */
+void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
+{
+    static const mysmb_u8 princess[6] = { 0x7aU, 0x7bU, 0xdaU, 0xdbU, 0xd8U, 0xd8U };
+    static const mysmb_u8 retainer[6] = { 0xcdU, 0xcdU, 0xceU, 0xceU, 0xcfU, 0xcfU };
+    const mysmb_u8 *tiles;
+    mysmb_u8 oam;
+    mysmb_u8 row;
+    mysmb_u8 offset;
+    mysmb_u8 bits;
+    mysmb_u8 x;
+    mysmb_u8 attributes;
+    mysmb_u16 world;
+    mysmb_u16 screen;
+
+    if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U ||
+        game->ram[MYSMB_NORMAL_ID + slot] != 53U) return;
+    tiles = game->ram[MYSMB_NORMAL_WORLD] < 7U ? retainer : princess;
+    attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
+    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_PAGE + slot] << 8U) |
+                        game->ram[MYSMB_NORMAL_X + slot]);
+    screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
+                         game->ram[MYSMB_NORMAL_SCREEN_X]);
+    x = (mysmb_u8)(world - screen);
+    game->ram[MYSMB_NORMAL_REL_X + slot] = x;
+    game->ram[MYSMB_NORMAL_REL_Y + slot] = game->ram[MYSMB_NORMAL_Y + slot];
+    bits = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+    game->ram[MYSMB_NORMAL_OFFSCREEN + slot] = bits;
+    oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
+    for (row = 0U; row < 3U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        game->ram[0x0200U + offset] = (mysmb_u8)(game->ram[MYSMB_NORMAL_Y + slot] + row * 8U);
+        game->ram[0x0204U + offset] = game->ram[0x0200U + offset];
+        game->ram[0x0201U + offset] = tiles[row * 2U];
+        game->ram[0x0205U + offset] = tiles[row * 2U + 1U];
+        game->ram[0x0202U + offset] = attributes;
+        game->ram[0x0206U + offset] = attributes;
+        game->ram[0x0203U + offset] = x;
+        game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
+        if ((bits & 0x80U) != 0U ||
+            ((bits & 0x40U) != 0U && row >= 1U) ||
+            ((bits & 0x20U) != 0U && row == 2U)) {
+            game->ram[0x0200U + offset] = 0xf8U;
+            game->ram[0x0204U + offset] = 0xf8U;
+        } else {
+            if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
+            if ((bits & 4U) != 0U) game->ram[0x0204U + offset] = 0xf8U;
+        }
+    }
+    game->ram[0x0216U + oam] = 0x42U;
 }

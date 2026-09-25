@@ -1166,6 +1166,10 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
+        /* ROM VictoryMode invokes EnemiesAndLoopsCore only after task zero.
+         * RetainerObject is its reachable source-owned slot-zero OAM route. */
+        if (game->ram[MYSMB_RAM_OPER_MODE_TASK] != 0U)
+            mysmb_objects_draw_retainer(game, 0U);
         /* ROM VictoryMode always ends at RelativePlayerPosition and
          * PlayerGfxHandler, including bridge-collapse task zero. */
         mysmb_player_draw_oam(game);
