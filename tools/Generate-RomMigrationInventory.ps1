@@ -1,0 +1,68 @@
+param(
+    [string]$AsmPath = 'build/reference-source/SMBDIS.ASM',
+    [string]$OutputPath = 'docs/etc/architecture/smb1-rom-migration-inventory.md'
+)
+$ErrorActionPreference = 'Stop'
+$asm = Get-Content -LiteralPath $AsmPath
+$hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $AsmPath).Hash.ToLowerInvariant()
+$labels = for ($i = 0; $i -lt $asm.Count; $i++) {
+    if ($asm[$i] -match '^([A-Za-z_][A-Za-z0-9_]*):') {
+        [PSCustomObject]@{ Line = $i + 1; Label = $Matches[1] }
+    }
+}
+$modules = @(
+    @('Boot, reset, NMI, timing and input', @('Start','ColdBoot','NonMaskableInterrupt','PauseRoutine','OperModeExecutionTree')),
+    @('Title, demo, selection and victory modes', @('TitleScreenMode','GameMenuRoutine','DemoEngine','VictoryMode','PlayerEndWorld')),
+    @('Screen sequencing, text, status and PPU buffers', @('ScreenRoutines','InitScreen','WriteTopStatusLine','WriteBottomStatusLine','AreaParserTaskControl','WriteGameText')),
+    @('Area parser, metatile/attribute rendering and scrolling', @('RenderAreaGraphics','RenderAttributeTables','AreaParserTaskHandler','AreaParserCore','AreaParserTasks','ScrollScreen')),
+    @('Game engine, mode transitions and timers', @('GameCoreRoutine','GameEngine','GameRoutines','GameTimerExpired','PlayerEndLevel')),
+    @('Player movement, physics, collision and size state', @('PlayerCtrlRoutine','MovePlayerHorizontally','PlayerBGCollision','PlayerHeadCollision','PlayerChangeSize')),
+    @('Enemy stream, object initialization and enemy behavior', @('ProcessEnemyData','PositionEnemyObj','CheckpointEnemyID','EnemiesAndLoopsCore','RunNormalEnemies')),
+    @('Blocks, coins, power-ups, vines and miscellaneous objects', @('BlockObjMT_Updater','BumpBlock','CoinBlock','SetupPowerUp','PowerUpObjHandler','VineObjectHandler')),
+    @('Fireballs, projectile collision and special hazards', @('FireballObjCore','FireballBGCollision','FireballEnemyCollision','ProcFireball_Bubble')),
+    @('Object graphics, OAM construction and offscreen bits', @('PlayerGfxHandler','EnemyGraphicsEngine','MiscObjOffset','GetEnemyOffscreenBits','GetFireballOffscreenBits')),
+    @('Audio engine, music and sound effects', @('SoundEngine','Square1SfxHandler','Square2SfxHandler','NoiseSfxHandler','MusicHandler')),
+    @('Shared arithmetic, RNG, VRAM and utility primitives', @('InitializeMemory','GetPlayerOffscreenBits','RelativePlayerPosition','MoveObjectHorizontally','ImposeGravity'))
+)
+$out = New-Object System.Collections.Generic.List[string]
+$out.Add('# SMB1 ROM migration inventory and conformance checklist')
+$out.Add('')
+$out.Add('Generated from `build/reference-source/SMBDIS.ASM`; SHA-256: `' + $hash + '`. This file is the mandatory work index for the native C port. It intentionally records no inferred equivalence: an item is conformant only when its original branch semantics, writes, and frame-trace evidence are recorded.')
+$out.Add('')
+$out.Add('## Rules')
+$out.Add('')
+$out.Add('- ROM assembly is the authority for all game behavior. The C source must name the original routine(s) it ports.')
+$out.Add('- `src/game` owns every game decision, PPU-state construction, OAM construction, and input decoding. `src/platform` may only collect host input, schedule frames, and submit the already constructed frame.')
+$out.Add('- A green unit test alone does not close an item. Each behavioral item needs a ROM-reference frame script and comparison of the affected CPU RAM, CIRAM, palette, OAM, PPU state, and audio state.')
+$out.Add('- No ad-hoc behavior change is permitted. A repair first names the checklist entry, original labels, exact source branch path, and regression route.')
+$out.Add('')
+$out.Add('## Logical tree and module gates')
+$out.Add('')
+foreach ($m in $modules) {
+    $out.Add('- [ ] **' + $m[0] + '**')
+    foreach ($entry in $m[1]) {
+        $found = $labels | Where-Object Label -eq $entry | Select-Object -First 1
+        if ($null -eq $found) { $out.Add('  - [ ] `' + $entry + '` — label lookup pending') }
+        else { $out.Add('  - [ ] `' + $entry + '` — ROM line ' + $found.Line + '; C owner/evidence pending') }
+    }
+}
+$out.Add('')
+$out.Add('## Mandatory conformance gates')
+$out.Add('')
+$out.Add('- [ ] Every label below is assigned to exactly one logical owner or explicitly classified as a local branch of an assigned owner.')
+$out.Add('- [ ] Every `src/game` entry point has its ROM label set, state-write map, and trace route recorded.')
+$out.Add('- [ ] Every visible OAM family, status-bar split, palette/CIRAM path, and audio queue has a matching reference route.')
+$out.Add('- [ ] W1-1 title/start, movement/jump, coin/block, mushroom/fire-flower, damage/death/restart, pipe, flag/castle, warp and two-player routes pass frame comparison on x86 and x64.')
+$out.Add('- [ ] x86 and x64 native traces are byte-identical for every approved route.')
+$out.Add('- [ ] DOS backend consumes the same game frame contract; its adapter has no game-state write.')
+$out.Add('')
+$out.Add('## Complete ROM label index — unclassified items remain open')
+$out.Add('')
+$out.Add('| ROM source line | label | owner | status | evidence |')
+$out.Add('|---:|---|---|---|---|')
+foreach ($l in $labels) { $out.Add('| ' + $l.Line + ' | `' + $l.Label + '` | unassigned | open | none |') }
+$dir = Split-Path -Parent $OutputPath
+if (!(Test-Path -LiteralPath $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
+[IO.File]::WriteAllLines($OutputPath, $out, [Text.UTF8Encoding]::new($false))
+Write-Output ('labels=' + $labels.Count)
+Write-Output ('output=' + (Resolve-Path -LiteralPath $OutputPath))
