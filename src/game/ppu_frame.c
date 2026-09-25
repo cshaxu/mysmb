@@ -23,6 +23,7 @@ static mysmb_u8 mysmb_ppu_background_pixel(const struct mysmb_game *game,
                                             mysmb_u16 screen_y,
                                             mysmb_u8 scroll_x,
                                             mysmb_u8 scroll_y,
+                                            mysmb_u8 name_table,
                                             mysmb_u8 *opaque)
 {
     mysmb_u16 source_x;
@@ -39,7 +40,7 @@ static mysmb_u8 mysmb_ppu_background_pixel(const struct mysmb_game *game,
 
     source_x = (mysmb_u16)((screen_x + scroll_x) & 0x01ffU);
     source_y = (mysmb_u16)((screen_y + scroll_y) % 480U);
-    table = (mysmb_u16)(game->visible_ppu_name_table & 3U);
+    table = (mysmb_u16)(name_table & 3U);
     if (source_x >= 256U) table ^= 1U;
     if (source_y >= 240U) table ^= 2U;
     /* SMB1 vertical mirroring: logical 0/2 and 1/3 share CIRAM. */
@@ -83,7 +84,9 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
         scroll_y = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_y;
         for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
             frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = mysmb_ppu_background_pixel(
-                game, x, y, scroll_x, scroll_y, &opaque);
+                game, x, y, scroll_x, scroll_y,
+                y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_ppu_name_table,
+                &opaque);
         }
     }
     for (sprite = 64U; sprite != 0U;) {
@@ -110,7 +113,9 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
                 if ((attributes & 0x20U) != 0U) {
                     scroll_x = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_x;
                     scroll_y = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_y;
-                    (void)mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y, &opaque);
+                    (void)mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
+                        y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_ppu_name_table,
+                        &opaque);
                     if (opaque != 0U) continue;
                 }
                 frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->palette[
