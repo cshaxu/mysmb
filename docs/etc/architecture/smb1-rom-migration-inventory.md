@@ -846,13 +846,13 @@ The labels and branches behind every line remain open until individually bound b
 | 6274 | `RghtFrict` | unassigned | open | none |
 | 6285 | `XSpdSign` | unassigned | open | none |
 | 6290 | `SetAbsSpd` | unassigned | open | none |
-| 6298 | `ProcFireball_Bubble` | unassigned | open | none |
+| 6298 | `ProcFireball_Bubble` | M2 T20 S1/P1 | structural extraction; route trace pending | src/game/fireball/fireball_core.c |
 | 6330 | `ProcFireballs` | unassigned | open | none |
 | 6336 | `ProcAirBubbles` | unassigned | open | none |
 | 6340 | `BublLoop` | unassigned | open | none |
 | 6347 | `BublExit` | unassigned | open | none |
 | 6349 | `FireballXSpdData` | unassigned | open | none |
-| 6352 | `FireballObjCore` | unassigned | open | none |
+| 6352 | `FireballObjCore` | M2 T20 S1/P1 | structural extraction; route trace pending | src/game/fireball/fireball_core.c |
 | 6380 | `RunFB` | unassigned | open | none |
 | 6401 | `EraseFB` | unassigned | open | none |
 | 6403 | `NoFBall` | unassigned | open | none |

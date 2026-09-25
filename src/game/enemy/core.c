@@ -1,5 +1,6 @@
 #include "game/enemy/core.h"
 #include "game/enemy/stream.h"
+#include "game/fireball/fireball.h"
 #include "game/objects.h"
 
 enum {
@@ -15,7 +16,7 @@ void mysmb_enemy_core_step(struct mysmb_game *game,
 {
     mysmb_u8 slot;
 
-    mysmb_objects_step_fireballs(game);
+    mysmb_fireball_step(game);
     for (slot = 0U; slot < 6U; ++slot) {
         if (game->ram[MYSMB_ENEMY_CORE_FLAG + slot] != 0U) {
             if (slot < 5U) {
