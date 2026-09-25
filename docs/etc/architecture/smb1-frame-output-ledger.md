@@ -2096,3 +2096,23 @@ stack activity accounts for 60,800 bytes, while 3 individual working-RAM bytes
 differ in three samples.  These raw-state discrepancies and route coverage
 outside this script keep M2 open; this record proves only the translated
 visible output for this reproducible title-to-1-1 route.
+
+
+## T11 S1 P16 Extended Jump Route Evidence
+
+A second current-source trace extends the admitted route to 600 NMI-return
+samples and holds Right while pressing A for frames 200--211.  It uses NES
+input 30:$08,31:0,60:$80,200:$81,212:$80 and native decoded input
+30:$10,31:0,60:$01,200:$81,212:$01.  The traces were deleted after
+comparison.
+
+CPU OAM backing RAM, hardware OAM, both CIRAM pages, palette, and all seven
+PPU-visible scalars are exact at every sample.  The remaining non-stack
+working-RAM differences are 36 bytes in 18 samples.  The per-address audit
+attributes them to the NMI-phase VRAM buffer at $0300, player primary-box
+Y coordinates $04ad/$04af, area pointer $0750, and live audio stream
+state at $07b0/$07b7/$07c1/$07c5/$07ca.  They are open state-owner and
+sampling-phase work, not grounds for changing collision or rendering behavior
+without a ROM routine match.  This extends visible-equivalence evidence through
+a jumping route but does not cover injury, death/restart, Warp, flagpole,
+two-player, or all audio transitions.
