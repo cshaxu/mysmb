@@ -452,6 +452,7 @@ void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
     slot = 8U;
     while (slot > 5U && game->ram[MYSMB_MISC_STATE + slot] != 0U) --slot;
     if (slot == 5U) slot = 8U;
+    game->ram[0x06b7U] = slot;
     game->ram[MYSMB_MISC_PAGE + slot] = page;
     game->ram[MYSMB_MISC_X + slot] = x;
     game->ram[MYSMB_MISC_Y + slot] = y;
@@ -468,15 +469,9 @@ static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
     mysmb_u8 state;
-    mysmb_u16 misc_world;
-    mysmb_u16 screen_world;
 
     oam_offset = game->ram[MYSMB_MISC_SPRITE_OFFSET + slot];
-    misc_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_MISC_PAGE + slot] << 8U) |
-                              game->ram[MYSMB_MISC_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    relative_x = (mysmb_u8)(misc_world - screen_world);
+    relative_x = game->ram[0x03b3U];
     state = game->ram[MYSMB_MISC_STATE + slot];
     if (state >= 2U) {
         if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U) game->ram[MYSMB_MISC_Y + slot]--;
@@ -507,8 +502,6 @@ static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_objects_step_misc(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
 
     for (slot = 0U; slot <= 8U; ++slot) {
         if (game->ram[MYSMB_MISC_STATE + slot] == 0U) continue;
@@ -517,18 +510,7 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             continue;
         }
         if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
-            old_value = game->ram[MYSMB_MISC_Y_DUMMY + slot];
-            game->ram[MYSMB_MISC_Y_DUMMY + slot] =
-                (mysmb_u8)(old_value + game->ram[MYSMB_MISC_Y_FORCE + slot]);
-            carry = game->ram[MYSMB_MISC_Y_DUMMY + slot] < old_value ? 1U : 0U;
-            old_value = game->ram[MYSMB_MISC_Y + slot];
-            game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(old_value +
-                game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
-            if (game->ram[MYSMB_MISC_Y + slot] < old_value &&
-                game->ram[MYSMB_MISC_Y_SPEED + slot] >= 0x80U) --game->ram[MYSMB_MISC_Y_HIGH + slot];
-            old_value = game->ram[MYSMB_MISC_Y_FORCE + slot];
-            game->ram[MYSMB_MISC_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x50U);
-            if (game->ram[MYSMB_MISC_Y_FORCE + slot] < old_value) game->ram[MYSMB_MISC_Y_SPEED + slot]++;
+            mysmb_objects_move_misc_downward(game, slot, 0x50U, 6U);
             if (game->ram[MYSMB_MISC_Y_SPEED + slot] == 5U) game->ram[MYSMB_MISC_STATE + slot]++;
         }
         else {
@@ -537,6 +519,12 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
         }
         if (game->ram[MYSMB_MISC_STATE + slot] != 0U) {
+            mysmb_oam_relative_misc_position(game, slot);
+            mysmb_oam_get_misc_offscreen_bits(game, slot);
+            mysmb_objects_set_bounding_box(game,
+                (mysmb_u16)(0x04d0U + slot * 4U),
+                game->ram[MYSMB_MISC_BOUND_BOX + slot],
+                game->ram[0x03b3U], game->ram[0x03beU]);
             mysmb_objects_draw_jump_coin(game, slot);
         }
     }
@@ -3690,7 +3678,3 @@ static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
         (mysmb_u8)(top_row + 0x20U));
     mysmb_objects_collect_coin(game, block_low, top_row);
 }
-
-
-
-

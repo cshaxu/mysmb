@@ -9,7 +9,14 @@ enum {
     MYSMB_BLOCK_Y = 0x00d7U,
     MYSMB_BLOCK_RELATIVE_X = 0x03b1U,
     MYSMB_BLOCK_RELATIVE_Y = 0x03bcU,
-    MYSMB_BLOCK_OFFSCREEN_BITS = 0x03d4U
+    MYSMB_BLOCK_OFFSCREEN_BITS = 0x03d4U,
+    MYSMB_MISC_PAGE = 0x007aU,
+    MYSMB_MISC_X = 0x0093U,
+    MYSMB_MISC_Y_HIGH = 0x00c2U,
+    MYSMB_MISC_Y = 0x00dbU,
+    MYSMB_MISC_RELATIVE_X = 0x03b3U,
+    MYSMB_MISC_RELATIVE_Y = 0x03beU,
+    MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U
 };
 
 /* ROM GetXOffscreenBits.  Returns the source table byte before
@@ -113,3 +120,26 @@ void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
 
 
 
+
+/* ROM RelativeMiscPosition -> GetProperObjOffset -> GetObjRelativePosition. */
+void mysmb_oam_relative_misc_position(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_MISC_RELATIVE_Y] = game->ram[MYSMB_MISC_Y + slot];
+    game->ram[MYSMB_MISC_RELATIVE_X] =
+        (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] -
+                   game->ram[MYSMB_SCREEN_EDGE_X]);
+}
+
+/* ROM GetMiscOffscreenBits -> GetOffScreenBitsSet. */
+void mysmb_oam_get_misc_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 x_bits;
+    mysmb_u8 y_bits;
+
+    x_bits = mysmb_oam_get_x_offscreen_bits(game,
+        game->ram[MYSMB_MISC_PAGE + slot], game->ram[MYSMB_MISC_X + slot]);
+    y_bits = mysmb_oam_get_y_offscreen_bits(game->ram[MYSMB_MISC_Y_HIGH + slot],
+        game->ram[MYSMB_MISC_Y + slot]);
+    game->ram[MYSMB_MISC_OFFSCREEN_BITS] =
+        (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
+}

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active — S1/P1.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active — S2/P2.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -19,7 +19,7 @@ Consumes final gameplay state and produces source-ordered OAM plus game-owned sp
 ## Admission S plan
 
 1. **S1 complete (P1-P2)** - Establish the OAM source tree without changing behavior: move each existing sprite writer under `src/game/oam/`, map every OAM byte writer, offset table and graphics helper to ROM labels, and forbid local relative/offscreen reconstruction in gameplay owners.
-2. **S2 active (P1)** - Translate relative position, offscreen-bit and bounding-box writers.
+2. **S2 active (P1-P2)** - Translate relative position, offscreen-bit and bounding-box writers.
 3. **S3 planned** - Translate player and enemy/misc graphics dispatch, priority, animation and OAM order.
 4. **S4 planned** - Compare OAM and sprite-0/status split across title, movement, objects, enemies and endgame.
 
@@ -43,3 +43,6 @@ objects.h now exports only object-state, collision, movement, and mode-facing op
 ## S2 P1: block relative-position and offscreen primitives
 
 BlockObjectsCore now calls the translated RelativeBlockPosition and GetBlockOffscreenBits after gravity/movement and before the original DrawBlock/DrawBrickChunks call sites. lock_position.c implements the source GetObjRelativePosition, GetXOffscreenBits, GetYOffscreenBits, and GetOffScreenBitsSet semantics for block inputs. The initial implementation incorrectly indexed the Block_Rel_* outputs by ObjectOffset; the 600-frame actual demo trace exposed $03b2, and the source proves those outputs are fixed $03b1/ and $03bc/, while Block_OffscreenBits is fixed $03d4. The writer now consumes those fixed RAM cells. Against the source-reachable title-to-demo continuation, the first work-RAM difference remains sample 68 but moves from $03b1 to $03b3, and work-RAM differences fall from 8,520 to 6,196 bytes; CIRAM, palette, audio commands and all seven PPU scalars remain zero-difference for all 600 samples. OAM remains at its prior first visible difference (sample 124), proving the block refactor did not create a visual substitution. The remaining $03b3//-/ path is RelativeMiscPosition/jump-coin state and is the next S2 node. x64 and x86 each pass 78/78 CTest cases; OpenNT relinks the DOS MZ with the existing OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 B388CA396574B9DFFD6FEE6778E7365B03474ECF3AFBF454D39BC9A3B5ECB532, mysmb32.exe SHA-256 4F30DDEA4925DF429FB0DEEC2DD216DD4146A9F3EB54324F75035D996FE9B9F6, mysmb64.exe SHA-256 849A7170C94E3D839DCBD3F783C27C899E14A86168064D327AC96ECFA329C9BA.
+## S2 P2: misc/jump-coin relative state and bounding box
+
+`object_position.c` is now the shared ROM-position owner for both block and misc objects, so its filename no longer claims block-only ownership. The packet translates `RelativeMiscPosition`, `GetMiscOffscreenBits`, and the `GetMiscBoundBox` call site in `MiscObjectsCore`; the jump-coin drawing path consumes `Misc_Rel_XPos` rather than rebuilding a world-coordinate subtraction. `FindEmptyMiscSlot` also records `JumpCoinMiscOffset` at `$06b7`, as the source does. The inline jump-coin gravity approximation has been replaced with the existing exact `ImposeGravity` translation before the position/offscreen/bounding-box sequence. In the source-reachable title-to-demo continuation, this removes the prior first discrepancy at sample 68 / `$03d6` (misc offscreen bits); the first remaining work-RAM discrepancy is sample 72 / `$03d4` (block offscreen bits), and work-RAM differences fall from 3,432 to 3,417 bytes. CIRAM, palette, audio commands and all seven PPU scalars remain zero-difference across all 600 samples; OAM remains at its previous first visible mismatch (sample 124), so this packet introduces no substituted sprite result. x64 and x86 each pass 78/78 CTest cases. The OpenNT target recompiles and links the DOS MZ through the same sources; its established `OLDNAMES.LIB` warning remains. Refreshed artifacts: mysmb16.exe SHA-256 D629D36FD872890F9D00929CA128D16FF6989420BCF49CB0A29C9B135C70705D, mysmb32.exe SHA-256 2E7CE13A13A4D4186D3E9F409B16BC1318C488B28B5FE20D6365B3CDCBABDF13, mysmb64.exe SHA-256 405BC0271DEB294AD29DFFBB34423591802DBC9A82752C9A105AF524E07831A9.
