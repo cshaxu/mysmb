@@ -18,8 +18,8 @@ Called before enemy slots; consumes player/collision/enemy state and writes fire
 
 ## Admission S plan
 
-1. **S1 active (P1)** - Establish the source owner boundary: extract fireball/bubble dispatch and its named labels from `objects.c` into `src/game/fireball/` without behavior changes; map every RAM field, helper and cross-slice call.
-2. **S2 planned** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
+1. **S1 complete (P1-P2)** - Establish the source owner boundary: extract fireball/bubble dispatch and its named labels from `objects.c` into `src/game/fireball/` without behavior changes; map every RAM field, helper and cross-slice call.
+2. **S2 active (P1)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
 3. **S3 planned** - Translate background/enemy collision and clear/effect branches.
 4. **S4 planned** - Compare open travel, wall bounce, enemy hit and underwater bubble routes.
 
@@ -32,3 +32,6 @@ Platform code may not read or write these game decisions. Delete replaced code i
 ## S1/P1: fireball core source boundary
 
 `FireballObjCore` and its current setup/movement/collision call sequence now live in `src/game/fireball/fireball_core.c`, declared by `src/game/fireball/fireball.h`. `GameEngine` reaches it through this owner API instead of `objects.h`. The existing enemy-hit effect is named as an explicit cross-module call and the existing bubble step is named as an explicit temporary T20 dependency; no algorithm or state transition changes in this structural P. All three targets and the reference trace are required before the P is closed.
+## S2/P1: fireball spawn sound queue
+
+The `ProcFireball_Bubble` creation branch now writes the original `Sfx_Fireball` literal `$20` to `Square1SoundQueue/$00ff` after every source eligibility check and immediately before allocating the fireball state. The regression proves a newly valid fireball queues `$20`, while a held B button does not queue it again. This is shared C core behavior across all targets.

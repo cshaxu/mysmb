@@ -81,6 +81,8 @@ void mysmb_fireball_step(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_STATE] != 3U) {
         slot = (mysmb_u8)(game->ram[MYSMB_FIREBALL_COUNTER] & 1U);
         if (game->ram[MYSMB_FIREBALL_STATE + slot] == 0U) {
+            /* ROM ProcFireball_Bubble: Sfx_Fireball is queued before state. */
+            game->ram[MYSMB_SQUARE1_SOUND] = 0x20U;
             game->ram[MYSMB_FIREBALL_STATE + slot] = 2U;
             game->ram[MYSMB_FIREBALL_COUNTER]++;
             game->ram[MYSMB_PLAYER_ANIMATION] =

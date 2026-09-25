@@ -4,6 +4,22 @@ int main(void)
 {
     struct mysmb_game game;
 
+    /* ProcFireball_Bubble queues Sfx_Fireball only on a new valid fireball. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0756U] = 2U;
+    game.ram[0x000aU] = 0x40U;
+    game.ram[0x000dU] = 0U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x40U;
+    game.ram[0x0086U] = 0x40U;
+    game.ram[0x06f1U] = 0x20U;
+    game.ram[0x071dU] = 0xffU;
+    mysmb_fireball_step(&game);
+    if (game.ram[0x00ffU] != 0x20U || game.ram[0x0024U] != 1U) return 14;
+    game.ram[0x00ffU] = 0U;
+    game.ram[0x000dU] = 0x40U;
+    mysmb_fireball_step(&game);
+    if (game.ram[0x00ffU] != 0U) return 15;
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 4UL;
     game.ram[0x0009U] = (mysmb_u8)(4UL);
