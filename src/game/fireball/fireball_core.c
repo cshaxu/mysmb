@@ -1,7 +1,6 @@
 #include "game/fireball/fireball.h"
 
 #include "game/oam/oam.h"
-#include "game/objects.h"
 #include "game/world/world.h"
 
 enum {
@@ -99,7 +98,7 @@ void mysmb_fireball_step(struct mysmb_game *game)
             /* ROM FireballEnemyCollision immediately enters HandleEnemyFBallCol
              * after it changes Fireball_State.  The effect owner remains a
              * named cross-slice call until its state/score chain migrates. */
-            mysmb_objects_apply_fireball_enemy_hit(game, enemy_slot);
+            mysmb_world_handle_fireball_enemy_hit(game, enemy_slot);
         }
         /* FireballObjCore draws only after background and enemy collision. */
         mysmb_oam_draw_fireball(game, slot);

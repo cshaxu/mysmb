@@ -389,5 +389,56 @@ int main(void)
     game.ram[0x04bfU] = 0x60U;
     if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) == 0U ||
         hit_slot != 3U) return 24;
+    /* HandleEnemyFBallCol calls RelativeEnemyPosition before the normal
+     * ChkToStunEnemies branch, then allocates the Floatey score from that
+     * fixed scratch.  The direction is the source bytewise X difference. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071cU] = 0x20U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x000fU + 2U] = 1U;
+    game.ram[0x0016U + 2U] = 6U;
+    game.ram[0x001eU + 2U] = 0U;
+    game.ram[0x0087U + 2U] = 0x60U;
+    game.ram[0x00cfU + 2U] = 0x70U;
+    mysmb_world_handle_fireball_enemy_hit(&game, 2U);
+    if (game.ram[0x001eU + 2U] != 0x22U ||
+        game.ram[0x00cfU + 2U] != 0x6eU ||
+        game.ram[0x00a0U + 2U] != 0xfdU ||
+        game.ram[0x0046U + 2U] != 1U ||
+        game.ram[0x0058U + 2U] != 0x10U ||
+        game.ram[0x0110U + 2U] != 2U ||
+        game.ram[0x0117U + 2U] != 0x40U ||
+        game.ram[0x011eU + 2U] != 0x6eU ||
+        game.ram[0x012cU + 2U] != 0x30U || game.ram[0x00ffU] != 2U) return 26;
+
+    /* PlayerEnemyDiff returns the page subtraction after the low-X borrow.
+     * Here low X is negative, but the next page makes the enemy rightward. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071cU] = 0U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 6U;
+    game.ram[0x006eU] = 2U;
+    game.ram[0x0087U] = 0x10U;
+    game.ram[0x00cfU] = 0x70U;
+    mysmb_world_handle_fireball_enemy_hit(&game, 0U);
+    if (game.ram[0x0046U] != 1U || game.ram[0x0058U] != 0x10U) return 28;
+    /* The PiranhaPlant equality CMP leaves carry set, so its source ADC is
+     * Y+$19 before ChkToStunEnemies; do not round it down to $18. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071cU] = 0x20U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 13U;
+    game.ram[0x001eU] = 0U;
+    game.ram[0x0087U] = 0x30U;
+    game.ram[0x00cfU] = 0x50U;
+    mysmb_world_handle_fireball_enemy_hit(&game, 0U);
+    if (game.ram[0x00cfU] != 0x67U || game.ram[0x001eU] != 0x22U ||
+        game.ram[0x0016U] != 13U || game.ram[0x0117U] != 0x10U) return 27;
     return 0;
 }

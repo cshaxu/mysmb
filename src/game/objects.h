@@ -23,8 +23,6 @@ void mysmb_objects_finish_power_up(struct mysmb_game *game);
 /* RunNormalEnemies for one ObjectOffset; GameEngine uses this with stream parsing. */
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
-/* ROM HandleEnemyFBallCol: fireball core calls this source-owned enemy effect. */
-void mysmb_objects_apply_fireball_enemy_hit(struct mysmb_game *game, mysmb_u8 enemy_slot);
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot);
@@ -100,6 +98,9 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $ddcd HandlePowerUpCollision state effect. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game);
 /* ROM FloateyNumbersRoutine, excluding OAM output. */
+/* ROM SetupFloateyNumber when RelativeEnemyPosition has prepared $03ae. */
+void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
+                                             mysmb_u8 slot, mysmb_u8 control);
 void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_floatey_numbers(struct mysmb_game *game);
 /* ROM $ba55-$bad2 Setup_Vine/VineObjectHandler, excluding drawing. */

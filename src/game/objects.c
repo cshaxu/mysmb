@@ -2052,6 +2052,18 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                 game->ram[MYSMB_SCREEN_LEFT_X]);
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = (mysmb_u8)(enemy_world - screen_world);
 }
+/* ROM SetupFloateyNumber after RelativeEnemyPosition.  This public cross-
+ * owner seam consumes the source fixed scratch pair instead of rebuilding a
+ * world coordinate; ordinary legacy callers retain their existing helper. */
+void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
+                                                mysmb_u8 slot,
+                                                mysmb_u8 control)
+{
+    game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
+    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = 0x30U;
+    game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[0x03aeU];
+}
 /* ROM $b3c2 MoveFlyingCheepCheep, excluding OAM priority output. */
 void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
 {
@@ -2519,54 +2531,6 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
             mysmb_objects_force_injury(game);
         }
     }
-}
-
-/* ROM $d747 HandleEnemyFBallCol through EnemySmackScore, excluding audio.
- * FireballEnemyCollision has already changed the fireball to its explosion
- * state before this handler, including for fireproof Buzzy Beetles. */
-void mysmb_objects_apply_fireball_enemy_hit(struct mysmb_game *game,
-                                                           mysmb_u8 enemy_slot)
-{
-    static const mysmb_u8 bowser_identities[8] = { 6U, 0U, 2U, 18U, 17U, 7U, 5U, 45U };
-    mysmb_u8 id;
-    mysmb_u8 score;
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-
-    id = game->ram[MYSMB_ENEMY_ID + enemy_slot];
-    if (id == 45U) {
-        if (game->ram[0x0483U] == 0U) return;
-        game->ram[0x0483U]--;
-        if (game->ram[0x0483U] != 0U) return;
-        game->ram[MYSMB_ENEMY_X_SPEED + enemy_slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfeU;
-        game->ram[MYSMB_ENEMY_Y_DUMMY + enemy_slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-        game->ram[MYSMB_ENEMY_ID + enemy_slot] =
-            bowser_identities[game->ram[0x075fU] & 7U];
-        game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
-            game->ram[0x075fU] < 3U ? 0x23U : 0x20U;
-        return;
-    }
-    if (id == 2U || id == 9U || id == 12U || id >= 0x15U) return;
-    if (id == 13U) game->ram[MYSMB_ENEMY_Y + enemy_slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] + 0x18U);
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + enemy_slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + enemy_slot]);
-    game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfdU;
-    game->ram[MYSMB_ENEMY_Y_DUMMY + enemy_slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] =
-        enemy_world > player_world ? 1U : 2U;
-    game->ram[MYSMB_ENEMY_X_SPEED + enemy_slot] =
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + enemy_slot] == 1U ? 0x10U : 0xf0U;
-    game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
-        (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
-    score = id == 5U ? 6U : (id == 0U ? 1U : 2U);
-    mysmb_objects_setup_floatey_number(game, enemy_slot, score);
 }
 
 /* ROM $d7a9 ShellOrBlockDefeat, excluding audio. */

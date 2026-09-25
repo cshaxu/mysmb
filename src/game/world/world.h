@@ -29,6 +29,9 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8
 mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
                                                mysmb_u8 slot,
                                                mysmb_u8 *enemy_slot);
+/* ROM HandleEnemyFBallCol -> ChkToStunEnemies -> EnemySmackScore. */
+void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
+                                          mysmb_u8 enemy_slot);
 
 /* ROM CheckForClimbMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);

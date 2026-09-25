@@ -96,7 +96,8 @@ int main(void)
     mysmb_fireball_step(&game);
     if (game.ram[0x0483U] != 0U || game.ram[0x0016U] != 6U ||
         game.ram[0x001eU] != 0x23U || game.ram[0x00a0U] != 0xfeU ||
-        game.ram[0x0024U] != 0x80U) return 4;
+        game.ram[0x0024U] != 0x80U || game.ram[0x00feU] != 8U ||
+        game.ram[0x0110U] != 9U || game.ram[0x00ffU] != 2U) return 4;
 
     /* BridgeCollapse erases its axe/chain/bridge metatiles in the ordinary
      * NMI buffer, two name-table rows at a time, every four calls. */
