@@ -19,4 +19,9 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
 
+/* ROM CheckForClimbMTiles and LandPlyr. */
+mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);
+mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
+                                           mysmb_u8 metatile, mysmb_u8 contact);
+
 #endif

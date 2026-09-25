@@ -1,6 +1,7 @@
 #include "game/player.h"
 #include "game/objects.h"
 #include "game/area.h"
+#include "game/world/world.h"
 
 enum {
     MYSMB_PLAYER_X_SPEED = 0x0057U,
@@ -1137,14 +1138,6 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
     return 1U;
 }
 
-/* Translation of CheckForClimbMTiles. */
-static mysmb_u8 mysmb_player_is_climbable(mysmb_u8 metatile)
-{
-    static const mysmb_u8 upper[4] = { 0x24U, 0x6dU, 0x8aU, 0xc6U };
-
-    return metatile >= upper[(mysmb_u8)(metatile >> 6U)] ? 1U : 0U;
-}
-
 /* Translation of HandleClimbing through PutPlayerOnVine.  The caller passes
  * the collision helper's $04 and $06 values as terrain metadata. */
 static mysmb_u8 mysmb_player_handle_climbing(struct mysmb_game *game,
@@ -1205,25 +1198,6 @@ put_player_on_vine:
         game->ram[MYSMB_PLAYER_PAGE] =
             (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] + page_adder[facing_index]);
     }
-    return 1U;
-}
-
-/* Translation of CheckForSolidMTiles and LandPlyr's state update. */
-mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
-                                    mysmb_u8 metatile, mysmb_u8 contact)
-{
-    /* ROM LandPlyr follows ChkInvisibleMTiles directly: an ordinary nonzero
-     * foot metatile, including the $54 ground terrain, is a landing surface.
-     * SolidMTileUpperExt belongs to head/side collision only. */
-    if (metatile < 0x10U || mysmb_player_is_climbable(metatile) != 0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ||
-        contact >= 5U) {
-        return 0U;
-    }
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0xf0U);
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-    game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
-    game->ram[MYSMB_PLAYER_STATE] = 0U;
     return 1U;
 }
 
@@ -1346,7 +1320,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         return 1U;
     }
     if (have_left != 0U && left.metatile != 0U) {
-        if (mysmb_player_is_climbable(left.metatile) != 0U) return 0U;
+        if (mysmb_world_is_climbable(left.metatile) != 0U) return 0U;
         /* ROM HandleAxeMetatile runs from the foot sample before ordinary
          * landing.  Its cleared metatile is enough for the C core; the
          * bridge presentation is owned by VictoryMode task zero. */
@@ -1358,7 +1332,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
                                    left.block_row_offset)] = 0U;
             return 1U;
         }
-        if (mysmb_player_land_on_solid(game, left.metatile,
+        if (mysmb_world_land_player_on_solid(game, left.metatile,
                                        left.contact_low_nibble) == 0U) {
             return 0U;
         }
@@ -1372,8 +1346,8 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         return 1U;
     }
     if (have_right != 0U && right.metatile != 0U) {
-        if (mysmb_player_is_climbable(right.metatile) != 0U) return 0U;
-        return mysmb_player_land_on_solid(game, right.metatile,
+        if (mysmb_world_is_climbable(right.metatile) != 0U) return 0U;
+        return mysmb_world_land_player_on_solid(game, right.metatile,
                                           right.contact_low_nibble);
     }
     return 0U;
@@ -1636,7 +1610,7 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
         terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
         return 1U;
     }
-    if (mysmb_player_is_climbable(terrain->metatile) != 0U) {
+    if (mysmb_world_is_climbable(terrain->metatile) != 0U) {
         (void)mysmb_player_handle_climbing(game, terrain);
         return 1U;
     }
@@ -1691,7 +1665,7 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
             mysmb_player_query_block(game, x_adder[top], y_adder[top], 1U,
                                      &terrain) != 0U && terrain.metatile != 0U &&
             terrain.metatile != 0x1cU && terrain.metatile != 0x6bU &&
-            mysmb_player_is_climbable(terrain.metatile) == 0U) {
+            mysmb_world_is_climbable(terrain.metatile) == 0U) {
             return mysmb_player_handle_side_metatile(game, &terrain, (mysmb_u8)(2U - index));
         }
         if (game->ram[MYSMB_PLAYER_Y] < 8U ||

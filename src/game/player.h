@@ -69,8 +69,6 @@ mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
                                   mysmb_u8 x_adder, mysmb_u8 y_adder,
                                   mysmb_u8 horizontal_contact,
                                   struct mysmb_player_terrain *terrain);
-mysmb_u8 mysmb_player_land_on_solid(struct mysmb_game *game,
-                                    mysmb_u8 metatile, mysmb_u8 contact);
 mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
                                            mysmb_u8 left, mysmb_u8 right);
 void mysmb_player_step_vertical_pipe(struct mysmb_game *game);

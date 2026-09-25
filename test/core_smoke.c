@@ -291,7 +291,7 @@ int main(void)
     game.ram[0x00ceU] = 0x3fU;
     game.ram[0x0433U] = 0x80U;
     game.ram[0x001dU] = 2U;
-    if (mysmb_player_land_on_solid(&game, 0x61U, 4U) == 0U ||
+    if (mysmb_world_land_player_on_solid(&game, 0x61U, 4U) == 0U ||
         game.ram[0x00ceU] != 0x30U || game.ram[0x009fU] != 0U ||
         game.ram[0x0433U] != 0U || game.ram[0x001dU] != 0U) {
         return 1;
