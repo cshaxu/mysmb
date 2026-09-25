@@ -148,14 +148,15 @@ enum {
 
 static void mysmb_player_update_bounding_box(struct mysmb_game *game);
 
-/* ROM BlockBufferAdderData and the player portion of the coordinate tables.
- * The three bases are normal big, swimming big, and small/crouching. */
+/* ROM PlayerBGCollision selects BlockBufferAdderData with PlayerSize before
+ * entering BlockBufferColli_Head.  Small Mario has PlayerSize=$01, hence the
+ * source selects table offset $07.  Using $0e here moves the head probe one
+ * full metatile down, so a real upward jump passes through bricks (including
+ * invisible $5f blocks) even though an isolated collision fixture can pass. */
 static mysmb_u8 mysmb_player_collision_base(const struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U ||
-        game->ram[MYSMB_PLAYER_SIZE] != 0U) {
-        return 0x0eU;
-    }
+    if (game->ram[MYSMB_PLAYER_SIZE] != 0U) return 7U;
+    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) return 0U;
     return game->ram[MYSMB_SWIMMING] != 0U ? 7U : 0U;
 }
 
