@@ -862,6 +862,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_u8 a_b;
     mysmb_u8 a_held;
     mysmb_u8 jump_height;
+    mysmb_u8 player_state;
 
     /* PlayerDeath jumps into PlayerCtrlRoutine after its engine-$0b guard,
      * which deliberately skips the controller partition.  Death motion uses
@@ -905,19 +906,22 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     if (game->ram[MYSMB_PLAYER_STATE] == 0U || game->ram[MYSMB_SWIMMING] != 0U) {
         mysmb_player_update_animation_speed(game, buttons);
     }
-    if (game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
-        game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
-    }
-    if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U ||
-        game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
+    player_state = game->ram[MYSMB_PLAYER_STATE];
+    if (player_state == 0U) {
+        if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+            game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
+        }
+        /* OnGroundStateSub always calls ImposeFriction and
+         * MovePlayerHorizontally. */
         mysmb_player_impose_friction(game);
-        game->ram[MYSMB_PLAYER_X_SCROLL] = mysmb_player_move_horizontally(game);
     }
-    else {
-        game->ram[MYSMB_PLAYER_X_SCROLL] = 0U;
+    else if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
+        /* JumpSwimSub/FallingSub reach LRAir: friction is conditional on
+         * held left/right, while horizontal movement itself is unconditional. */
+        mysmb_player_impose_friction(game);
     }
-    if (game->ram[MYSMB_PLAYER_STATE] != 0U) {
+    game->ram[MYSMB_PLAYER_X_SCROLL] = mysmb_player_move_horizontally(game);
+    if (player_state != 0U) {
         if (game->ram[MYSMB_PLAYER_STATE] == 2U ||
             game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
             /* FallingSub and JumpSwimSub's non-rising branch both select

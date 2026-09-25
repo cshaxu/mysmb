@@ -162,6 +162,31 @@ int main(void)
     if (game.ram[0x0709U] != 0x28U || game.ram[0x0433U] != 0x28U) {
         return 1;
     }
+    /* JumpSwimSub/FallingSub enter LRAir without ImposeFriction when
+     * neither left nor right is held.  The fractional X force must survive
+     * the frame even though MovePlayerHorizontally still runs. */
+    game.ram[0x000eU] = 8U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0704U] = 0U;
+    game.ram[0x0716U] = 1U;
+    game.ram[0x0057U] = 0x18U;
+    game.ram[0x0705U] = 0xa0U;
+    game.ram[0x0700U] = 0x18U;
+    game.ram[0x0701U] = 0U;
+    game.ram[0x0702U] = 0x98U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x0045U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x009fU] = 0U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x0433U] = 0U;
+    game.ram[0x0416U] = 0U;
+    game.ram[0x0755U] = 0x40U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0705U] != 0xa0U || game.ram[0x0057U] != 0x18U) {
+        return 1;
+    }
+    game.ram[0x0716U] = 0U;
     game.ram[0x001dU] = 3U;
     game.ram[0x0490U] = MYSMB_BUTTON_UP;
     game.ram[0x000cU] = 0U;

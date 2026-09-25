@@ -3415,6 +3415,7 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     mysmb_u8 power_up_type;
     mysmb_u8 is_bumpable;
     mysmb_u16 address;
+    mysmb_u16 x_sum;
 
     is_bumpable = mysmb_objects_is_bumpable(metatile);
     slot = (mysmb_u8)(game->ram[MYSMB_BLOCK_SLOT_CONTROL] & 1U);
@@ -3444,11 +3445,12 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
      * blocks, and item blocks alike. */
     mysmb_objects_queue_blank_metatile(game, block_low, block_row);
     old_x = game->ram[MYSMB_PLAYER_X];
-    game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)((old_x + 8U) & 0xf0U);
-    game->ram[MYSMB_BLOCK_PAGE + slot] = game->ram[MYSMB_PLAYER_PAGE];
-    if (game->ram[MYSMB_BLOCK_X + slot] < old_x) {
-        game->ram[MYSMB_BLOCK_PAGE + slot]++;
-    }
+    x_sum = (mysmb_u16)old_x + 8U;
+    game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)(x_sum & 0xf0U);
+    /* InitBlock_XY_Pos preserves ADC's carry from Player_X + 8; the
+     * following AND #$f0 does not replace it. */
+    game->ram[MYSMB_BLOCK_PAGE + slot] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + (x_sum >> 8U));
     game->ram[MYSMB_BLOCK_PAGE_COPY + slot] = game->ram[MYSMB_BLOCK_PAGE + slot];
     game->ram[MYSMB_BLOCK_Y_HIGH + slot] = game->ram[MYSMB_PLAYER_Y_HIGH];
     y_adder = (game->ram[MYSMB_PLAYER_CROUCHING] != 0U ||

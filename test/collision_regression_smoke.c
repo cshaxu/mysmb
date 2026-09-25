@@ -91,6 +91,20 @@ int main(void)
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 13;
 
+    /* InitBlock_XY_Pos uses the carry from Player_X + 8 before masking to
+     * a metatile boundary.  At X=$02 the resulting X is zero but the page
+     * must remain unchanged. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 2U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    if (mysmb_objects_start_head_bump(&game, 0xc4U, 0U, 0x20U) == 0U ||
+        game.ram[0x008fU] != 0U || game.ram[0x0076U] != 1U ||
+        game.ram[0x03eaU] != 1U) return 16;
+
     /* Hidden coin blocks are $5f in the collision buffer.  They are absent
      * from scenery only; PlayerHeadCollision must still enter BumpBlock. */
     mysmb_game_initialize_memory(&game, 0xfeU);
