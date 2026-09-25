@@ -285,7 +285,8 @@ int main(void)
     if (game.ram[0x0039U] != 1U || game.ram[0x001bU] != 0x2eU ||
         game.ram[0x0023U] < 6U) return 16;
     game.ram[0x0009U] = 0U;
-    mysmb_objects_check_power_up_collision(&game);
+    /* GameEngine reaches the collision through RunPUSubs' finish tail. */
+    mysmb_objects_finish_power_up(&game);
     if (game.ram[0x001bU] != 0U || game.ram[0x0014U] != 0U ||
         game.ram[0x0756U] != 2U || game.ram[0x000eU] != 12U) return 17;
     /* OffscreenBoundsCheck clears the full enemy-object record when an
