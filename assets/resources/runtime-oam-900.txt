@@ -1,0 +1,1 @@
+frame=900 instructions=8698560 pc=822a\n00: y=024 tile=ff attr=23 x=088\n01: y=110 tile=fc attr=00 x=062\n02: y=110 tile=fc attr=00 x=070\n03: y=118 tile=fc attr=00 x=062\n04: y=118 tile=fc attr=00 x=070\n05: y=126 tile=32 attr=00 x=062\n06: y=126 tile=41 attr=00 x=070\n07: y=134 tile=42 attr=00 x=062\n08: y=134 tile=43 attr=00 x=070\n
