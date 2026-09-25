@@ -1,5 +1,4 @@
-#include "game/oam/oam.h"
-#include "game/game.h"
+#include "game/fireball/fireball.h"
 
 /* ROM $98?? ProcAirBubbles, BubbleCheck, RelativeBubblePosition,
  * GetBubbleOffscreenBits and DrawBubble.  This stays separate from the
@@ -97,7 +96,7 @@ static mysmb_u8 mysmb_bubble_y_offscreen(const struct mysmb_game *game,
     }
 }
 
-void mysmb_objects_step_bubbles(struct mysmb_game *game)
+void mysmb_fireball_step_bubbles(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     mysmb_u8 random_bit;

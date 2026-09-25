@@ -25,8 +25,6 @@ void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 /* ROM HandleEnemyFBallCol: fireball core calls this source-owned enemy effect. */
 void mysmb_objects_apply_fireball_enemy_hit(struct mysmb_game *game, mysmb_u8 enemy_slot);
-/* ROM BubbleCheck and bubble OAM route; extraction to T20 follows fireball core. */
-void mysmb_objects_step_bubbles(struct mysmb_game *game);
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot);

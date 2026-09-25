@@ -5,5 +5,6 @@
 
 /* ROM ProcFireball_Bubble and FireballObjCore. */
 void mysmb_fireball_step(struct mysmb_game *game);
+void mysmb_fireball_step_bubbles(struct mysmb_game *game);
 
 #endif

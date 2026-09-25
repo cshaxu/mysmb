@@ -215,5 +215,5 @@ void mysmb_fireball_step(struct mysmb_game *game)
         /* FireballObjCore draws only after background and enemy collision. */
         mysmb_oam_draw_fireball(game, slot);
     }
-    mysmb_objects_step_bubbles(game);
+    mysmb_fireball_step_bubbles(game);
 }
