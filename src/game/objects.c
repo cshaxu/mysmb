@@ -108,6 +108,7 @@ enum {
     MYSMB_STOMP_CHAIN_COUNTER = 0x0484U,
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
+    MYSMB_ENEMY_FRAME_TIMER = 0x078eU,
     MYSMB_SHELL_CHAIN_COUNTER = 0x0125U,
     MYSMB_AREA_TYPE = 0x074eU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
@@ -154,6 +155,7 @@ enum {
 
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
+static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
                                                   mysmb_u8 slot);
 static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
@@ -1178,7 +1180,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) == 4U) {
             if (id == 6U) {
                 if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0x0eU) {
-                    game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+                    mysmb_objects_erase_enemy(game, slot);
                 }
             }
             else if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
@@ -1220,6 +1222,20 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         mysmb_objects_move_enemy_horizontally(game, slot);
 }
 
+/* ROM EraseEnemyObject.  Defeated Goombas reach this through the interval
+ * timer path as well as through the ordinary offscreen-bounds owner; every
+ * per-slot sprite and floating-score control byte is cleared together. */
+static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+    game->ram[MYSMB_ENEMY_ID + slot] = 0U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
+    game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0U;
+    game->ram[MYSMB_SHELL_CHAIN_COUNTER + slot] = 0U;
+    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
+    game->ram[MYSMB_ENEMY_FRAME_TIMER + slot] = 0U;
+}
 /* ROM EnemyToBGCollisionDet runs before PlayerEnemyCollision and
  * EnemyMovementSubs.  Keep the terrain probes at their source frame boundary:
  * current coordinates are tested; only afterwards can fixed-point movement

@@ -89,9 +89,9 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
                 game->ram[0x0201U + row_offset] = left;
                 game->ram[0x0205U + row_offset] = right;
                 game->ram[0x0202U + row_offset] =
-                    (mysmb_u8)(attributes | 0x80U);
+                    (mysmb_u8)(attributes | (row == 0U ? 0U : 0x80U));
                 game->ram[0x0206U + row_offset] =
-                    (mysmb_u8)(attributes | 0xc0U);
+                    (mysmb_u8)(attributes | 0x40U | (row == 0U ? 0U : 0x80U));
             }
             else if ((direction & 2U) != 0U) {
                 game->ram[0x0201U + row_offset] = right;
