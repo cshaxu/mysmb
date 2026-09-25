@@ -517,85 +517,16 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
     }
 }
 
-/* ROM GetXOffscreenBits / GetYOffscreenBits / GetOffScreenBitsSet.  Return
- * the source's final low-X/high-Y nybble layout rather than a host world-range
- * approximation. */
-static mysmb_u8 mysmb_objects_fireball_x_offscreen_bits(const struct mysmb_game *game,
-                                                         mysmb_u8 slot)
-{
-    static const mysmb_u8 data[16] = {
-        0x7fU,0x3fU,0x1fU,0x0fU,0x07U,0x03U,0x01U,0x00U,
-        0x80U,0xc0U,0xe0U,0xf0U,0xf8U,0xfcU,0xfeU,0xffU
-    };
-    static const mysmb_u8 defaults[3] = { 7U,15U,7U };
-    mysmb_u8 edge;
-    mysmb_u8 difference;
-    mysmb_u8 page_difference;
-    mysmb_u8 borrow;
-    mysmb_u8 index;
-    mysmb_u8 bits;
-
-    for (edge = 1U;; --edge) {
-        difference = (mysmb_u8)(game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_X + edge)] -
-                                 game->ram[MYSMB_FIREBALL_X + slot]);
-        borrow = game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_X + edge)] <
-                 game->ram[MYSMB_FIREBALL_X + slot] ? 1U : 0U;
-        page_difference = (mysmb_u8)(game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_PAGE + edge)] -
-            game->ram[MYSMB_FIREBALL_PAGE + slot] - borrow);
-        index = defaults[edge];
-        if ((page_difference & 0x80U) == 0U) {
-            index = defaults[(mysmb_u8)(edge + 1U)];
-            if (page_difference == 0U && difference < 0x38U) {
-                index = (mysmb_u8)(difference >> 3U);
-                if (edge == 0U) index = (mysmb_u8)(index + 8U);
-            }
-        }
-        bits = data[index];
-        if (bits != 0U || edge == 0U) return (mysmb_u8)(bits >> 4U);
-    }
-}
-
-static mysmb_u8 mysmb_objects_fireball_y_offscreen_bits(const struct mysmb_game *game,
-                                                         mysmb_u8 slot)
-{
-    static const mysmb_u8 data[9] = { 0U,8U,12U,14U,15U,7U,3U,1U,0U };
-    static const mysmb_u8 defaults[3] = { 4U,0U,4U };
-    static const mysmb_u8 high_units[2] = { 0xffU,0U };
-    mysmb_u8 edge;
-    mysmb_u8 difference;
-    mysmb_u8 page_difference;
-    mysmb_u8 borrow;
-    mysmb_u8 index;
-    mysmb_u8 bits;
-
-    for (edge = 1U;; --edge) {
-        difference = (mysmb_u8)(high_units[edge] - game->ram[MYSMB_FIREBALL_Y + slot]);
-        borrow = high_units[edge] < game->ram[MYSMB_FIREBALL_Y + slot] ? 1U : 0U;
-        page_difference = (mysmb_u8)(1U - game->ram[MYSMB_FIREBALL_Y_HIGH + slot] - borrow);
-        index = defaults[edge];
-        if ((page_difference & 0x80U) == 0U) {
-            index = defaults[(mysmb_u8)(edge + 1U)];
-            if (page_difference == 0U && difference < 0x20U) {
-                index = (mysmb_u8)(difference >> 3U);
-                if (edge == 0U) index = (mysmb_u8)(index + 4U);
-            }
-        }
-        bits = data[index];
-        if (bits != 0U || edge == 0U) return bits;
-    }
-}
-
-static void mysmb_objects_get_fireball_offscreen_bits(struct mysmb_game *game,
-                                                       mysmb_u8 slot)
-{
-    game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] = (mysmb_u8)(
-        mysmb_objects_fireball_x_offscreen_bits(game, slot) |
-        (mysmb_u8)(mysmb_objects_fireball_y_offscreen_bits(game, slot) << 4U));
-}
+/* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use
+ * controls $04a0/$04a1 and output boxes $04c8/$04cc; the relative source
+ * inputs remain the fixed Fireball_Rel_* pair. */
 static void mysmb_objects_get_fireball_bounding_box(struct mysmb_game *game,
                                                      mysmb_u8 slot)
 {
-    mysmb_world_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
+    mysmb_world_set_bounding_box(
+        game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U),
+        game->ram[MYSMB_FIREBALL_BOUND_BOX + slot],
+        game->ram[MYSMB_FIREBALL_REL_X], game->ram[MYSMB_FIREBALL_REL_Y]);
 }
 /* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
  * Both objects use the original fixed slots. */
@@ -700,7 +631,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         /* FireballObjCore order: relative coordinates, offscreen bits and
          * bounding box precede FireballBGCollision. */
         mysmb_oam_relative_fireball_position(game, slot);
-        mysmb_objects_get_fireball_offscreen_bits(game, slot);
+        mysmb_oam_get_fireball_offscreen_bits(game, slot);
         mysmb_objects_get_fireball_bounding_box(game, slot);
         if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
             x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
@@ -723,7 +654,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             }
             else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
         }
-        if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] & 0xccU) != 0U) {
+        if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] & 0xccU) != 0U) {
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
             continue;
         }

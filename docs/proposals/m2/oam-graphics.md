@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active — S3/P4.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active — S3/P5.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -20,7 +20,7 @@ Consumes final gameplay state and produces source-ordered OAM plus game-owned sp
 
 1. **S1 complete (P1-P2)** - Establish the OAM source tree without changing behavior: move each existing sprite writer under `src/game/oam/`, map every OAM byte writer, offset table and graphics helper to ROM labels, and forbid local relative/offscreen reconstruction in gameplay owners.
 2. **S2 complete (P1-P2)** - Translate relative position, offscreen-bit and bounding-box writers.
-3. **S3 active (P1-P4)** - Translate player, fireball and enemy/misc graphics dispatch, priority, animation and OAM order.
+3. **S3 active (P1-P5)** - Translate player, fireball and enemy/misc graphics dispatch, priority, animation and OAM order.
 4. **S4 planned** - Compare OAM and sprite-0/status split across title, movement, objects, enemies and endgame.
 
 ## Acceptance
@@ -63,3 +63,6 @@ ROM labels `PlayerGfxHandler` through `ExPlyrAt`, together with `GetPlayerOffscr
 ## S3 P4: fireball relative-coordinate OAM ownership
 
 `RelativeFireballPosition` now owns the precise ROM mapping `$74/$8d/$d5 -> $03af/$03ba` in `src/game/oam/object_position.c`.  `DrawFireball` and `DrawExplosion_Fireball` consume only those fixed relative scratch bytes and the original sprite-offset arrays (`FBall_SprDataOffset` `$06f1`, `Alt_SprDataOffset` `$06ec`); neither reconstructs a host/world coordinate.  `FireballObjCore` retains its source order and explicitly invokes the relative-position primitive on its explosion branch before the OAM writer, matching the ROM `FireballExplosion` leaf.  The existing focused fireball smoke now exercises the corrected mapping, including normal and explosion OAM bytes.  The broader `FireballObjCore`, offscreen-bit, bounding-box and collision paths remain assigned to their respective source nodes and require a controlled reference route before they can be marked conformant.  Validation passed: x64 78/78 CTest, x86 78/78 CTest, the OpenNT MZ link (with its existing `OLDNAMES.LIB` warning), and the focused smoke. The existing 600-sample title-to-demo trace stays at two work-RAM bytes in one sample; CIRAM, palette, audio commands and all seven PPU scalar fields are equal. OAM remains an open baseline: 3,622 bytes differ, first at sample 124 / offset `$d8`. Refreshed artifacts: `mysmb16.exe` CB9DC61CE72254F04D53E34F1E0BA4EB3F9972A42ADC5960FA6E4CD9AD310727, `mysmb32.exe` 6DC1D145E6AD15D358316C65DF8CA3CCA9C61D15AE46F13C6277F89EA3817A0A, `mysmb64.exe` 99182911214D66F9E6428F94B2555045669C44ADFF5FDF25FBD175FDCF616944.
+## S3 P5: fireball fixed offscreen and bounding-box scratch
+
+`GetFireballOffscreenBits` now lives with the source `GetXOffscreenBits`/`GetYOffscreenBits` primitives in `src/game/oam/object_position.c`.  As the ROM requires, each slot selects its own SprObject page/X/Y input through `GetProperObjOffset`, but the result is written to the single `FBall_OffscreenBits` cell `$03d2`; `FireballObjCore` performs the original `$cc` mask from that fixed cell.  `GetFireballBoundBox` now consumes the same fixed `Fireball_Rel_XPos/$03af` and `Fireball_Rel_YPos/$03ba` pair that the preceding relative-position call writes, while preserving slot-specific controls `$04a0/$04a1` and output boxes `$04c8/$04cc`.  The focused regression covers slot one explicitly, including the fixed relative/offscreen cells and its separate OAM/bounding-box destinations. The existing 600-frame reference route remains unchanged at its prior two-byte/one-sample work-RAM difference and its open OAM baseline; this route does not spawn a fireball. Validation passed: x64 78/78 CTest, x86 78/78 CTest, focused slot-one smoke, and the OpenNT MZ link (with its existing `OLDNAMES.LIB` warning). Refreshed artifacts: `mysmb16.exe` 1ABB2595D65B5B9FD2082B3686E41D9F69692386B88B787336962F02A1499E4E, `mysmb32.exe` D71A9D6FFE91DF4678DB4996013B0937174069772DF9911A49ECE69572FE5478, `mysmb64.exe` 1B720FF277046CD037A9FAF1307963877A6FF103559F2262FB20F010A193179E.

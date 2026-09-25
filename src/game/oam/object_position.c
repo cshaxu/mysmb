@@ -17,10 +17,13 @@ enum {
     MYSMB_MISC_RELATIVE_X = 0x03b3U,
     MYSMB_MISC_RELATIVE_Y = 0x03beU,
     MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U,
+    MYSMB_FIREBALL_PAGE = 0x0074U,
     MYSMB_FIREBALL_X = 0x008dU,
+    MYSMB_FIREBALL_Y_HIGH = 0x00bcU,
     MYSMB_FIREBALL_Y = 0x00d5U,
     MYSMB_FIREBALL_RELATIVE_X = 0x03afU,
-    MYSMB_FIREBALL_RELATIVE_Y = 0x03baU
+    MYSMB_FIREBALL_RELATIVE_Y = 0x03baU,
+    MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U
 };
 
 /* ROM RelativePlayerPosition.  This belongs with the other
@@ -115,6 +118,23 @@ static mysmb_u8 mysmb_oam_get_y_offscreen_bits(mysmb_u8 high, mysmb_u8 y)
     }
 }
 
+/* ROM GetFireballOffscreenBits -> GetProperObjOffset ->
+ * GetOffScreenBitsSet.  The source slot selects the SprObject inputs, but
+ * FBall_OffscreenBits is one fixed scratch byte. */
+void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 x_bits;
+    mysmb_u8 y_bits;
+
+    x_bits = mysmb_oam_get_x_offscreen_bits(game,
+        game->ram[MYSMB_FIREBALL_PAGE + slot],
+        game->ram[MYSMB_FIREBALL_X + slot]);
+    y_bits = mysmb_oam_get_y_offscreen_bits(
+        game->ram[MYSMB_FIREBALL_Y_HIGH + slot],
+        game->ram[MYSMB_FIREBALL_Y + slot]);
+    game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] =
+        (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
+}
 /* ROM RelativeBlockPosition -> VariableObjOfsRelPos -> GetObjRelativePosition.
  * ObjectOffset chooses the source-coordinate slots.  The two relative output
  * cells are fixed Block_Rel_XPos/Block_Rel_XPos+1 (and Y counterparts), not

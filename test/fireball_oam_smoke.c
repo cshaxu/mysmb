@@ -31,6 +31,21 @@ int main(void)
     if (game.ram[0x04c9U] != 0x40U) return 9;
     if (game.ram[0x04caU] != 0x48U) return 10;
     if (game.ram[0x04cbU] != 0x48U) return 11;
+    /* Slot one still writes the fixed FBall_Rel_* and FBall_OffscreenBits
+     * cells; only its SprObject input and bounding-box/OAM destinations vary. */
+    game.ram[0x0025U] = 1U;
+    game.ram[0x0075U] = 0U;
+    game.ram[0x008eU] = 0x50U;
+    game.ram[0x00d6U] = 0x50U;
+    game.ram[0x00bdU] = 1U;
+    game.ram[0x04a1U] = 7U;
+    game.ram[0x06f2U] = 0x30U;
+    game.ram[0x03d2U] = 0xffU;
+    mysmb_objects_step_fireballs(&game);
+    if (game.ram[0x0025U] != 1U || game.ram[0x03afU] != 0x50U ||
+        game.ram[0x03baU] != 0x50U || game.ram[0x03d2U] != 0U) return 12;
+    if (game.ram[0x04ccU] != 0x50U || game.ram[0x04cdU] != 0x50U ||
+        game.ram[0x04ceU] != 0x58U || game.ram[0x04cfU] != 0x58U) return 13;
 
     game.frame_number = 0x10UL;
     game.ram[0x0009U] = (mysmb_u8)(0x10UL);

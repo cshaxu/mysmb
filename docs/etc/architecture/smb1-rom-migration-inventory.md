@@ -1662,7 +1662,7 @@ The labels and branches behind every line remain open until individually bound b
 | 12772 | `ClearBounceFlag` | unassigned | open | none |
 | 12777 | `InitFireballExplode` | unassigned | open | none |
 | 12791 | `BoundBoxCtrlData` | unassigned | open | none |
-| 12805 | `GetFireballBoundBox` | unassigned | open | none |
+| 12805 | `GetFireballBoundBox` | M2 T16 S3/P5 | ported; focused smoke; route trace pending | src/game/objects.c |
 | 12813 | `GetMiscBoundBox` | unassigned | open | none |
 | 12819 | `FBallB` | unassigned | open | none |
 | 12822 | `GetEnemyBoundBox` | unassigned | open | none |
@@ -1894,7 +1894,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14825 | `VariableObjOfsRelPos` | unassigned | open | none |
 | 14834 | `GetObjRelativePosition` | unassigned | open | none |
 | 14846 | `GetPlayerOffscreenBits` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14851 | `GetFireballOffscreenBits` | unassigned | open | none |
+| 14851 | `GetFireballOffscreenBits` | M2 T16 S3/P5 | ported; focused smoke; route trace pending | src/game/oam/object_position.c |
 | 14857 | `GetBubbleOffscreenBits` | unassigned | open | none |
 | 14863 | `GetMiscOffscreenBits` | unassigned | open | none |
 | 14869 | `ObjOffsetData` | unassigned | open | none |
