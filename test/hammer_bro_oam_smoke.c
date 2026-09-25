@@ -10,7 +10,7 @@ static int same(const struct mysmb_game *g,const mysmb_u8 *v)
 
 static void setup(struct mysmb_game *g)
 {
-    mysmb_game_initialize_memory(g,0U);g->ram[0x071dU]=0xf0U;g->ram[0x000fU]=1U;
+    mysmb_game_initialize(g);g->ram[0x071dU]=0xf0U;g->ram[0x000fU]=1U;
     g->ram[0x0016U]=5U;g->ram[0x0046U]=1U;g->ram[0x0087U]=0x40U;
     g->ram[0x00cfU]=0x50U;g->ram[0x06e5U]=0x20U;
 }
