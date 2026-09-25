@@ -1,4 +1,4 @@
-﻿# M2 candidate: Enemy stream and actors
+# M2 candidate: Enemy stream and actors
 
 ## Status
 
@@ -41,3 +41,6 @@ The full existing `ProcessEnemyData` adapter, including requested-slot reservati
 ## S2 P2: current ObjectOffset stream entry
 
 The GameEngine actor path now calls `mysmb_enemy_stream_process_current(game, source, ObjectOffset)` for every empty slot, including the sixth slot. `ProcessEnemyData` records its page/X into that same slot before the right-boundary decision, and it no longer reserves sibling slots or searches the first free normal slot. The sixth slot rejects ordinary records before page-control/activation, matching `CheckEndofBuffer`; `process_next` remains only as an isolated-test convenience and is absent from the game-frame call path. The 600-sample ROM continuation reduces total CPU-RAM differences from 29,786 to 24,226 while retaining the known first work-RAM difference at sample 172 / `$03ae` (1,352 bytes); CIRAM, palette, audio state, and PPU scalars remain zero-difference. x64 and x86 each pass 78/78 tests. The OpenNT large-model build links the same source to an MZ executable. Refreshed artifacts: mysmb16.exe SHA-256 C0A56CC53CD4A4EAC3BE0A0F490D2B868958D3B9E3C320CCE93D9389F651D6C0, mysmb32.exe SHA-256 F8955A2DC2BF9069CC13BFC6832D7364AB10AF985CE8993D4F0EA7951401185D, mysmb64.exe SHA-256 F4D913C01608982FA55EAA44F027170454CB8EAF2582EF10595154B60FD3C677.
+## S2 P3: actor downward-movement ownership boundary
+
+`MoveD_EnemyVertically` and its `SetHiMax`/`ImposeGravitySprObj` arithmetic no longer live in the catch-all `objects.c`.  They have one shared actor owner in `src/game/enemy/movement.c`, declared by `src/game/enemy/movement.h`; all existing Lakitu, Spiny, Hammer Bro, Cheep-Cheep, Bowser, and bridge-collapse callers retain their original amount/max-speed literals and call sequence.  This is extraction only: no RAM value, branch, sprite write, or platform path changes.  The DOS build now gives source-relative object names to OpenNT, so `game/enemy/movement.c` and `game/world/movement.c` cannot overwrite one another as `movement.obj`; the resulting 16-bit link consumes the same source module as x86 and x64.  Full x64/x86 CTest is 79/79 for each target and the OpenNT MZ relinks with its established `OLDNAMES.LIB` warning.  This establishes the actor-side extraction pattern; later S2/S3/S4 packets move only complete ROM-labelled function groups, never new logic into `objects.c`.

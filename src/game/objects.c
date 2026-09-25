@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/enemy/movement.h"
 #include "game/oam/oam.h"
 #include "game/world/world.h"
 #include "game/area.h"
@@ -165,9 +166,6 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
 static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot,
                                                             mysmb_u8 preserve_collision_boxes);
-void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
-                                              mysmb_u8 slot, mysmb_u8 amount,
-                                              mysmb_u8 maximum_speed);
 static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
                                                  mysmb_u8 slot);
@@ -1343,42 +1341,6 @@ void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
     }
 }
 
-/* ROM $bb28 SetHiMax/ImposeGravitySprObj, expressed against the translated
- * per-slot arrays.  MoveD_EnemyVertically supplies $3d for defeated enemies
- * and $20 for Spinies while they are eggs. */
-void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
-                                              mysmb_u8 slot, mysmb_u8 amount,
-                                              mysmb_u8 maximum_speed)
-{
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
-
-    old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-    carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    old_value = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-    }
-    if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) {
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-    }
-    old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + amount);
-    carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= maximum_speed &&
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = maximum_speed;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    }
-}
-
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
 static mysmb_u8 mysmb_objects_player_lakitu_difference(struct mysmb_game *game,
@@ -1442,7 +1404,7 @@ void mysmb_objects_step_lakitus(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 17U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
             continue;
         }
         if (game->ram[MYSMB_ENEMY_STATE + slot] != 0U) {
@@ -1566,7 +1528,7 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
                 game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
                 continue;
             }
-            mysmb_objects_move_enemy_downward(game, slot, 0x20U, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x20U, 3U);
         }
     }
 }
@@ -1583,7 +1545,7 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 5U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
             continue;
         }
         mysmb_objects_step_hammer_terrain(game, slot);
@@ -1628,7 +1590,7 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U ||
             (((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) != 0U) &&
              ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) < 3U))) {
-            mysmb_objects_move_enemy_downward(game, slot, 0x3dU, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
         }
         mysmb_objects_move_enemy_horizontally(game, slot);
     }
@@ -2073,12 +2035,12 @@ void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 20U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_objects_move_enemy_downward(game, slot, 0x1cU, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
             continue;
         }
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
         mysmb_objects_move_enemy_horizontally(game, slot);
-        mysmb_objects_move_enemy_downward(game, slot, 0x0dU, 5U);
+        mysmb_enemy_move_downward(game, slot, 0x0dU, 5U);
     }
 }
 
@@ -2390,7 +2352,7 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
             game->ram[MYSMB_ENEMY_ID + slot] != 45U) continue;
         game->ram[0x0368U] = slot;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_objects_move_enemy_downward(game, slot, 0x1cU, 3U);
+            mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
             continue;
         }
         game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
@@ -2429,7 +2391,7 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
                         difference >= game->ram[0x06dcU]) game->ram[0x0365U] = direction;
                 }
                 if (game->ram[0x078aU + slot] == 0U) {
-                    mysmb_objects_move_enemy_downward(game, slot, 0x0fU, 2U);
+                    mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
                     if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
                         game->ram[0x078aU + slot] = random_range[game->ram[0x07a8U + slot] & 3U];
                     }

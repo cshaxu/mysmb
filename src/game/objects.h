@@ -60,8 +60,6 @@ void mysmb_objects_step_platforms(struct mysmb_game *game);
 /* ROM InitBowser/RunBowser, excluding OAM output. */
 void mysmb_objects_step_bowsers(struct mysmb_game *game);
 /* ROM $d8aa-$d91d BridgeCollapse, including its VRAM_Buffer1 metatile writes. */
-void mysmb_objects_move_enemy_downward(struct mysmb_game *game, mysmb_u8 slot,
-                                      mysmb_u8 maximum, mysmb_u8 gravity);
 mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game);
 /* ROM InitBowserFlame/ProcBowserFlame, excluding OAM output. */
 void mysmb_objects_step_bowser_flame_frenzy(struct mysmb_game *game);
