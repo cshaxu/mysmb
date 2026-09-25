@@ -253,7 +253,7 @@ int main(void)
     if (game.ram[0x000eU] != 6U || game.ram[0x0723U] != 1U) {
         return 1;
     }
-    for (index = 0U; index < 0x0100U; ++index) {
+    for (index = 0U; index < 0x01a0U; ++index) {
         game.ram[(mysmb_u16)(0x0500U + index)] = 0U;
     }
     game.ram[0x0754U] = 1U;
@@ -275,8 +275,10 @@ int main(void)
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
         return 1;
     }
+    /* Both foot probes must be non-solid: the ROM consumes the left
+     * metatile before it considers the right probe. */
     game.ram[0x0603U] = 1U;
-    game.ram[0x0602U] = 0x61U;
+    game.ram[0x0602U] = 1U;
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
         return 1;
     }
@@ -309,7 +311,7 @@ int main(void)
     if (game.ram[0x0752U] != 2U || game.ram[0x0772U] != 0U) {
         return 1;
     }
-    for (index = 0U; index < 0x0100U; ++index) {
+    for (index = 0U; index < 0x01a0U; ++index) {
         game.ram[(mysmb_u16)(0x0500U + index)] = 0U;
     }
     game.ram[0x0754U] = 1U;

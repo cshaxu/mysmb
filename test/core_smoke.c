@@ -520,6 +520,12 @@ int main(void)
     game.ram[0x0747U] = 0U;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 0U;
+    /* This direct normal-enemy fixture needs the same screen-edge/page
+     * state that OffscreenBoundsCheck reads in the ROM path. */
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0xffU;
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x30U;
     game.ram[0x00cfU] = 0x50U;
