@@ -17,7 +17,7 @@ enum {
     MYSMB_BLOCK_Y_SPEED = 0x00a8U,
     MYSMB_BLOCK_Y_HIGH = 0x00beU,
     MYSMB_BLOCK_Y = 0x00d7U,
-    MYSMB_BLOCK_Y_DUMMY = 0x0420U,
+    MYSMB_BLOCK_Y_DUMMY = 0x041fU,
     MYSMB_BLOCK_Y_FORCE = 0x043cU,
     MYSMB_BLOCK_X_SPEED = 0x0060U,
     MYSMB_BLOCK_X_FORCE = 0x0409U,
@@ -58,8 +58,8 @@ enum {
     MYSMB_MISC_Y_HIGH = 0x00c2U,
     MYSMB_MISC_Y = 0x00dbU,
     MYSMB_MISC_X_SPEED = 0x0064U,
-    MYSMB_MISC_X_FORCE = 0x0407U,
-    MYSMB_MISC_Y_DUMMY = 0x0424U,
+    MYSMB_MISC_X_FORCE = 0x040dU,
+    MYSMB_MISC_Y_DUMMY = 0x0423U,
     MYSMB_MISC_Y_FORCE = 0x0440U,
     MYSMB_MISC_BOUND_BOX = 0x04a2U,
     MYSMB_MISC_COLLISION_FLAG = 0x06beU,
@@ -531,7 +531,7 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             old_value = game->ram[MYSMB_MISC_Y_FORCE + slot];
             game->ram[MYSMB_MISC_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x50U);
             if (game->ram[MYSMB_MISC_Y_FORCE + slot] < old_value) game->ram[MYSMB_MISC_Y_SPEED + slot]++;
-            if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= 6U && game->ram[MYSMB_MISC_Y_SPEED + slot] < 0x80U) game->ram[MYSMB_MISC_STATE + slot]++;
+            if (game->ram[MYSMB_MISC_Y_SPEED + slot] == 5U) game->ram[MYSMB_MISC_STATE + slot]++;
         }
         else {
             game->ram[MYSMB_MISC_STATE + slot]++;
@@ -3462,11 +3462,14 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
         mysmb_objects_start_brick_chunks(game, slot);
     }
     else if (mysmb_objects_is_coin_block(metatile) != 0U) {
-        /* The common DestroyBlockMetatile submission above precedes
-         * GiveOneCoin's status output, exactly as in the ROM. */
+        /* CoinBlock reaches SBC #$10 with the carry left by BlockCode.
+         * Entries $c0/$5f/$58 branch from CMP #$09 with carry clear and
+         * therefore subtract $11; $5d first executes SBC #$05 and retains
+         * carry, so it subtracts $10. */
         mysmb_objects_start_jump_coin(game, game->ram[MYSMB_BLOCK_PAGE + slot],
             (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot] | 5U),
-            (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] - 0x10U));
+            (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] -
+                        (metatile == 0x5dU ? 0x10U : 0x11U)));
         mysmb_objects_give_one_coin(game);
     }
     else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
@@ -3656,7 +3659,8 @@ void mysmb_objects_apply_block_replacements(struct mysmb_game *game)
 
 static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile)
 {
-    return metatile == 0xc0U || metatile == 0x5fU ? 1U : 0U;
+    return metatile == 0xc0U || metatile == 0x5fU ||
+        metatile == 0x58U || metatile == 0x5dU ? 1U : 0U;
 }
 
 /* ROM CheckTopOfBlock.  The source removes a coin directly over a bumped
