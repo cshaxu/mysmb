@@ -13,7 +13,7 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/game/frame_root.c src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/hammer_bro_gfx.c src/game/bowser_gfx.c src/game/bowser_flame_gfx.c src/game/endgame_objects.c src/game/flagpole_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/ppu_frame.c src/game/frame_snapshot.c)
+set(MYSMB_GAME_SOURCES src/game/boot.c src/game/frame_root.c src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/hammer_bro_gfx.c src/game/bowser_gfx.c src/game/bowser_flame_gfx.c src/game/endgame_objects.c src/game/flagpole_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/ppu_frame.c src/game/frame_snapshot.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -162,6 +162,18 @@ target_include_directories(mysmb_dos16_core PRIVATE src)
 if(MYSMB_OPENNT_CL16)
     set(MYSMB_OPENNT_OUTPUT_DIR "${CMAKE_BINARY_DIR}/opennt16")
     add_custom_target(mysmb_opennt16_core
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/boot.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/frame_root.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"

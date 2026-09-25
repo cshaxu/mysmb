@@ -465,92 +465,6 @@ static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 button
     } while (offset != 0xffU);
 }
 
-void mysmb_game_initialize(struct mysmb_game *game)
-{
-    mysmb_u16 index;
-
-    /* The CPU RAM cold state used by the owner-local ROM starts clear.  The
-     * following InitializeMemory routine intentionally leaves $0160-$01ff
-     * untouched, so do not manufacture $ff there before it runs. */
-    for (index = 0U; index < 0x0800U; ++index) {
-        game->ram[index] = 0U;
-    }
-    for (index = 0U; index < 0x0020U; ++index) {
-        game->palette[index] = 0U;
-    }
-    /* Cold boot supplies the initial display state.  Later
-     * InitializeNameTables calls must retain the NMI-owned $2001 mirror. */
-    game->ppu_mask = 0U;
-    mysmb_game_initialize_memory(game, 0xfeU);
-    mysmb_game_move_all_sprites_offscreen(game);
-    /* Cold boot has already made the initial $4014 transfer before the
-     * first recorder-visible NMI. */
-    mysmb_game_submit_oam(game);
-    game->oam_dma_primed = 0U;
-    mysmb_game_initialize_name_tables(game);
-    game->visible_ppu_control_0 = 0x90U;
-    game->visible_ppu_mask = 0U;
-    game->visible_ppu_name_table = 0U;
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
-    game->area_prg = 0;
-    game->area_prg_size = 0U;
-    game->title_data = 0;
-    game->title_data_size = 0U;
-    game->title_icon_data = 0;
-    game->title_icon_data_size = 0U;
-    game->area_command_count = 0U;
-    /* InitializeGame has completed before GameMenuRoutine becomes task 3. */
-    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
-    game->ram[MYSMB_RAM_WARM_BOOT_VALIDATION] = 0xa5U;
-    game->ram[MYSMB_RAM_PSEUDORANDOM] = 0xa5U;
-    /* The first recorder-visible title NMI follows InitializeGame before the
-     * native tick decrements the title countdown. */
-    game->ram[MYSMB_RAM_DEMO_TIMER] = 0x19U;
-    game->frame_number = 0UL;
-}
-
-/* Translation of ROM $90cc-$90e6 (InitializeMemory). */
-void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y)
-{
-    mysmb_u8 page;
-    mysmb_u8 offset;
-
-    page = 0x07U;
-    offset = initial_y;
-    do {
-        do {
-            if (page != 0x01U || offset < 0x60U) {
-                game->ram[(mysmb_u16)((mysmb_u16)page * 0x0100U + offset)] = 0U;
-            }
-            offset = (mysmb_u8)(offset - 1U);
-        } while (offset != 0xffU);
-        page = (mysmb_u8)(page - 1U);
-    } while (page != 0xffU);
-}
-
-/* Translation of ROM $8220-$8230 (MoveAllSpritesOffscreen). */
-void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
-{
-    mysmb_u8 offset;
-
-    offset = 0U;
-    do {
-        game->ram[(mysmb_u16)(MYSMB_RAM_OAM + offset)] = 0xf8U;
-        offset = (mysmb_u8)(offset + 4U);
-    } while (offset != 0U);
-}
-
-/* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */
-void mysmb_game_submit_oam(struct mysmb_game *game)
-{
-    mysmb_u16 offset;
-
-    for (offset = 0U; offset < 0x0100U; ++offset)
-        game->visible_oam[offset] = game->ram[(mysmb_u16)(MYSMB_RAM_OAM + offset)];
-}
-
 /* ROM $81c6-$81f9 SpriteShuffler. */
 void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
 {
@@ -582,42 +496,6 @@ void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
         game->ram[(mysmb_u16)(offset + 1U)] = value;
         game->ram[(mysmb_u16)(offset + 2U)] = (mysmb_u8)(value + 8U);
     }
-}
-
-/* Translation of ROM $8e19-$8e5b (InitializeNameTables). */
-void mysmb_game_initialize_name_tables(struct mysmb_game *game)
-{
-    mysmb_u8 table;
-    mysmb_u16 offset;
-
-    for (table = 0U; table < 2U; ++table) {
-        for (offset = 0U; offset < 0x03c0U; ++offset) {
-            game->name_table[table][offset] = 0x24U;
-        }
-        for (offset = 0x03c0U; offset < 0x0400U; ++offset) {
-            game->name_table[table][offset] = 0U;
-        }
-    }
-    game->ram[0x0300U] = 0U;
-    game->ram[0x0301U] = 0U;
-    game->ram[0x073fU] = 0U;
-    game->ram[0x0740U] = 0U;
-    /* InitializeNameTables sets the PPU pattern-table arrangement then
-     * InitScroll commits zero scroll.  Palette values remain the domain of
-     * ScreenRoutines/ColorRotation and are initialized separately by T10. */
-    game->ppu_control_0 = 0x10U;
-    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = 0x10U;
-    game->ppu_name_table = 0U;
-    game->scroll_x = 0U;
-    game->scroll_y = 0U;
-    /* Unlike the usual mirror changes made by OperModeExecutionTree, the
-     * source routine ends by writing $2005 twice (InitScroll) while this
-     * NMI is still active.  Publish that physical transfer now so the
-     * current output frame agrees with the ROM at InitScreen/GameOver. */
-    game->visible_ppu_control_0 = 0x90U;
-    game->visible_ppu_name_table = 0U;
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
 }
 
 /* ROM $83c9-$8426 PrintVictoryMessages.  Its secondary counter is a frame
