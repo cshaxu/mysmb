@@ -162,6 +162,32 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
     return 1U;
 }
 
+/* ROM EnemyGfxHandler: IDs $09/$0e/$0f/$10 share Paratroopa rows. */
+static mysmb_u8 mysmb_draw_paratroopa(struct mysmb_game *g, mysmb_u8 n)
+{
+    static const mysmb_u8 f1[6]={0x69U,0xa5U,0x6aU,0xa7U,0xa8U,0xa9U};
+    static const mysmb_u8 f2[6]={0x6bU,0xa0U,0x6cU,0xa2U,0xa3U,0xa4U};
+    mysmb_u16 w,z; mysmb_u8 id,at,dir,bits,o,r,q,l,rr; const mysmb_u8 *t;
+    if(g->ram[MYSMB_NORMAL_FLAG+n]==0U) return 0U;
+    id=g->ram[MYSMB_NORMAL_ID+n];
+    if(id!=9U && id!=14U && id!=15U && id!=16U) return 0U;
+    w=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_PAGE+n]<<8U)|g->ram[MYSMB_NORMAL_X+n]);
+    z=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_SCREEN_PAGE]<<8U)|g->ram[MYSMB_NORMAL_SCREEN_X]);
+    g->ram[MYSMB_NORMAL_ATTRIBUTES+n]=0U;
+    g->ram[MYSMB_NORMAL_REL_X+n]=(mysmb_u8)(w-z); g->ram[MYSMB_NORMAL_REL_Y+n]=g->ram[MYSMB_NORMAL_Y+n];
+    bits=mysmb_objects_get_enemy_x_offscreen_bits(g,n); g->ram[MYSMB_NORMAL_OFFSCREEN+n]=bits;
+    at=id==15U?2U:1U; dir=g->ram[MYSMB_NORMAL_DIRECTION+n];
+    t=((g->ram[MYSMB_NORMAL_STATE+n]&0xa0U)==0U && g->ram[MYSMB_NORMAL_TIMER_CONTROL]==0U &&
+       (g->ram[MYSMB_NORMAL_FRAME_COUNTER]&8U)==0U)?f2:f1;
+    o=g->ram[MYSMB_NORMAL_SPRITE+n];
+    for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];
+      if((dir&2U)!=0U){g->ram[0x0201U+q]=rr;g->ram[0x0205U+q]=l;g->ram[0x0202U+q]=(mysmb_u8)(at|0x40U);g->ram[0x0206U+q]=(mysmb_u8)(at|0x40U);}
+      else {g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=at;g->ram[0x0206U+q]=at;}
+      g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y+n]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];
+      g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X+n]+8U);}
+    mysmb_normal_apply_offscreen(g,o,bits); return 1U;
+}
+
 /* Shared RunNormalEnemies graphics phase.  A return value of one means this
  * slot belongs to a separately scheduled movement owner. */
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
@@ -170,5 +196,6 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
     if (mysmb_objects_draw_special_enemy(game, slot) != 0U) return 1U;
     (void)mysmb_objects_draw_koopa_buzzy(game, slot);
     if (mysmb_objects_draw_spiny(game, slot) == 2U) return 1U;
+    if (mysmb_draw_paratroopa(game, slot) != 0U) return 1U;
     return 0U;
 }
