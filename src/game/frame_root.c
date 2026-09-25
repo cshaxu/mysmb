@@ -14,11 +14,12 @@ enum {
     MYSMB_ROOT_OAM = 0x0200U
 };
 
-void mysmb_frame_root_begin(struct mysmb_game *game,
+mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
                             const struct mysmb_input *input,
                             mysmb_u8 *mode_before, mysmb_u8 *task_before)
 {
     mysmb_u8 oam_offset;
+    mysmb_u8 paused;
 
     *mode_before = game->ram[MYSMB_ROOT_OPERATING_MODE];
     *task_before = game->ram[MYSMB_ROOT_OPERATING_MODE_TASK];
@@ -30,15 +31,17 @@ void mysmb_frame_root_begin(struct mysmb_game *game,
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
     (void)mysmb_frame_root_latch_joypad1(game, input->buttons);
-    mysmb_game_tick_player_timers(game);
+    paused = mysmb_frame_root_pause_step(game);
+    if (paused == 0U) mysmb_game_tick_player_timers(game);
     mysmb_game_rotate_pseudorandom(game);
-    if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return;
+    if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return paused;
     oam_offset = 4U;
     do {
         game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
         oam_offset = (mysmb_u8)(oam_offset + 4U);
     } while (oam_offset != 0U);
-    mysmb_game_shuffle_sprite_offsets(game);
+    if (paused == 0U) mysmb_game_shuffle_sprite_offsets(game);
+    return paused;
 }
 
 /* ROM $8e5c-$8e90: controller-one latch and Start/Select debounce. */
