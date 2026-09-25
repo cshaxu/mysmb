@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T13 is active.**
+**M2 structural recovery S0 T0.1–T0.4 is active.**
 
 ## Current Technical Baseline
 
