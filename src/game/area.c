@@ -324,8 +324,7 @@ mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
     mysmb_u16 source;
     mysmb_u8 offset;
 
-    if (game->area_prg == 0 || game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U ||
-        game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS) return 0U;
+    if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS) return 0U;
     source = MYSMB_AREA_GAME_TEXT;
     offset = 0U;
     while (source < MYSMB_AREA_GAME_TEXT_OFFSETS &&
@@ -337,7 +336,6 @@ mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
     }
     if (source == MYSMB_AREA_GAME_TEXT_OFFSETS || offset == 0U) return 0U;
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }
 
@@ -549,8 +547,11 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
         }
         offset = 0x2cU;
         game->ram[MYSMB_AREA_VRAM_BUFFER1 + offset] = 0U;
+        /* WriteGameText calls SetVRAMOffset only after it patches a warp
+         * zone.  Other text streams leave $0300 unchanged; NMI consumes
+         * their terminator from $0301. */
+        game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     }
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
     return 1U;
 }
 

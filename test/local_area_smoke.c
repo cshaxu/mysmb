@@ -118,13 +118,19 @@ int main(void)
     if (game.name_table[0][0x007aU] != 3U || game.name_table[0][0x007bU] != 4U ||
         game.name_table[0][0x007cU] != 4U) return 1;
 
+    /* TopStatusBarLine reaches WriteGameText, whose source does not call
+     * SetVRAMOffset: the command begins at $0301 while $0300 remains zero. */
+    game.ram[0x0300U] = 0U;
+    if (mysmb_area_queue_top_status_line(&game) == 0U || game.ram[0x0300U] != 0U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x43U) return 1;
+
     /* WriteGameText selector one copies the ROM lives screen and patches
      * its life/world/level positions before the normal VRAM transfer. */
     game.ram[0x075aU] = 2U;
     game.ram[0x075fU] = 1U;
     game.ram[0x075cU] = 3U;
     if (mysmb_area_queue_game_text(&game, 1U) == 0U || game.ram[0x0301U] != 0x21U ||
-        game.ram[0x0302U] != 0xcdU || game.ram[0x0309U] != 3U ||
+        game.ram[0x0300U] != 0U || game.ram[0x0302U] != 0xcdU || game.ram[0x0309U] != 3U ||
         game.ram[0x0314U] != 2U || game.ram[0x0316U] != 4U) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
         game.name_table[0][0x01d2U] != 3U || game.name_table[0][0x0151U] != 2U ||
@@ -254,7 +260,8 @@ int main(void)
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0759U] != 0U || game.ram[0x073cU] != 5U ||
-        game.ram[0x07a0U] != 7U || game.ram[0x0300U] == 0U) return 1;
+        game.ram[0x07a0U] != 7U || game.ram[0x0300U] != 0U ||
+        game.ram[0x0301U] != 0x22U) return 1;
     mysmb_game_tick(&game, &input, &frame);
     if (game.name_table[0][0x020cU] != mysmb_local_prg[0x0752U +
         mysmb_local_prg[0x07feU + 5U] + 3U]) return 1;
