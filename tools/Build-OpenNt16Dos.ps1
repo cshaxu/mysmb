@@ -12,7 +12,7 @@ $runtimeLibrary = Join-Path $RuntimeDirectory 'LLIBCE.LIB'
 $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
 $sources = @(
-    'game/boot.c', 'game/frame_root.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
+    'game/boot.c', 'game/frame_root.c', 'game/title_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
     'game/objects.c', 'game/bridge.c', 'game/bullet_bill_gfx.c', 'game/hammer_gfx.c', 'game/firebar_gfx.c', 'game/vine_gfx.c', 'game/enemy_bounds.c',
     'game/power_up_gfx.c', 'game/block_gfx.c', 'game/goomba_gfx.c',
     'game/bubble_gfx.c', 'game/piranha_gfx.c', 'game/cheep_gfx.c',
