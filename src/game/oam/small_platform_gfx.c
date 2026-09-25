@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 /* ROM DrawSmallPlatform.  The caller invokes this after the source-equivalent
@@ -131,3 +132,5 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0203U + row_offset] = (mysmb_u8)(x + column * 8U);
     }
 }
+
+

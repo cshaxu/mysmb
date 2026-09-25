@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/area.h"
 
@@ -116,3 +117,4 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
         for (index = 0U; index < 6U; ++index)
             game->ram[0x0200U + oam + index * 4U] = 0xf8U;
 }
+

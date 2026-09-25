@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -65,4 +66,6 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
     }
 }
+
+
 

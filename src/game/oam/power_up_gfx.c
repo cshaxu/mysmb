@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/game.h"
 
 enum {
@@ -74,3 +75,6 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     game->ram[(mysmb_u16)(0x0207U + offset)] = x;
     game->ram[(mysmb_u16)(0x020fU + offset)] = x;
 }
+
+
+

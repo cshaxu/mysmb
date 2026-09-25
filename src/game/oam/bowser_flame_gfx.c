@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -54,3 +55,4 @@ void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
     if ((bits & 4U) != 0U) game->ram[0x0200U + offset + 4U] = 0xf8U;
     if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
 }
+

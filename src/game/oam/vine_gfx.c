@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -48,3 +49,4 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
             (mysmb_u8)(x + ((row & 1U) == 0U ? 0U : 6U));
     }
 }
+

@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -58,3 +59,5 @@ mysmb_u8 mysmb_objects_draw_spiny(struct mysmb_game *g, mysmb_u8 n)
     }
     hide(g,o,bits); return egg!=0U?2U:1U;
 }
+
+

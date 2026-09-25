@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -29,3 +30,5 @@ void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot,
     game->ram[(mysmb_u16)(0x0202U + offset)] = attribute;
     game->ram[(mysmb_u16)(0x0203U + offset)] = x;
 }
+
+

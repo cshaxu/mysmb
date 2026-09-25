@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum { F=0x000fU,I=0x0016U,S=0x001eU,D=0x0046U,P=0x006eU,X=0x0087U,Y=0x00cfU,
@@ -38,3 +39,4 @@ mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *g,mysmb_u8 n)
         sl=g->ram[0x0201U+o];sr=g->ram[0x0205U+o];g->ram[0x0201U+o]=g->ram[0x0211U+o];g->ram[0x0205U+o]=g->ram[0x0215U+o];g->ram[0x0211U+o]=sl;g->ram[0x0215U+o]=sr;}
     hide(g,o,b);return 1U;
 }
+

@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -359,3 +360,5 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     if (world < (mysmb_u16)(screen - 0x48U))
         game->ram[MYSMB_NORMAL_FLAG + slot] = 0U;
 }
+
+

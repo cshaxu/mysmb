@@ -3,6 +3,7 @@
 #include "game/area.h"
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/oam/oam.h"
 
 enum {
     MYSMB_ROOT_FRAME_COUNTER = 0x0009U,
@@ -532,3 +533,5 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
     game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
 }
+
+

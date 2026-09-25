@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -137,3 +138,5 @@ mysmb_u8 mysmb_objects_draw_aquatic_enemy(struct mysmb_game *game, mysmb_u8 slot
     if (mysmb_objects_draw_cheep_cheep(game, slot) != 0U) return 1U;
     return mysmb_objects_draw_bloober(game, slot);
 }
+
+

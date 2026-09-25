@@ -1,9 +1,7 @@
 #include "game/objects.h"
+#include "game/oam/oam.h"
 #include "game/area.h"
 
-void mysmb_objects_draw_power_up(struct mysmb_game *game);
-void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_bubbles(struct mysmb_game *game);
 
 enum {
@@ -3688,3 +3686,6 @@ static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
         (mysmb_u8)(top_row + 0x20U));
     mysmb_objects_collect_coin(game, block_low, top_row);
 }
+
+
+

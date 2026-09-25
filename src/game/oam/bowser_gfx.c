@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum { F=0x000fU,I=0x0016U,S=0x001eU,D=0x0046U,P=0x006eU,X=0x0087U,Y=0x00cfU,
@@ -71,3 +72,4 @@ void mysmb_objects_draw_bowsers(struct mysmb_game *g)
                   g->ram[D+n],state,rb);
     }
 }
+

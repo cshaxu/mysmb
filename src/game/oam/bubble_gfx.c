@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/game.h"
 
 /* ROM $98?? ProcAirBubbles, BubbleCheck, RelativeBubblePosition,
@@ -151,3 +152,5 @@ void mysmb_objects_step_bubbles(struct mysmb_game *game)
         slot--;
     } while (slot != 0xffU);
 }
+
+

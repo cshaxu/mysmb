@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/game.h"
 
 enum {
@@ -127,3 +128,6 @@ void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x020fU + offset] = (mysmb_u8)(original_x - x1 + original_x + 6U);
     mysmb_block_hide_columns(game, offset, slot);
 }
+
+
+

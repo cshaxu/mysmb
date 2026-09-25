@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/game.h"
 
 enum {
@@ -128,3 +129,6 @@ void mysmb_objects_draw_goombas(struct mysmb_game *game)
 {
     mysmb_objects_draw_goombas_mask(game, 0U);
 }
+
+
+

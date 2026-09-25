@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/game.h"
 
 /* ROM $c2d2-$c322: GetMiscOffscreenBits, RelativeMiscPosition and
@@ -127,3 +128,6 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[(mysmb_u16)(0x0204U + oam)] = 0xf8U;
     }
 }
+
+
+

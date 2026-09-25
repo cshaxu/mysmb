@@ -1,3 +1,4 @@
+#include "game/oam/oam.h"
 #include "game/objects.h"
 
 enum {
@@ -59,3 +60,4 @@ void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_X + slot] + 8U);
     }
 }
+
