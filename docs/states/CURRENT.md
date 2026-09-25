@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T11 S1 is active.**
+**M2 T12 is active.**
 
 ## Current Technical Baseline
 
@@ -82,7 +82,8 @@ completion. T9 audits and replaces the insufficient frame/output proof.
 
 | Task | Compact result |
 | --- | --- |
-| T10 | Source-owned name tables, attributes, palettes, status, scroll, and PPU commit state now reach the canonical snapshot through native C; OAM remains deferred to T11. [History](../history/M2-T10-translated-background-output.md). |
+| T10 | Source-owned name tables, attributes, palettes, status, scroll, and PPU commit state now reach the canonical snapshot through native C. [History](../history/M2-T10-translated-background-output.md). |
+| T11 | Source-owned player, object, and special-route OAM reaches the native snapshot; bounded Start/right reference evidence has zero OAM and PPU-visible differences. [History](../history/M2-T11-translated-oam-output.md). |
 
 ## Recent Governance
 
