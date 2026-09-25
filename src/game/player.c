@@ -958,6 +958,10 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
     }
     mysmb_player_update_scroll(game);
+    /* PlayerCtrlRoutine computes this collision box before PlayerBGCollision.
+     * The relative coordinates are refreshed again below for later drawing. */
+    mysmb_player_update_relative_position(game);
+    mysmb_player_update_bounding_box(game);
     /* PlayerBGCollision is disabled for the control/pipe routines below 4,
      * player death (0x0b), and explicit collision suppression. */
     if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
@@ -977,7 +981,6 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         (void)mysmb_player_check_sides(game);
     }
     mysmb_player_update_relative_position(game);
-    mysmb_player_update_bounding_box(game);
     mysmb_player_handle_hole(game);
 }
 

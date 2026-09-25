@@ -272,10 +272,18 @@ static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM ContinueGame.  Area initialization remains the existing mode-task zero
- * owner, so this routine only restores the original preserved game state. */
+/* ROM ContinueGame. */
 static void mysmb_game_continue_game(struct mysmb_game *game)
 {
+    struct mysmb_area_source source;
+
+    /* ROM ContinueGame calls LoadAreaPointer before it resets the game-mode
+     * task, so the restart frame itself carries the next area pointer. */
+    if (game->area_prg != 0) {
+        source.prg = game->area_prg;
+        source.prg_size = game->area_prg_size;
+        (void)mysmb_area_load_pointers(game, &source);
+    }
     game->ram[0x0754U] = 1U;
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
     game->ram[MYSMB_RAM_TIMER_CONTROL] = 0U;

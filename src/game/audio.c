@@ -279,7 +279,7 @@ static void mysmb_audio_step_noise(struct mysmb_game *game)
 
 /* ROM HandleSquare2Music through Squ2NoteHandler, excluding APU register
  * writes. The source stream stores CPU addresses; NROM PRG is $8000-based. */
-static void mysmb_audio_step_square2_music(struct mysmb_game *game)
+static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
 {
     mysmb_u16 address;
     mysmb_u16 length_address;
@@ -288,20 +288,20 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
 
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] != 0U ||
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U ||
-        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return;
+        game->area_prg == 0 || game->ram[0x00f6U] < 0x80U) return 0U;
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER]--;
-    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return;
+    if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) return 0U;
     address = (mysmb_u16)(((mysmb_u16)(game->ram[0x00f6U] - 0x80U) << 8U) |
                           game->ram[0x00f5U]);
     address = (mysmb_u16)(address + game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++);
-    if (address >= game->area_prg_size) return;
+    if (address >= game->area_prg_size) return 0U;
     data = game->area_prg[address];
     if (data == 0U) {
         area = (mysmb_u8)(game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x5fU);
         if (area == 0U) {
             game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
             game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-            return;
+            return 1U;
         }
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
@@ -316,13 +316,12 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
             (void)mysmb_audio_load_header(game,
                 mysmb_audio_find_header_selector(area, 8U));
         }
-        mysmb_audio_step_square2_music(game);
-        return;
+        return mysmb_audio_step_square2_music(game);
     }
     if ((data & 0x80U) != 0U) {
         length_address = (mysmb_u16)(MYSMB_ROM_MUSIC_LENGTH_TABLE +
             (data & 7U) + game->ram[MYSMB_RAM_MUSIC_LENGTH_OFFSET]);
-        if (length_address >= game->area_prg_size) return;
+        if (length_address >= game->area_prg_size) return 0U;
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] = game->area_prg[length_address];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
         data = game->area_prg[address + 1U];
@@ -335,7 +334,7 @@ static void mysmb_audio_step_square2_music(struct mysmb_game *game)
     }
     game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] =
         game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH];
-    return;
+    return 0U;
 }
 
 /* ROM HandleTriangleMusic through TriNoteHandler, excluding the APU writes. */
@@ -477,7 +476,13 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         /* ROM Silence's Square 2 stream ends immediately.  EndOfMusicData
          * therefore clears the event buffer in this SoundEngine pass, before
          * InitializeArea has a chance to queue the replacement area header. */
-        if (event == 0x80U) game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+        if (event == 0x80U) {
+            /* The initialized counter is consumed by Silence's zero datum
+             * before EndOfMusicData returns from SoundEngine. */
+            game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] = 0U;
+            game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+            return;
+        }
     }
     else if (area != 0U) {
         /* ROM LoadAreaMusic seeds this counter before selecting any area
@@ -504,7 +509,7 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
         if (mysmb_audio_step_death_music(game) != 0U) return;
     }
     else {
-        mysmb_audio_step_square2_music(game);
+        if (mysmb_audio_step_square2_music(game) != 0U) return;
     }
     mysmb_audio_step_square1_music(game);
     mysmb_audio_step_square_envelopes(game);
