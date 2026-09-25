@@ -2,15 +2,15 @@
 
 ## Current Work
 
-**M2 Td S1 completed.**
+**M2 Td S2 active.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Governance |
-| Objective | Reconcile M2 queue and proposals with NXVM MTSP: remove preallocated numeric T/S work, retain only ordered candidates, and establish the rule for later admission. |
-| Scope | `docs/states/QUEUE.md`, this current-state packet, and M2 structural-recovery proposals. |
-| Result | Queue contains only unnumbered candidates; no future T/S is allocated; proposal states the admission rule; no product source changed. |
-| Stop condition | Stop if governance requires changing product behavior, protected assets, or existing task history. |
+| Objective | Map the complete ROM control-graph checklist to M2 structural-recovery candidates without allocating numeric implementation work. |
+| Scope | `docs/states/QUEUE.md`, M2 structural-recovery proposal, and the existing ROM migration inventory. |
+| Result | Pending: replace coarse recovery domains with exhaustive source-slice/call-graph mapping; preserve unnumbered candidate status and leave product source untouched. |
+| Stop condition | Stop if mapping requires assigning behavior by inference instead of the ROM source index, changing product source, assets, or task history. |
 
 ## Current Technical Baseline
 

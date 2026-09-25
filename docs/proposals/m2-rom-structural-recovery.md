@@ -1,20 +1,45 @@
-# M2 ROM Structural-Recovery Candidates
+# M2 ROM structural-recovery coverage map
 
 ## Status
 
-This is a candidate set, not an allocation of numeric implementation tasks. M2 Td S1 governs this proposal and `states/QUEUE.md`; it creates no product code, no numeric T, and no future S allocation.
+`M2 Td S2` governance work. This is a complete candidate map of the ROM executable structure, not a numeric implementation-task allocation. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
 
-## Decision
+## How the map is complete
 
-The SMB1 ROM disassembly is the executable specification. A future implementation candidate must define a bounded ROM control-graph slice, its state-write set, a source-owner mapping, reference-frame inputs, focused regression, acceptance predicate, and stop condition. Platform code may collect host input and submit the completed frame only.
+The disassembly has 1,578 labels that participate in explicit control-flow edges and 414 static, table, or unconnected labels. Each executable label belongs to exactly one source-line slice below; `InitializeMemory` is the single explicit exception and belongs to Frame root rather than its physical source neighborhood. A static/table label is reviewed with the slice that consumes it; it is never invented as a separate C function. This partitions the entire source index while preserving the actual call graph rather than pretending that the ROM is a linear program.
 
-## Ordered candidates
+| Candidate | ROM source-line slice | Control-graph responsibility | Dependencies and outputs |
+|---|---:|---|---|
+| Frame root | 699–981, plus `InitializeMemory` at 2795 | reset, cold boot, NMI, input latch, timer/LFSR, OAM DMA/VRAM commit, sprite-0 split, operation-mode dispatch | root of every frame; supplies mode, input, timing and PPU phase |
+| Title and terminal modes | 982–1385 | title menu, demo, victory, player-end-world, float numbers | entered by operation-mode tree; emits text/OAM/audio requests |
+| Screen, text and status | 1386–1824 | screen routines, status lines, game text, area-parser scheduling | consumes mode/area state; writes VRAM buffers and fixed HUD state |
+| Area graphics and parser | 1825–5314 except `InitializeMemory` | metatile rendering, attributes, palettes, area header/object parser, block buffer | feeds collision and scrolling; writes CIRAM/palette/area state |
+| Game frame dispatcher | 5315–5582 | game mode, game-core routine, `GameEngine`, game-routine dispatch | invokes all per-frame gameplay slices in ROM order |
+| Player route | 5583–6297 | player control, movement, state, pipes/vines/scroll interaction, player-driven block actions | consumes input, area collision and object state; emits player/OAM/audio events |
+| Fireballs and bubbles | 6298–6729 | fireball spawn/core/background/enemy collision and bubble paths | invoked before enemy slots by `GameEngine`; consumes collision and enemy state |
+| Blocks, items and misc | 6730–7787 | vines, coins, bump/break blocks, power-ups, misc objects, cannon/whirlpool/flagpole setup | invoked after player path; writes block buffer, object, score and audio state |
+| Enemy stream and actors | 7788–11084 | loop commands, `ProcessEnemyData`, positioning, groups, frenzy, initialization and enemy handlers | six ROM slots after fireball; consumes area stream and collision state |
+| Collision and world primitives | 11085–14459 | player/enemy/item/projectile collisions, bounds, gravity, movement, score and shared geometry | called by player, fireball, block/item and enemy slices; writes shared game state |
+| OAM, offscreen and graphics | 14460–15069 | player/enemy/object graphics, relative positions, offscreen bits, OAM construction | consumes final game state; produces source-ordered OAM and sprite split state |
+| Audio engine | 15070–16368 | sound-effect queues, priorities, music and channel handlers | consumes ROM sound queues; produces portable audio command state |
 
-1. **Frame-root conformance.** Reconcile cold boot, NMI ordering, input latch, pause, timers, OAM/VRAM submission, sprite-0 split, and operation-mode dispatch before object behavior.
-2. **Area/PPU conformance.** Reconcile area parser, block buffer, nametable, attributes, palette, status and scroll state.
-3. **Player conformance.** Reconcile input partition, physics, collision, pipes/vines, scrolling, size and injury.
-4. **Enemy-stream conformance.** Reconcile `EnemiesAndLoopsCore`, `ProcessEnemyData`, ObjectOffset, groups, frenzy and initialization dispatch.
-5. **Object/OAM/audio conformance.** Reconcile object handlers, visible OAM, queues and frame timing after their predecessors.
-6. **Cross-platform route audit.** Prove the shared game frame contract across Win32 x86/x64 and DOS16.
+## Actual graph, not a serial rewrite order
 
-No candidate becomes `M2 T<n> S1` until owner approval. Its detailed S breakdown is created only at that admission.
+```text
+Start/ColdBoot
+  └─ NMI frame root
+      ├─ input/timer/PPU phase ────────────────┐
+      └─ operation-mode tree                    │
+          ├─ title and terminal modes ── screen/text/status
+          └─ game dispatcher ── area parser/graphics
+              ├─ player ─┬─ blocks/items/misc ─┐
+              ├─ fireballs ├─ enemy stream/actors ├─ collision/world primitives
+              └─ OAM/graphics ──────────────────┘
+                   └─ audio queues/engine
+```
+
+The arrows describe source-call or source-state dependency, not host-platform ownership. Every branch, state write and table read remains subject to its label-level checklist row before a candidate can close.
+
+## Admission rule
+
+When an owner chooses one candidate, its packet must cite the exact inventory labels and edges it will close, list its `src/game` owners and state writes, give ROM-reference input routes, and define a bounded regression. Only then does governance allocate the next numeric T and create that T's S breakdown. A candidate cannot absorb labels outside its listed source slice without a new governance decision.

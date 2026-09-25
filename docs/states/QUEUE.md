@@ -27,16 +27,22 @@
 
 ## M2 Structural-Recovery Candidates
 
-These are ordered candidates only; no numeric T or S is allocated by this queue.
+These candidates exhaustively map the ROM executable source index. They are ordered candidates only; no numeric T or S is allocated here. The complete label checklist is [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md), and the source-slice/call-graph map is [M2 structural recovery coverage](../proposals/m2-rom-structural-recovery.md).
 
-1. [Frame-root conformance](../proposals/m2-rom-structural-recovery.md) — ROM NMI and operation-mode control path.
-2. [Area/PPU conformance](../proposals/m2-rom-structural-recovery.md) — parser, block buffer and PPU-visible state.
-3. [Player conformance](../proposals/m2-rom-structural-recovery.md) — movement, collision and state transitions.
-4. [Enemy-stream conformance](../proposals/m2-rom-structural-recovery.md) — ObjectOffset, stream records and initialization.
-5. [Object/OAM/audio conformance](../proposals/m2-rom-structural-recovery.md) — object behavior and output owners.
-6. [Cross-platform route audit](../proposals/m2-rom-structural-recovery.md) — shared-core route proof.
+1. **Frame root** — lines 699–981 plus `InitializeMemory`: reset/NMI/input/timing/PPU phase/mode dispatch.
+2. **Title and terminal modes** — lines 982–1385: title/demo/victory/end-world/float numbers.
+3. **Screen, text and status** — lines 1386–1824: status, text, screen routines and parser scheduling.
+4. **Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
+5. **Game frame dispatcher** — lines 5315–5582: game mode/core/engine and ROM call order.
+6. **Player route** — lines 5583–6297: control, physics, player state, pipes/vines/scroll and block actions.
+7. **Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
+8. **Blocks, items and misc** — lines 6730–7787: coins, blocks, power-ups, vines, cannon/whirlpool/flagpole.
+9. **Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
+10. **Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths.
+11. **OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
+12. **Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers.
 
-M2 Td S1 governs these candidates. A future owner-approved candidate receives the next valid numeric T and only then receives its S breakdown.
+The next approved candidate receives the next valid numeric T; only then is that T's S breakdown created. `M2 Td S2` governs this mapping.
 ## M3 Candidates
 
 1. [Presentation adapters](../proposals/m3-presentation-adapters.md) — neutral render-command seam and deterministic core ownership.
