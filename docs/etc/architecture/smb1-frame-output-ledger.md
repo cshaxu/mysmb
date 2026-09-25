@@ -2200,3 +2200,8 @@ CPU RAM is not yet fully exact: the comparison reports 96,000 stack-byte and
 or game-route equivalence, so this extends T13 death/restart evidence without
 claiming M2 closure.  Warp Zone, flagpole/castle, two-player exchange, and
 remaining audio paths still require separate owner-local scripts.
+
+The same x86 recorder produces byte-identical native trace data (SHA-256
+`c4865d18a1b2f951e1d02bf56066e278acf92aedd1235bbe48a3c1d1a6685fb2`) and
+the same zero-difference work-RAM/output result. This is cross-width evidence
+for the shared C core on this route, not a substitute for the remaining routes.
