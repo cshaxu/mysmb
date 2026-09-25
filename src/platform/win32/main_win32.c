@@ -1,7 +1,9 @@
 #include <windows.h>
 
 #include "game/game.h"
+#ifndef MYSMB_LOCAL_TITLE
 #include "game/render.h"
+#endif
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -10,14 +12,66 @@
 
 #define MYSMB_CLASS_NAME "MySMBWindow"
 #define MYSMB_SCALE 2
+#define MYSMB_WIN32_KEY_LEFT   0x0001U
+#define MYSMB_WIN32_KEY_RIGHT  0x0002U
+#define MYSMB_WIN32_KEY_DOWN   0x0004U
+#define MYSMB_WIN32_KEY_UP     0x0008U
+#define MYSMB_WIN32_KEY_START  0x0010U
+#define MYSMB_WIN32_KEY_SELECT 0x0020U
+#define MYSMB_WIN32_KEY_B      0x0040U
+#define MYSMB_WIN32_KEY_A      0x0080U
 
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
+#ifndef MYSMB_LOCAL_TITLE
 static struct mysmb_render_frame g_render_frame;
+#endif
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
+static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
+{
+    mysmb_u8 buttons;
+
+    buttons = 0U;
+    if ((keys & MYSMB_WIN32_KEY_LEFT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_LEFT);
+    if ((keys & MYSMB_WIN32_KEY_RIGHT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_RIGHT);
+    if ((keys & MYSMB_WIN32_KEY_DOWN) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_DOWN);
+    if ((keys & MYSMB_WIN32_KEY_UP) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_UP);
+    if ((keys & MYSMB_WIN32_KEY_START) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_START);
+    if ((keys & MYSMB_WIN32_KEY_SELECT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_SELECT);
+    if ((keys & MYSMB_WIN32_KEY_B) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_B);
+    if ((keys & MYSMB_WIN32_KEY_A) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_A);
+    return buttons;
+}
+
+static unsigned int mysmb_win32_poll_keys(void)
+{
+    unsigned int keys;
+
+    keys = 0U;
+    /* Virtual-key polling is layout-independent and is delivered by both a
+     * console session and RDP.  Keep the cursor/Z/X bindings as secondary
+     * compatibility keys; the documented controls are WASD, J/K, Enter and
+     * either Shift key. */
+    if ((GetAsyncKeyState('A') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_LEFT;
+    if ((GetAsyncKeyState('D') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_RIGHT;
+    if ((GetAsyncKeyState('S') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_DOWN;
+    if ((GetAsyncKeyState('W') & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_UP) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_UP;
+    if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_START;
+    if ((GetAsyncKeyState(VK_LSHIFT) & 0x8000) != 0 ||
+        (GetAsyncKeyState(VK_RSHIFT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_SELECT;
+    if ((GetAsyncKeyState('J') & 0x8000) != 0 ||
+        (GetAsyncKeyState('Z') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_B;
+    if ((GetAsyncKeyState('K') & 0x8000) != 0 ||
+        (GetAsyncKeyState('X') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_A;
+    return keys;
+}
 
 static DWORD mysmb_win32_dib_color(COLORREF color)
 {
@@ -52,6 +106,7 @@ static void mysmb_win32_draw_background(void);
 static void mysmb_win32_draw_oam(void);
 #endif
 
+#ifndef MYSMB_LOCAL_TITLE
 static COLORREF mysmb_win32_tile_color(mysmb_u8 tile)
 {
     if (tile == 0x24U) return RGB(92, 148, 252);
@@ -67,6 +122,7 @@ static COLORREF mysmb_win32_actor_color(mysmb_u8 identity)
     if ((identity & 1U) != 0U) return RGB(252, 188, 60);
     return RGB(112, 48, 24);
 }
+#endif
 
 static void mysmb_win32_draw_gameplay(void)
 {
@@ -268,7 +324,14 @@ static int mysmb_win32_run_self_test(void)
     if (g_game.ram[0x0770U] != 1U) return 11;
     if (g_game.ram[0x0772U] != 3U) return 12;
     if ((g_game.visible_ppu_mask & 0x18U) != 0x18U) return 13;
-    mysmb_render_build(&g_game, &g_render_frame);
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_LEFT) != MYSMB_BUTTON_LEFT) return 14;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_RIGHT) != MYSMB_BUTTON_RIGHT) return 15;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_DOWN) != MYSMB_BUTTON_DOWN) return 16;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_UP) != MYSMB_BUTTON_UP) return 17;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_START) != MYSMB_BUTTON_START) return 18;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
+    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
     mysmb_win32_build_frame();
     /* This intentionally avoids a desktop DC; presentation itself remains the
      * same single-DIB transfer used by mysmb_win32_paint. */
@@ -300,42 +363,7 @@ static void mysmb_win32_step(HWND window)
     frame_period = g_frequency.QuadPart / 60;
     if (elapsed < frame_period) return;
 
-    input.buttons = 0U;
-    /* Virtual-key polling is layout-independent and is delivered by both a
-     * console session and RDP.  Keep the cursor/Z/X bindings as secondary
-     * compatibility keys; the documented controls are WASD, J/K, Enter and
-     * either Shift key. */
-    if ((GetAsyncKeyState('A') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_LEFT);
-    }
-    if ((GetAsyncKeyState('D') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_RIGHT);
-    }
-    if ((GetAsyncKeyState('S') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_DOWN);
-    }
-    if ((GetAsyncKeyState('W') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_UP) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_UP);
-    }
-    if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_START);
-    }
-    if ((GetAsyncKeyState(VK_LSHIFT) & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_RSHIFT) & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_SELECT);
-    }
-    if ((GetAsyncKeyState('J') & 0x8000) != 0 ||
-        (GetAsyncKeyState('Z') & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_B);
-    }
-    if ((GetAsyncKeyState('K') & 0x8000) != 0 ||
-        (GetAsyncKeyState('X') & 0x8000) != 0) {
-        input.buttons = (mysmb_u8)(input.buttons | MYSMB_BUTTON_A);
-    }
+    input.buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
     steps = 0U;
     do {
         g_last_tick.QuadPart += frame_period;
@@ -346,7 +374,9 @@ static void mysmb_win32_step(HWND window)
     /* Discard excess wall-clock debt after four logical frames.  This keeps
      * the message pump responsive instead of attempting an unbounded catch-up. */
     if (elapsed >= frame_period) g_last_tick = now;
+#ifndef MYSMB_LOCAL_TITLE
     mysmb_render_build(&g_game, &g_render_frame);
+#endif
     mysmb_win32_build_frame();
     InvalidateRect(window, NULL, FALSE);
 }
@@ -409,7 +439,9 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_bitmap_info.bmiHeader.biBitCount = 32U;
     g_bitmap_info.bmiHeader.biCompression = BI_RGB;
     ZeroMemory(&g_frame, sizeof(g_frame));
+#ifndef MYSMB_LOCAL_TITLE
     mysmb_render_build(&g_game, &g_render_frame);
+#endif
     mysmb_win32_build_frame();
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
