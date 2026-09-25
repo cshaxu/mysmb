@@ -35,7 +35,7 @@ These candidates exhaustively map the ROM executable source index. They are orde
 4. **M2 T18 active — Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
 5. **Game frame dispatcher** — lines 5315–5582: game mode/core/engine and ROM call order.
 6. **Player route** — lines 5583–6297: control, physics, player state, pipes/vines/scroll and block actions.
-7. **Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
+7. **M2 T20 active — Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
 8. **Blocks, items and misc** — lines 6730–7787: coins, blocks, power-ups, vines, cannon/whirlpool/flagpole.
 9. **M2 T19 active — Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
 10. **M2 T17 active — Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths.
