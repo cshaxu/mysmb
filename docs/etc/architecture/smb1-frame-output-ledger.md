@@ -2116,3 +2116,21 @@ sampling-phase work, not grounds for changing collision or rendering behavior
 without a ROM routine match.  This extends visible-equivalence evidence through
 a jumping route but does not cover injury, death/restart, Warp, flagpole,
 two-player, or all audio transitions.
+
+
+## T11 S1 P17 Running Jump Route Evidence
+
+A 600-sample route from the verified title-start boundary presses Start at 30,
+holds Right+B, and presses A on frames 100--111, 220--231, 340--351, and
+460--471.  Its reference input is
+30:$08,31:$82,100:$83,112:$82,220:$83,232:$82,340:$83,352:$82,460:$83,472:$82;
+the native decoded input is
+30:$10,31:$41,100:$c1,112:$41,220:$c1,232:$41,340:$c1,352:$41,460:$c1,472:$41.
+The traces were deleted after comparison.
+
+CPU OAM backing RAM, visible OAM, both CIRAM pages, palette, and every
+PPU-visible scalar are exact across all 600 samples.  This adds run-speed and
+multiple jump animation/physics coverage to the admitted 1-1 evidence.  A
+separate exploratory first-frame Start script diverged while title setup was
+still in progress and is excluded from equivalence evidence; it identifies a
+future title-start phase audit rather than a license to alter gameplay logic.
