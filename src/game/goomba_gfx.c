@@ -40,6 +40,7 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
     mysmb_u8 offscreen;
     mysmb_u8 left_y;
     mysmb_u8 right_y;
+    mysmb_u8 defeated;
     const mysmb_u8 *tiles;
 
     for (slot = 0U; slot < 5U; ++slot) {
@@ -66,9 +67,13 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
         }
         state = game->ram[MYSMB_ENEMY_STATE + slot];
         tiles = normal_tiles;
-        if ((state & 0x1fU) >= 2U && (state & 0x20U) == 0U) {
+        defeated = (mysmb_u8)(((state & 0x1fU) >= 2U &&
+                               (state & 0x20U) == 0U) ? 1U : 0U);
+        if (defeated != 0U) {
             tiles = defeated_tiles;
-            y--;
+            /* EnemyGfxHandler selects the defeated-Goomba row then vertically
+             * mirrors it.  Its surviving rows start one pixel below Enemy_Y. */
+            y++;
         }
         offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
         direction = game->ram[MYSMB_ENEMY_DIRECTION + slot];
@@ -80,7 +85,15 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
             left = tiles[(mysmb_u8)(row * 2U)];
             right = tiles[(mysmb_u8)(row * 2U + 1U)];
             row_offset = (mysmb_u8)(offset + row * 8U);
-            if ((direction & 2U) != 0U) {
+            if (defeated != 0U) {
+                game->ram[0x0201U + row_offset] = left;
+                game->ram[0x0205U + row_offset] = right;
+                game->ram[0x0202U + row_offset] =
+                    (mysmb_u8)(attributes | 0x80U);
+                game->ram[0x0206U + row_offset] =
+                    (mysmb_u8)(attributes | 0xc0U);
+            }
+            else if ((direction & 2U) != 0U) {
                 game->ram[0x0201U + row_offset] = right;
                 game->ram[0x0205U + row_offset] = left;
                 game->ram[0x0202U + row_offset] = (mysmb_u8)(attributes | 0x40U);
