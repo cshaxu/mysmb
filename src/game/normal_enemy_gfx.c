@@ -201,8 +201,8 @@ static mysmb_u8 mysmb_draw_lakitu(struct mysmb_game *g, mysmb_u8 n)
     b=mysmb_objects_get_enemy_x_offscreen_bits(g,n);g->ram[MYSMB_NORMAL_OFFSCREEN+n]=b;st=g->ram[MYSMB_NORMAL_STATE+n];
     t=((st&0x20U)==0U && g->ram[0x078fU]<0x10U)?second:first;o=g->ram[MYSMB_NORMAL_SPRITE+n];
     for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=1U;g->ram[0x0206U+q]=1U;g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y+n]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X+n]+8U);}
-    q=(mysmb_u8)(o+16U);g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;
-    if(g->ram[0x078fU]<0x10U){g->ram[0x0202U+o+8U]=g->ram[0x0202U+q];g->ram[0x0206U+o+8U]=g->ram[0x0206U+q];}
+    if((st&0x20U)!=0U){for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);g->ram[0x0202U+q]|=0x80U;g->ram[0x0206U+q]|=0x80U;}l=g->ram[0x0201U+o];rr=g->ram[0x0205U+o];g->ram[0x0201U+o]=g->ram[0x0211U+o];g->ram[0x0205U+o]=g->ram[0x0215U+o];g->ram[0x0211U+o]=l;g->ram[0x0215U+o]=rr;q=o;g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;}
+    else{q=(mysmb_u8)(o+16U);g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;if(g->ram[0x078fU]<0x10U){g->ram[0x0202U+o+8U]=g->ram[0x0202U+q];g->ram[0x0206U+o+8U]=g->ram[0x0206U+q];}}
     mysmb_normal_apply_offscreen(g,o,b);return 1U;
 }
 /* Shared RunNormalEnemies graphics phase.  A return value of one means this
