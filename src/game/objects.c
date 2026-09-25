@@ -155,6 +155,8 @@ static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
 static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
                                                   mysmb_u8 slot);
+static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
+                                                            mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
                                             mysmb_u16 first, mysmb_u16 second);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
@@ -1105,11 +1107,6 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                                                   mysmb_u8 preserve_collision_boxes)
 {
     mysmb_u8 id;
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
-    mysmb_u8 tile;
     mysmb_u8 old_value;
     mysmb_u8 carry;
     mysmb_u8 page_delta;
@@ -1183,6 +1180,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
             }
             return;
         }
+        mysmb_objects_normal_enemy_background_collision(game, slot);
         if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes) != 0U) return;
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
@@ -1207,6 +1205,20 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
             }
         }
         mysmb_objects_move_enemy_horizontally(game, slot);
+}
+
+/* ROM EnemyToBGCollisionDet runs before PlayerEnemyCollision and
+ * EnemyMovementSubs.  Keep the terrain probes at their source frame boundary:
+ * current coordinates are tested; only afterwards can fixed-point movement
+ * advance the object. */
+static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
+                                                            mysmb_u8 slot)
+{
+    mysmb_u8 x;
+    mysmb_u8 page;
+    mysmb_u8 row;
+    mysmb_u16 address;
+    mysmb_u8 tile;
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
             (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
         page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
