@@ -68,6 +68,8 @@ void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot, mys
 void mysmb_objects_step_platforms(struct mysmb_game *game);
 /* ROM DrawSmallPlatform for IDs /. */
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM DrawLargePlatform for IDs $24--$2a. */
+void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM InitBowser/RunBowser, excluding OAM output. */
 void mysmb_objects_step_bowsers(struct mysmb_game *game);
 /* ROM $d8aa-$d91d BridgeCollapse, including its VRAM_Buffer1 metatile writes. */

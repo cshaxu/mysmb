@@ -2397,6 +2397,7 @@ void mysmb_objects_step_platforms(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_STATE] = 0U;
             landed = 1U;
         }
+        if (id >= 36U && id <= 42U) mysmb_objects_draw_large_platform(game, slot);
         if (id == 43U || id == 44U) mysmb_objects_draw_small_platform(game, slot);
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
         if (id == 36U && landed != 0U) {

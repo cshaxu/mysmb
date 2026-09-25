@@ -30,5 +30,22 @@ int main(void)
     mysmb_objects_draw_small_platform(&game, 0U);
     if (game.ram[0x0220U] != 0xf8U || game.ram[0x0224U] != 0xf8U ||
         game.ram[0x0228U] != 0xf8U || game.ram[0x022cU] != 0xf8U) return 2;
-    return 0;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x30U;
+    game.ram[0x00cfU] = 0x40U;
+    game.ram[0x074eU] = 0U;
+    game.ram[0x0743U] = 0U;
+    game.ram[0x06ccU] = 0U;
+    mysmb_objects_draw_large_platform(&game, 0U);
+    for (i = 0U; i < 6U; ++i) {
+        if (game.ram[0x0220U + i * 4U] != 0x40U ||
+            game.ram[0x0221U + i * 4U] != 0x5bU ||
+            game.ram[0x0222U + i * 4U] != 2U ||
+            game.ram[0x0223U + i * 4U] != (mysmb_u8)(0x30U + i * 8U)) return 3;
+    }
+    game.ram[0x074eU] = 3U;
+    game.ram[0x0743U] = 3U;
+    mysmb_objects_draw_large_platform(&game, 0U);
+    if (game.ram[0x0230U] != 0xf8U || game.ram[0x0234U] != 0xf8U ||
+        game.ram[0x0221U] != 0x75U || game.ram[0x0235U] != 0x75U) return 4;    return 0;
 }
