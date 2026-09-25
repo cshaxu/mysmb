@@ -216,6 +216,20 @@ int main(void)
         game.ram[0x001eU + 5U] != 0x80U ||
         game.ram[0x0087U + 5U] == 0U ||
         game.ram[0x0046U + 5U] != 1U) return 14;
+    /* EnemyLanding -> InitVStf clears Y speed and force but deliberately
+     * retains Enemy_YMF_Dummy.  The retained fractional phase controls the
+     * next fall of a mushroom after it walks off a ledge. */
+    mysmb_setup_active_mushroom(&game, 0xc0U, 0U, 0x28U, 1U);
+    game.ram[0x00a0U + 5U] = 0U;
+    game.ram[0x0417U + 5U] = 0x6eU;
+    game.ram[0x0434U + 5U] = 0U;
+    game.ram[0x05f0U] = 0x61U;
+    mysmb_objects_step_power_up(&game);
+    if (game.ram[0x00cfU + 5U] != 0x28U ||
+        game.ram[0x001eU + 5U] != 0x80U ||
+        game.ram[0x0417U + 5U] != 0x6eU ||
+        game.ram[0x00a0U + 5U] != 0U ||
+        game.ram[0x0434U + 5U] != 0U) return 21;
     /* DoEnemySideCheck uses left (X,Y+14), not X+4. */
     mysmb_setup_active_mushroom(&game, 0x80U, 0x2cU, 0x30U, 2U);
     /* RXSpd negates the existing 4.4 speed; this active left-moving

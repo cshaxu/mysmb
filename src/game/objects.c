@@ -971,8 +971,10 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                              (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 8U) {
                         game->ram[MYSMB_ENEMY_Y + slot] =
                             (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+                        /* ROM EnemyLanding -> InitVStf clears speed and
+                         * force only; Enemy_YMF_Dummy carries into the
+                         * next fall and supplies its fractional phase. */
                         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-                        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
                         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
                         game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
                     }
@@ -2155,6 +2157,12 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
         0xffU, 0x41U, 0x42U, 0x44U, 0x45U, 0x48U,
         0x31U, 0x32U, 0x34U, 0x35U, 0x38U, 0x00U
     };
+    static const mysmb_u8 tile_data[24] = {
+        0xffU, 0xffU, 0xf6U, 0xfbU, 0xf7U, 0xfbU,
+        0xf8U, 0xfbU, 0xf9U, 0xfbU, 0xfaU, 0xfbU,
+        0xf6U, 0x50U, 0xf7U, 0x50U, 0xf8U, 0x50U,
+        0xf9U, 0x50U, 0xfaU, 0x50U, 0xfdU, 0xfeU
+    };
     mysmb_u8 control;
     mysmb_u8 score;
     mysmb_u8 oam_offset;
@@ -2204,14 +2212,14 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
     y = (mysmb_u8)(y - (y < 0x18U ? 9U : 8U));
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
     game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-        (mysmb_u8)(0xf4U + control);
+        tile_data[(mysmb_u8)(control << 1U)];
     game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
         game->ram[MYSMB_FLOATEY_NUM_X + slot];
     oam_offset = (mysmb_u8)(oam_offset + 4U);
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
     game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-        control == 6U ? 0x50U : (control == 0x0bU ? 0xfeU : 0xfbU);
+        tile_data[(mysmb_u8)((control << 1U) + 1U)];
     game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
         (mysmb_u8)(game->ram[MYSMB_FLOATEY_NUM_X + slot] + 8U);
