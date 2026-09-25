@@ -196,6 +196,9 @@ int main(void)
         game.ram[0x0046U + 5U] != 1U) return 14;
     /* DoEnemySideCheck uses left (X,Y+14), not X+4. */
     mysmb_setup_active_mushroom(&game, 0x80U, 0x2cU, 0x30U, 2U);
+    /* RXSpd negates the existing 4.4 speed; this active left-moving
+     * mushroom carries $f0 and must become $10. */
+    game.ram[0x0058U + 5U] = 0xf0U;
     game.ram[0x05f2U] = 0xc0U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0046U + 5U] != 1U ||
@@ -203,6 +206,8 @@ int main(void)
 
     /* DoEnemySideCheck uses right (X+16,Y+14), not X+20. */
     mysmb_setup_active_mushroom(&game, 0x80U, 0x2dU, 0x30U, 1U);
+    /* The equivalent right-moving state has $10 and must become $f0. */
+    game.ram[0x0058U + 5U] = 0x10U;
     game.ram[0x05f3U] = 0xc0U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0046U + 5U] != 2U ||
