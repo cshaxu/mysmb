@@ -129,3 +129,22 @@ remaining CPU differences are emulator zero-page/stack temporaries.
 | `assets/mysmb64.exe` | `e7bacc932f11e7386586b10690917250b09f76f062dca4d2d632f3af93a0e2bf` |
 
 x86 and x64 each pass 78/78; the 16-bit OpenNT linker uses the same root.
+
+## P18 title-buffer boundary recovery
+
+The first post-P17 600-sample comparison exposed CIRAM-page-0 differences at
+sample 23.  The physical move had widened the `VRAM_Buffer_AddrCtrl == 5`
+title stream from the ROM's `$013a` bytes to `$0100`; P18 restores `$013a`.
+A fresh 600-sample ROM comparison in `build/t14-s2-p18` then returns zero
+differences in CPU OAM RAM, work RAM, both CIRAM pages, palette, visible OAM,
+audio commands and all seven PPU scalars.  The x86 and x64 native traces are
+byte-identical with SHA-256
+`8b4f97d0af2c81ef0fa30330396b606dc3cc892f8cc91e7d7abf7c87a9eba3f2`.
+
+| Artifact | SHA-256 |
+|---|---|
+| `assets/mysmb16.exe` | `51bc5c0052aa9f06365866e71b1ce6e38bc3a6ec7cd9039775d2cda7349d0f65` |
+| `assets/mysmb32.exe` | `b667f36dbb772273a218ab59f1be48591398056f575c50e245d4c6a567b482d2` |
+| `assets/mysmb64.exe` | `a6360868dd9e7377aae666f13684a6b3b17243873f125eb7091be2107c6c19ae` |
+
+x86 and x64 each pass 78/78; the 16-bit OpenNT link uses the corrected root.

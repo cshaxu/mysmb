@@ -496,7 +496,7 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
     }
     if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] == 5U) {
         (void)mysmb_game_apply_vram_commands(game, &game->ram[0x0300U],
-                                              0x0100U);
+                                              0x013aU);
         game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
         return;
     }
