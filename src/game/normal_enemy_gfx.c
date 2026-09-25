@@ -1,0 +1,173 @@
+#include "game/objects.h"
+
+enum {
+    MYSMB_NORMAL_FLAG = 0x000fU,
+    MYSMB_NORMAL_ID = 0x0016U,
+    MYSMB_NORMAL_STATE = 0x001eU,
+    MYSMB_NORMAL_DIRECTION = 0x0046U,
+    MYSMB_NORMAL_PAGE = 0x006eU,
+    MYSMB_NORMAL_X = 0x0087U,
+    MYSMB_NORMAL_Y = 0x00cfU,
+    MYSMB_NORMAL_REL_X = 0x03aeU,
+    MYSMB_NORMAL_REL_Y = 0x03b9U,
+    MYSMB_NORMAL_OFFSCREEN = 0x03d1U,
+    MYSMB_NORMAL_ATTRIBUTES = 0x03c5U,
+    MYSMB_NORMAL_SPRITE = 0x06e5U,
+    MYSMB_NORMAL_SCREEN_PAGE = 0x071aU,
+    MYSMB_NORMAL_SCREEN_X = 0x071cU,
+    MYSMB_NORMAL_TIMER_CONTROL = 0x0747U,
+    MYSMB_NORMAL_FRAME_COUNTER = 0x0009U
+};
+
+static void mysmb_normal_apply_offscreen(struct mysmb_game *game,
+                                         mysmb_u8 oam, mysmb_u8 bits)
+{
+    mysmb_u8 row;
+    mysmb_u8 offset;
+
+    for (row = 0U; row < 3U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        if ((bits & 0x80U) != 0U ||
+            ((bits & 0x40U) != 0U && row >= 1U) ||
+            ((bits & 0x20U) != 0U && row == 2U)) {
+            game->ram[0x0200U + offset] = 0xf8U;
+            game->ram[0x0204U + offset] = 0xf8U;
+        }
+        else {
+            if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
+            if ((bits & 4U) != 0U) game->ram[0x0204U + offset] = 0xf8U;
+        }
+    }
+}
+
+/* ROM EnemyGfxHandler/DrawEnemyObject for walking Koopas and Buzzy Beetles. */
+mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    static const mysmb_u8 buzzy_frame1[6] =
+        { 0xfcU, 0xfcU, 0xaaU, 0xabU, 0xacU, 0xadU };
+    static const mysmb_u8 buzzy_frame2[6] =
+        { 0xfcU, 0xfcU, 0xaeU, 0xafU, 0xb0U, 0xb1U };
+    static const mysmb_u8 koopa_frame1[6] =
+        { 0xfcU, 0xa5U, 0xa6U, 0xa7U, 0xa8U, 0xa9U };
+    static const mysmb_u8 koopa_frame2[6] =
+        { 0xfcU, 0xa0U, 0xa1U, 0xa2U, 0xa3U, 0xa4U };
+    static const mysmb_u8 koopa_upside1[6] =
+        { 0xfcU, 0xfcU, 0x6eU, 0x6eU, 0x6fU, 0x6fU };
+    static const mysmb_u8 koopa_upside2[6] =
+        { 0xfcU, 0xfcU, 0x6dU, 0x6dU, 0x6fU, 0x6fU };
+    static const mysmb_u8 koopa_upright1[6] =
+        { 0xfcU, 0xfcU, 0x6fU, 0x6fU, 0x6eU, 0x6eU };
+    static const mysmb_u8 koopa_upright2[6] =
+        { 0xfcU, 0xfcU, 0x6fU, 0x6fU, 0x6dU, 0x6dU };
+    static const mysmb_u8 buzzy_upright[6] =
+        { 0xfcU, 0xfcU, 0xf4U, 0xf4U, 0xf5U, 0xf5U };
+    static const mysmb_u8 buzzy_upside[6] =
+        { 0xfcU, 0xfcU, 0xf5U, 0xf5U, 0xf4U, 0xf4U };
+    const mysmb_u8 *tiles;
+    mysmb_u8 id;
+    mysmb_u8 state;
+    mysmb_u8 state_low;
+    mysmb_u8 direction;
+    mysmb_u8 attributes;
+    mysmb_u8 offscreen;
+    mysmb_u8 oam;
+    mysmb_u8 row;
+    mysmb_u8 offset;
+    mysmb_u8 y;
+    mysmb_u8 left;
+    mysmb_u8 right;
+    mysmb_u16 world;
+    mysmb_u16 screen;
+
+    if (game->ram[MYSMB_NORMAL_FLAG + slot] == 0U) return 0U;
+    id = game->ram[MYSMB_NORMAL_ID + slot];
+    if (id != 0U && id != 2U && id != 3U) return 0U;
+
+    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_PAGE + slot] << 8U) |
+                         game->ram[MYSMB_NORMAL_X + slot]);
+    screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
+                          game->ram[MYSMB_NORMAL_SCREEN_X]);
+    game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] = 0U;
+    game->ram[MYSMB_NORMAL_REL_X + slot] = (mysmb_u8)(world - screen);
+    game->ram[MYSMB_NORMAL_REL_Y + slot] = game->ram[MYSMB_NORMAL_Y + slot];
+    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+    game->ram[MYSMB_NORMAL_OFFSCREEN + slot] = offscreen;
+    state = game->ram[MYSMB_NORMAL_STATE + slot];
+    state_low = (mysmb_u8)(state & 0x1fU);
+    y = game->ram[MYSMB_NORMAL_REL_Y + slot];
+
+    if (id == 2U) {
+        tiles = buzzy_frame1;
+        attributes = 3U;
+    }
+    else {
+        tiles = koopa_frame1;
+        attributes = id == 0U ? 1U : 2U;
+    }
+    if (state_low >= 2U) {
+        if (id == 2U) {
+            tiles = buzzy_upside;
+            y++;
+        }
+        else tiles = koopa_upside1;
+        if (state_low == 4U) {
+            if (id == 2U) tiles = buzzy_upright;
+            else tiles = koopa_upright1;
+            y++;
+            if (id != 2U) y++;
+        }
+    }
+    if ((state & 0xa0U) == 0U &&
+        game->ram[MYSMB_NORMAL_TIMER_CONTROL] == 0U &&
+        (game->ram[MYSMB_NORMAL_FRAME_COUNTER] & 8U) == 0U) {
+        if (state_low >= 2U) {
+            if (state_low == 4U) {
+                if (id != 2U) tiles = koopa_upright2;
+            }
+            else {
+                if (id == 2U) tiles = buzzy_upside;
+                else tiles = koopa_upside2;
+            }
+        }
+        else {
+            if (id == 2U) tiles = buzzy_frame2;
+            else tiles = koopa_frame2;
+        }
+    }
+    direction = game->ram[MYSMB_NORMAL_DIRECTION + slot];
+    oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
+    for (row = 0U; row < 3U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        left = tiles[row * 2U];
+        right = tiles[row * 2U + 1U];
+        if ((direction & 2U) != 0U) {
+            game->ram[0x0201U + offset] = right;
+            game->ram[0x0205U + offset] = left;
+            game->ram[0x0202U + offset] = (mysmb_u8)(attributes | 0x40U);
+            game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
+        }
+        else {
+            game->ram[0x0201U + offset] = left;
+            game->ram[0x0205U + offset] = right;
+            game->ram[0x0202U + offset] = attributes;
+            game->ram[0x0206U + offset] = attributes;
+        }
+        game->ram[0x0200U + offset] = (mysmb_u8)(y + row * 8U);
+        game->ram[0x0204U + offset] = (mysmb_u8)(y + row * 8U);
+        game->ram[0x0203U + offset] = game->ram[MYSMB_NORMAL_REL_X + slot];
+        game->ram[0x0207U + offset] =
+            (mysmb_u8)(game->ram[MYSMB_NORMAL_REL_X + slot] + 8U);
+    }
+    mysmb_normal_apply_offscreen(game, oam, offscreen);
+    return 1U;
+}
+
+/* Shared RunNormalEnemies graphics phase.  A return value of one means this
+ * slot belongs to a separately scheduled movement owner. */
+mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
+                                                   mysmb_u8 slot)
+{
+    if (mysmb_objects_draw_special_enemy(game, slot) != 0U) return 1U;
+    (void)mysmb_objects_draw_koopa_buzzy(game, slot);
+    return 0U;
+}

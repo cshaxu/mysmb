@@ -981,7 +981,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
     mysmb_u8 page_delta;
 
         id = game->ram[MYSMB_ENEMY_ID + slot];
-        if (mysmb_objects_draw_special_enemy(game, slot) != 0U) return;
+        if (mysmb_objects_draw_normal_enemy_graphics(game, slot) != 0U) return;
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (id > 6U && id != 18U) || id == 5U ||
             (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) return;
