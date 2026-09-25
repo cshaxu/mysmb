@@ -1291,14 +1291,15 @@ void mysmb_player_step_side_pipe(struct mysmb_game *game)
  * decision after sampling both positions. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
 {
-    static const mysmb_u8 x_adder[22] = {
+    static const mysmb_u8 x_adder[28] = {
         8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
+        0U, 0x10U, 4U, 0x14U, 4U, 4U
     };
-    static const mysmb_u8 y_adder[22] = {
+    static const mysmb_u8 y_adder[28] = {
         4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
         8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U
+        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
     };
     struct mysmb_player_terrain left;
     struct mysmb_player_terrain right;
@@ -1603,14 +1604,15 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
  * producing a side collision on its own. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
 {
-    static const mysmb_u8 x_adder[22] = {
+    static const mysmb_u8 x_adder[28] = {
         8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
+        0U, 0x10U, 4U, 0x14U, 4U, 4U
     };
-    static const mysmb_u8 y_adder[22] = {
+    static const mysmb_u8 y_adder[28] = {
         4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
         8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U
+        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
     };
     struct mysmb_player_terrain terrain;
     mysmb_u8 index;
@@ -1649,14 +1651,15 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
  * blocks hand their original collision coordinates to the object owner. */
 mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
 {
-    static const mysmb_u8 x_adder[22] = {
+    static const mysmb_u8 x_adder[28] = {
         8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU
+        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
+        0U, 0x10U, 4U, 0x14U, 4U, 4U
     };
-    static const mysmb_u8 y_adder[22] = {
+    static const mysmb_u8 y_adder[28] = {
         4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
         8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U
+        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
     };
     static const mysmb_u8 upper_extent[2] = { 0x20U, 0x10U };
     static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };

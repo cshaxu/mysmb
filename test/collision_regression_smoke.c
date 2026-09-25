@@ -39,6 +39,21 @@ int main(void)
     struct mysmb_game game;
     mysmb_u8 step;
 
+    /* ROM small-Mario feet use probe entries $0f/$10: X+3 and X+12,
+     * with Y+32/Y+24.  At the 1-1 landing reproduced from the ROM trace,
+     * the right probe lands on the brick while the left probe remains empty. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0644U] = 0x51U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
+        game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 0U) return 10;
     /* ROM PlayerBGCollision: a right-facing Mario samples (X+12,Y+24). */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
