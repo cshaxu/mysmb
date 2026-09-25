@@ -2,7 +2,7 @@
 
 ## Status
 
-`M2 Td S2` governance work. This is a complete candidate map of the ROM executable structure, not a numeric implementation-task allocation. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
+`M2 Td S3` governance work. This is a complete candidate map of the ROM executable structure, not a numeric implementation-task allocation. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
 
 ## How the map is complete
 
@@ -22,6 +22,23 @@ The disassembly has 1,578 labels that participate in explicit control-flow edges
 | Collision and world primitives | 11085–14459 | player/enemy/item/projectile collisions, bounds, gravity, movement, score and shared geometry | called by player, fireball, block/item and enemy slices; writes shared game state |
 | OAM, offscreen and graphics | 14460–15069 | player/enemy/object graphics, relative positions, offscreen bits, OAM construction | consumes final game state; produces source-ordered OAM and sprite split state |
 | Audio engine | 15070–16368 | sound-effect queues, priorities, music and channel handlers | consumes ROM sound queues; produces portable audio command state |
+
+## Candidate execution packets
+
+Each candidate has an audited admission S plan. These are implementation blueprints only; they become formal S1 through Sn after the owner admits the candidate as a numbered M2 T.
+
+1. [Frame root](m2/frame-root.md)
+2. [Title and terminal modes](m2/title-terminal-modes.md)
+3. [Screen, text and status](m2/screen-status.md)
+4. [Area graphics and parser](m2/area-parser.md)
+5. [Game frame dispatcher](m2/game-dispatcher.md)
+6. [Player route](m2/player-route.md)
+7. [Fireballs and bubbles](m2/fireballs-bubbles.md)
+8. [Blocks, items and misc](m2/blocks-items-misc.md)
+9. [Enemy stream and actors](m2/enemy-stream-actors.md)
+10. [Collision and world primitives](m2/collision-world.md)
+11. [OAM, offscreen and graphics](m2/oam-graphics.md)
+12. [Audio engine](m2/audio-engine.md)
 
 ## Actual graph, not a serial rewrite order
 

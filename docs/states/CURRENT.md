@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 Td S2 completed.**
+**M2 Td S3 active.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Governance |
-| Objective | Map the complete ROM control-graph checklist to M2 structural-recovery candidates without allocating numeric implementation work. |
-| Scope | `docs/states/QUEUE.md`, M2 structural-recovery proposal, and the existing ROM migration inventory. |
-| Result | Complete: 12 unnumbered source slices partition all 1,992 ROM labels exactly once (including explicit `InitializeMemory` exception); graph dependencies and admission rule are recorded; no product source changed. |
+| Objective | Audit every M2 structural-recovery candidate into an admission S plan without allocating numeric implementation work. |
+| Scope | the M2 structural-recovery coverage proposal, its twelve candidate packets, and the ROM migration inventory. |
+| Result | Pending: create one audited admission S plan per candidate, with ROM scope, current-code disposition, graph contract and reference acceptance. |
 | Stop condition | Stop if mapping requires assigning behavior by inference instead of the ROM source index, changing product source, assets, or task history. |
 
 ## Current Technical Baseline
