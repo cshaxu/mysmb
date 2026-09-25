@@ -607,22 +607,81 @@ static void mysmb_objects_relative_fireball_position(struct mysmb_game *game,
     game->ram[MYSMB_FIREBALL_REL_Y + slot] = game->ram[MYSMB_FIREBALL_Y + slot];
 }
 
+/* ROM GetXOffscreenBits / GetYOffscreenBits / GetOffScreenBitsSet.  Return
+ * the source's final low-X/high-Y nybble layout rather than a host world-range
+ * approximation. */
+static mysmb_u8 mysmb_objects_fireball_x_offscreen_bits(const struct mysmb_game *game,
+                                                         mysmb_u8 slot)
+{
+    static const mysmb_u8 data[16] = {
+        0x7fU,0x3fU,0x1fU,0x0fU,0x07U,0x03U,0x01U,0x00U,
+        0x80U,0xc0U,0xe0U,0xf0U,0xf8U,0xfcU,0xfeU,0xffU
+    };
+    static const mysmb_u8 defaults[3] = { 7U,15U,7U };
+    mysmb_u8 edge;
+    mysmb_u8 difference;
+    mysmb_u8 page_difference;
+    mysmb_u8 borrow;
+    mysmb_u8 index;
+    mysmb_u8 bits;
+
+    for (edge = 1U;; --edge) {
+        difference = (mysmb_u8)(game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_X + edge)] -
+                                 game->ram[MYSMB_FIREBALL_X + slot]);
+        borrow = game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_X + edge)] <
+                 game->ram[MYSMB_FIREBALL_X + slot] ? 1U : 0U;
+        page_difference = (mysmb_u8)(game->ram[(mysmb_u16)(MYSMB_SCREEN_LEFT_PAGE + edge)] -
+            game->ram[MYSMB_FIREBALL_PAGE + slot] - borrow);
+        index = defaults[edge];
+        if ((page_difference & 0x80U) == 0U) {
+            index = defaults[(mysmb_u8)(edge + 1U)];
+            if (page_difference == 0U && difference < 0x38U) {
+                index = (mysmb_u8)(difference >> 3U);
+                if (edge == 0U) index = (mysmb_u8)(index + 8U);
+            }
+        }
+        bits = data[index];
+        if (bits != 0U || edge == 0U) return (mysmb_u8)(bits >> 4U);
+    }
+}
+
+static mysmb_u8 mysmb_objects_fireball_y_offscreen_bits(const struct mysmb_game *game,
+                                                         mysmb_u8 slot)
+{
+    static const mysmb_u8 data[9] = { 0U,8U,12U,14U,15U,7U,3U,1U,0U };
+    static const mysmb_u8 defaults[3] = { 4U,0U,4U };
+    static const mysmb_u8 high_units[2] = { 0xffU,0U };
+    mysmb_u8 edge;
+    mysmb_u8 difference;
+    mysmb_u8 page_difference;
+    mysmb_u8 borrow;
+    mysmb_u8 index;
+    mysmb_u8 bits;
+
+    for (edge = 1U;; --edge) {
+        difference = (mysmb_u8)(high_units[edge] - game->ram[MYSMB_FIREBALL_Y + slot]);
+        borrow = high_units[edge] < game->ram[MYSMB_FIREBALL_Y + slot] ? 1U : 0U;
+        page_difference = (mysmb_u8)(1U - game->ram[MYSMB_FIREBALL_Y_HIGH + slot] - borrow);
+        index = defaults[edge];
+        if ((page_difference & 0x80U) == 0U) {
+            index = defaults[(mysmb_u8)(edge + 1U)];
+            if (page_difference == 0U && difference < 0x20U) {
+                index = (mysmb_u8)(difference >> 3U);
+                if (edge == 0U) index = (mysmb_u8)(index + 4U);
+            }
+        }
+        bits = data[index];
+        if (bits != 0U || edge == 0U) return bits;
+    }
+}
+
 static void mysmb_objects_get_fireball_offscreen_bits(struct mysmb_game *game,
                                                        mysmb_u8 slot)
 {
-    mysmb_u16 object_world;
-    mysmb_u16 screen_world;
-    mysmb_u8 bits;
-
-    object_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_FIREBALL_PAGE + slot] << 8U) | game->ram[MYSMB_FIREBALL_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) | game->ram[MYSMB_SCREEN_LEFT_X]);
-    bits = 0U;
-    if (object_world < screen_world) bits = 0x0fU;
-    else if ((mysmb_u16)(object_world - screen_world) >= 0x100U) bits = 0xf0U;
-    if (game->ram[MYSMB_FIREBALL_Y_HIGH + slot] != 1U || game->ram[MYSMB_FIREBALL_Y + slot] >= 0xf0U) bits = (mysmb_u8)(bits | 0xc0U);
-    game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] = bits;
+    game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] = (mysmb_u8)(
+        mysmb_objects_fireball_x_offscreen_bits(game, slot) |
+        (mysmb_u8)(mysmb_objects_fireball_y_offscreen_bits(game, slot) << 4U));
 }
-
 static void mysmb_objects_get_fireball_bounding_box(struct mysmb_game *game,
                                                      mysmb_u8 slot)
 {
