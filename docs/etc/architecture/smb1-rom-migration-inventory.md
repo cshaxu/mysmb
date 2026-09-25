@@ -9,6 +9,36 @@ Generated from `build/reference-source/SMBDIS.ASM`; SHA-256: `c8e91408db55341394
 - A green unit test alone does not close an item. Each behavioral item needs a ROM-reference frame script and comparison of the affected CPU RAM, CIRAM, palette, OAM, PPU state, and audio state.
 - No ad-hoc behavior change is permitted. A repair first names the checklist entry, original labels, exact source branch path, and regression route.
 
+## Authoritative top-level execution tree
+
+```text
+Start / ColdBoot
+├─ InitializeMemory, InitializeNameTables, title bootstrap
+└─ NonMaskableInterrupt — once per frame
+   ├─ InitScroll(0,0) → OAM DMA → UpdateScreen
+   ├─ SoundEngine → ReadJoypads → PauseRoutine → UpdateTopScore
+   ├─ timer bank / FrameCounter / LFSR
+   ├─ sprite-0 split: MoveSpritesOffscreen + SpriteShuffler → scene scroll
+   └─ OperModeExecutionTree
+      ├─ TitleScreenMode
+      ├─ GameMode
+      │  ├─ InitializeArea
+      │  ├─ ScreenRoutines
+      │  ├─ SecondaryGameSetup
+      │  └─ GameCoreRoutine
+      │     ├─ GameRoutines[GameEngineSubroutine]
+      │     └─ GameEngine
+      │        ├─ ProcFireball_Bubble
+      │        ├─ six × (EnemiesAndLoopsCore → FloateyNumbersRoutine)
+      │        ├─ player relative position / PlayerGfxHandler
+      │        ├─ block objects → misc objects → cannon/whirlpool/flagpole
+      │        └─ timer/palette/parser/save-input tail
+      ├─ VictoryMode
+      └─ GameOverMode
+```
+
+The labels and branches behind every line remain open until individually bound below. Source anchors: `NonMaskableInterrupt` line 764, `OperModeExecutionTree` line 954, `GameMode` line 5310, `GameCoreRoutine` line 5318, `GameEngine` line 5336, and `GameRoutines` line 5583.
+
 ## Logical tree and module gates
 
 - [ ] **Boot, reset, NMI, timing and input**
