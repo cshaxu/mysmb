@@ -27,6 +27,12 @@ int main(void)
         game.ram[0x020aU] != 2U || game.ram[0x020bU] != 0x48U ||
         game.ram[0x021cU] != 0x78U || game.ram[0x021dU] != 0x26U ||
         game.ram[0x021fU] != 0x40U) return 1;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0xe6U;
+    mysmb_player_draw_oam(&game);
+    if (game.ram[0x03d0U] != 0x10U ||
+        game.ram[0x021cU] != 0xf8U || game.ram[0x0220U] != 0xf8U) return 2;
     game.ram[0x0033U] = MYSMB_BUTTON_LEFT;
     mysmb_player_draw_oam(&game);
     if (game.ram[0x0205U] != 0x21U || game.ram[0x0206U] != 0x42U ||
