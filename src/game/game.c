@@ -485,8 +485,11 @@ void mysmb_game_initialize(struct mysmb_game *game)
 {
     mysmb_u16 index;
 
+    /* The CPU RAM cold state used by the owner-local ROM starts clear.  The
+     * following InitializeMemory routine intentionally leaves $0160-$01ff
+     * untouched, so do not manufacture $ff there before it runs. */
     for (index = 0U; index < 0x0800U; ++index) {
-        game->ram[index] = 0xffU;
+        game->ram[index] = 0U;
     }
     for (index = 0U; index < 0x0020U; ++index) {
         game->palette[index] = 0U;
