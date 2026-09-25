@@ -15,19 +15,6 @@ enum {
     MYSMB_FRAME_COUNTER = 0x0009U
 };
 
-static mysmb_u8 mysmb_block_relative_x(const struct mysmb_game *game,
-                                       mysmb_u8 slot)
-{
-    mysmb_u16 world;
-    mysmb_u16 left;
-
-    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_BLOCK_PAGE + slot] << 8U) |
-                         game->ram[MYSMB_BLOCK_X + slot]);
-    left = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_EDGE_PAGE] << 8U) |
-                        game->ram[MYSMB_SCREEN_EDGE_X]);
-    return (mysmb_u8)(world - left);
-}
-
 static void mysmb_block_hide_columns(struct mysmb_game *game, mysmb_u8 offset,
                                      mysmb_u8 slot)
 {
@@ -61,7 +48,7 @@ void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 tile1;
 
     offset = game->ram[MYSMB_BLOCK_SPRITE_OFFSET + slot];
-    x = mysmb_block_relative_x(game, slot);
+    x = game->ram[0x03b1U];
     y = game->ram[MYSMB_BLOCK_Y + slot];
     tile0 = 0x85U;
     tile1 = 0x86U;
@@ -104,8 +91,8 @@ void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
     offset = game->ram[MYSMB_BLOCK_SPRITE_OFFSET + slot];
     attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] << 4U) & 0xc0U) |
         (game->ram[MYSMB_AREA_TYPE] == 5U ? 2U : 3U));
-    x0 = mysmb_block_relative_x(game, slot);
-    x1 = mysmb_block_relative_x(game, (mysmb_u8)(slot + 2U));
+    x0 = game->ram[0x03b1U];
+    x1 = game->ram[0x03b2U];
     original_x = (mysmb_u8)(game->ram[MYSMB_BLOCK_ORIGINAL_X + slot] -
         game->ram[MYSMB_SCREEN_EDGE_X]);
     y0 = game->ram[MYSMB_BLOCK_Y + slot];
@@ -128,6 +115,9 @@ void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x020fU + offset] = (mysmb_u8)(original_x - x1 + original_x + 6U);
     mysmb_block_hide_columns(game, offset, slot);
 }
+
+
+
 
 
 

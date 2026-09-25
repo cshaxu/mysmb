@@ -14,7 +14,7 @@ $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC
 $sources = @(
     'game/boot.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/player.c',
     'game/objects.c', 'game/bridge.c', 'game/oam/bullet_bill_gfx.c', 'game/oam/hammer_gfx.c', 'game/oam/firebar_gfx.c', 'game/oam/vine_gfx.c', 'game/enemy_bounds.c',
-    'game/oam/power_up_gfx.c', 'game/oam/block_gfx.c', 'game/oam/goomba_gfx.c',
+    'game/oam/power_up_gfx.c', 'game/oam/block_position.c', 'game/oam/block_gfx.c', 'game/oam/goomba_gfx.c',
     'game/oam/bubble_gfx.c', 'game/oam/piranha_gfx.c', 'game/oam/cheep_gfx.c',
     'game/oam/bloober_gfx.c', 'game/oam/podoboo_gfx.c', 'game/oam/normal_enemy_gfx.c',
     'game/oam/spiny_gfx.c', 'game/oam/hammer_bro_gfx.c', 'game/oam/bowser_gfx.c', 'game/oam/bowser_flame_gfx.c', 'game/endgame_objects.c', 'game/oam/flagpole_gfx.c',
@@ -50,4 +50,5 @@ try {
 finally {
     Pop-Location
 }
+
 

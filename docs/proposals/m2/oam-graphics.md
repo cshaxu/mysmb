@@ -18,8 +18,8 @@ Consumes final gameplay state and produces source-ordered OAM plus game-owned sp
 
 ## Admission S plan
 
-1. **S1 active (P1)** - Establish the OAM source tree without changing behavior: move each existing sprite writer under `src/game/oam/`, map every OAM byte writer, offset table and graphics helper to ROM labels, and forbid local relative/offscreen reconstruction in gameplay owners.
-2. **S2 planned** - Translate relative position, offscreen-bit and bounding-box writers.
+1. **S1 complete (P1-P2)** - Establish the OAM source tree without changing behavior: move each existing sprite writer under `src/game/oam/`, map every OAM byte writer, offset table and graphics helper to ROM labels, and forbid local relative/offscreen reconstruction in gameplay owners.
+2. **S2 active (P1)** - Translate relative position, offscreen-bit and bounding-box writers.
 3. **S3 planned** - Translate player and enemy/misc graphics dispatch, priority, animation and OAM order.
 4. **S4 planned** - Compare OAM and sprite-0/status split across title, movement, objects, enemies and endgame.
 
@@ -38,3 +38,8 @@ The former top-level `*_gfx.c` files mixed source-owned OAM writers with general
 ## S1 P2: OAM API boundary
 
 objects.h now exports only object-state, collision, movement, and mode-facing operations. The OAM writers are declared by src/game/oam/oam.h, which both the writers and their two callers (objects.c and rame_root.c) include explicitly. The boundary does not hide legitimate dependencies: OAM writers still include objects.h when they invoke a shared ROM geometry primitive, rather than cloning it. This P changes no state machine or rendering rule. x64 and x86 each pass 78/78 CTest cases; OpenNT relinks the DOS MZ with the established OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 1FD186D0868ECF2BE9822638C548826F8FA83E41E6AA05387314D145F02B043D, mysmb32.exe SHA-256 5CA22BE7EBAFA5B4327DE92F5DCF89CA8343939B8418775E213D9D381F97F78A, mysmb64.exe SHA-256 C66DAC32B91781B9309A503148AB17E9726AA73C6F46863BBE1FE088FCA15C2A.
+
+
+## S2 P1: block relative-position and offscreen primitives
+
+BlockObjectsCore now calls the translated RelativeBlockPosition and GetBlockOffscreenBits after gravity/movement and before the original DrawBlock/DrawBrickChunks call sites. lock_position.c implements the source GetObjRelativePosition, GetXOffscreenBits, GetYOffscreenBits, and GetOffScreenBitsSet semantics for block inputs. The initial implementation incorrectly indexed the Block_Rel_* outputs by ObjectOffset; the 600-frame actual demo trace exposed $03b2, and the source proves those outputs are fixed $03b1/ and $03bc/, while Block_OffscreenBits is fixed $03d4. The writer now consumes those fixed RAM cells. Against the source-reachable title-to-demo continuation, the first work-RAM difference remains sample 68 but moves from $03b1 to $03b3, and work-RAM differences fall from 8,520 to 6,196 bytes; CIRAM, palette, audio commands and all seven PPU scalars remain zero-difference for all 600 samples. OAM remains at its prior first visible difference (sample 124), proving the block refactor did not create a visual substitution. The remaining $03b3//-/ path is RelativeMiscPosition/jump-coin state and is the next S2 node. x64 and x86 each pass 78/78 CTest cases; OpenNT relinks the DOS MZ with the existing OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 B388CA396574B9DFFD6FEE6778E7365B03474ECF3AFBF454D39BC9A3B5ECB532, mysmb32.exe SHA-256 4F30DDEA4925DF429FB0DEEC2DD216DD4146A9F3EB54324F75035D996FE9B9F6, mysmb64.exe SHA-256 849A7170C94E3D839DCBD3F783C27C899E14A86168064D327AC96ECFA329C9BA.

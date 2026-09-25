@@ -6,6 +6,9 @@
 /* ROM-owned OAM writers.  These consume completed game state and write only
  * the canonical $0200 OAM backing store plus ROM-defined relative/offscreen
  * work bytes.  Motion, collision and mode decisions remain outside this API. */
+/* ROM RelativeBlockPosition and GetBlockOffscreenBits. */
+void mysmb_oam_relative_block_position(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_power_up(struct mysmb_game *game);
 void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
@@ -34,3 +37,4 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index);
 
 #endif
+
