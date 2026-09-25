@@ -77,9 +77,8 @@ static DWORD mysmb_win32_dib_color(mysmb_u8 color)
         0xeceeeeUL,0x4c9aecUL,0x787cecUL,0xb062ecUL,0xe454ecUL,0xec58b4UL,0xec6a64UL,0xd48820UL,0xa0aa00UL,0x74c400UL,0x4cd020UL,0x38c06cUL,0x38b4ccUL,0x3c3c3cUL,0,0,
         0xeceeeeUL,0xa8ccecUL,0xbcbcecUL,0xd4b2ecUL,0xecaeecUL,0xecaed4UL,0xecb4b0UL,0xe4c690UL,0xccd278UL,0xb4de78UL,0xa8e290UL,0x98e2b4UL,0xa0d6e4UL,0xa0a2a0UL,0,0
     };
-    DWORD rgb;
-    rgb=colors[color&0x3fU];
-    return ((rgb&0x000000ffUL)<<16U)|(rgb&0x0000ff00UL)|((rgb&0x00ff0000UL)>>16U);
+    /* Table values are already top-down 32-bit DIB BGR words. */
+    return colors[color & 0x3fU];
 }
 static void mysmb_win32_draw_gameplay(void)
 {
