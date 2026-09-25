@@ -62,5 +62,21 @@ int main(void)
     if (mysmb_area_spawn_enemy_in_slot(&game, &source, 2U) != 1U ||
         game.ram[0x000fU] != 1U || game.ram[0x0010U] != 0U ||
         game.ram[0x0011U] != 1U || game.ram[0x0018U] != 6U) return 1;
+    /* ProcessEnemyData consumes an ordinary record that has already passed
+     * ScreenRight.  It leaves its position in the current empty slot but
+     * advances EnemyDataOffset so later slots cannot replay it. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 6U;
+    prg[0x22U] = 0xffU;
+    game.ram[0x000fU] = 0U;
+    game.ram[0x0010U] = 1U;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 0U;
+    game.ram[0x073bU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0x20U;
+    if (mysmb_area_spawn_enemy_in_slot(&game, &source, 0U) != 0U ||
+        game.ram[0x0739U] != 2U || game.ram[0x006eU] != 0U ||
+        game.ram[0x0087U] != 0x10U) return 2;
     return 0;
 }
