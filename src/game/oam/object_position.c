@@ -23,7 +23,11 @@ enum {
     MYSMB_FIREBALL_Y = 0x00d5U,
     MYSMB_FIREBALL_RELATIVE_X = 0x03afU,
     MYSMB_FIREBALL_RELATIVE_Y = 0x03baU,
-    MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U
+    MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U,
+    MYSMB_ENEMY_X = 0x0087U,
+    MYSMB_ENEMY_Y = 0x00cfU,
+    MYSMB_ENEMY_RELATIVE_X = 0x03aeU,
+    MYSMB_ENEMY_RELATIVE_Y = 0x03b9U
 };
 
 /* ROM RelativePlayerPosition.  This belongs with the other
@@ -49,6 +53,16 @@ void mysmb_oam_relative_fireball_position(struct mysmb_game *game, mysmb_u8 slot
         game->ram[MYSMB_FIREBALL_Y + slot];
 }
 
+/* ROM RelativeEnemyPosition -> VariableObjOfsRelPos ->
+ * GetObjRelativePosition.  The result is the fixed Enemy_Rel_* scratch
+ * pair selected by the current enemy slot, never a host/world coordinate. */
+void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_RELATIVE_X] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                   game->ram[MYSMB_SCREEN_EDGE_X]);
+    game->ram[MYSMB_ENEMY_RELATIVE_Y] = game->ram[MYSMB_ENEMY_Y + slot];
+}
 /* ROM GetXOffscreenBits.  Returns the source table byte before
  * RunOffscrBitsSubs moves its high nybble to the final low nybble. */
 static mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,

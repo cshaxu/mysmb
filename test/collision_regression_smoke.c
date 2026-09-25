@@ -3,6 +3,7 @@
 #include "game/world/world.h"
 #include "game/area.h"
 #include "game/player.h"
+#include "game/oam/oam.h"
 
 static void mysmb_clear_block_buffers(struct mysmb_game *game)
 {
@@ -342,6 +343,14 @@ int main(void)
     game.ram[0x0087U] = 0x50U;
     mysmb_objects_check_enemy_offscreen_bounds(&game, 0U);
     if (game.ram[0x000fU] == 0U || game.ram[0x0016U] != 13U) return 19;
+    /* RelativeEnemyPosition uses the fixed enemy scratch pair after
+     * VariableObjOfsRelPos; its source slot changes inputs, not outputs. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071cU] = 0x20U;
+    game.ram[0x0087U + 3U] = 0x44U;
+    game.ram[0x00cfU + 3U] = 0x70U;
+    mysmb_oam_relative_enemy_position(&game, 3U);
+    if (game.ram[0x03aeU] != 0x24U || game.ram[0x03b9U] != 0x70U) return 25;
     /* FireballEnemyCollision executes only on even frames, scans five
      * ordinary slots in descending order, and records the first source hit.
      * It must not use a host world-coordinate collision substitute. */

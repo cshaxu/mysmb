@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active — S3/P5.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active — S3/P6.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -66,3 +66,6 @@ ROM labels `PlayerGfxHandler` through `ExPlyrAt`, together with `GetPlayerOffscr
 ## S3 P5: fireball fixed offscreen and bounding-box scratch
 
 `GetFireballOffscreenBits` now lives with the source `GetXOffscreenBits`/`GetYOffscreenBits` primitives in `src/game/oam/object_position.c`.  As the ROM requires, each slot selects its own SprObject page/X/Y input through `GetProperObjOffset`, but the result is written to the single `FBall_OffscreenBits` cell `$03d2`; `FireballObjCore` performs the original `$cc` mask from that fixed cell.  `GetFireballBoundBox` now consumes the same fixed `Fireball_Rel_XPos/$03af` and `Fireball_Rel_YPos/$03ba` pair that the preceding relative-position call writes, while preserving slot-specific controls `$04a0/$04a1` and output boxes `$04c8/$04cc`.  The focused regression covers slot one explicitly, including the fixed relative/offscreen cells and its separate OAM/bounding-box destinations. The existing 600-frame reference route remains unchanged at its prior two-byte/one-sample work-RAM difference and its open OAM baseline; this route does not spawn a fireball. Validation passed: x64 78/78 CTest, x86 78/78 CTest, focused slot-one smoke, and the OpenNT MZ link (with its existing `OLDNAMES.LIB` warning). Refreshed artifacts: `mysmb16.exe` 1ABB2595D65B5B9FD2082B3686E41D9F69692386B88B787336962F02A1499E4E, `mysmb32.exe` D71A9D6FFE91DF4678DB4996013B0937174069772DF9911A49ECE69572FE5478, `mysmb64.exe` 1B720FF277046CD037A9FAF1307963877A6FF103559F2262FB20F010A193179E.
+## S3 P6: enemy relative-coordinate source interface
+
+ROM `RelativeEnemyPosition -> VariableObjOfsRelPos -> GetObjRelativePosition` now has one T16 owner in `src/game/oam/object_position.c`, exported as `mysmb_oam_relative_enemy_position`. The selected enemy slot supplies X/Y inputs; it writes the fixed `Enemy_Rel_XPos/$03ae` and `Enemy_Rel_YPos/$03b9` scratch pair after subtracting `ScreenLeft_X_Pos`. It does not decide collision, enemy state, score, audio, or platform output. A direct shared-core regression proves slot three writes those fixed cells, so T17's later `HandleEnemyFBallCol` migration can consume the source interface instead of reconstructing coordinates. Full x64 and x86 suites pass 79/79 each; the OpenNT DOS MZ relinks from the same shared source with its established OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 0A86CB50530729FB145861438E819182EC2B686380FD06C04E9B1B9825B9FDC6, mysmb32.exe SHA-256 44B50661F67539E475F7A2C4530FD58ABBCCF804E09A3E381A3FF9403990E36F, mysmb64.exe SHA-256 1BA20F45C279232E475697BB7A0A00DDC76A7B1C3CEC437180C3A16CD4F795FC.

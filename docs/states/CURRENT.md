@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T20 S2/P4, M2 T19 S2 and M2 T18 S1 active; M2 T17 S5/P3 active (S2 complete; S3/S4 active); M2 T16 S3 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
+**M2 T20 S2/P4, M2 T19 S2 and M2 T18 S1 active; M2 T17 S5/P3 active (S2 complete; S3/S4 active); M2 T16 S3/P6 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
 
 | Field | Record |
 | --- | --- |
