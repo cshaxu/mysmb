@@ -150,6 +150,26 @@ int main(void)
     if (game.ram[0x001bU] != 0U || game.ram[0x0023U] != 0U ||
         game.ram[0x0014U] != 0U || game.ram[0x0756U] != 2U ||
         game.ram[0x000eU] != 12U) return 2;
+    /* PlayerCollisionCore preserves an overlap that crosses the native
+     * byte boundary.  A conventional host AABB test rejects this flower. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x001bU] = 0x2eU;
+    game.ram[0x0023U] = 6U;
+    game.ram[0x0014U] = 1U;
+    game.ram[0x0039U] = 1U;
+    game.ram[0x0756U] = 1U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x0009U] = 0U;
+    game.ram[0x03d0U] = 0U;
+    game.ram[0x03d8U + 5U] = 0U;
+    game.ram[0x04acU] = 0xfeU; game.ram[0x04aeU] = 0x0aU;
+    game.ram[0x04adU] = 0x50U; game.ram[0x04afU] = 0x60U;
+    game.ram[0x04c4U] = 0x02U; game.ram[0x04c6U] = 0x0eU;
+    game.ram[0x04c5U] = 0x50U; game.ram[0x04c7U] = 0x60U;
+    mysmb_objects_check_power_up_collision(&game);
+    if (game.ram[0x001bU] != 0U || game.ram[0x0756U] != 2U ||
+        game.ram[0x000eU] != 12U) return 20;
+
     /* ChkUnderEnemy uses BlockBuffer_Y_Adder[$15]=$18, selecting row $20
      * at Y=$29.  The $15 passed by the ROM is an adder-table index. */
     mysmb_setup_active_mushroom(&game, 0xc0U, 0U, 0x29U, 1U);

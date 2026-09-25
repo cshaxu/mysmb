@@ -3095,10 +3095,43 @@ void mysmb_objects_set_bounding_box(struct mysmb_game *game,
 static mysmb_u8 mysmb_objects_boxes_collide(const struct mysmb_game *game,
                                             mysmb_u16 first, mysmb_u16 second)
 {
-    if (game->ram[first] > game->ram[second + 2U] ||
-        game->ram[first + 2U] < game->ram[second] ||
-        game->ram[first + 1U] > game->ram[second + 3U] ||
-        game->ram[first + 3U] < game->ram[second + 1U]) return 0U;
+    mysmb_u8 coordinate;
+
+    /* `first` is the player box (X in PlayerCollisionCore) and `second`
+     * is the sprite box (Y).  Preserve the 6502 comparisons, including
+     * their intentional one-byte-wrap branches. */
+    for (coordinate = 0U; coordinate < 2U; ++coordinate) {
+        mysmb_u8 player_upper;
+        mysmb_u8 player_lower;
+        mysmb_u8 enemy_upper;
+        mysmb_u8 enemy_lower;
+
+        player_upper = game->ram[(mysmb_u16)(first + coordinate)];
+        player_lower = game->ram[(mysmb_u16)(first + coordinate + 2U)];
+        enemy_upper = game->ram[(mysmb_u16)(second + coordinate)];
+        enemy_lower = game->ram[(mysmb_u16)(second + coordinate + 2U)];
+
+        if (enemy_upper >= player_upper) {
+            /* FirstBoxGreater. */
+            if (enemy_upper == player_upper) continue;
+            if (enemy_upper < player_lower) continue;
+            if (enemy_upper == player_lower) continue;
+            if (enemy_upper <= enemy_lower) return 0U;
+            if (enemy_lower >= player_upper) continue;
+            return 0U;
+        }
+
+        if (enemy_upper < player_lower) {
+            /* SecondBoxVerticalChk. */
+            if (player_lower < player_upper) continue;
+            if (enemy_lower >= player_upper) continue;
+            return 0U;
+        }
+        if (enemy_upper == player_lower) continue;
+        if (enemy_lower < enemy_upper) continue;
+        if (enemy_lower >= player_upper) continue;
+        return 0U;
+    }
     return 1U;
 }
 /* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
