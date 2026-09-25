@@ -1838,53 +1838,53 @@ The labels and branches behind every line remain open until individually bound b
 | 14397 | `DrawBubble` | unassigned | open | none |
 | 14413 | `ExDBub` | unassigned | open | none |
 | 14418 | `PlayerGfxTblOffsets` | unassigned | open | none |
-| 14424 | `PlayerGraphicsTable` | unassigned | open | none |
-| 14457 | `SwimKickTileNum` | unassigned | open | none |
-| 14460 | `PlayerGfxHandler` | unassigned | open | none |
-| 14466 | `CntPl` | unassigned | open | none |
-| 14489 | `SwimKT` | unassigned | open | none |
-| 14495 | `BigKTS` | unassigned | open | none |
-| 14497 | `ExPGH` | unassigned | open | none |
-| 14499 | `FindPlayerAction` | unassigned | open | none |
-| 14503 | `DoChangeSize` | unassigned | open | none |
-| 14507 | `PlayerKilled` | unassigned | open | none |
-| 14511 | `PlayerGfxProcessing` | unassigned | open | none |
-| 14532 | `SUpdR` | unassigned | open | none |
-| 14535 | `PlayerOffscreenChk` | unassigned | open | none |
-| 14547 | `PROfsLoop` | unassigned | open | none |
-| 14551 | `NPROffscr` | unassigned | open | none |
-| 14561 | `IntermediatePlayerData` | unassigned | open | none |
-| 14564 | `DrawPlayer_Intermediate` | unassigned | open | none |
-| 14566 | `PIntLoop` | unassigned | open | none |
-| 14587 | `RenderPlayerSub` | unassigned | open | none |
-| 14601 | `DrawPlayerLoop` | unassigned | open | none |
-| 14610 | `ProcessPlayerAction` | unassigned | open | none |
-| 14626 | `ProcOnGroundActs` | unassigned | open | none |
-| 14642 | `NonAnimatedActs` | unassigned | open | none |
-| 14649 | `ActionFalling` | unassigned | open | none |
-| 14654 | `ActionWalkRun` | unassigned | open | none |
-| 14659 | `ActionClimbing` | unassigned | open | none |
-| 14666 | `ActionSwimming` | unassigned | open | none |
-| 14676 | `GetCurrentAnimOffset` | unassigned | open | none |
-| 14680 | `FourFrameExtent` | unassigned | open | none |
-| 14684 | `ThreeFrameExtent` | unassigned | open | none |
-| 14687 | `AnimationControl` | unassigned | open | none |
-| 14701 | `SetAnimC` | unassigned | open | none |
-| 14702 | `ExAnimC` | unassigned | open | none |
-| 14705 | `GetGfxOffsetAdder` | unassigned | open | none |
-| 14712 | `SzOfs` | unassigned | open | none |
-| 14714 | `ChangeSizeOffsetAdder` | unassigned | open | none |
-| 14718 | `HandleChangeSize` | unassigned | open | none |
-| 14728 | `CSzNext` | unassigned | open | none |
-| 14729 | `GorSLog` | unassigned | open | none |
-| 14734 | `GetOffsetFromAnimCtrl` | unassigned | open | none |
-| 14741 | `ShrinkPlayer` | unassigned | open | none |
-| 14750 | `ShrPlF` | unassigned | open | none |
-| 14753 | `ChkForPlayerAttrib` | unassigned | open | none |
-| 14767 | `KilledAtt` | unassigned | open | none |
-| 14774 | `C_S_IGAtt` | unassigned | open | none |
-| 14781 | `ExPlyrAt` | unassigned | open | none |
-| 14786 | `RelativePlayerPosition` | unassigned | open | none |
+| 14424 | `PlayerGraphicsTable` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14457 | `SwimKickTileNum` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14460 | `PlayerGfxHandler` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14466 | `CntPl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14489 | `SwimKT` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14495 | `BigKTS` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14497 | `ExPGH` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14499 | `FindPlayerAction` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14503 | `DoChangeSize` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14507 | `PlayerKilled` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14511 | `PlayerGfxProcessing` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14532 | `SUpdR` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14535 | `PlayerOffscreenChk` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14547 | `PROfsLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14551 | `NPROffscr` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14561 | `IntermediatePlayerData` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14564 | `DrawPlayer_Intermediate` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14566 | `PIntLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14587 | `RenderPlayerSub` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14601 | `DrawPlayerLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14610 | `ProcessPlayerAction` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14626 | `ProcOnGroundActs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14642 | `NonAnimatedActs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14649 | `ActionFalling` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14654 | `ActionWalkRun` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14659 | `ActionClimbing` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14666 | `ActionSwimming` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14676 | `GetCurrentAnimOffset` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14680 | `FourFrameExtent` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14684 | `ThreeFrameExtent` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14687 | `AnimationControl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14701 | `SetAnimC` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14702 | `ExAnimC` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14705 | `GetGfxOffsetAdder` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14712 | `SzOfs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14714 | `ChangeSizeOffsetAdder` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14718 | `HandleChangeSize` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14728 | `CSzNext` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14729 | `GorSLog` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14734 | `GetOffsetFromAnimCtrl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14741 | `ShrinkPlayer` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14750 | `ShrPlF` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14753 | `ChkForPlayerAttrib` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14767 | `KilledAtt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14774 | `C_S_IGAtt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14781 | `ExPlyrAt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
+| 14786 | `RelativePlayerPosition` | M2 T16 S3/P2 | ported; route trace pending | src/game/oam/object_position.c |
 | 14791 | `RelativeBubblePosition` | unassigned | open | none |
 | 14797 | `RelativeFireballPosition` | unassigned | open | none |
 | 14801 | `RelWOfs` | unassigned | open | none |
@@ -1893,7 +1893,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14816 | `RelativeBlockPosition` | unassigned | open | none |
 | 14825 | `VariableObjOfsRelPos` | unassigned | open | none |
 | 14834 | `GetObjRelativePosition` | unassigned | open | none |
-| 14846 | `GetPlayerOffscreenBits` | unassigned | open | none |
+| 14846 | `GetPlayerOffscreenBits` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
 | 14851 | `GetFireballOffscreenBits` | unassigned | open | none |
 | 14857 | `GetBubbleOffscreenBits` | unassigned | open | none |
 | 14863 | `GetMiscOffscreenBits` | unassigned | open | none |

@@ -179,7 +179,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
             mysmb_objects_draw_retainer(game, 0U);
         /* ROM VictoryMode always ends at RelativePlayerPosition and
          * PlayerGfxHandler, including bridge-collapse task zero. */
-        mysmb_player_draw_oam(game);
+        mysmb_oam_draw_player(game);
     }
     else if (mode_before == 3U) {
         mysmb_game_step_game_over(game);
@@ -309,7 +309,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_objects_step_lakitus(game);
         mysmb_objects_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
-        mysmb_player_draw_oam(game);
+        mysmb_oam_draw_player(game);
         mysmb_objects_step_vine(game);
         mysmb_area_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);

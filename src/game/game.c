@@ -3,6 +3,7 @@
 #include "game/area.h"
 #include "game/audio.h"
 #include "game/player.h"
+#include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/title_modes.h"
 #include "game/terminal_modes.h"
@@ -245,7 +246,7 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
         else if (mysmb_area_queue_game_text(game, 1U) != 0U) {
-            mysmb_player_draw_intermediate_oam(game);
+            mysmb_oam_draw_intermediate_player(game);
             game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
             game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;

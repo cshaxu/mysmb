@@ -1,4 +1,5 @@
 #include "game/player.h"
+#include "game/oam/oam.h"
 
 int main(void)
 {
@@ -19,7 +20,7 @@ int main(void)
     game.ram[0x00ceU] = 0x60U;
     game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x03c4U] = 2U;
-    mysmb_player_draw_oam(&game);
+    mysmb_oam_draw_player(&game);
     if (game.ram[0x03adU] != 0x40U || game.ram[0x0755U] != 0x40U ||
         game.ram[0x03b8U] != 0x60U ||
         game.ram[0x0204U] != 0x60U || game.ram[0x0205U] != 0x20U ||
@@ -31,16 +32,16 @@ int main(void)
     game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0xe6U;
-    mysmb_player_draw_oam(&game);
+    mysmb_oam_draw_player(&game);
     if (game.ram[0x03d0U] != 0x10U ||
         game.ram[0x021cU] != 0xf8U || game.ram[0x0220U] != 0xf8U) return 2;
     game.ram[0x0033U] = MYSMB_BUTTON_LEFT;
-    mysmb_player_draw_oam(&game);
+    mysmb_oam_draw_player(&game);
     if (game.ram[0x0205U] != 0x21U || game.ram[0x0206U] != 0x42U ||
         game.ram[0x0209U] != 0x20U || game.ram[0x020aU] != 0x42U) return 1;
     for (index = 0U; index < 8U; ++index)
         prg[(mysmb_u16)(0x6e17U + 0xb8U + index)] = (mysmb_u8)(0x40U + index);
-    mysmb_player_draw_intermediate_oam(&game);
+    mysmb_oam_draw_intermediate_player(&game);
     if (game.ram[0x0204U] != 0x58U || game.ram[0x0205U] != 0x40U ||
         game.ram[0x0207U] != 0x60U || game.ram[0x0208U] != 0x58U ||
         game.ram[0x0209U] != 0x41U || game.ram[0x020bU] != 0x68U ||
@@ -59,7 +60,7 @@ int main(void)
     game.ram[0x03c4U] = 0U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x60U;
-    mysmb_player_draw_oam(&game);
+    mysmb_oam_draw_player(&game);
     if (game.ram[0x06d5U] != 0xc8U || game.ram[0x0216U] != 0U ||
         game.ram[0x021aU] != 0x40U || game.ram[0x021eU] != 0U ||
         game.ram[0x0222U] != 0x40U) return 3;
