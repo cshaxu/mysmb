@@ -48,6 +48,8 @@ void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
 void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM EnemyGfxHandler/DrawEnemyObject for swimming Cheep-Cheeps. */
 mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_objects_draw_bloober(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_objects_draw_aquatic_enemy(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 /* ROM $ad5a-$ad79 InitPodoboo and $af13-$af25 MovePodoboo, sans rendering. */
