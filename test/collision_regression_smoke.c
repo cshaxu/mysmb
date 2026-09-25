@@ -158,9 +158,13 @@ int main(void)
     game.ram[0x0014U] = 1U;
     game.ram[0x0039U] = 1U;
     game.ram[0x0756U] = 1U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x50U;
     game.ram[0x000eU] = 8U;
     game.ram[0x0009U] = 0U;
-    game.ram[0x03d0U] = 0U;
+    /* CheckPlayerVertical rejects only $f0-$ff.  A partial top-row mask
+     * such as $10 remains a valid player/power-up collision frame. */
+    game.ram[0x03d0U] = 0x10U;
     game.ram[0x03d8U + 5U] = 0U;
     game.ram[0x04acU] = 0xfeU; game.ram[0x04aeU] = 0x0aU;
     game.ram[0x04adU] = 0x50U; game.ram[0x04afU] = 0x60U;

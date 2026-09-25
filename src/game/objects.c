@@ -2088,7 +2088,9 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
         game->ram[MYSMB_ENEMY_STATE + slot] < 6U ||
         game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        (game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] & 0xf0U) != 0U ||
+        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
+        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
+        game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
         game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] != 0U) return;
 
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
