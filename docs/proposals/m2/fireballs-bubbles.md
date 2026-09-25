@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T20 active — S2/P2.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
+**M2 T20 active — S2/P3.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
 
 ## ROM scope
 
@@ -19,7 +19,7 @@ Called before enemy slots; consumes player/collision/enemy state and writes fire
 ## Admission S plan
 
 1. **S1 complete (P1-P2)** - Establish the source owner boundary: extract fireball/bubble dispatch and its named labels from `objects.c` into `src/game/fireball/` without behavior changes; map every RAM field, helper and cross-slice call.
-2. **S2 active (P1-P2)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
+2. **S2 active (P1-P3)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
 3. **S3 planned** - Translate background/enemy collision and clear/effect branches.
 4. **S4 planned** - Compare open travel, wall bounce, enemy hit and underwater bubble routes.
 
@@ -42,3 +42,7 @@ The `ProcFireball_Bubble` creation branch now writes the original `Sfx_Fireball`
 ## S2/P2: fireball throw-timer handoff
 
 At the same original spawn point, `PlayerAnimTimerSet/$070c` now transfers to `FireballThrowingTimer/$0711`, then its decremented value transfers to `PlayerAnimTimer/$0781`. The focused fireball regression proves `$0711 = 6` and `$0781 = 5` from an input value of 6, alongside the S2/P1 one-shot sound-queue check. This remains shared game-core behavior; neither Win32 nor DOS owns it.
+
+## S2/P3: source-label cutover
+
+`ProcFireball_Bubble` now has its own shared C90 owner, `src/game/fireball/fireball_spawn.c`; `FireballObjCore` remains in `fireball_core.c` and calls the spawn owner before its source-order two-slot loop. The old object-owner fireball API has no remaining production or test consumer. This is a body-preserving extraction: movement/gravity, offscreen/OAM, and collision calls remain explicitly delegated to T17/T16 at their original label boundaries. The focused fixture now initializes every RAM input read by the original spawn and offscreen routines, so x86 and x64 execute the same branch rather than inheriting host stack bytes.

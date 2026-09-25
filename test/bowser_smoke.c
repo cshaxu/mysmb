@@ -2,6 +2,7 @@
 #include "game/enemy/stream.h"
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/fireball/fireball.h"
 
 int main(void)
 {
@@ -92,7 +93,7 @@ int main(void)
     game.ram[0x043aU] = 0U;
     game.ram[0x04a0U] = 7U;
     game.ram[0x0407U] = 0U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x0483U] != 0U || game.ram[0x0016U] != 6U ||
         game.ram[0x001eU] != 0x23U || game.ram[0x00a0U] != 0xfeU ||
         game.ram[0x0024U] != 0x80U) return 4;

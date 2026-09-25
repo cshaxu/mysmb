@@ -5,12 +5,8 @@
 #include "game/world/world.h"
 
 enum {
-    MYSMB_PLAYER_STATUS = 0x0756U,
-    MYSMB_PLAYER_A_B = 0x000aU,
-    MYSMB_PREVIOUS_A_B = 0x000dU,
-    MYSMB_PLAYER_Y_HIGH = 0x00b5U,
-    MYSMB_PLAYER_CROUCHING = 0x0714U,
-    MYSMB_PLAYER_STATE = 0x001dU,
+
+
     MYSMB_PLAYER_X = 0x0086U,
     MYSMB_PLAYER_PAGE = 0x006dU,
     MYSMB_PLAYER_Y = 0x00ceU,
@@ -54,7 +50,7 @@ static void mysmb_fireball_get_bounding_box(struct mysmb_game *game,
         game->ram[MYSMB_FIREBALL_BOUND_BOX + slot],
         game->ram[MYSMB_FIREBALL_REL_X], game->ram[MYSMB_FIREBALL_REL_Y]);
 }
-/* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
+/* ROM FireballObjCore ($6352), excluding OAM.
  * Both objects use the original fixed slots. */
 void mysmb_fireball_step(struct mysmb_game *game)
 {
@@ -74,24 +70,7 @@ void mysmb_fireball_step(struct mysmb_game *game)
     mysmb_u8 enemy_slot;
     mysmb_u16 sum;
 
-    if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
-        (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
-        (game->ram[MYSMB_PREVIOUS_A_B] & MYSMB_BUTTON_B) == 0U &&
-        game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
-        game->ram[MYSMB_PLAYER_CROUCHING] == 0U &&
-        game->ram[MYSMB_PLAYER_STATE] != 3U) {
-        slot = (mysmb_u8)(game->ram[MYSMB_FIREBALL_COUNTER] & 1U);
-        if (game->ram[MYSMB_FIREBALL_STATE + slot] == 0U) {
-            /* ROM ProcFireball_Bubble: Sfx_Fireball is queued before state. */
-            game->ram[MYSMB_SQUARE1_SOUND] = 0x20U;
-            game->ram[MYSMB_FIREBALL_STATE + slot] = 2U;
-            game->ram[MYSMB_FIREBALL_COUNTER]++;
-            game->ram[MYSMB_FIREBALL_THROWING_TIMER] =
-                game->ram[MYSMB_PLAYER_ANIM_TIMER_SET];
-            game->ram[MYSMB_PLAYER_ANIMATION] =
-                (mysmb_u8)(game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] - 1U);
-        }
-    }
+    mysmb_fireball_try_spawn(game);
     for (slot = 0U; slot < 2U; ++slot) {
         state = game->ram[MYSMB_FIREBALL_STATE + slot];
         if (state == 0U) continue;

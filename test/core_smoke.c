@@ -3,6 +3,7 @@
 #include "game/enemy/stream.h"
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/fireball/fireball.h"
 #include "game/world/world.h"
 #include "game/render.h"
 
@@ -1081,7 +1082,7 @@ int main(void)
     game.ram[0x00ceU] = 0x50U;
     game.ram[0x0033U] = 1U;
     game.ram[0x070cU] = 4U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 1U || game.ram[0x008dU] != 0x38U ||
         game.ram[0x0074U] != 1U || game.ram[0x00d5U] != 0x54U ||
         game.ram[0x005eU] != 0x40U || game.ram[0x04a0U] != 7U) return 1;
@@ -1096,12 +1097,12 @@ int main(void)
     game.ram[0x041dU] = 0U;
     game.ram[0x043aU] = 0U;
     game.ram[0x0533U] = 0x61U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x00a6U] != 0xfdU || game.ram[0x003aU] != 1U) return 1;
     game.ram[0x00d5U] = 0x50U;
     game.ram[0x00a6U] = 0xfdU;
     game.ram[0x043aU] = 0U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0x80U) return 1;
     game.ram[0x0756U] = 0U;
     game.ram[0x0024U] = 1U;
@@ -1126,7 +1127,7 @@ int main(void)
     mysmb_objects_update_enemy_bounding_box(&game, 0U);
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0x80U || (game.ram[0x001eU] & 0x20U) == 0U) return 1;
     game.ram[0x0024U] = 1U;
     game.ram[0x0074U] = 0U;
@@ -1146,7 +1147,7 @@ int main(void)
     game.ram[0x0110U] = 0U;
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
-    mysmb_objects_step_fireballs(&game);
+    mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0x80U || game.ram[0x001eU] != 0U ||
         game.ram[0x0110U] != 0U) return 1;
     game.ram[0x0756U] = 2U;

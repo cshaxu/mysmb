@@ -12,9 +12,16 @@ int main(void)
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x40U;
     game.ram[0x0086U] = 0x40U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0033U] = 1U;
     game.ram[0x06f1U] = 0x20U;
     game.ram[0x070cU] = 6U;
     game.ram[0x071dU] = 0xffU;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x0714U] = 0U;
+    game.ram[0x001dU] = 0U;
     mysmb_fireball_step(&game);
     if (game.ram[0x00ffU] != 0x20U || game.ram[0x0024U] != 1U ||
         game.ram[0x0711U] != 6U || game.ram[0x0781U] != 5U) return 14;
