@@ -8,10 +8,23 @@ enum {
     MYSMB_PPU_STATUS_BAR_HEIGHT = 32
 };
 
+#ifdef MYSMB_DOS16_TARGET
+#define MYSMB_PPU_FRAME_FAR __far
+#else
+#define MYSMB_PPU_FRAME_FAR
+#endif
+
 struct mysmb_ppu_frame {
-    /* 2C02 master-palette indices, one complete 256x240 presentation frame. */
+#ifdef MYSMB_DOS16_TARGET
+    mysmb_u8 MYSMB_PPU_FRAME_FAR *pixels;
+#else
     mysmb_u8 pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
+#endif
 };
+#ifdef MYSMB_DOS16_TARGET
+void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,
+                                 mysmb_u8 MYSMB_PPU_FRAME_FAR *pixels);
+#endif
 
 /* Composes the source PPU-visible state and embedded CHR into one frame.  This
  * is game output: all platform backends receive this same result unchanged. */

@@ -2,7 +2,7 @@
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+Admitted as M2 T14 S1. P1 is behavior-preserving structural extraction and three-EXE validation; later S1 parts map individual root labels before semantics change. Every P commit refreshes assets/mysmb16.exe, assets/mysmb32.exe and assets/mysmb64.exe.
 
 ## ROM scope
 

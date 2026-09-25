@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/frame_root.h"
 #include "game/area.h"
 #include "game/audio.h"
 #include "game/player.h"
@@ -103,11 +104,11 @@ static void mysmb_game_print_victory_messages(struct mysmb_game *game);
 static void mysmb_game_step_screen_routine(struct mysmb_game *game);
 static void mysmb_game_primary_setup(struct mysmb_game *game);
 static void mysmb_game_secondary_setup(struct mysmb_game *game);
-static void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
+void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 static void mysmb_game_step_area_parser(struct mysmb_game *game);
-static void mysmb_game_commit_display_state(struct mysmb_game *game);
-static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
-static void mysmb_game_submit_oam(struct mysmb_game *game);
+void mysmb_game_commit_display_state(struct mysmb_game *game);
+void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
+void mysmb_game_submit_oam(struct mysmb_game *game);
 
 /* ROM GameEngine: NoChgMus / CyclePlayerPalette / ResetPalStar.
  * PlayerGfxHandler has already consumed this attribute for the current OAM
@@ -179,7 +180,7 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
 
 /* ROM NMI RotPRandomBit.  The carry derives from d1 of the first two
  * registers, then propagates through seven consecutive ROR instructions. */
-static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
+void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
 {
     mysmb_u8 index;
     mysmb_u8 carry;
@@ -198,7 +199,7 @@ static void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
 }
 /* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
  * interval timers run each time IntervalTimerControl rolls under zero. */
-static void mysmb_game_tick_player_timers(struct mysmb_game *game)
+void mysmb_game_tick_player_timers(struct mysmb_game *game)
 {
     mysmb_u8 index;
     mysmb_u8 last_timer;
@@ -559,7 +560,7 @@ void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
 }
 
 /* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */
-static void mysmb_game_submit_oam(struct mysmb_game *game)
+void mysmb_game_submit_oam(struct mysmb_game *game)
 {
     mysmb_u16 offset;
 
@@ -568,7 +569,7 @@ static void mysmb_game_submit_oam(struct mysmb_game *game)
 }
 
 /* ROM $81c6-$81f9 SpriteShuffler. */
-static void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
+void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
 {
     mysmb_u8 index;
     mysmb_u16 offset;
@@ -993,7 +994,7 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
 /* ROM $8e92-$8eb6 UpdateScreen/WriteBufferToScreen at the NMI boundary.
  * The buffer is owned by game routines during the preceding frame and is
  * cleared only after its terminal command has reached PPU-visible state. */
-static void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
+void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 1U &&
         game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 4U) {
@@ -1064,7 +1065,7 @@ static void mysmb_game_step_area_parser(struct mysmb_game *game)
 /* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
  * commits scroll/name-table state, then re-enables NMI on $2000.  Gameplay
  * has already changed the source-owned scroll fields when this is called. */
-static void mysmb_game_commit_display_state(struct mysmb_game *game)
+void mysmb_game_commit_display_state(struct mysmb_game *game)
 {
     /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
      * may have selected d2 in that mirror, whereas the physical register at
@@ -1186,27 +1187,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_u8 enemy_slot;
     struct mysmb_area_source area_source;
 
-    mode_before = game->ram[MYSMB_RAM_OPER_MODE];
-    task_before = game->ram[MYSMB_RAM_OPER_MODE_TASK];
-    game->frame_number++;
-    game->ram[MYSMB_RAM_FRAME_COUNTER]++;
-    if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
-    else game->oam_dma_primed = 1U;
-    mysmb_game_commit_vram_buffer(game);
-    mysmb_game_commit_display_state(game);
-    mysmb_audio_step(game);
-    mysmb_game_tick_player_timers(game);
-    mysmb_game_rotate_pseudorandom(game);
-    if (game->ram[MYSMB_RAM_SPRITE0_HIT] != 0U) {
-        mysmb_u8 oam_offset;
-
-        oam_offset = 4U;
-        do {
-            game->ram[(mysmb_u16)(MYSMB_RAM_OAM + oam_offset)] = 0xf8U;
-            oam_offset = (mysmb_u8)(oam_offset + 4U);
-        } while (oam_offset != 0U);
-        mysmb_game_shuffle_sprite_offsets(game);
-    }
+    mysmb_frame_root_begin(game, &mode_before, &task_before);
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
@@ -1401,12 +1382,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     if (mysmb_game_run_timer(game) != 0U) {
         (void)mysmb_area_queue_timer_status(game);
     }
-    frame->sprite0_y = game->ram[0x0200U];
-    frame->sprite0_x = game->ram[0x0203U];
-    frame->start_pressed =
-        (game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_START) != 0U;
-    frame->operating_mode = game->ram[MYSMB_RAM_OPER_MODE];
-    frame->operating_mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+    mysmb_frame_root_finish(game, frame);
 }
 
 /* ROM $82b3-$82ca DemoEngine.  It returns one only after the terminal zero

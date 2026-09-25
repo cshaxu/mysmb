@@ -1,4 +1,8 @@
 #include "platform/dos16/dos16_root.h"
+#ifdef MYSMB_DOS16_TARGET
+#include <malloc.h>
+static mysmb_u8 MYSMB_VGA_FAR *mysmb_dos16_ppu_pixels;
+#endif
 
 mysmb_u8 mysmb_dos16_decode_bios_key(mysmb_u8 scan_code, mysmb_u8 shift_status, mysmb_u8 *text_mode)
 {
@@ -28,6 +32,13 @@ static void mysmb_dos16_compose_and_present(struct mysmb_dos16_root *root)
 void mysmb_dos16_root_initialize(struct mysmb_dos16_root *root, const struct mysmb_dos16_hooks *hooks, mysmb_u8 MYSMB_VGA_FAR *page0, mysmb_u8 MYSMB_VGA_FAR *page1, mysmb_u8 MYSMB_VGA_FAR *page2, mysmb_u8 MYSMB_VGA_FAR *page3)
 {
     mysmb_game_initialize(&root->game);
+#ifdef MYSMB_DOS16_TARGET
+    if (mysmb_dos16_ppu_pixels == 0) {
+        mysmb_dos16_ppu_pixels = (mysmb_u8 MYSMB_VGA_FAR *)_fmalloc(
+            MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT);
+    }
+    mysmb_ppu_frame_bind_pixels(&root->ppu_frame, mysmb_dos16_ppu_pixels);
+#endif
     mysmb_game_frame_initialize(&root->game_frame);
     root->hooks = *hooks;
     mysmb_vga_frame_initialize(&root->vga_frame, page0, page1, page2, page3);

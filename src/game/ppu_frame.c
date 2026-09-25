@@ -1,5 +1,12 @@
 #include "game/ppu_frame.h"
 
+#ifdef MYSMB_DOS16_TARGET
+void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,
+                                 mysmb_u8 MYSMB_PPU_FRAME_FAR *pixels)
+{
+    frame->pixels = pixels;
+}
+#endif
 static const mysmb_u8 mysmb_ppu_master_color[64] = {
     0x00U,0x01U,0x02U,0x03U,0x04U,0x05U,0x06U,0x07U,
     0x08U,0x09U,0x0aU,0x0bU,0x0cU,0x0dU,0x0eU,0x0fU,
