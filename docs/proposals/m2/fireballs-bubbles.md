@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T20 active — S1/P2.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
+**M2 T20 active — S2/P2.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
 
 ## ROM scope
 
@@ -19,7 +19,7 @@ Called before enemy slots; consumes player/collision/enemy state and writes fire
 ## Admission S plan
 
 1. **S1 complete (P1-P2)** - Establish the source owner boundary: extract fireball/bubble dispatch and its named labels from `objects.c` into `src/game/fireball/` without behavior changes; map every RAM field, helper and cross-slice call.
-2. **S2 active (P1)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
+2. **S2 active (P1-P2)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
 3. **S3 planned** - Translate background/enemy collision and clear/effect branches.
 4. **S4 planned** - Compare open travel, wall bounce, enemy hit and underwater bubble routes.
 
@@ -27,7 +27,11 @@ Called before enemy slots; consumes player/collision/enemy state and writes fire
 
 Lifetime comes from ROM offscreen bits and collision branches, never a host distance test.
 
-Platform code may not read or write these game decisions. Delete replaced code in the same admitted task once its ROM trace proves the replacement.\n\n## S1/P1 admission record\n\nThe existing implementation interleaves `ProcFireball_Bubble`, `FireballObjCore`, fireball collision, and bubble calls with unrelated block/item/enemy owners in `objects.c`. S1/P1 moved the fireball core to an explicit game owner and declares its call dependencies: T16 supplies relative/offscreen/OAM writes; T17 supplies common gravity, horizontal movement, bounding-box and block-buffer primitives; T19 retains enemy-slot scheduling. No state transition, sound value, collision threshold, or renderer behavior may change in S1. BubbleCheck remains an explicit dependency in `fireball/bubble.c` for the next S1 packet; S2 begins only after the complete T20 owner boundary compiles and has the three-target artifact baseline.
+Platform code may not read or write these game decisions. Delete replaced code in the same admitted task once its ROM trace proves the replacement.
+
+## S1/P1 admission record
+
+The existing implementation interleaves `ProcFireball_Bubble`, `FireballObjCore`, fireball collision, and bubble calls with unrelated block/item/enemy owners in `objects.c`. S1/P1 moved the fireball core to an explicit game owner and declares its call dependencies: T16 supplies relative/offscreen/OAM writes; T17 supplies common gravity, horizontal movement, bounding-box and block-buffer primitives; T19 retains enemy-slot scheduling. No state transition, sound value, collision threshold, or renderer behavior may change in S1. BubbleCheck remains an explicit dependency in `fireball/bubble.c` for the next S1 packet; S2 begins only after the complete T20 owner boundary compiles and has the three-target artifact baseline.
 
 ## S1/P1: fireball core source boundary
 
@@ -35,3 +39,6 @@ Platform code may not read or write these game decisions. Delete replaced code i
 ## S2/P1: fireball spawn sound queue
 
 The `ProcFireball_Bubble` creation branch now writes the original `Sfx_Fireball` literal `$20` to `Square1SoundQueue/$00ff` after every source eligibility check and immediately before allocating the fireball state. The regression proves a newly valid fireball queues `$20`, while a held B button does not queue it again. This is shared C core behavior across all targets.
+## S2/P2: fireball throw-timer handoff
+
+At the same original spawn point, `PlayerAnimTimerSet/$070c` now transfers to `FireballThrowingTimer/$0711`, then its decremented value transfers to `PlayerAnimTimer/$0781`. The focused fireball regression proves `$0711 = 6` and `$0781 = 5` from an input value of 6, alongside the S2/P1 one-shot sound-queue check. This remains shared game-core behavior; neither Win32 nor DOS owns it.
