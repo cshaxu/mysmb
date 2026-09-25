@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S2/P3.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S2/P4.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -54,3 +54,7 @@ The original `ImposeGravity` uses the carry from `ADC SprObject_Y_Position,x` in
 ## S2 P3: generic SprObject movement seam
 
 `movement.c` now exposes the exact downward `ImposeGravity` path and `MoveObjectHorizontally` for a caller-selected ROM SprObject offset. The primitives retain the 6502 fractional carry into Y high position and the X-to-page carry; no caller changes in this P. The direct regression binds offset seven, the offset FireballObjCore obtains with `TXA; ADC #$07`, and covers both carry boundaries. T20 may now remove its duplicate arithmetic by consuming these T17 APIs in a separate source-slice P.
+
+## S2 P4: correct SprObject base addresses
+
+The P3 generic seam initially used fireball-specialized array addresses as its base and then applied the supplied offset again. ROM `FireballObjCore` first makes X equal to 7, so `ImposeGravity` and `MoveObjectHorizontally` must index the common bases (`$009f/$00b5/$00ce/$0416/$0433` and `$0057/$006d/$0086/$0400`) plus that offset. The corrected regression names both the common base and offset seven; it retains the carry checks and prevents a future double-offset caller.
