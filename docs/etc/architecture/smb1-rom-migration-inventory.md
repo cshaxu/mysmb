@@ -8,6 +8,11 @@ Generated from `build/reference-source/SMBDIS.ASM`; SHA-256: `c8e91408db55341394
 - `src/game` owns every game decision, PPU-state construction, OAM construction, and input decoding. `src/platform` may only collect host input, schedule frames, and submit the already constructed frame.
 - A green unit test alone does not close an item. Each behavioral item needs a ROM-reference frame script and comparison of the affected CPU RAM, CIRAM, palette, OAM, PPU state, and audio state.
 - No ad-hoc behavior change is permitted. A repair first names the checklist entry, original labels, exact source branch path, and regression route.
+- The control graph is authoritative for executable structure. Data labels are separately tracked because tables and constants are part of ROM fidelity, but they do not become synthetic C functions.
+
+## Inventory size
+
+- Assembly labels: `1992`
 
 ## Authoritative top-level execution tree
 
@@ -2121,3 +2126,8 @@ The labels and branches behind every line remain open until individually bound b
 | 16355 | `WaterEventMusEnvData` | unassigned | open | none |
 | 16362 | `BowserFlameEnvData` | unassigned | open | none |
 | 16368 | `BrickShatterEnvData` | unassigned | open | none |
+
+## Control-graph size
+
+- Executable control nodes with an explicit edge: `1578`
+- Static/data-only or unconnected labels requiring separate classification: `414`

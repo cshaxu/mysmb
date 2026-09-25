@@ -35,6 +35,11 @@ $out.Add('- ROM assembly is the authority for all game behavior. The C source mu
 $out.Add('- `src/game` owns every game decision, PPU-state construction, OAM construction, and input decoding. `src/platform` may only collect host input, schedule frames, and submit the already constructed frame.')
 $out.Add('- A green unit test alone does not close an item. Each behavioral item needs a ROM-reference frame script and comparison of the affected CPU RAM, CIRAM, palette, OAM, PPU state, and audio state.')
 $out.Add('- No ad-hoc behavior change is permitted. A repair first names the checklist entry, original labels, exact source branch path, and regression route.')
+$out.Add('- The control graph is authoritative for executable structure. Data labels are separately tracked because tables and constants are part of ROM fidelity, but they do not become synthetic C functions.')
+$out.Add('')
+$out.Add('## Inventory size')
+$out.Add('')
+$out.Add('- Assembly labels: `' + $labels.Count + '`')
 $out.Add('')
 $out.Add('## Authoritative top-level execution tree')
 $out.Add('')
@@ -110,6 +115,12 @@ for ($i = 0; $i -lt $asm.Count; $i++) {
 }
 foreach ($edge in ($edges | Sort-Object)) { $dot.Add($edge) }
 $dot.Add('}')
+$controlNodes = @(($edges | ForEach-Object { @($_.Split('"')[1], $_.Split('"')[3]) }) | Sort-Object -Unique)
+$out.Add('')
+$out.Add('## Control-graph size')
+$out.Add('')
+$out.Add('- Executable control nodes with an explicit edge: `' + $controlNodes.Count + '`')
+$out.Add('- Static/data-only or unconnected labels requiring separate classification: `' + ($labels.Count - $controlNodes.Count) + '`')
 $dotPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-controlgraph.dot'
 $gameFiles = Get-ChildItem -LiteralPath 'src/game' -Recurse -File -Include '*.c','*.h'
 $gameText = ($gameFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
