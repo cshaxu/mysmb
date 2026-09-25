@@ -76,6 +76,7 @@ static int mysmb_reference_write_frame(FILE *output, const core_machine *machine
  * without introducing a host input path into the product. */
 static int mysmb_reference_script_buttons(const char *script,
                                           lib_u32 frame,
+                                          lib_u32 maximum_frame,
                                           unsigned int *buttons)
 {
     const char *cursor;
@@ -91,7 +92,7 @@ static int mysmb_reference_script_buttons(const char *script,
         cursor = next + 1;
         change_buttons = strtoul(cursor, &next, 0);
         if (next == cursor || change_buttons > 0xffu) return 0;
-        if (change_frame > 600u) return 0;
+        if (change_frame > maximum_frame) return 0;
         if ((lib_u32)change_frame > frame) return 1;
         *buttons = (unsigned int)change_buttons;
         if (*next == '\0') return 1;
@@ -101,6 +102,23 @@ static int mysmb_reference_script_buttons(const char *script,
     return 1;
 }
 
+static int mysmb_reference_parse_warmup(const char *argument,
+                                        lib_u32 *warmup)
+{
+    static const char prefix[] = "--warmup=";
+    unsigned int index;
+    char *next;
+    unsigned long parsed;
+
+    for (index = 0u; prefix[index] != '\0'; ++index) {
+        if (argument[index] != prefix[index]) return 0;
+    }
+    parsed = strtoul(argument + index, &next, 10);
+    if (next == argument + index || *next != '\0' || parsed > 3600u)
+        return -1;
+    *warmup = (lib_u32)parsed;
+    return 1;
+}
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -108,18 +126,36 @@ int main(int argument_count, char **arguments)
     unsigned long parsed_frames;
     lib_u32 requested_frames;
     lib_u32 recorded;
+    lib_u32 elapsed;
+    lib_u32 warmup_frames;
+    lib_u32 total_frames;
     lib_u32 step_count;
+    int warmup_result;
+    const char *script;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 1u, 0u, 0u, 0u };
 
-    if (argument_count != 5 && argument_count != 6) return 64;
+    if (argument_count < 5 || argument_count > 7) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
     buttons = (unsigned int)strtoul(arguments[4], LIB_NULL, 0);
     if (parsed_frames == 0u || parsed_frames > 600u || buttons > 0xffu)
         return 64;
     requested_frames = (lib_u32)parsed_frames;
+    warmup_frames = 0u;
+    script = NULL;
+    for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        warmup_result = mysmb_reference_parse_warmup(arguments[recorded],
+                                                      &warmup_frames);
+        if (warmup_result < 0) return 64;
+        if (warmup_result == 0) {
+            if (script != NULL) return 64;
+            script = arguments[recorded];
+        }
+    }
+    total_frames = requested_frames + warmup_frames;
+    if (total_frames < requested_frames || total_frames > 4200u) return 64;
     output = fopen(arguments[2], "wb");
     if (output == LIB_NULL) return 65;
     if (!mysmb_reference_write(output, magic, sizeof(magic)) ||
@@ -135,18 +171,19 @@ int main(int argument_count, char **arguments)
         return 67;
     }
     recorded = 0u;
+    elapsed = 0u;
     step_count = 0u;
     last_frame_revision = 0u;
     have_frame_revision = LIB_FALSE;
-    if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
-                                        recorded, &buttons)) {
+    if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
+                                        &buttons)) {
         fclose(output);
         (void)core_driver_destroy(driver);
         return 68;
     }
     core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
     while (recorded < requested_frames &&
-           step_count < requested_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
+           step_count < total_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
         core_run_result result;
 
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
@@ -158,13 +195,15 @@ int main(int argument_count, char **arguments)
              * regression invalidates the sequence. */
             if (have_frame_revision &&
                 driver->machine->ppu.frame_revision < last_frame_revision) break;
-            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            if (elapsed >= warmup_frames &&
+                !mysmb_reference_write_frame(output, driver->machine)) break;
             last_frame_revision = driver->machine->ppu.frame_revision;
             have_frame_revision = LIB_TRUE;
-            ++recorded;
+            ++elapsed;
+            if (elapsed > warmup_frames) ++recorded;
             if (recorded == requested_frames) break;
-            if (!mysmb_reference_script_buttons(argument_count == 6 ? arguments[5] : NULL,
-                                                recorded, &buttons)) break;
+            if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
+                                                &buttons)) break;
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         if (core_machine_debug_step(driver->machine, 1u, 1024u, &result) !=

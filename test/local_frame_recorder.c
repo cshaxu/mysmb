@@ -20,6 +20,7 @@ static mysmb_u8 mysmb_recorder_write(FILE *output, const void *bytes,
 
 static mysmb_u8 mysmb_recorder_script_buttons(const char *script,
                                               unsigned long frame,
+                                              unsigned long maximum_frame,
                                               mysmb_u8 *buttons)
 {
     const char *cursor;
@@ -34,7 +35,7 @@ static mysmb_u8 mysmb_recorder_script_buttons(const char *script,
         if (next == cursor || *next != ':') return 0U;
         cursor = next + 1;
         change_buttons = strtoul(cursor, &next, 0);
-        if (next == cursor || change_frame > 600UL ||
+        if (next == cursor || change_frame > maximum_frame ||
             change_buttons > 0xffUL) return 0U;
         if (change_frame > frame) return 1U;
         *buttons = (mysmb_u8)change_buttons;
@@ -45,6 +46,23 @@ static mysmb_u8 mysmb_recorder_script_buttons(const char *script,
     return 1U;
 }
 
+static int mysmb_recorder_parse_warmup(const char *argument,
+                                       unsigned long *warmup)
+{
+    static const char prefix[] = "--warmup=";
+    unsigned int index;
+    char *next;
+    unsigned long parsed;
+
+    for (index = 0U; prefix[index] != '\0'; ++index) {
+        if (argument[index] != prefix[index]) return 0;
+    }
+    parsed = strtoul(argument + index, &next, 10);
+    if (next == argument + index || *next != '\0' || parsed > 3600UL)
+        return -1;
+    *warmup = parsed;
+    return 1;
+}
 static mysmb_u8 mysmb_recorder_equals(const char *left, const char *right)
 {
     while (*left != '\0' && *right != '\0' && *left == *right) {
@@ -87,29 +105,38 @@ int main(int argument_count, char **arguments)
     unsigned long start_frame;
     unsigned long release_frame;
     unsigned long index;
+    unsigned long warmup_frames;
+    unsigned long total_frames;
     mysmb_u32 frames;
+    int warmup_result;
     const char *script;
     mysmb_u8 bootstrap_title;
 
-    if (argument_count < 5 || argument_count > 7) return 64;
+    if (argument_count < 5 || argument_count > 8) return 64;
     parsed_frames = strtoul(arguments[2], 0, 10);
     start_frame = strtoul(arguments[3], 0, 10);
     release_frame = strtoul(arguments[4], 0, 10);
-    if (parsed_frames == 0UL || parsed_frames > 600UL ||
-        start_frame >= release_frame || release_frame > parsed_frames) return 64;
+    if (parsed_frames == 0UL || parsed_frames > 600UL) return 64;
     script = 0;
     bootstrap_title = 0U;
+    warmup_frames = 0UL;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
         }
-        else if (script == 0) {
-            script = arguments[index];
-        }
         else {
-            return 64;
+            warmup_result = mysmb_recorder_parse_warmup(arguments[index],
+                                                        &warmup_frames);
+            if (warmup_result < 0) return 64;
+            if (warmup_result == 0) {
+                if (script != 0) return 64;
+                script = arguments[index];
+            }
         }
     }
+    total_frames = parsed_frames + warmup_frames;
+    if (total_frames < parsed_frames || total_frames > 4200UL ||
+        start_frame >= release_frame || release_frame > total_frames) return 64;
     frames = (mysmb_u32)parsed_frames;
     output = fopen(arguments[1], "wb");
     if (output == 0) return 65;
@@ -137,19 +164,21 @@ int main(int argument_count, char **arguments)
         fclose(output);
         return 65;
     }
-    for (index = 0UL; index < parsed_frames; ++index) {
+    for (index = 0UL; index < total_frames; ++index) {
         input.buttons = index >= start_frame && index < release_frame ?
             MYSMB_BUTTON_START : 0U;
-        if (mysmb_recorder_script_buttons(script,
-                                          index, &input.buttons) == 0U) {
+        if (mysmb_recorder_script_buttons(script, index, total_frames,
+                                          &input.buttons) == 0U) {
             fclose(output);
             return 64;
         }
         mysmb_game_tick(&game, &input, &frame);
-        mysmb_frame_snapshot_capture(&game, &snapshot);
-        if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
-            fclose(output);
-            return 65;
+        if (index >= warmup_frames) {
+            mysmb_frame_snapshot_capture(&game, &snapshot);
+            if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                fclose(output);
+                return 65;
+            }
         }
     }
     fclose(output);
