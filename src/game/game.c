@@ -425,23 +425,6 @@ static void mysmb_game_step_victory(struct mysmb_game *game)
     }
 }
 
-/* ROM $8e5c-$8e90, restricted to controller one and select/start debounce. */
-static mysmb_u8 mysmb_game_latch_joypad1(struct mysmb_game *game,
-                                         mysmb_u8 buttons)
-{
-    mysmb_u8 select_start;
-
-    select_start = (mysmb_u8)(buttons & (MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
-    if ((select_start & game->ram[MYSMB_RAM_JOYPAD_MASK1]) != 0U) {
-        buttons = (mysmb_u8)(buttons & ~(MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
-    }
-    else {
-        game->ram[MYSMB_RAM_JOYPAD_MASK1] = buttons;
-    }
-    game->ram[MYSMB_RAM_SAVED_JOYPAD1] = buttons;
-    return buttons;
-}
-
 /* ROM $8255, ChkContinue through StartWorld1; pointer loading is M2 T3. */
 static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 buttons)
 {
@@ -1422,7 +1405,7 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
 {
     mysmb_u8 buttons;
 
-    buttons = mysmb_game_latch_joypad1(game, input->buttons);
+    buttons = mysmb_frame_root_latch_joypad1(game, input->buttons);
     if (game->ram[MYSMB_RAM_OPER_MODE] != 0U ||
         game->ram[MYSMB_RAM_OPER_MODE_TASK] != 3U) {
         return;

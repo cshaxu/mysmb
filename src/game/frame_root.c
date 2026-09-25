@@ -7,6 +7,7 @@ enum {
     MYSMB_ROOT_OPERATING_MODE_TASK = 0x0772U,
     MYSMB_ROOT_SPRITE0_HIT = 0x0722U,
     MYSMB_ROOT_SAVED_JOYPAD1 = 0x06fcU,
+    MYSMB_ROOT_JOYPAD_MASK1 = 0x074aU,
     MYSMB_ROOT_OAM = 0x0200U
 };
 
@@ -35,6 +36,22 @@ void mysmb_frame_root_begin(struct mysmb_game *game, mysmb_u8 *mode_before,
     mysmb_game_shuffle_sprite_offsets(game);
 }
 
+/* ROM $8e5c-$8e90: controller-one latch and Start/Select debounce. */
+mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game,
+                                        mysmb_u8 buttons)
+{
+    mysmb_u8 select_start;
+
+    select_start = (mysmb_u8)(buttons &
+        (MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
+    if ((select_start & game->ram[MYSMB_ROOT_JOYPAD_MASK1]) != 0U) {
+        buttons = (mysmb_u8)(buttons &
+            ~(MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
+    }
+    else game->ram[MYSMB_ROOT_JOYPAD_MASK1] = buttons;
+    game->ram[MYSMB_ROOT_SAVED_JOYPAD1] = buttons;
+    return buttons;
+}
 void mysmb_frame_root_finish(const struct mysmb_game *game,
                              struct mysmb_frame *frame)
 {
