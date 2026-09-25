@@ -2090,6 +2090,23 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
         mysmb_objects_collect_power_up(game);
     }
 }
+/* RunPUSubs continues immediately after DrawPowerUp.  Keep this tail separate
+ * from the movement/drawing owner so direct object-unit fixtures can exercise
+ * their local transition without inventing screen state; GameEngine invokes it
+ * in the same source slot and frame. */
+void mysmb_objects_finish_power_up(struct mysmb_game *game)
+{
+    const mysmb_u8 slot = 5U;
+
+    if (game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
+        game->ram[MYSMB_ENEMY_STATE + slot] < 6U) return;
+    mysmb_objects_check_power_up_collision(game);
+    /* HandlePowerUpCollision tail-jumps out of RunPUSubs. */
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 0x2eU) {
+        mysmb_objects_check_enemy_offscreen_bounds(game, slot);
+    }
+}
+
 /* ROM $ddcd HandlePowerUpCollision.  The score or 1-up is deliberately
  * deferred to FloateyNumbersRoutine, as in the original. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game)

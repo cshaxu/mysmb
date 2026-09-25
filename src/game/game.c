@@ -76,6 +76,7 @@ enum {
     MYSMB_RAM_PLAYER_X = 0x0086U,
     MYSMB_RAM_PLAYER_PAGE = 0x006dU,
     MYSMB_RAM_ENEMY_FLAG = 0x000fU,
+    MYSMB_RAM_ENEMY_ID = 0x0016U,
     MYSMB_RAM_ENEMY_STATE = 0x001eU,
     MYSMB_RAM_SCREEN_RIGHT_PAGE = 0x071bU,
     MYSMB_RAM_DESTINATION_PAGE = 0x0034U,
@@ -1303,6 +1304,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         if (game->area_prg != 0) {
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;
+            /* ROM GameEngine runs ProcFireball_Bubble before the six
+             * EnemiesAndLoopsCore slots. */
+            mysmb_objects_step_fireballs(game);
             /* ROM GameEngine enters EnemiesAndLoopsCore once for every
              * ObjectOffset.  Only an empty slot reaches ProcessEnemyData;
              * a stream page-control record can therefore be consumed by a
@@ -1311,6 +1315,12 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                 if (game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
                     if (enemy_slot < 5U) {
                         mysmb_objects_step_normal_enemy(game, enemy_slot);
+                    }
+                    else if (game->ram[MYSMB_RAM_ENEMY_ID + enemy_slot] == 0x2eU) {
+                        /* PowerUpObjHandler owns its collision and bounds
+                         * tail in source slot five. */
+                        mysmb_objects_step_power_up(game);
+                        mysmb_objects_finish_power_up(game);
                     }
                 }
                 else if (enemy_slot < 5U) {
@@ -1323,14 +1333,6 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                     (void)mysmb_area_spawn_next_enemy(game, &area_source);
                 }
             }
-        }
-        mysmb_objects_step_fireballs(game);
-        mysmb_objects_step_power_up(game);
-        mysmb_objects_check_power_up_collision(game);
-        /* PowerUpObjHandler: RunPUSubs performs PlayerEnemyCollision,
-         * then OffscreenBoundsCheck for every emerged state ($06 and up). */
-        if (game->ram[MYSMB_RAM_ENEMY_STATE + 5U] >= 6U) {
-            mysmb_objects_check_enemy_offscreen_bounds(game, 5U);
         }
         mysmb_objects_step_enemy_collisions(game);
         mysmb_objects_check_hazard_enemy_collision(game);
