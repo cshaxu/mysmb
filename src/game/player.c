@@ -775,7 +775,8 @@ void mysmb_player_draw_oam(struct mysmb_game *game)
         offscreen >>= 1U;
         oam_offset = (mysmb_u8)(oam_offset - 8U);
     }
-    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
+        graphics_offset == 0xc8U) {
         oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 16U);
         game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
         game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
@@ -784,7 +785,7 @@ void mysmb_player_draw_oam(struct mysmb_game *game)
     }
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         graphics_offset == 0x50U || graphics_offset == 0xb8U ||
-        graphics_offset == 0xc0U) {
+        graphics_offset == 0xc0U || graphics_offset == 0xc8U) {
         oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
         game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
         game->ram[(mysmb_u16)(0x0206U + oam_offset)] =

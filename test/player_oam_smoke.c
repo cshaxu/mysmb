@@ -45,5 +45,22 @@ int main(void)
         game.ram[0x0209U] != 0x41U || game.ram[0x020bU] != 0x68U ||
         game.ram[0x021cU] != 0x70U || game.ram[0x021dU] != 0x46U ||
         game.ram[0x021fU] != 0x60U || game.ram[0x0222U] != 0x40U) return 1;
+    /* ROM ChkForPlayerAttrib treats graphics offset $c8 like PlayerKilled:
+     * it flips the right sprites of both the third and fourth rows. */
+    for (index = 0U; index < 8U; ++index)
+        prg[(mysmb_u16)(0x6e17U + 0xc8U + index)] = (mysmb_u8)(0x60U + index);
+    prg[0x6e16U] = 0xc8U;
+    game.ram[0x070bU] = 1U;
+    game.ram[0x070dU] = 0U;
+    game.ram[0x0009U] = 1U;
+    game.ram[0x0754U] = 0U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x03c4U] = 0U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x60U;
+    mysmb_player_draw_oam(&game);
+    if (game.ram[0x06d5U] != 0xc8U || game.ram[0x0216U] != 0U ||
+        game.ram[0x021aU] != 0x40U || game.ram[0x021eU] != 0U ||
+        game.ram[0x0222U] != 0x40U) return 3;
     return 0;
 }
