@@ -175,9 +175,6 @@ void mysmb_objects_move_enemy_downward(struct mysmb_game *game,
 static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
                                                  mysmb_u8 slot);
-static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
-                                             mysmb_u8 slot, mysmb_u8 amount,
-                                             mysmb_u8 maximum_speed);
 static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
                                            mysmb_u8 enemy_slot);
 static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
@@ -511,7 +508,7 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             continue;
         }
         if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
-            mysmb_objects_move_misc_downward(game, slot, 0x50U, 6U);
+            mysmb_world_impose_gravity_misc(game, slot, 0x50U, 6U);
             if (game->ram[MYSMB_MISC_Y_SPEED + slot] == 5U) game->ram[MYSMB_MISC_STATE + slot]++;
         }
         else {
@@ -2948,36 +2945,6 @@ static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
         (mysmb_u8)(game->ram[MYSMB_MISC_PAGE + slot] + page_delta);
 }
 
-/* ROM $bb28 ImposeGravity with the misc-object array layout. */
-static void mysmb_objects_move_misc_downward(struct mysmb_game *game,
-                                             mysmb_u8 slot, mysmb_u8 amount,
-                                             mysmb_u8 maximum_speed)
-{
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
-
-    old_value = game->ram[MYSMB_MISC_Y_DUMMY + slot];
-    game->ram[MYSMB_MISC_Y_DUMMY + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_MISC_Y_FORCE + slot]);
-    carry = game->ram[MYSMB_MISC_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    old_value = game->ram[MYSMB_MISC_Y + slot];
-    game->ram[MYSMB_MISC_Y + slot] = (mysmb_u8)(old_value +
-        game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= 0x80U) game->ram[MYSMB_MISC_Y_HIGH + slot]--;
-    if (game->ram[MYSMB_MISC_Y + slot] < old_value) game->ram[MYSMB_MISC_Y_HIGH + slot]++;
-    old_value = game->ram[MYSMB_MISC_Y_FORCE + slot];
-    game->ram[MYSMB_MISC_Y_FORCE + slot] = (mysmb_u8)(old_value + amount);
-    carry = game->ram[MYSMB_MISC_Y_FORCE + slot] < old_value ? 1U : 0U;
-    game->ram[MYSMB_MISC_Y_SPEED + slot] =
-        (mysmb_u8)(game->ram[MYSMB_MISC_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_MISC_Y_SPEED + slot] >= maximum_speed &&
-        game->ram[MYSMB_MISC_Y_SPEED + slot] < 0x80U &&
-        game->ram[MYSMB_MISC_Y_FORCE + slot] >= 0x80U) {
-        game->ram[MYSMB_MISC_Y_SPEED + slot] = maximum_speed;
-        game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
-    }
-}
-
 /* The admitted background buffer stores these pass-through metatiles as in
  * EnemyToBGCollisionDet. */
 static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
@@ -3059,7 +3026,7 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
             return;
         }
         if (state < 2U) {
-            mysmb_objects_move_misc_downward(game, slot, 0x10U, 4U);
+            mysmb_world_impose_gravity_misc(game, slot, 0x10U, 4U);
             mysmb_objects_move_misc_horizontally(game, slot);
             mysmb_objects_check_hammer_collision(game, slot);
         }
