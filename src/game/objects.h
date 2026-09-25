@@ -46,7 +46,9 @@ void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
 void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot);
-/* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep, sans rendering. */
+/* ROM EnemyGfxHandler/DrawEnemyObject for swimming Cheep-Cheeps. */
+mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 /* ROM $ad5a-$ad79 InitPodoboo and $af13-$af25 MovePodoboo, sans rendering. */
 void mysmb_objects_step_podoboos(struct mysmb_game *game);
@@ -67,7 +69,7 @@ void mysmb_objects_step_firebars(struct mysmb_game *game);
 void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 ball, mysmb_u8 x, mysmb_u8 y, mysmb_u8 anchor_y);
 /* ROM RunLargePlatform through RunSmallPlatform, excluding OAM ropes. */
 void mysmb_objects_step_platforms(struct mysmb_game *game);
-/* ROM DrawSmallPlatform for IDs /. */
+/* ROM DrawSmallPlatform for IDs $2b-$2c. */
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM DrawLargePlatform for IDs $24--$2a. */
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
