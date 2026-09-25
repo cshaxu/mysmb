@@ -26,12 +26,6 @@ enum {
     MYSMB_FIREBALL_REL_Y = 0x03baU,
     MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U,
     MYSMB_BOUNDING_BOX_PLAYER = 0x04acU,
-    MYSMB_ENEMY_FLAG = 0x000fU,
-    MYSMB_ENEMY_ID = 0x0016U,
-    MYSMB_ENEMY_STATE = 0x001eU,
-    MYSMB_ENEMY_OFFSCREEN_BITS_MASKED = 0x03d8U,
-    MYSMB_BOUNDING_BOX_ENEMY = 0x04b0U,
-    MYSMB_FRAME_COUNTER = 0x0009U,
     MYSMB_SQUARE1_SOUND = 0x00ffU
 };
 /* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use
@@ -101,34 +95,11 @@ void mysmb_fireball_step(struct mysmb_game *game)
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
             continue;
         }
-        if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U &&
-            game->ram[MYSMB_FIREBALL_STATE + slot] == 1U) {
-            /* FireballEnemyCollision walks slots four through zero and calls
-             * SprObjectCollisionCore with the enemy box in X and the
-             * fireball box in Y.  Do not substitute world-coordinate AABB
-             * tests: the ROM intentionally keeps byte-wrap box semantics. */
-            enemy_slot = 5U;
-            while (enemy_slot != 0U) {
-                mysmb_u16 enemy_box;
-                mysmb_u16 fireball_box;
-
-                --enemy_slot;
-                if (game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U ||
-                    (game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x20U) != 0U ||
-                    (game->ram[MYSMB_ENEMY_ID + enemy_slot] >= 0x24U &&
-                     game->ram[MYSMB_ENEMY_ID + enemy_slot] < 0x2bU) ||
-                    (game->ram[MYSMB_ENEMY_ID + enemy_slot] == 0U &&
-                     game->ram[MYSMB_ENEMY_STATE + enemy_slot] >= 2U) ||
-                    game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + enemy_slot] != 0U) continue;
-                enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + enemy_slot * 4U);
-                fireball_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER +
-                                            (7U + slot) * 4U);
-                if (mysmb_world_boxes_collide(game, enemy_box, fireball_box) != 0U) {
-                    game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
-                    mysmb_objects_apply_fireball_enemy_hit(game, enemy_slot);
-                    break;
-                }
-            }
+        if (mysmb_world_fireball_enemy_collision(game, slot, &enemy_slot) != 0U) {
+            /* ROM FireballEnemyCollision immediately enters HandleEnemyFBallCol
+             * after it changes Fireball_State.  The effect owner remains a
+             * named cross-slice call until its state/score chain migrates. */
+            mysmb_objects_apply_fireball_enemy_hit(game, enemy_slot);
         }
         /* FireballObjCore draws only after background and enemy collision. */
         mysmb_oam_draw_fireball(game, slot);

@@ -25,6 +25,10 @@ mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
 /* ROM FireballBGCollision / BlockBufferChk_FBall / ChkForNonSolids. */
 void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM FireballEnemyCollision: scans source enemy slots and sets fireball state. */
+mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 *enemy_slot);
 
 /* ROM CheckForClimbMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);

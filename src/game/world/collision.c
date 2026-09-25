@@ -136,3 +136,42 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     game->ram[(mysmb_u16)(0x003aU + slot)] = 1U;
     game->ram[(mysmb_u16)(0x00d5U + slot)] &= 0xf8U;
 }
+/* ROM $d644 FireballEnemyCollision.  The frame route owns the immediately
+ * following HandleEnemyFBallCol effect; this collision owner returns its
+ * source $01 enemy-slot handoff after setting Fireball_State. */
+mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
+                                               mysmb_u8 slot,
+                                               mysmb_u8 *enemy_slot)
+{
+    mysmb_u8 scan_slot;
+    mysmb_u16 enemy_box;
+    mysmb_u16 fireball_box;
+
+    if (game->ram[(mysmb_u16)(0x0024U + slot)] == 0U ||
+        (game->ram[(mysmb_u16)(0x0024U + slot)] & 0x80U) != 0U ||
+        (game->ram[0x0009U] & 1U) != 0U) {
+        return 0U;
+    }
+    fireball_box = (mysmb_u16)(0x04acU + (7U + slot) * 4U);
+    scan_slot = 5U;
+    while (scan_slot != 0U) {
+        --scan_slot;
+        if ((game->ram[(mysmb_u16)(0x001eU + scan_slot)] & 0x20U) != 0U ||
+            game->ram[(mysmb_u16)(0x000fU + scan_slot)] == 0U ||
+            (game->ram[(mysmb_u16)(0x0016U + scan_slot)] >= 0x24U &&
+             game->ram[(mysmb_u16)(0x0016U + scan_slot)] < 0x2bU) ||
+            (game->ram[(mysmb_u16)(0x0016U + scan_slot)] == 0U &&
+             game->ram[(mysmb_u16)(0x001eU + scan_slot)] >= 2U) ||
+            game->ram[(mysmb_u16)(0x03d8U + scan_slot)] != 0U) {
+            continue;
+        }
+        enemy_box = (mysmb_u16)(0x04b0U + scan_slot * 4U);
+        if (mysmb_world_boxes_collide(game, enemy_box, fireball_box) == 0U) {
+            continue;
+        }
+        game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
+        *enemy_slot = scan_slot;
+        return 1U;
+    }
+    return 0U;
+}

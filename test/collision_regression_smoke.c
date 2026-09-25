@@ -40,6 +40,7 @@ int main(void)
 {
     struct mysmb_game game;
     mysmb_u8 step;
+    mysmb_u8 hit_slot;
 
     /* ROM small-Mario feet use probe entries $0f/$10: X+3 and X+12,
      * with Y+32/Y+24.  At the 1-1 landing reproduced from the ROM trace,
@@ -341,5 +342,43 @@ int main(void)
     game.ram[0x0087U] = 0x50U;
     mysmb_objects_check_enemy_offscreen_bounds(&game, 0U);
     if (game.ram[0x000fU] == 0U || game.ram[0x0016U] != 13U) return 19;
+    /* FireballEnemyCollision executes only on even frames, scans five
+     * ordinary slots in descending order, and records the first source hit.
+     * It must not use a host world-coordinate collision substitute. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0024U] = 1U;
+    game.ram[0x0009U] = 0U;
+    game.ram[0x04c8U] = 0x40U;
+    game.ram[0x04c9U] = 0x50U;
+    game.ram[0x04caU] = 0x4cU;
+    game.ram[0x04cbU] = 0x60U;
+    game.ram[0x000fU + 4U] = 1U;
+    game.ram[0x0016U + 4U] = 6U;
+    game.ram[0x001eU + 4U] = 0U;
+    game.ram[0x03d8U + 4U] = 0U;
+    game.ram[0x04c0U] = 0x40U;
+    game.ram[0x04c1U] = 0x50U;
+    game.ram[0x04c2U] = 0x4cU;
+    game.ram[0x04c3U] = 0x60U;
+    hit_slot = 0xffU;
+    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) == 0U ||
+        hit_slot != 4U || game.ram[0x0024U] != 0x80U) return 22;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x0009U] = 1U;
+    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) != 0U ||
+        game.ram[0x0024U] != 1U) return 23;
+    game.ram[0x0009U] = 0U;
+    game.ram[0x0016U + 4U] = 0U;
+    game.ram[0x001eU + 4U] = 2U;
+    game.ram[0x000fU + 3U] = 1U;
+    game.ram[0x0016U + 3U] = 6U;
+    game.ram[0x001eU + 3U] = 0U;
+    game.ram[0x03d8U + 3U] = 0U;
+    game.ram[0x04bcU] = 0x40U;
+    game.ram[0x04bdU] = 0x50U;
+    game.ram[0x04beU] = 0x4cU;
+    game.ram[0x04bfU] = 0x60U;
+    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) == 0U ||
+        hit_slot != 3U) return 24;
     return 0;
 }
