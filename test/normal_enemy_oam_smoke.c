@@ -86,5 +86,31 @@ int main(void)
     game.ram[0x0009U] = 0U;
     if (mysmb_objects_draw_koopa_buzzy(&game, 0U) == 0U ||
         mysmb_test_oam(&game, koopa_upright) == 0U) return 1;
+    {
+        static const mysmb_u8 spiny_normal[24] = {
+            0x50U,0xfcU,0x02U,0x40U,0x50U,0xfcU,0x02U,0x48U,
+            0x58U,0x96U,0x02U,0x40U,0x58U,0x97U,0x02U,0x48U,
+            0x60U,0x98U,0x02U,0x40U,0x60U,0x99U,0x02U,0x48U
+        };
+        static const mysmb_u8 spiny_egg[24] = {
+            0x50U,0xfcU,0x02U,0x40U,0x50U,0xfcU,0xc2U,0x48U,
+            0x58U,0x8eU,0x02U,0x40U,0x58U,0x8fU,0xc2U,0x48U,
+            0x60U,0x8fU,0x02U,0x40U,0x60U,0x8eU,0xc2U,0x48U
+        };
+        mysmb_game_initialize_memory(&game, 0U);
+        game.ram[0x071dU] = 0xf0U;
+        game.ram[0x000fU] = 1U;
+        game.ram[0x0016U] = 18U;
+        game.ram[0x0046U] = 1U;
+        game.ram[0x0087U] = 0x40U;
+        game.ram[0x00cfU] = 0x50U;
+        game.ram[0x06e5U] = 0x20U;
+        game.ram[0x0009U] = 8U;
+        if (mysmb_objects_draw_spiny(&game, 0U) != 1U ||
+            mysmb_test_oam(&game, spiny_normal) == 0U) return 1;
+        game.ram[0x001eU] = 5U;
+        if (mysmb_objects_draw_spiny(&game, 0U) != 2U ||
+            mysmb_test_oam(&game, spiny_egg) == 0U) return 1;
+    }
     return 0;
 }

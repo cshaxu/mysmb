@@ -169,5 +169,6 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
 {
     if (mysmb_objects_draw_special_enemy(game, slot) != 0U) return 1U;
     (void)mysmb_objects_draw_koopa_buzzy(game, slot);
+    if (mysmb_objects_draw_spiny(game, slot) == 2U) return 1U;
     return 0U;
 }
