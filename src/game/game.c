@@ -55,7 +55,9 @@ enum {
     MYSMB_RAM_PLAYER_ENTRANCE = 0x0710U,
     MYSMB_RAM_CLOUD_OVERRIDE = 0x0743U,
     MYSMB_RAM_ALT_ENTRANCE = 0x0769U,
-    MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU
+    MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU,
+    MYSMB_RAM_DEMO_ACTION = 0x0717U,
+    MYSMB_RAM_DEMO_ACTION_TIMER = 0x0718U
 };
 
 enum {
@@ -1240,17 +1242,17 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
             mysmb_player_step_side_pipe(game);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 8U) {
-            mysmb_player_step(game, input->buttons);
+            mysmb_player_step(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 9U) {
             mysmb_player_step_change_size(game);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 10U) {
-            mysmb_player_step_injury_blink(game, input->buttons);
+            mysmb_player_step_injury_blink(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 11U &&
                  game->ram[MYSMB_RAM_TIMER_CONTROL] < 0xf0U) {
-            mysmb_player_step(game, input->buttons);
+            mysmb_player_step(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
         }
         else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
             mysmb_player_step_fire_flower(game);
@@ -1341,7 +1343,39 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     frame->operating_mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
 }
 
-/* ROM $8231/$8245/$8255, limited to the admitted title-menu start route. */
+/* ROM $82b3-$82ca DemoEngine.  It returns one only after the terminal zero
+ * timing byte, which sends GameMenuRoutine back through ResetTitle. */
+static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
+{
+    static const mysmb_u8 action_data[21] = {
+        0x01U, 0x80U, 0x02U, 0x81U, 0x41U, 0x80U, 0x01U,
+        0x42U, 0xc2U, 0x02U, 0x80U, 0x41U, 0xc1U, 0x41U,
+        0xc1U, 0x01U, 0xc1U, 0x01U, 0x02U, 0x80U, 0x00U
+    };
+    static const mysmb_u8 timing_data[22] = {
+        0x9bU, 0x10U, 0x18U, 0x05U, 0x2cU, 0x20U, 0x24U,
+        0x15U, 0x5aU, 0x10U, 0x20U, 0x28U, 0x30U, 0x20U,
+        0x10U, 0x80U, 0x20U, 0x30U, 0x30U, 0x01U, 0xffU,
+        0x00U
+    };
+    mysmb_u8 action;
+
+    action = game->ram[MYSMB_RAM_DEMO_ACTION];
+    if (game->ram[MYSMB_RAM_DEMO_ACTION_TIMER] == 0U) {
+        action++;
+        game->ram[MYSMB_RAM_DEMO_ACTION] = action;
+        if (action == 0U || action > 22U) return 1U;
+        game->ram[MYSMB_RAM_DEMO_ACTION_TIMER] = timing_data[action - 1U];
+        if (game->ram[MYSMB_RAM_DEMO_ACTION_TIMER] == 0U) return 1U;
+    }
+    game->ram[MYSMB_RAM_SAVED_JOYPAD1] = action_data[action - 1U];
+    game->ram[MYSMB_RAM_DEMO_ACTION_TIMER]--;
+    return 0U;
+}
+
+/* ROM $8231/$8245/$8255 GameMenuRoutine.  The title menu still runs
+ * GameCoreRoutine every frame; once DemoTimer expires DemoEngine replaces the
+ * latched controller byte before that common route consumes it. */
 void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)
 {
     mysmb_u8 buttons;
@@ -1354,13 +1388,25 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
     if (buttons == MYSMB_BUTTON_START ||
         buttons == (MYSMB_BUTTON_A | MYSMB_BUTTON_START)) {
         mysmb_game_start_from_title(game, buttons);
+        return;
     }
-    else if (buttons == MYSMB_BUTTON_SELECT &&
-             game->ram[MYSMB_RAM_DEMO_TIMER] != 0U &&
-             game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
+    if (buttons == MYSMB_BUTTON_SELECT &&
+        game->ram[MYSMB_RAM_DEMO_TIMER] != 0U &&
+        game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
         game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
         game->ram[MYSMB_RAM_SELECT_TIMER] = 0x10U;
         game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] ^= 1U;
+    }
+    if (game->ram[MYSMB_RAM_DEMO_TIMER] != 0U) {
+        game->ram[MYSMB_RAM_SAVED_JOYPAD1] = 0U;
+        return;
+    }
+    game->ram[MYSMB_RAM_SELECT_TIMER] = buttons;
+    if (mysmb_game_step_title_demo(game) != 0U) {
+        game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+        game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
+        game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
     }
 }
 
