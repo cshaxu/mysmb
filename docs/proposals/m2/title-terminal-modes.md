@@ -20,7 +20,7 @@ Entered through the operation-mode tree; emits text/VRAM, OAM and audio requests
 
 1. **S1 complete (P1)** - Bind title, select/start and demo labels to current code or replacement targets; record button-edge semantics.
 2. **S2 complete (P1-P3)** - Translate title bootstrap, menu, selection and demo state/data paths; prove idle and Select NMI output.
-3. **S3 active (P1-P6)** - Translate victory, end-world and floating-number paths including text/OAM/audio output; P5 freezes the ROM-slice module boundaries before further terminal changes.
+3. **S3 active (P1-P7)** - Translate victory, end-world and floating-number paths including text/OAM/audio output; P5 freezes the ROM-slice module boundaries before further terminal changes.
 4. **S4 queued** - Compare title-start, demo, victory and game-over reference routes; remove displaced branches.
 
 ## Acceptance
@@ -63,3 +63,7 @@ The T15 label map now records the concrete source-owner boundaries that govern a
 ## S3 P6: Game Over text path and timer ownership
 
 The ROM GameEngine calls RunGameTimer only from GameMode after GameCoreRoutine reaches GameEngine. The native frame root had invoked the timer tail after every operating mode. A controlled comparison entered GameOverMode by changing only OperMode and OperMode_Task after 30 already-equal title NMI samples. ROM SetupGameOver and ScreenRoutines then reached DisplayIntermediate and WriteGameText. The incorrect global timer call queued a 207a timer command after the Game Over text and overwrote its buffer. mysmb_game_run_timer now returns unless OperMode equals GameMode (1). The mode smoke asserts that a GameOverMode ScreenRoutines frame cannot reload GameTimerCtrl. Against local nxvm MyNES reference commit f91686808, samples 30 through 119 have zero differences in CPU OAM backing, work RAM 0300-07ff, both CIRAM pages, palette, visible OAM, audio commands, and all PPU scalar values; only CPU temporary zero-page and stack differ. The controlled native trace is byte-identical for x86 and x64. Full rebuilt x64 and x86 suites each pass 78/78; OpenNT links the DOS MZ with the existing OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 9CD55AF3172C5F9AC0C42C8888716CBBEF7D7FED59187DDBBF7F1CC609BA580A, mysmb32.exe 77235705EB618ABE1E9C1C3D4DC2D9327695E214DB4C056B9AED7BFBEE7FD08B, and mysmb64.exe E4861538ED2AB774DE412CF9471E0BE41D9789B0D7464EF0D10C4C88AE71F417.
+
+## S3 P7: Victory message route evidence
+
+A second build-only controlled route changed only OperMode, OperMode_Task, message counters, world, and current-player bytes after 30 title NMI samples already known equal. It entered VictoryMode task 3 and executed PrintVictoryMessages with the original message-counter cadence. Against local nxvm MyNES reference commit f91686808, samples 30 through 119 have zero differences in CPU OAM backing, work RAM 0300-07ff, both CIRAM pages, palette, visible OAM, audio commands, and all PPU scalar values; CPU temporary zero-page and stack remain excluded. The x86 and x64 native controlled Victory traces are byte-identical. The executables remain the P6 three-target artifacts: mysmb16.exe SHA-256 9CD55AF3172C5F9AC0C42C8888716CBBEF7D7FED59187DDBBF7F1CC609BA580A, mysmb32.exe 77235705EB618ABE1E9C1C3D4DC2D9327695E214DB4C056B9AED7BFBEE7FD08B, and mysmb64.exe E4861538ED2AB774DE412CF9471E0BE41D9789B0D7464EF0D10C4C88AE71F417.
