@@ -33,7 +33,38 @@ int main(void)
     mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0220U] != 0x50U || game.ram[0x0221U] != 0x64U ||
         game.ram[0x0222U] != 0xc2U || game.ram[0x0223U] != 0x50U) return 2;
-
+    /* FireballObjCore clears only when FBall_OffscreenBits & $cc is set.
+     * The source permits anchors from $08 through $f7; both outer eight-pixel
+     * bands are discarded by the source mask. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x0074U] = 0U;
+    game.ram[0x008dU] = 0U;
+    game.ram[0x00bcU] = 1U;
+    game.ram[0x00d5U] = 0x50U;
+    game.ram[0x06f1U] = 0x20U;
+    mysmb_objects_step_fireballs(&game);
+    if (game.ram[0x0024U] != 0U ||
+        (game.ram[0x03d2U] & 0xccU) == 0U) return 4;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x008dU] = 8U;
+    mysmb_objects_step_fireballs(&game);
+    if (game.ram[0x0024U] != 1U ||
+        (game.ram[0x03d2U] & 0xccU) != 0U) return 5;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x008dU] = 0xf7U;
+    mysmb_objects_step_fireballs(&game);
+    if (game.ram[0x0024U] != 1U ||
+        (game.ram[0x03d2U] & 0xccU) != 0U) return 6;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x008dU] = 0xffU;
+    mysmb_objects_step_fireballs(&game);
+    if (game.ram[0x0024U] != 0U ||
+        (game.ram[0x03d2U] & 0xccU) == 0U) return 7;
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x0024U] = 0x80U;
     game.ram[0x008dU] = 0x40U;
