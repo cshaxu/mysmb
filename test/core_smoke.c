@@ -1054,7 +1054,8 @@ int main(void)
         game.ram[0x008cU] != 0x30U || game.ram[0x00bbU] != 1U ||
         game.ram[0x00d4U] != 0x58U || game.ram[0x0023U] != 1U ||
         game.ram[0x0014U] != 1U || game.ram[0x049fU] != 3U ||
-        game.ram[0x0039U] != 0U || game.ram[0x03caU] != 0x20U) return 1;
+        game.ram[0x0039U] != 0U || game.ram[0x03caU] != 0x20U ||
+        game.ram[0x00feU] != 2U) return 1;
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
     mysmb_objects_step_power_up(&game);
@@ -1294,7 +1295,8 @@ int main(void)
     if (game.ram[0x0014U] != 0U || game.ram[0x001bU] != 0U ||
         game.ram[0x0756U] != 1U || game.ram[0x000eU] != 9U ||
         game.ram[0x0747U] != 0xffU || game.ram[0x07e0U] != 0U ||
-        game.ram[0x0115U] != 6U || game.ram[0x0131U] != 0x30U) return 1;
+        game.ram[0x0115U] != 6U || game.ram[0x0131U] != 0x30U ||
+        game.ram[0x00feU] != 0x20U) return 1;
     for (index = 0U; index < 6U; ++index) {
         mysmb_objects_step_floatey_numbers(&game);
     }

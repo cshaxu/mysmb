@@ -871,6 +871,8 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
         }
     }
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0x20U;
+    /* ROM SetupPowerUp queues Sfx_GrowPowerUp for the next audio pass. */
+    game->ram[MYSMB_SQUARE2_SOUND] = 2U;
 }
 
 /* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
@@ -2102,6 +2104,8 @@ void mysmb_objects_collect_power_up(struct mysmb_game *game)
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
     mysmb_objects_setup_floatey_number(game, slot,
                                        type == 3U ? 0x0bU : 6U);
+    /* ROM HandlePowerUpCollision queues Sfx_PowerUpGrab. */
+    game->ram[MYSMB_SQUARE2_SOUND] = 0x20U;
     if (type == 2U) {
         game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0x23U;
         return;
