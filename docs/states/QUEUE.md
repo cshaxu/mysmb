@@ -30,7 +30,7 @@
 These candidates exhaustively map the ROM executable source index. They are ordered candidates only; no numeric T or S is allocated here. The complete label checklist is [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md), and the source-slice/call-graph map is [M2 structural recovery coverage](../proposals/m2-rom-structural-recovery.md).
 
 1. **Frame root** — active as M2 T14 S1: reset/NMI/input/timing/PPU phase/mode dispatch.
-2. **Title and terminal modes** — lines 982–1385: title/demo/victory/end-world/float numbers.
+2. **Title and terminal modes** — active as M2 T15 S3: title/demo/victory/end-world/float numbers.
 3. **Screen, text and status** — lines 1386–1824: status, text, screen routines and parser scheduling.
 4. **Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
 5. **Game frame dispatcher** — lines 5315–5582: game mode/core/engine and ROM call order.
