@@ -80,6 +80,25 @@ int main(void)
         game.ram[0x0772U] != 0U || game.ram[0x075bU] != 0U ||
         game.ram[0x0757U] == 0U) return 6;
 
+    /* PlayerVictoryWalk first runs AutoControlPlayer, then keeps scrolling
+     * at the ROM's half-pixel cadence until the screen reaches its destination
+     * page.  Reaching Mario's x target alone must not advance mode task 3. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 2U;
+    game.ram[0x0034U] = 1U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0086U] = 0x60U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0772U] != 2U || game.ram[0x0035U] != 2U ||
+        game.ram[0x0768U] != 0x80U || game.ram[0x071cU] != 1U ||
+        game.ram[0x0775U] != 1U) return 7;
+
     /* PlayerEndWorld returns worlds one through seven to game mode with the
      * first area and level records reset for the following world. */
     mysmb_game_initialize(&game);
@@ -93,7 +112,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x075fU] != 3U || game.ram[0x0760U] != 0U ||
-        game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 7;
+        game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 8;
 
     /* HandlePipeEntry selects the original middle-pipe destination before
      * VerticalPipeEntry starts its 48-frame transition. */
@@ -105,6 +124,6 @@ int main(void)
     if (mysmb_player_handle_vertical_pipe(&game, 0x10U, 0x11U) == 0U ||
         game.ram[0x075fU] != 4U || game.ram[0x0760U] != 0U ||
         game.ram[0x075cU] != 0U || game.ram[0x000eU] != 3U ||
-        game.ram[0x06deU] != 0x30U) return 8;
+        game.ram[0x06deU] != 0x30U) return 9;
     return 0;
 }

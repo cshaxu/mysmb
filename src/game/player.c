@@ -1487,6 +1487,37 @@ static void mysmb_player_clamp_screen_edge(struct mysmb_game *game)
     }
 }
 
+/* ROM ScrollScreen.  VictoryMode owns the explicit one-or-two pixel
+ * amount; normal PlayerCtrlRoutine continues to calculate its own amount in
+ * ScrollHandler below. */
+void mysmb_player_scroll_screen(struct mysmb_game *game, mysmb_u8 amount)
+{
+    mysmb_u8 old_x;
+
+    game->ram[MYSMB_SCROLL_AMOUNT] = amount;
+    game->ram[MYSMB_SCROLL_THIRTY_TWO] =
+        (mysmb_u8)(game->ram[MYSMB_SCROLL_THIRTY_TWO] + amount);
+    old_x = game->ram[MYSMB_SCREEN_LEFT_X];
+    game->ram[MYSMB_SCREEN_LEFT_X] = (mysmb_u8)(old_x + amount);
+    game->ram[MYSMB_HORIZONTAL_SCROLL] = game->ram[MYSMB_SCREEN_LEFT_X];
+    if (game->ram[MYSMB_SCREEN_LEFT_X] < old_x)
+        game->ram[MYSMB_SCREEN_LEFT_PAGE]++;
+    game->ram[MYSMB_SCREEN_RIGHT_X] =
+        (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_X] + 0xffU);
+    game->ram[MYSMB_SCREEN_RIGHT_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
+    if (game->ram[MYSMB_SCREEN_RIGHT_X] < game->ram[MYSMB_SCREEN_LEFT_X])
+        game->ram[MYSMB_SCREEN_RIGHT_PAGE]++;
+    game->ram[MYSMB_SCROLL_INTERVAL_TIMER] = 8U;
+    mysmb_player_clamp_screen_edge(game);
+    game->ram[MYSMB_PLATFORM_X_SCROLL] = 0U;
+    game->scroll_x = game->ram[MYSMB_HORIZONTAL_SCROLL];
+    game->scroll_y = game->ram[0x0740U];
+    game->ppu_name_table = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] & 1U);
+    game->ppu_control_0 = (mysmb_u8)((game->ppu_control_0 & 0xfcU) |
+                                     game->ppu_name_table);
+    game->ram[0x0778U] = game->ppu_control_0;
+}
+
 /* Translation of ROM $af93-$b068 ScrollHandler through GetScreenPosition. */
 void mysmb_player_update_scroll(struct mysmb_game *game)
 {

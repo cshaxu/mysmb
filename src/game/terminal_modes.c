@@ -32,12 +32,14 @@ enum {
     MYSMB_RAM_WORLD_END_TIMER = 0x07a1U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
+    MYSMB_RAM_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_RAM_SCREEN_RIGHT_PAGE = 0x071bU,
     MYSMB_RAM_PRIMARY_MESSAGE = 0x0719U,
     MYSMB_RAM_DESTINATION_PAGE = 0x0034U,
     MYSMB_RAM_VICTORY_WALK = 0x0035U,
     MYSMB_RAM_PLAYER_PAGE = 0x006dU,
     MYSMB_RAM_PLAYER_X = 0x0086U,
+    MYSMB_RAM_SCROLL_FRACTION = 0x0768U,
     MYSMB_RAM_EVENT_MUSIC = 0x00fcU
 };
 
@@ -162,6 +164,10 @@ void mysmb_game_step_game_over(struct mysmb_game *game)
 /* ROM VictoryModeSubroutines. */
 void mysmb_game_step_victory(struct mysmb_game *game)
 {
+    mysmb_u8 auto_buttons;
+    mysmb_u8 scroll_amount;
+    mysmb_u16 fractional_sum;
+
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
         if (mysmb_objects_step_bridge_collapse(game) != 0U)
             game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
@@ -176,13 +182,28 @@ void mysmb_game_step_victory(struct mysmb_game *game)
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 2U) {
         game->ram[MYSMB_RAM_VICTORY_WALK] = 0U;
+        auto_buttons = 0U;
         if (game->ram[MYSMB_RAM_PLAYER_PAGE] != game->ram[MYSMB_RAM_DESTINATION_PAGE] ||
             game->ram[MYSMB_RAM_PLAYER_X] < 0x60U) {
             game->ram[MYSMB_RAM_VICTORY_WALK] = 1U;
-            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
-            return;
+            auto_buttons = MYSMB_BUTTON_RIGHT;
         }
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
+        /* ROM PlayerVictoryWalk always enters AutoControlPlayer, including
+         * the no-walk case after Mario has reached x=$60. */
+        mysmb_player_step(game, auto_buttons);
+        if (game->ram[MYSMB_RAM_SCREEN_LEFT_PAGE] !=
+            game->ram[MYSMB_RAM_DESTINATION_PAGE]) {
+            fractional_sum = (mysmb_u16)game->ram[MYSMB_RAM_SCROLL_FRACTION] +
+                             0x80U;
+            game->ram[MYSMB_RAM_SCROLL_FRACTION] = (mysmb_u8)fractional_sum;
+            scroll_amount = (mysmb_u8)(1U +
+                (fractional_sum > 0xffU ? 1U : 0U));
+            mysmb_player_scroll_screen(game, scroll_amount);
+            mysmb_game_step_area_parser(game);
+            game->ram[MYSMB_RAM_VICTORY_WALK]++;
+        }
+        if (game->ram[MYSMB_RAM_VICTORY_WALK] == 0U)
+            game->ram[MYSMB_RAM_OPER_MODE_TASK]++;
         return;
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 3U) {

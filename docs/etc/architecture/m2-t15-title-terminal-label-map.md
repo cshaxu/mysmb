@@ -15,11 +15,11 @@ owner exists; it does not replace S2�S4 route comparison.
 | `NullJoypad` | `title_modes.c:mysmb_game_title_step` | translated | preserve clearing before demo/game core |
 | `DemoEngine` | `title_modes.c:mysmb_game_step_title_demo` | translated | preserve table index/timer/carry terminal condition |
 | `ResetTitle` | `title_modes.c:mysmb_game_title_step` | translated | preserve mode, task, sprite-zero, screen-disable writes |
-| `VictoryMode` | `frame_root.c` + `game.c:mysmb_game_step_victory` | translated structure | S3 verifies task-zero object exclusion |
-| `VictoryModeSubroutines` | `game.c:mysmb_game_step_victory` | translated structure | S3 verifies each task transition |
-| `SetupVictoryMode`, `PlayerVictoryWalk` | `game.c:mysmb_game_step_victory` + `player.c` | translated structure | S3 traces scroll/auto-control sequence |
-| `PrintVictoryMessages` | `game.c:mysmb_game_print_victory_messages` | translated | S3 compares text/music/timer branches |
-| `PlayerEndWorld` | `game.c:mysmb_game_step_victory` | translated structure | S3 verifies world-8 B path |
+| `VictoryMode` | `frame_root.c` + `terminal_modes.c:mysmb_game_step_victory` | translated structure | S3 verifies task-zero object exclusion |
+| `VictoryModeSubroutines` | `terminal_modes.c:mysmb_game_step_victory` | translated structure | S3 verifies each task transition |
+| `SetupVictoryMode`, `PlayerVictoryWalk` | `terminal_modes.c:mysmb_game_step_victory` + `player.c` | translated scroll route | S3 P2 maps auto-control and forced-scroll order |
+| `PrintVictoryMessages` | `terminal_modes.c:mysmb_game_print_victory_messages` | translated | S3 compares text/music/timer branches |
+| `PlayerEndWorld` | `terminal_modes.c:mysmb_game_step_victory` | translated structure | S3 verifies world-8 B path |
 | `FloateyNumbersRoutine` | `objects.c:mysmb_objects_step_floatey_number` | translated | preserve game-engine call ordering |
 | `GameOverMode` | `frame_root.c` + `game.c:mysmb_game_step_game_over` | translated structure | S4 traces start/timer/player transpose route |
 

@@ -83,6 +83,8 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game);
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game);
 /* ROM $af93-$b068 ScrollHandler including player offscreen-edge clamping. */
 void mysmb_player_update_scroll(struct mysmb_game *game);
+/* ROM ScrollScreen: apply a caller-owned explicit horizontal scroll amount. */
+void mysmb_player_scroll_screen(struct mysmb_game *game, mysmb_u8 amount);
 /* ROM $df4b-$df7d ImpedePlayerMove, with SideCheckLoop's physical side counter. */
 void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side);
 /* ROM $dd5e-$de46 side samples, restricted to solid metatile blocking. */
