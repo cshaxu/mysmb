@@ -809,7 +809,7 @@ static void mysmb_game_step_screen_routine(struct mysmb_game *game)
             game->title_icon_data_size > 0x00ffU) {
             break;
         }
-        for (index = 0U; index < 0x0100U; ++index)
+        for (index = 0U; index < 0x0200U; ++index)
             game->ram[(mysmb_u16)(0x0300U + index)] = 0U;
         for (index = 0U; index < game->title_icon_data_size; ++index)
             game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
