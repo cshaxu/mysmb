@@ -2625,6 +2625,7 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
             }
         }
+        mysmb_objects_draw_bowser_flame(game, slot);
         if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
             game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
             game->ram[MYSMB_PLAYER_X] + 12U >= game->ram[MYSMB_ENEMY_X + slot] &&

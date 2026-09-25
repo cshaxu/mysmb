@@ -91,6 +91,7 @@ mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game);
 /* ROM InitBowserFlame/ProcBowserFlame, excluding OAM output. */
 void mysmb_objects_step_bowser_flame_frenzy(struct mysmb_game *game);
 void mysmb_objects_step_bowser_flames(struct mysmb_game *game);
+void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM MoveLakitu/PlayerLakituDiff and MoveD_EnemyVertically. */
 void mysmb_objects_step_lakitus(struct mysmb_game *game);
 /* ROM LakituAndSpinyHandler, using the active EnemyFrenzyBuffer request. */
