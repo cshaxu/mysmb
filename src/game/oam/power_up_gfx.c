@@ -24,8 +24,6 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     };
     static const mysmb_u8 attributes[4] = { 2U, 1U, 2U, 1U };
     const mysmb_u8 slot = MYSMB_POWER_UP_SLOT;
-    mysmb_u16 power_up_world;
-    mysmb_u16 screen_world;
     mysmb_u8 offset;
     mysmb_u8 type;
     mysmb_u8 base_attributes;
@@ -36,13 +34,9 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
 
     type = game->ram[MYSMB_POWER_UP_TYPE];
     if (type > 3U) return;
-    power_up_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                                  game->ram[MYSMB_ENEMY_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    x = (mysmb_u8)(power_up_world - screen_world);
-    /* ROM DrawPowerUp seeds DrawOneSpriteRow with Enemy_Rel_YPos + $08. */
-    y = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 8U);
+    /* RunPUSubs has just populated the fixed Enemy_Rel_* scratch cells. */
+    x = game->ram[0x03aeU];
+    y = (mysmb_u8)(game->ram[0x03b9U] + 8U);
     offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
     base_attributes = (mysmb_u8)(attributes[type] | game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
     graphics_offset = (mysmb_u8)(type << 2U);

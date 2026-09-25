@@ -864,10 +864,10 @@ static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
 
-    game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                                            game->ram[MYSMB_SCREEN_LEFT_X]);
-    game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[0x03d1U + slot] =
+    game->ram[0x03aeU] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                                      game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[0x03b9U] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[0x03d1U] =
         mysmb_objects_get_enemy_offscreen_bits(game, slot);
     mysmb_objects_update_enemy_bounding_box(game, slot);
     mysmb_objects_draw_power_up(game);

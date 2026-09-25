@@ -133,7 +133,7 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
     if (page_difference < 0x80U && (page_difference != 0U || x_difference != 0U)) {
         mask = 0x48U;
     }
-    masked = (mysmb_u8)(mask & game->ram[MYSMB_ENEMY_OFFSCREEN_BITS + slot]);
+    masked = (mysmb_u8)(mask & game->ram[MYSMB_ENEMY_OFFSCREEN_BITS]);
     game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] = masked;
     address = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
     if (masked != 0U) {
@@ -145,7 +145,7 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
     }
     mysmb_world_set_bounding_box(game, address,
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
-        game->ram[0x03aeU + slot], game->ram[0x03b9U + slot]);
+        game->ram[0x03aeU], game->ram[0x03b9U]);
 
     /* ROM CheckRightScreenBBox / CheckLeftScreenBBox clips the two
      * horizontal collision corners after BoundingBoxCore. */
