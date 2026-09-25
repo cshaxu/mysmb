@@ -15,7 +15,13 @@ int main(void)
     game.ram[0x005eU] = 0U;
     game.ram[0x00a6U] = 0U;
     game.ram[0x06f1U] = 0x20U;
-    mysmb_objects_step_fireballs(&game);
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;    mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0220U] != 0x40U || game.ram[0x0221U] != 0x65U ||
         game.ram[0x0222U] != 2U || game.ram[0x0223U] != 0x40U) return 1;
 

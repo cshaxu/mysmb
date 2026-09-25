@@ -1063,8 +1063,11 @@ int main(void)
     game.ram[0x000aU] = 0x40U;
     game.ram[0x000dU] = 0U;
     game.ram[0x006dU] = 1U;
+    /* ScreenRight is ScreenLeft+$ff with carry, as ScrollHandler sets it. */
     game.ram[0x071aU] = 1U;
+    game.ram[0x071bU] = 1U;
     game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
     game.ram[0x0086U] = 0x30U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x50U;
@@ -1215,6 +1218,14 @@ int main(void)
     game.ram[0x079fU] = 0U;
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
+    /* PlayerEnemyCollision consumes boxes prepared by PlayerGfxHandler and
+     * RunPUSubs.  This isolated fixture supplies that source-owned RAM. */
+    game.ram[0x03d8U + 5U] = 0U;
+    mysmb_objects_set_bounding_box(&game, 0x04acU, game.ram[0x0499U],
+                                   0x30U, game.ram[0x00ceU]);
+    mysmb_objects_set_bounding_box(&game, 0x04b0U + 5U * 4U,
+                                   game.ram[0x049fU], 0x30U,
+                                   game.ram[0x00d4U]);
     mysmb_objects_check_power_up_collision(&game);
     if (game.ram[0x04acU] != 0x33U || game.ram[0x04adU] != 0x64U ||
         game.ram[0x04c4U] != 0x32U || game.ram[0x04c5U] != 0x59U ||

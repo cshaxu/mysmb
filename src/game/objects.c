@@ -89,6 +89,7 @@ enum {
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_ENEMY_COLLISION_BITS = 0x0491U,
+    MYSMB_ENEMY_OFFSCREEN_BITS_MASKED = 0x03d8U,
     MYSMB_ENEMY_X_FORCE = 0x0401U,
     MYSMB_PLAYER_BOUND_BOX = 0x0499U,
     MYSMB_PLAYER_OFFSCREEN_BITS = 0x03d0U,
@@ -782,6 +783,11 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         carry = game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U;
         game->ram[MYSMB_FIREBALL_PAGE + slot] =
             (mysmb_u8)(game->ram[MYSMB_FIREBALL_PAGE + slot] + page_delta + carry);
+        /* FireballObjCore order: relative coordinates, offscreen bits and
+         * bounding box precede FireballBGCollision. */
+        mysmb_objects_relative_fireball_position(game, slot);
+        mysmb_objects_get_fireball_offscreen_bits(game, slot);
+        mysmb_objects_get_fireball_bounding_box(game, slot);
         if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
             x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
             page = mysmb_objects_collision_page(game->ram[MYSMB_FIREBALL_PAGE + slot],
@@ -799,9 +805,6 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             }
             else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
         }
-        mysmb_objects_relative_fireball_position(game, slot);
-        mysmb_objects_get_fireball_offscreen_bits(game, slot);
-        mysmb_objects_get_fireball_bounding_box(game, slot);
         if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS + slot] & 0xccU) != 0U) {
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
             continue;
@@ -907,8 +910,11 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
             page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
                 (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
-            /* ChkUnderEnemy probes the bottom middle at (X+8,Y+15). */
-            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x15U) & 0xf0U) - 0x20U);
+            /* ChkUnderEnemy passes index $15 to BlockBufferCollision.  The
+             * ROM's BlockBuffer_Y_Adder[$15] is $18, so the bottom-middle
+             * probe is (X+8,Y+18); $15 is an adder-table index, not a pixel
+             * offset. */
+            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
             address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
             tile = address < 0x0800U ? game->ram[address] : 0U;
 
@@ -957,6 +963,14 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0xf0U;
             }
         }
+        /* RunPUSubs prepares the same relative/offscreen/bounding-box RAM
+         * consumed by PlayerEnemyCollision before it draws this object. */
+        game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                                                game->ram[MYSMB_SCREEN_LEFT_X]);
+        game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+        game->ram[0x03d1U + slot] =
+            mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+        mysmb_objects_update_enemy_bounding_box(game, slot);
         mysmb_objects_draw_power_up(game);
         return;
     }
@@ -970,6 +984,12 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
     }
     if (game->ram[MYSMB_ENEMY_STATE + slot] >= 6U) {
+        game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
+                                                game->ram[MYSMB_SCREEN_LEFT_X]);
+        game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+        game->ram[0x03d1U + slot] =
+            mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+        mysmb_objects_update_enemy_bounding_box(game, slot);
         mysmb_objects_draw_power_up(game);
     }
 }
@@ -2009,43 +2029,24 @@ void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game)
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-    mysmb_u16 screen_world;
+    mysmb_u16 enemy_box;
 
+    /* ROM PlayerEnemyCollision rejects the source vertical player mask and
+     * GetEnemyBoundBox masked result.  It consumes screen-relative RAM boxes,
+     * not an invented host world-coordinate visibility range. */
     if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
         game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
         game->ram[MYSMB_ENEMY_STATE + slot] < 6U ||
         game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return;
+        (game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] & 0xf0U) != 0U ||
+        game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] != 0U) return;
 
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (player_world < screen_world || enemy_world < screen_world ||
-        (mysmb_u16)(player_world - screen_world) >= 0x100U ||
-        (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return;
-
-    mysmb_objects_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-                                   game->ram[MYSMB_PLAYER_BOUND_BOX],
-                                   (mysmb_u8)(player_world - screen_world),
-                                   game->ram[MYSMB_PLAYER_Y]);
-    mysmb_objects_set_bounding_box(game,
-                                   (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U),
-                                   game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
-                                   (mysmb_u8)(enemy_world - screen_world),
-                                   game->ram[MYSMB_ENEMY_Y + slot]);
+    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
     if (mysmb_objects_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
-                                    (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U))) {
+                                    enemy_box)) {
         mysmb_objects_collect_power_up(game);
     }
 }
-
 /* ROM $ddcd HandlePowerUpCollision.  The score or 1-up is deliberately
  * deferred to FloateyNumbersRoutine, as in the original. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game)
@@ -3263,14 +3264,23 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     mysmb_u16 address;
 
     is_bumpable = mysmb_objects_is_bumpable(metatile);
-    if (is_bumpable == 0U && game->ram[MYSMB_PLAYER_SIZE] != 0U) return 0U;
     slot = (mysmb_u8)(game->ram[MYSMB_BLOCK_SLOT_CONTROL] & 1U);
-    game->ram[MYSMB_BLOCK_STATE + slot] = is_bumpable != 0U ? 0x11U : 0x12U;
+    /* PlayerHeadCollision starts every hit as an unbreakable bounce ($11).
+     * Only big Mario changes an ordinary, unmatched brick to state $12 for
+     * the brick-chunk route.  Small Mario still bounces an ordinary brick;
+     * returning early here lets him pass through it. */
+    game->ram[MYSMB_BLOCK_STATE + slot] =
+        game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0x12U : 0x11U;
     game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot] = block_row;
     game->ram[MYSMB_BLOCK_BUFFER_LOW + slot] = block_low;
-    game->ram[MYSMB_BLOCK_METATILE + slot] = is_bumpable != 0U ? 0xc4U : 0U;
-    if (is_bumpable != 0U && (metatile == 0x58U || metatile == 0x5dU)) {
-        game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
+    game->ram[MYSMB_BLOCK_METATILE + slot] =
+        game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0U : metatile;
+    if (is_bumpable != 0U) {
+        game->ram[MYSMB_BLOCK_STATE + slot] = 0x11U;
+        game->ram[MYSMB_BLOCK_METATILE + slot] = 0xc4U;
+        if (metatile == 0x58U || metatile == 0x5dU) {
+            game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
+        }
     }
     address = (mysmb_u16)(0x0500U + block_low + block_row);
     if (address >= 0x0800U) return 0U;
@@ -3291,10 +3301,8 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
-    if (is_bumpable != 0U) {
-        mysmb_objects_check_top_of_block(game, slot, block_low, block_row);
-    }
-    if (is_bumpable == 0U) {
+    mysmb_objects_check_top_of_block(game, slot, block_low, block_row);
+    if (game->ram[MYSMB_BLOCK_STATE + slot] == 0x12U) {
         mysmb_objects_start_brick_chunks(game, slot);
     }
     else if (mysmb_objects_is_coin_block(metatile) != 0U) {
