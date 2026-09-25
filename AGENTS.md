@@ -12,3 +12,7 @@ Before changing this repository, read [docs/README.md](docs/README.md) and follo
 
 - [docs/states/CURRENT.md](docs/states/CURRENT.md) is the sole active packet. Follow [Execution Rules](docs/rules/EXECUTION.md) for M/T/S/P allocation, evidence, review, and closure.
 - Preserve unrelated work. Do not commit owner ROMs, derived program data, build outputs, local paths, or unreviewed third-party material.
+
+- Keep every temporary artifact, generated log, research output, trace, patch,
+  and build intermediate below the ignored build directory. Do not create
+  temporary files or directories at the repository root.
