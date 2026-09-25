@@ -2,7 +2,7 @@
 
 ## Status
 
-M2 T15 is admitted. S1 is active; S2–S4 remain queued behind its label and controller-edge map.
+M2 T15 S1 is complete in P1; S2 is active. S3-S4 remain queued behind the S1 map.
 
 ## ROM scope
 
@@ -18,8 +18,8 @@ Entered through the operation-mode tree; emits text/VRAM, OAM and audio requests
 
 ## Admission S plan
 
-1. **S1 active** - Bind title, select/start and demo labels to current code or replacement targets; record button-edge semantics.
-2. **S2 queued** - Translate title bootstrap, menu, selection and demo state/data paths.
+1. **S1 complete (P1)** - Bind title, select/start and demo labels to current code or replacement targets; record button-edge semantics.
+2. **S2 active** - Translate title bootstrap, menu, selection and demo state/data paths.
 3. **S3 queued** - Translate victory, end-world and floating-number paths including text/OAM/audio output.
 4. **S4 queued** - Compare title-start, demo, victory and game-over reference routes; remove displaced branches.
 

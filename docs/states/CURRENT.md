@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 T15 S1 active.**
+**M2 T15 S2 active.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Implementation |
 | Objective | Map ROM title, selection/start, demo, victory, end-world, and floating-number labels to unique game owners; freeze controller-edge and NMI-return route evidence before migration. |
 | Scope | game title/mode leaves, area text/OAM collaborators, owner-local trace fixtures, OpenNT DOS build, and three executable artifacts. |
-| Result | T14 is closed: reset/cold boot live in boot.c; the complete NMI prologue, pause, shuffle and operation-mode tree live in frame_root.c; the 600-sample title-start route has zero differences in OAM/CIRAM/palette/audio/PPU output and byte-identical x86/x64 native traces. T15 S1 now maps the following title and terminal mode tree before changing it. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
+| Result | T14 is closed: reset/cold boot live in boot.c; the complete NMI prologue, pause, shuffle and operation-mode tree live in frame_root.c; the 600-sample title-start route has zero differences in OAM/CIRAM/palette/audio/PPU output and byte-identical x86/x64 native traces. T15 S1 mapped the title/terminal tree and found missing Select-icon and world-select B branches; S2 now migrates those menu paths in ROM order. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
 | Artifact rule | Every P commit includes refreshed mysmb16.exe, mysmb32.exe, and mysmb64.exe. |
 | Stop condition | Stop if extraction changes a ROM-owned state transition or introduces platform gameplay logic. |
 
