@@ -13,7 +13,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$recordSize = 4395
+$recordSize = 4409
 $headerSize = 12
 
 function Read-M2Trace([string]$Path, [byte[]]$Magic) {
@@ -57,8 +57,8 @@ function New-M2Result([string]$Field) {
     }
 }
 
-$reference = Read-M2Trace $ReferenceTrace ([byte[]](77,83,70,82,1,0,0,0))
-$native = Read-M2Trace $NativeTrace ([byte[]](77,83,70,78,1,0,0,0))
+$reference = Read-M2Trace $ReferenceTrace ([byte[]](77,83,70,82,2,0,0,0))
+$native = Read-M2Trace $NativeTrace ([byte[]](77,83,70,78,2,0,0,0))
 if ($reference.Count -ne $native.Count) { throw 'Trace sample counts differ.' }
 if ($EndSample -lt 0) { $EndSample = [int]$reference.Count - 1 }
 $nativeStart = $StartSample + $NativeSampleOffset
@@ -79,6 +79,7 @@ $nameTable0 = New-M2Result 'ciram-page-0'
 $nameTable1 = New-M2Result 'ciram-page-1'
 $palette = New-M2Result 'palette'
 $oam = New-M2Result 'oam'
+$audio = New-M2Result 'audio-command-state'
 $ppu = @(
     (New-M2Result 'ppu-control'),
     (New-M2Result 'ppu-mask'),
@@ -115,8 +116,9 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
     Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 3076) ($nativeRecord + 3076) 1024 $sample $nameTable1
     Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4100) ($nativeRecord + 4100) 32 $sample $palette
     Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4132) ($nativeRecord + 4132) 256 $sample $oam
+    Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4388) ($nativeRecord + 4388) 14 $sample $audio
     for ($scalar = 0; $scalar -lt 7; ++$scalar) {
-        Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4388 + $scalar) ($nativeRecord + 4388 + $scalar) 1 $sample $ppu[$scalar]
+        Compare-M2Range $reference.Bytes $native.Bytes ($referenceRecord + 4402 + $scalar) ($nativeRecord + 4402 + $scalar) 1 $sample $ppu[$scalar]
     }
 }
 
@@ -137,5 +139,5 @@ for ($sample = $StartSample; $sample -le $EndSample; ++$sample) {
             }
         })
     Results = @($ram, $zeroPage, $stack, $oamRam, $workRam, $nameTable0,
-        $nameTable1, $palette, $oam) + $ppu
+        $nameTable1, $palette, $oam, $audio) + $ppu
 } | ConvertTo-Json -Depth 3

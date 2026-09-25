@@ -31,8 +31,26 @@ int main(void)
     game.ram[0x0440U] = 0U;
     game.ram[0x06f3U] = 0x30U;
     mysmb_objects_step_misc(&game);
-    return game.ram[0x0230U] == 0x40U && game.ram[0x0231U] == 0x62U &&
-        game.ram[0x0232U] == 2U && game.ram[0x0233U] == 0x30U &&
-        game.ram[0x0234U] == 0x48U && game.ram[0x0235U] == 0x62U &&
-        game.ram[0x0236U] == 0x82U && game.ram[0x0237U] == 0x30U ? 0 : 2;
+    if (game.ram[0x0230U] != 0x40U || game.ram[0x0231U] != 0x62U ||
+        game.ram[0x0232U] != 2U || game.ram[0x0233U] != 0x30U ||
+        game.ram[0x0234U] != 0x48U || game.ram[0x0235U] != 0x62U ||
+        game.ram[0x0236U] != 0x82U || game.ram[0x0237U] != 0x30U) return 2;
+
+    /* ProcJumpCoin calls ImposeGravity with generic-object offset $0d, so
+     * Misc_YMF_Dummy begins at $0416+$0d=$0423.  A carry from slot eight
+     * ($042b) moves the coin by one pixel; $042c is Bubble_YMF_Dummy. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0009U] = 4U;
+    game.ram[0x002aU + 8U] = 1U;
+    game.ram[0x00dbU + 8U] = 0x40U;
+    game.ram[0x00acU + 8U] = 0U;
+    game.ram[0x0440U + 8U] = 0x50U;
+    game.ram[0x0423U + 8U] = 0xb0U;
+    game.ram[0x0424U + 8U] = 0U;
+    game.ram[0x06f3U + 8U] = 0x40U;
+    mysmb_objects_step_misc(&game);
+    if (game.ram[0x00dbU + 8U] != 0x41U ||
+        game.ram[0x0423U + 8U] != 0U ||
+        game.ram[0x0240U] != 0x41U) return 3;
+    return 0;
 }

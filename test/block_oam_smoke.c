@@ -38,8 +38,22 @@ int main(void)
     game.ram[0x03f1U] = 0x40U;
     game.ram[0x06ecU] = 0x20U;
     mysmb_objects_step_blocks(&game);
-    return game.ram[0x0220U] == 0x20U && game.ram[0x0221U] == 0x84U &&
-        game.ram[0x0222U] == 0x43U && game.ram[0x0223U] == 0x40U &&
-        game.ram[0x0227U] == 0x46U && game.ram[0x0228U] == 0x28U &&
-        game.ram[0x022bU] == 0x40U && game.ram[0x022fU] == 0x46U ? 0 : 2;
+    if (game.ram[0x0220U] != 0x20U || game.ram[0x0221U] != 0x84U ||
+        game.ram[0x0222U] != 0x43U || game.ram[0x0223U] != 0x40U ||
+        game.ram[0x0227U] != 0x46U || game.ram[0x0228U] != 0x28U ||
+        game.ram[0x022bU] != 0x40U || game.ram[0x022fU] != 0x46U) return 2;
+
+    /* ImposeGravity reaches Block_YMF_Dummy through generic offset $09:
+     * $0416+$09=$041f.  A carry from slot zero affects Block Y and OAM. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0026U] = 1U;
+    game.ram[0x00d7U] = 0x40U;
+    game.ram[0x00a8U] = 0U;
+    game.ram[0x043cU] = 0x50U;
+    game.ram[0x041fU] = 0xb0U;
+    game.ram[0x0420U] = 0U;
+    game.ram[0x06ecU] = 0x20U;
+    mysmb_objects_step_blocks(&game);
+    return game.ram[0x00d7U] == 0x41U && game.ram[0x041fU] == 0U &&
+        game.ram[0x0220U] == 0x41U ? 0 : 3;
 }

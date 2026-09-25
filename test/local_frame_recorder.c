@@ -90,12 +90,14 @@ static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
         mysmb_recorder_write(output, snapshot->name_table[1], 0x0400UL) &&
         mysmb_recorder_write(output, snapshot->palette, 0x20UL) &&
         mysmb_recorder_write(output, snapshot->oam, 0x0100UL) &&
+        mysmb_recorder_write(output, snapshot->audio,
+                             MYSMB_FRAME_SNAPSHOT_AUDIO_BYTES) &&
         mysmb_recorder_write(output, scalar, 7UL);
 }
 
 int main(int argument_count, char **arguments)
 {
-    static const unsigned char magic[8] = { 'M', 'S', 'F', 'N', 1U, 0U, 0U, 0U };
+    static const unsigned char magic[8] = { 'M', 'S', 'F', 'N', 2U, 0U, 0U, 0U };
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;

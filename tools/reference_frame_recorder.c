@@ -19,6 +19,7 @@
 #define MYSMB_REFERENCE_VRAM_ADDRESS_CONTROL 0x0773u
 #define MYSMB_REFERENCE_TITLE_DRAW_TASK 0x0du
 #define MYSMB_REFERENCE_TITLE_BUFFER_CONTROL 0x05u
+#define MYSMB_REFERENCE_AUDIO_BYTES 14u
 /* This retains the existing 512 driver-run budget in instruction work:
  * core_driver_run executes at most 256 instructions per call. */
 #define MYSMB_REFERENCE_MAX_STEPS_PER_FRAME 131072u
@@ -26,6 +27,22 @@
 static int mysmb_reference_write(FILE *output, const void *bytes, size_t count)
 {
     return fwrite(bytes, 1u, count, output) == count;
+}
+
+static int mysmb_reference_write_audio(FILE *output,
+                                       const core_machine *machine)
+{
+    static const lib_u16 offsets[MYSMB_REFERENCE_AUDIO_BYTES] = {
+        0x00f1u, 0x00f2u, 0x00f3u, 0x00f4u, 0x07b1u, 0x07b2u, 0x07bbu,
+        0x07bdu, 0x07beu, 0x07bfu, 0x07c5u, 0x07c6u, 0x00ffu, 0x00fcu
+    };
+    lib_u8 index;
+
+    for (index = 0u; index < MYSMB_REFERENCE_AUDIO_BYTES; ++index) {
+        if (!mysmb_reference_write(output, &machine->ram[offsets[index]], 1u))
+            return 0;
+    }
+    return 1;
 }
 
 static int mysmb_reference_write_frame(FILE *output, const core_machine *machine)
@@ -61,6 +78,7 @@ static int mysmb_reference_write_frame(FILE *output, const core_machine *machine
         mysmb_reference_write(output, ppu->ciram, sizeof(ppu->ciram)) &&
         mysmb_reference_write(output, ppu->palette, sizeof(ppu->palette)) &&
         mysmb_reference_write(output, ppu->oam, sizeof(ppu->oam)) &&
+        mysmb_reference_write_audio(output, machine) &&
         mysmb_reference_write(output, &ppu->control, sizeof(ppu->control)) &&
         mysmb_reference_write(output, &ppu->mask, sizeof(ppu->mask)) &&
         mysmb_reference_write(output, &name_table, sizeof(name_table)) &&
@@ -135,7 +153,7 @@ int main(int argument_count, char **arguments)
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
-    const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 1u, 0u, 0u, 0u };
+    const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 2u, 0u, 0u, 0u };
 
     if (argument_count < 5 || argument_count > 7) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
