@@ -1822,11 +1822,11 @@ The labels and branches behind every line remain open until individually bound b
 | 14197 | `DChunks` | unassigned | open | none |
 | 14242 | `ChnkOfs` | unassigned | open | none |
 | 14250 | `ExBCDr` | unassigned | open | none |
-| 14254 | `DrawFireball` | unassigned | open | none |
+| 14254 | `DrawFireball` | M2 T16 S3/P4 | ported; route trace pending | src/game/oam/fireball_gfx.c |
 | 14261 | `DrawFirebar` | unassigned | open | none |
 | 14275 | `FireA` | unassigned | open | none |
 | 14280 | `ExplosionTiles` | unassigned | open | none |
-| 14283 | `DrawExplosion_Fireball` | unassigned | open | none |
+| 14283 | `DrawExplosion_Fireball` | M2 T16 S3/P4 | ported; route trace pending | src/game/oam/fireball_gfx.c |
 | 14292 | `DrawExplosion_Fireworks` | unassigned | open | none |
 | 14327 | `KillFireBall` | unassigned | open | none |
 | 14334 | `DrawSmallPlatform` | unassigned | open | none |
@@ -1886,7 +1886,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14781 | `ExPlyrAt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
 | 14786 | `RelativePlayerPosition` | M2 T16 S3/P2 | ported; route trace pending | src/game/oam/object_position.c |
 | 14791 | `RelativeBubblePosition` | unassigned | open | none |
-| 14797 | `RelativeFireballPosition` | unassigned | open | none |
+| 14797 | `RelativeFireballPosition` | M2 T16 S3/P4 | ported; focused smoke; route trace pending | src/game/oam/object_position.c |
 | 14801 | `RelWOfs` | unassigned | open | none |
 | 14805 | `RelativeMiscPosition` | unassigned | open | none |
 | 14811 | `RelativeEnemyPosition` | unassigned | open | none |

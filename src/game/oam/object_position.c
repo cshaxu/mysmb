@@ -16,7 +16,11 @@ enum {
     MYSMB_MISC_Y = 0x00dbU,
     MYSMB_MISC_RELATIVE_X = 0x03b3U,
     MYSMB_MISC_RELATIVE_Y = 0x03beU,
-    MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U
+    MYSMB_MISC_OFFSCREEN_BITS = 0x03d6U,
+    MYSMB_FIREBALL_X = 0x008dU,
+    MYSMB_FIREBALL_Y = 0x00d5U,
+    MYSMB_FIREBALL_RELATIVE_X = 0x03afU,
+    MYSMB_FIREBALL_RELATIVE_Y = 0x03baU
 };
 
 /* ROM RelativePlayerPosition.  This belongs with the other
@@ -28,6 +32,18 @@ void mysmb_oam_relative_player_position(struct mysmb_game *game)
                                     game->ram[MYSMB_SCREEN_EDGE_X]);
     game->ram[0x03b8U] = game->ram[0x00ceU];
     game->ram[0x0755U] = game->ram[0x03adU];
+}
+
+/* ROM RelativeFireballPosition.  GetProperObjOffset maps the source slot
+ * through SprObject arrays; Fireball_Rel_* is a fixed pair. */
+void mysmb_oam_relative_fireball_position(struct mysmb_game *game, mysmb_u8 slot)
+{
+    (void)slot;
+    game->ram[MYSMB_FIREBALL_RELATIVE_X] =
+        (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] -
+                   game->ram[MYSMB_SCREEN_EDGE_X]);
+    game->ram[MYSMB_FIREBALL_RELATIVE_Y] =
+        game->ram[MYSMB_FIREBALL_Y + slot];
 }
 
 /* ROM GetXOffscreenBits.  Returns the source table byte before

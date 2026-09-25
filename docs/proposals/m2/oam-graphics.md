@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active — S2/P2.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active — S3/P4.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -19,8 +19,8 @@ Consumes final gameplay state and produces source-ordered OAM plus game-owned sp
 ## Admission S plan
 
 1. **S1 complete (P1-P2)** - Establish the OAM source tree without changing behavior: move each existing sprite writer under `src/game/oam/`, map every OAM byte writer, offset table and graphics helper to ROM labels, and forbid local relative/offscreen reconstruction in gameplay owners.
-2. **S2 active (P1-P2)** - Translate relative position, offscreen-bit and bounding-box writers.
-3. **S3 planned** - Translate player and enemy/misc graphics dispatch, priority, animation and OAM order.
+2. **S2 complete (P1-P2)** - Translate relative position, offscreen-bit and bounding-box writers.
+3. **S3 active (P1-P4)** - Translate player, fireball and enemy/misc graphics dispatch, priority, animation and OAM order.
 4. **S4 planned** - Compare OAM and sprite-0/status split across title, movement, objects, enemies and endgame.
 
 ## Acceptance
@@ -59,3 +59,7 @@ RunPUSubs now writes fixed Enemy_Rel_XPos ($03ae), Enemy_Rel_YPos ($03b9), and E
 ## S3 P3: player graphics/OAM single-owner extraction
 
 ROM labels `PlayerGfxHandler` through `ExPlyrAt`, together with `GetPlayerOffscreenBits`, now live in `src/game/oam/player_gfx.c`; its public calls are the OAM API `mysmb_oam_draw_player` and `mysmb_oam_draw_intermediate_player`. `player.c` contains no player graphics dispatch, tile selection, OAM-row writer, offscreen-mask writer, or `PlayerGraphicsTable` access. `RenderPlayerSub` invokes the existing single `RelativePlayerPosition` primitive rather than rebuilding the relative coordinates locally. The inventory binds every relocated ROM label to this packet, with status intentionally `ported; route trace pending`: the current 600-frame title-to-demo route proves the extraction preserved the prior output baseline but does not close all player animation and fireball-throw branches. x64/x86 full CTest, OpenNT MZ link, and refreshed executable artifacts are required for the P commit.
+
+## S3 P4: fireball relative-coordinate OAM ownership
+
+`RelativeFireballPosition` now owns the precise ROM mapping `$74/$8d/$d5 -> $03af/$03ba` in `src/game/oam/object_position.c`.  `DrawFireball` and `DrawExplosion_Fireball` consume only those fixed relative scratch bytes and the original sprite-offset arrays (`FBall_SprDataOffset` `$06f1`, `Alt_SprDataOffset` `$06ec`); neither reconstructs a host/world coordinate.  `FireballObjCore` retains its source order and explicitly invokes the relative-position primitive on its explosion branch before the OAM writer, matching the ROM `FireballExplosion` leaf.  The existing focused fireball smoke now exercises the corrected mapping, including normal and explosion OAM bytes.  The broader `FireballObjCore`, offscreen-bit, bounding-box and collision paths remain assigned to their respective source nodes and require a controlled reference route before they can be marked conformant.  Validation passed: x64 78/78 CTest, x86 78/78 CTest, the OpenNT MZ link (with its existing `OLDNAMES.LIB` warning), and the focused smoke. The existing 600-sample title-to-demo trace stays at two work-RAM bytes in one sample; CIRAM, palette, audio commands and all seven PPU scalar fields are equal. OAM remains an open baseline: 3,622 bytes differ, first at sample 124 / offset `$d8`. Refreshed artifacts: `mysmb16.exe` CB9DC61CE72254F04D53E34F1E0BA4EB3F9972A42ADC5960FA6E4CD9AD310727, `mysmb32.exe` 6DC1D145E6AD15D358316C65DF8CA3CCA9C61D15AE46F13C6277F89EA3817A0A, `mysmb64.exe` 99182911214D66F9E6428F94B2555045669C44ADFF5FDF25FBD175FDCF616944.

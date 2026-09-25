@@ -517,16 +517,6 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
     }
 }
 
-/* ROM RelativeFireballPosition, GetFireballOffscreenBits and
- * GetFireballBoundBox.  The relative bytes are PPU/collision scratch RAM;
- * the state lifetime below is determined solely by the original $cc mask. */
-static void mysmb_objects_relative_fireball_position(struct mysmb_game *game,
-                                                      mysmb_u8 slot)
-{
-    game->ram[MYSMB_FIREBALL_REL_X + slot] = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] - game->ram[MYSMB_SCREEN_LEFT_X]);
-    game->ram[MYSMB_FIREBALL_REL_Y + slot] = game->ram[MYSMB_FIREBALL_Y + slot];
-}
-
 /* ROM GetXOffscreenBits / GetYOffscreenBits / GetOffScreenBitsSet.  Return
  * the source's final low-X/high-Y nybble layout rather than a host world-range
  * approximation. */
@@ -650,8 +640,11 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             explosion_index = (mysmb_u8)((state >> 1U) & 7U);
             game->ram[MYSMB_FIREBALL_STATE + slot] = (mysmb_u8)(state + 1U);
             if (explosion_index >= 3U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
-            else mysmb_oam_draw_fireball_explosion(game, slot,
-                (mysmb_u8)(0x68U - explosion_index));
+            else {
+                mysmb_oam_relative_fireball_position(game, slot);
+                mysmb_oam_draw_fireball_explosion(game, slot,
+                    (mysmb_u8)(0x68U - explosion_index));
+            }
             continue;
         }
         if (state == 2U) {
@@ -706,7 +699,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             (mysmb_u8)(game->ram[MYSMB_FIREBALL_PAGE + slot] + page_delta + carry);
         /* FireballObjCore order: relative coordinates, offscreen bits and
          * bounding box precede FireballBGCollision. */
-        mysmb_objects_relative_fireball_position(game, slot);
+        mysmb_oam_relative_fireball_position(game, slot);
         mysmb_objects_get_fireball_offscreen_bits(game, slot);
         mysmb_objects_get_fireball_bounding_box(game, slot);
         if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
