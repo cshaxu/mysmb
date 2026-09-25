@@ -96,16 +96,16 @@ enum {
 
 static void mysmb_game_continue_game(struct mysmb_game *game);
 static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game);
-static void mysmb_game_lose_life(struct mysmb_game *game);
-static void mysmb_game_step_game_over(struct mysmb_game *game);
-static void mysmb_game_next_area(struct mysmb_game *game);
-static void mysmb_game_step_victory(struct mysmb_game *game);
+void mysmb_game_lose_life(struct mysmb_game *game);
+void mysmb_game_step_game_over(struct mysmb_game *game);
+void mysmb_game_next_area(struct mysmb_game *game);
+void mysmb_game_step_victory(struct mysmb_game *game);
 static void mysmb_game_print_victory_messages(struct mysmb_game *game);
-static void mysmb_game_step_screen_routine(struct mysmb_game *game);
-static void mysmb_game_primary_setup(struct mysmb_game *game);
-static void mysmb_game_secondary_setup(struct mysmb_game *game);
+void mysmb_game_step_screen_routine(struct mysmb_game *game);
+void mysmb_game_primary_setup(struct mysmb_game *game);
+void mysmb_game_secondary_setup(struct mysmb_game *game);
 void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
-static void mysmb_game_step_area_parser(struct mysmb_game *game);
+void mysmb_game_step_area_parser(struct mysmb_game *game);
 void mysmb_game_commit_display_state(struct mysmb_game *game);
 void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
 void mysmb_game_submit_oam(struct mysmb_game *game);
@@ -113,7 +113,7 @@ void mysmb_game_submit_oam(struct mysmb_game *game);
 /* ROM GameEngine: NoChgMus / CyclePlayerPalette / ResetPalStar.
  * PlayerGfxHandler has already consumed this attribute for the current OAM
  * DMA; this tail updates it for the following frame. */
-static void mysmb_game_cycle_player_palette(struct mysmb_game *game)
+void mysmb_game_cycle_player_palette(struct mysmb_game *game)
 {
     mysmb_u8 color;
 
@@ -223,7 +223,7 @@ void mysmb_game_tick_player_timers(struct mysmb_game *game)
 
 /* ROM RunGameTimer.  The audio subsystem consumes its queue on a following
  * frame; ForceInjury retains collision's single death-state owner. */
-static mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
+mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
 {
     mysmb_u16 digit;
 
@@ -297,7 +297,7 @@ static void mysmb_game_continue_game(struct mysmb_game *game)
 }
 
 /* ROM NextArea.  LoadAreaPointer remains the following mode-task zero owner. */
-static void mysmb_game_next_area(struct mysmb_game *game)
+void mysmb_game_next_area(struct mysmb_game *game)
 {
     game->ram[MYSMB_RAM_AREA]++;
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
@@ -310,7 +310,7 @@ static void mysmb_game_next_area(struct mysmb_game *game)
 
 /* ROM PlayerLoseLife.  The half-way table stays here because it is game-mode
  * ownership, not an area renderer concern. */
-static void mysmb_game_lose_life(struct mysmb_game *game)
+void mysmb_game_lose_life(struct mysmb_game *game)
 {
     static const mysmb_u8 halfway_nybbles[16] = {
         0x56U, 0x40U, 0x65U, 0x70U, 0x66U, 0x40U, 0x66U, 0x40U,
@@ -344,7 +344,7 @@ static void mysmb_game_lose_life(struct mysmb_game *game)
 }
 
 /* ROM SetupGameOver, ScreenRoutines, and RunGameOver. */
-static void mysmb_game_step_game_over(struct mysmb_game *game)
+void mysmb_game_step_game_over(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
@@ -373,7 +373,7 @@ static void mysmb_game_step_game_over(struct mysmb_game *game)
 }
 
 /* ROM VictoryModeSubroutines. */
-static void mysmb_game_step_victory(struct mysmb_game *game)
+void mysmb_game_step_victory(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
         if (mysmb_objects_step_bridge_collapse(game) != 0U)
@@ -668,7 +668,7 @@ static void mysmb_game_print_victory_messages(struct mysmb_game *game)
 /* Translation of the game-mode portion of ScreenRoutines.  The original
  * advances one task per main-loop frame; command-producing tasks wait for
  * the following NMI to consume VRAM_Buffer1 before writing another stream. */
-static void mysmb_game_step_screen_routine(struct mysmb_game *game)
+void mysmb_game_step_screen_routine(struct mysmb_game *game)
 {
     mysmb_u16 index;
     mysmb_u8 saved_background_color;
@@ -854,7 +854,7 @@ static void mysmb_game_get_area_music(struct mysmb_game *game)
 }
 
 /* ROM PrimaryGameSetup immediately falls through to SecondaryGameSetup. */
-static void mysmb_game_primary_setup(struct mysmb_game *game)
+void mysmb_game_primary_setup(struct mysmb_game *game)
 {
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER] = 1U;
     game->ram[MYSMB_RAM_PLAYER_SIZE] = 1U;
@@ -865,7 +865,7 @@ static void mysmb_game_primary_setup(struct mysmb_game *game)
 /* Translation of SecondaryGameSetup's game-mode fields.  OAM shuffle data
  * remains T11 ownership, while this task establishes the original transition
  * from ScreenRoutines to GameCoreRoutine. */
-static void mysmb_game_secondary_setup(struct mysmb_game *game)
+void mysmb_game_secondary_setup(struct mysmb_game *game)
 {
     static const mysmb_u8 default_offsets[15] = {
         0x04U, 0x30U, 0x48U, 0x60U, 0x78U, 0x90U, 0xa8U, 0xc0U,
@@ -1031,7 +1031,7 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
  * committed a pending buffer at the start of this tick.  The source performs
  * exactly one parser subtask while one is active, or starts one after each
  * accumulated 32 pixels of scroll. */
-static void mysmb_game_step_area_parser(struct mysmb_game *game)
+void mysmb_game_step_area_parser(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) return;
     if (game->ram[MYSMB_RAM_PARSER_TASK] != 0U) {
@@ -1165,212 +1165,7 @@ void mysmb_game_frame_initialize(struct mysmb_frame *frame)
 void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
                      struct mysmb_frame *frame)
 {
-    mysmb_u8 mode_before;
-    mysmb_u8 task_before;
-    mysmb_u8 enemy_slot;
-    struct mysmb_area_source area_source;
-    mysmb_u8 paused;
-
-    paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
-    if (paused != 0U) {
-        mysmb_frame_root_finish(game, frame);
-        return;
-    }
-    mysmb_game_title_step(game, input);
-    if (mode_before == 2U) {
-        mysmb_game_step_victory(game);
-        /* ROM VictoryMode invokes EnemiesAndLoopsCore only after task zero.
-         * RetainerObject is its reachable source-owned slot-zero OAM route. */
-        if (game->ram[MYSMB_RAM_OPER_MODE_TASK] != 0U)
-            mysmb_objects_draw_retainer(game, 0U);
-        /* ROM VictoryMode always ends at RelativePlayerPosition and
-         * PlayerGfxHandler, including bridge-collapse task zero. */
-        mysmb_player_draw_oam(game);
-    }
-    else if (mode_before == 3U) {
-        mysmb_game_step_game_over(game);
-    }
-    else if (mode_before == 1U && task_before == 0U) {
-        mysmb_area_initialize(game);
-        if (game->area_prg != 0) {
-            area_source.prg = game->area_prg;
-            area_source.prg_size = game->area_prg_size;
-            if (mysmb_area_load_pointers(game, &area_source) != 0U) {
-                if (mysmb_area_parse_header(game, &area_source) != 0U) {
-                }
-            }
-        }
-    }
-    else if (mode_before == 0U && task_before == 0U) {
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
-    }
-    else if (((mode_before == 1U && task_before == 1U) ||
-              (mode_before == 0U && task_before == 1U)) &&
-             game->area_prg != 0) {
-        mysmb_game_step_screen_routine(game);
-    }
-    else if ((mode_before == 1U || mode_before == 0U) && task_before == 2U &&
-             game->area_prg != 0) {
-        if (mode_before == 0U) mysmb_game_primary_setup(game);
-        mysmb_game_secondary_setup(game);
-    }
-    else if (mode_before == 1U &&
-             (task_before == 3U ||
-              (task_before == 1U && game->area_prg == 0)) &&
-             game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 6U) {
-        mysmb_game_lose_life(game);
-    }
-    else if ((mode_before == 1U &&
-              (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
-             (mode_before == 0U && task_before == 3U &&
-              game->ram[MYSMB_RAM_OPER_MODE] == 0U &&
-              game->ram[MYSMB_RAM_OPER_MODE_TASK] == 3U)) {
-        if (game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] == 3U &&
-            mysmb_area_queue_bottom_status_line(game) != 0U) {
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
-        }
-        mysmb_objects_step_flagpole(game);
-        if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0U) {
-            mysmb_player_initialize_entrance(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 1U) {
-            mysmb_player_step_auto_climb(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 7U) {
-            mysmb_player_finish_normal_entrance(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 3U) {
-            mysmb_player_step_vertical_pipe(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 4U) {
-            /* ROM FlagpoleSlide: force Down until the slide reaches $9e. */
-            if (game->ram[MYSMB_RAM_PLAYER_Y] < 0x9eU) {
-                mysmb_player_step(game, MYSMB_BUTTON_DOWN);
-            }
-            else {
-                game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] = 5U;
-            }
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 5U) {
-            /* ROM PlayerEndLevel.  The star/flag task is the original
-             * object-side completion handoff; the mode route owns NextArea. */
-            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
-            if (game->ram[MYSMB_RAM_STAR_FLAG_TASK] == 5U) {
-                game->ram[MYSMB_RAM_LEVEL]++;
-                mysmb_game_next_area(game);
-            }
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 2U) {
-            mysmb_player_step_side_pipe(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 8U) {
-            mysmb_player_step(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 9U) {
-            mysmb_player_step_change_size(game);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 10U) {
-            mysmb_player_step_injury_blink(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 11U &&
-                 game->ram[MYSMB_RAM_TIMER_CONTROL] < 0xf0U) {
-            mysmb_player_step(game, game->ram[MYSMB_RAM_SAVED_JOYPAD1]);
-        }
-        else if (game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 12U) {
-            mysmb_player_step_fire_flower(game);
-        }
-        /* ROM $94a5 GameEngine: GameRoutines (above) runs before the
-         * object loop, so object collisions see this frame's player state. */
-        if (game->area_prg != 0) {
-            area_source.prg = game->area_prg;
-            area_source.prg_size = game->area_prg_size;
-            /* ROM GameEngine runs ProcFireball_Bubble before the six
-             * EnemiesAndLoopsCore slots. */
-            mysmb_objects_step_fireballs(game);
-            /* ROM GameEngine enters EnemiesAndLoopsCore once for every
-             * ObjectOffset.  Only an empty slot reaches ProcessEnemyData;
-             * a stream page-control record can therefore be consumed by a
-             * later empty slot in the same frame. */
-            for (enemy_slot = 0U; enemy_slot < 6U; ++enemy_slot) {
-                if (game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
-                    if (enemy_slot < 5U) {
-                        mysmb_objects_step_normal_enemy(game, enemy_slot);
-                    }
-                    else if (game->ram[MYSMB_RAM_ENEMY_ID + enemy_slot] == 0x2eU) {
-                        /* PowerUpObjHandler owns its collision and bounds
-                         * tail in source slot five. */
-                        mysmb_objects_step_power_up(game);
-                        mysmb_objects_finish_power_up(game);
-                    }
-                }
-                else if (enemy_slot < 5U) {
-                    if (mysmb_area_spawn_enemy_in_slot(game, &area_source,
-                                                       enemy_slot) != 0U &&
-                        game->ram[MYSMB_RAM_ENEMY_FLAG + enemy_slot] != 0U) {
-                    }
-                }
-                else {
-                    (void)mysmb_area_spawn_next_enemy(game, &area_source);
-                }
-                /* ROM GameEngine calls FloateyNumbersRoutine before
-                 * incrementing ObjectOffset. */
-                mysmb_objects_step_floatey_number(game, enemy_slot);
-            }
-        }
-        mysmb_objects_step_enemy_collisions(game);
-        mysmb_objects_check_hazard_enemy_collision(game);
-        mysmb_objects_check_bullet_bill_stomp(game);
-        mysmb_objects_check_bloober_stomp(game);
-        mysmb_objects_check_lakitu_stomp(game);
-        mysmb_objects_check_hammer_bro_stomp(game);
-        mysmb_objects_check_paratroopa_stomp(game);
-        mysmb_objects_step_bullet_bills(game);
-        mysmb_objects_step_piranha_plants(game);
-        mysmb_objects_step_swimming_cheep_cheeps(game);
-        mysmb_objects_step_podoboos(game);
-        mysmb_objects_step_bloobers(game);
-        mysmb_objects_step_jumping_paratroopas(game);
-        mysmb_objects_step_red_paratroopas(game);
-        mysmb_objects_step_flying_green_paratroopas(game);
-        mysmb_objects_step_flying_cheep_frenzy(game);
-        mysmb_objects_step_flying_cheep_cheeps(game);
-        mysmb_objects_step_firebars(game);
-        mysmb_objects_step_platforms(game);
-        mysmb_objects_step_bowsers(game);
-        mysmb_objects_draw_bowsers(game);
-        mysmb_objects_step_bowser_flame_frenzy(game);
-        mysmb_objects_step_bowser_flames(game);
-        mysmb_objects_step_star_flags(game);
-        mysmb_objects_step_fireworks(game);
-        mysmb_objects_step_firework_frenzy(game);
-        mysmb_objects_step_lakitu_frenzy(game);
-        mysmb_objects_step_lakitus(game);
-        mysmb_objects_step_spiny_eggs(game);
-        mysmb_objects_step_hammer_bros(game);
-        mysmb_player_draw_oam(game);
-        mysmb_objects_step_vine(game);
-        mysmb_objects_apply_block_replacements(game);
-        mysmb_objects_step_blocks(game);
-        mysmb_objects_step_misc(game);
-        mysmb_area_step_palette_rotation(game);
-        (void)mysmb_area_sync_player_palette(game);
-        mysmb_game_cycle_player_palette(game);
-        game->ram[MYSMB_RAM_PREVIOUS_A_B_BUTTONS] =
-            game->ram[MYSMB_RAM_PLAYER_A_B_BUTTONS];
-        /* ROM GameEngine's SaveAB tail clears the transient directional
-         * partition after object collisions.  In particular, a collision
-         * that selects PlayerDeath leaves its following physics frame with
-         * zero horizontal input and the KillPlayer-cleared speed. */
-        game->ram[MYSMB_RAM_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
-        mysmb_game_step_area_parser(game);
-    }
-    /* GameEngine may advance the entrance dispatcher to subroutine 8 on this
-     * frame.  The ROM's game-timer pass observes that new state, so it can
-     * load its first 24-frame interval without an extra frame of delay. */
-    if (mysmb_game_run_timer(game) != 0U) {
-        (void)mysmb_area_queue_timer_status(game);
-    }
-    mysmb_frame_root_finish(game, frame);
+    mysmb_frame_root_step(game, input, frame);
 }
 
 /* ROM $82b3-$82ca DemoEngine.  It returns one only after the terminal zero
