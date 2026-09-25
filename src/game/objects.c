@@ -3431,6 +3431,11 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     address = (mysmb_u16)(0x0500U + block_low + block_row);
     if (address >= 0x0800U) return 0U;
     game->ram[address] = 0x23U;
+    /* PlayerHeadCollision always enters DestroyBlockMetatile before it
+     * dispatches BumpBlock. This is not coin-specific: the PPU must first
+     * receive the two blank tile rows for bricks, question blocks, hidden
+     * blocks, and item blocks alike. */
+    mysmb_objects_queue_blank_metatile(game, block_low, block_row);
     old_x = game->ram[MYSMB_PLAYER_X];
     game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)((old_x + 8U) & 0xf0U);
     game->ram[MYSMB_BLOCK_PAGE + slot] = game->ram[MYSMB_PLAYER_PAGE];
@@ -3447,14 +3452,14 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
+    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
     mysmb_objects_check_top_of_block(game, slot, block_low, block_row);
     if (game->ram[MYSMB_BLOCK_STATE + slot] == 0x12U) {
         mysmb_objects_start_brick_chunks(game, slot);
     }
     else if (mysmb_objects_is_coin_block(metatile) != 0U) {
-        /* CoinBlock leaves the collision cell blank and submits the matching
-         * two-row blank metatile before GiveOneCoin appends status output. */
-        mysmb_objects_queue_blank_metatile(game, block_low, block_row);
+        /* The common DestroyBlockMetatile submission above precedes
+         * GiveOneCoin's status output, exactly as in the ROM. */
         mysmb_objects_start_jump_coin(game, game->ram[MYSMB_BLOCK_PAGE + slot],
             (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot] | 5U),
             (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] - 0x10U));
