@@ -1180,6 +1180,7 @@ void mysmb_objects_step_piranha_plants(struct mysmb_game *game)
     mysmb_u8 target;
 
     for (slot = 0U; slot < 5U; ++slot) {
+        mysmb_objects_draw_piranha(game, slot);
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 13U ||
             game->ram[MYSMB_ENEMY_STATE + slot] != 0U ||

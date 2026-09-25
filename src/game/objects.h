@@ -45,6 +45,7 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
+void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep, sans rendering. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 /* ROM $ad5a-$ad79 InitPodoboo and $af13-$af25 MovePodoboo, sans rendering. */
