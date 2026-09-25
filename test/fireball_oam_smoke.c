@@ -13,9 +13,11 @@ int main(void)
     game.ram[0x00ceU] = 0x40U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x06f1U] = 0x20U;
+    game.ram[0x070cU] = 6U;
     game.ram[0x071dU] = 0xffU;
     mysmb_fireball_step(&game);
-    if (game.ram[0x00ffU] != 0x20U || game.ram[0x0024U] != 1U) return 14;
+    if (game.ram[0x00ffU] != 0x20U || game.ram[0x0024U] != 1U ||
+        game.ram[0x0711U] != 6U || game.ram[0x0781U] != 5U) return 14;
     game.ram[0x00ffU] = 0U;
     game.ram[0x000dU] = 0x40U;
     mysmb_fireball_step(&game);
@@ -32,6 +34,7 @@ int main(void)
     game.ram[0x00a6U] = 0U;
     game.ram[0x04a0U] = 7U;
     game.ram[0x06f1U] = 0x20U;
+    game.ram[0x070cU] = 6U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 0U;
     game.ram[0x071cU] = 0U;
@@ -85,6 +88,7 @@ int main(void)
     game.ram[0x00bcU] = 1U;
     game.ram[0x00d5U] = 0x50U;
     game.ram[0x06f1U] = 0x20U;
+    game.ram[0x070cU] = 6U;
     mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0U ||
         (game.ram[0x03d2U] & 0xccU) == 0U) return 4;

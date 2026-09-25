@@ -15,7 +15,8 @@ enum {
     MYSMB_PLAYER_PAGE = 0x006dU,
     MYSMB_PLAYER_Y = 0x00ceU,
     MYSMB_PLAYER_FACING = 0x0033U,
-    MYSMB_PLAYER_ANIMATION = 0x070dU,
+    MYSMB_PLAYER_ANIMATION = 0x0781U,
+    MYSMB_FIREBALL_THROWING_TIMER = 0x0711U,
     MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
     MYSMB_FIREBALL_STATE = 0x0024U,
     MYSMB_FIREBALL_X_SPEED = 0x005eU,
@@ -85,6 +86,8 @@ void mysmb_fireball_step(struct mysmb_game *game)
             game->ram[MYSMB_SQUARE1_SOUND] = 0x20U;
             game->ram[MYSMB_FIREBALL_STATE + slot] = 2U;
             game->ram[MYSMB_FIREBALL_COUNTER]++;
+            game->ram[MYSMB_FIREBALL_THROWING_TIMER] =
+                game->ram[MYSMB_PLAYER_ANIM_TIMER_SET];
             game->ram[MYSMB_PLAYER_ANIMATION] =
                 (mysmb_u8)(game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] - 1U);
         }
