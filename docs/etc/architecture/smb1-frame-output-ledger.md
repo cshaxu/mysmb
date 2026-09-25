@@ -2134,3 +2134,17 @@ multiple jump animation/physics coverage to the admitted 1-1 evidence.  A
 separate exploratory first-frame Start script diverged while title setup was
 still in progress and is excluded from equivalence evidence; it identifies a
 future title-start phase audit rather than a license to alter gameplay logic.
+
+
+## T11 S1 P18 Death-Entry Route Evidence
+
+The existing 600-sample verified Start-at-30 then Right-held route reaches the
+death/restart transition rather than ending in ordinary play.  A native-only
+state probe stored under build and deleted after reading found normal 1-1
+control at sample 499 (operating mode $01, player page/X $01/$27), while
+sample 599 has reset player coordinates and no active first enemy.  The paired
+ROM comparison for this same route already has zero differences in CPU OAM
+backing RAM, visible OAM, both CIRAM pages, palette, and all PPU-visible
+scalars at every sample.  It proves the admitted path through death entry;
+the post-entry restart, two-player exchange, Warp, and castle routes remain
+separate M2 evidence requirements.
