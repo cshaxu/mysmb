@@ -7,8 +7,8 @@ Scope is SMBDIS lines 699-981 plus InitializeMemory at line 2795. This map recor
 | 699 | `Start` | src/game/boot.c reset subtree | mapped; semantics unverified |
 | 706 | `VBlank1` | src/game/boot.c reset subtree | mapped; semantics unverified |
 | 708 | `VBlank2` | src/game/boot.c reset subtree | mapped; semantics unverified |
-| 712 | `WBootCheck` | src/game/boot.c reset subtree | mapped; semantics unverified |
-| 721 | `ColdBoot` | src/game/boot.c reset subtree | mapped; semantics unverified |
+| 712 | `WBootCheck` | src/game/boot.c reset subtree | translated; warm/cold branch regression |
+| 721 | `ColdBoot` | src/game/boot.c reset subtree | translated; reset-output regression |
 | 737 | `EndlessLoop` | src/game/boot.c reset subtree | mapped; semantics unverified |
 | 743 | `VRAM_AddrTable_Low` | src/game/game.c VRAM constants/table | mapped; semantics unverified |
 | 752 | `VRAM_AddrTable_High` | src/game/game.c VRAM constants/table | mapped; semantics unverified |
@@ -40,10 +40,10 @@ Scope is SMBDIS lines 699-981 plus InitializeMemory at line 2795. This map recor
 | 934 | `SetAmtOffset` | src/game/frame_root.c | mapped; semantics unverified |
 | 937 | `SetMiscOffset` | src/game/frame_root.c | mapped; semantics unverified |
 | 954 | `OperModeExecutionTree` | src/game/frame_root.c | translated structure; route semantics pending trace |
-| 965 | `MoveAllSpritesOffscreen` | src/game/boot.c reset subtree | mapped; semantics unverified |
-| 969 | `MoveSpritesOffscreen` | src/game/boot.c reset subtree | mapped; semantics unverified |
-| 972 | `SprInitLoop` | src/game/boot.c reset subtree | mapped; semantics unverified |
-| 2795 | `InitializeMemory` | src/game/boot.c reset subtree | mapped; semantics unverified |
+| 965 | `MoveAllSpritesOffscreen` | src/game/boot.c reset subtree | translated; reset-output regression |
+| 969 | `MoveSpritesOffscreen` | src/game/boot.c reset subtree | translated; reset-output regression |
+| 972 | `SprInitLoop` | src/game/boot.c reset subtree | translated; reset-output regression |
+| 2795 | `InitializeMemory` | src/game/boot.c reset subtree | translated; cold/warm RAM regressions |
 
 ## P1 extraction boundary
 
@@ -80,8 +80,8 @@ output-equivalence claim.
 P15 moves the existing reset/cold-boot implementation without changing its
 branches from `game.c` into the dedicated shared `boot.c` owner.  It also adds
 that translation unit to both ordinary CMake builds and the OpenNT DOS source
-set.  This is a placement proof only: `WBootCheck` and `ColdBoot` remain marked
-semantically unverified until their ROM branch behavior is migrated and traced.
+set.  This was a placement proof only at P15; P16 supplies the following branch
+translation and focused regression.
 
 | Artifact | SHA-256 |
 |---|---|
@@ -91,3 +91,23 @@ semantically unverified until their ROM branch behavior is migrated and traced.
 
 x86 and x64 each pass 77/77 tests; the OpenNT large-model linker produced the
 16-bit DOS executable from the same source set.
+
+## P16 reset-branch evidence
+
+P16 adds `mysmb_game_reset`, the shared translation of `WBootCheck` and
+`ColdBoot`.  It checks all six `$07d7-$07dc` digits before `$07ff`, uses the
+ROM's `$d6` or `$fe` `InitializeMemory` offset, then applies the documented
+boot writes in order.  `mysmb_game_initialize` remains a separate host
+container constructor until its full first-NMI route is compared; P16 does not
+claim that this replacement has happened.
+
+`mysmb.reset-root-smoke` locks both the valid warm path and an invalid-digit
+cold path, including the expected RAM, PPU mask, OAM producer state and next
+NMI DMA phase.  x86 and x64 each pass 78/78 tests; the 16-bit OpenNT link
+uses this same `boot.c`.
+
+| Artifact | SHA-256 |
+|---|---|
+| `assets/mysmb16.exe` | `7b89f585888f9350990a7da5718349b932256d500c1eeca898012c7bd5ef3566` |
+| `assets/mysmb32.exe` | `e935c4cc4642e6eddb927423851466d7075b4b80d9e91031210cc002d700330b` |
+| `assets/mysmb64.exe` | `ac379d7445785ad46408a1588aa40c3337d4b6518f455f662d955ff007985b29` |

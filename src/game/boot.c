@@ -15,6 +15,40 @@ void mysmb_game_submit_oam(struct mysmb_game *game);
  * no host or platform policy: every target enters the same CPU RAM and PPU
  * state before the shared NMI frame root begins. */
 
+/* ROM $8000-$8035 Start/WBootCheck/ColdBoot, excluding the two hardware
+ * vblank waits and the final endless loop.  The host owns neither branch: this
+ * shared state transition is used identically by every target. */
+void mysmb_game_reset(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+    mysmb_u8 warm_boot;
+
+    warm_boot = 1U;
+    for (index = 0U; index < 6U; ++index) {
+        if (game->ram[(mysmb_u16)(0x07d7U + index)] >= 10U) {
+            warm_boot = 0U;
+            break;
+        }
+    }
+    if (game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] != 0xa5U)
+        warm_boot = 0U;
+    mysmb_game_initialize_memory(game, warm_boot != 0U ? 0xd6U : 0xfeU);
+    game->ram[MYSMB_BOOT_OPER_MODE] = 0U;
+    game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] = 0xa5U;
+    game->ram[MYSMB_BOOT_PSEUDORANDOM] = 0xa5U;
+    /* ColdBoot writes $06 directly to $2001; it is not the later NMI mirror. */
+    game->ppu_mask = 0x06U;
+    game->visible_ppu_mask = 0x06U;
+    mysmb_game_move_all_sprites_offscreen(game);
+    mysmb_game_initialize_name_tables(game);
+    game->ram[0x0774U]++;
+    /* The final WritePPUReg1 restores the $2000 mirror with NMI enabled.
+     * CPU OAM is first transferred by the following shared NMI frame. */
+    game->visible_ppu_control_0 =
+        (mysmb_u8)(game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x80U);
+    game->oam_dma_primed = 1U;
+}
+
 void mysmb_game_initialize(struct mysmb_game *game)
 {
     mysmb_u16 index;

@@ -115,6 +115,11 @@ void mysmb_game_bind_title_source(struct mysmb_game *game,
                                   const mysmb_u8 *icon_data,
                                   mysmb_u16 icon_data_size);
 mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game);
+/* ROM Start/WBootCheck/ColdBoot.  This performs the reset subtree against
+ * existing CPU RAM, preserving only a valid six-digit warm-boot top score. */
+void mysmb_game_reset(struct mysmb_game *game);
+/* Host construction remains separate until it is replaced by a traced reset
+ * path; it creates the owner-local C container then enters the title route. */
 void mysmb_game_initialize(struct mysmb_game *game);
 /* ROM $8231/$8245/$8255, title-menu state and title-to-game-mode transfer. */
 void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);
