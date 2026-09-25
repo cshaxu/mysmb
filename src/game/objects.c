@@ -4,6 +4,7 @@
 void mysmb_objects_draw_power_up(struct mysmb_game *game);
 void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_step_bubbles(struct mysmb_game *game);
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
@@ -738,6 +739,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             mysmb_objects_draw_fireball(game, slot);
         }
     }
+    mysmb_objects_step_bubbles(game);
 }
 /* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object
  * buffer for the one active power-up. */

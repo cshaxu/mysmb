@@ -51,7 +51,7 @@ valid merely because its storage happens to be zero.
 | `$e6be-$e73d` | Power-up tile data and `DrawPowerUp` | Power-up OAM tiles, attributes, and offscreen state | **Translated**; the dedicated slot-five power-up writer emits the original two-row sprite square, type tiles, palette cadence, mirror flags, and world-to-screen X position. |
 | `$e73e-$ebd0` | Enemy tile tables, selection, and row drawing | Enemy/Bowser/platform OAM tiles, attributes, ordering, and animation | **Missing**. |
 | `$ebd1-$ec52` | Block and brick-chunk drawing | Block, coin, and debris OAM state | **Translated, partial OAM scope**; bouncing blocks and four brick chunks use source tiles, frame attributes, coordinates, and screen-edge clipping. Coin and other debris routes remain T11 work. |
-| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball and fireball-explosion OAM are translated; firebar, bubble, and other effects remain T11 work. |
+| `$ec53-$eee0` | Fireball, firebar, explosion, and bubble drawing | Projectile and effect OAM state | **Translated, partial OAM scope**; regular fireball, fireball-explosion, and water-bubble OAM are translated; firebar and other effects remain T11 work. |
 | `$ee17-$f2cf` | Player tile table, action selection, player draw, and common sprite-row writer | Player/intermediate OAM tiles, attributes, priority, and animation | **Missing**. |
 
 ## Current Product Disqualification
@@ -2159,3 +2159,21 @@ regression smoke; each passed the collision regression and its matching Win32
 self-test.  This covers the ROM-derived object page-carry correction on both
 current validation widths.  Build products remain ignored beneath build and
 are not M2 closure evidence by themselves.
+## T11 S1 P20 Water-Bubble OAM Owner
+
+`ProcAirBubbles` (`$98??`), `BubbleCheck`, `RelativeBubblePosition`,
+`GetBubbleOffscreenBits`, and `DrawBubble` are now a dedicated C90 owner.
+For each original slot in descending order it reads the source LFSR bit,
+creates a bubble only after `AirBubbleTimer` expires, preserves the 6502
+fractional subtract borrow during upward movement, writes the source-relative
+coordinates and combined offscreen byte, then writes its one `$74` / attribute
+`$02` OAM entry when the original horizontal bit permits it.  The implementation
+also preserves the original top-edge behavior: a vertical-offscreen bubble
+writes Y=`$f8` to OAM; that state is not a drawing suppression condition.
+
+The ROM-free smoke covers right-facing spawn and page carry, timer selection,
+random movement force, fractional borrow retirement at the status-bar edge,
+relative/offscreen bytes, and all four output bytes.  Fresh Win32 x86/x64
+builds pass all 57 tests; the configured OpenNT large-model core target also
+compiles `bubble_gfx.c`.  Outputs and any diagnostic probes remain below
+ignored `build` and were deleted after use.
