@@ -36,6 +36,16 @@ int main(void)
         game.ram[0x075aU] != 0xffU) return 2;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0772U] != 1U || game.ram[0x00fcU] != 2U) return 3;
+    /* RunGameTimer is a GameEngine leaf and must not append a timer command
+     * or reload its divider while GameOverMode runs ScreenRoutines. */
+    game.ram[0x000eU] = 8U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x0787U] = 0U;
+    game.ram[0x07f8U] = 3U;
+    game.ram[0x07f9U] = 0U;
+    game.ram[0x07faU] = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0787U] != 0U) return 31;
     /* The ROM-free mode smoke has no owner-local text source.  The dedicated
      * local area smoke verifies its ScreenRoutines-to-GameOver output route. */
     game.ram[0x0772U] = 2U;
