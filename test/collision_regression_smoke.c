@@ -68,5 +68,23 @@ int main(void)
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0046U + 5U] != 2U ||
         game.ram[0x0058U + 5U] != 0xf0U) return 3;
+
+    /* The same BlockBufferCollision carry applies to a normal enemy:
+     * DoEnemySideCheck probes its right edge at X+20 after movement. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x000fU] = 6U;
+    game.ram[0x001eU] = 1U;
+    game.ram[0x0039U] = 0U;
+    game.ram[0x0046U] = 1U;
+    game.ram[0x0058U] = 0x10U;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0xf0U;
+    game.ram[0x00cfU] = 0x30U;
+    game.ram[0x00b6U] = 1U;
+    game.ram[0x05f0U] = 0xc0U;
+    mysmb_objects_step_normal_enemy(&game, 0U);
+    if (game.ram[0x0046U] != 2U ||
+        game.ram[0x0058U] != 0xf0U) return 4;
     return 0;
 }

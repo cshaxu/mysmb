@@ -189,6 +189,16 @@ static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
                                              mysmb_u8 slot,
                                              mysmb_u8 block_low,
                                              mysmb_u8 block_row);
+
+/* BlockBufferCollision adds its X adder with ADC, then immediately adds that
+ * carry to SprObject_PageLoc before selecting $0500/$05d0.  Keep that
+ * source-level operation explicit at every direct object collision probe. */
+static mysmb_u8 mysmb_objects_collision_page(mysmb_u8 page, mysmb_u8 object_x,
+                                             mysmb_u8 probed_x)
+{
+    return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
+}
+
 /* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
  * here so a small player enters the death route rather than becoming immune. */
 void mysmb_objects_force_injury(struct mysmb_game *game)
@@ -596,6 +606,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u8 fraction;
     mysmb_u8 integer;
     mysmb_u8 x;
+    mysmb_u8 page;
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
@@ -681,8 +692,10 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             (mysmb_u8)(game->ram[MYSMB_FIREBALL_PAGE + slot] + page_delta + carry);
         if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
             x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
+            page = mysmb_objects_collision_page(game->ram[MYSMB_FIREBALL_PAGE + slot],
+                game->ram[MYSMB_FIREBALL_X + slot], x);
             row = (mysmb_u8)(((game->ram[MYSMB_FIREBALL_Y + slot] + 8U) & 0xf0U) - 0x20U);
-            address = (mysmb_u16)(((game->ram[MYSMB_FIREBALL_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
+            address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
             tile = address < 0x0800U ? game->ram[address] : 0U;
             if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
                 if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U || game->ram[MYSMB_FIREBALL_BOUNCE + slot] != 0U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
@@ -957,6 +970,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
 {
     mysmb_u8 id;
     mysmb_u8 x;
+    mysmb_u8 page;
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
@@ -1058,8 +1072,10 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         mysmb_objects_move_enemy_horizontally(game, slot);
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
             (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x14U : 4U));
+        page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+            game->ram[MYSMB_ENEMY_X + slot], x);
         row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
-        address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) +
+        address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
                               (x >> 4U) + row);
         tile = address < 0x0800U ? game->ram[address] : 0U;
         if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
@@ -1069,8 +1085,10 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                 game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0xf0U;
         }
         x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
+        page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+            game->ram[MYSMB_ENEMY_X + slot], x);
         row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
-        address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ? 0x05d0U : 0x0500U) +
+        address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
                               (x >> 4U) + row);
         tile = address < 0x0800U ? game->ram[address] : 0U;
         if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U && tile != 0U && tile != 0x26U &&
@@ -1643,6 +1661,7 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     mysmb_u8 x;
+    mysmb_u8 page;
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
@@ -1655,9 +1674,11 @@ void mysmb_objects_step_spiny_eggs(struct mysmb_game *game)
              * ProcEnemyDirection.  A landed egg is reset to ordinary Spiny
              * state before RunNormalEnemies takes ownership next frame. */
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
+            page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+                game->ram[MYSMB_ENEMY_X + slot], x);
             row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) &
                                0xf0U) - 0x20U);
-            address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ?
+            address = (mysmb_u16)(((page & 1U) != 0U ?
                                    0x05d0U : 0x0500U) + (x >> 4U) + row);
             tile = address < 0x0800U ? game->ram[address] : 0U;
             if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x25U &&
@@ -2756,6 +2777,7 @@ static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {
     mysmb_u8 x;
+    mysmb_u8 page;
     mysmb_u8 row;
     mysmb_u16 address;
     mysmb_u8 tile;
@@ -2763,8 +2785,10 @@ static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
         game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
     x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
+    page = mysmb_objects_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
+        game->ram[MYSMB_ENEMY_X + slot], x);
     row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
-    address = (mysmb_u16)(((game->ram[MYSMB_ENEMY_PAGE + slot] & 1U) != 0U ?
+    address = (mysmb_u16)(((page & 1U) != 0U ?
                             0x05d0U : 0x0500U) + (x >> 4U) + row);
     tile = address < 0x0800U ? game->ram[address] : 0U;
     if (mysmb_objects_is_solid_terrain(tile) == 0U) {
