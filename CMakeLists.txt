@@ -13,7 +13,7 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
+set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/bowser_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -69,6 +69,8 @@ add_executable(mysmb_vine_oam_smoke test/vine_oam_smoke.c)
 target_link_libraries(mysmb_vine_oam_smoke PRIVATE mysmb_game)
 add_executable(mysmb_bowser_smoke test/bowser_smoke.c)
 target_link_libraries(mysmb_bowser_smoke PRIVATE mysmb_game)
+add_executable(mysmb_bowser_oam_smoke test/bowser_oam_smoke.c)
+target_link_libraries(mysmb_bowser_oam_smoke PRIVATE mysmb_game)
 add_executable(mysmb_platform_smoke test/platform_smoke.c)
 target_link_libraries(mysmb_platform_smoke PRIVATE mysmb_game)
 add_executable(mysmb_mode_smoke test/mode_smoke.c)
@@ -264,6 +266,12 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/bowser_gfx.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/small_platform_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
@@ -355,6 +363,7 @@ add_test(NAME mysmb.flying-cheep-smoke COMMAND mysmb_flying_cheep_smoke)
 add_test(NAME mysmb.firebar-smoke COMMAND mysmb_firebar_smoke)
 add_test(NAME mysmb.vine-oam-smoke COMMAND mysmb_vine_oam_smoke)
 add_test(NAME mysmb.bowser-smoke COMMAND mysmb_bowser_smoke)
+add_test(NAME mysmb.bowser-oam-smoke COMMAND mysmb_bowser_oam_smoke)
 add_test(NAME mysmb.platform-smoke COMMAND mysmb_platform_smoke)
 add_test(NAME mysmb.mode-smoke COMMAND mysmb_mode_smoke)
 add_test(NAME mysmb.audio-smoke COMMAND mysmb_audio_smoke)
