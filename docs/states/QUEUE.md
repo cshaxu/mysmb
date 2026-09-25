@@ -25,21 +25,18 @@
 14. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — cross-width route proof.
 15. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — closure audit.
 
-## M2 Structural-Recovery Queue
+## M2 Structural-Recovery Candidates
 
-1. **S0 T0.1–T0.4** — ROM node/data ownership, write-set, reference-contract, and platform-purity audit. Active.
-2. **S1 T1.1–T1.4** — NMI and frame-root translation.
-3. **S2 T2.1–T2.4** — operation-mode tree translation.
-4. **S3 T3.1–T3.5** — area parser and PPU-state translation.
-5. **S4 T4.1–T4.6** — player translation.
-6. **S5 T5.1–T5.5** — enemy-stream and initialization translation.
-7. **S6 T6.1–T6.5** — object-logic translation.
-8. **S7 T7.1–T7.5** — OAM/graphics translation.
-9. **S8 T8.1–T8.4** — audio translation.
-10. **S9 T9.1–T9.5** — shared-core platform proof.
-11. **S10 T10.1–T10.10** — route proof and M2 closure audit.
+These are ordered candidates only; no numeric T or S is allocated by this queue.
 
-The former T13–T15 route remains historical evidence only and cannot close M2 until this queue completes. See [M2 ROM structural recovery](../proposals/m2-rom-structural-recovery.md).
+1. [Frame-root conformance](../proposals/m2-rom-structural-recovery.md) — ROM NMI and operation-mode control path.
+2. [Area/PPU conformance](../proposals/m2-rom-structural-recovery.md) — parser, block buffer and PPU-visible state.
+3. [Player conformance](../proposals/m2-rom-structural-recovery.md) — movement, collision and state transitions.
+4. [Enemy-stream conformance](../proposals/m2-rom-structural-recovery.md) — ObjectOffset, stream records and initialization.
+5. [Object/OAM/audio conformance](../proposals/m2-rom-structural-recovery.md) — object behavior and output owners.
+6. [Cross-platform route audit](../proposals/m2-rom-structural-recovery.md) — shared-core route proof.
+
+M2 Td S1 governs these candidates. A future owner-approved candidate receives the next valid numeric T and only then receives its S breakdown.
 ## M3 Candidates
 
 1. [Presentation adapters](../proposals/m3-presentation-adapters.md) — neutral render-command seam and deterministic core ownership.

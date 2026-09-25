@@ -2,7 +2,15 @@
 
 ## Current Work
 
-**M2 structural recovery S0 T0.1–T0.4 is active.**
+**M2 Td S1 is active.**
+
+| Field | Record |
+| --- | --- |
+| Identifier Mode | Governance |
+| Objective | Reconcile M2 queue and proposals with NXVM MTSP: remove preallocated numeric T/S work, retain only ordered candidates, and establish the rule for later admission. |
+| Scope | `docs/states/QUEUE.md`, this current-state packet, and M2 structural-recovery proposals. |
+| Exit | Queue has only unnumbered candidates; no future T/S is allocated; proposal states the next-admission rule; no product source changes. |
+| Stop condition | Stop if governance requires changing product behavior, protected assets, or existing task history. |
 
 ## Current Technical Baseline
 
