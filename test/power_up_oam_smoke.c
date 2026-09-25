@@ -18,13 +18,13 @@ int main(void)
     game.ram[0x0023U] = 0x80U;
     game.ram[0x06eaU] = 0x20U;
     mysmb_objects_step_power_up(&game);
-    if (game.ram[0x0220U] != 0x50U || game.ram[0x0221U] != 0x8dU ||
+    if (game.ram[0x0220U] != 0x58U || game.ram[0x0221U] != 0x8dU ||
         game.ram[0x0222U] != 0x21U || game.ram[0x0223U] != 0x40U ||
-        game.ram[0x0224U] != 0x50U || game.ram[0x0225U] != 0x8dU ||
+        game.ram[0x0224U] != 0x58U || game.ram[0x0225U] != 0x8dU ||
         game.ram[0x0226U] != 0x61U || game.ram[0x0227U] != 0x48U ||
-        game.ram[0x0228U] != 0x58U || game.ram[0x0229U] != 0xe4U ||
+        game.ram[0x0228U] != 0x60U || game.ram[0x0229U] != 0xe4U ||
         game.ram[0x022aU] != 0x21U || game.ram[0x022bU] != 0x40U ||
-        game.ram[0x022cU] != 0x58U || game.ram[0x022dU] != 0xe4U ||
+        game.ram[0x022cU] != 0x60U || game.ram[0x022dU] != 0xe4U ||
         game.ram[0x022eU] != 0x61U || game.ram[0x022fU] != 0x48U) return 1;
 
     game.frame_number = 6UL;
@@ -51,9 +51,9 @@ int main(void)
     game.ram[0x06eaU] = 0x20U;
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0023U] != 6U) return 3;
-    if (game.ram[0x0220U] != 0x4fU || game.ram[0x0221U] != 0x76U ||
+    if (game.ram[0x0220U] != 0x57U || game.ram[0x0221U] != 0x76U ||
         game.ram[0x0222U] != 0x22U || game.ram[0x0223U] != 0x40U) return 4;
-    if (game.ram[0x0228U] != 0x57U || game.ram[0x0229U] != 0x78U ||
+    if (game.ram[0x0228U] != 0x5fU || game.ram[0x0229U] != 0x78U ||
         game.ram[0x022fU] != 0x48U) return 5;
     return 0;
 }
