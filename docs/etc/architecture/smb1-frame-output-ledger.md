@@ -2078,3 +2078,21 @@ negative-page BMI path ($44 mask) while keeping objects.c below the OpenNT
 now asserts the source trace's $03d8=$08 and $04b0-$04b3=$ff result. The
 380-sample trace remains at 392 working-range byte differences; all
 PPU-visible output remains exact.
+
+
+## T11 S1 P15 Fresh Start-to-Right Frame Evidence
+
+After the direct-ROM collision-page carry audit, a fresh bounded trace was
+recorded from the current source and deleted after comparison.  The owner-local
+reference was driven with NES input `30:$08,31:0,60:$80`; the native recorder
+used its decoded equivalent `30:$10,31:0,60:$01` and normal title bootstrap.
+The ROM identity is SHA-256
+`f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de`.
+
+All 380 NMI-return samples have zero difference in CPU OAM backing RAM,
+hardware OAM, both CIRAM pages, palette, and each of the seven PPU-visible
+scalars.  CPU RAM still differs in 65,636 bytes across 380 samples: source
+stack activity accounts for 60,800 bytes, while 3 individual working-RAM bytes
+differ in three samples.  These raw-state discrepancies and route coverage
+outside this script keep M2 open; this record proves only the translated
+visible output for this reproducible title-to-1-1 route.
