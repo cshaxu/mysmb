@@ -5,6 +5,8 @@ enum {
     MYSMB_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_ENEMY_X = 0x0087U,
     MYSMB_ENEMY_PAGE = 0x006eU,
+    MYSMB_ENEMY_Y_HIGH = 0x00b6U,
+    MYSMB_ENEMY_Y = 0x00cfU,
     MYSMB_ENEMY_BOUND_BOX = 0x049aU,
     MYSMB_ENEMY_OFFSCREEN_BITS = 0x03d1U,
     MYSMB_ENEMY_OFFSCREEN_BITS_MASKED = 0x03d8U,
@@ -60,6 +62,45 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
     return left_bits[index];
 }
 
+/* ROM GetEnemyOffscreenBits / GetOffScreenBitsSet.  The object RAM stores
+ * horizontal edge bits in the low nybble and vertical edge bits in the high
+ * nybble.  Rendering callers intentionally keep using the X-only helper. */
+mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(
+    const struct mysmb_game *game, mysmb_u8 slot)
+{
+    static const mysmb_u8 data[9] = { 0U,8U,12U,14U,15U,7U,3U,1U,0U };
+    static const mysmb_u8 defaults[3] = { 4U,0U,4U };
+    static const mysmb_u8 high_units[2] = { 0xffU,0U };
+    mysmb_u8 edge;
+    mysmb_u8 difference;
+    mysmb_u8 page_difference;
+    mysmb_u8 borrow;
+    mysmb_u8 index;
+    mysmb_u8 bits;
+
+    for (edge = 1U;; --edge) {
+        difference = (mysmb_u8)(high_units[edge] -
+                                 game->ram[MYSMB_ENEMY_Y + slot]);
+        borrow = high_units[edge] < game->ram[MYSMB_ENEMY_Y + slot] ?
+            1U : 0U;
+        page_difference = (mysmb_u8)(1U -
+            game->ram[MYSMB_ENEMY_Y_HIGH + slot] - borrow);
+        index = defaults[edge];
+        if ((page_difference & 0x80U) == 0U) {
+            index = defaults[(mysmb_u8)(edge + 1U)];
+            if (page_difference == 0U && difference < 0x20U) {
+                index = (mysmb_u8)(difference >> 3U);
+                if (edge == 0U) index = (mysmb_u8)(index + 4U);
+            }
+        }
+        bits = data[index];
+        if (bits != 0U || edge == 0U) {
+            return (mysmb_u8)(mysmb_objects_get_enemy_x_offscreen_bits(game,
+                                                                          slot) |
+                             (mysmb_u8)(bits << 4U));
+        }
+    }
+}
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits.  It is kept in a separate
  * compilation unit so the 16-bit OpenNT compiler can retain objects.c below
  * its per-segment code limit. */

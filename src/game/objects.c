@@ -895,7 +895,7 @@ static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
                                             game->ram[MYSMB_SCREEN_LEFT_X]);
     game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[0x03d1U + slot] =
-        mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+        mysmb_objects_get_enemy_offscreen_bits(game, slot);
     mysmb_objects_update_enemy_bounding_box(game, slot);
     mysmb_objects_draw_power_up(game);
 }
