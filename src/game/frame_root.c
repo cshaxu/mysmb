@@ -11,6 +11,8 @@ enum {
     MYSMB_ROOT_PAUSE_STATUS = 0x0776U,
     MYSMB_ROOT_PAUSE_TIMER = 0x0777U,
     MYSMB_ROOT_PAUSE_SOUND_QUEUE = 0x00faU,
+    MYSMB_ROOT_TOP_SCORE = 0x07d7U,
+    MYSMB_ROOT_PLAYER_SCORE = 0x07ddU,
     MYSMB_ROOT_OAM = 0x0200U
 };
 
@@ -32,6 +34,7 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     mysmb_audio_step(game);
     (void)mysmb_frame_root_latch_joypad1(game, input->buttons);
     paused = mysmb_frame_root_pause_step(game);
+    mysmb_frame_root_update_top_score(game);
     if (paused == 0U) mysmb_game_tick_player_timers(game);
     mysmb_game_rotate_pseudorandom(game);
     if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return paused;
@@ -59,6 +62,33 @@ mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game,
     else game->ram[MYSMB_ROOT_JOYPAD_MASK1] = buttons;
     game->ram[MYSMB_ROOT_SAVED_JOYPAD1] = buttons;
     return buttons;
+}
+/* ROM $8a4f-$8a6c UpdateTopScore / TopScoreCheck. */
+static void mysmb_frame_root_top_score_check(struct mysmb_game *game,
+                                             mysmb_u8 player_offset)
+{
+    mysmb_u8 index;
+    mysmb_u8 borrow;
+    mysmb_u8 player;
+    mysmb_u8 top;
+
+    borrow = 0U;
+    for (index = 6U; index != 0U; --index) {
+        player = game->ram[MYSMB_ROOT_PLAYER_SCORE + player_offset + index - 1U];
+        top = game->ram[MYSMB_ROOT_TOP_SCORE + index - 1U];
+        borrow = player < (mysmb_u8)(top + borrow) ? 1U : 0U;
+    }
+    if (borrow != 0U) return;
+    for (index = 0U; index < 6U; ++index) {
+        game->ram[MYSMB_ROOT_TOP_SCORE + index] =
+            game->ram[MYSMB_ROOT_PLAYER_SCORE + player_offset + index];
+    }
+}
+
+void mysmb_frame_root_update_top_score(struct mysmb_game *game)
+{
+    mysmb_frame_root_top_score_check(game, 0U);
+    mysmb_frame_root_top_score_check(game, 6U);
 }
 /* ROM $821c-$8244 PauseRoutine.  T14 later invokes this at its NMI site. */
 mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game)
