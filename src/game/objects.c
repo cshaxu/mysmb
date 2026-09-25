@@ -711,6 +711,7 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
     mysmb_u16 address;
     mysmb_u8 tile;
     mysmb_u8 enemy_slot;
+    mysmb_u16 sum;
 
     if (game->ram[MYSMB_PLAYER_STATUS] >= 2U &&
         (game->ram[MYSMB_PLAYER_A_B] & MYSMB_BUTTON_B) != 0U &&
@@ -759,9 +760,10 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         carry = game->ram[MYSMB_FIREBALL_Y_DUMMY + slot] < old_value ? 1U : 0U;
         page_delta = game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
         old_value = game->ram[MYSMB_FIREBALL_Y + slot];
-        game->ram[MYSMB_FIREBALL_Y + slot] = (mysmb_u8)(old_value +
-            game->ram[MYSMB_FIREBALL_Y_SPEED + slot] + carry);
-        carry = game->ram[MYSMB_FIREBALL_Y + slot] < old_value ? 1U : 0U;
+        sum = (mysmb_u16)old_value + game->ram[MYSMB_FIREBALL_Y_SPEED + slot] +
+            carry;
+        game->ram[MYSMB_FIREBALL_Y + slot] = (mysmb_u8)sum;
+        carry = sum > 0xffU ? 1U : 0U;
         game->ram[MYSMB_FIREBALL_Y_HIGH + slot] =
             (mysmb_u8)(game->ram[MYSMB_FIREBALL_Y_HIGH + slot] + page_delta + carry);
         old_value = game->ram[MYSMB_FIREBALL_Y_FORCE + slot];
@@ -801,7 +803,11 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
             address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
             tile = address < 0x0800U ? game->ram[address] : 0U;
             if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-                if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U || game->ram[MYSMB_FIREBALL_BOUNCE + slot] != 0U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
+                if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U ||
+                    game->ram[MYSMB_FIREBALL_BOUNCE + slot] != 0U) {
+                    game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
+                    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+                }
                 else {
                     game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 0xfdU;
                     game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 1U;
