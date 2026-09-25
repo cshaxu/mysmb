@@ -1534,6 +1534,9 @@ void mysmb_player_update_scroll(struct mysmb_game *game)
     game->ppu_name_table = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] & 1U);
     game->ppu_control_0 = (mysmb_u8)((game->ppu_control_0 & 0xfcU) |
                                      game->ppu_name_table);
+    /* ScrollHandler writes the source PPU-control mirror in this gameplay
+     * frame; NMI consumes it to commit the physical register. */
+    game->ram[0x0778U] = game->ppu_control_0;
 }
 
 /* Translation of ROM $df4b-$df7d ImpedePlayerMove. */
