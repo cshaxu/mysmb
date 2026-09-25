@@ -1161,6 +1161,13 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
             return;
         }
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) == 4U) {
+            /* RunNormalEnemies invokes PlayerEnemyCollision before the
+             * ID-specific MoveNormalEnemy state handler.  A defeated Goomba
+             * must therefore still clear its persistent collision bit after
+             * the player has moved away; do not make that call conditional
+             * on its interval timer. */
+            (void)mysmb_objects_check_normal_enemy_collision(game, slot,
+                                                              preserve_collision_boxes);
             if (id == 6U) {
                 if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0x0eU) {
                     mysmb_objects_erase_enemy(game, slot);
@@ -1172,9 +1179,6 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                     (game->ram[MYSMB_FRAME_COUNTER] & 1U) + 1U;
                 game->ram[MYSMB_ENEMY_X_SPEED + slot] =
                     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
-            }
-            else {
-                (void)mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes);
             }
             return;
         }
