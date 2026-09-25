@@ -1107,6 +1107,11 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
 
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
+    if (slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+        game->ram[MYSMB_ENEMY_ID + slot] == 50U) {
+        mysmb_objects_step_jumpspring(game, slot);
+        return;
+    }
     mysmb_objects_step_normal_enemy_core(game, slot, 1U);
 }
 

@@ -58,6 +58,8 @@ mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM RunRetainerObj / EnemyGfxHandler for object $35. */
 void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM JumpspringHandler / EnemyGfxHandler for object $32. */
+void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);
 /* ROM $ad5a-$ad79 InitPodoboo and $af13-$af25 MovePodoboo, sans rendering. */
