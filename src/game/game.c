@@ -1169,8 +1169,13 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_u8 task_before;
     mysmb_u8 enemy_slot;
     struct mysmb_area_source area_source;
+    mysmb_u8 paused;
 
-    mysmb_frame_root_begin(game, input, &mode_before, &task_before);
+    paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
+    if (paused != 0U) {
+        mysmb_frame_root_finish(game, frame);
+        return;
+    }
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
