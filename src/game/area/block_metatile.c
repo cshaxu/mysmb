@@ -76,6 +76,9 @@ void mysmb_area_apply_block_replacements(struct mysmb_game *game)
             block_graphics[(mysmb_u8)(graphics_index * 4U + 3U)];
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 10U] = 0U;
         game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
+        /* ROM ReplaceBlockMetatile: INC Block_ResidualCounter before
+         * DEC Block_RepFlag,x. */
+        game->ram[0x03f0U]++;
         game->ram[MYSMB_BLOCK_REPLACE_FLAG + index] = 0U;
     }
 }
