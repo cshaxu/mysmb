@@ -1,7 +1,7 @@
 #include "game/frame_root.h"
 #include "game/audio.h"
 #include "game/area.h"
-#include "game/enemy/stream.h"
+#include "game/enemy/core.h"
 #include "game/player.h"
 #include "game/objects.h"
 #include "game/oam/oam.h"
@@ -51,8 +51,6 @@ enum {
     MYSMB_FRAME_PLAYER_Y = 0x00ceU,
     MYSMB_FRAME_STAR_FLAG_TASK = 0x0746U,
     MYSMB_FRAME_LEVEL = 0x075cU,
-    MYSMB_FRAME_ENEMY_FLAG = 0x000fU,
-    MYSMB_FRAME_ENEMY_ID = 0x0016U,
     MYSMB_FRAME_TIMER_CONTROL = 0x0747U
 };
 mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
@@ -164,7 +162,6 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
 {
     mysmb_u8 mode_before;
     mysmb_u8 task_before;
-    mysmb_u8 enemy_slot;
     struct mysmb_area_source area_source;
     mysmb_u8 paused;
 
@@ -281,40 +278,8 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         if (game->area_prg != 0) {
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;
-            /* ROM GameEngine runs ProcFireball_Bubble before the six
-             * EnemiesAndLoopsCore slots. */
-            mysmb_objects_step_fireballs(game);
-            /* ROM GameEngine enters EnemiesAndLoopsCore once for every
-             * ObjectOffset.  Only an empty slot reaches ProcessEnemyData;
-             * a stream page-control record can therefore be consumed by a
-             * later empty slot in the same frame. */
-            for (enemy_slot = 0U; enemy_slot < 6U; ++enemy_slot) {
-                if (game->ram[MYSMB_FRAME_ENEMY_FLAG + enemy_slot] != 0U) {
-                    if (enemy_slot < 5U) {
-                        mysmb_objects_step_normal_enemy(game, enemy_slot);
-                    }
-                    else if (game->ram[MYSMB_FRAME_ENEMY_ID + enemy_slot] == 0x2eU) {
-                        /* PowerUpObjHandler owns its collision and bounds
-                         * tail in source slot five. */
-                        mysmb_objects_step_power_up(game);
-                        mysmb_objects_finish_power_up(game);
-                    }
-                }
-                else if (enemy_slot < 5U) {
-                    if (mysmb_enemy_stream_process_slot(game, &area_source,
-                                                       enemy_slot) != 0U &&
-                        game->ram[MYSMB_FRAME_ENEMY_FLAG + enemy_slot] != 0U) {
-                    }
-                }
-                else {
-                    (void)mysmb_enemy_stream_process_next(game, &area_source);
-                }
-                /* ROM GameEngine calls FloateyNumbersRoutine before
-                 * incrementing ObjectOffset. */
-                mysmb_objects_step_floatey_number(game, enemy_slot);
-            }
-        }
-        mysmb_objects_step_enemy_collisions(game);
+            mysmb_enemy_core_step(game, &area_source);
+        }        mysmb_objects_step_enemy_collisions(game);
         mysmb_objects_check_hazard_enemy_collision(game);
         mysmb_objects_check_bullet_bill_stomp(game);
         mysmb_objects_check_bloober_stomp(game);
@@ -534,5 +499,3 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
     game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
 }
-
-

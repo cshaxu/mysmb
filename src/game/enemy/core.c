@@ -1,0 +1,37 @@
+#include "game/enemy/core.h"
+#include "game/enemy/stream.h"
+#include "game/objects.h"
+
+enum {
+    MYSMB_ENEMY_CORE_FLAG = 0x000fU,
+    MYSMB_ENEMY_CORE_ID = 0x0016U
+};
+
+/* ROM $a0d7-$a11a GameEngine's actor phase.  The frame root owns the mode
+ * route; this module exclusively owns ObjectOffset's fireball and six-slot
+ * EnemiesAndLoopsCore schedule. */
+void mysmb_enemy_core_step(struct mysmb_game *game,
+                           const struct mysmb_area_source *source)
+{
+    mysmb_u8 slot;
+
+    mysmb_objects_step_fireballs(game);
+    for (slot = 0U; slot < 6U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_CORE_FLAG + slot] != 0U) {
+            if (slot < 5U) {
+                mysmb_objects_step_normal_enemy(game, slot);
+            }
+            else if (game->ram[MYSMB_ENEMY_CORE_ID + slot] == 0x2eU) {
+                mysmb_objects_step_power_up(game);
+                mysmb_objects_finish_power_up(game);
+            }
+        }
+        else if (slot < 5U) {
+            (void)mysmb_enemy_stream_process_slot(game, source, slot);
+        }
+        else {
+            (void)mysmb_enemy_stream_process_next(game, source);
+        }
+        mysmb_objects_step_floatey_number(game, slot);
+    }
+}
