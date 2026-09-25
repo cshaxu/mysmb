@@ -617,6 +617,12 @@ static mysmb_u8 mysmb_player_select_gfx(struct mysmb_game *game)
     }
     if (game->ram[MYSMB_PLAYER_SIZE] != 0U) action = (mysmb_u8)(action + 8U);
     offset = game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + action];
+    /* ROM ActionFalling jumps straight from GetCurrentAnimOffset to
+     * GetOffsetFromAnimCtrl.  It retains PlayerAnimCtrl and does not run
+     * AnimationControl, so the fall frame is the one selected while rising. */
+    if (game->ram[MYSMB_PLAYER_STATE] == 2U) {
+        return (mysmb_u8)(offset + game->ram[MYSMB_PLAYER_ANIMATION] * 8U);
+    }
     if (animated == 0U) {
         game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
         return offset;
