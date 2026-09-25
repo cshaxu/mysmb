@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 T14 S2 active.**
+**M2 T15 S1 active.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Implementation |
-| Objective | Translate reset/cold-boot and the NMI prologue in ROM order, preserving its game-owned PPU/OAM and input boundaries. |
-| Scope | frame_root, game root seam, shared PPU-frame storage, OpenNT DOS build, and three executable artifacts. |
-| Result | S1 closed in P1–P13: root labels are mapped, the mode tree is owned by frame_root, and a fresh 600-sample ROM route proves zero difference in OAM/CIRAM/palette/audio/PPU output with byte-identical x86/x64 native traces. S2 now audits reset/cold-boot and NMI-prologue order; P14 locks both paused and unpaused FrameCounter branches, and P15 moves the reset subtree into shared game/boot.c; P16 translates the warm/cold boot decision with focused regression; P17 makes frame_root.c the physical owner of every NMI prologue leaf; P18 corrects the title buffer boundary detected by the 600-sample trace and restores zero visible-output differences over that full route, while the host constructor remains a separate container setup path. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
+| Objective | Map ROM title, selection/start, demo, victory, end-world, and floating-number labels to unique game owners; freeze controller-edge and NMI-return route evidence before migration. |
+| Scope | game title/mode leaves, area text/OAM collaborators, owner-local trace fixtures, OpenNT DOS build, and three executable artifacts. |
+| Result | T14 is closed: reset/cold boot live in boot.c; the complete NMI prologue, pause, shuffle and operation-mode tree live in frame_root.c; the 600-sample title-start route has zero differences in OAM/CIRAM/palette/audio/PPU output and byte-identical x86/x64 native traces. T15 S1 now maps the following title and terminal mode tree before changing it. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
 | Artifact rule | Every P commit includes refreshed mysmb16.exe, mysmb32.exe, and mysmb64.exe. |
 | Stop condition | Stop if extraction changes a ROM-owned state transition or introduces platform gameplay logic. |
 
