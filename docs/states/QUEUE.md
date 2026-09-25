@@ -39,7 +39,7 @@ These candidates exhaustively map the ROM executable source index. They are orde
 8. **Blocks, items and misc** — lines 6730–7787: coins, blocks, power-ups, vines, cannon/whirlpool/flagpole.
 9. **Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
 10. **Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths.
-11. **OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
+11. **M2 T16 active — OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
 12. **Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers.
 
 The next approved candidate receives the next valid numeric T; only then is that T's S breakdown created. `M2 Td S2` governs this mapping.
@@ -58,3 +58,4 @@ The next approved candidate receives the next valid numeric T; only then is that
 
 1. [486SX qualification](../design/ROADMAP.md) — physical host protocol and measured DOS/VGA route evidence.
 2. [486SX qualification](../design/ROADMAP.md) — execute the physical-host protocol and record measured route evidence.
+
