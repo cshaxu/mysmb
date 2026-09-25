@@ -54,6 +54,7 @@ mysmb_u8 mysmb_objects_draw_podoboo(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_special_enemy(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_spiny(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);

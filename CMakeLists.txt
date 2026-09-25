@@ -13,7 +13,7 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/bowser_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
+set(MYSMB_GAME_SOURCES src/game/game.c src/game/audio.c src/game/area.c src/game/player.c src/game/objects.c src/game/bridge.c src/game/bullet_bill_gfx.c src/game/hammer_gfx.c src/game/firebar_gfx.c src/game/vine_gfx.c src/game/enemy_bounds.c src/game/power_up_gfx.c src/game/block_gfx.c src/game/goomba_gfx.c src/game/bubble_gfx.c src/game/piranha_gfx.c src/game/cheep_gfx.c src/game/bloober_gfx.c src/game/podoboo_gfx.c src/game/normal_enemy_gfx.c src/game/spiny_gfx.c src/game/hammer_bro_gfx.c src/game/bowser_gfx.c src/game/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -59,6 +59,8 @@ add_executable(mysmb_lakitu_smoke test/lakitu_smoke.c)
 target_link_libraries(mysmb_lakitu_smoke PRIVATE mysmb_game)
 add_executable(mysmb_hammer_bro_smoke test/hammer_bro_smoke.c)
 target_link_libraries(mysmb_hammer_bro_smoke PRIVATE mysmb_game)
+add_executable(mysmb_hammer_bro_oam_smoke test/hammer_bro_oam_smoke.c)
+target_link_libraries(mysmb_hammer_bro_oam_smoke PRIVATE mysmb_game)
 add_executable(mysmb_enemy_collision_smoke test/enemy_collision_smoke.c)
 target_link_libraries(mysmb_enemy_collision_smoke PRIVATE mysmb_game)
 add_executable(mysmb_flying_cheep_smoke test/flying_cheep_smoke.c)
@@ -266,6 +268,12 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/hammer_bro_gfx.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/bowser_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
@@ -358,6 +366,7 @@ add_test(NAME mysmb.bullet-bill-smoke COMMAND mysmb_bullet_bill_smoke)
 add_test(NAME mysmb.paratroopa-smoke COMMAND mysmb_paratroopa_smoke)
 add_test(NAME mysmb.lakitu-smoke COMMAND mysmb_lakitu_smoke)
 add_test(NAME mysmb.hammer-bro-smoke COMMAND mysmb_hammer_bro_smoke)
+add_test(NAME mysmb.hammer-bro-oam-smoke COMMAND mysmb_hammer_bro_oam_smoke)
 add_test(NAME mysmb.enemy-collision-smoke COMMAND mysmb_enemy_collision_smoke)
 add_test(NAME mysmb.flying-cheep-smoke COMMAND mysmb_flying_cheep_smoke)
 add_test(NAME mysmb.firebar-smoke COMMAND mysmb_firebar_smoke)
