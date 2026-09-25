@@ -19,8 +19,10 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
     const struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 right_bits[4] = { 0x07U, 0x03U, 0x01U, 0x00U };
+    /* RunOffscrBitsSubs shifts GetXOffscreenBits right four places before
+     * GetOffScreenBitsSet combines it with the vertical nybble. */
     static const mysmb_u8 left_bits[8] = {
-        0x80U, 0xc0U, 0xe0U, 0xf0U, 0xf8U, 0xfcU, 0xfeU, 0xffU
+        0x08U, 0x0cU, 0x0eU, 0x0fU, 0x0fU, 0x0fU, 0x0fU, 0x0fU
     };
     mysmb_u8 difference;
     mysmb_u8 page_difference;
@@ -34,10 +36,15 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
                                   game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
     /* GetXOffscreenBits returns the source table byte; RunOffscrBitsSubs
      * shifts its right-edge high nibble into the final low nibble. */
-    if ((page_difference & 0x80U) != 0U || page_difference != 0U) return 0x0fU;
-    index = difference == 0U ? 0U : (mysmb_u8)((difference - 1U) >> 3U);
-    if (index > 3U) index = 3U;
-    if (right_bits[index] != 0U) return right_bits[index];
+    /* GetXOffscreenBits uses the right edge first.  A positive page
+     * difference means this object lies a page to its left: the ROM loads
+     * XOffscreenBitsData[$07] (zero) and continues with the left edge.
+     * Only a negative difference is beyond the right edge. */
+    if ((page_difference & 0x80U) != 0U) return 0x0fU;
+    if (page_difference == 0U) {
+        index = (mysmb_u8)(difference >> 3U);
+        if (index <= 3U && right_bits[index] != 0U) return right_bits[index];
+    }
 
     /* The source only evaluates the left boundary when the right pass is
      * fully onscreen. */
@@ -48,7 +55,7 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
                                   game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
     if ((page_difference & 0x80U) != 0U) return 0U;
     if (page_difference != 0U) return 0xffU;
-    index = difference == 0U ? 0U : (mysmb_u8)((difference - 1U) >> 3U);
+    index = (mysmb_u8)(difference >> 3U);
     if (index > 7U) index = 7U;
     return left_bits[index];
 }

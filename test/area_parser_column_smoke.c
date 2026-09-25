@@ -194,6 +194,17 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a5U] != 0x55U || game.ram[0x0732U] != 0xffU) return 1;
+    /* Normal-row selector zero, value two is the collision-only hidden coin
+     * block.  It must reach the persistent block buffer as $5f even though
+     * its metatile is absent from the nametable before a head bump. */
+    prg[0x0040U] = 0x55U;
+    prg[0x0041U] = 0x02U;
+    game.ram[0x0726U] = 5U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06a6U] != 0x5fU || game.ram[0x0732U] != 0xffU) return 1;
+
     prg[0x0040U] = 0x45U;
     prg[0x0041U] = 0x53U;
     game.ram[0x0726U] = 4U;

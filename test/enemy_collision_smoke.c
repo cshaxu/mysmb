@@ -78,5 +78,24 @@ int main(void)
     game.ram[0x0087U] = 0xeeU;
     mysmb_objects_step_normal_enemies(&game);
     if (game.ram[0x03d1U] != 1U) return 6;
+    /* ROM GetXOffscreenBits: an object in the left page of a screen that
+     * crosses a page boundary is not right-offscreen.  The right probe
+     * loads XOffscreenBitsData[$07] and continues to the left probe. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0x80U;
+    game.ram[0x071dU] = 0x7fU;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x90U;
+    if (mysmb_objects_get_enemy_x_offscreen_bits(&game, 0U) != 0U) return 7;
+    /* DividePDiff uses difference / 8 exactly.  At each eight-pixel
+     * boundary the source selects the next XOffscreenBitsData entry. */
+    game.ram[0x006eU] = 1U;
+    game.ram[0x0087U] = 0x70U;
+    if (mysmb_objects_get_enemy_x_offscreen_bits(&game, 0U) != 3U) return 8;
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0x78U;
+    if (mysmb_objects_get_enemy_x_offscreen_bits(&game, 0U) != 0x0cU) return 9;
     return 0;
 }
