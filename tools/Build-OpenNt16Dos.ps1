@@ -17,7 +17,7 @@ $sources = @(
     'game/power_up_gfx.c', 'game/block_gfx.c', 'game/goomba_gfx.c',
     'game/bubble_gfx.c', 'game/piranha_gfx.c', 'game/cheep_gfx.c',
     'game/bloober_gfx.c', 'game/podoboo_gfx.c', 'game/normal_enemy_gfx.c',
-    'game/spiny_gfx.c', 'game/hammer_bro_gfx.c', 'game/bowser_gfx.c', 'game/bowser_flame_gfx.c',
+    'game/spiny_gfx.c', 'game/hammer_bro_gfx.c', 'game/bowser_gfx.c', 'game/bowser_flame_gfx.c', 'game/endgame_objects.c',
     'game/small_platform_gfx.c',
     'game/render.c', 'game/frame_snapshot.c', 'platform/text/text_frame.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',

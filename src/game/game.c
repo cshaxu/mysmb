@@ -1311,6 +1311,9 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
         mysmb_objects_draw_bowsers(game);
         mysmb_objects_step_bowser_flame_frenzy(game);
         mysmb_objects_step_bowser_flames(game);
+        mysmb_objects_step_star_flags(game);
+        mysmb_objects_step_fireworks(game);
+        mysmb_objects_step_firework_frenzy(game);
         mysmb_objects_step_lakitu_frenzy(game);
         mysmb_objects_step_lakitus(game);
         mysmb_objects_step_spiny_eggs(game);
