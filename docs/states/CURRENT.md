@@ -9,7 +9,7 @@
 | Identifier Mode | Implementation |
 | Objective | Establish the ROM frame-root module boundary without changing gameplay behavior, then audit root labels and NMI-return evidence. |
 | Scope | frame_root, game root seam, shared PPU-frame storage, OpenNT DOS build, and three executable artifacts. |
-| Result | P1–P11: NMI prologue, pause/OAM branch, and the actual operating-mode tree are now owned by frame_root; game.c keeps only the public entry delegation plus game subroutes. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
+| Result | P1–P12: NMI prologue, pause/OAM branch, top-score update, and the actual operating-mode tree are now owned by frame_root; game.c keeps only the public entry delegation plus game subroutes. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
 | Artifact rule | Every P commit includes refreshed mysmb16.exe, mysmb32.exe, and mysmb64.exe. |
 | Stop condition | Stop if extraction changes a ROM-owned state transition or introduces platform gameplay logic. |
 

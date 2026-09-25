@@ -2,7 +2,7 @@
 
 ## Status
 
-Admitted as M2 T14 S1. P1 extracted the behavior-preserving seam; P2 maps every root label to its current C owner. P10 ports the PauseRoutine OAM branch: paused frames do not move ordinary OAM entries offscreen. P11 physically moves the real operating-mode tree and object loop from game.c into frame_root.c; game.c now retains only the public entry delegation and game-owned subordinate routes. x86/x64 each pass 76 tests and OpenNT relinks the 16-bit target. Every P commit refreshes assets/mysmb16.exe, assets/mysmb32.exe and assets/mysmb64.exe.
+Admitted as M2 T14 S1. P1 extracted the behavior-preserving seam; P2 maps every root label to its current C owner. P10 ports the PauseRoutine OAM branch: paused frames do not move ordinary OAM entries offscreen. P11 physically moves the real operating-mode tree and object loop from game.c into frame_root.c; game.c now retains only the public entry delegation and game-owned subordinate routes. P12 adds a direct `UpdateTopScore` regression for chained digit borrow and both-player ordering. x86/x64 each pass 77 tests and OpenNT relinks the 16-bit target. Every P commit refreshes assets/mysmb16.exe, assets/mysmb32.exe and assets/mysmb64.exe.
 
 ## ROM scope
 
