@@ -20,7 +20,8 @@ int main(void)
     game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x03c4U] = 2U;
     mysmb_player_draw_oam(&game);
-    if (game.ram[0x03adU] != 0x40U || game.ram[0x03b8U] != 0x60U ||
+    if (game.ram[0x03adU] != 0x40U || game.ram[0x0755U] != 0x40U ||
+        game.ram[0x03b8U] != 0x60U ||
         game.ram[0x0204U] != 0x60U || game.ram[0x0205U] != 0x20U ||
         game.ram[0x0206U] != 2U || game.ram[0x0207U] != 0x40U ||
         game.ram[0x0208U] != 0x60U || game.ram[0x0209U] != 0x21U ||

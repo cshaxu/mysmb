@@ -748,6 +748,10 @@ void mysmb_player_draw_oam(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_RELATIVE_X] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_SCREEN_LEFT_X]);
     game->ram[MYSMB_PLAYER_RELATIVE_Y] = game->ram[MYSMB_PLAYER_Y];
+    /* ROM RenderPlayerSub copies Player_Rel_XPos to both its sprite-work
+     * coordinate and Player_Pos_ForScroll ($0755).  ScrollHandler consumes
+     * that post-ScrollScreen value on the following frame. */
+    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_RELATIVE_X];
     game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] = mysmb_player_get_offscreen_bits(game);
     graphics_offset = mysmb_player_select_gfx(game);
     game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
