@@ -2213,7 +2213,10 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
         return;
     }
     if (game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] == 0x2bU) {
-        if (control == 0x0bU) game->ram[MYSMB_NUMBER_OF_LIVES]++;
+        if (control == 0x0bU) {
+            game->ram[MYSMB_NUMBER_OF_LIVES]++;
+            game->ram[MYSMB_SQUARE2_SOUND] = 0x40U;
+        }
         score = score_data[control];
         game->ram[MYSMB_DIGIT_MODIFIER + (score >> 4U)] =
             (mysmb_u8)(score & 0x0fU);
@@ -2232,7 +2235,7 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
     enemy_id = game->ram[MYSMB_ENEMY_ID + slot];
     if (enemy_id == 5U ||
         (enemy_id != 9U && enemy_id != 10U && enemy_id != 11U &&
-         enemy_id != 13U &&
+         enemy_id != 13U && enemy_id != 18U &&
          (enemy_id >= 9U || game->ram[MYSMB_ENEMY_STATE + slot] < 2U))) {
         oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET +
             game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
