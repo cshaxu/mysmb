@@ -23,6 +23,8 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                    mysmb_u16 first, mysmb_u16 second);
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
+/* ROM FireballBGCollision / BlockBufferChk_FBall / ChkForNonSolids. */
+void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8 slot);
 
 /* ROM CheckForClimbMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);

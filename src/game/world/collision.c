@@ -97,3 +97,42 @@ mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
     game->ram[0x001dU] = 0U;
     return 1U;
 }
+
+/* ROM $cdbf FireballBGCollision.  This owns the source bottom probe and
+ * bounce/explosion decision; FireballObjCore retains only its call order. */
+void mysmb_world_fireball_background_collision(struct mysmb_game *game,
+                                                mysmb_u8 slot)
+{
+    mysmb_u8 x;
+    mysmb_u8 page;
+    mysmb_u8 row;
+    mysmb_u16 address;
+    mysmb_u8 tile;
+
+    if (game->ram[(mysmb_u16)(0x00d5U + slot)] < 0x18U) {
+        game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
+        return;
+    }
+    x = (mysmb_u8)(game->ram[(mysmb_u16)(0x008dU + slot)] + 4U);
+    page = mysmb_world_collision_page(game->ram[(mysmb_u16)(0x0074U + slot)],
+                                      game->ram[(mysmb_u16)(0x008dU + slot)], x);
+    row = (mysmb_u8)(((game->ram[(mysmb_u16)(0x00d5U + slot)] + 8U) & 0xf0U) -
+                     0x20U);
+    address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
+                          (x >> 4U) + row);
+    tile = address < 0x0800U ? game->ram[address] : 0U;
+    if (tile == 0U || tile == 0x26U || tile == 0xc2U || tile == 0xc3U ||
+        tile == 0x5fU || tile == 0x60U) {
+        game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
+        return;
+    }
+    if (game->ram[(mysmb_u16)(0x00a6U + slot)] >= 0x80U ||
+        game->ram[(mysmb_u16)(0x003aU + slot)] != 0U) {
+        game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
+        game->ram[0x00ffU] = 2U;
+        return;
+    }
+    game->ram[(mysmb_u16)(0x00a6U + slot)] = 0xfdU;
+    game->ram[(mysmb_u16)(0x003aU + slot)] = 1U;
+    game->ram[(mysmb_u16)(0x00d5U + slot)] &= 0xf8U;
+}

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S2/P4.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P2.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -19,10 +19,10 @@ World primitives consume caller-selected object-array offsets and RAM fields, pr
 ## Formal S breakdown
 
 1. **S1 complete (P1) — source ownership and movement boundary.** Map lines 7555-7784 to current owners, introduce the `src/game/world/` boundary, and physically extract `MoveObjectHorizontally`/gravity-family implementations without changing their byte behavior. Evidence: build and bounded continuation trace are unchanged by an extraction-only P.
-2. **S2 active (P1 complete; P2 next) — exact movement and gravity.** Translate `MoveEnemyHorizontally`, `MovePlayerHorizontally`, `MoveObjectHorizontally`, `ImposeGravityBlock`, `ImposeGravitySprObj`, `ImposeGravity`, and `AlterYP` with explicit 6502 add-with-carry state. Evidence: block, misc, fireball, and enemy traces at signed-speed/carry boundaries.
+2. **S2 complete (P1-P4) — exact movement and gravity.** Translate `MoveEnemyHorizontally`, `MovePlayerHorizontally`, `MoveObjectHorizontally`, `ImposeGravityBlock`, `ImposeGravitySprObj`, `ImposeGravity`, and `AlterYP` with explicit 6502 add-with-carry state. Evidence: block, misc, fireball, and enemy traces at signed-speed/carry boundaries.
 3. **S3 planned — coordinate, bounding-box, and screen-edge primitives.** Translate `BoundingBoxCore`, offscreen bounding behavior, relative coordinate helpers, and screen-edge checks. Evidence: actor and object bounding-box RAM plus OAM-facing positions.
 4. **S4 planned — player/background and head/block collision.** Translate the player terrain, pipe, vine, head, and block-buffer probe branches. Evidence: wall, hidden-block, question-block, pipe, and vine routes.
-5. **S5 planned — enemy/item/projectile collision and score handoffs.** Translate ground/side/background/object branches used by enemies, power-ups, fireballs, and score paths. Evidence: mushroom bounce, stomp/damage, fireball, and score/audio traces.
+5. **S5 active (P1-P2) — enemy/item/projectile collision and score handoffs.** Translate ground/side/background/object branches used by enemies, power-ups, fireballs, and score paths. Evidence: mushroom bounce, stomp/damage, fireball, and score/audio traces.
 6. **S6 planned — cross-slice reference closure.** Run bounded ROM-reference traces covering each S2–S5 route and prove that remaining differences are transferred only to a named source owner.
 
 ## Acceptance
@@ -58,3 +58,7 @@ The original `ImposeGravity` uses the carry from `ADC SprObject_Y_Position,x` in
 ## S2 P4: correct SprObject base addresses
 
 The P3 generic seam initially used fireball-specialized array addresses as its base and then applied the supplied offset again. ROM `FireballObjCore` first makes X equal to 7, so `ImposeGravity` and `MoveObjectHorizontally` must index the common bases (`$009f/$00b5/$00ce/$0416/$0433` and `$0057/$006d/$0086/$0400`) plus that offset. The corrected regression names both the common base and offset seven; it retains the carry checks and prevents a future double-offset caller.
+
+## S5 P2: Fireball background-collision ownership boundary
+
+ROM $cdbf-$cddc (FireballBGCollision, BlockBufferChk_FBall, and ChkForNonSolids) now has one shared game owner: `src/game/world/collision.c`. `FireballObjCore` keeps the source call position after relative coordinates, fireball offscreen bits, and its bounding box; it delegates the full existing bottom-probe, non-solid, bounce, and explosion state path to the world API. This is an extraction-only packet: no probe offset, tile classification, state branch, or audio write changed. `FireballEnemyCollision` and its score/defeat handoff remain explicitly outside this packet because they cross the T16/T19/T15 source owners. The full x64 and x86 suites pass 79/79 each; the OpenNT DOS MZ relinks from the same shared source with its established OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 C81783CE8E7C50426639289CFB2BF5AEFD1BEE73E8AD1F734D79955BD97AB826, mysmb32.exe SHA-256 3F83D6DF889603BA2656B8A29B3396E30BE8EF50D2E66B75A1C5D137E307F9D1, mysmb64.exe SHA-256 B7EEB2687C74E0E4FBB19B755E28BE38508554170F1D33B758ED73FF842890AB.

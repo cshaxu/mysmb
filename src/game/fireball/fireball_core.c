@@ -52,11 +52,6 @@ void mysmb_fireball_step(struct mysmb_game *game)
     mysmb_u8 slot;
     mysmb_u8 state;
     mysmb_u8 old_value;
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
-    mysmb_u8 tile;
     mysmb_u8 enemy_slot;
 
     mysmb_fireball_try_spawn(game);
@@ -101,27 +96,7 @@ void mysmb_fireball_step(struct mysmb_game *game)
         mysmb_oam_relative_fireball_position(game, slot);
         mysmb_oam_get_fireball_offscreen_bits(game, slot);
         mysmb_fireball_get_bounding_box(game, slot);
-        if (game->ram[MYSMB_FIREBALL_Y + slot] >= 0x18U) {
-            x = (mysmb_u8)(game->ram[MYSMB_FIREBALL_X + slot] + 4U);
-            page = mysmb_world_collision_page(game->ram[MYSMB_FIREBALL_PAGE + slot],
-                game->ram[MYSMB_FIREBALL_X + slot], x);
-            row = (mysmb_u8)(((game->ram[MYSMB_FIREBALL_Y + slot] + 8U) & 0xf0U) - 0x20U);
-            address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
-            tile = address < 0x0800U ? game->ram[address] : 0U;
-            if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-                if (game->ram[MYSMB_FIREBALL_Y_SPEED + slot] >= 0x80U ||
-                    game->ram[MYSMB_FIREBALL_BOUNCE + slot] != 0U) {
-                    game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
-                    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
-                }
-                else {
-                    game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 0xfdU;
-                    game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 1U;
-                    game->ram[MYSMB_FIREBALL_Y + slot] &= 0xf8U;
-                }
-            }
-            else game->ram[MYSMB_FIREBALL_BOUNCE + slot] = 0U;
-        }
+        mysmb_world_fireball_background_collision(game, slot);
         if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] & 0xccU) != 0U) {
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
             continue;
