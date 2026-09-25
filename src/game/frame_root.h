@@ -8,6 +8,7 @@ void mysmb_frame_root_begin(struct mysmb_game *game,
                             mysmb_u8 *mode_before,
                             mysmb_u8 *task_before);
 mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game, mysmb_u8 buttons);
+mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game);
 void mysmb_frame_root_finish(const struct mysmb_game *game,
                              struct mysmb_frame *frame);
 void mysmb_game_submit_oam(struct mysmb_game *game);

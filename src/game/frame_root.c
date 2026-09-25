@@ -8,6 +8,9 @@ enum {
     MYSMB_ROOT_SPRITE0_HIT = 0x0722U,
     MYSMB_ROOT_SAVED_JOYPAD1 = 0x06fcU,
     MYSMB_ROOT_JOYPAD_MASK1 = 0x074aU,
+    MYSMB_ROOT_PAUSE_STATUS = 0x0776U,
+    MYSMB_ROOT_PAUSE_TIMER = 0x0777U,
+    MYSMB_ROOT_PAUSE_SOUND_QUEUE = 0x00faU,
     MYSMB_ROOT_OAM = 0x0200U
 };
 
@@ -53,6 +56,32 @@ mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game,
     else game->ram[MYSMB_ROOT_JOYPAD_MASK1] = buttons;
     game->ram[MYSMB_ROOT_SAVED_JOYPAD1] = buttons;
     return buttons;
+}
+/* ROM $821c-$8244 PauseRoutine.  T14 later invokes this at its NMI site. */
+mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game)
+{
+    mysmb_u8 status;
+
+    if (game->ram[MYSMB_ROOT_OPERATING_MODE] != 2U &&
+        (game->ram[MYSMB_ROOT_OPERATING_MODE] != 1U ||
+         game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] != 3U)) {
+        return (mysmb_u8)(game->ram[MYSMB_ROOT_PAUSE_STATUS] & 1U);
+    }
+    if (game->ram[MYSMB_ROOT_PAUSE_TIMER] != 0U) {
+        game->ram[MYSMB_ROOT_PAUSE_TIMER]--;
+        return (mysmb_u8)(game->ram[MYSMB_ROOT_PAUSE_STATUS] & 1U);
+    }
+    if ((game->ram[MYSMB_ROOT_SAVED_JOYPAD1] & MYSMB_BUTTON_START) != 0U) {
+        status = game->ram[MYSMB_ROOT_PAUSE_STATUS];
+        if ((status & 0x80U) != 0U) return (mysmb_u8)(status & 1U);
+        game->ram[MYSMB_ROOT_PAUSE_TIMER] = 0x2bU;
+        game->ram[MYSMB_ROOT_PAUSE_SOUND_QUEUE] = (mysmb_u8)(status + 1U);
+        status = (mysmb_u8)((status ^ 1U) | 0x80U);
+        game->ram[MYSMB_ROOT_PAUSE_STATUS] = status;
+        return (mysmb_u8)(status & 1U);
+    }
+    game->ram[MYSMB_ROOT_PAUSE_STATUS] &= 0x7fU;
+    return (mysmb_u8)(game->ram[MYSMB_ROOT_PAUSE_STATUS] & 1U);
 }
 void mysmb_frame_root_finish(const struct mysmb_game *game,
                              struct mysmb_frame *frame)
