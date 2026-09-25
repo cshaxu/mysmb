@@ -623,6 +623,14 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
+    /* Unlike the usual mirror changes made by OperModeExecutionTree, the
+     * source routine ends by writing $2005 twice (InitScroll) while this
+     * NMI is still active.  Publish that physical transfer now so the
+     * current output frame agrees with the ROM at InitScreen/GameOver. */
+    game->visible_ppu_control_0 = 0x90U;
+    game->visible_ppu_name_table = 0U;
+    game->visible_scroll_x = 0U;
+    game->visible_scroll_y = 0U;
 }
 
 /* ROM $83c9-$8426 PrintVictoryMessages.  Its secondary counter is a frame

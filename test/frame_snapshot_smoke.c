@@ -13,11 +13,20 @@ int main(void)
     mysmb_game_initialize(&game);
     game.ppu_mask = 0x06U;
     game.visible_ppu_mask = 0x1eU;
+    game.visible_ppu_control_0 = 0x93U;
+    game.visible_ppu_name_table = 2U;
+    game.visible_scroll_x = 0xb7U;
     game.visible_scroll_y = 0x80U;
     mysmb_game_initialize_name_tables(&game);
     if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x10U ||
-        game.visible_ppu_mask != 0x1eU || game.visible_scroll_y != 0x80U)
+        game.visible_ppu_mask != 0x1eU || game.visible_ppu_control_0 != 0x90U ||
+        game.visible_ppu_name_table != 0U || game.visible_scroll_x != 0U ||
+        game.visible_scroll_y != 0U)
         return 7;
+    mysmb_frame_snapshot_capture(&game, &snapshot);
+    if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_name_table != 0U ||
+        snapshot.scroll_x != 0U || snapshot.scroll_y != 0U ||
+        snapshot.ppu_address != 0U) return 8;
     game.frame_number = 42UL;
     game.ram[0x0200U] = 0x12U;
     game.visible_oam[0U] = 0x34U;
