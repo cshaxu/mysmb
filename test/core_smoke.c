@@ -393,6 +393,8 @@ int main(void)
     game.ram[0x0701U] = 0U;
     game.ram[0x0702U] = 0x20U;
     mysmb_player_step(&game, MYSMB_BUTTON_A);
+    /* GameEngine SaveAB owns the current-to-previous A/B transfer. */
+    game.ram[0x000dU] = game.ram[0x000aU];
     if (game.ram[0x001dU] != 1U || game.ram[0x0782U] != 0x20U ||
         game.ram[0x000dU] != MYSMB_BUTTON_A) {
         return 1;

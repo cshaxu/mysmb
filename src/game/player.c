@@ -863,7 +863,6 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         }
         mysmb_player_update_relative_position(game);
         mysmb_player_update_bounding_box(game);
-        game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
         return;
     }
     /* PlayerMovementSubs reloads this before dispatching every non-climbing
@@ -974,7 +973,6 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_player_update_relative_position(game);
     mysmb_player_update_bounding_box(game);
     mysmb_player_handle_hole(game);
-    game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] = a_b;
 }
 
 /* Translation of ROM $b069-$b07c Vine_AutoClimb.  The vine object's growth

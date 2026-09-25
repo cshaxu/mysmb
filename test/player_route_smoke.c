@@ -127,11 +127,14 @@ int main(void)
         return 1;
     }
     mysmb_player_step(&game, (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_RIGHT));
+    /* GameEngine SaveAB publishes this after PlayerCtrlRoutine returns. */
+    game.ram[0x000dU] = game.ram[0x000aU];
     if (game.ram[0x001dU] != 1U || game.ram[0x00ceU] >= 0x30U ||
         game.ram[0x009fU] < 0x80U || game.ram[0x0782U] != 0x20U) {
         return 1;
     }
     mysmb_player_step(&game, (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_RIGHT));
+    game.ram[0x000dU] = game.ram[0x000aU];
     if (game.ram[0x0709U] == game.ram[0x070aU] ||
         game.ram[0x0433U] != 0x40U) {
         return 1;
