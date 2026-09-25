@@ -2,7 +2,7 @@
 
 ## Status
 
-M2 T15 S1-S2 are complete; S3 is active in P1. S4 remains queued behind terminal-route migration.
+M2 T15 S1-S3 are complete; S4 is active in P1.
 
 ## ROM scope
 
@@ -20,8 +20,8 @@ Entered through the operation-mode tree; emits text/VRAM, OAM and audio requests
 
 1. **S1 complete (P1)** - Bind title, select/start and demo labels to current code or replacement targets; record button-edge semantics.
 2. **S2 complete (P1-P3)** - Translate title bootstrap, menu, selection and demo state/data paths; prove idle and Select NMI output.
-3. **S3 active (P1-P7)** - Translate victory, end-world and floating-number paths including text/OAM/audio output; P5 freezes the ROM-slice module boundaries before further terminal changes.
-4. **S4 queued** - Compare title-start, demo, victory and game-over reference routes; remove displaced branches.
+3. **S3 complete (P1-P8)** - Translate victory, end-world and floating-number paths including text/OAM/audio output; P5 freezes the ROM-slice module boundaries before further terminal changes, and P8 restores the RenderPlayerSub post-scroll handoff.
+4. **S4 active (P1)** - Compare only source-reachable routes at NMI return. P1 establishes title-start/right and idle-to-demo baselines; P2 must reach terminal routes from recorded source-valid checkpoints or prove their prerequisite state; P3 resolves every output difference at its ROM owner and deletes displaced branches.
 
 ## Acceptance
 
@@ -73,3 +73,9 @@ A second build-only controlled route changed only OperMode, OperMode_Task, messa
 The controlled PlayerVictoryWalk route exposed a source-order omission in the player graphics owner, not a terminal-mode rule.  In the ROM, after PlayerVictoryWalk calls AutoControlPlayer and its explicit ScrollScreen, VictoryMode reaches RelativePlayerPosition -> PlayerGfxHandler -> RenderPlayerSub.  RenderPlayerSub copies Player_Rel_XPos to Player_Pos_ForScroll ($0755); next frame's ScrollHandler consumes that post-scroll value.  `mysmb_player_draw_oam` already reconstructed the relative coordinate for drawing but omitted the `$0755` write, so the next frame reused a pre-scroll coordinate and advanced one extra pixel.  The write now belongs to `player.c` at the translated RenderPlayerSub node, with a player-OAM regression assertion.  In a bounded 80-sample controlled route, samples 30-79 now have zero differences in both CIRAM pages, palette, audio command state and all PPU scalars, including scroll X; the previous scroll drift beginning at sample 42 is absent.  OAM backing/visible OAM still diverge at samples 62/63 because this synthetic fixture retains title-page enemy slots and does not reproduce a source-reachable castle completion state.  That residual is explicitly deferred to S4's complete route fixture and was not hidden by clearing slots.  Full rebuilt x64 and x86 suites each pass 78/78; OpenNT links the DOS MZ with the existing OLDNAMES.LIB warning.
 
 Refreshed artifacts: mysmb16.exe SHA-256 AF7F84D676590800E4A8B0375FEC504C9BF557CFE42E18412817A3B7D9CE58D2, mysmb32.exe DD5DD9ACCB15AAFD848F4AB112834C7C7A76A9F7FC02855631106963F97071F7, and mysmb64.exe C513FE3142FB894B4391C154ED65EB1E950283C8FFDAA5CB49A35EBD0C1C8C9E.
+
+## S4 P1: reachable title-to-play and demo baselines
+
+S3 is complete: its T15 label owners are isolated and its direct terminal leaves have source-level regressions.  S4 begins route proof without treating a forced mode byte as gameplay evidence.  Two independent 600-sample NMI-return runs use the local nxvm MyNES reference at commit `f91686808` and the native x64 recorder.  Route one begins at the real title screen, presses Start for exactly one frame at sample 200, then holds Right from sample 360 through 598.  Route two supplies no controller input and reaches the ROM demo through the title timer.  In both routes CPU OAM backing `$0200-$02ff`, work RAM `$0300-$07ff`, both physical CIRAM pages, palette, visible OAM, audio command bytes, and all seven PPU scalar bytes have zero differences for every one of the 600 samples.  Only 6502 execution temporaries (zero page and stack) differ.  The recorder must explicitly override its mandatory native Start window with `0:0` for the idle route; otherwise it introduces a test-only `$06fc` difference.  P2 is limited to source-reachable terminal checkpoints; the prior synthetic PlayerVictoryWalk probe remains diagnostic evidence only and cannot close a terminal route.
+
+S4 P1 executable verification: mysmb16.exe SHA-256 AF7F84D676590800E4A8B0375FEC504C9BF557CFE42E18412817A3B7D9CE58D2, mysmb32.exe DD5DD9ACCB15AAFD848F4AB112834C7C7A76A9F7FC02855631106963F97071F7, and mysmb64.exe C513FE3142FB894B4391C154ED65EB1E950283C8FFDAA5CB49A35EBD0C1C8C9E. The OpenNT link retains its existing OLDNAMES.LIB warning.
