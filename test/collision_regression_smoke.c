@@ -214,5 +214,41 @@ int main(void)
     mysmb_objects_step_power_up(&game);
     if (game.ram[0x0046U + 5U] != 2U ||
         game.ram[0x0058U + 5U] != 0xf0U) return 6;
+    /* First World 1-1 fire flower: exercise the real SetupPowerUp reveal
+     * state before PlayerEnemyCollision, rather than injecting a finished
+     * enemy box.  Big Mario strikes the normal mushroom/flower block, which
+     * SetupPowerUp changes to PowerUpType=$01, then collects it after state 6. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x000eU] = 8U;
+    game.ram[0x071aU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    game.ram[0x0754U] = 0U;
+    game.ram[0x0756U] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x30U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x0499U] = 0U;
+    game.ram[0x04acU] = 0x32U;
+    game.ram[0x04adU] = 0x38U;
+    game.ram[0x04aeU] = 0x3eU;
+    game.ram[0x04afU] = 0x50U;
+    game.ram[0x0076U] = 1U;
+    game.ram[0x008fU] = 0x30U;
+    game.ram[0x00d7U] = 0x40U;
+    mysmb_objects_start_power_up(&game, 0U, 0U);
+    for (step = 0U; step < 24U; ++step) {
+        game.ram[0x0009U] = step;
+        mysmb_objects_step_power_up(&game);
+    }
+    if (game.ram[0x0039U] != 1U || game.ram[0x001bU] != 0x2eU ||
+        game.ram[0x0023U] < 6U) return 16;
+    game.ram[0x0009U] = 0U;
+    mysmb_objects_check_power_up_collision(&game);
+    if (game.ram[0x001bU] != 0U || game.ram[0x0014U] != 0U ||
+        game.ram[0x0756U] != 2U || game.ram[0x000eU] != 12U) return 17;
     return 0;
 }
