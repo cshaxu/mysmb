@@ -101,7 +101,7 @@ $current = $null
 $edges = New-Object System.Collections.Generic.HashSet[string]
 for ($i = 0; $i -lt $asm.Count; $i++) {
     if ($asm[$i] -match '^([A-Za-z_][A-Za-z0-9_]*):') { $current = $Matches[1] }
-    if ($null -ne $current -and $asm[$i] -match '^\s*(jsr|jmp)\s+([A-Za-z_][A-Za-z0-9_]*)\b') {
+    if ($null -ne $current -and $asm[$i] -match '^\s*(jsr|jmp|bcc|bcs|beq|bmi|bne|bpl|bvc|bvs)\s+([A-Za-z_][A-Za-z0-9_]*)\b') {
         $kind = $Matches[1].ToUpperInvariant(); $target = $Matches[2]
         if (($labels.Label -contains $target) -and $target -ne $current) {
             [void]$edges.Add('  "' + $current + '" -> "' + $target + '" [label="' + $kind + '"];')
@@ -110,7 +110,7 @@ for ($i = 0; $i -lt $asm.Count; $i++) {
 }
 foreach ($edge in ($edges | Sort-Object)) { $dot.Add($edge) }
 $dot.Add('}')
-$dotPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-callgraph.dot'
+$dotPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-controlgraph.dot'
 $gameFiles = Get-ChildItem -LiteralPath 'src/game' -Recurse -File -Include '*.c','*.h'
 $gameText = ($gameFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
 $covered = New-Object System.Collections.Generic.HashSet[string]
@@ -138,6 +138,6 @@ $auditPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-migration-baselin
 Write-Output ('mentioned=' + $covered.Count)
 Write-Output ('baselineAudit=' + (Resolve-Path -LiteralPath $auditPath))
 Write-Output ('edges=' + $edges.Count)
-Write-Output ('callgraph=' + (Resolve-Path -LiteralPath $dotPath))
+Write-Output ('controlgraph=' + (Resolve-Path -LiteralPath $dotPath))
 Write-Output ('labels=' + $labels.Count)
 Write-Output ('output=' + (Resolve-Path -LiteralPath $OutputPath))
