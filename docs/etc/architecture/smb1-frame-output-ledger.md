@@ -2177,3 +2177,26 @@ relative/offscreen bytes, and all four output bytes.  Fresh Win32 x86/x64
 builds pass all 57 tests; the configured OpenNT large-model core target also
 compiles `bubble_gfx.c`.  Outputs and any diagnostic probes remain below
 ignored `build` and were deleted after use.
+## T13 S1 P22 Death, Restart, and Re-entry Window
+
+A fresh owner-local paired trace warms both implementations for 600 NMI-return
+samples, then records the next 600 samples.  The ROM receives
+`30:$08,31:0,60:$80`; native C receives the decoded equivalent
+`30:$10,31:0,60:$01`, with the translated title bootstrap.  ROM input remains
+owner-local and both raw traces are confined to ignored `build` output.
+
+The native sample sequence covers restart initialization (samples 0--100),
+normal 1-1 control (200--300), player death (400--500), and the following
+restart preparation (599).  Across all 600 samples, CPU OAM backing RAM,
+work RAM `$0300-$07ff`, visible OAM, both CIRAM pages, palette, all fourteen
+audio-command bytes, and every PPU-visible scalar have zero differences from
+the original-ROM trace.  The reference trace SHA-256 is
+`cdb9097ed11a4a2a0a4b9e824836635f79563db3dc83eee6067a6275fe9e3d6a` and the
+native trace SHA-256 is
+`c4865d18a1b2f951e1d02bf56066e278acf92aedd1235bbe48a3c1d1a6685fb2`.
+
+CPU RAM is not yet fully exact: the comparison reports 96,000 stack-byte and
+8,190 zero-page-byte differences.  These are not classified as presentation
+or game-route equivalence, so this extends T13 death/restart evidence without
+claiming M2 closure.  Warp Zone, flagpole/castle, two-player exchange, and
+remaining audio paths still require separate owner-local scripts.
