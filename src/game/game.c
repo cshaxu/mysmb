@@ -104,10 +104,7 @@ static void mysmb_game_print_victory_messages(struct mysmb_game *game);
 void mysmb_game_step_screen_routine(struct mysmb_game *game);
 void mysmb_game_primary_setup(struct mysmb_game *game);
 void mysmb_game_secondary_setup(struct mysmb_game *game);
-void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 void mysmb_game_step_area_parser(struct mysmb_game *game);
-void mysmb_game_commit_display_state(struct mysmb_game *game);
-void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
 void mysmb_game_submit_oam(struct mysmb_game *game);
 
 /* ROM GameEngine: NoChgMus / CyclePlayerPalette / ResetPalStar.
@@ -176,49 +173,6 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
         offset = (mysmb_u8)(offset - 0x10U);
     }
     return offset;
-}
-
-/* ROM NMI RotPRandomBit.  The carry derives from d1 of the first two
- * registers, then propagates through seven consecutive ROR instructions. */
-void mysmb_game_rotate_pseudorandom(struct mysmb_game *game)
-{
-    mysmb_u8 index;
-    mysmb_u8 carry;
-    mysmb_u8 next_carry;
-    mysmb_u8 value;
-
-    carry = ((game->ram[MYSMB_RAM_PSEUDORANDOM] & 2U) ^ (game->ram[0x07a8U] & 2U)) != 0U ?
-        1U : 0U;
-    for (index = 0U; index < 7U; ++index) {
-        value = game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)];
-        next_carry = value & 1U;
-        game->ram[(mysmb_u16)(MYSMB_RAM_PSEUDORANDOM + index)] = (mysmb_u8)((value >> 1U) |
-            (carry != 0U ? 0x80U : 0U));
-        carry = next_carry;
-    }
-}
-/* ROM NMI DecTimers.  The first 0x15 entries are frame timers; the remaining
- * interval timers run each time IntervalTimerControl rolls under zero. */
-void mysmb_game_tick_player_timers(struct mysmb_game *game)
-{
-    mysmb_u8 index;
-    mysmb_u8 last_timer;
-
-    if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) {
-        game->ram[MYSMB_RAM_TIMER_CONTROL]--;
-        if (game->ram[MYSMB_RAM_TIMER_CONTROL] != 0U) return;
-    }
-    game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL]--;
-    last_timer = 0x14U;
-    if (game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL] >= 0x80U) {
-        game->ram[MYSMB_RAM_INTERVAL_TIMER_CONTROL] = 0x14U;
-        last_timer = 0x23U;
-    }
-    for (index = 0U; index <= last_timer; ++index) {
-        if (game->ram[MYSMB_RAM_TIMERS + index] != 0U) {
-            game->ram[MYSMB_RAM_TIMERS + index]--;
-        }
-    }
 }
 
 /* ROM RunGameTimer.  The audio subsystem consumes its queue on a following
@@ -463,39 +417,6 @@ static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 button
         game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
         offset--;
     } while (offset != 0xffU);
-}
-
-/* ROM $81c6-$81f9 SpriteShuffler. */
-void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
-{
-    mysmb_u8 index;
-    mysmb_u16 offset;
-    mysmb_u8 value;
-    mysmb_u16 sum;
-
-    for (index = 15U; index != 0U; --index) {
-        offset = (mysmb_u8)(index - 1U);
-        value = game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + offset)];
-        if (value >= 0x28U) {
-            sum = (mysmb_u16)value + game->ram[(mysmb_u16)(
-                MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS +
-                game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL])];
-            value = (mysmb_u8)sum;
-            if (sum > 0xffU) value = (mysmb_u8)(value + 0x28U);
-            game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + offset)] = value;
-        }
-    }
-    game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL]++;
-    if (game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL] == 3U)
-        game->ram[MYSMB_RAM_SPRITE_SHUFFLE_CONTROL] = 0U;
-    for (index = 0U; index < 3U; ++index) {
-        value = game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_OFFSETS + 5U + index)];
-        offset = (mysmb_u16)(MYSMB_RAM_MISC_SPRITE_OFFSETS + index * 3U);
-        game->ram[offset] = value;
-        value = (mysmb_u8)(value + 8U);
-        game->ram[(mysmb_u16)(offset + 1U)] = value;
-        game->ram[(mysmb_u16)(offset + 2U)] = (mysmb_u8)(value + 8U);
-    }
 }
 
 /* ROM $83c9-$8426 PrintVictoryMessages.  Its secondary counter is a frame
@@ -852,59 +773,6 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
     return cursor < command_size ? 1U : 0U;
 }
 
-/* ROM $8e92-$8eb6 UpdateScreen/WriteBufferToScreen at the NMI boundary.
- * The buffer is owned by game routines during the preceding frame and is
- * cleared only after its terminal command has reached PPU-visible state. */
-void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 1U &&
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 4U) {
-        (void)mysmb_area_apply_palette(game, (mysmb_u8)(
-            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] - 1U));
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 8U &&
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 11U) {
-        (void)mysmb_area_apply_special_palette(game,
-            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] >= 12U &&
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] <= 18U) {
-        (void)mysmb_area_apply_message(game,
-            game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL]);
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
-    }
-    /* VRAM_AddrTable entries 6 and 7 both select VRAM_Buffer2.  The source
-     * parser guard distinguishes only 6; NMI transfer itself does not. */
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U ||
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 7U) {
-        if (game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] != 0U) {
-            (void)mysmb_game_apply_vram_commands(game,
-                &game->ram[MYSMB_RAM_VRAM_BUFFER2], 0x00c0U);
-            game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
-            game->ram[MYSMB_RAM_VRAM_BUFFER2] = 0U;
-        }
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 5U) {
-        (void)mysmb_game_apply_vram_commands(game, &game->ram[0x0300U],
-                                              MYSMB_TITLE_BUFFER_SIZE);
-        game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] == 0U &&
-        game->ram[MYSMB_RAM_VRAM_BUFFER1] == 0U) return;
-    (void)mysmb_game_apply_vram_commands(game,
-        &game->ram[MYSMB_RAM_VRAM_BUFFER1], 0x0100U);
-    game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] = 0U;
-    game->ram[MYSMB_RAM_VRAM_BUFFER1] = 0U;
-}
-
 /* ROM $94a5-$9539 GameEngine's UpdScrollVar/RunParser tail.  NMI has already
  * committed a pending buffer at the start of this tick.  The source performs
  * exactly one parser subtask while one is active, or starts one after each
@@ -921,31 +789,6 @@ void mysmb_game_step_area_parser(struct mysmb_game *game)
         (mysmb_u8)(game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] - 0x20U);
     game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
     (void)mysmb_area_parser_task_step(game);
-}
-
-/* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
- * commits scroll/name-table state, then re-enables NMI on $2000.  Gameplay
- * has already changed the source-owned scroll fields when this is called. */
-void mysmb_game_commit_display_state(struct mysmb_game *game)
-{
-    /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
-     * may have selected d2 in that mirror, whereas the physical register at
-     * RTI is restored from the pre-command value with NMI enabled. */
-    game->ppu_control_0 &= 0x7fU;
-    game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = game->ppu_control_0;
-    if (game->ram[MYSMB_RAM_DISABLE_SCREEN] != 0U)
-        game->ppu_mask &= 0xe6U;
-    else
-        game->ppu_mask |= 0x1eU;
-    game->ram[MYSMB_RAM_PPU_MASK_MIRROR] = game->ppu_mask;
-    /* The original writes these values before OperModeExecutionTree.  That
-     * routine may change the mirrors and scroll variables, but the physical
-     * PPU does not show those changes until the following NMI. */
-    game->visible_ppu_control_0 = (mysmb_u8)(game->ppu_control_0 | 0x80U);
-    game->visible_ppu_mask = game->ppu_mask;
-    game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
-    game->visible_scroll_x = game->ram[MYSMB_RAM_HORIZONTAL_SCROLL];
-    game->visible_scroll_y = game->ram[MYSMB_RAM_VERTICAL_SCROLL];
 }
 
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,

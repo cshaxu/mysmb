@@ -14,19 +14,19 @@ Scope is SMBDIS lines 699-981 plus InitializeMemory at line 2795. This map recor
 | 752 | `VRAM_AddrTable_High` | src/game/game.c VRAM constants/table | mapped; semantics unverified |
 | 761 | `VRAM_Buffer_Offset` | src/game/game.c VRAM constants/table | mapped; semantics unverified |
 | 764 | `NonMaskableInterrupt` | src/game/frame_root.c | translated structure; branch semantics pending trace |
-| 776 | `ScreenOff` | src/game/game.c PPU helper | mapped; semantics unverified |
-| 796 | `InitBuffer` | src/game/game.c PPU helper | mapped; semantics unverified |
-| 814 | `DecTimers` | src/game/game.c root helper, called by src/game/frame_root.c | translated structure; branch semantics pending trace |
-| 820 | `DecTimersLoop` | src/game/game.c root helper | mapped; semantics unverified |
-| 823 | `SkipExpTimer` | src/game/game.c root helper | mapped; semantics unverified |
-| 825 | `NoDecTimers` | src/game/game.c root helper | mapped; semantics unverified |
-| 826 | `PauseSkip` | src/game/game.c root helper | mapped; semantics unverified |
-| 837 | `RotPRandomBit` | src/game/game.c root helper, called by src/game/frame_root.c | translated structure; branch semantics pending trace |
+| 776 | `ScreenOff` | src/game/frame_root.c | translated; NMI leaf owner |
+| 796 | `InitBuffer` | src/game/frame_root.c | translated; NMI leaf owner |
+| 814 | `DecTimers` | src/game/frame_root.c | translated; NMI leaf owner |
+| 820 | `DecTimersLoop` | src/game/frame_root.c | translated; NMI leaf owner |
+| 823 | `SkipExpTimer` | src/game/frame_root.c | translated; NMI leaf owner |
+| 825 | `NoDecTimers` | src/game/frame_root.c | translated; NMI leaf owner |
+| 826 | `PauseSkip` | src/game/frame_root.c | translated; NMI leaf owner |
+| 837 | `RotPRandomBit` | src/game/frame_root.c | translated; NMI leaf owner |
 | 843 | `Sprite0Clr` | src/game/frame_root.c | mapped; semantics unverified |
 | 851 | `Sprite0Hit` | src/game/frame_root.c | mapped; semantics unverified |
 | 855 | `HBlankDelay` | src/game/frame_root.c | mapped; semantics unverified |
 | 857 | `SkipSprite0` | src/game/frame_root.c | mapped; semantics unverified |
-| 868 | `SkipMainOper` | src/game/game.c VRAM constants/table | mapped; semantics unverified |
+| 868 | `SkipMainOper` | src/game/frame_root.c | translated structure; root owner |
 | 876 | `PauseRoutine` | src/game/frame_root.c | translated; focused pause/OAM regression |
 | 885 | `ChkPauseTimer` | src/game/frame_root.c | translated; focused pause/OAM regression |
 | 889 | `ChkStart` | src/game/frame_root.c | translated; focused pause/OAM regression |
@@ -111,3 +111,21 @@ uses this same `boot.c`.
 | `assets/mysmb16.exe` | `7b89f585888f9350990a7da5718349b932256d500c1eeca898012c7bd5ef3566` |
 | `assets/mysmb32.exe` | `e935c4cc4642e6eddb927423851466d7075b4b80d9e91031210cc002d700330b` |
 | `assets/mysmb64.exe` | `ac379d7445785ad46408a1588aa40c3337d4b6518f455f662d955ff007985b29` |
+
+## P17 NMI-leaf ownership evidence
+
+P17 moves `UpdateScreen`/buffer reset, display-register commit, `DecTimers`,
+`RotPRandomBit`, and `SpriteShuffler` from `game.c` into `frame_root.c`.  The
+former title compatibility helpers invoke the same root-owned primitives; no
+platform source gained a game decision.  A fresh 8-sample cold-start trace in
+`build/t14-s2-p17` has zero differences for CPU OAM RAM, work RAM, both CIRAM
+pages, palette, visible OAM, audio commands, and all PPU scalar fields.  The
+remaining CPU differences are emulator zero-page/stack temporaries.
+
+| Artifact | SHA-256 |
+|---|---|
+| `assets/mysmb16.exe` | `25f3e372313775cdc9f27b085d0d2b61c5a6df20b794185ba32f081e4a458f19` |
+| `assets/mysmb32.exe` | `a3ae2a573143411832c87b0a1a7287b8448ca7878615dd642bc8f6da968624bb` |
+| `assets/mysmb64.exe` | `e7bacc932f11e7386586b10690917250b09f76f062dca4d2d632f3af93a0e2bf` |
+
+x86 and x64 each pass 78/78; the 16-bit OpenNT linker uses the same root.
