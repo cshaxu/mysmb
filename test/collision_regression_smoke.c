@@ -83,12 +83,12 @@ int main(void)
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
     game.ram[0x009fU] = 0xf0U;
-    /* Small Mario selects BlockBufferAdderData[$01]=$07, whose head probe
-     * is X+8,Y+2.  At (X,Y)=(20,34), this is block-buffer $05e2. */
-    game.ram[0x05e2U] = 0x51U;
+    /* Small Mario selects BlockBufferAdderData[$02]=$0e, whose head probe
+     * is X+8,Y+18.  At (X,Y)=(20,34), this is block-buffer $05f2. */
+    game.ram[0x05f2U] = 0x51U;
     if (mysmb_player_check_head(&game) == 0U ||
         game.ram[0x0026U] != 0x11U || game.ram[0x03e8U] != 0x51U ||
-        game.ram[0x05e2U] != 0x23U || game.ram[0x009fU] != 0U ||
+        game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 13;
 
     /* Hidden coin blocks are $5f in the collision buffer.  They are absent
@@ -101,10 +101,10 @@ int main(void)
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
     game.ram[0x009fU] = 0xf0U;
-    game.ram[0x05e2U] = 0x5fU;
+    game.ram[0x05f2U] = 0x5fU;
     if (mysmb_player_check_head(&game) == 0U ||
         game.ram[0x0026U] != 0x11U || game.ram[0x03e8U] != 0xc4U ||
-        game.ram[0x05e2U] != 0x23U || game.ram[0x009fU] != 0U ||
+        game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 14;
     for (step = 0U; step < 24U; ++step) {
         mysmb_objects_apply_block_replacements(&game);
@@ -112,7 +112,7 @@ int main(void)
         game.ram[0x0301U] = 0U;
         mysmb_objects_step_blocks(&game);
     }
-    if (game.ram[0x05e2U] != 0xc4U) return 15;
+    if (game.ram[0x05f2U] != 0xc4U) return 15;
     /* PowerUpObjHandler calls RunPUSubs from state 6.  GameCore invokes this
      * collision routine after the handler, so state 6 must not be rejected
      * simply because d7 has not yet been set. */
