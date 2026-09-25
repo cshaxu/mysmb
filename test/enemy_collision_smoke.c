@@ -97,5 +97,12 @@ int main(void)
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x78U;
     if (mysmb_objects_get_enemy_x_offscreen_bits(&game, 0U) != 0x0cU) return 9;
+    /* RunOffscrBitsSubs stores GetXOffscreenBits after shifting it into
+     * the horizontal low nibble.  An enemy one complete page left of the
+     * screen supplies $0f, not $ff; $ff would fabricate vertical offscreen
+     * bits and make a power-up uncollectable. */
+    game.ram[0x006eU] = 0U;
+    game.ram[0x0087U] = 0U;
+    if (mysmb_objects_get_enemy_x_offscreen_bits(&game, 0U) != 0x0fU) return 10;
     return 0;
 }

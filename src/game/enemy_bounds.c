@@ -56,7 +56,13 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
     page_difference = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] -
                                   game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
     if ((page_difference & 0x80U) != 0U) return 0U;
-    if (page_difference != 0U) return 0xffU;
+    /* GetXOffscreenBits returns its source byte in A, but
+     * RunOffscrBitsSubs shifts that byte four places before it becomes the
+     * horizontal low nibble of SprObject_OffscrBits.  An object a complete
+     * page beyond the left edge therefore contributes $0f, never $ff:
+     * returning $ff here spuriously asserted the vertical $f0 mask and made
+     * an otherwise visible power-up ineligible for PlayerEnemyCollision. */
+    if (page_difference != 0U) return 0x0fU;
     index = (mysmb_u8)(difference >> 3U);
     if (index > 7U) index = 7U;
     return left_bits[index];
