@@ -64,18 +64,25 @@ static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM ContinueGame. */
-static void mysmb_game_continue_game(struct mysmb_game *game)
+/* ROM LoadAreaPointer call sites in ContinueGame, NextArea, and
+ * PlayerEndWorld.  The bound PRG is owner-local; ROM-free unit routes retain
+ * their source behavior by making this no-op when no cartridge data exists. */
+static void mysmb_game_load_area_pointer(struct mysmb_game *game)
 {
     struct mysmb_area_source source;
 
+    if (game->area_prg == 0) return;
+    source.prg = game->area_prg;
+    source.prg_size = game->area_prg_size;
+    (void)mysmb_area_load_pointers(game, &source);
+}
+
+/* ROM ContinueGame. */
+static void mysmb_game_continue_game(struct mysmb_game *game)
+{
     /* ROM ContinueGame calls LoadAreaPointer before it resets the game-mode
      * task, so the restart frame itself carries the next area pointer. */
-    if (game->area_prg != 0) {
-        source.prg = game->area_prg;
-        source.prg_size = game->area_prg_size;
-        (void)mysmb_area_load_pointers(game, &source);
-    }
+    mysmb_game_load_area_pointer(game);
     game->ram[MYSMB_RAM_PLAYER_SIZE] = 1U;
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
     game->ram[MYSMB_RAM_TIMER_CONTROL] = 0U;
@@ -89,6 +96,7 @@ static void mysmb_game_continue_game(struct mysmb_game *game)
 void mysmb_game_next_area(struct mysmb_game *game)
 {
     game->ram[MYSMB_RAM_AREA]++;
+    mysmb_game_load_area_pointer(game);
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_HALFWAY_PAGE] = 0U;
@@ -219,6 +227,7 @@ void mysmb_game_step_victory(struct mysmb_game *game)
         game->ram[MYSMB_RAM_LEVEL] = 0U;
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
         game->ram[MYSMB_RAM_WORLD]++;
+        mysmb_game_load_area_pointer(game);
         game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
         game->ram[MYSMB_RAM_OPER_MODE] = 1U;
     }

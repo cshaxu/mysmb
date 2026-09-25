@@ -7,6 +7,7 @@
 int main(void)
 {
     struct mysmb_game game;
+    struct mysmb_game expected;
     struct mysmb_area_source source;
     struct mysmb_area_object object;
     struct mysmb_input input;
@@ -95,6 +96,33 @@ int main(void)
     if (game.ram[0x001dU] != 1U) {
         return 1;
     }
+    /* PlayerEndWorld calls LoadAreaPointer immediately after incrementing
+     * WorldNumber, before it leaves victory mode for game-mode task zero. */
+    mysmb_game_initialize(&expected);
+    mysmb_game_bind_area_source(&expected, source.prg, source.prg_size);
+    expected.ram[0x075fU] = 1U;
+    expected.ram[0x0760U] = 0U;
+    if (mysmb_area_load_pointers(&expected, &source) == 0U) return 1;
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 4U;
+    game.ram[0x075fU] = 0U;
+    game.ram[0x0760U] = 3U;
+    game.ram[0x075cU] = 2U;
+    game.ram[0x07a1U] = 0U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
+        game.ram[0x075fU] != 1U || game.ram[0x0760U] != 0U ||
+        game.ram[0x0750U] != expected.ram[0x0750U] ||
+        game.ram[0x074eU] != expected.ram[0x074eU] ||
+        game.ram[0x074fU] != expected.ram[0x074fU] ||
+        game.ram[0x00e7U] != expected.ram[0x00e7U] ||
+        game.ram[0x00e8U] != expected.ram[0x00e8U] ||
+        game.ram[0x00e9U] != expected.ram[0x00e9U] ||
+        game.ram[0x00eaU] != expected.ram[0x00eaU]) return 1;
+
     /* RunGameTimer decrements the live digits and appends its $207a command;
      * the following frame's NMI consumes it into the PPU name table. */
     mysmb_game_initialize(&game);
