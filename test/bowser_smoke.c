@@ -73,6 +73,14 @@ int main(void)
     game.ram[0x0087U] = 0x80U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x0483U] = 1U;
+    /* FireballEnemyCollision consumes the bounding boxes already generated
+     * by each enemy's graphics route.  Supply that source-owned preparation
+     * explicitly in this isolated owner fixture. */
+    game.ram[0x049aU] = 10U;
+    game.ram[0x03aeU] = 0x80U;
+    game.ram[0x03b9U] = 0x70U;
+    game.ram[0x03d1U] = 0U;
+    mysmb_objects_update_enemy_bounding_box(&game, 0U);
     game.ram[0x0024U] = 1U;
     game.ram[0x0074U] = 0U;
     game.ram[0x008dU] = 0x80U;
@@ -81,6 +89,7 @@ int main(void)
     game.ram[0x005eU] = 0U;
     game.ram[0x00a6U] = 0U;
     game.ram[0x043aU] = 0U;
+    game.ram[0x04a0U] = 7U;
     game.ram[0x0407U] = 0U;
     mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0483U] != 0U || game.ram[0x0016U] != 6U ||

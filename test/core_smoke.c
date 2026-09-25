@@ -1117,6 +1117,11 @@ int main(void)
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
+    game.ram[0x049aU] = 0U;
+    game.ram[0x03aeU] = 0x40U;
+    game.ram[0x03b9U] = 0x50U;
+    game.ram[0x03d1U] = 0U;
+    mysmb_objects_update_enemy_bounding_box(&game, 0U);
     game.frame_number = 0UL;
     game.ram[0x0009U] = 0U;
     mysmb_objects_step_fireballs(&game);

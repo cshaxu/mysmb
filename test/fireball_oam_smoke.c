@@ -14,6 +14,7 @@ int main(void)
     game.ram[0x00bcU] = 1U;
     game.ram[0x005eU] = 0U;
     game.ram[0x00a6U] = 0U;
+    game.ram[0x04a0U] = 7U;
     game.ram[0x06f1U] = 0x20U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 0U;
@@ -24,6 +25,12 @@ int main(void)
     game.ram[0x071dU] = 0xffU;    mysmb_objects_step_fireballs(&game);
     if (game.ram[0x0220U] != 0x40U || game.ram[0x0221U] != 0x65U ||
         game.ram[0x0222U] != 2U || game.ram[0x0223U] != 0x40U) return 1;
+    /* GetFireballBoundBox uses SprObject offset seven against the common
+     * $04ac bounding-box base: slot zero belongs at $04c8, never $04cc. */
+    if (game.ram[0x04c8U] != 0x40U) return 8;
+    if (game.ram[0x04c9U] != 0x40U) return 9;
+    if (game.ram[0x04caU] != 0x48U) return 10;
+    if (game.ram[0x04cbU] != 0x48U) return 11;
 
     game.frame_number = 0x10UL;
     game.ram[0x0009U] = (mysmb_u8)(0x10UL);

@@ -686,7 +686,7 @@ static void mysmb_objects_get_fireball_offscreen_bits(struct mysmb_game *game,
 static void mysmb_objects_get_fireball_bounding_box(struct mysmb_game *game,
                                                      mysmb_u8 slot)
 {
-    mysmb_objects_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
+    mysmb_objects_set_bounding_box(game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U), game->ram[MYSMB_FIREBALL_BOUND_BOX + slot], game->ram[MYSMB_FIREBALL_REL_X + slot], game->ram[MYSMB_FIREBALL_REL_Y + slot]);
 }
 /* ROM $98?? ProcFireball_Bubble/$98?? FireballObjCore, excluding OAM.
  * Both objects use the original fixed slots. */
@@ -811,16 +811,27 @@ void mysmb_objects_step_fireballs(struct mysmb_game *game)
         }
         if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U &&
             game->ram[MYSMB_FIREBALL_STATE + slot] == 1U) {
-            for (enemy_slot = 0U; enemy_slot < 5U; ++enemy_slot) {
+            /* FireballEnemyCollision walks slots four through zero and calls
+             * SprObjectCollisionCore with the enemy box in X and the
+             * fireball box in Y.  Do not substitute world-coordinate AABB
+             * tests: the ROM intentionally keeps byte-wrap box semantics. */
+            enemy_slot = 5U;
+            while (enemy_slot != 0U) {
+                mysmb_u16 enemy_box;
+                mysmb_u16 fireball_box;
+
+                --enemy_slot;
                 if (game->ram[MYSMB_ENEMY_FLAG + enemy_slot] == 0U ||
                     (game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x20U) != 0U ||
                     (game->ram[MYSMB_ENEMY_ID + enemy_slot] >= 0x24U &&
-                     game->ram[MYSMB_ENEMY_ID + enemy_slot] < 0x2bU)) continue;
-                if (game->ram[MYSMB_FIREBALL_PAGE + slot] == game->ram[MYSMB_ENEMY_PAGE + enemy_slot] &&
-                    game->ram[MYSMB_FIREBALL_X + slot] + 12U >= game->ram[MYSMB_ENEMY_X + enemy_slot] &&
-                    game->ram[MYSMB_FIREBALL_X + slot] <= game->ram[MYSMB_ENEMY_X + enemy_slot] + 16U &&
-                    game->ram[MYSMB_FIREBALL_Y + slot] + 8U >= game->ram[MYSMB_ENEMY_Y + enemy_slot] &&
-                    game->ram[MYSMB_FIREBALL_Y + slot] <= game->ram[MYSMB_ENEMY_Y + enemy_slot] + 24U) {
+                     game->ram[MYSMB_ENEMY_ID + enemy_slot] < 0x2bU) ||
+                    (game->ram[MYSMB_ENEMY_ID + enemy_slot] == 0U &&
+                     game->ram[MYSMB_ENEMY_STATE + enemy_slot] >= 2U) ||
+                    game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + enemy_slot] != 0U) continue;
+                enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + enemy_slot * 4U);
+                fireball_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER +
+                                            (7U + slot) * 4U);
+                if (mysmb_objects_boxes_collide(game, enemy_box, fireball_box) != 0U) {
                     game->ram[MYSMB_FIREBALL_STATE + slot] = 0x80U;
                     mysmb_objects_handle_fireball_enemy_collision(game, enemy_slot);
                     break;
