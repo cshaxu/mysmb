@@ -59,6 +59,12 @@ int main(void)
     /* The fifth fireball uses HurtBowser: it becomes the world identity and
      * enters the original defeated-state route. */
     mysmb_game_initialize_memory(&game, 0xfeU);
+    /* FireballObjCore now observes the ROM offscreen mask before enemy
+     * collision, so this direct fixture must provide a real screen window. */
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
     game.frame_number = 0UL;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 45U;

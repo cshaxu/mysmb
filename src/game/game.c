@@ -310,7 +310,11 @@ static void mysmb_game_lose_life(struct mysmb_game *game)
 
     game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
     game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
-    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
+    /* ROM PlayerLoseLife queues Silence before it transfers control to
+     * ContinueGame.  The following InitializeArea queues the same selector
+     * through AreaMusicQueue, but this event-side pass clears the previous
+     * area-music state first. */
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x80U;
     game->ram[MYSMB_RAM_NUMBER_OF_LIVES]--;
     if (game->ram[MYSMB_RAM_NUMBER_OF_LIVES] >= 0x80U) {
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;

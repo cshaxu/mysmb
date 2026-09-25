@@ -40,7 +40,13 @@ int main(void)
     game.ram[0x00f1U] = 0x40U;
     game.ram[0x00f2U] = 0x01U;
     game.ram[0x00f3U] = 0x02U;
+    /* Silence is an event selector during PlayerLoseLife and must terminate
+     * in its dispatch pass, before the following area initialization. */
+    game.ram[0x00fcU] = 0x80U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07b1U] != 0U || game.ram[0x00fcU] != 0U) return 4;
     game.ram[0x00faU] = 1U;
+    game.ram[0x07b1U] = 1U;
     game.ram[0x00fcU] = 8U;
     mysmb_audio_step(&game);
     if (game.ram[0x07b2U] != 1U || game.ram[0x07c6U] != 1U ||

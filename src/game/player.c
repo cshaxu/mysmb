@@ -288,13 +288,13 @@ void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool)
     game->ram[MYSMB_VERTICAL_FORCE_DOWN] = fall_force[index];
     game->ram[MYSMB_PLAYER_Y_FORCE] = initial_force[index];
     game->ram[MYSMB_PLAYER_Y_SPEED] = initial_speed[index];
-    /* ROM PJumpSnd: swimming reuses stomp; dry jumps select small/big.
+    /* ROM PJumpSnd: PlayerSize=$01 is small Mario; dry jumps select small/big.
      * SoundEngine consumes the queue later in this same frame. */
     if (game->ram[MYSMB_SWIMMING] != 0U) {
         game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x04U;
     } else {
         game->ram[MYSMB_SQUARE1_SOUND_QUEUE] =
-            game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0x80U : 0x01U;
+            game->ram[MYSMB_PLAYER_SIZE] != 0U ? 0x80U : 0x01U;
     }
 }
 

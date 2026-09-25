@@ -474,6 +474,10 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
             mysmb_audio_find_header_selector(event, 0U));
         game->ram[MYSMB_RAM_AREA_MUSIC_ALT] = game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER];
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
+        /* ROM Silence's Square 2 stream ends immediately.  EndOfMusicData
+         * therefore clears the event buffer in this SoundEngine pass, before
+         * InitializeArea has a chance to queue the replacement area header. */
+        if (event == 0x80U) game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
     }
     else if (area != 0U) {
         /* ROM LoadAreaMusic seeds this counter before selecting any area

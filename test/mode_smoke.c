@@ -20,7 +20,8 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x075aU] != 1U || game.ram[0x075bU] != 5U ||
         game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
-        game.ram[0x000eU] != 0U || game.ram[0x0754U] != 1U) return 1;
+        game.ram[0x000eU] != 0U || game.ram[0x0754U] != 1U ||
+        game.ram[0x00fcU] != 0x80U) return 1;
 
     /* The last solo life enters the original three-stage game-over mode. */
     mysmb_game_initialize(&game);

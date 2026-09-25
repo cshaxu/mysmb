@@ -424,7 +424,7 @@ int main(void)
         return 1;
     }
     game.ram[0x0700U] = 0x1cU;
-    game.ram[0x0754U] = 0U;
+    game.ram[0x0754U] = 1U;
     game.ram[0x00b5U] = 2U;
     game.ram[0x00ceU] = 0x90U;
     mysmb_player_start_jump(&game, 0U);
