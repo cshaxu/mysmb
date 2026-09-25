@@ -16,6 +16,7 @@ void mysmb_world_impose_gravity_block(struct mysmb_game *game,
     mysmb_u8 carry_dummy;
     mysmb_u8 carry_y;
     mysmb_u8 page_delta;
+    mysmb_u16 low_sum;
 
     old_value = game->ram[MYSMB_BLOCK_Y_DUMMY + slot];
     game->ram[MYSMB_BLOCK_Y_DUMMY + slot] =
@@ -23,9 +24,10 @@ void mysmb_world_impose_gravity_block(struct mysmb_game *game,
     carry_dummy = game->ram[MYSMB_BLOCK_Y_DUMMY + slot] < old_value ? 1U : 0U;
     page_delta = game->ram[MYSMB_BLOCK_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
     old_value = game->ram[MYSMB_BLOCK_Y + slot];
-    game->ram[MYSMB_BLOCK_Y + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_BLOCK_Y_SPEED + slot] + carry_dummy);
-    carry_y = game->ram[MYSMB_BLOCK_Y + slot] < old_value ? 1U : 0U;
+    low_sum = (mysmb_u16)old_value + game->ram[MYSMB_BLOCK_Y_SPEED + slot] +
+        carry_dummy;
+    game->ram[MYSMB_BLOCK_Y + slot] = (mysmb_u8)low_sum;
+    carry_y = low_sum > 0xffU ? 1U : 0U;
     game->ram[MYSMB_BLOCK_Y_HIGH + slot] =
         (mysmb_u8)(game->ram[MYSMB_BLOCK_Y_HIGH + slot] + page_delta + carry_y);
     old_value = game->ram[MYSMB_BLOCK_Y_FORCE + slot];
