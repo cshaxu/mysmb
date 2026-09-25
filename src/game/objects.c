@@ -3282,6 +3282,10 @@ static void mysmb_objects_give_one_coin(struct mysmb_game *game)
     (void)mysmb_area_queue_score_coin_status(game);
 }
 
+#ifdef MYSMB_DOS16_TARGET
+#pragma code_seg("MYSMB_BLOCK")
+#endif
+
 /* ROM RemoveCoin_Axe/PutBlockMetatile.  A removed coin writes two blank
  * metatile rows to the ordinary pending VRAM list before GiveOneCoin appends
  * its score and tally commands. */
