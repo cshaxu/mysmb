@@ -26,11 +26,8 @@ void mysmb_enemy_core_step(struct mysmb_game *game,
                 mysmb_objects_finish_power_up(game);
             }
         }
-        else if (slot < 5U) {
-            (void)mysmb_enemy_stream_process_slot(game, source, slot);
-        }
         else {
-            (void)mysmb_enemy_stream_process_next(game, source);
+            (void)mysmb_enemy_stream_process_current(game, source, slot);
         }
         mysmb_objects_step_floatey_number(game, slot);
     }

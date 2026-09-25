@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S2/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S2/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -37,3 +37,7 @@ The full existing `ProcessEnemyData` adapter, including requested-slot reservati
 ## S2 P1: actor dispatch boundary
 
 `frame_root.c` no longer contains fireball ordering, the six `ObjectOffset` passes, normal-enemy routing, sixth-slot power-up routing, stream invocation, or floatey-number ordering. Those ROM-owned operations now have one shared entry, `mysmb_enemy_core_step`, in `src/game/enemy/core.c`; its sole caller is the GameEngine mode route. This is a relocation only: the bounded 600-sample continuation is byte-identical to the prior baseline at the first meaningful work-RAM divergence (sample 172 / `$03ae`, 1,352 differing work-RAM bytes); CIRAM, palette, audio state, and PPU scalar outputs remain zero-difference. x64 and x86 each pass 78/78 tests. The OpenNT large-model build links an MZ image with the same module. Refreshed artifacts: mysmb16.exe SHA-256 F3E610D2048A2D62638EF5B00736F4AC5E72586A9BA4E6BD30418BF9D8643C69, mysmb32.exe SHA-256 F2FA32FA2085E31C3EE7DA2CEE258C7D6827513E5095CA43A863A706A7A65DBB, mysmb64.exe SHA-256 3E37F8AE550FED6514A63EEA517ECAF063036C68BC3932D21D209116836DAB27.
+
+## S2 P2: current ObjectOffset stream entry
+
+The GameEngine actor path now calls `mysmb_enemy_stream_process_current(game, source, ObjectOffset)` for every empty slot, including the sixth slot. `ProcessEnemyData` records its page/X into that same slot before the right-boundary decision, and it no longer reserves sibling slots or searches the first free normal slot. The sixth slot rejects ordinary records before page-control/activation, matching `CheckEndofBuffer`; `process_next` remains only as an isolated-test convenience and is absent from the game-frame call path. The 600-sample ROM continuation reduces total CPU-RAM differences from 29,786 to 24,226 while retaining the known first work-RAM difference at sample 172 / `$03ae` (1,352 bytes); CIRAM, palette, audio state, and PPU scalars remain zero-difference. x64 and x86 each pass 78/78 tests. The OpenNT large-model build links the same source to an MZ executable. Refreshed artifacts: mysmb16.exe SHA-256 C0A56CC53CD4A4EAC3BE0A0F490D2B868958D3B9E3C320CCE93D9389F651D6C0, mysmb32.exe SHA-256 F8955A2DC2BF9069CC13BFC6832D7364AB10AF985CE8993D4F0EA7951401185D, mysmb64.exe SHA-256 F4D913C01608982FA55EAA44F027170454CB8EAF2582EF10595154B60FD3C677.

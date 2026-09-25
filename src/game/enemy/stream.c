@@ -52,29 +52,16 @@ enum {
  * keeps the original public stream probe while reserving earlier empty slots
  * so a GameEngine pass can initialize exactly the requested normal slot. */
 mysmb_u8 mysmb_enemy_stream_process_slot(struct mysmb_game *game,
-                                           const struct mysmb_area_source *source,
-                                           mysmb_u8 slot)
+                                         const struct mysmb_area_source *source,
+                                         mysmb_u8 slot)
 {
-    mysmb_u8 flags[5];
-    mysmb_u8 index;
-    mysmb_u8 result;
-
     if (slot >= 5U || game->ram[MYSMB_ENEMY_FLAG + slot] != 0U) return 0U;
-    for (index = 0U; index < 5U; ++index) {
-        flags[index] = game->ram[MYSMB_ENEMY_FLAG + index];
-        if (index != slot && flags[index] == 0U) {
-            game->ram[MYSMB_ENEMY_FLAG + index] = 1U;
-        }
-    }
-    result = mysmb_enemy_stream_process_next(game, source);
-    for (index = 0U; index < 5U; ++index) {
-        if (index != slot) game->ram[MYSMB_ENEMY_FLAG + index] = flags[index];
-    }
-    return result;
+    return mysmb_enemy_stream_process_current(game, source, slot);
 }
 
-mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
-                                     const struct mysmb_area_source *source)
+mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
+                                             const struct mysmb_area_source *source,
+                                             mysmb_u8 slot)
 {
     mysmb_u16 address;
     mysmb_u16 world;
@@ -82,7 +69,6 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
     mysmb_u8 first;
     mysmb_u8 second;
     mysmb_u8 third;
-    mysmb_u8 slot;
     mysmb_u8 row;
 
     if (source == 0 || source->prg == 0 || game->ram[MYSMB_ENEMY_DATA_HIGH] < 0x80U) return 0U;
@@ -91,6 +77,8 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
     address = (mysmb_u16)(address + game->ram[MYSMB_ENEMY_DATA_OFFSET]);
     while (address < source->prg_size && source->prg[address] != 0xffU) {
         first = source->prg[address];
+        /* ROM CheckEndofBuffer rejects ordinary records in slot five. */
+        if ((first & 0x0fU) != 0x0eU && slot == 5U) return 0U;
         if ((first & 0x0fU) == 0x0fU && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
             if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
             game->ram[MYSMB_ENEMY_OBJECT_PAGE] = (mysmb_u8)(source->prg[address + 1U] & 0x3fU);
@@ -122,6 +110,9 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 0U;
         }
+        /* ROM PositionEnemyObj writes the current ObjectOffset before bounds. */
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
         world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_OBJECT_PAGE] << 8U) | (first & 0xf0U));
         right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
         if (world > (mysmb_u16)(right + 0x30U)) return 0U;
@@ -132,13 +123,7 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
          * object until a slot happens to free, which then shifts every later
          * spawn and visible OAM state. */
         if (world < right) {
-            for (slot = 0U; slot < 5U &&
-                 game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-            if (slot < 5U) {
-                game->ram[MYSMB_ENEMY_PAGE + slot] =
-                    game->ram[MYSMB_ENEMY_OBJECT_PAGE];
-                game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
-            }
+
             game->ram[MYSMB_ENEMY_DATA_OFFSET] =
                 (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
@@ -153,10 +138,7 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 1U;
         }
-        for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-        if (slot == 5U) return 0U;
-        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
+
         game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
         game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
         game->ram[MYSMB_ENEMY_ID + slot] = (mysmb_u8)(second & 0x3fU);
@@ -341,6 +323,20 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
         game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
         return 1U;
+    }
+    return 0U;
+}
+/* Convenience probe for isolated tests.  GameEngine must enter the current
+ * ObjectOffset directly through mysmb_enemy_stream_process_current. */
+mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
+                                         const struct mysmb_area_source *source)
+{
+    mysmb_u8 slot;
+
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) {
+            return mysmb_enemy_stream_process_current(game, source, slot);
+        }
     }
     return 0U;
 }
