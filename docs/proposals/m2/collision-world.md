@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S2/P2.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S2/P3.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -50,3 +50,7 @@ The original `ImposeGravity` uses the carry from `ADC SprObject_Y_Position,x` in
 ## S4 P1: move and restore LandPlyr
 
 `CheckForClimbMTiles`, `CheckForSolidMTiles`, and `LandPlyr` now belong to the shared collision owner. `LandPlyr` clears `Player_Y_Speed`, `Player_Y_MoveForce`, `StompChainCounter`, and `Player_State` in the original order after the successful foot probe. The player route retains only its source-order foot probes and invokes the world result. The 600-sample continuation removes the sample-142 `$0484` discrepancy and moves the first remaining work-RAM difference to sample 172 / `$03ae`; work-RAM differences fall from 1,810 to 1,352 bytes. x64 and x86 each pass 78/78 CTest cases. The OpenNT large-model DOS MZ relinks from the same shared source list with the established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16.exe SHA-256 BD8ED44D95E7C7494AF366613B288245FBC2BF58C11D04B25217460F1C9A57AD, mysmb32.exe SHA-256 31A54AB44A6341C656D912561AB58624A79E9D5F4F766AF81766CD1C37812DC1, mysmb64.exe SHA-256 44EB05E0C686F71C3887ABAA91116DB292BEAAE106D71EA10B1595408D384AA0.
+
+## S2 P3: generic SprObject movement seam
+
+`movement.c` now exposes the exact downward `ImposeGravity` path and `MoveObjectHorizontally` for a caller-selected ROM SprObject offset. The primitives retain the 6502 fractional carry into Y high position and the X-to-page carry; no caller changes in this P. The direct regression binds offset seven, the offset FireballObjCore obtains with `TXA; ADC #$07`, and covers both carry boundaries. T20 may now remove its duplicate arithmetic by consuming these T17 APIs in a separate source-slice P.

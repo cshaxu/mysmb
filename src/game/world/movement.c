@@ -77,3 +77,66 @@ void mysmb_world_impose_gravity_misc(struct mysmb_game *game,
         game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
     }
 }
+
+/* ROM $befc ImposeGravity when its A input is zero: fireballs and ordinary
+ * downward-moving SprObject arrays use this path.  `offset` is the source X
+ * register after the caller's GetProperObjOffset arithmetic. */
+void mysmb_world_impose_gravity_spr_object(struct mysmb_game *game,
+                                           mysmb_u8 offset,
+                                           mysmb_u8 downward_force,
+                                           mysmb_u8 maximum_speed)
+{
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+    mysmb_u8 page_delta;
+    mysmb_u16 low_sum;
+
+    old_value = game->ram[(mysmb_u16)(0x041dU + offset)];
+    game->ram[(mysmb_u16)(0x041dU + offset)] =
+        (mysmb_u8)(old_value + game->ram[(mysmb_u16)(0x043aU + offset)]);
+    carry = game->ram[(mysmb_u16)(0x041dU + offset)] < old_value ? 1U : 0U;
+    page_delta = game->ram[(mysmb_u16)(0x00a6U + offset)] >= 0x80U ? 0xffU : 0U;
+    old_value = game->ram[(mysmb_u16)(0x00d5U + offset)];
+    low_sum = (mysmb_u16)old_value + game->ram[(mysmb_u16)(0x00a6U + offset)] + carry;
+    game->ram[(mysmb_u16)(0x00d5U + offset)] = (mysmb_u8)low_sum;
+    carry = low_sum > 0xffU ? 1U : 0U;
+    game->ram[(mysmb_u16)(0x00bcU + offset)] =
+        (mysmb_u8)(game->ram[(mysmb_u16)(0x00bcU + offset)] + page_delta + carry);
+    old_value = game->ram[(mysmb_u16)(0x043aU + offset)];
+    game->ram[(mysmb_u16)(0x043aU + offset)] = (mysmb_u8)(old_value + downward_force);
+    carry = game->ram[(mysmb_u16)(0x043aU + offset)] < old_value ? 1U : 0U;
+    game->ram[(mysmb_u16)(0x00a6U + offset)] =
+        (mysmb_u8)(game->ram[(mysmb_u16)(0x00a6U + offset)] + carry);
+    if (game->ram[(mysmb_u16)(0x00a6U + offset)] >= maximum_speed &&
+        game->ram[(mysmb_u16)(0x00a6U + offset)] < 0x80U &&
+        game->ram[(mysmb_u16)(0x043aU + offset)] >= 0x80U) {
+        game->ram[(mysmb_u16)(0x00a6U + offset)] = maximum_speed;
+        game->ram[(mysmb_u16)(0x043aU + offset)] = 0U;
+    }
+}
+
+/* ROM $be8e MoveObjectHorizontally. */
+void mysmb_world_move_spr_object_horizontally(struct mysmb_game *game,
+                                               mysmb_u8 offset)
+{
+    mysmb_u8 speed;
+    mysmb_u8 fraction;
+    mysmb_u8 integer;
+    mysmb_u8 page_delta;
+    mysmb_u8 old_value;
+    mysmb_u8 carry;
+
+    speed = game->ram[(mysmb_u16)(0x005eU + offset)];
+    fraction = (mysmb_u8)(speed << 4U);
+    integer = (mysmb_u8)(speed >> 4U);
+    if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
+    page_delta = integer >= 0x80U ? 0xffU : 0U;
+    old_value = game->ram[(mysmb_u16)(0x0407U + offset)];
+    game->ram[(mysmb_u16)(0x0407U + offset)] = (mysmb_u8)(old_value + fraction);
+    carry = game->ram[(mysmb_u16)(0x0407U + offset)] < old_value ? 1U : 0U;
+    old_value = game->ram[(mysmb_u16)(0x008dU + offset)];
+    game->ram[(mysmb_u16)(0x008dU + offset)] = (mysmb_u8)(old_value + integer + carry);
+    carry = game->ram[(mysmb_u16)(0x008dU + offset)] < old_value ? 1U : 0U;
+    game->ram[(mysmb_u16)(0x0074U + offset)] =
+        (mysmb_u8)(game->ram[(mysmb_u16)(0x0074U + offset)] + page_delta + carry);
+}
