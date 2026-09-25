@@ -59,3 +59,17 @@ Scope is SMBDIS lines 699-981 plus InitializeMemory at line 2795. This map recor
 $128adcb7ba01ffa540440ef1c9382dfa42ee83e604d685f496deb233c4c304f30` |
 $14237b9e08f292eafdc2db25cc2a103e3d677a279793165387e38c1ba5cf675d8` |
 x86 and x64 CTest each passed 76/76 after the P11 frame-root relocation. The OpenNT large-model DOS link produced `mysmb16.exe` from the same source set.
+## P13 bounded NMI-return evidence
+
+A fresh 600-sample owner-local comparison used ROM controller script
+`30:$08,31:0,60:$80` and native decoded-input script
+`30:$10,31:0,60:$01`, with the native title bootstrap. The raw traces remain
+only in `build/t14-frame-root-p13`.
+
+Both x64 and x86 native traces have SHA-256
+`1e214bad194a9f490601b834437e335b1540a2fdf4f0f607e0d8ca357f7607f3`.
+Against the original ROM, CPU OAM backing RAM, both CIRAM pages, palette,
+visible OAM, all 14 audio-command bytes, and each of the seven PPU scalar
+bytes have zero differences over samples 0–599. Work RAM `$0300-$07ff`
+differs by two bytes only at sample 0. Zero page and stack are still different
+and remain outside this route's output-equivalence claim.

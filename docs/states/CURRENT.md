@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 T14 S1 active.**
+**M2 T14 S2 active.**
 
 | Field | Record |
 | --- | --- |
 | Identifier Mode | Implementation |
-| Objective | Establish the ROM frame-root module boundary without changing gameplay behavior, then audit root labels and NMI-return evidence. |
+| Objective | Translate reset/cold-boot and the NMI prologue in ROM order, preserving its game-owned PPU/OAM and input boundaries. |
 | Scope | frame_root, game root seam, shared PPU-frame storage, OpenNT DOS build, and three executable artifacts. |
-| Result | P1–P12: NMI prologue, pause/OAM branch, top-score update, and the actual operating-mode tree are now owned by frame_root; game.c keeps only the public entry delegation plus game subroutes. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
+| Result | S1 closed in P1–P13: root labels are mapped, the mode tree is owned by frame_root, and a fresh 600-sample ROM route proves zero difference in OAM/CIRAM/palette/audio/PPU output with byte-identical x86/x64 native traces. S2 now audits reset/cold-boot and NMI-prologue order. DOS PPU buffer uses far runtime storage so the shared compositor builds in 16-bit mode. |
 | Artifact rule | Every P commit includes refreshed mysmb16.exe, mysmb32.exe, and mysmb64.exe. |
 | Stop condition | Stop if extraction changes a ROM-owned state transition or introduces platform gameplay logic. |
 

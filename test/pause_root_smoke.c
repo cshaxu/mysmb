@@ -11,6 +11,7 @@ int main(void)
     game.ram[0x0770U] = 1U;
     game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 8U;
+    game.ram[0x0009U] = 0x3fU;
     game.ram[0x0722U] = 1U;
     game.ram[0x0204U] = 0x31U;
     input.buttons = MYSMB_BUTTON_START;
@@ -20,8 +21,9 @@ int main(void)
     if (game.ram[0x00faU] != 1U) return 3;
     if (game.ram[0x0772U] != 3U) return 4;
     if (game.ram[0x0204U] != 0x31U) return 5;
+    if (game.ram[0x0009U] != 0x3fU) return 6;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0777U] != 0x2aU) return 6;
+    if (game.ram[0x0777U] != 0x2aU) return 7;
     return 0;
 }

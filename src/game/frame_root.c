@@ -42,7 +42,6 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     *mode_before = game->ram[MYSMB_ROOT_OPERATING_MODE];
     *task_before = game->ram[MYSMB_ROOT_OPERATING_MODE_TASK];
     game->frame_number++;
-    game->ram[MYSMB_ROOT_FRAME_COUNTER]++;
     if (game->oam_dma_primed != 0U) mysmb_game_submit_oam(game);
     else game->oam_dma_primed = 1U;
     mysmb_game_commit_vram_buffer(game);
@@ -51,7 +50,10 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     (void)mysmb_frame_root_latch_joypad1(game, input->buttons);
     paused = mysmb_frame_root_pause_step(game);
     mysmb_frame_root_update_top_score(game);
-    if (paused == 0U) mysmb_game_tick_player_timers(game);
+    if (paused == 0U) {
+        mysmb_game_tick_player_timers(game);
+        game->ram[MYSMB_ROOT_FRAME_COUNTER]++;
+    }
     mysmb_game_rotate_pseudorandom(game);
     if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return paused;
     if (paused == 0U) {
