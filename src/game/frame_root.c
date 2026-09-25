@@ -11,8 +11,9 @@ enum {
     MYSMB_ROOT_OAM = 0x0200U
 };
 
-void mysmb_frame_root_begin(struct mysmb_game *game, mysmb_u8 *mode_before,
-                            mysmb_u8 *task_before)
+void mysmb_frame_root_begin(struct mysmb_game *game,
+                            const struct mysmb_input *input,
+                            mysmb_u8 *mode_before, mysmb_u8 *task_before)
 {
     mysmb_u8 oam_offset;
 
@@ -25,6 +26,7 @@ void mysmb_frame_root_begin(struct mysmb_game *game, mysmb_u8 *mode_before,
     mysmb_game_commit_vram_buffer(game);
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
+    (void)mysmb_frame_root_latch_joypad1(game, input->buttons);
     mysmb_game_tick_player_timers(game);
     mysmb_game_rotate_pseudorandom(game);
     if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return;

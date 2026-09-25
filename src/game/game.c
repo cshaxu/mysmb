@@ -1170,7 +1170,7 @@ void mysmb_game_tick(struct mysmb_game *game, const struct mysmb_input *input,
     mysmb_u8 enemy_slot;
     struct mysmb_area_source area_source;
 
-    mysmb_frame_root_begin(game, &mode_before, &task_before);
+    mysmb_frame_root_begin(game, input, &mode_before, &task_before);
     mysmb_game_title_step(game, input);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
@@ -1405,7 +1405,8 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
 {
     mysmb_u8 buttons;
 
-    buttons = mysmb_frame_root_latch_joypad1(game, input->buttons);
+    (void)input;
+    buttons = game->ram[MYSMB_RAM_SAVED_JOYPAD1];
     if (game->ram[MYSMB_RAM_OPER_MODE] != 0U ||
         game->ram[MYSMB_RAM_OPER_MODE_TASK] != 3U) {
         return;
