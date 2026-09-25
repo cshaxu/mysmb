@@ -246,8 +246,8 @@ int main(void)
     game.ram[0x0057U] = 2U;
     game.ram[0x0045U] = 1U;
     game.ram[0x05f2U] = 0x61U;
-    if (mysmb_player_check_sides(&game) == 0U || game.ram[0x0086U] != 0x22U ||
-        game.ram[0x0057U] != 0U || game.ram[0x0490U] != 0xfeU) {
+    if (mysmb_player_check_sides(&game) == 0U || game.ram[0x0086U] != 0x23U ||
+        game.ram[0x0057U] != 2U || game.ram[0x0490U] != 0xfdU) {
         return 1;
     }
     game.ram[0x0770U] = 1U;

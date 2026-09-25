@@ -54,7 +54,7 @@ int main(void)
     game.ram[0x0644U] = 0x51U;
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 0U) return 10;
-    /* ROM PlayerBGCollision: a right-facing Mario samples (X+12,Y+24). */
+    /* ROM SideCheckLoop first reaches the opposite-side probe ($00=$02).  With rightward speed, ImpedePlayerMove clears d1 but must not push Mario left. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
     game.ram[0x00b5U] = 1U;
@@ -69,8 +69,8 @@ int main(void)
     game.ram[0x000eU] = 8U;
     game.ram[0x0522U] = 0x61U;
     if (mysmb_player_check_sides(&game) == 0U) return 11;
-    if (game.ram[0x0086U] != 0x1fU || game.ram[0x0057U] != 0U ||
-        game.ram[0x0705U] != 0x80U) return 12;
+    if (game.ram[0x0086U] != 0x20U || game.ram[0x0057U] != 0x10U ||
+        game.ram[0x0490U] != 0xfdU || game.ram[0x0705U] != 0x80U) return 12;
 
     /* PlayerHeadCollision still bounces an ordinary brick for small Mario.
      * The brick is not in BlockBumpedChk, but the ROM sets Y speed to zero
