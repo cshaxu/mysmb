@@ -21,7 +21,7 @@ owner exists; it does not replace S2�S4 route comparison.
 | `PrintVictoryMessages` | `terminal_modes.c:mysmb_game_print_victory_messages` | translated | S3 compares text/music/timer branches |
 | `PlayerEndWorld` | `terminal_modes.c:mysmb_game_step_victory` | translated structure | S3 verifies world-8 B path |
 | `FloateyNumbersRoutine` | `objects.c:mysmb_objects_step_floatey_number` | translated | preserve game-engine call ordering |
-| `GameOverMode` | `frame_root.c` + `game.c:mysmb_game_step_game_over` | translated structure | S4 traces start/timer/player transpose route |
+| `GameOverMode` | `frame_root.c` + `terminal_modes.c:mysmb_game_step_game_over` | translated structure | S4 traces start/timer/player transpose route |
 
 ## Controller-edge contract
 
@@ -50,3 +50,18 @@ with S1 P1 were `mysmb16.exe`
 ## S2 P2 menu-route migration
 
 GameMenuRoutine now follows the ROM labels ChkSelect, ChkWorldSel, SelectBLogic, IncWorldSel, UpdateShroom, NullJoypad, RunDemo, and ResetTitle in one title-mode owner. DrawMushroomIcon is also owned by that module and is invoked by ScreenRoutines only as its original caller. Focused tests assert the source bytes and state transitions; both Windows widths pass 78/78, and OpenNT links the same source.
+
+## Module-boundary gate before further terminal logic changes
+
+The current C tree is deliberately aligned to the admitted ROM slices:
+
+| Owner | Admitted responsibility | Forbidden responsibility |
+| --- | --- | --- |
+| boot.c, frame_root.c | reset/NMI order, input latch, timer bank, PPU commit, operation-mode dispatch | title/menu, terminal-mode, actor or host-window decisions |
+| title_modes.c | lines 982-1136 title, selection, demo and title bootstrap leaves | victory/game-over, screen-task implementation or platform input |
+| terminal_modes.c | lines 1137-1385 victory, end-world, life-loss, game-over and their area-pointer transitions | frame scheduling, object-loop execution or host presentation |
+| game.c | currently admitted shared setup, timer and parser hand-off leaves; screen/task code remains reserved for the next Screen/text/status T | title and terminal decisions |
+| objects.c | actor/object leaves; FloateyNumbersRoutine stays here because GameEngine calls it per enemy slot | operation-mode dispatch or platform output |
+| src/platform/** | physical input to mysmb_input, pacing and submission of a completed shared frame | RAM state writes, mode/task decisions, collision, scroll, text/HUD or OAM construction |
+
+Future extraction occurs only when its owning ROM slice is admitted as a T task. A repair inside a current slice may not use game.c or a platform adapter as a convenience owner.

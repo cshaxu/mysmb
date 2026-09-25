@@ -15,8 +15,8 @@ mysmb_u8 mysmb_dos16_decode_bios_key(mysmb_u8 scan_code, mysmb_u8 shift_status, 
     case 0x1fU: case 0x50U: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_DOWN); break;
     case 0x11U: case 0x48U: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_UP); break;
     case 0x1cU: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_START); break;
-    case 0x24U: case 0x2cU: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_B); break;
-    case 0x25U: case 0x2dU: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_A); break;
+    case 0x24U: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_A); break;
+    case 0x25U: buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_B); break;
     default: break;
     }
     return buttons;

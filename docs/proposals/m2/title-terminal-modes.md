@@ -20,7 +20,7 @@ Entered through the operation-mode tree; emits text/VRAM, OAM and audio requests
 
 1. **S1 complete (P1)** - Bind title, select/start and demo labels to current code or replacement targets; record button-edge semantics.
 2. **S2 complete (P1-P3)** - Translate title bootstrap, menu, selection and demo state/data paths; prove idle and Select NMI output.
-3. **S3 active (P1)** - Translate victory, end-world and floating-number paths including text/OAM/audio output.
+3. **S3 active (P1-P5)** - Translate victory, end-world and floating-number paths including text/OAM/audio output; P5 freezes the ROM-slice module boundaries before further terminal changes.
 4. **S4 queued** - Compare title-start, demo, victory and game-over reference routes; remove displaced branches.
 
 ## Acceptance
@@ -55,3 +55,7 @@ ROM NextArea and PlayerEndWorld both call LoadAreaPointer immediately after chan
 ## S3 P4: FloateyNumbers terminal collaborator
 
 FloateyNumbersRoutine remains owned by objects.c because GameEngine invokes it after each enemy slot, but it is a T15 terminal-mode collaborator through score, extra-life and OAM output. ROM comparison found two missing effects: a Spiny score must use the ordinary enemy OAM offset, and control 0x0b at timer 0x2b increments NumberofLives and queues Sfx_ExtraLife (Square2SoundQueue=0x40). The shared object route now implements both in source order. The Floatey OAM regression covers the 1-UP score, sound queue and Spiny offset. x64 and x86 CTest passed 78/78; OpenNT linked the DOS MZ with the existing OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 B160B17030A2168CA7B3323E20078AADFBB26D0D796980044BE0463D87D088BB, mysmb32.exe AE565456561C4AA39F8BBED9C2FA8A565FC527080A348163328376819156AA45, and mysmb64.exe C87A5281478765A34B295DA39DC70075468ECC486DD9DF2FA25CA1C16D3D4E82.
+
+## S3 P5: structure and platform-boundary gate
+
+The T15 label map now records the concrete source-owner boundaries that govern all remaining migration. title_modes.c owns only title/menu/demo, terminal_modes.c owns only terminal mode leaves, and Floatey remains an object-loop collaborator because GameEngine invokes it once per enemy slot. game.c is prohibited from reacquiring title or terminal decisions; its screen/task leaves are reserved for the separately admitted Screen/text/status candidate. The platform audit found and corrected only physical-key translation: Win32 maps J to NES A and K to NES B; DOS scan codes J and K map to the same shared button bits. No platform file reads or writes game RAM, mode/task state, collision, scroll, HUD/text, or OAM construction. This is structural and input-adapter work, not a gameplay-rule change. A clean rebuild also exposed two stale core-smoke expectations for CPU RAM 0160 and 01fe. InitializeMemory deliberately leaves that range unspecified; the test now checks only source-owned initialized state. Full rebuilt x64 and x86 suites each pass 78/78; OpenNT links the DOS MZ with the existing OLDNAMES.LIB warning. Refreshed artifacts: mysmb16.exe SHA-256 5902B97D80B1F281F6D37B055F1B0D7E7C35F6F8C2572CC49E8D27A660E5C851, mysmb32.exe EAEFB29870C48A1EB59C5119B4E1E5D09F3AE5DE0D35E6AAB293D7BB761FEF6C, and mysmb64.exe 62CA33C0819323C97B12910C1986A746DD6C96540FDC54243A69613001501DCE.
