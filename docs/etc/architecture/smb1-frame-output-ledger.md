@@ -2148,3 +2148,14 @@ backing RAM, visible OAM, both CIRAM pages, palette, and all PPU-visible
 scalars at every sample.  It proves the admitted path through death entry;
 the post-entry restart, two-player exchange, Warp, and castle routes remain
 separate M2 evidence requirements.
+
+
+## T11 S1 P19 Clean Cross-Width Collision Validation
+
+Fresh clean CMake trees under build were configured from the same current
+source for Win32 x86 and Win32 x64 with the owner-local ROM only as a build
+input.  Each tree built its native window executable and the collision
+regression smoke; each passed the collision regression and its matching Win32
+self-test.  This covers the ROM-derived object page-carry correction on both
+current validation widths.  Build products remain ignored beneath build and
+are not M2 closure evidence by themselves.
