@@ -63,9 +63,9 @@ static unsigned int mysmb_win32_poll_keys(void)
     if ((GetAsyncKeyState(VK_LSHIFT) & 0x8000) != 0 ||
         (GetAsyncKeyState(VK_RSHIFT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_SELECT;
     if ((GetAsyncKeyState('J') & 0x8000) != 0 ||
-        (GetAsyncKeyState('Z') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_B;
+        (GetAsyncKeyState('Z') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_A;
     if ((GetAsyncKeyState('K') & 0x8000) != 0 ||
-        (GetAsyncKeyState('X') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_A;
+        (GetAsyncKeyState('X') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_B;
     return keys;
 }
 
