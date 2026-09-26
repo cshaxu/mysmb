@@ -53,6 +53,14 @@ int main(void)
         game.ram[0x078fU] != 0x10U || game.ram[0x0070U] != 1U ||
         game.ram[0x0089U] != 0x80U || game.ram[0x00b8U] != 1U ||
         game.ram[0x00d1U] != 0xf8U) return 3;
+    /* With an unexpired timer, InitFlyingCheepCheep returns but the ROM
+     * ChkEnemyFrenzy activation flag remains live in the current slot. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x06cdU] = 20U;
+    game.ram[0x078fU] = 1U;
+    if (mysmb_enemy_stream_process_current(&game, 0, 1U) != 1U ||
+        game.ram[0x000fU + 1U] != 1U || game.ram[0x0016U + 1U] != 20U ||
+        game.ram[0x001eU + 1U] != 0U || game.ram[0x078fU] != 1U) return 4;
     /* In normal difficulty a free fourth slot consumes the random timer but
      * does not create a fourth simultaneous flying fish. */
     mysmb_game_initialize_memory(&game, 0xfeU);

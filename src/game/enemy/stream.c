@@ -135,6 +135,7 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
 
     if (game->ram[MYSMB_ENEMY_FRENZY_QUEUE] != 0U) {
         game->ram[MYSMB_ENEMY_ID + slot] = game->ram[MYSMB_ENEMY_FRENZY_QUEUE];
+        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
         game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
         game->ram[MYSMB_ENEMY_FRENZY_QUEUE] = 0U;
         mysmb_enemy_checkpoint_loaded(game, slot);
