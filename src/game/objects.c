@@ -2180,21 +2180,13 @@ static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
+    struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
 
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
         game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
-    x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-    page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
-        game->ram[MYSMB_ENEMY_X + slot], x);
-    row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
-    address = (mysmb_u16)(((page & 1U) != 0U ?
-                            0x05d0U : 0x0500U) + (x >> 4U) + row);
-    tile = address < 0x0800U ? game->ram[address] : 0U;
+    tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
+                                           &terrain) != 0U ? terrain.metatile : 0U;
     if (mysmb_objects_is_solid_terrain(tile) == 0U) {
         game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
         return;

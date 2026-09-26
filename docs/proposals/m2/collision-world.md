@@ -321,3 +321,10 @@ source `$15` probe index (X+$08, Y+$18). The frenzy route retains its ROM
 non-solid test and all Spiny-only landing/state writes. `lakitu_smoke` covers
 both falling and landed eggs, while `enemy_terrain_state_smoke` covers the
 ordinary route that shares the primitive. Full x86/x64 CTest suites pass 83/83, including platform-purity. No platform source participates.
+## S5 P18: route Hammer Bro through shared enemy block query
+
+`HammerBroBGColl` duplicated `ChkUnderEnemy`'s `$15` block-buffer probe.
+It now calls `mysmb_world_query_enemy_block` with the original probe index;
+Hammer Bro retains only its non-solid, interval-timer, landing, and state
+rules. The focused enemy-terrain, Hammer Bro, and Hammer Bro OAM regressions
+pass on x86 and x64. Full x86/x64 CTest suites pass 83/83, including platform-purity. No platform source participates.
