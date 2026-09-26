@@ -100,3 +100,5 @@ completion. T9 audits and replaces the insufficient frame/output proof.
 - **M0 Td S2 P1:** Correct the platform plan: Win32 x86/x64 windows run the first native game; the shared C90 core remains 16-bit compatible, while DOS VGA awaits its dedicated adapter and 486SX validation.
 
 M2 T19 S2/P3 has begun structural recovery: `MoveD_EnemyVertically` is now owned by `src/game/enemy/movement.c`; `objects.c` is no longer a target for new actor logic.
+
+M2 T17 S2/P5 is complete: `MoveObjectHorizontally` now preserves its full ADC carry and `MoveEnemyHorizontally` has one world-owner wrapper; T17 S5/P4 remains active.

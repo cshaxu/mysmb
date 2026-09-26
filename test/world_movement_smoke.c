@@ -24,5 +24,16 @@ int main(void)
     game.ram[0x006dU + 7U] = 1U;
     mysmb_world_move_spr_object_horizontally(&game, 7U);
     if (game.ram[0x0086U + 7U] != 2U || game.ram[0x006dU + 7U] != 2U) return 2;
+
+    /* $22 + signed-$01 + carried fractional step produces $22 with an ADC
+     * carry.  Page delta $ff plus that carry preserves page $03. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0057U + 1U] = 0xffU;
+    game.ram[0x0400U + 1U] = 0x10U;
+    game.ram[0x0086U + 1U] = 0x22U;
+    game.ram[0x006dU + 1U] = 3U;
+    mysmb_world_move_enemy_horizontally(&game, 0U);
+    if (game.ram[0x0400U + 1U] != 0U || game.ram[0x0086U + 1U] != 0x22U ||
+        game.ram[0x006dU + 1U] != 3U) return 3;
     return 0;
 }

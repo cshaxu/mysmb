@@ -154,8 +154,6 @@ enum {
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
 static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
-static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
-                                                  mysmb_u8 slot);
 static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
@@ -605,7 +603,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
                 }
             }
-            mysmb_objects_move_enemy_horizontally(game, slot);
+            mysmb_world_move_enemy_horizontally(game, slot);
             x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
             page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
                 (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
@@ -838,7 +836,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                 game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
                 game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
             }
-            mysmb_objects_move_enemy_horizontally(game, slot);
+            mysmb_world_move_enemy_horizontally(game, slot);
             if (game->ram[MYSMB_ENEMY_Y_HIGH + slot] >= 2U) {
                 game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
             }
@@ -891,7 +889,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
                 game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
             }
         }
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
 }
 
 /* ROM EraseEnemyObject.  Defeated Goombas reach this through the interval
@@ -1032,7 +1030,7 @@ void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
         }
         if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) == 0U) {
-            mysmb_objects_move_enemy_horizontally(game, slot);
+            mysmb_world_move_enemy_horizontally(game, slot);
         }
         mysmb_objects_draw_bullet_bill(game, slot);
     }
@@ -1424,7 +1422,7 @@ void mysmb_objects_step_lakitus(struct mysmb_game *game)
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(0U - speed);
             game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
         }
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
     }
 }
 
@@ -1592,7 +1590,7 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
              ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) < 3U))) {
             mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
         }
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
     }
 }
 
@@ -1626,7 +1624,7 @@ void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
         }
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
     }
 }
 
@@ -1720,7 +1718,7 @@ void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game)
             effective_speed = (mysmb_u8)(0U - secondary);
         }
         game->ram[MYSMB_ENEMY_X_SPEED + slot] = effective_speed;
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
         game->ram[MYSMB_ENEMY_X_SPEED + slot] = secondary;
         if ((game->ram[MYSMB_FRAME_COUNTER] & 3U) == 0U) {
             game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] +
@@ -1968,34 +1966,6 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
     if (address < 0x0800U && game->ram[address] == 0U) game->ram[address] = 0x26U;
 }
 
-/* ROM $dc96 MoveObjectHorizontally, with the enemy-object offset applied. */
-static void mysmb_objects_move_enemy_horizontally(struct mysmb_game *game,
-                                                  mysmb_u8 slot)
-{
-    mysmb_u8 speed;
-    mysmb_u8 fraction;
-    mysmb_u8 integer;
-    mysmb_u8 old_force;
-    mysmb_u8 old_x;
-    mysmb_u8 carry;
-    mysmb_u8 page_delta;
-    mysmb_u16 x_sum;
-
-    speed = game->ram[MYSMB_ENEMY_X_SPEED + slot];
-    fraction = (mysmb_u8)(speed << 4U);
-    integer = (mysmb_u8)(speed >> 4U);
-    if (integer >= 8U) integer = (mysmb_u8)(integer | 0xf0U);
-    page_delta = integer >= 0x80U ? 0xffU : 0U;
-    old_force = game->ram[MYSMB_ENEMY_X_FORCE + slot];
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_force + fraction);
-    carry = game->ram[MYSMB_ENEMY_X_FORCE + slot] < old_force ? 1U : 0U;
-    old_x = game->ram[MYSMB_ENEMY_X + slot];
-    x_sum = (mysmb_u16)old_x + integer + carry;
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)x_sum;
-    game->ram[MYSMB_ENEMY_PAGE + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] + page_delta + (x_sum >> 8U));
-}
-
 /* SetupFloateyNumber.  Rendering later consumes the saved position. */
 /* SetupFloateyNumber saves the current source-relative X coordinate. */
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
@@ -2039,7 +2009,7 @@ void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
             continue;
         }
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) continue;
-        mysmb_objects_move_enemy_horizontally(game, slot);
+        mysmb_world_move_enemy_horizontally(game, slot);
         mysmb_enemy_move_downward(game, slot, 0x0dU, 5U);
     }
 }
@@ -2316,7 +2286,7 @@ void mysmb_objects_step_platforms(struct mysmb_game *game)
              * whole-pixel delta for both player world position and scroll. */
             old_x = game->ram[MYSMB_ENEMY_X + slot];
             old_player_x = game->ram[MYSMB_PLAYER_X];
-            mysmb_objects_move_enemy_horizontally(game, slot);
+            mysmb_world_move_enemy_horizontally(game, slot);
             if (landed != 0U) {
                 game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_player_x +
                     game->ram[MYSMB_ENEMY_X + slot] - old_x);

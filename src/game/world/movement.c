@@ -125,6 +125,7 @@ void mysmb_world_move_spr_object_horizontally(struct mysmb_game *game,
     mysmb_u8 page_delta;
     mysmb_u8 old_value;
     mysmb_u8 carry;
+    mysmb_u16 x_sum;
 
     speed = game->ram[(mysmb_u16)(0x0057U + offset)];
     fraction = (mysmb_u8)(speed << 4U);
@@ -135,8 +136,18 @@ void mysmb_world_move_spr_object_horizontally(struct mysmb_game *game,
     game->ram[(mysmb_u16)(0x0400U + offset)] = (mysmb_u8)(old_value + fraction);
     carry = game->ram[(mysmb_u16)(0x0400U + offset)] < old_value ? 1U : 0U;
     old_value = game->ram[(mysmb_u16)(0x0086U + offset)];
-    game->ram[(mysmb_u16)(0x0086U + offset)] = (mysmb_u8)(old_value + integer + carry);
-    carry = game->ram[(mysmb_u16)(0x0086U + offset)] < old_value ? 1U : 0U;
+    x_sum = (mysmb_u16)old_value + integer + carry;
+    game->ram[(mysmb_u16)(0x0086U + offset)] = (mysmb_u8)x_sum;
+    /* ROM ADC sets carry from bit 8 even when the low result equals its
+     * input (for example $22 + $ff + carry = $22). */
+    carry = x_sum > 0xffU ? 1U : 0U;
     game->ram[(mysmb_u16)(0x006dU + offset)] =
         (mysmb_u8)(game->ram[(mysmb_u16)(0x006dU + offset)] + page_delta + carry);
+}
+
+/* ROM MoveEnemyHorizontally: X is ObjectOffset, INX selects the
+ * enemy arrays that follow the player at shared SprObject offset zero. */
+void mysmb_world_move_enemy_horizontally(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_world_move_spr_object_horizontally(game, (mysmb_u8)(slot + 1U));
 }
