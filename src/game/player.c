@@ -574,6 +574,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
     mysmb_u8 a_held;
     mysmb_u8 jump_height;
     mysmb_u8 player_state;
+    mysmb_u8 collision_result;
 
     /* PlayerDeath jumps into PlayerCtrlRoutine after its engine-$0b guard,
      * which deliberately skips the controller partition.  Death motion uses
@@ -591,9 +592,13 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
             if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
                 game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
                 if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
-                    (void)mysmb_player_check_head(game);
-                    (void)mysmb_player_check_feet(game);
-                    (void)mysmb_player_check_sides(game);
+                    collision_result = mysmb_player_check_head(game);
+                    if (collision_result != 2U) {
+                        collision_result = mysmb_player_check_feet(game);
+                        if (collision_result != 2U) {
+                            (void)mysmb_player_check_sides(game);
+                        }
+                    }
                 }
             }
         }
@@ -718,9 +723,13 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
                 game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
                 if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
-                    (void)mysmb_player_check_head(game);
-                    (void)mysmb_player_check_feet(game);
-                    (void)mysmb_player_check_sides(game);
+                    collision_result = mysmb_player_check_head(game);
+                    if (collision_result != 2U) {
+                        collision_result = mysmb_player_check_feet(game);
+                        if (collision_result != 2U) {
+                            (void)mysmb_player_check_sides(game);
+                        }
+                    }
                 }
             }
     }
@@ -1030,7 +1039,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     if (have_left != 0U && (left.metatile == 0xc2U || left.metatile == 0xc3U)) {
         mysmb_player_collect_metatile_coin(game, left.block_address_low,
                                    left.block_row_offset);
-        return 1U;
+        return 2U;
     }
     if (have_left != 0U && left.metatile != 0U) {
         if (mysmb_world_is_climbable(left.metatile) != 0U) return 0U;
@@ -1046,7 +1055,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
             mysmb_objects_remove_axe(game, left.block_address_low,
                                      left.block_row_offset);
-            return 1U;
+            return 2U;
         }
         /* ChkFootMTile reaches InitSteP while JumpspringHandler owns the
          * animation; it resets only Player_State and must not land Mario. */
@@ -1080,7 +1089,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     if (have_right != 0U && (right.metatile == 0xc2U || right.metatile == 0xc3U)) {
         mysmb_player_collect_metatile_coin(game, right.block_address_low,
                                    right.block_row_offset);
-        return 1U;
+        return 2U;
     }
     if (have_right != 0U && right.metatile != 0U) {
         if (mysmb_world_is_climbable(right.metatile) != 0U) return 0U;
@@ -1477,7 +1486,7 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
     if (terrain.metatile == 0xc2U || terrain.metatile == 0xc3U) {
         mysmb_player_collect_metatile_coin(game, terrain.block_address_low,
                                    terrain.block_row_offset);
-        return 1U;
+        return 2U;
     }
     if (game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U ||
         (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {

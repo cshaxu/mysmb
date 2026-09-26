@@ -100,7 +100,7 @@ int main(void)
     game.ram[0x0754U] = 1U;
     game.ram[0x0644U] = 0xc2U;
     game.ram[0x00feU] = 0U;
-    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0644U] != 0U ||
+    if (mysmb_player_check_feet(&game) != 2U || game.ram[0x0644U] != 0U ||
         game.ram[0x00feU] != 1U) return 37;
     /* HandleAxeMetatile enters from the left foot before LandPlyr, clears
      * its collision tile, and delegates ErACM -> RemoveCoin_Axe's fixed
@@ -117,7 +117,7 @@ int main(void)
     game.ram[0x074eU] = 1U;
     game.ram[0x0643U] = 0xc5U;
     game.ram[0x034bU] = 0U;
-    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0643U] != 0U ||
+    if (mysmb_player_check_feet(&game) != 2U || game.ram[0x0643U] != 0U ||
         game.ram[0x0772U] != 0U || game.ram[0x0770U] != 2U ||
         game.ram[0x0057U] != 0x18U || game.ram[0x0773U] != 6U ||
         game.ram[0x0341U] != 0x26U || game.ram[0x0342U] != 0x46U ||
@@ -248,6 +248,19 @@ int main(void)
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 13;
 
+    /* A head-touched scene coin is AwardTouchedCoin: its terminal result
+     * prevents PlayerBGCollision from continuing to feet or side probes. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x05f2U] = 0xc2U;
+    if (mysmb_player_check_head(&game) != 2U || game.ram[0x05f2U] != 0U ||
+        game.ram[0x00feU] != 1U) return 46;
     /* HeadChk branches through NYSpd in water before PlayerHeadCollision:
      * the non-solid brick remains in the block buffer and no block starts. */
     mysmb_game_initialize_memory(&game, 0xfeU);

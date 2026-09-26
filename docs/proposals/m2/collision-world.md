@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P13; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P14; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -133,3 +133,7 @@ Artifacts refreshed for this P: mysmb16.exe SHA-256 1F09A11C087352432C9BC15B6F6B
 ## S4 P13: restore PlayerBGCollision bottom guard
 
 ROM PlayerBGCollision initializes Player_CollisionBits to $ff after the on-screen high-byte check, then returns before HeadChk when Player_Y_Position is $cf or higher. Both shared player call sites now establish that byte and gate the complete head/feet/side chain on the same Y < $cf condition. The focused regression drives PlayerBGCollision through mysmb_player_step at Y=$cf and proves the collision bits reset without terrain probes. x86/x64 CTest: 79/79; DOS MZ rebuilt; artifacts: A6B39A7D00077C1DBE69FC2BFDA73CE692F2C20DD91130C849E904AE57CB9C98, D3144F578C8DD7E1DDFCB17B6358B24BCE52F64D6099B32C686B9F00FA63E62D, 3ECED3EBFB9758CD3218BA1C0B885DE8C267C9BCBF005678E9B3EAE8EC2807E3.
+
+## S4 P14: preserve AwardTouchedCoin and axe terminal branches
+
+ROM PlayerBGCollision jumps from a head or foot scene-coin sample to AwardTouchedCoin/HandleCoinMetatile and returns, while HandleAxeMetatile also exits its frame route. The shared player owner now returns an internal terminal result only for those source exits; both normal and climbing PlayerBGCollision call sites stop later terrain probes on that result. Solid/head/water and ordinary land results retain their original continuation. Focused regression identifies terminal head coin, either foot coin, and axe results. x86/x64 CTest: 79/79; DOS MZ rebuilt. Artifacts: 233637B9153D9B163624C092BFB4712A33180530ECFDAEBFCBAD39C11BF0A288, 7C2CDBA3AC9004F2915CE72CEA51B3A94845150276FF751ECAFE7F3E8A8A4526, 979728258FC07EC6E5EA39D04BE5B8578A457AD069704F1025C5416659042D78.
