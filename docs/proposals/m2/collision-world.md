@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P14; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P15; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -137,3 +137,9 @@ ROM PlayerBGCollision initializes Player_CollisionBits to $ff after the on-scree
 ## S4 P14: preserve AwardTouchedCoin and axe terminal branches
 
 ROM PlayerBGCollision jumps from a head or foot scene-coin sample to AwardTouchedCoin/HandleCoinMetatile and returns, while HandleAxeMetatile also exits its frame route. The shared player owner now returns an internal terminal result only for those source exits; both normal and climbing PlayerBGCollision call sites stop later terrain probes on that result. Solid/head/water and ordinary land results retain their original continuation. Focused regression identifies terminal head coin, either foot coin, and axe results. x86/x64 CTest: 79/79; DOS MZ rebuilt. Artifacts: 233637B9153D9B163624C092BFB4712A33180530ECFDAEBFCBAD39C11BF0A288, 7C2CDBA3AC9004F2915CE72CEA51B3A94845150276FF751ECAFE7F3E8A8A4526, 979728258FC07EC6E5EA39D04BE5B8578A457AD069704F1025C5416659042D78.
+
+## S4 P15: retain PlayerCtrlRoutine collision box through enemy processing
+
+ROM `PlayerCtrlRoutine` performs `RelativePlayerPosition -> BoundingBoxCore -> PlayerBGCollision`; later `GameEngine` enemy handlers consume that already-produced player box.  The native Paratroopa, hammer, and shared special-enemy collision helpers incorrectly rebuilt `$04ac-$04af` after `PlayerBGCollision`, using a position that can have been corrected by the collision branch.  This altered persistent RAM despite matching visible output.
+
+Those helpers now create only their own enemy or misc box and consume the player box unchanged. `paratroopa_smoke` supplies the PlayerCtrlRoutine-produced box and proves the collision result does not overwrite its left/right edges. A source-reachable 600-sample hidden-coin route now has zero differences in work RAM `$0300-$07ff`, CPU OAM backing, CIRAM, palette, visible OAM, audio state, and all PPU fields; the remaining zero-page/stack differences are emulator scratch state outside the translated game-owned range. x86/x64 native traces are byte-identical: `B52B4661859558B57229CB1042B27D58AF3FA38DDF8F7F62160E4B30DF3DE3E9`. Full x86/x64 CTest suites pass 79/79; OpenNT links the shared DOS MZ with its established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16 `281034243EC46E4160DE9AE883E1AA6C261D837121EF90D704FF42AE24727BE8`, mysmb32 `599FDFF075B102A29C9EB0CC540EEE01A927F633CBA992389F8E8B6C548B9713`, mysmb64 `15DB8266B65291AEA842A68180830FC33FD396B1F9B5BEFD71C91384914F68BB`.

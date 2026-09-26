@@ -38,7 +38,7 @@ These candidates exhaustively map the ROM executable source index. They are orde
 7. **M2 T20 active — Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
 8. **M2 T22 active — Blocks, items and misc** — lines 6730–7787: coins, blocks, power-ups, vines, cannon/whirlpool/flagpole. S1/P1: SetupJumpCoin queue restoration.
 9. **M2 T19 active — Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
-10. **M2 T17 active — Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths.
+10. **M2 T17 active — Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths. S4/P15 restores PlayerCtrlRoutine as the sole runtime player-box producer.
 11. **M2 T16 active — OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
 12. **M2 T21 active — Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers. S1/P1 source audit, S2/P1-P2 Square2 behavior, and S5/P1 source-route evidence are complete; S3-S5 remain active for the remaining channel routes.
 

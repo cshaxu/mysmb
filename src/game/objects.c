@@ -384,9 +384,6 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
     screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
                                 game->ram[MYSMB_SCREEN_LEFT_X]);
     if (player_world < screen_world || (mysmb_u16)(player_world - screen_world) >= 0x100U) return;
-    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-        game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
-        game->ram[MYSMB_PLAYER_Y]);
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (game->ram[MYSMB_ENEMY_ID + slot] != 14U &&
@@ -2345,9 +2342,6 @@ static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
     if (player_world < screen_world || hammer_world < screen_world ||
         (mysmb_u16)(player_world - screen_world) >= 0x100U ||
         (mysmb_u16)(hammer_world - screen_world) >= 0x100U) return;
-    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-        game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
-        game->ram[MYSMB_PLAYER_Y]);
     hammer_box = (mysmb_u16)(0x04d0U + slot * 4U);
     mysmb_world_set_bounding_box(game, hammer_box,
         game->ram[MYSMB_MISC_BOUND_BOX + slot], (mysmb_u8)(hammer_world - screen_world),
@@ -2384,9 +2378,6 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
     if (player_world < screen_world || enemy_world < screen_world ||
         (mysmb_u16)(player_world - screen_world) >= 0x100U ||
         (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
-    mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-        game->ram[MYSMB_PLAYER_BOUND_BOX], (mysmb_u8)(player_world - screen_world),
-        game->ram[MYSMB_PLAYER_Y]);
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
     mysmb_world_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
         (mysmb_u8)(enemy_world - screen_world), game->ram[MYSMB_ENEMY_Y + slot]);

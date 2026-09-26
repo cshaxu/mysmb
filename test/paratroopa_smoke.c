@@ -15,6 +15,11 @@ int main(void)
     game.ram[0x009fU] = 1U;
     game.ram[0x03d0U] = 0U;
     game.ram[0x0499U] = 0U;
+    /* PlayerCtrlRoutine already produced this box; PlayerEnemyCollision consumes it. */
+    game.ram[0x04acU] = 0x42U;
+    game.ram[0x04adU] = 0x68U;
+    game.ram[0x04aeU] = 0x4eU;
+    game.ram[0x04afU] = 0x80U;
     game.ram[0x0491U] = 0U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071cU] = 0U;
@@ -31,7 +36,8 @@ int main(void)
         game.ram[0x0401U] != 0U || game.ram[0x0046U] != 1U ||
         game.ram[0x0058U] != 8U || game.ram[0x009fU] != 0xfcU ||
         game.ram[0x0110U] != 3U || game.ram[0x012cU] != 0x30U ||
-        game.ram[0x0491U] != 1U) return 1;
+        game.ram[0x0491U] != 1U || game.ram[0x04acU] != 0x42U ||
+        game.ram[0x04aeU] != 0x4eU) return 1;
     mysmb_game_initialize_memory(&game, 0U);
     game.frame_number = 0UL;
     game.ram[0x000eU] = 8U;
@@ -42,6 +48,11 @@ int main(void)
     game.ram[0x009fU] = 1U;
     game.ram[0x03d0U] = 0U;
     game.ram[0x0499U] = 0U;
+    /* PlayerCtrlRoutine already produced this box; PlayerEnemyCollision consumes it. */
+    game.ram[0x04acU] = 0x42U;
+    game.ram[0x04adU] = 0x68U;
+    game.ram[0x04aeU] = 0x4eU;
+    game.ram[0x04afU] = 0x80U;
     game.ram[0x0491U] = 0U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071cU] = 0U;
