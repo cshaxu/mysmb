@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -76,3 +76,6 @@ ROM `InitEnemyFrenzy → InitFireworks` now has one T19 owner in `game/enemy/fre
 ## S4 P1: Fireworks completion sound restoration
 
 The S4 ROM audit of `RunFireworks → FireworksSoundScore` found that the native completion branch wrote `$01` to `Square2SoundQueue`. The ROM writes `Sfx_Blast`, `$08`, after clearing the actor flag and before awarding the 500-point score. The shared endgame owner now writes `$08`; its focused regression asserts flag removal, graphics counter progression, and the source sound byte. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.
+## S4 P2: Endgame relative scratch restoration
+
+The `RunFireworks`/`RunStarFlagObj` audit restored source-owned fixed scratch semantics. `Enemy_Rel_XPos` `$03ae` and `Enemy_Rel_YPos` `$03b9` are fixed `RelativeEnemyPosition` outputs, not per-slot arrays; endgame code no longer adds the actor slot. `RunFireworks` then copies the pair in source order to `Fireball_Rel_XPos` `$03af` and `Fireball_Rel_YPos` `$03ba` before explosion drawing. The endgame regression exercises a nonzero star-flag slot and asserts both fixed pairs. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.

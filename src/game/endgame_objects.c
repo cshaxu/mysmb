@@ -92,8 +92,10 @@ void mysmb_objects_step_fireworks(struct mysmb_game *game)
         x = (mysmb_u8)(game->ram[MYSMB_ENDGAME_ENEMY_X + slot] -
                        game->ram[MYSMB_ENDGAME_SCREEN_LEFT_X]);
         y = game->ram[MYSMB_ENDGAME_ENEMY_Y + slot];
-        game->ram[0x03aeU + slot] = x;
-        game->ram[0x03b9U + slot] = y;
+        game->ram[0x03aeU] = x;
+        game->ram[0x03b9U] = y;
+        game->ram[0x03baU] = y;
+        game->ram[0x03afU] = x;
         oam = game->ram[MYSMB_ENDGAME_ENEMY_SPRITE_OFFSET + slot];
         game->ram[0x0200U + oam] = (mysmb_u8)(y - 4U);
         game->ram[0x0204U + oam] = (mysmb_u8)(y + 4U);
@@ -177,8 +179,8 @@ void mysmb_objects_step_star_flags(struct mysmb_game *game)
         x = (mysmb_u8)(game->ram[MYSMB_ENDGAME_ENEMY_X + slot] -
                        game->ram[MYSMB_ENDGAME_SCREEN_LEFT_X]);
         y = game->ram[MYSMB_ENDGAME_ENEMY_Y + slot];
-        game->ram[0x03aeU + slot] = x;
-        game->ram[0x03b9U + slot] = y;
+        game->ram[0x03aeU] = x;
+        game->ram[0x03b9U] = y;
         oam = game->ram[MYSMB_ENDGAME_ENEMY_SPRITE_OFFSET + slot];
         for (index = 0U; index < 4U; ++index) {
             rom_index = (mysmb_u8)(3U - index);

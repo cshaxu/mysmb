@@ -17,7 +17,8 @@ static int test_star_flag_oam(void)
     game.ram[0x0746U] = 3U;
     game.ram[0x06d7U] = 0xffU;
     mysmb_objects_step_star_flags(&game);
-    if (game.ram[0x00cfU + 2U] != 0x7fU) return 1;
+    if (game.ram[0x00cfU + 2U] != 0x7fU || game.ram[0x03aeU] != 0x70U ||
+        game.ram[0x03b9U] != 0x7fU) return 1;
     if (game.ram[0x0240U] != 0x87U || game.ram[0x0241U] != 0x57U ||
         game.ram[0x0242U] != 0x22U || game.ram[0x0243U] != 0x78U) return 2;
     if (game.ram[0x0244U] != 0x87U || game.ram[0x0245U] != 0x56U ||
@@ -43,7 +44,9 @@ static int test_fireworks(void)
     game.ram[0x0058U] = 0U;
     game.ram[0x00a0U] = 1U;
     mysmb_objects_step_fireworks(&game);
-    if (game.ram[0x0058U] != 1U || game.ram[0x00a0U] != 8U) return 10;
+    if (game.ram[0x0058U] != 1U || game.ram[0x00a0U] != 8U ||
+        game.ram[0x03aeU] != 0x30U || game.ram[0x03b9U] != 0x60U ||
+        game.ram[0x03afU] != 0x30U || game.ram[0x03baU] != 0x60U) return 10;
     if (game.ram[0x0260U] != 0x5cU || game.ram[0x0261U] != 0x67U ||
         game.ram[0x0262U] != 2U || game.ram[0x0263U] != 0x2cU) return 11;
     if (game.ram[0x0264U] != 0x64U || game.ram[0x0266U] != 0x82U ||
