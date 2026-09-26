@@ -24,12 +24,17 @@ void mysmb_game_reset(struct mysmb_game *game)
     mysmb_u8 warm_boot;
 
     warm_boot = 1U;
-    for (index = 0U; index < 6U; ++index) {
+    /* WBootCheck starts with X=$05 and decrements through TopScoreDisplay.
+     * There are no writes between digits, but retain its observable branch
+     * order so the first invalid digit follows the ROM route. */
+    index = 5U;
+    do {
         if (game->ram[(mysmb_u16)(0x07d7U + index)] >= 10U) {
             warm_boot = 0U;
             break;
         }
-    }
+        index = (mysmb_u8)(index - 1U);
+    } while (index != 0xffU);
     if (game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] != 0xa5U)
         warm_boot = 0U;
     mysmb_game_initialize_memory(game, warm_boot != 0U ? 0xd6U : 0xfeU);
@@ -51,8 +56,10 @@ void mysmb_game_reset(struct mysmb_game *game)
     game->ram[0x0774U]++;
     /* The final WritePPUReg1 restores the $2000 mirror with NMI enabled.
      * CPU OAM is first transferred by the following shared NMI frame. */
-    game->visible_ppu_control_0 =
+    game->ppu_control_0 =
         (mysmb_u8)(game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x80U);
+    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = game->ppu_control_0;
+    game->visible_ppu_control_0 = game->ppu_control_0;
     game->oam_dma_primed = 1U;
 }
 

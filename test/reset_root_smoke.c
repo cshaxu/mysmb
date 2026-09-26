@@ -21,6 +21,7 @@ int main(void)
         game.ram[0x07a7U] != 0xa5U || game.ram[0x0770U] != 0U ||
         game.ram[0x0774U] != 1U || game.ram[0x0200U] != 0xf8U ||
         game.ppu_mask != 0x06U || game.visible_ppu_mask != 0x06U ||
+        game.ppu_control_0 != 0x90U || game.ram[0x0778U] != 0x90U ||
         game.visible_ppu_control_0 != 0x90U || game.oam_dma_primed != 1U ||
         game.apu_delta_counter_load != 0U || game.apu_channel_enable != 0x0fU)
         return 2;

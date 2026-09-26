@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T21 S2 active: audit and migrate the shared C boot/cold-initialization owner.**
+**M2 T21 S3 active: prove the seven boot/cold-initialization nodes against the ROM.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation's active packet and cannot preempt T21.
@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T21 S2 Packet
+## M2 T21 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T21 S2, Continuation; shared-C implementation. |
+| Identifier Mode | M2 T21 S3, Continuation; ROM logic-equivalence audit and source-corrective implementation. |
 | Admission And Approval | Owner approved source-order replan and T21 admission on 2026-09-26. |
-| Objective | Migrate and audit the shared-C boot/cold-initialization owner for 7 boot nodes. |
+| Objective | Compare the seven shared boot/cold-initialization owners against source branches, reads, writes and call order; repair only proved differences. |
 | Non-goals | NMI/PPU timing after `ScreenOff`, all gameplay routes, and T20 fireball/bubble nodes are outside T21. |
-| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S2. |
+| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S3. |
 | Candidate Proposal | [T21 boot and cold initialization](../proposals/m2/t21-boot-cold-init.md); [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
 | Files And ABI Surface | Boot/root C owners, focused root tests, ledger run and ignored route evidence; no platform gameplay logic. |
 | Applicable Rules | Task Reading Set, execution, contributing, architecture, coding, source policy and node-ledger workflow. |
-| Verification | S2 changes only shared game code. S3 ROM logic-equivalence and S4 operational verification remain separate. |
+| Verification | S3 performs ROM logic-equivalence. S4 operational verification remains a separate required track; source-corrective C changes remain shared game code only. |
 | Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: empty; maximum 3 / 1,992. |
 | Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Build products, traces and ROM-derived executables remain local; each P refreshes the three local target artifacts without treating them as conformance evidence. |
 | Reporting Requirements | For every P, name its exact node subset, branch/write mapping, test and route evidence, actual versus expected matches, blockers/transfers, three-artifact hashes and platform-boundary review. |
 | Stop Conditions | Stop if a root branch requires a later NMI, platform, or gameplay owner without an accepted dependency boundary. |
-| Exit Criteria | Every admitted write and branch has a shared-C owner or an accepted boundary; S3/S4 have a reviewable implementation basis. |
+| Exit Criteria | Each of the seven nodes has a documented source branch/read/write/call-order result and any proved C discrepancy is repaired or explicitly retained without a match claim. |
 | Original Owner Request | Replan the backlog in source order and execute small, verifiable tasks. |
 | Similar-Issue Sweep | Check every boot/root label for duplicated initialization, host-owned state, stale direct tests, and missing cold/warm branch evidence. |
 

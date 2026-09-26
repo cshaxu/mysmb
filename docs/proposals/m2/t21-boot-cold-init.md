@@ -56,3 +56,40 @@ same shared source relinks the OpenNT DOS16 MZ, retaining the pre-existing
 `mysmb16.exe` `C257D5918993648BA996CCC0B8E93420AA5FEE8B35667B8C1BE711121A1DCDB1`,
 `mysmb32.exe` `577E583D9F8C497ECD6F3018155ED9A3119739A1B764F3AE29F39583B5AB81F9`,
 and `mysmb64.exe` `858B37C468A1FE1339BD5DD691000069E346AC7F6ED01E4DA8E5B2503E08C23B`.
+
+## S2 closure and S3 admission
+
+S2 closes with **0** new ROM-match nodes: all seven labels were implemented
+but no source-equivalence result was claimed.  It transfers `Start`,
+`VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, and
+`InitializeMemory` to S3.  The conformance count remains **3 / 1,992**.
+
+S3 receives the same seven labels, with no expected new matches and a maximum
+of **3 / 1,992**.  It must compare the source sequence from `Start` through
+the final `WritePPUReg1`, including the controlled warm/cold branch, and must
+separately record `VBlank1`, `VBlank2`, and `EndlessLoop` as no-game-state
+platform boundaries.  Its focused operational baseline remains the root,
+cold-start, frame-snapshot and platform-purity tests; it cannot substitute
+those tests for branch/write equivalence.
+
+## S3/P1 source audit
+
+| Node | Source branch/write result | S3 disposition |
+| --- | --- | --- |
+| `Start` | `SEI`, `CLD`, stack setup and the initial `$2000=$10` precede the two waits; they have no portable game-RAM effect. | Pending platform-boundary proof; no match claim. |
+| `VBlank1`, `VBlank2` | Each is a `$2002` poll with no game-RAM write. | Pending platform timing proof; no match claim. |
+| `WBootCheck` | Source reads score digits `$07dc` down through `$07d7`, then `$07ff`; an invalid digit branches directly to cold reset. | Corrected the C loop to the same descending read/branch order; controlled source route remains required. |
+| `ColdBoot` | `InitializeMemory` return A writes `$4011`, then mode, validation/seed, `$4015`, `$2001`, OAM, name tables, screen-disable increment and final `WritePPUReg1`. | Corrected final `$2000` physical/mirror write to `$90`; helper bodies remain separately owned dependencies. |
+| `EndlessLoop` | No game-state write after final `WritePPUReg1`; NMI owns future execution. | Pending platform scheduler boundary proof; no match claim. |
+| `InitializeMemory` | Page 7 starts at caller Y; after the first page Y stays `$ff`; page-one `$60-$ff` is skipped. | Direct all-`$0000-$07ff` cold/warm sentinel regression passes; retained pending the S3 controlled route record. |
+
+The two corrections are source-derived: no timing, collision, rendering, or
+platform rule was introduced.  S3/P1 remains an audit/correction result and
+does not alter the forecast of zero new ROM-match nodes.
+
+S3/P1 operational record: the four focused CTests pass on x86 and x64; the
+same source relinks the DOS16 MZ with its existing `OLDNAMES.LIB` warning.
+Refreshed local artifacts are `mysmb16.exe`
+`126103DC5DB509C6B22C9CA87F57214403207C6FC402C17CB4B117DF704B8F3A`,
+`mysmb32.exe` `FA2A8D07697175DC1C2E259172F76B7D38CB61902EFF2105C67982C3306F830A`,
+and `mysmb64.exe` `45D9B49678DF4A698E647E9DBA9ADCA2660D1F74F8B81F36736D082016E898B1`.

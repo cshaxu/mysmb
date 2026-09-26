@@ -3865,8 +3865,8 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -4030,8 +4030,8 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -4059,8 +4059,8 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -4088,8 +4088,8 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -4133,8 +4133,8 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -4178,8 +4178,8 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -10257,8 +10257,8 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T21 S2",
-      "receivingBasis": "T21 S2 implementation migration after completed source contract",
+      "receiver": "M2 T21 S3",
+      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
       "futurePackage": null,
       "history": [
         {
@@ -54202,6 +54202,23 @@
       ],
       "acceptedBy": "T21 S1 completion under the owner-approved S plan",
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+    },
+    {
+      "id": "transfer-021-s2-s3",
+      "type": "transfer",
+      "from": "M2 T21 S2",
+      "to": "M2 T21 S3",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "acceptedBy": "Owner-approved T21 S-plan: S3 ROM logic-equivalence follows S2 shared-C migration.",
+      "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
     }
   ],
   "runs": [
@@ -58319,7 +58336,31 @@
       "maximumComplete": 3,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md",
-      "state": "admitted-implementation-active"
+      "state": "closed-migration-transferred-to-s3"
+    },
+    {
+      "subtask": "M2 T21 S3",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 3,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-boot-cold-init.md",
+      "state": "admitted-logic-equivalence-active"
     }
   ]
 }
