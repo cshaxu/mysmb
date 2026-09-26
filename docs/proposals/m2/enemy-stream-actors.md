@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P9.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -134,3 +134,6 @@ The ordinary two-byte stream path now preserves ROM `BuzzyBeetleMutate`: after t
 ## S5 P8: sixth-slot power-up admission
 
 ROM `CheckEndofBuffer` does not reject every non-row-0x0e record in object slot five. It reads the second byte, masks it with 0x3f, and continues only for PowerUpObject 0x2e; all other ordinary records return before page control or positioning. The stream owner now follows that precise exception, with a regression proving that 0x2e initializes in slot five. Full x64/x86 suites, shared DOS MZ, and all three artifacts accompany this packet.
+## S5 P9: deterministic flying-Cheep stream fixture
+
+The former flying-Cheep regression initialized game RAM with a fill byte but left the enemy-data low pointer, stream offset, page control, and first flag implicit. It now explicitly reads its two-byte record from PRG 0x8000 plus offset zero and begins with slot zero inactive. This changes no game logic; it makes the next InitEnemyFrenzy current-slot migration measurable rather than dependent on fill-byte residue. Full x64/x86 suites pass; the shared DOS MZ and all three artifacts are refreshed.

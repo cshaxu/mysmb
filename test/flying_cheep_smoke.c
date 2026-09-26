@@ -15,7 +15,12 @@ int main(void)
     mysmb_game_initialize_memory(&game, 0xfeU);
     source.prg = frenzy_data;
     source.prg_size = 2U;
+    game.ram[0x00e9U] = 0U;
     game.ram[0x00eaU] = 0x80U;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 0U;
+    game.ram[0x073bU] = 0U;
+    game.ram[0x000fU] = 0U;
     if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x06cbU] != 20U || game.ram[0x0739U] != 2U ||
         game.ram[0x000fU] != 0U) return 1;
