@@ -1541,6 +1541,9 @@ void mysmb_objects_collect_power_up(struct mysmb_game *game)
     }
     else if (game->ram[MYSMB_PLAYER_STATUS] == 1U) {
         game->ram[MYSMB_PLAYER_STATUS] = 2U;
+        /* ROM HandlePowerUpCollision calls GetPlayerColors immediately
+         * after setting fiery status, before UpToFiery/SetPRout. */
+        (void)mysmb_area_queue_player_palette(game);
         game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 12U;
     }
     else return;

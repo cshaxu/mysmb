@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T18 active — S2/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
+**M2 T18 active — S2/P1 and S3/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
 
 ## ROM scope
 
@@ -25,3 +25,15 @@ Area RAM, parser offsets, block buffer, CIRAM, attributes, palette and scroll st
 ## S1 P1: block metatile writer boundary
 
 BlockObjMT_Updater and its ReplaceBlockMetatile command writer now live in src/game/area/block_metatile.c; frame root and tests call the area API. The 600-sample continuation is unchanged: first work-RAM mismatch remains sample 82 / $03f0, with 2,893 differing work-RAM bytes; CIRAM, palette, audio and PPU remain zero-difference. x64/x86 pass 78/78; OpenNT links DOS MZ with its existing OLDNAMES.LIB warning. Artifacts: 16 00AB5AD16398B908135E17BACB05A7A92B0B1C0C188AF38C974E801350AD6982, 32 79F8BFBBFE71F70F1D2E9F18E1C1D97370B2D5B993F991031D719A443C912CA3, 64 CD71364ADF964DC81F27183D727417F3180761DB66A423AC3DD7B556F9353ED8.
+
+## S3 P1: restore flower `GetPlayerColors` producer
+
+`HandlePowerUpCollision` at ROM lines 11285–11290 writes fiery
+`PlayerStatus=$02`, calls `GetPlayerColors`, and only then tail-jumps to
+`UpToFiery`. The shared power-up route had omitted that palette-command
+producer, leaving the sprite palette stale after a flower pickup. It now uses
+the existing area-owned `mysmb_area_queue_player_palette` translation of
+`GetPlayerColors`; neither platform adapter participates. The local-area
+regression enters through `mysmb_objects_collect_power_up` with a super
+player and proves the exact `$3f10`, length-four VRAM command and fiery
+palette bytes before the engine-routine handoff.

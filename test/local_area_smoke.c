@@ -2,6 +2,7 @@
 
 #include "game/area.h"
 #include "game/game.h"
+#include "game/objects.h"
 #include "smb1_local_rom.h"
 
 int main(void)
@@ -194,6 +195,25 @@ int main(void)
     game.ram[0x0756U] = 0U;
     if (mysmb_area_sync_player_palette(&game) == 0U || game.ram[0x0300U] != 7U ||
         game.ram[0x0305U] != mysmb_local_prg[0x05dcU]) return 1;
+    /* HandlePowerUpCollision changes a super player to fiery and immediately
+     * calls GetPlayerColors. The game-core entry must therefore append the
+     * original $3f10 command, before its UpToFiery route change. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    game.ram[0x0300U] = 0U;
+    game.ram[0x0744U] = 0U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x0753U] = 0U;
+    game.ram[0x0756U] = 1U;
+    game.ram[0x0039U] = 0U;
+    mysmb_objects_collect_power_up(&game);
+    if (game.ram[0x0756U] != 2U || game.ram[0x000eU] != 12U ||
+        game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x3fU ||
+        game.ram[0x0302U] != 0x10U || game.ram[0x0303U] != 4U ||
+        game.ram[0x0304U] != mysmb_local_prg[0x05d0U] ||
+        game.ram[0x0305U] != mysmb_local_prg[0x05e0U] ||
+        game.ram[0x0306U] != mysmb_local_prg[0x05e1U] ||
+        game.ram[0x0307U] != mysmb_local_prg[0x05e2U]) return 1;
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
