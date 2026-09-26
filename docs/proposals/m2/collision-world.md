@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P16 and S6/P1-P7 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P16 and S6/P1-P8 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -347,3 +347,22 @@ collision geometry implementations.
 ## S6 P7: controller-only page-12 route transfer
 
 A controller-only route now preserves Super Mario through the page-nine gap, the page-ten actor crossing, and the three page-eleven staircase jumps, reaching page twelve without RAM or PPU injection.  The ROM recorder and native x64 recorder compare the 600 samples after a 2,220-frame warmup; scripts, traces, and report remain under `build/m2-t17-s6-fireball-search/`.  The first shared-state residual is already present at sample zero: ROM `$06bc=01`, native `$06bc=00`.  The source declares this as `BrickCoinTimerFlag`; `BlockBumpedChk` sets it for brick-with-coins metatiles `$58/$5d` before `BlockObjectsCore` chooses the retained or empty metatile.  It is therefore a T22/S2 block bump/coin-metatile producer, precisely listed in T22’s `BlockCode / BrickQBlockMetatiles / BlockBumpedChk` row, and is not a T17 collision primitive.  Later OAM difference begins at sample 362 and CIRAM difference at sample 528, so they are downstream of that untransferred block producer.  No collision or platform code changed in this packet.  Current artifacts used for the route: mysmb16.exe `70989598666E6CDA85239E7D43A5BBFFC764E1AB1D4E872CA7DFBD36612F03E1`, mysmb32.exe `2862DDBB1D816A38819D2F36B65343EA5B568DEDA81A35CF15C17A645AAA0877`, mysmb64.exe `9EEC3920CB4EC230E87C24C9CBC7E93741CD2AB4E3141C49F3345E14C2914F75`.
+## S6 P8: page-twelve post-transfer ownership check
+
+The same controller-only 600-frame page-twelve route was replayed after
+T22/S2 restored `BrickCoinTimerFlag` and T22/S4 restored
+`FlagpoleRoutine`.  The former sample-zero `$06bc` and sample-362 flagpole
+`$03ae` residuals are absent.  The first remaining work difference is sample
+526: ROM emits VRAM-buffer bytes `$06a9-$06ab = $45,$47,$47`, while native
+still has zero, alongside the parser/column state difference `$0732 = $03`
+versus `$05`.  The first CIRAM-page-zero difference is sample 528.
+
+`$06a9-$06ab` are `VRAM_Buffer1` command bytes, and `$0732` is area-parser
+state.  Their producer is T18's shared area/parser output path, not a T17
+world primitive.  This packet changes no code and transfers the next residual
+to T18 without masking it.  The checked-out artifacts are the immediately
+preceding three-target build: mysmb16.exe
+`CBDC82F47E98049B62586A9ACE5736F219FF906803CA999C333EDF43B557C48D`,
+mysmb32.exe `705D76A5D9559838309E5960E09C05A9FDCDD08CDCEC4D56FEC04EF29CC8AEF5`,
+and mysmb64.exe
+`3D83CA4D91CB4C50EDC4EB05EF971EB803CED17F81EA16524A01D8F22865A55D`.
