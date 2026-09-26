@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P5.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -58,3 +58,7 @@ The existing native translation of `InitEnemyObject → CheckpointEnemyID → In
 ## S3 P4: Bowser-flame frenzy ownership boundary
 
 `InitEnemyFrenzy → InitBowserFlame` now has one T19 owner in `src/game/enemy/frenzy.c`.  The moved spawn routine retains its living-Bowser validation, first-free regular slot search, PRNG target selection, page/X/Y derivation, collision-box assignment, activation and frenzy-buffer clear.  `ProcBowserFlame` remains an S4 handler concern.  This is ownership-only; full x64/x86 CTest is 79/79 and the OpenNT DOS MZ relinks from the shared source.
+
+## S3 P5: Stop-frenzy dispatch restoration
+
+ROM `EndFrenzy` is now translated in `game/enemy/frenzy.c` and dispatched by `InitEnemyObject` when the `$18 Stop_Frenzy` controller is loaded. It scans slots 5 through 0, clears every Lakitu flag, clears `EnemyFrenzyBuffer`, then removes the current controller slot. A focused regression proves both Lakitu removals and preservation of a non-Lakitu slot. x64/x86 are 79/79; DOS links the same shared code.

@@ -320,3 +320,18 @@ void mysmb_enemy_step_bowser_flame_frenzy(struct mysmb_game *game)
     game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
     game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
 }
+/* ROM EndFrenzy.  The stop controller clears every Lakitu, then clears its
+ * persistent request and finally removes the controller object itself. */
+void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
+{
+    mysmb_u8 slot;
+
+    for (slot = 6U; slot != 0U; ) {
+        --slot;
+        if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
+            game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+        }
+    }
+    game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
+    if (controller_slot < 6U) game->ram[MYSMB_ENEMY_FLAG + controller_slot] = 0U;
+}

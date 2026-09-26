@@ -101,5 +101,18 @@ int main(void)
     if (game.ram[0x001eU] != 0U || game.ram[0x00cfU] != 0x78U ||
         game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||
         game.ram[0x0046U] != 1U || game.ram[0x0058U] != 8U) return 1;
+    /* EndFrenzy clears every Lakitu (including slot five), clears the
+     * persistent controller byte, then removes the stop controller. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 17U;
+    game.ram[0x0012U] = 1U;
+    game.ram[0x0019U] = 17U;
+    game.ram[0x0013U] = 1U;
+    game.ram[0x001aU] = 6U;
+    game.ram[0x06cbU] = 18U;
+    mysmb_enemy_end_frenzy(&game, 5U);
+    if (game.ram[0x000fU] != 0U || game.ram[0x0012U] != 0U ||
+        game.ram[0x0013U] != 1U || game.ram[0x06cbU] != 0U) return 1;
     return 0;
 }
