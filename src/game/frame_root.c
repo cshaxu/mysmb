@@ -399,10 +399,13 @@ void mysmb_game_tick_player_timers(struct mysmb_game *game)
         game->ram[MYSMB_ROOT_INTERVAL_TIMER_CONTROL] = 0x14U;
         last_timer = 0x23U;
     }
-    for (index = 0U; index <= last_timer; ++index) {
+    index = last_timer;
+    for (;;) {
         if (game->ram[MYSMB_ROOT_TIMERS + index] != 0U) {
             game->ram[MYSMB_ROOT_TIMERS + index]--;
         }
+        if (index == 0U) break;
+        --index;
     }
 }
 

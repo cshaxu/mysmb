@@ -523,3 +523,9 @@ T22/S18 is now active in source order for `DecTimers`, `DecTimersLoop`,
 **21 / 1,992**, forecasts no completion and has a maximum of **21 / 1,992**.
 It may only map the NMI timer-bank and LFSR control/read/write order, then
 transfer the six nodes to a separately admitted proof or repair S.
+
+## T22/S18 timer/LFSR source contract and T22/S25 proof admission
+
+S18 closes at **21 / 1,992** with no node credit.  Its source audit found and repaired one control-order discrepancy: ROM `DecTimersLoop` visits timer offsets from `$14` or `$23` down to zero, while C had visited them upward. `mysmb_game_tick_player_timers` now uses the descending order. The new shared timer smoke covers master-control hold, a frame-timer-only decrement, and interval rollover that selects all `$24` timers; it passes on x86/x64 with the existing LFSR, NMI-boundary and purity checks. The shared source builds for DOS16 and all three artifacts are refreshed.
+
+All six labels transfer to **T22/S25** for independent controlled-ROM proof. S25 begins at **21 / 1,992**, forecasts all six labels and has a maximum of **27 / 1,992**.

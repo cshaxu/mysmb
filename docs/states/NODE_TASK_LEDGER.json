@@ -855,6 +855,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the T22/S17 pause source contract for independent controlled-NMI ROM-equivalence review."
+        },
+        {
+          "id": "M2 T22 S25",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "timer-lfsr-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the repaired T22/S18 timer/LFSR source contract for independent controlled-NMI equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4653,8 +4665,8 @@
     {
       "label": "DecTimers",
       "line": 814,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4692,14 +4704,20 @@
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "DecTimersLoop",
       "line": 820,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4720,6 +4738,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4727,8 +4751,8 @@
     {
       "label": "SkipExpTimer",
       "line": 823,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4749,6 +4773,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4756,8 +4786,8 @@
     {
       "label": "NoDecTimers",
       "line": 825,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4778,6 +4808,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4785,8 +4821,8 @@
     {
       "label": "PauseSkip",
       "line": 826,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4808,14 +4844,20 @@
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "RotPRandomBit",
       "line": 837,
-      "receiver": "M2 T22 S18",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "receiver": "M2 T22 S25",
+      "receivingBasis": "T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4844,6 +4886,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S18",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S25",
+          "relation": "accepted independent timer/LFSR proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -55041,6 +55089,22 @@
       ],
       "acceptedBy": "T22/S24 accepts the completed pause source contract for independent six-label ROM-equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-036-t22-s18-to-s25",
+      "type": "transfer",
+      "from": "M2 T22 S18",
+      "to": "M2 T22 S25",
+      "nodes": [
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
+      ],
+      "acceptedBy": "T22/S25 accepts the repaired timer/LFSR source contract for independent controlled-NMI equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -59751,7 +59815,55 @@
       "maximumComplete": 21,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-timer-lfsr-contract"
+      "state": "closed-timer-lfsr-contract-transfer-to-s25"
+    },
+    {
+      "subtask": "M2 T22 S25",
+      "kind": "implementation",
+      "scope": [
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
+      ],
+      "baseline": 21,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "InitBuffer",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "expectedMatches": [
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
+      ],
+      "maximumComplete": 27,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-timer-lfsr-equivalence-review"
     }
   ]
 }
