@@ -131,5 +131,24 @@ int main(void)
         game.ram[0x0087U] != 0xf8U || game.ram[0x0088U] != 0x10U ||
         game.ram[0x00cfU] != 0xb0U || game.ram[0x00d0U] != 0xb0U ||
         game.ram[0x00b6U] != 1U || game.ram[0x00b7U] != 1U) return 4;
+    /* ChkEnemyFrenzy precedes stream parsing and accepts slot five. */
+    game.ram[0x06cdU] = 23U;
+    game.ram[0x0014U] = 0U;
+    game.ram[0x001bU] = 0U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 5U) != 1U ||
+        game.ram[0x06cdU] != 0U || game.ram[0x001bU] != 23U ||
+        game.ram[0x0014U] != 1U) return 5;
+    /* CheckFrenzyBuffer runs when the source has reached EOD. */
+    prg[0x20U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x06cbU] = 21U;
+    game.ram[0x0013U] = 0U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 4U) != 1U ||
+        game.ram[0x001aU] != 21U || game.ram[0x0013U] != 1U) return 6;
+    game.ram[0x06cbU] = 0U;
+    game.ram[0x0398U] = 1U;
+    game.ram[0x0012U] = 0U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 3U) != 1U ||
+        game.ram[0x0019U] != 0x2fU || game.ram[0x0012U] != 1U) return 7;
     return 0;
 }

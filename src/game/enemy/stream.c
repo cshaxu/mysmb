@@ -45,7 +45,9 @@ enum {
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
-    MYSMB_GROUP_ENEMY_COUNT = 0x06d3U
+    MYSMB_GROUP_ENEMY_COUNT = 0x06d3U,
+    MYSMB_ENEMY_FRENZY_QUEUE = 0x06cdU,
+    MYSMB_VINE_FLAG_OFFSET = 0x0398U
 };
 
 /* ROM HandleGroupEnemies.  Group records scan regular slots zero through
@@ -89,6 +91,22 @@ static void mysmb_enemy_stream_handle_group(struct mysmb_game *game,
         game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
     }
 }
+/* ROM ChkEnemyFrenzy and CheckFrenzyBuffer. */
+static mysmb_u8 mysmb_enemy_stream_activate_fallback(struct mysmb_game *game,
+                                                      mysmb_u8 slot)
+{
+    mysmb_u8 id;
+
+    id = game->ram[MYSMB_ENEMY_FRENZY_BUFFER];
+    if (id == 0U) {
+        if (game->ram[MYSMB_VINE_FLAG_OFFSET] != 1U) return 0U;
+        id = 0x2fU;
+    }
+    game->ram[MYSMB_ENEMY_ID + slot] = id;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    mysmb_enemy_checkpoint_loaded(game, slot);
+    return 1U;
+}
 /* ROM $c0f7-$c1f4 ProcessEnemyData through InitNormalEnemy, limited to
  * ordinary enemy IDs.  Special objects retain their dedicated initializers. */
 /* ProcessEnemyData is called with the current ObjectOffset.  This adapter
@@ -114,6 +132,13 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
     mysmb_u8 third;
     mysmb_u8 row;
 
+    if (game->ram[MYSMB_ENEMY_FRENZY_QUEUE] != 0U) {
+        game->ram[MYSMB_ENEMY_ID + slot] = game->ram[MYSMB_ENEMY_FRENZY_QUEUE];
+        game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_FRENZY_QUEUE] = 0U;
+        mysmb_enemy_checkpoint_loaded(game, slot);
+        return 1U;
+    }
     if (source == 0 || source->prg == 0 || game->ram[MYSMB_ENEMY_DATA_HIGH] < 0x80U) return 0U;
     address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_ENEMY_DATA_HIGH] - 0x80U) << 8U) |
                           game->ram[MYSMB_ENEMY_DATA_LOW]);
@@ -163,7 +188,8 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 0U;
         }
-        if (world > (mysmb_u16)(right + 0x30U)) return 0U;
+        if (world > (mysmb_u16)(right + 0x30U))
+            return mysmb_enemy_stream_activate_fallback(game, slot);
         game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
         game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(row << 4U);
         if (row == 0x0eU) {
@@ -205,7 +231,7 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
         return 1U;
     }
-    return 0U;
+    return mysmb_enemy_stream_activate_fallback(game, slot);
 }
 /* Convenience probe for isolated tests.  GameEngine must enter the current
  * ObjectOffset directly through mysmb_enemy_stream_process_current. */
