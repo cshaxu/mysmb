@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S19 Packet
+## M2 T22 S26 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S19, Implementation; NMI sprite-zero split and OAM-offscreen source contract. |
-| Admission And Approval | Owner-approved source-order recovery; this direct NMI child was accepted by T22/S13. |
-| Objective | Map sprite-zero wait/split and OAM-offscreen loops before any repair or credit. |
-| Non-goals | Pause, timer/LFSR, shuffle, operation dispatch, gameplay descendants and platform code. |
-| Reference Baseline | 27 / 1,992 complete; 8 incomplete scoped labels; expected matches none; maximum 27 / 1,992. |
-| Candidate Proposal | [source-order T21?T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s25-timerlfsr-equivalence-result-and-t22s19-admission). |
-| Files And ABI Surface | Shared `frame_root.c`, OAM tests, ignored ROM traces and canonical node records. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source branch/read/write/order audit and controlled ROM NMI route; focused x86/x64 tests, DOS16 compile, purity and artifacts for any P. |
-| Expected Markers | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop`; expected none. |
-| Asset Needs | ROM/listing and traces stay under `build`. |
-| Reporting Requirements | Account for each label and transfer all unfinished work. |
-| Stop Conditions | Stop if work belongs to another NMI child or platform policy. |
-| Exit Criteria | Exact source contract and successor proof/repair receiver; no premature credit. |
+| Identifier Mode | M2 T22 S26, Implementation; independent sprite-zero/OAM equivalence review. |
+| Admission And Approval | Owner-approved source-order recovery; T22/S19 transferred its eight-node source contract. |
+| Objective | Independently prove sprite-zero, OAM-offscreen, scene-scroll and pause-skip paths against controlled ROM output. |
+| Non-goals | Sprite shuffle internals, timer/LFSR, operation dispatch or platform code. |
+| Reference Baseline | 27 / 1,992 complete; 8 incomplete labels; expected all 8; maximum 35 / 1,992. |
+| Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s19-spriteoam-source-contract-and-t22s26-proof-admission). |
+| Files And ABI Surface | Shared frame root, OAM tests, ignored ROM traces and node records. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | Controlled ROM NMI samples plus source audit; x86/x64 tests, DOS16 build, purity and artifacts. |
+| Expected Markers | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop`. |
+| Asset Needs | ROM/listing and traces stay below `build`. |
+| Reporting Requirements | Record both verification tracks and transfer failed labels. |
+| Stop Conditions | Stop if work belongs to sprite shuffle or another NMI child. |
+| Exit Criteria | Independent proof or specific transfer for all labels. |
 | Original Owner Request | Execute original nodes in source order with strict parity. |
-| Similar-Issue Sweep | Inspect sprite-zero flag, PPU status reads, pause branch, OAM offsets and loop boundaries. |
+| Similar-Issue Sweep | Check sprite-zero flag, pause bit, OAM range and scroll handoff. |
 
 ## Recent M4 Closures
 

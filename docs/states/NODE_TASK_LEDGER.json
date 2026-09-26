@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -867,6 +867,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the repaired T22/S18 timer/LFSR source contract for independent controlled-NMI equivalence review."
+        },
+        {
+          "id": "M2 T22 S26",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "sprite-oam-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the T22/S19 sprite-zero/OAM source contract for independent controlled-ROM equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4899,8 +4911,8 @@
     {
       "label": "Sprite0Clr",
       "line": 843,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4921,6 +4933,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4928,8 +4946,8 @@
     {
       "label": "Sprite0Hit",
       "line": 851,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4950,6 +4968,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4957,8 +4981,8 @@
     {
       "label": "HBlankDelay",
       "line": 855,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -4979,6 +5003,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -4986,8 +5016,8 @@
     {
       "label": "SkipSprite0",
       "line": 857,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5009,14 +5039,20 @@
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SkipMainOper",
       "line": 868,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5037,6 +5073,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5497,8 +5539,8 @@
     {
       "label": "MoveAllSpritesOffscreen",
       "line": 965,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5519,6 +5561,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5526,8 +5574,8 @@
     {
       "label": "MoveSpritesOffscreen",
       "line": 969,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5549,14 +5597,20 @@
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SprInitLoop",
       "line": 972,
-      "receiver": "M2 T22 S19",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "receiver": "M2 T22 S26",
+      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5577,6 +5631,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S19",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S26",
+          "relation": "accepted independent sprite/OAM proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -54814,7 +54874,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -55104,6 +55164,24 @@
         "RotPRandomBit"
       ],
       "acceptedBy": "T22/S25 accepts the repaired timer/LFSR source contract for independent controlled-NMI equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-037-t22-s19-to-s26",
+      "type": "transfer",
+      "from": "M2 T22 S19",
+      "to": "M2 T22 S26",
+      "nodes": [
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "acceptedBy": "T22/S26 accepts the S19 sprite-zero/OAM source contract for independent controlled-ROM equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
@@ -59919,7 +59997,65 @@
       "maximumComplete": 27,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-sprite-oam-contract"
+      "state": "closed-sprite-oam-contract-transfer-to-s26"
+    },
+    {
+      "subtask": "M2 T22 S26",
+      "kind": "implementation",
+      "scope": [
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "baseline": 27,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "InitBuffer",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
+      ],
+      "expectedMatches": [
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "maximumComplete": 35,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-sprite-oam-equivalence-review"
     }
   ]
 }

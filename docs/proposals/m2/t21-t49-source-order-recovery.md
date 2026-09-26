@@ -538,3 +538,7 @@ T22/S19 is active for the next NMI sprite-zero/OAM subtree at **27 / 1,992**, wi
 
 
 T22/S19 admission correction: `SkipMainOper` is the eighth accepted direct NMI child in the S13 transfer and is therefore included in S19 scope. Its pause-status branch follows `SkipSprite0` after the scene-scroll writes; it cannot be left outside this source-contract package.
+
+## T22/S19 sprite/OAM source contract and T22/S26 proof admission
+
+S19 closes at **27 / 1,992** with no node credit. It mapped the sprite-zero flag gate, the hardware-only PPU status waits, the pause skip, `MoveSpritesOffscreen` offsets `$04..$fc`, and the post-branch scene-scroll handoff. The shared root now publishes scene scroll after that branch. Controlled ROM samples at `SkipSprite0` cover flag absent, active/unpaused and active/paused OAM states; project tests cover the same paths. All eight labels transfer to S26 for independent proof, forecast 35 / 1,992.
