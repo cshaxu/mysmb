@@ -16,20 +16,20 @@ void mysmb_enemy_move_downward(struct mysmb_game *game, mysmb_u8 slot,
 {
     mysmb_u8 old_value;
     mysmb_u8 carry;
+    mysmb_u8 page_delta;
+    mysmb_u16 sum;
 
     old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
     game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
         (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
     carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    old_value = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-    }
-    if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) {
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-    }
+    page_delta = game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
+    sum = (mysmb_u16)game->ram[MYSMB_ENEMY_Y + slot] +
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry;
+    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)sum;
+    carry = sum > 0xffU ? 1U : 0U;
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_HIGH + slot] + page_delta + carry);
     old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + amount);
     carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;

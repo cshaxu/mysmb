@@ -1,4 +1,5 @@
 #include "game/world/world.h"
+#include "game/enemy/movement.h"
 
 int main(void)
 {
@@ -68,5 +69,18 @@ int main(void)
     mysmb_world_set_bounding_box(&game, 0x0420U, 7U, 0xfcU, 0x40U);
     if (game.ram[0x0420U] != 0xfcU || game.ram[0x0421U] != 0x40U ||
         game.ram[0x0422U] != 4U || game.ram[0x0423U] != 0x48U) return 9;
+    /* ROM MoveD_EnemyVertically -> ImposeGravitySprObj: signed $ff plus
+     * a carried fractional step leaves Y=$20 but ADC still carries to cancel
+     * the signed high-byte decrement. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0417U] = 0xb0U;
+    game.ram[0x0434U] = 0x50U;
+    game.ram[0x00a0U] = 0xffU;
+    game.ram[0x00cfU] = 0x20U;
+    game.ram[0x00b6U] = 1U;
+    mysmb_enemy_move_downward(&game, 0U, 0x3dU, 3U);
+    if (game.ram[0x0417U] != 0U || game.ram[0x00cfU] != 0x20U ||
+        game.ram[0x00b6U] != 1U || game.ram[0x00a0U] != 0xffU) return 10;
+
     return 0;
 }
