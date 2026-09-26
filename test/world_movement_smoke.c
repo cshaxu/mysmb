@@ -54,5 +54,13 @@ int main(void)
     game.ram[0x0400U] = 0xf8U; game.ram[0x0402U] = 0x08U;
     game.ram[0x0410U] = 0xfcU; game.ram[0x0412U] = 0x04U;
     if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) != 0U) return 7;
+    /* SprObjectCollisionCore's SecondBoxVerticalChk treats a first box that
+     * wraps from $f8 through $08 as touching a second box at $04..$0c. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0400U] = 0x10U; game.ram[0x0402U] = 0x20U;
+    game.ram[0x0401U] = 0xf8U; game.ram[0x0403U] = 0x08U;
+    game.ram[0x0410U] = 0x10U; game.ram[0x0412U] = 0x20U;
+    game.ram[0x0411U] = 0x04U; game.ram[0x0413U] = 0x0cU;
+    if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) == 0U) return 8;
     return 0;
 }
