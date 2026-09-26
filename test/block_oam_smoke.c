@@ -23,6 +23,21 @@ int main(void)
         game.ram[0x0228U] != 0x28U || game.ram[0x0229U] != 0x87U ||
         game.ram[0x022aU] != 0x83U || game.ram[0x022eU] != 0xc3U) return 1;
 
+    /* ROM DrawBlock leaves all four ordinary-block attributes at palette 3.
+     * Flip bits are only assigned by its used-block ($c4) branch. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x0026U] = 1U;
+    game.ram[0x008fU] = 0x40U;
+    game.ram[0x00d7U] = 0x20U;
+    game.ram[0x03e8U] = 0x51U;
+    game.ram[0x06ecU] = 0x20U;
+    game.ram[0x074eU] = 1U;
+    mysmb_objects_step_blocks(&game);
+    if (game.ram[0x0222U] != 3U || game.ram[0x0226U] != 3U ||
+        game.ram[0x022aU] != 3U || game.ram[0x022eU] != 3U) return 2;
+
     mysmb_game_initialize_memory(&game, 0U);
     game.frame_number = 4UL;
     game.ram[0x0009U] = (mysmb_u8)(4UL);
@@ -41,7 +56,7 @@ int main(void)
     if (game.ram[0x0220U] != 0x20U || game.ram[0x0221U] != 0x84U ||
         game.ram[0x0222U] != 0x43U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0227U] != 0x46U || game.ram[0x0228U] != 0x28U ||
-        game.ram[0x022bU] != 0x40U || game.ram[0x022fU] != 0x46U) return 2;
+        game.ram[0x022bU] != 0x40U || game.ram[0x022fU] != 0x46U) return 3;
 
     /* ImposeGravity reaches Block_YMF_Dummy through generic offset $09:
      * $0416+$09=$041f.  A carry from slot zero affects Block Y and OAM. */
@@ -55,5 +70,5 @@ int main(void)
     game.ram[0x06ecU] = 0x20U;
     mysmb_objects_step_blocks(&game);
     return game.ram[0x00d7U] == 0x41U && game.ram[0x041fU] == 0U &&
-        game.ram[0x0220U] == 0x41U ? 0 : 3;
+        game.ram[0x0220U] == 0x41U ? 0 : 4;
 }

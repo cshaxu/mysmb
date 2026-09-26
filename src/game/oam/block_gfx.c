@@ -67,14 +67,22 @@ void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x0205U + offset] = tile0;
     game->ram[0x0209U + offset] = tile1;
     game->ram[0x020dU + offset] = tile1;
+    /* ROM DrawSpriteObject emits the same attribute byte for both rows of
+     * a normal block.  Only DrawBlock's $c4 replacement branch subsequently
+     * assigns its horizontal and vertical mirror bits. */
     game->ram[0x0202U + offset] = attributes;
-    game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
-    game->ram[0x020aU + offset] = (mysmb_u8)(attributes | 0x80U);
-    game->ram[0x020eU + offset] = (mysmb_u8)(attributes | 0xc0U);
+    game->ram[0x0206U + offset] = attributes;
+    game->ram[0x020aU + offset] = attributes;
+    game->ram[0x020eU + offset] = attributes;
     game->ram[0x0203U + offset] = x;
     game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
     game->ram[0x020bU + offset] = x;
     game->ram[0x020fU + offset] = (mysmb_u8)(x + 8U);
+    if (game->ram[MYSMB_BLOCK_METATILE + slot] == 0xc4U) {
+        game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
+        game->ram[0x020aU + offset] = (mysmb_u8)(attributes | 0x80U);
+        game->ram[0x020eU + offset] = (mysmb_u8)(attributes | 0xc0U);
+    }
     mysmb_block_hide_columns(game, offset, slot);
 }
 
