@@ -63,6 +63,8 @@ static const mysmb_u8 mysmb_vram_address_low[19] = {
     0x34U, 0x3cU, 0x44U, 0x54U, 0x68U, 0x7cU, 0xa8U, 0xbfU, 0xdeU,
     0xefU
 };
+static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game);
+
 static const mysmb_u8 mysmb_vram_address_high[19] = {
     0x03U, 0x8cU, 0x8cU, 0x8cU, 0x8dU, 0x03U, 0x03U, 0x03U, 0x8dU,
     0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU,
@@ -91,8 +93,7 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
         game->ram[MYSMB_ROOT_FRAME_COUNTER]++;
     }
     mysmb_game_rotate_pseudorandom(game);
-    if (game->ram[MYSMB_ROOT_SPRITE0_HIT] == 0U) return paused;
-    if (paused == 0U) {
+    if (game->ram[MYSMB_ROOT_SPRITE0_HIT] != 0U && paused == 0U) {
         oam_offset = 4U;
         do {
             game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
@@ -100,6 +101,7 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
         } while (oam_offset != 0U);
         mysmb_game_shuffle_sprite_offsets(game);
     }
+    mysmb_frame_root_commit_scene_scroll(game);
     return paused;
 }
 
@@ -494,6 +496,12 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
 /* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
  * commits scroll/name-table state, then re-enables NMI on $2000.  Gameplay
  * has already changed the source-owned scroll fields when this is called. */
+static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game)
+{
+    game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
+    game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
+}
+
 void mysmb_game_commit_display_state(struct mysmb_game *game)
 {
     mysmb_u8 mask_mirror;
@@ -519,6 +527,4 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     game->visible_ppu_control_0 = (mysmb_u8)(game->ppu_control_0 | 0x80U);
     game->visible_ppu_mask = game->ppu_mask;
     game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
-    game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
-    game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
 }
