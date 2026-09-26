@@ -337,3 +337,14 @@ the call order around `UpdateScreen`. It may not alter title, area or message
 producers. Focused tests will cover selector values 0-18, default buffer,
 selector 5, selectors 6/7 and palette/message data routes, with controlled
 NMI traces and all three target builds kept separate from logic equivalence.
+
+### T22/S12 P1 table/write migration
+
+The shared NMI owner now contains the reviewed 19-entry low/high table and
+writes the selected source pointer to `$00/$01` before consuming it. It always
+clears the selected source header afterward: `$0340/$0341` only for selector
+6, and `$0300/$0301` for every other selector, including selector 7. The new
+project-owned smoke executes selectors 0 through 18 and checks each pointer,
+address-control reset and clear branch on x86 and x64. This is an
+implementation checkpoint; S12 still has no completion credit until its
+controlled ROM comparison and independent label review are complete.

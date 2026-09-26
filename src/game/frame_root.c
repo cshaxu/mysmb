@@ -54,6 +54,20 @@ enum {
     MYSMB_FRAME_LEVEL = 0x075cU,
     MYSMB_FRAME_TIMER_CONTROL = 0x0747U
 };
+
+/* ROM $805a-$8070 VRAM_AddrTable_Low/High and $8071 Buffer_Offset.  These
+ * are source CPU addresses, retained because NMI writes the selected pointer
+ * to zero page before UpdateScreen consumes it. */
+static const mysmb_u8 mysmb_vram_address_low[19] = {
+    0x01U, 0xa4U, 0xc8U, 0xecU, 0x10U, 0x00U, 0x41U, 0x41U, 0x4cU,
+    0x34U, 0x3cU, 0x44U, 0x54U, 0x68U, 0x7cU, 0xa8U, 0xbfU, 0xdeU,
+    0xefU
+};
+static const mysmb_u8 mysmb_vram_address_high[19] = {
+    0x03U, 0x8cU, 0x8cU, 0x8cU, 0x8dU, 0x03U, 0x03U, 0x03U, 0x8dU,
+    0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU, 0x8dU,
+    0x8dU
+};
 mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
                             const struct mysmb_input *input,
                             mysmb_u8 *mode_before, mysmb_u8 *task_before)
@@ -430,51 +444,48 @@ void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
  * cleared only after its terminal command has reached PPU-visible state. */
 void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] >= 1U &&
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] <= 4U) {
+    mysmb_u8 selector;
+
+    selector = game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL];
+    if (selector < 19U) {
+        game->ram[0x0000U] = mysmb_vram_address_low[selector];
+        game->ram[0x0001U] = mysmb_vram_address_high[selector];
+    }
+    if (selector >= 1U && selector <= 4U) {
         (void)mysmb_area_apply_palette(game, (mysmb_u8)(
-            game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] - 1U));
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
+            selector - 1U));
     }
-    if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] >= 8U &&
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] <= 11U) {
+    else if (selector >= 8U && selector <= 11U) {
         (void)mysmb_area_apply_special_palette(game,
-            game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL]);
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
+            selector);
     }
-    if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] >= 12U &&
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] <= 18U) {
+    else if (selector >= 12U && selector <= 18U) {
         (void)mysmb_area_apply_message(game,
-            game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL]);
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
+            selector);
     }
-    /* VRAM_AddrTable entries 6 and 7 both select VRAM_Buffer2.  The source
-     * parser guard distinguishes only 6; NMI always transfers the selected
-     * list.  RemoveCoin_Axe writes its fixed $0341 command with $0340 clear. */
-    if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] == 6U ||
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] == 7U) {
+    else if (selector == 6U || selector == 7U) {
         (void)mysmb_game_apply_vram_commands(game,
             &game->ram[MYSMB_ROOT_VRAM_BUFFER2], 0x00c0U);
-        game->ram[MYSMB_ROOT_VRAM_BUFFER2_OFFSET] = 0U;
-        game->ram[MYSMB_ROOT_VRAM_BUFFER2] = 0U;
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
     }
-    if (game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] == 5U) {
+    else if (selector == 5U) {
         (void)mysmb_game_apply_vram_commands(game, &game->ram[0x0300U],
                                               0x013aU);
-        game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
-        return;
     }
-    if (game->ram[MYSMB_ROOT_VRAM_BUFFER1_OFFSET] == 0U &&
-        game->ram[MYSMB_ROOT_VRAM_BUFFER1] == 0U) return;
-    (void)mysmb_game_apply_vram_commands(game,
-        &game->ram[MYSMB_ROOT_VRAM_BUFFER1], 0x0100U);
-    game->ram[MYSMB_ROOT_VRAM_BUFFER1_OFFSET] = 0U;
-    game->ram[MYSMB_ROOT_VRAM_BUFFER1] = 0U;
+    else {
+        (void)mysmb_game_apply_vram_commands(game,
+            &game->ram[MYSMB_ROOT_VRAM_BUFFER1], 0x0100U);
+    }
+    /* InitBuffer selects Buffer_Offset[1] only when X is exactly six.  Entry
+     * seven transfers $0341 but still clears the ordinary $0300/$0301 header. */
+    if (selector == 6U) {
+        game->ram[MYSMB_ROOT_VRAM_BUFFER2_OFFSET] = 0U;
+        game->ram[MYSMB_ROOT_VRAM_BUFFER2] = 0U;
+    }
+    else {
+        game->ram[MYSMB_ROOT_VRAM_BUFFER1_OFFSET] = 0U;
+        game->ram[MYSMB_ROOT_VRAM_BUFFER1] = 0U;
+    }
+    game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
 }
 
 /* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
