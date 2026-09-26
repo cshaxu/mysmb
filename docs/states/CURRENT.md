@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T21 S1 active: close the bounded T20 fireball, bubble, timer and Warp successor scope.**
+**M2 T21 S2 active: audit and migrate the shared C boot/cold-initialization owner.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation's active packet and cannot preempt T21.
@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T21 S1 Packet
+## M2 T21 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T21 S1, New; owner-directed historical closure audit. |
-| Admission And Approval | `accept-006` assigns the 24-node group to T20/S4. Owner directed restoration of T20 as the active task on 2026-09-26 after identifying that its unfinished work had been incorrectly preempted by T24 governance. |
-| Objective | Verify and close or transfer the unfinished T15–T20 groups without inventing ROM-match claims. |
-| Non-goals | Collision and enemy-hit nodes owned by T17/S6; OAM, relative-position and offscreen nodes owned by T16/S4; whirlpool, flagpole, jumpspring and vine nodes owned by T22/S5; T24 ledger custody. |
-| Reference Baseline | 3 / 1,992 complete; the T24 fire-attempt audit marks `ProcFireball_Bubble` and `FireballObjCore` as requiring revalidation. |
-| Candidate Proposal | [T21 bounded successor](../proposals/m2/t21-fireball-bubble-timer-warp.md). |
-| Files And ABI Surface | `src/game/fireball/`, shared timer/warp owners when source mapping requires them, focused tests, T20 proposal, ledger run, ignored evidence and local target artifacts; no platform gameplay logic. |
-| Applicable Rules | Task Reading Set: execution, contributing, architecture, coding, source policy, node ledger workflow and source policy. |
-| Verification | Per-node source branch/write review; focused fireball and collision tests; original controller-reachable route or recorded blocker; x86/x64 suites; OpenNT DOS16 link; platform-purity and documentation gates. |
-| Expected Markers | S1 scope: the 24 transferred T20 nodes listed in the T21 proposal. Expected match subset: empty; maximum 3 / 1,992. |
+| Identifier Mode | M2 T21 S2, Continuation; shared-C implementation. |
+| Admission And Approval | Owner approved source-order replan and T21 admission on 2026-09-26. |
+| Objective | Migrate and audit the shared-C boot/cold-initialization owner for 7 boot nodes. |
+| Non-goals | NMI/PPU timing after `ScreenOff`, all gameplay routes, and T20 fireball/bubble nodes are outside T21. |
+| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S2. |
+| Candidate Proposal | [T21 boot and cold initialization](../proposals/m2/t21-boot-cold-init.md); [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
+| Files And ABI Surface | Boot/root C owners, focused root tests, ledger run and ignored route evidence; no platform gameplay logic. |
+| Applicable Rules | Task Reading Set, execution, contributing, architecture, coding, source policy and node-ledger workflow. |
+| Verification | S2 changes only shared game code. S3 ROM logic-equivalence and S4 operational verification remain separate. |
+| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: empty; maximum 3 / 1,992. |
 | Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Build products, traces and ROM-derived executables remain local; each P refreshes the three local target artifacts without treating them as conformance evidence. |
 | Reporting Requirements | For every P, name its exact node subset, branch/write mapping, test and route evidence, actual versus expected matches, blockers/transfers, three-artifact hashes and platform-boundary review. |
-| Stop Conditions | Stop if any change modifies a T17/T16/T22-owned node, introduces host logic into `game`, or lacks a source label and accepted receiver. |
-| Exit Criteria | Every accepted node has branch/write plus route evidence or an accepted successor; actual inventory completions are recorded by exact name; no unfinished node remains in T20/S4 custody. |
-| Original Owner Request | Keep T20 active until its work is properly handed off and closed; do not let T24 governance preempt unfinished implementation. |
-| Similar-Issue Sweep | Audit all T20 physical-slice labels for mismatched ledger receivers, duplicated gates, host logic, stale direct tests and source changes that require route revalidation. |
+| Stop Conditions | Stop if a root branch requires a later NMI, platform, or gameplay owner without an accepted dependency boundary. |
+| Exit Criteria | Every admitted write and branch has a shared-C owner or an accepted boundary; S3/S4 have a reviewable implementation basis. |
+| Original Owner Request | Replan the backlog in source order and execute small, verifiable tasks. |
+| Similar-Issue Sweep | Check every boot/root label for duplicated initialization, host-owned state, stale direct tests, and missing cold/warm branch evidence. |
 
 ## Recent M4 Closures
 

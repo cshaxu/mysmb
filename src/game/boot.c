@@ -33,9 +33,16 @@ void mysmb_game_reset(struct mysmb_game *game)
     if (game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] != 0xa5U)
         warm_boot = 0U;
     mysmb_game_initialize_memory(game, warm_boot != 0U ? 0xd6U : 0xfeU);
+    /* ColdBoot returns from InitializeMemory with A == 0, then writes that
+     * accumulator value to $4011 before it resets OperMode. */
+    game->apu_delta_counter_load = 0U;
     game->ram[MYSMB_BOOT_OPER_MODE] = 0U;
     game->ram[MYSMB_BOOT_WARM_BOOT_VALIDATION] = 0xa5U;
     game->ram[MYSMB_BOOT_PSEUDORANDOM] = 0xa5U;
+    /* ColdBoot's LDA #$0f / STA $4015 enables the four non-DMC channels.
+     * This portable output is shared by every target; the host may only
+     * present it. */
+    game->apu_channel_enable = 0x0fU;
     /* ColdBoot writes $06 directly to $2001; it is not the later NMI mirror. */
     game->ppu_mask = 0x06U;
     game->visible_ppu_mask = 0x06U;
@@ -62,21 +69,15 @@ void mysmb_game_initialize(struct mysmb_game *game)
     for (index = 0U; index < 0x0020U; ++index) {
         game->palette[index] = 0U;
     }
-    /* Cold boot supplies the initial display state.  Later
-     * InitializeNameTables calls must retain the NMI-owned $2001 mirror. */
-    game->ppu_mask = 0U;
-    mysmb_game_initialize_memory(game, 0xfeU);
-    mysmb_game_move_all_sprites_offscreen(game);
-    /* Cold boot has already made the initial $4014 transfer before the
-     * first recorder-visible NMI. */
+    /* After constructing the otherwise uninitialized C container, enter the
+     * same Start/WBootCheck/ColdBoot state root as every target.  Do not keep
+     * a second, host-only cold-boot sequence here. */
+    mysmb_game_reset(game);
+    /* The host container needs a defined presentation backing store before
+     * its first NMI.  T22 owns the source $4014 transfer cadence; this copy
+     * only initializes the C container and does not decide any game state. */
     mysmb_game_submit_oam(game);
     game->oam_dma_primed = 0U;
-    mysmb_game_initialize_name_tables(game);
-    game->visible_ppu_control_0 = 0x90U;
-    game->visible_ppu_mask = 0U;
-    game->visible_ppu_name_table = 0U;
-    game->visible_scroll_x = 0U;
-    game->visible_scroll_y = 0U;
     game->area_prg = 0;
     game->area_prg_size = 0U;
     game->title_data = 0;

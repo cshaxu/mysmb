@@ -56,6 +56,11 @@ struct mysmb_game {
     mysmb_u8 visible_ppu_name_table;
     mysmb_u8 visible_scroll_x;
     mysmb_u8 visible_scroll_y;
+    /* Portable copies of the ROM's directly-written APU output registers.
+     * They are translated game output, not host audio state: adapters may
+     * consume them but may not infer or replace their values. */
+    mysmb_u8 apu_delta_counter_load;
+    mysmb_u8 apu_channel_enable;
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
     /* Immutable owner-local CHR pattern data used by the shared PPU compositor. */
     const mysmb_u8 *chr_data;
