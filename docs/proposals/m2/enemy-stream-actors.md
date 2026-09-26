@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P0.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -100,3 +100,7 @@ ROM `RunSmallPlatform` and `RunLargePlatform` call `RelativeEnemyPosition` immed
 ## S4 P8: Bubble and hammer fixed scratch restoration
 
 ROM `ProcAirBubbles` runs `RelativeBubblePosition → GetBubbleOffscreenBits → DrawBubble` for slots 2 through 0, using fixed `Bubble_Rel_XPos` `$03b0`, `Bubble_Rel_YPos` `$03bb`, and `Bubble_OffscreenBits` `$03d3`; the final fixed values therefore belong to slot 0 while slot 2 OAM remains drawn. `RelativeMiscPosition → GetMiscOffscreenBits → DrawHammer` similarly uses fixed `$03b3/$03be/$03d6`. The shared bubble and hammer owners no longer fabricate slot-indexed scratch arrays, and Bubble regression explicitly verifies loop-final scratch separately from slot-2 OAM. Full x64/x86 CTest passes 79/79 each; the shared DOS MZ relinks and all three artifacts were refreshed.
+
+## S4 P9: handler scratch-address closure
+
+The complete S4 static audit searches every shared game writer for the fixed ROM scratch cells used by enemy, bubble, and misc OAM routes. No fixed scratch destination is slot-indexed: $03ae/$03b9/$03d1, $03b0/$03bb/$03d3, and $03b3/$03be/$03d6 each have one current-actor result. Remaining +slot expressions read true object arrays for source X/Y values or write the source EnemyOffscrBitsMasked array at $03d8; they are not aliases of temporary registers. This closes S4's normal/special handler audit and admits S5's source-reachable frame-route comparison. The physical adapters also retain the common control contract: J produces NES B and K produces NES A on both Win32 and DOS; the DOS regression passes in both x64 and x86 test trees. Full x64/x86 suites, shared DOS link, and all three refreshed artifacts accompany this closure packet.
