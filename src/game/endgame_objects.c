@@ -156,7 +156,7 @@ void mysmb_objects_step_star_flags(struct mysmb_game *game)
                  game->ram[MYSMB_ENDGAME_GAME_TIMER + 2U]) == 0U)
                 game->ram[MYSMB_ENDGAME_STAR_FLAG_TASK]++;
             else if ((game->ram[MYSMB_ENDGAME_FRAME_COUNTER] & 4U) != 0U) {
-                game->ram[MYSMB_ENDGAME_SQUARE2_SOUND] = 2U;
+                game->ram[MYSMB_ENDGAME_SQUARE2_SOUND] = 0x10U;
                 game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + 5U] = 0xffU;
                 mysmb_endgame_apply_digits(game, 0x23U);
                 mysmb_endgame_award_score(game, 5U);

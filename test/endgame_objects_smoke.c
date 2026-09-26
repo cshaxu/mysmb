@@ -30,6 +30,20 @@ static int test_star_flag_oam(void)
     return 0;
 }
 
+static int test_star_flag_timer_tick(void)
+{
+    struct mysmb_game game;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 49U;
+    game.ram[0x0746U] = 2U;
+    game.ram[0x0009U] = 4U;
+    game.ram[0x07f8U] = 1U;
+    mysmb_objects_step_star_flags(&game);
+    if (game.ram[0x00feU] != 0x10U || game.ram[0x07f8U] != 0U) return 6;
+    return 0;
+}
 static int test_fireworks(void)
 {
     struct mysmb_game game;
@@ -86,6 +100,8 @@ int main(void)
     int result;
 
     result = test_star_flag_oam();
+    if (result != 0) return result;
+    result = test_star_flag_timer_tick();
     if (result != 0) return result;
     result = test_fireworks();
     if (result != 0) return result;
