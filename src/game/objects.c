@@ -1074,8 +1074,12 @@ void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game)
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             (game->ram[MYSMB_ENEMY_ID + slot] != 10U &&
-             game->ram[MYSMB_ENEMY_ID + slot] != 11U) ||
-            (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) continue;
+             game->ram[MYSMB_ENEMY_ID + slot] != 11U)) continue;
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
+            /* ROM MoveSwimmingCheepCheep -> MoveEnemySlowVert. */
+            mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+            continue;
+        }
         amount = game->ram[MYSMB_ENEMY_ID + slot] == 10U ? 0x40U : 0x80U;
         old_value = game->ram[MYSMB_ENEMY_X_FORCE + slot];
         game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_value - amount);

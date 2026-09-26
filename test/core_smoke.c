@@ -711,6 +711,19 @@ int main(void)
     if (game.ram[0x0403U] != 0xc0U || game.ram[0x0089U] != 0x0fU ||
         game.ram[0x0419U] != 0xe0U || game.ram[0x00d1U] != 0x6fU ||
         game.ram[0x00b8U] != 1U) return 1;
+    /* Defeated swimming Cheep takes MoveEnemySlowVert, not the swim path. */
+    game.ram[0x0011U] = 0U;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 10U;
+    game.ram[0x001eU] = 0x20U;
+    game.ram[0x00b6U] = 1U;
+    game.ram[0x00cfU] = 0x70U;
+    game.ram[0x00a0U] = 0xfdU;
+    game.ram[0x0417U] = 0U;
+    game.ram[0x0434U] = 0U;
+    mysmb_objects_step_swimming_cheep_cheeps(&game);
+    if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0x6dU ||
+        game.ram[0x00a0U] != 0xfdU || game.ram[0x0434U] != 0x0fU) return 116;
     game.ram[0x0011U] = 0U;
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 12U;
