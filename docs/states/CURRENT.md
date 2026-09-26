@@ -60,7 +60,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Asset Needs | Owner-local ROM/listing remain ignored research inputs. |
 | Reporting Requirements | Publish source nodes, call edges, RAM/PPU ownership and exact successor S plan before migration. |
 | Stop Conditions | Stop if a platform adapter must assume game behavior or if a historical T22 record would be overwritten. |
-| Exit Criteria | A bounded T22 implementation S receives the exact source owner set and a call-order checklist, with no invented node credit. |
+| Exit Criteria | The exact source owner/call-order checklist is published and a bounded T22 migration S can be admitted without inventing node credit. |
 | Original Owner Request | Execute small source-order tasks with exact node responsibility. |
 | Similar-Issue Sweep | Inspect all pre-first-tick calls for later source-node work. |
 ## Recent M4 Closures

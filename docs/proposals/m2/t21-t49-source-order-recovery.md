@@ -49,3 +49,27 @@ T21 owns exactly `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`,
 nodes (`VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`,
 `NonMaskableInterrupt`, `ScreenOff`) are held in source-order custody for T22.
 No fireball or later gameplay node belongs to T21. T21 closure transferred its seven root labels into T22 deferred custody because current startup invokes later title bootstrap before the first shared NMI; T22 owns that integrated first-NMI repair and re-admission boundary. Historical T22 S1–S5 records remain immutable, so the source-order intake uses the next available T22 slot, S6.
+
+## T22/S6 first-NMI source contract
+
+T22/S6 receives twelve labels in one dependency chain. The original path is
+`Start → VBlank1 → VBlank2 → WBootCheck → ColdBoot → EndlessLoop`; the final
+`WritePPUReg1` enables NMI and no title/area initialization occurs on that
+path. The first NMI then owns `NonMaskableInterrupt`, including `ScreenOff`,
+OAM DMA, the two VRAM-address tables, `VRAM_Buffer_Offset`, update/clear of
+the selected buffer, input/timer work and only then the operation-mode tree.
+
+| Node group | Source-owned order | Current native owner | T22/S6 finding |
+| --- | --- | --- | --- |
+| `Start`, `VBlank1`, `VBlank2` | CPU/PPU setup, then two no-RAM-write status polls | Win32/DOS timing roots and `boot.c` | The two-boundary gate is operationally shared, but must remain before all later game work. |
+| `WBootCheck`, `ColdBoot`, `InitializeMemory`, `EndlessLoop` | score/marker branch, RAM clear, cold writes, then idle until NMI | `boot.c` | `mysmb_game_reset` is the examined shared owner; construction must not append later ROM-node writes before NMI. |
+| `NonMaskableInterrupt`, `ScreenOff` | mask/scroll/OAM/VRAM/input/timer prologue before operation dispatch | `frame_root.c` | `mysmb_frame_root_begin` is the shared destination for the first-NMI prologue. |
+| `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset` | `$0773` selects pointer; buffer is submitted then the selected header is cleared | `frame_root.c` | `mysmb_game_commit_vram_buffer` must remain inside the NMI root and never be called by host bootstrap. |
+
+The audit found one concrete pre-NMI violation: both host roots call
+`mysmb_game_initialize`, bind sources and invoke `mysmb_game_begin_title_bootstrap`
+before their first shared tick. That bootstrap performs `InitializeGame`/area
+work which source executes only after the NMI prologue enters the title-mode
+tree. T22/S7 must move that work to the shared first-NMI path, retain host
+resource binding as inert data attachment, and test the exact pre-NMI state.
+No label is complete from this contract.
