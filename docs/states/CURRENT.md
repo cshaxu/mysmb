@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S2/P4, M2 T19 S2 and M2 T18 S1 active; M2 T17 S4/P16 and S5/P4 active (S2/S3 complete; S4 active); M2 T16 S3/P6 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
+**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S3/P2, M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
 
 | Field | Record |
 | --- | --- |
@@ -101,10 +101,13 @@ completion. T9 audits and replaces the insufficient frame/output proof.
 
 M2 T19 S2/P3 has begun structural recovery: `MoveD_EnemyVertically` is now owned by `src/game/enemy/movement.c`; `objects.c` is no longer a target for new actor logic.
 
-M2 T17 S2/P5 is complete: `MoveObjectHorizontally` now preserves its full ADC carry and `MoveEnemyHorizontally` has one world-owner wrapper; T17 S5/P4 remains active.
+M2 T17 S2/P5 is complete: `MoveObjectHorizontally` now preserves its full ADC carry and `MoveEnemyHorizontally` has one world-owner wrapper; S6/P1-P6 now provide source-reachable movement, mushroom, hidden-block, pipe, stomp, and score evidence; fireball route closure remains pending.
 
 M2 T19 S3/P1 is complete: the full Lakitu/Spiny frenzy function group now has one shared `game/enemy/frenzy.c` owner; T19 S3 remains active for remaining group/initialization dispatch.
 
 M2 T19 S3/P2 is complete: `InitEnemyFrenzy → InitFlyingCheepCheep` has the same shared `game/enemy/frenzy.c` owner; regular Flying Cheep actor handling remains reserved for T19 S4.
 
 M2 T19 S3/P3 is complete: `InitEnemyObject → CheckpointEnemyID → InitEnemyRoutines` now has one shared `game/enemy/init.c` owner; stream parsing no longer contains initialization dispatch.
+
+M2 T19 S5/P20 restores ROM current-slot `EnemiesCollision`: no frame-root global collision scan manufactures bounding boxes; the pipe route OAM residual is removed.
+M2 T16 S3/P8 restores defeated-Goomba mirrored OAM attributes and its route evidence is consumed by the updated T17 pipe comparison.
