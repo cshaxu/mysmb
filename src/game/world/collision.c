@@ -3,6 +3,9 @@
 #include "game/objects.h"
 
 enum {
+    MYSMB_WORLD_PLAYER_PAGE = 0x006dU,
+    MYSMB_WORLD_PLAYER_X = 0x0086U,
+    MYSMB_WORLD_PLAYER_Y = 0x00ceU,
     MYSMB_SQUARE2_SOUND = 0x00feU,
     MYSMB_SQUARE1_SOUND = 0x00ffU
 };
@@ -13,6 +16,38 @@ mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x)
 {
     return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
+}
+
+/* Translation of BlockBufferCollision address construction for player offset zero. */
+mysmb_u8 mysmb_world_query_player_block(const struct mysmb_game *game,
+                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
+                                  mysmb_u8 horizontal_contact,
+                                  struct mysmb_player_terrain *terrain)
+{
+    mysmb_u8 x;
+    mysmb_u8 page;
+    mysmb_u8 column;
+    mysmb_u8 y;
+    mysmb_u16 address;
+
+    if (terrain == 0) return 0U;
+    x = (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_X] + x_adder);
+    page = (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_PAGE] +
+                      (x < game->ram[MYSMB_WORLD_PLAYER_X] ? 1U : 0U));
+    column = (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U));
+    y = (mysmb_u8)(((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
+    if ((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
+    address = (mysmb_u16)((column & 0x10U) != 0U ? 0x05d0U : 0x0500U);
+    address = (mysmb_u16)(address + (column & 0x0fU));
+    terrain->block_address_low = (mysmb_u8)(address & 0x00ffU);
+    address = (mysmb_u16)(address + y);
+    if (address >= 0x0800U) return 0U;
+    terrain->metatile = game->ram[address];
+    terrain->contact_low_nibble = horizontal_contact != 0U ?
+        (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_X] & 0x0fU) :
+        (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_Y] & 0x0fU);
+    terrain->block_row_offset = y;
+    return 1U;
 }
 
 /* ROM EnemyLanding -> InitVStf. */

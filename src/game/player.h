@@ -51,19 +51,6 @@ struct mysmb_player_checkpoint {
 void mysmb_player_checkpoint(const struct mysmb_game *game,
                              struct mysmb_player_checkpoint *checkpoint);
 
-struct mysmb_player_terrain {
-    mysmb_u8 metatile;
-    mysmb_u8 contact_low_nibble;
-    /* Low byte of ROM $06-$07 before the row offset is applied. */
-    mysmb_u8 block_address_low;
-    /* ROM $02: the selected row offset in the block buffer. */
-    mysmb_u8 block_row_offset;
-};
-/* ROM BlockBufferCollision/GetBlockBufferAddr coordinate query. */
-mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
-                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
-                                  mysmb_u8 horizontal_contact,
-                                  struct mysmb_player_terrain *terrain);
 mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
                                            mysmb_u8 left, mysmb_u8 right);
 void mysmb_player_step_vertical_pipe(struct mysmb_game *game);

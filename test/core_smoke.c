@@ -360,7 +360,7 @@ int main(void)
     game.ram[0x006dU] = 1U;
     game.ram[0x00ceU] = 0x30U;
     game.ram[0x05e2U] = 0x61U;
-    if (mysmb_player_query_block(&game, 0U, 0U, 0U, &terrain) == 0U ||
+    if (mysmb_world_query_player_block(&game, 0U, 0U, 0U, &terrain) == 0U ||
         terrain.metatile != 0x61U || terrain.contact_low_nibble != 0U) {
         return 1;
     }

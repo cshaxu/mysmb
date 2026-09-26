@@ -30,6 +30,19 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                    mysmb_u16 first, mysmb_u16 second);
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
+/* ROM BlockBufferCollision/GetBlockBufferAddr coordinate result for the
+ * player probe.  PlayerCtrlRoutine chooses every probe-table entry; this
+ * world primitive only constructs and reads the block-buffer address. */
+struct mysmb_player_terrain {
+    mysmb_u8 metatile;
+    mysmb_u8 contact_low_nibble;
+    mysmb_u8 block_address_low;
+    mysmb_u8 block_row_offset;
+};
+mysmb_u8 mysmb_world_query_player_block(const struct mysmb_game *game,
+                                        mysmb_u8 x_adder, mysmb_u8 y_adder,
+                                        mysmb_u8 horizontal_contact,
+                                        struct mysmb_player_terrain *terrain);
 /* ROM EnemyLanding -> InitVStf. */
 void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM BlockBufferChk_Enemy output. */

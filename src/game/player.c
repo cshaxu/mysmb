@@ -838,37 +838,6 @@ static void mysmb_player_collect_metatile_coin(struct mysmb_game *game,
     game->ram[MYSMB_SQUARE2_SOUND_QUEUE] = 1U;
     mysmb_objects_collect_coin(game, block_low, block_row);
 }
-/* Translation of BlockBufferCollision address construction for player offset zero. */
-mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
-                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
-                                  mysmb_u8 horizontal_contact,
-                                  struct mysmb_player_terrain *terrain)
-{
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 column;
-    mysmb_u8 y;
-    mysmb_u16 address;
-
-    if (terrain == 0) return 0U;
-    x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] + x_adder);
-    page = (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] +
-                      (x < game->ram[MYSMB_PLAYER_X] ? 1U : 0U));
-    column = (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U));
-    y = (mysmb_u8)(((game->ram[MYSMB_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
-    if ((game->ram[MYSMB_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
-    address = (mysmb_u16)((column & 0x10U) != 0U ? 0x05d0U : 0x0500U);
-    address = (mysmb_u16)(address + (column & 0x0fU));
-    terrain->block_address_low = (mysmb_u8)(address & 0x00ffU);
-    address = (mysmb_u16)(address + y);
-    if (address >= 0x0800U) return 0U;
-    terrain->metatile = game->ram[address];
-    terrain->contact_low_nibble = horizontal_contact != 0U ?
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_X] & 0x0fU) :
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] & 0x0fU);
-    terrain->block_row_offset = y;
-    return 1U;
-}
 
 /* Translation of HandleClimbing through PutPlayerOnVine.  The caller passes
  * the collision helper's $04 and $06 values as terrain metadata. */
@@ -1040,9 +1009,9 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
             game->ram[MYSMB_SWIMMING] != 0U ? 1U : 2U;
     }
     base = mysmb_player_collision_base(game);
-    have_left = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 1U)],
+    have_left = mysmb_world_query_player_block(game, x_adder[(mysmb_u8)(base + 1U)],
                                          y_adder[(mysmb_u8)(base + 1U)], 0U, &left);
-    have_right = mysmb_player_query_block(game, x_adder[(mysmb_u8)(base + 2U)],
+    have_right = mysmb_world_query_player_block(game, x_adder[(mysmb_u8)(base + 2U)],
                                           y_adder[(mysmb_u8)(base + 2U)], 0U, &right);
     /* ChkFootMTile consumes the left sample when it is nonzero; it visits
      * the right sample only when the left is empty.  A climbable sample
@@ -1451,7 +1420,7 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
         top = (mysmb_u8)(base + 3U + index * 2U);
         if (game->ram[MYSMB_PLAYER_Y] >= 0xe4U) return 0U;
         if (game->ram[MYSMB_PLAYER_Y] >= 0x20U &&
-            mysmb_player_query_block(game, x_adder[top], y_adder[top], 1U,
+            mysmb_world_query_player_block(game, x_adder[top], y_adder[top], 1U,
                                      &terrain) != 0U && terrain.metatile != 0U &&
             terrain.metatile != 0x1cU && terrain.metatile != 0x6bU &&
             mysmb_world_is_climbable(terrain.metatile) == 0U) {
@@ -1460,7 +1429,7 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
         if (game->ram[MYSMB_PLAYER_Y] < 8U ||
             game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return 0U;
         top++;
-        if (mysmb_player_query_block(game, x_adder[top], y_adder[top], 1U,
+        if (mysmb_world_query_player_block(game, x_adder[top], y_adder[top], 1U,
                                      &terrain) != 0U && terrain.metatile != 0U) {
             return mysmb_player_handle_side_metatile(game, &terrain, (mysmb_u8)(2U - index));
         }
@@ -1496,7 +1465,7 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         return 0U;
     }
     base = mysmb_player_collision_base(game);
-    if (mysmb_player_query_block(game, x_adder[base], y_adder[base],
+    if (mysmb_world_query_player_block(game, x_adder[base], y_adder[base],
                                  0U, &terrain) == 0U || terrain.metatile == 0U) {
         return 0U;
     }

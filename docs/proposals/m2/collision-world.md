@@ -292,3 +292,23 @@ The P4 pipe-search controller script was rerun after T16/T19 removed its transfe
 ## S6 P6: source-reachable stomp and score handoff
 
 The reproducible P5 pipe route also contains the first ordinary-Goomba stomp, so the three non-stomping exploratory recordings are not used as evidence.  At sample 231, slot zero transitions from ID `$06`/state `$00` to state `$04`; the same ROM-visible sample sets `StompChainCounter/$0484=$01`, `Enemy_CollisionBits/$0491=$01`, `StompTimer/$0791=$01`, interval timer `$0796=$10`, and player Y speed `$fc`.  The frame sequence then clears the collision bit, advances the floatey-score controller, lands the player, and erases the defeated object at sample 257.  Every named byte matches the x64 recording and the complete x86/x64 recordings are byte-identical; the route’s visible OAM, palette, audio commands, CIRAM, and PPU fields remain ROM-equal.  This closes source-reachable ordinary stomp/score handoff coverage for T17 without object injection.
+## S4 P17: shared player block-buffer query boundary
+
+`PlayerBGCollision` chooses its head, foot, and side probe-table entries, but
+`BlockBufferCollision/GetBlockBufferAddr` is a shared geometry primitive. The
+exact player coordinate query now has one owner in `world/collision.c` as
+`mysmb_world_query_player_block`. It retains byte X addition, page carry,
+page-local block-buffer selection, row masking, address-low scratch result,
+and contact-nibble selection. `player.c` retains every source-order probe and
+all player-only branches; no platform code participates. A fresh 600-sample
+source-reachable pipe/stomp/score route uses the original ROM and the same
+controller transition sequence after a 600-frame warmup. Native x86 and x64
+traces are byte-identical (`6C2A27330A2099D16412940C05575F541EE02C290008B0C9EBEFECD4A3FBBF7A`).
+For both, CPU OAM backing, visible OAM, palette, audio-command state, and all
+seven PPU-visible scalars have zero differences from the ROM. The first
+remaining work-RAM difference is sample 584 at `$03f0`, followed by the
+known CIRAM page-zero status-buffer output at sample 592; these residuals are
+outside the player block-query route and remain with the named area/status
+producer. `core_smoke` invokes
+the extracted primitive directly, and collision regressions exercise its head,
+foot, and side callers.
