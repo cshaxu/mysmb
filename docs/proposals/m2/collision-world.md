@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P4.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P4; S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -71,3 +71,6 @@ ROM $d747-$d7a8 (`HandleEnemyFBallCol`, `HurtBowser`, `ShellOrBlockDefeat`, `Chk
 ## S2 P5: restore `MoveObjectHorizontally` equal-low-byte carry and move the enemy wrapper
 
 The prior shared `MoveObjectHorizontally` translation inferred the X-byte carry from `new_x < old_x`.  That is not equivalent to the ROM `ADC $00`: for `$22 + $ff + carry-in`, the result is `$22` while carry is set.  The T17 owner now derives the carry from the full 16-bit sum before applying the signed page adder, matching `MoveObjectHorizontally` at source lines 7587–7600.  `MoveEnemyHorizontally` is now its narrow source wrapper in `world/movement.c`: it maps `ObjectOffset` to common SprObject offset `slot + 1` and calls the one primitive.  The duplicate calculation is deleted from `objects.c`; all of its former actor callers preserve their original call positions.  The direct regression covers that exact `$ff + carry-in` case and proves X remains `$22` while page `$03` remains `$03` after the ROM's `$ff + carry` page arithmetic.  Full x64 and x86 CTest suites pass 79/79 each, and the OpenNT DOS MZ relinks from the same source set with its established `OLDNAMES.LIB` warning.  This is a reopened S2 correctness packet, not an additional actor behavior change.
+## S3/P2-P4: primitive boundary evidence
+
+Three focused packets now cover the shared source primitives without moving gameplay decisions: `98daf86` verifies block-buffer page carry, equal-edge contact, and horizontal-wrap non-contact; `175a7f6` verifies the ROM vertical-wrap contact branch; `29bba97` verifies `BoundingBoxCore` control `$07` and 8-bit right-edge wrap. Each focused regression passes on x86 and x64, and each packet refreshes the three required artifacts. These are S3 evidence only; T17 remains active for the larger S4-S6 routes.
