@@ -30,6 +30,8 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                    mysmb_u16 first, mysmb_u16 second);
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
+/* ROM EnemyLanding -> InitVStf. */
+void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM BlockBufferChk_Enemy output. */
 struct mysmb_enemy_terrain {
     mysmb_u8 metatile;

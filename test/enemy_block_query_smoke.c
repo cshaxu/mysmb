@@ -10,3 +10,4 @@ int main(void) {
  if(mysmb_world_query_enemy_block(&game,0U,0x16U,1U,&terrain)==0U||terrain.metatile!=0x62U||terrain.contact_low_nibble!=0U)return 3;
  return 0;
 }
+

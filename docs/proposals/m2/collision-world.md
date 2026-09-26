@@ -171,3 +171,7 @@ ROM `GetFireballBoundBox`, `GetMiscBoundBox`, and `GetEnemyBoundBox` each enter 
 
 ROM BlockBufferChk_Enemy now has one shared T17 owner. It uses the source 28-entry X/Y adder tables, byte ADC page carry, page-local block-buffer selection, ROM row masking, and the $04 contact-low-nibble selection. It returns terrain metadata only; actor state remains for the following EnemyToBGCollisionDet packet. Focused x86/x64 test and both Win32 self-tests pass; DOS16 relinks. Artifacts: 250006DA29644D8572708CE89C2A405F7B9DE7F0E1B070911FCDA612000FAE00, E0A859D294F8F56370AAA3236C8D1C8FFAD121C5E0035485D193BC8817AD6AAC, 10F0CF80FFBA2418A86015B93F629CBA1ED26B1065F6CAD07F46660658035E50.
 
+
+## S5 P8: shared EnemyLanding primitive
+
+ROM EnemyLanding -> InitVStf now has one T17 world owner: it clears Enemy_Y_Speed and Enemy_Y_MoveForce and aligns Enemy_Y_Position to $08. The direct regression covers all three RAM writes. x86 and platform-purity pass; DOS16 relinks from the shared source. This primitive is intentionally not yet wired into every caller; S5's following state-machine packet will replace only source EnemyLanding call sites.

@@ -15,6 +15,15 @@ mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
     return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
 }
 
+/* ROM EnemyLanding -> InitVStf. */
+void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    if (slot >= 6U) return;
+    game->ram[0x00a0U + slot] = 0U;
+    game->ram[0x0434U + slot] = 0U;
+    game->ram[0x00cfU + slot] = (mysmb_u8)((game->ram[0x00cfU + slot] & 0xf0U) | 8U);
+}
+
 /* ROM BlockBufferChk_Enemy -> BlockBufferCollision. */
 mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
                                        mysmb_u8 slot, mysmb_u8 adder_index,
