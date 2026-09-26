@@ -44,9 +44,51 @@ enum {
     MYSMB_PLATFORM_CENTER_Y = 0x0058U,
     MYSMB_PRIMARY_HARD = 0x076aU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
-    MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
+    MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
+    MYSMB_GROUP_ENEMY_COUNT = 0x06d3U
 };
 
+/* ROM HandleGroupEnemies.  Group records scan regular slots zero through
+ * four and enter CheckpointEnemyID for every allocated member. */
+static void mysmb_enemy_stream_handle_group(struct mysmb_game *game,
+                                            mysmb_u8 group_id)
+{
+    mysmb_u8 group;
+    mysmb_u8 enemy_id;
+    mysmb_u8 y;
+    mysmb_u8 page;
+    mysmb_u8 x;
+    mysmb_u8 count;
+    mysmb_u8 slot;
+    mysmb_u8 old_x;
+
+    group = (mysmb_u8)(group_id - 0x37U);
+    enemy_id = group < 4U ?
+        (game->ram[MYSMB_PRIMARY_HARD] == 0U ? 6U : 2U) : 0U;
+    y = (group & 2U) == 0U ? 0xb0U : 0x70U;
+    page = game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE];
+    x = game->ram[MYSMB_AREA_SCREEN_RIGHT_X];
+    count = (mysmb_u8)(2U + (group & 1U));
+    game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
+    while (count != 0U) {
+        for (slot = 0U; slot < 5U; ++slot) {
+            if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
+        }
+        if (slot >= 5U) break;
+        game->ram[MYSMB_ENEMY_ID + slot] = enemy_id;
+        game->ram[MYSMB_ENEMY_PAGE + slot] = page;
+        game->ram[MYSMB_ENEMY_X + slot] = x;
+        old_x = x;
+        x = (mysmb_u8)(x + 0x18U);
+        if (x < old_x) page++;
+        game->ram[MYSMB_ENEMY_Y + slot] = y;
+        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+        mysmb_enemy_checkpoint_loaded(game, slot);
+        count--;
+        game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
+    }
+}
 /* ROM $c0f7-$c1f4 ProcessEnemyData through InitNormalEnemy, limited to
  * ordinary enemy IDs.  Special objects retain their dedicated initializers. */
 /* ProcessEnemyData is called with the current ObjectOffset.  This adapter
@@ -142,7 +184,13 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 0U;
         }
-        /* ROM InitEnemyFrenzy routes IDs $12 and $14 to persistent frenzy
+        if ((second & 0x3fU) >= 0x37U && (second & 0x3fU) < 0x3fU) {
+            mysmb_enemy_stream_handle_group(game, (mysmb_u8)(second & 0x3fU));
+            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
+            return 1U;
+        }        /* ROM InitEnemyFrenzy routes IDs $12 and $14 to persistent frenzy
          * controllers.  Neither byte denotes an ordinary stream enemy. */
         if ((second & 0x3fU) == 18U || (second & 0x3fU) == 20U) {
             game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = (mysmb_u8)(second & 0x3fU);

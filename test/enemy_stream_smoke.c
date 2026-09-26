@@ -106,5 +106,30 @@ int main(void)
     if (game.ram[0x00d1U] != 0xe0U) return 37;
     if (game.ram[0x0750U] != 2U) return 38;
     if (game.ram[0x0751U] != 0x11U) return 39;
+    /* ROM HandleGroupEnemies: $37 creates two Goombas from ScreenRight,
+     * scanning slots zero through four rather than using ObjectOffset. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 0x37U;
+    prg[0x22U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 2U;
+    game.ram[0x073bU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0xf8U;
+    game.ram[0x076aU] = 0U;
+    game.ram[0x000fU] = 0U;
+    game.ram[0x0010U] = 0U;
+    game.ram[0x0011U] = 0U;
+    game.ram[0x0012U] = 0U;
+    game.ram[0x0013U] = 0U;
+    if (mysmb_enemy_stream_process_slot(&game, &source, 2U) != 1U ||
+        game.ram[0x0739U] != 2U || game.ram[0x073bU] != 0U ||
+        game.ram[0x06d3U] != 0U ||
+        game.ram[0x000fU] != 1U || game.ram[0x0010U] != 1U ||
+        game.ram[0x0016U] != 6U || game.ram[0x0017U] != 6U ||
+        game.ram[0x006eU] != 1U || game.ram[0x006fU] != 2U ||
+        game.ram[0x0087U] != 0xf8U || game.ram[0x0088U] != 0x10U ||
+        game.ram[0x00cfU] != 0xb0U || game.ram[0x00d0U] != 0xb0U ||
+        game.ram[0x00b6U] != 1U || game.ram[0x00b7U] != 1U) return 4;
     return 0;
 }

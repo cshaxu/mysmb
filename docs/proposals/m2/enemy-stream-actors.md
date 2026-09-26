@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P5.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -120,3 +120,7 @@ A second source-reachable route warms through the first 600 frames and records f
 ## S5 P4: ProcessEnemyData row-$0e order
 
 The delayed route isolated an inactive slot-zero page/X/YHigh/Y residue at the original `PositionEnemyObj → ParseRow0e` node. The native stream had consumed row `$0e` before `PositionEnemyObj`; it now writes the current `ObjectOffset` page/X first, handles the left/right boundary decision, writes `Enemy_Y_HighPos=1` and `Enemy_Y_Position=row<<4` for an in-range row, and only then consumes the third byte. A focused slot-two regression proves the precise page/X/YHigh/Y, world-selected AreaPointer/EntrancePage, offset increment, and page-select clear. Replaying the same frames 600–1199 route removes every difference in all six-slot enemy flag, ID, state, moving direction, X/Y speed, page/X/Y/Y-high, X/Y force, dummy, bounding-box, and stream-state arrays. CIRAM, palette, OAM, audio-command state, and all PPU-visible fields remain zero-difference; the only retained work-RAM difference is the separately transferred `$0301–$030d` status-buffer owner. x86/x64 full suites and the shared DOS MZ are rebuilt with this packet.
+
+## S5 P5: HandleGroupEnemies
+
+ROM group IDs $37–$3e now dispatch HandleGroupEnemies in the stream owner instead of falling into ordinary initialization. The translation preserves its source slot scan, 2/3 member count, Goomba/Buzzy hard-mode selection, Koopa selection, Y band, page carry after X plus $18, and CheckpointEnemyID handoff. Focused regression covers a $37 group crossing the page boundary. Full x64/x86 suites pass; DOS MZ and all three artifacts are refreshed with this packet.
