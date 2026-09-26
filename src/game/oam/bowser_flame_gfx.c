@@ -31,8 +31,8 @@ void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
     relative_x = (mysmb_u8)(game->ram[MYSMB_FLAME_ENEMY_X + slot] -
                              game->ram[MYSMB_FLAME_SCREEN_LEFT_X]);
     relative_y = game->ram[MYSMB_FLAME_ENEMY_Y + slot];
-    game->ram[MYSMB_FLAME_ENEMY_REL_X + slot] = relative_x;
-    game->ram[MYSMB_FLAME_ENEMY_REL_Y + slot] = relative_y;
+    game->ram[MYSMB_FLAME_ENEMY_REL_X] = relative_x;
+    game->ram[MYSMB_FLAME_ENEMY_REL_Y] = relative_y;
     if (game->ram[MYSMB_FLAME_ENEMY_STATE + slot] != 0U) return;
 
     attributes = (game->ram[MYSMB_FLAME_FRAME_COUNTER] & 2U) != 0U ?

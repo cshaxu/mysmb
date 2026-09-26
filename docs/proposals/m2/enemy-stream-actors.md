@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -82,3 +82,6 @@ The `RunFireworks`/`RunStarFlagObj` audit restored source-owned fixed scratch se
 ## S4 P3: Star-flag timer tick sound restoration
 
 The `RunStarFlagObj → AwardGameTimerPoints` audit restored `Sfx_TimerTick` `$10` in `Square2SoundQueue`; native C had written `$02`. The focused state-machine regression enters task 2 with a nonzero game timer and frame-counter bit 2 set, asserting both the timer decrement and `$10` command. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.
+## S4 P4: Bowser-flame relative scratch restoration
+
+`ProcBowserFlame` reaches `RelativeEnemyPosition` before its state gate. Its C OAM collaborator incorrectly treated fixed `Enemy_Rel_XPos` `$03ae` and `Enemy_Rel_YPos` `$03b9` as slot-indexed arrays. The owner now writes the fixed pair, and a slot-2 OAM regression asserts that adjacent scratch bytes remain unchanged. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.

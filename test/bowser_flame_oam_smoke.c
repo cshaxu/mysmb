@@ -35,5 +35,14 @@ int main(void)
     game.ram[0x0221U] = 0xaaU;
     mysmb_objects_draw_bowser_flame(&game, 0U);
     if (game.ram[0x0221U] != 0xaaU) return 1;
+    game.ram[0x000fU + 2U] = 1U;
+    game.ram[0x0016U + 2U] = 21U;
+    game.ram[0x001eU + 2U] = 0U;
+    game.ram[0x0087U + 2U] = 0x60U;
+    game.ram[0x00cfU + 2U] = 0x50U;
+    game.ram[0x06e5U + 2U] = 0x40U;
+    mysmb_objects_draw_bowser_flame(&game, 2U);
+    if (game.ram[0x03aeU] != 0x60U || game.ram[0x03b9U] != 0x50U ||
+        game.ram[0x03b0U] != 0U || game.ram[0x03bbU] != 0U) return 1;
     return 0;
 }
