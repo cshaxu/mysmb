@@ -366,3 +366,21 @@ preceding three-target build: mysmb16.exe
 mysmb32.exe `705D76A5D9559838309E5960E09C05A9FDCDD08CDCEC4D56FEC04EF29CC8AEF5`,
 and mysmb64.exe
 `3D83CA4D91CB4C50EDC4EB05EF971EB803CED17F81EA16524A01D8F22865A55D`.
+## S6 P9: page-twelve post-parser ownership check
+
+After T18/S2/P4 restores the `$af,$26` `CastleObject` column, the same
+source-reachable 2,220-frame-warmup route has zero CIRAM, palette, and PPU
+scalar differences for all 600 recorded samples. The former sample-526 parser
+and sample-528 CIRAM differences are absent. The remaining three CPU/visible
+OAM bytes are one byte at OAM `$78` in samples 553--555: ROM Y is `$39`, C is
+`$38`.
+
+This is not a T17 collision write. At sample 553 the ROM has
+`Enemy_Flag[0]=$01`, `Enemy_ID[0]=$31`, `Enemy_Y[0]=$7f`, and
+`Enemy_SprDataOffset[0]=$0c`; native has the slot inactive and its stream
+offset is `$0a` instead of `$0c`. The producer is `ProcessEnemyData` in the
+T19 enemy-stream/actor owner. T17 transfers this actor spawn/stream residual
+without altering collision or OAM code. The checked-out three-target artifacts
+are mysmb16.exe `BFED12E8BC1201BFE63F774584291DC701D7713523BE91341C5EB1C8942BB790`,
+mysmb32.exe `F27A8D690D20AD0D4B58F962F4F7491E01066E2AEE777A5785B5DE39862EDC0D`,
+and mysmb64.exe `4A3067235777F65EAD2912B31E238549A087D6E20F3549EDB11B2FE367F4DA3E`.
