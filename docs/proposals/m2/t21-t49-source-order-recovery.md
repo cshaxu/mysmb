@@ -202,3 +202,45 @@ T22/S10 receives the remaining eleven labels. It starts with no completion
 forecast and must separate `InitializeGame`/`LoadAreaPointer` descendants and
 non-portable 6502 stack mechanics from the received root labels before any
 repair or completion proposal.
+
+## T22/S10 classification and successor boundaries
+
+The controlled no-input cold-start comparison leaves 43 CPU-RAM bytes after
+`ScreenOff` is complete. T22/S10 audited every remaining difference against
+the source call sequence and separates them as follows.
+
+| Observed state | Source owner and reason | T22/S10 disposition |
+| --- | --- | --- |
+| `$07a2 = $18` | `InitializeGame` explicitly writes `DemoTimer` after its shorter `InitializeMemory` call. | Evidence handoff to the existing `M2 T18 S4` receiver for `InitializeGame`; T22 must not manufacture the write. |
+| `$04-$07` after title work | `LoadAreaPointer` / `GetAreaDataAddrs` scratch-pointer work is downstream of `InitializeGame`. | Evidence handoff to the existing `M2 T18 S4` receiver for `LoadAreaPointer`; no T22 edit. |
+| `$00-$01` during NMI | `NonMaskableInterrupt` indexes `VRAM_AddrTable_Low` and `VRAM_AddrTable_High` and stores the selected pointer in zero page before `UpdateScreen`. | Transfer the three table labels to T22/S12; the current C consumer performs the result but does not model these source writes. |
+| `$01f6-$01ff` | 6502 return-address stack bytes are produced by `JSR`, interrupt entry and `RTI`; they are not portable game state or a source label output. | Retain only as a T49 canonical-comparison exclusion candidate. Do not add emulated stack state to `mysmb_game`. |
+
+The remaining eleven labels are therefore not one repair unit. T22/S11 receives
+the seven boot labels, T22/S12 receives the three VRAM address-table labels,
+and T22/S13 receives the parent `NonMaskableInterrupt` integration label.
+No label is complete from this classification: x86/x64 trace equality and
+unchanged visible PPU output establish only that the current route is stable.
+
+### T22/S10 closure
+
+T22/S10 closes at 4 / 1,992 with no new match. Its source evidence prevents
+two incorrect repairs: adding `InitializeGame` state to the cold boot root,
+and treating the 6502 call stack as shared C gameplay data. The ledger records
+three accepted transfers. The next active package is T22/S11, limited to
+`Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop` and
+`InitializeMemory`.
+
+## T22/S11 boot-root proof
+
+T22/S11 receives exactly seven labels: `Start`, `VBlank1`, `VBlank2`,
+`WBootCheck`, `ColdBoot`, `EndlessLoop` and `InitializeMemory`. It begins at
+4 / 1,992 with no completion forecast and a maximum of 4 / 1,992. It must
+prove the cold and warm branches instruction-by-instruction, distinguish the
+two hardware vblank waits from shared game-state work, and bind a controlled
+reset route to the C90 owner without importing host policy. Focused tests are
+`mysmb.reset-root-smoke`, `mysmb.boot-nmi-boundary-smoke` and
+`mysmb.platform-purity`; the ROM route is reset plus three no-input NMIs.
+
+T22/S12 is pre-accepted for the three table labels and T22/S13 for the parent
+NMI label, but neither is active until the current S closes.

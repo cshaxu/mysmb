@@ -687,6 +687,42 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the remaining T22 first-NMI and boot-root package from T22/S8 after ScreenOff split."
+        },
+        {
+          "id": "M2 T22 S11",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "boot-root-proof"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the source-owned boot-root proof package from T22/S10."
+        },
+        {
+          "id": "M2 T22 S12",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "vram-table-migration"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the source-owned NMI VRAM address-table package from T22/S10."
+        },
+        {
+          "id": "M2 T22 S13",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-integration-proof"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the source-owned NMI root integration package from T22/S10."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -3939,7 +3975,7 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4104,7 +4140,7 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4133,7 +4169,7 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4162,7 +4198,7 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4207,7 +4243,7 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4252,7 +4288,7 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4281,7 +4317,7 @@
     {
       "label": "VRAM_AddrTable_Low",
       "line": 743,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S12",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4310,7 +4346,7 @@
     {
       "label": "VRAM_AddrTable_High",
       "line": 752,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S12",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4339,7 +4375,7 @@
     {
       "label": "VRAM_Buffer_Offset",
       "line": 761,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S12",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4368,7 +4404,7 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S13",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -10331,7 +10367,7 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T22 S10",
+      "receiver": "M2 T22 S11",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -54442,6 +54478,47 @@
       ],
       "acceptedBy": "T22/S8 found the remaining route differences depend on descendants outside the ScreenOff proof; T22/S10 accepts the unchanged root package.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-027-t22-s10-to-s11",
+      "type": "transfer",
+      "from": "M2 T22 S10",
+      "to": "M2 T22 S11",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "acceptedBy": "T22/S10 classified the cold-start root separately from later initialization descendants; T22/S11 accepts exact boot-root proof and repair custody.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-028-t22-s10-to-s12",
+      "type": "transfer",
+      "from": "M2 T22 S10",
+      "to": "M2 T22 S12",
+      "nodes": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "acceptedBy": "T22/S10 identified the NMI $00/$01 pointer writes as direct address-table semantics; T22/S12 accepts the three table labels.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-029-t22-s10-to-s13",
+      "type": "transfer",
+      "from": "M2 T22 S10",
+      "to": "M2 T22 S13",
+      "nodes": [
+        "NonMaskableInterrupt"
+      ],
+      "acceptedBy": "T22/S10 isolates the parent NMI control path after its boot and table children; T22/S13 accepts the remaining root integration proof.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -58806,7 +58883,32 @@
       "maximumComplete": 4,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-nmi-root-remainder-active"
+      "state": "closed-classified-transferred"
+    },
+    {
+      "subtask": "M2 T22 S11",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "baseline": 4,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 4,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-boot-root-proof-active"
     }
   ]
 }
