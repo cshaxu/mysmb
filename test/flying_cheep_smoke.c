@@ -2,6 +2,7 @@
 #include "game/area.h"
 #include "game/enemy/stream.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 
 int main(void)
 {
@@ -26,7 +27,7 @@ int main(void)
     game.ram[0x0057U] = 0U;
     game.ram[0x07a8U] = 2U;
     game.ram[0x07a9U] = 0U;
-    mysmb_objects_step_flying_cheep_frenzy(&game);
+    mysmb_enemy_step_flying_cheep_frenzy(&game);
     if (game.ram[0x078fU] != 0x10U || game.ram[0x000fU] != 1U ||
         game.ram[0x0016U] != 20U || game.ram[0x0046U] != 2U ||
         game.ram[0x0058U] != 0xfaU || game.ram[0x006eU] != 1U ||
@@ -41,7 +42,7 @@ int main(void)
     game.ram[0x000fU] = 1U;
     game.ram[0x0010U] = 1U;
     game.ram[0x0011U] = 1U;
-    mysmb_objects_step_flying_cheep_frenzy(&game);
+    mysmb_enemy_step_flying_cheep_frenzy(&game);
     if (game.ram[0x078fU] != 0x10U || game.ram[0x0012U] != 0U ||
         game.ram[0x049dU] != 9U) return 3;
 

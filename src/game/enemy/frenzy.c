@@ -24,7 +24,8 @@ enum {
     MYSMB_SCREEN_RIGHT_X = 0x071dU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
     MYSMB_LAKITU_REAPPEAR_TIMER = 0x06d1U,
-    MYSMB_FRENZY_ENEMY_TIMER = 0x078fU
+    MYSMB_FRENZY_ENEMY_TIMER = 0x078fU,
+    MYSMB_SECONDARY_HARD = 0x06ccU
 };
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
@@ -216,4 +217,73 @@ void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game)
             mysmb_enemy_move_downward(game, slot, 0x20U, 3U);
         }
     }
+}
+
+/* ROM InitEnemyFrenzy and InitFlyingCheepCheep.  The area stream holds the
+ * persistent $14 controller request; each expiration chooses the first free
+ * ordinary slot, just as the original enemy-loader path did. */
+void mysmb_enemy_step_flying_cheep_frenzy(struct mysmb_game *game)
+{
+    static const mysmb_u8 x_position[16] = {
+        0x80U, 0x30U, 0x40U, 0x80U, 0x30U, 0x50U, 0x50U, 0x70U,
+        0x20U, 0x40U, 0x80U, 0xa0U, 0x70U, 0x40U, 0x90U, 0x68U
+    };
+    static const mysmb_u8 x_speed[12] = {
+        0x0eU, 0x05U, 0x06U, 0x0eU, 0x1cU, 0x20U,
+        0x10U, 0x0cU, 0x1eU, 0x22U, 0x18U, 0x14U
+    };
+    static const mysmb_u8 timer[4] = { 0x10U, 0x60U, 0x20U, 0x48U };
+    mysmb_u8 slot;
+    mysmb_u8 timer_index;
+    mysmb_u8 speed_index;
+    mysmb_u8 position_index;
+    mysmb_u8 player_speed_bias;
+    mysmb_u8 old_x;
+
+    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 20U ||
+        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
+    if (slot == 5U) return;
+
+    /* SmallBBox -> SetBBox -> InitVStf. */
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    timer_index = (mysmb_u8)(game->ram[0x07a9U + slot] & 3U);
+    game->ram[MYSMB_FRENZY_ENEMY_TIMER] = timer[timer_index];
+    if (slot >= (game->ram[MYSMB_SECONDARY_HARD] != 0U ? 4U : 3U)) return;
+
+    position_index = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
+    player_speed_bias = 0U;
+    if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
+        player_speed_bias = game->ram[MYSMB_PLAYER_X_SPEED] < 0x19U ? 4U : 8U;
+    }
+    speed_index = (mysmb_u8)(player_speed_bias + position_index);
+    if ((game->ram[0x07a9U + slot] & 3U) != 0U) {
+        position_index = (mysmb_u8)(game->ram[0x07aaU + slot] & 0x0fU);
+    }
+    game->ram[MYSMB_ENEMY_ID + slot] = 20U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfbU;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = x_speed[speed_index];
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+    if (game->ram[MYSMB_PLAYER_X_SPEED] == 0U && (position_index & 2U) != 0U) {
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+            (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    }
+    old_x = game->ram[MYSMB_PLAYER_X];
+    if ((position_index & 2U) != 0U) {
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + x_position[position_index]);
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_PLAYER_PAGE];
+        if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
+    }
+    else {
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x - x_position[position_index]);
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_PLAYER_PAGE];
+        if (old_x < x_position[position_index]) game->ram[MYSMB_ENEMY_PAGE + slot]--;
+    }
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y + slot] = 0xf8U;
 }

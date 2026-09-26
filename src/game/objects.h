@@ -51,8 +51,6 @@ void mysmb_objects_step_red_paratroopas(struct mysmb_game *game);
 void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game);
 /* ROM MoveFlyingCheepCheep, sans rendering. */
 void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game);
-/* ROM InitEnemyFrenzy/InitFlyingCheepCheep. */
-void mysmb_objects_step_flying_cheep_frenzy(struct mysmb_game *game);
 /* ROM InitShortFirebar/InitLongFirebar and ProcFirebar, sans drawing. */
 void mysmb_objects_step_firebars(struct mysmb_game *game);
 /* ROM RunLargePlatform through RunSmallPlatform, excluding OAM ropes. */

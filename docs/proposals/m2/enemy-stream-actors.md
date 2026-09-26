@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -47,3 +47,6 @@ The GameEngine actor path now calls `mysmb_enemy_stream_process_current(game, so
 ## S3 P1: Lakitu/Spiny frenzy ownership boundary
 
 The complete ROM group `PlayerLakituDiff → MoveLakitu → LakituAndSpinyHandler`, together with the Spiny egg's `EnemyToBGCollisionDet` landing consumer, now has one T19 owner in `src/game/enemy/frenzy.c`.  `frame_root.c` calls its explicit T19 interface; `objects.c` has neither the group nor its private helper.  The moved functions retain their existing state writes, free-slot scan order, Lakitu reappearance counter, screen-right page carry, Spiny spawn values, landing tile probes, and calls into the separately owned T17 movement/collision primitives.  This P is an owner extraction only: it does not redefine frenzy scheduling or initialization policy.  The existing direct Lakitu/Spiny regressions now invoke the T19 API.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ relinks from the same shared source set with its established `OLDNAMES.LIB` warning.
+## S3 P2: Flying Cheep frenzy spawn ownership boundary
+
+The complete `InitEnemyFrenzy → InitFlyingCheepCheep` spawn routine now has one T19 owner in `src/game/enemy/frenzy.c`.  Its PRNG reads, free-slot scan, hard-mode slot gate, player-relative page/X calculation, timer selection, and enemy RAM writes retain the prior translated ROM sequence.  `frame_root.c` and the focused spawn probes use the explicit T19 interface.  `MoveFlyingCheepCheep` remains in `objects.c` for S4, where the ordinary/special actor handler package will be migrated as its own complete ROM-labelled group.  This P changes ownership only; it does not redefine group/frenzy scheduling or initialization policy.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ relinks from the same shared source set with its established `OLDNAMES.LIB` warning.
