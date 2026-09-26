@@ -61,9 +61,10 @@ static void mysmb_draw_goombas_mask_impl(struct mysmb_game *game,
                                (state & 0x20U) == 0U) ? 1U : 0U);
         if (defeated != 0U) {
             tiles = defeated_tiles;
-            /* EnemyGfxHandler selects the defeated-Goomba row then vertically
-             * mirrors it.  Its surviving rows start one pixel below Enemy_Y. */
-            y--;
+            /* EnemyGfxHandler reaches CheckRightSideUpShell before
+             * CheckForDefdGoomba: state $04 executes two INC $02 then the
+             * defeated-Goomba DEC $02.  The source net is Enemy_Y + 1. */
+            y++;
         }
         offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
         direction = game->ram[MYSMB_ENEMY_DIRECTION + slot];
