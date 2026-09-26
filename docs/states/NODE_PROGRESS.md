@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 21 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
-| Mapped / audited, not complete | 149 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
+| ROM-match complete | 27 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
+| Mapped / audited, not complete | 143 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
 | Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **21 / 1,992 (1.05%)**. Initial deep verification covered
+Verified conformance is **27 / 1,992 (1.36%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -55,6 +55,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 904 | `ClrPauseTimer` |
 | 906 | `SetPause` |
 | 907 | `ExitPause` |
+| 814 | `DecTimers` |
+| 820 | `DecTimersLoop` |
+| 823 | `SkipExpTimer` |
+| 825 | `NoDecTimers` |
+| 826 | `PauseSkip` |
+| 837 | `RotPRandomBit` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -76,7 +82,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (153)
+## Mapped but not yet matched (147)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -84,12 +90,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 814 | `DecTimers` |
-| 820 | `DecTimersLoop` |
-| 823 | `SkipExpTimer` |
-| 825 | `NoDecTimers` |
-| 826 | `PauseSkip` |
-| 837 | `RotPRandomBit` |
 | 843 | `Sprite0Clr` |
 | 851 | `Sprite0Hit` |
 | 855 | `HBlankDelay` |

@@ -529,3 +529,9 @@ transfer the six nodes to a separately admitted proof or repair S.
 S18 closes at **21 / 1,992** with no node credit.  Its source audit found and repaired one control-order discrepancy: ROM `DecTimersLoop` visits timer offsets from `$14` or `$23` down to zero, while C had visited them upward. `mysmb_game_tick_player_timers` now uses the descending order. The new shared timer smoke covers master-control hold, a frame-timer-only decrement, and interval rollover that selects all `$24` timers; it passes on x86/x64 with the existing LFSR, NMI-boundary and purity checks. The shared source builds for DOS16 and all three artifacts are refreshed.
 
 All six labels transfer to **T22/S25** for independent controlled-ROM proof. S25 begins at **21 / 1,992**, forecasts all six labels and has a maximum of **27 / 1,992**.
+
+## T22/S25 timer/LFSR equivalence result and T22/S19 admission
+
+All six timer/LFSR labels are **ROM-match complete**, raising conformance from **21 / 1,992** to **27 / 1,992**. The independent ROM probe stops at `$813b`, after the seventh original LFSR rotate and before sprite-zero handling. Master control `2` stayed `1` with timers intact; control `1` decremented frame timers only; zero interval control reset to `$14` and decremented all `$24` timers. All cases incremented FrameCounter and produced LFSR `$d2,$a9,$19,$87,$c0,$00,$ff`, matching the shared C control flow.
+
+T22/S19 is active for the next NMI sprite-zero/OAM subtree at **27 / 1,992**, with zero forecast pending its source contract.
