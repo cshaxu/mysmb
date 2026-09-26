@@ -1,5 +1,6 @@
 #include "game/area.h"
 #include "game/enemy/stream.h"
+#include "game/enemy/core.h"
 
 int main(void)
 {
@@ -175,5 +176,34 @@ int main(void)
     game.ram[0x0014U] = 0U;
     if (mysmb_enemy_stream_process_current(&game, &source, 5U) != 1U ||
         game.ram[0x001bU] != 0x2eU || game.ram[0x0014U] != 1U) return 9;
+    /* EnemiesAndLoopsCore ChkAreaTsk: task seven suppresses every
+     * ProcessEnemyData call for this frame, preserving the stream byte.
+     * The following task may then consume the same current record. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 6U;
+    prg[0x22U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 0U;
+    game.ram[0x073bU] = 1U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x076aU] = 0U;
+    game.ram[0x000fU] = 0U;
+    game.ram[0x0010U] = 0U;
+    game.ram[0x0011U] = 0U;
+    game.ram[0x0012U] = 0U;
+    game.ram[0x0013U] = 0U;
+    game.ram[0x0014U] = 0U;
+    game.ram[0x071fU] = 7U;
+    mysmb_enemy_core_step(&game, &source);
+    if (game.ram[0x0739U] != 0U || game.ram[0x000fU] != 0U ||
+        game.ram[0x0010U] != 0U || game.ram[0x0011U] != 0U ||
+        game.ram[0x0012U] != 0U || game.ram[0x0013U] != 0U ||
+        game.ram[0x0014U] != 0U) return 10;
+    game.ram[0x071fU] = 6U;
+    mysmb_enemy_core_step(&game, &source);
+    if (game.ram[0x0739U] != 2U || game.ram[0x000fU] != 1U ||
+        game.ram[0x0016U] != 6U) return 11;
+
     return 0;
 }

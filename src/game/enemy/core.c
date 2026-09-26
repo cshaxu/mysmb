@@ -5,7 +5,8 @@
 
 enum {
     MYSMB_ENEMY_CORE_FLAG = 0x000fU,
-    MYSMB_ENEMY_CORE_ID = 0x0016U
+    MYSMB_ENEMY_CORE_ID = 0x0016U,
+    MYSMB_ENEMY_CORE_AREA_PARSER_TASK = 0x071fU
 };
 
 /* ROM $a0d7-$a11a GameEngine's actor phase.  The frame root owns the mode
@@ -27,7 +28,9 @@ void mysmb_enemy_core_step(struct mysmb_game *game,
                 mysmb_objects_finish_power_up(game);
             }
         }
-        else {
+        else if ((game->ram[MYSMB_ENEMY_CORE_AREA_PARSER_TASK] & 7U) != 7U) {
+            /* ROM EnemiesAndLoopsCore ChkAreaTsk: parser task seven owns
+             * this turn, so ProcessEnemyData must not consume a record. */
             (void)mysmb_enemy_stream_process_current(game, source, slot);
         }
         mysmb_objects_step_floatey_number(game, slot);
