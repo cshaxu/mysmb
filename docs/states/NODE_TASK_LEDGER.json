@@ -747,6 +747,90 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the completed T22/S12 selector-table migration for independent controlled-NMI ROM-equivalence review."
+        },
+        {
+          "id": "M2 T22 S16",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-buffer-clear"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted source-ordered NMI selected-buffer clear work from T24/S2."
+        },
+        {
+          "id": "M2 T22 S17",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-pause-route"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the NMI pause-call branch group from T24/S2."
+        },
+        {
+          "id": "M2 T22 S18",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-timer-lfsr-route"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the NMI timer and LFSR continuation group from T24/S2."
+        },
+        {
+          "id": "M2 T22 S19",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-sprite-split-route"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2."
+        },
+        {
+          "id": "M2 T22 S20",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-sprite-shuffle-route"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the NMI sprite-shuffle group from T24/S2."
+        },
+        {
+          "id": "M2 T22 S21",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-operation-dispatch"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the NMI operation-mode dispatch root from T24/S2."
+        },
+        {
+          "id": "M2 T22 S22",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-parent-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4446,8 +4530,8 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 T22 S13",
-      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "receiver": "M2 T22 S22",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes.",
       "futurePackage": null,
       "history": [
         {
@@ -4469,6 +4553,12 @@
           "subtask": "M2 T21 S1",
           "relation": "source-order root acceptance",
           "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S22",
+          "relation": "accepted parent integration review after direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
@@ -4504,9 +4594,9 @@
     {
       "label": "InitBuffer",
       "line": 796,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S16",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted source-ordered NMI selected-buffer clear work from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4521,15 +4611,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S16",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "DecTimers",
       "line": 814,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4560,15 +4656,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "DecTimersLoop",
       "line": 820,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4583,15 +4685,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SkipExpTimer",
       "line": 823,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4606,15 +4714,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "NoDecTimers",
       "line": 825,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4629,15 +4743,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "PauseSkip",
       "line": 826,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4652,15 +4772,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "RotPRandomBit",
       "line": 837,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S18",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4683,15 +4809,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S18",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "Sprite0Clr",
       "line": 843,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4706,15 +4838,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "Sprite0Hit",
       "line": 851,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4729,15 +4867,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "HBlankDelay",
       "line": 855,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4752,15 +4896,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SkipSprite0",
       "line": 857,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4775,15 +4925,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SkipMainOper",
       "line": 868,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4798,15 +4954,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "PauseRoutine",
       "line": 876,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4837,15 +4999,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ChkPauseTimer",
       "line": 885,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4860,15 +5028,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ChkStart",
       "line": 889,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4883,15 +5057,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ClrPauseTimer",
       "line": 904,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4906,15 +5086,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SetPause",
       "line": 906,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4929,15 +5115,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ExitPause",
       "line": 907,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S17",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4952,15 +5144,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S17",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SpriteShuffler",
       "line": 912,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4991,15 +5189,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ShuffleLoop",
       "line": 917,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5014,15 +5218,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "StrSprOffset",
       "line": 926,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5037,15 +5247,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "NextSprOffset",
       "line": 927,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5060,15 +5276,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SetAmtOffset",
       "line": 934,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5083,15 +5305,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SetMiscOffset",
       "line": 937,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S20",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5106,15 +5334,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S20",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "OperModeExecutionTree",
       "line": 954,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S21",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI operation-mode dispatch root from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5137,15 +5371,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S21",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "MoveAllSpritesOffscreen",
       "line": 965,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5160,15 +5400,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "MoveSpritesOffscreen",
       "line": 969,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5183,15 +5429,21 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SprInitLoop",
       "line": 972,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "root-revalidation",
+      "receiver": "M2 T22 S19",
+      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -5206,6 +5458,12 @@
           "subtask": "M2 T24 S1",
           "relation": "all-node-evidence-audit",
           "evidence": "docs/etc/architecture/m2-t24-s1-full-node-census.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S19",
+          "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
@@ -54591,6 +54849,105 @@
       ],
       "acceptedBy": "T22/S12 completed the table/write migration with no completion forecast; T22/S15 accepts independent controlled-NMI ROM-equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s16",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S16",
+      "nodes": [
+        "InitBuffer"
+      ],
+      "acceptedBy": "Accepted source-ordered NMI selected-buffer clear work from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s17",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S17",
+      "nodes": [
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "acceptedBy": "Accepted the NMI pause-call branch group from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s18",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S18",
+      "nodes": [
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
+      ],
+      "acceptedBy": "Accepted the NMI timer and LFSR continuation group from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s19",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S19",
+      "nodes": [
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "acceptedBy": "Accepted the NMI sprite-zero split and OAM-offscreen group from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s20",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S20",
+      "nodes": [
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset"
+      ],
+      "acceptedBy": "Accepted the NMI sprite-shuffle group from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-032-t24-s2-to-s21",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T22 S21",
+      "nodes": [
+        "OperModeExecutionTree"
+      ],
+      "acceptedBy": "Accepted the NMI operation-mode dispatch root from T24/S2.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-033-t22-s13-to-s22",
+      "type": "transfer",
+      "from": "M2 T22 S13",
+      "to": "M2 T22 S22",
+      "nodes": [
+        "NonMaskableInterrupt"
+      ],
+      "acceptedBy": "Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -59114,7 +59471,36 @@
       "maximumComplete": 14,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-nmi-root-integration-audit"
+      "state": "closed-parent-audit-transferred-to-s22"
+    },
+    {
+      "subtask": "M2 T22 S16",
+      "kind": "implementation",
+      "scope": [
+        "InitBuffer"
+      ],
+      "baseline": 14,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 14,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-buffer-clear-contract"
     }
   ]
 }

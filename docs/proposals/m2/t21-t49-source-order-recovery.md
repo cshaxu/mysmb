@@ -397,3 +397,36 @@ operational track is `mysmb.boot-nmi-boundary-smoke`,
 equality, DOS16 link and the three artifacts.  The required exit is an exact
 source-order dependency map and accepted successor transfers for unresolved
 leaves; no parent-node credit is permitted without the whole parent contract.
+
+## T22/S13 parent audit, source-order child recovery and closure
+
+S13 audited the complete NMI body at ROM lines 764–981.  It confirms that
+`mysmb_frame_root_begin` is the shared parent composition point and that both
+platforms remain outside game state.  It also found a governance error: after
+the initial all-node census, 28 direct NMI descendants had remained in T24/S2
+custody even though the approved source-order plan assigns the NMI slice to
+T22.  The parent cannot be certified while those child branches are elsewhere.
+
+S13 closes with no new match at **14 / 1,992** and transfers the parent to
+T22/S22 for final independent integration review.  The 28 descendants transfer
+directly from T24/S2, under the owner-approved source-order plan, to these
+accepted sequential receivers:
+
+| Next S | Source-order responsibility | Exact labels |
+| --- | --- | --- |
+| S16 | selected VRAM buffer header clear | `InitBuffer` |
+| S17 | pause call and all pause branches | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` |
+| S18 | timer bank then LFSR continuation | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit` |
+| S19 | sprite-0 split and OAM-offscreen loop | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
+| S20 | sprite-offset shuffle | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
+| S21 | mode dispatch at the tail of NMI | `OperModeExecutionTree` |
+| S22 | parent integration review after direct children | `NonMaskableInterrupt` |
+
+Each receiver must be admitted separately with a fresh exact scope, forecast and
+ROM route.  The transfers do not grant conformance credit.  T22/S16 begins at
+**14 / 1,992**, has one scoped incomplete label, forecasts no match and has a
+maximum of **14 / 1,992**.  It must establish the exact `InitBuffer` branch
+and only then nominate a separate proof S; its focused checks are
+`mysmb.vram-address-table-smoke`, `mysmb.boot-nmi-boundary-smoke` and
+`mysmb.platform-purity`, while its ROM route is the controlled selector probe
+with the selected header initialized to a nonzero sentinel.
