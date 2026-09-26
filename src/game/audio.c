@@ -478,8 +478,9 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
     if (event != 0U) {
         game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = event;
         if (event == MYSMB_EVENT_DEATH_MUSIC) {
+            /* StopSquare1Sfx clears its own buffer. StopSquare2Sfx only
+             * writes APU control registers, so Square2SoundBuffer survives. */
             game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
-            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
         }
         (void)mysmb_audio_load_header(game,
             mysmb_audio_find_header_selector(event, 0U));

@@ -40,7 +40,7 @@ These candidates exhaustively map the ROM executable source index. They are orde
 9. **M2 T19 active — Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
 10. **M2 T17 active — Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths.
 11. **M2 T16 active — OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
-12. **M2 T21 active — Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers. S1/P1 source audit and S2/P1 Square2 grow-effect translation have completed; S3–S5 remain queued.
+12. **M2 T21 active — Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers. S1/P1 source audit, S2/P1-P2 Square2 behavior, and S5/P1 source-route evidence are complete; S3-S5 remain active for the remaining channel routes.
 
 The next approved candidate receives the next valid numeric T; only then is that T's S breakdown created. `M2 Td S2` governs this mapping.
 ## M3 Candidates

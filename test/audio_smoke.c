@@ -9,7 +9,7 @@ int main(void)
     game.ram[0x0770U] = 1U;
 
     /* Event music wins over area music, retains the interrupted area command,
-     * and death music owns both square-effect buffers. */
+     * and death music clears only Square1's source buffer. */
     game.ram[0x00f4U] = 4U;
     game.ram[0x00f1U] = 0x80U;
     game.ram[0x00f2U] = 0x01U;
@@ -18,7 +18,7 @@ int main(void)
     mysmb_audio_step(&game);
     if (game.ram[0x07b1U] != 1U || game.ram[0x00f4U] != 0U ||
         game.ram[0x07c5U] != 4U || game.ram[0x00f1U] != 0U ||
-        game.ram[0x00f2U] != 0U || game.ram[0x00fbU] != 0U ||
+        game.ram[0x00f2U] != 1U || game.ram[0x00fbU] != 0U ||
         game.ram[0x00fcU] != 0U) return 1;
 
     /* The original priority scan selects the small jump before all lower
