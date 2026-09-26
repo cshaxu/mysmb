@@ -812,7 +812,11 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         mysmb_objects_step_enemy_collisions_current(game, slot);
         if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes) != 0U) return;
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
+        /* ROM MoveNormalEnemy: low states $01/$02 enter FallE as well as
+         * d6, so they execute MoveD_EnemyVertically before horizontal move. */
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U ||
+            (((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) != 0U) &&
+             ((game->ram[MYSMB_ENEMY_STATE + slot] & 7U) < 3U))) {
             mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
         }
         mysmb_world_move_enemy_horizontally(game, slot);
