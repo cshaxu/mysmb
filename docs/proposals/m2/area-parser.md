@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T18 active — S2/P1 and S3/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
+**M2 T18 active — S2/P3 and S3/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
 
 ## ROM scope
 
@@ -53,3 +53,6 @@ CIRAM pages, palette, OAM, audio, and PPU scalars on x86 and x64; remaining
 zero-page/stack differences are emulator-private scratch state.  Full CTest
 passes 83/83 on each host architecture.  Derived traces and compare reports:
 `build/m2-t18-s2-p2-hidden1up/traces/`.
+## S2 P3: restore `RenderUnderPart` scratch and horizontal-row entry
+
+ROM `Hole_Empty` enters `RenderUnderPart` with `X=$08`, `Y=$0f`; every loop re-entry stores its current Y to `AreaObjectHeight` (`$0735`) before writing a block-buffer row.  The native parser had hand-written rows 8–12 and omitted that source scratch state.  ROM `RowOfBricks`, `RowOfSolidBlocks`, and `RowOfCoins` likewise enter the same helper with `Y=$00` on every continuation column; direct native writes left stale `$0735`.  The shared area owner now uses the translated helper for both call paths, with the per-entry store in source order.  The focused parser smoke asserts the hole result `$0735=$0b`.  In the controller-only cold 600-frame reference route (global frames 600–1199), work RAM `$0300-$07ff`, CPU OAM backing, both CIRAM pages, palette, visible OAM, audio state, and all PPU scalars are zero-difference; `$0735` is `$0b` at global frame 1030 and returns to `$00` at 1116 exactly as in the ROM.  Full x64 and x86 CTest pass 83/83, and the same source links the OpenNT DOS MZ.  Refreshed artifacts: mysmb16.exe `70989598666E6CDA85239E7D43A5BBFFC764E1AB1D4E872CA7DFBD36612F03E1`, mysmb32.exe `2862DDBB1D816A38819D2F36B65343EA5B568DEDA81A35CF15C17A645AAA0877`, mysmb64.exe `9EEC3920CB4EC230E87C24C9CBC7E93741CD2AB4E3141C49F3345E14C2914F75`.

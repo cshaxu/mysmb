@@ -117,6 +117,7 @@ enum {
     MYSMB_AREA_DATA_OFFSET = 0x072cU,
     MYSMB_AREA_OBJECT_OFFSET_BUFFER = 0x072dU,
     MYSMB_AREA_STAIRCASE_CONTROL = 0x0734U,
+    MYSMB_AREA_OBJECT_HEIGHT = 0x0735U,
     MYSMB_AREA_MUSHROOM_HALF_LENGTH = 0x0736U
 };
 
@@ -1123,6 +1124,8 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
     mysmb_u8 existing;
 
     do {
+        /* ROM re-enters RenderUnderPart with the decremented Y value. */
+        game->ram[MYSMB_AREA_OBJECT_HEIGHT] = height;
         existing = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
         if (existing == 0U || existing == 0xc0U ||
             (existing != 0x17U && existing != 0x1aU && existing < 0xc0U &&
@@ -1243,8 +1246,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (row == 12U && kind == 0U) {
         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-        for (row = 8U; row < 13U; ++row)
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = hole[area_type];
+        /* ROM Hole_Empty: LDX #$08; LDY #$0f; JMP RenderUnderPart. */
+        mysmb_area_render_under_part(game, 8U, 15U, hole[area_type]);
         return;
     }
     if (row == 12U && kind == 1U) {
@@ -1410,9 +1413,11 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
         if (kind == 2U && game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U)
             area_type = 4U;
-        if (kind == 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = brick[area_type];
-        else if (kind == 3U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = solid[area_type];
-        else game->ram[MYSMB_AREA_METATILE_BUFFER + row] = coin[area_type];
+        value = kind == 2U ? brick[area_type] :
+            (kind == 3U ? solid[area_type] : coin[area_type]);
+        /* ROM RowOfBricks/RowOfSolidBlocks/RowOfCoins: LDY #$00 then
+           enter RenderUnderPart for every horizontal continuation column. */
+        mysmb_area_render_under_part(game, row, 0U, value);
         return;
     }
     if (kind == 7U) {
