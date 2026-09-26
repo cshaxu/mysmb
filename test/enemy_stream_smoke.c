@@ -163,5 +163,17 @@ int main(void)
     game.ram[0x000fU] = 0U;
     if (mysmb_enemy_stream_process_slot(&game, &source, 0U) != 1U ||
         game.ram[0x0016U] != 2U) return 8;
+    /* ROM CheckEndofBuffer admits only power-up ID 0x2e in slot five. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 0x2eU;
+    prg[0x22U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 1U;
+    game.ram[0x073bU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x0014U] = 0U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 5U) != 1U ||
+        game.ram[0x001bU] != 0x2eU || game.ram[0x0014U] != 1U) return 9;
     return 0;
 }

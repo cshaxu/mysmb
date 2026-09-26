@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -131,3 +131,6 @@ ROM `CheckFrenzyBuffer` now has one stream-owner translation. A pending `EnemyFr
 ## S5 P7: BuzzyBeetleMutate
 
 The ordinary two-byte stream path now preserves ROM `BuzzyBeetleMutate`: after the record ID is masked with `$3f`, ID 6 (Goomba) changes to ID 2 (Buzzy Beetle) only when `PrimaryHardMode` is nonzero, before `InitEnemyObject`. No stream position, record consumption, or initializer branch is otherwise changed. A focused primary-hard stream regression asserts the exact transformed ID. Full x64/x86 suites pass; the shared DOS MZ and all three artifacts are refreshed.
+## S5 P8: sixth-slot power-up admission
+
+ROM `CheckEndofBuffer` does not reject every non-row-0x0e record in object slot five. It reads the second byte, masks it with 0x3f, and continues only for PowerUpObject 0x2e; all other ordinary records return before page control or positioning. The stream owner now follows that precise exception, with a regression proving that 0x2e initializes in slot five. Full x64/x86 suites, shared DOS MZ, and all three artifacts accompany this packet.

@@ -146,8 +146,11 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
     address = (mysmb_u16)(address + game->ram[MYSMB_ENEMY_DATA_OFFSET]);
     while (address < source->prg_size && source->prg[address] != 0xffU) {
         first = source->prg[address];
-        /* ROM CheckEndofBuffer rejects ordinary records in slot five. */
-        if ((first & 0x0fU) != 0x0eU && slot == 5U) return 0U;
+        /* ROM CheckEndofBuffer permits only power-up ID 0x2e in slot five. */
+        if ((first & 0x0fU) != 0x0eU && slot == 5U) {
+            if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
+            if ((source->prg[address + 1U] & 0x3fU) != 0x2eU) return 0U;
+        }
         if ((first & 0x0fU) == 0x0fU && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
             if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
             game->ram[MYSMB_ENEMY_OBJECT_PAGE] = (mysmb_u8)(source->prg[address + 1U] & 0x3fU);
