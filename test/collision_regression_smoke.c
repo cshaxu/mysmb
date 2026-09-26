@@ -99,6 +99,7 @@ int main(void)
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
     game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 1U;
     game.ram[0x006dU] = 1U;
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;
@@ -111,6 +112,24 @@ int main(void)
         game.ram[0x0026U] != 0x11U || game.ram[0x03e8U] != 0x51U ||
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
         game.ram[0x0784U] != 0x10U) return 13;
+
+    /* HeadChk branches through NYSpd in water before PlayerHeadCollision:
+     * the non-solid brick remains in the block buffer and no block starts. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 0U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x0026U] = 0U;
+    game.ram[0x0784U] = 0U;
+    game.ram[0x05f2U] = 0x51U;
+    if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
+        game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U ||
+        game.ram[0x0784U] != 0U) return 31;
 
     /* InitBlock_XY_Pos uses the carry from Player_X + 8 before masking to
      * a metatile boundary.  At X=$02 the resulting X is zero but the page
@@ -131,6 +150,7 @@ int main(void)
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
     game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 1U;
     game.ram[0x006dU] = 1U;
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;

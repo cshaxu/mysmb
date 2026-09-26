@@ -1416,6 +1416,12 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
         return 1U;
     }
+    /* ROM HeadChk tests AreaType before PlayerHeadCollision.  In water,
+     * NYSpd consumes a non-solid head hit without changing the block. */
+    if (game->ram[MYSMB_AREA_TYPE] == 0U) {
+        game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
+        return 1U;
+    }
     if (game->ram[0x0784U] == 0U) {
         if (mysmb_objects_start_head_bump(game, terrain.metatile,
                                           terrain.block_address_low,
