@@ -49,7 +49,6 @@ void mysmb_fireball_step(struct mysmb_game *game)
     mysmb_u8 slot;
     mysmb_u8 state;
     mysmb_u8 old_value;
-    mysmb_u8 enemy_slot;
 
     mysmb_fireball_try_spawn(game);
     for (slot = 0U; slot < 2U; ++slot) {
@@ -98,12 +97,7 @@ void mysmb_fireball_step(struct mysmb_game *game)
             game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
             continue;
         }
-        if (mysmb_world_fireball_enemy_collision(game, slot, &enemy_slot) != 0U) {
-            /* ROM FireballEnemyCollision immediately enters HandleEnemyFBallCol
-             * after it changes Fireball_State.  The effect owner remains a
-             * named cross-slice call until its state/score chain migrates. */
-            mysmb_world_handle_fireball_enemy_hit(game, enemy_slot);
-        }
+        mysmb_world_fireball_enemy_collision(game, slot);
         /* FireballObjCore draws only after background and enemy collision. */
         mysmb_oam_draw_fireball(game, slot);
     }

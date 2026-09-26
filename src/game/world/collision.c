@@ -210,12 +210,10 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     game->ram[(mysmb_u16)(0x003aU + slot)] = 1U;
     game->ram[(mysmb_u16)(0x00d5U + slot)] &= 0xf8U;
 }
-/* ROM $d644 FireballEnemyCollision.  The frame route owns the immediately
- * following HandleEnemyFBallCol effect; this collision owner returns its
- * source $01 enemy-slot handoff after setting Fireball_State. */
-mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
-                                               mysmb_u8 slot,
-                                               mysmb_u8 *enemy_slot)
+/* ROM $d644 FireballEnemyCollision.  The source does not return after a
+ * hit: it keeps descending through slots four to zero and invokes
+ * HandleEnemyFBallCol for each matching slot. */
+void mysmb_world_fireball_enemy_collision(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 scan_slot;
     mysmb_u16 enemy_box;
@@ -224,7 +222,7 @@ mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
     if (game->ram[(mysmb_u16)(0x0024U + slot)] == 0U ||
         (game->ram[(mysmb_u16)(0x0024U + slot)] & 0x80U) != 0U ||
         (game->ram[0x0009U] & 1U) != 0U) {
-        return 0U;
+        return;
     }
     fireball_box = (mysmb_u16)(0x04acU + (7U + slot) * 4U);
     scan_slot = 5U;
@@ -244,10 +242,8 @@ mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
             continue;
         }
         game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
-        *enemy_slot = scan_slot;
-        return 1U;
+        mysmb_world_handle_fireball_enemy_hit(game, scan_slot);
     }
-    return 0U;
 }
 
 /* ROM ChkToStunEnemies.  A is the source identifier except on the piranha

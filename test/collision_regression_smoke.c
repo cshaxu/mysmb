@@ -41,8 +41,6 @@ int main(void)
 {
     struct mysmb_game game;
     mysmb_u8 step;
-    mysmb_u8 hit_slot;
-
     /* PlayerBGCollision sets collision bits before its bottom-screen guard.
      * At Y=$cf it must not run the head/feet/side probes. */
     mysmb_game_initialize_memory(&game, 0xfeU);
@@ -609,13 +607,22 @@ int main(void)
     game.ram[0x04c1U] = 0x50U;
     game.ram[0x04c2U] = 0x4cU;
     game.ram[0x04c3U] = 0x60U;
-    hit_slot = 0xffU;
-    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) == 0U ||
-        hit_slot != 4U || game.ram[0x0024U] != 0x80U) return 22;
+    /* The ROM keeps scanning after slot four hits. */
+    game.ram[0x000fU + 3U] = 1U;
+    game.ram[0x0016U + 3U] = 6U;
+    game.ram[0x001eU + 3U] = 0U;
+    game.ram[0x03d8U + 3U] = 0U;
+    game.ram[0x04bcU] = 0x40U;
+    game.ram[0x04bdU] = 0x50U;
+    game.ram[0x04beU] = 0x4cU;
+    game.ram[0x04bfU] = 0x60U;
+    mysmb_world_fireball_enemy_collision(&game, 0U);
+    if (game.ram[0x0024U] != 0x80U || game.ram[0x001eU + 4U] != 0x22U ||
+        game.ram[0x001eU + 3U] != 0x22U) return 22;
     game.ram[0x0024U] = 1U;
     game.ram[0x0009U] = 1U;
-    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) != 0U ||
-        game.ram[0x0024U] != 1U) return 23;
+    mysmb_world_fireball_enemy_collision(&game, 0U);
+    if (game.ram[0x0024U] != 1U || game.ram[0x001eU + 4U] != 0x22U) return 23;
     game.ram[0x0009U] = 0U;
     game.ram[0x0016U + 4U] = 0U;
     game.ram[0x001eU + 4U] = 2U;
@@ -627,8 +634,8 @@ int main(void)
     game.ram[0x04bdU] = 0x50U;
     game.ram[0x04beU] = 0x4cU;
     game.ram[0x04bfU] = 0x60U;
-    if (mysmb_world_fireball_enemy_collision(&game, 0U, &hit_slot) == 0U ||
-        hit_slot != 3U) return 24;
+    mysmb_world_fireball_enemy_collision(&game, 0U);
+    if (game.ram[0x0024U] != 0x80U || game.ram[0x001eU + 3U] != 0x22U) return 24;
     /* HandleEnemyFBallCol calls RelativeEnemyPosition before the normal
      * ChkToStunEnemies branch, then allocates the Floatey score from that
      * fixed scratch.  The direction is the source bytewise X difference. */

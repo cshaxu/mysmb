@@ -60,3 +60,6 @@ The same fixture now directly proves `FireballBGCollision`'s source probe `(X + 
 ## S3/P2: enemy-hit audio queues
 
 `HandleEnemyFBallCol` used invented queue values. The ROM writes `$80` (`Sfx_BowserFall`) to `Square2SoundQueue/$00fe` when the final Bowser hit reaches `HurtBowser`, then reaches `EnemySmackScore`, which writes `$08` (`Sfx_EnemySmack`) to `Square1SoundQueue/$00ff`. Ordinary eligible enemy hits only perform the latter `$08` write. The shared collision owner now follows those two source writes; the Bowser and generic collision fixtures assert them separately. `FireballBGCollision` retains its independent `$02` bump sound.
+## S3/P3: complete source enemy-slot scan
+
+`FireballEnemyCollision` now owns the complete ROM loop, starting at slot four and descending through slot zero.  A source collision sets `Fireball_State` to `$80`, immediately calls `HandleEnemyFBallCol`, then continues scanning; it does not return after the first hit.  The focused collision fixture places two eligible enemies in the same fireball box and proves both receive the `$22` defeated-state handoff in one even frame.  `ProcFireball_Bubble` also now follows its source instruction order: choose and test the counter-selected slot before Y/crouch/climbing eligibility, and increment `FireballCounter` only after the timer writes.

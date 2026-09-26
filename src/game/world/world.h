@@ -47,10 +47,9 @@ mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
                                        struct mysmb_enemy_terrain *terrain);
 /* ROM FireballBGCollision / BlockBufferChk_FBall / ChkForNonSolids. */
 void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8 slot);
-/* ROM FireballEnemyCollision: scans source enemy slots and sets fireball state. */
-mysmb_u8 mysmb_world_fireball_enemy_collision(struct mysmb_game *game,
-                                               mysmb_u8 slot,
-                                               mysmb_u8 *enemy_slot);
+/* ROM FireballEnemyCollision: scans every source enemy slot, applies each
+ * source hit handoff in descending slot order, and sets fireball state. */
+void mysmb_world_fireball_enemy_collision(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM HandleEnemyFBallCol -> ChkToStunEnemies -> EnemySmackScore. */
 void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
