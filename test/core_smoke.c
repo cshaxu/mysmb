@@ -1003,10 +1003,11 @@ int main(void)
     game.ram[0x0524U] = 0U;
     mysmb_area_apply_block_replacements(&game);
     if (game.ram[0x0524U] != 0U || game.ram[0x03ecU] != 1U) return 1;
+    game.ram[0x00feU] = 0U;
     mysmb_objects_start_jump_coin(&game, 2U, 0x35U, 0x60U);
     if (game.ram[0x0032U] != 1U || game.ram[0x0082U] != 2U ||
         game.ram[0x009bU] != 0x35U || game.ram[0x00e3U] != 0x60U ||
-        game.ram[0x00b4U] != 0xfbU) return 1;
+        game.ram[0x00b4U] != 0xfbU || game.ram[0x00feU] != 1U) return 1;
     game.ram[0x0770U] = 1U;
     game.ram[0x0753U] = 0U;
     game.ram[0x05f2U] = 0xc2U;

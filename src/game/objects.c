@@ -438,6 +438,8 @@ void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
     game->ram[MYSMB_MISC_Y_DUMMY + slot] = 0U;
     game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
     game->ram[MYSMB_MISC_STATE + slot] = 1U;
+    /* ROM JCoinC queues Sfx_CoinGrab after activating the misc object. */
+    game->ram[MYSMB_SQUARE2_SOUND] = 1U;
 }
 
 /* ROM JCoinGfxHandler / DrawFloateyNumber_Coin. */

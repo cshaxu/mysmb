@@ -2,7 +2,7 @@
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+**M2 T22 active — S1/P1.**
 
 ## ROM scope
 
@@ -23,6 +23,10 @@ Consumes block buffer/player state and emits item/misc state, score, audio and O
 3. **S3 after admission** - Translate power-up, vine and misc-object state machines/collision handoffs.
 4. **S4 after admission** - Translate cannon, whirlpool and flagpole setup/output paths.
 5. **S5 after admission** - Compare hidden blocks, powerups, vine, cannon/whirlpool and flagpole scenarios.
+
+## S1/P1 result
+
+SetupJumpCoin -> JCoinC now retains its source-owned $00fe = $01 queue write after misc activation; core smoke asserts it. The source-reachable hidden-block trace is the ROM proof. No platform code participates.
 
 ## Acceptance
 
