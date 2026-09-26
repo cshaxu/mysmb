@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P16 and S6/P1-P5 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P16 and S6/P1-P6 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -289,3 +289,6 @@ same shared game source.  The regenerated x86 and x64 native pipe traces are byt
 ## S6 P5: source-reachable pipe-route closure
 
 The P4 pipe-search controller script was rerun after T16/T19 removed its transferred actor-staging residual.  It records 600 NMI-return samples following the documented 600-frame warmup, with no RAM or actor-slot injection.  Both x64 and x86 native traces are byte-identical (`6C2A27330A2099D16412940C0557` prefix) and both match the original ROM for visible OAM, palette, all audio-command bytes, and all seven PPU-visible scalars.  The earlier sample-232 to sample-346 enemy bounding-box/OAM divergence is absent.  The first remaining difference is sample 584 in work RAM/nametable output; it is the previously transferred status-buffer owner and is outside this pipe/collision route.  The recordings and comparator reports remain in `build/m2-t17-s6-current/traces`; no platform module participates.
+## S6 P6: source-reachable stomp and score handoff
+
+The reproducible P5 pipe route also contains the first ordinary-Goomba stomp, so the three non-stomping exploratory recordings are not used as evidence.  At sample 231, slot zero transitions from ID `$06`/state `$00` to state `$04`; the same ROM-visible sample sets `StompChainCounter/$0484=$01`, `Enemy_CollisionBits/$0491=$01`, `StompTimer/$0791=$01`, interval timer `$0796=$10`, and player Y speed `$fc`.  The frame sequence then clears the collision bit, advances the floatey-score controller, lands the player, and erases the defeated object at sample 257.  Every named byte matches the x64 recording and the complete x86/x64 recordings are byte-identical; the route’s visible OAM, palette, audio commands, CIRAM, and PPU fields remain ROM-equal.  This closes source-reachable ordinary stomp/score handoff coverage for T17 without object injection.
