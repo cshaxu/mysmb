@@ -30,6 +30,18 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                    mysmb_u16 first, mysmb_u16 second);
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
                                     mysmb_u8 probed_x);
+/* ROM BlockBufferChk_Enemy output. */
+struct mysmb_enemy_terrain {
+    mysmb_u8 metatile;
+    mysmb_u8 contact_low_nibble;
+    mysmb_u8 block_address_low;
+    mysmb_u8 block_row_offset;
+};
+/* ROM $e333 BlockBufferChk_Enemy -> BlockBufferCollision. */
+mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
+                                       mysmb_u8 slot, mysmb_u8 adder_index,
+                                       mysmb_u8 horizontal_contact,
+                                       struct mysmb_enemy_terrain *terrain);
 /* ROM FireballBGCollision / BlockBufferChk_FBall / ChkForNonSolids. */
 void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM FireballEnemyCollision: scans source enemy slots and sets fireball state. */

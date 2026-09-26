@@ -15,6 +15,30 @@ mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
     return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
 }
 
+/* ROM BlockBufferChk_Enemy -> BlockBufferCollision. */
+mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
+                                       mysmb_u8 slot, mysmb_u8 adder_index,
+                                       mysmb_u8 horizontal_contact,
+                                       struct mysmb_enemy_terrain *terrain)
+{
+    static const mysmb_u8 x_adder[28] = { 0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x00U,0x10U,0x04U,0x14U,0x04U,0x04U };
+    static const mysmb_u8 y_adder[28] = { 0x04U,0x20U,0x20U,0x08U,0x18U,0x08U,0x18U,0x02U,0x20U,0x20U,0x08U,0x18U,0x08U,0x18U,0x12U,0x20U,0x20U,0x18U,0x18U,0x18U,0x18U,0x18U,0x14U,0x14U,0x06U,0x06U,0x08U,0x10U };
+    mysmb_u8 x; mysmb_u8 y_sum; mysmb_u8 row; mysmb_u8 page; mysmb_u16 address;
+    if (terrain == 0 || slot >= 6U || adder_index >= 28U) return 0U;
+    x = (mysmb_u8)(game->ram[0x0087U + slot] + x_adder[adder_index]);
+    page = mysmb_world_collision_page(game->ram[0x006eU + slot], game->ram[0x0087U + slot], x);
+    y_sum = (mysmb_u8)(game->ram[0x00cfU + slot] + y_adder[adder_index]);
+    row = (mysmb_u8)((y_sum & 0xf0U) - 0x20U);
+    if (y_sum < 0x20U || row > 0xc0U) return 0U;
+    address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U));
+    terrain->block_address_low = (mysmb_u8)address;
+    address = (mysmb_u16)(address + row);
+    if (address >= 0x0800U) return 0U;
+    terrain->metatile = game->ram[address];
+    terrain->contact_low_nibble = horizontal_contact != 0U ? (mysmb_u8)(game->ram[0x0087U + slot] & 0x0fU) : (mysmb_u8)(game->ram[0x00cfU + slot] & 0x0fU);
+    terrain->block_row_offset = row;
+    return 1U;
+}
 /* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
 void mysmb_world_set_bounding_box(struct mysmb_game *game,
                                     mysmb_u16 address, mysmb_u8 control,
