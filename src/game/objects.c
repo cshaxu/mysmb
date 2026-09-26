@@ -497,8 +497,17 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
             if (game->ram[MYSMB_MISC_Y_SPEED + slot] == 5U) game->ram[MYSMB_MISC_STATE + slot]++;
         }
         else {
+            mysmb_u8 old_x;
+            mysmb_u8 scroll_amount;
+
             game->ram[MYSMB_MISC_STATE + slot]++;
-            game->ram[MYSMB_MISC_X + slot] = (mysmb_u8)(game->ram[MYSMB_MISC_X + slot] + game->ram[MYSMB_SCROLL_AMOUNT]);
+            old_x = game->ram[MYSMB_MISC_X + slot];
+            scroll_amount = game->ram[MYSMB_SCROLL_AMOUNT];
+            game->ram[MYSMB_MISC_X + slot] =
+                (mysmb_u8)(old_x + scroll_amount);
+            /* ROM ProcJumpCoin: carry from X + ScrollAmount advances page. */
+            if (game->ram[MYSMB_MISC_X + slot] < old_x)
+                game->ram[MYSMB_MISC_PAGE + slot]++;
             if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
         }
         if (game->ram[MYSMB_MISC_STATE + slot] != 0U) {

@@ -53,6 +53,25 @@ int main(void)
     if (game.ram[0x00dbU + 8U] != 0x41U ||
         game.ram[0x0423U + 8U] != 0U ||
         game.ram[0x0240U] != 0x41U) return 3;
+    /* ProcJumpCoin carries Misc_X_Position overflow into Misc_PageLoc. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    for (slot = 0U; slot <= 8U; ++slot) game.ram[0x002aU + slot] = 0U;
+    game.frame_number = 1UL;
+    game.ram[0x0009U] = 1U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x002aU] = 2U;
+    game.ram[0x007aU] = 3U;
+    game.ram[0x0093U] = 0xf8U;
+    game.ram[0x00c2U] = 0U;
+    game.ram[0x00dbU] = 0x40U;
+    game.ram[0x06f3U] = 0x20U;
+    game.ram[0x0775U] = 0x10U;
+    mysmb_objects_step_misc(&game);
+    if (game.ram[0x002aU] != 3U || game.ram[0x0093U] != 0x08U ||
+        game.ram[0x007aU] != 4U) return 4;
     /* MiscObjectsCore begins at slot 8 and decrements to slot 0.  Its
      * relative/offscreen outputs are fixed scratch bytes, so the final values
      * must come from the lowest active slot, not the highest one. */

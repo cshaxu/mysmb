@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active ? S3/P11.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active — S3/P12.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -124,3 +124,22 @@ OpenNT DOS16 MZ relinks from the same shared C sources with its established
 `3D0DD07FC6C66CF859D6EE30680583DCAE7312ED056C68BE12CFD523B605F2B5`,
 `mysmb32.exe` `BC6C2F0816043CBBA59E75BAC8CF26C0FEA18F15890DEDC28A9CBE96E1E1F276`,
 and `mysmb64.exe` `562A287EB7B89CAFB7C223775A09F3189D63B7EEE872D0814011FA95F8CA0859`.
+
+## S3 P12: preserve `ProcJumpCoin` page carry
+
+ROM `ProcJumpCoin` adds `ScrollAmount` to `Misc_X_Position`, then adds that
+same carry into `Misc_PageLoc`. The native branch had retained only the
+low-byte X result, so a scrolling jump coin could acquire correct relative
+coordinates from the wrong world page. `mysmb_objects_step_misc` now advances
+the page exactly when the unsigned X addition wraps. `misc_oam_smoke` covers
+the source fixture `f8 + 10 = 08` and page `03 -> 04`.
+
+On the exact 500-frame controller-only source route, slot-eight `Misc_Page`
+and fixed scratch `$03d6` now agree at the first sampled frame; CPU work-RAM
+differences fall from 3,196 to 2,612 bytes. Both CIRAM pages, palette, audio
+commands, and all PPU-visible scalars remain equal. Full x64/x86 CTest suites
+pass 83/83; the shared OpenNT DOS16 MZ links with the established
+`OLDNAMES.LIB` warning. Refreshed artifacts: `mysmb16.exe`
+`744F7743FB70DB18953754AA497A7C0AC35641282DF49273E4414C287A900BD0`,
+`mysmb32.exe` `7DB844C20D263FB83616616DA77AC423FFAF8E10B1E18ABB82F092A33104C3BD`,
+and `mysmb64.exe` `8DF33D35B069024FE4F1BE3B5888AF8B6259BE432BFC5E88DBC09D27F8F70AEC`.
