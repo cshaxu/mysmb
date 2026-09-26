@@ -1017,21 +1017,26 @@ int main(void)
         game.ram[0x075eU] != 1U || game.ram[0x07eeU] != 1U ||
         game.ram[0x07e1U] != 2U || game.ram[0x0134U] != 0U ||
         game.ram[0x0139U] != 0U) return 1;
-    /* HandleCoinMetatile removes its two-tile metatile first, then appends
-     * GiveOneCoin's tally and score commands to the same NMI list. */
-    if (game.ram[0x0300U] != 24U || game.ram[0x0301U] != 0x25U ||
-        game.ram[0x0302U] != 4U || game.ram[0x0303U] != 2U ||
-        game.ram[0x0304U] != 0x26U || game.ram[0x0305U] != 0x26U ||
-        game.ram[0x0306U] != 0x25U || game.ram[0x0307U] != 0x24U ||
-        game.ram[0x0308U] != 2U || game.ram[0x0309U] != 0x26U ||
-        game.ram[0x030aU] != 0x26U || game.ram[0x030bU] != 0x20U ||
-        game.ram[0x030cU] != 0x6dU || game.ram[0x030dU] != 2U ||
-        game.ram[0x030eU] != game.ram[0x07edU] ||
-        game.ram[0x030fU] != game.ram[0x07eeU] ||
-        game.ram[0x0319U] != 0U) return 1;
-    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 25U) == 0U ||
-        game.name_table[1][0x0104U] != 0x26U ||
-        game.name_table[1][0x0124U] != 0x26U ||
+    /* HandleCoinMetatile reaches ErACM -> RemoveCoin_Axe first.  That exact
+     * path owns fixed VRAM_Buffer2/$0341 and selects address control $06;
+     * GiveOneCoin independently appends its tally/score commands to buffer1. */
+    if (game.ram[0x0773U] != 6U || game.ram[0x0341U] != 0x25U ||
+        game.ram[0x0342U] != 4U || game.ram[0x0343U] != 2U ||
+        game.ram[0x0344U] != 0x26U || game.ram[0x0345U] != 0x26U ||
+        game.ram[0x0346U] != 0x25U || game.ram[0x0347U] != 0x24U ||
+        game.ram[0x0348U] != 2U || game.ram[0x0349U] != 0x26U ||
+        game.ram[0x034aU] != 0x26U || game.ram[0x0300U] != 14U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x6dU ||
+        game.ram[0x0303U] != 2U || game.ram[0x0304U] != game.ram[0x07edU] ||
+        game.ram[0x0305U] != game.ram[0x07eeU]) return 1;
+    /* RemoveCoin_Axe relies on its existing $034b terminator; NMI must still
+     * submit the selected list even though VRAM_Buffer2_Offset is zero. */
+    game.ram[0x034bU] = 0U;
+    mysmb_game_commit_vram_buffer(&game);
+    if (game.name_table[1][0x0104U] != 0x26U ||
+        game.name_table[1][0x0124U] != 0x26U || game.ram[0x0340U] != 0U ||
+        game.ram[0x0341U] != 0U || game.ram[0x0773U] != 0U) return 1;
+    if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 15U) == 0U ||
         game.name_table[0][0x006dU] != game.ram[0x07edU] ||
         game.name_table[0][0x006eU] != game.ram[0x07eeU] ||
         game.name_table[0][0x0062U] != 0x24U) return 1;

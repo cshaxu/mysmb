@@ -1029,14 +1029,13 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
          * coin and 1-up blocks are neither floor nor a landing correction. */
         if (left.metatile == 0x5fU || left.metatile == 0x60U) return 0U;
         /* ROM HandleAxeMetatile runs from the foot sample before ordinary
-         * landing.  Its cleared metatile is enough for the C core; the
-         * bridge presentation is owned by VictoryMode task zero. */
+         * landing, then ErACM/RemoveCoin_Axe updates the shared VRAM list. */
         if (left.metatile == 0xc5U && game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
             game->ram[0x0772U] = 0U;
             game->ram[0x0770U] = 2U;
             game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
-            game->ram[(mysmb_u16)(0x0500U + left.block_address_low +
-                                   left.block_row_offset)] = 0U;
+            mysmb_objects_remove_axe(game, left.block_address_low,
+                                     left.block_row_offset);
             return 1U;
         }
         /* ChkFootMTile reaches InitSteP while JumpspringHandler owns the

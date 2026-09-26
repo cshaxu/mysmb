@@ -90,6 +90,27 @@ int main(void)
     game.ram[0x00feU] = 0U;
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0644U] != 0U ||
         game.ram[0x00feU] != 1U) return 37;
+    /* HandleAxeMetatile enters from the left foot before LandPlyr, clears
+     * its collision tile, and delegates ErACM -> RemoveCoin_Axe's fixed
+     * VRAM_Buffer2 command. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x0643U] = 0xc5U;
+    game.ram[0x034bU] = 0U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0643U] != 0U ||
+        game.ram[0x0772U] != 0U || game.ram[0x0770U] != 2U ||
+        game.ram[0x0057U] != 0x18U || game.ram[0x0773U] != 6U ||
+        game.ram[0x0341U] != 0x26U || game.ram[0x0342U] != 0x46U ||
+        game.ram[0x0343U] != 2U || game.ram[0x0344U] != 0x24U ||
+        game.ram[0x0348U] != 2U || game.ram[0x0349U] != 0x24U) return 38;
     /* ChkForLandJumpSpring initializes the shared spring handoff before
      * LandPlyr.  The object handler later consumes these exact RAM bytes. */
     mysmb_game_initialize_memory(&game, 0xfeU);
