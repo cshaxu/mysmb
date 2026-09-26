@@ -31,7 +31,23 @@ int main(void)
     game.ram[0x000dU] = 0x40U;
     mysmb_fireball_step(&game);
     if (game.ram[0x00ffU] != 0U) return 15;
+    /* ProcFireball_Bubble branches straight to ProcAirBubbles when Mario
+     * is not fiery.  An existing slot must not move, collide, or draw. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0756U] = 1U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x0074U] = 0U;
+    game.ram[0x008dU] = 0x40U;
+    game.ram[0x00bcU] = 1U;
+    game.ram[0x00d5U] = 0x50U;
+    game.ram[0x005eU] = 0x40U;
+    game.ram[0x00a6U] = 0U;
+    mysmb_fireball_step(&game);
+    if (game.ram[0x0024U] != 1U || game.ram[0x008dU] != 0x40U ||
+        game.ram[0x00d5U] != 0x50U) return 24;
     mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0756U] = 2U;
     game.frame_number = 4UL;
     game.ram[0x0009U] = (mysmb_u8)(4UL);
     game.ram[0x0024U] = 1U;
@@ -119,6 +135,7 @@ int main(void)
      * horizontal high nybble shifted down plus the vertical bits shifted up.
      * FireballObjCore subsequently erases only when this byte & $cc is set. */
     mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0756U] = 2U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 0U;
     game.ram[0x071cU] = 0U;
@@ -166,6 +183,7 @@ int main(void)
     mysmb_world_fireball_background_collision(&game, 0U);
     if (game.ram[0x003aU] != 0U) return 23;
     mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x0756U] = 2U;
     game.ram[0x0024U] = 0x80U;
     game.ram[0x008dU] = 0x40U;
     game.ram[0x00d5U] = 0x40U;

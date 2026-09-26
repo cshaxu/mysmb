@@ -1,31 +1,166 @@
-﻿# M2 ROM conformance node progress
+# M2 ROM conformance node progress
 
-This is the quantitative progress report for the native C port. Its complete named ledger is the [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md): every one of its 1,992 rows is one ROM label node.
+The [canonical inventory](../etc/architecture/smb1-rom-migration-inventory.md)
+contains 1,992 unique original label nodes. This is conformance accounting,
+not a percentage estimate of implemented gameplay.
+
+Current receiving S and historical T/S relations are in the
+[node/task ledger](NODE_TASK_LEDGER.md). Ownership registration does not change
+the conformance counts below.
 
 ## Current baseline
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 0 | None. |
-| C owner mapped, route trace still pending | 77 | The exact names are listed below. These are **not** completed matches. |
-| Open / unmatched | 1,915 | Every `open` row in the canonical inventory; that table is the complete named list. |
-| **Total** | **1,992** | Canonical inventory. |
+| ROM-match complete | 3 | PlayerOffscreenChk, PROfsLoop, NPROffscr. |
+| Mapped / audited, not complete | 167 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 144 evidence-incomplete mappings. |
+| Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| **Total** | **1,992** | Unique label/source-line pairs. |
 
-The progress fraction is therefore **0 / 1,992 ROM-matched nodes**. A C file, structural extraction, focused smoke test, or executable build does not make a node a match. It becomes complete only after the original branch semantics, state writes, and affected ROM-reference frame trace are recorded in its inventory row.
+Verified conformance is **3 / 1,992 (0.15%)**. Initial deep verification covered
+77 names, yielding three matches, 19 mismatch-affected names and 55 partial
+results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
+working tree and are now marked revalidation required. Historical/current
+owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
+77-node accounting. With three additional confirmed missing scheduler/activation entries, the
+explicitly dispositioned cohort is 170, of which 167 remain incomplete. These sets are disjoint in the current ledger.
+
+The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
+The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
+checks all 1,992 labels for historical scope, C references, source address,
+test linkage and route execution. It records all gaps; it does **not** claim a
+full semantic audit of every implementation. Its 435 exact C-name references
+and 857 executed ROM code labels are separate evidence dimensions, not counts
+of equivalent native nodes. No product repair is part of this audit.
 
 ## Completed matches
 
-None.
+| ROM line | Node |
+| ---: | --- |
+| 14535 | `PlayerOffscreenChk` |
+| 14547 | `PROfsLoop` |
+| 14551 | `NPROffscr` |
 
-## Mapped but not yet matched (77)
+Each completion links its branch/write, ROM probe and route evidence in the
+[77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
 
-These names have a current C owner but have not passed the required source-route comparison. They remain unfinished.
+## Accounting audit, 2026-09-26
+
+The interrupted tally used rows rather than unique labels: duplicate open rows
+for PlayerHammerCollision, ClHCol and ExPHC inflated 1,992 to 1,995. They were
+removed without dropping unique nodes, and malformed evidence cells repaired.
+All 1,992 label/line pairs match the hash-pinned listing. The old baseline of
+zero complete / 77 mapped was the pre-verification snapshot, not current status.
+The subsequent audit found 90 additional historical/current C mappings and three missing entries. Every source
+slice and every retained prior M2 history/proposal section was checked for
+responsibility evidence; unnamed descendants remain in the full census.
+
+The accounting checker validates row uniqueness, recognized states, aggregate
+counts and exact named lists. It does not validate semantics by itself.
+
+## Mapped but not yet matched (167)
+
+These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
+canonical inventory links identify individual gaps and responsible owners.
 
 | ROM line | Node |
 | ---: | --- |
+| 699 | `Start` |
+| 706 | `VBlank1` |
+| 708 | `VBlank2` |
+| 712 | `WBootCheck` |
+| 721 | `ColdBoot` |
+| 737 | `EndlessLoop` |
+| 743 | `VRAM_AddrTable_Low` |
+| 752 | `VRAM_AddrTable_High` |
+| 761 | `VRAM_Buffer_Offset` |
+| 764 | `NonMaskableInterrupt` |
+| 776 | `ScreenOff` |
+| 796 | `InitBuffer` |
+| 814 | `DecTimers` |
+| 820 | `DecTimersLoop` |
+| 823 | `SkipExpTimer` |
+| 825 | `NoDecTimers` |
+| 826 | `PauseSkip` |
+| 837 | `RotPRandomBit` |
+| 843 | `Sprite0Clr` |
+| 851 | `Sprite0Hit` |
+| 855 | `HBlankDelay` |
+| 857 | `SkipSprite0` |
+| 868 | `SkipMainOper` |
+| 876 | `PauseRoutine` |
+| 885 | `ChkPauseTimer` |
+| 889 | `ChkStart` |
+| 904 | `ClrPauseTimer` |
+| 906 | `SetPause` |
+| 907 | `ExitPause` |
+| 912 | `SpriteShuffler` |
+| 917 | `ShuffleLoop` |
+| 926 | `StrSprOffset` |
+| 927 | `NextSprOffset` |
+| 934 | `SetAmtOffset` |
+| 937 | `SetMiscOffset` |
+| 954 | `OperModeExecutionTree` |
+| 965 | `MoveAllSpritesOffscreen` |
+| 969 | `MoveSpritesOffscreen` |
+| 972 | `SprInitLoop` |
+| 982 | `TitleScreenMode` |
+| 996 | `GameMenuRoutine` |
+| 1004 | `StartGame` |
+| 1005 | `ChkSelect` |
+| 1018 | `SelectBLogic` |
+| 1033 | `IncWorldSel` |
+| 1039 | `UpdateShroom` |
+| 1047 | `NullJoypad` |
+| 1053 | `ResetTitle` |
+| 1059 | `ChkContinue` |
+| 1065 | `StartWorld1` |
+| 1081 | `GoContinue` |
+| 1119 | `DemoEngine` |
+| 1137 | `VictoryMode` |
+| 1147 | `VictoryModeSubroutines` |
+| 1159 | `SetupVictoryMode` |
+| 1169 | `PlayerVictoryWalk` |
+| 1201 | `PrintVictoryMessages` |
+| 1256 | `PlayerEndWorld` |
+| 1308 | `FloateyNumbersRoutine` |
+| 2674 | `InitializeGame` |
+| 2795 | `InitializeMemory` |
+| 2971 | `GameOverMode` |
+| 3737 | `CastleObject` |
+| 3991 | `FlagpoleObject` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
-| 3737 | `CastleObject` |
+| 6519 | `ProcessWhirlpools` |
+| 6550 | `WhirlpoolActivate` |
+| 6604 | `FlagpoleRoutine` |
+| 6702 | `Setup_Vine` |
+| 6730 | `VineObjectHandler` |
+| 6788 | `ProcessCannons` |
+| 6849 | `BulletBillHandler` |
+| 6928 | `ProcHammerObj` |
+| 6988 | `CoinBlock` |
+| 7000 | `SetupJumpCoin` |
+| 7014 | `JCoinC` |
+| 7025 | `FindEmptyMiscSlot` |
+| 7038 | `MiscObjectsCore` |
+| 7053 | `ProcJumpCoin` |
+| 7150 | `SetupPowerUp` |
+| 7184 | `PowerUpObjHandler` |
+| 7206 | `GrowThePowerUp` |
+| 7226 | `RunPUSubs` |
+| 7244 | `PlayerHeadCollision` |
+| 7316 | `InitBlock_XY_Pos` |
+| 7332 | `BumpBlock` |
+| 7349 | `BlockCode` |
+| 7386 | `BrickQBlockMetatiles` |
+| 7393 | `BlockBumpedChk` |
+| 7404 | `BrickShatter` |
+| 7420 | `CheckTopOfBlock` |
+| 7441 | `SpawnBrickChunks` |
+| 7468 | `BlockObjectsCore` |
+| 7506 | `BouncingBlockHandler` |
+| 7527 | `BlockObjMT_Updater` |
 | 10509 | `StarFlagExit` |
 | 11085 | `FireballEnemyCollision` |
 | 11101 | `FireballEnemyCDLoop` |
@@ -62,9 +197,6 @@ These names have a current C owner but have not passed the required source-route
 | 14507 | `PlayerKilled` |
 | 14511 | `PlayerGfxProcessing` |
 | 14532 | `SUpdR` |
-| 14535 | `PlayerOffscreenChk` |
-| 14547 | `PROfsLoop` |
-| 14551 | `NPROffscr` |
 | 14561 | `IntermediatePlayerData` |
 | 14564 | `DrawPlayer_Intermediate` |
 | 14566 | `PIntLoop` |

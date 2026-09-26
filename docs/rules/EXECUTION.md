@@ -36,6 +36,54 @@ The [M2 ROM-node progress report](../states/NODE_PROGRESS.md), its linked invent
 
 Every M2 P continues to refresh and report all three target artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, with their build/validation results. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence.
 
+Before each M2 S, report both the number of unique labels in scope and the number expected to become complete; list both sets by exact inventory name, including incoming status. The expected set must be a subset of scope and exclude already completed nodes. The maximum closing numerator is the incoming completed count plus that expected count. A validation queue size is not an S estimate. Run `tools/Verify-NodeProgress.ps1 -AdmissionPath build/<task>/node-admission.json` and copy its named/countable result into the proposal and packet. The JSON fields are `baseline`, `total`, `scope` (label array), `expectedMatches` (label array), `maximumComplete`, `focusedTests` (test-name array), and `romRoute` (reproducible route description). Explicit empty arrays and zero expected matches are valid for mapping-only work. Closure reports expected versus actual labels/counts, explains misses and transfers, and updates the canonical rows before rerunning the gate.
+
+## Per-Task Node Contract And Dual Verification
+
+Before admitting an M2 T, publish its exact target labels and counts, their current receiving S, source-call dependencies, and planned S ownership. A T cannot be described only by a source-line span, feature name, or test suite. Its proposal and active packet must state which labels it intends to complete, which labels are only investigated, and the maximum resulting node count.
+
+Each implementation T separates two independent acceptance tracks. **ROM logic-equivalence verification** compares original control branches, state/table reads, state writes, call order, and a source-reachable or controlled route against the native C owner. **Operational verification** runs focused tests, cross-width builds, DOS16 compilation, platform-purity checks, and applicable interactive or frame-route execution. A passing test, build, or visible game screen is not ROM-equivalence evidence; a successful ROM branch comparison is not proof that every target runs correctly.
+
+At each T closure, update `states/NODE_PROGRESS.md` before reporting the result. The report names: planned target labels/count; labels made `ROM-match complete`; labels that remain incomplete with the specific failed track; labels transferred to a successor; both verification evidence sets; and the before/after complete count. The node ledger records custody and transfers, while `NODE_PROGRESS.md` remains the sole conformance-status authority.
+
+## Node-to-S Responsibility And Transfers
+
+The [node/task ledger](../states/NODE_TASK_LEDGER.md), generated from its
+linked JSON, owns current receiving S and historical responsibility records;
+the conformance inventory alone owns match status. Every inventory node must
+have exactly one registered receiving S at all times. A closure backlog is an
+accepted responsibility, not permission for concurrent execution. Historical
+T-only evidence keeps its missing S explicit. Planned future T numbers are
+not invented; an existing accountable S retains custody until admission.
+
+Before every later T/S admission, register the T and S with proposal evidence,
+role, receiving acceptance, and an exact `runs` entry: scope, baseline,
+incomingComplete (exact already-complete names at admission),
+expectedMatches, maximumComplete and initially empty actualMatches. Add
+`taskId` (full M/T/S) and `kind` (`audit` or `implementation`) to the existing
+node-admission JSON. Implementation admission requires that S to have received
+every scope node; audit participation may overlap without transferring
+implementation responsibility. The admission checker enforces both the
+estimate and ownership contract. Empty scope is explicit for infrastructure S.
+
+Ownership transfers are append-only events with a unique ID, exact labels,
+current sender, registered receiver, acceptance attribution and reviewable
+evidence. Validate a proposed event with `python tools/node_task_ledger.py
+--transfer build/<task>/transfer.json`; then append it, update each node's
+receiver, and regenerate with `--write`. The validator replays all events and
+rejects missing or duplicate receivers, a wrong sender, unaccepted transfers,
+unknown nodes/S IDs, and stale generated views. It never infers acceptance from
+a sender's request. Coordinator acceptance under an explicit owner mandate
+is permitted and must be attributed as such.
+
+At S closure record actualMatches in its run and validate a closure JSON with
+`taskId`, `actualMatches`, `complete`, `total`, and `evidence` using `--closure`.
+Every retained unfinished node must first transfer to an accepted successor;
+otherwise the S remains open, even if its metadata deliverable is finished.
+Completed nodes keep a maintenance receiver. Never delete historic relations
+or events to make closure pass. The documentation gate checks the ledger and
+active packet registration. Query exact S node sets with `--subtask "M2 Tn Sm"`.
+
 ## Build Tree Hygiene
 
 Build trees, generated C/data, traces, and ROM-derived executables are local outputs. Delete temporary products once no active S needs them; verify a target is beneath an ignored owned output directory before recursive cleanup.

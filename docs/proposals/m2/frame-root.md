@@ -31,7 +31,7 @@ Platform code may not read or write these game decisions. Delete replaced code i
 
 ## Closure
 
-T14 S1–S4 are closed by P1–P18. P18 is the final guard: after correcting the
+T14 S1-S4 are closed by P1-P18. P18 is the final guard: after correcting the
 title-stream boundary exposed by the long trace, the shared root again has a
 600-sample ROM proof for all admitted output fields. Remaining CPU zero-page
 and stack differences are 6502 execution temporaries, not MySMB game-state

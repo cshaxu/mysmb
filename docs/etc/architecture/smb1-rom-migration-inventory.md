@@ -138,2001 +138,1998 @@ The labels and branches behind every line remain open until individually bound b
 
 | ROM source line | label | owner | status | evidence |
 |---:|---|---|---|---|
-| 699 | `Start` | unassigned | open | none |
-| 706 | `VBlank1` | unassigned | open | none |
-| 708 | `VBlank2` | unassigned | open | none |
-| 712 | `WBootCheck` | unassigned | open | none |
-| 721 | `ColdBoot` | unassigned | open | none |
-| 737 | `EndlessLoop` | unassigned | open | none |
-| 743 | `VRAM_AddrTable_Low` | unassigned | open | none |
-| 752 | `VRAM_AddrTable_High` | unassigned | open | none |
-| 761 | `VRAM_Buffer_Offset` | unassigned | open | none |
-| 764 | `NonMaskableInterrupt` | unassigned | open | none |
-| 776 | `ScreenOff` | unassigned | open | none |
-| 796 | `InitBuffer` | unassigned | open | none |
-| 814 | `DecTimers` | unassigned | open | none |
-| 820 | `DecTimersLoop` | unassigned | open | none |
-| 823 | `SkipExpTimer` | unassigned | open | none |
-| 825 | `NoDecTimers` | unassigned | open | none |
-| 826 | `PauseSkip` | unassigned | open | none |
-| 837 | `RotPRandomBit` | unassigned | open | none |
-| 843 | `Sprite0Clr` | unassigned | open | none |
-| 851 | `Sprite0Hit` | unassigned | open | none |
-| 855 | `HBlankDelay` | unassigned | open | none |
-| 857 | `SkipSprite0` | unassigned | open | none |
-| 868 | `SkipMainOper` | unassigned | open | none |
-| 876 | `PauseRoutine` | unassigned | open | none |
-| 885 | `ChkPauseTimer` | unassigned | open | none |
-| 889 | `ChkStart` | unassigned | open | none |
-| 904 | `ClrPauseTimer` | unassigned | open | none |
-| 906 | `SetPause` | unassigned | open | none |
-| 907 | `ExitPause` | unassigned | open | none |
-| 912 | `SpriteShuffler` | unassigned | open | none |
-| 917 | `ShuffleLoop` | unassigned | open | none |
-| 926 | `StrSprOffset` | unassigned | open | none |
-| 927 | `NextSprOffset` | unassigned | open | none |
-| 934 | `SetAmtOffset` | unassigned | open | none |
-| 937 | `SetMiscOffset` | unassigned | open | none |
-| 954 | `OperModeExecutionTree` | unassigned | open | none |
-| 965 | `MoveAllSpritesOffscreen` | unassigned | open | none |
-| 969 | `MoveSpritesOffscreen` | unassigned | open | none |
-| 972 | `SprInitLoop` | unassigned | open | none |
-| 982 | `TitleScreenMode` | unassigned | open | none |
-| 993 | `WSelectBufferTemplate` | unassigned | open | none |
-| 996 | `GameMenuRoutine` | unassigned | open | none |
-| 1004 | `StartGame` | unassigned | open | none |
-| 1005 | `ChkSelect` | unassigned | open | none |
-| 1013 | `ChkWorldSel` | unassigned | open | none |
-| 1018 | `SelectBLogic` | unassigned | open | none |
-| 1033 | `IncWorldSel` | unassigned | open | none |
-| 1039 | `UpdateShroom` | unassigned | open | none |
-| 1047 | `NullJoypad` | unassigned | open | none |
-| 1049 | `RunDemo` | unassigned | open | none |
-| 1053 | `ResetTitle` | unassigned | open | none |
-| 1059 | `ChkContinue` | unassigned | open | none |
-| 1065 | `StartWorld1` | unassigned | open | none |
-| 1077 | `InitScores` | unassigned | open | none |
-| 1080 | `ExitMenu` | unassigned | open | none |
-| 1081 | `GoContinue` | unassigned | open | none |
-| 1090 | `MushroomIconData` | unassigned | open | none |
-| 1093 | `DrawMushroomIcon` | unassigned | open | none |
-| 1095 | `IconDataRead` | unassigned | open | none |
-| 1105 | `ExitIcon` | unassigned | open | none |
-| 1109 | `DemoActionData` | unassigned | open | none |
-| 1114 | `DemoTimingData` | unassigned | open | none |
-| 1119 | `DemoEngine` | unassigned | open | none |
-| 1129 | `DoAction` | unassigned | open | none |
-| 1133 | `DemoOver` | unassigned | open | none |
-| 1137 | `VictoryMode` | unassigned | open | none |
-| 1144 | `AutoPlayer` | unassigned | open | none |
-| 1147 | `VictoryModeSubroutines` | unassigned | open | none |
-| 1159 | `SetupVictoryMode` | unassigned | open | none |
-| 1169 | `PlayerVictoryWalk` | unassigned | open | none |
-| 1178 | `PerformWalk` | unassigned | open | none |
-| 1180 | `DontWalk` | unassigned | open | none |
-| 1195 | `ExitVWalk` | unassigned | open | none |
-| 1201 | `PrintVictoryMessages` | unassigned | open | none |
-| 1215 | `MRetainerMsg` | unassigned | open | none |
-| 1217 | `ThankPlayer` | unassigned | open | none |
-| 1223 | `SecondPartMsg` | unassigned | open | none |
-| 1232 | `EvalForMusic` | unassigned | open | none |
-| 1236 | `PrintMsg` | unassigned | open | none |
-| 1240 | `IncMsgCounter` | unassigned | open | none |
-| 1248 | `SetEndTimer` | unassigned | open | none |
-| 1251 | `IncModeTask_A` | unassigned | open | none |
-| 1252 | `ExitMsgs` | unassigned | open | none |
-| 1256 | `PlayerEndWorld` | unassigned | open | none |
-| 1271 | `EndExitOne` | unassigned | open | none |
-| 1272 | `EndChkBButton` | unassigned | open | none |
-| 1281 | `EndExitTwo` | unassigned | open | none |
-| 1287 | `FloateyNumTileData` | unassigned | open | none |
-| 1303 | `ScoreUpdateData` | unassigned | open | none |
-| 1308 | `FloateyNumbersRoutine` | unassigned | open | none |
-| 1315 | `ChkNumTimer` | unassigned | open | none |
-| 1320 | `DecNumTimer` | unassigned | open | none |
-| 1328 | `LoadNumTiles` | unassigned | open | none |
-| 1338 | `ChkTallEnemy` | unassigned | open | none |
-| 1355 | `GetAltOffset` | unassigned | open | none |
-| 1358 | `FloateyPart` | unassigned | open | none |
-| 1363 | `SetupNumSpr` | unassigned | open | none |
-| 1386 | `ScreenRoutines` | unassigned | open | none |
-| 1408 | `InitScreen` | unassigned | open | none |
-| 1418 | `SetupIntermediate` | unassigned | open | none |
-| 1436 | `AreaPalette` | unassigned | open | none |
-| 1439 | `GetAreaPalette` | unassigned | open | none |
-| 1442 | `SetVRAMAddr_A` | unassigned | open | none |
-| 1443 | `NextSubtask` | unassigned | open | none |
-| 1448 | `BGColorCtrl_Addr` | unassigned | open | none |
-| 1451 | `BackgroundColors` | unassigned | open | none |
-| 1455 | `PlayerColors` | unassigned | open | none |
-| 1460 | `GetBackgroundColor` | unassigned | open | none |
-| 1465 | `NoBGColor` | unassigned | open | none |
-| 1467 | `GetPlayerColors` | unassigned | open | none |
-| 1473 | `ChkFiery` | unassigned | open | none |
-| 1477 | `StartClrGet` | unassigned | open | none |
-| 1479 | `ClrGetLoop` | unassigned | open | none |
-| 1489 | `SetBGColor` | unassigned | open | none |
-| 1502 | `SetVRAMOffset` | unassigned | open | none |
-| 1507 | `GetAlternatePalette1` | unassigned | open | none |
-| 1512 | `SetVRAMAddr_B` | unassigned | open | none |
-| 1513 | `NoAltPal` | unassigned | open | none |
-| 1517 | `WriteTopStatusLine` | unassigned | open | none |
-| 1524 | `WriteBottomStatusLine` | unassigned | open | none |
-| 1553 | `DisplayTimeUp` | unassigned | open | none |
-| 1560 | `NoTimeUp` | unassigned | open | none |
-| 1565 | `DisplayIntermediate` | unassigned | open | none |
-| 1577 | `PlayerInter` | unassigned | open | none |
-| 1579 | `OutputInter` | unassigned | open | none |
-| 1584 | `GameOverInter` | unassigned | open | none |
-| 1589 | `NoInter` | unassigned | open | none |
-| 1595 | `AreaParserTaskControl` | unassigned | open | none |
-| 1597 | `TaskLoop` | unassigned | open | none |
-| 1603 | `OutputCol` | unassigned | open | none |
-| 1612 | `DrawTitleScreen` | unassigned | open | none |
-| 1624 | `OutputTScr` | unassigned | open | none |
-| 1629 | `ChkHiByte` | unassigned | open | none |
-| 1639 | `ClearBuffersDrawIcon` | unassigned | open | none |
-| 1643 | `TScrClear` | unassigned | open | none |
-| 1648 | `IncSubtask` | unassigned | open | none |
-| 1653 | `WriteTopScore` | unassigned | open | none |
-| 1656 | `IncModeTask_B` | unassigned | open | none |
-| 1661 | `GameText` | unassigned | open | none |
-| 1662 | `TopStatusBarLine` | unassigned | open | none |
-| 1671 | `WorldLivesDisplay` | unassigned | open | none |
-| 1680 | `TwoPlayerTimeUp` | unassigned | open | none |
-| 1682 | `OnePlayerTimeUp` | unassigned | open | none |
-| 1686 | `TwoPlayerGameOver` | unassigned | open | none |
-| 1688 | `OnePlayerGameOver` | unassigned | open | none |
-| 1693 | `WarpZoneWelcome` | unassigned | open | none |
-| 1704 | `LuigiName` | unassigned | open | none |
-| 1707 | `WarpZoneNumbers` | unassigned | open | none |
-| 1712 | `GameTextOffsets` | unassigned | open | none |
-| 1719 | `WriteGameText` | unassigned | open | none |
-| 1728 | `Chk2Players` | unassigned | open | none |
-| 1731 | `LdGameText` | unassigned | open | none |
-| 1733 | `GameTextLoop` | unassigned | open | none |
-| 1740 | `EndGameText` | unassigned | open | none |
-| 1756 | `PutLives` | unassigned | open | none |
-| 1765 | `CheckPlayerName` | unassigned | open | none |
-| 1775 | `ChkLuigi` | unassigned | open | none |
-| 1778 | `NameLoop` | unassigned | open | none |
-| 1782 | `ExitChkName` | unassigned | open | none |
-| 1784 | `PrintWarpZoneNumbers` | unassigned | open | none |
-| 1790 | `WarpNumLoop` | unassigned | open | none |
-| 1804 | `ResetSpritesAndScreenTimer` | unassigned | open | none |
-| 1809 | `ResetScreenTimer` | unassigned | open | none |
-| 1813 | `NoReset` | unassigned | open | none |
-| 1825 | `RenderAreaGraphics` | unassigned | open | none |
-| 1840 | `DrawMTLoop` | unassigned | open | none |
-| 1878 | `RightCheck` | unassigned | open | none |
-| 1886 | `LLeft` | unassigned | open | none |
-| 1888 | `NextMTRow` | unassigned | open | none |
-| 1889 | `SetAttrib` | unassigned | open | none |
-| 1914 | `ExitDrawM` | unassigned | open | none |
-| 1920 | `RenderAttributeTables` | unassigned | open | none |
-| 1930 | `SetATHigh` | unassigned | open | none |
-| 1940 | `AttribLoop` | unassigned | open | none |
-| 1962 | `SetVRAMCtrl` | unassigned | open | none |
-| 1970 | `ColorRotatePalette` | unassigned | open | none |
-| 1973 | `BlankPalette` | unassigned | open | none |
-| 1977 | `Palette3Data` | unassigned | open | none |
-| 1983 | `ColorRotation` | unassigned | open | none |
-| 1991 | `GetBlankPal` | unassigned | open | none |
-| 2004 | `GetAreaPal` | unassigned | open | none |
-| 2024 | `ExitColorRot` | unassigned | open | none |
-| 2034 | `BlockGfxData` | unassigned | open | none |
-| 2041 | `RemoveCoin_Axe` | unassigned | open | none |
-| 2047 | `WriteBlankMT` | unassigned | open | none |
-| 2052 | `ReplaceBlockMetatile` | unassigned | open | none |
-| 2058 | `DestroyBlockMetatile` | unassigned | open | none |
-| 2061 | `WriteBlockMetatile` | unassigned | open | none |
-| 2076 | `UseBOffset` | unassigned | open | none |
-| 2080 | `MoveVOffset` | unassigned | open | none |
-| 2086 | `PutBlockMetatile` | unassigned | open | none |
-| 2097 | `SaveHAdder` | unassigned | open | none |
-| 2118 | `RemBridge` | unassigned | open | none |
-| 2145 | `MetatileGraphics_Low` | unassigned | open | none |
-| 2148 | `MetatileGraphics_High` | unassigned | open | none |
-| 2151 | `Palette0_MTiles` | unassigned | open | none |
-| 2192 | `Palette1_MTiles` | unassigned | open | none |
-| 2240 | `Palette2_MTiles` | unassigned | open | none |
-| 2252 | `Palette3_MTiles` | unassigned | open | none |
-| 2263 | `WaterPaletteData` | unassigned | open | none |
-| 2275 | `GroundPaletteData` | unassigned | open | none |
-| 2287 | `UndergroundPaletteData` | unassigned | open | none |
-| 2299 | `CastlePaletteData` | unassigned | open | none |
-| 2311 | `DaySnowPaletteData` | unassigned | open | none |
-| 2316 | `NightSnowPaletteData` | unassigned | open | none |
-| 2321 | `MushroomPaletteData` | unassigned | open | none |
-| 2326 | `BowserPaletteData` | unassigned | open | none |
-| 2331 | `MarioThanksMessage` | unassigned | open | none |
-| 2339 | `LuigiThanksMessage` | unassigned | open | none |
-| 2347 | `MushroomRetainerSaved` | unassigned | open | none |
-| 2358 | `PrincessSaved1` | unassigned | open | none |
-| 2366 | `PrincessSaved2` | unassigned | open | none |
-| 2375 | `WorldSelectMessage1` | unassigned | open | none |
-| 2382 | `WorldSelectMessage2` | unassigned | open | none |
-| 2395 | `JumpEngine` | unassigned | open | none |
-| 2412 | `InitializeNameTables` | unassigned | open | none |
-| 2421 | `WriteNTAddr` | unassigned | open | none |
-| 2427 | `InitNTLoop` | unassigned | open | none |
-| 2436 | `InitATLoop` | unassigned | open | none |
-| 2446 | `ReadJoypads` | unassigned | open | none |
-| 2454 | `ReadPortBits` | unassigned | open | none |
-| 2455 | `PortLoop` | unassigned | open | none |
-| 2474 | `Save8Bits` | unassigned | open | none |
-| 2482 | `WriteBufferToScreen` | unassigned | open | none |
-| 2495 | `SetupWrites` | unassigned | open | none |
-| 2501 | `GetLength` | unassigned | open | none |
-| 2504 | `OutputToVRAM` | unassigned | open | none |
-| 2506 | `RepeatByte` | unassigned | open | none |
-| 2523 | `UpdateScreen` | unassigned | open | none |
-| 2527 | `InitScroll` | unassigned | open | none |
-| 2533 | `WritePPUReg1` | unassigned | open | none |
-| 2544 | `StatusBarData` | unassigned | open | none |
-| 2552 | `StatusBarOffset` | unassigned | open | none |
-| 2555 | `PrintStatusBarNumbers` | unassigned | open | none |
-| 2564 | `OutputNumbers` | unassigned | open | none |
-| 2578 | `SetupNums` | unassigned | open | none |
-| 2592 | `DigitPLoop` | unassigned | open | none |
-| 2604 | `ExitOutputN` | unassigned | open | none |
-| 2608 | `DigitsMathRoutine` | unassigned | open | none |
-| 2613 | `AddModLoop` | unassigned | open | none |
-| 2619 | `StoreNewD` | unassigned | open | none |
-| 2623 | `EraseDMods` | unassigned | open | none |
-| 2625 | `EraseMLoop` | unassigned | open | none |
-| 2629 | `BorrowOne` | unassigned | open | none |
-| 2632 | `CarryOne` | unassigned | open | none |
-| 2639 | `UpdateTopScore` | unassigned | open | none |
-| 2644 | `TopScoreCheck` | unassigned | open | none |
-| 2647 | `GetScoreDiff` | unassigned | open | none |
-| 2655 | `CopyScore` | unassigned | open | none |
-| 2661 | `NoTopSc` | unassigned | open | none |
-| 2665 | `DefaultSprOffsets` | unassigned | open | none |
-| 2669 | `Sprite0Data` | unassigned | open | none |
-| 2674 | `InitializeGame` | unassigned | open | none |
-| 2678 | `ClrSndLoop` | unassigned | open | none |
-| 2685 | `InitializeArea` | unassigned | open | none |
-| 2690 | `ClrTimersLoop` | unassigned | open | none |
-| 2697 | `StartPage` | unassigned | open | none |
-| 2705 | `SetInitNTHigh` | unassigned | open | none |
-| 2728 | `SetSecHard` | unassigned | open | none |
-| 2729 | `CheckHalfway` | unassigned | open | none |
-| 2733 | `DoneInitArea` | unassigned | open | none |
-| 2742 | `PrimaryGameSetup` | unassigned | open | none |
-| 2750 | `SecondaryGameSetup` | unassigned | open | none |
-| 2754 | `ClearVRLoop` | unassigned | open | none |
-| 2775 | `ShufAmtLoop` | unassigned | open | none |
-| 2780 | `ISpr0Loop` | unassigned | open | none |
-| 2795 | `InitializeMemory` | unassigned | open | none |
-| 2799 | `InitPageLoop` | unassigned | open | none |
-| 2800 | `InitByteLoop` | unassigned | open | none |
-| 2804 | `InitByte` | unassigned | open | none |
-| 2805 | `SkipByte` | unassigned | open | none |
-| 2814 | `MusicSelectData` | unassigned | open | none |
-| 2818 | `GetAreaMusic` | unassigned | open | none |
-| 2830 | `ChkAreaType` | unassigned | open | none |
-| 2834 | `StoreMusic` | unassigned | open | none |
-| 2836 | `ExitGetM` | unassigned | open | none |
-| 2840 | `PlayerStarting_X_Pos` | unassigned | open | none |
-| 2844 | `AltYPosOffset` | unassigned | open | none |
-| 2847 | `PlayerStarting_Y_Pos` | unassigned | open | none |
-| 2851 | `PlayerBGPriorityData` | unassigned | open | none |
-| 2854 | `GameTimerData` | unassigned | open | none |
-| 2858 | `Entrance_GameTimerSetup` | unassigned | open | none |
-| 2874 | `ChkStPos` | unassigned | open | none |
-| 2881 | `SetStPos` | unassigned | open | none |
-| 2900 | `ChkOverR` | unassigned | open | none |
-| 2911 | `ChkSwimE` | unassigned | open | none |
-| 2914 | `SetPESub` | unassigned | open | none |
-| 2921 | `HalfwayPageNybbles` | unassigned | open | none |
-| 2931 | `PlayerLoseLife` | unassigned | open | none |
-| 2944 | `StillInGame` | unassigned | open | none |
-| 2951 | `GetHalfway` | unassigned | open | none |
-| 2960 | `MaskHPNyb` | unassigned | open | none |
-| 2965 | `SetHalfway` | unassigned | open | none |
-| 2971 | `GameOverMode` | unassigned | open | none |
-| 2981 | `SetupGameOver` | unassigned | open | none |
-| 2993 | `RunGameOver` | unassigned | open | none |
-| 3001 | `TerminateGame` | unassigned | open | none |
-| 3015 | `ContinueGame` | unassigned | open | none |
-| 3027 | `GameIsOn` | unassigned | open | none |
-| 3029 | `TransposePlayers` | unassigned | open | none |
-| 3039 | `TransLoop` | unassigned | open | none |
-| 3048 | `ExTrans` | unassigned | open | none |
-| 3052 | `DoNothing1` | unassigned | open | none |
-| 3055 | `DoNothing2` | unassigned | open | none |
-| 3060 | `AreaParserTaskHandler` | unassigned | open | none |
-| 3065 | `DoAPTasks` | unassigned | open | none |
-| 3071 | `SkipATRender` | unassigned | open | none |
-| 3073 | `AreaParserTasks` | unassigned | open | none |
-| 3087 | `IncrementColumnPos` | unassigned | open | none |
-| 3094 | `NoColWrap` | unassigned | open | none |
-| 3106 | `BSceneDataOffsets` | unassigned | open | none |
-| 3109 | `BackSceneryData` | unassigned | open | none |
-| 3131 | `BackSceneryMetatiles` | unassigned | open | none |
-| 3145 | `FSceneDataOffsets` | unassigned | open | none |
-| 3148 | `ForeSceneryData` | unassigned | open | none |
-| 3158 | `TerrainMetatiles` | unassigned | open | none |
-| 3161 | `TerrainRenderBits` | unassigned | open | none |
-| 3179 | `AreaParserCore` | unassigned | open | none |
-| 3184 | `RenderSceneryTerrain` | unassigned | open | none |
-| 3187 | `ClrMTBuf` | unassigned | open | none |
-| 3193 | `ThirdP` | unassigned | open | none |
-| 3198 | `RendBack` | unassigned | open | none |
-| 3223 | `SceLoop1` | unassigned | open | none |
-| 3231 | `RendFore` | unassigned | open | none |
-| 3235 | `SceLoop2` | unassigned | open | none |
-| 3238 | `NoFore` | unassigned | open | none |
-| 3242 | `RendTerr` | unassigned | open | none |
-| 3249 | `TerMTile` | unassigned | open | none |
-| 3253 | `StoreMT` | unassigned | open | none |
-| 3258 | `TerrLoop` | unassigned | open | none |
-| 3269 | `NoCloud2` | unassigned | open | none |
-| 3270 | `TerrBChk` | unassigned | open | none |
-| 3275 | `NextTBit` | unassigned | open | none |
-| 3285 | `EndUChk` | unassigned | open | none |
-| 3290 | `RendBBuf` | unassigned | open | none |
-| 3295 | `ChkMTLow` | unassigned | open | none |
-| 3306 | `StrBlock` | unassigned | open | none |
-| 3319 | `BlockBuffLowBounds` | unassigned | open | none |
-| 3326 | `ProcessAreaData` | unassigned | open | none |
-| 3328 | `ProcADLoop` | unassigned | open | none |
-| 3345 | `Chk1Row13` | unassigned | open | none |
-| 3363 | `Chk1Row14` | unassigned | open | none |
-| 3367 | `CheckRear` | unassigned | open | none |
-| 3370 | `RdyDecode` | unassigned | open | none |
-| 3372 | `SetBehind` | unassigned | open | none |
-| 3373 | `NextAObj` | unassigned | open | none |
-| 3374 | `ChkLength` | unassigned | open | none |
-| 3378 | `ProcLoopb` | unassigned | open | none |
-| 3384 | `EndAParse` | unassigned | open | none |
-| 3386 | `IncAreaObjOffset` | unassigned | open | none |
-| 3393 | `DecodeAreaData` | unassigned | open | none |
-| 3397 | `Chk1stB` | unassigned | open | none |
-| 3408 | `ChkRow14` | unassigned | open | none |
-| 3416 | `ChkRow13` | unassigned | open | none |
-| 3429 | `Mask2MSB` | unassigned | open | none |
-| 3431 | `ChkSRows` | unassigned | open | none |
-| 3442 | `LrgObj` | unassigned | open | none |
-| 3450 | `NotWPipe` | unassigned | open | none |
-| 3452 | `SpecObj` | unassigned | open | none |
-| 3455 | `MoveAOId` | unassigned | open | none |
-| 3459 | `NormObj` | unassigned | open | none |
-| 3472 | `LeavePar` | unassigned | open | none |
-| 3473 | `InitRear` | unassigned | open | none |
-| 3479 | `LoopCmdE` | unassigned | open | none |
-| 3480 | `BackColC` | unassigned | open | none |
-| 3489 | `StrAObj` | unassigned | open | none |
-| 3492 | `RunAObj` | unassigned | open | none |
-| 3561 | `AlterAreaAttributes` | unassigned | open | none |
-| 3580 | `Alter2` | unassigned | open | none |
-| 3586 | `SetFore` | unassigned | open | none |
-| 3591 | `ScrollLockObject_Warp` | unassigned | open | none |
-| 3600 | `WarpNum` | unassigned | open | none |
-| 3606 | `ScrollLockObject` | unassigned | open | none |
-| 3615 | `KillEnemies` | unassigned | open | none |
-| 3619 | `KillELoop` | unassigned | open | none |
-| 3623 | `NoKillE` | unassigned | open | none |
-| 3629 | `FrenzyIDData` | unassigned | open | none |
-| 3632 | `AreaFrenzy` | unassigned | open | none |
-| 3635 | `FreCompLoop` | unassigned | open | none |
-| 3640 | `ExitAFrenzy` | unassigned | open | none |
-| 3646 | `AreaStyleObject` | unassigned | open | none |
-| 3653 | `TreeLedge` | unassigned | open | none |
-| 3665 | `MidTreeL` | unassigned | open | none |
-| 3670 | `EndTreeL` | unassigned | open | none |
-| 3673 | `MushroomLedge` | unassigned | open | none |
-| 3682 | `EndMushL` | unassigned | open | none |
-| 3696 | `AllUnder` | unassigned | open | none |
-| 3699 | `NoUnder` | unassigned | open | none |
-| 3706 | `PulleyRopeMetatiles` | unassigned | open | none |
-| 3709 | `PulleyRopeObject` | unassigned | open | none |
-| 3717 | `RenderPul` | unassigned | open | none |
-| 3719 | `MushLExit` | unassigned | open | none |
-| 3724 | `CastleMetatiles` | unassigned | open | none |
-| 3737 | `CastleObject` | T18/S2/P5 | mapped, route trace pending | controller-only page-twelve trace |
-| 3748 | `CRendLoop` | unassigned | open | none |
-| 3759 | `ChkCFloor` | unassigned | open | none |
-| 3772 | `NotTall` | unassigned | open | none |
-| 3789 | `PlayerStop` | unassigned | open | none |
-| 3791 | `ExitCastle` | unassigned | open | none |
-| 3795 | `WaterPipe` | unassigned | open | none |
-| 3810 | `IntroPipe` | unassigned | open | none |
-| 3817 | `VPipeSectLoop` | unassigned | open | none |
-| 3823 | `NoBlankP` | unassigned | open | none |
-| 3825 | `SidePipeShaftData` | unassigned | open | none |
-| 3828 | `SidePipeTopPart` | unassigned | open | none |
-| 3831 | `SidePipeBottomPart` | unassigned | open | none |
-| 3835 | `ExitPipe` | unassigned | open | none |
-| 3840 | `RenderSidewaysPipe` | unassigned | open | none |
-| 3855 | `DrawSidePart` | unassigned | open | none |
-| 3862 | `VerticalPipeData` | unassigned | open | none |
-| 3868 | `VerticalPipe` | unassigned | open | none |
-| 3876 | `WarpPipe` | unassigned | open | none |
-| 3900 | `DrawPipe` | unassigned | open | none |
-| 3911 | `GetPipeHeight` | unassigned | open | none |
-| 3921 | `FindEmptyEnemySlot` | unassigned | open | none |
-| 3923 | `EmptyChkLoop` | unassigned | open | none |
-| 3929 | `ExitEmptyChk` | unassigned | open | none |
-| 3933 | `Hole_Water` | unassigned | open | none |
-| 3944 | `QuestionBlockRow_High` | unassigned | open | none |
-| 3948 | `QuestionBlockRow_Low` | unassigned | open | none |
-| 3960 | `Bridge_High` | unassigned | open | none |
-| 3964 | `Bridge_Middle` | unassigned | open | none |
-| 3968 | `Bridge_Low` | unassigned | open | none |
-| 3983 | `FlagBalls_Residual` | unassigned | open | none |
-| 3991 | `FlagpoleObject` | unassigned | open | none |
-| 4018 | `EndlessRope` | unassigned | open | none |
-| 4023 | `BalancePlatRope` | unassigned | open | none |
-| 4034 | `DrawRope` | unassigned | open | none |
-| 4039 | `CoinMetatileData` | unassigned | open | none |
-| 4042 | `RowOfCoins` | unassigned | open | none |
-| 4049 | `C_ObjectRow` | unassigned | open | none |
-| 4052 | `C_ObjectMetatile` | unassigned | open | none |
-| 4055 | `CastleBridgeObj` | unassigned | open | none |
-| 4060 | `AxeObj` | unassigned | open | none |
-| 4064 | `ChainObj` | unassigned | open | none |
-| 4070 | `EmptyBlock` | unassigned | open | none |
-| 4074 | `ColObj` | unassigned | open | none |
-| 4079 | `SolidBlockMetatiles` | unassigned | open | none |
-| 4082 | `BrickMetatiles` | unassigned | open | none |
-| 4086 | `RowOfBricks` | unassigned | open | none |
-| 4091 | `DrawBricks` | unassigned | open | none |
-| 4094 | `RowOfSolidBlocks` | unassigned | open | none |
-| 4097 | `GetRow` | unassigned | open | none |
-| 4099 | `DrawRow` | unassigned | open | none |
-| 4104 | `ColumnOfBricks` | unassigned | open | none |
-| 4109 | `ColumnOfSolidBlocks` | unassigned | open | none |
-| 4112 | `GetRow2` | unassigned | open | none |
-| 4120 | `BulletBillCannon` | unassigned | open | none |
-| 4135 | `SetupCannon` | unassigned | open | none |
-| 4146 | `StrCOffset` | unassigned | open | none |
-| 4151 | `StaircaseHeightData` | unassigned | open | none |
-| 4154 | `StaircaseRowData` | unassigned | open | none |
-| 4157 | `StaircaseObject` | unassigned | open | none |
-| 4162 | `NextStair` | unassigned | open | none |
-| 4172 | `Jumpspring` | unassigned | open | none |
-| 4197 | `Hidden1UpBlock` | unassigned | open | none |
-| 4204 | `QuestionBlock` | unassigned | open | none |
-| 4208 | `BrickWithCoins` | unassigned | open | none |
-| 4212 | `BrickWithItem` | unassigned | open | none |
-| 4220 | `BWithL` | unassigned | open | none |
-| 4223 | `DrawQBlk` | unassigned | open | none |
-| 4228 | `GetAreaObjectID` | unassigned | open | none |
-| 4233 | `ExitDecBlock` | unassigned | open | none |
-| 4237 | `HoleMetatiles` | unassigned | open | none |
-| 4240 | `Hole_Empty` | unassigned | open | none |
-| 4265 | `StrWOffset` | unassigned | open | none |
-| 4266 | `NoWhirlP` | unassigned | open | none |
-| 4273 | `RenderUnderPart` | unassigned | open | none |
-| 4289 | `DrawThisRow` | unassigned | open | none |
-| 4290 | `WaitOneRow` | unassigned | open | none |
-| 4296 | `ExitUPartR` | unassigned | open | none |
-| 4300 | `ChkLrgObjLength` | unassigned | open | none |
-| 4303 | `ChkLrgObjFixedLength` | unassigned | open | none |
-| 4310 | `LenSet` | unassigned | open | none |
-| 4313 | `GetLrgObjAttrib` | unassigned | open | none |
-| 4326 | `GetAreaObjXPosition` | unassigned | open | none |
-| 4336 | `GetAreaObjYPosition` | unassigned | open | none |
-| 4349 | `BlockBufferAddr` | unassigned | open | none |
-| 4353 | `GetBlockBufferAddr` | unassigned | open | none |
-| 4376 | `AreaDataOfsLoopback` | unassigned | open | none |
-| 4381 | `LoadAreaPointer` | unassigned | open | none |
-| 4384 | `GetAreaType` | unassigned | open | none |
-| 4392 | `FindAreaPointer` | unassigned | open | none |
-| 4402 | `GetAreaDataAddrs` | unassigned | open | none |
-| 4434 | `StoreFore` | unassigned | open | none |
-| 4472 | `StoreStyle` | unassigned | open | none |
-| 4485 | `WorldAddrOffsets` | unassigned | open | none |
-| 4491 | `AreaAddrOffsets` | unassigned | open | none |
-| 4492 | `World1Areas` | unassigned | open | none |
-| 4493 | `World2Areas` | unassigned | open | none |
-| 4494 | `World3Areas` | unassigned | open | none |
-| 4495 | `World4Areas` | unassigned | open | none |
-| 4496 | `World5Areas` | unassigned | open | none |
-| 4497 | `World6Areas` | unassigned | open | none |
-| 4498 | `World7Areas` | unassigned | open | none |
-| 4499 | `World8Areas` | unassigned | open | none |
-| 4509 | `EnemyAddrHOffsets` | unassigned | open | none |
-| 4512 | `EnemyDataAddrLow` | unassigned | open | none |
-| 4520 | `EnemyDataAddrHigh` | unassigned | open | none |
-| 4528 | `AreaDataHOffsets` | unassigned | open | none |
-| 4531 | `AreaDataAddrLow` | unassigned | open | none |
-| 4539 | `AreaDataAddrHigh` | unassigned | open | none |
-| 4550 | `E_CastleArea1` | unassigned | open | none |
-| 4558 | `E_CastleArea2` | unassigned | open | none |
-| 4565 | `E_CastleArea3` | unassigned | open | none |
-| 4574 | `E_CastleArea4` | unassigned | open | none |
-| 4583 | `E_CastleArea5` | unassigned | open | none |
-| 4589 | `E_CastleArea6` | unassigned | open | none |
-| 4598 | `E_GroundArea1` | unassigned | open | none |
-| 4606 | `E_GroundArea2` | unassigned | open | none |
-| 4613 | `E_GroundArea3` | unassigned | open | none |
-| 4619 | `E_GroundArea4` | unassigned | open | none |
-| 4627 | `E_GroundArea5` | unassigned | open | none |
-| 4636 | `E_GroundArea6` | unassigned | open | none |
-| 4643 | `E_GroundArea7` | unassigned | open | none |
-| 4650 | `E_GroundArea8` | unassigned | open | none |
-| 4656 | `E_GroundArea9` | unassigned | open | none |
-| 4662 | `E_GroundArea10` | unassigned | open | none |
-| 4666 | `E_GroundArea11` | unassigned | open | none |
-| 4674 | `E_GroundArea12` | unassigned | open | none |
-| 4679 | `E_GroundArea13` | unassigned | open | none |
-| 4687 | `E_GroundArea14` | unassigned | open | none |
-| 4695 | `E_GroundArea15` | unassigned | open | none |
-| 4700 | `E_GroundArea16` | unassigned | open | none |
-| 4704 | `E_GroundArea17` | unassigned | open | none |
-| 4714 | `E_GroundArea18` | unassigned | open | none |
-| 4722 | `E_GroundArea19` | unassigned | open | none |
-| 4731 | `E_GroundArea20` | unassigned | open | none |
-| 4738 | `E_GroundArea21` | unassigned | open | none |
-| 4743 | `E_GroundArea22` | unassigned | open | none |
-| 4751 | `E_UndergroundArea1` | unassigned | open | none |
-| 4760 | `E_UndergroundArea2` | unassigned | open | none |
-| 4769 | `E_UndergroundArea3` | unassigned | open | none |
-| 4777 | `E_WaterArea1` | unassigned | open | none |
-| 4783 | `E_WaterArea2` | unassigned | open | none |
-| 4791 | `E_WaterArea3` | unassigned | open | none |
-| 4799 | `L_CastleArea1` | unassigned | open | none |
-| 4814 | `L_CastleArea2` | unassigned | open | none |
-| 4832 | `L_CastleArea3` | unassigned | open | none |
-| 4849 | `L_CastleArea4` | unassigned | open | none |
-| 4865 | `L_CastleArea5` | unassigned | open | none |
-| 4884 | `L_CastleArea6` | unassigned | open | none |
-| 4900 | `L_GroundArea1` | unassigned | open | none |
-| 4915 | `L_GroundArea2` | unassigned | open | none |
-| 4931 | `L_GroundArea3` | unassigned | open | none |
-| 4944 | `L_GroundArea4` | unassigned | open | none |
-| 4963 | `L_GroundArea5` | unassigned | open | none |
-| 4980 | `L_GroundArea6` | unassigned | open | none |
-| 4995 | `L_GroundArea7` | unassigned | open | none |
-| 5009 | `L_GroundArea8` | unassigned | open | none |
-| 5027 | `L_GroundArea9` | unassigned | open | none |
-| 5042 | `L_GroundArea10` | unassigned | open | none |
-| 5048 | `L_GroundArea11` | unassigned | open | none |
-| 5059 | `L_GroundArea12` | unassigned | open | none |
-| 5066 | `L_GroundArea13` | unassigned | open | none |
-| 5081 | `L_GroundArea14` | unassigned | open | none |
-| 5096 | `L_GroundArea15` | unassigned | open | none |
-| 5113 | `L_GroundArea16` | unassigned | open | none |
-| 5123 | `L_GroundArea17` | unassigned | open | none |
-| 5143 | `L_GroundArea18` | unassigned | open | none |
-| 5160 | `L_GroundArea19` | unassigned | open | none |
-| 5177 | `L_GroundArea20` | unassigned | open | none |
-| 5191 | `L_GroundArea21` | unassigned | open | none |
-| 5200 | `L_GroundArea22` | unassigned | open | none |
-| 5210 | `L_UndergroundArea1` | unassigned | open | none |
-| 5231 | `L_UndergroundArea2` | unassigned | open | none |
-| 5252 | `L_UndergroundArea3` | unassigned | open | none |
-| 5271 | `L_WaterArea1` | unassigned | open | none |
-| 5282 | `L_WaterArea2` | unassigned | open | none |
-| 5299 | `L_WaterArea3` | unassigned | open | none |
-| 5315 | `GameMode` | unassigned | open | none |
-| 5326 | `GameCoreRoutine` | unassigned | open | none |
-| 5336 | `GameEngine` | unassigned | open | none |
-| 5339 | `ProcELoop` | unassigned | open | none |
-| 5371 | `NoChgMus` | unassigned | open | none |
-| 5377 | `CycleTwo` | unassigned | open | none |
-| 5380 | `ClrPlrPal` | unassigned | open | none |
-| 5381 | `SaveAB` | unassigned | open | none |
-| 5385 | `UpdScrollVar` | unassigned | open | none |
-| 5398 | `RunParser` | unassigned | open | none |
-| 5399 | `ExitEng` | unassigned | open | none |
-| 5403 | `ScrollHandler` | unassigned | open | none |
-| 5422 | `ChkNearMid` | unassigned | open | none |
-| 5427 | `ScrollScreen` | unassigned | open | none |
-| 5451 | `InitScrlAmt` | unassigned | open | none |
-| 5453 | `ChkPOffscr` | unassigned | open | none |
-| 5463 | `KeepOnscr` | unassigned | open | none |
-| 5475 | `InitPlatScrl` | unassigned | open | none |
-| 5479 | `X_SubtracterData` | unassigned | open | none |
-| 5482 | `OffscrJoypadBitsData` | unassigned | open | none |
-| 5487 | `GetScreenPosition` | unassigned | open | none |
-| 5499 | `GameRoutines` | unassigned | open | none |
-| 5519 | `PlayerEntrance` | unassigned | open | none |
-| 5532 | `ChkBehPipe` | unassigned | open | none |
-| 5536 | `IntroEntr` | unassigned | open | none |
-| 5541 | `EntrMode2` | unassigned | open | none |
-| 5549 | `VineEntr` | unassigned | open | none |
-| 5562 | `OffVine` | unassigned | open | none |
-| 5567 | `PlayerRdy` | unassigned | open | none |
-| 5575 | `ExitEntr` | unassigned | open | none |
-| 5580 | `AutoControlPlayer` | unassigned | open | none |
-| 5583 | `PlayerCtrlRoutine` | unassigned | open | none |
-| 5595 | `DisJoyp` | unassigned | open | none |
-| 5597 | `SaveJoyp` | unassigned | open | none |
-| 5615 | `SizeChk` | unassigned | open | none |
-| 5623 | `ChkMoveDir` | unassigned | open | none |
-| 5629 | `SetMoveDir` | unassigned | open | none |
-| 5630 | `PlayerSubs` | unassigned | open | none |
-| 5649 | `PlayerHole` | unassigned | open | none |
-| 5661 | `HoleDie` | unassigned | open | none |
-| 5670 | `HoleBottom` | unassigned | open | none |
-| 5672 | `ChkHoleX` | unassigned | open | none |
-| 5680 | `ExitCtrl` | unassigned | open | none |
-| 5682 | `CloudExit` | unassigned | open | none |
-| 5691 | `Vine_AutoClimb` | unassigned | open | none |
-| 5697 | `AutoClimb` | unassigned | open | none |
-| 5702 | `SetEntr` | unassigned | open | none |
-| 5708 | `VerticalPipeEntry` | unassigned | open | none |
-| 5722 | `MovePlayerYAxis` | unassigned | open | none |
-| 5730 | `SideExitPipeEntry` | unassigned | open | none |
-| 5733 | `ChgAreaPipe` | unassigned | open | none |
-| 5736 | `ChgAreaMode` | unassigned | open | none |
-| 5740 | `ExitCAPipe` | unassigned | open | none |
-| 5742 | `EnterSidePipe` | unassigned | open | none |
-| 5751 | `RightPipe` | unassigned | open | none |
-| 5757 | `PlayerChangeSize` | unassigned | open | none |
-| 5762 | `EndChgSize` | unassigned | open | none |
-| 5765 | `ExitChgSize` | unassigned | open | none |
-| 5769 | `PlayerInjuryBlink` | unassigned | open | none |
-| 5776 | `ExitBlink` | unassigned | open | none |
-| 5778 | `InitChangeSize` | unassigned | open | none |
-| 5786 | `ExitBoth` | unassigned | open | none |
-| 5791 | `PlayerDeath` | unassigned | open | none |
-| 5797 | `DonePlayerTask` | unassigned | open | none |
-| 5804 | `PlayerFireFlower` | unassigned | open | none |
-| 5812 | `CyclePlayerPalette` | unassigned | open | none |
-| 5821 | `ResetPalFireFlower` | unassigned | open | none |
-| 5824 | `ResetPalStar` | unassigned | open | none |
-| 5830 | `ExitDeath` | unassigned | open | none |
-| 5835 | `FlagpoleSlide` | unassigned | open | none |
-| 5847 | `SlidePlayer` | unassigned | open | none |
-| 5848 | `NoFPObj` | unassigned | open | none |
-| 5853 | `Hidden1UpCoinAmts` | unassigned | open | none |
-| 5856 | `PlayerEndLevel` | unassigned | open | none |
-| 5868 | `ChkStop` | unassigned | open | none |
-| 5874 | `InCastle` | unassigned | open | none |
-| 5876 | `RdyNextA` | unassigned | open | none |
-| 5888 | `NextArea` | unassigned | open | none |
-| 5895 | `ExitNA` | unassigned | open | none |
-| 5899 | `PlayerMovementSubs` | unassigned | open | none |
-| 5907 | `SetCrouch` | unassigned | open | none |
-| 5908 | `ProcMove` | unassigned | open | none |
-| 5916 | `MoveSubs` | unassigned | open | none |
-| 5923 | `NoMoveSub` | unassigned | open | none |
-| 5928 | `OnGroundStateSub` | unassigned | open | none |
-| 5933 | `GndMove` | unassigned | open | none |
-| 5940 | `FallingSub` | unassigned | open | none |
-| 5947 | `JumpSwimSub` | unassigned | open | none |
-| 5959 | `DumpFall` | unassigned | open | none |
-| 5961 | `ProcSwim` | unassigned | open | none |
-| 5969 | `LRWater` | unassigned | open | none |
-| 5972 | `LRAir` | unassigned | open | none |
-| 5975 | `JSMove` | unassigned | open | none |
-| 5982 | `ExitMov1` | unassigned | open | none |
-| 5986 | `ClimbAdderLow` | unassigned | open | none |
-| 5988 | `ClimbAdderHigh` | unassigned | open | none |
-| 5991 | `ClimbingSub` | unassigned | open | none |
-| 6000 | `MoveOnVine` | unassigned | open | none |
-| 6019 | `ClimbFD` | unassigned | open | none |
-| 6022 | `CSetFDir` | unassigned | open | none |
-| 6032 | `ExitCSub` | unassigned | open | none |
-| 6033 | `InitCSTimer` | unassigned | open | none |
-| 6039 | `JumpMForceData` | unassigned | open | none |
-| 6042 | `FallMForceData` | unassigned | open | none |
-| 6045 | `PlayerYSpdData` | unassigned | open | none |
-| 6048 | `InitMForceData` | unassigned | open | none |
-| 6051 | `MaxLeftXSpdData` | unassigned | open | none |
-| 6054 | `MaxRightXSpdData` | unassigned | open | none |
-| 6058 | `FrictionData` | unassigned | open | none |
-| 6061 | `Climb_Y_SpeedData` | unassigned | open | none |
-| 6064 | `Climb_Y_MForceData` | unassigned | open | none |
-| 6067 | `PlayerPhysicsSub` | unassigned | open | none |
-| 6079 | `ProcClimb` | unassigned | open | none |
-| 6086 | `SetCAnim` | unassigned | open | none |
-| 6089 | `CheckForJumping` | unassigned | open | none |
-| 6097 | `NoJump` | unassigned | open | none |
-| 6099 | `ProcJumping` | unassigned | open | none |
-| 6109 | `InitJS` | unassigned | open | none |
-| 6133 | `ChkWtr` | unassigned | open | none |
-| 6141 | `GetYPhy` | unassigned | open | none |
-| 6159 | `PJumpSnd` | unassigned | open | none |
-| 6163 | `SJumpSnd` | unassigned | open | none |
-| 6164 | `X_Physics` | unassigned | open | none |
-| 6172 | `ProcPRun` | unassigned | open | none |
-| 6184 | `ChkRFast` | unassigned | open | none |
-| 6191 | `FastXSp` | unassigned | open | none |
-| 6193 | `SetRTmr` | unassigned | open | none |
-| 6195 | `GetXPhy` | unassigned | open | none |
-| 6201 | `GetXPhy2` | unassigned | open | none |
-| 6213 | `ExitPhy` | unassigned | open | none |
-| 6217 | `PlayerAnimTmrData` | unassigned | open | none |
-| 6220 | `GetPlayerAnimSpeed` | unassigned | open | none |
-| 6229 | `ChkSkid` | unassigned | open | none |
-| 6236 | `SetRunSpd` | unassigned | open | none |
-| 6238 | `ProcSkid` | unassigned | open | none |
-| 6246 | `SetAnimSpd` | unassigned | open | none |
-| 6252 | `ImposeFriction` | unassigned | open | none |
-| 6260 | `JoypFrict` | unassigned | open | none |
-| 6262 | `LeftFrict` | unassigned | open | none |
-| 6274 | `RghtFrict` | unassigned | open | none |
-| 6285 | `XSpdSign` | unassigned | open | none |
-| 6290 | `SetAbsSpd` | unassigned | open | none |
-| 6298 | `ProcFireball_Bubble` | M2 T20 S1/P1 | structural extraction; route trace pending | src/game/fireball/fireball_core.c |
-| 6330 | `ProcFireballs` | unassigned | open | none |
-| 6336 | `ProcAirBubbles` | unassigned | open | none |
-| 6340 | `BublLoop` | unassigned | open | none |
-| 6347 | `BublExit` | unassigned | open | none |
-| 6349 | `FireballXSpdData` | unassigned | open | none |
-| 6352 | `FireballObjCore` | M2 T20 S1/P1 | structural extraction; route trace pending | src/game/fireball/fireball_core.c |
-| 6380 | `RunFB` | unassigned | open | none |
-| 6401 | `EraseFB` | unassigned | open | none |
-| 6403 | `NoFBall` | unassigned | open | none |
-| 6405 | `FireballExplosion` | unassigned | open | none |
-| 6409 | `BubbleCheck` | unassigned | open | none |
-| 6419 | `SetupBubble` | unassigned | open | none |
-| 6425 | `PosBubl` | unassigned | open | none |
-| 6440 | `MoveBubl` | unassigned | open | none |
-| 6450 | `Y_Bubl` | unassigned | open | none |
-| 6451 | `ExitBubl` | unassigned | open | none |
-| 6453 | `Bubble_MForceData` | unassigned | open | none |
-| 6456 | `BubbleTimerData` | unassigned | open | none |
-| 6461 | `RunGameTimer` | unassigned | open | none |
-| 6486 | `ResGTCtrl` | unassigned | open | none |
-| 6494 | `TimeUpOn` | unassigned | open | none |
-| 6497 | `ExGTimer` | unassigned | open | none |
-| 6501 | `WarpZoneObject` | unassigned | open | none |
-| 6519 | `ProcessWhirlpools` | unassigned | open | none |
-| 6526 | `WhLoop` | unassigned | open | none |
-| 6546 | `NextWh` | unassigned | open | none |
-| 6548 | `ExitWh` | unassigned | open | none |
-| 6550 | `WhirlpoolActivate` | unassigned | open | none |
-| 6577 | `LeftWh` | unassigned | open | none |
-| 6586 | `SetPWh` | unassigned | open | none |
-| 6587 | `WhPull` | unassigned | open | none |
-| 6598 | `FlagpoleScoreMods` | unassigned | open | none |
-| 6601 | `FlagpoleScoreDigits` | unassigned | open | none |
-| 6604 | `FlagpoleRoutine` | unassigned | open | none |
-| 6635 | `SkipScore` | unassigned | open | none |
-| 6636 | `GiveFPScr` | unassigned | open | none |
-| 6643 | `FPGfx` | unassigned | open | none |
-| 6646 | `ExitFlagP` | unassigned | open | none |
-| 6650 | `Jumpspring_Y_PosData` | unassigned | open | none |
-| 6653 | `JumpspringHandler` | unassigned | open | none |
-| 6667 | `DownJSpr` | unassigned | open | none |
-| 6669 | `PosJSpr` | unassigned | open | none |
-| 6682 | `BounceJS` | unassigned | open | none |
-| 6688 | `DrawJSpr` | unassigned | open | none |
-| 6698 | `ExJSpring` | unassigned | open | none |
-| 6702 | `Setup_Vine` | unassigned | open | none |
-| 6716 | `NextVO` | unassigned | open | none |
-| 6727 | `VineHeightData` | unassigned | open | none |
-| 6730 | `VineObjectHandler` | unassigned | open | none |
-| 6746 | `RunVSubs` | unassigned | open | none |
-| 6752 | `VDrawLoop` | unassigned | open | none |
-| 6760 | `KillVine` | unassigned | open | none |
-| 6766 | `WrCMTile` | unassigned | open | none |
-| 6780 | `ExitVH` | unassigned | open | none |
-| 6785 | `CannonBitmasks` | unassigned | open | none |
-| 6788 | `ProcessCannons` | unassigned | open | none |
-| 6792 | `ThreeSChk` | unassigned | open | none |
-| 6809 | `FireCannon` | unassigned | open | none |
-| 6832 | `Chk_BB` | unassigned | open | none |
-| 6840 | `Next3Slt` | unassigned | open | none |
-| 6842 | `ExCannon` | unassigned | open | none |
-| 6846 | `BulletBillXSpdData` | unassigned | open | none |
-| 6849 | `BulletBillHandler` | unassigned | open | none |
-| 6862 | `SetupBB` | unassigned | open | none |
-| 6876 | `ChkDSte` | unassigned | open | none |
-| 6880 | `BBFly` | unassigned | open | none |
-| 6881 | `RunBBSubs` | unassigned | open | none |
-| 6886 | `KillBB` | unassigned | open | none |
-| 6891 | `HammerEnemyOfsData` | unassigned | open | none |
-| 6895 | `HammerXSpdData` | unassigned | open | none |
-| 6898 | `SpawnHammerObj` | unassigned | open | none |
-| 6904 | `SetMOfs` | unassigned | open | none |
-| 6919 | `NoHammer` | unassigned | open | none |
-| 6928 | `ProcHammerObj` | unassigned | open | none |
-| 6952 | `SetHSpd` | unassigned | open | none |
-| 6962 | `SetHPos` | unassigned | open | none |
-| 6977 | `RunAllH` | unassigned | open | none |
-| 6978 | `RunHSubs` | unassigned | open | none |
-| 6988 | `CoinBlock` | unassigned | open | none |
-| 7000 | `SetupJumpCoin` | unassigned | open | none |
-| 7014 | `JCoinC` | unassigned | open | none |
-| 7025 | `FindEmptyMiscSlot` | unassigned | open | none |
-| 7027 | `FMiscLoop` | unassigned | open | none |
-| 7033 | `UseMiscS` | unassigned | open | none |
-| 7038 | `MiscObjectsCore` | unassigned | open | none |
-| 7040 | `MiscLoop` | unassigned | open | none |
-| 7053 | `ProcJumpCoin` | unassigned | open | none |
-| 7071 | `JCoinRun` | unassigned | open | none |
-| 7088 | `RunJCSubs` | unassigned | open | none |
-| 7093 | `MiscLoopBack` | unassigned | open | none |
-| 7100 | `CoinTallyOffsets` | unassigned | open | none |
-| 7103 | `ScoreOffsets` | unassigned | open | none |
-| 7106 | `StatusBarNybbles` | unassigned | open | none |
-| 7109 | `GiveOneCoin` | unassigned | open | none |
-| 7125 | `CoinPoints` | unassigned | open | none |
-| 7129 | `AddToScore` | unassigned | open | none |
-| 7134 | `GetSBNybbles` | unassigned | open | none |
-| 7138 | `UpdateNumber` | unassigned | open | none |
-| 7145 | `NoZSup` | unassigned | open | none |
-| 7150 | `SetupPowerUp` | unassigned | open | none |
-| 7163 | `PwrUpJmp` | unassigned | open | none |
-| 7175 | `StrType` | unassigned | open | none |
-| 7176 | `PutBehind` | unassigned | open | none |
-| 7184 | `PowerUpObjHandler` | unassigned | open | none |
-| 7202 | `ShroomM` | unassigned | open | none |
-| 7206 | `GrowThePowerUp` | unassigned | open | none |
-| 7223 | `ChkPUSte` | unassigned | open | none |
-| 7226 | `RunPUSubs` | unassigned | open | none |
-| 7232 | `ExitPUp` | unassigned | open | none |
-| 7241 | `BlockYPosAdderData` | unassigned | open | none |
-| 7244 | `PlayerHeadCollision` | unassigned | open | none |
-| 7251 | `DBlockSte` | unassigned | open | none |
-| 7265 | `ChkBrick` | unassigned | open | none |
-| 7274 | `StartBTmr` | unassigned | open | none |
-| 7279 | `ContBTmr` | unassigned | open | none |
-| 7282 | `PutOldMT` | unassigned | open | none |
-| 7283 | `PutMTileB` | unassigned | open | none |
-| 7297 | `SmallBP` | unassigned | open | none |
-| 7298 | `BigBP` | unassigned | open | none |
-| 7308 | `Unbreak` | unassigned | open | none |
-| 7309 | `InvOBit` | unassigned | open | none |
-| 7316 | `InitBlock_XY_Pos` | unassigned | open | none |
-| 7332 | `BumpBlock` | unassigned | open | none |
-| 7349 | `BlockCode` | unassigned | open | none |
-| 7363 | `MushFlowerBlock` | unassigned | open | none |
-| 7367 | `StarBlock` | unassigned | open | none |
-| 7371 | `ExtraLifeMushBlock` | unassigned | open | none |
-| 7376 | `VineBlock` | unassigned | open | none |
-| 7381 | `ExitBlockChk` | unassigned | open | none |
-| 7386 | `BrickQBlockMetatiles` | unassigned | open | none |
-| 7393 | `BlockBumpedChk` | unassigned | open | none |
-| 7395 | `BumpChkLoop` | unassigned | open | none |
-| 7400 | `MatchBump` | unassigned | open | none |
-| 7404 | `BrickShatter` | unassigned | open | none |
-| 7420 | `CheckTopOfBlock` | unassigned | open | none |
-| 7437 | `TopEx` | unassigned | open | none |
-| 7441 | `SpawnBrickChunks` | unassigned | open | none |
-| 7468 | `BlockObjectsCore` | unassigned | open | none |
-| 7500 | `ChkTop` | unassigned | open | none |
-| 7506 | `BouncingBlockHandler` | unassigned | open | none |
-| 7519 | `KillBlock` | unassigned | open | none |
-| 7520 | `UpdSte` | unassigned | open | none |
-| 7527 | `BlockObjMT_Updater` | unassigned | open | none |
-| 7529 | `UpdateLoop` | unassigned | open | none |
-| 7546 | `NextBUpd` | unassigned | open | none |
-| 7555 | `MoveEnemyHorizontally` | unassigned | open | none |
-| 7561 | `MovePlayerHorizontally` | unassigned | open | none |
-| 7566 | `MoveObjectHorizontally` | unassigned | open | none |
-| 7581 | `SaveXSpd` | unassigned | open | none |
-| 7586 | `UseAdder` | unassigned | open | none |
-| 7604 | `ExXMove` | unassigned | open | none |
-| 7611 | `MovePlayerVertically` | unassigned | open | none |
-| 7617 | `NoJSChk` | unassigned | open | none |
-| 7624 | `MoveD_EnemyVertically` | unassigned | open | none |
-| 7630 | `MoveFallingPlatform` | unassigned | open | none |
-| 7632 | `ContVMove` | unassigned | open | none |
-| 7636 | `MoveRedPTroopaDown` | unassigned | open | none |
-| 7640 | `MoveRedPTroopaUp` | unassigned | open | none |
-| 7643 | `MoveRedPTroopa` | unassigned | open | none |
-| 7656 | `MoveDropPlatform` | unassigned | open | none |
-| 7660 | `MoveEnemySlowVert` | unassigned | open | none |
-| 7662 | `SetMdMax` | unassigned | open | none |
-| 7667 | `MoveJ_EnemyVertically` | unassigned | open | none |
-| 7669 | `SetHiMax` | unassigned | open | none |
-| 7670 | `SetXMoveAmt` | unassigned | open | none |
-| 7678 | `MaxSpdBlockData` | unassigned | open | none |
-| 7681 | `ResidualGravityCode` | unassigned | open | none |
-| 7685 | `ImposeGravityBlock` | unassigned | open | none |
-| 7691 | `ImposeGravitySprObj` | unassigned | open | none |
-| 7698 | `MovePlatformDown` | unassigned | open | none |
-| 7702 | `MovePlatformUp` | unassigned | open | none |
-| 7711 | `SetDplSpd` | unassigned | open | none |
-| 7719 | `RedPTroopaGrav` | unassigned | open | none |
-| 7729 | `ImposeGravity` | unassigned | open | none |
-| 7739 | `AlterYP` | unassigned | open | none |
-| 7761 | `ChkUpM` | unassigned | open | none |
-| 7784 | `ExVMove` | unassigned | open | none |
-| 7788 | `EnemiesAndLoopsCore` | unassigned | open | none |
-| 7796 | `ChkAreaTsk` | unassigned | open | none |
-| 7801 | `ChkBowserF` | unassigned | open | none |
-| 7807 | `ExitELCore` | unassigned | open | none |
-| 7812 | `LoopCmdWorldNumber` | unassigned | open | none |
-| 7815 | `LoopCmdPageNumber` | unassigned | open | none |
-| 7818 | `LoopCmdYPosition` | unassigned | open | none |
-| 7821 | `ExecGameLoopback` | unassigned | open | none |
-| 7851 | `ProcLoopCommand` | unassigned | open | none |
-| 7857 | `FindLoop` | unassigned | open | none |
-| 7875 | `IncMLoop` | unassigned | open | none |
-| 7883 | `WrongChk` | unassigned | open | none |
-| 7886 | `DoLpBack` | unassigned | open | none |
-| 7888 | `InitMLp` | unassigned | open | none |
-| 7891 | `InitLCmd` | unassigned | open | none |
-| 7896 | `ChkEnemyFrenzy` | unassigned | open | none |
-| 7911 | `ProcessEnemyData` | unassigned | open | none |
-| 7918 | `CheckEndofBuffer` | unassigned | open | none |
-| 7931 | `CheckRightBounds` | unassigned | open | none |
-| 7950 | `CheckPageCtrlRow` | unassigned | open | none |
-| 7967 | `PositionEnemyObj` | unassigned | open | none |
-| 7983 | `CheckRightExtBounds` | unassigned | open | none |
-| 8006 | `CheckForEnemyGroup` | unassigned | open | none |
-| 8014 | `BuzzyBeetleMutate` | unassigned | open | none |
-| 8020 | `StrID` | unassigned | open | none |
-| 8028 | `CheckFrenzyBuffer` | unassigned | open | none |
-| 8035 | `StrFre` | unassigned | open | none |
-| 8037 | `InitEnemyObject` | unassigned | open | none |
-| 8041 | `ExEPar` | unassigned | open | none |
-| 8043 | `DoGroup` | unassigned | open | none |
-| 8046 | `ParseRow0e` | unassigned | open | none |
-| 8064 | `NotUse` | unassigned | open | none |
-| 8066 | `CheckThreeBytes` | unassigned | open | none |
-| 8072 | `Inc3B` | unassigned | open | none |
-| 8073 | `Inc2B` | unassigned | open | none |
-| 8080 | `CheckpointEnemyID` | unassigned | open | none |
-| 8092 | `InitEnemyRoutines` | unassigned | open | none |
-| 8158 | `NoInitCode` | unassigned | open | none |
-| 8163 | `InitGoomba` | unassigned | open | none |
-| 8169 | `InitPodoboo` | unassigned | open | none |
-| 8181 | `InitRetainerObj` | unassigned | open | none |
-| 8188 | `NormalXSpdData` | unassigned | open | none |
-| 8191 | `InitNormalEnemy` | unassigned | open | none |
-| 8196 | `GetESpd` | unassigned | open | none |
-| 8197 | `SetESpd` | unassigned | open | none |
-| 8202 | `InitRedKoopa` | unassigned | open | none |
-| 8210 | `HBroWalkingTimerData` | unassigned | open | none |
-| 8213 | `InitHammerBro` | unassigned | open | none |
-| 8225 | `InitHorizFlySwimEnemy` | unassigned | open | none |
-| 8231 | `InitBloober` | unassigned | open | none |
-| 8234 | `SmallBBox` | unassigned | open | none |
-| 8239 | `InitRedPTroopa` | unassigned | open | none |
-| 8245 | `GetCent` | unassigned | open | none |
-| 8248 | `TallBBox` | unassigned | open | none |
-| 8249 | `SetBBox` | unassigned | open | none |
-| 8252 | `InitVStf` | unassigned | open | none |
-| 8259 | `InitBulletBill` | unassigned | open | none |
-| 8268 | `InitCheepCheep` | unassigned | open | none |
-| 8279 | `InitLakitu` | unassigned | open | none |
-| 8283 | `SetupLakitu` | unassigned | open | none |
-| 8289 | `KillLakitu` | unassigned | open | none |
-| 8295 | `PRDiffAdjustData` | unassigned | open | none |
-| 8300 | `LakituAndSpinyHandler` | unassigned | open | none |
-| 8308 | `ChkLak` | unassigned | open | none |
-| 8318 | `ChkNoEn` | unassigned | open | none |
-| 8323 | `CreateL` | unassigned | open | none |
-| 8330 | `RetEOfs` | unassigned | open | none |
-| 8331 | `ExLSHand` | unassigned | open | none |
-| 8335 | `CreateSpiny` | unassigned | open | none |
-| 8355 | `DifLoop` | unassigned | open | none |
-| 8376 | `UsePosv` | unassigned | open | none |
-| 8377 | `SetSpSpd` | unassigned | open | none |
-| 8383 | `SpinyRte` | unassigned | open | none |
-| 8390 | `ChpChpEx` | unassigned | open | none |
-| 8394 | `FirebarSpinSpdData` | unassigned | open | none |
-| 8397 | `FirebarSpinDirData` | unassigned | open | none |
-| 8400 | `InitLongFirebar` | unassigned | open | none |
-| 8403 | `InitShortFirebar` | unassigned | open | none |
-| 8430 | `FlyCCXPositionData` | unassigned | open | none |
-| 8436 | `FlyCCXSpeedData` | unassigned | open | none |
-| 8441 | `FlyCCTimerData` | unassigned | open | none |
-| 8444 | `InitFlyingCheepCheep` | unassigned | open | none |
-| 8457 | `MaxCC` | unassigned | open | none |
-| 8473 | `GSeed` | unassigned | open | none |
-| 8483 | `RSeed` | unassigned | open | none |
-| 8503 | `D2XPos1` | unassigned | open | none |
-| 8513 | `D2XPos2` | unassigned | open | none |
-| 8519 | `FinCCSt` | unassigned | open | none |
-| 8529 | `InitBowser` | unassigned | open | none |
-| 8551 | `DuplicateEnemyObj` | unassigned | open | none |
-| 8553 | `FSLoop` | unassigned | open | none |
-| 8569 | `FlmEx` | unassigned | open | none |
-| 8573 | `FlameYPosData` | unassigned | open | none |
-| 8576 | `FlameYMFAdderData` | unassigned | open | none |
-| 8579 | `InitBowserFlame` | unassigned | open | none |
-| 8597 | `SetFrT` | unassigned | open | none |
-| 8604 | `PutAtRightExtent` | unassigned | open | none |
-| 8615 | `SpawnFromMouth` | unassigned | open | none |
-| 8635 | `SetMF` | unassigned | open | none |
-| 8640 | `FinishFlame` | unassigned | open | none |
-| 8653 | `FireworksXPosData` | unassigned | open | none |
-| 8656 | `FireworksYPosData` | unassigned | open | none |
-| 8659 | `InitFireworks` | unassigned | open | none |
-| 8666 | `StarFChk` | unassigned | open | none |
-| 8697 | `ExitFWk` | unassigned | open | none |
-| 8701 | `Bitmasks` | unassigned | open | none |
-| 8704 | `Enemy17YPosData` | unassigned | open | none |
-| 8707 | `SwimCC_IDData` | unassigned | open | none |
-| 8710 | `BulletBillCheepCheep` | unassigned | open | none |
-| 8722 | `ChkW2` | unassigned | open | none |
-| 8726 | `Get17ID` | unassigned | open | none |
-| 8730 | `Set17ID` | unassigned | open | none |
-| 8736 | `GetRBit` | unassigned | open | none |
-| 8738 | `ChkRBit` | unassigned | open | none |
-| 8746 | `AddFBit` | unassigned | open | none |
-| 8755 | `DoBulletBills` | unassigned | open | none |
-| 8757 | `BB_SLoop` | unassigned | open | none |
-| 8765 | `ExF17` | unassigned | open | none |
-| 8767 | `FireBulletBill` | unassigned | open | none |
-| 8780 | `HandleGroupEnemies` | unassigned | open | none |
-| 8792 | `PullID` | unassigned | open | none |
-| 8793 | `SnglID` | unassigned | open | none |
-| 8798 | `SetYGp` | unassigned | open | none |
-| 8808 | `CntGrp` | unassigned | open | none |
-| 8809 | `GrLoop` | unassigned | open | none |
-| 8810 | `GSltLp` | unassigned | open | none |
-| 8835 | `NextED` | unassigned | open | none |
-| 8839 | `InitPiranhaPlant` | unassigned | open | none |
-| 8855 | `InitEnemyFrenzy` | unassigned | open | none |
-| 8872 | `NoFrenzyCode` | unassigned | open | none |
-| 8877 | `EndFrenzy` | unassigned | open | none |
-| 8879 | `LakituChk` | unassigned | open | none |
-| 8884 | `NextFSlot` | unassigned | open | none |
-| 8893 | `InitJumpGPTroopa` | unassigned | open | none |
-| 8898 | `TallBBox2` | unassigned | open | none |
-| 8899 | `SetBBox2` | unassigned | open | none |
-| 8904 | `InitBalPlatform` | unassigned | open | none |
-| 8911 | `AlignP` | unassigned | open | none |
-| 8917 | `SetBPA` | unassigned | open | none |
-| 8925 | `InitDropPlatform` | unassigned | open | none |
-| 8932 | `InitHoriPlatform` | unassigned | open | none |
-| 8939 | `InitVertPlatform` | unassigned | open | none |
-| 8947 | `SetYO` | unassigned | open | none |
-| 8955 | `CommonPlatCode` | unassigned | open | none |
-| 8957 | `SPBBox` | unassigned | open | none |
-| 8964 | `CasPBB` | unassigned | open | none |
-| 8969 | `LargeLiftUp` | unassigned | open | none |
-| 8973 | `LargeLiftDown` | unassigned | open | none |
-| 8976 | `LargeLiftBBox` | unassigned | open | none |
-| 8981 | `PlatLiftUp` | unassigned | open | none |
-| 8990 | `PlatLiftDown` | unassigned | open | none |
-| 8998 | `CommonSmallLift` | unassigned | open | none |
-| 9007 | `PlatPosDataLow` | unassigned | open | none |
-| 9010 | `PlatPosDataHigh` | unassigned | open | none |
-| 9013 | `PosPlatform` | unassigned | open | none |
-| 9025 | `EndOfEnemyInitCode` | unassigned | open | none |
-| 9030 | `RunEnemyObjectsCore` | unassigned | open | none |
-| 9038 | `JmpEO` | unassigned | open | none |
-| 9080 | `NoRunCode` | unassigned | open | none |
-| 9085 | `RunRetainerObj` | unassigned | open | none |
-| 9092 | `RunNormalEnemies` | unassigned | open | none |
-| 9105 | `SkipMove` | unassigned | open | none |
-| 9107 | `EnemyMovementSubs` | unassigned | open | none |
-| 9135 | `NoMoveCode` | unassigned | open | none |
-| 9140 | `RunBowserFlame` | unassigned | open | none |
-| 9150 | `RunFirebarObj` | unassigned | open | none |
-| 9156 | `RunSmallPlatform` | unassigned | open | none |
-| 9168 | `RunLargePlatform` | unassigned | open | none |
-| 9176 | `SkipPT` | unassigned | open | none |
-| 9182 | `LargePlatformSubroutines` | unassigned | open | none |
-| 9198 | `EraseEnemyObject` | unassigned | open | none |
-| 9212 | `MovePodoboo` | unassigned | open | none |
-| 9224 | `PdbM` | unassigned | open | none |
-| 9229 | `HammerThrowTmrData` | unassigned | open | none |
-| 9232 | `XSpeedAdderData` | unassigned | open | none |
-| 9235 | `RevivedXSpeed` | unassigned | open | none |
-| 9238 | `ProcHammerBro` | unassigned | open | none |
-| 9243 | `ChkJH` | unassigned | open | none |
-| 9260 | `DecHT` | unassigned | open | none |
-| 9263 | `HammerBroJumpLData` | unassigned | open | none |
-| 9266 | `HammerBroJumpCode` | unassigned | open | none |
-| 9285 | `SetHJ` | unassigned | open | none |
-| 9295 | `HJump` | unassigned | open | none |
-| 9301 | `MoveHammerBroXDir` | unassigned | open | none |
-| 9307 | `Shimmy` | unassigned | open | none |
-| 9316 | `SetShim` | unassigned | open | none |
-| 9318 | `MoveNormalEnemy` | unassigned | open | none |
-| 9336 | `FallE` | unassigned | open | none |
-| 9347 | `MEHor` | unassigned | open | none |
-| 9349 | `SlowM` | unassigned | open | none |
-| 9350 | `SteadM` | unassigned | open | none |
-| 9355 | `AddHS` | unassigned | open | none |
-| 9363 | `ReviveStunned` | unassigned | open | none |
-| 9377 | `SetRSpd` | unassigned | open | none |
-| 9381 | `MoveDefeatedEnemy` | unassigned | open | none |
-| 9385 | `ChkKillGoomba` | unassigned | open | none |
-| 9392 | `NKGmba` | unassigned | open | none |
-| 9396 | `MoveJumpingEnemy` | unassigned | open | none |
-| 9402 | `ProcMoveRedPTroopa` | unassigned | open | none |
-| 9414 | `NoIncPT` | unassigned | open | none |
-| 9416 | `MoveRedPTUpOrDown` | unassigned | open | none |
-| 9421 | `MovPTDwn` | unassigned | open | none |
-| 9427 | `MoveFlyGreenPTroopa` | unassigned | open | none |
-| 9438 | `YSway` | unassigned | open | none |
-| 9443 | `NoMGPT` | unassigned | open | none |
-| 9445 | `XMoveCntr_GreenPTroopa` | unassigned | open | none |
-| 9448 | `XMoveCntr_Platform` | unassigned | open | none |
-| 9460 | `NoIncXM` | unassigned | open | none |
-| 9461 | `IncPXM` | unassigned | open | none |
-| 9463 | `DecSeXM` | unassigned | open | none |
-| 9468 | `MoveWithXMCntrs` | unassigned | open | none |
-| 9481 | `XMRight` | unassigned | open | none |
-| 9490 | `BlooberBitmasks` | unassigned | open | none |
-| 9493 | `MoveBloober` | unassigned | open | none |
-| 9506 | `FBLeft` | unassigned | open | none |
-| 9510 | `SBMDir` | unassigned | open | none |
-| 9512 | `BlooberSwim` | unassigned | open | none |
-| 9520 | `SwimX` | unassigned | open | none |
-| 9532 | `LeftSwim` | unassigned | open | none |
-| 9542 | `MoveDefeatedBloober` | unassigned | open | none |
-| 9545 | `ProcSwimmingB` | unassigned | open | none |
-| 9565 | `BSwimE` | unassigned | open | none |
-| 9567 | `SlowSwim` | unassigned | open | none |
-| 9579 | `NoSSw` | unassigned | open | none |
-| 9581 | `ChkForFloatdown` | unassigned | open | none |
-| 9585 | `Floatdown` | unassigned | open | none |
-| 9590 | `NoFD` | unassigned | open | none |
-| 9592 | `ChkNearPlayer` | unassigned | open | none |
-| 9603 | `MoveBulletBill` | unassigned | open | none |
-| 9608 | `NotDefB` | unassigned | open | none |
-| 9616 | `SwimCCXMoveData` | unassigned | open | none |
-| 9620 | `MoveSwimmingCheepCheep` | unassigned | open | none |
-| 9625 | `CCSwim` | unassigned | open | none |
-| 9660 | `CCSwimUpwards` | unassigned | open | none |
-| 9671 | `ChkSwimYPos` | unassigned | open | none |
-| 9682 | `YPDiff` | unassigned | open | none |
-| 9686 | `ExSwCC` | unassigned | open | none |
-| 9703 | `FirebarPosLookupTbl` | unassigned | open | none |
-| 9716 | `FirebarMirrorData` | unassigned | open | none |
-| 9719 | `FirebarTblOffsets` | unassigned | open | none |
-| 9723 | `FirebarYPos` | unassigned | open | none |
-| 9726 | `ProcFirebar` | unassigned | open | none |
-| 9737 | `SusFbar` | unassigned | open | none |
-| 9745 | `SkpFSte` | unassigned | open | none |
-| 9748 | `SetupGFB` | unassigned | open | none |
-| 9766 | `SetMFbar` | unassigned | open | none |
-| 9769 | `DrawFbar` | unassigned | open | none |
-| 9778 | `NextFbar` | unassigned | open | none |
-| 9782 | `SkipFBar` | unassigned | open | none |
-| 9784 | `DrawFirebar_Collision` | unassigned | open | none |
-| 9793 | `AddHA` | unassigned | open | none |
-| 9803 | `SubtR1` | unassigned | open | none |
-| 9805 | `ChkFOfs` | unassigned | open | none |
-| 9809 | `VAHandl` | unassigned | open | none |
-| 9817 | `AddVA` | unassigned | open | none |
-| 9819 | `SetVFbr` | unassigned | open | none |
-| 9822 | `FirebarCollision` | unassigned | open | none |
-| 9838 | `AdjSm` | unassigned | open | none |
-| 9844 | `BigJp` | unassigned | open | none |
-| 9845 | `FBCLoop` | unassigned | open | none |
-| 9851 | `ChkVFBD` | unassigned | open | none |
-| 9866 | `ChkFBCl` | unassigned | open | none |
-| 9868 | `Chk2Ofs` | unassigned | open | none |
-| 9877 | `ChgSDir` | unassigned | open | none |
-| 9882 | `SetSDir` | unassigned | open | none |
-| 9889 | `NoColFB` | unassigned | open | none |
-| 9896 | `GetFirebarPosition` | unassigned | open | none |
-| 9904 | `GetHAdder` | unassigned | open | none |
-| 9922 | `GetVAdder` | unassigned | open | none |
-| 9941 | `PRandomSubtracter` | unassigned | open | none |
-| 9944 | `FlyCCBPriority` | unassigned | open | none |
-| 9947 | `MoveFlyingCheepCheep` | unassigned | open | none |
-| 9954 | `FlyCC` | unassigned | open | none |
-| 9971 | `AddCCF` | unassigned | open | none |
-| 9982 | `BPGet` | unassigned | open | none |
-| 9990 | `LakituDiffAdj` | unassigned | open | none |
-| 9993 | `MoveLakitu` | unassigned | open | none |
-| 9998 | `ChkLS` | unassigned | open | none |
-| 10005 | `Fr12S` | unassigned | open | none |
-| 10008 | `LdLDa` | unassigned | open | none |
-| 10013 | `SetLSpd` | unassigned | open | none |
-| 10024 | `SetLMov` | unassigned | open | none |
-| 10027 | `PlayerLakituDiff` | unassigned | open | none |
-| 10037 | `ChkLakDif` | unassigned | open | none |
-| 10053 | `SetLMovD` | unassigned | open | none |
-| 10055 | `ChkPSpeed` | unassigned | open | none |
-| 10073 | `ChkSpinyO` | unassigned | open | none |
-| 10078 | `ChkEmySpd` | unassigned | open | none |
-| 10081 | `SubDifAdj` | unassigned | open | none |
-| 10083 | `SPixelLak` | unassigned | open | none |
-| 10087 | `ExMoveLak` | unassigned | open | none |
-| 10092 | `BridgeCollapseData` | unassigned | open | none |
-| 10098 | `BridgeCollapse` | unassigned | open | none |
-| 10111 | `SetM2` | unassigned | open | none |
-| 10116 | `MoveD_Bowser` | unassigned | open | none |
-| 10120 | `RemoveBridge` | unassigned | open | none |
-| 10152 | `NoBFall` | unassigned | open | none |
-| 10156 | `PRandomRange` | unassigned | open | none |
-| 10159 | `RunBowser` | unassigned | open | none |
-| 10167 | `KillAllEnemies` | unassigned | open | none |
-| 10169 | `KillLoop` | unassigned | open | none |
-| 10176 | `BowserControl` | unassigned | open | none |
-| 10182 | `ChkMouth` | unassigned | open | none |
-| 10185 | `FeetTmr` | unassigned | open | none |
-| 10192 | `ResetMDr` | unassigned | open | none |
-| 10197 | `B_FaceP` | unassigned | open | none |
-| 10211 | `GetPRCmp` | unassigned | open | none |
-| 10222 | `GetDToO` | unassigned | open | none |
-| 10237 | `CompDToO` | unassigned | open | none |
-| 10240 | `HammerChk` | unassigned | open | none |
-| 10250 | `SetHmrTmr` | unassigned | open | none |
-| 10258 | `SkipToFB` | unassigned | open | none |
-| 10259 | `MakeBJump` | unassigned | open | none |
-| 10265 | `ChkFireB` | unassigned | open | none |
-| 10270 | `SpawnFBr` | unassigned | open | none |
-| 10283 | `SetFBTmr` | unassigned | open | none |
-| 10289 | `BowserGfxHandler` | unassigned | open | none |
-| 10296 | `CopyFToR` | unassigned | open | none |
-| 10321 | `ExBGfxH` | unassigned | open | none |
-| 10323 | `ProcessBowserHalf` | unassigned | open | none |
-| 10337 | `FlameTimerData` | unassigned | open | none |
-| 10340 | `SetFlameTimer` | unassigned | open | none |
-| 10347 | `ExFl` | unassigned | open | none |
-| 10349 | `ProcBowserFlame` | unassigned | open | none |
-| 10356 | `SFlmX` | unassigned | open | none |
-| 10374 | `SetGfxF` | unassigned | open | none |
-| 10384 | `FlmeAt` | unassigned | open | none |
-| 10388 | `DrawFlameLoop` | unassigned | open | none |
-| 10417 | `M3FOfs` | unassigned | open | none |
-| 10423 | `M2FOfs` | unassigned | open | none |
-| 10429 | `M1FOfs` | unassigned | open | none |
-| 10434 | `ExFlmeD` | unassigned | open | none |
-| 10438 | `RunFireworks` | unassigned | open | none |
-| 10447 | `SetupExpl` | unassigned | open | none |
-| 10457 | `FireworksSoundScore` | unassigned | open | none |
-| 10468 | `StarFlagYPosAdder` | unassigned | open | none |
-| 10471 | `StarFlagXPosAdder` | unassigned | open | none |
-| 10474 | `StarFlagTileData` | unassigned | open | none |
-| 10477 | `RunStarFlagObj` | unassigned | open | none |
-| 10491 | `GameTimerFireworks` | unassigned | open | none |
-| 10503 | `SetFWC` | unassigned | open | none |
-| 10506 | `IncrementSFTask1` | unassigned | open | none |
-| 10509 | `StarFlagExit` | T18/S2/P5 collaborator | mapped, route trace pending | task-zero OAM gate smoke |
-| 10512 | `AwardGameTimerPoints` | unassigned | open | none |
-| 10522 | `NoTTick` | unassigned | open | none |
-| 10529 | `EndAreaPoints` | unassigned | open | none |
-| 10534 | `ELPGive` | unassigned | open | none |
-| 10543 | `RaiseFlagSetoffFWorks` | unassigned | open | none |
-| 10549 | `SetoffF` | unassigned | open | none |
-| 10555 | `DrawStarFlag` | unassigned | open | none |
-| 10559 | `DSFLoop` | unassigned | open | none |
-| 10580 | `DrawFlagSetTimer` | unassigned | open | none |
-| 10585 | `IncrementSFTask2` | unassigned | open | none |
-| 10589 | `DelayToAreaEnd` | unassigned | open | none |
-| 10596 | `StarFlagExit2` | unassigned | open | none |
-| 10602 | `MovePiranhaPlant` | unassigned | open | none |
-| 10619 | `ChkPlayerNearPipe` | unassigned | open | none |
-| 10624 | `ReversePlantSpeed` | unassigned | open | none |
-| 10632 | `SetupToMovePPlant` | unassigned | open | none |
-| 10638 | `RiseFallPiranhaPlant` | unassigned | open | none |
-| 10656 | `PutinPipe` | unassigned | open | none |
-| 10664 | `FirebarSpin` | unassigned | open | none |
-| 10677 | `SpinCounterClockwise` | unassigned | open | none |
-| 10692 | `BalancePlatform` | unassigned | open | none |
-| 10697 | `DoBPl` | unassigned | open | none |
-| 10701 | `CheckBalPlatform` | unassigned | open | none |
-| 10709 | `ChkForFall` | unassigned | open | none |
-| 10720 | `MakePlatformFall` | unassigned | open | none |
-| 10723 | `ChkOtherForFall` | unassigned | open | none |
-| 10733 | `ChkToMoveBalPlat` | unassigned | open | none |
-| 10750 | `ColFlg` | unassigned | open | none |
-| 10752 | `PlatUp` | unassigned | open | none |
-| 10754 | `PlatSt` | unassigned | open | none |
-| 10756 | `PlatDn` | unassigned | open | none |
-| 10758 | `DoOtherPlatform` | unassigned | open | none |
-| 10771 | `DrawEraseRope` | unassigned | open | none |
-| 10796 | `EraseR1` | unassigned | open | none |
-| 10800 | `OtherRope` | unassigned | open | none |
-| 10819 | `EraseR2` | unassigned | open | none |
-| 10822 | `EndRp` | unassigned | open | none |
-| 10828 | `ExitRp` | unassigned | open | none |
-| 10831 | `SetupPlatformRope` | unassigned | open | none |
-| 10840 | `GetLRp` | unassigned | open | none |
-| 10857 | `GetHRp` | unassigned | open | none |
-| 10883 | `ExPRp` | unassigned | open | none |
-| 10885 | `InitPlatformFall` | unassigned | open | none |
-| 10898 | `StopPlatforms` | unassigned | open | none |
-| 10904 | `PlatformFall` | unassigned | open | none |
-| 10916 | `ExPF` | unassigned | open | none |
-| 10921 | `YMovingPlatform` | unassigned | open | none |
-| 10933 | `SkipIY` | unassigned | open | none |
-| 10935 | `ChkYCenterPos` | unassigned | open | none |
-| 10941 | `YMDown` | unassigned | open | none |
-| 10943 | `ChkYPCollision` | unassigned | open | none |
-| 10947 | `ExYPl` | unassigned | open | none |
-| 10952 | `XMovingPlatform` | unassigned | open | none |
-| 10959 | `PositionPlayerOnHPlat` | unassigned | open | none |
-| 10969 | `PPHSubt` | unassigned | open | none |
-| 10970 | `SetPVar` | unassigned | open | none |
-| 10973 | `ExXMP` | unassigned | open | none |
-| 10977 | `DropPlatform` | unassigned | open | none |
-| 10982 | `ExDPl` | unassigned | open | none |
-| 10987 | `RightPlatform` | unassigned | open | none |
-| 10995 | `ExRPl` | unassigned | open | none |
-| 10999 | `MoveLargeLiftPlat` | unassigned | open | none |
-| 11003 | `MoveSmallPlatform` | unassigned | open | none |
-| 11007 | `MoveLiftPlatforms` | unassigned | open | none |
-| 11019 | `ChkSmallPlatCollision` | unassigned | open | none |
-| 11023 | `ExLiftP` | unassigned | open | none |
-| 11031 | `OffscreenBoundsCheck` | unassigned | open | none |
-| 11041 | `LimitB` | unassigned | open | none |
-| 11042 | `ExtendLB` | unassigned | open | none |
-| 11074 | `TooFar` | unassigned | open | none |
-| 11075 | `ExScrnBd` | unassigned | open | none |
-| 11085 | `FireballEnemyCollision` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11101 | `FireballEnemyCDLoop` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11115 | `GoombaDie` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11120 | `NotGoomba` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11135 | `NoFToECol` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11141 | `ExitFBallEnemy` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11145 | `BowserIdentities` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11148 | `HandleEnemyFBallCol` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11160 | `ChkBuzzyBeetle` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11167 | `HurtBowser` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11182 | `SetDBSte` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11189 | `ChkOtherEnemies` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11197 | `ShellOrBlockDefeat` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11204 | `StnE` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11215 | `GoombaPoints` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11220 | `EnemySmackScore` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11224 | `ExHCF` | T17/S5/P20 | mapped, route trace pending |
-| 11228 | `PlayerHammerCollision` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending |
-| 11256 | `ClHCol` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending |
-| 11258 | `ExPHC` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending | source audit + collision regression |
-| 11228 | `PlayerHammerCollision` | unassigned | open | none |
-| 11256 | `ClHCol` | unassigned | open | none |
-| 11258 | `ExPHC` | unassigned | open | none |
-| 11262 | `HandlePowerUpCollision` | unassigned | open | none |
-| 11279 | `Shroom_Flower_PUp` | unassigned | open | none |
-| 11292 | `SetFor1Up` | unassigned | open | none |
-| 11297 | `UpToSuper` | unassigned | open | none |
-| 11302 | `UpToFiery` | unassigned | open | none |
-| 11305 | `NoPUp` | unassigned | open | none |
-| 11309 | `ResidualXSpdData` | unassigned | open | none |
-| 11312 | `KickedShellXSpdData` | unassigned | open | none |
-| 11315 | `DemotedKoopaXSpdData` | unassigned | open | none |
-| 11318 | `PlayerEnemyCollision` | unassigned | open | none |
-| 11339 | `NoPECol` | unassigned | open | none |
-| 11341 | `CheckForPUpCollision` | unassigned | open | none |
-| 11346 | `EColl` | unassigned | open | none |
-| 11350 | `KickedShellPtsData` | unassigned | open | none |
-| 11353 | `HandlePECollisions` | unassigned | open | none |
-| 11398 | `KSPts` | unassigned | open | none |
-| 11399 | `ExPEC` | unassigned | open | none |
-| 11401 | `ChkForPlayerInjury` | unassigned | open | none |
-| 11405 | `ChkInj` | unassigned | open | none |
-| 11413 | `ChkETmrs` | unassigned | open | none |
-| 11421 | `TInjE` | unassigned | open | none |
-| 11426 | `InjurePlayer` | unassigned | open | none |
-| 11430 | `ForceInjury` | unassigned | open | none |
-| 11440 | `SetKRout` | unassigned | open | none |
-| 11441 | `SetPRout` | unassigned | open | none |
-| 11448 | `ExInjColRoutines` | unassigned | open | none |
-| 11452 | `KillPlayer` | unassigned | open | none |
-| 11461 | `StompedEnemyPtsData` | unassigned | open | none |
-| 11464 | `EnemyStomped` | unassigned | open | none |
-| 11490 | `EnemyStompedPts` | unassigned | open | none |
-| 11506 | `ChkForDemoteKoopa` | unassigned | open | none |
-| 11521 | `RevivalRateData` | unassigned | open | none |
-| 11524 | `HandleStompedShellE` | unassigned | open | none |
-| 11536 | `SBnce` | unassigned | open | none |
-| 11540 | `ChkEnemyFaceRight` | unassigned | open | none |
-| 11545 | `LInj` | unassigned | open | none |
-| 11549 | `EnemyFacePlayer` | unassigned | open | none |
-| 11554 | `SFcRt` | unassigned | open | none |
-| 11558 | `SetupFloateyNumber` | unassigned | open | none |
-| 11566 | `ExSFN` | unassigned | open | none |
-| 11571 | `SetBitsMask` | unassigned | open | none |
-| 11574 | `ClearBitsMask` | unassigned | open | none |
-| 11577 | `EnemiesCollision` | unassigned | open | none |
-| 11595 | `ECLoop` | unassigned | open | none |
-| 11629 | `YesEC` | unassigned | open | none |
-| 11632 | `NoEnemyCollision` | unassigned | open | none |
-| 11637 | `ReadyNextEnemy` | unassigned | open | none |
-| 11644 | `ExitECRoutine` | unassigned | open | none |
-| 11648 | `ProcEnemyCollisions` | unassigned | open | none |
-| 11667 | `ShellCollisions` | unassigned | open | none |
-| 11680 | `ExitProcessEColl` | unassigned | open | none |
-| 11683 | `ProcSecondEnemyColl` | unassigned | open | none |
-| 11701 | `MoveEOfs` | unassigned | open | none |
-| 11707 | `EnemyTurnAround` | unassigned | open | none |
-| 11721 | `RXSpd` | unassigned | open | none |
-| 11729 | `ExTA` | unassigned | open | none |
-| 11734 | `LargePlatformCollision` | unassigned | open | none |
-| 11748 | `ChkForPlayerC_LargeP` | unassigned | open | none |
-| 11762 | `ExLPC` | unassigned | open | none |
-| 11768 | `SmallPlatformCollision` | unassigned | open | none |
-| 11777 | `ChkSmallPlatLoop` | unassigned | open | none |
-| 11788 | `MoveBoundBox` | unassigned | open | none |
-| 11799 | `ExSPC` | unassigned | open | none |
-| 11804 | `ProcSPlatCollisions` | unassigned | open | none |
-| 11807 | `ProcLPlatCollisions` | unassigned | open | none |
-| 11818 | `ChkForTopCollision` | unassigned | open | none |
-| 11834 | `SetCollisionFlag` | unassigned | open | none |
-| 11841 | `PlatformSideCollisions` | unassigned | open | none |
-| 11855 | `SideC` | unassigned | open | none |
-| 11856 | `NoSideC` | unassigned | open | none |
-| 11861 | `PlayerPosSPlatData` | unassigned | open | none |
-| 11864 | `PositionPlayerOnS_Plat` | unassigned | open | none |
-| 11871 | `PositionPlayerOnVPlat` | unassigned | open | none |
-| 11888 | `ExPlPos` | unassigned | open | none |
-| 11892 | `CheckPlayerVertical` | unassigned | open | none |
-| 11901 | `ExCPV` | unassigned | open | none |
-| 11905 | `GetEnemyBoundBoxOfs` | unassigned | open | none |
-| 11908 | `GetEnemyBoundBoxOfsArg` | unassigned | open | none |
-| 11924 | `PlayerBGUpperExtent` | unassigned | open | none |
-| 11927 | `PlayerBGCollision` | unassigned | open | none |
-| 11942 | `SetFallS` | unassigned | open | none |
-| 11943 | `SetPSte` | unassigned | open | none |
-| 11944 | `ChkOnScr` | unassigned | open | none |
-| 11952 | `ExPBGCol` | unassigned | open | none |
-| 11954 | `ChkCollSize` | unassigned | open | none |
-| 11964 | `GBBAdr` | unassigned | open | none |
-| 11971 | `HeadChk` | unassigned | open | none |
-| 11992 | `SolidOrClimb` | unassigned | open | none |
-| 11997 | `NYSpd` | unassigned | open | none |
-| 12000 | `DoFootCheck` | unassigned | open | none |
-| 12019 | `AwardTouchedCoin` | unassigned | open | none |
-| 12022 | `ChkFootMTile` | unassigned | open | none |
-| 12030 | `ContChk` | unassigned | open | none |
-| 12040 | `LandPlyr` | unassigned | open | none |
-| 12049 | `InitSteP` | unassigned | open | none |
-| 12052 | `DoPlayerSideCheck` | unassigned | open | none |
-| 12059 | `SideCheckLoop` | unassigned | open | none |
-| 12075 | `BHalf` | unassigned | open | none |
-| 12086 | `ExSCH` | unassigned | open | none |
-| 12088 | `CheckSideMTiles` | unassigned | open | none |
-| 12094 | `ContSChk` | unassigned | open | none |
-| 12101 | `ChkPBtm` | unassigned | open | none |
-| 12111 | `PipeDwnS` | unassigned | open | none |
-| 12115 | `PlyrPipe` | unassigned | open | none |
-| 12124 | `SetCATmr` | unassigned | open | none |
-| 12126 | `ChkGERtn` | unassigned | open | none |
-| 12140 | `StopPlayerMove` | unassigned | open | none |
-| 12142 | `ExCSM` | unassigned | open | none |
-| 12144 | `AreaChangeTimerData` | unassigned | open | none |
-| 12147 | `HandleCoinMetatile` | unassigned | open | none |
-| 12152 | `HandleAxeMetatile` | unassigned | open | none |
-| 12159 | `ErACM` | unassigned | open | none |
-| 12169 | `ClimbXPosAdder` | unassigned | open | none |
-| 12172 | `ClimbPLocAdder` | unassigned | open | none |
-| 12175 | `FlagpoleYPosData` | unassigned | open | none |
-| 12178 | `HandleClimbing` | unassigned | open | none |
-| 12184 | `ExHC` | unassigned | open | none |
-| 12186 | `ChkForFlagpole` | unassigned | open | none |
-| 12192 | `FlagpoleCollision` | unassigned | open | none |
-| 12212 | `ChkFlagpoleYPosLoop` | unassigned | open | none |
-| 12217 | `MtchF` | unassigned | open | none |
-| 12218 | `RunFR` | unassigned | open | none |
-| 12222 | `VineCollision` | unassigned | open | none |
-| 12231 | `PutPlayerOnVine` | unassigned | open | none |
-| 12244 | `SetVXPl` | unassigned | open | none |
-| 12259 | `ExPVne` | unassigned | open | none |
-| 12263 | `ChkInvisibleMTiles` | unassigned | open | none |
-| 12267 | `ExCInvT` | unassigned | open | none |
-| 12273 | `ChkForLandJumpSpring` | unassigned | open | none |
-| 12284 | `ExCJSp` | unassigned | open | none |
-| 12286 | `ChkJumpspringMetatiles` | unassigned | open | none |
-| 12292 | `JSFnd` | unassigned | open | none |
-| 12293 | `NoJSFnd` | unassigned | open | none |
-| 12295 | `HandlePipeEntry` | unassigned | open | none |
-| 12326 | `GetWNum` | unassigned | open | none |
-| 12341 | `ExPipeE` | unassigned | open | none |
-| 12343 | `ImpedePlayerMove` | unassigned | open | none |
-| 12354 | `RImpd` | unassigned | open | none |
-| 12358 | `NXSpd` | unassigned | open | none |
-| 12365 | `PlatF` | unassigned | open | none |
-| 12372 | `ExIPM` | unassigned | open | none |
-| 12380 | `SolidMTileUpperExt` | unassigned | open | none |
-| 12383 | `CheckForSolidMTiles` | unassigned | open | none |
-| 12388 | `ClimbMTileUpperExt` | unassigned | open | none |
-| 12391 | `CheckForClimbMTiles` | unassigned | open | none |
-| 12396 | `CheckForCoinMTiles` | unassigned | open | none |
-| 12403 | `CoinSd` | unassigned | open | none |
-| 12407 | `GetMTileAttrib` | unassigned | open | none |
-| 12415 | `ExEBG` | unassigned | open | none |
-| 12420 | `EnemyBGCStateData` | unassigned | open | none |
-| 12423 | `EnemyBGCXSpdData` | unassigned | open | none |
-| 12426 | `EnemyToBGCollisionDet` | unassigned | open | none |
-| 12439 | `DoIDCheckBGColl` | unassigned | open | none |
-| 12443 | `HBChk` | unassigned | open | none |
-| 12446 | `CInvu` | unassigned | open | none |
-| 12452 | `YesIn` | unassigned | open | none |
-| 12455 | `NoEToBGCollision` | unassigned | open | none |
-| 12461 | `HandleEToBGCollision` | unassigned | open | none |
-| 12476 | `GiveOEPoints` | unassigned | open | none |
-| 12480 | `ChkToStunEnemies` | unassigned | open | none |
-| 12489 | `Demote` | unassigned | open | none |
-| 12491 | `SetStun` | unassigned | open | none |
-| 12503 | `SetWYSpd` | unassigned | open | none |
-| 12504 | `SetNotW` | unassigned | open | none |
-| 12509 | `ChkBBill` | unassigned | open | none |
-| 12515 | `NoCDirF` | unassigned | open | none |
-| 12518 | `ExEBGChk` | unassigned | open | none |
-| 12523 | `LandEnemyProperly` | unassigned | open | none |
-| 12535 | `SChkA` | unassigned | open | none |
-| 12537 | `ChkLandedEnemyState` | unassigned | open | none |
-| 12552 | `SetForStn` | unassigned | open | none |
-| 12556 | `ExSteChk` | unassigned | open | none |
-| 12558 | `ProcEnemyDirection` | unassigned | open | none |
-| 12571 | `InvtD` | unassigned | open | none |
-| 12575 | `CNwCDir` | unassigned | open | none |
-| 12580 | `LandEnemyInitState` | unassigned | open | none |
-| 12589 | `NMovShellFallBit` | unassigned | open | none |
-| 12597 | `ChkForRedKoopa` | unassigned | open | none |
-| 12603 | `Chk2MSBSt` | unassigned | open | none |
-| 12610 | `GetSteFromD` | unassigned | open | none |
-| 12611 | `SetD6Ste` | unassigned | open | none |
-| 12617 | `DoEnemySideCheck` | unassigned | open | none |
-| 12624 | `SdeCLoop` | unassigned | open | none |
-| 12632 | `NextSdeC` | unassigned | open | none |
-| 12636 | `ExESdeC` | unassigned | open | none |
-| 12638 | `ChkForBump_HammerBroJ` | unassigned | open | none |
-| 12646 | `NoBump` | unassigned | open | none |
-| 12654 | `InvEnemyDir` | unassigned | open | none |
-| 12660 | `PlayerEnemyDiff` | unassigned | open | none |
-| 12671 | `EnemyLanding` | unassigned | open | none |
-| 12679 | `SubtEnemyYPos` | unassigned | open | none |
-| 12686 | `EnemyJump` | unassigned | open | none |
-| 12701 | `DoSide` | unassigned | open | none |
-| 12705 | `HammerBroBGColl` | unassigned | open | none |
-| 12711 | `KillEnemyAboveBlock` | unassigned | open | none |
-| 12717 | `UnderHammerBro` | unassigned | open | none |
-| 12726 | `NoUnderHammerBro` | unassigned | open | none |
-| 12732 | `ChkUnderEnemy` | unassigned | open | none |
-| 12737 | `ChkForNonSolids` | unassigned | open | none |
-| 12747 | `NSFnd` | unassigned | open | none |
-| 12751 | `FireballBGCollision` | unassigned | open | none |
-| 12772 | `ClearBounceFlag` | unassigned | open | none |
-| 12777 | `InitFireballExplode` | unassigned | open | none |
-| 12791 | `BoundBoxCtrlData` | unassigned | open | none |
-| 12805 | `GetFireballBoundBox` | M2 T16 S3/P5 | ported; focused smoke; route trace pending | src/game/objects.c |
-| 12813 | `GetMiscBoundBox` | unassigned | open | none |
-| 12819 | `FBallB` | unassigned | open | none |
-| 12822 | `GetEnemyBoundBox` | unassigned | open | none |
-| 12828 | `SmallPlatformBoundBox` | unassigned | open | none |
-| 12833 | `GetMaskedOffScrBits` | unassigned | open | none |
-| 12844 | `CMBits` | unassigned | open | none |
-| 12850 | `LargePlatformBoundBox` | unassigned | open | none |
-| 12857 | `SetupEOffsetFBBox` | unassigned | open | none |
-| 12866 | `MoveBoundBoxOffscreen` | unassigned | open | none |
-| 12878 | `BoundingBoxCore` | unassigned | open | none |
-| 12916 | `CheckRightScreenBBox` | unassigned | open | none |
-| 12935 | `SORte` | unassigned | open | none |
-| 12936 | `NoOfs` | unassigned | open | none |
-| 12939 | `CheckLeftScreenBBox` | unassigned | open | none |
-| 12948 | `SOLft` | unassigned | open | none |
-| 12949 | `NoOfs2` | unassigned | open | none |
-| 12956 | `PlayerCollisionCore` | unassigned | open | none |
-| 12959 | `SprObjectCollisionCore` | unassigned | open | none |
-| 12964 | `CollisionCoreLoop` | unassigned | open | none |
-| 12979 | `SecondBoxVerticalChk` | unassigned | open | none |
-| 12989 | `FirstBoxGreater` | unassigned | open | none |
-| 13002 | `NoCollisionFound` | unassigned | open | none |
-| 13007 | `CollisionFound` | unassigned | open | none |
-| 13023 | `BlockBufferChk_Enemy` | unassigned | open | none |
-| 13032 | `ResidualMiscObjectCode` | unassigned | open | none |
-| 13040 | `BlockBufferChk_FBall` | unassigned | open | none |
-| 13046 | `ResJmpM` | unassigned | open | none |
-| 13047 | `BBChk_E` | unassigned | open | none |
-| 13052 | `BlockBufferAdderData` | unassigned | open | none |
-| 13055 | `BlockBuffer_X_Adder` | unassigned | open | none |
-| 13061 | `BlockBuffer_Y_Adder` | unassigned | open | none |
-| 13067 | `BlockBufferColli_Feet` | unassigned | open | none |
-| 13070 | `BlockBufferColli_Head` | unassigned | open | none |
-| 13074 | `BlockBufferColli_Side` | unassigned | open | none |
-| 13078 | `BlockBufferCollision` | unassigned | open | none |
-| 13111 | `RetXC` | unassigned | open | none |
-| 13112 | `RetYC` | unassigned | open | none |
-| 13126 | `VineYPosAdder` | unassigned | open | none |
-| 13129 | `DrawVine` | unassigned | open | none |
-| 13156 | `VineTL` | unassigned | open | none |
-| 13169 | `SkpVTop` | unassigned | open | none |
-| 13170 | `ChkFTop` | unassigned | open | none |
-| 13177 | `NextVSp` | unassigned | open | none |
-| 13187 | `SixSpriteStacker` | unassigned | open | none |
-| 13189 | `StkLp` | unassigned | open | none |
-| 13203 | `FirstSprXPos` | unassigned | open | none |
-| 13206 | `FirstSprYPos` | unassigned | open | none |
-| 13209 | `SecondSprXPos` | unassigned | open | none |
-| 13212 | `SecondSprYPos` | unassigned | open | none |
-| 13215 | `FirstSprTilenum` | unassigned | open | none |
-| 13218 | `SecondSprTilenum` | unassigned | open | none |
-| 13221 | `HammerSprAttrib` | unassigned | open | none |
-| 13224 | `DrawHammer` | unassigned | open | none |
-| 13232 | `ForceHPose` | unassigned | open | none |
-| 13234 | `GetHPose` | unassigned | open | none |
-| 13239 | `RenderH` | unassigned | open | none |
-| 13268 | `NoHOffscr` | unassigned | open | none |
-| 13277 | `FlagpoleScoreNumTiles` | unassigned | open | none |
-| 13284 | `FlagpoleGfxHandler` | unassigned | open | none |
-| 13326 | `ChkFlagOffscreen` | unassigned | open | none |
-| 13335 | `MoveSixSpritesOffscreen` | unassigned | open | none |
-| 13338 | `DumpSixSpr` | unassigned | open | none |
-| 13342 | `DumpFourSpr` | unassigned | open | none |
-| 13345 | `DumpThreeSpr` | unassigned | open | none |
-| 13348 | `DumpTwoSpr` | unassigned | open | none |
-| 13352 | `ExitDumpSpr` | unassigned | open | none |
-| 13357 | `DrawLargePlatform` | unassigned | open | none |
-| 13374 | `ShrinkPlatform` | unassigned | open | none |
-| 13377 | `SetLast2Platform` | unassigned | open | none |
-| 13386 | `SetPlatformTilenum` | unassigned | open | none |
-| 13402 | `SChk2` | unassigned | open | none |
-| 13408 | `SChk3` | unassigned | open | none |
-| 13414 | `SChk4` | unassigned | open | none |
-| 13420 | `SChk5` | unassigned | open | none |
-| 13426 | `SChk6` | unassigned | open | none |
-| 13431 | `SLChk` | unassigned | open | none |
-| 13435 | `ExDLPl` | unassigned | open | none |
-| 13439 | `DrawFloateyNumber_Coin` | unassigned | open | none |
-| 13444 | `NotRsNum` | unassigned | open | none |
-| 13460 | `JumpingCoinTiles` | unassigned | open | none |
-| 13463 | `JCoinGfxHandler` | unassigned | open | none |
-| 13489 | `ExJCGfx` | unassigned | open | none |
-| 13500 | `PowerUpGfxTable` | unassigned | open | none |
-| 13506 | `PowerUpAttributes` | unassigned | open | none |
-| 13509 | `DrawPowerUp` | unassigned | open | none |
-| 13530 | `PUpDrawLoop` | unassigned | open | none |
-| 13555 | `FlipPUpRightSide` | unassigned | open | none |
-| 13562 | `PUpOfs` | unassigned | open | none |
-| 13576 | `EnemyGraphicsTable` | unassigned | open | none |
-| 13621 | `EnemyGfxTableOffsets` | unassigned | open | none |
-| 13627 | `EnemyAttributeData` | unassigned | open | none |
-| 13633 | `EnemyAnimTimingBMask` | unassigned | open | none |
-| 13636 | `JumpspringFrameOffsets` | unassigned | open | none |
-| 13639 | `EnemyGfxHandler` | unassigned | open | none |
-| 13661 | `CheckForRetainerObj` | unassigned | open | none |
-| 13674 | `CheckForBulletBillCV` | unassigned | open | none |
-| 13682 | `SBBAt` | unassigned | open | none |
-| 13687 | `CheckForJumpspring` | unassigned | open | none |
-| 13694 | `CheckForPodoboo` | unassigned | open | none |
-| 13704 | `CheckBowserGfxFlag` | unassigned | open | none |
-| 13711 | `SBwsrGfxOfs` | unassigned | open | none |
-| 13713 | `CheckForGoomba` | unassigned | open | none |
-| 13722 | `GmbaAnim` | unassigned | open | none |
-| 13732 | `CheckBowserFront` | unassigned | open | none |
-| 13746 | `ChkFrontSte` | unassigned | open | none |
-| 13750 | `FlipBowserOver` | unassigned | open | none |
-| 13753 | `DrawBowser` | unassigned | open | none |
-| 13756 | `CheckBowserRear` | unassigned | open | none |
-| 13761 | `ChkRearSte` | unassigned | open | none |
-| 13770 | `CheckForSpiny` | unassigned | open | none |
-| 13780 | `NotEgg` | unassigned | open | none |
-| 13782 | `CheckForLakitu` | unassigned | open | none |
-| 13792 | `NoLAFr` | unassigned | open | none |
-| 13794 | `CheckUpsideDownShell` | unassigned | open | none |
-| 13807 | `CheckRightSideUpShell` | unassigned | open | none |
-| 13819 | `CheckForDefdGoomba` | unassigned | open | none |
-| 13829 | `CheckForHammerBro` | unassigned | open | none |
-| 13841 | `CheckForBloober` | unassigned | open | none |
-| 13856 | `CheckToAnimateEnemy` | unassigned | open | none |
-| 13878 | `CheckForSecondFrame` | unassigned | open | none |
-| 13883 | `CheckAnimationStop` | unassigned | open | none |
-| 13893 | `CheckDefeatedState` | unassigned | open | none |
-| 13905 | `DrawEnemyObject` | unassigned | open | none |
-| 13916 | `SkipToOffScrChk` | unassigned | open | none |
-| 13919 | `CheckForVerticalFlip` | unassigned | open | none |
-| 13943 | `FlipEnemyVertically` | unassigned | open | none |
-| 13957 | `CheckForESymmetry` | unassigned | open | none |
-| 13965 | `ContES` | unassigned | open | none |
-| 13975 | `ESRtnr` | unassigned | open | none |
-| 13979 | `SpnySC` | unassigned | open | none |
-| 13982 | `MirrorEnemyGfx` | unassigned | open | none |
-| 13994 | `EggExc` | unassigned | open | none |
-| 14007 | `CheckToMirrorLakitu` | unassigned | open | none |
-| 14026 | `NVFLak` | unassigned | open | none |
-| 14033 | `CheckToMirrorJSpring` | unassigned | open | none |
-| 14044 | `SprObjectOffscrChk` | unassigned | open | none |
-| 14054 | `LcChk` | unassigned | open | none |
-| 14060 | `Row3C` | unassigned | open | none |
-| 14067 | `Row23C` | unassigned | open | none |
-| 14073 | `AllRowC` | unassigned | open | none |
-| 14085 | `ExEGHandler` | unassigned | open | none |
-| 14088 | `DrawEnemyObjRow` | unassigned | open | none |
-| 14093 | `DrawOneSpriteRow` | unassigned | open | none |
-| 14097 | `MoveESprRowOffscreen` | unassigned | open | none |
-| 14104 | `MoveESprColOffscreen` | unassigned | open | none |
-| 14119 | `DefaultBlockObjTiles` | unassigned | open | none |
-| 14122 | `DrawBlock` | unassigned | open | none |
-| 14133 | `DBlkLoop` | unassigned | open | none |
-| 14147 | `ChkRep` | unassigned | open | none |
-| 14159 | `SetBFlip` | unassigned | open | none |
-| 14167 | `BlkOffscr` | unassigned | open | none |
-| 14174 | `PullOfsB` | unassigned | open | none |
-| 14175 | `ChkLeftCo` | unassigned | open | none |
-| 14178 | `MoveColOffscreen` | unassigned | open | none |
-| 14182 | `ExDBlk` | unassigned | open | none |
-| 14187 | `DrawBrickChunks` | unassigned | open | none |
-| 14197 | `DChunks` | unassigned | open | none |
-| 14242 | `ChnkOfs` | unassigned | open | none |
-| 14250 | `ExBCDr` | unassigned | open | none |
-| 14254 | `DrawFireball` | M2 T16 S3/P4 | ported; route trace pending | src/game/oam/fireball_gfx.c |
-| 14261 | `DrawFirebar` | unassigned | open | none |
-| 14275 | `FireA` | unassigned | open | none |
-| 14280 | `ExplosionTiles` | unassigned | open | none |
-| 14283 | `DrawExplosion_Fireball` | M2 T16 S3/P4 | ported; route trace pending | src/game/oam/fireball_gfx.c |
-| 14292 | `DrawExplosion_Fireworks` | unassigned | open | none |
-| 14327 | `KillFireBall` | unassigned | open | none |
-| 14334 | `DrawSmallPlatform` | unassigned | open | none |
-| 14361 | `TopSP` | unassigned | open | none |
-| 14369 | `BotSP` | unassigned | open | none |
-| 14379 | `SOfs` | unassigned | open | none |
-| 14386 | `SOfs2` | unassigned | open | none |
-| 14392 | `ExSPl` | unassigned | open | none |
-| 14397 | `DrawBubble` | unassigned | open | none |
-| 14413 | `ExDBub` | unassigned | open | none |
-| 14418 | `PlayerGfxTblOffsets` | unassigned | open | none |
-| 14424 | `PlayerGraphicsTable` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14457 | `SwimKickTileNum` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14460 | `PlayerGfxHandler` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14466 | `CntPl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14489 | `SwimKT` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14495 | `BigKTS` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14497 | `ExPGH` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14499 | `FindPlayerAction` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14503 | `DoChangeSize` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14507 | `PlayerKilled` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14511 | `PlayerGfxProcessing` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14532 | `SUpdR` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14535 | `PlayerOffscreenChk` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14547 | `PROfsLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14551 | `NPROffscr` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14561 | `IntermediatePlayerData` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14564 | `DrawPlayer_Intermediate` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14566 | `PIntLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14587 | `RenderPlayerSub` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14601 | `DrawPlayerLoop` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14610 | `ProcessPlayerAction` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14626 | `ProcOnGroundActs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14642 | `NonAnimatedActs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14649 | `ActionFalling` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14654 | `ActionWalkRun` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14659 | `ActionClimbing` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14666 | `ActionSwimming` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14676 | `GetCurrentAnimOffset` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14680 | `FourFrameExtent` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14684 | `ThreeFrameExtent` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14687 | `AnimationControl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14701 | `SetAnimC` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14702 | `ExAnimC` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14705 | `GetGfxOffsetAdder` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14712 | `SzOfs` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14714 | `ChangeSizeOffsetAdder` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14718 | `HandleChangeSize` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14728 | `CSzNext` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14729 | `GorSLog` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14734 | `GetOffsetFromAnimCtrl` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14741 | `ShrinkPlayer` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14750 | `ShrPlF` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14753 | `ChkForPlayerAttrib` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14767 | `KilledAtt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14774 | `C_S_IGAtt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14781 | `ExPlyrAt` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14786 | `RelativePlayerPosition` | M2 T16 S3/P2 | ported; route trace pending | src/game/oam/object_position.c |
-| 14791 | `RelativeBubblePosition` | unassigned | open | none |
-| 14797 | `RelativeFireballPosition` | M2 T16 S3/P4 | ported; focused smoke; route trace pending | src/game/oam/object_position.c |
-| 14801 | `RelWOfs` | unassigned | open | none |
-| 14805 | `RelativeMiscPosition` | unassigned | open | none |
-| 14811 | `RelativeEnemyPosition` | unassigned | open | none |
-| 14816 | `RelativeBlockPosition` | unassigned | open | none |
-| 14825 | `VariableObjOfsRelPos` | unassigned | open | none |
-| 14834 | `GetObjRelativePosition` | unassigned | open | none |
-| 14846 | `GetPlayerOffscreenBits` | M2 T16 S3/P3 | ported; route trace pending | src/game/oam/player_gfx.c |
-| 14851 | `GetFireballOffscreenBits` | M2 T16 S3/P5 | ported; focused smoke; route trace pending | src/game/oam/object_position.c |
-| 14857 | `GetBubbleOffscreenBits` | unassigned | open | none |
-| 14863 | `GetMiscOffscreenBits` | unassigned | open | none |
-| 14869 | `ObjOffsetData` | unassigned | open | none |
-| 14872 | `GetProperObjOffset` | unassigned | open | none |
-| 14879 | `GetEnemyOffscreenBits` | unassigned | open | none |
-| 14884 | `GetBlockOffscreenBits` | unassigned | open | none |
-| 14888 | `SetOffscrBitsOffset` | unassigned | open | none |
-| 14894 | `GetOffScreenBitsSet` | unassigned | open | none |
-| 14911 | `RunOffscrBitsSubs` | unassigned | open | none |
-| 14927 | `XOffscreenBitsData` | unassigned | open | none |
-| 14931 | `DefaultXOnscreenOfs` | unassigned | open | none |
-| 14934 | `GetXOffscreenBits` | unassigned | open | none |
-| 14937 | `XOfsLoop` | unassigned | open | none |
-| 14953 | `XLdBData` | unassigned | open | none |
-| 14959 | `ExXOfsBS` | unassigned | open | none |
-| 14963 | `YOffscreenBitsData` | unassigned | open | none |
-| 14968 | `DefaultYOnscreenOfs` | unassigned | open | none |
-| 14971 | `HighPosUnitData` | unassigned | open | none |
-| 14974 | `GetYOffscreenBits` | unassigned | open | none |
-| 14977 | `YOfsLoop` | unassigned | open | none |
-| 14993 | `YLdBData` | unassigned | open | none |
-| 14999 | `ExYOfsBS` | unassigned | open | none |
-| 15003 | `DividePDiff` | unassigned | open | none |
-| 15015 | `SetOscrO` | unassigned | open | none |
-| 15016 | `ExDivPD` | unassigned | open | none |
-| 15025 | `DrawSpriteObject` | unassigned | open | none |
-| 15036 | `NoHFlip` | unassigned | open | none |
-| 15040 | `SetHFAt` | unassigned | open | none |
-| 15070 | `SoundEngine` | unassigned | open | none |
-| 15075 | `SndOn` | unassigned | open | none |
-| 15084 | `InPause` | unassigned | open | none |
-| 15099 | `PTone1F` | unassigned | open | none |
-| 15101 | `ContPau` | unassigned | open | none |
-| 15108 | `PTone2F` | unassigned | open | none |
-| 15109 | `PTRegC` | unassigned | open | none |
-| 15112 | `DecPauC` | unassigned | open | none |
-| 15121 | `SkipPIn` | unassigned | open | none |
-| 15125 | `RunSoundSubroutines` | unassigned | open | none |
-| 15134 | `SkipSoundSubroutines` | unassigned | open | none |
-| 15147 | `NoIncDAC` | unassigned | open | none |
-| 15150 | `StrWave` | unassigned | open | none |
-| 15155 | `Dump_Squ1_Regs` | unassigned | open | none |
-| 15160 | `PlaySqu1Sfx` | unassigned | open | none |
-| 15163 | `SetFreq_Squ1` | unassigned | open | none |
-| 15166 | `Dump_Freq_Regs` | unassigned | open | none |
-| 15174 | `NoTone` | unassigned | open | none |
-| 15176 | `Dump_Sq2_Regs` | unassigned | open | none |
-| 15181 | `PlaySqu2Sfx` | unassigned | open | none |
-| 15184 | `SetFreq_Squ2` | unassigned | open | none |
-| 15188 | `SetFreq_Tri` | unassigned | open | none |
-| 15194 | `SwimStompEnvelopeData` | unassigned | open | none |
-| 15198 | `PlayFlagpoleSlide` | unassigned | open | none |
-| 15206 | `PlaySmallJump` | unassigned | open | none |
-| 15210 | `PlayBigJump` | unassigned | open | none |
-| 15213 | `JumpRegContents` | unassigned | open | none |
-| 15220 | `ContinueSndJump` | unassigned | open | none |
-| 15227 | `N2Prt` | unassigned | open | none |
-| 15230 | `FPS2nd` | unassigned | open | none |
-| 15231 | `DmpJpFPS` | unassigned | open | none |
-| 15234 | `PlayFireballThrow` | unassigned | open | none |
-| 15239 | `PlayBump` | unassigned | open | none |
-| 15242 | `Fthrow` | unassigned | open | none |
-| 15247 | `ContinueBumpThrow` | unassigned | open | none |
-| 15253 | `DecJpFPS` | unassigned | open | none |
-| 15256 | `Square1SfxHandler` | unassigned | open | none |
-| 15276 | `CheckSfx1Buffer` | unassigned | open | none |
-| 15294 | `ExS1H` | unassigned | open | none |
-| 15296 | `PlaySwimStomp` | unassigned | open | none |
-| 15304 | `ContinueSwimStomp` | unassigned | open | none |
-| 15313 | `BranchToDecLength1` | unassigned | open | none |
-| 15316 | `PlaySmackEnemy` | unassigned | open | none |
-| 15325 | `ContinueSmackEnemy` | unassigned | open | none |
-| 15333 | `SmSpc` | unassigned | open | none |
-| 15334 | `SmTick` | unassigned | open | none |
-| 15336 | `DecrementSfx1Length` | unassigned | open | none |
-| 15340 | `StopSquare1Sfx` | unassigned | open | none |
-| 15347 | `ExSfx1` | unassigned | open | none |
-| 15349 | `PlayPipeDownInj` | unassigned | open | none |
-| 15353 | `ContinuePipeDownInj` | unassigned | open | none |
-| 15365 | `NoPDwnL` | unassigned | open | none |
-| 15369 | `ExtraLifeFreqData` | unassigned | open | none |
-| 15372 | `PowerUpGrabFreqData` | unassigned | open | none |
-| 15380 | `PUp_VGrow_FreqData` | unassigned | open | none |
-| 15386 | `PlayCoinGrab` | unassigned | open | none |
-| 15391 | `PlayTimerTick` | unassigned | open | none |
-| 15395 | `CGrab_TTickRegL` | unassigned | open | none |
-| 15401 | `ContinueCGrabTTick` | unassigned | open | none |
-| 15407 | `N2Tone` | unassigned | open | none |
-| 15409 | `PlayBlast` | unassigned | open | none |
-| 15416 | `ContinueBlast` | unassigned | open | none |
-| 15422 | `SBlasJ` | unassigned | open | none |
-| 15424 | `PlayPowerUpGrab` | unassigned | open | none |
-| 15428 | `ContinuePowerUpGrab` | unassigned | open | none |
-| 15437 | `LoadSqu2Regs` | unassigned | open | none |
-| 15440 | `DecrementSfx2Length` | unassigned | open | none |
-| 15444 | `EmptySfx2Buffer` | unassigned | open | none |
-| 15448 | `StopSquare2Sfx` | unassigned | open | none |
-| 15453 | `ExSfx2` | unassigned | open | none |
-| 15455 | `Square2SfxHandler` | unassigned | open | none |
-| 15478 | `CheckSfx2Buffer` | unassigned | open | none |
-| 15496 | `ExS2H` | unassigned | open | none |
-| 15498 | `Cont_CGrab_TTick` | unassigned | open | none |
-| 15501 | `JumpToDecLength2` | unassigned | open | none |
-| 15504 | `PlayBowserFall` | unassigned | open | none |
-| 15509 | `BlstSJp` | unassigned | open | none |
-| 15511 | `ContinueBowserFall` | unassigned | open | none |
-| 15517 | `PBFRegs` | unassigned | open | none |
-| 15518 | `EL_LRegs` | unassigned | open | none |
-| 15520 | `PlayExtraLife` | unassigned | open | none |
-| 15524 | `ContinueExtraLife` | unassigned | open | none |
-| 15527 | `DivLLoop` | unassigned | open | none |
-| 15537 | `PlayGrowPowerUp` | unassigned | open | none |
-| 15541 | `PlayGrowVine` | unassigned | open | none |
-| 15544 | `GrowItemRegs` | unassigned | open | none |
-| 15551 | `ContinueGrowItems` | unassigned | open | none |
-| 15564 | `StopGrowItems` | unassigned | open | none |
-| 15569 | `BrickShatterFreqData` | unassigned | open | none |
-| 15573 | `PlayBrickShatter` | unassigned | open | none |
-| 15577 | `ContinueBrickShatter` | unassigned | open | none |
-| 15585 | `PlayNoiseSfx` | unassigned | open | none |
-| 15591 | `DecrementSfx3Length` | unassigned | open | none |
-| 15598 | `ExSfx3` | unassigned | open | none |
-| 15600 | `NoiseSfxHandler` | unassigned | open | none |
-| 15609 | `CheckNoiseBuffer` | unassigned | open | none |
-| 15616 | `ExNH` | unassigned | open | none |
-| 15618 | `PlayBowserFlame` | unassigned | open | none |
-| 15622 | `ContinueBowserFlame` | unassigned | open | none |
-| 15632 | `ContinueMusic` | unassigned | open | none |
-| 15635 | `MusicHandler` | unassigned | open | none |
-| 15645 | `LoadEventMusic` | unassigned | open | none |
-| 15651 | `NoStopSfx` | unassigned | open | none |
-| 15662 | `LoadAreaMusic` | unassigned | open | none |
-| 15666 | `NoStop1` | unassigned | open | none |
-| 15667 | `GMLoopB` | unassigned | open | none |
-| 15669 | `HandleAreaMusicLoopB` | unassigned | open | none |
-| 15682 | `FindAreaMusicHeader` | unassigned | open | none |
-| 15686 | `FindEventMusicHeader` | unassigned | open | none |
-| 15691 | `LoadHeader` | unassigned | open | none |
-| 15720 | `HandleSquare2Music` | unassigned | open | none |
-| 15730 | `EndOfMusicData` | unassigned | open | none |
-| 15736 | `NotTRO` | unassigned | open | none |
-| 15750 | `MusicLoopBack` | unassigned | open | none |
-| 15753 | `VictoryMLoopBack` | unassigned | open | none |
-| 15756 | `Squ2LengthHandler` | unassigned | open | none |
-| 15763 | `Squ2NoteHandler` | unassigned | open | none |
-| 15769 | `Rest` | unassigned | open | none |
-| 15771 | `SkipFqL1` | unassigned | open | none |
-| 15774 | `MiscSqu2MusicTasks` | unassigned | open | none |
-| 15783 | `NoDecEnv1` | unassigned | open | none |
-| 15788 | `HandleSquare1Music` | unassigned | open | none |
-| 15794 | `FetchSqu1MusicData` | unassigned | open | none |
-| 15806 | `Squ1NoteHandler` | unassigned | open | none |
-| 15816 | `SkipCtrlL` | unassigned | open | none |
-| 15819 | `MiscSqu1MusicTasks` | unassigned | open | none |
-| 15828 | `NoDecEnv2` | unassigned | open | none |
-| 15830 | `DeathMAltReg` | unassigned | open | none |
-| 15833 | `DoAltLoad` | unassigned | open | none |
-| 15835 | `HandleTriangleMusic` | unassigned | open | none |
-| 15853 | `TriNoteHandler` | unassigned | open | none |
-| 15863 | `NotDOrD4` | unassigned | open | none |
-| 15871 | `MediN` | unassigned | open | none |
-| 15873 | `LongN` | unassigned | open | none |
-| 15875 | `LoadTriCtrlReg` | unassigned | open | none |
-| 15878 | `HandleNoiseMusic` | unassigned | open | none |
-| 15885 | `FetchNoiseBeatData` | unassigned | open | none |
-| 15894 | `NoiseBeatHandler` | unassigned | open | none |
-| 15911 | `StrongBeat` | unassigned | open | none |
-| 15917 | `LongBeat` | unassigned | open | none |
-| 15923 | `SilentBeat` | unassigned | open | none |
-| 15926 | `PlayBeat` | unassigned | open | none |
-| 15931 | `ExitMusicHandler` | unassigned | open | none |
-| 15934 | `AlternateLengthHandler` | unassigned | open | none |
-| 15942 | `ProcessLengthData` | unassigned | open | none |
-| 15951 | `LoadControlRegs` | unassigned | open | none |
-| 15957 | `NotECstlM` | unassigned | open | none |
-| 15962 | `WaterMus` | unassigned | open | none |
-| 15963 | `AllMus` | unassigned | open | none |
-| 15967 | `LoadEnvelopeData` | unassigned | open | none |
-| 15974 | `LoadUsualEnvData` | unassigned | open | none |
-| 15981 | `LoadWaterEventMusEnvData` | unassigned | open | none |
-| 15989 | `MusicHeaderData` | unassigned | open | none |
-| 16027 | `TimeRunningOutHdr` | unassigned | open | none |
-| 16028 | `Star_CloudHdr` | unassigned | open | none |
-| 16029 | `EndOfLevelMusHdr` | unassigned | open | none |
-| 16030 | `ResidualHeaderData` | unassigned | open | none |
-| 16031 | `UndergroundMusHdr` | unassigned | open | none |
-| 16032 | `SilenceHdr` | unassigned | open | none |
-| 16033 | `CastleMusHdr` | unassigned | open | none |
-| 16034 | `VictoryMusHdr` | unassigned | open | none |
-| 16035 | `GameOverMusHdr` | unassigned | open | none |
-| 16036 | `WaterMusHdr` | unassigned | open | none |
-| 16037 | `WinCastleMusHdr` | unassigned | open | none |
-| 16038 | `GroundLevelPart1Hdr` | unassigned | open | none |
-| 16039 | `GroundLevelPart2AHdr` | unassigned | open | none |
-| 16040 | `GroundLevelPart2BHdr` | unassigned | open | none |
-| 16041 | `GroundLevelPart2CHdr` | unassigned | open | none |
-| 16042 | `GroundLevelPart3AHdr` | unassigned | open | none |
-| 16043 | `GroundLevelPart3BHdr` | unassigned | open | none |
-| 16044 | `GroundLevelLeadInHdr` | unassigned | open | none |
-| 16045 | `GroundLevelPart4AHdr` | unassigned | open | none |
-| 16046 | `GroundLevelPart4BHdr` | unassigned | open | none |
-| 16047 | `GroundLevelPart4CHdr` | unassigned | open | none |
-| 16048 | `DeathMusHdr` | unassigned | open | none |
-| 16077 | `Star_CloudMData` | unassigned | open | none |
-| 16089 | `GroundM_P1Data` | unassigned | open | none |
-| 16094 | `SilenceData` | unassigned | open | none |
-| 16104 | `GroundM_P2AData` | unassigned | open | none |
-| 16114 | `GroundM_P2BData` | unassigned | open | none |
-| 16124 | `GroundM_P2CData` | unassigned | open | none |
-| 16134 | `GroundM_P3AData` | unassigned | open | none |
-| 16140 | `GroundM_P3BData` | unassigned | open | none |
-| 16148 | `GroundMLdInData` | unassigned | open | none |
-| 16158 | `GroundM_P4AData` | unassigned | open | none |
-| 16167 | `GroundM_P4BData` | unassigned | open | none |
-| 16176 | `DeathMusData` | unassigned | open | none |
-| 16179 | `GroundM_P4CData` | unassigned | open | none |
-| 16193 | `CastleMusData` | unassigned | open | none |
-| 16217 | `GameOverMusData` | unassigned | open | none |
-| 16226 | `TimeRunOutMusData` | unassigned | open | none |
-| 16236 | `WinLevelMusData` | unassigned | open | none |
-| 16253 | `UndergroundMusData` | unassigned | open | none |
-| 16264 | `WaterMusData` | unassigned | open | none |
-| 16295 | `EndOfCastleMusData` | unassigned | open | none |
-| 16313 | `VictoryMusData` | unassigned | open | none |
-| 16326 | `FreqRegLookupTbl` | unassigned | open | none |
-| 16341 | `MusicLengthLookupTbl` | unassigned | open | none |
-| 16349 | `EndOfCastleMusicEnvData` | unassigned | open | none |
-| 16352 | `AreaMusicEnvData` | unassigned | open | none |
-| 16355 | `WaterEventMusEnvData` | unassigned | open | none |
-| 16362 | `BowserFlameEnvData` | unassigned | open | none |
-| 16368 | `BrickShatterEnvData` | unassigned | open | none |
+| 699 | `Start` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-start) |
+| 706 | `VBlank1` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vblank1) |
+| 708 | `VBlank2` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vblank2) |
+| 712 | `WBootCheck` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wbootcheck) |
+| 721 | `ColdBoot` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coldboot) |
+| 737 | `EndlessLoop` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessloop) |
+| 743 | `VRAM_AddrTable_Low` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_addrtable_low) |
+| 752 | `VRAM_AddrTable_High` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_addrtable_high) |
+| 761 | `VRAM_Buffer_Offset` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_buffer_offset) |
+| 764 | `NonMaskableInterrupt` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nonmaskableinterrupt) |
+| 776 | `ScreenOff` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-screenoff) |
+| 796 | `InitBuffer` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbuffer) |
+| 814 | `DecTimers` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dectimers) |
+| 820 | `DecTimersLoop` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dectimersloop) |
+| 823 | `SkipExpTimer` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipexptimer) |
+| 825 | `NoDecTimers` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nodectimers) |
+| 826 | `PauseSkip` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pauseskip) |
+| 837 | `RotPRandomBit` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rotprandombit) |
+| 843 | `Sprite0Clr` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprite0clr) |
+| 851 | `Sprite0Hit` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprite0hit) |
+| 855 | `HBlankDelay` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hblankdelay) |
+| 857 | `SkipSprite0` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipsprite0) |
+| 868 | `SkipMainOper` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipmainoper) |
+| 876 | `PauseRoutine` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pauseroutine) |
+| 885 | `ChkPauseTimer` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpausetimer) |
+| 889 | `ChkStart` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkstart) |
+| 904 | `ClrPauseTimer` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrpausetimer) |
+| 906 | `SetPause` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpause) |
+| 907 | `ExitPause` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitpause) |
+| 912 | `SpriteShuffler` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spriteshuffler) |
+| 917 | `ShuffleLoop` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shuffleloop) |
+| 926 | `StrSprOffset` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strsproffset) |
+| 927 | `NextSprOffset` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextsproffset) |
+| 934 | `SetAmtOffset` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setamtoffset) |
+| 937 | `SetMiscOffset` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmiscoffset) |
+| 954 | `OperModeExecutionTree` | T14 responsibility (implementation not certified); src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-opermodeexecutiontree) |
+| 965 | `MoveAllSpritesOffscreen` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveallspritesoffscreen) |
+| 969 | `MoveSpritesOffscreen` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movespritesoffscreen) |
+| 972 | `SprInitLoop` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprinitloop) |
+| 982 | `TitleScreenMode` | T15 responsibility (implementation not certified); `frame_root.c:mysmb_frame_root_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-titlescreenmode) |
+| 993 | `WSelectBufferTemplate` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wselectbuffertemplate) |
+| 996 | `GameMenuRoutine` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamemenuroutine) |
+| 1004 | `StartGame` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_start_from_title` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startgame) |
+| 1005 | `ChkSelect` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkselect) |
+| 1013 | `ChkWorldSel` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkworldsel) |
+| 1018 | `SelectBLogic` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-selectblogic) |
+| 1033 | `IncWorldSel` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incworldsel) |
+| 1039 | `UpdateShroom` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updateshroom) |
+| 1047 | `NullJoypad` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nulljoypad) |
+| 1049 | `RunDemo` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rundemo) |
+| 1053 | `ResetTitle` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_title_step` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resettitle) |
+| 1059 | `ChkContinue` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_start_from_title` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkcontinue) |
+| 1065 | `StartWorld1` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_start_from_title` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startworld1) |
+| 1077 | `InitScores` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscores) |
+| 1080 | `ExitMenu` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmenu) |
+| 1081 | `GoContinue` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_start_from_title` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gocontinue) |
+| 1090 | `MushroomIconData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomicondata) |
+| 1093 | `DrawMushroomIcon` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawmushroomicon) |
+| 1095 | `IconDataRead` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-icondataread) |
+| 1105 | `ExitIcon` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exiticon) |
+| 1109 | `DemoActionData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoactiondata) |
+| 1114 | `DemoTimingData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demotimingdata) |
+| 1119 | `DemoEngine` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_step_title_demo` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoengine) |
+| 1129 | `DoAction` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doaction) |
+| 1133 | `DemoOver` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoover) |
+| 1137 | `VictoryMode` | T15 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymode) |
+| 1144 | `AutoPlayer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autoplayer) |
+| 1147 | `VictoryModeSubroutines` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymodesubroutines) |
+| 1159 | `SetupVictoryMode` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupvictorymode) |
+| 1169 | `PlayerVictoryWalk` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playervictorywalk) |
+| 1178 | `PerformWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-performwalk) |
+| 1180 | `DontWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dontwalk) |
+| 1195 | `ExitVWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvwalk) |
+| 1201 | `PrintVictoryMessages` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_print_victory_messages` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printvictorymessages) |
+| 1215 | `MRetainerMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mretainermsg) |
+| 1217 | `ThankPlayer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thankplayer) |
+| 1223 | `SecondPartMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondpartmsg) |
+| 1232 | `EvalForMusic` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-evalformusic) |
+| 1236 | `PrintMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printmsg) |
+| 1240 | `IncMsgCounter` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmsgcounter) |
+| 1248 | `SetEndTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setendtimer) |
+| 1251 | `IncModeTask_A` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmodetask_a) |
+| 1252 | `ExitMsgs` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmsgs) |
+| 1256 | `PlayerEndWorld` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerendworld) |
+| 1271 | `EndExitOne` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endexitone) |
+| 1272 | `EndChkBButton` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endchkbbutton) |
+| 1281 | `EndExitTwo` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endexittwo) |
+| 1287 | `FloateyNumTileData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateynumtiledata) |
+| 1303 | `ScoreUpdateData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scoreupdatedata) |
+| 1308 | `FloateyNumbersRoutine` | T15 responsibility (implementation not certified); `objects.c:mysmb_objects_step_floatey_number` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateynumbersroutine) |
+| 1315 | `ChkNumTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknumtimer) |
+| 1320 | `DecNumTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decnumtimer) |
+| 1328 | `LoadNumTiles` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadnumtiles) |
+| 1338 | `ChkTallEnemy` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktallenemy) |
+| 1355 | `GetAltOffset` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getaltoffset) |
+| 1358 | `FloateyPart` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateypart) |
+| 1363 | `SetupNumSpr` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupnumspr) |
+| 1386 | `ScreenRoutines` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-screenroutines) |
+| 1408 | `InitScreen` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscreen) |
+| 1418 | `SetupIntermediate` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupintermediate) |
+| 1436 | `AreaPalette` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areapalette) |
+| 1439 | `GetAreaPalette` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareapalette) |
+| 1442 | `SetVRAMAddr_A` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvramaddr_a) |
+| 1443 | `NextSubtask` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextsubtask) |
+| 1448 | `BGColorCtrl_Addr` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bgcolorctrl_addr) |
+| 1451 | `BackgroundColors` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backgroundcolors) |
+| 1455 | `PlayerColors` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playercolors) |
+| 1460 | `GetBackgroundColor` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getbackgroundcolor) |
+| 1465 | `NoBGColor` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobgcolor) |
+| 1467 | `GetPlayerColors` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getplayercolors) |
+| 1473 | `ChkFiery` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfiery) |
+| 1477 | `StartClrGet` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startclrget) |
+| 1479 | `ClrGetLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrgetloop) |
+| 1489 | `SetBGColor` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbgcolor) |
+| 1502 | `SetVRAMOffset` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvramoffset) |
+| 1507 | `GetAlternatePalette1` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getalternatepalette1) |
+| 1512 | `SetVRAMAddr_B` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvramaddr_b) |
+| 1513 | `NoAltPal` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noaltpal) |
+| 1517 | `WriteTopStatusLine` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writetopstatusline) |
+| 1524 | `WriteBottomStatusLine` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writebottomstatusline) |
+| 1553 | `DisplayTimeUp` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-displaytimeup) |
+| 1560 | `NoTimeUp` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notimeup) |
+| 1565 | `DisplayIntermediate` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-displayintermediate) |
+| 1577 | `PlayerInter` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerinter) |
+| 1579 | `OutputInter` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputinter) |
+| 1584 | `GameOverInter` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameoverinter) |
+| 1589 | `NoInter` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nointer) |
+| 1595 | `AreaParserTaskControl` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertaskcontrol) |
+| 1597 | `TaskLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-taskloop) |
+| 1603 | `OutputCol` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputcol) |
+| 1612 | `DrawTitleScreen` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawtitlescreen) |
+| 1624 | `OutputTScr` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputtscr) |
+| 1629 | `ChkHiByte` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkhibyte) |
+| 1639 | `ClearBuffersDrawIcon` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearbuffersdrawicon) |
+| 1643 | `TScrClear` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-tscrclear) |
+| 1648 | `IncSubtask` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incsubtask) |
+| 1653 | `WriteTopScore` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writetopscore) |
+| 1656 | `IncModeTask_B` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmodetask_b) |
+| 1661 | `GameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametext) |
+| 1662 | `TopStatusBarLine` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topstatusbarline) |
+| 1671 | `WorldLivesDisplay` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldlivesdisplay) |
+| 1680 | `TwoPlayerTimeUp` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-twoplayertimeup) |
+| 1682 | `OnePlayerTimeUp` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-oneplayertimeup) |
+| 1686 | `TwoPlayerGameOver` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-twoplayergameover) |
+| 1688 | `OnePlayerGameOver` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-oneplayergameover) |
+| 1693 | `WarpZoneWelcome` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzonewelcome) |
+| 1704 | `LuigiName` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-luiginame) |
+| 1707 | `WarpZoneNumbers` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzonenumbers) |
+| 1712 | `GameTextOffsets` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametextoffsets) |
+| 1719 | `WriteGameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writegametext) |
+| 1728 | `Chk2Players` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2players) |
+| 1731 | `LdGameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ldgametext) |
+| 1733 | `GameTextLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametextloop) |
+| 1740 | `EndGameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endgametext) |
+| 1756 | `PutLives` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putlives) |
+| 1765 | `CheckPlayerName` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkplayername) |
+| 1775 | `ChkLuigi` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkluigi) |
+| 1778 | `NameLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nameloop) |
+| 1782 | `ExitChkName` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitchkname) |
+| 1784 | `PrintWarpZoneNumbers` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printwarpzonenumbers) |
+| 1790 | `WarpNumLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpnumloop) |
+| 1804 | `ResetSpritesAndScreenTimer` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetspritesandscreentimer) |
+| 1809 | `ResetScreenTimer` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetscreentimer) |
+| 1813 | `NoReset` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noreset) |
+| 1825 | `RenderAreaGraphics` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderareagraphics) |
+| 1840 | `DrawMTLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawmtloop) |
+| 1878 | `RightCheck` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rightcheck) |
+| 1886 | `LLeft` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lleft) |
+| 1888 | `NextMTRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextmtrow) |
+| 1889 | `SetAttrib` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setattrib) |
+| 1914 | `ExitDrawM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdrawm) |
+| 1920 | `RenderAttributeTables` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderattributetables) |
+| 1930 | `SetATHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setathigh) |
+| 1940 | `AttribLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-attribloop) |
+| 1962 | `SetVRAMCtrl` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvramctrl) |
+| 1970 | `ColorRotatePalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colorrotatepalette) |
+| 1973 | `BlankPalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blankpalette) |
+| 1977 | `Palette3Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette3data) |
+| 1983 | `ColorRotation` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colorrotation) |
+| 1991 | `GetBlankPal` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblankpal) |
+| 2004 | `GetAreaPal` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareapal) |
+| 2024 | `ExitColorRot` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcolorrot) |
+| 2034 | `BlockGfxData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockgfxdata) |
+| 2041 | `RemoveCoin_Axe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-removecoin_axe) |
+| 2047 | `WriteBlankMT` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeblankmt) |
+| 2052 | `ReplaceBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-replaceblockmetatile) |
+| 2058 | `DestroyBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-destroyblockmetatile) |
+| 2061 | `WriteBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeblockmetatile) |
+| 2076 | `UseBOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useboffset) |
+| 2080 | `MoveVOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movevoffset) |
+| 2086 | `PutBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putblockmetatile) |
+| 2097 | `SaveHAdder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savehadder) |
+| 2118 | `RemBridge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rembridge) |
+| 2145 | `MetatileGraphics_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-metatilegraphics_low) |
+| 2148 | `MetatileGraphics_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-metatilegraphics_high) |
+| 2151 | `Palette0_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette0_mtiles) |
+| 2192 | `Palette1_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette1_mtiles) |
+| 2240 | `Palette2_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette2_mtiles) |
+| 2252 | `Palette3_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette3_mtiles) |
+| 2263 | `WaterPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waterpalettedata) |
+| 2275 | `GroundPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundpalettedata) |
+| 2287 | `UndergroundPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-undergroundpalettedata) |
+| 2299 | `CastlePaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlepalettedata) |
+| 2311 | `DaySnowPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-daysnowpalettedata) |
+| 2316 | `NightSnowPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nightsnowpalettedata) |
+| 2321 | `MushroomPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroompalettedata) |
+| 2326 | `BowserPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowserpalettedata) |
+| 2331 | `MarioThanksMessage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mariothanksmessage) |
+| 2339 | `LuigiThanksMessage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-luigithanksmessage) |
+| 2347 | `MushroomRetainerSaved` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomretainersaved) |
+| 2358 | `PrincessSaved1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-princesssaved1) |
+| 2366 | `PrincessSaved2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-princesssaved2) |
+| 2375 | `WorldSelectMessage1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldselectmessage1) |
+| 2382 | `WorldSelectMessage2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldselectmessage2) |
+| 2395 | `JumpEngine` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpengine) |
+| 2412 | `InitializeNameTables` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializenametables) |
+| 2421 | `WriteNTAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writentaddr) |
+| 2427 | `InitNTLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initntloop) |
+| 2436 | `InitATLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initatloop) |
+| 2446 | `ReadJoypads` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readjoypads) |
+| 2454 | `ReadPortBits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readportbits) |
+| 2455 | `PortLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-portloop) |
+| 2474 | `Save8Bits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-save8bits) |
+| 2482 | `WriteBufferToScreen` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writebuffertoscreen) |
+| 2495 | `SetupWrites` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupwrites) |
+| 2501 | `GetLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getlength) |
+| 2504 | `OutputToVRAM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputtovram) |
+| 2506 | `RepeatByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-repeatbyte) |
+| 2523 | `UpdateScreen` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatescreen) |
+| 2527 | `InitScroll` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscroll) |
+| 2533 | `WritePPUReg1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeppureg1) |
+| 2544 | `StatusBarData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbardata) |
+| 2552 | `StatusBarOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbaroffset) |
+| 2555 | `PrintStatusBarNumbers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printstatusbarnumbers) |
+| 2564 | `OutputNumbers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputnumbers) |
+| 2578 | `SetupNums` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupnums) |
+| 2592 | `DigitPLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-digitploop) |
+| 2604 | `ExitOutputN` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitoutputn) |
+| 2608 | `DigitsMathRoutine` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-digitsmathroutine) |
+| 2613 | `AddModLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addmodloop) |
+| 2619 | `StoreNewD` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storenewd) |
+| 2623 | `EraseDMods` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasedmods) |
+| 2625 | `EraseMLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasemloop) |
+| 2629 | `BorrowOne` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-borrowone) |
+| 2632 | `CarryOne` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-carryone) |
+| 2639 | `UpdateTopScore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatetopscore) |
+| 2644 | `TopScoreCheck` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topscorecheck) |
+| 2647 | `GetScoreDiff` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getscorediff) |
+| 2655 | `CopyScore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-copyscore) |
+| 2661 | `NoTopSc` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notopsc) |
+| 2665 | `DefaultSprOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultsproffsets) |
+| 2669 | `Sprite0Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprite0data) |
+| 2674 | `InitializeGame` | T18 responsibility (implementation not certified); `title_modes.c:mysmb_game_begin_title_bootstrap` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializegame) |
+| 2678 | `ClrSndLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrsndloop) |
+| 2685 | `InitializeArea` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializearea) |
+| 2690 | `ClrTimersLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrtimersloop) |
+| 2697 | `StartPage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startpage) |
+| 2705 | `SetInitNTHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setinitnthigh) |
+| 2728 | `SetSecHard` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setsechard) |
+| 2729 | `CheckHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkhalfway) |
+| 2733 | `DoneInitArea` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doneinitarea) |
+| 2742 | `PrimaryGameSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-primarygamesetup) |
+| 2750 | `SecondaryGameSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondarygamesetup) |
+| 2754 | `ClearVRLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearvrloop) |
+| 2775 | `ShufAmtLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shufamtloop) |
+| 2780 | `ISpr0Loop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ispr0loop) |
+| 2795 | `InitializeMemory` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializememory) |
+| 2799 | `InitPageLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpageloop) |
+| 2800 | `InitByteLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyteloop) |
+| 2804 | `InitByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyte) |
+| 2805 | `SkipByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipbyte) |
+| 2814 | `MusicSelectData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musicselectdata) |
+| 2818 | `GetAreaMusic` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareamusic) |
+| 2830 | `ChkAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatype) |
+| 2834 | `StoreMusic` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storemusic) |
+| 2836 | `ExitGetM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitgetm) |
+| 2840 | `PlayerStarting_X_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_x_pos) |
+| 2844 | `AltYPosOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-altyposoffset) |
+| 2847 | `PlayerStarting_Y_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_y_pos) |
+| 2851 | `PlayerBGPriorityData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerbgprioritydata) |
+| 2854 | `GameTimerData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametimerdata) |
+| 2858 | `Entrance_GameTimerSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entrance_gametimersetup) |
+| 2874 | `ChkStPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkstpos) |
+| 2881 | `SetStPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setstpos) |
+| 2900 | `ChkOverR` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkoverr) |
+| 2911 | `ChkSwimE` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkswime) |
+| 2914 | `SetPESub` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpesub) |
+| 2921 | `HalfwayPageNybbles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-halfwaypagenybbles) |
+| 2931 | `PlayerLoseLife` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerloselife) |
+| 2944 | `StillInGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stillingame) |
+| 2951 | `GetHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethalfway) |
+| 2960 | `MaskHPNyb` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maskhpnyb) |
+| 2965 | `SetHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethalfway) |
+| 2971 | `GameOverMode` | T18 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_game_over` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameovermode) |
+| 2981 | `SetupGameOver` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupgameover) |
+| 2993 | `RunGameOver` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rungameover) |
+| 3001 | `TerminateGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terminategame) |
+| 3015 | `ContinueGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuegame) |
+| 3027 | `GameIsOn` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameison) |
+| 3029 | `TransposePlayers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-transposeplayers) |
+| 3039 | `TransLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-transloop) |
+| 3048 | `ExTrans` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extrans) |
+| 3052 | `DoNothing1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-donothing1) |
+| 3055 | `DoNothing2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-donothing2) |
+| 3060 | `AreaParserTaskHandler` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertaskhandler) |
+| 3065 | `DoAPTasks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doaptasks) |
+| 3071 | `SkipATRender` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipatrender) |
+| 3073 | `AreaParserTasks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertasks) |
+| 3087 | `IncrementColumnPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incrementcolumnpos) |
+| 3094 | `NoColWrap` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocolwrap) |
+| 3106 | `BSceneDataOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bscenedataoffsets) |
+| 3109 | `BackSceneryData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backscenerydata) |
+| 3131 | `BackSceneryMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backscenerymetatiles) |
+| 3145 | `FSceneDataOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fscenedataoffsets) |
+| 3148 | `ForeSceneryData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forescenerydata) |
+| 3158 | `TerrainMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrainmetatiles) |
+| 3161 | `TerrainRenderBits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrainrenderbits) |
+| 3179 | `AreaParserCore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsercore) |
+| 3184 | `RenderSceneryTerrain` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersceneryterrain) |
+| 3187 | `ClrMTBuf` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrmtbuf) |
+| 3193 | `ThirdP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thirdp) |
+| 3198 | `RendBack` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendback) |
+| 3223 | `SceLoop1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop1) |
+| 3231 | `RendFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendfore) |
+| 3235 | `SceLoop2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop2) |
+| 3238 | `NoFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofore) |
+| 3242 | `RendTerr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendterr) |
+| 3249 | `TerMTile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-termtile) |
+| 3253 | `StoreMT` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storemt) |
+| 3258 | `TerrLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrloop) |
+| 3269 | `NoCloud2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocloud2) |
+| 3270 | `TerrBChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrbchk) |
+| 3275 | `NextTBit` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nexttbit) |
+| 3285 | `EndUChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enduchk) |
+| 3290 | `RendBBuf` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendbbuf) |
+| 3295 | `ChkMTLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmtlow) |
+| 3306 | `StrBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strblock) |
+| 3319 | `BlockBuffLowBounds` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufflowbounds) |
+| 3326 | `ProcessAreaData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processareadata) |
+| 3328 | `ProcADLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procadloop) |
+| 3345 | `Chk1Row13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1row13) |
+| 3363 | `Chk1Row14` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1row14) |
+| 3367 | `CheckRear` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrear) |
+| 3370 | `RdyDecode` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rdydecode) |
+| 3372 | `SetBehind` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbehind) |
+| 3373 | `NextAObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextaobj) |
+| 3374 | `ChkLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklength) |
+| 3378 | `ProcLoopb` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procloopb) |
+| 3384 | `EndAParse` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endaparse) |
+| 3386 | `IncAreaObjOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incareaobjoffset) |
+| 3393 | `DecodeAreaData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decodeareadata) |
+| 3397 | `Chk1stB` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1stb) |
+| 3408 | `ChkRow14` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow14) |
+| 3416 | `ChkRow13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow13) |
+| 3429 | `Mask2MSB` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mask2msb) |
+| 3431 | `ChkSRows` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chksrows) |
+| 3442 | `LrgObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrgobj) |
+| 3450 | `NotWPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notwpipe) |
+| 3452 | `SpecObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-specobj) |
+| 3455 | `MoveAOId` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveaoid) |
+| 3459 | `NormObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-normobj) |
+| 3472 | `LeavePar` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leavepar) |
+| 3473 | `InitRear` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initrear) |
+| 3479 | `LoopCmdE` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmde) |
+| 3480 | `BackColC` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backcolc) |
+| 3489 | `StrAObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-straobj) |
+| 3492 | `RunAObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runaobj) |
+| 3561 | `AlterAreaAttributes` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alterareaattributes) |
+| 3580 | `Alter2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alter2) |
+| 3586 | `SetFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfore) |
+| 3591 | `ScrollLockObject_Warp` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrolllockobject_warp) |
+| 3600 | `WarpNum` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpnum) |
+| 3606 | `ScrollLockObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrolllockobject) |
+| 3615 | `KillEnemies` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemies) |
+| 3619 | `KillELoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killeloop) |
+| 3623 | `NoKillE` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nokille) |
+| 3629 | `FrenzyIDData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frenzyiddata) |
+| 3632 | `AreaFrenzy` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areafrenzy) |
+| 3635 | `FreCompLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frecomploop) |
+| 3640 | `ExitAFrenzy` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitafrenzy) |
+| 3646 | `AreaStyleObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areastyleobject) |
+| 3653 | `TreeLedge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-treeledge) |
+| 3665 | `MidTreeL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-midtreel) |
+| 3670 | `EndTreeL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endtreel) |
+| 3673 | `MushroomLedge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomledge) |
+| 3682 | `EndMushL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endmushl) |
+| 3696 | `AllUnder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-allunder) |
+| 3699 | `NoUnder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nounder) |
+| 3706 | `PulleyRopeMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pulleyropemetatiles) |
+| 3709 | `PulleyRopeObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pulleyropeobject) |
+| 3717 | `RenderPul` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderpul) |
+| 3719 | `MushLExit` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushlexit) |
+| 3724 | `CastleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlemetatiles) |
+| 3737 | `CastleObject` | T18: `src/game/area.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-castleobject) |
+| 3748 | `CRendLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-crendloop) |
+| 3759 | `ChkCFloor` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkcfloor) |
+| 3772 | `NotTall` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nottall) |
+| 3789 | `PlayerStop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstop) |
+| 3791 | `ExitCastle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcastle) |
+| 3795 | `WaterPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waterpipe) |
+| 3810 | `IntroPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-intropipe) |
+| 3817 | `VPipeSectLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vpipesectloop) |
+| 3823 | `NoBlankP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noblankp) |
+| 3825 | `SidePipeShaftData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipeshaftdata) |
+| 3828 | `SidePipeTopPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipetoppart) |
+| 3831 | `SidePipeBottomPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipebottompart) |
+| 3835 | `ExitPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitpipe) |
+| 3840 | `RenderSidewaysPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersidewayspipe) |
+| 3855 | `DrawSidePart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawsidepart) |
+| 3862 | `VerticalPipeData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipedata) |
+| 3868 | `VerticalPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipe) |
+| 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warppipe) |
+| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawpipe) |
+| 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getpipeheight) |
+| 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
+| 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |
+| 3929 | `ExitEmptyChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitemptychk) |
+| 3933 | `Hole_Water` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_water) |
+| 3944 | `QuestionBlockRow_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_high) |
+| 3948 | `QuestionBlockRow_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_low) |
+| 3960 | `Bridge_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_high) |
+| 3964 | `Bridge_Middle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_middle) |
+| 3968 | `Bridge_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_low) |
+| 3983 | `FlagBalls_Residual` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagballs_residual) |
+| 3991 | `FlagpoleObject` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-flagpoleobject) |
+| 4018 | `EndlessRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessrope) |
+| 4023 | `BalancePlatRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatrope) |
+| 4034 | `DrawRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawrope) |
+| 4039 | `CoinMetatileData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinmetatiledata) |
+| 4042 | `RowOfCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofcoins) |
+| 4049 | `C_ObjectRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectrow) |
+| 4052 | `C_ObjectMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectmetatile) |
+| 4055 | `CastleBridgeObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlebridgeobj) |
+| 4060 | `AxeObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-axeobj) |
+| 4064 | `ChainObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chainobj) |
+| 4070 | `EmptyBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptyblock) |
+| 4074 | `ColObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colobj) |
+| 4079 | `SolidBlockMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solidblockmetatiles) |
+| 4082 | `BrickMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickmetatiles) |
+| 4086 | `RowOfBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofbricks) |
+| 4091 | `DrawBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbricks) |
+| 4094 | `RowOfSolidBlocks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofsolidblocks) |
+| 4097 | `GetRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getrow) |
+| 4099 | `DrawRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawrow) |
+| 4104 | `ColumnOfBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-columnofbricks) |
+| 4109 | `ColumnOfSolidBlocks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-columnofsolidblocks) |
+| 4112 | `GetRow2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getrow2) |
+| 4120 | `BulletBillCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillcannon) |
+| 4135 | `SetupCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupcannon) |
+| 4146 | `StrCOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strcoffset) |
+| 4151 | `StaircaseHeightData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseheightdata) |
+| 4154 | `StaircaseRowData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaserowdata) |
+| 4157 | `StaircaseObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseobject) |
+| 4162 | `NextStair` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextstair) |
+| 4172 | `Jumpspring` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring) |
+| 4197 | `Hidden1UpBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upblock) |
+| 4204 | `QuestionBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblock) |
+| 4208 | `BrickWithCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickwithcoins) |
+| 4212 | `BrickWithItem` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickwithitem) |
+| 4220 | `BWithL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bwithl) |
+| 4223 | `DrawQBlk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawqblk) |
+| 4228 | `GetAreaObjectID` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjectid) |
+| 4233 | `ExitDecBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdecblock) |
+| 4237 | `HoleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holemetatiles) |
+| 4240 | `Hole_Empty` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_empty) |
+| 4265 | `StrWOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strwoffset) |
+| 4266 | `NoWhirlP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nowhirlp) |
+| 4273 | `RenderUnderPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderunderpart) |
+| 4289 | `DrawThisRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawthisrow) |
+| 4290 | `WaitOneRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waitonerow) |
+| 4296 | `ExitUPartR` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitupartr) |
+| 4300 | `ChkLrgObjLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjlength) |
+| 4303 | `ChkLrgObjFixedLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjfixedlength) |
+| 4310 | `LenSet` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lenset) |
+| 4313 | `GetLrgObjAttrib` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getlrgobjattrib) |
+| 4326 | `GetAreaObjXPosition` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjxposition) |
+| 4336 | `GetAreaObjYPosition` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjyposition) |
+| 4349 | `BlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferaddr) |
+| 4353 | `GetBlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockbufferaddr) |
+| 4376 | `AreaDataOfsLoopback` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |
+| 4381 | `LoadAreaPointer` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadareapointer) |
+| 4384 | `GetAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareatype) |
+| 4392 | `FindAreaPointer` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findareapointer) |
+| 4402 | `GetAreaDataAddrs` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareadataaddrs) |
+| 4434 | `StoreFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storefore) |
+| 4472 | `StoreStyle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storestyle) |
+| 4485 | `WorldAddrOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldaddroffsets) |
+| 4491 | `AreaAddrOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaaddroffsets) |
+| 4492 | `World1Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world1areas) |
+| 4493 | `World2Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world2areas) |
+| 4494 | `World3Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world3areas) |
+| 4495 | `World4Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world4areas) |
+| 4496 | `World5Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world5areas) |
+| 4497 | `World6Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world6areas) |
+| 4498 | `World7Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world7areas) |
+| 4499 | `World8Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world8areas) |
+| 4509 | `EnemyAddrHOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyaddrhoffsets) |
+| 4512 | `EnemyDataAddrLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemydataaddrlow) |
+| 4520 | `EnemyDataAddrHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemydataaddrhigh) |
+| 4528 | `AreaDataHOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadatahoffsets) |
+| 4531 | `AreaDataAddrLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataaddrlow) |
+| 4539 | `AreaDataAddrHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataaddrhigh) |
+| 4550 | `E_CastleArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea1) |
+| 4558 | `E_CastleArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea2) |
+| 4565 | `E_CastleArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea3) |
+| 4574 | `E_CastleArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea4) |
+| 4583 | `E_CastleArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea5) |
+| 4589 | `E_CastleArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea6) |
+| 4598 | `E_GroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea1) |
+| 4606 | `E_GroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea2) |
+| 4613 | `E_GroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea3) |
+| 4619 | `E_GroundArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea4) |
+| 4627 | `E_GroundArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea5) |
+| 4636 | `E_GroundArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea6) |
+| 4643 | `E_GroundArea7` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea7) |
+| 4650 | `E_GroundArea8` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea8) |
+| 4656 | `E_GroundArea9` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea9) |
+| 4662 | `E_GroundArea10` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea10) |
+| 4666 | `E_GroundArea11` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea11) |
+| 4674 | `E_GroundArea12` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea12) |
+| 4679 | `E_GroundArea13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea13) |
+| 4687 | `E_GroundArea14` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea14) |
+| 4695 | `E_GroundArea15` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea15) |
+| 4700 | `E_GroundArea16` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea16) |
+| 4704 | `E_GroundArea17` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea17) |
+| 4714 | `E_GroundArea18` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea18) |
+| 4722 | `E_GroundArea19` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea19) |
+| 4731 | `E_GroundArea20` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea20) |
+| 4738 | `E_GroundArea21` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea21) |
+| 4743 | `E_GroundArea22` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_groundarea22) |
+| 4751 | `E_UndergroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_undergroundarea1) |
+| 4760 | `E_UndergroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_undergroundarea2) |
+| 4769 | `E_UndergroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_undergroundarea3) |
+| 4777 | `E_WaterArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_waterarea1) |
+| 4783 | `E_WaterArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_waterarea2) |
+| 4791 | `E_WaterArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_waterarea3) |
+| 4799 | `L_CastleArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea1) |
+| 4814 | `L_CastleArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea2) |
+| 4832 | `L_CastleArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea3) |
+| 4849 | `L_CastleArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea4) |
+| 4865 | `L_CastleArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea5) |
+| 4884 | `L_CastleArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea6) |
+| 4900 | `L_GroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea1) |
+| 4915 | `L_GroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea2) |
+| 4931 | `L_GroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea3) |
+| 4944 | `L_GroundArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea4) |
+| 4963 | `L_GroundArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea5) |
+| 4980 | `L_GroundArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea6) |
+| 4995 | `L_GroundArea7` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea7) |
+| 5009 | `L_GroundArea8` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea8) |
+| 5027 | `L_GroundArea9` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea9) |
+| 5042 | `L_GroundArea10` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea10) |
+| 5048 | `L_GroundArea11` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea11) |
+| 5059 | `L_GroundArea12` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea12) |
+| 5066 | `L_GroundArea13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea13) |
+| 5081 | `L_GroundArea14` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea14) |
+| 5096 | `L_GroundArea15` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea15) |
+| 5113 | `L_GroundArea16` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea16) |
+| 5123 | `L_GroundArea17` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea17) |
+| 5143 | `L_GroundArea18` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea18) |
+| 5160 | `L_GroundArea19` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea19) |
+| 5177 | `L_GroundArea20` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea20) |
+| 5191 | `L_GroundArea21` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea21) |
+| 5200 | `L_GroundArea22` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea22) |
+| 5210 | `L_UndergroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea1) |
+| 5231 | `L_UndergroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea2) |
+| 5252 | `L_UndergroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea3) |
+| 5271 | `L_WaterArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea1) |
+| 5282 | `L_WaterArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea2) |
+| 5299 | `L_WaterArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea3) |
+| 5315 | `GameMode` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamemode) |
+| 5326 | `GameCoreRoutine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamecoreroutine) |
+| 5336 | `GameEngine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameengine) |
+| 5339 | `ProcELoop` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-proceloop) |
+| 5371 | `NoChgMus` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nochgmus) |
+| 5377 | `CycleTwo` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cycletwo) |
+| 5380 | `ClrPlrPal` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrplrpal) |
+| 5381 | `SaveAB` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-saveab) |
+| 5385 | `UpdScrollVar` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updscrollvar) |
+| 5398 | `RunParser` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runparser) |
+| 5399 | `ExitEng` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exiteng) |
+| 5403 | `ScrollHandler` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollhandler) |
+| 5422 | `ChkNearMid` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknearmid) |
+| 5427 | `ScrollScreen` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollscreen) |
+| 5451 | `InitScrlAmt` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscrlamt) |
+| 5453 | `ChkPOffscr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpoffscr) |
+| 5463 | `KeepOnscr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-keeponscr) |
+| 5475 | `InitPlatScrl` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initplatscrl) |
+| 5479 | `X_SubtracterData` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-x_subtracterdata) |
+| 5482 | `OffscrJoypadBitsData` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-offscrjoypadbitsdata) |
+| 5487 | `GetScreenPosition` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getscreenposition) |
+| 5499 | `GameRoutines` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameroutines) |
+| 5519 | `PlayerEntrance` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerentrance) |
+| 5532 | `ChkBehPipe` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbehpipe) |
+| 5536 | `IntroEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-introentr) |
+| 5541 | `EntrMode2` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entrmode2) |
+| 5549 | `VineEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineentr) |
+| 5562 | `OffVine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-offvine) |
+| 5567 | `PlayerRdy` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerrdy) |
+| 5575 | `ExitEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitentr) |
+| 5580 | `AutoControlPlayer` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autocontrolplayer) |
+| 5583 | `PlayerCtrlRoutine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerctrlroutine) |
+| 5595 | `DisJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-disjoyp) |
+| 5597 | `SaveJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savejoyp) |
+| 5615 | `SizeChk` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sizechk) |
+| 5623 | `ChkMoveDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmovedir) |
+| 5629 | `SetMoveDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmovedir) |
+| 5630 | `PlayerSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playersubs) |
+| 5649 | `PlayerHole` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerhole) |
+| 5661 | `HoleDie` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holedie) |
+| 5670 | `HoleBottom` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holebottom) |
+| 5672 | `ChkHoleX` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkholex) |
+| 5680 | `ExitCtrl` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitctrl) |
+| 5682 | `CloudExit` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cloudexit) |
+| 5691 | `Vine_AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vine_autoclimb) |
+| 5697 | `AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autoclimb) |
+| 5702 | `SetEntr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setentr) |
+| 5708 | `VerticalPipeEntry` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipeentry) |
+| 5722 | `MovePlayerYAxis` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayeryaxis) |
+| 5730 | `SideExitPipeEntry` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sideexitpipeentry) |
+| 5733 | `ChgAreaPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgareapipe) |
+| 5736 | `ChgAreaMode` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgareamode) |
+| 5740 | `ExitCAPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcapipe) |
+| 5742 | `EnterSidePipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entersidepipe) |
+| 5751 | `RightPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rightpipe) |
+| 5757 | `PlayerChangeSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerchangesize) |
+| 5762 | `EndChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endchgsize) |
+| 5765 | `ExitChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitchgsize) |
+| 5769 | `PlayerInjuryBlink` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerinjuryblink) |
+| 5776 | `ExitBlink` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitblink) |
+| 5778 | `InitChangeSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initchangesize) |
+| 5786 | `ExitBoth` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitboth) |
+| 5791 | `PlayerDeath` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerdeath) |
+| 5797 | `DonePlayerTask` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doneplayertask) |
+| 5804 | `PlayerFireFlower` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerfireflower) |
+| 5812 | `CyclePlayerPalette` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cycleplayerpalette) |
+| 5821 | `ResetPalFireFlower` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetpalfireflower) |
+| 5824 | `ResetPalStar` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetpalstar) |
+| 5830 | `ExitDeath` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdeath) |
+| 5835 | `FlagpoleSlide` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpoleslide) |
+| 5847 | `SlidePlayer` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slideplayer) |
+| 5848 | `NoFPObj` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofpobj) |
+| 5853 | `Hidden1UpCoinAmts` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upcoinamts) |
+| 5856 | `PlayerEndLevel` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerendlevel) |
+| 5868 | `ChkStop` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkstop) |
+| 5874 | `InCastle` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incastle) |
+| 5876 | `RdyNextA` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rdynexta) |
+| 5888 | `NextArea` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextarea) |
+| 5895 | `ExitNA` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitna) |
+| 5899 | `PlayerMovementSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playermovementsubs) |
+| 5907 | `SetCrouch` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcrouch) |
+| 5908 | `ProcMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmove) |
+| 5916 | `MoveSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movesubs) |
+| 5923 | `NoMoveSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nomovesub) |
+| 5928 | `OnGroundStateSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ongroundstatesub) |
+| 5933 | `GndMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gndmove) |
+| 5940 | `FallingSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fallingsub) |
+| 5947 | `JumpSwimSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpswimsub) |
+| 5959 | `DumpFall` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpfall) |
+| 5961 | `ProcSwim` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procswim) |
+| 5969 | `LRWater` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrwater) |
+| 5972 | `LRAir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrair) |
+| 5975 | `JSMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jsmove) |
+| 5982 | `ExitMov1` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmov1) |
+| 5986 | `ClimbAdderLow` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderlow) |
+| 5988 | `ClimbAdderHigh` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderhigh) |
+| 5991 | `ClimbingSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbingsub) |
+| 6000 | `MoveOnVine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveonvine) |
+| 6019 | `ClimbFD` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbfd) |
+| 6022 | `CSetFDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-csetfdir) |
+| 6032 | `ExitCSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcsub) |
+| 6033 | `InitCSTimer` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initcstimer) |
+| 6039 | `JumpMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpmforcedata) |
+| 6042 | `FallMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fallmforcedata) |
+| 6045 | `PlayerYSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeryspddata) |
+| 6048 | `InitMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initmforcedata) |
+| 6051 | `MaxLeftXSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxleftxspddata) |
+| 6054 | `MaxRightXSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxrightxspddata) |
+| 6058 | `FrictionData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frictiondata) |
+| 6061 | `Climb_Y_SpeedData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climb_y_speeddata) |
+| 6064 | `Climb_Y_MForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climb_y_mforcedata) |
+| 6067 | `PlayerPhysicsSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerphysicssub) |
+| 6079 | `ProcClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procclimb) |
+| 6086 | `SetCAnim` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcanim) |
+| 6089 | `CheckForJumping` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforjumping) |
+| 6097 | `NoJump` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojump) |
+| 6099 | `ProcJumping` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procjumping) |
+| 6109 | `InitJS` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initjs) |
+| 6133 | `ChkWtr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkwtr) |
+| 6141 | `GetYPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getyphy) |
+| 6159 | `PJumpSnd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pjumpsnd) |
+| 6163 | `SJumpSnd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sjumpsnd) |
+| 6164 | `X_Physics` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-x_physics) |
+| 6172 | `ProcPRun` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procprun) |
+| 6184 | `ChkRFast` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrfast) |
+| 6191 | `FastXSp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fastxsp) |
+| 6193 | `SetRTmr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrtmr) |
+| 6195 | `GetXPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxphy) |
+| 6201 | `GetXPhy2` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxphy2) |
+| 6213 | `ExitPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitphy) |
+| 6217 | `PlayerAnimTmrData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeranimtmrdata) |
+| 6220 | `GetPlayerAnimSpeed` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getplayeranimspeed) |
+| 6229 | `ChkSkid` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkskid) |
+| 6236 | `SetRunSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrunspd) |
+| 6238 | `ProcSkid` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procskid) |
+| 6246 | `SetAnimSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setanimspd) |
+| 6252 | `ImposeFriction` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposefriction) |
+| 6260 | `JoypFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-joypfrict) |
+| 6262 | `LeftFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftfrict) |
+| 6274 | `RghtFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rghtfrict) |
+| 6285 | `XSpdSign` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xspdsign) |
+| 6290 | `SetAbsSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setabsspd) |
+| 6298 | `ProcFireball_Bubble` | T20: `src/game/fireball/fireball_spawn.c` | audited; revalidation required | [D1 snapshot; current body changed](m2-t24-s1-full-node-census.md#node-procfireball_bubble) |
+| 6330 | `ProcFireballs` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procfireballs) |
+| 6336 | `ProcAirBubbles` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procairbubbles) |
+| 6340 | `BublLoop` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bublloop) |
+| 6347 | `BublExit` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bublexit) |
+| 6349 | `FireballXSpdData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballxspddata) |
+| 6352 | `FireballObjCore` | T20/T16: `src/game/fireball/fireball_core.c` | audited; revalidation required | [Changed C owner; prior partial evidence](m2-t24-s1-full-node-census.md#node-fireballobjcore) |
+| 6380 | `RunFB` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfb) |
+| 6401 | `EraseFB` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasefb) |
+| 6403 | `NoFBall` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofball) |
+| 6405 | `FireballExplosion` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballexplosion) |
+| 6409 | `BubbleCheck` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubblecheck) |
+| 6419 | `SetupBubble` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupbubble) |
+| 6425 | `PosBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posbubl) |
+| 6440 | `MoveBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movebubl) |
+| 6450 | `Y_Bubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-y_bubl) |
+| 6451 | `ExitBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitbubl) |
+| 6453 | `Bubble_MForceData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubble_mforcedata) |
+| 6456 | `BubbleTimerData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubbletimerdata) |
+| 6461 | `RunGameTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rungametimer) |
+| 6486 | `ResGTCtrl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resgtctrl) |
+| 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
+| 6497 | `ExGTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exgtimer) |
+| 6501 | `WarpZoneObject` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzoneobject) |
+| 6519 | `ProcessWhirlpools` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-processwhirlpools) |
+| 6526 | `WhLoop` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-whloop) |
+| 6546 | `NextWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextwh) |
+| 6548 | `ExitWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitwh) |
+| 6550 | `WhirlpoolActivate` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-whirlpoolactivate) |
+| 6577 | `LeftWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftwh) |
+| 6586 | `SetPWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpwh) |
+| 6587 | `WhPull` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-whpull) |
+| 6598 | `FlagpoleScoreMods` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescoremods) |
+| 6601 | `FlagpoleScoreDigits` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescoredigits) |
+| 6604 | `FlagpoleRoutine` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-flagpoleroutine) |
+| 6635 | `SkipScore` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipscore) |
+| 6636 | `GiveFPScr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-givefpscr) |
+| 6643 | `FPGfx` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fpgfx) |
+| 6646 | `ExitFlagP` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitflagp) |
+| 6650 | `Jumpspring_Y_PosData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring_y_posdata) |
+| 6653 | `JumpspringHandler` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringhandler) |
+| 6667 | `DownJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-downjspr) |
+| 6669 | `PosJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posjspr) |
+| 6682 | `BounceJS` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bouncejs) |
+| 6688 | `DrawJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawjspr) |
+| 6698 | `ExJSpring` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exjspring) |
+| 6702 | `Setup_Vine` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setup_vine) |
+| 6716 | `NextVO` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextvo) |
+| 6727 | `VineHeightData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineheightdata) |
+| 6730 | `VineObjectHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-vineobjecthandler) |
+| 6746 | `RunVSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runvsubs) |
+| 6752 | `VDrawLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vdrawloop) |
+| 6760 | `KillVine` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killvine) |
+| 6766 | `WrCMTile` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrcmtile) |
+| 6780 | `ExitVH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvh) |
+| 6785 | `CannonBitmasks` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cannonbitmasks) |
+| 6788 | `ProcessCannons` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-processcannons) |
+| 6792 | `ThreeSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-threeschk) |
+| 6809 | `FireCannon` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firecannon) |
+| 6832 | `Chk_BB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk_bb) |
+| 6840 | `Next3Slt` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-next3slt) |
+| 6842 | `ExCannon` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excannon) |
+| 6846 | `BulletBillXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillxspddata) |
+| 6849 | `BulletBillHandler` | T22 responsibility; `src/game/objects.c`: `mysmb_objects_step_bullet_bills` (existing actor only, not the missing cannon scheduler) | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bulletbillhandler) |
+| 6862 | `SetupBB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupbb) |
+| 6876 | `ChkDSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkdste) |
+| 6880 | `BBFly` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bbfly) |
+| 6881 | `RunBBSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbbsubs) |
+| 6886 | `KillBB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killbb) |
+| 6891 | `HammerEnemyOfsData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerenemyofsdata) |
+| 6895 | `HammerXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerxspddata) |
+| 6898 | `SpawnHammerObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnhammerobj) |
+| 6904 | `SetMOfs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmofs) |
+| 6919 | `NoHammer` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohammer) |
+| 6928 | `ProcHammerObj` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-prochammerobj) |
+| 6952 | `SetHSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethspd) |
+| 6962 | `SetHPos` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethpos) |
+| 6977 | `RunAllH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runallh) |
+| 6978 | `RunHSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runhsubs) |
+| 6988 | `CoinBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-coinblock) |
+| 7000 | `SetupJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setupjumpcoin) |
+| 7014 | `JCoinC` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-jcoinc) |
+| 7025 | `FindEmptyMiscSlot` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-findemptymiscslot) |
+| 7027 | `FMiscLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fmiscloop) |
+| 7033 | `UseMiscS` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-usemiscs) |
+| 7038 | `MiscObjectsCore` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-miscobjectscore) |
+| 7040 | `MiscLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscloop) |
+| 7053 | `ProcJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-procjumpcoin) |
+| 7071 | `JCoinRun` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jcoinrun) |
+| 7088 | `RunJCSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runjcsubs) |
+| 7093 | `MiscLoopBack` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscloopback) |
+| 7100 | `CoinTallyOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cointallyoffsets) |
+| 7103 | `ScoreOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scoreoffsets) |
+| 7106 | `StatusBarNybbles` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbarnybbles) |
+| 7109 | `GiveOneCoin` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-giveonecoin) |
+| 7125 | `CoinPoints` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinpoints) |
+| 7129 | `AddToScore` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addtoscore) |
+| 7134 | `GetSBNybbles` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getsbnybbles) |
+| 7138 | `UpdateNumber` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatenumber) |
+| 7145 | `NoZSup` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nozsup) |
+| 7150 | `SetupPowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setuppowerup) |
+| 7163 | `PwrUpJmp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pwrupjmp) |
+| 7175 | `StrType` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strtype) |
+| 7176 | `PutBehind` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putbehind) |
+| 7184 | `PowerUpObjHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-powerupobjhandler) |
+| 7202 | `ShroomM` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shroomm) |
+| 7206 | `GrowThePowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-growthepowerup) |
+| 7223 | `ChkPUSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpuste) |
+| 7226 | `RunPUSubs` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-runpusubs) |
+| 7232 | `ExitPUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitpup) |
+| 7241 | `BlockYPosAdderData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockyposadderdata) |
+| 7244 | `PlayerHeadCollision` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-playerheadcollision) |
+| 7251 | `DBlockSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblockste) |
+| 7265 | `ChkBrick` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbrick) |
+| 7274 | `StartBTmr` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startbtmr) |
+| 7279 | `ContBTmr` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contbtmr) |
+| 7282 | `PutOldMT` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putoldmt) |
+| 7283 | `PutMTileB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putmtileb) |
+| 7297 | `SmallBP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smallbp) |
+| 7298 | `BigBP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bigbp) |
+| 7308 | `Unbreak` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-unbreak) |
+| 7309 | `InvOBit` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invobit) |
+| 7316 | `InitBlock_XY_Pos` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-initblock_xy_pos) |
+| 7332 | `BumpBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bumpblock) |
+| 7349 | `BlockCode` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockcode) |
+| 7363 | `MushFlowerBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushflowerblock) |
+| 7367 | `StarBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starblock) |
+| 7371 | `ExtraLifeMushBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extralifemushblock) |
+| 7376 | `VineBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineblock) |
+| 7381 | `ExitBlockChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitblockchk) |
+| 7386 | `BrickQBlockMetatiles` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-brickqblockmetatiles) |
+| 7393 | `BlockBumpedChk` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockbumpedchk) |
+| 7395 | `BumpChkLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bumpchkloop) |
+| 7400 | `MatchBump` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-matchbump) |
+| 7404 | `BrickShatter` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-brickshatter) |
+| 7420 | `CheckTopOfBlock` | T22 responsibility; `objects.c`: `mysmb_objects_check_top_of_block`, `mysmb_objects_collect_coin`, `mysmb_objects_start_brick_chunks` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-checktopofblock) |
+| 7437 | `TopEx` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topex) |
+| 7441 | `SpawnBrickChunks` | T22 responsibility; `objects.c`: `mysmb_objects_check_top_of_block`, `mysmb_objects_collect_coin`, `mysmb_objects_start_brick_chunks` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-spawnbrickchunks) |
+| 7468 | `BlockObjectsCore` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockobjectscore) |
+| 7500 | `ChkTop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktop) |
+| 7506 | `BouncingBlockHandler` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bouncingblockhandler) |
+| 7519 | `KillBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killblock) |
+| 7520 | `UpdSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updste) |
+| 7527 | `BlockObjMT_Updater` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockobjmt_updater) |
+| 7529 | `UpdateLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updateloop) |
+| 7546 | `NextBUpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextbupd) |
+| 7555 | `MoveEnemyHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveenemyhorizontally) |
+| 7561 | `MovePlayerHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayerhorizontally) |
+| 7566 | `MoveObjectHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveobjecthorizontally) |
+| 7581 | `SaveXSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savexspd) |
+| 7586 | `UseAdder` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useadder) |
+| 7604 | `ExXMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxmove) |
+| 7611 | `MovePlayerVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayervertically) |
+| 7617 | `NoJSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojschk) |
+| 7624 | `MoveD_EnemyVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moved_enemyvertically) |
+| 7630 | `MoveFallingPlatform` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movefallingplatform) |
+| 7632 | `ContVMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contvmove) |
+| 7636 | `MoveRedPTroopaDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopadown) |
+| 7640 | `MoveRedPTroopaUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopaup) |
+| 7643 | `MoveRedPTroopa` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopa) |
+| 7656 | `MoveDropPlatform` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movedropplatform) |
+| 7660 | `MoveEnemySlowVert` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveenemyslowvert) |
+| 7662 | `SetMdMax` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmdmax) |
+| 7667 | `MoveJ_EnemyVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movej_enemyvertically) |
+| 7669 | `SetHiMax` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethimax) |
+| 7670 | `SetXMoveAmt` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setxmoveamt) |
+| 7678 | `MaxSpdBlockData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxspdblockdata) |
+| 7681 | `ResidualGravityCode` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualgravitycode) |
+| 7685 | `ImposeGravityBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravityblock) |
+| 7691 | `ImposeGravitySprObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravitysprobj) |
+| 7698 | `MovePlatformDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplatformdown) |
+| 7702 | `MovePlatformUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplatformup) |
+| 7711 | `SetDplSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setdplspd) |
+| 7719 | `RedPTroopaGrav` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-redptroopagrav) |
+| 7729 | `ImposeGravity` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravity) |
+| 7739 | `AlterYP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alteryp) |
+| 7761 | `ChkUpM` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkupm) |
+| 7784 | `ExVMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exvmove) |
+| 7788 | `EnemiesAndLoopsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemiesandloopscore) |
+| 7796 | `ChkAreaTsk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatsk) |
+| 7801 | `ChkBowserF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbowserf) |
+| 7807 | `ExitELCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitelcore) |
+| 7812 | `LoopCmdWorldNumber` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdworldnumber) |
+| 7815 | `LoopCmdPageNumber` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdpagenumber) |
+| 7818 | `LoopCmdYPosition` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdyposition) |
+| 7821 | `ExecGameLoopback` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-execgameloopback) |
+| 7851 | `ProcLoopCommand` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procloopcommand) |
+| 7857 | `FindLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findloop) |
+| 7875 | `IncMLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmloop) |
+| 7883 | `WrongChk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrongchk) |
+| 7886 | `DoLpBack` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dolpback) |
+| 7888 | `InitMLp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initmlp) |
+| 7891 | `InitLCmd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlcmd) |
+| 7896 | `ChkEnemyFrenzy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkenemyfrenzy) |
+| 7911 | `ProcessEnemyData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processenemydata) |
+| 7918 | `CheckEndofBuffer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkendofbuffer) |
+| 7931 | `CheckRightBounds` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightbounds) |
+| 7950 | `CheckPageCtrlRow` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkpagectrlrow) |
+| 7967 | `PositionEnemyObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-positionenemyobj) |
+| 7983 | `CheckRightExtBounds` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightextbounds) |
+| 8006 | `CheckForEnemyGroup` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforenemygroup) |
+| 8014 | `BuzzyBeetleMutate` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-buzzybeetlemutate) |
+| 8020 | `StrID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strid) |
+| 8028 | `CheckFrenzyBuffer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkfrenzybuffer) |
+| 8035 | `StrFre` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strfre) |
+| 8037 | `InitEnemyObject` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyobject) |
+| 8041 | `ExEPar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exepar) |
+| 8043 | `DoGroup` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dogroup) |
+| 8046 | `ParseRow0e` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-parserow0e) |
+| 8064 | `NotUse` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notuse) |
+| 8066 | `CheckThreeBytes` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkthreebytes) |
+| 8072 | `Inc3B` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inc3b) |
+| 8073 | `Inc2B` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inc2b) |
+| 8080 | `CheckpointEnemyID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkpointenemyid) |
+| 8092 | `InitEnemyRoutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyroutines) |
+| 8158 | `NoInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noinitcode) |
+| 8163 | `InitGoomba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initgoomba) |
+| 8169 | `InitPodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpodoboo) |
+| 8181 | `InitRetainerObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initretainerobj) |
+| 8188 | `NormalXSpdData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-normalxspddata) |
+| 8191 | `InitNormalEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initnormalenemy) |
+| 8196 | `GetESpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getespd) |
+| 8197 | `SetESpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setespd) |
+| 8202 | `InitRedKoopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initredkoopa) |
+| 8210 | `HBroWalkingTimerData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hbrowalkingtimerdata) |
+| 8213 | `InitHammerBro` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inithammerbro) |
+| 8225 | `InitHorizFlySwimEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inithorizflyswimenemy) |
+| 8231 | `InitBloober` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbloober) |
+| 8234 | `SmallBBox` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smallbbox) |
+| 8239 | `InitRedPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initredptroopa) |
+| 8245 | `GetCent` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getcent) |
+| 8248 | `TallBBox` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-tallbbox) |
+| 8249 | `SetBBox` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbbox) |
+| 8252 | `InitVStf` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initvstf) |
+| 8259 | `InitBulletBill` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbulletbill) |
+| 8268 | `InitCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initcheepcheep) |
+| 8279 | `InitLakitu` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlakitu) |
+| 8283 | `SetupLakitu` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setuplakitu) |
+| 8289 | `KillLakitu` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killlakitu) |
+| 8295 | `PRDiffAdjustData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prdiffadjustdata) |
+| 8300 | `LakituAndSpinyHandler` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lakituandspinyhandler) |
+| 8308 | `ChkLak` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklak) |
+| 8318 | `ChkNoEn` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknoen) |
+| 8323 | `CreateL` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-createl) |
+| 8330 | `RetEOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-reteofs) |
+| 8331 | `ExLSHand` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exlshand) |
+| 8335 | `CreateSpiny` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-createspiny) |
+| 8355 | `DifLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-difloop) |
+| 8376 | `UsePosv` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useposv) |
+| 8377 | `SetSpSpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setspspd) |
+| 8383 | `SpinyRte` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spinyrte) |
+| 8390 | `ChpChpEx` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chpchpex) |
+| 8394 | `FirebarSpinSpdData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspinspddata) |
+| 8397 | `FirebarSpinDirData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspindirdata) |
+| 8400 | `InitLongFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlongfirebar) |
+| 8403 | `InitShortFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initshortfirebar) |
+| 8430 | `FlyCCXPositionData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccxpositiondata) |
+| 8436 | `FlyCCXSpeedData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccxspeeddata) |
+| 8441 | `FlyCCTimerData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flycctimerdata) |
+| 8444 | `InitFlyingCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initflyingcheepcheep) |
+| 8457 | `MaxCC` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxcc) |
+| 8473 | `GSeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gseed) |
+| 8483 | `RSeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rseed) |
+| 8503 | `D2XPos1` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-d2xpos1) |
+| 8513 | `D2XPos2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-d2xpos2) |
+| 8519 | `FinCCSt` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-finccst) |
+| 8529 | `InitBowser` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbowser) |
+| 8551 | `DuplicateEnemyObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-duplicateenemyobj) |
+| 8553 | `FSLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fsloop) |
+| 8569 | `FlmEx` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flmex) |
+| 8573 | `FlameYPosData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flameyposdata) |
+| 8576 | `FlameYMFAdderData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flameymfadderdata) |
+| 8579 | `InitBowserFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbowserflame) |
+| 8597 | `SetFrT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfrt) |
+| 8604 | `PutAtRightExtent` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putatrightextent) |
+| 8615 | `SpawnFromMouth` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnfrommouth) |
+| 8635 | `SetMF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmf) |
+| 8640 | `FinishFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-finishflame) |
+| 8653 | `FireworksXPosData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireworksxposdata) |
+| 8656 | `FireworksYPosData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireworksyposdata) |
+| 8659 | `InitFireworks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initfireworks) |
+| 8666 | `StarFChk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starfchk) |
+| 8697 | `ExitFWk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitfwk) |
+| 8701 | `Bitmasks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bitmasks) |
+| 8704 | `Enemy17YPosData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemy17yposdata) |
+| 8707 | `SwimCC_IDData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-swimcc_iddata) |
+| 8710 | `BulletBillCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillcheepcheep) |
+| 8722 | `ChkW2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkw2) |
+| 8726 | `Get17ID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-get17id) |
+| 8730 | `Set17ID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-set17id) |
+| 8736 | `GetRBit` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getrbit) |
+| 8738 | `ChkRBit` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrbit) |
+| 8746 | `AddFBit` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addfbit) |
+| 8755 | `DoBulletBills` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dobulletbills) |
+| 8757 | `BB_SLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bb_sloop) |
+| 8765 | `ExF17` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exf17) |
+| 8767 | `FireBulletBill` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebulletbill) |
+| 8780 | `HandleGroupEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlegroupenemies) |
+| 8792 | `PullID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pullid) |
+| 8793 | `SnglID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-snglid) |
+| 8798 | `SetYGp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setygp) |
+| 8808 | `CntGrp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cntgrp) |
+| 8809 | `GrLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-grloop) |
+| 8810 | `GSltLp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gsltlp) |
+| 8835 | `NextED` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nexted) |
+| 8839 | `InitPiranhaPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpiranhaplant) |
+| 8855 | `InitEnemyFrenzy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyfrenzy) |
+| 8872 | `NoFrenzyCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofrenzycode) |
+| 8877 | `EndFrenzy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endfrenzy) |
+| 8879 | `LakituChk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lakituchk) |
+| 8884 | `NextFSlot` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextfslot) |
+| 8893 | `InitJumpGPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initjumpgptroopa) |
+| 8898 | `TallBBox2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-tallbbox2) |
+| 8899 | `SetBBox2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbbox2) |
+| 8904 | `InitBalPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbalplatform) |
+| 8911 | `AlignP` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alignp) |
+| 8917 | `SetBPA` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbpa) |
+| 8925 | `InitDropPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initdropplatform) |
+| 8932 | `InitHoriPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inithoriplatform) |
+| 8939 | `InitVertPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initvertplatform) |
+| 8947 | `SetYO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setyo) |
+| 8955 | `CommonPlatCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-commonplatcode) |
+| 8957 | `SPBBox` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spbbox) |
+| 8964 | `CasPBB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-caspbb) |
+| 8969 | `LargeLiftUp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeliftup) |
+| 8973 | `LargeLiftDown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeliftdown) |
+| 8976 | `LargeLiftBBox` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeliftbbox) |
+| 8981 | `PlatLiftUp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platliftup) |
+| 8990 | `PlatLiftDown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platliftdown) |
+| 8998 | `CommonSmallLift` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-commonsmalllift) |
+| 9007 | `PlatPosDataLow` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platposdatalow) |
+| 9010 | `PlatPosDataHigh` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platposdatahigh) |
+| 9013 | `PosPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posplatform) |
+| 9025 | `EndOfEnemyInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofenemyinitcode) |
+| 9030 | `RunEnemyObjectsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runenemyobjectscore) |
+| 9038 | `JmpEO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jmpeo) |
+| 9080 | `NoRunCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noruncode) |
+| 9085 | `RunRetainerObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runretainerobj) |
+| 9092 | `RunNormalEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runnormalenemies) |
+| 9105 | `SkipMove` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipmove) |
+| 9107 | `EnemyMovementSubs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemymovementsubs) |
+| 9135 | `NoMoveCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nomovecode) |
+| 9140 | `RunBowserFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbowserflame) |
+| 9150 | `RunFirebarObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfirebarobj) |
+| 9156 | `RunSmallPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runsmallplatform) |
+| 9168 | `RunLargePlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runlargeplatform) |
+| 9176 | `SkipPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skippt) |
+| 9182 | `LargePlatformSubroutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeplatformsubroutines) |
+| 9198 | `EraseEnemyObject` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eraseenemyobject) |
+| 9212 | `MovePodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movepodoboo) |
+| 9224 | `PdbM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pdbm) |
+| 9229 | `HammerThrowTmrData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerthrowtmrdata) |
+| 9232 | `XSpeedAdderData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xspeedadderdata) |
+| 9235 | `RevivedXSpeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-revivedxspeed) |
+| 9238 | `ProcHammerBro` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prochammerbro) |
+| 9243 | `ChkJH` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkjh) |
+| 9260 | `DecHT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decht) |
+| 9263 | `HammerBroJumpLData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrojumpldata) |
+| 9266 | `HammerBroJumpCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrojumpcode) |
+| 9285 | `SetHJ` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethj) |
+| 9295 | `HJump` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hjump) |
+| 9301 | `MoveHammerBroXDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movehammerbroxdir) |
+| 9307 | `Shimmy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shimmy) |
+| 9316 | `SetShim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setshim) |
+| 9318 | `MoveNormalEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movenormalenemy) |
+| 9336 | `FallE` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-falle) |
+| 9347 | `MEHor` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mehor) |
+| 9349 | `SlowM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slowm) |
+| 9350 | `SteadM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-steadm) |
+| 9355 | `AddHS` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addhs) |
+| 9363 | `ReviveStunned` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-revivestunned) |
+| 9377 | `SetRSpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrspd) |
+| 9381 | `MoveDefeatedEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movedefeatedenemy) |
+| 9385 | `ChkKillGoomba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkkillgoomba) |
+| 9392 | `NKGmba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nkgmba) |
+| 9396 | `MoveJumpingEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movejumpingenemy) |
+| 9402 | `ProcMoveRedPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmoveredptroopa) |
+| 9414 | `NoIncPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noincpt) |
+| 9416 | `MoveRedPTUpOrDown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptupordown) |
+| 9421 | `MovPTDwn` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movptdwn) |
+| 9427 | `MoveFlyGreenPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveflygreenptroopa) |
+| 9438 | `YSway` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ysway) |
+| 9443 | `NoMGPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nomgpt) |
+| 9445 | `XMoveCntr_GreenPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xmovecntr_greenptroopa) |
+| 9448 | `XMoveCntr_Platform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xmovecntr_platform) |
+| 9460 | `NoIncXM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noincxm) |
+| 9461 | `IncPXM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incpxm) |
+| 9463 | `DecSeXM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decsexm) |
+| 9468 | `MoveWithXMCntrs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movewithxmcntrs) |
+| 9481 | `XMRight` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xmright) |
+| 9490 | `BlooberBitmasks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blooberbitmasks) |
+| 9493 | `MoveBloober` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movebloober) |
+| 9506 | `FBLeft` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fbleft) |
+| 9510 | `SBMDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sbmdir) |
+| 9512 | `BlooberSwim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blooberswim) |
+| 9520 | `SwimX` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-swimx) |
+| 9532 | `LeftSwim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftswim) |
+| 9542 | `MoveDefeatedBloober` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movedefeatedbloober) |
+| 9545 | `ProcSwimmingB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procswimmingb) |
+| 9565 | `BSwimE` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bswime) |
+| 9567 | `SlowSwim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slowswim) |
+| 9579 | `NoSSw` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nossw) |
+| 9581 | `ChkForFloatdown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforfloatdown) |
+| 9585 | `Floatdown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floatdown) |
+| 9590 | `NoFD` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofd) |
+| 9592 | `ChkNearPlayer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknearplayer) |
+| 9603 | `MoveBulletBill` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movebulletbill) |
+| 9608 | `NotDefB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notdefb) |
+| 9616 | `SwimCCXMoveData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-swimccxmovedata) |
+| 9620 | `MoveSwimmingCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveswimmingcheepcheep) |
+| 9625 | `CCSwim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ccswim) |
+| 9660 | `CCSwimUpwards` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ccswimupwards) |
+| 9671 | `ChkSwimYPos` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkswimypos) |
+| 9682 | `YPDiff` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ypdiff) |
+| 9686 | `ExSwCC` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exswcc) |
+| 9703 | `FirebarPosLookupTbl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarposlookuptbl) |
+| 9716 | `FirebarMirrorData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarmirrordata) |
+| 9719 | `FirebarTblOffsets` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebartbloffsets) |
+| 9723 | `FirebarYPos` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarypos) |
+| 9726 | `ProcFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procfirebar) |
+| 9737 | `SusFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-susfbar) |
+| 9745 | `SkpFSte` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skpfste) |
+| 9748 | `SetupGFB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupgfb) |
+| 9766 | `SetMFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmfbar) |
+| 9769 | `DrawFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfbar) |
+| 9778 | `NextFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextfbar) |
+| 9782 | `SkipFBar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipfbar) |
+| 9784 | `DrawFirebar_Collision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar_collision) |
+| 9793 | `AddHA` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addha) |
+| 9803 | `SubtR1` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-subtr1) |
+| 9805 | `ChkFOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfofs) |
+| 9809 | `VAHandl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vahandl) |
+| 9817 | `AddVA` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addva) |
+| 9819 | `SetVFbr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvfbr) |
+| 9822 | `FirebarCollision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarcollision) |
+| 9838 | `AdjSm` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-adjsm) |
+| 9844 | `BigJp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bigjp) |
+| 9845 | `FBCLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fbcloop) |
+| 9851 | `ChkVFBD` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkvfbd) |
+| 9866 | `ChkFBCl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfbcl) |
+| 9868 | `Chk2Ofs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2ofs) |
+| 9877 | `ChgSDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgsdir) |
+| 9882 | `SetSDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setsdir) |
+| 9889 | `NoColFB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocolfb) |
+| 9896 | `GetFirebarPosition` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getfirebarposition) |
+| 9904 | `GetHAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethadder) |
+| 9922 | `GetVAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getvadder) |
+| 9941 | `PRandomSubtracter` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prandomsubtracter) |
+| 9944 | `FlyCCBPriority` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccbpriority) |
+| 9947 | `MoveFlyingCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveflyingcheepcheep) |
+| 9954 | `FlyCC` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flycc) |
+| 9971 | `AddCCF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addccf) |
+| 9982 | `BPGet` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bpget) |
+| 9990 | `LakituDiffAdj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lakitudiffadj) |
+| 9993 | `MoveLakitu` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movelakitu) |
+| 9998 | `ChkLS` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkls) |
+| 10005 | `Fr12S` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fr12s) |
+| 10008 | `LdLDa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ldlda) |
+| 10013 | `SetLSpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlspd) |
+| 10024 | `SetLMov` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlmov) |
+| 10027 | `PlayerLakituDiff` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerlakitudiff) |
+| 10037 | `ChkLakDif` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklakdif) |
+| 10053 | `SetLMovD` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlmovd) |
+| 10055 | `ChkPSpeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpspeed) |
+| 10073 | `ChkSpinyO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkspinyo) |
+| 10078 | `ChkEmySpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkemyspd) |
+| 10081 | `SubDifAdj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-subdifadj) |
+| 10083 | `SPixelLak` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spixellak) |
+| 10087 | `ExMoveLak` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exmovelak) |
+| 10092 | `BridgeCollapseData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridgecollapsedata) |
+| 10098 | `BridgeCollapse` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridgecollapse) |
+| 10111 | `SetM2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setm2) |
+| 10116 | `MoveD_Bowser` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moved_bowser) |
+| 10120 | `RemoveBridge` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-removebridge) |
+| 10152 | `NoBFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobfall) |
+| 10156 | `PRandomRange` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prandomrange) |
+| 10159 | `RunBowser` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbowser) |
+| 10167 | `KillAllEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killallenemies) |
+| 10169 | `KillLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killloop) |
+| 10176 | `BowserControl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowsercontrol) |
+| 10182 | `ChkMouth` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmouth) |
+| 10185 | `FeetTmr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-feettmr) |
+| 10192 | `ResetMDr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetmdr) |
+| 10197 | `B_FaceP` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-b_facep) |
+| 10211 | `GetPRCmp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getprcmp) |
+| 10222 | `GetDToO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getdtoo) |
+| 10237 | `CompDToO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-compdtoo) |
+| 10240 | `HammerChk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerchk) |
+| 10250 | `SetHmrTmr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethmrtmr) |
+| 10258 | `SkipToFB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skiptofb) |
+| 10259 | `MakeBJump` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-makebjump) |
+| 10265 | `ChkFireB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfireb) |
+| 10270 | `SpawnFBr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnfbr) |
+| 10283 | `SetFBTmr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfbtmr) |
+| 10289 | `BowserGfxHandler` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowsergfxhandler) |
+| 10296 | `CopyFToR` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-copyftor) |
+| 10321 | `ExBGfxH` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exbgfxh) |
+| 10323 | `ProcessBowserHalf` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processbowserhalf) |
+| 10337 | `FlameTimerData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flametimerdata) |
+| 10340 | `SetFlameTimer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setflametimer) |
+| 10347 | `ExFl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exfl) |
+| 10349 | `ProcBowserFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procbowserflame) |
+| 10356 | `SFlmX` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sflmx) |
+| 10374 | `SetGfxF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setgfxf) |
+| 10384 | `FlmeAt` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flmeat) |
+| 10388 | `DrawFlameLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawflameloop) |
+| 10417 | `M3FOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-m3fofs) |
+| 10423 | `M2FOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-m2fofs) |
+| 10429 | `M1FOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-m1fofs) |
+| 10434 | `ExFlmeD` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exflmed) |
+| 10438 | `RunFireworks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfireworks) |
+| 10447 | `SetupExpl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupexpl) |
+| 10457 | `FireworksSoundScore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireworkssoundscore) |
+| 10468 | `StarFlagYPosAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starflagyposadder) |
+| 10471 | `StarFlagXPosAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starflagxposadder) |
+| 10474 | `StarFlagTileData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starflagtiledata) |
+| 10477 | `RunStarFlagObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runstarflagobj) |
+| 10491 | `GameTimerFireworks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametimerfireworks) |
+| 10503 | `SetFWC` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfwc) |
+| 10506 | `IncrementSFTask1` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incrementsftask1) |
+| 10509 | `StarFlagExit` | T19/T18: `src/game/endgame_objects.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-starflagexit) |
+| 10512 | `AwardGameTimerPoints` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-awardgametimerpoints) |
+| 10522 | `NoTTick` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nottick) |
+| 10529 | `EndAreaPoints` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endareapoints) |
+| 10534 | `ELPGive` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-elpgive) |
+| 10543 | `RaiseFlagSetoffFWorks` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-raiseflagsetofffworks) |
+| 10549 | `SetoffF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setofff) |
+| 10555 | `DrawStarFlag` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawstarflag) |
+| 10559 | `DSFLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dsfloop) |
+| 10580 | `DrawFlagSetTimer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawflagsettimer) |
+| 10585 | `IncrementSFTask2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incrementsftask2) |
+| 10589 | `DelayToAreaEnd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-delaytoareaend) |
+| 10596 | `StarFlagExit2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starflagexit2) |
+| 10602 | `MovePiranhaPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movepiranhaplant) |
+| 10619 | `ChkPlayerNearPipe` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkplayernearpipe) |
+| 10624 | `ReversePlantSpeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-reverseplantspeed) |
+| 10632 | `SetupToMovePPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setuptomovepplant) |
+| 10638 | `RiseFallPiranhaPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-risefallpiranhaplant) |
+| 10656 | `PutinPipe` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putinpipe) |
+| 10664 | `FirebarSpin` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspin) |
+| 10677 | `SpinCounterClockwise` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spincounterclockwise) |
+| 10692 | `BalancePlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatform) |
+| 10697 | `DoBPl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dobpl) |
+| 10701 | `CheckBalPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbalplatform) |
+| 10709 | `ChkForFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforfall) |
+| 10720 | `MakePlatformFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-makeplatformfall) |
+| 10723 | `ChkOtherForFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkotherforfall) |
+| 10733 | `ChkToMoveBalPlat` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktomovebalplat) |
+| 10750 | `ColFlg` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colflg) |
+| 10752 | `PlatUp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platup) |
+| 10754 | `PlatSt` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platst) |
+| 10756 | `PlatDn` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platdn) |
+| 10758 | `DoOtherPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dootherplatform) |
+| 10771 | `DrawEraseRope` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-draweraserope) |
+| 10796 | `EraseR1` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eraser1) |
+| 10800 | `OtherRope` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-otherrope) |
+| 10819 | `EraseR2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eraser2) |
+| 10822 | `EndRp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endrp) |
+| 10828 | `ExitRp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitrp) |
+| 10831 | `SetupPlatformRope` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupplatformrope) |
+| 10840 | `GetLRp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getlrp) |
+| 10857 | `GetHRp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethrp) |
+| 10883 | `ExPRp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exprp) |
+| 10885 | `InitPlatformFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initplatformfall) |
+| 10898 | `StopPlatforms` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stopplatforms) |
+| 10904 | `PlatformFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platformfall) |
+| 10916 | `ExPF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-expf) |
+| 10921 | `YMovingPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ymovingplatform) |
+| 10933 | `SkipIY` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipiy) |
+| 10935 | `ChkYCenterPos` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkycenterpos) |
+| 10941 | `YMDown` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ymdown) |
+| 10943 | `ChkYPCollision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkypcollision) |
+| 10947 | `ExYPl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exypl) |
+| 10952 | `XMovingPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xmovingplatform) |
+| 10959 | `PositionPlayerOnHPlat` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-positionplayeronhplat) |
+| 10969 | `PPHSubt` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pphsubt) |
+| 10970 | `SetPVar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpvar) |
+| 10973 | `ExXMP` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxmp) |
+| 10977 | `DropPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dropplatform) |
+| 10982 | `ExDPl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdpl) |
+| 10987 | `RightPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rightplatform) |
+| 10995 | `ExRPl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exrpl) |
+| 10999 | `MoveLargeLiftPlat` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movelargeliftplat) |
+| 11003 | `MoveSmallPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movesmallplatform) |
+| 11007 | `MoveLiftPlatforms` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveliftplatforms) |
+| 11019 | `ChkSmallPlatCollision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chksmallplatcollision) |
+| 11023 | `ExLiftP` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exliftp) |
+| 11031 | `OffscreenBoundsCheck` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-offscreenboundscheck) |
+| 11041 | `LimitB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-limitb) |
+| 11042 | `ExtendLB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extendlb) |
+| 11074 | `TooFar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-toofar) |
+| 11075 | `ExScrnBd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exscrnbd) |
+| 11085 | `FireballEnemyCollision` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-fireballenemycollision) |
+| 11101 | `FireballEnemyCDLoop` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-fireballenemycdloop) |
+| 11115 | `GoombaDie` | T17: `src/game/world/collision.c` | audited; mismatch | [T24 S1: D2](m2-t24-s1-node-verification.md#node-goombadie) |
+| 11120 | `NotGoomba` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-notgoomba) |
+| 11135 | `NoFToECol` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-noftoecol) |
+| 11141 | `ExitFBallEnemy` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-exitfballenemy) |
+| 11145 | `BowserIdentities` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-bowseridentities) |
+| 11148 | `HandleEnemyFBallCol` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-handleenemyfballcol) |
+| 11160 | `ChkBuzzyBeetle` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-chkbuzzybeetle) |
+| 11167 | `HurtBowser` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-hurtbowser) |
+| 11182 | `SetDBSte` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-setdbste) |
+| 11189 | `ChkOtherEnemies` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-chkotherenemies) |
+| 11197 | `ShellOrBlockDefeat` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-shellorblockdefeat) |
+| 11204 | `StnE` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-stne) |
+| 11215 | `GoombaPoints` | T17: `src/game/world/collision.c` | audited; mismatch | [T24 S1: D2](m2-t24-s1-node-verification.md#node-goombapoints) |
+| 11220 | `EnemySmackScore` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-enemysmackscore) |
+| 11224 | `ExHCF` | T17: `src/game/world/collision.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-exhcf) |
+| 11228 | `PlayerHammerCollision` | T17: `src/game/objects.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-playerhammercollision) |
+| 11256 | `ClHCol` | T17: `src/game/objects.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-clhcol) |
+| 11258 | `ExPHC` | T17: `src/game/objects.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-exphc) |
+| 11262 | `HandlePowerUpCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlepowerupcollision) |
+| 11279 | `Shroom_Flower_PUp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shroom_flower_pup) |
+| 11292 | `SetFor1Up` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfor1up) |
+| 11297 | `UpToSuper` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-uptosuper) |
+| 11302 | `UpToFiery` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-uptofiery) |
+| 11305 | `NoPUp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nopup) |
+| 11309 | `ResidualXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualxspddata) |
+| 11312 | `KickedShellXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-kickedshellxspddata) |
+| 11315 | `DemotedKoopaXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demotedkoopaxspddata) |
+| 11318 | `PlayerEnemyCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerenemycollision) |
+| 11339 | `NoPECol` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nopecol) |
+| 11341 | `CheckForPUpCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforpupcollision) |
+| 11346 | `EColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ecoll) |
+| 11350 | `KickedShellPtsData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-kickedshellptsdata) |
+| 11353 | `HandlePECollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlepecollisions) |
+| 11398 | `KSPts` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-kspts) |
+| 11399 | `ExPEC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-expec) |
+| 11401 | `ChkForPlayerInjury` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforplayerinjury) |
+| 11405 | `ChkInj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkinj) |
+| 11413 | `ChkETmrs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chketmrs) |
+| 11421 | `TInjE` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-tinje) |
+| 11426 | `InjurePlayer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-injureplayer) |
+| 11430 | `ForceInjury` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forceinjury) |
+| 11440 | `SetKRout` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setkrout) |
+| 11441 | `SetPRout` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setprout) |
+| 11448 | `ExInjColRoutines` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exinjcolroutines) |
+| 11452 | `KillPlayer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killplayer) |
+| 11461 | `StompedEnemyPtsData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stompedenemyptsdata) |
+| 11464 | `EnemyStomped` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemystomped) |
+| 11490 | `EnemyStompedPts` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemystompedpts) |
+| 11506 | `ChkForDemoteKoopa` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfordemotekoopa) |
+| 11521 | `RevivalRateData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-revivalratedata) |
+| 11524 | `HandleStompedShellE` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlestompedshelle) |
+| 11536 | `SBnce` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sbnce) |
+| 11540 | `ChkEnemyFaceRight` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkenemyfaceright) |
+| 11545 | `LInj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-linj) |
+| 11549 | `EnemyFacePlayer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyfaceplayer) |
+| 11554 | `SFcRt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sfcrt) |
+| 11558 | `SetupFloateyNumber` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupfloateynumber) |
+| 11566 | `ExSFN` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exsfn) |
+| 11571 | `SetBitsMask` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbitsmask) |
+| 11574 | `ClearBitsMask` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearbitsmask) |
+| 11577 | `EnemiesCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemiescollision) |
+| 11595 | `ECLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ecloop) |
+| 11629 | `YesEC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yesec) |
+| 11632 | `NoEnemyCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noenemycollision) |
+| 11637 | `ReadyNextEnemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readynextenemy) |
+| 11644 | `ExitECRoutine` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitecroutine) |
+| 11648 | `ProcEnemyCollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procenemycollisions) |
+| 11667 | `ShellCollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shellcollisions) |
+| 11680 | `ExitProcessEColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitprocessecoll) |
+| 11683 | `ProcSecondEnemyColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procsecondenemycoll) |
+| 11701 | `MoveEOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveeofs) |
+| 11707 | `EnemyTurnAround` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyturnaround) |
+| 11721 | `RXSpd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rxspd) |
+| 11729 | `ExTA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exta) |
+| 11734 | `LargePlatformCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeplatformcollision) |
+| 11748 | `ChkForPlayerC_LargeP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforplayerc_largep) |
+| 11762 | `ExLPC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exlpc) |
+| 11768 | `SmallPlatformCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smallplatformcollision) |
+| 11777 | `ChkSmallPlatLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chksmallplatloop) |
+| 11788 | `MoveBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveboundbox) |
+| 11799 | `ExSPC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exspc) |
+| 11804 | `ProcSPlatCollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procsplatcollisions) |
+| 11807 | `ProcLPlatCollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-proclplatcollisions) |
+| 11818 | `ChkForTopCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfortopcollision) |
+| 11834 | `SetCollisionFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcollisionflag) |
+| 11841 | `PlatformSideCollisions` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platformsidecollisions) |
+| 11855 | `SideC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidec) |
+| 11856 | `NoSideC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nosidec) |
+| 11861 | `PlayerPosSPlatData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerpossplatdata) |
+| 11864 | `PositionPlayerOnS_Plat` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-positionplayerons_plat) |
+| 11871 | `PositionPlayerOnVPlat` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-positionplayeronvplat) |
+| 11888 | `ExPlPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-explpos) |
+| 11892 | `CheckPlayerVertical` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkplayervertical) |
+| 11901 | `ExCPV` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excpv) |
+| 11905 | `GetEnemyBoundBoxOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyboundboxofs) |
+| 11908 | `GetEnemyBoundBoxOfsArg` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyboundboxofsarg) |
+| 11924 | `PlayerBGUpperExtent` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerbgupperextent) |
+| 11927 | `PlayerBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerbgcollision) |
+| 11942 | `SetFallS` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfalls) |
+| 11943 | `SetPSte` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpste) |
+| 11944 | `ChkOnScr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkonscr) |
+| 11952 | `ExPBGCol` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-expbgcol) |
+| 11954 | `ChkCollSize` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkcollsize) |
+| 11964 | `GBBAdr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gbbadr) |
+| 11971 | `HeadChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-headchk) |
+| 11992 | `SolidOrClimb` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solidorclimb) |
+| 11997 | `NYSpd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nyspd) |
+| 12000 | `DoFootCheck` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dofootcheck) |
+| 12019 | `AwardTouchedCoin` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-awardtouchedcoin) |
+| 12022 | `ChkFootMTile` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfootmtile) |
+| 12030 | `ContChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contchk) |
+| 12040 | `LandPlyr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landplyr) |
+| 12049 | `InitSteP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initstep) |
+| 12052 | `DoPlayerSideCheck` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doplayersidecheck) |
+| 12059 | `SideCheckLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidecheckloop) |
+| 12075 | `BHalf` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bhalf) |
+| 12086 | `ExSCH` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exsch) |
+| 12088 | `CheckSideMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checksidemtiles) |
+| 12094 | `ContSChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contschk) |
+| 12101 | `ChkPBtm` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpbtm) |
+| 12111 | `PipeDwnS` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pipedwns) |
+| 12115 | `PlyrPipe` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-plyrpipe) |
+| 12124 | `SetCATmr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcatmr) |
+| 12126 | `ChkGERtn` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkgertn) |
+| 12140 | `StopPlayerMove` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stopplayermove) |
+| 12142 | `ExCSM` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excsm) |
+| 12144 | `AreaChangeTimerData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areachangetimerdata) |
+| 12147 | `HandleCoinMetatile` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlecoinmetatile) |
+| 12152 | `HandleAxeMetatile` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleaxemetatile) |
+| 12159 | `ErACM` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eracm) |
+| 12169 | `ClimbXPosAdder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbxposadder) |
+| 12172 | `ClimbPLocAdder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbplocadder) |
+| 12175 | `FlagpoleYPosData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpoleyposdata) |
+| 12178 | `HandleClimbing` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleclimbing) |
+| 12184 | `ExHC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exhc) |
+| 12186 | `ChkForFlagpole` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforflagpole) |
+| 12192 | `FlagpoleCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolecollision) |
+| 12212 | `ChkFlagpoleYPosLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkflagpoleyposloop) |
+| 12217 | `MtchF` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mtchf) |
+| 12218 | `RunFR` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfr) |
+| 12222 | `VineCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vinecollision) |
+| 12231 | `PutPlayerOnVine` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putplayeronvine) |
+| 12244 | `SetVXPl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvxpl) |
+| 12259 | `ExPVne` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-expvne) |
+| 12263 | `ChkInvisibleMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkinvisiblemtiles) |
+| 12267 | `ExCInvT` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excinvt) |
+| 12273 | `ChkForLandJumpSpring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforlandjumpspring) |
+| 12284 | `ExCJSp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excjsp) |
+| 12286 | `ChkJumpspringMetatiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkjumpspringmetatiles) |
+| 12292 | `JSFnd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jsfnd) |
+| 12293 | `NoJSFnd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojsfnd) |
+| 12295 | `HandlePipeEntry` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlepipeentry) |
+| 12326 | `GetWNum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getwnum) |
+| 12341 | `ExPipeE` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-expipee) |
+| 12343 | `ImpedePlayerMove` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-impedeplayermove) |
+| 12354 | `RImpd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rimpd) |
+| 12358 | `NXSpd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nxspd) |
+| 12365 | `PlatF` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platf) |
+| 12372 | `ExIPM` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exipm) |
+| 12380 | `SolidMTileUpperExt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solidmtileupperext) |
+| 12383 | `CheckForSolidMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforsolidmtiles) |
+| 12388 | `ClimbMTileUpperExt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbmtileupperext) |
+| 12391 | `CheckForClimbMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforclimbmtiles) |
+| 12396 | `CheckForCoinMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforcoinmtiles) |
+| 12403 | `CoinSd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinsd) |
+| 12407 | `GetMTileAttrib` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmtileattrib) |
+| 12415 | `ExEBG` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exebg) |
+| 12420 | `EnemyBGCStateData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcstatedata) |
+| 12423 | `EnemyBGCXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcxspddata) |
+| 12426 | `EnemyToBGCollisionDet` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemytobgcollisiondet) |
+| 12439 | `DoIDCheckBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doidcheckbgcoll) |
+| 12443 | `HBChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hbchk) |
+| 12446 | `CInvu` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cinvu) |
+| 12452 | `YesIn` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yesin) |
+| 12455 | `NoEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noetobgcollision) |
+| 12461 | `HandleEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleetobgcollision) |
+| 12476 | `GiveOEPoints` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-giveoepoints) |
+| 12480 | `ChkToStunEnemies` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktostunenemies) |
+| 12489 | `Demote` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demote) |
+| 12491 | `SetStun` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setstun) |
+| 12503 | `SetWYSpd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setwyspd) |
+| 12504 | `SetNotW` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setnotw) |
+| 12509 | `ChkBBill` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbbill) |
+| 12515 | `NoCDirF` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocdirf) |
+| 12518 | `ExEBGChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exebgchk) |
+| 12523 | `LandEnemyProperly` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyproperly) |
+| 12535 | `SChkA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schka) |
+| 12537 | `ChkLandedEnemyState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklandedenemystate) |
+| 12552 | `SetForStn` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setforstn) |
+| 12556 | `ExSteChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exstechk) |
+| 12558 | `ProcEnemyDirection` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procenemydirection) |
+| 12571 | `InvtD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invtd) |
+| 12575 | `CNwCDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cnwcdir) |
+| 12580 | `LandEnemyInitState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyinitstate) |
+| 12589 | `NMovShellFallBit` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nmovshellfallbit) |
+| 12597 | `ChkForRedKoopa` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforredkoopa) |
+| 12603 | `Chk2MSBSt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2msbst) |
+| 12610 | `GetSteFromD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getstefromd) |
+| 12611 | `SetD6Ste` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setd6ste) |
+| 12617 | `DoEnemySideCheck` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doenemysidecheck) |
+| 12624 | `SdeCLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sdecloop) |
+| 12632 | `NextSdeC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextsdec) |
+| 12636 | `ExESdeC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exesdec) |
+| 12638 | `ChkForBump_HammerBroJ` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforbump_hammerbroj) |
+| 12646 | `NoBump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobump) |
+| 12654 | `InvEnemyDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invenemydir) |
+| 12660 | `PlayerEnemyDiff` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerenemydiff) |
+| 12671 | `EnemyLanding` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemylanding) |
+| 12679 | `SubtEnemyYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-subtenemyypos) |
+| 12686 | `EnemyJump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyjump) |
+| 12701 | `DoSide` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doside) |
+| 12705 | `HammerBroBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrobgcoll) |
+| 12711 | `KillEnemyAboveBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemyaboveblock) |
+| 12717 | `UnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-underhammerbro) |
+| 12726 | `NoUnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nounderhammerbro) |
+| 12732 | `ChkUnderEnemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkunderenemy) |
+| 12737 | `ChkForNonSolids` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfornonsolids) |
+| 12747 | `NSFnd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nsfnd) |
+| 12751 | `FireballBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballbgcollision) |
+| 12772 | `ClearBounceFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearbounceflag) |
+| 12777 | `InitFireballExplode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initfireballexplode) |
+| 12791 | `BoundBoxCtrlData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-boundboxctrldata) |
+| 12805 | `GetFireballBoundBox` | T20/T16: `src/game/fireball/fireball_core.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballboundbox) |
+| 12813 | `GetMiscBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscboundbox) |
+| 12819 | `FBallB` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fballb) |
+| 12822 | `GetEnemyBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyboundbox) |
+| 12828 | `SmallPlatformBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smallplatformboundbox) |
+| 12833 | `GetMaskedOffScrBits` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmaskedoffscrbits) |
+| 12844 | `CMBits` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cmbits) |
+| 12850 | `LargePlatformBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeplatformboundbox) |
+| 12857 | `SetupEOffsetFBBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupeoffsetfbbox) |
+| 12866 | `MoveBoundBoxOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveboundboxoffscreen) |
+| 12878 | `BoundingBoxCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-boundingboxcore) |
+| 12916 | `CheckRightScreenBBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightscreenbbox) |
+| 12935 | `SORte` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sorte) |
+| 12936 | `NoOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noofs) |
+| 12939 | `CheckLeftScreenBBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkleftscreenbbox) |
+| 12948 | `SOLft` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solft) |
+| 12949 | `NoOfs2` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noofs2) |
+| 12956 | `PlayerCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playercollisioncore) |
+| 12959 | `SprObjectCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprobjectcollisioncore) |
+| 12964 | `CollisionCoreLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-collisioncoreloop) |
+| 12979 | `SecondBoxVerticalChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondboxverticalchk) |
+| 12989 | `FirstBoxGreater` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstboxgreater) |
+| 13002 | `NoCollisionFound` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocollisionfound) |
+| 13007 | `CollisionFound` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-collisionfound) |
+| 13023 | `BlockBufferChk_Enemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_enemy) |
+| 13032 | `ResidualMiscObjectCode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualmiscobjectcode) |
+| 13040 | `BlockBufferChk_FBall` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_fball) |
+| 13046 | `ResJmpM` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resjmpm) |
+| 13047 | `BBChk_E` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bbchk_e) |
+| 13052 | `BlockBufferAdderData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferadderdata) |
+| 13055 | `BlockBuffer_X_Adder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffer_x_adder) |
+| 13061 | `BlockBuffer_Y_Adder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffer_y_adder) |
+| 13067 | `BlockBufferColli_Feet` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_feet) |
+| 13070 | `BlockBufferColli_Head` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_head) |
+| 13074 | `BlockBufferColli_Side` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_side) |
+| 13078 | `BlockBufferCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercollision) |
+| 13111 | `RetXC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-retxc) |
+| 13112 | `RetYC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-retyc) |
+| 13126 | `VineYPosAdder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineyposadder) |
+| 13129 | `DrawVine` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawvine) |
+| 13156 | `VineTL` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vinetl) |
+| 13169 | `SkpVTop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skpvtop) |
+| 13170 | `ChkFTop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkftop) |
+| 13177 | `NextVSp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextvsp) |
+| 13187 | `SixSpriteStacker` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sixspritestacker) |
+| 13189 | `StkLp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stklp) |
+| 13203 | `FirstSprXPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprxpos) |
+| 13206 | `FirstSprYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprypos) |
+| 13209 | `SecondSprXPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprxpos) |
+| 13212 | `SecondSprYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprypos) |
+| 13215 | `FirstSprTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprtilenum) |
+| 13218 | `SecondSprTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprtilenum) |
+| 13221 | `HammerSprAttrib` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammersprattrib) |
+| 13224 | `DrawHammer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawhammer) |
+| 13232 | `ForceHPose` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forcehpose) |
+| 13234 | `GetHPose` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethpose) |
+| 13239 | `RenderH` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderh) |
+| 13268 | `NoHOffscr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohoffscr) |
+| 13277 | `FlagpoleScoreNumTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescorenumtiles) |
+| 13284 | `FlagpoleGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolegfxhandler) |
+| 13326 | `ChkFlagOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkflagoffscreen) |
+| 13335 | `MoveSixSpritesOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movesixspritesoffscreen) |
+| 13338 | `DumpSixSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpsixspr) |
+| 13342 | `DumpFourSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpfourspr) |
+| 13345 | `DumpThreeSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpthreespr) |
+| 13348 | `DumpTwoSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumptwospr) |
+| 13352 | `ExitDumpSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdumpspr) |
+| 13357 | `DrawLargePlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawlargeplatform) |
+| 13374 | `ShrinkPlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shrinkplatform) |
+| 13377 | `SetLast2Platform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlast2platform) |
+| 13386 | `SetPlatformTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setplatformtilenum) |
+| 13402 | `SChk2` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk2) |
+| 13408 | `SChk3` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk3) |
+| 13414 | `SChk4` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk4) |
+| 13420 | `SChk5` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk5) |
+| 13426 | `SChk6` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk6) |
+| 13431 | `SLChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slchk) |
+| 13435 | `ExDLPl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdlpl) |
+| 13439 | `DrawFloateyNumber_Coin` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfloateynumber_coin) |
+| 13444 | `NotRsNum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notrsnum) |
+| 13460 | `JumpingCoinTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpingcointiles) |
+| 13463 | `JCoinGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jcoingfxhandler) |
+| 13489 | `ExJCGfx` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exjcgfx) |
+| 13500 | `PowerUpGfxTable` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-powerupgfxtable) |
+| 13506 | `PowerUpAttributes` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-powerupattributes) |
+| 13509 | `DrawPowerUp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawpowerup) |
+| 13530 | `PUpDrawLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pupdrawloop) |
+| 13555 | `FlipPUpRightSide` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flippuprightside) |
+| 13562 | `PUpOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pupofs) |
+| 13576 | `EnemyGraphicsTable` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemygraphicstable) |
+| 13621 | `EnemyGfxTableOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemygfxtableoffsets) |
+| 13627 | `EnemyAttributeData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyattributedata) |
+| 13633 | `EnemyAnimTimingBMask` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyanimtimingbmask) |
+| 13636 | `JumpspringFrameOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringframeoffsets) |
+| 13639 | `EnemyGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemygfxhandler) |
+| 13661 | `CheckForRetainerObj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforretainerobj) |
+| 13674 | `CheckForBulletBillCV` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforbulletbillcv) |
+| 13682 | `SBBAt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sbbat) |
+| 13687 | `CheckForJumpspring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforjumpspring) |
+| 13694 | `CheckForPodoboo` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforpodoboo) |
+| 13704 | `CheckBowserGfxFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbowsergfxflag) |
+| 13711 | `SBwsrGfxOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sbwsrgfxofs) |
+| 13713 | `CheckForGoomba` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforgoomba) |
+| 13722 | `GmbaAnim` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gmbaanim) |
+| 13732 | `CheckBowserFront` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbowserfront) |
+| 13746 | `ChkFrontSte` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfrontste) |
+| 13750 | `FlipBowserOver` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flipbowserover) |
+| 13753 | `DrawBowser` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbowser) |
+| 13756 | `CheckBowserRear` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbowserrear) |
+| 13761 | `ChkRearSte` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrearste) |
+| 13770 | `CheckForSpiny` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforspiny) |
+| 13780 | `NotEgg` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notegg) |
+| 13782 | `CheckForLakitu` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforlakitu) |
+| 13792 | `NoLAFr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nolafr) |
+| 13794 | `CheckUpsideDownShell` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkupsidedownshell) |
+| 13807 | `CheckRightSideUpShell` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightsideupshell) |
+| 13819 | `CheckForDefdGoomba` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkfordefdgoomba) |
+| 13829 | `CheckForHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforhammerbro) |
+| 13841 | `CheckForBloober` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforbloober) |
+| 13856 | `CheckToAnimateEnemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checktoanimateenemy) |
+| 13878 | `CheckForSecondFrame` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforsecondframe) |
+| 13883 | `CheckAnimationStop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkanimationstop) |
+| 13893 | `CheckDefeatedState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkdefeatedstate) |
+| 13905 | `DrawEnemyObject` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawenemyobject) |
+| 13916 | `SkipToOffScrChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skiptooffscrchk) |
+| 13919 | `CheckForVerticalFlip` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforverticalflip) |
+| 13943 | `FlipEnemyVertically` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flipenemyvertically) |
+| 13957 | `CheckForESymmetry` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforesymmetry) |
+| 13965 | `ContES` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contes) |
+| 13975 | `ESRtnr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-esrtnr) |
+| 13979 | `SpnySC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spnysc) |
+| 13982 | `MirrorEnemyGfx` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mirrorenemygfx) |
+| 13994 | `EggExc` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eggexc) |
+| 14007 | `CheckToMirrorLakitu` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checktomirrorlakitu) |
+| 14026 | `NVFLak` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nvflak) |
+| 14033 | `CheckToMirrorJSpring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checktomirrorjspring) |
+| 14044 | `SprObjectOffscrChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprobjectoffscrchk) |
+| 14054 | `LcChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lcchk) |
+| 14060 | `Row3C` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-row3c) |
+| 14067 | `Row23C` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-row23c) |
+| 14073 | `AllRowC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-allrowc) |
+| 14085 | `ExEGHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exeghandler) |
+| 14088 | `DrawEnemyObjRow` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawenemyobjrow) |
+| 14093 | `DrawOneSpriteRow` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawonespriterow) |
+| 14097 | `MoveESprRowOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveesprrowoffscreen) |
+| 14104 | `MoveESprColOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveesprcoloffscreen) |
+| 14119 | `DefaultBlockObjTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultblockobjtiles) |
+| 14122 | `DrawBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawblock) |
+| 14133 | `DBlkLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblkloop) |
+| 14147 | `ChkRep` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrep) |
+| 14159 | `SetBFlip` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbflip) |
+| 14167 | `BlkOffscr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blkoffscr) |
+| 14174 | `PullOfsB` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pullofsb) |
+| 14175 | `ChkLeftCo` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkleftco) |
+| 14178 | `MoveColOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movecoloffscreen) |
+| 14182 | `ExDBlk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdblk) |
+| 14187 | `DrawBrickChunks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbrickchunks) |
+| 14197 | `DChunks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dchunks) |
+| 14242 | `ChnkOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chnkofs) |
+| 14250 | `ExBCDr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exbcdr) |
+| 14254 | `DrawFireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D3](m2-t24-s1-node-verification.md#node-drawfireball) |
+| 14261 | `DrawFirebar` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar) |
+| 14275 | `FireA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firea) |
+| 14280 | `ExplosionTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-explosiontiles) |
+| 14283 | `DrawExplosion_Fireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D4](m2-t24-s1-node-verification.md#node-drawexplosion_fireball) |
+| 14292 | `DrawExplosion_Fireworks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawexplosion_fireworks) |
+| 14327 | `KillFireBall` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killfireball) |
+| 14334 | `DrawSmallPlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawsmallplatform) |
+| 14361 | `TopSP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topsp) |
+| 14369 | `BotSP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-botsp) |
+| 14379 | `SOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sofs) |
+| 14386 | `SOfs2` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sofs2) |
+| 14392 | `ExSPl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exspl) |
+| 14397 | `DrawBubble` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbubble) |
+| 14413 | `ExDBub` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdbub) |
+| 14418 | `PlayerGfxTblOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playergfxtbloffsets) |
+| 14424 | `PlayerGraphicsTable` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-playergraphicstable) |
+| 14457 | `SwimKickTileNum` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-swimkicktilenum) |
+| 14460 | `PlayerGfxHandler` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-playergfxhandler) |
+| 14466 | `CntPl` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-cntpl) |
+| 14489 | `SwimKT` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-swimkt) |
+| 14495 | `BigKTS` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-bigkts) |
+| 14497 | `ExPGH` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-expgh) |
+| 14499 | `FindPlayerAction` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-findplayeraction) |
+| 14503 | `DoChangeSize` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-dochangesize) |
+| 14507 | `PlayerKilled` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-playerkilled) |
+| 14511 | `PlayerGfxProcessing` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-playergfxprocessing) |
+| 14532 | `SUpdR` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-supdr) |
+| 14535 | `PlayerOffscreenChk` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-playeroffscreenchk) |
+| 14547 | `PROfsLoop` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-profsloop) |
+| 14551 | `NPROffscr` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-nproffscr) |
+| 14561 | `IntermediatePlayerData` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-intermediateplayerdata) |
+| 14564 | `DrawPlayer_Intermediate` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-drawplayer_intermediate) |
+| 14566 | `PIntLoop` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-pintloop) |
+| 14587 | `RenderPlayerSub` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-renderplayersub) |
+| 14601 | `DrawPlayerLoop` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-drawplayerloop) |
+| 14610 | `ProcessPlayerAction` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D8](m2-t24-s1-node-verification.md#node-processplayeraction) |
+| 14626 | `ProcOnGroundActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-procongroundacts) |
+| 14642 | `NonAnimatedActs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-nonanimatedacts) |
+| 14649 | `ActionFalling` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionfalling) |
+| 14654 | `ActionWalkRun` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionwalkrun) |
+| 14659 | `ActionClimbing` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-actionclimbing) |
+| 14666 | `ActionSwimming` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D8](m2-t24-s1-node-verification.md#node-actionswimming) |
+| 14676 | `GetCurrentAnimOffset` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getcurrentanimoffset) |
+| 14680 | `FourFrameExtent` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-fourframeextent) |
+| 14684 | `ThreeFrameExtent` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-threeframeextent) |
+| 14687 | `AnimationControl` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-animationcontrol) |
+| 14701 | `SetAnimC` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-setanimc) |
+| 14702 | `ExAnimC` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-exanimc) |
+| 14705 | `GetGfxOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getgfxoffsetadder) |
+| 14712 | `SzOfs` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-szofs) |
+| 14714 | `ChangeSizeOffsetAdder` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-changesizeoffsetadder) |
+| 14718 | `HandleChangeSize` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-handlechangesize) |
+| 14728 | `CSzNext` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-csznext) |
+| 14729 | `GorSLog` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-gorslog) |
+| 14734 | `GetOffsetFromAnimCtrl` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getoffsetfromanimctrl) |
+| 14741 | `ShrinkPlayer` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-shrinkplayer) |
+| 14750 | `ShrPlF` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-shrplf) |
+| 14753 | `ChkForPlayerAttrib` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-chkforplayerattrib) |
+| 14767 | `KilledAtt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-killedatt) |
+| 14774 | `C_S_IGAtt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-c_s_igatt) |
+| 14781 | `ExPlyrAt` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-explyrat) |
+| 14786 | `RelativePlayerPosition` | T16: `src/game/oam/object_position.c` | audited; mismatch | [T24 S1: D9](m2-t24-s1-node-verification.md#node-relativeplayerposition) |
+| 14791 | `RelativeBubblePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativebubbleposition) |
+| 14797 | `RelativeFireballPosition` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-relativefireballposition) |
+| 14801 | `RelWOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relwofs) |
+| 14805 | `RelativeMiscPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativemiscposition) |
+| 14811 | `RelativeEnemyPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeenemyposition) |
+| 14816 | `RelativeBlockPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeblockposition) |
+| 14825 | `VariableObjOfsRelPos` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-variableobjofsrelpos) |
+| 14834 | `GetObjRelativePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getobjrelativeposition) |
+| 14846 | `GetPlayerOffscreenBits` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getplayeroffscreenbits) |
+| 14851 | `GetFireballOffscreenBits` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballoffscreenbits) |
+| 14857 | `GetBubbleOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getbubbleoffscreenbits) |
+| 14863 | `GetMiscOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscoffscreenbits) |
+| 14869 | `ObjOffsetData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-objoffsetdata) |
+| 14872 | `GetProperObjOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getproperobjoffset) |
+| 14879 | `GetEnemyOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyoffscreenbits) |
+| 14884 | `GetBlockOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockoffscreenbits) |
+| 14888 | `SetOffscrBitsOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setoffscrbitsoffset) |
+| 14894 | `GetOffScreenBitsSet` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getoffscreenbitsset) |
+| 14911 | `RunOffscrBitsSubs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runoffscrbitssubs) |
+| 14927 | `XOffscreenBitsData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xoffscreenbitsdata) |
+| 14931 | `DefaultXOnscreenOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultxonscreenofs) |
+| 14934 | `GetXOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxoffscreenbits) |
+| 14937 | `XOfsLoop` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xofsloop) |
+| 14953 | `XLdBData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xldbdata) |
+| 14959 | `ExXOfsBS` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxofsbs) |
+| 14963 | `YOffscreenBitsData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yoffscreenbitsdata) |
+| 14968 | `DefaultYOnscreenOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultyonscreenofs) |
+| 14971 | `HighPosUnitData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-highposunitdata) |
+| 14974 | `GetYOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getyoffscreenbits) |
+| 14977 | `YOfsLoop` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yofsloop) |
+| 14993 | `YLdBData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yldbdata) |
+| 14999 | `ExYOfsBS` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exyofsbs) |
+| 15003 | `DividePDiff` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dividepdiff) |
+| 15015 | `SetOscrO` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setoscro) |
+| 15016 | `ExDivPD` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdivpd) |
+| 15025 | `DrawSpriteObject` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawspriteobject) |
+| 15036 | `NoHFlip` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohflip) |
+| 15040 | `SetHFAt` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethfat) |
+| 15070 | `SoundEngine` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-soundengine) |
+| 15075 | `SndOn` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sndon) |
+| 15084 | `InPause` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inpause) |
+| 15099 | `PTone1F` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ptone1f) |
+| 15101 | `ContPau` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contpau) |
+| 15108 | `PTone2F` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ptone2f) |
+| 15109 | `PTRegC` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ptregc) |
+| 15112 | `DecPauC` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decpauc) |
+| 15121 | `SkipPIn` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skippin) |
+| 15125 | `RunSoundSubroutines` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runsoundsubroutines) |
+| 15134 | `SkipSoundSubroutines` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipsoundsubroutines) |
+| 15147 | `NoIncDAC` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noincdac) |
+| 15150 | `StrWave` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strwave) |
+| 15155 | `Dump_Squ1_Regs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dump_squ1_regs) |
+| 15160 | `PlaySqu1Sfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playsqu1sfx) |
+| 15163 | `SetFreq_Squ1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfreq_squ1) |
+| 15166 | `Dump_Freq_Regs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dump_freq_regs) |
+| 15174 | `NoTone` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notone) |
+| 15176 | `Dump_Sq2_Regs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dump_sq2_regs) |
+| 15181 | `PlaySqu2Sfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playsqu2sfx) |
+| 15184 | `SetFreq_Squ2` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfreq_squ2) |
+| 15188 | `SetFreq_Tri` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfreq_tri) |
+| 15194 | `SwimStompEnvelopeData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-swimstompenvelopedata) |
+| 15198 | `PlayFlagpoleSlide` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playflagpoleslide) |
+| 15206 | `PlaySmallJump` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playsmalljump) |
+| 15210 | `PlayBigJump` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbigjump) |
+| 15213 | `JumpRegContents` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpregcontents) |
+| 15220 | `ContinueSndJump` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuesndjump) |
+| 15227 | `N2Prt` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-n2prt) |
+| 15230 | `FPS2nd` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fps2nd) |
+| 15231 | `DmpJpFPS` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dmpjpfps) |
+| 15234 | `PlayFireballThrow` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playfireballthrow) |
+| 15239 | `PlayBump` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbump) |
+| 15242 | `Fthrow` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fthrow) |
+| 15247 | `ContinueBumpThrow` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuebumpthrow) |
+| 15253 | `DecJpFPS` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decjpfps) |
+| 15256 | `Square1SfxHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-square1sfxhandler) |
+| 15276 | `CheckSfx1Buffer` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checksfx1buffer) |
+| 15294 | `ExS1H` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exs1h) |
+| 15296 | `PlaySwimStomp` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playswimstomp) |
+| 15304 | `ContinueSwimStomp` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continueswimstomp) |
+| 15313 | `BranchToDecLength1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-branchtodeclength1) |
+| 15316 | `PlaySmackEnemy` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playsmackenemy) |
+| 15325 | `ContinueSmackEnemy` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuesmackenemy) |
+| 15333 | `SmSpc` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smspc) |
+| 15334 | `SmTick` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smtick) |
+| 15336 | `DecrementSfx1Length` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decrementsfx1length) |
+| 15340 | `StopSquare1Sfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stopsquare1sfx) |
+| 15347 | `ExSfx1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exsfx1) |
+| 15349 | `PlayPipeDownInj` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playpipedowninj) |
+| 15353 | `ContinuePipeDownInj` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuepipedowninj) |
+| 15365 | `NoPDwnL` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nopdwnl) |
+| 15369 | `ExtraLifeFreqData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extralifefreqdata) |
+| 15372 | `PowerUpGrabFreqData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-powerupgrabfreqdata) |
+| 15380 | `PUp_VGrow_FreqData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pup_vgrow_freqdata) |
+| 15386 | `PlayCoinGrab` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playcoingrab) |
+| 15391 | `PlayTimerTick` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playtimertick) |
+| 15395 | `CGrab_TTickRegL` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cgrab_ttickregl) |
+| 15401 | `ContinueCGrabTTick` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuecgrabttick) |
+| 15407 | `N2Tone` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-n2tone) |
+| 15409 | `PlayBlast` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playblast) |
+| 15416 | `ContinueBlast` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continueblast) |
+| 15422 | `SBlasJ` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sblasj) |
+| 15424 | `PlayPowerUpGrab` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playpowerupgrab) |
+| 15428 | `ContinuePowerUpGrab` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuepowerupgrab) |
+| 15437 | `LoadSqu2Regs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadsqu2regs) |
+| 15440 | `DecrementSfx2Length` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decrementsfx2length) |
+| 15444 | `EmptySfx2Buffer` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptysfx2buffer) |
+| 15448 | `StopSquare2Sfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stopsquare2sfx) |
+| 15453 | `ExSfx2` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exsfx2) |
+| 15455 | `Square2SfxHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-square2sfxhandler) |
+| 15478 | `CheckSfx2Buffer` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checksfx2buffer) |
+| 15496 | `ExS2H` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exs2h) |
+| 15498 | `Cont_CGrab_TTick` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cont_cgrab_ttick) |
+| 15501 | `JumpToDecLength2` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumptodeclength2) |
+| 15504 | `PlayBowserFall` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbowserfall) |
+| 15509 | `BlstSJp` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blstsjp) |
+| 15511 | `ContinueBowserFall` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuebowserfall) |
+| 15517 | `PBFRegs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pbfregs) |
+| 15518 | `EL_LRegs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-el_lregs) |
+| 15520 | `PlayExtraLife` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playextralife) |
+| 15524 | `ContinueExtraLife` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continueextralife) |
+| 15527 | `DivLLoop` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-divlloop) |
+| 15537 | `PlayGrowPowerUp` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playgrowpowerup) |
+| 15541 | `PlayGrowVine` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playgrowvine) |
+| 15544 | `GrowItemRegs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-growitemregs) |
+| 15551 | `ContinueGrowItems` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuegrowitems) |
+| 15564 | `StopGrowItems` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stopgrowitems) |
+| 15569 | `BrickShatterFreqData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickshatterfreqdata) |
+| 15573 | `PlayBrickShatter` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbrickshatter) |
+| 15577 | `ContinueBrickShatter` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuebrickshatter) |
+| 15585 | `PlayNoiseSfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playnoisesfx) |
+| 15591 | `DecrementSfx3Length` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decrementsfx3length) |
+| 15598 | `ExSfx3` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exsfx3) |
+| 15600 | `NoiseSfxHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noisesfxhandler) |
+| 15609 | `CheckNoiseBuffer` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checknoisebuffer) |
+| 15616 | `ExNH` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exnh) |
+| 15618 | `PlayBowserFlame` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbowserflame) |
+| 15622 | `ContinueBowserFlame` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuebowserflame) |
+| 15632 | `ContinueMusic` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuemusic) |
+| 15635 | `MusicHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musichandler) |
+| 15645 | `LoadEventMusic` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadeventmusic) |
+| 15651 | `NoStopSfx` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nostopsfx) |
+| 15662 | `LoadAreaMusic` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadareamusic) |
+| 15666 | `NoStop1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nostop1) |
+| 15667 | `GMLoopB` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gmloopb) |
+| 15669 | `HandleAreaMusicLoopB` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleareamusicloopb) |
+| 15682 | `FindAreaMusicHeader` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findareamusicheader) |
+| 15686 | `FindEventMusicHeader` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findeventmusicheader) |
+| 15691 | `LoadHeader` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadheader) |
+| 15720 | `HandleSquare2Music` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlesquare2music) |
+| 15730 | `EndOfMusicData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofmusicdata) |
+| 15736 | `NotTRO` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nottro) |
+| 15750 | `MusicLoopBack` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musicloopback) |
+| 15753 | `VictoryMLoopBack` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymloopback) |
+| 15756 | `Squ2LengthHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-squ2lengthhandler) |
+| 15763 | `Squ2NoteHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-squ2notehandler) |
+| 15769 | `Rest` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rest) |
+| 15771 | `SkipFqL1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipfql1) |
+| 15774 | `MiscSqu2MusicTasks` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscsqu2musictasks) |
+| 15783 | `NoDecEnv1` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nodecenv1) |
+| 15788 | `HandleSquare1Music` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlesquare1music) |
+| 15794 | `FetchSqu1MusicData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fetchsqu1musicdata) |
+| 15806 | `Squ1NoteHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-squ1notehandler) |
+| 15816 | `SkipCtrlL` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipctrll) |
+| 15819 | `MiscSqu1MusicTasks` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscsqu1musictasks) |
+| 15828 | `NoDecEnv2` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nodecenv2) |
+| 15830 | `DeathMAltReg` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-deathmaltreg) |
+| 15833 | `DoAltLoad` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doaltload) |
+| 15835 | `HandleTriangleMusic` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handletrianglemusic) |
+| 15853 | `TriNoteHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-trinotehandler) |
+| 15863 | `NotDOrD4` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notdord4) |
+| 15871 | `MediN` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-medin) |
+| 15873 | `LongN` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-longn) |
+| 15875 | `LoadTriCtrlReg` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadtrictrlreg) |
+| 15878 | `HandleNoiseMusic` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlenoisemusic) |
+| 15885 | `FetchNoiseBeatData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fetchnoisebeatdata) |
+| 15894 | `NoiseBeatHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noisebeathandler) |
+| 15911 | `StrongBeat` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strongbeat) |
+| 15917 | `LongBeat` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-longbeat) |
+| 15923 | `SilentBeat` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-silentbeat) |
+| 15926 | `PlayBeat` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playbeat) |
+| 15931 | `ExitMusicHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmusichandler) |
+| 15934 | `AlternateLengthHandler` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alternatelengthhandler) |
+| 15942 | `ProcessLengthData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processlengthdata) |
+| 15951 | `LoadControlRegs` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadcontrolregs) |
+| 15957 | `NotECstlM` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notecstlm) |
+| 15962 | `WaterMus` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-watermus) |
+| 15963 | `AllMus` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-allmus) |
+| 15967 | `LoadEnvelopeData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadenvelopedata) |
+| 15974 | `LoadUsualEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadusualenvdata) |
+| 15981 | `LoadWaterEventMusEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadwatereventmusenvdata) |
+| 15989 | `MusicHeaderData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musicheaderdata) |
+| 16027 | `TimeRunningOutHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timerunningouthdr) |
+| 16028 | `Star_CloudHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-star_cloudhdr) |
+| 16029 | `EndOfLevelMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endoflevelmushdr) |
+| 16030 | `ResidualHeaderData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualheaderdata) |
+| 16031 | `UndergroundMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-undergroundmushdr) |
+| 16032 | `SilenceHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-silencehdr) |
+| 16033 | `CastleMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlemushdr) |
+| 16034 | `VictoryMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymushdr) |
+| 16035 | `GameOverMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameovermushdr) |
+| 16036 | `WaterMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-watermushdr) |
+| 16037 | `WinCastleMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wincastlemushdr) |
+| 16038 | `GroundLevelPart1Hdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart1hdr) |
+| 16039 | `GroundLevelPart2AHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart2ahdr) |
+| 16040 | `GroundLevelPart2BHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart2bhdr) |
+| 16041 | `GroundLevelPart2CHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart2chdr) |
+| 16042 | `GroundLevelPart3AHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart3ahdr) |
+| 16043 | `GroundLevelPart3BHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart3bhdr) |
+| 16044 | `GroundLevelLeadInHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelleadinhdr) |
+| 16045 | `GroundLevelPart4AHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart4ahdr) |
+| 16046 | `GroundLevelPart4BHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart4bhdr) |
+| 16047 | `GroundLevelPart4CHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundlevelpart4chdr) |
+| 16048 | `DeathMusHdr` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-deathmushdr) |
+| 16077 | `Star_CloudMData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-star_cloudmdata) |
+| 16089 | `GroundM_P1Data` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p1data) |
+| 16094 | `SilenceData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-silencedata) |
+| 16104 | `GroundM_P2AData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p2adata) |
+| 16114 | `GroundM_P2BData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p2bdata) |
+| 16124 | `GroundM_P2CData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p2cdata) |
+| 16134 | `GroundM_P3AData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p3adata) |
+| 16140 | `GroundM_P3BData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p3bdata) |
+| 16148 | `GroundMLdInData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundmldindata) |
+| 16158 | `GroundM_P4AData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p4adata) |
+| 16167 | `GroundM_P4BData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p4bdata) |
+| 16176 | `DeathMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-deathmusdata) |
+| 16179 | `GroundM_P4CData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundm_p4cdata) |
+| 16193 | `CastleMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlemusdata) |
+| 16217 | `GameOverMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameovermusdata) |
+| 16226 | `TimeRunOutMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timerunoutmusdata) |
+| 16236 | `WinLevelMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-winlevelmusdata) |
+| 16253 | `UndergroundMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-undergroundmusdata) |
+| 16264 | `WaterMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-watermusdata) |
+| 16295 | `EndOfCastleMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofcastlemusdata) |
+| 16313 | `VictoryMusData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymusdata) |
+| 16326 | `FreqRegLookupTbl` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-freqreglookuptbl) |
+| 16341 | `MusicLengthLookupTbl` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musiclengthlookuptbl) |
+| 16349 | `EndOfCastleMusicEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofcastlemusicenvdata) |
+| 16352 | `AreaMusicEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areamusicenvdata) |
+| 16355 | `WaterEventMusEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-watereventmusenvdata) |
+| 16362 | `BowserFlameEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowserflameenvdata) |
+| 16368 | `BrickShatterEnvData` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickshatterenvdata) |
 
 ## Control-graph size
 

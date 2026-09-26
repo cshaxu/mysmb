@@ -1,5 +1,13 @@
 # Queue
 
+## First Priority - M2 Historical Node Closure
+
+1. **M2 T21 active:** [T21 prior-node closure](../proposals/m2/t21-prior-node-closure.md) receives all 1,416 unfinished T15–T20 nodes in six responsibility-preserving S groups. It performs source-first closure audit and accepted handoff only.
+2. [Historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md) remains queued after T21.
+
+This first-priority entry governs ordering across the historical lists below;
+those lists retain their previous records and do not override this priority.
+
 ## M1 Candidates
 
 1. [Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) — closed in M1.
@@ -26,6 +34,10 @@
 15. [M2 reopened frame equivalence](../proposals/m2-reopened-frame-equivalence.md) — closure audit.
 
 ## M2 Structural-Recovery Candidates
+
+Owner-requested [node-task responsibility ledger](../proposals/m2/node-task-ledger.md) continues as M2 T24 S2; every node receives an accountable S and future transfers require acceptance.
+
+Owner-requested [mapped-node verification](../proposals/m2/mapped-node-verification.md) is admitted as M2 T24 S1: audit and mark the initial 77 pending nodes plus all integrated nodes and prior T/S responsibilities, with a full 1,992-label evidence census and no repairs.
 
 These candidates exhaustively map the ROM executable source index. They are ordered candidates only; no numeric T or S is allocated here. The complete label checklist is [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md), and the source-slice/call-graph map is [M2 structural recovery coverage](../proposals/m2-rom-structural-recovery.md).
 

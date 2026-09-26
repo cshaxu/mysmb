@@ -2,7 +2,7 @@
 
 Scope is SMBDIS lines 844-1124 plus the FloateyNumbers entry at 1148. This is
 a code-owner and controller-edge audit. `translated` means the documented
-owner exists; it does not replace S2�S4 route comparison.
+owner exists; it does not replace S2-S4 route comparison.
 
 | ROM label | C owner | Status | S2 consequence |
 |---|---|---|---|

@@ -14,6 +14,12 @@ Read [Goals](design/GOAL.md), [Architecture](design/ARCHITECTURE.md), [Source La
 
 `states/CURRENT.md` is the sole active-task and technical-baseline authority. `states/QUEUE.md` contains ordered, unnumbered candidates. `states/TODO.md` contains unplanned debt. Only an approved active task receives a numeric T.
 
+[Node-to-task ledger](states/NODE_TASK_LEDGER.md) records the receiving S for
+every ROM node, historical T/S evidence, and accepted transfers. Register and
+validate it at every subsequent S admission and closure.
+
+For M2, every task publishes its exact node target at admission and reports completed, incomplete, and transferred labels at closure. ROM logic-equivalence evidence and native test/run evidence are separate required tracks; see [Execution Rules](rules/EXECUTION.md#per-task-node-contract-and-dual-verification).
+
 ## Supporting Detail
 
 [etc/README.md](etc/README.md) indexes supporting contracts, provenance, evidence, templates, and research. It cannot define a competing current design, rule, queue, or active state.

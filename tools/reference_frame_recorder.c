@@ -6,6 +6,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -23,6 +24,33 @@
 /* This retains the existing 512 driver-run budget in instruction work:
  * core_driver_run executes at most 256 instructions per call. */
 #define MYSMB_REFERENCE_MAX_STEPS_PER_FRAME 131072u
+
+/* Aggregate diagnostics only: no instruction bytes or RAM payloads. Counters
+ * cover the recorded window, excluding warmup. For conditional branches,
+ * fallthrough2/other distinguish the two instruction successors. */
+static unsigned long mysmb_pc_hits[32768];
+static unsigned long mysmb_pc_fallthrough2[32768];
+static unsigned long mysmb_pc_other[32768];
+
+static int mysmb_reference_write_coverage(const char *path)
+{
+    FILE *output;
+    unsigned int offset;
+    int ok;
+    if (path == NULL) return 1;
+    output = fopen(path, "w");
+    if (output == NULL) return 0;
+    ok = fprintf(output, "pc,hits,fallthrough2,other\n") >= 0;
+    for (offset = 0u; offset < 32768u && ok; ++offset) {
+        if (mysmb_pc_hits[offset] != 0ul) {
+            ok = fprintf(output, "%04x,%lu,%lu,%lu\n", offset + 0x8000u,
+                mysmb_pc_hits[offset], mysmb_pc_fallthrough2[offset],
+                mysmb_pc_other[offset]) >= 0;
+        }
+    }
+    if (fclose(output) != 0) ok = 0;
+    return ok;
+}
 
 static int mysmb_reference_write(FILE *output, const void *bytes, size_t count)
 {
@@ -150,12 +178,13 @@ int main(int argument_count, char **arguments)
     lib_u32 step_count;
     int warmup_result;
     const char *script;
+    const char *coverage_path;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 2u, 0u, 0u, 0u };
 
-    if (argument_count < 5 || argument_count > 7) return 64;
+    if (argument_count < 5 || argument_count > 8) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
     buttons = (unsigned int)strtoul(arguments[4], LIB_NULL, 0);
     if (parsed_frames == 0u || parsed_frames > 600u || buttons > 0xffu)
@@ -163,7 +192,14 @@ int main(int argument_count, char **arguments)
     requested_frames = (lib_u32)parsed_frames;
     warmup_frames = 0u;
     script = NULL;
+    coverage_path = NULL;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
+            if (coverage_path != NULL || arguments[recorded][14] == '\0')
+                return 64;
+            coverage_path = arguments[recorded] + 14;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_warmup(arguments[recorded],
                                                       &warmup_frames);
         if (warmup_result < 0) return 64;
@@ -203,6 +239,7 @@ int main(int argument_count, char **arguments)
     while (recorded < requested_frames &&
            step_count < total_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
         core_run_result result;
+        lib_u16 before_pc;
 
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
             /* Sample before RTI.  Stepping the RTI below clears this program
@@ -224,11 +261,22 @@ int main(int argument_count, char **arguments)
                                                 &buttons)) break;
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
+        before_pc = driver->machine->pc;
         if (core_machine_debug_step(driver->machine, 1u, 1024u, &result) !=
             LIB_STATUS_OK || result.trap_valid) break;
+        if (coverage_path != NULL && elapsed >= warmup_frames &&
+            before_pc >= 0x8000u) {
+            unsigned int offset = before_pc - 0x8000u;
+            ++mysmb_pc_hits[offset];
+            if (driver->machine->pc == (lib_u16)(before_pc + 2u))
+                ++mysmb_pc_fallthrough2[offset];
+            else
+                ++mysmb_pc_other[offset];
+        }
         ++step_count;
     }
     fclose(output);
     (void)core_driver_destroy(driver);
-    return recorded == requested_frames ? 0 : 68;
+    if (recorded != requested_frames) return 68;
+    return mysmb_reference_write_coverage(coverage_path) ? 0 : 69;
 }

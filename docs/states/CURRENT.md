@@ -1,8 +1,16 @@
-﻿# Project Status
+# Project Status
 
 ## Current Work
 
-**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S3/P3, M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
+**M2 T21 S1 active: close the transferred unfinished T20-and-earlier node
+groups in their original responsibility boundaries.**
+
+M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
+nodes; it is not this implementation's active packet and cannot preempt T21.
+The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
+remains queued after the active T21 closure task.
+
+**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S4/P1 active; M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
 
 | Field | Record |
 | --- | --- |
@@ -13,6 +21,16 @@
 | Artifact rule | Every P commit includes refreshed mysmb16.exe, mysmb32.exe, and mysmb64.exe. |
 | Node-progress rule | Before work, every M2 S records baseline, exact inventory labels, exact expected matches, maximum closing count, focused CTests and ROM route. Closure records actual count, evidence/disposition and transfers. Baseline: [M2 ROM-node progress](NODE_PROGRESS.md). |
 | Stop condition | Stop if extraction changes a ROM-owned state transition or introduces platform gameplay logic. |
+
+Audit result: **3 / 1,992** complete. The [full census](../etc/architecture/m2-t24-s1-full-node-census.md) records every prior responsibility and missing proof; [initial 77-node probes](../etc/architecture/m2-t24-s1-node-verification.md) found nine discrepancy classes. No production repair belongs to T24 S1. Current counts and version-sensitive revalidation states are in [NODE_PROGRESS](NODE_PROGRESS.md).
+
+S2 ledger deliverable: [all-node T/S ledger](NODE_TASK_LEDGER.md) registers
+1,992 unique receivers, 40 known T records and 53 known/planned S records.
+1,854 nodes are accepted by existing slice closure subtasks; 138 remain in
+T24 S2 custody (40 closed-root, 67 screen/status, 31 dispatcher) until future
+admission and accepted transfer. S2 remains open for that custody, even though
+the ledger/tooling deliverable is verified. Seventeen validation scenarios,
+including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 
 ## Current Technical Baseline
 
@@ -26,26 +44,26 @@
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T11 S1 Packet
+## M2 T21 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T11 S1, New. |
-| Admission And Approval | Owner reopened M2 and admitted the dependency-ordered recovery queue. T10 closed the translated background-output route and its bounded PPU evidence. |
-| Objective | Translate the original OAM output route: sprite offsets, player, enemy, item, projectile, effect, score, platform, boss, priority, animation, offscreen initialization, and NMI OAM submission into the canonical native frame snapshot. |
-| Non-goals | A generic NES CPU/PPU/APU emulator, host-owned sprites, visual approximation, bitmap-to-text conversion, protected tracked output, CHR decoding in the Win32 consumer, and any M2 closure claim are outside this S. |
-| Reference Baseline | M2 T9 frame-output ledger and recorder contract, M2 T10 background closure, M2 T1 PRG ledger, and the reopened frame-equivalence proposal. |
-| Candidate Proposal | [M2 Reopened Frame Equivalence](../proposals/m2-reopened-frame-equivalence.md). |
-| Files And ABI Surface | Portable OAM backing state and writers, canonical frame-snapshot OAM fields, source-address mappings, owner-local OAM-reference inputs, and corrected M2 evidence. |
-| Applicable Rules | Architecture, coding, execution, and source-policy authorities named by the Task Reading Set. |
-| Verification | Owner-local OAM-route probes at the T9 NMI boundary; ROM-free tests; x86/x64 builds; OpenNT large-model compile; documentation gate; diff check. |
-| Expected Markers | The snapshot carries source-ordered OAM bytes from named ROM writers, including offscreen and priority state; no host renderer invents sprite state. |
-| Asset Needs | The owner-supplied SMB1 ROM and local reference remain non-redistributable, ignored inputs. Each reference trace uses one unique ignored output directory, is limited to 600 NMI-return samples and 2,637,012 bytes. Its exact sampler is bounded to 131,072 instruction steps per requested sample, equivalent to the former 512 driver calls of at most 256 instructions, then the task executor deletes the trace after a neutral summary. Generated data, ROM-bound executables, frame traces, and screenshots remain local and untracked. |
-| Reporting Requirements | Record source ranges, input scripts, frame phase, snapshot fields, hashes where lawful, every difference, and whether it is translated, deferred, or rejected. |
-| Stop Conditions | Stop and revise if the work substitutes host drawing for translated output, requires a runtime emulator, embeds protected data in tracked output, or cannot name a source owner for a visible result. |
-| Exit Criteria | T11 closes only when all admitted OAM owners write the portable snapshot through translated C and route tests establish their source semantics; it does not verify CHR consumption or close M2. |
-| Original Owner Request | Make the native C result and logic match the original ROM, then close M2 only with evidence. |
-| Similar-Issue Sweep | Search all production and test output paths for placeholder OAM, source-range omissions, host-owned sprite state, incomplete button mapping, unsupported playable claims, and local-path leakage; record every hit and disposition. |
+| Identifier Mode | M2 T21 S1, New; owner-directed historical closure audit. |
+| Admission And Approval | `accept-006` assigns the 24-node group to T20/S4. Owner directed restoration of T20 as the active task on 2026-09-26 after identifying that its unfinished work had been incorrectly preempted by T24 governance. |
+| Objective | Verify and close or transfer the unfinished T15–T20 groups without inventing ROM-match claims. |
+| Non-goals | Collision and enemy-hit nodes owned by T17/S6; OAM, relative-position and offscreen nodes owned by T16/S4; whirlpool, flagpole, jumpspring and vine nodes owned by T22/S5; T24 ledger custody. |
+| Reference Baseline | 3 / 1,992 complete; the T24 fire-attempt audit marks `ProcFireball_Bubble` and `FireballObjCore` as requiring revalidation. |
+| Candidate Proposal | [T21 prior-node closure](../proposals/m2/t21-prior-node-closure.md). |
+| Files And ABI Surface | `src/game/fireball/`, shared timer/warp owners when source mapping requires them, focused tests, T20 proposal, ledger run, ignored evidence and local target artifacts; no platform gameplay logic. |
+| Applicable Rules | Task Reading Set: execution, contributing, architecture, coding, source policy, node ledger workflow and source policy. |
+| Verification | Per-node source branch/write review; focused fireball and collision tests; original controller-reachable route or recorded blocker; x86/x64 suites; OpenNT DOS16 link; platform-purity and documentation gates. |
+| Expected Markers | S1 scope: the 58 transferred T15/S4 nodes listed in the T21 proposal. Expected match subset: empty; maximum 3 / 1,992. |
+| Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Build products, traces and ROM-derived executables remain local; each P refreshes the three local target artifacts without treating them as conformance evidence. |
+| Reporting Requirements | For every P, name its exact node subset, branch/write mapping, test and route evidence, actual versus expected matches, blockers/transfers, three-artifact hashes and platform-boundary review. |
+| Stop Conditions | Stop if any change modifies a T17/T16/T22-owned node, introduces host logic into `game`, or lacks a source label and accepted receiver. |
+| Exit Criteria | Every accepted node has branch/write plus route evidence or an accepted successor; actual inventory completions are recorded by exact name; no unfinished node remains in T20/S4 custody. |
+| Original Owner Request | Keep T20 active until its work is properly handed off and closed; do not let T24 governance preempt unfinished implementation. |
+| Similar-Issue Sweep | Audit all T20 physical-slice labels for mismatched ledger receivers, duplicated gates, host logic, stale direct tests and source changes that require route revalidation. |
 
 ## Recent M4 Closures
 

@@ -2,7 +2,12 @@
 
 ## Status
 
-**M2 T20 active — S3/P2.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
+**M2 T20 closed after S4/P1 transfer.** The responsibility ledger accepted T20/S4 as
+the receiving implementation subtask for the 24-node fireball, bubble,
+timer, and warp-entry group. Historical S1-S3 records remain evidence only;
+they no longer receive implementation work. OAM scratch/output remains
+delegated to T16, and shared movement/collision primitives remain delegated
+to T17.
 
 ## ROM scope
 
@@ -21,7 +26,10 @@ Called before enemy slots; consumes player/collision/enemy state and writes fire
 1. **S1 complete (P1-P2)** - Establish the source owner boundary: extract fireball/bubble dispatch and its named labels from `objects.c` into `src/game/fireball/` without behavior changes; map every RAM field, helper and cross-slice call.
 2. **S2 active (P1-P4)** - Translate spawn/page carry, the Sfx_Fireball queue write, movement/gravity and the relative-position/offscreen-bit call sequence, consuming T16/T17 primitives rather than duplicating them.
 3. **S3 planned** - Translate background/enemy collision and clear/effect branches.
-4. **S4 planned** - Compare open travel, wall bounce, enemy hit and underwater bubble routes.
+4. **S4 active (P1)** - Own the ledger-accepted 24-node group from
+   `ProcFireball_Bubble` through `WarpZoneObject`; translate or revalidate
+   each source branch and hand unresolved cross-slice nodes to their existing
+   receivers.
 
 ## Acceptance
 
@@ -63,3 +71,28 @@ The same fixture now directly proves `FireballBGCollision`'s source probe `(X + 
 ## S3/P3: complete source enemy-slot scan
 
 `FireballEnemyCollision` now owns the complete ROM loop, starting at slot four and descending through slot zero.  A source collision sets `Fireball_State` to `$80`, immediately calls `HandleEnemyFBallCol`, then continues scanning; it does not return after the first hit.  The focused collision fixture places two eligible enemies in the same fireball box and proves both receive the `$22` defeated-state handoff in one even frame.  `ProcFireball_Bubble` also now follows its source instruction order: choose and test the counter-selected slot before Y/crouch/climbing eligibility, and increment `FireballCounter` only after the timer writes.
+
+## S4/P1 admission: ledger-accepted fireball and bubble entry group
+
+The active implementation scope is exactly `ProcFireball_Bubble`,
+`ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit`,
+`FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall`,
+`FireballExplosion`, `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`,
+`Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData`,
+`RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer`, and `WarpZoneObject`.
+Its incoming baseline is 3 / 1,992 with no forecast match claim. The current
+P restores the source `PlayerStatus` gate before both fixed fireball slots:
+non-fiery status branches directly to `ProcAirBubbles`. It also keeps the
+post-gate fire-button checks in the creation helper, so the source label has
+one shared-game owner. Collision, OAM/offscreen, and later whirlpool/flagpole/
+jumpspring/vine nodes remain with T17/S6, T16/S4, and T22/S5 respectively.
+Each following P must record its exact node subset, source branch/write audit,
+focused tests, ROM-route result or blocker, three local target artifacts, and
+an accepted transfer for every unresolved node.
+
+## T20 closure
+
+No node became ROM-match complete in S4/P1. All 24 unfinished labels were
+transferred by accepted ledger events to M2 T21 S6, which is the fireball,
+bubble, timer and Warp closure group. T20 therefore retains no unfinished
+custody.

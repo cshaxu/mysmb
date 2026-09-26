@@ -17,8 +17,8 @@ function Get-Headings([string]$Text) {
 }
 
 function Require-Title([string]$Path, [string]$Title) {
-    $text = Get-Content -Raw -LiteralPath $Path
-    Require ($text -match ('(?m)^# ' + [regex]::Escape($Title) + '$')) "$Path must start with '# $Title'."
+    $text = Get-Content -Raw -Encoding UTF8 -LiteralPath $Path
+    Require ($text -match ('(?m)\A# ' + [regex]::Escape($Title) + '\r?$')) "$Path must start with '# $Title'."
 }
 
 $docs = Join-Path $RepositoryRoot 'docs'
@@ -39,10 +39,10 @@ Require-Title (Join-Path $docs 'states/CURRENT.md') 'Project Status'
 Require-Title (Join-Path $docs 'states/QUEUE.md') 'Queue'
 Require-Title (Join-Path $docs 'states/TODO.md') 'Long-Term Review Ledger'
 
-$current = Get-Content -Raw -LiteralPath (Join-Path $docs 'states/CURRENT.md')
-Require (($current | Select-String -AllMatches -Pattern '(?m)^## Current Technical Baseline$').Matches.Count -eq 1) 'CURRENT.md must have exactly one Current Technical Baseline section.'
-$packetCount = ($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T\d+ S\d+ Packet$').Matches.Count
-if ($current -match '(?m)^\*\*Idle\.\*\*$') {
+$current = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $docs 'states/CURRENT.md')
+Require (($current | Select-String -AllMatches -Pattern '(?m)^## Current Technical Baseline\r?$').Matches.Count -eq 1) 'CURRENT.md must have exactly one Current Technical Baseline section.'
+$packetCount = ($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T\d+ S\d+ Packet\r?$').Matches.Count
+if ($current -match '(?m)^\*\*Idle\.\*\*\r?$') {
     Require ($packetCount -eq 0) 'Idle CURRENT.md must not retain an active packet.'
 }
 else {
@@ -52,18 +52,26 @@ else {
     }
 }
 
-$queue = Get-Content -Raw -LiteralPath (Join-Path $docs 'states/QUEUE.md')
+$queue = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $docs 'states/QUEUE.md')
 $proposalFiles = @(Get-ChildItem -LiteralPath (Join-Path $docs 'proposals') -File -Filter '*.md')
 Require ($proposalFiles.Count -gt 0) 'At least one proposal is required.'
 foreach ($proposal in $proposalFiles) {
     Require ($queue -match [regex]::Escape("../proposals/$($proposal.Name)")) "Queue does not link proposal $($proposal.Name)."
 }
 
-$markdownFiles = @(Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File -Filter '*.md')
-foreach ($file in $markdownFiles) {
-    $text = Get-Content -Raw -LiteralPath $file.FullName
-    Require ($text -notmatch '\uFFFD|Ã.|â.') "Possible encoding corruption in $($file.FullName)."
-    Require ($text -notmatch '(?i)[a-z]:\\(?:users|repos|temp|appdata)\\') "Machine-local path in $($file.FullName)."
+& (Join-Path $RepositoryRoot 'tools/Verify-NodeProgress.ps1') -RepositoryRoot $RepositoryRoot
+
+& python (Join-Path $RepositoryRoot 'tools/node_task_ledger.py') --root $RepositoryRoot
+Require ($LASTEXITCODE -eq 0) 'Node/task responsibility ledger checks failed.'
+
+$markdownFiles = @(git -C $RepositoryRoot ls-files --cached --others --exclude-standard -- '*.md' | Sort-Object -Unique)
+Require ($LASTEXITCODE -eq 0) 'Cannot enumerate repository Markdown.'
+foreach ($relative in $markdownFiles) {
+    $path = Join-Path $RepositoryRoot $relative
+    if (-not (Test-Path -LiteralPath $path)) { continue }
+    $text = Get-Content -Raw -Encoding UTF8 -LiteralPath $path
+    Require ($text -notmatch '\uFFFD|\u00c3.|\u00e2.') "Possible encoding corruption in $relative."
+    Require ($text -notmatch '(?i)[a-z]:\\(?:users|repos|temp|appdata)\\') "Machine-local path in $relative."
 }
 
 Write-Output 'Documentation governance checks passed.'

@@ -1,9 +1,9 @@
 #include "game/fireball/fireball.h"
 
-/* ROM $98?? ProcAirBubbles, BubbleCheck, RelativeBubblePosition,
- * GetBubbleOffscreenBits and DrawBubble.  This stays separate from the
- * fireball motion owner so both the 16-bit core and frame OAM writer use the
- * original fixed bubble arrays. */
+/* ROM lines 6336-6456: ProcAirBubbles, BublLoop, BublExit, BubbleCheck,
+ * SetupBubble, PosBubl, MoveBubl, Y_Bubl, ExitBubl and their two data tables.
+ * The later relative-position/offscreen/OAM leaves consume these fixed bubble
+ * arrays without introducing a platform-specific game path. */
 enum {
     MYSMB_BUBBLE_AREA_TYPE = 0x074eU,
     MYSMB_BUBBLE_TIMER = 0x0792U,
