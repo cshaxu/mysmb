@@ -131,6 +131,7 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
     mysmb_u8 second;
     mysmb_u8 third;
     mysmb_u8 row;
+    mysmb_u8 id;
 
     if (game->ram[MYSMB_ENEMY_FRENZY_QUEUE] != 0U) {
         game->ram[MYSMB_ENEMY_ID + slot] = game->ram[MYSMB_ENEMY_FRENZY_QUEUE];
@@ -216,7 +217,8 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
                 (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 1U;
-        }        /* ROM InitEnemyFrenzy routes IDs $12 and $14 to persistent frenzy
+        }
+        /* ROM InitEnemyFrenzy routes IDs $12 and $14 to persistent frenzy
          * controllers.  Neither byte denotes an ordinary stream enemy. */
         if ((second & 0x3fU) == 18U || (second & 0x3fU) == 20U) {
             game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = (mysmb_u8)(second & 0x3fU);
@@ -226,7 +228,9 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
             return 1U;
         }
 
-        mysmb_enemy_initialize_loaded(game, slot, row, (mysmb_u8)(second & 0x3fU));
+        id = (mysmb_u8)(second & 0x3fU);
+        if (id == 6U && game->ram[MYSMB_PRIMARY_HARD] != 0U) id = 2U;
+        mysmb_enemy_initialize_loaded(game, slot, row, id);
         game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
         game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
         return 1U;

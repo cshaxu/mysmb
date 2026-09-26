@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P5.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -124,3 +124,10 @@ The delayed route isolated an inactive slot-zero page/X/YHigh/Y residue at the o
 ## S5 P5: HandleGroupEnemies
 
 ROM group IDs $37–$3e now dispatch HandleGroupEnemies in the stream owner instead of falling into ordinary initialization. The translation preserves its source slot scan, 2/3 member count, Goomba/Buzzy hard-mode selection, Koopa selection, Y band, page carry after X plus $18, and CheckpointEnemyID handoff. Focused regression covers a $37 group crossing the page boundary. Full x64/x86 suites pass; DOS MZ and all three artifacts are refreshed with this packet.
+## S5 P6: frenzy queue and end-of-data fallback
+
+ROM `CheckFrenzyBuffer` now has one stream-owner translation. A pending `EnemyFrenzyQueue` is consumed before the area stream, reset to zero, and passed through `CheckpointEnemyID`; when `ProcessEnemyData` reaches the right extent or area end marker, `EnemyFrenzyBuffer` is used as the source fallback. With no buffer, the ROM's `VineFlagOffset == 1` fallback loads VineObject `$2f`; otherwise the slot remains inactive. Focused regressions cover queue priority, buffered end-of-data initialization, and the vine fallback. Full x64/x86 suites pass; the shared DOS MZ and all three artifacts were refreshed.
+
+## S5 P7: BuzzyBeetleMutate
+
+The ordinary two-byte stream path now preserves ROM `BuzzyBeetleMutate`: after the record ID is masked with `$3f`, ID 6 (Goomba) changes to ID 2 (Buzzy Beetle) only when `PrimaryHardMode` is nonzero, before `InitEnemyObject`. No stream position, record consumption, or initializer branch is otherwise changed. A focused primary-hard stream regression asserts the exact transformed ID. Full x64/x86 suites pass; the shared DOS MZ and all three artifacts are refreshed.

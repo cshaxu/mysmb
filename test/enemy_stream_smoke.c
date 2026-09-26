@@ -150,5 +150,18 @@ int main(void)
     game.ram[0x0012U] = 0U;
     if (mysmb_enemy_stream_process_current(&game, &source, 3U) != 1U ||
         game.ram[0x0019U] != 0x2fU || game.ram[0x0012U] != 1U) return 7;
+    /* ROM BuzzyBeetleMutate changes a stream Goomba in primary hard mode. */
+    prg[0x20U] = 0x10U;
+    prg[0x21U] = 6U;
+    prg[0x22U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 1U;
+    game.ram[0x073bU] = 1U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x076aU] = 1U;
+    game.ram[0x000fU] = 0U;
+    if (mysmb_enemy_stream_process_slot(&game, &source, 0U) != 1U ||
+        game.ram[0x0016U] != 2U) return 8;
     return 0;
 }
