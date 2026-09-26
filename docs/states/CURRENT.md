@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S17 Packet
+## M2 T22 S24 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S17, Implementation; NMI `PauseRoutine` source contract. |
-| Admission And Approval | Owner approved source-order T21–T49 execution. T22/S13 recovered this six-node direct pause subtree from old T24/S2 custody after the preceding `InitBuffer` branch closed. |
-| Objective | Translate and audit the complete source pause route: mode gate, pause timer, Start debounce, status/timer/audio writes and return branches. |
+| Identifier Mode | M2 T22 S24, Implementation; independent NMI `PauseRoutine` equivalence review. |
+| Admission And Approval | Owner approved source-order T21?T49 execution. T22/S17 closed its six-label source contract with no credit and transferred the accepted pause subtree here. |
+| Objective | Independently prove all pause-route labels against source control flow and controlled original-ROM NMI output. |
 | Non-goals | Editing timer/LFSR, OAM/sprite, mode-dispatch descendants, title input policy or platform code. |
-| Reference Baseline | 15 / 1,992 complete; scope has 6 incomplete labels; expected matches: none; maximum 15 / 1,992. |
-| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s23-initbuffer-equivalence-result-and-t22s17-admission). |
+| Reference Baseline | 15 / 1,992 complete; scope has 6 incomplete labels; expected matches: `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; maximum 21 / 1,992. |
+| Candidate Proposal | [source-order T21?T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s17-pause-source-contract-and-t22s24-independent-proof-admission). |
 | Files And ABI Surface | Shared `frame_root.c` pause owner, project-owned pause/root tests, ignored ROM traces and canonical node records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source branch/read/write/order audit plus controlled Start/pause ROM routes; separate x86/x64 tests, DOS16 compile, platform purity and three artifacts. |
-| Expected Markers | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; expected matches: none; maximum 15 / 1,992. |
+| Verification | ROM logic: six controlled NMI-entry cases sampled at original RTI, with source branch/read/write/order review. Operational: focused x86/x64 tests, DOS16 compile, platform purity and three executable artifacts. |
+| Expected Markers | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; expected matches are all six; maximum 21 / 1,992. |
 | Asset Needs | Owner-local ROM/listing and traces remain ignored beneath `build`. |
-| Reporting Requirements | Account for every gate and write by label, state the owner and route, then transfer to a separate proof or repair S before credit. |
+| Reporting Requirements | Account for every label and branch, state both verification tracks, update the tracker before closure, and transfer every incomplete label. |
 | Stop Conditions | Stop if work belongs to timer/LFSR/OAM/mode leaves or platform input policy. |
-| Exit Criteria | Exact pause subtree contract and a named next receiver for independent proof or repair; no premature node credit. |
+| Exit Criteria | Independent proof or precise failed-branch transfer for every scoped label; no parent NMI credit. |
 | Original Owner Request | Execute the original node sequence with strict logic parity and exact task custody. |
-| Similar-Issue Sweep | Inspect each saved-joypad use, pause-status bit operation, pause-timer write and pause-audio queue write. |
+| Similar-Issue Sweep | Inspect every saved-joypad use, pause-status bit operation, pause-timer write and pause-audio queue write. |
 
 ## Recent M4 Closures
 

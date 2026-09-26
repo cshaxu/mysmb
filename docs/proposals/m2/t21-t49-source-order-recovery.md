@@ -467,3 +467,35 @@ T22/S17 now begins the next direct NMI call in source execution order,
 **15 / 1,992**, forecasts no match and has a maximum of **15 / 1,992**.  It
 must map the operating-mode gates, timer branch, Start debounce, status-bit
 update and pause audio queue before any repair or independent proof proposal.
+
+## T22/S17 pause source contract and T22/S24 independent proof admission
+
+S17 closes at **15 / 1,992** with no new node credit, exactly as forecast.  It
+mapped the six-label pause subtree at ROM lines 876–907 to the single shared
+owner `mysmb_frame_root_pause_step`; no platform code reads or writes the
+pause RAM.  The source order is: accept victory mode or game mode/task three;
+when `GamePauseTimer` is nonzero decrement it and return; otherwise inspect the
+already-latched Start bit; reject a pending bit-seven debounce; on a fresh
+Start write `$2b`, queue `GamePauseStatus + 1`, then write `(status ^ 1) | $80`;
+on no Start write `status & $7f`; every other route returns without a pause
+write.  The native return value is only the source status bit zero consumed by
+the subsequent NMI branches, not an added game-state transition.
+
+An ignored original-ROM NMI-entry probe sampled the original RTI boundary for
+six controlled cases: non-game mode exit, game-mode non-task-three exit,
+nonzero timer decrement, no-Start bit-seven clear, first Start toggle/queue,
+and bit-seven Start debounce.  The relevant results were respectively
+`$0776/$0777 = 81/19, 81/19, 01/29, 01/00, 81/2b, 81/00`; fresh Start alone
+left pause audio queue `$00fa = 01`.  The project pause smoke and the
+x86/x64 focused tests also pass, but this source contract deliberately claims
+no equivalence credit.
+
+All six labels transfer to **T22/S24**, the independent proof S.  S24 begins
+at **15 / 1,992**, scopes exactly `PauseRoutine`, `ChkPauseTimer`, `ChkStart`,
+`ClrPauseTimer`, `SetPause`, and `ExitPause`, forecasts those same six matches,
+and has a maximum of **21 / 1,992**.  It must independently compare every
+source branch, RAM read/write, queue write, and NMI call position against the
+controlled ROM outputs, then run the focused cross-width tests, DOS16 build,
+platform-purity check and three-target artifact package.  Any failed label
+remains incomplete and transfers to a later repair S; no partial result may
+promote the parent NMI node.

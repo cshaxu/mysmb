@@ -843,6 +843,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the T22/S16 InitBuffer source contract for independent ROM-equivalence review."
+        },
+        {
+          "id": "M2 T22 S24",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "pause-route-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the T22/S17 pause source contract for independent controlled-NMI ROM-equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4984,8 +4996,8 @@
     {
       "label": "PauseRoutine",
       "line": 876,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5023,14 +5035,20 @@
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ChkPauseTimer",
       "line": 885,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5051,6 +5069,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5058,8 +5082,8 @@
     {
       "label": "ChkStart",
       "line": 889,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5080,6 +5104,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5087,8 +5117,8 @@
     {
       "label": "ClrPauseTimer",
       "line": 904,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5109,6 +5139,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5116,8 +5152,8 @@
     {
       "label": "SetPause",
       "line": 906,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5139,14 +5175,20 @@
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ExitPause",
       "line": 907,
-      "receiver": "M2 T22 S17",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI pause-call branch group from T24/S2.",
+      "receiver": "M2 T22 S24",
+      "receivingBasis": "T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -5167,6 +5209,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S17",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S24",
+          "relation": "accepted independent pause-route proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -54977,6 +55025,22 @@
       ],
       "acceptedBy": "T22/S16 completed the source contract with no completion forecast; T22/S23 accepts independent controlled-NMI equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-035-t22-s17-to-s24",
+      "type": "transfer",
+      "from": "M2 T22 S17",
+      "to": "M2 T22 S24",
+      "nodes": [
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "acceptedBy": "T22/S24 accepts the completed pause source contract for independent six-label ROM-equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -59597,7 +59661,49 @@
       "maximumComplete": 15,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-pause-route-contract"
+      "state": "closed-source-contract-transfer-to-s24"
+    },
+    {
+      "subtask": "M2 T22 S24",
+      "kind": "implementation",
+      "scope": [
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "baseline": 15,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "InitBuffer"
+      ],
+      "expectedMatches": [
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "maximumComplete": 21,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-pause-equivalence-review"
     }
   ]
 }
