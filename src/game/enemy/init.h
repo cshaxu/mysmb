@@ -4,6 +4,7 @@
 #include "game/game.h"
 
 /* ROM InitEnemyObject -> CheckpointEnemyID -> InitEnemyRoutines. */
+void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
                                    mysmb_u8 row, mysmb_u8 id);
 

@@ -47,11 +47,18 @@ enum {
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
 };
 
-void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 row, mysmb_u8 id)
+/* ROM InitEnemyObject positions a stream-loaded object, then enters
+ * CheckpointEnemyID.  Special spawners call the latter after their own
+ * source-defined position setup. */
+void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
+                                   mysmb_u8 row, mysmb_u8 id)
 {
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
     game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
     game->ram[MYSMB_ENEMY_ID + slot] = id;
+    mysmb_enemy_checkpoint_loaded(game, slot);
+}void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
+{
     /* ROM CheckpointEnemyID marks ordinary objects before their first
      * RunNormalEnemies pass. */
         if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {

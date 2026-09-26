@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P5.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P6.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -62,3 +62,7 @@ The existing native translation of `InitEnemyObject → CheckpointEnemyID → In
 ## S3 P5: Stop-frenzy dispatch restoration
 
 ROM `EndFrenzy` is now translated in `game/enemy/frenzy.c` and dispatched by `InitEnemyObject` when the `$18 Stop_Frenzy` controller is loaded. It scans slots 5 through 0, clears every Lakitu flag, clears `EnemyFrenzyBuffer`, then removes the current controller slot. A focused regression proves both Lakitu removals and preservation of a non-Lakitu slot. x64/x86 are 79/79; DOS links the same shared code.
+
+## S3 P6: InitEnemyObject checkpoint split
+
+The translated `InitEnemyObject` now writes stream row Y/ID and enters a separate `CheckpointEnemyID → InitEnemyRoutines` API. Special spawners can enter that checkpoint after their own source-defined position setup, matching ROM calls such as `PutAtRightExtent → CheckpointEnemyID`. Existing stream behavior is unchanged. x64/x86 are 79/79 and the DOS MZ links the same shared owner.
