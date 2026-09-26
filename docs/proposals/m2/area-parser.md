@@ -37,3 +37,19 @@ the existing area-owned `mysmb_area_queue_player_palette` translation of
 regression enters through `mysmb_objects_collect_power_up` with a super
 player and proves the exact `$3f10`, length-four VRAM command and fiery
 palette bytes before the engine-routine handoff.
+## S2 P2: restore `Hidden1UpBlock` selector-three branch
+
+The 1-1 source route reached the normal-row object bytes `$06,$83`.  The
+low-nibble selector is `Hidden1UpBlock` (`$a065`): when `Hidden1UpFlag` is
+set, the ROM clears it and enters `BrickWithItem`, producing
+`BrickQBlockMetatiles[3]=$60` in a ground area or `[8]=$59` elsewhere.  The
+shared parser had omitted selector three, so it left the metatile buffer
+blank; the following `RenderAreaGraphics`/`RenderAttributeTables` pass lost
+both `$03fc=$01` and the queued `$23e0=$01` attribute write.  The parser now
+implements that source branch and its two table outcomes.  The focused smoke
+covers enabled, disabled, and non-ground cases.  The existing 600-sample
+pipe/stomp source route is zero-difference for work RAM `$0300-$07ff`, both
+CIRAM pages, palette, OAM, audio, and PPU scalars on x86 and x64; remaining
+zero-page/stack differences are emulator-private scratch state.  Full CTest
+passes 83/83 on each host architecture.  Derived traces and compare reports:
+`build/m2-t18-s2-p2-hidden1up/traces/`.

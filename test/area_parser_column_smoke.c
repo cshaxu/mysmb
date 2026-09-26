@@ -437,5 +437,43 @@ int main(void)
         game.ram[0x06a8U] != 0x51U || game.ram[0x06a9U] != 0xc1U ||
         game.ram[0x06aaU] != 0x51U || game.ram[0x06abU] != 0x51U ||
         game.ram[0x06acU] != 0x51U || game.ram[0x06adU] != 0x51U) return 1;
+
+    /* ROM Hidden1UpBlock ($a065) consumes Hidden1UpFlag and then takes the
+     * BrickWithItem selector-three path, which writes hidden metatile $60.
+     * When the flag is clear, the same area-data selector stays invisible. */
+    prg[0x0040U] = 0x06U;
+    prg[0x0041U] = 0x03U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x075dU] = 1U;
+    game.ram[0x06a7U] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x075dU] != 0U || game.ram[0x06a7U] != 0x60U) return 1;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x074eU] = 2U;
+    game.ram[0x075dU] = 1U;
+    game.ram[0x06a7U] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x075dU] != 0U || game.ram[0x06a7U] != 0x59U) return 1;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x06a7U] = 0U;
+    if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06a7U] != 0U)
+        return 1;
     return 0;
 }

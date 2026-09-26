@@ -102,6 +102,7 @@ enum {
     MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS = 0x1504U,
     MYSMB_AREA_CURRENT_COLUMN = 0x0726U,
     MYSMB_AREA_PARSER_TASK = 0x071fU,
+    MYSMB_AREA_HIDDEN_1UP_FLAG = 0x075dU,
     MYSMB_AREA_METATILE_BUFFER = 0x06a1U,
     MYSMB_AREA_ATTRIBUTE_BUFFER = 0x03f9U,
     MYSMB_AREA_VRAM_BUFFER2_OFFSET = 0x0340U,
@@ -1385,6 +1386,17 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (kind == 0U) {
         value = (mysmb_u8)(second & 0x0fU);
         if (value <= 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = question[value];
+        else if (value == 3U) {
+            /* ROM Hidden1UpBlock ($a065): the block becomes a normal
+             * BrickWithItem selector only after its per-area flag is set. */
+            if (game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] != 0U) {
+                game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] = 0U;
+                /* BrickWithItem selects BrickQBlockMetatiles[3] for ground
+                 * areas and [8] (the unlined brick) everywhere else. */
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
+                    area_type == 1U ? 0x60U : 0x59U;
+            }
+        }
         else if (value >= 4U && value <= 8U) {
             value = block[value];
             if (area_type != 1U) value = (mysmb_u8)(value + 5U);
