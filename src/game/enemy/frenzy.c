@@ -227,10 +227,10 @@ void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game)
     }
 }
 
-/* ROM InitEnemyFrenzy and InitFlyingCheepCheep.  The area stream holds the
- * persistent $14 controller request; each expiration chooses the first free
- * ordinary slot, just as the original enemy-loader path did. */
-void mysmb_enemy_step_flying_cheep_frenzy(struct mysmb_game *game)
+/* ROM InitEnemyFrenzy -> InitFlyingCheepCheep.  It receives the current
+ * ObjectOffset directly from CheckpointEnemyID; the stream owns retries
+ * through CheckFrenzyBuffer and never performs a fabricated slot scan. */
+void mysmb_enemy_init_flying_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 x_position[16] = {
         0x80U, 0x30U, 0x40U, 0x80U, 0x30U, 0x50U, 0x50U, 0x70U,
@@ -241,17 +241,13 @@ void mysmb_enemy_step_flying_cheep_frenzy(struct mysmb_game *game)
         0x10U, 0x0cU, 0x1eU, 0x22U, 0x18U, 0x14U
     };
     static const mysmb_u8 timer[4] = { 0x10U, 0x60U, 0x20U, 0x48U };
-    mysmb_u8 slot;
     mysmb_u8 timer_index;
     mysmb_u8 speed_index;
     mysmb_u8 position_index;
     mysmb_u8 player_speed_bias;
     mysmb_u8 old_x;
 
-    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 20U ||
-        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
-    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-    if (slot == 5U) return;
+    if (slot >= 5U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
 
     /* SmallBBox -> SetBBox -> InitVStf. */
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;

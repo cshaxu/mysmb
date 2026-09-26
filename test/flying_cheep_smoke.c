@@ -10,8 +10,7 @@ int main(void)
     struct mysmb_area_source source;
     mysmb_u8 frenzy_data[2] = { 0U, 20U };
 
-    /* InitEnemyFrenzy retains the $14 request instead of allocating an
-     * ordinary stream object. */
+    /* The fixture starts with an ordinary current-slot $14 stream record. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     source.prg = frenzy_data;
     source.prg_size = 2U;
@@ -21,19 +20,19 @@ int main(void)
     game.ram[0x073aU] = 0U;
     game.ram[0x073bU] = 0U;
     game.ram[0x000fU] = 0U;
-    if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
-        game.ram[0x06cbU] != 20U || game.ram[0x0739U] != 2U ||
-        game.ram[0x000fU] != 0U) return 1;
-
-    /* InitFlyingCheepCheep uses the original timer, PRNG tables, player
-     * page-relative position, and direction choice. */
+    /* ProcessEnemyData -> InitEnemyObject -> CheckpointEnemyID ->
+     * InitEnemyFrenzy initializes $14 in this current stream slot. */
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0U;
     game.ram[0x006dU] = 1U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x0057U] = 0U;
     game.ram[0x07a7U] = 2U;
     game.ram[0x07a8U] = 0U;
-    mysmb_enemy_step_flying_cheep_frenzy(&game);
-    if (game.ram[0x078fU] != 0x10U || game.ram[0x000fU] != 1U ||
+    if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
+        game.ram[0x06cbU] != 20U || game.ram[0x0739U] != 2U ||
+        game.ram[0x000fU] != 1U ||
+        game.ram[0x078fU] != 0x10U ||
         game.ram[0x0016U] != 20U || game.ram[0x0046U] != 2U ||
         game.ram[0x0058U] != 0xfaU || game.ram[0x006eU] != 1U ||
         game.ram[0x0087U] != 0x80U || game.ram[0x00b6U] != 1U ||
@@ -47,7 +46,7 @@ int main(void)
     game.ram[0x000fU] = 1U;
     game.ram[0x0010U] = 1U;
     game.ram[0x0011U] = 1U;
-    mysmb_enemy_step_flying_cheep_frenzy(&game);
+    mysmb_enemy_init_flying_cheep_frenzy(&game, 3U);
     if (game.ram[0x078fU] != 0x10U || game.ram[0x0012U] != 0U ||
         game.ram[0x049dU] != 9U) return 3;
 

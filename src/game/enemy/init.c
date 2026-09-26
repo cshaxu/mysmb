@@ -56,14 +56,22 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
     game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
     game->ram[MYSMB_ENEMY_ID + slot] = id;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
     mysmb_enemy_checkpoint_loaded(game, slot);
-}void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
+}
+void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
 {
+    if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
+        game->ram[0x03d8U + slot] = 1U;
+    }
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 20U) {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 20U;
+        mysmb_enemy_init_flying_cheep_frenzy(game, slot);
+        return;
+    }
     /* ROM CheckpointEnemyID marks ordinary objects before their first
      * RunNormalEnemies pass. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
-            game->ram[0x03d8U + slot] = 1U;
-        }
         game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
         game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
         game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;

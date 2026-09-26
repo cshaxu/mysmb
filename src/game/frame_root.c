@@ -295,7 +295,6 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_objects_step_jumping_paratroopas(game);
         mysmb_objects_step_red_paratroopas(game);
         mysmb_objects_step_flying_green_paratroopas(game);
-        mysmb_enemy_step_flying_cheep_frenzy(game);
         mysmb_objects_step_flying_cheep_cheeps(game);
         mysmb_objects_step_firebars(game);
         mysmb_objects_step_platforms(game);
