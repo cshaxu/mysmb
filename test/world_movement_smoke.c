@@ -62,5 +62,11 @@ int main(void)
     game.ram[0x0410U] = 0x10U; game.ram[0x0412U] = 0x20U;
     game.ram[0x0411U] = 0x04U; game.ram[0x0413U] = 0x0cU;
     if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) == 0U) return 8;
+    /* ROM BoundingBoxCore uses BoundBoxCtrlData[$07] and byte arithmetic:
+     * X=$fc wraps its right edge while Y remains the source-relative byte. */
+    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_world_set_bounding_box(&game, 0x0420U, 7U, 0xfcU, 0x40U);
+    if (game.ram[0x0420U] != 0xfcU || game.ram[0x0421U] != 0x40U ||
+        game.ram[0x0422U] != 4U || game.ram[0x0423U] != 0x48U) return 9;
     return 0;
 }
