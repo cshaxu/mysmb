@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S3/P2, M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
+**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S3/P3, M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
 
 | Field | Record |
 | --- | --- |
