@@ -61,9 +61,8 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game);
 mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game);
 /* ROM ProcBowserFlame, excluding OAM output. */
 void mysmb_objects_step_bowser_flames(struct mysmb_game *game);
-/* ROM RunFireworks, InitFireworks, and RunStarFlagObj. */
+/* ROM RunFireworks and RunStarFlagObj. */
 void mysmb_objects_step_fireworks(struct mysmb_game *game);
-void mysmb_objects_step_firework_frenzy(struct mysmb_game *game);
 void mysmb_objects_step_star_flags(struct mysmb_game *game);
 /* ROM FlagpoleObject, FlagpoleRoutine, and FlagpoleGfxHandler. */
 void mysmb_objects_start_flagpole(struct mysmb_game *game, mysmb_u8 page,

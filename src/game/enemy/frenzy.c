@@ -32,7 +32,8 @@ enum {
     MYSMB_AREA_TYPE = 0x074eU,
     MYSMB_WORLD_NUMBER = 0x075fU,
     MYSMB_BITM_FILTER = 0x06ddU,
-    MYSMB_SQUARE2_SOUND = 0x00feU
+    MYSMB_SQUARE2_SOUND = 0x00feU,
+    MYSMB_FIREWORKS_COUNTER = 0x06d7U
 };
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
@@ -375,4 +376,42 @@ void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8
     game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 1U;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
     mysmb_enemy_checkpoint_loaded(game, slot);
+}
+
+/* ROM InitEnemyFrenzy -> InitFireworks. */
+void mysmb_enemy_step_firework_frenzy(struct mysmb_game *game)
+{
+    static const mysmb_u8 x_data[6] = { 0U, 0x30U, 0x60U, 0x60U, 0U, 0x20U };
+    static const mysmb_u8 y_data[6] = { 0x60U, 0x40U, 0x70U, 0x40U, 0x60U, 0x30U };
+    mysmb_u8 slot;
+    mysmb_u8 star;
+    mysmb_u8 index;
+    mysmb_u8 x_before;
+    mysmb_u8 page;
+
+    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 22U ||
+        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
+    if (slot == 5U) return;
+    for (star = 5U; star != 0U; --star) {
+        if (game->ram[MYSMB_ENEMY_ID + star - 1U] == 49U) break;
+    }
+    if (star == 0U) return;
+    --star;
+    game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
+    game->ram[MYSMB_FIREWORKS_COUNTER]--;
+    index = (mysmb_u8)(game->ram[MYSMB_FIREWORKS_COUNTER] +
+                       game->ram[MYSMB_ENEMY_STATE + star]);
+    x_before = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + star] - 0x30U);
+    page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + star] -
+        (game->ram[MYSMB_ENEMY_X + star] < 0x30U ? 1U : 0U));
+    game->ram[MYSMB_ENEMY_ID + slot] = 22U;
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(x_before + x_data[index]);
+    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(page +
+        (game->ram[MYSMB_ENEMY_X + slot] < x_before ? 1U : 0U));
+    game->ram[MYSMB_ENEMY_Y + slot] = y_data[index];
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 8U;
 }

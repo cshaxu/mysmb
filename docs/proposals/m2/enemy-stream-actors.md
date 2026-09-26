@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -70,3 +70,6 @@ The translated `InitEnemyObject` now writes stream row Y/ID and enters a separat
 ## S3 P7: Bullet Bill/Cheep-Cheep frenzy restoration
 
 ROM `BulletBillCheepCheep` is now owned by `game/enemy/frenzy.c`, reached from the single `CheckpointEnemyID` special-controller dispatch in `game/enemy/init.c`. Both water Cheep-Cheep selection and land Bullet Bill selection join the ROM’s shared `Set17ID → GetRBit → PutAtRightExtent → CheckpointEnemyID` tail: the unique `BitMFilter` height bit, screen-right `+ $20` carry, `FinishFlame` dummy result, `$20` frenzy timer, and target actor initialization are shared rather than copied by branch. The persistent `$17` frenzy request is written at the `InitEnemyFrenzy` boundary. This packet also corrects pre-existing random-register off-by-one accesses: `PseudoRandomBitReg` is `$07a7`; Flying Cheep uses `+1` for timer/branch and `+2` only for the third-byte override, while Bowser flame and Bullet/Cheep use the base byte. Focused regressions cover water and land branches, duplicate-Bill suppression, and all three Flying-Cheep PRNG bytes. Full x64/x86 CTest is 79/79 each; the DOS MZ links the same shared code.
+## S3 P8: Fireworks frenzy ownership boundary
+
+ROM `InitEnemyFrenzy → InitFireworks` now has one T19 owner in `game/enemy/frenzy.c`. The migration moves the complete controller leaf, including its timer gate, descending star-flag scan, fireworks counter decrement, table-derived position/page carry, and new-object activation. `RunFireworks` and `RunStarFlagObj` remain in `endgame_objects.c`; frame order is unchanged, with the existing call site now targeting the T19 API. The endgame regression calls the explicit frenzy owner. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.

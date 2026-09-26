@@ -305,7 +305,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_objects_step_bowser_flames(game);
         mysmb_objects_step_star_flags(game);
         mysmb_objects_step_fireworks(game);
-        mysmb_objects_step_firework_frenzy(game);
+        mysmb_enemy_step_firework_frenzy(game);
         mysmb_enemy_step_lakitu_frenzy(game);
         mysmb_enemy_step_lakitus(game);
         mysmb_enemy_step_spiny_eggs(game);

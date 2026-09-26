@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 #include <string.h>
 
 static int test_star_flag_oam(void)
@@ -67,7 +68,7 @@ static int test_firework_frenzy(void)
     game.ram[0x001eU + 2U] = 0U;
     game.ram[0x006eU + 2U] = 1U;
     game.ram[0x0087U + 2U] = 0x90U;
-    mysmb_objects_step_firework_frenzy(&game);
+    mysmb_enemy_step_firework_frenzy(&game);
     if (game.ram[0x078fU] != 0x20U || game.ram[0x06d7U] != 2U) return 20;
     if (game.ram[0x000fU] != 1U || game.ram[0x0016U] != 22U ||
         game.ram[0x006eU] != 1U || game.ram[0x0087U] != 0xc0U ||
