@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -108,3 +108,7 @@ The complete S4 static audit searches every shared game writer for the fixed ROM
 ## S5 P1: title-to-play source-route baseline
 
 A fresh bounded 600-frame route was recorded from the original ROM at the NMI-return boundary and from the shared native frame snapshot: no input through frame 199, Start for frame 200, then Right from frame 360. The reference uses serial input $08 then $80; native uses decoded $10 then $01. The authoritative comparison records zero differences in CPU work RAM $0300-$07ff, both CIRAM pages, palette, visible OAM, audio command state, and all seven PPU-visible scalar fields. CPU zero page, stack, and $01f0 APU execution temporaries remain excluded from output equivalence. The x86 and x64 native recordings are byte-identical. This route proves the shared platform-independent output path at the S5 boundary; later S5 packets extend it to actor-producing scenarios rather than accepting synthetic slot edits.
+
+## S5 P2: source-reachable movement and jump
+
+The same NMI-return contract now covers a source-reachable first-area movement route: Start at frame 200, hold Right from frame 240, add A for frames 310–339, then retain Right. The original receives serial Start/Right/A bytes `$08`, `$80`, and `$81`; native receives decoded `$10`, `$01`, and `$81`. Across all 600 samples, CPU work RAM `$0300-$07ff`, both CIRAM pages, palette, visible OAM, audio command state, and all PPU-visible scalar fields have zero differences. The x86 and x64 native recordings remain byte-identical. The derived traces and comparator output stay under `build/t19-s5-p2`; no platform adapter owns the route or game decision.
