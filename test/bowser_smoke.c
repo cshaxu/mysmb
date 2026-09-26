@@ -2,6 +2,7 @@
 #include "game/enemy/stream.h"
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 #include "game/fireball/fireball.h"
 
 int main(void)
@@ -53,7 +54,7 @@ int main(void)
     game.ram[0x0087U] = 0x80U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x07a9U] = 0U;
-    mysmb_objects_step_bowser_flame_frenzy(&game);
+    mysmb_enemy_step_bowser_flame_frenzy(&game);
     if (game.ram[0x0010U] != 1U || game.ram[0x0017U] != 21U ||
         game.ram[0x0088U] != 0x72U || game.ram[0x00d0U] != 0x78U ||
         game.ram[0x0435U] != 1U || game.ram[0x06cbU] != 0U) return 3;

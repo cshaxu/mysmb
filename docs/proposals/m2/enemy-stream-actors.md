@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -54,3 +54,7 @@ The complete `InitEnemyFrenzy → InitFlyingCheepCheep` spawn routine now has on
 ## S3 P3: Enemy initialization dispatch ownership boundary
 
 The existing native translation of `InitEnemyObject → CheckpointEnemyID → InitEnemyRoutines` now has one T19 owner in `src/game/enemy/init.c`.  `stream.c` retains record parsing, page/bounds handling, persistent frenzy request routing, and stream-offset consumption; it calls the explicit initializer only after a loadable ordinary record has been positioned.  The moved dispatch preserves its prior ID branches and RAM writes for normal enemies, Hammer Bros, water enemies, firebars, platforms, Bowser, and the OAM handoff marker.  This is extraction only.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ links the same module.
+
+## S3 P4: Bowser-flame frenzy ownership boundary
+
+`InitEnemyFrenzy → InitBowserFlame` now has one T19 owner in `src/game/enemy/frenzy.c`.  The moved spawn routine retains its living-Bowser validation, first-free regular slot search, PRNG target selection, page/X/Y derivation, collision-box assignment, activation and frenzy-buffer clear.  `ProcBowserFlame` remains an S4 handler concern.  This is ownership-only; full x64/x86 CTest is 79/79 and the OpenNT DOS MZ relinks from the shared source.

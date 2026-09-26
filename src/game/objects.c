@@ -2133,37 +2133,6 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
     }
 }
 
-/* ROM InitBowserFlame.  A living Bowser opens its mouth and places the new
- * flame in the first free ordinary slot. */
-void mysmb_objects_step_bowser_flame_frenzy(struct mysmb_game *game)
-{
-    static const mysmb_u8 target_y[4] = { 0x90U, 0x80U, 0x70U, 0x90U };
-    mysmb_u8 slot;
-    mysmb_u8 bowser_slot;
-    mysmb_u8 random;
-
-    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 21U) return;
-    bowser_slot = game->ram[0x0368U];
-    if (bowser_slot >= 5U || game->ram[MYSMB_ENEMY_FLAG + bowser_slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + bowser_slot] != 45U) return;
-    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-    if (slot == 5U) return;
-    random = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
-    game->ram[MYSMB_ENEMY_ID + slot] = 21U;
-    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + bowser_slot];
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + bowser_slot] - 0x0eU);
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + bowser_slot] + 8U);
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = target_y[random] < game->ram[MYSMB_ENEMY_Y + slot] ?
-        0xffU : 1U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 8U;
-    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-}
-
 /* ROM ProcBowserFlame, excluding OAM. */
 void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
 {

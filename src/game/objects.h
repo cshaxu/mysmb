@@ -59,8 +59,7 @@ void mysmb_objects_step_platforms(struct mysmb_game *game);
 void mysmb_objects_step_bowsers(struct mysmb_game *game);
 /* ROM $d8aa-$d91d BridgeCollapse, including its VRAM_Buffer1 metatile writes. */
 mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game);
-/* ROM InitBowserFlame/ProcBowserFlame, excluding OAM output. */
-void mysmb_objects_step_bowser_flame_frenzy(struct mysmb_game *game);
+/* ROM ProcBowserFlame, excluding OAM output. */
 void mysmb_objects_step_bowser_flames(struct mysmb_game *game);
 /* ROM RunFireworks, InitFireworks, and RunStarFlagObj. */
 void mysmb_objects_step_fireworks(struct mysmb_game *game);
