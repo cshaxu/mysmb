@@ -21,6 +21,8 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
 void mysmb_objects_step_power_up(struct mysmb_game *game);
 void mysmb_objects_finish_power_up(struct mysmb_game *game);
 /* RunNormalEnemies for one ObjectOffset; GameEngine uses this with stream parsing. */
+/* ROM EnemyToBGCollisionDet through DoEnemySideCheck. */
+void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */

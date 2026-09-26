@@ -154,8 +154,8 @@ enum {
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
 static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
-static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot);
+void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
+                                            mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
                                                                 mysmb_u8 slot);
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
@@ -845,7 +845,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
             }
             return;
         }
-        mysmb_objects_normal_enemy_background_collision(game, slot);
+        mysmb_objects_step_normal_enemy_terrain(game, slot);
         if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes) != 0U) return;
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
@@ -887,35 +887,102 @@ static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
     game->ram[MYSMB_ENEMY_FRAME_TIMER + slot] = 0U;
 }
-/* ROM EnemyToBGCollisionDet terrain samples.  State transitions remain in
- * this actor route; all `$15/$16/$17` byte/page probing is shared by T17. */
-static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot)
+/* ROM EnemyToBGCollisionDet through DoEnemySideCheck, for the ordinary
+ * walking-enemy route.  The block-address arithmetic remains in the shared
+ * T17 world primitive; this actor route preserves the source state-machine
+ * order: bottom probe, landing/red-koopa transition, then side probe. */
+void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
+                                            mysmb_u8 slot)
 {
     struct mysmb_enemy_terrain terrain;
+    static const mysmb_u8 collision_state_data[6] = { 1U, 1U, 2U, 2U, 2U, 5U };
     mysmb_u8 tile;
+    mysmb_u8 state;
+    mysmb_u8 direction;
+    mysmb_u16 difference;
 
-    tile = mysmb_world_query_enemy_block(game, slot,
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x17U : 0x16U,
-        1U, &terrain) != 0U ? terrain.metatile : 0U;
-    if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
-        tile != 0x5fU && tile != 0x60U) {
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-    }
+    /* EnemyToBGCollisionDet: d5 actors and objects above the source gate
+     * never enter any terrain probe. */
+    state = game->ram[MYSMB_ENEMY_STATE + slot];
+    if ((state & 0x20U) != 0U ||
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) < 0x44U) return;
+
+    /* ChkUnderEnemy / HandleEToBGCollision / LandEnemyProperly. */
     tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
         terrain.metatile : 0U;
-    if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U && tile != 0U && tile != 0x26U &&
-        tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-        if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
-            game->ram[MYSMB_ENEMY_Y + slot] =
-                (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-            game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
+    if (mysmb_objects_is_solid_terrain(tile) != 0U && tile != 0x23U &&
+        terrain.contact_low_nibble < 0x0dU) {
+        if ((state & 0x40U) != 0U) {
+            mysmb_world_land_enemy(game, slot);
+            state = game->ram[MYSMB_ENEMY_STATE + slot];
+            if ((state & 0x80U) == 0U) {
+                game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+                return;
+            }
+            game->ram[MYSMB_ENEMY_STATE + slot] = (mysmb_u8)(state & 0xbfU);
+            return;
         }
+        if ((state & 0x80U) == 0U) {
+            if (state == 0U) goto side_check;
+            if (state >= 3U) return;
+            if (state == 2U) {
+                game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x10U;
+                game->ram[MYSMB_ENEMY_STATE + slot] = 3U;
+                mysmb_world_land_enemy(game, slot);
+                return;
+            }
+            /* ProcEnemyDirection.  Goombas land immediately; the other
+             * ordinary actors first face the player as the source does. */
+            if (game->ram[MYSMB_ENEMY_ID + slot] != 6U) {
+                difference = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                                         game->ram[MYSMB_ENEMY_X + slot]);
+                difference = (mysmb_u16)(difference -
+                    (((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+                     game->ram[MYSMB_PLAYER_X]));
+                direction = (difference & 0x8000U) != 0U ? 2U : 1U;
+                if (direction == game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot]) {
+                    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+                }
+            }
+            mysmb_world_land_enemy(game, slot);
+            game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+            return;
+        }
+        /* d7 set and d6 clear: LandEnemyProperly falls into DoEnemySideCheck. */
+        goto side_check;
     }
-    else game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+
+    /* ChkForRedKoopa runs both after an empty/non-solid bottom sample and
+     * after a solid sample outside the landing low-nibble interval. */
+    state = game->ram[MYSMB_ENEMY_STATE + slot];
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 3U && state == 0U) goto bump;
+    if ((state & 0x80U) != 0U) {
+        game->ram[MYSMB_ENEMY_STATE + slot] = (mysmb_u8)(state | 0x40U);
+    }
+    else if (state < 6U) {
+        game->ram[MYSMB_ENEMY_STATE + slot] = collision_state_data[state];
+    }
+
+side_check:
+    /* DoEnemySideCheck inspects only the leading side, at $14 vertically. */
+    if (game->ram[MYSMB_ENEMY_Y + slot] < 0x20U) return;
+    direction = game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot];
+    tile = mysmb_world_query_enemy_block(game, slot,
+        direction == 1U ? 0x17U : 0x16U, 1U, &terrain) != 0U ? terrain.metatile : 0U;
+    if (mysmb_objects_is_solid_terrain(tile) == 0U) return;
+
+bump:
+    /* ChkForBump_HammerBroJ -> RXSpd for this ordinary route. */
+    if (slot != 5U && (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) != 0U) {
+        game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+    }
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
 }
+
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
     if (slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
