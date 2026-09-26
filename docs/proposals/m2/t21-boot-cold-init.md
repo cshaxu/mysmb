@@ -156,3 +156,31 @@ OpenNT DOS16 MZ; it retains existing C4761 warnings and the
 `EA9B763F9AF01D7B0AA21D3AE25A6C852AF8D13AE8746A486D417ECEBD9B556D`,
 `mysmb32.exe` `1D5EBDC3A743FFAE7C85EDCE51C31B7876EF1F7648BEAE7C51F5ED959AB57059`,
 and `mysmb64.exe` `24C9CF38A12567A40EB3613481C7B21E808AFBE30F88D44908FA3B05016F1972`.
+
+## S4/P2 recorder repair, closure, and S5 admission
+
+The owner-local reference recorder was rebuilt in its ignored build tree after
+its previously linked nnes static libraries were found to have a stale
+`core_machine` layout. The stale binary observed the reset PC at the wrong
+member offset and stopped with exit 68; no MySMB or nxvm source was changed.
+The rebuilt recorder accepted the owner-supplied SMB1 ROM and produced three
+bounded NMI-return samples plus aggregate PC coverage. The coverage includes
+the reset entry `$8000` and the two source polling loops at `$800a` and
+`$800d`; raw trace and coverage remain ignored.
+
+This repairs the reference route, but it does not make a false equivalence
+claim. The C constructor currently calls the translated reset and then writes
+post-`ColdBoot` setup state that belongs to later source nodes. Therefore the
+three samples cannot yet be used as an equivalent post-`ColdBoot` snapshot.
+S4's two-boundary Windows/DOS scheduling, direct source audit, controlled RAM
+checks, purity evidence, and all three artifacts remain valid operational
+facts. Its actual ROM-match set is empty and the conformance count remains
+**3 / 1,992**.
+
+S4 closes by transferring all seven exact labels to S5. S5 is admitted with
+those labels, the same incoming three completed names, an empty forecast, and
+a maximum of **3 / 1,992**. Its purpose is closure reconciliation: determine
+the minimal source-owned repair or exact successor transfer required to remove
+the constructor's later-node writes, then record every node's final evidence
+or explicit transfer. It may not upgrade a label on recorder coverage or a
+native test alone.
