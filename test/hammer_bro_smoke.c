@@ -14,6 +14,19 @@ static void source_player_box(struct mysmb_game *game)
     game->ram[0x04afU] = (mysmb_u8)(game->ram[0x00ceU] + 32U);
 }
 
+
+/* ROM GetMiscBoundBox prepares this before the next ProcHammerObj collision. */
+static void source_hammer_box(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u16 address;
+
+    address = (mysmb_u16)(0x04d0U + slot * 4U);
+    game->ram[address] = game->ram[0x0093U + slot];
+    game->ram[address + 1U] = game->ram[0x00dbU + slot];
+    game->ram[address + 2U] = (mysmb_u8)(game->ram[0x0093U + slot] + 8U);
+    game->ram[address + 3U] = (mysmb_u8)(game->ram[0x00dbU + slot] + 8U);
+}
+
 int main(void)
 {
     struct mysmb_game game;
@@ -149,6 +162,13 @@ int main(void)
     game.frame_number = 1U;
     game.ram[0x0009U] = 1U;
     source_player_box(&game);
+    source_hammer_box(&game, 1U);
+    /* PlayerHammerCollision has no GameEngineSubroutine, player offscreen,
+     * or player-Y gate in the ROM.  The prepared boxes remain authoritative. */
+    game.ram[0x000eU] = 7U;
+    game.ram[0x03d0U] = 0xf0U;
+    game.ram[0x00b5U] = 0U;
+    game.ram[0x00ceU] = 0xe0U;
     mysmb_objects_step_misc(&game);
 
     if (game.ram[0x06bfU] != 1U || game.ram[0x0065U] != 0xf0U ||

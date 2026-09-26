@@ -46,6 +46,9 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowsers(struct mysmb_game *game);
 void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM ProcHammerObj prepares relative coordinates and offscreen bits before
+ * GetMiscBoundBox; the caller owns the intervening shared collision-box write. */
+void mysmb_objects_prepare_hammer(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index);
 
 #endif

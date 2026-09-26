@@ -85,6 +85,22 @@ static mysmb_u8 mysmb_hammer_y_offscreen(const struct mysmb_game *game,
     }
 }
 
+void mysmb_objects_prepare_hammer(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 relative_x;
+    mysmb_u8 relative_y;
+    mysmb_u8 offscreen;
+
+    relative_x = (mysmb_u8)(game->ram[MYSMB_HAMMER_MISC_X + slot] -
+                             game->ram[MYSMB_HAMMER_SCREEN_LEFT_X]);
+    relative_y = game->ram[MYSMB_HAMMER_MISC_Y + slot];
+    game->ram[MYSMB_HAMMER_REL_X] = relative_x;
+    game->ram[MYSMB_HAMMER_REL_Y] = relative_y;
+    offscreen = (mysmb_u8)((mysmb_hammer_y_offscreen(game, slot) << 4U) |
+                            (mysmb_hammer_x_offscreen(game, slot) >> 4U));
+    game->ram[MYSMB_HAMMER_OFFSCREEN] = offscreen;
+}
+
 void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 first_x[4] = { 4U, 0U, 4U, 0U };
@@ -100,14 +116,9 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 relative_y;
     mysmb_u8 offscreen;
 
-    relative_x = (mysmb_u8)(game->ram[MYSMB_HAMMER_MISC_X + slot] -
-                             game->ram[MYSMB_HAMMER_SCREEN_LEFT_X]);
-    relative_y = game->ram[MYSMB_HAMMER_MISC_Y + slot];
-    game->ram[MYSMB_HAMMER_REL_X] = relative_x;
-    game->ram[MYSMB_HAMMER_REL_Y] = relative_y;
-    offscreen = (mysmb_u8)((mysmb_hammer_y_offscreen(game, slot) << 4U) |
-                            (mysmb_hammer_x_offscreen(game, slot) >> 4U));
-    game->ram[MYSMB_HAMMER_OFFSCREEN] = offscreen;
+    relative_x = game->ram[MYSMB_HAMMER_REL_X];
+    relative_y = game->ram[MYSMB_HAMMER_REL_Y];
+    offscreen = game->ram[MYSMB_HAMMER_OFFSCREEN];
     pose = 0U;
     if (game->ram[MYSMB_HAMMER_TIMER_CONTROL] == 0U &&
         (game->ram[MYSMB_HAMMER_MISC_STATE + slot] & 0x7fU) == 1U) {

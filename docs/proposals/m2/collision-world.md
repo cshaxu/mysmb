@@ -439,3 +439,20 @@ proof. No gameplay or platform code changes. Current artifact set:
 mysmb16.exe `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
 mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
 and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.
+
+## S5 P21: restore PlayerHammerCollision dataflow
+
+**ROM-node accounting:** baseline **0 / 1,992** complete before and after this repair.
+PlayerHammerCollision (11228), ClHCol (11256), and ExPHC (11258) move from open
+to mapped/route-trace-pending; no node is promoted without an original-ROM
+controller route.
+
+The shared object path now preserves the source order: PlayerHammerCollision
+reads the prior GetMiscBoundBox result, then GetMiscOffscreenBits,
+RelativeMiscPosition, and GetMiscBoundBox prepare the next pass. The invented
+GameEngineSubroutine, player-offscreen/player-Y, and world-page clipping gates
+are removed. The only source gate is TimerControl OR Misc_OffscreenBits after
+the odd-frame gate. The focused hammer-bro smoke fixture preloads the
+source-prepared hammer box and proves collision still executes when the removed
+player gates are hostile. The original-ROM route remains deferred to S5's route
+trace lane. Artifacts: mysmb16.exe 2355A6129EE55CDF38D5259B4FAF50D0C3C31F53DC67BE67FB3CC13351CD6B6D, mysmb32.exe F905B63E301BD253C858601EACAB5FB84586BFE4D7C14612916A80E36A4B05FC, and mysmb64.exe  CD85EEEBDAD62958481763BC9D8D506108CA6658F44C35EF4362ABA7C877E5E. x64 and x86 CTest each pass 83/83; the OpenNT DOS16 link passes.

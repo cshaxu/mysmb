@@ -2274,6 +2274,12 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
         }
     }
+    /* ROM RunHSubs: offscreen bits and relative coordinates are generated,
+     * then GetMiscBoundBox writes this frame's box for the next collision. */
+    mysmb_objects_prepare_hammer(game, slot);
+    mysmb_world_set_bounding_box(game, (mysmb_u16)(0x04d0U + slot * 4U),
+        game->ram[MYSMB_MISC_BOUND_BOX + slot], game->ram[0x03b3U],
+        game->ram[0x03beU]);
     mysmb_objects_draw_hammer(game, slot);
 }
 /* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
@@ -2281,29 +2287,16 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot)
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
                                                  mysmb_u8 slot)
 {
-    mysmb_u16 player_world;
-    mysmb_u16 hammer_world;
-    mysmb_u16 screen_world;
     mysmb_u16 hammer_box;
 
+    /* ROM PlayerHammerCollision uses only FrameCounter and the prepared
+     * TimerControl|Misc_OffscreenBits gate. Its box is from the preceding
+     * RunHSubs pass; do not substitute world-coordinate clipping or a box
+     * rebuilt from this frame's position. */
     if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U ||
         game->ram[MYSMB_TIMER_CONTROL] != 0U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return;
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    hammer_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_MISC_PAGE + slot] << 8U) |
-                                game->ram[MYSMB_MISC_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (player_world < screen_world || hammer_world < screen_world ||
-        (mysmb_u16)(player_world - screen_world) >= 0x100U ||
-        (mysmb_u16)(hammer_world - screen_world) >= 0x100U) return;
+        game->ram[0x03d6U] != 0U) return;
     hammer_box = (mysmb_u16)(0x04d0U + slot * 4U);
-    mysmb_world_set_bounding_box(game, hammer_box,
-        game->ram[MYSMB_MISC_BOUND_BOX + slot], (mysmb_u8)(hammer_world - screen_world),
-        game->ram[MYSMB_MISC_Y + slot]);
     if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, hammer_box) == 0U) {
         game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 0U;
         return;

@@ -1458,7 +1458,10 @@ The labels and branches behind every line remain open until individually bound b
 | 11204 | `StnE` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
 | 11215 | `GoombaPoints` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
 | 11220 | `EnemySmackScore` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
-| 11224 | `ExHCF` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11224 | `ExHCF` | T17/S5/P20 | mapped, route trace pending |
+| 11228 | `PlayerHammerCollision` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending |
+| 11256 | `ClHCol` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending |
+| 11258 | `ExPHC` | T17/S5/P21 | mapped, route trace pending | focused ROM gate fixture; original route pending | source audit + collision regression |
 | 11228 | `PlayerHammerCollision` | unassigned | open | none |
 | 11256 | `ClHCol` | unassigned | open | none |
 | 11258 | `ExPHC` | unassigned | open | none |

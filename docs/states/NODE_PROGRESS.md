@@ -1,4 +1,4 @@
-# M2 ROM conformance node progress
+﻿# M2 ROM conformance node progress
 
 This is the quantitative progress report for the native C port. Its complete named ledger is the [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md): every one of its 1,992 rows is one ROM label node.
 
@@ -7,8 +7,8 @@ This is the quantitative progress report for the native C port. Its complete nam
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
 | ROM-match complete | 0 | None. |
-| C owner mapped, route trace still pending | 74 | The exact names are listed below. These are **not** completed matches. |
-| Open / unmatched | 1,918 | Every `open` row in the canonical inventory; that table is the complete named list. |
+| C owner mapped, route trace still pending | 77 | The exact names are listed below. These are **not** completed matches. |
+| Open / unmatched | 1,915 | Every `open` row in the canonical inventory; that table is the complete named list. |
 | **Total** | **1,992** | Canonical inventory. |
 
 The progress fraction is therefore **0 / 1,992 ROM-matched nodes**. A C file, structural extraction, focused smoke test, or executable build does not make a node a match. It becomes complete only after the original branch semantics, state writes, and affected ROM-reference frame trace are recorded in its inventory row.
@@ -17,7 +17,7 @@ The progress fraction is therefore **0 / 1,992 ROM-matched nodes**. A C file, st
 
 None.
 
-## Mapped but not yet matched (74)
+## Mapped but not yet matched (77)
 
 These names have a current C owner but have not passed the required source-route comparison. They remain unfinished.
 
@@ -25,6 +25,28 @@ These names have a current C owner but have not passed the required source-route
 | ---: | --- |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
+| 3737 | `CastleObject` |
+| 10509 | `StarFlagExit` |
+| 11085 | `FireballEnemyCollision` |
+| 11101 | `FireballEnemyCDLoop` |
+| 11115 | `GoombaDie` |
+| 11120 | `NotGoomba` |
+| 11135 | `NoFToECol` |
+| 11141 | `ExitFBallEnemy` |
+| 11145 | `BowserIdentities` |
+| 11148 | `HandleEnemyFBallCol` |
+| 11160 | `ChkBuzzyBeetle` |
+| 11167 | `HurtBowser` |
+| 11182 | `SetDBSte` |
+| 11189 | `ChkOtherEnemies` |
+| 11197 | `ShellOrBlockDefeat` |
+| 11204 | `StnE` |
+| 11215 | `GoombaPoints` |
+| 11220 | `EnemySmackScore` |
+| 11224 | `ExHCF` |
+| 11228 | `PlayerHammerCollision` |
+| 11256 | `ClHCol` |
+| 11258 | `ExPHC` |
 | 12805 | `GetFireballBoundBox` |
 | 14254 | `DrawFireball` |
 | 14283 | `DrawExplosion_Fireball` |
@@ -79,29 +101,8 @@ These names have a current C owner but have not passed the required source-route
 | 14846 | `GetPlayerOffscreenBits` |
 | 14851 | `GetFireballOffscreenBits` |
 
-| 3737 | `CastleObject` |
-| 10509 | `StarFlagExit` |
-
-| 11085 | `FireballEnemyCollision` |
-| 11101 | `FireballEnemyCDLoop` |
-| 11115 | `GoombaDie` |
-| 11120 | `NotGoomba` |
-| 11135 | `NoFToECol` |
-| 11141 | `ExitFBallEnemy` |
-| 11145 | `BowserIdentities` |
-| 11148 | `HandleEnemyFBallCol` |
-| 11160 | `ChkBuzzyBeetle` |
-| 11167 | `HurtBowser` |
-| 11182 | `SetDBSte` |
-| 11189 | `ChkOtherEnemies` |
-| 11197 | `ShellOrBlockDefeat` |
-| 11204 | `StnE` |
-| 11215 | `GoombaPoints` |
-| 11220 | `EnemySmackScore` |
-| 11224 | `ExHCF` |
-
 ## Reporting contract
 
-At **S admission**, the proposal and active packet must state the baseline as `ROM-match complete / 1,992`, name every inventory label the S may change, and state the node's incoming status. At **S closure**, the closure report must repeat the fraction, name every label whose status changed, link the evidence that allows each changed label to count as a match, and name every deferred label and its owner. No aggregate increase is allowed without matching inventory-row updates.
+At **S admission**, the proposal and active packet must state the baseline as ROM-match complete / 1,992, name every inventory label the S may change, state each node's incoming status, identify the exact subset expected to become matches, and declare the maximum expected closing fraction with its focused CTest and original-ROM route baseline. At **S closure**, the closure report must repeat the fraction, name every label whose status changed, link the evidence that allows each changed label to count as a match, and name every deferred label and its owner. No aggregate increase is allowed without matching inventory-row updates. The [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) holds the shared retrospective batches and test lanes.
 
 Every M2 P report also retains the existing delivery record: refreshed `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, their build/validation result, and the ordinary source/evidence/deferred-issue summary. The three executables demonstrate target delivery; they do not replace per-node ROM conformance evidence.
