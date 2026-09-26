@@ -475,5 +475,26 @@ int main(void)
     game.ram[0x06a7U] = 0U;
     if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06a7U] != 0U)
         return 1;
+    /* ROM CastleObject ($9808): AF 26 retains fixed length four before the
+     * ProcessAreaData tail decrements it to three. STY $07 makes 6, the
+     * second-byte low nibble, the buffer start; it writes the castle column
+     * at rows 6--10 rather than using row $0f. */
+    prg[0x0040U] = 0x2fU;
+    prg[0x0041U] = 0x26U;
+    prg[0x0042U] = 0xfdU;
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 1U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x072aU] = 1U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0732U] != 3U || game.ram[0x06a9U] != 0x45U ||
+        game.ram[0x06aaU] != 0x47U || game.ram[0x06abU] != 0x47U)
+        return 1;
     return 0;
 }

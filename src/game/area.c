@@ -1166,6 +1166,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
     static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
     static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
+    static const mysmb_u8 castle_metatiles[55] = {
+        0U,0x45U,0x45U,0x45U,0U, 0U,0x48U,0x47U,0x46U,0U,
+        0x45U,0x49U,0x49U,0x49U,0x45U, 0x47U,0x47U,0x4aU,0x47U,0x47U,
+        0x47U,0x47U,0x4bU,0x47U,0x47U, 0x49U,0x49U,0x49U,0x49U,0x49U,
+        0x47U,0x4aU,0x47U,0x4aU,0x47U, 0x47U,0x4bU,0x47U,0x4bU,0x47U,
+        0x47U,0x47U,0x47U,0x47U,0x47U, 0x4aU,0x47U,0x4aU,0x47U,0x4aU,
+        0x4bU,0x47U,0x4bU,0x47U,0x4bU
+    };
     mysmb_u8 row;
     mysmb_u8 kind;
     mysmb_u8 area_type;
@@ -1301,6 +1309,33 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             row++;
             height--;
         } while (1);
+        return;
+    }
+    if (row == 15U && kind == 2U) {
+        /* ROM CastleObject: GetLrgObjAttrib returns the second-byte low
+         * nibble in Y. The following STY $07 intentionally replaces the row
+         * saved by that helper, so the render-buffer index is this nibble. */
+        height = (mysmb_u8)(second & 0x0fU);
+        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 4U;
+        value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+        row = height;
+        continuation = 11U;
+        do {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
+                castle_metatiles[value];
+            row++;
+            if (continuation == 0U) break;
+            value = (mysmb_u8)(value + 5U);
+            continuation--;
+        } while (row != 11U);
+        /* The sampled source route reaches ExitCastle: its current page is
+         * nonzero, fixed length remains four, and the saved low nibble is
+         * nonzero. PlayerStop's length-one and flag-creation leaves remain
+         * in the following CastleObject packet. */
+        if (game->ram[MYSMB_AREA_CURRENT_PAGE] != 0U &&
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 1U)
+            game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x52U;
         return;
     }
     if (row == 15U && kind == 3U) {
