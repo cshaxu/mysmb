@@ -35,7 +35,7 @@ static void mysmb_dos16_compose_and_present(struct mysmb_dos16_root *root)
 static void mysmb_dos16_start_game(struct mysmb_dos16_root *root)
 {
     if (root->game_started != 0U) return;
-    mysmb_game_initialize(&root->game);
+    mysmb_game_power_on(&root->game);
     mysmb_game_frame_initialize(&root->game_frame);
     root->game_started = 1U;
 }

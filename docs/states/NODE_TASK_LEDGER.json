@@ -639,6 +639,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+        },
+        {
+          "id": "M2 T22 S7",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "source-order-migration"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the T22/S6 source-contract package for a bounded shared-C first-NMI call-placement migration."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -3891,7 +3903,7 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4056,7 +4068,7 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4085,7 +4097,7 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4114,7 +4126,7 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4159,7 +4171,7 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4204,7 +4216,7 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4233,7 +4245,7 @@
     {
       "label": "VRAM_AddrTable_Low",
       "line": 743,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4262,7 +4274,7 @@
     {
       "label": "VRAM_AddrTable_High",
       "line": 752,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4291,7 +4303,7 @@
     {
       "label": "VRAM_Buffer_Offset",
       "line": 761,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4320,7 +4332,7 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4349,7 +4361,7 @@
     {
       "label": "ScreenOff",
       "line": 776,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -10283,7 +10295,7 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T22 S6",
+      "receiver": "M2 T22 S7",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -54318,6 +54330,28 @@
       ],
       "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-023-t22-s6-to-s7",
+      "type": "transfer",
+      "from": "M2 T22 S6",
+      "to": "M2 T22 S7",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt",
+        "ScreenOff"
+      ],
+      "acceptedBy": "T22/S6 completed the source contract with no node credit; T22/S7 accepts its bounded shared-C first-NMI call-placement migration.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -58573,7 +58607,36 @@
       "maximumComplete": 3,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-source-order-intake-active"
+      "state": "closed-transferred-to-t22-s7"
+    },
+    {
+      "subtask": "M2 T22 S7",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt",
+        "ScreenOff"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 3,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-source-order-migration-active"
     }
   ]
 }

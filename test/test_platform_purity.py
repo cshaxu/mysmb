@@ -9,6 +9,7 @@ for path in platform.rglob("*.[ch]"):
     forbidden = (
         "->ram[", ".ram[", "->name_table", "->palette", "->visible_oam",
         "->visible_scroll", "->visible_ppu_", "->ppu_control_", "->scroll_",
+        "mysmb_game_begin_title_bootstrap",
     )
     for token in forbidden:
         if token in text:

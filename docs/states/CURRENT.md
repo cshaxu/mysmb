@@ -43,26 +43,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S6 Packet
+## M2 T22 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S6, Implementation intake; source-order first-NMI boundary. |
-| Admission And Approval | Owner approved the T21–T49 source-order plan. Historical T22 S1–S5 records are retained, so S6 is the next unused T22 slot and receives the deferred 12-node package. |
-| Objective | Establish the exact source-owned boundary from `Start` through the first NMI before migrating the minimal shared-C repair. |
-| Non-goals | Unrelated historical T22 block/item code, later title/gameplay behavior, platform gameplay logic, and ROM-match claims at intake. |
-| Reference Baseline | 3 / 1,992 complete; 12 labels received by T22 S6. |
+| Identifier Mode | M2 T22 S7, Implementation; shared-C first-NMI call-placement migration. |
+| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S6 closed its zero-credit source contract and transferred the exact twelve-label package to the next preserved T22 slot, S7. |
+| Objective | Move title bootstrap out of platform startup and into the shared first-NMI dispatch after the NMI prologue, while retaining neutral resource binding. |
+| Non-goals | Reimplementing `InitializeGame`, `InitializeArea`, title/menu behavior, area pointers/headers, unrelated historical T22 code, or claiming ROM matches from source movement alone. |
+| Reference Baseline | 3 / 1,992 complete; 12 labels received by T22 S7; 0 labels forecast for completion. |
 | Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared boot/frame/title owners, exact ledger records, ignored recorder evidence; no platform internals. |
+| Files And ABI Surface | Shared `boot.c`, `frame_root.c`, title bootstrap interface, Win32/DOS composition roots, focused project-owned tests, exact ledger records and ignored recorder evidence. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Compare source call order and original-ROM bounded route before code changes; subsequent S work separates ROM equivalence and operational verification. |
+| Verification | Separate source-order/ROM route audit from x86/x64/DOS16 builds and platform-purity tests; no node is credited until its own branch/write and source-reachable comparison are complete. |
 | Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`; expected matches: none; maximum 3 / 1,992. |
-| Asset Needs | Owner-local ROM/listing remain ignored research inputs. |
-| Reporting Requirements | Publish source nodes, call edges, RAM/PPU ownership and exact successor S plan before migration. |
-| Stop Conditions | Stop if a platform adapter must assume game behavior or if a historical T22 record would be overwritten. |
-| Exit Criteria | The exact source owner/call-order checklist is published and a bounded T22 migration S can be admitted without inventing node credit. |
+| Asset Needs | Owner-local ROM/listing and generated title inputs remain ignored research/build inputs. |
+| Reporting Requirements | Report pre-NMI state, NMI-prologue-to-title call edge, every platform call removed or retained, and the exact successor verification custody. |
+| Stop Conditions | Stop if platform code must make a gameplay decision, if migration requires changing title/area-node semantics outside this source-order boundary, or if a historical T22 record would be overwritten. |
+| Exit Criteria | All platform title-bootstrap calls are removed; the shared first-NMI branch owns the only bootstrap call; focused tests/builds and source-order recorder evidence are recorded; no false node credit is claimed. |
 | Original Owner Request | Execute small source-order tasks with exact node responsibility. |
-| Similar-Issue Sweep | Inspect all pre-first-tick calls for later source-node work. |
+| Similar-Issue Sweep | Inspect every pre-first-tick platform-to-game call and every direct caller of `mysmb_game_begin_title_bootstrap`; record each disposition. |
+
 ## Recent M4 Closures
 
 | Task | Compact result |

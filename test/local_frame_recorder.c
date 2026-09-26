@@ -147,22 +147,17 @@ int main(int argument_count, char **arguments)
         fclose(output);
         return 65;
     }
-    mysmb_game_initialize(&game);
+    mysmb_game_power_on(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_title_source(&game, mysmb_local_title_data,
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
-    if (bootstrap_title != 0U) {
-        if (mysmb_game_begin_title_bootstrap(&game) == 0U) {
-            fclose(output);
-            return 65;
-        }
-    }
-    else if (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
+    if (bootstrap_title == 0U &&
+        (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
                                              MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||
              mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
-                                            MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U) {
+                                            MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U)) {
         fclose(output);
         return 65;
     }

@@ -30,7 +30,7 @@ int main(void)
     unsigned short menu_frame;
     unsigned long title_hash;
 
-    mysmb_game_initialize(&game);
+    mysmb_game_power_on(&game);
     game.ram[0x07d7U] = 0U;
     game.ram[0x07d8U] = 1U;
     game.ram[0x07d9U] = 2U;
@@ -47,11 +47,12 @@ int main(void)
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
-    if (mysmb_game_begin_title_bootstrap(&game) == 0U) return 1;
-    if (game.ram[0x00fbU] != 0x80U) return 1;
+    if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
+        game.ram[0x00fbU] != 0U) return 1;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0009U] != 0U) return 1;
+    if (game.ram[0x0772U] != 1U || game.ram[0x00fbU] != 0x80U) return 1;
     saw_title_transfer = 0U;
     saw_icon_queue = 0U;
     saw_title_palette_queue = 0U;

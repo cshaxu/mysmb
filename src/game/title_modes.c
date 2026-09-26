@@ -166,13 +166,9 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
         return 0U;
     }
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-    /* The recorder observes the first NMI after its frame-counter increment.
-     * Seed the prior byte so the cold-boot snapshot is the ROM's 0x00. */
-    game->ram[MYSMB_RAM_FRAME_COUNTER] = 0xffU;
-    /* The reference cold boot spends its first NMI in InitializeGame before
-     * ScreenRoutines task 0.  Area state is already prepared above, but keep
-     * that frame boundary so title VRAM commands have the same phase. */
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    /* This boundary is called by the shared NMI dispatcher after its prologue.
+     * InitializeArea increments the source operation task before returning. */
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
     game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
     game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0x80U;
     return 1U;
@@ -308,4 +304,3 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_game_reset_title(game);
     }
 }
-

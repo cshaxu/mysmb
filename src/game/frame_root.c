@@ -197,7 +197,11 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         }
     }
     else if (mode_before == 0U && task_before == 0U) {
-        game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] = 1U;
+        /* Source reaches InitializeGame only after the NMI prologue.  The
+         * title owner preserves the existing subordinate body; absent local
+         * data keeps the compatibility fixture's prior task advance. */
+        if (mysmb_game_begin_title_bootstrap(game) == 0U)
+            game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] = 1U;
     }
     else if (((mode_before == 1U && task_before == 1U) ||
               (mode_before == 0U && task_before == 1U)) &&

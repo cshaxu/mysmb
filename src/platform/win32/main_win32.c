@@ -95,7 +95,7 @@ static void mysmb_win32_build_frame(void)
 static int mysmb_win32_start_game(void)
 {
     if (g_game_started != 0U) return 1;
-    mysmb_game_initialize(&g_game);
+    mysmb_game_power_on(&g_game);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&g_game, mysmb_local_chr, MYSMB_LOCAL_CHR_SIZE);
@@ -103,7 +103,6 @@ static int mysmb_win32_start_game(void)
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
-    if (mysmb_game_begin_title_bootstrap(&g_game) == 0U) return 0;
 #endif
     ZeroMemory(&g_frame, sizeof(g_frame));
     g_game_started = 1U;

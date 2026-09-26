@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include <string.h>
 
 enum {
     MYSMB_BOOT_OPER_MODE = 0x0770U,
@@ -63,23 +64,20 @@ void mysmb_game_reset(struct mysmb_game *game)
     game->oam_dma_primed = 1U;
 }
 
+void mysmb_game_power_on(struct mysmb_game *game)
+{
+    /* This initializes only the portable container, including immutable-data
+     * attachment slots.  The translated cold state remains the reset root;
+     * no later operation-mode work may run before the first shared NMI. */
+    memset(game, 0, sizeof(*game));
+    mysmb_game_reset(game);
+}
+
 void mysmb_game_initialize(struct mysmb_game *game)
 {
-    mysmb_u16 index;
-
-    /* The CPU RAM cold state used by the owner-local ROM starts clear.  The
-     * following InitializeMemory routine intentionally leaves $0160-$01ff
-     * untouched, so do not manufacture $ff there before it runs. */
-    for (index = 0U; index < 0x0800U; ++index) {
-        game->ram[index] = 0U;
-    }
-    for (index = 0U; index < 0x0020U; ++index) {
-        game->palette[index] = 0U;
-    }
-    /* After constructing the otherwise uninitialized C container, enter the
-     * same Start/WBootCheck/ColdBoot state root as every target.  Do not keep
-     * a second, host-only cold-boot sequence here. */
-    mysmb_game_reset(game);
+    /* Compatibility fixture setup retains historical focused-test behavior.
+     * Product composition roots use mysmb_game_power_on instead. */
+    mysmb_game_power_on(game);
     /* The host container needs a defined presentation backing store before
      * its first NMI.  T22 owns the source $4014 transfer cadence; this copy
      * only initializes the C container and does not decide any game state. */

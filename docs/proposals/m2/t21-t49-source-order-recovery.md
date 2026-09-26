@@ -73,3 +73,61 @@ work which source executes only after the NMI prologue enters the title-mode
 tree. T22/S7 must move that work to the shared first-NMI path, retain host
 resource binding as inert data attachment, and test the exact pre-NMI state.
 No label is complete from this contract.
+
+## T22/S6 closure and T22/S7 migration
+
+T22/S6 closed as a zero-credit source contract and transferred all twelve
+labels to T22/S7. It established the owner, state boundary and successor
+without claiming that a source map or an existing C body is ROM-equivalent.
+
+T22/S7 is a bounded shared-C call-placement migration. It may only:
+
+1. split neutral C-container construction from the shared `Start`/`ColdBoot`
+   state root;
+2. leave both platform roots with a two-boundary wait plus inert resource
+   binding, without title/area initialization; and
+3. invoke the existing title-bootstrap boundary from `frame_root.c` only after
+   the shared NMI prologue has run for mode/task zero.
+
+It must preserve the existing title/area implementation body for the future
+owners of `InitializeGame`, `InitializeArea`, pointer loading and header
+parsing. Its expected ROM-match set is empty: the migration supplies a
+source-order prerequisite, then T22/S8 will audit the affected first-NMI
+branches and T23/T26 will verify the subordinate title/area nodes. Focused
+tests are `mysmb.reset-root-smoke`, `mysmb.local-title-bootstrap-smoke`,
+`mysmb.dos16-root-smoke` and `mysmb.platform-purity`; the ROM route is a
+three-NMI cold-start recorder run beginning at reset, with the first
+operation-mode dispatch sampled after the NMI prologue.
+
+### T22/S7 P1 result
+
+The implementation adds `mysmb_game_power_on` as the neutral C-container plus
+`Start`/`ColdBoot` entry, retaining `mysmb_game_initialize` only as a focused
+test-fixture constructor. Win32 and DOS roots now call `power_on`; their only
+remaining game-facing work before the first tick is inert data attachment.
+`frame_root.c` is the sole production caller of the title bootstrap and calls
+it from mode/task zero after `mysmb_frame_root_begin` has completed the NMI
+prologue. The title boundary now leaves task one, matching the source
+`InitializeArea` increment at that call boundary.
+
+The direct-caller sweep found and removed the Win32 production call and both
+owner-local test/recorder calls. The DOS root has no owner-local ROM data
+binding in this build, so its no-data fixture branch still advances task one;
+it does not add a separate DOS gameplay path. Owner-local DOS resource
+composition remains an asset-composition concern and receives no false
+equivalence claim here.
+
+Focused x86 and x64 CTests passed: reset root, pre-NMI boundary, local title
+bootstrap, DOS root, platform purity, and their corresponding Win32 self-test.
+The OpenNT large-model DOS link produced `mysmb-dos16.exe`. The three packaged
+targets are refreshed with SHA-256 values `C17F279F6FBD4CE80F16FA2B6BDC27FFD320EBD99A91117311CE3D4EE167B8B0`,
+`A37CDDA2B0113BF14460B1D33E9383BD1AF13F97A1897D407743AB8E5555374D`, and
+`5735F4091A519CB2A9352B8141A265529ABEA765D0D453B84277EEB48D09C5EF` for
+16-bit DOS, Win32 x86, and Win32 x64 respectively.
+
+The ignored three-NMI ROM comparison gives byte-identical x86/x64 native
+traces. It still differs from the ROM in 49 CPU-RAM bytes and three PPU-mask
+bytes, while CPU OAM backing, both name tables, palette, visible OAM, audio
+command state and the other PPU scalars are equal on this bounded route. Thus
+S7 closes with zero newly complete labels; its twelve labels transfer to a
+source-branch evidence S before any conformance credit.
