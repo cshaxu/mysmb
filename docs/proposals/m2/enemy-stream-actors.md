@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -50,3 +50,7 @@ The complete ROM group `PlayerLakituDiff → MoveLakitu → LakituAndSpinyHandle
 ## S3 P2: Flying Cheep frenzy spawn ownership boundary
 
 The complete `InitEnemyFrenzy → InitFlyingCheepCheep` spawn routine now has one T19 owner in `src/game/enemy/frenzy.c`.  Its PRNG reads, free-slot scan, hard-mode slot gate, player-relative page/X calculation, timer selection, and enemy RAM writes retain the prior translated ROM sequence.  `frame_root.c` and the focused spawn probes use the explicit T19 interface.  `MoveFlyingCheepCheep` remains in `objects.c` for S4, where the ordinary/special actor handler package will be migrated as its own complete ROM-labelled group.  This P changes ownership only; it does not redefine group/frenzy scheduling or initialization policy.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ relinks from the same shared source set with its established `OLDNAMES.LIB` warning.
+
+## S3 P3: Enemy initialization dispatch ownership boundary
+
+The existing native translation of `InitEnemyObject → CheckpointEnemyID → InitEnemyRoutines` now has one T19 owner in `src/game/enemy/init.c`.  `stream.c` retains record parsing, page/bounds handling, persistent frenzy request routing, and stream-offset consumption; it calls the explicit initializer only after a loadable ordinary record has been positioned.  The moved dispatch preserves its prior ID branches and RAM writes for normal enemies, Hammer Bros, water enemies, firebars, platforms, Bowser, and the OAM handoff marker.  This is extraction only.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ links the same module.

@@ -106,3 +106,5 @@ M2 T17 S2/P5 is complete: `MoveObjectHorizontally` now preserves its full ADC ca
 M2 T19 S3/P1 is complete: the full Lakitu/Spiny frenzy function group now has one shared `game/enemy/frenzy.c` owner; T19 S3 remains active for remaining group/initialization dispatch.
 
 M2 T19 S3/P2 is complete: `InitEnemyFrenzy → InitFlyingCheepCheep` has the same shared `game/enemy/frenzy.c` owner; regular Flying Cheep actor handling remains reserved for T19 S4.
+
+M2 T19 S3/P3 is complete: `InitEnemyObject → CheckpointEnemyID → InitEnemyRoutines` now has one shared `game/enemy/init.c` owner; stream parsing no longer contains initialization dispatch.
