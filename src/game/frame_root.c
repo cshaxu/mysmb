@@ -224,7 +224,6 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] = 4U;
         }
-        mysmb_objects_step_flagpole(game);
         if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
@@ -311,6 +310,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_area_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);
         mysmb_objects_step_misc(game);
+        /* ROM GameEngine calls FlagpoleRoutine after MiscObjectsCore and
+         * before the timer tail, after this frame's player/scroll update. */
+        mysmb_objects_step_flagpole(game);
         mysmb_area_step_palette_rotation(game);
         (void)mysmb_area_sync_player_palette(game);
         mysmb_game_cycle_player_palette(game);

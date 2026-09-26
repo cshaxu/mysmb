@@ -17,7 +17,9 @@ int main(void)
     game.ram[0x001dU] = 3U; game.ram[0x00ceU] = 0x20U;
     game.ram[0x010fU] = 2U; game.ram[0x070fU] = 0x20U;
     mysmb_objects_step_flagpole(&game);
-    if (game.ram[0x00cfU + 5U] != 0x31U || game.ram[0x0417U + 5U] != 0xffU ||
+    if (game.ram[0x03aeU] != 0x58U || game.ram[0x03b9U] != 0x31U ||
+        game.ram[0x03d1U] != 0U ||
+        game.ram[0x00cfU + 5U] != 0x31U || game.ram[0x0417U + 5U] != 0xffU ||
         game.ram[0x010dU] != 0xaeU || game.ram[0x010eU] != 1U) return 2;
     if (game.ram[0x0280U] != 0x31U || game.ram[0x0281U] != 0x7eU ||
         game.ram[0x0282U] != 1U || game.ram[0x0283U] != 0x58U ||

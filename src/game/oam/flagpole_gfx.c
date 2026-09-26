@@ -87,11 +87,11 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
                 game->ram[MYSMB_FLAG_FNUM_Y] - 1U - (carry == 0U ? 1U : 0U));
         }
     }
+    /* ROM FPGfx writes fixed Enemy_OffscreenBits then calls
+     * RelativeEnemyPosition with ObjectOffset=$05. */
     bits = mysmb_objects_get_enemy_x_offscreen_bits(game, 5U);
-    game->ram[MYSMB_FLAG_ENEMY_OFFSCREEN + 5U] = bits;
-    game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U] =
-        (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_X + 5U] - game->ram[0x071cU]);
-    game->ram[MYSMB_FLAG_ENEMY_REL_Y + 5U] = game->ram[MYSMB_FLAG_ENEMY_Y + 5U];
+    game->ram[MYSMB_FLAG_ENEMY_OFFSCREEN] = bits;
+    mysmb_oam_relative_enemy_position(game, 5U);
     oam = game->ram[MYSMB_FLAG_ENEMY_SPRITE_OFFSET + 5U];
     game->ram[0x0200U + oam] = game->ram[MYSMB_FLAG_ENEMY_Y + 5U];
     game->ram[0x0204U + oam] = game->ram[MYSMB_FLAG_ENEMY_Y + 5U];
@@ -100,9 +100,11 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
     game->ram[0x0209U + oam] = 0x7eU;
     game->ram[0x0202U + oam] = 1U; game->ram[0x0206U + oam] = 1U;
     game->ram[0x020aU + oam] = 1U;
-    game->ram[0x0203U + oam] = game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U];
-    game->ram[0x0207U + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U] + 8U);
-    game->ram[0x020bU + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U] + 8U);
+    /* FlagpoleGfxHandler reads the fixed Enemy_Rel_XPos scratch produced by
+     * RelativeEnemyPosition; slot five selects the input only. */
+    game->ram[0x0203U + oam] = game->ram[MYSMB_FLAG_ENEMY_REL_X];
+    game->ram[0x0207U + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X] + 8U);
+    game->ram[0x020bU + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X] + 8U);
     if (game->ram[MYSMB_FLAG_COLLISION_Y] != 0U) {
         index = (mysmb_u8)(game->ram[MYSMB_FLAG_SCORE] << 1U);
         game->ram[0x020cU + oam] = game->ram[MYSMB_FLAG_FNUM_Y];
@@ -110,8 +112,8 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
         game->ram[0x020dU + oam] = score_tiles[index];
         game->ram[0x0211U + oam] = score_tiles[index + 1U];
         game->ram[0x020eU + oam] = 1U; game->ram[0x0212U + oam] = 1U;
-        game->ram[0x020fU + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U] + 20U);
-        game->ram[0x0213U + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X + 5U] + 28U);
+        game->ram[0x020fU + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X] + 20U);
+        game->ram[0x0213U + oam] = (mysmb_u8)(game->ram[MYSMB_FLAG_ENEMY_REL_X] + 28U);
     }
     if ((bits & 0x0eU) != 0U)
         for (index = 0U; index < 6U; ++index)

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T22 active — S1/P2 and S2/P1.**
+**M2 T22 active — S1/P2, S2/P1 and S4/P1.**
 
 ## ROM scope
 
@@ -65,3 +65,21 @@ outside this map and may only submit the completed game frame.
 ## S2/P1: restore BrickCoinTimerFlag multi-coin branch
 
 The controller-only page-twelve route transferred ROM `$06bc=BrickCoinTimerFlag` from T17: it was `$01` in every reference sample and `$00` in native C.  ROM `BlockBumpedChk` initializes `BrickCoinTimer=$0b` and increments the flag only on the first `$58/$5d` multi-coin brick bump; while the timer remains nonzero it retains the brick metatile, otherwise it emits `$c4`.  `objects.c` now follows that exact branch in the shared block-bump owner.  The focused regression covers first initialization and expired-timer behavior.  In the same 600-frame page-twelve route, the persistent `$06bc` mismatch disappears; first work-RAM/OAM mismatch is now sample 362, with later CIRAM differences downstream.  Full x64 and x86 CTest pass 83/83; OpenNT links the shared DOS MZ.  Artifacts: mysmb16.exe `CD637756EDB65712673DE10614AB2696520E9B63B3379517E82B36D87A384A44`, mysmb32.exe `D0CA1D1B71FD9D6698C5B1D1598FC716859F3C6ECC3A4BBE1C5C83B88FB63104`, mysmb64.exe `FE975D0F62596EE69B277DCA2AFA801B74C2280C2FA6F66F6E84DD18BE3A0C04`.
+## S4/P1: restore FlagpoleRoutine frame order and fixed work bytes
+
+ROM `GameEngine` reaches `FlagpoleRoutine` after its player/scroll update and
+`MiscObjectsCore`.  The native root previously ran the flagpole before that
+update.  Its `FPGfx` port also treated the slot-five input offset as an offset
+into the outputs.  Direct ROM inspection shows `GetEnemyOffscreenBits` and
+`RelativeEnemyPosition` select slot five only for input, then write the fixed
+`Enemy_OffscreenBits` `$03d1`, `Enemy_Rel_XPos` `$03ae` and
+`Enemy_Rel_YPos` `$03b9` bytes which `FlagpoleGfxHandler` consumes.
+
+The shared game root now invokes the routine at the source position.  The
+shared OAM writer now writes and consumes those fixed bytes.  The focused
+smoke asserts all three work bytes and the resulting OAM.  On the existing
+600-frame controller-only page-twelve route, this removes the former first
+residual at sample 362 (`$03ae`) and reduces flagpole OAM divergence to three
+bytes across three late samples; remaining work/CIRAM residuals first occur at
+sample 526 and stay queued for their source owners.  No platform file changed.
+Artifacts: mysmb16.exe CBDC82F47E98049B62586A9ACE5736F219FF906803CA999C333EDF43B557C48D; mysmb32.exe 705D76A5D9559838309E5960E09C05A9FDCDD08CDCEC4D56FEC04EF29CC8AEF5; mysmb64.exe 3D83CA4D91CB4C50EDC4EB05EF971EB803CED17F81EA16524A01D8F22865A55D.
