@@ -556,6 +556,36 @@ static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
     mysmb_objects_draw_power_up(game);
 }
 
+/* ROM EnemyJump.  This caller retains actor scheduling; the shared world
+ * APIs own only the selected probe, landing bytes, and fixed-point movement. */
+static void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
+                                                  mysmb_u8 slot)
+{
+    struct mysmb_enemy_terrain terrain;
+    mysmb_u8 tile;
+    mysmb_u8 direction;
+
+    /* SubtEnemyYPos: the 6502 comparison is against the wrapped ADC byte. */
+    if ((mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) >= 0x44U &&
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + 2U) >= 3U) {
+        tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
+            terrain.metatile : 0U;
+        if (mysmb_objects_is_solid_terrain(tile) != 0U) {
+            mysmb_world_land_enemy(game, slot);
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
+        }
+    }
+    /* DoEnemySideCheck always follows the bottom route, including its
+     * status-bar gate and leading-side selection. */
+    if (game->ram[MYSMB_ENEMY_Y + slot] < 0x20U) return;
+    direction = game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot];
+    tile = mysmb_world_query_enemy_block(game, slot,
+        direction == 1U ? 0x17U : 0x16U, 1U, &terrain) != 0U ? terrain.metatile : 0U;
+    if (mysmb_objects_is_solid_terrain(tile) == 0U) return;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+}
 /* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
  * movement and EnemyToBGCollisionDet state paths. */
 void mysmb_objects_step_power_up(struct mysmb_game *game)
@@ -578,23 +608,15 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     game->ram[MYSMB_POWER_UP_TYPE] == 2U ? 0x1cU : 0x3dU, 3U);
             }
             mysmb_world_move_enemy_horizontally(game, slot);
-            {
+            if (game->ram[MYSMB_POWER_UP_TYPE] == 2U) {
+                mysmb_objects_step_enemy_jump_terrain(game, slot);
+            }
+            else {
                 struct mysmb_enemy_terrain terrain;
                 tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
                     terrain.metatile : 0U;
-            }
-
-            if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
-                tile != 0U && tile != 0x26U && tile != 0xc2U &&
-                tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-                if (game->ram[MYSMB_POWER_UP_TYPE] == 2U &&
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + 2U) >= 3U) {
-                    game->ram[MYSMB_ENEMY_Y + slot] =
-                        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-                    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
-                    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-                }
-                else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
+                if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
+                    mysmb_objects_is_solid_terrain(tile) != 0U) {
                     /* LandEnemyProperly first routes Y low nybbles D-F to
                      * ChkForRedKoopa, which gives active objects the d6
                      * falling bit.  It can align to Y|8 only on 8-C after
@@ -604,36 +626,25 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                     }
                     else if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U &&
                              (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 8U) {
-                        game->ram[MYSMB_ENEMY_Y + slot] =
-                            (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-                        /* ROM EnemyLanding -> InitVStf clears speed and
-                         * force only; Enemy_YMF_Dummy carries into the
-                         * next fall and supplies its fractional phase. */
-                        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-                        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+                        mysmb_world_land_enemy(game, slot);
                         game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
                     }
                 }
-            }
-            else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
-                game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
-            }
-            {
-                struct mysmb_enemy_terrain terrain;
+                else {
+                    game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+                }
                 tile = mysmb_world_query_enemy_block(game, slot,
                     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x17U : 0x16U,
                     1U, &terrain) != 0U ? terrain.metatile : 0U;
-            }
-            if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
-            /* ROM RXSpd: DoEnemySideCheck preserves the movement
-             * magnitude and takes the two's complement of the current
-             * 4.4 speed.  A Goomba's $f8 becomes $08; a mushroom's
-             * $10 becomes $f0. */
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-                (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-            }
-        }
+                if (mysmb_objects_is_solid_terrain(tile) != 0U) {
+                    /* ROM RXSpd: DoEnemySideCheck preserves the movement
+                     * magnitude and takes the two's complement of the current
+                     * 4.4 speed. */
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+                    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+                        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+                }
+            }        }
         mysmb_objects_prepare_power_up_subs(game);
         return;
     }
@@ -801,7 +812,8 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
             mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
-        }        mysmb_world_move_enemy_horizontally(game, slot);
+        }
+        mysmb_world_move_enemy_horizontally(game, slot);
 }
 
 /* ROM EraseEnemyObject.  Defeated Goombas reach this through the interval
