@@ -39,6 +39,20 @@ int main(void)
         game.ram[0x00cfU] != 0xf8U || game.ram[0x00a0U] != 0xfbU ||
         game.ram[0x049aU] != 9U) return 2;
 
+    /* AreaFrenzy enqueues $14; ChkEnemyFrenzy consumes it in the same
+     * current ObjectOffset before it attempts to read enemy stream data. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    game.ram[0x06cdU] = 20U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x40U;
+    game.ram[0x07a9U] = 2U;
+    game.ram[0x07aaU] = 0U;
+    if (mysmb_enemy_stream_process_current(&game, 0, 2U) != 1U ||
+        game.ram[0x06cdU] != 0U || game.ram[0x06cbU] != 20U ||
+        game.ram[0x0011U] != 1U || game.ram[0x0018U] != 20U ||
+        game.ram[0x078fU] != 0x10U || game.ram[0x0070U] != 1U ||
+        game.ram[0x0089U] != 0x80U || game.ram[0x00b8U] != 1U ||
+        game.ram[0x00d1U] != 0xf8U) return 3;
     /* In normal difficulty a free fourth slot consumes the random timer but
      * does not create a fourth simultaneous flying fish. */
     mysmb_game_initialize_memory(&game, 0xfeU);
