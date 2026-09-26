@@ -164,6 +164,22 @@ int main(void)
         game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U ||
         game.ram[0x0784U] != 0U) return 31;
 
+    /* SolidOrClimb queues Sfx_Bump for solid blocks, except the $26
+     * climbing metatile handled by the source branch. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x00ffU] = 0U;
+    game.ram[0x05f2U] = 0x61U;
+    if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
+        game.ram[0x00ffU] != 2U) return 34;
+
     /* InitBlock_XY_Pos uses the carry from Player_X + 8 before masking to
      * a metatile boundary.  At X=$02 the resulting X is zero but the page
      * must remain unchanged. */

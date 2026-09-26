@@ -1423,6 +1423,10 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
     }
     group = (mysmb_u8)(terrain.metatile >> 6U);
     if (terrain.metatile >= solid_upper[group]) {
+        /* SolidOrClimb suppresses only the climbing metatile bump sound. */
+        if (terrain.metatile != 0x26U) {
+            game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x02U;
+        }
         game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
         return 1U;
     }
