@@ -1008,6 +1008,9 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     if (have_left != 0U && left.metatile != 0U) {
         if (mysmb_world_is_climbable(left.metatile) != 0U) return 0U;
+        /* ChkInvisibleMTiles branches directly to DoPlayerSideCheck.  Hidden
+         * coin and 1-up blocks are neither floor nor a landing correction. */
+        if (left.metatile == 0x5fU || left.metatile == 0x60U) return 0U;
         /* ROM HandleAxeMetatile runs from the foot sample before ordinary
          * landing.  Its cleared metatile is enough for the C core; the
          * bridge presentation is owned by VictoryMode task zero. */
@@ -1034,6 +1037,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     if (have_right != 0U && right.metatile != 0U) {
         if (mysmb_world_is_climbable(right.metatile) != 0U) return 0U;
+        if (right.metatile == 0x5fU || right.metatile == 0x60U) return 0U;
         return mysmb_world_land_player_on_solid(game, right.metatile,
                                           right.contact_low_nibble);
     }

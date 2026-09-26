@@ -58,6 +58,23 @@ int main(void)
     game.ram[0x0644U] = 0x51U;
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 0U) return 10;
+    /* ChkInvisibleMTiles handles a hidden coin or 1-up sampled by either
+     * foot by branching to DoPlayerSideCheck before LandPlyr. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0644U] = 0x5fU;
+    if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
+        game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 29;
+    game.ram[0x0644U] = 0x60U;
+    if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
+        game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 30;
     /* ROM SideCheckLoop first reaches the opposite-side probe ($00=$02).  With rightward speed, ImpedePlayerMove clears d1 but must not push Mario left. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
