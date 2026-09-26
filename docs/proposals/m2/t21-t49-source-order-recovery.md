@@ -244,3 +244,17 @@ reset route to the C90 owner without importing host policy. Focused tests are
 
 T22/S12 is pre-accepted for the three table labels and T22/S13 for the parent
 NMI label, but neither is active until the current S closes.
+
+### T22/S11 P1 boot-branch boundary test
+
+The source uses `$07fe` for a cold clear and `$07d6` for a warm clear.
+`InitializeMemory` descends from that supplied byte through page zero and
+deliberately skips `$0160-$01ff`; the warm branch consequently preserves the
+top-score window above `$07d6`, while the cold branch clears it. The project
+owned reset-root smoke now pins both branch boundaries, the preserved stack
+window and the subsequent cold-write overrides (`$07ff` and `$07a7`).
+
+This is source-branch and shared-C test evidence only. It does not complete a
+label: `Start`'s CPU setup, the two hardware vblank waits and `EndlessLoop`
+need a portable timing-boundary disposition, and the seven labels still need
+a controlled original-ROM route before any completion claim.
