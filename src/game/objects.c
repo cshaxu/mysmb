@@ -887,54 +887,35 @@ static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
     game->ram[MYSMB_ENEMY_FRAME_TIMER + slot] = 0U;
 }
-/* ROM EnemyToBGCollisionDet runs before PlayerEnemyCollision and
- * EnemyMovementSubs.  Keep the terrain probes at their source frame boundary:
- * current coordinates are tested; only afterwards can fixed-point movement
- * advance the object. */
+/* ROM EnemyToBGCollisionDet terrain samples.  State transitions remain in
+ * this actor route; all `$15/$16/$17` byte/page probing is shared by T17. */
 static void mysmb_objects_normal_enemy_background_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot)
 {
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
+    struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
-        x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
-            (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
-        page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
-            game->ram[MYSMB_ENEMY_X + slot], x);
-        row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
-        address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
-                              (x >> 4U) + row);
-        tile = address < 0x0800U ? game->ram[address] : 0U;
-        if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
-            tile != 0x5fU && tile != 0x60U) {
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
-            /* ROM RXSpd: DoEnemySideCheck preserves the movement
-             * magnitude and takes the two's complement of the current
-             * 4.4 speed.  A Goomba's $f8 becomes $08; a mushroom's
-             * $10 becomes $f0. */
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-                (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-        }
-        x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-        page = mysmb_world_collision_page(game->ram[MYSMB_ENEMY_PAGE + slot],
-            game->ram[MYSMB_ENEMY_X + slot], x);
-        row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
-        address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
-                              (x >> 4U) + row);
-        tile = address < 0x0800U ? game->ram[address] : 0U;
-        if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U && tile != 0U && tile != 0x26U &&
-            tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
-            if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
-                game->ram[MYSMB_ENEMY_Y + slot] =
-                    (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-                game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
-            }
-        }
-        else game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
-}
 
+    tile = mysmb_world_query_enemy_block(game, slot,
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x17U : 0x16U,
+        1U, &terrain) != 0U ? terrain.metatile : 0U;
+    if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
+        tile != 0x5fU && tile != 0x60U) {
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+            (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
+    }
+    tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
+        terrain.metatile : 0U;
+    if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U && tile != 0U && tile != 0x26U &&
+        tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
+        if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
+            game->ram[MYSMB_ENEMY_Y + slot] =
+                (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+            game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
+        }
+    }
+    else game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
+}
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
     if (slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
