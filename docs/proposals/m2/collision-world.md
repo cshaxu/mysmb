@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P6; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P7; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -96,3 +96,9 @@ ROM `CheckSideMTiles` calls `ChkJumpspringMetatiles`; its carry-clear branch rea
 ROM `HeadChk -> CheckForSolidMTiles -> SolidOrClimb` writes `Sfx_Bump=$02` to `Square1SoundQueue/$00ff` for a solid head metatile, except `$26`, which follows the climbing no-sound branch. The shared C path set `Player_Y_Speed=$01` but omitted that queue write. It now writes `$02` before the original vertical-speed update, retaining the source exception for `$26`.
 
 `collision_regression_smoke` drives the source small-Mario head probe against `$61` with upward speed and asserts `Player_Y_Speed=$01` plus `Square1SoundQueue=$02`. This is shared game-core behavior across DOS16, Win32 x86, and Win32 x64. Full x64 and x86 CTest suites pass 79/79, including platform-purity. The OpenNT DOS MZ rebuilds from the same source list with the established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16.exe SHA-256 2FCECD8A2DBE4F1DA17563EB119C58B5471A62D6258A6B88AF0ED3A6AA18A831, mysmb32.exe SHA-256 54D40E2247A21B437621369437C0976EAAB1BE9602D090EC71223B122D8F3AB0, mysmb64.exe SHA-256 E4DC43C4E34E9BF189ED632352C55E46B6FC7E1695FB0631618EFDE9C7D78E67.
+
+## S4 P7: preserve HeadChk bounce-timer NYSpd branch
+
+ROM `HeadChk` tests `BlockBounceTimer` after a non-solid, non-water head contact. A nonzero timer branches directly to `NYSpd`, leaves the block untouched, and writes `Player_Y_Speed=$01`. The old C skipped the bump call but returned without this required speed write. The shared game route now preserves the source branch.
+
+`collision_regression_smoke` supplies a non-solid `$51` head probe with a live bounce timer and verifies the block state/metatile remain untouched while `Player_Y_Speed` becomes `$01`. Full x64 and x86 CTest suites pass 79/79, including platform-purity; OpenNT DOS MZ rebuilds from the same source list. Refreshed artifacts: mysmb16.exe SHA-256 9CC40A31AC5E28416FA158C26998DF2E18CC88AFFD1043DC2964D6BAABC7B08E, mysmb32.exe SHA-256 156A406C9DCFC2230070997A0E57FBDD114665BD7867AA0B8B56D43F1C2654F8, mysmb64.exe SHA-256 1FFC627CC895C2FF8233AFE06326BE44E6746AA0FC7723F833120B3189D7C150.

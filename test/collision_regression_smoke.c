@@ -164,6 +164,23 @@ int main(void)
         game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U ||
         game.ram[0x0784U] != 0U) return 31;
 
+    /* A live BlockBounceTimer takes HeadChk directly to NYSpd, so a
+     * non-solid block stays untouched while upward motion is cancelled. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x074eU] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x34U;
+    game.ram[0x009fU] = 0xf0U;
+    game.ram[0x0784U] = 1U;
+    game.ram[0x0026U] = 0U;
+    game.ram[0x05f2U] = 0x51U;
+    if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
+        game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U) return 35;
+
     /* SolidOrClimb queues Sfx_Bump for solid blocks, except the $26
      * climbing metatile handled by the source branch. */
     mysmb_game_initialize_memory(&game, 0xfeU);
