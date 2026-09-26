@@ -13,7 +13,9 @@ enum {
      * to ImposeFriction. */
     MYSMB_PLAYER_X_MOVE_FORCE = 0x0400U,
     MYSMB_PLAYER_X_FORCE = 0x0705U,
-    MYSMB_JUMPSPRING_ANIM = 0x070eU
+    MYSMB_JUMPSPRING_FORCE = 0x06dbU,
+    MYSMB_JUMPSPRING_ANIM = 0x070eU,
+    MYSMB_JUMPSPRING_TIMER = 0x0786U
 };
 
 enum {
@@ -1008,6 +1010,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     if (have_left != 0U && left.metatile != 0U) {
         if (mysmb_world_is_climbable(left.metatile) != 0U) return 0U;
+        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
         /* ChkInvisibleMTiles branches directly to DoPlayerSideCheck.  Hidden
          * coin and 1-up blocks are neither floor nor a landing correction. */
         if (left.metatile == 0x5fU || left.metatile == 0x60U) return 0U;
@@ -1021,6 +1024,21 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
             game->ram[(mysmb_u16)(0x0500U + left.block_address_low +
                                    left.block_row_offset)] = 0U;
             return 1U;
+        }
+        /* ChkFootMTile reaches InitSteP while JumpspringHandler owns the
+         * animation; it resets only Player_State and must not land Mario. */
+        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
+            game->ram[MYSMB_PLAYER_STATE] = 0U;
+            return 1U;
+        }
+        /* ChkForLandJumpSpring initializes the object-owned animation before
+         * LandPlyr aligns Mario to the metatile boundary. */
+        if ((left.metatile == 0x67U || left.metatile == 0x68U) &&
+            left.contact_low_nibble < 5U) {
+            game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
+            game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
+            game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
+            game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
         }
         if (mysmb_world_land_player_on_solid(game, left.metatile,
                                        left.contact_low_nibble) == 0U) {
@@ -1037,7 +1055,19 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     if (have_right != 0U && right.metatile != 0U) {
         if (mysmb_world_is_climbable(right.metatile) != 0U) return 0U;
+        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
         if (right.metatile == 0x5fU || right.metatile == 0x60U) return 0U;
+        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
+            game->ram[MYSMB_PLAYER_STATE] = 0U;
+            return 1U;
+        }
+        if ((right.metatile == 0x67U || right.metatile == 0x68U) &&
+            right.contact_low_nibble < 5U) {
+            game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
+            game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
+            game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
+            game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
+        }
         return mysmb_world_land_player_on_solid(game, right.metatile,
                                           right.contact_low_nibble);
     }

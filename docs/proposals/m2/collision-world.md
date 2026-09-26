@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P7; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P8; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -102,3 +102,9 @@ ROM `HeadChk -> CheckForSolidMTiles -> SolidOrClimb` writes `Sfx_Bump=$02` to `S
 ROM `HeadChk` tests `BlockBounceTimer` after a non-solid, non-water head contact. A nonzero timer branches directly to `NYSpd`, leaves the block untouched, and writes `Player_Y_Speed=$01`. The old C skipped the bump call but returned without this required speed write. The shared game route now preserves the source branch.
 
 `collision_regression_smoke` supplies a non-solid `$51` head probe with a live bounce timer and verifies the block state/metatile remain untouched while `Player_Y_Speed` becomes `$01`. Full x64 and x86 CTest suites pass 79/79, including platform-purity; OpenNT DOS MZ rebuilds from the same source list. Refreshed artifacts: mysmb16.exe SHA-256 9CC40A31AC5E28416FA158C26998DF2E18CC88AFFD1043DC2964D6BAABC7B08E, mysmb32.exe SHA-256 156A406C9DCFC2230070997A0E57FBDD114665BD7867AA0B8B56D43F1C2654F8, mysmb64.exe SHA-256 1FFC627CC895C2FF8233AFE06326BE44E6746AA0FC7723F833120B3189D7C150.
+
+## S4 P8: restore land-jumpspring handoff
+
+ROM `ChkFootMTile -> ChkForLandJumpSpring -> LandPlyr` recognizes `$67/$68` only after the foot route has rejected climbing tiles, upward motion, axes, and invisible blocks. On an idle spring and a low-nibble contact below `$05`, it writes `VerticalForce/$0709=$70`, `JumpspringForce/$06db=$f9`, `JumpspringTimer/$0786=$03`, and `JumpspringAnimCtrl/$070e=$01`, then reaches `LandPlyr`. When `JumpspringAnimCtrl` is already nonzero, the source takes `InitSteP`: it writes only `Player_State=$00`, leaving position and vertical motion for `JumpspringHandler` to own.
+
+The shared player route now makes that exact handoff before its existing land primitive, and preserves the active-animation `InitSteP` branch for both foot samples. `JumpspringHandler` remains the sole consumer that advances `$070e` and finally copies `JumpspringForce` to `Player_Y_Speed`; no platform module owns any portion of the rule. `collision_regression_smoke` verifies the first-contact four-byte handoff and the live-animation branch's unchanged Y position, Y speed, Y force, and spring bytes. Full x64 and x86 CTest suites pass 79/79, including platform-purity. The OpenNT DOS MZ rebuilds from the same shared source list with the established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16.exe SHA-256 AD36D1FBA37E16378D5EFAE6DB1F77BF4E161821687D5EE20CA8F1F0EF9295AF, mysmb32.exe SHA-256 5189FFE02018DF686F812C50A1760E89D75E6F24BA942C81ED810B823AAFEF63, mysmb64.exe SHA-256 4FBE54D9BF180C78247DD99BA6351331EBF081BDA9DDE78DA56997A1370AF017.

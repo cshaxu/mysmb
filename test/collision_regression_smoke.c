@@ -75,6 +75,41 @@ int main(void)
     game.ram[0x0644U] = 0x60U;
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 30;
+    /* ChkForLandJumpSpring initializes the shared spring handoff before
+     * LandPlyr.  The object handler later consumes these exact RAM bytes. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0644U] = 0x67U;
+    game.ram[0x0709U] = 0xaaU;
+    game.ram[0x06dbU] = 0xaaU;
+    game.ram[0x0786U] = 0xaaU;
+    game.ram[0x070eU] = 0U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0709U] != 0x70U ||
+        game.ram[0x06dbU] != 0xf9U || game.ram[0x0786U] != 3U ||
+        game.ram[0x070eU] != 1U || game.ram[0x001dU] != 0U ||
+        game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 0U) return 34;
+    /* A live JumpspringAnimCtrl takes InitSteP: state returns to normal,
+     * but position, vertical motion, and animation-owned bytes stay intact. */
+    game.ram[0x00ceU] = 0x73U;
+    game.ram[0x009fU] = 3U;
+    game.ram[0x0433U] = 0x55U;
+    game.ram[0x001dU] = 2U;
+    game.ram[0x0709U] = 0x88U;
+    game.ram[0x06dbU] = 0xf9U;
+    game.ram[0x0786U] = 2U;
+    game.ram[0x070eU] = 2U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
+        game.ram[0x00ceU] != 0x73U || game.ram[0x009fU] != 3U ||
+        game.ram[0x0433U] != 0x55U || game.ram[0x0709U] != 0x88U ||
+        game.ram[0x06dbU] != 0xf9U || game.ram[0x0786U] != 2U ||
+        game.ram[0x070eU] != 2U) return 35;
     /* ROM SideCheckLoop first reaches the opposite-side probe ($00=$02).  With rightward speed, ImpedePlayerMove clears d1 but must not push Mario left. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
