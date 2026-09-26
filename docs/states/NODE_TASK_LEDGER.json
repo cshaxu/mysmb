@@ -504,8 +504,9 @@
           "recordKinds": [
             "declared-plan"
           ],
-          "canReceive": false,
-          "admissionRole": "implementation"
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Historical receiver retained solely to replay pre-replan accepted ownership events; no active execution authority."
         },
         {
           "id": "M2 T21 S3",
@@ -515,8 +516,9 @@
           "recordKinds": [
             "declared-plan"
           ],
-          "canReceive": false,
-          "admissionRole": "implementation"
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Historical receiver retained solely to replay pre-replan accepted ownership events; no active execution authority."
         },
         {
           "id": "M2 T21 S4",
@@ -526,8 +528,9 @@
           "recordKinds": [
             "declared-plan"
           ],
-          "canReceive": false,
-          "admissionRole": "implementation"
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Historical receiver retained solely to replay pre-replan accepted ownership events; no active execution authority."
         },
         {
           "id": "M2 T21 S5",
@@ -537,8 +540,9 @@
           "recordKinds": [
             "declared-plan"
           ],
-          "canReceive": false,
-          "admissionRole": "implementation"
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Historical receiver retained solely to replay pre-replan accepted ownership events; no active execution authority."
         },
         {
           "id": "M2 T21 S6",
@@ -548,8 +552,9 @@
           "recordKinds": [
             "superseded-historical-receipt"
           ],
-          "canReceive": false,
-          "admissionRole": "audit"
+          "canReceive": true,
+          "admissionRole": "audit",
+          "receipt": "Historical receiver retained solely to replay pre-replan accepted ownership events; no active execution authority."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
