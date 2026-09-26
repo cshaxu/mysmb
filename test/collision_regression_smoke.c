@@ -75,6 +75,21 @@ int main(void)
     game.ram[0x0644U] = 0x60U;
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 30;
+    /* CheckForCoinMTiles queues the coin-grab sound before HandleCoinMetatile
+     * removes the sampled foot coin and updates its score/tally state. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x001dU] = 1U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0644U] = 0xc2U;
+    game.ram[0x00feU] = 0U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0644U] != 0U ||
+        game.ram[0x00feU] != 1U) return 37;
     /* ChkForLandJumpSpring initializes the shared spring handoff before
      * LandPlyr.  The object handler later consumes these exact RAM bytes. */
     mysmb_game_initialize_memory(&game, 0xfeU);

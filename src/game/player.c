@@ -68,7 +68,10 @@ enum {
 enum { MYSMB_PREVIOUS_A_B_BUTTONS = 0x000dU };
 
 /* ROM PJumpSnd and PipeDwnS write this before SoundEngine runs. */
-enum { MYSMB_SQUARE1_SOUND_QUEUE = 0x00ffU };
+enum {
+    MYSMB_SQUARE2_SOUND_QUEUE = 0x00feU,
+    MYSMB_SQUARE1_SOUND_QUEUE = 0x00ffU
+};
 
 enum {
     MYSMB_GAME_ENGINE_SUBROUTINE = 0x000eU,
@@ -795,6 +798,16 @@ void mysmb_player_checkpoint(const struct mysmb_game *game,
     checkpoint->screen_left_x = game->ram[MYSMB_SCREEN_LEFT_X];
 }
 
+/* ROM CheckForCoinMTiles -> HandleCoinMetatile.  Coins emitted from bumped
+ * blocks use their own JumpCoin sound producer; this helper is only for the
+ * player head, foot, and side collision paths that reached CheckForCoinMTiles. */
+static void mysmb_player_collect_metatile_coin(struct mysmb_game *game,
+                                               mysmb_u8 block_low,
+                                               mysmb_u8 block_row)
+{
+    game->ram[MYSMB_SQUARE2_SOUND_QUEUE] = 1U;
+    mysmb_objects_collect_coin(game, block_low, block_row);
+}
 /* Translation of BlockBufferCollision address construction for player offset zero. */
 mysmb_u8 mysmb_player_query_block(const struct mysmb_game *game,
                                   mysmb_u8 x_adder, mysmb_u8 y_adder,
@@ -1005,7 +1018,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
      * the right sample only when the left is empty.  A climbable sample
      * hands off to the side route instead of becoming a landing surface. */
     if (have_left != 0U && (left.metatile == 0xc2U || left.metatile == 0xc3U)) {
-        mysmb_objects_collect_coin(game, left.block_address_low,
+        mysmb_player_collect_metatile_coin(game, left.block_address_low,
                                    left.block_row_offset);
         return 1U;
     }
@@ -1056,7 +1069,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         return 1U;
     }
     if (have_right != 0U && (right.metatile == 0xc2U || right.metatile == 0xc3U)) {
-        mysmb_objects_collect_coin(game, right.block_address_low,
+        mysmb_player_collect_metatile_coin(game, right.block_address_low,
                                    right.block_row_offset);
         return 1U;
     }
@@ -1333,7 +1346,7 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
     mysmb_u8 collision_side)
 {
     if (terrain->metatile == 0xc2U || terrain->metatile == 0xc3U) {
-        mysmb_objects_collect_coin(game, terrain->block_address_low,
+        mysmb_player_collect_metatile_coin(game, terrain->block_address_low,
                                    terrain->block_row_offset);
         return 1U;
     }
@@ -1453,7 +1466,7 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         return 0U;
     }
     if (terrain.metatile == 0xc2U || terrain.metatile == 0xc3U) {
-        mysmb_objects_collect_coin(game, terrain.block_address_low,
+        mysmb_player_collect_metatile_coin(game, terrain.block_address_low,
                                    terrain.block_row_offset);
         return 1U;
     }
