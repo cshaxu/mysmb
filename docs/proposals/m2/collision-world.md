@@ -249,3 +249,14 @@ native trace files are byte-identical. The route artifacts and comparator
 output remain under `build/m2-t17-s6-current/traces`; it is route evidence,
 not a substitute for the still-required hidden-block, pipe, fireball, stomp
 and score cases.
+## S6 P3: hidden-block and jump-coin route
+
+A separate cold-title route holds Right+B from frame 340 and Right+B+A from
+436--451, reaching the first hidden coin block without synthetic RAM setup.
+The original-ROM trace records the block and jump-coin progression; the fresh
+current native x64 and x86 records are byte-identical and match the ROM for all
+600 samples in work RAM `$0300-$07ff`, both CIRAM pages, palette, visible OAM,
+audio command bytes, and PPU scalar output. The new artifacts are retained only
+under `build/m2-t17-s6-current/traces`. An earlier extended running route ends
+in the normal death path before any pipe contact, so it is explicitly excluded
+from pipe coverage rather than being counted as a false positive.
