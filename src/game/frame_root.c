@@ -482,16 +482,23 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
  * has already changed the source-owned scroll fields when this is called. */
 void mysmb_game_commit_display_state(struct mysmb_game *game)
 {
+    mysmb_u8 mask_mirror;
+
     /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
      * may have selected d2 in that mirror, whereas the physical register at
      * RTI is restored from the pre-command value with NMI enabled. */
     game->ppu_control_0 &= 0x7fU;
     game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] = game->ppu_control_0;
+    /* ScreenOff reads the $2001 mirror, never the ColdBoot's earlier direct
+     * physical $2001 write.  The first NMI therefore turns physical $06 into
+     * the cleared mirror value $00 while DisableScreenFlag remains set. */
+    mask_mirror = game->ram[MYSMB_ROOT_PPU_MASK_MIRROR];
     if (game->ram[MYSMB_ROOT_DISABLE_SCREEN] != 0U)
-        game->ppu_mask &= 0xe6U;
+        mask_mirror &= 0xe6U;
     else
-        game->ppu_mask |= 0x1eU;
-    game->ram[MYSMB_ROOT_PPU_MASK_MIRROR] = game->ppu_mask;
+        mask_mirror |= 0x1eU;
+    game->ram[MYSMB_ROOT_PPU_MASK_MIRROR] = mask_mirror;
+    game->ppu_mask = mask_mirror;
     /* The original writes these values before OperModeExecutionTree.  That
      * routine may change the mirrors and scroll variables, but the physical
      * PPU does not show those changes until the following NMI. */

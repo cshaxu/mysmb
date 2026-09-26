@@ -131,3 +131,48 @@ bytes, while CPU OAM backing, both name tables, palette, visible OAM, audio
 command state and the other PPU scalars are equal on this bounded route. Thus
 S7 closes with zero newly complete labels; its twelve labels transfer to a
 source-branch evidence S before any conformance credit.
+
+## T22/S8 first-NMI branch audit
+
+T22/S7 closed its call-placement migration with zero new ROM-match labels and
+transferred the same twelve labels to T22/S8. S8 owns a bounded source-branch
+audit and repair of the first three cold-start NMIs. It must trace the source
+order through `ScreenOff`, VRAM address-table selection and selected-buffer
+clear, then account for each observed RAM/PPU difference by source owner. It
+may repair only writes owned by the twelve received labels. `InitBuffer`, timer,
+sprite-0, operation-tree, title and area descendants remain with their current
+receivers and must be transferred rather than edited.
+
+Its exact expected-match set is empty. The first task is to turn the existing
+49-RAM-byte and three-PPU-mask-byte difference report into branch/write
+evidence; it may not promote a node on visual output or a passing CTest.
+Focused tests are `mysmb.reset-root-smoke`, `mysmb.boot-nmi-boundary-smoke`,
+`mysmb.local-title-bootstrap-smoke`, `mysmb.dos16-root-smoke` and
+`mysmb.platform-purity`. The ROM route remains reset plus three NMI samples,
+with x86/x64 native-trace equality checked separately from ROM equivalence.
+
+### T22/S8 P1 result
+
+The three-frame route was rerun with an explicit `0:0` input script. The
+earlier S7 recorder invocation held Start while sampling, so its raw-count
+comparison is retained only as a call-placement observation; this controlled
+route is the valid branch comparison.
+
+`ScreenOff` was repaired in `mysmb_game_commit_display_state`: it now reads
+`$0779`, applies the source `$e6` or `$1e` mask according to
+`DisableScreenFlag`, stores the mirror, and only then publishes physical
+PPU mask state. The focused pre-NMI test now asserts the first-NMI `$0779`,
+physical mask and visible mask values.
+
+On the controlled route, x86 and x64 native traces are byte-identical. The
+ROM comparison drops from 49 CPU-RAM and three PPU-mask differences to 43
+CPU-RAM differences and zero PPU-visible differences. The remaining values
+are: the 6502 stack window `$01f6-$01ff`, `InitializeGame`'s `$07a2=$18`
+demo-timer write, and subsequent `LoadAreaPointer` zero-page scratch values.
+These are not manufactured by S8: the stack is not portable game state, and
+the two executable descendants retain their registered receivers.
+
+No node is promoted because S8 declared an empty forecast. The next bounded
+evidence S must nominate `ScreenOff` explicitly before it can close that
+label. Focused x86/x64 tests and platform purity pass; OpenNT links the DOS
+MZ.

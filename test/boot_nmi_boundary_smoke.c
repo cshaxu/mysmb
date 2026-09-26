@@ -15,6 +15,7 @@ int main(void)
     /* With no owner-local title inputs, retain the fixture fallback while
      * proving that only the NMI root, rather than construction, advances it. */
     if (game.frame_number != 1UL || game.ram[0x0772U] != 1U ||
-        game.visible_oam[0U] != 0xf8U) return 1;
+        game.visible_oam[0U] != 0xf8U || game.ram[0x0779U] != 0U ||
+        game.ppu_mask != 0U || game.visible_ppu_mask != 0U) return 1;
     return 0;
 }
