@@ -110,6 +110,25 @@ int main(void)
         game.ram[0x0433U] != 0x55U || game.ram[0x0709U] != 0x88U ||
         game.ram[0x06dbU] != 0xf9U || game.ram[0x0786U] != 2U ||
         game.ram[0x070eU] != 2U) return 35;
+    /* At contact nibble $05, ChkFootMTile passes Player_MovingDir to
+     * ImpedePlayerMove instead of taking LandPlyr. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x75U;
+    game.ram[0x009fU] = 2U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x34U;
+    game.ram[0x0057U] = 0x10U;
+    game.ram[0x0045U] = 1U;
+    game.ram[0x001dU] = 2U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0490U] = 0xffU;
+    game.ram[0x0644U] = 0x51U;
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0086U] != 0x33U ||
+        game.ram[0x0057U] != 0U || game.ram[0x0785U] != 0x10U ||
+        game.ram[0x0490U] != 0xfeU || game.ram[0x00ceU] != 0x75U ||
+        game.ram[0x009fU] != 2U || game.ram[0x001dU] != 2U) return 36;
     /* ROM SideCheckLoop first reaches the opposite-side probe ($00=$02).  With rightward speed, ImpedePlayerMove clears d1 but must not push Mario left. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);

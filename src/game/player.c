@@ -1031,6 +1031,12 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_STATE] = 0U;
             return 1U;
         }
+        /* At contact nibble $05-$0f, ChkFootMTile calls ImpedePlayerMove
+         * with Player_MovingDir instead of taking LandPlyr. */
+        if (left.contact_low_nibble >= 5U) {
+            mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
+            return 1U;
+        }
         /* ChkForLandJumpSpring initializes the object-owned animation before
          * LandPlyr aligns Mario to the metatile boundary. */
         if ((left.metatile == 0x67U || left.metatile == 0x68U) &&
@@ -1059,6 +1065,10 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         if (right.metatile == 0x5fU || right.metatile == 0x60U) return 0U;
         if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
             game->ram[MYSMB_PLAYER_STATE] = 0U;
+            return 1U;
+        }
+        if (right.contact_low_nibble >= 5U) {
+            mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
             return 1U;
         }
         if ((right.metatile == 0x67U || right.metatile == 0x68U) &&
@@ -1281,11 +1291,10 @@ void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side)
     mysmb_u8 page_delta;
     mysmb_u8 collision_mask;
 
-    /* ROM ImpedePlayerMove receives SideCheckLoop's $00 counter, not
-     * Player_MovingDir.  Counter 2 is the right-side probe; it blocks only
-     * leftward motion and clears d1.  Counter 1 is the left-side probe; it
-     * blocks only rightward motion and clears d0.  Even a probe approached
-     * from the non-blocking direction clears its input bit at ExIPM. */
+    /* SideCheckLoop passes its physical counter in $00, while ChkFootMTile
+     * passes Player_MovingDir.  Both source paths use the same values:
+     * 1 selects the left correction and d0, 2 the right correction and d1.
+     * A non-blocking approach still clears the selected input bit at ExIPM. */
     speed = game->ram[MYSMB_PLAYER_X_SPEED];
     if (collision_side == 1U) {
         collision_mask = 0xfeU;
