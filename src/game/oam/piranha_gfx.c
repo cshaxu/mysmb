@@ -34,17 +34,17 @@ void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot)
     /* The ROM returns while descending and its frame-delay timer is live. */
     if ((game->ram[MYSMB_PIRANHA_X_SPEED + slot] & 0x80U) == 0U &&
         game->ram[MYSMB_PIRANHA_TIMER + slot] != 0U) return;
-    game->ram[MYSMB_PIRANHA_REL_X + slot] = (mysmb_u8)(
+    game->ram[MYSMB_PIRANHA_REL_X] = (mysmb_u8)(
         game->ram[MYSMB_PIRANHA_X + slot] - game->ram[MYSMB_PIRANHA_SCREEN_X]);
-    game->ram[MYSMB_PIRANHA_REL_Y + slot] = game->ram[MYSMB_PIRANHA_Y + slot];
-    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_PIRANHA_OFFSCREEN + slot] = offscreen;
+    game->ram[MYSMB_PIRANHA_REL_Y] = game->ram[MYSMB_PIRANHA_Y + slot];
+    offscreen = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_PIRANHA_OFFSCREEN] = offscreen;
     tiles = (game->ram[MYSMB_PIRANHA_FRAME] & 8U) == 0U ?
         second_frame : first_frame;
     oam = game->ram[MYSMB_PIRANHA_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
         mysmb_u8 offset;
-        y = (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_Y + slot] + row * 8U);
+        y = (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_Y] + row * 8U);
         if ((offscreen & 0x80U) != 0U ||
             ((offscreen & 0x40U) != 0U && row >= 1U) ||
             ((offscreen & 0x20U) != 0U && row == 2U)) y = 0xf8U;
@@ -52,12 +52,11 @@ void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0200U + offset] = (offscreen & 8U) != 0U ? 0xf8U : y;
         game->ram[0x0201U + offset] = tiles[row * 2U];
         game->ram[0x0202U + offset] = 0x21U;
-        game->ram[0x0203U + offset] = game->ram[MYSMB_PIRANHA_REL_X + slot];
+        game->ram[0x0203U + offset] = game->ram[MYSMB_PIRANHA_REL_X];
         game->ram[0x0204U + offset] = (offscreen & 4U) != 0U ? 0xf8U : y;
         game->ram[0x0205U + offset] = tiles[row * 2U + 1U];
         game->ram[0x0206U + offset] = 0x61U;
         game->ram[0x0207U + offset] =
-            (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_X + slot] + 8U);
+            (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_X] + 8U);
     }
 }
-

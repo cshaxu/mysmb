@@ -55,11 +55,11 @@ mysmb_u8 mysmb_objects_draw_podoboo(struct mysmb_game *game, mysmb_u8 slot)
     if (game->ram[MYSMB_PODOBOO_FLAG + slot] == 0U ||
         game->ram[MYSMB_PODOBOO_ID + slot] != 12U) return 0U;
     game->ram[MYSMB_PODOBOO_ATTRIBUTES + slot] = 0U;
-    game->ram[MYSMB_PODOBOO_REL_X + slot] = (mysmb_u8)(
+    game->ram[MYSMB_PODOBOO_REL_X] = (mysmb_u8)(
         game->ram[MYSMB_PODOBOO_X + slot] - game->ram[MYSMB_PODOBOO_SCREEN_X]);
-    game->ram[MYSMB_PODOBOO_REL_Y + slot] = game->ram[MYSMB_PODOBOO_Y + slot];
-    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_PODOBOO_OFFSCREEN + slot] = offscreen;
+    game->ram[MYSMB_PODOBOO_REL_Y] = game->ram[MYSMB_PODOBOO_Y + slot];
+    offscreen = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_PODOBOO_OFFSCREEN] = offscreen;
     direction = game->ram[MYSMB_PODOBOO_DIRECTION + slot];
     oam = game->ram[MYSMB_PODOBOO_SPRITE + slot];
     attributes = 2U;
@@ -75,14 +75,14 @@ mysmb_u8 mysmb_objects_draw_podoboo(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[0x0201U + offset] = left;
             game->ram[0x0205U + offset] = right;
         }
-        y = (mysmb_u8)(game->ram[MYSMB_PODOBOO_REL_Y + slot] + row * 8U);
+        y = (mysmb_u8)(game->ram[MYSMB_PODOBOO_REL_Y] + row * 8U);
         game->ram[0x0200U + offset] = y;
         game->ram[0x0204U + offset] = y;
         game->ram[0x0202U + offset] = attributes;
         game->ram[0x0206U + offset] = attributes;
-        game->ram[0x0203U + offset] = game->ram[MYSMB_PODOBOO_REL_X + slot];
+        game->ram[0x0203U + offset] = game->ram[MYSMB_PODOBOO_REL_X];
         game->ram[0x0207U + offset] =
-            (mysmb_u8)(game->ram[MYSMB_PODOBOO_REL_X + slot] + 8U);
+            (mysmb_u8)(game->ram[MYSMB_PODOBOO_REL_X] + 8U);
     }
     if (game->ram[MYSMB_PODOBOO_Y_SPEED + slot] < 0x80U) {
         for (row = 0U; row < 3U; ++row) {
@@ -113,5 +113,3 @@ mysmb_u8 mysmb_objects_draw_special_enemy(struct mysmb_game *game, mysmb_u8 slot
     if (mysmb_objects_draw_aquatic_enemy(game, slot) != 0U) return 1U;
     return mysmb_objects_draw_podoboo(game, slot);
 }
-
-

@@ -18,10 +18,12 @@ static void setup_podoboo(struct mysmb_game *game)
     game->ram[0x071cU] = 0U;
     game->ram[0x071dU] = 0U;
     game->ram[0x000fU] = 1U;
+    game->ram[0x006eU] = 0U;
     game->ram[0x0016U] = 12U;
     game->ram[0x0046U] = 2U;
     game->ram[0x0087U] = 0x40U;
     game->ram[0x00cfU] = 0x50U;
+    game->ram[0x00b6U] = 1U;
     game->ram[0x06e5U] = 0x20U;
 }
 
