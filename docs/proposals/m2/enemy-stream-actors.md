@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P15.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P16.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -157,3 +157,6 @@ ROM `LakituAndSpinyHandler` is no longer a frame-root global scan. `$12` now fol
 ## S5 P15: Bowser-flame and fireworks current-slot controllers
 
 The remaining `InitEnemyFrenzy` leaves now follow the same ROM slot contract. `$15 InitBowserFlame` and `$16 InitFireworks` receive the current `ObjectOffset` from `CheckpointEnemyID`; neither frame root nor either leaf searches for a free actor slot. Bowser flame retains both source branches, including the missing-Bowser timer/PRNG/right-extent fallback and the mouth branch's buffer clear. Fireworks scans all six source slots for the star flag and initializes the current slot's X/Y speeds in source order. Focused controllers supply the source-owned controller ID and timer precondition. Full x64/x86 suites pass; DOS links the same shared code and all three artifacts are refreshed.
+## S5 P16: `$15` and `$16` source-record closure
+
+P15's controller leaves are now exercised through real two-byte `ProcessEnemyData` records. The `$15` fixture proves current slot two takes the no-Bowser timer/PRNG/right-extent branch; the `$16` fixture proves current slot one finds a star flag in slot five and receives its source page, position, and speed state. Neither route injects a replacement actor after parsing. Full x64/x86 suites pass; DOS links the shared core and all three artifacts are refreshed.

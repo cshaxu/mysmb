@@ -1,6 +1,7 @@
 #include "game/game.h"
 #include "game/objects.h"
 #include "game/enemy/frenzy.h"
+#include "game/enemy/stream.h"
 #include <string.h>
 
 static int test_star_flag_oam(void)
@@ -100,6 +101,33 @@ static int test_firework_frenzy(void)
     return 0;
 }
 
+static int test_firework_stream_record(void)
+{
+    static const mysmb_u8 prg[] = { 0xf0U, 22U };
+    struct mysmb_game game;
+    struct mysmb_area_source source;
+
+    memset(&game, 0, sizeof(game));
+    source.prg = prg;
+    source.prg_size = sizeof(prg);
+    game.ram[0x00eaU] = 0x80U;
+    game.ram[0x071dU] = 0xc0U;
+    game.ram[0x06d7U] = 3U;
+    game.ram[0x000fU + 5U] = 1U;
+    game.ram[0x0016U + 5U] = 49U;
+    game.ram[0x006eU + 5U] = 1U;
+    game.ram[0x0087U + 5U] = 0x90U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 1U) != 1U) return 47;
+    if (game.ram[0x0010U] != 1U) return 48;
+    if (game.ram[0x0017U] != 22U) return 49;
+    if (game.ram[0x006fU] != 1U) return 50;
+    if (game.ram[0x0088U] != 0xc0U) return 51;
+    if (game.ram[0x00d0U] != 0x70U) return 52;
+    if (game.ram[0x0059U] != 0U) return 53;
+    if (game.ram[0x00a1U] != 8U) return 54;
+    if (game.ram[0x0739U] != 2U) return 55;
+    return 0;
+}
 int main(void)
 {
     int result;
@@ -110,5 +138,7 @@ int main(void)
     if (result != 0) return result;
     result = test_fireworks();
     if (result != 0) return result;
-    return test_firework_frenzy();
+    result = test_firework_frenzy();
+    if (result != 0) return result;
+    return test_firework_stream_record();
 }

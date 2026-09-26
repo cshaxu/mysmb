@@ -12,6 +12,7 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     mysmb_u8 bowser_data[2] = { 0U, 45U };
+    mysmb_u8 flame_data[2] = { 0xf0U, 21U };
 
     /* InitBowser establishes the front-half state owners; its rear half is
      * drawing-only and therefore absent from the portable core. */
@@ -61,6 +62,21 @@ int main(void)
         game.ram[0x0088U] != 0x72U || game.ram[0x00d0U] != 0x78U ||
         game.ram[0x0435U] != 1U || game.ram[0x06cbU] != 0U) return 3;
 
+    /* A real $15 stream record enters InitEnemyFrenzy in slot two.  With no
+     * Bowser front present it uses the source timer/PRNG/right-extent route. */
+    mysmb_game_initialize_memory(&game, 0U);
+    source.prg = flame_data;
+    source.prg_size = sizeof(flame_data);
+    game.ram[0x00e9U] = 0U;
+    game.ram[0x00eaU] = 0x80U;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0xc0U;
+    if (mysmb_enemy_stream_process_current(&game, &source, 2U) != 1U ||
+        game.ram[0x0011U] != 1U || game.ram[0x0018U] != 21U ||
+        game.ram[0x0089U] != 0xe0U || game.ram[0x00d1U] != 0x90U ||
+        game.ram[0x078fU] != 0xdfU || game.ram[0x0739U] != 2U) return 4;
     /* The fifth fireball uses HurtBowser: it becomes the world identity and
      * enters the original defeated-state route. */
     mysmb_game_initialize_memory(&game, 0xfeU);
