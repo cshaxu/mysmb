@@ -92,9 +92,8 @@ static void mysmb_win32_build_frame(void)
     mysmb_win32_draw_gameplay();
 }
 
-static int mysmb_win32_start_game(void)
+static void mysmb_win32_power_on(void)
 {
-    if (g_game_started != 0U) return 1;
     mysmb_game_power_on(&g_game);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
@@ -104,6 +103,12 @@ static int mysmb_win32_start_game(void)
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
+}
+
+static int mysmb_win32_start_game(void)
+{
+    if (g_game_started != 0U) return 1;
+    mysmb_game_reset(&g_game);
     ZeroMemory(&g_frame, sizeof(g_frame));
     g_game_started = 1U;
     return 1;
@@ -246,6 +251,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     QueryPerformanceCounter(&g_last_tick);
     g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
     g_game_started = 0U;
+    mysmb_win32_power_on();
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
                           MYSMB_SCREEN_WIDTH * MYSMB_SCALE + 16,

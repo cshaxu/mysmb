@@ -258,3 +258,22 @@ This is source-branch and shared-C test evidence only. It does not complete a
 label: `Start`'s CPU setup, the two hardware vblank waits and `EndlessLoop`
 need a portable timing-boundary disposition, and the seven labels still need
 a controlled original-ROM route before any completion claim.
+
+### T22/S11 P2 Start ordering repair
+
+`mysmb_game_power_on` now represents `Start` alone: it clears the portable
+container and records the source's physical `$2000 = $10` write while leaving
+the `$2000` mirror untouched. The shared `mysmb_game_reset` remains the exact
+`WBootCheck`/`ColdBoot` entry. Both composition roots invoke `power_on` before
+their existing two timing boundaries and invoke `reset` only after them. They
+still only perform timing, input and presentation work; neither root reads nor
+writes translated RAM, PPU, palette, OAM or gameplay state.
+
+The local title/recorder fixtures now bind inert owner-local data between the
+two shared entries, then explicitly enter `reset` before their first NMI.
+Focused x86 and x64 checks cover the cold/warm clear boundary, the Start
+physical-register state, first-NMI boundary, DOS root, title bootstrap,
+platform purity and both Windows self-tests. The controlled three-NMI trace
+remains byte-identical across x86/x64 and retains zero differences in OAM,
+CIRAM, palette, audio and all PPU scalars; its remaining RAM bytes have the
+T22/S10 dispositions.

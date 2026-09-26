@@ -66,11 +66,11 @@ void mysmb_game_reset(struct mysmb_game *game)
 
 void mysmb_game_power_on(struct mysmb_game *game)
 {
-    /* This initializes only the portable container, including immutable-data
-     * attachment slots.  The translated cold state remains the reset root;
-     * no later operation-mode work may run before the first shared NMI. */
+    /* Start clears the CPU-only state and writes $10 to physical $2000 before
+     * it polls VBlank1 and VBlank2.  The mirror remains zero until ColdBoot's
+     * InitializeNameTables path writes it. */
     memset(game, 0, sizeof(*game));
-    mysmb_game_reset(game);
+    game->visible_ppu_control_0 = 0x10U;
 }
 
 void mysmb_game_initialize(struct mysmb_game *game)
@@ -78,6 +78,7 @@ void mysmb_game_initialize(struct mysmb_game *game)
     /* Compatibility fixture setup retains historical focused-test behavior.
      * Product composition roots use mysmb_game_power_on instead. */
     mysmb_game_power_on(game);
+    mysmb_game_reset(game);
     /* The host container needs a defined presentation backing store before
      * its first NMI.  T22 owns the source $4014 transfer cadence; this copy
      * only initializes the C container and does not decide any game state. */

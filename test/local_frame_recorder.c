@@ -153,6 +153,7 @@ int main(int argument_count, char **arguments)
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
+    mysmb_game_reset(&game);
     if (bootstrap_title == 0U &&
         (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
                                              MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||

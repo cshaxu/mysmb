@@ -31,6 +31,7 @@ int main(void)
     unsigned long title_hash;
 
     mysmb_game_power_on(&game);
+    mysmb_game_reset(&game);
     game.ram[0x07d7U] = 0U;
     game.ram[0x07d8U] = 1U;
     game.ram[0x07d9U] = 2U;

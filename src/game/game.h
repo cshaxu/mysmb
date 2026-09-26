@@ -123,8 +123,9 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game);
 /* ROM Start/WBootCheck/ColdBoot.  This performs the reset subtree against
  * existing CPU RAM, preserving only a valid six-digit warm-boot top score. */
 void mysmb_game_reset(struct mysmb_game *game);
-/* Create neutral portable storage and enter the translated Start/ColdBoot
- * state.  Resource attachment is inert; the first shared NMI owns title work. */
+/* Enter translated Start state before the two host VBlank timing boundaries.
+ * Resource attachment is inert; the caller enters translated ColdBoot with
+ * mysmb_game_reset after those boundaries and before the first shared NMI. */
 void mysmb_game_power_on(struct mysmb_game *game);
 /* Compatibility fixture constructor for focused tests.  Product roots use
  * mysmb_game_power_on so they cannot advance later ROM work before NMI. */
