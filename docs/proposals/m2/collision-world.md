@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P16 and S6/P1-P4 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P16 and S6/P1-P5 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -286,3 +286,6 @@ The full comparison still first differs at sample 232 in CPU OAM attribute
 remain transferred to T16 OAM writer/staging investigation.  No platform
 source changed.  x64 and x86 CTest each pass 83/83, and DOS16 relinks from the
 same shared game source.  The regenerated x86 and x64 native pipe traces are byte-identical (`6128B90D6596EC07FEA39B37D8694C6D7F36BD52457551371749E6CC01029CF5`).
+## S6 P5: source-reachable pipe-route closure
+
+The P4 pipe-search controller script was rerun after T16/T19 removed its transferred actor-staging residual.  It records 600 NMI-return samples following the documented 600-frame warmup, with no RAM or actor-slot injection.  Both x64 and x86 native traces are byte-identical (`6C2A27330A2099D16412940C0557` prefix) and both match the original ROM for visible OAM, palette, all audio-command bytes, and all seven PPU-visible scalars.  The earlier sample-232 to sample-346 enemy bounding-box/OAM divergence is absent.  The first remaining difference is sample 584 in work RAM/nametable output; it is the previously transferred status-buffer owner and is outside this pipe/collision route.  The recordings and comparator reports remain in `build/m2-t17-s6-current/traces`; no platform module participates.
