@@ -779,7 +779,8 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) return;
     mysmb_objects_update_enemy_bounding_box(game, slot);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);            mysmb_world_move_enemy_horizontally(game, slot);
+            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
+            mysmb_world_move_enemy_horizontally(game, slot);
             if (game->ram[MYSMB_ENEMY_Y_HIGH + slot] >= 2U) {
                 game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
             }
@@ -1119,8 +1120,6 @@ void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game)
 void mysmb_objects_step_podoboos(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
     mysmb_u8 random_value;
 
     for (slot = 0U; slot < 5U; ++slot) {
@@ -1140,30 +1139,7 @@ void mysmb_objects_step_podoboos(struct mysmb_game *game)
                 (mysmb_u8)((random_value & 0x0fU) | 6U);
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xf9U;
         }
-        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-            (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-        old_value = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) {
-            game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-        }
-        if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) {
-            game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-        }
-        old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x1cU);
-        carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 3U &&
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-        }
+        mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
     }
 }
 
@@ -1393,32 +1369,11 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
 void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
 
     for (slot = 0U; slot < 5U; ++slot) {
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 14U) continue;
-        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-            (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-        old_value = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-        if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-        old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x1cU);
-        carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 3U &&
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 3U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-        }
+        mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
         mysmb_world_move_enemy_horizontally(game, slot);
     }
 }
