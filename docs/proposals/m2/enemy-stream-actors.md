@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P0.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -104,3 +104,7 @@ ROM `ProcAirBubbles` runs `RelativeBubblePosition → GetBubbleOffscreenBits →
 ## S4 P9: handler scratch-address closure
 
 The complete S4 static audit searches every shared game writer for the fixed ROM scratch cells used by enemy, bubble, and misc OAM routes. No fixed scratch destination is slot-indexed: $03ae/$03b9/$03d1, $03b0/$03bb/$03d3, and $03b3/$03be/$03d6 each have one current-actor result. Remaining +slot expressions read true object arrays for source X/Y values or write the source EnemyOffscrBitsMasked array at $03d8; they are not aliases of temporary registers. This closes S4's normal/special handler audit and admits S5's source-reachable frame-route comparison. The physical adapters also retain the common control contract: J produces NES B and K produces NES A on both Win32 and DOS; the DOS regression passes in both x64 and x86 test trees. Full x64/x86 suites, shared DOS link, and all three refreshed artifacts accompany this closure packet.
+
+## S5 P1: title-to-play source-route baseline
+
+A fresh bounded 600-frame route was recorded from the original ROM at the NMI-return boundary and from the shared native frame snapshot: no input through frame 199, Start for frame 200, then Right from frame 360. The reference uses serial input $08 then $80; native uses decoded $10 then $01. The authoritative comparison records zero differences in CPU work RAM $0300-$07ff, both CIRAM pages, palette, visible OAM, audio command state, and all seven PPU-visible scalar fields. CPU zero page, stack, and $01f0 APU execution temporaries remain excluded from output equivalence. The x86 and x64 native recordings are byte-identical. This route proves the shared platform-independent output path at the S5 boundary; later S5 packets extend it to actor-producing scenarios rather than accepting synthetic slot edits.
