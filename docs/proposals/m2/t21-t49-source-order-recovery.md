@@ -535,3 +535,6 @@ All six labels transfer to **T22/S25** for independent controlled-ROM proof. S25
 All six timer/LFSR labels are **ROM-match complete**, raising conformance from **21 / 1,992** to **27 / 1,992**. The independent ROM probe stops at `$813b`, after the seventh original LFSR rotate and before sprite-zero handling. Master control `2` stayed `1` with timers intact; control `1` decremented frame timers only; zero interval control reset to `$14` and decremented all `$24` timers. All cases incremented FrameCounter and produced LFSR `$d2,$a9,$19,$87,$c0,$00,$ff`, matching the shared C control flow.
 
 T22/S19 is active for the next NMI sprite-zero/OAM subtree at **27 / 1,992**, with zero forecast pending its source contract.
+
+
+T22/S19 admission correction: `SkipMainOper` is the eighth accepted direct NMI child in the S13 transfer and is therefore included in S19 scope. Its pause-status branch follows `SkipSprite0` after the scene-scroll writes; it cannot be left outside this source-contract package.

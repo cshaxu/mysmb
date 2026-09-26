@@ -59880,6 +59880,7 @@
         "Sprite0Hit",
         "HBlankDelay",
         "SkipSprite0",
+        "SkipMainOper",
         "MoveAllSpritesOffscreen",
         "MoveSpritesOffscreen",
         "SprInitLoop"
