@@ -1159,23 +1159,8 @@ void mysmb_objects_step_bloobers(struct mysmb_game *game)
         if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 7U) continue;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-                (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-            speed = game->ram[MYSMB_ENEMY_Y_SPEED + slot];
-            old_value = game->ram[MYSMB_ENEMY_Y + slot];
-            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value + speed);
-            if (speed >= 0x80U) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-            if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-            old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 0x0fU);
-            if (game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value) game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
-            if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 2U &&
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 2U;
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            }
+            /* ROM MoveDefeatedBloober -> MoveEnemySlowVert. */
+            mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
             continue;
         }
         random_value = (mysmb_u8)(game->ram[0x07a8U + slot] &
