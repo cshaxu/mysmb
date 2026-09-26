@@ -735,6 +735,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the completed T22/S11 boot-root implementation package for independent seven-label ROM-equivalence review."
+        },
+        {
+          "id": "M2 T22 S15",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "vram-table-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the completed T22/S12 selector-table migration for independent controlled-NMI ROM-equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4329,8 +4341,8 @@
     {
       "label": "VRAM_AddrTable_Low",
       "line": 743,
-      "receiver": "M2 T22 S12",
-      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "receiver": "M2 T22 S15",
+      "receivingBasis": "T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit.",
       "futurePackage": null,
       "history": [
         {
@@ -4352,14 +4364,20 @@
           "subtask": "M2 T21 S1",
           "relation": "source-order root acceptance",
           "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S15",
+          "relation": "accepted independent table-equivalence review after source migration",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "VRAM_AddrTable_High",
       "line": 752,
-      "receiver": "M2 T22 S12",
-      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "receiver": "M2 T22 S15",
+      "receivingBasis": "T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit.",
       "futurePackage": null,
       "history": [
         {
@@ -4381,14 +4399,20 @@
           "subtask": "M2 T21 S1",
           "relation": "source-order root acceptance",
           "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S15",
+          "relation": "accepted independent table-equivalence review after source migration",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "VRAM_Buffer_Offset",
       "line": 761,
-      "receiver": "M2 T22 S12",
-      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "receiver": "M2 T22 S15",
+      "receivingBasis": "T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit.",
       "futurePackage": null,
       "history": [
         {
@@ -4410,6 +4434,12 @@
           "subtask": "M2 T21 S1",
           "relation": "source-order root acceptance",
           "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S15",
+          "relation": "accepted independent table-equivalence review after source migration",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
@@ -54548,6 +54578,19 @@
       ],
       "acceptedBy": "T22/S11 completed the shared Start/VBlank/ColdBoot/EndlessLoop implementation and supplies its branch, timing and controlled-route evidence; T22/S14 accepts the isolated seven-label equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-031-t22-s12-to-s15",
+      "type": "transfer",
+      "from": "M2 T22 S12",
+      "to": "M2 T22 S15",
+      "nodes": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "acceptedBy": "T22/S12 completed the table/write migration with no completion forecast; T22/S15 accepts independent controlled-NMI ROM-equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -59006,7 +59049,72 @@
       "maximumComplete": 11,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-vram-table-active"
+      "state": "closed-migrated-transferred-to-s15"
+    },
+    {
+      "subtask": "M2 T22 S15",
+      "kind": "implementation",
+      "scope": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "baseline": 11,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "expectedMatches": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "maximumComplete": 14,
+      "actualMatches": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-complete-vram-address-tables"
+    },
+    {
+      "subtask": "M2 T22 S13",
+      "kind": "implementation",
+      "scope": [
+        "NonMaskableInterrupt"
+      ],
+      "baseline": 14,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 14,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-nmi-root-integration-audit"
     }
   ]
 }

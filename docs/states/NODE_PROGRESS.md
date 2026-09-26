@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 11 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory. |
-| Mapped / audited, not complete | 159 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
+| ROM-match complete | 14 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset. |
+| Mapped / audited, not complete | 156 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
 | Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **11 / 1,992 (0.55%)**. Initial deep verification covered
+Verified conformance is **14 / 1,992 (0.70%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -45,6 +45,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 721 | `ColdBoot` |
 | 737 | `EndlessLoop` |
 | 2795 | `InitializeMemory` |
+| 743 | `VRAM_AddrTable_Low` |
+| 752 | `VRAM_AddrTable_High` |
+| 761 | `VRAM_Buffer_Offset` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -73,9 +76,6 @@ canonical inventory links identify individual gaps and responsible owners.
 
 | ROM line | Node |
 | ---: | --- |
-| 743 | `VRAM_AddrTable_Low` |
-| 752 | `VRAM_AddrTable_High` |
-| 761 | `VRAM_Buffer_Offset` |
 | 764 | `NonMaskableInterrupt` |
 | 796 | `InitBuffer` |
 | 814 | `DecTimers` |

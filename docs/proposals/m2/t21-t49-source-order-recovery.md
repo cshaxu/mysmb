@@ -348,3 +348,52 @@ project-owned smoke executes selectors 0 through 18 and checks each pointer,
 address-control reset and clear branch on x86 and x64. This is an
 implementation checkpoint; S12 still has no completion credit until its
 controlled ROM comparison and independent label review are complete.
+
+## T22/S12 closure and T22/S15 independent table review
+
+T22/S12 closes at **11 / 1,992**, exactly as forecast: it adds no ROM-match credit. Its source-table migration places all 19 low/high selector entries in the shared NMI owner, stores the selected address in `$00/$01` before the consumer, selects buffer offset zero except for selector six, clears `$0340/$0341` only for selector six and clears `$0300/$0301` for every other selector. The project-owned smoke exercises selectors 0 through 18 and every clear branch. The controlled three-NMI no-input ROM route has byte-identical x86/x64 native traces and no PPU-visible difference; its remaining `$00` difference is the subsequent `RotPRandomBit` scratch write and belongs to the separately received `NonMaskableInterrupt` integration node, not to a table repair.
+
+The three data labels transfer to T22/S15 rather than receiving premature credit. S15 is the independent review: it must use a local, ignored reference recorder with a controlled NMI breakpoint after the pointer stores and before the LFSR scratch path, compare the selected pointer and selected header clear for selectors 0 through 18, then review table bytes, selector branch, reads, writes and call order against the shared C owner. Its exact target rows are:
+
+| ROM line | Node | Current state | S15 proof obligation |
+| ---: | --- | --- | --- |
+| 743 | `VRAM_AddrTable_Low` | mapped; source migration complete | Every selector's low byte and `$00` write agree at the controlled NMI point. |
+| 752 | `VRAM_AddrTable_High` | mapped; source migration complete | Every selector's high byte and `$01` write agree at the controlled NMI point. |
+| 761 | `VRAM_Buffer_Offset` | mapped; source migration complete | Selector-six offset and each selected header clear agree after `UpdateScreen`. |
+
+T22/S15 begins at **11 / 1,992**, forecasts exactly these three matches and has a maximum of **14 / 1,992**. Its ROM-equivalence track is the controlled NMI recorder plus source branch/write/call-order review. Its operational track is `mysmb.vram-address-table-smoke`, `mysmb.boot-nmi-boundary-smoke`, `mysmb.platform-purity`, x86/x64 builds and trace equality, the OpenNT DOS16 link, and the three packaged executables. `NonMaskableInterrupt` and `RotPRandomBit` remain outside S15 and retain their current receiver.
+
+## T22/S15 VRAM address-table equivalence result
+
+All three table labels are **ROM-match complete**, raising conformance from
+**11 / 1,992** to **14 / 1,992**.  The independent local ROM probe stops at the
+NMI entry, injects each selector with inert zero-length buffer data, and samples
+after the original pointer stores and selected-header clear.  For selectors
+0–18 it observed all 19 expected low bytes, all 19 expected high bytes, all 19
+selected clear bases, and pointer-before-clear order in every run.  Selector 6
+alone cleared `$0340/$0341`; every other selector cleared `$0300/$0301`.
+
+The shared C smoke independently exercises the same 19 selector values and
+branches.  x86 and x64 focused tests pass, platform purity passes, the OpenNT
+DOS16 link succeeds, and the three refreshed artifacts have SHA-256 values
+`B799A75BDF54D32BA3F0231FC7D92FEF0335AA8623FF215C1E6D4E6A0C3AE7B5`,
+`AC64B35175FF380B2EC2D51D86C2B03A7176A9304BF04E5D2BD19C0B7F76AE49`, and
+`200AED0EBCE16C723AEAA1D05B260F92AA691C306029D03B8E255CA8D7B97CBA` for
+DOS16, Win32 x86, and Win32 x64.  The ignored probe, ROM input and raw output
+remain below `build/`; no ROM-derived material is tracked.
+
+## T22/S13 NMI root integration audit
+
+T22/S13 receives `NonMaskableInterrupt` only.  It begins at **14 / 1,992**,
+forecasts no new match and has a maximum of **14 / 1,992**.  It must audit the
+parent's exact call order around the now-complete table consumer, then identify
+every still-open direct NMI descendant and its current ledger receiver before
+any cross-owner edit.  It may repair only the parent integration body; timer,
+LFSR, sprite-zero, shuffle, pause and operation-mode leaves cannot be absorbed
+into the parent or platform layer.  Its ROM-equivalence route is the reset plus
+controlled NMI probe and the existing no-input three-NMI comparison.  Its
+operational track is `mysmb.boot-nmi-boundary-smoke`,
+`mysmb.vram-address-table-smoke`, `mysmb.platform-purity`, x86/x64 route
+equality, DOS16 link and the three artifacts.  The required exit is an exact
+source-order dependency map and accepted successor transfers for unresolved
+leaves; no parent-node credit is permitted without the whole parent contract.

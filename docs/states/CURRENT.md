@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S12 Packet
+## M2 T22 S13 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S12, Implementation; NMI VRAM address-table semantics. |
-| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S10 isolated the three direct table labels and T22/S14 independently completed the preceding boot-root review. |
-| Objective | Translate and prove the NMI selector-to-address-table path, `$00/$01` pointer writes, selector-six offset choice, selected-buffer clear and address-control reset. |
-| Non-goals | Editing VRAM command producers, title/area/message data semantics, PPU compositor policy, or platform code. |
-| Reference Baseline | 11 / 1,992 complete; 3 labels received; 0 labels forecast for completion; maximum 11 / 1,992. |
-| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s12-vram-address-table-contract). |
-| Files And ABI Surface | Shared frame-root VRAM consumer, project-owned selector smoke, ignored controlled NMI traces and exact ledger records. |
+| Identifier Mode | M2 T22 S13, Implementation; parent NMI root integration audit. |
+| Admission And Approval | Owner approved source-order T21–T49 execution. T22/S15 independently completed the three immediate VRAM table labels; S13 was pre-accepted by T22/S10 for the remaining parent node. |
+| Objective | Audit `NonMaskableInterrupt` as a parent: preserve its source order, distinguish parent writes from direct descendants, and make the required ownership transfers before any root completion claim. |
+| Non-goals | Claiming timer, LFSR, pause, sprite-zero, shuffle or operation-tree leaves as parent code; moving game logic into either platform. |
+| Reference Baseline | 14 / 1,992 complete; scope has 1 incomplete label; expected matches: none; maximum 14 / 1,992. |
+| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s13-nmi-root-integration-audit). |
+| Files And ABI Surface | Shared `frame_root.c`, current NMI direct-descendant ledger entries, ignored ROM probes/traces and canonical node documents. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source table/selector/write/call-order audit; controlled NMI ROM comparison; focused x86/x64 tests, DOS16 compile, platform-purity check and three artifacts as a separate track. |
-| Expected Markers | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`; expected matches: none; maximum 11 / 1,992. |
-| Asset Needs | Owner-local ROM/listing and generated title inputs remain ignored research/build inputs. |
-| Reporting Requirements | Account for every selector 0-18, `$00/$01` write, selector-six offset branch and buffer clear; report exact completed/deferred labels. |
-| Stop Conditions | Stop if a repair belongs to a producer node or needs a platform-side game-state decision. |
-| Exit Criteria | Each table label has a source-owned mapping and a bounded proof/repair successor with no false node credit. |
-| Original Owner Request | Execute small source-order tasks with exact node responsibility. |
-| Similar-Issue Sweep | Inspect every `VRAM_Buffer_AddrCtrl` producer and every table selector consumer. |
+| Verification | Source call/read/write/order audit plus reset and controlled-NMI routes; separate cross-width tests, DOS16 compile, platform purity and three artifacts. |
+| Expected Markers | `NonMaskableInterrupt`; expected matches: none; maximum 14 / 1,992. |
+| Asset Needs | Owner-local ROM/listing and all probes remain ignored under `build`. |
+| Reporting Requirements | List every direct child, its source boundary and its receiving S; identify each root-owned write and transfer each unresolved child before closure. |
+| Stop Conditions | Stop if a required repair belongs to a descendant or needs host/platform game-state behavior. |
+| Exit Criteria | The parent has a source-order dependency map and every unresolved direct child has accepted ownership; no unsupported parent completion. |
+| Original Owner Request | Execute the original node sequence with strict logic parity and exact task custody. |
+| Similar-Issue Sweep | Inspect every `mysmb_frame_root_begin` call, every direct NMI helper and all platform references to game state. |
 
 ## Recent M4 Closures
 
