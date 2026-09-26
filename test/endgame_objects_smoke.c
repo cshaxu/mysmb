@@ -80,18 +80,23 @@ static int test_firework_frenzy(void)
 
     memset(&game, 0, sizeof(game));
     game.ram[0x06cbU] = 22U;
+    game.ram[0x0016U] = 22U;
+    game.ram[0x078fU] = 0U;
     game.ram[0x06d7U] = 3U;
     game.ram[0x000fU + 2U] = 1U;
     game.ram[0x0016U + 2U] = 49U;
     game.ram[0x001eU + 2U] = 0U;
     game.ram[0x006eU + 2U] = 1U;
     game.ram[0x0087U + 2U] = 0x90U;
-    mysmb_enemy_step_firework_frenzy(&game);
+    mysmb_enemy_init_fireworks_frenzy(&game, 0U);
     if (game.ram[0x078fU] != 0x20U || game.ram[0x06d7U] != 2U) return 20;
-    if (game.ram[0x000fU] != 1U || game.ram[0x0016U] != 22U ||
-        game.ram[0x006eU] != 1U || game.ram[0x0087U] != 0xc0U ||
-        game.ram[0x00cfU] != 0x70U || game.ram[0x0058U] != 0U ||
-        game.ram[0x00a0U] != 8U) return 21;
+    if (game.ram[0x000fU] != 1U) return 40;
+    if (game.ram[0x0016U] != 22U) return 41;
+    if (game.ram[0x006eU] != 1U) return 42;
+    if (game.ram[0x0087U] != 0xc0U) return 43;
+    if (game.ram[0x00cfU] != 0x70U) return 44;
+    if (game.ram[0x0058U] != 0U) return 45;
+    if (game.ram[0x00a0U] != 8U) return 46;
     return 0;
 }
 

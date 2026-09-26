@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P14.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P15.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -154,3 +154,6 @@ ROM `ChkEnemyFrenzy` writes the pending `EnemyFrenzyQueue` ID to the current slo
 ## S5 P14: Lakitu/Spiny current-slot controller
 
 ROM `LakituAndSpinyHandler` is no longer a frame-root global scan. `$12` now follows `ProcessEnemyData → InitEnemyObject → CheckpointEnemyID → InitEnemyFrenzy` with the current `ObjectOffset`; the handler only scans ordinary slots in its source `CreateL` branch. When an existing Lakitu throws a Spiny, it writes the current slot directly, as `CreateSpiny` does. The focused stream regression verifies a real `$12` record activates and retains slot two while the reappearance path waits. The shared owner is used by all targets. Full x64/x86 suites pass 79/79 each; the shared DOS MZ links and all three executable artifacts are refreshed.
+## S5 P15: Bowser-flame and fireworks current-slot controllers
+
+The remaining `InitEnemyFrenzy` leaves now follow the same ROM slot contract. `$15 InitBowserFlame` and `$16 InitFireworks` receive the current `ObjectOffset` from `CheckpointEnemyID`; neither frame root nor either leaf searches for a free actor slot. Bowser flame retains both source branches, including the missing-Bowser timer/PRNG/right-extent fallback and the mouth branch's buffer clear. Fireworks scans all six source slots for the star flag and initializes the current slot's X/Y speeds in source order. Focused controllers supply the source-owned controller ID and timer precondition. Full x64/x86 suites pass; DOS links the same shared code and all three artifacts are refreshed.

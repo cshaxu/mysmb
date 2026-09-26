@@ -65,6 +65,16 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
     if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
         game->ram[0x03d8U + slot] = 1U;
     }
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 21U) {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 21U;
+        mysmb_enemy_init_bowser_flame_frenzy(game, slot);
+        return;
+    }
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 22U) {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 22U;
+        mysmb_enemy_init_fireworks_frenzy(game, slot);
+        return;
+    }
     if (game->ram[MYSMB_ENEMY_ID + slot] == 20U) {
         game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 20U;
         mysmb_enemy_init_flying_cheep_frenzy(game, slot);

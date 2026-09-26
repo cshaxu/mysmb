@@ -289,37 +289,59 @@ void mysmb_enemy_init_flying_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot
     game->ram[MYSMB_ENEMY_Y + slot] = 0xf8U;
 }
 
-/* ROM InitBowserFlame.  A living Bowser opens its mouth and places the new
- * flame in the first free ordinary slot. */
-void mysmb_enemy_step_bowser_flame_frenzy(struct mysmb_game *game)
+/* ROM InitEnemyFrenzy -> InitBowserFlame.  The controller is the current
+ * ObjectOffset supplied by CheckFrenzyBuffer, never a frame-root free-slot
+ * search. */
+void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
+                                          mysmb_u8 slot)
 {
     static const mysmb_u8 target_y[4] = { 0x90U, 0x80U, 0x70U, 0x90U };
-    mysmb_u8 slot;
+    static const mysmb_u8 timer_data[8] = {
+        0xbfU, 0x40U, 0xbfU, 0xbfU, 0xbfU, 0x40U, 0x40U, 0xbfU
+    };
     mysmb_u8 bowser_slot;
     mysmb_u8 random;
+    mysmb_u8 timer_index;
+    mysmb_u8 old_x;
 
-    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 21U) return;
+    if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    game->ram[0x00feU] |= 0x02U;
     bowser_slot = game->ram[0x0368U];
-    if (bowser_slot >= 5U || game->ram[MYSMB_ENEMY_FLAG + bowser_slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + bowser_slot] != 45U) return;
-    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-    if (slot == 5U) return;
-    random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
-    game->ram[MYSMB_ENEMY_ID + slot] = 21U;
-    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + bowser_slot];
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + bowser_slot] - 0x0eU);
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + bowser_slot] + 8U);
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = target_y[random] < game->ram[MYSMB_ENEMY_Y + slot] ?
-        0xffU : 1U;
+    if (bowser_slot < 6U && game->ram[MYSMB_ENEMY_ID + bowser_slot] == 45U) {
+        game->ram[MYSMB_ENEMY_X + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_X + bowser_slot] - 0x0eU);
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + bowser_slot];
+        game->ram[MYSMB_ENEMY_Y + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + bowser_slot] + 8U);
+        random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
+        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] =
+            target_y[random] < game->ram[MYSMB_ENEMY_Y + slot] ? 0xffU : 1U;
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
+    }
+    else {
+        timer_index = game->ram[0x0367U] & 7U;
+        game->ram[0x0367U] = (mysmb_u8)((game->ram[0x0367U] + 1U) & 7U);
+        game->ram[MYSMB_FRENZY_ENEMY_TIMER] = (mysmb_u8)(timer_data[timer_index] + 0x20U);
+        if (game->ram[0x06ccU] != 0U) {
+            game->ram[MYSMB_FRENZY_ENEMY_TIMER] =
+                (mysmb_u8)(game->ram[MYSMB_FRENZY_ENEMY_TIMER] - 0x10U);
+        }
+        random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
+        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
+        old_x = game->ram[0x071dU];
+        game->ram[MYSMB_ENEMY_Y + slot] = target_y[random];
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
+        game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(game->ram[0x071bU] +
+            (game->ram[MYSMB_ENEMY_X + slot] < old_x ? 1U : 0U));
+    }
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 8U;
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
     game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-}
-/* ROM EndFrenzy.  The stop controller clears every Lakitu, then clears its
+}/* ROM EndFrenzy.  The stop controller clears every Lakitu, then clears its
  * persistent request and finally removes the controller object itself. */
 void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
 {
@@ -372,39 +394,34 @@ void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8
 }
 
 /* ROM InitEnemyFrenzy -> InitFireworks. */
-void mysmb_enemy_step_firework_frenzy(struct mysmb_game *game)
+void mysmb_enemy_init_fireworks_frenzy(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 x_data[6] = { 0U, 0x30U, 0x60U, 0x60U, 0U, 0x20U };
     static const mysmb_u8 y_data[6] = { 0x60U, 0x40U, 0x70U, 0x40U, 0x60U, 0x30U };
-    mysmb_u8 slot;
     mysmb_u8 star;
     mysmb_u8 index;
     mysmb_u8 x_before;
     mysmb_u8 page;
 
-    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 22U ||
-        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
-    for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
-    if (slot == 5U) return;
-    for (star = 5U; star != 0U; --star) {
-        if (game->ram[MYSMB_ENEMY_ID + star - 1U] == 49U) break;
-    }
-    if (star == 0U) return;
-    --star;
+    if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
     game->ram[MYSMB_FIREWORKS_COUNTER]--;
+    for (star = 6U; star != 0U; ) {
+        --star;
+        if (game->ram[MYSMB_ENEMY_ID + star] == 49U) break;
+    }
+    if (game->ram[MYSMB_ENEMY_ID + star] != 49U) return;
     index = (mysmb_u8)(game->ram[MYSMB_FIREWORKS_COUNTER] +
                        game->ram[MYSMB_ENEMY_STATE + star]);
     x_before = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + star] - 0x30U);
     page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + star] -
         (game->ram[MYSMB_ENEMY_X + star] < 0x30U ? 1U : 0U));
-    game->ram[MYSMB_ENEMY_ID + slot] = 22U;
     game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(x_before + x_data[index]);
     game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(page +
         (game->ram[MYSMB_ENEMY_X + slot] < x_before ? 1U : 0U));
     game->ram[MYSMB_ENEMY_Y + slot] = y_data[index];
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
     game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 8U;
 }
