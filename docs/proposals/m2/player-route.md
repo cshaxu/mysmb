@@ -2,7 +2,7 @@
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+**M2 T23 active — S1/P1 and S2/P1 complete; S2 remains active.**
 
 ## ROM scope
 
@@ -29,3 +29,54 @@ Consumes latched input, block buffer and object state; writes player state, scro
 Player state, collision results, scroll, block events, OAM and audio agree with every approved ROM route.
 
 Platform code may not read or write these game decisions. Delete replaced code in the same admitted task once its ROM trace proves the replacement.
+## S1/P1: ImposeFriction label and write map
+
+`ImposeFriction` at listing lines 6252–6288 is a shared-game owner.  It reads
+`Left_Right_Buttons & Player_CollisionBits`, `$0057` (`Player_X_Speed`),
+`$0705` (`Player_X_MoveForce`) and `$0701/$0702` (friction addends), then
+writes only `$0057`, `$0705` and `$0700` (`Player_XSpeedAbsolute`).  Its four
+source branches are fixed:
+
+1. no direction plus zero speed: write absolute speed zero;
+2. no direction plus positive speed: `RghtFrict`, subtract toward zero;
+3. no direction plus negative speed: `LeftFrict`, add toward zero;
+4. held direction: Right uses `LeftFrict` (add/right acceleration), Left uses
+   `RghtFrict` (subtract/left acceleration).
+
+The sole implementation owner is `src/game/player.c`:
+`mysmb_player_impose_friction`.  It is reached by `PlayerMovementSubs` and
+never by a platform adapter.  S2/P1 may change only this selector and the
+player-route regression; no collision, OAM, renderer, DOS, or Win32 code is in
+scope.
+
+## S2/P1 acceptance
+
+A ROM-free regression must prove all four branches with fractional borrow/carry:
+positive no-input slows leftward arithmetic toward zero, negative no-input
+slows rightward arithmetic toward zero, and held Left/Right retain their source
+acceleration paths.  The x86/x64 and OpenNT builds must consume the same shared
+source; the three packaged executables are refreshed for the implementation
+packet.
+## S2/P1: released-direction friction
+
+`mysmb_player_impose_friction` now translates the `ImposeFriction` selector
+without merging released input with Left acceleration.  With no effective
+direction, a positive `$0057` selects `RghtFrict` (subtraction) and a negative
+`$0057` selects `LeftFrict` (addition); both converge on zero.  Held Right
+continues to select addition and held Left subtraction, including the source
+right-precedence behavior for both bits.
+
+`test/player_friction_smoke.c` asserts byte-level speed, fractional force and
+absolute speed for all four paths.  The player route, friction, DOS16 input,
+and Win32 self-tests pass on x86 and x64.  The DOS16 link succeeds with the
+known interactive `OLDNAMES.LIB` warning.  A full x64 CTest run has three
+pre-existing T17 collision-fixture failures (`hazard-collision`, `bullet-bill`,
+`hammer-bro`): their fixtures omit the player primary bounding box after T17
+made PlayerCtrlRoutine its sole runtime producer.  They are not modified by
+this T23 packet and remain an explicit T17 follow-up, rather than a reason to
+restore the removed object-side box write.
+
+Refreshed artifacts: `mysmb16.exe`
+`4485D9BAA0FD7488130C91BE880BF7EA5A8A3FCE984BEED822C48D75A02DC80D`,
+`mysmb32.exe` `A5A3D6DB2124387DEC73C44E8C88BF3A4A347D4D5C029DFBA22A2FEA3931F392`,
+and `mysmb64.exe` `A6C357AE988CFC126AC6176AF1E70F4A13245582B0596FBEBC11C1A0FD4E5417`.

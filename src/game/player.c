@@ -312,7 +312,7 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
     mysmb_u8 old_force;
     mysmb_u8 carry;
     mysmb_u8 speed;
-
+    mysmb_u8 use_additive;
     buttons = (mysmb_u8)(game->ram[MYSMB_LEFT_RIGHT_BUTTONS] &
                          game->ram[MYSMB_PLAYER_COLLISION_BITS]);
     speed = game->ram[MYSMB_PLAYER_X_SPEED];
@@ -320,7 +320,18 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_X_ABSOLUTE] = 0U;
         return;
     }
-    if (buttons != 0U && (buttons & MYSMB_BUTTON_RIGHT) != 0U) {
+    /* ROM ImposeFriction first separates released directions by the sign of
+     * Player_X_Speed. Rightward motion enters RghtFrict (subtract), while
+     * leftward motion enters LeftFrict (add), so either released direction
+     * decelerates toward zero. Only a held direction selects acceleration. */
+    if (buttons == 0U) {
+        use_additive = speed >= 0x80U ? 1U : 0U;
+    }
+    else {
+        /* LSR in the ROM gives Right precedence if both bits are present. */
+        use_additive = (buttons & MYSMB_BUTTON_RIGHT) != 0U ? 1U : 0U;
+    }
+    if (use_additive != 0U) {
         old_force = game->ram[MYSMB_PLAYER_X_FORCE];
         game->ram[MYSMB_PLAYER_X_FORCE] =
             (mysmb_u8)(old_force + game->ram[MYSMB_FRICTION_LOW]);
