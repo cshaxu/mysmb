@@ -1297,12 +1297,18 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
                                    terrain->block_row_offset);
         return 1U;
     }
-    if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U ||
-        terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
+    if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U) {
         return 1U;
     }
     if (mysmb_world_is_climbable(terrain->metatile) != 0U) {
         (void)mysmb_player_handle_climbing(game, terrain);
+        return 1U;
+    }
+    if (terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
+        /* ChkJumpspringMetatiles reaches StopPlayerMove unless animation
+         * has already claimed this metatile. */
+        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) return 1U;
+        mysmb_player_impede_move(game, collision_side);
         return 1U;
     }
     if ((terrain->metatile == 0x6cU || terrain->metatile == 0x1fU) &&

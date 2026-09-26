@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P4; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P5; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -85,3 +85,15 @@ ROM HeadChk calls CheckForSolidMTiles; on a non-solid result, AreaType= branches
 ROM `CheckSideMTiles -> PipeDwnS -> PlyrPipe` tests the pipe metatiles `$6c/$1f`, a grounded right-facing player, and then tests `Player_SprAttrib`.  Only when that source byte is zero does it write `Sfx_PipeDown_Injury=$10` to `Square1SoundQueue/$00ff`; it then sets the pipe attribute bit, selects `ChangeAreaTimer` `$a0/$34` from `ScreenLeft_PageLoc`, and transitions engine routine `$08` to `$02`.  The shared player route had the latter writes but omitted the sound-queue write.  It now performs the missing write in the existing source-order branch, before OR-ing `$20` into the attribute.
 
 `collision_regression_smoke` constructs the original first-entry condition against a `$6c` side probe and proves the shared RAM results: `Player_SprAttrib=$20`, `Square1SoundQueue=$10`, `ChangeAreaTimer/$06de=$a0`, and `GameEngineSubroutine=$02`.  This is game-core logic used unchanged by DOS16, Win32 x86, and Win32 x64; no platform source changed.  Full x64 and x86 CTest suites pass 79/79, including platform-purity.  The OpenNT DOS MZ rebuilds from the same source list with the established `OLDNAMES.LIB` warning.  Refreshed artifacts: mysmb16.exe SHA-256 DC0FBA5F208FA89116E46F9C420C24A1C2E2E5F4C3B3302F460B9568AA8B72B2, mysmb32.exe SHA-256 1E5BA918F0B6A277845C890E3AAB6C9CDD6FFFF1B57270EB89777AF59025B25F, mysmb64.exe SHA-256 491E1CBC1C6799DDF561AD3774A1ACD7E0BE57747FC0C491CB641BD87DED6EC0.
+
+## S4 P5: preserve jumpspring side-stop gate
+
+ROM `CheckSideMTiles` calls `ChkJumpspringMetatiles`; its carry-clear branch reaches `ChkPBtm`, while an identified `$67/$68` jumpspring reads `JumpspringAnimCtrl/$070e`.  A nonzero controller exits the side handler; zero reaches `StopPlayerMove -> ImpedePlayerMove`.  The old shared C returned for both values and therefore omitted the idle-spring wall stop.  The player route now preserves the ROM ordering after hidden blocks and climbable metatiles, with the zero controller falling into the existing shared impede primitive.
+
+`collision_regression_smoke` uses the original `$67` side probe twice: idle `$070e=0` must clear collision bit d1 (`$fd`) through `ImpedePlayerMove`; active `$070e=1` must leave the freshly initialized collision mask `$ff` and horizontal speed unchanged.  This remains one game-core path shared by DOS16, Win32 x86, and Win32 x64.  Full x64 and x86 CTest suites pass 79/79, including platform-purity.  The OpenNT DOS MZ rebuilds from the same source list with the established `OLDNAMES.LIB` warning.  Refreshed artifacts: mysmb16.exe SHA-256 535E7B23B424DAFB258EEFC58E113E899D1A57E3A06842862285A5EB2F89D872, mysmb32.exe SHA-256 7905E8564D510F119209179B419C6041C303BE85F88877842E55D80DD327E93C, mysmb64.exe SHA-256 634D699D26FD44658F144E165251A8D818C1D392CC7B4CBDB867A56ED116A375.
+535E7B23B424DAFB258EEFC58E113E899D1A57E3A06842862285A5EB2F89D872
+, mysmb32.exe SHA-256 
+7905E8564D510F119209179B419C6041C303BE85F88877842E55D80DD327E93C
+, mysmb64.exe SHA-256 
+634D699D26FD44658F144E165251A8D818C1D392CC7B4CBDB867A56ED116A375
+.

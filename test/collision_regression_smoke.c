@@ -93,6 +93,18 @@ int main(void)
     if (game.ram[0x0086U] != 0x20U || game.ram[0x0057U] != 0x10U ||
         game.ram[0x0490U] != 0xfdU || game.ram[0x0705U] != 0x80U) return 12;
 
+    /* ChkJumpspringMetatiles reaches StopPlayerMove while the spring is
+     * idle, but exits without a wall-stop once its animation owns the tile. */
+    game.ram[0x070eU] = 0U;
+    game.ram[0x0490U] = 0U;
+    game.ram[0x0522U] = 0x67U;
+    if (mysmb_player_check_sides(&game) == 0U ||
+        game.ram[0x0490U] != 0xfdU || game.ram[0x0057U] != 0x10U) return 32;
+    game.ram[0x070eU] = 1U;
+    game.ram[0x0490U] = 0U;
+    if (mysmb_player_check_sides(&game) == 0U ||
+        game.ram[0x0490U] != 0xffU || game.ram[0x0057U] != 0x10U) return 33;
+
     /* PipeDwnS queues $10 only on the first clear Player_SprAttrib, then
      * sets its pipe bit, selects the page-zero timer, and enters routine 2. */
     mysmb_game_initialize_memory(&game, 0xfeU);
