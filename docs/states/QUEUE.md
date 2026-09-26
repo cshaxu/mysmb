@@ -2,7 +2,7 @@
 
 ## First Priority - M2 Historical Node Closure
 
-1. **M2 T21 active:** [T21 prior-node closure](../proposals/m2/t21-prior-node-closure.md) receives all 1,416 unfinished T15–T20 nodes in six responsibility-preserving S groups. It performs source-first closure audit and accepted handoff only.
+1. **M2 T21 active:** [T21 prior-node closure](../proposals/m2/t21-prior-node-closure.md) receives exactly the 24 unfinished T20 fireball/bubble/timer/Warp nodes. It first establishes source contracts, then separates ROM-equivalence and operational verification.
 2. [Historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md) remains queued after T21.
 
 This first-priority entry governs ordering across the historical lists below;
