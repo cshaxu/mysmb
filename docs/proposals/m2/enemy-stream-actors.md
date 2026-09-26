@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P2.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -112,3 +112,7 @@ A fresh bounded 600-frame route was recorded from the original ROM at the NMI-re
 ## S5 P2: source-reachable movement and jump
 
 The same NMI-return contract now covers a source-reachable first-area movement route: Start at frame 200, hold Right from frame 240, add A for frames 310–339, then retain Right. The original receives serial Start/Right/A bytes `$08`, `$80`, and `$81`; native receives decoded `$10`, `$01`, and `$81`. Across all 600 samples, CPU work RAM `$0300-$07ff`, both CIRAM pages, palette, visible OAM, audio command state, and all PPU-visible scalar fields have zero differences. The x86 and x64 native recordings remain byte-identical. The derived traces and comparator output stay under `build/t19-s5-p2`; no platform adapter owns the route or game decision.
+
+## S5 P3: delayed source route and ownership transfer
+
+A second source-reachable route warms through the first 600 frames and records frames 600–1199 while holding Right plus B, with periodic Right-plus-A jumps. It reaches scroll and actor-producing gameplay without forced object-slot writes. The first work-RAM difference is recorded sample 278 (global frame 878), at `$0301–$030d`; all visible output fields remain equal and x86/x64 native traces are byte-identical. The complete difference set is confined to the VRAM command buffer: `$0301` occurs in seven samples, `$0302–$0308` in 48, and `$0309–$030d` in 322. At the first sample the reference begins the timer command `$20,$7a,$03`, while native begins the preceding palette command. This is not an enemy stream or actor decision. Its ROM owners are `WriteBottomStatusLine` (line 1524), `PrintStatusBarNumbers` (line 2555), and their `RunGameTimer` caller; it is transferred to the unadmitted Screen, text and status slice. T19 makes no `area.c` change for this packet. Derived reference/native traces and the comparison live only in `build/t19-s5-p3-extended`.
