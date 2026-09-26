@@ -37,6 +37,10 @@ static void mysmb_fireball_get_bounding_box(struct mysmb_game *game,
         game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U),
         game->ram[MYSMB_FIREBALL_BOUND_BOX + slot],
         game->ram[MYSMB_FIREBALL_REL_X], game->ram[MYSMB_FIREBALL_REL_Y]);
+    mysmb_world_clip_bounding_box_to_screen(game,
+        (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U),
+        game->ram[MYSMB_FIREBALL_PAGE + slot],
+        game->ram[MYSMB_FIREBALL_X + slot]);
 }
 /* ROM FireballObjCore ($6352), excluding OAM.
  * Both objects use the original fixed slots. */

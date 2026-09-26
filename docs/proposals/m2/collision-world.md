@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P15; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S3/P5 complete; S4/P16 and S5/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -20,7 +20,7 @@ World primitives consume caller-selected object-array offsets and RAM fields, pr
 
 1. **S1 complete (P1) — source ownership and movement boundary.** Map lines 7555-7784 to current owners, introduce the `src/game/world/` boundary, and physically extract `MoveObjectHorizontally`/gravity-family implementations without changing their byte behavior. Evidence: build and bounded continuation trace are unchanged by an extraction-only P.
 2. **S2 complete (P1-P4) — exact movement and gravity.** Translate `MoveEnemyHorizontally`, `MovePlayerHorizontally`, `MoveObjectHorizontally`, `ImposeGravityBlock`, `ImposeGravitySprObj`, `ImposeGravity`, and `AlterYP` with explicit 6502 add-with-carry state. Evidence: block, misc, fireball, and enemy traces at signed-speed/carry boundaries.
-3. **S3 planned — coordinate, bounding-box, and screen-edge primitives.** Translate `BoundingBoxCore`, offscreen bounding behavior, relative coordinate helpers, and screen-edge checks. Evidence: actor and object bounding-box RAM plus OAM-facing positions.
+3. **S3 complete (P1-P5) — coordinate, bounding-box, and screen-edge primitives.** Translate `BoundingBoxCore`, offscreen bounding behavior, relative coordinate helpers, and screen-edge checks. Evidence: actor and object bounding-box RAM plus OAM-facing positions.
 4. **S4 planned — player/background and head/block collision.** Translate the player terrain, pipe, vine, head, and block-buffer probe branches. Evidence: wall, hidden-block, question-block, pipe, and vine routes.
 5. **S5 active (P1-P2) — enemy/item/projectile collision and score handoffs.** Translate ground/side/background/object branches used by enemies, power-ups, fireballs, and score paths. Evidence: mushroom bounce, stomp/damage, fireball, and score/audio traces.
 6. **S6 planned — cross-slice reference closure.** Run bounded ROM-reference traces covering each S2–S5 route and prove that remaining differences are transferred only to a named source owner.
@@ -158,3 +158,12 @@ The three executable artifacts remain the same shared-source T23/P1 builds:
 `mysmb16` `4485D9BAA0FD7488130C91BE880BF7EA5A8A3FCE984BEED822C48D75A02DC80D`,
 `mysmb32` `A5A3D6DB2124387DEC73C44E8C88BF3A4A347D4D5C029DFBA22A2FEA3931F392`, and
 `mysmb64` `A6C357AE988CFC126AC6176AF1E70F4A13245582B0596FBEBC11C1A0FD4E5417`.
+
+## S3 P5: consolidate screen-edge bounding-box clipping
+
+ROM `GetFireballBoundBox`, `GetMiscBoundBox`, and `GetEnemyBoundBox` all fall through `BoundingBoxCore` to `CheckRightScreenBBox` / `CheckLeftScreenBBox`. This packet moves that byte/carry comparison into the shared `world` owner and makes those three source callers invoke it immediately after their existing bounding-box writes. It must use the object page/X arrays only to choose the source half-screen branch; it must not make actor, OAM, collision-result, or platform decisions. The focused regression must cover the exact middle-screen equality, true left-offscreen `$a0-$ff` branch, and retained `$80-$9f` near-edge wrap.
+## S3 P5: exact shared screen-edge bounding-box clipping
+
+ROM `GetFireballBoundBox`, `GetMiscBoundBox`, and `GetEnemyBoundBox` each enter `BoundingBoxCore` and then unconditionally tail-call `CheckRightScreenBBox` / `CheckLeftScreenBBox`. `mysmb_world_clip_bounding_box_to_screen` is now that single game-core implementation. It retains the source middle coordinate (`ScreenLeft_X_Pos + $80` with its page carry), the equality-to-right branch, right-side `$ff` replacement, and left-side `$a0-$ff` cutoff while preserving the `$80-$9f` near-edge wrap. Fireball, misc, and enemy routes call it immediately after their existing bounding-box writes; the duplicated enemy implementation is deleted. No platform module reads or writes these game values.
+
+`bounding_box_clip_smoke` proves the source middle equality, true left-offscreen cutoff, and retained near-left wrap. Full CTest passes 81/81 on both x64 and x86, including `platform-purity`; the OpenNT DOS MZ links from the identical shared source set. Refreshed artifacts: mysmb16.exe SHA-256 1A1657D57BD7363C95DAD69CD081D69EB43415A9673F03167F47879231A4FF49; mysmb32.exe SHA-256 EAFE2EB8EAE9A56F34034FE998B6BE3CCA268EB71F9391D005CB347FD01EABE5; mysmb64.exe SHA-256 5BE6FDD00D594CC01F87D7E534F291E74FF0E7A23C5FC298E0817C9D7248789A.

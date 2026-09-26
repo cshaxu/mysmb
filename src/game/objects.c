@@ -501,6 +501,10 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
                 (mysmb_u16)(0x04d0U + slot * 4U),
                 game->ram[MYSMB_MISC_BOUND_BOX + slot],
                 game->ram[0x03b3U], game->ram[0x03beU]);
+            mysmb_world_clip_bounding_box_to_screen(game,
+                (mysmb_u16)(0x04d0U + slot * 4U),
+                game->ram[MYSMB_MISC_PAGE + slot],
+                game->ram[MYSMB_MISC_X + slot]);
             mysmb_objects_draw_jump_coin(game, slot);
         }
     }

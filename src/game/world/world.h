@@ -21,6 +21,11 @@ void mysmb_world_move_enemy_horizontally(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_world_set_bounding_box(struct mysmb_game *game,
                                   mysmb_u16 address, mysmb_u8 control,
                                   mysmb_u8 x, mysmb_u8 y);
+/* ROM CheckRightScreenBBox / CheckLeftScreenBBox. */
+void mysmb_world_clip_bounding_box_to_screen(struct mysmb_game *game,
+                                               mysmb_u16 address,
+                                               mysmb_u8 object_page,
+                                               mysmb_u8 object_x);
 mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                    mysmb_u16 first, mysmb_u16 second);
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,

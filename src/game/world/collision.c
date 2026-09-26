@@ -39,6 +39,39 @@ void mysmb_world_set_bounding_box(struct mysmb_game *game,
 }
 
 /* ROM $dcf6 PlayerCollisionCore, for same-screen power-up boxes. */
+/* ROM CheckRightScreenBBox / CheckLeftScreenBBox.  BoundingBoxCore writes
+ * relative corners first; this source helper only replaces horizontal
+ * corners that lie beyond the current 256-pixel screen. */
+void mysmb_world_clip_bounding_box_to_screen(struct mysmb_game *game,
+                                               mysmb_u16 address,
+                                               mysmb_u8 object_page,
+                                               mysmb_u8 object_x)
+{
+    mysmb_u8 middle_x;
+    mysmb_u8 middle_page;
+    mysmb_u8 carry;
+
+    middle_x = (mysmb_u8)(game->ram[0x071cU] + 0x80U);
+    carry = game->ram[0x071cU] >= 0x80U ? 1U : 0U;
+    middle_page = (mysmb_u8)(game->ram[0x071aU] + carry);
+    if (((mysmb_u16)object_page << 8U | object_x) >=
+        ((mysmb_u16)middle_page << 8U | middle_x)) {
+        if ((game->ram[address + 2U] & 0x80U) == 0U) {
+            if ((game->ram[address] & 0x80U) == 0U) {
+                game->ram[address] = 0xffU;
+            }
+            game->ram[address + 2U] = 0xffU;
+        }
+        return;
+    }
+    if ((game->ram[address] & 0x80U) != 0U &&
+        game->ram[address] >= 0xa0U) {
+        if ((game->ram[address + 2U] & 0x80U) != 0U) {
+            game->ram[address + 2U] = 0U;
+        }
+        game->ram[address] = 0U;
+    }
+}
 mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
                                             mysmb_u16 first, mysmb_u16 second)
 {
