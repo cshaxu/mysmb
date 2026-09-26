@@ -562,10 +562,6 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 {
     const mysmb_u8 slot = 5U;
     mysmb_u8 state;
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
     mysmb_u8 tile;
     mysmb_u8 old_value;
     mysmb_u8 carry;
@@ -605,16 +601,11 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
                 }
             }
             mysmb_world_move_enemy_horizontally(game, slot);
-            x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 8U);
-            page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
-                (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
-            /* ChkUnderEnemy passes index $15 to BlockBufferCollision.  The
-             * ROM's BlockBuffer_Y_Adder[$15] is $18, so the bottom-middle
-             * probe is (X+8,Y+18); $15 is an adder-table index, not a pixel
-             * offset. */
-            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x18U) & 0xf0U) - 0x20U);
-            address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
-            tile = address < 0x0800U ? game->ram[address] : 0U;
+            {
+                struct mysmb_enemy_terrain terrain;
+                tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
+                    terrain.metatile : 0U;
+            }
 
             if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
                 tile != 0U && tile != 0x26U && tile != 0xc2U &&
@@ -650,13 +641,12 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
             else if (game->ram[MYSMB_POWER_UP_TYPE] != 2U) {
                 game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
             }
-            x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] +
-                (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0U));
-            page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
-                (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
-            row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x14U) & 0xf0U) - 0x20U);
-            address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U) + row);
-            tile = address < 0x0800U ? game->ram[address] : 0U;
+            {
+                struct mysmb_enemy_terrain terrain;
+                tile = mysmb_world_query_enemy_block(game, slot,
+                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x17U : 0x16U,
+                    1U, &terrain) != 0U ? terrain.metatile : 0U;
+            }
             if (tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U && tile != 0x5fU && tile != 0x60U) {
                 game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
             /* ROM RXSpd: DoEnemySideCheck preserves the movement
