@@ -60053,9 +60053,18 @@
         "SprInitLoop"
       ],
       "maximumComplete": 35,
-      "actualMatches": [],
+      "actualMatches": [
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-sprite-oam-equivalence-review"
+      "state": "closed-complete-sprite-oam-equivalence"
     }
   ]
 }
