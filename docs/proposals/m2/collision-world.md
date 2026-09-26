@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S3/P5 complete; S4/P16 and S5/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P16 complete; S6/P1 route evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -209,3 +209,30 @@ Podoboo and jumping green paratroopa each directly invoke ROM `MoveJ_EnemyVertic
 ## S5 P15: restore defeated Bloober slow gravity
 
 ROM `MoveDefeatedBloober -> MoveEnemySlowVert` calls `SetXMoveAmt` with `$0f` force and maximum speed `$02`. The old C duplicate mutated the fractional byte but dropped its carry into Y. The route now calls `mysmb_enemy_move_downward($0f,$02)`, preserving all 6502 carry, high-byte, and cap behavior in shared game code. Full x64/x86 suites pass 83/83 including platform purity; DOS16 links from the same source with its established `OLDNAMES.LIB` warning. Artifacts: `mysmb16.exe` `2FC78448E2DC75D4811421F19566F113E0DEFEF5F900964CD932798DE9ECAAC6`; `mysmb32.exe` `466C5CFEE682DEC7B32750892B4D43669B88C7CBC39FD86B0443C089FDDCFE3C`; `mysmb64.exe` `23BFD96BDA83D15E2A43FAF21C5859EB0F0EA96D1EE2342A1F1DBF396E874855`.
+
+## S5 P16: restore defeated swimming Cheep-Cheep gravity
+
+The `Enemy_State` d5 branch in `MoveSwimmingCheepCheep` reaches ROM
+`MoveEnemySlowVert`, which is `SetXMoveAmt($0f,$02)` followed by the common
+vertical move. The previous C path skipped that branch entirely. It now calls
+the same shared `mysmb_enemy_move_downward($0f,$02)` primitive as defeated
+Bloober, retaining the source fractional carry, signed high-byte update, and
+maximum-speed gate. The regression drives the actual d5 branch; no platform or
+renderer code takes part.
+
+## S6 P1: source-reachable world-route baseline
+
+Two fresh original-ROM/NMI-return comparisons were generated below
+`build/m2-t17-s6-current/traces` with the same `smb1.nes`, controller changes,
+and real title bootstrap used by the shared native recorder. Route one records
+frames 0--599: Start at 200, Right at 240, and Right+A from 310--339. Route two
+warms those first 600 frames, then records frames 600--1199 while holding
+Right+B and adding two Right+B+A jumps. Neither route injects object state.
+For both routes, CPU work RAM `$0300-$07ff`, both CIRAM pages, palette, visible
+OAM, all fourteen audio-command bytes, and all seven PPU-visible scalar bytes
+have zero differences. The x86 and x64 native recordings are byte-identical.
+The only recorded CPU RAM differences are execution-private zero-page/stack
+state, outside the output-equivalence contract. This is positive route evidence
+for the shared T17 movement/collision calls, not task closure: S6 still needs
+the named wall, hidden-block, pipe, power-up, fireball, stomp, and score route
+coverage before T17 can close.
