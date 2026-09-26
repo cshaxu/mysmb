@@ -430,3 +430,40 @@ and only then nominate a separate proof S; its focused checks are
 `mysmb.vram-address-table-smoke`, `mysmb.boot-nmi-boundary-smoke` and
 `mysmb.platform-purity`, while its ROM route is the controlled selector probe
 with the selected header initialized to a nonzero sentinel.
+
+## T22/S16 InitBuffer source contract and T22/S23 proof transfer
+
+S16 closes at **14 / 1,992**, as forecast, with no new node credit.  It
+reviewed the exact sequence after `UpdateScreen`: reload `$0773`, choose
+`VRAM_Buffer_Offset[1]` only when the selector is exactly six, clear the
+selected offset byte then the selected data byte, and only then clear `$0773`.
+The shared C owner preserves that order.  Selector seven transfers buffer two
+but takes the non-six clear path, so it clears `$0300/$0301`; this is covered by
+the 19-selector project smoke and the controlled ROM sentinel probe.
+
+`InitBuffer` transfers to T22/S23 for independent evidence.  S23 begins at
+**14 / 1,992**, forecasts exactly `InitBuffer`, and has a maximum of
+**15 / 1,992**.  It must compare the ROM sentinel probe for selector six and
+selector seven with the shared C smoke, review the source branch/read/write
+order, and repeat x86/x64 tests, DOS16 build, platform-purity check and the
+three target artifact package.
+
+## T22/S23 InitBuffer equivalence result and T22/S17 admission
+
+`InitBuffer` is **ROM-match complete**, raising conformance from **14 / 1,992**
+to **15 / 1,992**.  The independent ROM sentinel probe observed selector six
+write the `$41/$03` buffer-two pointer, then clear `$0340/$0341`; selector
+seven wrote the same pointer, then clear `$0300/$0301`.  Both paths observed
+the pointer write before the clear.  The shared C smoke covers all selectors
+and asserts the same two cases.  Focused x86/x64 tests and platform purity
+pass; the refreshed target artifacts retain SHA-256 values
+`B799A75BDF54D32BA3F0231FC7D92FEF0335AA8623FF215C1E6D4E6A0C3AE7B5`,
+`AC64B35175FF380B2EC2D51D86C2B03A7176A9304BF04E5D2BD19C0B7F76AE49`, and
+`200AED0EBCE16C723AEAA1D05B260F92AA691C306029D03B8E255CA8D7B97CBA`.
+
+T22/S17 now begins the next direct NMI call in source execution order,
+`PauseRoutine`.  Its six scoped labels are `PauseRoutine`, `ChkPauseTimer`,
+`ChkStart`, `ClrPauseTimer`, `SetPause`, and `ExitPause`.  It begins at
+**15 / 1,992**, forecasts no match and has a maximum of **15 / 1,992**.  It
+must map the operating-mode gates, timer branch, Start debounce, status-bit
+update and pause audio queue before any repair or independent proof proposal.

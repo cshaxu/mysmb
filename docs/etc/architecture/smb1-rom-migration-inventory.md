@@ -149,7 +149,7 @@ The labels and branches behind every line remain open until individually bound b
 | 761 | `VRAM_Buffer_Offset` | T22 S15: shared frame-root selector-table owner | ROM-match complete | [T22 S15 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s15-vram-address-table-equivalence-result) |
 | 764 | `NonMaskableInterrupt` | T22 S15: independent selector-table equivalence review; src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nonmaskableinterrupt) |
 | 776 | `ScreenOff` | T22 S9: src/game/frame_root.c mirror-to-physical mask branch | ROM-match complete | [T22 S9 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s9-screenoff-evidence) |
-| 796 | `InitBuffer` | T22 S15: independent selector-table equivalence review; src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbuffer) |
+| 796 | `InitBuffer` | T22 S23: shared frame-root selected-header clear | ROM-match complete | [T22 S23 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s23-initbuffer-equivalence-result) |
 | 814 | `DecTimers` | T22 S15: independent selector-table equivalence review; src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dectimers) |
 | 820 | `DecTimersLoop` | T22 S15: independent selector-table equivalence review; src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dectimersloop) |
 | 823 | `SkipExpTimer` | T22 S15: independent selector-table equivalence review; src/game/frame_root.c | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipexptimer) |

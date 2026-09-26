@@ -831,6 +831,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes."
+        },
+        {
+          "id": "M2 T22 S23",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "initbuffer-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the T22/S16 InitBuffer source contract for independent ROM-equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -4594,8 +4606,8 @@
     {
       "label": "InitBuffer",
       "line": 796,
-      "receiver": "M2 T22 S16",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted source-ordered NMI selected-buffer clear work from T24/S2.",
+      "receiver": "M2 T22 S23",
+      "receivingBasis": "T22/S16 completed the InitBuffer source branch/write contract; T22/S23 accepts independent controlled-NMI equivalence review.",
       "futurePackage": null,
       "history": [
         {
@@ -4616,6 +4628,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S16",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S23",
+          "relation": "accepted independent InitBuffer proof after source contract",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -54948,6 +54966,17 @@
       ],
       "acceptedBy": "Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-034-t22-s16-to-s23",
+      "type": "transfer",
+      "from": "M2 T22 S16",
+      "to": "M2 T22 S23",
+      "nodes": [
+        "InitBuffer"
+      ],
+      "acceptedBy": "T22/S16 completed the source contract with no completion forecast; T22/S23 accepts independent controlled-NMI equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -59500,7 +59529,75 @@
       "maximumComplete": 14,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-buffer-clear-contract"
+      "state": "closed-contract-transferred-to-s23"
+    },
+    {
+      "subtask": "M2 T22 S23",
+      "kind": "implementation",
+      "scope": [
+        "InitBuffer"
+      ],
+      "baseline": 14,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "expectedMatches": [
+        "InitBuffer"
+      ],
+      "maximumComplete": 15,
+      "actualMatches": [
+        "InitBuffer"
+      ],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-complete-initbuffer"
+    },
+    {
+      "subtask": "M2 T22 S17",
+      "kind": "implementation",
+      "scope": [
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
+      ],
+      "baseline": 15,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "InitBuffer"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 15,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-pause-route-contract"
     }
   ]
 }

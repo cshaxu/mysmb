@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S16 Packet
+## M2 T22 S17 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S16, Implementation; NMI `InitBuffer` selected-header clear contract. |
-| Admission And Approval | Owner approved source-order T21–T49 execution. T22/S13 audited the parent and transferred this direct child from old T24/S2 custody into the first sequential T22 receiver. |
-| Objective | Translate and prove `InitBuffer`'s selector-six branch result: consume the selected offset, clear the selected two-byte header and reset address control only after `UpdateScreen`. |
-| Non-goals | Editing VRAM command producers, table bytes already completed in S15, timer/LFSR/pause/sprite/mode descendants or platform code. |
-| Reference Baseline | 14 / 1,992 complete; scope has 1 incomplete label; expected matches: none; maximum 14 / 1,992. |
-| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s13-parent-audit-source-order-child-recovery-and-closure). |
-| Files And ABI Surface | Shared `frame_root.c` buffer consumer, project-owned selector smoke, ignored controlled NMI probe and canonical node records. |
+| Identifier Mode | M2 T22 S17, Implementation; NMI `PauseRoutine` source contract. |
+| Admission And Approval | Owner approved source-order T21–T49 execution. T22/S13 recovered this six-node direct pause subtree from old T24/S2 custody after the preceding `InitBuffer` branch closed. |
+| Objective | Translate and audit the complete source pause route: mode gate, pause timer, Start debounce, status/timer/audio writes and return branches. |
+| Non-goals | Editing timer/LFSR, OAM/sprite, mode-dispatch descendants, title input policy or platform code. |
+| Reference Baseline | 15 / 1,992 complete; scope has 6 incomplete labels; expected matches: none; maximum 15 / 1,992. |
+| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s23-initbuffer-equivalence-result-and-t22s17-admission). |
+| Files And ABI Surface | Shared `frame_root.c` pause owner, project-owned pause/root tests, ignored ROM traces and canonical node records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source branch/write/order audit and controlled NMI sentinel probe; separately run focused x86/x64 tests, DOS16 compile, platform purity and three artifacts. |
-| Expected Markers | `InitBuffer`; expected matches: none; maximum 14 / 1,992. |
-| Asset Needs | Owner-local ROM/listing and probe output remain ignored beneath `build`. |
-| Reporting Requirements | Record selector-six and non-six offsets, both header bytes, address-control reset and `UpdateScreen` ordering; transfer or nominate independent proof before any credit. |
-| Stop Conditions | Stop if any repair belongs to the completed table labels, a producer, or host/platform gameplay code. |
-| Exit Criteria | Exact source branch/write contract is established and `InitBuffer` is either independently proven or transferred to its named proof receiver. |
+| Verification | Source branch/read/write/order audit plus controlled Start/pause ROM routes; separate x86/x64 tests, DOS16 compile, platform purity and three artifacts. |
+| Expected Markers | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; expected matches: none; maximum 15 / 1,992. |
+| Asset Needs | Owner-local ROM/listing and traces remain ignored beneath `build`. |
+| Reporting Requirements | Account for every gate and write by label, state the owner and route, then transfer to a separate proof or repair S before credit. |
+| Stop Conditions | Stop if work belongs to timer/LFSR/OAM/mode leaves or platform input policy. |
+| Exit Criteria | Exact pause subtree contract and a named next receiver for independent proof or repair; no premature node credit. |
 | Original Owner Request | Execute the original node sequence with strict logic parity and exact task custody. |
-| Similar-Issue Sweep | Inspect all `VRAM_Buffer_AddrCtrl` uses and both buffer header locations. |
+| Similar-Issue Sweep | Inspect each saved-joypad use, pause-status bit operation, pause-timer write and pause-audio queue write. |
 
 ## Recent M4 Closures
 
