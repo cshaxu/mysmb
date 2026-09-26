@@ -236,3 +236,16 @@ state, outside the output-equivalence contract. This is positive route evidence
 for the shared T17 movement/collision calls, not task closure: S6 still needs
 the named wall, hidden-block, pipe, power-up, fireball, stomp, and score route
 coverage before T17 can close.
+## S6 P2: first-mushroom collision route
+
+The first-mushroom route was rerun from a cold title bootstrap against the
+original ROM: neutral through frame 39, Start at 40--41, Right from 220, and
+Right+A at 300--341 and 390--431. It reaches the player head/block request,
+power-up emergence, falling and terrain-collision chain through normal
+execution, without object-slot injection. Across all 600 NMI-return samples,
+CPU work RAM `$0300-$07ff`, CIRAM pages, palette, visible OAM, audio command
+state and all PPU scalar outputs are zero-difference. Current x86 and x64
+native trace files are byte-identical. The route artifacts and comparator
+output remain under `build/m2-t17-s6-current/traces`; it is route evidence,
+not a substitute for the still-required hidden-block, pipe, fireball, stomp
+and score cases.
