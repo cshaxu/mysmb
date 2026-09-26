@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P16.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P17.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -160,3 +160,7 @@ The remaining `InitEnemyFrenzy` leaves now follow the same ROM slot contract. `$
 ## S5 P16: `$15` and `$16` source-record closure
 
 P15's controller leaves are now exercised through real two-byte `ProcessEnemyData` records. The `$15` fixture proves current slot two takes the no-Bowser timer/PRNG/right-extent branch; the `$16` fixture proves current slot one finds a star flag in slot five and receives its source page, position, and speed state. Neither route injects a replacement actor after parsing. Full x64/x86 suites pass; DOS links the shared core and all three artifacts are refreshed.
+
+## S5 P17: $17/$18 checkpoint dispatch order
+
+CheckpointEnemyID now dispatches Bullet/Cheep frenzy $17 and StopFrenzy $18 before the normal-enemy initializer, matching the ROM jump table. This prevents the timer-gated controller returns from fabricating ordinary movement, state, bounding-box, or activation writes. Focused frenzy regressions pass; full target validation and refreshed artifacts accompany this packet.

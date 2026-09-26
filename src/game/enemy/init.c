@@ -85,15 +85,6 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
         mysmb_enemy_init_lakitu_spiny_frenzy(game, slot);
         return;
     }
-    /* ROM CheckpointEnemyID marks ordinary objects before their first
-     * RunNormalEnemies pass. */
-        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
     /* IDs $17/$18 dispatch InitEnemyFrenzy/EndFrenzy directly from
      * CheckpointEnemyID; they must not enter ordinary actor setup. */
     if (game->ram[MYSMB_ENEMY_ID + slot] == 23U) {
@@ -105,6 +96,15 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
         mysmb_enemy_end_frenzy(game, slot);
         return;
     }
+    /* ROM CheckpointEnemyID marks ordinary objects before their first
+     * RunNormalEnemies pass. */
+        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+        game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
         /* InitGoomba calls InitNormalEnemy, then SmallBBox. */
         if (game->ram[MYSMB_ENEMY_ID + slot] == 6U) {
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
