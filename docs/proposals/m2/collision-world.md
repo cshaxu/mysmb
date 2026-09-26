@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P16 complete; S6/P1 route evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S5/P16 and S6/P1-P4 complete; S6 route closure remains active.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -260,3 +260,29 @@ audio command bytes, and PPU scalar output. The new artifacts are retained only
 under `build/m2-t17-s6-current/traces`. An earlier extended running route ends
 in the normal death path before any pipe contact, so it is explicitly excluded
 from pipe coverage rather than being counted as a false positive.
+
+## S6 P4: terminal foot-impede continuation
+
+The pipe-search route exposed a source-control-flow error in the shared
+`PlayerBGCollision` translation.  In ROM `ChkFootMTile`, a solid foot sample
+whose `$04` low nibble is `$05-$0f` loads `Player_MovingDir` and `JMP`s to
+`ImpedePlayerMove`; that path returns from `PlayerBGCollision` and never
+reaches `DoPlayerSideCheck`.  The C code previously returned the same local
+result as a normal landing, so both callers continued into the side probe and
+applied a second correction.  `mysmb_player_check_feet` now returns a named
+internal terminal-control result for that source jump, and both existing
+`mysmb_player_step` call sites return from their collision sequence when they
+receive it.  This is only C control-flow representation; the RAM mutation
+remains the existing ROM `ImpedePlayerMove` owner.  The focused regression
+asserts that this exact `$05` route produces the terminal result as well as
+the original position, speed, collision-bit and side-counter writes.
+
+The original-ROM pipe-search trace was regenerated with the documented
+600-frame warmup and controller script.  At samples 251--260, the previously
+incorrect native player X (`$d2` instead of `$d3` at sample 251), collision
+bits, X speed and movement force now match the ROM on every recorded sample.
+The full comparison still first differs at sample 232 in CPU OAM attribute
+`$02da` and work RAM `$04b4`; those residuals precede this player route and
+remain transferred to T16 OAM writer/staging investigation.  No platform
+source changed.  x64 and x86 CTest each pass 83/83, and DOS16 relinks from the
+same shared game source.  The regenerated x86 and x64 native pipe traces are byte-identical (`6128B90D6596EC07FEA39B37D8694C6D7F36BD52457551371749E6CC01029CF5`).

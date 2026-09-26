@@ -606,7 +606,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                     collision_result = mysmb_player_check_head(game);
                     if (collision_result != 2U) {
                         collision_result = mysmb_player_check_feet(game);
-                        if (collision_result != 2U) {
+                        if (collision_result != 2U && collision_result != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE) {
                             (void)mysmb_player_check_sides(game);
                         }
                     }
@@ -737,7 +737,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                     collision_result = mysmb_player_check_head(game);
                     if (collision_result != 2U) {
                         collision_result = mysmb_player_check_feet(game);
-                        if (collision_result != 2U) {
+                        if (collision_result != 2U && collision_result != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE) {
                             (void)mysmb_player_check_sides(game);
                         }
                     }
@@ -1078,7 +1078,10 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
          * with Player_MovingDir instead of taking LandPlyr. */
         if (left.contact_low_nibble >= 5U) {
             mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
-            return 1U;
+            /* ChkFootMTile JMPs to ImpedePlayerMove, which returns from
+             * PlayerBGCollision.  Keep that terminal control transfer
+             * distinct from an ordinary landed-foot result. */
+            return MYSMB_PLAYER_FEET_TERMINAL_IMPEDE;
         }
         /* ChkForLandJumpSpring initializes the object-owned animation before
          * LandPlyr aligns Mario to the metatile boundary. */
@@ -1112,7 +1115,10 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
         }
         if (right.contact_low_nibble >= 5U) {
             mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
-            return 1U;
+            /* ChkFootMTile JMPs to ImpedePlayerMove, which returns from
+             * PlayerBGCollision.  Keep that terminal control transfer
+             * distinct from an ordinary landed-foot result. */
+            return MYSMB_PLAYER_FEET_TERMINAL_IMPEDE;
         }
         if ((right.metatile == 0x67U || right.metatile == 0x68U) &&
             right.contact_low_nibble < 5U) {

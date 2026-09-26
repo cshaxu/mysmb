@@ -68,6 +68,9 @@ mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
                                            mysmb_u8 left, mysmb_u8 right);
 void mysmb_player_step_vertical_pipe(struct mysmb_game *game);
 void mysmb_player_step_side_pipe(struct mysmb_game *game);
+/* Internal C control result for ChkFootMTile's terminal JMP ImpedePlayerMove. */
+#define MYSMB_PLAYER_FEET_TERMINAL_IMPEDE 3U
+
 /* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 /* ROM $9131-$9196 Entrance_GameTimerSetup, excluding palette/object owners. */

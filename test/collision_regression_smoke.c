@@ -173,7 +173,8 @@ int main(void)
     game.ram[0x0754U] = 1U;
     game.ram[0x0490U] = 0xffU;
     game.ram[0x0644U] = 0x51U;
-    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0086U] != 0x33U ||
+    if (mysmb_player_check_feet(&game) != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE ||
+        game.ram[0x0086U] != 0x33U ||
         game.ram[0x0057U] != 0U || game.ram[0x0785U] != 0x10U ||
         game.ram[0x0490U] != 0xfeU || game.ram[0x00ceU] != 0x75U ||
         game.ram[0x009fU] != 2U || game.ram[0x001dU] != 2U) return 36;
