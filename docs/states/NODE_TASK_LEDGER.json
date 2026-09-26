@@ -58968,9 +58968,45 @@
         "InitializeMemory"
       ],
       "maximumComplete": 11,
+      "actualMatches": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-complete-boot-root"
+    },
+    {
+      "subtask": "M2 T22 S12",
+      "kind": "implementation",
+      "scope": [
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset"
+      ],
+      "baseline": 11,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 11,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-boot-root-equivalence-review-active"
+      "state": "admitted-vram-table-active"
     }
   ]
 }

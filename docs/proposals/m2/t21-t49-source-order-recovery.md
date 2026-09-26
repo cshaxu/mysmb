@@ -303,3 +303,37 @@ complete evidence set. It forecasts all seven matches, raising the maximum to
 11 / 1,992. The review must reject any label whose source instructions,
 branch conditions, writes, call order, controlled route or operational route
 do not all agree. It may update the canonical inventory only after that review.
+
+## T22/S14 boot-root equivalence result
+
+All seven labels are ROM-match complete. The review used the source listing
+and the bounded cold-start coverage to verify the following individual facts.
+
+| Label | Source behavior and shared-C equivalent | ROM logic-equivalence evidence | Operational evidence |
+| --- | --- | --- | --- |
+| `Start` | CPU-only `SEI`/`CLD`/stack setup has no portable game-state analogue; its physical `$2000=$10` write is recorded by `power_on` before either host timing boundary. | Reference coverage enters `$8000`; source order and pre-reset physical-register smoke agree. | x86/x64 and DOS16 call the shared entry before the two timing boundaries; purity passes. |
+| `VBlank1` | First source status polling loop is represented by the first timing-only boundary. | Reference coverage includes `$800a`; no translated RAM write occurs. | Win32 self-tests and DOS root smoke require exactly the first boundary. |
+| `VBlank2` | Second source status polling loop is represented by the second timing-only boundary. | Reference coverage includes `$800d`; no translated RAM write occurs. | Win32 self-tests and DOS root smoke require exactly the second boundary. |
+| `WBootCheck` | Descending six-digit test followed by `$07ff==$a5` selects `$07d6` warm or `$07fe` cold clear origin. | Source branch/read order is mirrored directly in `boot.c`. | Reset-root smoke exercises valid warm and invalid cold paths. |
+| `ColdBoot` | Clear, APU reset/enable, mode/seed writes, physical `$2001=$06`, sprite/name-table initialization, screen disable and NMI enable run in `mysmb_game_reset`. | Source write/call order is reviewed against lines 721-736; controlled route has equal visible PPU/OAM/CIRAM/palette/audio output. | Focused x86/x64 tests and OpenNT DOS16 link pass. |
+| `EndlessLoop` | No game work occurs after reset until the following timing boundary invokes the shared NMI tick. | Source jump at `$8057` is covered; the root now has a distinct ColdBoot-only boundary. | DOS root smoke proves reset boundary then first NMI/presentation boundary; Windows follows the same return-before-tick function. |
+| `InitializeMemory` | Descending `$07xx` through `$00xx` clear retains `$0160-$01ff` and accepts each source caller's Y origin. | Source loops and `$fe`/`$d6` origins are reviewed directly. | Full RAM boundary smoke and reset-root branch smoke pass on x86/x64; shared code links with OpenNT. |
+
+The reset-plus-three-NMI controlled comparison remains byte-identical across
+x86/x64. It has zero differences in CPU OAM, CIRAM, palette, visible OAM,
+audio and PPU scalar output. Its 43 remaining RAM bytes are outside these
+seven labels: the 6502 stack window, `InitializeGame` state and later pointer
+scratch, plus the separately received VRAM table state. The canonical
+inventory, full census and progress report record the resulting 11 / 1,992
+count.
+
+## T22/S12 VRAM address-table contract
+
+T22/S12 receives exactly `VRAM_AddrTable_Low`, `VRAM_AddrTable_High` and
+`VRAM_Buffer_Offset`. It begins at 11 / 1,992 with no completion forecast and
+a maximum of 11 / 1,992. It must preserve NMI's selector-to-pointer writes
+into `$00/$01`, the selector-six offset branch, the selected-buffer clear and
+the call order around `UpdateScreen`. It may not alter title, area or message
+producers. Focused tests will cover selector values 0-18, default buffer,
+selector 5, selectors 6/7 and palette/message data routes, with controlled
+NMI traces and all three target builds kept separate from logic equivalence.

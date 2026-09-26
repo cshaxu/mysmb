@@ -2226,4 +2226,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T22 S9 | 1 | 3 | `ScreenOff` / 1 | `ScreenOff` / 1 | closed-complete-screenoff; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S10 | 11 | 4 | none / 0 | none / 0 | closed-classified-transferred; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S11 | 7 | 4 | none / 0 | none / 0 | closed-implemented-transferred-to-s14; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S14 | 7 | 4 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` / 7 | none / 0 | admitted-boot-root-equivalence-review-active; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S14 | 7 | 4 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` / 7 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` / 7 | closed-complete-boot-root; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S12 | 3 | 11 | none / 0 | none / 0 | admitted-vram-table-active; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |

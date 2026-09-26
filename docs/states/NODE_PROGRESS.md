@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 4 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff. |
-| Mapped / audited, not complete | 166 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 144 evidence-incomplete mappings. |
+| ROM-match complete | 11 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory. |
+| Mapped / audited, not complete | 159 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
 | Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **4 / 1,992 (0.20%)**. Initial deep verification covered
+Verified conformance is **11 / 1,992 (0.55%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
 owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
 77-node accounting. With three additional confirmed missing scheduler/activation entries, the
-explicitly dispositioned cohort is 170, of which 166 remain incomplete. These sets are disjoint in the current ledger.
+explicitly dispositioned cohort is 170, of which 159 remain incomplete. These sets are disjoint in the current ledger.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -38,6 +38,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | ROM line | Node |
 | ---: | --- |
 | 776 | `ScreenOff` |
+| 699 | `Start` |
+| 706 | `VBlank1` |
+| 708 | `VBlank2` |
+| 712 | `WBootCheck` |
+| 721 | `ColdBoot` |
+| 737 | `EndlessLoop` |
+| 2795 | `InitializeMemory` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -59,19 +66,13 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (166)
+## Mapped but not yet matched (159)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
 
 | ROM line | Node |
 | ---: | --- |
-| 699 | `Start` |
-| 706 | `VBlank1` |
-| 708 | `VBlank2` |
-| 712 | `WBootCheck` |
-| 721 | `ColdBoot` |
-| 737 | `EndlessLoop` |
 | 743 | `VRAM_AddrTable_Low` |
 | 752 | `VRAM_AddrTable_High` |
 | 761 | `VRAM_Buffer_Offset` |
@@ -125,7 +126,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | 1256 | `PlayerEndWorld` |
 | 1308 | `FloateyNumbersRoutine` |
 | 2674 | `InitializeGame` |
-| 2795 | `InitializeMemory` |
 | 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
 | 3991 | `FlagpoleObject` |

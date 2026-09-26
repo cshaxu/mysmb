@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S14 Packet
+## M2 T22 S12 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S14, Implementation review; seven-label boot-root ROM equivalence. |
-| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S11 closed without retroactive credit and transferred its completed shared implementation package for this independent review. |
-| Objective | Verify all source instructions, branch reads/writes, call order, controlled ROM route and operational route for the seven boot-root labels, then update only labels that satisfy both tracks. |
-| Non-goals | New boot design, platform gameplay state, adding CPU/6502 emulation, or accepting a test/build as a substitute for source comparison. |
-| Reference Baseline | 4 / 1,992 complete; 7 labels received; expected matches: all 7; maximum 11 / 1,992. |
-| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s11-closure-and-t22s14-equivalence-review). |
-| Files And ABI Surface | Shared boot owner, timing-only composition roots, boot smoke suite, ignored three-NMI route evidence and canonical accounting records. |
+| Identifier Mode | M2 T22 S12, Implementation; NMI VRAM address-table semantics. |
+| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S10 isolated the three direct table labels and T22/S14 independently completed the preceding boot-root review. |
+| Objective | Translate and prove the NMI selector-to-address-table path, `$00/$01` pointer writes, selector-six offset choice, selected-buffer clear and address-control reset. |
+| Non-goals | Editing VRAM command producers, title/area/message data semantics, PPU compositor policy, or platform code. |
+| Reference Baseline | 11 / 1,992 complete; 3 labels received; 0 labels forecast for completion; maximum 11 / 1,992. |
+| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s12-vram-address-table-contract). |
+| Files And ABI Surface | Shared frame-root VRAM consumer, project-owned selector smoke, ignored controlled NMI traces and exact ledger records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source instruction/branch/write/call-order checklist; covered reset-plus-three-NMI ROM route; x86/x64 focused CTests, DOS16 link, Win32/DOS timing route and platform purity as an independent track. |
-| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: all 7; maximum 11 / 1,992. |
+| Verification | Source table/selector/write/call-order audit; controlled NMI ROM comparison; focused x86/x64 tests, DOS16 compile, platform-purity check and three artifacts as a separate track. |
+| Expected Markers | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`; expected matches: none; maximum 11 / 1,992. |
 | Asset Needs | Owner-local ROM/listing and generated title inputs remain ignored research/build inputs. |
-| Reporting Requirements | Record an individual pass/fail disposition for every source label, both verification tracks, canonical-row changes and any rejected label transfer. |
-| Stop Conditions | Stop if a label needs a source owner outside this packet or any platform file gains gameplay-state access. |
-| Exit Criteria | The inventory, progress report and ledger contain exactly the labels justified by the review, with every rejected label transferred to an accepted successor. |
+| Reporting Requirements | Account for every selector 0-18, `$00/$01` write, selector-six offset branch and buffer clear; report exact completed/deferred labels. |
+| Stop Conditions | Stop if a repair belongs to a producer node or needs a platform-side game-state decision. |
+| Exit Criteria | Each table label has a source-owned mapping and a bounded proof/repair successor with no false node credit. |
 | Original Owner Request | Execute small source-order tasks with exact node responsibility. |
-| Similar-Issue Sweep | Recheck every power-on/reset caller and every host timing boundary for early NMI or direct game-state access. |
+| Similar-Issue Sweep | Inspect every `VRAM_Buffer_AddrCtrl` producer and every table selector consumer. |
 
 ## Recent M4 Closures
 

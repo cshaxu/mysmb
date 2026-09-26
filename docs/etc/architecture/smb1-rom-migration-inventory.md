@@ -138,12 +138,12 @@ The labels and branches behind every line remain open until individually bound b
 
 | ROM source line | label | owner | status | evidence |
 |---:|---|---|---|---|
-| 699 | `Start` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-start) |
-| 706 | `VBlank1` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vblank1) |
-| 708 | `VBlank2` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vblank2) |
-| 712 | `WBootCheck` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wbootcheck) |
-| 721 | `ColdBoot` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coldboot) |
-| 737 | `EndlessLoop` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessloop) |
+| 699 | `Start` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
+| 706 | `VBlank1` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
+| 708 | `VBlank2` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
+| 712 | `WBootCheck` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
+| 721 | `ColdBoot` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
+| 737 | `EndlessLoop` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
 | 743 | `VRAM_AddrTable_Low` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_addrtable_low) |
 | 752 | `VRAM_AddrTable_High` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_addrtable_high) |
 | 761 | `VRAM_Buffer_Offset` | T14 responsibility (implementation not certified); src/game/game.c VRAM constants/table | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vram_buffer_offset) |
@@ -404,7 +404,7 @@ The labels and branches behind every line remain open until individually bound b
 | 2754 | `ClearVRLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearvrloop) |
 | 2775 | `ShufAmtLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shufamtloop) |
 | 2780 | `ISpr0Loop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ispr0loop) |
-| 2795 | `InitializeMemory` | T14 responsibility (implementation not certified); src/game/boot.c reset subtree | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializememory) |
+| 2795 | `InitializeMemory` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
 | 2799 | `InitPageLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpageloop) |
 | 2800 | `InitByteLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyteloop) |
 | 2804 | `InitByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyte) |
