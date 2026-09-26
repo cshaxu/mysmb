@@ -35,5 +35,24 @@ int main(void)
     mysmb_world_move_enemy_horizontally(&game, 0U);
     if (game.ram[0x0400U + 1U] != 0U || game.ram[0x0086U + 1U] != 0x22U ||
         game.ram[0x006dU + 1U] != 3U) return 3;
+    /* ROM BlockBufferCollision carries only when the probe ADC crosses the
+     * byte boundary.  The block-buffer page is the low page bit plus that
+     * carry; no host-width coordinate participates. */
+    if (mysmb_world_collision_page(3U, 0xf8U, 0xffU) != 3U ||
+        mysmb_world_collision_page(3U, 0xf8U, 0U) != 4U) return 4;
+
+    /* ROM PlayerCollisionCore treats a shared edge as contact and retains
+     * horizontal byte-wrap as non-contact; only the source vertical branch has wrap handling. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x0400U] = 0x10U; game.ram[0x0401U] = 0x20U;
+    game.ram[0x0402U] = 0x20U; game.ram[0x0403U] = 0x30U;
+    game.ram[0x0410U] = 0x20U; game.ram[0x0411U] = 0x20U;
+    game.ram[0x0412U] = 0x30U; game.ram[0x0413U] = 0x30U;
+    if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) == 0U) return 5;
+    game.ram[0x0410U] = 0x21U;
+    if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) != 0U) return 6;
+    game.ram[0x0400U] = 0xf8U; game.ram[0x0402U] = 0x08U;
+    game.ram[0x0410U] = 0xfcU; game.ram[0x0412U] = 0x04U;
+    if (mysmb_world_boxes_collide(&game, 0x0400U, 0x0410U) != 0U) return 7;
     return 0;
 }
