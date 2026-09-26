@@ -122,16 +122,17 @@ void mysmb_enemy_step_lakitus(struct mysmb_game *game)
     }
 }
 
-/* ROM LakituAndSpinyHandler.  EnemyFrenzyBuffer is the persistent request
- * produced by InitEnemyFrenzy and by a living Lakitu's MoveLakitu route. */
-void mysmb_enemy_step_lakitu_frenzy(struct mysmb_game *game)
+/* ROM LakituAndSpinyHandler.  InitEnemyFrenzy enters with the current
+ * ObjectOffset.  It only searches for a free slot while recreating Lakitu;
+ * CreateSpiny writes back through that original ObjectOffset. */
+void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
+                                          mysmb_u8 current_slot)
 {
     mysmb_u8 slot;
     mysmb_u8 lakitu_slot;
     mysmb_u8 old_x;
 
-    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 18U ||
-        game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (current_slot >= 5U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x80U;
     lakitu_slot = 5U;
     for (slot = 5U; slot != 0U; ) {
@@ -165,11 +166,7 @@ void mysmb_enemy_step_lakitu_frenzy(struct mysmb_game *game)
     }
     if (game->ram[MYSMB_PLAYER_Y] < 0x2cU ||
         game->ram[MYSMB_ENEMY_STATE + lakitu_slot] != 0U) return;
-    for (slot = 5U; slot != 0U; ) {
-        slot--;
-        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
-    }
-    if (slot == 0U && game->ram[MYSMB_ENEMY_FLAG] != 0U) return;
+    slot = current_slot;
     game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + lakitu_slot];
     game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_ENEMY_X + lakitu_slot];
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;

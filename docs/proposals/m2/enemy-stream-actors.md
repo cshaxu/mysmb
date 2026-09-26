@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P9.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P14.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -146,3 +146,11 @@ ROM `$14` now travels through `ProcessEnemyData → InitEnemyObject → Checkpoi
 ## S5 P12: AreaFrenzy queue-to-flying-Cheep route
 
 The original water-level producer is `AreaFrenzy`, which writes `FlyCheepCheepFrenzy` `$14` to `EnemyFrenzyQueue` rather than embedding `$14` in the enemy-data stream. The focused regression now drives that queue through `ChkEnemyFrenzy` into current slot two with no area source: it proves queue clear, frenzy-buffer retention, slot-local activation, timer, page/X, and below-screen Y result. This closes the producer-to-consumer edge for the P11 current-slot migration. Full x64/x86 suites, shared DOS MZ, and refreshed 16/32/64 artifacts accompany this packet.
+
+## S5 P13: ChkEnemyFrenzy queue activation
+
+ROM `ChkEnemyFrenzy` writes the pending `EnemyFrenzyQueue` ID to the current slot, activates its flag, clears `Enemy_State` and the queue, then enters `InitEnemyObject`. The shared stream owner now preserves that activation before `CheckpointEnemyID`; a timer-held Flying Cheep queue regression proves the current slot remains present rather than being silently discarded.
+
+## S5 P14: Lakitu/Spiny current-slot controller
+
+ROM `LakituAndSpinyHandler` is no longer a frame-root global scan. `$12` now follows `ProcessEnemyData → InitEnemyObject → CheckpointEnemyID → InitEnemyFrenzy` with the current `ObjectOffset`; the handler only scans ordinary slots in its source `CreateL` branch. When an existing Lakitu throws a Spiny, it writes the current slot directly, as `CreateSpiny` does. The focused stream regression verifies a real `$12` record activates and retains slot two while the reappearance path waits. The shared owner is used by all targets. Full x64/x86 suites pass 79/79 each; the shared DOS MZ links and all three executable artifacts are refreshed.

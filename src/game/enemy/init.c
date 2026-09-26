@@ -70,6 +70,11 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
         mysmb_enemy_init_flying_cheep_frenzy(game, slot);
         return;
     }
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 18U) {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
+        mysmb_enemy_init_lakitu_spiny_frenzy(game, slot);
+        return;
+    }
     /* ROM CheckpointEnemyID marks ordinary objects before their first
      * RunNormalEnemies pass. */
         game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;

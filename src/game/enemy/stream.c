@@ -222,16 +222,6 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 1U;
         }
-        /* $12 remains the separately admitted Lakitu/Spiny controller.
-         * $14 follows InitEnemyObject, which dispatches the current slot. */
-        if ((second & 0x3fU) == 18U) {
-            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = (mysmb_u8)(second & 0x3fU);
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-            return 1U;
-        }
-
         id = (mysmb_u8)(second & 0x3fU);
         if (id == 6U && game->ram[MYSMB_PRIMARY_HARD] != 0U) id = 2U;
         mysmb_enemy_initialize_loaded(game, slot, row, id);

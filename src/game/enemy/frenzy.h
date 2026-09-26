@@ -5,7 +5,8 @@
 
 /* ROM MoveLakitu, LakituAndSpinyHandler and the Spiny egg landing route. */
 void mysmb_enemy_step_lakitus(struct mysmb_game *game);
-void mysmb_enemy_step_lakitu_frenzy(struct mysmb_game *game);
+void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
+                                          mysmb_u8 slot);
 void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game);
 void mysmb_enemy_init_flying_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_step_bowser_flame_frenzy(struct mysmb_game *game);
