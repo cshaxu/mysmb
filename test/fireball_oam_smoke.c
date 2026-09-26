@@ -1,4 +1,6 @@
 #include "game/fireball/fireball.h"
+#include "game/oam/oam.h"
+#include "game/world/world.h"
 
 int main(void)
 {
@@ -45,10 +47,8 @@ int main(void)
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 0U;
     game.ram[0x071cU] = 0U;
-    game.ram[0x071dU] = 0xffU;    game.ram[0x071aU] = 0U;
-    game.ram[0x071bU] = 0U;
-    game.ram[0x071cU] = 0U;
-    game.ram[0x071dU] = 0xffU;    mysmb_fireball_step(&game);
+    game.ram[0x071dU] = 0xffU;
+    mysmb_fireball_step(&game);
     if (game.ram[0x0220U] != 0x40U || game.ram[0x0221U] != 0x65U ||
         game.ram[0x0222U] != 2U || game.ram[0x0223U] != 0x40U) return 1;
     /* GetFireballBoundBox uses SprObject offset seven against the common
@@ -114,6 +114,57 @@ int main(void)
     mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0U ||
         (game.ram[0x03d2U] & 0xccU) == 0U) return 7;
+    /* Direct ROM GetFireballOffscreenBits boundary table.  This isolates
+     * the source offscreen primitive from motion: its final byte is the
+     * horizontal high nybble shifted down plus the vertical bits shifted up.
+     * FireballObjCore subsequently erases only when this byte & $cc is set. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071cU] = 0U;
+    game.ram[0x071dU] = 0xffU;
+    game.ram[0x0074U] = 0U;
+    game.ram[0x00bcU] = 1U;
+    game.ram[0x00d5U] = 0x50U;
+    game.ram[0x008dU] = 0U;
+    mysmb_oam_get_fireball_offscreen_bits(&game, 0U);
+    if (game.ram[0x03d2U] != 0x08U) return 16;
+    game.ram[0x008dU] = 8U;
+    mysmb_oam_get_fireball_offscreen_bits(&game, 0U);
+    if (game.ram[0x03d2U] != 0U) return 17;
+    game.ram[0x008dU] = 0xf7U;
+    mysmb_oam_get_fireball_offscreen_bits(&game, 0U);
+    if (game.ram[0x03d2U] != 3U) return 18;
+    game.ram[0x008dU] = 0xffU;
+    mysmb_oam_get_fireball_offscreen_bits(&game, 0U);
+    if (game.ram[0x03d2U] != 7U) return 19;
+
+    /* ROM FireballBGCollision probes (X+4, (Y+8)&$f0)-$20.  It clears a
+     * stale bounce flag above the status bar and for non-solid metatiles,
+     * bounces once on a solid, then explodes on the next solid contact. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x008dU] = 0x40U;
+    game.ram[0x0074U] = 0U;
+    game.ram[0x00d5U] = 0x50U;
+    game.ram[0x00a6U] = 0U;
+    game.ram[0x003aU] = 0U;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x0534U] = 0x61U;
+    mysmb_world_fireball_background_collision(&game, 0U);
+    if (game.ram[0x00a6U] != 0xfdU || game.ram[0x003aU] != 1U ||
+        game.ram[0x00d5U] != 0x50U || game.ram[0x0024U] != 1U) return 20;
+    mysmb_world_fireball_background_collision(&game, 0U);
+    if (game.ram[0x0024U] != 0x80U || game.ram[0x00ffU] != 2U) return 21;
+    game.ram[0x0024U] = 1U;
+    game.ram[0x003aU] = 1U;
+    game.ram[0x00a6U] = 0U;
+    game.ram[0x0534U] = 0xc2U;
+    mysmb_world_fireball_background_collision(&game, 0U);
+    if (game.ram[0x003aU] != 0U || game.ram[0x0024U] != 1U) return 22;
+    game.ram[0x003aU] = 1U;
+    game.ram[0x00d5U] = 0x17U;
+    mysmb_world_fireball_background_collision(&game, 0U);
+    if (game.ram[0x003aU] != 0U) return 23;
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x0024U] = 0x80U;
     game.ram[0x008dU] = 0x40U;

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T20 active — S2/P4.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
+**M2 T20 active — S3/P1.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
 
 ## ROM scope
 
@@ -50,3 +50,10 @@ At the same original spawn point, `PlayerAnimTimerSet/$070c` now transfers to `F
 ## S2/P4: consume shared movement primitives
 
 `FireballObjCore` now preserves its source `TXA; ADC #$07` object selection by passing offsets 7 and 8 to the T17 common `ImposeGravity` and `MoveObjectHorizontally` implementations. Its duplicate C arithmetic has been deleted. The delegated primitives use the original common SprObject bases, so offset seven lands exactly on the fireball fields; setup, relative/offscreen, bounding-box, collision, erase and draw order are unchanged.
+## S2/P5: source offscreen boundary proof
+
+The focused shared-core fixture now calls `GetFireballOffscreenBits` directly against the ROM screen window `$071a/$071b/$071c/$071d`. It proves the four source boundary bytes: world anchors `$00/$08/$f7/$ff` yield `$08/$00/$03/$07`. Thus `FireballObjCore` retains `$08` through `$f7` only when its existing `$cc` mask permits it; no screen-width or host-coordinate rule participates. The historic duplicated window setup in the fixture was also removed.
+
+## S3/P1: background collision branch proof
+
+The same fixture now directly proves `FireballBGCollision`'s source probe `(X + $04, (Y + $08) & $f0) - $20` and its four branch outcomes: a solid first contact sets speed `$fd` and the bouncing flag; the next solid contact sets state `$80` and `Sfx_Bump`; a non-solid `$c2` clears a stale bouncing flag; and a status-bar Y position clears that flag without probing. These are shared game-core transitions consumed identically by DOS16, Win32 x86, and Win32 x64.
