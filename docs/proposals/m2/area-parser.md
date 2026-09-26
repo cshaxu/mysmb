@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T18 active — S2/P4 and S3/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
+**M2 T18 active — S2/P5 and S3/P1.** The ROM continuation reaches `ReplaceBlockMetatile` after block state has already been produced. Its missing `$03f0` increment belongs to the area/metatile output slice, so this task owns the producer rather than adding a compensating write to objects or OAM.
 
 ## ROM scope
 
@@ -64,10 +64,8 @@ holds the second-byte low nibble (`$06`), not the first-byte row `$0f`.
 `ChkLrgObjFixedLength` installs four, `CastleMetatiles[4]` is written at
 buffer rows 6--10, and the `ProcessAreaData` tail leaves `$0732=$03`.
 The focused parser smoke fixes that exact input and asserts `$06a9-$06ab =
-$45,$47,$47` plus the post-decrement length. The subsequent star-flag setup
-leaf is retained for the next admitted CastleObject packet; this P reaches
-only the source-proven route above.
-
+$45,$47,$47` plus the post-decrement length. The follow-up P5 owns the
+`CastleObject` length-two leaf and its shared `RunStarFlagObj` task-zero gate.
 The 2,220-frame-warmup controller-only ROM replay now has zero differences in
 both CIRAM pages, palette, and every PPU scalar across all 600 samples. The
 former first parser difference at sample 526 is absent. Its remaining late
@@ -80,3 +78,28 @@ warning. Artifacts: mysmb16.exe
 mysmb32.exe `F27A8D690D20AD0D4B58F962F4F7491E01066E2AEE777A5785B5DE39862EDC0D`,
 and mysmb64.exe
 `4A3067235777F65EAD2912B31E238549A087D6E20F3549EDB11B2FE367F4DA3E`.
+
+## S2 P5: restore `CastleObject` StarFlagObject leaf
+
+**ROM-node accounting:** admitted and closing baseline: **0 / 1,992** complete. This packet maps `CastleObject` (line 3737) and the task-zero `RunStarFlagObj` / `StarFlagExit` collaborator (lines 10477/10509); their full route traces remain pending, so this packet increases no completed-node count. `DrawStarFlag` and nonzero task entries stay deferred to the endgame-actor owner.
+
+When the same `CastleObject` packet reaches length `$02`, the ROM calls
+`GetAreaObjXPosition`, scans `FindEmptyEnemySlot` from slot 0 through 4, then
+creates `StarFlagObject` (`Enemy_ID=$31`) with its page, X coordinate,
+`Enemy_Y_HighPos=$01`, flag, and Y `$90`. The parser tail subsequently leaves
+length `$01`. The shared area owner now writes that exact actor state; the
+focused parser regression covers all three continuations, including the source
+post-handler decrement. `RunStarFlagObj` is an existing shared game owner, but
+its jump-engine entry 0 is `StarFlagExit`: it clears `EnemyFrenzyBuffer` and
+must not draw OAM. Its direct regression now asserts that gate, preventing the
+new actor from being shown before the original flagpole task starts.
+
+The controller-only page-twelve 2,220-frame-warmup replay has zero CIRAM,
+palette, and PPU-scalar differences across all 600 samples. The temporary
+52-sample star OAM regression is gone. The pre-existing residual is again only
+OAM `$78` for samples 553--555 and four work/audio bytes at sample 599; it is
+not masked or reassigned by this parser packet. Full CTest passes 83/83 on x64
+and x86, platform-purity passes, and the same shared code links as DOS16.
+Artifacts: mysmb16.exe `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
+mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
+and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.

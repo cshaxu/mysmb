@@ -1,4 +1,4 @@
-# Execution Policy
+﻿# Execution Policy
 
 This file owns MySMB task lifecycle, M/T/S/P identifiers, evidence, and closure. One S is active at a time.
 
@@ -29,6 +29,12 @@ Every closure runs `powershell -NoProfile -ExecutionPolicy Bypass -File tools/Ve
 ## Milestone Closure Evidence
 
 A milestone closes only when its roadmap exit criteria, task evidence, deferred debt, source policy, and applicable tests agree. Local ROM-derived executables are not release evidence and are never committed.
+
+## M2 ROM-node Progress Accounting
+
+The [M2 ROM-node progress report](../states/NODE_PROGRESS.md) and its linked inventory are the sole quantitative basis for M2 conformance progress. An S admission must record its incoming `ROM-match complete / total` fraction and the exact inventory labels in scope. An S closure must record the resulting fraction, every completed and deferred label by name, and the ROM-reference evidence that justifies each newly completed node. A C owner, source move, unit test, or build alone remains unfinished.
+
+Every M2 P continues to refresh and report all three target artifacts: `assets/mysmb16.exe`, `assets/mysmb32.exe`, and `assets/mysmb64.exe`, with their build/validation results. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence.
 
 ## Build Tree Hygiene
 

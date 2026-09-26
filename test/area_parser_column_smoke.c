@@ -496,5 +496,16 @@ int main(void)
         game.ram[0x0732U] != 3U || game.ram[0x06a9U] != 0x45U ||
         game.ram[0x06aaU] != 0x47U || game.ram[0x06abU] != 0x47U)
         return 1;
+    /* CastleObject reaches its len==2 StarFlagObject leaf on the third
+     * continuation: ProcessAreaData decrements after each source handler. */
+    game.ram[0x0726U] = 3U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0732U] != 2U || game.ram[0x000fU] != 0U) return 1;
+    game.ram[0x0726U] = 4U;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0732U] != 1U || game.ram[0x000fU] != 1U ||
+        game.ram[0x0016U] != 0x31U || game.ram[0x006eU] != 1U ||
+        game.ram[0x0087U] != 0x40U || game.ram[0x00b6U] != 1U ||
+        game.ram[0x00cfU] != 0x90U) return 1;
     return 0;
 }

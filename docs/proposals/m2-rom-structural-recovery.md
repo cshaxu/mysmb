@@ -1,8 +1,8 @@
-# M2 ROM structural-recovery coverage map
+﻿# M2 ROM structural-recovery coverage map
 
 ## Status
 
-`M2 Td S3` governance work. M2 T17, M2 T18, and M2 T19 are admitted for the Collision/world, Area graphics/parser, and Enemy stream/actors slices; all other listed slices remain candidates unless their status says otherwise. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md). No candidate becomes `M2 T<n> S1` without owner approval.
+`M2 Td S3` governance work. M2 T17, M2 T18, and M2 T19 are admitted for the Collision/world, Area graphics/parser, and Enemy stream/actors slices; all other listed slices remain candidates unless their status says otherwise. The 1,992-label source index remains authoritative in [the ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md), and its aggregate is reported in [M2 ROM-node progress](../states/NODE_PROGRESS.md). No candidate becomes `M2 T<n> S1` without owner approval. Every admitted S records the incoming and closing `ROM-match complete / 1,992` count, its named labels, and the three-executable delivery record.
 
 ## How the map is complete
 

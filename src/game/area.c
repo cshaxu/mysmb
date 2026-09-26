@@ -1329,13 +1329,27 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             value = (mysmb_u8)(value + 5U);
             continuation--;
         } while (row != 11U);
-        /* The sampled source route reaches ExitCastle: its current page is
-         * nonzero, fixed length remains four, and the saved low nibble is
-         * nonzero. PlayerStop's length-one and flag-creation leaves remain
-         * in the following CastleObject packet. */
-        if (game->ram[MYSMB_AREA_CURRENT_PAGE] != 0U &&
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 1U)
+        if (game->ram[MYSMB_AREA_CURRENT_PAGE] == 0U) return;
+        value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+        if (value == 1U || (height == 0U && value == 3U)) {
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x52U;
+            return;
+        }
+        if (value != 2U) return;
+        /* ROM GetAreaObjXPosition -> FindEmptyEnemySlot. The source scans
+         * slots 0..4 and deliberately continues with slot 5 if all regular
+         * slots are occupied. CastleObject then creates StarFlagObject. */
+        value = 0U;
+        while (value < 5U && game->ram[MYSMB_ENEMY_FLAG + value] != 0U)
+            value++;
+        game->ram[MYSMB_ENEMY_X + value] =
+            (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+        game->ram[MYSMB_ENEMY_PAGE + value] =
+            game->ram[MYSMB_AREA_CURRENT_PAGE];
+        game->ram[MYSMB_ENEMY_Y_HIGH + value] = 1U;
+        game->ram[MYSMB_ENEMY_FLAG + value] = 1U;
+        game->ram[MYSMB_ENEMY_Y + value] = 0x90U;
+        game->ram[MYSMB_ENEMY_ID + value] = 0x31U;
         return;
     }
     if (row == 15U && kind == 3U) {

@@ -384,3 +384,16 @@ without altering collision or OAM code. The checked-out three-target artifacts
 are mysmb16.exe `BFED12E8BC1201BFE63F774584291DC701D7713523BE91341C5EB1C8942BB790`,
 mysmb32.exe `F27A8D690D20AD0D4B58F962F4F7491E01066E2AEE777A5785B5DE39862EDC0D`,
 and mysmb64.exe `4A3067235777F65EAD2912B31E238549A087D6E20F3549EDB11B2FE367F4DA3E`.
+
+## S6 P10: correct page-twelve actor ownership transfer
+
+S6/P9's transfer to T19 is superseded. The source area bytes `$af,$26` enter
+`CastleObject`; at length `$02` that routine directly creates `StarFlagObject`
+(`$31`). `EnemyDataOffset` is `$1d` in both ROM and C, so `ProcessEnemyData`
+is not the producer. T18/S2/P5 owns and now restores this parser leaf. The
+remaining OAM `$78` samples 553--555 were present before this correction and
+remain independently queued; no T17 collision or platform code changes here.
+The three executable artifacts are mysmb16.exe
+`8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
+mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
+and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.

@@ -14,6 +14,10 @@ Generated from `build/reference-source/SMBDIS.ASM`; SHA-256: `c8e91408db55341394
 
 - Assembly labels: `1992`
 
+## Match accounting
+
+The current aggregate and the named unfinished set are maintained in the [M2 ROM-node progress report](../../states/NODE_PROGRESS.md). In this table, only an explicit ROM-reference-verified completion counts as a match; `open`, `ported`, `mapped`, or `route trace pending` do not. Every S admission and closure records its `completed / 1992` total there and updates the exact rows below before claiming progress.
+
 ## Authoritative top-level execution tree
 
 ```text
@@ -527,7 +531,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3717 | `RenderPul` | unassigned | open | none |
 | 3719 | `MushLExit` | unassigned | open | none |
 | 3724 | `CastleMetatiles` | unassigned | open | none |
-| 3737 | `CastleObject` | unassigned | open | none |
+| 3737 | `CastleObject` | T18/S2/P5 | mapped, route trace pending | controller-only page-twelve trace |
 | 3748 | `CRendLoop` | unassigned | open | none |
 | 3759 | `ChkCFloor` | unassigned | open | none |
 | 3772 | `NotTall` | unassigned | open | none |
@@ -1366,7 +1370,7 @@ The labels and branches behind every line remain open until individually bound b
 | 10491 | `GameTimerFireworks` | unassigned | open | none |
 | 10503 | `SetFWC` | unassigned | open | none |
 | 10506 | `IncrementSFTask1` | unassigned | open | none |
-| 10509 | `StarFlagExit` | unassigned | open | none |
+| 10509 | `StarFlagExit` | T18/S2/P5 collaborator | mapped, route trace pending | task-zero OAM gate smoke |
 | 10512 | `AwardGameTimerPoints` | unassigned | open | none |
 | 10522 | `NoTTick` | unassigned | open | none |
 | 10529 | `EndAreaPoints` | unassigned | open | none |

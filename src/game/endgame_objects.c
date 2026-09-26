@@ -135,7 +135,10 @@ void mysmb_objects_step_star_flags(struct mysmb_game *game)
             game->ram[MYSMB_ENDGAME_ENEMY_ID + slot] != 49U) continue;
         game->ram[MYSMB_ENDGAME_FRENZY_BUFFER] = 0U;
         task = game->ram[MYSMB_ENDGAME_STAR_FLAG_TASK];
-        if (task >= 5U) continue;
+        /* RunStarFlagObj dispatch entry zero is StarFlagExit: it clears the
+         * frenzy buffer but must not call DrawStarFlag before flagpole state.
+         */
+        if (task == 0U || task >= 5U) continue;
         if (task == 1U) {
             game->ram[MYSMB_ENDGAME_ENEMY_STATE + slot] = 5U;
             if (game->ram[MYSMB_ENDGAME_GAME_TIMER + 2U] == 1U) game->ram[MYSMB_ENDGAME_FIREWORKS_COUNTER] = 1U;
