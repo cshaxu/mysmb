@@ -176,3 +176,29 @@ No node is promoted because S8 declared an empty forecast. The next bounded
 evidence S must nominate `ScreenOff` explicitly before it can close that
 label. Focused x86/x64 tests and platform purity pass; OpenNT links the DOS
 MZ.
+
+## T22/S9 ScreenOff evidence
+
+T22/S8 transferred `ScreenOff` alone to T22/S9 and the other eleven labels to
+T22/S10. S9 forecasts exactly one match: `ScreenOff`; its maximum result is
+4 / 1,992. The proof route is reset plus three no-input NMIs. It verifies the
+source `Mirror_PPU_CTRL_REG2` read, `$e6` screen-off mask, mirror store,
+physical mask write, and the later mirror-to-physical write. Its evidence is
+the focused pre-NMI smoke, byte-identical x86/x64 native traces, zero ROM
+difference in all PPU scalars after the repair, and the three packaged targets.
+
+### T22/S9 result
+
+`ScreenOff` is ROM-match complete. The controlled no-input route executes its
+source mirror read, `DisableScreenFlag` branch, `$e6` mask, `$0779` store and
+physical PPU-mask writes. The focused smoke confirms the first-NMI state; the
+ROM comparison has zero differences in every PPU scalar and x86/x64 native
+traces are byte-identical. The inventory, full census, progress report and
+ledger record the resulting 4 / 1,992 count.
+
+## T22/S10 remaining NMI-root evidence
+
+T22/S10 receives the remaining eleven labels. It starts with no completion
+forecast and must separate `InitializeGame`/`LoadAreaPointer` descendants and
+non-portable 6502 stack mechanics from the received root labels before any
+repair or completion proposal.

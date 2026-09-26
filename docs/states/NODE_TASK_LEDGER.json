@@ -663,6 +663,30 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the T22/S7 migration package for bounded first-NMI branch/write evidence and source-owned repair."
+        },
+        {
+          "id": "M2 T22 S9",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "screenoff-evidence"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the isolated ScreenOff proof package from T22/S8."
+        },
+        {
+          "id": "M2 T22 S10",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "nmi-root-remainder"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the remaining T22 first-NMI and boot-root package from T22/S8 after ScreenOff split."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -3915,7 +3939,7 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4080,7 +4104,7 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4109,7 +4133,7 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4138,7 +4162,7 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4183,7 +4207,7 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4228,7 +4252,7 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4257,7 +4281,7 @@
     {
       "label": "VRAM_AddrTable_Low",
       "line": 743,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4286,7 +4310,7 @@
     {
       "label": "VRAM_AddrTable_High",
       "line": 752,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4315,7 +4339,7 @@
     {
       "label": "VRAM_Buffer_Offset",
       "line": 761,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4344,7 +4368,7 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4373,7 +4397,7 @@
     {
       "label": "ScreenOff",
       "line": 776,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S9",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -10307,7 +10331,7 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T22 S8",
+      "receiver": "M2 T22 S10",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -54386,6 +54410,38 @@
       ],
       "acceptedBy": "T22/S7 completed the bounded shared-C call-placement migration with no node credit; T22/S8 accepts the source-branch audit and only source-owned repair.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-025-t22-s8-to-s9",
+      "type": "transfer",
+      "from": "M2 T22 S8",
+      "to": "M2 T22 S9",
+      "nodes": [
+        "ScreenOff"
+      ],
+      "acceptedBy": "T22/S8 isolated the source-owned ScreenOff repair and T22/S9 accepts its explicit one-label proof forecast.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-026-t22-s8-to-s10",
+      "type": "transfer",
+      "from": "M2 T22 S8",
+      "to": "M2 T22 S10",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt"
+      ],
+      "acceptedBy": "T22/S8 found the remaining route differences depend on descendants outside the ScreenOff proof; T22/S10 accepts the unchanged root package.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -58699,7 +58755,58 @@
       "maximumComplete": 3,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-source-branch-audit-active"
+      "state": "closed-transferred-to-t22-s9-and-s10"
+    },
+    {
+      "subtask": "M2 T22 S9",
+      "kind": "implementation",
+      "scope": [
+        "ScreenOff"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "ScreenOff"
+      ],
+      "maximumComplete": 4,
+      "actualMatches": [
+        "ScreenOff"
+      ],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-complete-screenoff"
+    },
+    {
+      "subtask": "M2 T22 S10",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt"
+      ],
+      "baseline": 4,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 4,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-nmi-root-remainder-active"
     }
   ]
 }

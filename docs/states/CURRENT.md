@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S8 Packet
+## M2 T22 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S8, Implementation; first-NMI source-branch audit and source-owned repair. |
-| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S7 completed its call-placement P and transferred the exact twelve-label package with zero credit. |
-| Objective | Attribute every discrepancy in the reset-plus-three-NMI route to source branches and writes, then repair only the received node owners. |
-| Non-goals | Claiming a match from x86/x64 equality, editing `InitBuffer`/timer/sprite-0/operation-tree/title/area descendants, creating platform gameplay logic, or changing unrelated historical T22 code. |
-| Reference Baseline | 3 / 1,992 complete; 12 labels received by T22 S8; 0 labels forecast for completion. |
+| Identifier Mode | M2 T22 S10, Implementation intake; remaining first-NMI and boot-root evidence. |
+| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S9 closed `ScreenOff` as the fourth verified node; this S receives the remaining eleven labels from the prior split. |
+| Objective | Separate the remaining root labels from `InitializeGame`/pointer descendants and non-portable CPU-stack mechanics, then define the next source-owned repair/proof boundary. |
+| Non-goals | Reopening completed `ScreenOff`, editing T26 descendants, emulating 6502 call-stack artifacts as gameplay state, or claiming a match from broad output equality. |
+| Reference Baseline | 4 / 1,992 complete; 11 labels received; 0 labels forecast for completion. |
 | Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared boot/frame owners, focused project-owned tests, exact ledger records, and ignored ROM/native trace comparisons. |
+| Files And ABI Surface | Shared boot/frame owners, source listing, ignored trace comparison data and exact ledger records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Independently prove source branch/read/write order and source-reachable ROM comparison; run x86/x64/DOS16 operational checks and platform purity separately. |
-| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`; expected matches: none; maximum 3 / 1,992. |
+| Verification | Source branch/read/write audit before any repair; controlled ROM comparison and x86/x64/DOS16 operational evidence remain separate. |
+| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`; expected matches: none; maximum 4 / 1,992. |
 | Asset Needs | Owner-local ROM/listing and generated title inputs remain ignored research/build inputs. |
-| Reporting Requirements | Record each first-three-NMI mismatch by source branch/write owner, distinguish repairs from descendants transferred onward, and publish both verification tracks. |
-| Stop Conditions | Stop if a required repair is owned by an unreceived descendant, if a platform adapter must decide gameplay, or if a historical T22 record would be overwritten. |
-| Exit Criteria | The branch/write map covers every observed mismatch, all eligible received-owner repairs are validated, and unresolved descendants transfer to their registered receiver without false credit. |
+| Reporting Requirements | Classify every remaining controlled-route difference by received root, descendant receiver or non-portable CPU state; publish exact successor scope before implementation. |
+| Stop Conditions | Stop if an apparent root repair belongs to a descendant receiver or requires platform gameplay logic. |
+| Exit Criteria | A source-owner classification covers every remaining difference and admits one bounded next proof or repair S without false node credit. |
 | Original Owner Request | Execute small source-order tasks with exact node responsibility. |
-| Similar-Issue Sweep | Inspect all first-NMI writes to PPU mask, buffer selection and cold-start RAM affected by the trace report. |
+| Similar-Issue Sweep | Audit every first-NMI root write and every comparison byte currently attributed to the reset route. |
 
 ## Recent M4 Closures
 
