@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S11 Packet
+## M2 T22 S14 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S11, Implementation; source-owned boot-root proof. |
-| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S10 closed its exact difference classification and transferred seven boot labels here. |
-| Objective | Prove and, only if needed, repair `Start` through `InitializeMemory` as the cold/warm boot root while leaving later title and area initialization with their registered receivers. |
-| Non-goals | Modeling host vblank polling as gameplay, writing `InitializeGame` state in boot.c, emulating 6502 return-stack bytes, or editing platform code. |
-| Reference Baseline | 4 / 1,992 complete; 7 labels received; 0 labels forecast for completion; maximum 4 / 1,992. |
-| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s11-boot-root-proof). |
-| Files And ABI Surface | Shared `boot.c`, its C90 header/test boundary, source listing, ignored controlled traces and exact ledger records. |
+| Identifier Mode | M2 T22 S14, Implementation review; seven-label boot-root ROM equivalence. |
+| Admission And Approval | Owner approved the T21–T49 source-order plan. T22/S11 closed without retroactive credit and transferred its completed shared implementation package for this independent review. |
+| Objective | Verify all source instructions, branch reads/writes, call order, controlled ROM route and operational route for the seven boot-root labels, then update only labels that satisfy both tracks. |
+| Non-goals | New boot design, platform gameplay state, adding CPU/6502 emulation, or accepting a test/build as a substitute for source comparison. |
+| Reference Baseline | 4 / 1,992 complete; 7 labels received; expected matches: all 7; maximum 11 / 1,992. |
+| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s11-closure-and-t22s14-equivalence-review). |
+| Files And ABI Surface | Shared boot owner, timing-only composition roots, boot smoke suite, ignored three-NMI route evidence and canonical accounting records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | Source branch/read/write/call-order audit; reset-plus-three-NMI ROM route; focused CTests, x86/x64 builds, DOS16 compile and platform-purity check are separate. |
-| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: none; maximum 4 / 1,992. |
+| Verification | Source instruction/branch/write/call-order checklist; covered reset-plus-three-NMI ROM route; x86/x64 focused CTests, DOS16 link, Win32/DOS timing route and platform purity as an independent track. |
+| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: all 7; maximum 11 / 1,992. |
 | Asset Needs | Owner-local ROM/listing and generated title inputs remain ignored research/build inputs. |
-| Reporting Requirements | Record warm/cold branch reads and writes, exact treatment of the two vblank waits, any source-owner repair, and per-label complete/incomplete/transfer disposition. |
-| Stop Conditions | Stop if correctness would require platform gameplay policy or a later `InitializeGame`/area-owner edit. |
-| Exit Criteria | Each of the seven labels has source evidence and a bounded successor or completion disposition; no unrelated root state remains in boot ownership. |
+| Reporting Requirements | Record an individual pass/fail disposition for every source label, both verification tracks, canonical-row changes and any rejected label transfer. |
+| Stop Conditions | Stop if a label needs a source owner outside this packet or any platform file gains gameplay-state access. |
+| Exit Criteria | The inventory, progress report and ledger contain exactly the labels justified by the review, with every rejected label transferred to an accepted successor. |
 | Original Owner Request | Execute small source-order tasks with exact node responsibility. |
-| Similar-Issue Sweep | Inspect every boot-root RAM, PPU and APU write plus all call sites that invoke reset/power-on. |
+| Similar-Issue Sweep | Recheck every power-on/reset caller and every host timing boundary for early NMI or direct game-state access. |
 
 ## Recent M4 Closures
 

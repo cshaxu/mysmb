@@ -288,3 +288,18 @@ initial VBlank boundaries, one ColdBoot-only boundary, then the first NMI and
 presentation boundary. The same Win32 start function returns without ticking
 on its ColdBoot boundary. No host adapter reads or changes translated game
 state.
+
+## T22/S11 closure and T22/S14 equivalence review
+
+T22/S11 closes at 4 / 1,992 as declared: it made no after-the-fact node-credit
+claim. It completed three bounded implementation parts: the cold/warm clear
+boundary test, `Start → VBlank1 → VBlank2 → ColdBoot` ordering, and the
+separate `EndlessLoop → next NMI` boundary. Every source change is shared C or
+a timing-only composition call; platform-purity, cross-width focused tests,
+controlled route comparison and the DOS16 link pass.
+
+T22/S14 receives the same seven labels solely to independently review their
+complete evidence set. It forecasts all seven matches, raising the maximum to
+11 / 1,992. The review must reject any label whose source instructions,
+branch conditions, writes, call order, controlled route or operational route
+do not all agree. It may update the canonical inventory only after that review.

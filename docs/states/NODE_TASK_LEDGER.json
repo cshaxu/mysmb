@@ -723,6 +723,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the source-owned NMI root integration package from T22/S10."
+        },
+        {
+          "id": "M2 T22 S14",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "boot-root-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted the completed T22/S11 boot-root implementation package for independent seven-label ROM-equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -3975,7 +3987,7 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4140,7 +4152,7 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4169,7 +4181,7 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4198,7 +4210,7 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4243,7 +4255,7 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -4288,7 +4300,7 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -10367,7 +10379,7 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T22 S11",
+      "receiver": "M2 T22 S14",
       "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
@@ -54519,6 +54531,23 @@
       ],
       "acceptedBy": "T22/S10 isolates the parent NMI control path after its boot and table children; T22/S13 accepts the remaining root integration proof.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-030-t22-s11-to-s14",
+      "type": "transfer",
+      "from": "M2 T22 S11",
+      "to": "M2 T22 S14",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "acceptedBy": "T22/S11 completed the shared Start/VBlank/ColdBoot/EndlessLoop implementation and supplies its branch, timing and controlled-route evidence; T22/S14 accepts the isolated seven-label equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -58908,7 +58937,40 @@
       "maximumComplete": 4,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-boot-root-proof-active"
+      "state": "closed-implemented-transferred-to-s14"
+    },
+    {
+      "subtask": "M2 T22 S14",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "baseline": 4,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff"
+      ],
+      "expectedMatches": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "maximumComplete": 11,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-boot-root-equivalence-review-active"
     }
   ]
 }
