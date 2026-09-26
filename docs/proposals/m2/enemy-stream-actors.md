@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -73,3 +73,6 @@ ROM `BulletBillCheepCheep` is now owned by `game/enemy/frenzy.c`, reached from t
 ## S3 P8: Fireworks frenzy ownership boundary
 
 ROM `InitEnemyFrenzy → InitFireworks` now has one T19 owner in `game/enemy/frenzy.c`. The migration moves the complete controller leaf, including its timer gate, descending star-flag scan, fireworks counter decrement, table-derived position/page carry, and new-object activation. `RunFireworks` and `RunStarFlagObj` remain in `endgame_objects.c`; frame order is unchanged, with the existing call site now targeting the T19 API. The endgame regression calls the explicit frenzy owner. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.
+## S4 P1: Fireworks completion sound restoration
+
+The S4 ROM audit of `RunFireworks → FireworksSoundScore` found that the native completion branch wrote `$01` to `Square2SoundQueue`. The ROM writes `Sfx_Blast`, `$08`, after clearing the actor flag and before awarding the 500-point score. The shared endgame owner now writes `$08`; its focused regression asserts flag removal, graphics counter progression, and the source sound byte. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.

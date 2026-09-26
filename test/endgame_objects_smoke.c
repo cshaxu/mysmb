@@ -52,7 +52,8 @@ static int test_fireworks(void)
     game.ram[0x0058U] = 2U;
     game.ram[0x00a0U] = 1U;
     mysmb_objects_step_fireworks(&game);
-    if (game.ram[0x000fU] != 0U || game.ram[0x0058U] != 3U) return 13;
+    if (game.ram[0x000fU] != 0U || game.ram[0x0058U] != 3U ||
+        game.ram[0x00feU] != 0x08U) return 13;
     return 0;
 }
 

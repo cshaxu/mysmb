@@ -83,7 +83,7 @@ void mysmb_objects_step_fireworks(struct mysmb_game *game)
             game->ram[MYSMB_ENDGAME_ENEMY_X_SPEED + slot]++;
             if (game->ram[MYSMB_ENDGAME_ENEMY_X_SPEED + slot] >= 3U) {
                 game->ram[MYSMB_ENDGAME_ENEMY_FLAG + slot] = 0U;
-                game->ram[MYSMB_ENDGAME_SQUARE2_SOUND] = 1U;
+                game->ram[MYSMB_ENDGAME_SQUARE2_SOUND] = 0x08U;
                 mysmb_endgame_award_score(game, 5U);
                 continue;
             }
