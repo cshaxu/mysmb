@@ -71,6 +71,13 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    /* IDs $17/$18 dispatch InitEnemyFrenzy/EndFrenzy directly from
+     * CheckpointEnemyID; they must not enter ordinary actor setup. */
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 23U) {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 23U;
+        mysmb_enemy_step_bullet_bill_cheep_frenzy(game, slot);
+        return;
+    }
     if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
         mysmb_enemy_end_frenzy(game, slot);
         return;
@@ -125,10 +132,6 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
             game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
-        mysmb_enemy_end_frenzy(game, slot);
-        return;
-    }
         }
         if (game->ram[MYSMB_ENEMY_ID + slot] == 15U) {
             game->ram[MYSMB_ENEMY_X_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
@@ -139,30 +142,18 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
-        mysmb_enemy_end_frenzy(game, slot);
-        return;
-    }
         }
         if (game->ram[MYSMB_ENEMY_ID + slot] == 16U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
             game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
-        mysmb_enemy_end_frenzy(game, slot);
-        return;
-    }
         }
         /* ROM InitLakitu -> SetupLakitu -> InitHorizFlySwimEnemy/TallBBox2. */
         if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
             game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
             game->ram[0x06d1U] = 0U;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
-        mysmb_enemy_end_frenzy(game, slot);
-        return;
-    }
         }
         /* ROM InitShortFirebar/InitLongFirebar.  The long variant's
          * duplicate slot is OAM-only; its physical balls share this anchor. */
@@ -180,10 +171,6 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
             game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
             if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
-        mysmb_enemy_end_frenzy(game, slot);
-        return;
-    }
         }
         /* ROM InitBalPlatform through InitSmallPlatform.  The drawing-only
          * rope partner is absent; each physical deck keeps its 6502 state. */

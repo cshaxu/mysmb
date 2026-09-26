@@ -25,8 +25,8 @@ int main(void)
     game.ram[0x006dU] = 1U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x0057U] = 0U;
-    game.ram[0x07a8U] = 2U;
-    game.ram[0x07a9U] = 0U;
+    game.ram[0x07a7U] = 2U;
+    game.ram[0x07a8U] = 0U;
     mysmb_enemy_step_flying_cheep_frenzy(&game);
     if (game.ram[0x078fU] != 0x10U || game.ram[0x000fU] != 1U ||
         game.ram[0x0016U] != 20U || game.ram[0x0046U] != 2U ||

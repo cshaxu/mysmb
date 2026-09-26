@@ -10,5 +10,6 @@ void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game);
 void mysmb_enemy_step_flying_cheep_frenzy(struct mysmb_game *game);
 void mysmb_enemy_step_bowser_flame_frenzy(struct mysmb_game *game);
 void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot);
+void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot);
 
 #endif

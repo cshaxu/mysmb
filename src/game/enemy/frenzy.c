@@ -1,5 +1,6 @@
 #include "game/enemy/frenzy.h"
 #include "game/enemy/movement.h"
+#include "game/enemy/init.h"
 #include "game/world/world.h"
 
 enum {
@@ -27,7 +28,11 @@ enum {
     MYSMB_FRENZY_ENEMY_TIMER = 0x078fU,
     MYSMB_SECONDARY_HARD = 0x06ccU,
     MYSMB_ENEMY_X_FORCE = 0x0401U,
-    MYSMB_ENEMY_Y_DUMMY = 0x0417U
+    MYSMB_ENEMY_Y_DUMMY = 0x0417U,
+    MYSMB_AREA_TYPE = 0x074eU,
+    MYSMB_WORLD_NUMBER = 0x075fU,
+    MYSMB_BITM_FILTER = 0x06ddU,
+    MYSMB_SQUARE2_SOUND = 0x00feU
 };
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
@@ -252,18 +257,18 @@ void mysmb_enemy_step_flying_cheep_frenzy(struct mysmb_game *game)
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    timer_index = (mysmb_u8)(game->ram[0x07a9U + slot] & 3U);
+    timer_index = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = timer[timer_index];
     if (slot >= (game->ram[MYSMB_SECONDARY_HARD] != 0U ? 4U : 3U)) return;
 
-    position_index = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
+    position_index = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
     player_speed_bias = 0U;
     if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
         player_speed_bias = game->ram[MYSMB_PLAYER_X_SPEED] < 0x19U ? 4U : 8U;
     }
     speed_index = (mysmb_u8)(player_speed_bias + position_index);
-    if ((game->ram[0x07a9U + slot] & 3U) != 0U) {
-        position_index = (mysmb_u8)(game->ram[0x07aaU + slot] & 0x0fU);
+    if ((game->ram[0x07a8U + slot] & 3U) != 0U) {
+        position_index = (mysmb_u8)(game->ram[0x07a9U + slot] & 0x0fU);
     }
     game->ram[MYSMB_ENEMY_ID + slot] = 20U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfbU;
@@ -305,7 +310,7 @@ void mysmb_enemy_step_bowser_flame_frenzy(struct mysmb_game *game)
         game->ram[MYSMB_ENEMY_ID + bowser_slot] != 45U) return;
     for (slot = 0U; slot < 5U && game->ram[MYSMB_ENEMY_FLAG + slot] != 0U; ++slot) {}
     if (slot == 5U) return;
-    random = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
+    random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
     game->ram[MYSMB_ENEMY_ID + slot] = 21U;
     game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_PAGE + bowser_slot];
     game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + bowser_slot] - 0x0eU);
@@ -334,4 +339,40 @@ void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
     }
     game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
     if (controller_slot < 6U) game->ram[MYSMB_ENEMY_FLAG + controller_slot] = 0U;
+}
+/* ROM BulletBillCheepCheep.  The controller slot becomes the spawned actor;
+ * water picks a unique height bit and land refuses a second frenzy bill. */
+void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    static const mysmb_u8 heights[8] = { 0x40U,0x30U,0x90U,0x50U,0x20U,0x60U,0xa0U,0x70U };
+    mysmb_u8 index;
+    mysmb_u8 scan;
+    mysmb_u8 old_x;
+
+    if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (game->ram[MYSMB_AREA_TYPE] != 0U) {
+        for (scan = 0U; scan < 5U; ++scan) {
+            if (game->ram[MYSMB_ENEMY_FLAG + scan] != 0U &&
+                game->ram[MYSMB_ENEMY_ID + scan] == 8U) return;
+        }
+        game->ram[MYSMB_SQUARE2_SOUND] |= 0x08U;
+        game->ram[MYSMB_ENEMY_ID + slot] = 8U;
+    }
+    else {
+        if (slot >= 3U) return;
+        index = game->ram[0x07a7U + slot] >= 0xaaU ? 1U : 0U;
+        if (game->ram[MYSMB_WORLD_NUMBER] != 2U) ++index;
+        game->ram[MYSMB_ENEMY_ID + slot] = (index & 1U) == 0U ? 10U : 11U;
+    }
+    index = (mysmb_u8)(game->ram[0x07a7U + slot] & 7U);
+    while ((game->ram[MYSMB_BITM_FILTER] & (mysmb_u8)(1U << index)) != 0U) index = (mysmb_u8)((index + 1U) & 7U);
+    game->ram[MYSMB_BITM_FILTER] |= (mysmb_u8)(1U << index);
+    old_x = game->ram[MYSMB_SCREEN_RIGHT_X];
+    game->ram[MYSMB_ENEMY_Y + slot] = heights[index];
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
+    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] + (game->ram[MYSMB_ENEMY_X + slot] < old_x ? 1U : 0U));
+    /* PutAtRightExtent tail reaches FinishFlame, returning A = $01. */
+    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 1U;
+    game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
+    mysmb_enemy_checkpoint_loaded(game, slot);
 }

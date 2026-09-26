@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 
 int main(void)
 {
@@ -127,5 +128,28 @@ int main(void)
         game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||
         game.ram[0x0058U] != 0U || game.ram[0x009fU] != 0xfdU ||
         game.ram[0x0110U] != 5U || game.ram[0x012cU] != 0x30U) return 1;
+    /* BulletBillCheepCheep water route: PRNG height choice, right extent
+     * carry, timer and normal Cheep checkpoint are source-owned. */
+    mysmb_game_initialize(&game);
+    game.ram[0x074eU] = 0U;
+    game.ram[0x075fU] = 1U;
+    game.ram[0x071bU] = 2U;
+    game.ram[0x071dU] = 0xf0U;
+    game.ram[0x07a7U] = 0U;
+    mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 0U);
+    if (game.ram[0x0016U] != 11U || game.ram[0x000fU] != 1U ||
+        game.ram[0x0087U] != 0x10U || game.ram[0x006eU] != 3U ||
+        game.ram[0x00cfU] != 0x40U || game.ram[0x078fU] != 0x20U) return 101;
+    /* Land route fires a Bill only when none is already active. */
+    mysmb_game_initialize(&game);
+    game.ram[0x074eU] = 1U;
+    mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 0U);
+    if (game.ram[0x0016U] != 8U || game.ram[0x000fU] != 1U ||
+        (game.ram[0x00feU] & 8U) == 0U) return 102;
+    game.ram[0x000fU] = 1U;
+    game.ram[0x0016U] = 8U;
+    game.ram[0x000fU + 1U] = 0U;
+    mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 1U);
+    if (game.ram[0x000fU + 1U] != 0U) return 103;
     return 0;
 }

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S3/P6.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -20,7 +20,7 @@ Six ROM slots are dispatched by GameEngine; consumes area stream/block state and
 
 1. **S1 complete (P1) — source ownership and stream boundary.** Map `EnemiesAndLoopsCore`, `ProcessEnemyData`, `ObjectOffset`, `Enemy_PageLoc`, stream tables, and all current C entry points; move stream ownership out of `area.c` without changing bytes. Evidence: the bounded title/demo route remains unchanged before source fixes.
 2. **S2 active — loops, bounds, records, and position semantics.** P1 first relocates the complete `GameEngine → ProcFireball_Bubble → EnemiesAndLoopsCore` schedule into `game/enemy/core`; P2 translates `LoopCommand`, page control, two/three-byte records, sixth-slot rules, and position-before-bounds semantics. Evidence: sample 172 free-slot producer input and controlled page-crossing records.
-3. **S3 planned — group, frenzy, and initialization dispatch.** Translate group/frenzy paths and initialization dispatch including special IDs.
+3. **S3 active — group, frenzy, and initialization dispatch.** Translate group/frenzy paths and initialization dispatch including special IDs.
 4. **S4 planned — normal and special handlers.** Translate normal and special enemy handler paths using shared collision contracts.
 5. **S5 planned — source-route closure.** Compare W1-1 stream, group/frenzy, pipe enemy and representative special actor routes.
 
@@ -66,3 +66,7 @@ ROM `EndFrenzy` is now translated in `game/enemy/frenzy.c` and dispatched by `In
 ## S3 P6: InitEnemyObject checkpoint split
 
 The translated `InitEnemyObject` now writes stream row Y/ID and enters a separate `CheckpointEnemyID → InitEnemyRoutines` API. Special spawners can enter that checkpoint after their own source-defined position setup, matching ROM calls such as `PutAtRightExtent → CheckpointEnemyID`. Existing stream behavior is unchanged. x64/x86 are 79/79 and the DOS MZ links the same shared owner.
+
+## S3 P7: Bullet Bill/Cheep-Cheep frenzy restoration
+
+ROM `BulletBillCheepCheep` is now owned by `game/enemy/frenzy.c`, reached from the single `CheckpointEnemyID` special-controller dispatch in `game/enemy/init.c`. Both water Cheep-Cheep selection and land Bullet Bill selection join the ROM’s shared `Set17ID → GetRBit → PutAtRightExtent → CheckpointEnemyID` tail: the unique `BitMFilter` height bit, screen-right `+ $20` carry, `FinishFlame` dummy result, `$20` frenzy timer, and target actor initialization are shared rather than copied by branch. The persistent `$17` frenzy request is written at the `InitEnemyFrenzy` boundary. This packet also corrects pre-existing random-register off-by-one accesses: `PseudoRandomBitReg` is `$07a7`; Flying Cheep uses `+1` for timer/branch and `+2` only for the third-byte override, while Bowser flame and Bullet/Cheep use the base byte. Focused regressions cover water and land branches, duplicate-Bill suppression, and all three Flying-Cheep PRNG bytes. Full x64/x86 CTest is 79/79 each; the DOS MZ links the same shared code.
