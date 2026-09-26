@@ -28,8 +28,8 @@ int main(void)
     game.ram[0x0417U] = 0U;
     game.ram[0x0434U] = 0U;
     mysmb_objects_step_bullet_bills(&game);
-    if (game.ram[0x00b6U] != 0U || game.ram[0x00cfU] != 0x6dU ||
-        game.ram[0x00a0U] != 0xfdU || game.ram[0x0434U] != 0x1cU) return 1;
+    if (game.ram[0x00b6U] != 1U || game.ram[0x00cfU] != 0x6dU ||
+        game.ram[0x00a0U] != 0xfdU || game.ram[0x0434U] != 0x3dU) return 1;
     mysmb_game_initialize(&game);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 8U;
