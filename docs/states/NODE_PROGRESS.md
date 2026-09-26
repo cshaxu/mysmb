@@ -7,8 +7,8 @@ This is the quantitative progress report for the native C port. Its complete nam
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
 | ROM-match complete | 0 | None. |
-| C owner mapped, route trace still pending | 57 | The exact names are listed below. These are **not** completed matches. |
-| Open / unmatched | 1,935 | Every `open` row in the canonical inventory; that table is the complete named list. |
+| C owner mapped, route trace still pending | 74 | The exact names are listed below. These are **not** completed matches. |
+| Open / unmatched | 1,918 | Every `open` row in the canonical inventory; that table is the complete named list. |
 | **Total** | **1,992** | Canonical inventory. |
 
 The progress fraction is therefore **0 / 1,992 ROM-matched nodes**. A C file, structural extraction, focused smoke test, or executable build does not make a node a match. It becomes complete only after the original branch semantics, state writes, and affected ROM-reference frame trace are recorded in its inventory row.
@@ -17,7 +17,7 @@ The progress fraction is therefore **0 / 1,992 ROM-matched nodes**. A C file, st
 
 None.
 
-## Mapped but not yet matched (57)
+## Mapped but not yet matched (74)
 
 These names have a current C owner but have not passed the required source-route comparison. They remain unfinished.
 
@@ -81,6 +81,24 @@ These names have a current C owner but have not passed the required source-route
 
 | 3737 | `CastleObject` |
 | 10509 | `StarFlagExit` |
+
+| 11085 | `FireballEnemyCollision` |
+| 11101 | `FireballEnemyCDLoop` |
+| 11115 | `GoombaDie` |
+| 11120 | `NotGoomba` |
+| 11135 | `NoFToECol` |
+| 11141 | `ExitFBallEnemy` |
+| 11145 | `BowserIdentities` |
+| 11148 | `HandleEnemyFBallCol` |
+| 11160 | `ChkBuzzyBeetle` |
+| 11167 | `HurtBowser` |
+| 11182 | `SetDBSte` |
+| 11189 | `ChkOtherEnemies` |
+| 11197 | `ShellOrBlockDefeat` |
+| 11204 | `StnE` |
+| 11215 | `GoombaPoints` |
+| 11220 | `EnemySmackScore` |
+| 11224 | `ExHCF` |
 
 ## Reporting contract
 

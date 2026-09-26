@@ -1442,23 +1442,23 @@ The labels and branches behind every line remain open until individually bound b
 | 11042 | `ExtendLB` | unassigned | open | none |
 | 11074 | `TooFar` | unassigned | open | none |
 | 11075 | `ExScrnBd` | unassigned | open | none |
-| 11085 | `FireballEnemyCollision` | unassigned | open | none |
-| 11101 | `FireballEnemyCDLoop` | unassigned | open | none |
-| 11115 | `GoombaDie` | unassigned | open | none |
-| 11120 | `NotGoomba` | unassigned | open | none |
-| 11135 | `NoFToECol` | unassigned | open | none |
-| 11141 | `ExitFBallEnemy` | unassigned | open | none |
-| 11145 | `BowserIdentities` | unassigned | open | none |
-| 11148 | `HandleEnemyFBallCol` | unassigned | open | none |
-| 11160 | `ChkBuzzyBeetle` | unassigned | open | none |
-| 11167 | `HurtBowser` | unassigned | open | none |
-| 11182 | `SetDBSte` | unassigned | open | none |
-| 11189 | `ChkOtherEnemies` | unassigned | open | none |
-| 11197 | `ShellOrBlockDefeat` | unassigned | open | none |
-| 11204 | `StnE` | unassigned | open | none |
-| 11215 | `GoombaPoints` | unassigned | open | none |
-| 11220 | `EnemySmackScore` | unassigned | open | none |
-| 11224 | `ExHCF` | unassigned | open | none |
+| 11085 | `FireballEnemyCollision` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11101 | `FireballEnemyCDLoop` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11115 | `GoombaDie` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11120 | `NotGoomba` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11135 | `NoFToECol` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11141 | `ExitFBallEnemy` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11145 | `BowserIdentities` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11148 | `HandleEnemyFBallCol` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11160 | `ChkBuzzyBeetle` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11167 | `HurtBowser` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11182 | `SetDBSte` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11189 | `ChkOtherEnemies` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11197 | `ShellOrBlockDefeat` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11204 | `StnE` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11215 | `GoombaPoints` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11220 | `EnemySmackScore` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
+| 11224 | `ExHCF` | T17/S5/P20 | mapped, route trace pending | source audit + collision regression |
 | 11228 | `PlayerHammerCollision` | unassigned | open | none |
 | 11256 | `ClHCol` | unassigned | open | none |
 | 11258 | `ExPHC` | unassigned | open | none |

@@ -396,7 +396,9 @@ remain independently queued; no T17 collision or platform code changes here.
 The three executable artifacts are mysmb16.exe
 `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
 mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
-and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.## S6 P11: transfer the final page-twelve OAM residual
+and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.
+
+## S6 P11: transfer the final page-twelve OAM residual
 
 **ROM-node accounting:** baseline remains **0 / 1,992** complete; this
 closure packet changes no node to complete. It records `FlagpoleGfxHandler`
@@ -414,5 +416,26 @@ when the source writes OAM. The precise writer/timing relationship therefore
 belongs to T16's OAM graph, not T17's world primitives. No game or platform
 code changes in this transfer. Current three-target artifacts: mysmb16.exe
 `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
+mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
+and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.
+
+## S5 P20: map fireball-to-enemy collision source tree
+
+**ROM-node accounting:** baseline **0 / 1,992** complete before and after this
+mapping packet. The 17 labels `FireballEnemyCollision` through `ExHCF`
+(lines 11085--11224) move from open to mapped/route-trace-pending; no label is
+claimed ROM-matched until a controller-only fire-flower/enemy route captures
+all affected RAM and PPU/OAM output.
+
+A line-by-line source audit binds this tree to the shared
+`world/collision.c` implementation and its directed regression: the fireball
+state/d7 and alternating-frame gates, slot 4-to-0 scan, state/flag/ID/offscreen
+filters, `SprObjectCollisionCore` box orientation, and post-hit continuing scan
+all match. The handler maps the source Bowser proxy slot, Buzzy/Bullet Bill/
+Podoboo exits, Piranha's carry-preserving `Y+$19`, `ChkToStunEnemies`, and
+score/audio tail. The next packet must add a source-reachable controller route;
+it must not promote this static audit or its synthetic fixture to equality
+proof. No gameplay or platform code changes. Current artifact set:
+mysmb16.exe `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
 mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
 and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.
