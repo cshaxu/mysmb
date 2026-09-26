@@ -228,7 +228,7 @@ static mysmb_u8 mysmb_oam_player_get_offscreen_bits(const struct mysmb_game *gam
         if (y_bits != 0U || edge == 0U) break;
         edge--;
     }
-    return (mysmb_u8)(x_bits | (y_bits << 4U));
+    return (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
 }
 void mysmb_oam_draw_player(struct mysmb_game *game)
 {

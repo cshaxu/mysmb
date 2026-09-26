@@ -35,6 +35,19 @@ int main(void)
     mysmb_oam_draw_player(&game);
     if (game.ram[0x03d0U] != 0x10U ||
         game.ram[0x021cU] != 0xf8U || game.ram[0x0220U] != 0xf8U) return 2;
+    /* ROM GetOffScreenBitsSet shifts the horizontal table result down into
+     * the low nibble before OR-ing the vertical result into the high nibble.
+     * This is the source fixture at the first left-edge transition. */
+    game.ram[0x071aU] = 0U;
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071cU] = 0xf9U;
+    game.ram[0x071dU] = 0xf8U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0086U] = 0xf9U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0xb0U;
+    mysmb_oam_draw_player(&game);
+    if (game.ram[0x03d0U] != 0x08U) return 4;
     game.ram[0x0033U] = MYSMB_BUTTON_LEFT;
     mysmb_oam_draw_player(&game);
     if (game.ram[0x0205U] != 0x21U || game.ram[0x0206U] != 0x42U ||
