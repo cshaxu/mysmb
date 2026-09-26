@@ -28,6 +28,18 @@ int main(void)
     if (game.ram[0x00f1U] != 0x82U || game.ram[0x07bbU] != 0x27U ||
         game.ram[0x00ffU] != 0U) return 2;
 
+    /* ROM PlayGrowPowerUp -> ContinueGrowItems: reveal starts with its
+     * ordinary length unchanged at $10 while the secondary counter becomes
+     * one, then advances independently on the next frame. */
+    game.ram[0x00f2U] = 0U;
+    game.ram[0x07bdU] = 0U;
+    game.ram[0x07beU] = 0U;
+    game.ram[0x00feU] = 0x02U;
+    mysmb_audio_step(&game);
+    if (game.ram[0x00f2U] != 0x02U || game.ram[0x07bdU] != 0x10U ||
+        game.ram[0x07beU] != 1U || game.ram[0x00feU] != 0U) return 3;
+    mysmb_audio_step(&game);
+    if (game.ram[0x07bdU] != 0x10U || game.ram[0x07beU] != 2U) return 4;
     /* A live 1-UP cannot be replaced by a simultaneous square-two request. */
     game.ram[0x00f2U] = 0x40U;
     game.ram[0x07bdU] = 0x30U;

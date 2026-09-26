@@ -205,8 +205,8 @@ static mysmb_u8 mysmb_audio_square2_length(mysmb_u8 effect)
 {
     if (effect == 0x80U) return 0x38U;
     if (effect == 0x01U) return 0x35U;
-    if (effect == 0x02U) return 0x20U;
-    if (effect == 0x04U) return 0x40U;
+    if (effect == 0x02U) return 0x10U;
+    if (effect == 0x04U) return 0x20U;
     if (effect == 0x08U) return 0x20U;
     if (effect == 0x10U) return 0x06U;
     if (effect == 0x20U) return 0x36U;
@@ -245,10 +245,26 @@ static void mysmb_audio_step_square2(struct mysmb_game *game)
             effect = mysmb_audio_first_square2(queue);
             game->ram[MYSMB_RAM_SQUARE2_BUFFER] = queue;
             game->ram[MYSMB_RAM_SQUARE2_LENGTH] = mysmb_audio_square2_length(effect);
-            game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+            /* GrowItemRegs alone owns this counter initialization. Other
+             * Square2 effects leave its last value intact in the ROM. */
+            if (effect == 0x02U || effect == 0x04U) {
+                game->ram[MYSMB_RAM_SFX_SECONDARY] = 0U;
+            }
         }
     }
     if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) return;
+    effect = mysmb_audio_first_square2(game->ram[MYSMB_RAM_SQUARE2_BUFFER]);
+    /* ROM ContinueGrowItems increments its separate counter and uses half of
+     * it as the frequency-table index.  It never decrements the ordinary
+     * Square2 SFX length counter on this path. */
+    if (effect == 0x02U || effect == 0x04U) {
+        game->ram[MYSMB_RAM_SFX_SECONDARY]++;
+        if ((mysmb_u8)(game->ram[MYSMB_RAM_SFX_SECONDARY] >> 1U) ==
+            game->ram[MYSMB_RAM_SQUARE2_LENGTH]) {
+            game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
+        }
+        return;
+    }
     game->ram[MYSMB_RAM_SQUARE2_LENGTH]--;
     if (game->ram[MYSMB_RAM_SQUARE2_LENGTH] == 0U) {
         game->ram[MYSMB_RAM_SQUARE2_BUFFER] = 0U;
