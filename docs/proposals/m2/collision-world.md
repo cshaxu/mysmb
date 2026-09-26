@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P11; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P13; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -129,3 +129,7 @@ ROM `HandleCoinMetatile -> ErACM -> RemoveCoin_Axe` and `HandleAxeMetatile -> Er
 
 `core_smoke` verifies independent `$0341` blank output, `$06` selection, a zero `$0340` selected-list commit, and the separate score/tally buffer-one commands. `collision_regression_smoke` drives the actual left-foot axe route and verifies mode, speed, collision-tile removal, and the exact buffer-two command. No platform module changed.
 Artifacts refreshed for this P: mysmb16.exe SHA-256 1F09A11C087352432C9BC15B6F6B0DFCAD3EC9EB575A3CE0CA8E9F0E5494466C; mysmb32.exe SHA-256 1915C97405DE7C3C90407A6F3EBD82FBE5E9C6E300F02B2CDC487D618C20B9E2; mysmb64.exe SHA-256 F59D904761A5092DE7E5C6068F17394D8D8282FD62BA67C052F521065104CBB5.
+
+## S4 P13: restore PlayerBGCollision bottom guard
+
+ROM PlayerBGCollision initializes Player_CollisionBits to $ff after the on-screen high-byte check, then returns before HeadChk when Player_Y_Position is $cf or higher. Both shared player call sites now establish that byte and gate the complete head/feet/side chain on the same Y < $cf condition. The focused regression drives PlayerBGCollision through mysmb_player_step at Y=$cf and proves the collision bits reset without terrain probes. x86/x64 CTest: 79/79; DOS MZ rebuilt; artifacts: A6B39A7D00077C1DBE69FC2BFDA73CE692F2C20DD91130C849E904AE57CB9C98, D3144F578C8DD7E1DDFCB17B6358B24BCE52F64D6099B32C686B9F00FA63E62D, 3ECED3EBFB9758CD3218BA1C0B885DE8C267C9BCBF005678E9B3EAE8EC2807E3.

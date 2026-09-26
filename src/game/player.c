@@ -588,9 +588,14 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
             game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] >= 4U &&
             game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
-            (void)mysmb_player_check_head(game);
-            (void)mysmb_player_check_feet(game);
-            (void)mysmb_player_check_sides(game);
+            if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
+                game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
+                if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
+                    (void)mysmb_player_check_head(game);
+                    (void)mysmb_player_check_feet(game);
+                    (void)mysmb_player_check_sides(game);
+                }
+            }
         }
         mysmb_oam_relative_player_position(game);
         mysmb_world_set_bounding_box(game, MYSMB_PLAYER_BOUNDING_BOX,
@@ -710,9 +715,14 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         else if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
             game->ram[MYSMB_PLAYER_STATE] = 2U;
         }
-        (void)mysmb_player_check_head(game);
-        (void)mysmb_player_check_feet(game);
-        (void)mysmb_player_check_sides(game);
+        if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
+                game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
+                if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
+                    (void)mysmb_player_check_head(game);
+                    (void)mysmb_player_check_feet(game);
+                    (void)mysmb_player_check_sides(game);
+                }
+            }
     }
     mysmb_oam_relative_player_position(game);
     mysmb_player_handle_hole(game);

@@ -43,6 +43,18 @@ int main(void)
     mysmb_u8 step;
     mysmb_u8 hit_slot;
 
+    /* PlayerBGCollision sets collision bits before its bottom-screen guard.
+     * At Y=$cf it must not run the head/feet/side probes. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x000eU] = 4U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0xcfU;
+    game.ram[0x001dU] = 0U;
+    game.ram[0x0490U] = 0U;
+    game.ram[0x0754U] = 1U;
+    mysmb_player_step(&game, 0U);
+    if (game.ram[0x0490U] != 0xffU) return 45;
     /* ROM small-Mario feet use probe entries $0f/$10: X+3 and X+12,
      * with Y+32/Y+24.  At the 1-1 landing reproduced from the ROM trace,
      * the right probe lands on the brick while the left probe remains empty. */
