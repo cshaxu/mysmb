@@ -899,6 +899,8 @@ void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
     mysmb_u8 tile;
     mysmb_u8 state;
     mysmb_u8 direction;
+    mysmb_u8 id;
+    mysmb_u8 relative_x;
     mysmb_u16 difference;
 
     /* EnemyToBGCollisionDet: d5 actors and objects above the source gate
@@ -910,6 +912,39 @@ void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
     /* ChkUnderEnemy / HandleEToBGCollision / LandEnemyProperly. */
     tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
         terrain.metatile : 0U;
+    if (tile == 0x23U) {
+        /* HandleEToBGCollision: a block that was bumped beneath this actor
+         * is consumed before the original defeat/score/stun chain. */
+        game->ram[terrain.block_address] = 0U;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id < 0x15U) {
+            if (id == 6U) mysmb_objects_defeat_by_shell(game, slot);
+            mysmb_objects_setup_floatey_from_relative(game, slot, 1U);
+            relative_x = game->ram[0x03aeU]; /* Enemy_Rel_XPos */
+        }
+        else relative_x = id;
+        /* ChkToStunEnemies uses the accumulator left by SetupFloateyNumber
+         * (Enemy_Rel_XPos), including its unusual $09/$0d-$10 demotion.
+         */
+        if (relative_x == 9U || (relative_x >= 13U && relative_x < 17U)) {
+            game->ram[MYSMB_ENEMY_ID + slot] &= 1U;
+        }
+        game->ram[MYSMB_ENEMY_STATE + slot] =
+            (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + slot] & 0xf0U) | 2U);
+        game->ram[MYSMB_ENEMY_Y + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
+            game->ram[MYSMB_AREA_TYPE] == 0U ? 0xffU : 0xfdU;
+        difference = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+                                 game->ram[MYSMB_ENEMY_X + slot]);
+        difference = (mysmb_u16)(difference -
+            (((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
+             game->ram[MYSMB_PLAYER_X]));
+        direction = (difference & 0x8000U) != 0U ? 2U : 1U;
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = direction;
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = direction == 1U ? 0x10U : 0xf0U;
+        return;
+    }
     if (mysmb_objects_is_solid_terrain(tile) != 0U && tile != 0x23U &&
         terrain.contact_low_nibble < 0x0dU) {
         if ((state & 0x40U) != 0U) {

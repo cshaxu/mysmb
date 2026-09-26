@@ -38,6 +38,7 @@ struct mysmb_enemy_terrain {
     mysmb_u8 contact_low_nibble;
     mysmb_u8 block_address_low;
     mysmb_u8 block_row_offset;
+    mysmb_u16 block_address;
 };
 /* ROM $e333 BlockBufferChk_Enemy -> BlockBufferCollision. */
 mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,

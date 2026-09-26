@@ -43,6 +43,7 @@ mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
     terrain->block_address_low = (mysmb_u8)address;
     address = (mysmb_u16)(address + row);
     if (address >= 0x0800U) return 0U;
+    terrain->block_address = address;
     terrain->metatile = game->ram[address];
     terrain->contact_low_nibble = horizontal_contact != 0U ? (mysmb_u8)(game->ram[0x0087U + slot] & 0x0fU) : (mysmb_u8)(game->ram[0x00cfU + slot] & 0x0fU);
     terrain->block_row_offset = row;
