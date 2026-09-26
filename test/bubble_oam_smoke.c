@@ -24,7 +24,7 @@ int main(void)
     mysmb_fireball_step(&game);
     if (game.ram[0x0792U] != 0x20U || game.ram[0x0085U] != 0U ||
         game.ram[0x009eU] != 0x48U || game.ram[0x00e6U] != 0x67U ||
-        game.ram[0x03b2U] != 0x48U || game.ram[0x03bdU] != 0x67U ||
+        game.ram[0x03b0U] != 0U || game.ram[0x03bbU] != 0xf8U ||
         game.ram[0x0230U] != 0x67U || game.ram[0x0231U] != 0x74U ||
         game.ram[0x0232U] != 2U || game.ram[0x0233U] != 0x48U) return 1;
 
@@ -34,7 +34,7 @@ int main(void)
     game.ram[0x0230U] = 0x67U;
     mysmb_fireball_step(&game);
     if (game.ram[0x00e6U] != 0xf8U ||
-        (game.ram[0x03d5U] & 0xf0U) == 0U || game.ram[0x0230U] != 0xf8U ||
+        (game.ram[0x03d3U] & 0xf0U) == 0U || game.ram[0x0230U] != 0xf8U ||
         game.ram[0x0231U] != 0x74U || game.ram[0x0232U] != 2U ||
         game.ram[0x0233U] != 0x48U) return 2;
     return 0;

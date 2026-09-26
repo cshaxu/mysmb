@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P8.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -96,3 +96,7 @@ ROM `RunNormalEnemies → RelativeEnemyPosition → EnemyGfxHandler` supplies on
 ## S4 P7: platform and Bowser-flame fixed scratch restoration
 
 ROM `RunSmallPlatform` and `RunLargePlatform` call `RelativeEnemyPosition` immediately before their drawing leaves, so `$03ae/$03b9` are fixed current-actor outputs. `ProcBowserFlame → DrawFlameLoop → GetEnemyOffscreenBits` likewise uses fixed `$03ae/$03b9/$03d1`. The shared platform and flame OAM owners no longer add a slot to those addresses and use the complete enemy offscreen result. Focused OAM tests and full x64/x86 CTest pass 79/79; OpenNT relinks the DOS MZ. The 16/32/64 artifacts were refreshed.
+
+## S4 P8: Bubble and hammer fixed scratch restoration
+
+ROM `ProcAirBubbles` runs `RelativeBubblePosition → GetBubbleOffscreenBits → DrawBubble` for slots 2 through 0, using fixed `Bubble_Rel_XPos` `$03b0`, `Bubble_Rel_YPos` `$03bb`, and `Bubble_OffscreenBits` `$03d3`; the final fixed values therefore belong to slot 0 while slot 2 OAM remains drawn. `RelativeMiscPosition → GetMiscOffscreenBits → DrawHammer` similarly uses fixed `$03b3/$03be/$03d6`. The shared bubble and hammer owners no longer fabricate slot-indexed scratch arrays, and Bubble regression explicitly verifies loop-final scratch separately from slot-2 OAM. Full x64/x86 CTest passes 79/79 each; the shared DOS MZ relinks and all three artifacts were refreshed.

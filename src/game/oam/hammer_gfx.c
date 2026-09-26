@@ -103,11 +103,11 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
     relative_x = (mysmb_u8)(game->ram[MYSMB_HAMMER_MISC_X + slot] -
                              game->ram[MYSMB_HAMMER_SCREEN_LEFT_X]);
     relative_y = game->ram[MYSMB_HAMMER_MISC_Y + slot];
-    game->ram[MYSMB_HAMMER_REL_X + slot] = relative_x;
-    game->ram[MYSMB_HAMMER_REL_Y + slot] = relative_y;
+    game->ram[MYSMB_HAMMER_REL_X] = relative_x;
+    game->ram[MYSMB_HAMMER_REL_Y] = relative_y;
     offscreen = (mysmb_u8)((mysmb_hammer_y_offscreen(game, slot) << 4U) |
                             (mysmb_hammer_x_offscreen(game, slot) >> 4U));
-    game->ram[MYSMB_HAMMER_OFFSCREEN + slot] = offscreen;
+    game->ram[MYSMB_HAMMER_OFFSCREEN] = offscreen;
     pose = 0U;
     if (game->ram[MYSMB_HAMMER_TIMER_CONTROL] == 0U &&
         (game->ram[MYSMB_HAMMER_MISC_STATE + slot] & 0x7fU) == 1U) {
@@ -128,6 +128,3 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[(mysmb_u16)(0x0204U + oam)] = 0xf8U;
     }
 }
-
-
-
