@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P17.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P18.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -164,3 +164,8 @@ P15's controller leaves are now exercised through real two-byte `ProcessEnemyDat
 ## S5 P17: $17/$18 checkpoint dispatch order
 
 CheckpointEnemyID now dispatches Bullet/Cheep frenzy $17 and StopFrenzy $18 before the normal-enemy initializer, matching the ROM jump table. This prevents the timer-gated controller returns from fabricating ordinary movement, state, bounding-box, or activation writes. Focused frenzy regressions pass; full target validation and refreshed artifacts accompany this packet.
+
+
+## S5 P18: post-frenzy shared source-route check
+
+The established 600-frame Start/Right/jump ROM trace was rerun after P17. x86 and x64 native traces are byte-identical (D06BE291...D64C8E6); the comparator reports zero differences for both CIRAM pages, palette, visible OAM, audio commands, and every PPU-visible scalar. Remaining CPU temporary RAM differences remain outside the output contract. Derived evidence is under uild/t19-s5-p18-regression.
