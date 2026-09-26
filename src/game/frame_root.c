@@ -280,7 +280,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;
             mysmb_enemy_core_step(game, &area_source);
-        }        mysmb_objects_step_enemy_collisions(game);
+        }
         mysmb_objects_check_hazard_enemy_collision(game);
         mysmb_objects_check_bullet_bill_stomp(game);
         mysmb_objects_check_bloober_stomp(game);

@@ -185,3 +185,7 @@ is the separately owned Goomba OAM scratch/output path (`$02d8`, `$04b4-$04b7`),
 transferred to T16 rather than patched in the stream owner. Full x64/x86 CTest
 passes 83/83; the shared DOS16 link succeeds and all three executable artifacts
 are refreshed.
+
+## S5 P20: current-slot EnemiesCollision ownership
+
+`RunNormalEnemies` now invokes `EnemiesCollision` only from the already-audited ordinary actor route, after its existing `EnemyToBGCollisionDet` call and before `PlayerEnemyCollision`.  The former frame-root all-slot scan has been removed.  The shared collision owner follows the ROM current-`ObjectOffset` traversal: it compares only lower-numbered slots, consumes their previously prepared `GetEnemyBoundBox` results without writing any box, preserves `Enemy_CollisionBits[candidate]` with `SetBitsMask[current]`/clear semantics, and applies `ProcEnemyCollisions` with current/candidate operand order.  This removes the manufactured box for a newly streamed slot.  On the established 600-sample ROM route, visible OAM, palette, and all PPU-visible scalars are zero-difference; the first retained work-RAM difference moves to sample 584, while the former samples 232–346 box/OAM divergence is absent.  Full x64/x86 CTest passes 83/83; DOS16 links the same shared source.

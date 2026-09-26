@@ -31,8 +31,9 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game,
 mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot);
 /* ROM OffscreenBoundsCheck / EraseEnemyObject. */
 void mysmb_objects_check_enemy_offscreen_bounds(struct mysmb_game *game, mysmb_u8 slot);
-/* ROM EnemiesCollision/ProcEnemyCollisions for regular enemy slots. */
-void mysmb_objects_step_enemy_collisions(struct mysmb_game *game);
+/* ROM EnemiesCollision/ProcEnemyCollisions for the current ObjectOffset. */
+void mysmb_objects_step_enemy_collisions_current(struct mysmb_game *game,
+                                                 mysmb_u8 slot);
 /* ROM $aa0f-$aa4c InitBulletBill/BulletBillHandler and its OAM output. */
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */

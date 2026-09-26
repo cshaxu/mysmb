@@ -809,6 +809,7 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
             return;
         }
         mysmb_objects_step_normal_enemy_terrain(game, slot);
+        mysmb_objects_step_enemy_collisions_current(game, slot);
         if (id != 18U && mysmb_objects_check_normal_enemy_collision(game, slot, preserve_collision_boxes) != 0U) return;
         if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U) {
@@ -1227,70 +1228,74 @@ void mysmb_objects_step_bloobers(struct mysmb_game *game)
     }
 }
 
-/* ROM $dcfd EnemiesCollision/ProcEnemyCollisions for the five regular
- * enemy slots.  The power-up/vine slot remains excluded by the source loop. */
-void mysmb_objects_step_enemy_collisions(struct mysmb_game *game)
+/* ROM $dcfd EnemiesCollision/ProcEnemyCollisions.  RunNormalEnemies invokes
+ * this after GetEnemyBoundBox and EnemyToBGCollisionDet for its current
+ * ObjectOffset.  Candidate boxes belong to earlier slots' prior turns; this
+ * function must never manufacture or refresh either box. */
+void mysmb_objects_step_enemy_collisions_current(struct mysmb_game *game,
+                                                 mysmb_u8 slot)
 {
-    mysmb_u8 first;
     mysmb_u8 second;
-    mysmb_u16 first_world;
-    mysmb_u16 second_world;
-    mysmb_u16 screen_world;
+    mysmb_u8 mask;
     mysmb_u16 first_box;
     mysmb_u16 second_box;
 
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U || game->ram[MYSMB_AREA_TYPE] == 0U) return;
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    for (first = 1U; first < 5U; ++first) {
-        if (game->ram[MYSMB_ENEMY_FLAG + first] == 0U ||
-            game->ram[MYSMB_ENEMY_ID + first] >= 0x15U ||
-            game->ram[MYSMB_ENEMY_ID + first] == 13U ||
-            game->ram[MYSMB_ENEMY_ID + first] == 17U) continue;
-        first_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + first] << 8U) |
-                                  game->ram[MYSMB_ENEMY_X + first]);
-        if (first_world < screen_world || (mysmb_u16)(first_world - screen_world) >= 0x100U) continue;
-        first_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + first * 4U);
-        mysmb_world_set_bounding_box(game, first_box,
-            game->ram[MYSMB_ENEMY_BOUND_BOX + first],
-            (mysmb_u8)(first_world - screen_world), game->ram[MYSMB_ENEMY_Y + first]);
-        for (second = 0U; second < first; ++second) {
-            if (game->ram[MYSMB_ENEMY_FLAG + second] == 0U ||
-                game->ram[MYSMB_ENEMY_ID + second] >= 0x15U ||
-                game->ram[MYSMB_ENEMY_ID + second] == 13U ||
-                game->ram[MYSMB_ENEMY_ID + second] == 17U) continue;
-            second_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + second] << 8U) |
-                                       game->ram[MYSMB_ENEMY_X + second]);
-            if (second_world < screen_world || (mysmb_u16)(second_world - screen_world) >= 0x100U) continue;
-            second_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + second * 4U);
-            mysmb_world_set_bounding_box(game, second_box,
-                game->ram[MYSMB_ENEMY_BOUND_BOX + second],
-                (mysmb_u8)(second_world - screen_world), game->ram[MYSMB_ENEMY_Y + second]);
-            if (mysmb_world_boxes_collide(game, first_box, second_box) == 0U ||
-                (game->ram[MYSMB_ENEMY_STATE + first] & 0x20U) != 0U ||
-                (game->ram[MYSMB_ENEMY_STATE + second] & 0x20U) != 0U) continue;
-            if (game->ram[MYSMB_ENEMY_STATE + first] >= 6U &&
-                game->ram[MYSMB_ENEMY_ID + first] != 5U) {
-                mysmb_objects_defeat_by_shell(game, second);
-                mysmb_objects_setup_floatey_number(game, second,
-                    (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + first] + 4U));
-                game->ram[MYSMB_SHELL_CHAIN_COUNTER + first]++;
+    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U ||
+        game->ram[MYSMB_AREA_TYPE] == 0U || slot > 5U ||
+        game->ram[MYSMB_ENEMY_ID + slot] >= 0x15U ||
+        game->ram[MYSMB_ENEMY_ID + slot] == 17U ||
+        game->ram[MYSMB_ENEMY_ID + slot] == 13U ||
+        game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] != 0U) return;
+
+    first_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+    mask = (mysmb_u8)(0x80U >> slot);
+    second = slot;
+    while (second != 0U) {
+        --second;
+        if (game->ram[MYSMB_ENEMY_FLAG + second] == 0U ||
+            game->ram[MYSMB_ENEMY_ID + second] >= 0x15U ||
+            game->ram[MYSMB_ENEMY_ID + second] == 17U ||
+            game->ram[MYSMB_ENEMY_ID + second] == 13U ||
+            game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + second] != 0U) continue;
+        second_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + second * 4U);
+        if (mysmb_world_boxes_collide(game, first_box, second_box) == 0U) {
+            game->ram[MYSMB_ENEMY_COLLISION_BITS + second] &= (mysmb_u8)~mask;
+            continue;
+        }
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) == 0U &&
+            (game->ram[MYSMB_ENEMY_STATE + second] & 0x80U) == 0U) {
+            if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + second] & mask) != 0U) continue;
+            game->ram[MYSMB_ENEMY_COLLISION_BITS + second] |= mask;
+        }
+        /* ProcEnemyCollisions: x is current ObjectOffset, y is the earlier
+         * candidate.  d5 suppresses the reaction after the collision bit
+         * work, exactly as the ROM does. */
+        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
+            (game->ram[MYSMB_ENEMY_STATE + second] & 0x20U) != 0U) continue;
+        if (game->ram[MYSMB_ENEMY_STATE + slot] >= 6U) {
+            if (game->ram[MYSMB_ENEMY_ID + slot] == 5U) continue;
+            if ((game->ram[MYSMB_ENEMY_STATE + second] & 0x80U) != 0U) {
+                mysmb_objects_setup_floatey_number(game, slot, 6U);
+                mysmb_objects_defeat_by_shell(game, slot);
             }
-            else if (game->ram[MYSMB_ENEMY_STATE + second] >= 6U &&
-                     game->ram[MYSMB_ENEMY_ID + second] != 5U) {
-                mysmb_objects_defeat_by_shell(game, first);
-                mysmb_objects_setup_floatey_number(game, first,
-                    (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + second] + 4U));
-                game->ram[MYSMB_SHELL_CHAIN_COUNTER + second]++;
-            }
-            else {
-                mysmb_objects_turn_enemy(game, first);
-                mysmb_objects_turn_enemy(game, second);
-            }
+            mysmb_objects_defeat_by_shell(game, second);
+            mysmb_objects_setup_floatey_number(game, second,
+                (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + slot] + 4U));
+            game->ram[MYSMB_SHELL_CHAIN_COUNTER + slot]++;
+        }
+        else if (game->ram[MYSMB_ENEMY_STATE + second] >= 6U) {
+            if (game->ram[MYSMB_ENEMY_ID + second] == 5U) continue;
+            mysmb_objects_defeat_by_shell(game, slot);
+            mysmb_objects_setup_floatey_number(game, slot,
+                (mysmb_u8)(game->ram[MYSMB_SHELL_CHAIN_COUNTER + second] + 4U));
+            game->ram[MYSMB_SHELL_CHAIN_COUNTER + second]++;
+        }
+        else {
+            mysmb_objects_turn_enemy(game, second);
+            mysmb_objects_turn_enemy(game, slot);
         }
     }
 }
-
 /* ROM $c12d ProcHammerBro through MoveHammerBroXDir. */
 void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
 {
