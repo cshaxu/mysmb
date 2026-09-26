@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S5/P4; S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P4; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -80,3 +80,8 @@ ROM ChkInvisibleMTiles ($5f hidden coin and $60 hidden 1-up) returns with Z set;
 ## S4 P3: preserve water head-collision branch
 
 ROM HeadChk calls CheckForSolidMTiles; on a non-solid result, AreaType= branches straight to NYSpd before PlayerHeadCollision.  The shared C route had omitted that water branch and could start a block bump beneath water.  It now writes Player_Y_Speed= and leaves the collision metatile and block state intact.  collision_regression_smoke explicitly separates a ground AreaType= brick-bump fixture from a water AreaType= fixture, proving the water result does not write Block_State, alter the metatile, or arm BlockBounceTimer.  This is game-core behavior; no platform code changed.  Full x64 and x86 CTest suites pass 79/79 each, including platform-purity.  The OpenNT large-model DOS MZ rebuilds from the same source list with the established OLDNAMES.LIB warning.  Refreshed artifacts: mysmb16.exe SHA-256 43FA6C16259FF1574B3EC0D9746EC5BB9460CCF1658B891206F5BF709570D7E4, mysmb32.exe SHA-256 ACC22807F6137F8C1BB2C95AF39B3717D153787AA552CB5F5A27D98ACEF4B82F, mysmb64.exe SHA-256 55EA43A8382F68AB60E02379F3C83A71BB836BFBBE819215430554675FF753BF.
+## S4 P4: restore side-pipe entry sound
+
+ROM `CheckSideMTiles -> PipeDwnS -> PlyrPipe` tests the pipe metatiles `$6c/$1f`, a grounded right-facing player, and then tests `Player_SprAttrib`.  Only when that source byte is zero does it write `Sfx_PipeDown_Injury=$10` to `Square1SoundQueue/$00ff`; it then sets the pipe attribute bit, selects `ChangeAreaTimer` `$a0/$34` from `ScreenLeft_PageLoc`, and transitions engine routine `$08` to `$02`.  The shared player route had the latter writes but omitted the sound-queue write.  It now performs the missing write in the existing source-order branch, before OR-ing `$20` into the attribute.
+
+`collision_regression_smoke` constructs the original first-entry condition against a `$6c` side probe and proves the shared RAM results: `Player_SprAttrib=$20`, `Square1SoundQueue=$10`, `ChangeAreaTimer/$06de=$a0`, and `GameEngineSubroutine=$02`.  This is game-core logic used unchanged by DOS16, Win32 x86, and Win32 x64; no platform source changed.  Full x64 and x86 CTest suites pass 79/79, including platform-purity.  The OpenNT DOS MZ rebuilds from the same source list with the established `OLDNAMES.LIB` warning.  Refreshed artifacts: mysmb16.exe SHA-256 DC0FBA5F208FA89116E46F9C420C24A1C2E2E5F4C3B3302F460B9568AA8B72B2, mysmb32.exe SHA-256 1E5BA918F0B6A277845C890E3AAB6C9CDD6FFFF1B57270EB89777AF59025B25F, mysmb64.exe SHA-256 491E1CBC1C6799DDF561AD3774A1ACD7E0BE57747FC0C491CB641BD87DED6EC0.

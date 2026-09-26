@@ -93,6 +93,27 @@ int main(void)
     if (game.ram[0x0086U] != 0x20U || game.ram[0x0057U] != 0x10U ||
         game.ram[0x0490U] != 0xfdU || game.ram[0x0705U] != 0x80U) return 12;
 
+    /* PipeDwnS queues $10 only on the first clear Player_SprAttrib, then
+     * sets its pipe bit, selects the page-zero timer, and enters routine 2. */
+    mysmb_game_initialize_memory(&game, 0xfeU);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x30U;
+    game.ram[0x006dU] = 0U;
+    game.ram[0x0086U] = 0x23U;
+    game.ram[0x001dU] = 0U;
+    game.ram[0x0754U] = 1U;
+    game.ram[0x0033U] = MYSMB_BUTTON_RIGHT;
+    game.ram[0x03c4U] = 0U;
+    game.ram[0x071aU] = 0U;
+    game.ram[0x06deU] = 0U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x00ffU] = 0U;
+    game.ram[0x0522U] = 0x6cU;
+    if (mysmb_player_check_sides(&game) == 0U ||
+        game.ram[0x03c4U] != 0x20U || game.ram[0x00ffU] != 0x10U ||
+        game.ram[0x06deU] != 0xa0U || game.ram[0x000eU] != 2U) return 31;
+
     /* PlayerHeadCollision still bounces an ordinary brick for small Mario.
      * The brick is not in BlockBumpedChk, but the ROM sets Y speed to zero
      * through BumpBlock and retains the metatile for the block object. */

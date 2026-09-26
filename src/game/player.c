@@ -65,7 +65,7 @@ enum {
 
 enum { MYSMB_PREVIOUS_A_B_BUTTONS = 0x000dU };
 
-/* ROM PJumpSnd writes this before the SoundEngine runs. */
+/* ROM PJumpSnd and PipeDwnS write this before SoundEngine runs. */
 enum { MYSMB_SQUARE1_SOUND_QUEUE = 0x00ffU };
 
 enum {
@@ -1308,6 +1308,10 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
     if ((terrain->metatile == 0x6cU || terrain->metatile == 0x1fU) &&
         game->ram[MYSMB_PLAYER_STATE] == 0U &&
         game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT) {
+        /* PipeDwnS queues the sound only when Player_SprAttrib was clear. */
+        if (game->ram[MYSMB_PLAYER_ATTRIBUTES] == 0U) {
+            game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x10U;
+        }
         game->ram[MYSMB_PLAYER_ATTRIBUTES] |= 0x20U;
         if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) != 0U) {
             game->ram[MYSMB_CHANGE_AREA_TIMER] =
