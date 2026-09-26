@@ -396,4 +396,23 @@ remain independently queued; no T17 collision or platform code changes here.
 The three executable artifacts are mysmb16.exe
 `8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
 mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
+and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.## S6 P11: transfer the final page-twelve OAM residual
+
+**ROM-node accounting:** baseline remains **0 / 1,992** complete; this
+closure packet changes no node to complete. It records `FlagpoleGfxHandler`
+(line 13284) and `DumpTwoSpr` (line 13348) as deferred graphics nodes for T16.
+
+The controller-only page-twelve trace has no collision, movement, CIRAM,
+palette, PPU-scalar, or actor-state mismatch. Its only remaining visual
+residual is CPU OAM `$78` in samples 553--555 (visible one NMI later): at
+sample 553 the reference writes Y `$39`, while C writes `$38`; tile `$7e`,
+attribute `$01`, and X `$f7` agree. This is the third flagpole sprite emitted
+by `FlagpoleGfxHandler`, whose source `FPGfx` call is after all collision and
+object routes. The slot-five flag state and relative coordinates match at this
+sample, while the post-frame sprite-offset shuffle differs from the offset used
+when the source writes OAM. The precise writer/timing relationship therefore
+belongs to T16's OAM graph, not T17's world primitives. No game or platform
+code changes in this transfer. Current three-target artifacts: mysmb16.exe
+`8A9E4C90528E8372E7CAC276C48B5B2C52EB68B227793D844F1EAA33C262F630`,
+mysmb32.exe `E4315D3069E66040681145013DE5CD7A37603B017CB9213C1C7393DBF17E4C19`,
 and mysmb64.exe `320F187940BD8C59D48EBE4D9E2620B249D2472A1AD118E3EDBB6E84BDEA3534`.
