@@ -1,6 +1,18 @@
 #include "game/game.h"
 #include "game/objects.h"
-#include <stdio.h>
+/* PlayerCtrlRoutine has already run before source object collisions.  These
+ * direct object tests therefore provide the control-0 primary box that the
+ * ROM left in $04ac-$04af (relative X + 2/+14, Y + 8/+32). */
+static void source_player_box(struct mysmb_game *game)
+{
+    mysmb_u8 x;
+
+    x = (mysmb_u8)(game->ram[0x0086U] - game->ram[0x071cU]);
+    game->ram[0x04acU] = (mysmb_u8)(x + 2U);
+    game->ram[0x04adU] = (mysmb_u8)(game->ram[0x00ceU] + 8U);
+    game->ram[0x04aeU] = (mysmb_u8)(x + 14U);
+    game->ram[0x04afU] = (mysmb_u8)(game->ram[0x00ceU] + 32U);
+}
 
 int main(void)
 {
@@ -56,6 +68,7 @@ int main(void)
     if (game.ram[0x03a2U] != 0x30U || game.ram[0x001eU] != 8U ||
         game.ram[0x002bU] != 0x90U || game.ram[0x06afU] != 0U ||
         game.ram[0x04a3U] != 7U) return 2;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
 
 
@@ -63,9 +76,11 @@ int main(void)
         game.ram[0x00dcU] != 0x56U || game.ram[0x00c3U] != 1U) return 3;
     game.ram[0x002bU] = 0x82U;
     game.ram[0x0046U] = 1U;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
     if (game.ram[0x002bU] != 0x81U || game.ram[0x00adU] != 0xfeU ||
         game.ram[0x0065U] != 0x10U || (game.ram[0x001eU] & 8U) != 0U) return 4;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
     if (game.ram[0x002bU] != 0x81U || game.ram[0x0094U] != 0x82U ||
         game.ram[0x00dcU] != 0x54U) return 5;
@@ -93,6 +108,7 @@ int main(void)
     game.ram[0x071cU] = 0U;
     game.ram[0x071dU] = 0U;
     game.ram[0x0747U] = 1U;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
 
     if (game.ram[0x0220U] != 0x40U || game.ram[0x0221U] != 0x80U ||
@@ -102,6 +118,7 @@ int main(void)
 
     game.ram[0x002aU] = 0x81U;
     game.ram[0x007aU] = 2U;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
     if (game.ram[0x002aU] != 0U || game.ram[0x0220U] != 0xf8U ||
         game.ram[0x0224U] != 0xf8U) return 67;
@@ -131,6 +148,7 @@ int main(void)
     game.ram[0x06afU] = 0U;
     game.frame_number = 1U;
     game.ram[0x0009U] = 1U;
+    source_player_box(&game);
     mysmb_objects_step_misc(&game);
 
     if (game.ram[0x06bfU] != 1U || game.ram[0x0065U] != 0xf0U ||
@@ -153,6 +171,7 @@ int main(void)
     game.ram[0x009fU] = 1U;
     game.ram[0x000eU] = 8U;
     game.frame_number = 0U;
+    source_player_box(&game);
     mysmb_objects_check_hammer_bro_stomp(&game);
     if (game.ram[0x001eU] != 0x20U || game.ram[0x00cfU] != 0x6eU ||
         game.ram[0x00a0U] != 0U || game.ram[0x0058U] != 0U ||

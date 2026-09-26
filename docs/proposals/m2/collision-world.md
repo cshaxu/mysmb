@@ -143,3 +143,18 @@ ROM PlayerBGCollision jumps from a head or foot scene-coin sample to AwardTouche
 ROM `PlayerCtrlRoutine` performs `RelativePlayerPosition -> BoundingBoxCore -> PlayerBGCollision`; later `GameEngine` enemy handlers consume that already-produced player box.  The native Paratroopa, hammer, and shared special-enemy collision helpers incorrectly rebuilt `$04ac-$04af` after `PlayerBGCollision`, using a position that can have been corrected by the collision branch.  This altered persistent RAM despite matching visible output.
 
 Those helpers now create only their own enemy or misc box and consume the player box unchanged. `paratroopa_smoke` supplies the PlayerCtrlRoutine-produced box and proves the collision result does not overwrite its left/right edges. A source-reachable 600-sample hidden-coin route now has zero differences in work RAM `$0300-$07ff`, CPU OAM backing, CIRAM, palette, visible OAM, audio state, and all PPU fields; the remaining zero-page/stack differences are emulator scratch state outside the translated game-owned range. x86/x64 native traces are byte-identical: `B52B4661859558B57229CB1042B27D58AF3FA38DDF8F7F62160E4B30DF3DE3E9`. Full x86/x64 CTest suites pass 79/79; OpenNT links the shared DOS MZ with its established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16 `281034243EC46E4160DE9AE883E1AA6C261D837121EF90D704FF42AE24727BE8`, mysmb32 `599FDFF075B102A29C9EB0CC540EEE01A927F633CBA992389F8E8B6C548B9713`, mysmb64 `15DB8266B65291AEA842A68180830FC33FD396B1F9B5BEFD71C91384914F68BB`.
+## S4 P16: repair direct collision fixtures after primary-box ownership recovery
+
+P15 correctly removed post-`PlayerBGCollision` writes to the player primary
+box from object handlers.  Three direct-object fixtures still began at those
+handlers without representing the preceding `PlayerCtrlRoutine` frame, so
+`hazard-collision`, `bullet-bill`, and `hammer-bro` read uninitialised
+`$04ac-$04af`.  Their shared test helper now supplies the control-0
+`BoundingBoxCore` result from the configured relative player position:
+`X+2`, `Y+8`, `X+14`, `Y+32`.  It changes no production source and asserts the
+correct source call contract instead of reviving a synthetic object-side
+producer.  Full x64 and x86 CTest suites pass 80/80, including platform purity.
+The three executable artifacts remain the same shared-source T23/P1 builds:
+`mysmb16` `4485D9BAA0FD7488130C91BE880BF7EA5A8A3FCE984BEED822C48D75A02DC80D`,
+`mysmb32` `A5A3D6DB2124387DEC73C44E8C88BF3A4A347D4D5C029DFBA22A2FEA3931F392`, and
+`mysmb64` `A6C357AE988CFC126AC6176AF1E70F4A13245582B0596FBEBC11C1A0FD4E5417`.
