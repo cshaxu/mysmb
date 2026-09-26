@@ -328,3 +328,18 @@ It now calls `mysmb_world_query_enemy_block` with the original probe index;
 Hammer Bro retains only its non-solid, interval-timer, landing, and state
 rules. The focused enemy-terrain, Hammer Bro, and Hammer Bro OAM regressions
 pass on x86 and x64. Full x86/x64 CTest suites pass 83/83, including platform-purity. No platform source participates.
+## S5 P19: route Vine handler through shared enemy block query
+
+`VineObjectHandler` uses `BlockBufferCollision` probe `$1b` (X+$04,
+Y+$10) before conditionally writing vine metatile `$26`. Its duplicate
+page/column/row arithmetic now uses `mysmb_world_query_enemy_block`; the
+handler retains the source row guard and writes only when the returned tile is
+blank. Focused Vine OAM and enemy block-query regressions pass on x86 and x64. The latter explicitly proves Vine probe `$1b` crosses X `$fc+$04` into block address `$0600` with row `$30` from Y `$40+$10`. Full x86/x64 CTest suites pass 83/83, including platform-purity.
+No platform source participates.
+P19's residual-address audit finds no actor or player collision probe outside
+`world/collision.c`: player head/foot/side, ordinary enemies, power-ups,
+Spiny eggs, Hammer Bros, and vines all use the shared query APIs. Remaining
+`$0500/$05d0` operations are deliberately excluded: T18 area parser and
+metatile-replacement writers, plus T22 block/coin/axe event writers that
+consume an already-selected source block address. They are not alternative
+collision geometry implementations.

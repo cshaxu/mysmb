@@ -1670,10 +1670,7 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
     static const mysmb_u8 maximum_height[2] = { 0x30U, 0x60U };
     const mysmb_u8 slot = 5U;
     mysmb_u8 vine_slot;
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
+    struct mysmb_enemy_terrain terrain;
 
     if (game->ram[MYSMB_ENEMY_ID + slot] != 0x2fU ||
         game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
@@ -1702,15 +1699,9 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
         }
     }
     if (game->ram[MYSMB_VINE_HEIGHT] < 0x20U) return;
-    x = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] + 4U);
-    page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] +
-                      (x < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U));
-    row = (mysmb_u8)(((game->ram[MYSMB_ENEMY_Y + slot] + 0x10U) & 0xf0U) -
-                      0x20U);
-    if (row >= 0xd0U) return;
-    address = (mysmb_u16)((page & 1U) != 0U ? 0x05d0U : 0x0500U);
-    address = (mysmb_u16)(address + (x >> 4U) + row);
-    if (address < 0x0800U && game->ram[address] == 0U) game->ram[address] = 0x26U;
+    if (mysmb_world_query_enemy_block(game, slot, 0x1bU, 0U, &terrain) == 0U ||
+        terrain.block_row_offset >= 0xd0U) return;
+    if (terrain.metatile == 0U) game->ram[terrain.block_address] = 0x26U;
 }
 
 /* SetupFloateyNumber.  Rendering later consumes the saved position. */
