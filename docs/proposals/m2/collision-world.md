@@ -312,3 +312,12 @@ outside the player block-query route and remain with the named area/status
 producer. `core_smoke` invokes
 the extracted primitive directly, and collision regressions exercise its head,
 foot, and side callers.
+## S5 P17: route Spiny eggs through shared enemy block query
+
+`MoveD_EnemyVertically`'s Spiny-egg landing path duplicated the coordinate,
+page-carry, row, and block-buffer arithmetic already owned by
+`BlockBufferChk_Enemy`. It now calls `mysmb_world_query_enemy_block` with the
+source `$15` probe index (X+$08, Y+$18). The frenzy route retains its ROM
+non-solid test and all Spiny-only landing/state writes. `lakitu_smoke` covers
+both falling and landed eggs, while `enemy_terrain_state_smoke` covers the
+ordinary route that shares the primitive. Full x86/x64 CTest suites pass 83/83, including platform-purity. No platform source participates.
