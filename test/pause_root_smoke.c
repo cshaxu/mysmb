@@ -1,6 +1,9 @@
 #include "game/game.h"
 
-int main(void)
+static int mysmb_pause_case(mysmb_u8 mode, mysmb_u8 task, mysmb_u8 status,
+                            mysmb_u8 timer, mysmb_u8 audio, mysmb_u8 buttons,
+                            mysmb_u8 expected_status, mysmb_u8 expected_timer,
+                            mysmb_u8 expected_audio)
 {
     struct mysmb_game game;
     struct mysmb_frame frame;
@@ -8,27 +11,34 @@ int main(void)
 
     mysmb_game_initialize(&game);
     mysmb_game_frame_initialize(&frame);
-    game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 3U;
-    game.ram[0x000eU] = 8U;
-    game.ram[0x0009U] = 0x3fU;
-    game.ram[0x0722U] = 1U;
-    game.ram[0x0204U] = 0x31U;
-    input.buttons = MYSMB_BUTTON_START;
+    game.ram[0x0770U] = mode;
+    game.ram[0x0772U] = task;
+    game.ram[0x0776U] = status;
+    game.ram[0x0777U] = timer;
+    game.ram[0x00faU] = audio;
+    game.ram[0x074aU] = 0U;
+    input.buttons = buttons;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0776U] != 0x81U) return 1;
-    if (game.ram[0x0777U] != 0x2bU) return 2;
-    if (game.ram[0x00faU] != 1U) return 3;
-    if (game.ram[0x0772U] != 3U) return 4;
-    if (game.ram[0x0204U] != 0x31U) return 5;
-    if (game.ram[0x0009U] != 0x3fU) return 6;
-    input.buttons = 0U;
-    mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0777U] != 0x2aU) return 7;
-    game.ram[0x0776U] = 0U;
-    game.ram[0x0777U] = 0U;
-    input.buttons = 0U;
-    mysmb_game_tick(&game, &input, &frame);
-    if (game.ram[0x0009U] != 0x40U) return 8;
+    if (game.ram[0x0770U] != mode || game.ram[0x0772U] != task ||
+        game.ram[0x0776U] != expected_status ||
+        game.ram[0x0777U] != expected_timer ||
+        game.ram[0x00faU] != expected_audio) return 1;
+    return 0;
+}
+
+int main(void)
+{
+    if (mysmb_pause_case(0U, 3U, 0x81U, 0x19U, 0U, 0U,
+                         0x81U, 0x19U, 0U) != 0) return 1;
+    if (mysmb_pause_case(1U, 2U, 0x81U, 0x19U, 0U, 0U,
+                         0x81U, 0x19U, 0U) != 0) return 2;
+    if (mysmb_pause_case(1U, 3U, 0x01U, 0x2aU, 0U, 0U,
+                         0x01U, 0x29U, 0U) != 0) return 3;
+    if (mysmb_pause_case(1U, 3U, 0x81U, 0U, 0U, 0U,
+                         0x01U, 0U, 0U) != 0) return 4;
+    if (mysmb_pause_case(1U, 3U, 0U, 0U, 0U, MYSMB_BUTTON_START,
+                         0x81U, 0x2bU, 1U) != 0) return 5;
+    if (mysmb_pause_case(1U, 3U, 0x81U, 0U, 0U, MYSMB_BUTTON_START,
+                         0x81U, 0U, 0U) != 0) return 6;
     return 0;
 }

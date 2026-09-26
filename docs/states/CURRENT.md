@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S24 Packet
+## M2 T22 S18 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S24, Implementation; independent NMI `PauseRoutine` equivalence review. |
-| Admission And Approval | Owner approved source-order T21?T49 execution. T22/S17 closed its six-label source contract with no credit and transferred the accepted pause subtree here. |
-| Objective | Independently prove all pause-route labels against source control flow and controlled original-ROM NMI output. |
-| Non-goals | Editing timer/LFSR, OAM/sprite, mode-dispatch descendants, title input policy or platform code. |
-| Reference Baseline | 15 / 1,992 complete; scope has 6 incomplete labels; expected matches: `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; maximum 21 / 1,992. |
-| Candidate Proposal | [source-order T21?T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s17-pause-source-contract-and-t22s24-independent-proof-admission). |
-| Files And ABI Surface | Shared `frame_root.c` pause owner, project-owned pause/root tests, ignored ROM traces and canonical node records. |
+| Identifier Mode | M2 T22 S18, Implementation; NMI timer-bank and LFSR source contract. |
+| Admission And Approval | Owner approved source-order T21?T49 execution. This direct NMI child was accepted by T22/S13 and is now the next source-order packet after S24 closure. |
+| Objective | Map the complete timer-bank and pseudorandom continuation before any repair or equivalence credit. |
+| Non-goals | Editing pause, sprite-zero/OAM, operation dispatch, gameplay descendants or platform code. |
+| Reference Baseline | 21 / 1,992 complete; scope has 6 incomplete labels; expected matches: none; maximum 21 / 1,992. |
+| Candidate Proposal | [source-order T21?T49 plan](../proposals/m2/t21-t49-source-order-recovery.md#t22s24-pause-equivalence-result-and-t22s18-admission). |
+| Files And ABI Surface | Shared `frame_root.c` timer/LFSR owner, project-owned timer tests, ignored ROM traces and canonical node records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
-| Verification | ROM logic: six controlled NMI-entry cases sampled at original RTI, with source branch/read/write/order review. Operational: focused x86/x64 tests, DOS16 compile, platform purity and three executable artifacts. |
-| Expected Markers | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`; expected matches are all six; maximum 21 / 1,992. |
+| Verification | Source branch/read/write/order audit plus controlled original-ROM NMI timer/LFSR routes; separate x86/x64 tests, DOS16 compile, platform purity and three artifacts for any P. |
+| Expected Markers | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit`; expected matches: none; maximum 21 / 1,992. |
 | Asset Needs | Owner-local ROM/listing and traces remain ignored beneath `build`. |
-| Reporting Requirements | Account for every label and branch, state both verification tracks, update the tracker before closure, and transfer every incomplete label. |
-| Stop Conditions | Stop if work belongs to timer/LFSR/OAM/mode leaves or platform input policy. |
-| Exit Criteria | Independent proof or precise failed-branch transfer for every scoped label; no parent NMI credit. |
+| Reporting Requirements | Account for every gate and write by label, state the owner and route, then transfer to a separate proof or repair S before credit. |
+| Stop Conditions | Stop if work belongs to pause, sprite/OAM, mode leaves or platform input policy. |
+| Exit Criteria | Exact timer/LFSR contract and a named next receiver for independent proof or repair; no premature node credit. |
 | Original Owner Request | Execute the original node sequence with strict logic parity and exact task custody. |
-| Similar-Issue Sweep | Inspect every saved-joypad use, pause-status bit operation, pause-timer write and pause-audio queue write. |
+| Similar-Issue Sweep | Inspect each NMI timer decrement, timer skip, pause-status gate, LFSR source byte and LFSR write. |
 
 ## Recent M4 Closures
 

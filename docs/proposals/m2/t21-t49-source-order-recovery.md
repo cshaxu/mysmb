@@ -499,3 +499,27 @@ controlled ROM outputs, then run the focused cross-width tests, DOS16 build,
 platform-purity check and three-target artifact package.  Any failed label
 remains incomplete and transfers to a later repair S; no partial result may
 promote the parent NMI node.
+
+## T22/S24 pause equivalence result and T22/S18 admission
+
+All six pause labels are **ROM-match complete**, raising conformance from **15 /
+1,992** to **21 / 1,992**.  S24 independently reviewed the source mode gate,
+timer early return, Start read, bit-seven debounce return, timer/audio/status
+writes, clear-mask write and return edges against `mysmb_frame_root_pause_step`.
+A freshly built ignored original-ROM probe injected six states at the NMI entry
+and sampled the RTI boundary.  Its six results match the reviewed native cases:
+mode exit preserves `$0776/$0777 = $81/$19`; task exit preserves the same
+values; timer decrements `$2a` to `$29`; no Start changes `$81` to `$01`; fresh
+Start writes `$81/$2b` and `$00fa = $01`; and a bit-seven Start keeps `$81/$00`.
+The native pause smoke covers the same six cases on x86 and x64.  Focused
+NMI/pause/purity tests pass, the OpenNT DOS16 build links, and the refreshed
+artifacts have SHA-256 values `B799A75BDF54D32BA3F0231FC7D92FEF0335AA8623FF215C1E6D4E6A0C3AE7B5`,
+`AC64B35175FF380B2EC2D51D86C2B03A7176A9304BF04E5D2BD19C0B7F76AE49`, and
+`200AED0EBCE16C723AEAA1D05B260F92AA691C306029D03B8E255CA8D7B97CBA` for
+DOS16, Win32 x86 and Win32 x64.
+
+T22/S18 is now active in source order for `DecTimers`, `DecTimersLoop`,
+`SkipExpTimer`, `NoDecTimers`, `PauseSkip`, and `RotPRandomBit`.  It begins at
+**21 / 1,992**, forecasts no completion and has a maximum of **21 / 1,992**.
+It may only map the NMI timer-bank and LFSR control/read/write order, then
+transfer the six nodes to a separately admitted proof or repair S.

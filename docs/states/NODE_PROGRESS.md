@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 15 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer. |
-| Mapped / audited, not complete | 155 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
+| ROM-match complete | 21 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
+| Mapped / audited, not complete | 149 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
 | Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **15 / 1,992 (0.75%)**. Initial deep verification covered
+Verified conformance is **21 / 1,992 (1.05%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
 owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
 77-node accounting. With three additional confirmed missing scheduler/activation entries, the
-explicitly dispositioned cohort is 170, of which 159 remain incomplete. These sets are disjoint in the current ledger.
+explicitly dispositioned cohort is 170, of which 153 remain incomplete. These sets are disjoint in the current ledger.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -49,6 +49,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 752 | `VRAM_AddrTable_High` |
 | 761 | `VRAM_Buffer_Offset` |
 | 796 | `InitBuffer` |
+| 876 | `PauseRoutine` |
+| 885 | `ChkPauseTimer` |
+| 889 | `ChkStart` |
+| 904 | `ClrPauseTimer` |
+| 906 | `SetPause` |
+| 907 | `ExitPause` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -70,7 +76,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (159)
+## Mapped but not yet matched (153)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -89,12 +95,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | 855 | `HBlankDelay` |
 | 857 | `SkipSprite0` |
 | 868 | `SkipMainOper` |
-| 876 | `PauseRoutine` |
-| 885 | `ChkPauseTimer` |
-| 889 | `ChkStart` |
-| 904 | `ClrPauseTimer` |
-| 906 | `SetPause` |
-| 907 | `ExitPause` |
 | 912 | `SpriteShuffler` |
 | 917 | `ShuffleLoop` |
 | 926 | `StrSprOffset` |

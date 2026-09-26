@@ -2259,4 +2259,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T22 S16 | 1 | 14 | none / 0 | none / 0 | closed-contract-transferred-to-s23; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S23 | 1 | 14 | `InitBuffer` / 1 | `InitBuffer` / 1 | closed-complete-initbuffer; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S17 | 6 | 15 | none / 0 | none / 0 | closed-source-contract-transfer-to-s24; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S24 | 6 | 15 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` / 6 | none / 0 | admitted-pause-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S24 | 6 | 15 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` / 6 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` / 6 | closed-complete-pause-equivalence; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S18 | 6 | 21 | none / 0 | none / 0 | admitted-timer-lfsr-contract; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
