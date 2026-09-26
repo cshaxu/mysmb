@@ -4,6 +4,7 @@
 #include "game/enemy/core.h"
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 #include "game/oam/oam.h"
 
 enum {
@@ -305,9 +306,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_objects_step_star_flags(game);
         mysmb_objects_step_fireworks(game);
         mysmb_objects_step_firework_frenzy(game);
-        mysmb_objects_step_lakitu_frenzy(game);
-        mysmb_objects_step_lakitus(game);
-        mysmb_objects_step_spiny_eggs(game);
+        mysmb_enemy_step_lakitu_frenzy(game);
+        mysmb_enemy_step_lakitus(game);
+        mysmb_enemy_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
         mysmb_oam_draw_player(game);
         mysmb_objects_step_vine(game);

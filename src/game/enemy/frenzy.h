@@ -1,0 +1,11 @@
+#ifndef MYSMB_GAME_ENEMY_FRENZY_H
+#define MYSMB_GAME_ENEMY_FRENZY_H
+
+#include "game/game.h"
+
+/* ROM MoveLakitu, LakituAndSpinyHandler and the Spiny egg landing route. */
+void mysmb_enemy_step_lakitus(struct mysmb_game *game);
+void mysmb_enemy_step_lakitu_frenzy(struct mysmb_game *game);
+void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game);
+
+#endif

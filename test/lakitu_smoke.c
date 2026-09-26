@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/enemy/frenzy.h"
 
 int main(void)
 {
@@ -15,7 +16,7 @@ int main(void)
     game.ram[0x00a0U] = 0U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x40U;
-    mysmb_objects_step_lakitus(&game);
+    mysmb_enemy_step_lakitus(&game);
     if (game.ram[0x06cbU] != 18U || game.ram[0x0058U] != 0xfbU ||
         game.ram[0x0046U] != 2U || game.ram[0x0087U] != 0x7fU ||
         game.ram[0x0401U] != 0xb0U) return 1;
@@ -30,7 +31,7 @@ int main(void)
     game.ram[0x0058U] = 2U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x10U;
-    mysmb_objects_step_lakitus(&game);
+    mysmb_enemy_step_lakitus(&game);
     if (game.ram[0x0058U] != 1U || game.ram[0x00a0U] != 1U ||
         game.ram[0x0087U] != 0U) return 2;
 
@@ -41,7 +42,7 @@ int main(void)
     game.ram[0x001eU] = 0x20U;
     game.ram[0x00b6U] = 1U;
     game.ram[0x00cfU] = 0x70U;
-    mysmb_objects_step_lakitus(&game);
+    mysmb_enemy_step_lakitus(&game);
     if (game.ram[0x00cfU] != 0x70U || game.ram[0x0417U] != 0U ||
         game.ram[0x0434U] != 0x3dU) return 3;
 
@@ -51,7 +52,7 @@ int main(void)
     game.ram[0x06d1U] = 6U;
     game.ram[0x071bU] = 1U;
     game.ram[0x071dU] = 0xf0U;
-    mysmb_objects_step_lakitu_frenzy(&game);
+    mysmb_enemy_step_lakitu_frenzy(&game);
     if (game.ram[0x078fU] != 0x80U || game.ram[0x06d1U] != 0U ||
         game.ram[0x0013U] != 1U || game.ram[0x001aU] != 17U ||
         game.ram[0x0072U] != 2U || game.ram[0x008bU] != 0x10U ||
@@ -67,7 +68,7 @@ int main(void)
     game.ram[0x0072U] = 1U;
     game.ram[0x008bU] = 0x90U;
     game.ram[0x00d3U] = 0x80U;
-    mysmb_objects_step_lakitu_frenzy(&game);
+    mysmb_enemy_step_lakitu_frenzy(&game);
     if (game.ram[0x0012U] != 1U || game.ram[0x0019U] != 18U ||
         game.ram[0x0021U] != 5U || game.ram[0x0071U] != 1U ||
         game.ram[0x008aU] != 0x90U || game.ram[0x00d2U] != 0x78U ||
@@ -81,7 +82,7 @@ int main(void)
     game.ram[0x00b6U] = 1U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x00a0U] = 0xfdU;
-    mysmb_objects_step_spiny_eggs(&game);
+    mysmb_enemy_step_spiny_eggs(&game);
     if (game.ram[0x00cfU] != 0x6dU || game.ram[0x0417U] != 0U ||
         game.ram[0x0434U] != 0x20U) return 1;
 
@@ -96,7 +97,7 @@ int main(void)
     game.ram[0x00a0U] = 0xfdU;
     game.ram[0x0434U] = 0x20U;
     game.ram[0x0564U] = 1U;
-    mysmb_objects_step_spiny_eggs(&game);
+    mysmb_enemy_step_spiny_eggs(&game);
     if (game.ram[0x001eU] != 0U || game.ram[0x00cfU] != 0x78U ||
         game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||
         game.ram[0x0046U] != 1U || game.ram[0x0058U] != 8U) return 1;

@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S2/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S3/P1.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -44,3 +44,6 @@ The GameEngine actor path now calls `mysmb_enemy_stream_process_current(game, so
 ## S2 P3: actor downward-movement ownership boundary
 
 `MoveD_EnemyVertically` and its `SetHiMax`/`ImposeGravitySprObj` arithmetic no longer live in the catch-all `objects.c`.  They have one shared actor owner in `src/game/enemy/movement.c`, declared by `src/game/enemy/movement.h`; all existing Lakitu, Spiny, Hammer Bro, Cheep-Cheep, Bowser, and bridge-collapse callers retain their original amount/max-speed literals and call sequence.  This is extraction only: no RAM value, branch, sprite write, or platform path changes.  The DOS build now gives source-relative object names to OpenNT, so `game/enemy/movement.c` and `game/world/movement.c` cannot overwrite one another as `movement.obj`; the resulting 16-bit link consumes the same source module as x86 and x64.  Full x64/x86 CTest is 79/79 for each target and the OpenNT MZ relinks with its established `OLDNAMES.LIB` warning.  This establishes the actor-side extraction pattern; later S2/S3/S4 packets move only complete ROM-labelled function groups, never new logic into `objects.c`.
+## S3 P1: Lakitu/Spiny frenzy ownership boundary
+
+The complete ROM group `PlayerLakituDiff → MoveLakitu → LakituAndSpinyHandler`, together with the Spiny egg's `EnemyToBGCollisionDet` landing consumer, now has one T19 owner in `src/game/enemy/frenzy.c`.  `frame_root.c` calls its explicit T19 interface; `objects.c` has neither the group nor its private helper.  The moved functions retain their existing state writes, free-slot scan order, Lakitu reappearance counter, screen-right page carry, Spiny spawn values, landing tile probes, and calls into the separately owned T17 movement/collision primitives.  This P is an owner extraction only: it does not redefine frenzy scheduling or initialization policy.  The existing direct Lakitu/Spiny regressions now invoke the T19 API.  Full x64/x86 CTest is 79/79 for each target and the OpenNT DOS MZ relinks from the same shared source set with its established `OLDNAMES.LIB` warning.
