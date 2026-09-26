@@ -24,6 +24,8 @@ enum {
     MYSMB_BLOCK_PAGE_COPY = 0x03eaU,
     MYSMB_BLOCK_SLOT_CONTROL = 0x03eeU,
     MYSMB_BLOCK_BOUNCE_TIMER = 0x0784U,
+    MYSMB_BRICK_COIN_TIMER = 0x079dU,
+    MYSMB_BRICK_COIN_TIMER_FLAG = 0x06bcU,
     MYSMB_BLOCK_ORIGINAL_X = 0x03f1U,
     MYSMB_PLAYER_SIZE = 0x0754U,
     MYSMB_PLAYER_CROUCHING = 0x0714U,
@@ -2580,7 +2582,17 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
         game->ram[MYSMB_BLOCK_STATE + slot] = 0x11U;
         game->ram[MYSMB_BLOCK_METATILE + slot] = 0xc4U;
         if (metatile == 0x58U || metatile == 0x5dU) {
-            game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
+            /* ROM BlockBumpedChk/StartBTmr: the first multi-coin bump
+             * initializes the shared timer and increments its linked flag.
+             * Later bumps retain the source metatile only while the timer is
+             * nonzero; an expired timer produces the existing $c4. */
+            if (game->ram[MYSMB_BRICK_COIN_TIMER_FLAG] == 0U) {
+                game->ram[MYSMB_BRICK_COIN_TIMER] = 0x0bU;
+                game->ram[MYSMB_BRICK_COIN_TIMER_FLAG]++;
+            }
+            if (game->ram[MYSMB_BRICK_COIN_TIMER] != 0U) {
+                game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
+            }
         }
     }
     address = (mysmb_u16)(0x0500U + block_low + block_row);

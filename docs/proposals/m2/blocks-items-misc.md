@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T22 active — S1/P2.**
+**M2 T22 active — S1/P2 and S2/P1.**
 
 ## ROM scope
 
@@ -61,3 +61,7 @@ owns vine, power-up and misc state machines.  S4 owns cannon, whirlpool and
 flagpole.  A packet may call an existing T17 primitive or T18 area writer but
 must not duplicate either routine's state transition.  All platform code stays
 outside this map and may only submit the completed game frame.
+
+## S2/P1: restore BrickCoinTimerFlag multi-coin branch
+
+The controller-only page-twelve route transferred ROM `$06bc=BrickCoinTimerFlag` from T17: it was `$01` in every reference sample and `$00` in native C.  ROM `BlockBumpedChk` initializes `BrickCoinTimer=$0b` and increments the flag only on the first `$58/$5d` multi-coin brick bump; while the timer remains nonzero it retains the brick metatile, otherwise it emits `$c4`.  `objects.c` now follows that exact branch in the shared block-bump owner.  The focused regression covers first initialization and expired-timer behavior.  In the same 600-frame page-twelve route, the persistent `$06bc` mismatch disappears; first work-RAM/OAM mismatch is now sample 362, with later CIRAM differences downstream.  Full x64 and x86 CTest pass 83/83; OpenNT links the shared DOS MZ.  Artifacts: mysmb16.exe `CD637756EDB65712673DE10614AB2696520E9B63B3379517E82B36D87A384A44`, mysmb32.exe `D0CA1D1B71FD9D6698C5B1D1598FC716859F3C6ECC3A4BBE1C5C83B88FB63104`, mysmb64.exe `FE975D0F62596EE69B277DCA2AFA801B74C2280C2FA6F66F6E84DD18BE3A0C04`.

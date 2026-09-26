@@ -687,5 +687,21 @@ int main(void)
     mysmb_world_handle_fireball_enemy_hit(&game, 0U);
     if (game.ram[0x00cfU] != 0x67U || game.ram[0x001eU] != 0x22U ||
         game.ram[0x0016U] != 13U || game.ram[0x0117U] != 0x10U) return 27;
-    return 0;
+    /* BlockBumpedChk's multi-coin path initializes BrickCoinTimer only
+     * once, sets the linked flag, and uses $c4 once that timer has expired. */
+    mysmb_game_initialize_memory(&game, 0U);
+    mysmb_clear_block_buffers(&game);
+    game.ram[0x0754U] = 1U;
+    game.ram[0x006dU] = 1U;
+    game.ram[0x0086U] = 0x20U;
+    game.ram[0x00b5U] = 1U;
+    game.ram[0x00ceU] = 0x70U;
+    if (mysmb_objects_start_head_bump(&game, 0x58U, 0U, 0x20U) == 0U ||
+        game.ram[0x06bcU] != 1U || game.ram[0x079dU] != 0x0bU ||
+        game.ram[0x03e8U] != 0x58U) return 47;
+    game.ram[0x06bcU] = 1U;
+    game.ram[0x079dU] = 0U;
+    if (mysmb_objects_start_head_bump(&game, 0x5dU, 1U, 0x20U) == 0U ||
+        game.ram[0x06bcU] != 1U || game.ram[0x079dU] != 0U ||
+        game.ram[0x03e9U] != 0xc4U) return 48;    return 0;
 }
