@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T16 active — S3/P6.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
+**M2 T16 active ? S3/P11.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.
 
 ## ROM scope
 
@@ -105,3 +105,22 @@ A cold, controller-only 600-sample route now reaches the first mushroom question
 The cold controller-only 1-1 route reaches a normal `$51` block at sample 353 and its next NMI DMA at sample 354.  Source and native work RAM agree on `Block_Metatile=$51`, `Block_State=$01`, `Block_Y=$8e`, `Block_SprDataOffset=$d8`, and `Block_OffscreenBits=$00`; nevertheless, the prior C writer emitted `$03,$43,$83,$c3` for the four OAM attributes while ROM `DrawSpriteObject` emits `$03` in all four.  The cause was an unconditional mirror pattern in the generic C writer.  ROM applies that pattern only after `DrawBlock` reaches its `$c4` used-block branch.  The shared writer now first produces the generic row attributes, then applies the source's `$c4` post-processing only when the metatile matches.  `block_oam_smoke` covers both ordinary `$51` and used `$c4` paths.
 
 The same original-ROM 600-frame title-to-question-block trace now reports zero differences for CPU OAM, visible OAM, work RAM `$0300-$07ff`, CIRAM, palette, audio command state, and all PPU-visible scalars.  x64 and x86 full CTest pass 83/83 including platform-purity; the shared OpenNT DOS16 MZ target links with the established `OLDNAMES.LIB` warning. Refreshed artifacts: `mysmb16.exe` `C14FD6F4278B6549FF7272D7FDCCB45A5CC8CF034D274886DF73D7269C83E5FB`, `mysmb32.exe` `69ED6DE9098C3A4B1E8501B91AB1AE72480D99BBD4356FC28ECBDDAE5CAA1742`, `mysmb64.exe` `7976CA09E8C2D74C8ADF485B713828162A7BC9D70C90D3880DE05EF6B5151018`.
+
+## S3 P11: restore `MiscObjectsCore` descending-slot dispatch
+
+ROM `MiscObjectsCore` initializes X to `$08`, dispatches the current misc
+object, then decrements through slot zero. The native loop had traversed
+slots zero through eight. That reverses source ordering for jumps, hammers,
+OAM writes, and the fixed `Misc_Rel_*` / `Misc_OffscreenBits` scratch cells.
+`mysmb_objects_step_misc` now performs the source `8..0` order, including the
+slot-zero exits for inactive and hammer branches. `misc_oam_smoke` activates
+slots zero and eight together and proves that both step while the final fixed
+relative scratch belongs to slot zero, as in the ROM. The existing Hammer Bro
+smoke covers the slot-zero hammer exit.
+
+Full x64 and x86 CTest suites pass 83/83, including platform-purity; the
+OpenNT DOS16 MZ relinks from the same shared C sources with its established
+`OLDNAMES.LIB` warning. Refreshed artifacts: `mysmb16.exe`
+`3D0DD07FC6C66CF859D6EE30680583DCAE7312ED056C68BE12CFD523B605F2B5`,
+`mysmb32.exe` `BC6C2F0816043CBBA59E75BAC8CF26C0FEA18F15890DEDC28A9CBE96E1E1F276`,
+and `mysmb64.exe` `562A287EB7B89CAFB7C223775A09F3189D63B7EEE872D0814011FA95F8CA0859`.

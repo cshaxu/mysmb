@@ -479,10 +479,17 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
 {
     mysmb_u8 slot;
 
-    for (slot = 0U; slot <= 8U; ++slot) {
-        if (game->ram[MYSMB_MISC_STATE + slot] == 0U) continue;
+    /* ROM MiscObjectsCore starts with X=$08 and decrements through zero.
+     * Relative/offscreen results are fixed scratch cells, so the final active
+     * object must be the lowest occupied slot. */
+    for (slot = 8U;; --slot) {
+        if (game->ram[MYSMB_MISC_STATE + slot] == 0U) {
+            if (slot == 0U) break;
+            continue;
+        }
         if ((game->ram[MYSMB_MISC_STATE + slot] & 0x80U) != 0U) {
             mysmb_objects_step_hammer(game, slot);
+            if (slot == 0U) break;
             continue;
         }
         if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
@@ -507,6 +514,7 @@ void mysmb_objects_step_misc(struct mysmb_game *game)
                 game->ram[MYSMB_MISC_X + slot]);
             mysmb_objects_draw_jump_coin(game, slot);
         }
+        if (slot == 0U) break;
     }
 }
 
