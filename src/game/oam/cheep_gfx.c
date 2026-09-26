@@ -42,11 +42,11 @@ mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
     if (id != 10U && id != 11U) return 0U;
     /* RunNormalEnemies clears this before EnemyGfxHandler. */
     game->ram[MYSMB_CHEEP_ATTRIBUTES + slot] = 0U;
-    game->ram[MYSMB_CHEEP_REL_X + slot] = (mysmb_u8)(
+    game->ram[MYSMB_CHEEP_REL_X] = (mysmb_u8)(
         game->ram[MYSMB_CHEEP_X + slot] - game->ram[MYSMB_CHEEP_SCREEN_X]);
-    game->ram[MYSMB_CHEEP_REL_Y + slot] = game->ram[MYSMB_CHEEP_Y + slot];
-    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_CHEEP_OFFSCREEN + slot] = offscreen;
+    game->ram[MYSMB_CHEEP_REL_Y] = game->ram[MYSMB_CHEEP_Y + slot];
+    offscreen = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_CHEEP_OFFSCREEN] = offscreen;
     /* CheckToAnimateEnemy advances six table bytes when frame bit 3 is clear
      * and neither the object state nor TimerControl suppresses animation. */
     tiles = first_frame;
@@ -61,7 +61,7 @@ mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
     oam = game->ram[MYSMB_CHEEP_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
         row_offset = (mysmb_u8)(oam + row * 8U);
-        y = (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_Y + slot] + row * 8U);
+        y = (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_Y] + row * 8U);
         if ((offscreen & 0x80U) != 0U ||
             ((offscreen & 0x40U) != 0U && row >= 1U) ||
             ((offscreen & 0x20U) != 0U && row == 2U)) y = 0xf8U;
@@ -79,14 +79,12 @@ mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0200U + row_offset] =
             (offscreen & 8U) != 0U ? 0xf8U : y;
         game->ram[0x0202U + row_offset] = attributes;
-        game->ram[0x0203U + row_offset] = game->ram[MYSMB_CHEEP_REL_X + slot];
+        game->ram[0x0203U + row_offset] = game->ram[MYSMB_CHEEP_REL_X];
         game->ram[0x0204U + row_offset] =
             (offscreen & 4U) != 0U ? 0xf8U : y;
         game->ram[0x0206U + row_offset] = attributes;
         game->ram[0x0207U + row_offset] =
-            (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_X + slot] + 8U);
+            (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_X] + 8U);
     }
     return 1U;
 }
-
-

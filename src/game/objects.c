@@ -788,29 +788,19 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
     mysmb_u8 page_delta;
     mysmb_u16 sum;
 
-        id = game->ram[MYSMB_ENEMY_ID + slot];
-        if (mysmb_objects_draw_normal_enemy_graphics(game, slot) != 0U) return;
-        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-            (id > 6U && id != 18U) || id == 5U ||
-            (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) return;
-        /* RunNormalEnemies clears Enemy_SprAttrib before EnemyGfxHandler
-         * selects the ID-specific palette and any required flip bit. */
-        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
-        /* RunNormalEnemies calculates relative coordinates and draws before
-         * EnemyMovementSubs updates the world position.  Preserve that draw
-         * phase for the OAM writers scheduled later in this portable frame. */
-        game->ram[0x03aeU + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                                                game->ram[MYSMB_SCREEN_LEFT_X]);
-        game->ram[0x03b9U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[0x03d1U + slot] = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-        /* EnemyGfxHandler runs before the collision that can set
-         * TimerControl.  Draw this Goomba in its owning slot now rather
-         * than re-reading the post-collision state at the frame tail. */
-        if (id == 6U) {
-            mysmb_objects_draw_goombas_mask(game,
-                (mysmb_u8)(0x1fU & (mysmb_u8)~(mysmb_u8)(1U << slot)));
-        }
-        mysmb_objects_update_enemy_bounding_box(game, slot);
+    id = game->ram[MYSMB_ENEMY_ID + slot];
+    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) return;
+    /* ROM RunNormalEnemies: initialize attributes, determine offscreen
+     * bits, then calculate the one fixed Enemy_Rel_* pair before
+     * EnemyGfxHandler emits this actor's OAM rows. */
+    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
+    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_relative_enemy_position(game, slot);
+    if (id == 6U) mysmb_objects_draw_goomba(game, slot);
+    else if (mysmb_objects_draw_normal_enemy_graphics(game, slot) != 0U) return;
+    if ((id > 6U && id != 18U) || id == 5U ||
+        (id == 18U && game->ram[MYSMB_ENEMY_STATE + slot] == 5U)) return;
+    mysmb_objects_update_enemy_bounding_box(game, slot);
         if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
             old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
             game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =

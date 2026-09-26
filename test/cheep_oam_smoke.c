@@ -25,16 +25,18 @@ int main(void)
         game.ram[0x071dU] = 0U;
         game.ram[0x0747U] = 0U;
         game.ram[0x000fU] = 1U;
+        game.ram[0x006eU] = 0U;
         game.ram[0x0016U] = pass == 0U ? 10U : 11U;
         game.ram[0x0046U] = pass == 0U ? 2U : 1U;
         game.ram[0x0087U] = 0x40U;
         game.ram[0x00cfU] = 0x50U;
+    game.ram[0x00b6U] = 1U;
         game.ram[0x06e5U] = 0x20U;
         game.ram[0x0009U] = pass == 0U ? 0U : 8U;
         mysmb_objects_draw_cheep_cheep(&game, 0U);
         expected = pass == 0U ? expected_flipped : expected_normal;
         for (i = 0U; i < 24U; ++i) {
-            if (game.ram[0x0220U + i] != expected[i]) return 1;
+            if (game.ram[0x0220U + i] != expected[i]) return 11;
         }
     }
     /* RunNormalEnemies clears the transient attribute byte before the
@@ -46,13 +48,15 @@ int main(void)
     game.ram[0x071dU] = 0U;
     game.ram[0x0747U] = 0U;
     game.ram[0x000fU] = 1U;
+        game.ram[0x006eU] = 0U;
     game.ram[0x0016U] = 10U;
     game.ram[0x0046U] = 2U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x03c5U] = 0xfeU;
     mysmb_objects_step_normal_enemy(&game, 0U);
-    if (game.ram[0x0222U] != 0x41U || game.ram[0x03c5U] != 0U) return 2;
+    if (game.ram[0x0222U] != 0x41U || game.ram[0x03c5U] != 0U) return 12;
     return 0;
 }

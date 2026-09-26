@@ -25,6 +25,7 @@ void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_goombas_mask(struct mysmb_game *game, mysmb_u8 suppress_mask);
 void mysmb_objects_draw_goombas(struct mysmb_game *game);
+void mysmb_objects_draw_goomba(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot);

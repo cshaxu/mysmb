@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P5.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -85,3 +85,6 @@ The `RunStarFlagObj → AwardGameTimerPoints` audit restored `Sfx_TimerTick` `$1
 ## S4 P4: Bowser-flame relative scratch restoration
 
 `ProcBowserFlame` reaches `RelativeEnemyPosition` before its state gate. Its C OAM collaborator incorrectly treated fixed `Enemy_Rel_XPos` `$03ae` and `Enemy_Rel_YPos` `$03b9` as slot-indexed arrays. The owner now writes the fixed pair, and a slot-2 OAM regression asserts that adjacent scratch bytes remain unchanged. Full x64/x86 CTest is 79/79 each; OpenNT links the same source to DOS MZ.
+## S4 P5: RunNormalEnemies fixed scratch and dispatch restoration
+
+ROM `RunNormalEnemies` (`$d68b`) now follows its source order in the shared game core: clear `Enemy_SprAttrib,x`, run `GetEnemyOffscreenBits`, run `RelativeEnemyPosition`, emit `EnemyGfxHandler` OAM, then enter the ordinary collision/movement branch. `Enemy_Rel_XPos` `$03ae`, `Enemy_Rel_YPos` `$03b9`, and `Enemy_OffscreenBits` `$03d1` are fixed scratch outputs for the current actor, never per-slot arrays. The normal-enemy, Goomba, Cheep-Cheep, retainer and jumpspring renderers no longer write slot-indexed aliases; their fixtures explicitly construct ROM-valid screen/object page and Y-high state. Focused OAM/collision probes and full x64/x86 CTest each pass 79/79. OpenNT relinks the shared DOS MZ with its established `OLDNAMES.LIB` warning. All three packaged executables were refreshed.

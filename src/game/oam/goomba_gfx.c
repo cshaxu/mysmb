@@ -1,5 +1,5 @@
 #include "game/oam/oam.h"
-#include "game/game.h"
+#include "game/objects.h"
 
 enum {
     MYSMB_ENEMY_ID = 0x0016U,
@@ -20,8 +20,9 @@ enum {
     MYSMB_FRAME_COUNTER = 0x0009U
 };
 
-void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
-                                          mysmb_u8 suppress_mask)
+static void mysmb_draw_goombas_mask_impl(struct mysmb_game *game,
+                                               mysmb_u8 suppress_mask,
+                                               mysmb_u8 prepare_scratch)
 {
     static const mysmb_u8 normal_tiles[6] = { 0xfcU, 0xfcU, 0x70U, 0x71U, 0x72U, 0x73U };
     static const mysmb_u8 defeated_tiles[6] = { 0xfcU, 0xfcU, 0xfcU, 0xfcU, 0xefU, 0xefU };
@@ -32,8 +33,6 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
     mysmb_u8 attributes;
     mysmb_u8 x;
     mysmb_u8 y;
-    mysmb_u16 world;
-    mysmb_u16 screen;
     mysmb_u8 left;
     mysmb_u8 right;
     mysmb_u8 row_offset;
@@ -48,24 +47,14 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
         if ((suppress_mask & (mysmb_u8)(1U << slot)) != 0U ||
             game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
             game->ram[MYSMB_ENEMY_ID + slot] != 6U) continue;
-        world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                              game->ram[MYSMB_ENEMY_X + slot]);
-        screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_PAGE] << 8U) |
-                               game->ram[MYSMB_SCREEN_X]);
-        x = (mysmb_u8)(world - screen);
-        y = game->ram[MYSMB_ENEMY_Y + slot];
-        /* RunNormalEnemies preserves these pre-movement coordinates for the
-         * delayed portable OAM phase.  Direct OAM unit calls retain the raw
-         * world-coordinate fallback when no graphics phase has run. */
-        if (game->ram[MYSMB_ENEMY_RELATIVE_Y + slot] != 0U) {
-            x = game->ram[MYSMB_ENEMY_RELATIVE_X + slot];
-            y = game->ram[MYSMB_ENEMY_RELATIVE_Y + slot];
-            offscreen = game->ram[MYSMB_ENEMY_OFFSCREEN + slot];
+        if (prepare_scratch != 0U) {
+            mysmb_oam_relative_enemy_position(game, slot);
+            game->ram[MYSMB_ENEMY_OFFSCREEN] =
+                mysmb_objects_get_enemy_offscreen_bits(game, slot);
         }
-        else {
-            offscreen = world < screen || world >= (mysmb_u16)(screen + 0x0100U) ?
-                0x0fU : 0U;
-        }
+        x = game->ram[MYSMB_ENEMY_RELATIVE_X];
+        y = game->ram[MYSMB_ENEMY_RELATIVE_Y];
+        offscreen = game->ram[MYSMB_ENEMY_OFFSCREEN];
         state = game->ram[MYSMB_ENEMY_STATE + slot];
         tiles = normal_tiles;
         defeated = (mysmb_u8)(((state & 0x1fU) >= 2U &&
@@ -125,10 +114,21 @@ void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
     }
 }
 
+void mysmb_objects_draw_goombas_mask(struct mysmb_game *game,
+                                     mysmb_u8 suppress_mask)
+{
+    mysmb_draw_goombas_mask_impl(game, suppress_mask, 1U);
+}
+
 void mysmb_objects_draw_goombas(struct mysmb_game *game)
 {
     mysmb_objects_draw_goombas_mask(game, 0U);
 }
 
-
-
+/* One EnemyGfxHandler invocation for the selected Goomba slot. */
+void mysmb_objects_draw_goomba(struct mysmb_game *game, mysmb_u8 slot)
+{
+    if (slot >= 5U) return;
+    mysmb_objects_draw_goombas_mask(game,
+        (mysmb_u8)(0x1fU ^ (mysmb_u8)(1U << slot)));
+}

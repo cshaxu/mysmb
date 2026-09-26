@@ -91,13 +91,13 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
     screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
                           game->ram[MYSMB_NORMAL_SCREEN_X]);
     game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] = 0U;
-    game->ram[MYSMB_NORMAL_REL_X + slot] = (mysmb_u8)(world - screen);
-    game->ram[MYSMB_NORMAL_REL_Y + slot] = game->ram[MYSMB_NORMAL_Y + slot];
-    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_NORMAL_OFFSCREEN + slot] = offscreen;
+    game->ram[MYSMB_NORMAL_REL_X] = (mysmb_u8)(world - screen);
+    game->ram[MYSMB_NORMAL_REL_Y] = game->ram[MYSMB_NORMAL_Y + slot];
+    offscreen = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_NORMAL_OFFSCREEN] = offscreen;
     state = game->ram[MYSMB_NORMAL_STATE + slot];
     state_low = (mysmb_u8)(state & 0x1fU);
-    y = game->ram[MYSMB_NORMAL_REL_Y + slot];
+    y = game->ram[MYSMB_NORMAL_REL_Y];
 
     if (id == 2U) {
         tiles = buzzy_frame1;
@@ -157,9 +157,9 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
         }
         game->ram[0x0200U + offset] = (mysmb_u8)(y + row * 8U);
         game->ram[0x0204U + offset] = (mysmb_u8)(y + row * 8U);
-        game->ram[0x0203U + offset] = game->ram[MYSMB_NORMAL_REL_X + slot];
+        game->ram[0x0203U + offset] = game->ram[MYSMB_NORMAL_REL_X];
         game->ram[0x0207U + offset] =
-            (mysmb_u8)(game->ram[MYSMB_NORMAL_REL_X + slot] + 8U);
+            (mysmb_u8)(game->ram[MYSMB_NORMAL_REL_X] + 8U);
     }
     mysmb_normal_apply_offscreen(game, oam, offscreen);
     return 1U;
@@ -177,8 +177,8 @@ static mysmb_u8 mysmb_draw_paratroopa(struct mysmb_game *g, mysmb_u8 n)
     w=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_PAGE+n]<<8U)|g->ram[MYSMB_NORMAL_X+n]);
     z=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_SCREEN_PAGE]<<8U)|g->ram[MYSMB_NORMAL_SCREEN_X]);
     g->ram[MYSMB_NORMAL_ATTRIBUTES+n]=0U;
-    g->ram[MYSMB_NORMAL_REL_X+n]=(mysmb_u8)(w-z); g->ram[MYSMB_NORMAL_REL_Y+n]=g->ram[MYSMB_NORMAL_Y+n];
-    bits=mysmb_objects_get_enemy_x_offscreen_bits(g,n); g->ram[MYSMB_NORMAL_OFFSCREEN+n]=bits;
+    g->ram[MYSMB_NORMAL_REL_X]=(mysmb_u8)(w-z); g->ram[MYSMB_NORMAL_REL_Y]=g->ram[MYSMB_NORMAL_Y+n];
+    bits=mysmb_objects_get_enemy_offscreen_bits(g,n); g->ram[MYSMB_NORMAL_OFFSCREEN]=bits;
     at=id==15U?2U:1U; dir=g->ram[MYSMB_NORMAL_DIRECTION+n];
     t=((g->ram[MYSMB_NORMAL_STATE+n]&0xa0U)==0U && g->ram[MYSMB_NORMAL_TIMER_CONTROL]==0U &&
        (g->ram[MYSMB_NORMAL_FRAME_COUNTER]&8U)==0U)?f2:f1;
@@ -186,8 +186,8 @@ static mysmb_u8 mysmb_draw_paratroopa(struct mysmb_game *g, mysmb_u8 n)
     for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];
       if((dir&2U)!=0U){g->ram[0x0201U+q]=rr;g->ram[0x0205U+q]=l;g->ram[0x0202U+q]=(mysmb_u8)(at|0x40U);g->ram[0x0206U+q]=(mysmb_u8)(at|0x40U);}
       else {g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=at;g->ram[0x0206U+q]=at;}
-      g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y+n]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];
-      g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X+n]+8U);}
+      g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];
+      g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X]+8U);}
     mysmb_normal_apply_offscreen(g,o,bits); return 1U;
 }
 
@@ -200,10 +200,10 @@ static mysmb_u8 mysmb_draw_lakitu(struct mysmb_game *g, mysmb_u8 n)
     if(g->ram[MYSMB_NORMAL_FLAG+n]==0U || g->ram[MYSMB_NORMAL_ID+n]!=17U)return 0U;
     w=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_PAGE+n]<<8U)|g->ram[MYSMB_NORMAL_X+n]);
     z=(mysmb_u16)(((mysmb_u16)g->ram[MYSMB_NORMAL_SCREEN_PAGE]<<8U)|g->ram[MYSMB_NORMAL_SCREEN_X]);
-    g->ram[MYSMB_NORMAL_ATTRIBUTES+n]=0U; g->ram[MYSMB_NORMAL_REL_X+n]=(mysmb_u8)(w-z);g->ram[MYSMB_NORMAL_REL_Y+n]=g->ram[MYSMB_NORMAL_Y+n];
-    b=mysmb_objects_get_enemy_x_offscreen_bits(g,n);g->ram[MYSMB_NORMAL_OFFSCREEN+n]=b;st=g->ram[MYSMB_NORMAL_STATE+n];
+    g->ram[MYSMB_NORMAL_ATTRIBUTES+n]=0U; g->ram[MYSMB_NORMAL_REL_X]=(mysmb_u8)(w-z);g->ram[MYSMB_NORMAL_REL_Y]=g->ram[MYSMB_NORMAL_Y+n];
+    b=mysmb_objects_get_enemy_offscreen_bits(g,n);g->ram[MYSMB_NORMAL_OFFSCREEN]=b;st=g->ram[MYSMB_NORMAL_STATE+n];
     t=((st&0x20U)==0U && g->ram[0x078fU]<0x10U)?second:first;o=g->ram[MYSMB_NORMAL_SPRITE+n];
-    for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=1U;g->ram[0x0206U+q]=1U;g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y+n]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X+n]+8U);}
+    for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);l=t[r*2U];rr=t[r*2U+1U];g->ram[0x0201U+q]=l;g->ram[0x0205U+q]=rr;g->ram[0x0202U+q]=1U;g->ram[0x0206U+q]=1U;g->ram[0x0200U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_Y]+r*8U);g->ram[0x0204U+q]=g->ram[0x0200U+q];g->ram[0x0203U+q]=g->ram[MYSMB_NORMAL_REL_X];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[MYSMB_NORMAL_REL_X]+8U);}
     if((st&0x20U)!=0U){for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);g->ram[0x0202U+q]|=0x80U;g->ram[0x0206U+q]|=0x80U;}l=g->ram[0x0201U+o];rr=g->ram[0x0205U+o];g->ram[0x0201U+o]=g->ram[0x0211U+o];g->ram[0x0205U+o]=g->ram[0x0215U+o];g->ram[0x0211U+o]=l;g->ram[0x0215U+o]=rr;q=o;g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;}
     else{q=(mysmb_u8)(o+16U);g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;if(g->ram[0x078fU]<0x10U){g->ram[0x0202U+o+8U]=g->ram[0x0202U+q];g->ram[0x0206U+o+8U]=g->ram[0x0206U+q];}}
     mysmb_normal_apply_offscreen(g,o,b);return 1U;
@@ -246,10 +246,10 @@ void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
     screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
                          game->ram[MYSMB_NORMAL_SCREEN_X]);
     x = (mysmb_u8)(world - screen);
-    game->ram[MYSMB_NORMAL_REL_X + slot] = x;
-    game->ram[MYSMB_NORMAL_REL_Y + slot] = game->ram[MYSMB_NORMAL_Y + slot];
-    bits = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_NORMAL_OFFSCREEN + slot] = bits;
+    game->ram[MYSMB_NORMAL_REL_X] = x;
+    game->ram[MYSMB_NORMAL_REL_Y] = game->ram[MYSMB_NORMAL_Y + slot];
+    bits = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_NORMAL_OFFSCREEN] = bits;
     oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
         offset = (mysmb_u8)(oam + row * 8U);
@@ -319,10 +319,10 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
                          game->ram[MYSMB_NORMAL_SCREEN_X]);
     x = (mysmb_u8)(world - screen);
-    game->ram[MYSMB_NORMAL_REL_X + slot] = x;
-    game->ram[MYSMB_NORMAL_REL_Y + slot] = game->ram[MYSMB_NORMAL_Y + slot];
-    bits = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
-    game->ram[MYSMB_NORMAL_OFFSCREEN + slot] = bits;
+    game->ram[MYSMB_NORMAL_REL_X] = x;
+    game->ram[MYSMB_NORMAL_REL_Y] = game->ram[MYSMB_NORMAL_Y + slot];
+    bits = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    game->ram[MYSMB_NORMAL_OFFSCREEN] = bits;
     attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
     offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
@@ -360,5 +360,3 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     if (world < (mysmb_u16)(screen - 0x48U))
         game->ram[MYSMB_NORMAL_FLAG + slot] = 0U;
 }
-
-

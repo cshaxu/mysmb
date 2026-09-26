@@ -43,7 +43,7 @@ int main(void)
     game.ram[0x0046U] = 1U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
-    game.ram[0x00b6U] = 0U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x0009U] = 8U;
     mysmb_objects_step_normal_enemy(&game, 0U);
@@ -62,7 +62,7 @@ int main(void)
     game.ram[0x0046U] = 1U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
-    game.ram[0x00b6U] = 0U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x0009U] = 8U;
     if (mysmb_objects_draw_koopa_buzzy(&game, 0U) == 0U ||
@@ -81,7 +81,7 @@ int main(void)
     game.ram[0x0046U] = 2U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
-    game.ram[0x00b6U] = 0U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x0009U] = 0U;
     if (mysmb_objects_draw_koopa_buzzy(&game, 0U) == 0U ||
@@ -104,6 +104,7 @@ int main(void)
         game.ram[0x0046U] = 1U;
         game.ram[0x0087U] = 0x40U;
         game.ram[0x00cfU] = 0x50U;
+        game.ram[0x00b6U] = 1U;
         game.ram[0x06e5U] = 0x20U;
         game.ram[0x0009U] = 8U;
         if (mysmb_objects_draw_spiny(&game, 0U) != 1U ||
@@ -125,6 +126,7 @@ int main(void)
         game.ram[0x0046U] = 1U;
         game.ram[0x0087U] = 0x40U;
         game.ram[0x00cfU] = 0x50U;
+        game.ram[0x00b6U] = 1U;
         game.ram[0x06e5U] = 0x20U;
         game.ram[0x0009U] = 8U;
         mysmb_objects_step_normal_enemy(&game, 0U);
@@ -137,7 +139,8 @@ int main(void)
             0x60U,0xbcU,0x01U,0x40U,0x60U,0xbcU,0x41U,0x48U};
         mysmb_game_initialize_memory(&game,0U); game.ram[0x071dU]=0xf0U;
         game.ram[0x000fU]=1U; game.ram[0x0016U]=17U; game.ram[0x0087U]=0x40U;
-        game.ram[0x00cfU]=0x50U; game.ram[0x06e5U]=0x20U; game.ram[0x078fU]=0U;
+        game.ram[0x00cfU]=0x50U;
+        game.ram[0x00b6U] = 1U; game.ram[0x06e5U]=0x20U; game.ram[0x078fU]=0U;
         mysmb_objects_step_normal_enemy(&game,0U);
         if(mysmb_test_oam(&game,lakitu)==0U)return 1;
     }    {
@@ -147,7 +150,8 @@ int main(void)
             0x60U,0xb9U,0x81U,0x40U,0x60U,0xb8U,0x81U,0x48U};
         mysmb_game_initialize_memory(&game,0U); game.ram[0x071dU]=0xf0U;
         game.ram[0x000fU]=1U; game.ram[0x0016U]=17U; game.ram[0x001eU]=0x20U;
-        game.ram[0x0087U]=0x40U; game.ram[0x00cfU]=0x50U; game.ram[0x06e5U]=0x20U; game.ram[0x078fU]=0x10U;
+        game.ram[0x0087U]=0x40U; game.ram[0x00cfU]=0x50U;
+        game.ram[0x00b6U] = 1U; game.ram[0x06e5U]=0x20U; game.ram[0x078fU]=0x10U;
         mysmb_objects_step_normal_enemy(&game,0U); if(mysmb_test_oam(&game,lakitu_down)==0U)return 1;
     }    return 0;
 }

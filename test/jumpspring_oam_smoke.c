@@ -13,6 +13,7 @@ int main(void)
     game.ram[0x006eU] = 1U;
     game.ram[0x0087U] = 0x70U;
     game.ram[0x00cfU] = 0xa0U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x0058U] = 0xa0U;
     game.ram[0x071aU] = 1U;
     game.ram[0x071cU] = 0x20U;

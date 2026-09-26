@@ -20,6 +20,7 @@ int main(void)
     game.ram[0x0087U] = 0x40U;
     game.ram[0x0088U] = 0x40U;
     game.ram[0x00cfU] = 0x50U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x00d0U] = 0x50U;
     game.ram[0x049aU] = 0U;
     game.ram[0x049bU] = 0U;
@@ -54,6 +55,7 @@ int main(void)
     game.ram[0x006eU] = 1U;
     game.ram[0x0087U] = 0x5fU;
     game.ram[0x00cfU] = 0xb8U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x049aU] = 9U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071cU] = 0x31U;
@@ -68,6 +70,7 @@ int main(void)
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0xf6U;
     game.ram[0x00cfU] = 0xb8U;
+    game.ram[0x00b6U] = 1U;
     game.ram[0x049aU] = 9U;
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 0U;
