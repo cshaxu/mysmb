@@ -627,6 +627,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Responsibility accepted into the documented closure backlog by T24 S2; implementation admission remains separate."
+        },
+        {
+          "id": "M2 T22 S6",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "source-order-intake"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -3840,19 +3852,33 @@
     {
       "id": "t22-nmi-ppu-deferred",
       "proposal": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "reason": "T21 S1 separated NMI/PPU consumers pending source-order T22 admission.",
+      "reason": "T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission.",
       "state": "deferred",
       "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
         "VRAM_AddrTable_Low",
         "VRAM_AddrTable_High",
         "VRAM_Buffer_Offset",
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "scopeCount": 5,
+      "scopeCount": 12,
       "baselineComplete": 3,
       "baselineTotal": 1992,
       "incomingStates": {
+        "Start": "open",
+        "VBlank1": "open",
+        "VBlank2": "open",
+        "WBootCheck": "open",
+        "ColdBoot": "open",
+        "EndlessLoop": "open",
+        "InitializeMemory": "open",
         "VRAM_AddrTable_Low": "open",
         "VRAM_AddrTable_High": "open",
         "VRAM_Buffer_Offset": "open",
@@ -3865,8 +3891,8 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4030,8 +4056,8 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4059,8 +4085,8 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4088,8 +4114,8 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4133,8 +4159,8 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4178,8 +4204,8 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -4207,9 +4233,9 @@
     {
       "label": "VRAM_AddrTable_Low",
       "line": 743,
-      "receiver": "M2 Td S6",
-      "receivingBasis": "T22 NMI/PPU boundary established by T21 S1",
-      "futurePackage": "t22-nmi-ppu-deferred",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4236,9 +4262,9 @@
     {
       "label": "VRAM_AddrTable_High",
       "line": 752,
-      "receiver": "M2 Td S6",
-      "receivingBasis": "T22 NMI/PPU boundary established by T21 S1",
-      "futurePackage": "t22-nmi-ppu-deferred",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4265,9 +4291,9 @@
     {
       "label": "VRAM_Buffer_Offset",
       "line": 761,
-      "receiver": "M2 Td S6",
-      "receivingBasis": "T22 NMI/PPU boundary established by T21 S1",
-      "futurePackage": "t22-nmi-ppu-deferred",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4294,9 +4320,9 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 Td S6",
-      "receivingBasis": "T22 NMI/PPU boundary established by T21 S1",
-      "futurePackage": "t22-nmi-ppu-deferred",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -4323,9 +4349,9 @@
     {
       "label": "ScreenOff",
       "line": 776,
-      "receiver": "M2 Td S6",
-      "receivingBasis": "T22 NMI/PPU boundary established by T21 S1",
-      "futurePackage": "t22-nmi-ppu-deferred",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T14",
@@ -10257,8 +10283,8 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T21 S5",
-      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
+      "receiver": "M2 T22 S6",
+      "receivingBasis": "Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary.",
       "futurePackage": null,
       "history": [
         {
@@ -54253,6 +54279,45 @@
       ],
       "acceptedBy": "Owner-approved T21 S-plan: S5 closure follows S4 operational verification.",
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+    },
+    {
+      "id": "transfer-021-s5-t22-deferred",
+      "type": "transfer",
+      "from": "M2 T21 S5",
+      "to": "M2 Td S6",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "acceptedBy": "T21 S5 closure under the owner-approved source-order plan: the boot root requires the queued T22 NMI/PPU boundary.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-022-source-order-intake",
+      "type": "transfer",
+      "from": "M2 Td S6",
+      "to": "M2 T22 S6",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt",
+        "ScreenOff"
+      ],
+      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -58450,7 +58515,65 @@
       "maximumComplete": 3,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md",
-      "state": "admitted-closure-reconciliation-active"
+      "state": "closed-transferred-to-t22-deferred"
+    },
+    {
+      "subtask": "M2 Td S6",
+      "kind": "audit",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt",
+        "ScreenOff"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 3,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-transferred-to-t22-s6"
+    },
+    {
+      "subtask": "M2 T22 S6",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "NonMaskableInterrupt",
+        "ScreenOff"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 3,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-source-order-intake-active"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T21 S5 active: reconcile the seven boot/cold-initialization nodes after repaired original-ROM reference capture.**
+**M2 T21 is closed without new node credit: its seven boot labels are in the queued T22 NMI/PPU custody package for integrated first-NMI repair.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation's active packet and cannot preempt T21.
@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T21 S5 Packet
+## M2 T22 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T21 S5, Continuation; closure reconciliation. |
-| Admission And Approval | Owner approved source-order replan and T21 execution on 2026-09-26; S4 transferred its seven labels under the approved T21 S plan. |
-| Objective | Reconcile source, rebuilt owner-ROM recorder evidence, and shared C startup ownership before either making a justified match claim or transferring each unfinished label by exact name. |
-| Non-goals | NMI/PPU logic after `ScreenOff`, gameplay behavior, and T20 fireball/bubble nodes remain outside T21. |
-| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S5. |
-| Candidate Proposal | [T21 boot and cold initialization](../proposals/m2/t21-boot-cold-init.md); [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared boot constructor/owners only if the source audit identifies a minimal discrepancy; node ledger, ignored recorder evidence and three target artifacts. |
-| Applicable Rules | Task Reading Set, execution, contributing, architecture, coding, source policy and node-ledger workflow. |
-| Verification | ROM logic-equivalence compares the rebuilt ROM route with source branches, writes and call order; operational verification retains focused tests, x86/x64, DOS16, purity and three artifacts. |
-| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: none at admission; maximum 3 / 1,992. |
-| Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Each P refreshes the three local target artifacts; they do not establish conformance. |
-| Reporting Requirements | For every P, name its exact node subset, timing/write mapping, both evidence tracks, actual versus expected matches, three-artifact hashes and platform-boundary review. |
-| Stop Conditions | Stop if host code mutates game internals, introduces platform gameplay logic, or a requested conclusion lacks source-controlled evidence. |
-| Exit Criteria | Every label is either justified by controlled source/ROM evidence or transferred to an accepted successor; `NODE_PROGRESS.md` and ledger report the exact result. |
-| Original Owner Request | Replan the backlog in source order and execute small, verifiable tasks. |
-| Similar-Issue Sweep | Inspect startup constructors and platform roots for later ROM-node writes folded into the cold-boot boundary. |
+| Identifier Mode | M2 T22 S6, Implementation intake; source-order first-NMI boundary. |
+| Admission And Approval | Owner approved the T21–T49 source-order plan. Historical T22 S1–S5 records are retained, so S6 is the next unused T22 slot and receives the deferred 12-node package. |
+| Objective | Establish the exact source-owned boundary from `Start` through the first NMI before migrating the minimal shared-C repair. |
+| Non-goals | Unrelated historical T22 block/item code, later title/gameplay behavior, platform gameplay logic, and ROM-match claims at intake. |
+| Reference Baseline | 3 / 1,992 complete; 12 labels received by T22 S6. |
+| Candidate Proposal | [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
+| Files And ABI Surface | Shared boot/frame/title owners, exact ledger records, ignored recorder evidence; no platform internals. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node-ledger workflow. |
+| Verification | Compare source call order and original-ROM bounded route before code changes; subsequent S work separates ROM equivalence and operational verification. |
+| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`; expected matches: none; maximum 3 / 1,992. |
+| Asset Needs | Owner-local ROM/listing remain ignored research inputs. |
+| Reporting Requirements | Publish source nodes, call edges, RAM/PPU ownership and exact successor S plan before migration. |
+| Stop Conditions | Stop if a platform adapter must assume game behavior or if a historical T22 record would be overwritten. |
+| Exit Criteria | A bounded T22 implementation S receives the exact source owner set and a call-order checklist, with no invented node credit. |
+| Original Owner Request | Execute small source-order tasks with exact node responsibility. |
+| Similar-Issue Sweep | Inspect all pre-first-tick calls for later source-node work. |
 ## Recent M4 Closures
 
 | Task | Compact result |

@@ -184,3 +184,22 @@ the minimal source-owned repair or exact successor transfer required to remove
 the constructor's later-node writes, then record every node's final evidence
 or explicit transfer. It may not upgrade a label on recorder coverage or a
 native test alone.
+
+## S5/P1 closure disposition
+
+S5 compared the source sequence with the shared startup call graph. Both host
+roots call `mysmb_game_initialize`, bind local sources, and invoke
+`mysmb_game_begin_title_bootstrap` before their first shared tick. That
+bootstrap performs later `InitializeGame` and area-bootstrap work, while the
+source executes those leaves only through the first NMI title-mode dispatch.
+The current constructor also establishes presentation backing state that
+belongs to the NMI boundary. This is a source-order ownership discrepancy,
+not evidence that the cold-boot writes themselves are equivalent.
+
+No T21 label is upgraded. S5 closes with **0** actual matches and transfers
+`Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, and
+`InitializeMemory` to the existing T22 NMI/PPU deferred custody. That queued
+source-order package now owns the integrated first-NMI boundary: it must
+separate container construction from ROM state, move later title bootstrap
+work into its source-owned NMI position, and then re-admit exact node credit.
+The conformance count remains **3 / 1,992**.

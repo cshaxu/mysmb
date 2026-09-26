@@ -48,4 +48,4 @@ T21 owns exactly `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`,
 `EndlessLoop`, and `InitializeMemory`.  The five physically adjacent NMI/PPU
 nodes (`VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`,
 `NonMaskableInterrupt`, `ScreenOff`) are held in source-order custody for T22.
-No fireball or later gameplay node belongs to T21.
+No fireball or later gameplay node belongs to T21. T21 closure transferred its seven root labels into T22 deferred custody because current startup invokes later title bootstrap before the first shared NMI; T22 owns that integrated first-NMI repair and re-admission boundary. Historical T22 S1–S5 records remain immutable, so the source-order intake uses the next available T22 slot, S6.
