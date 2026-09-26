@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S5/P3.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S5/P4.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -116,3 +116,7 @@ The same NMI-return contract now covers a source-reachable first-area movement r
 ## S5 P3: delayed source route and ownership transfer
 
 A second source-reachable route warms through the first 600 frames and records frames 600–1199 while holding Right plus B, with periodic Right-plus-A jumps. It reaches scroll and actor-producing gameplay without forced object-slot writes. The first work-RAM difference is recorded sample 278 (global frame 878), at `$0301–$030d`; all visible output fields remain equal and x86/x64 native traces are byte-identical. The complete difference set is confined to the VRAM command buffer: `$0301` occurs in seven samples, `$0302–$0308` in 48, and `$0309–$030d` in 322. At the first sample the reference begins the timer command `$20,$7a,$03`, while native begins the preceding palette command. This is not an enemy stream or actor decision. Its ROM owners are `WriteBottomStatusLine` (line 1524), `PrintStatusBarNumbers` (line 2555), and their `RunGameTimer` caller; it is transferred to the unadmitted Screen, text and status slice. T19 makes no `area.c` change for this packet. Derived reference/native traces and the comparison live only in `build/t19-s5-p3-extended`.
+
+## S5 P4: ProcessEnemyData row-$0e order
+
+The delayed route isolated an inactive slot-zero page/X/YHigh/Y residue at the original `PositionEnemyObj → ParseRow0e` node. The native stream had consumed row `$0e` before `PositionEnemyObj`; it now writes the current `ObjectOffset` page/X first, handles the left/right boundary decision, writes `Enemy_Y_HighPos=1` and `Enemy_Y_Position=row<<4` for an in-range row, and only then consumes the third byte. A focused slot-two regression proves the precise page/X/YHigh/Y, world-selected AreaPointer/EntrancePage, offset increment, and page-select clear. Replaying the same frames 600–1199 route removes every difference in all six-slot enemy flag, ID, state, moving direction, X/Y speed, page/X/Y/Y-high, X/Y force, dummy, bounding-box, and stream-state arrays. CIRAM, palette, OAM, audio-command state, and all PPU-visible fields remain zero-difference; the only retained work-RAM difference is the separately transferred `$0301–$030d` status-buffer owner. x86/x64 full suites and the shared DOS MZ are rebuilt with this packet.

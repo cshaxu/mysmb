@@ -79,5 +79,32 @@ int main(void)
     if (mysmb_enemy_stream_process_slot(&game, &source, 0U) != 0U ||
         game.ram[0x0739U] != 2U || game.ram[0x006eU] != 0U ||
         game.ram[0x0087U] != 0x10U) return 2;
+    /* ROM PositionEnemyObj writes the requested current slot before
+     * ParseRow0e consumes its third byte.  Use slot two so fixed stream
+     * state cannot mask the ObjectOffset destination. */
+    prg[0x20U] = 0x4eU;
+    prg[0x21U] = 2U;
+    prg[0x22U] = 0x51U;
+    prg[0x23U] = 0xffU;
+    game.ram[0x0739U] = 0U;
+    game.ram[0x073aU] = 2U;
+    game.ram[0x073bU] = 1U;
+    game.ram[0x071bU] = 2U;
+    game.ram[0x071dU] = 0x10U;
+    game.ram[0x075fU] = 2U;
+    game.ram[0x0011U] = 0U;
+    game.ram[0x0070U] = 0U;
+    game.ram[0x0089U] = 0U;
+    game.ram[0x00b8U] = 0U;
+    game.ram[0x00d1U] = 0U;
+    if (mysmb_enemy_stream_process_slot(&game, &source, 2U) != 0U) return 31;
+    if (game.ram[0x0739U] != 3U) return 32;
+    if (game.ram[0x073bU] != 0U) return 33;
+    if (game.ram[0x0070U] != 2U) return 34;
+    if (game.ram[0x0089U] != 0x40U) return 35;
+    if (game.ram[0x00b8U] != 1U) return 36;
+    if (game.ram[0x00d1U] != 0xe0U) return 37;
+    if (game.ram[0x0750U] != 2U) return 38;
+    if (game.ram[0x0751U] != 0x11U) return 39;
     return 0;
 }

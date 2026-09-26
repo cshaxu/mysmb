@@ -95,10 +95,15 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
         }
         row = (mysmb_u8)(first & 0x0fU);
-        if (row >= 0x0eU || ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U)) {
-            /* ROM ParseRow0e consumes a three-byte area-entry record.  It
-             * preserves its destination for a later pipe entry only when
-             * the record's three high bits select this world. */
+        /* ROM PositionEnemyObj executes before the row-$0e parser.  Even an
+         * area-entry row therefore leaves its page/X in the current inactive
+         * ObjectOffset, and an in-range row also writes YHigh/Y before
+         * ParseRow0e consumes its third byte. */
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
+        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
+        world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_OBJECT_PAGE] << 8U) | (first & 0xf0U));
+        right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
+        if (world < right) {
             if (row == 0x0eU) {
                 if ((mysmb_u16)(address + 2U) >= source->prg_size) return 0U;
                 third = source->prg[(mysmb_u16)(address + 2U)];
@@ -106,25 +111,32 @@ mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
                     game->ram[MYSMB_AREA_POINTER] = second;
                     game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
                 }
+                game->ram[MYSMB_ENEMY_DATA_OFFSET] =
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 3U);
             }
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + (row == 0x0eU ? 3U : 2U));
+            else {
+                game->ram[MYSMB_ENEMY_DATA_OFFSET] =
+                    (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
+            }
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
             return 0U;
         }
-        /* ROM PositionEnemyObj writes the current ObjectOffset before bounds. */
-        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
-        world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_OBJECT_PAGE] << 8U) | (first & 0xf0U));
-        right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
         if (world > (mysmb_u16)(right + 0x30U)) return 0U;
-        /* ProcessEnemyData writes the current ObjectOffset's page/X before
-         * the right-boundary decision.  A record already left of the active
-         * right edge is not spawned, but CheckThreeBytes still consumes it.
-         * Leaving EnemyDataOffset unchanged here pins the stream to an old
-         * object until a slot happens to free, which then shifts every later
-         * spawn and visible OAM state. */
-        if (world < right) {
-
+        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(row << 4U);
+        if (row == 0x0eU) {
+            if ((mysmb_u16)(address + 2U) >= source->prg_size) return 0U;
+            third = source->prg[(mysmb_u16)(address + 2U)];
+            if ((third >> 5U) == game->ram[MYSMB_WORLD_NUMBER]) {
+                game->ram[MYSMB_AREA_POINTER] = second;
+                game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
+            }
+            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
+                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 3U);
+            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
+            return 0U;
+        }
+        if ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U) {
             game->ram[MYSMB_ENEMY_DATA_OFFSET] =
                 (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
             game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
