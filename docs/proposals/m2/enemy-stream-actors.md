@@ -137,3 +137,6 @@ ROM `CheckEndofBuffer` does not reject every non-row-0x0e record in object slot 
 ## S5 P9: deterministic flying-Cheep stream fixture
 
 The former flying-Cheep regression initialized game RAM with a fill byte but left the enemy-data low pointer, stream offset, page control, and first flag implicit. It now explicitly reads its two-byte record from PRG 0x8000 plus offset zero and begins with slot zero inactive. This changes no game logic; it makes the next InitEnemyFrenzy current-slot migration measurable rather than dependent on fill-byte residue. Full x64/x86 suites pass; the shared DOS MZ and all three artifacts are refreshed.
+## S5 P10: physical J/K control correction
+
+The documented physical-button layout is now J = NES B (run/fireball) and K = NES A (jump) in both Win32 and DOS. The correction is confined to platform keyboard adapters: the shared game receives the same ROM button bits on all targets, and no game state or rule is platform-specific. DOS scan-code regression asserts both keys directly; Win32 retains its button-bit adapter self-test. Full x64/x86 suites, shared DOS MZ build, and refreshed 16/32/64 artifacts accompany this packet.
