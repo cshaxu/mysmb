@@ -2,6 +2,7 @@
 
 #include "game/game.h"
 #include "game/ppu_frame.h"
+#include "platform/startup_timing.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -24,6 +25,8 @@ static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
+static mysmb_u8 g_startup_vblank_waits;
+static mysmb_u8 g_game_started;
 static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
 static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
@@ -89,6 +92,33 @@ static void mysmb_win32_build_frame(void)
     mysmb_win32_draw_gameplay();
 }
 
+static int mysmb_win32_start_game(void)
+{
+    if (g_game_started != 0U) return 1;
+    mysmb_game_initialize(&g_game);
+#ifdef MYSMB_LOCAL_TITLE
+    mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    mysmb_game_bind_chr_source(&g_game, mysmb_local_chr, MYSMB_LOCAL_CHR_SIZE);
+    mysmb_game_bind_title_source(&g_game, mysmb_local_title_data,
+                                 MYSMB_LOCAL_TITLE_DATA_SIZE,
+                                 mysmb_local_title_icon_data,
+                                 MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
+    if (mysmb_game_begin_title_bootstrap(&g_game) == 0U) return 0;
+#endif
+    ZeroMemory(&g_frame, sizeof(g_frame));
+    g_game_started = 1U;
+    return 1;
+}
+
+/* Consume only the two source Start polling boundaries.  No translated game
+ * state is examined or modified until the existing shared tick follows. */
+static int mysmb_win32_consume_startup_vblank(void)
+{
+    if (g_startup_vblank_waits == 0U) return 0;
+    g_startup_vblank_waits--;
+    return 1;
+}
+
 static int mysmb_win32_argument_is_self_test(const char *command)
 {
     static const char self_test[] = "--self-test";
@@ -114,6 +144,10 @@ static int mysmb_win32_run_self_test(void)
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
+    g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
+    if (mysmb_win32_consume_startup_vblank() == 0) return 22;
+    if (mysmb_win32_consume_startup_vblank() == 0) return 23;
+    if (mysmb_win32_consume_startup_vblank() != 0) return 24;
     return 0;
 }
 #endif
@@ -141,6 +175,12 @@ static void mysmb_win32_step(HWND window)
     elapsed = now.QuadPart - g_last_tick.QuadPart;
     frame_period = g_frequency.QuadPart / 60;
     if (elapsed < frame_period) return;
+
+    if (mysmb_win32_consume_startup_vblank() != 0) {
+        g_last_tick.QuadPart += frame_period;
+        return;
+    }
+    if (mysmb_win32_start_game() == 0) return;
 
     input.buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
     steps = 0U;
@@ -196,18 +236,6 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         return 1;
     }
 
-    mysmb_game_initialize(&g_game);
-#ifdef MYSMB_LOCAL_TITLE
-    mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    mysmb_game_bind_chr_source(&g_game, mysmb_local_chr, MYSMB_LOCAL_CHR_SIZE);
-    mysmb_game_bind_title_source(&g_game, mysmb_local_title_data,
-                                 MYSMB_LOCAL_TITLE_DATA_SIZE,
-                                 mysmb_local_title_icon_data,
-                                 MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
-    if (mysmb_game_begin_title_bootstrap(&g_game) == 0U) {
-        return 1;
-    }
-#endif
     ZeroMemory(&g_bitmap_info, sizeof(g_bitmap_info));
     g_bitmap_info.bmiHeader.biSize = sizeof(g_bitmap_info.bmiHeader);
     g_bitmap_info.bmiHeader.biWidth = MYSMB_SCREEN_WIDTH;
@@ -215,10 +243,10 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_bitmap_info.bmiHeader.biPlanes = 1U;
     g_bitmap_info.bmiHeader.biBitCount = 32U;
     g_bitmap_info.bmiHeader.biCompression = BI_RGB;
-    ZeroMemory(&g_frame, sizeof(g_frame));
-    mysmb_win32_build_frame();
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
+    g_startup_vblank_waits = MYSMB_PLATFORM_STARTUP_VBLANK_COUNT;
+    g_game_started = 0U;
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
                           MYSMB_SCREEN_WIDTH * MYSMB_SCALE + 16,

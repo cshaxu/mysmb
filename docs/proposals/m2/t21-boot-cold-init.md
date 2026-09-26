@@ -93,3 +93,66 @@ Refreshed local artifacts are `mysmb16.exe`
 `126103DC5DB509C6B22C9CA87F57214403207C6FC402C17CB4B117DF704B8F3A`,
 `mysmb32.exe` `FA2A8D07697175DC1C2E259172F76B7D38CB61902EFF2105C67982C3306F830A`,
 and `mysmb64.exe` `45D9B49678DF4A698E647E9DBA9ADCA2660D1F74F8B81F36736D082016E898B1`.
+
+## S3 closure and S4 admission
+
+S3 closes without a new ROM-match claim. `WBootCheck`, `ColdBoot`, and
+`InitializeMemory` now have their source branch/read/write audit and
+controlled storage regression, but `Start`, `VBlank1`, `VBlank2`, and
+`EndlessLoop` show one shared remaining contract: both host adapters must
+consume two no-game-state startup vblank intervals before the first game tick.
+This is a platform timing boundary, not a translated game-state branch. S3
+therefore transfers all seven labels to S4 rather than falsely completing the
+three C-only leaves.
+
+S4 receives **7** labels: `Start`, `VBlank1`, `VBlank2`, `WBootCheck`,
+`ColdBoot`, `EndlessLoop`, and `InitializeMemory`. Baseline is **3 / 1,992**;
+the expected ROM-match set is all seven labels, so its maximum is **10 /
+1,992**. It must make Windows x86/x64 and DOS16 consume exactly two timing
+intervals before the first shared `mysmb_game_tick`, with no mutation of
+`mysmb_game` by platform code. Its ROM-equivalence route combines the S3
+cold/warm storage checks with a controlled two-boundary/no-tick/first-tick
+sequence. Its operational route builds and runs focused boot, DOS-root,
+platform-purity, x86/x64 and OpenNT DOS16 checks, then refreshes all three
+local artifacts.
+
+The S4 stop condition is any platform access to game internals beyond the
+public initialization/tick/frame contracts. A scheduler delay does not become
+a game flag, a game RAM write, or a platform-specific gameplay path.
+
+## S4/P1 platform startup boundary
+
+The source sequence at lines 699-737 performs `Start`, waits at `VBlank1`
+and `VBlank2` without game-RAM writes, then enters `WBootCheck` and
+`ColdBoot`; it loops at `EndlessLoop` until later NMI work. The platform
+adapters now preserve that boundary without taking ownership of any game
+decision. `src/platform/startup_timing.h` declares the two-boundary constant.
+The Windows QPC scheduler and DOS16 root each consume exactly two boundaries
+before calling the public `mysmb_game_initialize` and the existing shared
+`mysmb_game_tick`. No platform file reads or writes translated RAM, PPU, OAM,
+palette, scroll, or object state.
+
+ROM logic-equivalence evidence is complete for the source instruction/order
+audit and the controlled C cold/warm storage routes: `reset-root-smoke` covers
+the descending `$07dc` through `$07d7` score check and `$07ff` validation, and
+`ram-cold-start-smoke` covers both `$fe`/`$d6` memory-clear origins and the
+page-one preserved window. `dos16-root-smoke` proves two root invocations do
+not start or present the game and the third starts exactly one shared frame;
+the Windows self-test proves the identical two-count gate.
+
+A fresh owner-ROM recorder attempt was contained below `build/m2-t21-s4`: the
+existing local recorder stopped before its first NMI-return sample (exit 68)
+and therefore produced no usable reference coverage. The current nxvm-source
+recorder rebuild also cannot configure because its profile template path and
+`core-machine-80286-protected-mode-smoke` source assertion are unsatisfied.
+No raw trace is tracked and **no ROM-match completion is claimed by P1** until
+that reference route is repaired or replaced.
+
+Operational verification passed on x64 and x86: `mysmb.reset-root-smoke`,
+`mysmb.ram-cold-start-smoke`, `mysmb.dos16-root-smoke`, `mysmb.platform-purity`,
+and each Win32 self-test (5/5 on each width). The shared source relinked the
+OpenNT DOS16 MZ; it retains existing C4761 warnings and the
+`OLDNAMES.LIB` linker warning. Refreshed local artifacts are `mysmb16.exe`
+`EA9B763F9AF01D7B0AA21D3AE25A6C852AF8D13AE8746A486D417ECEBD9B556D`,
+`mysmb32.exe` `1D5EBDC3A743FFAE7C85EDCE51C31B7876EF1F7648BEAE7C51F5ED959AB57059`,
+and `mysmb64.exe` `24C9CF38A12567A40EB3613481C7B21E808AFBE30F88D44908FA3B05016F1972`.

@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T21 S3 active: prove the seven boot/cold-initialization nodes against the ROM.**
+**M2 T21 S4 active: verify the seven boot/cold-initialization nodes through identical Win32 and DOS startup timing.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation's active packet and cannot preempt T21.
@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T21 S3 Packet
+## M2 T21 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T21 S3, Continuation; ROM logic-equivalence audit and source-corrective implementation. |
-| Admission And Approval | Owner approved source-order replan and T21 admission on 2026-09-26. |
-| Objective | Compare the seven shared boot/cold-initialization owners against source branches, reads, writes and call order; repair only proved differences. |
-| Non-goals | NMI/PPU timing after `ScreenOff`, all gameplay routes, and T20 fireball/bubble nodes are outside T21. |
-| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S3. |
+| Identifier Mode | M2 T21 S4, Continuation; platform-boundary operational verification. |
+| Admission And Approval | Owner approved source-order replan and T21 execution on 2026-09-26. |
+| Objective | Verify and complete the source startup boundary: two no-game-state VBlank intervals before the first shared tick, identically for Win32 and DOS16. |
+| Non-goals | NMI/PPU logic after `ScreenOff`, gameplay behavior, and T20 fireball/bubble nodes remain outside T21. |
+| Reference Baseline | 3 / 1,992 complete; 7 exact labels received by T21 S4. |
 | Candidate Proposal | [T21 boot and cold initialization](../proposals/m2/t21-boot-cold-init.md); [source-order T21–T49 plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Boot/root C owners, focused root tests, ledger run and ignored route evidence; no platform gameplay logic. |
+| Files And ABI Surface | Win32 and DOS16 timing adapters, their root smoke coverage, ledger run and ignored route evidence; no game-internal access from platform code. |
 | Applicable Rules | Task Reading Set, execution, contributing, architecture, coding, source policy and node-ledger workflow. |
-| Verification | S3 performs ROM logic-equivalence. S4 operational verification remains a separate required track; source-corrective C changes remain shared game code only. |
-| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: empty; maximum 3 / 1,992. |
-| Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Build products, traces and ROM-derived executables remain local; each P refreshes the three local target artifacts without treating them as conformance evidence. |
-| Reporting Requirements | For every P, name its exact node subset, branch/write mapping, test and route evidence, actual versus expected matches, blockers/transfers, three-artifact hashes and platform-boundary review. |
-| Stop Conditions | Stop if a root branch requires a later NMI, platform, or gameplay owner without an accepted dependency boundary. |
-| Exit Criteria | Each of the seven nodes has a documented source branch/read/write/call-order result and any proved C discrepancy is repaired or explicitly retained without a match claim. |
+| Verification | ROM logic-equivalence verifies the source no-write interval and first-tick boundary; operational verification runs focused tests, x86/x64, DOS16, platform purity and three packaged artifacts. |
+| Expected Markers | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`; expected matches: all 7; maximum 10 / 1,992. |
+| Asset Needs | Owner-local ROM and listing are non-redistributable research inputs. Each P refreshes the three local target artifacts; they do not establish conformance. |
+| Reporting Requirements | For every P, name its exact node subset, timing/write mapping, both evidence tracks, actual versus expected matches, three-artifact hashes and platform-boundary review. |
+| Stop Conditions | Stop if host code mutates game internals, introduces platform gameplay logic, or cannot prove the same two-boundary behavior on both targets. |
+| Exit Criteria | All seven nodes have controlled source timing/storage evidence plus operational x86/x64/DOS16 and purity evidence, or unfinished labels transfer to S5 by exact name. |
 | Original Owner Request | Replan the backlog in source order and execute small, verifiable tasks. |
-| Similar-Issue Sweep | Check every boot/root label for duplicated initialization, host-owned state, stale direct tests, and missing cold/warm branch evidence. |
+| Similar-Issue Sweep | Inspect every boot/root platform entry for direct game-memory writes, startup tick before both waits, and divergent Windows/DOS timing order. |
 
 ## Recent M4 Closures
 

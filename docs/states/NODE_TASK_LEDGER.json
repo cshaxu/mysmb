@@ -3865,8 +3865,8 @@
     {
       "label": "Start",
       "line": 699,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -4030,8 +4030,8 @@
     {
       "label": "VBlank1",
       "line": 706,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -4059,8 +4059,8 @@
     {
       "label": "VBlank2",
       "line": 708,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -4088,8 +4088,8 @@
     {
       "label": "WBootCheck",
       "line": 712,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -4133,8 +4133,8 @@
     {
       "label": "ColdBoot",
       "line": 721,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -4178,8 +4178,8 @@
     {
       "label": "EndlessLoop",
       "line": 737,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -10257,8 +10257,8 @@
     {
       "label": "InitializeMemory",
       "line": 2795,
-      "receiver": "M2 T21 S3",
-      "receivingBasis": "T21 S3 ROM logic-equivalence acceptance after S2 migration.",
+      "receiver": "M2 T21 S4",
+      "receivingBasis": "T21 S4 platform-boundary verification after S3 ROM logic audit.",
       "futurePackage": null,
       "history": [
         {
@@ -54219,6 +54219,23 @@
       ],
       "acceptedBy": "Owner-approved T21 S-plan: S3 ROM logic-equivalence follows S2 shared-C migration.",
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
+    },
+    {
+      "id": "transfer-021-s3-s4",
+      "type": "transfer",
+      "from": "M2 T21 S3",
+      "to": "M2 T21 S4",
+      "nodes": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "acceptedBy": "Owner-approved T21 S-plan: S4 operational verification follows S3 ROM logic-equivalence audit.",
+      "evidence": "docs/proposals/m2/t21-boot-cold-init.md"
     }
   ],
   "runs": [
@@ -58360,7 +58377,39 @@
       "maximumComplete": 3,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-boot-cold-init.md",
-      "state": "admitted-logic-equivalence-active"
+      "state": "closed-transferred-to-s4"
+    },
+    {
+      "subtask": "M2 T21 S4",
+      "kind": "implementation",
+      "scope": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "baseline": 3,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory"
+      ],
+      "maximumComplete": 10,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-boot-cold-init.md",
+      "state": "admitted-operational-verification-active"
     }
   ]
 }

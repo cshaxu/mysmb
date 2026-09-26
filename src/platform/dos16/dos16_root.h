@@ -3,6 +3,7 @@
 
 #include "game/game.h"
 #include "game/ppu_frame.h"
+#include "platform/startup_timing.h"
 #include "platform/text/text_frame.h"
 #include "platform/vga/vga_frame.h"
 
@@ -20,6 +21,8 @@ struct mysmb_dos16_root {
     struct mysmb_text_frame text_frame;
     struct mysmb_vga_frame vga_frame;
     struct mysmb_dos16_hooks hooks;
+    mysmb_u8 startup_vblank_waits;
+    mysmb_u8 game_started;
 };
 
 /* BIOS scan-code decoder shared by the real DOS root and ROM-free tests. */
