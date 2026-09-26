@@ -904,6 +904,7 @@ mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
         left != 0x10U || right != 0x11U) return 0U;
     game->ram[MYSMB_CHANGE_AREA_TIMER] = 0x30U;
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 3U;
+    game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x10U;
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = 0x20U;
     if (game->ram[MYSMB_WARP_ZONE_CONTROL] != 0U) {
         warp_index = (mysmb_u8)((game->ram[MYSMB_WARP_ZONE_CONTROL] & 3U) << 2U);

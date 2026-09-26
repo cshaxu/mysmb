@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T17 active — S4/P9; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
+**M2 T17 active — S4/P10; S5/P4 and S3/P4 evidence recorded.** T16/S2 is complete: its relative-position/offscreen writers now consume the ROM state they are given. The source-reachable demo trace proves that the next discrepancy is a producer-side 6502 carry error in `ImposeGravityBlock`/`ImposeGravity`, so this admitted task owns it before any block or OAM work proceeds.
 
 ## ROM scope
 
@@ -113,3 +113,8 @@ The shared player route now makes that exact handoff before its existing land pr
 ROM `ChkFootMTile` tests the collision low nibble after it has rejected climbable, upward-moving, hidden, axe, and active-jumpspring routes. For `$05-$0f`, it stores `Player_MovingDir` in source scratch `$00` and jumps to `ImpedePlayerMove`; it does not call `LandPlyr`. `ImpedePlayerMove` uses the same one/two encoding supplied by the side-check counter, so this path stops and corrects the corresponding horizontal direction while retaining the player's falling state and vertical motion.
 
 The shared player route now takes that branch for either foot sample before the jumpspring/land path. The shared impede primitive documentation identifies both valid source callers; no arithmetic or rule moved to a platform adapter. `collision_regression_smoke` drives a right-foot contact nibble `$05` with positive `Player_MovingDir` and verifies the source left correction (`X-1`), cleared X speed, side timer `$10`, collision-bit d0 clear, and untouched Y/state. Full x64 and x86 CTest suites pass 79/79, including platform-purity. The OpenNT DOS MZ rebuilds from the same shared source list with the established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16.exe SHA-256 79F9B2494CF0962E61A9252119305B33E9D0CBA7267B3C892904DF086C6149CF, mysmb32.exe SHA-256 7F042DE6614700F1132FA2738A83E6A485B496D4878606B3EBF933AE6F903B60, mysmb64.exe SHA-256 AF0F00E472629A22E7E8F8922486D866B188725C3AA9BBB35500A0D001349FF8.
+## S4 P10: restore vertical-pipe sound queue
+
+ROM `HandlePipeEntry` accepts held Down with left/right foot metatiles `$10/$11`, then writes `ChangeAreaTimer=$30`, `GameEngineSubroutine=$03`, `Sfx_PipeDown_Injury=$10` to `Square1SoundQueue/$00ff`, and `Player_SprAttrib=$20` before the optional warp-zone table branch. The shared C route had every adjacent state transition but omitted the sound-queue write.
+
+`mysmb_player_handle_vertical_pipe` now performs that source write in order between the subroutine and player-attribute writes. `player_route_smoke` drives the actual `$10/$11` and Down condition and asserts timer, engine routine, attribute, and queue byte. The shared game route is unchanged across DOS16, Win32 x86, and Win32 x64; no platform source changed. Full x64 and x86 CTest suites pass 79/79, including platform-purity. The OpenNT DOS MZ rebuilds from the same shared source list with the established `OLDNAMES.LIB` warning. Refreshed artifacts: mysmb16.exe SHA-256 507806656C093912F13B2245CB7B232B028E49E7C56F07B563774B63438EBCA4, mysmb32.exe SHA-256 C9D5590CC7A234C7EEE010F17D1D5DEDDBF093228D0E3D740532CF84AF9110CD, mysmb64.exe SHA-256 83075BAC0F621826FCA228710293E3BA580C315DBB24911E9C58CEB662B1156F.

@@ -319,7 +319,7 @@ int main(void)
     game.ram[0x074eU] = 3U;
     if (mysmb_player_handle_vertical_pipe(&game, 0x10U, 0x11U) == 0U ||
         game.ram[0x000eU] != 3U || game.ram[0x06deU] != 0x30U ||
-        game.ram[0x03c4U] != 0x20U) {
+        game.ram[0x00ffU] != 0x10U || game.ram[0x03c4U] != 0x20U) {
         return 1;
     }
     game.ram[0x06deU] = 1U;
