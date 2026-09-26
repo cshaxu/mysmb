@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T19 active — S4/P6.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
+**M2 T19 active — S4/P7.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.
 
 ## ROM scope
 
@@ -92,3 +92,7 @@ ROM `RunNormalEnemies` (`$d68b`) now follows its source order in the shared game
 ## S4 P6: aquatic and piranha fixed scratch restoration
 
 ROM `RunNormalEnemies → RelativeEnemyPosition → EnemyGfxHandler` supplies one fixed `Enemy_Rel_XPos` `$03ae`, `Enemy_Rel_YPos` `$03b9`, and `Enemy_OffscreenBits` `$03d1` result to the Piranha, Bloober, and Podoboo graphics leaves. Their C handlers no longer add actor slots to these source addresses and now consume the complete vertical-plus-horizontal `GetEnemyOffscreenBits` result. The three OAM fixtures explicitly establish visible object page, screen edges, and `Enemy_Y_HighPos = 1`, rather than relying on fill-byte artefacts. Focused OAM tests and full x64/x86 CTest each pass 79/79; OpenNT relinks the same DOS MZ with the established `OLDNAMES.LIB` warning. The required 16/32/64 artifacts were refreshed.
+
+## S4 P7: platform and Bowser-flame fixed scratch restoration
+
+ROM `RunSmallPlatform` and `RunLargePlatform` call `RelativeEnemyPosition` immediately before their drawing leaves, so `$03ae/$03b9` are fixed current-actor outputs. `ProcBowserFlame → DrawFlameLoop → GetEnemyOffscreenBits` likewise uses fixed `$03ae/$03b9/$03d1`. The shared platform and flame OAM owners no longer add a slot to those addresses and use the complete enemy offscreen result. Focused OAM tests and full x64/x86 CTest pass 79/79; OpenNT relinks the DOS MZ. The 16/32/64 artifacts were refreshed.

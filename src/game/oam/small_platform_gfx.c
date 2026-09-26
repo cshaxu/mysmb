@@ -21,17 +21,17 @@ void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 offscreen;
     mysmb_u8 column;
 
-    game->ram[MYSMB_SMALL_PLATFORM_REL_X + slot] = (mysmb_u8)(
+    game->ram[MYSMB_SMALL_PLATFORM_REL_X] = (mysmb_u8)(
         game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot] -
         game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X]);
-    game->ram[MYSMB_SMALL_PLATFORM_REL_Y + slot] =
+    game->ram[MYSMB_SMALL_PLATFORM_REL_Y] =
         game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
-    game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN + slot] =
-        mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
+    game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN] =
+        mysmb_objects_get_enemy_offscreen_bits(game, slot);
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
-    x = game->ram[MYSMB_SMALL_PLATFORM_REL_X + slot];
-    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y + slot];
-    offscreen = game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN + slot];
+    x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
+    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
+    offscreen = game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN];
 
     for (column = 0U; column < 3U; ++column) {
         mysmb_u8 row_offset;
@@ -104,14 +104,14 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 offscreen;
     mysmb_u8 column;
 
-    game->ram[MYSMB_SMALL_PLATFORM_REL_X + slot] = (mysmb_u8)(
+    game->ram[MYSMB_SMALL_PLATFORM_REL_X] = (mysmb_u8)(
         game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot] -
         game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X]);
-    game->ram[MYSMB_SMALL_PLATFORM_REL_Y + slot] =
+    game->ram[MYSMB_SMALL_PLATFORM_REL_Y] =
         game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
-    x = game->ram[MYSMB_SMALL_PLATFORM_REL_X + slot];
-    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y + slot];
+    x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
+    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
     tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
     offscreen = mysmb_large_platform_x_offscreen(game, slot);
 
@@ -132,5 +132,3 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0203U + row_offset] = (mysmb_u8)(x + column * 8U);
     }
 }
-
-
