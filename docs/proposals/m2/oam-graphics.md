@@ -72,3 +72,26 @@ ROM `RelativeEnemyPosition -> VariableObjOfsRelPos -> GetObjRelativePosition` no
 ## S3 P7: defeated-Goomba source Y staging
 
 The first long T17 route reached a source-produced defeated Goomba and exposed an OAM difference at CPU `$02d8`.  The Goomba branch had translated `CheckForDefdGoomba` in isolation as `Y - 1`.  That loses the two preceding `INC $02` instructions in `CheckRightSideUpShell`: when `$ec == $04`, the exact chain is `INC`, `INC`, then the defeated-Goomba `DEC`, for a net `Enemy_Y + 1`.  `goomba_gfx.c` now writes that source result, and the focused six-sprite regression checks the corrected rows.  The 600-sample original-ROM route confirms the first OAM mismatch moves from the Y byte `$02d8` to the attribute byte `$02da`; this is evidence for the correction, not a claim that T16 has closed.  The remaining `$80` attribute difference and accompanying stale/enemy bounding-box output are retained as an explicit T16 OAM/dispatch investigation: no attribute bit was invented to hide the trace.  Full x64/x86 CTest, OpenNT DOS link, and refreshed package artifacts are required for this P.
+
+## S3 P8: defeated-Goomba MirrorEnemyGfx attributes
+
+The remaining pipe-route OAM difference at CPU `$02da` was not an
+`Enemy_SprAttrib` producer error: RAM `$03c5` is zero in both the ROM and the
+native frame.  ROM `EnemyGfxHandler` instead stores alternate state `$04` for
+a normal defeated Goomba, then `MirrorEnemyGfx` rebuilds its sprite columns.
+It preserves the base palette in the left column, adds horizontal flip in the
+right column, and for alternate state `$04` adds vertical flip to both lower
+rows.  The previous C Goomba writer gave all defeated rows the same attribute,
+thereby omitting the `$80` bit.
+
+`goomba_gfx.c` now represents that exact `MirrorEnemyGfx` post-row result:
+row one is base/base-or-`$40`; rows two and three are base-or-`$80`/
+base-or-`$c0`.  The focused six-sprite regression asserts all resulting
+attributes.  On the 600-sample original-ROM pipe route, CPU OAM's first
+difference moves from sample 232 / `$02da` to sample 345 / `$02a2`, and
+visible OAM's first difference moves from sample 233 to 346.  The separate work-RAM discrepancy at sample 232 / `$04b4` is transferred to
+T19: the ROM leaves slot-one enemy box `$04b4-$04b7` zero there, while the
+native actor route has already produced it.  By samples 344--346 this becomes
+the slot-one/slot-two direction, speed and X-position swap; the OAM horizontal
+flip difference is consequential, not another T16 writer defect.  No output
+byte was invented to conceal it.

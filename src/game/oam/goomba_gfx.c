@@ -77,12 +77,23 @@ static void mysmb_draw_goombas_mask_impl(struct mysmb_game *game,
             right = tiles[(mysmb_u8)(row * 2U + 1U)];
             row_offset = (mysmb_u8)(offset + row * 8U);
             if (defeated != 0U) {
+                /* EnemyGfxHandler gives every normal defeated Goomba
+                 * alternate state $04.  MirrorEnemyGfx then rebuilds
+                 * the columns: its lower two rows receive vertical flip,
+                 * while the right column is horizontally flipped. */
                 game->ram[0x0201U + row_offset] = left;
                 game->ram[0x0205U + row_offset] = right;
-                game->ram[0x0202U + row_offset] =
-                    attributes;
-                game->ram[0x0206U + row_offset] =
-                    attributes;
+                if (row == 0U) {
+                    game->ram[0x0202U + row_offset] = attributes;
+                    game->ram[0x0206U + row_offset] =
+                        (mysmb_u8)(attributes | 0x40U);
+                }
+                else {
+                    game->ram[0x0202U + row_offset] =
+                        (mysmb_u8)(attributes | 0x80U);
+                    game->ram[0x0206U + row_offset] =
+                        (mysmb_u8)(attributes | 0xc0U);
+                }
             }
             else if ((direction & 2U) != 0U) {
                 game->ram[0x0201U + row_offset] = right;
