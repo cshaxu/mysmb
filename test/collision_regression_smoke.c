@@ -410,7 +410,7 @@ int main(void)
         game.ram[0x0110U + 2U] != 2U ||
         game.ram[0x0117U + 2U] != 0x40U ||
         game.ram[0x011eU + 2U] != 0x6eU ||
-        game.ram[0x012cU + 2U] != 0x30U || game.ram[0x00ffU] != 2U) return 26;
+        game.ram[0x012cU + 2U] != 0x30U || game.ram[0x00ffU] != 8U) return 26;
 
     /* PlayerEnemyDiff returns the page subtraction after the low-X borrow.
      * Here low X is negative, but the next page makes the enemy rightward. */

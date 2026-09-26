@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T20 active — S3/P1.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
+**M2 T20 active — S3/P2.** This task is admitted after T19 because the next isolated source-slice defect is FireballObjCore: the native branch omits the ROM `Sfx_Fireball` queue write. T20 owns only ROM lines 6298–6729 and its named callees; OAM scratch/output remains delegated to T16 and shared movement/collision primitives remain delegated to T17.
 
 ## ROM scope
 
@@ -57,3 +57,6 @@ The focused shared-core fixture now calls `GetFireballOffscreenBits` directly ag
 ## S3/P1: background collision branch proof
 
 The same fixture now directly proves `FireballBGCollision`'s source probe `(X + $04, (Y + $08) & $f0) - $20` and its four branch outcomes: a solid first contact sets speed `$fd` and the bouncing flag; the next solid contact sets state `$80` and `Sfx_Bump`; a non-solid `$c2` clears a stale bouncing flag; and a status-bar Y position clears that flag without probing. These are shared game-core transitions consumed identically by DOS16, Win32 x86, and Win32 x64.
+## S3/P2: enemy-hit audio queues
+
+`HandleEnemyFBallCol` used invented queue values. The ROM writes `$80` (`Sfx_BowserFall`) to `Square2SoundQueue/$00fe` when the final Bowser hit reaches `HurtBowser`, then reaches `EnemySmackScore`, which writes `$08` (`Sfx_EnemySmack`) to `Square1SoundQueue/$00ff`. Ordinary eligible enemy hits only perform the latter `$08` write. The shared collision owner now follows those two source writes; the Bowser and generic collision fixtures assert them separately. `FireballBGCollision` retains its independent `$02` bump sound.

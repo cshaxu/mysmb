@@ -2,6 +2,11 @@
 #include "game/oam/oam.h"
 #include "game/objects.h"
 
+enum {
+    MYSMB_SQUARE2_SOUND = 0x00feU,
+    MYSMB_SQUARE1_SOUND = 0x00ffU
+};
+
 /* ROM BlockBufferCollision: add the X probe with ADC, then use the carry
  * to select the page-local block buffer. */
 mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
@@ -131,7 +136,7 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     if (game->ram[(mysmb_u16)(0x00a6U + slot)] >= 0x80U ||
         game->ram[(mysmb_u16)(0x003aU + slot)] != 0U) {
         game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
-        game->ram[0x00ffU] = 2U;
+        game->ram[MYSMB_SQUARE1_SOUND] = 2U;
         return;
     }
     game->ram[(mysmb_u16)(0x00a6U + slot)] = 0xfdU;
@@ -244,9 +249,9 @@ void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
             bowser_identities[game->ram[0x075fU] & 7U];
         game->ram[(mysmb_u16)(0x001eU + target_slot)] =
             game->ram[0x075fU] < 3U ? 0x23U : 0x20U;
-        game->ram[0x00feU] = 8U;
+        game->ram[MYSMB_SQUARE2_SOUND] = 0x80U;
         mysmb_objects_setup_floatey_from_relative(game, current_slot, 9U);
-        game->ram[0x00ffU] = 2U;
+        game->ram[MYSMB_SQUARE1_SOUND] = 8U;
         return;
     }
     if (id == 8U || id == 12U || id >= 0x15U) return;
@@ -262,5 +267,5 @@ void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
     id = game->ram[(mysmb_u16)(0x0016U + current_slot)];
     score = id == 5U ? 6U : (id == 0U ? 1U : 2U);
     mysmb_objects_setup_floatey_from_relative(game, current_slot, score);
-    game->ram[0x00ffU] = 2U;
+    game->ram[MYSMB_SQUARE1_SOUND] = 8U;
 }
