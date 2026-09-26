@@ -129,7 +129,7 @@ int main(void)
         game.ram[0x0016U] != 6U || game.ram[0x0017U] != 6U ||
         game.ram[0x006eU] != 1U || game.ram[0x006fU] != 2U ||
         game.ram[0x0087U] != 0xf8U || game.ram[0x0088U] != 0x10U ||
-        game.ram[0x00cfU] != 0xb0U || game.ram[0x00d0U] != 0xb0U ||
+        game.ram[0x00cfU] != 0xb8U || game.ram[0x00d0U] != 0xb8U ||
         game.ram[0x00b6U] != 1U || game.ram[0x00b7U] != 1U) return 4;
     /* ChkEnemyFrenzy precedes stream parsing and accepts slot five. */
     game.ram[0x06cdU] = 23U;

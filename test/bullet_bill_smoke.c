@@ -155,7 +155,7 @@ int main(void)
     mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 0U);
     if (game.ram[0x0016U] != 11U || game.ram[0x000fU] != 1U ||
         game.ram[0x0087U] != 0x10U || game.ram[0x006eU] != 3U ||
-        game.ram[0x00cfU] != 0x40U || game.ram[0x078fU] != 0x20U) return 101;
+        game.ram[0x00cfU] != 0x48U || game.ram[0x078fU] != 0x20U) return 101;
     /* Land route fires a Bill only when none is already active. */
     mysmb_game_initialize(&game);
     game.ram[0x074eU] = 1U;

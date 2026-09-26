@@ -54,7 +54,7 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
                                    mysmb_u8 row, mysmb_u8 id)
 {
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 8U);
+    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(row << 4U);
     game->ram[MYSMB_ENEMY_ID + slot] = id;
     game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
@@ -62,7 +62,11 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
 }
 void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
 {
+    /* ROM CheckpointEnemyID, not the stream parser, owns this add.  Group
+     * and frenzy producers enter here after supplying their own Y value. */
     if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
+        game->ram[MYSMB_ENEMY_Y + slot] =
+            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 8U);
         game->ram[0x03d8U + slot] = 1U;
     }
     if (game->ram[MYSMB_ENEMY_ID + slot] == 21U) {

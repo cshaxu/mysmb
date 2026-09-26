@@ -169,3 +169,19 @@ CheckpointEnemyID now dispatches Bullet/Cheep frenzy $17 and StopFrenzy $18 befo
 ## S5 P18: post-frenzy shared source-route check
 
 The established 600-frame Start/Right/jump ROM trace was rerun after P17. x86 and x64 native traces are byte-identical (D06BE291...D64C8E6); the comparator reports zero differences for both CIRAM pages, palette, visible OAM, audio commands, and every PPU-visible scalar. Remaining CPU temporary RAM differences remain outside the output contract. Derived evidence is under uild/t19-s5-p18-regression.
+## S5 P19: restore CheckpointEnemyID vertical staging
+
+A fresh source-reachable running trace reached `HandleGroupEnemies` and exposed
+that its second Goomba entered `CheckpointEnemyID` at `$b0`; the ROM then
+writes `$b8`, while native had left `$b0`. The C translation had incorrectly
+put the ROM `ADC #$08` in `mysmb_enemy_initialize_loaded`, bypassing group and
+frenzy producers that jump directly to the checkpoint. The add now belongs
+solely to `mysmb_enemy_checkpoint_loaded` for IDs `$00-$14`; the ordinary
+stream initializer supplies only `row << 4`. The group regression asserts two
+Goombas at `$b8`; Bullet/Cheep and firebar fixtures assert the same source
+entry rule for direct normal and non-normal IDs. Replaying the exposing route
+removes the enemy page/X/Y/state discrepancy. The remaining first difference
+is the separately owned Goomba OAM scratch/output path (`$02d8`, `$04b4-$04b7`),
+transferred to T16 rather than patched in the stream owner. Full x64/x86 CTest
+passes 83/83; the shared DOS16 link succeeds and all three executable artifacts
+are refreshed.

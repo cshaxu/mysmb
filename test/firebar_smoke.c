@@ -17,7 +17,7 @@ int main(void)
     game.ram[0x00eaU] = 0x80U;
     if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x0016U] != 27U || game.ram[0x0087U] != 4U ||
-        game.ram[0x00cfU] != 12U || game.ram[0x0388U] != 0x28U ||
+        game.ram[0x00cfU] != 4U || game.ram[0x0388U] != 0x28U ||
         game.ram[0x0034U] != 0U || game.ram[0x049aU] != 3U) return 1;
 
     /* FirebarSpin uses the low-byte carry to advance the five-bit phase. */
