@@ -111,7 +111,9 @@ static int mysmb_win32_start_game(void)
     mysmb_game_reset(&g_game);
     ZeroMemory(&g_frame, sizeof(g_frame));
     g_game_started = 1U;
-    return 1;
+    /* ColdBoot reaches EndlessLoop.  The next host timing boundary carries
+     * the first shared NMI tick. */
+    return 0;
 }
 
 /* Consume only the two source Start polling boundaries.  No translated game

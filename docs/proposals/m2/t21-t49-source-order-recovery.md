@@ -277,3 +277,14 @@ platform purity and both Windows self-tests. The controlled three-NMI trace
 remains byte-identical across x86/x64 and retains zero differences in OAM,
 CIRAM, palette, audio and all PPU scalars; its remaining RAM bytes have the
 T22/S10 dispositions.
+
+### T22/S11 P3 EndlessLoop timing repair
+
+The composition roots previously performed `ColdBoot` and the first shared NMI
+in one host boundary. They now return immediately after the shared reset and
+perform `mysmb_game_tick` on the next boundary, matching the source's
+`EndlessLoop` wait for the following VBlank. The DOS root smoke verifies two
+initial VBlank boundaries, one ColdBoot-only boundary, then the first NMI and
+presentation boundary. The same Win32 start function returns without ticking
+on its ColdBoot boundary. No host adapter reads or changes translated game
+state.

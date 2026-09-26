@@ -66,6 +66,9 @@ int main(void)
     mysmb_dos16_root_step(&root);
     if (root.game_started != 0U || host.vga_calls != 0U || host.text_calls != 0U) return 1;
     mysmb_dos16_root_step(&root);
-    return root.game_started == 1U && root.game.frame_number == 1U && host.vga_calls == 1U &&
+    if (root.game_started != 1U || root.game.frame_number != 0UL ||
+        host.vga_calls != 0U || host.text_calls != 0U) return 1;
+    mysmb_dos16_root_step(&root);
+    return root.game.frame_number == 1UL && host.vga_calls == 1U &&
            host.text_calls == 1U ? 0 : 1;
 }
