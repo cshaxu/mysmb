@@ -1065,7 +1065,7 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
  * ProcessAreaData. It intentionally stops before JumpEngine: each object
  * family must own its own metatile writes. The result is the original three
  * slot state ($072d/$0730), page selector, and stream offset. */
-/* ROM $4247-$4273 RenderUnderPart.  A foreground object may fill downward,
+/* ROM $9b7d-$9bab RenderUnderPart. A foreground object may fill downward,
  * but the source preserves ledge centers, palette-three objects, and the
  * mushroom stem/top interaction in the metatile staging column. */
 static void mysmb_area_render_under_part(struct mysmb_game *game,
@@ -1084,10 +1084,42 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
              (existing != 0x54U || metatile != 0x50U))) {
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatile;
         }
-        if (row >= 12U || height == 0U) break;
         row++;
-        height--;
-    } while (1);
+        if (row >= 13U) break;
+        height = (mysmb_u8)(game->ram[MYSMB_AREA_OBJECT_HEIGHT] - 1U);
+    } while (height < 0x80U);
+}
+
+/* ROM $9b3d HoleMetatiles through $9b73 NoWhirlP. Cannon and whirlpool
+ * arrays alias the same RAM; whirlpool registration wraps after five slots. */
+static const mysmb_u8 mysmb_area_hole_metatiles[4] = {0x87U, 0U, 0U, 0U};
+
+static void mysmb_area_hole_empty(struct mysmb_game *game, mysmb_u8 slot,
+                                  mysmb_u8 second)
+{
+    mysmb_u8 length, offset, x;
+
+    game->ram[7U] = 12U;
+    length = (mysmb_u8)(second & 0x0fU);
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+        if (game->ram[MYSMB_AREA_TYPE] == 0U) {
+            offset = game->ram[MYSMB_AREA_CANNON_OFFSET];
+            x = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+            game->ram[MYSMB_AREA_CANNON_X + offset] = (mysmb_u8)(x - 16U);
+            game->ram[MYSMB_AREA_CANNON_PAGE + offset] =
+                (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] - (x < 16U ? 1U : 0U));
+            game->ram[MYSMB_AREA_CANNON_Y + offset] =
+                (mysmb_u8)((length + 2U) << 4U);
+            offset++;
+            if (offset >= 5U) offset = 0U;
+            /* StrWOffset. */
+            game->ram[MYSMB_AREA_CANNON_OFFSET] = offset;
+        }
+    }
+    /* NoWhirlP: drawing is independent of the water/initialization gates. */
+    mysmb_area_render_under_part(game, 8U, 15U,
+        mysmb_area_hole_metatiles[game->ram[MYSMB_AREA_TYPE]]);
 }
 
 /* ROM BulletBillCannon -> SetupCannon -> StrCOffset ($9a69-$9aa4).
@@ -1542,7 +1574,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     static const mysmb_u8 pipe[8] = {
         0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
-    static const mysmb_u8 hole[4] = { 0x87U, 0U, 0U, 0U };
     static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
     static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
     static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
@@ -1627,10 +1658,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
      * two question-block rows use selector 6/7 and must not enter the
      * large-object vertical-pipe family. */
     if (row == 12U && kind == 0U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-        /* ROM Hole_Empty: LDX #$08; LDY #$0f; JMP RenderUnderPart. */
-        mysmb_area_render_under_part(game, 8U, 15U, hole[area_type]);
+        mysmb_area_hole_empty(game, slot, second);
         return;
     }
     if (row == 12U && kind == 1U) {

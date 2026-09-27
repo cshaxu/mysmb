@@ -735,3 +735,111 @@ in both tracks: **460 -> 468 / 1,992**. No scoped label remains unfinished;
 table/render/attribute and runtime collaborators retain their receivers
 without credit. Tracker, census and ledger must pass closure gates.
 HoleMetatiles begins the next unadmitted source-order chain.
+
+## T30/S9 admission: hole/whirlpool and UnderPart chain
+
+Exact scope and expected matches, all incoming open: `HoleMetatiles` (4237),
+`Hole_Empty` (4240), `StrWOffset` (4265), `NoWhirlP` (4266),
+`RenderUnderPart` (4273), `DrawThisRow` (4289), `WaitOneRow` (4290),
+`ExitUPartR` (4296). Baseline **468 / 1,992**, expected **8**, maximum
+**476 / 1,992**. Transfer-106 accepts the labels from T18 S4. Entry/exit:
+HoleMetatiles through ExitUPartR, shared owner area.c. Closed S8 precedes;
+ChkLrgObjLength begins the next unadmitted helper chain. Length/attribute/X
+helpers remain collaborators without credit; whirlpool runtime is excluded.
+
+Audit the initial-length carry, water gate, shared cannon/whirlpool slot,
+X-minus-sixteen and page borrow, wrapped (length+2)*16, five-entry index wrap,
+four-entry hole table and UnderPart tail. UnderPart must retain original
+height stores, protected metatiles, cracked-rock/stem exception, byte X
+increment, bottom compare, byte Y decrement and BPL exit. Native tests cover
+all initial/continuing gates, slots, page edges and common render callers.
+Original-ROM ordinary parser routes cover hole registration and rendering;
+existing source-reachable consumers may supply additional UnderPart branch
+coverage without crediting their nodes again. No PC/stack edits are allowed.
+
+Separate x86/x64 tests/builds and DOS16 link, platform purity and three-EXE
+refresh are required. Owner-local NROM and reviewed SMBDIS are restricted
+research inputs; no third-party implementation is imported. Raw traces stay
+under ignored build/m2-t30-s9, with one warmup and two samples per route,
+131072 instructions/frame and 2 MB aggregate budget. S9 owns cleanup after
+review. No completion at admission.
+
+## S9/P1: hole registration and UnderPart ROM proof
+
+| Node | Original control/data semantics and execution evidence |
+| --- | --- |
+| `HoleMetatiles` | Four bytes at `$9b3d` match `$87,0,0,0`; all AreaType indices are consumed. |
+| `Hole_Empty` | `$9b41` decodes row/length; only a newly initialized water hole registers a whirlpool. Left extent subtracts sixteen with borrow into page, size is `(length+2)<<4` modulo 256. Initial/continued, water/nonwater and both borrow branches execute. |
+| `StrWOffset` | `$9b70` stores the incremented index, reset at five. Routes cover each ordinary slot plus shared cannon slot five, which also wraps to zero. |
+| `NoWhirlP` | `$9b73` loads AreaType metatile and enters UnderPart with X eight/Y fifteen regardless of registration gates. All 96 hole routes exercise this tail. |
+| `RenderUnderPart` | `$9b7d` stores height before inspecting each existing metatile; preserves ledge centers and palette-three objects except `$c0`, and preserves `$54` only for incoming `$50`. Native overlap matrix and ordinary mushroom-center ROM route cover these rules. |
+| `DrawThisRow` | `$9b9d` writes only after those guards. Expected hole/stem geometry is required before trace equality is accepted. |
+| `WaitOneRow` | `$9ba0` increments an eight-bit row, tests bottom, reloads/decrements height and repeats only while its sign bit is clear. Normal fill, row-wrap native cases and the original-ROM height `$90` route cover the distinct exits. |
+| `ExitUPartR` | `$9bab` returns on bottom or negative decremented height, retaining the last stored AreaObjectHeight. Both exits have non-vacuous output/height evidence. |
+
+The old hole branch never registered whirlpools and omitted the decoded row
+write. The shared owner now follows the complete registration sequence,
+using the existing aliased cannon/whirlpool RAM. The UnderPart loop formerly
+used a private height decrement and equality-style termination. It now uses
+byte row increment, original bottom comparison, shared height reload and
+signed decrement semantics. This also handles row 255 wrap and a high-bit
+height without turning it into an invented long positive fill.
+
+Ninety-six original-ROM parser routes combine four AreaTypes, six shared
+slots, initial/continued length and records `$a30c`/`$ae18` (column zero/twelve).
+The comparator requires exact whirlpool page/left/size/index, drawing and
+remaining height, then compares all nineteen shared registration bytes,
+thirteen staged tiles and ten parser/control bytes in two samples. Two
+additional ordinary consumer routes use staircase record `$a57f`, controlled
+index 21 (row seven/height `$90`), and mushroom record `$a473` at its center.
+The former must draw only one row; the latter must preserve the cracked-rock
+bottom while drawing the stem. All 98 cases have zero scoped differences.
+Reference coverage requires the original parser and every relevant entry/tail;
+there is no PC, stack, code-byte or return injection.
+
+```text
+reference <ROM> build/m2-t30-s9/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-hole=<id> --pc-coverage=build/m2-t30-s9/pc-<id>.txt
+native build/m2-t30-s9/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-hole=<id>
+python -B test/verify_hole_underpart_routes.py build/m2-t30-s9
+```
+
+Ids zero through 97 retain 196 local traces of 8,830 bytes, total 1,730,680
+bytes below the 2 MB budget, with the existing instruction cap. Raw output
+stays ignored; S9 owns cleanup after review. Recorder-only fixture identifiers
+were widened from a byte to unsigned int because this family crosses 255;
+existing IDs and production game state widths are unchanged. Other RAM
+differences remain explicitly reported, including scratch/stack, VRAM/PPU
+mirrors, actor state and cannon/whirlpool runtime fields. ProcessCannons and
+ProcessWhirlpools are already recorded missing-path debt; neither is admitted
+or credited by this creation/render receipt. No whole-frame claim is made.
+
+Independent native coverage passes 9,216 hole combinations, 21 byte-height/
+row-boundary cases and six mushroom-overlap cases. It checks untouched slots,
+flag storage, page wrap, size wrap, length state, every staged row and height.
+Strict C90 x86/x64 builds pass these plus item-block, cannon, staircase,
+row/column, parser-column, special-object and rope regression. Both Windows
+self-tests exit zero; separate hidden bounded probes confirm responsive game
+windows. DOS16 links an MZ with existing warnings; resource binding and DOS
+playability remain deferred debt. Purity and packaging pass; no platform
+source changed.
+
+Similar-issue sweep confirms the one hole branch now owns registration and
+one common UnderPart owner serves all callers. Cannon/whirlpool aliasing is
+explicit, with respective six/five-slot wrap rules. Formerly certified
+consumer chains were regression-tested without awarding their nodes again.
+Generic length/attribute/position helpers remain the next source-order work.
+
+Artifact SHA-256: `mysmb16.exe`
+`4184CE8304E441AF2314F4A32AD6B3A375DC89200D5863A7AE9ACEACF6A0FA1E`;
+`mysmb32.exe`
+`4D54135598D102C1332C331DDA67C9ABC5BFC427F94BFDA8FC8EE2043EA47218`;
+`mysmb64.exe`
+`0594604B8506EC8C791DE18D573CAC47D5F6A720A606758A3D0EE7D16AEA3EC8`.
+
+## S9 closure
+
+Expected/actual: eight/eight. All eight admission labels are complete in both
+tracks: **468 -> 476 / 1,992**. No scoped label remains unfinished. Runtime
+and generic helper collaborators retain their receivers without credit.
+Tracker, census and ledger must pass closure gates. ChkLrgObjLength begins
+the next unadmitted source-order helper chain.

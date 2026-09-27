@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 468 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 476 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,421 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,413 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **468 / 1,992 (23.49%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **476 / 1,992 (23.90%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (468)
+## Completed matches (476)
 
 | ROM line | Node |
 | ---: | --- |
@@ -489,6 +489,14 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4223 | `DrawQBlk` |
 | 4228 | `GetAreaObjectID` |
 | 4233 | `ExitDecBlock` |
+| 4237 | `HoleMetatiles` |
+| 4240 | `Hole_Empty` |
+| 4265 | `StrWOffset` |
+| 4266 | `NoWhirlP` |
+| 4273 | `RenderUnderPart` |
+| 4289 | `DrawThisRow` |
+| 4290 | `WaitOneRow` |
+| 4296 | `ExitUPartR` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

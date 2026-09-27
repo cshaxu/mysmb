@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S8 is closed at 468 / 1,992; all eight item-block labels have both evidence tracks.**
+**M2 T30 S9 is closed at 476 / 1,992; all eight hole/UnderPart nodes have both evidence tracks.**
 
-Seventy-two original-ROM routes and 1,152 native cases pass; shared-table
-collision/graphics regressions pass on both Windows widths. Three artifacts
-are refreshed. No S is active; HoleMetatiles is next.
+Ninety-eight original-ROM routes and native branch/boundary matrices pass.
+Consumer regressions and three-target builds pass; artifacts are refreshed.
+No S is active; generic length/attribute/position helpers are next.
 
-## M2 T30 S8 Packet
+## M2 T30 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S8, implementation; item-block selection/rendering chain. |
-| Admission And Approval | Owner-approved source-order continuation; exact transfer-105 from M2 T18 S4. |
-| Objective | Translate and prove Hidden1UpBlock through ExitDecBlock; eight exact labels in the proposal in the proposal. |
-| Non-goals | No hole/whirlpool or runtime block collision, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
-| Reference Baseline | 460 / 1,992; eight open labels; expected eight matches; maximum 468 / 1,992. |
+| Identifier Mode | M2 T30 S9, implementation; hole/whirlpool registration and UnderPart rendering chain. |
+| Admission And Approval | Owner-approved source-order continuation; exact transfer-106 from M2 T18 S4. |
+| Objective | Translate and prove HoleMetatiles through ExitUPartR; eight exact labels in the proposal. |
+| Non-goals | No whirlpool activation/player motion or general attribute-helper completion, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
+| Reference Baseline | 468 / 1,992; eight open labels; expected eight matches; maximum 476 / 1,992. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c, area/block_metatile.c and table consumers (data extraction only), parser tests and validation recorders; ledger/progress and three artifacts. |
+| Files And ABI Surface | Shared area.c, parser tests and validation recorders; ledger/progress and three artifacts. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused item-block, jumpspring and block regression tests; x86/x64 and DOS16 builds; purity and package checks. |
-| Expected Markers | Hidden flag branch, coin timer reset, AreaType index adder, shared table, scratch row and DrawRow/UnderPart tail. |
+| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused hole/UnderPart and renderer regression tests; x86/x64 and DOS16 builds; purity and package checks. |
+| Expected Markers | First/continued length, water-only registration, left/page borrow, wrapped length, five-entry ring and exact UnderPart branches/byte exits. |
 | Asset Needs | Refresh assets/mysmb16.exe, mysmb32.exe and mysmb64.exe per P; DOS MZ build is not runtime proof. |
 | Reporting Requirements | Every label disposition, both evidence tracks, actual count, artifact hashes and exact transfers. |
 | Stop Conditions | Unmatched source branch/data/write, unadmitted dependency, ROM mismatch or platform gameplay. |
 | Exit Criteria | All eight nodes proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
 | Original Owner Request | Full original-ROM behavior; source order; shared C90 logic across all targets. |
-| Similar-Issue Sweep | All item-block selection/rendering/ID/fixed-Y writers, allocator consumers and platform trees. |
+| Similar-Issue Sweep | All hole/whirlpool registration and UnderPart rendering/ID/fixed-Y writers, allocator consumers and platform trees. |
 
 ## Retained M2 T15 summary
 

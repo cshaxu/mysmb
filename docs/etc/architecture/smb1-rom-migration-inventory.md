@@ -601,14 +601,14 @@ The labels and branches behind every line remain open until individually bound b
 | 4223 | `DrawQBlk` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
 | 4228 | `GetAreaObjectID` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
 | 4233 | `ExitDecBlock` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
-| 4237 | `HoleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holemetatiles) |
-| 4240 | `Hole_Empty` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_empty) |
-| 4265 | `StrWOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strwoffset) |
-| 4266 | `NoWhirlP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nowhirlp) |
-| 4273 | `RenderUnderPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderunderpart) |
-| 4289 | `DrawThisRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawthisrow) |
-| 4290 | `WaitOneRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waitonerow) |
-| 4296 | `ExitUPartR` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitupartr) |
+| 4237 | `HoleMetatiles` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4240 | `Hole_Empty` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4265 | `StrWOffset` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4266 | `NoWhirlP` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4273 | `RenderUnderPart` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4289 | `DrawThisRow` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4290 | `WaitOneRow` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
+| 4296 | `ExitUPartR` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
 | 4300 | `ChkLrgObjLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjlength) |
 | 4303 | `ChkLrgObjFixedLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjfixedlength) |
 | 4310 | `LenSet` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lenset) |
