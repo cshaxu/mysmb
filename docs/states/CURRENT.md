@@ -2,12 +2,12 @@
 
 ## Current Work
 
-**M2 T30 S2 closed at 435 / 1,992. M2 T30 S3 is admitted for the seven-label `C_ObjectRow -> ColObj` castle-column chain.**
+**M2 T30 S3 is closed at 442 / 1,992: all seven labels in `C_ObjectRow -> ColObj` have source-audit and executed-route evidence.**
 
-S3/P1 implements the chain and corrects EmptyBlock's metatile and scratch-row
-write. Focused x86/x64 parser tests and adapter self-tests pass; DOS16 links.
-Three local artifacts are refreshed. Original-ROM executed-route comparison
-is pending, so all seven scope nodes remain open and the count stays 435.
+Six original-ROM parser routes match the chain-owned output; all seven nodes
+are recorded as complete. Focused x86/x64 tests and self-tests pass; DOS16
+links but remains subject to the documented resource-binding limitation.
+`SolidBlockMetatiles` begins the next, unadmitted source-order family.
 
 S3 receives exactly `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`,
 `AxeObj`, `ChainObj`, `EmptyBlock`, and `ColObj` from T18 S4 through its
@@ -20,7 +20,7 @@ it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S3 is the sole active implementation packet.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S3 is the latest closed implementation packet; no later S is admitted.**
 
 ## M2 T30 S3 Packet
 

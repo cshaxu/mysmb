@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../test/castle_column_fixture.h"
+
 #include "core/driver.h"
 #include "core/machine.h"
 
@@ -1304,6 +1306,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-axe") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 95u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-chain") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 96u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-bridge") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 97u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-empty") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 98u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-bridge-mid") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 99u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t30-column-bridge-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 100u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t22-flagpole") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 93u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t22-flagpole-score") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 94u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-castle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 90u; continue; }
@@ -1566,6 +1574,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 95u && t26_fixture <= 100u)
+                    mysmb_castle_column_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 95u));
                 else if (t26_fixture == 93u)
                     mysmb_reference_apply_t22_flagpole_fixture(driver->machine->ram);
                 else if (t26_fixture == 94u)

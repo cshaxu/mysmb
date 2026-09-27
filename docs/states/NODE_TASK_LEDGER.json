@@ -75769,9 +75769,17 @@
         "ColObj"
       ],
       "maximumComplete": 442,
-      "actualMatches": [],
+      "actualMatches": [
+        "C_ObjectRow",
+        "C_ObjectMetatile",
+        "CastleBridgeObj",
+        "AxeObj",
+        "ChainObj",
+        "EmptyBlock",
+        "ColObj"
+      ],
       "evidence": "docs/proposals/m2/t30-area-object-rendering.md",
-      "state": "admitted-castle-column-chain"
+      "state": "closed-castle-column-chain-442"
     }
   ]
 }

@@ -568,13 +568,13 @@ The labels and branches behind every line remain open until individually bound b
 | 4034 | `DrawRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
 | 4039 | `CoinMetatileData` | M2 T30 S2 shared `area.c` selector | ROM-match complete | [T30 S2/P1 coin-selector evidence](../../proposals/m2/t30-area-object-rendering.md#s2p1-coin-selector-and-three-target-delivery) |
 | 4042 | `RowOfCoins` | M2 T30 S2 shared `area.c` selector | ROM-match complete | [T30 S2/P1 coin-selector evidence](../../proposals/m2/t30-area-object-rendering.md#s2p1-coin-selector-and-three-target-delivery) |
-| 4049 | `C_ObjectRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectrow) |
-| 4052 | `C_ObjectMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectmetatile) |
-| 4055 | `CastleBridgeObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlebridgeobj) |
-| 4060 | `AxeObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-axeobj) |
-| 4064 | `ChainObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chainobj) |
-| 4070 | `EmptyBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptyblock) |
-| 4074 | `ColObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colobj) |
+| 4049 | `C_ObjectRow` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4052 | `C_ObjectMetatile` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4055 | `CastleBridgeObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4060 | `AxeObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4064 | `ChainObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4070 | `EmptyBlock` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
+| 4074 | `ColObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
 | 4079 | `SolidBlockMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solidblockmetatiles) |
 | 4082 | `BrickMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickmetatiles) |
 | 4086 | `RowOfBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofbricks) |

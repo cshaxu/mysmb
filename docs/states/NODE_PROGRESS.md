@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 435 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 442 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,454 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,447 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **435 / 1,992 (21.84%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **442 / 1,992 (22.19%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,8 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (435)
-
+## Completed matches (442)
 
 | ROM line | Node |
 | ---: | --- |
@@ -441,13 +440,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3876 | `WarpPipe` |
 | 3900 | `DrawPipe` |
 | 3911 | `GetPipeHeight` |
-| 14535 | `PlayerOffscreenChk` |
-| 14547 | `PROfsLoop` |
-| 14551 | `NPROffscr` |
-
-Each completion links its branch/write, ROM probe and route evidence in the
-[77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
-
 | 3921 | `FindEmptyEnemySlot` |
 | 3923 | `EmptyChkLoop` |
 | 3929 | `ExitEmptyChk` |
@@ -464,6 +456,13 @@ Each completion links its branch/write, ROM probe and route evidence in the
 | 4034 | `DrawRope` |
 | 4039 | `CoinMetatileData` |
 | 4042 | `RowOfCoins` |
+| 4049 | `C_ObjectRow` |
+| 4052 | `C_ObjectMetatile` |
+| 4055 | `CastleBridgeObj` |
+| 4060 | `AxeObj` |
+| 4064 | `ChainObj` |
+| 4070 | `EmptyBlock` |
+| 4074 | `ColObj` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
@@ -471,6 +470,9 @@ Each completion links its branch/write, ROM probe and route evidence in the
 | 6636 | `GiveFPScr` |
 | 6643 | `FPGfx` |
 | 6646 | `ExitFlagP` |
+| 14535 | `PlayerOffscreenChk` |
+| 14547 | `PROfsLoop` |
+| 14551 | `NPROffscr` |
 
 ## Accounting audit, 2026-09-26
 

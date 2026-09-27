@@ -160,3 +160,67 @@ The package checker accepted DOS MZ, x86 PE and x64 PE headers. Platform
 purity and documentation governance passed. CMake configuration remained
 pending in compiler ABI detection; the recorded tests were direct compiler
 builds and executions, not CTest results.
+
+## S3/P2: executed original-ROM chain evidence
+
+The local owner ROM is the existing reviewed SMB1 NROM. It is used only as
+an executable reference and immutable area-data input; no redistribution
+permission is assumed. Trace containment is `build/m2-t30-s3`: six scenarios,
+600 warmup NMIs and two recorded NMIs each, with the recorder's existing
+131072-instruction per-frame cap. Each trace is exactly 8,830 bytes. The S3
+executor owns cleanup after evidence review; only neutral summaries are
+tracked. PC coverage is aggregate addresses/counts, never instruction bytes.
+
+`test/castle_column_fixture.h` supplies identical source-RAM preconditions
+to both recorders at an ordinary NMI boundary. The stream pointer selects
+`L_CastleArea1` at `$a1af`; real object offsets `$5a/$54/$52/$10` reach axe,
+chain, bridge and empty-block records. No PC, stack, ROM byte or return
+address is injected. Middle/end bridge cases retain the real slot-two object
+at offset `$52`, with remaining lengths five/zero and columns seven/twelve.
+
+Reproduction uses the normal recorder command shapes below; substitute the
+existing owner-local ROM and freshly built recorder paths. Run each fixture
+suffix `axe`, `chain`, `bridge`, `empty`, `bridge-mid`, `bridge-end`:
+
+```text
+reference <ROM> build/m2-t30-s3/rom-<suffix>.msfr 2 0 --warmup=600 --fixture=t30-column-<suffix> --pc-coverage=build/m2-t30-s3/pc-<suffix>.txt 120:8,121:0
+native build/m2-t30-s3/native-<suffix>.msfn 2 120 121 --warmup=600 --fixture=t30-column-<suffix>
+python test/verify_castle_column_routes.py build/m2-t30-s3
+```
+
+The comparison validates trace format/count, original-PC entry hits,
+non-vacuous first-frame metatiles and lengths, and both frames' complete
+staging column `$06a1-$06ad`, parser/slot/height `$072c-$0735`, and VRAM
+control `$0773`. All six routes have zero differences in these fields.
+All reach `$9508 ProcessAreaData` through the ordinary GameEngine route.
+
+| Node | Source semantics and executed evidence | Disposition |
+| --- | --- | --- |
+| `C_ObjectRow` | Owner-ROM bytes at `$99fb` equal the three C rows; axe/chain/bridge select indices zero/one/two and rows six/seven/eight. | ROM-match complete |
+| `C_ObjectMetatile` | Owner-ROM bytes at `$99fe` equal the paired C metatiles; all three indices have observed parser results. | ROM-match complete |
+| `CastleBridgeObj` | `$9a01` runs in start/middle/end routes; negative length initializes twelve, positive five and zero are preserved before parser decrement to eleven/four/255. | ROM-match complete |
+| `AxeObj` | `$9a09` writes control eight before `$9a0e`; output row six/metatile `$c5` and control eight agree. | ROM-match complete |
+| `ChainObj` | `$9a0e` reads decoder `$00`, indexes both tables minus two and tails to `$9a20`; all three selectors execute. | ROM-match complete |
+| `EmptyBlock` | `$9a19` calls the attribute helper, loads row from `$07`, selects `$c4`, and falls into ColObj; real empty-block route agrees and focused tests verify scratch-row write and overwrite rules. | ROM-match complete |
+| `ColObj` | `$9a20` supplies zero height then tails to RenderUnderPart for every route; all thirteen staging rows and resulting height agree. | ROM-match complete |
+
+This proves the scoped chain, not full-frame RAM equivalence. The comparison
+also reports residual addresses in `$00-$07`, `$eb`, and the 6502 stack.
+NMI-end scratch is overwritten by later, separately owned routines; those
+differences are not hidden by an assertion of whole-RAM equality. Stack
+storage is not a native C calling convention. Existing unfinished parser
+collaborators retain custody and receive no credit here. M2 remains open.
+
+P2 modifies validation only. The P1 three-target builds remain the identical
+production source baseline; refresh the three delivery files from those
+verified builds and recheck their hashes and adapter self-tests. The native
+recorders themselves were rebuilt, and the reference recorder links the
+local validation-only MyNES libraries, never the product.
+
+## S3 closure
+
+Expected and actual matches are the same seven labels listed above. The
+result is **442 / 1,992**, with no unfinished label retained by S3. The
+source audit, six executed ROM routes, focused x86/x64 tests, DOS16 link,
+platform-purity and package records are distinct evidence tracks. The next
+source-order family begins at `SolidBlockMetatiles`; it is not yet admitted.
