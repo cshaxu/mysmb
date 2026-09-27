@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S27 Packet
+## M2 T22 S28 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S27, Implementation; independent sprite-shuffle equivalence review. |
-| Admission And Approval | Owner-approved source-order recovery; T22/S20 transferred its six-node source contract. |
-| Objective | Independently compare ROM shuffle outputs and control flow with the shared C owner. |
-| Non-goals | Sprite-zero split, mode dispatch, graphics writers and platform code. |
-| Reference Baseline | 35 / 1,992 complete; six incomplete labels; expected all six; maximum 41 / 1,992. |
+| Identifier Mode | M2 T22 S28, Implementation; independent operation-mode dispatch equivalence proof. |
+| Admission And Approval | Owner-approved source-order recovery; T22/S21 transferred its source-contract node. |
+| Objective | Independently prove `OperModeExecutionTree` against controlled original-ROM selector outputs and shared C dispatch. |
+| Non-goals | Operation-mode leaf semantics, parent NMI credit, platform behavior, input mapping, OAM, timer, pause, or graphics work. |
+| Reference Baseline | 41 / 1,992 complete; one incomplete scoped label; expected one match; maximum 42 / 1,992. |
 | Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared frame root, shuffle smoke, ignored ROM probes and node records. |
+| Files And ABI Surface | Shared frame root, existing mode leaves and build-only ROM/reference probes. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Controlled ROM NMI shuffle samples; focused x86/x64 tests, DOS16 build, purity and artifacts. |
-| Expected Markers | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`. |
-| Asset Needs | ROM/listing, probes and logs remain below `build`. |
-| Reporting Requirements | Record both verification tracks and transfer failed labels. |
-| Stop Conditions | Stop if evidence enters another NMI child or platform scope. |
-| Exit Criteria | Independent proof or specific transfer for all labels. |
-| Original Owner Request | Execute original nodes in source order with strict parity. |
-| Similar-Issue Sweep | Check 15 entries, threshold, carry, control wrap and all three misc groups. |
+| Verification | Controlled ROM mode selector probes; focused mode smoke, platform-purity, x86/x64 builds, DOS16 link and three artifacts. |
+| Expected Markers | `OperModeExecutionTree`. |
+| Asset Needs | Owner-local ROM/listing only; every probe, trace and generated input stays below `build`. |
+| Reporting Requirements | Record both verification tracks and update the canonical inventory, progress and ledger result. |
+| Stop Conditions | Stop if proof requires changing leaf behavior or platform code. |
+| Exit Criteria | All four selectors, selected call boundary and shared-C state/output evidence match, or the node transfers with a specific failed track. |
+| Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
+| Similar-Issue Sweep | Check selectors 0, 1, 2 and 3, task-vector ownership, out-of-range behavior and platform branches. |
 
 ## Recent M4 Closures
 

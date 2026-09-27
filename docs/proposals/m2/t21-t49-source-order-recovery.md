@@ -581,3 +581,23 @@ structurally/self-test revalidated; SHA-256 values are
 `F223DCF2A5F164D5DF9E056FFD25BCA58FE35F50AF666D9BC5B4701FA960379B`,
 and `19430DAF99CCFD461A8E04F602F009CAEAE3EBF9E68CB0357151D19DC4DE736A`
 for DOS16, Win32 x86 and Win32 x64 respectively.
+
+
+## T22/S21 operation-mode dispatch source contract and S28 transfer
+
+S21 closes at **41 / 1,992** with no node credit. ROM `OperModeExecutionTree`
+loads `$0770`, invokes `JumpEngine`, and selects exactly one inline vector: 0
+`TitleScreenMode`, 1 `GameMode`, 2 `VictoryMode`, or 3 `GameOverMode`. The
+source task selectors are then owned by their corresponding leaves. The audit
+found that the shared frame root called the title menu helper before this parent
+selector and relied on its own guard for non-title frames. `frame_root.c` now
+selects mode first and calls that helper only for the source title vector's task
+3 leaf; task 0, 1 and 2 retain their existing InitializeGame, ScreenRoutines
+and PrimaryGameSetup paths. No platform source changed.
+
+The one label transfers to **T22/S28** for independent controlled-ROM proof.
+S28 starts at **41 / 1,992**, scopes only `OperModeExecutionTree`, forecasts
+that one match, and has a maximum of **42 / 1,992**. Its ROM track must prove
+all four selector values and the selected call boundary; its operational track
+is the mode smoke, x86/x64 builds, DOS16 link, platform-purity and three target
+artifacts.

@@ -891,6 +891,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted T22/S20 sprite-shuffle source contract for independent controlled-ROM equivalence review."
+        },
+        {
+          "id": "M2 T22 S28",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "owner-approved-independent-proof"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner-approved independent proof receiver for T22/S21 operation-mode dispatch."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -5550,8 +5562,8 @@
     {
       "label": "OperModeExecutionTree",
       "line": 954,
-      "receiver": "M2 T22 S21",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI operation-mode dispatch root from T24/S2.",
+      "receiver": "M2 T22 S28",
+      "receivingBasis": "T22/S21 source-contract closure transferred to the owner-approved independent proof receiver.",
       "futurePackage": null,
       "history": [
         {
@@ -5580,6 +5592,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S21",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S28",
+          "relation": "accepted independent proof receiver after S21 source-contract closure",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -55247,6 +55265,17 @@
       ],
       "acceptedBy": "T22/S27 accepts the S20 sprite-shuffle source contract for independent controlled-ROM equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-039-t22-s21-to-s28",
+      "type": "transfer",
+      "from": "M2 T22 S21",
+      "to": "M2 T22 S28",
+      "nodes": [
+        "OperModeExecutionTree"
+      ],
+      "acceptedBy": "Owner-approved independent proof follows the S21 source-contract repair.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -60253,6 +60282,120 @@
       ],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
       "state": "closed-complete-sprite-shuffle-equivalence"
+    },
+    {
+      "subtask": "M2 T22 S21",
+      "kind": "implementation",
+      "scope": [
+        "OperModeExecutionTree"
+      ],
+      "baseline": 41,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 41,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-operation-mode-dispatch-contract-transferred"
+    },
+    {
+      "subtask": "M2 T22 S28",
+      "kind": "implementation",
+      "scope": [
+        "OperModeExecutionTree"
+      ],
+      "baseline": 41,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "OperModeExecutionTree"
+      ],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-operation-mode-dispatch-equivalence-proof"
     }
   ]
 }
