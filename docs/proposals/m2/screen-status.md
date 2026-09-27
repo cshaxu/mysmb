@@ -49,8 +49,8 @@ The 67 exact labels below remain ordered by original source. Shared game owners 
 | 1584 | `GameOverInter` | open | S2 |
 | 1589 | `NoInter` | open | S2 |
 | 1595 | `AreaParserTaskControl` | open; T29 dependency | S3 |
-| 1597 | `TaskLoop` | open | S2 |
-| 1603 | `OutputCol` | open | S2 |
+| 1597 | `TaskLoop` | open; T29 dependency | S3 |
+| 1603 | `OutputCol` | open; T29 dependency | S3 |
 | 1612 | `DrawTitleScreen` | open | S2 |
 | 1624 | `OutputTScr` | open | S2 |
 | 1629 | `ChkHiByte` | open | S2 |
