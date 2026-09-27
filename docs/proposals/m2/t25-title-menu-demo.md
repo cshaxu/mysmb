@@ -482,3 +482,11 @@ Select entry was exercised. The 18 remaining labels transfer to S12.
 
 S12 scopes only `SelectBLogic`, with baseline **82 / 1,992**, expected
 `SelectBLogic`, and maximum **83 / 1,992**.
+
+## S12 closure: SelectBLogic entry
+
+S12 completes exactly `SelectBLogic`, reaching **83 / 1,992**. Controlled Select reaches `$8276` through `$827d`; 200-frame ROM/x86/x64 output is identical. The 17 remaining labels transfer to S13.
+
+## S13 admission: IncWorldSel branch entry
+
+S13 scopes only `IncWorldSel`, baseline **83 / 1,992**, expected `IncWorldSel`, maximum **84 / 1,992**.
