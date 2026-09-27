@@ -68,7 +68,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `WriteTopStatusLine` — ROM line 1517; C owner/evidence pending
   - [ ] `WriteBottomStatusLine` — ROM line 1524; C owner/evidence pending
   - [ ] `AreaParserTaskControl` — ROM line 1595; C owner/evidence pending
-  - [ ] `WriteGameText` — ROM line 1719; C owner/evidence pending
+  - [x] `WriteGameText` — ROM line 1719; T27 S2 P21 controlled ROM-entry proof
 - [ ] **Area parser, metatile/attribute rendering and scrolling**
   - [ ] `RenderAreaGraphics` — ROM line 1825; C owner/evidence pending
   - [ ] `RenderAttributeTables` — ROM line 1920; C owner/evidence pending
@@ -283,22 +283,22 @@ The labels and branches behind every line remain open until individually bound b
 | 1682 | `OnePlayerTimeUp` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1686 | `TwoPlayerGameOver` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1688 | `OnePlayerGameOver` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1693 | `WarpZoneWelcome` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzonewelcome) |
+| 1693 | `WarpZoneWelcome` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
 | 1704 | `LuigiName` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1707 | `WarpZoneNumbers` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzonenumbers) |
+| 1707 | `WarpZoneNumbers` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
 | 1712 | `GameTextOffsets` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1719 | `WriteGameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writegametext) |
+| 1719 | `WriteGameText` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
 | 1728 | `Chk2Players` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1731 | `LdGameText` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1733 | `GameTextLoop` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1740 | `EndGameText` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endgametext) |
+| 1740 | `EndGameText` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
 | 1756 | `PutLives` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1765 | `CheckPlayerName` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1775 | `ChkLuigi` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1778 | `NameLoop` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1782 | `ExitChkName` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1784 | `PrintWarpZoneNumbers` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printwarpzonenumbers) |
-| 1790 | `WarpNumLoop` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpnumloop) |
+| 1784 | `PrintWarpZoneNumbers` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
+| 1790 | `WarpNumLoop` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure) |
 | 1804 | `ResetSpritesAndScreenTimer` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1809 | `ResetScreenTimer` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1813 | `NoReset` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |

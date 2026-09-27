@@ -591,6 +591,21 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 34U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-warp-text4") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 35U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-warp-text5") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 36U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-warp-text6") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 37U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -607,7 +622,8 @@ int main(int argument_count, char **arguments)
     }
     total_frames = parsed_frames + warmup_frames;
     if (total_frames < parsed_frames || total_frames > 4200UL ||
-        start_frame >= release_frame || release_frame > total_frames) return 64;
+        start_frame >= release_frame || release_frame > total_frames ||
+        (t26_fixture >= 35U && parsed_frames != 1UL)) return 64;
     frames = (mysmb_u32)parsed_frames;
     output = fopen(arguments[1], "wb");
     if (output == 0) return 65;
@@ -683,6 +699,22 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 19U && t26_fixture <= 34U)
                 mysmb_recorder_apply_t27_screen_fixture(&game,
                     (mysmb_u8)(t26_fixture - 19U));
+            else if (t26_fixture >= 35U && t26_fixture <= 37U) {
+                game.ram[0x0300U] = 0U;
+                game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
+                if (mysmb_area_queue_game_text(&game,
+                                               (mysmb_u8)(t26_fixture - 31U)) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                fclose(output);
+                return 0;
+            }
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

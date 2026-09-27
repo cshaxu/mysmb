@@ -541,6 +541,42 @@ T18 S4 chain.  Consequently the six T27 Warp leaves retain their existing
 custody and no credit changes in this P; their concrete prerequisite is now
 recorded accurately for the later accepted transfer.
 
+## S2/P21: controlled Warp text-entry equivalence and closure
+
+The ownership correction exposed a narrower admissible proof: the six T27
+nodes begin at the original `WriteGameText` entry and do not need the parser
+caller itself to prove their own branch, data and write behavior.  Three
+recorder-only controlled entries start the ROM at `$8808 WriteGameText` with
+selectors `$04`, `$05`, and `$06`; each returns through the original
+`EndGameText -> PrintWarpZoneNumbers -> WarpNumLoop -> SetVRAMOffset` path.
+The native recorder invokes the same shared `area.c` entry with the same
+selector and precondition.  All three compare with zero differing frames in
+work RAM `$0300-$07ff`, CIRAM, palette, OAM, audio and PPU scalars.
+
+Together, the selector set proves `WarpZoneWelcome`, `WarpZoneNumbers`,
+`WriteGameText`, `EndGameText`, `PrintWarpZoneNumbers`, and `WarpNumLoop`:
+the ROM stream/table bytes, selector-four boundary, three four-byte-spaced
+number writes, terminator, and `$0300=$2c` successor are all exercised.  The
+parser owner T18 S4 remains responsible for `ScrollLockObject_Warp`, `WarpNum`
+and its call-site state; this P does not credit or alter it.
+
+The x86/x64 screen-status, local-area and platform-purity CTests pass; both
+Win32 products pass `--self-test`; and the shared product links under OpenNT
+DOS16 with only established C4761 warnings.  The refreshed artifact hashes
+are `426E82B0FD0065BACD6DC54F7A0E51DCB9A3FA5C6AC2602782F83691DE850E94`,
+`B5F6F8C178BBDCBDFAA019A7DFDBD6350A843ECB737A188E26A1CD9DBBE12D7B`, and
+`2606478C41C3122B2500E6465FE570C6C6B2292608D9C65A468846217624E3EE` for
+DOS16, Win32 x86 and Win32 x64.  Raw paired records remain ignored under
+`build/m2-t27-s2/p21-warp-direct/`.
+
+S2 therefore closes at **163 / 1,992**: all 43 received labels became
+ROM-match complete.  S3 is admitted at that same baseline for the four
+registered integration nodes `ScreenRoutines`, `AreaParserTaskControl`,
+`TaskLoop`, and `OutputCol`.  Its expected completion set is empty because
+the current T18 S4 parser owner has not supplied the required independent
+parser-chain proof; S3 may audit its own dispatch boundaries but must not
+credit or replace parser behavior.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -575,22 +611,22 @@ both tracks are accepted at S2 closure.
 | `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture and P14 direct source-byte matrix. Pending final chain matrix. |
 | `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; both current-player Game Over routes and P14 full-byte matrix. Pending final chain matrix. |
 | `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture and P14 direct source-byte matrix. Pending final chain matrix. |
-| `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; P15 replaces synthetic stream with original W1-2 parser data. Pending controlled original ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `WarpZoneWelcome` | selector four source offset in `area.c` | ROM-match complete: P21 selector 4/5/6 direct original-entry comparison covers the ROM stream and its fixed output bytes. |
 | `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; P14 direct five-byte matrix plus two-player routes. Pending final chain matrix. |
-| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte matrix and P15 original W1-2 selector-five parser route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | ROM-match complete: P21 selector 4/5/6 original-entry comparison covers all three source table rows. |
 | `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; P12 table audit and P14 every-selector matrix. Pending final chain matrix. |
-| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix, existing screen routes, and P15 original W1-2 parser data. Pending source-reachable Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `WriteGameText` | `area.c` text writer | ROM-match complete: P21 enters original `$8808` with selectors 4/5/6 and compares the controlled shared-C call. |
 | `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both two-player routes and P14 selector matrix. Pending final chain matrix. |
 | `LdGameText` | `area.c` PRG source selection | Mapped; P14 every-selector direct source-byte matrix. Pending final chain matrix. |
 | `GameTextLoop` | `area.c` terminator-copy loop | Mapped; P14 derives and checks every stream length and terminator. Pending final chain matrix. |
-| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix and P15 parser binding. Pending source-reachable Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `EndGameText` | `area.c` terminator/tail dispatch | ROM-match complete: P21 proves the source terminator, restored selector and Warp-tail branch. |
 | `PutLives` | `area.c` lives/world/level patch | Mapped; P14 crown/world/level matrix and ordinary `PlayerInter` route. Pending final chain matrix. |
 | `CheckPlayerName` | `area.c` player-name selection | Mapped; P14 matrix and both Time Up/Game Over routes. Pending final chain matrix. |
 | `ChkLuigi` | `area.c` current-player branch | Mapped; P14 both current-player values and two-player routes. Pending final chain matrix. |
 | `NameLoop` | `area.c` five-byte Luigi replacement | Corrected `$07ed-$07f1` binding; P14 direct-byte matrix. Pending final chain matrix. |
 | `ExitChkName` | `area.c` name tail exit | Mapped; P14 complete selector matrix. Pending final chain matrix. |
-| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
-| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | ROM-match complete: P21 covers selector subtraction/shift and `SetVRAMOffset`. |
+| `WarpNumLoop` | `area.c` three spaced writes | ROM-match complete: P21 covers the three four-byte-spaced table writes. |
 | `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; task-five and task-seven pending/expired zero-difference routes. Pending common-tail matrix. |
 | `ResetScreenTimer` | `game.c` OutputInter and tasks 5/7 | Mapped; Time Up and intermediate routes. Pending common-tail matrix. |
 | `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; task-five and task-seven pending zero-difference routes. Pending common-tail matrix. |

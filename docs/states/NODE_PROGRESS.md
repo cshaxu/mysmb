@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 157 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore. |
+| ROM-match complete | 163 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintWarpZoneNumbers, WarpNumLoop. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,727 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,721 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **157 / 1,992 (7.88%)**. Initial deep verification covered
+Verified conformance is **163 / 1,992 (8.18%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
 owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
 77-node accounting. With three additional confirmed missing scheduler/activation entries, the
-explicitly dispositioned cohort is 170, of which 151 remain incomplete. These sets are disjoint in the current ledger.
+explicitly dispositioned cohort is 170, of which 145 remain incomplete. These sets are disjoint in the current ledger.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -162,7 +162,7 @@ The following 32 T26 labels have source branch and operational evidence in the
 | 1358 | `FloateyPart` |
 | 1363 | `SetupNumSpr` |
 
-The following 37 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) and [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion).
+The following 43 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition), [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion), and [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure).
 
 | 1517 | `WriteTopStatusLine` |
 | 1524 | `WriteBottomStatusLine` |
@@ -188,16 +188,22 @@ The following 37 T27 S2 labels have the recorded source/data and controlled-rout
 | 1682 | `OnePlayerTimeUp` |
 | 1686 | `TwoPlayerGameOver` |
 | 1688 | `OnePlayerGameOver` |
+| 1693 | `WarpZoneWelcome` |
 | 1704 | `LuigiName` |
+| 1707 | `WarpZoneNumbers` |
 | 1712 | `GameTextOffsets` |
+| 1719 | `WriteGameText` |
 | 1728 | `Chk2Players` |
 | 1731 | `LdGameText` |
 | 1733 | `GameTextLoop` |
+| 1740 | `EndGameText` |
 | 1756 | `PutLives` |
 | 1765 | `CheckPlayerName` |
 | 1775 | `ChkLuigi` |
 | 1778 | `NameLoop` |
 | 1782 | `ExitChkName` |
+| 1784 | `PrintWarpZoneNumbers` |
+| 1790 | `WarpNumLoop` |
 | 1804 | `ResetSpritesAndScreenTimer` |
 | 1809 | `ResetScreenTimer` |
 | 1813 | `NoReset` |

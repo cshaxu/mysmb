@@ -476,6 +476,7 @@ int main(int argument_count, char **arguments)
     const char *coverage_path;
     struct mysmb_reference_ram_write ram_write;
     lib_u8 t26_fixture;
+    lib_bool direct_warp_text;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
@@ -492,6 +493,7 @@ int main(int argument_count, char **arguments)
     coverage_path = NULL;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
+    direct_warp_text = LIB_FALSE;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
@@ -669,6 +671,21 @@ int main(int argument_count, char **arguments)
             t26_fixture = 34u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t27-warp-text4") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 35u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t27-warp-text5") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 36u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t27-warp-text6") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 37u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -682,7 +699,8 @@ int main(int argument_count, char **arguments)
         }
     }
     total_frames = requested_frames + warmup_frames;
-    if (total_frames < requested_frames || total_frames > 4200u) return 64;
+    if (total_frames < requested_frames || total_frames > 4200u ||
+        (t26_fixture >= 35u && requested_frames != 1u)) return 64;
     output = fopen(arguments[2], "wb");
     if (output == LIB_NULL) return 65;
     if (!mysmb_reference_write(output, magic, sizeof(magic)) ||
@@ -714,6 +732,12 @@ int main(int argument_count, char **arguments)
            step_count < total_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
         core_run_result result;
         lib_u16 before_pc;
+
+        if (direct_warp_text && driver->machine->pc == 0x8001u) {
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
+        }
 
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
             /* Sample before RTI.  Stepping the RTI below clears this program
@@ -789,6 +813,16 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 19u && t26_fixture <= 34u)
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 19u));
+                else if (t26_fixture >= 35u && t26_fixture <= 37u) {
+                    driver->machine->ram[0x0300u] = 0u;
+                    driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->a = (lib_u8)(t26_fixture - 31u);
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x8808u;
+                    direct_warp_text = LIB_TRUE;
+                }
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;

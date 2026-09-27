@@ -67,27 +67,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T27 S2 Packet
+## M2 T27 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T27 S2, implementation; contiguous remaining screen/status/text chain. |
-| Admission And Approval | Owner-approved source-order continuation; S1 closed 20 leaves; S2 received 45 contiguous labels and S3 accepted the two external-dependency integration roots. |
-| Objective | Establish ROM-equivalent `WriteTopStatusLine -> NoReset` in the shared game owner. |
-| Non-goals | No T18 S4 parser implementation, full ScreenRoutines dispatch credit, host UI rule, platform gameplay logic or unrelated repair. |
-| Reference Baseline | 120 / 1,992 complete; 43 incoming open labels; expected 43 matches; `AreaParserTaskControl` is retained for S3 integration with the current T18 S4 parser owner; maximum 163 / 1,992. |
+| Identifier Mode | M2 T27 S3, implementation audit; four-node screen-dispatch/parser integration boundary. |
+| Admission And Approval | Owner-approved continuation after S2 closed 43/43 labels at 163 / 1,992; S3 was already the registered receiver for these four integration labels. |
+| Objective | Compare the `ScreenRoutines -> AreaParserTaskControl -> TaskLoop -> OutputCol` integration boundary against the ROM without absorbing parser behavior. |
+| Non-goals | No T18 S4 parser implementation or credit, no full parser route, host UI rule, platform gameplay logic or unrelated repair. |
+| Reference Baseline | 163 / 1,992 complete; four incoming open labels; expected zero matches until the T18 S4 parser chain is independently proven; maximum 163 / 1,992. |
 | Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
-| Files And ABI Surface | Shared screen/status/text game owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared screen dispatcher/area integration owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source comparison for ROM `$8565-$88ad`; controlled status/text/title/warp ROM routes; focused tests; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
-| Expected Markers | status text selection, timer branches, intermediate task transitions, title/text data loops, name/warp branches and screen timer reset. |
+| Verification | Source comparison for ROM `$8565`, `$879f-$87a6`; controlled dispatch-boundary route only when its parser dependency is sound; focused tests; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
+| Expected Markers | ScreenRoutines table selection, `DisableScreenFlag` set, parser task loop and column-set exit boundary. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Delivery Profile | One contiguous chain; individual labels remain separately accounted in inventory and ledger. From S2 closure onward, any T27 receipt uses the proposal's compact source-order chain table: both evidence tracks and one three-target package occur in the same chain S, with a split only at a named dependency, owner boundary, or different ROM route. |
-| Reporting Requirements | Record each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
-| Stop Conditions | Stop on nonmatching source branch, cross-owner dependency, trace alignment error, source-policy breach or platform gameplay logic. |
-| Exit Criteria | Every local chain label has both evidence tracks; `AreaParserTaskControl` transfers to S3 uncredited until the T18 S4 parser dependency is proved. |
+| Delivery Profile | One bounded integration audit. It may establish only local dispatch/control boundaries and has no completion credit until the named parser dependency is resolved. |
+| Reporting Requirements | Record each node's control/read/write comparison, the dependency boundary, operational result, completed/deferred labels and exact before/after count. |
+| Stop Conditions | Stop on nonmatching source branch, unresolved T18 S4 parser boundary, trace alignment error, source-policy breach or platform gameplay logic. |
+| Exit Criteria | All four labels have both tracks, after the independent T18 S4 parser chain is complete; otherwise transfer only to an accepted successor. |
 | Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery. |
-| Similar-Issue Sweep | Review game/platform sources for screen/status/text decisions; record all production hits and defer parser behavior to its source owner. |
+| Similar-Issue Sweep | Review game/platform sources for dispatch or parser decisions; record all production hits and defer parser behavior to T18 S4. |
 
 ## Recent M4 Closures
 
