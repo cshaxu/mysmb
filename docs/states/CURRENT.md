@@ -43,7 +43,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S22 Packet
+## M2 T25 S23 Packet
 
 | Field | Required record |
 | --- | --- |
@@ -58,6 +58,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Verification | Static source audit of ROM loop `$8328`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
 | Expected Markers | Source loads MushroomIconData,Y, stores VRAM_Buffer1-1,Y, decrements Y, and branches while nonnegative. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
+| Delivery Profile | S23 is the final already-admitted single-label exception. Its closure transfers retained labels into source-contiguous chains governed by [M2 chain-based S delivery](../rules/EXECUTION.md#m2-chain-based-s-delivery). |
 | Reporting Requirements | Record source loop entry `$8328`, C loop and successor control flow, Select-route trace result, and all 7 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
 | Exit Criteria | `IconDataRead` is completed only when each loop read/write, decrement, BPL successor and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |

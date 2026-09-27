@@ -48,13 +48,25 @@ The next admissible source-order implementation task is `M2 T25`, Title menu,
 world selection and demo. Its S breakdown must be admitted against the exact
 inventory labels before any game-code change.
 
-## Mandatory S structure
+## Mandatory chain delivery structure
 
-1. **S1 — node contract:** exact labels, call edges, RAM/table writes and C owner.
-2. **S2 — shared-C migration:** implement only the admitted owner boundary.
-3. **S3 — ROM logic-equivalence:** source branches, reads/writes, tables, call order and reachable/controlled route.
-4. **S4 — operational verification:** focused tests, x86/x64 builds, DOS16 compilation, platform purity and applicable runtime route.
-5. **S5 — closure:** update `NODE_PROGRESS.md`; report complete, incomplete and transferred labels; transfer every unresolved node.
+Every future T in this plan uses the M2 chain-delivery rule in
+[Execution](../../rules/EXECUTION.md#m2-chain-based-s-delivery).  The task
+table remains the source-order ownership boundary; an admitted S within that
+boundary receives a reviewable contiguous control/data chain rather than a
+fixed audit/migration/equivalence/operations/closure sequence.
+
+Each chain admission records its source entry and exit, exact labels in order,
+shared owner, dependencies and one common ROM route.  It performs mapping,
+repair when needed, node-by-node source comparison and operational validation
+in the same S.  A single chain P runs its shared replay and three-target
+delivery once, then records each member separately in the inventory and
+ledger.  A T closes only after its chain matrix covers its call roots and
+cross-chain successors, followed by the integrated three-target regression.
+
+Historical S records above remain historical evidence.  This structure applies
+to the next admission in every open or future T, including T25's post-S23
+receipt and T26--T51.
 
 ## T21 admission target
 

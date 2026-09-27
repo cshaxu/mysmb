@@ -38,6 +38,31 @@ Every M2 P continues to refresh and report all three target artifacts: `assets/m
 
 Before each M2 S, report both the number of unique labels in scope and the number expected to become complete; list both sets by exact inventory name, including incoming status. The expected set must be a subset of scope and exclude already completed nodes. The maximum closing numerator is the incoming completed count plus that expected count. A validation queue size is not an S estimate. Run `tools/Verify-NodeProgress.ps1 -AdmissionPath build/<task>/node-admission.json` and copy its named/countable result into the proposal and packet. The JSON fields are `baseline`, `total`, `scope` (label array), `expectedMatches` (label array), `maximumComplete`, `focusedTests` (test-name array), and `romRoute` (reproducible route description). Explicit empty arrays and zero expected matches are valid for mapping-only work. Closure reports expected versus actual labels/counts, explains misses and transfers, and updates the canonical rows before rerunning the gate.
 
+## M2 Chain-Based S Delivery
+
+An M2 implementation S is a bounded, contiguous ROM control/data chain, not a
+fixed five-stage paperwork unit and not necessarily one label.  Its admission
+must name the chain entry and exit, exact labels in source order, shared C
+owner, predecessor/successor dependencies, and one ROM route that exercises
+the chain.  A chain may contain adjacent data, loop and leaf labels when they
+share that route and owner.
+
+A chain must not cross an unadmitted dependency, a different ownership
+boundary, or a branch family requiring a different ROM route.  An S may be an
+explicit zero-credit audit only when it states the concrete missing dependency
+or evidence.  Otherwise the same S performs the node mapping, any required
+shared-C migration, ROM logic-equivalence comparison, and operational proof.
+
+Node accounting remains individual: the inventory and ledger record every
+label's control flow, reads, writes, data binding, caller/successor and final
+status.  A chain-level ROM replay, focused tests, x86/x64 builds, DOS16 link,
+platform-purity check, and refreshed three executable artifacts are run once
+per implementation P, rather than recreated for each member label.  An S may
+credit only the members proven by both tracks and transfers the rest by exact
+name.  T closure adds a cross-chain route matrix and one final integrated
+three-target regression; it does not repeat each member's already accepted
+chain proof.
+
 ## Per-Task Node Contract And Dual Verification
 
 Before admitting an M2 T, publish its exact target labels and counts, their current receiving S, source-call dependencies, and planned S ownership. A T cannot be described only by a source-line span, feature name, or test suite. Its proposal and active packet must state which labels it intends to complete, which labels are only investigated, and the maximum resulting node count.

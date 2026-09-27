@@ -679,3 +679,15 @@ S23 scopes only `IconDataRead`, baseline **93 / 1,992**, expected
 `IconDataRead`, maximum **94 / 1,992**. It must independently establish the
 load/store, Y decrement and BPL loop behavior, including the fallthrough to
 the `NumberOfPlayers` check. The other six received labels remain uncredited.
+
+## Chain-delivery transition
+
+S23 was already admitted as the final single-label exception.  On its closure,
+the retained title-idle/demo labels will be replanned as contiguous chains
+under the [M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery),
+not as one S per label.  The first candidate chain is the title-idle demo
+family: `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction` and
+`DemoOver`, with one idle-to-demo ROM replay.  `ExitIcon` stays a separate
+short icon-return chain because its successor route and caller boundary differ.
+Every member will retain its own source, C-owner, read/write and completion
+record; the shared route and three-target package are produced once per chain.

@@ -33,6 +33,14 @@ No platform adapter may read or write terminal game state.
 | S6 | Restore only the source-owned outer VictoryMode call order. | Compare `VictoryMode`'s task-zero/nonzero branch order and named existing collaborators. | Focused root tests, cross-width builds, DOS16, purity, three artifacts. | 0 |
 | S7 | Independently compare the repaired outer victory route. | Source-reachable or controlled full-domain ROM route for `VictoryMode` and `AutoPlayer`. | Cross-width traces, DOS16, purity, three artifacts. | Up to 2 |
 
+## Chain-delivery amendment
+
+The S1--S7 entries above are retained as historical evidence.  Any successor
+admission or retained-node repair uses the [M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery): it groups only a contiguous
+victory, message, end-world or floating-score call/data chain that has one C
+owner and one ROM route.  It still records each label separately and performs
+one chain-level replay, three-target package and closure update.
+
 ## S1 source-contract obligations
 
 The audit begins from `VictoryMode` at line 1137 and must distinguish direct

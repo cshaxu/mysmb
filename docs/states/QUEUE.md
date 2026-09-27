@@ -6,6 +6,8 @@ The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-o
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
+Every future M2 admission follows the [chain-based S delivery rule](../rules/EXECUTION.md#m2-chain-based-s-delivery): nodes remain individually tracked, while one S delivers a bounded contiguous call/data chain with one shared ROM route and one three-target validation pass.  The fixed five-stage S pattern is retired for future admissions; historical S records remain evidence only.
+
 ## M1 Candidates
 
 1. [Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) — closed in M1.
@@ -52,4 +54,3 @@ The historical structural-recovery entries below are retained by their original 
 
 1. [486SX qualification](../design/ROADMAP.md) — physical host protocol and measured DOS/VGA route evidence.
 2. [486SX qualification](../design/ROADMAP.md) — execute the physical-host protocol and record measured route evidence.
-
