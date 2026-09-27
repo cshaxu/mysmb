@@ -74,8 +74,8 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Identifier Mode | M2 T27 S2, implementation; contiguous remaining screen/status/text chain. |
 | Admission And Approval | Owner-approved source-order continuation; S1 closed 20 leaves; S2 received 45 contiguous labels and S3 accepted the two external-dependency integration roots. |
 | Objective | Establish ROM-equivalent `WriteTopStatusLine -> NoReset` in the shared game owner. |
-| Non-goals | No T29 parser implementation, full ScreenRoutines dispatch credit, host UI rule, platform gameplay logic or unrelated repair. |
-| Reference Baseline | 120 / 1,992 complete; 43 incoming open labels; expected 43 matches; `AreaParserTaskControl` is retained for S3 integration with T29; maximum 163 / 1,992. |
+| Non-goals | No T18 S4 parser implementation, full ScreenRoutines dispatch credit, host UI rule, platform gameplay logic or unrelated repair. |
+| Reference Baseline | 120 / 1,992 complete; 43 incoming open labels; expected 43 matches; `AreaParserTaskControl` is retained for S3 integration with the current T18 S4 parser owner; maximum 163 / 1,992. |
 | Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
 | Files And ABI Surface | Shared screen/status/text game owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
@@ -85,7 +85,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Delivery Profile | One contiguous chain; individual labels remain separately accounted in inventory and ledger. From S2 closure onward, any T27 receipt uses the proposal's compact source-order chain table: both evidence tracks and one three-target package occur in the same chain S, with a split only at a named dependency, owner boundary, or different ROM route. |
 | Reporting Requirements | Record each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
 | Stop Conditions | Stop on nonmatching source branch, cross-owner dependency, trace alignment error, source-policy breach or platform gameplay logic. |
-| Exit Criteria | Every local chain label has both evidence tracks; `AreaParserTaskControl` transfers to S3 uncredited until the T29 parser dependency is proved. |
+| Exit Criteria | Every local chain label has both evidence tracks; `AreaParserTaskControl` transfers to S3 uncredited until the T18 S4 parser dependency is proved. |
 | Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery. |
 | Similar-Issue Sweep | Review game/platform sources for screen/status/text decisions; record all production hits and defer parser behavior to its source owner. |
 

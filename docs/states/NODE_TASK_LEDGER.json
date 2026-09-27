@@ -9332,7 +9332,7 @@
       "label": "AreaParserTaskControl",
       "line": 1595,
       "receiver": "M2 T27 S3",
-      "receivingBasis": "Accepted T27 S3 parser-integration receipt; external T29 parser owner is required before credit.",
+      "receivingBasis": "Accepted T27 S3 parser-integration receipt; current external T18 S4 parser owner is required before credit.",
       "futurePackage": null,
       "history": [
         {
@@ -9347,7 +9347,7 @@
       "label": "TaskLoop",
       "line": 1597,
       "receiver": "M2 T27 S3",
-      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit.",
+      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit.",
       "futurePackage": null,
       "history": [
         {
@@ -9362,7 +9362,7 @@
       "label": "OutputCol",
       "line": 1603,
       "receiver": "M2 T27 S3",
-      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit.",
+      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit.",
       "futurePackage": null,
       "history": [
         {

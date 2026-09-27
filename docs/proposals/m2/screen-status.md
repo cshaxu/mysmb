@@ -11,8 +11,8 @@ The 67 exact labels below remain ordered by original source. Shared game owners 
 | S | Chain | Lines | Exact labels | ROM route and acceptance focus |
 | --- | --- | ---: | --- | --- |
 | S1 | Screen-task root, initial setup and palette initialization (`ScreenRoutines -> NoAltPal`) | 1386--1513 | `ScreenRoutines`, `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` | task-vector dispatch, screen setup, intermediate palette call, palette branches and VRAM address writes; exact branch/read/write comparison plus one controlled ROM route, focused project test, x86/x64 build, DOS16 link and platform-purity gate. |
-| S2 | Status, intermediate display, title drawing and game text (`WriteTopStatusLine -> NoReset`) | 1517--1813 | exact 43 labels in the table below | one controlled contiguous screen route; all local branches/data loops plus title, status, two-player, time-up, lives/name, warp and reset behavior. `AreaParserTaskControl` is retained for S3 because it calls the T29 parser owner. |
-| S3 | Dispatch/parser integration (`ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol`) | 1386, 1595 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` | close only after every ScreenRoutines table target and the T29 parser call are independently proven; no duplicate leaf credit. |
+| S2 | Status, intermediate display, title drawing and game text (`WriteTopStatusLine -> NoReset`) | 1517--1813 | exact 43 labels in the table below | one controlled contiguous screen route; all local branches/data loops plus title, status, two-player, time-up, lives/name, warp and reset behavior. `AreaParserTaskControl` is retained for S3 because it calls the current T18 S4 parser owner. |
+| S3 | Dispatch/parser integration (`ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol`) | 1386, 1595 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` | close only after every ScreenRoutines table target and the current T18 S4 parser call are independently proven; no duplicate leaf credit. |
 
 ## Exact node list
 
@@ -48,9 +48,9 @@ The 67 exact labels below remain ordered by original source. Shared game owners 
 | 1579 | `OutputInter` | open | S2 |
 | 1584 | `GameOverInter` | open | S2 |
 | 1589 | `NoInter` | open | S2 |
-| 1595 | `AreaParserTaskControl` | open; T29 dependency | S3 |
-| 1597 | `TaskLoop` | open; T29 dependency | S3 |
-| 1603 | `OutputCol` | open; T29 dependency | S3 |
+| 1595 | `AreaParserTaskControl` | open; T18 S4 parser dependency | S3 |
+| 1597 | `TaskLoop` | open; T18 S4 parser dependency | S3 |
+| 1603 | `OutputCol` | open; T18 S4 parser dependency | S3 |
 | 1612 | `DrawTitleScreen` | open | S2 |
 | 1624 | `OutputTScr` | open | S2 |
 | 1629 | `ChkHiByte` | open | S2 |
@@ -171,7 +171,7 @@ S2 retains its admitted 43-label `WriteTopStatusLine -> NoReset` scope and
 will close it as one chain.  It does not create separate mapping, migration,
 audit, test, or paperwork S stages.  Each remaining P may repair and compare
 adjacent members of that chain, but credits none until the shared ROM route and
-operational track cover the named label.  Any member blocked by the T29 parser
+operational track cover the named label.  Any member blocked by the T18 S4 parser
 or another accepted owner transfers by exact name before S2 closes.
 
 ## Current-T delivery amendment
@@ -189,7 +189,7 @@ different ROM route; a zero-credit S must name that exact gate.
 For S2, the six retained Warp labels remain S2 custody until an accepted
 receiver exists: `WarpZoneWelcome`, `WarpZoneNumbers`, `WriteGameText`,
 `EndGameText`, `PrintWarpZoneNumbers`, and `WarpNumLoop`. They await the
-source-reachable T29 parser/GameCore route. S3 is not a generic receiver for
+source-reachable T18 S4 `ScrollLockObject_Warp -> WriteGameText` route. S3 is not a generic receiver for
 those leaves: it receives only its four registered dispatch/parser integration
 labels.
 ## S2/P5: unconditional screen-task continuations
@@ -413,9 +413,9 @@ stream, and patches the selector-five three-number row from the local ROM.
 An isolated reference-frame experiment reached the same original object but
 showed an earlier GameCore-route difference: the ROM's timer command and the
 native player's palette command diverge before the common parser output. That
-precondition belongs to the accepted T29 parser/GameCore chain. It is
+precondition belongs to the accepted T18 S4 parser chain. It is
 therefore recorded as a dependency, not hidden with a T27 RAM workaround; the
-source-reachable ROM frame route remains pending T29. No S2 node credit is
+source-reachable ROM frame route remains pending T18 S4. No S2 node credit is
 claimed here.
 
 The local test passes in both x64 and true i686 Win32 builds. The Win32
@@ -437,7 +437,7 @@ VRAM command, so it cannot be satisfied by a direct text-writer call.
 
 This fills the only remaining local proof gap for `WriteTopStatusLine`; it
 does not claim S2 closure or conceal the independent `GetSBNybbles`,
-`UpdateNumber`, and T29 Warp-route dependencies.  The focused local-area and
+`UpdateNumber`, and T18 S4 Warp-route dependencies.  The focused local-area and
 screen-status smokes, together with platform-purity, pass in the x64 owner
 build.  Cross-width products and the DOS16 link are refreshed for this P.
 The refreshed artifacts are `mysmb16.exe`
@@ -457,7 +457,7 @@ This P credits the 35 self-contained labels with both source/data and route
 evidence. It retains eight labels without credit: `WriteBottomStatusLine`
 awaits `GetSBNybbles`; `WriteTopScore` awaits `UpdateNumber`; and
 `WarpZoneWelcome`, `WarpZoneNumbers`, `WriteGameText`, `EndGameText`,
-`PrintWarpZoneNumbers`, and `WarpNumLoop` await T29's GameCore/parser
+`PrintWarpZoneNumbers`, and `WarpNumLoop` await T18 S4's parser
 precondition for a source-reachable Warp route. S2 remains active and keeps
 their custody.
 
@@ -527,6 +527,20 @@ remain
 `2606478C41C3122B2500E6465FE570C6C6B2292608D9C65A468846217624E3EE` for
 DOS16, Win32 x86 and Win32 x64 respectively.
 
+## S2/P20: Warp-route ownership correction
+
+The original route inspection corrects an earlier dependency attribution.  The
+W1-2 stream reaches `ScrollLockObject_Warp` at ROM line 3591, then `WarpNum`
+sets `WarpZoneControl` and the object handler calls `WriteGameText` at line
+3602.  The parser nodes `ScrollLockObject_Warp`, `WarpNum`, and
+`ScrollLockObject` are currently received by M2 T18 S4 in the canonical
+ledger.  They are not T29 or GameCore nodes.  The existing local-area smoke
+does exercise the real `$6d,$c5` W1-2 object bytes and observes its selector
+five output, but it is not an accepted original-ROM equivalence proof of that
+T18 S4 chain.  Consequently the six T27 Warp leaves retain their existing
+custody and no credit changes in this P; their concrete prerequisite is now
+recorded accurately for the later accepted transfer.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -561,22 +575,22 @@ both tracks are accepted at S2 closure.
 | `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture and P14 direct source-byte matrix. Pending final chain matrix. |
 | `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; both current-player Game Over routes and P14 full-byte matrix. Pending final chain matrix. |
 | `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture and P14 direct source-byte matrix. Pending final chain matrix. |
-| `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; P15 replaces synthetic stream with original W1-2 parser data. Pending controlled original ROM Warp route after T29 GameCore precondition. |
+| `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; P15 replaces synthetic stream with original W1-2 parser data. Pending controlled original ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
 | `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; P14 direct five-byte matrix plus two-player routes. Pending final chain matrix. |
-| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte matrix and P15 original W1-2 selector-five parser route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
+| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte matrix and P15 original W1-2 selector-five parser route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
 | `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; P12 table audit and P14 every-selector matrix. Pending final chain matrix. |
-| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix, existing screen routes, and P15 original W1-2 parser data. Pending source-reachable Warp route after T29 GameCore precondition. |
+| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix, existing screen routes, and P15 original W1-2 parser data. Pending source-reachable Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
 | `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both two-player routes and P14 selector matrix. Pending final chain matrix. |
 | `LdGameText` | `area.c` PRG source selection | Mapped; P14 every-selector direct source-byte matrix. Pending final chain matrix. |
 | `GameTextLoop` | `area.c` terminator-copy loop | Mapped; P14 derives and checks every stream length and terminator. Pending final chain matrix. |
-| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix and P15 parser binding. Pending source-reachable Warp route after T29 GameCore precondition. |
+| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix and P15 parser binding. Pending source-reachable Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
 | `PutLives` | `area.c` lives/world/level patch | Mapped; P14 crown/world/level matrix and ordinary `PlayerInter` route. Pending final chain matrix. |
 | `CheckPlayerName` | `area.c` player-name selection | Mapped; P14 matrix and both Time Up/Game Over routes. Pending final chain matrix. |
 | `ChkLuigi` | `area.c` current-player branch | Mapped; P14 both current-player values and two-player routes. Pending final chain matrix. |
 | `NameLoop` | `area.c` five-byte Luigi replacement | Corrected `$07ed-$07f1` binding; P14 direct-byte matrix. Pending final chain matrix. |
 | `ExitChkName` | `area.c` name tail exit | Mapped; P14 complete selector matrix. Pending final chain matrix. |
-| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
-| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
+| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
+| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after the T18 S4 `ScrollLockObject_Warp` precondition. |
 | `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; task-five and task-seven pending/expired zero-difference routes. Pending common-tail matrix. |
 | `ResetScreenTimer` | `game.c` OutputInter and tasks 5/7 | Mapped; Time Up and intermediate routes. Pending common-tail matrix. |
 | `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; task-five and task-seven pending zero-difference routes. Pending common-tail matrix. |

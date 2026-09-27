@@ -205,9 +205,9 @@ transfer existing ownership or allocate a numeric T.
 | 1579 | `OutputInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1584 | `GameOverInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1589 | `NoInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1595 | `AreaParserTaskControl` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-integration receipt; external T29 parser owner is required before credit. | M2 T24 S1 |
-| 1597 | `TaskLoop` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit. | M2 T24 S1 |
-| 1603 | `OutputCol` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit. | M2 T24 S1 |
+| 1595 | `AreaParserTaskControl` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-integration receipt; current external T18 S4 parser owner is required before credit. | M2 T24 S1 |
+| 1597 | `TaskLoop` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit. | M2 T24 S1 |
+| 1603 | `OutputCol` | M2 T27 S3 | existing closure backlog; Accepted T27 S3 parser-loop integration receipt; current T18 S4 parser proof is required before credit. | M2 T24 S1 |
 | 1612 | `DrawTitleScreen` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1624 | `OutputTScr` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1629 | `ChkHiByte` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
