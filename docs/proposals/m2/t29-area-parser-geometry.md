@@ -89,3 +89,25 @@ an OpenNT DOS16 MZ. The refreshed delivery artifacts are `mysmb16.exe`
 `35F2F7E4BC35003422D03177114297D0B08FB2BCE848F7B226CC1E773B68BDA9`,
 `mysmb32.exe` `F6C837731891CD03329E45F7756D108B20133AD2402B0CFB9AEB72D12A193B43`,
 and `mysmb64.exe` `BF47B6738F830527A21C695FB305CB266843E5DFE627053C86B9F7F30845FB3F`.
+
+## S2 admission: area-music selection chain
+
+S2 receives exactly `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`,
+`StoreMusic`, and `ExitGetM` through accepted ledger event
+`transfer-083-t18-s4-to-t29-s2-area-music`.  The five labels are open at the
+**269 / 1,992** baseline; this contiguous source chain forecasts all five as
+ROM-match complete, for a maximum **274 / 1,992**.
+
+The shared owner is the portable area/music selection path.  Its ROM track
+compares `$90e7-$9115` as one chain: the six music bytes, the `OperMode` early
+return, alternate-entrance gate, pipe-entry tests, area-type and cloud
+selection, `AreaMusicQueue` store, and return boundary.  The recorder may
+establish only source-RAM preconditions at a frame boundary; it may not inject
+a leaf program counter or stack.  Fixtures cover title return, ordinary
+area-type selection, pipe entry, alternate pipe bypass, and cloud override.
+
+The operational track uses the project-owned area-music smoke plus x86 and
+x64 builds, the OpenNT DOS16 link, platform-purity check, and one refreshed
+three-executable package for the chain P.  The chain cannot claim a label
+until both evidence tracks pass.  No platform source may choose music, inspect
+these area-control bytes, or write the music queue.
