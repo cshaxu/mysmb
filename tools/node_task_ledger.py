@@ -142,7 +142,7 @@ def validate(root, data):
         require(run["maximumComplete"] == run["baseline"] + len(run["expectedMatches"]), "Run forecast count differs")
         evidence(root, run["evidence"])
     current = (root / "docs/states/CURRENT.md").read_text(encoding="utf-8")
-    for sid in re.findall(r"(?m)^## (M\d+ T\d+ S\d+) Packet\s*$", current):
+    for sid in re.findall(r"(?m)^## (M\d+ T(?:\d+|d) S\d+) Packet\s*$", current):
         require(sid in registry, "Active packet S must be registered: " + sid)
         require(any(r["subtask"] == sid for r in data["runs"]), "Active S needs a registered exact scope and forecast: " + sid)
     return inv, registry, node_map

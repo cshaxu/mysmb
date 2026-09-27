@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -1277,7 +1277,8 @@
       "id": "M2 Td",
       "evidence": [
         "docs/proposals/m2-rom-structural-recovery.md",
-        "docs/states/QUEUE.md"
+        "docs/states/QUEUE.md",
+        "docs/proposals/m2/t21-t49-source-order-recovery.md"
       ],
       "subtasks": [
         {
@@ -1337,6 +1338,19 @@
           "canReceive": true,
           "admissionRole": "audit",
           "receipt": "T21 source-contract separation pending T22 admission."
+        },
+        {
+          "id": "M2 Td S7",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md",
+            "docs/states/QUEUE.md"
+          ],
+          "recordKinds": [
+            "source-order-identifier-reconciliation"
+          ],
+          "canReceive": true,
+          "admissionRole": "audit",
+          "receipt": "Owner-approved reconciliation of future source-order identifiers; no node custody changes."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -54940,7 +54954,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -60466,6 +60480,61 @@
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
       "state": "closed-dependency-audit-transferred-to-t24-s2"
+    },
+    {
+      "subtask": "M2 Td S7",
+      "kind": "audit",
+      "scope": [],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-source-order-identifier-reconciliation"
     }
   ]
 }

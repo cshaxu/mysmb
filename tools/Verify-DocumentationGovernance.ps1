@@ -41,7 +41,7 @@ Require-Title (Join-Path $docs 'states/TODO.md') 'Long-Term Review Ledger'
 
 $current = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $docs 'states/CURRENT.md')
 Require (($current | Select-String -AllMatches -Pattern '(?m)^## Current Technical Baseline\r?$').Matches.Count -eq 1) 'CURRENT.md must have exactly one Current Technical Baseline section.'
-$packetCount = ($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T\d+ S\d+ Packet\r?$').Matches.Count
+$packetCount = ($current | Select-String -AllMatches -Pattern '(?m)^## M\d+ T(?:\d+|d) S\d+ Packet\r?$').Matches.Count
 if ($current -match '(?m)^\*\*Idle\.\*\*\r?$') {
     Require ($packetCount -eq 0) 'Idle CURRENT.md must not retain an active packet.'
 }

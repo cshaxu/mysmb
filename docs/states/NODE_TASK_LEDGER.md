@@ -2159,12 +2159,13 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
-| M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md) |
+| M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S3 | 0 | 0 | explicit-reference; [record](../../docs/proposals/m2-rom-structural-recovery.md) |
 | M2 Td S2 | 0 | 0 | explicit-reference; [record](../../docs/states/QUEUE.md) |
 | M2 Td S4 | 0 | 203 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
 | M2 Td S5 | 0 | 24 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S6 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 Td S7 | 0 | 0 | source-order-identifier-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M3 T1 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); S not recorded |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
@@ -2277,3 +2278,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T22 S21 | 1 | 41 | none / 0 | none / 0 | closed-operation-mode-dispatch-contract-transferred; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S28 | 1 | 41 | `OperModeExecutionTree` / 1 | `OperModeExecutionTree` / 1 | closed-complete-operation-mode-dispatch-equivalence; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S22 | 1 | 42 | none / 0 | none / 0 | closed-dependency-audit-transferred-to-t24-s2; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 Td S7 | 0 | 42 | none / 0 | none / 0 | closed-source-order-identifier-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |

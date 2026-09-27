@@ -1,4 +1,4 @@
-# M2 source-order recovery plan: T21–T49
+# M2 source-order recovery plan: T21–T51
 
 This replaces the oversized historical T21 package. Each task is a bounded source-order and call-graph responsibility; planned task identifiers become active only at individual admission.
 
@@ -6,33 +6,47 @@ This replaces the oversized historical T21 package. Each task is a bounded sourc
 | --- | --- | ---: | ---: |
 | T21 | Boot and cold initialization (including its `InitializeMemory` call-root exception) | 699–737; 2795 | 7 |
 | T22 | NMI, PPU commit, input and frame timing | 743–981 | 33 |
-| T23 | Title menu, world selection and demo | 982–1180 | 33 |
-| T24 | Victory, terminal modes and floating scores | 1181–1385 | 25 |
-| T25 | Screen routines, HUD and game text | 1386–1824 | 67 |
-| T26 | Area bootstrap, pointers and headers | 1825–2794 | 102 |
-| T27 | Area object parsing and large-object geometry | 2796–3990 | 157 |
-| T28 | Area rendering, metatiles, attributes and block buffer | 3991–5314 | 146 |
-| T29 | Game dispatcher and entry modes | 5315–5582 | 31 |
-| T30 | Player control, friction, jump and swim | 5583–5900 | 49 |
-| T31 | Player state, scrolling, pipes, vines and block actions | 5901–6297 | 62 |
-| T32 | Fireball dispatch, active core and explosion | 6298–6408 | 11 |
-| T33 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |
-| T34 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
-| T35 | Powerups, vines, cannon, whirlpool and flagpole setup | 7201–7787 | 73 |
-| T36 | Enemy stream, records, slots and initialization | 7788–8500 | 85 |
-| T37 | Enemy groups, frenzy and special initialization | 8501–9300 | 98 |
-| T38 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |
-| T39 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
-| T40 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
-| T41 | Player terrain, head, foot, side and pipe collision | 12001–13000 | 136 |
-| T42 | Enemy terrain, landing, stun and side collision | 13001–14000 | 111 |
-| T43 | Projectile, powerup and player/enemy collision completion | 14001–14459 | 45 |
-| T44 | Relative positions, offscreen bits and player/enemy OAM | 14460–14780 | 43 |
-| T45 | Object OAM, sprite tables and graphics attributes | 14781–15069 | 40 |
-| T46 | Sound-effect queue and square/noise handlers | 15070–15500 | 74 |
-| T47 | Music engine, channel handlers and event switching | 15501–16050 | 101 |
-| T48 | Music data, tables and audio-data consumers | 16051–16368 | 28 |
-| T49 | Cross-route ROM equivalence and three-target certification | integration | 0 |
+| T25 | Title menu, world selection and demo | 982–1180 | 33 |
+| T26 | Victory, terminal modes and floating scores | 1181–1385 | 25 |
+| T27 | Screen routines, HUD and game text | 1386–1824 | 67 |
+| T28 | Area bootstrap, pointers and headers | 1825–2794 | 102 |
+| T29 | Area object parsing and large-object geometry | 2796–3990 | 157 |
+| T30 | Area rendering, metatiles, attributes and block buffer | 3991–5314 | 146 |
+| T31 | Game dispatcher and entry modes | 5315–5582 | 31 |
+| T32 | Player control, friction, jump and swim | 5583–5900 | 49 |
+| T33 | Player state, scrolling, pipes, vines and block actions | 5901–6297 | 62 |
+| T34 | Fireball dispatch, active core and explosion | 6298–6408 | 11 |
+| T35 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |
+| T36 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
+| T37 | Powerups, vines, cannon, whirlpool and flagpole setup | 7201–7787 | 73 |
+| T38 | Enemy stream, records, slots and initialization | 7788–8500 | 85 |
+| T39 | Enemy groups, frenzy and special initialization | 8501–9300 | 98 |
+| T40 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |
+| T41 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
+| T42 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
+| T43 | Player terrain, head, foot, side and pipe collision | 12001–13000 | 136 |
+| T44 | Enemy terrain, landing, stun and side collision | 13001–14000 | 111 |
+| T45 | Projectile, powerup and player/enemy collision completion | 14001–14459 | 45 |
+| T46 | Relative positions, offscreen bits and player/enemy OAM | 14460–14780 | 43 |
+| T47 | Object OAM, sprite tables and graphics attributes | 14781–15069 | 40 |
+| T48 | Sound-effect queue and square/noise handlers | 15070–15500 | 74 |
+| T49 | Music engine, channel handlers and event switching | 15501–16050 | 101 |
+| T50 | Music data, tables and audio-data consumers | 16051–16368 | 28 |
+| T51 | Cross-route ROM equivalence and three-target certification | integration | 0 |
+
+## Identifier reconciliation (M2 Td S7)
+
+Historical `M2 T23` is the Player-route record and historical `M2 T24` is the
+node-audit/custody record. They are immutable evidence, not available source
+order slots. The previous draft incorrectly assigned those same identifiers to
+Title and Victory. `M2 Td S7` preserves every historical task, subtask,
+receiver, transfer and conformance status, reserves no duplicate identifiers,
+and shifts only future source-order slices by two: Title begins at `T25`, and
+the final certification task is `T51`.
+
+The next admissible source-order implementation task is `M2 T25`, Title menu,
+world selection and demo. Its S breakdown must be admitted against the exact
+inventory labels before any game-code change.
 
 ## Mandatory S structure
 
@@ -93,7 +107,7 @@ It must preserve the existing title/area implementation body for the future
 owners of `InitializeGame`, `InitializeArea`, pointer loading and header
 parsing. Its expected ROM-match set is empty: the migration supplies a
 source-order prerequisite, then T22/S8 will audit the affected first-NMI
-branches and T23/T26 will verify the subordinate title/area nodes. Focused
+branches and T25/T28 will verify the subordinate title/area nodes. Focused
 tests are `mysmb.reset-root-smoke`, `mysmb.local-title-bootstrap-smoke`,
 `mysmb.dos16-root-smoke` and `mysmb.platform-purity`; the ROM route is a
 three-NMI cold-start recorder run beginning at reset, with the first
@@ -214,7 +228,7 @@ the source call sequence and separates them as follows.
 | `$07a2 = $18` | `InitializeGame` explicitly writes `DemoTimer` after its shorter `InitializeMemory` call. | Evidence handoff to the existing `M2 T18 S4` receiver for `InitializeGame`; T22 must not manufacture the write. |
 | `$04-$07` after title work | `LoadAreaPointer` / `GetAreaDataAddrs` scratch-pointer work is downstream of `InitializeGame`. | Evidence handoff to the existing `M2 T18 S4` receiver for `LoadAreaPointer`; no T22 edit. |
 | `$00-$01` during NMI | `NonMaskableInterrupt` indexes `VRAM_AddrTable_Low` and `VRAM_AddrTable_High` and stores the selected pointer in zero page before `UpdateScreen`. | Transfer the three table labels to T22/S12; the current C consumer performs the result but does not model these source writes. |
-| `$01f6-$01ff` | 6502 return-address stack bytes are produced by `JSR`, interrupt entry and `RTI`; they are not portable game state or a source label output. | Retain only as a T49 canonical-comparison exclusion candidate. Do not add emulated stack state to `mysmb_game`. |
+| `$01f6-$01ff` | 6502 return-address stack bytes are produced by `JSR`, interrupt entry and `RTI`; they are not portable game state or a source label output. | Retain only as a T51 canonical-comparison exclusion candidate. Do not add emulated stack state to `mysmb_game`. |
 
 The remaining eleven labels are therefore not one repair unit. T22/S11 receives
 the seven boot labels, T22/S12 receives the three VRAM address-table labels,
@@ -656,3 +670,11 @@ ROM-match complete status.  The required refreshed artifacts have SHA-256 values
 `33942B8EC68ED08F07F22F18C1A56D149B12216A534C20BC8FF4603C0F28C6CF`, and
 `4EB308DD887518B87E7B7D5DEE520F8253F18CC195EE8FA1BCE316BE8E4E41B6` for
 DOS16, Win32 x86 and Win32 x64 respectively.
+
+## M2 Td S7 closure
+
+The registry and queue were audited against the plan. Historical `T23` and
+`T24` remain intact, and no future source-order row uses either identifier.
+Future rows are uniquely `T25` through `T51`, in contiguous ROM order. This
+S changes no node receiver, node status, transfer, game source or platform
+adapter. Its zero-label closure leaves the M2 numerator at `42 / 1,992`.

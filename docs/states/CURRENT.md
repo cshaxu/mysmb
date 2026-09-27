@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S22 Packet
+## M2 Td S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S22, Implementation; NMI-parent dependency audit and custody return. |
-| Admission And Approval | Owner-approved source-order recovery; preflight corrected an invalid final-parent premise. |
-| Objective | Audit `NonMaskableInterrupt` direct dependencies before attempting parent equivalence credit. |
-| Non-goals | Parent completion credit, leaf semantics, platform behavior, input mapping, OAM, timer, pause, graphics, or unrelated game repairs. |
-| Reference Baseline | 42 / 1,992 complete; one scoped label; expected zero matches; maximum 42 / 1,992. |
+| Identifier Mode | M2 Td S7, Governance; source-order identifier reconciliation. |
+| Admission And Approval | Owner-approved continuation after the T22/S22 dependency audit exposed a historic task-number collision. |
+| Objective | Reconcile future M2 source-order task identifiers while retaining historical T23/T24 evidence and ownership unchanged. |
+| Non-goals | Game code, node conformance status, node transfers, platform behavior, ROM research, or historical record rewrites. |
+| Reference Baseline | 42 / 1,992 complete; zero scoped node labels; zero expected matches; maximum 42 / 1,992. |
 | Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared frame root, canonical inventory, ledger and build-only original-ROM listing audit. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original listing call-order audit; x86/x64 NMI-boundary and sprite-root checks; platform-purity. |
-| Expected Markers | None; `NonMaskableInterrupt` remains incomplete. |
-| Asset Needs | Owner-local ROM/listing only; every audit output stays below `build`. |
-| Reporting Requirements | Record unresolved direct dependencies and transfer the parent before closure. |
-| Stop Conditions | Stop parent proof when a direct dependency lacks independent ROM-match evidence. |
-| Exit Criteria | Five unresolved direct dependencies are named and `NonMaskableInterrupt` is transferred to accepted custody with zero credit. |
+| Files And ABI Surface | Source-order proposal, queue, node-task ledger registry and active packet only. |
+| Applicable Rules | Task Reading Set, execution, documentation, architecture, coding, source policy and node ledger. |
+| Verification | Identifier uniqueness scan; historic T23/T24 preservation review; future source-order continuity scan; node-ledger admission; documentation governance. |
+| Expected Markers | None; this governance S creates no ROM-match credit. |
+| Asset Needs | None. |
+| Reporting Requirements | State the preserved historic identifiers, the reconciled future mapping, the next implementation candidate, and zero node-status changes. |
+| Stop Conditions | Stop if a historic task, subtask, receiver, transfer or node status would need alteration to resolve the collision. |
+| Exit Criteria | No planned source slice shares an existing historic task ID; Title is uniquely registered as the next `T25` candidate; ledger and documentation gates pass. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check all direct parent calls, their canonical status and their responsible receiver. |
+| Similar-Issue Sweep | Scan the plan, queue, ledger task registry and active packet for duplicate or stale future source-order identifiers. |
 
 ## Recent M4 Closures
 

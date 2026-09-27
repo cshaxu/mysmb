@@ -1,12 +1,10 @@
 # Queue
 
-## First Priority - M2 Historical Node Closure
+## First Priority - M2 Source-Order Recovery
 
-1. **M2 T21 active:** [T21 prior-node closure](../proposals/m2/t21-prior-node-closure.md) receives exactly the 24 unfinished T20 fireball/bubble/timer/Warp nodes. It first establishes source contracts, then separates ROM-equivalence and operational verification.
-2. [Historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md) remains queued after T21.
+The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. Therefore the next source-order implementation admission is Title/menu/demo as `M2 T25`; its exact S breakdown and node receipt must be registered before code work.
 
-This first-priority entry governs ordering across the historical lists below;
-those lists retain their previous records and do not override this priority.
+The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
 ## M1 Candidates
 
@@ -35,26 +33,10 @@ those lists retain their previous records and do not override this priority.
 
 ## M2 Structural-Recovery Candidates
 
-Owner-requested [node-task responsibility ledger](../proposals/m2/node-task-ledger.md) continues as M2 T24 S2; every node receives an accountable S and future transfers require acceptance.
+The historical structural-recovery entries below are retained by their original task records and are not candidates for numeric reuse. Future execution follows the source-order recovery plan above; the retained [structural recovery coverage](../proposals/m2-rom-structural-recovery.md) remains its source-map reference. The queue order is: Title/menu/demo; Victory/terminal; Screen/HUD/text; Area bootstrap; parser; renderer; dispatcher; player control; player state; fireball; bubbles/timer/Warp; blocks; powerups and setup; enemy stream; enemy groups; enemy movement; remaining actors; shared collision; player terrain; enemy terrain; projectile/powerup collision; relative/OAM; object OAM; sound effects; music engine; music data; cross-route certification.
 
-Owner-requested [mapped-node verification](../proposals/m2/mapped-node-verification.md) is admitted as M2 T24 S1: audit and mark the initial 77 pending nodes plus all integrated nodes and prior T/S responsibilities, with a full 1,992-label evidence census and no repairs.
+`M2 T24 S2` remains the accepted custody receiver for unresolved nodes until an admitted source-order S accepts each exact label. It does not consume or reserve future numeric task identifiers.
 
-These candidates exhaustively map the ROM executable source index. They are ordered candidates only; no numeric T or S is allocated here. The complete label checklist is [SMB1 ROM migration inventory](../etc/architecture/smb1-rom-migration-inventory.md), and the source-slice/call-graph map is [M2 structural recovery coverage](../proposals/m2-rom-structural-recovery.md).
-
-1. **Frame root** — active as M2 T14 S1: reset/NMI/input/timing/PPU phase/mode dispatch.
-2. **Title and terminal modes** — active as M2 T15 S4: source-reachable title-start, demo, victory and game-over NMI routes.
-3. **Screen, text and status** — lines 1386–1824: status, text, screen routines and parser scheduling.
-4. **M2 T18 active — Area graphics and parser** — lines 1825–5314 except `InitializeMemory`: metatiles, attributes, palettes, area/object parsing and block buffer.
-5. **Game frame dispatcher** — lines 5315–5582: game mode/core/engine and ROM call order.
-6. **M2 T23 active — Player route** — lines 5583–6297: control, physics, player state, pipes/vines/scroll and block actions. S1/P1 maps `ImposeFriction`; S2/P1 is admitted for its four source branches.
-7. **M2 T20 active — Fireballs and bubbles** — lines 6298–6729: spawn, movement, collision and offscreen semantics.
-8. **M2 T22 active — Blocks, items and misc** — lines 6730–7787: coins, blocks, power-ups, vines, cannon/whirlpool/flagpole. S1/P2: label-owner map and SetupJumpCoin queue restoration.
-9. **M2 T19 active — Enemy stream and actors** — lines 7788–11084: `ObjectOffset`, stream parser, groups, frenzy, init and handlers.
-10. **M2 T17 active — Collision and world primitives** — lines 11085–14459: all collision/bounds/gravity/shared geometry paths. S3/P5 completes the shared `CheckRightScreenBBox`/`CheckLeftScreenBBox` bounding-box clip primitive; S4/P16 preserves PlayerCtrlRoutine as the sole runtime player-box producer and repairs direct-object test fixtures.
-11. **M2 T16 active — OAM, offscreen and graphics** — lines 14460–15069: relative positions, offscreen bits and source OAM writers.
-12. **M2 T21 active — Audio engine** — lines 15070–16368: sound queues, priorities, music and channel handlers. S1/P1 source audit, S2/P1-P2 Square2 behavior, and S5/P1 source-route evidence are complete; S3-S5 remain active for the remaining channel routes.
-
-The next approved candidate receives the next valid numeric T; only then is that T's S breakdown created. `M2 Td S2` governs this mapping.
 ## M3 Candidates
 
 1. [Presentation adapters](../proposals/m3-presentation-adapters.md) — neutral render-command seam and deterministic core ownership.
