@@ -103,3 +103,60 @@ OpenNT16 MZ link and platform-purity pass.
 ## S2 closure
 
 The two-label receipt has no unfinished custody. Both actual matches are recorded at **435 / 1,992**, and the closure checker validates this proposal as its evidence record. C_ObjectRow -> ColObj remains unadmitted.
+
+## T30/S3 admission: castle-column object chain
+
+| Field | Record |
+| --- | --- |
+| Entry and exit | `C_ObjectRow -> ColObj` |
+| Exact source-order labels | `C_ObjectRow` (4049), `C_ObjectMetatile` (4052), `CastleBridgeObj` (4055), `AxeObj` (4060), `ChainObj` (4064), `EmptyBlock` (4070), `ColObj` (4074) |
+| Shared owner | `src/game/area.c`, with separately owned `ChkLrgObjFixedLength`, `GetLrgObjAttrib`, and `RenderUnderPart` collaborators |
+| Receipt | `transfer-100-t18-s4-to-t30-s3-castle-column` transfers the seven labels from T18 custody |
+| Predecessor / successor | T30/S2 is closed; `SolidBlockMetatiles -> RowOfSolidBlocks` is the next unadmitted source-order family |
+| ROM-logic track | Audit `$99fb-$9a24`: two three-byte tables, CastleBridge's fixed `$0c` length then ChainObj tail, Axe's `$08` VRAM address-control store and fall-through, the decoder-selected `Y` table index, and EmptyBlock's attribute-row result with `$c4` before the common `Y=$00` Column tail. Ordinary row-13 object records exercise selector values 2..4; an ordinary normal-object record exercises the EmptyBlock entry without leaf-PC or stack injection. |
+| Operational track | Add a focused project-owned castle-column parser smoke, compare the selected row/metatile, fixed length, VRAM control and common one-column render result; build x86/x64, link DOS16, run platform-purity, and refresh all three target artifacts once for implementation P1. |
+
+Baseline: **435 / 1,992**. Every scope label is `open`; all seven are expected
+to match. Maximum result: **442 / 1,992**. No fixed-length helper,
+attribute helper, render primitive, platform adapter, or later block-table
+node receives S3 credit.
+
+## S3/P1: castle-column implementation, verification still open
+
+The source audit found a concrete mismatch in small-object selector ten:
+`EmptyBlock` loads `$c4`, while the previous C wrote `$60` directly. The
+shared owner now uses the `ColObj -> RenderUnderPart` path and preserves
+`GetLrgObjAttrib`'s row write to `$07`. `ChainObj` reads the decoder's `$00`
+selector and the paired row/metatile tables. Axe writes control eight before
+that chain; CastleBridge initializes twelve only when its slot is negative.
+
+The focused ordinary-parser test covers axe, chain, thirteen consecutive
+bridge columns and termination, empty-block row/height state, and foreground
+preservation versus coin-block replacement. It and the existing parser-column
+test pass with strict C90 x86 and x64 builds. Both resource-bound Windows
+executables pass `--self-test`; that check covers the adapter only, not a
+playable game route. OpenNT16 links an MZ with existing compiler warnings and
+the OLDNAMES library warning. Its DOS startup still lacks resource binding;
+DOS playability is not claimed. Platform-purity and documentation gates are
+required before the P commit.
+
+Similar-issue sweep: the small-object selector-ten direct write was the one
+incorrect empty-block hit in `area.c`. The row-13 selectors 2..4 now share the
+table-indexed chain. The distinct hidden-one-up `$60` output is retained under
+its separate ROM owner. Neither platform receives gameplay changes.
+
+All seven labels remain open at **435 / 1,992**. The static source comparison
+and native parser tests do not yet supply the admitted original-ROM executed
+route comparison. S3 remains active for that evidence and the resulting
+node-by-node disposition; no completion credit is taken by P1.
+
+P1 package SHA-256: `mysmb16.exe`
+`12AA2A8FDE54429FB3746DFAC259D3A30C16A8AEF370B87E74B51B3E4E18D3BE`;
+`mysmb32.exe`
+`080718C70B6DD7292854E9D825780C67FCA84900FAF21FEDAD77E89C4365A7CE`;
+`mysmb64.exe`
+`1F6F0F405B1896B0486154EA80E5F916638F2410D6096AAB2617EB589EC8338F`.
+The package checker accepted DOS MZ, x86 PE and x64 PE headers. Platform
+purity and documentation governance passed. CMake configuration remained
+pending in compiler ABI detection; the recorded tests were direct compiler
+builds and executions, not CTest results.

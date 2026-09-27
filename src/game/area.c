@@ -175,6 +175,13 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
                                          mysmb_u8 row,
                                          mysmb_u8 height,
                                          mysmb_u8 metatile);
+static void mysmb_area_col_obj(struct mysmb_game *game, mysmb_u8 row,
+                               mysmb_u8 metatile);
+static void mysmb_area_chain_obj(struct mysmb_game *game);
+static void mysmb_area_castle_bridge_obj(struct mysmb_game *game,
+                                         mysmb_u8 slot);
+static void mysmb_area_axe_obj(struct mysmb_game *game);
+static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row);
 
 static mysmb_u8 mysmb_area_find_empty_enemy_slot(const struct mysmb_game *game,
                                                   mysmb_u8 *slot)
@@ -1232,6 +1239,14 @@ static const mysmb_u8 mysmb_area_coin_metatile_data[4] = {
     0xc3U, 0xc2U, 0xc2U, 0xc2U
 };
 
+/* ROM $99fb-$9a24 C_ObjectRow through ColObj.  The decoder's row-13
+ * selector is 2, 3 or 4, so the source deliberately indexes both tables at
+ * selector minus two. */
+static const mysmb_u8 mysmb_area_c_object_row[3] = { 0x06U, 0x07U, 0x08U };
+static const mysmb_u8 mysmb_area_c_object_metatile[3] = {
+    0xc5U, 0x0cU, 0x89U
+};
+
 static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
                                     mysmb_u8 row, mysmb_u8 second)
 {
@@ -1241,6 +1256,52 @@ static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
     /* RowOfCoins: LDY AreaType; LDA CoinMetatileData,Y; JMP GetRow. */
     mysmb_area_render_under_part(game, row, 0U,
         mysmb_area_coin_metatile_data[game->ram[MYSMB_AREA_TYPE]]);
+}
+
+/* ROM $9a20 ColObj: LDY #$00; JMP RenderUnderPart. */
+static void mysmb_area_col_obj(struct mysmb_game *game, mysmb_u8 row,
+                               mysmb_u8 metatile)
+{
+    mysmb_area_render_under_part(game, row, 0U, metatile);
+}
+
+/* ROM $9a0e ChainObj: the row-13 decoder selector chooses the paired
+ * row/metatile table entries before tail-entering ColObj. */
+static void mysmb_area_chain_obj(struct mysmb_game *game)
+{
+    mysmb_u8 index;
+
+    index = (mysmb_u8)(game->ram[0x0000U] - 2U);
+    mysmb_area_col_obj(game, mysmb_area_c_object_row[index],
+                        mysmb_area_c_object_metatile[index]);
+}
+
+/* ROM $9a01 CastleBridgeObj: LDY #$0c; JSR ChkLrgObjFixedLength;
+ * JMP ChainObj.  The generic parser owns the helper's persistent slot and
+ * post-handler decrement; this entry supplies its fixed initial length. */
+static void mysmb_area_castle_bridge_obj(struct mysmb_game *game,
+                                         mysmb_u8 slot)
+{
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 12U;
+    mysmb_area_chain_obj(game);
+}
+
+/* ROM $9a09 AxeObj falls through to ChainObj after selecting address
+ * control eight. */
+static void mysmb_area_axe_obj(struct mysmb_game *game)
+{
+    game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 8U;
+    mysmb_area_chain_obj(game);
+}
+
+/* ROM $9a19 EmptyBlock obtains the decoded row through GetLrgObjAttrib,
+ * loads $c4 and falls into the common one-column ColObj tail. */
+static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row)
+{
+    /* Preserve GetLrgObjAttrib's ST A $07 as well as its returned row. */
+    game->ram[0x0007U] = row;
+    mysmb_area_col_obj(game, row, 0xc4U);
 }
 
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
@@ -1314,14 +1375,9 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                 game->ram[MYSMB_AREA_CURRENT_PAGE],
                 (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U));
         }
-        else if (value >= 2U && value <= 4U) {
-            if (value == 4U && game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 12U;
-            if (value == 2U) game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 8U;
-            row = value == 2U ? 6U : (value == 3U ? 7U : 8U);
-            height = value == 2U ? 0xc5U : (value == 3U ? 0x0cU : 0x89U);
-            mysmb_area_render_under_part(game, row, 0U, height);
-        }
+        else if (value == 2U) mysmb_area_axe_obj(game);
+        else if (value == 3U) mysmb_area_chain_obj(game);
+        else if (value == 4U) mysmb_area_castle_bridge_obj(game, slot);
         else if (value == 5U) {
             mysmb_area_scroll_lock_warp(game);
         }
@@ -1525,7 +1581,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             if (row < 12U)
                 game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
         }
-        else if (value == 10U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x60U;
+        else if (value == 10U) mysmb_area_empty_block(game, row);
         return;
     }
     if (kind == 4U) {

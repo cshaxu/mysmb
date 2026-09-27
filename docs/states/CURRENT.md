@@ -2,11 +2,17 @@
 
 ## Current Work
 
-**M2 T30 S2 is closed at 435 / 1,992: `CoinMetatileData` and `RowOfCoins` have both required evidence tracks. `C_ObjectRow -> ColObj` is not yet admitted.**
+**M2 T30 S2 closed at 435 / 1,992. M2 T30 S3 is admitted for the seven-label `C_ObjectRow -> ColObj` castle-column chain.**
 
-The three labels transfer from T18 S4 through the registered exact receipt.
-S2 owns only the coin metatile selector table and `AreaType` dispatch in shared
-area-object behavior. It may call but cannot credit `GetRow`, `DrawRow` or
+S3/P1 implements the chain and corrects EmptyBlock's metatile and scratch-row
+write. Focused x86/x64 parser tests and adapter self-tests pass; DOS16 links.
+Three local artifacts are refreshed. Original-ROM executed-route comparison
+is pending, so all seven scope nodes remain open and the count stays 435.
+
+S3 receives exactly `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`,
+`AxeObj`, `ChainObj`, `EmptyBlock`, and `ColObj` from T18 S4 through its
+registered receipt. It owns only their shared `area.c` translation, and may
+call but cannot credit `ChkLrgObjFixedLength`, `GetLrgObjAttrib`, or
 `RenderUnderPart`, platform code, or later T30 objects.
 
 M2 T24 S2 is the metadata-verified custody receiver for 149 incomplete nodes;
@@ -14,28 +20,28 @@ it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S2 is the latest closed implementation packet; no later T30 S is admitted.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S3 is the sole active implementation packet.**
 
-## M2 T30 S2 Packet
+## M2 T30 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S2, implementation; coin metatile selector chain. |
+| Identifier Mode | M2 T30 S3, implementation; castle-column object chain. |
 | Admission And Approval | Owner-approved source-order continuation; exact receipt from M2 T18 S4. |
-| Objective | Translate and prove `CoinMetatileData -> RowOfCoins` in shared C90 game code. |
-| Non-goals | No platform game behavior, `GetRow`/`DrawRow`/`RenderUnderPart` credit, later column/block objects, synthetic leaf-PC/stack route, or label outside the two-node receipt. |
-| Reference Baseline | 433 / 1,992; two open labels; expected two matches; maximum 435 / 1,992. |
+| Objective | Translate and prove `C_ObjectRow -> ColObj` in shared C90 game code. |
+| Non-goals | No platform game behavior, `ChkLrgObjFixedLength`/`GetLrgObjAttrib`/`RenderUnderPart` credit, later block-object tables, synthetic leaf-PC/stack route, or label outside the seven-label receipt. |
+| Reference Baseline | 435 / 1,992; seven open labels; expected seven matches; maximum 442 / 1,992. |
 | Candidate Proposal | [M2 T30 area object rendering](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared `area.c` owner, project-owned coin-row/area smoke, local recorder fixtures, ledger/progress records, and three target artifacts per implementation P. |
+| Files And ABI Surface | Shared `area.c` owner, project-owned castle-column/area smoke, local recorder fixtures, ledger/progress records, and three target artifacts per implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and chain-delivery rule. |
-| Verification | ROM `$99ed-$99f5` table/index/tail-call audit; ordinary row-object parser route; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
-| Expected Markers | Four table bytes `$c3,$c2,$c2,$c2`, `AreaType` index, selected accumulator/metatile, row-object parser cursor and `GetRow` handoff. |
+| Verification | ROM `$99fb-$9a24` table, fixed-length, accumulator/register and tail-call audit; ordinary row-13 parser route plus source-shaped empty-block route; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
+| Expected Markers | Table bytes `$06,$07,$08` and `$c5,$0c,$89`, castle length `$0c`, axe VRAM control `$08`, decoder selector `Y`, column length `Y=$00`, selected row/metatile, and `RenderUnderPart` handoff. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
 | Reporting Requirements | Record each node's control/data evidence, ROM and operational outcomes, hashes and any exact transfer. |
 | Stop Conditions | Stop on an unmatched table, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
-| Exit Criteria | Both labels have both evidence tracks or each failed label transfers by exact name; tracker and ledger agree. |
+| Exit Criteria | All seven labels have both evidence tracks or each failed label transfers by exact name; tracker and ledger agree. |
 | Original Owner Request | Strict original ROM behavior, source-order migration and one shared DOS/Windows game layer. |
-| Similar-Issue Sweep | Audit every `area.c` coin selector and both platform trees for forbidden game logic. |
+| Similar-Issue Sweep | Audit every `area.c` row-13 castle-column selector and empty-block path plus both platform trees for forbidden game logic. |
 
 ## Retained M2 T15 summary
 
