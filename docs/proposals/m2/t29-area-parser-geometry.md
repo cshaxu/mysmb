@@ -583,3 +583,24 @@ maximum closing count of **368 / 1,992**. The shared owner is the existing
 area-stream decoder in `area.c`; S7 is responsible for replacing the legacy
 pre-play look-ahead shortcut with the source `ProcessAreaData` route, rather
 than retaining a parallel initialization algorithm.
+
+## S7 P1: end-of-stream active-slot continuation
+
+The source audit found that `DecodeAreaData` reaches `EndAParse` on `$fd`,
+returns to `ProcessAreaData`, then still executes `ChkLength` and the lower
+slots of `ProcADLoop`. The prior C owner returned from the whole parser at
+that marker, dropping active objects held in lower slots. It now preserves the
+source fallthrough: an active terminal slot decrements, and the descending
+loop continues through the remaining slots.
+
+`mysmb.area-parser-terminal-slot-smoke` supplies a terminal current stream
+item and an active saved lower-slot hidden coin object. It proves the latter
+is rendered and its length transitions from zero to `$ff`, the exact
+`EndAParse -> ChkLength -> ProcADLoop` outcome. It passes on x86 and x64 with
+the parser-column, parser-schedule, area-data and platform-purity tests. The
+common C90 source links into the OpenNT DOS16 MZ with the existing non-fatal
+`OLDNAMES.LIB` warning. P1 artifacts are `mysmb16.exe`
+`2C8D9054D98F15FCC31107E12A798D4B39C6E9C131BA214C9C6478BF8B973EB6`,
+`mysmb32.exe` `C4EC561B1D1E92155EDB174C8AE8E524087079FD3F98FFC93917524C03171FF9`,
+and `mysmb64.exe` `BE358277DBA10A2E0D16DEFF2C858DEF97040A1AC77E2F12E9D38A04A2A31637`.
+This is an implementation checkpoint, not S7 closure.

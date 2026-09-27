@@ -11,7 +11,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. Only the M2 T29 S6 packet below is active.**
+queued records. Only the M2 T29 S7 packet below is active.**
 
 ## Retained M2 T15 summary
 

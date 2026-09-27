@@ -1452,11 +1452,19 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
             if (address >= game->area_prg_size ||
                 (mysmb_u16)(game->area_prg_size - address) < 2U) return 0U;
             first = game->area_prg[address];
-            if (first == 0xfdU) return 1U;
-            second = game->area_prg[(mysmb_u16)(address + 1U)];
-            row = (mysmb_u8)(first & 0x0fU);
+            /* DecodeAreaData returns through EndAParse on $fd.  The caller
+             * still reaches ChkLength for this slot and then continues its
+             * descending three-slot ProcADLoop; it is not a ProcessAreaData
+             * return. */
+            if (first == 0xfdU) {
+                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
+                    game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
+            }
+            else {
+                second = game->area_prg[(mysmb_u16)(address + 1U)];
+                row = (mysmb_u8)(first & 0x0fU);
 
-            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
                 if ((second & 0x80U) != 0U &&
                     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
                     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
@@ -1490,14 +1498,15 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                         run_object = 1U;
                     }
                 }
-            }
-            else {
-                run_object = 1U;
-            }
-            if (run_object != 0U) {
-                mysmb_area_apply_parser_object(game, slot, first, second);
-                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
-                    game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
+                }
+                else {
+                    run_object = 1U;
+                }
+                if (run_object != 0U) {
+                    mysmb_area_apply_parser_object(game, slot, first, second);
+                    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
+                        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
+                }
             }
             if (slot == 0U) break;
             slot--;
