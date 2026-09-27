@@ -65,27 +65,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T27 S1 Packet
+## M2 T27 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T27 S1, implementation; screen initialization and palette chain. |
-| Admission And Approval | Owner approved source-order continuation and chain-based S delivery; T24 S2 transferred the exact chain. |
-| Objective | Establish ROM-equivalent `ScreenRoutines -> InitScreen -> SetupIntermediate -> NoAltPal` in the shared game owner. |
-| Non-goals | No palette/status/text successor node, host UI rule, platform gameplay logic, unrelated repair or credit without both evidence tracks. |
-| Reference Baseline | 100 / 1,992 complete; scope `ScreenRoutines` through `NoAltPal` (21 exact labels), all incoming open; expected 20 leaf/data matches; `ScreenRoutines` remains deferred for full dispatch-table evidence; maximum 120 / 1,992. |
+| Identifier Mode | M2 T27 S2, implementation; contiguous remaining screen/status/text chain. |
+| Admission And Approval | Owner-approved source-order continuation; S1 closed 20 leaves and T24 S2 transferred the remaining 46 labels. |
+| Objective | Establish ROM-equivalent `WriteTopStatusLine -> NoReset` in the shared game owner. |
+| Non-goals | No T29 parser implementation, full ScreenRoutines dispatch credit, host UI rule, platform gameplay logic or unrelated repair. |
+| Reference Baseline | 120 / 1,992 complete; 46 incoming open labels; expected 45 matches; `AreaParserTaskControl` is retained for S3 integration with T29; maximum 165 / 1,992. |
 | Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
-| Files And ABI Surface | Shared screen/status game owner, project tests/recorders, ledger and three target artifacts for implementation P. |
+| Files And ABI Surface | Shared screen/status/text game owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | ROM source comparison of `$849a-$8564`; controlled title-to-area-entry ROM route; focused screen/status and title smoke; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
-| Expected Markers | Source task-vector load, `ScreenRoutineTask` increment, intermediate/area branch, `OperMode_Task` increment and carry return. |
+| Verification | Source comparison for ROM `$8565-$88ad`; controlled status/text/title/warp ROM routes; focused tests; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
+| Expected Markers | status text selection, timer branches, intermediate task transitions, title/text data loops, name/warp branches and screen timer reset. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Delivery Profile | One contiguous chain; its individual labels remain separately accounted in the inventory and ledger. |
-| Reporting Requirements | Report each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
+| Delivery Profile | One contiguous chain; individual labels remain separately accounted in inventory and ledger. |
+| Reporting Requirements | Record each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
 | Stop Conditions | Stop on nonmatching source branch, cross-owner dependency, trace alignment error, source-policy breach or platform gameplay logic. |
-| Exit Criteria | All 21 labels have exact branch/state evidence and a source-reachable ROM route; remaining 46 T27 nodes retain T24 S2 custody until their own admission. |
-| Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery rather than one-label paperwork. |
-| Similar-Issue Sweep | Review all game/platform sources for screen-task decisions; record every production hit and defer non-S1 labels to their planned T27 chains. |
+| Exit Criteria | Every local chain label has both evidence tracks; `AreaParserTaskControl` transfers to S3 uncredited until the T29 parser dependency is proved. |
+| Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery. |
+| Similar-Issue Sweep | Review game/platform sources for screen/status/text decisions; record all production hits and defer parser behavior to its source owner. |
 
 ## Recent M4 Closures
 

@@ -272,6 +272,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 10U;
         break;
     case 10U:
+        /* ROM GetBackgroundColor increments ScreenRoutineTask before it
+         * falls through into GetPlayerColors.  Keep that write visible to
+         * the palette producer in the same source order. */
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         if (game->ram[MYSMB_RAM_BACKGROUND_COLOR] >= 4U &&
             game->ram[MYSMB_RAM_BACKGROUND_COLOR] <= 7U) {
             static const mysmb_u8 background_controls[4] = { 0U, 9U, 10U, 4U };
@@ -285,7 +289,6 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
              * title draw or the game-mode setup handoff. */
             (void)mysmb_area_sync_player_palette(game);
         }
-        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         break;
     case 11U:
         if (game->ram[0x0733U] == 1U)

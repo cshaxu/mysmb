@@ -1810,6 +1810,31 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Owner-approved T27 S1 receipt from M2 T24 S2 custody; exact three-node screen-root chain."
+        },
+        {
+          "id": "M2 T27 S2",
+          "evidence": [
+            "docs/proposals/m2/screen-status.md"
+          ],
+          "recordKinds": [
+            "owner-approved-source-order",
+            "chain-based-implementation"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner-approved receipt of the contiguous remaining screen/status/text chain from M2 T24 S2."
+        },
+        {
+          "id": "M2 T27 S3",
+          "evidence": [
+            "docs/proposals/m2/screen-status.md"
+          ],
+          "recordKinds": [
+            "planned-dispatch-integration"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted future integration receiver for ScreenRoutines and AreaParserTaskControl after their external dependencies are proven."
         }
       ]
     }
@@ -8800,8 +8825,8 @@
     {
       "label": "ScreenRoutines",
       "line": 1386,
-      "receiver": "M2 T27 S1",
-      "receivingBasis": "M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T27 S3",
+      "receivingBasis": "M2 T27 S3 full dispatch-table integration after all target chains and parser owner are proven.",
       "futurePackage": null,
       "history": [
         {
@@ -9155,9 +9180,9 @@
     {
       "label": "WriteTopStatusLine",
       "line": 1517,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9170,9 +9195,9 @@
     {
       "label": "WriteBottomStatusLine",
       "line": 1524,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T19",
@@ -9193,9 +9218,9 @@
     {
       "label": "DisplayTimeUp",
       "line": 1553,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9208,9 +9233,9 @@
     {
       "label": "NoTimeUp",
       "line": 1560,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9223,9 +9248,9 @@
     {
       "label": "DisplayIntermediate",
       "line": 1565,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T15",
@@ -9246,9 +9271,9 @@
     {
       "label": "PlayerInter",
       "line": 1577,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9261,9 +9286,9 @@
     {
       "label": "OutputInter",
       "line": 1579,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9276,9 +9301,9 @@
     {
       "label": "GameOverInter",
       "line": 1584,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9291,9 +9316,9 @@
     {
       "label": "NoInter",
       "line": 1589,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9306,9 +9331,9 @@
     {
       "label": "AreaParserTaskControl",
       "line": 1595,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9321,9 +9346,9 @@
     {
       "label": "TaskLoop",
       "line": 1597,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9336,9 +9361,9 @@
     {
       "label": "OutputCol",
       "line": 1603,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9351,9 +9376,9 @@
     {
       "label": "DrawTitleScreen",
       "line": 1612,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9366,9 +9391,9 @@
     {
       "label": "OutputTScr",
       "line": 1624,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9381,9 +9406,9 @@
     {
       "label": "ChkHiByte",
       "line": 1629,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9396,9 +9421,9 @@
     {
       "label": "ClearBuffersDrawIcon",
       "line": 1639,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9411,9 +9436,9 @@
     {
       "label": "TScrClear",
       "line": 1643,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9426,9 +9451,9 @@
     {
       "label": "IncSubtask",
       "line": 1648,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9441,9 +9466,9 @@
     {
       "label": "WriteTopScore",
       "line": 1653,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9456,9 +9481,9 @@
     {
       "label": "IncModeTask_B",
       "line": 1656,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9471,9 +9496,9 @@
     {
       "label": "GameText",
       "line": 1661,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9486,9 +9511,9 @@
     {
       "label": "TopStatusBarLine",
       "line": 1662,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9501,9 +9526,9 @@
     {
       "label": "WorldLivesDisplay",
       "line": 1671,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9516,9 +9541,9 @@
     {
       "label": "TwoPlayerTimeUp",
       "line": 1680,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9531,9 +9556,9 @@
     {
       "label": "OnePlayerTimeUp",
       "line": 1682,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9546,9 +9571,9 @@
     {
       "label": "TwoPlayerGameOver",
       "line": 1686,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9561,9 +9586,9 @@
     {
       "label": "OnePlayerGameOver",
       "line": 1688,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9576,9 +9601,9 @@
     {
       "label": "WarpZoneWelcome",
       "line": 1693,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9591,9 +9616,9 @@
     {
       "label": "LuigiName",
       "line": 1704,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9606,9 +9631,9 @@
     {
       "label": "WarpZoneNumbers",
       "line": 1707,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9621,9 +9646,9 @@
     {
       "label": "GameTextOffsets",
       "line": 1712,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9636,9 +9661,9 @@
     {
       "label": "WriteGameText",
       "line": 1719,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T15",
@@ -9659,9 +9684,9 @@
     {
       "label": "Chk2Players",
       "line": 1728,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9674,9 +9699,9 @@
     {
       "label": "LdGameText",
       "line": 1731,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9689,9 +9714,9 @@
     {
       "label": "GameTextLoop",
       "line": 1733,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9704,9 +9729,9 @@
     {
       "label": "EndGameText",
       "line": 1740,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9719,9 +9744,9 @@
     {
       "label": "PutLives",
       "line": 1756,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9734,9 +9759,9 @@
     {
       "label": "CheckPlayerName",
       "line": 1765,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9749,9 +9774,9 @@
     {
       "label": "ChkLuigi",
       "line": 1775,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9764,9 +9789,9 @@
     {
       "label": "NameLoop",
       "line": 1778,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9779,9 +9804,9 @@
     {
       "label": "ExitChkName",
       "line": 1782,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9794,9 +9819,9 @@
     {
       "label": "PrintWarpZoneNumbers",
       "line": 1784,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9809,9 +9834,9 @@
     {
       "label": "WarpNumLoop",
       "line": 1790,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9824,9 +9849,9 @@
     {
       "label": "ResetSpritesAndScreenTimer",
       "line": 1804,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9839,9 +9864,9 @@
     {
       "label": "ResetScreenTimer",
       "line": 1809,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9854,9 +9879,9 @@
     {
       "label": "NoReset",
       "line": 1813,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S2",
+      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -57435,6 +57460,73 @@
       ],
       "acceptedBy": "Corrected owner-approved source-chain receipt; direct dependencies cannot remain outside S1.",
       "evidence": "docs/proposals/m2/screen-status.md"
+    },
+    {
+      "id": "E-T24S2-T27S2-screen-status-text",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T27 S2",
+      "nodes": [
+        "WriteTopStatusLine",
+        "WriteBottomStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "AreaParserTaskControl",
+        "TaskLoop",
+        "OutputCol",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "WarpZoneWelcome",
+        "LuigiName",
+        "WarpZoneNumbers",
+        "GameTextOffsets",
+        "WriteGameText",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "EndGameText",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "PrintWarpZoneNumbers",
+        "WarpNumLoop",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset"
+      ],
+      "acceptedBy": "Owner-approved source-order T27 S2 chain admission",
+      "evidence": "docs/proposals/m2/screen-status.md"
+    },
+    {
+      "id": "E-T27S1-T27S3-screen-dispatch-root",
+      "type": "transfer",
+      "from": "M2 T27 S1",
+      "to": "M2 T27 S3",
+      "nodes": [
+        "ScreenRoutines"
+      ],
+      "acceptedBy": "S1 closure requires full dispatch-table integration before credit",
+      "evidence": "docs/proposals/m2/screen-status.md"
     }
   ],
   "runs": [
@@ -66078,9 +66170,256 @@
         "NoAltPal"
       ],
       "maximumComplete": 120,
+      "actualMatches": [
+        "InitScreen",
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal"
+      ],
+      "evidence": "docs/proposals/m2/screen-status.md",
+      "state": "closed-complete-screen-init-palette-leaves"
+    },
+    {
+      "subtask": "M2 T27 S2",
+      "kind": "implementation",
+      "scope": [
+        "WriteTopStatusLine",
+        "WriteBottomStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "AreaParserTaskControl",
+        "TaskLoop",
+        "OutputCol",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "WarpZoneWelcome",
+        "LuigiName",
+        "WarpZoneNumbers",
+        "GameTextOffsets",
+        "WriteGameText",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "EndGameText",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "PrintWarpZoneNumbers",
+        "WarpNumLoop",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset"
+      ],
+      "baseline": 120,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitScreen",
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "WriteTopStatusLine",
+        "WriteBottomStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "TaskLoop",
+        "OutputCol",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "WarpZoneWelcome",
+        "LuigiName",
+        "WarpZoneNumbers",
+        "GameTextOffsets",
+        "WriteGameText",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "EndGameText",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "PrintWarpZoneNumbers",
+        "WarpNumLoop",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset"
+      ],
+      "maximumComplete": 165,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/screen-status.md",
-      "state": "active-screen-init-palette-chain"
+      "state": "active-screen-status-text-chain"
     }
   ]
 }

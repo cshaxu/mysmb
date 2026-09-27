@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 100 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver. |
+| ROM-match complete | 120 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,784 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,764 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **100 / 1,992 (5.02%)**. Initial deep verification covered
+Verified conformance is **120 / 1,992 (6.02%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -87,6 +87,26 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1119 | `DemoEngine` |
 | 1129 | `DoAction` |
 | 1133 | `DemoOver` |
+| 1408 | `InitScreen` |
+| 1418 | `SetupIntermediate` |
+| 1436 | `AreaPalette` |
+| 1439 | `GetAreaPalette` |
+| 1442 | `SetVRAMAddr_A` |
+| 1443 | `NextSubtask` |
+| 1448 | `BGColorCtrl_Addr` |
+| 1451 | `BackgroundColors` |
+| 1455 | `PlayerColors` |
+| 1460 | `GetBackgroundColor` |
+| 1465 | `NoBGColor` |
+| 1467 | `GetPlayerColors` |
+| 1473 | `ChkFiery` |
+| 1477 | `StartClrGet` |
+| 1479 | `ClrGetLoop` |
+| 1489 | `SetBGColor` |
+| 1502 | `SetVRAMOffset` |
+| 1507 | `GetAlternatePalette1` |
+| 1512 | `SetVRAMAddr_B` |
+| 1513 | `NoAltPal` |
 | 996 | `GameMenuRoutine` |
 | 1047 | `NullJoypad` |
 | 1049 | `RunDemo` |
