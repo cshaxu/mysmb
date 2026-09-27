@@ -608,6 +608,49 @@ static void mysmb_reference_apply_t29_area_entry_fixture(lib_u8 *ram,
     }
 }
 
+/* T29/S4 changes only source RAM at an ordinary NMI return.  The next NMI
+ * reaches PlayerLoseLife or GameOverMode through the normal mode selector;
+ * this fixture neither redirects the PC nor manufactures a call stack. */
+static void mysmb_reference_apply_t29_life_mode_fixture(lib_u8 *ram,
+                                                         lib_u8 kind)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0774u] = 0u;
+    ram[0x077au] = 0u;
+    ram[0x0753u] = 0u;
+    ram[0x075au] = 2u;
+    ram[0x075bu] = 0u;
+    ram[0x075cu] = 0u;
+    ram[0x075fu] = 0u;
+    ram[0x0761u] = 0xffu;
+    ram[0x071au] = 7u;
+    ram[0x06fcu] = 0u;
+    ram[0x07a0u] = 0u;
+    if (kind == 0u || kind == 1u) {
+        ram[0x0770u] = 1u;
+        ram[0x0772u] = 3u;
+        ram[0x000eu] = 6u;
+        if (kind == 1u) ram[0x075au] = 0u;
+    }
+    else {
+        ram[0x0770u] = 3u;
+        ram[0x0772u] = kind == 5u ? 0u : 2u;
+        if (kind == 2u) ram[0x07a0u] = 0x18u;
+        else if (kind == 3u) {
+            ram[0x06fcu] = 0x10u;
+            ram[0x075fu] = 4u;
+        }
+        else {
+            ram[0x06fcu] = 0x10u;
+            ram[0x077au] = 1u;
+            ram[0x075au] = 0xffu;
+            ram[0x075fu] = 1u;
+            ram[0x0761u] = 2u;
+            ram[0x0766u] = 6u;
+        }
+    }
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -992,6 +1035,36 @@ int main(int argument_count, char **arguments)
             t26_fixture = 67u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-life-survive") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 68u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-life-final") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 69u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-gameover-wait") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 70u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-gameover-single") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 71u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-gameover-two-player") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 72u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-gameover-setup") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 73u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1223,6 +1296,9 @@ int main(int argument_count, char **arguments)
                      * GameEngine dispatch from reaching this fixture. */
                     t29_area_entry_phase = 1u;
                 }
+                else if (t26_fixture >= 68u && t26_fixture <= 73u)
+                    mysmb_reference_apply_t29_life_mode_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 68u));
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

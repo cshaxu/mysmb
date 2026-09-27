@@ -298,3 +298,69 @@ and `mysmb64.exe` `9483AE9DF1862AFA2989AE1903CF80A8369DB4AB491FF49BDFD876526DF20
 This is an implementation checkpoint, not S4 closure. The original-ROM
 fixture family, per-label state/control evidence, and inventory updates remain
 required before any of the seventeen labels can be credited.
+
+## S4 P2 and closure: controlled ROM routes and terminal-mode chain
+
+P2 adds six source-RAM-only fixtures to the owner-local reference recorder.
+After a 600-frame ordinary warmup, they enter normal NMI processing for a
+surviving loss, final loss, Game Over setup, Game Over timer wait, single-player
+Start termination, and two-player Start continuation.  They do not inject a
+program counter or stack.  Their aggregate PC coverage proves the source
+branches at `$91cd-$9215` (surviving half-way selection and continuation),
+`$91cd-$91e8` (final-life mode handoff), `$9218-$9236` (GameOverMode setup),
+`$9218-$9246` (RunGameOver wait), `$9218-$9263` (single-player termination),
+and `$9218-$92a9` (two-player exchange and continuation).
+
+The static source comparison closes the remaining node-level details: all
+sixteen `HalfwayPageNybbles` bytes are `$56,$40,$65,$70,$66,$40,$66,$40,$66,$40,$66,$60,$65,$70,$00,$00`; `PlayerLoseLife` writes screen gate, sprite-zero,
+silence and decremented lives before its signed branch; `StillInGame` derives
+the table index from world and level bit one; `GetHalfway` retains LSR carry
+across TYA before high/low nybble selection; `MaskHPNyb` uses the original
+greater-than screen-page reset; and `SetHalfway` calls exchange before
+ContinueGame.  `GameOverMode` selects setup, screen routines or run from its
+task; setup, waiting and both Start outcomes are independently routed.  The
+two-player route proves the descending seven-byte `TransLoop`, carry-clear
+continuation result and player flip; the solo route proves `ExTrans` carry-set
+title return.  `DoNothing2` returns before `DoNothing1`'s `$06c9=$ff` residual
+store in SecondaryGameSetup.
+
+The independent native tests `mysmb.mode-smoke`,
+`mysmb.oper-mode-dispatch-smoke`, `mysmb.local-death-music-smoke`, and
+`mysmb.platform-purity` pass on x86 and x64.  The shared C90 source links to
+the OpenNT DOS16 MZ; its existing `OLDNAMES.LIB` warning remains non-fatal.
+P2 artifacts are `mysmb16.exe`
+`6E9A9040AD7D870AE6C003845AAFAEFC73D77A779B0C35945D920CACEBB45999`,
+`mysmb32.exe` `0197F9C8AA69E258A36E6E9CA6EDB257602A88F68DDC9B2791DBEAF61C6749D3`,
+and `mysmb64.exe` `6E67453D9774266701D045D1CA50080553E475BE56C72EDA874E5B44C34851A1`.
+
+S4 closes **17 / 17** expected labels: `HalfwayPageNybbles`,
+`PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`,
+`GameOverMode`, `SetupGameOver`, `RunGameOver`, `TerminateGame`,
+`ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`,
+`DoNothing1`, and `DoNothing2`.  The conformance total becomes **302 / 1,992**.
+No scoped node is deferred or transferred.  `src/game` remains the sole owner
+of game behavior; the reference recorder is validation-only and neither
+Windows nor DOS source contains a terminal-mode branch.
+
+## S5 admission: area-parser dispatch and scenery-selection chain
+
+S5 receives exactly `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`,
+`AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`,
+`BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`,
+`ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, and
+`AreaParserCore` through the accepted source-order receipt from M2 T18 S4.
+All fourteen labels are open at the **302 / 1,992** baseline and are forecast
+to become complete, for a maximum **316 / 1,992**.
+
+This is one continuous parser-dispatch data chain from `$92b0` through the
+AreaParserCore handoff. The shared C90 owner is the area-parser family. The
+ROM route starts with source RAM only at a normal NMI boundary and reaches the
+ordinary GameEngine parser call; fixtures cover parser task zero and nonzero,
+column increment/wrap, background/foreground scenery selection and terrain
+bit routing. It may not inject a leaf program counter or stack. The source
+track compares vector selection, increment/carry/order, table bytes and every
+shared-RAM read/write before the later renderer boundary. The operational
+track runs parser-schedule and parser-buffer focused smokes, x86/x64 builds,
+OpenNT DOS16 link, the purity gate and the three required artifacts once per
+implementation P. S5 does not take ownership of S6's metatile/block-buffer
+renderer leaves or S7's area-stream decoder.

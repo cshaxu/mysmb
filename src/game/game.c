@@ -412,6 +412,8 @@ void mysmb_game_secondary_setup(struct mysmb_game *game)
     game->ram[0x0769U] = 0U;
     game->ram[0x0728U] = 0U;
     game->ram[0x03a0U] = 0xffU;
+    /* ROM DoNothing2 returns, then DoNothing1 retains this otherwise unused
+     * residual store before SecondaryGameSetup continues its own writes. */
     game->ram[0x06c9U] = 0xffU;
     game->ram[MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS] = 0x58U;
     game->ram[(mysmb_u16)(MYSMB_RAM_SPRITE_SHUFFLE_AMOUNTS + 1U)] = 0x48U;

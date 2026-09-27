@@ -425,23 +425,23 @@ The labels and branches behind every line remain open until individually bound b
 | 2900 | `ChkOverR` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
 | 2911 | `ChkSwimE` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
 | 2914 | `SetPESub` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
-| 2921 | `HalfwayPageNybbles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-halfwaypagenybbles) |
-| 2931 | `PlayerLoseLife` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerloselife) |
-| 2944 | `StillInGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stillingame) |
-| 2951 | `GetHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethalfway) |
-| 2960 | `MaskHPNyb` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maskhpnyb) |
-| 2965 | `SetHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethalfway) |
-| 2971 | `GameOverMode` | T18 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_game_over` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameovermode) |
-| 2981 | `SetupGameOver` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupgameover) |
-| 2993 | `RunGameOver` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rungameover) |
-| 3001 | `TerminateGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terminategame) |
-| 3015 | `ContinueGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-continuegame) |
-| 3027 | `GameIsOn` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameison) |
-| 3029 | `TransposePlayers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-transposeplayers) |
-| 3039 | `TransLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-transloop) |
-| 3048 | `ExTrans` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extrans) |
-| 3052 | `DoNothing1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-donothing1) |
-| 3055 | `DoNothing2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-donothing2) |
+| 2921 | `HalfwayPageNybbles` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2931 | `PlayerLoseLife` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2944 | `StillInGame` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2951 | `GetHalfway` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2960 | `MaskHPNyb` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2965 | `SetHalfway` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2971 | `GameOverMode` | T18 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_game_over` | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2981 | `SetupGameOver` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 2993 | `RunGameOver` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3001 | `TerminateGame` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3015 | `ContinueGame` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3027 | `GameIsOn` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3029 | `TransposePlayers` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3039 | `TransLoop` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3048 | `ExTrans` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3052 | `DoNothing1` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3055 | `DoNothing2` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 3060 | `AreaParserTaskHandler` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertaskhandler) |
 | 3065 | `DoAPTasks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doaptasks) |
 | 3071 | `SkipATRender` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipatrender) |

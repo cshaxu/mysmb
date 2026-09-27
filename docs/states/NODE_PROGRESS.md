@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 285 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1, MusicSelectData, GetAreaMusic, ChkAreaType, StoreMusic, ExitGetM, PlayerStarting_X_Pos, AltYPosOffset, PlayerStarting_Y_Pos, PlayerBGPriorityData, GameTimerData, Entrance_GameTimerSetup, ChkStPos, SetStPos, ChkOverR, ChkSwimE, SetPESub. |
-| Mapped / audited, not complete | 107 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 54 audited evidence gaps, and 30 mapped evidence gaps. |
-| Open / unmatched | 1,600 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 302 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1, MusicSelectData, GetAreaMusic, ChkAreaType, StoreMusic, ExitGetM, PlayerStarting_X_Pos, AltYPosOffset, PlayerStarting_Y_Pos, PlayerBGPriorityData, GameTimerData, Entrance_GameTimerSetup, ChkStPos, SetStPos, ChkOverR, ChkSwimE, SetPESub, HalfwayPageNybbles, PlayerLoseLife, StillInGame, GetHalfway, MaskHPNyb, SetHalfway, GameOverMode, SetupGameOver, RunGameOver, TerminateGame, ContinueGame, GameIsOn, TransposePlayers, TransLoop, ExTrans, DoNothing1, DoNothing2. |
+| Mapped / audited, not complete | 106 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 54 audited evidence gaps, and 29 mapped evidence gaps. |
+| Open / unmatched | 1,584 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **285 / 1,992 (14.31%)**. The 107 incomplete mappings comprise 18 known mismatches, three known missing implementations, two changed-body revalidations, 54 audited evidence gaps, and 30 mapped evidence gaps. These categories are disjoint.
+Verified conformance is **302 / 1,992 (15.16%)**. The 106 incomplete mappings comprise 18 known mismatches, three known missing implementations, two changed-body revalidations, 54 audited evidence gaps, and 29 mapped evidence gaps. These categories are disjoint.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,15 +29,168 @@ of equivalent native nodes. No product repair is part of this audit.
 
 ## Completed matches
 
+
 | ROM line | Node |
 | ---: | --- |
-| 1970 | `ColorRotatePalette` |
-| 1973 | `BlankPalette` |
-| 1977 | `Palette3Data` |
-| 1983 | `ColorRotation` |
-| 1991 | `GetBlankPal` |
-| 2004 | `GetAreaPal` |
-| 2024 | `ExitColorRot` |
+| 699 | `Start` |
+| 706 | `VBlank1` |
+| 708 | `VBlank2` |
+| 712 | `WBootCheck` |
+| 721 | `ColdBoot` |
+| 737 | `EndlessLoop` |
+| 743 | `VRAM_AddrTable_Low` |
+| 752 | `VRAM_AddrTable_High` |
+| 761 | `VRAM_Buffer_Offset` |
+| 776 | `ScreenOff` |
+| 796 | `InitBuffer` |
+| 814 | `DecTimers` |
+| 820 | `DecTimersLoop` |
+| 823 | `SkipExpTimer` |
+| 825 | `NoDecTimers` |
+| 826 | `PauseSkip` |
+| 837 | `RotPRandomBit` |
+| 843 | `Sprite0Clr` |
+| 851 | `Sprite0Hit` |
+| 855 | `HBlankDelay` |
+| 857 | `SkipSprite0` |
+| 868 | `SkipMainOper` |
+| 876 | `PauseRoutine` |
+| 885 | `ChkPauseTimer` |
+| 889 | `ChkStart` |
+| 904 | `ClrPauseTimer` |
+| 906 | `SetPause` |
+| 907 | `ExitPause` |
+| 912 | `SpriteShuffler` |
+| 917 | `ShuffleLoop` |
+| 926 | `StrSprOffset` |
+| 927 | `NextSprOffset` |
+| 934 | `SetAmtOffset` |
+| 937 | `SetMiscOffset` |
+| 954 | `OperModeExecutionTree` |
+| 965 | `MoveAllSpritesOffscreen` |
+| 969 | `MoveSpritesOffscreen` |
+| 972 | `SprInitLoop` |
+| 982 | `TitleScreenMode` |
+| 993 | `WSelectBufferTemplate` |
+| 996 | `GameMenuRoutine` |
+| 1004 | `StartGame` |
+| 1005 | `ChkSelect` |
+| 1013 | `ChkWorldSel` |
+| 1018 | `SelectBLogic` |
+| 1033 | `IncWorldSel` |
+| 1039 | `UpdateShroom` |
+| 1047 | `NullJoypad` |
+| 1049 | `RunDemo` |
+| 1053 | `ResetTitle` |
+| 1059 | `ChkContinue` |
+| 1065 | `StartWorld1` |
+| 1077 | `InitScores` |
+| 1080 | `ExitMenu` |
+| 1081 | `GoContinue` |
+| 1090 | `MushroomIconData` |
+| 1093 | `DrawMushroomIcon` |
+| 1095 | `IconDataRead` |
+| 1105 | `ExitIcon` |
+| 1109 | `DemoActionData` |
+| 1114 | `DemoTimingData` |
+| 1119 | `DemoEngine` |
+| 1129 | `DoAction` |
+| 1133 | `DemoOver` |
+| 1137 | `VictoryMode` |
+| 1144 | `AutoPlayer` |
+| 1147 | `VictoryModeSubroutines` |
+| 1159 | `SetupVictoryMode` |
+| 1169 | `PlayerVictoryWalk` |
+| 1178 | `PerformWalk` |
+| 1180 | `DontWalk` |
+| 1195 | `ExitVWalk` |
+| 1201 | `PrintVictoryMessages` |
+| 1215 | `MRetainerMsg` |
+| 1217 | `ThankPlayer` |
+| 1223 | `SecondPartMsg` |
+| 1232 | `EvalForMusic` |
+| 1236 | `PrintMsg` |
+| 1240 | `IncMsgCounter` |
+| 1248 | `SetEndTimer` |
+| 1251 | `IncModeTask_A` |
+| 1252 | `ExitMsgs` |
+| 1256 | `PlayerEndWorld` |
+| 1271 | `EndExitOne` |
+| 1272 | `EndChkBButton` |
+| 1281 | `EndExitTwo` |
+| 1287 | `FloateyNumTileData` |
+| 1303 | `ScoreUpdateData` |
+| 1308 | `FloateyNumbersRoutine` |
+| 1315 | `ChkNumTimer` |
+| 1320 | `DecNumTimer` |
+| 1328 | `LoadNumTiles` |
+| 1338 | `ChkTallEnemy` |
+| 1355 | `GetAltOffset` |
+| 1358 | `FloateyPart` |
+| 1363 | `SetupNumSpr` |
+| 1408 | `InitScreen` |
+| 1418 | `SetupIntermediate` |
+| 1436 | `AreaPalette` |
+| 1439 | `GetAreaPalette` |
+| 1442 | `SetVRAMAddr_A` |
+| 1443 | `NextSubtask` |
+| 1448 | `BGColorCtrl_Addr` |
+| 1451 | `BackgroundColors` |
+| 1455 | `PlayerColors` |
+| 1460 | `GetBackgroundColor` |
+| 1465 | `NoBGColor` |
+| 1467 | `GetPlayerColors` |
+| 1473 | `ChkFiery` |
+| 1477 | `StartClrGet` |
+| 1479 | `ClrGetLoop` |
+| 1489 | `SetBGColor` |
+| 1502 | `SetVRAMOffset` |
+| 1507 | `GetAlternatePalette1` |
+| 1512 | `SetVRAMAddr_B` |
+| 1513 | `NoAltPal` |
+| 1517 | `WriteTopStatusLine` |
+| 1524 | `WriteBottomStatusLine` |
+| 1553 | `DisplayTimeUp` |
+| 1560 | `NoTimeUp` |
+| 1565 | `DisplayIntermediate` |
+| 1577 | `PlayerInter` |
+| 1579 | `OutputInter` |
+| 1584 | `GameOverInter` |
+| 1589 | `NoInter` |
+| 1612 | `DrawTitleScreen` |
+| 1624 | `OutputTScr` |
+| 1629 | `ChkHiByte` |
+| 1639 | `ClearBuffersDrawIcon` |
+| 1643 | `TScrClear` |
+| 1648 | `IncSubtask` |
+| 1653 | `WriteTopScore` |
+| 1656 | `IncModeTask_B` |
+| 1661 | `GameText` |
+| 1662 | `TopStatusBarLine` |
+| 1671 | `WorldLivesDisplay` |
+| 1680 | `TwoPlayerTimeUp` |
+| 1682 | `OnePlayerTimeUp` |
+| 1686 | `TwoPlayerGameOver` |
+| 1688 | `OnePlayerGameOver` |
+| 1693 | `WarpZoneWelcome` |
+| 1704 | `LuigiName` |
+| 1707 | `WarpZoneNumbers` |
+| 1712 | `GameTextOffsets` |
+| 1719 | `WriteGameText` |
+| 1728 | `Chk2Players` |
+| 1731 | `LdGameText` |
+| 1733 | `GameTextLoop` |
+| 1740 | `EndGameText` |
+| 1756 | `PutLives` |
+| 1765 | `CheckPlayerName` |
+| 1775 | `ChkLuigi` |
+| 1778 | `NameLoop` |
+| 1782 | `ExitChkName` |
+| 1784 | `PrintWarpZoneNumbers` |
+| 1790 | `WarpNumLoop` |
+| 1804 | `ResetSpritesAndScreenTimer` |
+| 1809 | `ResetScreenTimer` |
+| 1813 | `NoReset` |
 | 1825 | `RenderAreaGraphics` |
 | 1840 | `DrawMTLoop` |
 | 1878 | `RightCheck` |
@@ -49,6 +202,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1930 | `SetATHigh` |
 | 1940 | `AttribLoop` |
 | 1962 | `SetVRAMCtrl` |
+| 1970 | `ColorRotatePalette` |
+| 1973 | `BlankPalette` |
+| 1977 | `Palette3Data` |
+| 1983 | `ColorRotation` |
+| 1991 | `GetBlankPal` |
+| 2004 | `GetAreaPal` |
+| 2024 | `ExitColorRot` |
 | 2034 | `BlockGfxData` |
 | 2041 | `RemoveCoin_Axe` |
 | 2047 | `WriteBlankMT` |
@@ -60,6 +220,8 @@ of equivalent native nodes. No product repair is part of this audit.
 | 2086 | `PutBlockMetatile` |
 | 2097 | `SaveHAdder` |
 | 2118 | `RemBridge` |
+| 2145 | `MetatileGraphics_Low` |
+| 2148 | `MetatileGraphics_High` |
 | 2151 | `Palette0_MTiles` |
 | 2192 | `Palette1_MTiles` |
 | 2240 | `Palette2_MTiles` |
@@ -115,28 +277,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 2647 | `GetScoreDiff` |
 | 2655 | `CopyScore` |
 | 2661 | `NoTopSc` |
-| 2145 | `MetatileGraphics_Low` |
-| 2148 | `MetatileGraphics_High` |
-| 776 | `ScreenOff` |
-| 699 | `Start` |
-| 706 | `VBlank1` |
-| 708 | `VBlank2` |
-| 712 | `WBootCheck` |
-| 721 | `ColdBoot` |
-| 737 | `EndlessLoop` |
-| 2674 | `InitializeGame` |
-| 2795 | `InitializeMemory` |
-| 2799 | `InitPageLoop` |
-| 2800 | `InitByteLoop` |
-| 2804 | `InitByte` |
-| 2805 | `SkipByte` |
-| 2814 | `MusicSelectData` |
-| 2818 | `GetAreaMusic` |
-| 2830 | `ChkAreaType` |
-| 2834 | `StoreMusic` |
-| 2836 | `ExitGetM` |
 | 2665 | `DefaultSprOffsets` |
 | 2669 | `Sprite0Data` |
+| 2674 | `InitializeGame` |
 | 2678 | `ClrSndLoop` |
 | 2685 | `InitializeArea` |
 | 2690 | `ClrTimersLoop` |
@@ -150,6 +293,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 2754 | `ClearVRLoop` |
 | 2775 | `ShufAmtLoop` |
 | 2780 | `ISpr0Loop` |
+| 2795 | `InitializeMemory` |
+| 2799 | `InitPageLoop` |
+| 2800 | `InitByteLoop` |
+| 2804 | `InitByte` |
+| 2805 | `SkipByte` |
+| 2814 | `MusicSelectData` |
+| 2818 | `GetAreaMusic` |
+| 2830 | `ChkAreaType` |
+| 2834 | `StoreMusic` |
+| 2836 | `ExitGetM` |
 | 2840 | `PlayerStarting_X_Pos` |
 | 2844 | `AltYPosOffset` |
 | 2847 | `PlayerStarting_Y_Pos` |
@@ -161,168 +314,26 @@ of equivalent native nodes. No product repair is part of this audit.
 | 2900 | `ChkOverR` |
 | 2911 | `ChkSwimE` |
 | 2914 | `SetPESub` |
-| 743 | `VRAM_AddrTable_Low` |
-| 752 | `VRAM_AddrTable_High` |
-| 761 | `VRAM_Buffer_Offset` |
-| 796 | `InitBuffer` |
-| 876 | `PauseRoutine` |
-| 885 | `ChkPauseTimer` |
-| 889 | `ChkStart` |
-| 904 | `ClrPauseTimer` |
-| 906 | `SetPause` |
-| 907 | `ExitPause` |
-| 814 | `DecTimers` |
-| 820 | `DecTimersLoop` |
-| 823 | `SkipExpTimer` |
-| 825 | `NoDecTimers` |
-| 826 | `PauseSkip` |
-| 837 | `RotPRandomBit` |
-| 912 | `SpriteShuffler` |
-| 917 | `ShuffleLoop` |
-| 926 | `StrSprOffset` |
-| 927 | `NextSprOffset` |
-| 934 | `SetAmtOffset` |
-| 937 | `SetMiscOffset` |
-| 954 | `OperModeExecutionTree` |
-| 843 | `Sprite0Clr` |
-| 851 | `Sprite0Hit` |
-| 855 | `HBlankDelay` |
-| 857 | `SkipSprite0` |
-| 868 | `SkipMainOper` |
-| 965 | `MoveAllSpritesOffscreen` |
-| 969 | `MoveSpritesOffscreen` |
-| 972 | `SprInitLoop` |
-| 982 | `TitleScreenMode` |
-| 993 | `WSelectBufferTemplate` |
-| 1090 | `MushroomIconData` |
-| 1093 | `DrawMushroomIcon` |
-| 1095 | `IconDataRead` |
-| 1105 | `ExitIcon` |
-| 1109 | `DemoActionData` |
-| 1114 | `DemoTimingData` |
-| 1119 | `DemoEngine` |
-| 1129 | `DoAction` |
-| 1133 | `DemoOver` |
-| 1408 | `InitScreen` |
-| 1418 | `SetupIntermediate` |
-| 1436 | `AreaPalette` |
-| 1439 | `GetAreaPalette` |
-| 1442 | `SetVRAMAddr_A` |
-| 1443 | `NextSubtask` |
-| 1448 | `BGColorCtrl_Addr` |
-| 1451 | `BackgroundColors` |
-| 1455 | `PlayerColors` |
-| 1460 | `GetBackgroundColor` |
-| 1465 | `NoBGColor` |
-| 1467 | `GetPlayerColors` |
-| 1473 | `ChkFiery` |
-| 1477 | `StartClrGet` |
-| 1479 | `ClrGetLoop` |
-| 1489 | `SetBGColor` |
-| 1502 | `SetVRAMOffset` |
-| 1507 | `GetAlternatePalette1` |
-| 1512 | `SetVRAMAddr_B` |
-| 1513 | `NoAltPal` |
-| 996 | `GameMenuRoutine` |
-| 1047 | `NullJoypad` |
-| 1049 | `RunDemo` |
-| 1053 | `ResetTitle` |
-| 1004 | `StartGame` |
-| 1005 | `ChkSelect` |
-| 1013 | `ChkWorldSel` |
-| 1018 | `SelectBLogic` |
-| 1033 | `IncWorldSel` |
-| 1039 | `UpdateShroom` |
-| 1059 | `ChkContinue` |
-| 1065 | `StartWorld1` |
-| 1077 | `InitScores` |
-| 1080 | `ExitMenu` |
-| 1081 | `GoContinue` |
+| 2921 | `HalfwayPageNybbles` |
+| 2931 | `PlayerLoseLife` |
+| 2944 | `StillInGame` |
+| 2951 | `GetHalfway` |
+| 2960 | `MaskHPNyb` |
+| 2965 | `SetHalfway` |
+| 2971 | `GameOverMode` |
+| 2981 | `SetupGameOver` |
+| 2993 | `RunGameOver` |
+| 3001 | `TerminateGame` |
+| 3015 | `ContinueGame` |
+| 3027 | `GameIsOn` |
+| 3029 | `TransposePlayers` |
+| 3039 | `TransLoop` |
+| 3048 | `ExTrans` |
+| 3052 | `DoNothing1` |
+| 3055 | `DoNothing2` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
-
-The following 32 T26 labels have source branch and operational evidence in the
-[T26 record](../proposals/m2/t26-victory-terminal.md#s7-closure).
-
-| 1137 | `VictoryMode` |
-| 1144 | `AutoPlayer` |
-| 1147 | `VictoryModeSubroutines` |
-| 1159 | `SetupVictoryMode` |
-| 1169 | `PlayerVictoryWalk` |
-| 1178 | `PerformWalk` |
-| 1180 | `DontWalk` |
-| 1195 | `ExitVWalk` |
-| 1201 | `PrintVictoryMessages` |
-| 1215 | `MRetainerMsg` |
-| 1217 | `ThankPlayer` |
-| 1223 | `SecondPartMsg` |
-| 1232 | `EvalForMusic` |
-| 1236 | `PrintMsg` |
-| 1240 | `IncMsgCounter` |
-| 1248 | `SetEndTimer` |
-| 1251 | `IncModeTask_A` |
-| 1252 | `ExitMsgs` |
-| 1256 | `PlayerEndWorld` |
-| 1271 | `EndExitOne` |
-| 1272 | `EndChkBButton` |
-| 1281 | `EndExitTwo` |
-| 1287 | `FloateyNumTileData` |
-| 1303 | `ScoreUpdateData` |
-| 1308 | `FloateyNumbersRoutine` |
-| 1315 | `ChkNumTimer` |
-| 1320 | `DecNumTimer` |
-| 1328 | `LoadNumTiles` |
-| 1338 | `ChkTallEnemy` |
-| 1355 | `GetAltOffset` |
-| 1358 | `FloateyPart` |
-| 1363 | `SetupNumSpr` |
-
-The following 43 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition), [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion), and [T27 S2 P21](../../proposals/m2/screen-status.md#s2p21-controlled-warp-text-entry-equivalence-and-closure).
-
-| 1517 | `WriteTopStatusLine` |
-| 1524 | `WriteBottomStatusLine` |
-| 1553 | `DisplayTimeUp` |
-| 1560 | `NoTimeUp` |
-| 1565 | `DisplayIntermediate` |
-| 1577 | `PlayerInter` |
-| 1579 | `OutputInter` |
-| 1584 | `GameOverInter` |
-| 1589 | `NoInter` |
-| 1612 | `DrawTitleScreen` |
-| 1624 | `OutputTScr` |
-| 1629 | `ChkHiByte` |
-| 1639 | `ClearBuffersDrawIcon` |
-| 1643 | `TScrClear` |
-| 1648 | `IncSubtask` |
-| 1653 | `WriteTopScore` |
-| 1656 | `IncModeTask_B` |
-| 1661 | `GameText` |
-| 1662 | `TopStatusBarLine` |
-| 1671 | `WorldLivesDisplay` |
-| 1680 | `TwoPlayerTimeUp` |
-| 1682 | `OnePlayerTimeUp` |
-| 1686 | `TwoPlayerGameOver` |
-| 1688 | `OnePlayerGameOver` |
-| 1693 | `WarpZoneWelcome` |
-| 1704 | `LuigiName` |
-| 1707 | `WarpZoneNumbers` |
-| 1712 | `GameTextOffsets` |
-| 1719 | `WriteGameText` |
-| 1728 | `Chk2Players` |
-| 1731 | `LdGameText` |
-| 1733 | `GameTextLoop` |
-| 1740 | `EndGameText` |
-| 1756 | `PutLives` |
-| 1765 | `CheckPlayerName` |
-| 1775 | `ChkLuigi` |
-| 1778 | `NameLoop` |
-| 1782 | `ExitChkName` |
-| 1784 | `PrintWarpZoneNumbers` |
-| 1790 | `WarpNumLoop` |
-| 1804 | `ResetSpritesAndScreenTimer` |
-| 1809 | `ResetScreenTimer` |
-| 1813 | `NoReset` |
 
 Each completion links its branch/write, ROM probe and route evidence in the
 [77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
@@ -341,15 +352,11 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (108)
-
-These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
-canonical inventory links identify individual gaps and responsible owners.
+## Mapped but not yet matched (106)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
 | 3991 | `FlagpoleObject` |
 | 6298 | `ProcFireball_Bubble` |
@@ -455,6 +462,7 @@ canonical inventory links identify individual gaps and responsible owners.
 | 14797 | `RelativeFireballPosition` |
 | 14846 | `GetPlayerOffscreenBits` |
 | 14851 | `GetFireballOffscreenBits` |
+
 ## Reporting contract
 
 At **S admission**, the proposal and active packet must state the baseline as ROM-match complete / 1,992, name every inventory label the S may change, state each node's incoming status, identify the exact subset expected to become matches, and declare the maximum expected closing fraction with its focused CTest and original-ROM route baseline. At **S closure**, the closure report must repeat the fraction, name every label whose status changed, link the evidence that allows each changed label to count as a match, and name every deferred label and its owner. No aggregate increase is allowed without matching inventory-row updates. The [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) holds the shared retrospective batches and test lanes.
