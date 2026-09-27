@@ -62,15 +62,17 @@ int main(void)
     if (game.ram[0x073cU] != 11U || game.ram[0x0773U] != 9U) return 1;
 
     /* ROM DisplayIntermediate checks castle AreaType before it checks
-     * DisableIntermediate.  The missing text source keeps task six in place,
-     * proving it did not take NoInter's task-eight branch. */
+     * DisableIntermediate, then PlayerInter always enters OutputInter.
+     * An intentionally incomplete native text binding may omit its neutral
+     * packet, but it cannot add a source-state retry at task six. */
     game.ram[0x073cU] = 6U;
     game.ram[0x0770U] = 1U;
     game.ram[0x0752U] = 0U;
     game.ram[0x074eU] = 3U;
     game.ram[0x0769U] = 1U;
     mysmb_game_step_screen_routine(&game);
-    if (game.ram[0x073cU] != 6U) return 1;
+    if (game.ram[0x073cU] != 7U || game.ram[0x07a0U] != 7U ||
+        game.ram[0x0774U] != 0U) return 1;
 
     game.ram[0x073cU] = 11U;
     game.ram[0x0733U] = 1U;

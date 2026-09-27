@@ -173,3 +173,34 @@ audit, test, or paperwork S stages.  Each remaining P may repair and compare
 adjacent members of that chain, but credits none until the shared ROM route and
 operational track cover the named label.  Any member blocked by the T29 parser
 or another accepted owner transfers by exact name before S2 closes.
+## S2/P5: unconditional screen-task continuations
+
+The ROM source at lines 1517--1589 has no branch on a native output-capacity
+result. `WriteTopStatusLine` and `WriteBottomStatusLine` always reach
+`IncSubtask`; `GameOverInter` always reaches `IncModeTask_B`; and the castle
+or enabled `PlayerInter` path calls `WriteGameText`, `ResetScreenTimer`, clears
+`DisableScreenFlag`, and returns with task seven. The shared C had invented
+retry branches when a safe native command writer returned zero. It now keeps
+that return only as neutral-output containment and always performs the ROM
+state transition. The focused status smoke intentionally supplies an incomplete
+text binding for the castle path and proves task 6 becomes 7, screen timer is
+7, and screen output is reenabled, so this test cannot confuse a C-only retry
+with the original `NoInter` branch.
+
+The similar-issue sweep reviewed every S2 caller of the three text/status
+writers in `game.c`: task 2, task 3, GameOverInter and PlayerInter. Task 4 was
+already unconditional; task 14 already advances `OperMode_Task` regardless of
+the title-score writer result. No platform file contains these decisions.
+
+Operational evidence: focused x64 `screen-status`, `local-area`, and
+platform-purity CTests pass; x86 screen-status and local-area executables pass;
+both refreshed Win32 products pass `--self-test`; and the same source compiles
+and links to the OpenNT DOS16 MZ (existing C4761 warnings only). Refreshed
+local artifacts are `mysmb16.exe`
+`47ACB049659D01EAC904B698B7111441657D11B421DFE2133A32A50DBB02B06E`,
+`mysmb32.exe`
+`95D1AF2D2706D658CAFE9ED2122E3DD16F14EFC1BBFF74BB42D6CA6E7B9E4BB0`,
+and `mysmb64.exe`
+`56C07DD8C873BC12450EAC3C8DB555ED72383DAF8310A9EB4BFA0710704C69E5`.
+No S2 node is credited yet: the remaining chain still requires its declared
+source-level matrix and controlled original-ROM route.

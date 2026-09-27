@@ -207,12 +207,16 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 2U;
         break;
     case 2U:
-        if (mysmb_area_queue_top_status_line(game) != 0U)
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
+        /* WriteTopStatusLine always falls through to IncSubtask.  A native
+         * source-binding failure may suppress the neutral output safely, but
+         * it must not manufacture a ROM-state retry branch. */
+        (void)mysmb_area_queue_top_status_line(game);
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 3U;
         break;
     case 3U:
-        if (mysmb_area_queue_bottom_status_line(game) != 0U)
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
+        /* WriteBottomStatusLine also ends in IncSubtask unconditionally. */
+        (void)mysmb_area_queue_bottom_status_line(game);
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 4U;
         break;
     case 4U:
         if (game->ram[MYSMB_RAM_TIMER_EXPIRED] != 0U) {
@@ -241,8 +245,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
          * text/timer path and immediately continues at AreaParserTaskControl. */
         if (game->ram[MYSMB_RAM_OPER_MODE] == 3U) {
             game->ram[MYSMB_RAM_SCREEN_TIMER] = 0x12U;
-            if (mysmb_area_queue_game_text(game, 3U) != 0U)
-                game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
+            /* GameOverInter calls WriteGameText then jumps to IncModeTask_B;
+             * neither source routine branches on a buffer-capacity result. */
+            (void)mysmb_area_queue_game_text(game, 3U);
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         }
         else if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
                  game->ram[0x0752U] != 0U) {
@@ -257,11 +263,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             /* PlayerInter draws the OAM player before OutputInter writes
              * the lives text command. */
             mysmb_oam_draw_intermediate_player(game);
-            if (mysmb_area_queue_game_text(game, 1U) != 0U) {
-                game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-                game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-                game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
-            }
+            (void)mysmb_area_queue_game_text(game, 1U);
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
         }
         else {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
