@@ -2392,71 +2392,6 @@ static void mysmb_objects_give_one_coin(struct mysmb_game *game)
 #pragma code_seg("MYSMB_BLOCK")
 #endif
 
-/* ROM DestroyBlockMetatile -> WriteBlockMetatile.  Unlike RemoveCoin_Axe,
- * block-object replacement appends to the ordinary VRAM_Buffer1 list. */
-static void mysmb_objects_queue_blank_metatile(struct mysmb_game *game,
-                                               mysmb_u8 block_low,
-                                               mysmb_u8 block_row)
-{
-    mysmb_u8 buffer_offset;
-    mysmb_u8 low;
-    mysmb_u8 high;
-    mysmb_u8 blank;
-    mysmb_u16 address;
-
-    buffer_offset = game->ram[MYSMB_VRAM_BUFFER1];
-    if (buffer_offset > 0xf5U) return;
-    blank = game->ram[MYSMB_AREA_TYPE] == 0U ? 0x26U : 0x24U;
-    low = (mysmb_u8)((block_low & 0x0fU) << 1U);
-    address = (mysmb_u16)(((mysmb_u16)(block_row + 0x20U) << 2U) + low);
-    high = block_low < 0xd0U ? 0x20U : 0x24U;
-    high = (mysmb_u8)(high + (address >> 8U));
-    low = (mysmb_u8)address;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset] = high;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 1U] = low;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 2U] = 2U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 3U] = blank;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 4U] = blank;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 5U] = high;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 6U] =
-        (mysmb_u8)(low + 0x20U);
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 7U] = 2U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 8U] = blank;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 9U] = blank;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 10U] = 0U;
-    game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
-}
-/* ROM RemoveCoin_Axe/PutBlockMetatile.  Y=$41 makes PutBlockMetatile write
- * its two rows at VRAM_Buffer2/$0341, then VRAM_Buffer_AddrCtrl=$06 selects
- * that list for the following NMI.  Score/tally writes from GiveOneCoin stay
- * independently queued in VRAM_Buffer1 for a later NMI. */
-static void mysmb_objects_queue_remove_coin_axe(struct mysmb_game *game,
-                                                mysmb_u8 block_low,
-                                                mysmb_u8 block_row)
-{
-    mysmb_u8 low;
-    mysmb_u8 high;
-    mysmb_u8 blank;
-    mysmb_u16 address;
-
-    blank = game->ram[MYSMB_AREA_TYPE] == 0U ? 0x26U : 0x24U;
-    low = (mysmb_u8)((block_low & 0x0fU) << 1U);
-    address = (mysmb_u16)(((mysmb_u16)(block_row + 0x20U) << 2U) + low);
-    high = block_low < 0xd0U ? 0x20U : 0x24U;
-    high = (mysmb_u8)(high + (address >> 8U));
-    low = (mysmb_u8)address;
-    game->ram[0x0341U] = high;
-    game->ram[0x0342U] = low;
-    game->ram[0x0343U] = 2U;
-    game->ram[0x0344U] = blank;
-    game->ram[0x0345U] = blank;
-    game->ram[0x0346U] = high;
-    game->ram[0x0347U] = (mysmb_u8)(low + 0x20U);
-    game->ram[0x0348U] = 2U;
-    game->ram[0x0349U] = blank;
-    game->ram[0x034aU] = blank;
-    game->ram[0x0773U] = 6U;
-}
 
 /* ROM $dedd HandleCoinMetatile. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
@@ -2466,7 +2401,7 @@ void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
 
     address = (mysmb_u16)(0x0500U + block_low + block_row);
     if (address < 0x0800U) game->ram[address] = 0U;
-    mysmb_objects_queue_remove_coin_axe(game, block_low, block_row);
+    mysmb_area_remove_coin_axe(game, block_low, block_row);
     mysmb_objects_give_one_coin(game);
 }
 
@@ -2477,7 +2412,7 @@ void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
 
     address = (mysmb_u16)(0x0500U + block_low + block_row);
     if (address < 0x0800U) game->ram[address] = 0U;
-    mysmb_objects_queue_remove_coin_axe(game, block_low, block_row);
+    mysmb_area_remove_coin_axe(game, block_low, block_row);
 }
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
 static mysmb_u8 mysmb_objects_is_bumpable(mysmb_u8 metatile)
@@ -2595,7 +2530,7 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
      * dispatches BumpBlock. This is not coin-specific: the PPU must first
      * receive the two blank tile rows for bricks, question blocks, hidden
      * blocks, and item blocks alike. */
-    mysmb_objects_queue_blank_metatile(game, block_low, block_row);
+    mysmb_area_destroy_block_metatile(game, slot, block_low, block_row);
     old_x = game->ram[MYSMB_PLAYER_X];
     x_sum = (mysmb_u16)old_x + 8U;
     game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)(x_sum & 0xf0U);

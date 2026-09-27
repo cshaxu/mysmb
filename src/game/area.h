@@ -106,5 +106,15 @@ void mysmb_area_decode_object(struct mysmb_area_object *object);
 mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game);
 /* ROM BlockObjMT_Updater -> ReplaceBlockMetatile. */
 void mysmb_area_apply_block_replacements(struct mysmb_game *game);
+/* ROM $8a4d RemoveCoin_Axe / $8a69 DestroyBlockMetatile. */
+void mysmb_area_remove_coin_axe(struct mysmb_game *game, mysmb_u8 block_low,
+                                 mysmb_u8 vertical_high);
+void mysmb_area_destroy_block_metatile(struct mysmb_game *game,
+                                       mysmb_u8 control, mysmb_u8 block_low,
+                                       mysmb_u8 vertical_high);
+/* ROM $8ad0 RemBridge, also called by BridgeCollapse. */
+void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
+                           mysmb_u8 buffer_offset, mysmb_u8 address_low,
+                           mysmb_u8 address_high);
 
 #endif

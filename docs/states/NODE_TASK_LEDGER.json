@@ -67621,9 +67621,21 @@
         "RemBridge"
       ],
       "maximumComplete": 194,
-      "actualMatches": [],
+      "actualMatches": [
+        "BlockGfxData",
+        "RemoveCoin_Axe",
+        "WriteBlankMT",
+        "ReplaceBlockMetatile",
+        "DestroyBlockMetatile",
+        "WriteBlockMetatile",
+        "UseBOffset",
+        "MoveVOffset",
+        "PutBlockMetatile",
+        "SaveHAdder",
+        "RemBridge"
+      ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
-      "state": "active-block-graphics-chain"
+      "state": "closed-block-graphics-chain"
     }
   ]
 }

@@ -320,17 +320,17 @@ The labels and branches behind every line remain open until individually bound b
 | 1991 | `GetBlankPal` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
 | 2004 | `GetAreaPal` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
 | 2024 | `ExitColorRot` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
-| 2034 | `BlockGfxData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockgfxdata) |
-| 2041 | `RemoveCoin_Axe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-removecoin_axe) |
-| 2047 | `WriteBlankMT` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeblankmt) |
-| 2052 | `ReplaceBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-replaceblockmetatile) |
-| 2058 | `DestroyBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-destroyblockmetatile) |
-| 2061 | `WriteBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeblockmetatile) |
-| 2076 | `UseBOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useboffset) |
-| 2080 | `MoveVOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movevoffset) |
-| 2086 | `PutBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putblockmetatile) |
-| 2097 | `SaveHAdder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savehadder) |
-| 2118 | `RemBridge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rembridge) |
+| 2034 | `BlockGfxData` | M2 T28 S3 source-table binding | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2041 | `RemoveCoin_Axe` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2047 | `WriteBlankMT` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2052 | `ReplaceBlockMetatile` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2058 | `DestroyBlockMetatile` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2061 | `WriteBlockMetatile` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2076 | `UseBOffset` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2080 | `MoveVOffset` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2086 | `PutBlockMetatile` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2097 | `SaveHAdder` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
+| 2118 | `RemBridge` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
 | 2145 | `MetatileGraphics_Low` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 2148 | `MetatileGraphics_High` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 2151 | `Palette0_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette0_mtiles) |

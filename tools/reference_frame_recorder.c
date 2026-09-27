@@ -726,6 +726,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 45u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-remove-coin-water") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 46u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-write-block") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 47u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-rem-bridge") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 48u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-destroy-block") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 49u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -915,6 +935,45 @@ int main(int argument_count, char **arguments)
                     driver->machine->ram[0x01ffu] = 0x80u;
                     driver->machine->s = 0xfdu;
                     driver->machine->pc = 0x89e1u;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture >= 46u && t26_fixture <= 47u) {
+                    driver->machine->ram[0x0002u] = 0x20u;
+                    driver->machine->ram[0x0006u] = t26_fixture == 46u ? 0xd2u : 0x04u;
+                    driver->machine->ram[0x0007u] = 0x05u;
+                    driver->machine->ram[0x074eu] = t26_fixture == 46u ? 0u : 1u;
+                    driver->machine->ram[0x0300u] = 0u;
+                    driver->machine->a = t26_fixture == 46u ? 0u : 0x51u;
+                    driver->machine->x = 0u;
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = t26_fixture == 46u ? 0x8a4du : 0x8a6du;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture == 48u) {
+                    driver->machine->ram[0x0000u] = 3u;
+                    driver->machine->ram[0x0004u] = 0x58u;
+                    driver->machine->ram[0x0005u] = 0x22u;
+                    driver->machine->ram[0x0300u] = 0u;
+                    driver->machine->x = 12u;
+                    driver->machine->y = 1u;
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x8acdu;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture == 49u) {
+                    driver->machine->ram[0x0002u] = 0x20u;
+                    driver->machine->ram[0x0006u] = 0xd2u;
+                    driver->machine->ram[0x0007u] = 0x05u;
+                    driver->machine->ram[0x0300u] = 0u;
+                    driver->machine->x = 0u;
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x8a6bu;
                     direct_warp_text = LIB_TRUE;
                 }
             }

@@ -1,5 +1,6 @@
 #include "game/objects.h"
 #include "game/enemy/movement.h"
+#include "game/area.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
@@ -58,17 +59,9 @@ mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game)
     game->ram[MYSMB_BOWSER_BODY_CONTROLS] ^= 1U;
     offset = game->ram[MYSMB_VRAM_BUFFER1];
     low = collapse_low[index];
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset] = 0x22U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 1U] = low;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 2U] = 2U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 3U] = 0x24U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 4U] = 0x24U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 5U] = 0x22U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 6U] = (mysmb_u8)(low + 0x20U);
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 7U] = 2U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 8U] = 0x24U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 9U] = 0x24U;
-    game->ram[MYSMB_VRAM_BUFFER1_DATA + offset + 10U] = 0U;
+    game->ram[0x0004U] = low;
+    game->ram[0x0005U] = 0x22U;
+    mysmb_area_rem_bridge(game, 12U, (mysmb_u8)(offset + 1U), low, 0x22U);
     game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(offset + 10U);
     game->ram[MYSMB_SQUARE2_SOUND] = 8U;
     game->ram[MYSMB_NOISE_SOUND] = 1U;

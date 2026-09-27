@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T28 S3, the eleven-node `RemoveCoin_Axe -> RemBridge` block-graphics chain. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**M2 T28 S3, the eleven-node `RemoveCoin_Axe -> RemBridge` block-graphics chain, closed at 194 / 1,992. T28 S4 remains queued for separate admission; T21/T22 and other historical entries below remain retained evidence and do not supersede this closure.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active M2 T28 S3 packet.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S3 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. No subsequent T28 S is implied by this closure.**
 
 ## Retained M2 T15 summary
 

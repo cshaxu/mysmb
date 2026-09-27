@@ -6,7 +6,7 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1 and S2 are closed at 183 / 1,992.  T28 S3 is active.**  It owns only
+**T28 S1, S2 and S3 are closed at 194 / 1,992.**  S3 owned only
 the eleven-label block-graphics chain below; the later chains are queued, not
 implied by this admission.
 
@@ -100,3 +100,21 @@ The baseline is 183 / 1,992; all eleven are open and expected to become
 ROM-match complete, for a maximum of 194 / 1,992. Shared owners are
 `src/game/area/block_metatile.c` and its existing shared-game collaborators;
 no platform source or producer logic is in scope.
+
+## S3 closure: block-graphics command chain
+
+S3 closes at **194 / 1,992**. `BlockGfxData` is read from the embedded local
+PRG, while `RemoveCoin_Axe`, `DestroyBlockMetatile`, the replacement tail and
+the bridge-collapse consumer use one shared `area/block_metatile.c` chain.
+The C call sequence preserves `PutBlockMetatile -> RemBridge`, source table
+selection, the two name-table rows, terminator, zero-page address cells and
+the post-call ten-byte offset advance.
+
+Controlled original-ROM entries for water coin removal, block replacement,
+destroy and direct bridge output have zero differences over their owned
+zero-page, Buffer1/Buffer2 and address-control bytes. The focused block,
+collision and platform-purity tests pass on x86 and x64, both Win32 self-tests
+pass, and the shared source links with OpenNT DOS16. The refreshed artifacts
+are `mysmb16.exe` SHA-256 `7E70564A089473EC39851D4800A3D87DE4387E5AA2D2FE91B32F5E9932F2E7F6`,
+`mysmb32.exe` `7B6EDA302897643B8103BDD0F1D0AFD59DDA9BCB3D7D28BAF036A6AF965A70B8`,
+and `mysmb64.exe` `60FBC1EB1C268BBFF148113856E0FD44911AFADEE9E244F57118E57A2A5E819C`.

@@ -4,6 +4,16 @@
 #include "game/area.h"
 #include "game/player.h"
 #include "game/oam/oam.h"
+#include "smb1_local_rom.h"
+
+static void mysmb_collision_initialize_memory(struct mysmb_game *game,
+                                              mysmb_u8 fill)
+{
+    mysmb_game_initialize_memory(game, fill);
+    mysmb_game_bind_area_source(game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+}
+
+#define mysmb_game_initialize_memory mysmb_collision_initialize_memory
 
 static void mysmb_clear_block_buffers(struct mysmb_game *game)
 {

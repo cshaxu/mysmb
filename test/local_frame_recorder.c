@@ -646,6 +646,26 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 45U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-remove-coin-water") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 46U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-write-block") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 47U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-rem-bridge") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 48U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-destroy-block") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 49U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -816,6 +836,45 @@ int main(int argument_count, char **arguments)
                     fclose(output);
                     return 65;
                 }
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture == 46U) {
+                game.ram[0x074eU] = 0U;
+                game.ram[0x0007U] = 5U;
+                mysmb_area_remove_coin_axe(&game, 0xd2U, 0x20U);
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) return 65;
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture == 47U) {
+                game.ram[0x0007U] = 5U;
+                game.ram[0x03e4U] = 0x20U;
+                game.ram[0x03e6U] = 0x04U;
+                game.ram[0x03e8U] = 0x51U;
+                game.ram[0x03ecU] = 1U;
+                mysmb_area_apply_block_replacements(&game);
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) return 65;
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture == 48U) {
+                game.ram[0x0000U] = 3U;
+                game.ram[0x0004U] = 0x58U;
+                game.ram[0x0005U] = 0x22U;
+                mysmb_area_rem_bridge(&game, 12U, 1U, 0x58U, 0x22U);
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) return 65;
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture == 49U) {
+                game.ram[0x0007U] = 5U;
+                mysmb_area_destroy_block_metatile(&game, 0U, 0xd2U, 0x20U);
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) return 65;
                 fclose(output);
                 return 0;
             }
