@@ -257,6 +257,29 @@ static void mysmb_reference_apply_t26_victory_message_fixture(
     ram[0x07a1u] = 0u;
 }
 
+/* Fixed T26 SetupVictoryMode and PlayerVictoryWalk preconditions. */
+static void mysmb_reference_apply_t26_victory_walk_fixture(
+    lib_u8 *ram, lib_u8 kind)
+{
+    ram[0x0770u] = 2u;
+    ram[0x00fcu] = 0u;
+    if (kind == 0u) {
+        ram[0x0772u] = 1u;
+        ram[0x071bu] = 1u;
+        return;
+    }
+    ram[0x0772u] = 2u;
+    ram[0x0034u] = 1u;
+    ram[0x0086u] = 0x60u;
+    ram[0x071au] = kind == 1u ? 1u : 0u;
+    ram[0x071bu] = kind == 1u ? 1u : 0u;
+    ram[0x071cu] = 0u;
+    ram[0x071du] = 0xffu;
+    ram[0x006du] = kind == 1u ? 1u : 0u;
+    ram[0x0035u] = 0u;
+    ram[0x0768u] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -319,6 +342,21 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t26-victory-end-timer") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 5u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-setup") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 6u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-no-walk") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 7u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-walk") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 8u;
             continue;
         }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
@@ -399,6 +437,15 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 5u)
                     mysmb_reference_apply_t26_victory_message_fixture(
                         driver->machine->ram, 4u, 0u);
+                else if (t26_fixture == 6u)
+                    mysmb_reference_apply_t26_victory_walk_fixture(
+                        driver->machine->ram, 0u);
+                else if (t26_fixture == 7u)
+                    mysmb_reference_apply_t26_victory_walk_fixture(
+                        driver->machine->ram, 1u);
+                else if (t26_fixture == 8u)
+                    mysmb_reference_apply_t26_victory_walk_fixture(
+                        driver->machine->ram, 2u);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;

@@ -155,6 +155,29 @@ static void mysmb_recorder_apply_t26_victory_message_fixture(
     game->ram[0x07a1U] = 0U;
 }
 
+/* Fixed T26 SetupVictoryMode and PlayerVictoryWalk preconditions. */
+static void mysmb_recorder_apply_t26_victory_walk_fixture(
+    struct mysmb_game *game, mysmb_u8 kind)
+{
+    game->ram[0x0770U] = 2U;
+    game->ram[0x00fcU] = 0U;
+    if (kind == 0U) {
+        game->ram[0x0772U] = 1U;
+        game->ram[0x071bU] = 1U;
+        return;
+    }
+    game->ram[0x0772U] = 2U;
+    game->ram[0x0034U] = 1U;
+    game->ram[0x0086U] = 0x60U;
+    game->ram[0x071aU] = kind == 1U ? 1U : 0U;
+    game->ram[0x071bU] = kind == 1U ? 1U : 0U;
+    game->ram[0x071cU] = 0U;
+    game->ram[0x071dU] = 0xffU;
+    game->ram[0x006dU] = kind == 1U ? 1U : 0U;
+    game->ram[0x0035U] = 0U;
+    game->ram[0x0768U] = 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -238,6 +261,21 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 5U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-setup") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 6U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-no-walk") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 7U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-walk") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 8U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -301,6 +339,12 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_victory_message_fixture(&game, 3U, 7U);
             else if (t26_fixture == 5U)
                 mysmb_recorder_apply_t26_victory_message_fixture(&game, 4U, 0U);
+            else if (t26_fixture == 6U)
+                mysmb_recorder_apply_t26_victory_walk_fixture(&game, 0U);
+            else if (t26_fixture == 7U)
+                mysmb_recorder_apply_t26_victory_walk_fixture(&game, 1U);
+            else if (t26_fixture == 8U)
+                mysmb_recorder_apply_t26_victory_walk_fixture(&game, 2U);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

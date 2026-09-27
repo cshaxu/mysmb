@@ -169,3 +169,15 @@ VictoryMusic queue; and the non-World-8 primary-counter-four path that writes
 cover the message selector/counter and terminal-timer writes, but retain zero
 credit because the surrounding victory walk, enemy, player graphics and OAM
 collaborators are still not proved as a complete route.
+
+The controlled victory dispatch sweep then compares `SetupVictoryMode` and
+both `PlayerVictoryWalk` outcomes. `SetupVictoryMode` agrees on destination
+page, EndOfCastleMusic, and task two. The no-walk route agrees on task-three
+entry with zero `VictoryWalkControl`. The walking route agrees on control two,
+the `$80` fractional increment, one-pixel screen-left advance, right-page
+carry, and its retention in task two. The isolated ROM retains a pre-existing
+player-X coordinate during the setup-only route while the shared-C fixture
+does not prepare that external player state; it is not a T26 terminal write
+and is excluded from this comparison. These records provide branch evidence
+for `SetupVictoryMode`, `PerformWalk`, `DontWalk`, and `ExitVWalk`, while
+whole-route OAM/player evidence remains required before any completion mark.
