@@ -23,6 +23,7 @@ enum {
     MYSMB_RAM_NUMBER_OF_PLAYERS = 0x077aU,
     MYSMB_RAM_SELECT_TIMER = 0x0780U,
     MYSMB_RAM_SCREEN_ROUTINE_TASK = 0x073cU,
+    MYSMB_RAM_COLUMN_SETS = 0x071eU,
     MYSMB_RAM_SPRITE0_HIT = 0x0722U,
     MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU,
     MYSMB_RAM_DEMO_ACTION = 0x0717U,
@@ -56,8 +57,17 @@ static mysmb_u8 mysmb_game_apply_title_area(struct mysmb_game *game)
         game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
         return 0U;
     }
-    mysmb_area_render_initial_terrain(game);
-    mysmb_area_render_initial_objects(game);
+    /* ScreenRoutines task eight calls AreaParserTaskControl once per NMI
+     * until ColumnSets underflows.  Keep that real two-column path and its
+     * own ProcessAreaData state, rather than scanning a copied area stream
+     * to synthesize the initial scene. */
+    while (game->ram[MYSMB_RAM_COLUMN_SETS] != 0xffU) {
+        if (mysmb_area_parser_task_control(game) == 0U) {
+            game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
+            return 0U;
+        }
+        mysmb_game_commit_vram_buffer(game);
+    }
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
     return 1U;
 }

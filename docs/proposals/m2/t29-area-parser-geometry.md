@@ -655,3 +655,27 @@ and `mysmb64.exe` `82495C19698524F9031976F511C719443A502A28346B8803FAF824C210981
 This remains an implementation checkpoint: the chain's complete
 node-by-node source audit, legacy initial-area route replacement and final
 dual-track closure are still required.
+
+## S7 P5: source-owned initial area parser route
+
+The title-area composition path previously rendered fixed terrain then copied
+and scanned an area-stream snapshot to synthesize a partial object lead-in.
+That bypassed the admitted `ProcessAreaData` three-slot state. It now performs
+the source's twelve `AreaParserTaskControl` column sets: each set executes the
+already translated two-column task sequence, then the shared NMI VRAM commit
+consumes its buffer before the next set. The loop ends only after the ROM's
+`ColumnSets` underflow to `$ff`; no copied `mysmb_game` or alternate stream
+cursor remains on this production entry.
+
+`mysmb.local-title-smoke`, `mysmb.local-title-oracle`,
+`mysmb.local-title-bootstrap-smoke`, `mysmb.title-demo-smoke`, the parser
+column/terminal-slot smokes and `mysmb.platform-purity` pass on x86 and x64.
+The unchanged shared C90 owner links into the OpenNT DOS16 MZ with the known
+non-fatal `OLDNAMES.LIB` warning. P5 artifacts are `mysmb16.exe`
+`D492129CA82488C95EDBBA73581A3328763DA0BAE1589AE46A158D7CDB1BF9CB`,
+`mysmb32.exe` `871D411DEDFD3103C3AE0182DAC8D63EC7C05AED67B0BD61B232F3FDB296D596`,
+and `mysmb64.exe` `DE4EFDBE8B333B8B028E6F2A40732F04730D4942D5C805AA599A5EA307AC0566`.
+This remains an implementation checkpoint: the scanner compatibility helpers
+are retained for their separate legacy test consumers, but no production
+initial-area caller uses them; final per-label audit and dual-track closure
+remain required.
