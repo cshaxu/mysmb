@@ -220,3 +220,25 @@ is added.
 
 The three focused local title tests also pass on the current x64 owner: title
 command transfer, title palette oracle, and cold-title bootstrap sequence.
+## S2/P7: controlled Time Up, intermediate and Game Over routes
+
+Three named recorder-only S2 fixtures are applied at a real NMI boundary after
+sixty ordinary cold-title samples. They are mirrored in the project-owned
+native recorder and the isolated reference recorder; neither is linked into a
+product or platform adapter. Each records four subsequent NMI returns.
+
+- `t27-screen-timeup` enters GameMode/ScreenRoutines task four with the timer
+  expiry latch set.
+- `t27-screen-intermediate` enters GameMode task one/ScreenRoutines task six
+  with castle `AreaType` and `DisableIntermediate` set, exercising the source
+  `PlayerInter` precedence and its OAM/text/timer tail.
+- `t27-screen-gameover` enters GameOverMode task one/ScreenRoutines task six,
+  exercising `GameOverInter` and its mode-task transition.
+
+For all three routes, the ROM and current shared C have zero differing frames
+in work RAM `$0300-$07ff`, both CIRAM pages, palette, OAM, audio-command state
+and PPU scalar output. The recorder source itself builds in the isolated MyNES
+reference graph and the native recorder builds in the x64 project graph. This
+adds operational branch evidence for the listed screen/text calls; it does not
+credit individual labels before the S2 source-level matrix and remaining
+text/warp branch routes are complete.
