@@ -62748,9 +62748,40 @@
         "SetupNumSpr"
       ],
       "maximumComplete": 72,
-      "actualMatches": [],
+      "actualMatches": [
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-per-label-terminal-and-floatey-closure"
+      "state": "active-30-direct-labels-complete-awaiting-outer-transfer"
     }
   ]
 }

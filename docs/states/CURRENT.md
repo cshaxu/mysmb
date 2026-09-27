@@ -51,12 +51,12 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Admission And Approval | Owner-approved source-order M2 plan; S4 closed zero-credit after controlled ROM routes and transferred all 32 labels to this pre-accepted closure receiver. |
 | Objective | Decide each received label from the recorded ROM logic and operational evidence; update only labels with both tracks. |
 | Non-goals | New gameplay behavior, platform logic, or absorption of player, score, OAM, enemy-loop and area collaborators. |
-| Reference Baseline | 42 / 1,992 complete; 32 scoped labels; 30 direct-label expected matches; maximum 72 / 1,992. |
+| Reference Baseline | Admission: 42 / 1,992; current verified: 72 / 1,992 after 30 direct-label matches; two outer labels remain. |
 | Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
 | Files And ABI Surface | Canonical inventory, node ledger, owner-local reference/native recorders, focused shared-C tests, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
 | Verification | Per-label original branch/read/write/call-order review against S4 routes; focused tests, cross-width builds, DOS16 and purity. |
-| Expected Markers | All S4 labels except `VictoryMode` and `AutoPlayer`; outer labels remain incomplete pending independent enemy/player graphics evidence. |
+| Expected Markers | 30 forecast labels completed; `VictoryMode` and `AutoPlayer` remain incomplete pending independent enemy/player graphics evidence. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
 | Reporting Requirements | Update the canonical inventory, record every completed/incomplete label, exact evidence, and resulting node count. |
 | Stop Conditions | Stop on unsound trace injection, external-owner change, or platform gameplay logic. |

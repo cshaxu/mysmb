@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 42 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
-| Mapped / audited, not complete | 128 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 137 evidence-incomplete mappings. |
-| Open / unmatched | 1,822 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 72 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
+| Mapped / audited, not complete | 122 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 99 evidence-incomplete mappings. |
+| Open / unmatched | 1,798 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **42 / 1,992 (2.11%)**. Initial deep verification covered
+Verified conformance is **72 / 1,992 (3.61%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -80,6 +80,40 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
 
+The following 30 T26 labels have source branch and operational evidence in the
+[T26 S5 matrix](../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix).
+
+| 1147 | `VictoryModeSubroutines` |
+| 1159 | `SetupVictoryMode` |
+| 1169 | `PlayerVictoryWalk` |
+| 1178 | `PerformWalk` |
+| 1180 | `DontWalk` |
+| 1195 | `ExitVWalk` |
+| 1201 | `PrintVictoryMessages` |
+| 1215 | `MRetainerMsg` |
+| 1217 | `ThankPlayer` |
+| 1223 | `SecondPartMsg` |
+| 1232 | `EvalForMusic` |
+| 1236 | `PrintMsg` |
+| 1240 | `IncMsgCounter` |
+| 1248 | `SetEndTimer` |
+| 1251 | `IncModeTask_A` |
+| 1252 | `ExitMsgs` |
+| 1256 | `PlayerEndWorld` |
+| 1271 | `EndExitOne` |
+| 1272 | `EndChkBButton` |
+| 1281 | `EndExitTwo` |
+| 1287 | `FloateyNumTileData` |
+| 1303 | `ScoreUpdateData` |
+| 1308 | `FloateyNumbersRoutine` |
+| 1315 | `ChkNumTimer` |
+| 1320 | `DecNumTimer` |
+| 1328 | `LoadNumTiles` |
+| 1338 | `ChkTallEnemy` |
+| 1355 | `GetAltOffset` |
+| 1358 | `FloateyPart` |
+| 1363 | `SetupNumSpr` |
+
 Each completion links its branch/write, ROM probe and route evidence in the
 [77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
 
@@ -97,7 +131,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (132)
+## Mapped but not yet matched (122)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -119,12 +153,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | 1081 | `GoContinue` |
 | 1119 | `DemoEngine` |
 | 1137 | `VictoryMode` |
-| 1147 | `VictoryModeSubroutines` |
-| 1159 | `SetupVictoryMode` |
-| 1169 | `PlayerVictoryWalk` |
-| 1201 | `PrintVictoryMessages` |
-| 1256 | `PlayerEndWorld` |
-| 1308 | `FloateyNumbersRoutine` |
 | 2674 | `InitializeGame` |
 | 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
@@ -232,7 +260,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | 14797 | `RelativeFireballPosition` |
 | 14846 | `GetPlayerOffscreenBits` |
 | 14851 | `GetFireballOffscreenBits` |
-
 ## Reporting contract
 
 At **S admission**, the proposal and active packet must state the baseline as ROM-match complete / 1,992, name every inventory label the S may change, state each node's incoming status, identify the exact subset expected to become matches, and declare the maximum expected closing fraction with its focused CTest and original-ROM route baseline. At **S closure**, the closure report must repeat the fraction, name every label whose status changed, link the evidence that allows each changed label to count as a match, and name every deferred label and its owner. No aggregate increase is allowed without matching inventory-row updates. The [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) holds the shared retrospective batches and test lanes.

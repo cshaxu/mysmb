@@ -205,36 +205,36 @@ The labels and branches behind every line remain open until individually bound b
 | 1133 | `DemoOver` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoover) |
 | 1137 | `VictoryMode` | T15 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymode) |
 | 1144 | `AutoPlayer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autoplayer) |
-| 1147 | `VictoryModeSubroutines` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-victorymodesubroutines) |
-| 1159 | `SetupVictoryMode` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupvictorymode) |
-| 1169 | `PlayerVictoryWalk` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playervictorywalk) |
-| 1178 | `PerformWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-performwalk) |
-| 1180 | `DontWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dontwalk) |
-| 1195 | `ExitVWalk` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvwalk) |
-| 1201 | `PrintVictoryMessages` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_print_victory_messages` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printvictorymessages) |
-| 1215 | `MRetainerMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mretainermsg) |
-| 1217 | `ThankPlayer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thankplayer) |
-| 1223 | `SecondPartMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondpartmsg) |
-| 1232 | `EvalForMusic` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-evalformusic) |
-| 1236 | `PrintMsg` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printmsg) |
-| 1240 | `IncMsgCounter` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmsgcounter) |
-| 1248 | `SetEndTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setendtimer) |
-| 1251 | `IncModeTask_A` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmodetask_a) |
-| 1252 | `ExitMsgs` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmsgs) |
-| 1256 | `PlayerEndWorld` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerendworld) |
-| 1271 | `EndExitOne` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endexitone) |
-| 1272 | `EndChkBButton` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endchkbbutton) |
-| 1281 | `EndExitTwo` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endexittwo) |
-| 1287 | `FloateyNumTileData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateynumtiledata) |
-| 1303 | `ScoreUpdateData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scoreupdatedata) |
-| 1308 | `FloateyNumbersRoutine` | T15 responsibility (implementation not certified); `objects.c:mysmb_objects_step_floatey_number` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateynumbersroutine) |
-| 1315 | `ChkNumTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknumtimer) |
-| 1320 | `DecNumTimer` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decnumtimer) |
-| 1328 | `LoadNumTiles` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadnumtiles) |
-| 1338 | `ChkTallEnemy` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktallenemy) |
-| 1355 | `GetAltOffset` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getaltoffset) |
-| 1358 | `FloateyPart` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-floateypart) |
-| 1363 | `SetupNumSpr` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupnumspr) |
+| 1147 | `VictoryModeSubroutines` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1159 | `SetupVictoryMode` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1169 | `PlayerVictoryWalk` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` + `player.c` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1178 | `PerformWalk` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1180 | `DontWalk` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1195 | `ExitVWalk` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1201 | `PrintVictoryMessages` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_print_victory_messages` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1215 | `MRetainerMsg` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1217 | `ThankPlayer` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1223 | `SecondPartMsg` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1232 | `EvalForMusic` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1236 | `PrintMsg` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1240 | `IncMsgCounter` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1248 | `SetEndTimer` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1251 | `IncModeTask_A` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1252 | `ExitMsgs` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1256 | `PlayerEndWorld` | T15 responsibility (implementation not certified); `terminal_modes.c:mysmb_game_step_victory` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1271 | `EndExitOne` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1272 | `EndChkBButton` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1281 | `EndExitTwo` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1287 | `FloateyNumTileData` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1303 | `ScoreUpdateData` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1308 | `FloateyNumbersRoutine` | T15 responsibility (implementation not certified); `objects.c:mysmb_objects_step_floatey_number` | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1315 | `ChkNumTimer` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1320 | `DecNumTimer` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1328 | `LoadNumTiles` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1338 | `ChkTallEnemy` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1355 | `GetAltOffset` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1358 | `FloateyPart` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
+| 1363 | `SetupNumSpr` | T15 responsibility (implementation not certified) | ROM-match complete | [T26 S5 evidence](../../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix) |
 | 1386 | `ScreenRoutines` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-screenroutines) |
 | 1408 | `InitScreen` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscreen) |
 | 1418 | `SetupIntermediate` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupintermediate) |

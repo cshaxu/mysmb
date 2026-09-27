@@ -250,3 +250,24 @@ owners with a local approximation. S5 begins at 42 / 1,992, receives all 32
 labels, forecasts the named 30 direct labels, and may close at no more than
 72 / 1,992 only after updating the canonical inventory and independently
 confirming both logic and operational tracks.
+
+## S5 per-label evidence matrix
+
+| Exact labels | ROM logic-equivalence evidence | Operational evidence | S5 disposition |
+| --- | --- | --- | --- |
+| `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk` | Controlled setup, no-walk, walk, and task-zero handoff records preserve source vector selection, destination, control, scroll fraction, page carry, and task writes. | x86/x64 mode smoke; DOS16 rebuild; platform-purity gate. | Complete. |
+| `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs` | Mario, Luigi, World-8 music, regular second-part, counter-only, and end-timer fixtures cover every selector/counter/event/task branch. | x86/x64 mode smoke; DOS16 rebuild; platform-purity gate. | Complete. |
+| `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo` | Next-world, World-8 B, active-timer, and no-B fixtures cover all four exits and their source writes. | x86/x64 mode smoke and owner-local area smoke; DOS16 rebuild; platform-purity gate. | Complete. |
+| `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` | 1-UP, zero-timer, numeric alternate-OAM, clamp, and status-carry controlled records cover both local tables and all local branches. | Floatey OAM smoke; x86/x64 mode smoke; DOS16 rebuild; platform-purity gate. | Complete. |
+| `VictoryMode`, `AutoPlayer` | Task-zero handoff proves only the terminal boundary. | External enemy-loop and player-graphics/OAM routes remain independently received. | Retain incomplete; transfer at S5 closure. |
+
+## S5 P1 result
+
+The four matrix groups complete exactly the forecast 30 labels. The canonical
+inventory, progress report, and full census now record 72 / 1,992 complete.
+The S5 run records those same 30 `actualMatches`; it retains only
+`VictoryMode` and `AutoPlayer`. `VictoryMode` still requires the original
+`EnemiesAndLoopsCore` call and `AutoPlayer` still requires the original
+relative-player/player-graphics path, both of which belong to their existing
+owners. S5 remains active for their eventual accepted transfer rather than
+claiming a terminal-tree completion from its local wrappers.
