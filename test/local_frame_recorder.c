@@ -477,6 +477,35 @@ static void mysmb_recorder_apply_t29_area_music_fixture(struct mysmb_game *game,
     else game->ram[0x0743U] = 1U;
 }
 
+static void mysmb_recorder_apply_t29_area_entry_fixture(struct mysmb_game *game,
+                                                         mysmb_u8 kind)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 0U;
+    game->ram[0x071aU] = 3U;
+    game->ram[0x074eU] = 1U;
+    game->ram[0x0710U] = 2U;
+    game->ram[0x0752U] = 0U;
+    game->ram[0x0715U] = 2U;
+    game->ram[0x0757U] = 1U;
+    game->ram[0x079fU] = 0x23U;
+    game->ram[0x0755U] = 0xa5U;
+    if (kind == 1U) {
+        game->ram[0x0752U] = 2U;
+        game->ram[0x0715U] = 0U;
+    }
+    else if (kind == 2U) {
+        game->ram[0x0758U] = 1U;
+        game->ram[0x0398U] = 0U;
+    }
+    else if (kind == 3U) {
+        game->ram[0x074eU] = 0U;
+        game->ram[0x0007U] = 1U;
+    }
+}
+
 static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
 {
     game->ram[0x0770U] = 0U;
@@ -853,6 +882,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 63U;
         }
         else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-area-entry-normal") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 64U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-area-entry-alternate") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 65U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-area-entry-vine") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 66U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-area-entry-water") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 67U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = 57U;
@@ -974,6 +1023,9 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 60U && t26_fixture <= 63U)
                 mysmb_recorder_apply_t29_area_music_fixture(&game,
                     (mysmb_u8)(t26_fixture - 60U));
+            else if (t26_fixture >= 64U && t26_fixture <= 67U)
+                mysmb_recorder_apply_t29_area_entry_fixture(&game,
+                    (mysmb_u8)(t26_fixture - 64U));
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

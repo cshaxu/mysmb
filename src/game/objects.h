@@ -98,6 +98,8 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_floatey_numbers(struct mysmb_game *game);
 /* ROM $ba55-$bad2 Setup_Vine/VineObjectHandler, excluding drawing. */
 void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot);
+/* ROM $9180-$918b ChkOverR's InitBlock_XY_Pos/Setup_Vine call sequence. */
+void mysmb_objects_start_entrance_vine(struct mysmb_game *game);
 void mysmb_objects_step_vine(struct mysmb_game *game);
 /* ROM HandleCoinMetatile/GiveOneCoin. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,

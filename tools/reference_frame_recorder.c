@@ -16,6 +16,7 @@
 #define MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR 0x85c8u
 #define MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY 0x8e92u
 #define MYSMB_REFERENCE_T28_VRAM_EXIT 0x8ee6u
+#define MYSMB_REFERENCE_T29_AREA_ENTRY_RETURN 0x91a0u
 #define MYSMB_REFERENCE_PPU_CONTROL_MIRROR 0x0778u
 #define MYSMB_REFERENCE_HORIZONTAL_SCROLL 0x073fu
 #define MYSMB_REFERENCE_VERTICAL_SCROLL 0x0740u
@@ -578,6 +579,35 @@ static void mysmb_reference_apply_t29_area_music_fixture(lib_u8 *ram,
     else ram[0x0743u] = 1u;
 }
 
+static void mysmb_reference_apply_t29_area_entry_fixture(lib_u8 *ram,
+                                                          lib_u8 kind)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 0u;
+    ram[0x071au] = 3u;
+    ram[0x074eu] = 1u;
+    ram[0x0710u] = 2u;
+    ram[0x0752u] = 0u;
+    ram[0x0715u] = 2u;
+    ram[0x0757u] = 1u;
+    ram[0x079fu] = 0x23u;
+    ram[0x0755u] = 0xa5u;
+    if (kind == 1u) {
+        ram[0x0752u] = 2u;
+        ram[0x0715u] = 0u;
+    }
+    else if (kind == 2u) {
+        ram[0x0758u] = 1u;
+        ram[0x0398u] = 0u;
+    }
+    else if (kind == 3u) {
+        ram[0x074eu] = 0u;
+        ram[0x0007u] = 1u;
+    }
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -604,6 +634,7 @@ int main(int argument_count, char **arguments)
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_u8 t28_vram_phase;
+    lib_bool t29_area_entry_capture;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
@@ -623,6 +654,7 @@ int main(int argument_count, char **arguments)
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t28_vram_phase = 0u;
+    t29_area_entry_capture = LIB_FALSE;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
@@ -940,6 +972,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 63u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-entry-normal") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 64u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-entry-alternate") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 65u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-entry-vine") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 66u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-entry-water") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 67u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1033,6 +1085,15 @@ int main(int argument_count, char **arguments)
         }
         if (t28_vram_phase == 2u &&
             driver->machine->pc == MYSMB_REFERENCE_T28_VRAM_EXIT) {
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
+        }
+        /* The packet is reached only through ordinary GameEngine dispatch.
+         * Capture at its RTS instruction, before later object handlers can
+         * alter the source RAM owned by their separate chains. */
+        if (t29_area_entry_capture &&
+            driver->machine->pc == MYSMB_REFERENCE_T29_AREA_ENTRY_RETURN) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
@@ -1150,6 +1211,15 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 60u && t26_fixture <= 63u)
                     mysmb_reference_apply_t29_area_music_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 60u));
+                else if (t26_fixture >= 64u && t26_fixture <= 67u)
+                {
+                    mysmb_reference_apply_t29_area_entry_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 64u));
+                    if (core_machine_breakpoint_set(driver->machine,
+                        MYSMB_REFERENCE_T29_AREA_ENTRY_RETURN, LIB_TRUE) !=
+                        LIB_STATUS_OK) break;
+                    t29_area_entry_capture = LIB_TRUE;
+                }
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

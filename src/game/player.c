@@ -1,5 +1,6 @@
 #include "game/player.h"
 #include "game/objects.h"
+#include "game/fireball/fireball.h"
 #include "game/area.h"
 #include "game/world/world.h"
 #include "game/oam/oam.h"
@@ -1102,20 +1103,23 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     return 0U;
 }
 
-/* Translation of ROM $9131-$9196 Entrance_GameTimerSetup.  Palette, vine,
- * and bubble work retain their separate output and object owners. */
+/* Translation of ROM $9131-$9196 Entrance_GameTimerSetup. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game)
 {
     static const mysmb_u8 start_x[4] = { 0x28U, 0x18U, 0x38U, 0x28U };
     static const mysmb_u8 alternate_y[2] = { 0x08U, 0x00U };
     static const mysmb_u8 start_y[9] = { 0x00U, 0x20U, 0xb0U, 0x50U,
                                          0x00U, 0x00U, 0xb0U, 0xb0U, 0xf0U };
-    static const mysmb_u8 background_priority[8] = {
-        0U, 0x20U, 0U, 0U, 0U, 0U, 0U, 0U
+    /* The ninth source index is GameTimerData's dummy byte, immediately
+     * following PlayerBGPriorityData in PRG. Alternate entrance two selects
+     * it through X=$08 exactly as the 6502 does. */
+    static const mysmb_u8 background_priority[9] = {
+        0U, 0x20U, 0U, 0U, 0U, 0U, 0U, 0U, 0x20U
     };
     static const mysmb_u8 game_timer_data[4] = { 0x20U, 4U, 3U, 2U };
     mysmb_u8 alternate;
     mysmb_u8 entrance;
+    mysmb_u8 bubble_slot;
 
     game->ram[MYSMB_PLAYER_PAGE] = game->ram[MYSMB_SCREEN_LEFT_PAGE];
     game->ram[MYSMB_VERTICAL_FORCE_DOWN] = 0x28U;
@@ -1128,14 +1132,9 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     alternate = game->ram[MYSMB_ALT_ENTRANCE];
     entrance = game->ram[MYSMB_PLAYER_ENTRANCE];
     if (alternate > 1U) {
-        if (alternate > 3U) return;
         entrance = alternate_y[(mysmb_u8)(alternate - 2U)];
     }
-    if (alternate >= 4U || entrance >= 9U) return;
     game->ram[MYSMB_PLAYER_X] = start_x[alternate];
-    /* Entrance_GameTimerSetup seeds the scroll owner's preceding-frame
-     * player position before PlayerCtrlRoutine first runs. */
-    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_X];
     game->ram[MYSMB_PLAYER_Y] = start_y[entrance];
     game->ram[MYSMB_PLAYER_ATTRIBUTES] = background_priority[entrance];
     /* ROM Entrance_GameTimerSetup calls GetPlayerColors even when the four
@@ -1145,10 +1144,19 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
         game->ram[MYSMB_FETCH_NEW_GAME_TIMER] != 0U) {
         game->ram[MYSMB_GAME_TIMER_DISPLAY] =
             game_timer_data[game->ram[MYSMB_GAME_TIMER_SETTING]];
-        game->ram[MYSMB_GAME_TIMER_DISPLAY + 1U] = 0U;
         game->ram[MYSMB_GAME_TIMER_DISPLAY + 2U] = 1U;
+        game->ram[MYSMB_GAME_TIMER_DISPLAY + 1U] = 0U;
         game->ram[MYSMB_FETCH_NEW_GAME_TIMER] = 0U;
         game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0U;
+    }
+    if (game->ram[MYSMB_JOYPAD_OVERRIDE] != 0U) {
+        game->ram[MYSMB_PLAYER_STATE] = 3U;
+        mysmb_objects_start_entrance_vine(game);
+        bubble_slot = 5U;
+    }
+    else bubble_slot = entrance;
+    if (game->ram[MYSMB_AREA_TYPE] == 0U) {
+        mysmb_fireball_setup_bubble(game, bubble_slot);
     }
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
 }

@@ -136,3 +136,54 @@ The shared core relinked as a DOS16 MZ (the pre-existing OpenNT
 `B7DED6EFBF17E06877F75577F34780B6541D6600E8B8B5F36E8F58C9AFADEA05`,
 `mysmb32.exe` `C2301D9381A73743730B13439A80098EE13D8573348CE88BB8276D3991BAB4BE`,
 and `mysmb64.exe` `1CC58667681F0966DDBAE9E5D70E346B5790C865206E3BDBD496E4F8C71E217C`.
+
+## S3 admission: player/area-entry initialization chain
+
+S3 receives exactly `PlayerStarting_X_Pos`, `AltYPosOffset`,
+`PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`,
+`Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`,
+and `SetPESub` through accepted ledger event
+`transfer-084-t18-s4-to-t29-s3-area-entry`. The eleven labels are open at the
+**274 / 1,992** baseline and form one contiguous source chain from `$9116`
+through `$9196`; S3 forecasts all eleven as ROM-match complete, for a maximum
+**285 / 1,992**.
+
+The shared owner is the portable player/area-entry boundary. The ROM track
+binds each source table byte and compares the complete routine in source order:
+the page, force, facing/high-Y, player-state, collision and halfway writes;
+water/swimming branch; normal and alternate entry index selection; position,
+attribute and palette sequence; timer reload gate; `JoypadOverride` vine path;
+water bubble path; and final `GameEngineSubroutine = $07` handoff. Palette,
+vine and bubble routines remain separate shared-game collaborators and are
+called in the original sequence, never reimplemented by a platform adapter.
+
+The original-ROM route enters through the GameEngine task-zero dispatch and
+may establish only source-RAM preconditions at a frame boundary; it may not
+inject a leaf program counter or stack. Its fixtures cover ground and water,
+normal and alternate entry, timer reload and preservation, vine and bubble
+branches. The operational track adds an entrance-focused project-owned smoke,
+x86/x64 builds, OpenNT DOS16 link, platform-purity check, and one refreshed
+three-executable package for the chain P. S3 cannot credit a member until both
+the ROM-equivalence and operational tracks pass.
+
+## S3 P1: shared-entry implementation and preliminary route evidence
+
+P1 binds all five data regions in shared C and restores the complete source
+write/call order through `SetPESub`. It removes the non-source scroll-position
+write and defensive index exits, preserves the priority table's adjacent timer
+dummy byte at index eight, restores the timer stores in `$07f8`, `$07fa`,
+`$07f9` order, and calls the shared vine and bubble owners at the original
+branch positions. `Setup_Vine` now retains its source sound queue write and
+unbounded reachable slot progression; `SetupBubble` has one shared C owner
+used by both the entrance and bubble-handler callers.
+
+The controlled original-ROM GameEngine route reached `$9131-$919a` for the
+normal, alternate, vine and water fixtures. The focused entrance smoke covers
+the resulting data bindings and RAM markers. It passes on Win32 x86 and x64,
+alongside the platform-purity gate; the shared source also compiles and links
+as a DOS16 MZ. The package hashes are `mysmb16.exe`
+`BBCD0251AEA05AB2693B4FAE6DEC4F7F9BB21E8B92101278CF43FD2EF6AFB1F0`,
+`mysmb32.exe` `3EB44802AB63BE1906CE1379EC6EDDA9DAD3390C255C4AC9D1395E0`,
+and `mysmb64.exe` `488D91CBB0BCEE5D4758EAE8AB6045BA30703BBEFD42996004CDC4627E4B28E9`.
+This is an implementation checkpoint, not S3 closure: return-boundary
+reference capture and the final node-by-node evidence update remain required.

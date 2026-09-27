@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T29 S2, the five-node area-music selection chain. T29 S1 is closed at 269 / 1,992.**
+**Active implementation packet: M2 T29 S3, the eleven-node area-entry initialization chain. T29 S2 is closed at 274 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation packet and cannot preempt M2 T29 S2.
+nodes; it is not this implementation packet and cannot preempt M2 T29 S3.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T29 S2 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T29 S3 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -67,26 +67,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T29 S2 Packet
+## M2 T29 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T29 S2, implementation; area-music selection chain. |
-| Admission And Approval | Owner-approved source-order continuation after T29 S1 closure; accepted ledger transfer `transfer-083-t18-s4-to-t29-s2-area-music` receives all five labels from M2 T18 S4. |
-| Objective | Translate and prove `MusicSelectData -> ExitGetM` in shared C. |
-| Non-goals | No platform audio policy or host mixer, synthetic leaf-PC or stack entry, title/menu implementation, or label outside the five-node receipt. |
-| Reference Baseline | 269 / 1,992 complete; five scoped open labels; expected five matches; maximum 274 / 1,992. |
+| Identifier Mode | M2 T29 S3, implementation; player/area-entry initialization chain. |
+| Admission And Approval | Owner-approved source-order continuation after T29 S2 closure; accepted ledger transfer `transfer-084-t18-s4-to-t29-s3-area-entry` receives all eleven labels from M2 T18 S4. |
+| Objective | Translate and prove `PlayerStarting_X_Pos -> SetPESub` in shared C. |
+| Non-goals | No platform gameplay branch, host palette policy, synthetic leaf-PC or stack entry, or label outside the eleven-node receipt. |
+| Reference Baseline | 274 / 1,992 complete; eleven scoped open labels; expected eleven matches; maximum 285 / 1,992. |
 | Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
-| Files And ABI Surface | Shared game area/music selector and its callers, project-owned area-music smoke, controlled ROM/native recorder fixtures, ledger/progress records, and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared player/area-entry owner and existing palette, vine and bubble collaborators; project-owned entrance smoke; controlled ROM/native recorder fixtures; ledger/progress records; and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | ROM logic equivalence audits `$90e7-$9115`: table binding, `OperMode` early return, alternate-entrance gate, pipe-entry branch, area/cloud selection, queue write and return. A source-RAM-only secondary-game-setup route samples each branch; operational verification runs the focused area-music smoke, x86/x64 builds, DOS16 link, platform-purity gate, and package checks. |
-| Expected Markers | `MusicSelectData` bytes `$02,$01,$04,$08,$10,$20`; title-mode return without a queue write; pipe index five; `AltEntranceControl==$02` bypass; cloud index four; source `AreaMusicQueue` write and return. |
+| Verification | ROM logic-equivalence audits `$9116-$9196`: exact five data bindings; page/force/facing/state/collision/halfway writes; water flag; alternate-entry index override; player position/attributes and palette call; timer reload gate; vine call; bubble gate; final subroutine write. A source-RAM-only GameEngine task-zero route covers ground/water, normal/alternate entry, timer reload/preserve, vine and bubble branches. Operational verification runs entrance-focused smoke, x86/x64 builds, DOS16 link, platform-purity gate, and package checks. |
+| Expected Markers | Data bytes `$28,$18,$38,$28`, `$08,$00`, nine Y bytes, eight priority bytes and timer bytes `$20,$04,$03,$02`; `Player_PageLoc`, force/facing/high-Y/state/collision/halfway writes; `SwimmingFlag`; alternate selector behavior; position/attribute/palette sequence; timer/reset writes; optional vine/bubble calls; `GameEngineSubroutine=$07`. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
-| Reporting Requirements | Record all five node dispositions, table/branch evidence, source-RAM fixture route result, focused-test/build/package results, three artifact hashes, and any residual assigned outside the chain. |
-| Stop Conditions | Stop on an unmatched table byte, control branch, RAM write/order, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
-| Exit Criteria | All five labels have both ROM-logic and operational evidence without unrelated credit. |
+| Reporting Requirements | Record every node disposition, data/branch/read/write/call-order evidence, source-RAM fixture route result, focused-test/build/package results, three artifact hashes, and every residual transferred outside the chain. |
+| Stop Conditions | Stop on an unmatched data byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All eleven labels have both ROM-logic and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
-| Similar-Issue Sweep | Audit every production area-music queue writer/selector and confirm that neither platform source selects music, mutates area RAM, nor owns a gameplay branch. |
+| Similar-Issue Sweep | Audit every production entrance initializer, alternate-entry selector, timer reload owner and platform source; platform code may only provide physical input/timing and submit the completed game frame. |
 
 ## Prior M2 T28 S8 closure
 

@@ -63,6 +63,27 @@ static mysmb_u8 mysmb_bubble_x_offscreen(const struct mysmb_game *game,
     }
 }
 
+/* Direct entry used by Entrance_GameTimerSetup and by BubbleCheck after the
+ * timer permits a new bubble. The caller supplies the ROM X register slot;
+ * RAM $07 remains the exact random-bit input selected by BubbleCheck. */
+void mysmb_fireball_setup_bubble(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 x_adder;
+    mysmb_u8 old_x;
+
+    x_adder = (game->ram[MYSMB_BUBBLE_PLAYER_FACING] & 1U) != 0U ? 8U : 0U;
+    old_x = game->ram[MYSMB_BUBBLE_PLAYER_X];
+    game->ram[MYSMB_BUBBLE_X + slot] = (mysmb_u8)(old_x + x_adder);
+    game->ram[MYSMB_BUBBLE_PAGE + slot] = (mysmb_u8)(
+        game->ram[MYSMB_BUBBLE_PLAYER_PAGE] +
+        (game->ram[MYSMB_BUBBLE_X + slot] < old_x ? 1U : 0U));
+    game->ram[MYSMB_BUBBLE_Y + slot] =
+        (mysmb_u8)(game->ram[MYSMB_BUBBLE_PLAYER_Y] + 8U);
+    game->ram[MYSMB_BUBBLE_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_BUBBLE_TIMER] = (game->ram[0x0007U] & 1U) != 0U ?
+        0x20U : 0x40U;
+}
+
 static mysmb_u8 mysmb_bubble_y_offscreen(const struct mysmb_game *game,
                                           mysmb_u8 slot)
 {
@@ -102,7 +123,6 @@ void mysmb_fireball_step_bubbles(struct mysmb_game *game)
     mysmb_u8 random_bit;
     mysmb_u8 old_value;
     mysmb_u8 borrow;
-    mysmb_u8 x_adder;
     mysmb_u8 oam;
 
     if (game->ram[MYSMB_BUBBLE_AREA_TYPE] != 0U) return;
@@ -111,17 +131,8 @@ void mysmb_fireball_step_bubbles(struct mysmb_game *game)
         random_bit = (mysmb_u8)(game->ram[MYSMB_BUBBLE_RANDOM + 1U + slot] & 1U);
         if (game->ram[MYSMB_BUBBLE_Y + slot] == 0xf8U &&
             game->ram[MYSMB_BUBBLE_TIMER] == 0U) {
-            x_adder = (game->ram[MYSMB_BUBBLE_PLAYER_FACING] & 1U) != 0U ?
-                8U : 0U;
-            old_value = game->ram[MYSMB_BUBBLE_PLAYER_X];
-            game->ram[MYSMB_BUBBLE_X + slot] = (mysmb_u8)(old_value + x_adder);
-            game->ram[MYSMB_BUBBLE_PAGE + slot] = (mysmb_u8)(
-                game->ram[MYSMB_BUBBLE_PLAYER_PAGE] +
-                (game->ram[MYSMB_BUBBLE_X + slot] < old_value ? 1U : 0U));
-            game->ram[MYSMB_BUBBLE_Y + slot] =
-                (mysmb_u8)(game->ram[MYSMB_BUBBLE_PLAYER_Y] + 8U);
-            game->ram[MYSMB_BUBBLE_Y_HIGH + slot] = 1U;
-            game->ram[MYSMB_BUBBLE_TIMER] = random_bit != 0U ? 0x20U : 0x40U;
+            game->ram[0x0007U] = random_bit;
+            mysmb_fireball_setup_bubble(game, slot);
         }
         if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U) {
             old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];

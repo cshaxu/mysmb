@@ -15,7 +15,7 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The sole active packet is `M2 T29 S2`, the five-label `MusicSelectData -> ExitGetM` area-music selection chain.  Its successor receipt, and every later M2 admission, must use
+The sole active packet is `M2 T29 S3`, the eleven-label `PlayerStarting_X_Pos -> SetPESub` player/area-entry initialization chain. Its successor receipt, and every later M2 admission, must use
 the source-order chain table defined by the recovery plan; it may not revive
 the retired fixed five-stage pattern. This changes delivery granularity only:
 node custody, source order, dual verification, tracker rows, and three-target

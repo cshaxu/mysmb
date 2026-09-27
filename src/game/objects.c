@@ -1680,10 +1680,27 @@ void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot)
     if (vine_slot == 0U) {
         game->ram[MYSMB_VINE_START_Y] = game->ram[MYSMB_ENEMY_Y + slot];
     }
-    if (vine_slot < 2U) {
-        game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_slot] = slot;
-        game->ram[MYSMB_VINE_FLAG_OFFSET]++;
-    }
+    game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_slot] = slot;
+    game->ram[MYSMB_VINE_FLAG_OFFSET]++;
+    game->ram[MYSMB_SQUARE2_SOUND] = 4U;
+}
+
+/* Translation of ChkOverR's inline caller setup for InitBlock_XY_Pos,
+ * followed by Setup_Vine with X=5/Y=0. This remains a shared game-object
+ * helper: platform code neither manufactures the block coordinates nor
+ * creates the vine. */
+void mysmb_objects_start_entrance_vine(struct mysmb_game *game)
+{
+    mysmb_u16 x_sum;
+
+    x_sum = (mysmb_u16)game->ram[MYSMB_PLAYER_X] + 8U;
+    game->ram[MYSMB_BLOCK_X] = (mysmb_u8)(x_sum & 0xf0U);
+    game->ram[MYSMB_BLOCK_PAGE] =
+        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + (x_sum >> 8U));
+    game->ram[MYSMB_BLOCK_PAGE_COPY] = game->ram[MYSMB_BLOCK_PAGE];
+    game->ram[MYSMB_BLOCK_Y_HIGH] = game->ram[MYSMB_PLAYER_Y_HIGH];
+    game->ram[MYSMB_BLOCK_Y] = 0xf0U;
+    mysmb_objects_start_vine(game, 0U);
 }
 
 /* ROM $ba71 VineObjectHandler.  This retains growth and the authoritative
