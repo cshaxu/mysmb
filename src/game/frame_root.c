@@ -434,14 +434,19 @@ void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
     game->ram[MYSMB_ROOT_SPRITE_SHUFFLE_CONTROL]++;
     if (game->ram[MYSMB_ROOT_SPRITE_SHUFFLE_CONTROL] == 3U)
         game->ram[MYSMB_ROOT_SPRITE_SHUFFLE_CONTROL] = 0U;
-    for (index = 0U; index < 3U; ++index) {
+    /* ROM SetMiscOffset enters with Y=2 and X=8, then decrements both
+     * counters.  Preserve that group write order rather than merely its
+     * eventual byte image. */
+    index = 3U;
+    do {
+        index--;
         value = game->ram[(mysmb_u16)(MYSMB_ROOT_SPRITE_OFFSETS + 5U + index)];
         offset = (mysmb_u16)(MYSMB_ROOT_MISC_SPRITE_OFFSETS + index * 3U);
         game->ram[offset] = value;
         value = (mysmb_u8)(value + 8U);
         game->ram[(mysmb_u16)(offset + 1U)] = value;
         game->ram[(mysmb_u16)(offset + 2U)] = (mysmb_u8)(value + 8U);
-    }
+    } while (index != 0U);
 }
 
 /* ROM $8e92-$8eb6 UpdateScreen/WriteBufferToScreen at the NMI boundary.

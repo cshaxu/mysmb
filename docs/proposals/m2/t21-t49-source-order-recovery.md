@@ -550,3 +550,7 @@ All eight labels are **ROM-match complete**, raising conformance from **27 / 1,9
 ## T22/S20 sprite-shuffle source-contract admission
 
 S20 begins at **35 / 1,992** for `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, and `SetMiscOffset`. It forecasts no completion credit and may only establish the original descending offset traversal, threshold/carry path, shuffle-control wrap, and three-group misc-offset fanout. A separate successor must independently prove each label against controlled ROM output.
+
+## T22/S20 source-contract repair P1
+
+The source audit found one shared-C discrepancy: ROM `SetMiscOffset` starts at `Y=$02`, `X=$08` and writes misc groups 2, 1, then 0. The prior C loop generated the same eventual cells in ascending group order. It now traverses 2→0, preserving the source write sequence. The focused regression covers threshold skipping, overflow plus `$28`, shuffle-control wrap and the `SprDataOffset+5..+7` misc fanout. It passes on x86 and x64. The shared OpenNT MZ relinks with existing C4761/OLDNAMES warnings; refreshed artifacts are `421F5D916B4156CA21E1CFE81BFBDFD5E1ECB6809064BAB0EA896B1984525735`, `F223DCF2A5F164D5DF9E056FFD25BCA58FE35F50AF666D9BC5B4701FA960379B`, and `19430DAF99CCFD461A8E04F602F009CAEAE3EBF9E68CB0357151D19DC4DE736A`. S20 remains at 35 / 1,992 pending independent ROM equivalence proof.
