@@ -3,6 +3,7 @@
 #include "game/status.h"
 
 enum {
+    MYSMB_AREA_OBJECT_OFFSET = 0x0008U,
     MYSMB_AREA_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_AREA_SCREEN_RIGHT_PAGE = 0x071bU,
     MYSMB_AREA_SCREEN_LEFT_X = 0x071cU,
@@ -1466,21 +1467,21 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                 row = (mysmb_u8)(first & 0x0fU);
 
                 if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-                if ((second & 0x80U) != 0U &&
-                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
-                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
-                    game->ram[MYSMB_AREA_OBJECT_PAGE]++;
-                }
-                if (row == 0x0dU && (second & 0x40U) == 0U &&
-                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
-                    game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
-                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
-                    game->ram[MYSMB_AREA_DATA_OFFSET] =
-                        (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
-                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
-                }
-                else if (row == 0x0eU &&
-                    game->ram[MYSMB_AREA_BACKLOADING] != 0U) {
+                    if ((second & 0x80U) != 0U &&
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
+                        game->ram[MYSMB_AREA_OBJECT_PAGE]++;
+                    }
+                    if (row == 0x0dU && (second & 0x40U) == 0U &&
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
+                        game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
+                        game->ram[MYSMB_AREA_DATA_OFFSET] =
+                            (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                    }
+                    else if (row == 0x0eU &&
+                        game->ram[MYSMB_AREA_BACKLOADING] != 0U) {
                     /* Chk1Row14 branches directly to RdyDecode while
                      * backloading. DecodeAreaData then reaches StrAObj even
                      * when this row-14 control object belongs to an earlier
@@ -1491,27 +1492,37 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                         (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
                     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
                     run_object = 1U;
-                }
-                else if (game->ram[MYSMB_AREA_OBJECT_PAGE] <
-                    game->ram[MYSMB_AREA_CURRENT_PAGE]) {
+                    }
+                    else if (game->ram[MYSMB_AREA_OBJECT_PAGE] <
+                        game->ram[MYSMB_AREA_CURRENT_PAGE]) {
                     game->ram[MYSMB_AREA_PARSER_BEHIND] = 1U;
                     rerun = 1U;
                     game->ram[MYSMB_AREA_DATA_OFFSET] =
                         (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
                     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
-                }
-                else if (game->ram[MYSMB_AREA_OBJECT_PAGE] ==
-                    game->ram[MYSMB_AREA_CURRENT_PAGE]) {
-                    column = (mysmb_u8)(first >> 4U);
-                    if (column == game->ram[MYSMB_AREA_CURRENT_COLUMN]) {
-                        game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot] =
-                            game->ram[MYSMB_AREA_DATA_OFFSET];
-                        game->ram[MYSMB_AREA_DATA_OFFSET] =
-                            (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
-                        game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
-                        run_object = 1U;
                     }
-                }
+                    else if (game->ram[MYSMB_AREA_OBJECT_PAGE] ==
+                        game->ram[MYSMB_AREA_CURRENT_PAGE]) {
+                        /* InitRear returns immediately after the first
+                         * current-page object ends the preload. It must not
+                         * fall through BackColC or advance this object's
+                         * cursor. */
+                        if (game->ram[MYSMB_AREA_BACKLOADING] != 0U) {
+                            game->ram[MYSMB_AREA_BACKLOADING] = 0U;
+                            game->ram[MYSMB_AREA_PARSER_BEHIND] = 0U;
+                            game->ram[MYSMB_AREA_OBJECT_OFFSET] = 0U;
+                            return 1U;
+                        }
+                        column = (mysmb_u8)(first >> 4U);
+                        if (column == game->ram[MYSMB_AREA_CURRENT_COLUMN]) {
+                            game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot] =
+                                game->ram[MYSMB_AREA_DATA_OFFSET];
+                            game->ram[MYSMB_AREA_DATA_OFFSET] =
+                                (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                            game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                            run_object = 1U;
+                        }
+                    }
                 }
                 else {
                     run_object = 1U;

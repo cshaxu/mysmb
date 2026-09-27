@@ -632,3 +632,26 @@ tests pass and the common source links as DOS16 with the existing non-fatal
 `70BCAE3A5110B2CF22D5CD5FA77B861C77448877D5A6D22BEDD7EBFE149E7984`,
 `mysmb32.exe` `6F45A66C0DFD10DECAFB148AF40C687827281DB2C76AB3CEDFBC747607169075`,
 and `mysmb64.exe` `11C3C0DD06EB1E0FE39C6D6C333D1FC27857232E3EC4FD7FA423E5BC8F8CD2CD`.
+
+## S7 P4: current-page preload termination
+
+The `NormObj -> InitRear -> LoopCmdE` path now follows the source return
+boundary. When an inactive object is on `CurrentPageLoc` while
+`BackloadingFlag` is nonzero, the ROM clears `BackloadingFlag`,
+`BehindAreaParserFlag` and `ObjectOffset`, then returns before `BackColC` can
+compare its column, stage it, or advance `AreaDataOffset`. The former shared C
+path incorrectly fell through the column branch. `mysmb.area-parser-terminal-
+slot-smoke` now establishes that source state and checks all three cleared
+bytes, unchanged cursor and unchanged metatile staging.
+
+The focused area-stream chain tests (`mysmb.area-parser-terminal-slot-smoke`,
+`mysmb.area-parser-column-smoke`, `mysmb.parser-schedule-smoke`,
+`mysmb.area-data-smoke` and `mysmb.platform-purity`) pass on x86 and x64. The
+same portable C90 owner links into the OpenNT DOS16 MZ with the existing
+non-fatal `OLDNAMES.LIB` warning. P4 artifacts are `mysmb16.exe`
+`E40B1A8501FDF70FC63293004D4BCFCE83489B67079C9256DAF2D68EC8983CBC`,
+`mysmb32.exe` `9080D2438659CC63E34919EA0F3AB287D24F17BA123BA9B64AF49F2BB9EA5BA7`,
+and `mysmb64.exe` `82495C19698524F9031976F511C719443A502A28346B8803FAF824C210981739`.
+This remains an implementation checkpoint: the chain's complete
+node-by-node source audit, legacy initial-area route replacement and final
+dual-track closure are still required.
