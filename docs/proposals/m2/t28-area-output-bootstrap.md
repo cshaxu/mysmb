@@ -6,8 +6,8 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1 is closed at 176 / 1,992.  T28 S2 is active.**  It owns only the
-seven-label color-rotation chain below; the later chains are queued, not
+**T28 S1 and S2 are closed at 183 / 1,992.  T28 S3 is active.**  It owns only
+the eleven-label block-graphics chain below; the later chains are queued, not
 implied by this admission.
 
 ## Exact source-order chains
@@ -90,3 +90,13 @@ leaves. For each route, the owned frame-counter, Buffer1 offset/command bytes
 and color-rotate offset are zero-difference against native C. The focused
 palette test covers all area types and rotation values; x86/x64, DOS16 and
 platform-purity were verified for this P.
+
+## S3 admission contract
+
+S3 receives exactly `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`,
+`ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`,
+`UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder` and `RemBridge`.
+The baseline is 183 / 1,992; all eleven are open and expected to become
+ROM-match complete, for a maximum of 194 / 1,992. Shared owners are
+`src/game/area/block_metatile.c` and its existing shared-game collaborators;
+no platform source or producer logic is in scope.
