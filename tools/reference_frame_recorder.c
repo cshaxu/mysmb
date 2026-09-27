@@ -559,6 +559,25 @@ static void mysmb_reference_apply_t28_secondary_setup_fixture(lib_u8 *ram)
     ram[0x0772u] = 2u;
 }
 
+/* T29/S2 records the source GameMode task-two path.  Each variant changes
+ * only source RAM at an NMI return; the ROM mode selector reaches
+ * SecondaryGameSetup and GetAreaMusic naturally. */
+static void mysmb_reference_apply_t29_area_music_fixture(lib_u8 *ram,
+                                                          lib_u8 kind)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 2u;
+    ram[0x074eu] = 3u;
+    ram[0x0710u] = 0u;
+    ram[0x0752u] = 0u;
+    ram[0x0743u] = 0u;
+    if (kind == 0u) ram[0x074eu] = 1u;
+    else if (kind == 1u) ram[0x0710u] = 6u;
+    else if (kind == 2u) ram[0x0752u] = 2u;
+    else ram[0x0743u] = 1u;
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -901,6 +920,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 59u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-music-normal") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 60u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-music-pipe") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 61u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-music-alternate") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 62u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t29-area-music-cloud") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 63u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1108,6 +1147,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 59u)
                     mysmb_reference_apply_t28_secondary_setup_fixture(
                         driver->machine->ram);
+                else if (t26_fixture >= 60u && t26_fixture <= 63u)
+                    mysmb_reference_apply_t29_area_music_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 60u));
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

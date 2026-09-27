@@ -111,3 +111,28 @@ x64 builds, the OpenNT DOS16 link, platform-purity check, and one refreshed
 three-executable package for the chain P.  The chain cannot claim a label
 until both evidence tracks pass.  No platform source may choose music, inspect
 these area-control bytes, or write the music queue.
+
+## S2 closure: area-music selection chain
+
+S2 closes at **274 / 1,992**. `MusicSelectData`, `GetAreaMusic`,
+`ChkAreaType`, `StoreMusic`, and `ExitGetM` are ROM-match complete; no scoped
+node is deferred or transferred.
+
+The source audit bound the six bytes at `$90e7` to `$02,$01,$04,$08,$10,$20`.
+It corrected two existing shared-C deviations: `AltEntranceControl` is `$0752`
+rather than `$0769`, and pipe entrance values `$06/$07` store index five and
+return before the cloud-override branch. The source-RAM-only original-ROM
+GameMode task-two route reached `$90ed-$9115` for ordinary area type, pipe,
+alternate-entry and cloud paths; the title task-two route reached the
+`OperMode` early return. The native queue bytes match the reference at `$01`,
+`$20`, `$08`, `$10`, and the unchanged title value `$80`. The focused smoke
+also proves every table value, both pipe entries, and title preservation.
+
+`mysmb.area-music-smoke`, `mysmb.platform-purity`, and the Win32 self-test
+passed on x86 and x64. The x86 and x64 normal-route native traces have the
+same SHA-256 `628848D00C1934AF04FC268DA3C930F955EB208BFABF8DDBD7AC51D3694433DA`.
+The shared core relinked as a DOS16 MZ (the pre-existing OpenNT
+`OLDNAMES.LIB` warning remains). Refreshed artifacts are `mysmb16.exe`
+`B7DED6EFBF17E06877F75577F34780B6541D6600E8B8B5F36E8F58C9AFADEA05`,
+`mysmb32.exe` `C2301D9381A73743730B13439A80098EE13D8573348CE88BB8276D3991BAB4BE`,
+and `mysmb64.exe` `1CC58667681F0966DDBAE9E5D70E346B5790C865206E3BDBD496E4F8C71E217C`.

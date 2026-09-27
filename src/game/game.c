@@ -61,7 +61,7 @@ enum {
     MYSMB_RAM_AREA_TYPE = 0x074eU,
     MYSMB_RAM_PLAYER_ENTRANCE = 0x0710U,
     MYSMB_RAM_CLOUD_OVERRIDE = 0x0743U,
-    MYSMB_RAM_ALT_ENTRANCE = 0x0769U,
+    MYSMB_RAM_ALT_ENTRANCE = 0x0752U,
     MYSMB_RAM_AREA_MUSIC_QUEUE = 0x00fbU,
     MYSMB_RAM_DEMO_ACTION = 0x0717U,
     MYSMB_RAM_DEMO_ACTION_TIMER = 0x0718U
@@ -361,16 +361,19 @@ static void mysmb_game_get_area_music(struct mysmb_game *game)
     mysmb_u8 selection;
 
     if (game->ram[MYSMB_RAM_OPER_MODE] == 0U) return;
-    selection = game->ram[MYSMB_RAM_AREA_TYPE];
     if (game->ram[MYSMB_RAM_ALT_ENTRANCE] != 2U) {
+        selection = 5U;
         if (game->ram[MYSMB_RAM_PLAYER_ENTRANCE] == 6U ||
             game->ram[MYSMB_RAM_PLAYER_ENTRANCE] == 7U) {
-            selection = 5U;
+            game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = music_select_data[selection];
+            return;
         }
     }
+    selection = game->ram[MYSMB_RAM_AREA_TYPE];
     if (game->ram[MYSMB_RAM_CLOUD_OVERRIDE] != 0U) selection = 4U;
-    if (selection < 6U)
-        game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = music_select_data[selection];
+    /* Source area-header parsing restricts AreaType to the first four table
+     * entries; the pipe and cloud paths above supply entries five and four. */
+    game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = music_select_data[selection];
 }
 
 /* ROM PrimaryGameSetup immediately falls through to SecondaryGameSetup. */

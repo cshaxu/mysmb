@@ -409,11 +409,11 @@ The labels and branches behind every line remain open until individually bound b
 | 2800 | `InitByteLoop` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
 | 2804 | `InitByte` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
 | 2805 | `SkipByte` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
-| 2814 | `MusicSelectData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musicselectdata) |
-| 2818 | `GetAreaMusic` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareamusic) |
-| 2830 | `ChkAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatype) |
-| 2834 | `StoreMusic` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storemusic) |
-| 2836 | `ExitGetM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitgetm) |
+| 2814 | `MusicSelectData` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
+| 2818 | `GetAreaMusic` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
+| 2830 | `ChkAreaType` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
+| 2834 | `StoreMusic` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
+| 2836 | `ExitGetM` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
 | 2840 | `PlayerStarting_X_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_x_pos) |
 | 2844 | `AltYPosOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-altyposoffset) |
 | 2847 | `PlayerStarting_Y_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_y_pos) |

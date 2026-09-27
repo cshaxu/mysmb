@@ -69861,9 +69861,15 @@
         "ExitGetM"
       ],
       "maximumComplete": 274,
-      "actualMatches": [],
+      "actualMatches": [
+        "MusicSelectData",
+        "GetAreaMusic",
+        "ChkAreaType",
+        "StoreMusic",
+        "ExitGetM"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
-      "state": "active-area-music-selection-chain"
+      "state": "closed-area-music-selection-chain"
     }
   ]
 }
