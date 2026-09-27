@@ -284,6 +284,9 @@ int main(void)
      * rather than this object's vertical height (two). */
     prg[0x0040U] = 0x68U;
     prg[0x0041U] = 0xf2U;
+    game.ram[0x0760U] = 1U;
+    game.ram[0x075fU] = 0U;
+    memset(&game.ram[0x000fU], 0, 5U);
     game.ram[0x0726U] = 6U;
     game.ram[0x072bU] = 1U;
     game.ram[0x072cU] = 0U;
@@ -291,12 +294,18 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a9U] != 0x12U || game.ram[0x06aaU] != 0x14U ||
         game.ram[0x06abU] != 0x14U ||
-        game.ram[0x0732U] != 0U) return 1;
+        game.ram[0x0732U] != 0U || game.ram[0x000fU] != 1U ||
+        game.ram[0x0016U] != 13U || game.ram[0x0087U] != 0x68U ||
+        game.ram[0x006eU] != 1U || game.ram[0x00b6U] != 1U ||
+        game.ram[0x00cfU] != 0x88U || game.ram[0x0058U] != 1U ||
+        game.ram[0x001eU] != 0U || game.ram[0x049aU] != 9U) return 1;
     game.ram[0x0726U] = 7U;
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a9U] != 0x13U || game.ram[0x06aaU] != 0x15U ||
         game.ram[0x06abU] != 0x15U ||
-        game.ram[0x0732U] != 0xffU) return 1;
+        game.ram[0x0732U] != 0xffU || game.ram[0x000fU] != 1U) return 1;
+
+    memset(&game.ram[0x000fU], 0, 5U);
 
     /* Row-15 exit pipes use their fixed four-column side-pipe table; the
      * final two columns also grow a source-defined shaft above the elbow. */

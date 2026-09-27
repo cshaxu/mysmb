@@ -1126,3 +1126,30 @@ non-fatal C4761 and `OLDNAMES.LIB` warnings. Refreshed artifact SHA-256:
 `mysmb16.exe` `2F2A4611ED13795B2F6D5EDE9E732467695094B907E5FA3EDB8A4C7659C014BE`,
 `mysmb32.exe` `99953A06FB06B369CB385FAFE6AACDDF23AC4AD612DFF579649A2A3445D08B4D`,
 and `mysmb64.exe` `0686D097EF3AB4D721654FA93FD2B652AF37F10208D53F3E61D1CFD583363595`.
+
+### S9 P4: VerticalPipe actor handoff restoration
+
+The shared parser had drawn the two-column vertical-pipe geometry but omitted
+ROM `VerticalPipe -> WarpPipe` actor creation.  The shared-game path now follows
+`$98c5-$991f` in source order: `GetPipeHeight` selects the table entry, the
+world/area zero gate preserves the original 1-1 exception, the second-column
+zero-length gate prevents a duplicate actor, and the five-slot
+`FindEmptyEnemySlot` carry result skips creation when full.  On a found slot it
+writes `GetAreaObjXPosition + $08`, the carried page, Y-high/flag, and
+`GetAreaObjYPosition` (row times sixteen plus eight), then writes Piranha ID
+`$0d` and calls the shared `InitPiranhaPlant` owner.  `DrawPipe` remains after
+that call as in the ROM.  The initializer is a named shared-game interface,
+not a Win32 or DOS behavior branch.
+
+The focused parser smoke now proves first-column actor state (slot, ID, X,
+page, Y, speed, state and box) and that the second column does not create a
+second plant.  It passes with platform-purity on both x86 and x64.  The same
+source rebuilt to an OpenNT DOS16 MZ; the legacy `OLDNAMES.LIB` linker notice
+remains non-fatal and the produced MZ passed package validation.  P4 artifacts:
+`mysmb16.exe` `CFB817C3E6F2C53D0F1E61AB38C95DB7254B6933D14895179FE1FB5B8D3499AB`,
+`mysmb32.exe` `515BCA3186FF5FB90482EDAF4A148B7AFC39C21D0BFC18A785FAE7B956695A4E`,
+and `mysmb64.exe` `0855C1143B05A36BBD0CFF642C93623C94DCE8D7A8FB6FA8ECE557FE5E79BF97`.
+
+This is not S9 closure and grants no node-count credit: a controlled original
+ROM recorder route for the vertical-pipe branch, together with the S10
+allocation-boundary receipt, remains required.

@@ -60,6 +60,16 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
     mysmb_enemy_checkpoint_loaded(game, slot);
 }
+void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 1U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+}
 void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
 {
     /* ROM CheckpointEnemyID, not the stream parser, owns this add.  Group
@@ -127,12 +137,7 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
         }
         if (game->ram[MYSMB_ENEMY_ID + slot] == 13U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 1U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+            mysmb_enemy_init_piranha_plant(game, slot);
         }
         if (game->ram[MYSMB_ENEMY_ID + slot] == 10U ||
             game->ram[MYSMB_ENEMY_ID + slot] == 11U) {

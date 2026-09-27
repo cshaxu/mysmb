@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/enemy/init.h"
 #include "game/objects.h"
 #include "game/status.h"
 
@@ -174,6 +175,14 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
                                          mysmb_u8 row,
                                          mysmb_u8 height,
                                          mysmb_u8 metatile);
+
+static mysmb_u8 mysmb_area_find_empty_enemy_slot(const struct mysmb_game *game,
+                                                  mysmb_u8 *slot)
+{
+    *slot = 0U;
+    while (*slot < 5U && game->ram[MYSMB_ENEMY_FLAG + *slot] != 0U) (*slot)++;
+    return *slot < 5U ? 1U : 0U;
+}
 
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
@@ -1504,6 +1513,25 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         if ((second & 0x08U) == 0U)
             value = (mysmb_u8)(value + 4U);
         if (value > 5U) return;
+        /* ROM VerticalPipe -> WarpPipe spawns once, before DrawPipe, when
+         * this is not 1-1 and the fixed two-column object has a free slot. */
+        if ((game->ram[MYSMB_AREA_NUMBER] | game->ram[MYSMB_WORLD_NUMBER]) != 0U &&
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] != 0U) {
+            mysmb_u8 enemy_slot;
+            if (mysmb_area_find_empty_enemy_slot(game, &enemy_slot) != 0U) {
+                mysmb_u8 old_x = game->ram[MYSMB_AREA_CURRENT_COLUMN];
+                game->ram[MYSMB_ENEMY_X + enemy_slot] = (mysmb_u8)((old_x << 4U) + 8U);
+                game->ram[MYSMB_ENEMY_PAGE + enemy_slot] = game->ram[MYSMB_AREA_CURRENT_PAGE];
+                if (game->ram[MYSMB_ENEMY_X + enemy_slot] < 8U) game->ram[MYSMB_ENEMY_PAGE + enemy_slot]++;
+                game->ram[MYSMB_ENEMY_Y_HIGH + enemy_slot] = 1U;
+                game->ram[MYSMB_ENEMY_FLAG + enemy_slot] = 1U;
+                /* GetAreaObjYPosition shifts the decoded row then adds $08. */
+                game->ram[MYSMB_ENEMY_Y + enemy_slot] =
+                    (mysmb_u8)((row << 4U) + 8U);
+                game->ram[MYSMB_ENEMY_ID + enemy_slot] = 13U;
+                mysmb_enemy_init_piranha_plant(game, enemy_slot);
+            }
+        }
         game->ram[MYSMB_AREA_METATILE_BUFFER + row] = pipe[value];
         if (row == 12U) return;
         row++;
