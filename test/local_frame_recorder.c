@@ -636,6 +636,16 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 43U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-palette-frame-gate") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 44U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-palette-buffer-full") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 45U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -793,11 +803,13 @@ int main(int argument_count, char **arguments)
                 fclose(output);
                 return 0;
             }
-            else if (t26_fixture >= 42U && t26_fixture <= 43U) {
-                game.ram[0x0009U] = 0U;
-                game.ram[0x0300U] = 0U;
+            else if (t26_fixture >= 42U && t26_fixture <= 45U) {
+                game.ram[0x0009U] = t26_fixture == 44U ? 1U : 0U;
+                game.ram[0x0300U] = t26_fixture == 45U ? 0x31U :
+                    (t26_fixture == 44U ? 7U : 0U);
                 game.ram[0x074eU] = t26_fixture == 42U ? 1U : 3U;
-                game.ram[0x06d4U] = t26_fixture == 42U ? 0U : 5U;
+                game.ram[0x06d4U] = t26_fixture == 42U ? 0U :
+                    (t26_fixture == 43U ? 5U : 2U);
                 mysmb_area_step_palette_rotation(&game);
                 mysmb_frame_snapshot_capture(&game, &snapshot);
                 if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {

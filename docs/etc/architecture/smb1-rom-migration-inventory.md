@@ -313,13 +313,13 @@ The labels and branches behind every line remain open until individually bound b
 | 1930 | `SetATHigh` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 1940 | `AttribLoop` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 1962 | `SetVRAMCtrl` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
-| 1970 | `ColorRotatePalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colorrotatepalette) |
-| 1973 | `BlankPalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blankpalette) |
-| 1977 | `Palette3Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette3data) |
-| 1983 | `ColorRotation` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colorrotation) |
-| 1991 | `GetBlankPal` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblankpal) |
-| 2004 | `GetAreaPal` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareapal) |
-| 2024 | `ExitColorRot` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcolorrot) |
+| 1970 | `ColorRotatePalette` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 1973 | `BlankPalette` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 1977 | `Palette3Data` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 1983 | `ColorRotation` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 1991 | `GetBlankPal` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 2004 | `GetAreaPal` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
+| 2024 | `ExitColorRot` | M2 T28 S2 shared palette rotation chain | ROM-match complete | [T28 S2 palette rotation equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s2-closure-palette-rotation-equivalence) |
 | 2034 | `BlockGfxData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockgfxdata) |
 | 2041 | `RemoveCoin_Axe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-removecoin_axe) |
 | 2047 | `WriteBlankMT` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeblankmt) |

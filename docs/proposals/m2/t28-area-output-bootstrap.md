@@ -78,3 +78,15 @@ and rotation wrap.  The operational track adds a focused shared-game test,
 then runs x86/x64 builds, the DOS16 link, platform-purity gate and refreshes
 all three package executables.  T31 `GameEngine` remains the unadmitted
 natural caller, so this S does not claim a fabricated caller stack.
+
+## S2 closure: palette rotation equivalence
+
+S2 closes at **183 / 1,992**. The shared `area.c` translation preserves the
+original `$89e1-$8a38` order: low-three-bit frame gate, Buffer1 `$31` capacity
+gate, eight-byte `BlankPalette` copy, four `Palette3Data` overwrites, rotating
+color overwrite, offset advance and six-entry wrap. Controlled original-ROM
+entries at `$89e1` cover normal area data, wrap, frame-gate and full-buffer
+leaves. For each route, the owned frame-counter, Buffer1 offset/command bytes
+and color-rotate offset are zero-difference against native C. The focused
+palette test covers all area types and rotation values; x86/x64, DOS16 and
+platform-purity were verified for this P.
