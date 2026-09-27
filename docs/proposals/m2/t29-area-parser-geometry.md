@@ -1008,3 +1008,41 @@ artifacts are `mysmb16.exe`
 `A2541E3CC896A0873D4FAC5C8BD810D67A37E815A5E71F1EE5F5D94D2533EE86`,
 `mysmb32.exe` `9664EBA31270463F91DA2198B5116B1C0753105E21A8F935F258BD6321AFA080`,
 and `mysmb64.exe` `8F7962924CCAAD5D52CE004222B816F810E71800B973F3C339C20B41CA1E938F`.
+
+## S8 closure: special-object parser chain
+
+S8 closes **22 / 22** expected labels at **390 / 1,992**. The following
+per-label disposition binds the static source audit, ordinary-ROM routes and
+shared C90 operational checks. All observed logic stays in `area.c`; no
+platform adapter owns an object decision, state write, or metatile result.
+
+| Source node | ROM behavior and route evidence | Shared-C disposition |
+| --- | --- | --- |
+| `ScrollLockObject_Warp` | World/type selector routes prove `$04`, `$05`, `$06`; Warp text precedes clear. | `mysmb_area_scroll_lock_warp`; P5 source/native checkpoints and smoke. |
+| `WarpNum` | Stores selector before `WriteGameText`. | Same helper preserves store/call order. |
+| `ScrollLockObject` | XOR-one follows the Piranha loop. | Same helper toggles `$0723` after the loop. |
+| `KillEnemies` | P4 active-Piranha route clears its flag; nonmatching slots survive. | `mysmb_area_kill_enemies`; descending five-slot smoke. |
+| `KillELoop` | Source executes slots four through zero in P2/P4. | Same descending loop and branch outcomes. |
+| `NoKillE` | Nonmatching branch decrements without a flag write. | Same no-write branch. |
+| `FrenzyIDData` | ROM table binds selectors 8--10 to `$14,$17,$18`. | `frenzy_ids` has the same three values. |
+| `AreaFrenzy` | P3 absent and P4 present-ID routes reach selector/load/store. | `mysmb_area_queue_frenzy` selects the same table element. |
+| `FreCompLoop` | Both match and descending no-match paths execute. | Same slots four through zero scan. |
+| `ExitAFrenzy` | Queue is ID when absent and zero when present. | Same final `$06cd` write. |
+| `AreaStyleObject` | Tree and Mushroom style dispatch routes enter the matching branch. | `mysmb_area_style_ledge` is selected from shared parser object dispatch. |
+| `TreeLedge` | Start and persistent variants preserve start/middle rules. | Same high-bit initialization and page/column gate. |
+| `MidTreeL` | Middle route writes `$17` and fills underpart with `$4c`. | Same staged writes and RenderUnderPart call. |
+| `EndTreeL` | P4 resident zero-length route writes end `$18`. | Same zero-length branch. |
+| `MushroomLedge` | Fresh source pair reaches start; resident routes reach continuation. | Same length/half-length initialization. |
+| `EndMushL` | End and middle/centre routes reach `$978b`; end draws `$1b`. | Same zero-length end and active continuation logic. |
+| `AllUnder` | Tree/mushroom centre routes reach downward fill. | Same render-underpart parameters and order. |
+| `NoUnder` | Start/end ledge routes reach zero-height rendering. | Same row/zero-height call. |
+| `PulleyRopeMetatiles` | ROM data is `$42,$41,$43`; all consumers are exercised. | Same static table binding. |
+| `PulleyRopeObject` | P3/P4 reach left, rope and right choices. | `mysmb_area_pulley_rope` tests initialized/nonzero/zero length in source order. |
+| `RenderPul` | Each choice writes the top staging metatile then returns. | Same metatile write. |
+| `MushLExit` | Pulley and mushroom routes reach the shared return. | C helper returns without extra game state. |
+
+ROM track: P2--P5 source-RAM-only ordinary `GameEngine` routes, bounded after
+normal NMI warmup, with no PC/stack injection. Operational track: focused
+parser/special-object and platform-purity tests pass on x86 and x64; the same
+C90 owner links as OpenNT DOS16; all three P5 artifacts were refreshed. No
+scope label is deferred or transferred.

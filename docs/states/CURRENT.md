@@ -2,9 +2,10 @@
 
 ## Current Work
 
-**M2 T29 S8, the twenty-two-node special-object parser chain, is active at
-368 / 1,992.  It follows S7's `RunAObj` dispatch handoff in source order and
-owns only `ScrollLockObject_Warp -> MushLExit`.**
+**M2 T29 S8, the twenty-two-node special-object parser chain, is closed at
+390 / 1,992.  It followed S7's `RunAObj` dispatch handoff in source order and
+completed `ScrollLockObject_Warp -> MushLExit`; S9 admission is the next
+source-order continuation.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -12,7 +13,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. Only the M2 T29 S8 packet below is active.**
+queued records. M2 T29 S9 requires its own admitted packet before code work.**
 
 ## Retained M2 T15 summary
 

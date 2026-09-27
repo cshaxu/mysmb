@@ -508,28 +508,28 @@ The labels and branches behind every line remain open until individually bound b
 | 3561 | `AlterAreaAttributes` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alterareaattributes) |
 | 3580 | `Alter2` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alter2) |
 | 3586 | `SetFore` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setfore) |
-| 3591 | `ScrollLockObject_Warp` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrolllockobject_warp) |
-| 3600 | `WarpNum` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpnum) |
-| 3606 | `ScrollLockObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrolllockobject) |
-| 3615 | `KillEnemies` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemies) |
-| 3619 | `KillELoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killeloop) |
-| 3623 | `NoKillE` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nokille) |
-| 3629 | `FrenzyIDData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frenzyiddata) |
-| 3632 | `AreaFrenzy` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areafrenzy) |
-| 3635 | `FreCompLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frecomploop) |
-| 3640 | `ExitAFrenzy` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitafrenzy) |
-| 3646 | `AreaStyleObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areastyleobject) |
-| 3653 | `TreeLedge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-treeledge) |
-| 3665 | `MidTreeL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-midtreel) |
-| 3670 | `EndTreeL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endtreel) |
-| 3673 | `MushroomLedge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomledge) |
-| 3682 | `EndMushL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endmushl) |
-| 3696 | `AllUnder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-allunder) |
-| 3699 | `NoUnder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nounder) |
-| 3706 | `PulleyRopeMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pulleyropemetatiles) |
-| 3709 | `PulleyRopeObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pulleyropeobject) |
-| 3717 | `RenderPul` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderpul) |
-| 3719 | `MushLExit` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushlexit) |
+| 3591 | `ScrollLockObject_Warp` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3600 | `WarpNum` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3606 | `ScrollLockObject` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3615 | `KillEnemies` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3619 | `KillELoop` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3623 | `NoKillE` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3629 | `FrenzyIDData` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3632 | `AreaFrenzy` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3635 | `FreCompLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3640 | `ExitAFrenzy` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3646 | `AreaStyleObject` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3653 | `TreeLedge` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3665 | `MidTreeL` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3670 | `EndTreeL` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3673 | `MushroomLedge` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3682 | `EndMushL` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3696 | `AllUnder` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3699 | `NoUnder` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3706 | `PulleyRopeMetatiles` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3709 | `PulleyRopeObject` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3717 | `RenderPul` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
+| 3719 | `MushLExit` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
 | 3724 | `CastleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlemetatiles) |
 | 3737 | `CastleObject` | T18: `src/game/area.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-castleobject) |
 | 3748 | `CRendLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-crendloop) |
