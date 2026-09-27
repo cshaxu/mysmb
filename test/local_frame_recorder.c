@@ -248,6 +248,30 @@ static void mysmb_recorder_apply_t26_victory_bridge_handoff_fixture(
     game->ram[0x00fcU] = 0U;
 }
 
+/* Direct ROM inputs for a repeatable VictoryMode/AutoPlayer standing route.
+ * Sprite0HitDetectFlag is zero so the source NMI takes SkipSprite0 rather
+ * than waiting for a fixture-unrelated physical sprite-zero hit. */
+static void mysmb_recorder_apply_t26_victory_outer_player_fixture(
+    struct mysmb_game *game)
+{
+    mysmb_recorder_apply_t26_victory_bridge_handoff_fixture(game);
+    game->ram[0x000eU] = 8U; game->ram[0x000fU] = 0U;
+    game->ram[0x0016U] = 0U; game->ram[0x001dU] = 0U;
+    game->ram[0x0033U] = 1U; game->ram[0x0045U] = 1U;
+    game->ram[0x0057U] = 0U; game->ram[0x006dU] = 0U;
+    game->ram[0x0086U] = 0x30U; game->ram[0x009fU] = 0U;
+    game->ram[0x00b5U] = 1U; game->ram[0x00ceU] = 0x80U;
+    game->ram[0x03c4U] = 0U; game->ram[0x03d0U] = 0U;
+    game->ram[0x06e4U] = 0U; game->ram[0x0700U] = 0U;
+    game->ram[0x0704U] = 0U; game->ram[0x070bU] = 0U;
+    game->ram[0x070cU] = 1U; game->ram[0x070dU] = 0U;
+    game->ram[0x0714U] = 0U; game->ram[0x071aU] = 0U;
+    game->ram[0x071bU] = 0U; game->ram[0x071cU] = 0U;
+    game->ram[0x071dU] = 0xffU; game->ram[0x071fU] = 7U;
+    game->ram[0x0722U] = 0U; game->ram[0x0754U] = 1U;
+    game->ram[0x0781U] = 1U; game->ram[0x079eU] = 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -391,6 +415,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 17U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-outer-player") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 18U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -478,6 +507,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 0U);
             else if (t26_fixture == 17U)
                 mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 1U);
+            else if (t26_fixture == 18U)
+                mysmb_recorder_apply_t26_victory_outer_player_fixture(&game);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

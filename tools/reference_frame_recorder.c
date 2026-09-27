@@ -347,6 +347,29 @@ static void mysmb_reference_apply_t26_victory_bridge_handoff_fixture(
     ram[0x00fcu] = 0u;
 }
 
+/* Direct ROM inputs for a repeatable VictoryMode/AutoPlayer standing route.
+ * Sprite0HitDetectFlag is zero so the source NMI takes SkipSprite0 rather
+ * than waiting for a fixture-unrelated physical sprite-zero hit. */
+static void mysmb_reference_apply_t26_victory_outer_player_fixture(lib_u8 *ram)
+{
+    mysmb_reference_apply_t26_victory_bridge_handoff_fixture(ram);
+    ram[0x000eu] = 8u; ram[0x000fu] = 0u;
+    ram[0x0016u] = 0u; ram[0x001du] = 0u;
+    ram[0x0033u] = 1u; ram[0x0045u] = 1u;
+    ram[0x0057u] = 0u; ram[0x006du] = 0u;
+    ram[0x0086u] = 0x30u; ram[0x009fu] = 0u;
+    ram[0x00b5u] = 1u; ram[0x00ceu] = 0x80u;
+    ram[0x03c4u] = 0u; ram[0x03d0u] = 0u;
+    ram[0x06e4u] = 0u; ram[0x0700u] = 0u;
+    ram[0x0704u] = 0u; ram[0x070bu] = 0u;
+    ram[0x070cu] = 1u; ram[0x070du] = 0u;
+    ram[0x0714u] = 0u; ram[0x071au] = 0u;
+    ram[0x071bu] = 0u; ram[0x071cu] = 0u;
+    ram[0x071du] = 0xffu; ram[0x071fu] = 7u;
+    ram[0x0722u] = 0u; ram[0x0754u] = 1u;
+    ram[0x0781u] = 1u; ram[0x079eu] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -471,6 +494,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 17u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-outer-player") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 18u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -585,6 +613,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 17u)
                     mysmb_reference_apply_t26_floatey_leaf_fixture(
                         driver->machine->ram, 1u);
+                else if (t26_fixture == 18u)
+                    mysmb_reference_apply_t26_victory_outer_player_fixture(
+                        driver->machine->ram);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;

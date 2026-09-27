@@ -63030,9 +63030,12 @@
         "AutoPlayer"
       ],
       "maximumComplete": 74,
-      "actualMatches": [],
+      "actualMatches": [
+        "VictoryMode",
+        "AutoPlayer"
+      ],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-independent-outer-victory-route-equivalence"
+      "state": "closed-complete-repeatable-outer-victory-route-equivalence"
     }
   ]
 }

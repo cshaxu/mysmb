@@ -337,14 +337,8 @@ order, while Victory invokes only its original two-call tail.  No platform
 source changed.
 
 The bridge handoff fixture now seeds `Player_OffscreenBits` with `$a5`; both
-the ROM and C retain it through the task-zero victory branch.  Its aggregate
-RAM difference count falls from 84 to 82.  The remaining controlled-route
-differences include `Player_Rel_XPos`, `Player_Rel_YPos`, and
-`Player_Pos_ForScroll`: they arise from live player state supplied by the
-independently received `RelativePlayerPosition` and `PlayerGfxHandler` tree
-(`M2 T16 S4`), not from an S7-owned write.  S7 therefore records no node
-credit from this repair and does not inject ROM trace state into the native
-game to manufacture a whole-route comparison.
+the ROM and C retain it through the task-zero victory branch.  That separate
+handoff check proves the S7 repair does not add a GameEngine-only write.
 
 The required similar-issue sweep checked every production caller of the new
 three-entry interface.  GameEngine now has the source `$94a5` sequence.  The
@@ -355,23 +349,41 @@ unrepaired, explicitly recorded T16 OAM/offscreen dependency, not an S7
 exception.  VictoryMode is the only completed S7 repair point: it correctly
 omits that predecessor before its `$847c` AutoPlayer tail.
 
-An S7 diagnostic also prepared the direct documented inputs to the bridge,
-slot-zero core, relative-coordinate and standing-player graphics path after a
-bounded warmup.  On the first original-ROM NMI record, all outer-owned values
-matched: operating mode/task, object offset, player page/X/Y, relative X/Y,
-sprite attribute/offset, player graphics offset, offscreen bits, and
-`Player_Pos_ForScroll`.  The visible OAM was necessarily the preceding DMA
-image.  A second source sample did not reach the NMI-return breakpoint and
-the recorder returned its incomplete-window result, so that setup is not a
-repeatable source route.  The temporary fixture and both derived traces were
-discarded.  It provides no completion credit and confirms that a later owner
-must establish a source-reachable or repeatable controlled player/OAM route.
+The retained `t26-victory-outer-player` fixture prepares documented direct
+ROM inputs after sixty ordinary NMI boundaries and explicitly clears
+`Sprite0HitDetectFlag`.  This selects the source `SkipSprite0` path and avoids
+a fixture-unrelated physical sprite-zero wait.  It produces two repeatable NMI
+returns in both the ROM reference and shared C.  The first advances task zero
+through the bridge handoff; the second runs task one, executes exactly the
+slot-zero enemy-core turn, then reaches the `AutoPlayer` relative-position and
+graphics tail.  On that second record the two runs agree on `ObjectOffset`,
+the player page/X/Y and relative X/Y, player sprite attribute/offset,
+player-graphics offset, offscreen bits and `Player_Pos_ForScroll`.  All eight
+player OAM entries are byte-identical.  The four bytes immediately following
+those entries remain a pre-fixture OAM residual outside the player output;
+unprepared enemy and scratch RAM account for the remaining aggregate
+differences.  Raw records are local diagnostics below `build/` and are
+discarded after this result is recorded.
+
+This is outer-route evidence for `VictoryMode` and `AutoPlayer`, not an
+independent completion claim for their shared `RelativePlayerPosition` or
+`PlayerGfxHandler` descendants.  Those collaborator labels remain in their
+received T16 OAM/offscreen slice.
 
 The focused mode smoke, strict C90 x86/x64 mode-smoke builds, x86/x64 product
 `--self-test`, OpenNT DOS16 MZ build, and platform-purity test pass.  The
 refreshed artifacts have SHA-256 values `mysmb16.exe`
 `229B0E959C0B4002BFE770393A39148101C204B016D36B375C3ADE2C16D04E69`,
 `mysmb32.exe`
-`CEA8E8E8CFE41FDF7B46DB024D5BA37D1CD5814849C03187B87B23E090B462E7`, and
+`07370AE1056DDEBF551CDEC408D0EA48B17130654CFAED749674B76EB26ECB4F`, and
 `mysmb64.exe`
-`D11ABC1433801416ECCC55979994E66FC2651486FFC3AD2E2150553E3C9B662A`.
+`81E9DCE07F3CFD33BA0F0258C1B6762CDE842508729259D8AAD1D22B56A4221B`.
+
+## S7 closure
+
+S7 closes both scoped outer nodes at **74 / 1,992**. `VictoryMode` is matched
+by its task-vector, conditional slot-zero `EnemiesAndLoopsCore` turn and
+two-call player tail; `AutoPlayer` is matched by the second-record
+relative-position and byte-identical eight-sprite graphics output. The
+controlled ROM comparison and the native smoke/build/purity track both pass.
+No S7 label transfers.

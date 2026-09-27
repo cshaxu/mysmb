@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 72 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause. |
-| Mapped / audited, not complete | 122 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 99 evidence-incomplete mappings. |
-| Open / unmatched | 1,798 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 74 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer. |
+| Mapped / audited, not complete | 121 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 98 evidence-incomplete mappings. |
+| Open / unmatched | 1,797 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **72 / 1,992 (3.61%)**. Initial deep verification covered
+Verified conformance is **74 / 1,992 (3.71%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -80,9 +80,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
 
-The following 30 T26 labels have source branch and operational evidence in the
-[T26 S5 matrix](../proposals/m2/t26-victory-terminal.md#s5-per-label-evidence-matrix).
+The following 32 T26 labels have source branch and operational evidence in the
+[T26 record](../proposals/m2/t26-victory-terminal.md#s7-closure).
 
+| 1137 | `VictoryMode` |
+| 1144 | `AutoPlayer` |
 | 1147 | `VictoryModeSubroutines` |
 | 1159 | `SetupVictoryMode` |
 | 1169 | `PlayerVictoryWalk` |
@@ -131,7 +133,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (122)
+## Mapped but not yet matched (121)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -152,7 +154,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | 1065 | `StartWorld1` |
 | 1081 | `GoContinue` |
 | 1119 | `DemoEngine` |
-| 1137 | `VictoryMode` |
 | 2674 | `InitializeGame` |
 | 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
