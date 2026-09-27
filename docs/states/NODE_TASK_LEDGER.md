@@ -2294,4 +2294,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T25 S2 | 26 | 42 | none / 0 | none / 0 | closed-shared-migration-transferred-to-s3; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S3 | 26 | 42 | none / 0 | none / 0 | closed-rom-audit-transferred-to-s4; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S4 | 26 | 42 | none / 0 | none / 0 | closed-repair-and-controlled-route-disposition-transferred-to-s5; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S5 | 26 | 42 | none / 0 | none / 0 | active-title-menu-demo-closure-accounting-awaiting-t18-route-prerequisite; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S5 | 26 | 42 | none / 0 | none / 0 | active-after-t18-initializegame-prerequisite-repair; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T18 S4 | 1 | 42 | none / 0 | none / 0 | closed-initializegame-prerequisite-repaired-no-node-credit; [record](../../docs/proposals/m2/area-parser.md) |

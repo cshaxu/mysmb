@@ -161,6 +161,9 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
     source.prg = game->area_prg;
     source.prg_size = game->area_prg_size;
     mysmb_area_initialize(game);
+    /* ROM InitializeGame: LDA #$18 / STA DemoTimer precedes LoadAreaPointer.
+     * The later task-one screen-routine sequence consumes this countdown. */
+    game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
     if (mysmb_area_load_pointers(game, &source) == 0U ||
         mysmb_area_parse_header(game, &source) == 0U) {
         return 0U;

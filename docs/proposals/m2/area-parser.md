@@ -22,6 +22,30 @@ Area code owns block-buffer and VRAM-command mutations. It consumes a completed 
 ## Acceptance
 
 Area RAM, parser offsets, block buffer, CIRAM, attributes, palette and scroll state match reference. Platform code may not read or write these game decisions. Replaced code is removed in the same admitted P after its trace proves the replacement.
+
+## S4 P2: InitializeGame title-countdown prerequisite
+
+The T25 controlled cold-start route isolated one T18-owned omission before the
+title menu: ROM `InitializeGame` clears its local state, then executes
+`LDA #$18 / STA DemoTimer` before `LoadAreaPointer`. The shared
+`mysmb_game_begin_title_bootstrap` is the existing native task-zero owner but
+omitted that write, so its first menu frame entered `DemoEngine` instead of
+the title countdown. S4/P2 is limited to that source write and a regression
+at the first shared title NMI. It does not change title-menu behavior, platform
+code, or T25 node credit; T25 owns the replay after this upstream repair.
+
+### S4 P2 result
+
+The shared task-zero initializer now performs `LDA #$18 / STA DemoTimer`
+before `LoadAreaPointer`, matching `InitializeGame` at listing lines
+2674--2683. The first thirty controlled cold-start samples agree on the
+title-relevant RAM state, OAM backing, work RAM, both CIRAM pages, palette,
+visible OAM, audio command state, and all PPU scalars. The comparison still
+reports CPU stack and unmapped zero-page differences; those predate this
+single write and remain owned by their source nodes. The focused bootstrap
+smoke, both Win32 `--self-test` executables, platform-purity check, governance
+checks, and the OpenNT DOS16 link pass. This repairs a prerequisite only and
+adds no node credit; T25 S5 is re-admitted for controlled title-route replay.
 ## S1 P1: block metatile writer boundary
 
 BlockObjMT_Updater and its ReplaceBlockMetatile command writer now live in src/game/area/block_metatile.c; frame root and tests call the area API. The 600-sample continuation is unchanged: first work-RAM mismatch remains sample 82 / $03f0, with 2,893 differing work-RAM bytes; CIRAM, palette, audio and PPU remain zero-difference. x64/x86 pass 78/78; OpenNT links DOS MZ with its existing OLDNAMES.LIB warning. Artifacts: 16 00AB5AD16398B908135E17BACB05A7A92B0B1C0C188AF38C974E801350AD6982, 32 79F8BFBBFE71F70F1D2E9F18E1C1D97370B2D5B993F991031D719A443C912CA3, 64 CD71364ADF964DC81F27183D727417F3180761DB66A423AC3DD7B556F9353ED8.

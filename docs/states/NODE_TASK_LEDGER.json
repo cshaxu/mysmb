@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -55646,7 +55646,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -61780,7 +61780,64 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-title-menu-demo-closure-accounting-awaiting-t18-route-prerequisite"
+      "state": "active-after-t18-initializegame-prerequisite-repair"
+    },
+    {
+      "subtask": "M2 T18 S4",
+      "kind": "implementation",
+      "scope": [
+        "InitializeGame"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/area-parser.md",
+      "state": "closed-initializegame-prerequisite-repaired-no-node-credit"
     }
   ]
 }

@@ -53,7 +53,8 @@ int main(void)
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0009U] != 0U) return 1;
-    if (game.ram[0x0772U] != 1U || game.ram[0x00fbU] != 0x80U) return 1;
+    if (game.ram[0x0772U] != 1U || game.ram[0x00fbU] != 0x80U ||
+        game.ram[0x07a2U] != 0x18U) return 1;
     saw_title_transfer = 0U;
     saw_icon_queue = 0U;
     saw_title_palette_queue = 0U;

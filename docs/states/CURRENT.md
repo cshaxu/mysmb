@@ -47,22 +47,22 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S5, Implementation; title/menu/demo closure accounting. |
-| Admission And Approval | Owner-approved T25 S plan; S4 repaired its three source gaps and transferred all 26 labels with the recorded T18 route prerequisite. |
-| Objective | Evaluate each T25 label for credit using both tracks, preserve unmet evidence as a named dependency, and close T25 without overstating conformance. |
-| Non-goals | New title implementation, startup/InitializeGame repairs, platform changes, Victory nodes, or visual substitution. |
+| Identifier Mode | M2 T25 S5, implementation closure accounting; title menu, world selection and demo. |
+| Admission And Approval | Owner-approved source-order M2 plan. T18 S4 has repaired the required `InitializeGame` title-countdown prerequisite without title-node credit. |
+| Objective | Re-run the source-reachable title, Start, Select, world-select and demo routes against the original ROM, then record a per-node disposition for the 26 T25 labels. |
+| Non-goals | New game logic outside the 26 received T25 labels, platform behavior, or unproven node credit. |
 | Reference Baseline | 42 / 1,992 complete; 26 scoped labels, zero expected matches, maximum 42 / 1,992. |
-| Candidate Proposal | [T25 title plan](../proposals/m2/t25-title-menu-demo.md). |
-| Files And ABI Surface | Ledger, source-audit evidence, existing shared title regressions, and owner-local traces below build. |
+| Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
+| Files And ABI Surface | Shared title/menu owner, frame-root handoff only where the title source calls it, controlled ROM recorders, ledger, and three executable artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Recheck S3/S4 source evidence and the controlled cold-start disposition; no match without a regenerated route after T18 InitializeGame resolves `$07a2`. |
-| Expected Markers | None; preserve all unsupported labels as incomplete with their T18 prerequisite. |
-| Asset Needs | No product change in accounting-only work; retain S4 three-artifact hashes as current evidence. |
-| Reporting Requirements | Report all 26 label dispositions, any credit delta, and precise transferred/deferred owner. |
-| Stop Conditions | Stop on an attempt to claim a label from source mapping, unit test, or unaligned trace alone. |
-| Exit Criteria | Every scoped label has a closure disposition; T25 closes or transfers only after accounting and gates agree. |
+| Verification | Original-ROM controlled routes after aligned `DemoTimer`; source read/write/table/call-order review; x86/x64 tests, DOS16 compile, purity, and three artifacts. |
+| Expected Markers | None. Each of the 26 labels requires both ROM-logic and operational evidence before credit. |
+| Asset Needs | Owner-local ROM/listing/trace under build; every implementation P refreshes three artifacts. |
+| Reporting Requirements | State the exact source nodes exercised, evidence result, residual owner, and tracker disposition. |
+| Stop Conditions | Stop on a cross-slice repair, altered ROM transition, or platform gameplay logic. |
+| Exit Criteria | Every T25 label has a documented match or a named upstream owner; only evidenced labels may receive credit. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Confirm no T25 code or platform code recreates the T18 InitializeGame write. |
+| Similar-Issue Sweep | Inspect all title countdown writers, task-three exits, and saved-input latches in the received source range. |
 
 ## Recent M4 Closures
 
