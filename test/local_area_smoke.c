@@ -1,9 +1,84 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "game/area.h"
 #include "game/game.h"
 #include "game/objects.h"
 #include "smb1_local_rom.h"
+
+/* Exercise the complete WriteGameText selector and tail family against the
+ * locally bound ROM data.  Expected stream bytes are read at test time; this
+ * project-owned harness does not embed a derivative message fixture. */
+static int verify_game_text_selector(mysmb_u8 selector, mysmb_u8 players,
+    mysmb_u8 current_player, mysmb_u8 operating_mode)
+{
+    struct mysmb_game game;
+    mysmb_u8 offset_index;
+    mysmb_u8 name_player;
+    mysmb_u8 index;
+    mysmb_u8 length;
+    mysmb_u16 source;
+
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    memset(&game.ram[0x0301U], 0xa5, 0xffU);
+    game.ram[0x0300U] = 0U;
+    game.ram[0x077aU] = players;
+    game.ram[0x0753U] = current_player;
+    game.ram[0x0770U] = operating_mode;
+    game.ram[0x075aU] = 9U;
+    game.ram[0x075fU] = 2U;
+    game.ram[0x075cU] = 3U;
+    if (selector < 2U) {
+        offset_index = (mysmb_u8)(selector << 1U);
+    }
+    else if (selector < 4U) {
+        offset_index = (mysmb_u8)(selector << 1U);
+        if (players == 0U) offset_index++;
+    }
+    else {
+        offset_index = 8U;
+    }
+    source = (mysmb_u16)(0x0752U + mysmb_local_prg[0x07feU + offset_index]);
+    length = 0U;
+    while (mysmb_local_prg[source + length] != 0xffU) {
+        if (length == 0xffU) return 1;
+        length++;
+    }
+    if (mysmb_area_queue_game_text(&game, selector) == 0U) return 1;
+    for (index = 0U; index < length; ++index) {
+        mysmb_u8 expected;
+
+        expected = mysmb_local_prg[source + index];
+        if (selector == 1U) {
+            if (index == 7U) expected = 0x9fU;
+            if (index == 8U) expected = 0U;
+            if (index == 19U) expected = 3U;
+            if (index == 21U) expected = 4U;
+        }
+        if (selector != 1U && selector < 4U && players != 0U) {
+            name_player = current_player;
+            if (selector == 2U && operating_mode != 3U) name_player ^= 1U;
+            if (name_player != 0U && index >= 3U && index < 8U)
+                expected = mysmb_local_prg[0x07edU + index - 3U];
+        }
+        if (selector >= 4U && index >= 27U && index <= 35U &&
+            ((index - 27U) % 4U) == 0U) {
+            expected = mysmb_local_prg[0x07f2U +
+                (mysmb_u16)(selector - 4U) * 4U + (index - 27U) / 4U];
+        }
+        if (game.ram[0x0301U + index] != expected) return 1;
+    }
+    if (game.ram[0x0301U + length] != 0U) return 1;
+    if (selector >= 4U) {
+        if (game.ram[0x0300U] != 0x2cU || game.ram[0x0301U + 0x2cU] != 0U)
+            return 1;
+    }
+    else if (game.ram[0x0300U] != 0U) {
+        return 1;
+    }
+    return 0;
+}
 
 int main(void)
 {
@@ -175,6 +250,21 @@ int main(void)
         mysmb_local_prg[0x0797U] != 0xffU || mysmb_local_prg[0x07aaU] != 0xffU ||
         mysmb_local_prg[0x07bfU] != 0xffU || mysmb_local_prg[0x07ecU] != 0xffU)
         return 1;
+
+    /* The source selector family is one contiguous data/copy/tail chain.
+     * Cover every selector plus both player-name decisions in one matrix. */
+    if (verify_game_text_selector(0U, 0U, 0U, 1U) != 0 ||
+        verify_game_text_selector(0U, 1U, 1U, 1U) != 0 ||
+        verify_game_text_selector(1U, 0U, 0U, 1U) != 0 ||
+        verify_game_text_selector(2U, 0U, 0U, 1U) != 0 ||
+        verify_game_text_selector(2U, 1U, 0U, 1U) != 0 ||
+        verify_game_text_selector(2U, 1U, 1U, 1U) != 0 ||
+        verify_game_text_selector(3U, 0U, 0U, 3U) != 0 ||
+        verify_game_text_selector(3U, 1U, 0U, 3U) != 0 ||
+        verify_game_text_selector(3U, 1U, 1U, 3U) != 0 ||
+        verify_game_text_selector(4U, 0U, 0U, 1U) != 0 ||
+        verify_game_text_selector(5U, 0U, 0U, 1U) != 0 ||
+        verify_game_text_selector(6U, 0U, 0U, 1U) != 0) return 1;
 
     /* WriteGameText selector one copies the ROM lives screen and patches
      * its life/world/level positions before the normal VRAM transfer. */

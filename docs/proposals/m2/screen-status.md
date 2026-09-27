@@ -360,6 +360,29 @@ native self-test, and the same shared source links as the OpenNT DOS16 MZ
 `mysmb32.exe` `2047E4D31CDB0B626C1D4EE0C418820A8EB332D642C9CA431A78755265B904F1`,
 and `mysmb64.exe` `E519F402868C21A8BBF973497CF16249F97F7D8CE5CA923C782F09496CFD55D8`.
 
+## S2/P14: complete GameText selector/data-tail matrix
+
+One project-owned smoke now invokes selectors zero through six from a fresh
+shared game state. For every selector it derives the source offset and the
+terminator length from the locally bound ROM at run time, then compares every
+copied command byte and its terminator. The same matrix covers selector-zero
+Luigi replacement, both TIME UP player inversions, both GAME OVER player
+choices, the lives crown/world/level patches, and all three spaced Warp Zone
+number patches. It contains no message or asset fixture.
+
+This is direct source/data and shared-C evidence for the contiguous
+`GameTextOffsets -> WarpNumLoop` branch family. The paired Time Up/Game Over
+fixtures already provide its NMI-route evidence. The Warp entry remains
+pending a source-reachable original-ROM parser route, so no node credit is
+claimed by this P.
+
+The matrix passes as the x64 CTest and x86 executable smoke; both Win32
+products pass self-test, and the shared source links as DOS16 with the
+established C4761 warnings. The refreshed artifacts are `mysmb16.exe`
+`9B884AC39DC42F4145ED47E956CB89D779414E8A55565E4712147CA0F35574CF`,
+`mysmb32.exe` `2047E4D31CDB0B626C1D4EE0C418820A8EB332D642C9CA431A78755265B904F1`,
+and `mysmb64.exe` `E519F402868C21A8BBF973497CF16249F97F7D8CE5CA923C782F09496CFD55D8`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -387,29 +410,29 @@ both tracks are accepted at S2 closure.
 | `IncSubtask` | `game.c` task transitions | Mapped; all screen fixtures. Pending final table-wide transition matrix. |
 | `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | Mapped; title bootstrap smoke. Pending source `UpdateNumber` collaborator audit. |
 | `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes. Pending non-title DrawTitle exit route. |
-| `GameText` | bound local PRG data in `area.c` | Mapped; local-area smoke. Pending data-byte audit. |
-| `TopStatusBarLine` | selector zero in `area.c` | Mapped; cold-title and two-player Luigi replacement smoke. Pending final text-byte matrix. |
-| `WorldLivesDisplay` | selector one in `area.c` | Mapped; local-area lives/crown smoke and ordinary `PlayerInter` ROM fixture. Pending full selector/name matrix. |
-| `TwoPlayerTimeUp` | selector two source offset in `area.c` | Mapped; both current-player Time Up zero-difference routes. Pending final text-byte matrix. |
-| `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture. Pending source-byte audit. |
-| `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; both current-player Game Over zero-difference routes. Pending final text-byte matrix. |
-| `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture. Pending source-byte audit. |
+| `GameText` | bound local PRG data in `area.c` | Mapped; P14 derives every source text byte/terminator at run time. Pending final chain matrix. |
+| `TopStatusBarLine` | selector zero in `area.c` | Mapped; cold-title, two-player Luigi and P14 full-byte matrix. Pending final chain matrix. |
+| `WorldLivesDisplay` | selector one in `area.c` | Mapped; local-area, ordinary `PlayerInter` and P14 crown/world/level matrix. Pending final chain matrix. |
+| `TwoPlayerTimeUp` | selector two source offset in `area.c` | Mapped; both current-player Time Up routes and P14 full-byte matrix. Pending final chain matrix. |
+| `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture and P14 direct source-byte matrix. Pending final chain matrix. |
+| `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; both current-player Game Over routes and P14 full-byte matrix. Pending final chain matrix. |
+| `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture and P14 direct source-byte matrix. Pending final chain matrix. |
 | `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; local-area warp smoke. Pending controlled original ROM warp route. |
-| `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; top-status smoke and all two-player Time Up/Game Over fixtures. Pending final data-byte audit. |
-| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; local-area smoke checks all three selector table routes. Pending source-reachable original-ROM warp route. |
-| `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; local-area selector smoke and P12 direct table/terminator audit. Pending final selector matrix. |
-| `WriteGameText` | `area.c` text writer | Mapped; local-area, Time Up, intermediate, Game Over routes. Pending complete selector matrix. |
-| `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both Time Up and Game Over two-player routes. Pending full selector matrix. |
-| `LdGameText` | `area.c` PRG source selection | Mapped; local-area selector routes. Pending table-byte audit. |
-| `GameTextLoop` | `area.c` terminator-copy loop | Mapped; local-area smoke. Pending maximum-length boundary audit. |
-| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; local-area lives/name/warp smoke. Pending full selector matrix. |
-| `PutLives` | `area.c` lives/world/level patch | Mapped; local-area ordinary/crown smoke and ordinary `PlayerInter` ROM fixture. Pending full selector/name matrix. |
-| `CheckPlayerName` | `area.c` player-name selection | Mapped; both Time Up inversion and Game Over non-inversion ROM routes. Pending final selector matrix. |
-| `ChkLuigi` | `area.c` current-player branch | Mapped; both current-player values in Time Up and Game Over routes. Pending final selector matrix. |
-| `NameLoop` | `area.c` five-byte Luigi replacement | Corrected `$07ed-$07f1` source binding; top-status and all two-player fixture routes. Pending direct data-byte audit. |
-| `ExitChkName` | `area.c` name tail exit | Mapped; local-area smoke. Pending selector matrix. |
-| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; local-area smoke checks selectors four, five and six. Pending source-reachable original-ROM warp route. |
-| `WarpNumLoop` | `area.c` three spaced writes | Mapped; local-area smoke checks selectors four, five and six. Pending source-reachable original-ROM warp route. |
+| `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; P14 direct five-byte matrix plus two-player routes. Pending final chain matrix. |
+| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte selector matrix. Pending source-reachable original-ROM warp route. |
+| `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; P12 table audit and P14 every-selector matrix. Pending final chain matrix. |
+| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix and existing screen routes. Pending source-reachable Warp route. |
+| `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both two-player routes and P14 selector matrix. Pending final chain matrix. |
+| `LdGameText` | `area.c` PRG source selection | Mapped; P14 every-selector direct source-byte matrix. Pending final chain matrix. |
+| `GameTextLoop` | `area.c` terminator-copy loop | Mapped; P14 derives and checks every stream length and terminator. Pending final chain matrix. |
+| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix. Pending source-reachable Warp route. |
+| `PutLives` | `area.c` lives/world/level patch | Mapped; P14 crown/world/level matrix and ordinary `PlayerInter` route. Pending final chain matrix. |
+| `CheckPlayerName` | `area.c` player-name selection | Mapped; P14 matrix and both Time Up/Game Over routes. Pending final chain matrix. |
+| `ChkLuigi` | `area.c` current-player branch | Mapped; P14 both current-player values and two-player routes. Pending final chain matrix. |
+| `NameLoop` | `area.c` five-byte Luigi replacement | Corrected `$07ed-$07f1` binding; P14 direct-byte matrix. Pending final chain matrix. |
+| `ExitChkName` | `area.c` name tail exit | Mapped; P14 complete selector matrix. Pending final chain matrix. |
+| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 full matrix. Pending source-reachable original-ROM warp route. |
+| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 full matrix. Pending source-reachable original-ROM warp route. |
 | `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; task-five and task-seven pending/expired zero-difference routes. Pending common-tail matrix. |
 | `ResetScreenTimer` | `game.c` OutputInter and tasks 5/7 | Mapped; Time Up and intermediate routes. Pending common-tail matrix. |
 | `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; task-five and task-seven pending zero-difference routes. Pending common-tail matrix. |
