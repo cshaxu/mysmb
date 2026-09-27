@@ -30,6 +30,8 @@ No platform adapter may read or write terminal game state.
 | S3 | Complete floating-score table/actor route within its received terminal collaboration boundary. | Table and OAM/write-order review. | Focused actor tests and controlled frame route. | 0 |
 | S4 | Establish ROM logic equivalence through source-reachable victory, end-world and B-enable routes. | Branches, writes, callees and controlled/reachable ROM routes. | Cross-width traces and required builds. | Up to 32 |
 | S5 | Close only labels proven by both tracks; transfer every unresolved label to an accepted successor. | Per-label source disposition. | Final gates and three artifacts. | Up to 32 |
+| S6 | Restore only the source-owned outer VictoryMode call order. | Compare `VictoryMode`'s task-zero/nonzero branch order and named existing collaborators. | Focused root tests, cross-width builds, DOS16, purity, three artifacts. | 0 |
+| S7 | Independently compare the repaired outer victory route. | Source-reachable or controlled full-domain ROM route for `VictoryMode` and `AutoPlayer`. | Cross-width traces, DOS16, purity, three artifacts. | Up to 2 |
 
 ## S1 source-contract obligations
 
@@ -271,3 +273,17 @@ The S5 run records those same 30 `actualMatches`; it retains only
 relative-player/player-graphics path, both of which belong to their existing
 owners. S5 remains active for their eventual accepted transfer rather than
 claiming a terminal-tree completion from its local wrappers.
+
+## S5 closure and S6/S7 receipt
+
+The first full-domain task-zero comparison exposes 85 RAM, one palette, and
+25 OAM differences after the source terminal handoff. The current root calls
+`mysmb_objects_draw_retainer` but omits the original `EnemiesAndLoopsCore`
+call when `OperMode_Task` becomes nonzero; this is a `VictoryMode` outer-call
+ordering defect, not an enemy-core rewrite. The same fixture does not prepare
+the source player's live state, so it cannot certify `AutoPlayer` or the
+player graphics output. S5 closes at 72 / 1,992 after transferring only those
+two unresolved labels to pre-accepted S6. S6 has an empty forecast and may
+restore the existing shared collaborator call only; S7 receives the two labels
+for a fresh, predeclared equivalence decision after an aligned full-domain
+route exists.

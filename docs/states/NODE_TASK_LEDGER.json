@@ -1536,6 +1536,30 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Pre-accepted successor after M2 T26 S4."
+        },
+        {
+          "id": "M2 T26 S6",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-outer-victory-call-order-repair"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S5; it may restore only the existing outer collaborator call order."
+        },
+        {
+          "id": "M2 T26 S7",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-outer-victory-route-equivalence"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S6 for an independent two-label route-equivalence decision."
         }
       ]
     }
@@ -7410,8 +7434,8 @@
     {
       "label": "VictoryMode",
       "line": 1137,
-      "receiver": "M2 T26 S5",
-      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
+      "receiver": "M2 T26 S6",
+      "receivingBasis": "accepted S5 outer-route residual transfer; S6 restores only source call order before S7 equivalence",
       "futurePackage": null,
       "history": [
         {
@@ -7471,14 +7495,20 @@
           "subtask": "M2 T26 S5",
           "relation": "accepted closure successor after S4 controlled-ROM route evidence",
           "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S6",
+          "relation": "accepted outer-victory repair successor after S5 full-domain residual audit",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "AutoPlayer",
       "line": 1144,
-      "receiver": "M2 T26 S5",
-      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
+      "receiver": "M2 T26 S6",
+      "receivingBasis": "accepted S5 outer-route residual transfer; S6 restores only source call order before S7 equivalence",
       "futurePackage": null,
       "history": [
         {
@@ -7497,6 +7527,12 @@
           "task": "M2 T26",
           "subtask": "M2 T26 S5",
           "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S6",
+          "relation": "accepted outer-victory repair successor after S5 full-domain residual audit",
           "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
@@ -56601,6 +56637,18 @@
       ],
       "acceptedBy": "M2 T26 S5 is the owner-approved pre-accepted closure receiver; S4 recorded the exact controlled ROM branch evidence and retains no unfinished custody.",
       "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-052-t26-s5-to-s6-outer-victory",
+      "type": "transfer",
+      "from": "M2 T26 S5",
+      "to": "M2 T26 S6",
+      "nodes": [
+        "VictoryMode",
+        "AutoPlayer"
+      ],
+      "acceptedBy": "M2 T26 S6 is the pre-accepted source-order repair receiver after S5 completed its 30 direct labels and isolated the two outer-route residuals.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
     }
   ],
   "runs": [
@@ -62781,7 +62829,95 @@
         "SetupNumSpr"
       ],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-30-direct-labels-complete-awaiting-outer-transfer"
+      "state": "closed-30-direct-labels-complete-transferred-outer-residuals-to-s6"
+    },
+    {
+      "subtask": "M2 T26 S6",
+      "kind": "implementation",
+      "scope": [
+        "VictoryMode",
+        "AutoPlayer"
+      ],
+      "baseline": 72,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 72,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "active-outer-victory-call-order-repair"
     }
   ]
 }
