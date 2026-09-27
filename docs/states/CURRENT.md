@@ -73,7 +73,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Admission And Approval | Owner approved source-order continuation and chain-based S delivery; T24 S2 transferred the exact chain. |
 | Objective | Establish ROM-equivalent `ScreenRoutines -> InitScreen -> SetupIntermediate -> NoAltPal` in the shared game owner. |
 | Non-goals | No palette/status/text successor node, host UI rule, platform gameplay logic, unrelated repair or credit without both evidence tracks. |
-| Reference Baseline | 100 / 1,992 complete; scope `ScreenRoutines` through `NoAltPal` (21 exact labels), all incoming open; expected 21 matches; maximum 121 / 1,992. |
+| Reference Baseline | 100 / 1,992 complete; scope `ScreenRoutines` through `NoAltPal` (21 exact labels), all incoming open; expected 20 leaf/data matches; `ScreenRoutines` remains deferred for full dispatch-table evidence; maximum 120 / 1,992. |
 | Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
 | Files And ABI Surface | Shared screen/status game owner, project tests/recorders, ledger and three target artifacts for implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
