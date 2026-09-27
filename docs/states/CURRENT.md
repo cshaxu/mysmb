@@ -43,20 +43,20 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S18 Packet
+## M2 T25 S19 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S18, implementation; next source-order `ExitMenu` return. |
-| Admission And Approval | Owner-approved source-order M2 plan; S17 completed `InitScores` and transferred the remaining 12 title/menu/demo labels to S18. |
-| Objective | Independently establish and credit `ExitMenu`, the return leaf after InitScores. |
-| Non-goals | The other 11 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 88 / 1,992 complete; 1 scoped label; expected match ExitMenu; maximum 89 / 1,992. |
+| Identifier Mode | M2 T25 S19, implementation; next source-order `GoContinue` branch. |
+| Admission And Approval | Owner-approved source-order M2 plan; S18 completed `ExitMenu` and transferred the remaining 11 title/menu/demo labels to S19. |
+| Objective | Independently establish and credit `GoContinue`, its world/area writes and X=0 return. |
+| Non-goals | The other 10 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 89 / 1,992 complete; 1 scoped label; expected match GoContinue; maximum 90 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM PC `$830d`; controlled original-ROM Start route recording the return successor; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | `ExitMenu` returns immediately after InitScores with no write or platform-owned state. |
+| Verification | Static source audit of ROM PC `$830e`; controlled original-ROM A+Start and world-select paths; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | `GoContinue` stores world pages, clears both area numbers and returns X=0 without platform-owned state. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
 | Reporting Requirements | Record source entry `$830d`, caller return, C-owner/control-flow, trace result, and all 11 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |

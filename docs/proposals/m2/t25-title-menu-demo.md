@@ -566,3 +566,18 @@ across ROM/x86/x64; title smoke, bootstrap smoke and purity pass.  The remaining
 S18 scopes only `ExitMenu`, baseline **88 / 1,992**, expected `ExitMenu`,
 maximum **89 / 1,992**.  It must prove the source RTS return to the title-mode
 caller; all remaining labels stay uncredited.
+
+## S18 closure: ExitMenu return
+
+S18 completes exactly `ExitMenu`, reaching **89 / 1,992**.  ROM `$830d` is a
+zero-write RTS reached after InitScores; the shared C leaf is likewise empty
+and returns to its title caller.  Controlled Start ROM/x86/x64 replay is
+zero-difference; title smoke, bootstrap smoke and purity pass.  The refreshed
+DOS16, Win32 and x64 artifacts are recorded in this P.  The remaining 11 labels
+transfer to S19.
+
+## S19 admission: GoContinue branch
+
+S19 scopes only `GoContinue`, baseline **89 / 1,992**, expected `GoContinue`,
+maximum **90 / 1,992**.  It must prove its world/area writes and X=0 return
+on the A+Start and world-select callers.

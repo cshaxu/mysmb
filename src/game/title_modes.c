@@ -95,6 +95,11 @@ static void mysmb_game_init_scores(struct mysmb_game *game)
     } while (offset != 0xffU);
 }
 
+/* ROM $830d ExitMenu is an RTS with no state write. */
+static void mysmb_game_exit_menu(void)
+{
+}
+
 /* ROM $82e6 StartWorld1.  Pointer loading is owned by M2 T3; this boundary
  * deliberately has no title-input decision. */
 static void mysmb_game_start_world1(struct mysmb_game *game)
@@ -116,6 +121,7 @@ static void mysmb_game_start_world1(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0U;
     mysmb_game_init_scores(game);
+    mysmb_game_exit_menu();
 }
 
 /* ROM $8255 StartGame is the direct jump into ChkContinue. */
