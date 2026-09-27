@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 74 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer. |
-| Mapped / audited, not complete | 121 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 98 evidence-incomplete mappings. |
-| Open / unmatched | 1,797 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 78 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo. |
+| Mapped / audited, not complete | 118 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 95 evidence-incomplete mappings. |
+| Open / unmatched | 1,796 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **74 / 1,992 (3.71%)**. Initial deep verification covered
+Verified conformance is **78 / 1,992 (3.92%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -76,6 +76,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 965 | `MoveAllSpritesOffscreen` |
 | 969 | `MoveSpritesOffscreen` |
 | 972 | `SprInitLoop` |
+| 982 | `TitleScreenMode` |
+| 996 | `GameMenuRoutine` |
+| 1047 | `NullJoypad` |
+| 1049 | `RunDemo` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -133,7 +137,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (121)
+## Mapped but not yet matched (118)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -141,14 +145,11 @@ canonical inventory links identify individual gaps and responsible owners.
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 982 | `TitleScreenMode` |
-| 996 | `GameMenuRoutine` |
 | 1004 | `StartGame` |
 | 1005 | `ChkSelect` |
 | 1018 | `SelectBLogic` |
 | 1033 | `IncWorldSel` |
 | 1039 | `UpdateShroom` |
-| 1047 | `NullJoypad` |
 | 1053 | `ResetTitle` |
 | 1059 | `ChkContinue` |
 | 1065 | `StartWorld1` |

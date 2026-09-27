@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S6 Packet
+## M2 T25 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S6, implementation; first-divergence title integration. |
-| Admission And Approval | Owner-approved source-order M2 plan; S5 retained these 26 labels in S6, and T26 now supplies the named terminal producer evidence. |
-| Objective | Isolate the first original-ROM/title-route divergence before repairing or crediting any title/menu/demo node. |
-| Non-goals | New gameplay approximation, platform gameplay logic, T16 player/OAM repair, or credit without an aligned source route. |
-| Reference Baseline | 74 / 1,992 complete; 26 scoped labels; expected matches none; maximum 74 / 1,992. |
+| Identifier Mode | M2 T25 S7, implementation; first source-order title-idle prefix credit. |
+| Admission And Approval | Owner-approved source-order M2 plan; S6 repaired the shared title bootstrap and same-frame RunDemo integration with zero credit, and transfers all 26 retained labels to S7. |
+| Objective | Independently establish and credit the first four source-order title-idle nodes: TitleScreenMode, GameMenuRoutine, NullJoypad and RunDemo. |
+| Non-goals | The other 22 retained labels, new gameplay approximation, platform gameplay logic, player/OAM repair, or credit without both a source-PC route and an operational replay. |
+| Reference Baseline | 74 / 1,992 complete; 4 scoped labels; expected matches TitleScreenMode, GameMenuRoutine, NullJoypad and RunDemo; maximum 78 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source-PC/write-order audit at the first divergent NMI; focused title test, cross-width recorder comparison, DOS16 and purity for any repair. |
-| Expected Markers | None at admission; every title/menu/demo label remains uncredited pending source-route proof. |
+| Verification | Original-ROM PC coverage for the four labels, source/control-write audit, focused title tests, no-input frame replay, x86/x64 trace equality, DOS16 build and purity gate. |
+| Expected Markers | ROM PCs $8231, $8245, $82bb and $82c0 occur on the natural idle title route; native and ROM output agree through the recorded route. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record the first-difference owner, each label disposition, and any accepted transfer. |
-| Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, or platform gameplay logic. |
-| Exit Criteria | A source-owned first divergence is identified and either repaired with both verification tracks or transferred to its accepted owner. |
+| Reporting Requirements | Record per-label source-PC, C-owner/control-flow, route comparison and all 22 retained-node dispositions. |
+| Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
+| Exit Criteria | Only the four expected labels are completed when their branch and route proofs agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Compare title bootstrap, menu buffer writes, icon OAM, demo transition and title/player OAM handoffs through the first divergent NMI. |
+| Similar-Issue Sweep | Check that title task-zero dispatch, task-three menu dispatch, joypad clearing, and the GameCore tail are each still shared game ownership with no platform references. |
 
 ## Recent M4 Closures
 

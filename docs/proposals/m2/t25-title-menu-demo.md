@@ -43,6 +43,7 @@ T25 is the first future source-order slice after the immutable historical T23/T2
 | S4 | Receive S3 output and complete operational verification. | Recheck source-reachable branches after any repair. | Focused tests, x86/x64, DOS16, runtime route and purity. | 0 |
 | S5 | Receive S4 output and close only labels supported by both tracks. | Review evidence/dispositions label by label. | Re-run required gates and publish three artifacts. | Up to 26 |
 | S6 | Re-open the retained title integration after its named dependencies change; first isolate the earliest aligned-ROM divergence before any node credit. | Source-PC and write-order audit at the first divergent NMI. | Controlled x86/x64 recorder comparison and focused title tests. | 0 |
+| S7 | Accept the S6 receipt and credit only the first natural idle prefix: `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, and `RunDemo`; retain every later branch label. | Exact PC reachability, source order, latch clear and GameCore-tail review. | Focused title smoke, 600-frame output replay, x86/x64 trace equality, DOS16 build and purity. | 4 |
 
 No platform adapter may decide menu state, world selection, demo input, timing, score reset, or title transition.
 
@@ -328,3 +329,48 @@ forecast no matches, so the repaired whole-route evidence is retained for the
 next title subtask rather than converted into retroactive node credit.  The
 same 26 labels remain in their T25 receiver for an exact branch-coverage and
 logic-credit admission.
+
+## S7 admission: first title-idle prefix
+
+S7 accepts all 26 retained labels from S6 so that no closed subtask remains a
+receiver.  Its exact active scope and forecast are only the source-order idle
+prefix: `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, and `RunDemo`.
+The incoming baseline is **74 / 1,992**, the expected set is the same four
+labels, and the maximum result is **78 / 1,992**.  The other 22 labels remain
+received by S7 without credit; later branch-specific admissions must transfer
+them before any closure.
+
+The ROM-PC evidence target is `$8231 TitleScreenMode -> $8245
+GameMenuRoutine -> $82bb NullJoypad -> $82c0 RunDemo` on the natural no-input
+title route.  The source review must verify the task-three `JumpEngine`
+selection, the `SavedJoypad1Bits = 0` write, and the same-frame
+`GameCoreRoutine` call.  Operational proof is the focused title smoke plus
+the controlled 600-sample title replay, with cross-width native trace equality.
+The recorder's final input-sentinel sample remains excluded from equality.
+
+## S7 closure: first title-idle prefix
+
+S7 completes exactly four labels: `TitleScreenMode`, `GameMenuRoutine`,
+`NullJoypad`, and `RunDemo`.  The original-ROM recorder reaches their entry
+PCs `$8231`, `$8245`, `$82bb`, and `$82c0` once each on the natural no-input
+title route.  Source review maps the task-zero mode selection to the shared
+frame root, the task-three menu body and joypad-one clear to the shared title
+owner, and the same-frame `GameCoreRoutine` tail to the shared frame root.
+`local_title_bootstrap_smoke` and `title_demo_smoke` pass, including the
+title bootstrap clears and the RunDemo game-core handoff.
+
+For operational proof, two independently compiled native recorders (Win32
+x86 and Win64) are byte-identical for all 600 samples.  Each has zero
+differences against the original-ROM NMI-return recording in CPU work RAM
+`$0300-$07ff`, both CIRAM pages, palette, visible OAM, audio-command bytes and
+all PPU scalar outputs for frames 0--598.  Frame 599 remains intentionally
+outside that comparison because the local recorder uses it as its mandatory
+input sentinel.  The shared core also links as the OpenNT DOS16 MZ target and
+the platform-purity test passes.  The released artifact hashes are:
+`mysmb16.exe` `97B68F6134905356CCCA9EDBDABAD441FF5CF3B772A19BA38E8FAD5C21FC5970`,
+`mysmb32.exe` `0CDEC53F0E44DE1F5DAD804F68046F238D5BEFA0782FEFDA467D3D2D6796CD05`,
+and `mysmb64.exe` `E9850EDA3C75107C07C855560A7CFCE5D516AEC8A31B7EE8F1000B1C2536973A`.
+
+The remaining 22 received labels are not inferred from this route.  They
+transfer to S8 for the next source-order branch admission.  S7 therefore
+closes at **78 / 1,992** with no retained unfinished receiver.

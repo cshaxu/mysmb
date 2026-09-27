@@ -1468,6 +1468,30 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted retained receiver after M2 T25 S5 closure; fresh admission follows T16 player/OAM and T26 EndChkB evidence."
+        },
+        {
+          "id": "M2 T25 S7",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-idle-credit"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after M2 T25 S6 source-order repair; S7 starts with the four-node idle title prefix and retains the remaining title/menu/demo receipt for later exact branch admissions."
+        },
+        {
+          "id": "M2 T25 S8",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-branch-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after M2 T25 S7's four-node title-idle closure; S8 retains the remaining exact title/menu/demo branches for its next source-order admission."
         }
       ]
     },
@@ -5896,8 +5920,8 @@
     {
       "label": "TitleScreenMode",
       "line": 982,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S7",
+      "receivingBasis": "T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope.",
       "futurePackage": null,
       "history": [
         {
@@ -5965,8 +5989,8 @@
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this world-select leaf.",
       "futurePackage": null,
       "history": [
         {
@@ -6010,8 +6034,8 @@
     {
       "label": "GameMenuRoutine",
       "line": 996,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S7",
+      "receivingBasis": "T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope.",
       "futurePackage": null,
       "history": [
         {
@@ -6087,8 +6111,8 @@
     {
       "label": "StartGame",
       "line": 1004,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this start leaf.",
       "futurePackage": null,
       "history": [
         {
@@ -6156,8 +6180,8 @@
     {
       "label": "ChkSelect",
       "line": 1005,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this Select branch.",
       "futurePackage": null,
       "history": [
         {
@@ -6241,8 +6265,8 @@
     {
       "label": "ChkWorldSel",
       "line": 1013,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this world-select condition.",
       "futurePackage": null,
       "history": [
         {
@@ -6294,8 +6318,8 @@
     {
       "label": "SelectBLogic",
       "line": 1018,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this Select-B branch.",
       "futurePackage": null,
       "history": [
         {
@@ -6363,8 +6387,8 @@
     {
       "label": "IncWorldSel",
       "line": 1033,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this world increment.",
       "futurePackage": null,
       "history": [
         {
@@ -6432,8 +6456,8 @@
     {
       "label": "UpdateShroom",
       "line": 1039,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this world display update.",
       "futurePackage": null,
       "history": [
         {
@@ -6501,8 +6525,8 @@
     {
       "label": "NullJoypad",
       "line": 1047,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S7",
+      "receivingBasis": "T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope.",
       "futurePackage": null,
       "history": [
         {
@@ -6570,8 +6594,8 @@
     {
       "label": "RunDemo",
       "line": 1049,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S7",
+      "receivingBasis": "T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope.",
       "futurePackage": null,
       "history": [
         {
@@ -6623,8 +6647,8 @@
     {
       "label": "ResetTitle",
       "line": 1053,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this reset leaf.",
       "futurePackage": null,
       "history": [
         {
@@ -6700,8 +6724,8 @@
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this start continuation.",
       "futurePackage": null,
       "history": [
         {
@@ -6761,8 +6785,8 @@
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns World 1 initialization.",
       "futurePackage": null,
       "history": [
         {
@@ -6822,8 +6846,8 @@
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns score initialization.",
       "futurePackage": null,
       "history": [
         {
@@ -6867,8 +6891,8 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this exit.",
       "futurePackage": null,
       "history": [
         {
@@ -6912,8 +6936,8 @@
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns continue output.",
       "futurePackage": null,
       "history": [
         {
@@ -6981,8 +7005,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns icon source data.",
       "futurePackage": null,
       "history": [
         {
@@ -7026,8 +7050,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns icon drawing.",
       "futurePackage": null,
       "history": [
         {
@@ -7087,8 +7111,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns icon data reading.",
       "futurePackage": null,
       "history": [
         {
@@ -7132,8 +7156,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns icon exit.",
       "futurePackage": null,
       "history": [
         {
@@ -7177,8 +7201,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns demo action data.",
       "futurePackage": null,
       "history": [
         {
@@ -7222,8 +7246,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns demo timing data.",
       "futurePackage": null,
       "history": [
         {
@@ -7267,8 +7291,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns demo dispatch.",
       "futurePackage": null,
       "history": [
         {
@@ -7344,8 +7368,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns action execution.",
       "futurePackage": null,
       "history": [
         {
@@ -7389,8 +7413,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S6",
-      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
+      "receiver": "M2 T25 S8",
+      "receivingBasis": "T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns demo termination.",
       "futurePackage": null,
       "history": [
         {
@@ -56673,6 +56697,57 @@
       ],
       "acceptedBy": "M2 T26 S7 is the pre-accepted independent outer-route equivalence receiver after S6 restored the source call order with zero node credit.",
       "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-054-t25-s6-to-s7-title-idle-prefix",
+      "type": "transfer",
+      "from": "M2 T25 S6",
+      "to": "M2 T25 S7",
+      "nodes": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S7 accepts S6's complete title/menu/demo receipt, credits only the first source-order idle prefix in this admission, and retains the other 22 labels for later exact branch admissions.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-055-t25-s7-to-s8-title-branches",
+      "type": "transfer",
+      "from": "M2 T25 S7",
+      "to": "M2 T25 S8",
+      "nodes": [
+        "WSelectBufferTemplate", "StartGame", "ChkSelect", "ChkWorldSel",
+        "SelectBLogic", "IncWorldSel", "UpdateShroom", "ResetTitle",
+        "ChkContinue", "StartWorld1", "InitScores", "ExitMenu", "GoContinue",
+        "MushroomIconData", "DrawMushroomIcon", "IconDataRead", "ExitIcon",
+        "DemoActionData", "DemoTimingData", "DemoEngine", "DoAction", "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S8 accepts every label not completed by S7; its first admission begins at the next source-order ResetTitle branch and retains the other labels for later exact branch packets.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -63090,6 +63165,48 @@
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
       "state": "closed-zero-credit-source-order-title-integration-repaired"
+    },
+    {
+      "subtask": "M2 T25 S7",
+      "kind": "implementation",
+      "scope": [
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "NullJoypad",
+        "RunDemo"
+      ],
+      "baseline": 74,
+      "incomingComplete": [
+        "Start", "VBlank1", "VBlank2", "WBootCheck", "ColdBoot", "EndlessLoop",
+        "VRAM_AddrTable_Low", "VRAM_AddrTable_High", "VRAM_Buffer_Offset", "ScreenOff",
+        "InitBuffer", "DecTimers", "DecTimersLoop", "SkipExpTimer", "NoDecTimers", "PauseSkip",
+        "RotPRandomBit", "Sprite0Clr", "Sprite0Hit", "HBlankDelay", "SkipSprite0", "SkipMainOper",
+        "PauseRoutine", "ChkPauseTimer", "ChkStart", "ClrPauseTimer", "SetPause", "ExitPause",
+        "SpriteShuffler", "ShuffleLoop", "StrSprOffset", "NextSprOffset", "SetAmtOffset", "SetMiscOffset",
+        "OperModeExecutionTree", "MoveAllSpritesOffscreen", "MoveSpritesOffscreen", "SprInitLoop",
+        "VictoryMode", "AutoPlayer", "VictoryModeSubroutines", "SetupVictoryMode", "PlayerVictoryWalk",
+        "PerformWalk", "DontWalk", "ExitVWalk", "PrintVictoryMessages", "MRetainerMsg", "ThankPlayer",
+        "SecondPartMsg", "EvalForMusic", "PrintMsg", "IncMsgCounter", "SetEndTimer", "IncModeTask_A",
+        "ExitMsgs", "PlayerEndWorld", "EndExitOne", "EndChkBButton", "EndExitTwo", "FloateyNumTileData",
+        "ScoreUpdateData", "FloateyNumbersRoutine", "ChkNumTimer", "DecNumTimer", "LoadNumTiles",
+        "ChkTallEnemy", "GetAltOffset", "FloateyPart", "SetupNumSpr", "InitializeMemory",
+        "PlayerOffscreenChk", "PROfsLoop", "NPROffscr"
+      ],
+      "expectedMatches": [
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "NullJoypad",
+        "RunDemo"
+      ],
+      "maximumComplete": 78,
+      "actualMatches": [
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "NullJoypad",
+        "RunDemo"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-first-title-idle-prefix-equivalence"
     }
   ]
 }
