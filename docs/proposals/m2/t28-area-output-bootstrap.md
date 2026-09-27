@@ -6,6 +6,15 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
+Every open or future T28 S uses the binding
+[chain-based S delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).
+The source-order table below defines bounded contiguous chains; each one
+performs mapping, shared-C repair when necessary, ROM-equivalence comparison,
+and operational verification together.  Labels retain individual ledger and
+progress entries, while the chain shares its ROM route and one three-target
+validation package.  ROM control/data/call parity and operational execution
+remain independent acceptance tracks.
+
 **T28 S1--S6 are closed at 230 / 1,992.** S7 is the active source-order
 chain. T28 S6 owned only the twelve-label joypad/VRAM-output/NMI chain below.
 

@@ -49,13 +49,16 @@ T25 is the first future source-order slice after the immutable historical T23/T2
 ## Delivery amendment
 
 The table above is historical evidence. Any further T25 receipt uses the
-source-order recovery plan's chain-delivery rule: one bounded contiguous
-title/menu/demo call-data chain performs source comparison, repair when needed,
-ROM-equivalence evidence and operational verification together. Each member
-remains separately recorded, while one common replay, three-target package and
-closure update cover the chain. A future S may split only at an accepted
-dependency, shared-game-owner boundary or different ROM route, and may be
-zero-credit only for a named blocking dependency.
+binding [chain-based S delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery):
+one bounded contiguous title/menu/demo call-data chain performs source
+comparison, repair when needed, ROM-equivalence evidence and operational
+verification together. Each member remains separately recorded, while one
+common replay, three-target package and closure update cover the chain. A
+future S may split only at an accepted dependency, shared-game-owner boundary
+or different ROM route, and may be zero-credit only for a named blocking
+dependency. The two evidence tracks remain distinct: ROM control/data/call
+parity is not established by a build or replay alone, and operational checks
+do not replace the source comparison.
 
 No platform adapter may decide menu state, world selection, demo input, timing, score reset, or title transition.
 

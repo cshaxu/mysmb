@@ -39,7 +39,10 @@ The S1--S7 entries above are retained as historical evidence.  Any successor
 admission or retained-node repair uses the [M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery): it groups only a contiguous
 victory, message, end-world or floating-score call/data chain that has one C
 owner and one ROM route.  It still records each label separately and performs
-one chain-level replay, three-target package and closure update.
+one chain-level replay, three-target package and closure update.  The chain
+also performs source mapping, any shared-C repair, and both independent
+acceptance tracks: ROM control/data/call parity and operational execution.
+No build, replay, or visible route can substitute for the source comparison.
 
 ## S1 source-contract obligations
 

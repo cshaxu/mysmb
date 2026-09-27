@@ -2,6 +2,25 @@
 
 This replaces the oversized historical T21 package. Each task is a bounded source-order and call-graph responsibility; planned task identifiers become active only at individual admission.
 
+## Binding delivery model for every planned task
+
+Every future admission in this plan, from T21 through T51, uses the binding
+[M2 chain-based S delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).
+An S is one bounded contiguous control/data chain with a common shared-game
+owner and one reproducible ROM route.  It performs its source mapping, any
+needed C repair, ROM logic-equivalence comparison, and operational proof in
+the same delivery.  A chain may include adjacent data, loops, and leaves; it
+must split at an unadmitted dependency, owner boundary, or a branch family
+requiring a different ROM route.
+
+Each label remains independently listed in the admission JSON, proposal,
+ledger, and progress tracker.  ROM-equivalence verification remains separate
+from operational verification.  The latter runs focused tests, Win32 x86/x64,
+DOS16, platform purity, and the required three executable artifacts once per
+implementation P; T closure adds a cross-chain regression matrix.  Older
+single-label or fixed-stage S descriptions elsewhere are retained only as
+historical evidence and cannot govern a new admission.
+
 | T | Responsibility | ROM lines | Node count |
 | --- | --- | ---: | ---: |
 | T21 | Boot and cold initialization (including its `InitializeMemory` call-root exception) | 699–737; 2795 | 7 |
