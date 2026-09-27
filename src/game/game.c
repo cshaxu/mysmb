@@ -145,8 +145,7 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
  * frame; ForceInjury retains collision's single death-state owner. */
 mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_RAM_OPER_MODE] != 1U ||
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] < 2U ||
+    if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] < 8U ||
         game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         game->ram[MYSMB_RAM_PLAYER_Y_HIGH] >= 2U ||

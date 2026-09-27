@@ -31,6 +31,13 @@ static int mysmb_status_test_digits(void)
     for (index = 0U; index <= 6U; ++index)
         if (game.ram[0x0133U + index] != 0U) return 4;
     if (game.ram[0x013aU] != 0xa5U) return 5;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x0770U] = 2U;
+    game.ram[0x000eU] = 8U;
+    game.ram[0x07f8U] = 1U;
+    if (mysmb_game_run_timer(&game) == 0U || game.ram[0x07faU] != 9U ||
+        game.ram[0x0787U] != 0x18U) return 6;
     return 0;
 }
 

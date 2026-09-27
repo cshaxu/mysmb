@@ -330,3 +330,14 @@ calls the shared status owner. Its regression declares the non-title operation
 mode required by `DigitsMathRoutine`, matching the source title-mode erase
 branch. No S7 node receives completion credit from this checkpoint: the
 controlled original-ROM/native status route remains required.
+
+## S7 P5 timer-call boundary correction
+
+`RunGameTimer` now retains its source-local `OperMode != TitleScreenMode`
+gate. The translated GameEngine branch, rather than the timer routine, owns
+the fact that the source invokes that routine only after its game-engine
+schedule. The status arithmetic smoke covers the non-title timer decrement
+path; frame-snapshot, platform-purity and both target-width checks retain the
+shared-game boundary. This is still implementation and source-structure
+evidence only; no S7 label is credited before the controlled ROM route proves
+the full status-output chain.

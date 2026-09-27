@@ -195,9 +195,11 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     struct mysmb_area_source area_source;
     mysmb_u8 paused;
     mysmb_u8 run_title_demo;
+    mysmb_u8 run_game_engine;
 
     paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
     run_title_demo = 0U;
+    run_game_engine = 0U;
     if (paused != 0U) {
         mysmb_frame_root_finish(game, frame);
         return;
@@ -271,6 +273,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     if ((mode_before == 1U &&
          (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
         run_title_demo != 0U) {
+        run_game_engine = 1U;
         /* `WriteBottomStatusLine` is reached only through ScreenRoutines
          * task 3.  GameCoreRoutine has no status-task recovery call or
          * buffer-capacity branch, so it must leave ScreenRoutineTask alone. */
@@ -387,7 +390,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     /* GameEngine may advance the entrance dispatcher to subroutine 8 on this
      * frame.  The ROM's game-timer pass observes that new state, so it can
      * load its first 24-frame interval without an extra frame of delay. */
-    if (mysmb_game_run_timer(game) != 0U) {
+    if (run_game_engine != 0U && mysmb_game_run_timer(game) != 0U) {
         (void)mysmb_area_queue_timer_status(game);
     }
     mysmb_frame_root_finish(game, frame);
