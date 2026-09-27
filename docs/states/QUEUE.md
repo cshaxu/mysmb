@@ -2,20 +2,22 @@
 
 ## First Priority - M2 Source-Order Recovery
 
-The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. Therefore the next source-order implementation admission is Title/menu/demo as `M2 T25`; its exact S breakdown and node receipt must be registered before code work.
+The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. T25 through T29 have completed their admitted source-order chains. The current source-order implementation packet is T30/S1; every later T30 chain requires its own exact receipt before code work.
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
-T28 is closed at 265 / 1,992. The next source-order implementation receiver
-is [M2 T29 area parser and large-object geometry](../proposals/m2/t29-area-parser-geometry.md).
-Its first admitted chain is the four-label `InitializeMemory` loop; later T29
-chains remain dependencies rather than being pulled into that receipt.
+T29 is closed at 422 / 1,992. T30 begins with the three-label
+`EndlessRope -> DrawRope` chain in the area-object rendering slice; later
+T30 labels remain dependencies rather than being pulled into that receipt.
 
 Every future M2 admission follows the [chain-based S delivery rule](../rules/EXECUTION.md#m2-chain-based-s-delivery): nodes remain individually tracked, while one S delivers a bounded contiguous call/data chain with one shared ROM route and one three-target validation pass.  The fixed five-stage S pattern is retired for future admissions; historical S records remain evidence only.
 
 ## Current-chain transition
 
-The sole active packet is `M2 T22 S5`, the eight-label `FlagpoleObject -> ExitFlagP` setup-and-slide chain, admitted at 422 / 1,992. Its predecessor T29/S10 is closed; score and relative/OAM dependency nodes remain outside S5 scope.
+The sole active packet is `M2 T30 S1`, the three-label
+`EndlessRope -> DrawRope` area-object rope-rendering chain, admitted at
+430 / 1,992. Its predecessor T29/S10 is closed; `RenderUnderPart`, coin and
+later area-object chains remain outside S1 scope.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This
