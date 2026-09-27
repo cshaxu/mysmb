@@ -583,6 +583,21 @@ static void mysmb_recorder_apply_t29_geometry_castle_fixture(
     game->ram[0x00e8U] = 0xa4U;
 }
 
+/* Mirror the controlled ROM route for L_GroundArea6 +$0e ($68,$f2). */
+static void mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(
+    struct mysmb_game *game)
+{
+    mysmb_recorder_apply_t29_geometry_castle_fixture(game);
+    game->ram[0x0725U] = 1U;
+    game->ram[0x0726U] = 6U;
+    game->ram[0x072aU] = 0U;
+    game->ram[0x072bU] = 0U;
+    game->ram[0x072cU] = 0x0eU;
+    game->ram[0x00e7U] = 0x8eU;
+    game->ram[0x00e8U] = 0xa6U;
+    game->ram[0x0760U] = 1U;
+}
+
 static void mysmb_recorder_apply_t29_special_chain_fixture(
     struct mysmb_game *game, mysmb_u8 kind)
 {
@@ -1071,6 +1086,7 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-world-water") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 82U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-zero-water") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 83U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
@@ -1211,6 +1227,8 @@ int main(int argument_count, char **arguments)
                     (mysmb_u8)(t26_fixture - 80U));
             else if (t26_fixture == 84U)
                 mysmb_recorder_apply_t29_geometry_castle_fixture(&game);
+            else if (t26_fixture == 85U)
+                mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

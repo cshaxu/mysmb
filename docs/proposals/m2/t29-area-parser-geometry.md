@@ -1153,3 +1153,34 @@ and `mysmb64.exe` `0855C1143B05A36BBD0CFF642C93623C94DCE8D7A8FB6FA8ECE557FE5E79B
 This is not S9 closure and grants no node-count credit: a controlled original
 ROM recorder route for the vertical-pipe branch, together with the S10
 allocation-boundary receipt, remains required.
+
+### S9 P5: source-reachable VerticalPipe recorder route
+
+The controlled original-ROM route now selects the real `L_GroundArea6 + $0e`
+object (`$68,$f2`, CPU `$a69c`) without changing ROM, PC, or stack.  It first
+uses the ordinary NMI-return GameEngine precondition, then writes only the
+parser RAM precondition at the naturally reached ROM `$af8f` `JSR
+AreaParserTaskHandler` instruction.  This avoids the earlier incorrect
+NMI-boundary injection, whose fields were cleared by normal area setup before
+the parser ran.  `$f2` advances `AreaObjectPageLoc` from zero to current page
+one; the fixture therefore preserves that original pre-increment state and
+uses nonzero `AreaNumber` solely to take the ROM's non-1-1 Piranha branch.
+
+The two-frame original-ROM capture reaches `$98e5 VerticalPipe`, `$98f8`
+world/area eligibility, `$98fa FindEmptyEnemySlot`, `$9904` object X setup,
+`$991a` object Y setup, `$9922 InitPiranhaPlant`, and `$9925 DrawPipe`, with
+the source return continuing through `$9949`.  This is ROM-logic route
+evidence for the shared `area.c` pipe handoff.  The local recorder accepts the
+same named object-stream route; the focused parser-column smoke independently
+asserts the created actor's slot, ID, X/page/Y, motion state and bounding box.
+No scoped S9 label is credited yet: each of the twenty-two nodes still needs
+its individual data/branch/read/write/call-order certificate and the
+allocation boundary remains owned by its successor.
+
+Operationally, `mysmb.area-parser-column-smoke` and `mysmb.platform-purity`
+pass on x86 and x64.  The same C90 source links as DOS16 with the established
+non-fatal `OLDNAMES.LIB` warning.  The package pass rebuilt all three target
+artifacts; because only recorders changed, their SHA-256 values are unchanged:
+`mysmb16.exe` `CFB817C3E6F2C53D0F1E61AB38C95DB7254B6933D14895179FE1FB5B8D3499AB`,
+`mysmb32.exe` `515BCA3186FF5FB90482EDAF4A148B7AFC39C21D0BFC18A785FAE7B956695A4E`,
+and `mysmb64.exe` `0855C1143B05A36BBD0CFF642C93623C94DCE8D7A8FB6FA8ECE557FE5E79BF97`.

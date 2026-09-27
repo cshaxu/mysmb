@@ -731,6 +731,21 @@ static void mysmb_reference_apply_t29_geometry_castle_fixture(lib_u8 *ram)
     ram[0x00e8u] = 0xa4u;
 }
 
+/* The original 1-1 stream has VerticalPipe $68,$f2 at CPU $a69c.  Its page
+ * bit advances the object page from zero to the already-current page one. */
+static void mysmb_reference_apply_t29_geometry_vertical_pipe_fixture(lib_u8 *ram)
+{
+    mysmb_reference_apply_t29_geometry_castle_fixture(ram);
+    ram[0x0725u] = 1u;
+    ram[0x0726u] = 6u;
+    ram[0x072au] = 0u;
+    ram[0x072bu] = 0u;
+    ram[0x072cu] = 0x0eu;
+    ram[0x00e7u] = 0x8eu;
+    ram[0x00e8u] = 0xa6u;
+    ram[0x0760u] = 1u;
+}
+
 /* T29/S8 additional real area-stream objects.  Each variant remains at a
  * normal NMI return and lets GameEngine dispatch the ROM parser; only the
  * already-reached stream cursor/page/column state differs. */
@@ -832,6 +847,7 @@ int main(int argument_count, char **arguments)
     lib_u8 t26_fixture;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
+    lib_bool t29_vertical_pipe_pending;
     lib_u8 t28_vram_phase;
     lib_u8 t29_area_entry_phase;
     lib_u32 last_frame_revision;
@@ -852,6 +868,7 @@ int main(int argument_count, char **arguments)
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
+    t29_vertical_pipe_pending = LIB_FALSE;
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
@@ -1246,6 +1263,7 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-castle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 90u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-geometry-vertical-pipe") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 91u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1353,6 +1371,14 @@ int main(int argument_count, char **arguments)
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
+        }
+        /* ROM $af8f is the normal GameEngine JSR AreaParserTaskHandler.
+         * All earlier frame logic has run; this replaces only the source-RAM
+         * parser precondition before the original call executes. */
+        if (t29_vertical_pipe_pending && driver->machine->pc == 0xaf8fu) {
+            mysmb_reference_apply_t29_geometry_vertical_pipe_fixture(
+                driver->machine->ram);
+            t29_vertical_pipe_pending = LIB_FALSE;
         }
 
         if (driver->machine->pc == MYSMB_REFERENCE_NMI_RETURN) {
@@ -1498,6 +1524,12 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 90u)
                     mysmb_reference_apply_t29_geometry_castle_fixture(
                         driver->machine->ram);
+                else if (t26_fixture == 91u)
+                {
+                    mysmb_reference_apply_t29_geometry_castle_fixture(
+                        driver->machine->ram);
+                    t29_vertical_pipe_pending = LIB_TRUE;
+                }
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
