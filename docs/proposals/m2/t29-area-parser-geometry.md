@@ -1202,3 +1202,41 @@ artifacts; because only recorders changed, their SHA-256 values are unchanged:
 `mysmb16.exe` `CFB817C3E6F2C53D0F1E61AB38C95DB7254B6933D14895179FE1FB5B8D3499AB`,
 `mysmb32.exe` `515BCA3186FF5FB90482EDAF4A148B7AFC39C21D0BFC18A785FAE7B956695A4E`,
 and `mysmb64.exe` `0855C1143B05A36BBD0CFF642C93623C94DCE8D7A8FB6FA8ECE557FE5E79BF97`.
+
+## S9 closure: castle and pipe large-object geometry chain
+
+S9 closes **22 / 22** expected labels at **412 / 1,992**.  The static audit
+of `$9788-$9949`, the ordinary `L_GroundArea1` castle route, the controlled
+`L_GroundArea6 + $0e` vertical-pipe route, and parser-column source-shaped
+cases establish the following individual dispositions.  Every behavior is in
+shared `area.c`; platform code supplies neither object decisions nor geometry.
+
+| Source node | ROM behavior and route evidence | Shared-C disposition |
+| --- | --- | --- |
+| `CastleMetatiles` | `$9788-$97be` binds all 55 bytes; castle route stages its selected column. | `castle_metatiles` is byte-identical. |
+| `CastleObject` | `$9806` route proves fixed length, row handoff and flag path. | Row-15/kind-2 shared branch. |
+| `CRendLoop` | `$981b` repeatedly advances table offset by five to row 11. | Same table stride and termination. |
+| `ChkCFloor` | `$982d` takes ordinary and floor-reaching outcomes. | Same row-11 exit and floor decision. |
+| `NotTall` | `$9847` distinguishes row-zero tall castle from ordinary castles. | Same `height==0 && length==3` gate. |
+| `PlayerStop` | `$9869` writes metatile `$52`. | Same buffer-row-ten store. |
+| `ExitCastle` | `$986e` returns for page zero and nonterminal lengths. | Same early returns. |
+| `WaterPipe` | `$986f-$987c` writes `$6b,$6c` at parsed row. | Selector-nine source-shaped smoke. |
+| `IntroPipe` | `$987d-$9892` fixes length three and invokes side renderer. | Row-13 intro-pipe three-column smoke. |
+| `VPipeSectLoop` | `$9895-$989a` clears rows six through zero. | Same late-column blanking. |
+| `NoBlankP` | `$98a1` is the carry return from side rendering. | Same early-column return branch. |
+| `SidePipeShaftData` | `$98a3-$98a6` binds shaft values. | Same four-byte table. |
+| `SidePipeTopPart` | `$98a7-$98aa` binds elbow tops. | Same four-byte table. |
+| `SidePipeBottomPart` | `$98ab-$98ae` binds elbow bottoms. | Same four-byte table. |
+| `ExitPipe` | `$98af-$98b7` fixes length and obtains height. | Row-15 exit-pipe four-column smoke. |
+| `RenderSidewaysPipe` | `$98b8-$98d5` selects shaft or elbow. | Same shaft/side-part order. |
+| `DrawSidePart` | `$98d6-$98dc` writes adjacent top/bottom parts. | Same adjacent staging stores. |
+| `VerticalPipeData` | `$98dd-$98e4` binds eight pipe tiles. | `pipe` is byte-identical. |
+| `VerticalPipe` | ROM route reaches `$98e5`; both pipe columns are observed. | Same fixed-two-column progression. |
+| `WarpPipe` | Route takes `$98f8` eligibility and second-column gates. | Same 1-1/full/continuation branches. |
+| `DrawPipe` | Route reaches `$9925-$9939` after actor handoff. | Same top, shaft and order. |
+| `GetPipeHeight` | `$993a-$9949` masks three-bit height and reloads length. | Same height/length separation. |
+
+The focused parser-column and special-object smokes plus platform-purity pass
+on x86 and x64; the shared C90 tree links as DOS16 with the established
+non-fatal `OLDNAMES.LIB` warning.  P6's three artifact hashes are the final S9
+delivery artifacts.  No scoped node is deferred or transferred.

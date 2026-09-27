@@ -73094,9 +73094,32 @@
         "GetPipeHeight"
       ],
       "maximumComplete": 412,
-      "actualMatches": [],
+      "actualMatches": [
+        "CastleMetatiles",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle",
+        "WaterPipe",
+        "IntroPipe",
+        "VPipeSectLoop",
+        "NoBlankP",
+        "SidePipeShaftData",
+        "SidePipeTopPart",
+        "SidePipeBottomPart",
+        "ExitPipe",
+        "RenderSidewaysPipe",
+        "DrawSidePart",
+        "VerticalPipeData",
+        "VerticalPipe",
+        "WarpPipe",
+        "DrawPipe",
+        "GetPipeHeight"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
-      "state": "admitted-large-object-geometry-chain"
+      "state": "closed-large-object-geometry-chain"
     }
   ]
 }

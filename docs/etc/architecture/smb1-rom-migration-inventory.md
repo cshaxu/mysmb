@@ -530,28 +530,28 @@ The labels and branches behind every line remain open until individually bound b
 | 3709 | `PulleyRopeObject` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
 | 3717 | `RenderPul` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
 | 3719 | `MushLExit` | T18 responsibility (implementation not certified) | ROM-match complete | [S8 closure](../../proposals/m2/t29-area-parser-geometry.md#s8-closure-special-object-parser-chain) |
-| 3724 | `CastleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlemetatiles) |
-| 3737 | `CastleObject` | T18: `src/game/area.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-castleobject) |
-| 3748 | `CRendLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-crendloop) |
-| 3759 | `ChkCFloor` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkcfloor) |
-| 3772 | `NotTall` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nottall) |
-| 3789 | `PlayerStop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstop) |
-| 3791 | `ExitCastle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcastle) |
-| 3795 | `WaterPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waterpipe) |
-| 3810 | `IntroPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-intropipe) |
-| 3817 | `VPipeSectLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vpipesectloop) |
-| 3823 | `NoBlankP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noblankp) |
-| 3825 | `SidePipeShaftData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipeshaftdata) |
-| 3828 | `SidePipeTopPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipetoppart) |
-| 3831 | `SidePipeBottomPart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sidepipebottompart) |
-| 3835 | `ExitPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitpipe) |
-| 3840 | `RenderSidewaysPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersidewayspipe) |
-| 3855 | `DrawSidePart` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawsidepart) |
-| 3862 | `VerticalPipeData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipedata) |
-| 3868 | `VerticalPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipe) |
-| 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warppipe) |
-| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawpipe) |
-| 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getpipeheight) |
+| 3724 | `CastleMetatiles` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3737 | `CastleObject` | T18: `src/game/area.c` | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3748 | `CRendLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3759 | `ChkCFloor` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3772 | `NotTall` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3789 | `PlayerStop` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3791 | `ExitCastle` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3795 | `WaterPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3810 | `IntroPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3817 | `VPipeSectLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3823 | `NoBlankP` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3825 | `SidePipeShaftData` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3828 | `SidePipeTopPart` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3831 | `SidePipeBottomPart` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3835 | `ExitPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3840 | `RenderSidewaysPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3855 | `DrawSidePart` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3862 | `VerticalPipeData` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3868 | `VerticalPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
 | 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |
 | 3929 | `ExitEmptyChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitemptychk) |

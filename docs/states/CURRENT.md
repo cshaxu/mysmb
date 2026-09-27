@@ -3,9 +3,9 @@
 ## Current Work
 
 **M2 T29 S9, the twenty-two-node castle and pipe large-object geometry chain,
-is admitted at 390 / 1,992. It follows S8's RunAObj/special-object return in
-source order and owns CastleMetatiles -> GetPipeHeight; its maximum closing
-count is 412 / 1,992.**
+has closed its admitted `CastleMetatiles -> GetPipeHeight` scope at
+412 / 1,992.  Its closure package is the sole active packet until committed;
+the successor S10 allocation/final-geometry chain has not yet been admitted.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -13,7 +13,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. M2 T29 S9 is the sole active implementation packet.**
+queued records. M2 T29 S9 is the sole active closure packet.**
 
 ## Retained M2 T15 summary
 

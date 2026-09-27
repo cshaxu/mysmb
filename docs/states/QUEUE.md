@@ -15,12 +15,12 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The sole active packet is `M2 T29 S9`, the twenty-two-label
+The sole active closure packet is `M2 T29 S9`, the twenty-two-label
 `CastleMetatiles -> GetPipeHeight` castle-and-pipe large-object geometry chain,
-at 390 / 1,992. Its predecessor S8 is closed. S9 proves its own parser geometry
-and retains the source call boundaries to `FindEmptyEnemySlot` (the planned T29
-S10 allocation chain) and `InitPiranhaPlant` (the registered T19/S5 actor-init
-owner); neither dependency may be duplicated in `area.c` merely to close S9.
+closed at 412 / 1,992. Its predecessor S8 is closed. The next candidate is S10,
+which begins at the retained `FindEmptyEnemySlot` allocation boundary; the
+registered T19/S5 `InitPiranhaPlant` actor-init owner remains outside S10's
+scope.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This
