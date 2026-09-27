@@ -992,8 +992,13 @@ mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
     else if (task == 6U || task == 5U || task == 2U || task == 1U) {
         if (mysmb_area_render_graphics(game) == 0U) return 0U;
     }
-    else if (mysmb_area_render_scenery_terrain_column(game) == 0U) {
-        return 0U;
+    else {
+        /* ROM AreaParserCore runs ProcessAreaData before RenderSceneryTerrain
+         * while backloading.  RenderSceneryTerrain itself performs the second
+         * source call immediately before its block-buffer commit. */
+        if (game->ram[MYSMB_AREA_BACKLOADING] != 0U &&
+            mysmb_area_process_object_state(game) == 0U) return 0U;
+        if (mysmb_area_render_scenery_terrain_column(game) == 0U) return 0U;
     }
     game->ram[MYSMB_AREA_PARSER_TASK] = task;
     if (task == 0U) return mysmb_area_render_attribute_tables(game);

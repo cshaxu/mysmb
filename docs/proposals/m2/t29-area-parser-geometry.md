@@ -364,3 +364,34 @@ track runs parser-schedule and parser-buffer focused smokes, x86/x64 builds,
 OpenNT DOS16 link, the purity gate and the three required artifacts once per
 implementation P. S5 does not take ownership of S6's metatile/block-buffer
 renderer leaves or S7's area-stream decoder.
+
+## S5 P1: restore backloading parser order
+
+P1 restores the `AreaParserCore` backloading prefix in shared C.  In the ROM,
+when `BackloadingFlag` is nonzero, `ProcessAreaData` runs once before
+`RenderSceneryTerrain`; the renderer then performs its own second call before
+the block-buffer commit.  The previous C path kept only the latter call, so a
+first row-14 stream control object could not affect the scenery/terrain column
+being prepared.  `mysmb_area_parser_task_step` now executes the prefix only
+for the source Core vector slots and only while backloading.
+
+The parser-column smoke now supplies a source-shaped row-14 terrain control
+object and proves terrain control five, background scenery two and the `$54`
+staging metatile all arise in the same task-seven column.  The audit also
+found a stale test expectation in selector-seven VRAM submission: source
+`InitBuffer` transfers buffer two for selectors six and seven, but clears it
+only for six.  The shared implementation already matched that behavior; the
+buffer-commit smoke now asserts selector seven preserves `$0340/$0341` while
+it clears buffer one.
+
+`mysmb.area-parser-column-smoke`, `mysmb.parser-schedule-smoke`,
+`mysmb.parser-buffer-commit-smoke`, and `mysmb.platform-purity` pass on x86
+and x64. The shared C90 source links into the OpenNT DOS16 MZ with the existing
+non-fatal `OLDNAMES.LIB` warning. P1 artifacts are `mysmb16.exe`
+`6D10344BB3EF3E3019CB1952072BD6BEB38CCD4BB94D4A5F4604446A73B51FEF`,
+`mysmb32.exe` `3BFDD8F7D10030BDFFC744052494B176A75C942CB010DBE178BD0174A2E7822C`,
+and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83FDDC`.
+
+This is an implementation checkpoint, not S5 closure. Source-RAM ROM routes,
+the exact vector/data-table audit, and per-label completion dispositions remain
+required before any of S5's fourteen labels may receive credit.

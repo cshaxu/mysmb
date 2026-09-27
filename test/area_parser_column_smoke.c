@@ -80,6 +80,40 @@ int main(void)
     if (mysmb_area_render_scenery_terrain_column(&game) == 0U ||
         game.ram[0x05b1U] != 0x88U || game.ram[0x05c1U] != 0U) return 1;
 
+    /* AreaParserCore's backloading path processes row-14 control data before
+     * it renders scenery and terrain.  The first stream object must therefore
+     * select terrain control five in time for this same staging column. */
+    prg[0x0040U] = 0x0eU;
+    prg[0x0041U] = 0x25U;
+    prg[0x0042U] = 0xfdU;
+    prg[0x13dcU + 10U] = 1U;
+    prg[0x13dcU + 11U] = 0U;
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 0U;
+    game.ram[0x06a0U] = 0U;
+    game.ram[0x071fU] = 0U;
+    game.ram[0x0727U] = 0U;
+    game.ram[0x0728U] = 1U;
+    game.ram[0x0742U] = 0U;
+    game.ram[0x0743U] = 0U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x072dU] = 0U;
+    game.ram[0x072eU] = 0U;
+    game.ram[0x072fU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_parser_task_step(&game) == 0U) return 2;
+    if (game.ram[0x071fU] != 7U) return 3;
+    if (game.ram[0x0727U] != 5U) return 4;
+    if (game.ram[0x0742U] != 2U) return 5;
+    if (game.ram[0x06a1U] != 0x54U) return 6;
+    game.ram[0x0728U] = 0U;
+
     game.ram[0x0725U] = 0U;
     game.ram[0x0726U] = 0U;
     game.ram[0x06a0U] = 0U;
