@@ -765,3 +765,61 @@ common source links as the OpenNT DOS16 MZ with the existing non-fatal
 and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.
 This remains a checkpoint: S7 will only close after each of its thirty-two
 labels has a separately recorded control/read/write/call-order disposition.
+
+## S7 P10: node-level decoder audit
+
+The following audit records the source-order mapping for the admitted chain.
+`area_parser_terminal_slot_smoke` is the focused source-shaped control/data
+regression; `area_parser_column_smoke` supplies the parser-core/column caller
+and staged-metatile observation; the P9 ordinary ROM route supplies the
+source-reachable dispatch cadence.  No row credits a callee beyond `RunAObj`:
+the JumpEngine-selected object families retain their separate receivers.
+
+| Source node | Source behavior checked | Shared-C mapping and proof |
+| --- | --- | --- |
+| `ProcessAreaData` | Starts with slot two and repeats only for final-slot behind or backload. | `mysmb_area_process_object_state`; terminal-slot loop and P9 ordinary route. |
+| `ProcADLoop` | Stores slot, clears behind, descends through slots two to zero. | Object-offset/active-slot and final-behind regressions. |
+| `Chk1Row13` | Recognizes page-control row 13 before decoding. | Page-control stream advances cursor/page without dispatch. |
+| `Chk1Row14` | Row 14 bypasses rear rejection only during backload. | Backload attribute and normal row-14 cases. |
+| `CheckRear` | Compares object page with current page. | Behind-page, current-page and column-gate cases. |
+| `RdyDecode` | Calls the decoder before length handling. | Terminal, active-slot and row-14 cases. |
+| `SetBehind` | Marks an earlier-page object and advances it. | Final-slot-behind regression verifies one repeat only. |
+| `NextAObj` | Advances two bytes after page/behind handling. | Page-control and behind cursor assertions. |
+| `ChkLength` | Decrements only a resident object slot. | Active terminal slot transitions zero to `$ff`. |
+| `ProcLoopb` | Descends then tests final behind and backloading. | P6 final-slot and P7 backload completion regressions. |
+| `EndAParse` | Returns from decoder at `$fd`, leaving caller loop alive. | Terminal-slot regression. |
+| `IncAreaObjOffset` | Adds two and clears page-select. | Page-control, staging and backload cursor assertions. |
+| `DecodeAreaData` | Selects current stream or saved slot and handles `$fd`. | Active saved-slot and terminal paths. |
+| `Chk1stB` | Uses saved offset only for a resident slot. | Active-slot continuation versus fresh stream cases. |
+| `ChkRow14` | Gives row 14 addend zero and ID `$2e`. | Attribute controls and P9 handoff audit. |
+| `ChkRow13` | Gives dynamic row 13 addend `$22`; page control returns. | Dynamic row-13 and page-control cases. |
+| `Mask2MSB` | Masks dynamic ID and increments loop marker for `$4b`. | Loop-command marker regression. |
+| `ChkSRows` | Separates normal rows from rows 12--15. | Small, row-12 and row-15 handoff cases. |
+| `LrgObj` | Selects large-object code and recognizes warp pipe. | d3-set and d3-clear pipe cases. |
+| `NotWPipe` | Retains non-warp pipe code. | d3-clear ID-seven regression. |
+| `SpecObj` | Reads d6--d4 for special rows. | Row-12 ID-five and row-15 ID-three regressions. |
+| `MoveAOId` | Shifts selected bits into object ID. | Special/large ID handoff assertions. |
+| `NormObj` | Stores selected ID and chooses resident/init/rear path. | Shared `$00/$07` handoff and active/current/behind cases. |
+| `LeavePar` | Returns when page or column is not admitted. | Column-gate regression. |
+| `InitRear` | Ends backload at first current-page object before column check. | P4 preload-termination regression. |
+| `LoopCmdE` | Returns after parser loop command. | Row-13 `$4b` marker case preserves later consumer ownership. |
+| `BackColC` | Matches high-nibble column before staging. | Parser-column matching/nonmatching cases. |
+| `StrAObj` | Saves stream offset and advances before dispatch. | Buffer/cursor and active continuation cases. |
+| `RunAObj` | Adds `$07` to `$00` and dispatches once. | Small, dynamic, special and large classification handoffs. |
+| `AlterAreaAttributes` | Loads saved object byte for terrain/background updates. | Row-14 d6-clear regression. |
+| `Alter2` | Splits foreground from background-color values. | d6-set values below and at least four. |
+| `SetFore` | Stores foreground, including forced zero after color control. | Foreground and color-control regression. |
+
+The source route and focused tests now establish every decoder-local branch
+family.  The remaining S7 closure work is to rerun this exact matrix with the
+three-target package, place each individual final disposition in the canonical
+tracker and ledger, and run the required closure validators; this table alone
+does not change the **336 / 1,992** count.
+
+The P10 x86/x64 focused matrix passes with the added dynamic, special-row and
+both-pipe classification cases; platform-purity remains clean.  P10 changes
+only the project-owned regression and audit, so the verified runnable package
+remains the P9 three-target build: `mysmb16.exe`
+`D6C90F62D4A574594B2FE99076555D3892540ACD58807C7B357324B1354FCC48`,
+`mysmb32.exe` `B09221D8B7A519E08DAB782A09D8B0601B4EE76EF61C20F7B94CB60C5934215C`,
+and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.

@@ -180,6 +180,42 @@ int main(void)
         game.ram[0x0007U] != 8U || game.ram[0x0000U] != 5U) return 1;
 
     mysmb_game_initialize(&game);
+    prg[0x40U] = 0x2fU;
+    prg[0x41U] = 0x30U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* ChkSRows preserves the row-15 addend $10 before SpecObj shifts its
+     * d6-d4 selector down for NormObj. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 0x10U || game.ram[0x0000U] != 3U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x2dU;
+    prg[0x41U] = 0x43U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* A non-page-control row-13 object receives the dedicated $22 addend
+     * and its low-six-bit object ID before RunAObj. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 0x22U || game.ram[0x0000U] != 3U) return 1;
+
+    mysmb_game_initialize(&game);
     prg[0x40U] = 0x25U;
     prg[0x41U] = 0x78U;
     prg[0x42U] = 0xfdU;
@@ -196,5 +232,23 @@ int main(void)
      * MoveAOId shift, leaving the ordinary zero addend for RunAObj. */
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x0007U] != 0U || game.ram[0x0000U] != 0U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x25U;
+    prg[0x41U] = 0x70U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* The d3-clear large-pipe branch falls through NotWPipe and retains ID
+     * seven, distinguishing it from the warp-pipe nullification above. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 0U || game.ram[0x0000U] != 7U) return 1;
     return 0;
 }
