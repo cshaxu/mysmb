@@ -323,22 +323,9 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
  * writers are translated; this routine owns only the fixed command stream. */
 mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
 {
-    mysmb_u16 source;
-    mysmb_u8 offset;
-
-    if (game->area_prg == 0 || game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS) return 0U;
-    source = MYSMB_AREA_GAME_TEXT;
-    offset = 0U;
-    while (source < MYSMB_AREA_GAME_TEXT_OFFSETS &&
-           game->area_prg[source] != 0xffU) {
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] =
-            game->area_prg[source];
-        source++;
-        offset++;
-    }
-    if (source == MYSMB_AREA_GAME_TEXT_OFFSETS || offset == 0U) return 0U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
-    return 1U;
+    /* WriteTopStatusLine loads selector zero and enters WriteGameText; retain
+     * its shared player-name branch instead of duplicating only the data loop. */
+    return mysmb_area_queue_game_text(game, 0U);
 }
 
 /* Translation of ROM WriteBottomStatusLine plus PrintStatusBarNumbers. */
@@ -493,6 +480,7 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
     mysmb_u16 source;
     mysmb_u8 offset;
     mysmb_u8 index;
+    mysmb_u8 name_player;
 
     if (game->area_prg == 0 || game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U ||
         game->area_prg_size <= MYSMB_AREA_GAME_TEXT_OFFSETS + 9U) return 0U;
@@ -519,23 +507,36 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector)
     if (source >= game->area_prg_size) return 0U;
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
     if (selector == 1U) {
+        mysmb_u8 lives;
+
         if (offset <= 21U) return 0U;
-        game->ram[MYSMB_AREA_VRAM_BUFFER1 + 8U] =
-            (mysmb_u8)(game->ram[0x075aU] + 1U);
+        /* ROM EndGameText adds one to NumberofLives, and for ten or more
+         * writes a crown at Buffer1+7 before placing the remaining digit. */
+        lives = (mysmb_u8)(game->ram[0x075aU] + 1U);
+        if (lives >= 10U) {
+            lives = (mysmb_u8)(lives - 10U);
+            game->ram[MYSMB_AREA_VRAM_BUFFER1 + 7U] = 0x9fU;
+        }
+        game->ram[MYSMB_AREA_VRAM_BUFFER1 + 8U] = lives;
         game->ram[MYSMB_AREA_VRAM_BUFFER1 + 19U] =
             (mysmb_u8)(game->ram[MYSMB_AREA_WORLD_NUMBER] + 1U);
         game->ram[MYSMB_AREA_VRAM_BUFFER1 + 21U] =
             (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
     }
-    if ((selector == 2U && game->ram[0x077aU] != 0U &&
-         game->ram[MYSMB_AREA_CURRENT_PLAYER] == 0U) ||
-        (selector == 3U && game->ram[0x077aU] != 0U &&
-         game->ram[MYSMB_AREA_CURRENT_PLAYER] != 0U)) {
-        if (offset <= 7U || game->area_prg_size <= MYSMB_AREA_LUIGI_NAME + 4U)
-            return 0U;
-        for (index = 0U; index < 5U; ++index) {
-            game->ram[MYSMB_AREA_VRAM_BUFFER1 + 3U + index] =
-                game->area_prg[MYSMB_AREA_LUIGI_NAME + index];
+    /* EndGameText routes selectors 0, 2 and 3 through CheckPlayerName.
+     * TIME UP flips the current player unless this is Game Over; the other
+     * two selectors use CurrentPlayer unchanged. */
+    if (selector != 1U && selector < 4U && game->ram[0x077aU] != 0U) {
+        name_player = game->ram[MYSMB_AREA_CURRENT_PLAYER];
+        if (selector == 2U && game->ram[0x0770U] != 3U)
+            name_player ^= 1U;
+        if (name_player != 0U) {
+            if (offset <= 7U || game->area_prg_size <= MYSMB_AREA_LUIGI_NAME + 4U)
+                return 0U;
+            for (index = 0U; index < 5U; ++index) {
+                game->ram[MYSMB_AREA_VRAM_BUFFER1 + 3U + index] =
+                    game->area_prg[MYSMB_AREA_LUIGI_NAME + index];
+            }
         }
     }
     if (selector >= 4U) {

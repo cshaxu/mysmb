@@ -152,6 +152,16 @@ int main(void)
     game.ram[0x0300U] = 0U;
     if (mysmb_area_queue_top_status_line(&game) == 0U || game.ram[0x0300U] != 0U ||
         game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x43U) return 1;
+    /* CheckPlayerName also applies to selector-zero top status text. */
+    game.ram[0x0300U] = 0U;
+    game.ram[0x077aU] = 1U;
+    game.ram[0x0753U] = 1U;
+    if (mysmb_area_queue_top_status_line(&game) == 0U ||
+        game.ram[0x0304U] != mysmb_local_prg[0x07e1U] ||
+        game.ram[0x0308U] != mysmb_local_prg[0x07e5U]) return 1;
+    game.ram[0x077aU] = 0U;
+    game.ram[0x0753U] = 0U;
+    game.ram[0x0300U] = 0U;
 
     /* WriteGameText selector one copies the ROM lives screen and patches
      * its life/world/level positions before the normal VRAM transfer. */
@@ -164,6 +174,11 @@ int main(void)
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
         game.name_table[0][0x01d2U] != 3U || game.name_table[0][0x0151U] != 2U ||
         game.name_table[0][0x0153U] != 4U) return 1;
+    /* ROM PutLives uses one digit plus a crown tile once NumberofLives is 9. */
+    game.ram[0x0300U] = 0U;
+    game.ram[0x075aU] = 9U;
+    if (mysmb_area_queue_game_text(&game, 1U) == 0U || game.ram[0x0308U] != 0x9fU ||
+        game.ram[0x0309U] != 0U) return 1;
     game.ram[0x0300U] = 0U;
     if (mysmb_area_queue_game_text(&game, 4U) == 0U || game.ram[0x0300U] != 0x2cU ||
         game.ram[0x031cU] != mysmb_local_prg[0x07f2U] ||

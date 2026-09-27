@@ -155,3 +155,13 @@ task. The shared C now preserves those writes. Focused status, local-area and
 platform-purity tests pass; x86/x64 and DOS16 rebuild. `mysmb16.exe`
 `3BA599B460EBBB9E3C262BAB75CE2DE97D8B1EF7486B28F862F004D1FC8AE48A`;
 x86/x64 artifacts remain the same byte hashes recorded in P2.
+
+## S2/P4: WriteGameText lives and player-name tails
+
+ROM `EndGameText`/`PutLives` writes crown tile `$9f` when the displayed life
+count reaches ten, while `CheckPlayerName` also applies to top status selector
+zero. The shared text writer now preserves both branches and the TIME UP /
+GAME OVER player-selection rule. Local ROM-table smoke coverage, platform
+purity and x86/x64 builds pass; DOS16 links. `mysmb16.exe`
+`E912E3F3E6967C6D31834F1256937585F5871FAC3358BF0BBE627AE0F67F4ECA`;
+the x86/x64 hashes remain as recorded in P3.
