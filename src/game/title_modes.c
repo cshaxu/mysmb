@@ -62,6 +62,16 @@ static mysmb_u8 mysmb_game_apply_title_area(struct mysmb_game *game)
     return 1U;
 }
 
+/* ROM $830e GoContinue.  Return zero for the source's LDX #$00 result. */
+static mysmb_u8 mysmb_game_go_continue(struct mysmb_game *game, mysmb_u8 world)
+{
+    game->ram[MYSMB_RAM_WORLD] = world;
+    game->ram[MYSMB_RAM_OFFSCREEN_WORLD] = world;
+    game->ram[MYSMB_RAM_AREA] = 0U;
+    game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
+    return 0U;
+}
+
 /* ROM $82d8 ChkContinue.  The caller has already made the source's exact
  * Start/A+Start comparison.  A set A bit is therefore the ASL carry path. */
 static mysmb_u8 mysmb_game_chk_continue(struct mysmb_game *game,
@@ -72,12 +82,8 @@ static mysmb_u8 mysmb_game_chk_continue(struct mysmb_game *game,
         return 0U;
     }
     if ((buttons & MYSMB_BUTTON_A) != 0U) {
-        /* ROM $830e GoContinue, called only by the A+Start carry path. */
-        game->ram[MYSMB_RAM_WORLD] = game->ram[MYSMB_RAM_CONTINUE_WORLD];
-        game->ram[MYSMB_RAM_OFFSCREEN_WORLD] =
-            game->ram[MYSMB_RAM_CONTINUE_WORLD];
-        game->ram[MYSMB_RAM_AREA] = 0U;
-        game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
+        (void)mysmb_game_go_continue(game,
+                                     game->ram[MYSMB_RAM_CONTINUE_WORLD]);
     }
     return 1U;
 }
@@ -322,12 +328,7 @@ mysmb_u8 mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input
             index = (mysmb_u8)((game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] +
                                  1U) & 7U);
             game->ram[MYSMB_RAM_WORLD_SELECT_NUMBER] = index;
-            game->ram[MYSMB_RAM_WORLD] = index;
-            game->ram[MYSMB_RAM_OFFSCREEN_WORLD] = index;
-            game->ram[MYSMB_RAM_AREA] = 0U;
-            game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
-            /* GoContinue returns with X set to zero. */
-            index = 0U;
+            index = mysmb_game_go_continue(game, index);
             while (index < 6U) {
                 game->ram[(mysmb_u16)(MYSMB_RAM_VRAM_BUFFER1_OFFSET + index)] =
                     world_select_template[index];

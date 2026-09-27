@@ -581,3 +581,32 @@ transfer to S19.
 S19 scopes only `GoContinue`, baseline **89 / 1,992**, expected `GoContinue`,
 maximum **90 / 1,992**.  It must prove its world/area writes and X=0 return
 on the A+Start and world-select callers.
+
+## S19 closure: GoContinue dual caller
+
+S19 completes exactly `GoContinue`, reaching **90 / 1,992**.  Original ROM
+`$830e` stores the selected world to `WorldNumber` and `OffScr_WorldNumber`,
+loads X with zero, then clears `AreaNumber` and `OffScr_AreaNumber`.  The shared
+C leaf has exactly those writes and its zero return is consumed by the
+world-select `UpdateShroom` loop.  Both A+Start and controlled world-select-B
+original-ROM paths reach the leaf; 200-frame ROM/x86, ROM/x64 and x86/x64
+records have zero differences in work RAM, CIRAM, palette, OAM, audio and PPU
+scalars.  Focused title smoke, bootstrap smoke, and platform-purity checks
+pass; the same source links as an OpenNT DOS16 MZ.  Refreshed artifacts are
+`mysmb16.exe` `9CEFF34184DEB3E9CA7D75D704622DAD64D95299F344DD16B11DACB58941FCE6`,
+`mysmb32.exe` `39A66781FDA16EDFA02974D688C6C2BD949E2154C94F3BA9A0442E1FDB041151`,
+and `mysmb64.exe` `7D9A49C7DE70BA83EA421A5A0580D3D52E01D297092A4F7DE3805B454882BFDB`.
+
+The remaining ten labels transfer to S20 without status change.
+
+## S20 admission: WSelectBufferTemplate data binding
+
+S20 receives `WSelectBufferTemplate`, `MushroomIconData`, `DrawMushroomIcon`,
+`IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`,
+`DoAction`, and `DemoOver`, and scopes only `WSelectBufferTemplate`.  The
+baseline is **90 / 1,992**; expected `WSelectBufferTemplate`; maximum
+**91 / 1,992**.  ROM data `$823f` must bind exactly to bytes
+`{04,20,73,01,00,00}` in shared C.  The controlled world-select B path must
+prove its `GoContinue` zero-index consumer copies all six bytes in source order
+before `UpdateShroom` writes the one-based world digit at the source-defined
+buffer offset.  The remaining nine received labels are explicitly uncredited.

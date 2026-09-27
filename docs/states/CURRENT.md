@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S19 Packet
+## M2 T25 S20 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S19, implementation; next source-order `GoContinue` branch. |
-| Admission And Approval | Owner-approved source-order M2 plan; S18 completed `ExitMenu` and transferred the remaining 11 title/menu/demo labels to S19. |
-| Objective | Independently establish and credit `GoContinue`, its world/area writes and X=0 return. |
-| Non-goals | The other 10 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 89 / 1,992 complete; 1 scoped label; expected match GoContinue; maximum 90 / 1,992. |
+| Identifier Mode | M2 T25 S20, implementation; next source-order `WSelectBufferTemplate` data binding. |
+| Admission And Approval | Owner-approved source-order M2 plan; S19 completed `GoContinue` and transferred the remaining 10 title/menu/demo labels to S20. |
+| Objective | Independently establish and credit `WSelectBufferTemplate`, the six-byte world-select buffer data binding. |
+| Non-goals | The other 9 retained labels (`MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
+| Reference Baseline | 90 / 1,992 complete; 1 scoped label; expected match WSelectBufferTemplate; maximum 91 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM PC `$830e`; controlled original-ROM A+Start and world-select paths; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | `GoContinue` stores world pages, clears both area numbers and returns X=0 without platform-owned state. |
+| Verification | Static source audit of ROM data `$823f`; controlled original-ROM world-select B path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | Exact source bytes `{04,20,73,01,00,00}` bind to the shared six-byte template in ROM order; `UpdateShroom` copies offsets `0..5` and overwrites only the source-defined digit byte. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source entry `$830d`, caller return, C-owner/control-flow, trace result, and all 11 retained-node dispositions. |
+| Reporting Requirements | Record source data location `$823f`, C data binding and consumer order, B-route trace result, and all 10 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `ExitMenu` is completed only when its source return and replay proof agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `WSelectBufferTemplate` is completed only when exact bytes, C binding, consumer path, and B-route replay agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
