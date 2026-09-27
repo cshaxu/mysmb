@@ -6,9 +6,9 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1 is active.**  It owns only the first thirteen-label renderer and
-attribute-packet chain below; the later chains are queued, not implied by this
-admission.
+**T28 S1 is closed at 176 / 1,992.  T28 S2 is active.**  It owns only the
+seven-label color-rotation chain below; the later chains are queued, not
+implied by this admission.
 
 ## Exact source-order chains
 
@@ -62,3 +62,19 @@ artifacts are `mysmb16.exe` SHA-256
 `0263AB1F1B0E6D54A6472411CF25F14D6BF158785AA1CC47F86F3874E289C78D`,
 `mysmb32.exe` `7C88264EB32911E13BBE97A52F6E7241CB1914562095626774C4FB1C9D8B5DF5`,
 and `mysmb64.exe` `C656377F5A05DD7302AC203A6CA569406ABD8689FDCF2122C629EF1BB7110E68`.
+
+## S2 admission contract
+
+S2 receives exactly `ColorRotatePalette`, `BlankPalette`, `Palette3Data`,
+`ColorRotation`, `GetBlankPal`, `GetAreaPal` and `ExitColorRot` from the
+legacy T18 receiver.  The baseline is 176 / 1,992; all seven are open and
+expected to become ROM-match complete, for a maximum of 183 / 1,992.  The
+shared owner is `src/game/area.c`; no platform source is in scope.
+
+Its ROM-equivalence route enters the original color-rotation routines with
+controlled frame-counter, palette-buffer capacity and palette-index state to
+cover the timer gate, full-buffer no-op, blank-palette path, normal-area path
+and rotation wrap.  The operational track adds a focused shared-game test,
+then runs x86/x64 builds, the DOS16 link, platform-purity gate and refreshes
+all three package executables.  T31 `GameEngine` remains the unadmitted
+natural caller, so this S does not claim a fabricated caller stack.
