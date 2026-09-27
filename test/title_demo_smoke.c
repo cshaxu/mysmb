@@ -24,6 +24,12 @@ int main(void)
         return 1;
     }
 
+    if (mysmb_game_title_step(&game, &input) != 1U ||
+        game.ram[0x06fcU] != MYSMB_BUTTON_RIGHT ||
+        game.ram[0x0717U] != 1U || game.ram[0x0718U] != 0x99U) {
+        return 1;
+    }
+
     game.ram[0x0718U] = 0U;
     mysmb_game_title_step(&game, &input);
     if (game.ram[0x06fcU] != MYSMB_BUTTON_A ||

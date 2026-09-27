@@ -253,7 +253,7 @@ void mysmb_game_reset_title(struct mysmb_game *game)
     game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
 }
 
-/* ROM $82b3-$82ca DemoEngine.  It returns one only after the terminal zero
+/* ROM $836b-$838a DemoEngine.  It returns one only after the terminal zero
  * timing byte, which sends GameMenuRoutine back through ResetTitle. */
 static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
 {
