@@ -63,8 +63,9 @@ receiver, transfer and conformance status, reserves no duplicate identifiers,
 and shifts only future source-order slices by two: Title begins at `T25`, and
 the final certification task is `T51`.
 
-The next admissible source-order implementation task is `M2 T25`, Title menu,
-world selection and demo. Its S breakdown must be admitted against the exact
+T25 through T28 are closed historical source-order records. The next
+admissible source-order implementation task is `M2 T29`, area parser and
+large-object geometry. Its S breakdown must be admitted against the exact
 inventory labels before any game-code change.
 
 ## Mandatory chain delivery structure
@@ -756,7 +757,7 @@ but no longer blocks source-order work: its first thirteen renderer labels were
 transferred through a validated receipt to the newly admitted T28 S1. Td S8
 changed no node completion status or product source and closes at 163 / 1,992.
 
-T28 S1 is the active successor. Its receipt is exactly
+T28 S1 was the successor at this historical record. Its receipt was exactly
 `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`,
 `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`,
 `SetVRAMCtrl`, `MetatileGraphics_Low`, and `MetatileGraphics_High`.

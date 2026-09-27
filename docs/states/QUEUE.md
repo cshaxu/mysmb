@@ -6,16 +6,16 @@ The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-o
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
-The next source-order implementation receiver is [M2 T28 area output and
-bootstrap](../proposals/m2/t28-area-output-bootstrap.md). Its first admitted
-chain is the 13-label renderer/attribute packet; T29 parser and later roots
-remain later dependencies rather than being pulled into T28.
+T28 is closed at 265 / 1,992. The next source-order implementation receiver
+is [M2 T29 area parser and large-object geometry](../proposals/m2/t29-area-parser-geometry.md).
+Its first admitted chain is the four-label `InitializeMemory` loop; later T29
+chains remain dependencies rather than being pulled into that receipt.
 
 Every future M2 admission follows the [chain-based S delivery rule](../rules/EXECUTION.md#m2-chain-based-s-delivery): nodes remain individually tracked, while one S delivers a bounded contiguous call/data chain with one shared ROM route and one three-target validation pass.  The fixed five-stage S pattern is retired for future admissions; historical S records remain evidence only.
 
 ## Current-chain transition
 
-The sole active packet is `M2 T28 S8`, the sixteen-label initialization/bootstrap chain.  Its next receipt, and every later M2 admission, must use
+The sole active packet is `M2 T29 S1`, the four-label `InitializeMemory` loop chain.  Its next receipt, and every later M2 admission, must use
 the source-order chain table defined by the recovery plan; it may not revive
 the retired fixed five-stage pattern. This changes delivery granularity only:
 node custody, source order, dual verification, tracker rows, and three-target

@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T28 S8, the sixteen-node initialization/bootstrap chain. T28 S7 is closed at 249 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Active implementation packet: M2 T29 S1, the four-node `InitializeMemory` loop chain. T28 is closed at 265 / 1,992; T21/T28 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
+nodes; it is not this implementation packet and cannot preempt M2 T29 S1.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains a queued historical record and cannot preempt the T28 source-order continuation.
+remains a queued historical record and cannot preempt the T29 source-order continuation.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S7 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T29 S1 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -67,7 +67,28 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T28 S8 Packet
+## M2 T29 S1 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S1, implementation; `InitializeMemory` loop chain. |
+| Admission And Approval | Owner-approved source-order continuation after T28 closure; the ledger receipt transfers four labels from M2 T18 S4. |
+| Objective | Translate and prove `InitPageLoop -> SkipByte` in shared C. |
+| Non-goals | No host clear policy, synthetic leaf entry, 6502-stack emulation, or label outside the four-node receipt. |
+| Reference Baseline | 265 / 1,992 complete; four scoped open labels; expected four matches; maximum 269 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared memory-clear owner and headers, controlled ROM/native recorder, focused shared-memory smoke, ledger, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | Source audit of `$8fc2-$8fda`; normal reset/cold-start ROM/native route; focused loop regression; x86/x64, DOS16 and purity checks. |
+| Expected Markers | Descending `$0700` through `$0000` page order, preserved `$0160-$01ff` stack window, Y-byte wrap, and source return boundary. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Record all four node dispositions, clear-range evidence, route result, three artifact hashes, and any residual assigned outside the chain. |
+| Stop Conditions | Stop on unmatched clear bounds or order, an unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All four labels have ROM and operational evidence without unrelated credit. |
+| Original Owner Request | Strict source order, dual verification and shared game logic only. |
+| Similar-Issue Sweep | Audit every production clear/default loop and confirm that no platform file selects a game-RAM range or writes game-state defaults. |
+
+## Prior M2 T28 S8 closure
 
 | Field | Required record |
 | --- | --- |
