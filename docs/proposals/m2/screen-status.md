@@ -242,6 +242,46 @@ reference graph and the native recorder builds in the x64 project graph. This
 adds operational branch evidence for the listed screen/text calls; it does not
 credit individual labels before the S2 source-level matrix and remaining
 text/warp branch routes are complete.
+## S2/P8: controlled remaining screen-task branches and Warp selector matrix
+
+Four additional recorder-only snapshots were applied after sixty ordinary
+cold-title NMIs on both the local original-ROM reference and the shared-C
+recorder. They are injected at the same NMI boundary and each records the next
+four NMI returns.
+
+- `t27-screen-no-timeup` enters GameMode task one / screen task four without
+  `GameTimerExpiredFlag`, proving the source `NoTimeUp -> IncSubtask` path.
+- `t27-screen-player-intermediate` enters the ordinary, non-castle
+  `PlayerInter` route and proves its lives-text/OAM/reset tail separately from
+  the castle precedence route in P7.
+- `t27-screen-reset-pending` enters screen task five with a nonzero
+  `ScreenTimer`, proving `NoReset` leaves the task and OAM state intact.
+- `t27-screen-reset-expired` enters the same task with zero `ScreenTimer`,
+  proving `MoveAllSpritesOffscreen -> ResetScreenTimer -> IncSubtask`.
+
+All four ROM/native comparisons have zero differing samples in work RAM
+`$0300-$07ff`, both CIRAM pages, palette, OAM, audio-command state and PPU
+scalar output. Raw records remain ignored under
+`build/m2-t27-s2/p8-screen-fixtures/`.
+
+The project-owned local-area smoke now independently checks the source table
+indices for all three Warp Zone selectors: selector four uses `$07f2-$07f4`,
+selector five `$07f6-$07f8`, and selector six `$07fa-$07fc`, with the ROM's
+three writes spaced four bytes apart and `$2c` buffer offset. This completes
+the local selector matrix but does not replace the still-required
+source-reachable original-ROM warp route.
+
+Focused x64 `screen-status`, `local-area` and platform-purity CTests pass; x86
+`local-area`, `screen-status` and product self-test pass; the same shared
+source links to the OpenNT DOS16 MZ with only the established C4761 and
+OLDNAMES warnings. The three user-testable artifacts were refreshed from those
+builds: `mysmb16.exe`
+`47ACB049659D01EAC904B698B7111441657D11B421DFE2133A32A50DBB02B06E`,
+`mysmb32.exe`
+`95D1AF2D2706D658CAFE9ED2122E3DD16F14EFC1BBFF74BB42D6CA6E7B9E4BB0`,
+and `mysmb64.exe`
+`56C07DD8C873BC12450EAC3C8DB555ED72383DAF8310A9EB4BFA0710704C69E5`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -255,9 +295,9 @@ both tracks are accepted at S2 closure.
 | `WriteTopStatusLine` | `game.c` task 2 -> `area.c` top-text writer | Mapped; cold-title route and local-area smoke. Pending two-player name route in a full screen chain. |
 | `WriteBottomStatusLine` | `game.c` task 3 -> `area.c` bottom-status writer | Mapped; cold-title route and local-area smoke. Pending its `GetSBNybbles` collaborator's later-source evidence. |
 | `DisplayTimeUp` | `game.c` task 4 | Mapped; screen-status smoke and `t27-screen-timeup` zero-difference route. Pending final chain matrix. |
-| `NoTimeUp` | `game.c` task 4 else | Mapped; screen-status smoke. Pending controlled no-expiry route. |
-| `DisplayIntermediate` | `game.c` task 6 | Mapped; screen-status smoke and intermediate route. Pending non-castle/alternate entrance matrix. |
-| `PlayerInter` | `game.c` task 6 and intermediate OAM owner | Mapped; castle fixture proves call order and output tail. Pending ordinary lives route. |
+| `NoTimeUp` | `game.c` task 4 else | Mapped; screen-status smoke and `t27-screen-no-timeup` zero-difference route. Pending final chain matrix. |
+| `DisplayIntermediate` | `game.c` task 6 | Mapped; castle and ordinary intermediate fixtures. Pending alternate-entrance matrix. |
+| `PlayerInter` | `game.c` task 6 and intermediate OAM owner | Mapped; castle and ordinary fixtures prove call order and output tail. Pending final text/name matrix. |
 | `OutputInter` | `game.c` task 4/task 6 common writes | Mapped; Time Up and intermediate fixtures. Pending common-path byte matrix. |
 | `GameOverInter` | `game.c` task 6, `terminal_modes.c` game-over root | Mapped; `t27-screen-gameover` zero-difference route. Pending two-player name branch. |
 | `NoInter` | `game.c` task 6 direct task-8 assignment | Mapped; local-area route. Pending alternate-entry controlled route. |
@@ -271,27 +311,27 @@ both tracks are accepted at S2 closure.
 | `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes. Pending non-title DrawTitle exit route. |
 | `GameText` | bound local PRG data in `area.c` | Mapped; local-area smoke. Pending data-byte audit. |
 | `TopStatusBarLine` | selector zero in `area.c` | Mapped; cold-title route and top-text smoke. Pending two-player Luigi replacement route. |
-| `WorldLivesDisplay` | selector one in `area.c` | Mapped; local-area lives/crown smoke. Pending ordinary PlayerInter route. |
+| `WorldLivesDisplay` | selector one in `area.c` | Mapped; local-area lives/crown smoke and ordinary `PlayerInter` ROM fixture. Pending full selector/name matrix. |
 | `TwoPlayerTimeUp` | selector two source offset in `area.c` | Mapped; source review only. Pending two-player Time Up route. |
 | `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture. Pending source-byte audit. |
 | `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; source review only. Pending two-player Game Over route. |
 | `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture. Pending source-byte audit. |
 | `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; local-area warp smoke. Pending controlled original ROM warp route. |
 | `LuigiName` | `area.c` name replacement loop | Mapped; local-area top-status Luigi smoke. Pending Time Up/Game Over player-selection routes. |
-| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; local-area warp smoke. Pending all three selector routes. |
+| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; local-area smoke checks all three selector table routes. Pending source-reachable original-ROM warp route. |
 | `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; local-area selector smoke. Pending direct table-byte audit. |
 | `WriteGameText` | `area.c` text writer | Mapped; local-area, Time Up, intermediate, Game Over routes. Pending complete selector matrix. |
 | `Chk2Players` | `area.c` selector two/three offset choice | Mapped; source review only. Pending two-player routes. |
 | `LdGameText` | `area.c` PRG source selection | Mapped; local-area selector routes. Pending table-byte audit. |
 | `GameTextLoop` | `area.c` terminator-copy loop | Mapped; local-area smoke. Pending maximum-length boundary audit. |
 | `EndGameText` | `area.c` terminator/tail dispatch | Mapped; local-area lives/name/warp smoke. Pending full selector matrix. |
-| `PutLives` | `area.c` lives/world/level patch | Mapped; local-area ordinary and crown smoke. Pending PlayerInter original-ROM route. |
+| `PutLives` | `area.c` lives/world/level patch | Mapped; local-area ordinary/crown smoke and ordinary `PlayerInter` ROM fixture. Pending full selector/name matrix. |
 | `CheckPlayerName` | `area.c` player-name selection | Mapped; top-status Luigi smoke. Pending Time Up inversion and Game Over non-inversion routes. |
 | `ChkLuigi` | `area.c` current-player branch | Mapped; top-status Luigi smoke. Pending Time Up/Game Over routes. |
 | `NameLoop` | `area.c` five-byte Luigi replacement | Mapped; top-status Luigi smoke. Pending direct five-byte source audit. |
 | `ExitChkName` | `area.c` name tail exit | Mapped; local-area smoke. Pending selector matrix. |
-| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; local-area selector-four smoke. Pending selectors five and six. |
-| `WarpNumLoop` | `area.c` three spaced writes | Mapped; local-area selector-four smoke. Pending selectors five and six. |
-| `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; screen-status smoke. Pending expired/nonexpired controlled routes. |
+| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; local-area smoke checks selectors four, five and six. Pending source-reachable original-ROM warp route. |
+| `WarpNumLoop` | `area.c` three spaced writes | Mapped; local-area smoke checks selectors four, five and six. Pending source-reachable original-ROM warp route. |
+| `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; `t27-screen-reset-pending` and `t27-screen-reset-expired` zero-difference routes. Pending task-seven and common-tail matrix. |
 | `ResetScreenTimer` | `game.c` OutputInter and tasks 5/7 | Mapped; Time Up and intermediate routes. Pending common-tail matrix. |
-| `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; source review only. Pending controlled nonzero timer route. |
+| `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; `t27-screen-reset-pending` zero-difference route. Pending task-seven matrix. |

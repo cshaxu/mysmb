@@ -377,7 +377,10 @@ static void mysmb_reference_apply_t27_screen_fixture(lib_u8 *ram, lib_u8 kind)
     ram[0x0722u] = 0u;
     ram[0x07a0u] = 0u;
     ram[0x0774u] = 1u;
-    ram[0x073cu] = kind == 0u ? 4u : 6u;
+    ram[0x0759u] = 0u;
+    ram[0x0769u] = 0u;
+    ram[0x073cu] = kind == 0u || kind == 3u ? 4u :
+        (kind == 5u || kind == 6u ? 5u : 6u);
     if (kind == 0u) {
         ram[0x0770u] = 1u;
         ram[0x0772u] = 1u;
@@ -390,6 +393,24 @@ static void mysmb_reference_apply_t27_screen_fixture(lib_u8 *ram, lib_u8 kind)
         ram[0x0752u] = 0u;
         ram[0x074eu] = 3u;
         ram[0x0769u] = 1u;
+        return;
+    }
+    if (kind == 3u) {
+        ram[0x0770u] = 1u;
+        ram[0x0772u] = 1u;
+        return;
+    }
+    if (kind == 4u) {
+        ram[0x0770u] = 1u;
+        ram[0x0772u] = 1u;
+        ram[0x0752u] = 0u;
+        ram[0x074eu] = 1u;
+        return;
+    }
+    if (kind == 5u || kind == 6u) {
+        ram[0x0770u] = 1u;
+        ram[0x0772u] = 1u;
+        ram[0x07a0u] = kind == 5u ? 1u : 0u;
         return;
     }
     ram[0x0770u] = 3u;
@@ -540,6 +561,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 21u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t27-screen-no-timeup") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 22u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t27-screen-player-intermediate") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 23u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t27-screen-reset-pending") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 24u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t27-screen-reset-expired") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 25u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -657,7 +698,7 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 18u)
                     mysmb_reference_apply_t26_victory_outer_player_fixture(
                         driver->machine->ram);
-                else if (t26_fixture >= 19u && t26_fixture <= 21u)
+                else if (t26_fixture >= 19u && t26_fixture <= 25u)
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 19u));
             }

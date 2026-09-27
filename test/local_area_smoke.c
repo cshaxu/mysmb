@@ -184,6 +184,16 @@ int main(void)
         game.ram[0x031cU] != mysmb_local_prg[0x07f2U] ||
         game.ram[0x0320U] != mysmb_local_prg[0x07f3U] ||
         game.ram[0x0324U] != mysmb_local_prg[0x07f4U]) return 1;
+    game.ram[0x0300U] = 0U;
+    if (mysmb_area_queue_game_text(&game, 5U) == 0U || game.ram[0x0300U] != 0x2cU ||
+        game.ram[0x031cU] != mysmb_local_prg[0x07f6U] ||
+        game.ram[0x0320U] != mysmb_local_prg[0x07f7U] ||
+        game.ram[0x0324U] != mysmb_local_prg[0x07f8U]) return 1;
+    game.ram[0x0300U] = 0U;
+    if (mysmb_area_queue_game_text(&game, 6U) == 0U || game.ram[0x0300U] != 0x2cU ||
+        game.ram[0x031cU] != mysmb_local_prg[0x07faU] ||
+        game.ram[0x0320U] != mysmb_local_prg[0x07fbU] ||
+        game.ram[0x0324U] != mysmb_local_prg[0x07fcU]) return 1;
 
     /* GetPlayerColors selects fiery colors, but preserves the original
      * background-color source for the first `$3f10` palette byte. */
