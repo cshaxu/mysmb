@@ -691,3 +691,26 @@ family: `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction` and
 short icon-return chain because its successor route and caller boundary differ.
 Every member will retain its own source, C-owner, read/write and completion
 record; the shared route and three-target package are produced once per chain.
+
+
+## S23 closure: IconDataRead loop
+
+S23 completes exactly `IconDataRead`, reaching **94 / 1,992**. At `$8328` the
+ROM loads `MushroomIconData,Y`, stores it at `VRAM_Buffer1-1,Y`, decrements Y
+and branches while the result is nonnegative. The shared C owner starts with
+index eight, decrements before every indexed load/store, and terminates only
+after index zero, so it writes indices seven through zero in the same order
+and falls through to the player-count check. The focused smoke proves the
+complete one-player packet, while the controlled Select route takes the same
+eight-read loop before the two-player overwrites. Original ROM, x86 and x64
+records agree for frames 0--198 in RAM, CIRAM, palette, OAM, audio and PPU
+scalars; x86 and x64 also agree with each other. The same owner links in
+DOS16. The six remaining labels transfer to S24 unchanged.
+
+## S24 admission: ExitIcon return chain
+
+S24 scopes exactly `ExitIcon`, baseline **94 / 1,992**, expected `ExitIcon`,
+maximum **95 / 1,992**. It is a one-label chain because the source RTS has a
+different caller boundary from the following demo data/engine family. It must
+prove the zero-write return after both player-count outcomes; the remaining
+five demo labels remain uncredited.
