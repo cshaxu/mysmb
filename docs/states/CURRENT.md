@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T29 S3, the eleven-node area-entry initialization chain. T29 S2 is closed at 274 / 1,992.**
+**No M2 implementation packet is active. M2 T29 S3, the eleven-node area-entry initialization chain, is closed at 285 / 1,992. The next source-order receiver must be admitted as a bounded chain before implementation begins.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S3.
