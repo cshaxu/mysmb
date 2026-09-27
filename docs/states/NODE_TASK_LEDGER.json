@@ -5792,7 +5792,7 @@
     {
       "label": "TitleScreenMode",
       "line": 982,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5849,13 +5849,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5888,13 +5894,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "GameMenuRoutine",
       "line": 996,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5959,13 +5971,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "StartGame",
       "line": 1004,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6022,13 +6040,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkSelect",
       "line": 1005,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6101,13 +6125,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkWorldSel",
       "line": 1013,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6148,13 +6178,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "SelectBLogic",
       "line": 1018,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6211,13 +6247,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "IncWorldSel",
       "line": 1033,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6273,6 +6315,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6280,7 +6328,7 @@
     {
       "label": "UpdateShroom",
       "line": 1039,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6337,13 +6385,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "NullJoypad",
       "line": 1047,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6400,13 +6454,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "RunDemo",
       "line": 1049,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6447,13 +6507,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ResetTitle",
       "line": 1053,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6518,13 +6584,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6572,6 +6644,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6579,7 +6657,7 @@
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6628,13 +6706,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6666,6 +6750,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6673,7 +6763,7 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6706,13 +6796,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6769,13 +6865,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6808,13 +6910,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6863,13 +6971,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6901,6 +7015,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6908,7 +7028,7 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6940,6 +7060,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6947,7 +7073,7 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6979,6 +7105,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -6986,7 +7118,7 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -7019,13 +7151,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -7090,13 +7228,19 @@
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -7128,6 +7272,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -7135,7 +7285,7 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S4",
+      "receiver": "M2 T25 S5",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -7167,6 +7317,12 @@
           "task": "M2 T25",
           "subtask": "M2 T25 S3",
           "relation": "independent-ROM-audit-found-three-source-owned-gaps",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S4",
+          "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
@@ -55945,6 +56101,42 @@
       ],
       "acceptedBy": "M2 T25 S4 is the owner-approved repair and operational-verification successor after S3 recorded exact source gaps.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-044-t25-s4-to-s5-title",
+      "type": "transfer",
+      "from": "M2 T25 S4",
+      "to": "M2 T25 S5",
+      "nodes": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S5 is the owner-approved closure successor; S4 recorded the T18 InitializeGame route prerequisite without creating duplicate title ownership.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -61506,7 +61698,89 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-title-menu-demo-repair-and-operational-verification"
+      "state": "closed-repair-and-controlled-route-disposition-transferred-to-s5"
+    },
+    {
+      "subtask": "M2 T25 S5",
+      "kind": "implementation",
+      "scope": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "active-title-menu-demo-closure-accounting-awaiting-t18-route-prerequisite"
     }
   ]
 }

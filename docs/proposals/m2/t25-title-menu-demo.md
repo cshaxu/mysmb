@@ -159,3 +159,24 @@ S4 remains active. Its pre-repair current-recorder title/start/right run was
 diagnostic only and still has an unaligned bootstrap phase; it cannot serve as
 the required controlled original-ROM route. The next S4 part must align that
 fixture, rerun the repaired paths, and only then transfer the 26 labels to S5.
+
+## S4 P2: controlled cold-start disposition
+
+The current native recorder was run from the product bootstrap, alongside the
+original-ROM recorder. Samples 0--25 agree on `OperMode`, `OperMode_Task`,
+`ScreenRoutineTask`, display-disable progression, and the title setup
+sequence. At every one of those samples the ROM has `DemoTimer=$18` (then
+`$17` after the timer cadence), while native C has `$00`. At sample 26 native
+C consequently enters `DemoEngine` (`DemoAction=1`, `DemoActionTimer=$9a`,
+`GameEngineSubroutine=7`) while the ROM remains in title menu countdown.
+
+This is the original `InitializeGame` write at lines 2674--2683:
+`LDA #$18; STA DemoTimer`, not an S4 title-menu rule. The authoritative node
+ledger already receives `InitializeGame` at M2 T18 S4, and the NMI recovery
+plan already records the identical `$07a2=$18` handoff. S4 makes no duplicate
+startup repair. Its three source-gap tests remain valid; the full-route
+disposition is **blocked by the pre-existing T18 owner**, not a title-node
+match. All 26 labels therefore transfer to S5 for final, per-label accounting
+without credit. S5 must retain this dependency and cannot promote any label
+until the T18 `InitializeGame` repair and a regenerated controlled route are
+available.
