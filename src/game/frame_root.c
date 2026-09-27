@@ -206,8 +206,10 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
             mysmb_enemy_core_step_slot(game, &area_source, 0U);
         }
         /* ROM VictoryMode always ends at RelativePlayerPosition and
-         * PlayerGfxHandler, including bridge-collapse task zero. */
-        mysmb_oam_draw_player(game);
+         * PlayerGfxHandler, including bridge-collapse task zero.  It does
+         * not call GameEngine's GetPlayerOffscreenBits predecessor here. */
+        mysmb_oam_relative_player_position(game);
+        mysmb_oam_render_player(game);
     }
     else if (mode_before == 3U) {
         mysmb_game_step_game_over(game);
@@ -338,7 +340,10 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         mysmb_enemy_step_lakitus(game);
         mysmb_enemy_step_spiny_eggs(game);
         mysmb_objects_step_hammer_bros(game);
-        mysmb_oam_draw_player(game);
+        /* ROM GameEngine retains its own three-call player/OAM sequence. */
+        mysmb_oam_get_player_offscreen_bits(game);
+        mysmb_oam_relative_player_position(game);
+        mysmb_oam_render_player(game);
         mysmb_objects_step_vine(game);
         mysmb_area_apply_block_replacements(game);
         mysmb_objects_step_blocks(game);

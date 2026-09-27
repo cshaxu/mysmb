@@ -323,3 +323,55 @@ more than **74 / 1,992** only after an aligned controlled or source-reachable
 original-ROM route compares the repaired task branch, slot-zero enemy-loop
 entry, relative player coordinates and player graphics output, alongside the
 usual cross-width, DOS16 and purity verification.
+
+## S7 P1 outer-player call separation
+
+The S7 source audit found one further outer-route mismatch at ROM `$8471`.
+`VictoryMode` calls `RelativePlayerPosition` and then `PlayerGfxHandler`; it
+does not call `GetPlayerOffscreenBits`.  The prior C convenience entry
+`mysmb_oam_draw_player` combined all three GameEngine operations, causing the
+Victory path to overwrite `Player_OffscreenBits` before it entered the player
+graphics handler.  The shared game OAM owner now exposes those three source
+operations separately.  The ordinary GameEngine invokes them in its original
+order, while Victory invokes only its original two-call tail.  No platform
+source changed.
+
+The bridge handoff fixture now seeds `Player_OffscreenBits` with `$a5`; both
+the ROM and C retain it through the task-zero victory branch.  Its aggregate
+RAM difference count falls from 84 to 82.  The remaining controlled-route
+differences include `Player_Rel_XPos`, `Player_Rel_YPos`, and
+`Player_Pos_ForScroll`: they arise from live player state supplied by the
+independently received `RelativePlayerPosition` and `PlayerGfxHandler` tree
+(`M2 T16 S4`), not from an S7-owned write.  S7 therefore records no node
+credit from this repair and does not inject ROM trace state into the native
+game to manufacture a whole-route comparison.
+
+The required similar-issue sweep checked every production caller of the new
+three-entry interface.  GameEngine now has the source `$94a5` sequence.  The
+three `player.c` relative-position calls are collision/control-path calls;
+their source `PlayerMovementSubs` predecessor at `$a4af` also invokes
+`GetPlayerOffscreenBits` before `RelativePlayerPosition`.  They remain an
+unrepaired, explicitly recorded T16 OAM/offscreen dependency, not an S7
+exception.  VictoryMode is the only completed S7 repair point: it correctly
+omits that predecessor before its `$847c` AutoPlayer tail.
+
+An S7 diagnostic also prepared the direct documented inputs to the bridge,
+slot-zero core, relative-coordinate and standing-player graphics path after a
+bounded warmup.  On the first original-ROM NMI record, all outer-owned values
+matched: operating mode/task, object offset, player page/X/Y, relative X/Y,
+sprite attribute/offset, player graphics offset, offscreen bits, and
+`Player_Pos_ForScroll`.  The visible OAM was necessarily the preceding DMA
+image.  A second source sample did not reach the NMI-return breakpoint and
+the recorder returned its incomplete-window result, so that setup is not a
+repeatable source route.  The temporary fixture and both derived traces were
+discarded.  It provides no completion credit and confirms that a later owner
+must establish a source-reachable or repeatable controlled player/OAM route.
+
+The focused mode smoke, strict C90 x86/x64 mode-smoke builds, x86/x64 product
+`--self-test`, OpenNT DOS16 MZ build, and platform-purity test pass.  The
+refreshed artifacts have SHA-256 values `mysmb16.exe`
+`229B0E959C0B4002BFE770393A39148101C204B016D36B375C3ADE2C16D04E69`,
+`mysmb32.exe`
+`CEA8E8E8CFE41FDF7B46DB024D5BA37D1CD5814849C03187B87B23E090B462E7`, and
+`mysmb64.exe`
+`D11ABC1433801416ECCC55979994E66FC2651486FFC3AD2E2150553E3C9B662A`.

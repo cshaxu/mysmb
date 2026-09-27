@@ -168,9 +168,11 @@ int main(void)
         game.ram[0x0016U] = 45U;
         game.ram[0x0364U] = 2U;
         game.ram[0x03c5U] = 0x5aU;
+        game.ram[0x03d0U] = 0xa5U;
         input.buttons = 0U;
         mysmb_game_tick(&game, &input, &frame);
-        if (game.ram[0x0772U] != 0U || game.ram[0x03c5U] != 0x5aU) return 12;
+        if (game.ram[0x0772U] != 0U || game.ram[0x03c5U] != 0x5aU ||
+            game.ram[0x03d0U] != 0xa5U) return 12;
     }
 
     /* SetupVictoryMode advances task one to two before VictoryMode checks

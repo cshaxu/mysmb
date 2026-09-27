@@ -230,7 +230,18 @@ static mysmb_u8 mysmb_oam_player_get_offscreen_bits(const struct mysmb_game *gam
     }
     return (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
 }
-void mysmb_oam_draw_player(struct mysmb_game *game)
+/* ROM GetPlayerOffscreenBits.  Keep this entry distinct from the graphics
+ * handler: VictoryMode reaches RelativePlayerPosition and PlayerGfxHandler
+ * without this GameEngine-only predecessor. */
+void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game)
+{
+    game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] =
+        mysmb_oam_player_get_offscreen_bits(game);
+}
+
+/* ROM PlayerGfxHandler and its PlayerGfxProcessing/RenderPlayerSub tail.
+ * The caller owns the source-order relative-position and offscreen-bit calls. */
+void mysmb_oam_render_player(struct mysmb_game *game)
 {
     mysmb_u8 graphics_offset;
     mysmb_u8 row;
@@ -243,10 +254,6 @@ void mysmb_oam_draw_player(struct mysmb_game *game)
         game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
     if (game->ram[MYSMB_PLAYER_INJURY_TIMER] != 0U &&
         (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
-    /* RenderPlayerSub consumes the source-owned relative scratch prepared by
-     * RelativePlayerPosition; the shared primitive also updates $0755. */
-    mysmb_oam_relative_player_position(game);
-    game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] = mysmb_oam_player_get_offscreen_bits(game);
     graphics_offset = mysmb_oam_player_select_gfx(game);
     game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
     oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
@@ -290,6 +297,16 @@ void mysmb_oam_draw_player(struct mysmb_game *game)
             (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
                       0x40U);
     }
+}
+
+/* GameEngine convenience only.  Its original order is
+ * GetPlayerOffscreenBits, RelativePlayerPosition, PlayerGfxHandler.  Callers
+ * such as VictoryMode must use the three individual entries above instead. */
+void mysmb_oam_draw_player(struct mysmb_game *game)
+{
+    mysmb_oam_get_player_offscreen_bits(game);
+    mysmb_oam_relative_player_position(game);
+    mysmb_oam_render_player(game);
 }
 
 void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)

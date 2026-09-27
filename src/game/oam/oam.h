@@ -8,6 +8,8 @@
  * work bytes.  Motion, collision and mode decisions remain outside this API. */
 /* ROM RelativeBlockPosition and GetBlockOffscreenBits. */
 void mysmb_oam_relative_player_position(struct mysmb_game *game);
+void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game);
+void mysmb_oam_render_player(struct mysmb_game *game);
 void mysmb_oam_relative_fireball_position(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot);
