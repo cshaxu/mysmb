@@ -879,6 +879,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted the T22/S19 sprite-zero/OAM source contract for independent controlled-ROM equivalence review."
+        },
+        {
+          "id": "M2 T22 S27",
+          "evidence": [
+            "docs/proposals/m2/t21-t49-source-order-recovery.md"
+          ],
+          "recordKinds": [
+            "sprite-shuffle-equivalence-review"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted T22/S20 sprite-shuffle source contract for independent controlled-ROM equivalence review."
         }
       ],
       "historyGap": "Historical exact S assignments are retained only where documented."
@@ -5312,8 +5324,8 @@
     {
       "label": "SpriteShuffler",
       "line": 912,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5351,14 +5363,20 @@
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "ShuffleLoop",
       "line": 917,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5379,6 +5397,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5386,8 +5410,8 @@
     {
       "label": "StrSprOffset",
       "line": 926,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5408,6 +5432,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5415,8 +5445,8 @@
     {
       "label": "NextSprOffset",
       "line": 927,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5437,6 +5467,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -5444,8 +5480,8 @@
     {
       "label": "SetAmtOffset",
       "line": 934,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5467,14 +5503,20 @@
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
     },
     {
       "label": "SetMiscOffset",
       "line": 937,
-      "receiver": "M2 T22 S20",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the NMI sprite-shuffle group from T24/S2.",
+      "receiver": "M2 T22 S27",
+      "receivingBasis": "T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence.",
       "futurePackage": null,
       "history": [
         {
@@ -5495,6 +5537,12 @@
           "task": "M2 T22",
           "subtask": "M2 T22 S20",
           "relation": "accepted source-order NMI direct-child recovery",
+          "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+        },
+        {
+          "task": "M2 T22",
+          "subtask": "M2 T22 S27",
+          "relation": "accepted independent sprite-shuffle proof",
           "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
         }
       ]
@@ -55183,6 +55231,22 @@
       ],
       "acceptedBy": "T22/S26 accepts the S19 sprite-zero/OAM source contract for independent controlled-ROM equivalence review.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-038-t22-s20-to-s27",
+      "type": "transfer",
+      "from": "M2 T22 S20",
+      "to": "M2 T22 S27",
+      "nodes": [
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset"
+      ],
+      "acceptedBy": "T22/S27 accepts the S20 sprite-shuffle source contract for independent controlled-ROM equivalence review.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -60119,7 +60183,69 @@
       "maximumComplete": 35,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-sprite-shuffle-contract"
+      "state": "closed-sprite-shuffle-contract-transfer-to-s27"
+    },
+    {
+      "subtask": "M2 T22 S27",
+      "kind": "implementation",
+      "scope": [
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset"
+      ],
+      "baseline": 35,
+      "incomingComplete": [
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScreenOff",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "InitializeMemory",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "InitBuffer",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "expectedMatches": [
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset"
+      ],
+      "maximumComplete": 41,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "admitted-sprite-shuffle-equivalence-review"
     }
   ]
 }

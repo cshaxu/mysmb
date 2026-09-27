@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T22 S20 Packet
+## M2 T22 S27 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S20, Implementation; sprite-offset shuffle source contract. |
-| Admission And Approval | Owner-approved source-order recovery; six nodes already accepted from T24/S2. |
-| Objective | Map the ROM shuffle loop, carry path, control wrap and misc-offset fanout before equivalence credit. |
-| Non-goals | Sprite-zero split, pause, operation dispatch, graphics writers and platform code. |
-| Reference Baseline | 35 / 1,992 complete; six incomplete labels; expected matches none; maximum 35 / 1,992. |
+| Identifier Mode | M2 T22 S27, Implementation; independent sprite-shuffle equivalence review. |
+| Admission And Approval | Owner-approved source-order recovery; T22/S20 transferred its six-node source contract. |
+| Objective | Independently compare ROM shuffle outputs and control flow with the shared C owner. |
+| Non-goals | Sprite-zero split, mode dispatch, graphics writers and platform code. |
+| Reference Baseline | 35 / 1,992 complete; six incomplete labels; expected all six; maximum 41 / 1,992. |
 | Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared `frame_root.c`, focused shuffle test, ignored ROM traces and ledger records. |
+| Files And ABI Surface | Shared frame root, shuffle smoke, ignored ROM probes and node records. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source branch/read/write/order audit and controlled ROM NMI route; focused x86/x64 tests, DOS16 build, purity and artifacts for any P. |
-| Expected Markers | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`; expected none. |
+| Verification | Controlled ROM NMI shuffle samples; focused x86/x64 tests, DOS16 build, purity and artifacts. |
+| Expected Markers | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`. |
 | Asset Needs | ROM/listing, probes and logs remain below `build`. |
-| Reporting Requirements | Account for each label and transfer unfinished work. |
-| Stop Conditions | Stop if evidence enters sprite-zero, mode-dispatch or platform scope. |
-| Exit Criteria | Exact source contract and a separately admitted equivalence successor. |
+| Reporting Requirements | Record both verification tracks and transfer failed labels. |
+| Stop Conditions | Stop if evidence enters another NMI child or platform scope. |
+| Exit Criteria | Independent proof or specific transfer for all labels. |
 | Original Owner Request | Execute original nodes in source order with strict parity. |
-| Similar-Issue Sweep | Check descending offsets, threshold, carry, control wrap and three misc groups. |
+| Similar-Issue Sweep | Check 15 entries, threshold, carry, control wrap and all three misc groups. |
 
 ## Recent M4 Closures
 
