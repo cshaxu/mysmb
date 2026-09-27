@@ -763,6 +763,23 @@ common source links as the OpenNT DOS16 MZ with the existing non-fatal
 `D6C90F62D4A574594B2FE99076555D3892540ACD58807C7B357324B1354FCC48`,
 `mysmb32.exe` `B09221D8B7A519E08DAB782A09D8B0601B4EE76EF61C20F7B94CB60C5934215C`,
 and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.
+
+## S7 closure and S8 admission: area-stream decoder chain
+
+S7 closes **32 / 32** expected labels at **368 / 1,992**.  The canonical
+inventory, progress report and ledger record every `ProcessAreaData -> SetFore`
+label as ROM-match complete.  The ROM-logic track consists of the source-order
+P10 audit, P9's source-RAM-only ordinary GameEngine route, and focused branch
+regressions; the operational track consists of the x86/x64 focused matrix,
+platform-purity gate, OpenNT DOS16 link and the P9 three-executable package.
+No scope label is deferred or transferred.
+
+S8 is the next planned source-order chain.  It will receive the 22 labels
+from `ScrollLockObject_Warp` through `MushLExit` only after its exact ledger
+receipt, active packet, source-route plan and node-admission validation are
+recorded.  S7 remains their predecessor proof only; it does not claim any
+JumpEngine-selected object-family implementation beyond its own dispatch
+handoff.
 This remains a checkpoint: S7 will only close after each of its thirty-two
 labels has a separately recorded control/read/write/call-order disposition.
 

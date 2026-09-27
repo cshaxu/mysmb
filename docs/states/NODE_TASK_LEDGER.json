@@ -71918,9 +71918,42 @@
         "SetFore"
       ],
       "maximumComplete": 368,
-      "actualMatches": [],
+      "actualMatches": [
+        "ProcessAreaData",
+        "ProcADLoop",
+        "Chk1Row13",
+        "Chk1Row14",
+        "CheckRear",
+        "RdyDecode",
+        "SetBehind",
+        "NextAObj",
+        "ChkLength",
+        "ProcLoopb",
+        "EndAParse",
+        "IncAreaObjOffset",
+        "DecodeAreaData",
+        "Chk1stB",
+        "ChkRow14",
+        "ChkRow13",
+        "Mask2MSB",
+        "ChkSRows",
+        "LrgObj",
+        "NotWPipe",
+        "SpecObj",
+        "MoveAOId",
+        "NormObj",
+        "LeavePar",
+        "InitRear",
+        "LoopCmdE",
+        "BackColC",
+        "StrAObj",
+        "RunAObj",
+        "AlterAreaAttributes",
+        "Alter2",
+        "SetFore"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
-      "state": "admitted-area-stream-decoder-chain"
+      "state": "closed-area-stream-decoder-chain"
     }
   ]
 }

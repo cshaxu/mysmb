@@ -2,8 +2,10 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T29 S7, the thirty-two-node area-stream
-decoder chain. M2 T29 S6 is closed at 336 / 1,992.**
+**M2 T29 S7, the thirty-two-node area-stream decoder chain, is closed at
+368 / 1,992.  The next source-order admission is M2 T29 S8, the special-object
+parser chain; it is not active until its exact ledger receipt and packet are
+recorded.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
