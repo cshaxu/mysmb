@@ -2,7 +2,7 @@
 
 ## Status
 
-T27 is the source-order screen/HUD/text task for ROM lines 1386--1824. It uses chain-based S delivery: each node remains individually tracked, while one admitted S covers a bounded contiguous source chain and its ROM route. S1 is closed. S2 is the active admitted contiguous status/text chain; S3 is reserved for the two integration roots whose dependencies extend into later source-order tasks.
+T27 is the source-order screen/HUD/text task for ROM lines 1386--1824. It uses chain-based S delivery: each node remains individually tracked, while one admitted S covers a bounded contiguous source chain and its ROM route. S1 and S2 are closed. S3 is the active bounded dispatch/parser integration audit; its parser dependency remains owned by T18 S4.
 
 ## Scope and ownership
 
@@ -603,6 +603,33 @@ C4761 warnings.  The refreshed DOS16, Win32 x86 and Win32 x64 hashes are
 This is a source-order repair and operational regression, not a completed
 S3 equivalence claim: `AreaParserTaskHandler` remains the current T18 S4
 dependency, so the four S3 nodes retain zero completion credit.
+
+## S3/P2: controlled title-to-area dispatch boundary
+
+The current shared-C recorder and the isolated original-ROM recorder ran the
+same cold-start route: sixty neutral NMI returns, one Start input, then two
+hundred recorded returns. The ROM coverage reached `ScreenRoutines` at
+`$8567` 165 times and `AreaParserTaskControl` at `$86e6`; its `TaskLoop`
+body ran twelve complete column sets and reached both the non-final
+`OutputCol` branch and the final `ScreenRoutineTask` increment. The native
+record agrees through sample 168 in work RAM `$0300-$07ff`, CIRAM, palette,
+OAM, audio state and PPU scalars.
+
+At sample 169, the first difference is Buffer1 command order only. The ROM
+has the timer-status command (`$20,$7a,$03,...`) before the color-rotation
+command (`$3f,$0c,$04,...`); the native root queues them in the reverse order.
+The corresponding ROM `GameEngine` order is `RunGameTimer -> ColorRotation`.
+`RunGameTimer` remains owned by Td S5 and `ColorRotation` remains owned by
+T18 S4, while their caller `GameEngine` remains with its registered owner.
+No T27 C code or completion status changes from this finding. It is a precise
+dependency handoff, not a substitute for the required independent T18 parser
+chain proof. The raw recordings and coverage report remain ignored below the
+S3 build directory. No product source changed in this audit: the three
+artifacts retained from P1 were revalidated as DOS MZ and passing Win32 x86/
+x64 `--self-test`, with SHA-256 values
+`3A567BC951A04CD313C9083D76704FCA270F80926972B55DED821F73AAB0CA79`,
+`C8A604C36802BDC5208C77BC2B54E000797156B309A0791F19FB6FA1663E1E01`, and
+`FE2BA84E8B497C86F8E3DB8D7E7D6E02021E0D577DA2D262AF252B542FDEBAAE`.
 
 ## S2 per-node source/evidence matrix
 

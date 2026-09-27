@@ -10,10 +10,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The active `M2 T27 S2` already uses the chain rule and completes its admitted
-43-label status/text chain unchanged.  The next admitted S in every current or
-queued M2 T must use the source-order chain table defined by the recovery plan;
-it may not revive the retired fixed five-stage pattern.  This changes delivery
+The active `M2 T27 S3` is the bounded dispatch/parser integration audit that
+follows S2's closed 43-label status/text chain. The next admitted S in every
+current or queued M2 T must use the source-order chain table defined by the
+recovery plan; it may not revive the retired fixed five-stage pattern. This changes delivery
 granularity only: node custody, source order, dual verification, tracker rows,
 and three-target P delivery remain mandatory.
 ## M1 Candidates

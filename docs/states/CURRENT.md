@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T27 S2, the 43-label `WriteTopStatusLine -> NoReset` shared-game chain. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Active implementation packet: M2 T27 S3, the four-label `ScreenRoutines -> AreaParserTaskControl -> TaskLoop -> OutputCol` shared-game integration audit. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation's active packet and cannot preempt T27 S2.
+nodes; it is not this implementation's active packet and cannot preempt T27 S3.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains a queued historical record and cannot preempt the active T27 S2 chain.
+remains a queued historical record and cannot preempt the active T27 S3 chain.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the T27 S2 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the T27 S3 packet below is active.**
 
 ## Retained M2 T15 summary
 
