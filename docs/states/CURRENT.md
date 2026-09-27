@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T28 S4, the nineteen-node metatile, palette and message-data chain. T28 S3 is closed at 194 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Latest implementation closure: M2 T28 S4, the nineteen-node metatile, palette and message-data chain, at 213 / 1,992. T28 S5 is the next source-order candidate; T21/T22 and other historical entries below remain retained evidence and do not supersede this record.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains a queued historical record and cannot preempt the active M2 T28 S3 packet.
+remains a queued historical record and cannot preempt the T28 source-order continuation.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S4 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. No successor S is active until its source-order packet is admitted.**
 
 ## Retained M2 T15 summary
 
@@ -72,10 +72,10 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | M2 T28 S4, implementation; metatile, palette and message-data chain. |
-| Admission And Approval | Owner-approved source-order continuation after T28 S3 closure; ledger receipt accepts nineteen labels from legacy T18 custody. |
+| Admission And Approval | Owner-approved source-order continuation after T28 S3 closure; ledger receipt accepted nineteen labels from legacy T18 custody. |
 | Objective | Bind and prove the four metatile tables, eight palette streams and seven message streams through shared C consumers. |
 | Non-goals | No parser, PPU/NMI dispatcher, platform rendering decision, producer logic, or label outside the nineteen-node receipt. |
-| Reference Baseline | 194 / 1,992 complete; 19 scoped open labels; expected 19 matches; maximum 213 / 1,992. |
+| Reference Baseline | 194 / 1,992 complete; 19 scoped open labels; expected 19 matches; closed at 213 / 1,992. |
 | Candidate Proposal | [M2 T28 area output and bootstrap](../proposals/m2/t28-area-output-bootstrap.md). |
 | Files And ABI Surface | Shared area data consumers, controlled ROM/native recorder, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
@@ -84,7 +84,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
 | Reporting Requirements | Record table offsets, consumer results and all nineteen node dispositions. |
 | Stop Conditions | Stop on unmatched source behavior, unadmitted dependency, recorder mismatch or platform gameplay logic. |
-| Exit Criteria | All nineteen labels have ROM and operational evidence without unrelated credit. |
+| Exit Criteria | Met: all nineteen labels have ROM and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Ensure data is read only from bound PRG, with no duplicate tracked data or platform-side consumer. |
 

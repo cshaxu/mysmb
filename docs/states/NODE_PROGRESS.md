@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 194 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop. |
+| ROM-match complete | 213 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,690 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,671 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **194 / 1,992 (9.74%)**. Initial deep verification covered
+Verified conformance is **213 / 1,992 (10.69%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -44,17 +44,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1991 | `GetBlankPal` |
 | 2004 | `GetAreaPal` |
 | 2024 | `ExitColorRot` |
-| 2034 | `BlockGfxData` |
-| 2041 | `RemoveCoin_Axe` |
-| 2047 | `WriteBlankMT` |
-| 2052 | `ReplaceBlockMetatile` |
-| 2058 | `DestroyBlockMetatile` |
-| 2061 | `WriteBlockMetatile` |
-| 2076 | `UseBOffset` |
-| 2080 | `MoveVOffset` |
-| 2086 | `PutBlockMetatile` |
-| 2097 | `SaveHAdder` |
-| 2118 | `RemBridge` |
 | 1825 | `RenderAreaGraphics` |
 | 1840 | `DrawMTLoop` |
 | 1878 | `RightCheck` |
@@ -66,6 +55,36 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1930 | `SetATHigh` |
 | 1940 | `AttribLoop` |
 | 1962 | `SetVRAMCtrl` |
+| 2034 | `BlockGfxData` |
+| 2041 | `RemoveCoin_Axe` |
+| 2047 | `WriteBlankMT` |
+| 2052 | `ReplaceBlockMetatile` |
+| 2058 | `DestroyBlockMetatile` |
+| 2061 | `WriteBlockMetatile` |
+| 2076 | `UseBOffset` |
+| 2080 | `MoveVOffset` |
+| 2086 | `PutBlockMetatile` |
+| 2097 | `SaveHAdder` |
+| 2118 | `RemBridge` |
+| 2151 | `Palette0_MTiles` |
+| 2192 | `Palette1_MTiles` |
+| 2240 | `Palette2_MTiles` |
+| 2252 | `Palette3_MTiles` |
+| 2263 | `WaterPaletteData` |
+| 2275 | `GroundPaletteData` |
+| 2287 | `UndergroundPaletteData` |
+| 2299 | `CastlePaletteData` |
+| 2311 | `DaySnowPaletteData` |
+| 2316 | `NightSnowPaletteData` |
+| 2321 | `MushroomPaletteData` |
+| 2326 | `BowserPaletteData` |
+| 2331 | `MarioThanksMessage` |
+| 2339 | `LuigiThanksMessage` |
+| 2347 | `MushroomRetainerSaved` |
+| 2358 | `PrincessSaved1` |
+| 2366 | `PrincessSaved2` |
+| 2375 | `WorldSelectMessage1` |
+| 2382 | `WorldSelectMessage2` |
 | 2145 | `MetatileGraphics_Low` |
 | 2148 | `MetatileGraphics_High` |
 | 776 | `ScreenOff` |

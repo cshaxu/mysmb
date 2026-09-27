@@ -128,3 +128,24 @@ repair; no ROM-derived byte array may be added to tracked C. Controlled
 original-ROM/native entries will compare table reads and the resulting
 palette/name-table command output, while focused area regressions, x86/x64,
 DOS16 and platform-purity checks provide the operational track.
+
+## S4 closure: data-chain equivalence
+
+S4 closes at **213 / 1,992**. No ROM-derived array was added to tracked C:
+the shared `area.c` consumers retain source pointer reads for the four
+metatile palettes and select each palette/text stream by the original VRAM
+address-control values. `area-data-smoke` verifies every valid four-byte
+metatile entry through the expanded name-table result, every byte of the four
+area and four special palette streams through the palette snapshot, and every
+terminated write in all seven message streams through the name tables. Its
+expected output is independently reconstructed from the bound PRG command
+stream; malformed pointers, terminators, addresses and command lengths fail.
+
+This is static-data equivalence rather than an invented callable ROM entry:
+the source labels are byte streams, and the evidence is their exact PRG range,
+the original source consumers, and their complete observable output. The
+focused data, area-output, palette-timing and victory-message tests pass on
+x86 and x64 together with platform-purity and both Win32 self-tests. The same
+shared core links into the OpenNT DOS16 MZ; the packaging pass refreshed the
+three required artifacts, which remained byte-identical to S3 because no
+production byte changed.

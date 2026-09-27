@@ -333,25 +333,25 @@ The labels and branches behind every line remain open until individually bound b
 | 2118 | `RemBridge` | M2 T28 S3 shared command owner | ROM-match complete | [T28 S3 closure](../../proposals/m2/t28-area-output-bootstrap.md#s3-closure-block-graphics-command-chain) |
 | 2145 | `MetatileGraphics_Low` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 2148 | `MetatileGraphics_High` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
-| 2151 | `Palette0_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette0_mtiles) |
-| 2192 | `Palette1_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette1_mtiles) |
-| 2240 | `Palette2_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette2_mtiles) |
-| 2252 | `Palette3_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette3_mtiles) |
-| 2263 | `WaterPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-waterpalettedata) |
-| 2275 | `GroundPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-groundpalettedata) |
-| 2287 | `UndergroundPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-undergroundpalettedata) |
-| 2299 | `CastlePaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlepalettedata) |
-| 2311 | `DaySnowPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-daysnowpalettedata) |
-| 2316 | `NightSnowPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nightsnowpalettedata) |
-| 2321 | `MushroomPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroompalettedata) |
-| 2326 | `BowserPaletteData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowserpalettedata) |
-| 2331 | `MarioThanksMessage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mariothanksmessage) |
-| 2339 | `LuigiThanksMessage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-luigithanksmessage) |
-| 2347 | `MushroomRetainerSaved` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomretainersaved) |
-| 2358 | `PrincessSaved1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-princesssaved1) |
-| 2366 | `PrincessSaved2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-princesssaved2) |
-| 2375 | `WorldSelectMessage1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldselectmessage1) |
-| 2382 | `WorldSelectMessage2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldselectmessage2) |
+| 2151 | `Palette0_MTiles` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2192 | `Palette1_MTiles` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2240 | `Palette2_MTiles` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2252 | `Palette3_MTiles` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2263 | `WaterPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2275 | `GroundPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2287 | `UndergroundPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2299 | `CastlePaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2311 | `DaySnowPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2316 | `NightSnowPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2321 | `MushroomPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2326 | `BowserPaletteData` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2331 | `MarioThanksMessage` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2339 | `LuigiThanksMessage` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2347 | `MushroomRetainerSaved` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2358 | `PrincessSaved1` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2366 | `PrincessSaved2` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2375 | `WorldSelectMessage1` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
+| 2382 | `WorldSelectMessage2` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
 | 2395 | `JumpEngine` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpengine) |
 | 2412 | `InitializeNameTables` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializenametables) |
 | 2421 | `WriteNTAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writentaddr) |

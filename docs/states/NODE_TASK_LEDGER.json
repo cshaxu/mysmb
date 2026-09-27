@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -56325,7 +56325,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -67922,9 +67922,29 @@
         "WorldSelectMessage2"
       ],
       "maximumComplete": 213,
-      "actualMatches": [],
+      "actualMatches": [
+        "Palette0_MTiles",
+        "Palette1_MTiles",
+        "Palette2_MTiles",
+        "Palette3_MTiles",
+        "WaterPaletteData",
+        "GroundPaletteData",
+        "UndergroundPaletteData",
+        "CastlePaletteData",
+        "DaySnowPaletteData",
+        "NightSnowPaletteData",
+        "MushroomPaletteData",
+        "BowserPaletteData",
+        "MarioThanksMessage",
+        "LuigiThanksMessage",
+        "MushroomRetainerSaved",
+        "PrincessSaved1",
+        "PrincessSaved2",
+        "WorldSelectMessage1",
+        "WorldSelectMessage2"
+      ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
-      "state": "active-area-data-chain"
+      "state": "closed-area-data-chain"
     }
   ]
 }
