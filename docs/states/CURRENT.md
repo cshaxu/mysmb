@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 Td S7 Packet
+## M2 T25 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 Td S7, Governance; source-order identifier reconciliation. |
-| Admission And Approval | Owner-approved continuation after the T22/S22 dependency audit exposed a historic task-number collision. |
-| Objective | Reconcile future M2 source-order task identifiers while retaining historical T23/T24 evidence and ownership unchanged. |
-| Non-goals | Game code, node conformance status, node transfers, platform behavior, ROM research, or historical record rewrites. |
-| Reference Baseline | 42 / 1,992 complete; zero scoped node labels; zero expected matches; maximum 42 / 1,992. |
-| Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Source-order proposal, queue, node-task ledger registry and active packet only. |
+| Identifier Mode | M2 T25 S1, Audit; title/menu/demo source contract. |
+| Admission And Approval | Owner-approved source-order recovery after Td S7 identifier reconciliation. |
+| Objective | Map the exact 26 title/menu/demo nodes, source edges, RAM/table semantics and existing shared-C boundaries. |
+| Non-goals | Code repair, ownership transfer, node credit, Victory nodes from line 1137 onward, platform behavior or ROM-derived assets. |
+| Reference Baseline | 42 / 1,992 complete; 26 scoped labels, zero expected matches, maximum 42 / 1,992. |
+| Candidate Proposal | [T25 title plan](../proposals/m2/t25-title-menu-demo.md). |
+| Files And ABI Surface | Proposal, ledger, queue/plan boundary and active packet only. |
 | Applicable Rules | Task Reading Set, execution, documentation, architecture, coding, source policy and node ledger. |
-| Verification | Identifier uniqueness scan; historic T23/T24 preservation review; future source-order continuity scan; node-ledger admission; documentation governance. |
-| Expected Markers | None; this governance S creates no ROM-match credit. |
-| Asset Needs | None. |
-| Reporting Requirements | State the preserved historic identifiers, the reconciled future mapping, the next implementation candidate, and zero node-status changes. |
-| Stop Conditions | Stop if a historic task, subtask, receiver, transfer or node status would need alteration to resolve the collision. |
-| Exit Criteria | No planned source slice shares an existing historic task ID; Title is uniquely registered as the next `T25` candidate; ledger and documentation gates pass. |
+| Verification | Exact inventory/receiver audit, source-order boundary audit, ledger admission and documentation governance. |
+| Expected Markers | None. |
+| Asset Needs | Owner-local listing only; derived records stay under build. |
+| Reporting Requirements | Report all 26 labels, current receiver, T26 boundary and planned successor transfer. |
+| Stop Conditions | Stop if a title node crosses the line-1137 Victory boundary or if platform code owns a title decision. |
+| Exit Criteria | Every scoped label has a source/C boundary record; T25 S2 is ready for an accepted exact transfer from T15 S4. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Scan the plan, queue, ledger task registry and active packet for duplicate or stale future source-order identifiers. |
+| Similar-Issue Sweep | Check adjacent Victory entry and all title/demo current owners for boundary leaks. |
 
 ## Recent M4 Closures
 

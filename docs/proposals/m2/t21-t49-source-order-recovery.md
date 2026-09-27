@@ -6,8 +6,8 @@ This replaces the oversized historical T21 package. Each task is a bounded sourc
 | --- | --- | ---: | ---: |
 | T21 | Boot and cold initialization (including its `InitializeMemory` call-root exception) | 699–737; 2795 | 7 |
 | T22 | NMI, PPU commit, input and frame timing | 743–981 | 33 |
-| T25 | Title menu, world selection and demo | 982–1180 | 33 |
-| T26 | Victory, terminal modes and floating scores | 1181–1385 | 25 |
+| T25 | Title menu, world selection and demo | 982–1133 | 26 |
+| T26 | Victory, terminal modes and floating scores | 1137–1385 | 32 |
 | T27 | Screen routines, HUD and game text | 1386–1824 | 67 |
 | T28 | Area bootstrap, pointers and headers | 1825–2794 | 102 |
 | T29 | Area object parsing and large-object geometry | 2796–3990 | 157 |

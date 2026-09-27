@@ -1390,6 +1390,74 @@
       ],
       "subtasks": [],
       "historyGap": "Historical exact S assignments are retained only where documented."
+    },
+    {
+      "id": "M2 T25",
+      "evidence": [
+        "docs/proposals/m2/t25-title-menu-demo.md",
+        "docs/proposals/m2/t21-t49-source-order-recovery.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M2 T25 S1",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-node-contract"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit"
+        },
+        {
+          "id": "M2 T25 S2",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "planned-shared-c-migration"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after T25 S1 source contract; exact transfer from M2 T15 S4 is required before implementation admission."
+        },
+        {
+          "id": "M2 T25 S3",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "planned-rom-equivalence"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after T25 S2."
+        },
+        {
+          "id": "M2 T25 S4",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "planned-operational-verification"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after T25 S3."
+        },
+        {
+          "id": "M2 T25 S5",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "planned-closure"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after T25 S4."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -5724,7 +5792,7 @@
     {
       "label": "TitleScreenMode",
       "line": 982,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5763,13 +5831,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5784,13 +5858,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "GameMenuRoutine",
       "line": 996,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5837,13 +5917,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "StartGame",
       "line": 1004,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5882,13 +5968,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkSelect",
       "line": 1005,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5943,13 +6035,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkWorldSel",
       "line": 1013,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -5972,13 +6070,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "SelectBLogic",
       "line": 1018,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6017,13 +6121,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "IncWorldSel",
       "line": 1033,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6062,13 +6172,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "UpdateShroom",
       "line": 1039,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6107,13 +6223,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "NullJoypad",
       "line": 1047,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6152,13 +6274,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "RunDemo",
       "line": 1049,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6181,13 +6309,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ResetTitle",
       "line": 1053,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6234,13 +6368,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6271,13 +6411,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6308,13 +6454,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6329,13 +6481,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6350,13 +6508,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6395,13 +6559,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6416,13 +6586,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6453,13 +6629,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6474,13 +6656,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6495,13 +6683,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6516,13 +6710,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6537,13 +6737,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6590,13 +6796,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6611,13 +6823,19 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T15 S4",
+      "receiver": "M2 T25 S2",
       "receivingBasis": "restored pending small-task planning after oversized T21 replan",
       "futurePackage": null,
       "history": [
@@ -6632,6 +6850,12 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S1",
+          "relation": "source-contract audit before accepted S2 transfer",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
@@ -55301,6 +55525,42 @@
       ],
       "acceptedBy": "Owner-authorized custody accepts the parent until every direct NMI dependency has independent ROM-match evidence.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-041-t15-s4-to-t25-s2-title",
+      "type": "transfer",
+      "from": "M2 T15 S4",
+      "to": "M2 T25 S2",
+      "nodes": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S2 pre-accepted by the owner-approved T25 S plan after its completed S1 source contract.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -60535,6 +60795,88 @@
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
       "state": "closed-source-order-identifier-reconciliation"
+    },
+    {
+      "subtask": "M2 T25 S1",
+      "kind": "audit",
+      "scope": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-title-source-contract-transferred-to-s2"
     }
   ]
 }
