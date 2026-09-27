@@ -20,7 +20,7 @@ or trace becomes tracked product data.
 | Shared owner | `src/game/area.c`, including the neutral area-object state and its existing UnderPart collaborator |
 | Receipt | `transfer-098-t18-s4-to-t30-s1-rope-rendering` transfers the three labels from T18 custody |
 | Predecessor / successor | T29/S10's completed allocation/final-object boundary precedes this chain; `CoinMetatileData -> RowOfCoins` is the next unadmitted T30 chain |
-| ROM-logic track | Audit `$99bb-$99cc`: Endless uses `X=0,Y=15`; balance saves/restores object offset, clears rows 1..15 using `$44`, obtains the lower-nibble length, then uses `X=1`; DrawRope tail-jumps with `$40`. The ordinary area-parser object route exercises the same parser dispatch; source-shaped object records cover the mutually exclusive endless and balance variants without leaf-PC or stack injection. |
+| ROM-logic track | Audit `$99d0-$99ec`: Endless uses `X=0,Y=15`; balance saves/restores object offset, clears rows 1..15 using `$44`, obtains the lower-nibble length, then uses `X=1`; DrawRope tail-jumps with `$40`. The ordinary area-parser object route exercises the same parser dispatch; source-shaped object records cover the mutually exclusive endless and balance variants without leaf-PC or stack injection. |
 | Operational track | Add focused project-owned rope/area smoke coverage, compare the chain-owned parser/metatile state against the original route, build x86/x64, link DOS16, run platform-purity, and refresh all three target artifacts once for implementation P1. |
 
 Baseline: **430 / 1,992**.  Incoming state for every scope label is `open`.
@@ -68,3 +68,7 @@ passed `--self-test`.  OpenNT16 linked `mysmb-dos16.exe` as an `MZ` image.
 All three scope labels are ROM-match complete.  The result is **433 / 1,992**;
 there are no uncompleted labels in this receipt.  `CoinMetatileData -> RowOfCoins`
 remains the next unadmitted source-order chain.
+
+## S1 closure
+
+The registered scope contains only `EndlessRope`, `BalancePlatRope` and `DrawRope`; all three are recorded as actual matches, and no unfinished node remains in M2 T30 S1 custody. The node checker validates closure at **433 / 1,992** using this proposal as the evidence record. No ownership transfer is needed. The next candidate remains unadmitted until it receives an exact source-order receipt.

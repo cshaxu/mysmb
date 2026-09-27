@@ -2,9 +2,7 @@
 
 ## Current Work
 
-**M2 T30 S1 is admitted at 430 / 1,992 for the three-node
-`EndlessRope -> DrawRope` area-object rendering chain; its maximum closing
-count is 433 / 1,992.**
+**M2 T30 S1 is closed at 433 / 1,992: `EndlessRope`, `BalancePlatRope`, and `DrawRope` have both required evidence tracks. The next T30 chain is not yet admitted.**
 
 The three labels transfer from T18 S4 through the registered exact receipt.
 S1 owns only shared area-object behavior and its ROM-equivalence/operational
@@ -15,8 +13,7 @@ it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
-**All other numeric M2 task states in retained proposal text are historical or
-queued records. M2 T30 S1 is the sole active implementation packet.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S1 is the latest closed implementation packet; no later T30 S is admitted.**
 
 ## M2 T30 S1 Packet
 
@@ -30,7 +27,7 @@ queued records. M2 T30 S1 is the sole active implementation packet.**
 | Candidate Proposal | [M2 T30 area object rendering](../proposals/m2/t30-area-object-rendering.md). |
 | Files And ABI Surface | Shared `area.c` owner, project-owned rope/area smoke, local recorder fixtures, ledger/progress records, and three target artifacts per implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and chain-delivery rule. |
-| Verification | ROM `$99bb-$99cc` branch/write/call audit; ordinary parser plus source-shaped object routes; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
+| Verification | ROM `$99d0-$99ec` branch/write/call audit; ordinary parser plus source-shaped object routes; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
 | Expected Markers | Object offset save/restore, area length, X/Y row bounds, `$44` blank metatiles, `$40` rope metatiles, parser cursor and return order. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
 | Reporting Requirements | Record each node's control/data evidence, ROM and operational outcomes, hashes and any exact transfer. |
