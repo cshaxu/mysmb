@@ -985,3 +985,26 @@ evidence, so the refreshed target hashes remain `mysmb16.exe`
 `30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
 `mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
 and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.
+
+## S8 P5: Warp selector branch correction
+
+The P4 per-label audit found a shared-C defect in `ScrollLockObject_Warp`.
+The ROM starts at selector four, leaves it four when `WorldNumber` is zero,
+and otherwise increments once for a later world and once more only when
+`AreaType` is ground. The earlier C code instead incremented for a non-ground
+area, so it produced the wrong values for every later-world case and for
+world-zero non-ground areas. `area.c` now follows the source branch order;
+the special-object smoke covers all three results.
+
+Three ordinary GameEngine routes verify the correction against ROM output:
+later-world ground ends at WarpZoneControl `$06`, later-world water ends at
+`$05`, and world-zero water remains `$04`. The native recorder agrees with
+the original ROM on the selector, world and type bytes for all three routes;
+the source reaches the common `$96f2-$970d` control path in each case. This
+is a production shared-game repair. The focused x86/x64 parser and
+platform-purity matrix passes, and the same C90 source links into OpenNT
+DOS16 with only the established non-fatal warnings. The refreshed P5
+artifacts are `mysmb16.exe`
+`A2541E3CC896A0873D4FAC5C8BD810D67A37E815A5E71F1EE5F5D94D2533EE86`,
+`mysmb32.exe` `9664EBA31270463F91DA2198B5116B1C0753105E21A8F935F258BD6321AFA080`,
+and `mysmb64.exe` `8F7962924CCAAD5D52CE004222B816F810E71800B973F3C339C20B41CA1E938F`.

@@ -755,6 +755,28 @@ static void mysmb_reference_apply_t29_special_continuation_fixture(
     if (kind == 4u) ram[0x0736u] = 2u;
 }
 
+static void mysmb_reference_apply_t29_warp_selector_fixture(lib_u8 *ram,
+                                                             lib_u8 kind)
+{
+    mysmb_reference_apply_t29_special_object_fixture(ram);
+    if (kind == 0u) {
+        ram[0x000fu] = 1u;
+        ram[0x0016u] = 13u;
+    }
+    else if (kind == 1u) {
+        ram[0x075fu] = 1u;
+        ram[0x074eu] = 1u;
+    }
+    else if (kind == 2u) {
+        ram[0x075fu] = 1u;
+        ram[0x074eu] = 2u;
+    }
+    else {
+        ram[0x075fu] = 0u;
+        ram[0x074eu] = 2u;
+    }
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -1190,6 +1212,9 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-mush-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 84u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-tree-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 85u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-piranha") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 86u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1436,12 +1461,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 79u && t26_fixture <= 85u)
                     mysmb_reference_apply_t29_special_continuation_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 79u));
-                else if (t26_fixture == 86u) {
-                    mysmb_reference_apply_t29_special_object_fixture(
-                        driver->machine->ram);
-                    driver->machine->ram[0x000fu] = 1u;
-                    driver->machine->ram[0x0016u] = 13u;
-                }
+                else if (t26_fixture >= 86u && t26_fixture <= 89u)
+                    mysmb_reference_apply_t29_warp_selector_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 86u));
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

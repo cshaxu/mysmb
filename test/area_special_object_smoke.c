@@ -42,6 +42,23 @@ int main(void)
         game.ram[0x06d6U] != 4U || game.ram[0x0723U] != 1U ||
         game.ram[0x000fU] != 0U || game.ram[0x0010U] != 1U) return 1;
 
+    /* ScrollLockObject_Warp starts at four only in world zero.  In later
+     * worlds it selects five, then increments once more for a ground area. */
+    set_object(&game, prg, 0x0dU, 0x45U);
+    game.ram[0x075fU] = 1U;
+    game.ram[0x074eU] = 1U;
+    if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06d6U] != 6U)
+        return 15;
+    set_object(&game, prg, 0x0dU, 0x45U);
+    game.ram[0x075fU] = 1U;
+    game.ram[0x074eU] = 2U;
+    if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06d6U] != 5U)
+        return 16;
+    set_object(&game, prg, 0x0dU, 0x45U);
+    game.ram[0x074eU] = 2U;
+    if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x06d6U] != 4U)
+        return 17;
+
     /* The two ordinary scroll-lock selectors each invert the same byte. */
     set_object(&game, prg, 0x0dU, 0x46U);
     if (mysmb_area_process_object_state(&game) == 0U || game.ram[0x0723U] != 1U)

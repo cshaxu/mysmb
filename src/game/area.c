@@ -1091,8 +1091,10 @@ static void mysmb_area_scroll_lock_warp(struct mysmb_game *game)
     mysmb_u8 selector;
 
     selector = 4U;
-    if (game->ram[MYSMB_AREA_WORLD_NUMBER] != 0U) selector++;
-    if (game->ram[MYSMB_AREA_TYPE] != 1U) selector++;
+    if (game->ram[MYSMB_AREA_WORLD_NUMBER] != 0U) {
+        selector++;
+        if (game->ram[MYSMB_AREA_TYPE] == 1U) selector++;
+    }
     game->ram[MYSMB_AREA_WARP_ZONE_CONTROL] = selector;
     (void)mysmb_area_queue_game_text(game, selector);
     mysmb_area_kill_enemies(game, 13U);
