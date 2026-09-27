@@ -6,6 +6,7 @@
 #include "game/objects.h"
 #include "game/enemy/frenzy.h"
 #include "game/oam/oam.h"
+#include "game/title_modes.h"
 
 enum {
     MYSMB_ROOT_FRAME_COUNTER = 0x0009U,
@@ -181,8 +182,10 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     mysmb_u8 task_before;
     struct mysmb_area_source area_source;
     mysmb_u8 paused;
+    mysmb_u8 run_title_demo;
 
     paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
+    run_title_demo = 0U;
     if (paused != 0U) {
         mysmb_frame_root_finish(game, frame);
         return;
@@ -221,9 +224,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         if (mysmb_game_begin_title_bootstrap(game) == 0U)
             game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] = 1U;
     }
-    else if (mode_before == 0U && task_before == 3U &&
-             mysmb_game_title_step(game, input) == 0U) {
-        /* Start/ResetTitle consume the title branch without RunDemo. */
+    else if (mode_before == 0U && task_before == 3U) {
+        /* GameMenuRoutine reaches GameCoreRoutine only via RunDemo. */
+        run_title_demo = mysmb_game_title_step(game, input);
     }
     else if (((mode_before == 1U && task_before == 1U) ||
               (mode_before == 0U && task_before == 1U)) &&
@@ -243,9 +246,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     else if ((mode_before == 1U &&
               (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
-             (mode_before == 0U && task_before == 3U &&
-              game->ram[MYSMB_ROOT_OPERATING_MODE] == 0U &&
-              game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] == 3U)) {
+             (run_title_demo != 0U)) {
         if (game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] == 3U &&
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] = 4U;
@@ -350,6 +351,12 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
          * zero horizontal input and the KillPlayer-cleared speed. */
         game->ram[MYSMB_FRAME_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
         mysmb_game_step_area_parser(game);
+    }
+    /* RunDemo returns from GameCoreRoutine to this immediate source check.
+     * A lose-life subroutine returns through ResetTitle before the timer tail. */
+    if (run_title_demo != 0U &&
+        game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 6U) {
+        mysmb_game_reset_title(game);
     }
     /* GameEngine may advance the entrance dispatcher to subroutine 8 on this
      * frame.  The ROM's game-timer pass observes that new state, so it can

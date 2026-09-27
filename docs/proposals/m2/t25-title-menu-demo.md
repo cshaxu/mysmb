@@ -85,3 +85,77 @@ and OpenNT produced the DOS16 MZ. The known pre-existing OpenNT C4761 and
 OLDNAMES.LIB warnings remain non-T25 warnings. S2 adds no ROM-match credit and
 transfers all 26 labels to S3 for independent ROM equivalence proof.
 
+## S3 ROM-logic equivalence audit and S4 handoff
+
+S3 re-read the complete listing range at lines 982--1133 and compared every
+branch, table byte, RAM read/write and callee boundary with the shared C
+owner.  The static table values and source-mode dispatch agree for
+`TitleScreenMode`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`,
+`ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, and
+`DemoOver` on the valid ROM-reachable state range. `StartGame`, `ChkSelect`,
+`ChkWorldSel`, `SelectBLogic`, `NullJoypad`, `ChkContinue`, `StartWorld1`,
+`InitScores`, `ExitMenu`, and `GoContinue` have their source reads/writes
+identified, but remain uncredited because their enclosing menu branches still
+have the gaps below. No label receives ROM-match credit in S3.
+
+Three source-owned mismatches were found:
+
+1. `IncWorldSel -> GoContinue -> UpdateShroom` must return with X equal to
+   zero and write all six bytes of `WSelectBufferTemplate` to
+   `VRAM_Buffer1-1 + 0..5`; then it writes `WorldNumber + 1` to
+   `VRAM_Buffer1+3`. The C loop began at the newly selected world number.
+   This affects `WSelectBufferTemplate`, `IncWorldSel`, and `UpdateShroom`.
+2. `RunDemo` calls `GameCoreRoutine` and immediately tests
+   `GameEngineSubroutine`; a value of six must fall through `ResetTitle` in
+   the same frame. The shared C handoff reached GameCore but omitted that
+   post-call test. This affects `GameMenuRoutine`, `RunDemo`, and
+   `ResetTitle`.
+3. `StartGame -> ChkContinue` with `DemoTimer == 0` branches to the complete
+   `ResetTitle` leaf. The C shortcut only cleared `OperMode` and
+   `OperMode_Task`, omitting the sprite-zero clear and `DisableScreenFlag`
+   increment. This affects `StartGame`, `ChkContinue`, and `ResetTitle`.
+
+The current owner-local recorder was rebuilt from the current two C units and
+the original-ROM title/start/right route was re-run below `build/m2-t25-s3`.
+Its raw 600-sample comparison is deliberately retained as a diagnostic, not
+as a match claim: it diverges before the menu branch because the current
+title-bootstrap trace fixture is not aligned to the ROM NMI bootstrap. S4
+must repair the three enumerated source gaps first, then establish a
+controlled route whose initial RAM/NMI phase is demonstrably the same. This
+does not authorize a visual or platform workaround.
+
+All 26 labels transfer unchanged to S4. S4 owns only the three listed shared
+title/frame-root repairs and the corrected controlled routes; it forecasts no
+completion credit. S5 remains the sole node-credit/closure gate after both
+logic and operational evidence are independently present.
+
+## S4 P1: source-gap repair
+
+S4 repaired the three S3 findings in shared C only. `IncWorldSel` now restores
+the source `GoContinue` X=0 effect before `UpdateShroom` copies all six bytes
+at `$0300..$0305`; it then overwrites `$0304` with the one-based world digit.
+The expired `StartGame -> ChkContinue` path now calls the single title-owned
+`ResetTitle` routine, including the sprite-zero and disable-screen writes.
+The frame root records the `RunDemo` return, invokes the existing shared
+GameCore body only for that return, then performs the source's immediate
+`GameEngineSubroutine == 6` check through the same title-owned reset routine.
+No platform source changed.
+
+`title_demo_smoke` now covers the six-byte B/world template, expired Start
+reset writes, and the post-GameCore task-six reset, in addition to the prior
+player-two Start and demo data checks. It passed from a current x64 link; the
+same changed C units and test compile under strict C90 for x86. The x86/x64
+product targets were rebuilt, OpenNT linked the DOS MZ, and platform purity
+passed. OpenNT retains only its pre-existing C4761 and OLDNAMES.LIB warnings.
+
+Refreshed local artifacts: `mysmb16.exe`
+`D00A226B7B9628A65C7169FBDACB9C942FD5C2860A6404F4AE02A4E83D8E9C90`,
+`mysmb32.exe`
+`33942B8EC68ED08F07F22F18C1A56D149B12216A534C20BC8FF4603C0F28C6CF`,
+and `mysmb64.exe`
+`4EB308DD887518B87E7B7D5DEE520F8253F18CC195EE8FA1BCE316BE8E4E41B6`.
+
+S4 remains active. Its pre-repair current-recorder title/start/right run was
+diagnostic only and still has an unaligned bootstrap phase; it cannot serve as
+the required controlled original-ROM route. The next S4 part must align that
+fixture, rerun the repaired paths, and only then transfer the 26 labels to S5.

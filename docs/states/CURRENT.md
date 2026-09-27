@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S3 Packet
+## M2 T25 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S3, Implementation; independent title/menu/demo ROM logic-equivalence. |
-| Admission And Approval | Owner-approved T25 S plan; S2 closed with the 26 exact labels transferred to this accepted receiver. |
-| Objective | Compare every T25 source branch, table, state read/write and call order to shared C using controlled original-ROM routes. |
-| Non-goals | New feature work, platform behavior, Victory nodes, completion credit or replacing prior source evidence with visual similarity. |
+| Identifier Mode | M2 T25 S4, Implementation; title/menu/demo source-gap repair and operational verification. |
+| Admission And Approval | Owner-approved T25 S plan; S3 closed its independent ROM audit and transferred all 26 labels to this accepted receiver. |
+| Objective | Repair only the three S3-proven shared C source gaps, then obtain controlled original-ROM evidence for title transitions and demo terminal behavior. |
+| Non-goals | Platform behavior, Victory nodes, node-completion credit, visual substitution, or repairs outside title/frame-root ownership. |
 | Reference Baseline | 42 / 1,992 complete; 26 scoped labels, zero expected matches, maximum 42 / 1,992. |
 | Candidate Proposal | [T25 title plan](../proposals/m2/t25-title-menu-demo.md). |
-| Files And ABI Surface | Shared title/frame roots, neutral controlled trace recorder, evidence below build and ledger only. |
+| Files And ABI Surface | Shared title/frame-root code, project-owned title tests, neutral controlled trace recorder, evidence below build and ledger only. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original listing review and controlled ROM routes for Start, Select, B/world, demo actions and terminal demo; compare branch, RAM/table writes and call order. |
-| Expected Markers | None; S3 records proof or gaps before S4 operational verification. |
-| Asset Needs | Owner-local ROM/listing/trace only under build. |
-| Reporting Requirements | Report per-label evidence or exact gap; do not claim completion. |
-| Stop Conditions | Stop on an unexplained source/C branch, state write or downstream ownership conflict. |
-| Exit Criteria | Every scoped label has a ROM logic-equivalence disposition and all 26 labels transfer to S4. |
+| Verification | Listing branch/write review plus controlled original-ROM routes for expired Start/A+Start, Select, B/world template, demo action sequence and task-six demo return; focused tests, x86/x64, DOS16 and purity. |
+| Expected Markers | None; S4 repairs and verifies but records no node credit. |
+| Asset Needs | Owner-local ROM/listing/trace only under build; every implementation P refreshes the three local executable artifacts. |
+| Reporting Requirements | Report each repaired source edge and each route result; transfer all labels to S5 without completion claim. |
+| Stop Conditions | Stop on a new source/C branch, state write, call-order conflict or platform gameplay decision. |
+| Exit Criteria | Each S3 gap has a source-level regression and controlled-ROM disposition; all 26 labels transfer to S5. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Inspect both controller latches, all title exits, demo action boundaries and title-to-GameCore handoff. |
+| Similar-Issue Sweep | Inspect both title reset entries, every `VRAM_Buffer1` title write, and all title-to-GameCore returns. |
 
 ## Recent M4 Closures
 
