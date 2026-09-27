@@ -66435,9 +66435,45 @@
         "NoReset"
       ],
       "maximumComplete": 163,
-      "actualMatches": [],
+      "actualMatches": [
+        "WriteTopStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "LuigiName",
+        "GameTextOffsets",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset"
+      ],
       "evidence": "docs/proposals/m2/screen-status.md",
-      "state": "active-screen-status-text-chain"
+      "state": "active-partial-chain-conformance"
     }
   ]
 }

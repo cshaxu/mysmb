@@ -426,6 +426,22 @@ The refreshed artifacts are `mysmb16.exe`
 `mysmb32.exe` `66776FB670940ED69BB80F085449B83848E8EB7687391201E3DF9BCD661C3331`,
 and `mysmb64.exe` `9A932AF31C68EFD3C339D0F66BB60BF7DD0110E08652620E00E93989BBFC65AC`.
 
+## S2/P17: partial chain conformance disposition
+
+The retained ROM recordings were rechecked: the 200-frame cold-title route
+and 14 four-frame fixtures cover Time Up, Game Over, castle and ordinary
+intermediate display, title/alternate-entry `NoInter`, both reset branches,
+and title tasks 12/13. The compared work RAM `$0300-$07ff`, CIRAM, palette,
+OAM, audio state and PPU scalars are zero-difference in every route.
+
+This P credits the 35 self-contained labels with both source/data and route
+evidence. It retains eight labels without credit: `WriteBottomStatusLine`
+awaits `GetSBNybbles`; `WriteTopScore` awaits `UpdateNumber`; and
+`WarpZoneWelcome`, `WarpZoneNumbers`, `WriteGameText`, `EndGameText`,
+`PrintWarpZoneNumbers`, and `WarpNumLoop` await T29's GameCore/parser
+precondition for a source-reachable Warp route. S2 remains active and keeps
+their custody.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,

@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 120 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal. |
+| ROM-match complete | 155 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,764 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,729 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **120 / 1,992 (6.02%)**. Initial deep verification covered
+Verified conformance is **155 / 1,992 (7.78%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -161,6 +161,44 @@ The following 32 T26 labels have source branch and operational evidence in the
 | 1355 | `GetAltOffset` |
 | 1358 | `FloateyPart` |
 | 1363 | `SetupNumSpr` |
+
+The following 35 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition).
+
+| 1517 | `WriteTopStatusLine` |
+| 1553 | `DisplayTimeUp` |
+| 1560 | `NoTimeUp` |
+| 1565 | `DisplayIntermediate` |
+| 1577 | `PlayerInter` |
+| 1579 | `OutputInter` |
+| 1584 | `GameOverInter` |
+| 1589 | `NoInter` |
+| 1612 | `DrawTitleScreen` |
+| 1624 | `OutputTScr` |
+| 1629 | `ChkHiByte` |
+| 1639 | `ClearBuffersDrawIcon` |
+| 1643 | `TScrClear` |
+| 1648 | `IncSubtask` |
+| 1656 | `IncModeTask_B` |
+| 1661 | `GameText` |
+| 1662 | `TopStatusBarLine` |
+| 1671 | `WorldLivesDisplay` |
+| 1680 | `TwoPlayerTimeUp` |
+| 1682 | `OnePlayerTimeUp` |
+| 1686 | `TwoPlayerGameOver` |
+| 1688 | `OnePlayerGameOver` |
+| 1704 | `LuigiName` |
+| 1712 | `GameTextOffsets` |
+| 1728 | `Chk2Players` |
+| 1731 | `LdGameText` |
+| 1733 | `GameTextLoop` |
+| 1756 | `PutLives` |
+| 1765 | `CheckPlayerName` |
+| 1775 | `ChkLuigi` |
+| 1778 | `NameLoop` |
+| 1782 | `ExitChkName` |
+| 1804 | `ResetSpritesAndScreenTimer` |
+| 1809 | `ResetScreenTimer` |
+| 1813 | `NoReset` |
 
 Each completion links its branch/write, ROM probe and route evidence in the
 [77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
