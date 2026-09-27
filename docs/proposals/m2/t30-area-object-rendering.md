@@ -98,3 +98,8 @@ post-handler length decrement. The ROM-logic evidence is the exact table,
 `LDY AreaType`, indexed load and `JMP GetRow` audit; the operational evidence
 is the coin-row, rope and special-object smoke suite, x86/x64 `--self-test`,
 OpenNT16 MZ link and platform-purity pass.
+
+
+## S2 closure
+
+The two-label receipt has no unfinished custody. Both actual matches are recorded at **435 / 1,992**, and the closure checker validates this proposal as its evidence record. C_ObjectRow -> ColObj remains unadmitted.
