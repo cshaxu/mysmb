@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T26 S3 Packet
+## M2 T26 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T26 S3, implementation; floating-score tables and actor route. |
-| Admission And Approval | Owner-approved source-order M2 plan; T26 S2 closed its no-credit terminal repair and transferred the exact ten-label floating-score subtree. |
-| Objective | Audit and migrate the received floating-score data and actor path in shared C, preserving source ObjectOffset and OAM collaborator boundaries. |
-| Non-goals | Terminal-route equivalence, player/OAM, score arithmetic, external enemy loop, or platform logic. |
-| Reference Baseline | 42 / 1,992 complete; 10 scoped labels, zero expected matches, maximum 42 / 1,992. |
+| Identifier Mode | M2 T26 S4, implementation; unified victory-terminal and floating-score route equivalence. |
+| Admission And Approval | Owner-approved source-order M2 plan; T26 S2 terminal repair and T26 S3 floating-score audit both transferred their exact labels to this pre-accepted receiver. |
+| Objective | Establish source-reachable or controlled ROM equivalence for all 32 received T26 labels before crediting any node. |
+| Non-goals | New gameplay behavior, platform logic, or absorption of player, score, OAM, enemy-loop and area collaborators. |
+| Reference Baseline | 42 / 1,992 complete; 32 scoped labels, zero expected matches, maximum 42 / 1,992. |
 | Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
-| Files And ABI Surface | Shared floating-score owner, focused actor tests, owner-local ROM traces, ledger, and three target artifacts. |
+| Files And ABI Surface | Owner-local reference/native recorders and comparisons, focused shared-C tests, ledger, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | ROM table/read/write and OAM-call-order review; focused actor tests, x86/x64, DOS16, purity, and controlled route evidence. |
-| Expected Markers | None; migration does not substitute for later independent route-equivalence closure. |
-| Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for this implementation P. |
-| Reporting Requirements | State exact table and RAM/OAM order, external-owner exclusions, branch evidence, and unchanged node count. |
-| Stop Conditions | Stop on score/OAM collaborator absorption, platform gameplay logic, or a route whose state is not source-reachable/controlled. |
-| Exit Criteria | Every received floating-score label has an audited shared-C owner and focused source/order proof, with unresolved equivalence transferred. |
+| Verification | Original branch/read/write/call order plus controlled or source-reachable ROM trace comparisons; focused tests, cross-width builds, DOS16 and purity. |
+| Expected Markers | None until each label has both ROM logic-equivalence and operational evidence. |
+| Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
+| Reporting Requirements | Record route preconditions, every compared output domain, branch coverage, incomplete labels and resulting node count. |
+| Stop Conditions | Stop on unsound trace injection, external-owner change, or platform gameplay logic. |
+| Exit Criteria | Per-label ROM and operational evidence supports an explicit complete or transferred disposition for all 32 labels. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Inspect every `FloateyNumbersRoutine` table read, timer write and OAM helper call in shared game code. |
+| Similar-Issue Sweep | Compare every current T26 terminal/floating-score write against its source label and route output. |
 
 ## Recent M4 Closures
 

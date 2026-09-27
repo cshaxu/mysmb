@@ -116,3 +116,7 @@ carry-sensitive vertical coordinate, and two-sprite tile/attribute/X order.
 The S3 focused fixture additionally covers the out-of-range-control clamp and
 the status-boundary carry path. Score arithmetic and OAM allocation remain
 existing named collaborators rather than being duplicated here.
+
+## S3 closure and S4 unified receipt
+
+S3 completed its zero-credit source-order audit of the ten floating-score labels. The tables match byte-for-byte; `FloateyNumbersRoutine` preserves the ROM control/timer/read/write sequence and delegates only existing score and OAM primitives. The focused fixture covers ordinary output, the `$2b` score and 1-UP branch, alternate OAM selection, and the `$0c` control clamp/status-boundary carry path. S3 transfers all ten labels to S4, which now holds all 32 T26 labels for the only credit-bearing route-equivalence decision.

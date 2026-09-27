@@ -8056,8 +8056,8 @@
     {
       "label": "FloateyNumTileData",
       "line": 1287,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8077,8 +8077,8 @@
     {
       "label": "ScoreUpdateData",
       "line": 1303,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8098,8 +8098,8 @@
     {
       "label": "FloateyNumbersRoutine",
       "line": 1308,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8151,8 +8151,8 @@
     {
       "label": "ChkNumTimer",
       "line": 1315,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8172,8 +8172,8 @@
     {
       "label": "DecNumTimer",
       "line": 1320,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8193,8 +8193,8 @@
     {
       "label": "LoadNumTiles",
       "line": 1328,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8214,8 +8214,8 @@
     {
       "label": "ChkTallEnemy",
       "line": 1338,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8235,8 +8235,8 @@
     {
       "label": "GetAltOffset",
       "line": 1355,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8256,8 +8256,8 @@
     {
       "label": "FloateyPart",
       "line": 1358,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8277,8 +8277,8 @@
     {
       "label": "SetupNumSpr",
       "line": 1363,
-      "receiver": "M2 T26 S3",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
       "futurePackage": null,
       "history": [
         {
@@ -56347,6 +56347,26 @@
       ],
       "acceptedBy": "M2 T26 S4 is the pre-accepted integration receiver for terminal route-equivalence after S2 repair.",
       "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-050-t26-s3-to-s4-floatey-equivalence",
+      "type": "transfer",
+      "from": "M2 T26 S3",
+      "to": "M2 T26 S4",
+      "nodes": [
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "acceptedBy": "M2 T26 S4 is the pre-accepted unified route-equivalence receiver after S3 completed the floating-score source-order audit.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
     }
   ],
   "runs": [
@@ -62289,7 +62309,95 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-floatey-source-migration"
+      "state": "closed-zero-credit-source-order-audited-transferred-to-s4"
+    },
+    {
+      "subtask": "M2 T26 S4",
+      "kind": "implementation",
+      "scope": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "active-unified-terminal-and-floatey-route-equivalence"
     }
   ]
 }
