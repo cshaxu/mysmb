@@ -1,3 +1,9 @@
+# Supersession
+
+This early duplicate T21 draft is not an executable candidate.  Its fireball
+range belongs to the bounded T34 chain and its bubbles/timer/Warp range belongs
+to T35 in the authoritative [T21--T51 source-order plan](t21-t49-source-order-recovery.md).  Retain the observations below as historical research only; do
+not admit, transfer, or allocate an S from this document.
 # M2 T21 — bounded T20 successor
 
 ## Scope

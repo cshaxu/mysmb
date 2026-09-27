@@ -83,3 +83,23 @@ residual at sample 362 (`$03ae`) and reduces flagpole OAM divergence to three
 bytes across three late samples; remaining work/CIRAM residuals first occur at
 sample 526 and stay queued for their source owners.  No platform file changed.
 Artifacts: mysmb16.exe CBDC82F47E98049B62586A9ACE5736F219FF906803CA999C333EDF43B557C48D; mysmb32.exe 705D76A5D9559838309E5960E09C05A9FDCDD08CDCEC4D56FEC04EF29CC8AEF5; mysmb64.exe 3D83CA4D91CB4C50EDC4EB05EF971EB803CED17F81EA16524A01D8F22865A55D.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

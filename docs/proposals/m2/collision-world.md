@@ -456,3 +456,23 @@ the odd-frame gate. The focused hammer-bro smoke fixture preloads the
 source-prepared hammer box and proves collision still executes when the removed
 player gates are hostile. The original-ROM route remains deferred to S5's route
 trace lane. Artifacts: mysmb16.exe 2355A6129EE55CDF38D5259B4FAF50D0C3C31F53DC67BE67FB3CC13351CD6B6D, mysmb32.exe F905B63E301BD253C858601EACAB5FB84586BFE4D7C14612916A80E36A4B05FC, and mysmb64.exe  CD85EEEBDAD62958481763BC9D8D506108CA6658F44C35EF4362ABA7C877E5E. x64 and x86 CTest each pass 83/83; the OpenNT DOS16 link passes.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

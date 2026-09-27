@@ -96,3 +96,23 @@ No node became ROM-match complete in S4/P1. All 24 unfinished labels were
 transferred by accepted ledger events to M2 T21 S6, which is the fireball,
 bubble, timer and Warp closure group. T20 therefore retains no unfinished
 custody.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

@@ -197,4 +197,23 @@ ROM `MoveNormalEnemy` reaches `FallE -> MoveD_EnemyVertically` for ordinary low 
 ## S5 P22: preserve parser-task-seven enemy-stream gate
 
 ROM EnemiesAndLoopsCore gates ProcessEnemyData for inactive slots with AreaParserTaskNum & $07: task $07 returns without consuming EnemyDataOffset. The shared T19 core now preserves that gate. The focused stream regression proves task $07 leaves the current record, stream offset, and all six flags untouched, while task $06 consumes it on the next core pass. The controller-only late 1-1 route removes the previous OAM/actor divergence: both CIRAM pages, palette, visible OAM, audio commands, and PPU scalars are ROM-equal for 600 samples. x64/x86 CTest pass 83/83; OpenNT DOS16 links with its existing OLDNAMES.LIB warning. Artifacts: 16 EE61D29AEF999A811D7863D4237047CC74835E5F57EF3B9D2E6D99F042BF8ED4, 32 128AC60B76B69F4C06FCB350397FF2F8D0D62098F0273693400A9831AD156167, 64 B5864F09B8322CD0A9C2E6D0B4B00D3C015E2B9E2D5A0890FB12C503347A0ADF.
+## Chain-delivery governance amendment
 
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

@@ -80,3 +80,23 @@ Refreshed artifacts: `mysmb16.exe`
 `4485D9BAA0FD7488130C91BE880BF7EA5A8A3FCE984BEED822C48D75A02DC80D`,
 `mysmb32.exe` `A5A3D6DB2124387DEC73C44E8C88BF3A4A347D4D5C029DFBA22A2FEA3931F392`,
 and `mysmb64.exe` `A6C357AE988CFC126AC6176AF1E70F4A13245582B0596FBEBC11C1A0FD4E5417`.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

@@ -750,3 +750,10 @@ a 3,600-frame warmup plus 600 recorded frames for the terminal-zero flow. In
 both windows original ROM, x86 and x64 agree in work RAM `$0300-$07ff`, CIRAM,
 palette, OAM, audio and PPU scalars. DOS16 links the same shared owner. All 26
 T25 labels are now ROM-match complete.
+## T25 chain-delivery governance confirmation
+
+The retained S1--S25 records are historical.  A future continuation receives
+only one bounded title/menu or demo chain with one shared owner and one ROM
+route; it performs source comparison, repair and both verification tracks in
+that same S.  Its individual labels remain in the ledger and inventory.  It
+uses the binding [M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

@@ -87,3 +87,23 @@ A source-reachable demo continuation, obtained by starting 1-1 from the title an
 ## S4 P3: source-owner boundary gate
 
 The real demo continuation reaches `BlockObjectsCore` after T15 has already completed its title-owned `DemoEngine` handoff.  Its first remaining work-RAM differences are `Block_Rel_XPos`/`Block_Rel_YPos` (`$03b1/$03bc`) and `JumpCoinMiscOffset` (`$06b7`).  The authoritative inventory marks `RelativeBlockPosition` (line 14816), `GetBlockOffscreenBits` (14884), and the required offscreen/relative-position primitives as open in the OAM/offscreen-and-graphics slice; `BlockObjectsCore` itself (7468) and the jump-coin producer belong to the blocks/items/misc slice.  No code is changed in this P: adding these routines to `title_modes.c`, `terminal_modes.c`, or as another local calculation in `objects.c` would violate the source owner map.  T15 S4 therefore records a clean transfer: its title entry and demo-controller handoff are exact through the P2 checkpoint, while the subsequent block/OAM divergence is a prerequisite for the corresponding structural tasks, not a terminal-mode defect.  The next admitted implementation task must begin with its S1 structure-only move, preserve behavior, name these labels and RAM writes, and then run the same continuation as a regression.  The P2 three artifacts remain the current executable baseline because this classification intentionally changes no runtime bytes.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

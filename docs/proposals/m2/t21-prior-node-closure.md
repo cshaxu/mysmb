@@ -1,3 +1,9 @@
+# Supersession
+
+This oversized all-unfinished-nodes draft is superseded by the bounded
+[T21--T51 source-order plan](t21-t49-source-order-recovery.md).  It receives
+no future implementation S and cannot be used to aggregate unrelated nodes.
+Retain it solely as a historical custody/accounting record.
 # M2 T21 — T20-and-earlier unfinished-node closure
 
 ## Status

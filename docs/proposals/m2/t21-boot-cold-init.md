@@ -4,14 +4,14 @@
 
 T21 owns exactly 7 ROM boot labels: `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory`. Baseline is **3 / 1,992**; S1 forecasts no new completed nodes.
 
-## S plan
+## S delivery plan
 
-1. **S1 active — node contract:** establish root call edges, RAM/OAM ownership, tables and both verification routes.
-2. **S2 — shared-C migration:** translate only the admitted boot/cold-init owners.
-3. **S3 — ROM logic-equivalence:** compare branches, reads/writes, initialization order and controlled cold/warm routes.
-4. **S4 — operational verification:** focused tests, x86/x64, DOS16, platform purity and boot route.
-5. **S5 — closure:** update `NODE_PROGRESS.md`, report every label and transfer unresolved work.
-
+The recorded S1--S5 sequence is historical evidence.  Any future T21
+continuation uses one `Start -> InitializeMemory` boot/cold chain per admitted
+S: its seven labels remain separately tracked, while source comparison, repair
+and both verification tracks are delivered together.  The first-NMI boundary
+is a separate T22 chain; it must not be folded into boot merely to make a
+larger packet.  See the source-order plan for the receiving boundary.
 ## S1/P1 source contract
 
 | Node | ROM behavior | Current shared-C owner | S3 logic-equivalence route | S4 operational route |
@@ -203,3 +203,23 @@ source-order package now owns the integrated first-NMI boundary: it must
 separate container construction from ROM state, move later title bootstrap
 work into its source-owned NMI position, and then re-admit exact node credit.
 The conformance count remains **3 / 1,992**.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

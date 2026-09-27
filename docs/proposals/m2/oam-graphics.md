@@ -143,3 +143,23 @@ pass 83/83; the shared OpenNT DOS16 MZ links with the established
 `744F7743FB70DB18953754AA497A7C0AC35641282DF49273E4414C287A900BD0`,
 `mysmb32.exe` `7DB844C20D263FB83616616DA77AC423FFAF8E10B1E18ABB82F092A33104C3BD`,
 and `mysmb64.exe` `8DF33D35B069024FE4F1BE3B5888AF8B6259BE432BFC5E88DBC09D27F8F70AEC`.
+## Chain-delivery governance amendment
+
+The fixed "map, migrate, equivalence audit, operational test, closure" S
+sequence in this proposal is historical planning evidence only.  For the next
+admission or continuation in this task, one S must deliver one bounded,
+contiguous ROM control/data chain: it records the exact labels in source order,
+its entry and exit, one shared C owner, predecessor/successor dependencies,
+and one ROM route that exercises the chain.  Mapping, the shared-C repair when
+needed, node-by-node control/read/write/table/call-order comparison, and the
+operational proof belong to that same S.
+
+The node inventory and ledger still retain a separate row and final
+completion disposition for every label.  A chain P runs one common ROM replay,
+focused tests, x86/x64 builds, DOS16 link, platform-purity check, and refreshes
+the three required local target artifacts.  T closure adds only the
+cross-chain route matrix and integrated three-target regression.  It must not
+recreate those gates for each leaf.  A chain may not cross an unadmitted
+dependency, a different shared-owner boundary, or a branch family requiring a
+different ROM route.  The binding authority is
+[the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).

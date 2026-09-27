@@ -1,3 +1,9 @@
+# Supersession
+
+This 57-slot bulk-verification draft is superseded by the bounded
+[T21--T51 source-order plan](t21-t49-source-order-recovery.md).  It may be
+consulted for historic receipts, but it cannot create a future T or S, transfer
+nodes, or prescribe a fixed audit-only sequence.
 # M2 candidate: Historical unresolved node closure package
 
 ## Status and owner request

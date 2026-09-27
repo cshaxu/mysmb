@@ -165,3 +165,11 @@ GAME OVER player-selection rule. Local ROM-table smoke coverage, platform
 purity and x86/x64 builds pass; DOS16 links. `mysmb16.exe`
 `E912E3F3E6967C6D31834F1256937585F5871FAC3358BF0BBE627AE0F67F4ECA`;
 the x86/x64 hashes remain as recorded in P3.
+## S2 chain-delivery confirmation
+
+S2 retains its admitted 43-label `WriteTopStatusLine -> NoReset` scope and
+will close it as one chain.  It does not create separate mapping, migration,
+audit, test, or paperwork S stages.  Each remaining P may repair and compare
+adjacent members of that chain, but credits none until the shared ROM route and
+operational track cover the named label.  Any member blocked by the T29 parser
+or another accepted owner transfers by exact name before S2 closes.

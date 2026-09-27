@@ -8,6 +8,14 @@ The plan retains boot as `T21` and NMI as `T22`, then assigns future source slic
 
 Every future M2 admission follows the [chain-based S delivery rule](../rules/EXECUTION.md#m2-chain-based-s-delivery): nodes remain individually tracked, while one S delivers a bounded contiguous call/data chain with one shared ROM route and one three-target validation pass.  The fixed five-stage S pattern is retired for future admissions; historical S records remain evidence only.
 
+## Current-chain transition
+
+The active `M2 T27 S2` already uses the chain rule and completes its admitted
+43-label status/text chain unchanged.  The next admitted S in every current or
+queued M2 T must use the source-order chain table defined by the recovery plan;
+it may not revive the retired fixed five-stage pattern.  This changes delivery
+granularity only: node custody, source order, dual verification, tracker rows,
+and three-target P delivery remain mandatory.
 ## M1 Candidates
 
 1. [Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) — closed in M1.

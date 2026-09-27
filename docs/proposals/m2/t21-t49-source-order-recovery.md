@@ -690,3 +690,13 @@ The registry and queue were audited against the plan. Historical `T23` and
 Future rows are uniquely `T25` through `T51`, in contiguous ROM order. This
 S changes no node receiver, node status, transfer, game source or platform
 adapter. Its zero-label closure leaves the M2 numerator at `42 / 1,992`.
+## Admission record template
+
+Before admitting any listed task, its proposal must replace generic S bullets
+with a small source-order chain table.  Every row names: chain entry/exit;
+exact inventory labels in order; sole shared-game owner; predecessor and
+successor receipts; one ROM route; focused tests; and the exact expected
+completion subset.  The admitted packet and ledger run carry the same names
+and counts.  There is no standalone mapping, migration, audit, operations, or
+paperwork S unless it is an explicit zero-credit chain blocked by a named
+external dependency.  Existing historical S/P evidence stays immutable.

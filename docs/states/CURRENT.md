@@ -2,16 +2,18 @@
 
 ## Current Work
 
-**M2 T21 is closed without new node credit: its seven boot labels are in the queued T22 NMI/PPU custody package for integrated first-NMI repair.**
+**Active implementation packet: M2 T27 S2, the 43-label `WriteTopStatusLine -> NoReset` shared-game chain. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation's active packet and cannot preempt T21.
+nodes; it is not this implementation's active packet and cannot preempt T27 S2.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains queued after the active T21 closure task.
+remains a queued historical record and cannot preempt the active T27 S2 chain.
 
-**M2 T23 S2/P1 complete (S2 active); M2 T22 S1/P2 active; M2 T21 S2/P2 and S5/P1 active; M2 T20 S4/P1 active; M2 T19 S5/P20, and M2 T18 S2/P1 active; M2 T17 S6/P6 active (S2/S3 complete; source-route closure active); M2 T16 S3/P8 active; M2 T15 S4 remains gated at its cross-slice block prerequisite.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the T27 S2 packet below is active.**
 
-| Field | Record |
+## Retained M2 T15 summary
+
+| Field | Historical record |
 | --- | --- |
 | Identifier Mode | Implementation |
 | Objective | Create the source-owned OAM/offscreen module tree before migrating the real-demo block/OAM prerequisite; retain T15 title/terminal route evidence without cross-slice fixes. |
