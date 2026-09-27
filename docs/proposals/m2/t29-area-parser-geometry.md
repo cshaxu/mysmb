@@ -1258,3 +1258,23 @@ carry outcome, data bytes, branches, state writes and return order through an
 ordinary GameEngine parser route plus source-RAM shaped branch cases.
 Operational verification runs the focused parser smoke, x86/x64 builds, DOS16
 link, platform-purity check, and one three-artifact package for each implementation P.
+
+## S10 closure: allocation and final-object geometry chain
+
+S10 closes **10 / 10** labels at **422 / 1,992**.  `$994a-$999d` is
+translated only in shared `area.c`: the five-slot scan returns a found/full
+result without host behavior; water writes `$86,$87,$87`; question rows select
+rows three/seven with `$c0`; bridge variants select rows six/seven/nine with
+`$0b,$63`; and flag balls start at row two with `$6d`.  The source-shaped
+parser smoke covers every terminal data branch and allocation exhaustion.  A
+controlled ordinary ROM `L_GroundArea3` `$4c,$63` route reaches
+`ProcessAreaData` and `$9968-$9978` QuestionBlockRow_High; the native mirror
+records the same two-frame route.  Hole_Water and FlagBalls_Residual have no
+matching live area-stream object in this ROM revision, so their table/branch
+proof is the source-shaped shared parser case, not a fabricated natural route.
+
+Operationally, x86/x64 parser and purity checks pass, the shared tree links
+as DOS16, and the refreshed artifacts are `mysmb16.exe`
+`7056CC823F231D2DF51B69F0C5E9A4214E852103A61333D691AB62360394618F`,
+`mysmb32.exe` `9242B0EF3E47A1FD184D839D8DCA544D262F4607E90CBBA0CA6E8BF5D616155A`,
+and `mysmb64.exe` `1F47F83DA5ACFD4F29288C4B8F5E748E4FFB2B7630DDFA9F97FC38DDD31F3AE5`.

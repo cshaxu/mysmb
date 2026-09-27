@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 412 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 422 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,475 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,465 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **412 / 1,992 (20.68%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **422 / 1,992 (21.18%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (412)
+## Completed matches (422)
 
 
 | ROM line | Node |
@@ -447,6 +447,17 @@ of equivalent native nodes. No product repair is part of this audit.
 
 Each completion links its branch/write, ROM probe and route evidence in the
 [77-node audit](../etc/architecture/m2-t24-s1-node-verification.md).
+
+| 3921 | `FindEmptyEnemySlot` |
+| 3923 | `EmptyChkLoop` |
+| 3929 | `ExitEmptyChk` |
+| 3933 | `Hole_Water` |
+| 3944 | `QuestionBlockRow_High` |
+| 3948 | `QuestionBlockRow_Low` |
+| 3960 | `Bridge_High` |
+| 3964 | `Bridge_Middle` |
+| 3968 | `Bridge_Low` |
+| 3983 | `FlagBalls_Residual` |
 
 ## Accounting audit, 2026-09-26
 

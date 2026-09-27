@@ -552,16 +552,16 @@ The labels and branches behind every line remain open until individually bound b
 | 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
-| 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
-| 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |
-| 3929 | `ExitEmptyChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitemptychk) |
-| 3933 | `Hole_Water` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_water) |
-| 3944 | `QuestionBlockRow_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_high) |
-| 3948 | `QuestionBlockRow_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_low) |
-| 3960 | `Bridge_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_high) |
-| 3964 | `Bridge_Middle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_middle) |
-| 3968 | `Bridge_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_low) |
-| 3983 | `FlagBalls_Residual` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagballs_residual) |
+| 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
+| 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |
+| 3929 | `ExitEmptyChk` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitemptychk) |
+| 3933 | `Hole_Water` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_water) |
+| 3944 | `QuestionBlockRow_High` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_high) |
+| 3948 | `QuestionBlockRow_Low` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblockrow_low) |
+| 3960 | `Bridge_High` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_high) |
+| 3964 | `Bridge_Middle` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_middle) |
+| 3968 | `Bridge_Low` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_low) |
+| 3983 | `FlagBalls_Residual` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagballs_residual) |
 | 3991 | `FlagpoleObject` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-flagpoleobject) |
 | 4018 | `EndlessRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessrope) |
 | 4023 | `BalancePlatRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatrope) |

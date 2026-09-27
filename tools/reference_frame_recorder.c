@@ -746,6 +746,18 @@ static void mysmb_reference_apply_t29_geometry_vertical_pipe_fixture(lib_u8 *ram
     ram[0x0760u] = 1u;
 }
 
+/* L_GroundArea3 contains the original $4c,$63 QuestionBlockRow_High pair.
+ * The fixture selects that resident area-stream object at an NMI boundary;
+ * GameEngine remains responsible for ProcessAreaData, RunAObj and JumpEngine. */
+static void mysmb_reference_apply_t29_final_question_fixture(lib_u8 *ram)
+{
+    mysmb_reference_apply_t29_geometry_castle_fixture(ram);
+    ram[0x0726u] = 4u;
+    ram[0x072cu] = 0x32u;
+    ram[0x00e7u] = 0x37u;
+    ram[0x00e8u] = 0xa5u;
+}
+
 /* T29/S8 additional real area-stream objects.  Each variant remains at a
  * normal NMI return and lets GameEngine dispatch the ROM parser; only the
  * already-reached stream cursor/page/column state differs. */
@@ -1264,6 +1276,7 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-castle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 90u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-vertical-pipe") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 91u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-final-question-high") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 92u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1530,6 +1543,9 @@ int main(int argument_count, char **arguments)
                         driver->machine->ram);
                     t29_vertical_pipe_pending = LIB_TRUE;
                 }
+                else if (t26_fixture == 92u)
+                    mysmb_reference_apply_t29_final_question_fixture(
+                        driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

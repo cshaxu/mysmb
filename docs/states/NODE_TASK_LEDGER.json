@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -56740,7 +56740,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -73667,7 +73667,18 @@
         "FlagBalls_Residual"
       ],
       "maximumComplete": 422,
-      "actualMatches": [],
+      "actualMatches": [
+        "FindEmptyEnemySlot",
+        "EmptyChkLoop",
+        "ExitEmptyChk",
+        "Hole_Water",
+        "QuestionBlockRow_High",
+        "QuestionBlockRow_Low",
+        "Bridge_High",
+        "Bridge_Middle",
+        "Bridge_Low",
+        "FlagBalls_Residual"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
       "state": "admitted-allocation-final-geometry-chain"
     }

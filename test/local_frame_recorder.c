@@ -598,6 +598,17 @@ static void mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(
     game->ram[0x0760U] = 1U;
 }
 
+/* Source-RAM mirror of L_GroundArea3's real $4c,$63 question-block row. */
+static void mysmb_recorder_apply_t29_final_question_fixture(
+    struct mysmb_game *game)
+{
+    mysmb_recorder_apply_t29_geometry_castle_fixture(game);
+    game->ram[0x0726U] = 4U;
+    game->ram[0x072cU] = 0x32U;
+    game->ram[0x00e7U] = 0x37U;
+    game->ram[0x00e8U] = 0xa5U;
+}
+
 static void mysmb_recorder_apply_t29_special_chain_fixture(
     struct mysmb_game *game, mysmb_u8 kind)
 {
@@ -1087,6 +1098,7 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-zero-water") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 83U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-final-question-high") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 86U; }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
@@ -1229,6 +1241,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_castle_fixture(&game);
             else if (t26_fixture == 85U)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
+            else if (t26_fixture == 86U)
+                mysmb_recorder_apply_t29_final_question_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
