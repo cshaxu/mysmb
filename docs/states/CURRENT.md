@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T27 S3, the four-label `ScreenRoutines -> AreaParserTaskControl -> TaskLoop -> OutputCol` shared-game integration audit. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Active implementation packet: M2 T28 S1, the 13-node `RenderAreaGraphics -> SetVRAMCtrl` renderer and attribute-packet chain. T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation's active packet and cannot preempt T27 S3.
+nodes; it is not this implementation packet and cannot preempt M2 T28 S1.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains a queued historical record and cannot preempt the active T27 S3 chain.
+remains a queued historical record and cannot preempt the active M2 T28 S1 packet.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the T27 S3 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S1 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -67,27 +67,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T27 S3 Packet
+## M2 T28 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T27 S3, implementation audit; four-node screen-dispatch/parser integration boundary. |
-| Admission And Approval | Owner-approved continuation after S2 closed 43/43 labels at 163 / 1,992; S3 was already the registered receiver for these four integration labels. |
-| Objective | Compare the `ScreenRoutines -> AreaParserTaskControl -> TaskLoop -> OutputCol` integration boundary against the ROM without absorbing parser behavior. |
-| Non-goals | No T18 S4 parser implementation or credit, no full parser route, host UI rule, platform gameplay logic or unrelated repair. |
-| Reference Baseline | 163 / 1,992 complete; four incoming open labels; expected zero matches until the T18 S4 parser chain is independently proven; maximum 163 / 1,992. |
-| Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
-| Files And ABI Surface | Shared screen dispatcher/area integration owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
+| Identifier Mode | M2 T28 S1, implementation; renderer and attribute-packet chain. |
+| Admission And Approval | Owner-approved source-order continuation after Td S8 closed the legacy receiver cycle and accepted this exact receipt. |
+| Objective | Translate and prove `RenderAreaGraphics -> RenderAttributeTables -> SetVRAMCtrl`, including the two metatile-table labels, in shared C. |
+| Non-goals | No T29 parser state, T31 `GameEngine` caller, platform rendering decision, unrelated block writer, or label outside the thirteen-node receipt. |
+| Reference Baseline | 163 / 1,992 complete; 13 open scoped labels; expected 13 matches; maximum 176 / 1,992. |
+| Candidate Proposal | [M2 T28 area output and bootstrap](../proposals/m2/t28-area-output-bootstrap.md). |
+| Files And ABI Surface | `src/game/area.c`, shared frame-output contract, controlled ROM/native recorder, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source comparison for ROM `$8565`, `$879f-$87a6`; controlled dispatch-boundary route only when its parser dependency is sound; focused tests; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
-| Expected Markers | ScreenRoutines table selection, `DisableScreenFlag` set, parser task loop and column-set exit boundary. |
+| Verification | Static source audit; controlled ROM/native renderer entry; focused local-area and parser-column regressions; x86/x64 builds, DOS16 link and platform-purity gate. |
+| Expected Markers | Source-order metatile reads, both side/row attribute branches, Buffer2 packet bytes, attribute packet bytes, and `$0773 = 6` handoff. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Delivery Profile | One bounded integration audit. It may establish only local dispatch/control boundaries and has no completion credit until the named parser dependency is resolved. |
-| Reporting Requirements | Record each node's control/read/write comparison, the dependency boundary, operational result, completed/deferred labels and exact before/after count. |
-| Stop Conditions | Stop on nonmatching source branch, unresolved T18 S4 parser boundary, trace alignment error, source-policy breach or platform gameplay logic. |
-| Exit Criteria | All four labels have both tracks, after the independent T18 S4 parser chain is complete; otherwise transfer only to an accepted successor. |
-| Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery. |
-| Similar-Issue Sweep | Review game/platform sources for dispatch or parser decisions; record all production hits and defer parser behavior to T18 S4. |
+| Delivery Profile | One continuous source-order chain; each of its thirteen nodes retains its own ROM/C evidence and ledger disposition. |
+| Reporting Requirements | Record source addresses, C owner, branch/table outcomes, controlled output comparison and all thirteen dispositions. |
+| Stop Conditions | Stop on a nonmatching source branch/table, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All thirteen labels are ROM-match complete with controlled operational evidence and no unrelated node credit. |
+| Original Owner Request | Maintain MTSP ownership, source order, dual verification and clean task handoffs. |
+| Similar-Issue Sweep | Check that no platform source owns metatile, attribute, packet or task state and that downstream parser/caller labels remain uncredited. |
 
 ## Recent M4 Closures
 

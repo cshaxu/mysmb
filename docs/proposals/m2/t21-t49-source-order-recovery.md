@@ -715,6 +715,32 @@ The registry and queue were audited against the plan. Historical `T23` and
 Future rows are uniquely `T25` through `T51`, in contiguous ROM order. This
 S changes no node receiver, node status, transfer, game source or platform
 adapter. Its zero-label closure leaves the M2 numerator at `42 / 1,992`.
+
+## M2 Td S8 admission: legacy receiver reconciliation
+
+T27 S3 exposed a governance-only cycle: its four screen/parser integration
+roots depended on parser behavior retained under legacy `M2 T18 S4`, while
+that record had closed only an `InitializeGame` prerequisite and supplied no
+admittable parser chain. The recovery plan already assigns the physical source
+regions to T28 (1825--2794), T29 (2796--3990), and T30 (3991--5314). Td S8
+therefore audits every incomplete ledger row against that authoritative table,
+returns T27's unclosed roots to T24 S2 custody, and prepares the next T28
+receipt without changing any node status or product source.
+
+### Td S8 result
+
+The audit partitions all 1,829 incomplete ledger rows into the authoritative
+T21--T51 physical-source ranges; none falls outside the recovery plan. T27 S3
+closed with its four integration roots returned to the already accepted T24 S2
+custody. The legacy T18 S4 receiver retains the remaining later source labels,
+but no longer blocks source-order work: its first thirteen renderer labels were
+transferred through a validated receipt to the newly admitted T28 S1. Td S8
+changed no node completion status or product source and closes at 163 / 1,992.
+
+T28 S1 is the active successor. Its receipt is exactly
+`RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`,
+`SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`,
+`SetVRAMCtrl`, `MetatileGraphics_Low`, and `MetatileGraphics_High`.
 ## Admission record template
 
 Before admitting any listed task, its proposal must replace generic S bullets

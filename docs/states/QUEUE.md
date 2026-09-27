@@ -6,6 +6,11 @@ The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-o
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
+The next source-order implementation receiver is [M2 T28 area output and
+bootstrap](../proposals/m2/t28-area-output-bootstrap.md). Its first admitted
+chain is the 13-label renderer/attribute packet; T29 parser and later roots
+remain later dependencies rather than being pulled into T28.
+
 Every future M2 admission follows the [chain-based S delivery rule](../rules/EXECUTION.md#m2-chain-based-s-delivery): nodes remain individually tracked, while one S delivers a bounded contiguous call/data chain with one shared ROM route and one three-target validation pass.  The fixed five-stage S pattern is retired for future admissions; historical S records remain evidence only.
 
 ## Current-chain transition

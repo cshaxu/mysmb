@@ -631,6 +631,16 @@ x64 `--self-test`, with SHA-256 values
 `C8A604C36802BDC5208C77BC2B54E000797156B309A0791F19FB6FA1663E1E01`, and
 `FE2BA84E8B497C86F8E3DB8D7E7D6E02021E0D577DA2D262AF252B542FDEBAAE`.
 
+## S3 closure: deferred parser integration roots
+
+S3 closes with zero newly complete labels at **163 / 1,992**. Its controlled
+route proved the local table and final-set order, but the independent parser
+chain required by all four roots is not admitted under the source-order plan.
+`ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, and `OutputCol` return
+to the accepted M2 T24 S2 custody receiver. A later source-order parser
+admission must accept them explicitly before final integration proof; T27 does
+not retain them merely to wait on a legacy T18 record.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
