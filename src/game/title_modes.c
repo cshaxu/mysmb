@@ -62,23 +62,34 @@ static mysmb_u8 mysmb_game_apply_title_area(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM $8255, ChkContinue through StartWorld1; pointer loading is M2 T3. */
-static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 buttons)
+/* ROM $82d8 ChkContinue.  The caller has already made the source's exact
+ * Start/A+Start comparison.  A set A bit is therefore the ASL carry path. */
+static mysmb_u8 mysmb_game_chk_continue(struct mysmb_game *game,
+                                        mysmb_u8 buttons)
 {
-    mysmb_u8 offset;
-    struct mysmb_area_source source;
-
     if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
         mysmb_game_reset_title(game);
-        return;
+        return 0U;
     }
     if ((buttons & MYSMB_BUTTON_A) != 0U) {
+        /* ROM $830e GoContinue, called only by the A+Start carry path. */
         game->ram[MYSMB_RAM_WORLD] = game->ram[MYSMB_RAM_CONTINUE_WORLD];
         game->ram[MYSMB_RAM_OFFSCREEN_WORLD] =
             game->ram[MYSMB_RAM_CONTINUE_WORLD];
         game->ram[MYSMB_RAM_AREA] = 0U;
         game->ram[MYSMB_RAM_OFFSCREEN_AREA] = 0U;
     }
+    return 1U;
+}
+
+/* ROM $82e6 StartWorld1 through its later InitScores fallthrough.  Pointer
+ * loading is owned by M2 T3; this boundary deliberately has no title-input
+ * decision. */
+static void mysmb_game_start_world1(struct mysmb_game *game)
+{
+    mysmb_u8 offset;
+    struct mysmb_area_source source;
+
     game->ram[MYSMB_RAM_HIDDEN_1UP]++;
     game->ram[MYSMB_RAM_OFFSCREEN_HIDDEN_1UP]++;
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
@@ -99,6 +110,14 @@ static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 button
         game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
         offset--;
     } while (offset != 0xffU);
+}
+
+/* ROM $8255 StartGame is the direct jump into ChkContinue. */
+static void mysmb_game_start_from_title(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    if (mysmb_game_chk_continue(game, buttons) != 0U) {
+        mysmb_game_start_world1(game);
+    }
 }
 
 mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,

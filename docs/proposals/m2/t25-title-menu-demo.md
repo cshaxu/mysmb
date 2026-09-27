@@ -506,3 +506,28 @@ S14 completes `UpdateShroom` at **85 / 1,992**: controlled B path reaches `$82a9
 ## S15 admission: ChkContinue entry
 
 S15 scopes `ChkContinue`, baseline **85 / 1,992**, expected `ChkContinue`, maximum **86 / 1,992**.
+
+## S15 closure: ChkContinue dual-branch entry
+
+S15 completes exactly `ChkContinue`, reaching **86 / 1,992**.  The shared C
+owner is now isolated as `mysmb_game_chk_continue`: a zero `DemoTimer` calls
+the already-complete `ResetTitle`; a nonzero timer sends ordinary Start through
+the no-carry `StartWorld1` successor, while A+Start first performs the source
+`ContinueWorld`/`GoContinue` writes and then reaches the same successor.
+Controlled original-ROM coverage reaches `$82d8` in both forms and records the
+distinct carry-side instructions.  Each 200-frame ROM/x86, ROM/x64 and
+x86/x64 comparison has zero differences in work RAM, CIRAM, palette, OAM,
+audio and PPU scalars.  Focused title smoke, bootstrap smoke and platform
+purity pass; the same shared C source links as DOS16 MZ.  Refreshed artifacts
+are `mysmb16.exe` `3A0C5AEA47CDA6A1155150A7A2BB62F1938A4A5976FD4E491EDC1E3A86778B6A`,
+`mysmb32.exe` `3CF272367CE6358909DE051C553B4E453D554B6682982D34340CD2DC682871ED`,
+and `mysmb64.exe` `B183019F1047C646F32D043F039FCA8C97B42E7562ED071E459781095150E830`.
+The remaining 14 labels transfer without status change to S16.
+
+## S16 admission: StartWorld1 common continuation
+
+S16 scopes only `StartWorld1`, baseline **86 / 1,992**, expected
+`StartWorld1`, maximum **87 / 1,992**.  It must independently prove the
+common `LoadAreaPointer` successor and first-frame writes on both Start forms;
+the downstream `InitScores`, `ExitMenu`, and every other retained label remain
+uncredited.
