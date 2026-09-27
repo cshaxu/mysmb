@@ -6,7 +6,8 @@ enum {
     MYSMB_BLOCK_ORIGINAL_Y = 0x03e4U,
     MYSMB_BLOCK_BUFFER_LOW = 0x03e6U,
     MYSMB_BLOCK_METATILE = 0x03e8U,
-    MYSMB_BLOCK_REPLACE_FLAG = 0x03ecU
+    MYSMB_BLOCK_REPLACE_FLAG = 0x03ecU,
+    MYSMB_BLOCK_GFX_DATA = 0x0a39U
 };
 /* Translation of ROM $bed4 BlockObjMT_Updater together with the static
  * WriteBlockMetatile/PutBlockMetatile command encoding at $2027-$209d.
@@ -14,13 +15,6 @@ enum {
  * its other block slot until the following NMI has consumed this update. */
 void mysmb_area_apply_block_replacements(struct mysmb_game *game)
 {
-    static const mysmb_u8 block_graphics[20] = {
-        0x45U, 0x45U, 0x47U, 0x47U,
-        0x47U, 0x47U, 0x47U, 0x47U,
-        0x57U, 0x58U, 0x59U, 0x5aU,
-        0x24U, 0x24U, 0x24U, 0x24U,
-        0x26U, 0x26U, 0x26U, 0x26U
-    };
     mysmb_u8 slot;
     mysmb_u8 index;
     mysmb_u8 buffer_offset;
@@ -29,6 +23,8 @@ void mysmb_area_apply_block_replacements(struct mysmb_game *game)
     mysmb_u8 high;
     mysmb_u16 address;
 
+    if (game->area_prg == 0 || game->area_prg_size <
+        MYSMB_BLOCK_GFX_DATA + 20U) return;
     for (slot = 2U; slot != 0U; --slot) {
         index = (mysmb_u8)(slot - 1U);
         if (game->ram[MYSMB_VRAM_BUFFER1_DATA] != 0U) continue;
@@ -63,17 +59,17 @@ void mysmb_area_apply_block_replacements(struct mysmb_game *game)
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 1U] = low;
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 2U] = 2U;
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 3U] =
-            block_graphics[(mysmb_u8)(graphics_index * 4U)];
+            game->area_prg[MYSMB_BLOCK_GFX_DATA + (mysmb_u8)(graphics_index * 4U)];
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 4U] =
-            block_graphics[(mysmb_u8)(graphics_index * 4U + 1U)];
+            game->area_prg[MYSMB_BLOCK_GFX_DATA + (mysmb_u8)(graphics_index * 4U + 1U)];
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 5U] = high;
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 6U] =
             (mysmb_u8)(low + 0x20U);
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 7U] = 2U;
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 8U] =
-            block_graphics[(mysmb_u8)(graphics_index * 4U + 2U)];
+            game->area_prg[MYSMB_BLOCK_GFX_DATA + (mysmb_u8)(graphics_index * 4U + 2U)];
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 9U] =
-            block_graphics[(mysmb_u8)(graphics_index * 4U + 3U)];
+            game->area_prg[MYSMB_BLOCK_GFX_DATA + (mysmb_u8)(graphics_index * 4U + 3U)];
         game->ram[MYSMB_VRAM_BUFFER1_DATA + buffer_offset + 10U] = 0U;
         game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
         /* ROM ReplaceBlockMetatile: INC Block_ResidualCounter before

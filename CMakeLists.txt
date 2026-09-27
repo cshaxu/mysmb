@@ -661,6 +661,12 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_area_output_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_area_output_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.area-output-smoke COMMAND mysmb_area_output_smoke)
+    add_executable(mysmb_block_graphics_smoke test/block_graphics_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_block_graphics_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_block_graphics_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.block-graphics-smoke COMMAND mysmb_block_graphics_smoke)
     add_executable(mysmb_palette_rotation_smoke test/palette_rotation_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_palette_rotation_smoke PRIVATE src
