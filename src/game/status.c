@@ -106,7 +106,8 @@ void mysmb_status_apply_digit_modifier(struct mysmb_game *game, mysmb_u8 digit_o
             digit_offset--;
         }
     }
-    for (index = 0U; index <= 6U; ++index) game->ram[MYSMB_STATUS_MODIFIER + index] = 0U;
+    for (index = 0U; index <= 6U; ++index)
+        game->ram[MYSMB_STATUS_MODIFIER - 1U + index] = 0U;
 }
 
 void mysmb_status_update_top_score(struct mysmb_game *game)

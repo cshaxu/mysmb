@@ -318,3 +318,15 @@ coin digits (`StatusBarOffset[3] - 2 = 22`).
 This remains a checkpoint, not completion credit. The focused tests establish
 the C-visible state; original-ROM route comparison is still required for all
 nineteen labels before the inventory can change.
+
+## S7 P4 source-loop correction and caller sweep
+
+The `EraseMLoop` translation now clears exactly `DigitModifier-1` through
+`DigitModifier+5` (`$0133-$0139`), preserving the byte immediately after the
+source range. The status smoke seeds both boundary bytes for carry and borrow
+paths, so an off-by-one clear cannot pass. The similar-issue sweep found one
+remaining production copy of this loop in the flagpole score route; it now
+calls the shared status owner. Its regression declares the non-title operation
+mode required by `DigitsMathRoutine`, matching the source title-mode erase
+branch. No S7 node receives completion credit from this checkpoint: the
+controlled original-ROM/native status route remains required.

@@ -1,6 +1,7 @@
 #include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/area.h"
+#include "game/status.h"
 
 enum {
     MYSMB_FLAG_ENEMY_FLAG = 0x000fU, MYSMB_FLAG_ENEMY_ID = 0x0016U,
@@ -10,34 +11,14 @@ enum {
     MYSMB_FLAG_ENEMY_REL_Y = 0x03b9U, MYSMB_FLAG_ENEMY_SPRITE_OFFSET = 0x06e5U,
     MYSMB_FLAG_GAME_SUBROUTINE = 0x000eU, MYSMB_FLAG_PLAYER_STATE = 0x001dU,
     MYSMB_FLAG_PLAYER_Y = 0x00ceU, MYSMB_FLAG_CURRENT_PLAYER = 0x0753U,
-    MYSMB_FLAG_DISPLAY_DIGITS = 0x07d7U, MYSMB_FLAG_DIGIT_MODIFIER = 0x0134U,
+    MYSMB_FLAG_DIGIT_MODIFIER = 0x0134U,
     MYSMB_FLAG_FNUM_Y = 0x010dU, MYSMB_FLAG_FNUM_Y_DUMMY = 0x010eU,
     MYSMB_FLAG_SCORE = 0x010fU, MYSMB_FLAG_COLLISION_Y = 0x070fU
 };
 
 static void mysmb_flagpole_apply_score(struct mysmb_game *game, mysmb_u8 offset)
 {
-    mysmb_u8 index;
-    mysmb_u8 value;
-
-    index = 5U;
-    while (1) {
-        value = (mysmb_u8)(game->ram[MYSMB_FLAG_DIGIT_MODIFIER + index] +
-                           game->ram[MYSMB_FLAG_DISPLAY_DIGITS + offset]);
-        if (value >= 0x80U) {
-            game->ram[MYSMB_FLAG_DIGIT_MODIFIER + index - 1U]--;
-            value = 9U;
-        } else if (value >= 10U) {
-            value = (mysmb_u8)(value - 10U);
-            game->ram[MYSMB_FLAG_DIGIT_MODIFIER + index - 1U]++;
-        }
-        game->ram[MYSMB_FLAG_DISPLAY_DIGITS + offset] = value;
-        if (index == 0U) break;
-        --index;
-        --offset;
-    }
-    for (index = 0U; index <= 6U; ++index)
-        game->ram[MYSMB_FLAG_DIGIT_MODIFIER + index] = 0U;
+    mysmb_status_apply_digit_modifier(game, offset);
 }
 
 void mysmb_objects_start_flagpole(struct mysmb_game *game, mysmb_u8 page,

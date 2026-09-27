@@ -11,18 +11,26 @@ static int mysmb_status_test_digits(void)
     game.ram[0x0770U] = 1U;
     game.ram[0x07d7U + 0x0bU] = 9U;
     game.ram[0x0134U + 5U] = 1U;
+    game.ram[0x0133U] = 0x5aU;
+    game.ram[0x013aU] = 0xa5U;
     mysmb_status_apply_digit_modifier(&game, 0x0bU);
     if (game.ram[0x07d7U + 0x0bU] != 0U) return 11;
     if (game.ram[0x07d7U + 0x0aU] != 1U) return 12;
     for (index = 0U; index <= 6U; ++index)
-        if (game.ram[0x0134U + index] != 0U) return 2;
+        if (game.ram[0x0133U + index] != 0U) return 2;
+    if (game.ram[0x013aU] != 0xa5U) return 13;
 
     memset(&game, 0, sizeof(game));
     game.ram[0x0770U] = 1U;
     game.ram[0x0134U + 5U] = 0xffU;
+    game.ram[0x0133U] = 0x5aU;
+    game.ram[0x013aU] = 0xa5U;
     mysmb_status_apply_digit_modifier(&game, 0x0bU);
     for (index = 0U; index < 6U; ++index)
         if (game.ram[0x07d7U + 0x06U + index] != 9U) return 3;
+    for (index = 0U; index <= 6U; ++index)
+        if (game.ram[0x0133U + index] != 0U) return 4;
+    if (game.ram[0x013aU] != 0xa5U) return 5;
     return 0;
 }
 

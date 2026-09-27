@@ -34,6 +34,7 @@ int main(void)
     mysmb_objects_start_flagpole(&game, 0U, 0x80U);
     game.ram[0x000eU] = 4U; game.ram[0x001dU] = 3U;
     game.ram[0x00ceU] = 0x20U; game.ram[0x00cfU + 5U] = 0xaaU;
+    game.ram[0x0770U] = 1U;
     game.ram[0x010fU] = 2U;
     mysmb_objects_step_flagpole(&game);
     if (game.ram[0x000eU] != 5U || game.ram[0x07e1U] != 8U) return 10;
