@@ -558,3 +558,26 @@ The source audit found one shared-C discrepancy: ROM `SetMiscOffset` starts at `
 ## T22/S20 closure and T22/S27 proof admission
 
 S20 closes at **35 / 1,992** with no node credit after restoring the `SetMiscOffset` group-write order. Its six labels transfer to S27 for independent controlled-ROM proof, forecast **41 / 1,992**.
+
+
+## T22/S27 sprite-shuffle equivalence result
+
+All six shuffle labels are **ROM-match complete**, raising conformance from **35 /
+1,992** to **41 / 1,992**. An independent controlled original-ROM NMI probe
+initializes `SprShuffleAmtOffset` to 0, 1 and 2, `SprShuffleAmt` to
+`$10/$20/$30`, and fifteen offsets containing below-threshold `$20/$27`,
+threshold `$28`, and overflow `$f0` inputs. It samples original RAM after the
+shuffle branch. Selector 0 becomes 1 with `$f0 -> $28`; selector 1 becomes 2
+with `$f0 -> $38`; selector 2 becomes 0 with `$f0 -> $48`. In every case
+offsets below `$28` remain unchanged, qualifying offsets use the source
+carry-plus-`$28` path, and misc groups derive from final offsets 5, 6 and 7 in
+the original group 2, 1, 0 write order.
+
+`mysmb.sprite-shuffle-smoke` now holds these three ROM-output vectors rather
+than inferred C-only expectations. Direct x86 and x64 cross compiles pass, as
+does platform-purity. The DOS16 MZ and Win32 x86/x64 product artifacts were
+structurally/self-test revalidated; SHA-256 values are
+`421F5D916B4156CA21E1CFE81BFBDFD5E1ECB6809064BAB0EA896B1984525735`,
+`F223DCF2A5F164D5DF9E056FFD25BCA58FE35F50AF666D9BC5B4701FA960379B`,
+and `19430DAF99CCFD461A8E04F602F009CAEAE3EBF9E68CB0357151D19DC4DE736A`
+for DOS16, Win32 x86 and Win32 x64 respectively.

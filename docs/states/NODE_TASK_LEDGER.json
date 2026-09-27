@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -54922,7 +54922,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -60243,9 +60243,16 @@
         "SetMiscOffset"
       ],
       "maximumComplete": 41,
-      "actualMatches": [],
+      "actualMatches": [
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset"
+      ],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-sprite-shuffle-equivalence-review"
+      "state": "closed-complete-sprite-shuffle-equivalence"
     }
   ]
 }
