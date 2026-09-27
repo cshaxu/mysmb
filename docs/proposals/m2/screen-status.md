@@ -316,6 +316,21 @@ The refreshed P9 artifacts are `mysmb16.exe`
 and `mysmb64.exe`
 `E519F402868C21A8BBF973497CF16249F97F7D8CE5CA923C782F09496CFD55D8`.
 
+## S2/P10: title transfer and buffer-boundary audit
+
+`DrawTitleScreen` reads CHR `$1ec0`, discards the initial PPU read, and the
+`OutputTScr` / `ChkHiByte` loop copies exactly `$013a` bytes through CPU RAM
+`$0300-$0439`. The owner-local title generator directly extracts that CHR
+range. The expanded title-bootstrap smoke now reaches the actual screen task
+12 and asserts every copied byte, preserves a `$043a` sentinel, and observes
+task advancement to 13. It then reaches task 13, proves the source clear range
+`$0300-$04ff`, verifies the ROM-owned eight-byte icon overwrite at the buffer
+start, and observes advancement to 14.
+
+This is a direct data/boundary audit plus the existing 200-NMI cold-title ROM
+route. It does not credit the nodes: the non-title exits, title-score
+`UpdateNumber` collaborator, and final cross-branch matrix remain required.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -335,11 +350,11 @@ both tracks are accepted at S2 closure.
 | `OutputInter` | `game.c` task 4/task 6 common writes | Mapped; Time Up and intermediate fixtures. Pending common-path byte matrix. |
 | `GameOverInter` | `game.c` task 6, `terminal_modes.c` game-over root | Mapped; one-player plus both two-player-name zero-difference routes. Pending final text-byte matrix. |
 | `NoInter` | `game.c` task 6 direct task-8 assignment | Mapped; local-area and alternate-entry zero-difference route. Pending title-mode route. |
-| `DrawTitleScreen` | `game.c` task 12 | Mapped; local title tests and 200-frame cold-title route. Pending exact title-transfer byte matrix. |
-| `OutputTScr` | `game.c` title-data copy loop | Mapped; title bootstrap smoke and cold-title route. Pending source-byte/count audit record. |
-| `ChkHiByte` | `game.c` title-data copy bound | Mapped; title bootstrap smoke. Pending exact `$043a` boundary record. |
-| `ClearBuffersDrawIcon` | `game.c` task 13 | Mapped; title bootstrap smoke and cold-title route. Pending mode-nonzero exit route. |
-| `TScrClear` | `game.c` task 13 clear loop | Mapped; title bootstrap smoke. Pending complete `$0300-$04ff` byte audit. |
+| `DrawTitleScreen` | `game.c` task 12 | Mapped; 200-frame cold-title route and P10 exact byte matrix. Pending non-title exit. |
+| `OutputTScr` | `game.c` title-data copy loop | Mapped; P10 CHR `$1ec0` / 314-byte task-12 audit. Pending final cross-branch matrix. |
+| `ChkHiByte` | `game.c` title-data copy bound | Mapped; P10 `$043a` untouched sentinel. Pending final cross-branch matrix. |
+| `ClearBuffersDrawIcon` | `game.c` task 13 | Mapped; P10 clear/icon audit and cold-title route. Pending mode-nonzero exit route. |
+| `TScrClear` | `game.c` task 13 clear loop | Mapped; P10 complete `$0300-$04ff` audit. Pending final cross-branch matrix. |
 | `IncSubtask` | `game.c` task transitions | Mapped; all screen fixtures. Pending final table-wide transition matrix. |
 | `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | Mapped; title bootstrap smoke. Pending source `UpdateNumber` collaborator audit. |
 | `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes. Pending non-title DrawTitle exit route. |

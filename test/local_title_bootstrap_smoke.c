@@ -22,11 +22,15 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     unsigned short index;
+    unsigned short title_index;
     unsigned char saw_title_transfer;
     unsigned char saw_icon_queue;
     unsigned char saw_title_palette_queue;
     unsigned char saw_menu_game_core;
     unsigned char saw_primary_setup;
+    unsigned char saw_title_buffer;
+    unsigned char saw_title_clear;
+    unsigned char screen_task;
     unsigned short menu_frame;
     unsigned long title_hash;
 
@@ -71,12 +75,40 @@ int main(void)
     saw_title_palette_queue = 0U;
     saw_menu_game_core = 0U;
     saw_primary_setup = 0U;
+    saw_title_buffer = 0U;
+    saw_title_clear = 0U;
     menu_frame = 0xffffU;
     title_hash = 0UL;
     for (index = 0U; index < 79U; ++index) {
+        screen_task = game.ram[0x073cU];
+        if (screen_task == 12U) game.ram[0x043aU] = 0x5aU;
         if (game.ram[0x0773U] == 5U) title_hash = mysmb_title_table_hash(&game);
         if (game.ram[0x0300U] == 7U) saw_icon_queue = 1U;
         mysmb_game_tick(&game, &input, &frame);
+        if (screen_task == 12U) {
+            for (title_index = 0U; title_index < MYSMB_LOCAL_TITLE_DATA_SIZE;
+                 ++title_index) {
+                if (game.ram[(unsigned short)(0x0300U + title_index)] !=
+                    mysmb_local_title_data[title_index]) return 1;
+            }
+            if (game.ram[0x043aU] != 0x5aU || game.ram[0x073cU] != 13U)
+                return 1;
+            saw_title_buffer = 1U;
+        }
+        if (screen_task == 13U) {
+            for (title_index = 0U; title_index < MYSMB_LOCAL_TITLE_ICON_DATA_SIZE;
+                 ++title_index) {
+                if (game.ram[(unsigned short)(0x0300U + title_index)] !=
+                    mysmb_local_title_icon_data[title_index]) return 1;
+            }
+            for (title_index = MYSMB_LOCAL_TITLE_ICON_DATA_SIZE;
+                 title_index < 0x0200U; ++title_index) {
+                if (game.ram[(unsigned short)(0x0300U + title_index)] != 0U)
+                    return 1;
+            }
+            if (game.ram[0x073cU] != 14U) return 1;
+            saw_title_clear = 1U;
+        }
         if (menu_frame == 0xffffU && game.ram[0x0770U] == 0U &&
             game.ram[0x0772U] == 3U) menu_frame = index;
         if (game.ram[0x0770U] == 0U && game.ram[0x0772U] == 3U &&
@@ -95,6 +127,7 @@ int main(void)
     if (game.ram[0x073cU] != 14U) return 1;
     if (saw_title_transfer == 0U || saw_icon_queue == 0U ||
         saw_menu_game_core == 0U || saw_primary_setup == 0U ||
-        saw_title_palette_queue == 0U) return 1;
+        saw_title_palette_queue == 0U || saw_title_buffer == 0U ||
+        saw_title_clear == 0U) return 1;
     return 0;
 }
