@@ -104,3 +104,15 @@ the platform-purity gate passed. The refreshed artifact hashes are
 and `mysmb64.exe` `007FD8366AF77D0F10C1796A71698EC7AB28D6560116DC3DC02ADFA69AA862AB`.
 The expected and actual ROM-match sets remain empty in S2: source repair and
 operational proof do not claim the later S4 route-equivalence credit.
+
+## S2 closure and S3 receipt
+
+S2 closed with zero new ROM-match labels after transferring the ten
+floating-score labels to S3 and the remaining 22 terminal labels to S4 for
+route-equivalence integration. S3 begins with `FloateyNumbersRoutine`:
+`objects.c` already preserves the source control clamp, timer-zero clear,
+pre-decrement `$2b` score/1-UP test, normal-versus-alternate OAM selection,
+carry-sensitive vertical coordinate, and two-sprite tile/attribute/X order.
+The S3 focused fixture additionally covers the out-of-range-control clamp and
+the status-boundary carry path. Score arithmetic and OAM allocation remain
+existing named collaborators rather than being duplicated here.

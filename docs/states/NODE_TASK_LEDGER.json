@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -7410,8 +7410,8 @@
     {
       "label": "VictoryMode",
       "line": 1137,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7471,8 +7471,8 @@
     {
       "label": "AutoPlayer",
       "line": 1144,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7492,8 +7492,8 @@
     {
       "label": "VictoryModeSubroutines",
       "line": 1147,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7545,8 +7545,8 @@
     {
       "label": "SetupVictoryMode",
       "line": 1159,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7582,8 +7582,8 @@
     {
       "label": "PlayerVictoryWalk",
       "line": 1169,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7643,8 +7643,8 @@
     {
       "label": "PerformWalk",
       "line": 1178,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7664,8 +7664,8 @@
     {
       "label": "DontWalk",
       "line": 1180,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7685,8 +7685,8 @@
     {
       "label": "ExitVWalk",
       "line": 1195,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7706,8 +7706,8 @@
     {
       "label": "PrintVictoryMessages",
       "line": 1201,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7759,8 +7759,8 @@
     {
       "label": "MRetainerMsg",
       "line": 1215,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7780,8 +7780,8 @@
     {
       "label": "ThankPlayer",
       "line": 1217,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7801,8 +7801,8 @@
     {
       "label": "SecondPartMsg",
       "line": 1223,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7822,8 +7822,8 @@
     {
       "label": "EvalForMusic",
       "line": 1232,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7843,8 +7843,8 @@
     {
       "label": "PrintMsg",
       "line": 1236,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7864,8 +7864,8 @@
     {
       "label": "IncMsgCounter",
       "line": 1240,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7885,8 +7885,8 @@
     {
       "label": "SetEndTimer",
       "line": 1248,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7906,8 +7906,8 @@
     {
       "label": "IncModeTask_A",
       "line": 1251,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7927,8 +7927,8 @@
     {
       "label": "ExitMsgs",
       "line": 1252,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7948,8 +7948,8 @@
     {
       "label": "PlayerEndWorld",
       "line": 1256,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -7993,8 +7993,8 @@
     {
       "label": "EndExitOne",
       "line": 1271,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8014,8 +8014,8 @@
     {
       "label": "EndChkBButton",
       "line": 1272,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8035,8 +8035,8 @@
     {
       "label": "EndExitTwo",
       "line": 1281,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S4",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
       "futurePackage": null,
       "history": [
         {
@@ -8056,8 +8056,8 @@
     {
       "label": "FloateyNumTileData",
       "line": 1287,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8077,8 +8077,8 @@
     {
       "label": "ScoreUpdateData",
       "line": 1303,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8098,8 +8098,8 @@
     {
       "label": "FloateyNumbersRoutine",
       "line": 1308,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8151,8 +8151,8 @@
     {
       "label": "ChkNumTimer",
       "line": 1315,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8172,8 +8172,8 @@
     {
       "label": "DecNumTimer",
       "line": 1320,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8193,8 +8193,8 @@
     {
       "label": "LoadNumTiles",
       "line": 1328,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8214,8 +8214,8 @@
     {
       "label": "ChkTallEnemy",
       "line": 1338,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8235,8 +8235,8 @@
     {
       "label": "GetAltOffset",
       "line": 1355,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8256,8 +8256,8 @@
     {
       "label": "FloateyPart",
       "line": 1358,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -8277,8 +8277,8 @@
     {
       "label": "SetupNumSpr",
       "line": 1363,
-      "receiver": "M2 T26 S2",
-      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
+      "receiver": "M2 T26 S3",
+      "receivingBasis": "T26 S2 terminal repair closed; T26 S3 accepted the floating-score actor subtree.",
       "futurePackage": null,
       "history": [
         {
@@ -55726,7 +55726,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -56294,6 +56294,58 @@
         "SetupNumSpr"
       ],
       "acceptedBy": "M2 T26 S2 is the pre-accepted source-order receiver after its S1 audit identified the exact terminal tree and its external collaborators.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-048-t26-s2-to-s3-floatey",
+      "type": "transfer",
+      "from": "M2 T26 S2",
+      "to": "M2 T26 S3",
+      "nodes": [
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "acceptedBy": "M2 T26 S3 is the pre-accepted floatey actor receiver under the owner-approved T26 S plan.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-049-t26-s2-to-s4-terminal-equivalence",
+      "type": "transfer",
+      "from": "M2 T26 S2",
+      "to": "M2 T26 S4",
+      "nodes": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo"
+      ],
+      "acceptedBy": "M2 T26 S4 is the pre-accepted integration receiver for terminal route-equivalence after S2 repair.",
       "evidence": "docs/proposals/m2/t26-victory-terminal.md"
     }
   ],
@@ -62171,7 +62223,73 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-terminal-owned-repair-and-migration"
+      "state": "closed-zero-credit-terminal-repairs-transferred"
+    },
+    {
+      "subtask": "M2 T26 S3",
+      "kind": "implementation",
+      "scope": [
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "active-floatey-source-migration"
     }
   ]
 }

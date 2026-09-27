@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T26 S2 Packet
+## M2 T26 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T26 S2, implementation; Victory, terminal modes and floating scores. |
-| Admission And Approval | Owner-approved source-order M2 plan; T26 S1 completed its zero-credit 32-node contract and accepted the exact T15 S4 transfer. |
-| Objective | Restore the two audited terminal-owned source discrepancies while preserving the received 32-node tree and its named collaborator boundaries. |
-| Non-goals | Player/OAM, area, enemy-loop, score-arithmetic, audio-handler or platform logic; node credit is reserved for later independent route proof. |
-| Reference Baseline | 42 / 1,992 complete; 32 scoped labels, zero expected matches, maximum 42 / 1,992. |
+| Identifier Mode | M2 T26 S3, implementation; floating-score tables and actor route. |
+| Admission And Approval | Owner-approved source-order M2 plan; T26 S2 closed its no-credit terminal repair and transferred the exact ten-label floating-score subtree. |
+| Objective | Audit and migrate the received floating-score data and actor path in shared C, preserving source ObjectOffset and OAM collaborator boundaries. |
+| Non-goals | Terminal-route equivalence, player/OAM, score arithmetic, external enemy loop, or platform logic. |
+| Reference Baseline | 42 / 1,992 complete; 10 scoped labels, zero expected matches, maximum 42 / 1,992. |
 | Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
-| Files And ABI Surface | Shared terminal mode owner, focused terminal regressions, owner-local ROM traces, ledger, and three target artifacts. |
+| Files And ABI Surface | Shared floating-score owner, focused actor tests, owner-local ROM traces, ledger, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | ROM `PlayerEndWorld`/NMI timer placement and `EndChkBButton` dual-latch branch; focused C tests, x86/x64, DOS16, purity, and controlled ROM routes. |
-| Expected Markers | None; implementation repair does not substitute for per-node equivalence closure. |
+| Verification | ROM table/read/write and OAM-call-order review; focused actor tests, x86/x64, DOS16, purity, and controlled route evidence. |
+| Expected Markers | None; migration does not substitute for later independent route-equivalence closure. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for this implementation P. |
-| Reporting Requirements | State exact source writes/order, external-owner exclusions, branch evidence, and unchanged node count. |
-| Stop Conditions | Stop on an external-owner repair, platform gameplay logic, or a route whose state is not source-reachable/controlled. |
-| Exit Criteria | Both audited terminal discrepancies are repaired in shared C with focused proof and no cross-slice code change. |
+| Reporting Requirements | State exact table and RAM/OAM order, external-owner exclusions, branch evidence, and unchanged node count. |
+| Stop Conditions | Stop on score/OAM collaborator absorption, platform gameplay logic, or a route whose state is not source-reachable/controlled. |
+| Exit Criteria | Every received floating-score label has an audited shared-C owner and focused source/order proof, with unresolved equivalence transferred. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Inspect every `WorldEndTimer` writer/decrement and all `SavedJoypad2Bits` consumers in terminal code. |
+| Similar-Issue Sweep | Inspect every `FloateyNumbersRoutine` table read, timer write and OAM helper call in shared game code. |
 
 ## Recent M4 Closures
 
