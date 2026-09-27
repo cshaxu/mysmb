@@ -69534,9 +69534,14 @@
         "SkipByte"
       ],
       "maximumComplete": 269,
-      "actualMatches": [],
+      "actualMatches": [
+        "InitPageLoop",
+        "InitByteLoop",
+        "InitByte",
+        "SkipByte"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
-      "state": "active-initialize-memory-loop-chain"
+      "state": "closed-initialize-memory-loop-chain"
     }
   ]
 }

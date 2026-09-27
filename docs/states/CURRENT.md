@@ -77,7 +77,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Non-goals | No host clear policy, synthetic leaf entry, 6502-stack emulation, or label outside the four-node receipt. |
 | Reference Baseline | 265 / 1,992 complete; four scoped open labels; expected four matches; maximum 269 / 1,992. |
 | Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
-| Files And ABI Surface | Shared memory-clear owner and headers, controlled ROM/native recorder, focused shared-memory smoke, ledger, and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared memory-clear owner and headers, controlled ROM/native recorder, focused cold-start and reset-root smokes, ledger, and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
 | Verification | Source audit of `$8fc2-$8fda`; normal reset/cold-start ROM/native route; focused loop regression; x86/x64, DOS16 and purity checks. |
 | Expected Markers | Descending `$0700` through `$0000` page order, preserved `$0160-$01ff` stack window, Y-byte wrap, and source return boundary. |

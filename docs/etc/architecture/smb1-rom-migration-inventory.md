@@ -405,10 +405,10 @@ The labels and branches behind every line remain open until individually bound b
 | 2775 | `ShufAmtLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2780 | `ISpr0Loop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2795 | `InitializeMemory` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
-| 2799 | `InitPageLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpageloop) |
-| 2800 | `InitByteLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyteloop) |
-| 2804 | `InitByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyte) |
-| 2805 | `SkipByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipbyte) |
+| 2799 | `InitPageLoop` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
+| 2800 | `InitByteLoop` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
+| 2804 | `InitByte` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
+| 2805 | `SkipByte` | M2 T29 S1 shared initialization-loop owner | ROM-match complete | [T29 S1 closure](../../proposals/m2/t29-area-parser-geometry.md#s1-closure-initializememory-loop-chain) |
 | 2814 | `MusicSelectData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-musicselectdata) |
 | 2818 | `GetAreaMusic` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareamusic) |
 | 2830 | `ChkAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatype) |

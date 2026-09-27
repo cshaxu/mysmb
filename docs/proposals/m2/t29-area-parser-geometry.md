@@ -56,7 +56,8 @@ wrap, and return condition.  The route is ordinary reset/cold start; the
 recorder may set only documented reset input/state and must never inject a
 leaf PC or stack.
 
-The operational track adds a focused shared-memory smoke on x86 and x64,
+The operational track adds `mysmb.ram-cold-start-smoke` and
+`mysmb.reset-root-smoke` on x86 and x64,
 paired ROM/native cold-start recording, the platform-purity gate, OpenNT
 DOS16 link, and the three required artifacts.  No platform file may own a
 clear range, RAM boundary, or game-state default.
@@ -65,3 +66,26 @@ T29 closes only after every planned chain has dual-track evidence, every
 incomplete label has an accepted successor, and the integrated area-entry,
 parser-column, object-stream, and large-object regression matrix passes on
 all three targets.
+
+## S1 closure: InitializeMemory loop chain
+
+S1 closes at **269 / 1,992**. `InitPageLoop`, `InitByteLoop`, `InitByte`,
+and `SkipByte` are ROM-match complete; no scoped node is deferred or
+transferred. The shared C90 owner was already correct, so this S adds no
+product approximation or platform branch.
+
+The source audit maps the four labels to `$90d2`, `$90d4`, `$90dc`, and
+`$90de`. `mysmb_game_initialize_memory` preserves the source page descent
+from `$07` to `$00`, Y wrap, the `$0100-$015f` clear, and the `$0160-$01ff`
+skip. A natural original-ROM cold-start recording reached those PCs 24, 5,819,
+5,339, and 5,819 times respectively; it covers both the ordinary store and
+the page-one skipped-store branch. The project-owned cold-start smoke checks
+the entire `$0000-$07ff` result for both original caller values `$fe` and
+`$d6`.
+
+`mysmb.ram-cold-start-smoke`, `mysmb.reset-root-smoke`, and
+`mysmb.platform-purity` passed on Win32 x86 and x64. The shared core linked as
+an OpenNT DOS16 MZ. The refreshed delivery artifacts are `mysmb16.exe`
+`35F2F7E4BC35003422D03177114297D0B08FB2BCE848F7B226CC1E773B68BDA9`,
+`mysmb32.exe` `F6C837731891CD03329E45F7756D108B20133AD2402B0CFB9AEB72D12A193B43`,
+and `mysmb64.exe` `BF47B6738F830527A21C695FB305CB266843E5DFE627053C86B9F7F30845FB3F`.
