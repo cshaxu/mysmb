@@ -180,3 +180,24 @@ match. All 26 labels therefore transfer to S5 for final, per-label accounting
 without credit. S5 must retain this dependency and cannot promote any label
 until the T18 `InitializeGame` repair and a regenerated controlled route are
 available.
+
+## S5 per-node closure accounting
+
+All 26 labels remain **unmatched, retained by M2 T25 S5**. The common missing
+evidence is not an unspecified title defect: the controlled product-start
+route cannot reach the ROM's title-menu countdown until T18 supplies
+`InitializeGame`'s `$07a2=$18` write. The table records the exact state of
+each label so a later replay can promote only what its route proves.
+
+| Labels | S3/S4 source disposition | Required before ROM-match credit |
+| --- | --- | --- |
+| `TitleScreenMode`, `GameMenuRoutine`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `NullJoypad` | Task selector and menu branches reviewed; S4 exercised Select and B branch state locally. | Regenerated title route after T18 initialization, including neutral and Select frames. |
+| `WSelectBufferTemplate`, `IncWorldSel`, `UpdateShroom`, `GoContinue` | S4 corrected the X=0 six-byte template write and source-order world write; focused regression verifies `$0300..$0305`. | Controlled world-select-enabled ROM state and matching VRAM-buffer observation. |
+| `StartGame`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu` | S4 corrected the expired-demo reset leaf; normal Start/A+Start writes and downstream area owner are mapped. | Start and A+Start route after aligned countdown; area-pointer dependent bytes remain their existing owner evidence. |
+| `RunDemo`, `ResetTitle` | S4 corrected `GameCoreRoutine` return followed by immediate task-six reset; focused regression covers the RAM writes. | Aligned idle-to-demo route through a ROM-reachable task-six return. |
+| `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon` | Source byte order and two-player overwrite reviewed; existing focused test covers both icon layouts. | Aligned Select route comparing queued bytes and committed output. |
+| `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` | Literal tables, action/timer order and terminal zero timing reviewed; focused regression covers first, middle and terminal actions. | Aligned idle-to-demo trace through the complete action sequence. |
+
+No inventory state changes in S5. This is a closure-accounting checkpoint,
+not a task closure: it retains the exact title labels until the recorded T18
+dependency changes the route evidence.
