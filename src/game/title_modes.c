@@ -8,6 +8,7 @@
  * mode subtrees move out of game.c. */
 enum {
     MYSMB_RAM_SAVED_JOYPAD1 = 0x06fcU,
+    MYSMB_RAM_SAVED_JOYPAD2 = 0x06fdU,
     MYSMB_RAM_HIDDEN_1UP = 0x075dU,
     MYSMB_RAM_WORLD = 0x075fU,
     MYSMB_RAM_AREA = 0x0760U,
@@ -238,7 +239,7 @@ static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
 /* ROM $8231/$8245/$8255 GameMenuRoutine.  The title menu still runs
  * GameCoreRoutine every frame; once DemoTimer expires DemoEngine replaces the
  * latched controller byte before that common route consumes it. */
-void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)
+mysmb_u8 mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)
 {
     static const mysmb_u8 world_select_template[6] = {
         0x04U, 0x20U, 0x73U, 0x01U, 0x00U, 0x00U
@@ -248,20 +249,21 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
     mysmb_u8 world;
 
     (void)input;
-    buttons = game->ram[MYSMB_RAM_SAVED_JOYPAD1];
+    buttons = (mysmb_u8)(game->ram[MYSMB_RAM_SAVED_JOYPAD1] |
+        game->ram[MYSMB_RAM_SAVED_JOYPAD2]);
     if (game->ram[MYSMB_RAM_OPER_MODE] != 0U ||
         game->ram[MYSMB_RAM_OPER_MODE_TASK] != 3U) {
-        return;
+        return 0U;
     }
     if (buttons == MYSMB_BUTTON_START ||
         buttons == (MYSMB_BUTTON_A | MYSMB_BUTTON_START)) {
         mysmb_game_start_from_title(game, buttons);
-        return;
+        return 0U;
     }
     if (buttons == MYSMB_BUTTON_SELECT) {
         if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
             mysmb_game_reset_title(game);
-            return;
+            return 0U;
         }
         game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
         if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
@@ -274,7 +276,7 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
              buttons == MYSMB_BUTTON_B) {
         if (game->ram[MYSMB_RAM_DEMO_TIMER] == 0U) {
             mysmb_game_reset_title(game);
-            return;
+            return 0U;
         }
         game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
         if (game->ram[MYSMB_RAM_SELECT_TIMER] == 0U) {
@@ -297,10 +299,12 @@ void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     if (game->ram[MYSMB_RAM_DEMO_TIMER] != 0U) {
         game->ram[MYSMB_RAM_SAVED_JOYPAD1] = 0U;
-        return;
+        return 1U;
     }
     game->ram[MYSMB_RAM_SELECT_TIMER] = buttons;
     if (mysmb_game_step_title_demo(game) != 0U) {
         mysmb_game_reset_title(game);
+        return 0U;
     }
+    return 1U;
 }

@@ -68,3 +68,20 @@ The 26 labels transfer from historical `M2 T15 S4` to accepted `M2 T25 S2`.
 S2 must preserve the stated source ordering and address both recorded gaps
 before any equivalence forecast.
 
+## S2 shared-C migration result
+
+`mysmb_game_title_step` now ORs the two source joypad latches before the exact
+Start/A+Start comparisons and returns whether its source control path reaches
+`RunDemo`. `mysmb_frame_root_step` invokes the existing shared GameCore path
+only for that true result; Start and ResetTitle consume the title branch. No
+GameCore dispatcher was copied into the title owner, and no platform code
+changed. `title_demo_smoke` proves a demo frame advances the existing entrance
+subroutine from zero to seven, in addition to its title-table and terminal
+checks; it also proves player-two Start follows the source comparison.
+
+The direct x86/x64 C90 compilations passed, the focused x64 linked smoke and
+both Win32 product `--self-test` invocations passed, platform purity passed,
+and OpenNT produced the DOS16 MZ. The known pre-existing OpenNT C4761 and
+OLDNAMES.LIB warnings remain non-T25 warnings. S2 adds no ROM-match credit and
+transfers all 26 labels to S3 for independent ROM equivalence proof.
+

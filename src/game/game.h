@@ -131,7 +131,7 @@ void mysmb_game_power_on(struct mysmb_game *game);
  * mysmb_game_power_on so they cannot advance later ROM work before NMI. */
 void mysmb_game_initialize(struct mysmb_game *game);
 /* ROM $8231/$8245/$8255, title-menu state and title-to-game-mode transfer. */
-void mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);
+mysmb_u8 mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input);
 void mysmb_game_checkpoint(const struct mysmb_game *game,
                            struct mysmb_checkpoint *checkpoint);
 void mysmb_game_frame_initialize(struct mysmb_frame *frame);

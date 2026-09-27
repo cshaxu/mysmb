@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S1 Packet
+## M2 T25 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S1, Audit; title/menu/demo source contract. |
-| Admission And Approval | Owner-approved source-order recovery after Td S7 identifier reconciliation. |
-| Objective | Map the exact 26 title/menu/demo nodes, source edges, RAM/table semantics and existing shared-C boundaries. |
-| Non-goals | Code repair, ownership transfer, node credit, Victory nodes from line 1137 onward, platform behavior or ROM-derived assets. |
+| Identifier Mode | M2 T25 S3, Implementation; independent title/menu/demo ROM logic-equivalence. |
+| Admission And Approval | Owner-approved T25 S plan; S2 closed with the 26 exact labels transferred to this accepted receiver. |
+| Objective | Compare every T25 source branch, table, state read/write and call order to shared C using controlled original-ROM routes. |
+| Non-goals | New feature work, platform behavior, Victory nodes, completion credit or replacing prior source evidence with visual similarity. |
 | Reference Baseline | 42 / 1,992 complete; 26 scoped labels, zero expected matches, maximum 42 / 1,992. |
 | Candidate Proposal | [T25 title plan](../proposals/m2/t25-title-menu-demo.md). |
-| Files And ABI Surface | Proposal, ledger, queue/plan boundary and active packet only. |
-| Applicable Rules | Task Reading Set, execution, documentation, architecture, coding, source policy and node ledger. |
-| Verification | Exact inventory/receiver audit, source-order boundary audit, ledger admission and documentation governance. |
-| Expected Markers | None. |
-| Asset Needs | Owner-local listing only; derived records stay under build. |
-| Reporting Requirements | Report all 26 labels, current receiver, T26 boundary and planned successor transfer. |
-| Stop Conditions | Stop if a title node crosses the line-1137 Victory boundary or if platform code owns a title decision. |
-| Exit Criteria | Every scoped label has a source/C boundary record; T25 S2 is ready for an accepted exact transfer from T15 S4. |
+| Files And ABI Surface | Shared title/frame roots, neutral controlled trace recorder, evidence below build and ledger only. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | Original listing review and controlled ROM routes for Start, Select, B/world, demo actions and terminal demo; compare branch, RAM/table writes and call order. |
+| Expected Markers | None; S3 records proof or gaps before S4 operational verification. |
+| Asset Needs | Owner-local ROM/listing/trace only under build. |
+| Reporting Requirements | Report per-label evidence or exact gap; do not claim completion. |
+| Stop Conditions | Stop on an unexplained source/C branch, state write or downstream ownership conflict. |
+| Exit Criteria | Every scoped label has a ROM logic-equivalence disposition and all 26 labels transfer to S4. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check adjacent Victory entry and all title/demo current owners for boundary leaks. |
+| Similar-Issue Sweep | Inspect both controller latches, all title exits, demo action boundaries and title-to-GameCore handoff. |
 
 ## Recent M4 Closures
 

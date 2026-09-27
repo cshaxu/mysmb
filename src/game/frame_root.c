@@ -221,8 +221,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         if (mysmb_game_begin_title_bootstrap(game) == 0U)
             game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] = 1U;
     }
-    else if (mode_before == 0U && task_before == 3U) {
-        mysmb_game_title_step(game, input);
+    else if (mode_before == 0U && task_before == 3U &&
+             mysmb_game_title_step(game, input) == 0U) {
+        /* Start/ResetTitle consume the title branch without RunDemo. */
     }
     else if (((mode_before == 1U && task_before == 1U) ||
               (mode_before == 0U && task_before == 1U)) &&
