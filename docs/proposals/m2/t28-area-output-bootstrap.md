@@ -6,9 +6,8 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1, S2 and S3 are closed at 194 / 1,992.**  S3 owned only
-the eleven-label block-graphics chain below; the later chains are queued, not
-implied by this admission.
+**T28 S1, S2 and S3 are closed at 194 / 1,992. T28 S4 is active.** It owns
+only the nineteen-label data chain below; later chains remain queued.
 
 ## Exact source-order chains
 
@@ -118,3 +117,14 @@ pass, and the shared source links with OpenNT DOS16. The refreshed artifacts
 are `mysmb16.exe` SHA-256 `7E70564A089473EC39851D4800A3D87DE4387E5AA2D2FE91B32F5E9932F2E7F6`,
 `mysmb32.exe` `7B6EDA302897643B8103BDD0F1D0AFD59DDA9BCB3D7D28BAF036A6AF965A70B8`,
 and `mysmb64.exe` `60FBC1EB1C268BBFF148113856E0FD44911AFADEE9E244F57118E57A2A5E819C`.
+
+## S4 admission contract
+
+S4 receives the nineteen adjacent data labels listed in the source-order table:
+four metatile tables, eight palette streams and seven terminated message
+streams. The baseline is 194 / 1,992 and all are open, for a maximum of
+213 / 1,992. Existing shared `area.c` consumers are in scope for audit and
+repair; no ROM-derived byte array may be added to tracked C. Controlled
+original-ROM/native entries will compare table reads and the resulting
+palette/name-table command output, while focused area regressions, x86/x64,
+DOS16 and platform-purity checks provide the operational track.

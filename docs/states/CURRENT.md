@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**M2 T28 S3, the eleven-node `RemoveCoin_Axe -> RemBridge` block-graphics chain, closed at 194 / 1,992. T28 S4 remains queued for separate admission; T21/T22 and other historical entries below remain retained evidence and do not supersede this closure.**
+**Active implementation packet: M2 T28 S4, the nineteen-node metatile, palette and message-data chain. T28 S3 is closed at 194 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active M2 T28 S3 packet.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. No subsequent T28 S is implied by this closure.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S4 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -67,26 +67,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T28 S3 Packet
+## M2 T28 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T28 S3, implementation; block-graphics command chain. |
-| Admission And Approval | Owner-approved source-order continuation after T28 S2 closure; ledger receipt accepts eleven labels from legacy T18 custody. |
-| Objective | Translate and prove `RemoveCoin_Axe -> RemBridge` with `BlockGfxData` in shared C. |
-| Non-goals | No block or endgame producer logic, platform rendering decision, T31 caller, or label outside the eleven-node receipt. |
-| Reference Baseline | 183 / 1,992 complete; 11 scoped open labels; expected 11 matches; maximum 194 / 1,992. |
+| Identifier Mode | M2 T28 S4, implementation; metatile, palette and message-data chain. |
+| Admission And Approval | Owner-approved source-order continuation after T28 S3 closure; ledger receipt accepts nineteen labels from legacy T18 custody. |
+| Objective | Bind and prove the four metatile tables, eight palette streams and seven message streams through shared C consumers. |
+| Non-goals | No parser, PPU/NMI dispatcher, platform rendering decision, producer logic, or label outside the nineteen-node receipt. |
+| Reference Baseline | 194 / 1,992 complete; 19 scoped open labels; expected 19 matches; maximum 213 / 1,992. |
 | Candidate Proposal | [M2 T28 area output and bootstrap](../proposals/m2/t28-area-output-bootstrap.md). |
-| Files And ABI Surface | Shared block-metatile owners, controlled ROM/native recorder, ledger and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared area data consumers, controlled ROM/native recorder, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source audit; controlled coin/water blank, replacement and bridge entries; focused block regression; x86/x64, DOS16 and purity checks. |
-| Expected Markers | BlockGfxData selection, Buffer1/2 packet bytes, residual/replace state and address-page branch. |
+| Verification | Source audit; controlled table/stream consumers; focused area-output regressions; x86/x64, DOS16 and purity checks. |
+| Expected Markers | PRG offsets, four-tile metatile reads, terminated VRAM streams, palette and name-table output. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
-| Reporting Requirements | Record all branch/table outcomes and all eleven node dispositions. |
+| Reporting Requirements | Record table offsets, consumer results and all nineteen node dispositions. |
 | Stop Conditions | Stop on unmatched source behavior, unadmitted dependency, recorder mismatch or platform gameplay logic. |
-| Exit Criteria | All eleven labels have ROM and operational evidence without unrelated credit. |
+| Exit Criteria | All nineteen labels have ROM and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
-| Similar-Issue Sweep | Ensure platform code owns no block command semantics and producers remain uncredited. |
+| Similar-Issue Sweep | Ensure data is read only from bound PRG, with no duplicate tracked data or platform-side consumer. |
 
 ## Recent M4 Closures
 

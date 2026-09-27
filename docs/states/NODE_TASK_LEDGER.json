@@ -1894,6 +1894,19 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Owner-approved continuation receipt for the bounded RemoveCoin_Axe through RemBridge chain."
+        },
+        {
+          "id": "M2 T28 S4",
+          "evidence": [
+            "docs/proposals/m2/t28-area-output-bootstrap.md"
+          ],
+          "recordKinds": [
+            "owner-approved-source-order",
+            "chain-based-implementation"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner-approved continuation receipt for the bounded metatile, palette and message-data chain."
         }
       ]
     }
@@ -10732,8 +10745,8 @@
     {
       "label": "Palette0_MTiles",
       "line": 2151,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10753,8 +10766,8 @@
     {
       "label": "Palette1_MTiles",
       "line": 2192,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10774,8 +10787,8 @@
     {
       "label": "Palette2_MTiles",
       "line": 2240,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10795,8 +10808,8 @@
     {
       "label": "Palette3_MTiles",
       "line": 2252,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10816,8 +10829,8 @@
     {
       "label": "WaterPaletteData",
       "line": 2263,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10837,8 +10850,8 @@
     {
       "label": "GroundPaletteData",
       "line": 2275,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10858,8 +10871,8 @@
     {
       "label": "UndergroundPaletteData",
       "line": 2287,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10879,8 +10892,8 @@
     {
       "label": "CastlePaletteData",
       "line": 2299,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10900,8 +10913,8 @@
     {
       "label": "DaySnowPaletteData",
       "line": 2311,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10921,8 +10934,8 @@
     {
       "label": "NightSnowPaletteData",
       "line": 2316,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10942,8 +10955,8 @@
     {
       "label": "MushroomPaletteData",
       "line": 2321,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10963,8 +10976,8 @@
     {
       "label": "BowserPaletteData",
       "line": 2326,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -10984,8 +10997,8 @@
     {
       "label": "MarioThanksMessage",
       "line": 2331,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11005,8 +11018,8 @@
     {
       "label": "LuigiThanksMessage",
       "line": 2339,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11026,8 +11039,8 @@
     {
       "label": "MushroomRetainerSaved",
       "line": 2347,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11047,8 +11060,8 @@
     {
       "label": "PrincessSaved1",
       "line": 2358,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11068,8 +11081,8 @@
     {
       "label": "PrincessSaved2",
       "line": 2366,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11089,8 +11102,8 @@
     {
       "label": "WorldSelectMessage1",
       "line": 2375,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -11110,8 +11123,8 @@
     {
       "label": "WorldSelectMessage2",
       "line": 2382,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T28 S4",
+      "receivingBasis": "owner-approved T28 S4 source-order data-chain receipt",
       "futurePackage": null,
       "history": [
         {
@@ -57684,6 +57697,35 @@
       ],
       "acceptedBy": "Owner-approved T28 source-order S3 receipt.",
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md"
+    },
+    {
+      "id": "transfer-077-t18-s4-to-t28-s4-area-data",
+      "type": "transfer",
+      "from": "M2 T18 S4",
+      "to": "M2 T28 S4",
+      "nodes": [
+        "Palette0_MTiles",
+        "Palette1_MTiles",
+        "Palette2_MTiles",
+        "Palette3_MTiles",
+        "WaterPaletteData",
+        "GroundPaletteData",
+        "UndergroundPaletteData",
+        "CastlePaletteData",
+        "DaySnowPaletteData",
+        "NightSnowPaletteData",
+        "MushroomPaletteData",
+        "BowserPaletteData",
+        "MarioThanksMessage",
+        "LuigiThanksMessage",
+        "MushroomRetainerSaved",
+        "PrincessSaved1",
+        "PrincessSaved2",
+        "WorldSelectMessage1",
+        "WorldSelectMessage2"
+      ],
+      "acceptedBy": "Owner-approved T28 continuation; contiguous metatile, palette and message data chain.",
+      "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md"
     }
   ],
   "runs": [
@@ -67636,6 +67678,253 @@
       ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
       "state": "closed-block-graphics-chain"
+    },
+    {
+      "subtask": "M2 T28 S4",
+      "kind": "implementation",
+      "scope": [
+        "Palette0_MTiles",
+        "Palette1_MTiles",
+        "Palette2_MTiles",
+        "Palette3_MTiles",
+        "WaterPaletteData",
+        "GroundPaletteData",
+        "UndergroundPaletteData",
+        "CastlePaletteData",
+        "DaySnowPaletteData",
+        "NightSnowPaletteData",
+        "MushroomPaletteData",
+        "BowserPaletteData",
+        "MarioThanksMessage",
+        "LuigiThanksMessage",
+        "MushroomRetainerSaved",
+        "PrincessSaved1",
+        "PrincessSaved2",
+        "WorldSelectMessage1",
+        "WorldSelectMessage2"
+      ],
+      "baseline": 194,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitScreen",
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal",
+        "WriteTopStatusLine",
+        "WriteBottomStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "WarpZoneWelcome",
+        "LuigiName",
+        "WarpZoneNumbers",
+        "GameTextOffsets",
+        "WriteGameText",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "EndGameText",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "PrintWarpZoneNumbers",
+        "WarpNumLoop",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset",
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl",
+        "ColorRotatePalette",
+        "BlankPalette",
+        "Palette3Data",
+        "ColorRotation",
+        "GetBlankPal",
+        "GetAreaPal",
+        "ExitColorRot",
+        "MetatileGraphics_Low",
+        "MetatileGraphics_High",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "BlockGfxData",
+        "RemoveCoin_Axe",
+        "WriteBlankMT",
+        "ReplaceBlockMetatile",
+        "DestroyBlockMetatile",
+        "WriteBlockMetatile",
+        "UseBOffset",
+        "MoveVOffset",
+        "PutBlockMetatile",
+        "SaveHAdder",
+        "RemBridge"
+      ],
+      "expectedMatches": [
+        "Palette0_MTiles",
+        "Palette1_MTiles",
+        "Palette2_MTiles",
+        "Palette3_MTiles",
+        "WaterPaletteData",
+        "GroundPaletteData",
+        "UndergroundPaletteData",
+        "CastlePaletteData",
+        "DaySnowPaletteData",
+        "NightSnowPaletteData",
+        "MushroomPaletteData",
+        "BowserPaletteData",
+        "MarioThanksMessage",
+        "LuigiThanksMessage",
+        "MushroomRetainerSaved",
+        "PrincessSaved1",
+        "PrincessSaved2",
+        "WorldSelectMessage1",
+        "WorldSelectMessage2"
+      ],
+      "maximumComplete": 213,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
+      "state": "active-area-data-chain"
     }
   ]
 }
