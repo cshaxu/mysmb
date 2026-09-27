@@ -14,6 +14,7 @@ enum {
     MYSMB_AREA_CURRENT_PAGE = 0x0725U,
     MYSMB_AREA_BACKLOADING = 0x0728U,
     MYSMB_AREA_OBJECT_LENGTH = 0x0730U,
+    MYSMB_AREA_SCROLL_LOCK = 0x0723U,
     MYSMB_AREA_SCROLL_X = 0x073fU,
     MYSMB_AREA_SCROLL_Y = 0x0740U,
     MYSMB_AREA_TIMERS = 0x0780U,
@@ -123,6 +124,8 @@ enum {
     MYSMB_AREA_STAIRCASE_CONTROL = 0x0734U,
     MYSMB_AREA_OBJECT_HEIGHT = 0x0735U,
     MYSMB_AREA_MUSHROOM_HALF_LENGTH = 0x0736U
+    ,MYSMB_AREA_WARP_ZONE_CONTROL = 0x06d6U
+    ,MYSMB_AREA_ENEMY_FRENZY_QUEUE = 0x06cdU
 };
 
 enum {
@@ -167,6 +170,10 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 slot,
                                            mysmb_u8 first,
                                            mysmb_u8 second);
+static void mysmb_area_render_under_part(struct mysmb_game *game,
+                                         mysmb_u8 row,
+                                         mysmb_u8 height,
+                                         mysmb_u8 metatile);
 
 /* Translation of ROM InitializeArea within the $92b0 area task route.
  * Header and stream reads are deliberately owned by the following T3 part. */
@@ -1064,6 +1071,119 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
     } while (1);
 }
 
+/* ROM $96f2-$9737 ScrollLockObject_Warp through AreaFrenzy.  These entries
+ * are selected from the row-13 JumpEngine after DecodeAreaData has placed
+ * the low-six-bit selector in $00. */
+static void mysmb_area_kill_enemies(struct mysmb_game *game, mysmb_u8 id)
+{
+    mysmb_u8 slot;
+
+    slot = 5U;
+    do {
+        slot--;
+        if (game->ram[MYSMB_ENEMY_ID + slot] == id)
+            game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+    } while (slot != 0U);
+}
+
+static void mysmb_area_scroll_lock_warp(struct mysmb_game *game)
+{
+    mysmb_u8 selector;
+
+    selector = 4U;
+    if (game->ram[MYSMB_AREA_WORLD_NUMBER] != 0U) selector++;
+    if (game->ram[MYSMB_AREA_TYPE] != 1U) selector++;
+    game->ram[MYSMB_AREA_WARP_ZONE_CONTROL] = selector;
+    (void)mysmb_area_queue_game_text(game, selector);
+    mysmb_area_kill_enemies(game, 13U);
+    game->ram[MYSMB_AREA_SCROLL_LOCK] ^= 1U;
+}
+
+static void mysmb_area_queue_frenzy(struct mysmb_game *game, mysmb_u8 selector)
+{
+    static const mysmb_u8 frenzy_ids[3] = { 20U, 23U, 24U };
+    mysmb_u8 id;
+    mysmb_u8 slot;
+
+    id = frenzy_ids[(mysmb_u8)(selector - 8U)];
+    slot = 5U;
+    do {
+        slot--;
+        if (game->ram[MYSMB_ENEMY_ID + slot] == id) {
+            id = 0U;
+            break;
+        }
+    } while (slot != 0U);
+    game->ram[MYSMB_AREA_ENEMY_FRENZY_QUEUE] = id;
+}
+
+/* ROM TreeLedge through MushLExit.  GetLrgObjAttrib has already supplied the
+ * row in the first byte and the initial length in the second-byte low nibble.
+ * ProcessAreaData owns the post-handler length decrement. */
+static void mysmb_area_style_ledge(struct mysmb_game *game, mysmb_u8 slot,
+                                   mysmb_u8 row, mysmb_u8 length,
+                                   mysmb_u8 style)
+{
+    mysmb_u8 object_length;
+
+    object_length = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+    if (style == 0U) {
+        if (object_length == 0U) {
+            mysmb_area_render_under_part(game, row, 0U, 0x18U);
+            return;
+        }
+        if (object_length >= 0x80U) {
+            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+            if ((game->ram[MYSMB_AREA_CURRENT_PAGE] |
+                 game->ram[MYSMB_AREA_CURRENT_COLUMN]) != 0U) {
+                mysmb_area_render_under_part(game, row, 0U, 0x16U);
+                return;
+            }
+        }
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x17U;
+        mysmb_area_render_under_part(game, (mysmb_u8)(row + 1U), 15U, 0x4cU);
+        return;
+    }
+
+    if (object_length >= 0x80U) {
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+        game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] =
+            (mysmb_u8)(length >> 1U);
+        game->ram[0x0006U] = length;
+        mysmb_area_render_under_part(game, row, 0U, 0x19U);
+        return;
+    }
+    if (object_length == 0U) {
+        mysmb_area_render_under_part(game, row, 0U, 0x1bU);
+        return;
+    }
+    game->ram[0x0006U] = game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot];
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x1aU;
+    if (object_length != game->ram[0x0006U]) return;
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x4fU;
+    mysmb_area_render_under_part(game, (mysmb_u8)(row + 2U), 15U, 0x50U);
+}
+
+static void mysmb_area_pulley_rope(struct mysmb_game *game, mysmb_u8 slot,
+                                   mysmb_u8 length)
+{
+    mysmb_u8 object_length;
+    mysmb_u8 metatile;
+
+    object_length = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+    if (object_length >= 0x80U) {
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+        metatile = 0x42U;
+    }
+    else if (object_length != 0U) {
+        metatile = 0x41U;
+    }
+    else {
+        metatile = 0x43U;
+    }
+    game->ram[MYSMB_AREA_METATILE_BUFFER] = metatile;
+}
+
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
@@ -1145,13 +1265,13 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             mysmb_area_render_under_part(game, row, 0U, height);
         }
         else if (value == 5U) {
-            /* ScrollLockObject_Warp ($3b9d): the source derives the text
-             * selector from world and area type before WriteGameText. */
-            value = 4U;
-            if (game->ram[MYSMB_AREA_WORLD_NUMBER] != 0U) value++;
-            if (game->ram[MYSMB_AREA_TYPE] != 1U) value++;
-            game->ram[0x06d6U] = value;
-            (void)mysmb_area_queue_game_text(game, value);
+            mysmb_area_scroll_lock_warp(game);
+        }
+        else if (value == 6U || value == 7U) {
+            game->ram[MYSMB_AREA_SCROLL_LOCK] ^= 1U;
+        }
+        else if (value >= 8U && value <= 10U) {
+            mysmb_area_queue_frenzy(game, value);
         }
         return;
     }
@@ -1185,16 +1305,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (row == 12U && kind == 1U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x42U;
-        }
-        else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
-            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x43U;
-        }
-        else {
-            game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x41U;
-        }
+        mysmb_area_pulley_rope(game, slot, (mysmb_u8)(second & 0x0fU));
         return;
     }
     if (row == 12U && kind == 5U) {
@@ -1321,37 +1432,13 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (kind == 1U) {
         value = game->ram[MYSMB_AREA_STYLE];
         if (value == 0U) {
-            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x16U;
-            }
-            else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x18U;
-            }
-            else {
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x17U;
-                if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x4cU;
-            }
+            mysmb_area_style_ledge(game, slot, row,
+                                   (mysmb_u8)(second & 0x0fU), value);
             return;
         }
         if (value == 1U) {
-            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-                game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] =
-                    (mysmb_u8)(game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >> 1U);
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x19U;
-            }
-            else if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] == 0U) {
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x1bU;
-            }
-            else {
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x1aU;
-                if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] ==
-                    game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] && row < 11U) {
-                    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x4fU;
-                    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 2U] = 0x50U;
-                }
-            }
+            mysmb_area_style_ledge(game, slot, row,
+                                   (mysmb_u8)(second & 0x0fU), value);
             return;
         }
         if (value == 2U) {

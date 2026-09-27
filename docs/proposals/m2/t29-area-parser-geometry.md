@@ -764,7 +764,7 @@ common source links as the OpenNT DOS16 MZ with the existing non-fatal
 `mysmb32.exe` `B09221D8B7A519E08DAB782A09D8B0601B4EE76EF61C20F7B94CB60C5934215C`,
 and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.
 
-## S7 closure and S8 admission: area-stream decoder chain
+## S7 closure and S8 admission: special-object parser chain
 
 S7 closes **32 / 32** expected labels at **368 / 1,992**.  The canonical
 inventory, progress report and ledger record every `ProcessAreaData -> SetFore`
@@ -774,14 +774,28 @@ regressions; the operational track consists of the x86/x64 focused matrix,
 platform-purity gate, OpenNT DOS16 link and the P9 three-executable package.
 No scope label is deferred or transferred.
 
-S8 is the next planned source-order chain.  It will receive the 22 labels
-from `ScrollLockObject_Warp` through `MushLExit` only after its exact ledger
-receipt, active packet, source-route plan and node-admission validation are
-recorded.  S7 remains their predecessor proof only; it does not claim any
-JumpEngine-selected object-family implementation beyond its own dispatch
-handoff.
-This remains a checkpoint: S7 will only close after each of its thirty-two
-labels has a separately recorded control/read/write/call-order disposition.
+S8 is admitted as the next planned source-order chain.  It receives exactly
+the following twenty-two labels through accepted ledger transfer
+`transfer-089-t18-s4-to-t29-s8-special-objects`:
+`ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`,
+`KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`,
+`ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`,
+`MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`,
+`PulleyRopeObject`, `RenderPul`, and `MushLExit`.
+
+The chain begins at **368 / 1,992**, forecasts all twenty-two labels as
+matches, and has a maximum closing count of **390 / 1,992**.  It is a single
+shared-`area.c` delivery after S7's `RunAObj` handoff: warp/scroll/enemy-slot
+effects, frenzy selection, style JumpEngine branches and geometry helpers are
+kept together because their source caller and parser route are contiguous.
+`EnemyFrenzyQueue` remains the explicit cross-owner observation boundary for
+the existing shared enemy-frenzy consumer.  The ROM-logic track audits
+`$96f2-$9787` and exercises the ordinary parser dispatch without leaf-PC or
+stack injection; source-shaped tests cover the mutually exclusive special
+branches.  One P-level operational pass covers focused tests, x86/x64, DOS16,
+platform purity and all three executable artifacts.  S8 closes only after
+each node has its individual mapping and both evidence tracks; any missed
+node transfers by exact label.
 
 ## S7 P10: node-level decoder audit
 
@@ -840,3 +854,39 @@ remains the P9 three-target build: `mysmb16.exe`
 `D6C90F62D4A574594B2FE99076555D3892540ACD58807C7B357324B1354FCC48`,
 `mysmb32.exe` `B09221D8B7A519E08DAB782A09D8B0601B4EE76EF61C20F7B94CB60C5934215C`,
 and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.
+
+## S8 P1: special-object source-order foundation
+
+P1 maps the entire admitted `$96f2-$9787` chain before its first shared-C
+repair.  The dynamic row-13 dispatch now preserves the original order for
+`ScrollLockObject_Warp -> NoKillE`: calculate and store `WarpZoneControl`,
+call `WriteGameText`, clear only `PiranhaPlant` flags by descending slot, then
+invert `ScrollLock`.  Selectors six and seven use that same inversion.  The
+three `AreaFrenzy` selectors bind the source table `$14/$17/$18`, scan enemy
+IDs from slot four down to zero, and store either the original ID or zero in
+`EnemyFrenzyQueue`.
+
+`AreaStyleObject` now enters source-shaped tree and mushroom helpers.  The
+tree middle and mushroom center paths use `RenderUnderPart` for the complete
+remaining column, preserving its palette-three/ledge overwrite rules rather
+than writing only two artificial rows.  `PulleyRopeObject` uses the original
+left-pulley, rope, right-pulley sequence as `ProcessAreaData` decrements the
+slot length.  `AreaStyleObject`'s cannon target remains an explicit successor
+outside this receipt; P1 neither changes nor credits it.
+
+The project-owned `mysmb.area-special-object-smoke` invokes the ordinary
+`ProcessAreaData` stream entry for the warp/scroll/enemy-slot, frenzy,
+tree/mushroom, and pulley paths.  `mysmb.area-parser-column-smoke` now makes
+its fresh staging-column premise explicit: the source `RenderUnderPart` does
+not overwrite an inherited palette-three value.  This P maps all 22 received
+labels but grants no node-completion credit yet: the source-RAM ROM route and
+per-label native/ROM state comparison remain the S8 closure evidence.
+
+Focused x86 and x64 tests `mysmb.area-special-object-smoke`,
+`mysmb.area-parser-column-smoke`, `mysmb.area-parser-terminal-slot-smoke`,
+and `mysmb.platform-purity` pass.  The portable shared C links as OpenNT
+DOS16 with the pre-existing non-fatal `OLDNAMES.LIB` warning and existing
+`C4761` warnings outside this change.  P1 artifacts are `mysmb16.exe`
+`30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
+`mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
+and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.

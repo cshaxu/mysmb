@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "game/game.h"
 #include "game/area.h"
 
@@ -454,6 +456,10 @@ int main(void)
     game.ram[0x072cU] = 0U;
     game.ram[0x0732U] = 0xffU;
     game.ram[0x0733U] = 0U;
+    /* RenderUnderPart preserves an existing palette-three metatile.  Give
+     * the tree case the fresh staging column that AreaParserCore supplies
+     * before it enters the special-object handler. */
+    memset(&game.ram[0x06a1U], 0, 13U);
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a6U] != 0x16U || game.ram[0x0732U] != 2U) return 1;
     game.ram[0x0726U] = 3U;

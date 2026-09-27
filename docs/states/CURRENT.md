@@ -2,10 +2,9 @@
 
 ## Current Work
 
-**M2 T29 S7, the thirty-two-node area-stream decoder chain, is closed at
-368 / 1,992.  The next source-order admission is M2 T29 S8, the special-object
-parser chain; it is not active until its exact ledger receipt and packet are
-recorded.**
+**M2 T29 S8, the twenty-two-node special-object parser chain, is active at
+368 / 1,992.  It follows S7's `RunAObj` dispatch handoff in source order and
+owns only `ScrollLockObject_Warp -> MushLExit`.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -13,7 +12,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. Only the M2 T29 S7 packet below is active.**
+queued records. Only the M2 T29 S8 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -112,7 +111,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit all area renderer writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
 
-## M2 T29 S7 Packet
+## M2 T29 S7 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -132,6 +131,40 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Exit Criteria | All thirty-two labels have both ROM-logic and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit all area-stream writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
+
+## M2 T29 S8 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S8, implementation; special-object parser chain. |
+| Admission And Approval | Owner-approved continuation under the node-level accountability, chain-level delivery rule; accepted ledger transfer `transfer-089-t18-s4-to-t29-s8-special-objects` receives all twenty-two labels from M2 T18 S4. |
+| Objective | Translate and prove `ScrollLockObject_Warp -> MushLExit` as the bounded source-order special-object branch after S7's `RunAObj` handoff. |
+| Non-goals | No pipe/castle geometry outside the received labels, no platform rendering/input branch, no synthetic leaf-PC or stack entry, and no label outside the twenty-two-node receipt. |
+| Reference Baseline | 368 / 1,992 complete; twenty-two scoped open labels; expected twenty-two matches; maximum 390 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared `area.c` special-object owner, shared enemy-frenzy collaborator only where the original call crosses that admitted boundary, project-owned special-object smokes, controlled ROM/native recorders, ledger/progress records, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and the M2 chain-based S delivery rule. |
+| Verification | ROM-logic track audits `$96f2-$9787`: warp selector/text call and enemy clear loop; scroll-lock toggle; frenzy table/queue scan; tree/mushroom/cannon JumpEngine branches; underpart and pulley metatile/cursor results. A source-reachable or source-RAM-only GameEngine route must exercise the common parser dispatch; source-shaped cases cover mutually exclusive special branches without leaf PC/stack injection. Operational track runs focused tests, x86/x64 builds, DOS16 link, platform-purity gate, and three packaged executables once per implementation P. |
+| Expected Markers | WarpZoneControl, GameText selector, ScrollLock, enemy slot flags, EnemyFrenzyQueue, object-length and area-object cursor state, tree/mushroom/pulley metatiles, and source return ordering. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Record every node's data/branch/read/write/call-order mapping, ROM-route result, focused-test/build/package result, three artifact hashes, and every deferred node transferred by exact name. |
+| Stop Conditions | Stop on an unmatched source table byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All twenty-two labels have individual ROM-logic and operational evidence; the tracker, ledger and closure receipt agree at 390 / 1,992 or name each exact transfer. |
+| Original Owner Request | Strict original-ROM call/data structure, shared game logic for DOS and Windows, and dual verification; delivery may combine contiguous nodes only when the common route and owner permit it. |
+| Similar-Issue Sweep | Audit every special-object JumpEngine branch, direct shared-game caller and platform source. Platform code may only provide physical input/timing and submit a completed game frame. |
+
+### M2 T29 S8 P1 — special-object source-order foundation
+
+P1 maps all 22 admitted labels without promoting a completion count.  Shared
+`area.c` now follows the original warp/scroll/kill order, frenzy queue scan,
+tree/mushroom `RenderUnderPart` paths, and pulley sequence through the ordinary
+object-stream entry.  The focused x86/x64 smoke matrix and platform-purity
+gate pass; the common C90 core links for DOS16 with only the existing warnings.
+The source-RAM ROM route and per-node completion comparison remain required
+before S8 can close.  Artifact SHA-256: `mysmb16.exe`
+`30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
+`mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
+and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.
 
 ## Prior M2 T25 S25 Packet (closed)
 
