@@ -557,3 +557,29 @@ are `mysmb16.exe` `6D10344BB3EF3E3019CB1952072BD6BEB38CCD4BB94D4A5F4604446A73B51
 and `mysmb64.exe` `FCC9FA1C202BB532053F7EC99707A2A369C4E6F5469BB6DD9F9AF42A70DDAB01`.
 This is an implementation checkpoint, not S6 closure: the controlled
 original-ROM route and individual completion dispositions remain required.
+
+## S6 closure and S7 admission: scenery-column chain
+
+S6 closes **20 / 20** expected labels at **336 / 1,992**:
+`RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`,
+`RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`,
+`TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`,
+`ChkMTLow`, `StrBlock`, and `BlockBuffLowBounds`. No scoped label is
+deferred. The natural parser route covers `$9404-$94fb`; the static source
+audit and PRG-bound staged-column test establish the otherwise route-specific
+background, foreground, cloud, world-eight and underground branches. The
+operational evidence is P1's six focused x86/x64 tests, DOS16 link and three
+artifacts. All business behavior remains in shared `area.c`.
+
+S7 receives exactly `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`,
+`CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`,
+`EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`,
+`ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`,
+`MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`,
+`StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, and `SetFore` through
+accepted transfer `transfer-088-t18-s4-to-t29-s7-area-stream`. These 32 open
+labels begin at **336 / 1,992**, forecast all 32 as matches, and have a
+maximum closing count of **368 / 1,992**. The shared owner is the existing
+area-stream decoder in `area.c`; S7 is responsible for replacing the legacy
+pre-play look-ahead shortcut with the source `ProcessAreaData` route, rather
+than retaining a parallel initialization algorithm.

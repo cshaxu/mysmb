@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 316 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1, MusicSelectData, GetAreaMusic, ChkAreaType, StoreMusic, ExitGetM, PlayerStarting_X_Pos, AltYPosOffset, PlayerStarting_Y_Pos, PlayerBGPriorityData, GameTimerData, Entrance_GameTimerSetup, ChkStPos, SetStPos, ChkOverR, ChkSwimE, SetPESub, HalfwayPageNybbles, PlayerLoseLife, StillInGame, GetHalfway, MaskHPNyb, SetHalfway, GameOverMode, SetupGameOver, RunGameOver, TerminateGame, ContinueGame, GameIsOn, TransposePlayers, TransLoop, ExTrans, DoNothing1, DoNothing2, AreaParserTaskHandler, DoAPTasks, SkipATRender, AreaParserTasks, IncrementColumnPos, NoColWrap, BSceneDataOffsets, BackSceneryData, BackSceneryMetatiles, FSceneDataOffsets, ForeSceneryData, TerrainMetatiles, TerrainRenderBits, AreaParserCore. |
+| ROM-match complete | 336 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1, MusicSelectData, GetAreaMusic, ChkAreaType, StoreMusic, ExitGetM, PlayerStarting_X_Pos, AltYPosOffset, PlayerStarting_Y_Pos, PlayerBGPriorityData, GameTimerData, Entrance_GameTimerSetup, ChkStPos, SetStPos, ChkOverR, ChkSwimE, SetPESub, HalfwayPageNybbles, PlayerLoseLife, StillInGame, GetHalfway, MaskHPNyb, SetHalfway, GameOverMode, SetupGameOver, RunGameOver, TerminateGame, ContinueGame, GameIsOn, TransposePlayers, TransLoop, ExTrans, DoNothing1, DoNothing2, AreaParserTaskHandler, DoAPTasks, SkipATRender, AreaParserTasks, IncrementColumnPos, NoColWrap, BSceneDataOffsets, BackSceneryData, BackSceneryMetatiles, FSceneDataOffsets, ForeSceneryData, TerrainMetatiles, TerrainRenderBits, AreaParserCore. |
 | Mapped / audited, not complete | 106 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 54 audited evidence gaps, and 29 mapped evidence gaps. |
-| Open / unmatched | 1,570 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,550 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **316 / 1,992 (15.86%)**. The 106 incomplete mappings comprise 18 known mismatches, three known missing implementations, two changed-body revalidations, 54 audited evidence gaps, and 29 mapped evidence gaps. These categories are disjoint.
+Verified conformance is **336 / 1,992 (16.87%)**. The 106 incomplete mappings comprise 18 known mismatches, three known missing implementations, two changed-body revalidations, 54 audited evidence gaps, and 29 mapped evidence gaps. These categories are disjoint.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -345,6 +345,26 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3158 | `TerrainMetatiles` |
 | 3161 | `TerrainRenderBits` |
 | 3179 | `AreaParserCore` |
+| 3184 | `RenderSceneryTerrain` |
+| 3187 | `ClrMTBuf` |
+| 3193 | `ThirdP` |
+| 3198 | `RendBack` |
+| 3223 | `SceLoop1` |
+| 3231 | `RendFore` |
+| 3235 | `SceLoop2` |
+| 3238 | `NoFore` |
+| 3242 | `RendTerr` |
+| 3249 | `TerMTile` |
+| 3253 | `StoreMT` |
+| 3258 | `TerrLoop` |
+| 3269 | `NoCloud2` |
+| 3270 | `TerrBChk` |
+| 3275 | `NextTBit` |
+| 3285 | `EndUChk` |
+| 3290 | `RendBBuf` |
+| 3295 | `ChkMTLow` |
+| 3306 | `StrBlock` |
+| 3319 | `BlockBuffLowBounds` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |

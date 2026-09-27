@@ -456,26 +456,26 @@ The labels and branches behind every line remain open until individually bound b
 | 3158 | `TerrainMetatiles` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
 | 3161 | `TerrainRenderBits` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
 | 3179 | `AreaParserCore` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
-| 3184 | `RenderSceneryTerrain` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersceneryterrain) |
-| 3187 | `ClrMTBuf` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrmtbuf) |
-| 3193 | `ThirdP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thirdp) |
-| 3198 | `RendBack` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendback) |
-| 3223 | `SceLoop1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop1) |
-| 3231 | `RendFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendfore) |
-| 3235 | `SceLoop2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop2) |
-| 3238 | `NoFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofore) |
-| 3242 | `RendTerr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendterr) |
-| 3249 | `TerMTile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-termtile) |
-| 3253 | `StoreMT` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storemt) |
-| 3258 | `TerrLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrloop) |
-| 3269 | `NoCloud2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocloud2) |
-| 3270 | `TerrBChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrbchk) |
-| 3275 | `NextTBit` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nexttbit) |
-| 3285 | `EndUChk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enduchk) |
-| 3290 | `RendBBuf` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendbbuf) |
-| 3295 | `ChkMTLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmtlow) |
-| 3306 | `StrBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strblock) |
-| 3319 | `BlockBuffLowBounds` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufflowbounds) |
+| 3184 | `RenderSceneryTerrain` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersceneryterrain) |
+| 3187 | `ClrMTBuf` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrmtbuf) |
+| 3193 | `ThirdP` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thirdp) |
+| 3198 | `RendBack` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendback) |
+| 3223 | `SceLoop1` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop1) |
+| 3231 | `RendFore` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendfore) |
+| 3235 | `SceLoop2` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sceloop2) |
+| 3238 | `NoFore` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofore) |
+| 3242 | `RendTerr` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendterr) |
+| 3249 | `TerMTile` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-termtile) |
+| 3253 | `StoreMT` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storemt) |
+| 3258 | `TerrLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrloop) |
+| 3269 | `NoCloud2` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocloud2) |
+| 3270 | `TerrBChk` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrbchk) |
+| 3275 | `NextTBit` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nexttbit) |
+| 3285 | `EndUChk` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enduchk) |
+| 3290 | `RendBBuf` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendbbuf) |
+| 3295 | `ChkMTLow` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmtlow) |
+| 3306 | `StrBlock` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strblock) |
+| 3319 | `BlockBuffLowBounds` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufflowbounds) |
 | 3326 | `ProcessAreaData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processareadata) |
 | 3328 | `ProcADLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procadloop) |
 | 3345 | `Chk1Row13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1row13) |

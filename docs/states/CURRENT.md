@@ -2,8 +2,8 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T29 S6, the twenty-node scenery/terrain
-column and block-buffer chain. M2 T29 S5 is closed at 316 / 1,992.**
+**Active implementation packet: M2 T29 S7, the thirty-two-node area-stream
+decoder chain. M2 T29 S6 is closed at 336 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -89,7 +89,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit every parser task/vector and platform source; platform code may only provide physical input/timing and submit the completed game frame. |
 
-## M2 T29 S6 Packet
+## M2 T29 S6 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -109,6 +109,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Exit Criteria | All twenty labels have both ROM-logic and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit all area renderer writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
+
+## M2 T29 S7 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S7, implementation; area-stream decoder and attribute-control chain. |
+| Admission And Approval | Owner-approved source-order continuation; accepted ledger transfer `transfer-088-t18-s4-to-t29-s7-area-stream` receives all thirty-two labels. |
+| Objective | Translate and prove `ProcessAreaData -> SetFore` as one shared C area-stream decoder chain. |
+| Non-goals | No special-object family, pipe/castle geometry, host rendering branch, synthetic leaf-PC or stack entry, or label outside the thirty-two-node receipt. |
+| Reference Baseline | 336 / 1,992 complete; thirty-two scoped open labels; expected thirty-two matches; maximum 368 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared `area.c` object-stream owner, project-owned parser/data smokes, controlled ROM recorder, ledger/progress records, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | ROM logic audit `$9508-$966f`: three-slot descending loop; page/rear/length selection; first/second-byte classification; normal/large/special dispatch; area-attribute mutations; and return state. Source-RAM-only ordinary GameEngine parser routes plus source-shaped object-stream tests cover the branch families without leaf PC or stack injection. Operational verification runs parser/data smokes, x86/x64 builds, DOS16 link, purity, and package checks. |
+| Expected Markers | Object cursor/page/slot bytes, metatile staging changes, object-length state, foreground/background/terrain controls, dispatch selection, and return order. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Record every node disposition, data/branch/read/write/call-order evidence, source-RAM fixture route result, focused-test/build/package results, three artifact hashes, and every residual transferred outside the chain. |
+| Stop Conditions | Stop on an unmatched state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All thirty-two labels have both ROM-logic and operational evidence without unrelated credit. |
+| Original Owner Request | Strict source order, dual verification and shared game logic only. |
+| Similar-Issue Sweep | Audit all area-stream writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
 
 ## Prior M2 T25 S25 Packet (closed)
 
