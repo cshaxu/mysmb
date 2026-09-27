@@ -304,3 +304,17 @@ compared against an original-ROM route.
 The x86 and x64 focused status, top-score, platform-purity and Win32 self
 tests pass. The same source links into the OpenNT DOS16 target. Packaging
 refreshes all three required executable artifacts for this implementation P.
+
+## S7 P2 caller convergence checkpoint
+
+All admitted digit-arithmetic and top-score callers now enter the shared
+status owner: object scoring, endgame scoring and the NMI top-score call
+retain their original caller timing while delegating their former duplicate
+math bodies. `status-arithmetic-smoke` exercises a six-digit carry, a full
+borrow propagation, modifier clearing, Mario coin/score output and timer
+output. Its first draft caught and corrected the source offset for Mario's
+coin digits (`StatusBarOffset[3] - 2 = 22`).
+
+This remains a checkpoint, not completion credit. The focused tests establish
+the C-visible state; original-ROM route comparison is still required for all
+nineteen labels before the inventory can change.

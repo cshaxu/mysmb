@@ -1,0 +1,62 @@
+#include "game/status.h"
+
+#include <string.h>
+
+static int mysmb_status_test_digits(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 index;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x0770U] = 1U;
+    game.ram[0x07d7U + 0x0bU] = 9U;
+    game.ram[0x0134U + 5U] = 1U;
+    mysmb_status_apply_digit_modifier(&game, 0x0bU);
+    if (game.ram[0x07d7U + 0x0bU] != 0U) return 11;
+    if (game.ram[0x07d7U + 0x0aU] != 1U) return 12;
+    for (index = 0U; index <= 6U; ++index)
+        if (game.ram[0x0134U + index] != 0U) return 2;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0134U + 5U] = 0xffU;
+    mysmb_status_apply_digit_modifier(&game, 0x0bU);
+    for (index = 0U; index < 6U; ++index)
+        if (game.ram[0x07d7U + 0x06U + index] != 9U) return 3;
+    return 0;
+}
+
+static int mysmb_status_test_output(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 index;
+
+    memset(&game, 0, sizeof(game));
+    for (index = 0U; index < 6U; ++index) game.ram[0x07d7U + 6U + index] = index;
+    game.ram[0x07d7U + 22U] = 4U;
+    game.ram[0x07d7U + 23U] = 2U;
+    if (mysmb_status_queue_score_coin(&game) == 0U) return 11;
+    if (game.ram[0x0300U] != 14U) return 12;
+    if (game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x6dU ||
+        game.ram[0x0303U] != 2U || game.ram[0x0304U] != 4U ||
+        game.ram[0x0305U] != 2U) return 13;
+    if (game.ram[0x0306U] != 0x20U || game.ram[0x0307U] != 0x62U ||
+        game.ram[0x0308U] != 6U || game.ram[0x0309U] != 0x24U ||
+        game.ram[0x030fU] != 0U) return 14;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x07f8U] = 1U; game.ram[0x07f9U] = 2U; game.ram[0x07faU] = 3U;
+    if (mysmb_status_queue_timer(&game) == 0U || game.ram[0x0300U] != 6U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x7aU ||
+        game.ram[0x0303U] != 3U || game.ram[0x0304U] != 1U ||
+        game.ram[0x0306U] != 3U) return 2;
+    return 0;
+}
+
+int main(void)
+{
+    int result;
+    result = mysmb_status_test_digits();
+    if (result != 0) return result;
+    return mysmb_status_test_output();
+}

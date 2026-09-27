@@ -1,4 +1,5 @@
 #include "game/frame_root.h"
+#include "game/status.h"
 #include "game/audio.h"
 #include "game/area.h"
 #include "game/enemy/core.h"
@@ -156,31 +157,9 @@ void mysmb_frame_root_read_joypads(struct mysmb_game *game,
         MYSMB_ROOT_SAVED_JOYPAD2, MYSMB_ROOT_JOYPAD_MASK2);
 }
 /* ROM $8a4f-$8a6c UpdateTopScore / TopScoreCheck. */
-static void mysmb_frame_root_top_score_check(struct mysmb_game *game,
-                                             mysmb_u8 player_offset)
-{
-    mysmb_u8 index;
-    mysmb_u8 borrow;
-    mysmb_u8 player;
-    mysmb_u8 top;
-
-    borrow = 0U;
-    for (index = 6U; index != 0U; --index) {
-        player = game->ram[MYSMB_ROOT_PLAYER_SCORE + player_offset + index - 1U];
-        top = game->ram[MYSMB_ROOT_TOP_SCORE + index - 1U];
-        borrow = player < (mysmb_u8)(top + borrow) ? 1U : 0U;
-    }
-    if (borrow != 0U) return;
-    for (index = 0U; index < 6U; ++index) {
-        game->ram[MYSMB_ROOT_TOP_SCORE + index] =
-            game->ram[MYSMB_ROOT_PLAYER_SCORE + player_offset + index];
-    }
-}
-
 void mysmb_frame_root_update_top_score(struct mysmb_game *game)
 {
-    mysmb_frame_root_top_score_check(game, 0U);
-    mysmb_frame_root_top_score_check(game, 6U);
+    mysmb_status_update_top_score(game);
 }
 /* ROM $821c-$8244 PauseRoutine.  T14 later invokes this at its NMI site. */
 mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game)

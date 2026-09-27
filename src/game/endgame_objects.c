@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/status.h"
 #include "game/area.h"
 
 enum {
@@ -32,29 +33,9 @@ enum {
  * same score/timer call sites as RunStarFlagObj. */
 static void mysmb_endgame_apply_digits(struct mysmb_game *game, mysmb_u8 offset)
 {
-    mysmb_u8 index;
-    mysmb_u8 value;
-
-    index = 5U;
-    while (1) {
-        value = (mysmb_u8)(game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + index] +
-                           game->ram[MYSMB_ENDGAME_DISPLAY_DIGITS + offset]);
-        if (value >= 0x80U) {
-            game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + index - 1U]--;
-            value = 9U;
-        }
-        else if (value >= 10U) {
-            value = (mysmb_u8)(value - 10U);
-            game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + index - 1U]++;
-        }
-        game->ram[MYSMB_ENDGAME_DISPLAY_DIGITS + offset] = value;
-        if (index == 0U) break;
-        --index;
-        --offset;
-    }
-    for (index = 0U; index <= 6U; ++index)
-        game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + index] = 0U;
+    mysmb_status_apply_digit_modifier(game, offset);
 }
+
 
 static void mysmb_endgame_award_score(struct mysmb_game *game, mysmb_u8 amount)
 {

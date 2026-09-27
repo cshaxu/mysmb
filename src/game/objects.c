@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/status.h"
 #include "game/enemy/movement.h"
 #include "game/oam/oam.h"
 #include "game/world/world.h"
@@ -2341,32 +2342,9 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset)
 {
-    mysmb_u8 index;
-    mysmb_u8 value;
-
-    if (game->ram[MYSMB_OPERATING_MODE] != 0U) {
-        index = 5U;
-        while (1) {
-            value = (mysmb_u8)(game->ram[MYSMB_DIGIT_MODIFIER + index] +
-                               game->ram[MYSMB_DISPLAY_DIGITS + digit_offset]);
-            if (value >= 0x80U) {
-                game->ram[MYSMB_DIGIT_MODIFIER + index - 1U]--;
-                value = 9U;
-            }
-            else if (value >= 10U) {
-                value = (mysmb_u8)(value - 10U);
-                game->ram[MYSMB_DIGIT_MODIFIER + index - 1U]++;
-            }
-            game->ram[MYSMB_DISPLAY_DIGITS + digit_offset] = value;
-            if (index == 0U) break;
-            --index;
-            --digit_offset;
-        }
-    }
-    for (index = 0U; index <= 6U; ++index) {
-        game->ram[MYSMB_DIGIT_MODIFIER + index] = 0U;
-    }
+    mysmb_status_apply_digit_modifier(game, digit_offset);
 }
+
 
 /* ROM $bbb6 GiveOneCoin.  Coin collection paths share this tally and status
  * command tail; the caller retains ownership of the metatile removal. */
