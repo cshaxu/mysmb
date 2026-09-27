@@ -442,20 +442,20 @@ The labels and branches behind every line remain open until individually bound b
 | 3048 | `ExTrans` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 3052 | `DoNothing1` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 3055 | `DoNothing2` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
-| 3060 | `AreaParserTaskHandler` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertaskhandler) |
-| 3065 | `DoAPTasks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doaptasks) |
-| 3071 | `SkipATRender` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipatrender) |
-| 3073 | `AreaParserTasks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsertasks) |
-| 3087 | `IncrementColumnPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incrementcolumnpos) |
-| 3094 | `NoColWrap` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocolwrap) |
-| 3106 | `BSceneDataOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bscenedataoffsets) |
-| 3109 | `BackSceneryData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backscenerydata) |
-| 3131 | `BackSceneryMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-backscenerymetatiles) |
-| 3145 | `FSceneDataOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fscenedataoffsets) |
-| 3148 | `ForeSceneryData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forescenerydata) |
-| 3158 | `TerrainMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrainmetatiles) |
-| 3161 | `TerrainRenderBits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-terrainrenderbits) |
-| 3179 | `AreaParserCore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaparsercore) |
+| 3060 | `AreaParserTaskHandler` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3065 | `DoAPTasks` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3071 | `SkipATRender` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3073 | `AreaParserTasks` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3087 | `IncrementColumnPos` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3094 | `NoColWrap` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3106 | `BSceneDataOffsets` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3109 | `BackSceneryData` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3131 | `BackSceneryMetatiles` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3145 | `FSceneDataOffsets` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3148 | `ForeSceneryData` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3158 | `TerrainMetatiles` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3161 | `TerrainRenderBits` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
+| 3179 | `AreaParserCore` | T18 responsibility (implementation not certified) | ROM-match complete | [T29 S5 closure](../../proposals/m2/t29-area-parser-geometry.md#s5-closure-and-s6-admission-parser-dispatch-data-chain) |
 | 3184 | `RenderSceneryTerrain` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rendersceneryterrain) |
 | 3187 | `ClrMTBuf` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrmtbuf) |
 | 3193 | `ThirdP` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-thirdp) |

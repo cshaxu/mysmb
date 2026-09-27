@@ -455,3 +455,65 @@ non-fatal `OLDNAMES.LIB` warning.  The refreshed package identities are
 and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83FDDC`.
 This remains an implementation checkpoint: per-label source-audit
 dispositions and tracker closure are still pending.
+
+## S5 closure and S6 admission: parser-dispatch data chain
+
+S5 closes **14 / 14** expected labels at **316 / 1,992**:
+`AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`,
+`IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`,
+`BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`,
+`ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, and
+`AreaParserCore`. No scoped label is deferred.
+
+The ROM-logic evidence is the source-order audit of `$92b0-$92fb`: zero task
+becomes eight before the decrement; the decrement is both JumpEngine selector
+and persisted task value; vectors select increment, graphics, graphics, core,
+increment, graphics, graphics, core; the final zero task calls the attribute
+owner only after its selected vector returns. `IncrementColumnPos` retains the
+four-bit column wrap, page carry, five-bit block-column mask, and its shared
+`NoColWrap` tail. `AreaParserCore` performs the backloading
+`ProcessAreaData` call before its scenery handoff; the scenery owner performs
+the second source call before block-buffer commit.
+
+The seven data labels bind to the owner-local PRG ranges and neutral SHA-256
+identities: `BSceneDataOffsets` `$12f7`/3
+`C8FB459015DC06ADA0CF28025EFFB1FE66B28B04071D79445EDD939CA9AE888E`,
+`BackSceneryData` `$12fa`/144
+`81092B806E0D38BA25FDF7F23709576CC5C370B346BEB5EFC593430C38797DB7`,
+`BackSceneryMetatiles` `$138a`/36
+`DCAD9DD5AE28C1758B75C1833621E441BF9283ADC03EEAA39DE1B884C21589C9`,
+`FSceneDataOffsets` `$13ae`/3
+`B30329774A4F526EB0D891479A6692D643EAD0B84721003174C9D5992F66D84A`,
+`ForeSceneryData` `$13b1`/39
+`F7A296A83E79DA4582BF7A39D787F442F67772CBD91157225D826587BE79C367`,
+`TerrainMetatiles` `$13d8`/4
+`884F7AAF67D7AA593F4794B5437531B6010AE474DA705B2FB9C4B955A8819B4C`,
+and `TerrainRenderBits` `$13dc`/32
+`A942453254BE2BFDDE94EF03F0C301131BDCB643A53FB7F96AB111983DB8379E`.
+The hashes are local verification metadata; neither table data nor the ROM is
+tracked.
+
+The ordinary source-RAM-only parser route reaches `$92b0-$92c8` on all eight
+task slots, both increment paths `$92db-$92f6`, and both Core-vector passes
+through `$93fc`, without program-counter or stack injection. The independent
+operational track is P3's x86/x64 parser/data tests and purity check, plus the
+shared DOS16 link and the three P3 artifacts. The inventory, progress report
+and ledger record all fourteen completed labels.
+
+S6 now receives exactly `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`,
+`RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`,
+`TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`,
+`EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, and `BlockBuffLowBounds`
+through accepted transfer `transfer-087-t18-s4-to-t29-s6-scenery-column`.
+These twenty labels are open at **316 / 1,992** and forecast twenty matches,
+for a maximum of **336 / 1,992**.
+
+S6 is the contiguous shared `area.c` column-construction owner from `$92fc`
+through `$9376`. Its ROM track compares metatile clearing, page-remainder
+background selection, three-row and foreground overlays, terrain type/cloud,
+world-eight and underground exceptions, bit-mask traversal, `ProcessAreaData`
+handoff, block-buffer address and low-bound stores. Its operational track uses
+the existing parser-column/data/buffer tests and any added focused renderer
+smokes, x86/x64 builds, OpenNT DOS16 link, purity and one three-artifact
+package per implementation P. It does not receive `ProcessAreaData` or any
+area-object decoder leaf; that starts S7.

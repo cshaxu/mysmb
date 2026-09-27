@@ -2,8 +2,8 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T29 S5, the fourteen-node area-parser
-dispatch and scenery-selection chain. M2 T29 S4 is closed at 302 / 1,992.**
+**Active implementation packet: M2 T29 S6, the twenty-node scenery/terrain
+column and block-buffer chain. M2 T29 S5 is closed at 316 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -11,7 +11,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. Only the M2 T29 S5 packet below is active.**
+queued records. Only the M2 T29 S6 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -68,7 +68,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit every game-mode dispatch, terminal-mode caller, player-record exchange and platform source; platform code may only supply physical input/timing and submit the completed game frame. |
 
-## M2 T29 S5 Packet
+## M2 T29 S5 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -88,6 +88,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Exit Criteria | All fourteen labels have both ROM-logic and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit every parser task/vector and platform source; platform code may only provide physical input/timing and submit the completed game frame. |
+
+## M2 T29 S6 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S6, implementation; scenery/terrain column construction and block-buffer commit chain. |
+| Admission And Approval | Owner-approved source-order continuation after S5 closure; accepted ledger transfer `transfer-087-t18-s4-to-t29-s6-scenery-column` receives all twenty labels. |
+| Objective | Translate and prove `RenderSceneryTerrain -> BlockBuffLowBounds` as one shared C scenery-to-collision-column chain. |
+| Non-goals | No area-stream decoder, large-object family, host rendering branch, synthetic leaf-PC or stack entry, or label outside the twenty-node receipt. |
+| Reference Baseline | 316 / 1,992 complete; twenty scoped open labels; expected twenty matches; maximum 336 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared `area.c` scenery/terrain owner, project-owned parser/data smokes, controlled ROM recorder, ledger/progress records, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | ROM logic audit `$92fc-$9376`: metatile clear; page-remainder background path; three-row and foreground overlays; terrain type/cloud/world-eight/underground rules; bit traversal; ProcessAreaData handoff; block-buffer threshold stores. Source-RAM-only ordinary GameEngine parser routes cover the parser cadence; focused source-shaped tests cover every data/branch family without a leaf PC or stack injection. Operational verification runs parser/data/render smokes, x86/x64 builds, DOS16 link, purity, and package checks. |
+| Expected Markers | Thirteen staged metatiles, page-remainder data index, overlay order, terrain bits, world/cloud exceptions, object-call placement, block-page address, threshold result and return. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Record every node disposition, data/branch/read/write/call-order evidence, source-RAM fixture route result, focused-test/build/package results, three artifact hashes, and every residual transferred outside the chain. |
+| Stop Conditions | Stop on an unmatched table byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All twenty labels have both ROM-logic and operational evidence without unrelated credit. |
+| Original Owner Request | Strict source order, dual verification and shared game logic only. |
+| Similar-Issue Sweep | Audit all area renderer writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
 
 ## Prior M2 T25 S25 Packet (closed)
 
