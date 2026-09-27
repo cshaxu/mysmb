@@ -242,6 +242,18 @@ static void mysmb_reference_apply_t26_endworld_b_fixture(lib_u8 *ram)
     ram[0x06fdu] = 0u;
 }
 
+/* Fixed T26 PlayerEndWorld precondition for the ordinary next-world path. */
+static void mysmb_reference_apply_t26_endworld_next_fixture(lib_u8 *ram)
+{
+    ram[0x0770u] = 2u;
+    ram[0x0772u] = 4u;
+    ram[0x075fu] = 2u;
+    ram[0x0760u] = 3u;
+    ram[0x075cu] = 2u;
+    ram[0x0757u] = 0u;
+    ram[0x07a1u] = 0u;
+}
+
 /* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
  * music text, and the non-world-eight end-timer branch. */
 static void mysmb_reference_apply_t26_victory_message_fixture(
@@ -359,6 +371,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 8u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t26-endworld-next-world") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 9u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -446,6 +463,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 8u)
                     mysmb_reference_apply_t26_victory_walk_fixture(
                         driver->machine->ram, 2u);
+                else if (t26_fixture == 9u)
+                    mysmb_reference_apply_t26_endworld_next_fixture(
+                        driver->machine->ram);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;

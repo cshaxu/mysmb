@@ -140,6 +140,18 @@ static void mysmb_recorder_apply_t26_endworld_b_fixture(struct mysmb_game *game)
     game->ram[0x06fdU] = 0U;
 }
 
+/* Fixed T26 PlayerEndWorld precondition for the ordinary next-world path. */
+static void mysmb_recorder_apply_t26_endworld_next_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0770U] = 2U;
+    game->ram[0x0772U] = 4U;
+    game->ram[0x075fU] = 2U;
+    game->ram[0x0760U] = 3U;
+    game->ram[0x075cU] = 2U;
+    game->ram[0x0757U] = 0U;
+    game->ram[0x07a1U] = 0U;
+}
+
 /* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
  * music text, and the non-world-eight end-timer branch. */
 static void mysmb_recorder_apply_t26_victory_message_fixture(
@@ -276,6 +288,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 8U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-endworld-next-world") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 9U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -345,6 +362,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_victory_walk_fixture(&game, 1U);
             else if (t26_fixture == 8U)
                 mysmb_recorder_apply_t26_victory_walk_fixture(&game, 2U);
+            else if (t26_fixture == 9U)
+                mysmb_recorder_apply_t26_endworld_next_fixture(&game);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

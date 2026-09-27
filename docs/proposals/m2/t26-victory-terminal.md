@@ -181,3 +181,10 @@ does not prepare that external player state; it is not a T26 terminal write
 and is excluded from this comparison. These records provide branch evidence
 for `SetupVictoryMode`, `PerformWalk`, `DontWalk`, and `ExitVWalk`, while
 whole-route OAM/player evidence remains required before any completion mark.
+
+The ordinary `PlayerEndWorld` controlled route also agrees at its first
+post-call NMI boundary: it clears area and level, increments world, requests
+the next game timer, clears terminal task four to game task zero, and switches
+to GameMode. Together with the World 8 B route, this records both terminal
+exits without treating the downstream area-pointer or title bootstrap work as
+T26-owned proof.
