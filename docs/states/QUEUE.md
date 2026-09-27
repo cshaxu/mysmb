@@ -15,8 +15,7 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The sole active packet is `M2 T28 S7`, the nineteen-label status-bar/digit
-arithmetic chain.  Its next receipt, and every later M2 admission, must use
+The sole active packet is `M2 T28 S8`, the sixteen-label initialization/bootstrap chain.  Its next receipt, and every later M2 admission, must use
 the source-order chain table defined by the recovery plan; it may not revive
 the retired fixed five-stage pattern. This changes delivery granularity only:
 node custody, source order, dual verification, tracker rows, and three-target

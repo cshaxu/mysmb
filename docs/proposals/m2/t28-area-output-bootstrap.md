@@ -440,3 +440,30 @@ pass refreshed `mysmb16.exe` SHA-256
 and `mysmb64.exe` `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F9`.
 Platform sources remain outside status arithmetic, status-buffer selection,
 score comparison and PPU packet construction.
+
+## S8 admission contract
+
+S8 receives the sixteen-label source-order initialization chain
+`DefaultSprOffsets -> ISpr0Loop`: `DefaultSprOffsets`, `Sprite0Data`,
+`InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`,
+`StartPage`, `SetInitNTHigh`, `SetSecHard`, `CheckHalfway`,
+`DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`,
+`ShufAmtLoop`, and `ISpr0Loop`. The baseline is **249 / 1,992**. Fifteen
+labels are open and `InitializeGame` is mapped with incomplete evidence; all
+sixteen are expected to become ROM-match complete, for a maximum of
+**265 / 1,992**.
+
+The shared owner is the game initialization boundary currently spanning
+`game.c` and `title_modes.c`; the S will consolidate or repair only shared C
+ownership identified by the source audit. It must preserve the source order
+of bounded memory clears, sound/timer clearing, area pointer/header setup,
+hard-mode decisions, VRAM-buffer reset, name-table selection, sprite shuffle
+data and sprite-0 setup. No platform adapter may select a game branch or
+write ROM-owned initialization state.
+
+ROM-equivalence proof uses source `$8fc0-$905a`, bound data bytes and natural
+cold-start/area-entry NMI routes. It must compare controlled RAM, VRAM-buffer,
+PPU mirror, OAM and mode-task outcomes without a fabricated leaf stack. The
+operational track will add focused initialization regression, original/native
+route recording, x86/x64 builds, OpenNT DOS16 link, platform-purity check and
+all three executable artifacts.

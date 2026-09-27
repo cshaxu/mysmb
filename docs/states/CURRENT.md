@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T28 S7, the nineteen-node status-bar/digit-arithmetic chain. T28 S6 is closed at 230 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Active implementation packet: M2 T28 S8, the sixteen-node initialization/bootstrap chain. T28 S7 is closed at 249 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
@@ -67,26 +67,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T28 S7 Packet
+## M2 T28 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T28 S7, implementation; status-bar/digit-arithmetic chain. |
-| Admission And Approval | Owner-approved source-order continuation; ledger receipt accepts nineteen labels from legacy T18 custody. |
-| Objective | Translate and prove `StatusBarData -> NoTopSc` in shared C. |
-| Non-goals | No NMI/input/output packet root, host HUD composition, platform text rendering decision, or label outside the nineteen-node receipt. |
-| Reference Baseline | 230 / 1,992 complete; 19 scoped open labels; expected 19 matches; maximum 249 / 1,992. |
+| Identifier Mode | M2 T28 S8, implementation; initialization/bootstrap chain. |
+| Admission And Approval | Owner-approved source-order continuation; ledger receipt accepts sixteen labels from legacy T18 custody. |
+| Objective | Translate and prove `DefaultSprOffsets -> ISpr0Loop` in shared C. |
+| Non-goals | No platform initialization branch, host reset policy, synthetic leaf entry, or label outside the sixteen-node receipt. |
+| Reference Baseline | 249 / 1,992 complete; sixteen scoped incomplete labels; expected 16 matches; maximum 265 / 1,992. |
 | Candidate Proposal | [M2 T28 area output and bootstrap](../proposals/m2/t28-area-output-bootstrap.md). |
-| Files And ABI Surface | Shared status/game owners and headers, controlled ROM/native recorder, focused shared-game smoke, ledger and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared game/title initialization owners and headers, controlled ROM/native recorder, focused shared-game smoke, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source audit of `$8ef4-$8fbf`; controlled original-ROM/native status-number and score-update routes; focused status/digit regression; x86/x64, DOS16 and purity checks. |
-| Expected Markers | Status destination selection, source digit fields and zero suppression, add/erase loop RAM writes, carry/borrow transitions, top-score compare and conditional copy. |
+| Verification | Source audit of `$8fc0-$905a`; controlled original-ROM/native cold-start and area-entry routes; focused initialization regression; x86/x64, DOS16 and purity checks. |
+| Expected Markers | Source data binding, bounded memory clears, page/name-table state, hard-mode and halfway branches, VRAM reset, OAM shuffle/sprite-0 state and mode-task handoff. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
-| Reporting Requirements | Record every status destination, arithmetic branch and all nineteen node dispositions. |
+| Reporting Requirements | Record every initialization data byte, source branch and all sixteen node dispositions. |
 | Stop Conditions | Stop on unmatched source behavior, unadmitted dependency, recorder mismatch or platform gameplay logic. |
-| Exit Criteria | All nineteen labels have ROM and operational evidence without unrelated credit. |
+| Exit Criteria | All sixteen labels have ROM and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
-| Similar-Issue Sweep | Audit every direct score/time/status-buffer/top-score mutation; platform sources may only supply physical input and submit the completed frame. |
+| Similar-Issue Sweep | Audit every direct reset/area-init/VRAM-clear/OAM-shuffle mutation; platform sources may only supply physical input and submit the completed frame. |
 
 ## Recent M4 Closures
 
