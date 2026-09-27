@@ -134,3 +134,15 @@ pass; x86 screen-status smoke passes; the shared source rebuilds x86/x64
 products and OpenNT DOS16 MZ. Refreshed local artifacts: `mysmb16.exe`
 `8CA1BBE6BB79A765245F03E5312CD16C8EB7C06D11586E51462B99CDF62CEFB5`,
 `mysmb32.exe` `AE2E88A5244A955250C12D62CD8D2588D3E219D08B17384C4E9A66CA208721FA`, `mysmb64.exe` `C0FDADA6D1DBA84C0CAD13CBBD889B0215A7D179ABF517D5C5C6D75D51B45B9E`.
+
+## S2/P2: PlayerInter before OutputInter
+
+ROM `PlayerInter` at lines 1577--1579 invokes `DrawPlayer_Intermediate`
+before it enters `OutputInter/WriteGameText`. The shared screen state machine
+now has that exact call order. Existing local-area intermediate and screen
+status regressions pass, along with platform purity; x86/x64 products and
+OpenNT DOS16 MZ rebuild from the shared source. Refreshed artifacts:
+`mysmb16.exe` `22E30540D963EAB0530E3784A802AC5F7E048B790EF8E738512EC3EA94CFB603`,
+`mysmb32.exe` `AE2E88A5244A955250C12D62CD8D2588D3E219D08B17384C4E9A66CA208721FA`,
+and `mysmb64.exe` `C0FDADA6D1DBA84C0CAD13CBBD889B0215A7D179ABF517D5C5C6D75D51B45B9E`.
+No S2 node credit is claimed before the complete chain proof.

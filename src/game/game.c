@@ -251,8 +251,10 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
                  game->ram[0x0769U] == 0U) {
             /* ROM branches to PlayerInter before DisableIntermediate is
              * consulted for castle areas. */
+            /* PlayerInter draws the OAM player before OutputInter writes
+             * the lives text command. */
+            mysmb_oam_draw_intermediate_player(game);
             if (mysmb_area_queue_game_text(game, 1U) != 0U) {
-                mysmb_oam_draw_intermediate_player(game);
                 game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
                 game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
                 game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
