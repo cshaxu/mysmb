@@ -2,15 +2,14 @@
 
 ## Current Work
 
-**M2 T29 S10, the ten-node allocation and final-object geometry chain, is admitted at 412 / 1,992 and owns `FindEmptyEnemySlot -> FlagBalls_Residual`; its maximum closing count is 422 / 1,992.**
+**M2 T22 S5, the eight-node flagpole setup and slide chain, is admitted at 422 / 1,992 and owns `FlagpoleObject -> ExitFlagP`; its maximum closing count is 430 / 1,992.**
 
-M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
+M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated nodes; it is not this implementation packet and cannot preempt M2 T22 S5.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
-remains a queued historical record and cannot preempt the T29 source-order continuation.
+remains a queued historical record and cannot preempt the active source-order chain.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. M2 T29 S10 is the sole active implementation packet.**
+queued records. M2 T22 S5 is the sole active implementation packet.**
 
 ## Retained M2 T15 summary
 

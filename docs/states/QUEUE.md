@@ -15,7 +15,7 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The sole active packet is `M2 T29 S10`, the ten-label `FindEmptyEnemySlot -> FlagBalls_Residual` allocation/final-object geometry chain, admitted at 412 / 1,992. Its predecessor S9 is closed; T19/S5 `InitPiranhaPlant` remains outside S10 scope.
+The sole active packet is `M2 T22 S5`, the eight-label `FlagpoleObject -> ExitFlagP` setup-and-slide chain, admitted at 422 / 1,992. Its predecessor T29/S10 is closed; score and relative/OAM dependency nodes remain outside S5 scope.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This

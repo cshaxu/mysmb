@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T22 active — S1/P2, S2/P1 and S4/P1.**
+**M2 T22 S5 is active: the eight-node flagpole setup and slide chain.**
 
 ## ROM scope
 
@@ -103,3 +103,34 @@ recreate those gates for each leaf.  A chain may not cross an unadmitted
 dependency, a different shared-owner boundary, or a branch family requiring a
 different ROM route.  The binding authority is
 [the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).
+
+## S5 admission: flagpole setup and slide chain
+
+S5 is re-scoped under the chain-delivery rule to the bounded shared-game path
+`FlagpoleObject -> ExitFlagP`.  Its eight exact labels, in original order, are
+`FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`,
+`FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, and `ExitFlagP`.
+The prior 121-node S5 backlog remains custody only; it is not an execution
+scope and will be split into subsequent bounded chains before admission.
+
+The entry is the area parser's flagpole object at `$999e`; the route joins the
+ordinary `GameEngine` flagpole routine at `$b9c7` and exits at `$ba0d`.  The
+shared-game owners are `area.c` for parser staging and `oam/flagpole_gfx.c`
+for slot-five state, score handoff, relative/offscreen scratch and OAM.  It
+may call the separately owned status and relative/OAM primitives but may not
+reimplement them or place gameplay behavior in a platform adapter.
+
+Baseline: **422 / 1,992**.  All eight nodes are incomplete and are expected
+to reach ROM-match complete; the maximum closing count is **430 / 1,992**.
+ROM-logic proof compares the metatile/slot-five setup, score tables, all
+state branches, score-mode transition, scratch writes and final return using
+an ordinary GameEngine flagpole route with controlled RAM only for branch
+selection.  Operational proof runs `mysmb.flagpole-oam-smoke`,
+`mysmb.area-parser-column-smoke`, and `mysmb.platform-purity` on x86/x64,
+links DOS16, and refreshes all three artifacts once per implementation P.
+
+Dependencies: S10 provides the immediately preceding completed area-object
+sequence; flagpole rendering reuses the existing shared relative/OAM owner;
+score arithmetic and game-mode successors retain their own node custody.  The
+next source-order unadmitted object family begins at `EndlessRope` and stays
+outside this packet.
