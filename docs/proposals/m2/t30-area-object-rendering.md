@@ -522,3 +522,109 @@ Expected/actual: four/four. `StaircaseHeightData`, `StaircaseRowData`,
 1,992**. No unfinished scoped node remains and no collaborator gets credit.
 Tracker, census and ledger must pass the closure gates before commit.
 Jumpspring is the next unadmitted source-order entry.
+
+## T30/S7 admission: jumpspring creation chain
+
+Exact scope and expected match: `Jumpspring` (4172), incoming open. Baseline
+**459 / 1,992**, expected **1**, maximum **460 / 1,992**. Transfer-104 accepts
+the node from T18 S4 under source-order continuation. This is the complete
+allocation/creation chain at `$9ad3-$9b00`; it splits from the later hidden/
+question/brick selection family because the latter has different calls and
+ROM routes. Shared owner: area.c. Predecessor S6 is closed; Hidden1UpBlock
+is next. Existing FindEmptyEnemySlot and attribute/position helpers are
+collaborators without credit; runtime jumpspring animation is excluded.
+
+ROM-logic audit follows attribute decode, five-slot search/fallback slot five,
+X/page/Y/fixed-Y/ID/high-Y writes, flag INC including byte wrap, then the two
+unconditional metatile stores. Native tests cover all slots, coordinate
+boundaries and overwritten metatiles. Original-ROM ordinary parser routes
+use immutable jumpspring records with source RAM only, never PC/stack edits.
+Build x86/x64 and DOS16, run focused tests and purity, refresh three EXEs.
+
+Reviewed owner-local SMB1 ROM/disassembly are restricted validation inputs;
+no third-party implementation is imported. Trace containment is ignored
+build/m2-t30-s7, one warmup plus two samples per route, existing 131072
+instructions/frame and 1 MB total raw-trace budget. S7 owns cleanup after
+review. No completion is credited at admission.
+
+S7 route refinement: initial GameEngine fixtures let already-live jumpspring
+actors run before parsing. Their existing offscreen differences change free
+slots before the admitted routine. The creation proof therefore uses the
+ordinary ScreenRoutines/AreaParserTaskControl build route (mode task one,
+screen task eight, one column set), with no actor runtime or instruction
+injection. This is the ROM's own pre-game creation path, not a bypass helper.
+The known jumpspring offscreen unsigned-underflow discrepancy stays with
+its runtime/offscreen receivers and is not repaired or credited by S7.
+
+## S7/P1: jumpspring creation and ROM proof
+
+`Jumpspring` at `$9ad3-$9b00` now has the shared C owner
+`mysmb_area_jumpspring`. The existing decoder's small-object selector eleven
+calls it. Source order is preserved: GetLrgObjAttrib writes `$07`; the existing
+FindEmptyEnemySlot scans five ordinary slots and returns five when full;
+X, page, Y and fixed Y are written, then ID `$32`, high Y one, flag INC, and
+unconditional metatiles `$67/$68`. Coordinate helpers retain eight-bit shift
+and add semantics. No early return is invented for a full pool; flag wrap
+remains observable. Allocator/position helpers keep their original receivers.
+
+The original ScreenRoutines/AreaParserTaskControl route selects the immutable
+7-1 record at `$abc8`, row nine/column seven. Eight shared source-RAM fixtures
+exercise each free ordinary slot and slot-five fallback with flags zero, one
+and 255. One column set is built before actor runtime. Reference PC coverage
+requires `$8567`, `$86e6`, `$9508`, `$994a`, `$9ad3` and attribute/X/Y helper
+entries. No PC, stack, program byte or return flow is replaced.
+
+The comparator requires actual creation outputs (X `$70`, page one, Y and
+fixed Y `$b0`, ID `$32`, high Y one, flag one/two/zero), plus persistent block
+buffer metatiles at `$0590/$05a0`. The staging column has already advanced by
+the NMI checkpoint, so zero staging bytes alone are not accepted as evidence.
+All 42 creation-array bytes, both block buffers, staging and parser slot/height
+state match in both samples for all eight cases. Residual RAM differences
+remain explicitly reported; no whole-frame or runtime-handler equivalence is
+claimed. Initial GameEngine probes exposed the existing jumpspring offscreen
+underflow and are superseded for creation proof by the legitimate pre-game
+build route. The finding is recorded in TODO: JumpspringHandler currently
+belongs to T24 S2 custody; OffscreenBoundsCheck belongs to T19 S5. Neither
+node is admitted or credited by this creation receipt.
+
+```text
+reference <ROM> build/m2-t30-s7/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-spring=<id> --pc-coverage=build/m2-t30-s7/pc-<id>.txt
+native build/m2-t30-s7/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-spring=<id>
+python -B test/verify_jumpspring_routes.py build/m2-t30-s7
+```
+
+Ids zero through seven retain sixteen final traces of 8,830 bytes, total
+141,280 bytes, under the 1 MB limit and existing instruction cap. They remain
+ignored local research output; S7 owns cleanup after review. Only neutral
+harnesses and summaries are tracked, without imported ROM/program bytes.
+
+The independent native matrix passes 1,536 combinations of twelve rows,
+sixteen columns and eight slot states. It checks all seven creation arrays
+including untouched slots, row scratch, non-length status, and overwrites of
+both metatiles even over palette-three foreground. Strict C90 x86/x64 builds
+pass this, staircase and parser-column tests. Both Windows self-tests exit
+zero; separate hidden bounded probes confirm window creation and responsive
+message dispatch. OpenNT16 links an MZ with existing warnings; playable DOS
+remains unproven due to the recorded resource-binding debt. Purity and package
+checks pass; no platform gameplay code changed.
+
+Similar-issue sweep confirms selector eleven previously had no production
+creation branch. The new area owner is the only creation writer; runtime
+animation/fixed-Y reads remain in their existing handler and no platform
+writes those fields. Other actor allocation callers and later brick selectors
+remain outside scope.
+
+Artifact SHA-256: `mysmb16.exe`
+`E993815556E081F8F86F6A2A619197F0A08CC7AAA7A4A8CDA774B493949BF7AC`;
+`mysmb32.exe`
+`7E026FCBE7798E727EC700753676849DFB70BCD42F4F0B87FEAFBF4593B8B122`;
+`mysmb64.exe`
+`0D5B4B041D67715F8A1B646CB852C37EA3091656092969F56A48E0C38E52ACC9`.
+
+## S7 closure
+
+Expected/actual: one/one. `Jumpspring` creation is complete in both tracks:
+**459 -> 460 / 1,992**. No scoped node remains unfinished; runtime animation
+and offscreen debt retain their existing receivers with no credit. Tracker,
+census and ledger must pass closure gates. Hidden1UpBlock begins the next
+unadmitted source-order family.

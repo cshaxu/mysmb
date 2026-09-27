@@ -592,7 +592,7 @@ The labels and branches behind every line remain open until individually bound b
 | 4154 | `StaircaseRowData` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
 | 4157 | `StaircaseObject` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
 | 4162 | `NextStair` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
-| 4172 | `Jumpspring` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring) |
+| 4172 | `Jumpspring` | M2 T30 S7 shared `area.c` jumpspring creation chain | ROM-match complete | [T30 S7/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s7p1-jumpspring-creation-and-rom-proof) |
 | 4197 | `Hidden1UpBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upblock) |
 | 4204 | `QuestionBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblock) |
 | 4208 | `BrickWithCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickwithcoins) |

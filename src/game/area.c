@@ -1428,6 +1428,26 @@ static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row)
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
+/* ROM $9ad3-$9b00 Jumpspring. The caller does not branch on allocation
+ * carry: a full ordinary pool uses slot five, including flag INC/wrap. */
+static void mysmb_area_jumpspring(struct mysmb_game *game, mysmb_u8 row)
+{
+    mysmb_u8 slot;
+
+    game->ram[7U] = row;
+    (void)mysmb_area_find_empty_enemy_slot(game, &slot);
+    game->ram[MYSMB_ENEMY_X + slot] =
+        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_AREA_CURRENT_PAGE];
+    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 32U);
+    game->ram[0x58U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_ENEMY_ID + slot] = 0x32U;
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_FLAG + slot]++;
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x67U;
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x68U;
+}
+
 /* ROM $9aa5/$9aae: both tables are consumed after the control decrement. */
 static const mysmb_u8 mysmb_area_staircase_height[9] = {
     7U, 7U, 6U, 5U, 4U, 3U, 2U, 1U, 0U
@@ -1717,6 +1737,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                 game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
         }
         else if (value == 10U) mysmb_area_empty_block(game, row);
+        else if (value == 11U) mysmb_area_jumpspring(game, row);
         return;
     }
     if (kind == 4U) {

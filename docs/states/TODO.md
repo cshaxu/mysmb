@@ -2,6 +2,8 @@
 
 ## Translation Debt
 
+- [ ] **Jumpspring pre-parser offscreen mismatch (`TODO(High)`):** T30/S7 GameEngine probes found native jumpsprings cleared by the unsigned `screen - 0x48` comparison near screen origin while ROM retains them, changing allocation before area creation. S7 proves creation through original ScreenRoutines; runtime/offscreen repair remains with its existing source-order receiver. [Evidence](../proposals/m2/t30-area-object-rendering.md#t30s7-admission-jumpspring-creation-chain).
+
 - [ ] **DOS resource binding (`TODO(High)`):** the current DOS composition root powers on and resets the game without binding owner-local PRG, CHR or title data; the OpenNT build does not compile generated resource sources. An MZ link is therefore build evidence only. Admission path: [presentation adapters](../proposals/m3-presentation-adapters.md); require resource binding and an actual boot-to-game route before claiming DOS playability.
 
 - [ ] **T24 missing-path finding (`TODO(High)`): cannon scheduler and whirlpool activation.** T22 owns ProcessCannons, ProcessWhirlpools and WhirlpoolActivate; BulletBillHandler and player jump parameters are only collaborators. [Audit evidence](../etc/architecture/m2-t24-s1-full-node-census.md#additional-concrete-scope-findings); admission path: [blocks/items S4](../proposals/m2/blocks-items-misc.md). No repair is admitted here.
