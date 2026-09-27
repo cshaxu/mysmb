@@ -550,7 +550,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3862 | `VerticalPipeData` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3868 | `VerticalPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
-| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | audited; mismatch | [T30 S10 source contradiction; prior completion revoked](../../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings) |
+| 3900 | `DrawPipe` | M2 T30 S12 shared DrawPipe tail | ROM-match complete | [T30 S12/P1 corrected tail proof](../../proposals/m2/t30-area-object-rendering.md#s12p1-draw-pipe-tail-rom-proof) |
 | 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
 | 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |

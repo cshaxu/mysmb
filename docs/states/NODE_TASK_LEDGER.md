@@ -72,10 +72,11 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T29 S6 | 20 | `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds` |
 | M2 T29 S7 | 31 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore` |
 | M2 T29 S8 | 22 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
-| M2 T29 S9 | 22 | `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight` |
+| M2 T29 S9 | 21 | `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `GetPipeHeight` |
 | M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
 | M2 T30 S10 | 6 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` |
 | M2 T30 S11 | 1 | `DecodeAreaData` |
+| M2 T30 S12 | 1 | `DrawPipe` |
 | M2 T30 S2 | 2 | `CoinMetatileData`, `RowOfCoins` |
 | M2 T30 S3 | 7 | `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`, `EmptyBlock`, `ColObj` |
 | M2 T30 S4 | 10 | `SolidBlockMetatiles`, `BrickMetatiles`, `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`, `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2` |
@@ -518,7 +519,7 @@ transfer existing ownership or allocate a numeric T.
 | 3862 | `VerticalPipeData` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3868 | `VerticalPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3876 | `WarpPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3900 | `DrawPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3900 | `DrawPipe` | M2 T30 S12 | existing closure backlog; Accepted transfer-109: DrawPipe tail correction after revoked completion. | M2 T21 S4; M2 T24 S1; M2 T29 S9; M2 T30 S12 |
 | 3911 | `GetPipeHeight` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3921 | `FindEmptyEnemySlot` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3923 | `EmptyChkLoop` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
@@ -2259,10 +2260,10 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 S6 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S7 | 0 | 31 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S8 | 0 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S9 | 22 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S9 | 22 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S10 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T3 | 2 | - | [record](../../docs/history/M2-T2-title-start-checkpoint.md); [record](../../docs/history/M2-T3-area-bootstrap-and-commands.md); S not recorded |
-| M2 T30 | 48 | - | [record](../../docs/proposals/m2/t30-area-object-rendering.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T30 | 49 | - | [record](../../docs/proposals/m2/t30-area-object-rendering.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T30 S1 | 0 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S2 | 0 | 2 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S3 | 7 | 7 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
@@ -2274,6 +2275,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T30 S9 | 8 | 8 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S10 | 6 | 6 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S11 | 1 | 1 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
+| M2 T30 S12 | 1 | 1 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T4 | 0 | - | [record](../../docs/history/M2-T4-player-route-and-collision.md); S not recorded |
 | M2 T5 | 2 | - | [record](../../docs/history/M2-T5-object-routes.md); S not recorded |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
@@ -2428,6 +2430,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-106-t18-s4-to-t30-s9-hole-underpart | M2 T18 S4 | M2 T30 S9 | 8 | Coordinator under owner-approved source-order continuation.; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | transfer-107-t18-s4-to-t30-s10-common-helpers | M2 T18 S4 | M2 T30 S10 | 6 | Coordinator under owner-approved source-order continuation.; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | transfer-108-t29-s7-to-t30-s11-parser-index | M2 T29 S7 | M2 T30 S11 | 1 | Coordinator under owner-approved M2 source-order recovery and queued corrective audit.; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
+| transfer-109-t29-s9-to-t30-s12-draw-pipe | M2 T29 S9 | M2 T30 S12 | 1 | Coordinator under owner-approved M2 continuation and queued audit correction.; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -2536,3 +2539,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T30 S9 | 8 | 468 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR` / 8 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR` / 8 | closed-hole-underpart-chain-476; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S10 | 6 | 476 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` / 6 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` / 6 | closed-common-helper-chain-480; six new matches, two prior matches revoked; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
 | M2 T30 S11 | 1 | 480 | `DecodeAreaData` / 1 | `DecodeAreaData` / 1 | closed-parser-index-correction-481; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |
+| M2 T30 S12 | 1 | 481 | `DrawPipe` / 1 | `DrawPipe` / 1 | closed-draw-pipe-correction-482; [record](../../docs/proposals/m2/t30-area-object-rendering.md) |

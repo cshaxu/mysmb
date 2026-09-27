@@ -1595,14 +1595,31 @@ static void mysmb_area_staircase_object(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_area_render_under_part(game, row, height, 0x61U);
 }
 
+/* ROM $98dd VerticalPipeData is shared by vertical and intro pipes. */
+static const mysmb_u8 mysmb_area_vertical_pipe_data[8] = {
+    0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
+};
+
+/* ROM $9925-$9938 DrawPipe: restore the saved selector, write the top,
+ * then tail-enter UnderPart with the byte-decremented vertical extent. */
+static void mysmb_area_draw_pipe(struct mysmb_game *game, mysmb_u8 selector)
+{
+    mysmb_u8 row, height;
+
+    row = game->ram[7U];
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
+        mysmb_area_vertical_pipe_data[selector];
+    row++;
+    height = (mysmb_u8)(game->ram[6U] - 1U);
+    mysmb_area_render_under_part(game, row, height,
+        mysmb_area_vertical_pipe_data[(mysmb_u8)(selector + 2U)]);
+}
+
 static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 slot,
                                            mysmb_u8 first,
                                            mysmb_u8 second)
 {
-    static const mysmb_u8 pipe[8] = {
-        0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
-    };
     static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
     static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
     static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
@@ -1635,7 +1652,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                 mysmb_area_render_under_part(game, 0U, 8U, side_pipe_shaft[value]);
                 for (row = 0U; row < 7U; ++row)
                     game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0U;
-                game->ram[MYSMB_AREA_METATILE_BUFFER + 7U] = pipe[value];
+                game->ram[MYSMB_AREA_METATILE_BUFFER + 7U] =
+                    mysmb_area_vertical_pipe_data[value];
             }
             game->ram[MYSMB_AREA_METATILE_BUFFER + 9U] = side_pipe_top[value];
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = side_pipe_bottom[value];
@@ -1863,14 +1881,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                 mysmb_enemy_init_piranha_plant(game, enemy_slot);
             }
         }
-        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = pipe[value];
-        if (row == 12U) return;
-        row++;
-        value = pipe[(mysmb_u8)(value + 2U)];
-        height = game->ram[6U];
-        if (height == 0U) height = (mysmb_u8)(12U - row);
-        else height--;
-        mysmb_area_render_under_part(game, row, height, value);
+        mysmb_area_draw_pipe(game, value);
         return;
     }
     if (kind == 5U) mysmb_area_column_of_bricks(game);

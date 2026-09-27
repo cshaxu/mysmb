@@ -1090,3 +1090,107 @@ and independent native/build verification. **480 -> 481 / 1,992**; mapped
 incomplete is 104, open remains 1,407. No scoped label is unfinished. DrawPipe
 remains explicitly audited mismatch and is the next queued correction; the
 block-buffer chain remains unadmitted. M2 is not complete.
+
+## T30/S12 admission: DrawPipe corrective tail
+
+Exact scope/expected match: `DrawPipe` (3900), incoming audited mismatch.
+Baseline **481 / 1,992**, expected **1**, maximum **482 / 1,992**. Transfer-109
+accepts maintenance responsibility from T29 S9. This is the remaining queued
+correction from S10, after closed S11 and before BlockBufferAddr. Shared owner:
+area.c; entry/exit $9925-$9938, VerticalPipe/GetPipeHeight inputs through the
+already verified UnderPart tail. Collaborator nodes receive no new credit.
+
+Source audit preserves saved table selector, $07 row, unconditional top store,
+byte row increment, second table lookup, $06 height load, byte DEY and tail
+call. Delete the invented zero-height bottom fill and row-12 early return.
+Normal parser rows zero through eleven can reach this family; row twelve is
+selected by the special-object table and is not claimed as an executable
+DrawPipe path. Original immutable-ROM pipe records with source-RAM resident
+slots cover heights zero through seven, usage bit and left/right columns.
+No PC, stack, return or code-byte injection is permitted.
+
+Native tests cover the full reachable row/height/usage/side matrix and prior
+pipe creation/area consumers. Build and test x86/x64, link DOS16, check platform
+purity/startup, and refresh all three EXEs. Owner NROM and reviewed SMBDIS are
+local-only research inputs; raw traces remain ignored under build/m2-t30-s12,
+with 2 MB total, twenty seconds/process, one warmup/two samples and the existing
+131072-instruction frame cap. S12 owns cleanup after the enclosing T review.
+No completion is credited at admission.
+
+## S12/P1: DrawPipe tail ROM proof
+
+`DrawPipe` ($9925-$9938) now has a named shared C owner. Its saved-selector
+parameter represents PLA/TAY, then $07 supplies X, the original table writes
+the top unconditionally, X increments as a byte, the second table lookup
+selects the shaft, and $06 is decremented as a byte before tail-entering
+RenderUnderPart. Height zero therefore passes $ff and draws one shaft row
+before UnderPart's signed-decrement exit. The previous C bottom-fill policy
+is removed. No actor state, collision policy or platform implementation changed.
+
+The former row-12 early return is also removed because it has no original
+instruction. It is unreachable through ordinary vertical-pipe dispatch:
+record rows 12..15 select special families before the large-object pipe path;
+the unchanged immutable record is then reread by GetLrgObjAttrib. The highest
+reachable pipe row is eleven, whose shaft starts at row twelve and exits
+through UnderPart's original bottom check. No fake PC/stack route is claimed
+for an impossible row-12 pipe dispatch.
+
+VerticalPipeData at $98dd retains its eight exact bytes and now has one named
+file-local table shared by DrawPipe and the intro-pipe consumer. This is a
+binding/consolidation change, not an extra data-node credit. The similar-issue
+sweep finds no remaining pipe zero-height fill or invented row early return.
+Other row-12 branches are legitimate special-object dispatch and remain intact.
+
+Thirty-two original-ROM routes use sixteen immutable data-region byte pairs,
+interpreted by the ordinary parser through controlled AreaData pointers and
+resident object slots. These are controlled semantic cases, not a claim that
+every chosen pointer is a natural level entry. They cover all eight heights,
+both usage-bit choices and left/right columns. The current stream points to
+an existing $fd marker so unrelated new objects cannot hide the pipe result.
+All source RAM is applied before normal ScreenRoutines execution; no code,
+PC, stack or return-address injection.
+
+Every route requires ProcessAreaData, DrawPipe, its row increment/DEY/tail
+instruction and UnderPart entry/exit coverage. It must execute DrawPipe twice
+for a left-column start or once for a right-column start. The comparator
+requires all thirteen first-column collision tiles, the expired fixed-length
+slot, and equality of 1,782 persistent RAM bytes for both samples. All 32
+routes pass; scratch, stack and PPU-mirror residuals are separately recorded.
+This is not whole-frame or actor-runtime equivalence.
+
+```text
+reference <ROM> build/m2-t30-s12/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-pipe-tail=<id> --pc-coverage=build/m2-t30-s12/pc-<id>.txt
+native build/m2-t30-s12/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-pipe-tail=<id>
+python -B test/verify_pipe_tail_routes.py build/m2-t30-s12
+```
+
+Negative control rebuilds pre-fix area.c from `00b7a50` against the same
+fixture harness and other objects. Its native pipe-tail smoke fails, and its
+four zero-height ROM routes mismatch persistent state; the remaining 28
+routes match. The correction therefore repairs the specific zero-height
+behavior without changing those nonzero-height paths.
+
+The 64 positive and 32 negative traces total 847,680 bytes, below the 2 MB
+budget, with twenty-second process deadlines and the reference instruction
+cap. They remain ignored for the enclosing T review. The independent native
+matrix passes 2,304 cases: twelve reachable rows x eight heights x two usage
+bits x two columns x six protected/unprotected backgrounds. It checks every
+staged row, unconditional top writes, clipped shaft extent, exact retained
+height and fixed-length expiration. All twenty-one area smokes pass in strict
+C90 on x86/x64 (42 program runs), as do product self-tests and hidden bounded
+window/message probes. OpenNT16 links MZ with its existing OLDNAMES warning;
+DOS resource binding/playability remains deferred. Platform purity passes.
+
+Artifact SHA-256: `mysmb16.exe` `CCAC944DD3089393EB069E6BBF804303571D7DA87781C47525EF6FA60F0CA233`.
+
+Artifact SHA-256: `mysmb32.exe` `77318159E1A6131A0596146E1843370862A07EEF3C687A574630C9E9512EAEF1`.
+
+Artifact SHA-256: `mysmb64.exe` `9BE447AA61B7902B4D411C075CB63D32133BFA9416DE57B4F3BE6A3D18FF4554`.
+
+## S12 closure
+
+Expected/actual restored match: one/one, `DrawPipe`. Both verification tracks
+pass and no scoped node remains unfinished. **481 -> 482 / 1,992**; mapped
+incomplete returns to 103 and open remains 1,407. S10's two revoked claims now
+have explicit corrective proofs in S11/S12. The next unadmitted chain begins
+at BlockBufferAddr; M2 remains open.

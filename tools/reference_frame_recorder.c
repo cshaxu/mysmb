@@ -17,6 +17,7 @@
 #include "../test/hole_underpart_fixture.h"
 #include "../test/area_helper_fixture.h"
 #include "../test/parser_boundary_fixture.h"
+#include "../test/pipe_tail_fixture.h"
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -1315,6 +1316,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_pipe_tail_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(396 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_parser_boundary_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1631,6 +1638,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 397u && t26_fixture <= 428u)
+                    mysmb_pipe_tail_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 397u));
                 else if (t26_fixture >= 373u && t26_fixture <= 396u)
                     mysmb_parser_boundary_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 373u));

@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S11 is closed at 481 / 1,992; DecodeAreaData is restored to ROM-match complete.**
+**M2 T30 S12 is closed at 482 / 1,992; DrawPipe is restored to ROM-match complete.**
 
-The corrected read passes 24 original-ROM boundary routes and cross-width
-regression/build checks; all three artifacts are refreshed. No S is active.
-DrawPipe remains the next corrective candidate, followed by BlockBufferAddr.
+The corrected tail passes 32 original-ROM routes and all area regressions.
+Three artifacts are refreshed. No S is active; BlockBufferAddr begins the
+next unadmitted source-order chain.
 
-## M2 T30 S11 Packet
+## M2 T30 S12 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S11, continuation implementing the queued parser correction. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-108 accepts DecodeAreaData from T29 S7. |
-| Objective | Restore original current/saved-index and terminal/second-byte read semantics; one named node. |
-| Non-goals | No DrawPipe repair, platform game logic, renderer change or unrelated node credit. |
-| Reference Baseline | 480 / 1,992; DecodeAreaData audited mismatch; expected one, maximum 481. |
+| Identifier Mode | M2 T30 S12, continuation implementing queued DrawPipe correction. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-109 accepts DrawPipe from T29 S9. |
+| Objective | Restore DrawPipe top/shaft/height/tail sequence; one named node. |
+| Non-goals | No actor runtime, platform gameplay, block-buffer changes, or unrelated node credit. |
+| Reference Baseline | 481 / 1,992; DrawPipe audited mismatch; expected one, maximum 482. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c parser, boundary/consumer tests, local recorder fixtures, tracker/ledger and three EXEs. |
+| Files And ABI Surface | Shared area.c, pipe/area tests, local recorders, node records and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | Original indexed-read/branch audit plus ordinary ScreenRoutines ROM routes; C90 boundary/parser smokes, x86/x64, DOS16, startup, purity and packaging. |
-| Expected Markers | Offset $ff second byte uses pointer+0; saved slot and fresh cursor agree; terminal consumes no second byte; exact decoded tile/length/page outputs. |
-| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS MZ remains build-only evidence. |
-| Reporting Requirements | Named node disposition, original/new proof, regression results, actual count, artifact hashes and transfer. |
-| Stop Conditions | Unmatched read/branch/order, unintended collaborator change, missing ROM witness or platform gameplay. |
-| Exit Criteria | DecodeAreaData passes both tracks and tracker/ledger agree, or exact unfinished transfer. |
-| Original Owner Request | Preserve complete original-ROM logic, shared C90, source-order implementation and honest checklist. |
-| Similar-Issue Sweep | All area stream second-byte and terminal reads, including saved offsets and public legacy readers; record outside-path debt. |
+| Verification | Original DrawPipe instruction/caller audit; immutable-ROM height/usage/side routes; C90 native matrix, x86/x64, DOS16, purity, startup and packaging. |
+| Expected Markers | Unconditional top write; byte row increment; original table selector; height zero becomes $ff, never a bottom-fill policy; UnderPart controls exit. |
+| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS MZ is build evidence only. |
+| Reporting Requirements | Named disposition, both evidence tracks, expected/actual count, hashes and transfer. |
+| Stop Conditions | Unmatched source write/order, missing route, unadmitted dependency or platform gameplay. |
+| Exit Criteria | DrawPipe passes both tracks and node records agree, or exact unfinished transfer. |
+| Original Owner Request | Full original-ROM logic shared by all three platforms; node-level checklist and chain delivery. |
+| Similar-Issue Sweep | Vertical pipe table readers and height/row early exits; distinguish reachable pipe rows from row-12 special dispatch. |
 
 ## Retained M2 T15 summary
 
