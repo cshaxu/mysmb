@@ -609,6 +609,31 @@ static void mysmb_recorder_apply_t29_final_question_fixture(
     game->ram[0x00e8U] = 0xa5U;
 }
 
+/* Source-RAM mirror of L_GroundArea3's real $1d,$c1 FlagpoleObject route. */
+static void mysmb_recorder_apply_t22_flagpole_fixture(struct mysmb_game *game)
+{
+    mysmb_recorder_apply_t29_geometry_castle_fixture(game);
+    game->ram[0x0725U] = 14U;
+    game->ram[0x0726U] = 1U;
+    game->ram[0x072aU] = 13U;
+    game->ram[0x072bU] = 0U;
+    game->ram[0x072cU] = 2U;
+    game->ram[0x00e7U] = 0x83U;
+    game->ram[0x00e8U] = 0xa5U;
+}
+
+/* Source-RAM branch preconditions for the next ordinary FlagpoleRoutine tick. */
+static void mysmb_recorder_apply_t22_flagpole_score_fixture(
+    struct mysmb_game *game)
+{
+    game->ram[0x000eU] = 4U;
+    game->ram[0x001dU] = 3U;
+    game->ram[0x00d4U] = 0xaaU;
+    game->ram[0x010fU] = 2U;
+    game->ram[0x0753U] = 0U;
+    game->ram[0x0716U] = 1U;
+}
+
 static void mysmb_recorder_apply_t29_special_chain_fixture(
     struct mysmb_game *game, mysmb_u8 kind)
 {
@@ -726,6 +751,7 @@ int main(int argument_count, char **arguments)
     const char *script;
     mysmb_u8 bootstrap_title;
     mysmb_u8 t26_fixture;
+    mysmb_u8 t22_flagpole_score_pending;
     struct mysmb_recorder_ram_write ram_write;
 
     if (argument_count < 5 || argument_count > 9) return 64;
@@ -738,6 +764,7 @@ int main(int argument_count, char **arguments)
     warmup_frames = 0UL;
     ram_write.present = 0U;
     t26_fixture = 0U;
+    t22_flagpole_score_pending = 0U;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
@@ -1099,6 +1126,8 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-final-question-high") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 86U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t22-flagpole") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 87U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t22-flagpole-score") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 88U; }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
@@ -1243,6 +1272,12 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
+            else if (t26_fixture == 87U)
+                mysmb_recorder_apply_t22_flagpole_fixture(&game);
+            else if (t26_fixture == 88U) {
+                mysmb_recorder_apply_t22_flagpole_fixture(&game);
+                t22_flagpole_score_pending = 1U;
+            }
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
@@ -1362,6 +1397,11 @@ int main(int argument_count, char **arguments)
                 fclose(output);
                 return 0;
             }
+        }
+        if (t22_flagpole_score_pending != 0U &&
+            index == warmup_frames + 1UL) {
+            mysmb_recorder_apply_t22_flagpole_score_fixture(&game);
+            t22_flagpole_score_pending = 0U;
         }
         if ((t26_fixture == 51U || t26_fixture == 52U) &&
             index == warmup_frames) {

@@ -7,6 +7,10 @@ int main(void)
     struct mysmb_game game;
 
     memset(&game, 0, sizeof(game));
+    mysmb_objects_step_flagpole(&game);
+    if (game.ram[0x0008U] != 5U) return 12;
+
+    memset(&game, 0, sizeof(game));
     mysmb_objects_start_flagpole(&game, 1U, 0x80U);
     if (game.ram[0x0087U + 5U] != 0x78U || game.ram[0x006eU + 5U] != 1U ||
         game.ram[0x00cfU + 5U] != 0x30U || game.ram[0x0016U + 5U] != 48U ||
@@ -17,7 +21,7 @@ int main(void)
     game.ram[0x001dU] = 3U; game.ram[0x00ceU] = 0x20U;
     game.ram[0x010fU] = 2U; game.ram[0x070fU] = 0x20U;
     mysmb_objects_step_flagpole(&game);
-    if (game.ram[0x03aeU] != 0x58U || game.ram[0x03b9U] != 0x31U ||
+    if (game.ram[0x0008U] != 5U || game.ram[0x03aeU] != 0x58U || game.ram[0x03b9U] != 0x31U ||
         game.ram[0x03d1U] != 0U ||
         game.ram[0x00cfU + 5U] != 0x31U || game.ram[0x0417U + 5U] != 0xffU ||
         game.ram[0x010dU] != 0xaeU || game.ram[0x010eU] != 1U) return 2;
@@ -29,6 +33,11 @@ int main(void)
     if (game.ram[0x028cU] != 0xaeU || game.ram[0x028dU] != 0xfaU ||
         game.ram[0x028fU] != 0x6cU || game.ram[0x0290U] != 0xaeU ||
         game.ram[0x0291U] != 0xfbU || game.ram[0x0293U] != 0x74U) return 4;
+
+    /* FPGfx calls GetEnemyOffscreenBits, retaining the vertical nibble. */
+    game.ram[0x00b6U + 5U] = 2U;
+    mysmb_objects_step_flagpole(&game);
+    if (game.ram[0x03d1U] != 0xf0U) return 13;
 
     memset(&game, 0, sizeof(game));
     mysmb_objects_start_flagpole(&game, 0U, 0x80U);

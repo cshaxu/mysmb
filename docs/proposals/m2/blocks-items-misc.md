@@ -114,7 +114,7 @@ The prior 121-node S5 backlog remains custody only; it is not an execution
 scope and will be split into subsequent bounded chains before admission.
 
 The entry is the area parser's flagpole object at `$999e`; the route joins the
-ordinary `GameEngine` flagpole routine at `$b9c7` and exits at `$ba0d`.  The
+ordinary `GameEngine` flagpole routine at `$b855` and exits at `$b8b5`.  The
 shared-game owners are `area.c` for parser staging and `oam/flagpole_gfx.c`
 for slot-five state, score handoff, relative/offscreen scratch and OAM.  It
 may call the separately owned status and relative/OAM primitives but may not
@@ -134,3 +134,43 @@ sequence; flagpole rendering reuses the existing shared relative/OAM owner;
 score arithmetic and game-mode successors retain their own node custody.  The
 next source-order unadmitted object family begins at `EndlessRope` and stays
 outside this packet.
+
+## S5/P1: flagpole parser, score and graphics route
+
+The controlled original-ROM route selects `L_GroundArea3`'s resident
+`$1d,$c1` object pair.  It enters `FlagpoleObject` at `$999e`, then runs the
+ordinary `GameEngine` path through `FlagpoleRoutine` `$b855`, `SkipScore`
+`$b896`, `FPGfx` `$b8ac`, and `ExitFlagP` `$b8b5`.  A second route applies
+only the source-RAM predicates for the following ordinary frame and reaches
+`GiveFPScr` `$b899`.  Both routes use the same parser state and slot-five
+object; neither redirects the PC or stack to a leaf.
+
+The node-level ROM audit establishes the following in source order:
+
+| Node | Evidence and shared-C disposition |
+| --- | --- |
+| `FlagpoleObject` | The parser advances the object page from 13 to 14, writes the flagpole metatile column, and initializes slot five from the current page/column. The native parser route produces the same slot-five page, X, Y, ID and flag bytes. |
+| `FlagpoleScoreMods` / `FlagpoleScoreDigits` | ROM table bytes are `{5,2,8,4,1}` and `{3,3,4,4,4}`. The score route selects index 2, yields the ROM status-buffer result, and clears the consumed modifier through the separately owned score primitive. |
+| `FlagpoleRoutine` | ROM writes `ObjectOffset=$05` before the flag-ID guard. The shared owner now makes that write before its early return; the focused smoke covers both the guard and normal route. |
+| `SkipScore` | The ordinary route reaches the jump-to-graphics branch with slot-five position, fixed scratch bytes and flag OAM equal to the reference snapshot. |
+| `GiveFPScr` | The score route reaches the branch, performs score update, queues the source status write and changes `GameEngineSubroutine` from 4 to 5. |
+| `FPGfx` | The port now calls the complete `GetEnemyOffscreenBits` primitive, matching the ROM's X and Y nybbles. It then writes the fixed `Enemy_OffscreenBits`, `Enemy_Rel_XPos`, `Enemy_Rel_YPos`, flag OAM and floatey-number OAM in source order. |
+| `ExitFlagP` | Both PC-coverage routes return through `$b8b5` after the graphics call. |
+
+The route comparison has zero differences for all bytes owned by this chain:
+parser/slot-five state, `ObjectOffset`, game-subroutine transition, score and
+status-buffer result, fixed relative/offscreen scratch, OAM, audio command
+state and PPU scalar output.  Whole-snapshot differences remain in unrelated
+zero-page/stack scratch, sprite-buffer tail and palette-rotation state; they
+are retained as upstream-owner debt and are not credited to this chain.
+
+Operational evidence: the updated `mysmb.flagpole-oam-smoke` passes on x86
+and x64; both native windows executables pass `--self-test`; the OpenNT
+DOS16 link produces an MZ executable; and the platform-purity check passes.
+The DOS compiler reports its pre-existing integral-size warnings, including
+the score call, but links successfully.  Refreshed artifacts: `mysmb16.exe`
+`42C43BEB8D8E0D13B0C8134BB2927D3C6D56C9CB3C00F7653DAAE168D3AEA4C1`,
+`mysmb32.exe`
+`DCF511D3FA51FC244DEC5042F4C9196865652E29C21392A6CBFBCEEE9ABE6B89`,
+and `mysmb64.exe`
+`32DE517369B121C4C000F0C012F7210701A7DB2F7860CF40B76BF76F8D029F2F`.

@@ -71,7 +71,7 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
 
 /* ROM GetEnemyOffscreenBits / GetOffScreenBitsSet.  The object RAM stores
  * horizontal edge bits in the low nybble and vertical edge bits in the high
- * nybble.  Rendering callers intentionally keep using the X-only helper. */
+ * nybble; callers select this complete result when their source path does. */
 mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(
     const struct mysmb_game *game, mysmb_u8 slot)
 {

@@ -9,6 +9,7 @@ enum {
     MYSMB_FLAG_ENEMY_Y = 0x00cfU, MYSMB_FLAG_ENEMY_Y_DUMMY = 0x0417U,
     MYSMB_FLAG_ENEMY_OFFSCREEN = 0x03d1U, MYSMB_FLAG_ENEMY_REL_X = 0x03aeU,
     MYSMB_FLAG_ENEMY_REL_Y = 0x03b9U, MYSMB_FLAG_ENEMY_SPRITE_OFFSET = 0x06e5U,
+    MYSMB_FLAG_OBJECT_OFFSET = 0x0008U,
     MYSMB_FLAG_GAME_SUBROUTINE = 0x000eU, MYSMB_FLAG_PLAYER_STATE = 0x001dU,
     MYSMB_FLAG_PLAYER_Y = 0x00ceU, MYSMB_FLAG_CURRENT_PLAYER = 0x0753U,
     MYSMB_FLAG_DIGIT_MODIFIER = 0x0134U,
@@ -45,6 +46,8 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
     };
     mysmb_u8 oam, bits, carry, score_index, index;
 
+    /* FlagpoleRoutine: LDX #$05 / STX ObjectOffset precedes its ID check. */
+    game->ram[MYSMB_FLAG_OBJECT_OFFSET] = 5U;
     if (game->ram[MYSMB_FLAG_ENEMY_ID + 5U] != 48U) return;
     if (game->ram[MYSMB_FLAG_GAME_SUBROUTINE] == 4U &&
         game->ram[MYSMB_FLAG_PLAYER_STATE] == 3U) {
@@ -70,7 +73,7 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
     }
     /* ROM FPGfx writes fixed Enemy_OffscreenBits then calls
      * RelativeEnemyPosition with ObjectOffset=$05. */
-    bits = mysmb_objects_get_enemy_x_offscreen_bits(game, 5U);
+    bits = mysmb_objects_get_enemy_offscreen_bits(game, 5U);
     game->ram[MYSMB_FLAG_ENEMY_OFFSCREEN] = bits;
     mysmb_oam_relative_enemy_position(game, 5U);
     oam = game->ram[MYSMB_FLAG_ENEMY_SPRITE_OFFSET + 5U];

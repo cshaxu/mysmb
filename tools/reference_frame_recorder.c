@@ -731,6 +731,34 @@ static void mysmb_reference_apply_t29_geometry_castle_fixture(lib_u8 *ram)
     ram[0x00e8u] = 0xa4u;
 }
 
+/* T22/S5 selects the original L_GroundArea3 flagpole ($1d,$c1 at $a585).
+ * The area pointer is two bytes before that pair, exactly as the normal parser
+ * consumes AreaDataOffset 2.  The first byte's column is one; $c1 first
+ * advances object page 13 to 14, then row-13/d6 dispatches FlagpoleObject. */
+static void mysmb_reference_apply_t22_flagpole_fixture(lib_u8 *ram)
+{
+    mysmb_reference_apply_t29_geometry_castle_fixture(ram);
+    ram[0x0725u] = 14u;
+    ram[0x0726u] = 1u;
+    ram[0x072au] = 13u;
+    ram[0x072bu] = 0u;
+    ram[0x072cu] = 2u;
+    ram[0x00e7u] = 0x83u;
+    ram[0x00e8u] = 0xa5u;
+}
+
+/* The second frame of the same normal parser route selects FlagpoleRoutine's
+ * GiveFPScr branch after the first frame has created slot five. */
+static void mysmb_reference_apply_t22_flagpole_score_fixture(lib_u8 *ram)
+{
+    ram[0x000eu] = 4u;
+    ram[0x001du] = 3u;
+    ram[0x00cfu + 5u] = 0xaau;
+    ram[0x010fu] = 2u;
+    ram[0x0753u] = 0u;
+    ram[0x0716u] = 1u;
+}
+
 /* The original 1-1 stream has VerticalPipe $68,$f2 at CPU $a69c.  Its page
  * bit advances the object page from zero to the already-current page one. */
 static void mysmb_reference_apply_t29_geometry_vertical_pipe_fixture(lib_u8 *ram)
@@ -860,6 +888,7 @@ int main(int argument_count, char **arguments)
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
+    lib_bool t22_flagpole_score_pending;
     lib_u8 t28_vram_phase;
     lib_u8 t29_area_entry_phase;
     lib_u32 last_frame_revision;
@@ -881,6 +910,7 @@ int main(int argument_count, char **arguments)
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
+    t22_flagpole_score_pending = LIB_FALSE;
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
@@ -1274,6 +1304,8 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t22-flagpole") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 93u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t22-flagpole-score") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 94u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-castle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 90u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-geometry-vertical-pipe") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 91u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-final-question-high") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 92u; continue; }
@@ -1534,6 +1566,13 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture == 93u)
+                    mysmb_reference_apply_t22_flagpole_fixture(driver->machine->ram);
+                else if (t26_fixture == 94u)
+                {
+                    mysmb_reference_apply_t22_flagpole_fixture(driver->machine->ram);
+                    t22_flagpole_score_pending = LIB_TRUE;
+                }
                 else if (t26_fixture == 90u)
                     mysmb_reference_apply_t29_geometry_castle_fixture(
                         driver->machine->ram);
@@ -1649,6 +1688,12 @@ int main(int argument_count, char **arguments)
                     driver->machine->pc = 0x8a6bu;
                     direct_warp_text = LIB_TRUE;
                 }
+            }
+            if (t22_flagpole_score_pending &&
+                elapsed == warmup_frames + 1u) {
+                mysmb_reference_apply_t22_flagpole_score_fixture(
+                    driver->machine->ram);
+                t22_flagpole_score_pending = LIB_FALSE;
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;
