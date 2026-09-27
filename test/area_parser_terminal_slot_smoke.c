@@ -26,7 +26,11 @@ int main(void)
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x0eU;
     prg[0x41U] = 0x25U;
-    prg[0x42U] = 0xfdU;
+    prg[0x42U] = 0x0dU;
+    prg[0x43U] = 0x01U;
+    prg[0x44U] = 0x25U;
+    prg[0x45U] = 0x02U;
+    prg[0x46U] = 0xfdU;
     mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
     game.ram[0x00e7U] = 0x40U;
     game.ram[0x00e8U] = 0x80U;
@@ -37,10 +41,11 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
 
     /* Chk1Row14 reaches RdyDecode while backloading, so an earlier-page
-     * attribute object still changes terrain and background scenery. */
+     * attribute object still changes terrain and background scenery. The
+     * next current-page object then takes InitRear and terminates preload. */
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x0727U] != 5U || game.ram[0x0742U] != 2U ||
-        game.ram[0x072cU] != 2U) return 1;
+        game.ram[0x0728U] != 0U || game.ram[0x072cU] != 4U) return 1;
 
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x0dU;

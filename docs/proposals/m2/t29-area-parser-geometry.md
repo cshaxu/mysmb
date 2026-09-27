@@ -697,3 +697,22 @@ artifacts are `mysmb16.exe`
 `CA402E7AF77932DE44BAD68CEC054A3BFFDA14E9381AC0AA1E05D8C556CED4F7`,
 `mysmb32.exe` `BFD495637A472080C4D7351E555F4D5F86C0E417264E4B06D0231EEB76F1E829`,
 and `mysmb64.exe` `CB60DE551148AFB4F3F5610A47B29E021D87818436A0A5BAAB236241D93CB856`.
+
+## S7 P7: source loopback state and backload completion
+
+`ProcADLoop` now writes its descending slot to `ObjectOffset` (`$08`) before
+each decode, and the outer parser repeats under either source condition:
+the final slot's `BehindAreaParserFlag` or a still-set `BackloadingFlag`.
+The artificial 255-pass escape was removed; the ROM has no such alternative
+termination. Backload test streams now include the source-required
+current-page object that reaches `InitRear`, so the loop ends by clearing the
+flag rather than by accepting a truncated `$fd` stream.
+
+`mysmb.area-parser-terminal-slot-smoke`,
+`mysmb.area-parser-column-smoke`, `mysmb.parser-schedule-smoke`,
+`mysmb.area-data-smoke` and `mysmb.platform-purity` pass on x86 and x64.
+The common C90 code links into the OpenNT DOS16 MZ with the pre-existing
+non-fatal `OLDNAMES.LIB` warning. P7 artifacts are `mysmb16.exe`
+`F76FE63A5BCA852585C4E679FC74BA57EDF934D38B3289C29BD6C48F66066DE3`,
+`mysmb32.exe` `0FEF848402E8FAB65DBDE7EEEAFC91297BBBB2F753BA19D3B24D36ED9CE1E0C3`,
+and `mysmb64.exe` `6236B23DD448D6F89A5FAAED6CFBB382DCBE46C3545B635CF372474FCBFD7364`.

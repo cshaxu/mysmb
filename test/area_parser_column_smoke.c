@@ -85,7 +85,8 @@ int main(void)
      * select terrain control five in time for this same staging column. */
     prg[0x0040U] = 0x0eU;
     prg[0x0041U] = 0x25U;
-    prg[0x0042U] = 0xfdU;
+    prg[0x0042U] = 0x10U;
+    prg[0x0043U] = 0x00U;
     prg[0x13dcU + 10U] = 1U;
     prg[0x13dcU + 11U] = 0U;
     game.ram[0x00e7U] = 0x40U;

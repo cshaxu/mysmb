@@ -1433,16 +1433,15 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
     mysmb_u8 offset;
     mysmb_u16 address;
     mysmb_u8 rerun;
-    mysmb_u8 passes;
     mysmb_u8 run_object;
 
     if (game == 0 || game->area_prg == 0 ||
         game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) return 0U;
-    passes = 0U;
     do {
         rerun = 0U;
         slot = 2U;
         for (;;) {
+            game->ram[MYSMB_AREA_OBJECT_OFFSET] = slot;
             run_object = 0U;
             /* ProcADLoop clears this byte for every slot. Only the final
              * slot's SetBehind result reaches the ProcessAreaData loopback. */
@@ -1544,9 +1543,8 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
             if (slot == 0U) break;
             slot--;
         }
-        passes++;
-    } while (rerun != 0U && passes != 0xffU);
-    return rerun == 0U ? 1U : 0U;
+    } while (rerun != 0U || game->ram[MYSMB_AREA_BACKLOADING] != 0U);
+    return 1U;
 }
 
 void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page)
