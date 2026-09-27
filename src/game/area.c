@@ -1428,6 +1428,44 @@ static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row)
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
+/* ROM $9aa5/$9aae: both tables are consumed after the control decrement. */
+static const mysmb_u8 mysmb_area_staircase_height[9] = {
+    7U, 7U, 6U, 5U, 4U, 3U, 2U, 1U, 0U
+};
+static const mysmb_u8 mysmb_area_staircase_row[9] = {
+    3U, 3U, 4U, 5U, 6U, 7U, 8U, 9U, 10U
+};
+
+/* ROM $9ab7 StaircaseObject -> $9ac1 NextStair. */
+static void mysmb_area_staircase_object(struct mysmb_game *game,
+                                        mysmb_u8 slot, mysmb_u8 second)
+{
+    mysmb_u8 index, row, height;
+
+    /* ChkLrgObjLength always decodes the row, including continuation. */
+    game->ram[7U] = 15U;
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] =
+            (mysmb_u8)(second & 0x0fU);
+        game->ram[MYSMB_AREA_STAIRCASE_CONTROL] = 9U;
+    }
+    /* NextStair: DEC precedes both indexed reads. */
+    game->ram[MYSMB_AREA_STAIRCASE_CONTROL]--;
+    index = game->ram[MYSMB_AREA_STAIRCASE_CONTROL];
+    if (index < 9U) {
+        row = mysmb_area_staircase_row[index];
+        height = mysmb_area_staircase_height[index];
+    } else {
+        /* Preserve original adjacent-ROM reads for a nonstandard index;
+         * no host out-of-bounds access or invented clamp to the last step. */
+        if (game->area_prg == 0 || game->area_prg_size <= 0x1aaeU + index)
+            return;
+        row = game->area_prg[0x1aaeU + index];
+        height = game->area_prg[0x1aa5U + index];
+    }
+    mysmb_area_render_under_part(game, row, height, 0x61U);
+}
+
 static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 slot,
                                            mysmb_u8 first,
@@ -1441,12 +1479,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
     static const mysmb_u8 hole[4] = { 0x87U, 0U, 0U, 0U };
-    static const mysmb_u8 staircase_row[9] = {
-        3U, 3U, 4U, 5U, 6U, 7U, 8U, 9U, 10U
-    };
-    static const mysmb_u8 staircase_height[9] = {
-        7U, 7U, 6U, 5U, 4U, 3U, 2U, 1U, 0U
-    };
     static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
     static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
     static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
@@ -1615,21 +1647,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (row == 15U && kind == 3U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-            game->ram[MYSMB_AREA_STAIRCASE_CONTROL] = 9U;
-        }
-        game->ram[MYSMB_AREA_STAIRCASE_CONTROL]--;
-        value = game->ram[MYSMB_AREA_STAIRCASE_CONTROL];
-        if (value >= 9U) return;
-        row = staircase_row[value];
-        height = staircase_height[value];
-        do {
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x61U;
-            if (row == 12U || height == 0U) break;
-            row++;
-            height--;
-        } while (1);
+        mysmb_area_staircase_object(game, slot, second);
         return;
     }
     if (row == 15U && kind == 4U) {

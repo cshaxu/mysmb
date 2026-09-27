@@ -425,3 +425,100 @@ Expected and actual new matches: three. `BulletBillCannon`, `SetupCannon`,
 scope label remains, and no collaborator gets completion credit. Tracker,
 census and ledger must pass their closure gates before commit. The next
 unadmitted source-order chain starts at `StaircaseHeightData`.
+
+## T30/S6 admission: staircase rendering chain
+
+Entry/exit: `StaircaseHeightData -> NextStair`; shared owner `src/game/area.c`.
+Exact source-order scope and expected matches: `StaircaseHeightData` (4151),
+`StaircaseRowData` (4154), `StaircaseObject` (4157), `NextStair` (4162).
+All four are incoming open; baseline **455 / 1,992**, expected **4**,
+maximum **459 / 1,992**. Transfer-103 accepts these from T18 S4 under the
+owner-approved continuation. Closed S5 precedes the chain; Jumpspring is next.
+GetLrgObjAttrib/ChkLrgObjLength and RenderUnderPart remain existing
+collaborators without credit. No later object or platform logic is admitted.
+
+ROM-logic verification audits both nine-byte tables at `$9aa5/$9aae`, the
+length-helper carry and `$07` write, initial control nine, pre-decrement,
+indexed row/height lookup and the `$61` RenderUnderPart tail. Controlled
+ordinary parser routes cover first and continuing columns and all nine
+indices, using source RAM and immutable owner-ROM records without PC/stack
+injection. Native tests cover full width, length expiration and preservation
+of foreground metatiles. Separate operational proof builds x86/x64 and
+DOS16, runs focused regressions and purity checks, then refreshes three EXEs.
+
+The owner-local SMB1 NROM and reviewed SMBDIS remain restricted validation
+inputs; no third-party translation is imported. Two samples after a bounded
+warmup, 131072 instructions/frame and an aggregate 1 MB raw-trace limit apply.
+All raw output stays under ignored build/m2-t30-s6; S6 owns cleanup after
+review. No node is complete on admission.
+
+## S6/P1: staircase chain and ROM proof
+
+| Node | Source audit and original-ROM execution evidence |
+| --- | --- |
+| `StaircaseHeightData` | Nine bytes at `$9aa5` match the shared C table, indexed after DEC. All indices zero through eight are consumed by the parser routes. |
+| `StaircaseRowData` | Nine bytes at `$9aae` match the shared C table; the two top columns share row three. Every row/index pair is observed in original execution. |
+| `StaircaseObject` | `$9ab7` calls ChkLrgObjLength: row `$07=$0f` is written even on continuation; negative length initializes from the object nibble and carry causes control nine. The first-column route executes `$9abc`; continuation preserves its control before NextStair. |
+| `NextStair` | `$9ac1` decrements control before row/height reads, selects `$61` and tails into RenderUnderPart. Both metatile preservation and final AreaObjectHeight are now owned by that existing primitive. All nine normal indices plus controlled index nine/255 match source execution. |
+
+The previous C loop overwrote every staged metatile, omitted `$07` and
+AreaObjectHeight, and discarded out-of-range control values. The named shared
+owner replaces it with the original call order. Normal table indices use the
+verified constants; adjacent-ROM reads for other indices use the bound
+immutable source, with a missing-resource check instead of host out-of-bounds
+access. This is a data read, not interpreted execution or a second game path.
+The two extra source-RAM cases prove those reads at indices nine and 255.
+
+The immutable staircase record at `$a57f` is entered through ordinary
+GameEngine/ProcessAreaData. Shared `test/staircase_fixture.h` selects initial
+or resident-slot state without changing PC, stack, program bytes or returns.
+Twelve routes retain one warmup and two samples, with coverage at `$9508`,
+`$9ab7`, `$9ac1`, `$9b7d` and the initialization branch where applicable.
+The comparator first requires actual step geometry, control, remaining height
+and length. It then compares all thirteen staging bytes, ten parser/control
+bytes and the two adjacent-index write locations in both samples. All twelve
+routes have zero scoped differences. Other differences remain explicitly
+reported in scratch RAM, stack and PPU mirrors `$0778/$0779`; no whole-frame
+RAM equivalence or collaborator completion is claimed.
+
+```text
+reference <ROM> build/m2-t30-s6/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-stair=<id> --pc-coverage=build/m2-t30-s6/pc-<id>.txt
+native build/m2-t30-s6/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-stair=<id>
+python -B test/verify_staircase_routes.py build/m2-t30-s6
+```
+
+Ids 0..11 produce 24 raw traces of 8,830 bytes, total 211,920 bytes under the
+admitted 1 MB limit, retained only in ignored build output for review. The
+S6 executor owns cleanup after review. Neutral route assertions alone are
+tracked; owner ROM material remains local input with no redistribution claim.
+
+The independent native smoke runs 72 full object scenarios (length zero
+through eight, eight foreground/background types), totaling 432 column
+checks including post-expiration columns. It checks all staged rows, control,
+length, scratch row and remaining height. It and cannon/parser-column smokes
+pass strict C90 x86/x64 builds; Windows self-tests exit zero. Hidden bounded
+startup probes create both MySMB windows and receive WM_NULL responses, then
+terminate only their own processes. OpenNT16 links an MZ with existing
+warnings; DOS resource binding/playability remains the already-recorded debt.
+Platform purity and package checks pass. No platform file changed.
+
+Similar-issue sweep found one staircase control/table/render path, now moved
+to the named shared owner; no duplicate staircase or platform control writer
+remains. RenderUnderPart and length/attribute helpers retain their existing
+receivers and receive no credit. Jumpspring and later brick/object code are
+unchanged and unadmitted.
+
+Artifact SHA-256: `mysmb16.exe`
+`70E63FB1E365EA2251E040C5EBE09C7D174E1BED918DDC2B410127DF29C8D2CD`;
+`mysmb32.exe`
+`65EFBE246DC621C42C6F5A127E709D1FB06C12474366C2B15FDD41234B454988`;
+`mysmb64.exe`
+`2C0093EB6BC522DA51E192D9FA2C97123F131C11513066325B582B02AB6F1DF4`.
+
+## S6 closure
+
+Expected/actual: four/four. `StaircaseHeightData`, `StaircaseRowData`,
+`StaircaseObject` and `NextStair` are complete in both tracks: **455 -> 459 /
+1,992**. No unfinished scoped node remains and no collaborator gets credit.
+Tracker, census and ledger must pass the closure gates before commit.
+Jumpspring is the next unadmitted source-order entry.

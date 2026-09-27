@@ -588,10 +588,10 @@ The labels and branches behind every line remain open until individually bound b
 | 4120 | `BulletBillCannon` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
 | 4135 | `SetupCannon` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
 | 4146 | `StrCOffset` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
-| 4151 | `StaircaseHeightData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseheightdata) |
-| 4154 | `StaircaseRowData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaserowdata) |
-| 4157 | `StaircaseObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseobject) |
-| 4162 | `NextStair` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextstair) |
+| 4151 | `StaircaseHeightData` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
+| 4154 | `StaircaseRowData` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
+| 4157 | `StaircaseObject` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
+| 4162 | `NextStair` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
 | 4172 | `Jumpspring` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring) |
 | 4197 | `Hidden1UpBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upblock) |
 | 4204 | `QuestionBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblock) |
