@@ -287,3 +287,39 @@ two unresolved labels to pre-accepted S6. S6 has an empty forecast and may
 restore the existing shared collaborator call only; S7 receives the two labels
 for a fresh, predeclared equivalence decision after an aligned full-domain
 route exists.
+
+## S6 closure and S7 admission
+
+S6 restores only the outer source sequence at ROM `$8471`: it runs
+`VictoryModeSubroutines`; the resulting task-zero branch goes directly to the
+existing player-relative/graphics tail; each resulting nonzero task writes
+`ObjectOffset = $00` and executes exactly one shared
+`EnemiesAndLoopsCore` slot-zero turn before that tail. The ordinary
+GameEngine schedule remains fireball, six current-slot turns and six Floatey
+ticks, so it is not substituted into VictoryMode. The extracted single-slot
+interface preserves the source-visible `ObjectOffset` write. The shared single-slot dispatcher includes the ROM `RetainerObject ($35)`
+branch before ordinary-enemy initialization, so its attributes remain intact
+and its existing OAM routine runs at the original dispatch point; no Win32 or
+DOS source contains gameplay state or route logic.
+
+The focused mode smoke proves both outer decisions: a continuing bridge task
+remains zero and leaves slot-zero enemy attributes untouched, while task one
+advances to task two and clears the seeded slot-zero attribute through the
+single current-slot actor path, including `ObjectOffset = $00`. Strict C90
+x64 and x86 builds pass that smoke; both fresh Win32 products pass
+`--self-test`; the shared source links to an OpenNT DOS16 MZ; and
+`test_platform_purity.py` passes. The refreshed local artifact SHA-256 values
+are `mysmb16.exe` `57DD37DBD7CA011F9B6AF68150A180308427AEA8AEA9739A96171CC20B2AEEB5`,
+`mysmb32.exe` `F0F207FA689502732ED18CFC75984890098155612BF84F527835AAB13B9E9454`,
+and `mysmb64.exe` `46140F3B72E1FA288AB832298B255960323F88AE78846690CADFA5CD480E0725`.
+
+S6 closes at **72 / 1,992** with zero newly complete labels. Its source-order
+repair does not independently prove the complete `VictoryMode` or
+`AutoPlayer` behavior: the latter still depends on the aligned
+relative-player/player-graphics state and output. Both labels transfer to the
+pre-accepted S7 receiver. S7 begins at **72 / 1,992**, scopes exactly
+`VictoryMode` and `AutoPlayer`, forecasts those two names, and may close at no
+more than **74 / 1,992** only after an aligned controlled or source-reachable
+original-ROM route compares the repaired task branch, slot-zero enemy-loop
+entry, relative player coordinates and player graphics output, alongside the
+usual cross-width, DOS16 and purity verification.

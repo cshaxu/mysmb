@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T26 S6 Packet
+## M2 T26 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T26 S6, implementation; source-order repair of the outer victory call sequence. |
-| Admission And Approval | Owner-approved source-order M2 plan; S5 completed 30 direct labels and transferred the two unresolved outer labels to this pre-accepted successor. |
-| Objective | Restore the original `VictoryMode` task-dependent call order using existing shared collaborators only. |
-| Non-goals | Enemy/player/OAM implementation changes, platform logic, or node credit. |
-| Reference Baseline | 72 / 1,992 complete; two scoped labels; zero expected matches; maximum 72 / 1,992. |
+| Identifier Mode | M2 T26 S7, implementation; independent outer-victory route equivalence. |
+| Admission And Approval | Owner-approved source-order M2 plan; S6 restored the outer call order with zero node credit and transferred both labels to this pre-accepted independent receiver. |
+| Objective | Compare the repaired `VictoryMode` and `AutoPlayer` outer route against an aligned original-ROM route. |
+| Non-goals | New gameplay approximation, platform gameplay logic, or credit without a complete aligned route. |
+| Reference Baseline | 72 / 1,992 complete; two scoped labels; expected matches `VictoryMode`, `AutoPlayer`; maximum 74 / 1,992. |
 | Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
-| Files And ABI Surface | Shared frame root and existing enemy-core interface, focused root tests, ledger, and three target artifacts. |
+| Files And ABI Surface | Shared frame root, current-slot enemy core, player/OAM collaborators, aligned recorder route, ledger, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original `VictoryMode` task-zero/nonzero call order; focused tests, cross-width builds, DOS16 and purity. |
-| Expected Markers | None; S7 holds the later ROM-match decision for `VictoryMode` and `AutoPlayer`. |
+| Verification | Original branch/read/write/call order and an aligned ROM route; focused tests, cross-width builds, DOS16 and purity. |
+| Expected Markers | `VictoryMode`, `AutoPlayer`, subject to independent full-route evidence. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record restored call order, external owners, no credited nodes, and resulting node count. |
+| Reporting Requirements | Record each label disposition, full-route evidence, and the resulting node count. |
 | Stop Conditions | Stop on unsound trace injection, external-owner change, or platform gameplay logic. |
-| Exit Criteria | Both labels transfer to S7 after a reviewable source-order repair and operational proof. |
+| Exit Criteria | Each label is completed only if both logic-equivalence and operational tracks pass; otherwise it transfers to an accepted successor. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Compare every current T26 terminal/floating-score write against its source label and route output. |
+| Similar-Issue Sweep | Compare all VictoryMode task branches and their shared enemy/player collaborator handoffs against the source route. |
 
 ## Recent M4 Closures
 

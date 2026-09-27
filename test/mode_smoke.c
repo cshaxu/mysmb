@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/area.h"
 #include "game/player.h"
 
 int main(void)
@@ -152,6 +153,65 @@ int main(void)
         game.ram[0x00fcU] != 0x80U || game.ram[0x07fdU] != 7U ||
         game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
         game.ram[0x07a0U] != 0U) return 11;
+
+    /* VictoryMode calls its selected leaf first.  A continuing bridge task
+     * remains task zero and therefore branches to AutoPlayer before the
+     * slot-zero EnemiesAndLoopsCore turn. */
+    {
+        static const mysmb_u8 prg[1] = { 0U };
+
+        mysmb_game_initialize(&game);
+        mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+        game.ram[0x0770U] = 2U;
+        game.ram[0x0772U] = 0U;
+        game.ram[0x0368U] = 0U;
+        game.ram[0x0016U] = 45U;
+        game.ram[0x0364U] = 2U;
+        game.ram[0x03c5U] = 0x5aU;
+        input.buttons = 0U;
+        mysmb_game_tick(&game, &input, &frame);
+        if (game.ram[0x0772U] != 0U || game.ram[0x03c5U] != 0x5aU) return 12;
+    }
+
+    /* SetupVictoryMode advances task one to two before VictoryMode checks
+     * it, so the same frame executes only current slot zero.  The normal
+     * enemy core clears this source-owned attribute before graphics; a
+     * direct Retainer-only shortcut cannot produce this result. */
+    {
+        static const mysmb_u8 prg[1] = { 0U };
+
+        mysmb_game_initialize(&game);
+        mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+        game.ram[0x0770U] = 2U;
+        game.ram[0x0772U] = 1U;
+        game.ram[0x000fU] = 1U;
+        game.ram[0x0016U] = 6U;
+        game.ram[0x0008U] = 3U;
+        game.ram[0x03c5U] = 0x5aU;
+        game.ram[0x0747U] = 0xffU;
+        input.buttons = 0U;
+        mysmb_game_tick(&game, &input, &frame);
+        if (game.ram[0x0772U] != 2U || game.ram[0x0008U] != 0U ||
+            game.ram[0x03c5U] != 0U) return 13;
+    }
+
+    /* RetainerObject is a RunEnemyObjectsCore special-ID branch.  The outer
+     * VictoryMode call reaches its three-row renderer through the same one
+     * current-slot dispatcher, never through a root-level OAM shortcut. */
+    {
+        static const mysmb_u8 prg[1] = { 0U };
+
+        mysmb_game_initialize(&game);
+        mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+        game.ram[0x0770U] = 2U;
+        game.ram[0x0772U] = 1U;
+        game.ram[0x000fU] = 1U;
+        game.ram[0x0016U] = 0x35U;
+        game.ram[0x03c5U] = 0x5aU;
+        input.buttons = 0U;
+        mysmb_game_tick(&game, &input, &frame);
+        if (game.ram[0x03c5U] != 0x5aU || game.ram[0x0201U] != 0xcdU) return 14;
+    }
 
     /* HandlePipeEntry selects the original middle-pipe destination before
      * VerticalPipeEntry starts its 48-frame transition. */

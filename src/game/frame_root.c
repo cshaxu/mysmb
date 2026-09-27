@@ -195,10 +195,16 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
      * that selector: non-title modes never enter TitleScreenMode. */
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
-        /* ROM VictoryMode invokes EnemiesAndLoopsCore only after task zero.
-         * RetainerObject is its reachable source-owned slot-zero OAM route. */
-        if (game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] != 0U)
-            mysmb_objects_draw_retainer(game, 0U);
+        /* ROM $8471 VictoryMode: after the selected victory leaf, task zero
+         * branches directly to AutoPlayer.  Every other task resets
+         * ObjectOffset to zero and runs exactly one EnemiesAndLoopsCore
+         * turn.  It is not GameEngine's fireball/six-slot/floatey schedule. */
+        if (game->ram[MYSMB_ROOT_OPERATING_MODE_TASK] != 0U &&
+            game->area_prg != 0) {
+            area_source.prg = game->area_prg;
+            area_source.prg_size = game->area_prg_size;
+            mysmb_enemy_core_step_slot(game, &area_source, 0U);
+        }
         /* ROM VictoryMode always ends at RelativePlayerPosition and
          * PlayerGfxHandler, including bridge-collapse task zero. */
         mysmb_oam_draw_player(game);

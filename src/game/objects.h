@@ -25,6 +25,8 @@ void mysmb_objects_finish_power_up(struct mysmb_game *game);
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
+/* ROM RunRetainerObj through EnemyGfxHandler. */
+void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits. */
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot);

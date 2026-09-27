@@ -1,5 +1,6 @@
 #include <windows.h>
 
+#include "game/area.h"
 #include "game/game.h"
 #include "game/ppu_frame.h"
 #include "platform/startup_timing.h"
