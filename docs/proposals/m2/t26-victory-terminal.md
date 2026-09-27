@@ -213,3 +213,13 @@ exercises `MRetainerMsg`, both `ThankPlayer` choices, `SecondPartMsg`,
 `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`,
 and `ExitMsgs`; it remains branch evidence rather than a completion claim
 until the outer collaborator routes have independent proof.
+
+`PlayerEndWorld` now has a controlled record for both return leaves as well.
+`t26-endworld-timer-active` sets timer control and `WorldEndTimer = $05`, so
+the NMI does not decrement it before `EndExitOne`; both ROM and C retain
+`OperMode/Task = $02/$04`, world `$02`, timer `$05`, and no event queue.
+`t26-endworld-no-b` reaches World 8 with an expired timer and both saved
+controller latches clear; both retain `OperMode/Task = $02/$04`, World 8,
+zero timer, zero event queue, and a clear world-select flag. Along with the
+ordinary-next-world and B paths, these records cover `PlayerEndWorld`,
+`EndExitOne`, `EndChkBButton`, and `EndExitTwo` at their source call boundary.

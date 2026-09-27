@@ -152,6 +152,27 @@ static void mysmb_recorder_apply_t26_endworld_next_fixture(struct mysmb_game *ga
     game->ram[0x07a1U] = 0U;
 }
 
+/* Fixed T26 PlayerEndWorld return leaves: the first keeps the world-end
+ * timer nonzero while timer control suppresses DecTimers; the second reaches
+ * World8's B test with neither controller latch set. */
+static void mysmb_recorder_apply_t26_endworld_return_fixture(
+    struct mysmb_game *game, mysmb_u8 kind)
+{
+    game->ram[0x0770U] = 2U;
+    game->ram[0x0772U] = 4U;
+    game->ram[0x00fcU] = 0U;
+    game->ram[0x06fcU] = 0U;
+    game->ram[0x06fdU] = 0U;
+    if (kind == 0U) {
+        game->ram[0x075fU] = 2U;
+        game->ram[0x07a1U] = 5U;
+        game->ram[0x0747U] = 1U;
+        return;
+    }
+    game->ram[0x075fU] = 7U;
+    game->ram[0x07a1U] = 0U;
+}
+
 /* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
  * music text, and the non-world-eight end-timer branch. */
 static void mysmb_recorder_apply_t26_victory_message_fixture(
@@ -328,6 +349,16 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 13U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-endworld-timer-active") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 14U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-endworld-no-b") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 15U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -407,6 +438,10 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_victory_message_fixture(&game, 2U, 0U, 0U, 0U);
             else if (t26_fixture == 13U)
                 mysmb_recorder_apply_t26_victory_message_fixture(&game, 2U, 4U, 0U, 0U);
+            else if (t26_fixture == 14U)
+                mysmb_recorder_apply_t26_endworld_return_fixture(&game, 0U);
+            else if (t26_fixture == 15U)
+                mysmb_recorder_apply_t26_endworld_return_fixture(&game, 1U);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

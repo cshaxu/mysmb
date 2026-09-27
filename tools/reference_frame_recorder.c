@@ -254,6 +254,26 @@ static void mysmb_reference_apply_t26_endworld_next_fixture(lib_u8 *ram)
     ram[0x07a1u] = 0u;
 }
 
+/* Fixed T26 PlayerEndWorld return leaves.  Timer control preserves the
+ * nonzero timer for EndExitOne; the second condition reaches EndExitTwo. */
+static void mysmb_reference_apply_t26_endworld_return_fixture(
+    lib_u8 *ram, lib_u8 kind)
+{
+    ram[0x0770u] = 2u;
+    ram[0x0772u] = 4u;
+    ram[0x00fcu] = 0u;
+    ram[0x06fcu] = 0u;
+    ram[0x06fdu] = 0u;
+    if (kind == 0u) {
+        ram[0x075fu] = 2u;
+        ram[0x07a1u] = 5u;
+        ram[0x0747u] = 1u;
+        return;
+    }
+    ram[0x075fu] = 7u;
+    ram[0x07a1u] = 0u;
+}
+
 /* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
  * music text, and the non-world-eight end-timer branch. */
 static void mysmb_reference_apply_t26_victory_message_fixture(
@@ -411,6 +431,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 13u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t26-endworld-timer-active") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 14u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-endworld-no-b") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 15u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -513,6 +543,12 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 13u)
                     mysmb_reference_apply_t26_victory_message_fixture(
                         driver->machine->ram, 2u, 4u, 0u, 0u);
+                else if (t26_fixture == 14u)
+                    mysmb_reference_apply_t26_endworld_return_fixture(
+                        driver->machine->ram, 0u);
+                else if (t26_fixture == 15u)
+                    mysmb_reference_apply_t26_endworld_return_fixture(
+                        driver->machine->ram, 1u);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;
