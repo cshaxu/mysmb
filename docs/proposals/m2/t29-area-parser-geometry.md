@@ -949,3 +949,39 @@ outcomes (existing versus absent ID), Tree expiration, Mushroom start/middle/
 end, or Pulley rope/right-end progression; none of the twenty-two labels is
 promoted by this partial route set. P4 must complete those source branches and
 the individual control/data disposition table before node accounting changes.
+
+## S8 P4: resident-slot special-object branches
+
+P4 completes the missing source branches using ordinary `GameEngine` parser
+entry.  The controlled preconditions are not leaf calls: each uses the real
+area-stream pair and the resident parser-slot state that `ProcessAreaData`
+itself persists (`AreaObjOffsetBuffer`, `AreaObjectLength`, page and cursor).
+`L_GroundArea3 + $4a` supplies the Frenzy selector; `L_GroundArea13 + $1c`
+supplies the pulley; and `L_GroundArea13 + $06` supplies the style object.
+The seven routes exercise the existing-Frenzy result, pulley rope and right
+pulley, mushroom start/centre/end, and tree end.  A separate Warp-Zone route
+places an active Piranha in the original enemy slot before the ordinary
+`ScrollLockObject_Warp` route, proving the clear write rather than only the
+no-match loop.
+
+Source PC coverage reaches `EndTreeL` `$9773`, `EndMushL` `$978b`, the
+Mushroom start and underpart path `$9778-$97aa`, both Pulley choices
+`$97ba-$97ce`, the matching Frenzy scan `$972b-$973f`, and the five-slot
+Piranha clear loop `$971c-$9727`.  For every P4 route, the native x64 recorder
+has the same final source-pointer/cursor/length/style fields and staged
+metatiles as the ROM.  The active-Piranha route specifically ends with flag
+zero, ID `$0d`, WarpZoneControl `$04` and ScrollLock `$01` in both runs.
+
+P4 is an evidence checkpoint, not S8 closure.  The final P must bind these
+route results and P1's static-table/source audit to every individual received
+label, run the operational matrix and update the canonical node accounting
+only for labels whose two tracks are complete.
+
+The focused x86/x64 matrix (`area-special-object`, parser-column,
+parser-terminal-slot and platform-purity) passes 4/4 on each width.  The same
+portable shared source links into the OpenNT DOS16 MZ; the existing C4761 and
+`OLDNAMES.LIB` warnings remain non-fatal.  P4 changes only recorders and
+evidence, so the refreshed target hashes remain `mysmb16.exe`
+`30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
+`mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
+and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.

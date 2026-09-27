@@ -726,6 +726,35 @@ static void mysmb_reference_apply_t29_special_chain_fixture(lib_u8 *ram,
     }
 }
 
+/* P4 continues genuine S8 objects through ProcessAreaData's resident slot
+ * rather than jumping into a special-object leaf.  These are the exact RAM
+ * fields left by the preceding parser column: slot two remains resident,
+ * its saved source offset points at the original pair, and its non-negative
+ * length selects RunAObj. */
+static void mysmb_reference_apply_t29_special_continuation_fixture(
+    lib_u8 *ram, lib_u8 kind)
+{
+    mysmb_reference_apply_t29_special_object_fixture(ram);
+    if (kind == 0u) { /* Frenzy's existing-ID outcome. */
+        mysmb_reference_apply_t29_special_chain_fixture(ram, 0u);
+        ram[0x001au] = 0x18u;
+        return;
+    }
+    ram[0x00e7u] = 0x91u;
+    ram[0x00e8u] = 0xa8u;
+    ram[0x0725u] = kind <= 2u ? 3u : 1u;
+    ram[0x0726u] = kind <= 2u ? 1u : 3u;
+    ram[0x072au] = ram[0x0725u];
+    ram[0x072cu] = kind <= 2u ? 0x1eu : (kind == 3u ? 0x06u : 0x08u);
+    ram[0x072fu] = kind <= 2u ? 0x1cu : 0x06u;
+    ram[0x0730u] = 0xffu;
+    ram[0x0731u] = 0xffu;
+    ram[0x0732u] = kind == 1u ? 1u :
+        (kind == 3u ? 0xffu : (kind == 4u ? 2u : 0u));
+    ram[0x0733u] = kind >= 3u && kind <= 5u ? 1u : 0u;
+    if (kind == 4u) ram[0x0736u] = 2u;
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -1153,6 +1182,14 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-frenzy") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 76u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-pulley") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 77u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-tree") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 78u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-frenzy-present") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 79u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-pulley-rope") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 80u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-pulley-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 81u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-mush-start") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 82u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-mush-middle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 83u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-mush-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 84u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-tree-end") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 85u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-warp-piranha") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 86u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1396,6 +1433,15 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 76u && t26_fixture <= 78u)
                     mysmb_reference_apply_t29_special_chain_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 76u));
+                else if (t26_fixture >= 79u && t26_fixture <= 85u)
+                    mysmb_reference_apply_t29_special_continuation_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 79u));
+                else if (t26_fixture == 86u) {
+                    mysmb_reference_apply_t29_special_object_fixture(
+                        driver->machine->ram);
+                    driver->machine->ram[0x000fu] = 1u;
+                    driver->machine->ram[0x0016u] = 13u;
+                }
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

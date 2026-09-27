@@ -578,6 +578,30 @@ static void mysmb_recorder_apply_t29_special_chain_fixture(
     }
 }
 
+static void mysmb_recorder_apply_t29_special_continuation_fixture(
+    struct mysmb_game *game, mysmb_u8 kind)
+{
+    mysmb_recorder_apply_t29_special_object_fixture(game);
+    if (kind == 0U) {
+        mysmb_recorder_apply_t29_special_chain_fixture(game, 0U);
+        game->ram[0x001aU] = 0x18U;
+        return;
+    }
+    game->ram[0x00e7U] = 0x91U;
+    game->ram[0x00e8U] = 0xa8U;
+    game->ram[0x0725U] = kind <= 2U ? 3U : 1U;
+    game->ram[0x0726U] = kind <= 2U ? 1U : 3U;
+    game->ram[0x072aU] = game->ram[0x0725U];
+    game->ram[0x072cU] = kind <= 2U ? 0x1eU : (kind == 3U ? 0x06U : 0x08U);
+    game->ram[0x072fU] = kind <= 2U ? 0x1cU : 0x06U;
+    game->ram[0x0730U] = 0xffU;
+    game->ram[0x0731U] = 0xffU;
+    game->ram[0x0732U] = kind == 1U ? 1U :
+        (kind == 3U ? 0xffU : (kind == 4U ? 2U : 0U));
+    game->ram[0x0733U] = kind >= 3U && kind <= 5U ? 1U : 0U;
+    if (kind == 4U) game->ram[0x0736U] = 2U;
+}
+
 static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
 {
     game->ram[0x0770U] = 0U;
@@ -986,6 +1010,14 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-frenzy") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 70U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-pulley") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 71U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-tree") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 72U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-frenzy-present") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 73U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-pulley-rope") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 74U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-pulley-end") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 75U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-mush-start") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 76U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-mush-middle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 77U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-mush-end") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 78U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-tree-end") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 79U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-piranha") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 80U; }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
@@ -1118,6 +1150,14 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 70U && t26_fixture <= 72U)
                 mysmb_recorder_apply_t29_special_chain_fixture(&game,
                     (mysmb_u8)(t26_fixture - 70U));
+            else if (t26_fixture >= 73U && t26_fixture <= 79U)
+                mysmb_recorder_apply_t29_special_continuation_fixture(&game,
+                    (mysmb_u8)(t26_fixture - 73U));
+            else if (t26_fixture == 80U) {
+                mysmb_recorder_apply_t29_special_object_fixture(&game);
+                game.ram[0x000fU] = 1U;
+                game.ram[0x0016U] = 13U;
+            }
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
