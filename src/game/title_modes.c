@@ -226,15 +226,18 @@ void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
 {
     mysmb_u16 index;
 
-    if (game->title_icon_data == 0 || game->title_icon_data_size != 7U) {
+    if (game->title_icon_data == 0 || game->title_icon_data_size != 8U) {
         return;
     }
-    game->ram[MYSMB_RAM_VRAM_BUFFER1_OFFSET] =
-        (mysmb_u8)game->title_icon_data_size;
-    for (index = 0U; index < game->title_icon_data_size; ++index) {
-        game->ram[(mysmb_u16)(MYSMB_TITLE_ICON_BUFFER_OFFSET + index)] =
+    /* ROM $8578 IconDataRead copies MushroomIconData[7..0] to
+     * VRAM_Buffer1-1[7..0].  Keep the first data byte as the source-owned
+     * Buffer1 offset instead of synthesizing it from a payload length. */
+    index = 8U;
+    do {
+        index--;
+        game->ram[(mysmb_u16)(MYSMB_RAM_VRAM_BUFFER1_OFFSET + index)] =
             game->title_icon_data[index];
-    }
+    } while (index != 0U);
     if (game->ram[MYSMB_RAM_NUMBER_OF_PLAYERS] != 0U) {
         game->ram[0x0304U] = 0x24U;
         game->ram[0x0306U] = 0xceU;

@@ -455,8 +455,8 @@ int main(int argument_count, char **arguments)
     if (bootstrap_title == 0U &&
         (mysmb_game_apply_title_commands(&game, mysmb_local_title_data,
                                              MYSMB_LOCAL_TITLE_DATA_SIZE) == 0U ||
-             mysmb_game_apply_vram_commands(&game, mysmb_local_title_icon_data,
-                                            MYSMB_LOCAL_TITLE_ICON_DATA_SIZE) == 0U)) {
+             mysmb_game_apply_vram_commands(&game, &mysmb_local_title_icon_data[1],
+                                            (mysmb_u16)(MYSMB_LOCAL_TITLE_ICON_DATA_SIZE - 1U)) == 0U)) {
         fclose(output);
         return 65;
     }

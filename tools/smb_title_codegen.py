@@ -9,13 +9,13 @@ from smb_rom_codegen import read_nrom, write_array
 TITLE_CHR_OFFSET = 0x1EC0
 TITLE_DATA_SIZE = 0x013A
 TITLE_ICON_PRG_OFFSET = 0x031D
-TITLE_ICON_DATA_SIZE = 7
+TITLE_ICON_DATA_SIZE = 8
 
 
 def generate(rom_path, output_dir):
     prg, chr_data = read_nrom(rom_path)
     data = chr_data[TITLE_CHR_OFFSET:TITLE_CHR_OFFSET + TITLE_DATA_SIZE]
-    icon = prg[TITLE_ICON_PRG_OFFSET + 1:TITLE_ICON_PRG_OFFSET + 1 + TITLE_ICON_DATA_SIZE]
+    icon = prg[TITLE_ICON_PRG_OFFSET:TITLE_ICON_PRG_OFFSET + TITLE_ICON_DATA_SIZE]
     if len(data) != TITLE_DATA_SIZE:
         raise ValueError("title command stream is outside the CHR image")
     if len(icon) != TITLE_ICON_DATA_SIZE:
@@ -25,7 +25,7 @@ def generate(rom_path, output_dir):
         "#ifndef MYSMB_LOCAL_TITLE_H\n"
         "#define MYSMB_LOCAL_TITLE_H\n\n"
         "#define MYSMB_LOCAL_TITLE_DATA_SIZE 314U\n"
-        "#define MYSMB_LOCAL_TITLE_ICON_DATA_SIZE 7U\n\n"
+        "#define MYSMB_LOCAL_TITLE_ICON_DATA_SIZE 8U\n\n"
         "extern const unsigned char mysmb_local_title_data[MYSMB_LOCAL_TITLE_DATA_SIZE];\n\n"
         "extern const unsigned char mysmb_local_title_icon_data[MYSMB_LOCAL_TITLE_ICON_DATA_SIZE];\n\n"
         "#endif\n",

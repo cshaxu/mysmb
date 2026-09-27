@@ -43,7 +43,8 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T25 S18 | 1 | `ExitMenu` |
 | M2 T25 S19 | 1 | `GoContinue` |
 | M2 T25 S20 | 1 | `WSelectBufferTemplate` |
-| M2 T25 S21 | 9 | `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
+| M2 T25 S21 | 1 | `MushroomIconData` |
+| M2 T25 S22 | 8 | `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
 | M2 T25 S7 | 4 | `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, `RunDemo` |
 | M2 T25 S8 | 1 | `ResetTitle` |
 | M2 T25 S9 | 1 | `StartGame` |
@@ -128,14 +129,14 @@ transfer existing ownership or allocate a numeric T.
 | 1080 | `ExitMenu` | M2 T25 S18 | existing closure backlog; S18 retained title receipt after InitScores closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1081 | `GoContinue` | M2 T25 S19 | existing closure backlog; S19 retained title receipt after ExitMenu closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1090 | `MushroomIconData` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1093 | `DrawMushroomIcon` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1095 | `IconDataRead` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1105 | `ExitIcon` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1109 | `DemoActionData` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1114 | `DemoTimingData` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1119 | `DemoEngine` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1129 | `DoAction` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1133 | `DemoOver` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1093 | `DrawMushroomIcon` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1095 | `IconDataRead` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1105 | `ExitIcon` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1109 | `DemoActionData` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1114 | `DemoTimingData` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1119 | `DemoEngine` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1129 | `DoAction` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1133 | `DemoOver` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1137 | `VictoryMode` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7; M2 T6 / S not recorded |
 | 1144 | `AutoPlayer` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7 |
 | 1147 | `VictoryModeSubroutines` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T6 / S not recorded |
@@ -2189,7 +2190,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T25 S18 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S19 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S20 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S21 | 0 | 9 | source-order-title-data-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S21 | 0 | 1 | source-order-title-data-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S22 | 0 | 8 | source-order-title-routine-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T26 | 32 | - | [record](../../docs/proposals/m2/t26-victory-terminal.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T26 S1 | 0 | 0 | source-order-node-contract; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S2 | 0 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
@@ -2311,6 +2313,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-066-t25-s18-to-s19 | M2 T25 S18 | M2 T25 S19 | 11 | S19 accepts every uncompleted title/menu/demo label after S18.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | transfer-067-t25-s19-to-s20 | M2 T25 S19 | M2 T25 S20 | 10 | S20 accepts every uncompleted title/menu/demo label after S19.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | transfer-068-t25-s20-to-s21 | M2 T25 S20 | M2 T25 S21 | 9 | S21 accepts every uncompleted title/menu/demo label after S20.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| transfer-069-t25-s21-to-s22 | M2 T25 S21 | M2 T25 S22 | 8 | S22 accepts every uncompleted title/menu/demo label after S21.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -2380,4 +2383,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T25 S18 | 1 | 88 | `ExitMenu` / 1 | `ExitMenu` / 1 | closed-complete-start-world-one-common-continuation-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S19 | 1 | 89 | `GoContinue` / 1 | `GoContinue` / 1 | closed-complete-start-world-one-common-continuation-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S20 | 1 | 90 | `WSelectBufferTemplate` / 1 | `WSelectBufferTemplate` / 1 | closed-complete-world-select-buffer-template-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S21 | 1 | 91 | `MushroomIconData` / 1 | none / 0 | active-mushroom-icon-data-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S21 | 1 | 91 | `MushroomIconData` / 1 | `MushroomIconData` / 1 | closed-complete-mushroom-icon-data-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S22 | 1 | 92 | `DrawMushroomIcon` / 1 | none / 0 | active-draw-mushroom-icon-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |

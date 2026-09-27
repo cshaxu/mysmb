@@ -194,7 +194,7 @@ The labels and branches behind every line remain open until individually bound b
 | 1077 | `InitScores` | M2 T25 S17: score/coin descending clear; `title_modes.c:mysmb_game_init_scores` | ROM-match complete | [T25 S17 InitScores closure](../../proposals/m2/t25-title-menu-demo.md#s17-closure-initscores-clear-loop) |
 | 1080 | `ExitMenu` | M2 T25 S18: title-menu RTS leaf; `title_modes.c:mysmb_game_exit_menu` | ROM-match complete | [T25 S18 ExitMenu closure](../../proposals/m2/t25-title-menu-demo.md#s18-closure-exitmenu-return) |
 | 1081 | `GoContinue` | M2 T25 S19: shared world/area continuation leaf; `title_modes.c:mysmb_game_go_continue` | ROM-match complete | [T25 S19 GoContinue closure](../../proposals/m2/t25-title-menu-demo.md#s19-closure-gocontinue-dual-caller) |
-| 1090 | `MushroomIconData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushroomicondata) |
+| 1090 | `MushroomIconData` | M2 T25 S21: complete icon-data binding; `title_modes.c:mysmb_game_draw_mushroom_icon` | ROM-match complete | [T25 S21 MushroomIconData closure](../../proposals/m2/t25-title-menu-demo.md#s21-closure-mushroomicondata-binding) |
 | 1093 | `DrawMushroomIcon` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawmushroomicon) |
 | 1095 | `IconDataRead` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-icondataread) |
 | 1105 | `ExitIcon` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exiticon) |

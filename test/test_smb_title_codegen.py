@@ -21,12 +21,12 @@ def main():
         for index in range(module.TITLE_DATA_SIZE):
             image[16 + 32768 + module.TITLE_CHR_OFFSET + index] = index & 0xff
         for index in range(module.TITLE_ICON_DATA_SIZE):
-            image[16 + module.TITLE_ICON_PRG_OFFSET + 1 + index] = (0xa0 + index) & 0xff
+            image[16 + module.TITLE_ICON_PRG_OFFSET + index] = (0xa0 + index) & 0xff
         rom.write_bytes(image)
         module.generate(rom, output)
         source = (output / "smb1_local_title.c").read_text(encoding="ascii")
         if ("mysmb_local_title_data[314]" not in source or
-                "mysmb_local_title_icon_data[7]" not in source or
+                "mysmb_local_title_icon_data[8]" not in source or
                 "0xA0" not in source or "0x39" not in source):
             return 1
     return 0

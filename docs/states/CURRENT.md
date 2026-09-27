@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S21 Packet
+## M2 T25 S22 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S21, implementation; next source-order `MushroomIconData` binding. |
-| Admission And Approval | Owner-approved source-order M2 plan; S20 completed `WSelectBufferTemplate` and transferred the remaining 9 title/menu/demo labels to S21. |
-| Objective | Independently establish and credit `MushroomIconData`, the eight-byte icon data binding. |
-| Non-goals | The other 8 retained labels (`DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
-| Reference Baseline | 91 / 1,992 complete; 1 scoped label; expected match MushroomIconData; maximum 92 / 1,992. |
+| Identifier Mode | M2 T25 S22, implementation; next source-order `DrawMushroomIcon` routine. |
+| Admission And Approval | Owner-approved source-order M2 plan; S21 completed `MushroomIconData` and transferred the remaining 8 title/menu/demo labels to S22. |
+| Objective | Independently establish and credit `DrawMushroomIcon`, the icon-copy routine. |
+| Non-goals | The other 7 retained labels (``IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
+| Reference Baseline | 92 / 1,992 complete; 1 scoped label; expected match DrawMushroomIcon; maximum 93 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM data `$831d`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | Exact source icon bytes bind to shared C in ROM order and the DrawMushroomIcon consumer copies its eight bytes in source order. |
+| Verification | Static source audit of ROM routine `$8325`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | Source initializes Y=7, enters IconDataRead, then branches on NumberOfPlayers after the copy. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source data location `$831d`, C data binding and consumer order, Select-route trace result, and all 9 retained-node dispositions. |
+| Reporting Requirements | Record source entry `$8325`, C routine and successor control flow, Select-route trace result, and all 8 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `MushroomIconData` is completed only when exact bytes, C binding, consumer path, and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `DrawMushroomIcon` is completed only when its initializer, IconDataRead successor, player branch, and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
@@ -123,9 +123,9 @@ M2 T17 S2/P5 is complete: `MoveObjectHorizontally` now preserves its full ADC ca
 
 M2 T19 S3/P1 is complete: the full Lakitu/Spiny frenzy function group now has one shared `game/enemy/frenzy.c` owner; T19 S3 remains active for remaining group/initialization dispatch.
 
-M2 T19 S3/P2 is complete: `InitEnemyFrenzy → InitFlyingCheepCheep` has the same shared `game/enemy/frenzy.c` owner; regular Flying Cheep actor handling remains reserved for T19 S4.
+M2 T19 S3/P2 is complete: `InitEnemyFrenzy -> InitFlyingCheepCheep` has the same shared `game/enemy/frenzy.c` owner; regular Flying Cheep actor handling remains reserved for T19 S4.
 
-M2 T19 S3/P3 is complete: `InitEnemyObject → CheckpointEnemyID → InitEnemyRoutines` now has one shared `game/enemy/init.c` owner; stream parsing no longer contains initialization dispatch.
+M2 T19 S3/P3 is complete: `InitEnemyObject -> CheckpointEnemyID -> InitEnemyRoutines` now has one shared `game/enemy/init.c` owner; stream parsing no longer contains initialization dispatch.
 
 M2 T19 S5/P20 restores ROM current-slot `EnemiesCollision`: no frame-root global collision scan manufactures bounding boxes; the pipe route OAM residual is removed.
 M2 T16 S3/P8 restores defeated-Goomba mirrored OAM attributes and its route evidence is consumed by the updated T17 pipe comparison.

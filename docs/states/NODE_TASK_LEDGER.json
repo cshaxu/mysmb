@@ -1648,6 +1648,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after S20 WSelectBufferTemplate closure."
+        },
+        {
+          "id": "M2 T25 S22",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-routine-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after S21 MushroomIconData closure."
         }
       ]
     },
@@ -7218,8 +7230,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7279,8 +7291,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7324,8 +7336,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7369,8 +7381,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7414,8 +7426,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7459,8 +7471,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7536,8 +7548,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7581,8 +7593,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S21",
-      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
+      "receiver": "M2 T25 S22",
+      "receivingBasis": "S22 retained title receipt after MushroomIconData closure.",
       "futurePackage": null,
       "history": [
         {
@@ -57258,6 +57270,24 @@
       ],
       "acceptedBy": "S21 accepts every uncompleted title/menu/demo label after S20.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-069-t25-s21-to-s22",
+      "type": "transfer",
+      "from": "M2 T25 S21",
+      "to": "M2 T25 S22",
+      "nodes": [
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "S22 accepts every uncompleted title/menu/demo label after S21.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -65281,9 +65311,120 @@
         "MushroomIconData"
       ],
       "maximumComplete": 92,
+      "actualMatches": [
+        "MushroomIconData"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-mushroom-icon-data-equivalence"
+    },
+    {
+      "subtask": "M2 T25 S22",
+      "kind": "implementation",
+      "scope": [
+        "DrawMushroomIcon"
+      ],
+      "baseline": 92,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "DrawMushroomIcon"
+      ],
+      "maximumComplete": 93,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-mushroom-icon-data-equivalence"
+      "state": "active-draw-mushroom-icon-equivalence"
     }
   ]
 }

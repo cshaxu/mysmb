@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    static const mysmb_u8 icon_data[7] = {
-        0x22U, 0x49U, 0x83U, 0xceU, 0x24U, 0x24U, 0x00U
+    static const mysmb_u8 icon_data[8] = {
+        0x07U, 0x22U, 0x49U, 0x83U, 0xceU, 0x24U, 0x24U, 0x00U
     };
     struct mysmb_game game;
     struct mysmb_input input;
@@ -49,7 +49,7 @@ int main(void)
         return 1;
     }
     mysmb_game_initialize(&game);
-    mysmb_game_bind_title_source(&game, 0, 0U, icon_data, 7U);
+    mysmb_game_bind_title_source(&game, 0, 0U, icon_data, 8U);
     game.ram[0x0770U] = 0U;
     game.ram[0x0772U] = 3U;
     game.ram[0x07a2U] = 0x55U;

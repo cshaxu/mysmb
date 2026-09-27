@@ -2,7 +2,7 @@
 
 ## Exact node contract
 
-T25 is the first future source-order slice after the immutable historical T23/T24 records. It owns the 26 inventory labels from ROM lines 982–1133. Victory begins at line 1137 and belongs to T26. All labels are presently received by historical `M2 T15 S4`; S1 is an audit only and must not change ownership.
+T25 is the first future source-order slice after the immutable historical T23/T24 records. It owns the 26 inventory labels from ROM lines 982--1133. Victory begins at line 1137 and belongs to T26. All labels are presently received by historical `M2 T15 S4`; S1 is an audit only and must not change ownership.
 
 | Node | ROM lines | Existing native owner boundary | Current receiver |
 | --- | --- | --- | --- |
@@ -632,3 +632,28 @@ S21 scopes only `MushroomIconData`, baseline **91 / 1,992**, expected
 data bytes at `$831d`, the shared C binding and `DrawMushroomIcon` consumer,
 then prove the controlled Select route. The other eight received labels remain
 uncredited.
+
+## S21 closure: MushroomIconData binding
+
+S21 completes exactly `MushroomIconData`, reaching **92 / 1,992**.  The
+original ROM data at `$831d` is exactly `{07,22,49,83,CE,24,24,00}`.  The
+owner-local generator now preserves all eight bytes, and shared C performs the
+source `IconDataRead` descending copy from index seven through zero into
+`$0307..$0300`; it no longer synthesizes the Buffer1 offset from a seven-byte
+payload length.  The direct local generator test, title resource smoke and
+oracle pass.  Controlled Select output is zero-difference across the original
+ROM, x86 and x64 for frames 0--198 in RAM, CIRAM, palette, OAM, audio and PPU
+scalars; the final recorder input sentinel is excluded.  The same source links
+as DOS16.  Artifacts: `mysmb16.exe`
+`1E798DCA5D8ED4BE0F01CBF8554139F30A96220BD0FA7C9897405464DDD3CA6C`,
+`mysmb32.exe` `7AAADCF5D56EC35F67D7954E89CFED35C3B8ADB9C9BA934C6C7BADE14466CE0E`,
+and `mysmb64.exe` `7EFA18BB581394621F9AEF00787F1E1B36DE2B7F2CE57853268B1AA85861C8BB`.
+
+The remaining eight labels transfer to S22 unchanged.
+
+## S22 admission: DrawMushroomIcon routine
+
+S22 scopes only `DrawMushroomIcon`, baseline **92 / 1,992**, expected
+`DrawMushroomIcon`, maximum **93 / 1,992**. It must independently establish
+the Y=7 initializer, its `IconDataRead` successor, and the one-player/two-player
+branch before credit; the other seven received labels remain uncredited.
