@@ -43,15 +43,15 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S11 Packet
+## M2 T25 S12 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S11, implementation; next source-order `ChkWorldSel` branch entry. |
-| Admission And Approval | Owner-approved source-order M2 plan; S10 completed `ChkSelect` and transferred the remaining 19 title/menu/demo labels to S11. |
-| Objective | Independently establish and credit `ChkWorldSel`, the next non-Start branch target. |
-| Non-goals | The other 18 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 81 / 1,992 complete; 1 scoped label; expected match ChkWorldSel; maximum 82 / 1,992. |
+| Identifier Mode | M2 T25 S12, implementation; next source-order `SelectBLogic` entry. |
+| Admission And Approval | Owner-approved source-order M2 plan; S11 completed `ChkWorldSel` and transferred the remaining 18 title/menu/demo labels to S12. |
+| Objective | Independently establish and credit `SelectBLogic`, the Select/B shared branch entry. |
+| Non-goals | The other 17 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 82 / 1,992 complete; 1 scoped label; expected match SelectBLogic; maximum 83 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |

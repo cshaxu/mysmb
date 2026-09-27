@@ -468,3 +468,17 @@ The 19 remaining labels transfer to S11 without status change.
 S11 receives the remaining 19 labels and scopes only `ChkWorldSel`, the next
 executable branch target. Baseline **81 / 1,992**; expected `ChkWorldSel`;
 maximum **82 / 1,992**.
+
+## S11 closure: ChkWorldSel zero-flag branch
+
+S11 completes exactly `ChkWorldSel`, reaching **82 / 1,992**. With the ROM's
+normal zero `WorldSelectEnableFlag`, controlled no-button title replay enters
+`$826c`, takes `$826f`, and reaches `NullJoypad` `$82bb`; all 199 no-button
+samples agree across ROM/x86/x64 work RAM, CIRAM, palette, OAM, audio and PPU
+scalars. `SelectBLogic` remains uncredited because neither its B-enabled nor
+Select entry was exercised. The 18 remaining labels transfer to S12.
+
+## S12 admission: SelectBLogic entry
+
+S12 scopes only `SelectBLogic`, with baseline **82 / 1,992**, expected
+`SelectBLogic`, and maximum **83 / 1,992**.
