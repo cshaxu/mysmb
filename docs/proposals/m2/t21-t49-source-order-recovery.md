@@ -68,6 +68,31 @@ Historical S records above remain historical evidence.  This structure applies
 to the next admission in every open or future T, including T25's post-S23
 receipt and T26--T51.
 
+## Delivery amendment for every queued task
+
+This section governs S delivery for every row in the T21--T51 table.  It
+replaces any future reading of a retained proposal table as a required sequence
+of separate mapping, migration, equivalence, runtime, or closure S stages.
+Those older tables record evidence already produced; they do not prescribe the
+next admission.
+
+For every non-closed chain, the next S admission uses one compact source-order
+chain table.  Each row names its entry and exit, inventory labels in order,
+sole shared-game owner, accepted predecessor and successor receipts, one
+original-ROM route, focused tests, and exact forecast completion subset.  The
+same S performs mapping, any required C repair, label-level ROM comparison and
+operational verification.  One common replay and one three-target package
+cover the chain; documentation and tracker updates occur at its end, rather
+than becoming standalone S work.
+
+Split a chain only at an unadmitted dependency, a different shared-game owner,
+or a branch family requiring a different ROM route.  Every member still has a
+separate tracker and ledger disposition and requires both evidence tracks for
+credit.  A zero-credit S is allowed only when a named external dependency or
+missing evidence prevents that bounded chain from being implemented and
+verified together.  T closure adds its call-root/cross-chain matrix and one
+integrated three-target regression without repeating accepted member evidence.
+
 ## T21 admission target
 
 T21 owns exactly `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`,

@@ -82,7 +82,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Verification | Source comparison for ROM `$8565-$88ad`; controlled status/text/title/warp ROM routes; focused tests; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
 | Expected Markers | status text selection, timer branches, intermediate task transitions, title/text data loops, name/warp branches and screen timer reset. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Delivery Profile | One contiguous chain; individual labels remain separately accounted in inventory and ledger. |
+| Delivery Profile | One contiguous chain; individual labels remain separately accounted in inventory and ledger. From S2 closure onward, any T27 receipt uses the proposal's compact source-order chain table: both evidence tracks and one three-target package occur in the same chain S, with a split only at a named dependency, owner boundary, or different ROM route. |
 | Reporting Requirements | Record each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
 | Stop Conditions | Stop on nonmatching source branch, cross-owner dependency, trace alignment error, source-policy breach or platform gameplay logic. |
 | Exit Criteria | Every local chain label has both evidence tracks; `AreaParserTaskControl` transfers to S3 uncredited until the T29 parser dependency is proved. |

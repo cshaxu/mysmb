@@ -46,6 +46,17 @@ T25 is the first future source-order slice after the immutable historical T23/T2
 | S7 | Accept the S6 receipt and credit only the first natural idle prefix: `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, and `RunDemo`; retain every later branch label. | Exact PC reachability, source order, latch clear and GameCore-tail review. | Focused title smoke, 600-frame output replay, x86/x64 trace equality, DOS16 build and purity. | 4 |
 | S8 | Receive the remaining branch labels and credit only the next source-order `ResetTitle` leaf. | PC reachability from the GameCore return-six branch and exact four-write audit. | Focused reset smoke, controlled replay, cross-width builds, DOS16 and purity. | 1 |
 
+## Delivery amendment
+
+The table above is historical evidence. Any further T25 receipt uses the
+source-order recovery plan's chain-delivery rule: one bounded contiguous
+title/menu/demo call-data chain performs source comparison, repair when needed,
+ROM-equivalence evidence and operational verification together. Each member
+remains separately recorded, while one common replay, three-target package and
+closure update cover the chain. A future S may split only at an accepted
+dependency, shared-game-owner boundary or different ROM route, and may be
+zero-credit only for a named blocking dependency.
+
 No platform adapter may decide menu state, world selection, demo input, timing, score reset, or title transition.
 
 ## S1 source-contract audit

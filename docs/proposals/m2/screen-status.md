@@ -173,6 +173,24 @@ audit, test, or paperwork S stages.  Each remaining P may repair and compare
 adjacent members of that chain, but credits none until the shared ROM route and
 operational track cover the named label.  Any member blocked by the T29 parser
 or another accepted owner transfers by exact name before S2 closes.
+
+## Current-T delivery amendment
+
+This applies from the current S2 closure onward.  S3 and every later T27
+receipt use the source-order chain table in the recovery plan, rather than a
+fixed mapping/migration/audit/operations/closure sequence.  Each admitted
+chain names its entry/exit, exact labels, sole shared-game owner, accepted
+dependencies, common ROM route, focused tests, and forecast completion subset.
+It completes both evidence tracks and one three-target delivery for the chain,
+while preserving individual tracker and ledger disposition for every label.
+A split is allowed only for an unadmitted dependency, owner boundary, or
+different ROM route; a zero-credit S must name that exact gate.
+
+For S2, the eight retained labels remain S2 custody until an accepted receiver
+exists. `WriteBottomStatusLine` and `WriteTopScore` await their registered
+helper owners; the six Warp leaves await the source-reachable T29
+parser/GameCore route. S3 is not a generic receiver for those leaves: it
+receives only its four registered dispatch/parser integration labels.
 ## S2/P5: unconditional screen-task continuations
 
 The ROM source at lines 1517--1589 has no branch on a native output-capacity
