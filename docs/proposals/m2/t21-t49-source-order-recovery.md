@@ -631,3 +631,28 @@ T22/S22 is now the source-order successor.  It owns only
 only after rechecking the complete NMI prologue and every now-complete direct
 child against a controlled original-ROM NMI route.  It forecasts one parent
 match and a maximum of **43 / 1,992**.
+
+
+## T22/S22 NMI parent dependency audit and custody return
+
+S22 closes at **42 / 1,992** with no new node credit.  The final-parent
+admission premise was invalid: `NonMaskableInterrupt` lines 764–872 calls,
+in source order, `ScreenOff`, `InitScroll`, `UpdateScreen`, `InitBuffer`,
+`SoundEngine`, `ReadJoypads`, `PauseRoutine`, `UpdateTopScore`, the timer
+bank, the sprite-zero branch, `MoveSpritesOffscreen`, `SpriteShuffler`, and
+`OperModeExecutionTree`.  Eight of those direct route nodes are independently
+complete, but `InitScroll`, `UpdateScreen`, `ReadJoypads`, `UpdateTopScore`,
+and `SoundEngine` remain open under their recorded owners.  Their shared-C
+entry points are not evidence that their original-ROM nodes are complete.
+
+The audit records the dependency set from the original listing and confirms
+that the existing focused x86/x64 NMI-boundary and sprite-root checks plus
+platform-purity check pass.  It makes no production change and does not use a
+partial route to certify the parent.  `NonMaskableInterrupt` transfers back to
+T24/S2 owner-authorized custody.  It may be re-admitted for final integration
+only after all five named direct dependencies have independently reached
+ROM-match complete status.  The required refreshed artifacts have SHA-256 values
+`780FC0EC167C5C0CA8CCAF0CA058A041D606A5B16B25A48CB9794DE328167385`,
+`33942B8EC68ED08F07F22F18C1A56D149B12216A534C20BC8FF4603C0F28C6CF`, and
+`4EB308DD887518B87E7B7D5DEE520F8253F18CC195EE8FA1BCE316BE8E4E41B6` for
+DOS16, Win32 x86 and Win32 x64 respectively.

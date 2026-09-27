@@ -4602,8 +4602,8 @@
     {
       "label": "NonMaskableInterrupt",
       "line": 764,
-      "receiver": "M2 T22 S22",
-      "receivingBasis": "Owner-approved T22 source-order NMI recovery: Accepted the parent NMI node from T22/S13 for final integration review after every direct child closes.",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "T22/S22 dependency audit returned final NMI-parent custody until every direct dependency has independent ROM-match evidence.",
       "futurePackage": null,
       "history": [
         {
@@ -55276,6 +55276,17 @@
       ],
       "acceptedBy": "Owner-approved independent proof follows the S21 source-contract repair.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
+    },
+    {
+      "id": "transfer-040-t22-s22-to-t24-s2",
+      "type": "transfer",
+      "from": "M2 T22 S22",
+      "to": "M2 T24 S2",
+      "nodes": [
+        "NonMaskableInterrupt"
+      ],
+      "acceptedBy": "Owner-authorized custody accepts the parent until every direct NMI dependency has independent ROM-match evidence.",
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     }
   ],
   "runs": [
@@ -60450,13 +60461,11 @@
         "NPROffscr",
         "OperModeExecutionTree"
       ],
-      "expectedMatches": [
-        "NonMaskableInterrupt"
-      ],
-      "maximumComplete": 43,
+      "expectedMatches": [],
+      "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-nmi-parent-integration-proof"
+      "state": "closed-dependency-audit-transferred-to-t24-s2"
     }
   ]
 }

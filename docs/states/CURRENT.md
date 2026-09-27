@@ -47,22 +47,22 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T22 S22, Implementation; final independent NMI-parent integration proof. |
-| Admission And Approval | Owner-approved source-order recovery; the parent was accepted after all direct NMI child proof packages closed. |
-| Objective | Independently prove `NonMaskableInterrupt` as the integrated original-ROM NMI parent after its direct children. |
-| Non-goals | New leaf semantics, platform behavior, input mapping, OAM, timer, pause, graphics, or unrelated game repairs. |
-| Reference Baseline | 42 / 1,992 complete; one incomplete scoped label; expected one match; maximum 43 / 1,992. |
+| Identifier Mode | M2 T22 S22, Implementation; NMI-parent dependency audit and custody return. |
+| Admission And Approval | Owner-approved source-order recovery; preflight corrected an invalid final-parent premise. |
+| Objective | Audit `NonMaskableInterrupt` direct dependencies before attempting parent equivalence credit. |
+| Non-goals | Parent completion credit, leaf semantics, platform behavior, input mapping, OAM, timer, pause, graphics, or unrelated game repairs. |
+| Reference Baseline | 42 / 1,992 complete; one scoped label; expected zero matches; maximum 42 / 1,992. |
 | Candidate Proposal | [source-order plan](../proposals/m2/t21-t49-source-order-recovery.md). |
-| Files And ABI Surface | Shared frame root, existing direct NMI leaf owners and build-only ROM/reference probes. |
+| Files And ABI Surface | Shared frame root, canonical inventory, ledger and build-only original-ROM listing audit. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Controlled full original-ROM NMI route; NMI/root focused tests, platform-purity, x86/x64 builds, DOS16 link and three artifacts. |
-| Expected Markers | `NonMaskableInterrupt`. |
-| Asset Needs | Owner-local ROM/listing only; every probe, trace and generated input stays below `build`. |
-| Reporting Requirements | Record both verification tracks and update the canonical inventory, progress and ledger result. |
-| Stop Conditions | Stop if proof requires changing a child leaf or platform code. |
-| Exit Criteria | The complete parent prologue/child order and controlled shared-C state/output evidence match, or the node transfers with a specific failed track. |
+| Verification | Original listing call-order audit; x86/x64 NMI-boundary and sprite-root checks; platform-purity. |
+| Expected Markers | None; `NonMaskableInterrupt` remains incomplete. |
+| Asset Needs | Owner-local ROM/listing only; every audit output stays below `build`. |
+| Reporting Requirements | Record unresolved direct dependencies and transfer the parent before closure. |
+| Stop Conditions | Stop parent proof when a direct dependency lacks independent ROM-match evidence. |
+| Exit Criteria | Five unresolved direct dependencies are named and `NonMaskableInterrupt` is transferred to accepted custody with zero credit. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check every direct child boundary, all selector values, pause/sprite branches and the NMI return state. |
+| Similar-Issue Sweep | Check all direct parent calls, their canonical status and their responsible receiver. |
 
 ## Recent M4 Closures
 
@@ -129,7 +129,3 @@ M2 T19 S3/P3 is complete: `InitEnemyObject → CheckpointEnemyID → InitEnemyRo
 
 M2 T19 S5/P20 restores ROM current-slot `EnemiesCollision`: no frame-root global collision scan manufactures bounding boxes; the pipe route OAM residual is removed.
 M2 T16 S3/P8 restores defeated-Goomba mirrored OAM attributes and its route evidence is consumed by the updated T17 pipe comparison.
-
-
-
-
