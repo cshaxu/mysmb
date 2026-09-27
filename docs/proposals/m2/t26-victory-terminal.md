@@ -159,3 +159,13 @@ smoke separately covers the second-controller latch required by
 `EndChkBButton`. Later title-initialization samples diverge outside this
 terminal subtree, so this record is limited to the one post-branch terminal
 state and does not credit a node.
+
+Three fixed `PrintVictoryMessages` preconditions complete its branch sweep at
+the same controlled NMI boundary. The ROM and shared C first post-call samples
+agree respectively on: the initial Mario message selector `$0c` and secondary
+counter increment; the World 8 primary-counter-three selector `$0f` plus the
+VictoryMusic queue; and the non-World-8 primary-counter-four path that writes
+`WorldEndTimer = $06` and advances to terminal task four. These comparisons
+cover the message selector/counter and terminal-timer writes, but retain zero
+credit because the surrounding victory walk, enemy, player graphics and OAM
+collaborators are still not proved as a complete route.

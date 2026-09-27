@@ -242,6 +242,21 @@ static void mysmb_reference_apply_t26_endworld_b_fixture(lib_u8 *ram)
     ram[0x06fdu] = 0u;
 }
 
+/* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
+ * music text, and the non-world-eight end-timer branch. */
+static void mysmb_reference_apply_t26_victory_message_fixture(
+    lib_u8 *ram, lib_u8 primary, lib_u8 world)
+{
+    ram[0x0770u] = 2u;
+    ram[0x0772u] = 3u;
+    ram[0x0719u] = primary;
+    ram[0x0749u] = 0u;
+    ram[0x0753u] = 0u;
+    ram[0x075fu] = world;
+    ram[0x00fcu] = 0u;
+    ram[0x07a1u] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -289,6 +304,21 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t26-endworld-b") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 2u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-first-message") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 3u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-music-message") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 4u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-end-timer") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 5u;
             continue;
         }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
@@ -360,6 +390,15 @@ int main(int argument_count, char **arguments)
                     mysmb_reference_apply_t26_floatey_fixture(driver->machine->ram);
                 else if (t26_fixture == 2u)
                     mysmb_reference_apply_t26_endworld_b_fixture(driver->machine->ram);
+                else if (t26_fixture == 3u)
+                    mysmb_reference_apply_t26_victory_message_fixture(
+                        driver->machine->ram, 0u, 0u);
+                else if (t26_fixture == 4u)
+                    mysmb_reference_apply_t26_victory_message_fixture(
+                        driver->machine->ram, 3u, 7u);
+                else if (t26_fixture == 5u)
+                    mysmb_reference_apply_t26_victory_message_fixture(
+                        driver->machine->ram, 4u, 0u);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;
