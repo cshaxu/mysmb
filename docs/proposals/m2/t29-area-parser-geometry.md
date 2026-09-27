@@ -1074,3 +1074,23 @@ branches without a leaf-PC or stack entry. The operational track runs focused
 parser/special-object/purity tests, x86/x64 builds, DOS16 link and the
 three-artifact package once per implementation P. Each member keeps its own
 table, branch, read/write and call-order disposition at closure.
+
+### S9 P2: WaterPipe selector restoration
+
+The source audit found that the ordinary small-object selector nine had been
+omitted from the C dispatcher. ROM `WaterPipe` reloads the first-byte row and
+writes `$6b` followed by `$6c`; it does not interpret the second-byte lower
+nybble as a horizontal or vertical extent. `area.c` now performs those exact
+two staging writes and the parser-column smoke exercises a row-nine object
+with selector nine, including the unchanged empty parser-length slot.
+
+This P does not credit the S9 nodes yet. `CastleObject` and `VerticalPipe`
+reach `FindEmptyEnemySlot`, while the latter then enters `InitPiranhaPlant`.
+Those are explicit S10 and M2 T19 S5 ownership boundaries. Their existing
+inlined approximations will be replaced only through an admitted owner call,
+not copied into this chain. Focused parser-column, terminal-slot,
+special-object and platform-purity tests pass on x86 and x64; the shared C90
+core links as DOS16 with the existing warnings. Artifact SHA-256:
+`mysmb16.exe` `2F2A4611ED13795B2F6D5EDE9E732467695094B907E5FA3EDB8A4C7659C014BE`,
+`mysmb32.exe` `99953A06FB06B369CB385FAFE6AACDDF23AC4AD612DFF579649A2A3445D08B4D`,
+and `mysmb64.exe` `414208C0407FF16CB50DD9F41EC06AB1569A49E2EDEEB21FC89CFB83DAFE1926`.

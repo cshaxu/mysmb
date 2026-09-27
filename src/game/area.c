@@ -1469,6 +1469,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             if (area_type != 1U) value = (mysmb_u8)(value + 5U);
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
         }
+        /* ROM WaterPipe ($986f): small-object selector nine does not use
+         * its lower nibble as a length.  GetLrgObjAttrib reloads the row,
+         * then writes the two water-pipe metatiles at that row and below. */
+        else if (value == 9U) {
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x6bU;
+            if (row < 12U)
+                game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
+        }
         else if (value == 10U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x60U;
         return;
     }

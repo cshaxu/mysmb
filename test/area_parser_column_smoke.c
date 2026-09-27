@@ -266,6 +266,18 @@ int main(void)
         game.ram[0x06a8U] != 0x51U || game.ram[0x06a9U] != 0x51U ||
         game.ram[0x0732U] != 0xffU) return 1;
 
+    /* WaterPipe is the normal small-object selector nine.  Its low nibble
+     * is not a row length: the original writes the two water-pipe tiles at
+     * the first-byte row and the row below without allocating a slot. */
+    prg[0x0040U] = 0x69U;
+    prg[0x0041U] = 0x09U;
+    game.ram[0x0726U] = 6U;
+    game.ram[0x072cU] = 0U;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x06aaU] != 0x6bU || game.ram[0x06abU] != 0x6cU ||
+        game.ram[0x0732U] != 0xffU) return 1;
+
     /* Vertical pipes are two parser columns wide and use the fixed length
      * one slot convention before drawing their top and shaft metatiles. */
     /* The first-column pipe-table entry is selected by its fixed length,
