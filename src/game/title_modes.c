@@ -219,7 +219,7 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM $8575-$8588, DrawMushroomIcon.  The eight-byte source is bound
+/* ROM $8325-$8338, DrawMushroomIcon.  The eight-byte source is bound
  * owner-local; its first byte is the Buffer1 offset and the next seven are
  * the transfer command. */
 void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
@@ -229,7 +229,7 @@ void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
     if (game->title_icon_data == 0 || game->title_icon_data_size != 8U) {
         return;
     }
-    /* ROM $8578 IconDataRead copies MushroomIconData[7..0] to
+    /* ROM $8328 IconDataRead copies MushroomIconData[7..0] to
      * VRAM_Buffer1-1[7..0].  Keep the first data byte as the source-owned
      * Buffer1 offset instead of synthesizing it from a payload length. */
     index = 8U;

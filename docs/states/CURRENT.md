@@ -47,20 +47,20 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S22, implementation; next source-order `DrawMushroomIcon` routine. |
-| Admission And Approval | Owner-approved source-order M2 plan; S21 completed `MushroomIconData` and transferred the remaining 8 title/menu/demo labels to S22. |
-| Objective | Independently establish and credit `DrawMushroomIcon`, the icon-copy routine. |
-| Non-goals | The other 7 retained labels (``IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
-| Reference Baseline | 92 / 1,992 complete; 1 scoped label; expected match DrawMushroomIcon; maximum 93 / 1,992. |
+| Identifier Mode | M2 T25 S23, implementation; next source-order `IconDataRead` loop. |
+| Admission And Approval | Owner-approved source-order M2 plan; S22 completed `DrawMushroomIcon` and transferred the remaining 7 title/menu/demo labels to S23. |
+| Objective | Independently establish and credit `IconDataRead`, the icon copy-loop label. |
+| Non-goals | The other 6 retained labels (`ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
+| Reference Baseline | 93 / 1,992 complete; 1 scoped label; expected match IconDataRead; maximum 94 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM routine `$8325`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | Source initializes Y=7, enters IconDataRead, then branches on NumberOfPlayers after the copy. |
+| Verification | Static source audit of ROM loop `$8328`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | Source loads MushroomIconData,Y, stores VRAM_Buffer1-1,Y, decrements Y, and branches while nonnegative. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source entry `$8325`, C routine and successor control flow, Select-route trace result, and all 8 retained-node dispositions. |
+| Reporting Requirements | Record source loop entry `$8328`, C loop and successor control flow, Select-route trace result, and all 7 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `DrawMushroomIcon` is completed only when its initializer, IconDataRead successor, player branch, and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `IconDataRead` is completed only when each loop read/write, decrement, BPL successor and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 

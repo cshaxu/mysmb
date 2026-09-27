@@ -50,6 +50,19 @@ int main(void)
     }
     mysmb_game_initialize(&game);
     mysmb_game_bind_title_source(&game, 0, 0U, icon_data, 8U);
+    game.ram[0x077aU] = 0U;
+    game.ram[0x0304U] = 0xa5U;
+    game.ram[0x0306U] = 0x5aU;
+    mysmb_game_draw_mushroom_icon(&game);
+    if (game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x22U ||
+        game.ram[0x0302U] != 0x49U || game.ram[0x0303U] != 0x83U ||
+        game.ram[0x0304U] != 0xceU || game.ram[0x0305U] != 0x24U ||
+        game.ram[0x0306U] != 0x24U || game.ram[0x0307U] != 0U) {
+        return 1;
+    }
+
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_title_source(&game, 0, 0U, icon_data, 8U);
     game.ram[0x0770U] = 0U;
     game.ram[0x0772U] = 3U;
     game.ram[0x07a2U] = 0x55U;

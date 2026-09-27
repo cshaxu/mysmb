@@ -657,3 +657,25 @@ S22 scopes only `DrawMushroomIcon`, baseline **92 / 1,992**, expected
 `DrawMushroomIcon`, maximum **93 / 1,992**. It must independently establish
 the Y=7 initializer, its `IconDataRead` successor, and the one-player/two-player
 branch before credit; the other seven received labels remain uncredited.
+
+
+## S22 closure: DrawMushroomIcon routine
+
+S22 completes exactly `DrawMushroomIcon`, reaching **93 / 1,992**. The ROM
+routine at `$8325` initializes Y to seven, falls directly into `IconDataRead`,
+and after the eight descending source reads checks `NumberOfPlayers`: zero
+returns with the one-player packet intact; nonzero overwrites `$0304` with
+`$24` and `$0306` with `$CE`. Shared C now records the same `$8325-$8338`
+routine range. The focused smoke calls the owner with one player and checks
+the complete `$0300..$0307` packet; the controlled Select path takes the
+two-player overwrite. The original ROM, x86 and x64 Select records agree for
+frames 0--198 in RAM, CIRAM, palette, OAM, audio and PPU scalars. x86 and x64
+records also agree with each other. DOS16 links the same shared owner. The
+remaining seven labels transfer to S23 unchanged.
+
+## S23 admission: IconDataRead loop
+
+S23 scopes only `IconDataRead`, baseline **93 / 1,992**, expected
+`IconDataRead`, maximum **94 / 1,992**. It must independently establish the
+load/store, Y decrement and BPL loop behavior, including the fallthrough to
+the `NumberOfPlayers` check. The other six received labels remain uncredited.
