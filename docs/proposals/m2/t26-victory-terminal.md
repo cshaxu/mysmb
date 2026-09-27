@@ -120,3 +120,30 @@ existing named collaborators rather than being duplicated here.
 ## S3 closure and S4 unified receipt
 
 S3 completed its zero-credit source-order audit of the ten floating-score labels. The tables match byte-for-byte; `FloateyNumbersRoutine` preserves the ROM control/timer/read/write sequence and delegates only existing score and OAM primitives. The focused fixture covers ordinary output, the `$2b` score and 1-UP branch, alternate OAM selection, and the `$0c` control clamp/status-boundary carry path. S3 transfers all ten labels to S4, which now holds all 32 T26 labels for the only credit-bearing route-equivalence decision.
+
+## S4 controlled floating-score route record
+
+The S4 reference recorder builds the MyNES core graph in an isolated ignored
+directory; it does not configure, link, or run the MySMB product through an
+emulator. Its input is the owner-supplied local SMB1 NROM, which remains a
+local research input. The recorder writes bounded four-sample raw traces only
+below `build/`; raw traces are deleted after the recorded result is reduced to
+this neutral evidence statement.
+
+The fixed `t26-floatey-oneup` precondition is intentionally narrower than the
+existing one-address branch hook. After sixty ordinary NMI boundaries, it sets
+the source GameMode/GameCoreRoutine route, suppresses new enemy-stream input,
+and prepares slot zero with the ROM's `$0b` floating-number control, `$2b`
+timer, position, sprite offset and life count. It does not expose an arbitrary
+multi-write product interface. The identical named fixture is applied before
+the corresponding shared-C tick.
+
+Across the four controlled frames, the ROM and shared C agree on the
+floating-number control, timer decrement, X/Y evolution, parser-task cadence,
+the `$2b` 1-UP life increment, and the square-two sound queue. The native
+player collaborator changes `GameEngineSubroutine` during the same incomplete
+scene, and the ROM's full OAM route overwrites the controlled slot before its
+visible-OAM sample. Therefore this route is evidence for the floating-score
+state transition only; it is not an OAM or whole-frame equivalence claim.
+S4 retains all 32 labels with zero ROM-match credit until source-reachable
+victory, end-world and complete OAM routes establish both required tracks.

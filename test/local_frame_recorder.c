@@ -109,6 +109,26 @@ static mysmb_u8 mysmb_recorder_equals(const char *left, const char *right)
     return *left == '\0' && *right == '\0' ? 1U : 0U;
 }
 
+/* Fixed T26 source-route precondition.  This is deliberately not a general
+ * RAM mutation interface: it prepares GameCoreRoutine's slot-zero pass for
+ * the FloateyNumbersRoutine 1-UP branch at its original NMI boundary. */
+static void mysmb_recorder_apply_t26_floatey_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x000fU] = 0U;
+    game->ram[0x0016U] = 9U;
+    game->ram[0x001eU] = 2U;
+    game->ram[0x071fU] = 7U;
+    game->ram[0x0110U] = 0x0bU;
+    game->ram[0x0117U] = 0x80U;
+    game->ram[0x011eU] = 0x40U;
+    game->ram[0x012cU] = 0x2bU;
+    game->ram[0x06e5U] = 0x20U;
+    game->ram[0x075aU] = 2U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -150,6 +170,7 @@ int main(int argument_count, char **arguments)
     int warmup_result;
     const char *script;
     mysmb_u8 bootstrap_title;
+    mysmb_u8 t26_floatey_fixture;
     struct mysmb_recorder_ram_write ram_write;
 
     if (argument_count < 5 || argument_count > 9) return 64;
@@ -161,9 +182,15 @@ int main(int argument_count, char **arguments)
     bootstrap_title = 0U;
     warmup_frames = 0UL;
     ram_write.present = 0U;
+    t26_floatey_fixture = 0U;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-floatey-oneup") != 0U) {
+            if (t26_floatey_fixture != 0U) return 64;
+            t26_floatey_fixture = 1U;
         }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
@@ -217,6 +244,8 @@ int main(int argument_count, char **arguments)
             game.ram[ram_write.address] = ram_write.value;
             ram_write.present = 0U;
         }
+        if (t26_floatey_fixture != 0U && index == warmup_frames)
+            mysmb_recorder_apply_t26_floatey_fixture(&game);
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {
             mysmb_frame_snapshot_capture(&game, &snapshot);

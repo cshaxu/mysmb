@@ -211,6 +211,26 @@ static void mysmb_reference_apply_ram_write(
     }
 }
 
+/* Fixed T26 source-route precondition.  It matches the native recorder's
+ * slot-zero GameEngine/FloateyNumbersRoutine 1-UP fixture and intentionally
+ * exposes no arbitrary multi-write facility. */
+static void mysmb_reference_apply_t26_floatey_fixture(lib_u8 *ram)
+{
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x000fu] = 0u;
+    ram[0x0016u] = 9u;
+    ram[0x001eu] = 2u;
+    ram[0x071fu] = 7u;
+    ram[0x0110u] = 0x0bu;
+    ram[0x0117u] = 0x80u;
+    ram[0x011eu] = 0x40u;
+    ram[0x012cu] = 0x2bu;
+    ram[0x06e5u] = 0x20u;
+    ram[0x075au] = 2u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -226,6 +246,7 @@ int main(int argument_count, char **arguments)
     const char *script;
     const char *coverage_path;
     struct mysmb_reference_ram_write ram_write;
+    lib_bool t26_floatey_fixture;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
@@ -241,11 +262,17 @@ int main(int argument_count, char **arguments)
     script = NULL;
     coverage_path = NULL;
     ram_write.present = LIB_FALSE;
+    t26_floatey_fixture = LIB_FALSE;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
                 return 64;
             coverage_path = arguments[recorded] + 14;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-floatey-oneup") == 0) {
+            if (t26_floatey_fixture) return 64;
+            t26_floatey_fixture = LIB_TRUE;
             continue;
         }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
@@ -312,6 +339,8 @@ int main(int argument_count, char **arguments)
             if (recorded == requested_frames) break;
             mysmb_reference_apply_ram_write(&ram_write, elapsed,
                                              driver->machine->ram);
+            if (t26_floatey_fixture && elapsed == warmup_frames)
+                mysmb_reference_apply_t26_floatey_fixture(driver->machine->ram);
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
