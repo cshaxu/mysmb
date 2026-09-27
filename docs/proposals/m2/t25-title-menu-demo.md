@@ -201,3 +201,30 @@ each label so a later replay can promote only what its route proves.
 No inventory state changes in S5. This is a closure-accounting checkpoint,
 not a task closure: it retains the exact title labels until the recorded T18
 dependency changes the route evidence.
+
+## S5 P1: aligned title-route replay
+
+T18 S4 has supplied the source-ordered `InitializeGame` write, so S5 reran
+the controlled product bootstrap from the same original-ROM cold state.  Four
+600-sample routes are retained under `build/m2-t25-s5/`: idle, a one-frame
+Start at sample 40, a one-frame A+Start at sample 40, and a one-frame Select
+at sample 40.  In every route, CPU work RAM `$0300-$07ff`, OAM backing, both
+CIRAM pages, palette, visible OAM, audio-command state and all PPU scalars are
+zero-difference. The only raw differences are CPU stack and zero-page state
+outside these received title nodes.
+
+The idle continuation was then warmed for 600 samples and recorded for a
+further 600. It enters `DemoEngine` with the same action/timer sequence and
+has the same zero-difference gameplay-visible output over the full observed
+window. This establishes operational evidence for the normal title, Select,
+Start/A+Start, `RunDemo`, `DemoEngine`, `DoAction`, and their shared output
+handoffs. It does not yet traverse a world-select-enabled ROM state or reach
+the terminal `DemoOver` reset; `WSelectBufferTemplate`, `IncWorldSel`,
+`UpdateShroom`, `GoContinue`, and `DemoOver` remain deliberately uncredited.
+No node count changes in this P: S5 will promote labels only after the
+remaining source-reachable routes are captured and reviewed individually.
+
+Current randomized-test artifacts are the shared-code products from T18 S4:
+`mysmb16.exe` `F2F7FFEA7AA57078DEFAD3510EC41D02C50AD063AB9470E6E3D3ABFB8A049CF9`,
+`mysmb32.exe` `5F5E0B6620420AA06AFD5D7CC83AAC6F87112C9DE2F7888B09248D86567DFF16`, and
+`mysmb64.exe` `112FFAC9405C79889737B16E3EF5B3C91349EFEE5DE25D63042A6B89FFE4786F`.
