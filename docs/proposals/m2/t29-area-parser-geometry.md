@@ -924,3 +924,28 @@ The required three-target package was refreshed from the P2 build results:
 and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.
 The hashes are unchanged from P1 because P2 changes validation-only recorder
 code and documentation, not the shipped shared-game or platform sources.
+
+## S8 P3: real Frenzy, Pulley and Tree routes
+
+P3 adds three more source-RAM-only, ordinary-NMI fixtures. They select real
+object bytes within the original area streams, rather than copied fixture
+data: `L_GroundArea3 + $4a` (`$ed,$4a`) selects Frenzy selector ten at page
+thirteen/column fourteen; `L_GroundArea13 + $1c` (`$1c,$17`) selects the
+Pulley object at page three/column one; and `L_GroundArea13 + $06`
+(`$33,$14`) selects a Tree-style object at page one/column three. Each route
+uses GameEngine and the original parser after the NMI-boundary RAM setup.
+
+Source PC coverage reaches `AreaFrenzy`, `FreCompLoop` and `ExitAFrenzy` at
+`$972b-$973f`; `PulleyRopeObject`, `RenderPul` and `MushLExit` at
+`$97ba-$97ce`; and `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `AllUnder` and
+`NoUnder` at `$9740-$9770` and `$97aa-$97b4`. The matching native routes have
+the same final pointer, page/column, object-length and scoped output markers:
+the Frenzy queue is `$18`; the Pulley top metatile is `$42`; and the Tree
+column preserves `$16` at its selected ledge row. The focused special-object
+smoke remains the operational regression for the shared C owner.
+
+This is still a non-closing evidence P. It does not yet prove both AreaFrenzy
+outcomes (existing versus absent ID), Tree expiration, Mushroom start/middle/
+end, or Pulley rope/right-end progression; none of the twenty-two labels is
+promoted by this partial route set. P4 must complete those source branches and
+the individual control/data disposition table before node accounting changes.

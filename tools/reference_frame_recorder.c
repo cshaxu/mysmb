@@ -701,6 +701,31 @@ static void mysmb_reference_apply_t29_special_object_fixture(lib_u8 *ram)
     ram[0x075fu] = 0u;
 }
 
+/* T29/S8 additional real area-stream objects.  Each variant remains at a
+ * normal NMI return and lets GameEngine dispatch the ROM parser; only the
+ * already-reached stream cursor/page/column state differs. */
+static void mysmb_reference_apply_t29_special_chain_fixture(lib_u8 *ram,
+                                                             lib_u8 kind)
+{
+    mysmb_reference_apply_t29_special_object_fixture(ram);
+    if (kind == 0u) { /* L_GroundArea3 +$4a: $ed,$4a, frenzy selector 10. */
+        ram[0x00e7u] = 0x39u; ram[0x00e8u] = 0xa5u;
+        ram[0x072cu] = 0x4au; ram[0x0725u] = 13u;
+        ram[0x0726u] = 14u; ram[0x072au] = 13u;
+    }
+    else if (kind == 1u) { /* L_GroundArea13 +$1c: $1c,$17, pulley. */
+        ram[0x00e7u] = 0x91u; ram[0x00e8u] = 0xa8u;
+        ram[0x072cu] = 0x1cu; ram[0x0725u] = 3u;
+        ram[0x0726u] = 1u; ram[0x072au] = 3u;
+    }
+    else { /* L_GroundArea13 +$06: $33,$14, tree-style object. */
+        ram[0x00e7u] = 0x91u; ram[0x00e8u] = 0xa8u;
+        ram[0x072cu] = 6u; ram[0x0725u] = 1u;
+        ram[0x0726u] = 3u; ram[0x072au] = 1u;
+        ram[0x0733u] = 0u;
+    }
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -1125,6 +1150,9 @@ int main(int argument_count, char **arguments)
             t26_fixture = 75u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-frenzy") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 76u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-pulley") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 77u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-tree") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 78u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1365,6 +1393,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 75u)
                     mysmb_reference_apply_t29_special_object_fixture(
                         driver->machine->ram);
+                else if (t26_fixture >= 76u && t26_fixture <= 78u)
+                    mysmb_reference_apply_t29_special_chain_fixture(
+                        driver->machine->ram, (lib_u8)(t26_fixture - 76u));
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
