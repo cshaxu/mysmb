@@ -1225,6 +1225,24 @@ static void mysmb_area_balance_platform_rope(struct mysmb_game *game,
     mysmb_area_draw_rope(game, 1U, height);
 }
 
+/* ROM $99ed-$99f5 CoinMetatileData and RowOfCoins.  The four entries are
+ * selected only by AreaType; GetRow remains the separately owned common
+ * length/row renderer that this selector tail-calls in the original. */
+static const mysmb_u8 mysmb_area_coin_metatile_data[4] = {
+    0xc3U, 0xc2U, 0xc2U, 0xc2U
+};
+
+static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
+                                    mysmb_u8 row, mysmb_u8 second)
+{
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
+        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] =
+            (mysmb_u8)(second & 0x0fU);
+    /* RowOfCoins: LDY AreaType; LDA CoinMetatileData,Y; JMP GetRow. */
+    mysmb_area_render_under_part(game, row, 0U,
+        mysmb_area_coin_metatile_data[game->ram[MYSMB_AREA_TYPE]]);
+}
+
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
@@ -1235,7 +1253,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
 {
     static const mysmb_u8 brick[5] = { 0x22U, 0x51U, 0x52U, 0x52U, 0x88U };
     static const mysmb_u8 solid[4] = { 0x69U, 0x61U, 0x61U, 0x62U };
-    static const mysmb_u8 coin[4] = { 0xc3U, 0xc2U, 0xc2U, 0xc2U };
     static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
     static const mysmb_u8 block[10] = {
         0U, 0U, 0U, 0U, 0x55U, 0x56U, 0x57U, 0x58U, 0x59U, 0U
@@ -1511,14 +1528,17 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         else if (value == 10U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x60U;
         return;
     }
-    if (kind == 2U || kind == 3U || kind == 4U) {
+    if (kind == 4U) {
+        mysmb_area_row_of_coins(game, slot, row, second);
+        return;
+    }
+    if (kind == 2U || kind == 3U) {
         if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
         if (kind == 2U && game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U)
             area_type = 4U;
-        value = kind == 2U ? brick[area_type] :
-            (kind == 3U ? solid[area_type] : coin[area_type]);
-        /* ROM RowOfBricks/RowOfSolidBlocks/RowOfCoins: LDY #$00 then
+        value = kind == 2U ? brick[area_type] : solid[area_type];
+        /* ROM RowOfBricks/RowOfSolidBlocks: LDY #$00 then
            enter RenderUnderPart for every horizontal continuation column. */
         mysmb_area_render_under_part(game, row, 0U, value);
         return;

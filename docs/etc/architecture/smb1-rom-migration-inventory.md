@@ -566,8 +566,8 @@ The labels and branches behind every line remain open until individually bound b
 | 4018 | `EndlessRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
 | 4023 | `BalancePlatRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
 | 4034 | `DrawRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
-| 4039 | `CoinMetatileData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinmetatiledata) |
-| 4042 | `RowOfCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofcoins) |
+| 4039 | `CoinMetatileData` | M2 T30 S2 shared `area.c` selector | ROM-match complete | [T30 S2/P1 coin-selector evidence](../../proposals/m2/t30-area-object-rendering.md#s2p1-coin-selector-and-three-target-delivery) |
+| 4042 | `RowOfCoins` | M2 T30 S2 shared `area.c` selector | ROM-match complete | [T30 S2/P1 coin-selector evidence](../../proposals/m2/t30-area-object-rendering.md#s2p1-coin-selector-and-three-target-delivery) |
 | 4049 | `C_ObjectRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectrow) |
 | 4052 | `C_ObjectMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectmetatile) |
 | 4055 | `CastleBridgeObj` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-castlebridgeobj) |

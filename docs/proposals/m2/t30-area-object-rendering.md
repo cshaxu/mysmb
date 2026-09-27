@@ -88,3 +88,13 @@ The registered scope contains only `EndlessRope`, `BalancePlatRope` and `DrawRop
 Baseline: **433 / 1,992**. Both incoming labels are `open`; both are expected
 to match. Maximum result: **435 / 1,992**. `GetRow`, `DrawRow` and
 `RenderUnderPart` are dependencies only and receive no S2 credit.
+
+## S2/P1: coin selector and three-target delivery
+
+The shared C90 owner now gives the ROM table and selector explicit names.
+The focused parser smoke covers each `AreaType`: ground selects `$c3`; water,
+underground and castle select `$c2`. It also confirms the shared parser's
+post-handler length decrement. The ROM-logic evidence is the exact table,
+`LDY AreaType`, indexed load and `JMP GetRow` audit; the operational evidence
+is the coin-row, rope and special-object smoke suite, x86/x64 `--self-test`,
+OpenNT16 MZ link and platform-purity pass.

@@ -75230,9 +75230,12 @@
         "RowOfCoins"
       ],
       "maximumComplete": 435,
-      "actualMatches": [],
+      "actualMatches": [
+        "CoinMetatileData",
+        "RowOfCoins"
+      ],
       "evidence": "docs/proposals/m2/t30-area-object-rendering.md",
-      "state": "admitted-coin-selector-chain"
+      "state": "p1-coin-selector-chain-complete"
     }
   ]
 }
