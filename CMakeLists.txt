@@ -675,6 +675,12 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_area_data_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_area_data_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.area-data-smoke COMMAND mysmb_area_data_smoke)
+    add_executable(mysmb_area_parser_data_smoke test/area_parser_data_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_area_parser_data_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_area_parser_data_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.area-parser-data-smoke COMMAND mysmb_area_parser_data_smoke)
     add_executable(mysmb_block_graphics_smoke test/block_graphics_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_graphics_smoke PRIVATE src

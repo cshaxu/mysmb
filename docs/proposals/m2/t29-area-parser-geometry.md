@@ -425,3 +425,33 @@ and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83F
 
 This remains a non-closing evidence checkpoint: exact source table values and
 all fourteen individual control/data dispositions are still pending.
+
+## S5 P3: local scenery and terrain data-consumer proof
+
+P3 adds `mysmb.area-parser-data-smoke`, a local-only consumer test for the
+seven admitted scenery/terrain data labels.  It binds the owner-local PRG at
+runtime and independently derives the source column result from the ROM's
+offset, page-residue, three-metatile, foreground-overlay, terrain-bit and
+block-buffer-bound operations.  It covers all three background families across
+their three page residues and sixteen columns, all foreground families, all
+four area types and sixteen terrain controls, cloud masking, and the world-8
+water/castle exception.  It contains no ROM table bytes.
+
+The existing task-zero/nonzero schedule, backloading ordering and buffer
+commit smokes remain the control-flow checks.  The ordinary source-RAM-only
+parser-dispatch route continues to cover the real `AreaParserTaskHandler`
+cadence and both Core-vector calls; an attempted synthetic backloading state
+at the title warmup boundary was rejected because the original ROM correctly
+remains in its own preload loop without the preceding area-initialization
+route.  It is not counted as route evidence.
+
+`mysmb.area-parser-data-smoke`, `mysmb.area-parser-column-smoke`,
+`mysmb.parser-schedule-smoke`, `mysmb.parser-buffer-commit-smoke`,
+`mysmb.area-data-smoke` and `mysmb.platform-purity` pass on Win32 x86 and
+x64.  The shared source links as an OpenNT DOS16 MZ with the pre-existing
+non-fatal `OLDNAMES.LIB` warning.  The refreshed package identities are
+`mysmb16.exe` `6D10344BB3EF3E3019CB1952072BD6BEB38CCD4BB94D4A5F4604446A73B51FEF`,
+`mysmb32.exe` `3BFDD8F7D10030BDFFC744052494B176A75C942CB010DBE178BD0174A2E7822C`,
+and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83FDDC`.
+This remains an implementation checkpoint: per-label source-audit
+dispositions and tracker closure are still pending.
