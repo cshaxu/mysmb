@@ -231,3 +231,38 @@ exercised those branches through ordinary GameEngine dispatch.  Operational
 evidence is the focused x86/x64 smoke and purity pass, the DOS16 compile/link,
 and the P2 three-artifact package above.  `src/game` remains the sole owner of
 all entry, vine, and bubble business behavior; no platform source was changed.
+
+## S4 admission: life-loss, game-over and player-exchange state chain
+
+S4 receives exactly `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`,
+`GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`,
+`RunGameOver`, `TerminateGame`, `ContinueGame`, `GameIsOn`,
+`TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, and `DoNothing2`
+through accepted ledger event `transfer-085-t18-s4-to-t29-s4-life-mode`.
+All seventeen labels are incomplete at the **285 / 1,992** baseline. S4
+forecasts all seventeen as ROM-match complete for a maximum **302 / 1,992**.
+
+The admitted chain is the complete shared terminal-mode state boundary from
+the half-way-page data through the residual return leaves. Its one shared C90
+owner is `terminal_modes.c`; `frame_root.c` remains only the already-declared
+GameEngine/operation-mode dispatcher. The chain includes the forward
+`TransposePlayers` collaborator because both `PlayerLoseLife` and
+`TerminateGame` call it before their terminal result. It does not take
+ownership of `LoadAreaPointer`, `ScreenRoutines`, or rendering/text leaves.
+
+The ROM comparison covers `$91bd-$92af` in source order: all sixteen
+half-way-table bytes; lose-life screen/sprite/music/life writes; all
+world/level/index/nybble/page outcomes; the three-way GameOver JumpEngine
+selection; setup, Start/timer and termination branches; ContinueGame write
+order; carry-qualified seven-byte player-record exchange; and the `$06c9=$ff`
+residual store plus return. A source-RAM-only GameEngine fixture family reaches
+this state boundary naturally for surviving and final loss, Game Over with
+Start/timer outcomes, and one/two-player termination. It never injects a leaf
+PC or stack.
+
+The operational track begins with `mysmb.mode-smoke`,
+`mysmb.oper-mode-dispatch-smoke`, `mysmb.local-death-music-smoke`, and
+`mysmb.platform-purity` on x86/x64. Each implementation P must also build the
+OpenNT DOS16 MZ, refresh all three required artifacts, and document their
+hashes. S4 may credit a label only after both tracks establish its data,
+control-flow, state-write and caller/result semantics.

@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**No M2 implementation packet is active. M2 T29 S3, the eleven-node area-entry initialization chain, is closed at 285 / 1,992. The next source-order receiver must be admitted as a bounded chain before implementation begins.**
+**Active implementation packet: M2 T29 S4, the seventeen-node life-loss, game-over and player-exchange state chain. T29 S3 is closed at 285 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
-nodes; it is not this implementation packet and cannot preempt M2 T29 S3.
+nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T29 S3 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T29 S4 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -45,6 +45,27 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
+## M2 T29 S4 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S4, implementation; life-loss, game-over and player-exchange state chain. |
+| Admission And Approval | Owner-approved source-order continuation after T29 S3 closure; accepted ledger transfer `transfer-085-t18-s4-to-t29-s4-life-mode` receives all seventeen labels from M2 T18 S4. |
+| Objective | Translate and prove `HalfwayPageNybbles -> DoNothing2` as one shared terminal-mode state boundary. |
+| Non-goals | No host-mode branch, synthetic leaf-PC or stack entry, screen/text routine redesign, area-pointer implementation change, or label outside the seventeen-node receipt. |
+| Reference Baseline | 285 / 1,992 complete; seventeen scoped incomplete labels; expected seventeen matches; maximum 302 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared `terminal_modes.c` owner, mode/root callers, project-owned mode/death smokes, controlled ROM/native recorders, ledger/progress records, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | ROM logic audit `$91bd-$92af`: half-way table/index/nybble branches; lose-life writes; GameOver JumpEngine dispatch; setup/run/termination branches; ContinueGame ordering; player-record swap and carry result; residual write/return. Source-RAM-only GameEngine fixtures cover surviving/final life loss, Game Over Start/timer outcomes, and single/two-player termination. Operational verification runs mode/dispatch/death-music smokes, x86/x64 builds, DOS16 link, platform-purity gate, and package checks. |
+| Expected Markers | Table bytes, screen/sprite/music/life writes, world/level half-way result, mode/task writes, Start/timer decisions, `ContinueWorld`, seven-byte player swap, and `$06c9=$ff`. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Record every node disposition, data/branch/read/write/call-order evidence, source-RAM fixture route result, focused-test/build/package results, three artifact hashes, and every residual transferred outside the chain. |
+| Stop Conditions | Stop on an unmatched table byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All seventeen labels have both ROM-logic and operational evidence without unrelated credit. |
+| Original Owner Request | Strict source order, dual verification and shared game logic only. |
+| Similar-Issue Sweep | Audit every game-mode dispatch, terminal-mode caller, player-record exchange and platform source; platform code may only supply physical input/timing and submit the completed game frame. |
+
 ## Prior M2 T25 S25 Packet (closed)
 
 | Field | Required record |
@@ -67,7 +88,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T29 S3 Packet
+## Prior M2 T29 S3 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
