@@ -108,5 +108,39 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x072aU] != 1U || game.ram[0x072cU] != 4U ||
         game.ram[0x0731U] != 0U || game.ram[0x0729U] != 0U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x0eU;
+    prg[0x41U] = 0x43U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x0744U] = 7U;
+
+    /* Alter2 passes values below four to SetFore without touching the
+     * background-color control byte. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0741U] != 3U || game.ram[0x0744U] != 7U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x0eU;
+    prg[0x41U] = 0x44U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    game.ram[0x0741U] = 3U;
+
+    /* Alter2 stores values four through seven as BackgroundColorCtrl, then
+     * reaches SetFore with A forced to zero. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0744U] != 4U || game.ram[0x0741U] != 0U) return 1;
     return 0;
 }

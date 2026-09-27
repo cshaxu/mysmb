@@ -716,3 +716,19 @@ non-fatal `OLDNAMES.LIB` warning. P7 artifacts are `mysmb16.exe`
 `F76FE63A5BCA852585C4E679FC74BA57EDF934D38B3289C29BD6C48F66066DE3`,
 `mysmb32.exe` `0FEF848402E8FAB65DBDE7EEEAFC91297BBBB2F753BA19D3B24D36ED9CE1E0C3`,
 and `mysmb64.exe` `6236B23DD448D6F89A5FAAED6CFBB382DCBE46C3545B635CF372474FCBFD7364`.
+
+## S7 P8: row-14 attribute branch evidence
+
+The source audit maps `AlterAreaAttributes -> Alter2 -> SetFore` to the
+shared row-14 parser path. Its focused stream cases prove: d6 clear writes
+terrain and background scenery; d6 set with a low value reaches `SetFore`
+without touching `BackgroundColorCtrl`; and d6 set with values four through
+seven writes `BackgroundColorCtrl` before forcing foreground scenery to zero.
+No platform source participates in these writes.
+
+The full focused area-stream set passes on x86 and x64, and shared C90 links
+into the OpenNT DOS16 MZ with the existing non-fatal `OLDNAMES.LIB` warning.
+The refreshed P8 artifact hashes remain `mysmb16.exe`
+`F76FE63A5BCA852585C4E679FC74BA57EDF934D38B3289C29BD6C48F66066DE3`,
+`mysmb32.exe` `0FEF848402E8FAB65DBDE7EEEAFC91297BBBB2F753BA19D3B24D36ED9CE1E0C3`,
+and `mysmb64.exe` `6236B23DD448D6F89A5FAAED6CFBB382DCBE46C3545B635CF372474FCBFD7364`.
