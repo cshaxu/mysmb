@@ -551,3 +551,18 @@ The remaining 13 labels transfer to S17.
 S17 scopes only `InitScores`, baseline **87 / 1,992**, expected `InitScores`,
 maximum **88 / 1,992**.  It must separately prove the 24-byte descending score
 and coin clear; `ExitMenu` and all other retained labels remain uncredited.
+
+## S17 closure: InitScores clear loop
+
+S17 completes exactly `InitScores`, reaching **88 / 1,992**.  Original-ROM
+coverage records 24 entries at `$8307`, 23 backward loop branches and the one
+exit to `ExitMenu`; the shared C owner starts at `$07dd - $17`, writes zero,
+and exits after index zero.  The controlled Start replay remains zero-difference
+across ROM/x86/x64; title smoke, bootstrap smoke and purity pass.  The remaining
+12 labels transfer to S18.
+
+## S18 admission: ExitMenu return
+
+S18 scopes only `ExitMenu`, baseline **88 / 1,992**, expected `ExitMenu`,
+maximum **89 / 1,992**.  It must prove the source RTS return to the title-mode
+caller; all remaining labels stay uncredited.

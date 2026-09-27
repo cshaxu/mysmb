@@ -1600,6 +1600,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after S16 StartWorld1 closure."
+        },
+        {
+          "id": "M2 T25 S18",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-branch-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after S17 InitScores closure."
         }
       ]
     },
@@ -6097,8 +6109,8 @@
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7011,8 +7023,8 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7056,8 +7068,8 @@
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7125,8 +7137,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7170,8 +7182,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7231,8 +7243,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7276,8 +7288,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7321,8 +7333,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7366,8 +7378,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7411,8 +7423,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7488,8 +7500,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7533,8 +7545,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S17",
-      "receivingBasis": "S17 retained title receipt after StartWorld1 closure.",
+      "receiver": "M2 T25 S18",
+      "receivingBasis": "S18 retained title receipt after InitScores closure.",
       "futurePackage": null,
       "history": [
         {
@@ -57128,6 +57140,28 @@
       ],
       "acceptedBy": "S17 accepts every uncompleted title/menu/demo label after S16.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-065-t25-s17-to-s18",
+      "type": "transfer",
+      "from": "M2 T25 S17",
+      "to": "M2 T25 S18",
+      "nodes": [
+        "WSelectBufferTemplate",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "S18 accepts every uncompleted title/menu/demo label after S17.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -64717,9 +64751,116 @@
         "InitScores"
       ],
       "maximumComplete": 88,
+      "actualMatches": [
+        "InitScores"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-start-world-one-common-continuation-equivalence"
+    },
+    {
+      "subtask": "M2 T25 S18",
+      "kind": "implementation",
+      "scope": [
+        "ExitMenu"
+      ],
+      "baseline": 88,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "ExitMenu"
+      ],
+      "maximumComplete": 89,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-init-scores-clear-loop-equivalence"
+      "state": "active-exit-menu-return-equivalence"
     }
   ]
 }

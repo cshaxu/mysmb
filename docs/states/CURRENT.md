@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S17 Packet
+## M2 T25 S18 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S17, implementation; next source-order `InitScores` clear loop. |
-| Admission And Approval | Owner-approved source-order M2 plan; S16 completed `StartWorld1` and transferred the remaining 13 title/menu/demo labels to S17. |
-| Objective | Independently establish and credit `InitScores`, the StartWorld1 fallthrough clear loop. |
-| Non-goals | The other 12 retained labels including `WSelectBufferTemplate`, `ExitMenu`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 87 / 1,992 complete; 1 scoped label; expected match InitScores; maximum 88 / 1,992. |
+| Identifier Mode | M2 T25 S18, implementation; next source-order `ExitMenu` return. |
+| Admission And Approval | Owner-approved source-order M2 plan; S17 completed `InitScores` and transferred the remaining 12 title/menu/demo labels to S18. |
+| Objective | Independently establish and credit `ExitMenu`, the return leaf after InitScores. |
+| Non-goals | The other 11 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 88 / 1,992 complete; 1 scoped label; expected match ExitMenu; maximum 89 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM PC `$8307`; controlled original-ROM Start route recording the 24 descending clear writes; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | `InitScores` starts from X=`$17`, clears the exact score/coin range to zero while decrementing through zero, then reaches `ExitMenu` without platform-owned state. |
+| Verification | Static source audit of ROM PC `$830d`; controlled original-ROM Start route recording the return successor; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | `ExitMenu` returns immediately after InitScores with no write or platform-owned state. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source entry `$8307`, loop range/exit, C-owner/control-flow, trace result, and all 12 retained-node dispositions. |
+| Reporting Requirements | Record source entry `$830d`, caller return, C-owner/control-flow, trace result, and all 11 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `InitScores` is completed only when its source loop, write range, successor route and replay proof agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `ExitMenu` is completed only when its source return and replay proof agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
