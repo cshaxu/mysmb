@@ -890,3 +890,37 @@ DOS16 with the pre-existing non-fatal `OLDNAMES.LIB` warning and existing
 `30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
 `mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
 and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.
+
+## S8 P2: ordinary Warp-Zone special-object route
+
+P2 adds the `t29-special-object` validation fixture to both recorders. At an
+ordinary NMI return after the bounded warmup it writes only the source RAM
+precondition for the final object of the ROM's `L_GroundArea16` stream: the
+post-header data pointer is `$a9d0`, its real stream offset is `$2c`, and the
+object bytes at CPU `$a9fc` are `$6d,$c5`. It sets the matching current parser
+page/column and leaves the original GameEngine to reach `AreaParserCore`,
+`ProcessAreaData`, `DecodeAreaData`, and the row-13 JumpEngine. It does not
+redirect the program counter, alter a stack, or supply ROM data.
+
+The bounded source coverage reaches `$96f2-$971a` for
+`ScrollLockObject_Warp`, `WarpNum`, and `ScrollLockObject`, then executes the
+five-slot `$971c-$9727` `KillELoop` path. The ROM and native snapshots agree
+on this route's scoped final markers: `$06d6=$04` (WarpZoneControl),
+`$0723=$01` (ScrollLock), `$072a=$01` (the page-select result), and the
+post-dispatch object offset `$072c=$2e`. The focused
+`mysmb.area-special-object-smoke` independently checks the selector, piranha
+ID clear, and toggle in the shared C owner.
+
+The complete eight-frame snapshots still differ in unrelated raw work RAM,
+name-table and palette state. P2 records that limitation rather than treating
+the route as a full-frame equivalence certificate. No node progress is
+promoted by P2 alone: the kill-write branch needs a controlled active-ID case,
+and the separate Frenzy, Tree, Mushroom and Pulley subchains each need their
+own original-ROM route and native/source state comparison.
+
+The required three-target package was refreshed from the P2 build results:
+`mysmb16.exe` `30E4BA8AD7D1052B5F8634A95E6BAD78D7D1550C1A3320AD7E59AE77CAD9F294`,
+`mysmb32.exe` `084DD2DBE2E69FE67AFCF10EA32F1AC0AE8D724AA0764490E66F9E1A730F931B`,
+and `mysmb64.exe` `7A2F7C64159B37223E6FB9E6EC4DFA4FBFB0B6FBFD42132CE7E6CAB63B7F8E27`.
+The hashes are unchanged from P1 because P2 changes validation-only recorder
+code and documentation, not the shipped shared-game or platform sources.

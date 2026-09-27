@@ -525,6 +525,37 @@ static void mysmb_recorder_apply_t29_parser_dispatch_fixture(
     game->ram[0x073fU] = 0U;
 }
 
+/* Mirror the source-recorder T29/S8 fixture: the original L_GroundArea16
+ * post-header stream begins at $a9d0 and its final $6d,$c5 special object is
+ * at offset $2c.  The native route still enters through game tick/parser. */
+static void mysmb_recorder_apply_t29_special_object_fixture(
+    struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x0773U] = 0U;
+    game->ram[0x071fU] = 8U;
+    game->ram[0x0725U] = 1U;
+    game->ram[0x0726U] = 6U;
+    game->ram[0x0728U] = 0U;
+    game->ram[0x072aU] = 0U;
+    game->ram[0x072bU] = 0U;
+    game->ram[0x072cU] = 0x2cU;
+    game->ram[0x072dU] = 0U;
+    game->ram[0x072eU] = 0U;
+    game->ram[0x072fU] = 0U;
+    game->ram[0x0730U] = 0xffU;
+    game->ram[0x0731U] = 0xffU;
+    game->ram[0x0732U] = 0xffU;
+    game->ram[0x073fU] = 0U;
+    game->ram[0x00e7U] = 0xd0U;
+    game->ram[0x00e8U] = 0xa9U;
+    game->ram[0x074eU] = 1U;
+    game->ram[0x075fU] = 0U;
+}
+
 static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
 {
     game->ram[0x0770U] = 0U;
@@ -926,6 +957,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 68U;
         }
         else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-special-object") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 69U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = 57U;
@@ -1052,6 +1088,8 @@ int main(int argument_count, char **arguments)
                     (mysmb_u8)(t26_fixture - 64U));
             else if (t26_fixture == 68U)
                 mysmb_recorder_apply_t29_parser_dispatch_fixture(&game);
+            else if (t26_fixture == 69U)
+                mysmb_recorder_apply_t29_special_object_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

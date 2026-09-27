@@ -669,6 +669,38 @@ static void mysmb_reference_apply_t29_parser_dispatch_fixture(lib_u8 *ram)
     ram[0x073fu] = 0u;
 }
 
+/* T29/S8 selects the final object in the original L_GroundArea16 stream
+ * (CPU $a9fc: $6d,$c5).  It changes RAM only at an NMI boundary; GameEngine
+ * still reaches AreaParserCore, ProcessAreaData and the row-13 JumpEngine
+ * through the ROM's ordinary parser path.  $a9d0 is the post-header stream
+ * address, and offset $2c is the real object's byte offset in that stream. */
+static void mysmb_reference_apply_t29_special_object_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x0773u] = 0u;
+    ram[0x071fu] = 8u;
+    ram[0x0725u] = 1u;
+    ram[0x0726u] = 6u;
+    ram[0x0728u] = 0u;
+    ram[0x072au] = 0u;
+    ram[0x072bu] = 0u;
+    ram[0x072cu] = 0x2cu;
+    ram[0x072du] = 0u;
+    ram[0x072eu] = 0u;
+    ram[0x072fu] = 0u;
+    ram[0x0730u] = 0xffu;
+    ram[0x0731u] = 0xffu;
+    ram[0x0732u] = 0xffu;
+    ram[0x073fu] = 0u;
+    ram[0x00e7u] = 0xd0u;
+    ram[0x00e8u] = 0xa9u;
+    ram[0x074eu] = 1u;
+    ram[0x075fu] = 0u;
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -1088,6 +1120,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 74u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-special-object") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 75u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1324,6 +1361,9 @@ int main(int argument_count, char **arguments)
                         driver->machine->ram, (lib_u8)(t26_fixture - 68u));
                 else if (t26_fixture == 74u)
                     mysmb_reference_apply_t29_parser_dispatch_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture == 75u)
+                    mysmb_reference_apply_t29_special_object_fixture(
                         driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
