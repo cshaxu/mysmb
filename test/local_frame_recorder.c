@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "game/area.h"
 #include "game/frame_snapshot.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -63,6 +64,42 @@ static int mysmb_recorder_parse_warmup(const char *argument,
     *warmup = parsed;
     return 1;
 }
+
+struct mysmb_recorder_ram_write {
+    unsigned long frame;
+    mysmb_u16 address;
+    mysmb_u8 value;
+    mysmb_u8 present;
+};
+
+/* Controlled branch preconditions belong only to this owner-local recorder;
+ * they cannot be reached by any product or platform input path. */
+static int mysmb_recorder_parse_ram_write(
+    const char *argument, struct mysmb_recorder_ram_write *write)
+{
+    static const char prefix[] = "--ram-write=";
+    unsigned int index;
+    char *next;
+    unsigned long frame;
+    unsigned long address;
+    unsigned long value;
+
+    if (write->present != 0U) return -1;
+    for (index = 0U; prefix[index] != '\0'; ++index) {
+        if (argument[index] != prefix[index]) return 0;
+    }
+    frame = strtoul(argument + index, &next, 0);
+    if (next == argument + index || *next != ':') return -1;
+    address = strtoul(next + 1, &next, 0);
+    if (*next != ':' || address > 0x07ffUL) return -1;
+    value = strtoul(next + 1, &next, 0);
+    if (*next != '\0' || value > 0xffUL) return -1;
+    write->frame = frame;
+    write->address = (mysmb_u16)address;
+    write->value = (mysmb_u8)value;
+    write->present = 1U;
+    return 1;
+}
 static mysmb_u8 mysmb_recorder_equals(const char *left, const char *right)
 {
     while (*left != '\0' && *right != '\0' && *left == *right) {
@@ -113,8 +150,9 @@ int main(int argument_count, char **arguments)
     int warmup_result;
     const char *script;
     mysmb_u8 bootstrap_title;
+    struct mysmb_recorder_ram_write ram_write;
 
-    if (argument_count < 5 || argument_count > 8) return 64;
+    if (argument_count < 5 || argument_count > 9) return 64;
     parsed_frames = strtoul(arguments[2], 0, 10);
     start_frame = strtoul(arguments[3], 0, 10);
     release_frame = strtoul(arguments[4], 0, 10);
@@ -122,11 +160,16 @@ int main(int argument_count, char **arguments)
     script = 0;
     bootstrap_title = 0U;
     warmup_frames = 0UL;
+    ram_write.present = 0U;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
         }
         else {
+            warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
+                                                            &ram_write);
+            if (warmup_result < 0) return 64;
+            if (warmup_result != 0) continue;
             warmup_result = mysmb_recorder_parse_warmup(arguments[index],
                                                         &warmup_frames);
             if (warmup_result < 0) return 64;
@@ -169,6 +212,10 @@ int main(int argument_count, char **arguments)
                                           &input.buttons) == 0U) {
             fclose(output);
             return 64;
+        }
+        if (ram_write.present != 0U && ram_write.frame == index) {
+            game.ram[ram_write.address] = ram_write.value;
+            ram_write.present = 0U;
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

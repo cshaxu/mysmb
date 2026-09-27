@@ -165,6 +165,52 @@ static int mysmb_reference_parse_warmup(const char *argument,
     *warmup = (lib_u32)parsed;
     return 1;
 }
+
+struct mysmb_reference_ram_write {
+    lib_u32 frame;
+    lib_u16 address;
+    lib_u8 value;
+    lib_bool present;
+};
+
+/* A single controlled RAM precondition for a source branch.  This stays in
+ * the local ROM recorder and is never a product input path. */
+static int mysmb_reference_parse_ram_write(
+    const char *argument, struct mysmb_reference_ram_write *write)
+{
+    static const char prefix[] = "--ram-write=";
+    unsigned int index;
+    char *next;
+    unsigned long frame;
+    unsigned long address;
+    unsigned long value;
+
+    if (write->present) return -1;
+    for (index = 0u; prefix[index] != '\0'; ++index) {
+        if (argument[index] != prefix[index]) return 0;
+    }
+    frame = strtoul(argument + index, &next, 0);
+    if (next == argument + index || *next != ':') return -1;
+    address = strtoul(next + 1, &next, 0);
+    if (*next != ':' || address > 0x07ffu) return -1;
+    value = strtoul(next + 1, &next, 0);
+    if (*next != '\0' || value > 0xffu) return -1;
+    write->frame = (lib_u32)frame;
+    write->address = (lib_u16)address;
+    write->value = (lib_u8)value;
+    write->present = LIB_TRUE;
+    return 1;
+}
+
+static void mysmb_reference_apply_ram_write(
+    struct mysmb_reference_ram_write *write, lib_u32 frame, lib_u8 *ram)
+{
+    if (write->present && write->frame == frame) {
+        ram[write->address] = write->value;
+        write->present = LIB_FALSE;
+    }
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -179,12 +225,13 @@ int main(int argument_count, char **arguments)
     int warmup_result;
     const char *script;
     const char *coverage_path;
+    struct mysmb_reference_ram_write ram_write;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 2u, 0u, 0u, 0u };
 
-    if (argument_count < 5 || argument_count > 8) return 64;
+    if (argument_count < 5 || argument_count > 9) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
     buttons = (unsigned int)strtoul(arguments[4], LIB_NULL, 0);
     if (parsed_frames == 0u || parsed_frames > 600u || buttons > 0xffu)
@@ -193,6 +240,7 @@ int main(int argument_count, char **arguments)
     warmup_frames = 0u;
     script = NULL;
     coverage_path = NULL;
+    ram_write.present = LIB_FALSE;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
@@ -200,6 +248,10 @@ int main(int argument_count, char **arguments)
             coverage_path = arguments[recorded] + 14;
             continue;
         }
+        warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
+                                                         &ram_write);
+        if (warmup_result < 0) return 64;
+        if (warmup_result != 0) continue;
         warmup_result = mysmb_reference_parse_warmup(arguments[recorded],
                                                       &warmup_frames);
         if (warmup_result < 0) return 64;
@@ -235,6 +287,7 @@ int main(int argument_count, char **arguments)
         (void)core_driver_destroy(driver);
         return 68;
     }
+    mysmb_reference_apply_ram_write(&ram_write, elapsed, driver->machine->ram);
     core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
     while (recorded < requested_frames &&
            step_count < total_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
@@ -257,6 +310,8 @@ int main(int argument_count, char **arguments)
             ++elapsed;
             if (elapsed > warmup_frames) ++recorded;
             if (recorded == requested_frames) break;
+            mysmb_reference_apply_ram_write(&ram_write, elapsed,
+                                             driver->machine->ram);
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
                                                 &buttons)) break;
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);

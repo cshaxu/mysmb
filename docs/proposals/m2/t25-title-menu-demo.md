@@ -240,3 +240,26 @@ whose ledger receiver is M2 T16 S4. This is an explicit cross-slice residual,
 not a T25 repair opportunity. T25 retains the title/demo labels without credit
 until the complete demo terminal path can be replayed after that player-graphics
 owner supplies its own evidence or repair.
+
+## S5 P3: controlled world-selection branch and terminal boundary
+
+`EndChkB` at ROM lines 1272--1280 is the only source writer of
+`WorldSelectEnableFlag` (`$07fc`), but it belongs to the later terminal slice.
+For this title-only branch proof, the owner-local ROM and native recorders now
+accept one bounded `--ram-write=frame:address:value` precondition. It accepts
+only CPU RAM `$0000..$07ff`, applies once at the named recorder frame, and is
+not compiled into a product or platform adapter. The controlled route writes
+`$07fc=$01` at frame 40 and supplies B in that same title-menu frame. Its
+600-sample ROM comparison has zero differences in work RAM, OAM backing,
+both CIRAM pages, palette, visible OAM, audio-command state and every PPU
+scalar. This is the operational branch evidence for `ChkWorldSel`,
+`SelectBLogic`, `IncWorldSel`, `GoContinue`, `UpdateShroom`, and
+`WSelectBufferTemplate`.
+
+A 3,600-frame idle warmup followed by a 600-sample terminal attempt does not
+prove `DemoOver`: before the terminal action sequence, ROM and C differ in
+player position and player sprite output. The first visible OAM difference is
+in the `PlayerGfxHandler` route, received by M2 T16 S4. T25 neither modifies
+that owner nor treats the later divergent demo timer/action values as T25
+evidence. The recorders reject malformed or duplicate controlled-write
+arguments; their direct C11/C90 builds pass. No node count changes in this P.
