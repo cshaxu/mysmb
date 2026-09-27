@@ -292,6 +292,20 @@ static void mysmb_reference_apply_t26_victory_walk_fixture(
     ram[0x0768u] = 0u;
 }
 
+/* Fixed T26 outer-dispatch precondition.  The missing Bowser front makes the
+ * original BridgeCollapse take SetM2, recording the VictoryMode handoff
+ * without turning bridge, enemy-loop, or player graphics collaborators into
+ * T26 evidence. */
+static void mysmb_reference_apply_t26_victory_bridge_handoff_fixture(
+    lib_u8 *ram)
+{
+    ram[0x0770u] = 2u;
+    ram[0x0772u] = 0u;
+    ram[0x0368u] = 0u;
+    ram[0x0016u] = 0u;
+    ram[0x00fcu] = 0u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -374,6 +388,11 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t26-endworld-next-world") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 9u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-victory-bridge-handoff") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 10u;
             continue;
         }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
@@ -465,6 +484,9 @@ int main(int argument_count, char **arguments)
                         driver->machine->ram, 2u);
                 else if (t26_fixture == 9u)
                     mysmb_reference_apply_t26_endworld_next_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture == 10u)
+                    mysmb_reference_apply_t26_victory_bridge_handoff_fixture(
                         driver->machine->ram);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,

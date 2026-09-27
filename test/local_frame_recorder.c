@@ -190,6 +190,20 @@ static void mysmb_recorder_apply_t26_victory_walk_fixture(
     game->ram[0x0768U] = 0U;
 }
 
+/* Fixed T26 outer-dispatch precondition.  Bowser's front slot deliberately
+ * contains no Bowser, so ROM BridgeCollapse takes SetM2: it queues Silence
+ * and advances the victory task before VictoryMode's shared collaborators.
+ * This records the T26 handoff without claiming the bridge or enemy owners. */
+static void mysmb_recorder_apply_t26_victory_bridge_handoff_fixture(
+    struct mysmb_game *game)
+{
+    game->ram[0x0770U] = 2U;
+    game->ram[0x0772U] = 0U;
+    game->ram[0x0368U] = 0U;
+    game->ram[0x0016U] = 0U;
+    game->ram[0x00fcU] = 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -293,6 +307,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 9U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-bridge-handoff") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 10U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -364,6 +383,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_victory_walk_fixture(&game, 2U);
             else if (t26_fixture == 9U)
                 mysmb_recorder_apply_t26_endworld_next_fixture(&game);
+            else if (t26_fixture == 10U)
+                mysmb_recorder_apply_t26_victory_bridge_handoff_fixture(&game);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

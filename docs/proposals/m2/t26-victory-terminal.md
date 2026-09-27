@@ -188,3 +188,15 @@ the next game timer, clears terminal task four to game task zero, and switches
 to GameMode. Together with the World 8 B route, this records both terminal
 exits without treating the downstream area-pointer or title bootstrap work as
 T26-owned proof.
+
+The `t26-victory-bridge-handoff` fixture covers the remaining task-zero outer
+dispatch branch without pretending that its collaborators belong to this
+slice. After sixty ordinary NMI boundaries it sets Victory mode/task zero and
+selects front slot zero with a non-Bowser ID. ROM `BridgeCollapse` therefore
+takes `SetM2`; on the first post-call NMI both runs have Silence in
+`EventMusicQueue` (`$00fc = $80`), retain Victory mode (`$0770 = $02`), and
+advance the terminal task (`$0772 = $01`). The source then invokes the shared
+enemy loop and player/OAM chain, whose output is intentionally excluded from
+this comparison. This is direct route evidence for the `VictoryMode` task-zero
+handoff and does not credit `BridgeCollapse`, `KillAllEnemies`, enemy-loop, or
+player-graphics nodes.
