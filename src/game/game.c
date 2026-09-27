@@ -216,11 +216,14 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         break;
     case 4U:
         if (game->ram[MYSMB_RAM_TIMER_EXPIRED] != 0U) {
-            if (mysmb_area_queue_game_text(game, 2U) != 0U) {
-                game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
-                game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-                game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 5U;
-            }
+            /* DisplayTimeUp clears its expiration latch before OutputInter.
+             * OutputInter then writes the text, resets the screen timer and
+             * reenables output in that source order. */
+            game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
+            (void)mysmb_area_queue_game_text(game, 2U);
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 5U;
         }
         else {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 6U;

@@ -146,3 +146,12 @@ OpenNT DOS16 MZ rebuild from the shared source. Refreshed artifacts:
 `mysmb32.exe` `AE2E88A5244A955250C12D62CD8D2588D3E219D08B17384C4E9A66CA208721FA`,
 and `mysmb64.exe` `C0FDADA6D1DBA84C0CAD13CBBD889B0215A7D179ABF517D5C5C6D75D51B45B9E`.
 No S2 node credit is claimed before the complete chain proof.
+
+## S2/P3: DisplayTimeUp OutputInter writes
+
+ROM lines 1553--1561 clear `GameTimerExpiredFlag` before `OutputInter`, which
+then restores `DisableScreenFlag`, resets the timer and advances the screen
+task. The shared C now preserves those writes. Focused status, local-area and
+platform-purity tests pass; x86/x64 and DOS16 rebuild. `mysmb16.exe`
+`3BA599B460EBBB9E3C262BAB75CE2DE97D8B1EF7486B28F862F004D1FC8AE48A`;
+x86/x64 artifacts remain the same byte hashes recorded in P2.

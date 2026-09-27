@@ -41,6 +41,16 @@ int main(void)
         game.ram[0x0305U] != 0x16U || game.ram[0x0306U] != 0x27U ||
         game.ram[0x0307U] != 0x18U || game.ram[0x0308U] != 0U) return 1;
 
+    /* ROM DisplayTimeUp clears its latch and OutputInter restores screen
+     * output before the later ResetSpritesAndScreenTimer task. */
+    game.ram[0x073cU] = 4U;
+    game.ram[0x0759U] = 1U;
+    game.ram[0x0774U] = 1U;
+    game.ram[0x07a0U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0759U] != 0U || game.ram[0x0774U] != 0U ||
+        game.ram[0x07a0U] != 7U || game.ram[0x073cU] != 5U) return 1;
+
     game.ram[0x073cU] = 9U;
     game.ram[0x074eU] = 3U;
     mysmb_game_step_screen_routine(&game);
