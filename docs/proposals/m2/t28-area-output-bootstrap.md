@@ -503,3 +503,7 @@ run `LoadAreaPointer` again. The shared frame root now uses only
 `mysmb_area_get_data_addresses` before header parsing, preserving the source
 control/data order. The natural area-entry ROM/native trace retains zero
 differences in every S8-owned range after the repair.
+
+## S8 closure: initialization bootstrap chain
+
+S8 closes at **265 / 1,992**. All sixteen admitted labels are ROM-match complete; none is transferred. Normal cold start reaches `InitializeGame` and `ClrSndLoop`; natural area-entry reaches `InitializeArea` through `DoneInitArea`; title task two reaches `PrimaryGameSetup` through `ISpr0Loop`. Bound table bytes produce matching shuffle/OAM output. The x86/x64 branch smoke, DOS16 link, platform-purity gate and refreshed three artifacts pass.

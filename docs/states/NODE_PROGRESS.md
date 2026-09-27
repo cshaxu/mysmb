@@ -12,18 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 249 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1. |
-| Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,635 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 265 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop, ReadJoypads, ReadPortBits, PortLoop, Save8Bits, WriteBufferToScreen, SetupWrites, GetLength, OutputToVRAM, RepeatByte, UpdateScreen, InitScroll, WritePPUReg1. |
+| Mapped / audited, not complete | 107 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, 54 audited evidence gaps, and 30 mapped evidence gaps. |
+| Open / unmatched | 1,620 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **249 / 1,992 (12.50%)**. Initial deep verification covered
-77 names, yielding three matches, 19 mismatch-affected names and 55 partial
-results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
-working tree and are now marked revalidation required. Historical/current
-owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
-77-node accounting. With three additional confirmed missing scheduler/activation entries, the
-explicitly dispositioned cohort is 170, of which 145 remain incomplete. These sets are disjoint in the current ledger.
+Verified conformance is **265 / 1,992 (13.30%)**. The 107 incomplete mappings comprise 18 known mismatches, three known missing implementations, two changed-body revalidations, 54 audited evidence gaps, and 30 mapped evidence gaps. These categories are disjoint.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -130,7 +124,23 @@ of equivalent native nodes. No product repair is part of this audit.
 | 712 | `WBootCheck` |
 | 721 | `ColdBoot` |
 | 737 | `EndlessLoop` |
+| 2674 | `InitializeGame` |
 | 2795 | `InitializeMemory` |
+| 2665 | `DefaultSprOffsets` |
+| 2669 | `Sprite0Data` |
+| 2678 | `ClrSndLoop` |
+| 2685 | `InitializeArea` |
+| 2690 | `ClrTimersLoop` |
+| 2697 | `StartPage` |
+| 2705 | `SetInitNTHigh` |
+| 2728 | `SetSecHard` |
+| 2729 | `CheckHalfway` |
+| 2733 | `DoneInitArea` |
+| 2742 | `PrimaryGameSetup` |
+| 2750 | `SecondaryGameSetup` |
+| 2754 | `ClearVRLoop` |
+| 2775 | `ShufAmtLoop` |
+| 2780 | `ISpr0Loop` |
 | 743 | `VRAM_AddrTable_Low` |
 | 752 | `VRAM_AddrTable_High` |
 | 761 | `VRAM_Buffer_Offset` |
@@ -319,7 +329,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 2674 | `InitializeGame` |
 | 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
 | 3991 | `FlagpoleObject` |

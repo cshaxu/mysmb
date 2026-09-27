@@ -388,22 +388,22 @@ The labels and branches behind every line remain open until individually bound b
 | 2647 | `GetScoreDiff` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
 | 2655 | `CopyScore` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
 | 2661 | `NoTopSc` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
-| 2665 | `DefaultSprOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultsproffsets) |
-| 2669 | `Sprite0Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprite0data) |
-| 2674 | `InitializeGame` | T18 responsibility (implementation not certified); `title_modes.c:mysmb_game_begin_title_bootstrap` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializegame) |
-| 2678 | `ClrSndLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrsndloop) |
-| 2685 | `InitializeArea` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializearea) |
-| 2690 | `ClrTimersLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrtimersloop) |
-| 2697 | `StartPage` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startpage) |
-| 2705 | `SetInitNTHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setinitnthigh) |
-| 2728 | `SetSecHard` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setsechard) |
-| 2729 | `CheckHalfway` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkhalfway) |
-| 2733 | `DoneInitArea` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doneinitarea) |
-| 2742 | `PrimaryGameSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-primarygamesetup) |
-| 2750 | `SecondaryGameSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondarygamesetup) |
-| 2754 | `ClearVRLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearvrloop) |
-| 2775 | `ShufAmtLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shufamtloop) |
-| 2780 | `ISpr0Loop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ispr0loop) |
+| 2665 | `DefaultSprOffsets` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2669 | `Sprite0Data` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2674 | `InitializeGame` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2678 | `ClrSndLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2685 | `InitializeArea` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2690 | `ClrTimersLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2697 | `StartPage` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2705 | `SetInitNTHigh` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2728 | `SetSecHard` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2729 | `CheckHalfway` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2733 | `DoneInitArea` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2742 | `PrimaryGameSetup` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2750 | `SecondaryGameSetup` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2754 | `ClearVRLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2775 | `ShufAmtLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2780 | `ISpr0Loop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2795 | `InitializeMemory` | T22 S14: shared boot/timing boundary | ROM-match complete | [T22 S14 complete](../../proposals/m2/t21-t49-source-order-recovery.md#t22s14-boot-root-equivalence-result) |
 | 2799 | `InitPageLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpageloop) |
 | 2800 | `InitByteLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbyteloop) |
