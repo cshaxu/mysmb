@@ -2072,6 +2072,19 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain."
+        },
+        {
+          "id": "M2 T29 S9",
+          "evidence": [
+            "docs/proposals/m2/t29-area-parser-geometry.md"
+          ],
+          "recordKinds": [
+            "owner-approved-source-order",
+            "chain-based-implementation"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner-approved source-order continuation for the CastleMetatiles through GetPipeHeight large-object geometry chain."
         }
       ]
     }
@@ -15279,8 +15292,8 @@
     {
       "label": "CastleMetatiles",
       "line": 3724,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15302,14 +15315,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "CastleObject",
       "line": 3737,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15363,14 +15383,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "CRendLoop",
       "line": 3748,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15384,14 +15411,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "ChkCFloor",
       "line": 3759,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15405,14 +15439,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "NotTall",
       "line": 3772,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15426,14 +15467,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "PlayerStop",
       "line": 3789,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15447,14 +15495,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "ExitCastle",
       "line": 3791,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15468,14 +15523,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "WaterPipe",
       "line": 3795,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15489,14 +15551,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "IntroPipe",
       "line": 3810,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15510,14 +15579,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "VPipeSectLoop",
       "line": 3817,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15531,14 +15607,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "NoBlankP",
       "line": 3823,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15552,14 +15635,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "SidePipeShaftData",
       "line": 3825,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15573,14 +15663,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "SidePipeTopPart",
       "line": 3828,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15594,14 +15691,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "SidePipeBottomPart",
       "line": 3831,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15615,14 +15719,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "ExitPipe",
       "line": 3835,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15636,14 +15747,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "RenderSidewaysPipe",
       "line": 3840,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15657,14 +15775,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "DrawSidePart",
       "line": 3855,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15678,14 +15803,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "VerticalPipeData",
       "line": 3862,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15699,14 +15831,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "VerticalPipe",
       "line": 3868,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15720,14 +15859,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "WarpPipe",
       "line": 3876,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15741,14 +15887,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "DrawPipe",
       "line": 3900,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15762,14 +15915,21 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
     {
       "label": "GetPipeHeight",
       "line": 3911,
-      "receiver": "M2 T18 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T29 S9",
+      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
       "futurePackage": null,
       "history": [
         {
@@ -15783,6 +15943,13 @@
           "subtask": "M2 T21 S4",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T29",
+          "subtask": "M2 T29 S9",
+          "relation": "accepted-transfer",
+          "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+          "event": "transfer-090-t18-s4-to-t29-s9-large-object-geometry"
         }
       ]
     },
@@ -58188,6 +58355,38 @@
       ],
       "acceptedBy": "Owner-approved source-order continuation after T29 S7 closure.",
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md"
+    },
+    {
+      "id": "transfer-090-t18-s4-to-t29-s9-large-object-geometry",
+      "type": "transfer",
+      "from": "M2 T18 S4",
+      "to": "M2 T29 S9",
+      "nodes": [
+        "CastleMetatiles",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle",
+        "WaterPipe",
+        "IntroPipe",
+        "VPipeSectLoop",
+        "NoBlankP",
+        "SidePipeShaftData",
+        "SidePipeTopPart",
+        "SidePipeBottomPart",
+        "ExitPipe",
+        "RenderSidewaysPipe",
+        "DrawSidePart",
+        "VerticalPipeData",
+        "VerticalPipe",
+        "WarpPipe",
+        "DrawPipe",
+        "GetPipeHeight"
+      ],
+      "acceptedBy": "Owner-approved source-order continuation after T29 S8 closure.",
+      "evidence": "docs/proposals/m2/t29-area-parser-geometry.md"
     }
   ],
   "runs": [
@@ -72449,6 +72648,455 @@
       ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
       "state": "closed-special-object-chain"
+    },
+    {
+      "subtask": "M2 T29 S9",
+      "kind": "implementation",
+      "scope": [
+        "CastleMetatiles",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle",
+        "WaterPipe",
+        "IntroPipe",
+        "VPipeSectLoop",
+        "NoBlankP",
+        "SidePipeShaftData",
+        "SidePipeTopPart",
+        "SidePipeBottomPart",
+        "ExitPipe",
+        "RenderSidewaysPipe",
+        "DrawSidePart",
+        "VerticalPipeData",
+        "VerticalPipe",
+        "WarpPipe",
+        "DrawPipe",
+        "GetPipeHeight"
+      ],
+      "baseline": 390,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitScreen",
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal",
+        "WriteTopStatusLine",
+        "WriteBottomStatusLine",
+        "DisplayTimeUp",
+        "NoTimeUp",
+        "DisplayIntermediate",
+        "PlayerInter",
+        "OutputInter",
+        "GameOverInter",
+        "NoInter",
+        "DrawTitleScreen",
+        "OutputTScr",
+        "ChkHiByte",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GameText",
+        "TopStatusBarLine",
+        "WorldLivesDisplay",
+        "TwoPlayerTimeUp",
+        "OnePlayerTimeUp",
+        "TwoPlayerGameOver",
+        "OnePlayerGameOver",
+        "WarpZoneWelcome",
+        "LuigiName",
+        "WarpZoneNumbers",
+        "GameTextOffsets",
+        "WriteGameText",
+        "Chk2Players",
+        "LdGameText",
+        "GameTextLoop",
+        "EndGameText",
+        "PutLives",
+        "CheckPlayerName",
+        "ChkLuigi",
+        "NameLoop",
+        "ExitChkName",
+        "PrintWarpZoneNumbers",
+        "WarpNumLoop",
+        "ResetSpritesAndScreenTimer",
+        "ResetScreenTimer",
+        "NoReset",
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl",
+        "ColorRotatePalette",
+        "BlankPalette",
+        "Palette3Data",
+        "ColorRotation",
+        "GetBlankPal",
+        "GetAreaPal",
+        "ExitColorRot",
+        "BlockGfxData",
+        "RemoveCoin_Axe",
+        "WriteBlankMT",
+        "ReplaceBlockMetatile",
+        "DestroyBlockMetatile",
+        "WriteBlockMetatile",
+        "UseBOffset",
+        "MoveVOffset",
+        "PutBlockMetatile",
+        "SaveHAdder",
+        "RemBridge",
+        "MetatileGraphics_Low",
+        "MetatileGraphics_High",
+        "Palette0_MTiles",
+        "Palette1_MTiles",
+        "Palette2_MTiles",
+        "Palette3_MTiles",
+        "WaterPaletteData",
+        "GroundPaletteData",
+        "UndergroundPaletteData",
+        "CastlePaletteData",
+        "DaySnowPaletteData",
+        "NightSnowPaletteData",
+        "MushroomPaletteData",
+        "BowserPaletteData",
+        "MarioThanksMessage",
+        "LuigiThanksMessage",
+        "MushroomRetainerSaved",
+        "PrincessSaved1",
+        "PrincessSaved2",
+        "WorldSelectMessage1",
+        "WorldSelectMessage2",
+        "JumpEngine",
+        "InitializeNameTables",
+        "WriteNTAddr",
+        "InitNTLoop",
+        "InitATLoop",
+        "ReadJoypads",
+        "ReadPortBits",
+        "PortLoop",
+        "Save8Bits",
+        "WriteBufferToScreen",
+        "SetupWrites",
+        "GetLength",
+        "OutputToVRAM",
+        "RepeatByte",
+        "UpdateScreen",
+        "InitScroll",
+        "WritePPUReg1",
+        "StatusBarData",
+        "StatusBarOffset",
+        "PrintStatusBarNumbers",
+        "OutputNumbers",
+        "SetupNums",
+        "DigitPLoop",
+        "ExitOutputN",
+        "DigitsMathRoutine",
+        "AddModLoop",
+        "StoreNewD",
+        "EraseDMods",
+        "EraseMLoop",
+        "BorrowOne",
+        "CarryOne",
+        "UpdateTopScore",
+        "TopScoreCheck",
+        "GetScoreDiff",
+        "CopyScore",
+        "NoTopSc",
+        "DefaultSprOffsets",
+        "Sprite0Data",
+        "InitializeGame",
+        "ClrSndLoop",
+        "InitializeArea",
+        "ClrTimersLoop",
+        "StartPage",
+        "SetInitNTHigh",
+        "SetSecHard",
+        "CheckHalfway",
+        "DoneInitArea",
+        "PrimaryGameSetup",
+        "SecondaryGameSetup",
+        "ClearVRLoop",
+        "ShufAmtLoop",
+        "ISpr0Loop",
+        "InitializeMemory",
+        "InitPageLoop",
+        "InitByteLoop",
+        "InitByte",
+        "SkipByte",
+        "MusicSelectData",
+        "GetAreaMusic",
+        "ChkAreaType",
+        "StoreMusic",
+        "ExitGetM",
+        "PlayerStarting_X_Pos",
+        "AltYPosOffset",
+        "PlayerStarting_Y_Pos",
+        "PlayerBGPriorityData",
+        "GameTimerData",
+        "Entrance_GameTimerSetup",
+        "ChkStPos",
+        "SetStPos",
+        "ChkOverR",
+        "ChkSwimE",
+        "SetPESub",
+        "HalfwayPageNybbles",
+        "PlayerLoseLife",
+        "StillInGame",
+        "GetHalfway",
+        "MaskHPNyb",
+        "SetHalfway",
+        "GameOverMode",
+        "SetupGameOver",
+        "RunGameOver",
+        "TerminateGame",
+        "ContinueGame",
+        "GameIsOn",
+        "TransposePlayers",
+        "TransLoop",
+        "ExTrans",
+        "DoNothing1",
+        "DoNothing2",
+        "AreaParserTaskHandler",
+        "DoAPTasks",
+        "SkipATRender",
+        "AreaParserTasks",
+        "IncrementColumnPos",
+        "NoColWrap",
+        "BSceneDataOffsets",
+        "BackSceneryData",
+        "BackSceneryMetatiles",
+        "FSceneDataOffsets",
+        "ForeSceneryData",
+        "TerrainMetatiles",
+        "TerrainRenderBits",
+        "AreaParserCore",
+        "RenderSceneryTerrain",
+        "ClrMTBuf",
+        "ThirdP",
+        "RendBack",
+        "SceLoop1",
+        "RendFore",
+        "SceLoop2",
+        "NoFore",
+        "RendTerr",
+        "TerMTile",
+        "StoreMT",
+        "TerrLoop",
+        "NoCloud2",
+        "TerrBChk",
+        "NextTBit",
+        "EndUChk",
+        "RendBBuf",
+        "ChkMTLow",
+        "StrBlock",
+        "BlockBuffLowBounds",
+        "ProcessAreaData",
+        "ProcADLoop",
+        "Chk1Row13",
+        "Chk1Row14",
+        "CheckRear",
+        "RdyDecode",
+        "SetBehind",
+        "NextAObj",
+        "ChkLength",
+        "ProcLoopb",
+        "EndAParse",
+        "IncAreaObjOffset",
+        "DecodeAreaData",
+        "Chk1stB",
+        "ChkRow14",
+        "ChkRow13",
+        "Mask2MSB",
+        "ChkSRows",
+        "LrgObj",
+        "NotWPipe",
+        "SpecObj",
+        "MoveAOId",
+        "NormObj",
+        "LeavePar",
+        "InitRear",
+        "LoopCmdE",
+        "BackColC",
+        "StrAObj",
+        "RunAObj",
+        "AlterAreaAttributes",
+        "Alter2",
+        "SetFore",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "ScrollLockObject_Warp",
+        "WarpNum",
+        "ScrollLockObject",
+        "KillEnemies",
+        "KillELoop",
+        "NoKillE",
+        "FrenzyIDData",
+        "AreaFrenzy",
+        "FreCompLoop",
+        "ExitAFrenzy",
+        "AreaStyleObject",
+        "TreeLedge",
+        "MidTreeL",
+        "EndTreeL",
+        "MushroomLedge",
+        "EndMushL",
+        "AllUnder",
+        "NoUnder",
+        "PulleyRopeMetatiles",
+        "PulleyRopeObject",
+        "RenderPul",
+        "MushLExit"
+      ],
+      "expectedMatches": [
+        "CastleMetatiles",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle",
+        "WaterPipe",
+        "IntroPipe",
+        "VPipeSectLoop",
+        "NoBlankP",
+        "SidePipeShaftData",
+        "SidePipeTopPart",
+        "SidePipeBottomPart",
+        "ExitPipe",
+        "RenderSidewaysPipe",
+        "DrawSidePart",
+        "VerticalPipeData",
+        "VerticalPipe",
+        "WarpPipe",
+        "DrawPipe",
+        "GetPipeHeight"
+      ],
+      "maximumComplete": 412,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
+      "state": "admitted-large-object-geometry-chain"
     }
   ]
 }

@@ -2,10 +2,10 @@
 
 ## Current Work
 
-**M2 T29 S8, the twenty-two-node special-object parser chain, is closed at
-390 / 1,992.  It followed S7's `RunAObj` dispatch handoff in source order and
-completed `ScrollLockObject_Warp -> MushLExit`; S9 admission is the next
-source-order continuation.**
+**M2 T29 S9, the twenty-two-node castle and pipe large-object geometry chain,
+is admitted at 390 / 1,992. It follows S8's RunAObj/special-object return in
+source order and owns CastleMetatiles -> GetPipeHeight; its maximum closing
+count is 412 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -13,7 +13,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. M2 T29 S9 requires its own admitted packet before code work.**
+queued records. M2 T29 S9 is the sole active implementation packet.**
 
 ## Retained M2 T15 summary
 
@@ -133,7 +133,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
 | Similar-Issue Sweep | Audit all area-stream writers and platform sources; platforms may only supply physical input/timing and submit the completed game frame. |
 
-## M2 T29 S8 Packet
+## M2 T29 S8 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -296,3 +296,24 @@ M2 T19 S3/P3 is complete: `InitEnemyObject -> CheckpointEnemyID -> InitEnemyRout
 
 M2 T19 S5/P20 restores ROM current-slot `EnemiesCollision`: no frame-root global collision scan manufactures bounding boxes; the pipe route OAM residual is removed.
 M2 T16 S3/P8 restores defeated-Goomba mirrored OAM attributes and its route evidence is consumed by the updated T17 pipe comparison.
+
+## M2 T29 S9 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T29 S9, implementation; castle and pipe large-object geometry chain. |
+| Admission And Approval | Owner-approved source-order continuation after S8 closure; accepted ledger transfer transfer-090-t18-s4-to-t29-s9-large-object-geometry receives all twenty-two labels from M2 T18 S4. |
+| Objective | Translate and prove CastleMetatiles -> GetPipeHeight as one shared large-object geometry chain. |
+| Non-goals | No allocation/final-object nodes beginning at FindEmptyEnemySlot, no unadmitted helper credit, no platform game branch, no synthetic leaf-PC or stack entry, and no label outside the twenty-two-node receipt. |
+| Reference Baseline | 390 / 1,992 complete; twenty-two scoped open labels; expected twenty-two matches; maximum 412 / 1,992. |
+| Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
+| Files And ABI Surface | Shared src/game/area.c owner; project-owned parser/geometry smokes; controlled ROM/native recorders; ledger/progress records; and the three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and M2 chain-based delivery. |
+| Verification | ROM-logic audit $9788-$9846 covers castle metatile/floor/tall/flag branches; water, intro and exit sideways-pipe tables and blanking; vertical/warp height, piranha eligibility and metatile order. Original object streams run through the ordinary GameEngine parser; source-RAM controlled cases cover mutually exclusive branches. Operational track runs focused parser/special-object/purity tests, x86/x64 builds, DOS16 link, and one three-artifact package per implementation P. |
+| Expected Markers | Castle and pipe metatile bytes/order, object length and cursor state, page/floor/height branch result, player-stop/exit effects, piranha eligibility handoff, and source return ordering. |
+| Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
+| Reporting Requirements | Report 22 scoped and 22 expected labels by exact name before work; record each node data/branch/read/write/call-order mapping, ROM route, focused-test/build/package result, hashes and each deferred transfer. |
+| Stop Conditions | Stop on unmatched source table byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | Every scope label has ROM-logic and operational evidence, tracker and ledger agree at 412 / 1,992, or any exception transfers by exact name. |
+| Original Owner Request | Strict original-ROM call/data structure, shared game logic for DOS and Windows, and dual verification with node accountability and chain-level delivery. |
+| Similar-Issue Sweep | Audit all large-object geometry writers and platform sources. Platforms may only supply physical input/timing and submit a completed game frame. |

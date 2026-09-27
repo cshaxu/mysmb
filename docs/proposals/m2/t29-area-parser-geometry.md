@@ -1046,3 +1046,31 @@ normal NMI warmup, with no PC/stack injection. Operational track: focused
 parser/special-object and platform-purity tests pass on x86 and x64; the same
 C90 owner links as OpenNT DOS16; all three P5 artifacts were refreshed. No
 scope label is deferred or transferred.
+
+## S9 admission: castle and pipe large-object geometry chain
+
+S9 is admitted as the next contiguous source-order chain after S8. Accepted
+ledger transfer transfer-090-t18-s4-to-t29-s9-large-object-geometry receives
+exactly these twenty-two labels from M2 T18 S4: CastleMetatiles, CastleObject,
+CRendLoop, ChkCFloor, NotTall, PlayerStop, ExitCastle, WaterPipe, IntroPipe,
+VPipeSectLoop, NoBlankP, SidePipeShaftData, SidePipeTopPart,
+SidePipeBottomPart, ExitPipe, RenderSidewaysPipe, DrawSidePart,
+VerticalPipeData, VerticalPipe, WarpPipe, DrawPipe, and GetPipeHeight.
+
+The chain begins at **390 / 1,992**, has 22 scoped open labels, expects all 22
+to become ROM-match complete, and has a maximum closing count of
+**412 / 1,992**. area.c is the shared game owner. Its predecessor is S8s
+RunAObj special-object return; its successor is S10s FindEmptyEnemySlot to
+FlagBalls_Residual allocation/final-geometry chain. Existing unadmitted
+helpers such as RenderUnderPart, ChkLrgObjFixedLength and GetLrgObjAttrib are
+invocation boundaries, not S9 credit.
+
+The ROM-logic track audits $9788-$9846: castle metatile selection and floor,
+tall and flag branches; water, intro and exit sideways-pipe data and blanking;
+vertical and warp-pipe height, piranha eligibility and metatile order. An
+ordinary GameEngine area-parser route reads original castle and pipe object
+streams; controlled source-RAM cases exercise mutually exclusive geometry
+branches without a leaf-PC or stack entry. The operational track runs focused
+parser/special-object/purity tests, x86/x64 builds, DOS16 link and the
+three-artifact package once per implementation P. Each member keeps its own
+table, branch, read/write and call-order disposition at closure.
