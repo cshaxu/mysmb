@@ -216,3 +216,16 @@ source call sequence and observed RAM/PPU state. The broader x64 regression
 currently retains five pre-existing failures (`core`, `parser-buffer-commit`,
 `bowser`, `mode`, `oper-mode-dispatch`); the focused S6 tests pass, and these
 unrelated assertions are not silently repaired under this receipt.
+
+## S6 P2 verification checkpoint
+
+The focused shared smoke now drives the actual NMI Buffer1 selector through
+both remaining packet forms: `$43` writes one byte three times with linear
+increment, and `$83` writes three distinct bytes with vertical increment.
+It checks their name-table locations and the original post-NMI Buffer1 header
+and selector clears. The paired recorder also has an NMI-entry-only fixture
+and a natural `UpdateScreen` successor capture point. That route confirms the
+source call reaches the requested NMI boundary, but its current reference PPU
+sample does not retain the injected tile payload; it is therefore diagnostic
+only and does not credit S6 labels. Completion remains gated on a trace route
+that makes those source writes observable.

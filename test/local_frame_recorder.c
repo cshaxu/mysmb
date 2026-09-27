@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "game/area.h"
+#include "game/frame_root.h"
 #include "game/frame_snapshot.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -380,6 +381,29 @@ static void mysmb_recorder_apply_t28_init_screen_fixture(struct mysmb_game *game
     game->ram[0x0772U] = 1U;
 }
 
+/* Prepare the original Buffer1 byte protocol at a native frame boundary.
+ * FrameRoot consumes it through its ordinary shared NMI path on this frame. */
+static void mysmb_recorder_apply_t28_vram_fixture(struct mysmb_game *game,
+                                                   mysmb_u8 kind)
+{
+    game->ram[0x0773U] = 0U;
+    game->ram[0x0300U] = kind == 0U ? 5U : 7U;
+    game->ram[0x0301U] = 0x20U;
+    game->ram[0x0302U] = 0x00U;
+    if (kind == 0U) {
+        game->ram[0x0303U] = 0x43U;
+        game->ram[0x0304U] = 0x29U;
+        game->ram[0x0305U] = 0U;
+    }
+    else {
+        game->ram[0x0303U] = 0x83U;
+        game->ram[0x0304U] = 0x11U;
+        game->ram[0x0305U] = 0x22U;
+        game->ram[0x0306U] = 0x33U;
+        game->ram[0x0307U] = 0U;
+    }
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -688,6 +712,16 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 50U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-vram-repeat") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 51U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-vram-vertical") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 52U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -784,6 +818,10 @@ int main(int argument_count, char **arguments)
                     (mysmb_u8)(t26_fixture - 19U));
             else if (t26_fixture == 50U)
                 mysmb_recorder_apply_t28_init_screen_fixture(&game);
+            else if (t26_fixture == 51U)
+                mysmb_recorder_apply_t28_vram_fixture(&game, 0U);
+            else if (t26_fixture == 52U)
+                mysmb_recorder_apply_t28_vram_fixture(&game, 1U);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
@@ -903,6 +941,23 @@ int main(int argument_count, char **arguments)
                 fclose(output);
                 return 0;
             }
+        }
+        if (t26_fixture == 51U || t26_fixture == 52U) {
+            mysmb_u8 mode_before;
+            mysmb_u8 task_before;
+
+            /* This is the shared NMI prefix through UpdateScreen.  The
+             * reference recorder stops at the source successor immediately
+             * after that call, so do not run a mode/mainline step here. */
+            (void)mysmb_frame_root_begin(&game, &input, &mode_before,
+                                         &task_before);
+            mysmb_frame_snapshot_capture(&game, &snapshot);
+            if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                fclose(output);
+                return 65;
+            }
+            fclose(output);
+            return 0;
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

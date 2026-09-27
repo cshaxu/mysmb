@@ -42,5 +42,39 @@ int main(void)
         game.palette[0U] != 0x2aU || game.ppu_control_0 != 0x90U ||
         game.ram[0x0778U] != 0x90U || game.visible_scroll_x != 0U ||
         game.visible_scroll_y != 0U) return 4;
+
+    /* The NMI-side selector must route Buffer1 through the same packet
+     * interpreter, then clear the source header exactly as InitBuffer does.
+     * These two packets make the d6 repeat and d7 vertical forms observable
+     * without a platform renderer. */
+    game.ram[0x0773U] = 0U;
+    game.ram[0x0300U] = 5U;
+    game.ram[0x0301U] = 0x20U;
+    game.ram[0x0302U] = 0x00U;
+    game.ram[0x0303U] = 0x43U;
+    game.ram[0x0304U] = 0x29U;
+    game.ram[0x0305U] = 0U;
+    mysmb_game_commit_vram_buffer(&game);
+    if (game.name_table[0U][0U] != 0x29U ||
+        game.name_table[0U][1U] != 0x29U ||
+        game.name_table[0U][2U] != 0x29U ||
+        game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
+        game.ram[0x0773U] != 0U) return 5;
+
+    game.ram[0x0773U] = 0U;
+    game.ram[0x0300U] = 7U;
+    game.ram[0x0301U] = 0x20U;
+    game.ram[0x0302U] = 0x10U;
+    game.ram[0x0303U] = 0x83U;
+    game.ram[0x0304U] = 0x11U;
+    game.ram[0x0305U] = 0x22U;
+    game.ram[0x0306U] = 0x33U;
+    game.ram[0x0307U] = 0U;
+    mysmb_game_commit_vram_buffer(&game);
+    if (game.name_table[0U][0x0010U] != 0x11U ||
+        game.name_table[0U][0x0030U] != 0x22U ||
+        game.name_table[0U][0x0050U] != 0x33U ||
+        game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
+        game.ram[0x0773U] != 0U) return 6;
     return 0;
 }
