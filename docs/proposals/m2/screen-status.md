@@ -460,6 +460,43 @@ awaits `GetSBNybbles`; `WriteTopScore` awaits `UpdateNumber`; and
 precondition for a source-reachable Warp route. S2 remains active and keeps
 their custody.
 
+## S2/P18: remove the synthetic GameCore status recovery
+
+The source call graph separates the two mode-task paths: `GameMode` task one
+dispatches `ScreenRoutines`, whose table entry three reaches
+`WriteBottomStatusLine`; task three dispatches `GameCoreRoutine` and has no
+status-writer call.  The shared frame root had added a GameCore-tail recovery:
+when `ScreenRoutineTask == 3`, it called the bottom-status writer and advanced
+the task only when the native buffer helper returned success.  That call and
+its capacity-dependent state transition do not exist in the ROM.
+
+The recovery call is removed.  `game.c` remains the translated caller for the
+GameMode task-three status entry and preserves the original unconditional
+`IncSubtask` transition.  The focused shared-game smoke sets GameMode task
+three and a sentinel screen task three, then proves a frame-root GameCore turn
+does not alter either `ScreenRoutineTask` or the VRAM-buffer offset.  This is
+the controlled operational counterpart to the original `GameMode` task vector
+and `GameCoreRoutine` source comparison; it adds no node credit because the
+`GetSBNybbles` helper remains under its registered owner.
+
+Focused `screen-status`, `local-area`, and platform-purity CTests pass on both
+native widths; each Win32 executable passes `--self-test`; the shared source
+links as OpenNT DOS16 with only established C4761 warnings.  The refreshed
+artifacts are `mysmb16.exe`
+`426E82B0FD0065BACD6DC54F7A0E51DCB9A3FA5C6AC2602782F83691DE850E94`,
+`mysmb32.exe`
+`B5F6F8C178BBDCBDFAA019A7DFDBD6350A843ECB737A188E26A1CD9DBBE12D7B`,
+and `mysmb64.exe`
+`2606478C41C3122B2500E6465FE570C6C6B2292608D9C65A468846217624E3EE`.
+
+The post-repair ROM replay regenerates the 200-frame zero-input cold-title
+route and all fourteen four-frame controlled screen fixtures: Time Up,
+castle/ordinary intermediate, Game Over, NoTimeUp, alternate NoInter, both
+task-five and task-seven timer outcomes, and both Mario/Luigi Time Up and Game
+Over selections.  Every sample has zero differences in work RAM `$0300-$07ff`,
+both CIRAM pages, palette, OAM, audio state and PPU scalars.  The raw paired
+records remain ignored below `build/m2-t27-s2/p18-regression/`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,

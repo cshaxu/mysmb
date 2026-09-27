@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/frame_root.h"
 #include "game/game.h"
 
 int main(void)
@@ -100,5 +101,22 @@ int main(void)
     game.ram[0x073cU] = 13U;
     mysmb_game_step_screen_routine(&game);
     if (game.ram[0x0772U] != 2U || game.ram[0x073cU] != 13U) return 1;
+
+    /* GameMode task three is GameCoreRoutine ($94a5): it never re-enters
+     * ScreenRoutines task three or synthesizes WriteBottomStatusLine. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 3U;
+    game.ram[0x073cU] = 3U;
+    game.ram[0x0300U] = 0U;
+    {
+        struct mysmb_input input;
+        struct mysmb_frame frame;
+
+        input.buttons = 0U;
+        mysmb_game_frame_initialize(&frame);
+        mysmb_frame_root_step(&game, &input, &frame);
+    }
+    if (game.ram[0x073cU] != 3U || game.ram[0x0300U] != 0U) return 1;
     return 0;
 }

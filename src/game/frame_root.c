@@ -259,10 +259,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     if ((mode_before == 1U &&
          (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
         run_title_demo != 0U) {
-        if (game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] == 3U &&
-            mysmb_area_queue_bottom_status_line(game) != 0U) {
-            game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] = 4U;
-        }
+        /* `WriteBottomStatusLine` is reached only through ScreenRoutines
+         * task 3.  GameCoreRoutine has no status-task recovery call or
+         * buffer-capacity branch, so it must leave ScreenRoutineTask alone. */
         if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
