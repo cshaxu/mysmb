@@ -395,3 +395,25 @@ and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83F
 This is an implementation checkpoint, not S5 closure. Source-RAM ROM routes,
 the exact vector/data-table audit, and per-label completion dispositions remain
 required before any of S5's fourteen labels may receive credit.
+
+## S5 P2: natural parser-dispatch ROM route
+
+P2 adds the `t29-parser-dispatch` owner-local reference fixture. After a
+600-frame ordinary warmup, it writes only source RAM at an NMI return to select
+normal GameEngine task eight, parser task eight, zero VRAM selector and the
+first parser column. Eight following ROM frames naturally execute
+`AreaParserTaskHandler` and its `RunParser` caller. The route never redirects
+the program counter or supplies a stack.
+
+The resulting PC coverage records `$92b0-$92c8` eight times, the two
+`IncrementColumnPos` entries at `$92db-$92f6`, and both source Core-vector
+passes through `$93fc` and the ordinary object/parser tail. It establishes the
+real dispatcher cadence separately from the P1 backloading regression. The
+shared-game source is unchanged from P1; the three P1 artifacts remain the
+verified package identities: `mysmb16.exe`
+`6D10344BB3EF3E3019CB1952072BD6BEB38CCD4BB94D4A5F4604446A73B51FEF`,
+`mysmb32.exe` `3BFDD8F7D10030BDFFC744052494B176A75C942CB010DBE178BD0174A2E7822C`,
+and `mysmb64.exe` `20FCDABAAF6D9DBC7A39B795A6D7505E1A698C3AEED2E6C728C794F34D83FDDC`.
+
+This remains a non-closing evidence checkpoint: exact source table values and
+all fourteen individual control/data dispositions are still pending.

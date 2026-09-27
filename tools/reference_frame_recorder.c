@@ -651,6 +651,24 @@ static void mysmb_reference_apply_t29_life_mode_fixture(lib_u8 *ram,
     }
 }
 
+/* T29/S5 starts a normal GameEngine parser tail at an NMI boundary.  The
+ * ROM's own RunParser check calls AreaParserTaskHandler on following frames;
+ * no leaf program counter or synthetic return stack is installed. */
+static void mysmb_reference_apply_t29_parser_dispatch_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x0773u] = 0u;
+    ram[0x071fu] = 8u;
+    ram[0x0725u] = 0u;
+    ram[0x0726u] = 0u;
+    ram[0x06a0u] = 0u;
+    ram[0x0728u] = 0u;
+    ram[0x073fu] = 0u;
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -1065,6 +1083,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 73u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t29-parser-dispatch") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 74u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1299,6 +1322,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 68u && t26_fixture <= 73u)
                     mysmb_reference_apply_t29_life_mode_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 68u));
+                else if (t26_fixture == 74u)
+                    mysmb_reference_apply_t29_parser_dispatch_fixture(
+                        driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
