@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -7410,8 +7410,8 @@
     {
       "label": "VictoryMode",
       "line": 1137,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7465,14 +7465,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "AutoPlayer",
       "line": 1144,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7486,14 +7492,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "VictoryModeSubroutines",
       "line": 1147,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7539,14 +7551,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "SetupVictoryMode",
       "line": 1159,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7576,14 +7594,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "PlayerVictoryWalk",
       "line": 1169,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7637,14 +7661,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "PerformWalk",
       "line": 1178,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7658,14 +7688,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "DontWalk",
       "line": 1180,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7679,14 +7715,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ExitVWalk",
       "line": 1195,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7700,14 +7742,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "PrintVictoryMessages",
       "line": 1201,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7753,14 +7801,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "MRetainerMsg",
       "line": 1215,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7774,14 +7828,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ThankPlayer",
       "line": 1217,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7795,14 +7855,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "SecondPartMsg",
       "line": 1223,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7816,14 +7882,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "EvalForMusic",
       "line": 1232,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7837,14 +7909,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "PrintMsg",
       "line": 1236,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7858,14 +7936,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "IncMsgCounter",
       "line": 1240,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7879,14 +7963,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "SetEndTimer",
       "line": 1248,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7900,14 +7990,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "IncModeTask_A",
       "line": 1251,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7921,14 +8017,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ExitMsgs",
       "line": 1252,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7942,14 +8044,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "PlayerEndWorld",
       "line": 1256,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -7987,14 +8095,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "EndExitOne",
       "line": 1271,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8008,14 +8122,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "EndChkBButton",
       "line": 1272,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8029,14 +8149,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "EndExitTwo",
       "line": 1281,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S2 terminal repair closed; T26 S4 accepted route-equivalence integration custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8050,14 +8176,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "FloateyNumTileData",
       "line": 1287,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8071,14 +8203,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ScoreUpdateData",
       "line": 1303,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8092,14 +8230,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "FloateyNumbersRoutine",
       "line": 1308,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8145,14 +8289,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ChkNumTimer",
       "line": 1315,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8166,14 +8316,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "DecNumTimer",
       "line": 1320,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8187,14 +8343,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "LoadNumTiles",
       "line": 1328,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8208,14 +8370,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "ChkTallEnemy",
       "line": 1338,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8229,14 +8397,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "GetAltOffset",
       "line": 1355,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8250,14 +8424,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "FloateyPart",
       "line": 1358,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8271,14 +8451,20 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
     {
       "label": "SetupNumSpr",
       "line": 1363,
-      "receiver": "M2 T26 S4",
-      "receivingBasis": "T26 S3 source-order audit closed; T26 S4 accepted unified route-equivalence custody.",
+      "receiver": "M2 T26 S5",
+      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
       "futurePackage": null,
       "history": [
         {
@@ -8292,6 +8478,12 @@
           "subtask": "M2 T21 S1",
           "relation": "accepted successor for unfinished T20-and-earlier closure",
           "evidence": "docs/proposals/m2/t21-prior-node-closure.md"
+        },
+        {
+          "task": "M2 T26",
+          "subtask": "M2 T26 S5",
+          "relation": "accepted closure successor after S4 controlled-ROM route evidence",
+          "evidence": "docs/proposals/m2/t26-victory-terminal.md"
         }
       ]
     },
@@ -55726,7 +55918,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -56366,6 +56558,48 @@
         "SetupNumSpr"
       ],
       "acceptedBy": "M2 T26 S4 is the pre-accepted unified route-equivalence receiver after S3 completed the floating-score source-order audit.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
+    },
+    {
+      "id": "transfer-051-t26-s4-to-s5-closure",
+      "type": "transfer",
+      "from": "M2 T26 S4",
+      "to": "M2 T26 S5",
+      "nodes": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "acceptedBy": "M2 T26 S5 is the owner-approved pre-accepted closure receiver; S4 recorded the exact controlled ROM branch evidence and retains no unfinished custody.",
       "evidence": "docs/proposals/m2/t26-victory-terminal.md"
     }
   ],
@@ -62397,7 +62631,126 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t26-victory-terminal.md",
-      "state": "active-unified-terminal-and-floatey-route-equivalence"
+      "state": "closed-zero-credit-route-evidence-transferred-to-s5"
+    },
+    {
+      "subtask": "M2 T26 S5",
+      "kind": "implementation",
+      "scope": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "maximumComplete": 72,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "active-per-label-terminal-and-floatey-closure"
     }
   ]
 }

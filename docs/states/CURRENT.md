@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T26 S4 Packet
+## M2 T26 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T26 S4, implementation; unified victory-terminal and floating-score route equivalence. |
-| Admission And Approval | Owner-approved source-order M2 plan; T26 S2 terminal repair and T26 S3 floating-score audit both transferred their exact labels to this pre-accepted receiver. |
-| Objective | Establish source-reachable or controlled ROM equivalence for all 32 received T26 labels before crediting any node. |
+| Identifier Mode | M2 T26 S5, implementation; per-label victory-terminal and floating-score closure. |
+| Admission And Approval | Owner-approved source-order M2 plan; S4 closed zero-credit after controlled ROM routes and transferred all 32 labels to this pre-accepted closure receiver. |
+| Objective | Decide each received label from the recorded ROM logic and operational evidence; update only labels with both tracks. |
 | Non-goals | New gameplay behavior, platform logic, or absorption of player, score, OAM, enemy-loop and area collaborators. |
-| Reference Baseline | 42 / 1,992 complete; 32 scoped labels, zero expected matches, maximum 42 / 1,992. |
+| Reference Baseline | 42 / 1,992 complete; 32 scoped labels; 30 direct-label expected matches; maximum 72 / 1,992. |
 | Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
-| Files And ABI Surface | Owner-local reference/native recorders and comparisons, focused shared-C tests, ledger, and three target artifacts. |
+| Files And ABI Surface | Canonical inventory, node ledger, owner-local reference/native recorders, focused shared-C tests, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original branch/read/write/call order plus controlled or source-reachable ROM trace comparisons; focused tests, cross-width builds, DOS16 and purity. |
-| Expected Markers | None until each label has both ROM logic-equivalence and operational evidence. |
+| Verification | Per-label original branch/read/write/call-order review against S4 routes; focused tests, cross-width builds, DOS16 and purity. |
+| Expected Markers | All S4 labels except `VictoryMode` and `AutoPlayer`; outer labels remain incomplete pending independent enemy/player graphics evidence. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record route preconditions, every compared output domain, branch coverage, incomplete labels and resulting node count. |
+| Reporting Requirements | Update the canonical inventory, record every completed/incomplete label, exact evidence, and resulting node count. |
 | Stop Conditions | Stop on unsound trace injection, external-owner change, or platform gameplay logic. |
-| Exit Criteria | Per-label ROM and operational evidence supports an explicit complete or transferred disposition for all 32 labels. |
+| Exit Criteria | Every label has an explicit completed or transferred disposition; no outer collaborator is credited without its independent proof. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Compare every current T26 terminal/floating-score write against its source label and route output. |
 

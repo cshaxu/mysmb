@@ -237,3 +237,16 @@ its existing focused OAM smoke. Together with the 1-UP record, these exercise
 the two local tables, clamp, zero-timer exit, pre-decrement update, alternate
 offset, Y/carry choice, and two-sprite setup without claiming score or OAM
 collaborator completion.
+
+## S4 closure and S5 admission
+
+S4 closes with zero new ROM-match credit, as its admission forecast required.
+It transfers all 32 labels to its pre-accepted S5 closure receiver. The
+controlled ROM records now support a fresh S5 forecast of 30 direct labels:
+every label except `VictoryMode` and `AutoPlayer`. Those two outer labels
+remain excluded because their original call order includes the independently
+received enemy-loop and player-graphics chains; no S5 test may replace those
+owners with a local approximation. S5 begins at 42 / 1,992, receives all 32
+labels, forecasts the named 30 direct labels, and may close at no more than
+72 / 1,992 only after updating the canonical inventory and independently
+confirming both logic and operational tracks.
