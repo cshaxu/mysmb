@@ -12,9 +12,10 @@
 #include "core/machine.h"
 
 #define MYSMB_REFERENCE_NMI_RETURN 0x8181u
-#define MYSMB_REFERENCE_NMI_ENTRY 0x8082u
+#define MYSMB_REFERENCE_NMI_ENTRY 0x8085u
 #define MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR 0x85c8u
-#define MYSMB_REFERENCE_T28_VRAM_SUCCESSOR 0x80c6u
+#define MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY 0x8e92u
+#define MYSMB_REFERENCE_T28_VRAM_EXIT 0x8ee6u
 #define MYSMB_REFERENCE_PPU_CONTROL_MIRROR 0x0778u
 #define MYSMB_REFERENCE_HORIZONTAL_SCROLL 0x073fu
 #define MYSMB_REFERENCE_VERTICAL_SCROLL 0x0740u
@@ -523,7 +524,7 @@ int main(int argument_count, char **arguments)
     lib_u8 t26_fixture;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
-    lib_bool t28_vram_applied;
+    lib_u8 t28_vram_phase;
     lib_u32 last_frame_revision;
     lib_bool have_frame_revision;
     unsigned int buttons;
@@ -542,7 +543,7 @@ int main(int argument_count, char **arguments)
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
-    t28_vram_applied = LIB_FALSE;
+    t28_vram_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
@@ -870,10 +871,10 @@ int main(int argument_count, char **arguments)
             mysmb_reference_apply_t28_vram_fixture(driver->machine->ram,
                 t26_fixture == 51u ? 0u : 1u);
             if (core_machine_breakpoint_set(driver->machine,
-                MYSMB_REFERENCE_T28_VRAM_SUCCESSOR, LIB_TRUE) !=
+                MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY, LIB_TRUE) !=
                 LIB_STATUS_OK) break;
             t28_vram_pending = LIB_FALSE;
-            t28_vram_applied = LIB_TRUE;
+            t28_vram_phase = 1u;
         }
         /* S5 reaches this source label only after GameMode and
          * ScreenRoutines have selected InitScreen, both InitScreen calls
@@ -885,12 +886,19 @@ int main(int argument_count, char **arguments)
             ++recorded;
             break;
         }
-        /* The ROM reaches this instruction only after the NMI selected its
-         * Buffer1 pointer and UpdateScreen returned.  Capture here so the
-         * packet's PPU writes are observable before unrelated mainline title
-         * setup can replace the name table. */
-        if (t28_vram_applied &&
-            driver->machine->pc == MYSMB_REFERENCE_T28_VRAM_SUCCESSOR) {
+        /* Stop on the actual packet entry, then replace that breakpoint with
+         * InitScroll.  This brackets the full source packet without a leaf
+         * jump or an invented caller stack. */
+        if (t28_vram_phase == 1u &&
+            driver->machine->pc == MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY) {
+            if (core_machine_breakpoint_set(driver->machine,
+                MYSMB_REFERENCE_T28_VRAM_COMMAND_ENTRY, LIB_FALSE) !=
+                LIB_STATUS_OK || core_machine_breakpoint_set(driver->machine,
+                MYSMB_REFERENCE_T28_VRAM_EXIT, LIB_TRUE) != LIB_STATUS_OK) break;
+            t28_vram_phase = 2u;
+        }
+        if (t28_vram_phase == 2u &&
+            driver->machine->pc == MYSMB_REFERENCE_T28_VRAM_EXIT) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
@@ -978,10 +986,12 @@ int main(int argument_count, char **arguments)
                         MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR,
                         LIB_TRUE) != LIB_STATUS_OK) break;
                 }
-                else if (t26_fixture == 51u)
+                else if (t26_fixture == 51u || t26_fixture == 52u) {
                     t28_vram_pending = LIB_TRUE;
-                else if (t26_fixture == 52u)
-                    t28_vram_pending = LIB_TRUE;
+                    if (core_machine_breakpoint_set(driver->machine,
+                        MYSMB_REFERENCE_NMI_ENTRY, LIB_TRUE) !=
+                        LIB_STATUS_OK) break;
+                }
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

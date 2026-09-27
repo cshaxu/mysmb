@@ -229,3 +229,37 @@ source call reaches the requested NMI boundary, but its current reference PPU
 sample does not retain the injected tile payload; it is therefore diagnostic
 only and does not credit S6 labels. Completion remains gated on a trace route
 that makes those source writes observable.
+
+## S6 P3 source-route correction
+
+The recorder now brackets the ordinary source NMI packet at
+`WriteBufferToScreen` (`$8e92`) and its `InitScroll` successor (`$8ee6`). It
+prepares Buffer1 only after the normal NMI prefix has started, pauses at the
+actual packet entry, then resumes the ROM until the packet has completed. This
+corrects the earlier outer-NMI capture, which could sample before the packet
+or after unrelated title work. The matching native recorder invokes the shared
+NMI prefix only at its configured frame boundary.
+
+## S6 closure: joypad/VRAM/NMI chain
+
+S6 closes at **230 / 1,992**. All twelve admitted labels are ROM-match
+complete. `frame_root.c` owns two-port serial reading, the source Start/Select
+mask and the selected-buffer NMI contract; `game.c` owns packet interpretation
+and PPU-visible output. Neither Windows nor DOS contains controller serial
+state, debounce, packet decoding, scroll or PPU-mirror decisions.
+
+The ordinary ROM NMI Start-and-release route matches `$06fc/$06fd` and
+`$074a/$074b` over three frames, with zero CIRAM and OAM differences. The
+source packet route exercises both remaining forms: `$43` repeats `$29` at
+nametable offsets 0--2 and `$83` writes `$11/$22/$33` at offsets 0, 32 and 64.
+For both routes, CIRAM and palette are zero-difference against the shared C
+trace. The reference sample stops at `InitScroll`; the native prefix continues
+through `InitBuffer` and the NMI control restore, accounting for its two
+cleared Buffer1 header bytes and bit-7 control difference without masking a
+packet result. The shared smoke separately checks linear, repeated, vertical,
+nametable-mirror, palette-mirror, scroll-reset and PPU-mirror semantics.
+
+Focused `joypad-vram-chain`, `frame-snapshot`, platform-purity and Win32
+self-tests pass on x86 and x64. The shared code links into the OpenNT DOS16
+MZ. All twelve actual matches are recorded in the inventory and ledger; no
+node is transferred.

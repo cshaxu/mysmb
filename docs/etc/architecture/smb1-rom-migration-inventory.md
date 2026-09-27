@@ -357,18 +357,18 @@ The labels and branches behind every line remain open until individually bound b
 | 2421 | `WriteNTAddr` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
 | 2427 | `InitNTLoop` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
 | 2436 | `InitATLoop` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
-| 2446 | `ReadJoypads` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readjoypads) |
-| 2454 | `ReadPortBits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readportbits) |
-| 2455 | `PortLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-portloop) |
-| 2474 | `Save8Bits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-save8bits) |
-| 2482 | `WriteBufferToScreen` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writebuffertoscreen) |
-| 2495 | `SetupWrites` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupwrites) |
-| 2501 | `GetLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getlength) |
-| 2504 | `OutputToVRAM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputtovram) |
-| 2506 | `RepeatByte` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-repeatbyte) |
-| 2523 | `UpdateScreen` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatescreen) |
-| 2527 | `InitScroll` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscroll) |
-| 2533 | `WritePPUReg1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writeppureg1) |
+| 2446 | `ReadJoypads` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2454 | `ReadPortBits` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2455 | `PortLoop` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2474 | `Save8Bits` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2482 | `WriteBufferToScreen` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2495 | `SetupWrites` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2501 | `GetLength` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2504 | `OutputToVRAM` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2506 | `RepeatByte` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2523 | `UpdateScreen` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2527 | `InitScroll` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
+| 2533 | `WritePPUReg1` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
 | 2544 | `StatusBarData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbardata) |
 | 2552 | `StatusBarOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbaroffset) |
 | 2555 | `PrintStatusBarNumbers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printstatusbarnumbers) |

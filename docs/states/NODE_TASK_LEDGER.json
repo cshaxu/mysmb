@@ -68500,9 +68500,22 @@
             "WritePPUReg1"
       ],
       "maximumComplete": 230,
-      "actualMatches": [],
+      "actualMatches": [
+        "ReadJoypads",
+        "ReadPortBits",
+        "PortLoop",
+        "Save8Bits",
+        "WriteBufferToScreen",
+        "SetupWrites",
+        "GetLength",
+        "OutputToVRAM",
+        "RepeatByte",
+        "UpdateScreen",
+        "InitScroll",
+        "WritePPUReg1"
+      ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
-      "state": "active-joypad-vram-nmi-chain"
+      "state": "closed-joypad-vram-nmi-chain"
 }
   ]
 }

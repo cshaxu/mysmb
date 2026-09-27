@@ -942,7 +942,8 @@ int main(int argument_count, char **arguments)
                 return 0;
             }
         }
-        if (t26_fixture == 51U || t26_fixture == 52U) {
+        if ((t26_fixture == 51U || t26_fixture == 52U) &&
+            index == warmup_frames) {
             mysmb_u8 mode_before;
             mysmb_u8 task_before;
 
