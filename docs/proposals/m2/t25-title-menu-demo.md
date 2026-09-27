@@ -531,3 +531,23 @@ S16 scopes only `StartWorld1`, baseline **86 / 1,992**, expected
 common `LoadAreaPointer` successor and first-frame writes on both Start forms;
 the downstream `InitScores`, `ExitMenu`, and every other retained label remain
 uncredited.
+
+## S16 closure: StartWorld1 common continuation
+
+S16 completes exactly `StartWorld1`, reaching **87 / 1,992**.  The shared C
+owner now calls the original `LoadAreaPointer` before every flag and mode write
+and no longer adds `GetAreaDataAddrs` on this path.  Both controlled Start and
+A+Start routes reach `$82e6`; ROM/x86, ROM/x64 and x86/x64 200-frame comparisons
+are zero-difference for work RAM, CIRAM, palette, OAM, audio and PPU scalars.
+Focused title smoke, bootstrap smoke and platform purity pass; shared C builds
+for DOS16, Win32 and x64.  Refreshed artifacts are `mysmb16.exe`
+`DAC41494B927D652ACB00EE7941B76FAA56097D7C305CBF1C7055100E08349D3`,
+`mysmb32.exe` `84F67B7B49935EDF9D2FB0E101729E4EA671661F3D27F12E3FD0D762B7A607D7`,
+and `mysmb64.exe` `C767F5C689D5BF3EB0A15F8512254F099909BE6314B3BC281BE017E9B7E4FEDA`.
+The remaining 13 labels transfer to S17.
+
+## S17 admission: InitScores clear loop
+
+S17 scopes only `InitScores`, baseline **87 / 1,992**, expected `InitScores`,
+maximum **88 / 1,992**.  It must separately prove the 24-byte descending score
+and coin clear; `ExitMenu` and all other retained labels remain uncredited.

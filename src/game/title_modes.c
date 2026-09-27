@@ -82,14 +82,31 @@ static mysmb_u8 mysmb_game_chk_continue(struct mysmb_game *game,
     return 1U;
 }
 
-/* ROM $82e6 StartWorld1 through its later InitScores fallthrough.  Pointer
- * loading is owned by M2 T3; this boundary deliberately has no title-input
- * decision. */
-static void mysmb_game_start_world1(struct mysmb_game *game)
+/* ROM $8307 InitScores.  The source enters it by fallthrough from
+ * StartWorld1; keep its score clear separate from the preceding mode entry. */
+static void mysmb_game_init_scores(struct mysmb_game *game)
 {
     mysmb_u8 offset;
+
+    offset = 0x17U;
+    do {
+        game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
+        offset--;
+    } while (offset != 0xffU);
+}
+
+/* ROM $82e6 StartWorld1.  Pointer loading is owned by M2 T3; this boundary
+ * deliberately has no title-input decision. */
+static void mysmb_game_start_world1(struct mysmb_game *game)
+{
     struct mysmb_area_source source;
 
+    /* The ROM calls LoadAreaPointer before every StartWorld1 mode write. */
+    if (game->area_prg != 0) {
+        source.prg = game->area_prg;
+        source.prg_size = game->area_prg_size;
+        (void)mysmb_area_load_area_pointer(game, &source);
+    }
     game->ram[MYSMB_RAM_HIDDEN_1UP]++;
     game->ram[MYSMB_RAM_OFFSCREEN_HIDDEN_1UP]++;
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
@@ -98,18 +115,7 @@ static void mysmb_game_start_world1(struct mysmb_game *game)
         game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE];
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0U;
-    /* ChkContinue falls through InitializeGame, which calls
-     * LoadAreaPointer before the first later InitializeArea frame. */
-    if (game->area_prg != 0) {
-        source.prg = game->area_prg;
-        source.prg_size = game->area_prg_size;
-        (void)mysmb_area_load_pointers(game, &source);
-    }
-    offset = 0x17U;
-    do {
-        game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
-        offset--;
-    } while (offset != 0xffU);
+    mysmb_game_init_scores(game);
 }
 
 /* ROM $8255 StartGame is the direct jump into ChkContinue. */

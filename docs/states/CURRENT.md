@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S16 Packet
+## M2 T25 S17 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S16, implementation; next source-order `StartWorld1` entry. |
-| Admission And Approval | Owner-approved source-order M2 plan; S15 completed `ChkContinue` and transferred the remaining 14 title/menu/demo labels to S16. |
-| Objective | Independently establish and credit `StartWorld1`, the common continuation after both `ChkContinue` nonzero-timer paths. |
-| Non-goals | The other 13 retained labels including `WSelectBufferTemplate`, `InitScores`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 86 / 1,992 complete; 1 scoped label; expected match StartWorld1; maximum 87 / 1,992. |
+| Identifier Mode | M2 T25 S17, implementation; next source-order `InitScores` clear loop. |
+| Admission And Approval | Owner-approved source-order M2 plan; S16 completed `StartWorld1` and transferred the remaining 13 title/menu/demo labels to S17. |
+| Objective | Independently establish and credit `InitScores`, the StartWorld1 fallthrough clear loop. |
+| Non-goals | The other 12 retained labels including `WSelectBufferTemplate`, `ExitMenu`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 87 / 1,992 complete; 1 scoped label; expected match InitScores; maximum 88 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM PC `$82e6`; controlled original-ROM Start and A+Start routes that record their common successor; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | Both `ChkContinue` nonzero-timer paths reach `StartWorld1`, which calls `LoadAreaPointer` before its flag/mode writes, with no platform-owned decision or synthetic intermediate state. |
+| Verification | Static source audit of ROM PC `$8307`; controlled original-ROM Start route recording the 24 descending clear writes; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | `InitScores` starts from X=`$17`, clears the exact score/coin range to zero while decrementing through zero, then reaches `ExitMenu` without platform-owned state. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source entry `$82e6`, common predecessor/successor, C-owner/control-flow, trace result, and all 13 retained-node dispositions. |
+| Reporting Requirements | Record source entry `$8307`, loop range/exit, C-owner/control-flow, trace result, and all 12 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `StartWorld1` is completed only when its source call/writes, successor route and replay proof agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `InitScores` is completed only when its source loop, write range, successor route and replay proof agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check both `ChkContinue` predecessors and all StartWorld1 writes; verify that platform sources neither decide the branch nor mutate its ROM-owned state. |
+| Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
 ## Recent M4 Closures
 
