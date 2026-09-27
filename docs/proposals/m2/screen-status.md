@@ -116,3 +116,21 @@ OpenNT DOS16 MZ. Refreshed artifacts: `mysmb16.exe`
 `646C4FAC9ECA0DDC4D4208177FBB025D5225FDB40787D513A5131996BDF2DAA3`,
 `mysmb32.exe` `AE2E88A5244A955250C12D62CD8D2588D3E219D08B17384C4E9A66CA208721FA`,
 and `mysmb64.exe` `C0FDADA6D1DBA84C0CAD13CBBD889B0215A7D179ABF517D5C5C6D75D51B45B9E`.
+
+## S2/P1: DisplayIntermediate castle precedence repair
+
+Original ROM lines 1565--1589 take the `AreaType == 3` branch to
+`PlayerInter` before testing `DisableIntermediate`. The shared C path had
+combined the disable flag with the NoInter condition, causing a castle route
+with that flag set to skip the lives display. `game.c` now preserves the
+source branch order. `screen_status_smoke` covers the castle/disabled branch;
+its intentionally incomplete text source proves the task remains at six
+rather than incorrectly taking NoInter task eight. No S2 label is credited by
+this narrow repair: the whole 45-label chain still requires its complete
+source and ROM-route evidence.
+
+P1 operational evidence: x64 screen-status/local-area/platform-purity CTests
+pass; x86 screen-status smoke passes; the shared source rebuilds x86/x64
+products and OpenNT DOS16 MZ. Refreshed local artifacts: `mysmb16.exe`
+`8CA1BBE6BB79A765245F03E5312CD16C8EB7C06D11586E51462B99CDF62CEFB5`,
+`mysmb32.exe` `AE2E88A5244A955250C12D62CD8D2588D3E219D08B17384C4E9A66CA208721FA`, `mysmb64.exe` `C0FDADA6D1DBA84C0CAD13CBBD889B0215A7D179ABF517D5C5C6D75D51B45B9E`.

@@ -242,14 +242,24 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
                 game->ram[MYSMB_RAM_OPER_MODE_TASK] = 2U;
         }
         else if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
-            game->ram[0x0752U] != 0U || game->ram[0x0769U] != 0U) {
+                 game->ram[0x0752U] != 0U) {
+            /* NoInter: title mode and alternate entrances skip directly to
+             * the parser task. */
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
-        else if (mysmb_area_queue_game_text(game, 1U) != 0U) {
-            mysmb_oam_draw_intermediate_player(game);
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
+        else if (game->ram[MYSMB_RAM_AREA_TYPE] == 3U ||
+                 game->ram[0x0769U] == 0U) {
+            /* ROM branches to PlayerInter before DisableIntermediate is
+             * consulted for castle areas. */
+            if (mysmb_area_queue_game_text(game, 1U) != 0U) {
+                mysmb_oam_draw_intermediate_player(game);
+                game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+                game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+                game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
+            }
+        }
+        else {
+            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
         break;
     case 7U:

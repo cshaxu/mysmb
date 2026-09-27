@@ -51,6 +51,17 @@ int main(void)
     mysmb_game_step_screen_routine(&game);
     if (game.ram[0x073cU] != 11U || game.ram[0x0773U] != 9U) return 1;
 
+    /* ROM DisplayIntermediate checks castle AreaType before it checks
+     * DisableIntermediate.  The missing text source keeps task six in place,
+     * proving it did not take NoInter's task-eight branch. */
+    game.ram[0x073cU] = 6U;
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0752U] = 0U;
+    game.ram[0x074eU] = 3U;
+    game.ram[0x0769U] = 1U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 6U) return 1;
+
     game.ram[0x073cU] = 11U;
     game.ram[0x0733U] = 1U;
     mysmb_game_step_screen_routine(&game);
