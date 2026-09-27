@@ -331,6 +331,14 @@ This is a direct data/boundary audit plus the existing 200-NMI cold-title ROM
 route. It does not credit the nodes: the non-title exits, title-score
 `UpdateNumber` collaborator, and final cross-branch matrix remain required.
 
+## S2/P11: non-title title-task exits
+
+The focused x86 and x64 screen-status smoke now enters screen tasks 12 and 13
+with a nonzero operating mode. For each, it proves the ROM
+`DrawTitleScreen`/`ClearBuffersDrawIcon` `bne IncModeTask_B` behavior:
+`OperMode_Task` advances and `ScreenRoutineTask` remains unchanged. This is
+source-control evidence only; the title route itself remains covered by P10.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -350,10 +358,10 @@ both tracks are accepted at S2 closure.
 | `OutputInter` | `game.c` task 4/task 6 common writes | Mapped; Time Up and intermediate fixtures. Pending common-path byte matrix. |
 | `GameOverInter` | `game.c` task 6, `terminal_modes.c` game-over root | Mapped; one-player plus both two-player-name zero-difference routes. Pending final text-byte matrix. |
 | `NoInter` | `game.c` task 6 direct task-8 assignment | Mapped; local-area and alternate-entry zero-difference route. Pending title-mode route. |
-| `DrawTitleScreen` | `game.c` task 12 | Mapped; 200-frame cold-title route and P10 exact byte matrix. Pending non-title exit. |
+| `DrawTitleScreen` | `game.c` task 12 | Mapped; 200-frame cold-title route, P10 exact byte matrix and P11 non-title exit. Pending final cross-branch matrix. |
 | `OutputTScr` | `game.c` title-data copy loop | Mapped; P10 CHR `$1ec0` / 314-byte task-12 audit. Pending final cross-branch matrix. |
 | `ChkHiByte` | `game.c` title-data copy bound | Mapped; P10 `$043a` untouched sentinel. Pending final cross-branch matrix. |
-| `ClearBuffersDrawIcon` | `game.c` task 13 | Mapped; P10 clear/icon audit and cold-title route. Pending mode-nonzero exit route. |
+| `ClearBuffersDrawIcon` | `game.c` task 13 | Mapped; P10 clear/icon audit, cold-title route and P11 non-title exit. Pending final cross-branch matrix. |
 | `TScrClear` | `game.c` task 13 clear loop | Mapped; P10 complete `$0300-$04ff` audit. Pending final cross-branch matrix. |
 | `IncSubtask` | `game.c` task transitions | Mapped; all screen fixtures. Pending final table-wide transition matrix. |
 | `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | Mapped; title bootstrap smoke. Pending source `UpdateNumber` collaborator audit. |

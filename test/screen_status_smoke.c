@@ -78,5 +78,17 @@ int main(void)
     game.ram[0x0733U] = 1U;
     mysmb_game_step_screen_routine(&game);
     if (game.ram[0x073cU] != 12U || game.ram[0x0773U] != 11U) return 1;
+
+    /* DrawTitleScreen and ClearBuffersDrawIcon both branch directly to
+     * IncModeTask_B outside title mode, retaining ScreenRoutineTask. */
+    game.ram[0x0770U] = 1U;
+    game.ram[0x0772U] = 1U;
+    game.ram[0x073cU] = 12U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 2U || game.ram[0x073cU] != 12U) return 1;
+    game.ram[0x0772U] = 1U;
+    game.ram[0x073cU] = 13U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x0772U] != 2U || game.ram[0x073cU] != 13U) return 1;
     return 0;
 }
