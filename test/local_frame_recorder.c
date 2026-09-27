@@ -129,6 +129,28 @@ static void mysmb_recorder_apply_t26_floatey_fixture(struct mysmb_game *game)
     game->ram[0x075aU] = 2U;
 }
 
+/* Fixed T26 Floatey leaves: timer zero clears the control without drawing;
+ * the numeric route takes ScoreUpdateData[$06] and GetAltOffset before it
+ * writes the two score sprites. */
+static void mysmb_recorder_apply_t26_floatey_leaf_fixture(
+    struct mysmb_game *game, mysmb_u8 kind)
+{
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x000fU] = 0U;
+    game->ram[0x0016U] = kind == 0U ? 9U : 0U;
+    game->ram[0x001eU] = 0U;
+    game->ram[0x071fU] = 7U;
+    game->ram[0x0110U] = kind == 0U ? 2U : 6U;
+    game->ram[0x0117U] = 0x40U;
+    game->ram[0x011eU] = kind == 0U ? 0x40U : 0x10U;
+    game->ram[0x012cU] = kind == 0U ? 0U : 0x2bU;
+    game->ram[0x06e5U] = 0x20U;
+    game->ram[0x03eeU] = 1U;
+    game->ram[0x06edU] = 0x40U;
+}
+
 /* Fixed T26 terminal precondition for PlayerEndWorld's world-eight B path. */
 static void mysmb_recorder_apply_t26_endworld_b_fixture(struct mysmb_game *game)
 {
@@ -359,6 +381,16 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 15U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-floatey-timer-zero") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 16U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-floatey-numeric-alt") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 17U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -442,6 +474,10 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_endworld_return_fixture(&game, 0U);
             else if (t26_fixture == 15U)
                 mysmb_recorder_apply_t26_endworld_return_fixture(&game, 1U);
+            else if (t26_fixture == 16U)
+                mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 0U);
+            else if (t26_fixture == 17U)
+                mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 1U);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {

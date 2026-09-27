@@ -223,3 +223,17 @@ controller latches clear; both retain `OperMode/Task = $02/$04`, World 8,
 zero timer, zero event queue, and a clear world-select flag. Along with the
 ordinary-next-world and B paths, these records cover `PlayerEndWorld`,
 `EndExitOne`, `EndChkBButton`, and `EndExitTwo` at their source call boundary.
+
+The final Floatey direct leaves have corresponding fixed records.
+`t26-floatey-timer-zero` enters `ChkNumTimer` with control `$02` and a zero
+timer; both ROM and C clear the control while retaining the remaining actor
+state. `t26-floatey-numeric-alt` enters with control `$06`, timer `$2b`, a
+living ordinary enemy, and the alternate sprite-offset selector. Both execute
+the numeric `ScoreUpdateData` path, decrement the timer to `$2a`, retain the
+same score-number control/position, and select the same actor state. The
+complete NMI subsequently rewrites the temporary two-sprite OAM area through
+external graphics work, so this record is confined to the Floatey state and
+its existing focused OAM smoke. Together with the 1-UP record, these exercise
+the two local tables, clamp, zero-timer exit, pre-decrement update, alternate
+offset, Y/carry choice, and two-sprite setup without claiming score or OAM
+collaborator completion.

@@ -231,6 +231,26 @@ static void mysmb_reference_apply_t26_floatey_fixture(lib_u8 *ram)
     ram[0x075au] = 2u;
 }
 
+/* Fixed T26 Floatey return and numeric alternate-OAM leaves. */
+static void mysmb_reference_apply_t26_floatey_leaf_fixture(
+    lib_u8 *ram, lib_u8 kind)
+{
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x000fu] = 0u;
+    ram[0x0016u] = kind == 0u ? 9u : 0u;
+    ram[0x001eu] = 0u;
+    ram[0x071fu] = 7u;
+    ram[0x0110u] = kind == 0u ? 2u : 6u;
+    ram[0x0117u] = 0x40u;
+    ram[0x011eu] = kind == 0u ? 0x40u : 0x10u;
+    ram[0x012cu] = kind == 0u ? 0u : 0x2bu;
+    ram[0x06e5u] = 0x20u;
+    ram[0x03eeu] = 1u;
+    ram[0x06edu] = 0x40u;
+}
+
 /* Fixed T26 terminal precondition for PlayerEndWorld's world-eight B path. */
 static void mysmb_reference_apply_t26_endworld_b_fixture(lib_u8 *ram)
 {
@@ -441,6 +461,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 15u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t26-floatey-timer-zero") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 16u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t26-floatey-numeric-alt") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 17u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -548,6 +578,12 @@ int main(int argument_count, char **arguments)
                         driver->machine->ram, 0u);
                 else if (t26_fixture == 15u)
                     mysmb_reference_apply_t26_endworld_return_fixture(
+                        driver->machine->ram, 1u);
+                else if (t26_fixture == 16u)
+                    mysmb_reference_apply_t26_floatey_leaf_fixture(
+                        driver->machine->ram, 0u);
+                else if (t26_fixture == 17u)
+                    mysmb_reference_apply_t26_floatey_leaf_fixture(
                         driver->machine->ram, 1u);
             }
             if (!mysmb_reference_script_buttons(script, elapsed, total_frames,
