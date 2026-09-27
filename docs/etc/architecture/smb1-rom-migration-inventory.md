@@ -257,7 +257,7 @@ The labels and branches behind every line remain open until individually bound b
 | 1512 | `SetVRAMAddr_B` | M2 T27 S1: screen initialization/palette chain; `game.c` + `area.c` | ROM-match complete | [T27 S1 closure](../../proposals/m2/screen-status.md#s1-closure-screen-initialization-and-palette-chain) |
 | 1513 | `NoAltPal` | M2 T27 S1: screen initialization/palette chain; `game.c` + `area.c` | ROM-match complete | [T27 S1 closure](../../proposals/m2/screen-status.md#s1-closure-screen-initialization-and-palette-chain) |
 | 1517 | `WriteTopStatusLine` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1524 | `WriteBottomStatusLine` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writebottomstatusline) |
+| 1524 | `WriteBottomStatusLine` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion) |
 | 1553 | `DisplayTimeUp` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1560 | `NoTimeUp` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1565 | `DisplayIntermediate` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
@@ -274,7 +274,7 @@ The labels and branches behind every line remain open until individually bound b
 | 1639 | `ClearBuffersDrawIcon` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1643 | `TScrClear` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1648 | `IncSubtask` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1653 | `WriteTopScore` | screen candidate / historical T10 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writetopscore) |
+| 1653 | `WriteTopScore` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion) |
 | 1656 | `IncModeTask_B` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1661 | `GameText` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1662 | `TopStatusBarLine` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |

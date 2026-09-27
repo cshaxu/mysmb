@@ -186,11 +186,12 @@ while preserving individual tracker and ledger disposition for every label.
 A split is allowed only for an unadmitted dependency, owner boundary, or
 different ROM route; a zero-credit S must name that exact gate.
 
-For S2, the eight retained labels remain S2 custody until an accepted receiver
-exists. `WriteBottomStatusLine` and `WriteTopScore` await their registered
-helper owners; the six Warp leaves await the source-reachable T29
-parser/GameCore route. S3 is not a generic receiver for those leaves: it
-receives only its four registered dispatch/parser integration labels.
+For S2, the six retained Warp labels remain S2 custody until an accepted
+receiver exists: `WarpZoneWelcome`, `WarpZoneNumbers`, `WriteGameText`,
+`EndGameText`, `PrintWarpZoneNumbers`, and `WarpNumLoop`. They await the
+source-reachable T29 parser/GameCore route. S3 is not a generic receiver for
+those leaves: it receives only its four registered dispatch/parser integration
+labels.
 ## S2/P5: unconditional screen-task continuations
 
 The ROM source at lines 1517--1589 has no branch on a native output-capacity
@@ -497,6 +498,35 @@ Over selections.  Every sample has zero differences in work RAM `$0300-$07ff`,
 both CIRAM pages, palette, OAM, audio state and PPU scalars.  The raw paired
 records remain ignored below `build/m2-t27-s2/p18-regression/`.
 
+## S2/P19: status caller-boundary completion
+
+Two recorder-only snapshots now enter the original `ScreenRoutines` table at
+task three and task fourteen after sixty ordinary cold-title NMIs.  The first
+executes `WriteBottomStatusLine`: it crosses the registered external
+`GetSBNybbles` boundary, appends the World/Level command, sets the resulting
+buffer offset, and takes the unconditional `IncSubtask` edge.  The second
+executes `WriteTopScore`: it enters `UpdateNumber` with the source `$fa`
+selector, then takes `IncModeTask_B`.  Each native/reference four-frame pair
+has zero differences in work RAM `$0300-$07ff`, CIRAM, palette, OAM, audio and
+PPU scalars.
+
+`WriteBottomStatusLine` and `WriteTopScore` are therefore complete as caller
+nodes: their source entry, external-call boundary, own writes and successor
+edge all have both evidence tracks.  This does not credit `GetSBNybbles`,
+`UpdateNumber`, `PrintStatusBarNumbers`, or `NoZSup`; those helper nodes retain
+their T22 S5 responsibility and require their own chain evidence.  The paired
+records remain ignored under `build/m2-t27-s2/p19-status-callers/`.
+
+The recorder sources compile on x86 and x64.  Focused screen-status,
+local-area and platform-purity CTests pass on both widths, and both Win32
+products pass `--self-test`.  The shared product relinks under OpenNT DOS16
+with the established C4761 warnings only; the three packaged artifact hashes
+remain
+`426E82B0FD0065BACD6DC54F7A0E51DCB9A3FA5C6AC2602782F83691DE850E94`,
+`B5F6F8C178BBDCBDFAA019A7DFDBD6350A843ECB737A188E26A1CD9DBBE12D7B`, and
+`2606478C41C3122B2500E6465FE570C6C6B2292608D9C65A468846217624E3EE` for
+DOS16, Win32 x86 and Win32 x64 respectively.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -508,7 +538,7 @@ both tracks are accepted at S2 closure.
 | Node | Shared-C mapping | Current evidence and remaining proof |
 | --- | --- | --- |
 | `WriteTopStatusLine` | `game.c` task 2 -> `area.c` top-text writer | Mapped; cold-title route, direct selector matrix and P16 two-player task-two ROM-data chain. Local proof complete; retained for S2 chain closure. |
-| `WriteBottomStatusLine` | `game.c` task 3 -> `area.c` bottom-status writer | Mapped; cold-title route and local-area smoke. Pending its `GetSBNybbles` collaborator's later-source evidence. |
+| `WriteBottomStatusLine` | `game.c` task 3 -> `area.c` bottom-status writer | ROM-match complete at its caller boundary: P19 task-three controlled ROM route proves its helper call, own World/Level writes and `IncSubtask`. `GetSBNybbles` remains independently incomplete under T22 S5. |
 | `DisplayTimeUp` | `game.c` task 4 | Mapped; screen-status smoke and `t27-screen-timeup` zero-difference route. Pending final chain matrix. |
 | `NoTimeUp` | `game.c` task 4 else | Mapped; screen-status smoke and `t27-screen-no-timeup` zero-difference route. Pending final chain matrix. |
 | `DisplayIntermediate` | `game.c` task 6 | Mapped; castle, ordinary and alternate-entry fixtures. Pending final branch matrix. |
@@ -522,7 +552,7 @@ both tracks are accepted at S2 closure.
 | `ClearBuffersDrawIcon` | `game.c` task 13 | Mapped; P10 clear/icon audit, cold-title route and P11 non-title exit. Pending final cross-branch matrix. |
 | `TScrClear` | `game.c` task 13 clear loop | Mapped; P10 complete `$0300-$04ff` audit. Pending final cross-branch matrix. |
 | `IncSubtask` | `game.c` task transitions | Mapped; all screen fixtures. Pending final table-wide transition matrix. |
-| `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | Mapped; title bootstrap smoke. Pending source `UpdateNumber` collaborator audit. |
+| `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | ROM-match complete at its caller boundary: P19 task-fourteen route proves `$fa` helper entry and `IncModeTask_B`. `UpdateNumber` remains independently incomplete under T22 S5. |
 | `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes plus P11 non-title task-12/task-13 exits. Pending final cross-branch disposition only. |
 | `GameText` | bound local PRG data in `area.c` | Mapped; P14 derives every source text byte/terminator at run time. Pending final chain matrix. |
 | `TopStatusBarLine` | selector zero in `area.c` | Mapped; cold-title, two-player Luigi and P14 full-byte matrix. Pending final chain matrix. |

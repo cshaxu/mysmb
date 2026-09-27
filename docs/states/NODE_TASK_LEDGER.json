@@ -66437,6 +66437,7 @@
       "maximumComplete": 163,
       "actualMatches": [
         "WriteTopStatusLine",
+        "WriteBottomStatusLine",
         "DisplayTimeUp",
         "NoTimeUp",
         "DisplayIntermediate",
@@ -66450,6 +66451,7 @@
         "ClearBuffersDrawIcon",
         "TScrClear",
         "IncSubtask",
+        "WriteTopScore",
         "IncModeTask_B",
         "GameText",
         "TopStatusBarLine",

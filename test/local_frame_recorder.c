@@ -284,6 +284,18 @@ static void mysmb_recorder_apply_t27_screen_fixture(struct mysmb_game *game,
     game->ram[0x0769U] = 0U;
     game->ram[0x077aU] = 0U;
     game->ram[0x0753U] = 0U;
+    if (kind == 14U) {
+        game->ram[0x073cU] = 3U;
+        game->ram[0x0770U] = 1U;
+        game->ram[0x0772U] = 1U;
+        return;
+    }
+    if (kind == 15U) {
+        game->ram[0x073cU] = 14U;
+        game->ram[0x0770U] = 0U;
+        game->ram[0x0772U] = 1U;
+        return;
+    }
     game->ram[0x073cU] = kind == 0U || kind == 3U ||
         kind == 8U || kind == 9U ? 4U :
         (kind == 5U || kind == 6U ? 5U :
@@ -569,6 +581,16 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 32U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-bottom-status") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 33U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-title-score") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 34U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -658,7 +680,7 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 1U);
             else if (t26_fixture == 18U)
                 mysmb_recorder_apply_t26_victory_outer_player_fixture(&game);
-            else if (t26_fixture >= 19U && t26_fixture <= 32U)
+            else if (t26_fixture >= 19U && t26_fixture <= 34U)
                 mysmb_recorder_apply_t27_screen_fixture(&game,
                     (mysmb_u8)(t26_fixture - 19U));
         }

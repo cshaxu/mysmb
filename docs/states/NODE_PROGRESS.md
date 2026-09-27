@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 155 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal. |
+| ROM-match complete | 157 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,729 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,727 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **155 / 1,992 (7.78%)**. Initial deep verification covered
+Verified conformance is **157 / 1,992 (7.88%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
 owner maps contribute 90 additional mapped-but-unverified names (62 T14/T15, 27 T22, one current bullet-bill actor) omitted by the old
 77-node accounting. With three additional confirmed missing scheduler/activation entries, the
-explicitly dispositioned cohort is 170, of which 153 remain incomplete. These sets are disjoint in the current ledger.
+explicitly dispositioned cohort is 170, of which 151 remain incomplete. These sets are disjoint in the current ledger.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -162,9 +162,10 @@ The following 32 T26 labels have source branch and operational evidence in the
 | 1358 | `FloateyPart` |
 | 1363 | `SetupNumSpr` |
 
-The following 35 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition).
+The following 37 T27 S2 labels have the recorded source/data and controlled-route evidence in [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) and [T27 S2 P19](../../proposals/m2/screen-status.md#s2p19-status-caller-boundary-completion).
 
 | 1517 | `WriteTopStatusLine` |
+| 1524 | `WriteBottomStatusLine` |
 | 1553 | `DisplayTimeUp` |
 | 1560 | `NoTimeUp` |
 | 1565 | `DisplayIntermediate` |
@@ -178,6 +179,7 @@ The following 35 T27 S2 labels have the recorded source/data and controlled-rout
 | 1639 | `ClearBuffersDrawIcon` |
 | 1643 | `TScrClear` |
 | 1648 | `IncSubtask` |
+| 1653 | `WriteTopScore` |
 | 1656 | `IncModeTask_B` |
 | 1661 | `GameText` |
 | 1662 | `TopStatusBarLine` |
