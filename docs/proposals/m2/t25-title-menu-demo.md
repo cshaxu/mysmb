@@ -404,3 +404,52 @@ and `mysmb64.exe` `68EC5D94C471BE199102A3E133A2C8D320D13866A876030D07D02E2BC467A
 `ResetTitle` alone completes.  The other 21 labels require their own exact
 branch packets and transfer before S8 closure.  S8 therefore closes at
 **79 / 1,992**.
+
+## S9 admission: StartGame direct jump
+
+S9 receives the 21 uncompleted labels from S8 and scopes only `StartGame`.
+The incoming baseline is **79 / 1,992**; its expected set is `StartGame`, so
+the maximum is **80 / 1,992**.  ROM `$8255` is a one-instruction `JMP
+ChkContinue`; it has no writes of its own.  The static listing is therefore
+the direct PC proof.  The controlled Start route must additionally show the
+successor `$8258/$825a`; the ROM coverage recorder intentionally does not
+record unconditional-JMP instruction PCs, so that omission is not evidence
+that the jump was skipped.
+
+The native title owner must select the same two comparisons, then immediately
+enter the shared start-continuation routine without platform intervention or a
+synthetic intermediate game transition.  A 200-frame original-ROM/native
+replay, x86/x64 equality, focused title smoke, DOS16 build, and platform-purity
+check are required.  `ChkContinue` and every other received label remain
+uncredited in S9 regardless of the shared successor route.
+
+## S9 closure: StartGame direct jump
+
+S9 completes exactly `StartGame`, reaching **80 / 1,992**.  The original
+listing at `$8255` is exactly `JMP ChkContinue`; controlled Start input reaches
+that PC once and its `$8258/$825a` successor fourteen times in the 200-frame
+reference capture.  The shared C comparison accepts only Start and A+Start,
+then immediately calls the shared start-continuation routine.  There is no
+platform-owned branch or state mutation in that route.
+
+Both native recorders have zero differing frames against the ROM for CPU work
+RAM `$0300-$07ff`, both CIRAM pages, palette, visible OAM, audio and PPU
+scalars for all 200 samples; the x86 and x64 records are also identical.
+`mysmb.title-demo-smoke`, `mysmb.local-title-bootstrap-smoke`, and
+`mysmb.platform-purity` pass.  The DOS16 MZ links with the established C4761
+and OLDNAMES warnings.  Product artifacts are `mysmb16.exe`
+`97B68F6134905356CCCA9EDBDABAD441FF5CF3B772A19BA38E8FAD5C21FC5970`,
+`mysmb32.exe` `3487A89FD2EAE0A1F33CF5D4A0798D685680408EB77314835D29C8352D97A3A4`,
+and `mysmb64.exe` `9F06DDBD251358E928646239D3DE85962E91879F0E12481B4376482F95DDFB95`.
+
+The 20 other received labels transfer to S10; their status is unchanged.
+
+## S10 admission: ChkSelect branch entry
+
+S10 receives the 20 uncompleted labels and scopes only `ChkSelect`, the next
+source-order executable branch entry after `StartGame`.  Its incoming baseline
+is **80 / 1,992**; expected set `ChkSelect`; maximum **81 / 1,992**.
+The packet will separately exercise the non-Start, non-A+Start route through
+`$8258`, then establish each successor before any later branch label is
+credited.  `WSelectBufferTemplate` remains retained as data without an
+inferred completion claim.

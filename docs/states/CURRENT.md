@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S8 Packet
+## M2 T25 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S8, implementation; next source-order ResetTitle branch. |
-| Admission And Approval | Owner-approved source-order M2 plan; S7 closed its four-node idle prefix and transferred the remaining title/menu/demo labels to S8. |
-| Objective | Independently establish and credit `ResetTitle`, the next label after the completed `RunDemo` handoff. |
-| Non-goals | The other 21 retained labels, new gameplay approximation, platform gameplay logic, or credit without both a source-PC branch and operational replay. |
-| Reference Baseline | 78 / 1,992 complete; 1 scoped label; expected match ResetTitle; maximum 79 / 1,992. |
+| Identifier Mode | M2 T25 S10, implementation; next source-order `ChkSelect` branch entry. |
+| Admission And Approval | Owner-approved source-order M2 plan; S9 completed `StartGame` and transferred the remaining 20 title/menu/demo labels to S10. |
+| Objective | Independently establish and credit `ChkSelect`, the non-Start branch entry after the completed direct Start jump. |
+| Non-goals | The other 19 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 80 / 1,992 complete; 1 scoped label; expected match ChkSelect; maximum 81 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original-ROM PC coverage for the `GameEngineSubroutine == 6` tail, source write-order audit, focused reset regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | ROM PC $82c9 executes after $82c0 when the game-core return state equals six; it clears mode/task/sprite-zero and increments DisableScreenFlag. |
+| Verification | Static source audit of ROM PC $8258, controlled original-ROM no-button/non-Start route with recorded successors, focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | The non-Start and non-A+Start comparison enters `$8258`, retains `Y = 0`, and selects its ROM successor without a platform-owned decision or synthetic intermediate state. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record the source PC, four RAM writes, C-owner/control-flow and all 21 retained-node dispositions. |
+| Reporting Requirements | Record the source entry PC, branch comparison/successor, C-owner/control-flow, trace result, and all 19 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | ResetTitle is completed only when its branch and route proofs agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `ChkSelect` is completed only when its source branch, successor route and replay proof agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check every ResetTitle caller in title_modes.c and frame_root.c for the same shared routine and verify no platform source mutates its four RAM destinations. |
+| Similar-Issue Sweep | Check all non-Start title-menu comparisons and every shared title-menu caller; verify that platform sources neither decide the branch nor mutate its ROM-owned state. |
 
 ## Recent M4 Closures
 
