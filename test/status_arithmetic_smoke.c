@@ -86,9 +86,20 @@ static int mysmb_status_test_top_score(void)
 
     for (index = 0U; index < 6U; ++index)
         game.ram[0x07ddU + index] = 0U;
+    game.ram[0x07e3U] = 1U;
+    game.ram[0x07e4U] = 2U;
+    game.ram[0x07e5U] = 5U;
     mysmb_status_update_top_score(&game);
     if (game.ram[0x07d7U] != 1U || game.ram[0x07d8U] != 2U ||
-        game.ram[0x07d9U] != 4U) return 22;
+        game.ram[0x07d9U] != 5U) return 22;
+
+    for (index = 0U; index < 6U; ++index) {
+        game.ram[0x07ddU + index] = 0U;
+        game.ram[0x07e3U + index] = 0U;
+    }
+    mysmb_status_update_top_score(&game);
+    if (game.ram[0x07d7U] != 1U || game.ram[0x07d8U] != 2U ||
+        game.ram[0x07d9U] != 5U) return 23;
     return 0;
 }
 

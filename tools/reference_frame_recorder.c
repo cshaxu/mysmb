@@ -521,6 +521,26 @@ static void mysmb_reference_apply_t28_status_timer_fixture(lib_u8 *ram)
     ram[0x07fau] = 2u;
 }
 
+static void mysmb_reference_apply_t28_status_timer_borrow_fixture(lib_u8 *ram)
+{
+    mysmb_reference_apply_t28_status_timer_fixture(ram);
+    ram[0x07fau] = 0u;
+}
+
+static void mysmb_reference_apply_t28_top_score_fixture(lib_u8 *ram,
+                                                         lib_u8 copy)
+{
+    ram[0x07d7u] = 1u;
+    ram[0x07d8u] = 2u;
+    ram[0x07d9u] = copy != 0u ? 3u : 4u;
+    ram[0x07ddu] = 1u;
+    ram[0x07deu] = 2u;
+    ram[0x07dfu] = copy != 0u ? 4u : 3u;
+    ram[0x07e3u] = 1u;
+    ram[0x07e4u] = 2u;
+    ram[0x07e5u] = 2u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -831,6 +851,21 @@ int main(int argument_count, char **arguments)
             t26_fixture = 53u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-status-timer-borrow") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 54u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-top-score-copy") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 55u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-top-score-retain") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 56u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -1015,6 +1050,15 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 53u)
                     mysmb_reference_apply_t28_status_timer_fixture(
                         driver->machine->ram);
+                else if (t26_fixture == 54u)
+                    mysmb_reference_apply_t28_status_timer_borrow_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture == 55u)
+                    mysmb_reference_apply_t28_top_score_fixture(
+                        driver->machine->ram, 1u);
+                else if (t26_fixture == 56u)
+                    mysmb_reference_apply_t28_top_score_fixture(
+                        driver->machine->ram, 0u);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

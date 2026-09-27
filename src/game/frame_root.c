@@ -156,7 +156,7 @@ void mysmb_frame_root_read_joypads(struct mysmb_game *game,
         mysmb_frame_root_read_port_bits(buttons2),
         MYSMB_ROOT_SAVED_JOYPAD2, MYSMB_ROOT_JOYPAD_MASK2);
 }
-/* ROM $8a4f-$8a6c UpdateTopScore / TopScoreCheck. */
+/* ROM $8f97-$8fbb UpdateTopScore / TopScoreCheck. */
 void mysmb_frame_root_update_top_score(struct mysmb_game *game)
 {
     mysmb_status_update_top_score(game);

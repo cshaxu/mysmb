@@ -362,3 +362,32 @@ match the timer digits, modifier clear range and `$207a` status command over
 two frames. The recorder rejects only its direct one-frame fixtures (35--52),
 allowing the new multi-frame natural route. Broader background/object residuals
 remain outside this chain and are not masked or credited here.
+
+## S7 P7 natural borrow and top-score branch evidence
+
+Two further controlled fixtures write only source RAM at an NMI-return boundary
+and then allow the ordinary NMI/GameEngine route to continue. The timer fixture
+initializes `100`, so `RunGameTimer` reaches `DigitsMathRoutine` and the
+original `BorrowOne` branch; the ROM and shared C both produce `099`, clear
+exactly `$0133-$0139`, preserve `$013a`, and enqueue the same `$207a` status
+packet. ROM PC coverage reaches `PrintStatusBarNumbers`, `OutputNumbers`,
+`SetupNums`, `DigitPLoop`, `DigitsMathRoutine`, `AddModLoop`, `EraseDMods`,
+`EraseMLoop`, and `BorrowOne`.
+
+The two top-score fixtures enter the normal NMI `UpdateTopScore` call without
+a synthetic leaf stack. One establishes Mario `124000` over top score
+`123000`, then exercises Luigi's no-copy comparison; the other makes both
+players lower than top `124000`. In both ROM/native captures the six top-score
+digits and both player score fields agree for two NMI returns. ROM coverage
+reaches `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, and
+`NoTopSc`. The focused status arithmetic smoke now checks Mario copy, Luigi
+copy, and the final no-copy outcome. Aggregate frame residuals remain outside
+the scoped digit/status fields and are retained as such; this P grants no node
+credit until the remaining carry/output paths and the complete S7 matrix are
+present.
+
+The focused status arithmetic, top-score-root, and platform-purity tests pass
+on Win32 x86 and x64. The shared source also links as the OpenNT DOS16 MZ.
+This P refreshes `mysmb16.exe` `574DD8232D3534180229504BF1686E997178DD65F9CED992AACAD81210528223`,
+`mysmb32.exe` `A16A647B03F2AD9BCF271556032675359DCF5BD403425C8ACC1C9DC67362E7DC`,
+and `mysmb64.exe` `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F9`.
