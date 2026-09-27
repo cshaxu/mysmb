@@ -736,3 +736,17 @@ maximum **100 / 1,992**. The chain starts with the two source tables and enters
 return consumed by `GameMenuRoutine`. One idle-to-demo ROM route must cover the
 timer-nonzero `DoAction` path, timer expiry/load path and terminal zero
 `DemoOver` return.
+
+
+## S25 closure: title-idle demo data and engine chain
+
+S25 completes exactly `DemoActionData`, `DemoTimingData`, `DemoEngine`,
+`DoAction` and `DemoOver`, reaching **100 / 1,992**. The project-owned static
+test reads both ROM tables and verifies each C byte. The focused title smoke
+covers timer-expiry table load, timer-nonzero `DoAction`, a middle action, and
+the final zero-timing `DemoOver` return. Reproducible no-input ROM routes use
+a 1,200-frame warmup plus 600 recorded frames for normal action/timer flow and
+a 3,600-frame warmup plus 600 recorded frames for the terminal-zero flow. In
+both windows original ROM, x86 and x64 agree in work RAM `$0300-$07ff`, CIRAM,
+palette, OAM, audio and PPU scalars. DOS16 links the same shared owner. All 26
+T25 labels are now ROM-match complete.

@@ -65853,9 +65853,15 @@
         "DemoOver"
       ],
       "maximumComplete": 100,
-      "actualMatches": [],
+      "actualMatches": [
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-title-idle-demo-chain-equivalence"
+      "state": "closed-complete-title-idle-demo-chain"
     }
   ]
 }

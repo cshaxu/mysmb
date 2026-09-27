@@ -2396,4 +2396,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T25 S22 | 1 | 92 | `DrawMushroomIcon` / 1 | `DrawMushroomIcon` / 1 | closed-complete-draw-mushroom-icon-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S23 | 1 | 93 | `IconDataRead` / 1 | `IconDataRead` / 1 | closed-complete-icon-data-read-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S24 | 1 | 94 | `ExitIcon` / 1 | `ExitIcon` / 1 | closed-complete-exit-icon-return-chain; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S25 | 5 | 95 | `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` / 5 | none / 0 | active-title-idle-demo-chain-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S25 | 5 | 95 | `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` / 5 | `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` / 5 | closed-complete-title-idle-demo-chain; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |

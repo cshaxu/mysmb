@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 95 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon. |
-| Mapped / audited, not complete | 109 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,788 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| ROM-match complete | 100 | PlayerOffscreenChk, PROfsLoop, NPROffscr, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver. |
+| Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
+| Open / unmatched | 1,784 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **95 / 1,992 (4.77%)**. Initial deep verification covered
+Verified conformance is **100 / 1,992 (5.02%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -82,6 +82,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 1093 | `DrawMushroomIcon` |
 | 1095 | `IconDataRead` |
 | 1105 | `ExitIcon` |
+| 1109 | `DemoActionData` |
+| 1114 | `DemoTimingData` |
+| 1119 | `DemoEngine` |
+| 1129 | `DoAction` |
+| 1133 | `DemoOver` |
 | 996 | `GameMenuRoutine` |
 | 1047 | `NullJoypad` |
 | 1049 | `RunDemo` |
@@ -154,7 +159,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (109)
+## Mapped but not yet matched (108)
 
 These rows have mapping, missing-implementation or deep-audit evidence but are not complete. Their
 canonical inventory links identify individual gaps and responsible owners.
@@ -162,7 +167,6 @@ canonical inventory links identify individual gaps and responsible owners.
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 1119 | `DemoEngine` |
 | 2674 | `InitializeGame` |
 | 2971 | `GameOverMode` |
 | 3737 | `CastleObject` |
