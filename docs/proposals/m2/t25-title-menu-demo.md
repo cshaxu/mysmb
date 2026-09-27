@@ -263,3 +263,15 @@ in the `PlayerGfxHandler` route, received by M2 T16 S4. T25 neither modifies
 that owner nor treats the later divergent demo timer/action values as T25
 evidence. The recorders reject malformed or duplicate controlled-write
 arguments; their direct C11/C90 builds pass. No node count changes in this P.
+
+## S5 closure and S6 retained integration receipt
+
+S5 closes at **42 / 1,992** with zero new matches. Its admission forecast was
+explicitly empty, so the route evidence above cannot be retroactively counted
+as a node-completion claim. All 26 title labels transfer unchanged to accepted
+T25 S6. S6 is a bounded post-dependency integration receipt, not a duplicate
+implementation pass: it may establish node credit only after T16 has resolved
+the player/OAM route needed for the terminal demo continuation and T26 has
+established the natural `EndChkBButton` producer route. Its later admission
+must declare a fresh exact expected-match subset and independently rerun both
+logic and operational evidence.

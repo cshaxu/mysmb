@@ -9,6 +9,7 @@
 enum {
     MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,
     MYSMB_RAM_SAVED_JOYPAD1 = 0x06fcU,
+    MYSMB_RAM_SAVED_JOYPAD2 = 0x06fdU,
     MYSMB_RAM_SCREEN_ROUTINE_TASK = 0x073cU,
     MYSMB_RAM_SPRITE0_HIT = 0x0722U,
     MYSMB_RAM_TIMER_CONTROL = 0x0747U,
@@ -218,10 +219,9 @@ void mysmb_game_step_victory(struct mysmb_game *game)
         mysmb_game_print_victory_messages(game);
         return;
     }
-    if (game->ram[MYSMB_RAM_WORLD_END_TIMER] != 0U) {
-        game->ram[MYSMB_RAM_WORLD_END_TIMER]--;
-        return;
-    }
+    /* ROM PlayerEndWorld only observes WorldEndTimer.  DecTimers has already
+     * run in the NMI root before VictoryModeSubroutines reaches this leaf. */
+    if (game->ram[MYSMB_RAM_WORLD_END_TIMER] != 0U) return;
     if (game->ram[MYSMB_RAM_WORLD] < 7U) {
         game->ram[MYSMB_RAM_AREA] = 0U;
         game->ram[MYSMB_RAM_LEVEL] = 0U;
@@ -231,12 +231,18 @@ void mysmb_game_step_victory(struct mysmb_game *game)
         game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
         game->ram[MYSMB_RAM_OPER_MODE] = 1U;
     }
-    else if ((game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_B) != 0U) {
+    else if (((game->ram[MYSMB_RAM_SAVED_JOYPAD1] |
+               game->ram[MYSMB_RAM_SAVED_JOYPAD2]) & MYSMB_BUTTON_B) != 0U) {
         game->ram[MYSMB_RAM_WORLD_SELECT_ENABLE] = 1U;
         game->ram[MYSMB_RAM_NUMBER_OF_LIVES] = 0xffU;
+        /* EndChkBButton enters ROM TerminateGame, including its silence and
+         * title-return writes when no other player's record can be resumed. */
+        game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x80U;
         if (mysmb_game_transpose_players(game) != 0U) mysmb_game_continue_game(game);
         else {
+            game->ram[MYSMB_RAM_CONTINUE_WORLD] = game->ram[MYSMB_RAM_WORLD];
             game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+            game->ram[MYSMB_RAM_SCREEN_TIMER] = 0U;
             game->ram[MYSMB_RAM_OPER_MODE] = 0U;
         }
     }

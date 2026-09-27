@@ -1,0 +1,106 @@
+# M2 T26: Victory, terminal modes and floating scores
+
+## Exact node contract
+
+T26 is the source-order successor to T25. It owns the 32 inventory labels
+from ROM lines 1137--1363; `ScreenRoutines` at line 1386 belongs to T27. All
+32 labels are presently received by historical `M2 T15 S4`. T26 S1 audits
+them without changing that receipt; only T26 S2 may accept the exact transfer.
+
+| Source group | Exact labels |
+| --- | --- |
+| Victory dispatch and walking | `VictoryMode`, `AutoPlayer`, `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk` |
+| Victory messages | `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs` |
+| End-world transition | `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo` |
+| Floating-score data and actor | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
+
+`VictoryMode` calls `VictoryModeSubroutines`, conditionally enters the shared
+enemy loop, then calls the later player/OAM chain. T26 owns only its terminal
+branches and outputs. `PlayerGfxHandler`, player movement, scrolling, area
+pointers, enemy loop, score arithmetic, OAM primitives, audio handlers and
+termination are named collaborators owned by their received source slices.
+No platform adapter may read or write terminal game state.
+
+## S plan
+
+| S | Role | ROM-logic evidence | Operational evidence | Forecast |
+| --- | --- | --- | --- | --- |
+| S1 | Audit all 32 labels, source calls, RAM/table reads/writes, native boundary and dependency owners. | Listing graph and per-label write map. | Ledger admission and documentation gate. | 0 |
+| S2 | Accept the 32 labels and migrate only terminal dispatch/message/end-world ownership. | Source-order branch/table review. | Focused tests, x86/x64, DOS16, purity, three artifacts. | 0 |
+| S3 | Complete floating-score table/actor route within its received terminal collaboration boundary. | Table and OAM/write-order review. | Focused actor tests and controlled frame route. | 0 |
+| S4 | Establish ROM logic equivalence through source-reachable victory, end-world and B-enable routes. | Branches, writes, callees and controlled/reachable ROM routes. | Cross-width traces and required builds. | Up to 32 |
+| S5 | Close only labels proven by both tracks; transfer every unresolved label to an accepted successor. | Per-label source disposition. | Final gates and three artifacts. | Up to 32 |
+
+## S1 source-contract obligations
+
+The audit begins from `VictoryMode` at line 1137 and must distinguish direct
+terminal behavior from collaborators. It records the five task vectors, the
+`PlayerVictoryWalk` scroll call chain, every message-table selector and
+counter increment, the `PlayerEndWorld` world transition, and the `$07fc`
+write in `EndChkBButton`. The floating-score subtree must retain its source
+`ObjectOffset` and OAM-offset call contracts rather than duplicate score or
+sprite logic in terminal code. S1 produces no node credit and no product
+change.
+
+## S1 source-contract audit result
+
+The 32 labels resolve to two shared-C boundaries. `terminal_modes.c`
+`mysmb_game_step_victory` carries the five-vector terminal tree: task zero
+delegates `BridgeCollapse`; tasks one through four carry `SetupVictoryMode`,
+the `PlayerVictoryWalk` leaves, `PrintVictoryMessages` and `PlayerEndWorld`.
+`objects.c` `mysmb_objects_step_floatey_number` carries the two local tables
+and `FloateyNumbersRoutine` through `SetupNumSpr`. `frame_root.c` is only the
+source `VictoryMode` outer-call owner: it invokes the terminal vector, then
+the separately received enemy/relative/player-OAM collaborators.
+
+The direct external dependencies are recorded rather than absorbed: bridge
+collapse and retainer actor work; `EnemiesAndLoopsCore`; relative/player OAM;
+`AutoControlPlayer` and scrolling; `UpdScrollVar`; `LoadAreaPointer`;
+`TerminateGame`/player transpose; score arithmetic and status queuing; and
+the two-sprite OAM primitive. Their respective source slices retain their
+receipts. T26 may call their existing shared interfaces but must not duplicate
+their rules.
+
+Two source-order discrepancies are confirmed for a later T26 implementation
+receipt. First, ROM `PlayerEndWorld` only tests `WorldEndTimer`; NMI
+`DecTimers` decrements it before the mode tree. The current terminal owner
+decrements `$07a1` itself, which is not a source write. Second, ROM
+`EndChkBButton` ORs `SavedJoypad1Bits` and `SavedJoypad2Bits` before masking
+B, while the current terminal branch consults only `$06fc`. These are T26
+owned findings, but S1 intentionally makes no production repair and grants no
+node credit. The next S2 receipt will accept all 32 labels and address only
+the confirmed terminal-owned behavior.
+
+## S2 implementation result
+
+S2 restored the audited `PlayerEndWorld` and `EndChkBButton` branches in the
+shared `terminal_modes.c` owner. `PlayerEndWorld` now observes
+`WorldEndTimer` and returns when it is nonzero; it no longer decrements that
+timer. `frame_root.c` retains the preceding NMI `DecTimers` ownership. A
+focused route starts with `WorldEndTimer = 1` and an interval-timer rollover:
+the NMI decrements it to zero, then the same frame enters the next-world
+transition. This establishes the ROM's timer write/order without a platform
+special case.
+
+`EndChkBButton` now ORs saved joypad latches `$06fc` and `$06fd` before the B
+mask. Its taken branch follows `TerminateGame`: it writes Silence to the
+event-music queue, sets the world-select flag and current-player lives, then
+either resumes the transposed player through the existing shared collaborator
+or writes `ContinueWorld`, `OperMode_Task`, `ScreenTimer`, and `OperMode` for
+the title return. A focused regression drives B only through `$06fd` and
+checks every title-return write.
+
+The code change is restricted to shared game logic and `test/mode_smoke.c`.
+The similar-issue sweep covered every terminal `WorldEndTimer` decrement and
+every terminal saved-joypad consumer; no other production hit requires a
+change. `TerminalModes` remains independent of Win32 and DOS adapters.
+
+Operational evidence for P1: strict C90 x64 and x86 core builds passed the
+mode, floatey-OAM and local-area focused harnesses; both native Windows
+artifacts passed `--self-test`; the OpenNT large-model DOS build linked; and
+the platform-purity gate passed. The refreshed artifact hashes are
+`mysmb16.exe` `9C33EBC49CEDAA75CCEFE9477D98320D602DDBCF0D89EDE24DB8811C60473FAC`,
+`mysmb32.exe` `00B5E222ACD2DEC9A012DAA22B2EB2F98B036FB0A5594E99BDD224C6E67D3E86`,
+and `mysmb64.exe` `007FD8366AF77D0F10C1796A71698EC7AB28D6560116DC3DC02ADFA69AA862AB`.
+The expected and actual ROM-match sets remain empty in S2: source repair and
+operational proof do not claim the later S4 route-equivalence credit.

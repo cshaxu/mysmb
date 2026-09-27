@@ -1456,6 +1456,86 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Pre-accepted successor after T25 S4."
+        },
+        {
+          "id": "M2 T25 S6",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "post-dependency-integration-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted retained receiver after M2 T25 S5 closure; fresh admission follows T16 player/OAM and T26 EndChkB evidence."
+        }
+      ]
+    },
+    {
+      "id": "M2 T26",
+      "evidence": [
+        "docs/proposals/m2/t26-victory-terminal.md",
+        "docs/proposals/m2/t21-t49-source-order-recovery.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M2 T26 S1",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "source-order-node-contract"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit"
+        },
+        {
+          "id": "M2 T26 S2",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-shared-c-migration"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S1; exact transfer from historical M2 T15 S4 is required before implementation admission."
+        },
+        {
+          "id": "M2 T26 S3",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-floatey-actor-route"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S2."
+        },
+        {
+          "id": "M2 T26 S4",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-rom-equivalence"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S3."
+        },
+        {
+          "id": "M2 T26 S5",
+          "evidence": [
+            "docs/proposals/m2/t26-victory-terminal.md"
+          ],
+          "recordKinds": [
+            "planned-closure"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Pre-accepted successor after M2 T26 S4."
         }
       ]
     }
@@ -5792,8 +5872,8 @@
     {
       "label": "TitleScreenMode",
       "line": 982,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -5861,8 +5941,8 @@
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -5906,8 +5986,8 @@
     {
       "label": "GameMenuRoutine",
       "line": 996,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -5983,8 +6063,8 @@
     {
       "label": "StartGame",
       "line": 1004,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6052,8 +6132,8 @@
     {
       "label": "ChkSelect",
       "line": 1005,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6137,8 +6217,8 @@
     {
       "label": "ChkWorldSel",
       "line": 1013,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6190,8 +6270,8 @@
     {
       "label": "SelectBLogic",
       "line": 1018,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6259,8 +6339,8 @@
     {
       "label": "IncWorldSel",
       "line": 1033,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6328,8 +6408,8 @@
     {
       "label": "UpdateShroom",
       "line": 1039,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6397,8 +6477,8 @@
     {
       "label": "NullJoypad",
       "line": 1047,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6466,8 +6546,8 @@
     {
       "label": "RunDemo",
       "line": 1049,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6519,8 +6599,8 @@
     {
       "label": "ResetTitle",
       "line": 1053,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6596,8 +6676,8 @@
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6657,8 +6737,8 @@
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6718,8 +6798,8 @@
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6763,8 +6843,8 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6808,8 +6888,8 @@
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6877,8 +6957,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6922,8 +7002,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -6983,8 +7063,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7028,8 +7108,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7073,8 +7153,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7118,8 +7198,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7163,8 +7243,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7240,8 +7320,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7285,8 +7365,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S5",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T25 S6",
+      "receivingBasis": "T25 S5 closure retained title integration pending T16 player/OAM and T26 EndChkB natural-route evidence",
       "futurePackage": null,
       "history": [
         {
@@ -7330,8 +7410,8 @@
     {
       "label": "VictoryMode",
       "line": 1137,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7391,8 +7471,8 @@
     {
       "label": "AutoPlayer",
       "line": 1144,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7412,8 +7492,8 @@
     {
       "label": "VictoryModeSubroutines",
       "line": 1147,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7465,8 +7545,8 @@
     {
       "label": "SetupVictoryMode",
       "line": 1159,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7502,8 +7582,8 @@
     {
       "label": "PlayerVictoryWalk",
       "line": 1169,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7563,8 +7643,8 @@
     {
       "label": "PerformWalk",
       "line": 1178,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7584,8 +7664,8 @@
     {
       "label": "DontWalk",
       "line": 1180,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7605,8 +7685,8 @@
     {
       "label": "ExitVWalk",
       "line": 1195,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7626,8 +7706,8 @@
     {
       "label": "PrintVictoryMessages",
       "line": 1201,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7679,8 +7759,8 @@
     {
       "label": "MRetainerMsg",
       "line": 1215,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7700,8 +7780,8 @@
     {
       "label": "ThankPlayer",
       "line": 1217,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7721,8 +7801,8 @@
     {
       "label": "SecondPartMsg",
       "line": 1223,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7742,8 +7822,8 @@
     {
       "label": "EvalForMusic",
       "line": 1232,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7763,8 +7843,8 @@
     {
       "label": "PrintMsg",
       "line": 1236,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7784,8 +7864,8 @@
     {
       "label": "IncMsgCounter",
       "line": 1240,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7805,8 +7885,8 @@
     {
       "label": "SetEndTimer",
       "line": 1248,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7826,8 +7906,8 @@
     {
       "label": "IncModeTask_A",
       "line": 1251,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7847,8 +7927,8 @@
     {
       "label": "ExitMsgs",
       "line": 1252,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7868,8 +7948,8 @@
     {
       "label": "PlayerEndWorld",
       "line": 1256,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7913,8 +7993,8 @@
     {
       "label": "EndExitOne",
       "line": 1271,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7934,8 +8014,8 @@
     {
       "label": "EndChkBButton",
       "line": 1272,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7955,8 +8035,8 @@
     {
       "label": "EndExitTwo",
       "line": 1281,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7976,8 +8056,8 @@
     {
       "label": "FloateyNumTileData",
       "line": 1287,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -7997,8 +8077,8 @@
     {
       "label": "ScoreUpdateData",
       "line": 1303,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8018,8 +8098,8 @@
     {
       "label": "FloateyNumbersRoutine",
       "line": 1308,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8071,8 +8151,8 @@
     {
       "label": "ChkNumTimer",
       "line": 1315,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8092,8 +8172,8 @@
     {
       "label": "DecNumTimer",
       "line": 1320,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8113,8 +8193,8 @@
     {
       "label": "LoadNumTiles",
       "line": 1328,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8134,8 +8214,8 @@
     {
       "label": "ChkTallEnemy",
       "line": 1338,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8155,8 +8235,8 @@
     {
       "label": "GetAltOffset",
       "line": 1355,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8176,8 +8256,8 @@
     {
       "label": "FloateyPart",
       "line": 1358,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -8197,8 +8277,8 @@
     {
       "label": "SetupNumSpr",
       "line": 1363,
-      "receiver": "M2 T15 S4",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T26 S2",
+      "receivingBasis": "T26 S1 completed source-contract audit; T26 S2 accepted terminal-tree implementation receipt",
       "futurePackage": null,
       "history": [
         {
@@ -56137,6 +56217,84 @@
       ],
       "acceptedBy": "M2 T25 S5 is the owner-approved closure successor; S4 recorded the T18 InitializeGame route prerequisite without creating duplicate title ownership.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-046-t25-s5-to-s6-retained-integration",
+      "type": "transfer",
+      "from": "M2 T25 S5",
+      "to": "M2 T25 S6",
+      "nodes": [
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S6 is the owner-approved retained integration receiver after S5 recorded exact title-route evidence and named T16/T26 prerequisites.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-047-t15-s4-to-t26-s2-terminal",
+      "type": "transfer",
+      "from": "M2 T15 S4",
+      "to": "M2 T26 S2",
+      "nodes": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "acceptedBy": "M2 T26 S2 is the pre-accepted source-order receiver after its S1 audit identified the exact terminal tree and its external collaborators.",
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md"
     }
   ],
   "runs": [
@@ -61780,7 +61938,7 @@
       "maximumComplete": 42,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-after-t18-initializegame-prerequisite-repair"
+      "state": "closed-zero-credit-route-evidence-transferred-to-s6"
     },
     {
       "subtask": "M2 T18 S4",
@@ -61838,6 +61996,182 @@
       "actualMatches": [],
       "evidence": "docs/proposals/m2/area-parser.md",
       "state": "closed-initializegame-prerequisite-repaired-no-node-credit"
+    },
+    {
+      "subtask": "M2 T26 S1",
+      "kind": "audit",
+      "scope": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "closed-zero-credit-source-contract-transferred-to-s2"
+    },
+    {
+      "subtask": "M2 T26 S2",
+      "kind": "implementation",
+      "scope": [
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [],
+      "maximumComplete": 42,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/t26-victory-terminal.md",
+      "state": "active-terminal-owned-repair-and-migration"
     }
   ]
 }

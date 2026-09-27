@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S5 Packet
+## M2 T26 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S5, implementation closure accounting; title menu, world selection and demo. |
-| Admission And Approval | Owner-approved source-order M2 plan. T18 S4 has repaired the required `InitializeGame` title-countdown prerequisite without title-node credit. |
-| Objective | Re-run the source-reachable title, Start, Select, world-select and demo routes against the original ROM, then record a per-node disposition for the 26 T25 labels. |
-| Non-goals | New game logic outside the 26 received T25 labels, platform behavior, or unproven node credit. |
-| Reference Baseline | 42 / 1,992 complete; 26 scoped labels, zero expected matches, maximum 42 / 1,992. |
-| Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
-| Files And ABI Surface | Shared title/menu owner, frame-root handoff only where the title source calls it, controlled ROM recorders, ledger, and three executable artifacts. |
+| Identifier Mode | M2 T26 S2, implementation; Victory, terminal modes and floating scores. |
+| Admission And Approval | Owner-approved source-order M2 plan; T26 S1 completed its zero-credit 32-node contract and accepted the exact T15 S4 transfer. |
+| Objective | Restore the two audited terminal-owned source discrepancies while preserving the received 32-node tree and its named collaborator boundaries. |
+| Non-goals | Player/OAM, area, enemy-loop, score-arithmetic, audio-handler or platform logic; node credit is reserved for later independent route proof. |
+| Reference Baseline | 42 / 1,992 complete; 32 scoped labels, zero expected matches, maximum 42 / 1,992. |
+| Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
+| Files And ABI Surface | Shared terminal mode owner, focused terminal regressions, owner-local ROM traces, ledger, and three target artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original-ROM controlled routes after aligned `DemoTimer`; source read/write/table/call-order review; x86/x64 tests, DOS16 compile, purity, and three artifacts. |
-| Expected Markers | None. Each of the 26 labels requires both ROM-logic and operational evidence before credit. |
-| Asset Needs | Owner-local ROM/listing/trace under build; every implementation P refreshes three artifacts. |
-| Reporting Requirements | State the exact source nodes exercised, evidence result, residual owner, and tracker disposition. |
-| Stop Conditions | Stop on a cross-slice repair, altered ROM transition, or platform gameplay logic. |
-| Exit Criteria | Every T25 label has a documented match or a named upstream owner; only evidenced labels may receive credit. |
+| Verification | ROM `PlayerEndWorld`/NMI timer placement and `EndChkBButton` dual-latch branch; focused C tests, x86/x64, DOS16, purity, and controlled ROM routes. |
+| Expected Markers | None; implementation repair does not substitute for per-node equivalence closure. |
+| Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for this implementation P. |
+| Reporting Requirements | State exact source writes/order, external-owner exclusions, branch evidence, and unchanged node count. |
+| Stop Conditions | Stop on an external-owner repair, platform gameplay logic, or a route whose state is not source-reachable/controlled. |
+| Exit Criteria | Both audited terminal discrepancies are repaired in shared C with focused proof and no cross-slice code change. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Inspect all title countdown writers, task-three exits, and saved-input latches in the received source range. |
+| Similar-Issue Sweep | Inspect every `WorldEndTimer` writer/decrement and all `SavedJoypad2Bits` consumers in terminal code. |
 
 ## Recent M4 Closures
 

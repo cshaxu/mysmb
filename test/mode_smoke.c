@@ -124,6 +124,35 @@ int main(void)
         game.ram[0x075fU] != 3U || game.ram[0x0760U] != 0U ||
         game.ram[0x075cU] != 0U || game.ram[0x0757U] == 0U) return 8;
 
+    /* NMI DecTimers, rather than PlayerEndWorld, owns WorldEndTimer.  On an
+     * interval-timer frame it reaches zero before the terminal leaf runs. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 4U;
+    game.ram[0x075fU] = 2U;
+    game.ram[0x07a1U] = 1U;
+    game.ram[0x077fU] = 0U;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x07a1U] != 0U || game.ram[0x0770U] != 1U ||
+        game.ram[0x0772U] != 0U || game.ram[0x075fU] != 3U) return 10;
+
+    /* ROM EndChkBButton ORs both saved controller latches before entering
+     * TerminateGame.  The second latch must take the same title-return path. */
+    mysmb_game_initialize(&game);
+    game.ram[0x0770U] = 2U;
+    game.ram[0x0772U] = 4U;
+    game.ram[0x075fU] = 7U;
+    game.ram[0x07a0U] = 0x44U;
+    game.ram[0x06fcU] = 0U;
+    game.ram[0x06fdU] = MYSMB_BUTTON_B;
+    input.buttons = 0U;
+    mysmb_game_tick(&game, &input, &frame);
+    if (game.ram[0x07fcU] != 1U || game.ram[0x075aU] != 0xffU ||
+        game.ram[0x00fcU] != 0x80U || game.ram[0x07fdU] != 7U ||
+        game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
+        game.ram[0x07a0U] != 0U) return 11;
+
     /* HandlePipeEntry selects the original middle-pipe destination before
      * VerticalPipeEntry starts its 48-frame transition. */
     mysmb_game_initialize(&game);
