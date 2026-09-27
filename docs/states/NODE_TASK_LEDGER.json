@@ -9331,8 +9331,8 @@
     {
       "label": "AreaParserTaskControl",
       "line": 1595,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T27 S3",
+      "receivingBasis": "Accepted T27 S3 parser-integration receipt; external T29 parser owner is required before credit.",
       "futurePackage": null,
       "history": [
         {
@@ -57527,6 +57527,17 @@
       ],
       "acceptedBy": "S1 closure requires full dispatch-table integration before credit",
       "evidence": "docs/proposals/m2/screen-status.md"
+    },
+    {
+      "id": "E-T27S2-T27S3-parser-integration-root",
+      "type": "transfer",
+      "from": "M2 T27 S2",
+      "to": "M2 T27 S3",
+      "nodes": [
+        "AreaParserTaskControl"
+      ],
+      "acceptedBy": "Owner-approved T27 S2 pre-implementation scope correction; S3 is the registered accepted parser-integration receiver.",
+      "evidence": "docs/proposals/m2/screen-status.md"
     }
   ],
   "runs": [
@@ -66208,7 +66219,6 @@
         "OutputInter",
         "GameOverInter",
         "NoInter",
-        "AreaParserTaskControl",
         "TaskLoop",
         "OutputCol",
         "DrawTitleScreen",

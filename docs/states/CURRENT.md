@@ -70,10 +70,10 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | M2 T27 S2, implementation; contiguous remaining screen/status/text chain. |
-| Admission And Approval | Owner-approved source-order continuation; S1 closed 20 leaves and T24 S2 transferred the remaining 46 labels. |
+| Admission And Approval | Owner-approved source-order continuation; S1 closed 20 leaves; S2 received 45 contiguous labels and S3 accepted the two external-dependency integration roots. |
 | Objective | Establish ROM-equivalent `WriteTopStatusLine -> NoReset` in the shared game owner. |
 | Non-goals | No T29 parser implementation, full ScreenRoutines dispatch credit, host UI rule, platform gameplay logic or unrelated repair. |
-| Reference Baseline | 120 / 1,992 complete; 46 incoming open labels; expected 45 matches; `AreaParserTaskControl` is retained for S3 integration with T29; maximum 165 / 1,992. |
+| Reference Baseline | 120 / 1,992 complete; 45 incoming open labels; expected 45 matches; `AreaParserTaskControl` is retained for S3 integration with T29; maximum 165 / 1,992. |
 | Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
 | Files And ABI Surface | Shared screen/status/text game owners, project tests/recorders, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
