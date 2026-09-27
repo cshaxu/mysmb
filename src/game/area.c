@@ -288,6 +288,8 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
     mysmb_u8 palette_offset;
     mysmb_u8 rotation_offset;
     mysmb_u8 area_type;
+    mysmb_u8 source_offset;
+    mysmb_u8 counter;
 
     if ((game->ram[MYSMB_AREA_FRAME_COUNTER] & 7U) != 0U) return;
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
@@ -298,19 +300,30 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
     rotation_offset = game->ram[MYSMB_AREA_COLOR_ROTATE_OFFSET];
     if (rotation_offset >= 6U || game->area_prg_size <=
         MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset) return;
+    /* ROM GetBlankPal copies the complete eight-byte command from $89c9. */
+    source_offset = 0U;
+    do {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset)] =
+            game->area_prg[MYSMB_AREA_COLOR_ROTATE_PALETTE + 6U + source_offset];
+        buffer_offset++;
+        source_offset++;
+    } while (source_offset != 8U);
+
+    /* ROM GetAreaPal then overwrites positions +3 through +6.  X advances
+     * while each store remains indexed by the original buffer position. */
+    buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
     palette_offset = (mysmb_u8)(area_type * 4U);
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset)] = 0x3fU;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 1U)] = 0x0cU;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 2U)] = 4U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 3U)] =
-        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset)];
+    counter = 3U;
+    do {
+        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 3U)] =
+            game->area_prg[MYSMB_AREA_PALETTE3_DATA + palette_offset];
+        palette_offset++;
+        buffer_offset++;
+        counter--;
+    } while ((counter & 0x80U) == 0U);
+    buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 4U)] =
-        game->area_prg[(mysmb_u16)(MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset)];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 5U)] =
-        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset + 2U)];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 6U)] =
-        game->area_prg[(mysmb_u16)(MYSMB_AREA_PALETTE3_DATA + palette_offset + 3U)];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 7U)] = 0U;
+        game->area_prg[MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset];
     game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] =
         (mysmb_u8)(buffer_offset + 7U);
     rotation_offset++;

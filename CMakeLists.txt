@@ -661,6 +661,12 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_area_output_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_area_output_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.area-output-smoke COMMAND mysmb_area_output_smoke)
+    add_executable(mysmb_palette_rotation_smoke test/palette_rotation_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_palette_rotation_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_palette_rotation_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.palette-rotation-smoke COMMAND mysmb_palette_rotation_smoke)
     add_executable(mysmb_local_palette_timing_smoke test/local_palette_timing_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_local_palette_timing_smoke PRIVATE src
