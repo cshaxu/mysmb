@@ -556,6 +556,33 @@ static void mysmb_recorder_apply_t29_special_object_fixture(
     game->ram[0x075fU] = 0U;
 }
 
+/* Source-RAM mirror of the original L_GroundArea1 CastleObject route. */
+static void mysmb_recorder_apply_t29_geometry_castle_fixture(
+    struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x0773U] = 0U;
+    game->ram[0x071fU] = 8U;
+    game->ram[0x0725U] = 0U;
+    game->ram[0x0726U] = 0U;
+    game->ram[0x0728U] = 0U;
+    game->ram[0x072aU] = 0U;
+    game->ram[0x072bU] = 0U;
+    game->ram[0x072cU] = 2U;
+    game->ram[0x072dU] = 0U;
+    game->ram[0x072eU] = 0U;
+    game->ram[0x072fU] = 0U;
+    game->ram[0x0730U] = 0xffU;
+    game->ram[0x0731U] = 0xffU;
+    game->ram[0x0732U] = 0xffU;
+    game->ram[0x073fU] = 0U;
+    game->ram[0x00e7U] = 0x6bU;
+    game->ram[0x00e8U] = 0xa4U;
+}
+
 static void mysmb_recorder_apply_t29_special_chain_fixture(
     struct mysmb_game *game, mysmb_u8 kind)
 {
@@ -1043,6 +1070,7 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-world-ground") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 81U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-world-water") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 82U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-special-warp-zero-water") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 83U; }
+        else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
@@ -1181,6 +1209,8 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 80U && t26_fixture <= 83U)
                 mysmb_recorder_apply_t29_warp_selector_fixture(&game,
                     (mysmb_u8)(t26_fixture - 80U));
+            else if (t26_fixture == 84U)
+                mysmb_recorder_apply_t29_geometry_castle_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

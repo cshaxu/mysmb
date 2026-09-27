@@ -1094,3 +1094,35 @@ core links as DOS16 with the existing warnings. Artifact SHA-256:
 `mysmb16.exe` `2F2A4611ED13795B2F6D5EDE9E732467695094B907E5FA3EDB8A4C7659C014BE`,
 `mysmb32.exe` `99953A06FB06B369CB385FAFE6AACDDF23AC4AD612DFF579649A2A3445D08B4D`,
 and `mysmb64.exe` `414208C0407FF16CB50DD9F41EC06AB1569A49E2EDEEB21FC89CFB83DAFE1926`.
+
+### S9 P3: ordinary CastleObject route evidence
+
+P3 corrects the recorder invocation contract used by this chain: a fixture is
+installed at an NMI return, so a route must retain one warmup NMI before the
+first recorded sample. A zero-warmup one-sample invocation exits after the
+first NMI record and never applies the fixture; it is therefore not ROM-route
+evidence. The source and native recorders now expose the same
+`t29-geometry-castle` fixture. It installs only ordinary source RAM at an NMI
+boundary for the real `L_GroundArea1` post-header object `$0f,$26` at CPU
+`$a46d`; no PC, stack, PRG, or return path is changed.
+
+With `--warmup=1`, ROM PC coverage reaches `$9508 ProcessAreaData` and
+`$9806 CastleObject`, including the `$981b` castle render loop. The original
+route leaves slot two's saved object offset at `$02`, decrements its fixed
+castle length from four to three, and writes the first castle column at rows
+six through ten. The native C route has the same parser cursor, saved offset,
+length and staged rows (`$06a9=$45`, `$06aa=$47`, `$06ab=$47`). A forty-frame
+continuation also reaches the second `CastleObject` invocation and preserves
+the same parser/object-length and staged-column markers. The existing
+parser-column smoke already covers the later length-two StarFlagObject branch
+and its source-ordered slot writes; it passes on x86 and x64.
+
+This is evidence infrastructure and does not promote any S9 label by itself:
+`FindEmptyEnemySlot` remains the next-chain ownership boundary for the castle
+flag branch, and `InitPiranhaPlant` remains owned by M2 T19 S5 for vertical
+pipes. Focused parser-column, special-object and platform-purity tests pass on
+x86 and x64. The same C90 tree links as OpenNT DOS16 with only the established
+non-fatal C4761 and `OLDNAMES.LIB` warnings. Refreshed artifact SHA-256:
+`mysmb16.exe` `2F2A4611ED13795B2F6D5EDE9E732467695094B907E5FA3EDB8A4C7659C014BE`,
+`mysmb32.exe` `99953A06FB06B369CB385FAFE6AACDDF23AC4AD612DFF579649A2A3445D08B4D`,
+and `mysmb64.exe` `0686D097EF3AB4D721654FA93FD2B652AF37F10208D53F3E61D1CFD583363595`.

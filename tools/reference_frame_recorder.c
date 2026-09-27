@@ -701,6 +701,36 @@ static void mysmb_reference_apply_t29_special_object_fixture(lib_u8 *ram)
     ram[0x075fu] = 0u;
 }
 
+/* T29/S9 selects the first ordinary large object in L_GroundArea1
+ * (CPU $a46d: $0f,$26, CastleObject).  This is an NMI-boundary state for
+ * the normal GameEngine parser tail: it supplies the post-header area-data
+ * address and lets ProcessAreaData fill slot two before RunAObj dispatches
+ * the castle chain. */
+static void mysmb_reference_apply_t29_geometry_castle_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x0773u] = 0u;
+    ram[0x071fu] = 8u;
+    ram[0x0725u] = 0u;
+    ram[0x0726u] = 0u;
+    ram[0x0728u] = 0u;
+    ram[0x072au] = 0u;
+    ram[0x072bu] = 0u;
+    ram[0x072cu] = 2u;
+    ram[0x072du] = 0u;
+    ram[0x072eu] = 0u;
+    ram[0x072fu] = 0u;
+    ram[0x0730u] = 0xffu;
+    ram[0x0731u] = 0xffu;
+    ram[0x0732u] = 0xffu;
+    ram[0x073fu] = 0u;
+    ram[0x00e7u] = 0x6bu;
+    ram[0x00e8u] = 0xa4u;
+}
+
 /* T29/S8 additional real area-stream objects.  Each variant remains at a
  * normal NMI return and lets GameEngine dispatch the ROM parser; only the
  * already-reached stream cursor/page/column state differs. */
@@ -1215,6 +1245,7 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        if (strcmp(arguments[recorded], "--fixture=t29-geometry-castle") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 90u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1464,6 +1495,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture == 90u)
+                    mysmb_reference_apply_t29_geometry_castle_fixture(
+                        driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
