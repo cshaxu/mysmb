@@ -9346,8 +9346,8 @@
     {
       "label": "TaskLoop",
       "line": 1597,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T27 S3",
+      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit.",
       "futurePackage": null,
       "history": [
         {
@@ -9361,8 +9361,8 @@
     {
       "label": "OutputCol",
       "line": 1603,
-      "receiver": "M2 T27 S2",
-      "receivingBasis": "M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody.",
+      "receiver": "M2 T27 S3",
+      "receivingBasis": "Accepted T27 S3 parser-loop integration receipt; T29 parser proof is required before credit.",
       "futurePackage": null,
       "history": [
         {
@@ -57538,6 +57538,18 @@
       ],
       "acceptedBy": "Owner-approved T27 S2 pre-implementation scope correction; S3 is the registered accepted parser-integration receiver.",
       "evidence": "docs/proposals/m2/screen-status.md"
+    },
+    {
+      "id": "E-T27S2-T27S3-parser-loop-tail",
+      "type": "transfer",
+      "from": "M2 T27 S2",
+      "to": "M2 T27 S3",
+      "nodes": [
+        "TaskLoop",
+        "OutputCol"
+      ],
+      "acceptedBy": "Owner-approved T27 S2 source-order dependency correction; S3 is the registered parser-integration receiver.",
+      "evidence": "docs/proposals/m2/screen-status.md"
     }
   ],
   "runs": [
@@ -66219,8 +66231,6 @@
         "OutputInter",
         "GameOverInter",
         "NoInter",
-        "TaskLoop",
-        "OutputCol",
         "DrawTitleScreen",
         "OutputTScr",
         "ChkHiByte",
@@ -66389,8 +66399,6 @@
         "OutputInter",
         "GameOverInter",
         "NoInter",
-        "TaskLoop",
-        "OutputCol",
         "DrawTitleScreen",
         "OutputTScr",
         "ChkHiByte",
@@ -66426,7 +66434,7 @@
         "ResetScreenTimer",
         "NoReset"
       ],
-      "maximumComplete": 165,
+      "maximumComplete": 163,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/screen-status.md",
       "state": "active-screen-status-text-chain"
