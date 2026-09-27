@@ -6,8 +6,8 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1--S5 are closed at 218 / 1,992.** S6 is the next queued chain. T28
-S5 owned only the five-label name-table initialization chain below.
+**T28 S1--S6 are closed at 230 / 1,992.** S7 is the active source-order
+chain. T28 S6 owned only the twelve-label joypad/VRAM-output/NMI chain below.
 
 ## Exact source-order chains
 
@@ -263,3 +263,30 @@ Focused `joypad-vram-chain`, `frame-snapshot`, platform-purity and Win32
 self-tests pass on x86 and x64. The shared code links into the OpenNT DOS16
 MZ. All twelve actual matches are recorded in the inventory and ledger; no
 node is transferred.
+
+## S7 admission contract
+
+S7 receives these nineteen adjacent labels from the legacy T18 receiver:
+`StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`,
+`SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`,
+`StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`,
+`UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, and `NoTopSc`.
+The baseline is **230 / 1,992**; all nineteen are open and expected to become
+ROM-match complete, for a maximum of **249 / 1,992**.
+
+The shared owner is `src/game/status.c` and its shared C90 header surface.
+The source chain is `$8ef4-$8fbf`: select the status destination, write
+source-aligned digit fields with zero suppression, adjust score digits through
+the add/erase loops, then apply the source top-score comparison and copy path.
+T27/T35/T36 remain natural callers. ROM evidence will use controlled,
+source-reachable status-number routes that cover score/time/coin destinations,
+carry, borrow, zero suppression, unchanged top score and copied top score;
+it will not construct an artificial caller stack.
+
+ROM-equivalence evidence must compare control branches, score/time RAM reads
+and writes, status-buffer bytes, digit arithmetic and source call order.
+Operational evidence will run one focused shared status-arithmetic smoke,
+x86/x64 builds, the OpenNT DOS16 link, platform-purity gate and all three
+packaged executable artifacts. Windows and DOS may only submit the frame; no
+platform source may calculate digits, score, timer, status text or top-score
+state.
