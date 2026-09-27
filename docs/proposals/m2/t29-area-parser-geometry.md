@@ -620,3 +620,15 @@ warning. P2 artifacts are `mysmb16.exe`
 `7FFD79B23BF59A1853DC6677F80C8A72ECF60F029DFF8F946D12DFBBCCD3CE6D`,
 `mysmb32.exe` `3A8ABB1FCE60E86C63627A65D5A7C8F7906D2270B02F34C505ED554B3393AB7E`,
 and `mysmb64.exe` `0702C4EB8AAD654242F664B840C011B49D47C023A7F17F5CA0B1AE8AF9DB7EAE`.
+
+## S7 P3: row-13 loop-command marker
+
+`Mask2MSB` recognizes row-13 `$4b` and increments `LoopCommand` before the
+decoder reaches `LoopCmdE`. The shared parser now writes `$0745` at that
+source point; it does not absorb the later game-engine loop consumer. The
+terminal-slot smoke covers the marker and cursor advance. x86/x64 focused
+tests pass and the common source links as DOS16 with the existing non-fatal
+`OLDNAMES.LIB` warning. P3 artifacts are `mysmb16.exe`
+`70BCAE3A5110B2CF22D5CD5FA77B861C77448877D5A6D22BEDD7EBFE149E7984`,
+`mysmb32.exe` `6F45A66C0DFD10DECAFB148AF40C687827281DB2C76AB3CEDFBC747607169075`,
+and `mysmb64.exe` `11C3C0DD06EB1E0FE39C6D6C333D1FC27857232E3EC4FD7FA423E5BC8F8CD2CD`.

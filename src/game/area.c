@@ -81,6 +81,7 @@ enum {
     MYSMB_AREA_BACKGROUND = 0x0742U,
     MYSMB_AREA_CLOUD_OVERRIDE = 0x0743U,
     MYSMB_AREA_BACKGROUND_COLOR = 0x0744U,
+    MYSMB_AREA_LOOP_COMMAND = 0x0745U,
     MYSMB_AREA_COLOR_ROTATE_OFFSET = 0x06d4U,
     MYSMB_AREA_FRAME_COUNTER = 0x0009U,
     MYSMB_AREA_VRAM_BUFFER1_OFFSET = 0x0300U,
@@ -1516,6 +1517,11 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     run_object = 1U;
                 }
                 if (run_object != 0U) {
+                    /* Mask2MSB recognizes the special row-13 $4b command
+                     * before LoopCmdE returns.  Its later consumer owns the
+                     * loop behavior; this parser owns only the increment. */
+                    if (row == 0x0dU && (second & 0x7fU) == 0x4bU)
+                        game->ram[MYSMB_AREA_LOOP_COMMAND]++;
                     mysmb_area_apply_parser_object(game, slot, first, second);
                     if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
                         game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
