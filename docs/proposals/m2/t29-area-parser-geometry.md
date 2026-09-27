@@ -517,3 +517,43 @@ the existing parser-column/data/buffer tests and any added focused renderer
 smokes, x86/x64 builds, OpenNT DOS16 link, purity and one three-artifact
 package per implementation P. It does not receive `ProcessAreaData` or any
 area-object decoder leaf; that starts S7.
+
+## S6 P1: staged-column and physical-page proof
+
+The S6 source audit maps the complete `$9404-$94fc` sequence to
+`mysmb_area_render_scenery_terrain_column` in shared `area.c`.  The routine
+clears all thirteen staging slots, reduces `CurrentPageLoc` modulo three for
+background selection, limits the background overlay to three rows below row
+eleven, then applies nonzero foreground rows.  Its terrain scan preserves the
+two source bytes, least-significant-bit-first order, cloud lower-byte mask,
+world-eight water override, underground row-eleven replacement, and the
+post-`ProcessAreaData` block-buffer threshold against the four owner-local
+`BlockBuffLowBounds` values.  Source-label comments mark those C boundaries
+without introducing a second renderer.
+
+`mysmb.area-parser-data-smoke` now independently calculates both source
+states from the locally bound PRG: the thirteen-byte `MetatileBuffer` at the
+`RendBBuf` handoff and the final collision-qualified physical block-buffer
+column.  It covers every background family, page residue and column on both
+physical pages; each foreground family; all area types and terrain controls;
+cloud masking; and the world-eight exception.  This closes the earlier gap in
+which a correct final block buffer could conceal an incorrect staging column.
+It remains a consumer test and embeds no ROM data.
+
+The audit also found legacy pre-play terrain/page helpers that synthesize a
+look-ahead path outside the source `AreaParserTaskHandler` cadence.  They
+depend on `ProcessAreaData` and object-stream state, which is outside S6's
+received labels.  S6 does not extend or certify that path; S7 must replace it
+as part of the complete source-owned area-stream route before it can supply
+evidence for normal play initialization.
+
+On x86 and x64, `mysmb.area-parser-data-smoke`,
+`mysmb.area-parser-column-smoke`, `mysmb.parser-schedule-smoke`,
+`mysmb.parser-buffer-commit-smoke`, `mysmb.area-data-smoke`, and
+`mysmb.platform-purity` pass. The common C90 source links into the OpenNT
+DOS16 MZ; the existing non-fatal `OLDNAMES.LIB` warning remains. P1 artifacts
+are `mysmb16.exe` `6D10344BB3EF3E3019CB1952072BD6BEB38CCD4BB94D4A5F4604446A73B51FEF`,
+`mysmb32.exe` `D97EB426EBFF244F1B65CF76420A766E1528C1E8CCE604DFEC36FF0A9119DF8B`,
+and `mysmb64.exe` `FCC9FA1C202BB532053F7EC99707A2A369C4E6F5469BB6DD9F9AF42A70DDAB01`.
+This is an implementation checkpoint, not S6 closure: the controlled
+original-ROM route and individual completion dispositions remain required.

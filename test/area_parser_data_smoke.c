@@ -24,10 +24,12 @@ enum {
     BLOCK_BUFFER = 0x0500U
 };
 
-/* Independent source-order model of the seven admitted scenery/terrain data
- * labels.  It consumes the owner-local PRG only and checks the shared C
- * renderer's staged collision result; it does not embed ROM data. */
-static void expected_column(mysmb_u8 expected[13], mysmb_u8 background,
+/* Independent source-order model of the scenery-to-block-buffer chain.  It
+ * consumes the owner-local PRG only; staged is the source MetatileBuffer
+ * immediately before RendBBuf and expected is the thresholded block-buffer
+ * result.  Neither array embeds ROM data. */
+static void expected_column(mysmb_u8 staged[13], mysmb_u8 expected[13],
+                            mysmb_u8 background,
                             mysmb_u8 foreground, mysmb_u8 page,
                             mysmb_u8 column, mysmb_u8 terrain_control,
                             mysmb_u8 area_type, mysmb_u8 cloud,
@@ -79,6 +81,8 @@ static void expected_column(mysmb_u8 expected[13], mysmb_u8 background,
             expected[row] = terrain;
     }
 
+    for (row = 0U; row < 13U; ++row) staged[row] = expected[row];
+
     for (row = 0U; row < 13U; ++row) {
         bound = (mysmb_u8)(expected[row] >> 6U);
         if (expected[row] < mysmb_local_prg[(mysmb_u16)(BLOCK_BUFFER_LOW_BOUNDS + bound)])
@@ -89,20 +93,23 @@ static void expected_column(mysmb_u8 expected[13], mysmb_u8 background,
 static int verify_case(mysmb_u8 background, mysmb_u8 foreground,
                        mysmb_u8 page, mysmb_u8 column,
                        mysmb_u8 terrain_control, mysmb_u8 area_type,
-                       mysmb_u8 cloud, mysmb_u8 world)
+                       mysmb_u8 cloud, mysmb_u8 world,
+                       mysmb_u8 block_column)
 {
     struct mysmb_game game;
+    mysmb_u8 staged[13];
     mysmb_u8 expected[13];
     mysmb_u8 row;
+    mysmb_u16 block_address;
 
-    expected_column(expected, background, foreground, page, column,
+    expected_column(staged, expected, background, foreground, page, column,
                     terrain_control, area_type, cloud, world);
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     game.ram[CURRENT_PAGE] = page;
     game.ram[CURRENT_COLUMN] = column;
     game.ram[TERRAIN_CONTROL] = terrain_control;
-    game.ram[BLOCK_COLUMN] = 0U;
+    game.ram[BLOCK_COLUMN] = block_column;
     game.ram[AREA_TYPE] = area_type;
     game.ram[FOREGROUND_SCENERY] = foreground;
     game.ram[BACKGROUND_SCENERY] = background;
@@ -112,8 +119,12 @@ static int verify_case(mysmb_u8 background, mysmb_u8 foreground,
      * whose nonzero-area-pointer path is received by the next S. */
     game.ram[AREA_DATA_HIGH] = 0U;
     if (mysmb_area_render_scenery_terrain_column(&game) == 0U) return 1;
+    block_address = (mysmb_u16)((block_column & 0x1fU) < 16U ?
+        BLOCK_BUFFER + (block_column & 0x0fU) :
+        BLOCK_BUFFER + 0xd0U + (block_column & 0x0fU));
     for (row = 0U; row < 13U; ++row) {
-        if (game.ram[(mysmb_u16)(BLOCK_BUFFER + (mysmb_u16)row * 16U)] !=
+        if (game.ram[0x06a1U + row] != staged[row]) return 1;
+        if (game.ram[(mysmb_u16)(block_address + (mysmb_u16)row * 16U)] !=
             expected[row]) return 1;
     }
     return 0;
@@ -133,24 +144,26 @@ int main(void)
         for (page = 0U; page < 3U; ++page) {
             for (column = 0U; column < 16U; ++column) {
                 if (verify_case(background, 0U, page, column, 0U, 1U,
-                                0U, 0U) != 0) return 1;
+                                0U, 0U, 0U) != 0 ||
+                    verify_case(background, 0U, page, column, 0U, 1U,
+                                0U, 0U, 16U) != 0) return 1;
             }
         }
     }
     for (foreground = 1U; foreground <= 3U; ++foreground) {
-        if (verify_case(0U, foreground, 0U, 0U, 0U, 1U, 0U, 0U) != 0)
+        if (verify_case(0U, foreground, 0U, 0U, 0U, 1U, 0U, 0U, 0U) != 0)
             return 1;
     }
     for (area_type = 0U; area_type < 4U; ++area_type) {
         for (terrain_control = 0U; terrain_control < 16U; ++terrain_control) {
             for (cloud = 0U; cloud < 2U; ++cloud) {
                 if (verify_case(0U, 0U, 0U, 0U, terrain_control, area_type,
-                                cloud, 0U) != 0) return 1;
+                                cloud, 0U, 0U) != 0) return 1;
             }
         }
     }
     for (terrain_control = 0U; terrain_control < 16U; ++terrain_control) {
-        if (verify_case(0U, 0U, 0U, 0U, terrain_control, 0U, 0U, 7U) != 0)
+        if (verify_case(0U, 0U, 0U, 0U, terrain_control, 0U, 0U, 7U, 0U) != 0)
             return 1;
     }
     return 0;

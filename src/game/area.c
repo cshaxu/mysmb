@@ -811,8 +811,11 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
     if (game->area_prg == 0 || game->area_prg_size <=
         MYSMB_AREA_BLOCK_BUFFER_LOW_BOUNDS + 3U ||
         game->ram[MYSMB_AREA_TYPE] >= 4U) return 0U;
+    /* ClrMTBuf: X descends from $0c through zero in the source. */
     for (index = 0U; index < 13U; ++index) metatiles[index] = 0U;
 
+    /* ThirdP/RendBack/SceLoop1: reduce to the three-page scenery phase,
+     * select one packed entry, then overlay no more than three rows. */
     scene = game->ram[MYSMB_AREA_BACKGROUND];
     if (scene != 0U && scene <= 3U) {
         source = (mysmb_u16)(MYSMB_AREA_BACKGROUND_SCENE_DATA +
@@ -833,6 +836,8 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
         }
     }
 
+    /* RendFore/SceLoop2/NoFore: nonzero foreground bytes replace the
+     * existing staged row; zero bytes deliberately leave it intact. */
     scene = game->ram[MYSMB_AREA_FOREGROUND];
     if (scene != 0U && scene <= 3U) {
         source = (mysmb_u16)(MYSMB_AREA_FOREGROUND_SCENE_DATA +
@@ -844,6 +849,8 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
         }
     }
 
+    /* RendTerr/TerMTile/StoreMT/TerrLoop through EndUChk: preserve the
+     * source's two-byte, least-significant-bit-first terrain scan. */
     terrain = game->area_prg[(mysmb_u16)(MYSMB_AREA_TERRAIN_METATILES +
         game->ram[MYSMB_AREA_TYPE])];
     if (game->ram[MYSMB_AREA_TYPE] == 0U && game->ram[MYSMB_AREA_WORLD_NUMBER] == 7U)
@@ -865,6 +872,8 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
     if (game->ram[MYSMB_AREA_DATA_HIGH] >= 0x80U &&
         mysmb_area_process_object_state(game) == 0U) return 0U;
 
+    /* RendBBuf/ChkMTLow/StrBlock: ProcessAreaData has changed the staging
+     * column, so qualify that resulting value against BlockBuffLowBounds. */
     column = (mysmb_u8)(game->ram[MYSMB_AREA_BLOCK_COLUMN] & 0x1fU);
     address = (mysmb_u16)(column < 16U ? 0x0500U + column :
                           0x05d0U + (column - 16U));
