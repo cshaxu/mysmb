@@ -562,7 +562,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3964 | `Bridge_Middle` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_middle) |
 | 3968 | `Bridge_Low` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_low) |
 | 3983 | `FlagBalls_Residual` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagballs_residual) |
-| 3991 | `FlagpoleObject` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-flagpoleobject) |
+| 3991 | `FlagpoleObject` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 4018 | `EndlessRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessrope) |
 | 4023 | `BalancePlatRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatrope) |
 | 4034 | `DrawRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawrope) |
@@ -882,13 +882,13 @@ The labels and branches behind every line remain open until individually bound b
 | 6577 | `LeftWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftwh) |
 | 6586 | `SetPWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpwh) |
 | 6587 | `WhPull` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-whpull) |
-| 6598 | `FlagpoleScoreMods` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescoremods) |
-| 6601 | `FlagpoleScoreDigits` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescoredigits) |
-| 6604 | `FlagpoleRoutine` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-flagpoleroutine) |
-| 6635 | `SkipScore` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipscore) |
-| 6636 | `GiveFPScr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-givefpscr) |
-| 6643 | `FPGfx` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fpgfx) |
-| 6646 | `ExitFlagP` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitflagp) |
+| 6598 | `FlagpoleScoreMods` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6601 | `FlagpoleScoreDigits` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6604 | `FlagpoleRoutine` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6635 | `SkipScore` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6636 | `GiveFPScr` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6643 | `FPGfx` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
+| 6646 | `ExitFlagP` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6650 | `Jumpspring_Y_PosData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring_y_posdata) |
 | 6653 | `JumpspringHandler` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringhandler) |
 | 6667 | `DownJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-downjspr) |

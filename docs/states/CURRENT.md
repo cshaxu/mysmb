@@ -4,6 +4,12 @@
 
 **M2 T22 S5, the eight-node flagpole setup and slide chain, is admitted at 422 / 1,992 and owns `FlagpoleObject -> ExitFlagP`; its maximum closing count is 430 / 1,992.**
 
+Its eight scoped labels now have recorded ROM-match and operational evidence,
+bringing the canonical conformance count to **430 / 1,992**.  S5 remains open
+while the legacy 113-node custody is transferred by exact name to accepted
+source-order successors; that retained custody is not part of the completed
+flagpole chain.
+
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated nodes; it is not this implementation packet and cannot preempt M2 T22 S5.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.

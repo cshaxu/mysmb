@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 422 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,465 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 430 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,459 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **422 / 1,992 (21.18%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **430 / 1,992 (21.59%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (422)
+## Completed matches (430)
 
 
 | ROM line | Node |
@@ -458,6 +458,14 @@ Each completion links its branch/write, ROM probe and route evidence in the
 | 3964 | `Bridge_Middle` |
 | 3968 | `Bridge_Low` |
 | 3983 | `FlagBalls_Residual` |
+| 3991 | `FlagpoleObject` |
+| 6598 | `FlagpoleScoreMods` |
+| 6601 | `FlagpoleScoreDigits` |
+| 6604 | `FlagpoleRoutine` |
+| 6635 | `SkipScore` |
+| 6636 | `GiveFPScr` |
+| 6643 | `FPGfx` |
+| 6646 | `ExitFlagP` |
 
 ## Accounting audit, 2026-09-26
 
@@ -473,17 +481,15 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (105)
+## Mapped but not yet matched (103)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 3991 | `FlagpoleObject` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6519 | `ProcessWhirlpools` |
 | 6550 | `WhirlpoolActivate` |
-| 6604 | `FlagpoleRoutine` |
 | 6702 | `Setup_Vine` |
 | 6730 | `VineObjectHandler` |
 | 6788 | `ProcessCannons` |

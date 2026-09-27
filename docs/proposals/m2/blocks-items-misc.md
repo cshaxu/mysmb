@@ -198,3 +198,15 @@ Current three-target release hashes are `mysmb16.exe`
 `943F9F32C4BDE39195752448EC86F283AC23FE05CC2EAA15FEF280EA4072BD90`,
 and `mysmb64.exe`
 `6A4519AD0172CF53CD18A201D1AD7B40BD95A6D6BCED8340B8764ACBDAC9273A`.
+
+## S5/P3: flagpole-chain tracker receipt
+
+The canonical inventory, full census, progress report and ledger now record
+all eight scoped labels as `ROM-match complete`.  The resulting conformance
+count is **430 / 1,992**; the run records all eight actual matches against
+its 422-node baseline and 430-node maximum.  S5 remains active only because
+its historical 121-node custody contains 113 unrelated, unfinished labels.
+They are not implied by this completed eight-node chain and must receive
+accepted source-order successor chains before S5 can close.  The P2 DOS16,
+x86 and x64 artifacts above remain the current three-target delivery evidence;
+this receipt changes no production or generated code.
