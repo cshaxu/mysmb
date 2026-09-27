@@ -1247,14 +1247,91 @@ static const mysmb_u8 mysmb_area_c_object_metatile[3] = {
     0xc5U, 0x0cU, 0x89U
 };
 
-static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
-                                    mysmb_u8 row, mysmb_u8 second)
+/* ROM $9a25/$9a29 SolidBlockMetatiles / BrickMetatiles. */
+static const mysmb_u8 mysmb_area_solid_block_metatiles[4] = {
+    0x69U, 0x61U, 0x61U, 0x62U
+};
+static const mysmb_u8 mysmb_area_brick_metatiles[5] = {
+    0x22U, 0x51U, 0x52U, 0x52U, 0x88U
+};
+
+/* ROM $9a48 DrawRow: reload the attribute row and discard vertical extent.
+ * The metatile argument preserves the value held by PHA/PLA in the source. */
+static void mysmb_area_draw_row(struct mysmb_game *game, mysmb_u8 metatile)
 {
+    mysmb_area_render_under_part(game, game->ram[0x0007U], 0U, metatile);
+}
+
+/* ROM $9a44 GetRow -> ChkLrgObjLength -> DrawRow. */
+static void mysmb_area_get_row(struct mysmb_game *game, mysmb_u8 slot,
+                               mysmb_u8 row, mysmb_u8 second,
+                               mysmb_u8 metatile)
+{
+    game->ram[0x0007U] = row;
     if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
         game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] =
             (mysmb_u8)(second & 0x0fU);
+    mysmb_area_draw_row(game, metatile);
+}
+
+/* ROM $9a38 DrawBricks retains the caller's selected table index. */
+static void mysmb_area_draw_bricks(struct mysmb_game *game, mysmb_u8 slot,
+                                   mysmb_u8 row, mysmb_u8 second,
+                                   mysmb_u8 index)
+{
+    mysmb_area_get_row(game, slot, row, second,
+                       mysmb_area_brick_metatiles[index]);
+}
+
+/* ROM $9a2e RowOfBricks: only this entry has CloudTypeOverride. */
+static void mysmb_area_row_of_bricks(struct mysmb_game *game, mysmb_u8 slot,
+                                     mysmb_u8 row, mysmb_u8 second)
+{
+    mysmb_u8 index;
+    index = game->ram[MYSMB_AREA_TYPE];
+    if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) index = 4U;
+    mysmb_area_draw_bricks(game, slot, row, second, index);
+}
+
+/* ROM $9a3e RowOfSolidBlocks falls through to GetRow. */
+static void mysmb_area_row_of_solid_blocks(struct mysmb_game *game,
+                                          mysmb_u8 slot, mysmb_u8 row,
+                                          mysmb_u8 second)
+{
+    mysmb_area_get_row(game, slot, row, second,
+        mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+}
+
+/* ROM $9a5f GetRow2 keeps the decoded low-nibble vertical extent. */
+static void mysmb_area_get_row2(struct mysmb_game *game, mysmb_u8 row,
+                                mysmb_u8 second, mysmb_u8 metatile)
+{
+    game->ram[0x0007U] = row;
+    mysmb_area_render_under_part(game, game->ram[0x0007U],
+                                 (mysmb_u8)(second & 0x0fU), metatile);
+}
+
+/* ROM $9a50 ColumnOfBricks: no cloud override. */
+static void mysmb_area_column_of_bricks(struct mysmb_game *game,
+                                        mysmb_u8 row, mysmb_u8 second)
+{
+    mysmb_area_get_row2(game, row, second,
+        mysmb_area_brick_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+}
+
+/* ROM $9a59 ColumnOfSolidBlocks falls through to GetRow2. */
+static void mysmb_area_column_of_solid_blocks(struct mysmb_game *game,
+                                             mysmb_u8 row, mysmb_u8 second)
+{
+    mysmb_area_get_row2(game, row, second,
+        mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+}
+
+static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
+                                    mysmb_u8 row, mysmb_u8 second)
+{
     /* RowOfCoins: LDY AreaType; LDA CoinMetatileData,Y; JMP GetRow. */
-    mysmb_area_render_under_part(game, row, 0U,
+    mysmb_area_get_row(game, slot, row, second,
         mysmb_area_coin_metatile_data[game->ram[MYSMB_AREA_TYPE]]);
 }
 
@@ -1312,8 +1389,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 first,
                                            mysmb_u8 second)
 {
-    static const mysmb_u8 brick[5] = { 0x22U, 0x51U, 0x52U, 0x52U, 0x88U };
-    static const mysmb_u8 solid[4] = { 0x69U, 0x61U, 0x61U, 0x62U };
     static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
     static const mysmb_u8 block[10] = {
         0U, 0U, 0U, 0U, 0x55U, 0x56U, 0x57U, 0x58U, 0x59U, 0U
@@ -1589,14 +1664,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (kind == 2U || kind == 3U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
-        if (kind == 2U && game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U)
-            area_type = 4U;
-        value = kind == 2U ? brick[area_type] : solid[area_type];
-        /* ROM RowOfBricks/RowOfSolidBlocks: LDY #$00 then
-           enter RenderUnderPart for every horizontal continuation column. */
-        mysmb_area_render_under_part(game, row, 0U, value);
+        if (kind == 2U) mysmb_area_row_of_bricks(game, slot, row, second);
+        else mysmb_area_row_of_solid_blocks(game, slot, row, second);
         return;
     }
     if (kind == 7U) {
@@ -1640,10 +1709,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         mysmb_area_render_under_part(game, row, height, value);
         return;
     }
-    if (kind != 5U && kind != 6U) return;
-    value = kind == 5U ? brick[area_type] : solid[area_type];
-    height = (mysmb_u8)(second & 0x0fU);
-    mysmb_area_render_under_part(game, row, height, value);
+    if (kind == 5U) mysmb_area_column_of_bricks(game, row, second);
+    else if (kind == 6U) mysmb_area_column_of_solid_blocks(game, row, second);
 }
 
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)

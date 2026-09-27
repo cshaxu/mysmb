@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 442 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 452 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,447 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,437 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **442 / 1,992 (22.19%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **452 / 1,992 (22.69%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (442)
+## Completed matches (452)
 
 | ROM line | Node |
 | ---: | --- |
@@ -463,6 +463,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4064 | `ChainObj` |
 | 4070 | `EmptyBlock` |
 | 4074 | `ColObj` |
+| 4079 | `SolidBlockMetatiles` |
+| 4082 | `BrickMetatiles` |
+| 4086 | `RowOfBricks` |
+| 4091 | `DrawBricks` |
+| 4094 | `RowOfSolidBlocks` |
+| 4097 | `GetRow` |
+| 4099 | `DrawRow` |
+| 4104 | `ColumnOfBricks` |
+| 4109 | `ColumnOfSolidBlocks` |
+| 4112 | `GetRow2` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

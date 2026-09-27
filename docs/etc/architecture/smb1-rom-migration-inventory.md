@@ -575,16 +575,16 @@ The labels and branches behind every line remain open until individually bound b
 | 4064 | `ChainObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
 | 4070 | `EmptyBlock` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
 | 4074 | `ColObj` | M2 T30 S3 shared `area.c` castle-column chain | ROM-match complete | [T30 S3/P2 source and route evidence](../../proposals/m2/t30-area-object-rendering.md#s3p2-executed-original-rom-chain-evidence) |
-| 4079 | `SolidBlockMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solidblockmetatiles) |
-| 4082 | `BrickMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickmetatiles) |
-| 4086 | `RowOfBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofbricks) |
-| 4091 | `DrawBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbricks) |
-| 4094 | `RowOfSolidBlocks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofsolidblocks) |
-| 4097 | `GetRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getrow) |
-| 4099 | `DrawRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawrow) |
-| 4104 | `ColumnOfBricks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-columnofbricks) |
-| 4109 | `ColumnOfSolidBlocks` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-columnofsolidblocks) |
-| 4112 | `GetRow2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getrow2) |
+| 4079 | `SolidBlockMetatiles` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4082 | `BrickMetatiles` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4086 | `RowOfBricks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4091 | `DrawBricks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4094 | `RowOfSolidBlocks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4097 | `GetRow` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4099 | `DrawRow` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4104 | `ColumnOfBricks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4109 | `ColumnOfSolidBlocks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
+| 4112 | `GetRow2` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
 | 4120 | `BulletBillCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillcannon) |
 | 4135 | `SetupCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupcannon) |
 | 4146 | `StrCOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strcoffset) |

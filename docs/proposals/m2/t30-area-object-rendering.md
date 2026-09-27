@@ -224,3 +224,97 @@ result is **442 / 1,992**, with no unfinished label retained by S3. The
 source audit, six executed ROM routes, focused x86/x64 tests, DOS16 link,
 platform-purity and package records are distinct evidence tracks. The next
 source-order family begins at `SolidBlockMetatiles`; it is not yet admitted.
+
+## T30/S4 admission: block row and column chain
+
+Entry/exit: `SolidBlockMetatiles -> GetRow2`; shared owner `src/game/area.c`.
+Predecessor: closed T30/S3; successor: unadmitted BulletBillCannon family.
+Receipt `transfer-101-t18-s4-to-t30-s4-row-column` accepts the ten open labels
+from T18 S4 under the owner's source-order continuation approval.
+
+Exact scope and expected matches: `SolidBlockMetatiles`, `BrickMetatiles`,
+`RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`,
+`ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`.
+Baseline **442 / 1,992**, expected **10**, maximum **452 / 1,992**.
+
+Source audit: paired AreaType tables, row-only cloud override, metatile
+preservation across attribute/length helpers, scratch-row write, horizontal
+length initialization/continuation, zero row height versus decoded column
+height, and RenderUnderPart tail. ChkLrgObjLength, GetLrgObjAttrib and
+RenderUnderPart are dependencies with no credit; the completed coin selector
+must retain its call into GetRow. Cannon and staircase behavior is excluded.
+ROM-logic evidence must include ordinary parser routes using immutable owner
+ROM records, without leaf PC/stack injection. Native tests cover all four
+area types, cloud on/off, length progression and column height. Each P
+refreshes three artifacts; tests, source proof, ROM replay and platform purity
+are separate requirements. No node is complete on admission.
+
+## S4/P1: block row/column migration and ROM proof
+
+The shared C90 owner now has the original named entries and tails. GetRow
+retains the metatile across the length helper, writes the attribute row to
+`$07`, and enters DrawRow with zero vertical height. GetRow2 instead retains
+the decoded low-nibble height. Both scratch-row writes were missing from the
+previous combined C branches. RowOfCoins now calls the same GetRow owner;
+its existing four-area selector test passes without duplicate helper logic.
+
+| Node | Control/data audit and independent execution evidence |
+| --- | --- |
+| `SolidBlockMetatiles` | ROM `$9a25` four bytes match C; all AreaType indices are consumed by row and column routes. |
+| `BrickMetatiles` | ROM `$9a29` five bytes match C; four AreaType indices plus cloud index four are observed. |
+| `RowOfBricks` | `$9a2e` loads AreaType then tests CloudTypeOverride; both branches execute, including `$9a36` index-four override. |
+| `DrawBricks` | `$9a38` selects the indexed metatile before GetRow; every brick-row route executes this entry. |
+| `RowOfSolidBlocks` | `$9a3e` selects its four-entry table then falls through GetRow; cloud does not alter selection. |
+| `GetRow` | `$9a44` preserves metatile across ChkLrgObjLength; first-frame row lengths are four and one after the caller decrement. |
+| `DrawRow` | `$9a48` reloads `$07`, supplies height zero, restores metatile and tails into RenderUnderPart; all row routes execute it. |
+| `ColumnOfBricks` | `$9a50` selects AreaType without the cloud override, then enters GetRow2; cloud-on and cloud-off results agree. |
+| `ColumnOfSolidBlocks` | `$9a59` selects its AreaType entry then falls through GetRow2; all four indices execute. |
+| `GetRow2` | `$9a5f` preserves metatile across GetLrgObjAttrib, reloads row and retains height; original routes render three/four vertical cells and do not initialize horizontal lengths. |
+
+Owner-local execution uses the reviewed SMB1 NROM only for validation and
+immutable data. No redistributability is assumed. The fixtures select real
+records at `$a2f1`, `$a1b1`, `$a35e`, `$a22a` by source RAM at an ordinary
+NMI boundary. `test/block_row_column_fixture.h` is shared by both recorders;
+it changes no PC, stack, program byte, or return path. IDs 0..31 enumerate
+four kinds, four AreaTypes and two cloud states. The recorders retain one
+warmup NMI and two samples; every case hits ProcessAreaData and its expected
+entry and tails. The comparator rejects missing coverage or missing expected
+metatile/length/height, then compares the complete staged column and parser
+slots/height in both samples. All 32 cases have zero scoped differences.
+
+```text
+reference <ROM> build/m2-t30-s4/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-blocks=<id> --pc-coverage=build/m2-t30-s4/pc-<id>.txt
+native build/m2-t30-s4/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-blocks=<id>
+python -B test/verify_block_row_column_routes.py build/m2-t30-s4
+```
+
+Containment: 64 raw traces of exactly 8,830 bytes each under ignored
+`build/m2-t30-s4`, bounded by the existing per-frame 131072-instruction cap.
+The S4 executor owns cleanup after evidence review. Aggregate PC coverage
+contains addresses/counts only. The comparator reports all other RAM
+differences explicitly; it certifies this chain's outputs, not whole-frame
+RAM equivalence. Unfinished collaborator nodes retain their prior owners.
+
+The separate native smoke exercises the same 32-way selection matrix,
+scratch-row and height state, horizontal continuation through expiration,
+and untouched rows. It, the coin-row smoke and parser-column smoke pass
+under strict C90 x86 and x64 builds. Both Windows products pass their adapter
+self-test. DOS16 links an MZ with existing warnings; the known missing DOS
+resource binding still prevents claiming a playable DOS runtime. Platform
+purity passes. Similar-issue sweep found the combined row/column branches
+and the separate coin GetRow implementation; all now use the shared owners.
+Cloud overrides elsewhere and cannon/staircase code remain outside this S.
+
+Three-target delivery SHA-256: `mysmb16.exe`
+`101CFDF60A262F13FD0369C76CEFE1F0497EDFD5B699165A2CEE960887A88081`;
+`mysmb32.exe`
+`BF29E107C44A619FDA444341BD4A68397A8C86A46EE1B1C500825242ED71F551`;
+`mysmb64.exe`
+`BB190F341BB58ED5FA2C157EFD3ACF0D35A63F7D885FB491BAD1BEA19B8885BB`.
+
+## S4 closure
+
+All ten admitted labels above are ROM-match complete. Expected/actual: ten/
+ten; **442 -> 452 / 1,992**. No unfinished label remains in S4 custody.
+Tracker, census and ledger must agree and pass closure gates before commit.
+The next unadmitted source-order family begins at `BulletBillCannon`.

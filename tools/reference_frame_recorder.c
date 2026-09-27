@@ -9,6 +9,7 @@
 #include <string.h>
 
 #include "../test/castle_column_fixture.h"
+#include "../test/block_row_column_fixture.h"
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -883,6 +884,7 @@ int main(int argument_count, char **arguments)
     lib_u32 total_frames;
     lib_u32 step_count;
     int warmup_result;
+    int block_scenario;
     const char *script;
     const char *coverage_path;
     struct mysmb_reference_ram_write ram_write;
@@ -1306,6 +1308,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_block_row_column_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u8)(100 + block_scenario);
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t30-column-axe") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 95u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t30-column-chain") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 96u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t30-column-bridge") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 97u; continue; }
@@ -1574,6 +1582,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 101u && t26_fixture <= 132u)
+                    mysmb_block_row_column_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 101u));
                 else if (t26_fixture >= 95u && t26_fixture <= 100u)
                     mysmb_castle_column_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 95u));
