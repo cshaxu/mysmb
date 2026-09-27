@@ -72,3 +72,19 @@ remains the next unadmitted source-order chain.
 ## S1 closure
 
 The registered scope contains only `EndlessRope`, `BalancePlatRope` and `DrawRope`; all three are recorded as actual matches, and no unfinished node remains in M2 T30 S1 custody. The node checker validates closure at **433 / 1,992** using this proposal as the evidence record. No ownership transfer is needed. The next candidate remains unadmitted until it receives an exact source-order receipt.
+
+## T30/S2 admission: coin metatile selector chain
+
+| Field | Record |
+| --- | --- |
+| Entry and exit | `CoinMetatileData -> RowOfCoins` |
+| Exact source-order labels | `CoinMetatileData` (4039), `RowOfCoins` (4042) |
+| Shared owner | `src/game/area.c`, with separately owned `GetRow`/`DrawRow`/`RenderUnderPart` collaborators |
+| Receipt | `transfer-099-t18-s4-to-t30-s2-coin-selector` transfers the two labels from T18 custody |
+| Predecessor / successor | T30/S1 is closed; `C_ObjectRow -> ColObj` is the next unadmitted source-order chain |
+| ROM-logic track | Audit `$99ed-$99f5`: exact `{ $c3,$c2,$c2,$c2 }` table order, `AreaType` in Y, indexed metatile load, and tail jump to `GetRow`. An ordinary row-object parser route exercises the selector without a leaf-PC or stack injection. |
+| Operational track | Add a focused project-owned coin-row smoke, compare parser metatile/length state for all four area types, build x86/x64, link DOS16, run platform purity, and refresh all three target artifacts for implementation P1. |
+
+Baseline: **433 / 1,992**. Both incoming labels are `open`; both are expected
+to match. Maximum result: **435 / 1,992**. `GetRow`, `DrawRow` and
+`RenderUnderPart` are dependencies only and receive no S2 credit.

@@ -2,39 +2,40 @@
 
 ## Current Work
 
-**M2 T30 S1 is closed at 433 / 1,992: `EndlessRope`, `BalancePlatRope`, and `DrawRope` have both required evidence tracks. The next T30 chain is not yet admitted.**
+**M2 T30 S2 is admitted at 433 / 1,992 for `CoinMetatileData -> RowOfCoins`; its maximum closing count is 435 / 1,992.**
 
 The three labels transfer from T18 S4 through the registered exact receipt.
-S1 owns only shared area-object behavior and its ROM-equivalence/operational
-proof; it cannot credit `RenderUnderPart`, platform code or later T30 objects.
+S2 owns only the coin metatile selector table and `AreaType` dispatch in shared
+area-object behavior. It may call but cannot credit `GetRow`, `DrawRow` or
+`RenderUnderPart`, platform code, or later T30 objects.
 
 M2 T24 S2 is the metadata-verified custody receiver for 149 incomplete nodes;
 it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S1 is the latest closed implementation packet; no later T30 S is admitted.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S2 is the sole active implementation packet.**
 
-## M2 T30 S1 Packet
+## M2 T30 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S1, implementation; area-object rope rendering chain. |
+| Identifier Mode | M2 T30 S2, implementation; coin metatile selector chain. |
 | Admission And Approval | Owner-approved source-order continuation; exact receipt from M2 T18 S4. |
-| Objective | Translate and prove `EndlessRope -> DrawRope` in shared C90 game code. |
-| Non-goals | No platform game behavior, `RenderUnderPart` credit, later coin/row objects, synthetic leaf-PC/stack route, or label outside the three-node receipt. |
-| Reference Baseline | 430 / 1,992; three open labels; expected three matches; maximum 433 / 1,992. |
+| Objective | Translate and prove `CoinMetatileData -> RowOfCoins` in shared C90 game code. |
+| Non-goals | No platform game behavior, `GetRow`/`DrawRow`/`RenderUnderPart` credit, later column/block objects, synthetic leaf-PC/stack route, or label outside the two-node receipt. |
+| Reference Baseline | 433 / 1,992; two open labels; expected two matches; maximum 435 / 1,992. |
 | Candidate Proposal | [M2 T30 area object rendering](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared `area.c` owner, project-owned rope/area smoke, local recorder fixtures, ledger/progress records, and three target artifacts per implementation P. |
+| Files And ABI Surface | Shared `area.c` owner, project-owned coin-row/area smoke, local recorder fixtures, ledger/progress records, and three target artifacts per implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and chain-delivery rule. |
-| Verification | ROM `$99d0-$99ec` branch/write/call audit; ordinary parser plus source-shaped object routes; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
-| Expected Markers | Object offset save/restore, area length, X/Y row bounds, `$44` blank metatiles, `$40` rope metatiles, parser cursor and return order. |
+| Verification | ROM `$99ed-$99f5` table/index/tail-call audit; ordinary row-object parser route; focused smoke; x86/x64 builds; DOS16 link; platform purity; three artifacts. |
+| Expected Markers | Four table bytes `$c3,$c2,$c2,$c2`, `AreaType` index, selected accumulator/metatile, row-object parser cursor and `GetRow` handoff. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
 | Reporting Requirements | Record each node's control/data evidence, ROM and operational outcomes, hashes and any exact transfer. |
 | Stop Conditions | Stop on an unmatched table, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
-| Exit Criteria | All three labels have both evidence tracks or each failed label transfers by exact name; tracker and ledger agree. |
+| Exit Criteria | Both labels have both evidence tracks or each failed label transfers by exact name; tracker and ledger agree. |
 | Original Owner Request | Strict original ROM behavior, source-order migration and one shared DOS/Windows game layer. |
-| Similar-Issue Sweep | Audit every `area.c` rope/UnderPart caller and both platform trees for forbidden game logic. |
+| Similar-Issue Sweep | Audit every `area.c` coin selector and both platform trees for forbidden game logic. |
 
 ## Retained M2 T15 summary
 
