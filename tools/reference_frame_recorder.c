@@ -706,6 +706,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 41u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-palette-normal") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 42u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-palette-wrap") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 43u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -882,6 +892,17 @@ int main(int argument_count, char **arguments)
                     driver->machine->ram[0x01ffu] = 0x80u;
                     driver->machine->s = 0xfdu;
                     driver->machine->pc = 0x896au;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture >= 42u && t26_fixture <= 43u) {
+                    driver->machine->ram[0x0009u] = 0u;
+                    driver->machine->ram[0x0300u] = 0u;
+                    driver->machine->ram[0x074eu] = t26_fixture == 42u ? 1u : 3u;
+                    driver->machine->ram[0x06d4u] = t26_fixture == 42u ? 0u : 5u;
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x89e1u;
                     direct_warp_text = LIB_TRUE;
                 }
             }
