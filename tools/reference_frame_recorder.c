@@ -541,6 +541,13 @@ static void mysmb_reference_apply_t28_top_score_fixture(lib_u8 *ram,
     ram[0x07e5u] = 2u;
 }
 
+static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
+{
+    ram[0x0770u] = 0u;
+    ram[0x0772u] = 1u;
+    ram[0x073cu] = 14u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -866,6 +873,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 56u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 57u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -1059,6 +1071,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture == 56u)
                     mysmb_reference_apply_t28_top_score_fixture(
                         driver->machine->ram, 0u);
+                else if (t26_fixture == 57u)
+                    mysmb_reference_apply_t28_title_score_fixture(
+                        driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

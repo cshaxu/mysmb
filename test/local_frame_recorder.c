@@ -441,6 +441,13 @@ static void mysmb_recorder_apply_t28_top_score_fixture(struct mysmb_game *game,
     game->ram[0x07e5U] = 2U;
 }
 
+static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0770U] = 0U;
+    game->ram[0x0772U] = 1U;
+    game->ram[0x073cU] = 14U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -779,6 +786,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 56U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-title-score") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 57U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -887,6 +899,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t28_top_score_fixture(&game, 1U);
             else if (t26_fixture == 56U)
                 mysmb_recorder_apply_t28_top_score_fixture(&game, 0U);
+            else if (t26_fixture == 57U)
+                mysmb_recorder_apply_t28_title_score_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

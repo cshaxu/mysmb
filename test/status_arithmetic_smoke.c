@@ -60,6 +60,23 @@ static int mysmb_status_test_output(void)
         game.ram[0x030fU] != 0U) return 14;
 
     memset(&game, 0, sizeof(game));
+    game.ram[0x0753U] = 1U;
+    game.ram[0x07d7U + 12U] = 7U;
+    game.ram[0x07d7U + 28U] = 4U;
+    game.ram[0x07d7U + 29U] = 2U;
+    if (mysmb_status_queue_score_coin(&game) == 0U || game.ram[0x0300U] != 14U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x6dU ||
+        game.ram[0x0304U] != 4U || game.ram[0x0305U] != 2U ||
+        game.ram[0x0307U] != 0x62U || game.ram[0x0308U] != 6U ||
+        game.ram[0x0309U] != 7U) return 15;
+
+    memset(&game, 0, sizeof(game));
+    if (mysmb_status_queue_title_score(&game) == 0U || game.ram[0x0300U] != 9U ||
+        game.ram[0x0301U] != 0x22U || game.ram[0x0302U] != 0xf0U ||
+        game.ram[0x0303U] != 6U || game.ram[0x0304U] != 0x24U ||
+        game.ram[0x030aU] != 0U) return 16;
+
+    memset(&game, 0, sizeof(game));
     game.ram[0x07f8U] = 1U; game.ram[0x07f9U] = 2U; game.ram[0x07faU] = 3U;
     if (mysmb_status_queue_timer(&game) == 0U || game.ram[0x0300U] != 6U ||
         game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x7aU ||

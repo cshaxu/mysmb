@@ -391,3 +391,22 @@ on Win32 x86 and x64. The shared source also links as the OpenNT DOS16 MZ.
 This P refreshes `mysmb16.exe` `574DD8232D3534180229504BF1686E997178DD65F9CED992AACAD81210528223`,
 `mysmb32.exe` `A16A647B03F2AD9BCF271556032675359DCF5BD403425C8ACC1C9DC67362E7DC`,
 and `mysmb64.exe` `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F9`.
+
+## S7 P8 carry route and title-score selector evidence
+
+The existing natural `FloateyNumbersRoutine -> AddToScore` route now records a
+source-RAM precondition with the score's thousands digit at nine. The original
+`ScoreUpdateData[$06]` addition reaches `CarryOne`; ROM and shared C both
+produce `001000`, clear the modifier range, and emit the same score/coin
+packet. Coverage reaches `StoreNewD` and `CarryOne` in addition to the prior
+output and arithmetic labels. The fixture does not enter a status leaf
+directly and does not change product input.
+
+The title-mode `TitleScreenMode -> ScreenRoutines -> WriteTopScore` route sets
+only the source screen-task selector at an NMI-return boundary. It reaches
+`PrintStatusBarNumbers` through its real caller and produces matching
+`$22f0`, six-digit, zero-suppressed output. The shared status smoke now checks
+all six `StatusBarData`/`StatusBarOffset` selector pairs: Mario score/coins,
+Luigi score/coins, timer and title top score. These two routes complete the
+planned branch matrix; S closure still requires the final cross-width and
+ledger/progress checks.
