@@ -1387,9 +1387,11 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         /* ROM GetAreaObjXPosition -> FindEmptyEnemySlot. The source scans
          * slots 0..4 and deliberately continues with slot 5 if all regular
          * slots are occupied. CastleObject then creates StarFlagObject. */
-        value = 0U;
-        while (value < 5U && game->ram[MYSMB_ENEMY_FLAG + value] != 0U)
-            value++;
+        /* CastleObject calls FindEmptyEnemySlot but intentionally ignores
+         * carry: the source continues with slot five when all five regular
+         * slots are occupied.  VerticalPipe below takes the same primitive's
+         * carry result and branches around its creation path. */
+        (void)mysmb_area_find_empty_enemy_slot(game, &value);
         game->ram[MYSMB_ENEMY_X + value] =
             (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
         game->ram[MYSMB_ENEMY_PAGE + value] =

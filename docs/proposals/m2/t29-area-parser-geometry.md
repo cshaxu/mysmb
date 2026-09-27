@@ -1150,6 +1150,24 @@ remains non-fatal and the produced MZ passed package validation.  P4 artifacts:
 `mysmb32.exe` `515BCA3186FF5FB90482EDAF4A148B7AFC39C21D0BFC18A785FAE7B956695A4E`,
 and `mysmb64.exe` `0855C1143B05A36BBD0CFF642C93623C94DCE8D7A8FB6FA8ECE557FE5E79BF97`.
 
+### S9 P6: shared FindEmptyEnemySlot call boundary
+
+`CastleObject` and `VerticalPipe` now invoke one shared translation of the
+original five-slot scan.  The source distinction is preserved: CastleObject
+ignores its carry result and therefore writes the star flag through slot five
+when every regular slot is occupied; VerticalPipe checks the result and skips
+Piranha creation when full.  This removes the duplicated CastleObject scan in
+`area.c` without granting `FindEmptyEnemySlot` S10 node credit or moving any
+allocation policy into a platform layer.
+
+`mysmb.area-parser-column-smoke` and `mysmb.platform-purity` pass on x86 and
+x64. The shared source links as DOS16 with the established non-fatal
+`OLDNAMES.LIB` warning. Refreshed SHA-256: `mysmb16.exe`
+`7056CC823F231D2DF51B69F0C5E9A4214E852103A61333D691AB62360394618F`,
+`mysmb32.exe` `9242B0EF3E47A1FD184D839D8DCA544D262F4607E90CBBA0CA6E8BF5D616155A`,
+and `mysmb64.exe` `1F47F83DA5ACFD4F29288C4B8F5E748E4FFB2B7630DDFA9F97FC38DDD31F3AE5`.
+This is a call-boundary correction, not S9 closure or node-progress credit.
+
 This is not S9 closure and grants no node-count credit: a controlled original
 ROM recorder route for the vertical-pipe branch, together with the S10
 allocation-boundary receipt, remains required.
