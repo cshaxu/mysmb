@@ -8877,9 +8877,9 @@
     {
       "label": "AreaPalette",
       "line": 1436,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8892,9 +8892,9 @@
     {
       "label": "GetAreaPalette",
       "line": 1439,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8907,9 +8907,9 @@
     {
       "label": "SetVRAMAddr_A",
       "line": 1442,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8922,9 +8922,9 @@
     {
       "label": "NextSubtask",
       "line": 1443,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8937,9 +8937,9 @@
     {
       "label": "BGColorCtrl_Addr",
       "line": 1448,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8952,9 +8952,9 @@
     {
       "label": "BackgroundColors",
       "line": 1451,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8967,9 +8967,9 @@
     {
       "label": "PlayerColors",
       "line": 1455,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8982,9 +8982,9 @@
     {
       "label": "GetBackgroundColor",
       "line": 1460,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8997,9 +8997,9 @@
     {
       "label": "NoBGColor",
       "line": 1465,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9012,9 +9012,9 @@
     {
       "label": "GetPlayerColors",
       "line": 1467,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T18",
@@ -9035,9 +9035,9 @@
     {
       "label": "ChkFiery",
       "line": 1473,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9050,9 +9050,9 @@
     {
       "label": "StartClrGet",
       "line": 1477,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9065,9 +9065,9 @@
     {
       "label": "ClrGetLoop",
       "line": 1479,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9080,9 +9080,9 @@
     {
       "label": "SetBGColor",
       "line": 1489,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9095,9 +9095,9 @@
     {
       "label": "SetVRAMOffset",
       "line": 1502,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9110,9 +9110,9 @@
     {
       "label": "GetAlternatePalette1",
       "line": 1507,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9125,9 +9125,9 @@
     {
       "label": "SetVRAMAddr_B",
       "line": 1512,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -9140,9 +9140,9 @@
     {
       "label": "NoAltPal",
       "line": 1513,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen initialization/palette chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -57407,6 +57407,34 @@
       ],
       "acceptedBy": "Owner-approved source-order T27 admission",
       "evidence": "docs/proposals/m2/screen-status.md"
+    },
+    {
+      "id": "E-T24S2-T27S1-screen-init-palette",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T27 S1",
+      "nodes": [
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal"
+      ],
+      "acceptedBy": "Corrected owner-approved source-chain receipt; direct dependencies cannot remain outside S1.",
+      "evidence": "docs/proposals/m2/screen-status.md"
     }
   ],
   "runs": [
@@ -65904,7 +65932,25 @@
       "scope": [
         "ScreenRoutines",
         "InitScreen",
-        "SetupIntermediate"
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal"
       ],
       "baseline": 100,
       "incomingComplete": [
@@ -66012,12 +66058,30 @@
       "expectedMatches": [
         "ScreenRoutines",
         "InitScreen",
-        "SetupIntermediate"
+        "SetupIntermediate",
+        "AreaPalette",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "BGColorCtrl_Addr",
+        "BackgroundColors",
+        "PlayerColors",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal"
       ],
-      "maximumComplete": 103,
+      "maximumComplete": 121,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/screen-status.md",
-      "state": "active-screen-task-root-chain"
+      "state": "active-screen-init-palette-chain"
     }
   ]
 }
