@@ -44,6 +44,7 @@ T25 is the first future source-order slice after the immutable historical T23/T2
 | S5 | Receive S4 output and close only labels supported by both tracks. | Review evidence/dispositions label by label. | Re-run required gates and publish three artifacts. | Up to 26 |
 | S6 | Re-open the retained title integration after its named dependencies change; first isolate the earliest aligned-ROM divergence before any node credit. | Source-PC and write-order audit at the first divergent NMI. | Controlled x86/x64 recorder comparison and focused title tests. | 0 |
 | S7 | Accept the S6 receipt and credit only the first natural idle prefix: `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, and `RunDemo`; retain every later branch label. | Exact PC reachability, source order, latch clear and GameCore-tail review. | Focused title smoke, 600-frame output replay, x86/x64 trace equality, DOS16 build and purity. | 4 |
+| S8 | Receive the remaining branch labels and credit only the next source-order `ResetTitle` leaf. | PC reachability from the GameCore return-six branch and exact four-write audit. | Focused reset smoke, controlled replay, cross-width builds, DOS16 and purity. | 1 |
 
 No platform adapter may decide menu state, world selection, demo input, timing, score reset, or title transition.
 
@@ -374,3 +375,32 @@ and `mysmb64.exe` `E9850EDA3C75107C07C855560A7CFCE5D516AEC8A31B7EE8F1000B1C25369
 The remaining 22 received labels are not inferred from this route.  They
 transfer to S8 for the next source-order branch admission.  S7 therefore
 closes at **78 / 1,992** with no retained unfinished receiver.
+
+## S8 admission: ResetTitle
+
+S8 receives the 22 uncompleted labels and scopes only `ResetTitle` for this
+admission.  Its incoming baseline is **78 / 1,992**; its expected set is
+`ResetTitle`, so the maximum is **79 / 1,992**.  The branch begins after
+`RunDemo` returns with `GameEngineSubroutine = $06`: original PC `$82c9`
+writes zero to `OperMode`, `OperMode_Task` and `Sprite0HitDetectFlag`, then
+increments `DisableScreenFlag`.  The shared title reset routine is its only
+native owner and both the frame-root tail and title-menu callers must use it.
+
+## S8 closure: ResetTitle
+
+The natural no-input title demo route, warmed for 1,200 frames and then
+recorded for 600, reaches original PC `$82c9` once.  The source clears
+`OperMode`, `OperMode_Task` and `Sprite0HitDetectFlag`, then increments
+`DisableScreenFlag`; the shared native reset routine has exactly those writes.
+The x86 and x64 native records are byte-identical and each has zero differences
+against the ROM in work RAM `$0300-$07ff`, CIRAM, palette, visible OAM, audio
+and PPU scalars for all 600 samples.  Focused title smoke and platform purity
+pass; the shared code builds as DOS16 and both Win32 products pass self-test.
+Artifacts: `mysmb16.exe`
+`97B68F6134905356CCCA9EDBDABAD441FF5CF3B772A19BA38E8FAD5C21FC5970`,
+`mysmb32.exe` `F82B44FDB869643FAEA266792988A9E6791DB7BAB348B7B133C07D2F0163CCF1`,
+and `mysmb64.exe` `68EC5D94C471BE199102A3E133A2C8D320D13866A876030D07D02E2BC467AE0F`.
+
+`ResetTitle` alone completes.  The other 21 labels require their own exact
+branch packets and transfer before S8 closure.  S8 therefore closes at
+**79 / 1,992**.

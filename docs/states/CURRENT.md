@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S7 Packet
+## M2 T25 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S7, implementation; first source-order title-idle prefix credit. |
-| Admission And Approval | Owner-approved source-order M2 plan; S6 repaired the shared title bootstrap and same-frame RunDemo integration with zero credit, and transfers all 26 retained labels to S7. |
-| Objective | Independently establish and credit the first four source-order title-idle nodes: TitleScreenMode, GameMenuRoutine, NullJoypad and RunDemo. |
-| Non-goals | The other 22 retained labels, new gameplay approximation, platform gameplay logic, player/OAM repair, or credit without both a source-PC route and an operational replay. |
-| Reference Baseline | 74 / 1,992 complete; 4 scoped labels; expected matches TitleScreenMode, GameMenuRoutine, NullJoypad and RunDemo; maximum 78 / 1,992. |
+| Identifier Mode | M2 T25 S8, implementation; next source-order ResetTitle branch. |
+| Admission And Approval | Owner-approved source-order M2 plan; S7 closed its four-node idle prefix and transferred the remaining title/menu/demo labels to S8. |
+| Objective | Independently establish and credit `ResetTitle`, the next label after the completed `RunDemo` handoff. |
+| Non-goals | The other 21 retained labels, new gameplay approximation, platform gameplay logic, or credit without both a source-PC branch and operational replay. |
+| Reference Baseline | 78 / 1,992 complete; 1 scoped label; expected match ResetTitle; maximum 79 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original-ROM PC coverage for the four labels, source/control-write audit, focused title tests, no-input frame replay, x86/x64 trace equality, DOS16 build and purity gate. |
-| Expected Markers | ROM PCs $8231, $8245, $82bb and $82c0 occur on the natural idle title route; native and ROM output agree through the recorded route. |
+| Verification | Original-ROM PC coverage for the `GameEngineSubroutine == 6` tail, source write-order audit, focused reset regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | ROM PC $82c9 executes after $82c0 when the game-core return state equals six; it clears mode/task/sprite-zero and increments DisableScreenFlag. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record per-label source-PC, C-owner/control-flow, route comparison and all 22 retained-node dispositions. |
+| Reporting Requirements | Record the source PC, four RAM writes, C-owner/control-flow and all 21 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | Only the four expected labels are completed when their branch and route proofs agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | ResetTitle is completed only when its branch and route proofs agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check that title task-zero dispatch, task-three menu dispatch, joypad clearing, and the GameCore tail are each still shared game ownership with no platform references. |
+| Similar-Issue Sweep | Check every ResetTitle caller in title_modes.c and frame_root.c for the same shared routine and verify no platform source mutates its four RAM destinations. |
 
 ## Recent M4 Closures
 
