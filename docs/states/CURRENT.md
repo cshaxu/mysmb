@@ -43,7 +43,7 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S23 Packet
+## Prior M2 T25 S25 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -64,6 +64,28 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Exit Criteria | The chain is completed only when both tables, timer branches, action write/decrement and terminal carry return agree; no unrelated node is credited. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
+
+## M2 T27 S1 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T27 S1, implementation; screen-task root chain. |
+| Admission And Approval | Owner approved source-order continuation and chain-based S delivery; T24 S2 transferred the exact chain. |
+| Objective | Establish ROM-equivalent `ScreenRoutines -> InitScreen -> SetupIntermediate` in the shared game owner. |
+| Non-goals | No palette/status/text successor node, host UI rule, platform gameplay logic, unrelated repair or credit without both evidence tracks. |
+| Reference Baseline | 100 / 1,992 complete; scope `ScreenRoutines`, `InitScreen`, `SetupIntermediate`, all incoming open; expected three matches; maximum 103 / 1,992. |
+| Candidate Proposal | [T27 screen/HUD/text plan](../proposals/m2/screen-status.md). |
+| Files And ABI Surface | Shared screen/status game owner, project tests/recorders, ledger and three target artifacts for implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
+| Verification | ROM source comparison of `$849a-$84cb`; controlled title-to-area-entry ROM route; focused screen/status and title smoke; x86/x64 trace comparison, DOS16 link and platform-purity gate. |
+| Expected Markers | Source task-vector load, `ScreenRoutineTask` increment, intermediate/area branch, `OperMode_Task` increment and carry return. |
+| Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
+| Delivery Profile | One contiguous chain; its individual labels remain separately accounted in the inventory and ledger. |
+| Reporting Requirements | Report each node's control/read/write comparison, operational route result, completed/deferred labels and exact before/after count. |
+| Stop Conditions | Stop on nonmatching source branch, cross-owner dependency, trace alignment error, source-policy breach or platform gameplay logic. |
+| Exit Criteria | All three labels have exact branch/state evidence and a source-reachable ROM route; remaining T27 nodes retain T24 S2 custody until their own admission. |
+| Original Owner Request | Execute original nodes in source order with strict parity, no platform gameplay logic, and chain-level delivery rather than one-label paperwork. |
+| Similar-Issue Sweep | Review all game/platform sources for screen-task decisions; record every production hit and defer non-S1 labels to their planned T27 chains. |
 
 ## Recent M4 Closures
 

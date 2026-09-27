@@ -1790,6 +1790,28 @@
           "receipt": "Pre-accepted successor after M2 T26 S6 for an independent two-label route-equivalence decision."
         }
       ]
+    },
+    {
+      "id": "M2 T27",
+      "evidence": [
+        "docs/proposals/m2/screen-status.md",
+        "docs/proposals/m2/t21-t49-source-order-recovery.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M2 T27 S1",
+          "evidence": [
+            "docs/proposals/m2/screen-status.md"
+          ],
+          "recordKinds": [
+            "owner-approved-source-order",
+            "chain-based-implementation"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Owner-approved T27 S1 receipt from M2 T24 S2 custody; exact three-node screen-root chain."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -4040,7 +4062,7 @@
     {
       "id": "screen-status",
       "proposal": "docs/proposals/m2/screen-status.md",
-      "reason": "Candidate has no allocated implementation T/S yet."
+      "reason": "T27 S1 is admitted for the screen-task root; later T27 chains remain queued and their nodes retain T24 S2 custody until individual admission."
     },
     {
       "id": "game-dispatcher",
@@ -8778,9 +8800,9 @@
     {
       "label": "ScreenRoutines",
       "line": 1386,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T15",
@@ -8825,9 +8847,9 @@
     {
       "label": "InitScreen",
       "line": 1408,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -8840,9 +8862,9 @@
     {
       "label": "SetupIntermediate",
       "line": 1418,
-      "receiver": "M2 T24 S2",
-      "receivingBasis": "explicit custody pending future admission; existing source-slice verification S; descendants/data included, no conformance inference",
-      "futurePackage": "screen-status",
+      "receiver": "M2 T27 S1",
+      "receivingBasis": "M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody.",
+      "futurePackage": null,
       "history": [
         {
           "task": "M2 T24",
@@ -57372,6 +57394,19 @@
       ],
       "acceptedBy": "S25 accepts the complete retained title-idle/demo chain after S24.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "E-T24S2-T27S1-screen-root",
+      "type": "transfer",
+      "from": "M2 T24 S2",
+      "to": "M2 T27 S1",
+      "nodes": [
+        "ScreenRoutines",
+        "InitScreen",
+        "SetupIntermediate"
+      ],
+      "acceptedBy": "Owner-approved source-order T27 admission",
+      "evidence": "docs/proposals/m2/screen-status.md"
     }
   ],
   "runs": [
@@ -65862,6 +65897,127 @@
       ],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
       "state": "closed-complete-title-idle-demo-chain"
+    },
+    {
+      "subtask": "M2 T27 S1",
+      "kind": "implementation",
+      "scope": [
+        "ScreenRoutines",
+        "InitScreen",
+        "SetupIntermediate"
+      ],
+      "baseline": 100,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "ScreenRoutines",
+        "InitScreen",
+        "SetupIntermediate"
+      ],
+      "maximumComplete": 103,
+      "actualMatches": [],
+      "evidence": "docs/proposals/m2/screen-status.md",
+      "state": "active-screen-task-root-chain"
     }
   ]
 }
