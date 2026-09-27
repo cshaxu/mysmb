@@ -22599,8 +22599,8 @@
     {
       "label": "ProcessWhirlpools",
       "line": 6519,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22622,8 +22622,8 @@
     {
       "label": "WhLoop",
       "line": 6526,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22637,8 +22637,8 @@
     {
       "label": "NextWh",
       "line": 6546,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22652,8 +22652,8 @@
     {
       "label": "ExitWh",
       "line": 6548,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22667,8 +22667,8 @@
     {
       "label": "WhirlpoolActivate",
       "line": 6550,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22690,8 +22690,8 @@
     {
       "label": "LeftWh",
       "line": 6577,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22705,8 +22705,8 @@
     {
       "label": "SetPWh",
       "line": 6586,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22720,8 +22720,8 @@
     {
       "label": "WhPull",
       "line": 6587,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22880,8 +22880,8 @@
     {
       "label": "Jumpspring_Y_PosData",
       "line": 6650,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22895,8 +22895,8 @@
     {
       "label": "JumpspringHandler",
       "line": 6653,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22918,8 +22918,8 @@
     {
       "label": "DownJSpr",
       "line": 6667,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22933,8 +22933,8 @@
     {
       "label": "PosJSpr",
       "line": 6669,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22948,8 +22948,8 @@
     {
       "label": "BounceJS",
       "line": 6682,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22963,8 +22963,8 @@
     {
       "label": "DrawJSpr",
       "line": 6688,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22978,8 +22978,8 @@
     {
       "label": "ExJSpring",
       "line": 6698,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -22993,8 +22993,8 @@
     {
       "label": "Setup_Vine",
       "line": 6702,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23016,8 +23016,8 @@
     {
       "label": "NextVO",
       "line": 6716,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23031,8 +23031,8 @@
     {
       "label": "VineHeightData",
       "line": 6727,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23046,8 +23046,8 @@
     {
       "label": "VineObjectHandler",
       "line": 6730,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23077,8 +23077,8 @@
     {
       "label": "RunVSubs",
       "line": 6746,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23092,8 +23092,8 @@
     {
       "label": "VDrawLoop",
       "line": 6752,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23107,8 +23107,8 @@
     {
       "label": "KillVine",
       "line": 6760,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23122,8 +23122,8 @@
     {
       "label": "WrCMTile",
       "line": 6766,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23137,8 +23137,8 @@
     {
       "label": "ExitVH",
       "line": 6780,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23152,8 +23152,8 @@
     {
       "label": "CannonBitmasks",
       "line": 6785,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23167,8 +23167,8 @@
     {
       "label": "ProcessCannons",
       "line": 6788,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23190,8 +23190,8 @@
     {
       "label": "ThreeSChk",
       "line": 6792,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23205,8 +23205,8 @@
     {
       "label": "FireCannon",
       "line": 6809,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23220,8 +23220,8 @@
     {
       "label": "Chk_BB",
       "line": 6832,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23235,8 +23235,8 @@
     {
       "label": "Next3Slt",
       "line": 6840,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23250,8 +23250,8 @@
     {
       "label": "ExCannon",
       "line": 6842,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23265,8 +23265,8 @@
     {
       "label": "BulletBillXSpdData",
       "line": 6846,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23280,8 +23280,8 @@
     {
       "label": "BulletBillHandler",
       "line": 6849,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23311,8 +23311,8 @@
     {
       "label": "SetupBB",
       "line": 6862,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23326,8 +23326,8 @@
     {
       "label": "ChkDSte",
       "line": 6876,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23341,8 +23341,8 @@
     {
       "label": "BBFly",
       "line": 6880,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23356,8 +23356,8 @@
     {
       "label": "RunBBSubs",
       "line": 6881,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23371,8 +23371,8 @@
     {
       "label": "KillBB",
       "line": 6886,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23386,8 +23386,8 @@
     {
       "label": "HammerEnemyOfsData",
       "line": 6891,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23401,8 +23401,8 @@
     {
       "label": "HammerXSpdData",
       "line": 6895,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23416,8 +23416,8 @@
     {
       "label": "SpawnHammerObj",
       "line": 6898,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23431,8 +23431,8 @@
     {
       "label": "SetMOfs",
       "line": 6904,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23446,8 +23446,8 @@
     {
       "label": "NoHammer",
       "line": 6919,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23461,8 +23461,8 @@
     {
       "label": "ProcHammerObj",
       "line": 6928,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23484,8 +23484,8 @@
     {
       "label": "SetHSpd",
       "line": 6952,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23499,8 +23499,8 @@
     {
       "label": "SetHPos",
       "line": 6962,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23514,8 +23514,8 @@
     {
       "label": "RunAllH",
       "line": 6977,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23529,8 +23529,8 @@
     {
       "label": "RunHSubs",
       "line": 6978,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23544,8 +23544,8 @@
     {
       "label": "CoinBlock",
       "line": 6988,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23567,8 +23567,8 @@
     {
       "label": "SetupJumpCoin",
       "line": 7000,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23614,8 +23614,8 @@
     {
       "label": "JCoinC",
       "line": 7014,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23661,8 +23661,8 @@
     {
       "label": "FindEmptyMiscSlot",
       "line": 7025,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23692,8 +23692,8 @@
     {
       "label": "FMiscLoop",
       "line": 7027,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23707,8 +23707,8 @@
     {
       "label": "UseMiscS",
       "line": 7033,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23722,8 +23722,8 @@
     {
       "label": "MiscObjectsCore",
       "line": 7038,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23769,8 +23769,8 @@
     {
       "label": "MiscLoop",
       "line": 7040,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23784,8 +23784,8 @@
     {
       "label": "ProcJumpCoin",
       "line": 7053,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23815,8 +23815,8 @@
     {
       "label": "JCoinRun",
       "line": 7071,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23830,8 +23830,8 @@
     {
       "label": "RunJCSubs",
       "line": 7088,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23845,8 +23845,8 @@
     {
       "label": "MiscLoopBack",
       "line": 7093,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23860,8 +23860,8 @@
     {
       "label": "CoinTallyOffsets",
       "line": 7100,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23875,8 +23875,8 @@
     {
       "label": "ScoreOffsets",
       "line": 7103,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23890,8 +23890,8 @@
     {
       "label": "StatusBarNybbles",
       "line": 7106,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23905,8 +23905,8 @@
     {
       "label": "GiveOneCoin",
       "line": 7109,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23920,8 +23920,8 @@
     {
       "label": "CoinPoints",
       "line": 7125,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23935,8 +23935,8 @@
     {
       "label": "AddToScore",
       "line": 7129,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23950,8 +23950,8 @@
     {
       "label": "GetSBNybbles",
       "line": 7134,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23965,8 +23965,8 @@
     {
       "label": "UpdateNumber",
       "line": 7138,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23980,8 +23980,8 @@
     {
       "label": "NoZSup",
       "line": 7145,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -23995,8 +23995,8 @@
     {
       "label": "SetupPowerUp",
       "line": 7150,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24018,8 +24018,8 @@
     {
       "label": "PwrUpJmp",
       "line": 7163,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24033,8 +24033,8 @@
     {
       "label": "StrType",
       "line": 7175,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24048,8 +24048,8 @@
     {
       "label": "PutBehind",
       "line": 7176,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24063,8 +24063,8 @@
     {
       "label": "PowerUpObjHandler",
       "line": 7184,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24102,8 +24102,8 @@
     {
       "label": "ShroomM",
       "line": 7202,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24117,8 +24117,8 @@
     {
       "label": "GrowThePowerUp",
       "line": 7206,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24140,8 +24140,8 @@
     {
       "label": "ChkPUSte",
       "line": 7223,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24155,8 +24155,8 @@
     {
       "label": "RunPUSubs",
       "line": 7226,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24186,8 +24186,8 @@
     {
       "label": "ExitPUp",
       "line": 7232,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24201,8 +24201,8 @@
     {
       "label": "BlockYPosAdderData",
       "line": 7241,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24216,8 +24216,8 @@
     {
       "label": "PlayerHeadCollision",
       "line": 7244,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24255,8 +24255,8 @@
     {
       "label": "DBlockSte",
       "line": 7251,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24270,8 +24270,8 @@
     {
       "label": "ChkBrick",
       "line": 7265,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24285,8 +24285,8 @@
     {
       "label": "StartBTmr",
       "line": 7274,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24300,8 +24300,8 @@
     {
       "label": "ContBTmr",
       "line": 7279,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24315,8 +24315,8 @@
     {
       "label": "PutOldMT",
       "line": 7282,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24330,8 +24330,8 @@
     {
       "label": "PutMTileB",
       "line": 7283,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24345,8 +24345,8 @@
     {
       "label": "SmallBP",
       "line": 7297,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24360,8 +24360,8 @@
     {
       "label": "BigBP",
       "line": 7298,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24375,8 +24375,8 @@
     {
       "label": "Unbreak",
       "line": 7308,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24390,8 +24390,8 @@
     {
       "label": "InvOBit",
       "line": 7309,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24405,8 +24405,8 @@
     {
       "label": "InitBlock_XY_Pos",
       "line": 7316,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24436,8 +24436,8 @@
     {
       "label": "BumpBlock",
       "line": 7332,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24459,8 +24459,8 @@
     {
       "label": "BlockCode",
       "line": 7349,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24490,8 +24490,8 @@
     {
       "label": "MushFlowerBlock",
       "line": 7363,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24505,8 +24505,8 @@
     {
       "label": "StarBlock",
       "line": 7367,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24520,8 +24520,8 @@
     {
       "label": "ExtraLifeMushBlock",
       "line": 7371,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24535,8 +24535,8 @@
     {
       "label": "VineBlock",
       "line": 7376,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24550,8 +24550,8 @@
     {
       "label": "ExitBlockChk",
       "line": 7381,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24565,8 +24565,8 @@
     {
       "label": "BrickQBlockMetatiles",
       "line": 7386,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24604,8 +24604,8 @@
     {
       "label": "BlockBumpedChk",
       "line": 7393,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24643,8 +24643,8 @@
     {
       "label": "BumpChkLoop",
       "line": 7395,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24658,8 +24658,8 @@
     {
       "label": "MatchBump",
       "line": 7400,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24673,8 +24673,8 @@
     {
       "label": "BrickShatter",
       "line": 7404,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24696,8 +24696,8 @@
     {
       "label": "CheckTopOfBlock",
       "line": 7420,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24719,8 +24719,8 @@
     {
       "label": "TopEx",
       "line": 7437,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24734,8 +24734,8 @@
     {
       "label": "SpawnBrickChunks",
       "line": 7441,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24757,8 +24757,8 @@
     {
       "label": "BlockObjectsCore",
       "line": 7468,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24828,8 +24828,8 @@
     {
       "label": "ChkTop",
       "line": 7500,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24843,8 +24843,8 @@
     {
       "label": "BouncingBlockHandler",
       "line": 7506,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24866,8 +24866,8 @@
     {
       "label": "KillBlock",
       "line": 7519,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24881,8 +24881,8 @@
     {
       "label": "UpdSte",
       "line": 7520,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "existing source-slice verification S; descendants/data included, no conformance inference",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -24896,8 +24896,8 @@
     {
       "label": "BlockObjMT_Updater",
       "line": 7527,
-      "receiver": "M2 T22 S5",
-      "receivingBasis": "T22 S1/P2 label-owner map or confirmed missing scheduler obligation",
+      "receiver": "M2 T24 S2",
+      "receivingBasis": "Owner-authorized M2 T24 S2 custody after completed M2 T22 S5 flagpole chain; future source-order T35--T37 admission required before implementation.",
       "futurePackage": null,
       "history": [
         {
@@ -58490,6 +58490,129 @@
       ],
       "acceptedBy": "Owner-approved source-order continuation after T29 S9 closure.",
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md"
+    },
+    {
+      "id": "transfer-097-t22-s5-to-t24-s2-legacy-object-residual",
+      "type": "transfer",
+      "from": "M2 T22 S5",
+      "to": "M2 T24 S2",
+      "nodes": [
+        "ProcessWhirlpools",
+        "WhLoop",
+        "NextWh",
+        "ExitWh",
+        "WhirlpoolActivate",
+        "LeftWh",
+        "SetPWh",
+        "WhPull",
+        "Jumpspring_Y_PosData",
+        "JumpspringHandler",
+        "DownJSpr",
+        "PosJSpr",
+        "BounceJS",
+        "DrawJSpr",
+        "ExJSpring",
+        "Setup_Vine",
+        "NextVO",
+        "VineHeightData",
+        "VineObjectHandler",
+        "RunVSubs",
+        "VDrawLoop",
+        "KillVine",
+        "WrCMTile",
+        "ExitVH",
+        "CannonBitmasks",
+        "ProcessCannons",
+        "ThreeSChk",
+        "FireCannon",
+        "Chk_BB",
+        "Next3Slt",
+        "ExCannon",
+        "BulletBillXSpdData",
+        "BulletBillHandler",
+        "SetupBB",
+        "ChkDSte",
+        "BBFly",
+        "RunBBSubs",
+        "KillBB",
+        "HammerEnemyOfsData",
+        "HammerXSpdData",
+        "SpawnHammerObj",
+        "SetMOfs",
+        "NoHammer",
+        "ProcHammerObj",
+        "SetHSpd",
+        "SetHPos",
+        "RunAllH",
+        "RunHSubs",
+        "CoinBlock",
+        "SetupJumpCoin",
+        "JCoinC",
+        "FindEmptyMiscSlot",
+        "FMiscLoop",
+        "UseMiscS",
+        "MiscObjectsCore",
+        "MiscLoop",
+        "ProcJumpCoin",
+        "JCoinRun",
+        "RunJCSubs",
+        "MiscLoopBack",
+        "CoinTallyOffsets",
+        "ScoreOffsets",
+        "StatusBarNybbles",
+        "GiveOneCoin",
+        "CoinPoints",
+        "AddToScore",
+        "GetSBNybbles",
+        "UpdateNumber",
+        "NoZSup",
+        "SetupPowerUp",
+        "PwrUpJmp",
+        "StrType",
+        "PutBehind",
+        "PowerUpObjHandler",
+        "ShroomM",
+        "GrowThePowerUp",
+        "ChkPUSte",
+        "RunPUSubs",
+        "ExitPUp",
+        "BlockYPosAdderData",
+        "PlayerHeadCollision",
+        "DBlockSte",
+        "ChkBrick",
+        "StartBTmr",
+        "ContBTmr",
+        "PutOldMT",
+        "PutMTileB",
+        "SmallBP",
+        "BigBP",
+        "Unbreak",
+        "InvOBit",
+        "InitBlock_XY_Pos",
+        "BumpBlock",
+        "BlockCode",
+        "MushFlowerBlock",
+        "StarBlock",
+        "ExtraLifeMushBlock",
+        "VineBlock",
+        "ExitBlockChk",
+        "BrickQBlockMetatiles",
+        "BlockBumpedChk",
+        "BumpChkLoop",
+        "MatchBump",
+        "BrickShatter",
+        "CheckTopOfBlock",
+        "TopEx",
+        "SpawnBrickChunks",
+        "BlockObjectsCore",
+        "ChkTop",
+        "BouncingBlockHandler",
+        "KillBlock",
+        "UpdSte",
+        "BlockObjMT_Updater"
+      ],
+      "acceptedBy": "Owner-authorized M2 T24 S2 custody receives the obsolete T22 S5 object backlog until exact source-order T35--T37 chain admissions accept each label.",
+      "evidence": "docs/proposals/m2/blocks-items-misc.md"
     }
   ],
   "runs": [

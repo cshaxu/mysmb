@@ -2,15 +2,15 @@
 
 ## Current Work
 
-**M2 T22 S5, the eight-node flagpole setup and slide chain, is admitted at 422 / 1,992 and owns `FlagpoleObject -> ExitFlagP`; its maximum closing count is 430 / 1,992.**
+**M2 T22 S5 closed at 430 / 1,992 after completing `FlagpoleObject -> ExitFlagP`.**
 
-Its eight scoped labels now have recorded ROM-match and operational evidence,
-bringing the canonical conformance count to **430 / 1,992**.  S5 remains open
-while the legacy 113-node custody is transferred by exact name to accepted
-source-order successors; that retained custody is not part of the completed
-flagpole chain.
+All eight scoped labels have recorded ROM-match and operational evidence.  Its
+unrelated 113-node historical backlog transferred by exact name to the accepted
+`M2 T24 S2` custody receiver; it cannot enter T22's NMI-only successor slots.
+No implementation packet is active until the next source-order admission.
 
-M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated nodes; it is not this implementation packet and cannot preempt M2 T22 S5.
+M2 T24 S2 is the metadata-verified custody receiver for 149 incomplete nodes;
+it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
@@ -33,9 +33,10 @@ Audit result: **3 / 1,992** complete. The [full census](../etc/architecture/m2-t
 
 S2 ledger deliverable: [all-node T/S ledger](NODE_TASK_LEDGER.md) registers
 1,992 unique receivers, 40 known T records and 53 known/planned S records.
-1,854 nodes are accepted by existing slice closure subtasks; 138 remain in
-T24 S2 custody (40 closed-root, 67 screen/status, 31 dispatcher) until future
-admission and accepted transfer. S2 remains open for that custody, even though
+At the original ledger snapshot, 1,854 nodes were accepted by existing slice
+closure subtasks and 138 entered T24 S2 custody (40 closed-root, 67
+screen/status, 31 dispatcher). Later receipts and transfers are authoritative
+in the ledger; S2 remains open for its current custody, even though
 the ledger/tooling deliverable is verified. Seventeen validation scenarios,
 including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 

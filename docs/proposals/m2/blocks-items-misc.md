@@ -210,3 +210,22 @@ They are not implied by this completed eight-node chain and must receive
 accepted source-order successor chains before S5 can close.  The P2 DOS16,
 x86 and x64 artifacts above remain the current three-target delivery evidence;
 this receipt changes no production or generated code.
+
+## S5/P4: closure and legacy-custody return
+
+S5 completed its sole admitted implementation chain with all eight forecast
+labels matched.  Its remaining 113 received labels are not contiguous with
+that chain: they cover whirlpool, jumpspring, vine, cannon, hammer, coin/misc,
+power-up, head-hit and block-object families.  They transfer by exact name in
+`transfer-097-t22-s5-to-t24-s2-legacy-object-residual` to the already accepted
+`M2 T24 S2` coordinator custody.  That receiver performs no gameplay work;
+the [source-order recovery plan](t21-t49-source-order-recovery.md) remains the
+authority for later T35--T37 chain admissions and receipts.
+
+This return prevents the obsolete historical T22 S5 backlog from assigning
+object work to T22's later NMI-only S slots.  The closure records actual
+matches `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`,
+`FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, and `ExitFlagP` at
+**430 / 1,992**.  P1 supplies the ROM-logic and operational evidence; P2
+supplies the current three-target artifacts; P3 supplies the canonical tracker
+receipt.  P4 changes only ownership metadata and creates no new binary.
