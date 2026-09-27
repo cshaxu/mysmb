@@ -1,5 +1,6 @@
 #include "game/area.h"
 #include "game/objects.h"
+#include "game/status.h"
 
 enum {
     MYSMB_AREA_SCREEN_LEFT_PAGE = 0x071aU,
@@ -342,149 +343,19 @@ mysmb_u8 mysmb_area_queue_top_status_line(struct mysmb_game *game)
     return mysmb_area_queue_game_text(game, 0U);
 }
 
-/* Translation of ROM WriteBottomStatusLine plus PrintStatusBarNumbers. */
+/* StatusBarData through NoTopSc are owned by status.c; these retained area
+ * entry points preserve their source callers without duplicating the chain. */
 mysmb_u8 mysmb_area_queue_bottom_status_line(struct mysmb_game *game)
-{
-    mysmb_u8 offset;
-    mysmb_u8 index;
-    mysmb_u8 player;
-    mysmb_u8 score_offset;
+{ return mysmb_status_queue_bottom_line(game); }
 
-    if (game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] != 0U) return 0U;
-    player = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PLAYER] & 1U);
-    offset = 0U;
-    /* ROM GetSBNybbles calls PrintStatusBarNumbers with the low nybble
-     * first, so the coin command precedes the score command in Buffer1. */
-    game->ram[0x0301U + offset++] = 0x20U;
-    game->ram[0x0301U + offset++] = 0x6dU;
-    game->ram[0x0301U + offset++] = 2U;
-    /* StatusBarOffset selector 3/4 points at DisplayDigits 22/28. */
-    index = (mysmb_u8)(player != 0U ? 28U : 22U);
-    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
-    game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index];
-    game->ram[0x0301U + offset++] = 0x20U;
-    game->ram[0x0301U + offset++] = 0x62U;
-    game->ram[0x0301U + offset++] = 6U;
-    score_offset = offset;
-    index = (mysmb_u8)(player != 0U ? 12U : 6U);
-    while (index < (mysmb_u8)(player != 0U ? 18U : 12U)) {
-        game->ram[0x0301U + offset++] = game->ram[MYSMB_AREA_DISPLAY_DIGITS + index++];
-    }
-    /* GetSBNybbles reaches UpdateNumber before this route.  Its leading
-     * score zero is emitted as blank tile $24 in both initial and live
-     * status-bar output. */
-    if (game->ram[0x0301U + score_offset] == 0U) {
-        game->ram[0x0301U + score_offset] = 0x24U;
-    }
-    game->ram[0x0301U + offset++] = 0x20U;
-    game->ram[0x0301U + offset++] = 0x73U;
-    game->ram[0x0301U + offset++] = 3U;
-    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[MYSMB_AREA_WORLD_NUMBER] + 1U);
-    game->ram[0x0301U + offset++] = 0x28U;
-    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[MYSMB_AREA_LEVEL_NUMBER] + 1U);
-    game->ram[0x0301U + offset] = 0U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
-    return 1U;
-}
-
-/* Translation of RunGameTimer's PrintStatusBarNumbers($a4).  Unlike the
- * initial screen writers, the ROM appends this command to any pending NMI
- * list, then lets the following NMI consume the whole list. */
 mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game)
-{
-    mysmb_u8 offset;
+{ return mysmb_status_queue_timer(game); }
 
-    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
-    if (offset > 0xf8U) return 0U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x20U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x7aU;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 3U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 1U];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-        game->ram[MYSMB_AREA_GAME_TIMER_DISPLAY + 2U];
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
-    return 1U;
-}
-
-/* Translation of ROM $8ebe-$8ef7 PrintStatusBarNumbers, invoked through
- * StatusBarNybbles $02/$13 by GiveOneCoin and AddToScore.  Unlike the
- * initial status writer, this appends to a command list already waiting for
- * NMI.  The source changes the first score digit to blank after emitting it
- * when it is zero; retain that byte-level rule in the queued command. */
 mysmb_u8 mysmb_area_queue_score_coin_status(struct mysmb_game *game)
-{
-    static const mysmb_u8 status_low[6] = {
-        0xf0U, 0x62U, 0x62U, 0x6dU, 0x6dU, 0x7aU
-    };
-    static const mysmb_u8 status_length[6] = {
-        6U, 6U, 6U, 2U, 2U, 3U
-    };
-    static const mysmb_u8 status_offset[6] = {
-        6U, 12U, 18U, 24U, 30U, 36U
-    };
-    mysmb_u8 player;
-    mysmb_u8 coin_selector;
-    mysmb_u8 score_selector;
-    mysmb_u8 selector;
-    mysmb_u8 offset;
-    mysmb_u8 digit;
-    mysmb_u8 index;
+{ return mysmb_status_queue_score_coin(game); }
 
-    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
-    if (offset > 0xf1U) return 0U;
-    player = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PLAYER] & 1U);
-    coin_selector = player != 0U ? 4U : 3U;
-    score_selector = player != 0U ? 2U : 1U;
-    for (index = 0U; index < 2U; ++index) {
-        selector = index == 0U ? coin_selector : score_selector;
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x20U;
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-            status_low[selector];
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-            status_length[selector];
-        digit = (mysmb_u8)(status_offset[selector] - status_length[selector]);
-        while (digit < status_offset[selector]) {
-            game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-                game->ram[(mysmb_u16)(MYSMB_AREA_DISPLAY_DIGITS + digit)];
-            digit++;
-        }
-    }
-    if (game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] == 0U) {
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] = 0x24U;
-    }
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
-    return 1U;
-}
-
-/* ROM PrintStatusBarNumbers through WriteTopScore.  Title status uses the
- * dedicated $22f0 destination and the six persistent TopScoreDisplay digits.
- * The leading zero is rendered as the source blank tile. */
 mysmb_u8 mysmb_area_queue_title_score(struct mysmb_game *game)
-{
-    mysmb_u8 offset;
-    mysmb_u8 index;
-
-    offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
-    if (offset > 0xf6U) return 0U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0x22U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 0xf0U;
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] = 6U;
-    for (index = 0U; index < 6U; ++index) {
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset++)] =
-            game->ram[(mysmb_u16)(MYSMB_AREA_DISPLAY_DIGITS + index)];
-    }
-    if (game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] == 0U) {
-        game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset - 6U)] = 0x24U;
-    }
-    game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + offset)] = 0U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET] = offset;
-    return 1U;
-}
+{ return mysmb_status_queue_title_score(game); }
 
 /* Translation of WriteGameText.  The selector chooses a ROM-authored command
  * stream; mutable numbers occupy the exact byte offsets patched by the ROM. */

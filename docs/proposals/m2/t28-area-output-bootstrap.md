@@ -290,3 +290,17 @@ x86/x64 builds, the OpenNT DOS16 link, platform-purity gate and all three
 packaged executable artifacts. Windows and DOS may only submit the frame; no
 platform source may calculate digits, score, timer, status text or top-score
 state.
+
+## S7 P1 shared-owner checkpoint
+
+`src/game/status.c` now owns the portable status-output primitives and is the
+only new implementation point for the admitted chain. Existing `area.c`
+entry points remain thin shared-game caller adapters while source-call-site
+migration is audited; no platform file changed. This checkpoint deliberately
+records **no node completion credit**: the arithmetic and top-score callers
+remain on their prior local implementations until each source branch is
+compared against an original-ROM route.
+
+The x86 and x64 focused status, top-score, platform-purity and Win32 self
+tests pass. The same source links into the OpenNT DOS16 target. Packaging
+refreshes all three required executable artifacts for this implementation P.
