@@ -35,7 +35,8 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T25 S10 | 1 | `ChkSelect` |
 | M2 T25 S11 | 1 | `ChkWorldSel` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
-| M2 T25 S13 | 17 | `WSelectBufferTemplate`, `IncWorldSel`, `UpdateShroom`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
+| M2 T25 S13 | 1 | `IncWorldSel` |
+| M2 T25 S14 | 16 | `WSelectBufferTemplate`, `UpdateShroom`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
 | M2 T25 S7 | 4 | `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, `RunDemo` |
 | M2 T25 S8 | 1 | `ResetTitle` |
 | M2 T25 S9 | 1 | `StartGame` |
@@ -103,31 +104,31 @@ transfer existing ownership or allocate a numeric T.
 | 969 | `MoveSpritesOffscreen` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 972 | `SprInitLoop` | M2 T22 S26 | existing closure backlog; T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 982 | `TitleScreenMode` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 993 | `WSelectBufferTemplate` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 993 | `WSelectBufferTemplate` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 996 | `GameMenuRoutine` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1004 | `StartGame` | M2 T25 S9 | existing closure backlog; T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this start leaf. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
 | 1005 | `ChkSelect` | M2 T25 S10 | existing closure backlog; M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1013 | `ChkWorldSel` | M2 T25 S11 | existing closure backlog; M2 T25 S11 retains the title/menu/demo receipt after S10. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1018 | `SelectBLogic` | M2 T25 S12 | existing closure backlog; M2 T25 S12 retains title/menu/demo receipt after S11. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1033 | `IncWorldSel` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1039 | `UpdateShroom` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1039 | `UpdateShroom` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1047 | `NullJoypad` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1049 | `RunDemo` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1053 | `ResetTitle` | M2 T25 S8 | existing closure backlog; T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this reset leaf. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1059 | `ChkContinue` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1065 | `StartWorld1` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1077 | `InitScores` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1080 | `ExitMenu` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1081 | `GoContinue` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1090 | `MushroomIconData` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1093 | `DrawMushroomIcon` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1095 | `IconDataRead` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1105 | `ExitIcon` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1109 | `DemoActionData` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1114 | `DemoTimingData` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1119 | `DemoEngine` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1129 | `DoAction` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1133 | `DemoOver` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1059 | `ChkContinue` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1065 | `StartWorld1` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1077 | `InitScores` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1080 | `ExitMenu` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1081 | `GoContinue` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1090 | `MushroomIconData` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1093 | `DrawMushroomIcon` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1095 | `IconDataRead` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1105 | `ExitIcon` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1109 | `DemoActionData` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1114 | `DemoTimingData` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1119 | `DemoEngine` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1129 | `DoAction` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1133 | `DemoOver` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1137 | `VictoryMode` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7; M2 T6 / S not recorded |
 | 1144 | `AutoPlayer` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7 |
 | 1147 | `VictoryModeSubroutines` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T6 / S not recorded |
@@ -2173,7 +2174,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T25 S10 | 1 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S11 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S12 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S13 | 0 | 17 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S13 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S14 | 0 | 16 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T26 | 32 | - | [record](../../docs/proposals/m2/t26-victory-terminal.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T26 S1 | 0 | 0 | source-order-node-contract; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S2 | 0 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
@@ -2287,6 +2289,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-058-t25-s10-to-s11-title-branches | M2 T25 S10 | M2 T25 S11 | 19 | M2 T25 S11 accepts all labels not completed by S10.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | transfer-059-t25-s11-to-s12-title-branches | M2 T25 S11 | M2 T25 S12 | 18 | M2 T25 S12 accepts all labels not completed by S11.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | transfer-060-t25-s12-to-s13 | M2 T25 S12 | M2 T25 S13 | 17 | S13 accepts all uncompleted labels.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| transfer-061-t25-s13-to-s14 | M2 T25 S13 | M2 T25 S14 | 16 | S14 accepts all uncompleted labels.; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -2348,4 +2351,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T25 S10 | 1 | 80 | `ChkSelect` / 1 | `ChkSelect` / 1 | closed-complete-chk-select-branch-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S11 | 1 | 81 | `ChkWorldSel` / 1 | `ChkWorldSel` / 1 | closed-complete-chk-world-select-zero-flag-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S12 | 1 | 82 | `SelectBLogic` / 1 | `SelectBLogic` / 1 | closed-complete-select-b-logic-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S13 | 1 | 83 | `IncWorldSel` / 1 | none / 0 | active-inc-world-select-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S13 | 1 | 83 | `IncWorldSel` / 1 | `IncWorldSel` / 1 | closed-complete-inc-world-select-controlled-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S14 | 1 | 84 | `UpdateShroom` / 1 | none / 0 | active-update-shroom-loop-equivalence; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |

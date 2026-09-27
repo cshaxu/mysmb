@@ -490,3 +490,11 @@ S12 completes exactly `SelectBLogic`, reaching **83 / 1,992**. Controlled Select
 ## S13 admission: IncWorldSel branch entry
 
 S13 scopes only `IncWorldSel`, baseline **83 / 1,992**, expected `IncWorldSel`, maximum **84 / 1,992**.
+
+## S13 closure: IncWorldSel controlled B branch
+
+S13 completes exactly `IncWorldSel`, reaching **84 / 1,992**. A local-only fixture writes `$07fc=1` and holds B; ROM and both native widths match for 200 frames, covering `$829c-$82a3`. The remaining 16 labels transfer to S14.
+
+## S14 admission: UpdateShroom write loop
+
+S14 scopes `UpdateShroom`; baseline **84 / 1,992**, expected `UpdateShroom`, maximum **85 / 1,992**.
