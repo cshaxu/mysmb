@@ -23,6 +23,14 @@ parser/area-entry regression matrix.  A chain splits only at an unadmitted
 dependency, a shared-game owner boundary, or a branch family that needs a
 different source route.
 
+Every T29 S begins with its exact node list, source entry/exit, common owner,
+incoming status, expected completions, predecessor/successor receipts and two
+separate verification plans. It closes with a per-label tracker disposition:
+ROM-match complete, deferred with the failed track, or transferred by exact
+name. The chain performs its mapping, repair when required, ROM control/data
+audit and operational evidence together. It does not create a separate S for
+an adjacent table, loop or helper that shares its route and owner.
+
 ## Planned source-order chains
 
 The table is a planning map, not an advance completion claim.  Every row must

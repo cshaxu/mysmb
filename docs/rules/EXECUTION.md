@@ -63,6 +63,37 @@ name.  T closure adds a cross-chain route matrix and one final integrated
 three-target regression; it does not repeat each member's already accepted
 chain proof.
 
+### M2 Chain Admission And Closure Reports
+
+This delivery rule is **node-level in accountability and chain-level in
+delivery**. The coordinator reports the exact nodes an S will attempt before
+implementation begins, and reports their individual dispositions when that S
+closes. This is the admission and closure work of the same S, never a new
+paperwork phase.
+
+An admitted chain groups adjacent nodes only when they share one contiguous
+caller/data path, one shared-game owner, no unadmitted dependency between
+them, and one reproducible original-ROM route. It splits at an ownership
+boundary or when a materially different branch family needs a different route.
+Small tables, loops and helper leaves that meet those conditions stay with
+their consumer chain; a separate lifecycle is not justified merely because
+they have separate inventory labels.
+
+At admission, the proposal and active packet name the entry/exit, labels in
+source order, incoming state, intended ROM-match subset, common C owner,
+predecessor/successor dependency and the two verification plans. The
+**ROM-logic track** proves table binding, control branches, reads, writes and
+call order against a source-reachable or controlled original-ROM route. The
+separate **operational track** proves focused tests, x86/x64 builds, DOS16
+link, platform purity and the required three artifacts. One replay and one
+build/package pass cover the chain; they are not recreated per member.
+
+At closure, update the tracker and report each scoped label as ROM-match
+complete, deferred with its failed track, or transferred by exact name. T
+closure combines its S results in a cross-chain matrix and one integrated
+three-target regression. It does not reopen accepted member proof unless a
+regression identifies a concrete discrepancy.
+
 ## Per-Task Node Contract And Dual Verification
 
 Before admitting an M2 T, publish its exact target labels and counts, their current receiving S, source-call dependencies, and planned S ownership. A T cannot be described only by a source-line span, feature name, or test suite. Its proposal and active packet must state which labels it intends to complete, which labels are only investigated, and the maximum resulting node count.

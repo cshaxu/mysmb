@@ -21,6 +21,15 @@ implementation P; T closure adds a cross-chain regression matrix.  Older
 single-label or fixed-stage S descriptions elsewhere are retained only as
 historical evidence and cannot govern a new admission.
 
+Every remaining task also uses the rule's chain admission and closure reports.
+Before each S, record its exact source-ordered labels, entry/exit, shared-game
+owner, dependency receipts, expected-match subset, and separate ROM-logic and
+operational plans. At closure, record every label as complete, deferred with
+the failed track, or transferred by exact name before moving to the next source
+chain. Adjacent data, loop and helper labels remain with their consumer S when
+one route proves them; a separate S requires an owner, dependency, or ROM-route
+boundary.
+
 | T | Responsibility | ROM lines | Node count |
 | --- | --- | ---: | ---: |
 | T21 | Boot and cold initialization (including its `InitializeMemory` call-root exception) | 699–737; 2795 | 7 |
