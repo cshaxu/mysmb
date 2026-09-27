@@ -196,10 +196,12 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     mysmb_u8 paused;
     mysmb_u8 run_title_demo;
     mysmb_u8 run_game_engine;
+    mysmb_u8 game_routine_already_dispatched;
 
     paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
     run_title_demo = 0U;
     run_game_engine = 0U;
+    game_routine_already_dispatched = 0U;
     if (paused != 0U) {
         mysmb_frame_root_finish(game, frame);
         return;
@@ -266,9 +268,13 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     else if (mode_before == 1U &&
              (task_before == 3U ||
-              (task_before == 1U && game->area_prg == 0)) &&
+             (task_before == 1U && game->area_prg == 0)) &&
              game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 6U) {
         mysmb_game_lose_life(game);
+        /* PlayerLoseLife returns to the GameEngine caller after ContinueGame.
+         * Its new subroutine value selects the following frame; it must not
+         * re-enter GameRoutines as Entrance_GameTimerSetup in this frame. */
+        game_routine_already_dispatched = 1U;
     }
     /* RunDemo is a same-frame tail of GameMenuRoutine, rather than another
      * OperModeExecutionTree alternative.  Keep this outside the selector's
@@ -281,7 +287,8 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
         /* `WriteBottomStatusLine` is reached only through ScreenRoutines
          * task 3.  GameCoreRoutine has no status-task recovery call or
          * buffer-capacity branch, so it must leave ScreenRoutineTask alone. */
-        if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 0U) {
+        if (game_routine_already_dispatched == 0U &&
+            game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 0U) {
             mysmb_player_initialize_entrance(game);
         }
         else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 1U) {

@@ -266,3 +266,35 @@ The operational track begins with `mysmb.mode-smoke`,
 OpenNT DOS16 MZ, refresh all three required artifacts, and document their
 hashes. S4 may credit a label only after both tracks establish its data,
 control-flow, state-write and caller/result semantics.
+
+## S4 P1: state-machine structure and loss-return repair
+
+P1 establishes source-named shared C leaves for the half-way-page selection,
+SetupGameOver, RunGameOver, TerminateGame and GameOverMode dispatcher while
+retaining the already separate ContinueGame and TransposePlayers calls. The
+half-way data remains private to the life-loss state owner. No host or
+platform source changes.
+
+The audit found a concrete source-order defect in the frame root. `GameRoutines`
+dispatches `PlayerLoseLife` once; after its `ContinueGame` return, the ROM
+continues the current GameEngine tail and uses the new entry subroutine only on
+the next frame. The C root was re-dispatching the newly written subroutine in
+the same frame. It now records that the current GameRoutines slot has already
+run and retains only the object/timer tail. `mysmb.mode-smoke` proves that the
+surviving-life path leaves the entry subroutine at zero rather than executing
+the entrance initializer immediately.
+
+The dispatch smoke fixtures were also corrected to preserve source-reachable
+preconditions: NMI decrements DemoTimer before GameMenuRoutine, and ColdBoot's
+screen-disable increment precedes SetupGameOver's increment. Focused
+`mysmb.mode-smoke`, `mysmb.oper-mode-dispatch-smoke`,
+`mysmb.local-death-music-smoke`, and `mysmb.platform-purity` pass on x86 and
+x64. The shared C90 sources compile and link into the OpenNT DOS16 MZ, with
+the existing `OLDNAMES.LIB` linker warning. P1 artifacts are `mysmb16.exe`
+`6E9A9040AD7D870AE6C003845AAFAEFC73D77A779B0C35945D920CACEBB45999`,
+`mysmb32.exe` `F65C52079AEC6FEA3EDC7CD3177C04FCF235D5CD3E4FC0E44CAF2A4E443AC426`,
+and `mysmb64.exe` `9483AE9DF1862AFA2989AE1903CF80A8369DB4AB491FF49BDFD876526DF20E35`.
+
+This is an implementation checkpoint, not S4 closure. The original-ROM
+fixture family, per-label state/control evidence, and inventory updates remain
+required before any of the seventeen labels can be credited.

@@ -46,6 +46,13 @@ enum {
 
 static void mysmb_game_print_victory_messages(struct mysmb_game *game);
 
+/* ROM HalfwayPageNybbles.  It is adjacent to PlayerLoseLife in PRG and is
+ * consumed only by that state transition. */
+static const mysmb_u8 mysmb_game_halfway_page_nybbles[16] = {
+    0x56U, 0x40U, 0x65U, 0x70U, 0x66U, 0x40U, 0x66U, 0x40U,
+    0x66U, 0x40U, 0x66U, 0x60U, 0x65U, 0x70U, 0x00U, 0x00U
+};
+
 /* ROM TransposePlayers.  The seven-byte player records deliberately include
  * life, checkpoint, level, coin tally, world, and area as one transaction. */
 static mysmb_u8 mysmb_game_transpose_players(struct mysmb_game *game)
@@ -76,6 +83,22 @@ static void mysmb_game_load_area_pointer(struct mysmb_game *game)
     source.prg = game->area_prg;
     source.prg_size = game->area_prg_size;
     (void)mysmb_area_load_pointers(game, &source);
+}
+
+/* ROM StillInGame, GetHalfway, MaskHPNyb and SetHalfway's selected value.
+ * The caller owns the following TransposePlayers and ContinueGame calls. */
+static mysmb_u8 mysmb_game_get_halfway_page(const struct mysmb_game *game)
+{
+    mysmb_u8 index;
+    mysmb_u8 checkpoint;
+
+    index = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] << 1U);
+    if ((game->ram[MYSMB_RAM_LEVEL] & 2U) != 0U) index++;
+    checkpoint = mysmb_game_halfway_page_nybbles[index];
+    if ((game->ram[MYSMB_RAM_LEVEL] & 1U) == 0U) checkpoint >>= 4U;
+    checkpoint &= 0x0fU;
+    if (checkpoint > game->ram[MYSMB_RAM_SCREEN_LEFT_PAGE]) checkpoint = 0U;
+    return checkpoint;
 }
 
 /* ROM ContinueGame. */
@@ -110,13 +133,6 @@ void mysmb_game_next_area(struct mysmb_game *game)
  * ownership, not an area renderer concern. */
 void mysmb_game_lose_life(struct mysmb_game *game)
 {
-    static const mysmb_u8 halfway_nybbles[16] = {
-        0x56U, 0x40U, 0x65U, 0x70U, 0x66U, 0x40U, 0x66U, 0x40U,
-        0x66U, 0x40U, 0x66U, 0x60U, 0x65U, 0x70U, 0x00U, 0x00U
-    };
-    mysmb_u8 index;
-    mysmb_u8 checkpoint;
-
     game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
     game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
     /* ROM PlayerLoseLife queues Silence before it transfers control to
@@ -130,35 +146,24 @@ void mysmb_game_lose_life(struct mysmb_game *game)
         game->ram[MYSMB_RAM_OPER_MODE] = 3U;
         return;
     }
-    index = (mysmb_u8)(game->ram[MYSMB_RAM_WORLD] << 1U);
-    if ((game->ram[MYSMB_RAM_LEVEL] & 2U) != 0U) index++;
-    checkpoint = halfway_nybbles[index];
-    if ((game->ram[MYSMB_RAM_LEVEL] & 1U) == 0U) checkpoint >>= 4U;
-    checkpoint &= 0x0fU;
-    if (checkpoint > game->ram[0x071aU]) checkpoint = 0U;
-    game->ram[MYSMB_RAM_HALFWAY_PAGE] = checkpoint;
+    game->ram[MYSMB_RAM_HALFWAY_PAGE] = mysmb_game_get_halfway_page(game);
     (void)mysmb_game_transpose_players(game);
     mysmb_game_continue_game(game);
 }
 
-/* ROM SetupGameOver, ScreenRoutines, and RunGameOver. */
-void mysmb_game_step_game_over(struct mysmb_game *game)
+/* ROM SetupGameOver.  ScreenRoutines is a separately admitted output owner. */
+static void mysmb_game_setup_game_over(struct mysmb_game *game)
 {
-    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
-        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
-        game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
-        game->ram[MYSMB_RAM_EVENT_MUSIC] = 2U;
-        game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
-        return;
-    }
-    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
-        mysmb_game_step_screen_routine(game);
-        return;
-    }
-    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-    if ((game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_START) == 0U &&
-        game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) return;
+    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
+    game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 2U;
+    game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
+    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+}
+
+/* ROM TerminateGame, including its TransposePlayers result branch. */
+static void mysmb_game_terminate_game(struct mysmb_game *game)
+{
     game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
     if (mysmb_game_transpose_players(game) != 0U) {
         mysmb_game_continue_game(game);
@@ -168,6 +173,29 @@ void mysmb_game_step_game_over(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
     game->ram[MYSMB_RAM_SCREEN_TIMER] = 0U;
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
+}
+
+/* ROM RunGameOver and its GameIsOn return. */
+static void mysmb_game_run_game_over(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+    if ((game->ram[MYSMB_RAM_SAVED_JOYPAD1] & MYSMB_BUTTON_START) == 0U &&
+        game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) return;
+    mysmb_game_terminate_game(game);
+}
+
+/* ROM GameOverMode JumpEngine dispatch. */
+void mysmb_game_step_game_over(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
+        mysmb_game_setup_game_over(game);
+        return;
+    }
+    if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {
+        mysmb_game_step_screen_routine(game);
+        return;
+    }
+    mysmb_game_run_game_over(game);
 }
 
 /* ROM VictoryModeSubroutines. */
