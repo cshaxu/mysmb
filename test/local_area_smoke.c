@@ -232,6 +232,23 @@ int main(void)
     if (mysmb_area_queue_top_status_line(&game) == 0U ||
         game.ram[0x0304U] != mysmb_local_prg[0x07edU] ||
         game.ram[0x0308U] != mysmb_local_prg[0x07f1U]) return 1;
+
+    /* Exercise the same two-player name path through the original screen
+     * task-two entry, rather than treating the text writer as a second
+     * gameplay path.  WriteTopStatusLine always reaches IncSubtask after
+     * TopStatusBarLine -> WriteGameText -> CheckPlayerName -> NameLoop. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    game.ram[0x0300U] = 0U;
+    game.ram[0x073cU] = 2U;
+    game.ram[0x0770U] = 1U;
+    game.ram[0x077aU] = 1U;
+    game.ram[0x0753U] = 1U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 3U || game.ram[0x0300U] != 0U ||
+        game.ram[0x0301U] != 0x20U || game.ram[0x0302U] != 0x43U ||
+        game.ram[0x0304U] != mysmb_local_prg[0x07edU] ||
+        game.ram[0x0308U] != mysmb_local_prg[0x07f1U]) return 1;
     game.ram[0x077aU] = 0U;
     game.ram[0x0753U] = 0U;
     game.ram[0x0300U] = 0U;

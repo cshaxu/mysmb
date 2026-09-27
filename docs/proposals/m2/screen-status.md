@@ -406,6 +406,26 @@ C4761 warnings. The refreshed artifacts are `mysmb16.exe`
 `mysmb32.exe` `66776FB670940ED69BB80F085449B83848E8EB7687391201E3DF9BCD661C3331`,
 and `mysmb64.exe` `9A932AF31C68EFD3C339D0F66BB60BF7DD0110E08652620E00E93989BBFC65AC`.
 
+## S2/P16: task-two two-player status-chain proof
+
+The local-ROM smoke now enters the actual `ScreenRoutines` task-two dispatch
+with `NumberOfPlayers=1` and `CurrentPlayer=1`.  It proves the exact shared
+route `WriteTopStatusLine -> IncSubtask`, with the intervening
+`TopStatusBarLine -> WriteGameText -> CheckPlayerName -> NameLoop` output
+coming from the local ROM's `$07ed-$07f1` Luigi name bytes.  The test also
+checks the source task transition from two to three and the initial `$2043`
+VRAM command, so it cannot be satisfied by a direct text-writer call.
+
+This fills the only remaining local proof gap for `WriteTopStatusLine`; it
+does not claim S2 closure or conceal the independent `GetSBNybbles`,
+`UpdateNumber`, and T29 Warp-route dependencies.  The focused local-area and
+screen-status smokes, together with platform-purity, pass in the x64 owner
+build.  Cross-width products and the DOS16 link are refreshed for this P.
+The refreshed artifacts are `mysmb16.exe`
+`9B884AC39DC42F4145ED47E956CB89D779414E8A55565E4712147CA0F35574CF`,
+`mysmb32.exe` `66776FB670940ED69BB80F085449B83848E8EB7687391201E3DF9BCD661C3331`,
+and `mysmb64.exe` `9A932AF31C68EFD3C339D0F66BB60BF7DD0110E08652620E00E93989BBFC65AC`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -416,7 +436,7 @@ both tracks are accepted at S2 closure.
 
 | Node | Shared-C mapping | Current evidence and remaining proof |
 | --- | --- | --- |
-| `WriteTopStatusLine` | `game.c` task 2 -> `area.c` top-text writer | Mapped; cold-title route and local-area smoke. Pending two-player name route in a full screen chain. |
+| `WriteTopStatusLine` | `game.c` task 2 -> `area.c` top-text writer | Mapped; cold-title route, direct selector matrix and P16 two-player task-two ROM-data chain. Local proof complete; retained for S2 chain closure. |
 | `WriteBottomStatusLine` | `game.c` task 3 -> `area.c` bottom-status writer | Mapped; cold-title route and local-area smoke. Pending its `GetSBNybbles` collaborator's later-source evidence. |
 | `DisplayTimeUp` | `game.c` task 4 | Mapped; screen-status smoke and `t27-screen-timeup` zero-difference route. Pending final chain matrix. |
 | `NoTimeUp` | `game.c` task 4 else | Mapped; screen-status smoke and `t27-screen-no-timeup` zero-difference route. Pending final chain matrix. |
@@ -432,7 +452,7 @@ both tracks are accepted at S2 closure.
 | `TScrClear` | `game.c` task 13 clear loop | Mapped; P10 complete `$0300-$04ff` audit. Pending final cross-branch matrix. |
 | `IncSubtask` | `game.c` task transitions | Mapped; all screen fixtures. Pending final table-wide transition matrix. |
 | `WriteTopScore` | `game.c` task 14 -> `area.c` title-score writer | Mapped; title bootstrap smoke. Pending source `UpdateNumber` collaborator audit. |
-| `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes. Pending non-title DrawTitle exit route. |
+| `IncModeTask_B` | `game.c` tasks 12/14 and Game Over branch | Mapped; title and Game Over routes plus P11 non-title task-12/task-13 exits. Pending final cross-branch disposition only. |
 | `GameText` | bound local PRG data in `area.c` | Mapped; P14 derives every source text byte/terminator at run time. Pending final chain matrix. |
 | `TopStatusBarLine` | selector zero in `area.c` | Mapped; cold-title, two-player Luigi and P14 full-byte matrix. Pending final chain matrix. |
 | `WorldLivesDisplay` | selector one in `area.c` | Mapped; local-area, ordinary `PlayerInter` and P14 crown/world/level matrix. Pending final chain matrix. |
