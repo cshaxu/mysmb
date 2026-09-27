@@ -1478,8 +1478,21 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                         (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
                     game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
                 }
-                else if ((row != 0x0eU || game->ram[MYSMB_AREA_BACKLOADING] == 0U) &&
-                    game->ram[MYSMB_AREA_OBJECT_PAGE] < game->ram[MYSMB_AREA_CURRENT_PAGE]) {
+                else if (row == 0x0eU &&
+                    game->ram[MYSMB_AREA_BACKLOADING] != 0U) {
+                    /* Chk1Row14 branches directly to RdyDecode while
+                     * backloading. DecodeAreaData then reaches StrAObj even
+                     * when this row-14 control object belongs to an earlier
+                     * page, so its attributes affect this staging column. */
+                    game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot] =
+                        game->ram[MYSMB_AREA_DATA_OFFSET];
+                    game->ram[MYSMB_AREA_DATA_OFFSET] =
+                        (mysmb_u8)(game->ram[MYSMB_AREA_DATA_OFFSET] + 2U);
+                    game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 0U;
+                    run_object = 1U;
+                }
+                else if (game->ram[MYSMB_AREA_OBJECT_PAGE] <
+                    game->ram[MYSMB_AREA_CURRENT_PAGE]) {
                     game->ram[MYSMB_AREA_PARSER_BEHIND] = 1U;
                     rerun = 1U;
                     game->ram[MYSMB_AREA_DATA_OFFSET] =

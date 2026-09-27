@@ -22,5 +22,24 @@ int main(void)
      * remaining ProcADLoop slots. */
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06a6U] != 0x5fU || game.ram[0x0732U] != 0xffU) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x0eU;
+    prg[0x41U] = 0x25U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 1U;
+    game.ram[0x0728U] = 1U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* Chk1Row14 reaches RdyDecode while backloading, so an earlier-page
+     * attribute object still changes terrain and background scenery. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0727U] != 5U || game.ram[0x0742U] != 2U ||
+        game.ram[0x072cU] != 2U) return 1;
     return 0;
 }

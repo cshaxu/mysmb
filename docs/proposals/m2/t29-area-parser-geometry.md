@@ -604,3 +604,19 @@ common C90 source links into the OpenNT DOS16 MZ with the existing non-fatal
 `mysmb32.exe` `C4EC561B1D1E92155EDB174C8AE8E524087079FD3F98FFC93917524C03171FF9`,
 and `mysmb64.exe` `BE358277DBA10A2E0D16DEFF2C858DEF97040A1AC77E2F12E9D38A04A2A31637`.
 This is an implementation checkpoint, not S7 closure.
+
+## S7 P2: backloading row-14 attribute dispatch
+
+`Chk1Row14` bypasses the behind-page rejection while `BackloadingFlag` is set.
+The source subsequently reaches `StrAObj` and `AlterAreaAttributes`, even if
+the row-14 object belongs to an earlier page. Shared C now saves that object's
+offset, advances the stream cursor, and invokes the existing shared attribute
+owner in the same path. The terminal-slot smoke proves terrain control five,
+background scenery two, and the two-byte cursor advance for this case.
+
+The focused parser tests and platform-purity gate pass on x86/x64; OpenNT
+links the common source as DOS16 with the existing non-fatal `OLDNAMES.LIB`
+warning. P2 artifacts are `mysmb16.exe`
+`7FFD79B23BF59A1853DC6677F80C8A72ECF60F029DFF8F946D12DFBBCCD3CE6D`,
+`mysmb32.exe` `3A8ABB1FCE60E86C63627A65D5A7C8F7906D2270B02F34C505ED554B3393AB7E`,
+and `mysmb64.exe` `0702C4EB8AAD654242F664B840C011B49D47C023A7F17F5CA0B1AE8AF9DB7EAE`.
