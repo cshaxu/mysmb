@@ -15,13 +15,17 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The sole active packet is `M2 T29 S7`, the thirty-two-label
-`ProcessAreaData -> SetFore` area-stream decoder chain. Its successor receipt,
-and every later M2 admission, must use
-the source-order chain table defined by the recovery plan; it may not revive
-the retired fixed five-stage pattern. This changes delivery granularity only:
-node custody, source order, dual verification, tracker rows, and three-target
-P delivery remain mandatory.
+The sole active packet is `M2 T29 S9`, the twenty-two-label
+`CastleMetatiles -> GetPipeHeight` castle-and-pipe large-object geometry chain,
+at 390 / 1,992. Its predecessor S8 is closed. S9 proves its own parser geometry
+and retains the source call boundaries to `FindEmptyEnemySlot` (the planned T29
+S10 allocation chain) and `InitPiranhaPlant` (the registered T19/S5 actor-init
+owner); neither dependency may be duplicated in `area.c` merely to close S9.
+
+Every later M2 admission uses the source-order chain table defined by the
+recovery plan; it may not revive the retired fixed five-stage pattern. This
+changes delivery granularity only: node custody, source order, dual
+verification, tracker rows, and three-target P delivery remain mandatory.
 ## M1 Candidates
 
 1. [Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) — closed in M1.
