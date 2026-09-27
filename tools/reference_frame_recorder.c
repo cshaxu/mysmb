@@ -541,6 +541,24 @@ static void mysmb_reference_apply_t28_top_score_fixture(lib_u8 *ram,
     ram[0x07e5u] = 2u;
 }
 
+/* T28/S8 uses only an NMI-boundary source-RAM precondition.  The next
+ * normal mode selector invokes InitializeArea; this never redirects a PC. */
+static void mysmb_reference_apply_t28_area_entry_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 0u;
+}
+
+/* This enters the normal title task-two fallthrough from PrimaryGameSetup
+ * into SecondaryGameSetup, without calling either translated leaf directly. */
+static void mysmb_reference_apply_t28_secondary_setup_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 0u;
+    ram[0x0772u] = 2u;
+}
+
 static void mysmb_reference_apply_t28_title_score_fixture(lib_u8 *ram)
 {
     ram[0x0770u] = 0u;
@@ -873,6 +891,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 56u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-area-entry") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 58u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-secondary-setup") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 59u;
+            continue;
+        }
         if (strcmp(arguments[recorded], "--fixture=t28-title-score") == 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = 57u;
@@ -1073,6 +1101,12 @@ int main(int argument_count, char **arguments)
                         driver->machine->ram, 0u);
                 else if (t26_fixture == 57u)
                     mysmb_reference_apply_t28_title_score_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture == 58u)
+                    mysmb_reference_apply_t28_area_entry_fixture(
+                        driver->machine->ram);
+                else if (t26_fixture == 59u)
+                    mysmb_reference_apply_t28_secondary_setup_fixture(
                         driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;

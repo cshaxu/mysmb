@@ -467,3 +467,28 @@ PPU mirror, OAM and mode-task outcomes without a fabricated leaf stack. The
 operational track will add focused initialization regression, original/native
 route recording, x86/x64 builds, OpenNT DOS16 link, platform-purity check and
 all three executable artifacts.
+
+## S8 P1 natural initialization-route recorder
+
+The local and original-ROM recorders now share two NMI-boundary fixtures.
+`t28-area-entry` establishes GameMode task zero, then lets the ordinary mode
+selector reach `InitializeArea`; `t28-secondary-setup` establishes title task
+two, then lets its normal fallthrough reach `PrimaryGameSetup` and
+`SecondaryGameSetup`. Neither fixture changes the program counter, supplies a
+stack, or invokes a translated leaf.
+
+The two-frame area-entry comparison has zero differences in S8-owned block,
+hard-mode, sprite-offset, OAM, timer, VRAM-buffer and area-state ranges. Its
+only owned-work RAM residual is the prior S6 controller latch at `$074a`.
+The secondary route has zero OAM and audio differences; remaining whole-frame
+residuals are NMI/PPU scheduling and earlier presentation owners, so they are
+not claimed by S8. This is a verification checkpoint only: no S8 node gains
+completion credit until the branch/data matrix and closure evidence are
+complete.
+
+`mysmb.local-title-bootstrap-smoke` and `mysmb.platform-purity` pass on both
+Win32 widths. The three required artifact hashes remain
+`574DD8232D3534180229504BF1686E997178DD65F9CED992AACAD81210528223`
+(DOS16), `A16A647B03F2AD9BCF271556032675359DCF5BD403425C8ACC1C9DC67362E7DC`
+(Win32 x86), and `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F`
+(Win32 x64); no shared product source changed in this checkpoint.

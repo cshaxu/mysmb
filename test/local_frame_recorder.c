@@ -441,6 +441,24 @@ static void mysmb_recorder_apply_t28_top_score_fixture(struct mysmb_game *game,
     game->ram[0x07e5U] = 2U;
 }
 
+/* T28/S8 uses only an NMI-boundary source-RAM precondition.  The next
+ * normal mode selector invokes InitializeArea; this never redirects a PC. */
+static void mysmb_recorder_apply_t28_area_entry_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 0U;
+}
+
+/* This enters the normal title task-two fallthrough from PrimaryGameSetup
+ * into SecondaryGameSetup, without calling either translated leaf directly. */
+static void mysmb_recorder_apply_t28_secondary_setup_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 0U;
+    game->ram[0x0772U] = 2U;
+}
+
 static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
 {
     game->ram[0x0770U] = 0U;
@@ -787,6 +805,16 @@ int main(int argument_count, char **arguments)
             t26_fixture = 56U;
         }
         else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-area-entry") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 58U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-secondary-setup") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 59U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = 57U;
@@ -901,6 +929,10 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t28_top_score_fixture(&game, 0U);
             else if (t26_fixture == 57U)
                 mysmb_recorder_apply_t28_title_score_fixture(&game);
+            else if (t26_fixture == 58U)
+                mysmb_recorder_apply_t28_area_entry_fixture(&game);
+            else if (t26_fixture == 59U)
+                mysmb_recorder_apply_t28_secondary_setup_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
