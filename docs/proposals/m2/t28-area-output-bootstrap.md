@@ -492,3 +492,14 @@ Win32 widths. The three required artifact hashes remain
 (DOS16), `A16A647B03F2AD9BCF271556032675359DCF5BD403425C8ACC1C9DC67362E7DC`
 (Win32 x86), and `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F`
 (Win32 x64); no shared product source changed in this checkpoint.
+
+## S8 P2 GameMode area-pointer order repair
+
+The S8 call-tree audit found that GameMode task zero was incorrectly calling
+the convenience composition `LoadAreaPointer -> GetAreaDataAddrs` after
+`InitializeArea`. The source vector calls `InitializeArea`, whose own tail
+calls `GetAreaDataAddrs` using the already selected `AreaPointer`; it does not
+run `LoadAreaPointer` again. The shared frame root now uses only
+`mysmb_area_get_data_addresses` before header parsing, preserving the source
+control/data order. The natural area-entry ROM/native trace retains zero
+differences in every S8-owned range after the repair.
