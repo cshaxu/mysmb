@@ -93,8 +93,6 @@ int main(void)
     mysmb_u8 palette;
     mysmb_u8 rotation;
     mysmb_u16 graphics;
-    mysmb_u16 copy_offset;
-    static mysmb_u8 warp_prg[0x8000U];
 
     mysmb_game_initialize(&game);
     source.prg = mysmb_local_prg;
@@ -400,30 +398,28 @@ int main(void)
         game.name_table[0][0x020bU] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 7U] + 3U]) return 1;
 
-    /* Row-13 object 5 is ScrollLockObject_Warp.  Supply the original local
-     * text tables with one synthetic area-stream entry so the persistent
-     * parser, rather than a direct helper call, selects the warp text. */
-    for (copy_offset = 0U; copy_offset < MYSMB_LOCAL_PRG_SIZE; ++copy_offset)
-        warp_prg[copy_offset] = mysmb_local_prg[copy_offset];
-    warp_prg[0x1ff0U] = 0x0dU;
-    warp_prg[0x1ff1U] = 0x45U;
-    warp_prg[0x1ff2U] = 0xfdU;
+    /* W1-2's original area stream has the row-13 Warp object at PRG
+     * $2cd5: `$6d,$c5`. Point the persistent parser at that real entry with
+     * its source page/column preconditions; no synthetic area data is used. */
     mysmb_game_initialize(&game);
-    mysmb_game_bind_area_source(&game, warp_prg, MYSMB_LOCAL_PRG_SIZE);
-    game.ram[0x00e7U] = 0xf0U;
-    game.ram[0x00e8U] = 0x9fU;
-    game.ram[0x0725U] = 0U;
-    game.ram[0x0726U] = 0U;
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    game.ram[0x00e7U] = 0xd5U;
+    game.ram[0x00e8U] = 0xacU;
+    game.ram[0x0725U] = 1U;
+    game.ram[0x0726U] = 6U;
     game.ram[0x072aU] = 0U;
     game.ram[0x0730U] = 0xffU;
     game.ram[0x0731U] = 0xffU;
     game.ram[0x0732U] = 0xffU;
-    game.ram[0x074eU] = 1U;
+    game.ram[0x074eU] = 2U;
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x06d6U] != 4U || game.ram[0x0300U] != 0x2cU ||
+        game.ram[0x06d6U] != 5U || game.ram[0x0300U] != 0x2cU ||
         mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
         game.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
-            mysmb_local_prg[0x07feU + 8U] + 3U]) return 1;
+            mysmb_local_prg[0x07feU + 8U] + 3U] ||
+        game.ram[0x031cU] != mysmb_local_prg[0x07f6U] ||
+        game.ram[0x0320U] != mysmb_local_prg[0x07f7U] ||
+        game.ram[0x0324U] != mysmb_local_prg[0x07f8U]) return 1;
 
     /* After a timer death restarts game mode, ScreenRoutines task 4 takes
      * DisplayTimeUp's OutputInter route before the normal area parser. */

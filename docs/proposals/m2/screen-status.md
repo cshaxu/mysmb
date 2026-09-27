@@ -383,6 +383,29 @@ established C4761 warnings. The refreshed artifacts are `mysmb16.exe`
 `mysmb32.exe` `2047E4D31CDB0B626C1D4EE0C418820A8EB332D642C9CA431A78755265B904F1`,
 and `mysmb64.exe` `E519F402868C21A8BBF973497CF16249F97F7D8CE5CA923C782F09496CFD55D8`.
 
+## S2/P15: original W1-2 Warp object binding
+
+The local-area smoke no longer copies a synthetic three-byte area stream. It
+positions the persistent parser at W1-2's actual PRG `$2cd5` row-13 Warp
+object (`$6d,$c5`) with its required page and column state. The test proves
+the parser selects Warp text selector five, writes the true Warp command
+stream, and patches the selector-five three-number row from the local ROM.
+
+An isolated reference-frame experiment reached the same original object but
+showed an earlier GameCore-route difference: the ROM's timer command and the
+native player's palette command diverge before the common parser output. That
+precondition belongs to the accepted T29 parser/GameCore chain. It is
+therefore recorded as a dependency, not hidden with a T27 RAM workaround; the
+source-reachable ROM frame route remains pending T29. No S2 node credit is
+claimed here.
+
+The local test passes in both x64 and true i686 Win32 builds. The Win32
+self-tests and OpenNT DOS16 link pass; the latter retains only its established
+C4761 warnings. The refreshed artifacts are `mysmb16.exe`
+`9B884AC39DC42F4145ED47E956CB89D779414E8A55565E4712147CA0F35574CF`,
+`mysmb32.exe` `66776FB670940ED69BB80F085449B83848E8EB7687391201E3DF9BCD661C3331`,
+and `mysmb64.exe` `9A932AF31C68EFD3C339D0F66BB60BF7DD0110E08652620E00E93989BBFC65AC`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -417,22 +440,22 @@ both tracks are accepted at S2 closure.
 | `OnePlayerTimeUp` | selector two source offset in `area.c` | Mapped; Time Up fixture and P14 direct source-byte matrix. Pending final chain matrix. |
 | `TwoPlayerGameOver` | selector three source offset in `area.c` | Mapped; both current-player Game Over routes and P14 full-byte matrix. Pending final chain matrix. |
 | `OnePlayerGameOver` | selector three source offset in `area.c` | Mapped; Game Over fixture and P14 direct source-byte matrix. Pending final chain matrix. |
-| `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; local-area warp smoke. Pending controlled original ROM warp route. |
+| `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; P15 replaces synthetic stream with original W1-2 parser data. Pending controlled original ROM Warp route after T29 GameCore precondition. |
 | `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; P14 direct five-byte matrix plus two-player routes. Pending final chain matrix. |
-| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte selector matrix. Pending source-reachable original-ROM warp route. |
+| `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; P14 full-byte matrix and P15 original W1-2 selector-five parser route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
 | `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; P12 table audit and P14 every-selector matrix. Pending final chain matrix. |
-| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix and existing screen routes. Pending source-reachable Warp route. |
+| `WriteGameText` | `area.c` text writer | Mapped; P14 full selector/copy/tail matrix, existing screen routes, and P15 original W1-2 parser data. Pending source-reachable Warp route after T29 GameCore precondition. |
 | `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both two-player routes and P14 selector matrix. Pending final chain matrix. |
 | `LdGameText` | `area.c` PRG source selection | Mapped; P14 every-selector direct source-byte matrix. Pending final chain matrix. |
 | `GameTextLoop` | `area.c` terminator-copy loop | Mapped; P14 derives and checks every stream length and terminator. Pending final chain matrix. |
-| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix. Pending source-reachable Warp route. |
+| `EndGameText` | `area.c` terminator/tail dispatch | Mapped; P14 lives/name/warp tail matrix and P15 parser binding. Pending source-reachable Warp route after T29 GameCore precondition. |
 | `PutLives` | `area.c` lives/world/level patch | Mapped; P14 crown/world/level matrix and ordinary `PlayerInter` route. Pending final chain matrix. |
 | `CheckPlayerName` | `area.c` player-name selection | Mapped; P14 matrix and both Time Up/Game Over routes. Pending final chain matrix. |
 | `ChkLuigi` | `area.c` current-player branch | Mapped; P14 both current-player values and two-player routes. Pending final chain matrix. |
 | `NameLoop` | `area.c` five-byte Luigi replacement | Corrected `$07ed-$07f1` binding; P14 direct-byte matrix. Pending final chain matrix. |
 | `ExitChkName` | `area.c` name tail exit | Mapped; P14 complete selector matrix. Pending final chain matrix. |
-| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 full matrix. Pending source-reachable original-ROM warp route. |
-| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 full matrix. Pending source-reachable original-ROM warp route. |
+| `PrintWarpZoneNumbers` | `area.c` selector-four-to-six patch | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
+| `WarpNumLoop` | `area.c` three spaced writes | Mapped; P14 matrix and P15 original W1-2 selector-five route. Pending source-reachable original-ROM Warp route after T29 GameCore precondition. |
 | `ResetSpritesAndScreenTimer` | `game.c` tasks 5 and 7 -> `boot.c` sprite hide | Mapped; task-five and task-seven pending/expired zero-difference routes. Pending common-tail matrix. |
 | `ResetScreenTimer` | `game.c` OutputInter and tasks 5/7 | Mapped; Time Up and intermediate routes. Pending common-tail matrix. |
 | `NoReset` | `game.c` tasks 5/7 timer-nonzero branch | Mapped; task-five and task-seven pending zero-difference routes. Pending common-tail matrix. |
