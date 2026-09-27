@@ -453,3 +453,18 @@ The packet will separately exercise the non-Start, non-A+Start route through
 `$8258`, then establish each successor before any later branch label is
 credited.  `WSelectBufferTemplate` remains retained as data without an
 inferred completion claim.
+
+## S10 closure: ChkSelect branch entry
+
+S10 completes exactly `ChkSelect`, reaching **81 / 1,992**. A 200-frame
+no-button route enters `$8258` on every frame and follows `$825a`, `$825c`,
+and `$826c` while `DemoTimer` is nonzero. ROM/x86, ROM/x64 and x86/x64 records
+have zero differences in work RAM, CIRAM, palette, OAM, audio and PPU scalars.
+The final post-capture Start sentinel is outside the 200 captured samples.
+The 19 remaining labels transfer to S11 without status change.
+
+## S11 admission: ChkWorldSel branch entry
+
+S11 receives the remaining 19 labels and scopes only `ChkWorldSel`, the next
+executable branch target. Baseline **81 / 1,992**; expected `ChkWorldSel`;
+maximum **82 / 1,992**.

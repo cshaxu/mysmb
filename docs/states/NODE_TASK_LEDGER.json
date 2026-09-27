@@ -638,7 +638,7 @@
           ],
           "canReceive": true,
           "admissionRole": "implementation",
-          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1–S5 records."
+          "receipt": "Accepted source-order T22 intake after preserved historical T22 S1\u2013S5 records."
         },
         {
           "id": "M2 T22 S7",
@@ -1516,6 +1516,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after M2 T25 S9 StartGame closure; it retains the remaining title/menu/demo labels for subsequent exact branch admissions."
+        },
+        {
+          "id": "M2 T25 S11",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-branch-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after M2 T25 S10 ChkSelect closure."
         }
       ]
     },
@@ -6013,8 +6025,8 @@
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6289,14 +6301,20 @@
           "subtask": "M2 T25 S4",
           "relation": "shared-title-repair-and-controlled-route-disposition",
           "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+        },
+        {
+          "task": "M2 T25",
+          "subtask": "M2 T25 S10",
+          "relation": "branch-entry ROM-equivalence closure",
+          "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
         }
       ]
     },
     {
       "label": "ChkWorldSel",
       "line": 1013,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6348,8 +6366,8 @@
     {
       "label": "SelectBLogic",
       "line": 1018,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6417,8 +6435,8 @@
     {
       "label": "IncWorldSel",
       "line": 1033,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6486,8 +6504,8 @@
     {
       "label": "UpdateShroom",
       "line": 1039,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6754,8 +6772,8 @@
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6815,8 +6833,8 @@
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6876,8 +6894,8 @@
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6921,8 +6939,8 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -6966,8 +6984,8 @@
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7035,8 +7053,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7080,8 +7098,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7141,8 +7159,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7186,8 +7204,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7231,8 +7249,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7276,8 +7294,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7321,8 +7339,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7398,8 +7416,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -7443,8 +7461,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S10",
-      "receivingBasis": "M2 T25 S10 receives the retained title/menu/demo receipt after S9; a later exact branch admission owns this label.",
+      "receiver": "M2 T25 S11",
+      "receivingBasis": "M2 T25 S11 retains the title/menu/demo receipt after S10.",
       "futurePackage": null,
       "history": [
         {
@@ -56020,7 +56038,7 @@
         "NonMaskableInterrupt",
         "ScreenOff"
       ],
-      "acceptedBy": "Owner-approved T21–T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1–S5 records remain immutable.",
+      "acceptedBy": "Owner-approved T21\u2013T49 source-order plan; T22 S6 is the next unused T22 slot because historical T22 S1\u2013S5 records remain immutable.",
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md"
     },
     {
@@ -56855,6 +56873,35 @@
         "DemoOver"
       ],
       "acceptedBy": "M2 T25 S10 accepts every title/menu/demo label not completed by S9; later packets must scope and prove each source-order branch independently.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-058-t25-s10-to-s11-title-branches",
+      "type": "transfer",
+      "from": "M2 T25 S10",
+      "to": "M2 T25 S11",
+      "nodes": [
+        "WSelectBufferTemplate",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "M2 T25 S11 accepts all labels not completed by S10.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
@@ -63724,9 +63771,109 @@
         "ChkSelect"
       ],
       "maximumComplete": 81,
+      "actualMatches": [
+        "ChkSelect"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-chk-select-branch-equivalence"
+    },
+    {
+      "subtask": "M2 T25 S11",
+      "kind": "implementation",
+      "scope": [
+        "ChkWorldSel"
+      ],
+      "baseline": 81,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "ChkWorldSel"
+      ],
+      "maximumComplete": 82,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-chk-select-branch-entry-equivalence"
+      "state": "active-chk-world-select-branch-entry-equivalence"
     }
   ]
 }
