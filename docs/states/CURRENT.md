@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T30 S2 is admitted at 433 / 1,992 for `CoinMetatileData -> RowOfCoins`; its maximum closing count is 435 / 1,992.**
+**M2 T30 S2 is closed at 435 / 1,992: `CoinMetatileData` and `RowOfCoins` have both required evidence tracks. `C_ObjectRow -> ColObj` is not yet admitted.**
 
 The three labels transfer from T18 S4 through the registered exact receipt.
 S2 owns only the coin metatile selector table and `AreaType` dispatch in shared
@@ -14,7 +14,7 @@ it does not execute gameplay work or preempt the next source-order packet.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the active source-order chain.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S2 is the sole active implementation packet.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. M2 T30 S2 is the latest closed implementation packet; no later T30 S is admitted.**
 
 ## M2 T30 S2 Packet
 
