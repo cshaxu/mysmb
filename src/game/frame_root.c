@@ -252,9 +252,13 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
              game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 6U) {
         mysmb_game_lose_life(game);
     }
-    else if ((mode_before == 1U &&
-              (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
-             (run_title_demo != 0U)) {
+    /* RunDemo is a same-frame tail of GameMenuRoutine, rather than another
+     * OperModeExecutionTree alternative.  Keep this outside the selector's
+     * else-if chain so a title task-three pass can immediately enter the
+     * shared GameCoreRoutine sequence. */
+    if ((mode_before == 1U &&
+         (task_before == 3U || (task_before == 1U && game->area_prg == 0))) ||
+        run_title_demo != 0U) {
         if (game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] == 3U &&
             mysmb_area_queue_bottom_status_line(game) != 0U) {
             game->ram[MYSMB_FRAME_SCREEN_ROUTINE_TASK] = 4U;

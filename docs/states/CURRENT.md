@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T26 S7 Packet
+## M2 T25 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T26 S7, implementation; independent outer-victory route equivalence. |
-| Admission And Approval | Owner-approved source-order M2 plan; S6 restored the outer call order with zero node credit and transferred both labels to this pre-accepted independent receiver. |
-| Objective | Compare the repaired `VictoryMode` and `AutoPlayer` outer route against an aligned original-ROM route. |
-| Non-goals | New gameplay approximation, platform gameplay logic, or credit without a complete aligned route. |
-| Reference Baseline | 72 / 1,992 complete; two scoped labels; expected matches `VictoryMode`, `AutoPlayer`; maximum 74 / 1,992. |
-| Candidate Proposal | [T26 victory/terminal plan](../proposals/m2/t26-victory-terminal.md). |
-| Files And ABI Surface | Shared frame root, current-slot enemy core, player/OAM collaborators, aligned recorder route, ledger, and three target artifacts. |
+| Identifier Mode | M2 T25 S6, implementation; first-divergence title integration. |
+| Admission And Approval | Owner-approved source-order M2 plan; S5 retained these 26 labels in S6, and T26 now supplies the named terminal producer evidence. |
+| Objective | Isolate the first original-ROM/title-route divergence before repairing or crediting any title/menu/demo node. |
+| Non-goals | New gameplay approximation, platform gameplay logic, T16 player/OAM repair, or credit without an aligned source route. |
+| Reference Baseline | 74 / 1,992 complete; 26 scoped labels; expected matches none; maximum 74 / 1,992. |
+| Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
+| Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Original branch/read/write/call order and an aligned ROM route; focused tests, cross-width builds, DOS16 and purity. |
-| Expected Markers | `VictoryMode`, `AutoPlayer`, subject to independent full-route evidence. |
+| Verification | Source-PC/write-order audit at the first divergent NMI; focused title test, cross-width recorder comparison, DOS16 and purity for any repair. |
+| Expected Markers | None at admission; every title/menu/demo label remains uncredited pending source-route proof. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record each label disposition, full-route evidence, and the resulting node count. |
-| Stop Conditions | Stop on unsound trace injection, external-owner change, or platform gameplay logic. |
-| Exit Criteria | Each label is completed only if both logic-equivalence and operational tracks pass; otherwise it transfers to an accepted successor. |
+| Reporting Requirements | Record the first-difference owner, each label disposition, and any accepted transfer. |
+| Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, or platform gameplay logic. |
+| Exit Criteria | A source-owned first divergence is identified and either repaired with both verification tracks or transferred to its accepted owner. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Compare all VictoryMode task branches and their shared enemy/player collaborator handoffs against the source route. |
+| Similar-Issue Sweep | Compare title bootstrap, menu buffer writes, icon OAM, demo transition and title/player OAM handoffs through the first divergent NMI. |
 
 ## Recent M4 Closures
 

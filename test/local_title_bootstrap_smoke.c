@@ -48,6 +48,13 @@ int main(void)
                                  MYSMB_LOCAL_TITLE_DATA_SIZE,
                                  mysmb_local_title_icon_data,
                                  MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
+    /* InitializeGame clears through $076f before its smaller InitializeArea
+     * clear, and separately clears SoundMemory ($07b0-$07cf).  These sentinels
+     * make the source call order observable at the first title NMI. */
+    game.ram[0x074cU] = 0x5aU;
+    for (index = 0U; index < 0x20U; ++index) {
+        game.ram[(unsigned short)(0x07b0U + index)] = 0x5aU;
+    }
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
         game.ram[0x00fbU] != 0U) return 1;
     input.buttons = 0U;
@@ -55,6 +62,10 @@ int main(void)
     if (game.ram[0x0009U] != 0U) return 1;
     if (game.ram[0x0772U] != 1U || game.ram[0x00fbU] != 0x80U ||
         game.ram[0x07a2U] != 0x18U) return 1;
+    if (game.ram[0x074cU] != 0U) return 1;
+    for (index = 0U; index < 0x20U; ++index) {
+        if (game.ram[(unsigned short)(0x07b0U + index)] != 0U) return 1;
+    }
     saw_title_transfer = 0U;
     saw_icon_queue = 0U;
     saw_title_palette_queue = 0U;

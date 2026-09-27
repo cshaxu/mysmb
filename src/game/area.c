@@ -688,8 +688,8 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     return 1U;
 }
 
-mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
-                                  const struct mysmb_area_source *source)
+mysmb_u8 mysmb_area_load_area_pointer(struct mysmb_game *game,
+                                      const struct mysmb_area_source *source)
 {
     mysmb_u16 table_index;
     mysmb_u8 area_pointer;
@@ -707,15 +707,29 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
     }
     area_pointer = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_OFFSETS + table_index)];
     area_type = (mysmb_u8)((area_pointer & 0x60U) >> 5U);
-    table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_HIGH_OFFSETS +
-                                                       area_type)] +
-                               (area_pointer & 0x1fU));
-    if (table_index >= 0x0022U) {
-        return 0U;
-    }
     game->ram[MYSMB_AREA_POINTER] = area_pointer;
     game->ram[MYSMB_AREA_TYPE] = area_type;
     game->ram[MYSMB_AREA_LOW_OFFSET] = (mysmb_u8)(area_pointer & 0x1fU);
+    return 1U;
+}
+
+mysmb_u8 mysmb_area_get_data_addresses(struct mysmb_game *game,
+                                       const struct mysmb_area_source *source)
+{
+    mysmb_u16 table_index;
+    mysmb_u8 area_type;
+
+    if (source == 0 || source->prg == 0 || source->prg_size < 0x1d70U ||
+        game->ram[MYSMB_AREA_TYPE] >= 4U) {
+        return 0U;
+    }
+    area_type = game->ram[MYSMB_AREA_TYPE];
+    table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_HIGH_OFFSETS +
+                                                        area_type)] +
+                                game->ram[MYSMB_AREA_LOW_OFFSET]);
+    if (table_index >= 0x0022U) {
+        return 0U;
+    }
     game->ram[MYSMB_ENEMY_DATA_LOW] = source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_LOW + table_index)];
     game->ram[MYSMB_ENEMY_DATA_HIGH] = source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_HIGH + table_index)];
     table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_AREA_HIGH_OFFSETS +
@@ -727,6 +741,13 @@ mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
     game->ram[MYSMB_AREA_DATA_LOW] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_LOW + table_index)];
     game->ram[MYSMB_AREA_DATA_HIGH] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_HIGH + table_index)];
     return 1U;
+}
+
+mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
+                                  const struct mysmb_area_source *source)
+{
+    if (mysmb_area_load_area_pointer(game, source) == 0U) return 0U;
+    return mysmb_area_get_data_addresses(game, source);
 }
 
 /* Translation of the area-header tail of ROM $9c1c-$9c4a. */

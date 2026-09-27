@@ -28,6 +28,7 @@ enum {
     MYSMB_RAM_DEMO_ACTION = 0x0717U,
     MYSMB_RAM_DEMO_ACTION_TIMER = 0x0718U,
     MYSMB_RAM_DEMO_TIMER = 0x07a2U,
+    MYSMB_RAM_SOUND_MEMORY = 0x07b0U,
     MYSMB_RAM_FRAME_COUNTER = 0x0009U,
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
@@ -152,6 +153,7 @@ void mysmb_game_bind_title_source(struct mysmb_game *game,
 mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
 {
     struct mysmb_area_source source;
+    mysmb_u8 index;
 
     if (game->area_prg == 0 || game->title_data == 0 ||
         game->title_data_size != MYSMB_TITLE_BUFFER_SIZE ||
@@ -160,20 +162,23 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
     }
     source.prg = game->area_prg;
     source.prg_size = game->area_prg_size;
-    mysmb_area_initialize(game);
-    /* ROM InitializeGame: LDA #$18 / STA DemoTimer precedes LoadAreaPointer.
-     * The later task-one screen-routine sequence consumes this countdown. */
+    /* ROM InitializeGame falls through to InitializeArea.  Preserve every
+     * source step: InitializeMemory($6f), the 32-byte sound clear, DemoTimer,
+     * LoadAreaPointer, then InitializeArea.  In particular, InitializeArea's
+     * smaller $4b clear deliberately retains the pointer state just loaded. */
+    mysmb_game_initialize_memory(game, 0x6fU);
+    for (index = 0U; index < 0x20U; ++index) {
+        game->ram[(mysmb_u16)(MYSMB_RAM_SOUND_MEMORY + index)] = 0U;
+    }
     game->ram[MYSMB_RAM_DEMO_TIMER] = 0x18U;
-    if (mysmb_area_load_pointers(game, &source) == 0U ||
+    if (mysmb_area_load_area_pointer(game, &source) == 0U) {
+        return 0U;
+    }
+    mysmb_area_initialize(game);
+    if (mysmb_area_get_data_addresses(game, &source) == 0U ||
         mysmb_area_parse_header(game, &source) == 0U) {
         return 0U;
     }
-    game->ram[MYSMB_RAM_OPER_MODE] = 0U;
-    /* This boundary is called by the shared NMI dispatcher after its prologue.
-     * InitializeArea increments the source operation task before returning. */
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
-    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 0U;
-    game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE] = 0x80U;
     return 1U;
 }
 

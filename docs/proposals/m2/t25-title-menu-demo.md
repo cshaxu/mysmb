@@ -42,6 +42,7 @@ T25 is the first future source-order slice after the immutable historical T23/T2
 | S3 | Receive S2 output and prove ROM logic equivalence. | Controlled title, Select/world, Start and demo routes; reads/writes/tables/call order. | Cross-width trace equality. | 0 |
 | S4 | Receive S3 output and complete operational verification. | Recheck source-reachable branches after any repair. | Focused tests, x86/x64, DOS16, runtime route and purity. | 0 |
 | S5 | Receive S4 output and close only labels supported by both tracks. | Review evidence/dispositions label by label. | Re-run required gates and publish three artifacts. | Up to 26 |
+| S6 | Re-open the retained title integration after its named dependencies change; first isolate the earliest aligned-ROM divergence before any node credit. | Source-PC and write-order audit at the first divergent NMI. | Controlled x86/x64 recorder comparison and focused title tests. | 0 |
 
 No platform adapter may decide menu state, world selection, demo input, timing, score reset, or title transition.
 
@@ -275,3 +276,55 @@ the player/OAM route needed for the terminal demo continuation and T26 has
 established the natural `EndChkBButton` producer route. Its later admission
 must declare a fresh exact expected-match subset and independently rerun both
 logic and operational evidence.
+
+## S6 admission: first-divergence title integration
+
+T26 now supplies the natural terminal producer evidence named by S5.  S6
+receives the same 26 labels at **74 / 1,992**, but forecasts no completion
+credit: the current full title route must be re-established before the earlier
+per-label proof can be reused.  A controlled no-input comparison begins from
+the shared `power_on -> reset` sequence with owner-local title sources bound.
+Frames 0--25 agree in RAM `$0300..$07ff`, CIRAM, palette, OAM, audio and PPU
+scalars.  Frame 26 is the first divergence, in title VRAM-buffer bytes; frame
+27 is the first OAM divergence.  Neighbouring-frame comparison does not reduce
+the difference, so this is a source state/write discrepancy rather than a
+recorder frame-index offset.
+
+S6 may investigate only this source slice and its registered shared
+collaborators.  It must identify the original PCs and title-mode writes behind
+the first difference, compare the corresponding C call order, and add focused
+coverage before proposing any label credit.  The unresolved player/OAM route
+remains outside this S6 repair boundary; no T16 result may be inferred from a
+title trace.
+
+## S6 P1: source-order title integration repair
+
+The first divergent title NMI exposed two source-order omissions.  First, the
+shared title bootstrap had reversed `InitializeGame` and `InitializeArea` and
+had omitted the `$07b0-$07cf` `ClrSndLoop`.  The repair now executes
+`InitializeMemory($6f)`, clears the sound workspace, writes `DemoTimer`, calls
+`LoadAreaPointer`, then enters `InitializeArea`.  The previously combined
+native pointer helper is split at the ROM boundary: `LoadAreaPointer` retains
+the area selector across the smaller area clear, while `GetAreaDataAddrs`
+rebuilds zero-page pointers and decodes the header afterwards.
+
+Second, `NullJoypad -> RunDemo` must call `GameCoreRoutine` in the same frame.
+The shared dispatcher had placed that tail in the mutually-exclusive outer
+mode chain, so it never ran after a title menu branch.  It is now a subsequent
+source-owned condition.  This restores the initial entrance setup, player
+palette transfer, and title-area state without giving any platform adapter a
+gameplay decision.
+
+The focused bootstrap smoke preloads sentinels in `$074c` and
+`$07b0-$07cf`; it proves the two source clears at the first title NMI.  A
+fresh no-input original-ROM comparison is equal in work RAM `$0300-$07ff`,
+both CIRAM pages, palette, visible OAM, audio and PPU scalars for frames
+0--598.  The final recorder frame deliberately contains a Start input only to
+express an otherwise idle local script and is excluded.  Win32 x86/x64 product
+self-tests, the OpenNT DOS16 MZ link, and platform-purity verification pass.
+
+S6 closes at **74 / 1,992** with zero new labels.  Its admission explicitly
+forecast no matches, so the repaired whole-route evidence is retained for the
+next title subtask rather than converted into retroactive node credit.  The
+same 26 labels remain in their T25 receiver for an exact branch-coverage and
+logic-credit admission.
