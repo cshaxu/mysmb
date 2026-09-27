@@ -585,9 +585,9 @@ The labels and branches behind every line remain open until individually bound b
 | 4104 | `ColumnOfBricks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
 | 4109 | `ColumnOfSolidBlocks` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
 | 4112 | `GetRow2` | M2 T30 S4 shared `area.c` row/column chain | ROM-match complete | [T30 S4/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s4p1-block-rowcolumn-migration-and-rom-proof) |
-| 4120 | `BulletBillCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillcannon) |
-| 4135 | `SetupCannon` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupcannon) |
-| 4146 | `StrCOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strcoffset) |
+| 4120 | `BulletBillCannon` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
+| 4135 | `SetupCannon` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
+| 4146 | `StrCOffset` | M2 T30 S5 shared `area.c` cannon chain | ROM-match complete | [T30 S5/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s5p1-cannon-geometry-registration-and-rom-proof) |
 | 4151 | `StaircaseHeightData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseheightdata) |
 | 4154 | `StaircaseRowData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaserowdata) |
 | 4157 | `StaircaseObject` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-staircaseobject) |

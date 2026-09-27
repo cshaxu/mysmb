@@ -2,7 +2,7 @@
 
 ## First Priority - M2 Source-Order Recovery
 
-The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. T25 through T29 have completed their admitted source-order chains. T30/S1 is closed at 433 / 1,992. T30/S2 is closed at 435 / 1,992. T30/S3 is closed at 442 / 1,992; T30/S4 is closed at 452 / 1,992; BulletBillCannon is the next candidate.
+The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. T25 through T29 have completed their admitted source-order chains. T30/S1 is closed at 433 / 1,992. T30/S2 is closed at 435 / 1,992. T30/S3 is closed at 442 / 1,992; T30/S4 is closed at 452 / 1,992; T30/S5 is closed at 455 / 1,992; staircase is next.
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
@@ -12,7 +12,8 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-The latest closed packet is `M2 T30 S3`, the seven-label castle-column chain, closed at 442 / 1,992. T30/S4 subsequently closed ten row/column nodes at 452 / 1,992; the cannon family remains unadmitted.
+T30/S5 closed the three cannon geometry/registration nodes at 455 / 1,992.
+The next unadmitted chain starts at StaircaseHeightData.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This

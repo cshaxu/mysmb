@@ -318,3 +318,110 @@ All ten admitted labels above are ROM-match complete. Expected/actual: ten/
 ten; **442 -> 452 / 1,992**. No unfinished label remains in S4 custody.
 Tracker, census and ledger must agree and pass closure gates before commit.
 The next unadmitted source-order family begins at `BulletBillCannon`.
+
+## T30/S5 admission: cannon geometry and registration chain
+
+Entry/exit: `BulletBillCannon -> StrCOffset`; shared owner `src/game/area.c`.
+Exact scope and expected matches: `BulletBillCannon` (4120), `SetupCannon`
+(4135), `StrCOffset` (4146), all incoming open. Baseline **452 / 1,992**,
+expected **3**, maximum **455 / 1,992**. Transfer-102 accepts these labels
+from T18 S4. Closed S4 precedes this chain; StaircaseHeightData is next.
+Attribute/position helpers and RenderUnderPart remain separately owned
+collaborators, without node credit. Cannon actor firing is out of scope.
+
+ROM-logic audit covers decoded height, top and middle direct stores, base
+RenderUnderPart, scratch row, Y/page/X coordinate write order and six-slot
+index wrap. Native tests cover short/tall cannon geometry, lower boundary,
+all six slots and repeat registration. Controlled ordinary parser ROM routes
+use immutable owner-ROM records with source RAM only, never PC/stack edits.
+Focused tests, x86/x64 products and self-tests, DOS16 link, platform purity
+and three refreshed artifacts provide the separate operational track.
+
+Provenance: reviewed owner-local SMB1 NROM and local SMBDIS are restricted
+validation inputs; no third-party translation is imported. Raw traces and
+coverage stay in ignored build/m2-t30-s5 with two sample frames per route,
+131072 instructions per frame and a 1 MB aggregate raw-trace budget. The S5
+executor owns cleanup after review; only neutral evidence is retained here.
+
+S5 dependency amendment: cannon row 11 with height >= 2 enters UnderPart at
+row 13. Its existing equality-only bottom check differs from ROM INX/CPX/BCS.
+The coordinator admits the minimal >= bottom guard repair as a required
+collaborator fix, with boundary regression; no RenderUnderPart node credit.
+
+## S5/P1: cannon geometry registration and ROM proof
+
+| Node | Original control/data semantics and execution evidence |
+| --- | --- |
+| `BulletBillCannon` | `$9a69`: GetLrgObjAttrib saves row in `$07`; unconditional `$64` top; DEY/BMI either skips or writes `$65` middle; second DEY/BMI either skips or renders `$66` base through UnderPart. Named shared C entry preserves both branches and overlap behavior. Five shapes execute the ordinary parser entry. |
+| `SetupCannon` | `$9a85`: read `$046a`; write Y=`($07<<4)+32` at `$0477+slot`, current page at `$046b+slot`, then X=`CurrentColumnPos<<4` at `$0471+slot`; increment slot and reset at six. All six slots and wrap execute with exact coordinate arrays. |
+| `StrCOffset` | `$9aa1`: store the selected offset at `$046a` and return. Represented by the final store in the named setup owner, without a forwarding-only wrapper. Every route executes this entry; both increment and reset results match. |
+
+The old C branch always drew three cells and never registered coordinates.
+It is replaced by the above shared owner, with no gameplay added to platforms.
+The required UnderPart bottom guard now follows the original CPX/BCS stop
+for starts at or below the last visible row. It retains its existing owner
+and is not credited by this S.
+
+Thirty original-ROM routes use five immutable records and six starting slots.
+Three ordinary 7-1 cannon records at `$ab8c`, `$ab84`, `$ab92` cover heights
+zero, one and two. Two controlled parser routes select 3-3 records at `$a473`
+and `$a48f` with source-RAM AreaStyle=2, covering height five and a row-eleven,
+height-fifteen bottom exit. Both recorders share `test/cannon_fixture.h`;
+neither modifies program bytes, PC, stack or return flow. One warmup plus two
+sample frames run via normal GameEngine/ProcessAreaData. PC coverage confirms
+`$9508`, `$9a69`, `$9a85`, `$9aa1` and the selected middle/base entries.
+
+`test/verify_cannon_routes.py` first requires non-vacuous expected geometry,
+coordinates and ring index, then compares all nineteen cannon bytes, sixteen
+staging bytes and ten parser slot/style/height bytes in both samples. All
+thirty routes have zero scoped differences. The row-thirteen route also
+matches the original remaining height thirteen. Other RAM differences are
+reported separately (scratch, stack and PPU control mirrors); this receipt
+does not claim whole-frame equivalence. Those collaborators keep their
+existing source-order receivers.
+
+```text
+reference <ROM> build/m2-t30-s5/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-cannon=<id> --pc-coverage=build/m2-t30-s5/pc-<id>.txt
+native build/m2-t30-s5/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-cannon=<id>
+python -B test/verify_cannon_routes.py build/m2-t30-s5
+```
+
+Containment: ids 0..29 produce sixty local traces, each 8,830 bytes, total
+529,800 bytes, below the admitted 1 MB budget. Per-frame instruction limits
+remain in force. Only neutral assertions and the evidence summary are tracked.
+
+Operational evidence is separate: the native smoke passes 1,152 combinations
+(12 start rows, 16 heights, six slots), checking complete geometry, scratch
+row/height, selected coordinates, untouched slots/timers and length state.
+It and row/column/parser-column regressions pass strict C90 x86/x64 builds.
+Both Windows adapter self-tests exit zero through an argument-preserving
+subprocess with a ten-second timeout. A separate hidden two-second startup
+probe observes each real MySMB window and successful bounded WM_NULL response;
+only its own processes are terminated. This proves startup/responsiveness,
+not full gameplay. The initial PowerShell self-test launcher supplied trailing
+argument whitespace and entered the hidden normal window; the independent
+probe replaces that invalid harness run. OpenNT16 links an MZ with existing
+warnings. The previously recorded missing DOS resource binding still prevents
+claiming DOS playability. Platform-purity and package checks pass.
+
+Similar-issue sweep: the one AreaStyle=2 branch was the only cannon geometry
+writer; new Cannon slots have one shared area owner. No platform owns those
+RAM fields. Cannon firing and whirlpool activation are already recorded debt,
+retained for their source-order tasks. All UnderPart callers retain their
+usual row<=12 behavior; the added cannon boundary matrix exercises the newly
+corrected out-of-range entry without unrelated helper credit.
+
+Artifact SHA-256: `mysmb16.exe`
+`CF85426161096A36D9C1BCE7D1284C5215F95A325C447EF731A143A66787DEF8`;
+`mysmb32.exe`
+`A55138CB5E5015D1FA5BDE1BBF16709589899CC5A22C53A70B5829F1659C815E`;
+`mysmb64.exe`
+`8A91923F0999FE0BCF1057EC51DB189ED2ACD51C3524E26CC7582045C0C7ED3F`.
+
+## S5 closure
+
+Expected and actual new matches: three. `BulletBillCannon`, `SetupCannon`,
+`StrCOffset` are complete in both tracks; **452 -> 455 / 1,992**. No unfinished
+scope label remains, and no collaborator gets completion credit. Tracker,
+census and ledger must pass their closure gates before commit. The next
+unadmitted source-order chain starts at `StaircaseHeightData`.

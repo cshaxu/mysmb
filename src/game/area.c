@@ -4,6 +4,10 @@
 #include "game/status.h"
 
 enum {
+    MYSMB_AREA_CANNON_OFFSET = 0x046aU,
+    MYSMB_AREA_CANNON_PAGE = 0x046bU,
+    MYSMB_AREA_CANNON_X = 0x0471U,
+    MYSMB_AREA_CANNON_Y = 0x0477U,
     MYSMB_AREA_OBJECT_OFFSET = 0x0008U,
     MYSMB_AREA_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_AREA_SCREEN_RIGHT_PAGE = 0x071bU,
@@ -1081,10 +1085,50 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
              (existing != 0x54U || metatile != 0x50U))) {
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = metatile;
         }
-        if (row == 12U || height == 0U) break;
+        if (row >= 12U || height == 0U) break;
         row++;
         height--;
     } while (1);
+}
+
+/* ROM BulletBillCannon -> SetupCannon -> StrCOffset ($9a69-$9aa4).
+ * The top/middle stores are unconditional; only the base uses UnderPart's
+ * overlap rules. GetAreaObjYPosition retains the original attribute row. */
+static void mysmb_area_setup_cannon(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+
+    slot = game->ram[MYSMB_AREA_CANNON_OFFSET];
+    game->ram[MYSMB_AREA_CANNON_Y + slot] =
+        (mysmb_u8)((game->ram[7U] << 4U) + 32U);
+    game->ram[MYSMB_AREA_CANNON_PAGE + slot] =
+        game->ram[MYSMB_AREA_CURRENT_PAGE];
+    game->ram[MYSMB_AREA_CANNON_X + slot] =
+        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+    slot++;
+    if (slot >= 6U) slot = 0U;
+    /* StrCOffset: the six-entry cannon/whirlpool ring has one offset. */
+    game->ram[MYSMB_AREA_CANNON_OFFSET] = slot;
+}
+
+static void mysmb_area_bullet_bill_cannon(struct mysmb_game *game,
+                                         mysmb_u8 row, mysmb_u8 second)
+{
+    mysmb_u8 height;
+
+    game->ram[7U] = row;
+    height = (mysmb_u8)(second & 0x0fU);
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x64U;
+    row++;
+    height--;
+    if (height < 0x80U) {
+        game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x65U;
+        row++;
+        height--;
+        if (height < 0x80U)
+            mysmb_area_render_under_part(game, row, height, 0x66U);
+    }
+    mysmb_area_setup_cannon(game);
 }
 
 /* ROM $96f2-$9737 ScrollLockObject_Warp through AreaFrenzy.  These entries
@@ -1623,9 +1667,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             return;
         }
         if (value == 2U) {
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x64U;
-            if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x65U;
-            if (row < 11U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 2U] = 0x66U;
+            mysmb_area_bullet_bill_cannon(game, row, second);
         }
         return;
     }

@@ -2,33 +2,31 @@
 
 ## Current Work
 
-**M2 T30 S4 is closed at 452 / 1,992. All ten row/column labels have both evidence tracks.**
+**M2 T30 S5 is closed at 455 / 1,992; all three cannon nodes have both evidence tracks.**
 
-S4 closed ten nodes after the source audit, 32 original-ROM consumer routes,
-x86/x64 focused tests and adapter self-tests, DOS16 link and purity checks.
-The three artifacts are refreshed. BulletBillCannon is the next unadmitted
-source-order family. Retained numeric packet text is historical; no S is active.
+Thirty original-ROM routes and the x86/x64 test matrix pass. Three artifacts
+are refreshed; Windows startup probes pass. No S is active; staircase is next.
 
-## M2 T30 S4 Packet
+## M2 T30 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S4, implementation; block row/column chain. |
-| Admission And Approval | Owner-approved source-order continuation; exact transfer-101 from M2 T18 S4. |
-| Objective | Translate and prove SolidBlockMetatiles through GetRow2; ten exact labels in the proposal. |
-| Non-goals | No cannon/staircase, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
-| Reference Baseline | 442 / 1,992; ten open labels; expected ten matches; maximum 452 / 1,992. |
+| Identifier Mode | M2 T30 S5, implementation; cannon geometry/registration chain. |
+| Admission And Approval | Owner-approved source-order continuation; exact transfer-102 from M2 T18 S4. |
+| Objective | Translate and prove BulletBillCannon, SetupCannon and StrCOffset; three exact labels in the proposal. |
+| Non-goals | No staircase or cannon actor firing, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
+| Reference Baseline | 452 / 1,992; three open labels; expected three matches; maximum 455 / 1,992. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c, parser tests and validation recorders; ledger/progress and three artifacts. |
+| Files And ABI Surface | Shared area.c including the cannon-required UnderPart bottom guard repair (no collaborator credit), parser tests and validation recorders; ledger/progress and three artifacts. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused row/column and coin regression tests; x86/x64 and DOS16 builds; purity and package checks. |
-| Expected Markers | AreaType and cloud selections, $07 row, length slots, zero/decoded height, staged metatiles and tail-call order. |
+| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused cannon and row/column regression tests; x86/x64 and DOS16 builds; purity and package checks. |
+| Expected Markers | Decoded height, $07 row, top/middle/base tiles, Cannon Y/page/X write order and six-slot offset wrap. |
 | Asset Needs | Refresh assets/mysmb16.exe, mysmb32.exe and mysmb64.exe per P; DOS MZ build is not runtime proof. |
 | Reporting Requirements | Every label disposition, both evidence tracks, actual count, artifact hashes and exact transfers. |
 | Stop Conditions | Unmatched source branch/data/write, unadmitted dependency, ROM mismatch or platform gameplay. |
-| Exit Criteria | All ten nodes proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
+| Exit Criteria | All three nodes proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
 | Original Owner Request | Full original-ROM behavior; source order; shared C90 logic across all targets. |
-| Similar-Issue Sweep | All row/column table consumers, coin GetRow caller, cloud overrides, scratch row writes and platform trees. |
+| Similar-Issue Sweep | All cannon/whirlpool slot writers, decoded-height branches and platform trees. |
 
 ## Retained M2 T15 summary
 
