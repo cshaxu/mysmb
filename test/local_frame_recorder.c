@@ -730,6 +730,7 @@ int main(int argument_count, char **arguments)
         return 65;
     }
     for (index = 0UL; index < total_frames; ++index) {
+        input.buttons2 = 0U;
         input.buttons = index >= start_frame && index < release_frame ?
             MYSMB_BUTTON_START : 0U;
         if (mysmb_recorder_script_buttons(script, index, total_frames,

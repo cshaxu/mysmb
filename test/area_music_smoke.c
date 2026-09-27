@@ -18,6 +18,8 @@ static int check_music(mysmb_u8 area_type, mysmb_u8 entrance,
     game.ram[0x0710U] = entrance;
     game.ram[0x0769U] = alternate;
     game.ram[0x0743U] = cloud;
+    input.buttons2 = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     return game.ram[0x00fbU] == expected ? 0 : 1;

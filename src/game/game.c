@@ -427,7 +427,9 @@ void mysmb_game_secondary_setup(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE_TASK] = 3U;
 }
 
-/* Translation of the name-table portion of ROM $8e92-$8eec. */
+/* ROM $8e92-$8eec WriteBufferToScreen through InitScroll.  This models PPU
+ * command semantics in the shared game output state; platform code never
+ * interprets these packets. */
 mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
                                         const mysmb_u8 *commands,
                                         mysmb_u16 command_size)
@@ -454,18 +456,8 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             (mysmb_u16)(3U + ((control & 0x40U) != 0U ? 1U : count))) {
             return 0U;
         }
-        if ((address < 0x2000U || address >= 0x2800U) &&
-            (address < 0x3f00U || address >= 0x3f20U)) {
+        if (address < 0x2000U || address >= 0x4000U) {
             return 0U;
-        }
-        table = 0U;
-        offset = 0U;
-        if (address < 0x2800U) {
-            table = (mysmb_u8)((address - 0x2000U) / 0x0400U);
-            offset = (mysmb_u16)(address & 0x03ffU);
-        }
-        else {
-            offset = (mysmb_u16)(address & 0x001fU);
         }
         value = commands[(mysmb_u16)(cursor + 3U)];
         /* WriteBufferToScreen ($2457-$2478) selects the PPU address
@@ -475,21 +467,21 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
             game->ppu_control_0 |= 0x04U;
         else
             game->ppu_control_0 &= (mysmb_u8)~0x04U;
+        /* WritePPUReg1 writes both physical $2000 and $0778 before every
+         * packet.  The visible physical state is committed by the NMI tail. */
+        game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR] = game->ppu_control_0;
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
-                if (offset >= 0x20U) return 0U;
+                offset = (mysmb_u16)(address & 0x001fU);
                 game->palette[mysmb_game_palette_offset(offset)] = value;
             }
             else {
-                if (offset >= 0x0400U) return 0U;
+                table = (mysmb_u8)((address & 0x0400U) != 0U ? 1U : 0U);
+                offset = (mysmb_u16)(address & 0x03ffU);
                 game->name_table[table][offset] = value;
             }
-            if ((control & 0x80U) != 0U) {
-                offset = (mysmb_u16)(offset + 32U);
-            }
-            else {
-                offset++;
-            }
+            address = (mysmb_u16)((address +
+                ((control & 0x80U) != 0U ? 32U : 1U)) & 0x3fffU);
             if ((control & 0x40U) == 0U && (mysmb_u8)(index + 1U) < count) {
                 value = commands[(mysmb_u16)(cursor + 3U + index + 1U)];
             }
@@ -497,7 +489,11 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
         cursor = (mysmb_u16)(cursor + 3U +
                               ((control & 0x40U) != 0U ? 1U : count));
     }
-    return cursor < command_size ? 1U : 0U;
+    if (cursor >= command_size) return 0U;
+    /* UpdateScreen reaches InitScroll with A=0 after the terminator. */
+    game->visible_scroll_x = 0U;
+    game->visible_scroll_y = 0U;
+    return 1U;
 }
 
 /* ROM $94a5-$9539 GameEngine's UpdScrollVar/RunParser tail.  NMI has already

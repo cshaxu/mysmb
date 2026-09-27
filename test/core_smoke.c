@@ -825,6 +825,7 @@ int main(void)
         mysmb_area_next_object(&game, &area_source, &area_object) != 0U) {
         return 1;
     }
+    input.buttons2 = 0U;
     input.buttons = 0U;
     for (index = 0U; index < 120U; ++index) {
         mysmb_game_tick(&game, &input, &frame);
@@ -857,6 +858,8 @@ int main(void)
         return 1;
     }
 
+    input.buttons2 = 0U;
+
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_game_checkpoint(&game, &checkpoint);
@@ -879,6 +882,7 @@ int main(void)
     }
 
     mysmb_game_initialize(&game);
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_SELECT;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x077aU] != 1U || game.ram[0x0780U] != 0x10U) {
@@ -891,6 +895,7 @@ int main(void)
 
     mysmb_game_initialize(&game);
     game.ram[0x07fdU] = 6U;
+    input.buttons2 = 0U;
     input.buttons = (mysmb_u8)(MYSMB_BUTTON_A | MYSMB_BUTTON_START);
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x075fU] != 6U || game.ram[0x0760U] != 0U ||
@@ -908,6 +913,7 @@ int main(void)
     game.ram[0x071aU] = 1U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x30U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x001dU] != 3U || game.ram[0x00ceU] != 0x2fU) {
@@ -930,6 +936,7 @@ int main(void)
     game.ram[0x0789U] = 2U;
     game.ram[0x077fU] = 0U;
     game.ram[0x0796U] = 2U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0781U] != 1U || game.ram[0x0782U] != 1U ||

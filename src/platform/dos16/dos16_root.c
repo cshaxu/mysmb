@@ -69,6 +69,7 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     }
     if (mysmb_dos16_start_game(root) != 0U) return;
     input.buttons = root->hooks.read_buttons(root->hooks.context);
+    input.buttons2 = 0U;
     mysmb_game_tick(&root->game, &input, &root->game_frame);
     mysmb_dos16_compose_and_present(root);
     root->hooks.present_vga(root->hooks.context, &root->vga_frame);

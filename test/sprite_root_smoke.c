@@ -19,6 +19,7 @@ static int mysmb_sprite_root_case(mysmb_u8 flag, mysmb_u8 pause,
     game.ram[0x0740U] = 0x56U;
     for (index = 0U; index < 64U; ++index)
         game.ram[(mysmb_u16)(0x0200U + index * 4U)] = (mysmb_u8)(0x20U + index);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     (void)mysmb_frame_root_begin(&game, &input, &mode, &task);
     if (game.ram[0x0200U] != expected_first || game.visible_scroll_x != 0x34U ||

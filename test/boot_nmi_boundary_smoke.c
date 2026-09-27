@@ -13,6 +13,8 @@ int main(void)
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
         game.ram[0x0774U] != 1U || game.ram[0x0200U] != 0xf8U ||
         game.oam_dma_primed != 1U || game.frame_number != 0UL) return 1;
+    input.buttons2 = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     /* With no owner-local title inputs, retain the fixture fallback while

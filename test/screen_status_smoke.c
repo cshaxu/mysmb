@@ -113,6 +113,8 @@ int main(void)
         struct mysmb_input input;
         struct mysmb_frame frame;
 
+        input.buttons2 = 0U;
+
         input.buttons = 0U;
         mysmb_game_frame_initialize(&frame);
         mysmb_frame_root_step(&game, &input, &frame);

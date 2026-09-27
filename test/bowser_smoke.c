@@ -136,6 +136,7 @@ int main(void)
         game.ram[0x00fdU] != 1U) return 5;
     game.ram[0x0770U] = 2U;
     game.ram[0x0772U] = 1U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.name_table[0U][0x021aU] != 0x24U ||

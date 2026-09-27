@@ -7,6 +7,7 @@ int main(void)
     struct mysmb_frame frame;
 
     mysmb_game_initialize(&game);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     game.ram[0x0340U] = 4U;
     game.ram[0x0341U] = 0x20U;

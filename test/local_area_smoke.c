@@ -98,8 +98,10 @@ int main(void)
     source.prg = mysmb_local_prg;
     source.prg_size = MYSMB_LOCAL_PRG_SIZE;
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (frame.operating_mode != 1U || frame.operating_mode_task != 1U ||
@@ -155,6 +157,7 @@ int main(void)
         game.palette[13U] != mysmb_local_prg[0x09c3U] ||
         game.palette[14U] != mysmb_local_prg[0x09d7U] ||
         game.palette[15U] != mysmb_local_prg[0x09d8U] || rotation != 1U) return 1;
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x000eU] != 7U ||
@@ -185,6 +188,7 @@ int main(void)
     game.ram[0x0760U] = 3U;
     game.ram[0x075cU] = 2U;
     game.ram[0x07a1U] = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
@@ -209,6 +213,7 @@ int main(void)
     game.ram[0x07f8U] = 3U;
     game.ram[0x07f9U] = 4U;
     game.ram[0x07faU] = 5U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x07f8U] != 3U || game.ram[0x07f9U] != 4U ||
@@ -360,8 +365,10 @@ int main(void)
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     for (count = 0U; count < 200U && game.ram[0x0772U] != 3U; ++count) {
         mysmb_game_tick(&game, &input, &frame);
@@ -372,6 +379,7 @@ int main(void)
     }
     if (game.ram[0x000eU] != 8U || game.ram[0x001dU] != 0U ||
         game.ram[0x0086U] != 0x28U || game.ram[0x00ceU] != 0xb0U) return 1;
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_RIGHT;
     for (count = 0U; count < 156U; ++count) {
         mysmb_game_tick(&game, &input, &frame);
@@ -408,6 +416,7 @@ int main(void)
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     game.ram[0x0770U] = 3U;
     game.ram[0x0772U] = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     for (count = 0U; count < 8U; ++count) mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0772U] != 2U || game.ram[0x07a0U] != 0x12U ||
@@ -446,6 +455,7 @@ int main(void)
     game.ram[0x0772U] = 1U;
     game.ram[0x073cU] = 4U;
     game.ram[0x0759U] = 1U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0759U] != 0U || game.ram[0x073cU] != 5U ||

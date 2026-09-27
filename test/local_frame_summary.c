@@ -88,6 +88,7 @@ int main(int argument_count, char **arguments)
            "palette_fnv1a,oam_fnv1a\n");
     for (index = 0UL; index < frames; ++index) {
         /* NES serial Start is bit 3; MySMB's decoded RAM representation is $10. */
+        input.buttons2 = 0U;
         input.buttons = index >= start_frame && index < release_frame ?
             MYSMB_BUTTON_START : 0U;
         if (mysmb_summary_script_buttons(argument_count == 5 ? arguments[4] : 0,

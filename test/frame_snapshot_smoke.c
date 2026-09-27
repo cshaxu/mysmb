@@ -18,7 +18,9 @@ int main(void)
     game.visible_scroll_x = 0xb7U;
     game.visible_scroll_y = 0x80U;
     mysmb_game_initialize_name_tables(&game);
-    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x10U ||
+    /* InitializeNameTables preserves the caller's NMI high bit: the source
+     * ORA/AND result is $90 from the initialized $2000 mirror, not $10. */
+    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x90U ||
         game.visible_ppu_mask != 0x1eU || game.visible_ppu_control_0 != 0x90U ||
         game.visible_ppu_name_table != 0U || game.visible_scroll_x != 0U ||
         game.visible_scroll_y != 0U)
@@ -61,6 +63,7 @@ int main(void)
 
     /* NMI WriteBufferToScreen derives $2000 d2 from a command's d7.  The
      * source mirror keeps that bit when the NMI restores output. */
+    input.buttons2 = 0U;
     input.buttons = 0U;
     game.ppu_control_0 = 0x90U;
     game.ppu_mask = 0U;

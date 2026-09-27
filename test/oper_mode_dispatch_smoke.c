@@ -6,6 +6,8 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
 
+    input.buttons2 = 0U;
+
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 0U;
@@ -14,6 +16,8 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x07a2U] != 0U) return 1;
+
+    input.buttons2 = 0U;
 
     input.buttons = 0U;
     mysmb_game_initialize(&game);

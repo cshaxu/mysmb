@@ -2,14 +2,14 @@
 
 ## Current Work
 
-**Active implementation packet: M2 T28 S5, the five-node name-table initialization chain. T28 S4 is closed at 213 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
+**Active implementation packet: M2 T28 S6, the twelve-node joypad/VRAM-output/NMI chain. T28 S5 is closed at 218 / 1,992; T21/T22 and other historical entries below remain retained evidence and do not supersede this packet.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T28 S2.
 The [historical unresolved node closure package](../proposals/m2/historical-node-closure-package.md)
 remains a queued historical record and cannot preempt the T28 source-order continuation.
 
-**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S5 packet below is active.**
+**All other numeric M2 task states in retained proposal text are historical or queued records. Only the M2 T28 S6 packet below is active.**
 
 ## Retained M2 T15 summary
 
@@ -67,26 +67,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
-## M2 T28 S5 Packet
+## M2 T28 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T28 S5, implementation; name-table initialization chain. |
-| Admission And Approval | Owner-approved source-order continuation; ledger receipt accepts five labels from legacy T18 custody. |
-| Objective | Translate and prove `JumpEngine -> InitATLoop` in shared C. |
-| Non-goals | No joypad or later VRAM-buffer dispatcher node, platform rendering decision, or label outside the five-node receipt. |
-| Reference Baseline | 213 / 1,992 complete; 5 scoped open labels; expected 5 matches; maximum 218 / 1,992. |
+| Identifier Mode | M2 T28 S6, implementation; joypad/VRAM-output/NMI chain. |
+| Admission And Approval | Owner-approved source-order continuation; ledger receipt accepts twelve labels from legacy T18 custody. |
+| Objective | Translate and prove `ReadJoypads -> WritePPUReg1` in shared C. |
+| Non-goals | No NMI prologue, mode/pause root, host input policy, platform rendering decision, or label outside the twelve-node receipt. |
+| Reference Baseline | 218 / 1,992 complete; 12 scoped open labels; expected 12 matches; maximum 230 / 1,992. |
 | Candidate Proposal | [M2 T28 area output and bootstrap](../proposals/m2/t28-area-output-bootstrap.md). |
-| Files And ABI Surface | Shared boot/frame-root owners, controlled ROM/native recorder, ledger and three target artifacts for each implementation P. |
+| Files And ABI Surface | Shared frame-root/game owners and headers, controlled ROM/native recorder, focused shared-game smoke, ledger and three target artifacts for each implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Source audit; controlled name-table initialization output; focused renderer regressions; x86/x64, DOS16 and purity checks. |
-| Expected Markers | inline selector, PPU-control mirror, two 960-byte blank regions, two 64-byte attribute regions, buffer reset and scroll tail. |
+| Verification | Source audit of `$8e5c-$8ef0`; controlled original-ROM/native NMI routes for serial input and command output; focused VRAM/input regression; x86/x64, DOS16 and purity checks. |
+| Expected Markers | Two-port eight-bit serial order, `$06fc/$06fd` and `$074a/$074b` debounce writes, selected zero-page pointer, command address/control/count/repeat sequence, `$3f00` reset, zero scroll tail and PPU-control mirror. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
-| Reporting Requirements | Record selector, writes and all five node dispositions. |
+| Reporting Requirements | Record both controller ports, every command form and all twelve node dispositions. |
 | Stop Conditions | Stop on unmatched source behavior, unadmitted dependency, recorder mismatch or platform gameplay logic. |
-| Exit Criteria | All five labels have ROM and operational evidence without unrelated credit. |
+| Exit Criteria | All twelve labels have ROM and operational evidence without unrelated credit. |
 | Original Owner Request | Strict source order, dual verification and shared game logic only. |
-| Similar-Issue Sweep | Ensure platform sources do not initialize game PPU/name-table state. |
+| Similar-Issue Sweep | Audit every direct mutation of `$06fc/$06fd/$074a/$074b`, PPU-control mirror and VRAM buffer handling; platform sources may only supply physical input and submit the completed frame. |
 
 ## Recent M4 Closures
 

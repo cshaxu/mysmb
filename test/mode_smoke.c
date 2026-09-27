@@ -17,6 +17,7 @@ int main(void)
     game.ram[0x075fU] = 0U;
     game.ram[0x075cU] = 0U;
     game.ram[0x071aU] = 7U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x075aU] != 1U || game.ram[0x075bU] != 5U ||
@@ -31,6 +32,7 @@ int main(void)
     game.ram[0x000eU] = 6U;
     game.ram[0x075aU] = 0U;
     game.ram[0x075fU] = 4U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 3U || game.ram[0x0772U] != 0U ||
@@ -51,6 +53,7 @@ int main(void)
      * local area smoke verifies its ScreenRoutines-to-GameOver output route. */
     game.ram[0x0772U] = 2U;
     game.ram[0x07a0U] = 0U;
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
@@ -67,6 +70,7 @@ int main(void)
     game.ram[0x075fU] = 1U;
     game.ram[0x0761U] = 2U;
     game.ram[0x0766U] = 6U;
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
@@ -85,6 +89,7 @@ int main(void)
     game.ram[0x075bU] = 6U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x90U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x075cU] != 2U || game.ram[0x0760U] != 3U ||
@@ -104,6 +109,7 @@ int main(void)
     game.ram[0x071bU] = 0U;
     game.ram[0x071cU] = 0U;
     game.ram[0x071dU] = 0xffU;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0772U] != 2U || game.ram[0x0035U] != 2U ||
@@ -119,6 +125,7 @@ int main(void)
     game.ram[0x0760U] = 3U;
     game.ram[0x075cU] = 2U;
     game.ram[0x07a1U] = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
@@ -133,6 +140,7 @@ int main(void)
     game.ram[0x075fU] = 2U;
     game.ram[0x07a1U] = 1U;
     game.ram[0x077fU] = 0U;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x07a1U] != 0U || game.ram[0x0770U] != 1U ||
@@ -147,6 +155,9 @@ int main(void)
     game.ram[0x07a0U] = 0x44U;
     game.ram[0x06fcU] = 0U;
     game.ram[0x06fdU] = MYSMB_BUTTON_B;
+    /* ReadJoypads refreshes both saved latches at the NMI boundary.  Feed
+     * port two through the input seam instead of manufacturing stale RAM. */
+    input.buttons2 = MYSMB_BUTTON_B;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x07fcU] != 1U || game.ram[0x075aU] != 0xffU ||
@@ -169,6 +180,7 @@ int main(void)
         game.ram[0x0364U] = 2U;
         game.ram[0x03c5U] = 0x5aU;
         game.ram[0x03d0U] = 0xa5U;
+        input.buttons2 = 0U;
         input.buttons = 0U;
         mysmb_game_tick(&game, &input, &frame);
         if (game.ram[0x0772U] != 0U || game.ram[0x03c5U] != 0x5aU ||
@@ -191,6 +203,7 @@ int main(void)
         game.ram[0x0008U] = 3U;
         game.ram[0x03c5U] = 0x5aU;
         game.ram[0x0747U] = 0xffU;
+        input.buttons2 = 0U;
         input.buttons = 0U;
         mysmb_game_tick(&game, &input, &frame);
         if (game.ram[0x0772U] != 2U || game.ram[0x0008U] != 0U ||
@@ -210,6 +223,7 @@ int main(void)
         game.ram[0x000fU] = 1U;
         game.ram[0x0016U] = 0x35U;
         game.ram[0x03c5U] = 0x5aU;
+        input.buttons2 = 0U;
         input.buttons = 0U;
         mysmb_game_tick(&game, &input, &frame);
         if (game.ram[0x03c5U] != 0x5aU || game.ram[0x0201U] != 0xcdU) return 14;

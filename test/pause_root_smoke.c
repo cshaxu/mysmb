@@ -17,6 +17,7 @@ static int mysmb_pause_case(mysmb_u8 mode, mysmb_u8 task, mysmb_u8 status,
     game.ram[0x0777U] = timer;
     game.ram[0x00faU] = audio;
     game.ram[0x074aU] = 0U;
+    input.buttons2 = 0U;
     input.buttons = buttons;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != mode || game.ram[0x0772U] != task ||

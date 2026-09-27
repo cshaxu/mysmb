@@ -10,10 +10,12 @@ int main(void)
     /* The route starts through the same title input and task-zero area setup
      * that the Win32 composition root uses. */
     mysmb_game_initialize(&game);
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x0757U] == 0U) return 1;
+    input.buttons2 = 0U;
     input.buttons = 0U;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 1U ||
@@ -24,6 +26,7 @@ int main(void)
      * timer state that a ROM-bound area parse normally provides. */
     game.ram[0x0715U] = 1U;
     game.ram[0x0757U] = 1U;
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_RIGHT;
     for (index = 0U; index < 3U; ++index) {
         mysmb_game_tick(&game, &input, &frame);

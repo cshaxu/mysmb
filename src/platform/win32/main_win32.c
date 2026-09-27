@@ -190,6 +190,7 @@ static void mysmb_win32_step(HWND window)
     if (mysmb_win32_start_game() == 0) return;
 
     input.buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
+    input.buttons2 = 0U;
     steps = 0U;
     do {
         g_last_tick.QuadPart += frame_period;

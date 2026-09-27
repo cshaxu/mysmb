@@ -175,3 +175,44 @@ The S5 packaging pass produced `mysmb16.exe`
 `7DFFE343566C3B7A4EB9F905B4816F810118EAB6146C9A98E76AF964CC3CE01F`,
 `mysmb32.exe` `355A074CF5167BD47DE1A152F6C71DE6B2AFBBEEBDD1118EE5250DF2501A64F3`,
 and `mysmb64.exe` `E47E64B3DC9D90F155C6C8DD4C6DC9DD147F00BE4BC2C536F1817B65C09F4A28`.
+
+## S6 admission contract
+
+S6 receives exactly these twelve adjacent labels from the legacy T18 receiver:
+`ReadJoypads`, `ReadPortBits`, `PortLoop`, `Save8Bits`,
+`WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`,
+`RepeatByte`, `UpdateScreen`, `InitScroll`, and `WritePPUReg1`. The baseline
+is **218 / 1,992**; all twelve are open and expected to become ROM-match
+complete, for a maximum of **230 / 1,992**.
+
+The shared owners are `src/game/frame_root.c`, `src/game/game.c`, and their
+shared C90 headers. The source route is `$8e5c-$8ef0`: strobe both controller
+ports, shift exactly eight serial bits into `$06fc/$06fd`, apply the original
+Start/Select mask at `$074a/$074b`, then process each selected VRAM packet,
+including increment mode, repeat mode, terminator, palette-address reset,
+zero-scroll tail, and `$0778` mirror write. T22's NMI is the natural caller;
+the controlled evidence must enter through that route or an ordinary source
+caller, never fabricate a leaf stack.
+
+ROM equivalence compares each source branch, RAM/table read and write, and
+call order. Operational evidence adds a focused shared-game smoke, paired
+original-ROM/native route recordings, x86/x64 builds, the OpenNT DOS16 link,
+platform-purity gate, and all three packaged artifacts. Platform adapters may
+supply physical input and submit a completed frame only; they may not own
+serial controller state, debounce, VRAM interpretation, PPU mirrors, or scroll.
+
+## S6 P1 implementation checkpoint
+
+P1 introduces the shared two-port serial latch and the shared PPU packet
+writer. The focused `joypad-vram-chain-smoke` covers both `$06fc/$06fd`
+ports, held Start/Select suppression, linear/repeat/32-byte increments,
+nametable mirroring, palette mirroring, `$0778`, and the `InitScroll` tail.
+It passes on x86 and x64 with frame-snapshot, platform-purity and each Win32
+self-test. The identical core has a newly linked OpenNT DOS16 MZ.
+
+This is an implementation checkpoint only: no S6 node receives completion
+credit until the planned original-ROM/NMI comparison has established the
+source call sequence and observed RAM/PPU state. The broader x64 regression
+currently retains five pre-existing failures (`core`, `parser-buffer-commit`,
+`bowser`, `mode`, `oper-mode-dispatch`); the focused S6 tests pass, and these
+unrelated assertions are not silently repaired under this receipt.

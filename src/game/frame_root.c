@@ -14,7 +14,9 @@ enum {
     MYSMB_ROOT_OPERATING_MODE_TASK = 0x0772U,
     MYSMB_ROOT_SPRITE0_HIT = 0x0722U,
     MYSMB_ROOT_SAVED_JOYPAD1 = 0x06fcU,
+    MYSMB_ROOT_SAVED_JOYPAD2 = 0x06fdU,
     MYSMB_ROOT_JOYPAD_MASK1 = 0x074aU,
+    MYSMB_ROOT_JOYPAD_MASK2 = 0x074bU,
     MYSMB_ROOT_PAUSE_STATUS = 0x0776U,
     MYSMB_ROOT_PAUSE_TIMER = 0x0777U,
     MYSMB_ROOT_PAUSE_SOUND_QUEUE = 0x00faU,
@@ -86,7 +88,7 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     mysmb_game_commit_vram_buffer(game);
     mysmb_game_commit_display_state(game);
     mysmb_audio_step(game);
-    (void)mysmb_frame_root_latch_joypad1(game, input->buttons);
+    mysmb_frame_root_read_joypads(game, input->buttons, input->buttons2);
     paused = mysmb_frame_root_pause_step(game);
     mysmb_frame_root_update_top_score(game);
     if (paused == 0U) {
@@ -106,21 +108,52 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     return paused;
 }
 
-/* ROM $8e5c-$8e90: controller-one latch and Start/Select debounce. */
-mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game,
-                                        mysmb_u8 buttons)
+/* ROM $8e5c-$8e90 ReadJoypads/ReadPortBits/PortLoop/Save8Bits.  Host
+ * adapters provide decoded button images only; this shared owner recreates
+ * the eight serial reads and applies the source's two-port debounce rule. */
+static mysmb_u8 mysmb_frame_root_read_port_bits(mysmb_u8 buttons)
+{
+    mysmb_u8 index;
+    mysmb_u8 serial;
+    mysmb_u8 result;
+
+    result = 0U;
+    for (index = 0U; index < 8U; ++index) {
+        serial = (mysmb_u8)((buttons >> (7U - index)) & 1U);
+        result = (mysmb_u8)((result << 1U) | serial);
+    }
+    return result;
+}
+
+static void mysmb_frame_root_save_port_bits(struct mysmb_game *game,
+                                            mysmb_u8 buttons,
+                                            mysmb_u16 saved,
+                                            mysmb_u16 mask)
 {
     mysmb_u8 select_start;
 
+    game->ram[saved] = buttons;
     select_start = (mysmb_u8)(buttons &
         (MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
-    if ((select_start & game->ram[MYSMB_ROOT_JOYPAD_MASK1]) != 0U) {
+    if ((select_start & game->ram[mask]) != 0U) {
         buttons = (mysmb_u8)(buttons &
             ~(MYSMB_BUTTON_SELECT | MYSMB_BUTTON_START));
     }
-    else game->ram[MYSMB_ROOT_JOYPAD_MASK1] = buttons;
-    game->ram[MYSMB_ROOT_SAVED_JOYPAD1] = buttons;
-    return buttons;
+    else game->ram[mask] = buttons;
+    game->ram[saved] = buttons;
+}
+
+void mysmb_frame_root_read_joypads(struct mysmb_game *game,
+                                   mysmb_u8 buttons1, mysmb_u8 buttons2)
+{
+    /* The source writes $4016=1, then $4016=0, reads port one, increments
+     * X and falls through ReadPortBits for port two. */
+    mysmb_frame_root_save_port_bits(game,
+        mysmb_frame_root_read_port_bits(buttons1),
+        MYSMB_ROOT_SAVED_JOYPAD1, MYSMB_ROOT_JOYPAD_MASK1);
+    mysmb_frame_root_save_port_bits(game,
+        mysmb_frame_root_read_port_bits(buttons2),
+        MYSMB_ROOT_SAVED_JOYPAD2, MYSMB_ROOT_JOYPAD_MASK2);
 }
 /* ROM $8a4f-$8a6c UpdateTopScore / TopScoreCheck. */
 static void mysmb_frame_root_top_score_check(struct mysmb_game *game,

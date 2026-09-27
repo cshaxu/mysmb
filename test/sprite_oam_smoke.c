@@ -10,6 +10,7 @@ int main(void)
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    input.buttons2 = 0U;
     input.buttons = 0U;
     game.ram[0x0770U] = 1U;
     game.ram[0x0772U] = 2U;

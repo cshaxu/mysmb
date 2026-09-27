@@ -20,7 +20,8 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
                             const struct mysmb_input *input,
                             mysmb_u8 *mode_before,
                             mysmb_u8 *task_before);
-mysmb_u8 mysmb_frame_root_latch_joypad1(struct mysmb_game *game, mysmb_u8 buttons);
+void mysmb_frame_root_read_joypads(struct mysmb_game *game,
+                                   mysmb_u8 buttons1, mysmb_u8 buttons2);
 mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game);
 void mysmb_frame_root_update_top_score(struct mysmb_game *game);
 void mysmb_frame_root_finish(const struct mysmb_game *game,

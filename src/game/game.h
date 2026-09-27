@@ -21,7 +21,10 @@ enum {
 };
 
 struct mysmb_input {
+    /* These are the already-decoded NES controller bit images.  The shared
+     * NMI owner serializes both ports in ROM order before it publishes RAM. */
     mysmb_u8 buttons;
+    mysmb_u8 buttons2;
 };
 
 struct mysmb_area_command {

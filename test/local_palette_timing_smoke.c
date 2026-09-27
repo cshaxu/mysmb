@@ -16,8 +16,10 @@ int main(void)
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     saw_player_palette_handoff = 0U;
     for (count = 0U; count < 200U && game.ram[0x0772U] != 3U; ++count) {
@@ -48,6 +50,7 @@ int main(void)
      * unrelated address control during the same gameplay frame. */
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    input.buttons2 = 0U;
     input.buttons = 0U;
     game.palette[4U] = 0U;
     game.ram[0x0773U] = 8U;

@@ -16,6 +16,8 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
 
+    input.buttons2 = 0U;
+
     input.buttons = 0U;
     mysmb_test_start_victory(&game);
     mysmb_game_tick(&game, &input, &frame);
