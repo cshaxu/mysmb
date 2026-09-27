@@ -341,3 +341,15 @@ path; frame-snapshot, platform-purity and both target-width checks retain the
 shared-game boundary. This is still implementation and source-structure
 evidence only; no S7 label is credited before the controlled ROM route proves
 the full status-output chain.
+
+## S7 P6 natural status-route recorder correction
+
+The controlled status routes now use an NMI-boundary fixture and normal mode
+dispatch. A warmup-aligned bottom-status route executes `PrintStatusBarNumbers`
+through `DigitPLoop`; its `$0300` packet and following NMI-consumed header
+match the ROM. A separate GameEngine timer route executes `RunGameTimer`,
+`DigitsMathRoutine`, `AddModLoop`, `EraseDMods` and `EraseMLoop`; both traces
+match the timer digits, modifier clear range and `$207a` status command over
+two frames. The recorder rejects only its direct one-frame fixtures (35--52),
+allowing the new multi-frame natural route. Broader background/object residuals
+remain outside this chain and are not masked or credited here.

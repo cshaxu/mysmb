@@ -404,6 +404,22 @@ static void mysmb_recorder_apply_t28_vram_fixture(struct mysmb_game *game,
     }
 }
 
+/* T28/S7 enters the ordinary GameMode -> GameCoreRoutine -> GameEngine timer
+ * tail.  This prepares only source RAM at a frame boundary; dispatch remains
+ * in the shared game root. */
+static void mysmb_recorder_apply_t28_status_timer_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x00b5U] = 0U;
+    game->ram[0x0787U] = 0U;
+    game->ram[0x07f8U] = 1U;
+    game->ram[0x07f9U] = 0U;
+    game->ram[0x07faU] = 2U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -722,6 +738,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 52U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-status-timer") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 53U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -739,7 +760,7 @@ int main(int argument_count, char **arguments)
     total_frames = parsed_frames + warmup_frames;
     if (total_frames < parsed_frames || total_frames > 4200UL ||
         start_frame >= release_frame || release_frame > total_frames ||
-        (t26_fixture >= 35U && parsed_frames != 1UL)) return 64;
+        (t26_fixture >= 35U && t26_fixture <= 52U && parsed_frames != 1UL)) return 64;
     frames = (mysmb_u32)parsed_frames;
     output = fopen(arguments[1], "wb");
     if (output == 0) return 65;
@@ -822,6 +843,8 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t28_vram_fixture(&game, 0U);
             else if (t26_fixture == 52U)
                 mysmb_recorder_apply_t28_vram_fixture(&game, 1U);
+            else if (t26_fixture == 53U)
+                mysmb_recorder_apply_t28_status_timer_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

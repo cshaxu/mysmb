@@ -506,6 +506,21 @@ static void mysmb_reference_apply_t28_vram_fixture(lib_u8 *ram, lib_u8 kind)
     }
 }
 
+/* T28/S7 changes only RAM at an NMI return.  The following normal operation
+ * mode dispatch reaches GameEngine and its RunGameTimer tail. */
+static void mysmb_reference_apply_t28_status_timer_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x0770u] = 1u;
+    ram[0x0772u] = 3u;
+    ram[0x000eu] = 8u;
+    ram[0x00b5u] = 0u;
+    ram[0x0787u] = 0u;
+    ram[0x07f8u] = 1u;
+    ram[0x07f9u] = 0u;
+    ram[0x07fau] = 2u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -811,6 +826,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 52u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-status-timer") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 53u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -825,7 +845,7 @@ int main(int argument_count, char **arguments)
     }
     total_frames = requested_frames + warmup_frames;
     if (total_frames < requested_frames || total_frames > 4200u ||
-        (t26_fixture >= 35u && requested_frames != 1u)) return 64;
+        (t26_fixture >= 35u && t26_fixture <= 52u && requested_frames != 1u)) return 64;
     output = fopen(arguments[2], "wb");
     if (output == LIB_NULL) return 65;
     if (!mysmb_reference_write(output, magic, sizeof(magic)) ||
@@ -992,6 +1012,9 @@ int main(int argument_count, char **arguments)
                         MYSMB_REFERENCE_NMI_ENTRY, LIB_TRUE) !=
                         LIB_STATUS_OK) break;
                 }
+                else if (t26_fixture == 53u)
+                    mysmb_reference_apply_t28_status_timer_fixture(
+                        driver->machine->ram);
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
