@@ -147,3 +147,15 @@ visible-OAM sample. Therefore this route is evidence for the floating-score
 state transition only; it is not an OAM or whole-frame equivalence claim.
 S4 retains all 32 labels with zero ROM-match credit until source-reachable
 victory, end-world and complete OAM routes establish both required tracks.
+
+The companion `t26-endworld-b` precondition reaches `PlayerEndWorld` at
+world eight with its timer expired. The reference controller is held at the
+ROM serial-B value throughout the bounded run, because the source NMI owns
+the saved-controller latches; the native recorder receives the corresponding
+decoded B mask. Their first post-branch NMI sample agrees on the complete
+terminal write set: world-select enable, lives `$ff`, Silence event queue,
+continue world, screen timer, and title mode/task. The existing focused mode
+smoke separately covers the second-controller latch required by
+`EndChkBButton`. Later title-initialization samples diverge outside this
+terminal subtree, so this record is limited to the one post-branch terminal
+state and does not credit a node.

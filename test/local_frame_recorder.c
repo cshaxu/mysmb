@@ -129,6 +129,17 @@ static void mysmb_recorder_apply_t26_floatey_fixture(struct mysmb_game *game)
     game->ram[0x075aU] = 2U;
 }
 
+/* Fixed T26 terminal precondition for PlayerEndWorld's world-eight B path. */
+static void mysmb_recorder_apply_t26_endworld_b_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0770U] = 2U;
+    game->ram[0x0772U] = 4U;
+    game->ram[0x075fU] = 7U;
+    game->ram[0x07a1U] = 0U;
+    game->ram[0x06fcU] = MYSMB_BUTTON_B;
+    game->ram[0x06fdU] = 0U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -170,7 +181,7 @@ int main(int argument_count, char **arguments)
     int warmup_result;
     const char *script;
     mysmb_u8 bootstrap_title;
-    mysmb_u8 t26_floatey_fixture;
+    mysmb_u8 t26_fixture;
     struct mysmb_recorder_ram_write ram_write;
 
     if (argument_count < 5 || argument_count > 9) return 64;
@@ -182,15 +193,20 @@ int main(int argument_count, char **arguments)
     bootstrap_title = 0U;
     warmup_frames = 0UL;
     ram_write.present = 0U;
-    t26_floatey_fixture = 0U;
+    t26_fixture = 0U;
     for (index = 5UL; index < (unsigned long)argument_count; ++index) {
         if (mysmb_recorder_equals(arguments[index], "--bootstrap-title") != 0U) {
             bootstrap_title = 1U;
         }
         else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t26-floatey-oneup") != 0U) {
-            if (t26_floatey_fixture != 0U) return 64;
-            t26_floatey_fixture = 1U;
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 1U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-endworld-b") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 2U;
         }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
@@ -244,8 +260,12 @@ int main(int argument_count, char **arguments)
             game.ram[ram_write.address] = ram_write.value;
             ram_write.present = 0U;
         }
-        if (t26_floatey_fixture != 0U && index == warmup_frames)
-            mysmb_recorder_apply_t26_floatey_fixture(&game);
+        if (index == warmup_frames) {
+            if (t26_fixture == 1U)
+                mysmb_recorder_apply_t26_floatey_fixture(&game);
+            else if (t26_fixture == 2U)
+                mysmb_recorder_apply_t26_endworld_b_fixture(&game);
+        }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {
             mysmb_frame_snapshot_capture(&game, &snapshot);
