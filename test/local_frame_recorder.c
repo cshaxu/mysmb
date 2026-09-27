@@ -282,8 +282,12 @@ static void mysmb_recorder_apply_t27_screen_fixture(struct mysmb_game *game,
     game->ram[0x0774U] = 1U;
     game->ram[0x0759U] = 0U;
     game->ram[0x0769U] = 0U;
-    game->ram[0x073cU] = kind == 0U || kind == 3U ? 4U :
-        (kind == 5U || kind == 6U ? 5U : 6U);
+    game->ram[0x077aU] = 0U;
+    game->ram[0x0753U] = 0U;
+    game->ram[0x073cU] = kind == 0U || kind == 3U ||
+        kind == 8U || kind == 9U ? 4U :
+        (kind == 5U || kind == 6U ? 5U :
+        (kind == 12U || kind == 13U ? 7U : 6U));
     if (kind == 0U) {
         game->ram[0x0770U] = 1U;
         game->ram[0x0772U] = 1U;
@@ -314,6 +318,33 @@ static void mysmb_recorder_apply_t27_screen_fixture(struct mysmb_game *game,
         game->ram[0x0770U] = 1U;
         game->ram[0x0772U] = 1U;
         game->ram[0x07a0U] = kind == 5U ? 1U : 0U;
+        return;
+    }
+    if (kind == 7U) {
+        game->ram[0x0770U] = 1U;
+        game->ram[0x0772U] = 1U;
+        game->ram[0x0752U] = 1U;
+        return;
+    }
+    if (kind == 8U || kind == 9U) {
+        game->ram[0x0770U] = 1U;
+        game->ram[0x0772U] = 1U;
+        game->ram[0x0759U] = 1U;
+        game->ram[0x077aU] = 1U;
+        game->ram[0x0753U] = kind == 8U ? 0U : 1U;
+        return;
+    }
+    if (kind == 10U || kind == 11U) {
+        game->ram[0x0770U] = 3U;
+        game->ram[0x0772U] = 1U;
+        game->ram[0x077aU] = 1U;
+        game->ram[0x0753U] = kind == 10U ? 1U : 0U;
+        return;
+    }
+    if (kind == 12U || kind == 13U) {
+        game->ram[0x0770U] = 1U;
+        game->ram[0x0772U] = 1U;
+        game->ram[0x07a0U] = kind == 12U ? 1U : 0U;
         return;
     }
     game->ram[0x0770U] = 3U;
@@ -503,6 +534,41 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 25U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-nointer-alt") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 26U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-timeup-luigi") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 27U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-timeup-mario") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 28U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-gameover-luigi") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 29U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-gameover-mario") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 30U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-task7-pending") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 31U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t27-screen-task7-expired") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 32U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -592,7 +658,7 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_floatey_leaf_fixture(&game, 1U);
             else if (t26_fixture == 18U)
                 mysmb_recorder_apply_t26_victory_outer_player_fixture(&game);
-            else if (t26_fixture >= 19U && t26_fixture <= 25U)
+            else if (t26_fixture >= 19U && t26_fixture <= 32U)
                 mysmb_recorder_apply_t27_screen_fixture(&game,
                     (mysmb_u8)(t26_fixture - 19U));
         }

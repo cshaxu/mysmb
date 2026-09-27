@@ -157,8 +157,8 @@ int main(void)
     game.ram[0x077aU] = 1U;
     game.ram[0x0753U] = 1U;
     if (mysmb_area_queue_top_status_line(&game) == 0U ||
-        game.ram[0x0304U] != mysmb_local_prg[0x07e1U] ||
-        game.ram[0x0308U] != mysmb_local_prg[0x07e5U]) return 1;
+        game.ram[0x0304U] != mysmb_local_prg[0x07edU] ||
+        game.ram[0x0308U] != mysmb_local_prg[0x07f1U]) return 1;
     game.ram[0x077aU] = 0U;
     game.ram[0x0753U] = 0U;
     game.ram[0x0300U] = 0U;
