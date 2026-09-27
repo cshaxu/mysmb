@@ -1444,6 +1444,9 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
         slot = 2U;
         for (;;) {
             run_object = 0U;
+            /* ProcADLoop clears this byte for every slot. Only the final
+             * slot's SetBehind result reaches the ProcessAreaData loopback. */
+            rerun = 0U;
             game->ram[MYSMB_AREA_PARSER_BEHIND] = 0U;
             offset = game->ram[MYSMB_AREA_DATA_OFFSET];
             if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)

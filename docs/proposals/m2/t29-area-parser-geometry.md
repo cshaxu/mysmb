@@ -679,3 +679,21 @@ This remains an implementation checkpoint: the scanner compatibility helpers
 are retained for their separate legacy test consumers, but no production
 initial-area caller uses them; final per-label audit and dual-track closure
 remain required.
+
+## S7 P6: final-slot behind-page loopback
+
+`ProcADLoop` clears `BehindAreaParserFlag` before every descending slot. The
+ROM therefore repeats `ProcessAreaData` only when slot zero leaves that flag
+set; an earlier slot's behind-page skip is not sufficient. Shared C now resets
+its corresponding loopback state at each slot. The terminal-slot smoke uses a
+slot-two behind-page object, a slot-one active object and a slot-zero page
+control object: the active length changes from one to zero exactly once,
+instead of an invented second pass changing it to `$ff`.
+
+The focused area-stream tests pass on x86 and x64, together with parser
+scheduling, data and platform-purity checks. The common C90 code links into
+the OpenNT DOS16 MZ with the existing non-fatal `OLDNAMES.LIB` warning. P6
+artifacts are `mysmb16.exe`
+`CA402E7AF77932DE44BAD68CEC054A3BFFDA14E9381AC0AA1E05D8C556CED4F7`,
+`mysmb32.exe` `BFD495637A472080C4D7351E555F4D5F86C0E417264E4B06D0231EEB76F1E829`,
+and `mysmb64.exe` `CB60DE551148AFB4F3F5610A47B29E021D87818436A0A5BAAB236241D93CB856`.
