@@ -363,6 +363,23 @@ static void mysmb_recorder_apply_t27_screen_fixture(struct mysmb_game *game,
     game->ram[0x0772U] = 1U;
 }
 
+/* Fixed T28 entry to the matching TitleScreenMode -> ScreenRoutines -> InitScreen
+ * route.  This is recorder-only state at a native frame boundary; the normal
+ * translated mode selector remains responsible for dispatch. */
+static void mysmb_recorder_apply_t28_init_screen_fixture(struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x07a0U] = 0U;
+    game->ram[0x0774U] = 1U;
+    game->ram[0x0759U] = 0U;
+    game->ram[0x0769U] = 0U;
+    game->ram[0x077aU] = 0U;
+    game->ram[0x0753U] = 0U;
+    game->ram[0x073cU] = 0U;
+    game->ram[0x0770U] = 0U;
+    game->ram[0x0772U] = 1U;
+}
+
 static mysmb_u8 mysmb_recorder_write_frame(FILE *output,
                                             const struct mysmb_frame_snapshot *snapshot)
 {
@@ -666,6 +683,11 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 49U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-init-screen") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 50U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -759,6 +781,8 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 19U && t26_fixture <= 34U)
                 mysmb_recorder_apply_t27_screen_fixture(&game,
                     (mysmb_u8)(t26_fixture - 19U));
+            else if (t26_fixture == 50U)
+                mysmb_recorder_apply_t28_init_screen_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

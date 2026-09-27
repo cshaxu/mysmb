@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 213 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop. |
+| ROM-match complete | 218 | PlayerOffscreenChk, PROfsLoop, NPROffscr, RenderAreaGraphics, DrawMTLoop, RightCheck, LLeft, NextMTRow, SetAttrib, ExitDrawM, RenderAttributeTables, SetATHigh, AttribLoop, SetVRAMCtrl, MetatileGraphics_Low, MetatileGraphics_High, ColorRotatePalette, BlankPalette, Palette3Data, ColorRotation, GetBlankPal, GetAreaPal, ExitColorRot, BlockGfxData, RemoveCoin_Axe, WriteBlankMT, ReplaceBlockMetatile, DestroyBlockMetatile, WriteBlockMetatile, UseBOffset, MoveVOffset, PutBlockMetatile, SaveHAdder, RemBridge, Palette0_MTiles, Palette1_MTiles, Palette2_MTiles, Palette3_MTiles, WaterPaletteData, GroundPaletteData, UndergroundPaletteData, CastlePaletteData, DaySnowPaletteData, NightSnowPaletteData, MushroomPaletteData, BowserPaletteData, MarioThanksMessage, LuigiThanksMessage, MushroomRetainerSaved, PrincessSaved1, PrincessSaved2, WorldSelectMessage1, WorldSelectMessage2, JumpEngine, InitializeNameTables, WriteNTAddr, InitNTLoop, InitATLoop, ScreenOff, Start, VBlank1, VBlank2, WBootCheck, ColdBoot, EndlessLoop, InitializeMemory, VRAM_AddrTable_Low, VRAM_AddrTable_High, VRAM_Buffer_Offset, InitBuffer, PauseRoutine, ChkPauseTimer, ChkStart, ClrPauseTimer, SetPause, ExitPause, VictoryMode, AutoPlayer, TitleScreenMode, GameMenuRoutine, NullJoypad, RunDemo, ResetTitle, StartGame, ChkContinue, StartWorld1, InitScores, ExitMenu, GoContinue, WSelectBufferTemplate, MushroomIconData, DrawMushroomIcon, IconDataRead, ExitIcon, DemoActionData, DemoTimingData, DemoEngine, DoAction, DemoOver, InitScreen, SetupIntermediate, AreaPalette, GetAreaPalette, SetVRAMAddr_A, NextSubtask, BGColorCtrl_Addr, BackgroundColors, PlayerColors, GetBackgroundColor, NoBGColor, GetPlayerColors, ChkFiery, StartClrGet, ClrGetLoop, SetBGColor, SetVRAMOffset, GetAlternatePalette1, SetVRAMAddr_B, NoAltPal, WriteBottomStatusLine, WriteTopScore, WarpZoneWelcome, WarpZoneNumbers, WriteGameText, EndGameText, PrintStatusBarNumbers, PrintWarpZoneNumbers, WarpNumLoop. |
 | Mapped / audited, not complete | 108 | Exact names below: 18 known mismatches, 3 missing implementations, 2 changed-body revalidations, and 90 evidence-incomplete mappings. |
-| Open / unmatched | 1,671 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
+| Open / unmatched | 1,666 | Exact open rows in the inventory; responsibility/evidence gaps are now linked individually. Open does not mean unimplemented. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **213 / 1,992 (10.69%)**. Initial deep verification covered
+Verified conformance is **218 / 1,992 (10.94%)**. Initial deep verification covered
 77 names, yielding three matches, 19 mismatch-affected names and 55 partial
 results on the recorded snapshot. One mismatch-affected node and one partial node have since changed in the
 working tree and are now marked revalidation required. Historical/current
@@ -85,6 +85,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 2366 | `PrincessSaved2` |
 | 2375 | `WorldSelectMessage1` |
 | 2382 | `WorldSelectMessage2` |
+| 2395 | `JumpEngine` |
+| 2412 | `InitializeNameTables` |
+| 2421 | `WriteNTAddr` |
+| 2427 | `InitNTLoop` |
+| 2436 | `InitATLoop` |
 | 2145 | `MetatileGraphics_Low` |
 | 2148 | `MetatileGraphics_High` |
 | 776 | `ScreenOff` |

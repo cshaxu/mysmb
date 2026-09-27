@@ -6,8 +6,8 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1--S4 are closed at 213 / 1,992. T28 S5 is active.** It owns
-only the five-label name-table initialization chain below; later chains remain queued.
+**T28 S1--S5 are closed at 218 / 1,992.** S6 is the next queued chain. T28
+S5 owned only the five-label name-table initialization chain below.
 
 ## Exact source-order chains
 
@@ -149,3 +149,29 @@ x86 and x64 together with platform-purity and both Win32 self-tests. The same
 shared core links into the OpenNT DOS16 MZ; the packaging pass refreshed the
 three required artifacts, which remained byte-identical to S3 because no
 production byte changed.
+
+## S5 closure: name-table initialization chain
+
+S5 closes at **218 / 1,992**. `JumpEngine`, `InitializeNameTables`,
+`WriteNTAddr`, `InitNTLoop`, and `InitATLoop` are all represented by the
+shared mode/screen selectors and `boot.c:mysmb_game_initialize_name_tables`.
+The source `$8e19-$8e5b` order is preserved: control mirror `ORA #$10` then
+`AND #$f0`, table-one then table-zero address selection, four `Y=$c0` loop
+passes, the 64-byte attribute tail, both Buffer1 resets, and the zero-scroll
+tail. The focused smoke makes the full two 960-byte `$24` regions, two
+64-byte zero attribute regions, mirror control and buffer/scroll writes
+observable.
+
+The paired owner-ROM/native recorder enters the ordinary
+`TitleScreenMode -> ScreenRoutines -> InitScreen` path at an NMI boundary and
+captures the original at `NextSubtask` (`$85c8`), after both source calls
+return. It does not inject a leaf PC. Both CIRAM pages and every PPU scalar
+are zero-difference. The reference is before `IncSubtask`; the native frame
+ends after that source successor, so its screen-task increment is separately
+accounted for rather than hidden. Focused x86/x64 name-table, NMI-boundary,
+snapshot, purity and Win32 self-tests pass; the same core is built for the
+OpenNT DOS16 MZ. No platform source owns a name-table or PPU-state decision.
+The S5 packaging pass produced `mysmb16.exe`
+`7DFFE343566C3B7A4EB9F905B4816F810118EAB6146C9A98E76AF964CC3CE01F`,
+`mysmb32.exe` `355A074CF5167BD47DE1A152F6C71DE6B2AFBBEEBDD1118EE5250DF2501A64F3`,
+and `mysmb64.exe` `E47E64B3DC9D90F155C6C8DD4C6DC9DD147F00BE4BC2C536F1817B65C09F4A28`.

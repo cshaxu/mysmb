@@ -12,6 +12,7 @@
 #include "core/machine.h"
 
 #define MYSMB_REFERENCE_NMI_RETURN 0x8181u
+#define MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR 0x85c8u
 #define MYSMB_REFERENCE_PPU_CONTROL_MIRROR 0x0778u
 #define MYSMB_REFERENCE_HORIZONTAL_SCROLL 0x073fu
 #define MYSMB_REFERENCE_VERTICAL_SCROLL 0x0740u
@@ -460,6 +461,23 @@ static void mysmb_reference_apply_t27_screen_fixture(lib_u8 *ram, lib_u8 kind)
     ram[0x0772u] = 1u;
 }
 
+/* Fixed T28 entry to the actual TitleScreenMode -> ScreenRoutines -> InitScreen
+ * route.  The recorder alters RAM only at an NMI return; execution resumes
+ * through the normal ROM operation-mode selector, never at a leaf PC. */
+static void mysmb_reference_apply_t28_init_screen_fixture(lib_u8 *ram)
+{
+    ram[0x0722u] = 0u;
+    ram[0x07a0u] = 0u;
+    ram[0x0774u] = 1u;
+    ram[0x0759u] = 0u;
+    ram[0x0769u] = 0u;
+    ram[0x077au] = 0u;
+    ram[0x0753u] = 0u;
+    ram[0x073cu] = 0u;
+    ram[0x0770u] = 0u;
+    ram[0x0772u] = 1u;
+}
+
 int main(int argument_count, char **arguments)
 {
     core_driver *driver = LIB_NULL;
@@ -746,6 +764,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 49u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-init-screen") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 50u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -794,6 +817,16 @@ int main(int argument_count, char **arguments)
         lib_u16 before_pc;
 
         if (direct_warp_text && driver->machine->pc == 0x8001u) {
+            if (!mysmb_reference_write_frame(output, driver->machine)) break;
+            ++recorded;
+            break;
+        }
+        /* S5 reaches this source label only after GameMode and
+         * ScreenRoutines have selected InitScreen, both InitScreen calls
+         * have returned, and the nonzero-mode SetVRAMAddr_A write is done.
+         * It is a natural-route capture point, never an injected leaf PC. */
+        if (t26_fixture == 50u &&
+            driver->machine->pc == MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
             ++recorded;
             break;
@@ -873,6 +906,14 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 19u && t26_fixture <= 34u)
                     mysmb_reference_apply_t27_screen_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 19u));
+                else if (t26_fixture == 50u)
+                {
+                    mysmb_reference_apply_t28_init_screen_fixture(
+                        driver->machine->ram);
+                    if (core_machine_breakpoint_set(driver->machine,
+                        MYSMB_REFERENCE_T28_INIT_SCREEN_SUCCESSOR,
+                        LIB_TRUE) != LIB_STATUS_OK) break;
+                }
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);

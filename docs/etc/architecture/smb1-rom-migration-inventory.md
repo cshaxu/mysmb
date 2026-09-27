@@ -352,11 +352,11 @@ The labels and branches behind every line remain open until individually bound b
 | 2366 | `PrincessSaved2` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
 | 2375 | `WorldSelectMessage1` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
 | 2382 | `WorldSelectMessage2` | M2 T28 S4 shared data consumer | ROM-match complete | [T28 S4 data-chain evidence](../../proposals/m2/t28-area-output-bootstrap.md#s4-closure-data-chain-equivalence) |
-| 2395 | `JumpEngine` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpengine) |
-| 2412 | `InitializeNameTables` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializenametables) |
-| 2421 | `WriteNTAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-writentaddr) |
-| 2427 | `InitNTLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initntloop) |
-| 2436 | `InitATLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initatloop) |
+| 2395 | `JumpEngine` | M2 T28 S5 shared selector boundary | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
+| 2412 | `InitializeNameTables` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
+| 2421 | `WriteNTAddr` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
+| 2427 | `InitNTLoop` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
+| 2436 | `InitATLoop` | M2 T28 S5 shared boot owner | ROM-match complete | [T28 S5 closure](../../proposals/m2/t28-area-output-bootstrap.md#s5-closure-name-table-initialization-chain) |
 | 2446 | `ReadJoypads` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readjoypads) |
 | 2454 | `ReadPortBits` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-readportbits) |
 | 2455 | `PortLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-portloop) |
