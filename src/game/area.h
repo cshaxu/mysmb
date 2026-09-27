@@ -47,6 +47,13 @@ void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page);
 mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game);
 /* ROM $92b0-$92e8: execute exactly one AreaParserTaskHandler subtask. */
 mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game);
+/* ROM $88ae-$8969 RenderAreaGraphics.  Expand the staged thirteen
+ * metatiles into the source's one vertical VRAM_Buffer2 command and retain
+ * the seven attribute bytes for the immediately following source routine. */
+mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game);
+/* ROM $896a-$89a6 RenderAttributeTables.  Append and clear the seven
+ * source-ordered attribute commands after RenderAreaGraphics. */
+mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game);
 /* ROM $86e6-$86ff: finish one two-column parser set while the screen is off. */
 mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game);
 /* ROM $9508-$958f ProcessAreaData selection/state pass.  This owns the three

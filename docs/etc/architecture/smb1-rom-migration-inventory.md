@@ -302,17 +302,17 @@ The labels and branches behind every line remain open until individually bound b
 | 1804 | `ResetSpritesAndScreenTimer` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1809 | `ResetScreenTimer` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
 | 1813 | `NoReset` | M2 T27 S2 shared screen/status/text chain | ROM-match complete | [T27 S2 P17](../../proposals/m2/screen-status.md#s2p17-partial-chain-conformance-disposition) |
-| 1825 | `RenderAreaGraphics` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderareagraphics) |
-| 1840 | `DrawMTLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawmtloop) |
-| 1878 | `RightCheck` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rightcheck) |
-| 1886 | `LLeft` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lleft) |
-| 1888 | `NextMTRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextmtrow) |
-| 1889 | `SetAttrib` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setattrib) |
-| 1914 | `ExitDrawM` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdrawm) |
-| 1920 | `RenderAttributeTables` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderattributetables) |
-| 1930 | `SetATHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setathigh) |
-| 1940 | `AttribLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-attribloop) |
-| 1962 | `SetVRAMCtrl` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvramctrl) |
+| 1825 | `RenderAreaGraphics` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1840 | `DrawMTLoop` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1878 | `RightCheck` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1886 | `LLeft` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1888 | `NextMTRow` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1889 | `SetAttrib` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1914 | `ExitDrawM` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1920 | `RenderAttributeTables` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1930 | `SetATHigh` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1940 | `AttribLoop` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 1962 | `SetVRAMCtrl` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 1970 | `ColorRotatePalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-colorrotatepalette) |
 | 1973 | `BlankPalette` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blankpalette) |
 | 1977 | `Palette3Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette3data) |
@@ -331,8 +331,8 @@ The labels and branches behind every line remain open until individually bound b
 | 2086 | `PutBlockMetatile` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putblockmetatile) |
 | 2097 | `SaveHAdder` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savehadder) |
 | 2118 | `RemBridge` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rembridge) |
-| 2145 | `MetatileGraphics_Low` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-metatilegraphics_low) |
-| 2148 | `MetatileGraphics_High` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-metatilegraphics_high) |
+| 2145 | `MetatileGraphics_Low` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
+| 2148 | `MetatileGraphics_High` | M2 T28 S1 shared area output chain | ROM-match complete | [T28 S1 renderer/attribute equivalence](../../proposals/m2/t28-area-output-bootstrap.md#s1p1-renderer-and-attribute-equivalence-result) |
 | 2151 | `Palette0_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette0_mtiles) |
 | 2192 | `Palette1_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette1_mtiles) |
 | 2240 | `Palette2_MTiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-palette2_mtiles) |

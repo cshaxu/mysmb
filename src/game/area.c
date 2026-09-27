@@ -998,7 +998,7 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
 /* ROM $88ae-$889c RenderAreaGraphics.  The original writes two vertical
  * tiles for every metatile into VRAM_Buffer2, then accumulates seven
  * attribute bytes for RenderAttributeTables. */
-static mysmb_u8 mysmb_area_queue_graphics_column(struct mysmb_game *game)
+mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
 {
     mysmb_u8 buffer_offset;
     mysmb_u8 row;
@@ -1048,7 +1048,7 @@ static mysmb_u8 mysmb_area_queue_graphics_column(struct mysmb_game *game)
 }
 
 /* ROM $896a-$89a6 RenderAttributeTables. */
-static mysmb_u8 mysmb_area_queue_attribute_tables(struct mysmb_game *game)
+mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
 {
     mysmb_u8 buffer_offset;
     mysmb_u8 row;
@@ -1106,13 +1106,13 @@ mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
             (mysmb_u8)((game->ram[MYSMB_AREA_BLOCK_COLUMN] + 1U) & 0x1fU);
     }
     else if (task == 6U || task == 5U || task == 2U || task == 1U) {
-        if (mysmb_area_queue_graphics_column(game) == 0U) return 0U;
+        if (mysmb_area_render_graphics(game) == 0U) return 0U;
     }
     else if (mysmb_area_render_scenery_terrain_column(game) == 0U) {
         return 0U;
     }
     game->ram[MYSMB_AREA_PARSER_TASK] = task;
-    if (task == 0U) return mysmb_area_queue_attribute_tables(game);
+    if (task == 0U) return mysmb_area_render_attribute_tables(game);
     return 1U;
 }
 

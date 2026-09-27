@@ -67110,9 +67110,23 @@
         "MetatileGraphics_High"
       ],
       "maximumComplete": 176,
-      "actualMatches": [],
+      "actualMatches": [
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl",
+        "MetatileGraphics_Low",
+        "MetatileGraphics_High"
+      ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
-      "state": "active-renderer-attribute-chain"
+      "state": "closed-renderer-attribute-chain"
     }
   ]
 }

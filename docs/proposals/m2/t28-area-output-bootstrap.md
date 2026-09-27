@@ -40,3 +40,25 @@ and the three packaged executables.
 T28 closes only after all eight chains have independent ROM logic-equivalence
 and operational proof, incomplete labels have accepted successors, and one
 cross-chain area-entry/NMI/output matrix passes on all three targets.
+
+## S1/P1 renderer and attribute equivalence result
+
+S1 closes at **176 / 1,992**: all thirteen admitted labels are ROM-match
+complete. `area.c` exposes the two original shared-game entries without
+creating a platform branch. The direct renderer regression covers both parser
+task sides, all four attribute quadrants, the name-table low-byte wrap,
+`MetatileGraphics_Low/High` reads, Buffer2's vertical packet and `$0773=6`.
+The attribute regression covers both resulting attribute states, all seven
+source packets, their buffer offset and clearing behavior.
+
+The original-ROM recorder separately enters `$88ae` for left and right
+columns, and `$896a` for the corresponding attribute states. In each route
+the scoped Buffer2, attribute-buffer, current-name-table and address-control
+bytes are zero-difference against the native trace. This avoids inventing a
+caller stack while preserving each original routine boundary. x86 and x64
+pass `area-output`, `local-area`, `area-parser-column`, platform-purity and
+Win32 self-tests. The shared source links to the OpenNT DOS16 MZ. Refreshed
+artifacts are `mysmb16.exe` SHA-256
+`0263AB1F1B0E6D54A6472411CF25F14D6BF158785AA1CC47F86F3874E289C78D`,
+`mysmb32.exe` `7C88264EB32911E13BBE97A52F6E7241CB1914562095626774C4FB1C9D8B5DF5`,
+and `mysmb64.exe` `C656377F5A05DD7302AC203A6CA569406ABD8689FDCF2122C629EF1BB7110E68`.

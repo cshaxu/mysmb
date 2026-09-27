@@ -606,6 +606,26 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 37U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-render-left") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 38U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-render-right") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 39U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-attribute-left") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 40U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t28-attribute-right") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 41U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -704,6 +724,54 @@ int main(int argument_count, char **arguments)
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);
                 if (mysmb_area_queue_game_text(&game,
                                                (mysmb_u8)(t26_fixture - 31U)) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture >= 38U && t26_fixture <= 39U) {
+                static const mysmb_u8 metatiles[13] = {
+                    0x00U, 0x41U, 0x82U, 0xc3U, 0x04U, 0x45U, 0x86U,
+                    0xc7U, 0x08U, 0x49U, 0x8aU, 0xcbU, 0x0cU
+                };
+                mysmb_u8 row;
+                game.ram[0x0340U] = 0U;
+                game.ram[0x071fU] = t26_fixture == 38U ? 0U : 1U;
+                game.ram[0x0726U] = t26_fixture == 38U ? 0U : 1U;
+                game.ram[0x0720U] = 0x20U;
+                game.ram[0x0721U] = 0x9fU;
+                for (row = 0U; row < 13U; ++row)
+                    game.ram[(mysmb_u16)(0x06a1U + row)] = metatiles[row];
+                if (mysmb_area_render_graphics(&game) == 0U ||
+                    mysmb_area_render_attribute_tables(&game) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                mysmb_frame_snapshot_capture(&game, &snapshot);
+                if (mysmb_recorder_write_frame(output, &snapshot) == 0U) {
+                    fclose(output);
+                    return 65;
+                }
+                fclose(output);
+                return 0;
+            }
+            else if (t26_fixture >= 40U && t26_fixture <= 41U) {
+                static const mysmb_u8 left[7] = { 0x10U, 0x32U, 0x10U, 0x32U, 0x10U, 0x32U, 0U };
+                static const mysmb_u8 right[7] = { 0x40U, 0xc8U, 0x40U, 0xc8U, 0x40U, 0xc8U, 0U };
+                mysmb_u8 row;
+                game.ram[0x0340U] = 29U;
+                game.ram[0x0720U] = 0x24U;
+                game.ram[0x0721U] = 0x80U;
+                for (row = 0U; row < 7U; ++row)
+                    game.ram[(mysmb_u16)(0x03f9U + row)] =
+                        (t26_fixture == 40U ? left : right)[row];
+                if (mysmb_area_render_attribute_tables(&game) == 0U) {
                     fclose(output);
                     return 65;
                 }

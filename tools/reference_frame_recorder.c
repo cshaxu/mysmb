@@ -686,6 +686,26 @@ int main(int argument_count, char **arguments)
             t26_fixture = 37u;
             continue;
         }
+        if (strcmp(arguments[recorded], "--fixture=t28-render-left") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 38u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-render-right") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 39u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-attribute-left") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 40u;
+            continue;
+        }
+        if (strcmp(arguments[recorded], "--fixture=t28-attribute-right") == 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = 41u;
+            continue;
+        }
         warmup_result = mysmb_reference_parse_ram_write(arguments[recorded],
                                                          &ram_write);
         if (warmup_result < 0) return 64;
@@ -816,11 +836,52 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 35u && t26_fixture <= 37u) {
                     driver->machine->ram[0x0300u] = 0u;
                     driver->machine->ram[0x06d6u] = (lib_u8)(t26_fixture - 31u);
-                    driver->machine->ram[0x01feu] = 0u;
-                    driver->machine->ram[0x01ffu] = 0x80u;
+                    /* RenderAreaGraphics returns through SetVRAMCtrl.  The
+                     * original parser caller immediately enters the separate
+                     * RenderAttributeTables routine, so model that two-call
+                     * stack rather than treating either leaf in isolation. */
+                    driver->machine->ram[0x01feu] = 0x69u;
+                    driver->machine->ram[0x01ffu] = 0x89u;
+                    driver->machine->ram[0x0100u] = 0u;
+                    driver->machine->ram[0x0101u] = 0x80u;
                     driver->machine->a = (lib_u8)(t26_fixture - 31u);
                     driver->machine->s = 0xfdu;
                     driver->machine->pc = 0x8808u;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture >= 38u && t26_fixture <= 39u) {
+                    static const lib_u8 metatiles[13] = {
+                        0x00u, 0x41u, 0x82u, 0xc3u, 0x04u, 0x45u, 0x86u,
+                        0xc7u, 0x08u, 0x49u, 0x8au, 0xcbu, 0x0cu
+                    };
+                    lib_u8 row;
+                    driver->machine->ram[0x0340u] = 0u;
+                    driver->machine->ram[0x071fu] = t26_fixture == 38u ? 0u : 1u;
+                    driver->machine->ram[0x0726u] = t26_fixture == 38u ? 0u : 1u;
+                    driver->machine->ram[0x0720u] = 0x20u;
+                    driver->machine->ram[0x0721u] = 0x9fu;
+                    for (row = 0u; row < 13u; ++row)
+                        driver->machine->ram[0x06a1u + row] = metatiles[row];
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x88aeu;
+                    direct_warp_text = LIB_TRUE;
+                }
+                else if (t26_fixture >= 40u && t26_fixture <= 41u) {
+                    static const lib_u8 left[7] = { 0x10u, 0x32u, 0x10u, 0x32u, 0x10u, 0x32u, 0u };
+                    static const lib_u8 right[7] = { 0x40u, 0xc8u, 0x40u, 0xc8u, 0x40u, 0xc8u, 0u };
+                    lib_u8 row;
+                    driver->machine->ram[0x0340u] = 29u;
+                    driver->machine->ram[0x0720u] = 0x24u;
+                    driver->machine->ram[0x0721u] = 0x80u;
+                    for (row = 0u; row < 7u; ++row)
+                        driver->machine->ram[0x03f9u + row] =
+                            (t26_fixture == 40u ? left : right)[row];
+                    driver->machine->ram[0x01feu] = 0u;
+                    driver->machine->ram[0x01ffu] = 0x80u;
+                    driver->machine->s = 0xfdu;
+                    driver->machine->pc = 0x896au;
                     direct_warp_text = LIB_TRUE;
                 }
             }
