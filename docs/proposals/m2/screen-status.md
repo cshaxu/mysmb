@@ -339,6 +339,14 @@ with a nonzero operating mode. For each, it proves the ROM
 `OperMode_Task` advances and `ScreenRoutineTask` remains unchanged. This is
 source-control evidence only; the title route itself remains covered by P10.
 
+## S2/P12: direct GameText offset-table audit
+
+The local-area smoke now asserts the owner-ROM `GameTextOffsets` bytes at
+PRG `$07fe-$0806` and the five message terminators at `$0778`, `$0797`,
+`$07aa`, `$07bf` and `$07ec`. This records the actual local-ROM table shape
+for top status, lives, both Time Up/Game Over choices and Warp Zone rather than
+deriving data positions from the differing listing revision.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -376,7 +384,7 @@ both tracks are accepted at S2 closure.
 | `WarpZoneWelcome` | selector four source offset in `area.c` | Mapped; local-area warp smoke. Pending controlled original ROM warp route. |
 | `LuigiName` | `area.c` name replacement loop | Corrected local ROM binding `$07ed`; top-status smoke and all two-player Time Up/Game Over fixtures. Pending final data-byte audit. |
 | `WarpZoneNumbers` | `area.c` selector-four-to-six patch source | Mapped; local-area smoke checks all three selector table routes. Pending source-reachable original-ROM warp route. |
-| `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; local-area selector smoke. Pending direct table-byte audit. |
+| `GameTextOffsets` | local PRG offset selection in `area.c` | Mapped; local-area selector smoke and P12 direct table/terminator audit. Pending final selector matrix. |
 | `WriteGameText` | `area.c` text writer | Mapped; local-area, Time Up, intermediate, Game Over routes. Pending complete selector matrix. |
 | `Chk2Players` | `area.c` selector two/three offset choice | Mapped; both Time Up and Game Over two-player routes. Pending full selector matrix. |
 | `LdGameText` | `area.c` PRG source selection | Mapped; local-area selector routes. Pending table-byte audit. |

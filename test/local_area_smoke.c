@@ -163,6 +163,19 @@ int main(void)
     game.ram[0x0753U] = 0U;
     game.ram[0x0300U] = 0U;
 
+    /* GameTextOffsets begins with the two zero offsets for top status and
+     * lives, followed by the distinct two-/one-player Time Up and Game Over
+     * offsets, then the shared Warp Zone stream.  These are direct local-ROM
+     * bytes, not positions inferred from the assembly listing. */
+    if (mysmb_local_prg[0x07feU] != 0U || mysmb_local_prg[0x07ffU] != 0U ||
+        mysmb_local_prg[0x0800U] != 0x27U || mysmb_local_prg[0x0801U] != 0x27U ||
+        mysmb_local_prg[0x0802U] != 0x46U || mysmb_local_prg[0x0803U] != 0x4eU ||
+        mysmb_local_prg[0x0804U] != 0x59U || mysmb_local_prg[0x0805U] != 0x61U ||
+        mysmb_local_prg[0x0806U] != 0x6eU || mysmb_local_prg[0x0778U] != 0xffU ||
+        mysmb_local_prg[0x0797U] != 0xffU || mysmb_local_prg[0x07aaU] != 0xffU ||
+        mysmb_local_prg[0x07bfU] != 0xffU || mysmb_local_prg[0x07ecU] != 0xffU)
+        return 1;
+
     /* WriteGameText selector one copies the ROM lives screen and patches
      * its life/world/level positions before the normal VRAM transfer. */
     game.ram[0x075aU] = 2U;
