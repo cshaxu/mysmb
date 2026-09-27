@@ -2,7 +2,7 @@
 
 ## First Priority - M2 Source-Order Recovery
 
-The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. T25 through T29 have completed their admitted source-order chains. T30/S1 is closed at 433 / 1,992. T30/S2 is closed at 435 / 1,992. T30/S3 is closed at 442 / 1,992; T30/S4 is closed at 452 / 1,992; T30/S5 is closed at 455 / 1,992; T30/S6 is closed at 459 / 1,992; T30/S7 is closed at 460 / 1,992; T30/S8 is closed at 468 / 1,992; T30/S9 is closed at 476 / 1,992; T30/S10 is closed at 480 / 1,992 (six new matches, two prior claims revoked).
+The owner-approved [source-order recovery plan](../proposals/m2/t21-t49-source-order-recovery.md) is the sole authority for the remaining M2 implementation sequence. Historical numeric records are immutable: `M2 T23` remains Player route and `M2 T24` remains the node-audit/custody record. T25 through T29 have completed their admitted source-order chains. T30/S1 is closed at 433 / 1,992. T30/S2 is closed at 435 / 1,992. T30/S3 is closed at 442 / 1,992; T30/S4 is closed at 452 / 1,992; T30/S5 is closed at 455 / 1,992; T30/S6 is closed at 459 / 1,992; T30/S7 is closed at 460 / 1,992; T30/S8 is closed at 468 / 1,992; T30/S9 is closed at 476 / 1,992; T30/S10 is closed at 480 / 1,992 (six new matches, two prior claims revoked); T30/S11 restores DecodeAreaData at 481 / 1,992.
 
 The plan retains boot as `T21` and NMI as `T22`, then assigns future source slices continuously through `T51`. This queue contains candidates only; the plan's identifiers become active only with an approved packet.
 
@@ -12,10 +12,9 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-T30/S10 closed six common helper labels at 480 / 1,992 after revoking two
-earlier matches. Before BlockBufferAddr, admit exact corrective receipts for
-DecodeAreaData index wrap and DrawPipe zero-height/row-edge semantics.
-Existing maintenance receivers retain custody until those receipts; see
+T30/S11 restores DecodeAreaData at 481 / 1,992. The next corrective receipt
+covers DrawPipe zero-height/row-edge semantics before BlockBufferAddr.
+Its existing maintenance receiver retains custody until admission; see
 [T30 audit](../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings).
 
 Every later M2 admission uses the source-order chain table defined by the

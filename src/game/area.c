@@ -1887,6 +1887,7 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
     mysmb_u8 offset;
     mysmb_u8 dispatch_offset;
     mysmb_u8 object_id;
+    mysmb_u16 base;
     mysmb_u16 address;
     mysmb_u8 rerun;
     mysmb_u8 run_object;
@@ -1906,11 +1907,10 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
             offset = game->ram[MYSMB_AREA_DATA_OFFSET];
             if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
                 offset = game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot];
-            address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8U) |
+            base = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8U) |
                 game->ram[MYSMB_AREA_DATA_LOW]);
-            address = (mysmb_u16)(address + offset);
-            if (address >= game->area_prg_size ||
-                (mysmb_u16)(game->area_prg_size - address) < 2U) return 0U;
+            address = (mysmb_u16)(base + offset);
+            if (address >= game->area_prg_size) return 0U;
             first = game->area_prg[address];
             /* DecodeAreaData returns through EndAParse on $fd.  The caller
              * still reaches ChkLength for this slot and then continues its
@@ -1921,7 +1921,11 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;
             }
             else {
-                second = game->area_prg[(mysmb_u16)(address + 1U)];
+                /* ProcessAreaData / DecodeAreaData use INY then (AreaData),Y.
+                 * Y wraps before pointer addition; $fd never reads this byte. */
+                address = (mysmb_u16)(base + (mysmb_u8)(offset + 1U));
+                if (address >= game->area_prg_size) return 0U;
+                second = game->area_prg[address];
                 row = (mysmb_u8)(first & 0x0fU);
 
                 if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {

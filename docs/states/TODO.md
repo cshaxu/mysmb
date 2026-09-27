@@ -2,7 +2,9 @@
 
 ## Translation Debt
 
-- [ ] **Parser index wrap and pipe tail revalidation (`TODO(High)`):** T30/S10 audit revoked earlier completion of `DecodeAreaData` (second-byte fetch fails INY wrap at offset $ff) and `DrawPipe` (invented zero-height fill and row-12 early return). Repair under exact source-owner receipts before the next block-buffer chain; require original-ROM edge routes and consumer regressions. Existing maintenance receivers retain custody. [Evidence](../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings).
+- [ ] **Pipe tail revalidation (`TODO(High)`):** DrawPipe still has an invented zero-height fill and row-12 early return; admit the next exact corrective receipt and require ROM edge routes. DecodeAreaData's index-wrap finding was resolved in T30/S11. [Audit](../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings).
+
+- [ ] **Inactive legacy area readers (`TODO(High)` before full M2 certification):** mysmb_area_next_object and its unused lookahead/emitter cluster retain flat-address decoding and must be removed or consolidated into the authoritative parser. No active frame/root calls them; they receive no conformance credit. [S11 sweep](../proposals/m2/t30-area-object-rendering.md#s11p1-parser-index-wrap-rom-proof).
 
 - [ ] **Jumpspring pre-parser offscreen mismatch (`TODO(High)`):** T30/S7 GameEngine probes found native jumpsprings cleared by the unsigned `screen - 0x48` comparison near screen origin while ROM retains them, changing allocation before area creation. S7 proves creation through original ScreenRoutines; runtime/offscreen repair remains with its existing source-order receiver. [Evidence](../proposals/m2/t30-area-object-rendering.md#t30s7-admission-jumpspring-creation-chain).
 

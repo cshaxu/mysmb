@@ -980,3 +980,113 @@ mapped/audited incomplete rises to 105 and open becomes 1,407. This correction
 is required for honest conformance accounting. The helper chain is closed;
 M2 remains open. Prior-node repair candidates precede the next unadmitted
 BlockBufferAddr chain, with exact receipts required at admission.
+
+## T30/S11 admission: parser byte-index corrective chain
+
+Scope and expected new match: `DecodeAreaData` (3393), incoming audited
+mismatch. Baseline **480 / 1,992**, expected **1**, maximum **481 / 1,992**.
+Transfer-108 receives its maintenance responsibility from T29 S7. This is the
+first queued correction from S10's caller audit, not a new source-slice T.
+The bounded chain is current/saved area offset -> first-byte terminal test ->
+wrapped second-byte read -> existing object dispatch. Shared owner: area.c.
+The other 31 previously certified parser/control labels are regression
+collaborators without new credit. DrawPipe correction follows, then the
+unadmitted BlockBufferAddr chain resumes the normal source sequence.
+
+ROM-logic verification audits ProcessAreaData's preliminary INY and
+DecodeAreaData's saved-offset/terminal/row paths against the local reviewed
+SMBDIS and owner NROM. The eight-bit index must wrap before addition to
+AreaData; the pointer must not advance a page when Y wraps. A terminal first
+byte requires no second-byte resource access. Original ScreenRoutines parser
+routes use controlled RAM pointers and offsets over immutable ROM bytes,
+covering fresh and resident slots, ordinary reads and offset $ff. No ROM,
+PC, stack or return-address edits. Full parser and consumer state is compared;
+retained renderer scratch/PPU discrepancies are reported separately.
+
+Operational verification adds a project-owned parser-boundary smoke, runs
+prior parser/consumer tests, x86/x64 and DOS16 builds, startup/purity checks and
+three target artifacts. Research inputs remain owner-local, unredistributable
+and ignored. Raw traces stay under build/m2-t30-s11, at most 2 MB total,
+131072 instructions/frame, one warmup/two samples per case and twenty seconds
+per process. S11 owns cleanup after review. No match is claimed at admission.
+
+## S11/P1: parser index-wrap ROM proof
+
+`DecodeAreaData` at $9595 selects current versus saved object offset from the
+slot length sign, then follows the first-byte terminal and row/selector paths.
+The shared parser now retains AreaData base separately: both the preliminary
+ProcessAreaData second-byte read and decoded resident-object read use
+`base + (u8)(offset + 1)`, preserving INY wrap before pointer addition. The
+first-byte bounds check stands alone; $fd returns through the existing
+ChkLength/ProcADLoop route without requiring a second resource byte. There
+is no new page increment, object shortcut, CPU interpreter or platform branch.
+
+The remaining decoder controls retain the previously reviewed T29 S7 source
+mapping: page-select, page-control and backload handling; terminal/resident
+slots; row 12/13/14/15 selectors; loop commands; warp-pipe classification;
+saved offsets, column gating, dispatch and post-handler length decrement.
+Their focused regressions pass without new node credit. The correction fixes
+the read boundary feeding these existing controls rather than changing their
+rules. The ordinary area-header reader uses fixed offsets zero and one, so its
+address+1 is correct and is intentionally unchanged. GetLrgObjAttrib already
+has the correct byte-index read from S10.
+
+Twenty-four ordinary ScreenRoutines parser routes combine six immutable ROM
+pointer bases with fresh object / resident lengths 0, 1 and 127 (the latter
+three occupy all three saved slots). Bases are $a20e, $a4cc, $a68c, $a9cc,
+$aebe and $a6f1. Offset $ff supplies the first byte, offset zero supplies the
+second, and offset one is an original terminal marker. The adjacent wrong-page
+byte deliberately decodes differently. The high-bit page-select variants and
+low-bit variants both finish at page one. No ROM bytes, CPU PC, stack or return
+address are written by the fixture.
+
+Every route requires ProcessAreaData, DecodeAreaData, Chk1stB, ChkSRows,
+RunAObj, ChkLength and EndAParse coverage, with six decoder calls for two
+columns and three slots. The comparator requires the expected coin/brick
+metatile, wrapped stream cursor one, page/select state, saved $ff offset and
+remaining length, then compares 1,782 persistent RAM bytes in both samples.
+All 24 routes pass. Scratch $00-$07, stack and the two PPU mirrors remain
+individually reported residuals from later frame work; no whole-frame claim.
+
+As a negative control, the committed pre-fix area.c from `318afa8` was built
+with the same recorder/fixtures and unchanged remaining game objects. It
+fails the new native boundary smoke and all 24 ROM routes have persistent
+mismatches. This proves the boundary cases detect the repaired read error.
+
+```text
+reference <ROM> build/m2-t30-s11/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-parser-boundary=<id> --pc-coverage=build/m2-t30-s11/pc-<id>.txt
+native build/m2-t30-s11/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-parser-boundary=<id>
+python -B test/verify_parser_boundary_routes.py build/m2-t30-s11
+```
+
+The 48 positive and 24 negative traces total 635,760 bytes under the 2 MB
+budget and remain ignored. The twenty-second per-process deadline and
+reference instruction cap held. S11 retains them for the enclosing T review.
+Native coverage passes 9,984 combinations of all 256 offsets, three rows,
+fresh/resident states and all three saved slots, plus terminal-at-resource-end
+and missing-second-byte cases. All twenty area smokes pass on x86 and x64
+(40 program runs); product self-tests and hidden responsive-window probes
+pass. OpenNT16 MZ link and platform purity pass. DOS resource binding/runtime
+remain previously recorded debt; no DOS playability is claimed.
+
+Similar-issue sweep found one inactive legacy reader, mysmb_area_next_object,
+with the same flat-address approximation. Its callers are only the legacy
+lookahead/emitter cluster and tests; no active frame/root calls that cluster.
+It receives no node credit and is recorded for legacy-path removal or
+consolidation before full M2 certification. This does not create another
+runtime implementation of the corrected parser.
+
+Artifact SHA-256: `mysmb16.exe` `301E725BF377C9FD0DF9450F7B4433B79B9DC726E5CFAB5403552FE0D87AB4BE`.
+
+Artifact SHA-256: `mysmb32.exe` `A39D8CB25A5CBA939D8EA3CED02291FE6B49873C8C574C9B7941FEE694ED03F1`.
+
+Artifact SHA-256: `mysmb64.exe` `6FDEB9849016A99F2BBE6D84B0A9DCEDF1713D6C4AE56A569CD29B55048A6265`.
+
+## S11 closure
+
+Expected/actual restored match: one/one, `DecodeAreaData`. The previous
+revocation is resolved by the original read audit, discriminating ROM routes
+and independent native/build verification. **480 -> 481 / 1,992**; mapped
+incomplete is 104, open remains 1,407. No scoped label is unfinished. DrawPipe
+remains explicitly audited mismatch and is the next queued correction; the
+block-buffer chain remains unadmitted. M2 is not complete.

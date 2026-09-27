@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 480 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 481 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 104 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 1,407 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **480 / 1,992 (24.10%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **481 / 1,992 (24.15%)**. The 104 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (480)
+## Completed matches (481)
 
 | ROM line | Node |
 | ---: | --- |
@@ -376,6 +376,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3378 | `ProcLoopb` |
 | 3384 | `EndAParse` |
 | 3386 | `IncAreaObjOffset` |
+| 3393 | `DecodeAreaData` |
 | 3397 | `Chk1stB` |
 | 3408 | `ChkRow14` |
 | 3416 | `ChkRow13` |
@@ -526,12 +527,11 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (105)
+## Mapped but not yet matched (104)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
-| 3393 | `DecodeAreaData` |
 | 3900 | `DrawPipe` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |

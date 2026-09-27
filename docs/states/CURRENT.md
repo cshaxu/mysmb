@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S10 is closed at 480 / 1,992: six helper matches added, two prior matches revoked.**
+**M2 T30 S11 is closed at 481 / 1,992; DecodeAreaData is restored to ROM-match complete.**
 
-All six helper nodes pass both evidence tracks; three artifacts are refreshed.
-No S is active. DecodeAreaData index wrap and DrawPipe edge semantics need
-exact repair receipts before the next BlockBufferAddr chain.
+The corrected read passes 24 original-ROM boundary routes and cross-width
+regression/build checks; all three artifacts are refreshed. No S is active.
+DrawPipe remains the next corrective candidate, followed by BlockBufferAddr.
 
-## M2 T30 S10 Packet
+## M2 T30 S11 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S10, implementation; common attribute/length/coordinate chain. |
-| Admission And Approval | Owner-approved source-order continuation; transfer-107 receives six labels from M2 T18 S4. |
-| Objective | Translate and prove ChkLrgObjLength through GetAreaObjYPosition, exact six labels in proposal. |
-| Non-goals | No unrelated actor state-machine repair, platform gameplay, block-buffer helper credit or synthetic PC/stack entry. |
-| Reference Baseline | 476 / 1,992; six open labels, six expected matches; maximum 482. |
+| Identifier Mode | M2 T30 S11, continuation implementing the queued parser correction. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-108 accepts DecodeAreaData from T29 S7. |
+| Objective | Restore original current/saved-index and terminal/second-byte read semantics; one named node. |
+| Non-goals | No DrawPipe repair, platform game logic, renderer change or unrelated node credit. |
+| Reference Baseline | 480 / 1,992; DecodeAreaData audited mismatch; expected one, maximum 481. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c and helper callers; focused parser tests, local validation recorders, node records and three EXEs. |
+| Files And ABI Surface | Shared area.c parser, boundary/consumer tests, local recorder fixtures, tracker/ledger and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | Original helper and caller control/data audit, source-reachable ROM consumer cases, focused C90 tests, x86/x64 builds, DOS16 link, purity and startup probes. |
-| Expected Markers | Slot preservation/initialization carry, two pointer reads with byte-index wrap, $07 row, eight-bit X/Y arithmetic and original caller order. |
-| Asset Needs | Refresh three tracked EXEs per implementation P under owner mandate; DOS link is not runtime proof. |
-| Reporting Requirements | Each label disposition, both evidence tracks, actual count, hashes and exact transfers. |
-| Stop Conditions | Unmatched branch/read/write/call order, missing dependency, ROM mismatch or platform gameplay. |
-| Exit Criteria | All six labels pass both tracks or exact unfinished transfers; tracker and ledger agree. |
-| Original Owner Request | Full ROM logic in shared portable C; source-order migration with node-level accountability. |
-| Similar-Issue Sweep | All ChkLrgObjLength/FixedLength, GetLrgObjAttrib and X/Y helper callers; distinguish helper omissions from actor-owned debt. |
+| Verification | Original indexed-read/branch audit plus ordinary ScreenRoutines ROM routes; C90 boundary/parser smokes, x86/x64, DOS16, startup, purity and packaging. |
+| Expected Markers | Offset $ff second byte uses pointer+0; saved slot and fresh cursor agree; terminal consumes no second byte; exact decoded tile/length/page outputs. |
+| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS MZ remains build-only evidence. |
+| Reporting Requirements | Named node disposition, original/new proof, regression results, actual count, artifact hashes and transfer. |
+| Stop Conditions | Unmatched read/branch/order, unintended collaborator change, missing ROM witness or platform gameplay. |
+| Exit Criteria | DecodeAreaData passes both tracks and tracker/ledger agree, or exact unfinished transfer. |
+| Original Owner Request | Preserve complete original-ROM logic, shared C90, source-order implementation and honest checklist. |
+| Similar-Issue Sweep | All area stream second-byte and terminal reads, including saved offsets and public legacy readers; record outside-path debt. |
 
 ## Retained M2 T15 summary
 

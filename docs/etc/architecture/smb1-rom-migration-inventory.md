@@ -488,7 +488,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3378 | `ProcLoopb` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procloopb) |
 | 3384 | `EndAParse` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endaparse) |
 | 3386 | `IncAreaObjOffset` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incareaobjoffset) |
-| 3393 | `DecodeAreaData` | T18 responsibility (implementation not certified) | audited; mismatch | [T30 S10 source contradiction; prior completion revoked](../../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings) |
+| 3393 | `DecodeAreaData` | M2 T30 S11 shared area parser | ROM-match complete | [T30 S11/P1 corrected byte-index proof](../../proposals/m2/t30-area-object-rendering.md#s11p1-parser-index-wrap-rom-proof) |
 | 3397 | `Chk1stB` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1stb) |
 | 3408 | `ChkRow14` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow14) |
 | 3416 | `ChkRow13` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow13) |
