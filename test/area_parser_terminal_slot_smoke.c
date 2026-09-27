@@ -142,5 +142,59 @@ int main(void)
      * reaches SetFore with A forced to zero. */
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x0744U] != 4U || game.ram[0x0741U] != 0U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x25U;
+    prg[0x41U] = 0x02U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* DecodeAreaData keeps its JumpEngine handoff in shared zero-page RAM:
+     * a small object carries addend $16 and its low-nibble object ID. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 0x16U || game.ram[0x0000U] != 2U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x2cU;
+    prg[0x41U] = 0x50U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* A row-12 special object retains addend $08 and shifts d6-d4 down
+     * before NormObj stores the selected object ID. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 8U || game.ram[0x0000U] != 5U) return 1;
+
+    mysmb_game_initialize(&game);
+    prg[0x40U] = 0x25U;
+    prg[0x41U] = 0x78U;
+    prg[0x42U] = 0xfdU;
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
+    game.ram[0x00e7U] = 0x40U;
+    game.ram[0x00e8U] = 0x80U;
+    game.ram[0x0725U] = 0U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+
+    /* LrgObj's warp-pipe d3 path clears the selected object ID before the
+     * MoveAOId shift, leaving the ordinary zero addend for RunAObj. */
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x0007U] != 0U || game.ram[0x0000U] != 0U) return 1;
     return 0;
 }

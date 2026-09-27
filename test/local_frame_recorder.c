@@ -506,6 +506,25 @@ static void mysmb_recorder_apply_t29_area_entry_fixture(struct mysmb_game *game,
     }
 }
 
+/* T29/S7 uses the same source-RAM-only parser precondition as the reference
+ * recorder.  GameEngine remains the caller on both sides; this fixture does
+ * not enter an area-parser leaf or alter a return path. */
+static void mysmb_recorder_apply_t29_parser_dispatch_fixture(
+    struct mysmb_game *game)
+{
+    game->ram[0x0722U] = 0U;
+    game->ram[0x0770U] = 1U;
+    game->ram[0x0772U] = 3U;
+    game->ram[0x000eU] = 8U;
+    game->ram[0x0773U] = 0U;
+    game->ram[0x071fU] = 8U;
+    game->ram[0x0725U] = 0U;
+    game->ram[0x0726U] = 0U;
+    game->ram[0x06a0U] = 0U;
+    game->ram[0x0728U] = 0U;
+    game->ram[0x073fU] = 0U;
+}
+
 static void mysmb_recorder_apply_t28_title_score_fixture(struct mysmb_game *game)
 {
     game->ram[0x0770U] = 0U;
@@ -902,6 +921,11 @@ int main(int argument_count, char **arguments)
             t26_fixture = 67U;
         }
         else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t29-parser-dispatch") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 68U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
                                        "--fixture=t28-title-score") != 0U) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = 57U;
@@ -1026,6 +1050,8 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture >= 64U && t26_fixture <= 67U)
                 mysmb_recorder_apply_t29_area_entry_fixture(&game,
                     (mysmb_u8)(t26_fixture - 64U));
+            else if (t26_fixture == 68U)
+                mysmb_recorder_apply_t29_parser_dispatch_fixture(&game);
             else if (t26_fixture >= 35U && t26_fixture <= 37U) {
                 game.ram[0x0300U] = 0U;
                 game.ram[0x06d6U] = (mysmb_u8)(t26_fixture - 31U);

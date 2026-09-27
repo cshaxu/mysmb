@@ -1431,6 +1431,8 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
     mysmb_u8 row;
     mysmb_u8 column;
     mysmb_u8 offset;
+    mysmb_u8 dispatch_offset;
+    mysmb_u8 object_id;
     mysmb_u16 address;
     mysmb_u8 rerun;
     mysmb_u8 run_object;
@@ -1530,6 +1532,39 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     run_object = 1U;
                 }
                 if (run_object != 0U) {
+                    /* Preserve DecodeAreaData's two zero-page handoff
+                     * registers.  The object renderer has native C
+                     * parameters, but the translated shared RAM still owns
+                     * the JumpEngine addend ($07) and selected object ID
+                     * ($00) at RunAObj. */
+                    dispatch_offset = 0U;
+                    object_id = 0U;
+                    if (row == 0x0fU) {
+                        dispatch_offset = 0x10U;
+                        object_id = (mysmb_u8)((second & 0x70U) >> 4U);
+                    }
+                    else if (row == 0x0cU) {
+                        dispatch_offset = 0x08U;
+                        object_id = (mysmb_u8)((second & 0x70U) >> 4U);
+                    }
+                    else if (row == 0x0eU) {
+                        object_id = 0x2eU;
+                    }
+                    else if (row == 0x0dU) {
+                        dispatch_offset = 0x22U;
+                        object_id = (mysmb_u8)(second & 0x3fU);
+                    }
+                    else if ((second & 0x70U) == 0U) {
+                        dispatch_offset = 0x16U;
+                        object_id = (mysmb_u8)(second & 0x0fU);
+                    }
+                    else {
+                        object_id = (mysmb_u8)((second & 0x70U) >> 4U);
+                        if (object_id == 7U && (second & 0x08U) != 0U)
+                            object_id = 0U;
+                    }
+                    game->ram[0x0007U] = dispatch_offset;
+                    game->ram[0x0000U] = object_id;
                     /* Mask2MSB recognizes the special row-13 $4b command
                      * before LoopCmdE returns.  Its later consumer owns the
                      * loop behavior; this parser owns only the increment. */

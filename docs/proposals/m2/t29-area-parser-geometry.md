@@ -732,3 +732,36 @@ The refreshed P8 artifact hashes remain `mysmb16.exe`
 `F76FE63A5BCA852585C4E679FC74BA57EDF934D38B3289C29BD6C48F66066DE3`,
 `mysmb32.exe` `0FEF848402E8FAB65DBDE7EEEAFC91297BBBB2F753BA19D3B24D36ED9CE1E0C3`,
 and `mysmb64.exe` `6236B23DD448D6F89A5FAAED6CFBB382DCBE46C3545B635CF372474FCBFD7364`.
+
+## S7 P9: ordinary parser route and DecodeAreaData handoff
+
+P9 makes the existing `t29-parser-dispatch` source-RAM fixture available to
+the native frame recorder as well as the isolated original-ROM recorder.  It
+starts after a bounded 600-frame ordinary NMI warmup and writes only the
+normal GameEngine mode/task, parser task, column and area-parser state.  No
+program counter, return stack or parser leaf is injected.  The next eight
+original-ROM frames cover the `ProcessAreaData` entry and descending loop,
+the row-13/row-14/rear/length branches, `DecodeAreaData` through
+`LeavePar`, and the normal small/large dispatch selection.
+
+The shared C decoder now also preserves `DecodeAreaData`'s source-owned
+zero-page handoff at `RunAObj`: `$07` contains the JumpEngine addend and `$00`
+the selected object ID.  The terminal-slot regression asserts the original
+small-object (`$16`, ID two), row-12 special-object (`$08`, ID five), and
+warp-pipe large-object (zero, zero) results, in addition to the prior terminal,
+backload, loop and attribute cases.  The native and ROM route agree on the
+persistent parser state, staging metatiles and PPU-visible frame output.  The
+final NMI sample may reuse `$00/$07` in later source routines, so it is not a
+valid post-frame oracle for this parser-local temporary handoff; the focused
+source-shaped regression observes it at the chain boundary.
+
+`mysmb.area-parser-terminal-slot-smoke`,
+`mysmb.area-parser-column-smoke`, `mysmb.parser-schedule-smoke`,
+`mysmb.area-data-smoke` and `mysmb.platform-purity` pass on x86 and x64.  The
+common source links as the OpenNT DOS16 MZ with the existing non-fatal
+`OLDNAMES.LIB` warning.  P9 artifacts are `mysmb16.exe`
+`D6C90F62D4A574594B2FE99076555D3892540ACD58807C7B357324B1354FCC48`,
+`mysmb32.exe` `B09221D8B7A519E08DAB782A09D8B0601B4EE76EF61C20F7B94CB60C5934215C`,
+and `mysmb64.exe` `231376C16CDA178A02E25C40D5F4320EE0570DFD8B47F69396AAD611C6589221`.
+This remains a checkpoint: S7 will only close after each of its thirty-two
+labels has a separately recorded control/read/write/call-order disposition.
