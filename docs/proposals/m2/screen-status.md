@@ -577,6 +577,33 @@ the current T18 S4 parser owner has not supplied the required independent
 parser-chain proof; S3 may audit its own dispatch boundaries but must not
 credit or replace parser behavior.
 
+## S3/P1: `AreaParserTaskControl` final-set write order
+
+The S3 source audit found a shared-C ordering discrepancy at ROM lines
+1595--1605.  After `TaskLoop` finishes, the ROM decrements `ColumnSets`; when
+that underflows, it increments `ScreenRoutineTask` and only then stores `$06`
+to `VRAM_Buffer_AddrCtrl`.  The C wrapper previously stored `$0773=$06` and
+returned a status that caused `game.c` to assign task nine afterwards.  The
+shared wrapper now performs the original task increment before the `$0773`
+store; the outer screen dispatcher merely invokes it.  The column-parser
+smoke asserts both source branches: task 8 becomes 9 on the final set, while
+the non-final `bpl OutputCol` path keeps task 8 and still selects buffer
+control six.
+
+The similar-write sweep found no other production assignment of screen task
+nine outside the source task-nine handler; the remaining hits are test setup
+or the source-correct task-nine-to-ten transition.  Focused area-parser,
+screen-status and platform-purity tests pass on x86 and x64, both Win32
+products pass `--self-test`, and OpenNT DOS16 links with only established
+C4761 warnings.  The refreshed DOS16, Win32 x86 and Win32 x64 hashes are
+`3A567BC951A04CD313C9083D76704FCA270F80926972B55DED821F73AAB0CA79`,
+`C8A604C36802BDC5208C77BC2B54E000797156B309A0791F19FB6FA1663E1E01`, and
+`FE2BA84E8B497C86F8E3DB8D7E7D6E02021E0D577DA2D262AF252B542FDEBAAE`.
+
+This is a source-order repair and operational regression, not a completed
+S3 equivalence claim: `AreaParserTaskHandler` remains the current T18 S4
+dependency, so the four S3 nodes retain zero completion credit.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,

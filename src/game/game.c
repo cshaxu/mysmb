@@ -280,9 +280,9 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         }
         break;
     case 8U:
-        if (mysmb_area_parser_task_control(game) != 0U) {
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 9U;
-        }
+        /* AreaParserTaskControl owns the source-order final-set transition:
+         * it increments ScreenRoutineTask before writing address control 6. */
+        (void)mysmb_area_parser_task_control(game);
         break;
     case 9U:
         /* ROM GetAreaPalette selects the final area stream for the next

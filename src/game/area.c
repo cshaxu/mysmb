@@ -16,6 +16,7 @@ enum {
     MYSMB_AREA_SCROLL_Y = 0x0740U,
     MYSMB_AREA_TIMERS = 0x0780U,
     MYSMB_AREA_DISABLE_SCREEN = 0x0774U,
+    MYSMB_AREA_SCREEN_ROUTINE_TASK = 0x073cU,
     MYSMB_AREA_OPER_MODE_TASK = 0x0772U,
     MYSMB_AREA_BLOCK_COLUMN = 0x06a0U,
     MYSMB_AREA_METATILE_LOW = 0x0b08U,
@@ -1116,7 +1117,8 @@ mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
 }
 
 /* ROM $86e6-$86ff AreaParserTaskControl.  One call completes exactly the
- * eight task slots that produce a two-column set; NMI owns its later transfer. */
+ * eight task slots that produce a two-column set.  On the final set, the ROM
+ * advances ScreenRoutineTask before it selects VRAM buffer control six. */
 mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
 {
     /* ROM $86e6 disables output before every two-column parser set.  The
@@ -1127,8 +1129,10 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
         if (mysmb_area_parser_task_step(game) == 0U) return 0U;
     } while (game->ram[MYSMB_AREA_PARSER_TASK] != 0U);
     game->ram[MYSMB_AREA_COLUMN_SETS]--;
+    if ((game->ram[MYSMB_AREA_COLUMN_SETS] & 0x80U) != 0U)
+        game->ram[MYSMB_AREA_SCREEN_ROUTINE_TASK]++;
     game->ram[MYSMB_AREA_VRAM_ADDRESS_CONTROL] = 6U;
-    return (game->ram[MYSMB_AREA_COLUMN_SETS] & 0x80U) != 0U ? 1U : 0U;
+    return 1U;
 }
 
 /* Translation of the stream/slot-control part of ROM $9508-$958f

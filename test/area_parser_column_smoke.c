@@ -115,10 +115,25 @@ int main(void)
     game.ram[0x0720U] = 0x20U;
     game.ram[0x0721U] = 0x80U;
     game.ram[0x0774U] = 0U;
+    game.ram[0x073cU] = 8U;
     if (mysmb_area_parser_task_control(&game) == 0U ||
         game.ram[0x071eU] != 0xffU || game.ram[0x071fU] != 0U ||
         game.ram[0x0340U] != 144U || game.ram[0x0773U] != 6U ||
-        game.ram[0x0774U] != 1U) return 1;
+        game.ram[0x0774U] != 1U || game.ram[0x073cU] != 9U) return 1;
+
+    /* ROM's bpl OutputCol branch selects buffer control six but leaves the
+     * screen task unchanged while another column set remains. */
+    game.ram[0x071eU] = 1U;
+    game.ram[0x071fU] = 0U;
+    game.ram[0x0340U] = 0U;
+    game.ram[0x0720U] = 0x20U;
+    game.ram[0x0721U] = 0x80U;
+    game.ram[0x0774U] = 0U;
+    game.ram[0x073cU] = 8U;
+    if (mysmb_area_parser_task_control(&game) == 0U ||
+        game.ram[0x071eU] != 0U || game.ram[0x071fU] != 0U ||
+        game.ram[0x0773U] != 6U || game.ram[0x0774U] != 1U ||
+        game.ram[0x073cU] != 8U) return 1;
 
     /* ProcessAreaData page-control entries advance without using a slot. */
     prg[0x0040U] = 0x0dU;
