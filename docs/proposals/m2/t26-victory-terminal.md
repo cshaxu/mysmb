@@ -200,3 +200,16 @@ enemy loop and player/OAM chain, whose output is intentionally excluded from
 this comparison. This is direct route evidence for the `VictoryMode` task-zero
 handoff and does not credit `BridgeCollapse`, `KillAllEnemies`, enemy-loop, or
 player-graphics nodes.
+
+The message-tree sweep also now covers the direct leaves omitted by the first
+three message fixtures. `t26-victory-luigi-message` produces selector `$0d`
+and secondary counter `$04`; `t26-victory-retainer-message` produces selector
+`$0e` and secondary `$04`; and `t26-victory-counter-only` starts with a
+nonzero secondary counter and produces `$08` without a selector write. The
+first post-call ROM and shared-C samples match each tuple of selector,
+secondary/primary counters, event-music queue, and terminal task. Together
+with the original first-message, World-8 music, and end-timer fixtures, this
+exercises `MRetainerMsg`, both `ThankPlayer` choices, `SecondPartMsg`,
+`EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`,
+and `ExitMsgs`; it remains branch evidence rather than a completion claim
+until the outer collaborator routes have independent proof.

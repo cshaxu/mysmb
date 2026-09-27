@@ -155,13 +155,14 @@ static void mysmb_recorder_apply_t26_endworld_next_fixture(struct mysmb_game *ga
 /* Fixed T26 PrintVictoryMessages preconditions: first text, world-eight
  * music text, and the non-world-eight end-timer branch. */
 static void mysmb_recorder_apply_t26_victory_message_fixture(
-    struct mysmb_game *game, mysmb_u8 primary, mysmb_u8 world)
+    struct mysmb_game *game, mysmb_u8 primary, mysmb_u8 secondary,
+    mysmb_u8 player, mysmb_u8 world)
 {
     game->ram[0x0770U] = 2U;
     game->ram[0x0772U] = 3U;
     game->ram[0x0719U] = primary;
-    game->ram[0x0749U] = 0U;
-    game->ram[0x0753U] = 0U;
+    game->ram[0x0749U] = secondary;
+    game->ram[0x0753U] = player;
     game->ram[0x075fU] = world;
     game->ram[0x00fcU] = 0U;
     game->ram[0x07a1U] = 0U;
@@ -312,6 +313,21 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = 10U;
         }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-luigi-message") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 11U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-retainer-message") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 12U;
+        }
+        else if (mysmb_recorder_equals(arguments[index],
+                                       "--fixture=t26-victory-counter-only") != 0U) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = 13U;
+        }
         else {
             warmup_result = mysmb_recorder_parse_ram_write(arguments[index],
                                                             &ram_write);
@@ -370,11 +386,11 @@ int main(int argument_count, char **arguments)
             else if (t26_fixture == 2U)
                 mysmb_recorder_apply_t26_endworld_b_fixture(&game);
             else if (t26_fixture == 3U)
-                mysmb_recorder_apply_t26_victory_message_fixture(&game, 0U, 0U);
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 0U, 0U, 0U, 0U);
             else if (t26_fixture == 4U)
-                mysmb_recorder_apply_t26_victory_message_fixture(&game, 3U, 7U);
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 3U, 0U, 0U, 7U);
             else if (t26_fixture == 5U)
-                mysmb_recorder_apply_t26_victory_message_fixture(&game, 4U, 0U);
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 4U, 0U, 0U, 0U);
             else if (t26_fixture == 6U)
                 mysmb_recorder_apply_t26_victory_walk_fixture(&game, 0U);
             else if (t26_fixture == 7U)
@@ -385,6 +401,12 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t26_endworld_next_fixture(&game);
             else if (t26_fixture == 10U)
                 mysmb_recorder_apply_t26_victory_bridge_handoff_fixture(&game);
+            else if (t26_fixture == 11U)
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 0U, 0U, 1U, 0U);
+            else if (t26_fixture == 12U)
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 2U, 0U, 0U, 0U);
+            else if (t26_fixture == 13U)
+                mysmb_recorder_apply_t26_victory_message_fixture(&game, 2U, 4U, 0U, 0U);
         }
         mysmb_game_tick(&game, &input, &frame);
         if (index >= warmup_frames) {
