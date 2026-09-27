@@ -228,3 +228,15 @@ Current randomized-test artifacts are the shared-code products from T18 S4:
 `mysmb16.exe` `F2F7FFEA7AA57078DEFAD3510EC41D02C50AD063AB9470E6E3D3ABFB8A049CF9`,
 `mysmb32.exe` `5F5E0B6620420AA06AFD5D7CC83AAC6F87112C9DE2F7888B09248D86567DFF16`, and
 `mysmb64.exe` `112FFAC9405C79889737B16E3EF5B3C91349EFEE5DE25D63042A6B89FFE4786F`.
+
+## S5 P2: late-demo boundary disposition
+
+The next 600-sample window after an 1,800-sample idle warmup remains identical
+in both CIRAM pages, palette, audio-command state, and every PPU scalar. Its
+first shared game-state difference is `$0456` (`Player_X_Position`) at the
+window start; visible OAM first differs at sample 585, in player sprite rows.
+The original labels on that route are `PlayerGfxHandler` and collaborators,
+whose ledger receiver is M2 T16 S4. This is an explicit cross-slice residual,
+not a T25 repair opportunity. T25 retains the title/demo labels without credit
+until the complete demo terminal path can be replayed after that player-graphics
+owner supplies its own evidence or repair.
