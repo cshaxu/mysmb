@@ -174,3 +174,27 @@ the score call, but links successfully.  Refreshed artifacts: `mysmb16.exe`
 `DCF511D3FA51FC244DEC5042F4C9196865652E29C21392A6CBFBCEEE9ABE6B89`,
 and `mysmb64.exe`
 `32DE517369B121C4C000F0C012F7210701A7DB2F7860CF40B76BF76F8D029F2F`.
+
+## S5/P2: Windows release-data link correction
+
+P1's manual Windows release invocation omitted the same two generated
+owner-local data translation units and `MYSMB_LOCAL_TITLE=1` definition that
+the CMake `mysmb_win32` target supplies.  The resulting PE files were valid
+GUI programs, but did not bind the PRG, CHR and title streams; they must not
+be used as runnable release evidence.
+
+The replacement x86 and x64 artifacts are linked from the shared game sources
+with `smb1_local_rom.c`, `smb1_local_title.c`, and
+`MYSMB_LOCAL_TITLE=1`.  Their GUI-entry `--self-test` processes both return
+zero, the title-startup smoke using the identical generated data returns zero,
+and the x64 symbol table contains the bound `mysmb_local_prg`,
+`mysmb_local_chr`, `mysmb_local_title_data`, and
+`mysmb_local_title_icon_data` objects.  The shared C code did not change; the
+already linked DOS16 release artifact remains valid.
+
+Current three-target release hashes are `mysmb16.exe`
+`42C43BEB8D8E0D13B0C8134BB2927D3C6D56C9CB3C00F7653DAAE168D3AEA4C1`,
+`mysmb32.exe`
+`943F9F32C4BDE39195752448EC86F283AC23FE05CC2EAA15FEF280EA4072BD90`,
+and `mysmb64.exe`
+`6A4519AD0172CF53CD18A201D1AD7B40BD95A6D6BCED8340B8764ACBDAC9273A`.
