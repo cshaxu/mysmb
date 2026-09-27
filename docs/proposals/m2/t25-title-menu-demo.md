@@ -714,3 +714,25 @@ maximum **95 / 1,992**. It is a one-label chain because the source RTS has a
 different caller boundary from the following demo data/engine family. It must
 prove the zero-write return after both player-count outcomes; the remaining
 five demo labels remain uncredited.
+
+
+## S24 closure: ExitIcon return chain
+
+S24 completes exactly `ExitIcon`, reaching **95 / 1,992**. The source at
+`$833f` is an RTS with no write. Its single-player predecessor reaches it
+through `BEQ` after the completed copy loop; its two-player predecessor reaches
+it after the two documented packet overwrites. The focused owner smoke proves
+the single-player packet and the Select route proves the two-player packet.
+The controlled ROM/x86/x64 Select records agree for frames 0--198 in RAM,
+CIRAM, palette, OAM, audio and PPU scalars; the shared owner links in DOS16.
+The remaining five labels transfer together into the S25 title-idle/demo chain.
+
+## S25 admission: title-idle demo data and engine chain
+
+S25 receives `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction` and
+`DemoOver` as one contiguous chain, baseline **95 / 1,992**, expected all five,
+maximum **100 / 1,992**. The chain starts with the two source tables and enters
+`DemoEngine` from the no-input/expired-title-timer branch; it ends at the carry
+return consumed by `GameMenuRoutine`. One idle-to-demo ROM route must cover the
+timer-nonzero `DoAction` path, timer expiry/load path and terminal zero
+`DemoOver` return.

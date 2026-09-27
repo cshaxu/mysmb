@@ -1684,6 +1684,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after S23 IconDataRead closure."
+        },
+        {
+          "id": "M2 T25 S25",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "title-idle-demo-chain-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted five-node chain after S24 ExitIcon closure."
         }
       ]
     },
@@ -7405,8 +7417,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S24",
-      "receivingBasis": "S24 retained title receipt after IconDataRead closure.",
+      "receiver": "M2 T25 S25",
+      "receivingBasis": "S25 title-idle/demo chain receipt after ExitIcon closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7450,8 +7462,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S24",
-      "receivingBasis": "S24 retained title receipt after IconDataRead closure.",
+      "receiver": "M2 T25 S25",
+      "receivingBasis": "S25 title-idle/demo chain receipt after ExitIcon closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7495,8 +7507,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S24",
-      "receivingBasis": "S24 retained title receipt after IconDataRead closure.",
+      "receiver": "M2 T25 S25",
+      "receivingBasis": "S25 title-idle/demo chain receipt after ExitIcon closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7572,8 +7584,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S24",
-      "receivingBasis": "S24 retained title receipt after IconDataRead closure.",
+      "receiver": "M2 T25 S25",
+      "receivingBasis": "S25 title-idle/demo chain receipt after ExitIcon closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7617,8 +7629,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S24",
-      "receivingBasis": "S24 retained title receipt after IconDataRead closure.",
+      "receiver": "M2 T25 S25",
+      "receivingBasis": "S25 title-idle/demo chain receipt after ExitIcon closure.",
       "futurePackage": null,
       "history": [
         {
@@ -57345,6 +57357,21 @@
       ],
       "acceptedBy": "S24 accepts every uncompleted title/menu/demo label after S23.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-072-t25-s24-to-s25",
+      "type": "transfer",
+      "from": "M2 T25 S24",
+      "to": "M2 T25 S25",
+      "nodes": [
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "S25 accepts the complete retained title-idle/demo chain after S24.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -65704,9 +65731,131 @@
         "ExitIcon"
       ],
       "maximumComplete": 95,
+      "actualMatches": [
+        "ExitIcon"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-exit-icon-return-chain"
+    },
+    {
+      "subtask": "M2 T25 S25",
+      "kind": "implementation",
+      "scope": [
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "baseline": 95,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "maximumComplete": 100,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-exit-icon-return-chain"
+      "state": "active-title-idle-demo-chain-equivalence"
     }
   ]
 }

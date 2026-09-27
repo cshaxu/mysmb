@@ -197,7 +197,7 @@ The labels and branches behind every line remain open until individually bound b
 | 1090 | `MushroomIconData` | M2 T25 S21: complete icon-data binding; `title_modes.c:mysmb_game_draw_mushroom_icon` | ROM-match complete | [T25 S21 MushroomIconData closure](../../proposals/m2/t25-title-menu-demo.md#s21-closure-mushroomicondata-binding) |
 | 1093 | `DrawMushroomIcon` | M2 T25 S22: icon routine initializer and player branch; `title_modes.c:mysmb_game_draw_mushroom_icon` | ROM-match complete | [T25 S22 DrawMushroomIcon closure](../../proposals/m2/t25-title-menu-demo.md#s22-closure-drawmushroomicon-routine) |
 | 1095 | `IconDataRead` | M2 T25 S23: icon copy-loop; `title_modes.c:mysmb_game_draw_mushroom_icon` | ROM-match complete | [T25 S23 IconDataRead closure](../../proposals/m2/t25-title-menu-demo.md#s23-closure-icondataread-loop) |
-| 1105 | `ExitIcon` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exiticon) |
+| 1105 | `ExitIcon` | M2 T25 S24: icon return leaf; `title_modes.c:mysmb_game_draw_mushroom_icon` | ROM-match complete | [T25 S24 ExitIcon closure](../../proposals/m2/t25-title-menu-demo.md#s24-closure-exiticon-return-chain) |
 | 1109 | `DemoActionData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoactiondata) |
 | 1114 | `DemoTimingData` | T15 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demotimingdata) |
 | 1119 | `DemoEngine` | T15 responsibility (implementation not certified); `title_modes.c:mysmb_game_step_title_demo` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-demoengine) |

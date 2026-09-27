@@ -47,21 +47,21 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S24, implementation; `ExitIcon` zero-write return chain. |
-| Admission And Approval | Owner-approved source-order M2 plan; S23 completed `IconDataRead` and transferred the remaining 6 title/menu/demo labels to S24. |
-| Objective | Establish and credit `ExitIcon`, the icon routine return leaf. |
-| Non-goals | The other 5 retained labels (`DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
-| Reference Baseline | 94 / 1,992 complete; 1 scoped label; expected match ExitIcon; maximum 95 / 1,992. |
+| Identifier Mode | M2 T25 S25, implementation; title-idle demo data and engine chain. |
+| Admission And Approval | Owner-approved source-order M2 plan; S24 completed `ExitIcon` and transferred the remaining 5 title/menu/demo labels to S25. |
+| Objective | Establish and credit the complete title-idle demo data and engine chain. |
+| Non-goals | No label outside the five-node chain (`DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
+| Reference Baseline | 95 / 1,992 complete; 5 scoped labels; expected matches DemoActionData, DemoTimingData, DemoEngine, DoAction and DemoOver; maximum 100 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM return `$833f`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | Source returns without a write after both NumberOfPlayers outcomes. |
+| Verification | Static source audit of ROM `$8340-$838a`; controlled original-ROM idle-to-demo path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | Source table reads, timer branch, action index, action/timer writes and terminal carry return. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Delivery Profile | S24 is a one-label leaf chain. Its closure transfers the demo family into a source-contiguous chain governed by [M2 chain-based S delivery](../rules/EXECUTION.md#m2-chain-based-s-delivery). |
-| Reporting Requirements | Record source return `$833f`, both predecessor outcomes, Select-route trace result, and all 6 retained-node dispositions. |
+| Delivery Profile | S25 is the first multi-node chain under [M2 chain-based S delivery](../rules/EXECUTION.md#m2-chain-based-s-delivery). |
+| Reporting Requirements | Record table bytes, all engine branch outcomes, idle-to-demo trace result and all five chain-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `ExitIcon` is completed only when both predecessor outcomes reach its zero-write return and the Select-route replay agrees; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | The chain is completed only when both tables, timer branches, action write/decrement and terminal carry return agree; no unrelated node is credited. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 
