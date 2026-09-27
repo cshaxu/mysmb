@@ -6,8 +6,8 @@ T28 is the source-order receiver for ROM lines 1825--2794. It begins after
 T27's screen task and precedes T29's area-object parser. All behavior stays in
 shared game code; host adapters only submit the resulting frame and input.
 
-**T28 S1, S2 and S3 are closed at 194 / 1,992. T28 S4 is active.** It owns
-only the nineteen-label data chain below; later chains remain queued.
+**T28 S1--S4 are closed at 213 / 1,992. T28 S5 is active.** It owns
+only the five-label name-table initialization chain below; later chains remain queued.
 
 ## Exact source-order chains
 

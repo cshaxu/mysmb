@@ -146,6 +146,7 @@ void mysmb_game_submit_oam(struct mysmb_game *game)
 void mysmb_game_initialize_name_tables(struct mysmb_game *game)
 {
     mysmb_u8 table;
+    mysmb_u8 control;
     mysmb_u16 offset;
 
     for (table = 0U; table < 2U; ++table) {
@@ -163,8 +164,13 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
     /* InitializeNameTables sets the PPU pattern-table arrangement then
      * InitScroll commits zero scroll.  Palette values remain the domain of
      * ScreenRoutines/ColorRotation and are initialized separately by T10. */
-    game->ppu_control_0 = 0x10U;
-    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = 0x10U;
+    /* InitializeNameTables performs ORA #$10 / AND #$f0 before
+     * WritePPUReg1.  The upper nibble (notably the NMI-enable bit) is an
+     * input from the caller and must survive this name-table reset. */
+    control = (mysmb_u8)((game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x10U) &
+        0xf0U);
+    game->ppu_control_0 = control;
+    game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = control;
     game->ppu_name_table = 0U;
     game->scroll_x = 0U;
     game->scroll_y = 0U;
@@ -172,7 +178,7 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
      * source routine ends by writing $2005 twice (InitScroll) while this
      * NMI is still active.  Publish that physical transfer now so the
      * current output frame agrees with the ROM at InitScreen/GameOver. */
-    game->visible_ppu_control_0 = 0x90U;
+    game->visible_ppu_control_0 = control;
     game->visible_ppu_name_table = 0U;
     game->visible_scroll_x = 0U;
     game->visible_scroll_y = 0U;
