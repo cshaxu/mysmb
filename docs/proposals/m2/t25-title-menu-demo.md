@@ -498,3 +498,11 @@ S13 completes exactly `IncWorldSel`, reaching **84 / 1,992**. A local-only fixtu
 ## S14 admission: UpdateShroom write loop
 
 S14 scopes `UpdateShroom`; baseline **84 / 1,992**, expected `UpdateShroom`, maximum **85 / 1,992**.
+
+## S14 closure: UpdateShroom write loop
+
+S14 completes `UpdateShroom` at **85 / 1,992**: controlled B path reaches `$82a9`; source and C both write six template bytes then WorldNumber+1. Remaining 15 labels transfer to S15.
+
+## S15 admission: ChkContinue entry
+
+S15 scopes `ChkContinue`, baseline **85 / 1,992**, expected `ChkContinue`, maximum **86 / 1,992**.

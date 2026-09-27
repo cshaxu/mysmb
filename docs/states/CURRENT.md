@@ -43,26 +43,26 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S14 Packet
+## M2 T25 S15 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S14, implementation; next source-order `UpdateShroom` write loop. |
-| Admission And Approval | Owner-approved source-order M2 plan; S13 completed `IncWorldSel` and transferred the remaining 16 title/menu/demo labels to S14. |
-| Objective | Independently establish and credit `UpdateShroom`, the world-select template write loop. |
-| Non-goals | The other 15 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
-| Reference Baseline | 84 / 1,992 complete; 1 scoped label; expected match UpdateShroom; maximum 85 / 1,992. |
+| Identifier Mode | M2 T25 S15, implementation; next source-order `ChkContinue` entry. |
+| Admission And Approval | Owner-approved source-order M2 plan; S14 completed `UpdateShroom` and transferred the remaining 15 title/menu/demo labels to S15. |
+| Objective | Independently establish and credit `ChkContinue`, the continuation branch entered by `StartGame` at ROM PC `$82d8`. |
+| Non-goals | The other 14 retained labels including `WSelectBufferTemplate`, new gameplay approximation, platform gameplay logic, or credit without static source, branch-successor, and operational replay proof. |
+| Reference Baseline | 85 / 1,992 complete; 1 scoped label; expected match ChkContinue; maximum 86 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM PC $8258, controlled original-ROM no-button/non-Start route with recorded successors, focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | The non-Start and non-A+Start comparison enters `$8258`, retains `Y = 0`, and selects its ROM successor without a platform-owned decision or synthetic intermediate state. |
+| Verification | Static source audit of ROM PC `$82d8`; controlled original-ROM Start and A+Start routes that record the `DemoTimer` test and both successors; focused title regression, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | `ChkContinue` tests `DemoTimer`: zero reaches `ResetTitle`; otherwise its ASL carry selects `StartWorld1` or invokes `GoContinue`, with no platform-owned decision or synthetic intermediate state. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record the source entry PC, branch comparison/successor, C-owner/control-flow, trace result, and all 19 retained-node dispositions. |
+| Reporting Requirements | Record source entry `$82d8`, both branch conditions/successors, C-owner/control-flow, trace result, and all 14 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `ChkSelect` is completed only when its source branch, successor route and replay proof agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `ChkContinue` is completed only when its source branches, successor routes and replay proof agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
-| Similar-Issue Sweep | Check all non-Start title-menu comparisons and every shared title-menu caller; verify that platform sources neither decide the branch nor mutate its ROM-owned state. |
+| Similar-Issue Sweep | Check every `DemoTimer` continuation caller and both Start input forms; verify that platform sources neither decide the branch nor mutate its ROM-owned state. |
 
 ## Recent M4 Closures
 

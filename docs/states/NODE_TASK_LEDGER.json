@@ -1564,6 +1564,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after S13."
+        },
+        {
+          "id": "M2 T25 S15",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-branch-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after S14."
         }
       ]
     },
@@ -6061,8 +6073,8 @@
     {
       "label": "WSelectBufferTemplate",
       "line": 993,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -6808,8 +6820,8 @@
     {
       "label": "ChkContinue",
       "line": 1059,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -6869,8 +6881,8 @@
     {
       "label": "StartWorld1",
       "line": 1065,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -6930,8 +6942,8 @@
     {
       "label": "InitScores",
       "line": 1077,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -6975,8 +6987,8 @@
     {
       "label": "ExitMenu",
       "line": 1080,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7020,8 +7032,8 @@
     {
       "label": "GoContinue",
       "line": 1081,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7089,8 +7101,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7134,8 +7146,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7195,8 +7207,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7240,8 +7252,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7285,8 +7297,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7330,8 +7342,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7375,8 +7387,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7452,8 +7464,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -7497,8 +7509,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S14",
-      "receivingBasis": "S14 retained title receipt.",
+      "receiver": "M2 T25 S15",
+      "receivingBasis": "S15 retained title receipt.",
       "futurePackage": null,
       "history": [
         {
@@ -57020,6 +57032,31 @@
       ],
       "acceptedBy": "S14 accepts all uncompleted labels.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-062-t25-s14-to-s15",
+      "type": "transfer",
+      "from": "M2 T25 S14",
+      "to": "M2 T25 S15",
+      "nodes": [
+        "WSelectBufferTemplate",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "S15 accepts all uncompleted labels.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -64294,9 +64331,113 @@
         "UpdateShroom"
       ],
       "maximumComplete": 85,
+      "actualMatches": [
+        "UpdateShroom"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-update-shroom-loop-equivalence"
+    },
+    {
+      "subtask": "M2 T25 S15",
+      "kind": "implementation",
+      "scope": [
+        "ChkContinue"
+      ],
+      "baseline": 85,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "ChkContinue"
+      ],
+      "maximumComplete": 86,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-update-shroom-loop-equivalence"
+      "state": "active-chk-continue-equivalence"
     }
   ]
 }
