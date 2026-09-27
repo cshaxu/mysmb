@@ -369,25 +369,25 @@ The labels and branches behind every line remain open until individually bound b
 | 2523 | `UpdateScreen` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
 | 2527 | `InitScroll` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
 | 2533 | `WritePPUReg1` | M2 T28 S6 shared NMI/VRAM owner | ROM-match complete | [T28 S6 closure](../../proposals/m2/t28-area-output-bootstrap.md#s6-closure-joypad-vram-nmi-chain) |
-| 2544 | `StatusBarData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbardata) |
-| 2552 | `StatusBarOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbaroffset) |
-| 2555 | `PrintStatusBarNumbers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-printstatusbarnumbers) |
-| 2564 | `OutputNumbers` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-outputnumbers) |
-| 2578 | `SetupNums` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupnums) |
-| 2592 | `DigitPLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-digitploop) |
-| 2604 | `ExitOutputN` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitoutputn) |
-| 2608 | `DigitsMathRoutine` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-digitsmathroutine) |
-| 2613 | `AddModLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addmodloop) |
-| 2619 | `StoreNewD` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storenewd) |
-| 2623 | `EraseDMods` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasedmods) |
-| 2625 | `EraseMLoop` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasemloop) |
-| 2629 | `BorrowOne` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-borrowone) |
-| 2632 | `CarryOne` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-carryone) |
-| 2639 | `UpdateTopScore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatetopscore) |
-| 2644 | `TopScoreCheck` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topscorecheck) |
-| 2647 | `GetScoreDiff` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getscorediff) |
-| 2655 | `CopyScore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-copyscore) |
-| 2661 | `NoTopSc` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notopsc) |
+| 2544 | `StatusBarData` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2552 | `StatusBarOffset` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2555 | `PrintStatusBarNumbers` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2564 | `OutputNumbers` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2578 | `SetupNums` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2592 | `DigitPLoop` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2604 | `ExitOutputN` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2608 | `DigitsMathRoutine` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2613 | `AddModLoop` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2619 | `StoreNewD` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2623 | `EraseDMods` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2625 | `EraseMLoop` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2629 | `BorrowOne` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2632 | `CarryOne` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2639 | `UpdateTopScore` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2644 | `TopScoreCheck` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2647 | `GetScoreDiff` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2655 | `CopyScore` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
+| 2661 | `NoTopSc` | M2 T28 S7 shared status owner | ROM-match complete | [T28 S7 closure](../../proposals/m2/t28-area-output-bootstrap.md#s7-closure-status-bar-and-digit-arithmetic-chain) |
 | 2665 | `DefaultSprOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultsproffsets) |
 | 2669 | `Sprite0Data` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprite0data) |
 | 2674 | `InitializeGame` | T18 responsibility (implementation not certified); `title_modes.c:mysmb_game_begin_title_bootstrap` | mapped; evidence incomplete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initializegame) |

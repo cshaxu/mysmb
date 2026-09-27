@@ -68838,9 +68838,29 @@
         "NoTopSc"
       ],
       "maximumComplete": 249,
-      "actualMatches": [],
+      "actualMatches": [
+        "StatusBarData",
+        "StatusBarOffset",
+        "PrintStatusBarNumbers",
+        "OutputNumbers",
+        "SetupNums",
+        "DigitPLoop",
+        "ExitOutputN",
+        "DigitsMathRoutine",
+        "AddModLoop",
+        "StoreNewD",
+        "EraseDMods",
+        "EraseMLoop",
+        "BorrowOne",
+        "CarryOne",
+        "UpdateTopScore",
+        "TopScoreCheck",
+        "GetScoreDiff",
+        "CopyScore",
+        "NoTopSc"
+      ],
       "evidence": "docs/proposals/m2/t28-area-output-bootstrap.md",
-      "state": "active-status-arithmetic-chain"
+      "state": "closed-status-arithmetic-chain"
     }
   ]
 }

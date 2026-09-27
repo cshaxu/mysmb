@@ -410,3 +410,33 @@ all six `StatusBarData`/`StatusBarOffset` selector pairs: Mario score/coins,
 Luigi score/coins, timer and title top score. These two routes complete the
 planned branch matrix; S closure still requires the final cross-width and
 ledger/progress checks.
+
+## S7 closure: status-bar and digit-arithmetic chain
+
+S7 closes at **249 / 1,992**. All nineteen admitted labels are
+ROM-match complete: `StatusBarData`, `StatusBarOffset`,
+`PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`,
+`ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`,
+`EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`,
+`TopScoreCheck`, `GetScoreDiff`, `CopyScore`, and `NoTopSc`. No scoped node
+remains incomplete or is transferred.
+
+The ROM-equivalence track binds both source tables and exercises their six
+selector pairs, source zero suppression and packet destinations. Natural
+ROM/native routes cover the timer borrow (`100 -> 099`), score carry
+(`000900 -> 001000`), status output, title top-score output, and top-score
+copy and retain outcomes. PC coverage reaches every executable label from
+`PrintStatusBarNumbers` through `NoTopSc`; data-label equivalence is proved
+through the bound table bytes and all six observed consumers. The scoped
+digit fields, modifier range and emitted packets agree. Whole-frame residuals
+outside this chain were neither masked nor credited.
+
+The operational track passes `mysmb.status-arithmetic-smoke`,
+`mysmb.top-score-root-smoke`, and `mysmb.platform-purity` on Win32 x86 and
+x64; the shared game source links as the OpenNT DOS16 MZ. The P7 packaging
+pass refreshed `mysmb16.exe` SHA-256
+`574DD8232D3534180229504BF1686E997178DD65F9CED992AACAD81210528223`,
+`mysmb32.exe` `A16A647B03F2AD9BCF271556032675359DCF5BD403425C8ACC1C9DC67362E7DC`,
+and `mysmb64.exe` `31CD62C5743A50E11E303BC7EB8D2FCA05BD6DB2E439F245F601C13EBBE8D5F9`.
+Platform sources remain outside status arithmetic, status-buffer selection,
+score comparison and PPU packet construction.
