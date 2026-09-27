@@ -74,6 +74,16 @@ int main(void)
     if (game.ram[0x073cU] != 7U || game.ram[0x07a0U] != 7U ||
         game.ram[0x0774U] != 0U) return 1;
 
+    /* DisplayIntermediate first tests title mode and takes NoInter before
+     * alternate-entry, area-type, or DisableIntermediate state. */
+    game.ram[0x073cU] = 6U;
+    game.ram[0x0770U] = 0U;
+    game.ram[0x0752U] = 0U;
+    game.ram[0x074eU] = 3U;
+    game.ram[0x0769U] = 0U;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 8U) return 1;
+
     game.ram[0x073cU] = 11U;
     game.ram[0x0733U] = 1U;
     mysmb_game_step_screen_routine(&game);

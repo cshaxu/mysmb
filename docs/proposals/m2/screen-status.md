@@ -347,6 +347,19 @@ PRG `$07fe-$0806` and the five message terminators at `$0778`, `$0797`,
 for top status, lives, both Time Up/Game Over choices and Warp Zone rather than
 deriving data positions from the differing listing revision.
 
+## S2/P13: title-mode NoInter precedence
+
+The focused screen-status smoke enters task six with title `OperMode`, castle
+area type and an enabled intermediate display. It proves the source's first
+title-mode test takes `NoInter` to task eight before all later conditions.
+
+The focused assertion passes on x64 and x86. Both Win32 products pass their
+native self-test, and the same shared source links as the OpenNT DOS16 MZ
+(only the established C4761 warnings). The refreshed artifacts are
+`mysmb16.exe` `9B884AC39DC42F4145ED47E956CB89D779414E8A55565E4712147CA0F35574CF`,
+`mysmb32.exe` `2047E4D31CDB0B626C1D4EE0C418820A8EB332D642C9CA431A78755265B904F1`,
+and `mysmb64.exe` `E519F402868C21A8BBF973497CF16249F97F7D8CE5CA923C782F09496CFD55D8`.
+
 ## S2 per-node source/evidence matrix
 
 This matrix is the S2 source-review record. `Mapped` means the ROM branch,
@@ -365,7 +378,7 @@ both tracks are accepted at S2 closure.
 | `PlayerInter` | `game.c` task 6 and intermediate OAM owner | Mapped; castle and ordinary fixtures prove call order and output tail. Pending final text/name matrix. |
 | `OutputInter` | `game.c` task 4/task 6 common writes | Mapped; Time Up and intermediate fixtures. Pending common-path byte matrix. |
 | `GameOverInter` | `game.c` task 6, `terminal_modes.c` game-over root | Mapped; one-player plus both two-player-name zero-difference routes. Pending final text-byte matrix. |
-| `NoInter` | `game.c` task 6 direct task-8 assignment | Mapped; local-area and alternate-entry zero-difference route. Pending title-mode route. |
+| `NoInter` | `game.c` task 6 direct task-8 assignment | Mapped; local-area, alternate-entry and P13 title-mode precedence routes. Pending final cross-branch matrix. |
 | `DrawTitleScreen` | `game.c` task 12 | Mapped; 200-frame cold-title route, P10 exact byte matrix and P11 non-title exit. Pending final cross-branch matrix. |
 | `OutputTScr` | `game.c` title-data copy loop | Mapped; P10 CHR `$1ec0` / 314-byte task-12 audit. Pending final cross-branch matrix. |
 | `ChkHiByte` | `game.c` title-data copy bound | Mapped; P10 `$043a` untouched sentinel. Pending final cross-branch matrix. |
