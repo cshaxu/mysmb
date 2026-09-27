@@ -2412,14 +2412,10 @@ void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
 static mysmb_u8 mysmb_objects_is_bumpable(mysmb_u8 metatile)
 {
-    static const mysmb_u8 bumpable[14] = {
-        0xc1U, 0xc0U, 0x5fU, 0x60U, 0x55U, 0x56U, 0x57U,
-        0x58U, 0x59U, 0x5aU, 0x5bU, 0x5cU, 0x5dU, 0x5eU
-    };
     mysmb_u8 index;
 
-    for (index = 0U; index < sizeof(bumpable); ++index) {
-        if (metatile == bumpable[index]) return 1U;
+    for (index = 0U; index < sizeof(mysmb_brick_question_metatiles); ++index) {
+        if (metatile == mysmb_brick_question_metatiles[index]) return 1U;
     }
     return 0U;
 }

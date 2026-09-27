@@ -593,14 +593,14 @@ The labels and branches behind every line remain open until individually bound b
 | 4157 | `StaircaseObject` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
 | 4162 | `NextStair` | M2 T30 S6 shared `area.c` staircase chain | ROM-match complete | [T30 S6/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s6p1-staircase-chain-and-rom-proof) |
 | 4172 | `Jumpspring` | M2 T30 S7 shared `area.c` jumpspring creation chain | ROM-match complete | [T30 S7/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s7p1-jumpspring-creation-and-rom-proof) |
-| 4197 | `Hidden1UpBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upblock) |
-| 4204 | `QuestionBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-questionblock) |
-| 4208 | `BrickWithCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickwithcoins) |
-| 4212 | `BrickWithItem` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-brickwithitem) |
-| 4220 | `BWithL` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bwithl) |
-| 4223 | `DrawQBlk` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawqblk) |
-| 4228 | `GetAreaObjectID` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjectid) |
-| 4233 | `ExitDecBlock` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdecblock) |
+| 4197 | `Hidden1UpBlock` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4204 | `QuestionBlock` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4208 | `BrickWithCoins` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4212 | `BrickWithItem` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4220 | `BWithL` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4223 | `DrawQBlk` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4228 | `GetAreaObjectID` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
+| 4233 | `ExitDecBlock` | M2 T30 S8 shared `area.c` item-block selection chain | ROM-match complete | [T30 S8/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s8p1-item-block-selection-and-rom-proof) |
 | 4237 | `HoleMetatiles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holemetatiles) |
 | 4240 | `Hole_Empty` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hole_empty) |
 | 4265 | `StrWOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strwoffset) |

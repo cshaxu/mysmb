@@ -3,6 +3,9 @@
 
 #include "game/game.h"
 
+/* Shared BrickQBlockMetatiles binding, owned by area/block_metatile.c. */
+extern const mysmb_u8 mysmb_brick_question_metatiles[14];
+
 /* ROM $92b0/$93fc, GameMode task 0 before area data parsing. */
 void mysmb_area_initialize(struct mysmb_game *game);
 

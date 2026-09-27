@@ -534,8 +534,6 @@ mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
 static void mysmb_area_apply_single_block(struct mysmb_game *game,
                                           const struct mysmb_area_object *object)
 {
-    static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
-    static const mysmb_u8 ground_brick[5] = { 0x55U, 0x56U, 0x57U, 0x58U, 0x59U };
     static const mysmb_u8 row_brick[4] = { 0x22U, 0x51U, 0x52U, 0x52U };
     mysmb_u8 value;
     mysmb_u8 column;
@@ -560,11 +558,12 @@ static void mysmb_area_apply_single_block(struct mysmb_game *game,
         return;
     }
     if (object->dispatch_id >= 0x16U && object->dispatch_id <= 0x18U) {
-        value = question[(mysmb_u8)(object->dispatch_id - 0x16U)];
+        value = mysmb_brick_question_metatiles[(mysmb_u8)(object->dispatch_id - 0x16U)];
     }
     else if (object->dispatch_id >= 0x1aU && object->dispatch_id <= 0x1eU) {
-        value = ground_brick[(mysmb_u8)(object->dispatch_id - 0x1aU)];
+        value = (mysmb_u8)(object->dispatch_id - 0x16U);
         if (game->ram[MYSMB_AREA_TYPE] != 1U) value = (mysmb_u8)(value + 5U);
+        value = mysmb_brick_question_metatiles[value];
     }
     else if (object->dispatch_id == 0x20U) {
         value = 0x60U;
@@ -1428,6 +1427,55 @@ static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row)
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
+/* ROM $9b36 GetAreaObjectID -> $9b3c ExitDecBlock. SEC/SBC #0 preserves
+ * the decoded byte; the return is also the hidden-disabled exit. */
+static mysmb_u8 mysmb_area_get_object_id(const struct mysmb_game *game)
+{
+    return game->ram[0U];
+}
+
+/* ROM $9b2c DrawQBlk: retain the selected tile across row decode, then
+ * use DrawRow so existing foreground and height state obey UnderPart. */
+static void mysmb_area_draw_question_block(struct mysmb_game *game,
+                                           mysmb_u8 row, mysmb_u8 index)
+{
+    mysmb_u8 metatile;
+    metatile = mysmb_brick_question_metatiles[index];
+    game->ram[7U] = row;
+    mysmb_area_draw_row(game, metatile);
+}
+
+/* ROM $9b19 BrickWithItem -> $9b28 BWithL -> DrawQBlk. */
+static void mysmb_area_brick_with_item(struct mysmb_game *game, mysmb_u8 row)
+{
+    mysmb_u8 adder;
+    game->ram[7U] = mysmb_area_get_object_id(game);
+    adder = game->ram[MYSMB_AREA_TYPE] == 1U ? 0U : 5U;
+    mysmb_area_draw_question_block(game, row,
+        (mysmb_u8)(adder + game->ram[7U]));
+}
+
+/* ROM $9b01 Hidden1UpBlock, including its ExitDecBlock branch. */
+static void mysmb_area_hidden_1up_block(struct mysmb_game *game, mysmb_u8 row)
+{
+    if (game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] == 0U) return;
+    game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] = 0U;
+    mysmb_area_brick_with_item(game, row);
+}
+
+/* ROM $9b0e QuestionBlock. */
+static void mysmb_area_question_block(struct mysmb_game *game, mysmb_u8 row)
+{
+    mysmb_area_draw_question_block(game, row, mysmb_area_get_object_id(game));
+}
+
+/* ROM $9b14 BrickWithCoins falls through to BrickWithItem. */
+static void mysmb_area_brick_with_coins(struct mysmb_game *game, mysmb_u8 row)
+{
+    game->ram[0x06bcU] = 0U;
+    mysmb_area_brick_with_item(game, row);
+}
+
 /* ROM $9ad3-$9b00 Jumpspring. The caller does not branch on allocation
  * carry: a full ordinary pool uses slot five, including flag INC/wrap. */
 static void mysmb_area_jumpspring(struct mysmb_game *game, mysmb_u8 row)
@@ -1491,10 +1539,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 first,
                                            mysmb_u8 second)
 {
-    static const mysmb_u8 question[3] = { 0xc1U, 0xc0U, 0x5fU };
-    static const mysmb_u8 block[10] = {
-        0U, 0U, 0U, 0U, 0x55U, 0x56U, 0x57U, 0x58U, 0x59U, 0U
-    };
     static const mysmb_u8 pipe[8] = {
         0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
     };
@@ -1711,23 +1755,10 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     }
     if (kind == 0U) {
         value = (mysmb_u8)(second & 0x0fU);
-        if (value <= 2U) game->ram[MYSMB_AREA_METATILE_BUFFER + row] = question[value];
-        else if (value == 3U) {
-            /* ROM Hidden1UpBlock ($a065): the block becomes a normal
-             * BrickWithItem selector only after its per-area flag is set. */
-            if (game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] != 0U) {
-                game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] = 0U;
-                /* BrickWithItem selects BrickQBlockMetatiles[3] for ground
-                 * areas and [8] (the unlined brick) everywhere else. */
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
-                    area_type == 1U ? 0x60U : 0x59U;
-            }
-        }
-        else if (value >= 4U && value <= 8U) {
-            value = block[value];
-            if (area_type != 1U) value = (mysmb_u8)(value + 5U);
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = value;
-        }
+        if (value <= 2U) mysmb_area_question_block(game, row);
+        else if (value == 3U) mysmb_area_hidden_1up_block(game, row);
+        else if (value == 7U) mysmb_area_brick_with_coins(game, row);
+        else if (value <= 8U) mysmb_area_brick_with_item(game, row);
         /* ROM WaterPipe ($986f): small-object selector nine does not use
          * its lower nibble as a length.  GetLrgObjAttrib reloads the row,
          * then writes the two water-pipe metatiles at that row and below. */

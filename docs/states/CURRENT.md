@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S7 is closed at 460 / 1,992; Jumpspring creation has both evidence tracks.**
+**M2 T30 S8 is closed at 468 / 1,992; all eight item-block labels have both evidence tracks.**
 
-Eight original-ROM screen-build routes and 1,536 native cases pass. Three
-artifacts are refreshed. Runtime/offscreen debt is recorded separately.
-No S is active; the hidden/question/item brick family is next.
+Seventy-two original-ROM routes and 1,152 native cases pass; shared-table
+collision/graphics regressions pass on both Windows widths. Three artifacts
+are refreshed. No S is active; HoleMetatiles is next.
 
-## M2 T30 S7 Packet
+## M2 T30 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S7, implementation; jumpspring creation chain. |
-| Admission And Approval | Owner-approved source-order continuation; exact transfer-104 from M2 T18 S4. |
-| Objective | Translate and prove Jumpspring, one complete creation routine in the proposal. |
-| Non-goals | No hidden/item brick or jumpspring runtime handling, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
-| Reference Baseline | 459 / 1,992; one open label; expected one match; maximum 460 / 1,992. |
+| Identifier Mode | M2 T30 S8, implementation; item-block selection/rendering chain. |
+| Admission And Approval | Owner-approved source-order continuation; exact transfer-105 from M2 T18 S4. |
+| Objective | Translate and prove Hidden1UpBlock through ExitDecBlock; eight exact labels in the proposal in the proposal. |
+| Non-goals | No hole/whirlpool or runtime block collision, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
+| Reference Baseline | 460 / 1,992; eight open labels; expected eight matches; maximum 468 / 1,992. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c parser tests and validation recorders; ledger/progress and three artifacts. |
+| Files And ABI Surface | Shared area.c, area/block_metatile.c and table consumers (data extraction only), parser tests and validation recorders; ledger/progress and three artifacts. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused jumpspring and staircase regression tests; x86/x64 and DOS16 builds; purity and package checks. |
-| Expected Markers | Slot selection/fallback, X/page/Y/fixed-Y/ID/high-Y writes, flag INC and two unconditional metatile stores. |
+| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused item-block, jumpspring and block regression tests; x86/x64 and DOS16 builds; purity and package checks. |
+| Expected Markers | Hidden flag branch, coin timer reset, AreaType index adder, shared table, scratch row and DrawRow/UnderPart tail. |
 | Asset Needs | Refresh assets/mysmb16.exe, mysmb32.exe and mysmb64.exe per P; DOS MZ build is not runtime proof. |
 | Reporting Requirements | Every label disposition, both evidence tracks, actual count, artifact hashes and exact transfers. |
 | Stop Conditions | Unmatched source branch/data/write, unadmitted dependency, ROM mismatch or platform gameplay. |
-| Exit Criteria | The complete node proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
+| Exit Criteria | All eight nodes proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
 | Original Owner Request | Full original-ROM behavior; source order; shared C90 logic across all targets. |
-| Similar-Issue Sweep | All jumpspring creation/ID/fixed-Y writers, allocator consumers and platform trees. |
+| Similar-Issue Sweep | All item-block selection/rendering/ID/fixed-Y writers, allocator consumers and platform trees. |
 
 ## Retained M2 T15 summary
 

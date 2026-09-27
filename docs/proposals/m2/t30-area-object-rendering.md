@@ -628,3 +628,110 @@ Expected/actual: one/one. `Jumpspring` creation is complete in both tracks:
 and offscreen debt retain their existing receivers with no credit. Tracker,
 census and ledger must pass closure gates. Hidden1UpBlock begins the next
 unadmitted source-order family.
+
+## T30/S8 admission: hidden/question/item block selection chain
+
+Exact scope and expected matches, all incoming open: `Hidden1UpBlock` (4197),
+`QuestionBlock` (4204), `BrickWithCoins` (4208), `BrickWithItem` (4212),
+`BWithL` (4220), `DrawQBlk` (4223), `GetAreaObjectID` (4228), `ExitDecBlock`
+(4233). Baseline **460 / 1,992**, expected **8**, maximum **468 / 1,992**.
+Transfer-105 accepts the chain from T18 S4. Closed S7 precedes it; HoleMetatiles
+is next. Shared owner: area.c. Table storage moves to area/block_metatile.c
+with declaration in area.h; objects.c classifier and legacy area selectors
+only consume the same data, without changing their control flow. The table,
+length/attribute, DrawRow and UnderPart collaborators retain their receivers;
+none receive node credit. Runtime collision, block bumps and powerups are
+excluded.
+
+ROM audit covers hidden flag gate/clear, coin timer flag reset, `$00` ID,
+`$07` preservation, AreaType adder zero/five, table lookup, row decode and
+DrawRow/UnderPart tail. Original-ROM parser fixtures cover selectors zero
+through eight, four area types and both hidden flag states. No PC/stack or
+program-byte changes are permitted. Native tests additionally cover overlap
+preservation and untouched state. Separate x86/x64, DOS16, purity and package
+checks supply operational evidence and three fresh artifacts.
+
+Owner-local NROM and reviewed SMBDIS are restricted research inputs, with no
+third-party code import. Traces stay under ignored build/m2-t30-s8: one warmup
+plus two samples per route, 131072 instructions/frame and 2 MB aggregate raw
+trace cap. S8 owns cleanup after review. No completion credit at admission.
+
+## S8/P1: item-block selection and ROM proof
+
+| Node | Original control/data semantics and consumer evidence |
+| --- | --- |
+| `Hidden1UpBlock` | `$9b01` tests Hidden1UpFlag, exits without row/height writes when zero, otherwise clears it and tails into BrickWithItem. Both flag branches execute for all four area types. |
+| `QuestionBlock` | `$9b0e` gets the decoder ID and enters DrawQBlk without the area-type adder. Selectors zero, one and two all execute. |
+| `BrickWithCoins` | `$9b14` clears `$06bc` then falls through to BrickWithItem. A nonzero seeded flag becomes zero only for selector seven. |
+| `BrickWithItem` | `$9b19` reads decoder `$00`, saves ID in `$07`, tests AreaType and supplies adder zero for ground or five otherwise. Hidden selector three retains its original unusual alternate index eight. |
+| `BWithL` | `$9b28` adds the saved ID to the selected adder before the metatile lookup; every brick/hidden-enabled area-type route executes this tail. |
+| `DrawQBlk` | `$9b2c` reads BrickQBlockMetatiles, preserves the tile across GetLrgObjAttrib, and tails to DrawRow, so UnderPart owns overlap/height behavior. All enabled selectors execute both tails. |
+| `GetAreaObjectID` | `$9b36` returns `$00`; SEC/SBC zero preserves the byte. Its callers consume the ID, not the carry. Original execution covers every selector. |
+| `ExitDecBlock` | `$9b3c` is the ID-return and hidden-disabled return; both uses are represented by the corresponding C return without an invented forwarding wrapper. |
+
+The old direct-store branches omitted scratch/height writes and overlap
+preservation, and multi-coin selection did not reset its timer flag. Named
+shared area entries now preserve the original sequence. The fourteen-byte
+table has one definition in area/block_metatile.c; DrawQBlk, the existing
+collision classifier and legacy area selectors consume that definition.
+Both the original LDA operand at `$9b2c` and all fourteen bytes at `$bde8`
+were verified against the owner ROM. This is collaborator data extraction
+without table-node credit or collision control-flow changes. Legacy area
+scan entry points have no external production caller in the current tree;
+their table selection remains behavior-preserving, and they are not certified
+as original-ROM routes by this S.
+
+Seventy-two original-ROM routes select nine immutable records at `$a29f`,
+`$a31c`, `$a1ed`, `$a559`, `$a4e4`, `$a5ba`, `$a5de`, `$a51e`, `$ab1f`.
+`test/item_block_fixture.h` varies selector, four AreaTypes and hidden flag
+clear/set using source RAM before an ordinary GameEngine/ProcessAreaData
+entry. It never alters PC, stack, program bytes or returns. One warmup and
+two samples retain target-entry coverage, including each shared tail and
+hidden-disabled exit. The comparator requires expected non-vacuous tile,
+hidden flag and coin-timer outputs before comparing the full staged column,
+parser slots/height and both flags in both samples. All 72 routes have zero
+scoped differences. Residual scratch/stack, VRAM-command and PPU-mirror RAM
+differences are separately reported; whole-frame equivalence and unrelated
+collaborator completion remain unclaimed.
+
+```text
+reference <ROM> build/m2-t30-s8/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-items=<id> --pc-coverage=build/m2-t30-s8/pc-<id>.txt
+native build/m2-t30-s8/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-items=<id>
+python -B test/verify_item_block_routes.py build/m2-t30-s8
+```
+
+Ids zero through 71 retain 144 local traces, each 8,830 bytes, total 1,271,520
+bytes below the 2 MB limit; instruction limits remain enabled. Raw output is
+ignored and S8 owns cleanup after review. Tracked evidence contains neutral
+harnesses, addresses and conclusions; no owner-ROM trace is a product fixture.
+
+Independent native coverage passes 1,152 selector/type/flag/background/edge
+combinations, checking all rows, hidden flag, timer flag, scratch row, height
+and untouched horizontal length. Strict C90 x86/x64 builds also pass jumpspring
+and parser-column regression. Shared-table consumers pass collision regression
+and block-graphics smoke tests on both widths. An existing same-line final
+return in the collision test was split to satisfy misleading-indentation
+warnings; no assertion or test logic changed. Windows self-tests exit zero,
+and separate hidden probes create responsive windows. DOS16 links an MZ with
+existing warnings; the known resource-binding debt still prevents claiming
+DOS playability. Platform purity and package checks pass.
+
+Similar-issue sweep removed both parser copies and the collision classifier's
+private table, retaining one shared definition. Legacy ground/question table
+copies now use it too. Other coin timer writers belong to runtime block logic
+and were left unchanged; no platform owns selection, table data or flags.
+
+Artifact SHA-256: `mysmb16.exe`
+`A85BE0A0D24BF6260EA832388A66D29AC54F93E054ABF7838FD3B7DC2B734A45`;
+`mysmb32.exe`
+`13D269DBFC1D13F521725C96257DEC4AE707683BB9947B87DAF098887D302365`;
+`mysmb64.exe`
+`C6E8D99133B6CFA9E50DB2629F248C0056763A53B9CD0DB6BF8E341BF0085E0D`.
+
+## S8 closure
+
+Expected/actual: eight/eight. All eight admission labels above are complete
+in both tracks: **460 -> 468 / 1,992**. No scoped label remains unfinished;
+table/render/attribute and runtime collaborators retain their receivers
+without credit. Tracker, census and ledger must pass closure gates.
+HoleMetatiles begins the next unadmitted source-order chain.

@@ -713,5 +713,6 @@ int main(void)
     game.ram[0x079dU] = 0U;
     if (mysmb_objects_start_head_bump(&game, 0x5dU, 1U, 0x20U) == 0U ||
         game.ram[0x06bcU] != 1U || game.ram[0x079dU] != 0U ||
-        game.ram[0x03e9U] != 0xc4U) return 48;    return 0;
+        game.ram[0x03e9U] != 0xc4U) return 48;
+    return 0;
 }

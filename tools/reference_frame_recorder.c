@@ -13,6 +13,7 @@
 #include "../test/cannon_fixture.h"
 #include "../test/staircase_fixture.h"
 #include "../test/jumpspring_fixture.h"
+#include "../test/item_block_fixture.h"
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -1311,6 +1312,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_item_block_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u8)(182 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_jumpspring_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1603,6 +1610,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 183u && t26_fixture <= 254u)
+                    mysmb_item_block_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 183u));
                 else if (t26_fixture >= 175u && t26_fixture <= 182u)
                     mysmb_jumpspring_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 175u));

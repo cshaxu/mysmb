@@ -9,6 +9,7 @@
 #include "cannon_fixture.h"
 #include "staircase_fixture.h"
 #include "jumpspring_fixture.h"
+#include "item_block_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
@@ -1132,6 +1133,10 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-final-question-high") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 86U; }
+        else if ((block_scenario = mysmb_item_block_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (mysmb_u8)(182 + block_scenario);
+        }
         else if ((block_scenario = mysmb_jumpspring_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (mysmb_u8)(174 + block_scenario);
@@ -1300,6 +1305,9 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
+            else if (t26_fixture >= 183U && t26_fixture <= 254U)
+                mysmb_item_block_fixture(game.ram,
+                    (mysmb_u8)(t26_fixture - 183U));
             else if (t26_fixture >= 175U && t26_fixture <= 182U)
                 mysmb_jumpspring_fixture(game.ram,
                     (mysmb_u8)(t26_fixture - 175U));

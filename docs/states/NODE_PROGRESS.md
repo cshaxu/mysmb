@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 460 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 468 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,429 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,421 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **460 / 1,992 (23.09%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **468 / 1,992 (23.49%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (460)
+## Completed matches (468)
 
 | ROM line | Node |
 | ---: | --- |
@@ -481,6 +481,14 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4157 | `StaircaseObject` |
 | 4162 | `NextStair` |
 | 4172 | `Jumpspring` |
+| 4197 | `Hidden1UpBlock` |
+| 4204 | `QuestionBlock` |
+| 4208 | `BrickWithCoins` |
+| 4212 | `BrickWithItem` |
+| 4220 | `BWithL` |
+| 4223 | `DrawQBlk` |
+| 4228 | `GetAreaObjectID` |
+| 4233 | `ExitDecBlock` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
