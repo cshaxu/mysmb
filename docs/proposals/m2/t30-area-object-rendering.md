@@ -35,3 +35,36 @@ with `CoinMetatileData -> RowOfCoins`, then retain the adjacent row/column,
 cannon/stair, question/brick, hole/underpart, length/attribute and block-buffer
 chains as separate receipts where their caller or ROM route changes.  This is
 a boundary map only; no later T30 label is admitted or credited by S1.
+
+## S1/P1: ROM rope chain and three-target delivery
+
+`EndlessRope` at `$99d0` loads `X=$00`, `Y=$0f` and tail-enters
+`DrawRope`.  `BalancePlatRope` at `$99d7` preserves the parser object offset
+across its `$44` blanking pass at `X=$01,Y=$0f`, reloads the second object
+byte's low nibble through `GetLrgObjAttrib`, then enters the same `DrawRope`
+entry at `$99e9`.  Shared `area.c` now represents those three labels as
+`mysmb_area_endless_rope`, `mysmb_area_balance_platform_rope` and
+`mysmb_area_draw_rope`; the latter is the one `$40` call into the separately
+owned `RenderUnderPart` primitive.
+
+The project-owned `mysmb.area-rope-object-smoke` uses ordinary row-15
+area-parser records, never a leaf-PC or stack entry.  It verifies the endless
+13-row rope output and terminal height, then verifies the balance rope's
+blanking-before-low-nibble-reload order, rope/blank boundary and terminal
+height.  The existing special-object smoke remains green.  This is the
+operational track; the ROM-logic track is the branch, register and shared-RAM
+write audit above.
+
+The manual C90 x64 and x86 smoke builds passed, and their Windows executables
+passed `--self-test`.  OpenNT16 linked `mysmb-dos16.exe` as an `MZ` image.
+`python test/test_platform_purity.py` passed.  The refreshed artifacts are
+`assets/mysmb16.exe` SHA-256
+`8BB51F180C55172BA7E324AC1003E8010D3912DAC9659F53F6833A0C9314B241`,
+`assets/mysmb32.exe` SHA-256
+`5A31D204F5797B78DEA9828C443FB1A47A5080D677917D43D6F82353BD40C937`, and
+`assets/mysmb64.exe` SHA-256
+`FC89FD9626FFDC11A71F33E191F8A5F71F82CEAAF0309A7EF2C8EA9EC790A1DC`.
+
+All three scope labels are ROM-match complete.  The result is **433 / 1,992**;
+there are no uncompleted labels in this receipt.  `CoinMetatileData -> RowOfCoins`
+remains the next unadmitted source-order chain.

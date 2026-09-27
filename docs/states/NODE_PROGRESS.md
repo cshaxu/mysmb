@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 430 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 433 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,459 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,456 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **430 / 1,992 (21.59%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **433 / 1,992 (21.74%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (430)
+## Completed matches (433)
 
 
 | ROM line | Node |
@@ -459,6 +459,9 @@ Each completion links its branch/write, ROM probe and route evidence in the
 | 3968 | `Bridge_Low` |
 | 3983 | `FlagBalls_Residual` |
 | 3991 | `FlagpoleObject` |
+| 4018 | `EndlessRope` |
+| 4023 | `BalancePlatRope` |
+| 4034 | `DrawRope` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

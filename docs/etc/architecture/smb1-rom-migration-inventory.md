@@ -563,9 +563,9 @@ The labels and branches behind every line remain open until individually bound b
 | 3968 | `Bridge_Low` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bridge_low) |
 | 3983 | `FlagBalls_Residual` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagballs_residual) |
 | 3991 | `FlagpoleObject` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
-| 4018 | `EndlessRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endlessrope) |
-| 4023 | `BalancePlatRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatrope) |
-| 4034 | `DrawRope` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawrope) |
+| 4018 | `EndlessRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
+| 4023 | `BalancePlatRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
+| 4034 | `DrawRope` | M2 T30 S1 shared `area.c` rope route | ROM-match complete | [T30 S1/P1 rope-chain evidence](../../proposals/m2/t30-area-object-rendering.md#s1p1-rom-rope-chain-and-three-target-delivery) |
 | 4039 | `CoinMetatileData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinmetatiledata) |
 | 4042 | `RowOfCoins` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rowofcoins) |
 | 4049 | `C_ObjectRow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-c_objectrow) |

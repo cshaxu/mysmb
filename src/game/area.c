@@ -1195,6 +1195,36 @@ static void mysmb_area_pulley_rope(struct mysmb_game *game, mysmb_u8 slot,
     game->ram[MYSMB_AREA_METATILE_BUFFER] = metatile;
 }
 
+/* ROM $99bb-$99cc.  The row-15 JumpEngine entries deliberately share the
+ * DrawRope tail route.  Keep the two callers distinct: BalancePlatRope
+ * clears its lower staging rows before it reloads the decoded low nibble. */
+static void mysmb_area_draw_rope(struct mysmb_game *game, mysmb_u8 row,
+                                 mysmb_u8 height)
+{
+    /* DrawRope: LDA #$40; JMP RenderUnderPart. */
+    mysmb_area_render_under_part(game, row, height, 0x40U);
+}
+
+static void mysmb_area_endless_rope(struct mysmb_game *game)
+{
+    /* EndlessRope: LDX #$00; LDY #$0f; JMP DrawRope. */
+    mysmb_area_draw_rope(game, 0U, 15U);
+}
+
+static void mysmb_area_balance_platform_rope(struct mysmb_game *game,
+                                             mysmb_u8 second)
+{
+    mysmb_u8 height;
+
+    /* BalancePlatRope saves X across the blanking call, then GetLrgObjAttrib
+     * supplies the second-byte low nibble in Y before it enters DrawRope
+     * with X=$01.  This native route has parameters rather than CPU X/Y, so
+     * only the exact RAM-visible effects are represented here. */
+    mysmb_area_render_under_part(game, 1U, 15U, 0x44U);
+    height = (mysmb_u8)(second & 0x0fU);
+    mysmb_area_draw_rope(game, 1U, height);
+}
+
 /* ROM $4014-$4091 static object handlers. The caller has already admitted the
  * object to a persistent parser slot and filled the terrain column; these
  * handlers overwrite only its selected metatile rows. */
@@ -1342,21 +1372,11 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (row == 15U && kind == 0U) {
-        for (row = 0U; row < 13U; ++row)
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x40U;
+        mysmb_area_endless_rope(game);
         return;
     }
     if (row == 15U && kind == 1U) {
-        height = (mysmb_u8)(second & 0x0fU);
-        for (row = 1U; row < 13U; ++row)
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x44U;
-        row = 1U;
-        do {
-            game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x40U;
-            if (row == 12U || height == 0U) break;
-            row++;
-            height--;
-        } while (1);
+        mysmb_area_balance_platform_rope(game, second);
         return;
     }
     if (row == 15U && kind == 2U) {
