@@ -5563,7 +5563,7 @@
       "label": "OperModeExecutionTree",
       "line": 954,
       "receiver": "M2 T22 S28",
-      "receivingBasis": "T22/S21 source-contract closure transferred to the owner-approved independent proof receiver.",
+      "receivingBasis": "T22/S28 independently proved the original selector table and shared C dispatch; retained for completed-node maintenance.",
       "futurePackage": null,
       "history": [
         {
@@ -60393,9 +60393,70 @@
         "OperModeExecutionTree"
       ],
       "maximumComplete": 42,
+      "actualMatches": [
+        "OperModeExecutionTree"
+      ],
+      "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
+      "state": "closed-complete-operation-mode-dispatch-equivalence"
+    },
+    {
+      "subtask": "M2 T22 S22",
+      "kind": "implementation",
+      "scope": [
+        "NonMaskableInterrupt"
+      ],
+      "baseline": 42,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr",
+        "OperModeExecutionTree"
+      ],
+      "expectedMatches": [
+        "NonMaskableInterrupt"
+      ],
+      "maximumComplete": 43,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t21-t49-source-order-recovery.md",
-      "state": "admitted-operation-mode-dispatch-equivalence-proof"
+      "state": "admitted-nmi-parent-integration-proof"
     }
   ]
 }

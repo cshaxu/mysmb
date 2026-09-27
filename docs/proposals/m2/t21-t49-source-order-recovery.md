@@ -601,3 +601,33 @@ that one match, and has a maximum of **42 / 1,992**. Its ROM track must prove
 all four selector values and the selected call boundary; its operational track
 is the mode smoke, x86/x64 builds, DOS16 link, platform-purity and three target
 artifacts.
+
+
+## T22/S28 operation-mode dispatch equivalence result
+
+`OperModeExecutionTree` is **ROM-match complete**, raising conformance from
+**41 / 1,992** to **42 / 1,992**.  An independent controlled original-ROM
+NMI-entry probe set `$0770` to each selector value and sampled the first
+selected leaf boundary: 0 reached `$8231` `TitleScreenMode`, 1 reached `$aedc`
+`GameMode`, 2 reached `$838b` `VictoryMode`, and 3 reached `$9218`
+`GameOverMode`.  The shared C root selects the same four mutually exclusive
+routes before entering their leaves; it no longer invokes the title-menu leaf
+for a non-title selector.
+
+`mysmb.oper-mode-dispatch-smoke` exercises all four shared-root selections:
+title Start changes mode/task to `1/0`; game task zero initializes the saved
+halfway page and music queue; victory task one sets its destination page, event
+music and task two; and game-over task zero clears sprite-zero, queues its
+music and advances task one.  The existing mode smoke, direct x86/x64 C90
+builds, platform-purity check, Win32 self-tests and OpenNT DOS16 link pass.
+The refreshed artifact SHA-256 values are
+`780FC0EC167C5C0CA8CCAF0CA058A041D606A5B16B25A48CB9794DE328167385`,
+`7E1FDE53F8C4C0B151A6ED369735598A8BC68E6DF86A3645EAF3FA74CC94DE7A`, and
+`75CFC8E8FF1F8D6750A07629F53BBD2E6563FC486B1FD65303D33E6DC59695F3` for
+DOS16, Win32 x86 and Win32 x64 respectively.
+
+T22/S22 is now the source-order successor.  It owns only
+`NonMaskableInterrupt`, begins at **42 / 1,992**, and may certify the parent
+only after rechecking the complete NMI prologue and every now-complete direct
+child against a controlled original-ROM NMI route.  It forecasts one parent
+match and a maximum of **43 / 1,992**.
