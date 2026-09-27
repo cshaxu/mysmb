@@ -43,24 +43,24 @@ including fifteen rejection cases, pass; conformance remains 3 / 1,992.
   into ignored output. `nnes` is validation-only and is never linked into
   MySMB.
 
-## M2 T25 S20 Packet
+## M2 T25 S21 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T25 S20, implementation; next source-order `WSelectBufferTemplate` data binding. |
-| Admission And Approval | Owner-approved source-order M2 plan; S19 completed `GoContinue` and transferred the remaining 10 title/menu/demo labels to S20. |
-| Objective | Independently establish and credit `WSelectBufferTemplate`, the six-byte world-select buffer data binding. |
-| Non-goals | The other 9 retained labels (`MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
-| Reference Baseline | 90 / 1,992 complete; 1 scoped label; expected match WSelectBufferTemplate; maximum 91 / 1,992. |
+| Identifier Mode | M2 T25 S21, implementation; next source-order `MushroomIconData` binding. |
+| Admission And Approval | Owner-approved source-order M2 plan; S20 completed `WSelectBufferTemplate` and transferred the remaining 9 title/menu/demo labels to S21. |
+| Objective | Independently establish and credit `MushroomIconData`, the eight-byte icon data binding. |
+| Non-goals | The other 8 retained labels (`DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`), new gameplay approximation, platform gameplay logic, or credit without exact data binding, source consumer, and operational replay proof. |
+| Reference Baseline | 91 / 1,992 complete; 1 scoped label; expected match MushroomIconData; maximum 92 / 1,992. |
 | Candidate Proposal | [T25 title/menu/demo plan](../proposals/m2/t25-title-menu-demo.md). |
 | Files And ABI Surface | Shared title/frame-root owners, local/reference recorders, ledger, and three target artifacts for any implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy and node ledger. |
-| Verification | Static source audit of ROM data `$823f`; controlled original-ROM world-select B path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
-| Expected Markers | Exact source bytes `{04,20,73,01,00,00}` bind to the shared six-byte template in ROM order; `UpdateShroom` copies offsets `0..5` and overwrites only the source-defined digit byte. |
+| Verification | Static source audit of ROM data `$831d`; controlled original-ROM Select path; focused title regression, data-binding/consumer inspection, controlled replay, cross-width builds, DOS16 and purity gate. |
+| Expected Markers | Exact source icon bytes bind to shared C in ROM order and the DrawMushroomIcon consumer copies its eight bytes in source order. |
 | Asset Needs | Refresh and report mysmb16.exe, mysmb32.exe and mysmb64.exe for each implementation P. |
-| Reporting Requirements | Record source data location `$823f`, C data binding and consumer order, B-route trace result, and all 10 retained-node dispositions. |
+| Reporting Requirements | Record source data location `$831d`, C data binding and consumer order, Select-route trace result, and all 9 retained-node dispositions. |
 | Stop Conditions | Stop on trace injection, external-owner change, recorder alignment error, a nonmatching source branch, or platform gameplay logic. |
-| Exit Criteria | `WSelectBufferTemplate` is completed only when exact bytes, C binding, consumer path, and B-route replay agree; all other received labels stay uncredited and explicitly retained. |
+| Exit Criteria | `MushroomIconData` is completed only when exact bytes, C binding, consumer path, and Select-route replay agree; all other received labels stay uncredited and explicitly retained. |
 | Original Owner Request | Execute original nodes in source order with strict parity and no platform gameplay logic. |
 | Similar-Issue Sweep | Check every score/coin clear caller and StartWorld1 fallthrough; verify that platform sources neither own the loop nor mutate its ROM-owned state. |
 

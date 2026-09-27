@@ -1636,6 +1636,18 @@
           "canReceive": true,
           "admissionRole": "implementation",
           "receipt": "Accepted successor after S19 GoContinue closure."
+        },
+        {
+          "id": "M2 T25 S21",
+          "evidence": [
+            "docs/proposals/m2/t25-title-menu-demo.md"
+          ],
+          "recordKinds": [
+            "source-order-title-data-receipt"
+          ],
+          "canReceive": true,
+          "admissionRole": "implementation",
+          "receipt": "Accepted successor after S20 WSelectBufferTemplate closure."
         }
       ]
     },
@@ -7161,8 +7173,8 @@
     {
       "label": "MushroomIconData",
       "line": 1090,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7206,8 +7218,8 @@
     {
       "label": "DrawMushroomIcon",
       "line": 1093,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7267,8 +7279,8 @@
     {
       "label": "IconDataRead",
       "line": 1095,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7312,8 +7324,8 @@
     {
       "label": "ExitIcon",
       "line": 1105,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7357,8 +7369,8 @@
     {
       "label": "DemoActionData",
       "line": 1109,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7402,8 +7414,8 @@
     {
       "label": "DemoTimingData",
       "line": 1114,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7447,8 +7459,8 @@
     {
       "label": "DemoEngine",
       "line": 1119,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7524,8 +7536,8 @@
     {
       "label": "DoAction",
       "line": 1129,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -7569,8 +7581,8 @@
     {
       "label": "DemoOver",
       "line": 1133,
-      "receiver": "M2 T25 S20",
-      "receivingBasis": "S20 retained title receipt after GoContinue closure.",
+      "receiver": "M2 T25 S21",
+      "receivingBasis": "S21 retained title receipt after WSelectBufferTemplate closure.",
       "futurePackage": null,
       "history": [
         {
@@ -57227,6 +57239,25 @@
       ],
       "acceptedBy": "S20 accepts every uncompleted title/menu/demo label after S19.",
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
+    },
+    {
+      "id": "transfer-068-t25-s20-to-s21",
+      "type": "transfer",
+      "from": "M2 T25 S20",
+      "to": "M2 T25 S21",
+      "nodes": [
+        "MushroomIconData",
+        "DrawMushroomIcon",
+        "IconDataRead",
+        "ExitIcon",
+        "DemoActionData",
+        "DemoTimingData",
+        "DemoEngine",
+        "DoAction",
+        "DemoOver"
+      ],
+      "acceptedBy": "S21 accepts every uncompleted title/menu/demo label after S20.",
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md"
     }
   ],
   "runs": [
@@ -65140,9 +65171,119 @@
         "WSelectBufferTemplate"
       ],
       "maximumComplete": 91,
+      "actualMatches": [
+        "WSelectBufferTemplate"
+      ],
+      "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
+      "state": "closed-complete-world-select-buffer-template-equivalence"
+    },
+    {
+      "subtask": "M2 T25 S21",
+      "kind": "implementation",
+      "scope": [
+        "MushroomIconData"
+      ],
+      "baseline": 91,
+      "incomingComplete": [
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "WBootCheck",
+        "ColdBoot",
+        "EndlessLoop",
+        "VRAM_AddrTable_Low",
+        "VRAM_AddrTable_High",
+        "VRAM_Buffer_Offset",
+        "ScreenOff",
+        "InitBuffer",
+        "DecTimers",
+        "DecTimersLoop",
+        "SkipExpTimer",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "HBlankDelay",
+        "SkipSprite0",
+        "SkipMainOper",
+        "PauseRoutine",
+        "ChkPauseTimer",
+        "ChkStart",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause",
+        "SpriteShuffler",
+        "ShuffleLoop",
+        "StrSprOffset",
+        "NextSprOffset",
+        "SetAmtOffset",
+        "SetMiscOffset",
+        "OperModeExecutionTree",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop",
+        "TitleScreenMode",
+        "WSelectBufferTemplate",
+        "GameMenuRoutine",
+        "StartGame",
+        "ChkSelect",
+        "ChkWorldSel",
+        "SelectBLogic",
+        "IncWorldSel",
+        "UpdateShroom",
+        "NullJoypad",
+        "RunDemo",
+        "ResetTitle",
+        "ChkContinue",
+        "StartWorld1",
+        "InitScores",
+        "ExitMenu",
+        "GoContinue",
+        "VictoryMode",
+        "AutoPlayer",
+        "VictoryModeSubroutines",
+        "SetupVictoryMode",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk",
+        "PrintVictoryMessages",
+        "MRetainerMsg",
+        "ThankPlayer",
+        "SecondPartMsg",
+        "EvalForMusic",
+        "PrintMsg",
+        "IncMsgCounter",
+        "SetEndTimer",
+        "IncModeTask_A",
+        "ExitMsgs",
+        "PlayerEndWorld",
+        "EndExitOne",
+        "EndChkBButton",
+        "EndExitTwo",
+        "FloateyNumTileData",
+        "ScoreUpdateData",
+        "FloateyNumbersRoutine",
+        "ChkNumTimer",
+        "DecNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr",
+        "InitializeMemory",
+        "PlayerOffscreenChk",
+        "PROfsLoop",
+        "NPROffscr"
+      ],
+      "expectedMatches": [
+        "MushroomIconData"
+      ],
+      "maximumComplete": 92,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t25-title-menu-demo.md",
-      "state": "active-world-select-buffer-template-equivalence"
+      "state": "active-mushroom-icon-data-equivalence"
     }
   ]
 }

@@ -610,3 +610,25 @@ baseline is **90 / 1,992**; expected `WSelectBufferTemplate`; maximum
 prove its `GoContinue` zero-index consumer copies all six bytes in source order
 before `UpdateShroom` writes the one-based world digit at the source-defined
 buffer offset.  The remaining nine received labels are explicitly uncredited.
+
+## S20 closure: WSelectBufferTemplate data binding
+
+S20 completes exactly `WSelectBufferTemplate`, reaching **91 / 1,992**. The
+original ROM data at `$823f` is exactly `{04,20,73,01,00,00}` and the shared C
+binding has the same ordered six bytes. Source review proves `IncWorldSel`
+calls `GoContinue`, receives X=0, then `UpdateShroom` copies offsets zero
+through five before writing the one-based world digit. A controlled
+world-select B route has zero differences across the original ROM, native x86
+and native x64 for all 200 frames in RAM, CIRAM, palette, OAM, audio and PPU
+scalars. The post-NMI buffer output contains the corresponding `$2073` packet;
+its offset byte is subsequently reused by the source buffer protocol and is
+not a replacement for the audited template byte. The remaining nine labels
+transfer to S21 unchanged.
+
+## S21 admission: MushroomIconData binding
+
+S21 scopes only `MushroomIconData`, baseline **91 / 1,992**, expected
+`MushroomIconData`, maximum **92 / 1,992**. It must establish the exact ROM
+data bytes at `$831d`, the shared C binding and `DrawMushroomIcon` consumer,
+then prove the controlled Select route. The other eight received labels remain
+uncredited.
