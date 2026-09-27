@@ -488,7 +488,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3378 | `ProcLoopb` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procloopb) |
 | 3384 | `EndAParse` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endaparse) |
 | 3386 | `IncAreaObjOffset` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incareaobjoffset) |
-| 3393 | `DecodeAreaData` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decodeareadata) |
+| 3393 | `DecodeAreaData` | T18 responsibility (implementation not certified) | audited; mismatch | [T30 S10 source contradiction; prior completion revoked](../../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings) |
 | 3397 | `Chk1stB` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1stb) |
 | 3408 | `ChkRow14` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow14) |
 | 3416 | `ChkRow13` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow13) |
@@ -550,7 +550,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3862 | `VerticalPipeData` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3868 | `VerticalPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3876 | `WarpPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
-| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
+| 3900 | `DrawPipe` | T18 responsibility (implementation not certified) | audited; mismatch | [T30 S10 source contradiction; prior completion revoked](../../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings) |
 | 3911 | `GetPipeHeight` | T18 responsibility (implementation not certified) | ROM-match complete | [S9 closure](../../proposals/m2/t29-area-parser-geometry.md#s9-closure-castle-and-pipe-large-object-geometry-chain) |
 | 3921 | `FindEmptyEnemySlot` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findemptyenemyslot) |
 | 3923 | `EmptyChkLoop` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-emptychkloop) |
@@ -609,12 +609,12 @@ The labels and branches behind every line remain open until individually bound b
 | 4289 | `DrawThisRow` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
 | 4290 | `WaitOneRow` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
 | 4296 | `ExitUPartR` | M2 T30 S9 shared `area.c` hole/UnderPart chain | ROM-match complete | [T30 S9/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s9p1-hole-registration-and-underpart-rom-proof) |
-| 4300 | `ChkLrgObjLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjlength) |
-| 4303 | `ChkLrgObjFixedLength` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklrgobjfixedlength) |
-| 4310 | `LenSet` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lenset) |
-| 4313 | `GetLrgObjAttrib` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getlrgobjattrib) |
-| 4326 | `GetAreaObjXPosition` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjxposition) |
-| 4336 | `GetAreaObjYPosition` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareaobjyposition) |
+| 4300 | `ChkLrgObjLength` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
+| 4303 | `ChkLrgObjFixedLength` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
+| 4310 | `LenSet` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
+| 4313 | `GetLrgObjAttrib` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
+| 4326 | `GetAreaObjXPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
+| 4336 | `GetAreaObjYPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
 | 4349 | `BlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferaddr) |
 | 4353 | `GetBlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockbufferaddr) |
 | 4376 | `AreaDataOfsLoopback` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |

@@ -843,3 +843,140 @@ tracks: **468 -> 476 / 1,992**. No scoped label remains unfinished. Runtime
 and generic helper collaborators retain their receivers without credit.
 Tracker, census and ledger must pass closure gates. ChkLrgObjLength begins
 the next unadmitted source-order helper chain.
+
+## T30/S10 admission: common object attribute and coordinate chain
+
+Exact source-order scope and expected matches, all incoming open:
+`ChkLrgObjLength` (4300), `ChkLrgObjFixedLength` (4303), `LenSet` (4310),
+`GetLrgObjAttrib` (4313), `GetAreaObjXPosition` (4326),
+`GetAreaObjYPosition` (4336). Baseline **476 / 1,992**, expected **6**,
+maximum **482 / 1,992**. Transfer-107 receives all six from T18 S4.
+The shared owner is area.c. S9's UnderPart chain precedes; BlockBufferAddr
+starts the next unadmitted source-order chain.
+
+ROM-logic track: audit $9bac-$9bdc and every original area-object caller.
+Attribute reads must use AreaObjOffsetBuffer and the current AreaData pointer,
+with eight-bit INY wrap; the first low nibble writes $07 and the second is
+returned. Fixed-length checking preserves nonnegative slots and returns the
+source carry meaning (new initialization); dynamic checking decodes first.
+X and Y arithmetic wraps at eight bits, with Y adding 32 after the shift.
+Integrate original call sites without moving unrelated actor state machines
+into the parser. Focused parser and original-ROM consumer routes cover both
+length branches, row/length distinction, fixed lengths and coordinate writes.
+No leaf PC/stack or ROM-code injection. Any concrete caller discrepancy is
+recorded against its node rather than concealed by a helper compatibility path.
+
+Operational track: focused helper/parser tests, prior consumer regressions,
+strict C90 x86/x64 builds, DOS16 link, platform purity, startup probes and
+three refreshed EXEs per implementation P. The owner NROM and reviewed
+SMBDIS remain local research inputs, not redistributable material; no external
+implementation is imported. Raw traces remain under ignored build/m2-t30-s10,
+with 2 MB aggregate budget, 131072 instructions/frame, one warmup and two
+samples for controlled cases. S10 owns cleanup after review. Six labels remain
+unfinished until both tracks pass; no completion credit on admission.
+
+## S10/P1: common helper ROM proof
+
+The six helpers now have one shared C90 owner in area.c; signatures no longer
+pass stale predecoded row/length values through the object renderer wrappers.
+Public area declarations expose the same neutral primitives to deterministic
+native tests, with no platform branching or CPU interpreter.
+
+| Node | Original behavior and evidence |
+| --- | --- |
+| `ChkLrgObjLength` | `$9bac` calls attribute decode before fixed-length checking and preserves decoded Y. All three slots/all byte states and nibble lengths pass native tests; ROM hole routes distinguish one initialization from zero initializations. |
+| `ChkLrgObjFixedLength` | `$9baf` clears carry, preserves a nonnegative slot, otherwise stores Y and sets carry. Three slots x 256 old states x 256 incoming bytes pass; ROM fixed pipe routes cover new, continued and final columns. |
+| `LenSet` | `$9bba` returns the same carry/result without additional writes. Original return coverage is required and persistent slot/consumer state matches in both samples. |
+| `GetLrgObjAttrib` | `$9bbb-$9bca` reads the saved object offset, stores first low nibble in $07, increments an eight-bit index and returns the second low nibble. Native matrix covers all 256 offsets against a nonaligned base, including wrap; ROM output distinguishes row from length through hole, cannon, spring and pipe consumers. |
+| `GetAreaObjXPosition` | `$9bcb-$9bd2` shifts CurrentColumnPos four times with byte truncation. Every input byte passes; original cannon, spring, hole borrow and pipe-center coordinates match. |
+| `GetAreaObjYPosition` | `$9bd3-$9bdc` shifts $07 four times, clears carry and adds 32. Every input byte passes; varied cannon rows, spring row nine and pipe row eight match. |
+
+The source-order caller sweep covers tree/mushroom/pulley ledges; castle,
+water/intro/exit/vertical pipes; bridges, water holes and question rows;
+flag balls and flagpole; balance rope; castle bridge and empty block;
+brick/solid/coin rows and columns; cannon, staircase, spring, question/item
+blocks and empty holes. Each now uses its actual source helper sequence.
+TreeLedge retains its original direct length store rather than inventing a
+ChkLrgObjLength call. Fixed-length consumers retain their fixed Y constants.
+Hidden-disabled blocks still return before attribute decoding.
+
+The sweep found and repaired a concrete GetAreaObjYPosition substitution in
+VerticalPipe: the old caller added eight, making the piranha start 24 pixels
+too high before InitPiranhaPlant subtracted another 24 for its upper limit.
+The caller now receives row*16+32 from the shared helper. Original ROM pipe
+routes require creation X=$68, Y/down=$a0 and up=$88, including continued
+length one. Final-column and full-pool routes require no creation. No actor
+runtime implementation changed. GetPipeHeight now passes the attribute
+helper's height through its original $06 scratch handoff.
+
+Twenty source-RAM-only ScreenRoutines/AreaParserTaskControl routes exercise
+immutable hole, cannon, spring and pipe records. They require each relevant
+helper entry/return PC, exact initial-length branch counts, non-vacuous
+registration/coordinate/metatile witnesses and equality of all 1,782 RAM
+bytes outside scratch $00-$07, stack $0100-$01ff and PPU mirrors $0778-$0779.
+Both samples pass for all twenty routes. The excluded bytes are reported
+individually: the original later name-table renderer overwrites helper scratch
+before the frame boundary, so final $07 is not the helper's return value.
+Direct primitive tests and source instruction audit separately check that
+write. This is not whole-frame, rendering, or actor-runtime certification.
+No program bytes, entry PC, stack or return address were injected.
+
+```text
+reference <ROM> build/m2-t30-s10/rom-<id>.msfr 2 0 --warmup=1 --fixture=t30-helper=<id> --pc-coverage=build/m2-t30-s10/pc-<id>.txt
+native build/m2-t30-s10/native-<id>.msfn 2 0 1 --warmup=1 --fixture=t30-helper=<id>
+python -B test/verify_area_helper_routes.py build/m2-t30-s10
+```
+
+Cases zero through nineteen retain forty 8,830-byte traces (353,200 bytes)
+under the admitted ignored directory and 2 MB budget; each recorder process
+has a twenty-second deadline and the reference retains its instruction cap.
+The reference helper IDs are observation fixtures only. Recorder state is
+fully zero-initialized to satisfy optimized compiler checks.
+
+Operational verification: 221,440 primitive matrix cases per width and all
+nineteen area smoke programs pass on x86 and x64 (38 program runs). Product
+self-tests and hidden two-second window/message probes pass. OpenNT16 links
+MZ with the existing OLDNAMES warning; no DOS runtime claim is made. Platform
+purity passes and no platform file changed. Two old test families asserted
+intermediate dispatch scratch after the complete handler returned; these now
+expect the original attribute overwrite, not the obsolete dispatch addend.
+The pipe smoke checks both down/up coordinates instead of accepting the old
+incorrect starting position.
+
+## S10 adjacent-node revalidation findings
+
+Source audit also contradicts two prior completion claims outside this receipt:
+
+- `DecodeAreaData`: the current parser preloads its second byte at effective
+  address+1, whereas the source INY wraps the saved index at $ff. The new
+  attribute helper is correct, but the earlier dispatch read is independently
+  wrong at that boundary. Its prior completion is revoked pending a parser
+  boundary route and repair; custody remains with its existing receiving S.
+- `DrawPipe`: the existing zero-height fallback fills to the bottom and its
+  row-12 early return suppresses the source call. ROM always increments X,
+  loads $06, decrements Y as a byte and tail-enters UnderPart, including zero
+  height. Its prior completion is revoked pending explicit edge-route proof
+  and repair; custody remains with its existing receiving S.
+
+These are named source contradictions, not failures of the six new helper
+implementations. Their inventory/census entries become audited mismatch;
+TODO and queue retain the exact repair requirement. No hidden scope expansion,
+new node credit or source-order task number is assigned to those repairs.
+The historical closure evidence remains immutable and qualified by this audit.
+
+Artifact SHA-256: `mysmb16.exe` `879D080EAFF2861D695FCBA1A385AE0BD1EE7B9FDD4A4015488CF33C23589635`.
+
+Artifact SHA-256: `mysmb32.exe` `0B3234BD889F6946C9DB6529BA79D28B0618AC23485665A9A7011CA0C458CF35`.
+
+Artifact SHA-256: `mysmb64.exe` `24738AF386629159C1E32FFAC3B7604F2D47798D1738C0D72B473B76CAA29BA6`.
+
+## S10 closure
+
+Expected/actual newly completed: six/six, all admission labels. No scoped
+label remains unfinished and no transfer out of S10 is needed. Independently,
+two older matches are revoked by the adjacent-node audit above. Thus the
+actual total is **476 + 6 - 2 = 480 / 1,992**, below the 482 upper forecast;
+mapped/audited incomplete rises to 105 and open becomes 1,407. This correction
+is required for honest conformance accounting. The helper chain is closed;
+M2 remains open. Prior-node repair candidates precede the next unadmitted
+BlockBufferAddr chain, with exact receipts required at admission.

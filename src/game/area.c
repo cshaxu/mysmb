@@ -185,7 +185,7 @@ static void mysmb_area_chain_obj(struct mysmb_game *game);
 static void mysmb_area_castle_bridge_obj(struct mysmb_game *game,
                                          mysmb_u8 slot);
 static void mysmb_area_axe_obj(struct mysmb_game *game);
-static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row);
+static void mysmb_area_empty_block(struct mysmb_game *game);
 
 static mysmb_u8 mysmb_area_find_empty_enemy_slot(const struct mysmb_game *game,
                                                   mysmb_u8 *slot)
@@ -1065,6 +1065,55 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game)
  * ProcessAreaData. It intentionally stops before JumpEngine: each object
  * family must own its own metatile writes. The result is the original three
  * slot state ($072d/$0730), page selector, and stream offset. */
+/* ROM $9bbb-$9bca GetLrgObjAttrib. INY wraps the offset, not the
+ * effective address. The low nibble of the first byte belongs to $07. */
+mysmb_u8 mysmb_area_get_large_object_attributes(struct mysmb_game *game,
+                                                 mysmb_u8 slot)
+{
+    mysmb_u16 base, first, second;
+    mysmb_u8 offset;
+
+    base = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_DATA_HIGH] << 8U) |
+                       game->ram[MYSMB_AREA_DATA_LOW]);
+    base = (mysmb_u16)(base - 0x8000U);
+    offset = game->ram[MYSMB_AREA_OBJECT_OFFSET_BUFFER + slot];
+    first = (mysmb_u16)(base + offset);
+    second = (mysmb_u16)(base + (mysmb_u8)(offset + 1U));
+    if (game->area_prg == 0 || first >= game->area_prg_size ||
+        second >= game->area_prg_size) return 0U;
+    game->ram[7U] = (mysmb_u8)(game->area_prg[first] & 0x0fU);
+    return (mysmb_u8)(game->area_prg[second] & 0x0fU);
+}
+
+/* ROM $9baf-$9bba ChkLrgObjFixedLength / LenSet. Return original carry. */
+mysmb_u8 mysmb_area_check_fixed_length(struct mysmb_game *game,
+                                        mysmb_u8 slot, mysmb_u8 length)
+{
+    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U) return 0U;
+    game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+    return 1U;
+}
+
+/* ROM $9bac ChkLrgObjLength retains decoded Y even if the slot is set. */
+mysmb_u8 mysmb_area_check_large_length(struct mysmb_game *game,
+                                        mysmb_u8 slot, mysmb_u8 *length)
+{
+    *length = mysmb_area_get_large_object_attributes(game, slot);
+    return mysmb_area_check_fixed_length(game, slot, *length);
+}
+
+/* ROM $9bcb-$9bd2 GetAreaObjXPosition. */
+mysmb_u8 mysmb_area_object_x_position(const struct mysmb_game *game)
+{
+    return (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+}
+
+/* ROM $9bd3-$9bdc GetAreaObjYPosition. */
+mysmb_u8 mysmb_area_object_y_position(const struct mysmb_game *game)
+{
+    return (mysmb_u8)((game->ram[7U] << 4U) + 32U);
+}
+
 /* ROM $9b7d-$9bab RenderUnderPart. A foreground object may fill downward,
  * but the source preserves ledge centers, palette-three objects, and the
  * mushroom stem/top interaction in the metatile staging column. */
@@ -1094,18 +1143,14 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
  * arrays alias the same RAM; whirlpool registration wraps after five slots. */
 static const mysmb_u8 mysmb_area_hole_metatiles[4] = {0x87U, 0U, 0U, 0U};
 
-static void mysmb_area_hole_empty(struct mysmb_game *game, mysmb_u8 slot,
-                                  mysmb_u8 second)
+static void mysmb_area_hole_empty(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 length, offset, x;
 
-    game->ram[7U] = 12U;
-    length = (mysmb_u8)(second & 0x0fU);
-    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+    if (mysmb_area_check_large_length(game, slot, &length) != 0U) {
         if (game->ram[MYSMB_AREA_TYPE] == 0U) {
             offset = game->ram[MYSMB_AREA_CANNON_OFFSET];
-            x = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+            x = mysmb_area_object_x_position(game);
             game->ram[MYSMB_AREA_CANNON_X + offset] = (mysmb_u8)(x - 16U);
             game->ram[MYSMB_AREA_CANNON_PAGE + offset] =
                 (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_PAGE] - (x < 16U ? 1U : 0U));
@@ -1131,24 +1176,25 @@ static void mysmb_area_setup_cannon(struct mysmb_game *game)
 
     slot = game->ram[MYSMB_AREA_CANNON_OFFSET];
     game->ram[MYSMB_AREA_CANNON_Y + slot] =
-        (mysmb_u8)((game->ram[7U] << 4U) + 32U);
+        mysmb_area_object_y_position(game);
     game->ram[MYSMB_AREA_CANNON_PAGE + slot] =
         game->ram[MYSMB_AREA_CURRENT_PAGE];
     game->ram[MYSMB_AREA_CANNON_X + slot] =
-        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+        mysmb_area_object_x_position(game);
     slot++;
     if (slot >= 6U) slot = 0U;
     /* StrCOffset: the six-entry cannon/whirlpool ring has one offset. */
     game->ram[MYSMB_AREA_CANNON_OFFSET] = slot;
 }
 
-static void mysmb_area_bullet_bill_cannon(struct mysmb_game *game,
-                                         mysmb_u8 row, mysmb_u8 second)
+static void mysmb_area_bullet_bill_cannon(struct mysmb_game *game)
 {
+    mysmb_u8 row;
     mysmb_u8 height;
 
-    game->ram[7U] = row;
-    height = (mysmb_u8)(second & 0x0fU);
+    height = mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
+    row = game->ram[7U];
     game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x64U;
     row++;
     height--;
@@ -1210,16 +1256,18 @@ static void mysmb_area_queue_frenzy(struct mysmb_game *game, mysmb_u8 selector)
     game->ram[MYSMB_AREA_ENEMY_FRENZY_QUEUE] = id;
 }
 
-/* ROM TreeLedge through MushLExit.  GetLrgObjAttrib has already supplied the
- * row in the first byte and the initial length in the second-byte low nibble.
- * ProcessAreaData owns the post-handler length decrement. */
-static void mysmb_area_style_ledge(struct mysmb_game *game, mysmb_u8 slot,
-                                   mysmb_u8 row, mysmb_u8 length,
-                                   mysmb_u8 style)
+/* ROM TreeLedge through MushLExit. Attribute decoding belongs to the
+ * original helper; ProcessAreaData owns the post-handler length decrement. */
+static void mysmb_area_style_ledge(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 style)
 {
-    mysmb_u8 object_length;
+    mysmb_u8 row, length;
+    mysmb_u8 object_length, initialized;
 
     object_length = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+    initialized = 0U;
+    if (style == 0U) length = mysmb_area_get_large_object_attributes(game, slot);
+    else initialized = mysmb_area_check_large_length(game, slot, &length);
+    row = game->ram[7U];
     if (style == 0U) {
         if (object_length == 0U) {
             mysmb_area_render_under_part(game, row, 0U, 0x18U);
@@ -1238,11 +1286,10 @@ static void mysmb_area_style_ledge(struct mysmb_game *game, mysmb_u8 slot,
         return;
     }
 
-    if (object_length >= 0x80U) {
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+    game->ram[0x0006U] = length;
+    if (initialized != 0U) {
         game->ram[MYSMB_AREA_MUSHROOM_HALF_LENGTH + slot] =
             (mysmb_u8)(length >> 1U);
-        game->ram[0x0006U] = length;
         mysmb_area_render_under_part(game, row, 0U, 0x19U);
         return;
     }
@@ -1257,15 +1304,14 @@ static void mysmb_area_style_ledge(struct mysmb_game *game, mysmb_u8 slot,
     mysmb_area_render_under_part(game, (mysmb_u8)(row + 2U), 15U, 0x50U);
 }
 
-static void mysmb_area_pulley_rope(struct mysmb_game *game, mysmb_u8 slot,
-                                   mysmb_u8 length)
+static void mysmb_area_pulley_rope(struct mysmb_game *game, mysmb_u8 slot)
 {
+    mysmb_u8 length;
     mysmb_u8 object_length;
     mysmb_u8 metatile;
 
     object_length = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
-    if (object_length >= 0x80U) {
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = length;
+    if (mysmb_area_check_large_length(game, slot, &length) != 0U) {
         metatile = 0x42U;
     }
     else if (object_length != 0U) {
@@ -1293,8 +1339,7 @@ static void mysmb_area_endless_rope(struct mysmb_game *game)
     mysmb_area_draw_rope(game, 0U, 15U);
 }
 
-static void mysmb_area_balance_platform_rope(struct mysmb_game *game,
-                                             mysmb_u8 second)
+static void mysmb_area_balance_platform_rope(struct mysmb_game *game)
 {
     mysmb_u8 height;
 
@@ -1303,7 +1348,8 @@ static void mysmb_area_balance_platform_rope(struct mysmb_game *game,
      * with X=$01.  This native route has parameters rather than CPU X/Y, so
      * only the exact RAM-visible effects are represented here. */
     mysmb_area_render_under_part(game, 1U, 15U, 0x44U);
-    height = (mysmb_u8)(second & 0x0fU);
+    height = mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
     mysmb_area_draw_rope(game, 1U, height);
 }
 
@@ -1338,76 +1384,59 @@ static void mysmb_area_draw_row(struct mysmb_game *game, mysmb_u8 metatile)
 }
 
 /* ROM $9a44 GetRow -> ChkLrgObjLength -> DrawRow. */
-static void mysmb_area_get_row(struct mysmb_game *game, mysmb_u8 slot,
-                               mysmb_u8 row, mysmb_u8 second,
-                               mysmb_u8 metatile)
+static void mysmb_area_get_row(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 metatile)
 {
-    game->ram[0x0007U] = row;
-    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] =
-            (mysmb_u8)(second & 0x0fU);
+    mysmb_u8 second;
+    (void)mysmb_area_check_large_length(game, slot, &second);
     mysmb_area_draw_row(game, metatile);
 }
 
 /* ROM $9a38 DrawBricks retains the caller's selected table index. */
-static void mysmb_area_draw_bricks(struct mysmb_game *game, mysmb_u8 slot,
-                                   mysmb_u8 row, mysmb_u8 second,
-                                   mysmb_u8 index)
+static void mysmb_area_draw_bricks(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 index)
 {
-    mysmb_area_get_row(game, slot, row, second,
-                       mysmb_area_brick_metatiles[index]);
+    mysmb_area_get_row(game, slot, mysmb_area_brick_metatiles[index]);
 }
 
 /* ROM $9a2e RowOfBricks: only this entry has CloudTypeOverride. */
-static void mysmb_area_row_of_bricks(struct mysmb_game *game, mysmb_u8 slot,
-                                     mysmb_u8 row, mysmb_u8 second)
+static void mysmb_area_row_of_bricks(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 index;
     index = game->ram[MYSMB_AREA_TYPE];
     if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) index = 4U;
-    mysmb_area_draw_bricks(game, slot, row, second, index);
+    mysmb_area_draw_bricks(game, slot, index);
 }
 
 /* ROM $9a3e RowOfSolidBlocks falls through to GetRow. */
-static void mysmb_area_row_of_solid_blocks(struct mysmb_game *game,
-                                          mysmb_u8 slot, mysmb_u8 row,
-                                          mysmb_u8 second)
+static void mysmb_area_row_of_solid_blocks(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_area_get_row(game, slot, row, second,
-        mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+    mysmb_area_get_row(game, slot, mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
 }
 
 /* ROM $9a5f GetRow2 keeps the decoded low-nibble vertical extent. */
-static void mysmb_area_get_row2(struct mysmb_game *game, mysmb_u8 row,
-                                mysmb_u8 second, mysmb_u8 metatile)
+static void mysmb_area_get_row2(struct mysmb_game *game, mysmb_u8 metatile)
 {
-    game->ram[0x0007U] = row;
-    mysmb_area_render_under_part(game, game->ram[0x0007U],
-                                 (mysmb_u8)(second & 0x0fU), metatile);
+    mysmb_u8 second;
+    second = mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
+    mysmb_area_render_under_part(game, game->ram[7U], second, metatile);
 }
 
 /* ROM $9a50 ColumnOfBricks: no cloud override. */
-static void mysmb_area_column_of_bricks(struct mysmb_game *game,
-                                        mysmb_u8 row, mysmb_u8 second)
+static void mysmb_area_column_of_bricks(struct mysmb_game *game)
 {
-    mysmb_area_get_row2(game, row, second,
-        mysmb_area_brick_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+    mysmb_area_get_row2(game, mysmb_area_brick_metatiles[game->ram[MYSMB_AREA_TYPE]]);
 }
 
 /* ROM $9a59 ColumnOfSolidBlocks falls through to GetRow2. */
-static void mysmb_area_column_of_solid_blocks(struct mysmb_game *game,
-                                             mysmb_u8 row, mysmb_u8 second)
+static void mysmb_area_column_of_solid_blocks(struct mysmb_game *game)
 {
-    mysmb_area_get_row2(game, row, second,
-        mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
+    mysmb_area_get_row2(game, mysmb_area_solid_block_metatiles[game->ram[MYSMB_AREA_TYPE]]);
 }
 
-static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot,
-                                    mysmb_u8 row, mysmb_u8 second)
+static void mysmb_area_row_of_coins(struct mysmb_game *game, mysmb_u8 slot)
 {
     /* RowOfCoins: LDY AreaType; LDA CoinMetatileData,Y; JMP GetRow. */
-    mysmb_area_get_row(game, slot, row, second,
-        mysmb_area_coin_metatile_data[game->ram[MYSMB_AREA_TYPE]]);
+    mysmb_area_get_row(game, slot, mysmb_area_coin_metatile_data[game->ram[MYSMB_AREA_TYPE]]);
 }
 
 /* ROM $9a20 ColObj: LDY #$00; JMP RenderUnderPart. */
@@ -1434,8 +1463,7 @@ static void mysmb_area_chain_obj(struct mysmb_game *game)
 static void mysmb_area_castle_bridge_obj(struct mysmb_game *game,
                                          mysmb_u8 slot)
 {
-    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 12U;
+    (void)mysmb_area_check_fixed_length(game, slot, 12U);
     mysmb_area_chain_obj(game);
 }
 
@@ -1449,10 +1477,12 @@ static void mysmb_area_axe_obj(struct mysmb_game *game)
 
 /* ROM $9a19 EmptyBlock obtains the decoded row through GetLrgObjAttrib,
  * loads $c4 and falls into the common one-column ColObj tail. */
-static void mysmb_area_empty_block(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_empty_block(struct mysmb_game *game)
 {
-    /* Preserve GetLrgObjAttrib's ST A $07 as well as its returned row. */
-    game->ram[0x0007U] = row;
+    mysmb_u8 row;
+    (void)mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
+    row = game->ram[7U];
     mysmb_area_col_obj(game, row, 0xc4U);
 }
 
@@ -1468,58 +1498,60 @@ static mysmb_u8 mysmb_area_get_object_id(const struct mysmb_game *game)
 
 /* ROM $9b2c DrawQBlk: retain the selected tile across row decode, then
  * use DrawRow so existing foreground and height state obey UnderPart. */
-static void mysmb_area_draw_question_block(struct mysmb_game *game,
-                                           mysmb_u8 row, mysmb_u8 index)
+static void mysmb_area_draw_question_block(struct mysmb_game *game, mysmb_u8 index)
 {
     mysmb_u8 metatile;
     metatile = mysmb_brick_question_metatiles[index];
-    game->ram[7U] = row;
+    (void)mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
     mysmb_area_draw_row(game, metatile);
 }
 
 /* ROM $9b19 BrickWithItem -> $9b28 BWithL -> DrawQBlk. */
-static void mysmb_area_brick_with_item(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_brick_with_item(struct mysmb_game *game)
 {
     mysmb_u8 adder;
     game->ram[7U] = mysmb_area_get_object_id(game);
     adder = game->ram[MYSMB_AREA_TYPE] == 1U ? 0U : 5U;
-    mysmb_area_draw_question_block(game, row,
-        (mysmb_u8)(adder + game->ram[7U]));
+    mysmb_area_draw_question_block(game, (mysmb_u8)(adder + game->ram[7U]));
 }
 
 /* ROM $9b01 Hidden1UpBlock, including its ExitDecBlock branch. */
-static void mysmb_area_hidden_1up_block(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_hidden_1up_block(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] == 0U) return;
     game->ram[MYSMB_AREA_HIDDEN_1UP_FLAG] = 0U;
-    mysmb_area_brick_with_item(game, row);
+    mysmb_area_brick_with_item(game);
 }
 
 /* ROM $9b0e QuestionBlock. */
-static void mysmb_area_question_block(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_question_block(struct mysmb_game *game)
 {
-    mysmb_area_draw_question_block(game, row, mysmb_area_get_object_id(game));
+    mysmb_area_draw_question_block(game, mysmb_area_get_object_id(game));
 }
 
 /* ROM $9b14 BrickWithCoins falls through to BrickWithItem. */
-static void mysmb_area_brick_with_coins(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_brick_with_coins(struct mysmb_game *game)
 {
     game->ram[0x06bcU] = 0U;
-    mysmb_area_brick_with_item(game, row);
+    mysmb_area_brick_with_item(game);
 }
 
 /* ROM $9ad3-$9b00 Jumpspring. The caller does not branch on allocation
  * carry: a full ordinary pool uses slot five, including flag INC/wrap. */
-static void mysmb_area_jumpspring(struct mysmb_game *game, mysmb_u8 row)
+static void mysmb_area_jumpspring(struct mysmb_game *game)
 {
+    mysmb_u8 row;
     mysmb_u8 slot;
 
-    game->ram[7U] = row;
+    (void)mysmb_area_get_large_object_attributes(game,
+        game->ram[MYSMB_AREA_OBJECT_OFFSET]);
+    row = game->ram[7U];
     (void)mysmb_area_find_empty_enemy_slot(game, &slot);
     game->ram[MYSMB_ENEMY_X + slot] =
-        (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+        mysmb_area_object_x_position(game);
     game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_AREA_CURRENT_PAGE];
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)((row << 4U) + 32U);
+    game->ram[MYSMB_ENEMY_Y + slot] = mysmb_area_object_y_position(game);
     game->ram[0x58U + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[MYSMB_ENEMY_ID + slot] = 0x32U;
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
@@ -1537,16 +1569,13 @@ static const mysmb_u8 mysmb_area_staircase_row[9] = {
 };
 
 /* ROM $9ab7 StaircaseObject -> $9ac1 NextStair. */
-static void mysmb_area_staircase_object(struct mysmb_game *game,
-                                        mysmb_u8 slot, mysmb_u8 second)
+static void mysmb_area_staircase_object(struct mysmb_game *game, mysmb_u8 slot)
 {
+    mysmb_u8 second;
     mysmb_u8 index, row, height;
 
     /* ChkLrgObjLength always decodes the row, including continuation. */
-    game->ram[7U] = 15U;
-    if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U) {
-        game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] =
-            (mysmb_u8)(second & 0x0fU);
+    if (mysmb_area_check_large_length(game, slot, &second) != 0U) {
         game->ram[MYSMB_AREA_STAIRCASE_CONTROL] = 9U;
     }
     /* NextStair: DEC precedes both indexed reads. */
@@ -1599,8 +1628,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
          * victory, and warp state remains outside this static renderer. */
         value = (mysmb_u8)(second & 0x3fU);
         if (value == 0U) {
-            if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-                game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 3U;
+            (void)mysmb_area_check_fixed_length(game, slot, 3U);
             value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
             if (value > 3U) return;
             if (side_pipe_shaft[value] != 0U) {
@@ -1619,7 +1647,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x61U;
             mysmb_objects_start_flagpole(game,
                 game->ram[MYSMB_AREA_CURRENT_PAGE],
-                (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U));
+                mysmb_area_object_x_position(game));
         }
         else if (value == 2U) mysmb_area_axe_obj(game);
         else if (value == 3U) mysmb_area_chain_obj(game);
@@ -1658,32 +1686,29 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
      * two question-block rows use selector 6/7 and must not enter the
      * large-object vertical-pipe family. */
     if (row == 12U && kind == 0U) {
-        mysmb_area_hole_empty(game, slot, second);
+        mysmb_area_hole_empty(game, slot);
         return;
     }
     if (row == 12U && kind == 1U) {
-        mysmb_area_pulley_rope(game, slot, (mysmb_u8)(second & 0x0fU));
+        mysmb_area_pulley_rope(game, slot);
         return;
     }
     if (row == 12U && kind == 5U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        (void)mysmb_area_check_large_length(game, slot, &height);
         game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = 0x86U;
         game->ram[MYSMB_AREA_METATILE_BUFFER + 11U] = 0x87U;
         game->ram[MYSMB_AREA_METATILE_BUFFER + 12U] = 0x87U;
         return;
     }
     if (row == 12U && (kind == 2U || kind == 3U || kind == 4U)) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        (void)mysmb_area_check_large_length(game, slot, &height);
         row = kind == 2U ? 6U : (kind == 3U ? 7U : 9U);
         game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x0bU;
         if (row < 12U) game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x63U;
         return;
     }
     if (row == 12U && (kind == 6U || kind == 7U)) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = (mysmb_u8)(second & 0x0fU);
+        (void)mysmb_area_check_large_length(game, slot, &height);
         game->ram[MYSMB_AREA_METATILE_BUFFER + (kind == 6U ? 3U : 7U)] = 0xc0U;
         return;
     }
@@ -1692,16 +1717,16 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (row == 15U && kind == 1U) {
-        mysmb_area_balance_platform_rope(game, second);
+        mysmb_area_balance_platform_rope(game);
         return;
     }
     if (row == 15U && kind == 2U) {
         /* ROM CastleObject: GetLrgObjAttrib returns the second-byte low
          * nibble in Y. The following STY $07 intentionally replaces the row
          * saved by that helper, so the render-buffer index is this nibble. */
-        height = (mysmb_u8)(second & 0x0fU);
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 4U;
+        height = mysmb_area_get_large_object_attributes(game, slot);
+        game->ram[7U] = height;
+        (void)mysmb_area_check_fixed_length(game, slot, 4U);
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
         row = height;
         continuation = 11U;
@@ -1729,7 +1754,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
          * carry result and branches around its creation path. */
         (void)mysmb_area_find_empty_enemy_slot(game, &value);
         game->ram[MYSMB_ENEMY_X + value] =
-            (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] << 4U);
+            mysmb_area_object_x_position(game);
         game->ram[MYSMB_ENEMY_PAGE + value] =
             game->ram[MYSMB_AREA_CURRENT_PAGE];
         game->ram[MYSMB_ENEMY_Y_HIGH + value] = 1U;
@@ -1739,14 +1764,13 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         return;
     }
     if (row == 15U && kind == 3U) {
-        mysmb_area_staircase_object(game, slot, second);
+        mysmb_area_staircase_object(game, slot);
         return;
     }
     if (row == 15U && kind == 4U) {
-        if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] >= 0x80U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 3U;
+        (void)mysmb_area_check_fixed_length(game, slot, 3U);
+        height = mysmb_area_get_large_object_attributes(game, slot);
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
-        height = (mysmb_u8)(second & 0x0fU);
         if (value > 3U || height < 2U) return;
         height = (mysmb_u8)(height - 1U);
         if (side_pipe_shaft[value] != 0U)
@@ -1761,58 +1785,59 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (row == 15U && kind == 5U) {
         /* FlagBalls_Residual ($3958-$3964) starts at the fixed third
          * metatile row and uses the low nibble as its downward extent. */
-        mysmb_area_render_under_part(game, 2U, (mysmb_u8)(second & 0x0fU), 0x6dU);
+        height = mysmb_area_get_large_object_attributes(game, slot);
+        mysmb_area_render_under_part(game, 2U, height, 0x6dU);
         return;
     }
     if (kind == 1U) {
         value = game->ram[MYSMB_AREA_STYLE];
         if (value == 0U) {
-            mysmb_area_style_ledge(game, slot, row,
-                                   (mysmb_u8)(second & 0x0fU), value);
+            mysmb_area_style_ledge(game, slot, value);
             return;
         }
         if (value == 1U) {
-            mysmb_area_style_ledge(game, slot, row,
-                                   (mysmb_u8)(second & 0x0fU), value);
+            mysmb_area_style_ledge(game, slot, value);
             return;
         }
         if (value == 2U) {
-            mysmb_area_bullet_bill_cannon(game, row, second);
+            mysmb_area_bullet_bill_cannon(game);
         }
         return;
     }
     if (kind == 0U) {
         value = (mysmb_u8)(second & 0x0fU);
-        if (value <= 2U) mysmb_area_question_block(game, row);
-        else if (value == 3U) mysmb_area_hidden_1up_block(game, row);
-        else if (value == 7U) mysmb_area_brick_with_coins(game, row);
-        else if (value <= 8U) mysmb_area_brick_with_item(game, row);
+        if (value <= 2U) mysmb_area_question_block(game);
+        else if (value == 3U) mysmb_area_hidden_1up_block(game);
+        else if (value == 7U) mysmb_area_brick_with_coins(game);
+        else if (value <= 8U) mysmb_area_brick_with_item(game);
         /* ROM WaterPipe ($986f): small-object selector nine does not use
          * its lower nibble as a length.  GetLrgObjAttrib reloads the row,
          * then writes the two water-pipe metatiles at that row and below. */
         else if (value == 9U) {
+            (void)mysmb_area_get_large_object_attributes(game, slot);
+            row = game->ram[7U];
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x6bU;
             if (row < 12U)
                 game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
         }
-        else if (value == 10U) mysmb_area_empty_block(game, row);
-        else if (value == 11U) mysmb_area_jumpspring(game, row);
+        else if (value == 10U) mysmb_area_empty_block(game);
+        else if (value == 11U) mysmb_area_jumpspring(game);
         return;
     }
     if (kind == 4U) {
-        mysmb_area_row_of_coins(game, slot, row, second);
+        mysmb_area_row_of_coins(game, slot);
         return;
     }
     if (kind == 2U || kind == 3U) {
-        if (kind == 2U) mysmb_area_row_of_bricks(game, slot, row, second);
-        else mysmb_area_row_of_solid_blocks(game, slot, row, second);
+        if (kind == 2U) mysmb_area_row_of_bricks(game, slot);
+        else mysmb_area_row_of_solid_blocks(game, slot);
         return;
     }
     if (kind == 7U) {
-        continuation = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U ?
-            1U : 0U;
-        if (continuation == 0U)
-            game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] = 1U;
+        (void)mysmb_area_check_fixed_length(game, slot, 1U);
+        height = mysmb_area_get_large_object_attributes(game, slot);
+        game->ram[6U] = (mysmb_u8)(height & 7U);
+        row = game->ram[7U];
         /* GetPipeHeight preserves the three-bit vertical extent separately,
          * then reloads Y from the fixed one-column length slot.  That slot,
          * not the object height, selects the left/right pipe-table entry. */
@@ -1826,15 +1851,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] != 0U) {
             mysmb_u8 enemy_slot;
             if (mysmb_area_find_empty_enemy_slot(game, &enemy_slot) != 0U) {
-                mysmb_u8 old_x = game->ram[MYSMB_AREA_CURRENT_COLUMN];
-                game->ram[MYSMB_ENEMY_X + enemy_slot] = (mysmb_u8)((old_x << 4U) + 8U);
+                game->ram[MYSMB_ENEMY_X + enemy_slot] =
+                    (mysmb_u8)(mysmb_area_object_x_position(game) + 8U);
                 game->ram[MYSMB_ENEMY_PAGE + enemy_slot] = game->ram[MYSMB_AREA_CURRENT_PAGE];
                 if (game->ram[MYSMB_ENEMY_X + enemy_slot] < 8U) game->ram[MYSMB_ENEMY_PAGE + enemy_slot]++;
                 game->ram[MYSMB_ENEMY_Y_HIGH + enemy_slot] = 1U;
                 game->ram[MYSMB_ENEMY_FLAG + enemy_slot] = 1U;
-                /* GetAreaObjYPosition shifts the decoded row then adds $08. */
                 game->ram[MYSMB_ENEMY_Y + enemy_slot] =
-                    (mysmb_u8)((row << 4U) + 8U);
+                    mysmb_area_object_y_position(game);
                 game->ram[MYSMB_ENEMY_ID + enemy_slot] = 13U;
                 mysmb_enemy_init_piranha_plant(game, enemy_slot);
             }
@@ -1843,14 +1867,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         if (row == 12U) return;
         row++;
         value = pipe[(mysmb_u8)(value + 2U)];
-        height = (mysmb_u8)(second & 0x07U);
+        height = game->ram[6U];
         if (height == 0U) height = (mysmb_u8)(12U - row);
         else height--;
         mysmb_area_render_under_part(game, row, height, value);
         return;
     }
-    if (kind == 5U) mysmb_area_column_of_bricks(game, row, second);
-    else if (kind == 6U) mysmb_area_column_of_solid_blocks(game, row, second);
+    if (kind == 5U) mysmb_area_column_of_bricks(game);
+    else if (kind == 6U) mysmb_area_column_of_solid_blocks(game);
 }
 
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)

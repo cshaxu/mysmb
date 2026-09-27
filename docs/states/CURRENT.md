@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S9 is closed at 476 / 1,992; all eight hole/UnderPart nodes have both evidence tracks.**
+**M2 T30 S10 is closed at 480 / 1,992: six helper matches added, two prior matches revoked.**
 
-Ninety-eight original-ROM routes and native branch/boundary matrices pass.
-Consumer regressions and three-target builds pass; artifacts are refreshed.
-No S is active; generic length/attribute/position helpers are next.
+All six helper nodes pass both evidence tracks; three artifacts are refreshed.
+No S is active. DecodeAreaData index wrap and DrawPipe edge semantics need
+exact repair receipts before the next BlockBufferAddr chain.
 
-## M2 T30 S9 Packet
+## M2 T30 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S9, implementation; hole/whirlpool registration and UnderPart rendering chain. |
-| Admission And Approval | Owner-approved source-order continuation; exact transfer-106 from M2 T18 S4. |
-| Objective | Translate and prove HoleMetatiles through ExitUPartR; eight exact labels in the proposal. |
-| Non-goals | No whirlpool activation/player motion or general attribute-helper completion, platform gameplay, length/attribute/render-helper credit or leaf-PC/stack route. |
-| Reference Baseline | 468 / 1,992; eight open labels; expected eight matches; maximum 476 / 1,992. |
+| Identifier Mode | M2 T30 S10, implementation; common attribute/length/coordinate chain. |
+| Admission And Approval | Owner-approved source-order continuation; transfer-107 receives six labels from M2 T18 S4. |
+| Objective | Translate and prove ChkLrgObjLength through GetAreaObjYPosition, exact six labels in proposal. |
+| Non-goals | No unrelated actor state-machine repair, platform gameplay, block-buffer helper credit or synthetic PC/stack entry. |
+| Reference Baseline | 476 / 1,992; six open labels, six expected matches; maximum 482. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c, parser tests and validation recorders; ledger/progress and three artifacts. |
+| Files And ABI Surface | Shared area.c and helper callers; focused parser tests, local validation recorders, node records and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | ROM source control/data audit plus ordinary parser ROM execution; focused hole/UnderPart and renderer regression tests; x86/x64 and DOS16 builds; purity and package checks. |
-| Expected Markers | First/continued length, water-only registration, left/page borrow, wrapped length, five-entry ring and exact UnderPart branches/byte exits. |
-| Asset Needs | Refresh assets/mysmb16.exe, mysmb32.exe and mysmb64.exe per P; DOS MZ build is not runtime proof. |
-| Reporting Requirements | Every label disposition, both evidence tracks, actual count, artifact hashes and exact transfers. |
-| Stop Conditions | Unmatched source branch/data/write, unadmitted dependency, ROM mismatch or platform gameplay. |
-| Exit Criteria | All eight nodes proven in both tracks or unfinished nodes transferred by exact name; tracker and ledger agree. |
-| Original Owner Request | Full original-ROM behavior; source order; shared C90 logic across all targets. |
-| Similar-Issue Sweep | All hole/whirlpool registration and UnderPart rendering/ID/fixed-Y writers, allocator consumers and platform trees. |
+| Verification | Original helper and caller control/data audit, source-reachable ROM consumer cases, focused C90 tests, x86/x64 builds, DOS16 link, purity and startup probes. |
+| Expected Markers | Slot preservation/initialization carry, two pointer reads with byte-index wrap, $07 row, eight-bit X/Y arithmetic and original caller order. |
+| Asset Needs | Refresh three tracked EXEs per implementation P under owner mandate; DOS link is not runtime proof. |
+| Reporting Requirements | Each label disposition, both evidence tracks, actual count, hashes and exact transfers. |
+| Stop Conditions | Unmatched branch/read/write/call order, missing dependency, ROM mismatch or platform gameplay. |
+| Exit Criteria | All six labels pass both tracks or exact unfinished transfers; tracker and ledger agree. |
+| Original Owner Request | Full ROM logic in shared portable C; source-order migration with node-level accountability. |
+| Similar-Issue Sweep | All ChkLrgObjLength/FixedLength, GetLrgObjAttrib and X/Y helper callers; distinguish helper omissions from actor-owned debt. |
 
 ## Retained M2 T15 summary
 

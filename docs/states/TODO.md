@@ -2,6 +2,8 @@
 
 ## Translation Debt
 
+- [ ] **Parser index wrap and pipe tail revalidation (`TODO(High)`):** T30/S10 audit revoked earlier completion of `DecodeAreaData` (second-byte fetch fails INY wrap at offset $ff) and `DrawPipe` (invented zero-height fill and row-12 early return). Repair under exact source-owner receipts before the next block-buffer chain; require original-ROM edge routes and consumer regressions. Existing maintenance receivers retain custody. [Evidence](../proposals/m2/t30-area-object-rendering.md#s10-adjacent-node-revalidation-findings).
+
 - [ ] **Jumpspring pre-parser offscreen mismatch (`TODO(High)`):** T30/S7 GameEngine probes found native jumpsprings cleared by the unsigned `screen - 0x48` comparison near screen origin while ROM retains them, changing allocation before area creation. S7 proves creation through original ScreenRoutines; runtime/offscreen repair remains with its existing source-order receiver. [Evidence](../proposals/m2/t30-area-object-rendering.md#t30s7-admission-jumpspring-creation-chain).
 
 - [ ] **DOS resource binding (`TODO(High)`):** the current DOS composition root powers on and resets the game without binding owner-local PRG, CHR or title data; the OpenNT build does not compile generated resource sources. An MZ link is therefore build evidence only. Admission path: [presentation adapters](../proposals/m3-presentation-adapters.md); require resource binding and an actual boot-to-game route before claiming DOS playability.

@@ -120,4 +120,15 @@ void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
                            mysmb_u8 buffer_offset, mysmb_u8 address_low,
                            mysmb_u8 address_high);
 
+/* Shared original-ROM area-object primitives ($9bac-$9bdc).
+ * Length checks return carry: one only when a negative slot is initialized. */
+mysmb_u8 mysmb_area_get_large_object_attributes(struct mysmb_game *game,
+                                                 mysmb_u8 slot);
+mysmb_u8 mysmb_area_check_fixed_length(struct mysmb_game *game,
+                                        mysmb_u8 slot, mysmb_u8 length);
+mysmb_u8 mysmb_area_check_large_length(struct mysmb_game *game,
+                                        mysmb_u8 slot, mysmb_u8 *length);
+mysmb_u8 mysmb_area_object_x_position(const struct mysmb_game *game);
+mysmb_u8 mysmb_area_object_y_position(const struct mysmb_game *game);
+
 #endif

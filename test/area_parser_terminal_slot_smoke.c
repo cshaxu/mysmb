@@ -157,9 +157,10 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
 
     /* DecodeAreaData keeps its JumpEngine handoff in shared zero-page RAM:
-     * a small object carries addend $16 and its low-nibble object ID. */
+     * a small object carries its low-nibble ID. DrawQBlk then calls
+     * GetLrgObjAttrib, replacing the dispatch addend in $07 with row five. */
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0007U] != 0x16U || game.ram[0x0000U] != 2U) return 1;
+        game.ram[0x0007U] != 5U || game.ram[0x0000U] != 2U) return 1;
 
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x2cU;
@@ -174,10 +175,10 @@ int main(void)
     game.ram[0x0731U] = 0xffU;
     game.ram[0x0732U] = 0xffU;
 
-    /* A row-12 special object retains addend $08 and shifts d6-d4 down
-     * before NormObj stores the selected object ID. */
+    /* A row-12 special object shifts d6-d4 down for NormObj.
+     * Hole_Water then decodes its row into $07 through ChkLrgObjLength. */
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0007U] != 8U || game.ram[0x0000U] != 5U) return 1;
+        game.ram[0x0007U] != 12U || game.ram[0x0000U] != 5U) return 1;
 
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x2fU;
@@ -192,10 +193,10 @@ int main(void)
     game.ram[0x0731U] = 0xffU;
     game.ram[0x0732U] = 0xffU;
 
-    /* ChkSRows preserves the row-15 addend $10 before SpecObj shifts its
-     * d6-d4 selector down for NormObj. */
+    /* ChkSRows uses addend $10 to dispatch StaircaseObject, whose
+     * ChkLrgObjLength call replaces $07 with the record row fifteen. */
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0007U] != 0x10U || game.ram[0x0000U] != 3U) return 1;
+        game.ram[0x0007U] != 15U || game.ram[0x0000U] != 3U) return 1;
 
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x2dU;
@@ -229,9 +230,9 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
 
     /* LrgObj's warp-pipe d3 path clears the selected object ID before the
-     * MoveAOId shift, leaving the ordinary zero addend for RunAObj. */
+     * MoveAOId shift. GetPipeHeight subsequently decodes row five into $07. */
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0007U] != 0U || game.ram[0x0000U] != 0U) return 1;
+        game.ram[0x0007U] != 5U || game.ram[0x0000U] != 0U) return 1;
 
     mysmb_game_initialize(&game);
     prg[0x40U] = 0x25U;
@@ -247,8 +248,9 @@ int main(void)
     game.ram[0x0732U] = 0xffU;
 
     /* The d3-clear large-pipe branch falls through NotWPipe and retains ID
-     * seven, distinguishing it from the warp-pipe nullification above. */
+     * seven, distinguishing it from the warp-pipe nullification above.
+     * The common GetPipeHeight again leaves the decoded row in $07. */
     if (mysmb_area_process_object_state(&game) == 0U ||
-        game.ram[0x0007U] != 0U || game.ram[0x0000U] != 7U) return 1;
+        game.ram[0x0007U] != 5U || game.ram[0x0000U] != 7U) return 1;
     return 0;
 }

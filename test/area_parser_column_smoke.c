@@ -297,7 +297,8 @@ int main(void)
         game.ram[0x0732U] != 0U || game.ram[0x000fU] != 1U ||
         game.ram[0x0016U] != 13U || game.ram[0x0087U] != 0x68U ||
         game.ram[0x006eU] != 1U || game.ram[0x00b6U] != 1U ||
-        game.ram[0x00cfU] != 0x88U || game.ram[0x0058U] != 1U ||
+        game.ram[0x00cfU] != 0xa0U || game.ram[0x0434U] != 0xa0U ||
+        game.ram[0x0417U] != 0x88U || game.ram[0x0058U] != 1U ||
         game.ram[0x001eU] != 0U || game.ram[0x049aU] != 9U) return 1;
     game.ram[0x0726U] = 7U;
     if (mysmb_area_process_object_state(&game) == 0U ||

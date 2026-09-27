@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 476 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,413 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 480 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,407 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **476 / 1,992 (23.90%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **480 / 1,992 (24.10%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (476)
+## Completed matches (480)
 
 | ROM line | Node |
 | ---: | --- |
@@ -376,7 +376,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3378 | `ProcLoopb` |
 | 3384 | `EndAParse` |
 | 3386 | `IncAreaObjOffset` |
-| 3393 | `DecodeAreaData` |
 | 3397 | `Chk1stB` |
 | 3408 | `ChkRow14` |
 | 3416 | `ChkRow13` |
@@ -438,7 +437,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3862 | `VerticalPipeData` |
 | 3868 | `VerticalPipe` |
 | 3876 | `WarpPipe` |
-| 3900 | `DrawPipe` |
 | 3911 | `GetPipeHeight` |
 | 3921 | `FindEmptyEnemySlot` |
 | 3923 | `EmptyChkLoop` |
@@ -497,6 +495,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4289 | `DrawThisRow` |
 | 4290 | `WaitOneRow` |
 | 4296 | `ExitUPartR` |
+| 4300 | `ChkLrgObjLength` |
+| 4303 | `ChkLrgObjFixedLength` |
+| 4310 | `LenSet` |
+| 4313 | `GetLrgObjAttrib` |
+| 4326 | `GetAreaObjXPosition` |
+| 4336 | `GetAreaObjYPosition` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
@@ -522,11 +526,13 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (103)
+## Mapped but not yet matched (105)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
+| 3393 | `DecodeAreaData` |
+| 3900 | `DrawPipe` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6519 | `ProcessWhirlpools` |
