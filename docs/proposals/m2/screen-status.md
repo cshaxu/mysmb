@@ -204,3 +204,19 @@ and `mysmb64.exe`
 `56C07DD8C873BC12450EAC3C8DB555ED72383DAF8310A9EB4BFA0710704C69E5`.
 No S2 node is credited yet: the remaining chain still requires its declared
 source-level matrix and controlled original-ROM route.
+## S2/P6: controlled cold-title ROM route
+
+The owner-local reference recorder and the current shared-C recorder each
+started from the ROM cold state, used zero controller input, and sampled 200
+consecutive NMI returns through the title screen path. The native recorder used
+its source-owned title bootstrap; the reference recorder ran the owner-supplied
+local ROM. Their ignored raw records are bounded below `build/m2-t27-s2/`.
+Across all 200 samples, work RAM `$0300-$07ff`, both CIRAM pages, palette, OAM,
+audio-command state, and all PPU scalar bytes have zero differing frames. This
+operational route exercises the S2 title/status progression with the ROM's
+actual VRAM and OAM timing. It does not by itself prove every game-text,
+intermediate, two-player, Time Up, Game Over, or Warp branch, so no node credit
+is added.
+
+The three focused local title tests also pass on the current x64 owner: title
+command transfer, title palette oracle, and cold-title bootstrap sequence.
