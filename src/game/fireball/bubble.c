@@ -71,7 +71,10 @@ void mysmb_fireball_setup_bubble(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 x_adder;
     mysmb_u8 old_x;
 
-    x_adder = (game->ram[MYSMB_BUBBLE_PLAYER_FACING] & 1U) != 0U ? 8U : 0U;
+    /* LSR PlayerFacing leaves its former bit 0 in carry.  The following
+     * TYA preserves it, so the source ADC contributes nine pixels while
+     * facing right (Y = 8 plus carry = 1), and zero while facing left. */
+    x_adder = (game->ram[MYSMB_BUBBLE_PLAYER_FACING] & 1U) != 0U ? 9U : 0U;
     old_x = game->ram[MYSMB_BUBBLE_PLAYER_X];
     game->ram[MYSMB_BUBBLE_X + slot] = (mysmb_u8)(old_x + x_adder);
     game->ram[MYSMB_BUBBLE_PAGE + slot] = (mysmb_u8)(

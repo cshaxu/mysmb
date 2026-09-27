@@ -187,3 +187,47 @@ as a DOS16 MZ. The package hashes are `mysmb16.exe`
 and `mysmb64.exe` `488D91CBB0BCEE5D4758EAE8AB6045BA30703BBEFD42996004CDC4627E4B28E9`.
 This is an implementation checkpoint, not S3 closure: return-boundary
 reference capture and the final node-by-node evidence update remain required.
+
+## S3 P2: carry-correct bubble collaborator and final package
+
+The source `SetupBubble` sequence shifts `PlayerFacingDir`, loads either zero
+or eight into Y, and then executes `TYA` followed by `ADC Player_X_Position`.
+`TYA` preserves the carry left by `LSR`; facing right therefore adds `$09`,
+not `$08`.  The shared bubble collaborator now preserves that machine-level
+effect for both `Entrance_GameTimerSetup` and its pre-existing bubble-handler
+caller.  The entrance and bubble/OAM smokes assert the resulting `$31` and
+`$49` X coordinates respectively.
+
+The controlled source-RAM-only GameEngine route remains the ROM track: normal,
+alternate, vine and water fixtures each execute `$9131-$919a`, covering every
+S3 branch without synthetic PC or stack injection.  An attempted recorder
+rebuild for a narrower RTS-boundary capture stalled in its isolated external
+dependency build; it is not counted as evidence.  The established route
+coverage plus the static `$9116-$919e` control/data/call audit are the ROM
+evidence, while the focused native tests provide the independent operational
+track.
+
+`mysmb.area-entry-smoke`, `mysmb.bubble-oam-smoke`, and
+`mysmb.platform-purity` pass on x86 and x64.  The shared sources compile into
+the OpenNT DOS16 MZ; the linker continues to emit its pre-existing
+`OLDNAMES.LIB` warning after producing the executable.  P2 artifacts are
+`mysmb16.exe` `29AB94C5769B4BACD46FF6C9C3050B6F6E4FE9899ECC505E9B7CD51582CDDE44`,
+`mysmb32.exe` `5F13B7C461042C0382E6EE5CC8783FB7474D730A692F42D6AC7711E411C2C451`,
+and `mysmb64.exe` `274AD1E83935A8B5F72613FF44F46FAA1FEA28A6F40D4417023B92CDE1C3F857`.
+
+## S3 closure: player/area-entry initialization chain
+
+S3 closes **11 / 11** expected labels: `PlayerStarting_X_Pos`,
+`AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`,
+`GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`,
+`ChkOverR`, `ChkSwimE`, and `SetPESub`.  The resulting conformance count is
+**285 / 1,992**.  No label is deferred or transferred.
+
+The data labels are bound byte-for-byte from `$9116-$912b`; the routine labels
+are audited in source order from page/force/facing/state initialization through
+alternate-entry selection, palette call, timer gate, override-vine branch,
+water-bubble branch, and the `$07` engine-subroutine handoff.  The source route
+exercised those branches through ordinary GameEngine dispatch.  Operational
+evidence is the focused x86/x64 smoke and purity pass, the DOS16 compile/link,
+and the P2 three-artifact package above.  `src/game` remains the sole owner of
+all entry, vine, and bubble business behavior; no platform source was changed.

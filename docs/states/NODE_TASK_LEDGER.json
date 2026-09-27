@@ -70212,9 +70212,21 @@
         "SetPESub"
       ],
       "maximumComplete": 285,
-      "actualMatches": [],
+      "actualMatches": [
+        "PlayerStarting_X_Pos",
+        "AltYPosOffset",
+        "PlayerStarting_Y_Pos",
+        "PlayerBGPriorityData",
+        "GameTimerData",
+        "Entrance_GameTimerSetup",
+        "ChkStPos",
+        "SetStPos",
+        "ChkOverR",
+        "ChkSwimE",
+        "SetPESub"
+      ],
       "evidence": "docs/proposals/m2/t29-area-parser-geometry.md",
-      "state": "admitted-area-entry-chain"
+      "state": "closed-complete-area-entry-initialization-chain"
     }
   ]
 }

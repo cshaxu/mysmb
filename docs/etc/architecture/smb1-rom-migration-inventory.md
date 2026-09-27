@@ -414,17 +414,17 @@ The labels and branches behind every line remain open until individually bound b
 | 2830 | `ChkAreaType` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
 | 2834 | `StoreMusic` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
 | 2836 | `ExitGetM` | M2 T29 S2 shared area-music owner | ROM-match complete | [T29 S2 closure](../../proposals/m2/t29-area-parser-geometry.md#s2-closure-area-music-selection-chain) |
-| 2840 | `PlayerStarting_X_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_x_pos) |
-| 2844 | `AltYPosOffset` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-altyposoffset) |
-| 2847 | `PlayerStarting_Y_Pos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerstarting_y_pos) |
-| 2851 | `PlayerBGPriorityData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerbgprioritydata) |
-| 2854 | `GameTimerData` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gametimerdata) |
-| 2858 | `Entrance_GameTimerSetup` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entrance_gametimersetup) |
-| 2874 | `ChkStPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkstpos) |
-| 2881 | `SetStPos` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setstpos) |
-| 2900 | `ChkOverR` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkoverr) |
-| 2911 | `ChkSwimE` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkswime) |
-| 2914 | `SetPESub` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpesub) |
+| 2840 | `PlayerStarting_X_Pos` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2844 | `AltYPosOffset` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2847 | `PlayerStarting_Y_Pos` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2851 | `PlayerBGPriorityData` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2854 | `GameTimerData` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2858 | `Entrance_GameTimerSetup` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2874 | `ChkStPos` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2881 | `SetStPos` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2900 | `ChkOverR` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2911 | `ChkSwimE` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
+| 2914 | `SetPESub` | M2 T29 S3 shared player/area-entry owner | ROM-match complete | [T29 S3 closure](../../proposals/m2/t29-area-parser-geometry.md#s3-closure-playerarea-entry-initialization-chain) |
 | 2921 | `HalfwayPageNybbles` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-halfwaypagenybbles) |
 | 2931 | `PlayerLoseLife` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerloselife) |
 | 2944 | `StillInGame` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stillingame) |
