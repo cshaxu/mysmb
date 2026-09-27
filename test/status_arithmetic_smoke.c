@@ -68,10 +68,36 @@ static int mysmb_status_test_output(void)
     return 0;
 }
 
+static int mysmb_status_test_top_score(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 index;
+
+    memset(&game, 0, sizeof(game));
+    game.ram[0x07d7U] = 1U;
+    game.ram[0x07d8U] = 2U;
+    game.ram[0x07d9U] = 3U;
+    game.ram[0x07ddU] = 1U;
+    game.ram[0x07deU] = 2U;
+    game.ram[0x07dfU] = 4U;
+    mysmb_status_update_top_score(&game);
+    if (game.ram[0x07d7U] != 1U || game.ram[0x07d8U] != 2U ||
+        game.ram[0x07d9U] != 4U) return 21;
+
+    for (index = 0U; index < 6U; ++index)
+        game.ram[0x07ddU + index] = 0U;
+    mysmb_status_update_top_score(&game);
+    if (game.ram[0x07d7U] != 1U || game.ram[0x07d8U] != 2U ||
+        game.ram[0x07d9U] != 4U) return 22;
+    return 0;
+}
+
 int main(void)
 {
     int result;
     result = mysmb_status_test_digits();
     if (result != 0) return result;
-    return mysmb_status_test_output();
+    result = mysmb_status_test_output();
+    if (result != 0) return result;
+    return mysmb_status_test_top_score();
 }
