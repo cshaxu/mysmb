@@ -1240,3 +1240,21 @@ The focused parser-column and special-object smokes plus platform-purity pass
 on x86 and x64; the shared C90 tree links as DOS16 with the established
 non-fatal `OLDNAMES.LIB` warning.  P6's three artifact hashes are the final S9
 delivery artifacts.  No scoped node is deferred or transferred.
+
+
+## S10 admission: allocation and final-object geometry chain
+
+S10 receives exactly ten source-order labels from M2 T18 S4 through accepted
+ledger transfer `transfer-091-t18-s4-to-t29-s10-allocation-final-geometry`:
+FindEmptyEnemySlot, EmptyChkLoop, ExitEmptyChk, Hole_Water, QuestionBlockRow_High, QuestionBlockRow_Low, Bridge_High, Bridge_Middle, Bridge_Low, and FlagBalls_Residual.  Its baseline is **412 / 1,992**; all ten labels are open, all ten
+are expected to become ROM-match complete, and its maximum closing count is
+**422 / 1,992**.
+
+The chain starts at the shared `area.c` five-slot allocator and ends with the
+terminal object-family data consumers. Its predecessor is S9's completed pipe
+geometry; its successor is the remaining large-object family after
+`FlagBalls_Residual`. ROM logic verification compares the `$994a-$999d` scan,
+carry outcome, data bytes, branches, state writes and return order through an
+ordinary GameEngine parser route plus source-RAM shaped branch cases.
+Operational verification runs the focused parser smoke, x86/x64 builds, DOS16
+link, platform-purity check, and one three-artifact package for each implementation P.

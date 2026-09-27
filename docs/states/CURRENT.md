@@ -2,10 +2,7 @@
 
 ## Current Work
 
-**M2 T29 S9, the twenty-two-node castle and pipe large-object geometry chain,
-has closed its admitted `CastleMetatiles -> GetPipeHeight` scope at
-412 / 1,992.  Its closure package is the sole active packet until committed;
-the successor S10 allocation/final-geometry chain has not yet been admitted.**
+**M2 T29 S10, the ten-node allocation and final-object geometry chain, is admitted at 412 / 1,992 and owns `FindEmptyEnemySlot -> FlagBalls_Residual`; its maximum closing count is 422 / 1,992.**
 
 M2 T24 S2 remains the metadata-verified custodian of its 138 unallocated
 nodes; it is not this implementation packet and cannot preempt M2 T29 S4.
@@ -13,7 +10,7 @@ The [historical unresolved node closure package](../proposals/m2/historical-node
 remains a queued historical record and cannot preempt the T29 source-order continuation.
 
 **All other numeric M2 task states in retained proposal text are historical or
-queued records. M2 T29 S9 is the sole active closure packet.**
+queued records. M2 T29 S10 is the sole active implementation packet.**
 
 ## Retained M2 T15 summary
 
@@ -297,23 +294,23 @@ M2 T19 S3/P3 is complete: `InitEnemyObject -> CheckpointEnemyID -> InitEnemyRout
 M2 T19 S5/P20 restores ROM current-slot `EnemiesCollision`: no frame-root global collision scan manufactures bounding boxes; the pipe route OAM residual is removed.
 M2 T16 S3/P8 restores defeated-Goomba mirrored OAM attributes and its route evidence is consumed by the updated T17 pipe comparison.
 
-## M2 T29 S9 Packet
+## M2 T29 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T29 S9, implementation; castle and pipe large-object geometry chain. |
-| Admission And Approval | Owner-approved source-order continuation after S8 closure; accepted ledger transfer transfer-090-t18-s4-to-t29-s9-large-object-geometry receives all twenty-two labels from M2 T18 S4. |
-| Objective | Translate and prove CastleMetatiles -> GetPipeHeight as one shared large-object geometry chain. |
-| Non-goals | No allocation/final-object nodes beginning at FindEmptyEnemySlot, no unadmitted helper credit, no platform game branch, no synthetic leaf-PC or stack entry, and no label outside the twenty-two-node receipt. |
-| Reference Baseline | 390 / 1,992 complete; twenty-two scoped open labels; expected twenty-two matches; maximum 412 / 1,992. |
+| Identifier Mode | M2 T29 S10, implementation; allocation and final-object geometry chain. |
+| Admission And Approval | Owner-approved source-order continuation after S9; accepted transfer-091 receives ten labels from M2 T18 S4. |
+| Objective | Translate and prove `FindEmptyEnemySlot -> FlagBalls_Residual` in the shared game owner. |
+| Non-goals | No actor initialization, remaining large-object family, platform game branch, or label outside the ten-node receipt. |
+| Reference Baseline | 412 / 1,992 complete; ten scoped open labels; expected ten matches; maximum 422 / 1,992. |
 | Candidate Proposal | [M2 T29 parser and geometry](../proposals/m2/t29-area-parser-geometry.md). |
-| Files And ABI Surface | Shared src/game/area.c owner; project-owned parser/geometry smokes; controlled ROM/native recorders; ledger/progress records; and the three target artifacts for each implementation P. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and M2 chain-based delivery. |
-| Verification | ROM-logic audit $9788-$9846 covers castle metatile/floor/tall/flag branches; water, intro and exit sideways-pipe tables and blanking; vertical/warp height, piranha eligibility and metatile order. Original object streams run through the ordinary GameEngine parser; source-RAM controlled cases cover mutually exclusive branches. Operational track runs focused parser/special-object/purity tests, x86/x64 builds, DOS16 link, and one three-artifact package per implementation P. |
-| Expected Markers | Castle and pipe metatile bytes/order, object length and cursor state, page/floor/height branch result, player-stop/exit effects, piranha eligibility handoff, and source return ordering. |
+| Files And ABI Surface | Shared `src/game/area.c`, owner-local parser smokes/recorders, ledger/progress, and three target artifacts for each implementation P. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, node ledger, and chain-based delivery. |
+| Verification | ROM logic audit `$994a-$999d`; ordinary parser route plus controlled source-RAM branch cases; focused parser smoke, x86/x64 builds, DOS16 link, purity and package. |
+| Expected Markers | Five-slot scan/carry, selected slot, terminal-object tables, staged metatile bytes, parser cursor and return order. |
 | Asset Needs | Refresh mysmb16.exe, mysmb32.exe and mysmb64.exe for every implementation P. |
-| Reporting Requirements | Report 22 scoped and 22 expected labels by exact name before work; record each node data/branch/read/write/call-order mapping, ROM route, focused-test/build/package result, hashes and each deferred transfer. |
-| Stop Conditions | Stop on unmatched source table byte, state write/order, branch/call sequence, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
-| Exit Criteria | Every scope label has ROM-logic and operational evidence, tracker and ledger agree at 412 / 1,992, or any exception transfers by exact name. |
-| Original Owner Request | Strict original-ROM call/data structure, shared game logic for DOS and Windows, and dual verification with node accountability and chain-level delivery. |
-| Similar-Issue Sweep | Audit all large-object geometry writers and platform sources. Platforms may only supply physical input/timing and submit a completed game frame. |
+| Reporting Requirements | Record all ten node dispositions, ROM branch/read/write/call evidence, operational evidence, hashes and transfers. |
+| Stop Conditions | Stop on an unmatched branch/table/write order, unadmitted dependency, recorder mismatch, or platform gameplay logic. |
+| Exit Criteria | All ten labels have ROM-logic and operational evidence, tracker and ledger agree at 422 / 1,992, or each exception transfers by exact name. |
+| Original Owner Request | Strict ROM structure, shared game logic for DOS and Windows, and node accountability with chain-level delivery. |
+| Similar-Issue Sweep | Audit allocation and final-object consumers plus platforms; platforms provide only physical input/timing and completed-frame submission. |
