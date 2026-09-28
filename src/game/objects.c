@@ -1064,48 +1064,25 @@ void mysmb_objects_step_hammer_bros(struct mysmb_game *game)
     }
 }
 
-/* ROM $afbd MoveJumpingEnemy via $bb28 MoveJ_EnemyVertically. */
-void mysmb_objects_step_jumping_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 14U) return;
-    mysmb_enemy_move_jumping(game, slot);
-}
-
-/* Temporary bulk caller while the engine vector is migrated. */
+/* Legacy bulk eligibility; source callers use the shared movement entry. */
 void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_jumping_paratroopas_slot(game, slot);
-}
-
-/* ROM $afc3 ProcMoveRedPTroopa through $bb5f RedPTroopaGrav. */
-void mysmb_objects_step_red_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 moving_up;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 15U) return;
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] == 0U &&
-        game->ram[MYSMB_ENEMY_Y + slot] < game->ram[MYSMB_ENEMY_X_FORCE + slot]) {
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-        if ((game->ram[MYSMB_FRAME_COUNTER] & 7U) == 0U) game->ram[MYSMB_ENEMY_Y + slot]++;
-        return;
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 14U)
+            mysmb_enemy_move_jumping(game, slot);
     }
-    moving_up = game->ram[MYSMB_ENEMY_Y + slot] >= game->ram[MYSMB_ENEMY_X_SPEED + slot] ? 1U : 0U;
-    if (moving_up != 0U) mysmb_enemy_move_red_up(game, slot);
-    else mysmb_enemy_move_red_down(game, slot);
 }
 
-/* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_red_paratroopas(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_red_paratroopas_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 15U)
+            mysmb_objects_step_red_paratroopas_slot(game, slot);
+    }
 }
 
 /* ROM $afe2 MoveFlyGreenPTroopa through $b003 MoveWithXMCntrs.  The original

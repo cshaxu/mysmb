@@ -12,17 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1072 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1077 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 814 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 809 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,072 / 1,992 (53.82%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,077 / 1,992 (54.07%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T40 S2 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s2-original-hammer-bro-and-normal-proof)
-closes eleven new Hammer Bro nodes and revalidates thirteen normal-motion
-nodes, with 712/712 original caller and actual-child comparisons. All 3,382
-prior matches remain; controlled entry inputs are explicitly distinguished.
+Latest task review: [T40 S3 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s3-original-jumping-and-red-paratroopa-proof)
+closes five jumping/red Paratroopa nodes with 320/320 original caller and
+actual-child comparisons. All 4,094 prior matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1072)
+## Completed matches (1077)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1084,6 +1083,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9381 | `MoveDefeatedEnemy` |
 | 9385 | `ChkKillGoomba` |
 | 9392 | `NKGmba` |
+| 9396 | `MoveJumpingEnemy` |
+| 9402 | `ProcMoveRedPTroopa` |
+| 9414 | `NoIncPT` |
+| 9416 | `MoveRedPTUpOrDown` |
+| 9421 | `MovPTDwn` |
 | 10167 | `KillAllEnemies` |
 | 10169 | `KillLoop` |
 | 10337 | `FlameTimerData` |

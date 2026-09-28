@@ -330,3 +330,117 @@ dependent admitted regressions.
 | mysmb16.exe | 256337 | 3a6eb3f128033be4f54084730fb6a134d3cb5b2d8e9b1e8cbbabec8fa6d55f20 |
 | mysmb32.exe | 344558 | fcccb5a530645e07ec7bb9f93e336517721ecba20f4252eee4dc96e7a086f327 |
 | mysmb64.exe | 351809 | 3013f8bf34fe1dfe35a62528258c4045b4701b904f1665e2aca17b4e5a69c2ea |
+
+## S3 admission: Jumping and red Paratroopa movement
+
+S2 closed in 7618120. Coordinator accepts transfer-187. Exact scope and
+expected new set (all open): MoveJumpingEnemy, ProcMoveRedPTroopa, NoIncPT,
+MoveRedPTUpOrDown and MovPTDwn. Baseline 1,072/1,992, maximum 1,077.
+Source range $CAF9-$CB24 follows the normal/defeated tail; S4 begins at
+MoveFlyGreenPTroopa. Owners are enemy/movement.c and enemy/paratroopa.c.
+
+Preserve the jumping gravity-then-horizontal chain. Red movement must clear
+Enemy_YMF_Dummy whenever speed OR force is zero, before comparing current
+Y with the original anchor. Below the anchor it advances Y only every eight
+frames and returns; otherwise compare central Y and select the existing
+up/down gravity entries. Restore source entries without extra flag/ID guards;
+keep bulk eligibility at the legacy boundary and remove redundant jumping
+forwarders when all source callers already use the shared movement owner.
+Do not change the proven gravity or horizontal algorithms.
+
+Logic proof covers speed/force combinations, fractional sentinel, equal and
+adjacent anchor/center values, all eight frame phases, both directions and
+actual shared children. Use original NMI routes; explicitly identify any
+controlled RAM inputs at naturally reached entries needed for narrow branch
+coverage. CPU, PC, stack and ROM remain untouched. Source branch/read/write
+and original child-input/order evidence remain separate from native tests.
+
+Operational proof covers all six slots, no extra eligibility gate, ordinary
+and mutating child contracts, prior original matches, strict C90 x86/x64,
+DOS16 link, platform purity, hidden-window response and three EXEs. Each of
+the five nodes must have exact evidence and disposition before closure.
+Similar-issue sweep covers jumping/red source callers, bulk wrappers, RAM
+aliases and the order of fractional reset versus anchor/center comparisons.
+No green flying actor or host gameplay belongs to this S.
+
+Existing owner-local ROM/listing provenance and redistribution limits remain;
+no third-party code import. All research, trace, build and log outputs stay in
+ignored build/m2-t40-s3. Begin with 160 original routes, eight-MB raw budget,
+twenty-second per-run timeout, unique outputs and resumable checkpoints.
+Actual failed child routes may not be hidden by caller-only proof.
+
+## S3 original jumping and red Paratroopa proof
+
+S3 P1 closes all five expected nodes: 1,072 -> 1,077/1,992. No scoped
+unfinished node or transfer remains; S4 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| MoveJumpingEnemy | $CAF9 | Existing shared gravity-then-horizontal child order and real child execution; new ROM match |
+| ProcMoveRedPTroopa | $CAFF | Zero combined speed/force clears the fractional accumulator before anchor comparison; new ROM match |
+| NoIncPT | $CB18 | All eight frame phases: increment only phase zero, then source return; new ROM match |
+| MoveRedPTUpOrDown | $CB19 | Current versus central Y selects the source up/down gravity entries; new ROM match |
+| MovPTDwn | $CB22 | Below-center branch reaches the real downward red-gravity child; new ROM match |
+
+Original NMI routes cover jumping movement and red Paratroopa speed/force,
+anchor equality/adjacency, center selection, both edge slots and all eight
+slow-step frame phases. All scoped instructions and both outcomes of each
+branch execute. No mid-entry input injection is used for this S. ROM, CPU,
+hardware stack and output state remain unchanged. Caller diagnostics and
+real shared-child execution independently pass 320/320 across x86/x64.
+Caller records compare full child-entry RAM before substituting recorded
+returns. Actual runs execute the real gravity/horizontal children. Hardware
+stack bytes alone are excluded; scratch and mapped $0109-$0139 are compared.
+All 160 observer-free frames equal their observed records; that check proves
+observer noninterference, not full-game native frame conformance.
+
+The source defect was the ordering of the fractional reset: zero vertical
+speed/force must clear $0417+slot even at or above the original-height anchor.
+The former implementation only cleared it below that anchor, incorrectly
+carrying a fractional remainder into gravity on the other path. The shared
+enemy/paratroopa.c owner now follows the original sequence. Its entry has
+no extra eligibility guard; legacy bulk callers retain their own filters.
+The unused jumping slot wrapper is removed, and both normal-vector and
+legacy bulk callers reach the existing MoveJumpingEnemy owner directly.
+The star/power-up consumer continues using that same shared owner.
+
+Independent native contracts pass 10,368 full-RAM cases per width across
+six slots, eight phases, four speed/force combinations, adjacent Y/anchor/
+center values and zero/nonzero fractional sentinels. Deliberately unrelated
+flag/ID bytes ensure the source entry has no extra gate. Child mutation is
+preserved. Existing Paratroopa integration and normal-movement tests pass,
+as do fifteen earlier full native suites and prior caller contracts.
+
+The final original-snapshot matrix is 4,414/5,202; all 4,094 previously
+passing comparisons remain passing. Unfinished graphics/collision and other
+child differences retain their source-order owners. Existing Bowser damage
+and endgame star-timer failures remain unchanged.
+
+All 92 shared units compile in strict C90 for x86/x64, and both self-tests
+and hidden-window response probes pass. Platform purity passes. DOS16 links
+with the old OLDNAMES warning and remains link-only: no graphics/resource-
+binding or physical 486 performance claim. The three EXEs are refreshed.
+
+Similar-issue sweep covers all red/jumping declarations, normal-vector and
+bulk callers, the star consumer, alias addresses $0401/$0058 and reset order.
+No duplicate movement algorithm or host gameplay was introduced. The green
+flying actor remains S4's obligation; no child node receives extra credit.
+
+Reproduce paratroopa_movement_fixture.h cases 0..159 with
+--fixture=t40-paratroopa=N, --paratroopa-snapshot, --control-children and a
+separate --pc-coverage run. paratroopa_movement_snapshot_check links real
+movement callers with explicit child boundaries; enemy_loop_actual_check
+executes real children. The native target is mysmb.paratroopa-movement.
+Exact source coverage and child ordering are recorded in local
+source-audit.json. Owner-local provenance and redistribution limits remain.
+
+The 19 scoped instructions and 160 child handoffs use 2,020,960 raw bytes under
+the eight-MB budget in ignored build/m2-t40-s3. Each record uses a unique
+path, stable checkpoint and twenty-second timeout. Current records remain
+local regression inputs for dependent admitted chains.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256273 | 5a97ff191aaf7e721446ad3dcbb8029a6b98a65ca48edcce59382f0cbc196213 |
+| mysmb32.exe | 344693 | 9810abe209c2cdb0f70606c5e85b2d0990ad6d9c62462920cd260e01bb9be628 |
+| mysmb64.exe | 352493 | da272948b484a2b8c6a45f10084ac113f7972768dc6601ef3b396b1c0910c18a |

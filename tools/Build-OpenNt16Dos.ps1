@@ -27,6 +27,7 @@ $sources = @(
     'game/enemy/platform_callers.c',
     'game/enemy/podoboo.c',
     'game/enemy/hammer_bro.c',
+    'game/enemy/paratroopa.c',
     'game/enemy/distance.c',
     'game/enemy/background.c',
     'game/enemy/side_collision.c',
