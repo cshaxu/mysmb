@@ -21,8 +21,8 @@ T33 is closed with all 63 received movement/physics nodes proven at 739 / 1,992.
 T34 is closed with all eleven fireball dispatch/core nodes proven at 750 / 1,992.
 Its cross-chain review retains the existing graphics-child failures.
 T35 S1 closes eight bubble nodes at 758 / 1,992. Timer S2 closes four caller nodes at 762 / 1,992; S3 jumpspring closes seven data/state/caller nodes at 769 / 1,992; S4 closes three vine initialization/data nodes at 772 / 1,992; T35 is closed. The next source slice starts with VineObjectHandler at line 6730.
-T36 S1 closes six vine actor caller nodes at 778 / 1,992; S2 closes ten hammer lifecycle nodes at 788 / 1,992. S3 closes six coin allocation caller nodes at 794 / 1,992; S4 closes six misc lifetime nodes at 800 / 1,992; S5 closes nine score/HUD nodes at 809 / 1,992; S6 power-up initialization is next.
-[The T36 plan](../proposals/m2/misc-object-chains.md) groups 41 incomplete labels
+T36 S1 closes six vine actor caller nodes at 778 / 1,992; S2 closes ten hammer lifecycle nodes at 788 / 1,992. S3 closes six coin allocation caller nodes at 794 / 1,992; S4 closes six misc lifetime nodes at 800 / 1,992; S5 closes nine score/HUD nodes at 809 / 1,992; S6 closes four initialization nodes at 813 / 1,992. T36 is closed: 41 new plus 14 retained matches; PowerUpObjHandler stays with the next-slice successors.
+[The T36 plan](../history/M2-T36-misc-object-chains.md) groups 41 incomplete labels
 into six chains, retains fourteen cannon matches, and keeps the trailing
 PowerUpObjHandler with its next-slice successors.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations

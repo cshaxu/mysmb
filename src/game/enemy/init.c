@@ -1,3 +1,4 @@
+#include "game/objects.h"
 #include "game/enemy/init.h"
 #include "game/enemy/frenzy.h"
 
@@ -72,6 +73,11 @@ void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
 }
 void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
 {
+    /* InitEnemyRoutines entry $2E is the residual PwrUpJmp tail. */
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 0x2eU) {
+        mysmb_objects_initialize_power_up(game);
+        return;
+    }
     /* ROM CheckpointEnemyID, not the stream parser, owns this add.  Group
      * and frenzy producers enter here after supplying their own Y value. */
     if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {

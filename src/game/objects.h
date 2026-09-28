@@ -30,9 +30,10 @@ void mysmb_objects_step_misc(struct mysmb_game *game);
 /* Existing misc children exposed without new child equivalence credit. */
 void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
-/* ROM $bbc5-$bc15 SetupPowerUp/PowerUpObjHandler, emergence phase. */
-void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
-                                  mysmb_u8 power_up_type);
+/* ROM $BC49 SetupPowerUp; the caller supplies PowerUpType in RAM. */
+void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot);
+/* ROM $BC60 PwrUpJmp: initialize the fixed slot-five tail only. */
+void mysmb_objects_initialize_power_up(struct mysmb_game *game);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
 void mysmb_objects_finish_power_up(struct mysmb_game *game);
 /* RunNormalEnemies for one ObjectOffset; GameEngine uses this with stream parsing. */

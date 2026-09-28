@@ -97,10 +97,10 @@ The labels and branches behind every line remain open until individually bound b
 - [ ] **Blocks, coins, power-ups, vines and miscellaneous objects**
   - [ ] `BlockObjMT_Updater` — ROM line 7527; C owner/evidence pending
   - [ ] `BumpBlock` — ROM line 7332; C owner/evidence pending
-  - [x] `CoinBlock` — ROM line 6988; [S2 hammer proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof)
-  - [ ] `SetupPowerUp` — ROM line 7150; C owner/evidence pending
+  - [x] `CoinBlock` — ROM line 6988; [S2 hammer proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof)
+  - [x] `SetupPowerUp` — ROM line 7150; [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof)
   - [ ] `PowerUpObjHandler` — ROM line 7184; C owner/evidence pending
-  - [x] `VineObjectHandler` — ROM line 6730; [S1 vine actor proof](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof)
+  - [x] `VineObjectHandler` — ROM line 6730; [S1 vine actor proof](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof)
 - [ ] **Fireballs, projectile collision and special hazards**
   - [x] `FireballObjCore` — ROM line 6352; [S2 core proof](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof)
   - [ ] `FireballBGCollision` — ROM line 12751; C owner/evidence pending
@@ -899,12 +899,12 @@ The labels and branches behind every line remain open until individually bound b
 | 6702 | `Setup_Vine` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
 | 6716 | `NextVO` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
 | 6727 | `VineHeightData` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
-| 6730 | `VineObjectHandler` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
-| 6746 | `RunVSubs` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
-| 6752 | `VDrawLoop` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
-| 6760 | `KillVine` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
-| 6766 | `WrCMTile` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
-| 6780 | `ExitVH` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6730 | `VineObjectHandler` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6746 | `RunVSubs` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6752 | `VDrawLoop` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6760 | `KillVine` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6766 | `WrCMTile` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6780 | `ExitVH` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof) |
 | 6785 | `CannonBitmasks` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6788 | `ProcessCannons` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6792 | `ThreeSChk` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
@@ -919,41 +919,41 @@ The labels and branches behind every line remain open until individually bound b
 | 6880 | `BBFly` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6881 | `RunBBSubs` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6886 | `KillBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6891 | `HammerEnemyOfsData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6895 | `HammerXSpdData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6898 | `SpawnHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6904 | `SetMOfs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6919 | `NoHammer` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6928 | `ProcHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6952 | `SetHSpd` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6962 | `SetHPos` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6977 | `RunAllH` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6978 | `RunHSubs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6988 | `CoinBlock` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7000 | `SetupJumpCoin` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7014 | `JCoinC` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7025 | `FindEmptyMiscSlot` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7027 | `FMiscLoop` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7033 | `UseMiscS` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7038 | `MiscObjectsCore` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7040 | `MiscLoop` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7053 | `ProcJumpCoin` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7071 | `JCoinRun` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7088 | `RunJCSubs` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7093 | `MiscLoopBack` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7100 | `CoinTallyOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7103 | `ScoreOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7106 | `StatusBarNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7109 | `GiveOneCoin` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7125 | `CoinPoints` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7129 | `AddToScore` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7134 | `GetSBNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7138 | `UpdateNumber` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7145 | `NoZSup` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
-| 7150 | `SetupPowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setuppowerup) |
-| 7163 | `PwrUpJmp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pwrupjmp) |
-| 7175 | `StrType` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strtype) |
-| 7176 | `PutBehind` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putbehind) |
+| 6891 | `HammerEnemyOfsData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6895 | `HammerXSpdData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6898 | `SpawnHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6904 | `SetMOfs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6919 | `NoHammer` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6928 | `ProcHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6952 | `SetHSpd` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6962 | `SetHPos` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6977 | `RunAllH` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6978 | `RunHSubs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6988 | `CoinBlock` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7000 | `SetupJumpCoin` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7014 | `JCoinC` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7025 | `FindEmptyMiscSlot` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7027 | `FMiscLoop` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7033 | `UseMiscS` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7038 | `MiscObjectsCore` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7040 | `MiscLoop` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7053 | `ProcJumpCoin` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7071 | `JCoinRun` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7088 | `RunJCSubs` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7093 | `MiscLoopBack` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../history/M2-T36-misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7100 | `CoinTallyOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7103 | `ScoreOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7106 | `StatusBarNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7109 | `GiveOneCoin` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7125 | `CoinPoints` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7129 | `AddToScore` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7134 | `GetSBNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7138 | `UpdateNumber` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7145 | `NoZSup` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7150 | `SetupPowerUp` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
+| 7163 | `PwrUpJmp` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
+| 7175 | `StrType` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
+| 7176 | `PutBehind` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
 | 7184 | `PowerUpObjHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-powerupobjhandler) |
 | 7202 | `ShroomM` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shroomm) |
 | 7206 | `GrowThePowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-growthepowerup) |

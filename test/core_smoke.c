@@ -1090,7 +1090,8 @@ int main(void)
     game.ram[0x008fU] = 0x30U;
     game.ram[0x00d7U] = 0x60U;
     game.ram[0x0756U] = 0U;
-    mysmb_objects_start_power_up(&game, 0U, 0U);
+    game.ram[0x0039U] = 0U;
+    mysmb_objects_start_power_up(&game, 0U);
     if (game.ram[0x001bU] != 0x2eU || game.ram[0x0073U] != 2U ||
         game.ram[0x008cU] != 0x30U || game.ram[0x00bbU] != 1U ||
         game.ram[0x00d4U] != 0x58U || game.ram[0x0023U] != 1U ||
@@ -1190,9 +1191,11 @@ int main(void)
     if (game.ram[0x0024U] != 0x80U || game.ram[0x001eU] != 0U ||
         game.ram[0x0110U] != 0U) return 1;
     game.ram[0x0756U] = 2U;
-    mysmb_objects_start_power_up(&game, 0U, 0U);
+    game.ram[0x0039U] = 0U;
+    mysmb_objects_start_power_up(&game, 0U);
     if (game.ram[0x0039U] != 1U) return 1;
-    mysmb_objects_start_power_up(&game, 0U, 2U);
+    game.ram[0x0039U] = 2U;
+    mysmb_objects_start_power_up(&game, 0U);
     if (game.ram[0x0039U] != 2U) return 1;
     game.ram[0x0747U] = 0U;
     game.ram[0x0023U] = 0x80U;

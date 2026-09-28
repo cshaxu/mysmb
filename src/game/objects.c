@@ -495,36 +495,6 @@ void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_MISC_X + slot]);
 }
 
-/* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object
- * buffer for the one active power-up. */
-void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,
-                                  mysmb_u8 power_up_type)
-{
-    const mysmb_u8 slot = 5U;
-
-    game->ram[MYSMB_ENEMY_ID + slot] = 0x2eU;
-    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_BLOCK_PAGE + block_slot];
-    game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_BLOCK_X + block_slot];
-    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_ENEMY_Y + slot] =
-        (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + block_slot] - 8U);
-    game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-    game->ram[MYSMB_POWER_UP_TYPE] = power_up_type;
-    if (power_up_type < 2U) {
-        if (game->ram[MYSMB_PLAYER_STATUS] < 2U) {
-            game->ram[MYSMB_POWER_UP_TYPE] = game->ram[MYSMB_PLAYER_STATUS];
-        }
-        else {
-            game->ram[MYSMB_POWER_UP_TYPE] = 1U;
-        }
-    }
-    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0x20U;
-    /* ROM SetupPowerUp queues Sfx_GrowPowerUp for the next audio pass. */
-    game->ram[MYSMB_SQUARE2_SOUND] = 2U;
-}
-
 /* ROM RunPUSubs: once the object has emerged at least six pixels, this
  * runs every frame, including the three GrowThePowerUp frames that do not
  * decrement its Y coordinate. */
@@ -2292,7 +2262,8 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
         mysmb_objects_coin_block(game, slot, 0U);
     }
     else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
-        mysmb_objects_start_power_up(game, slot, power_up_type);
+        game->ram[MYSMB_POWER_UP_TYPE] = power_up_type;
+        mysmb_objects_start_power_up(game, slot);
     }
     else if (is_bumpable != 0U && mysmb_objects_is_vine_block(metatile) != 0U) {
         mysmb_objects_start_vine(game, 5U, slot);

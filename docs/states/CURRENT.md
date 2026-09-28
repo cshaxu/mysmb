@@ -2,30 +2,30 @@
 
 ## Current Work
 
-**M2 T36 S5 is closed at 809 / 1,992: all nine score/HUD nodes proven; S6 power-up initialization is next.**
+**M2 T36 S6 and T36 are closed at 813 / 1,992. Next is the planned source slice receiving PowerUpObjHandler and its successors.**
 
-## M2 T36 S5 Packet
+## M2 T36 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S5, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S4 commit 8500a3a; coordinator accepts transfer-152. |
-| Objective | Complete nine adjacent coin tally, score and HUD handoff nodes. |
-| Non-goals | No status child algorithm repair, endgame algorithm repair or S6 power-up work. |
-| Reference Baseline | 800 / 1,992; nine open labels, all nine expected; maximum 809. Exact sets in proposal and admission JSON. |
-| Candidate Proposal | [Score and HUD chain](../proposals/m2/misc-object-chains.md#s5-admission-coin-tally-score-and-hud-handoff). |
-| Files And ABI Surface | Shared score owner, status child boundary/facades, original callers, tests/recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T36 S6, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S5 commit 62c034e; coordinator accepts transfer-153. |
+| Objective | Complete SetupPowerUp, PwrUpJmp, StrType and PutBehind as one initialization chain. |
+| Non-goals | No PowerUpObjHandler, movement/collision child or other enemy initialization repair. |
+| Reference Baseline | 809 / 1,992; one mapped and three open; four expected, maximum 813. |
+| Candidate Proposal | [Power-up initialization](../history/M2-T36-misc-object-chains.md#s6-admission-complete-power-up-initialization). |
+| Files And ABI Surface | Shared power_up_init owner, objects API/caller, enemy initializer incoming edge, tests/recorder, build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original tables, branches, writes, direct child arguments and return slot; separate actual-child diagnostics, focused tests and three builds. |
-| Expected Markers | Fresh player reads, hundred-coin life and sound, modifier order, original HUD selector and zero suppression, ObjectOffset return. |
-| Asset Needs | Existing local owner ROM/listing only; bounded ignored evidence and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Nine exact dispositions, both proof tracks, caller sweep, remaining child limits and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, altered reference execution, masked mismatch or platform gameplay. |
-| Exit Criteria | Every received label proven or accepted transfer; tracker, evidence and artifacts agree. |
-| Original Owner Request | Faithful original logic/call structure in shared native C for DOS16/Win32/x64, source order and chain delivery. |
-| Similar-Issue Sweep | Coin, floating score, brick, flagpole, title/status and endgame callers; distinguish AddToScore from EndAreaPoints. |
+| Verification | Original NMI head-bump full/tail snapshots, exact branch/write comparison, independent native tests and three builds. |
+| Expected Markers | Fixed slot five, original coordinate wrap, state/flag/box order, unsigned type/status comparisons, LSR, priority and sound. |
+| Asset Needs | Existing local ROM/listing only, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Four exact dispositions, dual proof, caller sweep, tracker and artifacts; T36 cross-chain review. |
+| Stop Conditions | Unadmitted actor repair, altered reference execution, hidden mismatch or platform game logic. |
+| Exit Criteria | All four received nodes proven or accepted transfer; evidence, accounting and outputs agree. |
+| Original Owner Request | Faithful original-ROM call structure and logic in shared native C for DOS16/Win32/x64; source order and chain delivery. |
+| Similar-Issue Sweep | Every power-up initializer caller, type writer, residual enemy-table entry and platform source. |
 
-S4 closed six misc lifetime nodes in 8500a3a. S5 resolves the S3 hundred-coin sound gap with 96/96 actual-child matches; prior evidence remains unchanged.
+S5 closed nine score/HUD nodes in 62c034e and resolved the S3 sound gap.
 
 ## T35 closure summary
 

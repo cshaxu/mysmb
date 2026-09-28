@@ -544,7 +544,8 @@ int main(void)
     game.ram[0x0076U] = 1U;
     game.ram[0x008fU] = 0x30U;
     game.ram[0x00d7U] = 0x40U;
-    mysmb_objects_start_power_up(&game, 0U, 0U);
+    game.ram[0x0039U] = 0U;
+    mysmb_objects_start_power_up(&game, 0U);
     for (step = 0U; step < 24U; ++step) {
         game.ram[0x0009U] = step;
         mysmb_objects_step_power_up(&game);
