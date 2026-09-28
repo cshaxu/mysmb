@@ -431,3 +431,118 @@ is complete, no received node is deferred, and no downstream node is credited.
 Progress increases 699 -> 727 / 1,992. Ledger and documentation checks pass.
 S3 closes; T33 remains open. Local artifacts use the owner-
 authorized delivery exception and are not redistribution/qualification claims.
+
+## S4 admission: animation timing and friction
+
+S3 is closed at 727 / 1,992. Transfer-141 accepts the exact twelve open S4
+labels in the plan from T23 S5. Scope twelve, expected twelve, maximum 739.
+PlayerAnimTmrData through SetAbsSpd forms this final T33 source chain, with
+existing shared game/player.c as sole owner. Proven ground/swim callers
+supply SavedJoypadBits and directional input; no terrain or world-motion
+implementation is admitted here.
+
+Source-first proof covers the three-byte timer table, animation thresholds,
+running-speed/skid writes, collision-filtered direction, fractional carry or
+borrow, wrapped CMP negative-flag clamps and absolute-speed result. Original
+NMI observations capture animation/friction child entries and natural returns;
+the real C functions must match persistent RAM directly. Independent tests
+cover byte boundaries and retained state. Three-target builds and artifacts,
+platform purity and the T33 cross-S matrix complete delivery. The legacy
+core_smoke entry fixture remains explicit debt, not a passing full-suite gate.
+
+The original clamp tests the N bit of a wrapped subtraction, not C signed
+comparison or a sign-gated unsigned inequality. Audit both clamps and their
+successor paths, including additive clamp bypassing XSpdSign. Animation data
+and all source labels keep individual evidence. No unrelated repair is
+admitted by the integrated matrix. Owner ROM/listing remain local inputs;
+all generated evidence stays in ignored build/m2-t33-s4, four MB per retained
+batch and twenty seconds per recorder run, with S4 cleanup ownership through
+T review. DOS is link-only. Closure requires twelve exact dispositions and
+both verification tracks; T closure additionally reviews all four chains.
+
+## S4 original animation and friction proof
+
+The original slice $B58C-$B623 binds PlayerAnimTmrData and both leaf routines.
+All twelve scoped contracts are proven below; no other node receives credit.
+The friction clamp now tests the negative bit of the wrapped eight-bit
+subtraction. Its additive clamp also follows the original jump directly to
+SetAbsSpd. Existing animation control already matches the original branches.
+
+| Node | Address | Proven contract |
+| --- | --- | --- |
+| PlayerAnimTmrData | $B58C | Three animation delay bytes 2/4/7 bound to ROM |
+| GetPlayerAnimSpeed | $B58F | Absolute-speed thresholds and fast-path running write |
+| ChkSkid | $B59E | Mask A; controller/moving-direction comparison |
+| SetRunSpd | $B5AD | Write zero or current speed to RunningSpeed |
+| ProcSkid | $B5B3 | Low-speed skid changes moving direction and clears speed/force |
+| SetAnimSpd | $B5C5 | Selected animation delay write |
+| ImposeFriction | $B5CC | Collision filter and released-input sign dispatch |
+| JoypFrict | $B5DB | Right-bit precedence via LSR |
+| LeftFrict | $B5DE | Fractional addition; wrapped CMP/BMI; clamp skips sign conversion |
+| RghtFrict | $B5FC | Fractional subtraction/borrow; wrapped CMP/BPL |
+| XSpdSign | $B617 | Negative-speed absolute conversion |
+| SetAbsSpd | $B620 | Store resulting absolute speed and return |
+
+Sixty-four ordinary-NMI scenarios capture both animation and friction entries
+and natural stack returns. Actual C calls match 1,784 persistent RAM bytes
+in all 256 comparisons across x86/x64, with no substituted child returns.
+All eleven code labels execute and the three timer bytes match owner ROM.
+Twelve conditional instructions have both outcomes. BMI at $B5D9 has only
+its taken outcome: preceding BPL at $B5D7 consumed N=0 and no intervening
+instruction changes it. Both original opcodes and that unreachable edge are
+explicitly checked. Scratch $00-$07 and hardware stack are outside native ABI.
+
+Reproduce movement fixture cases 182-245 with logical directional input
+floor((case-182)/8) modulo four, reversed for reference serial bit order.
+The fixture varies absolute/signed speed, force, collision and facing at
+ordinary NMI entry. Record one frame with warmup one, movement snapshot and
+control-children options, repeat with PC coverage and without observation.
+Run player_animation_friction_snapshot_check against each original call file,
+then verify_player_animation_friction_snapshots.py over the batch. All three
+frame outputs match; retained raw evidence is 3,196,780 bytes.
+
+Independent tests pass 524,288 fractional/clamp cases and 131,072 animation
+input cases on each width. Both full builds compile all 67 shared units as
+strict C90, self-tests and hidden window/message probes pass, and DOS16 links.
+Physics, climbing and player-route regressions pass on both widths. Additional
+legacy core_smoke retains its previously recorded entrance-fixture failure;
+no full-suite pass is claimed. Platform purity passes. Similar-issue sweep
+finds both clamp paths in the single ImposeFriction owner, and original
+animation/friction calls only in the proven ground/air state owner. No host
+logic changes or alternate algorithm were introduced.
+
+## T33 integrated checkpoint
+
+The reusable control/movement matrix now includes five direct movement routes
+in addition to the nineteen T32 routes. It runs four frames per route and
+requires all seventeen original caller joins, including movement dispatch,
+climbing, physics, animation and friction. The first attempt with only the
+old routes exposed missing climbing/animation/friction execution because
+those fixtures froze movement; adding explicit unfrozen movement cases fixes
+the coverage gap instead of removing the assertions.
+
+All 24 x86/x64 outputs are identical. Nineteen whole four-frame routes match:
+control 0/5; transition 6/14/26; modes 0/2/5/7/10/13/18; end-level 0/2/4;
+movement 0/19/37/109. Five routes retain differences. Transition 0 and
+end-level 12/13/28 differ only at output field 4402 on frame two (original
+A0, native 30), the existing NMI/snapshot control-bit debt. Movement 27's
+swimming route first differs at RAM $021D/$070D/$0781, with no first-frame
+output differences; this remains the existing player-OAM/swimming-animation
+custody (T16 S4), not a physics-match claim. No masked byte or shifted frame
+is used. Integrated raw evidence is 1,641,526 bytes in its own ignored batch.
+
+Run verify_player_mode_chain_regression.py with the reference and both native
+recorders built from the final unchanged game objects. This matrix does not
+certify full gameplay. All four T33 chains now have scoped proof; final node
+registration accepts 12/12 expected matches: every S4 row above is complete,
+none is deferred, and no downstream node is credited. Global progress moves
+727 -> 739 / 1,992. S4/T33 final closure review remains active after P1.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258669 | 2ae7e1cb3551810497213bd78d07384f9529e28e291cebe817ec2dedc1864855 |
+| mysmb32.exe | 325271 | 43947f23168214f6a1ec5ac5c342aa49fb3cd8a3a089360696dbac395cff4210 |
+| mysmb64.exe | 332810 | 5e1d3c067f9ac016944563de406c663271e6316eed79edc2a89e2c5d0127fa6b |
+
+DOS remains link-only; local artifacts use the owner-authorized delivery
+exception and are not redistribution or complete-game qualification.

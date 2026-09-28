@@ -343,8 +343,14 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
             (mysmb_u8)(old_force + game->ram[MYSMB_FRICTION_LOW]);
         carry = game->ram[MYSMB_PLAYER_X_FORCE] < old_force ? 1U : 0U;
         speed = (mysmb_u8)(speed + game->ram[MYSMB_FRICTION_HIGH] + carry);
-        if (speed < 0x80U && speed >= game->ram[MYSMB_MAX_RIGHT]) {
+        /* CMP/BMI observes bit 7 of the wrapped subtraction, not an
+         * overflow-corrected signed comparison. The clamp jumps directly
+         * to SetAbsSpd, bypassing XSpdSign. */
+        if (((mysmb_u8)(speed - game->ram[MYSMB_MAX_RIGHT]) & 0x80U) == 0U) {
             speed = game->ram[MYSMB_MAX_RIGHT];
+            game->ram[MYSMB_PLAYER_X_SPEED] = speed;
+            game->ram[MYSMB_PLAYER_X_ABSOLUTE] = speed;
+            return;
         }
     }
     else {
@@ -353,7 +359,7 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
             (mysmb_u8)(old_force - game->ram[MYSMB_FRICTION_LOW]);
         carry = old_force < game->ram[MYSMB_FRICTION_LOW] ? 1U : 0U;
         speed = (mysmb_u8)(speed - game->ram[MYSMB_FRICTION_HIGH] - carry);
-        if (speed >= 0x80U && speed < game->ram[MYSMB_MAX_LEFT]) {
+        if (((mysmb_u8)(speed - game->ram[MYSMB_MAX_LEFT]) & 0x80U) != 0U) {
             speed = game->ram[MYSMB_MAX_LEFT];
         }
     }

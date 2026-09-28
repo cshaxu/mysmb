@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 727 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 739 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,130 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,118 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **727 / 1,992 (36.50%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **739 / 1,992 (37.10%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T33 S3 P1](../proposals/m2/player-movement-state.md#s3-original-physics-proof)
-proves 28 physics code/data nodes with 146 actual-native comparisons, all
-reachable branch outcomes and nine bound tables. The earlier S1 matrix now
-matches 74/74. Legacy core_smoke still fails; no full-game claim is made.
+Latest task review: [T33 S4 P1](../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof)
+proves twelve animation/friction nodes with 256 actual-native comparisons.
+The cross-chain matrix has nineteen matching and five differing four-frame
+routes; no full-game completion is claimed. T33 final review remains pending.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (727)
+## Completed matches (739)
 
 | ROM line | Node |
 | ---: | --- |
@@ -696,6 +696,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6195 | `GetXPhy` |
 | 6201 | `GetXPhy2` |
 | 6213 | `ExitPhy` |
+| 6217 | `PlayerAnimTmrData` |
+| 6220 | `GetPlayerAnimSpeed` |
+| 6229 | `ChkSkid` |
+| 6236 | `SetRunSpd` |
+| 6238 | `ProcSkid` |
+| 6246 | `SetAnimSpd` |
+| 6252 | `ImposeFriction` |
+| 6260 | `JoypFrict` |
+| 6262 | `LeftFrict` |
+| 6274 | `RghtFrict` |
+| 6285 | `XSpdSign` |
+| 6290 | `SetAbsSpd` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

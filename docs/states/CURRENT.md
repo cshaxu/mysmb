@@ -2,31 +2,30 @@
 
 ## Current Work
 
-**M2 T33 S3 is closed at 727 / 1,992: all 28 physics nodes proven; S4 admission is next.**
+**M2 T33 S4 has twelve proven nodes at 739 / 1,992; final S4/T33 review remains active.**
 
-S1 and S2 are closed with 23 nodes proven. Physics gaps retained by their
-actual-child regressions now belong to this admitted S3 chain.
+S1-S3 are closed with 51 nodes proven. The final twelve-node chain follows.
 
-## M2 T33 S3 Packet
+## M2 T33 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T33 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S2; coordinator accepts transfer-140. |
-| Objective | Restore and prove JumpMForceData through ExitPhy: physics tables and climbing/jump/swim/horizontal parameter initialization. |
-| Non-goals | No S4 animation/friction algorithm, world movement, terrain or renderer repairs. |
-| Reference Baseline | 699 / 1,992; 28 unique open labels, expected 28, maximum 727. Exact names in proposal S3 and ledger. |
-| Candidate Proposal | [Physics chain](../proposals/m2/player-movement-state.md#s3-admission-physics-tables-and-initialization). |
-| Files And ABI Surface | Shared player physics helpers, focused tests/reference recorder, build registration and three local artifacts. |
+| Identifier Mode | M2 T33 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S3; coordinator accepts transfer-141. |
+| Objective | Prove PlayerAnimTmrData through SetAbsSpd, restoring original animation and friction branches. |
+| Non-goals | No terrain, world movement, renderer or unadmitted child repairs. |
+| Reference Baseline | 727 / 1,992; twelve unique open labels, expected twelve, maximum 739. Exact names in proposal S4 and ledger. |
+| Candidate Proposal | [Animation/friction chain](../proposals/m2/player-movement-state.md#s4-admission-animation-timing-and-friction). |
+| Files And ABI Surface | Shared animation/friction helpers, focused tests/recorder, build registration, integrated matrix and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
 | Verification | Original tables/branches/read-write audit and natural NMI entry-return comparisons; independent native tests, builds and purity. |
-| Expected Markers | Nine data tables; climb animation sign; jump eligibility and origin; water surface; sound; speed/friction thresholds and entrance override. |
+| Expected Markers | Timer data; skid and running state; collision input; fractional carries; wrapped CMP negative bit; absolute speed. |
 | Asset Needs | Existing owner-local ROM/listing; three local EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | 28 exact dispositions, separate ROM and operational evidence, retained failures and artifact hashes. |
+| Reporting Requirements | Twelve exact dispositions, dual verification, integrated residuals and three artifact identities. |
 | Stop Conditions | Unadmitted child repair, original PC/stack/ROM mutation, masked difference or platform gameplay. |
 | Exit Criteria | All received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
 | Original Owner Request | Complete original-ROM logic and structure in shared 16/32/64-bit C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All physics helper definitions/callers, table consumers and duplicate parameter/sound writers. |
+| Similar-Issue Sweep | Every animation/friction definition/caller and speed-clamp path; original accumulator semantics. |
 
 ## T32 closure summary
 

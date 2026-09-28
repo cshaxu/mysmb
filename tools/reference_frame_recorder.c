@@ -1902,7 +1902,7 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
-                else if (t26_fixture >= 905u && t26_fixture <= 1086u)
+                else if (t26_fixture >= 905u && t26_fixture <= 1150u)
                     mysmb_player_movement_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 905u));
                 else if (t26_fixture >= 876u && t26_fixture <= 904u)
@@ -2133,7 +2133,7 @@ int main(int argument_count, char **arguments)
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
         if ((background_snapshot >= 4u && background_snapshot <= 8u) && movement_snapshot_path != NULL &&
-            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 1086u) {
+            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 1150u) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry)) {
                 memcpy(movement_snapshots, driver->machine->ram, 2048u);

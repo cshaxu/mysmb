@@ -838,18 +838,18 @@ The labels and branches behind every line remain open until individually bound b
 | 6195 | `GetXPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
 | 6201 | `GetXPhy2` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
 | 6213 | `ExitPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6217 | `PlayerAnimTmrData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeranimtmrdata) |
-| 6220 | `GetPlayerAnimSpeed` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getplayeranimspeed) |
-| 6229 | `ChkSkid` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkskid) |
-| 6236 | `SetRunSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrunspd) |
-| 6238 | `ProcSkid` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procskid) |
-| 6246 | `SetAnimSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setanimspd) |
-| 6252 | `ImposeFriction` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposefriction) |
-| 6260 | `JoypFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-joypfrict) |
-| 6262 | `LeftFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftfrict) |
-| 6274 | `RghtFrict` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rghtfrict) |
-| 6285 | `XSpdSign` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xspdsign) |
-| 6290 | `SetAbsSpd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setabsspd) |
+| 6217 | `PlayerAnimTmrData` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6220 | `GetPlayerAnimSpeed` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6229 | `ChkSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6236 | `SetRunSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6238 | `ProcSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6246 | `SetAnimSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6252 | `ImposeFriction` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6260 | `JoypFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6262 | `LeftFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6274 | `RghtFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6285 | `XSpdSign` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6290 | `SetAbsSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
 | 6298 | `ProcFireball_Bubble` | T20: `src/game/fireball/fireball_spawn.c` | audited; revalidation required | [D1 snapshot; current body changed](m2-t24-s1-full-node-census.md#node-procfireball_bubble) |
 | 6330 | `ProcFireballs` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procfireballs) |
 | 6336 | `ProcAirBubbles` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procairbubbles) |
