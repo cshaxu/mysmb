@@ -1400,10 +1400,16 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
-            else if (t26_fixture >= 741U && t26_fixture <= 775U)
+            else if (t26_fixture >= 741U && t26_fixture <= 775U) {
                 mysmb_entrance_fixture(game.ram, (mysmb_u8)(t26_fixture - 741U));
-            else if (t26_fixture >= 717U && t26_fixture <= 740U)
+                /* These source-RAM fixtures replace the NMI input mirror.
+                 * Keep its native cached representation at the same input. */
+                game.ppu_control_0 = game.ram[0x0778U];
+            }
+            else if (t26_fixture >= 717U && t26_fixture <= 740U) {
                 mysmb_scroll_fixture(game.ram, (mysmb_u8)(t26_fixture - 717U));
+                game.ppu_control_0 = game.ram[0x0778U];
+            }
             else if (t26_fixture >= 652U && t26_fixture <= 716U)
                 mysmb_engine_normal_fixture(game.ram, (mysmb_u8)(t26_fixture - 652U));
             else if (t26_fixture >= 642U && t26_fixture <= 651U)

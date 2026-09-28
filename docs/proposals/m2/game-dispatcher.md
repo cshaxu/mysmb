@@ -1644,3 +1644,61 @@ progress and documentation gates pass at 628 / 1,992. Platform purity passes.
 Raw evidence is 991,727 bytes within the 2 MB cap, retained under the ignored
 S4 directory through T review. S4's packet remains active until T31's final
 cross-chain review is complete; no successor task is admitted.
+
+## T31 cross-chain review scope
+
+The final review reuses S4's unchanged 62-source build and three packaged
+artifacts. Under the active S4 packet, run four-frame ordinary-NMI routes:
+game-entry cases 0/1/2/3, engine-tail cases 0/2/3, scroll cases 0/5/19,
+and entrance cases 0/7/18. Each route runs the original ROM and both native
+widths, with a twenty-second limit per recorder. Retain all persistent-RAM
+and output differences as diagnostics, with no full-game match claim.
+This matrix adds no node credit and does not reopen unrelated child repairs.
+Outputs remain in the ignored S4 directory under its existing 2 MB raw cap
+and cleanup owner; recheck total size after recording. Original coverage
+must demonstrate the dispatcher/engine and selected scroll/entrance joins.
+
+## T31 cross-chain results
+
+The [matrix runner](../../../test/verify_dispatch_chain_regression.py) accepts
+the ignored evidence directory and owner ROM as its two arguments. It reuses
+the final native recorders and original reference recorder. Thirteen routes
+run four complete frames each; x86 and x64 files are identical on all routes.
+Every persistent RAM byte (including both PPU mirrors) and every recorded
+output byte is compared. CPU scratch and hardware call-stack storage remain
+outside the native ABI comparison. No discrepancies are masked.
+
+| Joined route | Original/native result across four frames |
+| --- | --- |
+| GameMode -> GameCoreRoutine -> GameRoutines -> GameEngine, controller cases 2/3 | All persistent RAM and recorded output match on both widths. |
+| Engine-tail cases 0/2/3 | All four frames match on both widths. |
+| VerticalPipeEntry -> ScrollHandler -> GameEngine, scroll cases 0/5/19 | All four frames match on both widths, including mirror and PPU output. |
+| PlayerEntrance -> PlayerRdy -> GameEngine, entrance case 0 | All four frames match on both widths. |
+| Life-loss exits, game-entry cases 0/1 | First frames match. Sample 2 retains the known visible PPU control-bit difference; case 1 also differs in music cursor $f7 at sample 1. |
+| Pipe NextArea and vine-to-control, entrance cases 7/18 | Actual native child discrepancies remain and propagate across frames; not certified as full routes. |
+
+Nine routes fully match; four remain diagnostic failures. Original PC
+coverage confirms GameMode/GameCoreRoutine/GameRoutines joins, the engine
+early return after life loss/NextArea, repeated engine entry for continuing
+play, the pipe scroll call and entrance-to-player-control transition.
+These results support the scoped caller proofs, not full-game equivalence.
+
+The first matrix run exposed a fixture representation mismatch: source-RAM
+scroll/entrance fixtures replace $0778, but the C recorder left its native
+cached PPU-control input at the bootstrap value. Only those fixture adapters
+now initialize both representations before NMI. No game or platform code
+changed and no output is rewritten. The before-fix neutral summary remains
+local; the corrected run removes those input-only mirror discrepancies.
+
+The [existing-debt receipt](../../states/TODO.md#translation-debt) retains
+PPU/music residuals with their current source owners; prior S4 receipts retain
+the pipe/vine child gaps. T31 received 94 distinct labels across all S runs:
+88 proven, six previously accepted unfinished enemy-caller transfers to
+T19 S5. Its original 31 planned nodes are all proven within their own
+contracts. No additional node credit is awarded by this review (628 / 1,992).
+
+Raw evidence totals 1,838,717 bytes, below the admitted 2 MB cap. Current
+shared binaries and their three hashes are unchanged from S4/P1 because the
+only C change is in the recorder fixture adapter. The same three packaged
+EXEs remain the review results; DOS remains link-only. Final task disposition
+and successor admission must preserve all these limits and failure receipts.

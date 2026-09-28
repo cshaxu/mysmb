@@ -2,6 +2,8 @@
 
 ## Translation Debt
 
+- [ ] **T31 cross-chain residual receipt:** final four-frame game-entry 0/1 routes repeat the known cold-screen PPU-control bit difference at sample 2; game-entry 1 also differs at `MusicOffset_Square2` (`$f7`) at sample 1. NMI/snapshot review remains with the existing T24 S2 custody path, and music sequencing with M2 Td S4's existing audio custody until source-order admission. Pipe/vine failures remain with T23 S5 and T16 S4. These are investigation responsibilities, not new root-cause certificates or concurrent admissions. [Matrix and exact limits](../proposals/m2/game-dispatcher.md#t31-cross-chain-results).
+
 - [x] **GameCoreRoutine post-child return:** T31 S1 restores the original task reload/early return; surviving/final life-loss NMI routes match. [Entry closure](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).
 - [ ] **Engine palette caller and legacy suite debt (`TODO(High)`):** T31 S2 P1 removes the extra palette command at $0300-$0307 and the timer buffer assertions now pass. The old local-area suite later fails its warp-text fixture, while core retains a ROM-free block replacement expectation failure; those fixture debts remain with their existing source owners. No suite pass is claimed. [Evidence](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).
 - [ ] **Cold-screen snapshot control bit (`TODO(High)`):** unchanged native PPU-control bit 7 differs from original on Start-route samples 1/202 and idle sample 1; persistent game state and all other recorded output match. Admission path: NMI/snapshot corrective review after the admitted source-order chain; T31 entry proof does not certify this field. [Evidence](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).

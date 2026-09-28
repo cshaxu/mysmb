@@ -2,12 +2,14 @@
 
 ## Current Work
 
-**M2 T31 S4 has ten proven caller nodes at 628 / 1,992. Its packet remains active for the final T31 cross-chain review.**
+**M2 T31 S4 has ten proven caller nodes at 628 / 1,992. The cross-chain review is complete; its packet remains active until task closure and successor admission.**
 
 All three artifacts are refreshed. The original vector and entrance caller
 contracts are proven; 26 production whole-call failures remain explicitly
 with T23 S5 and T16 S4. DOS remains link-only. T31 still requires its
-cross-chain review; no next task is admitted.
+closure/next-admission transition; no next task is admitted. The final matrix
+has nine fully matching routes and four retained child/output diagnostics;
+all thirteen are byte-identical across x86/x64.
 
 ## M2 T31 S4 Packet
 

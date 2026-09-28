@@ -17,7 +17,7 @@ with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
 Global progress is 628 / 1,992 after T31 S4 proves its ten entry/dispatch
 caller nodes. S4's implementation is complete; its packet remains active
-for T31's final cross-chain review.
+for T31's closure/next-admission transition after completed cross-chain review.
 Production child failures stay with existing T23 S5 and T16 S4; the six
 unfinished S2 enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
