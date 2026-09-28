@@ -395,7 +395,7 @@ The labels and branches behind every line remain open until individually bound b
 | 2685 | `InitializeArea` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2690 | `ClrTimersLoop` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2697 | `StartPage` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
-| 2705 | `SetInitNTHigh` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
+| 2705 | `SetInitNTHigh` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
 | 2728 | `SetSecHard` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2729 | `CheckHalfway` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
 | 2733 | `DoneInitArea` | M2 T28 S8 shared initialization owner | ROM-match complete | [T28 S8 closure](../../proposals/m2/t28-area-output-bootstrap.md#s8-closure-initialization-bootstrap-chain) |
@@ -615,8 +615,8 @@ The labels and branches behind every line remain open until individually bound b
 | 4313 | `GetLrgObjAttrib` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
 | 4326 | `GetAreaObjXPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
 | 4336 | `GetAreaObjYPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
-| 4349 | `BlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferaddr) |
-| 4353 | `GetBlockBufferAddr` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockbufferaddr) |
+| 4349 | `BlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
+| 4353 | `GetBlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
 | 4376 | `AreaDataOfsLoopback` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |
 | 4381 | `LoadAreaPointer` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadareapointer) |
 | 4384 | `GetAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareatype) |

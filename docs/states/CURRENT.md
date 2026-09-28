@@ -2,32 +2,32 @@
 
 ## Current Work
 
-**M2 T30 S12 is closed at 482 / 1,992; DrawPipe is restored to ROM-match complete.**
+**M2 T30 S13 is closed at 484 / 1,992; all three scoped nodes match.**
 
-The corrected tail passes 32 original-ROM routes and all area regressions.
-Three artifacts are refreshed. No S is active; BlockBufferAddr begins the
-next unadmitted source-order chain.
+BlockBufferAddr and GetBlockBufferAddr are complete; SetInitNTHigh is restored
+after its page-parity repair. Three EXEs are refreshed. No S is active; the
+next unadmitted source chain starts at AreaDataOfsLoopback.
 
-## M2 T30 S12 Packet
+## M2 T30 S13 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S12, continuation implementing queued DrawPipe correction. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-109 accepts DrawPipe from T29 S9. |
-| Objective | Restore DrawPipe top/shaft/height/tail sequence; one named node. |
-| Non-goals | No actor runtime, platform gameplay, block-buffer changes, or unrelated node credit. |
-| Reference Baseline | 481 / 1,992; DrawPipe audited mismatch; expected one, maximum 482. |
+| Identifier Mode | M2 T30 S13, continuation in source order. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-110 from T18 S4 and corrective transfer-111 from T28 S8. |
+| Objective | Complete BlockBufferAddr and GetBlockBufferAddr; restore SetInitNTHigh page parity as the admitted producer dependency. |
+| Non-goals | No collision policy redesign, area-pointer successor, platform game logic or unrelated node credit. |
+| Reference Baseline | Revised 481 / 1,992 after revoking SetInitNTHigh; two open nodes plus one mismatch; expected three, maximum 484. |
 | Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area.c, pipe/area tests, local recorders, node records and three EXEs. |
-| Applicable Rules | Task Reading Set; execution, architecture, coding, documentation and source policy. |
-| Verification | Original DrawPipe instruction/caller audit; immutable-ROM height/usage/side routes; C90 native matrix, x86/x64, DOS16, purity, startup and packaging. |
-| Expected Markers | Unconditional top write; byte row increment; original table selector; height zero becomes $ff, never a bottom-fill policy; UnderPart controls exit. |
-| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS MZ is build evidence only. |
-| Reporting Requirements | Named disposition, both evidence tracks, expected/actual count, hashes and transfer. |
-| Stop Conditions | Unmatched source write/order, missing route, unadmitted dependency or platform gameplay. |
-| Exit Criteria | DrawPipe passes both tracks and node records agree, or exact unfinished transfer. |
-| Original Owner Request | Full original-ROM logic shared by all three platforms; node-level checklist and chain delivery. |
-| Similar-Issue Sweep | Vertical pipe table readers and height/row early exits; distinguish reachable pipe rows from row-12 special dispatch. |
+| Files And ABI Surface | Shared area helper/header, world collision consumers, tests and recorders, node records and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
+| Verification | ROM source/caller audit, 32-column parser and sixteen InitializeArea routes; independent C90/collision tests, x86/x64, DOS16 link, purity, startup and packaging. |
+| Expected Markers | Exact table and 32 addresses, high-before-low scratch writes, byte low addition and both original caller families. |
+| Asset Needs | Three refreshed tracked EXEs under owner mandate; DOS is link evidence only. |
+| Reporting Requirements | Exact node disposition, dual evidence, counts, transfer and artifact hashes. |
+| Stop Conditions | Unmatched source semantics, missing route, unadmitted dependency or platform gameplay. |
+| Exit Criteria | All three labels proven by both tracks with matching tracker, or exact unfinished disposition. |
+| Original Owner Request | Original-ROM control/data structure, portable shared C and node-level accountability. |
+| Similar-Issue Sweep | All block-buffer address builders and scratch consumers; classify legacy helpers without expanding collision policy. |
 
 ## Retained M2 T15 summary
 

@@ -227,7 +227,8 @@ void mysmb_area_initialize(struct mysmb_game *game)
     }
     game->ram[MYSMB_AREA_NT_HIGH] = (start_page & 1U) != 0U ? 0x24U : 0x20U;
     game->ram[MYSMB_AREA_NT_LOW] = 0x80U;
-    game->ram[MYSMB_AREA_BLOCK_COLUMN] = (mysmb_u8)(start_page << 4U);
+    /* SetInitNTHigh shifts the parity already selected by StartPage. */
+    game->ram[MYSMB_AREA_BLOCK_COLUMN] = (mysmb_u8)((start_page & 1U) << 4U);
     game->ram[MYSMB_AREA_OBJECT_LENGTH] = 0xffU;
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 1U)] = 0xffU;
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 2U)] = 0xffU;
@@ -902,9 +903,8 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
 
     /* RendBBuf/ChkMTLow/StrBlock: ProcessAreaData has changed the staging
      * column, so qualify that resulting value against BlockBuffLowBounds. */
-    column = (mysmb_u8)(game->ram[MYSMB_AREA_BLOCK_COLUMN] & 0x1fU);
-    address = (mysmb_u16)(column < 16U ? 0x0500U + column :
-                          0x05d0U + (column - 16U));
+    column = game->ram[MYSMB_AREA_BLOCK_COLUMN];
+    address = mysmb_area_get_block_buffer_address(game, column);
     for (row = 0U; row < 13U; ++row) {
         metatiles[row] = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
         bound_index = (mysmb_u8)(metatiles[row] >> 6U);

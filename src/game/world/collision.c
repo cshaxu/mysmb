@@ -1,4 +1,5 @@
 #include "game/world/world.h"
+#include "game/area/block_buffer.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
 
@@ -19,7 +20,7 @@ mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
 }
 
 /* Translation of BlockBufferCollision address construction for player offset zero. */
-mysmb_u8 mysmb_world_query_player_block(const struct mysmb_game *game,
+mysmb_u8 mysmb_world_query_player_block(struct mysmb_game *game,
                                   mysmb_u8 x_adder, mysmb_u8 y_adder,
                                   mysmb_u8 horizontal_contact,
                                   struct mysmb_player_terrain *terrain)
@@ -35,10 +36,9 @@ mysmb_u8 mysmb_world_query_player_block(const struct mysmb_game *game,
     page = (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_PAGE] +
                       (x < game->ram[MYSMB_WORLD_PLAYER_X] ? 1U : 0U));
     column = (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U));
+    address = mysmb_area_get_block_buffer_address(game, column);
     y = (mysmb_u8)(((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
     if ((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
-    address = (mysmb_u16)((column & 0x10U) != 0U ? 0x05d0U : 0x0500U);
-    address = (mysmb_u16)(address + (column & 0x0fU));
     terrain->block_address_low = (mysmb_u8)(address & 0x00ffU);
     address = (mysmb_u16)(address + y);
     if (address >= 0x0800U) return 0U;
@@ -60,7 +60,7 @@ void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot)
 }
 
 /* ROM BlockBufferChk_Enemy -> BlockBufferCollision. */
-mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
+mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
                                        mysmb_u8 slot, mysmb_u8 adder_index,
                                        mysmb_u8 horizontal_contact,
                                        struct mysmb_enemy_terrain *terrain)
@@ -71,10 +71,11 @@ mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
     if (terrain == 0 || slot >= 6U || adder_index >= 28U) return 0U;
     x = (mysmb_u8)(game->ram[0x0087U + slot] + x_adder[adder_index]);
     page = mysmb_world_collision_page(game->ram[0x006eU + slot], game->ram[0x0087U + slot], x);
+    address = mysmb_area_get_block_buffer_address(game,
+        (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U)));
     y_sum = (mysmb_u8)(game->ram[0x00cfU + slot] + y_adder[adder_index]);
     row = (mysmb_u8)((y_sum & 0xf0U) - 0x20U);
     if (y_sum < 0x20U || row > 0xc0U) return 0U;
-    address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) + (x >> 4U));
     terrain->block_address_low = (mysmb_u8)address;
     address = (mysmb_u16)(address + row);
     if (address >= 0x0800U) return 0U;
@@ -225,10 +226,11 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     x = (mysmb_u8)(game->ram[(mysmb_u16)(0x008dU + slot)] + 4U);
     page = mysmb_world_collision_page(game->ram[(mysmb_u16)(0x0074U + slot)],
                                       game->ram[(mysmb_u16)(0x008dU + slot)], x);
+    address = mysmb_area_get_block_buffer_address(game,
+        (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U)));
     row = (mysmb_u8)(((game->ram[(mysmb_u16)(0x00d5U + slot)] + 8U) & 0xf0U) -
                      0x20U);
-    address = (mysmb_u16)(((page & 1U) != 0U ? 0x05d0U : 0x0500U) +
-                          (x >> 4U) + row);
+    address = (mysmb_u16)(address + row);
     tile = address < 0x0800U ? game->ram[address] : 0U;
     if (tile == 0U || tile == 0x26U || tile == 0xc2U || tile == 0xc3U ||
         tile == 0x5fU || tile == 0x60U) {

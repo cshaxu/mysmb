@@ -39,7 +39,7 @@ struct mysmb_player_terrain {
     mysmb_u8 block_address_low;
     mysmb_u8 block_row_offset;
 };
-mysmb_u8 mysmb_world_query_player_block(const struct mysmb_game *game,
+mysmb_u8 mysmb_world_query_player_block(struct mysmb_game *game,
                                         mysmb_u8 x_adder, mysmb_u8 y_adder,
                                         mysmb_u8 horizontal_contact,
                                         struct mysmb_player_terrain *terrain);
@@ -54,7 +54,7 @@ struct mysmb_enemy_terrain {
     mysmb_u16 block_address;
 };
 /* ROM $e333 BlockBufferChk_Enemy -> BlockBufferCollision. */
-mysmb_u8 mysmb_world_query_enemy_block(const struct mysmb_game *game,
+mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
                                        mysmb_u8 slot, mysmb_u8 adder_index,
                                        mysmb_u8 horizontal_contact,
                                        struct mysmb_enemy_terrain *terrain);

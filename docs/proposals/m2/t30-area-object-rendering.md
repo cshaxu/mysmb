@@ -1194,3 +1194,135 @@ pass and no scoped node remains unfinished. **481 -> 482 / 1,992**; mapped
 incomplete returns to 103 and open remains 1,407. S10's two revoked claims now
 have explicit corrective proofs in S11/S12. The next unadmitted chain begins
 at BlockBufferAddr; M2 remains open.
+
+## T30/S13 admission: shared block-buffer address chain
+
+Entry/data `BlockBufferAddr` (4349, $9bdd) through `GetBlockBufferAddr`
+(4353, $9be1-$9bf5). Both are open. Baseline **482 / 1,992**, expected
+**2**, maximum **484 / 1,992**. Transfer-110 accepts both from T18 S4.
+S12 closes the queued corrections; this resumes the source order after
+GetAreaObjYPosition. AreaDataOfsLoopback is the next unadmitted chain.
+
+Shared owner: area/block_buffer.c with its focused header, used by area.c
+and world/collision.c. The original RendBBuf and BlockBufferCollision
+call sites use one address primitive. Existing player, enemy and fireball
+query adapters may change only to consume this helper and its $06/$07 stores;
+their independent collision policy receives no credit or redesign.
+Audit the four-byte table, high-nibble selector, high-before-low stores,
+low-nibble addition without carrying into the stored high byte, and both
+source callers. Production callers select 0..31; corrupted out-of-contract
+selectors are not ROM-equivalence claims. Sweep duplicate address builders
+and classify obsolete setup utilities separately from original call sites.
+
+ROM-logic evidence: controlled source-RAM ScreenRoutines parser routes over
+all 32 block columns and the original GetBlockBufferAddr PC path; no leaf
+PC, stack, return or ROM-byte edits. Native tests separately exercise all
+32 addresses and collision callers at page carry boundaries, including
+scratch outputs. Build strict C90 x86/x64, DOS16 link, platform purity,
+hidden bounded startup probes and three packaged EXEs once for P1.
+
+Owner NROM and reviewed SMBDIS remain local-only inputs. Raw traces stay
+under ignored build/m2-t30-s13, at most 2 MB, twenty seconds per recorder,
+two samples after one warmup and the existing reference instruction cap.
+S13 owns their cleanup after T review. No node is credited at admission.
+
+### S13 admitted dependency correction
+
+Caller audit found a concrete T28/S8 contradiction: SetInitNTHigh shifts the
+unmasked start page, although original StartPage has already ANDed it with
+one before the four ASLs. Existing area-initialize smoke incorrectly expects
+$30/$20 for pages three/two. The formerly hidden error becomes an invalid
+helper argument when removing RendBBuf's invented mask.
+
+Coordinator revokes only `SetInitNTHigh` (2705) to audited mismatch and accepts
+it from T28 S8 through transfer-111 into this same bounded S. Revised baseline
+**481 / 1,992**, exact scope/expected set: `SetInitNTHigh`, `BlockBufferAddr`,
+`GetBlockBufferAddr`; expected three, maximum **484 / 1,992**. The original
+482 baseline remains the historical admission snapshot, not the revised
+forecast. This explicitly admits the producer repair before changing it.
+
+Add original GameMode task-zero InitializeArea routes for pages zero through
+seven, from HalfwayPage and alternate EntrancePage (sixteen source-RAM
+fixtures). Independently cover all byte pages and both selectors in C.
+Only the page-parity shift and incorrect test expectations may change;
+other InitializeArea nodes receive no additional credit. The existing raw
+trace/process budget remains sufficient. Finish this dependency before P
+packaging; do not restore RendBBuf's invented mask to conceal it.
+
+## S13/P1: block address and initial page proof
+
+Shared leaf: [area/block_buffer.c](../../../src/game/area/block_buffer.c)
+and its focused header. Both area.c and world/collision.c depend on it;
+it calls neither parent. CMake and OpenNT source lists include the leaf.
+
+| Node | Original semantics and C binding | Evidence |
+| --- | --- | --- |
+| SetInitNTHigh, $9012 | area.c preserves StartPage AND-one before four ASLs; stores selected nametable high, $80 low and shifted column parity | Sixteen original InitializeArea paths; 512 byte-page/selector native cases; old code fails twelve page-2..7 routes |
+| BlockBufferAddr, $9bdd | One four-byte low/low/high/high table in block_buffer.c | Four owner-ROM bytes checked at original offset; both rows consumed across all 32 columns |
+| GetBlockBufferAddr, $9be1-$9bf5 | High-nibble selector; high to $07; low nibble plus table low byte to $06 without high-byte carry; pointer return | Entire instruction-byte interval checked; original PC path and 13-row output; direct helper and collision caller tests |
+
+RendBBuf calls the helper after ProcessAreaData without its invented column
+mask. Collision adapters call it after horizontal addition/page carry and
+before the vertical probe. Player/enemy query parameters become mutable
+because $06/$07 are original observable outputs. Original callers reload Y
+immediately and consume neither helper flags nor its final A; X is preserved.
+
+All producer contracts are audited: initialization now writes zero/sixteen,
+parser increment wraps with AND $1f, and collision callers combine page
+parity with the horizontal high nibble. The defensive invalid-column return
+does not claim equivalence for corrupted RAM indexing beyond the source table.
+
+The source-RAM fixture covers 32 ordinary ScreenRoutines parser entries with
+a nonempty immutable pipe record at each physical column, including 15/16
+and 31/0 boundaries. Sixteen GameMode task-zero entries cover pages zero
+through seven from HalfwayPage and alternate EntrancePage. No ROM, PC, stack
+or return-address changes occur. The verifier requires original PC coverage,
+nonvacuous column/init outputs and equality of 1,782 persistent RAM bytes at
+both samples on all 48 routes. Scratch $00-$07, stack and $0778/$0779 are
+reported exclusions; this is not a whole-frame ROM certificate.
+
+Independent native coverage: 32 direct helper cases with whole-RAM write
+canaries, 32 RendBBuf columns with neighbor-buffer guards, and 327,680
+player/enemy/fireball queries over every page/X byte and selected adders.
+Caller scratch pointers are checked. The initialization smoke adds 512
+byte-page/selector cases and corrects old self-confirming $30/$20 expectations.
+
+Negative controls use commit 259f711: old collision consumers fail scratch
+assertions with exit 3; old initialization fails exactly twelve routes at
+$06a0 and matches four page-zero/one controls. A separate 600-tick native
+Start/right/stop run compares its final 120 samples after 480 warmup ticks:
+both versions remain in GameMode; persistent RAM and visible output are
+unchanged, with differences confined to $06/$07. This compares two native
+builds for regression, not additional original-ROM conformance credit.
+
+Similar-issue sweep: world collision builders all use the shared leaf.
+area.c background refresh, one-block emitters and old whole-page terrain
+builders are in the recorded inactive legacy cluster with no frame/root
+caller; they receive no credit. Block replacement/object writers instead
+consume a saved pointer low byte plus row as their source routines require;
+they are not duplicated GetBlockBufferAddr calls. Live column producers are
+initialization and parser increment. Platform sources remain unchanged.
+
+All 22 area smokes plus enemy-block-query pass on x86/x64 (46 program runs),
+with strict C90 compilation, self-tests and hidden two-second window/message
+probes. OpenNT16 links shared code into MZ with the known OLDNAMES warning.
+DOS resource binding/playability remains deferred; MZ is link evidence only.
+Platform purity passes. Recorders have twenty-second deadlines and the
+existing reference instruction cap; ignored raw output remains for T review.
+
+Raw trace total: 1914694 bytes, below 2 MB.
+
+Artifact SHA-256: `mysmb16.exe` `167C33A86D690902C7A99FC72F8A2E1D68DFEE2A9587FEF40DE5D4D673708CFA`.
+
+Artifact SHA-256: `mysmb32.exe` `3621C1B7BCFCEE1FA5090637E1CA13B119FD486974043C61A6B6FCED02478B71`.
+
+Artifact SHA-256: `mysmb64.exe` `3132D7FBFF31C981B82BF34301AAAC9895D27868DC33C869AED5DDCF57975995`.
+
+## S13 closure
+
+Expected/actual: three/three, SetInitNTHigh restored, BlockBufferAddr and
+GetBlockBufferAddr new. No scoped node is unfinished. Revised **481 -> 484 /
+1,992**, net two from the initial 482 snapshot. Mapped incomplete returns to
+103; open falls to 1,405. The producer revocation/receipt/repair is explicit;
+its restored match is not counted as a new label. No S is active; the next
+unadmitted source chain begins at AreaDataOfsLoopback. M2 remains open.
