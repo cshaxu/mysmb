@@ -710,7 +710,7 @@ The labels and branches behind every line remain open until individually bound b
 | 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
 | 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
-| 5336 | `GameEngine` | M2 T31 S2 shared game/engine.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 5336 | `GameEngine` | M2 T31 S2 shared game/engine.c | ROM-match complete | [S2 P4 scoped dual evidence](../../proposals/m2/game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
 | 5339 | `ProcELoop` | M2 T31 S2 shared game/engine_slots.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 5371 | `NoChgMus` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5377 | `CycleTwo` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
@@ -873,7 +873,7 @@ The labels and branches behind every line remain open until individually bound b
 | 6486 | `ResGTCtrl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resgtctrl) |
 | 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
 | 6497 | `ExGTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exgtimer) |
-| 6501 | `WarpZoneObject` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzoneobject) |
+| 6501 | `WarpZoneObject` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P4 scoped dual evidence](../../proposals/m2/game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
 | 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6546 | `NextWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |

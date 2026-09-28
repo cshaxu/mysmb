@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T31 open; S2 active at 576 / 1,992.** Closed T30 precedes this task in the
+**M2 T31 open; S2 active at 578 / 1,992.** Closed T30 precedes this task in the
 source-order recovery plan. S1 is closed; S2 is the only active chain.
 
 ## Exact task scope and chain plan
@@ -978,3 +978,114 @@ trace exclusion or completion credit. Next work must distinguish the admitted
 caller's own proof from unfinished child contracts; platform/Bowser/firebar
 dispatch structure and the stated source-route coverage gaps still prevent
 claiming complete parent equivalence.
+
+Post-P3 implementation, within the existing EnemyJump/DoSide receipt: a
+similar-issue sweep found two production implementations of EnemyJump, one
+inline in EnemyToBGCollisionDet and one used by the star path. Both callers
+now reach the existing shared EnemyJump function, which retains its own
+wrapped Y and speed checks and delegates DoSide to the single existing
+side-check child. This removes the duplicated bottom/side branch bodies;
+it does not repair or certify that child's remaining source differences.
+The star caller uses slot five, so the reused bump child's existing sound
+condition remains disabled as before. No other power-up movement changes.
+
+Both native widths pass strict C90 compilation, the background-entry matrix
+and the existing collision regression including star bounce/status-bar cases.
+All 24 background fixture records per width are byte-identical to P3, including
+the known ROM differences. Temporary incremental builds and neutral results
+use ignored build/m2-t31-s2-p4; two reused raw-record files total 8,842 bytes,
+below a 1 MB diagnostic allowance, with thirty-second bounded commands and
+S2 cleanup ownership. P3 evidence is preserved. This remains uncommitted work
+for the next combined P; published artifacts and completion counts are unchanged.
+
+The [engine caller test](../../../test/engine_caller_smoke.c) adds the missing
+whole-parent ordering check around the existing slot and tail tests. It observes
+actor processing, player offscreen/relative/graphics, block replacement and
+processing, misc, cannons, whirlpools, flagpole, timer/status, color/palette,
+SaveAB and parser order. Across all 256 button bytes and both timer results,
+the palette child changes the button byte so an early SaveAB would fail;
+the parser child requires the saved byte and cleared direction partition.
+Unexpected player/mode calls fail explicitly. All 512 cases pass on each
+native width with strict C90. This test uses observable child contracts,
+not their internal algorithms, and is registered with CTest.
+
+An independent local audit decodes the actual owner's GameEngine instruction
+span and checks all nineteen direct JSR operands, in source order, against
+the reviewed symbol map. This includes the two distinct BlockObjectsCore
+call sites and the conditional music/palette/parser calls. Neutral addresses
+and original coverage counts are recorded in engine-source-calls.json under
+the P4 root. Operand binding and the caller test do not by themselves certify
+the parent or any child: the existing original-route mismatches and dispatch
+structure obligations remain open. No completion count is changed.
+
+Coverage reconciliation: the initial P4 lookup searched only P3 records and
+therefore reported no hit at the GameEngine GetAreaMusic call site $af4f.
+The retained S2/P1 and P2 tail scenarios 1, 7 and 14 each execute that call.
+Combining these existing records covers all nineteen original direct call
+sites; no new fixture is needed. engine-source-calls.json now retains the
+specific contributing record names and counts instead of treating a local
+lookup miss as a program coverage gap.
+
+The current P4 native recorders rerun all fifteen existing engine-tail
+scenarios against the retained original S2 records: thirty width runs match
+all 1,782 persistent RAM bytes and the entire latched output, and x86/x64
+records agree. There are no new exclusions. The result is retained in
+current-tail-equivalence.json under the bounded P4 root. This supersedes any
+claim that music restoration lacks original execution evidence.
+
+Parent-versus-child review for the next combined delivery:
+
+| Boundary | Evidence now available | Remaining obligation |
+| --- | --- | --- |
+| GameEngine body | Nineteen original call operands and executed sites; 512 native ordering cases per width; six-slot/block-order tests; fifteen current tail equivalence routes | Final combined delivery review and node accounting; this evidence does not certify enemy child interiors |
+| RunEnemyObjectsCore / JmpEO | Original vector bytes and current-slot dispatch tests | Distinct large/small platform and Bowser target contracts remain unresolved |
+| RunNormalEnemies / EnemyMovementSubs | Original vector, caller ordering tests and real normal/background routes | Existing graphics and specialized child differences remain explicit; no complete parent claim |
+| EnemyJump / DoSide | One shared implementation; source branch audit, background matrix, star regressions and byte-identical P3 route preservation | Side-check child contract remains uncertified; original routes still retain graphics differences |
+
+This review fixes the evidence index without moving any node, increasing the
+scope, granting child credit or inventing a new S. Published artifacts remain
+the committed P3 versions until the next combined implementation delivery.
+
+## S2/P4: parent scheduler and warp proof
+
+The combined P records two completed labels: GameEngine and WarpZoneObject.
+Global progress moves from 576 to 578 / 1,992; S2 has 36 complete and 32
+incomplete received labels. No node transfers or S/T closure occur.
+
+GameEngine credit covers its own source call order, slot/block scheduling,
+timer/status handoff, music/palette branch tree, SaveAB writes and parser
+tail. The nineteen original direct call operands and executed call sites,
+independent native caller/slot/tail tests and fifteen current original-NMI
+tail comparisons establish that boundary. Existing cannon/environment/slot
+proofs remain applicable. This does not certify the child enemy dispatcher
+or its graphics/collision/movement interiors. Those labels remain open
+independently, with the previously reported differences retained.
+
+WarpZoneObject credit covers both source conditions, the bitwise player-Y
+test, lock clear, eight-bit control increment and shared erase handoff.
+Ten controlled original NMI routes match twenty current native runs on
+1,782 persistent RAM bytes and complete output without added exclusions.
+Both conditional edges, all six slots and control wrap are covered.
+
+The only production edit in this P unifies EnemyJump and its DoSide handoff.
+Both native widths pass the background matrix, star/collision regressions
+and 24-route preservation checks. Strict C90 compilation of all 58 shared
+sources, Windows self-tests, hidden window/message probes and platform-purity
+checks pass. DOS16 compiles and links with the existing toolchain warnings;
+it still lacks owner-data binding and is not claimed playable.
+
+The owner-authorized three artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257465 | 69807ccd48e2e7df6564e82037b0863499aef40871a983711f46968f8ea71083 |
+| mysmb32.exe | 319944 | edf0096ccec2d9c5a5f2268b532ea9d83ae2d6751052a94c43daca0d50503313 |
+| mysmb64.exe | 327180 | f0f7064a73aca167981eed11c29067dd2be868ded69ffa542a4b156be849d22a |
+
+The following exact labels remain unfinished in this S:
+
+`MoveD_EnemyVertically`, `MoveFallingPlatform`, `ContVMove`, `RunEnemyObjectsCore`, `JmpEO`, `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode`, `XSpeedAdderData`, `RevivedXSpeed`, `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`, `SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`, `ChkKillGoomba`, `NKGmba`, `ExEBG`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`, `CInvu`, `YesIn`, `ExEBGChk`, `SubtEnemyYPos`, `EnemyJump`, `DoSide`.
+
+Their previously recorded source/route gaps are not waived by parent credit.
+The P4 evidence stays below its ignored build root and bounded allowance;
+original PC/state are never redirected to a leaf routine.

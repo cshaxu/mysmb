@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 576 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 136 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,280 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 578 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,279 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **576 / 1,992 (28.92%)**. The 136 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **578 / 1,992 (29.02%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S2 P2](../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery)
-completes 27 slot/environment/cannon-child labels. GameEngine, RunEnemyObjectsCore
-and JmpEO remain in active S2 with exact dispatch gaps; no S/T closure is claimed.
+Latest task review: [T31 S2 P4](../proposals/m2/game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof)
+completes GameEngine's own scheduler contract and WarpZoneObject. The remaining
+32 received labels stay incomplete in active S2; no child or S/T closure is implied.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (576)
+## Completed matches (578)
 
 | ROM line | Node |
 | ---: | --- |
@@ -567,6 +567,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5299 | `L_WaterArea3` |
 | 5315 | `GameMode` |
 | 5326 | `GameCoreRoutine` |
+| 5336 | `GameEngine` |
 | 5339 | `ProcELoop` |
 | 5371 | `NoChgMus` |
 | 5377 | `CycleTwo` |
@@ -575,6 +576,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5385 | `UpdScrollVar` |
 | 5398 | `RunParser` |
 | 5399 | `ExitEng` |
+| 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |
 | 6546 | `NextWh` |
@@ -626,7 +628,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (136)
+## Mapped but not yet matched (135)
 
 | ROM line | Node |
 | ---: | --- |
@@ -665,7 +667,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 5336 | `GameEngine` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6702 | `Setup_Vine` |

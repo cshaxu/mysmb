@@ -87800,6 +87800,7 @@
       ],
       "maximumComplete": 551,
       "actualMatches": [
+        "GameEngine",
         "ProcELoop",
         "NoChgMus",
         "CycleTwo",
@@ -87810,7 +87811,7 @@
         "ExitEng"
       ],
       "evidence": "docs/proposals/m2/game-dispatcher.md",
-      "state": "P2-proof-recorded-S2-active-full-dispatch-pending"
+      "state": "P4-parent-and-warp-proof-recorded-S2-active"
     },
     {
       "subtask": "M2 T31 S2",
@@ -89615,8 +89616,10 @@
         "JmpEO"
       ],
       "maximumComplete": 579,
-      "actualMatches": [],
-      "state": "active-full-current-slot-dispatch",
+      "actualMatches": [
+        "GameEngine"
+      ],
+      "state": "P4-parent-and-warp-proof-recorded-S2-active",
       "evidence": "docs/proposals/m2/game-dispatcher.md"
     },
     {
@@ -90208,8 +90211,10 @@
         "WarpZoneObject"
       ],
       "maximumComplete": 577,
-      "actualMatches": [],
-      "state": "active-missing-vector-target",
+      "actualMatches": [
+        "WarpZoneObject"
+      ],
+      "state": "P4-parent-and-warp-proof-recorded-S2-active",
       "evidence": "docs/proposals/m2/game-dispatcher.md"
     },
     {

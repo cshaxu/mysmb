@@ -15,9 +15,9 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-rendering.md#t30-closure),
 with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
-Global progress is 576 / 1,992 after T31 S2 P2 completes 27 additional
-labels. Active S2 retains 37 labels, 34 complete; GameEngine, RunEnemyObjectsCore
-and JmpEO remain incomplete for full per-slot enemy dispatch. Enemy-data and loopback obligations
+Global progress is 578 / 1,992 after T31 S2 P4 completes GameEngine's own
+scheduler contract and WarpZoneObject. Active S2 retains 68 labels, 36 complete;
+32 enemy-vector/normal/movement/background labels remain incomplete. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 
 Every later M2 admission uses the source-order chain table defined by the

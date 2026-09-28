@@ -172,6 +172,7 @@ static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
                                                  mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
+static void mysmb_objects_check_enemy_side(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot);
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
@@ -621,7 +622,6 @@ static void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
 {
     struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
-    mysmb_u8 direction;
 
     /* SubtEnemyYPos: the 6502 comparison is against the wrapped ADC byte. */
     if ((mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) >= 0x44U &&
@@ -633,16 +633,8 @@ static void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
             game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
         }
     }
-    /* DoEnemySideCheck always follows the bottom route, including its
-     * status-bar gate and leading-side selection. */
-    if (game->ram[MYSMB_ENEMY_Y + slot] < 0x20U) return;
-    direction = game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot];
-    tile = mysmb_world_query_enemy_block(game, slot,
-        direction == 1U ? 0x17U : 0x16U, 1U, &terrain) != 0U ? terrain.metatile : 0U;
-    if (mysmb_objects_is_solid_terrain(tile) == 0U) return;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
+    /* DoSide reaches the same side-check child on every return path. */
+    mysmb_objects_check_enemy_side(game, slot);
 }
 /* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
  * movement and EnemyToBGCollisionDet state paths. */
@@ -967,25 +959,15 @@ bump:
  * before entering existing child bodies. Their internal proofs are separate. */
 void mysmb_objects_enemy_background_current(struct mysmb_game *game, mysmb_u8 slot)
 {
-    struct mysmb_enemy_terrain terrain;
     mysmb_u8 id;
-    mysmb_u8 tile;
 
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
         (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) < 0x44U) return;
     id = game->ram[MYSMB_ENEMY_ID + slot];
     if (id == 18U && game->ram[MYSMB_ENEMY_Y + slot] < 0x25U) return;
     if (id == 14U) {
-        /* EnemyJump, reached after the same SubtEnemyYPos guard above. */
-        if ((mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + 2U) >= 3U) {
-            tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
-                                                 &terrain) != 0U ? terrain.metatile : 0U;
-            if (mysmb_objects_is_solid_terrain(tile) != 0U) {
-                mysmb_world_land_enemy(game, slot);
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
-            }
-        }
-        mysmb_objects_check_enemy_side(game, slot);
+        /* Preserve EnemyJump's own repeated Y guard for both callers. */
+        mysmb_objects_step_enemy_jump_terrain(game, slot);
     }
     else if (id == 5U) mysmb_objects_step_hammer_terrain(game, slot);
     else if (id < 7U || id == 18U || id == 0x2eU)
