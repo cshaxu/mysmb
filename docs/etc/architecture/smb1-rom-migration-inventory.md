@@ -97,7 +97,7 @@ The labels and branches behind every line remain open until individually bound b
 - [ ] **Blocks, coins, power-ups, vines and miscellaneous objects**
   - [ ] `BlockObjMT_Updater` — ROM line 7527; C owner/evidence pending
   - [ ] `BumpBlock` — ROM line 7332; C owner/evidence pending
-  - [ ] `CoinBlock` — ROM line 6988; C owner/evidence pending
+  - [x] `CoinBlock` — ROM line 6988; [S2 hammer proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof)
   - [ ] `SetupPowerUp` — ROM line 7150; C owner/evidence pending
   - [ ] `PowerUpObjHandler` — ROM line 7184; C owner/evidence pending
   - [x] `VineObjectHandler` — ROM line 6730; [S1 vine actor proof](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof)
@@ -929,12 +929,12 @@ The labels and branches behind every line remain open until individually bound b
 | 6962 | `SetHPos` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
 | 6977 | `RunAllH` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
 | 6978 | `RunHSubs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
-| 6988 | `CoinBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-coinblock) |
-| 7000 | `SetupJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setupjumpcoin) |
-| 7014 | `JCoinC` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-jcoinc) |
-| 7025 | `FindEmptyMiscSlot` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-findemptymiscslot) |
-| 7027 | `FMiscLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fmiscloop) |
-| 7033 | `UseMiscS` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-usemiscs) |
+| 6988 | `CoinBlock` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7000 | `SetupJumpCoin` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7014 | `JCoinC` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7025 | `FindEmptyMiscSlot` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7027 | `FMiscLoop` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
+| 7033 | `UseMiscS` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
 | 7038 | `MiscObjectsCore` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-miscobjectscore) |
 | 7040 | `MiscLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscloop) |
 | 7053 | `ProcJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-procjumpcoin) |

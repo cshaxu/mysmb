@@ -448,28 +448,6 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
     }
 }
 
-/* ROM $bb51 SetupJumpCoin. */
-void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
-                                   mysmb_u8 x, mysmb_u8 y)
-{
-    mysmb_u8 slot;
-
-    slot = 8U;
-    while (slot > 5U && game->ram[MYSMB_MISC_STATE + slot] != 0U) --slot;
-    if (slot == 5U) slot = 8U;
-    game->ram[0x06b7U] = slot;
-    game->ram[MYSMB_MISC_PAGE + slot] = page;
-    game->ram[MYSMB_MISC_X + slot] = x;
-    game->ram[MYSMB_MISC_Y + slot] = y;
-    game->ram[MYSMB_MISC_Y_SPEED + slot] = 0xfbU;
-    game->ram[MYSMB_MISC_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_MISC_Y_DUMMY + slot] = 0U;
-    game->ram[MYSMB_MISC_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_MISC_STATE + slot] = 1U;
-    /* ROM JCoinC queues Sfx_CoinGrab after activating the misc object. */
-    game->ram[MYSMB_SQUARE2_SOUND] = 1U;
-}
-
 /* ROM JCoinGfxHandler / DrawFloateyNumber_Coin. */
 static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
 {
@@ -2207,11 +2185,10 @@ static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
 
 /* ROM $bbb6 GiveOneCoin.  Coin collection paths share this tally and status
  * command tail; the caller retains ownership of the metatile removal. */
-static void mysmb_objects_give_one_coin(struct mysmb_game *game)
+void mysmb_objects_give_one_coin(struct mysmb_game *game)
 {
     mysmb_u8 player;
 
-    game->ram[MYSMB_COIN_TALLY_FOR_1UPS]++;
     player = game->ram[MYSMB_CURRENT_PLAYER];
     game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 1U;
     mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x17U : 0x1dU);
@@ -2239,6 +2216,7 @@ void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
     address = (mysmb_u16)(0x0500U + block_low + block_row);
     if (address < 0x0800U) game->ram[address] = 0U;
     mysmb_area_remove_coin_axe(game, block_low, block_row);
+    game->ram[MYSMB_COIN_TALLY_FOR_1UPS]++;
     mysmb_objects_give_one_coin(game);
 }
 
@@ -2387,15 +2365,8 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
         mysmb_objects_start_brick_chunks(game, slot);
     }
     else if (mysmb_objects_is_coin_block(metatile) != 0U) {
-        /* CoinBlock reaches SBC #$10 with the carry left by BlockCode.
-         * Entries $c0/$5f/$58 branch from CMP #$09 with carry clear and
-         * therefore subtract $11; $5d first executes SBC #$05 and retains
-         * carry, so it subtracts $10. */
-        mysmb_objects_start_jump_coin(game, game->ram[MYSMB_BLOCK_PAGE + slot],
-            (mysmb_u8)(game->ram[MYSMB_BLOCK_X + slot] | 5U),
-            (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] -
-                        (metatile == 0x5dU ? 0x10U : 0x11U)));
-        mysmb_objects_give_one_coin(game);
+        /* JumpEngine ASL clears carry for every legal BlockCode index. */
+        mysmb_objects_coin_block(game, slot, 0U);
     }
     else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
         mysmb_objects_start_power_up(game, slot, power_up_type);
@@ -2496,9 +2467,10 @@ static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
     top_row = (mysmb_u8)(block_row - 0x10U);
     address = (mysmb_u16)(0x0500U + block_low + top_row);
     if (address >= 0x0800U || game->ram[address] != 0xc2U) return;
-    mysmb_objects_start_jump_coin(game,
-        game->ram[MYSMB_BLOCK_PAGE_COPY + slot],
-        (mysmb_u8)((block_low << 4U) | 5U),
-        (mysmb_u8)(top_row + 0x20U));
-    mysmb_objects_collect_coin(game, block_low, top_row);
+    game->ram[address] = 0U;
+    mysmb_area_remove_coin_axe(game, block_low, top_row);
+    /* Original CheckTopOfBlock supplies the saved block-buffer inputs. */
+    game->ram[6U] = block_low;
+    game->ram[2U] = top_row;
+    mysmb_objects_setup_jump_coin(game, slot);
 }

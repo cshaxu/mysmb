@@ -2,30 +2,30 @@
 
 ## Current Work
 
-**M2 T36 S2 is closed at 788 / 1,992: ten hammer lifecycle nodes proven; S3 coin allocation is next.**
+**M2 T36 S3 is closed at 794 / 1,992: six coin allocation caller nodes proven; S4 misc lifetime is next.**
 
-## M2 T36 S2 Packet
+## M2 T36 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S1 commit db949fa; coordinator accepts transfer-149. |
-| Objective | Complete ten hammer allocation and actor caller/data nodes in original order. |
-| Non-goals | No collision/graphics child algorithm repair or later coin work. |
-| Reference Baseline | 778 / 1,992; nine open and one mapped label; expected ten, maximum 788. Exact sets in proposal and admission JSON. |
-| Candidate Proposal | [Hammer lifecycle](../proposals/m2/misc-object-chains.md#s2-admission-hammer-allocation-and-actor-lifetime). |
-| Files And ABI Surface | Shared hammer owner, original child seams and callers, tests/recorder, build lists and three artifacts. |
+| Identifier Mode | M2 T36 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S2 commit ecf4ca1; coordinator accepts transfer-150. |
+| Objective | Complete six coin creation and misc allocation nodes in original order. |
+| Non-goals | No score-child algorithm repair or misc actor lifetime implementation. |
+| Reference Baseline | 788 / 1,992; four mapped and two open labels; six expected matches, maximum 794. Exact names in proposal and admission JSON. |
+| Candidate Proposal | [Coin allocation chain](../proposals/m2/misc-object-chains.md#s3-admission-coin-creation-and-misc-allocation). |
+| Files And ABI Surface | Shared coin owner, creation/score child call boundaries, tests/recorder, build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original source branches/data/writes/calls and natural NMI entry/return; separate actual-child diagnostics, focused tests and three builds. |
-| Expected Markers | Fixed LSFR; indexed enemy flag; exact spawn writes; freeze/countdown/release; carry/page; motion/collision/offscreen/relative/box/draw order. |
-| Asset Needs | Existing local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Ten exact dispositions, both proof tracks, child limits, tracker and hashes. |
-| Stop Conditions | Unadmitted child algorithm repair, reference mutation, masked mismatch or platform gameplay. |
+| Verification | Original branches/carry/reads/writes/calls at natural NMI entries; separate actual-child comparisons, native focused tests and three builds. |
+| Expected Markers | Slot 8/7/6 scan and fallback; CPY/SBC/ASL/ADC carry; source coordinates; untouched fractions; sound/ObjectOffset/score/1-up tally order. |
+| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Six exact dispositions, both proof tracks, child limits, tracker and hashes. |
+| Stop Conditions | Unadmitted algorithm repair, reference mutation, masked mismatch or platform gameplay. |
 | Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
 | Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64; source order and chain delivery. |
-| Similar-Issue Sweep | Every hammer spawn/actor caller, slot writer, collision and graphics preparation consumer. |
+| Similar-Issue Sweep | Every coin creation/allocation caller, score call and 1-up tally mutation. |
 
-T36 S1 closed six vine actor caller nodes in db949fa; actual drawing-child differences remain recorded in the proposal and TODO.
+T36 S2 closed ten hammer lifecycle nodes in ecf4ca1; 126 caller and 126 actual-child matches. Prior debts remain explicit.
 
 ## T35 closure summary
 

@@ -21,8 +21,11 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
                                        mysmb_u8 block_low,
                                        mysmb_u8 block_row);
 /* ROM $bb51-$bbd0 jumping-coin misc-object route. */
-void mysmb_objects_start_jump_coin(struct mysmb_game *game, mysmb_u8 page,
-                                   mysmb_u8 x, mysmb_u8 y);
+mysmb_u8 mysmb_objects_find_empty_misc_slot(struct mysmb_game *game, mysmb_u8 *carry);
+void mysmb_objects_coin_block(struct mysmb_game *game, mysmb_u8 block_slot, mysmb_u8 carry);
+void mysmb_objects_setup_jump_coin(struct mysmb_game *game, mysmb_u8 block_slot);
+/* Existing score child; original caller owns CoinTallyFor1Ups. */
+void mysmb_objects_give_one_coin(struct mysmb_game *game);
 void mysmb_objects_step_misc(struct mysmb_game *game);
 /* ROM $bbc5-$bc15 SetupPowerUp/PowerUpObjHandler, emergence phase. */
 void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot,

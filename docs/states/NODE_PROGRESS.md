@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 788 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 130 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,074 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 794 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 126 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,072 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **788 / 1,992 (39.56%)**. The 130 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **794 / 1,992 (39.86%)**. The 126 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T36 S2 P1](../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof)
-proves ten hammer lifecycle nodes with 126 original/native caller matches
-and 126 actual-child matches across both Windows widths. T36 remains open;
+Latest task review: [T36 S3 P1](../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof)
+proves six coin creation/allocation caller nodes with 96 original/native caller matches;
+actual children match 48 and retain 48 extra-life sound failures across both widths. T36 remains open;
 prior child, full-frame and core-test debts remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (788)
+## Completed matches (794)
 
 | ROM line | Node |
 | ---: | --- |
@@ -787,6 +787,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6962 | `SetHPos` |
 | 6977 | `RunAllH` |
 | 6978 | `RunHSubs` |
+| 6988 | `CoinBlock` |
+| 7000 | `SetupJumpCoin` |
+| 7014 | `JCoinC` |
+| 7025 | `FindEmptyMiscSlot` |
+| 7027 | `FMiscLoop` |
+| 7033 | `UseMiscS` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |
@@ -839,7 +845,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (130)
+## Mapped but not yet matched (126)
 
 | ROM line | Node |
 | ---: | --- |
@@ -878,10 +884,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 6988 | `CoinBlock` |
-| 7000 | `SetupJumpCoin` |
-| 7014 | `JCoinC` |
-| 7025 | `FindEmptyMiscSlot` |
 | 7038 | `MiscObjectsCore` |
 | 7053 | `ProcJumpCoin` |
 | 7150 | `SetupPowerUp` |

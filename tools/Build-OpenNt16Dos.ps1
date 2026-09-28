@@ -18,6 +18,7 @@ $sources = @(
     'game/jumpspring.c',
     'game/vine.c',
     'game/hammer.c',
+    'game/coin.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
     'game/enemy/background.c',

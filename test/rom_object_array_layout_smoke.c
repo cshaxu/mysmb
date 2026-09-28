@@ -55,8 +55,8 @@ int main(void)
     if (game.ram[0x002aU + 8U] != 2U || game.ram[0x0241U] != 0xf7U ||
         game.ram[0x0245U] != 0xfbU) return 4;
 
-    /* CoinBlock inherits the carry from BumpBlock's dispatch.  $c0, $5f and
-     * $58 subtract $11; $5d subtracts $10 after its SBC #$05 route. */
+    /* JumpEngine ASL clears carry for every legal BlockCode index.
+     * With slot eight empty, both $c0 and $5d therefore subtract $11. */
     mysmb_game_initialize_memory(&game, 0U);
     game.ram[0x0754U] = 1U;
     game.ram[0x006dU] = 1U;
@@ -73,6 +73,6 @@ int main(void)
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
     (void)mysmb_objects_start_head_bump(&game, 0x5dU, 0xf2U, 0x20U);
-    if (game.ram[0x002aU + 8U] != 1U || game.ram[0x00dbU + 8U] != 0x30U) return 5;
+    if (game.ram[0x002aU + 8U] != 1U || game.ram[0x00dbU + 8U] != 0x2fU) return 5;
     return 0;
 }

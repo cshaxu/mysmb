@@ -5,7 +5,7 @@
 The original lines 6730-7200 contain 56 labels. Fourteen cannon/bullet nodes
 retain T31 S2 accepted proof. The six chains below target 41 incomplete labels,
 maximum 813 from incoming 772. Their current receiver is T24 S2 until each S
-is admitted. S1 and S2 are closed; S3 coin allocation is next. Numeric S entries below are a plan within
+is admitted. S1-S3 are closed; S4 misc lifetime is next. Numeric S entries below are a plan within
 this T; only individual receipt enables implementation.
 
 PowerUpObjHandler (line 7184) begins a state machine continuing into the next
@@ -356,3 +356,146 @@ Final owner-authorized local P1 artifacts:
 
 Retained raw evidence: 3005766 bytes, below four MB.
 Ten received labels complete, ten expected; no received-node transfers. Progress 778 -> 788 / 1,992. T36 remains open for S3-S6 and its next-slice consumer exception.
+
+## S3 admission: coin creation and misc allocation
+
+Transfer-150 receives CoinBlock, SetupJumpCoin, JCoinC and FindEmptyMiscSlot
+(mapped; evidence incomplete), FMiscLoop and UseMiscS (open). Scope and
+expected matches are those six labels. Baseline 788 / 1,992, maximum 794.
+Original entries are CoinBlock $BB38, SetupJumpCoin $BB51, common JCoinC
+$BB6C and FindEmptyMiscSlot $BB84 through UseMiscS $BB92 (end $BB95).
+The shared game/coin.c owner receives both creation entries and the allocator.
+
+Preserve the three-slot search 8/7/6 and fallback 8, residual slot store,
+and carry from incoming state or CPY #5. CoinBlock uses that carry in SBC
+#10; SetupJumpCoin uses the final ASL carry when adding the vertical status
+offset. JCoinC sets speed/high-Y/state/sound and ObjectOffset, calls GiveOneCoin,
+then increments CoinTallyFor1Ups. Do not clear movement fractions absent from
+the original. Migrate the two legacy coordinate-only callers to the actual
+entry contracts and remove their duplicated tally calls. Expose the existing
+score child and move its caller-owned 1-up tally increment to the original
+call boundaries; this extraction does not repair or certify GiveOneCoin.
+The independent direct collection caller keeps its existing tally behavior.
+
+One ordinary NMI/player-head-bump route reaches CoinBlock and the above-block
+coin path reaches SetupJumpCoin. Controlled RAM scenarios cover both block
+slots, slot occupancy/fallback, entry carry, wrapped coordinates and preserved
+fraction bytes. Observe original root and score-child entry/return from the
+real stack; no PC, stack, ROM or output mutation. Compare original branches,
+register-derived inputs, persistent writes and child ordering. Actual native
+child comparisons remain separate from isolated caller comparisons.
+
+Operational proof covers focused independent allocator/creation tests, existing
+block/coin and relevant regressions, x86/x64 strict C90 builds, DOS16 link,
+platform purity, hidden-window probes and three owner-authorized local EXEs.
+The existing owner ROM and reviewed listing are local research/build inputs;
+no third-party implementation is imported. Outputs remain below ignored
+build/m2-t36-s3, twenty seconds per reference run and four MB raw batch;
+S3 owns containment through T review. DOS remains link-only. S4 misc lifetime
+and S5 score internals remain outside scope. Sweep every creation/allocation
+caller and every GiveOneCoin/1-up tally boundary. Closure requires six exact
+node dispositions, both proof tracks, tracker/ledger and artifact hashes.
+
+### S3 implementation checkpoint (not closure)
+
+Admission gate passes with Total 1992, Complete 788, MappedPending 130,
+Open 1074, ScopeCount 6, ExpectedDelta 6 and MaximumComplete 794. No scoped
+node is marked complete yet. Shared game/coin.c now owns the allocator and
+both original creation entries with the common JCoinC tail. The coordinate-only
+creation API is removed. The two production callers now supply block slot and
+original carry/scratch inputs; the above-block path removes the metatile before
+creation. Score-child extraction leaves its digit behavior unchanged, moving
+the caller-owned 1-up tally increment to JCoinC and direct collection as in
+the source. Missing GiveOneCoin extra-life sound remains S5's responsibility.
+
+Strict C90 compilation of the changed shared units passes on x86/x64.
+Independent coin-allocation tests pass 16,400 cases per width, covering all
+occupancy masks, both carry inputs and block slots, every coordinate byte,
+fraction preservation, complete persistent write footprint and post-child
+tally behavior. The legacy core test now invokes the original setup contract
+and isolates its next coin-collection scenario because setup itself scores.
+ROM root/child comparisons and final build/artifact delivery remain pending;
+these preliminary tests do not establish node equivalence or S3 closure.
+
+## S3 original coin allocation proof
+
+All six received caller/allocation nodes are proven, 788 -> 794 / 1,992.
+The two creation entries, common JCoinC tail and three-slot allocator have
+one shared game/coin.c owner. The old coordinate-only creation body is removed;
+the creation caller owns the original score call and post-child 1-up tally.
+
+| Node | Address | Proven original contract |
+| --- | --- | --- |
+| CoinBlock | $BB38 | Allocate; block page/X OR 5/Y minus 10 using allocator-return carry; common tail |
+| SetupJumpCoin | $BB51 | Allocate; saved block page; buffer column shifted four times; ADC 20 with final ASL carry |
+| JCoinC | $BB6C | Speed FB, high Y/state/sound one, ObjectOffset, GiveOneCoin then increment 1-up-block tally |
+| FindEmptyMiscSlot | $BB84 | Start at eight; preserve input carry until a comparison executes |
+| FMiscLoop | $BB86 | Scan states at 8/7/6; CPY 5 sets carry; fallback to eight after all occupied |
+| UseMiscS | $BB92 | Store selected slot in JumpCoinMiscOffset and return |
+
+Forty-eight controlled source-RAM scenarios execute ordinary NMI/GameEngine,
+player head collision and the original BumpBlock/CoinBlock or above-block
+CheckTopOfBlock/SetupJumpCoin path. Both block slots, every occupancy mask,
+selected slots 6/7/8, both SetupJumpCoin final-ASL carries, tally wrap and
+100-coin transitions are covered. No CPU, stack, ROM or output is patched.
+Entry carry is read from the original status register and real stack returns
+bound root and score-child observation. Both allocator branch sites exercise
+both outcomes; every scoped code label executes. Observed, coverage-enabled
+and unobserved frame outputs are byte-identical, as are root snapshots in
+the observed and coverage runs.
+
+The source audit and original entries show that JumpEngine ASL clears carry
+for every legal BlockCode index, including the 5D coin brick. The old native
+5D carry-one special case was wrong. Its call now supplies carry zero;
+FindEmptyMiscSlot can subsequently set carry when slot eight is occupied.
+The old array-layout test's 5D height expectation is corrected accordingly.
+
+Both widths pass all 96 isolated caller comparisons: child identity/slot,
+original entry and return state over 1,791 persistent RAM bytes. Scratch 0-7
+and hardware stack are excluded except digit data 0133-0139. Actual native
+children independently match 48 cases and fail 48, identical across widths.
+Every failure is exactly RAM 00FE: original 40, native 01 when the coin count
+reaches 100. The existing GiveOneCoin omits Sfx_ExtraLife; that child retains
+its existing custody and planned S5 repair, with no credit from this receipt.
+This is caller/allocation proof, not complete coin scoring or full-game parity.
+
+Reproduce coin_allocation_fixture.h cases 0-47 with one frame, warmup one,
+zero buttons, --fixture=t36-coin=N, --coin-allocation-snapshot and
+--control-children; repeat with --pc-coverage and without observers. Build
+both modes of coin_allocation_snapshot_check.c; the caller mode explicitly
+replays original score-child returns and the actual mode links real game code.
+verify_coin_allocation_snapshots.py checks all branches, labels, slot/carry
+variants, observer neutrality and cross-width results without masking failures.
+
+Independent native tests pass 16,400 cases per width, checking all allocator
+occupancy combinations, both carries and block slots, all coordinate bytes,
+untouched fractions, full write footprint and post-child tally mutation.
+Twenty block-array/OAM, hammer, bubble/fireball, player/status/mode and vine
+regressions pass. The existing core smoke's direct creation call now supplies
+the original setup inputs and isolates its following collection test because
+setup itself scores. Its previously recorded earlier entrance failure remains
+outside this scope; no full core-smoke pass is claimed.
+
+The caller sweep covers both production creation paths and the independent
+direct collection path. The score child loses only its misplaced caller-owned
+1-up increment; direct collection still increments before calling it, while
+JCoinC increments after return. The above-block caller erases the metatile
+and queues removal before supplying original buffer inputs to SetupJumpCoin.
+Remaining score internals, CheckTopOfBlock behavior and misc lifetime retain
+their separate obligations. No platform source contains a new gameplay path.
+
+All 72 shared C units compile in strict C90 on x86/x64; executable self-tests
+and bounded two-second hidden-window/message probes pass. DOS16 compiles and
+links with the known OLDNAMES warning. It remains link-only without resource
+binding, DOS gameplay or 486 qualification. Platform purity passes.
+
+Final owner-authorized local P1 artifacts:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258329 | 727cd4c325df8f90be07beec813c9d6ff6f1b48070455dfeeae19fdac563e37f |
+| mysmb32.exe | 328387 | 54c4ddd73b68762aff0c0dbe8245af4ec2defe713e17955405828b07d2f3e187 |
+| mysmb64.exe | 336603 | 887767ae45a6510e20b486b73b20b2b7c63b24f0104e603a65b64d4149d655c1 |
+
+Retained raw evidence: 2182652 bytes, below four MB.
+Six received labels complete, six expected; no received-node transfers. Progress 788 -> 794 / 1,992. T36 remains open for S4-S6 and its next-slice consumer exception.
