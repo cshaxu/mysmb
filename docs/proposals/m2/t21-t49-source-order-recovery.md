@@ -47,8 +47,8 @@ boundary.
 | T35 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |
 | T36 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
 | T37 | Power-up actor tail, blocks and movement/gravity primitives; receives T36 PowerUpObjHandler boundary exception | 7201–7787; entry 7184 | 74 |
-| T38 | Enemy stream, records, slots and initialization | 7788–8500 | 85 |
-| T39 | Enemy groups, frenzy and special initialization | 8501–9300 | 98 |
+| T38 | Enemy stream, records, slots and initialization; complete flying-fish tail | 7788–8528; loop dependencies below | 88 + 3 dependencies |
+| T39 | Enemy groups, frenzy and special initialization; begins InitBowser | 8529–9300 | 95 |
 | T40 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |
 | T41 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
 | T42 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
@@ -78,6 +78,14 @@ large-object geometry. Its S breakdown must be admitted against the exact
 inventory labels before any game-code change.
 
 ## Mandatory chain delivery structure
+
+T38 admission corrects the old line-8500 split inside InitFlyingCheepCheep:
+D2XPos1, D2XPos2 and FinCCSt stay with that complete initializer through
+line 8528; T39 starts at InitBowser. T38 also receives AreaDataOfsLoopback
+and its immediate loopback dependency KillAllEnemies/KillLoop. Those two
+later Bowser-slice labels retain T38 proof and cannot earn duplicate credit
+in T41. The [T38 plan](t38-enemy-stream-initialization.md) lists all 91
+exact targets and seven S chains. Future custody moves only at S admission.
 
 Every future T in this plan uses the M2 chain-delivery rule in
 [Execution](../../rules/EXECUTION.md#m2-chain-based-s-delivery).  The task

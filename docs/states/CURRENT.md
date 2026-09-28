@@ -2,29 +2,33 @@
 
 ## Current Work
 
-**M2 T37 is closed at 884 / 1,992: all 74 scoped nodes complete; next is the enemy stream/initialization slice.**
+**M2 T38 S1 is closed at 903 / 1,992: nineteen loop/slot caller nodes proven; successor scratch differences remain open.**
 
-## M2 T37 S9 Packet
+## M2 T38 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S9, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S8 commit 8bed1c2; coordinator accepts transfer-164. |
-| Objective | Unify and prove twelve common gravity nodes in source order, including explicit residual-entry disposition. |
-| Non-goals | No parent actor, collision, rendering or platform algorithm repair. |
-| Reference Baseline | 872 / 1,992; twelve incomplete labels, expected twelve, maximum 884. |
-| Candidate Proposal | [S9 common gravity](../history/M2-T37-power-up-block-movement.md#s9-admission-common-gravity-and-adjacent-entries). |
-| Files And ABI Surface | Shared world/gravity.c, player/enemy/misc/block callers and headers, tests/recorder/builds and three EXEs. |
+| Identifier Mode | M2 T38 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after T37 commit 4b07a7a; coordinator accepts transfer-165 and documented function/dependency boundaries. |
+| Objective | Restore and prove nineteen enemy flag/loop/frenzy labels, including original loopback data and kill-all dependency. |
+| Non-goals | No stream parser/initializer child repair, actor movement, rendering or platform gameplay. |
+| Reference Baseline | 884 / 1,992; nineteen open labels, expected nineteen, maximum 903. T38 scope91, maximum975. |
+| Candidate Proposal | [T38 S1 enemy loops](../proposals/m2/t38-enemy-stream-initialization.md#s1-admission-complete-enemy-flag-and-loop-command-chain). |
+| Files And ABI Surface | Shared enemy core/loop/stream handoff and headers, tests/recorder/builds, three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
-| Verification | Original source branches/writes/entry proof, ordinary NMI snapshots and S8 actual regression; separate native tests and three-target builds. |
-| Expected Markers | Dummy carry, signed high-Y carry, scratch $00/$01/$02/$07, wrapped CMP-N, upward subtraction and fractional clamps. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Twelve exact dispositions, original/native evidence, residual-entry limits, artifacts and debts. |
-| Stop Conditions | Unadmitted parent repair, forced reference PC/stack, suppressed differences or platform gameplay. |
-| Exit Criteria | Every received node proven or exact accepted unfinished transfer; tracker/ledger/artifacts agree. |
-| Original Owner Request | Faithful original ROM logic/call structure, shared portable C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All gravity copies and callers, wrapped comparisons, low/high-page carry, entry and source scratch contracts. |
+| Verification | Original flag/loop/data/child-order audit and ordinary NMI snapshots; independent native tests, three-target builds and platform purity. |
+| Expected Markers | Duplicate-slot high bit, parser-task mask, eleven loop entries, world-seven counters, page rewind, erase order and frenzy handoff. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Nineteen exact dispositions, expected/actual new matches, original/native evidence, children and artifacts. |
+| Stop Conditions | Unadmitted child repair, modified reference PC/stack/ROM/output, hidden mismatches or platform game logic. |
+| Exit Criteria | All received nodes proven or exact accepted unfinished transfers; tracker, ledger and artifacts agree. |
+| Original Owner Request | Faithful original ROM call structure and node semantics in shared portable C, source order and chain-level delivery. |
+| Similar-Issue Sweep | All enemy slot dispatches, duplicate flags, loop/page/cursor updates, kill-all callers and frenzy activation paths. |
 
+
+S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
+Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
+T38 S2 parser chain is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.

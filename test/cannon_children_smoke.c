@@ -1,5 +1,5 @@
 #include "game/enemy/core.h"
-#include "game/enemy/stream.h"
+#include "game/enemy/loop.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 #include "game/oam/oam.h"
@@ -28,9 +28,9 @@ void mysmb_objects_step_normal_enemy(struct mysmb_game *game,mysmb_u8 slot)
 void mysmb_objects_step_power_up(struct mysmb_game *game)
 { (void)game;++unexpected; }
 
-mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
+void mysmb_enemy_process_loop_command(struct mysmb_game *game,
     const struct mysmb_area_source *source,mysmb_u8 slot)
-{ (void)game;(void)source;(void)slot;++unexpected;return 0U; }
+{ (void)game;(void)source;(void)slot;++unexpected; }
 mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++unexpected;return 0U; }
 

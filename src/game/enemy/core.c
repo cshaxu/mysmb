@@ -1,5 +1,6 @@
 #include "game/enemy/core.h"
 #include "game/enemy/stream.h"
+#include "game/enemy/loop.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 
@@ -89,12 +90,19 @@ void mysmb_enemy_core_step_slot(struct mysmb_game *game,
                                 mysmb_u8 slot)
 {
     /* The source caller supplies X and has already stored ObjectOffset. */
-    if (game->ram[MYSMB_ENEMY_CORE_FLAG + slot] != 0U) {
+    mysmb_u8 flag;
+    flag = game->ram[MYSMB_ENEMY_CORE_FLAG + slot];
+    if ((flag & 0x80U) != 0U) {
+        if (game->ram[MYSMB_ENEMY_CORE_FLAG + (flag & 0x0fU)] == 0U)
+            game->ram[MYSMB_ENEMY_CORE_FLAG + slot] = 0U;
+        return;
+    }
+    if (flag != 0U) {
         mysmb_enemy_run_objects(game);
     }
     else if ((game->ram[MYSMB_ENEMY_CORE_AREA_PARSER_TASK] & 7U) != 7U) {
         /* ChkAreaTsk: parser task seven owns this turn, so ProcessEnemyData
          * must not consume a record. */
-        (void)mysmb_enemy_stream_process_current(game, source, slot);
+        mysmb_enemy_process_loop_command(game, source, slot);
     }
 }

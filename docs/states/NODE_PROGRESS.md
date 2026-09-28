@@ -12,19 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 884 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 903 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,000 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 981 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **884 / 1,992 (44.38%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **903 / 1,992 (45.33%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T37 S9 P1](../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof)
-proves twelve common-gravity nodes; 128 actual comparisons match. The residual
-entry has explicit static/native proof, not fabricated ROM execution. S8
-gravity differences are resolved; prior independent debts remain. [T37 closes](../history/M2-T37-power-up-block-movement.md#t37-closure)
-with all 74 scoped nodes; 750/844 final actual checks match and 94 existing
-child failures remain unchanged. The next source slice is not yet admitted.
+Latest task review: [T38 S1 P1](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof)
+proves nineteen loop/slot caller nodes. Caller checks match 188/192; four
+live-child differences are independently attributed. Actual checks match
+12/192; all 180 failures reproduce exactly in existing successor interiors.
+These are retained defects, not full-game equivalence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -34,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (884)
+## Completed matches (903)
 
 | ROM line | Node |
 | ---: | --- |
@@ -512,6 +511,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4336 | `GetAreaObjYPosition` |
 | 4349 | `BlockBufferAddr` |
 | 4353 | `GetBlockBufferAddr` |
+| 4376 | `AreaDataOfsLoopback` |
 | 4381 | `LoadAreaPointer` |
 | 4384 | `GetAreaType` |
 | 4392 | `FindAreaPointer` |
@@ -888,6 +888,22 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7739 | `AlterYP` |
 | 7761 | `ChkUpM` |
 | 7784 | `ExVMove` |
+| 7788 | `EnemiesAndLoopsCore` |
+| 7796 | `ChkAreaTsk` |
+| 7801 | `ChkBowserF` |
+| 7807 | `ExitELCore` |
+| 7812 | `LoopCmdWorldNumber` |
+| 7815 | `LoopCmdPageNumber` |
+| 7818 | `LoopCmdYPosition` |
+| 7821 | `ExecGameLoopback` |
+| 7851 | `ProcLoopCommand` |
+| 7857 | `FindLoop` |
+| 7875 | `IncMLoop` |
+| 7883 | `WrongChk` |
+| 7886 | `DoLpBack` |
+| 7888 | `InitMLp` |
+| 7891 | `InitLCmd` |
+| 7896 | `ChkEnemyFrenzy` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |
@@ -903,6 +919,8 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9381 | `MoveDefeatedEnemy` |
 | 9385 | `ChkKillGoomba` |
 | 9392 | `NKGmba` |
+| 10167 | `KillAllEnemies` |
+| 10169 | `KillLoop` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

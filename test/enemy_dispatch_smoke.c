@@ -1,5 +1,6 @@
 #include "game/enemy/core.h"
 #include "game/enemy/stream.h"
+#include "game/enemy/loop.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 #include <string.h>
@@ -32,9 +33,9 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 
 void mysmb_objects_step_vine(struct mysmb_game *game,mysmb_u8 slot)
 { record(game,slot,10U); }
-mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
+void mysmb_enemy_process_loop_command(struct mysmb_game *game,
     const struct mysmb_area_source *source,mysmb_u8 slot)
-{ (void)source;record(game,slot,14U);return 0U; }
+{ (void)source;record(game,slot,14U); }
 
 int main(void)
 {
@@ -49,7 +50,29 @@ int main(void)
         0,11,12,0,0,13
     };
     static const unsigned int erased[8]={0xfU,0x16U,0x1eU,0x110U,0x796U,0x125U,0x3c5U,0x78aU};
-    unsigned int slot,id,want,low,high,lock,j;
+    unsigned int slot,id,want,low,high,lock,j,flag,peer,live;
+    /* Source high-bit references read all sixteen low-nibble offsets,
+     * including the self-reference case. Only a dead peer clears the flag. */
+    for(slot=0U;slot<6U;++slot) for(flag=0x80U;flag<256U;++flag)
+    for(live=0U;live<2U;++live) {
+        memset(game.ram,0x5a,sizeof(game.ram));
+        peer=flag&15U;game.ram[8U]=(mysmb_u8)slot;
+        game.ram[0xfU+peer]=(mysmb_u8)live;
+        game.ram[0xfU+slot]=(mysmb_u8)flag;
+        memcpy(expected,game.ram,sizeof(expected));
+        if(peer!=slot && live==0U) expected[0xfU+slot]=0U;
+        count=0U;bad_slot=0U;
+        mysmb_enemy_core_step_slot(&game,0,(mysmb_u8)slot);
+        if(count!=0U || memcmp(expected,game.ram,sizeof(expected))) return 6;
+    }
+    for(slot=0U;slot<6U;++slot) for(j=0U;j<256U;++j) {
+        memset(game.ram,0,sizeof(game.ram));game.ram[8U]=(mysmb_u8)slot;
+        game.ram[0x71fU]=(mysmb_u8)j;memcpy(expected,game.ram,sizeof(expected));
+        count=0U;bad_slot=0U;
+        mysmb_enemy_core_step_slot(&game,0,(mysmb_u8)slot);
+        if(count!=((j&7U)==7U?0U:1U) || bad_slot ||
+           (count && calls[0]!=14U) || memcmp(expected,game.ram,sizeof(expected))) return 7;
+    }
     for(slot=0U;slot<6U;++slot) for(id=0U;id<54U;++id) {
         memset(game.ram,0x5a,sizeof(game.ram));
         game.ram[8U]=(mysmb_u8)slot;

@@ -617,7 +617,7 @@ The labels and branches behind every line remain open until individually bound b
 | 4336 | `GetAreaObjYPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
 | 4349 | `BlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
 | 4353 | `GetBlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
-| 4376 | `AreaDataOfsLoopback` | M2 T19 S5 accepted consumer dependency, transfer-113 | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |
+| 4376 | `AreaDataOfsLoopback` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
 | 4381 | `LoadAreaPointer` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
 | 4384 | `GetAreaType` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
 | 4392 | `FindAreaPointer` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../history/M2-T30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
@@ -1028,22 +1028,22 @@ The labels and branches behind every line remain open until individually bound b
 | 7739 | `AlterYP` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
 | 7761 | `ChkUpM` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
 | 7784 | `ExVMove` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7788 | `EnemiesAndLoopsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemiesandloopscore) |
-| 7796 | `ChkAreaTsk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatsk) |
-| 7801 | `ChkBowserF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbowserf) |
-| 7807 | `ExitELCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitelcore) |
-| 7812 | `LoopCmdWorldNumber` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdworldnumber) |
-| 7815 | `LoopCmdPageNumber` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdpagenumber) |
-| 7818 | `LoopCmdYPosition` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loopcmdyposition) |
-| 7821 | `ExecGameLoopback` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-execgameloopback) |
-| 7851 | `ProcLoopCommand` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procloopcommand) |
-| 7857 | `FindLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findloop) |
-| 7875 | `IncMLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incmloop) |
-| 7883 | `WrongChk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrongchk) |
-| 7886 | `DoLpBack` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dolpback) |
-| 7888 | `InitMLp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initmlp) |
-| 7891 | `InitLCmd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlcmd) |
-| 7896 | `ChkEnemyFrenzy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkenemyfrenzy) |
+| 7788 | `EnemiesAndLoopsCore` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7796 | `ChkAreaTsk` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7801 | `ChkBowserF` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7807 | `ExitELCore` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7812 | `LoopCmdWorldNumber` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7815 | `LoopCmdPageNumber` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7818 | `LoopCmdYPosition` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7821 | `ExecGameLoopback` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7851 | `ProcLoopCommand` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7857 | `FindLoop` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7875 | `IncMLoop` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7883 | `WrongChk` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7886 | `DoLpBack` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7888 | `InitMLp` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7891 | `InitLCmd` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 7896 | `ChkEnemyFrenzy` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
 | 7911 | `ProcessEnemyData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processenemydata) |
 | 7918 | `CheckEndofBuffer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkendofbuffer) |
 | 7931 | `CheckRightBounds` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightbounds) |
@@ -1327,8 +1327,8 @@ The labels and branches behind every line remain open until individually bound b
 | 10152 | `NoBFall` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobfall) |
 | 10156 | `PRandomRange` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prandomrange) |
 | 10159 | `RunBowser` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbowser) |
-| 10167 | `KillAllEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killallenemies) |
-| 10169 | `KillLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killloop) |
+| 10167 | `KillAllEnemies` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
+| 10169 | `KillLoop` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
 | 10176 | `BowserControl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bowsercontrol) |
 | 10182 | `ChkMouth` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmouth) |
 | 10185 | `FeetTmr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-feettmr) |
