@@ -495,101 +495,6 @@ void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_MISC_X + slot]);
 }
 
-/* ROM RunPUSubs: once the object has emerged at least six pixels, this
- * runs every frame, including the three GrowThePowerUp frames that do not
- * decrement its Y coordinate. */
-static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
-{
-    const mysmb_u8 slot = 5U;
-
-    game->ram[0x03aeU] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] -
-                                      game->ram[MYSMB_SCREEN_LEFT_X]);
-    game->ram[0x03b9U] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[0x03d1U] =
-        mysmb_objects_get_enemy_offscreen_bits(game, slot);
-    mysmb_objects_update_enemy_bounding_box(game, slot);
-    mysmb_objects_draw_power_up(game);
-}
-
-/* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
- * movement and EnemyToBGCollisionDet state paths. */
-void mysmb_objects_step_power_up(struct mysmb_game *game)
-{
-    const mysmb_u8 slot = 5U;
-    mysmb_u8 state;
-    mysmb_u8 tile;
-    state = game->ram[MYSMB_ENEMY_STATE + slot];
-    if (state == 0U) return;
-    if ((state & 0x80U) != 0U) {
-        if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
-            (game->ram[MYSMB_POWER_UP_TYPE] == 0U ||
-             game->ram[MYSMB_POWER_UP_TYPE] == 2U ||
-             game->ram[MYSMB_POWER_UP_TYPE] == 3U)) {
-            if (game->ram[MYSMB_POWER_UP_TYPE] == 2U ||
-                (state & 0x40U) != 0U) {
-                /* ROM MoveJ_EnemyVertically / MoveD_EnemyVertically both
-                 * enter the same ImposeGravitySprObj actor-array primitive. */
-                mysmb_enemy_move_downward(game, slot,
-                    game->ram[MYSMB_POWER_UP_TYPE] == 2U ? 0x1cU : 0x3dU, 3U);
-            }
-            mysmb_world_move_enemy_horizontally(game, slot);
-            if (game->ram[MYSMB_POWER_UP_TYPE] == 2U) {
-                mysmb_objects_step_enemy_jump_terrain(game, slot);
-            }
-            else {
-                struct mysmb_enemy_terrain terrain;
-                tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
-                    terrain.metatile : 0U;
-                if (game->ram[MYSMB_ENEMY_Y + slot] >= 6U &&
-                    mysmb_objects_is_solid_terrain(tile) != 0U) {
-                    /* LandEnemyProperly first routes Y low nybbles D-F to
-                     * ChkForRedKoopa, which gives active objects the d6
-                     * falling bit.  It can align to Y|8 only on 8-C after
-                     * that bit was already set. */
-                    if ((game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 0x0dU) {
-                        game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
-                    }
-                    else if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x40U) != 0U &&
-                             (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) >= 8U) {
-                        mysmb_world_land_enemy(game, slot);
-                        game->ram[MYSMB_ENEMY_STATE + slot] &= 0xbfU;
-                    }
-                }
-                else {
-                    game->ram[MYSMB_ENEMY_STATE + slot] |= 0x40U;
-                }
-                tile = mysmb_world_query_enemy_block(game, slot,
-                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x17U : 0x16U,
-                    1U, &terrain) != 0U ? terrain.metatile : 0U;
-                if (mysmb_objects_is_solid_terrain(tile) != 0U) {
-                    /* ROM RXSpd: DoEnemySideCheck preserves the movement
-                     * magnitude and takes the two's complement of the current
-                     * 4.4 speed. */
-                    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
-                    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-                        (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-                }
-            }        }
-        mysmb_objects_prepare_power_up_subs(game);
-        return;
-    }
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 3U) != 0U) {
-        if (state >= 6U) mysmb_objects_prepare_power_up_subs(game);
-        return;
-    }
-    game->ram[MYSMB_ENEMY_Y + slot]--;
-    game->ram[MYSMB_ENEMY_STATE + slot]++;
-    if (state >= 0x11U) {
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0x10U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = 0x80U;
-        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
-    }
-    if (game->ram[MYSMB_ENEMY_STATE + slot] >= 6U) {
-        mysmb_objects_prepare_power_up_subs(game);
-    }
-}
-
 /* ROM $dcfd-$ddcb PlayerEnemyCollision and $e069-$e08a EnemyStomped,
  * bounded to ordinary walking enemies. */
 mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
@@ -822,6 +727,7 @@ void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
                                         mysmb_u8 preserve_collision_boxes)
 {
     switch (game->ram[MYSMB_ENEMY_ID + slot]) {
+    case 0x2eU: mysmb_objects_check_power_up_collision(game); break;
     case 5U: (void)mysmb_objects_check_hammer_bro_stomp_slot(game, slot); break;
     case 7U: (void)mysmb_objects_check_bloober_stomp_slot(game, slot); break;
     case 8U: (void)mysmb_objects_check_bullet_bill_stomp_slot(game, slot); break;
@@ -1246,8 +1152,7 @@ void mysmb_objects_step_jumping_paratroopas_slot(struct mysmb_game *game, mysmb_
 
     if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
         game->ram[MYSMB_ENEMY_ID + slot] != 14U) return;
-    mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
-    mysmb_world_move_enemy_horizontally(game, slot);
+    mysmb_enemy_move_jumping(game, slot);
 }
 
 /* Temporary bulk caller while the engine vector is migrated. */
@@ -1393,23 +1298,6 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
         mysmb_objects_collect_power_up(game);
     }
 }
-/* RunPUSubs continues immediately after DrawPowerUp.  Keep this tail separate
- * from the movement/drawing owner so direct object-unit fixtures can exercise
- * their local transition without inventing screen state; GameEngine invokes it
- * in the same source slot and frame. */
-void mysmb_objects_finish_power_up(struct mysmb_game *game)
-{
-    const mysmb_u8 slot = 5U;
-
-    if (game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
-        game->ram[MYSMB_ENEMY_STATE + slot] < 6U) return;
-    mysmb_objects_check_power_up_collision(game);
-    /* HandlePowerUpCollision tail-jumps out of RunPUSubs. */
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 0x2eU) {
-        mysmb_objects_check_enemy_offscreen_bounds(game, slot);
-    }
-}
-
 /* ROM $ddcd HandlePowerUpCollision.  The score or 1-up is deliberately
  * deferred to FloateyNumbersRoutine, as in the original. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game)

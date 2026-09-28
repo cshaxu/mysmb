@@ -2,30 +2,39 @@
 
 ## Current Work
 
-**M2 T36 S6 and T36 are closed at 813 / 1,992. Next is the planned source slice receiving PowerUpObjHandler and its successors.**
+**M2 T37 S1 is closed at 819 / 1,992: six actor nodes proven; S2 head-hit and positioning is next.**
 
-## M2 T36 S6 Packet
+## M2 T37 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S6, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S5 commit 62c034e; coordinator accepts transfer-153. |
-| Objective | Complete SetupPowerUp, PwrUpJmp, StrType and PutBehind as one initialization chain. |
-| Non-goals | No PowerUpObjHandler, movement/collision child or other enemy initialization repair. |
-| Reference Baseline | 809 / 1,992; one mapped and three open; four expected, maximum 813. |
-| Candidate Proposal | [Power-up initialization](../history/M2-T36-misc-object-chains.md#s6-admission-complete-power-up-initialization). |
-| Files And ABI Surface | Shared power_up_init owner, objects API/caller, enemy initializer incoming edge, tests/recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T37 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 source-order mandate after T36 commit 263a75e; coordinator accepts transfer-154. |
+| Objective | Complete PowerUpObjHandler, ShroomM, GrowThePowerUp, ChkPUSte, RunPUSubs and ExitPUp as one actor chain. |
+| Non-goals | No child algorithm repair or S2-S9 block/movement migration; no extra conformance credit. |
+| Reference Baseline | 813 / 1,992; three mapped and three open labels; six expected, maximum 819; named admission gate passed. T37 plan: 71 incomplete plus three retained, maximum 884. |
+| Candidate Proposal | [Power-up actor, blocks and movement](../proposals/m2/power-up-block-movement.md#s1-admission-complete-power-up-actor-state-machine). |
+| Files And ABI Surface | Shared power_up actor, unchanged movement/collision child seams, enemy dispatcher and legacy tests, recorder/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original NMI head-bump full/tail snapshots, exact branch/write comparison, independent native tests and three builds. |
-| Expected Markers | Fixed slot five, original coordinate wrap, state/flag/box order, unsigned type/status comparisons, LSR, priority and sound. |
-| Asset Needs | Existing local ROM/listing only, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Four exact dispositions, dual proof, caller sweep, tracker and artifacts; T36 cross-chain review. |
-| Stop Conditions | Unadmitted actor repair, altered reference execution, hidden mismatch or platform game logic. |
-| Exit Criteria | All four received nodes proven or accepted transfer; evidence, accounting and outputs agree. |
-| Original Owner Request | Faithful original-ROM call structure and logic in shared native C for DOS16/Win32/x64; source order and chain delivery. |
-| Similar-Issue Sweep | Every power-up initializer caller, type writer, residual enemy-table entry and platform source. |
+| Verification | Ordinary NMI actor root/child branch and write proof; separate actual-child diagnostics, native tests and target delivery. |
+| Expected Markers | Entry slot5 even when inactive; original movement/emergence gates; old-state threshold; six children in order, including bounds after collection. |
+| Asset Needs | Existing local owner ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Six exact dispositions, child limits and caller sweep, dual proof, tracker/ledger and hashes. |
+| Stop Conditions | Unadmitted child repair, altered reference CPU/output, concealed mismatch or platform gameplay. |
+| Exit Criteria | All received nodes proven or exact accepted transfer; evidence, accounting and artifacts agree. |
+| Original Owner Request | Faithful original-ROM logic/call structure in shared native C, original source order and chain-level delivery. |
+| Similar-Issue Sweep | Power-up step/finish calls, private movement/terrain and relative writes, current-slot collision selection and post-collision bounds. |
 
-S5 closed nine score/HUD nodes in 62c034e and resolved the S3 sound gap.
+S1 closure: [actor proof](../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof).
+100 caller matches, 84 actual-child matches and 16 retained child failures;
+32 regression runs pass and all three test artifacts are refreshed.
+
+## T36 closure summary
+
+[T36 history](../history/M2-T36-misc-object-chains.md#t36-closure) records
+41 new plus 14 retained matches, final 813 / 1,992. PowerUpObjHandler now
+enters S1 with its successors; known vine graphics and other child/full-frame
+debts remain. Final three artifacts are committed in 263a75e.
 
 ## T35 closure summary
 

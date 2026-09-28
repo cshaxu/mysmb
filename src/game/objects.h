@@ -35,7 +35,6 @@ void mysmb_objects_start_power_up(struct mysmb_game *game, mysmb_u8 block_slot);
 /* ROM $BC60 PwrUpJmp: initialize the fixed slot-five tail only. */
 void mysmb_objects_initialize_power_up(struct mysmb_game *game);
 void mysmb_objects_step_power_up(struct mysmb_game *game);
-void mysmb_objects_finish_power_up(struct mysmb_game *game);
 /* RunNormalEnemies for one ObjectOffset; GameEngine uses this with stream parsing. */
 /* ROM EnemyToBGCollisionDet through DoEnemySideCheck. */
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game, mysmb_u8 slot);

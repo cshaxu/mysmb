@@ -58,7 +58,6 @@ void mysmb_enemy_run_objects(struct mysmb_game *game)
         break;
     case 0x2eU:
         mysmb_objects_step_power_up(game);
-        mysmb_objects_finish_power_up(game);
         break;
     case 0x2fU:
         mysmb_objects_step_vine(game, slot);

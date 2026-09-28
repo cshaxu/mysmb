@@ -115,3 +115,11 @@ void mysmb_enemy_move_downward(struct mysmb_game *game, mysmb_u8 slot,
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
     }
 }
+
+/* ROM $CAF9 MoveJumpingEnemy. Existing gravity and horizontal child
+ * algorithms are shared unchanged by the star and paratroopa callers. */
+void mysmb_enemy_move_jumping(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+    mysmb_world_move_enemy_horizontally(game, slot);
+}

@@ -954,12 +954,12 @@ The labels and branches behind every line remain open until individually bound b
 | 7163 | `PwrUpJmp` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
 | 7175 | `StrType` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
 | 7176 | `PutBehind` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
-| 7184 | `PowerUpObjHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-powerupobjhandler) |
-| 7202 | `ShroomM` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shroomm) |
-| 7206 | `GrowThePowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-growthepowerup) |
-| 7223 | `ChkPUSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpuste) |
-| 7226 | `RunPUSubs` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-runpusubs) |
-| 7232 | `ExitPUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitpup) |
+| 7184 | `PowerUpObjHandler` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7202 | `ShroomM` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7206 | `GrowThePowerUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7223 | `ChkPUSte` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7226 | `RunPUSubs` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7232 | `ExitPUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
 | 7241 | `BlockYPosAdderData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockyposadderdata) |
 | 7244 | `PlayerHeadCollision` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-playerheadcollision) |
 | 7251 | `DBlockSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblockste) |

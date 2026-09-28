@@ -27,8 +27,7 @@ void mysmb_objects_step_normal_enemy(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++unexpected; }
 void mysmb_objects_step_power_up(struct mysmb_game *game)
 { (void)game;++unexpected; }
-void mysmb_objects_finish_power_up(struct mysmb_game *game)
-{ (void)game;++unexpected; }
+
 mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
     const struct mysmb_area_source *source,mysmb_u8 slot)
 { (void)game;(void)source;(void)slot;++unexpected;return 0U; }

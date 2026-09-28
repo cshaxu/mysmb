@@ -46,7 +46,7 @@ boundary.
 | T34 | Fireball dispatch, active core and explosion | 6298–6408 | 11 |
 | T35 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |
 | T36 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
-| T37 | Powerups, vines, cannon, whirlpool and flagpole setup | 7201–7787 | 73 |
+| T37 | Power-up actor tail, blocks and movement/gravity primitives; receives T36 PowerUpObjHandler boundary exception | 7201–7787; entry 7184 | 74 |
 | T38 | Enemy stream, records, slots and initialization | 7788–8500 | 85 |
 | T39 | Enemy groups, frenzy and special initialization | 8501–9300 | 98 |
 | T40 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |

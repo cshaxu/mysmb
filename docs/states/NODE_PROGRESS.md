@@ -12,18 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 813 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 123 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,056 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 819 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 120 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,053 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **813 / 1,992 (40.81%)**. The 123 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **819 / 1,992 (41.11%)**. The 120 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T36 S6 P1](../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof)
-proves four initialization nodes with 72 full-RAM original/native matches.
-T36 closes 41 new plus 14 retained labels, with the named PowerUpObjHandler
-next-slice exception. Cross-chain review retains 32 known vine child failures;
-prior unrelated full-frame/core debts remain.
+Latest task review: [T37 S1 P1](../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof)
+proves six actor caller/state nodes with 100 original-child-boundary matches.
+Actual native children yield 84 matches and 16 retained graphics/music failures;
+these child nodes receive no credit. T37 remains open for S2-S9.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (813)
+## Completed matches (819)
 
 | ROM line | Node |
 | ---: | --- |
@@ -813,6 +812,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7163 | `PwrUpJmp` |
 | 7175 | `StrType` |
 | 7176 | `PutBehind` |
+| 7184 | `PowerUpObjHandler` |
+| 7202 | `ShroomM` |
+| 7206 | `GrowThePowerUp` |
+| 7223 | `ChkPUSte` |
+| 7226 | `RunPUSubs` |
+| 7232 | `ExitPUp` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |
@@ -865,7 +870,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (123)
+## Mapped but not yet matched (120)
 
 | ROM line | Node |
 | ---: | --- |
@@ -904,9 +909,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 7184 | `PowerUpObjHandler` |
-| 7206 | `GrowThePowerUp` |
-| 7226 | `RunPUSubs` |
 | 7244 | `PlayerHeadCollision` |
 | 7316 | `InitBlock_XY_Pos` |
 | 7332 | `BumpBlock` |
