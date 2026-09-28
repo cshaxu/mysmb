@@ -2,12 +2,33 @@
 
 ## Current Work
 
-**M2 T31 S3 is closed at 618 / 1,992: all ten received scroll-chain labels are proven. T31 remains open; planned S4 is next and not yet admitted.**
+**M2 T31 S4 has ten proven caller nodes at 628 / 1,992. Its packet remains active for the final T31 cross-chain review.**
 
-The source tables and all nine conditional outcomes are proven; 24 original
-entry/return boundaries match both native widths. Three artifacts are
-refreshed; Windows startup checks pass. DOS remains link-only. S2's six
-unfinished enemy-caller transfers remain with T19 S5.
+All three artifacts are refreshed. The original vector and entrance caller
+contracts are proven; 26 production whole-call failures remain explicitly
+with T23 S5 and T16 S4. DOS remains link-only. T31 still requires its
+cross-chain review; no next task is admitted.
+
+## M2 T31 S4 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T31 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution; coordinator accepts transfer-133 after closed S3. |
+| Objective | Restore the GameRoutines vector and complete PlayerEntrance/AutoControlPlayer chain. |
+| Non-goals | No broad player physics, terminal, vine-object or enemy repair; child seam extraction gives no child credit. |
+| Reference Baseline | 618 / 1,992; ten unique open labels, ten expected matches, maximum 628. Exact names in the proposal and ledger. |
+| Candidate Proposal | [S4 entry-mode chain](../proposals/m2/game-dispatcher.md#s4-admission-game-routine-vector-and-player-entrance). |
+| Files And ABI Surface | Shared entry owner, engine/player callers and headers, build lists, tests/recorders, three artifacts. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
+| Verification | Original vector/branch/write/call audit and natural NMI boundaries; independent callback tests, native regressions, three builds and platform purity. |
+| Expected Markers | Thirteen targets; low-Y control; pipe timer wrap; vine height/state/block/collision branches; ready resets; saved controller before child. |
+| Asset Needs | Existing owner-local ROM and listing; no imported implementation. Three EXEs per P; DOS link-only. |
+| Reporting Requirements | Ten exact dispositions, two verification tracks, three artifact hashes and explicit child gaps. |
+| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
+| Exit Criteria | Every received node proven or explicitly transferred with acceptance; tracker and artifacts agree. |
+| Original Owner Request | Faithful original-ROM logic and call structure in shared 16/32/64-bit C, following planned source order. |
+| Similar-Issue Sweep | Every entry-mode and auto-control caller; remove duplicate entrance body and incorrect exit-mode substitution. |
 
 ## M2 T31 S3 Packet (closed)
 

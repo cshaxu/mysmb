@@ -2,8 +2,9 @@
 
 ## Status
 
-**M2 T31 open; S3 closed with ten proven labels at 618 / 1,992.** Closed T30 precedes this task in the
-source-order recovery plan. S1 through S3 are closed; planned S4 is next and not yet admitted.
+**M2 T31 open; S4 implementation complete at 628 / 1,992.** Closed T30 precedes
+this task in the source-order recovery plan. S1 through S3 are closed;
+S4 remains the active packet for final cross-chain review. No successor is admitted.
 
 ## Exact task scope and chain plan
 
@@ -1499,3 +1500,147 @@ inventory, census, progress and ledger; no unfinished node remains in S3
 custody. The closure, progress and documentation gates pass. Actual raw
 evidence is 620,968 bytes within the 2 MB cap. S3 closes with P1; T31 remains
 open for its planned S4 chain and final cross-chain review.
+
+## S4 admission: game routine vector and player entrance
+
+Transfer-133 receives GameRoutines, PlayerEntrance, ChkBehPipe, IntroEntr,
+EntrMode2, VineEntr, OffVine, PlayerRdy, ExitEntr and AutoControlPlayer from
+T24 S2. All ten are open. Baseline 618 / 1,992; expected ten; maximum 628.
+This is the next planned S after the verified S3 closure, not a new task.
+
+The chain begins at GameRoutines ($b04a), selects its original thirteen
+targets, and implements PlayerEntrance through AutoControlPlayer
+($b069-$b0e8). Successors are PlayerCtrlRoutine, EnterSidePipe, MovePlayerYAxis
+and NextArea. A focused shared entry-mode owner will replace the simplified
+player.c entrance body and the engine.c selector. Existing child algorithms
+retain their status; extraction into named caller seams is allowed but does
+not admit broad player physics, terminal, vine-object or other task repair.
+
+Source audit already finds missing low-Y auto-control, wrongly deferred
+alternate entrance three, missing vine height/state/block/collision branches,
+and IntroEntr incorrectly using the full SideExitPipeEntry transition. Restore
+the exact timer decrement/wrap and DisableIntermediate/NextArea handoff.
+AutoControlPlayer must write SavedJoypadBits before entering player control.
+The vector must have thirteen distinct source targets; inline legacy child
+bodies may move to named game-owned boundaries without completion credit.
+
+ROM-logic verification covers vector bytes, all entrance predicates and RAM
+writes, child order and return-dependent X decisions. Use ordinary NMI entry
+with controlled source RAM and read-only natural call boundaries. Independent
+callback tests verify handoffs and post-child reads; native route regressions,
+strict C90 x86/x64, OpenNT DOS link and platform purity form the operational
+track. Each implementation P refreshes the three existing EXEs. DOS remains
+link-only until its separate owner-data/runtime obligations are satisfied.
+
+Owner ROM/listing remain non-redistributable local research inputs, unchanged
+from S3. No third-party implementation is imported. Temporary products and
+raw traces remain under ignored build/m2-t31-s4, 2 MB raw budget, twenty-second
+recorder limit, S4 cleanup responsibility through T review. No PC/stack/ROM
+patching or masked comparison is allowed. Any unrelated child discrepancy
+is recorded with its owner before scope changes are considered.
+
+S4 admission passes with ten unique open scope/expected labels and ceiling
+628 from 618. The implementation now has one game/entry.c owner for the
+thirteen-way GameRoutines selector and PlayerEntrance/AutoControlPlayer.
+The simplified entrance body is removed from player.c. Existing flagpole,
+end-level and death child bodies move out of the selector into named player
+seams without algorithm changes. Both pipe callers share EnterSidePipe;
+PlayerEntrance no longer runs the unrelated SideExitPipeEntry transition.
+MovePlayerYAxis is shared by the upward entrance and downward pipe caller.
+
+The [entry caller test](../../../test/player_entry_chain_smoke.c) passes on
+x86/x64 under strict C90. It covers all thirteen vector selections, all
+controller bytes, all ordinary alternate-entry/Y bytes, both pipe header
+values with every timer byte, upward Y wrap, and all nonzero vine override
+bytes around height/Y/X gates. Mutating child callbacks verify the caller
+reads X and the area timer after the child returns. No child can satisfy
+AutoControlPlayer without observing the prior SavedJoypadBits write.
+
+Production-linked player-route and area-initialization regressions pass on
+both widths; the parent game-entry dispatcher regression passes as well.
+OpenNT large-model compilation of entry.c and platform purity pass. The
+similar-issue sweep identifies the former engine selector, simplified
+entrance, two pipe callers and axis movement sites; these now use the
+declared shared boundaries. Other player/terminal/vine-object child interiors
+remain outside the proof and unchanged except for the owned AutoControlPlayer
+handoff. Natural original-ROM evidence, the full three-target delivery and
+P1 commit remain pending. All ten labels stay open at 618 / 1,992; the
+published artifacts remain S3/P1.
+
+## S4 original-boundary checkpoint
+
+The original GameRoutines table has thirteen verified target addresses;
+thirteen controlled NMI routes reach those actual entries. Twenty-two
+entrance routes cover all nine entrance labels and both outcomes of all
+eleven conditional branches. Read-only entry/return and child observers
+produce identical frame records to unobserved execution; they do not alter
+ROM, PC, registers, stack or RAM.
+
+[The reproducible verifier](../../../test/verify_entrance_snapshots.py)
+consumes the ignored S4 evidence directory and owner ROM. It verifies 44
+x86/x64 caller comparisons over 1,784 persistent bytes, including mirrors.
+Caller comparisons check child identity, order, argument and entry RAM, then
+use the original executed child return. This proves only caller semantics.
+The separate [production checker](../../../test/entrance_snapshot_check.c),
+now available as a local-ROM CMake target, executes actual shared C children.
+Relinked against the final 62 shared objects on both widths, it retains
+18 matching and 26 failing comparisons. No failed comparison is suppressed
+and no whole-call equivalence is claimed.
+
+Existing responsibility receipts record player-control/NextArea findings in
+[T23 S5](player-route.md#t31-s4-evidence-receipt-for-existing-t23-s5-custody)
+and relative-position findings in
+[T16 S4](oam-graphics.md#t31-s4-evidence-receipt-for-existing-t16-s4-custody).
+These children retain their unfinished status; S4 does not absorb repairs.
+
+Both newly built Windows executables pass their self-tests and a bounded
+two-second hidden-window startup/message-response probe without input
+injection. This is startup evidence, not a gameplay or performance claim.
+S4 remains active at 618 / 1,992 pending final review, accounting and P1
+delivery; this checkpoint awards no node credit.
+
+## S4/P1: entry chain proof
+
+Expected ten, actual ten: 618 -> 628 / 1,992. Each row below certifies the
+node's own control/read/write/call contract, not its children's algorithms.
+The original-boundary checkpoint above records the 26 retained whole-call
+failures and their existing owners. No child receives new completion credit.
+
+| Exact node | Original source lines | Shared entry.c semantics and evidence |
+| --- | --- | --- |
+| GameRoutines | 5499-5515 | Thirteen original vector words and thirteen natural target hits; native callbacks verify the same target binding and controller argument. |
+| PlayerEntrance | 5519-5531 | Alternate selector equality, low-Y null controller and header 6/7 gates; original branch outcomes and child-entry RAM agree. |
+| ChkBehPipe | 5532-5535 | Attribute gate and forced right input; saved input observed before the real child boundary. |
+| IntroEntr | 5536-5540 | EnterSidePipe first, unconditional timer decrement including zero wrap, disable-intermediate increment and NextArea handoff. Child-return replay verifies post-child timer use. |
+| EntrMode2 | 5541-5548 | Override gate, upward amount ff and post-child Y threshold 91, including wrap. |
+| VineEntr | 5549-5561 | Height 60 gate, Y threshold 99, climbing state and block byte 08 in original order. |
+| OffVine | 5562-5566 | Collision flag before auto-control, X threshold 48 evaluated after child return. |
+| PlayerRdy | 5567-5574 | Task 08, facing 01, alternate/collision/override reset in original order. |
+| ExitEntr | 5575 | Return without extra writes on height/timer/X paths; outer return RAM checked. |
+| AutoControlPlayer | 5580-5581 | SavedJoypadBits written before PlayerCtrlRoutine; all 256 input bytes and original child-entry snapshots checked. |
+
+The final 62 shared sources compile as strict C90 on both Windows widths.
+Production-linked player-route and area-initialization regressions, entry
+callback tests and parent dispatcher tests pass on both widths. The final
+native recorders compile on both widths. The production snapshot checker
+is linked to those same final shared objects, with 18 matches and 26
+failures retained. Both Windows self-tests and bounded hidden startup/message
+probes pass. Full OpenNT DOS16 linking succeeds with the existing library
+warnings; DOS has no owner-data binding or gameplay/486 qualification claim.
+No platform source changes or game-state branches are introduced.
+
+Three refreshed local artifacts (owner-authorized inclusion; not a public release):
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257437 | 0d975b043faa521f201acac16ee18ed01ef52cd600ec8554f2efeeb55c76b150 |
+| mysmb32.exe | 322371 | 34be0fb0f878cb074216526644f4a28043c7176dda91147dc419f5666ce2ea2e |
+| mysmb64.exe | 329742 | 49a78adaeb2a42d80899003bc62550f8a16c6aeba2d8bda3a54c746cc7731370 |
+
+S4 has all ten expected nodes proven and no unfinished S4 node custody.
+The coordinator reviewed source semantics, caller-only proof limits, explicit
+child failures, all final tests and three artifact hashes. Node closure,
+progress and documentation gates pass at 628 / 1,992. Platform purity passes.
+Raw evidence is 991,727 bytes within the 2 MB cap, retained under the ignored
+S4 directory through T review. S4's packet remains active until T31's final
+cross-chain review is complete; no successor task is admitted.

@@ -1,5 +1,19 @@
 # M2 candidate: Player route
 
+## T31 S4 evidence receipt for existing T23 S5 custody
+
+The coordinator records additional failing-route evidence for the existing
+PlayerCtrlRoutine and NextArea responsibility; no node changes receiver and
+no implementation is admitted by this receipt. See the
+[entry-chain checkpoint](game-dispatcher.md#s4-original-boundary-checkpoint).
+The ordinary NMI entrance fixtures retain full production-call failures:
+low-Y/pipe control produces `$00eb=$00` instead of `$13`; vine routes differ
+in animation, bounding-box and movement fields; NextArea leaves `$00fc=$00`
+instead of the original silence command `$80`. The vine differences remain
+child-chain findings pending per-node attribution, not claimed root causes.
+Repair in source order and rerun the production entrance checker against the
+same original snapshots; caller callback success cannot close these gaps.
+
 ## Status
 
 **M2 T23 active — S1/P1 and S2/P1 complete; S2 remains active.**

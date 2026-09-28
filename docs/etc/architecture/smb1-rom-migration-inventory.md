@@ -79,7 +79,7 @@ The labels and branches behind every line remain open until individually bound b
 - [ ] **Game engine, mode transitions and timers**
   - [x] `GameCoreRoutine` - ROM line 5326; T31 S1 dispatcher entry proof (child interiors remain open).
   - [ ] `GameEngine` — ROM line 5336; C owner/evidence pending
-  - [ ] `GameRoutines` — ROM line 5499; C owner/evidence pending
+  - [x] `GameRoutines` - ROM line 5499; T31 S4 thirteen-target caller proof; child interiors retain separate status.
   - [ ] `GameTimerExpired` — label lookup pending
   - [ ] `PlayerEndLevel` — ROM line 5856; C owner/evidence pending
 - [ ] **Player movement, physics, collision and size state**
@@ -729,16 +729,16 @@ The labels and branches behind every line remain open until individually bound b
 | 5479 | `X_SubtracterData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
 | 5482 | `OffscrJoypadBitsData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
 | 5487 | `GetScreenPosition` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5499 | `GameRoutines` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameroutines) |
-| 5519 | `PlayerEntrance` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerentrance) |
-| 5532 | `ChkBehPipe` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbehpipe) |
-| 5536 | `IntroEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-introentr) |
-| 5541 | `EntrMode2` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entrmode2) |
-| 5549 | `VineEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineentr) |
-| 5562 | `OffVine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-offvine) |
-| 5567 | `PlayerRdy` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerrdy) |
-| 5575 | `ExitEntr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitentr) |
-| 5580 | `AutoControlPlayer` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autocontrolplayer) |
+| 5499 | `GameRoutines` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5519 | `PlayerEntrance` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5532 | `ChkBehPipe` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5536 | `IntroEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5541 | `EntrMode2` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5549 | `VineEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5562 | `OffVine` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5567 | `PlayerRdy` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5575 | `ExitEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5580 | `AutoControlPlayer` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
 | 5583 | `PlayerCtrlRoutine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerctrlroutine) |
 | 5595 | `DisJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-disjoyp) |
 | 5597 | `SaveJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savejoyp) |

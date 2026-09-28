@@ -1,5 +1,17 @@
 # M2 candidate: OAM, offscreen and graphics
 
+## T31 S4 evidence receipt for existing T16 S4 custody
+
+The coordinator records entrance-route evidence for RelativePlayerPosition,
+which remains with T16 S4; no transfer or concurrent admission is implied.
+See the [entry-chain checkpoint](game-dispatcher.md#s4-original-boundary-checkpoint).
+Production pipe/vine calls prematurely change `$0755` from `$40` to the
+current player X (`$41`, `$47` or `$48`). Audit this write against its original
+RenderPlayerSub owner and the relative-position child boundary. Keep the
+full production-call mismatch visible until the shared output chain is
+corrected and the existing entrance snapshots match without substituted
+child returns.
+
 ## Status
 
 **M2 T16 active — S3/P12.** T15/S4 is gated at the real-demo block/OAM boundary; T16 owns the prerequisite source structure and output primitives.

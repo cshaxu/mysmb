@@ -17,65 +17,6 @@ enum {
     MYSMB_FRAME_TIMER_CONTROL = 0x0747U
 };
 
-/* Existing child implementations extracted from the frame root.
- * GameRoutines vector/body fidelity is pending T31 S4; GameEngine call order
- * and child scheduling are pending T31 S2. Extraction grants no node credit. */
-void mysmb_game_routines(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 6U) {
-        mysmb_game_lose_life(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 0U) {
-        mysmb_player_initialize_entrance(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 1U) {
-        mysmb_player_step_auto_climb(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 7U) {
-        mysmb_player_finish_normal_entrance(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 3U) {
-        mysmb_player_step_vertical_pipe(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 4U) {
-        /* ROM FlagpoleSlide: force Down until the slide reaches $9e. */
-        if (game->ram[MYSMB_FRAME_PLAYER_Y] < 0x9eU) {
-            mysmb_player_step(game, MYSMB_BUTTON_DOWN);
-        }
-        else {
-            game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] = 5U;
-        }
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 5U) {
-        /* ROM PlayerEndLevel.  The star/flag task is the original
-         * object-side completion handoff; the mode route owns NextArea. */
-        mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
-        if (game->ram[MYSMB_FRAME_STAR_FLAG_TASK] == 5U) {
-            game->ram[MYSMB_FRAME_LEVEL]++;
-            mysmb_game_next_area(game);
-        }
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 2U) {
-        mysmb_player_step_side_pipe(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 8U) {
-        mysmb_player_step(game, game->ram[MYSMB_FRAME_SAVED_JOYPAD1]);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 9U) {
-        mysmb_player_step_change_size(game);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 10U) {
-        mysmb_player_step_injury_blink(game, game->ram[MYSMB_FRAME_SAVED_JOYPAD1]);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 11U &&
-             game->ram[MYSMB_FRAME_TIMER_CONTROL] < 0xf0U) {
-        mysmb_player_step(game, game->ram[MYSMB_FRAME_SAVED_JOYPAD1]);
-    }
-    else if (game->ram[MYSMB_FRAME_GAME_ENGINE_SUBROUTINE] == 12U) {
-        mysmb_player_step_fire_flower(game);
-    }
-}
-
 void mysmb_game_engine(struct mysmb_game *game)
 {
     struct mysmb_area_source area_source;

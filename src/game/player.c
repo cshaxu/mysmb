@@ -1,4 +1,5 @@
 #include "game/player.h"
+#include "game/frame_root.h"
 #include "game/objects.h"
 #include "game/fireball/fireball.h"
 #include "game/area.h"
@@ -941,7 +942,7 @@ void mysmb_player_step_vertical_pipe(struct mysmb_game *game)
 {
     mysmb_u8 entrance;
 
-    game->ram[MYSMB_PLAYER_Y]++;
+    mysmb_player_move_y_axis(game, 1U);
     mysmb_player_update_scroll(game);
     entrance = 0U;
     if (game->ram[MYSMB_WARP_ZONE_CONTROL] == 0U) {
@@ -957,8 +958,8 @@ void mysmb_player_step_vertical_pipe(struct mysmb_game *game)
     }
 }
 
-/* Translation of SideExitPipeEntry/EnterSidePipe. */
-void mysmb_player_step_side_pipe(struct mysmb_game *game)
+/* Existing EnterSidePipe child, shared by both original pipe callers. */
+void mysmb_player_enter_side_pipe(struct mysmb_game *game)
 {
     mysmb_u8 forced_buttons;
 
@@ -968,7 +969,14 @@ void mysmb_player_step_side_pipe(struct mysmb_game *game)
         game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
         forced_buttons = 0U;
     }
-    mysmb_player_step(game, forced_buttons);
+    mysmb_player_auto_control(game, forced_buttons);
+}
+
+/* Original SideExitPipeEntry caller; later transition semantics retain
+ * their separate status. PlayerEntrance must not call this whole body. */
+void mysmb_player_step_side_pipe(struct mysmb_game *game)
+{
+    mysmb_player_enter_side_pipe(game);
     if (game->ram[MYSMB_CHANGE_AREA_TIMER] != 0U) {
         game->ram[MYSMB_CHANGE_AREA_TIMER]--;
     }
@@ -1161,37 +1169,34 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
 }
 
-/* Translation of ROM $b069-$b0e5 PlayerEntrance after InitializeArea.  The
- * object-owned alternate entrance 3 waits for vine growth; normal and pipe
- * entrances complete here, while alternate entrance 2 rises from its pipe
- * until the original PlayerRdy threshold. */
-void mysmb_player_finish_normal_entrance(struct mysmb_game *game)
+/* Original MovePlayerYAxis seam shared by the two admitted callers. */
+void mysmb_player_move_y_axis(struct mysmb_game *game, mysmb_u8 amount)
 {
-    if (game->ram[MYSMB_ALT_ENTRANCE] == 3U) {
-        return;
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] + amount);
+}
+
+/* Existing inline GameRoutines children extracted without algorithm changes.
+ * Their source-node conformance remains a later player-state responsibility. */
+void mysmb_player_step_flagpole_slide(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_PLAYER_Y] < 0x9eU)
+        mysmb_player_step(game, MYSMB_BUTTON_DOWN);
+    else game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 5U;
+}
+
+void mysmb_player_step_end_level(struct mysmb_game *game)
+{
+    mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
+    if (game->ram[0x0746U] == 5U) {
+        ++game->ram[0x075cU];
+        mysmb_game_next_area(game);
     }
-    if (game->ram[MYSMB_PLAYER_ENTRANCE] == 6U ||
-        game->ram[MYSMB_PLAYER_ENTRANCE] == 7U) {
-        /* PlayerEntrance's ChkBehPipe: before the pipe contact has set the
-         * priority bit, the original forces a rightward PlayerCtrlRoutine.
-         * Once set, its IntroEntr branch uses EnterSidePipe and the timer. */
-        if (game->ram[MYSMB_PLAYER_ATTRIBUTES] == 0U) {
-            mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
-        }
-        else {
-            mysmb_player_step_side_pipe(game);
-        }
-        return;
-    }
-    if (game->ram[MYSMB_ALT_ENTRANCE] == 2U) {
-        game->ram[MYSMB_PLAYER_Y]--;
-        if (game->ram[MYSMB_PLAYER_Y] >= 0x91U) return;
-    }
-    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
-    game->ram[MYSMB_PLAYER_FACING] = 1U;
-    game->ram[MYSMB_ALT_ENTRANCE] = 0U;
-    game->ram[MYSMB_DISABLE_COLLISION] = 0U;
-    game->ram[MYSMB_JOYPAD_OVERRIDE] = 0U;
+}
+
+void mysmb_player_step_death(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_TIMER_CONTROL] < 0xf0U)
+        mysmb_player_step(game, game->ram[0x06fcU]);
 }
 
 /* Translation of ROM $df4b-$df7d ImpedePlayerMove. */

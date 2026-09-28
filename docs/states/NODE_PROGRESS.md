@@ -12,16 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 618 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 628 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,239 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,229 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **618 / 1,992 (31.02%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **628 / 1,992 (31.53%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S3 P1](../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof)
-completes all ten scroll-chain labels. S2's six transferred enemy callers
-remain incomplete with T19 S5. No other node receives credit.
+Latest task review: [T31 S4 P1](../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof)
+completes ten entry/dispatch caller nodes. Production child calls retain 26
+failing comparisons with existing T23 S5 and T16 S4 owners. This is not a
+whole-game or whole-call equivalence claim.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (618)
+## Completed matches (628)
 
 | ROM line | Node |
 | ---: | --- |
@@ -586,6 +587,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5479 | `X_SubtracterData` |
 | 5482 | `OffscrJoypadBitsData` |
 | 5487 | `GetScreenPosition` |
+| 5499 | `GameRoutines` |
+| 5519 | `PlayerEntrance` |
+| 5532 | `ChkBehPipe` |
+| 5536 | `IntroEntr` |
+| 5541 | `EntrMode2` |
+| 5549 | `VineEntr` |
+| 5562 | `OffVine` |
+| 5567 | `PlayerRdy` |
+| 5575 | `ExitEntr` |
+| 5580 | `AutoControlPlayer` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

@@ -64,6 +64,13 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 void mysmb_player_initialize_entrance(struct mysmb_game *game);
 /* ROM $b069-$b0e5 PlayerEntrance normal-entry completion. */
 void mysmb_player_finish_normal_entrance(struct mysmb_game *game);
+void mysmb_player_auto_control(struct mysmb_game *game, mysmb_u8 buttons);
+/* Original child seams; extraction does not certify their interiors. */
+void mysmb_player_enter_side_pipe(struct mysmb_game *game);
+void mysmb_player_move_y_axis(struct mysmb_game *game, mysmb_u8 amount);
+void mysmb_player_step_flagpole_slide(struct mysmb_game *game);
+void mysmb_player_step_end_level(struct mysmb_game *game);
+void mysmb_player_step_death(struct mysmb_game *game);
 /* ROM $af93-$b068 ScrollHandler including player offscreen-edge clamping. */
 void mysmb_player_update_scroll(struct mysmb_game *game);
 void mysmb_player_get_screen_position(struct mysmb_game *game);

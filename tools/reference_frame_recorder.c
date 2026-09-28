@@ -31,6 +31,7 @@
 #include "../test/engine_warp_fixture.h"
 #include "../test/engine_normal_fixture.h"
 #include "../test/scroll_fixture.h"
+#include "../test/entrance_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
 #include "core/driver.h"
@@ -932,6 +933,12 @@ int main(int argument_count, char **arguments)
     unsigned char movement_snapshots[4096];
     unsigned int movement_snapshot_phase;
     unsigned int background_snapshot;
+    const char *entrance_children_path;
+    unsigned char entrance_children[4][4098];
+    unsigned int entrance_child_count;
+    unsigned int entrance_child_active;
+    lib_u16 entrance_child_return;
+    lib_u8 entrance_child_stack;
     struct mysmb_reference_ram_write ram_write;
     unsigned int t26_fixture;
     lib_bool direct_warp_text;
@@ -958,6 +965,11 @@ int main(int argument_count, char **arguments)
     movement_snapshot_path = NULL;
     movement_snapshot_phase = 0u;
     background_snapshot = 0u;
+    entrance_children_path = NULL;
+    entrance_child_count = 0u;
+    entrance_child_active = 0u;
+    entrance_child_return = 0u;
+    entrance_child_stack = 0u;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
@@ -967,6 +979,17 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--entrance-children=", 20u) == 0) {
+            if (entrance_children_path != NULL || arguments[recorded][20] == '\0') return 64;
+            entrance_children_path = arguments[recorded] + 20;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--entrance-snapshot=", 20u) == 0) {
+            if (movement_snapshot_path != NULL || arguments[recorded][20] == '\0') return 64;
+            movement_snapshot_path = arguments[recorded] + 20;
+            background_snapshot = 3u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--scroll-snapshot=", 18u) == 0) {
             if (movement_snapshot_path != NULL || arguments[recorded][18] == '\0') return 64;
             movement_snapshot_path = arguments[recorded] + 18;
@@ -1379,6 +1402,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_entrance_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(740 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_scroll_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1786,6 +1815,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 741u && t26_fixture <= 775u)
+                    mysmb_entrance_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 741u));
                 else if (t26_fixture >= 717u && t26_fixture <= 740u)
                     mysmb_scroll_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 717u));
@@ -1996,6 +2028,48 @@ int main(int argument_count, char **arguments)
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         before_pc = driver->machine->pc;
+        /* Observe declared child entry/return states while the original
+         * PlayerEntrance executes. Read the real return address and stack
+         * depth; never replace the original child or alter CPU state. */
+        if (entrance_children_path != NULL && background_snapshot == 3u &&
+            movement_snapshot_phase == 1u) {
+            if (entrance_child_active != 0u) {
+                if (before_pc == entrance_child_return && driver->machine->s ==
+                    (lib_u8)(entrance_child_stack + 2u)) {
+                    memcpy(entrance_children[entrance_child_count] + 2050u,
+                           driver->machine->ram, 2048u);
+                    ++entrance_child_count;
+                    entrance_child_active = 0u;
+                }
+            }
+            else if (before_pc == 0xb0e9u || before_pc == 0xb21fu ||
+                     before_pc == 0xb200u || before_pc == 0xb315u) {
+                unsigned int child;
+                if (entrance_child_count >= 4u) return 69;
+                child = before_pc == 0xb0e9u ? 1u :
+                    (before_pc == 0xb21fu ? 2u : (before_pc == 0xb200u ? 3u : 4u));
+                entrance_children[entrance_child_count][0] = (unsigned char)child;
+                entrance_children[entrance_child_count][1] = driver->machine->a;
+                memcpy(entrance_children[entrance_child_count] + 2u,
+                       driver->machine->ram, 2048u);
+                entrance_child_stack = driver->machine->s;
+                entrance_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 2u)]);
+                entrance_child_active = child;
+            }
+        }
+        if (movement_snapshot_path != NULL && background_snapshot == 3u &&
+            elapsed >= warmup_frames && t26_fixture >= 741u && t26_fixture <= 762u) {
+            if (movement_snapshot_phase == 0u && before_pc == 0xb069u) {
+                memcpy(movement_snapshots, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 1u;
+            }
+            else if (movement_snapshot_phase == 1u && before_pc == 0xaef6u) {
+                memcpy(movement_snapshots + 2048u, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 2u;
+            }
+        }
         /* Read-only ScrollHandler boundary from the real pipe caller.
          * $b1ed is its JSR successor; no synthetic return is installed. */
         if (movement_snapshot_path != NULL && background_snapshot == 2u &&
@@ -2065,11 +2139,28 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        ok = fwrite(background_snapshot == 2u ? "MSSC\1\0\0\0" :
-                    (background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0"),
+        ok = fwrite(background_snapshot == 3u ? "MSEN\1\0\0\0" :
+                    (background_snapshot == 2u ? "MSSC\1\0\0\0" :
+                    (background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0")),
                     1u, 8u, snapshot) == 8u &&
              fwrite(movement_snapshots, 1u, 4096u, snapshot) == 4096u;
         if (fclose(snapshot) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (entrance_children_path != NULL) {
+        FILE *children;
+        unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
+        unsigned int child;
+        int ok;
+        if (background_snapshot != 3u || movement_snapshot_phase != 2u ||
+            entrance_child_active != 0u) return 69;
+        header[5] = (unsigned char)entrance_child_count;
+        children = fopen(entrance_children_path, "wb");
+        if (children == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, children) == 8u;
+        for (child = 0u; child < entrance_child_count; ++child)
+            if (fwrite(entrance_children[child], 1u, 4098u, children) != 4098u) ok = 0;
+        if (fclose(children) != 0) ok = 0;
         if (!ok) return 69;
     }
     return mysmb_reference_write_coverage(coverage_path) &&
