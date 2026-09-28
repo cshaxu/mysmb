@@ -743,41 +743,14 @@ void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
     }
 }
 
-/* Legacy regular bullet movement; original MoveBulletBill body still pending. */
-void mysmb_objects_step_bullet_bills_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 8U) return;
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
-    } else if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
-        game->ram[MYSMB_ENEMY_STATE + slot] == 0U) {
-        player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                    game->ram[MYSMB_PLAYER_X]);
-        enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                                   game->ram[MYSMB_ENEMY_X + slot]);
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
-            enemy_world < player_world ? 1U : 2U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x18U : 0xe8U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
-        game->ram[0x078aU + slot] = 0x0aU;
-    }
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0U &&
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) == 0U) {
-        mysmb_world_move_enemy_horizontally(game, slot);
-    }
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     for (slot = 0U; slot < 5U; ++slot) {
-        mysmb_objects_step_bullet_bills_slot(game, slot);
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 8U)
+            mysmb_objects_step_bullet_bills_slot(game, slot);
         mysmb_objects_draw_bullet_bill(game, slot);
     }
 }

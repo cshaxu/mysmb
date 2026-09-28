@@ -722,3 +722,117 @@ Existing owner-ROM/listing provenance and redistribution limits remain.
 | mysmb16.exe | 256371 | bba6308aa8a52daf41f73464a15da74036b107162d5c79ceffe7bc823e13d410 |
 | mysmb32.exe | 345634 | c962aa591fe08b19840f24842b70672cb2faff18a8f33075d8a700b27f6c33ee |
 | mysmb64.exe | 353539 | 5790311c229b49514b0149ab0e58df054d6c171fe8e2d71a38379c7aa7fbfa25 |
+
+## S6 admission: Bullet Bill movement
+
+S5 closed in 4155d2a. Coordinator accepts transfer-190. Both scoped labels,
+MoveBulletBill and NotDefB, are open and expected new. Baseline 1,103/1,992;
+maximum 1,105. Source $CC36-$CC45 follows Bloober and ends before
+SwimCCXMoveData. Shared owner is enemy/bullet_bill.c; the legacy bulk boundary
+retains eligibility filtering. Existing horizontal and jumping-gravity
+children are dependencies, not newly certified nodes.
+
+The original actor tests state bit $20. Defeated movement tail-calls
+MoveJ_EnemyVertically; otherwise it writes fixed speed $E8 and tail-calls
+MoveEnemyHorizontally. The earlier plan's timer-gate wording was inaccurate:
+the source actor has no timer, player-facing or other-state gate. Remove
+those extra semantics from this entry. Preserve caller-controlled timing,
+original child inputs/order and scratch/byte effects. Do not modify cannon
+actors, collision, drawing or gravity/horizontal algorithms.
+
+Logic proof maps both labels and their branch, store and tail calls against
+unchanged original NMI routes, covering state bits, slots, page/fraction
+boundaries and real children. Diagnostic substitution follows full child-input
+comparison; actual-child differences remain separately reported. Native
+contracts exhaust state bytes and check exact child selection, speed and
+write footprints, including unrelated eligibility/timer values. Preserve
+prior original matches; run strict C90 x86/x64 builds, DOS16 link, platform
+purity, window probes and refresh all three EXEs once for the chain.
+
+Similar-issue sweep covers the inline actor, movement vector, legacy bulk
+caller and Bullet Bill tests. Repair tests that asserted the removed
+non-ROM player-facing rule, with explicit source rationale. S7 swimming
+Cheep-Cheep remains next. No host gameplay or unadmitted child repair.
+Existing owner-local ROM/listing provenance and redistribution limits remain;
+no third-party import. Use ignored build/m2-t40-s6 for all outputs, up to
+128 original routes, eight-MB raw budget, twenty-second per-run timeout,
+unique paths and stable checkpoints. The coordinator owns trace retention
+and cleanup after dependent regressions no longer need these local inputs.
+
+## S6 original Bullet Bill movement proof
+
+S6 P1 closes both expected nodes: 1,103 -> 1,105/1,992. No scoped
+unfinished node or transfer remains; S7 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| MoveBulletBill | $CC36 | State bit $20 selects the original jumping-gravity tail with unchanged input; new ROM match |
+| NotDefB | $CC3F | All other states store fixed $E8 speed before the real horizontal tail; new ROM match |
+
+All seven original instructions and both outcomes of the state-bit branch
+execute in 128 unchanged original NMI routes. The two tail destinations
+are $BF92 MoveJ_EnemyVertically and $BF02 MoveEnemyHorizontally, each observed
+64 times. Caller-boundary and actual-child comparisons independently pass
+256/256 across x86/x64. The original entry, store and tail-call order are
+preserved; no source child receives additional completion credit.
+
+Caller diagnostics compare full child-entry RAM before substituting recorded
+returns. Actual runs execute the existing shared horizontal/gravity code.
+Hardware stack bytes alone are excluded; scratch and mapped $0109-$0139
+remain checked. All 128 observer-free frames equal observed records, proving
+observer noninterference rather than full-game native frame conformance.
+No mid-entry RAM, ROM, CPU/register, PC, stack or output patch is used.
+The first diagnostic observer used the inner gravity boundary $BFAD instead
+of the immediate child $BF92; actual-child results already passed. Correcting
+the observer to the original symbol boundary resolves its scratch-input
+mismatch without changing production code. Initial records remain separate.
+
+The shared enemy/bullet_bill.c owner removes the old player-facing speed,
+state/frame-timer initialization and timer/state-zero gates. The original
+non-defeated path always stores $E8, even when other state bits are set.
+Defeated movement uses the original jumping-gravity child, whose force is
+$1C, replacing the old $3D helper selection. Source entry has no extra flag
+or ID check; those filters remain only at the legacy bulk boundary. Native
+contracts exhaust all 256 state bytes, six slots and two unrelated gate
+values (3,072 full-RAM cases per width), including exact single child choice,
+child mutation retention and the unchanged facing/state/timer footprint.
+
+The existing Bullet Bill integration smoke passes on both widths after
+replacing its old gravity amount and pre-movement sprite-X expectations with
+source-derived values. The core smoke's Bullet Bill assertions now expect
+fixed left speed and preserved state/facing/frame timer. Its earlier player
+entrance failure is unchanged against the S5 object baseline; it is not
+claimed passing. Existing Bowser damage and endgame star-timer failures also
+retain their previous owners. Earlier focused native contracts pass.
+
+All 96 shared units compile in strict C90 for x86/x64; self-tests and hidden
+window-response probes pass. DOS16 links with the existing OLDNAMES warning
+and remains link-only: no graphical/resource-binding or physical 486 speed
+claim. Platform purity passes and all three EXEs are refreshed.
+
+Similar-issue sweep covers the old inline actor, original movement vector,
+legacy bulk path, and the two tests that encoded obsolete movement behavior.
+The old duplicate actor is removed and both manifests use the shared owner.
+Cannon allocation, collision and graphics algorithms are unchanged. No host
+adapter contains new gameplay logic.
+
+Reproduce bullet_movement_fixture.h cases 0..127 with
+--fixture=t40-bullet-movement=N, --bullet-movement-snapshot,
+--control-children and a separate --pc-coverage run.
+bullet_movement_snapshot_check diagnoses caller inputs and returns;
+enemy_loop_actual_check executes real children. The native CTest is
+mysmb.bullet-bill-movement. The final raw set uses 1,616,768 bytes; the initial
+observer set is retained separately, together below the eight-MB budget in
+ignored build/m2-t40-s6. Unique paths, twenty-second timeouts and checkpoints
+bound each run. The coordinator retains local inputs for dependent regressions.
+Existing owner-ROM/listing provenance and redistribution limits remain.
+
+The final original-snapshot matrix is 6,276/7,058. All 6,016 prior matches
+remain; 4 earlier comparisons improve. The remaining 782 downstream
+differences retain their existing source-order owners.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255971 | f603e81307516cad0243be5d03547ad2ec2b2853fd006e4983f08d169c6f9611 |
+| mysmb32.exe | 345850 | 893bf46e91ed59e54551a8688844e6dc030d9c1ff70b2042c52c0c3994de0711 |
+| mysmb64.exe | 353791 | e23e6578e9f3205f8cc81daf678d1c72c3f48d766ea16c3b9f35389d29332089 |
