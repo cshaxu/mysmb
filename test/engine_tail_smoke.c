@@ -1,5 +1,13 @@
 #include "game/frame_root.h"
 #include "game/area.h"
+#include "game/player.h"
+
+/* Palette callers must never enter player control. */
+void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
+{
+    (void)buttons;
+    game->ram[0x03c4U] = 0xffU;
+}
 
 static unsigned int music_calls;
 static unsigned int parser_calls;

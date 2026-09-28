@@ -647,49 +647,6 @@ void mysmb_player_background_collision(struct mysmb_game *game)
     }
 }
 
-/* ROM $b0f4-$b113 PlayerChangeSize. */
-void mysmb_player_step_change_size(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0xf8U) {
-        if (game->ram[MYSMB_PLAYER_CHANGE_SIZE] == 0U) {
-            game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
-            game->ram[MYSMB_PLAYER_CHANGE_SIZE] = 1U;
-            game->ram[MYSMB_PLAYER_SIZE] ^= 1U;
-        }
-        return;
-    }
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc4U) {
-        game->ram[MYSMB_TIMER_CONTROL] = 0U;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
-    }
-}
-
-/* ROM $b114-$b138 PlayerInjuryBlink.  The palette cycle is a renderer-owned
- * effect; the player-control and timer handoff are native gameplay state. */
-void mysmb_player_step_injury_blink(struct mysmb_game *game, mysmb_u8 buttons)
-{
-    if (game->ram[MYSMB_TIMER_CONTROL] >= 0xf0U) return;
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc8U) {
-        game->ram[MYSMB_TIMER_CONTROL] = 0U;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
-        return;
-    }
-    mysmb_player_step(game, buttons);
-}
-
-/* ROM $b139-$b154 PlayerFireFlower, excluding palette upload. */
-void mysmb_player_step_fire_flower(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0xc0U) {
-        game->ram[MYSMB_TIMER_CONTROL] = 0U;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 8U;
-        game->ram[MYSMB_PLAYER_ATTRIBUTES] &= 0xfcU;
-        return;
-    }
-    game->ram[MYSMB_PLAYER_ATTRIBUTES] =
-        (mysmb_u8)((game->ram[MYSMB_PLAYER_ATTRIBUTES] & 0xfcU) |
-                   ((game->ram[MYSMB_PLAYER_FRAME_COUNTER] >> 2U) & 3U));
-}
 
 /* Snapshot only translated RAM state; no platform state participates. */
 void mysmb_player_checkpoint(const struct mysmb_game *game,
@@ -1017,11 +974,6 @@ void mysmb_player_step_end_level(struct mysmb_game *game)
     }
 }
 
-void mysmb_player_step_death(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_TIMER_CONTROL] < 0xf0U)
-        mysmb_player_step(game, game->ram[0x06fcU]);
-}
 
 /* Translation of ROM $df4b-$df7d ImpedePlayerMove. */
 void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side)

@@ -31,11 +31,12 @@ void mysmb_player_set_entrance(struct mysmb_game *game);
 void mysmb_player_change_area_mode(struct mysmb_game *game);
 /* ROM $b1c7-$b1e4 Vine_AutoClimb and SetEntr. */
 void mysmb_player_step_auto_climb(struct mysmb_game *game);
-/* ROM $b0f4-$b138 PlayerChangeSize and $b139-$b154 PlayerFireFlower. */
+/* ROM $b233-$b2a3 size, injury, death and palette state chain. */
 void mysmb_player_step_change_size(struct mysmb_game *game);
-/* ROM $b114-$b138 PlayerInjuryBlink, excluding palette upload. */
 void mysmb_player_step_injury_blink(struct mysmb_game *game, mysmb_u8 buttons);
 void mysmb_player_step_fire_flower(struct mysmb_game *game);
+void mysmb_player_cycle_palette(struct mysmb_game *game, mysmb_u8 color);
+void mysmb_player_reset_palette(struct mysmb_game *game);
 
 /* Neutral fixed-input checkpoint for the translated player route. */
 struct mysmb_player_checkpoint {

@@ -763,20 +763,20 @@ The labels and branches behind every line remain open until individually bound b
 | 5740 | `ExitCAPipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
 | 5742 | `EnterSidePipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
 | 5751 | `RightPipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
-| 5757 | `PlayerChangeSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerchangesize) |
-| 5762 | `EndChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endchgsize) |
-| 5765 | `ExitChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitchgsize) |
-| 5769 | `PlayerInjuryBlink` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerinjuryblink) |
-| 5776 | `ExitBlink` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitblink) |
-| 5778 | `InitChangeSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initchangesize) |
-| 5786 | `ExitBoth` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitboth) |
-| 5791 | `PlayerDeath` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerdeath) |
-| 5797 | `DonePlayerTask` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doneplayertask) |
-| 5804 | `PlayerFireFlower` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerfireflower) |
-| 5812 | `CyclePlayerPalette` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cycleplayerpalette) |
-| 5821 | `ResetPalFireFlower` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetpalfireflower) |
-| 5824 | `ResetPalStar` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resetpalstar) |
-| 5830 | `ExitDeath` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdeath) |
+| 5757 | `PlayerChangeSize` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5762 | `EndChgSize` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5765 | `ExitChgSize` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5769 | `PlayerInjuryBlink` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5776 | `ExitBlink` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5778 | `InitChangeSize` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5786 | `ExitBoth` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5791 | `PlayerDeath` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5797 | `DonePlayerTask` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5804 | `PlayerFireFlower` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5812 | `CyclePlayerPalette` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5821 | `ResetPalFireFlower` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5824 | `ResetPalStar` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
+| 5830 | `ExitDeath` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
 | 5835 | `FlagpoleSlide` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpoleslide) |
 | 5847 | `SlidePlayer` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slideplayer) |
 | 5848 | `NoFPObj` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofpobj) |

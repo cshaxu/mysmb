@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 652 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 666 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,205 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,191 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **652 / 1,992 (32.73%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **666 / 1,992 (33.43%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T32 S2 P1](../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof)
-proves eleven vine/pipe caller nodes with 56 caller comparisons. Actual native
-children yield 30 matches and 26 retained failures; movement and output
+Latest task review: [T32 S3 P1](../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof)
+proves fourteen timer-state caller nodes with 44 caller comparisons. Actual native
+children yield 34 matches and 10 retained failures; movement and output
 dependencies remain incomplete. This is not full-player conformance.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (652)
+## Completed matches (666)
 
 | ROM line | Node |
 | ---: | --- |
@@ -621,6 +621,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5740 | `ExitCAPipe` |
 | 5742 | `EnterSidePipe` |
 | 5751 | `RightPipe` |
+| 5757 | `PlayerChangeSize` |
+| 5762 | `EndChgSize` |
+| 5765 | `ExitChgSize` |
+| 5769 | `PlayerInjuryBlink` |
+| 5776 | `ExitBlink` |
+| 5778 | `InitChangeSize` |
+| 5786 | `ExitBoth` |
+| 5791 | `PlayerDeath` |
+| 5797 | `DonePlayerTask` |
+| 5804 | `PlayerFireFlower` |
+| 5812 | `CyclePlayerPalette` |
+| 5821 | `ResetPalFireFlower` |
+| 5824 | `ResetPalStar` |
+| 5830 | `ExitDeath` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

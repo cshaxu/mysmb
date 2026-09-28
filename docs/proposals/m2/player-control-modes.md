@@ -2,7 +2,7 @@
 
 ## Status
 
-T32 follows closed T31. S1 and S2 are closed with 24 caller matches; S3 alone is active.
+T32 follows closed T31. S1-S3 are closed with 38 scoped matches; S4 alone is active.
 Task baseline 628 / 1,992. The source-range plan lists 49 open labels;
 48 are intended matches here, maximum 676. PlayerMovementSubs begins the
 next complete movement-state chain at line 5899; it retains T23 S5 custody
@@ -11,9 +11,8 @@ No friction/jump implementation is claimed merely from the old range title.
 
 ## Exact chain plan
 
-Every row below lists open nodes in original source order. The existing
-receiver is T23 S5. Only S1's thirteen labels transfer now; later S rows
-are unadmitted plans. Each S carries source audit, shared-C implementation,
+The rows preserve admission-time open nodes in original source order.
+S1-S3 are closed; S4 is now admitted by its exact ledger receipt. Each S carries source audit, shared-C implementation,
 ROM comparison, native tests and one three-target delivery together.
 
 | S | Exact labels | Shared-game responsibility |
@@ -392,3 +391,129 @@ owns cleanup through T review. DOS delivery remains link-only. Before credit,
 each exact label needs both evidence tracks; inherited child failures remain
 visible and receive no credit. Admission checks confirm 652, scope/expected
 14/14, maximum 666 and accepted responsibility for every label.
+
+## S3 P1 original timer-state proof
+
+The shared player_modes.c owns all fourteen admitted labels. Size, injury,
+death and flower bodies are removed from player.c. The GameEngine star caller
+uses the same CyclePlayerPalette and ResetPalStar leaves as the flower route;
+the leaves preserve non-palette attribute bits and the original scratch write.
+No platform code changed. Existing physical input mappings are unaffected.
+
+The source audit found a real omitted branch: injury's CMP F0 / BCS ExitBlink
+retains Z into BNE ExitBoth. Exactly F0 falls into InitChangeSize; values above
+F0 return. The former C `>= F0` return incorrectly skipped this fallthrough.
+The implementation now shares guarded InitChangeSize between injury and size.
+The disassembly's unconditional-branch comment is not authoritative over its
+instructions; an initial mistaken interpretation was rejected by ROM coverage.
+
+| Original node | Address | Proved semantics |
+| --- | --- | --- |
+| PlayerChangeSize | B233 | F8 invokes guarded initialization |
+| EndChgSize | B23D | Only C4 invokes DonePlayerTask |
+| ExitChgSize | B244 | Return preserves other timer values |
+| PlayerInjuryBlink | B245 | Unsigned F0 gate, C8 completion, otherwise PlayerCtrlRoutine |
+| ExitBlink | B253 | Above F0 returns; exactly F0 falls into InitChangeSize |
+| InitChangeSize | B255 | Existing flag guards animation clear, flag increment and size XOR |
+| ExitBoth | B268 | No extra state writes |
+| PlayerDeath | B269 | Below F0 calls PlayerCtrlRoutine; otherwise returns |
+| DonePlayerTask | B273 | Clear TimerControl before selecting subroutine 8 |
+| PlayerFireFlower | B27D | C0 completion; otherwise FrameCounter shifted twice |
+| CyclePlayerPalette | B288 | Low two color bits to scratch, merge with upper attributes |
+| ResetPalFireFlower | B297 | DonePlayerTask before ResetPalStar |
+| ResetPalStar | B29A | Clear palette bits, retain upper six attributes |
+| ExitDeath | B2A3 | Return without extra writes |
+
+Twenty-two ordinary-NMI routes cover size, injury, death, flower and the two
+star-palette entries. The read-only observer reuses the control/transition
+boundary mechanism; it reads original stack return addresses without patching
+ROM, PC, stack or running state. All eight conditional branches have both
+outcomes and every received node executes. Observed, coverage-only and
+unobserved frame outputs agree. Raw local evidence is 705,870 bytes, within
+the admitted 4 MB budget and twenty-second per-run limit.
+
+The [shared checker](../../../test/player_modes_snapshot_check.c) is built in
+two explicit modes. Caller mode checks the real child boundary and replays
+its observed original return; all 44 x86/x64 comparisons match over 1,784
+persistent RAM bytes. Only scratch 0-7 and hardware stack are excluded.
+Production mode calls actual native children: 34 match, ten fail. The failing
+five routes are injury EF/C7/00 and death EF/00, on both widths. Existing
+PlayerCtrlRoutine descendants still differ in animation/movement state;
+their T23 S5 and output dependencies retain their prior status and ownership.
+No child credit or complete gameplay claim follows from scoped caller proof.
+
+Reproduce with reference `--fixture=t32-modes=N` for N=0..21,
+`--modes-snapshot` and `--control-children`, then the
+[verification harness](../../../test/verify_player_modes_snapshots.py).
+Original material, recorded RAM/frames and generated data remain local ignored
+outputs. Only project-owned harnesses and neutral conclusions are tracked.
+
+Operational evidence: the modes, engine-tail, control, transition and entrance
+focused tests pass on x86/x64 (ten executions). Modes tests exercise every
+timer/flag pair for size, every flag/size byte pair for injury F0, all injury
+and death timers, and all attribute/frame pairs for palette behavior.
+Mutating PlayerCtrlRoutine callbacks verify child-return state is preserved.
+All 65 shared game units build as strict C90 on both Windows widths, both
+self-tests pass, and the full OpenNT DOS16 link succeeds. Hidden-window probes
+confirm creation and message responsiveness for two seconds per width; this
+is not playability/performance evidence. DOS remains link-only without owner
+program/title binding or physical 486 validation. Platform purity passes.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258013 | 24ffbac59909da1091c0d78928fe028a6c25cc470e5608d7315253591d4d1a75 |
+| mysmb32.exe | 324076 | 87d920da2c3806210998a1d9d3fd01923295ba5eddfa869baddaaa89c84cf7eb |
+| mysmb64.exe | 331035 | 68fbdc6aa1baafdfa534a35db50abe53f6c050a2be6f9dc7d794b048ebb3c706 |
+
+Similar-issue sweep examined all size/injury/death/flower entries and both
+GameEngine star palette calls. All owned bodies have a single shared owner;
+no duplicated palette algorithm remains at these callers. Original size/
+injury/death thresholds and palette masks were audited as one chain.
+
+S3 expected/actual caller matches: 14/14; global progress 652 -> 666 / 1,992.
+Exact completed labels: `PlayerChangeSize`, `EndChgSize`, `ExitChgSize`, `PlayerInjuryBlink`, `ExitBlink`, `InitChangeSize`, `ExitBoth`, `PlayerDeath`, `DonePlayerTask`, `PlayerFireFlower`, `CyclePlayerPalette`, `ResetPalFireFlower`, `ResetPalStar`, `ExitDeath`.
+No child receives credit. Final review and S4 admission remain pending.
+
+## S3 closure review
+
+All fourteen received labels have their own source/ROM and operational proof;
+expected/actual matches are 14/14, with no transfer. Review confirms the F0
+injury fallthrough repair, eight two-outcome source branches, 44 original
+caller matches, 34 actual-native matches and ten retained child failures.
+Focused tests, three target builds/artifacts, purity, closure ledger and
+documentation/progress gates pass. S3 closes at 666 / 1,992. Unfinished
+movement/output children retain their prior owners; T32 remains open.
+
+## S4 admission: flagpole and end-level chain
+
+Scope/expected, all open: `FlagpoleSlide`, `SlidePlayer`, `NoFPObj`, `Hidden1UpCoinAmts`, `PlayerEndLevel`, `ChkStop`, `InCastle`, `RdyNextA`, `NextArea`, `ExitNA`.
+Baseline 666 / 1,992; ten unique labels, expected ten, maximum 676.
+Transfer-137 accepts these from T23 S5. Source lines 5835-5895 contain the
+flagpole, end-level, hidden-1up threshold table and shared NextArea chain.
+GameRoutines modes 4/5 and entry/area callers precede it. AutoControlPlayer,
+LoadAreaPointer and ChgAreaMode are successor boundaries; existing child
+limitations remain visible without broad movement/parser repair.
+
+Use a shared game/player_end_level.c owner and remove duplicate owned bodies
+from player.c/terminal_modes.c. Restore special enemy-slot identity, sound
+queue transfer/clear, forced-down/zero input, post-control Y/scroll/collision
+reads, star-flag and sprite-priority state, level/world coin threshold, and
+NextArea's pointer/timer/mode/halfway/silence call and write order. Bind the
+original threshold table through the existing owner-local program-data path.
+No platform gameplay code or new generic emulation layer is permitted.
+
+ROM track: audit every original table byte, branch, RAM read/write and child
+order, then observe ordinary-NMI flagpole/end-level/NextArea boundaries with
+controlled source-RAM cases. Keep actual-child comparisons separate from
+caller-only proof. Operational track: bounded input/threshold/queue tests,
+mutating children for post-return reads, prior player-chain regressions,
+strict C90 x86/x64, full DOS16 link, purity and the three packaged EXEs.
+
+Use the existing owner-local ROM/listing as non-redistributable research;
+no external implementation import. Generated evidence stays in ignored
+build/m2-t32-s4, bounded to 4 MB raw, twenty seconds per recording, with S4
+cleanup ownership through T review. DOS remains link-only. Similar-issue
+sweep covers all flagpole/end-level/NextArea callers and all writers of the
+owned sound, area-mode, priority and hidden-1up state. Admission gate must
+confirm exact scope/expected 10/10, baseline 666 and maximum 676. The later
+T32 integrated review is still required after this final planned chain.

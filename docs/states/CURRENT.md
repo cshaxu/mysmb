@@ -2,12 +2,33 @@
 
 ## Current Work
 
-**M2 T32 S3 is active at 652 / 1,992: fourteen open timer-state nodes, expected fourteen, maximum 666.**
+**M2 T32 S4 is active at 666 / 1,992: ten open flagpole/end-level nodes, expected ten, maximum 676.**
 
-S2 is closed with eleven caller contracts proven; its 26 actual-child failures
+S3 is closed with fourteen scoped matches; its ten actual-child failures
 remain with existing source owners. T32 remains open.
 
-## M2 T32 S3 Packet
+## M2 T32 S4 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T32 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S3; coordinator accepts transfer-137. |
+| Objective | Restore FlagpoleSlide through ExitNA, including threshold data and shared NextArea. |
+| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
+| Reference Baseline | 666 / 1,992; ten unique open labels, expected ten, maximum 676. Exact names in proposal S4 and ledger. |
+| Candidate Proposal | [Flagpole/end-level chain](../proposals/m2/player-control-modes.md#s4-admission-flagpole-and-end-level-chain). |
+| Files And ABI Surface | Shared player-end-level owner, owned callers and declarations, build lists, tests/recorders, three artifacts. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
+| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
+| Expected Markers | Flag object/sound gates; forced input; post-child reads; coin threshold; pointer/mode/halfway/music order. |
+| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
+| Reporting Requirements | Ten exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
+| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
+| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
+| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
+| Similar-Issue Sweep | All flagpole/end-level/NextArea callers and owned state writers; host input stays physical mapping only. |
+
+## M2 T32 S3 Packet (closed)
 
 | Field | Required record |
 | --- | --- |

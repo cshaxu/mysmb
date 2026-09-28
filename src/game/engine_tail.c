@@ -1,5 +1,6 @@
 #include "game/frame_root.h"
 #include "game/area.h"
+#include "game/player.h"
 
 /* ROM $af3b-$af66: GameEngine music/palette branch, NoChgMus, CycleTwo,
  * ClrPlrPal. Preserve the CMP/BPL sign result, not an unsigned Y range. */
@@ -11,7 +12,7 @@ void mysmb_game_cycle_player_palette(struct mysmb_game *game)
     y_difference = (mysmb_u8)(game->ram[0x00b5U] - 2U);
     if ((y_difference & 0x80U) != 0U) {
         if (game->ram[0x079fU] == 0U) {
-            game->ram[0x03c4U] &= 0xfcU;
+            mysmb_player_reset_palette(game);
             return;
         }
         if (game->ram[0x079fU] == 4U && game->ram[0x077fU] == 0U)
@@ -20,8 +21,7 @@ void mysmb_game_cycle_player_palette(struct mysmb_game *game)
     color = game->ram[0x0009U];
     if (game->ram[0x079fU] < 8U) color = (mysmb_u8)(color >> 2U);
     color = (mysmb_u8)((color >> 1U) & 3U);
-    /* Existing CyclePlayerPalette leaf: retain non-palette attributes. */
-    game->ram[0x03c4U] = (mysmb_u8)((game->ram[0x03c4U] & 0xfcU) | color);
+    mysmb_player_cycle_palette(game, color);
 }
 
 /* ROM $af6f-$af92: UpdScrollVar -> RunParser -> ExitEng. Victory's
