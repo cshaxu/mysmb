@@ -63,6 +63,7 @@ int main(void)
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
+    game.ram[0x0612U] = 0xc0U;
     (void)mysmb_objects_start_head_bump(&game, 0xc0U, 0xf2U, 0x20U);
     if (game.ram[0x002aU + 8U] != 1U || game.ram[0x00dbU + 8U] != 0x2fU) return 4;
 
@@ -72,6 +73,7 @@ int main(void)
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
+    game.ram[0x0612U] = 0x5dU;
     (void)mysmb_objects_start_head_bump(&game, 0x5dU, 0xf2U, 0x20U);
     if (game.ram[0x002aU + 8U] != 1U || game.ram[0x00dbU + 8U] != 0x2fU) return 5;
     return 0;

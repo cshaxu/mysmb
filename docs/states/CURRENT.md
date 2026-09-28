@@ -2,28 +2,32 @@
 
 ## Current Work
 
-**M2 T37 S1 is closed at 819 / 1,992: six actor nodes proven; S2 head-hit and positioning is next.**
+**M2 T37 S2 is closed at 832 / 1,992: thirteen nodes proven; S3 block bump/content/lookup is next.**
 
-## M2 T37 S1 Packet
+## M2 T37 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 source-order mandate after T36 commit 263a75e; coordinator accepts transfer-154. |
-| Objective | Complete PowerUpObjHandler, ShroomM, GrowThePowerUp, ChkPUSte, RunPUSubs and ExitPUp as one actor chain. |
-| Non-goals | No child algorithm repair or S2-S9 block/movement migration; no extra conformance credit. |
-| Reference Baseline | 813 / 1,992; three mapped and three open labels; six expected, maximum 819; named admission gate passed. T37 plan: 71 incomplete plus three retained, maximum 884. |
-| Candidate Proposal | [Power-up actor, blocks and movement](../proposals/m2/power-up-block-movement.md#s1-admission-complete-power-up-actor-state-machine). |
-| Files And ABI Surface | Shared power_up actor, unchanged movement/collision child seams, enemy dispatcher and legacy tests, recorder/build lists and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Ordinary NMI actor root/child branch and write proof; separate actual-child diagnostics, native tests and target delivery. |
-| Expected Markers | Entry slot5 even when inactive; original movement/emergence gates; old-state threshold; six children in order, including bounds after collection. |
-| Asset Needs | Existing local owner ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact dispositions, child limits and caller sweep, dual proof, tracker/ledger and hashes. |
-| Stop Conditions | Unadmitted child repair, altered reference CPU/output, concealed mismatch or platform gameplay. |
-| Exit Criteria | All received nodes proven or exact accepted transfer; evidence, accounting and artifacts agree. |
-| Original Owner Request | Faithful original-ROM logic/call structure in shared native C, original source order and chain-level delivery. |
-| Similar-Issue Sweep | Power-up step/finish calls, private movement/terrain and relative writes, current-slot collision selection and post-collision bounds. |
+| Identifier Mode | M2 T37 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S1 commit d722829; coordinator accepts transfer-155. |
+| Objective | Complete the thirteen head-hit/table/position nodes named in the S2 proposal as one original chain. |
+| Non-goals | No bump-content, lookup or shatter child algorithm repair; no S3-S9 credit. |
+| Reference Baseline | 819 / 1,992; thirteen incomplete scope labels, thirteen expected, maximum 832. |
+| Candidate Proposal | [S2 head-hit and positioning](../proposals/m2/power-up-block-movement.md#s2-admission-head-hit-and-block-positioning). |
+| Files And ABI Surface | Shared blocks/head owner, unchanged child seams, player adapter, tests/recorder/build lists and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy, ledger and dual proof. |
+| Verification | Original branch/table/write/call order and NMI head-hit snapshots; separate native tests, regressions, three builds and platform purity. |
+| Expected Markers | VRAM blank before buffer read; lookup carry, coin timer, coordinate carry, blank-after-position, size/crouch and post-child control toggle. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Thirteen exact dispositions, two proof tracks, child failures, caller sweep, tracker/ledger and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, modified reference execution/output, concealed mismatch or platform gameplay. |
+| Exit Criteria | Every received node proven by both tracks or exact accepted unfinished transfer; accounting and artifacts agree. |
+| Original Owner Request | Faithful original ROM logic and call structure in shared C, original source order, chain-level delivery. |
+| Similar-Issue Sweep | Head-hit callers, block-position writers, duplicate child bodies, control/coordinate ownership and platform separation. |
+
+S2 closure: [head-hit proof](../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof).
+144 caller matches, 128 actual matches and 16 retained shatter-child failures;
+32 regression runs and three final builds pass, with DOS link-only.
 
 S1 closure: [actor proof](../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof).
 100 caller matches, 84 actual-child matches and 16 retained child failures;

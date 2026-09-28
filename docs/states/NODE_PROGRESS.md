@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 819 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 120 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,053 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 832 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 118 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,042 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **819 / 1,992 (41.11%)**. The 120 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **832 / 1,992 (41.77%)**. The 118 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T37 S1 P1](../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof)
-proves six actor caller/state nodes with 100 original-child-boundary matches.
-Actual native children yield 84 matches and 16 retained graphics/music failures;
-these child nodes receive no credit. T37 remains open for S2-S9.
+Latest task review: [T37 S2 P1](../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof)
+proves thirteen table/head-hit/coordinate nodes with 144 original-child-boundary
+matches. Actual native children yield 128 matches and 16 retained shatter
+failures for planned S4. T37 remains open for S3-S9.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (819)
+## Completed matches (832)
 
 | ROM line | Node |
 | ---: | --- |
@@ -818,6 +818,19 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7223 | `ChkPUSte` |
 | 7226 | `RunPUSubs` |
 | 7232 | `ExitPUp` |
+| 7241 | `BlockYPosAdderData` |
+| 7244 | `PlayerHeadCollision` |
+| 7251 | `DBlockSte` |
+| 7265 | `ChkBrick` |
+| 7274 | `StartBTmr` |
+| 7279 | `ContBTmr` |
+| 7282 | `PutOldMT` |
+| 7283 | `PutMTileB` |
+| 7297 | `SmallBP` |
+| 7298 | `BigBP` |
+| 7308 | `Unbreak` |
+| 7309 | `InvOBit` |
+| 7316 | `InitBlock_XY_Pos` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |
@@ -870,7 +883,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (120)
+## Mapped but not yet matched (118)
 
 | ROM line | Node |
 | ---: | --- |
@@ -909,8 +922,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 7244 | `PlayerHeadCollision` |
-| 7316 | `InitBlock_XY_Pos` |
 | 7332 | `BumpBlock` |
 | 7349 | `BlockCode` |
 | 7386 | `BrickQBlockMetatiles` |

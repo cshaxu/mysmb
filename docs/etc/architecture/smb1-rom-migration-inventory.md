@@ -960,19 +960,19 @@ The labels and branches behind every line remain open until individually bound b
 | 7223 | `ChkPUSte` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
 | 7226 | `RunPUSubs` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
 | 7232 | `ExitPUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7241 | `BlockYPosAdderData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockyposadderdata) |
-| 7244 | `PlayerHeadCollision` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-playerheadcollision) |
-| 7251 | `DBlockSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblockste) |
-| 7265 | `ChkBrick` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbrick) |
-| 7274 | `StartBTmr` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-startbtmr) |
-| 7279 | `ContBTmr` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contbtmr) |
-| 7282 | `PutOldMT` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putoldmt) |
-| 7283 | `PutMTileB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putmtileb) |
-| 7297 | `SmallBP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-smallbp) |
-| 7298 | `BigBP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bigbp) |
-| 7308 | `Unbreak` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-unbreak) |
-| 7309 | `InvOBit` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invobit) |
-| 7316 | `InitBlock_XY_Pos` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-initblock_xy_pos) |
+| 7241 | `BlockYPosAdderData` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7244 | `PlayerHeadCollision` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7251 | `DBlockSte` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7265 | `ChkBrick` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7274 | `StartBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7279 | `ContBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7282 | `PutOldMT` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7283 | `PutMTileB` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7297 | `SmallBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7298 | `BigBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7308 | `Unbreak` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7309 | `InvOBit` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7316 | `InitBlock_XY_Pos` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
 | 7332 | `BumpBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bumpblock) |
 | 7349 | `BlockCode` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockcode) |
 | 7363 | `MushFlowerBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushflowerblock) |

@@ -340,6 +340,7 @@ int main(void)
     game.ram[0x0086U] = 2U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x34U;
+    game.ram[0x0520U] = 0xc4U;
     if (mysmb_objects_start_head_bump(&game, 0xc4U, 0U, 0x20U) == 0U ||
         game.ram[0x008fU] != 0U || game.ram[0x0076U] != 1U ||
         game.ram[0x03eaU] != 1U) return 16;
@@ -718,11 +719,14 @@ int main(void)
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x70U;
+    /* PlayerHeadCollision reloads the source tile after its VRAM child. */
+    game.ram[0x0520U] = 0x58U;
     if (mysmb_objects_start_head_bump(&game, 0x58U, 0U, 0x20U) == 0U ||
         game.ram[0x06bcU] != 1U || game.ram[0x079dU] != 0x0bU ||
         game.ram[0x03e8U] != 0x58U) return 47;
     game.ram[0x06bcU] = 1U;
     game.ram[0x079dU] = 0U;
+    game.ram[0x0521U] = 0x5dU;
     if (mysmb_objects_start_head_bump(&game, 0x5dU, 1U, 0x20U) == 0U ||
         game.ram[0x06bcU] != 1U || game.ram[0x079dU] != 0U ||
         game.ram[0x03e9U] != 0xc4U) return 48;

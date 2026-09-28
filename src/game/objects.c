@@ -1,4 +1,5 @@
 #include "game/score.h"
+#include "game/blocks/head.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 #include "game/status.h"
@@ -1428,14 +1429,7 @@ void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
  * creates the vine. */
 void mysmb_objects_start_entrance_vine(struct mysmb_game *game)
 {
-    mysmb_u16 x_sum;
-
-    x_sum = (mysmb_u16)game->ram[MYSMB_PLAYER_X] + 8U;
-    game->ram[MYSMB_BLOCK_X] = (mysmb_u8)(x_sum & 0xf0U);
-    game->ram[MYSMB_BLOCK_PAGE] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + (x_sum >> 8U));
-    game->ram[MYSMB_BLOCK_PAGE_COPY] = game->ram[MYSMB_BLOCK_PAGE];
-    game->ram[MYSMB_BLOCK_Y_HIGH] = game->ram[MYSMB_PLAYER_Y_HIGH];
+    mysmb_blocks_initialize_position(game, 0U);
     game->ram[MYSMB_BLOCK_Y] = 0xf0U;
     mysmb_objects_start_vine(game, 5U, 0U);
 }
@@ -2014,7 +2008,7 @@ void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
     mysmb_area_remove_coin_axe(game, block_low, block_row);
 }
 /* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
-static mysmb_u8 mysmb_objects_is_bumpable(mysmb_u8 metatile)
+mysmb_u8 mysmb_blocks_is_bumpable(mysmb_u8 metatile)
 {
     mysmb_u8 index;
 
@@ -2071,81 +2065,22 @@ static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
 }
 
-/* Translation of ROM $bced-$bd9b's matched-block path.  The caller retains
- * unmatched bricks for the later brick-chunk route. */
-mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
-                                       mysmb_u8 metatile,
-                                       mysmb_u8 block_low,
-                                       mysmb_u8 block_row)
+/* Existing child bodies extracted without conformance credit. Their
+ * original BumpBlock/BrickShatter migrations belong to T37 S3/S4. */
+void mysmb_blocks_bump(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
-    mysmb_u8 old_x;
-    mysmb_u8 y_adder;
+    mysmb_u8 metatile;
     mysmb_u8 power_up_type;
     mysmb_u8 is_bumpable;
-    mysmb_u16 address;
-    mysmb_u16 x_sum;
-
-    is_bumpable = mysmb_objects_is_bumpable(metatile);
-    slot = (mysmb_u8)(game->ram[MYSMB_BLOCK_SLOT_CONTROL] & 1U);
-    /* PlayerHeadCollision starts every hit as an unbreakable bounce ($11).
-     * Only big Mario changes an ordinary, unmatched brick to state $12 for
-     * the brick-chunk route.  Small Mario still bounces an ordinary brick;
-     * returning early here lets him pass through it. */
-    game->ram[MYSMB_BLOCK_STATE + slot] =
-        game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0x12U : 0x11U;
-    game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot] = block_row;
-    game->ram[MYSMB_BLOCK_BUFFER_LOW + slot] = block_low;
-    game->ram[MYSMB_BLOCK_METATILE + slot] =
-        game->ram[MYSMB_PLAYER_SIZE] == 0U ? 0U : metatile;
-    if (is_bumpable != 0U) {
-        game->ram[MYSMB_BLOCK_STATE + slot] = 0x11U;
-        game->ram[MYSMB_BLOCK_METATILE + slot] = 0xc4U;
-        if (metatile == 0x58U || metatile == 0x5dU) {
-            /* ROM BlockBumpedChk/StartBTmr: the first multi-coin bump
-             * initializes the shared timer and increments its linked flag.
-             * Later bumps retain the source metatile only while the timer is
-             * nonzero; an expired timer produces the existing $c4. */
-            if (game->ram[MYSMB_BRICK_COIN_TIMER_FLAG] == 0U) {
-                game->ram[MYSMB_BRICK_COIN_TIMER] = 0x0bU;
-                game->ram[MYSMB_BRICK_COIN_TIMER_FLAG]++;
-            }
-            if (game->ram[MYSMB_BRICK_COIN_TIMER] != 0U) {
-                game->ram[MYSMB_BLOCK_METATILE + slot] = metatile;
-            }
-        }
-    }
-    address = (mysmb_u16)(0x0500U + block_low + block_row);
-    if (address >= 0x0800U) return 0U;
-    game->ram[address] = 0x23U;
-    /* PlayerHeadCollision always enters DestroyBlockMetatile before it
-     * dispatches BumpBlock. This is not coin-specific: the PPU must first
-     * receive the two blank tile rows for bricks, question blocks, hidden
-     * blocks, and item blocks alike. */
-    mysmb_area_destroy_block_metatile(game, slot, block_low, block_row);
-    old_x = game->ram[MYSMB_PLAYER_X];
-    x_sum = (mysmb_u16)old_x + 8U;
-    game->ram[MYSMB_BLOCK_X + slot] = (mysmb_u8)(x_sum & 0xf0U);
-    /* InitBlock_XY_Pos preserves ADC's carry from Player_X + 8; the
-     * following AND #$f0 does not replace it. */
-    game->ram[MYSMB_BLOCK_PAGE + slot] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + (x_sum >> 8U));
-    game->ram[MYSMB_BLOCK_PAGE_COPY + slot] = game->ram[MYSMB_BLOCK_PAGE + slot];
-    game->ram[MYSMB_BLOCK_Y_HIGH + slot] = game->ram[MYSMB_PLAYER_Y_HIGH];
-    y_adder = (game->ram[MYSMB_PLAYER_CROUCHING] != 0U ||
-               game->ram[MYSMB_PLAYER_SIZE] != 0U) ? 0x12U : 4U;
-    game->ram[MYSMB_BLOCK_Y + slot] =
-        (mysmb_u8)((game->ram[MYSMB_PLAYER_Y] + y_adder) & 0xf0U);
+    metatile = game->ram[5U];
+    is_bumpable = mysmb_blocks_is_bumpable(metatile);
     game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-    game->ram[MYSMB_BLOCK_BOUNCE_TIMER] = 0x10U;
     game->ram[MYSMB_SQUARE1_SOUND] = 2U;
-    mysmb_objects_check_top_of_block(game, slot, block_low, block_row);
-    if (game->ram[MYSMB_BLOCK_STATE + slot] == 0x12U) {
-        mysmb_objects_start_brick_chunks(game, slot);
-    }
-    else if (mysmb_objects_is_coin_block(metatile) != 0U) {
+    mysmb_objects_check_top_of_block(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
+                                      game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot]);
+    if (mysmb_objects_is_coin_block(metatile) != 0U) {
         /* JumpEngine ASL clears carry for every legal BlockCode index. */
         mysmb_objects_coin_block(game, slot, 0U);
     }
@@ -2156,8 +2091,17 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
     else if (is_bumpable != 0U && mysmb_objects_is_vine_block(metatile) != 0U) {
         mysmb_objects_start_vine(game, 5U, slot);
     }
-    game->ram[MYSMB_BLOCK_SLOT_CONTROL] ^= 1U;
-    return 1U;
+}
+
+void mysmb_blocks_shatter(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
+    game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
+    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+    mysmb_objects_check_top_of_block(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
+                                      game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot]);
+    mysmb_objects_start_brick_chunks(game, slot);
 }
 
 /* ROM $c076 MoveObjectHorizontally for the block-object array. */

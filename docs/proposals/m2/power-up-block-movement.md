@@ -342,3 +342,180 @@ are local test delivery, not redistributable release or M2 closure evidence.
 | mysmb64.exe | 336853 | e64645f0deeed4465e8d84914ac960ac8bb0a3fa19fa6419276ea39da357f9b8 |
 
 Retained raw evidence: 2755008 bytes, below four MB. S1 closes; S2 is next, not yet admitted.
+
+
+## S2 admission: head-hit and block positioning
+
+After S1 commit d722829, receive thirteen labels from M2 T24 S2 by accepted
+transfer-155. Baseline 819 / 1,992; expected thirteen, maximum 832. The shared
+owner will be game/blocks/head.c. S3/S4 bump, lookup and shatter children
+retain their existing custody until their planned source-order admissions.
+
+| Label | Incoming status | Expected disposition |
+| --- | --- | --- |
+| BlockYPosAdderData | open | ROM-match complete after both proof tracks |
+| PlayerHeadCollision | mapped; evidence incomplete | ROM-match complete after both proof tracks |
+| DBlockSte | open | ROM-match complete after both proof tracks |
+| ChkBrick | open | ROM-match complete after both proof tracks |
+| StartBTmr | open | ROM-match complete after both proof tracks |
+| ContBTmr | open | ROM-match complete after both proof tracks |
+| PutOldMT | open | ROM-match complete after both proof tracks |
+| PutMTileB | open | ROM-match complete after both proof tracks |
+| SmallBP | open | ROM-match complete after both proof tracks |
+| BigBP | open | ROM-match complete after both proof tracks |
+| Unbreak | open | ROM-match complete after both proof tracks |
+| InvOBit | open | ROM-match complete after both proof tracks |
+| InitBlock_XY_Pos | mapped; evidence incomplete | ROM-match complete after both proof tracks |
+
+### Source contract and implementation boundary
+
+Audit the contiguous $BCEB table and PlayerHeadCollision through
+InitBlock_XY_Pos, ending before BumpBlock. Preserve the incoming metatile
+independently from the later buffer read; set block state before
+DestroyBlockMetatile, reload SprDataOffset_Ctrl after that child, save row
+and low pointer, then read the actual pointed byte. Preserve lookup carry
+across the size branch. Implement coin timer first-use, running and expired
+paths; coordinate addition preserves carry across AND; blank the buffer only
+after InitBlock_XY_Pos. Set bounce timer and original-metatile scratch before
+size/crouch Y alignment, dispatch BumpBlock or BrickShatter, then reload and
+invert the control byte after the child.
+
+Existing code incorrectly merges all this with child behavior, computes
+lookup from the incoming argument before DestroyBlockMetatile, and blanks
+the RAM before the VRAM child. Extract the head owner and explicit child
+seams. The existing bump/shatter interiors may be moved intact to expose
+those seams; no S3/S4 node receives completion credit or algorithm repair.
+Preserve the existing public head-hit adapter for player callers and tests.
+Audit every adapter call and every block-position writer for duplicate
+ownership. No platform gameplay changes are permitted.
+
+### Dual proof and delivery
+
+The ROM track checks the two table bytes, each branch/read/write and child
+order from the original listing and ROM. Source-RAM scenarios enter through
+ordinary NMI/player head collision, never a forced PC/stack entry. Cover both
+sizes and crouch, slots, matching/nonmatching blocks, first/running/expired
+coin timers and X/Y wrapping. Observe original direct-child entry/return
+state and root exit; report caller equivalence separately from actual child
+failures. Do not mask a child discrepancy or count it as parent-wide gameplay
+parity. The operational track checks a focused native callback/coordinate
+matrix, collision and block regressions, x86/x64 strict C90, DOS16 link,
+platform purity, hidden-window responsiveness and all three EXEs per P.
+
+Existing owner ROM and locally reviewed listing remain ignored research
+inputs with no redistribution claim or third-party implementation import.
+All temporary outputs stay below build/m2-t37-s2. Recorder budgets are twenty
+seconds per process and four MB raw per batch; S2 owns cleanup through T
+review. Only source input RAM may be set; never reference outputs or child
+return values. Every label needs both tracks before tracker promotion.
+DOS remains link-only; whole-game and retained child failures remain open.
+
+### S2 implementation checkpoint, not closure
+
+The named admission and documentation gates pass at baseline 819, scope and
+expected thirteen, maximum 832. The shared head owner and existing public
+adapter now live in game/blocks/head.c; the old monolithic head body has been
+removed. Existing bump/shatter child bodies remain in objects.c behind
+explicit declarations for their S3/S4 migration, without child credit.
+CMake and OpenNT source lists include the new owner.
+
+The original two bytes at $BCEB match the bound Y-adder data. Strict C90
+native checks pass on both widths: 131,072 coordinate/page/slot cases and
+sixteen child-order cases per width. A child deliberately changes the control
+byte and buffer between entry and read, ensuring the caller reloads them;
+another changes control before the final XOR. These synthetic native tests
+are operational evidence, not a replacement for original-ROM observations.
+Platform purity and diff whitespace checks pass.
+
+Still required before S2 closure: original NMI root/child recording and branch
+coverage, actual-child diagnostics, collision/block integration regressions,
+all three final executable builds, hidden-window probes, node-by-node proof,
+tracker update and P commit. Completion remains 819 / 1,992; the packaged
+EXEs still belong to committed S1 d722829.
+
+## S2 original head-hit and positioning proof
+
+S2/P1 proves all thirteen received labels, expected thirteen, no transfers.
+The shared owner is game/blocks/head.c. Conformance changes from
+819 to 832 / 1,992. The table and caller/coordinate nodes are complete;
+BumpBlock, BlockBumpedChk and BrickShatter interiors receive no credit here.
+
+### Original source and node proof
+
+| Node | Address | Source semantics preserved |
+| --- | --- | --- |
+| BlockYPosAdderData | $BCEB | Both original bytes verified against the owner ROM; consumed for size/crouch alignment. |
+| PlayerHeadCollision | $BCED | Preserve incoming metatile; state write precedes DestroyBlockMetatile; reload control and pointed block after the child. |
+| DBlockSte | $BCFA | Size-selected state, original row/low-pointer writes, buffer read and lookup in source order. |
+| ChkBrick | $BD1A | Preserve lookup carry across player-size selection; matched blocks force state $11 and default replacement $C4. |
+| StartBTmr | $BD2C | First multi-coin hit writes timer $0B and increments its flag only when clear. |
+| ContBTmr | $BD39 | Running timer retains tile; expired timer selects $C4. |
+| PutOldMT | $BD40 | Transfer selected old/empty tile to the replacement write. |
+| PutMTileB | $BD41 | Replacement, coordinate child, blank buffer, bounce timer, saved original tile and size/crouch decision in that order. |
+| SmallBP | $BD61 | Select adder index one for small or crouching player. |
+| BigBP | $BD62 | Byte Y addition and high-nibble alignment precede state-dependent bump/shatter dispatch. |
+| Unbreak | $BD78 | Call BumpBlock only for state $11. |
+| InvOBit | $BD7B | Reload and invert control after the child returns. |
+| InitBlock_XY_Pos | $BD84 | X+8 carry survives AND and increments page; copy page and player high Y. |
+
+Seventy-two source-RAM scenarios enter through ordinary NMI/player collision,
+fixture IDs 1646-1717. They cover both slots, small/big/crouching states,
+ordinary/question/hidden/coin blocks, first/running/expired timers and X-page
+carry. All twelve code labels execute; all ten conditional sites exercise
+both outcomes. Observer-enabled, coverage and unobserved frame outputs agree.
+No PC, stack, ROM, original child return or output is altered.
+
+Across x86/x64, 144 caller comparisons match over 1,791 persistent RAM bytes;
+scratch 0-7 and hardware stack are excluded except persistent $0133-$0139.
+Original observed child returns are replayed only at native seams for caller
+proof. Actual native children are tested separately: 128 matches, 16 failures.
+Independent child entry/return checks isolate all failures to BrickShatter:
+cases 12/13/24/25/48/49/60/61 per width copy a second chunk high-Y byte to
+$00C0/$00C1 (original zero, native one), omit NoiseSoundQueue $FD=$01 and
+incorrectly set Square1SoundQueue $FF=$02. Retain BrickShatter/SpawnBrickChunks
+with existing M2 T24 S2 custody until planned T37 S4 receipt. These are failed
+integrated comparisons, not passing gameplay routes or transferred S2 nodes.
+
+### Native verification, sweep and delivery
+
+Independent native tests pass 131,072 coordinate/page/slot cases and sixteen
+callback-order cases per width. The latter deliberately change control/buffer
+inside child calls, checking reloads and preservation of the incoming tile.
+Thirty-two related/surrounding regression runs pass across both widths.
+The initial collision regression stopped at 47 because the old direct-call
+fixture supplied only a metatile argument, leaving its source buffer empty.
+The fixture now supplies the original buffer input; expectations are unchanged.
+The array-layout direct-call fixtures were corrected the same way.
+
+The caller sweep finds one production head adapter caller in player.c and two
+original coordinate consumers: head collision and ChkOverR's entrance-vine
+setup. Both now use the same coordinate owner; the duplicated entrance body
+is removed without changing its setup-vine sequence. The native coordinate
+matrix covers every X/page pair and both slots; vine setup and mode
+regressions pass. Existing bump/shatter bodies were exposed intact for later
+migration; no child repair is smuggled into this caller proof.
+
+All 77 shared units compile as strict C90 on x86/x64. Both executable self-tests
+and bounded hidden-window creation/WM_NULL probes pass. Platform purity passes.
+OpenNT DOS16 compiles/links with the retained OLDNAMES warning. It still lacks
+resource binding and has no playable-runtime or 486SX qualification claim.
+Prior core/full-frame and other child debts remain open.
+
+Reproduce with CMake mysmb_block_head_smoke, mysmb_block_head_snapshot_check,
+mysmb_block_head_caller_check and mysmb_block_head_child_check. Record
+`--fixture=t37-head=N` (0-71) with `--block-head-snapshot=...` and
+`--control-children=...`; run coverage separately using `--pc-coverage=...`.
+Run `python test/verify_block_head_snapshots.py <ignored-directory> <owner-rom>`.
+Raw snapshots remain ignored below build/m2-t37-s2, within the four-MB budget.
+The tracked record contains only neutral findings, addresses and artifact hashes.
+
+Three owner-authorized EXEs accompany this P as local testing artifacts, not
+redistributable release or M2 closure evidence.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257345 | d203e2ab11aa686be94027fe2173ac0cdebd9421cb56a3870db519b9f7d4a4ee |
+| mysmb32.exe | 330054 | ddc52a274e1e0475fcc68b33a75a93af0b7c3a0abd2cd33a5f7a4a6f19da2d83 |
+| mysmb64.exe | 337416 | aa18e8e322e55da9c3090449110d481b8ab2abdc6b92839d61cd68491feea124 |
+
+Retained raw evidence: 3905357 bytes. S2 closes; S3 block bump/content/lookup is next, not yet admitted.
