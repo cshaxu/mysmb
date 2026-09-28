@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1189 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1193 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 697 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 693 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,189 / 1,992 (59.69%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,193 / 1,992 (59.89%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S2 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s2-original-bowser-control-proof)
-closes seventeen Bowser control nodes and retains two erase nodes with
-2,048/2,048 original caller comparisons. Actual roots match 16/2,048; the
-2,032 failures isolate to the S3 graphics child. All 10,876 prior matches remain.
+Latest task review: [T41 S3 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-original-front-rear-proof)
+closes four Bowser front/rear caller nodes with 1,024/1,024 original caller
+comparisons. Actual roots match 0/1,024; drawing/bounds/player collision
+child gaps remain explicit. All 10,892 prior actual matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1189)
+## Completed matches (1193)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1203,6 +1203,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10265 | `ChkFireB` |
 | 10270 | `SpawnFBr` |
 | 10283 | `SetFBTmr` |
+| 10289 | `BowserGfxHandler` |
+| 10296 | `CopyFToR` |
+| 10321 | `ExBGfxH` |
+| 10323 | `ProcessBowserHalf` |
 | 10337 | `FlameTimerData` |
 | 10340 | `SetFlameTimer` |
 | 10347 | `ExFl` |

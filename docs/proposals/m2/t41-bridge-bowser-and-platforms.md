@@ -550,3 +550,155 @@ source provenance and local-only restrictions remain unchanged.
 | mysmb16.exe | 256131 | 5f144368ee82f50ab4bcfc0266acc5477b904ab732b05f9577f39b97f37457e5 |
 | mysmb32.exe | 348709 | d930ff6ade69f2c95805542ebb0e008577c093e210a8d93f34881588e9b72d07 |
 | mysmb64.exe | 356357 | d27da7a6362a533f5f65a90a7b21121bc9a6ed24e023e33cc98c4682577af635 |
+
+## S3 admission: Bowser front and rear orchestration
+
+S2 closed in c8e1cf1. Coordinator accepts transfer-198 under the continuing
+approved M2 mandate. Scope and expected-new set are the same four open nodes,
+in source order: `BowserGfxHandler`, `CopyFToR`, `ExBGfxH`,
+`ProcessBowserHalf`. Baseline 1,189/1,992; maximum 1,193. Original entry/exit
+is $D17B-$D1D0, lines 10289-10332, before FlameTimerData. The sole chain
+owner remains oam/bowser_gfx.c, called by S1/S2; no duplicate control owner.
+
+Restore front processing, fresh post-child direction and coordinates, byte
+X offset without page carry, Y+8, state/direction copy into DuplicateObj_Offset,
+saved ObjectOffset, rear ID and second-half processing, then restore offset
+and clear BowserGfxFlag. Each half increments the graphics flag, runs
+RunRetainerObj, checks fresh enemy state, assigns bounding control ten only
+for state zero, and calls GetEnemyBoundBox then PlayerEnemyCollision.
+Preserve original live-X handoffs; do not invent eligibility or injury tests.
+
+Dependencies remain separate: RunRetainerObj's original three-call wrapper,
+relative/offscreen helpers, EnemyGfxHandler, bounds and player collision.
+The existing retainer graphics seam currently accepts only retainer ID 53.
+Dependency wiring may extract the existing Bowser single-half renderer and
+select it there using BowserGfxFlag, preserving a renderable product while
+replacing the approximate two-half orchestration. This grants no child-node
+credit and does not authorize rewriting generic graphics/collision algorithms.
+Legacy bulk eligibility stays outside the original entry. No host changes.
+
+Logic proof: original NMI Bowser actor routes naturally reaching $D17B,
+controlled RAM input without ROM/CPU/PC/stack/output patching; both direction
+and state branches, duplicate-slot and byte-wrap cases, flag and ObjectOffset
+restoration. Compare full child inputs before any recorded-return diagnostic,
+and retain separate real-child execution and remaining discrepancies.
+Retain all 10,892 prior actual matches and S1/S2 caller proofs. Node credit
+requires original source/branch/write and route evidence, not native tests.
+
+Operational proof: mysmb.bowser-graphics-chain independent mutation contracts,
+retainer and prior Bowser/bridge suites, strict C90 x86/x64 full builds,
+DOS16 link, platform purity, hidden-window probes and three refreshed EXEs.
+DOS remains link-only. One chain/P delivery covers all four nodes together.
+Similar-issue sweep covers flag/ID guards, duplicate-slot/page writes, saved
+versus fresh child state, double drawing, state gates and invented collisions.
+
+Existing owner-ROM/listing provenance and local-only restrictions apply.
+Unique ignored build/m2-t41-s3 outputs: up to 1,024 cases, 32 MB raw traces,
+twenty-second per-record timeout, resumable checkpoints. Coordinator owns
+cleanup and retains dependent regression inputs. Stop on unadmitted child
+repair, hidden mismatches or execution patches. No node is complete yet.
+
+## S3 implementation checkpoint
+
+S3 remains active; no node credit or P closure. Direct original-ROM decoding
+identifies forty instructions and two conditional branches in $D17B-$D1D0.
+Runtime branch coverage and original child-entry/return comparison are pending.
+
+The shared Bowser graphics owner now processes the front, copies original
+byte coordinates/state/direction into the duplicate slot, processes the rear,
+restores ObjectOffset and clears BowserGfxFlag. Per-half logic calls the
+existing retainer chain, then bounding and player collision only for fresh
+state zero. Source child X reloads are explicit. The former direct two-half
+renderer is removed; its existing individual rows are selected through the
+retainer graphics seam. Generic graphics/collision interiors remain unproved.
+
+Twenty-four independent full-RAM/call-order scenarios pass on each native
+width: opposite initial/post-draw states, direction and coordinate mutation,
+byte wrap without page writes, slots zero/five and graphics flag wrap.
+Retainer OAM tests pass on both widths; platform purity passes. The legacy
+Bowser movement fixture omitted InitBowser's distinct duplicate slot and
+therefore aliased its front after the faithful copy; supplying that existing
+source precondition restores the prior result. Existing Bowser damage exit 4
+and endgame exit 6 remain explicit. These results do not prove ROM equality.
+
+Next: record naturally reached BowserGfxHandler with original child seams,
+compare forty-instruction/two-branch execution and actual-child output,
+retain prior root matches, then run the single three-target delivery pass.
+Progress stays 1,189/1,992; the three assets still belong to c8e1cf1.
+Ignored build/m2-t41-s3 holds source-audit and native checkpoint results.
+
+## S3 original front/rear proof
+
+S3 P1 closes all four expected nodes: 1,189 -> 1,193/1,992. No scoped node
+remains unfinished or transfers at closure. This certifies the original
+orchestration, not the unproved generic graphics or collision descendants.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| BowserGfxHandler | Front call, fresh child state and duplicate-slot handoff, saved ObjectOffset, rear ID and second call. ROM-match complete. |
+| CopyFToR | Both direction offsets, byte X/Y wrap without page carry and ordered state/direction writes. ROM-match complete. |
+| ExBGfxH | Normal/non-normal half exits, final ObjectOffset restore and graphics-flag reset. ROM-match complete. |
+| ProcessBowserHalf | Flag increment, RunRetainerObj, fresh state gate, bounding control ten, bounds then player collision. ROM-match complete. |
+
+Direct original-ROM decoding and execution cover all forty instructions in
+$D17B-$D1D0 and both sides of both conditional branches. The 512 routes enter
+through the real NMI actor vector; declared RAM inputs apply at naturally
+reached BowserGfxHandler regardless of observer selection. No ROM, CPU, PC,
+stack or output patches are used. All observer-free output frames equal their
+observed original frames; this does not assert native whole-game equality.
+Source return checks verify each child's live X equals ObjectOffset.
+
+Caller comparisons match 1,024/1,024 across x86/x64, checking every child input
+before using recorded diagnostic returns and all final RAM, including mapped
+$0109-$0139 and OAM/VRAM/audio queues. Only hardware stack storage is excluded.
+Cases cover front slots zero/five, rear slots one/four, both directions,
+state-zero/nonzero gates, coordinate wrapping, independent page locations,
+body controls and graphics-flag byte wrap. These are the four nodes' evidence.
+
+Actual-child roots match 0/1,024. Independent original child-input isolation
+finds RunRetainerObj 0/2,048, GetEnemyBoundBox 0/512 and PlayerEnemyCollision
+432/512. These descendants remain with their existing source-order receivers;
+the retained RunRetainerObj caller proof does not certify its graphics body.
+No child receives incidental credit. No substitution occurs in these actual
+comparisons. Full-game Bowser fidelity remains incomplete.
+
+The production chain has one owner in oam/bowser_gfx.c. It calls the original
+front/rear sequence and state-gated bounding/player collision children, uses
+fresh child state, copies duplicate-slot bytes without invented page writes,
+and restores ObjectOffset/graphics flag. The old direct two-half orchestration
+is removed. Existing single-half rows are wired through the graphics seam;
+their generic scratch/flip limitations remain explicit, not newly certified.
+Legacy bulk eligibility remains outside the original entry. No platform logic.
+
+Twenty-four independent full-RAM/call-order scenarios pass per native width.
+Retainer OAM and fifteen initializer/platform suites per width pass. The
+legacy Bowser fixture now supplies InitBowser's distinct rear slot; without
+it the new faithful copy aliases the front. Existing damage exit 4 and endgame
+exit 6 remain. Platform purity passes. The final actual matrix is
+10,892/15,610, retaining every prior 10,892 match with zero regressions.
+The 4,718 differences are 3,694 prior cases plus 1,024 new child-gap cases.
+Prior S1/S2 caller owners and their child-substitution contracts are unchanged.
+
+All 102 shared units compile under strict C90 on x86/x64. Both executable
+self-tests and hidden-window message probes pass. DOS16 compiles/links with
+the existing OLDNAMES warning; DOS remains link-only without graphical,
+resource-binding or 486SX performance certification. Three EXEs are refreshed.
+
+Similar-issue sweep covers source guards, duplicate/page writes, fresh child
+state, flag wrap, double drawing, collision gates and legacy fixture setup.
+Reproduce bowser_graphics_fixture.h cases 0..511 with
+--fixture=t41-bowser-graphics=N, --bowser-graphics-snapshot, --control-children
+and independent --pc-coverage. bowser_graphics_snapshot_check checks caller
+handoffs; enemy_loop_actual_check uses real children. Native target is
+mysmb.bowser-graphics-chain. Local bounded evidence is under ignored
+build/m2-t41-s3, with twenty-second run deadlines and resumable checkpoints.
+Coordinator retains regression inputs and owns cleanup. Existing source
+provenance and local-only restrictions remain. S4 flame actor is next.
+
+Raw trace output: 10696545 bytes, below the 32-MB limit.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256099 | a67b78c8217779efc8f18b500d8b21f3ba1bfd8ae9d6ae42697461b0d9495d00 |
+| mysmb32.exe | 348823 | c79175ee05d1a0c87ccda83570e57e3b808b460ff21e7a1c4e66152852bb7055 |
+| mysmb64.exe | 356981 | a5a00641af5687c2195275c240cd402f5ffc401f135cfc3144339b1b27e78be2 |

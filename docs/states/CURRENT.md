@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T41 S2 is closed at 1,189 / 1,992: seventeen new and two retained scoped nodes complete. S3 is next.**
+**M2 T41 S3 is closed at 1,193 / 1,992: four front/rear caller nodes complete. S4 is next.**
 
-## M2 T41 S2 Packet
+## M2 T41 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S2, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 1211e9e; coordinator accepts transfers-196/197. |
-| Objective | Nineteen Bowser control/erasure nodes; seventeen open expected new, two retained. |
-| Non-goals | No Bowser graphics body or unrelated collision repair; no host gameplay. |
-| Reference Baseline | 1,172/1,992; nineteen scoped, seventeen expected, maximum 1,189. |
-| Candidate Proposal | [T41 plan and S2 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s2-admission-bowser-control-and-defeated-erasure). |
-| Files And ABI Surface | enemy/bowser.c, old actor/bulk callers, shared defeated tail, manifests, recorder/tests and EXEs. |
+| Identifier Mode | M2 T41 S3, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after c8e1cf1; coordinator accepts transfer-198. |
+| Objective | Four open Bowser front/rear orchestration nodes, four expected new. |
+| Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
+| Reference Baseline | 1,189/1,992; four scoped/expected, maximum 1,193. |
+| Candidate Proposal | [T41 S3 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-admission-bowser-front-and-rear-orchestration). |
+| Files And ABI Surface | oam/bowser_gfx.c, retainer graphics seam, declarations, native/ROM tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original Bowser control branches/data and child inputs, separate actual-child/native contracts, three-target delivery. |
-| Expected Markers | Defeat/erasure, mouth/timer gates, signed range, hammer spawn, world/flame loop and source child order. |
-| Asset Needs | Existing local owner ROM/listing, bounded ignored trace output; owner-authorized EXEs, DOS link-only. |
-| Reporting Requirements | Nineteen named node dispositions, two proof tracks, remaining child gaps, tracker/ledger and hashes. |
-| Stop Conditions | Unadmitted child repair, source execution/output patches, masked failures or host gameplay. |
-| Exit Criteria | Scoped nodes proved or accepted exact transfer; dual proof and three target artifacts recorded. |
-| Original Owner Request | Faithful ROM call graph and every logic node in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Bowser actor/bulk callers, duplicate draw/injury, world constants, signed byte/page and timer/mouth gates. |
+| Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
+| Expected Markers | Duplicate slot, byte offsets, two halves, state gate, bound/collision order and offset/flag restoration. |
+| Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Four exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
+| Exit Criteria | Four nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
+| Similar-Issue Sweep | Entry guards, duplicate/page writes, child state, double drawing and collision gates. |
+
+## S3 closure
+
+[Original front/rear proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-original-front-rear-proof)
+closes four caller nodes with 1,024/1,024 matches. Actual roots match 0/1,024;
+graphics/bounds/collision descendants retain explicit gaps. All 10,892 prior
+actual matches remain. Three EXEs refreshed; DOS link-only. S4 is next.
 
 ## S2 closure
 
@@ -31,7 +38,7 @@
 closes seventeen new and two retained nodes with 2,048/2,048 caller matches.
 Actual roots match 16/2,048; all 2,032 failures isolate to the planned S3
 graphics child. Prior 10,876 matches remain; three EXEs refreshed, DOS link-only.
-S3 is next; it is not admitted by this closure.
+S3 is closed; its result is above.
 
 ## S1 closure
 

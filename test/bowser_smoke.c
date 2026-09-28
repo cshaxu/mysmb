@@ -42,6 +42,8 @@ int main(void)
     game.ram[0x0366U] = 0x40U;
     game.ram[0x0364U] = 2U;
     game.ram[0x0365U] = 2U;
+    /* InitBowser reserves a distinct rear slot before RunBowser renders. */
+    game.ram[0x06cfU] = 1U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x20U;
     game.frame_number = 0UL;

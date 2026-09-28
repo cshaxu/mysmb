@@ -46,37 +46,66 @@ static void draw_half(struct mysmb_game *g, const mysmb_u8 *t, mysmb_u8 o,
     hide(g,o,bits);
 }
 
-/* Legacy Bowser graphics child, extracted for current-slot dispatch.
- * Original BowserGfxHandler writes the duplicate object slot; this existing
- * direct two-half renderer does not yet reproduce those RAM writes. */
-void mysmb_objects_draw_bowsers_slot(struct mysmb_game *g, mysmb_u8 n)
+/* Existing EnemyGfxHandler Bowser rows. Orchestration owns the two slots;
+ * generic graphics scratch/flip semantics retain their separate proof debt. */
+void mysmb_oam_draw_bowser_half(struct mysmb_game *g, mysmb_u8 n)
 {
     static const mysmb_u8 front[6]={0xbfU,0xbeU,0xc1U,0xc0U,0xc2U,0xfcU};
     static const mysmb_u8 rear[6]={0xc4U,0xc3U,0xc6U,0xc5U,0xc8U,0xc7U};
     static const mysmb_u8 open[6]={0xbfU,0xbeU,0xcaU,0xc9U,0xc2U,0xfcU};
     static const mysmb_u8 step[6]={0xc4U,0xc3U,0xc6U,0xc5U,0xccU,0xcbU};
-    const mysmb_u8 *ft,*rt; mysmb_u16 w,z; mysmb_u8 fx,rx,fb,rb,delta,ro,state;
-    if (g->ram[F+n]==0U || g->ram[I+n]!=45U) return;
-    w=(mysmb_u16)(((mysmb_u16)g->ram[P+n]<<8U)|g->ram[X+n]);
-    z=(mysmb_u16)(((mysmb_u16)g->ram[SP]<<8U)|g->ram[SX]); fx=(mysmb_u8)(w-z);
-    g->ram[A+n]=0U; g->ram[RX+n]=fx; g->ram[RY+n]=g->ram[Y+n];
-    fb=mysmb_objects_get_enemy_x_offscreen_bits(g,n); g->ram[O+n]=fb;
-    delta=(g->ram[D+n]&1U)!=0U?0xf0U:0x10U; rx=(mysmb_u8)(fx+delta);
-    /* Legacy rear-position calculation; not the source duplicate-slot path. */
-    g->ram[X+n]=(mysmb_u8)(g->ram[X+n]+delta);
-    rb=mysmb_objects_get_enemy_x_offscreen_bits(g,n);
-    g->ram[X+n]=(mysmb_u8)(g->ram[X+n]-delta);
-    ft=(g->ram[BC]&0x80U)!=0U?open:front; rt=(g->ram[BC]&1U)!=0U?step:rear;
-    ro=g->ram[ASO+g->ram[SC]]; state=g->ram[S+n];
-    draw_half(g,ft,g->ram[SO+n],fx,g->ram[RY+n],g->ram[D+n],state,fb);
-    draw_half(g,rt,ro,rx,(mysmb_u8)(g->ram[RY+n]+((state&0x20U)!=0U?0xf8U:8U)),
-              g->ram[D+n],state,rb);
+    const mysmb_u8 *tiles;
+    if (g->ram[0x036aU] == 1U)
+        tiles = (g->ram[BC] & 0x80U) != 0U ? open : front;
+    else tiles = (g->ram[BC] & 1U) != 0U ? step : rear;
+    draw_half(g,tiles,g->ram[SO+n],g->ram[RX],g->ram[RY],
+              g->ram[D+n],g->ram[S+n],g->ram[O]);
+}
+
+/* ROM $D1BC ProcessBowserHalf; the source graphics child reloads X from
+ * ObjectOffset before returning. Collision is a tail call, not a new rule. */
+static mysmb_u8 process_half(struct mysmb_game *g, mysmb_u8 n)
+{
+    ++g->ram[0x036aU];
+    mysmb_objects_draw_retainer(g,n);
+    n = g->ram[8U];
+    if (g->ram[S+n] == 0U) {
+        g->ram[0x049aU+n] = 10U;
+        mysmb_objects_update_enemy_bounding_box(g,n);
+        n = g->ram[8U];
+        mysmb_objects_player_enemy_current(g,n,1U);
+        n = g->ram[8U];
+    }
+    return n;
+}
+
+/* ROM $D17B-$D1D0 BowserGfxHandler / CopyFToR / ExBGfxH. */
+void mysmb_objects_draw_bowsers_slot(struct mysmb_game *g, mysmb_u8 n)
+{
+    mysmb_u8 rear, saved, delta;
+    n = process_half(g,n);
+    delta = (g->ram[D+n] & 1U) != 0U ? 0xf0U : 0x10U;
+    rear = g->ram[0x06cfU];
+    g->ram[X+rear] = (mysmb_u8)(g->ram[X+n] + delta);
+    g->ram[Y+rear] = (mysmb_u8)(g->ram[Y+n] + 8U);
+    g->ram[S+rear] = g->ram[S+n];
+    g->ram[D+rear] = g->ram[D+n];
+    saved = g->ram[8U];
+    n = g->ram[0x06cfU];
+    g->ram[8U] = n;
+    g->ram[I+n] = 45U;
+    (void)process_half(g,n);
+    g->ram[8U] = saved;
+    g->ram[0x036aU] = 0U;
 }
 
 void mysmb_objects_draw_bowsers(struct mysmb_game *g)
 {
     mysmb_u8 n;
     for (n=0U;n<5U;++n) {
-        mysmb_objects_draw_bowsers_slot(g,n);
+        if (g->ram[F+n]!=0U && g->ram[I+n]==45U) {
+            g->ram[8U] = n;
+            mysmb_objects_draw_bowsers_slot(g,n);
+        }
     }
 }

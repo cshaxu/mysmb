@@ -239,6 +239,10 @@ void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 x;
     mysmb_u8 attributes;
 
+    if (game->ram[0x036aU] != 0U) {
+        mysmb_oam_draw_bowser_half(game,slot);
+        return;
+    }
     if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U ||
         game->ram[MYSMB_NORMAL_ID + slot] != 53U) return;
     tiles = game->ram[MYSMB_NORMAL_WORLD] < 7U ? retainer : princess;

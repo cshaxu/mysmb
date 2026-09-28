@@ -51,6 +51,8 @@ void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowsers(struct mysmb_game *game);
+/* Existing EnemyGfxHandler Bowser rows, selected by BowserGfxFlag. */
+void mysmb_oam_draw_bowser_half(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM ProcHammerObj prepares relative coordinates and offscreen bits before
