@@ -21,39 +21,33 @@ void mysmb_enemy_stream_handle_group(struct mysmb_game *game,
                                             mysmb_u8 group_id)
 {
     mysmb_u8 group;
-    mysmb_u8 enemy_id;
-    mysmb_u8 y;
-    mysmb_u8 page;
-    mysmb_u8 x;
-    mysmb_u8 count;
     mysmb_u8 slot;
     mysmb_u8 old_x;
 
     group = (mysmb_u8)(group_id - 0x37U);
-    enemy_id = group < 4U ?
+    game->ram[1U] = group < 4U ?
         (game->ram[MYSMB_PRIMARY_HARD] == 0U ? 6U : 2U) : 0U;
-    y = (group & 2U) == 0U ? 0xb0U : 0x70U;
-    page = game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE];
-    x = game->ram[MYSMB_AREA_SCREEN_RIGHT_X];
-    count = (mysmb_u8)(2U + (group & 1U));
-    game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
-    while (count != 0U) {
+    game->ram[0U] = (group & 2U) == 0U ? 0xb0U : 0x70U;
+    game->ram[2U] = game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE];
+    game->ram[3U] = game->ram[MYSMB_AREA_SCREEN_RIGHT_X];
+    game->ram[MYSMB_GROUP_ENEMY_COUNT] = (mysmb_u8)(2U + (group & 1U));
+    while (game->ram[MYSMB_GROUP_ENEMY_COUNT] != 0U) {
         for (slot = 0U; slot < 5U; ++slot) {
             if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
         }
         if (slot >= 5U) break;
-        game->ram[MYSMB_ENEMY_ID + slot] = enemy_id;
-        game->ram[MYSMB_ENEMY_PAGE + slot] = page;
-        game->ram[MYSMB_ENEMY_X + slot] = x;
-        old_x = x;
-        x = (mysmb_u8)(x + 0x18U);
-        if (x < old_x) page++;
-        game->ram[MYSMB_ENEMY_Y + slot] = y;
+        game->ram[MYSMB_ENEMY_ID + slot] = game->ram[1U];
+        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[2U];
+        game->ram[MYSMB_ENEMY_X + slot] = game->ram[3U];
+        old_x = game->ram[3U];
+        game->ram[3U] = (mysmb_u8)(old_x + 0x18U);
+        game->ram[2U] = (mysmb_u8)(game->ram[2U] +
+            (game->ram[3U] < old_x ? 1U : 0U));
+        game->ram[MYSMB_ENEMY_Y + slot] = game->ram[0U];
         game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
         game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
         mysmb_enemy_checkpoint_loaded(game, slot);
-        count--;
-        game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
+        game->ram[MYSMB_GROUP_ENEMY_COUNT]--;
     }
     mysmb_enemy_stream_advance_record(game);
 }

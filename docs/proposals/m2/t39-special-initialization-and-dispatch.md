@@ -401,3 +401,112 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 255285 | 1a26223929fe40e6089d68ce746e853e3129297f5ad157b00561d75d1e75cf3d |
 | mysmb32.exe | 338083 | 52d716fa0eb66b688e103fb624e710ac05046351070f82be7ed7405ef5a088c9 |
 | mysmb64.exe | 345152 | f9e0514c8e3c1ca80d3dacb3887bc666f7be519de0de205b40105025a1e4c255 |
+
+## S4 admission: Grouped enemy records
+
+After S3 commit a44dd1a, coordinator accepts transfer-176 from T19 S5 for
+HandleGroupEnemies, PullID, SnglID, SetYGp, CntGrp, GrLoop, GSltLp and NextED.
+All eight are open and expected new: baseline 1,009/1,992, maximum 1,017.
+The complete original $C71B-$C786 group chain belongs to shared enemy/group.c.
+Its parser caller, CheckpointEnemyID and normal/Goomba initializer children,
+and Inc2B tail are dependencies already audited in earlier chains.
+
+Preserve source species/hard-mode choice, scratch $01/$00 ID/Y, scratch
+$02/$03 page/X and their 24-pixel carry, two/three count, zero-to-four free-slot
+scan, per-member checkpoint, RAM count decrement, exhaustion and exactly one
+record advance on every terminal path. Do not replace source scratch with
+private locals or make ObjectOffset follow the group scan: the source does
+not write it here. Movement, drawing, collision and parser repair are outside S4.
+
+ROM proof uses unchanged original enemy records via RAM-only NMI parser
+fixtures and actual root/child return snapshots. Six group IDs occur in the
+original level record inventory; native contracts also cover both unused but
+code-defined group IDs. Cover original branch outcomes, hard modes, capacity
+masks including full/partial groups, entry from slot five, right-edge carry,
+page wrap and record-offset wrap. Preserve any unsupported entry or child gap
+instead of patching source execution. Operational proof includes full-RAM
+contracts, strict C90 x86/x64, DOS link, platform purity, hidden-window probes
+and all three authorized EXEs. Sweep scratch users, count/record advancement
+and child write boundaries. Existing owner-local ROM/listing provenance is
+unchanged, no third-party import; temporary evidence stays under ignored
+build/m2-t39-s4, four-MB raw budget, twenty-second recorder timeout, S4 cleanup
+owner. Later S rows retain custody; no actor or platform gameplay is admitted.
+
+## S4 original grouped-enemy proof
+
+All eight planned group nodes close: 1,009 -> 1,017/1,992, no scoped transfer.
+T39 remains open; S5 remaining small initializers and frenzy dispatch is next.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| HandleGroupEnemies | $C71B | Subtract group base, preserve selector and select default green Koopa or hard-mode Goomba/Buzzy family; match |
+| PullID | $C72F | Restore group selector after hard-mode species choice; match |
+| SnglID | $C730 | Write original ID to scratch $01; select vertical row from group bit one; match |
+| SetYGp | $C73A | Write scratch Y $00, right page $02 and right X $03; match |
+| CntGrp | $C74D | Write two/three-member count from group bit zero; match |
+| GrLoop | $C750 | Restart scan for every member; decrement source RAM count after the checkpoint child; match |
+| GSltLp | $C752 | Scan only slots zero through four; write member fields, advance scratch by 24 with carry and call checkpoint; match |
+| NextED | $C784 | Single Inc2B tail on complete or capacity-exhausted group, preserving remaining count and ObjectOffset; match |
+
+Actual original/native comparison passes 230/230 across x86/x64. The 115
+entering NMI routes read unchanged original level records and execute all eight
+labels, 55 instructions and both outcomes of all seven conditional branches.
+No CPU PC, return-stack, ROM or child-return patch is used. Original child
+records show one, two or three checkpoint calls followed by exactly one Inc2B
+tail; scratch $00-$03, preserved ObjectOffset and remaining group count agree.
+Hardware stack storage is excluded while mapped $0109-$0139 RAM is retained.
+
+Thirteen additional full-capacity inputs are source gates, not matched group
+returns. The original parser visits its entry but never HandleGroupEnemies:
+slot five rejects ordinary group records. These reproduce recorder exit 69
+because no root snapshot exists; separate PC coverage confirms the missing
+entry and frame equality. Partial allocation followed by a full scan covers
+the group routine's capacity exit in 53 entering routes. Independent native
+contracts additionally verify initially full capacity without inventing a ROM
+entry. This corrects the admission's proposed slot-five entry expectation.
+
+All 31 nonfull capacity masks occur at original entry, both hard modes execute,
+51 routes wrap the record cursor and six wrap the final scratch page. For page
+$FF fixtures, the parser's +$30 lookahead must remain in range before the group
+can enter; the three-member +$18 chain then provides real page-wrap coverage.
+The original level-record inventory contains IDs $37-$3C; all six are used.
+Code-defined $3D/$3E are covered by source branch semantics and native tests,
+without claiming original level records or execution for those two inputs.
+
+Independent full-RAM contracts pass 262,144 cases per width: all eight group
+IDs, both hard modes, all 32 capacity masks, every X/cursor byte and page zero/
+$FF. Source-return observation and observer-free coverage produce equal frame
+records for all 128 entering/gated fixtures. No scratch byte is masked from
+actual comparisons. The new shared implementation makes source RAM the owner
+of group ID/Y/page/X/count, preserving the original child boundaries.
+
+Eleven focused initializer/stream regressions per width pass on final objects.
+The full cross-chain matrix retains all 1,928 prior matches, adds 230 new roots
+and resolves all ten earlier parser differences: 2,168/2,374. The parser set is
+now 160/160. The remaining 206 downstream differences stay with their existing
+owners. Focused endgame/layout/mode/Bowser checks retain four passes and the
+four established star-timer exit-six / Bowser-damage exit-four failures.
+
+All 85 shared units build in strict C90 for x86/x64; self-tests, bounded hidden
+window response and platform purity pass. DOS16 links with the existing
+OLDNAMES warning and remains link-only, without graphical/runtime or physical
+486 certification. Only shared enemy/group.c changes gameplay. The similar
+issue sweep covers group scratch/count users, child writes and the single
+record-advance tail; no parser, actor or platform gameplay repair is included.
+
+Reproduce with group_enemy_fixture.h cases 0..127, --fixture=t39-group=N,
+--group-snapshot and --control-children; use --pc-coverage in separate runs.
+Full masks (cases below 96 with remainder 14/15 modulo 16, plus 127) must
+show no group entry and are not fed to enemy_loop_actual_check. Other cases
+compare actual shared-C returns. The native target is mysmb.group-enemy-chain.
+Existing owner-local provenance is unchanged; temporary evidence remains under
+ignored build/m2-t39-s4, under 2.4 MB raw output within the four-MB budget and
+twenty-second recorder timeout. No third-party implementation is imported.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255381 | 8b8ab34cb4db865ecabd9c27e87babe7f76b2daf93265e475341ce55cbd957c8 |
+| mysmb32.exe | 338083 | ca72eadfe0e50e3a4a52e79345d284ae0cbfe51b0c8e78afe0995f5bc8cad965 |
+| mysmb64.exe | 345664 | 3721e3bbcc654c3e7027a49579ba3b75dac022138432165cce2cc952f1090df1 |

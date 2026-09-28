@@ -1147,14 +1147,14 @@ The labels and branches behind every line remain open until individually bound b
 | 8757 | `BB_SLoop` | M2 T39 S3 shared enemy/frenzy.c | ROM-match complete | [S3 actual allocation proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s3-original-bullet-and-swimming-fish-proof); all branches, writes and table indexes |
 | 8765 | `ExF17` | M2 T39 S3 shared enemy/frenzy.c | ROM-match complete | [S3 actual allocation proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s3-original-bullet-and-swimming-fish-proof); all branches, writes and table indexes |
 | 8767 | `FireBulletBill` | M2 T39 S3 shared enemy/frenzy.c | ROM-match complete | [S3 actual allocation proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s3-original-bullet-and-swimming-fish-proof); all branches, writes and table indexes |
-| 8780 | `HandleGroupEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handlegroupenemies) |
-| 8792 | `PullID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pullid) |
-| 8793 | `SnglID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-snglid) |
-| 8798 | `SetYGp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setygp) |
-| 8808 | `CntGrp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cntgrp) |
-| 8809 | `GrLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-grloop) |
-| 8810 | `GSltLp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gsltlp) |
-| 8835 | `NextED` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nexted) |
+| 8780 | `HandleGroupEnemies` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8792 | `PullID` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8793 | `SnglID` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8798 | `SetYGp` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8808 | `CntGrp` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8809 | `GrLoop` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8810 | `GSltLp` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
+| 8835 | `NextED` | M2 T39 S4 shared enemy/group.c | ROM-match complete | [S4 actual group proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof); all branches, writes and table indexes |
 | 8839 | `InitPiranhaPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpiranhaplant) |
 | 8855 | `InitEnemyFrenzy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyfrenzy) |
 | 8872 | `NoFrenzyCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofrenzycode) |
