@@ -1317,3 +1317,167 @@ or release-conformance evidence. Earlier graphics/VRAM/full-frame debts remain.
 | mysmb64.exe | 338841 | 17e2326170eeb256726c2355df22efef9fbbbee06c1b0faa28391ecec08c12d0 |
 
 S8 closes; S9 common gravity is next and not yet admitted.
+
+
+## S9 admission: common gravity and adjacent entries
+
+After S8 commit 8bed1c2, accepted transfer-164 receives all twelve S9 labels
+from T17 S6. All are incomplete: MaxSpdBlockData, ResidualGravityCode,
+ImposeGravityBlock, ImposeGravitySprObj, MovePlatformDown, MovePlatformUp,
+SetDplSpd, RedPTroopaGrav, ImposeGravity, AlterYP, ChkUpM and ExVMove.
+Baseline 872 / 1,992; expected twelve, maximum 884. ResidualGravityCode is
+conditional on the previously specified residual-entry proof, not assumed
+complete by association with a reachable successor.
+
+Original $BF9F-$C046 owns a single gravity body. Shared world/gravity.c must
+preserve dummy/force carry into signed speed plus low/high Y; store scratch
+$07 sign before high-Y addition; add downward force; test the N flag of the
+wrapped CMP result rather than a host signed/unsigned ordering; optionally
+subtract upward force and clamp with the original fractional thresholds.
+Entry wrappers preserve max/scratch writes, block slot conversion, platform
+ID force selection, BIT-skipped entry bytes and red/platform direction.
+Remove duplicated player/misc/block/red arithmetic in favor of this owner.
+Existing actor state machines remain independently incomplete.
+
+ROM proof reuses all 32 S8 roots and adds bounded ordinary block/platform
+and gravity-boundary routes for missing branch/limit cases. Validate original
+RAM, branch and call semantics before numerical test expansion. Residual
+code has no natural incoming edge: audit bytes/data and native entry, plus
+its reached successor separately; no forced PC/stack/ROM or output edits.
+Record any insufficient residual proof as unfinished with accepted custody.
+
+Native proof covers full write footprint, carry/wrap and CMP-N boundaries,
+applicable actor/block/misc regressions, strict x86/x64 C90, DOS16 link,
+platform purity and hidden Windows probes. Refresh three EXEs for P delivery.
+Existing S8 red high-Y and scratch differences must be rerun against actual
+gravity, without caller substitution. Retain earlier independent failures.
+
+Existing owner-local ROM/listing are research/build inputs only; no third-party
+implementation is imported. New temporary artifacts stay under ignored
+build/m2-t37-s9, with a four-MB raw-trace budget, twenty-second recorder timeout
+and S9 cleanup ownership; S8 evidence is reused read-only. No platform logic
+or unsupported playable DOS claim. Report all twelve exact dispositions,
+expected versus actual new matches, both proof tracks and final artifact hashes.
+
+### S9 common-body checkpoint, not closure
+
+Admission and documentation gates pass for twelve received incomplete labels
+at 872 / 1,992. The shared gravity body now follows $BFD7-$C046, including
+scratch $07, full fractional/low-Y/high-Y carry, wrapped CMP-N comparisons
+and upward fractional clamp. Block, misc, red and player compatibility
+entries share that body; platform and residual entry adapters are present
+but their source-route proof and remaining platform integration are pending.
+
+`build/m2-t37-s9/check-s8.py` compiles current gravity/player sources against
+the S8 production objects in both widths and invokes the unchanged actual
+mode of vertical_snapshot_check.c on all 32 retained original roots.
+All 64 actual comparisons match all 1,799 compared RAM bytes. This resolves
+the S8 scratch and red high-Y differences without substituting child output.
+It does not yet establish block/platform entries, maximum-speed boundaries,
+residual-entry completeness, three-target delivery or S9 closure.
+
+The initial duplicate sweep distinguishes player ClimbingSub integration
+from gravity, and identifies remaining legacy platform movement arithmetic
+in objects.c for source-owner review. Hammer/misc production callers already
+reach the shared sprite-gravity API. Parent actor/collision proof is not
+granted by this change. No new nodes are credited at this checkpoint.
+
+### S9 block/platform and branch checkpoint, not closure
+
+The ordinary NMI gravity fixture adds 32 cases: eight block entry, eight
+platform-down, eight platform-up and eight common-body red-actor states.
+`test/gravity_snapshot_check.c` runs the real production owner and compares
+all 1,799 non-transient RAM bytes; all 64 x86/x64 checks match. Together with
+the S8 actual regression, 128 original/native comparisons pass. Separate
+observed, coverage and unobserved runs preserve identical frames and root
+states for all new cases; raw trace volume is 1,234,812 bytes.
+
+Original opcode decoding of $BFA4-$C046 and combined S8/S9 coverage proves
+both outcomes at $BFE6, $C006, $C00D, $C019, $C034 and $C03B. The platform
+ID comparison at $BFC1 only takes its ordinary branch; the unreachable-by-
+ordinary-platform-dispatch ID-$29 arm is covered by native entry testing,
+not misreported as original route coverage. ResidualGravityCode likewise
+still needs its final static/no-incoming-edge audit.
+
+Six independent native cases per width check wrapped CMP-N down/up clamps,
+the signed-speed-plus-fraction carry that preserves high Y, block versus
+residual max-speed selection, and platform ID-$29 force selection.
+The tests are registered as mysmb.gravity; none substitutes for original
+route evidence. The YMovingPlatform caller now selects the common platform
+gravity entry at its original center comparison; remaining parent collision,
+positioning, balance-platform and lift movement semantics retain their own
+unproven scope.
+
+Current x86/x64 strict C90 builds and input self-tests pass for 82 shared
+sources. OpenNT DOS16 links with the existing OLDNAMES warning. Of forty
+selected regression runs, thirty-eight pass and the same two Bowser tests
+exit four. No new regression failure appears in this selected set. Final
+static/node review, hidden-window probes, package/ledger updates and the S9
+P commit remain outstanding; assets still contain the committed S8 delivery.
+
+## S9 original common gravity proof
+
+S9/P1 completes all twelve received labels, expected twelve, no unfinished
+scope transfer. Progress is 872 -> 884 / 1,992. The residual entry has
+static/native proof under its explicit admission exception, not natural-ROM
+execution credit. T37 still requires its final cross-chain closure review.
+
+| Original node | Address | Exact implementation and proof | Disposition |
+| --- | --- | --- | --- |
+| MaxSpdBlockData | $BF9F | Both table bytes bound to original ROM; native residual/normal entries select 6/8 | Match |
+| ResidualGravityCode | $BFA1 | LDY zero and BIT-overlap skip LDY one; no symbolic incoming edge; native max-six entry and separately reached common successor | Match, static/native residual proof |
+| ImposeGravityBlock | $BFA4 | Force $50, table index one, sprite block offset, original block roots | Match |
+| ImposeGravitySprObj | $BFAD | A maximum to scratch two, direction zero to common gravity; S8 actual roots | Match |
+| MovePlatformDown | $BFB4 | Direction zero with BIT-skipped upward load; ordinary platform-down roots | Match |
+| MovePlatformUp | $BFB7 | Direction one and common platform parameter selection; upward roots | Match |
+| SetDplSpd | $BFC5 | Downward 5/9, upward 10, maximum 3; ordinary roots plus native residual ID29 arm | Match |
+| RedPTroopaGrav | $BFD1 | Shared gravity call and original ObjectOffset return contract | Match |
+| ImposeGravity | $BFD7 | Fractional ADC carry and sign selection; all shared sprite arrays | Match |
+| AlterYP | $BFE9 | Scratch-seven sign and low/high-Y carry, downward acceleration and wrapped CMP-N clamp | Match |
+| ChkUpM | $C018 | Direction gate, negative maximum, upward subtraction and wrapped CMP-N/fractional clamp | Match |
+| ExVMove | $C046 | Original reached return after each gravity exit | Match |
+
+The preceding checkpoints contain source mapping, independent native checks,
+read-only recording proof and the exact similar-issue sweep. Reproduce the
+final review with `python -X utf8 -B test/verify_gravity_snapshots.py
+build/m2-t37-s9 build/m2-t37-s8 <owner-rom> <admitted-listing>`.
+The verifier checks original prefix/table binding, all twelve named nodes,
+all six gravity branches in both directions, no observed residual entry,
+original versus native root RAM, and each native boundary executable.
+All 128 actual comparisons match 1,799 bytes; no child substitution is used.
+Both original conditional platform directions execute. The source ID29 arm
+has only native/static proof because ordinary platform dispatch does not
+reach MovePlatformUp/Down for that ID. No PC/stack/ROM patch supplies a route.
+
+The residual byte audit identifies BIT absolute $01A0, which writes no RAM
+and only affects N/V/Z. Subsequent LDA resets N/Z, and the shared gravity
+body explicitly clears carry before addition and never consumes the BIT's
+V flag. Skipping that non-observable read preserves native entry behavior;
+it is not an emulator dependency. The admitted disassembly contains exactly
+one symbol occurrence, its declaration; this is a no-symbolic-incoming-edge
+claim, not an exhaustive assertion about arbitrary corrupted machine states.
+
+Common gravity replaces old player/block/misc/red copies. YMovingPlatform
+now delegates its center-selected movement to the same owner; parent gates,
+collision/positioning, balance-platform and lift algorithms are not newly
+credited. The pure climbing integrator remains with ClimbingSub, not gravity.
+Vertical adapter mocks gained explicit failing stubs for unrelated new
+entrypoints so they retain their narrow boundary and remain linkable.
+
+Both widths pass the six focused boundary cases and 460,324 adapter cases.
+All 82 shared units build under strict C90; x86/x64 self-tests and bounded
+hidden-window probes pass. DOS16 links with the existing OLDNAMES warning;
+no DOS runtime/resource/performance certification is claimed. Of forty
+selected regressions, thirty-eight pass and the two baseline Bowser failures
+remain at exit four. Prior score/graphics/VRAM/full-frame debts remain;
+S8 gravity scratch/red high-Y differences are resolved by the actual tests.
+Raw S9 evidence is 1,234,812 bytes; S8 evidence is reused read-only.
+
+All three owner-authorized local artifacts are refreshed. Documentation,
+node and ledger gates must pass before the P commit.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 252643 | 6f54332be752b558801d4a50a636fec950fb2f883992110bd5bc8340344540f7 |
+| mysmb32.exe | 330106 | a81a7589d75c26b4b8daae51b6e6cb8d1db96a270811bca1266e49e2ce0bfd30 |
+| mysmb64.exe | 337128 | fe601c6fee0dc77fef16279614b64f9c4051733261882e26cf621c2cdfcf0600 |

@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 static unsigned int calls,failures,expect_offset,expect_force,expect_max,expect_direction;
+void mysmb_world_impose_gravity(struct mysmb_game *g,mysmb_u8 offset,mysmb_u8 up)
+{(void)g;(void)offset;(void)up;++failures;}
+void mysmb_world_move_platform_vertically(struct mysmb_game *g,mysmb_u8 slot,mysmb_u8 up)
+{(void)g;(void)slot;(void)up;++failures;}
 void mysmb_world_impose_gravity_spr_object(struct mysmb_game *g,mysmb_u8 offset,
                                             mysmb_u8 force,mysmb_u8 maximum)
 {

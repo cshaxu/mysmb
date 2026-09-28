@@ -22,6 +22,10 @@ static void compare(const unsigned char *actual, const unsigned char *expected)
 #ifdef MYSMB_CALLER_CHECK
 static unsigned char records[1][4098];
 static unsigned int count, calls, kind;
+void mysmb_world_impose_gravity(struct mysmb_game *g, mysmb_u8 offset, mysmb_u8 up)
+{ (void)g; (void)offset; (void)up; ++failures; }
+void mysmb_world_move_platform_vertically(struct mysmb_game *g, mysmb_u8 slot, mysmb_u8 up)
+{ (void)g; (void)slot; (void)up; ++failures; }
 static void child(struct mysmb_game *g, mysmb_u8 id, mysmb_u8 offset)
 {
     unsigned char *r;

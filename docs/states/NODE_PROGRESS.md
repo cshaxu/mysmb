@@ -12,17 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 872 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 884 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,012 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,000 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **872 / 1,992 (43.78%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **884 / 1,992 (44.38%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T37 S8 P1](../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof)
-proves eleven new vertical adapter nodes and revalidates three retained nodes.
-64 caller checks match; actual gravity retains 62 failures for S9. Prior
-unrelated debts remain open. T37 continues with common gravity S9.
+Latest task review: [T37 S9 P1](../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof)
+proves twelve common-gravity nodes; 128 actual comparisons match. The residual
+entry has explicit static/native proof, not fabricated ROM execution. S8
+gravity differences are resolved; prior independent debts remain. T37 final
+cross-chain closure review is pending.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (872)
+## Completed matches (884)
 
 | ROM line | Node |
 | ---: | --- |
@@ -874,6 +875,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7667 | `MoveJ_EnemyVertically` |
 | 7669 | `SetHiMax` |
 | 7670 | `SetXMoveAmt` |
+| 7678 | `MaxSpdBlockData` |
+| 7681 | `ResidualGravityCode` |
+| 7685 | `ImposeGravityBlock` |
+| 7691 | `ImposeGravitySprObj` |
+| 7698 | `MovePlatformDown` |
+| 7702 | `MovePlatformUp` |
+| 7711 | `SetDplSpd` |
+| 7719 | `RedPTroopaGrav` |
+| 7729 | `ImposeGravity` |
+| 7739 | `AlterYP` |
+| 7761 | `ChkUpM` |
+| 7784 | `ExVMove` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

@@ -182,56 +182,10 @@ void mysmb_player_impose_gravity(struct mysmb_game *game, mysmb_u8 downward,
                                  mysmb_u8 upward, mysmb_u8 maximum,
                                  mysmb_u8 apply_upward)
 {
-    mysmb_u8 old_value;
-    mysmb_u8 carry_dummy;
-    mysmb_u8 carry_y;
-    mysmb_u8 page_delta;
-    mysmb_u8 lower_limit;
-    mysmb_u8 borrow;
-    mysmb_u16 y_sum;
-
-    old_value = game->ram[MYSMB_PLAYER_Y_DUMMY];
-    game->ram[MYSMB_PLAYER_Y_DUMMY] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_PLAYER_Y_FORCE]);
-    carry_dummy = game->ram[MYSMB_PLAYER_Y_DUMMY] < old_value ? 1U : 0U;
-    page_delta = game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U ? 0xffU : 0U;
-    old_value = game->ram[MYSMB_PLAYER_Y];
-    /* The carry into ADC Player_Y_Position comes from the fractional
-     * addition above.  Comparing the byte result with old_value loses that
-     * carry when the signed speed and fractional carry return to old_value
-     * (for example $6f + $ff + 1 = $16f). */
-    y_sum = (mysmb_u16)old_value + game->ram[MYSMB_PLAYER_Y_SPEED] +
-        carry_dummy;
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)y_sum;
-    carry_y = y_sum > 0xffU ? 1U : 0U;
-    game->ram[MYSMB_PLAYER_Y_HIGH] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_HIGH] + page_delta + carry_y);
-    old_value = game->ram[MYSMB_PLAYER_Y_FORCE];
-    game->ram[MYSMB_PLAYER_Y_FORCE] = (mysmb_u8)(old_value + downward);
-    carry_dummy = game->ram[MYSMB_PLAYER_Y_FORCE] < old_value ? 1U : 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_SPEED] + carry_dummy);
-    if (game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U &&
-        game->ram[MYSMB_PLAYER_Y_SPEED] >= maximum &&
-        game->ram[MYSMB_PLAYER_Y_FORCE] >= 0x80U) {
-        game->ram[MYSMB_PLAYER_Y_SPEED] = maximum;
-        game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
-    }
-    if (apply_upward == 0U) {
-        return;
-    }
-    lower_limit = (mysmb_u8)(0U - maximum);
-    old_value = game->ram[MYSMB_PLAYER_Y_FORCE];
-    game->ram[MYSMB_PLAYER_Y_FORCE] = (mysmb_u8)(old_value - upward);
-    borrow = old_value < upward ? 1U : 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_SPEED] - borrow);
-    if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U &&
-        game->ram[MYSMB_PLAYER_Y_SPEED] < lower_limit &&
-        game->ram[MYSMB_PLAYER_Y_FORCE] < 0x80U) {
-        game->ram[MYSMB_PLAYER_Y_SPEED] = lower_limit;
-        game->ram[MYSMB_PLAYER_Y_FORCE] = 0xffU;
-    }
+    game->ram[0U] = downward;
+    game->ram[1U] = upward;
+    game->ram[2U] = maximum;
+    mysmb_world_impose_gravity(game, 0U, apply_upward);
 }
 
 /* Translation of PlayerPhysicsSub ProcJumping/InitJS, with source force data. */

@@ -1016,18 +1016,18 @@ The labels and branches behind every line remain open until individually bound b
 | 7667 | `MoveJ_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
 | 7669 | `SetHiMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
 | 7670 | `SetXMoveAmt` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7678 | `MaxSpdBlockData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxspdblockdata) |
-| 7681 | `ResidualGravityCode` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualgravitycode) |
-| 7685 | `ImposeGravityBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravityblock) |
-| 7691 | `ImposeGravitySprObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravitysprobj) |
-| 7698 | `MovePlatformDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplatformdown) |
-| 7702 | `MovePlatformUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplatformup) |
-| 7711 | `SetDplSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setdplspd) |
-| 7719 | `RedPTroopaGrav` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-redptroopagrav) |
-| 7729 | `ImposeGravity` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravity) |
-| 7739 | `AlterYP` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-alteryp) |
-| 7761 | `ChkUpM` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkupm) |
-| 7784 | `ExVMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exvmove) |
+| 7678 | `MaxSpdBlockData` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7681 | `ResidualGravityCode` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) (static/native residual entry) |
+| 7685 | `ImposeGravityBlock` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7691 | `ImposeGravitySprObj` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7698 | `MovePlatformDown` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7702 | `MovePlatformUp` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7711 | `SetDplSpd` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7719 | `RedPTroopaGrav` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7729 | `ImposeGravity` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7739 | `AlterYP` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7761 | `ChkUpM` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7784 | `ExVMove` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
 | 7788 | `EnemiesAndLoopsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemiesandloopscore) |
 | 7796 | `ChkAreaTsk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatsk) |
 | 7801 | `ChkBowserF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbowserf) |

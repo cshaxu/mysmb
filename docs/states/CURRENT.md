@@ -2,31 +2,33 @@
 
 ## Current Work
 
-**M2 T37 S8 is closed at 872 / 1,992: eleven new and three retained adapter matches; S9 gravity is next.**
+**M2 T37 S9 is closed at 884 / 1,992: twelve gravity nodes proven; T37 cross-chain closure review remains.**
 
-## M2 T37 S8 Packet
+## M2 T37 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S8, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S7 commit a470d60; coordinator accepts transfers 162/163. |
-| Objective | Complete eleven vertical adapter nodes and revalidate three retained MoveD/falling nodes; exact names in proposal and ledger. |
-| Non-goals | No gravity-core, friction, terrain, rendering or platform algorithm repair. |
-| Reference Baseline | 861 / 1,992; fourteen scoped, eleven expected new, three retained, maximum 872. |
-| Candidate Proposal | [S8 vertical adapters](../proposals/m2/power-up-block-movement.md#s8-admission-vertical-adapter-entries). |
-| Files And ABI Surface | Shared world/enemy/player adapters, existing gravity child seams and actor call sites, tests/recorder/builds and three EXEs. |
+| Identifier Mode | M2 T37 S9, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S8 commit 8bed1c2; coordinator accepts transfer-164. |
+| Objective | Unify and prove twelve common gravity nodes in source order, including explicit residual-entry disposition. |
+| Non-goals | No parent actor, collision, rendering or platform algorithm repair. |
+| Reference Baseline | 872 / 1,992; twelve incomplete labels, expected twelve, maximum 884. |
+| Candidate Proposal | [S9 common gravity](../proposals/m2/power-up-block-movement.md#s9-admission-common-gravity-and-adjacent-entries). |
+| Files And ABI Surface | Shared world/gravity.c, player/enemy/misc/block callers and headers, tests/recorder/builds and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
-| Verification | Original branch/write/call audit, ordinary NMI root and child snapshots; separate native tests and three-target delivery. |
-| Expected Markers | Timer/jumpspring gate, force/max/direction scratch, enemy-to-sprite offset, exact state-five selection and ObjectOffset return contract. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Fourteen dispositions, eleven expected/actual new matches, three retained proofs, dual verification, child gaps and artifacts. |
-| Stop Conditions | Unadmitted child repair, modified reference execution/output, hidden differences or platform gameplay. |
-| Exit Criteria | All received nodes proven or exact accepted unfinished transfer; accounting and artifacts consistent. |
-| Original Owner Request | Faithful original ROM logic/call structure in shared C, source order and chain-level delivery. |
-| Similar-Issue Sweep | Every vertical adapter caller, duplicated gravity body, state/direction selectors, parameter and slot conversion. |
+| Verification | Original source branches/writes/entry proof, ordinary NMI snapshots and S8 actual regression; separate native tests and three-target builds. |
+| Expected Markers | Dummy carry, signed high-Y carry, scratch $00/$01/$02/$07, wrapped CMP-N, upward subtraction and fractional clamps. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Twelve exact dispositions, original/native evidence, residual-entry limits, artifacts and debts. |
+| Stop Conditions | Unadmitted parent repair, forced reference PC/stack, suppressed differences or platform gameplay. |
+| Exit Criteria | Every received node proven or exact accepted unfinished transfer; tracker/ledger/artifacts agree. |
+| Original Owner Request | Faithful original ROM logic/call structure, shared portable C, source order and chain-level delivery. |
+| Similar-Issue Sweep | All gravity copies and callers, wrapped comparisons, low/high-page carry, entry and source scratch contracts. |
 
 
-
+S9 closure: [common gravity proof](../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof).
+128 actual comparisons match; residual entry has explicit static/native proof.
+Three artifacts refreshed; prior independent debts remain.
 
 S8 closure: [vertical adapter proof](../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof).
 64 caller matches; 62 actual gravity differences remain for S9. Three

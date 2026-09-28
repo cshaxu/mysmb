@@ -1623,21 +1623,11 @@ void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
             if ((game->ram[MYSMB_FRAME_COUNTER] & 7U) == 0U) game->ram[MYSMB_ENEMY_Y + slot]++;
         }
         else {
-            if (game->ram[MYSMB_ENEMY_Y + slot] >= game->ram[MYSMB_ENEMY_X_SPEED + slot]) {
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
-            }
-            else {
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
-            }
-            old_force = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_force +
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-            carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_force ? 1U : 0U;
-            old_y = game->ram[MYSMB_ENEMY_Y + slot];
-            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_y +
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
+            /* ChkYCenterPos selects the original platform gravity entry.
+             * Parent collision/positioning remains separately owned. */
+            mysmb_world_move_platform_vertically(game, slot,
+                game->ram[MYSMB_ENEMY_Y + slot] >=
+                game->ram[MYSMB_ENEMY_X_SPEED + slot] ? 1U : 0U);
         }
     }
     else if (id == 38U || id == 39U || id == 43U || id == 44U) {

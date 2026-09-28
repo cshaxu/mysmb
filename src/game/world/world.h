@@ -3,6 +3,13 @@
 
 #include "game/game.h"
 
+/* ROM $BFD7 common gravity consumes scratch $00/$01/$02. */
+void mysmb_world_impose_gravity(struct mysmb_game *game, mysmb_u8 offset,
+                                mysmb_u8 upward);
+void mysmb_world_residual_gravity(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_world_move_platform_vertically(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 moving_up);
+
 /* ROM ImposeGravityBlock -> ImposeGravity for the block object array. */
 void mysmb_world_impose_gravity_block(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing red gravity child; common arithmetic proof remains S9-owned. */
