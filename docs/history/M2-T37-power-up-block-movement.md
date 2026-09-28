@@ -1481,3 +1481,54 @@ node and ledger gates must pass before the P commit.
 | mysmb16.exe | 252643 | 6f54332be752b558801d4a50a636fec950fb2f883992110bd5bc8340344540f7 |
 | mysmb32.exe | 330106 | a81a7589d75c26b4b8daae51b6e6cb8d1db96a270811bca1266e49e2ce0bfd30 |
 | mysmb64.exe | 337128 | fe601c6fee0dc77fef16279614b64f9c4051733261882e26cf621c2cdfcf0600 |
+
+## T37 closure
+
+T37 closes all nine source-ordered chains: 71 new matches and three retained
+matches, all 74 labels in its admitted slice. Overall progress is
+813 -> 884 / 1,992. The retained labels are MoveD_EnemyVertically,
+MoveFallingPlatform and ContVMove; their S8 revalidation adds no second credit.
+Every label remains individually mapped in the nine proof tables, inventory
+and responsibility ledger. ResidualGravityCode's static/native exception is
+explicit in S9; it is never described as a naturally executed ROM entry.
+
+The final cross-chain check recompiles each actual-state checker against the
+final S9 production objects at both widths and reuses original root states
+without caller substitution. It also reruns the preceding per-S executable
+against those same states. All 844 comparisons finish: 750 match, 94 retain
+byte-for-byte identical previously recorded failures, no new failure and no
+changed failure output. Relative to those per-S baselines, 78 comparisons
+now pass: sixteen head-hit/shatter handoffs and sixty-two vertical entries.
+This is a bounded cross-chain result, not a whole-game or full-frame pass.
+
+| Chain | New labels | Final actual checks | Remaining difference |
+| --- | ---: | ---: | --- |
+| S1 power-up actor | 6 | 84/100 | Sixteen existing graphics/music child differences |
+| S2 head-hit/position | 13 | 144/144 | Earlier shatter handoff failures resolved |
+| S3 block content/lookup | 11 | 120/120 | None on these original roots |
+| S4 shatter/top coin/chunks | 4 | 0/32 | Existing expanded scratch-$02 score/coin child differences |
+| S5 block/chunk lifetime | 5 | 30/64 | Thirty-four existing block/chunk drawing differences |
+| S6 replacement | 3 | 52/64 | Twelve existing ReplaceBlockMetatile VRAM differences |
+| S7 horizontal movement | 6 | 192/192 | None on these original roots |
+| S8 vertical adapters | 11 | 64/64 | Prior sixty-two actual gravity differences resolved |
+| S9 common gravity/entries | 12 | 64/64 | Residual entry separately proven static/native |
+
+The 94 failures remain failures with their prior child owners: graphics in
+T17 S6, score/coin in T36 S5/S3 and the existing score obligation, and VRAM
+replacement in T28 S3. No unfinished T37 node is silently transferred or
+credited as its child. Earlier vine, terrain, clipping, full-frame and legacy
+core-test debts remain independently open. The selected forty regression
+runs retain the two Bowser exit-four failures; no new selected regression
+failure is introduced.
+
+The final integrated build is S9/P1 commit 4d24cdf: 82 shared C90 units,
+x86/x64 input self-tests and bounded responsive hidden windows, DOS16 link
+with the existing OLDNAMES warning, and platform-purity checks. No source
+changed during this final audit, so its build/probe evidence is reused rather
+than rebuilt. All three packaged artifact hashes were checked again against
+the S9 record; they remain the final T37 local delivery. DOS stays link-only,
+with no resource binding, playability or physical-486 qualification claim.
+
+The next source slice begins at EnemiesAndLoopsCore, listing line 7788,
+following the approved source-order plan's enemy stream/slot/initialization
+candidate. It is not yet admitted. M2 remains incomplete.

@@ -19,11 +19,12 @@ the conformance counts below.
 
 Verified conformance is **884 / 1,992 (44.38%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T37 S9 P1](../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof)
+Latest task review: [T37 S9 P1](../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof)
 proves twelve common-gravity nodes; 128 actual comparisons match. The residual
 entry has explicit static/native proof, not fabricated ROM execution. S8
-gravity differences are resolved; prior independent debts remain. T37 final
-cross-chain closure review is pending.
+gravity differences are resolved; prior independent debts remain. [T37 closes](../history/M2-T37-power-up-block-movement.md#t37-closure)
+with all 74 scoped nodes; 750/844 final actual checks match and 94 existing
+child failures remain unchanged. The next source slice is not yet admitted.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

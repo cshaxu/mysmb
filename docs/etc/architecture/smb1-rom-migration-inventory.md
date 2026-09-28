@@ -954,80 +954,80 @@ The labels and branches behind every line remain open until individually bound b
 | 7163 | `PwrUpJmp` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
 | 7175 | `StrType` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
 | 7176 | `PutBehind` | M2 T36 S6 shared game/power_up_init.c | ROM-match complete | [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof) |
-| 7184 | `PowerUpObjHandler` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7202 | `ShroomM` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7206 | `GrowThePowerUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7223 | `ChkPUSte` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7226 | `RunPUSubs` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7232 | `ExitPUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof) |
-| 7241 | `BlockYPosAdderData` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7244 | `PlayerHeadCollision` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7251 | `DBlockSte` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7265 | `ChkBrick` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7274 | `StartBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7279 | `ContBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7282 | `PutOldMT` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7283 | `PutMTileB` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7297 | `SmallBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7298 | `BigBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7308 | `Unbreak` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7309 | `InvOBit` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7316 | `InitBlock_XY_Pos` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7332 | `BumpBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7349 | `BlockCode` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7363 | `MushFlowerBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7367 | `StarBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7371 | `ExtraLifeMushBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7376 | `VineBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7381 | `ExitBlockChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7386 | `BrickQBlockMetatiles` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7393 | `BlockBumpedChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7395 | `BumpChkLoop` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7400 | `MatchBump` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
-| 7404 | `BrickShatter` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
-| 7420 | `CheckTopOfBlock` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
-| 7437 | `TopEx` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
-| 7441 | `SpawnBrickChunks` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
-| 7468 | `BlockObjectsCore` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7500 | `ChkTop` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7506 | `BouncingBlockHandler` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7519 | `KillBlock` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7520 | `UpdSte` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7527 | `BlockObjMT_Updater` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
-| 7529 | `UpdateLoop` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
-| 7546 | `NextBUpd` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
-| 7555 | `MoveEnemyHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7561 | `MovePlayerHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7566 | `MoveObjectHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7581 | `SaveXSpd` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7586 | `UseAdder` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7604 | `ExXMove` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7611 | `MovePlayerVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7617 | `NoJSChk` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7624 | `MoveD_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7630 | `MoveFallingPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7632 | `ContVMove` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7636 | `MoveRedPTroopaDown` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7640 | `MoveRedPTroopaUp` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7643 | `MoveRedPTroopa` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7656 | `MoveDropPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7660 | `MoveEnemySlowVert` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7662 | `SetMdMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7667 | `MoveJ_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7669 | `SetHiMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7670 | `SetXMoveAmt` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
-| 7678 | `MaxSpdBlockData` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7681 | `ResidualGravityCode` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) (static/native residual entry) |
-| 7685 | `ImposeGravityBlock` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7691 | `ImposeGravitySprObj` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7698 | `MovePlatformDown` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7702 | `MovePlatformUp` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7711 | `SetDplSpd` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7719 | `RedPTroopaGrav` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7729 | `ImposeGravity` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7739 | `AlterYP` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7761 | `ChkUpM` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
-| 7784 | `ExVMove` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7184 | `PowerUpObjHandler` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7202 | `ShroomM` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7206 | `GrowThePowerUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7223 | `ChkPUSte` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7226 | `RunPUSubs` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7232 | `ExitPUp` | M2 T37 S1 shared game/power_up.c | ROM-match complete | [S1 actor proof](../../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof) |
+| 7241 | `BlockYPosAdderData` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7244 | `PlayerHeadCollision` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7251 | `DBlockSte` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7265 | `ChkBrick` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7274 | `StartBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7279 | `ContBTmr` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7282 | `PutOldMT` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7283 | `PutMTileB` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7297 | `SmallBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7298 | `BigBP` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7308 | `Unbreak` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7309 | `InvOBit` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7316 | `InitBlock_XY_Pos` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
+| 7332 | `BumpBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7349 | `BlockCode` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7363 | `MushFlowerBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7367 | `StarBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7371 | `ExtraLifeMushBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7376 | `VineBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7381 | `ExitBlockChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7386 | `BrickQBlockMetatiles` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7393 | `BlockBumpedChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7395 | `BumpChkLoop` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7400 | `MatchBump` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7404 | `BrickShatter` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../history/M2-T37-power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
+| 7420 | `CheckTopOfBlock` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../history/M2-T37-power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
+| 7437 | `TopEx` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../history/M2-T37-power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
+| 7441 | `SpawnBrickChunks` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../history/M2-T37-power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
+| 7468 | `BlockObjectsCore` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7500 | `ChkTop` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7506 | `BouncingBlockHandler` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7519 | `KillBlock` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7520 | `UpdSte` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7527 | `BlockObjMT_Updater` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../history/M2-T37-power-up-block-movement.md#s6-original-block-replacement-proof) |
+| 7529 | `UpdateLoop` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../history/M2-T37-power-up-block-movement.md#s6-original-block-replacement-proof) |
+| 7546 | `NextBUpd` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../history/M2-T37-power-up-block-movement.md#s6-original-block-replacement-proof) |
+| 7555 | `MoveEnemyHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7561 | `MovePlayerHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7566 | `MoveObjectHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7581 | `SaveXSpd` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7586 | `UseAdder` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7604 | `ExXMove` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7611 | `MovePlayerVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7617 | `NoJSChk` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7624 | `MoveD_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7630 | `MoveFallingPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7632 | `ContVMove` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7636 | `MoveRedPTroopaDown` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7640 | `MoveRedPTroopaUp` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7643 | `MoveRedPTroopa` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7656 | `MoveDropPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7660 | `MoveEnemySlowVert` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7662 | `SetMdMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7667 | `MoveJ_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7669 | `SetHiMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7670 | `SetXMoveAmt` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7678 | `MaxSpdBlockData` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7681 | `ResidualGravityCode` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) (static/native residual entry) |
+| 7685 | `ImposeGravityBlock` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7691 | `ImposeGravitySprObj` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7698 | `MovePlatformDown` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7702 | `MovePlatformUp` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7711 | `SetDplSpd` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7719 | `RedPTroopaGrav` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7729 | `ImposeGravity` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7739 | `AlterYP` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7761 | `ChkUpM` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
+| 7784 | `ExVMove` | M2 T37 S9 shared world/gravity.c | ROM-match complete | [S9 gravity proof](../../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof) |
 | 7788 | `EnemiesAndLoopsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemiesandloopscore) |
 | 7796 | `ChkAreaTsk` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkareatsk) |
 | 7801 | `ChkBowserF` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbowserf) |

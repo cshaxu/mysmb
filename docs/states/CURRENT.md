@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T37 S9 is closed at 884 / 1,992: twelve gravity nodes proven; T37 cross-chain closure review remains.**
+**M2 T37 is closed at 884 / 1,992: all 74 scoped nodes complete; next is the enemy stream/initialization slice.**
 
 ## M2 T37 S9 Packet
 
@@ -13,7 +13,7 @@
 | Objective | Unify and prove twelve common gravity nodes in source order, including explicit residual-entry disposition. |
 | Non-goals | No parent actor, collision, rendering or platform algorithm repair. |
 | Reference Baseline | 872 / 1,992; twelve incomplete labels, expected twelve, maximum 884. |
-| Candidate Proposal | [S9 common gravity](../proposals/m2/power-up-block-movement.md#s9-admission-common-gravity-and-adjacent-entries). |
+| Candidate Proposal | [S9 common gravity](../history/M2-T37-power-up-block-movement.md#s9-admission-common-gravity-and-adjacent-entries). |
 | Files And ABI Surface | Shared world/gravity.c, player/enemy/misc/block callers and headers, tests/recorder/builds and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
 | Verification | Original source branches/writes/entry proof, ordinary NMI snapshots and S8 actual regression; separate native tests and three-target builds. |
@@ -26,39 +26,43 @@
 | Similar-Issue Sweep | All gravity copies and callers, wrapped comparisons, low/high-page carry, entry and source scratch contracts. |
 
 
-S9 closure: [common gravity proof](../proposals/m2/power-up-block-movement.md#s9-original-common-gravity-proof).
+T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
+750/844 actual comparisons match; 94 prior child failures remain unchanged.
+No new failures; three final S9 artifact hashes rechecked.
+
+S9 closure: [common gravity proof](../history/M2-T37-power-up-block-movement.md#s9-original-common-gravity-proof).
 128 actual comparisons match; residual entry has explicit static/native proof.
 Three artifacts refreshed; prior independent debts remain.
 
-S8 closure: [vertical adapter proof](../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof).
+S8 closure: [vertical adapter proof](../history/M2-T37-power-up-block-movement.md#s8-original-vertical-adapter-proof).
 64 caller matches; 62 actual gravity differences remain for S9. Three
 artifacts refreshed; 38/40 regressions pass with baseline Bowser failures.
 
-S7 closure: [horizontal movement proof](../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof).
+S7 closure: [horizontal movement proof](../history/M2-T37-power-up-block-movement.md#s7-original-horizontal-movement-proof).
 192 actual original RAM/return-A matches. Independent arithmetic checks,
 46 regressions and three builds pass; earlier unrelated debts remain.
 
-S6 closure: [block replacement proof](../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof).
+S6 closure: [block replacement proof](../history/M2-T37-power-up-block-movement.md#s6-original-block-replacement-proof).
 64 caller matches; 52 actual matches and 12 retained VRAM-child failures.
 Focused checks, 36 regressions and three builds pass.
 
-S5 closure: [block lifetime proof](../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof).
+S5 closure: [block lifetime proof](../history/M2-T37-power-up-block-movement.md#s5-original-block-lifetime-proof).
 64 caller matches; 30 actual matches and 34 retained drawing failures.
 Focused checks, 32 regressions and three builds pass.
 
-S4 closure: [shatter and chunk proof](../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof).
+S4 closure: [shatter and chunk proof](../history/M2-T37-power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof).
 32 caller matches; expanded actual-child checks retain scratch differences.
 All 264 prior head/bump roots, 32 regressions and three builds pass.
 
-S3 closure: [block content proof](../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof).
+S3 closure: [block content proof](../history/M2-T37-power-up-block-movement.md#s3-original-block-content-and-lookup-proof).
 120 caller, 120 actual and 120 independent child checks match. S2 retains
 its sixteen shatter failures; 32 regressions and all three builds pass.
 
-S2 closure: [head-hit proof](../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof).
+S2 closure: [head-hit proof](../history/M2-T37-power-up-block-movement.md#s2-original-head-hit-and-positioning-proof).
 144 caller matches, 128 actual matches and 16 retained shatter-child failures;
 32 regression runs and three final builds pass, with DOS link-only.
 
-S1 closure: [actor proof](../proposals/m2/power-up-block-movement.md#s1-original-power-up-actor-proof).
+S1 closure: [actor proof](../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof).
 100 caller matches, 84 actual-child matches and 16 retained child failures;
 32 regression runs pass and all three test artifacts are refreshed.
 

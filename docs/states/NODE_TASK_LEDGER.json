@@ -2734,13 +2734,13 @@
     {
       "id": "M2 T37",
       "evidence": [
-        "docs/proposals/m2/power-up-block-movement.md"
+        "docs/history/M2-T37-power-up-block-movement.md"
       ],
       "subtasks": [
         {
           "id": "M2 T37 S1",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2753,7 +2753,7 @@
         {
           "id": "M2 T37 S2",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2766,7 +2766,7 @@
         {
           "id": "M2 T37 S3",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2779,7 +2779,7 @@
         {
           "id": "M2 T37 S4",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2792,7 +2792,7 @@
         {
           "id": "M2 T37 S5",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2805,7 +2805,7 @@
         {
           "id": "M2 T37 S6",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2818,7 +2818,7 @@
         {
           "id": "M2 T37 S7",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2831,7 +2831,7 @@
         {
           "id": "M2 T37 S8",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -2844,7 +2844,7 @@
         {
           "id": "M2 T37 S9",
           "evidence": [
-            "docs/proposals/m2/power-up-block-movement.md"
+            "docs/history/M2-T37-power-up-block-movement.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -61517,7 +61517,7 @@
         "ExitPUp"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61540,7 +61540,7 @@
         "InitBlock_XY_Pos"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61561,7 +61561,7 @@
         "MatchBump"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61575,7 +61575,7 @@
         "SpawnBrickChunks"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61590,7 +61590,7 @@
         "UpdSte"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61601,7 +61601,7 @@
         "BlockObjMT_Updater"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T24 S2"
     },
     {
@@ -61613,7 +61613,7 @@
         "NextBUpd"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T18 S4"
     },
     {
@@ -61629,7 +61629,7 @@
         "ExXMove"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T17 S6"
     },
     {
@@ -61650,7 +61650,7 @@
         "SetXMoveAmt"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate; retained matches keep prior conformance evidence.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T17 S6"
     },
     {
@@ -61663,7 +61663,7 @@
         "ContVMove"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate; retained matches keep prior conformance evidence.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T31 S2"
     },
     {
@@ -61685,7 +61685,7 @@
         "ExVMove"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 source-order mandate.",
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "from": "M2 T17 S6"
     }
   ],
@@ -111471,7 +111471,7 @@
         "RunPUSubs",
         "ExitPUp"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-power-up-actor-819"
     },
     {
@@ -112345,7 +112345,7 @@
         "InvOBit",
         "InitBlock_XY_Pos"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-head-hit-position-832"
     },
     {
@@ -113226,7 +113226,7 @@
         "BumpChkLoop",
         "MatchBump"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-block-content-843"
     },
     {
@@ -114097,7 +114097,7 @@
         "TopEx",
         "SpawnBrickChunks"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-shatter-chunks-847"
     },
     {
@@ -114975,7 +114975,7 @@
         "KillBlock",
         "UpdSte"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-block-lifetime-852"
     },
     {
@@ -115852,7 +115852,7 @@
         "UpdateLoop",
         "NextBUpd"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-block-replacement-855"
     },
     {
@@ -116741,7 +116741,7 @@
         "UseAdder",
         "ExXMove"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-horizontal-movement-861"
     },
     {
@@ -117654,7 +117654,7 @@
         "SetHiMax",
         "SetXMoveAmt"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-vertical-adapters-872"
     },
     {
@@ -118578,7 +118578,7 @@
         "ChkUpM",
         "ExVMove"
       ],
-      "evidence": "docs/proposals/m2/power-up-block-movement.md",
+      "evidence": "docs/history/M2-T37-power-up-block-movement.md",
       "state": "closed-P1-common-gravity-884"
     }
   ]
