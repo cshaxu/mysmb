@@ -43,53 +43,15 @@ static mysmb_u8 mysmb_status_output_numbers(struct mysmb_game *game, mysmb_u8 se
     return 1U;
 }
 
-static mysmb_u8 mysmb_status_print_numbers(struct mysmb_game *game, mysmb_u8 nybbles)
+mysmb_u8 mysmb_status_print_numbers(struct mysmb_game *game, mysmb_u8 nybbles)
 {
     (void)mysmb_status_output_numbers(game, nybbles);
     return mysmb_status_output_numbers(game, (mysmb_u8)(nybbles >> 4U));
 }
 
-mysmb_u8 mysmb_status_queue_score_coin(struct mysmb_game *game)
-{
-    mysmb_u8 player;
-    mysmb_u8 offset;
-    if (game->ram[MYSMB_STATUS_BUFFER_OFFSET] > 0xf1U) return 0U;
-    player = (mysmb_u8)(game->ram[MYSMB_STATUS_CURRENT_PLAYER] & 1U);
-    if (mysmb_status_print_numbers(game, player != 0U ? 0x13U : 0x02U) == 0U) return 0U;
-    offset = game->ram[MYSMB_STATUS_BUFFER_OFFSET];
-    if (game->ram[MYSMB_STATUS_BUFFER + offset - 6U] == 0U)
-        game->ram[MYSMB_STATUS_BUFFER + offset - 6U] = 0x24U;
-    return 1U;
-}
-
 mysmb_u8 mysmb_status_queue_timer(struct mysmb_game *game)
 {
     return mysmb_status_print_numbers(game, 0xa4U);
-}
-
-mysmb_u8 mysmb_status_queue_title_score(struct mysmb_game *game)
-{
-    if (mysmb_status_print_numbers(game, 0xfaU) == 0U) return 0U;
-    if (game->ram[MYSMB_STATUS_BUFFER + game->ram[MYSMB_STATUS_BUFFER_OFFSET] - 6U] == 0U)
-        game->ram[MYSMB_STATUS_BUFFER + game->ram[MYSMB_STATUS_BUFFER_OFFSET] - 6U] = 0x24U;
-    return 1U;
-}
-
-mysmb_u8 mysmb_status_queue_bottom_line(struct mysmb_game *game)
-{
-    mysmb_u8 offset;
-    if (game->ram[MYSMB_STATUS_BUFFER_OFFSET] != 0U) return 0U;
-    if (mysmb_status_queue_score_coin(game) == 0U) return 0U;
-    offset = game->ram[MYSMB_STATUS_BUFFER_OFFSET];
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = 0x20U;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = 0x73U;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = 3U;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = (mysmb_u8)(game->ram[MYSMB_STATUS_WORLD] + 1U);
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = 0x28U;
-    game->ram[MYSMB_STATUS_BUFFER + offset++] = (mysmb_u8)(game->ram[MYSMB_STATUS_LEVEL] + 1U);
-    game->ram[MYSMB_STATUS_BUFFER + offset] = 0U;
-    game->ram[MYSMB_STATUS_BUFFER_OFFSET] = offset;
-    return 1U;
 }
 
 void mysmb_status_apply_digit_modifier(struct mysmb_game *game, mysmb_u8 digit_offset)

@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 800 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 809 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 124 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,068 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,059 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **800 / 1,992 (40.16%)**. The 124 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **809 / 1,992 (40.61%)**. The 124 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T36 S4 P1](../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof)
-proves six misc dispatch and coin lifetime nodes with 84 original/native caller matches
-and 84 actual-child matches across both widths. T36 remains open;
-prior child, full-frame and core-test debts remain.
+Latest task review: [T36 S5 P1](../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof)
+proves nine coin tally, score and HUD nodes with 112 caller and 112 actual-child
+matches across both widths. The S3 sound-only gap now passes 96/96 actual-child
+checks. T36 remains open; prior unrelated child/full-frame/core debts remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (800)
+## Completed matches (809)
 
 | ROM line | Node |
 | ---: | --- |
@@ -799,6 +799,15 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7071 | `JCoinRun` |
 | 7088 | `RunJCSubs` |
 | 7093 | `MiscLoopBack` |
+| 7100 | `CoinTallyOffsets` |
+| 7103 | `ScoreOffsets` |
+| 7106 | `StatusBarNybbles` |
+| 7109 | `GiveOneCoin` |
+| 7125 | `CoinPoints` |
+| 7129 | `AddToScore` |
+| 7134 | `GetSBNybbles` |
+| 7138 | `UpdateNumber` |
+| 7145 | `NoZSup` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |

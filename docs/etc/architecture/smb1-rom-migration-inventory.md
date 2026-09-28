@@ -941,15 +941,15 @@ The labels and branches behind every line remain open until individually bound b
 | 7071 | `JCoinRun` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
 | 7088 | `RunJCSubs` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
 | 7093 | `MiscLoopBack` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
-| 7100 | `CoinTallyOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cointallyoffsets) |
-| 7103 | `ScoreOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scoreoffsets) |
-| 7106 | `StatusBarNybbles` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbarnybbles) |
-| 7109 | `GiveOneCoin` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-giveonecoin) |
-| 7125 | `CoinPoints` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinpoints) |
-| 7129 | `AddToScore` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addtoscore) |
-| 7134 | `GetSBNybbles` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getsbnybbles) |
-| 7138 | `UpdateNumber` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updatenumber) |
-| 7145 | `NoZSup` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nozsup) |
+| 7100 | `CoinTallyOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7103 | `ScoreOffsets` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7106 | `StatusBarNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7109 | `GiveOneCoin` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7125 | `CoinPoints` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7129 | `AddToScore` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7134 | `GetSBNybbles` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7138 | `UpdateNumber` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
+| 7145 | `NoZSup` | M2 T36 S5 shared game/score.c | ROM-match complete | [S5 score and HUD proof](../../proposals/m2/misc-object-chains.md#s5-original-score-and-hud-proof) |
 | 7150 | `SetupPowerUp` | T22 responsibility; `objects.c`: `mysmb_objects_start_power_up`, `mysmb_objects_step_power_up`, `mysmb_objects_finish_power_up`; `oam/power_up_gfx.c` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setuppowerup) |
 | 7163 | `PwrUpJmp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pwrupjmp) |
 | 7175 | `StrType` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strtype) |

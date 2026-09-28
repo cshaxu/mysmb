@@ -2,30 +2,30 @@
 
 ## Current Work
 
-**M2 T36 S4 is closed at 800 / 1,992: six misc lifetime nodes proven; S5 score and HUD handoff is next.**
+**M2 T36 S5 is closed at 809 / 1,992: all nine score/HUD nodes proven; S6 power-up initialization is next.**
 
-## M2 T36 S4 Packet
+## M2 T36 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S3 commit 254e339; coordinator accepts transfer-151. |
-| Objective | Complete six misc dispatch and jumping coin lifetime nodes in original order. |
-| Non-goals | No drawing/collision child algorithm repair, score or power-up work. |
-| Reference Baseline | 794 / 1,992; two mapped and four open labels; six expected, maximum 800. Exact names in proposal and admission JSON. |
-| Candidate Proposal | [Misc lifetime chain](../proposals/m2/misc-object-chains.md#s4-admission-misc-dispatch-and-jumping-coin-lifetime). |
-| Files And ABI Surface | Shared misc owner, existing graphics/box child seams, tests/recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T36 S5, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S4 commit 8500a3a; coordinator accepts transfer-152. |
+| Objective | Complete nine adjacent coin tally, score and HUD handoff nodes. |
+| Non-goals | No status child algorithm repair, endgame algorithm repair or S6 power-up work. |
+| Reference Baseline | 800 / 1,992; nine open labels, all nine expected; maximum 809. Exact sets in proposal and admission JSON. |
+| Candidate Proposal | [Score and HUD chain](../proposals/m2/misc-object-chains.md#s5-admission-coin-tally-score-and-hud-handoff). |
+| Files And ABI Surface | Shared score owner, status child boundary/facades, original callers, tests/recorder, build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original branch/read/write/call proof from ordinary NMI root and children; separate actual-child diagnostics, native tests and three builds. |
-| Expected Markers | Every-slot ObjectOffset; descending high-bit dispatch; state-one gravity; speed-five transition; state30 retirement; scroll carry and child order. |
-| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact dispositions, both proof tracks, child limits, tracker and hashes. |
-| Stop Conditions | Unadmitted child repair, reference mutation, masked mismatch or platform gameplay. |
-| Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
-| Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64; source order and chain delivery. |
-| Similar-Issue Sweep | Every misc dispatcher caller, state/slot writer, gravity and graphics/box consumer. |
+| Verification | Original tables, branches, writes, direct child arguments and return slot; separate actual-child diagnostics, focused tests and three builds. |
+| Expected Markers | Fresh player reads, hundred-coin life and sound, modifier order, original HUD selector and zero suppression, ObjectOffset return. |
+| Asset Needs | Existing local owner ROM/listing only; bounded ignored evidence and three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Nine exact dispositions, both proof tracks, caller sweep, remaining child limits and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, altered reference execution, masked mismatch or platform gameplay. |
+| Exit Criteria | Every received label proven or accepted transfer; tracker, evidence and artifacts agree. |
+| Original Owner Request | Faithful original logic/call structure in shared native C for DOS16/Win32/x64, source order and chain delivery. |
+| Similar-Issue Sweep | Coin, floating score, brick, flagpole, title/status and endgame callers; distinguish AddToScore from EndAreaPoints. |
 
-T36 S3 closed six coin creation/allocation caller nodes in 254e339; the GiveOneCoin extra-life sound gap remains with planned S5.
+S4 closed six misc lifetime nodes in 8500a3a. S5 resolves the S3 hundred-coin sound gap with 96/96 actual-child matches; prior evidence remains unchanged.
 
 ## T35 closure summary
 

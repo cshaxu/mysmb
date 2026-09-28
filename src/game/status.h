@@ -4,6 +4,7 @@
 #include "game/game.h"
 
 /* ROM $8ebe-$8fbf: shared status output, digit arithmetic and top score. */
+mysmb_u8 mysmb_status_print_numbers(struct mysmb_game *game, mysmb_u8 nybbles);
 mysmb_u8 mysmb_status_queue_bottom_line(struct mysmb_game *game);
 mysmb_u8 mysmb_status_queue_timer(struct mysmb_game *game);
 mysmb_u8 mysmb_status_queue_score_coin(struct mysmb_game *game);

@@ -1,3 +1,4 @@
+#include "game/score.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 #include "game/status.h"
@@ -154,8 +155,7 @@ enum {
     MYSMB_SPRITE_OFFSET_CONTROL = 0x03eeU
 };
 
-static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
-                                               mysmb_u8 digit_offset);
+
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
                                             mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
@@ -1516,9 +1516,7 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
         score = score_data[control];
         game->ram[MYSMB_DIGIT_MODIFIER + (score >> 4U)] =
             (mysmb_u8)(score & 0x0fU);
-        mysmb_objects_apply_digit_modifier(game,
-            game->ram[MYSMB_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
-        (void)mysmb_area_queue_score_coin_status(game);
+        (void)mysmb_score_add(game);
     }
     game->ram[MYSMB_FLOATEY_NUM_TIMER + slot]--;
     if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
@@ -2130,35 +2128,6 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
     return 1U;
 }
 
-/* ROM $8f6f DigitsMathRoutine.  DisplayDigits holds one decimal digit per
- * byte; the modifier is cleared after every calculation exactly as the ROM
- * routine does. */
-static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
-                                               mysmb_u8 digit_offset)
-{
-    mysmb_status_apply_digit_modifier(game, digit_offset);
-}
-
-
-/* ROM $bbb6 GiveOneCoin.  Coin collection paths share this tally and status
- * command tail; the caller retains ownership of the metatile removal. */
-void mysmb_objects_give_one_coin(struct mysmb_game *game)
-{
-    mysmb_u8 player;
-
-    player = game->ram[MYSMB_CURRENT_PLAYER];
-    game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 1U;
-    mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x17U : 0x1dU);
-    game->ram[MYSMB_COIN_TALLY]++;
-    if (game->ram[MYSMB_COIN_TALLY] == 100U) {
-        game->ram[MYSMB_COIN_TALLY] = 0U;
-        game->ram[MYSMB_NUMBER_OF_LIVES]++;
-    }
-    game->ram[MYSMB_DIGIT_MODIFIER + 4U] = 2U;
-    mysmb_objects_apply_digit_modifier(game, player == 0U ? 0x0bU : 0x11U);
-    (void)mysmb_area_queue_score_coin_status(game);
-}
-
 #ifdef MYSMB_DOS16_TARGET
 #pragma code_seg("MYSMB_BLOCK")
 #endif
@@ -2240,10 +2209,7 @@ static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_Y + slot + 2U] =
         (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] + 8U);
     game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 5U;
-    mysmb_objects_apply_digit_modifier(game,
-                                       game->ram[MYSMB_CURRENT_PLAYER] == 0U ?
-                                       0x0bU : 0x11U);
-    (void)mysmb_area_queue_score_coin_status(game);
+    (void)mysmb_score_add(game);
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
 }
 

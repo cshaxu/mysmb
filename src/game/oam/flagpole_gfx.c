@@ -1,3 +1,4 @@
+#include "game/score.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/area.h"
@@ -16,11 +17,6 @@ enum {
     MYSMB_FLAG_FNUM_Y = 0x010dU, MYSMB_FLAG_FNUM_Y_DUMMY = 0x010eU,
     MYSMB_FLAG_SCORE = 0x010fU, MYSMB_FLAG_COLLISION_Y = 0x070fU
 };
-
-static void mysmb_flagpole_apply_score(struct mysmb_game *game, mysmb_u8 offset)
-{
-    mysmb_status_apply_digit_modifier(game, offset);
-}
 
 void mysmb_objects_start_flagpole(struct mysmb_game *game, mysmb_u8 page,
                                   mysmb_u8 x)
@@ -56,9 +52,7 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
             score_index = game->ram[MYSMB_FLAG_SCORE];
             game->ram[MYSMB_FLAG_DIGIT_MODIFIER + score_digits[score_index]] =
                 score_modifiers[score_index];
-            mysmb_flagpole_apply_score(game,
-                game->ram[MYSMB_FLAG_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
-            (void)mysmb_area_queue_score_coin_status(game);
+            (void)mysmb_score_add(game);
             game->ram[MYSMB_FLAG_GAME_SUBROUTINE] = 5U;
         } else {
             carry = game->ram[MYSMB_FLAG_ENEMY_Y_DUMMY + 5U] != 0U ? 1U : 0U;

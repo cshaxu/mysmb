@@ -5,7 +5,7 @@
 The original lines 6730-7200 contain 56 labels. Fourteen cannon/bullet nodes
 retain T31 S2 accepted proof. The six chains below target 41 incomplete labels,
 maximum 813 from incoming 772. Their current receiver is T24 S2 until each S
-is admitted. S1-S4 are closed; S5 score and HUD handoff is next. Numeric S entries below are a plan within
+is admitted. S1-S5 are closed; S6 power-up initialization is next. Numeric S entries below are a plan within
 this T; only individual receipt enables implementation.
 
 PowerUpObjHandler (line 7184) begins a state machine continuing into the next
@@ -627,3 +627,146 @@ Final owner-authorized local P1 artifacts:
 
 Retained raw evidence: 2315854 bytes, below four MB.
 Six received labels complete, six expected; no received-node transfers. Progress 794 -> 800 / 1,992. T36 remains open for S5-S6 and its next-slice consumer exception.
+
+## S5 admission: coin tally, score and HUD handoff
+
+Transfer-152 receives nine open labels, in original order: CoinTallyOffsets,
+ScoreOffsets, StatusBarNybbles, GiveOneCoin, CoinPoints, AddToScore,
+GetSBNybbles, UpdateNumber and NoZSup. Scope and expected-match sets are
+identical. Baseline 800 / 1,992; maximum 809. Data starts at $BBF8; code runs
+from GiveOneCoin $BBFE through NoZSup $BC46 and RTS $BC48 (exclusive end $BC49).
+Shared game/score.c owns this chain and the existing score/status facades.
+DigitsMathRoutine and PrintStatusBarNumbers remain unchanged status children;
+extract their existing callable boundary without awarding child credit.
+Move the bottom-line facade if needed to keep score -> status dependencies
+acyclic. Preserve its existing algorithm, outside the nine-node credit set.
+
+Preserve each CurrentPlayer reload after the preceding child, three exact
+indexed tables, byte coin/life wrap, equality-to-100 gate, Square2SoundQueue
+write $40, modifier-before-child order and source VRAM zero suppression at
+$02FB + final byte offset. Do not retain the invented $F1 buffer gate or
+player clamp. Return ObjectOffset as the source X result where the C ABI
+exposes that result. Legal player indices are zero and one.
+
+ROM proof reuses ordinary NMI coin-allocation routes from S3 and observes
+the score root and digit/print child calls. Cover both players, 99-to-100,
+non-award and byte-wrap coin counts, life wrap, both leading-digit branches,
+and direct score/status entry callers. Record table bytes, branches, child
+arguments, persistent RAM writes and the original return slot. Compare the
+real native children separately from replayed original child boundaries.
+Never patch reference PC, stack, ROM or returned state. Focused native tests
+also exercise child-return player reload and low final VRAM offsets. Reuse
+S3 actual-child diagnostics to verify the previously isolated extra-life
+sound failure is resolved; retain its historical failing evidence unchanged.
+
+One operational pass covers affected score/status/coin regressions, strict
+C90 x86/x64, DOS16 link, platform purity, bounded hidden-window probes and
+three owner-authorized local EXEs. DOS remains link-only; no whole-game
+parity claim. Existing owner ROM and reviewed listing are local research
+inputs, not redistributable sources; no third-party implementation import.
+All temporary evidence stays below ignored build/m2-t36-s5: twenty seconds
+per reference run, four MB raw batch budget, cleanup owned by S5 through
+T review. S6 and child algorithm repairs remain unadmitted.
+
+### S5 caller sweep and implementation boundary
+
+- JCoinC and HandleCoinMetatile retain their existing GiveOneCoin boundary;
+  remove its duplicate body from objects.c after moving the canonical owner.
+- FloateyNumbersRoutine, FlagpoleRoutine and brick chunk setup call original
+  AddToScore; replace duplicated digit/HUD tails with the canonical entry.
+- BottomStatusLine uses GetSBNybbles and title score uses UpdateNumber.
+  Preserve their entry selectors and surrounding writes.
+- EndAreaPoints is different: its original digit update selects score plus
+  timer before UpdateNumber. Do not replace that with AddToScore (which
+  prints score plus coins). Record existing endgame discrepancies for its
+  future source-order receipt; no unadmitted endgame algorithm repair.
+- Timer-only PrintStatusBarNumbers and top-score arithmetic remain child
+  functionality. No platform file may gain scoring or display logic.
+
+Closure requires nine individually supported dispositions, both validation
+tracks, source caller audit, canonical tracker/ledger and three artifact
+hashes. Admission does not add conformance credit.
+
+Admission gates passed: nine named open labels received, expected nine,
+baseline 800 / 1,992 and maximum 809; ledger has no orphan nodes.
+Documentation governance also passes.
+
+## S5 original score and HUD proof
+
+All nine received labels are complete, 800 -> 809 / 1,992. Shared
+`game/score.c` owns the original chain, and `game/status.c` retains the
+unchanged digit-math and number-print children. The old GiveOneCoin body and
+three duplicate AddToScore tails are removed. No platform source changed.
+
+| Node | Address | Proven original contract |
+| --- | --- | --- |
+| CoinTallyOffsets | $BBF8 | Two exact ROM bytes; both player indices reach the digit child |
+| ScoreOffsets | $BBFA | Two exact ROM bytes; score child gets the fresh player's offset |
+| StatusBarNybbles | $BBFC | Two exact ROM bytes; HUD selector follows the post-math player read |
+| GiveOneCoin | $BBFE | Set coin modifier, call math, byte-increment tally; exactly 100 resets tally, increments lives and queues sound40 |
+| CoinPoints | $BC22 | Set modifier+4 to two before falling into score addition |
+| AddToScore | $BC27 | Reload CurrentPlayer, select score digit and call existing digit child |
+| GetSBNybbles | $BC30 | Reload CurrentPlayer after arithmetic; select the original status pair |
+| UpdateNumber | $BC36 | Print first; read final VRAM offset; inspect address $02FB plus that byte offset |
+| NoZSup | $BC46 | Keep nonzero digit, or replace zero with tile24; return freshly loaded ObjectOffset as X |
+
+ROM validation uses 56 source-RAM fixtures at ordinary NMI, reaching score
+through real player head-bump/coin allocation. Cases cover both players,
+coin counts 0/98/99/255, ordinary and wrapping lives, and zero/nonzero leading
+score digits. Thirty-two observe GiveOneCoin; eight each observe AddToScore,
+GetSBNybbles and UpdateNumber on the same original execution path. Root and
+child returns are delimited by actual stack PCs/depths. No CPU PC, stack,
+ROM, child result or output is patched. Source table bytes are checked against
+the local ROM; all six code labels execute. Both outcomes occur at $BC14
+(14/42 fallthrough/taken observations) and $BC3F (32/24).
+
+All 112 caller comparisons pass on x86/x64: digit child Y, print child A,
+call order and 1,791 persistent RAM bytes, plus source return X. Scratch
+0-7 and CPU stack are excluded except digit storage 0133-0139. Caller mode
+replays observed original child returns; all 112 separate actual-child
+comparisons also pass. The scoped chain writes only RAM, including VRAM
+commands and the sound queue; it does not directly write CIRAM, palette,
+PPU registers or hardware audio. Those later consumers are not certified
+by this caller proof. Observed, coverage-enabled and unobserved reference
+frame outputs are identical; both snapshot captures are also identical.
+
+Reproduce `score_hud_fixture.h` cases 0-55 with one frame, warmup one, zero
+buttons, `--fixture=t36-score=N`, `--score-hud-snapshot` and
+`--control-children`; repeat with `--pc-coverage` and with no observers.
+Run both modes of `score_hud_snapshot_check.c`, then
+`verify_score_hud_snapshots.py` against the contained directory and local ROM.
+Raw outputs stay ignored. This proves the declared chain; existing full-frame,
+child and old core-test debts remain, so M2 is not complete.
+
+Independent `mysmb.score-hud` tests pass 2,560 cases per width: every coin
+byte, both players, life wrap, post-child player changes, all final byte VRAM
+offsets including the offset-register alias, leading-zero outcomes, print
+argument and nonzero returned ObjectOffset. Twenty related regression runs
+pass across both widths. Re-running all S3 actual-child snapshots with this
+implementation gives 96/96 matches, resolving its previous 48 sound-only
+failures. The historical S3 results are preserved unchanged.
+
+All 74 shared translation units compile with strict C90 checks on x86/x64.
+Both products pass self-test and two-second hidden-window/message probes;
+platform purity passes. OpenNT DOS16 compiles and links with the known
+OLDNAMES library warning. DOS is still link-only, without bound resources,
+playability or physical 486 qualification.
+
+Caller sweep: JCoinC and HandleCoinMetatile keep their existing shared entry.
+FloateyNumbersRoutine, brick chunks and FlagpoleRoutine now call one
+AddToScore owner. Bottom-line and title facades consume the canonical status
+entries; the bottom-line body moved unchanged to avoid a reverse dependency
+from the status children. EndAreaPoints uses a different score/timer selector:
+its existing endgame discrepancy remains for the planned endgame source
+slice. No received S5 node is deferred or transferred; no child credit added.
+
+Final owner-authorized local P1 artifacts:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258063 | ce7d66663a86ed02870f1f63f796ab175fc9a0a55b7fd3cfb4c0f20e0a38692b |
+| mysmb32.exe | 329097 | cb949e102a3dc7e3db0fde46996f52466dfa290d53af017ceba2cfc11668ab99 |
+| mysmb64.exe | 336868 | bb9f3ec49e588f61293a9927de5fa40b4caa98fb67b1a2c25a9fd0c73d9c05e6 |
+
+Retained raw evidence: 2794120 bytes, below four MB.
+Nine received labels complete, nine expected, no transfers. T36 remains open for S6 and final cross-chain review.
