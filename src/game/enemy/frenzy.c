@@ -2,6 +2,7 @@
 #include "game/enemy/frenzy.h"
 #include "game/enemy/movement.h"
 #include "game/enemy/init.h"
+#include "game/enemy/init_targets.h"
 #include "game/world/world.h"
 
 enum {
@@ -66,7 +67,7 @@ void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot)
 
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
-static mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game,
+mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game,
                                                         mysmb_u8 slot)
 {
     static const mysmb_u8 lakitu_adjustment[3] = { 0x15U, 0x30U, 0x40U };
@@ -162,11 +163,18 @@ void mysmb_enemy_step_lakitus(struct mysmb_game *game)
 void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
                                           mysmb_u8 current_slot)
 {
+    static const mysmb_u8 difference_adjustment[12] = {
+        0x26U, 0x2cU, 0x32U, 0x38U,
+        0x20U, 0x22U, 0x24U, 0x26U,
+        0x13U, 0x14U, 0x15U, 0x16U
+    };
     mysmb_u8 slot;
     mysmb_u8 lakitu_slot;
-    mysmb_u8 old_x;
+    mysmb_u8 seed;
+    mysmb_u8 speed;
 
-    if (current_slot >= 5U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (current_slot >= 5U) return;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x80U;
     lakitu_slot = 5U;
     for (slot = 5U; slot != 0U; ) {
@@ -186,16 +194,8 @@ void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
         if (slot == 0U && game->ram[MYSMB_ENEMY_FLAG] != 0U) return;
         game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
         game->ram[MYSMB_ENEMY_ID + slot] = 17U;
-        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        old_x = game->ram[MYSMB_SCREEN_RIGHT_X];
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
-        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_SCREEN_RIGHT_PAGE];
-        if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
-        game->ram[MYSMB_ENEMY_Y + slot] = 0x20U;
-        game->ram[MYSMB_LAKITU_REAPPEAR_TIMER] = 0U;
+        mysmb_enemy_setup_lakitu(game, slot);
+        mysmb_enemy_put_at_right_extent(game, slot, 0x20U);
         return;
     }
     if (game->ram[MYSMB_PLAYER_Y] < 0x2cU ||
@@ -206,11 +206,24 @@ void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
     game->ram[MYSMB_ENEMY_Y + slot] =
         (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + lakitu_slot] - 8U);
-    game->ram[MYSMB_ENEMY_ID + slot] = 18U;
+    seed = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
+    game->ram[3U] = difference_adjustment[seed];
+    game->ram[2U] = difference_adjustment[seed + 4U];
+    game->ram[1U] = difference_adjustment[seed + 8U];
+    /* DifLoop uses X for the table loop, then reloads ObjectOffset. */
+    slot = game->ram[0x0008U];
+    speed = mysmb_enemy_player_lakitu_difference(game, slot);
+    if (game->ram[MYSMB_PLAYER_X_SPEED] < 8U &&
+        (game->ram[0x07a8U + slot] & 3U) != 0U) {
+        speed = (mysmb_u8)(0U - speed);
+    }
+    /* SetSpSpd calls SmallBBox, whose InitVStf tail returns A = zero.
+     * This intentionally discards the preceding computed speed, as in ROM. */
+    (void)speed;
+    mysmb_enemy_init_small_box(game, slot);
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
     game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 5U;
 }
@@ -320,6 +333,30 @@ void mysmb_enemy_init_flying_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot
     game->ram[MYSMB_ENEMY_Y + slot] = 0xf8U;
 }
 
+/* Existing FinishFlame tail, shared by both positioning entries. */
+static void mysmb_enemy_finish_flame(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 8U;
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+}
+
+/* ROM $C5D8: extracted existing positioning/finish body; child credit separate. */
+void mysmb_enemy_put_at_right_extent(struct mysmb_game *game, mysmb_u8 slot,
+                                    mysmb_u8 y)
+{
+    mysmb_u8 old_x;
+    old_x = game->ram[MYSMB_SCREEN_RIGHT_X];
+    game->ram[MYSMB_ENEMY_Y + slot] = y;
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
+    game->ram[MYSMB_ENEMY_PAGE + slot] =
+        (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] +
+        (game->ram[MYSMB_ENEMY_X + slot] < old_x ? 1U : 0U));
+    mysmb_enemy_finish_flame(game, slot);
+}
+
 /* ROM InitEnemyFrenzy -> InitBowserFlame.  The controller is the current
  * ObjectOffset supplied by CheckFrenzyBuffer, never a frame-root free-slot
  * search. */
@@ -333,7 +370,6 @@ void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
     mysmb_u8 bowser_slot;
     mysmb_u8 random;
     mysmb_u8 timer_index;
-    mysmb_u8 old_x;
 
     if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
@@ -361,17 +397,10 @@ void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
         }
         random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
         game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
-        old_x = game->ram[0x071dU];
-        game->ram[MYSMB_ENEMY_Y + slot] = target_y[random];
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
-        game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(game->ram[0x071bU] +
-            (game->ram[MYSMB_ENEMY_X + slot] < old_x ? 1U : 0U));
+        mysmb_enemy_put_at_right_extent(game, slot, target_y[random]);
+        return;
     }
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 8U;
-    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    mysmb_enemy_finish_flame(game, slot);
 }/* ROM EndFrenzy.  The stop controller clears every Lakitu, then clears its
  * persistent request and finally removes the controller object itself. */
 void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)

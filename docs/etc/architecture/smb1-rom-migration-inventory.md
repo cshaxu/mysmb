@@ -1089,19 +1089,19 @@ The labels and branches behind every line remain open until individually bound b
 | 8279 | `InitLakitu` | M2 T38 S4 shared enemy/init_targets.c | ROM-match complete | [S4 common initializer proof](../../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof); actual source comparisons and exact write footprints |
 | 8283 | `SetupLakitu` | M2 T38 S4 shared enemy/init_targets.c | ROM-match complete | [S4 common initializer proof](../../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof); actual source comparisons and exact write footprints |
 | 8289 | `KillLakitu` | M2 T38 S4 shared enemy/init_targets.c | ROM-match complete | [S4 common initializer proof](../../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof); actual source comparisons and exact write footprints |
-| 8295 | `PRDiffAdjustData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prdiffadjustdata) |
-| 8300 | `LakituAndSpinyHandler` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lakituandspinyhandler) |
-| 8308 | `ChkLak` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklak) |
-| 8318 | `ChkNoEn` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknoen) |
-| 8323 | `CreateL` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-createl) |
-| 8330 | `RetEOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-reteofs) |
-| 8331 | `ExLSHand` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exlshand) |
-| 8335 | `CreateSpiny` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-createspiny) |
-| 8355 | `DifLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-difloop) |
-| 8376 | `UsePosv` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useposv) |
-| 8377 | `SetSpSpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setspspd) |
-| 8383 | `SpinyRte` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spinyrte) |
-| 8390 | `ChpChpEx` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chpchpex) |
+| 8295 | `PRDiffAdjustData` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8300 | `LakituAndSpinyHandler` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8308 | `ChkLak` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8318 | `ChkNoEn` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8323 | `CreateL` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8330 | `RetEOfs` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8331 | `ExLSHand` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8335 | `CreateSpiny` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8355 | `DifLoop` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8376 | `UsePosv` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8377 | `SetSpSpd` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8383 | `SpinyRte` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
+| 8390 | `ChpChpEx` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
 | 8394 | `FirebarSpinSpdData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspinspddata) |
 | 8397 | `FirebarSpinDirData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspindirdata) |
 | 8400 | `InitLongFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlongfirebar) |

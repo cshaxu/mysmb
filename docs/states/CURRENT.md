@@ -2,32 +2,37 @@
 
 ## Current Work
 
-**M2 T38 S4 is closed at 948 / 1,992: all 23 common initializer nodes proven; later children remain incomplete.**
+**M2 T38 S5 is closed at 961 / 1,992: thirteen Lakitu/Spiny caller nodes proven; child differences remain.**
 
-## M2 T38 S4 Packet
+## M2 T38 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S4, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after S3 commit 2294663; coordinator accepts transfer-168. |
-| Objective | Restore the 23 planned common initializer/data/shared-tail nodes through KillLakitu. |
-| Non-goals | No unadmitted initializer/frenzy/actor or platform gameplay repair. |
-| Reference Baseline | 925 / 1,992; 23 scoped open labels, 23 expected, maximum 948. Exact names in S4 plan and ledger. |
-| Candidate Proposal | [S4 common initializers](../proposals/m2/t38-enemy-stream-initialization.md#s4-admission-common-initializers-and-shared-tails). |
-| Files And ABI Surface | Shared enemy/init_targets.c and declared child entries, tests, recorder, ledger and three EXEs. |
+| Identifier Mode | M2 T38 S5, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after S4 commit 608e036; coordinator accepts transfer-169. |
+| Objective | Restore the thirteen planned Lakitu/Spiny allocation, scratch-data and egg-setup nodes. |
+| Non-goals | No unadmitted child interior, frenzy dispatcher, actor movement or platform gameplay repair. |
+| Reference Baseline | 948 / 1,992; thirteen scoped open labels, thirteen expected, maximum 961. Exact names in S5 plan and ledger. |
+| Candidate Proposal | [S5 Lakitu/Spiny chain](../proposals/m2/t38-enemy-stream-initialization.md#s5-admission-lakitu-and-spiny-allocation-chain). |
+| Files And ABI Surface | Shared enemy/frenzy.c and child entries, focused tests and recorder, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branches/tables/read-write/call graph against NMI records; independent sentinel tests, cross-width builds, DOS link and purity. |
-| Expected Markers | Exact timer/PRNG/box/reset writes, preserved unrelated state, signed-Y center and Lakitu erase branch. |
-| Asset Needs | Existing owner-local ROM/listing and retained S2/S3 records; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | All 23 dispositions, dual proof, explicit child gaps and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | All 23 nodes proven or exact accepted transfer; both tracks, tracker and ledger agree. |
+| Verification | Original table/branch/write/call audit and NMI child boundaries; separate native tests, actual-child residuals, cross-width builds, DOS link and purity. |
+| Expected Markers | Descending scans, timer and counter wrap, scratch $01-$03 order, ObjectOffset, SetupLakitu/PutAtRightExtent/PlayerLakituDiff/SmallBBox calls and rightward egg state. |
+| Asset Needs | Existing owner-local ROM/listing and retained records; three owner-authorized EXEs per P; DOS link-only. |
+| Reporting Requirements | Thirteen exact dispositions, dual proof, named child gaps and artifact hashes. |
+| Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
+| Exit Criteria | All thirteen nodes proven or exact accepted transfer; dual evidence, tracker and ledger agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Every common initializer caller and shared-tail alias; preserve unadmitted legacy child behavior. |
+| Similar-Issue Sweep | All handler callers, both slot scans, PRNG scratch consumers and declared child boundaries. |
 
 
 
 
+
+
+S5 closure: [Lakitu/Spiny caller proof](../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof).
+160 caller matches, 36 actual matches and 124 retained distance-child differences.
+Three EXEs refreshed; all 544 prior actual matches retained; DOS link-only.
 
 S4 closure: [common initializer proof](../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof).
 164 actual scoped matches; parser 138/160, full initializer 136/220.
@@ -42,7 +47,7 @@ S2 closure: [parser proof](../proposals/m2/t38-enemy-stream-initialization.md#s2
 
 S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
-T38 S4 is closed; S5 Lakitu/Spiny allocation is next and not yet admitted.
+T38 S5 is closed; S6 firebar initialization is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.

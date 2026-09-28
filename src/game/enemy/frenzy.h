@@ -5,6 +5,10 @@
 
 /* ROM $C7A0: shared initializer-vector target. */
 void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing child boundaries; conformance tracked independently of callers. */
+mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_put_at_right_extent(struct mysmb_game *game, mysmb_u8 slot,
+                                    mysmb_u8 y);
 
 /* ROM MoveLakitu, LakituAndSpinyHandler and the Spiny egg landing route. */
 void mysmb_enemy_step_lakitus(struct mysmb_game *game);

@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 948 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 961 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 936 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 923 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **948 / 1,992 (47.59%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **961 / 1,992 (48.24%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T38 S4 P1](../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof)
-proves 23 common initializer/data/tail nodes with 164/164 actual scoped
-comparisons. Parser matches improve to 138/160; the full initializer matrix
-remains 136/220 because other child bodies are not yet source-complete.
+Latest task review: [T38 S5 P1](../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof)
+proves thirteen Lakitu/Spiny caller/data nodes with 160/160 caller comparisons.
+Actual children match 36/160; 124 scratch-distance differences remain with
+PlayerLakituDiff. All 544 prior actual matches are retained.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (948)
+## Completed matches (961)
 
 | ROM line | Node |
 | ---: | --- |
@@ -948,6 +948,19 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8279 | `InitLakitu` |
 | 8283 | `SetupLakitu` |
 | 8289 | `KillLakitu` |
+| 8295 | `PRDiffAdjustData` |
+| 8300 | `LakituAndSpinyHandler` |
+| 8308 | `ChkLak` |
+| 8318 | `ChkNoEn` |
+| 8323 | `CreateL` |
+| 8330 | `RetEOfs` |
+| 8331 | `ExLSHand` |
+| 8335 | `CreateSpiny` |
+| 8355 | `DifLoop` |
+| 8376 | `UsePosv` |
+| 8377 | `SetSpSpd` |
+| 8383 | `SpinyRte` |
+| 8390 | `ChpChpEx` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

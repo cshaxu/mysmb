@@ -1,6 +1,7 @@
 #include "game/enemy/core.h"
 #include "game/enemy/stream.h"
 #include "game/enemy/init.h"
+#include "game/enemy/frenzy.h"
 #include "game/enemy/loop.h"
 #include "game/enemy/group.h"
 #include "smb1_local_rom.h"
@@ -19,14 +20,17 @@ int main(int argc,char **argv)
     if(argc!=2) return 64;
     file=fopen(argv[1],"rb");if(file==NULL) return 65;
     if(fread(header,1,8,file)!=8 || (memcmp(header,"MSEP\1",5)!=0 &&
-        memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0)) return 66;
+        memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
+        memcmp(header,"MSAP\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[7]==0U && header[2]=='Z')
+    if(header[7]==0U && header[2]=='A')
+        mysmb_enemy_init_lakitu_spiny_frenzy(&game,header[6]);
+    else if(header[7]==0U && header[2]=='Z')
         mysmb_enemy_checkpoint_loaded(&game,header[6]);
     else if(header[7]==0U && header[2]=='S')
         (void)mysmb_enemy_stream_process_current(&game,&source,header[6]);

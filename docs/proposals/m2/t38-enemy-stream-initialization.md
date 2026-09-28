@@ -830,3 +830,131 @@ Three owner-authorized test EXEs follow; this is not full-game certification.
 | mysmb16.exe | 254757 | 41eab99a186ef0e194bbd65732b759d79d5c7e748256dc1ab78d3effab2aca24 |
 | mysmb32.exe | 337722 | ce559a214fdfcec696c19dba3ffcb50b90182ac8399513e378c2417b1223c88b |
 | mysmb64.exe | 344807 | 46472e77ca6e92ec0196f3770502c7e07160b39b3ea8769660d8e1b6274a548e |
+
+## S5 admission: Lakitu and Spiny allocation chain
+
+After S4 commit 608e036, coordinator accepts transfer-169 from T19 S5 for
+all thirteen exact labels in the S5 plan row. All are open: incoming 948/1,992,
+expected thirteen, maximum 961. Shared enemy/frenzy.c owns the $C398-$C44E
+source chain: PRDiffAdjustData and LakituAndSpinyHandler through ChpChpEx.
+Entry is the original frenzy dispatcher, with SetupLakitu and SmallBBox now
+available from S4. Exits are original timer/slot/state gates, the no-free-slot
+return, Lakitu recreation or Spiny egg completion. Preserve original descending
+searches, counter wrap, exact RAM scratch writes and shared child call order.
+
+PutAtRightExtent and PlayerLakituDiff remain separately owned dependencies.
+Expose their existing native entries without granting child-node credit or
+repairing their unadmitted interiors. The former can be extracted from the
+existing flame-position/finish body; the latter currently has missing scratch
+semantics. Original child-entry/return records may prove caller obligations,
+but actual-child execution and residual differences must be separately kept.
+No frenzy-dispatcher, flying-fish, firebar, movement/collision or platform fix
+is admitted. Similar-issue sweep covers every incoming handler call, both
+allocation scans and all producer/consumer aliases of the random scratch.
+
+ROM-logic proof audits the immutable twelve-byte table, every branch/write,
+ObjectOffset restoration and child argument/order against original NMI routes.
+Native proof covers gates, allocation order, counter wrap, PRNG combinations,
+source-fixed zero speed/rightward egg direction and full-RAM write footprints;
+then x86/x64, DOS16 link, platform purity and three owner-authorized EXEs.
+Existing owner-local ROM/listing provenance is retained, without third-party
+implementation import. Reuse S3/S4 records where applicable; new raw records
+stay below build/m2-t38-s5 with a four-MB budget, twenty-second run timeout
+and S5 cleanup ownership. Stop for unadmitted repair, patched reference state
+outside the declared NMI RAM fixture, hidden mismatch or platform gameplay.
+Closure requires all thirteen exact dispositions, dual evidence, ledger and
+tracker agreement and three EXEs. No node credit is awarded at admission.
+
+## S5 original Lakitu/Spiny proof
+
+S5 closes all thirteen received and expected caller/data nodes, with no
+scoped transfer: 948 -> 961 / 1,992. This is caller-chain proof, not completion
+of PlayerLakituDiff, PutAtRightExtent or the containing frenzy dispatcher.
+S6 firebar initialization remains next in the original source sequence.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| PRDiffAdjustData | $C398 | Twelve original bytes bound to all four PRNG selectors and their reverse scratch order; match |
+| LakituAndSpinyHandler | $C3A4 | Honor timer before slot gate; set timer and descend through ID slots without a flag filter; match |
+| ChkLak | $C3B4 | Compare ID and descend from slot four to zero; original taken and fallthrough edges observed; match |
+| ChkNoEn | $C3CA | Descend through flag slots; retain the all-occupied exit after wrapped counter threshold; match |
+| CreateL | $C3D3 | Write state and Lakitu ID, call SetupLakitu, then PutAtRightExtent with Y argument $20; match |
+| RetEOfs | $C3E3 | Restore source ObjectOffset after temporary allocation-slot selection; native slot argument remains local; match |
+| ExLSHand | $C3E5 | Preserve every early-return footprint: busy timer, special slot, low counter, player height and Lakitu state; match |
+| CreateSpiny | $C3E6 | Copy Lakitu page/X, set high Y, subtract eight with byte wrap; do not manufacture an ID write; match |
+| DifLoop | $C40F | Write table offsets seed, seed+4 and seed+8 to RAM $03,$02,$01, then reload ObjectOffset; match |
+| UsePosv | $C433 | Preserve low-player-speed PRNG sign-selection route; its value is discarded by the next original child; match |
+| SetSpSpd | $C434 | Call SmallBBox after PlayerLakituDiff; its zero A clears horizontal speed and prevents the BMI branch; match |
+| SpinyRte | $C440 | Set rightward direction, vertical speed $FD, enabled flag and egg state five in original order; match |
+| ChpChpEx | $C44E | Return after the egg writes without touching unrelated RAM; match |
+
+Eighty controlled NMI RAM routes enter through the original queue, checkpoint
+and frenzy vector. No fixture changes CPU PC, stack or ROM. All twelve code
+labels execute, the twelve-byte table matches the original ROM, and all twelve
+variable conditional branches execute both outcomes. The two remaining edges
+are fixed by source: $C3D1 BMI follows an exhausted DEX/BPL scan with X=$FF;
+$C43D BMI cannot be taken because SmallBBox returned A=$00. The native
+allocation matrix independently covers all 256 counter bytes and all 32 slot
+masks. All four original child call edges are mapped explicitly.
+
+Caller comparison passes 160/160 across x86/x64. The host-only
+lakitu_spiny_snapshot_check instruments the production frenzy and initializer
+objects: it checks the child-entry portable RAM and call order, then explicitly
+substitutes the recorded original child-return RAM. It neither certifies child
+interiors nor changes the original execution. Source inspection additionally
+checks child slot arguments, PutAtRightExtent's $20 argument and the discarded
+PlayerLakituDiff return value. Eighty observer-free runs produce byte-identical
+original frame records. Hardware return-stack storage is excluded, but all
+mapped game variables at $0109-$0139 remain compared.
+
+Actual native execution without substitutions matches 36/160. All remaining
+124 comparisons differ only at RAM $00: the pre-existing PlayerLakituDiff
+omits the original scratch-distance write. Its static adjustment table and
+other branch semantics also remain unadmitted; a discarded return value does
+not make that child conformant. PlayerLakituDiff retains its existing ledger
+owner and later source-order slice. PutAtRightExtent is extracted unchanged
+from the prior flame positioning/finish body, with no child-node credit.
+
+The independent native caller-footprint matrix passes 71,163 cases per width:
+timer/slot gates, counter wrap, all free-slot masks, coordinate/page carry,
+player-height and Lakitu-state gates, PRNG selectors and all player-speed
+bytes. It explicitly evaluates the existing distance child at its boundary;
+that test is not an independent correctness claim for the child. The focused
+CTest is mysmb.lakitu-spiny-chain. All 544 previously matching actual roots
+remain matched: loop 166/192, parser 138/160, full initializer 136/220 and the
+added S4 common cases 104/104. Forty related regression runs retain the same
+38 passes and the two pre-existing Bowser exit-4 failures, one per width.
+
+Strict C90 builds compile all 85 shared translation units for x86/x64; both
+self-tests and bounded hidden-window response probes pass. DOS16 links with
+the existing OLDNAMES warning. It remains link-only: no DOS runtime, resource
+binding, playability or physical 486 performance claim is made. Platform
+purity passes; all changes to gameplay stay in the shared game owner.
+
+Similar-issue sweep checks the sole frenzy-dispatch caller, both descending
+searches, both PlayerLakituDiff consumers and all PutAtRightExtent source
+callers. The existing MoveLakitu body and BulletBillCheepCheep positioning
+remain unchanged for their later source slices. The Bowser flame caller now
+uses the extracted identical positioning/finish entry, preserving its current
+behavior. No actor movement, frenzy-vector scratch, firebar or platform fix
+is silently included.
+
+Reproducible neutral harnesses are lakitu_spiny_fixture.h,
+lakitu_spiny_chain_smoke.c, lakitu_spiny_snapshot_check.c and the extended
+enemy_loop_actual_check.c/reference_frame_recorder.c. Record with
+--fixture=t38-spiny=N (0 through 79), --lakitu-spiny-snapshot and
+--control-children; run --pc-coverage separately. Only the host caller checker
+build instruments frenzy.c and init_targets.c with -finstrument-functions;
+production and actual comparisons use ordinary objects. Original records,
+coverage, build logs and summaries remain below ignored build/m2-t38-s5;
+raw evidence is below 1.3 MB of the four-MB budget with twenty-second recorder
+timeouts. Prior S1-S4 evidence is reused in place.
+
+The following owner-authorized test artifacts are refreshed together; this is
+not full-game certification.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 254769 | 82ccf7ec3012ff5952ad96b2129ce5f6830f1d6d65bdee710fd99f063996fbcf |
+| mysmb32.exe | 337896 | 63912054d168cfdfbd5cb41c2d711732cbc8ccd6dd4bb15590d9590a06fb6e17 |
+| mysmb64.exe | 344978 | 5bbbb2061c9398d361107af4d3fa8c117d23cff1a922e246b36e773ee68b987c |
