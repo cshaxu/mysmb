@@ -274,15 +274,15 @@ void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x0216U + oam] = 0x42U;
 }
 
-/* ROM JumpspringHandler through EnemyGfxHandler for JumpspringObject ($32). */
-void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
+/* Existing EnemyGfxHandler branch for JumpspringObject ($32).
+ * State, relative positioning and bounds are owned by JumpspringHandler. */
+void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 frame0[6] = { 0xf0U, 0xf0U, 0xfcU, 0xfcU, 0xfcU, 0xfcU };
     static const mysmb_u8 frame1[6] = { 0xf2U, 0xf2U, 0xf3U, 0xf3U, 0xf2U, 0xf2U };
     static const mysmb_u8 frame2[6] = { 0xf1U, 0xf1U, 0xf1U, 0xf1U, 0xfcU, 0xfcU };
     const mysmb_u8 *tiles;
     mysmb_u8 animation;
-    mysmb_u8 frame;
     mysmb_u8 row;
     mysmb_u8 offset;
     mysmb_u8 bits;
@@ -290,39 +290,15 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 left;
     mysmb_u8 right;
     mysmb_u8 x;
-    mysmb_u16 world;
-    mysmb_u16 screen;
 
     if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U ||
         game->ram[MYSMB_NORMAL_ID + slot] != 50U) return;
     animation = game->ram[0x070eU];
-    if (game->ram[0x0747U] == 0U && animation != 0U) {
-        frame = (mysmb_u8)(animation - 1U);
-        if ((frame & 2U) == 0U) game->ram[0x00ceU] = (mysmb_u8)(game->ram[0x00ceU] + 2U);
-        else game->ram[0x00ceU] = (mysmb_u8)(game->ram[0x00ceU] - 2U);
-        game->ram[MYSMB_NORMAL_Y + slot] =
-            (mysmb_u8)(game->ram[MYSMB_NORMAL_X_SPEED + slot] +
-                       (frame == 0U ? 8U : frame == 1U ? 16U : frame == 2U ? 8U : 0U));
-        if (frame >= 1U && (game->ram[0x000aU] & 0x80U) != 0U &&
-            (game->ram[0x000dU] & 0x80U) == 0U) game->ram[0x06dbU] = 0xf4U;
-        if (frame == 3U) {
-            game->ram[0x009fU] = game->ram[0x06dbU];
-            game->ram[0x070eU] = 0U;
-            animation = 0U;
-        }
-    }
     if (animation == 2U) tiles = frame2;
     else if (animation == 1U || animation == 3U) tiles = frame1;
     else tiles = frame0;
-    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_PAGE + slot] << 8U) |
-                        game->ram[MYSMB_NORMAL_X + slot]);
-    screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
-                         game->ram[MYSMB_NORMAL_SCREEN_X]);
-    x = (mysmb_u8)(world - screen);
-    game->ram[MYSMB_NORMAL_REL_X] = x;
-    game->ram[MYSMB_NORMAL_REL_Y] = game->ram[MYSMB_NORMAL_Y + slot];
-    bits = mysmb_objects_get_enemy_offscreen_bits(game, slot);
-    game->ram[MYSMB_NORMAL_OFFSCREEN] = bits;
+    x = game->ram[MYSMB_NORMAL_REL_X];
+    bits = game->ram[MYSMB_NORMAL_OFFSCREEN];
     attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
     offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
@@ -351,12 +327,4 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x020eU + offset] = 0xc2U;
     game->ram[0x0216U + offset] = 0xc2U;
     mysmb_normal_apply_offscreen(game, game->ram[MYSMB_NORMAL_SPRITE + slot], bits);
-    if (game->ram[0x070eU] != 0U && game->ram[0x0786U] == 0U) {
-        game->ram[0x0786U] = 4U;
-        game->ram[0x070eU]++;
-    }
-    /* JumpspringObject is exempt from the right bound, but OffscreenBoundsCheck
-     * still erases it after it passes 72 pixels beyond the left edge. */
-    if (world < (mysmb_u16)(screen - 0x48U))
-        game->ram[MYSMB_NORMAL_FLAG + slot] = 0U;
 }

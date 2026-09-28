@@ -20,7 +20,7 @@ T31 and T32 are closed. T32 proves its 48 received caller/data nodes at
 T33 is closed with all 63 received movement/physics nodes proven at 739 / 1,992.
 T34 is closed with all eleven fireball dispatch/core nodes proven at 750 / 1,992.
 Its cross-chain review retains the existing graphics-child failures.
-T35 S1 closes eight bubble nodes at 758 / 1,992. Timer S2 closes four caller nodes at 762 / 1,992; S3 jumpspring is next.
+T35 S1 closes eight bubble nodes at 758 / 1,992. Timer S2 closes four caller nodes at 762 / 1,992; S3 jumpspring closes seven data/state/caller nodes at 769 / 1,992; S4 vine initialization/data is next.
 [The T35 plan](../proposals/m2/bubbles-timer-warp.md) groups the remaining
 22 nodes into four chains and preserves 16 previously accepted nodes.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations

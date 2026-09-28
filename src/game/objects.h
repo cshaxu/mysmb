@@ -55,7 +55,7 @@ void mysmb_objects_step_enemy_collisions_current(struct mysmb_game *game,
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game);
 /* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant, sans rendering. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game);
-/* ROM JumpspringHandler / EnemyGfxHandler for object $32. */
+/* ROM $B8BA JumpspringHandler for object $32; shared actor state owner. */
 void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game);

@@ -889,13 +889,13 @@ The labels and branches behind every line remain open until individually bound b
 | 6636 | `GiveFPScr` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6643 | `FPGfx` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6646 | `ExitFlagP` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
-| 6650 | `Jumpspring_Y_PosData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspring_y_posdata) |
-| 6653 | `JumpspringHandler` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringhandler) |
-| 6667 | `DownJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-downjspr) |
-| 6669 | `PosJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posjspr) |
-| 6682 | `BounceJS` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bouncejs) |
-| 6688 | `DrawJSpr` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawjspr) |
-| 6698 | `ExJSpring` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exjspring) |
+| 6650 | `Jumpspring_Y_PosData` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6653 | `JumpspringHandler` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6667 | `DownJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6669 | `PosJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6682 | `BounceJS` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6688 | `DrawJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6698 | `ExJSpring` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
 | 6702 | `Setup_Vine` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setup_vine) |
 | 6716 | `NextVO` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextvo) |
 | 6727 | `VineHeightData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineheightdata) |

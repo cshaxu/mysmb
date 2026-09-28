@@ -5,7 +5,7 @@
 The source slice is lines 6409-6729, 38 exact labels. Sixteen already-proven
 labels retain their maintenance receiver and accepted evidence; the 22
 incomplete labels below are expected new matches, maximum 772 from 750.
-S1 is closed; S2 is admitted. Later S numbers remain within this T proposal until
+S1, S2 and S3 are closed; S4 is next. Later S numbers remain within this T proposal until
 individual admission and receipt, not concurrent execution.
 
 | S | Exact nodes | Current receiver / shared owner |
@@ -236,3 +236,112 @@ Final review accepts 4/4 expected matches, exactly the node table above;
 there are no unfinished received labels or transfers. Progress 758 -> 762 /
 1,992. Ledger/documentation checks gate closure. S2 closes; T35 remains open
 for S3 jumpspring and S4 vine initialization/data.
+
+## S3 admission: jumpspring state and caller chain
+
+Transfer-146 receives seven open labels from M2 T24 S2: Jumpspring_Y_PosData,
+JumpspringHandler, DownJSpr, PosJSpr, BounceJS, DrawJSpr and ExJSpring.
+Scope/expected seven, baseline 762, maximum 769. The source table and chain
+span $B8B6-$B91D; RunEnemyObjectsCore is the predecessor. Move the state
+body from oam/normal_enemy_gfx.c to shared game/jumpspring.c, leaving the
+existing graphics child in its OAM owner with a declared original boundary.
+Offscreen, relative, graphics and bounds children keep their receivers and
+are not certified or independently repaired here.
+
+Audit initial offscreen call, timer/animation gates, frame-minus-one table
+index, player Y wrap, fixed spring Y plus table, new-A rising edge, stored
+force and final launch/reset. Restore the original relative/graphics/bounds
+order before re-reading animation/timer and incrementing the animation.
+Remove the actor's invented slot/flag/ID gates, leaving admission to its
+original caller. Replace the inline distance erase shortcut with the shared
+OffscreenBoundsCheck child. Similar-issue sweep covers all spring state,
+force/timer writers and step callers, including slot five and byte wrapping.
+
+ROM proof observes original selected-slot entry/return and four direct
+children through ordinary NMI/actor dispatch, compares branches, table bytes,
+call arguments and persistent RAM, and separately retains actual-child
+differences. No CPU/stack/ROM/output patching. Operational proof includes
+focused state/call-order mutation tests, actor dispatch and existing game
+regressions, C90 x86/x64, DOS16 link, platform purity, bounded window probes
+and three artifacts. Child seam extraction earns no child credit.
+
+Owner-local ROM/listing remain research/build inputs with no third-party
+implementation import. Evidence stays in ignored build/m2-t35-s3; each
+recorder run has a twenty-second limit and the retained raw batch a four-MB
+limit. S3 owns cleanup through T review. Local EXE delivery follows the
+owner's standing exception; DOS remains link-only. Closure requires seven
+exact dispositions, both proof tracks, tracker/ledger updates and hashes.
+
+## S3 original jumpspring proof
+
+Seven open labels were admitted at 762, expected seven, maximum 769.
+The shared actor now lives in game/jumpspring.c, with one existing dispatcher
+caller and an extracted OAM child. DOS and Windows compile the same actor.
+The actor no longer imposes slot/flag/ID gates or substitutes a world-distance
+erase. Initial offscreen information precedes state changes; relative, graphics
+and bounds calls precede the final animation/timer reads.
+
+| Node | Address | Proven original contract |
+| --- | --- | --- |
+| Jumpspring_Y_PosData | $B8B6 | Four bytes 08,10,08,00 and active animation-minus-one selection |
+| JumpspringHandler | $B8BA | Offscreen first, master timer and animation gates |
+| DownJSpr | $B8D5 | Player Y minus two with byte wrapping |
+| PosJSpr | $B8D9 | Fixed spring Y plus selected table byte; frame and rising-A gates |
+| BounceJS | $B8F4 | Frame-three force transfer to player speed, then animation reset |
+| DrawJSpr | $B902 | Relative position, graphics, bounds; re-read animation/timer after children |
+| ExJSpring | $B91D | Return with original persistent state and conditional timer reload/increment |
+
+Thirty-two source-RAM scenarios enter through ordinary NMI/GameEngine and
+RunEnemyObjectsCore. The observer reads original return addresses and stack
+depths without changing CPU, stack, ROM or output. Cases include slots 0, 2
+and 5, animation 0..4, timer gates, current/previous A, coordinate wrapping
+and both horizontal boundaries. All nine branches have both outcomes; all
+six executable labels are hit and all four data bytes match the owner ROM.
+Observer, coverage-enabled and unobserved frame outputs are identical.
+
+The isolated caller comparison replays recorded original child returns and
+checks four child identities/slot arguments and 1,791 persistent RAM bytes.
+Scratch 0-7 and hardware stack are excluded, except digit data 0133-0139.
+All 64 x86/x64 caller comparisons match. This proves the received caller/data
+nodes, not the child algorithms. Active animation indices follow the original
+1..4 invariant; no invented index clamp or fallback table is introduced.
+
+Actual native children run separately: all 64 comparisons retain differences,
+identical across widths. Differences are confined in these cases to graphics
+work bytes 00EC/00EF and OAM 0200-0217. Existing EnemyGfxHandler spring tile
+selection, flip attributes and slot-five drawing guard remain uncorrected;
+the child retains M2 T17 S6 custody and receives no completion credit. Neither
+whole-actor visual equivalence nor full-frame ROM equality is claimed.
+
+Reproduce jumpspring_core_fixture.h cases 0..31 using one frame, warmup one,
+--fixture=t35-jumpspring=N, --jumpspring-snapshot and --control-children.
+Serial input is 1 when (N / 5) bit zero is set, otherwise zero. Repeat with
+--pc-coverage and without observation. Compile jumpspring_snapshot_check.c
+with/without MYSMB_CALLER_CHECK and run verify_jumpspring_snapshots.py against
+the contained batch and owner ROM. Original t30-spring fixtures are preserved.
+
+Independent focused tests pass 480 combinations per width, all six slots,
+byte wrapping and post-bounds animation/timer mutation. Enemy dispatch passes
+on both widths. Ten bubble/fireball OAM, player, status and mode regression
+executions pass. All 69 shared units compile in strict C90 for x86/x64; both
+release self-tests and two-second hidden-window/message probes pass. Platform
+purity passes. DOS16 compiles and links with the existing OLDNAMES warning;
+it remains link-only, without resource binding or DOS/486 playability proof.
+
+The similar-issue sweep found one dispatcher call, the former combined actor
+body, and player-side spring initialization/collision writers. Only the actor
+body moves: player initialization stays with its owner; the OAM child retains
+its graphics algorithm. No platform sources change. The earlier pre-parser
+screen-origin route still requires integrated revalidation after replacing
+the inline erase shortcut. No unrelated node receives credit.
+
+Final owner-authorized local artifacts:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258679 | a1516f27e4f10a0345a34b0ac74e81d83cf3dfe00e2e2b2bca9ed92c022aeec6 |
+| mysmb32.exe | 327421 | 1ce4c6246e4009b17f49a49c7b711aa6cd579a4bab9e01771d28cc63b7c48ded |
+| mysmb64.exe | 335021 | a9a674d1061a8f966f764434e221284b017d05448ccfd38a6b32ae831b193c11 |
+
+Retained raw evidence: 1679794 bytes, below four MB.
+Seven received labels proven, seven expected, no received-node transfer. Progress 762 -> 769 / 1,992. T35 remains open for S4 vine initialization/data.

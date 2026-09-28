@@ -15,6 +15,7 @@ $sources = @(
     'game/whirlpool.c',
     'game/cannon.c',
     'game/timer.c',
+    'game/jumpspring.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
     'game/enemy/background.c',

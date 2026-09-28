@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 762 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 769 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 133 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,097 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,090 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **762 / 1,992 (38.25%)**. The 133 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **769 / 1,992 (38.60%)**. The 133 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T35 S2 P1](../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof)
-proves four timer caller nodes with 32 original/native caller matches; actual
-children retain two injury failures versus thirty matches. Full-frame output
-differences remain explicit and unchanged from S1.
+Latest task review: [T35 S3 P1](../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof)
+proves seven jumpspring data/state/caller nodes with 64 original/native caller
+matches. All 64 actual-child comparisons retain graphics differences; no
+complete actor-output or child-interior equivalence is claimed.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (762)
+## Completed matches (769)
 
 | ROM line | Node |
 | ---: | --- |
@@ -747,6 +747,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6636 | `GiveFPScr` |
 | 6643 | `FPGfx` |
 | 6646 | `ExitFlagP` |
+| 6650 | `Jumpspring_Y_PosData` |
+| 6653 | `JumpspringHandler` |
+| 6667 | `DownJSpr` |
+| 6669 | `PosJSpr` |
+| 6682 | `BounceJS` |
+| 6688 | `DrawJSpr` |
+| 6698 | `ExJSpring` |
 | 6785 | `CannonBitmasks` |
 | 6788 | `ProcessCannons` |
 | 6792 | `ThreeSChk` |

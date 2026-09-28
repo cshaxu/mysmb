@@ -2,33 +2,34 @@
 
 ## Current Work
 
-**M2 T35 S2 is closed at 762 / 1,992: four timer caller nodes proven; S3 jumpspring admission is next.**
+**M2 T35 S3 is closed at 769 / 1,992: seven jumpspring data/state/caller nodes proven; S4 vine initialization is next.**
 
-## M2 T35 S2 Packet
+## M2 T35 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T35 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S1 commit 5df5bad; coordinator accepts transfer-145. |
-| Objective | Complete RunGameTimer, ResGTCtrl, TimeUpOn and ExGTimer as one timer chain. |
-| Non-goals | No digit-arithmetic, status-output or injury child algorithm repair; no later actor work. |
-| Reference Baseline | 758 / 1,992; four open labels, expected four, maximum 762. |
-| Candidate Proposal | [Timer chain](../proposals/m2/bubbles-timer-warp.md#s2-admission-timer-gates-countdown-and-expiry). |
-| Files And ABI Surface | Shared timer owner, engine caller, declarations/build lists, tests/recorder and three artifacts. |
+| Identifier Mode | M2 T35 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S2 commit 56572b8; coordinator accepts transfer-146. |
+| Objective | Complete seven jumpspring data/state/caller nodes in original order. |
+| Non-goals | No offscreen, relative, bounds or graphics child algorithm repair; no vine work. |
+| Reference Baseline | 762 / 1,992; seven open labels, expected seven, maximum 769. |
+| Candidate Proposal | [Jumpspring chain](../proposals/m2/bubbles-timer-warp.md#s3-admission-jumpspring-state-and-caller-chain). |
+| Files And ABI Surface | Shared jumpspring actor and extracted graphics seam, headers/build lists, tests/recorder and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original branch/state/child-order proof with digit-modifier bytes; separate actual-child comparisons; independent native tests and three builds. |
-| Expected Markers | Mode/engine/Y/control gates; zero and 100; timer reload; digit modifier; status tail; forced-small injury; post-child expiry increment. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored evidence, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Four exact dispositions, caller/actual-child limits, dual verification and artifact hashes. |
-| Stop Conditions | Unadmitted repair, reference mutation, hidden differences or platform game logic. |
-| Exit Criteria | Every received node proven or accepted transfer; node record, evidence and artifacts agree. |
+| Verification | Original table/branch/child-order/RAM proof; separate actual-child comparisons; focused native tests and three builds. |
+| Expected Markers | Offscreen first; timer/animation gates; Y wrap/table; rising A; launch/reset; relative/graphics/bounds; post-child timer step. |
+| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Seven exact node dispositions, caller/actual-child limits, both proof tracks and hashes. |
+| Stop Conditions | Unadmitted child repair, reference mutation, masked differences or platform game logic. |
+| Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
 | Original Owner Request | Original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
-| Similar-Issue Sweep | All timer definitions/callers, countdown, status-output and expiry state writers. |
+| Similar-Issue Sweep | Every spring handler, slot dispatch, timer/force/Y writer and inline bounds shortcut. |
 
-## T35 S1 closure summary
+## T35 S1/S2 closure summary
 
-Eight bubble nodes proven with 60 actual original/native matches; three EXEs
-committed as 5df5bad. [Evidence](../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof).
+Eight bubble and four timer nodes are complete at 762. Latest commit
+56572b8 contains three EXEs. Injury-child and full-frame output differences
+remain explicit in the [T35 evidence](../proposals/m2/bubbles-timer-warp.md).
 
 ## T34 closure summary
 
