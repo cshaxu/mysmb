@@ -81,45 +81,54 @@ void mysmb_enemy_move_falling_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_enemy_move_downward(game, slot, 0x20U, 3U);
 }
 
-/* ROM $b11d SetHiMax/ImposeGravitySprObj as called by MoveD_EnemyVertically.
- * This owns only the shared actor-array arithmetic; it does not select actor
- * states, collision branches, rendering, or any platform operation. */
+/* ROM $BF94-$BF9F SetHiMax/SetXMoveAmt. The existing gravity child
+ * receives the original A maximum and X=enemy slot+1; it remains S9-owned. */
 void mysmb_enemy_move_downward(struct mysmb_game *game, mysmb_u8 slot,
                                mysmb_u8 amount, mysmb_u8 maximum_speed)
 {
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
-    mysmb_u8 page_delta;
-    mysmb_u16 sum;
+    game->ram[0U] = amount;
+    mysmb_world_impose_gravity_spr_object(game, (mysmb_u8)(slot + 1U),
+                                         amount, maximum_speed);
+}
 
-    old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-    carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    page_delta = game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U ? 0xffU : 0U;
-    sum = (mysmb_u16)game->ram[MYSMB_ENEMY_Y + slot] +
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry;
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)sum;
-    carry = sum > 0xffU ? 1U : 0U;
-    game->ram[MYSMB_ENEMY_Y_HIGH + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_HIGH + slot] + page_delta + carry);
-    old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + amount);
-    carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= maximum_speed &&
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = maximum_speed;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    }
+/* ROM $BF88-$BF91 MoveDropPlatform, MoveEnemySlowVert and SetMdMax. */
+void mysmb_enemy_move_drop_platform(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_downward(game, slot, 0x7fU, 2U);
+}
+void mysmb_enemy_move_slow_vertically(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+}
+/* ROM $BF92-$BF94 MoveJ_EnemyVertically / SetHiMax. */
+void mysmb_enemy_move_j_vertically(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+}
+
+/* ROM $BF77-$BF87 MoveRedPTroopa. Direction is original Y/A. */
+static void mysmb_enemy_move_red_vertically(struct mysmb_game *game,
+                                           mysmb_u8 slot, mysmb_u8 direction)
+{
+    game->ram[0U] = 3U;
+    game->ram[1U] = 6U;
+    game->ram[2U] = 2U;
+    mysmb_world_red_gravity(game, (mysmb_u8)(slot + 1U), direction);
+}
+/* ROM $BF70 / $BF75: distinct down/up entries into the shared adapter. */
+void mysmb_enemy_move_red_down(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_red_vertically(game, slot, 0U);
+}
+void mysmb_enemy_move_red_up(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_red_vertically(game, slot, 1U);
 }
 
 /* ROM $CAF9 MoveJumpingEnemy. Existing gravity and horizontal child
  * algorithms are shared unchanged by the star and paratroopa callers. */
 void mysmb_enemy_move_jumping(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+    mysmb_enemy_move_j_vertically(game, slot);
     mysmb_world_move_enemy_horizontally(game, slot);
 }

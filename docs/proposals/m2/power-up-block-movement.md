@@ -1160,3 +1160,160 @@ M2 completion evidence.
 | mysmb64.exe | 338649 | 560f3a11d43077b70a7671f9d166ee8b31df4b27e29e221a906a1d3bcc8f50b0 |
 
 Retained raw evidence: 3638691 bytes. S7 closes; S8 vertical adapters is next, not yet admitted.
+
+
+## S8 admission: vertical adapter entries
+
+After S7 commit a470d60, transfer-162 receives eleven incomplete labels from
+T17 S6: MovePlayerVertically, NoJSChk, MoveRedPTroopaDown, MoveRedPTroopaUp,
+MoveRedPTroopa, MoveDropPlatform, MoveEnemySlowVert, SetMdMax,
+MoveJ_EnemyVertically, SetHiMax and SetXMoveAmt. Transfer-163 receives
+maintenance custody for MoveD_EnemyVertically, MoveFallingPlatform and
+ContVMove from T31 S2 because their shared adapter dependency changes.
+Their original conformance evidence remains, with no new credit. This
+supersedes the plan's pre-admission custody expectation, not its source order.
+Total scope fourteen, expected eleven new; baseline 861, maximum 872 / 1,992.
+
+Original $BF4D-$BFA0: player selects offset zero, bypasses jumpspring gating
+when TimerControl is nonzero, otherwise exits on nonzero animation control;
+then writes VerticalForce to $00 and supplies max four to gravity. MoveD
+selects $3D except exact state five falls into $20; falling also enters $20.
+Red down/up entries select direction zero/one, increment enemy offset and
+write downward three, upward six and max two to $00/$01/$02 before the
+RedPTroopaGrav child. Drop selects $7F/max two; slow selects $0F/max two;
+jumping selects $1C/max three. SetXMoveAmt writes $00, converts enemy index
+to SprObject index and calls gravity; original X reload is ObjectOffset.
+
+Shared owners remain game/world/movement.c, enemy/movement.c and the player
+entry. Name the missing adapters and connect existing actor call sites at
+their child boundary. Remove duplicated downward arithmetic in favor of the
+existing shared gravity child. Extract the existing inline red gravity body
+unchanged to expose its boundary; its arithmetic is not repaired or credited
+until S9. Parent actor state-machine deficiencies remain with their owners.
+No gravity-core, friction, terrain, rendering or platform algorithm repair.
+
+ROM track uses ordinary NMI player, enemy, red-paratroopa and platform paths,
+read-only real-stack entry/child returns, exact gates/parameters/scratch/slot
+and retained MoveD/falling comparisons. No original PC, stack, ROM or output
+patch. Native focused checks cover timer/jumpspring combinations, every enemy
+state selector, force/max/direction and post-child preservation. Run relevant
+actor/player regressions, strict C90 x86/x64, DOS16 link, platform purity and
+bounded hidden-window probes; each implementation P refreshes three EXEs.
+Keep caller equivalence and actual child differences separate.
+
+Existing owner-local ROM/listing remain local research without redistribution
+or third-party implementation import. All temporary research, traces and
+builds stay below ignored build/m2-t37-s8; four-MB raw budget, twenty seconds
+per recorder run, cleanup owner S8. Report fourteen dispositions, eleven
+expected versus actual new matches, retained evidence, both proof tracks and
+artifact hashes. DOS remains link-only. Unproven child/full-game behavior
+cannot be inferred from adapter completion.
+
+### S8 implementation and original-route checkpoint, not closure
+
+The shared adapters now select the original gates, force, maximum, direction
+and sprite offset. Existing gravity bodies are isolated in
+`src/game/world/gravity.c` without repairing their arithmetic; S9 owns that
+file's common-gravity consolidation and proof. The horizontal owner remains
+`world/movement.c`. Normal-enemy regression links the actual gravity owner
+while retaining its existing horizontal mock. Named slow/jumping/red/drop
+adapters replace the corresponding legacy actor call sites; this does not
+credit those parent state machines.
+
+Original recordings use `test/vertical_fixture.h` scenarios 0-31 through
+`reference_frame_recorder --fixture=t37-vertical=N --vertical-snapshot=PATH`
+and `--control-children=PATH`. The fixture changes source RAM only at the
+ordinary NMI boundary. Eight four-case families select player, ordinary
+enemy, falling platform, red down, red up, drop platform, slow and jumping
+entries. The recorder checks original gravity-entry A/X and enemy return X
+against ObjectOffset, without changing reference execution. Separate
+coverage and unobserved runs produce identical root snapshots and frame
+records for all 32 cases. All fourteen scoped labels execute; the three
+conditional branches at $BF52/$BF57/$BF69 have both outcomes. The immediate
+constant branches at $BF8A/$BF90 are always taken, as the source requires.
+Retained raw evidence is 1,378,834 bytes, below the four-MB budget.
+
+`test/vertical_snapshot_check.c` compares 1,799 RAM bytes, including all
+zero-page scratch and persistent score bytes, excluding only transient
+hardware-stack storage. Across x86/x64, all 64 caller checks match when the
+recorded original gravity result is supplied at the child boundary. This
+proves the adapter path only. Actual native gravity yields two matches and
+62 differences: $02/$07 scratch preservation is incomplete, and red cases
+15/19 additionally produce the wrong high Y byte at $00B6. These are concrete
+S9 gravity obligations; they must not be hidden by excluding scratch or by
+claiming integrated vertical movement is complete.
+
+Native adapter checks pass 460,324 cases per width. Both strict C90 builds
+compile 82 shared units; DOS16 links only. The Win32 probes create responsive
+hidden windows for two seconds in both widths, and input self-tests pass.
+Of 40 selected regression runs, 38 pass and both Bowser runs exit four.
+The S7 x64 objects reproduce exit four with the unchanged Bowser test;
+this is baseline evidence, not a waiver or proof of the deeper cause.
+Platform-purity checks pass. No final S8 artifacts are packaged or committed.
+
+S8 remains active at 861 / 1,992. Final source/child review, reproducible
+verification summaries, exact dispositions, tracker/ledger closure and
+three-artifact delivery are still required. None of this checkpoint adds
+node credit or closes S9 gravity work.
+
+## S8 original vertical adapter proof
+
+S8/P1 closes the fourteen received adapter labels: eleven new matches and
+three retained matches. Progress is 861 -> 872 / 1,992. No scoped node is
+transferred unfinished. Gravity interiors remain outside this credit.
+
+| Original node | Address | Native owner / exact obligation | Disposition |
+| --- | --- | --- | --- |
+| MovePlayerVertically | $BF4D | player.c: offset zero, TimerControl bypass and Jumpspring gate | New match |
+| NoJSChk | $BF59 | player.c: VerticalForce to scratch zero, max four, gravity tail | New match |
+| MoveD_EnemyVertically | $BF63 | enemy/movement.c: exact state five selects falling force | Retained, revalidated |
+| MoveFallingPlatform | $BF6B | enemy/movement.c: force $20 | Retained, revalidated |
+| ContVMove | $BF6D | enemy/movement.c: joins max-three path | Retained, revalidated |
+| MoveRedPTroopaDown | $BF70 | enemy/movement.c: direction zero | New match |
+| MoveRedPTroopaUp | $BF75 | enemy/movement.c: direction one | New match |
+| MoveRedPTroopa | $BF77 | enemy/movement.c: sprite index, scratch 3/6/2, direction, red child | New match |
+| MoveDropPlatform | $BF88 | enemy/movement.c: force $7F, constant branch to max two | New match |
+| MoveEnemySlowVert | $BF8C | enemy/movement.c: force $0F | New match |
+| SetMdMax | $BF8E | enemy/movement.c: max two, constant branch to common adapter | New match |
+| MoveJ_EnemyVertically | $BF92 | enemy/movement.c: force $1C | New match |
+| SetHiMax | $BF94 | enemy/movement.c: max three | New match |
+| SetXMoveAmt | $BF96 | enemy/movement.c: force scratch, slot+1, gravity call, caller slot contract | New match |
+
+The preceding checkpoint records the original routes, child boundaries and
+operational results. Reproduce the evidence review with
+`python -X utf8 -B test/verify_vertical_snapshots.py build/m2-t37-s8 <owner-rom>`.
+The verifier checks all fourteen labels, actual original branch and call
+operands, all four player gate combinations, exact child cardinality, both
+outcomes of conditional branches, the two constant branches, and identical
+observed/unobserved frames. Native caller and actual-child modes of
+`test/vertical_snapshot_check.c` compile against the same production objects;
+only caller mode replaces the gravity boundary with recorded original output.
+All 64 caller checks match all 1,799 compared bytes. The 62 actual failures
+remain explicit: scratch $02/$07, plus red cases 15/19 high-Y carry. S9 must
+repair and rerun these original states using the actual common gravity owner.
+
+The similar-issue sweep covers every fixed slow/jumping/red/drop call site in
+objects.c, bridge.c, player.c and enemy/movement.c. Ordinary state-five and
+falling adapters now use the same gravity child. Gravity extraction preserves
+old child arithmetic; parent actor gates, collisions and platform positioning
+remain unproven where previously incomplete. Neither integration nor a named
+wrapper grants their nodes completion. No platform source contains this work.
+
+38 of 40 selected regressions pass; the unchanged Bowser test exits four in
+both widths, reproduced against S7 x64 objects. Its exact assertion/deeper
+cause is still a separate open diagnostic, not a newly accepted behavior.
+Input self-tests and bounded hidden-window probes pass in x86/x64. Both strict
+C90 builds compile 82 shared sources; OpenNT DOS16 links with the existing
+OLDNAMES warning. DOS remains link-only, without playable/resource/486SX proof.
+Documentation, node and ledger gates must pass before the P commit.
+
+All three owner-authorized local artifacts are refreshed; none is whole-game
+or release-conformance evidence. Earlier graphics/VRAM/full-frame debts remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256001 | 04d0a02d5fc31de8710e21f33e76d063d55b1a1e0d2058f506416c2722ab9301 |
+| mysmb32.exe | 331814 | 5a56262093fe29b1746149c027bfc6a46805b587576d5794188a00de219c816e |
+| mysmb64.exe | 338841 | 17e2326170eeb256726c2355df22efef9fbbbee06c1b0faa28391ecec08c12d0 |
+
+S8 closes; S9 common gravity is next and not yet admitted.

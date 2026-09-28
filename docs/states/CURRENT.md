@@ -2,30 +2,35 @@
 
 ## Current Work
 
-**M2 T37 S7 is closed at 861 / 1,992: six horizontal nodes proven; S8 vertical adapters is next.**
+**M2 T37 S8 is closed at 872 / 1,992: eleven new and three retained adapter matches; S9 gravity is next.**
 
-## M2 T37 S7 Packet
+## M2 T37 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S7, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S6 commit 7a18044; coordinator accepts transfer-161. |
-| Objective | Complete MoveEnemyHorizontally, MovePlayerHorizontally, MoveObjectHorizontally, SaveXSpd, UseAdder and ExXMove. |
-| Non-goals | No vertical movement, friction, collision, drawing or platform algorithm repair. |
-| Reference Baseline | 855 / 1,992; six incomplete labels, six expected, maximum 861. |
-| Candidate Proposal | [S7 horizontal movement](../proposals/m2/power-up-block-movement.md#s7-admission-horizontal-movement-primitive-and-entries). |
-| Files And ABI Surface | Shared world movement and header, player entry, callers/test stubs, recorder/build lists and three EXEs. |
+| Identifier Mode | M2 T37 S8, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S7 commit a470d60; coordinator accepts transfers 162/163. |
+| Objective | Complete eleven vertical adapter nodes and revalidate three retained MoveD/falling nodes; exact names in proposal and ledger. |
+| Non-goals | No gravity-core, friction, terrain, rendering or platform algorithm repair. |
+| Reference Baseline | 861 / 1,992; fourteen scoped, eleven expected new, three retained, maximum 872. |
+| Candidate Proposal | [S8 vertical adapters](../proposals/m2/power-up-block-movement.md#s8-admission-vertical-adapter-entries). |
+| Files And ABI Surface | Shared world/enemy/player adapters, existing gravity child seams and actor call sites, tests/recorder/builds and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
 | Verification | Original branch/write/call audit, ordinary NMI root and child snapshots; separate native tests and three-target delivery. |
-| Expected Markers | Scratch $00-$02, fractional carry, signed page propagation, returned displacement, jumpspring gate and enemy slot return contract. |
+| Expected Markers | Timer/jumpspring gate, force/max/direction scratch, enemy-to-sprite offset, exact state-five selection and ObjectOffset return contract. |
 | Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact dispositions, dual proof, retained differences, caller sweep, tracker/ledger and hashes. |
+| Reporting Requirements | Fourteen dispositions, eleven expected/actual new matches, three retained proofs, dual verification, child gaps and artifacts. |
 | Stop Conditions | Unadmitted child repair, modified reference execution/output, hidden differences or platform gameplay. |
 | Exit Criteria | All received nodes proven or exact accepted unfinished transfer; accounting and artifacts consistent. |
 | Original Owner Request | Faithful original ROM logic/call structure in shared C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All horizontal implementations and callers, byte carries, page wrap, displacement consumers and slot restoration. |
+| Similar-Issue Sweep | Every vertical adapter caller, duplicated gravity body, state/direction selectors, parameter and slot conversion. |
 
 
+
+
+S8 closure: [vertical adapter proof](../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof).
+64 caller matches; 62 actual gravity differences remain for S9. Three
+artifacts refreshed; 38/40 regressions pass with baseline Bowser failures.
 
 S7 closure: [horizontal movement proof](../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof).
 192 actual original RAM/return-A matches. Independent arithmetic checks,

@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 861 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 872 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,023 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,012 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **861 / 1,992 (43.22%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **872 / 1,992 (43.78%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T37 S7 P1](../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof)
-proves six horizontal movement nodes with 192 actual original RAM and
-return-A matches. Prior unrelated child/full-frame debts remain open. T37
-continues with S8-S9.
+Latest task review: [T37 S8 P1](../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof)
+proves eleven new vertical adapter nodes and revalidates three retained nodes.
+64 caller checks match; actual gravity retains 62 failures for S9. Prior
+unrelated debts remain open. T37 continues with common gravity S9.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (861)
+## Completed matches (872)
 
 | ROM line | Node |
 | ---: | --- |
@@ -860,9 +860,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 7581 | `SaveXSpd` |
 | 7586 | `UseAdder` |
 | 7604 | `ExXMove` |
+| 7611 | `MovePlayerVertically` |
+| 7617 | `NoJSChk` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |
+| 7636 | `MoveRedPTroopaDown` |
+| 7640 | `MoveRedPTroopaUp` |
+| 7643 | `MoveRedPTroopa` |
+| 7656 | `MoveDropPlatform` |
+| 7660 | `MoveEnemySlowVert` |
+| 7662 | `SetMdMax` |
+| 7667 | `MoveJ_EnemyVertically` |
+| 7669 | `SetHiMax` |
+| 7670 | `SetXMoveAmt` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

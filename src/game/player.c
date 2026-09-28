@@ -523,11 +523,12 @@ void mysmb_player_physics_sub(struct mysmb_game *game)
     mysmb_player_configure_horizontal(game);
 }
 
-/* Existing MovePlayerVertically child; original world movement keeps custody. */
+/* ROM $BF4D-$BF62 MovePlayerVertically / NoJSChk. */
 void mysmb_player_move_vertically(struct mysmb_game *game)
 {
-    mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
-                                0U, 4U, 0U);
+    if (game->ram[0x0747U] == 0U && game->ram[0x070eU] != 0U) return;
+    game->ram[0U] = game->ram[MYSMB_VERTICAL_FORCE];
+    mysmb_world_impose_gravity_spr_object(game, 0U, game->ram[0U], 4U);
 }
 
 /* Existing common terrain child; algorithm proof remains terrain-owned. */

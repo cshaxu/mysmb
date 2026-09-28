@@ -43,7 +43,7 @@ mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game)
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state != 0U) {
         if ((state & 0x40U) != 0U && game->ram[MYSMB_ENEMY_Y + slot] < 0xe0U) {
-            mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+            mysmb_enemy_move_slow_vertically(game, slot);
             return 0U;
         }
         game->ram[MYSMB_EVENT_MUSIC] = 0x80U;

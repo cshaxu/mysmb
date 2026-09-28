@@ -836,7 +836,7 @@ void mysmb_objects_step_swimming_cheep_cheeps_slot(struct mysmb_game *game, mysm
          game->ram[MYSMB_ENEMY_ID + slot] != 11U)) return;
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
         /* ROM MoveSwimmingCheepCheep -> MoveEnemySlowVert. */
-        mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+        mysmb_enemy_move_slow_vertically(game, slot);
         return;
     }
     amount = game->ram[MYSMB_ENEMY_ID + slot] == 10U ? 0x40U : 0x80U;
@@ -907,7 +907,7 @@ void mysmb_objects_step_podoboos_slot(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)((random_value & 0x0fU) | 6U);
         game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xf9U;
     }
-    mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+    mysmb_enemy_move_j_vertically(game, slot);
 }
 
 /* Temporary bulk caller while the engine vector is migrated. */
@@ -933,7 +933,7 @@ void mysmb_objects_step_bloobers_slot(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_ENEMY_ID + slot] != 7U) return;
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
         /* ROM MoveDefeatedBloober -> MoveEnemySlowVert. */
-        mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+        mysmb_enemy_move_slow_vertically(game, slot);
         return;
     }
     random_value = (mysmb_u8)(game->ram[0x07a8U + slot] &
@@ -1163,8 +1163,6 @@ void mysmb_objects_step_jumping_paratroopas(struct mysmb_game *game)
 /* ROM $afc3 ProcMoveRedPTroopa through $bb5f RedPTroopaGrav. */
 void mysmb_objects_step_red_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
     mysmb_u8 moving_up;
 
     if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
@@ -1177,39 +1175,8 @@ void mysmb_objects_step_red_paratroopas_slot(struct mysmb_game *game, mysmb_u8 s
         return;
     }
     moving_up = game->ram[MYSMB_ENEMY_Y + slot] >= game->ram[MYSMB_ENEMY_X_SPEED + slot] ? 1U : 0U;
-    old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-        (mysmb_u8)(old_value + game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-    carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-    old_value = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value +
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-    if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-    old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value + 3U);
-    carry = game->ram[MYSMB_ENEMY_Y_FORCE + slot] < old_value ? 1U : 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 2U &&
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0x80U &&
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 2U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    }
-    if (moving_up != 0U) {
-        old_value = game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(old_value - 6U);
-        carry = old_value < 6U ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] - carry);
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] < 0xfeU &&
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] >= 0x80U &&
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] < 0x80U) {
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfeU;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xffU;
-        }
-    }
+    if (moving_up != 0U) mysmb_enemy_move_red_up(game, slot);
+    else mysmb_enemy_move_red_down(game, slot);
 }
 
 /* Temporary bulk caller while the engine vector is migrated. */
@@ -1467,7 +1434,7 @@ void mysmb_objects_step_flying_cheep_cheeps_slot(struct mysmb_game *game, mysmb_
     if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
         game->ram[MYSMB_ENEMY_ID + slot] != 20U) return;
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+        mysmb_enemy_move_j_vertically(game, slot);
         return;
     }
     if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
@@ -1702,8 +1669,10 @@ void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
     }
     else if (id == 41U && landed != 0U) {
         /* DropPlatform switches to its falling route only after contact. */
-        game->ram[MYSMB_ENEMY_Y + slot]++;
-        game->ram[MYSMB_PLAYER_Y]++;
+        old_y = game->ram[MYSMB_ENEMY_Y + slot];
+        mysmb_enemy_move_drop_platform(game, slot);
+        game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
+            game->ram[MYSMB_ENEMY_Y + slot] - old_y);
     }
 }
 
@@ -1733,7 +1702,7 @@ void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_ENEMY_ID + slot] != 45U) return;
     game->ram[0x0368U] = slot;
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_downward(game, slot, 0x1cU, 3U);
+        mysmb_enemy_move_j_vertically(game, slot);
         return;
     }
     game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
@@ -1772,7 +1741,7 @@ void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot)
                     difference >= game->ram[0x06dcU]) game->ram[0x0365U] = direction;
             }
             if (game->ram[0x078aU + slot] == 0U) {
-                mysmb_enemy_move_downward(game, slot, 0x0fU, 2U);
+                mysmb_enemy_move_slow_vertically(game, slot);
                 if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
                     game->ram[0x078aU + slot] = random_range[game->ram[0x07a8U + slot] & 3U];
                 }

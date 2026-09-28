@@ -1002,20 +1002,20 @@ The labels and branches behind every line remain open until individually bound b
 | 7581 | `SaveXSpd` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
 | 7586 | `UseAdder` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
 | 7604 | `ExXMove` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
-| 7611 | `MovePlayerVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayervertically) |
-| 7617 | `NoJSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojschk) |
-| 7624 | `MoveD_EnemyVertically` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 7630 | `MoveFallingPlatform` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 7632 | `ContVMove` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 7636 | `MoveRedPTroopaDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopadown) |
-| 7640 | `MoveRedPTroopaUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopaup) |
-| 7643 | `MoveRedPTroopa` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopa) |
-| 7656 | `MoveDropPlatform` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movedropplatform) |
-| 7660 | `MoveEnemySlowVert` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveenemyslowvert) |
-| 7662 | `SetMdMax` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmdmax) |
-| 7667 | `MoveJ_EnemyVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movej_enemyvertically) |
-| 7669 | `SetHiMax` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethimax) |
-| 7670 | `SetXMoveAmt` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setxmoveamt) |
+| 7611 | `MovePlayerVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7617 | `NoJSChk` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7624 | `MoveD_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7630 | `MoveFallingPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7632 | `ContVMove` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7636 | `MoveRedPTroopaDown` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7640 | `MoveRedPTroopaUp` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7643 | `MoveRedPTroopa` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7656 | `MoveDropPlatform` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7660 | `MoveEnemySlowVert` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7662 | `SetMdMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7667 | `MoveJ_EnemyVertically` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7669 | `SetHiMax` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
+| 7670 | `SetXMoveAmt` | M2 T37 S8 shared player.c and enemy/movement.c | ROM-match complete | [S8 adapter proof](../../proposals/m2/power-up-block-movement.md#s8-original-vertical-adapter-proof) |
 | 7678 | `MaxSpdBlockData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxspdblockdata) |
 | 7681 | `ResidualGravityCode` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualgravitycode) |
 | 7685 | `ImposeGravityBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-imposegravityblock) |
