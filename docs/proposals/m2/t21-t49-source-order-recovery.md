@@ -48,8 +48,8 @@ boundary.
 | T36 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
 | T37 | Power-up actor tail, blocks and movement/gravity primitives; receives T36 PowerUpObjHandler boundary exception | 7201–7787; entry 7184 | 74 |
 | T38 | Enemy stream, records, slots and initialization; complete flying-fish tail | 7788–8528; loop and duplicate dependencies below | 88 + 6 dependencies |
-| T39 | Enemy groups, frenzy and special initialization; begins InitBowser | 8529–9300 | 95 |
-| T40 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |
+| T39 | Special initialization and actor dispatch; ends EraseEnemyObject | 8529–9211; flame timer dependency | 83 + 3 dependencies |
+| T40 | Complete Podoboo/Hammer Bro, normal, defeated and swimming movement | 9212–10100 | 122 |
 | T41 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
 | T42 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
 | T43 | Player terrain, head, foot, side and pipe collision | 12001–13000 | 136 |
@@ -793,3 +793,8 @@ T38 S6 admits DuplicateEnemyObj, FSLoop and FlmEx as the missing immediate
 InitLongFirebar dependency. The original T39 source span retains those three
 labels for reuse/maintenance, with no repeated completion credit. See the
 [T38 dependency receipt](../../history/M2-T38-enemy-stream-initialization.md#s6-admission-firebar-initialization-and-duplicate-dependency).
+
+T39 admission keeps the complete movement phase from MovePodoboo (9212)
+with T40, removing the split Hammer Bro boundary. Its immediate flame timer
+dependency is admitted with S1; the later timer source slice reuses it without
+duplicate credit. [Exact T39 chains and receivers](t39-special-initialization-and-dispatch.md).

@@ -14,17 +14,21 @@ int main(void)
     mysmb_u8 bowser_data[2] = { 0U, 45U };
     mysmb_u8 flame_data[2] = { 0xf0U, 21U };
 
-    /* InitBowser establishes the front-half state owners; its rear half is
-     * drawing-only and therefore absent from the portable core. */
+    /* InitBowser duplicates the object before setting front-half fields.
+     * It clears the bridge offset but does not initialize the bounding box. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     source.prg = bowser_data;
     source.prg_size = 2U;
     game.ram[0x00eaU] = 0x80U;
+    game.ram[0x049aU] = 0x37U;
+    game.ram[0x0369U] = 0x19U;
     if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x0016U] != 45U || game.ram[0x0366U] != 0U ||
         game.ram[0x0364U] != 0x20U || game.ram[0x0365U] != 2U ||
         game.ram[0x0790U] != 0xdfU || game.ram[0x0483U] != 5U ||
-        game.ram[0x049aU] != 10U) return 1;
+        game.ram[0x049aU] != 0x37U || game.ram[0x0369U] != 0U ||
+        game.ram[0x06cfU] != 1U || game.ram[0x0010U] != 0x80U ||
+        game.ram[0x00b7U] != 1U || game.ram[0x078aU] != 0x20U) return 1;
 
     /* RunBowser advances from the saved origin, chooses its original random
      * range, and applies the $0f slow vertical gravity. */
@@ -57,10 +61,13 @@ int main(void)
     game.ram[0x0087U] = 0x80U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x07a9U] = 0U;
+    game.ram[0x00fdU] = 0x40U;
+    game.ram[0x00feU] = 0x10U;
     mysmb_enemy_init_bowser_flame_frenzy(&game, 1U);
     if (game.ram[0x0010U] != 1U || game.ram[0x0017U] != 21U ||
         game.ram[0x0088U] != 0x72U || game.ram[0x00d0U] != 0x78U ||
-        game.ram[0x0435U] != 1U || game.ram[0x06cbU] != 0U) return 3;
+        game.ram[0x0435U] != 1U || game.ram[0x06cbU] != 0U ||
+        game.ram[0x00fdU] != 0x42U || game.ram[0x00feU] != 0x10U) return 3;
 
     /* A real $15 stream record enters InitEnemyFrenzy in slot two.  With no
      * Bowser front present it uses the source timer/PRNG/right-extent route. */

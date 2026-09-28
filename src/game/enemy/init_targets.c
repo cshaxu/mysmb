@@ -34,11 +34,11 @@ enum {
     MYSMB_BOWSER_FEET_TIMER = 0x0364U,
     MYSMB_BOWSER_MOVE_SPEED = 0x0365U,
     MYSMB_BOWSER_ORIGIN_X = 0x0366U,
-    MYSMB_BOWSER_FLAME_TIMER = 0x0367U,
+    MYSMB_BRIDGE_COLLAPSE_OFFSET = 0x0369U,
     MYSMB_BOWSER_BREATH_TIMER = 0x0790U,
     MYSMB_BOWSER_FRONT_SLOT = 0x0368U,
     MYSMB_BOWSER_HIT_POINTS = 0x0483U,
-    MYSMB_ENEMY_INTERVAL_TIMER = 0x078aU,
+    MYSMB_ENEMY_FRAME_TIMER = 0x078aU,
     MYSMB_BALANCE_PLATFORM_ALIGNMENT = 0x03a0U,
     MYSMB_PLATFORM_COLLISION_FLAG = 0x03a2U,
     MYSMB_PLATFORM_TOP_Y = 0x0401U,
@@ -378,21 +378,20 @@ void mysmb_enemy_init_small_lift_down(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
 }
 
-/* Original target $C549; duplicate allocation remains pending. */
+/* ROM $C549 InitBowser: preserve all fields absent from this entry. */
 void mysmb_enemy_init_bowser(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_legacy_defaults(game, slot);
+    mysmb_enemy_duplicate_object(game, slot);
+    game->ram[MYSMB_BOWSER_FRONT_SLOT] = slot;
     game->ram[MYSMB_BOWSER_BODY_CONTROLS] = 0U;
+    game->ram[MYSMB_BRIDGE_COLLAPSE_OFFSET] = 0U;
     game->ram[MYSMB_BOWSER_ORIGIN_X] = game->ram[MYSMB_ENEMY_X + slot];
-    game->ram[MYSMB_BOWSER_FLAME_TIMER] = 0U;
     game->ram[MYSMB_BOWSER_BREATH_TIMER] = 0xdfU;
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0xdfU;
     game->ram[MYSMB_BOWSER_FEET_TIMER] = 0x20U;
-    game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x20U;
+    game->ram[MYSMB_ENEMY_FRAME_TIMER + slot] = 0x20U;
     game->ram[MYSMB_BOWSER_HIT_POINTS] = 5U;
     game->ram[MYSMB_BOWSER_MOVE_SPEED] = 2U;
-    game->ram[MYSMB_BOWSER_FRONT_SLOT] = slot;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 10U;
 }
 
 /* Original target $C307. */

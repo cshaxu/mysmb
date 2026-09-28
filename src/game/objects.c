@@ -4,6 +4,7 @@
 #include "game/objects.h"
 #include "game/status.h"
 #include "game/enemy/movement.h"
+#include "game/enemy/frenzy.h"
 #include "game/oam/oam.h"
 #include "game/world/world.h"
 #include "game/area.h"
@@ -1679,12 +1680,9 @@ void mysmb_objects_step_platforms(struct mysmb_game *game)
 void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 random_range[4] = { 0x21U, 0x41U, 0x11U, 0x31U };
-    static const mysmb_u8 flame_timer[8] = { 0xbfU, 0x40U, 0xbfU, 0xbfU,
-                                              0xbfU, 0x40U, 0x40U, 0xbfU };
     mysmb_u8 difference;
     mysmb_u8 direction;
     mysmb_u8 old_x;
-    mysmb_u8 fire_timer_index;
     mysmb_u16 player_world;
     mysmb_u16 enemy_world;
 
@@ -1746,9 +1744,7 @@ void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[0x0790U] = 0x20U;
             game->ram[0x0363U] ^= 0x80U;
             if ((game->ram[0x0363U] & 0x80U) == 0U) {
-                fire_timer_index = game->ram[0x0367U] & 7U;
-                game->ram[0x0367U] = (mysmb_u8)((game->ram[0x0367U] + 1U) & 7U);
-                game->ram[0x0790U] = flame_timer[fire_timer_index];
+                game->ram[0x0790U] = mysmb_enemy_set_flame_timer(game);
                 if (game->ram[MYSMB_SECONDARY_HARD] != 0U) game->ram[0x0790U] =
                     (mysmb_u8)(game->ram[0x0790U] - 0x10U);
                 game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 21U;

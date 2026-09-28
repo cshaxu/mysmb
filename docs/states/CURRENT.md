@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T38 is closed at 978 / 1,992. No later T is admitted.**
+**M2 T39 S1 is closed at 990 / 1,992: twelve new nodes and three retained matches.**
 
-## M2 T38 S7 Packet
+## M2 T39 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S7, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after S6 commit d9921d3; coordinator accepts transfer-171. |
-| Objective | Restore all ten flying-fish initializer/data/tail nodes as one chain. |
-| Non-goals | No frenzy dispatcher, movement/collision, Bowser or platform game logic repair. |
-| Reference Baseline | 968 / 1,992; ten scoped open labels, ten expected, maximum 978. Exact names in S7 plan and ledger. |
-| Candidate Proposal | [S7 flying-fish initializer](../history/M2-T38-enemy-stream-initialization.md#s7-admission-complete-flying-fish-initializer). |
-| Files And ABI Surface | Shared enemy/frenzy.c, focused tests and recorder fixtures, ledger and three EXEs. |
+| Identifier Mode | M2 T39 S1, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after T38 commit 328aae6; coordinator accepts transfers 172 and 173. |
+| Objective | Restore Bowser/flame initializers and timer dependency: twelve new nodes plus three retained duplicate nodes. |
+| Non-goals | No broader Bowser actor, frenzy dispatcher, graphics/collision or platform gameplay repair. |
+| Reference Baseline | 978 / 1,992; fifteen scoped labels, twelve expected new, maximum 990. Exact sets in S1 plan and ledger. |
+| Candidate Proposal | [T39 S1 Bowser/flame chain](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-admission-bowser-and-flame-initialization). |
+| Files And ABI Surface | Shared enemy/init_targets.c, enemy/frenzy.c/h, narrow objects.c timer-call deduplication, tests/recorder, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original data/branch/write/call audit and actual NMI entry comparisons; native matrix, cross-width builds, DOS link and purity. |
-| Expected Markers | Timer-first gating, SmallBBox/slot-limit order, scratch $00/$01, speed class and register-Y position index, carry/page wrap and final spawn. |
-| Asset Needs | Existing owner-local ROM/listing and retained records; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Ten exact dispositions, dual proof, retained child gaps and artifact hashes. |
+| Verification | Original table/branch/write/call audit and actual NMI comparisons; native matrix, cross-width builds, DOS link and purity. |
+| Expected Markers | Duplicate-before-Bowser setup, exact frame/bridge fields, noise queue, timer counter/table, PRNG aliases, mouth/right-edge coordinates and final writes. |
+| Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
+| Reporting Requirements | Fifteen dispositions with twelve expected new, dual proof, retained downstream gaps and artifact hashes. |
 | Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | All ten nodes proven or exact accepted transfer; dual evidence, tracker and ledger agree. |
+| Exit Criteria | Twelve expected labels proven or exact accepted transfer, three retained matches, tracker/ledger and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Frenzy entry, all random/speed/position indexes, scratch producers/consumers and later actor boundary. |
+| Similar-Issue Sweep | Both timer callers, duplicate entry consumers, noise queue and shared flame-position finish users. |
+
+## S1 closure
+
+[Original Bowser/flame proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-original-bowser-and-flame-proof)
+records all fifteen dispositions. Actual comparisons pass 320/320; all 996
+prior matches remain. All five source branches take both outcomes. Three EXEs
+are refreshed; the broader Bowser damage failure and DOS link-only limit remain.
 
 ## T38 closure summary
 
@@ -33,13 +40,11 @@ is 996/1,220; all 692 previous matches remain. The 224 downstream differences
 stay assigned to their original source-order owners. S7 refreshed all three
 EXEs; the existing Bowser test failures and DOS link-only limit remain.
 
-## Next source slice
+## Current sequence
 
-Follow the [queue](QUEUE.md) and its authoritative source-order recovery plan.
-The next slice begins at InitBowser, reuses the proven duplicate-object child,
-and must publish exact target nodes and S ownership before implementation.
-No later T or S is authorized by this closed packet itself; admission proceeds
-under the continuing owner-approved M2 execution mandate and execution rules.
+T39 contains nine planned S chains; S1 is closed and S2 is next, not yet admitted. Follow the
+[queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
+beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 
 ## Current Technical Baseline
 

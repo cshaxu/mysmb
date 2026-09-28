@@ -12,18 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 978 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 990 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 906 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 894 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **978 / 1,992 (49.10%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **990 / 1,992 (49.70%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T38 S7 P1](../history/M2-T38-enemy-stream-initialization.md#s7-original-flying-fish-proof)
-closes the final ten flying-fish nodes; T38 is closed with 94 new matches.
-S7 has 304/304 actual comparisons and
-all data indexes/conditional branches exercised. All 692 previous matching
-roots remain; later dispatcher/actor and other child gaps stay explicit.
+Latest task review: [T39 S1 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-original-bowser-and-flame-proof)
+proves twelve new Bowser/flame initialization nodes and retains three duplicate
+dependencies. Actual root comparisons pass 320/320; all 996 prior matching
+comparisons remain. Broader dispatcher, actor and collision gaps remain open.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (978)
+## Completed matches (990)
 
 | ROM line | Node |
 | ---: | --- |
@@ -976,9 +975,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8503 | `D2XPos1` |
 | 8513 | `D2XPos2` |
 | 8519 | `FinCCSt` |
+| 8529 | `InitBowser` |
 | 8551 | `DuplicateEnemyObj` |
 | 8553 | `FSLoop` |
 | 8569 | `FlmEx` |
+| 8573 | `FlameYPosData` |
+| 8576 | `FlameYMFAdderData` |
+| 8579 | `InitBowserFlame` |
+| 8597 | `SetFrT` |
+| 8604 | `PutAtRightExtent` |
+| 8615 | `SpawnFromMouth` |
+| 8635 | `SetMF` |
+| 8640 | `FinishFlame` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |
@@ -996,6 +1004,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9392 | `NKGmba` |
 | 10167 | `KillAllEnemies` |
 | 10169 | `KillLoop` |
+| 10337 | `FlameTimerData` |
+| 10340 | `SetFlameTimer` |
+| 10347 | `ExFl` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

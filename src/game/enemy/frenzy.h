@@ -5,6 +5,7 @@
 
 /* ROM $C7A0: shared initializer-vector target. */
 void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_enemy_set_flame_timer(struct mysmb_game *game);
 /* Existing child boundaries; conformance tracked independently of callers. */
 mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_put_at_right_extent(struct mysmb_game *game, mysmb_u8 slot,
