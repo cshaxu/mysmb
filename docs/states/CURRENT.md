@@ -2,32 +2,31 @@
 
 ## Current Work
 
-**M2 T33 S1 is closed at 691 / 1,992: fifteen of fifteen admitted caller nodes proven; S2 admission is next.**
+**M2 T33 S2 is closed at 699 / 1,992: eight of eight climbing nodes proven; S3 admission is next.**
 
-T32 is closed with all 48 admitted nodes proven within their own contracts.
-Its nineteen integrated routes have eight complete matches and eleven retained
-child/output failures. PlayerMovementSubs now transfers with its successors.
+S1 closed with fifteen caller nodes proven; eight actual physics-child failures
+remain with planned S3. Its three artifacts were delivered in S1 P1.
 
-## M2 T33 S1 Packet
+## M2 T33 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T33 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed T32; coordinator accepts transfer-138. |
-| Objective | Restore PlayerMovementSubs through ExitMov1 with original state dispatch and ground/air caller semantics. |
-| Non-goals | No unadmitted physics-table, animation, friction, climbing, terrain or OAM child repair. |
-| Reference Baseline | 676 / 1,992; fifteen unique open labels, expected fifteen, maximum 691. Exact names in proposal S1 and ledger. |
-| Candidate Proposal | [Movement state chain](../proposals/m2/player-movement-state.md#s1-admission-movement-dispatch-and-ground-air-states). |
-| Files And ABI Surface | Shared player-movement owner, child seams, build lists, focused tests/recorders and three artifacts. |
+| Identifier Mode | M2 T33 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S1; coordinator accepts transfer-139. |
+| Objective | Restore and prove ClimbAdderLow through InitCSTimer, including signed vertical carry and all four side-switch offsets. |
+| Non-goals | No S3 physics parameter, animation, friction, terrain or rendering repairs. |
+| Reference Baseline | 691 / 1,992; eight unique open labels, expected eight, maximum 699. Exact names in proposal S2 and ledger. |
+| Candidate Proposal | [Climbing chain](../proposals/m2/player-movement-state.md#s2-admission-climbing-movement-and-side-switching). |
+| Files And ABI Surface | Shared player climbing owner, focused tests/reference recorder, build registration and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original branches, reads/writes and call order plus natural NMI boundaries; independent native tests, builds and purity. |
-| Expected Markers | Crouch gates; physics before freeze; four-way vector; climb timer; ground/air order; swim/jump thresholds; death force. |
-| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Fifteen exact dispositions; separate ROM/operational results; child failures and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, modified reference PC/stack/ROM, masked difference or platform gameplay logic. |
-| Exit Criteria | All received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
-| Original Owner Request | Complete original ROM logic/call structure in shared native 16/32/64-bit C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All movement-state callers, crouch/freeze/climb-timer writers and duplicated ground/air orchestration. |
+| Verification | Original data/branch/carry audit and natural NMI entry-return proof; independent native tests, builds and purity. |
+| Expected Markers | Fractional carry; signed Y page carry; collision-filtered direction; timer gates; four offsets; facing inversion. |
+| Asset Needs | Existing owner-local ROM/listing; three local EXEs per implementation P; DOS link-only. |
+| Reporting Requirements | Eight exact dispositions, separate ROM and operational evidence, artifact hashes and retained child failures. |
+| Stop Conditions | Unadmitted physics repair, modified original PC/stack/ROM, masked discrepancy or platform gameplay. |
+| Exit Criteria | All eight received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
+| Original Owner Request | Complete original-ROM logic and structure in shared 16/32/64-bit C, source order and chain-level delivery. |
+| Similar-Issue Sweep | All climbing definitions/callers, side-timer writers and offset consumers. |
 
 ## T32 closure summary
 

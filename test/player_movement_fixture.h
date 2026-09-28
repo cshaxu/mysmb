@@ -9,6 +9,20 @@ static void mysmb_player_movement_fixture(unsigned char *ram,unsigned char scena
     ram[0x714U]=4U;ram[0x70eU]=1U;ram[0x789U]=0x55U;
     ram[0x709U]=0x21U;ram[0x70aU]=0x42U;
     ram[0x706U]=6U;ram[0x708U]=0x80U;
+    if(scenario>=37U) {
+        unsigned char n;
+        n=(unsigned char)(scenario-37U);ram[0x1dU]=3U;ram[0x70bU]=0U;
+        ram[0x33U]=(unsigned char)(1U+(n/4U)%2U);
+        ram[0x789U]=(unsigned char)((n/8U)%2U);
+        ram[0x416U]=0xffU;
+        ram[0x86U]=(n&1U)!=0U?0xfeU:2U;
+        ram[0xceU]=(n/16U)%2U!=0U?0xffU:0x80U;
+        if(scenario>=101U) {
+            ram[0x490U]=(unsigned char)((scenario-101U)%4U);
+            ram[0x789U]=(unsigned char)((scenario-101U)/4U);
+        }
+        return;
+    }
     if(scenario<16U) {
         ram[0x1dU]=(unsigned char)(scenario%4U);
         ram[0x754U]=(unsigned char)((scenario/4U)%2U);
@@ -39,7 +53,8 @@ static int mysmb_player_movement_argument(const char *text)
     if(text[i]<'0'||text[i]>'9') return 0;
     value=(unsigned int)(text[i++]-'0');
     if(text[i]>='0'&&text[i]<='9') value=value*10U+(unsigned int)(text[i++]-'0');
-    if(text[i]!='\0'||value>36U) return 0;
+    if(text[i]>='0'&&text[i]<='9') value=value*10U+(unsigned int)(text[i++]-'0');
+    if(text[i]!='\0'||value>108U) return 0;
     return (int)value+1;
 }
 #endif

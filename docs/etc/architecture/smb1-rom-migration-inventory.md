@@ -802,14 +802,14 @@ The labels and branches behind every line remain open until individually bound b
 | 5972 | `LRAir` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
 | 5975 | `JSMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
 | 5982 | `ExitMov1` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5986 | `ClimbAdderLow` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderlow) |
-| 5988 | `ClimbAdderHigh` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderhigh) |
-| 5991 | `ClimbingSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbingsub) |
-| 6000 | `MoveOnVine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveonvine) |
-| 6019 | `ClimbFD` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbfd) |
-| 6022 | `CSetFDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-csetfdir) |
-| 6032 | `ExitCSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcsub) |
-| 6033 | `InitCSTimer` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initcstimer) |
+| 5986 | `ClimbAdderLow` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 5988 | `ClimbAdderHigh` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 5991 | `ClimbingSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 6000 | `MoveOnVine` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 6019 | `ClimbFD` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 6022 | `CSetFDir` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 6032 | `ExitCSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
+| 6033 | `InitCSTimer` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
 | 6039 | `JumpMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpmforcedata) |
 | 6042 | `FallMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fallmforcedata) |
 | 6045 | `PlayerYSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeryspddata) |

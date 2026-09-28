@@ -174,3 +174,106 @@ No platform source changed. Platform-purity and documentation gates pass.
 Three local artifacts follow the owner-authorized delivery exception; they
 are not redistribution or complete-game qualification evidence. S1 closes;
 T33 remains open and S2 requires its own receipt before implementation.
+
+## S2 admission: climbing movement and side switching
+
+S1 is closed at 691 / 1,992. Transfer-139 accepts the eight open S2 labels
+listed in the plan from T23 S5. Scope eight, expected eight, maximum 699.
+The contiguous ClimbAdderLow through InitCSTimer chain owns its two four-byte
+side-switch tables, vertical fractional/signed/page carries, direction and
+collision intersection, side timer, four-way offset index and facing flip.
+The shared owner remains game/player.c for this bounded existing routine;
+no platform variation or second implementation is introduced. S1 dispatches
+this child after physics; S3 owns that preceding physics parameter setup.
+
+ROM logic proof first maps the original $B3C7-$B423 data/control slice and
+its reads, writes, branches and carry flow. Record natural NMI climbing entry
+and return states without replacing the original physics child. Compare the
+native ClimbingSub directly against those entries, including both page-cross
+signs, timer branches, controller/collision combinations and both facings.
+Bind both tables to the owner-local PRG in validation. Existing full movement
+routes retain S3 physics differences instead of masking them.
+
+Operational proof uses exhaustive bounded byte-carry and side-index checks,
+strict C90 x86/x64 and full DOS16 link, existing movement regressions and
+platform purity. One final build/package pass delivers all three local EXEs.
+Local ROM/listing remain owner-local research inputs; no third-party source
+is imported. All generated inputs and recordings stay under ignored
+build/m2-t33-s2 with a four-MB raw limit and twenty seconds per run; S2 owns
+cleanup through T review. DOS remains link-only.
+
+Similar-issue sweep covers every mysmb_player_climb definition/caller,
+ClimbSideTimer writer and side-offset consumer. Current code chooses only
+indices 0/3 from facing; original code uses the collision-filtered direction
+and facing to select all four entries. Repair only this admitted chain.
+Closure requires all eight named dispositions, both verification tracks,
+ledger/inventory agreement and reviewed artifact identities.
+
+## S2 original climbing proof
+
+The original instruction audit confirms fractional ADC carry flows through
+LDY/LDA/BPL/DEY/STY into the signed Y-position ADC and then page ADC. Native
+unsigned-byte writes and a bounded 16-bit sum preserve those carries. The
+side-switch LSR consumes Left_Right_Buttons AND Player_CollisionBits; facing
+is independently tested by DEY/BEQ. Previous C used only facing, selecting
+indices 0/3 and making the 1/2 offsets unreachable. The repair restores all
+four selectors and retains original timer and facing-inversion order.
+
+| Node | Address | Proven contract |
+| --- | --- | --- |
+| ClimbAdderLow | $B3C7 | Four low displacement bytes match ROM and all four indices execute |
+| ClimbAdderHigh | $B3CB | Four signed page adders match ROM and all four indices execute |
+| ClimbingSub | $B3CF | Fractional carry and signed vertical-speed direction |
+| MoveOnVine | $B3E0 | Vertical position/page carries, collision mask and timer gate |
+| ClimbFD | $B406 | Independent facing test after filtered-direction selection |
+| CSetFDir | $B40A | Low/page displacement and controller-facing inversion |
+| ExitCSub | $B41F | Existing-timer return and completed-switch return |
+| InitCSTimer | $B420 | Zero filtered direction clears side timer |
+
+Seventy-two ordinary-NMI scenarios execute original physics and then record
+the real ClimbingSub entry and stack-derived return. The native checker calls
+the actual C climbing implementation, with no replayed child returns. All
+144 comparisons on x86/x64 match 1,784 persistent RAM bytes. All five source
+branches have both outcomes; all six code labels execute; both data tables
+match their eight original PRG bytes and all four indices are exercised.
+Scratch $00-$07 and hardware stack are outside the native ABI. Preceding
+physics parameters retain S3 custody and are not certified by this proof.
+
+The existing movement fixture cases 37-108 provide this chain's inputs.
+For cases 37-100, let n be case minus 37: logical controller is n modulo four
+OR the up/down value [0,8,4,12] indexed by floor(n/16). Cases 101-108 use
+logical left+right and vary the collision mask and timer. Reverse the logical
+byte for the recorder's serial input order. Record one frame with warmup one,
+`--fixture=t33-movement=N`, `--movement-state-snapshot=...` and
+`--control-children=...`; repeat with PC coverage and without observers.
+Build `player_climbing_snapshot_check.c` against the native game and run
+`test/verify_player_climbing_snapshots.py` against the contained recordings
+and owner-local ROM. Observed, coverage and unobserved frames are identical;
+raw evidence totals 2,962,992 bytes, below the admitted four-MB cap.
+
+Independent operational tests pass 393,216 fixed-point carry cases and
+16,384 side-selection cases per width. The same test rejects the previous
+committed implementation at the side-displacement assertion. Both Windows
+builds compile all 67 shared units as strict C90; self-tests and hidden
+two-second window/message probes pass. DOS16 compiles/links and remains
+link-only, without embedded owner resources or playability qualification.
+
+Similar-issue sweep finds one climbing definition and one production caller
+in player_movement.c. Both offset tables and consumers are local to that
+definition. ClimbSideTimer clear/reload belongs here; the non-climbing reload
+remains in the proven S1 dispatcher and decrement stays with the timer owner.
+No duplicate side selector or platform gameplay path was added. Platform
+purity passes. The prior S1 physics differences remain explicitly incomplete.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258637 | f7d0a8e0d004717c2fd3a5d9d37d923ca61e21c7e3195cd1d6a72e83d080bfde |
+| mysmb32.exe | 325271 | 8ef020bab942d199e16b8a0b24d444305b64ddfcb1070e8a477ef8b78b2250a1 |
+| mysmb64.exe | 332810 | e2f99c3744c40cb4e71405d6d53a5ae5a47044d7c1c554fd9e807c1c56ae6d6c |
+
+These are the owner-authorized local delivery artifacts, not full-game or
+DOS qualification. Final review accepts 8/8 expected matches: the exact eight
+rows above complete, with no received node deferred and no child credit.
+Progress increases 691 -> 699 / 1,992. Both verification tracks, platform
+purity, ledger closure and documentation checks pass. S2 closes; T33 remains
+open, and the planned 28-node physics S3 requires its next admission.

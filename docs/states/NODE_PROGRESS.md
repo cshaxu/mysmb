@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 691 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 699 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,166 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,158 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **691 / 1,992 (34.69%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **699 / 1,992 (35.09%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T33 S1 P1](../proposals/m2/player-movement-state.md#s1-original-movement-proof)
-proves fifteen movement-state caller nodes with 74 caller comparisons. Actual
-native children yield 66 matches and eight retained physics-child failures.
-No child or full-game completion is claimed.
+Latest task review: [T33 S2 P1](../proposals/m2/player-movement-state.md#s2-original-climbing-proof)
+proves eight climbing code/data nodes with 144 actual-native comparisons,
+five branches covered both ways and both displacement tables bound.
+Preceding physics remains incomplete; no full-game completion is claimed.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (691)
+## Completed matches (699)
 
 | ROM line | Node |
 | ---: | --- |
@@ -660,6 +660,14 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5972 | `LRAir` |
 | 5975 | `JSMove` |
 | 5982 | `ExitMov1` |
+| 5986 | `ClimbAdderLow` |
+| 5988 | `ClimbAdderHigh` |
+| 5991 | `ClimbingSub` |
+| 6000 | `MoveOnVine` |
+| 6019 | `ClimbFD` |
+| 6022 | `CSetFDir` |
+| 6032 | `ExitCSub` |
+| 6033 | `InitCSTimer` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

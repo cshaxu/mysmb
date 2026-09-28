@@ -377,7 +377,8 @@ void mysmb_player_configure_climb(struct mysmb_game *game)
     game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = speed[index] >= 0x80U ? 4U : 8U;
 }
 
-/* Translation of ClimbingSub.  Timer decrement remains in the shared timer
+/* ClimbAdderLow/High and ClimbingSub, ROM $b3c7-$b423.
+ * Timer decrement remains in the shared timer
  * owner; this routine only observes and reloads ClimbSideTimer. */
 void mysmb_player_climb(struct mysmb_game *game)
 {
@@ -389,6 +390,7 @@ void mysmb_player_climb(struct mysmb_game *game)
     mysmb_u8 page_delta;
     mysmb_u8 index;
     mysmb_u8 facing;
+    mysmb_u8 allowed_direction;
     mysmb_u16 y_sum;
 
     old_value = game->ram[MYSMB_PLAYER_Y_DUMMY];
@@ -403,18 +405,19 @@ void mysmb_player_climb(struct mysmb_game *game)
     carry_y = y_sum > 0xffU ? 1U : 0U;
     game->ram[MYSMB_PLAYER_Y_HIGH] =
         (mysmb_u8)(game->ram[MYSMB_PLAYER_Y_HIGH] + page_delta + carry_y);
-    if ((game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] &
-         game->ram[MYSMB_PLAYER_COLLISION_BITS]) == 0U) {
+    allowed_direction = (mysmb_u8)(game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] &
+                                   game->ram[MYSMB_PLAYER_COLLISION_BITS]);
+    if (allowed_direction == 0U) {
         game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0U;
         return;
     }
     if (game->ram[MYSMB_CLIMB_SIDE_TIMER] != 0U) return;
     game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0x18U;
     facing = game->ram[MYSMB_PLAYER_FACING];
-    if ((facing & MYSMB_BUTTON_RIGHT) != 0U) {
-        index = 0U;
-    }
-    else index = 3U;
+    /* LSR tests collision-filtered right, then DEY tests facing == 1.
+     * Direction and facing are independent selectors for all four entries. */
+    index = (allowed_direction & MYSMB_BUTTON_RIGHT) != 0U ? 0U : 2U;
+    if (facing != 1U) ++index;
     old_value = game->ram[MYSMB_PLAYER_X];
     game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_value + x_low[index]);
     carry_y = game->ram[MYSMB_PLAYER_X] < old_value ? 1U : 0U;
