@@ -1,4 +1,5 @@
 #include "game/enemy/init.h"
+#include "game/objects.h"
 #include "game/enemy/init_targets.h"
 
 enum {
@@ -60,7 +61,7 @@ void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
 /* Extracted legacy child bodies. Their write footprints are preserved for
  * S3 entry separation; later admitted initializer chains own ROM conformance.
  * In particular, the historical common defaults are not source-proven. */
-void mysmb_enemy_init_normal(struct mysmb_game *game, mysmb_u8 slot)
+static void mysmb_enemy_init_legacy_defaults(struct mysmb_game *game, mysmb_u8 slot)
 {
     game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
@@ -71,118 +72,167 @@ void mysmb_enemy_init_normal(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
 }
 
-/* Original InitRedKoopa entry $C31E; child defaults remain under review. */
+/* ROM $C30C/$C326: indexed by original primary/secondary hard-mode state. */
+static const mysmb_u8 normal_x_speed[2] = { 0xf8U, 0xf4U };
+static const mysmb_u8 hammer_walking_timer[2] = { 0x80U, 0x50U };
+
+/* ROM $C363 InitVStf. */
+void mysmb_enemy_init_vertical_state(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+}
+
+/* ROM $C35C SetBBox, then InitVStf. */
+static void mysmb_enemy_init_box(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 box)
+{
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = box;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    mysmb_enemy_init_vertical_state(game, slot);
+}
+
+/* ROM $C35A TallBBox, selecting the shared SetBBox tail. */
+static void mysmb_enemy_init_tall_box(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_init_box(game, slot, 3U);
+}
+
+/* ROM $C346 SmallBBox, selecting the shared SetBBox tail. */
+void mysmb_enemy_init_small_box(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_init_box(game, slot, 9U);
+}
+
+/* ROM $C319 SetESpd, then TallBBox. */
+static void mysmb_enemy_init_speed(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 speed)
+{
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = speed;
+    mysmb_enemy_init_tall_box(game, slot);
+}
+
+/* ROM $C30E InitNormalEnemy/GetESpd: no flag or state write. */
+void mysmb_enemy_init_normal(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 index;
+    index = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 1U : 0U;
+    mysmb_enemy_init_speed(game, slot, normal_x_speed[index]);
+}
+
+/* Existing external TallBBox2 tail $C7D9: one write, no new node credit. */
+static void mysmb_enemy_init_tall_box_only(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+}
+
+/* Original InitRedKoopa entry $C31E. */
 void mysmb_enemy_init_red_koopa(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_enemy_init_normal(game, slot);
     game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
 }
 
-/* Original target entry $C2F1; extracted legacy body. */
+/* Original target entry $C2F1. */
 void mysmb_enemy_init_goomba(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    mysmb_enemy_init_small_box(game, slot);
 }
 
-/* Original target entry $C328; extracted legacy body. */
+/* Original target entry $C328. */
 void mysmb_enemy_init_hammer_bro(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    mysmb_u8 index;
     game->ram[0x03a2U + slot] = 0U;
-    game->ram[0x0796U + slot] =
-        game->ram[MYSMB_SECONDARY_HARD] != 0U ? 0x50U : 0x80U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 0x0bU;
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    index = game->ram[MYSMB_SECONDARY_HARD];
+    /* Source producers constrain SecondaryHardMode to zero or one. */
+    game->ram[0x0796U + slot] = hammer_walking_timer[index];
+    mysmb_enemy_init_box(game, slot, 0x0bU);
 }
 
-/* Original target entry $C36B; extracted legacy body. */
+/* Original target entry $C36B. */
 void mysmb_enemy_init_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
 }
 
 /* Original target entry $C787; extracted legacy body. */
 void mysmb_enemy_init_piranha_entry(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_enemy_init_legacy_defaults(game, slot);
     mysmb_enemy_init_piranha_plant(game, slot);
 }
 
-/* Original target entry $C375; extracted legacy body. */
+/* Original target entry $C375. */
 void mysmb_enemy_init_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
+    mysmb_enemy_init_small_box(game, slot);
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+        (mysmb_u8)(game->ram[0x07a7U + slot] & 0x10U);
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
 }
 
-/* Original target entry $C2F7; extracted legacy body. */
+/* Original target entry $C2F7. */
 void mysmb_enemy_init_podoboo(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 2U;
     game->ram[MYSMB_ENEMY_Y + slot] = 2U;
     game->ram[0x0796U + slot] = 1U;
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    mysmb_enemy_init_small_box(game, slot);
 }
 
-/* Original target entry $C342; extracted legacy body. */
+/* Original target entry $C342. */
 void mysmb_enemy_init_bloober(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    mysmb_enemy_init_small_box(game, slot);
 }
 
 /* Original target entry $C7D1; extracted legacy body. */
 void mysmb_enemy_init_jump_green_ptroopa(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_enemy_init_legacy_defaults(game, slot);
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
 }
 
-/* Original target entry $C34A; extracted legacy body. */
+/* Original target entry $C34A. */
 void mysmb_enemy_init_red_ptroopa(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_u8 adder;
+    adder = game->ram[MYSMB_ENEMY_Y + slot] < 0x80U ? 0x30U : 0xe0U;
     game->ram[MYSMB_ENEMY_X_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(
-        game->ram[MYSMB_ENEMY_Y + slot] +
-        (game->ram[MYSMB_ENEMY_Y + slot] < 0x80U ? 0x30U : 0xe0U));
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    /* The initializer vector's ASL leaves carry clear for all declared IDs. */
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
+        (mysmb_u8)(adder + game->ram[MYSMB_ENEMY_Y + slot]);
+    mysmb_enemy_init_tall_box(game, slot);
 }
 
-/* Original target entry $C33D; extracted legacy body. */
+/* Original target entry $C33D. */
 void mysmb_enemy_init_horizontal_fly_swim(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    mysmb_enemy_init_speed(game, slot, 0U);
 }
 
-/* Original target entry $C385; extracted legacy body. */
+/* ROM $C38A SetupLakitu is also a direct entry for the frenzy producer. */
+void mysmb_enemy_setup_lakitu(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[0x06d1U] = 0U;
+    mysmb_enemy_init_horizontal_fly_swim(game, slot);
+    mysmb_enemy_init_tall_box_only(game, slot);
+}
+
+/* ROM $C385 InitLakitu / $C395 KillLakitu. */
 void mysmb_enemy_init_lakitu(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[0x06d1U] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    if (game->ram[MYSMB_ENEMY_FRENZY_BUFFER] != 0U) {
+        mysmb_objects_erase_enemy(game, slot);
+        return;
+    }
+    mysmb_enemy_setup_lakitu(game, slot);
 }
 
 /* Original $C459/$C45C entries; duplicate allocation remains pending. */
@@ -193,7 +243,7 @@ void mysmb_enemy_init_firebar_entry(struct mysmb_game *game, mysmb_u8 slot, mysm
     mysmb_u8 old_x = game->ram[MYSMB_ENEMY_X + slot];
     mysmb_u8 index = long_entry != 0U ? 4U :
         (mysmb_u8)(game->ram[MYSMB_ENEMY_ID + slot] - 27U);
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_enemy_init_legacy_defaults(game, slot);
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
     game->ram[MYSMB_FIREBAR_SPIN_SPEED + slot] = spin_speed[index];
@@ -210,7 +260,7 @@ static void mysmb_enemy_init_platform_defaults(struct mysmb_game *game, mysmb_u8
     mysmb_u8 platform_id;
 
 
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_enemy_init_legacy_defaults(game, slot);
     platform_id = game->ram[MYSMB_ENEMY_ID + slot];
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
@@ -312,7 +362,7 @@ void mysmb_enemy_init_small_lift_down(struct mysmb_game *game, mysmb_u8 slot)
 /* Original target $C549; duplicate allocation remains pending. */
 void mysmb_enemy_init_bowser(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_normal(game, slot);
+    mysmb_enemy_init_legacy_defaults(game, slot);
     game->ram[MYSMB_BOWSER_BODY_CONTROLS] = 0U;
     game->ram[MYSMB_BOWSER_ORIGIN_X] = game->ram[MYSMB_ENEMY_X + slot];
     game->ram[MYSMB_BOWSER_FLAME_TIMER] = 0U;
@@ -326,14 +376,8 @@ void mysmb_enemy_init_bowser(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 10U;
 }
 
-/* Original target $C307; retained legacy writes await S4 replacement. */
+/* Original target $C307. */
 void mysmb_enemy_init_retainer(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    game->ram[MYSMB_ENEMY_Y + slot] = 0xb8U;
 }

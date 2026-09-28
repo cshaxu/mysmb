@@ -18,6 +18,10 @@ void mysmb_enemy_init_jump_green_ptroopa(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_enemy_init_red_ptroopa(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_horizontal_fly_swim(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_lakitu(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_setup_lakitu(struct mysmb_game *game, mysmb_u8 slot);
+/* Original shared tails, also called by later actor and frenzy chains. */
+void mysmb_enemy_init_vertical_state(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_init_small_box(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_firebar_entry(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 long_entry);
 void mysmb_enemy_init_balance_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_vertical_platform(struct mysmb_game *game, mysmb_u8 slot);

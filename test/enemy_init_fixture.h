@@ -11,9 +11,12 @@ static unsigned char mysmb_enemy_init_slot(unsigned int n)
  * ID zero instead uses an ordinary unchanged ROM enemy record. */
 static void mysmb_enemy_init_fixture(unsigned char *ram, unsigned int n)
 {
+    static const unsigned char common_ids[13] = {
+        1U,3U,5U,6U,7U,8U,10U,11U,12U,15U,16U,17U,53U
+    };
     unsigned char id, slot, i;
     mysmb_entrance_fixture(ram, 0U);
-    id = (unsigned char)(n / 2U);
+    id = n < 110U ? (unsigned char)(n / 2U) : common_ids[(n - 110U) / 4U];
     slot = mysmb_enemy_init_slot(n);
     ram[0x0eU] = 12U;
     ram[0x747U] = 0xffU;
@@ -46,6 +49,18 @@ static void mysmb_enemy_init_fixture(unsigned char *ram, unsigned int n)
         ram[0x6fU] = 4U;
         ram[0x6d7U] = 1U;
     }
+    if (n >= 110U) {
+        /* Added S4 cases retain original control flow while selecting both
+         * Y signs, PRNG bit values and occupied/free frenzy at entry. */
+        ram[0xcfU + slot] = ((n - 110U) & 2U) ? 0x78U : 0x70U;
+        ram[0x401U + slot] = 0x39U;
+        ram[0x417U + slot] = 0x67U;
+        ram[0x110U + slot] = 0x25U;
+        ram[0x125U + slot] = 0x35U;
+        if (id == 17U) ram[0x6cbU] = ((n - 110U) & 2U) ? 0x11U : 0U;
+        for (i = 0U; i < 8U; ++i)
+            ram[0x7a7U + i] = ((n - 110U) & 2U) ? 0x20U : 0U;
+    }
 }
 
 /* Neutral target addresses audited against all 110 original vector bytes.
@@ -76,7 +91,7 @@ static int mysmb_enemy_init_argument(const char *text)
         value = value * 10U + (unsigned int)(text[i++] - '0');
         ++digits;
     }
-    if (digits == 0U || text[i] != '\0' || value >= 110U) return 0;
+    if (digits == 0U || text[i] != '\0' || value >= 162U) return 0;
     return (int)value + 1;
 }
 #endif

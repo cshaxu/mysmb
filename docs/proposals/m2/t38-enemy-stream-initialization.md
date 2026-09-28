@@ -679,3 +679,154 @@ EXEs below are test deliveries, not a claim that the game is ROM-complete.
 | mysmb16.exe | 254897 | 10d2c9dcdcf92beb87cf3586d93cc6d9a3455c0e2f0aa92a49e9d702fd5e1e18 |
 | mysmb32.exe | 336622 | 7fb00dc1a4e9f9e2e1fb45e38eb57bcb183ba33e9eb4de3cde39c5a7bd5af821 |
 | mysmb64.exe | 344229 | d8e379d7ca8e1b8182d8f75d81e6b610ff275895a5646173765506582cd94651 |
+
+## S4 admission: common initializers and shared tails
+
+After S3 commit 2294663, coordinator accepts transfer-168 from T19 S5 for
+all 23 source-ordered labels in the S4 plan row. All are open: incoming
+925/1,992, expected 23, maximum 948. S3 remains closed. Entry is the admitted
+initializer vector; exits are source returns or the existing EraseEnemyObject
+and TallBBox2 handoffs. Shared enemy/init_targets.c owns this implementation.
+S4 restores the original $C2F1-$C397 common family, including both data tables,
+exact write footprints, shared speed/box/vertical tails, signed-Y center
+selection and frenzy-dependent Lakitu rejection. Branches and byte carry
+are read from the admitted local ROM/listing before implementing C.
+
+Non-goals: no frenzy-generator, firebar, platform, Bowser, piranha or green
+Paratroopa body repair; no platform gameplay. These pending child bodies
+currently call the old common default block; isolate that legacy block so
+correcting InitNormalEnemy does not silently migrate unrelated nodes.
+Existing EraseEnemyObject is a child dependency, not new completion credit.
+TallBBox2 is a one-write successor outside this receipt; expose its exact
+handoff without crediting its deferred label. All required calls and aliases
+are swept, not only current visible enemy types.
+
+ROM-logic evidence reuses S3's recorded initializer routes and S2's occupied
+frenzy cases, adding bounded source-RAM branch cases where needed. Compare
+actual full portable RAM without child substitution for internal shared
+tails; keep any external-child comparison explicit. Native tests separately
+exercise sentinel write footprints, all six slots, mode/PRNG bits, Y sign
+and wrap boundaries, plus cross-width builds, DOS16 link and platform purity.
+Three owner-authorized EXEs accompany every P; DOS remains link-only.
+Reference provenance remains the owner-local SMB1 ROM and reviewed listing;
+no third-party implementation import. Existing S2/S3 snapshots are retained
+as S4 dependencies. New raw evidence stays beneath build/m2-t38-s4, four-MB
+budget, twenty-second per-run timeout, cleanup owner S4. Stop on unadmitted
+repair, altered reference execution or concealed mismatches. Closure requires
+individual dispositions, both proof tracks, tracker/ledger agreement and
+three artifacts. No S4 node is credited on admission.
+
+### S4 implementation checkpoint
+
+The common family now uses the original shared SetESpd/TallBBox/SetBBox/
+InitVStf and SmallBBox tails. Normal initialization no longer invents flag
+or state writes. Podoboo preserves unrelated horizontal state, retainer only
+sets Y, Bullet Bill only sets direction/box, and Cheep-Cheep binds the original
+PRNG movement bit without clearing unrelated force/dummy fields. Lakitu
+rejects occupied frenzy via the existing EraseEnemyObject; its successful
+branch resets reappearance and follows the horizontal/TallBBox2 calls.
+Unadmitted piranha, green Paratroopa, firebar, platform and Bowser bodies retain
+the isolated legacy defaults; they are not silently changed by this repair.
+
+Reused S3 original records match all 60 scoped entry comparisons across both
+widths. The complete initializer matrix improves 128/220 -> 136/220, and the
+S2 parser matrix improves 110/160 -> 138/160. The integrated checker now also
+retains original game RAM $0109-$0139, including the floatey-number and shell
+chain fields cleared by EraseEnemyObject, instead of checking only digit
+modifier RAM in that region. A separate sentinel test passes 23,040 full-RAM
+write-footprint cases per width, covering all slots and Y bytes, both hard
+mode selectors, PRNG bit selection and Lakitu rejection. Strict C90 passes.
+
+This is not closure: the inherited original fixtures wrap the red Paratroopa
+Y into the lower half, so its other sign branch needs an additional original
+RAM-only route. The source data-table binding and complete branch/call audit,
+remaining focused regressions, three-target delivery and node updates also
+remain required. All 23 nodes remain uncredited at this checkpoint.
+
+## S4 original common initializer proof
+
+S4 closes all 23 received and expected labels, with no scoped transfer:
+925 -> 948 / 1,992. This is actual common-initializer proof, without child
+return substitution. Other initializer and actor bodies remain incomplete;
+S5 Lakitu/Spiny allocation is next in the original sequence.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| InitGoomba | $C2F1 | Call normal speed initialization then SmallBBox, preserving unrelated state; match |
+| InitPodoboo | $C2F7 | Set high-Y/Y to two, interval timer to one, state zero, then SmallBBox; match |
+| InitRetainerObj | $C307 | Write only the fixed Y coordinate $B8; match |
+| NormalXSpdData | $C30C | Both original speed bytes bound to their consuming primary-mode paths; match |
+| InitNormalEnemy | $C30E | Select primary-mode index, read speed and enter shared speed/box tails without flag/state writes; match |
+| GetESpd | $C316 | Read the selected original normal-speed byte; match |
+| SetESpd | $C319 | Write horizontal speed then enter TallBBox; match |
+| InitRedKoopa | $C31E | Call normal initializer before setting state one; match |
+| HBroWalkingTimerData | $C326 | Both original walking-delay bytes and legal secondary-mode indexes verified; match |
+| InitHammerBro | $C328 | Zero throw timer/speed, read walking delay and enter SetBBox with $0B; match |
+| InitHorizFlySwimEnemy | $C33D | Supply zero speed to shared SetESpd; match |
+| InitBloober | $C342 | Zero BlooperMoveSpeed then fall through SmallBBox; match |
+| SmallBBox | $C346 | Select box nine; fixed nonzero load makes its BNE unconditional; match |
+| InitRedPTroopa | $C34A | Save original Y, select signed-Y center adjustment, add with vector-proven clear carry, then TallBBox; match |
+| GetCent | $C355 | Preserve wrapped ADC result in center Y with both sign branches executed; match |
+| TallBBox | $C35A | Select box three for SetBBox; match |
+| SetBBox | $C35C | Write box and direction two, then InitVStf; match |
+| InitVStf | $C363 | Clear only vertical speed and movement force; match |
+| InitBulletBill | $C36B | Write only direction two and box nine; match |
+| InitCheepCheep | $C375 | Call SmallBBox then preserve PRNG bit four and original Y at their source aliases; match |
+| InitLakitu | $C385 | Read frenzy buffer and select setup versus erase; match |
+| SetupLakitu | $C38A | Clear reappearance timer, call horizontal initializer then the existing TallBBox2 tail; match |
+| KillLakitu | $C395 | Tail-call existing EraseEnemyObject; all eight source fields, including mapped stack-page game data, checked; match |
+
+Thirty retained S3 entry scenarios plus 52 added RAM-only NMI scenarios give
+164/164 actual portable-RAM matches across x86/x64. The added cases exercise
+both red-Paratroopa Y signs, both Cheep-Cheep PRNG bit values and free/occupied
+Lakitu frenzy. Each of the 21 code labels is observed in original execution;
+both data tables match original ROM bytes and their consuming routes. All
+three conditional branches execute both outcomes. SmallBBox's fourth branch
+is source-unconditional: LDA #$09 makes BNE taken, so an untaken observation
+would require altered source semantics. All eleven original call/tail edges
+are mapped to shared native entries/tails. Fifty-two observer-free coverage
+runs produce byte-identical original frame records.
+
+The native sentinel test checks 23,046 complete-RAM cases per width, including
+the separate SetupLakitu entry with occupied frenzy; that direct entry must
+bypass InitLakitu's rejection. Original InitializeArea clears SecondaryHardMode
+through InitializeMemory and the sole named SetSecHard producer increments
+it once, bounding the walking-timer selector to zero/one. InitRedPTroopa has
+only the initializer-vector incoming reference; JumpEngine ASL of $0F clears
+carry before its center-position ADC. These source invariants are explicit,
+not synthesized clamps. Hardware stack remains outside the native RAM proof,
+but its game-variable region $0109-$0139 is now retained, including floatey
+numbers and shell-chain state cleared by EraseEnemyObject.
+
+Final actual matrices are 166/192 loop, 138/160 parser, 136/220 complete
+initializer and 104/104 added common-family comparisons. All 404 previously
+matching roots remain matched. Remaining failures belong to pending children;
+no scratch bytes or failed comparisons are hidden. Thirty-eight of forty
+related native regressions pass; both existing Bowser exit-four failures
+remain. Common, NoInit and stream focused tests pass against final objects.
+All 85 shared units compile as strict C90 on both Windows widths; self-tests
+and bounded hidden-window response probes pass. DOS16 links with the existing
+OLDNAMES warning, without runtime/resource/physical-486 qualification.
+Platform purity passes and no platform source changes.
+
+The similar-issue sweep covers every admitted initializer, source aliases,
+data producer and incoming call. Pending frenzy/platform/Bowser/MovePodoboo
+and movement/collision callers still own their incoming-edge migration;
+public SetupLakitu, SmallBBox and InitVStf entries are available to them.
+Those later caller nodes are not credited by this S. Unadmitted initializer
+bodies keep isolated legacy defaults, so fixing InitNormalEnemy does not
+silently repair their behavior. TallBBox2 and EraseEnemyObject dependencies
+receive no new node credit. Source order and later node custody are preserved.
+
+Reproduce with enemy_init_fixture cases 110-161, reference_frame_recorder,
+enemy_loop_actual_check and enemy_common_init_smoke, plus retained S3 scoped
+records. Owner-local raw evidence remains below build/m2-t38-s4 (669,829 bytes,
+four-MB budget and twenty-second process timeouts); retained S2/S3 dependencies
+stay in their own ignored directories. No new source/ROM import is introduced.
+Three owner-authorized test EXEs follow; this is not full-game certification.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 254757 | 41eab99a186ef0e194bbd65732b759d79d5c7e748256dc1ab78d3effab2aca24 |
+| mysmb32.exe | 337722 | ce559a214fdfcec696c19dba3ffcb50b90182ac8399513e378c2417b1223c88b |
+| mysmb64.exe | 344807 | 46472e77ca6e92ec0196f3770502c7e07160b39b3ea8769660d8e1b6274a548e |

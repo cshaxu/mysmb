@@ -48,7 +48,9 @@ int main(int argc,char **argv)
     } else return 66;
     failures=0U;
     for(i=0U;i<2048U;++i) {
-        if(i>=0x100U && i<0x200U && (i<0x133U || i>0x139U)) continue;
+        /* Original game variables include floatey numbers and shell chains,
+         * not only DigitModifier. Retain their whole $0109-$0139 region. */
+        if(i>=0x100U && i<0x200U && (i<0x109U || i>0x139U)) continue;
         if(game.ram[i]!=expected[i]) {
             printf("%04x original=%02x native=%02x\n",i,
                 (unsigned int)expected[i],(unsigned int)game.ram[i]);

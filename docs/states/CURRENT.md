@@ -2,31 +2,36 @@
 
 ## Current Work
 
-**M2 T38 S3 is closed at 925 / 1,992: all three vector caller nodes proven; initializer children remain incomplete.**
+**M2 T38 S4 is closed at 948 / 1,992: all 23 common initializer nodes proven; later children remain incomplete.**
 
-## M2 T38 S3 Packet
+## M2 T38 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S3, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after S2 commit 52ccb53; coordinator accepts transfer-167. |
-| Objective | Restore CheckpointEnemyID, all 55 InitEnemyRoutines entries and NoInitCode. |
-| Non-goals | No unadmitted initializer interiors, actor movement, rendering or platform gameplay. |
-| Reference Baseline | 922 / 1,992; three scoped open labels, three expected, maximum 925. |
-| Candidate Proposal | [S3 initializer vector](../proposals/m2/t38-enemy-stream-initialization.md#s3-admission-checkpoint-and-full-initializer-vector). |
-| Files And ABI Surface | Shared enemy initialization owner and explicit child entry contracts, tests, recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T38 S4, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after S3 commit 2294663; coordinator accepts transfer-168. |
+| Objective | Restore the 23 planned common initializer/data/shared-tail nodes through KillLakitu. |
+| Non-goals | No unadmitted initializer/frenzy/actor or platform gameplay repair. |
+| Reference Baseline | 925 / 1,992; 23 scoped open labels, 23 expected, maximum 948. Exact names in S4 plan and ledger. |
+| Candidate Proposal | [S4 common initializers](../proposals/m2/t38-enemy-stream-initialization.md#s4-admission-common-initializers-and-shared-tails). |
+| Files And ABI Surface | Shared enemy/init_targets.c and declared child entries, tests, recorder, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Exact original 55-entry byte/target/write audit and NMI routes; native full-ID/Y/slot checks, cross-width builds, DOS link and platform purity. |
-| Expected Markers | Below-$15 Y addition and mask, $C281 jump-table pointer, selected target bytes, no-init return, 31 distinct child entries. |
-| Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Three exact dispositions, both proof tracks, explicit child/residual gaps, ledger and artifact hashes. |
+| Verification | Original branches/tables/read-write/call graph against NMI records; independent sentinel tests, cross-width builds, DOS link and purity. |
+| Expected Markers | Exact timer/PRNG/box/reset writes, preserved unrelated state, signed-Y center and Lakitu erase branch. |
+| Asset Needs | Existing owner-local ROM/listing and retained S2/S3 records; three owner-authorized EXEs per P; DOS link-only. |
+| Reporting Requirements | All 23 dispositions, dual proof, explicit child gaps and artifact hashes. |
 | Stop Conditions | Unadmitted child repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | All three nodes proven or exact accepted transfer; both tracks, tracker and ledger agree. |
-| Original Owner Request | Faithful source call graph and logic in native shared 16/32/64-bit C, in original order. |
-| Similar-Issue Sweep | Every checkpoint/initializer caller, all 55 vector entries and aliases, no-init IDs and early special-ID bypasses. |
+| Exit Criteria | All 23 nodes proven or exact accepted transfer; both tracks, tracker and ledger agree. |
+| Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
+| Similar-Issue Sweep | Every common initializer caller and shared-tail alias; preserve unadmitted legacy child behavior. |
 
 
 
+
+
+S4 closure: [common initializer proof](../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof).
+164 actual scoped matches; parser 138/160, full initializer 136/220.
+Three EXEs refreshed; existing Bowser failures and DOS link-only limit remain.
 
 S3 closure: [initializer-vector proof](../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof).
 220 caller matches; 128/220 actual matches, 92 child failures retained.
@@ -37,7 +42,7 @@ S2 closure: [parser proof](../proposals/m2/t38-enemy-stream-initialization.md#s2
 
 S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
-T38 S3 is closed; S4 common initializers is next and not yet admitted.
+T38 S4 is closed; S5 Lakitu/Spiny allocation is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.
