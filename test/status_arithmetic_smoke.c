@@ -1,4 +1,5 @@
 #include "game/status.h"
+#include "game/frame_root.h"
 
 #include <string.h>
 

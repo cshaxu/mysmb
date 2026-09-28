@@ -34,6 +34,7 @@
 #include "player_end_level_fixture.h"
 #include "player_movement_fixture.h"
 #include "engine_cannon_fixture.h"
+#include "timer_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
@@ -1169,6 +1170,10 @@ int main(int argument_count, char **arguments)
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(853 + block_scenario);
         }
+        else if ((block_scenario = mysmb_timer_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(1244 + block_scenario);
+        }
         else if ((block_scenario = mysmb_player_movement_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(904 + block_scenario);
@@ -1425,6 +1430,9 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
+            else if (t26_fixture >= 1245U && t26_fixture <= 1260U) {
+                mysmb_timer_fixture(game.ram,(mysmb_u8)(t26_fixture-1245U));
+            }
             else if (t26_fixture >= 905U && t26_fixture <= 1150U) {
                 mysmb_player_movement_fixture(game.ram,(mysmb_u8)(t26_fixture-905U));
                 game.ppu_control_0 = game.ram[0x0778U];

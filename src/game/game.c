@@ -119,34 +119,6 @@ static mysmb_u8 mysmb_game_palette_offset(mysmb_u16 address)
     return offset;
 }
 
-/* ROM RunGameTimer.  The audio subsystem consumes its queue on a following
- * frame; ForceInjury retains collision's single death-state owner. */
-mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_RAM_OPER_MODE] == 0U ||
-        game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] < 8U ||
-        game->ram[MYSMB_RAM_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
-        game->ram[MYSMB_RAM_PLAYER_Y_HIGH] >= 2U ||
-        game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] != 0U) return 0U;
-    if ((game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS] |
-         game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] |
-         game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U]) == 0U) {
-        game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
-        mysmb_objects_force_injury(game);
-        game->ram[MYSMB_RAM_TIMER_EXPIRED]++;
-        return 0U;
-    }
-    if (game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS] == 1U &&
-        game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 1U] == 0U &&
-        game->ram[MYSMB_RAM_GAME_TIMER_HUNDREDS + 2U] == 0U) {
-        game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x40U;
-    }
-    game->ram[MYSMB_RAM_GAME_TIMER_CONTROL] = 0x18U;
-    game->ram[0x0139U] = 0xffU;
-    mysmb_status_apply_digit_modifier(game, 0x23U);
-    return 1U;
-}
-
 /* Translation of the game-mode portion of ScreenRoutines.  The original
  * advances one task per main-loop frame; command-producing tasks wait for
  * the following NMI to consume VRAM_Buffer1 before writing another stream. */

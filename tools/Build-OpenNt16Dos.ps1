@@ -14,6 +14,7 @@ $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC
 $sources = @(
     'game/whirlpool.c',
     'game/cannon.c',
+    'game/timer.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
     'game/enemy/background.c',

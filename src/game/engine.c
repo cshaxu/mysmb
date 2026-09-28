@@ -36,8 +36,7 @@ void mysmb_game_engine(struct mysmb_game *game)
      * before the timer tail, after this frame's player/scroll update. */
     mysmb_objects_step_flagpole(game);
     /* ROM runs the timer before ColorRotation and the palette/music tail. */
-    if (mysmb_game_run_timer(game) != 0U)
-        (void)mysmb_area_queue_timer_status(game);
+    (void)mysmb_game_run_timer(game);
     mysmb_area_step_palette_rotation(game);
     mysmb_game_cycle_player_palette(game);
     game->ram[MYSMB_FRAME_PREVIOUS_A_B_BUTTONS] =

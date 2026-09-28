@@ -12,16 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 758 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 762 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 133 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,101 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,097 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **758 / 1,992 (38.05%)**. The 133 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **762 / 1,992 (38.25%)**. The 133 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T35 S1 P1](../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof)
-proves eight bubble nodes with 60 actual-native original entry/return matches,
-including direct setup fallthrough, all slots, branches and both data tables.
+Latest task review: [T35 S2 P1](../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof)
+proves four timer caller nodes with 32 original/native caller matches; actual
+children retain two injury failures versus thirty matches. Full-frame output
+differences remain explicit and unchanged from S1.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (758)
+## Completed matches (762)
 
 | ROM line | Node |
 | ---: | --- |
@@ -726,6 +727,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6451 | `ExitBubl` |
 | 6453 | `Bubble_MForceData` |
 | 6456 | `BubbleTimerData` |
+| 6461 | `RunGameTimer` |
+| 6486 | `ResGTCtrl` |
+| 6494 | `TimeUpOn` |
+| 6497 | `ExGTimer` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

@@ -2,28 +2,33 @@
 
 ## Current Work
 
-**M2 T35 S1 is closed at 758 / 1,992: all eight bubble nodes proven; timer S2 admission is next.**
+**M2 T35 S2 is closed at 762 / 1,992: four timer caller nodes proven; S3 jumpspring admission is next.**
 
-## M2 T35 S1 Packet
+## M2 T35 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T35 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after T34 commit 4142bd0; coordinator accepts transfer-144. |
-| Objective | Complete eight bubble creation/movement/data nodes, BubbleCheck through BubbleTimerData. |
-| Non-goals | No timer, jumpspring, vine, relative/offscreen or graphics child repair. |
-| Reference Baseline | 750 / 1,992; eight unique open labels, expected eight, maximum 758. T35 has 22 incomplete and 16 previously complete labels, maximum 772. |
-| Candidate Proposal | [Bubble chain](../proposals/m2/bubbles-timer-warp.md#s1-admission-bubble-creation-and-movement). |
-| Files And ABI Surface | Shared bubble owner and declarations, focused tests/recorder, build lists and three artifacts. |
+| Identifier Mode | M2 T35 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S1 commit 5df5bad; coordinator accepts transfer-145. |
+| Objective | Complete RunGameTimer, ResGTCtrl, TimeUpOn and ExGTimer as one timer chain. |
+| Non-goals | No digit-arithmetic, status-output or injury child algorithm repair; no later actor work. |
+| Reference Baseline | 758 / 1,992; four open labels, expected four, maximum 762. |
+| Candidate Proposal | [Timer chain](../proposals/m2/bubbles-timer-warp.md#s2-admission-timer-gates-countdown-and-expiry). |
+| Files And ABI Surface | Shared timer owner, engine caller, declarations/build lists, tests/recorder and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original source/table/entry-return RAM and branch proof; independent native tests, builds, purity and bounded window probes. |
-| Expected Markers | Random scratch; inactive/timer gates; facing/page/Y carry; setup fallthrough; force borrow; status-bar threshold. |
-| Asset Needs | Existing owner-local ROM/listing, ignored bounded traces; owner-authorized three EXEs, DOS link-only. |
-| Reporting Requirements | Eight exact dispositions, two proof tracks, table/branch results and three artifact hashes. |
-| Stop Conditions | Unadmitted child repair, reference mutation, masked differences or platform gameplay. |
-| Exit Criteria | All received nodes proven or accepted transfers; tracker/evidence/artifacts agree. |
-| Original Owner Request | Complete original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
-| Similar-Issue Sweep | Every setup caller, bubble movement body, scratch/random, timer and coordinate writer. |
+| Verification | Original branch/state/child-order proof with digit-modifier bytes; separate actual-child comparisons; independent native tests and three builds. |
+| Expected Markers | Mode/engine/Y/control gates; zero and 100; timer reload; digit modifier; status tail; forced-small injury; post-child expiry increment. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored evidence, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Four exact dispositions, caller/actual-child limits, dual verification and artifact hashes. |
+| Stop Conditions | Unadmitted repair, reference mutation, hidden differences or platform game logic. |
+| Exit Criteria | Every received node proven or accepted transfer; node record, evidence and artifacts agree. |
+| Original Owner Request | Original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
+| Similar-Issue Sweep | All timer definitions/callers, countdown, status-output and expiry state writers. |
+
+## T35 S1 closure summary
+
+Eight bubble nodes proven with 60 actual original/native matches; three EXEs
+committed as 5df5bad. [Evidence](../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof).
 
 ## T34 closure summary
 

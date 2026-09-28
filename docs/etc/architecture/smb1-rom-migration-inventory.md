@@ -869,10 +869,10 @@ The labels and branches behind every line remain open until individually bound b
 | 6451 | `ExitBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
 | 6453 | `Bubble_MForceData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
 | 6456 | `BubbleTimerData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6461 | `RunGameTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rungametimer) |
-| 6486 | `ResGTCtrl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resgtctrl) |
-| 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
-| 6497 | `ExGTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exgtimer) |
+| 6461 | `RunGameTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6486 | `ResGTCtrl` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6494 | `TimeUpOn` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6497 | `ExGTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
 | 6501 | `WarpZoneObject` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P4 scoped dual evidence](../../history/M2-T31-game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
 | 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |

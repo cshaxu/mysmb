@@ -34,7 +34,7 @@ CHILD(mysmb_objects_step_flagpole,10U)
 mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
 { (void)game;event(11U);return (mysmb_u8)timer_result; }
 mysmb_u8 mysmb_area_queue_timer_status(struct mysmb_game *game)
-{ (void)game;event(12U);return 0U; }
+{ (void)game;bad=1U;return 0U; }
 void mysmb_area_step_palette_rotation(struct mysmb_game *game)
 { (void)game;event(13U); }
 void mysmb_game_cycle_player_palette(struct mysmb_game *game)
@@ -81,10 +81,10 @@ int main(void)
         game.ram[0xcU]=0xffU;game.ram[0xdU]=(mysmb_u8)buttons;
         count=0U;bad=0U;
         mysmb_game_engine(&game);
-        if(bad || count!=14U+timer_result) return 1;
+        if(bad || count!=14U) return 1;
         j=0U;
         for(i=1U;i<=15U;++i) {
-            if(i==12U && timer_result==0U) continue;
+            if(i==12U) continue;
             if(sequence[j++]!=i) return 2;
         }
         if(game.ram[0xdU]!=(mysmb_u8)(buttons^0xffU)) return 3;
