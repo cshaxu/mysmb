@@ -104,28 +104,6 @@ void mysmb_game_secondary_setup(struct mysmb_game *game);
 void mysmb_game_step_area_parser(struct mysmb_game *game);
 void mysmb_game_submit_oam(struct mysmb_game *game);
 
-/* ROM GameEngine: NoChgMus / CyclePlayerPalette / ResetPalStar.
- * PlayerGfxHandler has already consumed this attribute for the current OAM
- * DMA; this tail updates it for the following frame. */
-void mysmb_game_cycle_player_palette(struct mysmb_game *game)
-{
-    mysmb_u8 color;
-
-    if (game->ram[MYSMB_RAM_PLAYER_Y_HIGH] < 2U &&
-        game->ram[MYSMB_RAM_STAR_INVINCIBLE_TIMER] == 0U) {
-        game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] &= 0xfcU;
-        return;
-    }
-
-    color = game->ram[MYSMB_RAM_FRAME_COUNTER];
-    if (game->ram[MYSMB_RAM_STAR_INVINCIBLE_TIMER] < 8U) {
-        color = (mysmb_u8)(color >> 2U);
-    }
-    color = (mysmb_u8)((color >> 1U) & 3U);
-    game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] =
-        (mysmb_u8)((game->ram[MYSMB_RAM_PLAYER_SPRITE_ATTRIBUTES] & 0xfcU) |
-                   color);
-}
 /* The 2C02 mirrors sprite entries $3f10/$14/$18/$1c onto the matching
  * universal/background entries.  The portable snapshot deliberately keeps
  * all 32 backing bytes, so the four mirrored source slots remain untouched. */
@@ -353,7 +331,7 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
 
 /* ROM GetAreaMusic.  SecondaryGameSetup and the invincibility-expiry path
  * queue the source area tune; SoundEngine owns its later header expansion. */
-static void mysmb_game_get_area_music(struct mysmb_game *game)
+void mysmb_game_get_area_music(struct mysmb_game *game)
 {
     static const mysmb_u8 music_select_data[6] = {
         0x02U, 0x01U, 0x04U, 0x08U, 0x10U, 0x20U
@@ -493,24 +471,6 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
     game->visible_scroll_x = 0U;
     game->visible_scroll_y = 0U;
     return 1U;
-}
-
-/* ROM $94a5-$9539 GameEngine's UpdScrollVar/RunParser tail.  NMI has already
- * committed a pending buffer at the start of this tick.  The source performs
- * exactly one parser subtask while one is active, or starts one after each
- * accumulated 32 pixels of scroll. */
-void mysmb_game_step_area_parser(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] == 6U) return;
-    if (game->ram[MYSMB_RAM_PARSER_TASK] != 0U) {
-        (void)mysmb_area_parser_task_step(game);
-        return;
-    }
-    if (game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] < 0x20U) return;
-    game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] =
-        (mysmb_u8)(game->ram[MYSMB_RAM_SCROLL_THIRTY_TWO] - 0x20U);
-    game->ram[MYSMB_RAM_VRAM_BUFFER2_OFFSET] = 0U;
-    (void)mysmb_area_parser_task_step(game);
 }
 
 void mysmb_game_bind_chr_source(struct mysmb_game *game,

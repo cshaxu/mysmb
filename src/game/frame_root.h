@@ -15,6 +15,7 @@ void mysmb_game_lose_life(struct mysmb_game *game);
 void mysmb_game_next_area(struct mysmb_game *game);
 mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game);
 void mysmb_game_cycle_player_palette(struct mysmb_game *game);
+void mysmb_game_get_area_music(struct mysmb_game *game);
 void mysmb_game_step_area_parser(struct mysmb_game *game);
 mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
                             const struct mysmb_input *input,

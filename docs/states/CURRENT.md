@@ -2,13 +2,31 @@
 
 ## Current Work
 
-**Idle.**
+**M2 T31 S2 remains active at 549 / 1,992; seven tail nodes complete, GameEngine and ProcELoop pending.**
 
-**M2 T31 S1 is closed at 542 / 1,992; GameMode and GameCoreRoutine complete.**
+S1 is committed as c9fe436. S2 is the sole active chain. P1 fixes the tail; remaining work is exact
+actor/block/cannon/whirlpool call structure, without child completion credit.
 
-Three EXEs are refreshed; DOS remains link-only. The GameEngine call-order
-chain (planned S2) is next, not yet admitted. Startup probes pass, but the
-owner-reported Windows failure remains unreproduced, not claimed repaired.
+## M2 T31 S2 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T31 S2, source-order implementation. |
+| Admission And Approval | Owner-approved goal continuation after committed S1; transfer-122 from T24 S2. |
+| Objective | Restore exact GameEngine caller sequence and its palette/music/parser tail. |
+| Non-goals | No completion credit for child interiors; no fake scheduler placeholders or platform game logic. |
+| Reference Baseline | 542 / 1,992; scope/expected nine open labels listed in proposal, maximum 551. |
+| Candidate Proposal | [T31 S2 chain](../proposals/m2/game-dispatcher.md#s2-admission-gameengine-caller-and-tail-chain). |
+| Files And ABI Surface | Shared engine and caller-owned helpers; relevant child call seams only; focused tests/recorders/build lists and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
+| Verification | Original source call/branch audit, controlled NMI routes, observable call-boundary tests, ordinary-route regressions and three builds. |
+| Expected Markers | Fireball, six enemy/floatey slots, player OAM, block order, misc/cannons/whirlpools, flagpole/timer/colors, music/star branches and parser tail. |
+| Asset Needs | Refresh all three existing EXEs per P; DOS remains link-only. |
+| Reporting Requirements | Nine exact node dispositions, two verification tracks, concrete missing callers and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, suppressed mismatch, fake scheduler, source-order violation or unsupported credit. |
+| Exit Criteria | All nine nodes proven or exactly transferred; missing required call boundaries prevent GameEngine/ProcELoop completion. |
+| Original Owner Request | Complete original-ROM logic, call structure, shared portable C and node-accountable implementation. |
+| Similar-Issue Sweep | All game-engine callers, global actor passes, slot loops, palette/music writers, parser gates and platform boundaries. |
 
 ## M2 T31 S1 Packet (closed)
 

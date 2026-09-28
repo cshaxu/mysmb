@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 542 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,313 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 549 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 139 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,304 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **542 / 1,992 (27.21%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **549 / 1,992 (27.56%)**. The 139 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S1 entry closure](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure)
-completes GameMode and GameCoreRoutine (two new nodes). Child interiors
-remain pending and the three explicitly recorded regression debts remain open.
+Latest task review: [T31 S2 P1](../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery)
+completes seven engine-tail nodes. GameEngine and ProcELoop remain in the
+active S2 with explicit call-structure gaps; no S/T closure is claimed.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (542)
+## Completed matches (549)
 
 | ROM line | Node |
 | ---: | --- |
@@ -567,6 +567,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5299 | `L_WaterArea3` |
 | 5315 | `GameMode` |
 | 5326 | `GameCoreRoutine` |
+| 5371 | `NoChgMus` |
+| 5377 | `CycleTwo` |
+| 5380 | `ClrPlrPal` |
+| 5381 | `SaveAB` |
+| 5385 | `UpdScrollVar` |
+| 5398 | `RunParser` |
+| 5399 | `ExitEng` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
@@ -592,7 +599,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (137)
+## Mapped but not yet matched (139)
 
 | ROM line | Node |
 | ---: | --- |
@@ -631,6 +638,8 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
+| 5336 | `GameEngine` |
+| 5339 | `ProcELoop` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6519 | `ProcessWhirlpools` |

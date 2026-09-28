@@ -2,8 +2,8 @@
 
 ## Status
 
-**M2 T31 open; S1 closed at 542 / 1,992.** Closed T30 precedes this task in the
-source-order recovery plan. No S is active; S2 is next.
+**M2 T31 open; S2 active at 549 / 1,992.** Closed T30 precedes this task in the
+source-order recovery plan. S1 is closed; S2 is the only active chain.
 
 ## Exact task scope and chain plan
 
@@ -180,3 +180,121 @@ Artifact `mysmb16.exe`: 253025 bytes; SHA-256 `6c43f135b1da66a4926b6718606cadd09
 Artifact `mysmb32.exe`: 310643 bytes; SHA-256 `56b7e6e95ae9471d1d1faec4f56442e01ca44b8b825fc1ae6e75c1538bd6a808`.
 
 Artifact `mysmb64.exe`: 317704 bytes; SHA-256 `48222bba5d4e29f29a7f35d675b4f8305cb75d80332f520226bcd48960a69162`.
+
+## S2 admission: GameEngine caller and tail chain
+
+Baseline 542 / 1,992. Scope/expected are exactly the nine open labels
+GameEngine, ProcELoop, NoChgMus, CycleTwo, ClrPlrPal, SaveAB,
+UpdScrollVar, RunParser and ExitEng; maximum 551. Transfer-122 accepts
+these from T24 S2. Admission is continuation under the owner-approved M2 goal.
+Entry is GameCoreRoutine's task-three continuation, exit is ExitEng.
+Shared owners are game/engine.c and extracted engine-tail helpers.
+
+ROM-logic track audits the original $aefe-$af92 call sequence, six-slot
+ProcELoop, slot-one/zero blocks, timer/palette/music order, unsigned and
+sign-bit branches, SaveAB and parser handoff. Source-RAM NMI routes and
+independent call-boundary tests verify the same decisions. Operational
+track runs strict C90 x86/x64, DOS16 link, entry regressions, ordinary
+Start/demo routes, platform purity and three refreshed EXEs per P.
+
+The initial audit finds missing ProcessCannons/ProcessWhirlpools entries,
+global actor passes outside the original slot dispatcher, and two-slot
+block processing hidden inside a child. These are concrete call-boundary
+dependencies: do not add no-op placeholders or certify GameEngine/ProcELoop
+while they remain. Implement independently bounded tail corrections first;
+keep S2 active until every retained node has both proofs or an accepted
+exact transfer. No child interior receives credit or an unadmitted repair.
+The original timer order, extra palette sync and missing music restoration
+are owned by this caller chain. Existing enemy/leaf debt remains explicit.
+
+Owner ROM and reviewed listing are non-redistributable research inputs;
+all generated probes/logs/traces remain under ignored build/m2-t31-s2.
+Use a 20 MB raw-trace budget and twenty-second recorder limits. S2 owns
+cleanup through T review. Never alter reference PC, stack, ROM or output.
+Prior owner authorization covers the existing three EXE artifacts; DOS
+remains link-only until its separate resource binding debt is resolved.
+
+## S2/P1: verified tail partial delivery
+
+The nine-node admission gate passed at 542 / 1,992, expected nine and maximum
+551. This P completes exactly seven nodes; S2 **remains active** with
+GameEngine and ProcELoop incomplete. It is not an S or T closure.
+
+| Node | Source / shared C mapping | Disposition |
+| --- | --- | --- |
+| NoChgMus | $af52; engine_tail.c, frame-counter and star-timer selection | ROM-match complete |
+| CycleTwo | $af5d; engine_tail.c, final right shift and palette leaf | ROM-match complete |
+| ClrPlrPal | $af64; engine_tail.c, source ResetPalStar branch | ROM-match complete |
+| SaveAB | $af67; engine.c, save A/B then clear directional byte | ROM-match complete |
+| UpdScrollVar | $af6f; engine_tail.c, control-six gate then parser/scroll gate | ROM-match complete |
+| RunParser | $af8f; engine_tail.c, exactly one parser task call | ROM-match complete |
+| ExitEng | $af92; shared parser tail return | ROM-match complete |
+| GameEngine | $aefe; engine.c, partial caller sequence | Audited mismatch: missing cannon/whirlpool calls and global actor passes |
+| ProcELoop | $af03; enemy/core.c legacy combined wrapper | Evidence incomplete: move six-slot schedule to caller and preserve each source-visible slot boundary |
+
+Repairs follow source order: RunGameTimer now precedes ColorRotation;
+the ROM-absent engine mysmb_area_sync_player_palette call is removed;
+GetAreaMusic is invoked on the exact star-timer-four/interval-zero path.
+The existing certified music selector gains external linkage only, with no
+body change. NoChgMus/ClrPlrPal preserve the eight-bit CMP/BPL Y result:
+the star gate applies to Y-high 0..1 or 130..255. UpdScrollVar similarly
+preserves CMP #$20 / BMI: with no pending parser task, scroll $20..$9f
+subtracts $20 and clears the second buffer offset before one parser call;
+$a0..$ff takes the negative-result exit. Shared helpers move out of game.c
+into game/engine_tail.c; Victory's UpdScrollVar uses the same implementation.
+
+The [independent engine-tail test](../../../test/engine_tail_smoke.c)
+executes 18,432 palette/music combinations per width, including every Y
+high byte, slow/fast phase edges, zero/four/eight star boundaries and
+interval gates. Another 1,024 cases cover every scroll byte, active/inactive
+parser and control-six gate, observing values at the parser call boundary.
+It links only the actual tail owner and observable music/parser seams.
+
+Fifteen source-RAM fixtures enter the original NMI -> GameMode ->
+GameCoreRoutine -> PlayerDeath -> GameEngine path. Both widths match all
+1,782 persistent RAM bytes and all CIRAM/palette/OAM/audio/PPU output in
+every sample; only zero-page scratch 0..7, CPU stack and two RAM PPU mirrors
+are excluded, with **no output exclusions**. PC coverage reaches all seven
+labels and both outcomes of the Y, star-zero, star-four, interval, palette
+speed, pending-task and signed-scroll decisions. The controller-six early
+return is covered by exact source audit and the isolated native seam;
+these NMI fixtures do not cover it because NMI clears that input. This
+limitation is explicit in the [verifier](../../../test/verify_engine_tail_routes.py).
+No PC/stack/ROM/output patch or synthetic return is used.
+
+The previously observed eight-byte palette command residual is gone.
+Two additional ordinary 600-frame Start/right and idle/demo routes remain
+byte-identical to S1 and across widths. Their persistent work RAM and
+recorded output match original except the already recorded cold-screen
+PPU-control bit at Start samples 1/202 and idle sample 1. No claim is made
+that this independent snapshot debt is fixed. Raw traces total 10,780,593
+bytes below the 20 MB budget, in ignored build/m2-t31-s2, with twenty-second
+per-recorder limits and S2 cleanup ownership through T review.
+
+Sixty existing focused runs and both 515-case entry tests pass, alongside
+both engine-tail tests. The old local-area test now passes its timer-only
+buffer assertions and later fails its historic warp-text fixture; core-smoke
+still fails its ROM-free block metatile expectation. Neither is suppressed
+or represented as a full-suite pass. Strict C90 Windows builds, self-tests,
+hidden-window responsiveness and platform purity pass. DOS16 links the same
+core with existing conversion/OLDNAMES warnings; resource binding is still
+missing, so DOS remains link-only. Three existing EXEs are refreshed under
+the owner's explicit artifact authorization; no raw ROM or generated C is
+committed. Startup failure remains unreproduced, not claimed fixed.
+
+Similar-issue sweep: the only remaining palette-sync production caller is
+game.c's screen-task owner, outside this GameEngine chain. Music has exactly
+SecondaryGameSetup and this source star-expiry caller. Both GameEngine and
+Victory share the same parser tail; no platform source changes. Missing
+cannon/whirlpool scheduling, global actor scans and block-slot exposure
+remain required S2 work, not empty stubs or certification exceptions.
+
+Progress is **549 / 1,992 (27.56%)**: seven new complete nodes, 139 mapped
+incomplete (including the two retained S2 nodes), 1,304 open. Expected nine,
+actual seven so far. All nine remain in S2 custody; no transfer or closure.
+
+Artifact `mysmb16.exe`: 253057 bytes; SHA-256 `f4757046079a613846e1be3bf799d35c0d1ae3794a26f1cde75fb06c6b6e2ade`.
+
+Artifact `mysmb32.exe`: 310859 bytes; SHA-256 `13b6b3b9e2450a9590ecd017c9099db589e7e732844aa7555f03f45a805879bd`.
+
+Artifact `mysmb64.exe`: 317956 bytes; SHA-256 `906a95d138cd45792b9dd22a4410d7b4ce3c6d12d8854152d7eb7da69018db26`.

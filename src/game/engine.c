@@ -122,8 +122,10 @@ void mysmb_game_engine(struct mysmb_game *game)
     /* ROM GameEngine calls FlagpoleRoutine after MiscObjectsCore and
      * before the timer tail, after this frame's player/scroll update. */
     mysmb_objects_step_flagpole(game);
+    /* ROM runs the timer before ColorRotation and the palette/music tail. */
+    if (mysmb_game_run_timer(game) != 0U)
+        (void)mysmb_area_queue_timer_status(game);
     mysmb_area_step_palette_rotation(game);
-    (void)mysmb_area_sync_player_palette(game);
     mysmb_game_cycle_player_palette(game);
     game->ram[MYSMB_FRAME_PREVIOUS_A_B_BUTTONS] =
         game->ram[MYSMB_FRAME_PLAYER_A_B_BUTTONS];
@@ -133,7 +135,4 @@ void mysmb_game_engine(struct mysmb_game *game)
      * zero horizontal input and the KillPlayer-cleared speed. */
     game->ram[MYSMB_FRAME_PLAYER_LEFT_RIGHT_BUTTONS] = 0U;
     mysmb_game_step_area_parser(game);
-    /* Existing timer placement is retained for the GameEngine order audit. */
-    if (mysmb_game_run_timer(game) != 0U)
-        (void)mysmb_area_queue_timer_status(game);
 }

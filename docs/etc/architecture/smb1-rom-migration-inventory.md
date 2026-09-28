@@ -710,15 +710,15 @@ The labels and branches behind every line remain open until individually bound b
 | 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
 | 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
-| 5336 | `GameEngine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameengine) |
-| 5339 | `ProcELoop` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-proceloop) |
-| 5371 | `NoChgMus` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nochgmus) |
-| 5377 | `CycleTwo` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cycletwo) |
-| 5380 | `ClrPlrPal` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clrplrpal) |
-| 5381 | `SaveAB` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-saveab) |
-| 5385 | `UpdScrollVar` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updscrollvar) |
-| 5398 | `RunParser` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runparser) |
-| 5399 | `ExitEng` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exiteng) |
+| 5336 | `GameEngine` | M2 T31 S2 shared engine / engine_tail | audited; mismatch | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5339 | `ProcELoop` | M2 T31 S2 shared engine / engine_tail | mapped; evidence incomplete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5371 | `NoChgMus` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5377 | `CycleTwo` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5380 | `ClrPlrPal` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5381 | `SaveAB` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5385 | `UpdScrollVar` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5398 | `RunParser` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5399 | `ExitEng` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5403 | `ScrollHandler` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollhandler) |
 | 5422 | `ChkNearMid` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknearmid) |
 | 5427 | `ScrollScreen` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollscreen) |
