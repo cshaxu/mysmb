@@ -2,7 +2,10 @@
 
 ## Translation Debt
 
-- [ ] **GameCoreRoutine return and legacy timer fixtures (`TODO(High)`):** after a life-loss transition to task zero, native C still runs the enemy/graphics tail. Source-RAM counterexample and old core/local timer fixture failures are accepted by the [dispatcher candidate](../proposals/m2/game-dispatcher.md#t30s14-dependency-counterexample). T30 S14 changes neither behavior nor their completion status.
+- [x] **GameCoreRoutine post-child return:** T31 S1 restores the original task reload/early return; surviving/final life-loss NMI routes match. [Entry closure](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).
+- [ ] **Engine palette caller and legacy suite debt (`TODO(High)`):** corrected live-task fixtures still expose the prior extra palette command at $0300-$0307 and a ROM-free block replacement expectation failure. The first belongs to planned T31 S2 caller-order audit; the latter stays with the existing block migration owner. No suite pass is claimed. [Evidence](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).
+- [ ] **Cold-screen snapshot control bit (`TODO(High)`):** unchanged native PPU-control bit 7 differs from original on Start-route samples 1/202 and idle sample 1; persistent game state and all other recorded output match. Admission path: NMI/snapshot corrective review after the admitted source-order chain; T31 entry proof does not certify this field. [Evidence](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure).
+
 - [ ] **NextArea Silence selector (`TODO(High)`):** the T30 S14 Silence-writer sweep found zero instead of original $80 in terminal_modes.c. NextArea remains open under its existing receiver; repair and verify its music write in the planned player-control source slice, through the [player route](../proposals/m2/player-route.md). It is not part of the restored TerminateGame claim.
 - [ ] **Historic inline-data address annotations (`TODO(High)`):** the source indexer omitted inline labeled data before T30 S14. Scoped pointer/header addresses now have byte-checked corrected bindings. Recheck later table annotations against the corrected listing at each source-order admission; the [full census](../etc/architecture/m2-t24-s1-full-node-census.md) does not certify unreviewed addresses.
 

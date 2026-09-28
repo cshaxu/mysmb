@@ -11,7 +11,8 @@ int main(void)
      * the original half-way page, and hands area setup to mode task zero. */
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 6U;
     game.ram[0x075aU] = 2U;
     game.ram[0x075fU] = 0U;
@@ -29,7 +30,8 @@ int main(void)
      * and increments its world-derived index only for areas three and four. */
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 6U;
     game.ram[0x075aU] = 2U;
     game.ram[0x075fU] = 0U;
@@ -39,7 +41,8 @@ int main(void)
     if (game.ram[0x075bU] != 6U || game.ram[0x0772U] != 0U) return 21;
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 6U;
     game.ram[0x075aU] = 2U;
     game.ram[0x075fU] = 0U;
@@ -51,7 +54,8 @@ int main(void)
     /* The last solo life enters the original three-stage game-over mode. */
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 6U;
     game.ram[0x075aU] = 0U;
     game.ram[0x075fU] = 4U;
@@ -110,7 +114,8 @@ int main(void)
      * area task, timer reload request, screen gate, and checkpoint reset. */
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 5U;
     game.ram[0x0746U] = 5U;
     game.ram[0x075cU] = 1U;

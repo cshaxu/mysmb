@@ -2,26 +2,61 @@
 
 ## Status
 
-Candidate execution plan only. Owner admission assigns a numeric M2 T. The entries below become S1 through Sn only after that admission.
+**M2 T31 open; S1 closed at 542 / 1,992.** Closed T30 precedes this task in the
+source-order recovery plan. No S is active; S2 is next.
 
-## ROM scope
+## Exact task scope and chain plan
 
-ROM lines 5315-5582: GameMode, GameCoreRoutine, GameEngine, GameRoutines and player-control dispatch boundary.
+The 31 labels below (source lines 5315-5582) are all open at admission.
+Task baseline is 540 / 1,992; intended match set is exactly these 31,
+maximum 571 before any explicitly admitted corrective dependency. Existing
+receiver is T24 S2; S1's two labels transferred and are now complete. Future S rows are plans,
+not concurrent admissions or newly assigned custody.
 
-## Existing-code disposition
+| Planned S | Exact labels in source order | Shared owner / verification boundary |
+| --- | --- | --- |
+| S1 | `GameMode`, `GameCoreRoutine` | dispatcher.c entry table, controller copy, child-return gate |
+| S2 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng` | GameEngine caller/slot order and palette/parser tail |
+| S3 | `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` | player scrolling, screen boundary and data helpers |
+| S4 | `GameRoutines`, `PlayerEntrance`, `ChkBehPipe`, `IntroEntr`, `EntrMode2`, `VineEntr`, `OffVine`, `PlayerRdy`, `ExitEntr`, `AutoControlPlayer` | player-state vector and normal/pipe/vine entry branches |
 
-Replace the central gameplay section of game.c with a thin ROM-order dispatcher. Child behavior remains in owned modules.
+Each S performs source mapping, C translation and both verification tracks
+for its own chain. S2 verifies caller order without claiming child routines;
+S3 verifies scroll carry/offscreen branches; S4 verifies all vector targets
+and entry transitions. T closure adds one cross-chain matrix. No map-only
+or one-label paperwork phase is created.
 
-## Graph contract
+## S1 admission: GameMode and GameCoreRoutine
 
-Called by the frame root; orders fireball, six enemy/loop slots, player, graphics and object tails.
+Scope/expected: `GameMode`, `GameCoreRoutine`, both open. Baseline 540,
+expected two, maximum 542. Accept transfer-121 from T24 S2. The source entry
+is OperModeExecutionTree or title RunDemo; exit is the selected setup child,
+early return after GameRoutines, or GameEngine entry. Existing initialized
+area/screen/setup callees retain their proofs. GameEngine and GameRoutines
+bodies remain explicitly uncertified later-chain dependencies.
 
-## Admission S plan
+Create the shared dispatcher module and separate its two exact entry routines
+from the NMI frame root. Extract the existing game-routine and engine bodies
+into named shared-C callees without repairing their later-chain behavior or
+granting credit. Remove the host-data-presence mode-selector fallback.
+GameCoreRoutine copies SavedJoypadBits[CurrentPlayer] to the master byte,
+calls GameRoutines once, reloads OperMode_Task, and enters GameEngine only
+for unsigned task >= 3. All title/game callers use this one implementation.
 
-1. **S1 after admission** - Map every current game_tick branch to a dispatcher label or deletion target.
-2. **S2 after admission** - Translate GameMode, GameCoreRoutine and task-table dispatch.
-3. **S3 after admission** - Translate GameEngine call order and slot iteration without inlining child handlers.
-4. **S4 after admission** - Trace one NMI through title, area init, play and pause boundaries.
+ROM-logic proof requires exact vector bytes and source branches, original
+NMI routes through tasks 0/1/2/3, a source-reachable life-loss task-changing
+return, and normal GameEngine entry. Call-boundary evidence may prove these
+two entry nodes without certifying later child interiors; every residual
+must be attributed, not suppressed into a whole-frame match claim.
+Independent tests verify selector targets, both controller offsets, call
+order and post-child task gate, plus current frame-route regressions.
+Build strict C90 x86/x64 and DOS16, check purity/startup, refresh three EXEs.
+
+Owner ROM/disassembly remain non-redistributable local research inputs.
+All temporary products and traces stay under ignored build/m2-t31-s1;
+20 MB trace budget, twenty-second recorder limit, bounded fixture count.
+S1 owns cleanup through T review. No PC/stack/ROM patch is allowed. Existing
+owner authorization covers the three tracked artifacts; DOS is link-only.
 
 ## Acceptance
 
@@ -64,3 +99,84 @@ recreate those gates for each leaf.  A chain may not cross an unadmitted
 dependency, a different shared-owner boundary, or a branch family requiring a
 different ROM route.  The binding authority is
 [the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).
+
+## S1/P1: entry chain closure
+
+Admission passed at 540 / 1,992, scope and expected set both exactly
+GameMode and GameCoreRoutine. Actual result is **2/2 complete**, advancing
+to **542 / 1,992 (27.21%)**; 137 mapped incomplete and 1,313 open remain.
+No S1 label is deferred or transferred. T31 remains open; S2 is next.
+
+| Node | Source binding and exact native owner | ROM-logic evidence |
+| --- | --- | --- |
+| GameMode | $aedc-$aee9; dispatcher.c / mysmb_game_mode | OperMode_Task read; original four vector words bind InitializeArea $8fe4, ScreenRoutines $8567, SecondaryGameSetup $9071, GameCoreRoutine $aeea; real Start route executes all four. Selector precondition is source-valid 0..3; invalid table indices are not certified. |
+| GameCoreRoutine | $aeea-$aefd; dispatcher.c / mysmb_game_core_routine | CurrentPlayer selects SavedJoypadBits before GameRoutines; reload OperMode_Task after child, compare unsigned against three, return below three or enter GameEngine. Original NMI PC coverage exercises both $aefb branch outcomes, $aefd return and $aefe engine entry. |
+
+Shared frame_root now calls the single GameMode entry and the same
+GameCoreRoutine for title RunDemo. The ROM-absent task-one/no-PRG gameplay
+fallback is removed. Existing child bodies move unchanged in scheduling
+to game/engine.c, so the dispatcher does not call back into NMI orchestration.
+GameEngine internals remain S2; GameRoutines internals remain S4. Their
+extraction grants no credit. The former misplaced post-demo timer call is
+now inside the existing engine body, before returning to RunDemo's caller.
+No platform source changes and platform-purity passes.
+
+Four controlled source-RAM NMI routes change neither PC, stack, ROM nor
+output. Surviving and final life-loss routes match all 1,782 persistent RAM
+bytes and the complete recorded output on both widths. Scratch 0..7, CPU
+stack and RAM PPU mirrors remain explicitly excluded. Two normal engine
+routes verify each controller selection and the task-three continuation;
+all output matches, while eight persistent VRAM bytes $0300-$0307 differ.
+This is the existing mysmb_area_sync_player_palette call in the uncertified
+engine, absent from the original GameEngine caller sequence. It is a required
+S2 correction, not a complete-frame claim or an entry-node mismatch.
+
+Independent entry tests link only dispatcher.c with observable child seams:
+three setup targets and 512 combinations of player source / post-child task
+give 515 cases per width. Every callback order, reload threshold and saved
+controller byte is asserted. Sixty existing focused executions pass across
+x86/x64 after five mode-test fixtures use ROM-valid task three instead of
+the removed task-one shortcut. Core-smoke's live timer fixture likewise uses
+task three rather than setup task two; local-area removes invalid task $7f.
+These latter suites still fail later checks: core's ROM-free block replacement
+expectation and local-area's timer-only buffer expectation despite the extra
+engine palette command. Both identical failures reproduce against the prior
+T30/S20 objects using the corrected inputs. No full-suite pass is claimed;
+S2 owns the caller/buffer residual, and the existing block owner retains its
+fixture debt. No failing expectation was removed or weakened.
+
+Two ordinary 600-frame NMI routes cover title -> Start -> 1-1 -> movement,
+and idle -> demo. x86/x64 recordings are identical, as are both routes
+against the previous T30/S20 native recorder. Work/OAM RAM $0200-$07ff and
+entry state match the original, excluding only the two RAM PPU mirrors.
+Original output differs solely in PPU-control NMI-enable bit at cold-screen
+samples: Start samples 1 and 202, idle sample 1 (original $90, native $10).
+This unchanged snapshot/prologue debt is recorded separately; it is not
+silently masked into output equivalence. The
+[entry verifier](../../../test/verify_game_entry_routes.py) checks exact
+vectors, PC routes, state and every declared residual. It takes an ignored
+evidence directory and owner ROM argument; raw evidence remains only in
+build/m2-t31-s1, below 20 MB, with twenty-second recorder limits. S1 owns
+cleanup through T review.
+
+Strict C90 x86/x64 compilation, both Windows self-tests and hidden-window
+creation/message responsiveness pass. DOS16 compiles the same sources and
+links MZ, retaining legacy conversion and OLDNAMES.LIB warnings. DOS still
+lacks owner-resource binding and is link-only, not playable validation.
+Both existing assets Windows EXEs also passed startup probes before this
+repair. The owner's startup failure remains unreproduced; this entry repair
+must not be reported as its established fix.
+
+Similar-issue sweep: all production entry callers are frame_root's game-mode
+and RunDemo paths, plus GameMode's task-three vector target. Both converge
+on dispatcher.c. Exactly one child call and one post-child gate remain;
+no platform owns selector, controller-master or task-return decisions.
+Source material stays local and no standalone ROM/generated source enters
+this commit. Prior explicit owner authorization covers the three existing
+EXE artifacts, which are test outputs rather than release qualification.
+
+Artifact `mysmb16.exe`: 253025 bytes; SHA-256 `6c43f135b1da66a4926b6718606cadd09e1e4955918102e972870c1a44cc8b13`.
+
+Artifact `mysmb32.exe`: 310643 bytes; SHA-256 `56b7e6e95ae9471d1d1faec4f56442e01ca44b8b825fc1ae6e75c1538bd6a808`.
+
+Artifact `mysmb64.exe`: 317704 bytes; SHA-256 `48222bba5d4e29f29a7f35d675b4f8305cb75d80332f520226bcd48960a69162`.

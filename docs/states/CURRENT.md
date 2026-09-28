@@ -4,33 +4,32 @@
 
 **Idle.**
 
-**M2 T30 is closed; S20 cross-chain audit leaves progress at 540 / 1,992.**
+**M2 T31 S1 is closed at 542 / 1,992; GameMode and GameCoreRoutine complete.**
 
-The 151-node audit confirms 116 complete and 35 accepted incomplete consumer
-transfers; no unfinished T30 custody remains. Both widths pass 107 integrated
-routes and 60 focused executions. Three EXEs are rebuilt; DOS is link-only.
-The GameMode dispatcher candidate is next and is not yet admitted.
+Three EXEs are refreshed; DOS remains link-only. The GameEngine call-order
+chain (planned S2) is next, not yet admitted. Startup probes pass, but the
+owner-reported Windows failure remains unreproduced, not claimed repaired.
 
-## M2 T30 S20 Packet (closed)
+## M2 T31 S1 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S20, cross-chain audit; zero new matches. |
-| Admission And Approval | Owner-approved M2 continuation following closed S19; no ownership transfer. |
-| Objective | Verify all 151 exact rows, dual evidence, 35 accepted incomplete receipts and integrated area regressions before T closure. |
-| Non-goals | No enemy/loopback repair, no dispatcher admission or new match credit. |
-| Reference Baseline | 540 / 1,992; 151 audit labels, 116 complete and 35 incomplete; expected zero, maximum 540. |
-| Candidate Proposal | [T30 S20 exact scope](../history/M2-T30-area-object-rendering.md#s20-exact-audit-scope). |
-| Files And ABI Surface | Audit records, integrated validation harness if needed and three EXEs; no production ABI change. |
+| Identifier Mode | M2 T31 S1, source-order implementation. |
+| Admission And Approval | Owner-approved M2 continuation after closed T30; transfer-121 from T24 S2. |
+| Objective | Translate GameMode and GameCoreRoutine entry semantics and separate them from NMI orchestration. |
+| Non-goals | No completion credit or behavior repair for GameEngine, scrolling or player child interiors. |
+| Reference Baseline | 540 / 1,992; two open scope labels, two expected matches, maximum 542. |
+| Candidate Proposal | [T31 entry chain](../proposals/m2/game-dispatcher.md#s1-admission-gamemode-and-gamecoreroutine). |
+| Files And ABI Surface | Shared dispatcher, frame-root child extraction, build lists, focused tests/recorders and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Exact node/receipt audit; fresh native scene and pointer routes against original-ROM evidence; focused integrated tests and three builds. |
-| Expected Markers | Preserved source branches, full scene data consumption, unchanged pointer/header and terminal outputs, accepted incomplete ownership. |
-| Asset Needs | Refresh all three existing EXEs; DOS16 link evidence only. |
-| Reporting Requirements | 151 individual dispositions, current counts, route matrix, test/build results, limitations and hashes. |
-| Stop Conditions | Unexplained current-native mismatch, missing receipt/evidence, unsafe source dependency or platform game logic. |
-| Exit Criteria | All 151 rows accounted for, no unfinished T30 custody, integrated checks pass or documented failing track prevents closure. |
-| Original Owner Request | Faithful ROM nodes and graph in source order with dual verification and explicit bookkeeping. |
-| Similar-Issue Sweep | All admitted T30 chains, five corrective dependencies and every 35-node accepted consumer handoff. |
+| Verification | Exact vector and source-order audit; source-RAM original NMI entry/return routes; independent call-boundary tests and native regressions; three builds. |
+| Expected Markers | Four task targets, current-player controller copy before child, task reload, early return below three and engine entry otherwise. |
+| Asset Needs | Refresh all three existing EXEs; DOS16 remains link-only. |
+| Reporting Requirements | Both exact node dispositions, child-boundary limits, original evidence, native tests and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, unexplained entry-boundary mismatch, platform gameplay or unsupported credit. |
+| Exit Criteria | Both entry nodes have source/ROM and independent operational evidence or exact accepted unfinished disposition. |
+| Original Owner Request | Faithful original logic/call graph in source order; shared portable C, no emulation runtime. |
+| Similar-Issue Sweep | Every GameMode/GameCoreRoutine caller, task fallback, current-player joypad selection and post-child task gate. |
 
 ## Retained M2 T15 summary
 

@@ -77,7 +77,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `AreaParserTasks` — ROM line 3073; C owner/evidence pending
   - [ ] `ScrollScreen` — ROM line 5427; C owner/evidence pending
 - [ ] **Game engine, mode transitions and timers**
-  - [ ] `GameCoreRoutine` — ROM line 5326; C owner/evidence pending
+  - [x] `GameCoreRoutine` - ROM line 5326; T31 S1 dispatcher entry proof (child interiors remain open).
   - [ ] `GameEngine` — ROM line 5336; C owner/evidence pending
   - [ ] `GameRoutines` — ROM line 5499; C owner/evidence pending
   - [ ] `GameTimerExpired` — label lookup pending
@@ -708,8 +708,8 @@ The labels and branches behind every line remain open until individually bound b
 | 5271 | `L_WaterArea1` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5282 | `L_WaterArea2` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
-| 5315 | `GameMode` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamemode) |
-| 5326 | `GameCoreRoutine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamecoreroutine) |
+| 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
+| 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
 | 5336 | `GameEngine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameengine) |
 | 5339 | `ProcELoop` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-proceloop) |
 | 5371 | `NoChgMus` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nochgmus) |

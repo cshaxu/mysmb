@@ -907,7 +907,8 @@ int main(void)
     }
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 1U;
+    /* GameMode task 3 is GameCoreRoutine; task 1 is ScreenRoutines. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 1U;
     game.ram[0x001dU] = 0U;
     game.ram[0x0490U] = MYSMB_BUTTON_UP;
@@ -970,7 +971,8 @@ int main(void)
         game.ram[0x00fcU] != 0U) return 1;
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 2U;
+    /* RunGameTimer is reached through the live GameCore task. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 8U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x07f8U] = 1U;

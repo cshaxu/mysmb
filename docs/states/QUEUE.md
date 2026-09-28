@@ -15,9 +15,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-rendering.md#t30-closure),
 with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
-Global progress is 540 / 1,992. The GameMode dispatcher candidate (source
-5315-5582) is next; no next T is admitted by closure. Enemy-data and loopback
-obligations remain with their accepted T19 S5 receiver until source admission.
+Global progress is 542 / 1,992 after T31/S1 completes GameMode and
+GameCoreRoutine. T31 remains open; its planned S2 GameEngine caller-order
+chain is next. No S is currently active. Enemy-data and loopback obligations
+remain with their accepted T19 S5 receiver until source admission.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This

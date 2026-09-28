@@ -207,7 +207,8 @@ int main(void)
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
     game.ram[0x0770U] = 1U;
-    game.ram[0x0772U] = 0x7fU;
+    /* A live GameCore task, never an out-of-table JumpEngine selector. */
+    game.ram[0x0772U] = 3U;
     game.ram[0x000eU] = 8U;
     game.ram[0x00b5U] = 0U;
     game.ram[0x0787U] = 0U;

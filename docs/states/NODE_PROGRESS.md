@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 540 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 542 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,315 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,313 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **540 / 1,992 (27.11%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **542 / 1,992 (27.21%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T30 cross-chain closure](../history/M2-T30-area-object-rendering.md#t30-closure)
-adds no node credit. Its exact audit union has 116 complete and 35 accepted
-incomplete consumer transfers; all 151 labels remain individually accountable.
+Latest task review: [T31 S1 entry closure](../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure)
+completes GameMode and GameCoreRoutine (two new nodes). Child interiors
+remain pending and the three explicitly recorded regression debts remain open.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (540)
+## Completed matches (542)
 
 | ROM line | Node |
 | ---: | --- |
@@ -565,6 +565,8 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5271 | `L_WaterArea1` |
 | 5282 | `L_WaterArea2` |
 | 5299 | `L_WaterArea3` |
+| 5315 | `GameMode` |
+| 5326 | `GameCoreRoutine` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
