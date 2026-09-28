@@ -639,3 +639,137 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 255377 | ef9a3a58a3b42046519a84f02fde29294d1ce1d4ed26c46cba328c07ccd0acb3 |
 | mysmb32.exe | 338112 | da2752dd7c677b4bce8dedc043cbb51b1ad6bf6a7c8656f25627cd045c11854a |
 | mysmb64.exe | 345692 | dcca155c00cf3a4309ad673c0e21a350cdf1478932ccf54ff801dbcbf95a41fb |
+
+## S6 admission: Platform initialization and positioning
+
+After S5 commit 0f73dcc, coordinator accepts transfer-178 from T19 S5 for all
+twenty exact S6 table-row labels. Admission is 1,026/1,992; all twenty are open
+and expected new, maximum 1,046. Source range $C7DF-$C881 includes eight
+initializer entries, common tails, six positioning-table bytes and the final
+RTS. Shared owner is enemy/init_targets.c; the original checkpoint and vector
+remain the predecessor, actor dispatch S7 remains the successor. InitVStf is
+already proven; reuse it without new credit.
+
+Remove generic defaults absent from original writes. Restore balance's
+optional -8, alignment/state order, +8 and drop/common fallthrough; horizontal
+counter zero; vertical absolute top/center calculation without changing Y;
+common vertical-state reset and castle/hard-mode box selection. Large lifts
+must call small lifts, including +12 positioning, then overwrite the box;
+small lifts preserve unrelated fields. PosPlatform preserves byte addition
+and page carry for all three original offsets. EndOfEnemyInitCode remains
+an empty native return, reached by original outer vector ID $36.
+
+ROM proof uses unchanged original NMI/queue/vector routes for all platform
+IDs and EndOfEnemyInitCode, original read/write/branch/call order, all table
+indexes, both Y signs, hard/castle branches, alignment and page carry/wrap.
+No PC, stack, ROM, child-return or scratch patching is permitted. Independent
+native full-RAM contracts, retained original regressions, strict C90 x86/x64,
+DOS16 link, host-purity and hidden-window checks precede three-EXE delivery.
+Sweep all initializer aliases, common-tail callers and legacy-default users.
+No platform movement/collision/drawing or host gameplay change is admitted.
+
+Existing owner-local ROM/listing provenance is unchanged; no external code
+is imported. New raw evidence stays in ignored build/m2-t39-s6, four-MB budget,
+twenty-second recorder timeout and S6 cleanup ownership. Stop for unadmitted
+repair or unexplained discrepancies. S7-S9 retain their existing receivers.
+
+## S6 original platform initialization proof
+
+All twenty planned platform initialization nodes close: 1,026 -> 1,046/1,992,
+no scoped transfer. T39 remains open; S7 actor-vector/retainer dispatch is next.
+Admission gate confirms twenty scoped and expected open nodes, maximum 1,046;
+transfer-178 accepts custody before implementation.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| InitBalPlatform | $C7DF | Decrement Y twice; optional -8, alignment, +8 and drop/common fallthrough in original order; match |
+| AlignP | $C7ED | Read old alignment into enemy state and select next pair marker by sign; match |
+| SetBPA | $C7F8 | Store next alignment, clear direction, +8 then fall through InitDropPlatform; match |
+| InitDropPlatform | $C803 | Write collision flag $FF then enter CommonPlatCode; match |
+| InitHoriPlatform | $C80B | Zero XMoveSecondaryCounter only before common tail; match |
+| InitVertPlatform | $C812 | Preserve original Y while deriving top magnitude and center from its sign; match |
+| SetYO | $C81F | Write top, add selected $40/$C0 to original Y and write center; match |
+| CommonPlatCode | $C828 | Call existing InitVStf then fall through SPBBox; match |
+| SPBBox | $C82B | Castle/hard branches choose large platform box five or six; match |
+| CasPBB | $C83B | Store only the selected box and return; match |
+| LargeLiftUp | $C83F | Call PlatLiftUp before shared large box overwrite; match |
+| LargeLiftDown | $C845 | Call PlatLiftDown before shared large box overwrite; match |
+| LargeLiftBBox | $C848 | Enter SPBBox without resetting lift speed or force; match |
+| PlatLiftUp | $C84B | Set force $10 and speed $FF, then CommonSmallLift; match |
+| PlatLiftDown | $C857 | Set force $F0 and speed zero, then CommonSmallLift; match |
+| CommonSmallLift | $C860 | PosPlatform index one adds twelve before box four; match |
+| PlatPosDataLow | $C86B | All three low addends match original and execute through PosPlatform; match |
+| PlatPosDataHigh | $C86E | All three high addends match original and execute with carry; match |
+| PosPlatform | $C871 | Original low-byte addition and carry-fed page addition for +8/+12/-8; match |
+| EndOfEnemyInitCode | $C881 | Original RTS reached via vector ID $36; native caller has an empty return; match |
+
+Original/native comparison passes 480/480 across x86/x64. The 240 NMI RAM
+routes execute unmodified queue and initializer vectors for IDs $24-$2C and
+$36. All eighteen code labels, 72 instructions and both outcomes of all five
+conditional branches execute. All six positioning-table bytes match original,
+and all three indices have original consumers. No PC, stack, ROM, input-at-
+entry or child-return patch is used. Hardware stack storage is excluded from
+actual RAM comparison while mapped $0109-$0139 variables remain compared.
+All 240 observer-free coverage runs produce identical frame records.
+
+Original PosPlatform child records verify each intermediate coordinate, not
+only the net result: 51 carry cases and fifteen page-wrap cases. Balance has
+optional -8 before alignment, then +8 before InitVStf; large lifts have +12
+before their large-box tail; small lifts have +12 before box four. The child
+observer records InitVStf return at the same PC where SPBBox begins, so that
+fallthrough is not a separate child snapshot. Original instruction coverage,
+branch audit and full root returns prove that tail; large lifts additionally
+record its distinct child entry. No missing snapshot is claimed as an observed
+call. Both vertical Y signs, both alignment signs, all four area types, both
+hard-mode values, and boxes four/five/six occur in original runs.
+
+Independent full-RAM native contracts pass 245,760 cases per width: all ten
+vector selectors, six slots, every X/Y/alignment byte, zero/$FF pages and all
+area/hard combinations. EndOfEnemyInitCode is additionally tested through its
+real checkpoint caller, including the caller's original JumpEngine scratch.
+The original final target is a no-op; an empty wrapper is not added merely to
+supply a C function name.
+
+Thirteen focused initializer/stream tests per width pass on final objects.
+The full actual matrix is 3,118/3,246, retaining all 2,602 prior matches,
+adding 480 new roots and resolving 36 earlier initializer differences. The
+remaining 128 downstream differences retain their existing source-order owners.
+
+The platform smoke passes on both widths after correcting its source-invalid
+large-lift box-five expectation to box six for non-castle/non-hard input and
+checking the original +12 offset. Its independent later rider/horizontal/
+balance checks remain passing; they do not certify those unadmitted actors.
+Endgame/layout/mode/Bowser checks retain their existing four passes and four
+star-timer exit-six / Bowser-damage exit-four failures. The previously recorded
+Lakitu/Spiny failure and actual child discrepancies remain open.
+
+All 85 shared units build under strict C90 on x86/x64. Self-tests, bounded
+hidden-window message probes and platform purity pass. DOS16 links with the
+existing OLDNAMES warning and remains link-only, without runtime/graphics,
+resource binding or physical 486 certification. Only shared init_targets.c
+changes product behavior; no host adapter gains gameplay logic.
+
+Similar-issue sweep covers every platform initializer-vector alias and the
+original common-tail call sites. Balance now falls through drop/common;
+large lifts reuse small-lift entries, and common code reuses InitVStf. The
+last remaining uses of generic platform/default initialization were exactly
+these entries, so both obsolete helpers are removed. Earlier common, firebar,
+Piranha, frenzy and group proofs remain passing. No movement, collision or
+graphics child body is modified.
+
+Reproduce platform_initialization_fixture.h cases 0..239 using
+--fixture=t39-platform-init=N, --platform-init-snapshot and --control-children;
+run --pc-coverage separately. Feed roots to enemy_loop_actual_check with final
+shared objects and local original PRG. Native target:
+mysmb.platform-initialization-chain. Existing owner-local provenance is
+unchanged, no third-party implementation is imported. Raw evidence stays in
+ignored build/m2-t39-s6, under 3.3 MB within the four-MB budget and twenty-second
+per-recorder limit; retain it for the T39 cross-chain review.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 254857 | 3afdf144b0265ac12a6d5cb6dcfc88e962eb4a2fb0f69bcffdab009ffc106517 |
+| mysmb32.exe | 338826 | 08c4151e2d786e6d95c022dd2302bad711c0f2dc400796566558cad65862a04b |
+| mysmb64.exe | 345378 | 3291a887195e110c96e24f75ec1bfaf07eaabc3863469591fe9e5b9f7e838573 |

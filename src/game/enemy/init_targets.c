@@ -66,20 +66,6 @@ void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
         (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
     mysmb_enemy_init_box_only(game, slot, 9U);
 }
-/* Extracted legacy child bodies. Their write footprints are preserved for
- * S3 entry separation; later admitted initializer chains own ROM conformance.
- * In particular, the historical common defaults are not source-proven. */
-static void mysmb_enemy_init_legacy_defaults(struct mysmb_game *game, mysmb_u8 slot)
-{
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-}
-
 /* ROM $C30C/$C326: indexed by original primary/secondary hard-mode state. */
 static const mysmb_u8 normal_x_speed[2] = { 0xf8U, 0xf4U };
 static const mysmb_u8 hammer_walking_timer[2] = { 0x80U, 0x50U };
@@ -273,109 +259,116 @@ void mysmb_enemy_init_firebar_entry(struct mysmb_game *game, mysmb_u8 slot, mysm
     mysmb_enemy_init_tall_box_only(game, slot);
 }
 
-/* Legacy platform defaults: no ROM conformance credit. */
-static void mysmb_enemy_init_platform_defaults(struct mysmb_game *game, mysmb_u8 slot)
+/* ROM $C86B/$C86E: low/high addends consumed by PosPlatform. */
+static const mysmb_u8 platform_position_low[3] = { 8U, 12U, 0xf8U };
+static const mysmb_u8 platform_position_high[3] = { 0U, 0U, 0xffU };
+
+/* ROM $C871 PosPlatform: the low-byte carry feeds the page addition. */
+static void mysmb_enemy_position_platform(struct mysmb_game *game,
+                                          mysmb_u8 slot, mysmb_u8 index)
 {
-    mysmb_u8 platform_id;
+    mysmb_u16 sum;
+    sum = (mysmb_u16)(game->ram[MYSMB_ENEMY_X + slot] +
+                     platform_position_low[index]);
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)sum;
+    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(
+        game->ram[MYSMB_ENEMY_PAGE + slot] + platform_position_high[index] +
+        (sum >> 8U));
+}
 
-
-    mysmb_enemy_init_legacy_defaults(game, slot);
-    platform_id = game->ram[MYSMB_ENEMY_ID + slot];
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
+/* ROM $C82B SPBBox / CasPBB: large platform box without other writes. */
+static void mysmb_enemy_platform_box(struct mysmb_game *game, mysmb_u8 slot)
+{
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] =
-        (platform_id == 43U || platform_id == 44U) ? 4U : 5U;
-    if (platform_id != 43U && platform_id != 44U &&
-        game->ram[MYSMB_AREA_TYPE] != 3U &&
-        game->ram[MYSMB_SECONDARY_HARD] == 0U) {
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 6U;
-    }
-    if (platform_id == 38U || platform_id == 39U) {
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 5U;
-    }
+        game->ram[MYSMB_AREA_TYPE] == 3U ||
+        game->ram[MYSMB_SECONDARY_HARD] != 0U ? 5U : 6U;
 }
 
-/* Original target $C7DF; extracted legacy body. */
-void mysmb_enemy_init_balance_platform(struct mysmb_game *game, mysmb_u8 slot)
+/* ROM $C828 CommonPlatCode; original InitVStf is its only child. */
+static void mysmb_enemy_common_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 old_x;
-
-    mysmb_enemy_init_platform_defaults(game, slot);
-    old_x = game->ram[MYSMB_ENEMY_X + slot];
-    game->ram[MYSMB_ENEMY_Y + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-    if (game->ram[MYSMB_SECONDARY_HARD] == 0U) {
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x - 8U);
-        if (old_x < 8U) game->ram[MYSMB_ENEMY_PAGE + slot]--;
-        old_x = game->ram[MYSMB_ENEMY_X + slot];
-    }
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 8U);
-    if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
-    game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT];
-    game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] =
-        game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] >= 0x80U ? slot : 0xffU;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0U;
+    mysmb_enemy_init_vertical_state(game, slot);
+    mysmb_enemy_platform_box(game, slot);
 }
 
-/* Original target $C812; extracted legacy body. */
-void mysmb_enemy_init_vertical_platform(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_enemy_init_platform_defaults(game, slot);
-    game->ram[MYSMB_PLATFORM_TOP_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_PLATFORM_CENTER_Y + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x40U);
-    if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
-        game->ram[MYSMB_ENEMY_Y + slot] = 0xc0U;
-    }
-}
-
-/* Original target $C83F; extracted legacy body. */
-void mysmb_enemy_init_large_lift_up(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_enemy_init_platform_defaults(game, slot);
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
-}
-
-/* Original target $C845; extracted legacy body. */
-void mysmb_enemy_init_large_lift_down(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_enemy_init_platform_defaults(game, slot);
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-}
-
-/* Original target $C80B; extracted legacy body. */
-void mysmb_enemy_init_horizontal_platform(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_enemy_init_platform_defaults(game, slot);
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0x10U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-}
-
-/* Original target $C803; extracted legacy body. */
+/* ROM $C803 InitDropPlatform, also the balance initializer's fallthrough. */
 void mysmb_enemy_init_drop_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_platform_defaults(game, slot);
     game->ram[MYSMB_PLATFORM_COLLISION_FLAG + slot] = 0xffU;
+    mysmb_enemy_common_platform(game, slot);
 }
 
-/* Original target $C84B; extracted legacy body. */
+/* ROM $C7DF InitBalPlatform / AlignP / SetBPA. */
+void mysmb_enemy_init_balance_platform(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 alignment;
+    game->ram[MYSMB_ENEMY_Y + slot] =
+        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
+    if (game->ram[MYSMB_SECONDARY_HARD] == 0U)
+        mysmb_enemy_position_platform(game, slot, 2U);
+    alignment = game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT];
+    game->ram[MYSMB_ENEMY_STATE + slot] = alignment;
+    game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] =
+        alignment < 0x80U ? 0xffU : slot;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0U;
+    mysmb_enemy_position_platform(game, slot, 0U);
+    mysmb_enemy_init_drop_platform(game, slot);
+}
+
+/* ROM $C80B InitHoriPlatform: XMoveSecondaryCounter aliases X speed. */
+void mysmb_enemy_init_horizontal_platform(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    mysmb_enemy_common_platform(game, slot);
+}
+
+/* ROM $C812 InitVertPlatform / SetYO; Enemy_Y_Position is preserved. */
+void mysmb_enemy_init_vertical_platform(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 y;
+    y = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_PLATFORM_TOP_Y + slot] =
+        y < 0x80U ? y : (mysmb_u8)(0U - y);
+    game->ram[MYSMB_PLATFORM_CENTER_Y + slot] =
+        (mysmb_u8)(y + (y < 0x80U ? 0x40U : 0xc0U));
+    mysmb_enemy_common_platform(game, slot);
+}
+
+/* ROM $C860 CommonSmallLift: position before selecting box four. */
+static void mysmb_enemy_common_small_lift(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_position_platform(game, slot, 1U);
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 4U;
+}
+
+/* ROM $C84B PlatLiftUp. */
 void mysmb_enemy_init_small_lift_up(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_platform_defaults(game, slot);
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
+    mysmb_enemy_common_small_lift(game, slot);
 }
 
-/* Original target $C857; extracted legacy body. */
+/* ROM $C857 PlatLiftDown. */
 void mysmb_enemy_init_small_lift_down(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_platform_defaults(game, slot);
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
     game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    mysmb_enemy_common_small_lift(game, slot);
+}
+
+/* ROM $C83F LargeLiftUp / $C848 LargeLiftBBox. */
+void mysmb_enemy_init_large_lift_up(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_init_small_lift_up(game, slot);
+    mysmb_enemy_platform_box(game, slot);
+}
+
+/* ROM $C845 LargeLiftDown, falling through LargeLiftBBox. */
+void mysmb_enemy_init_large_lift_down(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_init_small_lift_down(game, slot);
+    mysmb_enemy_platform_box(game, slot);
 }
 
 /* ROM $C549 InitBowser: preserve all fields absent from this entry. */

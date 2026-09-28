@@ -9,14 +9,16 @@ int main(void)
     struct mysmb_area_source source;
     mysmb_u8 lift_data[2] = { 0U, 38U };
 
-    /* InitLargeLiftUp uses the original signed vertical pair. */
+    /* InitLargeLiftUp uses the signed vertical pair, +12 positioning and
+     * the non-castle, non-hard large-platform box. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     source.prg = lift_data;
     source.prg_size = 2U;
     game.ram[0x00eaU] = 0x80U;
     if (mysmb_enemy_stream_process_next(&game, &source) != 1U ||
         game.ram[0x0016U] != 38U || game.ram[0x00a0U] != 0xffU ||
-        game.ram[0x0434U] != 0x10U || game.ram[0x049aU] != 5U) return 1;
+        game.ram[0x0434U] != 0x10U || game.ram[0x049aU] != 6U ||
+        game.ram[0x0087U] != 0x0cU) return 1;
 
     /* A rider is snapped to the deck and inherits its fractional lift delta. */
     mysmb_game_initialize_memory(&game, 0xfeU);

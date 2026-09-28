@@ -24,14 +24,28 @@ int main(int argc,char **argv)
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
         memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0 &&
         memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0 &&
-        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0)) return 66;
+        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[7]==0U && header[2]=='5') {
+    if(header[7]==0U && header[2]=='6') {
+        switch(header[5]) {
+        case 36U: mysmb_enemy_init_balance_platform(&game,header[6]);break;
+        case 37U: mysmb_enemy_init_vertical_platform(&game,header[6]);break;
+        case 38U: mysmb_enemy_init_large_lift_up(&game,header[6]);break;
+        case 39U: mysmb_enemy_init_large_lift_down(&game,header[6]);break;
+        case 40U: case 42U: mysmb_enemy_init_horizontal_platform(&game,header[6]);break;
+        case 41U: mysmb_enemy_init_drop_platform(&game,header[6]);break;
+        case 43U: mysmb_enemy_init_small_lift_up(&game,header[6]);break;
+        case 44U: mysmb_enemy_init_small_lift_down(&game,header[6]);break;
+        case 54U: break; /* EndOfEnemyInitCode: empty return. */
+        default:return 66;
+        }
+    }
+    else if(header[7]==0U && header[2]=='5') {
         switch(header[5]) {
         case 1U: mysmb_enemy_init_piranha_plant(&game,header[6]);break;
         case 2U: mysmb_enemy_init_jump_green_ptroopa(&game,header[6]);break;

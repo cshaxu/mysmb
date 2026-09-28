@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1026 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1046 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 858 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 838 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,026 / 1,992 (51.51%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,046 / 1,992 (52.51%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T39 S5 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof)
-proves nine initializer/frenzy nodes with 392/392 actual comparisons. All
-2,168 prior matches remain. Residual vector input and downstream failures
-are explicit in the proof; no platform gameplay changes are present.
+Latest task review: [T39 S6 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s6-original-platform-initialization-proof)
+proves twenty platform initialization nodes with 480/480 actual comparisons.
+All 2,602 prior matches remain; known downstream failures retain their owners.
+Original positioning, state-write order and common tails are restored.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1026)
+## Completed matches (1046)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1023,6 +1023,26 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8893 | `InitJumpGPTroopa` |
 | 8898 | `TallBBox2` |
 | 8899 | `SetBBox2` |
+| 8904 | `InitBalPlatform` |
+| 8911 | `AlignP` |
+| 8917 | `SetBPA` |
+| 8925 | `InitDropPlatform` |
+| 8932 | `InitHoriPlatform` |
+| 8939 | `InitVertPlatform` |
+| 8947 | `SetYO` |
+| 8955 | `CommonPlatCode` |
+| 8957 | `SPBBox` |
+| 8964 | `CasPBB` |
+| 8969 | `LargeLiftUp` |
+| 8973 | `LargeLiftDown` |
+| 8976 | `LargeLiftBBox` |
+| 8981 | `PlatLiftUp` |
+| 8990 | `PlatLiftDown` |
+| 8998 | `CommonSmallLift` |
+| 9007 | `PlatPosDataLow` |
+| 9010 | `PlatPosDataHigh` |
+| 9013 | `PosPlatform` |
+| 9025 | `EndOfEnemyInitCode` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |
