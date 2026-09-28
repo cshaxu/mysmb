@@ -1135,27 +1135,17 @@ void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
     game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[0x03aeU];
 }
-/* ROM $b3c2 MoveFlyingCheepCheep, excluding OAM priority output. */
-void mysmb_objects_step_flying_cheep_cheeps_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 20U) return;
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_j_vertically(game, slot);
-        return;
-    }
-    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-    mysmb_world_move_enemy_horizontally(game, slot);
-    mysmb_enemy_move_downward(game, slot, 0x0dU, 5U);
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_flying_cheep_cheeps_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 20U &&
+            (game->ram[MYSMB_TIMER_CONTROL] == 0U ||
+             (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U))
+            mysmb_objects_step_flying_cheep_cheeps_slot(game, slot);
+    }
 }
 
 /* Temporary aggregate caller preserves the legacy injury early exit.

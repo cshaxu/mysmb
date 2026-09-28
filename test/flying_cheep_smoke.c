@@ -2,6 +2,8 @@
 #include "game/area.h"
 #include "game/enemy/stream.h"
 #include "game/objects.h"
+
+static unsigned char movement_data[0x5000];
 #include "game/enemy/frenzy.h"
 #include "game/enemy/loop.h"
 
@@ -76,6 +78,10 @@ int main(void)
     /* ROM MoveFlyingCheepCheep: live fish moves horizontally and uses the
      * lighter $0d downward gravity. */
     mysmb_game_initialize_memory(&game, 0xfeU);
+    /* Project-owned synthetic binding exercises the actual priority tail. */
+    movement_data[0x4edaU] = 0x6dU;
+    game.area_prg = movement_data;
+    game.area_prg_size = sizeof(movement_data);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 20U;
     game.ram[0x001eU] = 0U;
@@ -90,9 +96,10 @@ int main(void)
     game.ram[0x0747U] = 0U;
     mysmb_objects_step_flying_cheep_cheeps(&game);
     if (game.ram[0x0087U] != 0x41U || game.ram[0x0434U] != 0x0dU ||
-        game.ram[0x00cfU] != 0x70U) return 4;
+        game.ram[0x00cfU] != 0x70U || game.ram[0x03c5U] != 0x6dU) return 4;
 
-    /* TimerControl freezes a live fish before either axis advances. */
+    /* The compatibility aggregate retains its timer guard. The original
+     * movement entry itself has no timer test. */
     game.ram[0x0747U] = 1U;
     mysmb_objects_step_flying_cheep_cheeps(&game);
     if (game.ram[0x0087U] != 0x41U || game.ram[0x0434U] != 0x0dU) return 5;
@@ -102,12 +109,13 @@ int main(void)
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 20U;
     game.ram[0x001eU] = 0x20U;
+    game.ram[0x03c5U] = 0xc3U;
     game.ram[0x0087U] = 0x40U;
     game.ram[0x00b6U] = 1U;
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x0058U] = 0x10U;
     mysmb_objects_step_flying_cheep_cheeps(&game);
     if (game.ram[0x0087U] != 0x40U || game.ram[0x0434U] != 0x1cU ||
-        game.ram[0x00cfU] != 0x70U) return 6;
+        game.ram[0x00cfU] != 0x70U || game.ram[0x03c5U] != 0U) return 6;
     return 0;
 }

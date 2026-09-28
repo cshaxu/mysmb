@@ -1251,3 +1251,132 @@ Owner-local ROM/listing provenance and redistribution restrictions remain.
 | mysmb16.exe | 256195 | 41a74ca38113d8786d21871fe80af05b5e26ebeb9ac0101bde60ae3445d1924e |
 | mysmb32.exe | 347941 | 0cd01bc18cf4ba83c13184078739ac6681c4c32310f964784c1657589fcabeed |
 | mysmb64.exe | 355482 | 73fa296205f27e2a904faea65b52a0827411a552a1cdac88905479bc13d430ef |
+
+## S9 admission: Flying Cheep-Cheep movement
+
+S8 closed in 9b621d5. Coordinator accepts transfer-193 under the approved
+source-order plan. Baseline 1,144/1,992; all six scoped nodes are open and
+expected new, maximum 1,150. The chain spans $CED5-$CF24, following firebars
+and ending before LakituDiffAdj; S10 remains next.
+
+| Node | Original address | Required individual proof |
+| --- | --- | --- |
+| PRandomSubtracter | $CED5 | Bind five bytes and all sixteen original indexed addresses, including adjacent bytes |
+| FlyCCBPriority | $CEDA | Bind five bytes and sixteen priority reads, including code-adjacent data |
+| MoveFlyingCheepCheep | $CEDF | Defeated bit clears attributes before MoveJ_EnemyVertically tail |
+| FlyCC | $CEED | Horizontal child before SetXMoveAmt with Y=$0D, A=$05; read post-gravity force/Y |
+| AddCCF | $CF0C | Signed wrapped difference magnitude below eight adds $10 to force with byte wrap |
+| BPGet | $CF1E | Read priority from final high nibble and write Enemy_SprAttrib |
+
+Shared enemy/flying_cheep.c replaces the abbreviated inline body. Original
+entry has no flag/ID/timer guards; preserve compatibility guards only in the
+legacy aggregate. Reuse the existing proved horizontal and gravity entries;
+no child receives extra credit. Use the immutable area_prg binding for lookup
+adjacency, bounded through $CEE9, without copying instruction bytes into code
+or interpreting them. Missing binding is an explicit unmet prerequisite for
+the lookup tail, not permission to invent values. DOS binding remains unproven.
+
+ROM logic proof starts from this source/branch/read/write map. Observe original
+NMI actor entries for defeated/live, all sixteen force nibbles, signed
+subtraction, magnitude boundary and wrap, then compare original root RAM and
+child order/inputs with native C on both widths. Child substitution is diagnostic
+only after input comparison; actual children run separately. Controlled RAM
+inputs at naturally reached entries are allowed to cover missing branches;
+no ROM, PC, CPU/register, stack or output patch. Prove observer noninterference.
+Independent native contracts test full RAM footprints, child mutation/order,
+priority and force wrap. Refresh three EXEs once after strict C90 x86/x64,
+DOS16 link, focused regressions, prior matching routes, hidden-window probes
+and platform purity. Existing injury/offscreen/graphics gaps remain explicit.
+
+Similar-issue sweep covers inline/aggregate movement, normal-actor vector,
+initializer force/attribute aliases and flying-fish tests. Existing owner-local
+ROM and disassembly provenance and local-only redistribution limits remain;
+no third-party import. Keep generated data, records and logs in ignored
+build/m2-t40-s9, at most 512 cases and 16 MB raw, unique paths, twenty-second
+per-run deadlines and checkpoints. Coordinator owns retention/cleanup after
+all dependent regressions. No node credit before both verification tracks.
+
+## S9 original flying Cheep-Cheep movement proof
+
+S9 P1 closes all six expected nodes: 1,144 -> 1,150/1,992. No scoped
+unfinished node or transfer remains; S10 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| PRandomSubtracter | $CED5 | Five bound source bytes and all sixteen original indexed addresses consumed; new ROM match |
+| FlyCCBPriority | $CEDA | Five bound priority bytes and all sixteen indexed addresses consumed; new ROM match |
+| MoveFlyingCheepCheep | $CEDF | State bit $20 clears attributes before the exact jumping-gravity tail; new ROM match |
+| FlyCC | $CEED | Horizontal then original $0D/$05 gravity; post-child state selects lookup; new ROM match |
+| AddCCF | $CF0C | Wrapped signed magnitude below eight adds $10, including force wrap; new ROM match |
+| BPGet | $CF1E | Final force high nibble selects original attribute data and exact write; new ROM match |
+The 512 original NMI routes execute all 37 scoped instructions and both
+outcomes of all three conditional branches: defeated/live (32/480), signed
+wrapped difference (231 negative/249 nonnegative), and threshold adjustment.
+All sixteen subtractor and priority indices are consumed, including the
+original table-adjacent code bytes. The ten named data bytes and bound
+32-KB immutable view match the owner ROM exactly; the last indexed address
+is $CEE9. Case fifteen also exercises force $F0 plus $10 wrapping to zero
+and then selecting priority index zero. These bytes are data, never executed.
+
+Original caller and actual-child root comparisons both pass 1,024/1,024 on
+x86/x64. Each live route calls horizontal movement before SetXMoveAmt with
+$0D/$05; defeated routes clear attributes before the jumping-gravity tail.
+The caller reads force and Y only after the child returns. Complete child
+input is checked before diagnostic return substitution; actual comparisons
+use the real shared children. All RAM, including scratch and mapped
+$0109-$0139, is checked; hardware-stack storage alone is excluded. The
+scoped owner has no PPU/audio/CIRAM output or host access. No ROM, CPU,
+PC, stack or output patch and no mid-entry RAM override is used. The
+512 observer-free frames equal the observed records; this establishes
+observer noninterference, not whole-game native frame equivalence.
+
+Shared enemy/flying_cheep.c replaces the abbreviated inline movement.
+It restores defeated attribute clearing, source horizontal/gravity order,
+wrapped signed distance, force adjustment and final sprite-attribute lookup.
+The source entry has no extra flag/ID/timer guard. Those guards remain only
+at the legacy aggregate boundary. Existing movement/gravity children and
+normal-actor vector are reused and receive no additional completion credit.
+The lookup tail requires immutable owner data; DOS binding is not established.
+
+Independent native contracts exhaust all 256 post-child forces against all
+256 byte differences, plus the defeated path: 65,537 cases per width.
+They check full RAM footprints, deliberate child mutations/order, threshold
+seven/eight, signed $80, force overflow, source entry without compatibility
+guards and final indexed priority. The integration smoke now supplies
+synthetic project-owned data and checks actual priority output and defeat
+clearing; its legacy timer check remains explicitly at the aggregate boundary.
+
+The combined original-root matrix is 8,628/10,130, retaining all 7,600 prior
+matches and improving four earlier comparisons. The 1,502 remaining child/
+frame-route differences retain their existing source-order owners. Earlier
+native contracts, fifteen initialization/platform smokes per width and
+focused layout/mode tests pass. Known Bowser damage and endgame star-timer
+failures remain unchanged; the broad core smoke's player-entrance failure
+is not claimed resolved. All 100 shared units compile under strict C90 for
+x86/x64. Both self-tests and hidden-window response probes pass. DOS16 links
+with the existing OLDNAMES warning and remains link-only, without graphical,
+resource-binding or physical 486 performance claims. Platform purity passes;
+all three owner-authorized test EXEs are refreshed once for S9 P1.
+
+Similar-issue review covers the old inline/aggregate body, normal movement
+vector, flying-fish initializer, $0434 force/$03C5 attribute aliases and tests.
+There is one runtime movement owner; no host adapter contains new logic.
+The defeated initializer and shared gravity/horizontal semantics are unchanged.
+
+Reproduce flying_cheep_movement_fixture.h cases 0..511 with
+--fixture=t40-flying-cheep-movement=N, --flying-cheep-movement-snapshot,
+--control-children and a separate --pc-coverage run. Caller proof uses
+flying_cheep_movement_snapshot_check; enemy_loop_actual_check runs real
+children. Native contracts are mysmb.flying-cheep-movement and
+mysmb.flying-cheep-smoke. Source-audit, data-binding-audit, retained-proof and
+final-root-regressions summaries remain below ignored build/m2-t40-s9.
+Unique paths, twenty-second timeouts and checkpoints bound each run; raw
+inputs including the superseded wrap case remain below the 16-MB budget.
+Coordinator retains them for dependent regressions and owns later cleanup.
+Existing owner-ROM/listing provenance and redistribution limits remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256643 | 3ff8f4059c64aba06081f2630ea6f892c9e973c6bd81b19f21d71b575553d64e |
+| mysmb32.exe | 348669 | 46b236ef19cf0e16648274c7bd2b409b035da19a29a466540b424b69b60205cd |
+| mysmb64.exe | 356246 | ad5c0abd18d0e1958ed0c32f2b88a5308c768456ce24f7988aa46fc36c6bfdf8 |
