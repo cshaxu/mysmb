@@ -97,6 +97,14 @@ def index_listing(rom_path, asm_path):
             else:
                 pc += count
             continue
+        label = label_pattern.match(source)
+        if label:
+            if pc is None:
+                continue
+            labels.append((label.group(1), pc, line_number))
+            source = source[label.end():]
+            if not source.strip():
+                continue
         directive = directive_pattern.match(source)
         if directive:
             name = directive.group(1).lower()
@@ -112,14 +120,6 @@ def index_listing(rom_path, asm_path):
             elif name not in ("index", "mem"):
                 unknown.append((line_number, source))
             continue
-        label = label_pattern.match(source)
-        if label:
-            if pc is None:
-                continue
-            labels.append((label.group(1), pc, line_number))
-            source = source[label.end():]
-            if not source.strip():
-                continue
         instruction = instruction_pattern.match(source)
         if instruction:
             if pc is None or pc < 0x8000 or pc > 0xFFFF:

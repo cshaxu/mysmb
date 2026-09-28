@@ -434,7 +434,7 @@ The labels and branches behind every line remain open until individually bound b
 | 2971 | `GameOverMode` | T18 responsibility (implementation not certified); `frame_root.c` + `terminal_modes.c:mysmb_game_step_game_over` | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 2981 | `SetupGameOver` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 2993 | `RunGameOver` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
-| 3001 | `TerminateGame` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
+| 3001 | `TerminateGame` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
 | 3015 | `ContinueGame` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 3027 | `GameIsOn` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
 | 3029 | `TransposePlayers` | T18 responsibility (implementation not certified) | ROM-match complete |[T29 S4 closure](../../proposals/m2/t29-area-parser-geometry.md#s4-p2-and-closure-controlled-rom-routes-and-terminal-mode-chain)|
@@ -617,29 +617,29 @@ The labels and branches behind every line remain open until individually bound b
 | 4336 | `GetAreaObjYPosition` | M2 T30 S10 shared area-object helper owner | ROM-match complete | [T30 S10/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s10p1-common-helper-rom-proof) |
 | 4349 | `BlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
 | 4353 | `GetBlockBufferAddr` | M2 T30 S13 shared block-address chain and initial-page producer | ROM-match complete | [T30 S13/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s13p1-block-address-and-initial-page-proof) |
-| 4376 | `AreaDataOfsLoopback` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |
-| 4381 | `LoadAreaPointer` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-loadareapointer) |
-| 4384 | `GetAreaType` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareatype) |
-| 4392 | `FindAreaPointer` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-findareapointer) |
-| 4402 | `GetAreaDataAddrs` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getareadataaddrs) |
-| 4434 | `StoreFore` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storefore) |
-| 4472 | `StoreStyle` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-storestyle) |
-| 4485 | `WorldAddrOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-worldaddroffsets) |
-| 4491 | `AreaAddrOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areaaddroffsets) |
-| 4492 | `World1Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world1areas) |
-| 4493 | `World2Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world2areas) |
-| 4494 | `World3Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world3areas) |
-| 4495 | `World4Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world4areas) |
-| 4496 | `World5Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world5areas) |
-| 4497 | `World6Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world6areas) |
-| 4498 | `World7Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world7areas) |
-| 4499 | `World8Areas` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-world8areas) |
-| 4509 | `EnemyAddrHOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyaddrhoffsets) |
-| 4512 | `EnemyDataAddrLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemydataaddrlow) |
-| 4520 | `EnemyDataAddrHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemydataaddrhigh) |
-| 4528 | `AreaDataHOffsets` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadatahoffsets) |
-| 4531 | `AreaDataAddrLow` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataaddrlow) |
-| 4539 | `AreaDataAddrHigh` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataaddrhigh) |
+| 4376 | `AreaDataOfsLoopback` | M2 T19 S5 accepted consumer dependency, transfer-113 | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-areadataofsloopback) |
+| 4381 | `LoadAreaPointer` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4384 | `GetAreaType` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4392 | `FindAreaPointer` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4402 | `GetAreaDataAddrs` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4434 | `StoreFore` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4472 | `StoreStyle` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4485 | `WorldAddrOffsets` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4491 | `AreaAddrOffsets` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4492 | `World1Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4493 | `World2Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4494 | `World3Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4495 | `World4Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4496 | `World5Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4497 | `World6Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4498 | `World7Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4499 | `World8Areas` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4509 | `EnemyAddrHOffsets` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4512 | `EnemyDataAddrLow` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4520 | `EnemyDataAddrHigh` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4528 | `AreaDataHOffsets` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4531 | `AreaDataAddrLow` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
+| 4539 | `AreaDataAddrHigh` | M2 T30 S14 shared pointer/header chain and terminal caller | ROM-match complete | [T30 S14/P1 dual evidence](../../proposals/m2/t30-area-object-rendering.md#s14p1-pointer-header-and-caller-proof) |
 | 4550 | `E_CastleArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea1) |
 | 4558 | `E_CastleArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea2) |
 | 4565 | `E_CastleArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-e_castlearea3) |

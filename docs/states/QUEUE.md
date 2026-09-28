@@ -12,9 +12,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-T30/S13 is closed at 484 / 1,992: BlockBufferAddr and GetBlockBufferAddr
-are complete and initial-page producer SetInitNTHigh is restored.
-AreaDataOfsLoopback begins the next unadmitted source-order chain.
+T30/S14 is closed at 506 / 1,992: the pointer/header chain and its terminal
+caller are complete. The next unadmitted source chain starts at E_CastleArea1
+and level-stream data. AreaDataOfsLoopback stays open with its accepted
+ExecGameLoopback consumer owner, T19 S5.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This

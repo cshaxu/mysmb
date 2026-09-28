@@ -82,7 +82,7 @@ static void mysmb_game_load_area_pointer(struct mysmb_game *game)
     if (game->area_prg == 0) return;
     source.prg = game->area_prg;
     source.prg_size = game->area_prg_size;
-    (void)mysmb_area_load_pointers(game, &source);
+    (void)mysmb_area_load_area_pointer(game, &source);
 }
 
 /* ROM StillInGame, GetHalfway, MaskHPNyb and SetHalfway's selected value.
@@ -164,7 +164,7 @@ static void mysmb_game_setup_game_over(struct mysmb_game *game)
 /* ROM TerminateGame, including its TransposePlayers result branch. */
 static void mysmb_game_terminate_game(struct mysmb_game *game)
 {
-    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
+    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0x80U;
     if (mysmb_game_transpose_players(game) != 0U) {
         mysmb_game_continue_game(game);
         return;

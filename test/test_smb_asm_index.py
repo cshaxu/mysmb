@@ -17,7 +17,9 @@ def load_module(name):
 
 def main():
     indexer = load_module("smb_asm_index")
-    with tempfile.TemporaryDirectory() as directory:
+    build = Path(__file__).resolve().parents[1] / "build"
+    build.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=build, prefix="asm-index-") as directory:
         root = Path(directory)
         rom = root / "synthetic.nes"
         asm = root / "synthetic.asm"
@@ -43,6 +45,27 @@ def main():
             return 1
         if "8001 Loop" not in output.read_text(encoding="ascii"):
             return 1
+        # Data sharing its label's line must advance PC before aliases and
+        # subsequent instructions, just as standalone directives do.
+        image[16:26] = bytes((1, 2, 3, 4, 5, 6, 7, 8, 9, 0x60))
+        rom.write_bytes(image)
+        asm.write_text(
+            ".org $8000\n"
+            "First: .byte $01,$02\n"
+            "Alias:\n"
+            "Second: .db $03\n"
+            "Words: .word $0504\n"
+            "More: .dw $0706\n"
+            "Hex: .hex 0809\n"
+            "End: rts\n", encoding="ascii")
+        labels, unknown, mismatch = indexer.generate(rom, asm, output)
+        addresses = {name: address for name, address, _ in labels}
+        if mismatch or unknown or addresses != {
+            "First": 0x8000, "Alias": 0x8002, "Second": 0x8002,
+            "Words": 0x8003, "More": 0x8005, "Hex": 0x8007,
+            "End": 0x8009,
+        }:
+            return 2
     return 0
 
 

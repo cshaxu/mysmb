@@ -15,6 +15,7 @@ set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model
 
 set(MYSMB_GAME_SOURCES src/game/boot.c src/game/frame_root.c src/game/title_modes.c src/game/terminal_modes.c src/game/game.c src/game/audio.c src/game/area.c src/game/status.c src/game/area/block_metatile.c src/game/enemy/stream.c src/game/enemy/init.c src/game/enemy/core.c src/game/enemy/movement.c src/game/enemy/frenzy.c src/game/player.c src/game/objects.c src/game/fireball/fireball_spawn.c src/game/fireball/fireball_core.c src/game/world/movement.c src/game/world/collision.c src/game/bridge.c src/game/oam/bullet_bill_gfx.c src/game/oam/hammer_gfx.c src/game/oam/firebar_gfx.c src/game/oam/vine_gfx.c src/game/enemy_bounds.c src/game/oam/power_up_gfx.c src/game/oam/object_position.c src/game/oam/player_gfx.c src/game/oam/fireball_gfx.c src/game/oam/block_gfx.c src/game/oam/goomba_gfx.c src/game/fireball/bubble.c src/game/oam/piranha_gfx.c src/game/oam/cheep_gfx.c src/game/oam/bloober_gfx.c src/game/oam/podoboo_gfx.c src/game/oam/normal_enemy_gfx.c src/game/oam/spiny_gfx.c src/game/oam/hammer_bro_gfx.c src/game/oam/bowser_gfx.c src/game/oam/bowser_flame_gfx.c src/game/endgame_objects.c src/game/oam/flagpole_gfx.c src/game/oam/small_platform_gfx.c src/game/render.c src/game/ppu_frame.c src/game/frame_snapshot.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/area/block_buffer.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/area/area_data.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -727,6 +728,12 @@ if(MYSMB_ROM_PATH)
         "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_area_parser_data_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.area-parser-data-smoke COMMAND mysmb_area_parser_data_smoke)
+    add_executable(mysmb_area_pointer_header_smoke test/area_pointer_header_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_area_pointer_header_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_area_pointer_header_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.area-pointer-header-smoke COMMAND mysmb_area_pointer_header_smoke)
     add_executable(mysmb_block_graphics_smoke test/block_graphics_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_graphics_smoke PRIVATE src

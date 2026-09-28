@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 484 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 506 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,405 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,383 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **484 / 1,992 (24.30%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **506 / 1,992 (25.40%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (484)
+## Completed matches (506)
 
 | ROM line | Node |
 | ---: | --- |
@@ -505,6 +505,28 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4336 | `GetAreaObjYPosition` |
 | 4349 | `BlockBufferAddr` |
 | 4353 | `GetBlockBufferAddr` |
+| 4381 | `LoadAreaPointer` |
+| 4384 | `GetAreaType` |
+| 4392 | `FindAreaPointer` |
+| 4402 | `GetAreaDataAddrs` |
+| 4434 | `StoreFore` |
+| 4472 | `StoreStyle` |
+| 4485 | `WorldAddrOffsets` |
+| 4491 | `AreaAddrOffsets` |
+| 4492 | `World1Areas` |
+| 4493 | `World2Areas` |
+| 4494 | `World3Areas` |
+| 4495 | `World4Areas` |
+| 4496 | `World5Areas` |
+| 4497 | `World6Areas` |
+| 4498 | `World7Areas` |
+| 4499 | `World8Areas` |
+| 4509 | `EnemyAddrHOffsets` |
+| 4512 | `EnemyDataAddrLow` |
+| 4520 | `EnemyDataAddrHigh` |
+| 4528 | `AreaDataHOffsets` |
+| 4531 | `AreaDataAddrLow` |
+| 4539 | `AreaDataAddrHigh` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

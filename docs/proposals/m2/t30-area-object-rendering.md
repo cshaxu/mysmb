@@ -1326,3 +1326,184 @@ GetBlockBufferAddr new. No scoped node is unfinished. Revised **481 -> 484 /
 103; open falls to 1,405. The producer revocation/receipt/repair is explicit;
 its restored match is not counted as a new label. No S is active; the next
 unadmitted source chain begins at AreaDataOfsLoopback. M2 remains open.
+
+## T30/S14 admission: area pointer and header chain
+
+Entry LoadAreaPointer / GetAreaDataAddrs, exit StoreStyle pointer advance;
+the adjacent world/area/enemy index and pointer tables are consumed by the
+same area-entry route. Shared owner: area/area_data.c with declarations in
+area.h. Original initialization, title and terminal callers may be changed
+only to restore their source call boundaries and order. No platform or
+downstream level/actor behavior is admitted.
+
+Exact scope and expected matches (all open), in source order:
+`LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh`.
+
+Baseline **484 / 1,992**, expected **22**, maximum **506 / 1,992**.
+Transfer-112 accepts these labels from T18 S4. Transfer-113 separately moves
+the preceding `AreaDataOfsLoopback` data node to the existing T19 S5 receiver
+of ExecGameLoopback. Its runtime consumer is absent; it stays open and gets
+no S14 credit. This is an explicit dependency handoff, not a source-order
+skip or a new numeric T. The next unadmitted T30 chain is level-stream data.
+
+ROM audit: exact table addresses/bytes and actual indexed consumers; byte
+index sums; LoadAreaPointer writes only its pointer/type; GetAreaDataAddrs
+derives type/low offset anew, loads both pointers, decodes both header bytes
+and advances the area pointer by two with carry. Preserve background color
+unless first-header low bits select it; preserve cloud override unless the
+style field is three. InitializeArea must execute this chain before its
+halfway entrance override and final mode-task writes, and terminal
+LoadAreaPointer callers must not prefetch pointers or headers.
+
+Source-RAM-only ordinary PlayerLoseLife/ContinueGame then InitializeArea
+routes cover all 36 world/area entries; direct GameMode task-zero fixtures
+cover all 34 legal data slots including bonus areas. No PC, stack, code or
+return edits. C tests separately cover byte indices, stale caches, untouched
+RAM, all header bytes and pointer carry, plus original caller regressions.
+Build strict C90 x86/x64, link DOS16, test platform purity/startup and refresh
+three EXEs. Parent nodes receive no new credit from this dependency splice.
+
+Owner NROM and reviewed disassembly are local-only inputs; raw traces stay
+below ignored build/m2-t30-s14, budget 3 MB, twenty seconds/process, two
+samples after one warmup and the existing reference instruction cap. S14
+owns cleanup after the enclosing T review. No completion is claimed now.
+
+### S14 admitted dependency correction
+
+The original two-player TerminateGame route writes Silence ($80) to
+EventMusicQueue; the current C writes zero. Coordinator revokes only
+`TerminateGame` and accepts transfer-114 from T29 S4 for this immediate
+ContinueGame caller dependency. Revised baseline **483 / 1,992**, scope and
+expected matches are the original 22 names plus `TerminateGame`: 23,
+maximum **506 / 1,992**. Restore this literal and revalidate both swap and
+no-swap exits. No GameCoreRoutine repair is admitted.
+
+Replace the 36 life-loss entries with original GameOver player-exchange
+entries through the same ContinueGame/LoadAreaPointer chain. The life-loss
+entry exposes the separately planned GameCoreRoutine missing early return;
+its counterexample is retained and assigned to the dispatcher candidate.
+The 34 direct InitializeArea entries remain unchanged. Original PC, stack,
+code and all route RAM comparison assertions remain unchanged.
+
+The old core-smoke and local-area-smoke fail the same timer fixtures on
+commit d67f9f5 before these changes: task two (setup) and task $7f are not
+normal GameEngine dispatch. They remain explicit regression debt, not green
+evidence. Coordinator replaces local-area-smoke as the chain closure gate
+with the independent exhaustive area-pointer-header smoke, all 23 focused
+area smokes and enemy-block-query on both widths; legacy test results are
+still retained and reported. No unrelated gameplay change is authorized.
+
+Source-binding tool correction is admitted: smb_asm_index must count data
+on the same line as its label. Its former omission made all WorldNAreas
+aliases share one address and shifted subsequent data. Use a synthetic
+project-owned indexing test and compare the corrected table map directly
+to all 188 owner-ROM bytes. This does not certify other historic bindings.
+
+## S14/P1: pointer header and caller proof
+
+Shared owner: [area/area_data.c](../../../src/game/area/area_data.c).
+Original table bytes remain local bound PRG, never copied into product C.
+`LoadAreaPointer -> FindAreaPointer -> GetAreaType` writes only $0750/$074e.
+`GetAreaDataAddrs -> GetAreaType -> StoreFore -> StoreStyle` freshly derives
+$074f, loads enemy before area pointers, reads each header in original order,
+and advances the CPU pointer by two with carry. Conditional background and
+cloud writes preserve the source's untouched values. The resource guards
+reject absent/truncated local inputs; those are outside the original-ROM
+execution contract and get no ROM-equivalence credit.
+
+InitializeArea now calls the complete pointer/header leaf before hard-mode,
+halfway entrance override and task writes. Frame/title callers no longer
+parse the header a second time or after the halfway override. Terminal
+ContinueGame, NextArea and PlayerEndWorld call only LoadAreaPointer, preserving
+zero-page pointers until the following InitializeArea. The combined legacy
+load-pointers API is removed. These parent call edges are audited; only the
+explicitly revoked TerminateGame receives renewed node credit.
+
+| Checked node | CPU address | Original behavior / live evidence |
+| --- | --- | --- |
+| [x] `TerminateGame` | `$9248` | Silence $80 before TransposePlayers; swap falls into ContinueGame; no-swap stores ContinueWorld and clears task/timer/mode. Both exits match ROM. |
+| [x] `LoadAreaPointer` | `$9c03` | Find then store AreaPointer, fall through to type; 36 world entries preserve stale low-cache/data pointers on first sample. |
+| [x] `GetAreaType` | `$9c09` | Mask $60, five shifts, store type; all 256 native input values and both source caller families. |
+| [x] `FindAreaPointer` | `$9c13` | World table plus AreaNumber uses byte ADC/TAY index; 36 ROM entries and 2,048 independent native index cases. |
+| [x] `GetAreaDataAddrs` | `$9c22` | Derive type/low cache, enemy and area tables, complete header tail; 34 legal slots and 36 world entries. |
+| [x] `StoreFore` | `$9c68` | Conditional background selection, foreground store, entrance/timer fields; whole-RAM canaries on all header pairs. |
+| [x] `StoreStyle` | `$9ca3` | Conditional cloud/style stores, low add-two and high carry; all header pairs plus all low-pointer bytes. |
+| [x] `WorldAddrOffsets` | `$9cb4` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `AreaAddrOffsets` | `$9cbc` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World1Areas` | `$9cbc` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World2Areas` | `$9cc1` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World3Areas` | `$9cc6` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World4Areas` | `$9cca` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World5Areas` | `$9ccf` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World6Areas` | `$9cd3` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World7Areas` | `$9cd7` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `World8Areas` | `$9cdc` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `EnemyAddrHOffsets` | `$9ce0` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `EnemyDataAddrLow` | `$9ce4` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `EnemyDataAddrHigh` | `$9d06` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `AreaDataHOffsets` | `$9d28` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `AreaDataAddrLow` | `$9d2c` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+| [x] `AreaDataAddrHigh` | `$9d4e` | Exact indexed PRG binding; source expressions match ROM bytes; live route consumer recorded for every table byte and alias. |
+
+ROM track: 36 ordinary two-player GameOver/ContinueGame world entries plus
+34 direct InitializeArea slots. Only source RAM inputs are seeded; code,
+PC, stack and return addresses are untouched. Original PC coverage confirms
+all admitted code entries. Two NMI-return samples per route agree on all
+1,782 persistent RAM bytes; only scratch $00-$07, stack and $0778/$0779 are
+excluded and reported. A one-sample no-swap TerminateGame route also agrees,
+including $fc=$80 and ContinueWorld. This is bounded chain evidence, not a
+whole-game certificate. All 188 table bytes at $9cb4-$9d6f are independently
+matched to assembly expressions and consumed by the routes.
+
+Operational track: 23 area smokes and enemy-block-query pass on both x86/x64
+(48 executions); mode smoke with explicit Silence assertions passes twice.
+Pointer/header smoke checks 2,048 world/area byte indices, 256 type values,
+65,536 header pairs with whole-RAM write canaries, 256 pointer-low carry cases,
+and all 34 slots with both bit-seven aliases and halfway caller overrides.
+The previous commit fails the new mode assertion with exit four; fixed C
+passes. A 600-tick Start/right/stop native regression (last 120 samples) is
+byte-identical in RAM and visible output to d67f9f5 and reaches GameMode.
+That comparison is regression evidence, not new ROM conformance credit.
+
+Both native PE products pass self-test and hidden two-second window/message
+probes. OpenNT16 compiles the same game sources and links MZ, retaining its
+known OLDNAMES warning. DOS resource binding is still absent; link success
+is not DOS playability. Platform-purity passes and no platform file changed.
+Four legacy whole-smoke executions (core/local-area on two widths) remain
+failed at the same preexisting timer fixtures; their failures are retained,
+not counted as green or concealed by changed gameplay expectations.
+
+The indexer now processes a label before its inline data directive. A
+project-owned synthetic test covers byte/db/word/dw/hex, aliases and following
+instructions. The corrected local listing reaches the ROM end without an
+opcode mismatch (six non-executable metadata directives remain reported).
+All scoped addresses are checked against the independent table audit. Old
+unscoped address annotations are not silently recertified.
+
+Similar-issue sweep: all production indexed pointer-table reads have this
+single area owner. Only InitializeArea calls the full data/header chain;
+terminal/title selection uses LoadAreaPointer and no platform sees it.
+All Silence writers were inspected: NextArea still incorrectly queues zero;
+it is already open and is recorded for its planned player-control chain.
+GameCoreRoutine still runs the engine tail after a task-changing life-loss
+return; its saved counterexample belongs to the dispatcher candidate.
+Neither deferred defect is part of this node claim. AreaDataOfsLoopback is
+accepted under T19 S5 with its missing ExecGameLoopback consumer (transfer-113).
+
+Raw traces: 2320886 bytes, below the admitted 3 MB budget; twenty-second process limits. Local traces remain only for enclosing T review.
+
+Artifact SHA-256: `mysmb16.exe` `890EE21514B3C0EEED59D7BF4BBEBAEA57C0104D038A7F99F05D37C24B919C84`.
+
+Artifact SHA-256: `mysmb32.exe` `C0A3F43FCFA48C02CD97827020A08A71D95A7ACE0E9100E278CE37536CC114DD`.
+
+Artifact SHA-256: `mysmb64.exe` `82A14582D72DEDB887B1B5CD551F31DC73E4DF4AB3917929F21FC9E0CF861D2B`.
+
+## S14 closure
+
+Expected/actual **23/23**: all original 22 pointer/header/table nodes complete,
+and TerminateGame restored after explicit revocation and transfer. No scoped
+node is unfinished. Revised **483 -> 506 / 1,992**, net 22 versus the original
+484 snapshot. Mapped incomplete returns to 103; open falls to 1,383. M2 and
+T30 remain open. No S is active; the next unadmitted source chain starts at
+E_CastleArea1 and the level-stream data, with the accepted loopback dependency
+remaining outside this completed chain.

@@ -86,7 +86,7 @@ int main(void)
     input.buttons = MYSMB_BUTTON_START;
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
-        game.ram[0x07fdU] != 4U) return 4;
+        game.ram[0x07fdU] != 4U || game.ram[0x00fcU] != 0x80U) return 4;
 
     /* Game-over termination transposes an eligible second player and resumes
      * their complete seven-byte record rather than returning to title. */
@@ -104,7 +104,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x0753U] != 1U || game.ram[0x075aU] != 2U ||
-        game.ram[0x075fU] != 6U) return 5;
+        game.ram[0x075fU] != 6U || game.ram[0x00fcU] != 0x80U) return 5;
 
     /* PlayerEndLevel owns the level increment while NextArea owns the new
      * area task, timer reload request, screen gate, and checkpoint reset. */

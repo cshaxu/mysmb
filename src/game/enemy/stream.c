@@ -245,6 +245,3 @@ mysmb_u8 mysmb_enemy_stream_process_next(struct mysmb_game *game,
     }
     return 0U;
 }
-
-/* Translation of ROM $9c03-$9c2b (LoadAreaPointer/GetAreaDataAddrs).
- * ROM CPU addresses are converted to NROM PRG offsets at this owner boundary. */

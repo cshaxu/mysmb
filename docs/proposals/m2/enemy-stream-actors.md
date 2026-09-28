@@ -1,5 +1,13 @@
 # M2 candidate: Enemy stream and actors
 
+## T30/S14 loopback data receipt
+
+Coordinator accepts `AreaDataOfsLoopback` into existing M2 T19 S5 via
+transfer-113, alongside its only source consumer `ExecGameLoopback`.
+The runtime consumer is absent; both remain unfinished. Certify the eleven
+table bytes and indexed loopback call together when their source-order chain
+is admitted. This receipt allocates no new T and gives T30/S14 no node credit.
+
 ## Status
 
 **M2 T19 active — S5/P18.** Admission is triggered by the bounded title/demo continuation: after a free slot reaches `ProcessEnemyData`, ROM rewrites its page/X/Y inputs while native C retains stale slot values. The first source-visible output divergence is sample 172 / `$03ae`, but `RelativeEnemyPosition` only exposes this upstream producer difference.

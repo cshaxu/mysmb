@@ -27,6 +27,22 @@ Called by the frame root; orders fireball, six enemy/loop slots, player, graphic
 
 Dispatcher task-byte transitions and call ordering match ROM evidence; it contains no approximated child behavior.
 
+## T30/S14 dependency counterexample
+
+Accept for the planned dispatcher chain: original GameCoreRoutine checks
+OperMode_Task after GameRoutines and returns when it is below three. Native
+frame_root still executes the enemy/graphics tail after PlayerLoseLife has
+changed that task to zero. The source-RAM life-loss counterexample retained
+by [T30 S14](t30-area-object-rendering.md#s14-admitted-dependency-correction)
+shows persistent actor state changes absent from ROM. Require a task-changing
+exit route and a normal task-three continuation at admission. This node
+remains open; S14 does not implement or certify the dispatcher.
+
+Legacy core-smoke and local-area-smoke also have invalid timer-dispatch
+fixtures (setup task two and task $7f). Both fail on d67f9f5 before S14.
+Repair their fixture contracts against this dispatcher scope before treating
+them as full regression gates; do not alter gameplay to satisfy them.
+
 Platform code may not read or write these game decisions. Delete replaced code in the same admitted task once its ROM trace proves the replacement.
 ## Chain-delivery governance amendment
 

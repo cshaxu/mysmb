@@ -26,20 +26,19 @@ mysmb_u8 mysmb_area_apply_special_palette(struct mysmb_game *game,
 mysmb_u8 mysmb_area_apply_message(struct mysmb_game *game,
                                   mysmb_u8 address_control);
 
-/* ROM $9c03-$9c0c LoadAreaPointer / FindAreaPointer.  It deliberately leaves
+/* ROM $9c03-$9c21 LoadAreaPointer / GetAreaType / FindAreaPointer. Leaves
  * zero-page data pointers untouched: InitializeGame calls it before
  * InitializeArea clears those locations. */
 mysmb_u8 mysmb_area_load_area_pointer(struct mysmb_game *game,
                                       const struct mysmb_area_source *source);
-/* ROM $9c0d-$9c4a GetAreaDataAddrs.  Rebuild the zero-page pointers after
- * InitializeArea, then leave header decoding to the caller. */
+mysmb_u8 mysmb_area_find_area_pointer(const struct mysmb_game *game,
+                                       const struct mysmb_area_source *source,
+                                       mysmb_u8 *pointer);
+mysmb_u8 mysmb_area_get_area_type(struct mysmb_game *game, mysmb_u8 pointer);
+/* ROM $9c22-$9cb3 GetAreaDataAddrs, including header decode and advance. */
 mysmb_u8 mysmb_area_get_data_addresses(struct mysmb_game *game,
                                        const struct mysmb_area_source *source);
-/* Compatibility composition of the two source helpers for callers whose
- * route does not cross InitializeArea. */
-mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
-                                  const struct mysmb_area_source *source);
-/* ROM $9c1c-$9c4a, parse and advance exactly one area header. */
+/* Original GetAreaDataAddrs header tail; isolated tests may call this seam. */
 mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source);
 /* ROM AreaParserCore terrain pass for the 24 columns prepared before play. */

@@ -2,6 +2,10 @@
 
 ## Translation Debt
 
+- [ ] **GameCoreRoutine return and legacy timer fixtures (`TODO(High)`):** after a life-loss transition to task zero, native C still runs the enemy/graphics tail. Source-RAM counterexample and old core/local timer fixture failures are accepted by the [dispatcher candidate](../proposals/m2/game-dispatcher.md#t30s14-dependency-counterexample). T30 S14 changes neither behavior nor their completion status.
+- [ ] **NextArea Silence selector (`TODO(High)`):** the T30 S14 Silence-writer sweep found zero instead of original $80 in terminal_modes.c. NextArea remains open under its existing receiver; repair and verify its music write in the planned player-control source slice, through the [player route](../proposals/m2/player-route.md). It is not part of the restored TerminateGame claim.
+- [ ] **Historic inline-data address annotations (`TODO(High)`):** the source indexer omitted inline labeled data before T30 S14. Scoped pointer/header addresses now have byte-checked corrected bindings. Recheck later table annotations against the corrected listing at each source-order admission; the [full census](../etc/architecture/m2-t24-s1-full-node-census.md) does not certify unreviewed addresses.
+
 
 - [ ] **Inactive legacy area readers (`TODO(High)` before full M2 certification):** mysmb_area_next_object and its unused lookahead/emitter cluster retain flat-address decoding and must be removed or consolidated into the authoritative parser. No active frame/root calls them; they receive no conformance credit. [S11 sweep](../proposals/m2/t30-area-object-rendering.md#s11p1-parser-index-wrap-rom-proof).
 

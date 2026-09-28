@@ -3,6 +3,7 @@
 
 #include "game/area.h"
 #include "game/game.h"
+#include "game/frame_root.h"
 #include "game/objects.h"
 #include "smb1_local_rom.h"
 
@@ -179,7 +180,7 @@ int main(void)
     mysmb_game_bind_area_source(&expected, source.prg, source.prg_size);
     expected.ram[0x075fU] = 1U;
     expected.ram[0x0760U] = 0U;
-    if (mysmb_area_load_pointers(&expected, &source) == 0U) return 1;
+    if (mysmb_area_load_area_pointer(&expected, &source) == 0U) return 1;
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, source.prg, source.prg_size);
     game.ram[0x0770U] = 2U;
@@ -396,9 +397,9 @@ int main(void)
         game.ram[0x001dU] != 1U) return 1;
 
     mysmb_game_initialize(&game);
-    if (mysmb_area_load_pointers(&game, &source) == 0U ||
+    if (mysmb_area_load_area_pointer(&game, &source) == 0U ||
         game.ram[0x0750U] != 0x25U || game.ram[0x074eU] != 1U ||
-        mysmb_area_parse_header(&game, &source) == 0U) {
+        mysmb_area_get_data_addresses(&game, &source) == 0U) {
         return 1;
     }
     count = 0U;

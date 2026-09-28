@@ -1,4 +1,5 @@
 #include "game/game.h"
+#include "game/frame_root.h"
 #include "game/area.h"
 #include "game/enemy/stream.h"
 #include "game/player.h"
@@ -42,7 +43,7 @@ int main(void)
     area_prg[0x1d0bU] = 0x12U;
     area_prg[0x1d2aU] = 0U;
     area_prg[0x1d31U] = 0x78U;
-    area_prg[0x1d53U] = 0x56U;
+    area_prg[0x1d53U] = 0x96U;
     area_prg[0x1f00U] = 0xedU;
     area_prg[0x1f01U] = 0xb9U;
     area_prg[0x1f02U] = 0x1dU;
@@ -500,11 +501,12 @@ int main(void)
     }
     game.ram[0x075fU] = 0U;
     game.ram[0x0760U] = 0U;
-    if (mysmb_area_load_pointers(&game, &area_source) == 0U ||
+    if (mysmb_area_load_area_pointer(&game, &area_source) == 0U ||
+        mysmb_area_get_data_addresses(&game, &area_source) == 0U ||
         game.ram[0x0750U] != 0x45U || game.ram[0x074eU] != 2U ||
         game.ram[0x074fU] != 5U || game.ram[0x00e9U] != 0x34U ||
-        game.ram[0x00eaU] != 0x12U || game.ram[0x00e7U] != 0x78U ||
-        game.ram[0x00e8U] != 0x56U) {
+        game.ram[0x00eaU] != 0x12U || game.ram[0x00e7U] != 0x7aU ||
+        game.ram[0x00e8U] != 0x96U) {
         return 1;
     }
     game.ram[0x071bU] = 0U;

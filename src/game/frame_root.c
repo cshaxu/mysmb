@@ -232,18 +232,6 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     }
     else if (mode_before == 1U && task_before == 0U) {
         mysmb_area_initialize(game);
-        if (game->area_prg != 0) {
-            area_source.prg = game->area_prg;
-            area_source.prg_size = game->area_prg_size;
-            /* ROM GameMode task zero calls InitializeArea, whose tail calls
-             * GetAreaDataAddrs.  AreaPointer was selected by the preceding
-             * title/start route and must survive this entry; re-running
-             * LoadAreaPointer here changes the original control/data order. */
-            if (mysmb_area_get_data_addresses(game, &area_source) != 0U) {
-                if (mysmb_area_parse_header(game, &area_source) != 0U) {
-                }
-            }
-        }
     }
     else if (mode_before == 0U && task_before == 0U) {
         /* Source reaches InitializeGame only after the NMI prologue.  The

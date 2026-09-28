@@ -2,32 +2,35 @@
 
 ## Current Work
 
-**M2 T30 S13 is closed at 484 / 1,992; all three scoped nodes match.**
+**Idle.**
 
-BlockBufferAddr and GetBlockBufferAddr are complete; SetInitNTHigh is restored
-after its page-parity repair. Three EXEs are refreshed. No S is active; the
-next unadmitted source chain starts at AreaDataOfsLoopback.
+**M2 T30 S14 is closed at 506 / 1,992; all 23 scoped nodes match.**
 
-## M2 T30 S13 Packet
+The pointer/header chain is complete and TerminateGame is restored. Three
+EXEs are refreshed. No S is active; level-stream data begins the next
+unadmitted source chain. DOS link is not playability; legacy timer-smoke
+failures and dispatcher/NextArea gaps remain recorded.
+
+## M2 T30 S14 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S13, continuation in source order. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-110 from T18 S4 and corrective transfer-111 from T28 S8. |
-| Objective | Complete BlockBufferAddr and GetBlockBufferAddr; restore SetInitNTHigh page parity as the admitted producer dependency. |
-| Non-goals | No collision policy redesign, area-pointer successor, platform game logic or unrelated node credit. |
-| Reference Baseline | Revised 481 / 1,992 after revoking SetInitNTHigh; two open nodes plus one mismatch; expected three, maximum 484. |
-| Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md). |
-| Files And ABI Surface | Shared area helper/header, world collision consumers, tests and recorders, node records and three EXEs. |
+| Identifier Mode | M2 T30 S14, continuation in original source order. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-112 receives 22 nodes; transfer-113 joins loopback data with its existing consumer owner; corrective transfer-114 receives TerminateGame from T29 S4. |
+| Objective | Complete the 22-node pointer/header chain and restore its TerminateGame caller Silence write; source-index tool correction is admitted. |
+| Non-goals | No loopback runtime, GameCoreRoutine repair, level-stream certification, actor policy or platform logic; parent credit only for admitted TerminateGame. |
+| Reference Baseline | Revised 483 / 1,992; 22 open labels and revoked TerminateGame; expected 23, maximum 506. |
+| Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md#t30s14-admission-area-pointer-and-header-chain). |
+| Files And ABI Surface | Shared area data owner, original initialization/title/terminal callers, tests/recorders, node records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | ROM source/caller audit, 32-column parser and sixteen InitializeArea routes; independent C90/collision tests, x86/x64, DOS16 link, purity, startup and packaging. |
-| Expected Markers | Exact table and 32 addresses, high-before-low scratch writes, byte low addition and both original caller families. |
-| Asset Needs | Three refreshed tracked EXEs under owner mandate; DOS is link evidence only. |
-| Reporting Requirements | Exact node disposition, dual evidence, counts, transfer and artifact hashes. |
-| Stop Conditions | Unmatched source semantics, missing route, unadmitted dependency or platform gameplay. |
-| Exit Criteria | All three labels proven by both tracks with matching tracker, or exact unfinished disposition. |
-| Original Owner Request | Original-ROM control/data structure, portable shared C and node-level accountability. |
-| Similar-Issue Sweep | All block-buffer address builders and scratch consumers; classify legacy helpers without expanding collision policy. |
+| Verification | Source table/control/write/call-order audit; 36 world entries and 34 legal area-slot original-ROM routes; independent native matrix, x86/x64, DOS16 link, purity, startup and package. |
+| Expected Markers | Pointer/type ownership, byte indexing, stale-state replacement, conditional header stores, pointer carry and source caller order. |
+| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS remains link evidence only. |
+| Reporting Requirements | Exact labels/counts, table bindings, dual evidence, consumer handoff and hashes. |
+| Stop Conditions | Unmatched source branch/write/order, missing route, unadmitted dependency or platform gameplay. |
+| Exit Criteria | All scoped labels have both evidence tracks or exact unfinished disposition; loopback table remains explicitly open with its consumer. |
+| Original Owner Request | Full original-ROM structure and semantics, shared portable C and node-level chain delivery. |
+| Similar-Issue Sweep | Every pointer/header consumer, stale cached type/offset, duplicate header calls and conditional state clearing. |
 
 ## Retained M2 T15 summary
 

@@ -68,15 +68,7 @@ enum {
     MYSMB_WORLD_NUMBER = 0x075fU,
     MYSMB_AREA_NUMBER = 0x0760U,
     MYSMB_AREA_PLAYER_ENTRANCE = 0x0710U,
-    MYSMB_AREA_MUSIC_QUEUE = 0x00fbU,
-    MYSMB_ROM_WORLD_OFFSETS = 0x1cb4U,
-    MYSMB_ROM_AREA_OFFSETS = 0x1cbcU,
-    MYSMB_ROM_ENEMY_HIGH_OFFSETS = 0x1ce0U,
-    MYSMB_ROM_ENEMY_LOW = 0x1ce4U,
-    MYSMB_ROM_ENEMY_HIGH = 0x1d06U,
-    MYSMB_ROM_AREA_HIGH_OFFSETS = 0x1d28U,
-    MYSMB_ROM_AREA_LOW = 0x1d2cU,
-    MYSMB_ROM_AREA_HIGH = 0x1d4eU
+    MYSMB_AREA_MUSIC_QUEUE = 0x00fbU
 };
 
 enum {
@@ -201,6 +193,7 @@ void mysmb_area_initialize(struct mysmb_game *game)
 {
     mysmb_u8 index;
     mysmb_u8 start_page;
+    struct mysmb_area_source source;
 
     mysmb_game_initialize_memory(game, 0x4bU);
     for (index = 0U; index < 0x22U; ++index) {
@@ -233,6 +226,13 @@ void mysmb_area_initialize(struct mysmb_game *game)
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 1U)] = 0xffU;
     game->ram[(mysmb_u16)(MYSMB_AREA_OBJECT_LENGTH + 2U)] = 0xffU;
     game->ram[MYSMB_AREA_COLUMN_SETS] = 0x0bU;
+    /* InitializeArea calls the complete GetAreaDataAddrs before the
+     * hard-mode/halfway overrides and final task advance. */
+    if (game->area_prg != 0) {
+        source.prg = game->area_prg;
+        source.prg_size = game->area_prg_size;
+        (void)mysmb_area_get_data_addresses(game, &source);
+    }
     game->ram[MYSMB_AREA_SCROLL_X] = 0U;
     game->ram[MYSMB_AREA_SCROLL_Y] = 0U;
     if (game->ram[MYSMB_PRIMARY_HARD] != 0U ||
@@ -600,104 +600,6 @@ mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game)
     }
     mysmb_area_apply_single_block(game, &object);
     mysmb_area_refresh_background_page(game, object.page);
-    return 1U;
-}
-
-mysmb_u8 mysmb_area_load_area_pointer(struct mysmb_game *game,
-                                      const struct mysmb_area_source *source)
-{
-    mysmb_u16 table_index;
-    mysmb_u8 area_pointer;
-    mysmb_u8 area_type;
-
-    if (source == 0 || source->prg == 0 || source->prg_size < 0x1d70U ||
-        game->ram[MYSMB_WORLD_NUMBER] >= 8U) {
-        return 0U;
-    }
-    table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_WORLD_OFFSETS +
-                                                       game->ram[MYSMB_WORLD_NUMBER])] +
-                               game->ram[MYSMB_AREA_NUMBER]);
-    if (table_index >= 0x0041U) {
-        return 0U;
-    }
-    area_pointer = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_OFFSETS + table_index)];
-    area_type = (mysmb_u8)((area_pointer & 0x60U) >> 5U);
-    game->ram[MYSMB_AREA_POINTER] = area_pointer;
-    game->ram[MYSMB_AREA_TYPE] = area_type;
-    game->ram[MYSMB_AREA_LOW_OFFSET] = (mysmb_u8)(area_pointer & 0x1fU);
-    return 1U;
-}
-
-mysmb_u8 mysmb_area_get_data_addresses(struct mysmb_game *game,
-                                       const struct mysmb_area_source *source)
-{
-    mysmb_u16 table_index;
-    mysmb_u8 area_type;
-
-    if (source == 0 || source->prg == 0 || source->prg_size < 0x1d70U ||
-        game->ram[MYSMB_AREA_TYPE] >= 4U) {
-        return 0U;
-    }
-    area_type = game->ram[MYSMB_AREA_TYPE];
-    table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_HIGH_OFFSETS +
-                                                        area_type)] +
-                                game->ram[MYSMB_AREA_LOW_OFFSET]);
-    if (table_index >= 0x0022U) {
-        return 0U;
-    }
-    game->ram[MYSMB_ENEMY_DATA_LOW] = source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_LOW + table_index)];
-    game->ram[MYSMB_ENEMY_DATA_HIGH] = source->prg[(mysmb_u16)(MYSMB_ROM_ENEMY_HIGH + table_index)];
-    table_index = (mysmb_u16)(source->prg[(mysmb_u16)(MYSMB_ROM_AREA_HIGH_OFFSETS +
-                                                       area_type)] +
-                               game->ram[MYSMB_AREA_LOW_OFFSET]);
-    if (table_index >= 0x0022U) {
-        return 0U;
-    }
-    game->ram[MYSMB_AREA_DATA_LOW] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_LOW + table_index)];
-    game->ram[MYSMB_AREA_DATA_HIGH] = source->prg[(mysmb_u16)(MYSMB_ROM_AREA_HIGH + table_index)];
-    return 1U;
-}
-
-mysmb_u8 mysmb_area_load_pointers(struct mysmb_game *game,
-                                  const struct mysmb_area_source *source)
-{
-    if (mysmb_area_load_area_pointer(game, source) == 0U) return 0U;
-    return mysmb_area_get_data_addresses(game, source);
-}
-
-/* Translation of the area-header tail of ROM $9c1c-$9c4a. */
-mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
-                                 const struct mysmb_area_source *source)
-{
-    mysmb_u16 address;
-    mysmb_u8 first;
-    mysmb_u8 second;
-    mysmb_u8 value;
-
-    if (source == 0 || source->prg == 0 || game->ram[MYSMB_AREA_DATA_HIGH] < 0x80U) {
-        return 0U;
-    }
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_AREA_DATA_HIGH] - 0x80U) << 8) |
-                           game->ram[MYSMB_AREA_DATA_LOW]);
-    if (address >= source->prg_size || (mysmb_u16)(source->prg_size - address) < 2U) {
-        return 0U;
-    }
-    first = source->prg[address];
-    second = source->prg[(mysmb_u16)(address + 1U)];
-    value = (mysmb_u8)(first & 0x07U);
-    game->ram[MYSMB_AREA_BACKGROUND_COLOR] = value >= 4U ? value : 0U;
-    game->ram[MYSMB_AREA_FOREGROUND] = value < 4U ? value : 0U;
-    game->ram[MYSMB_AREA_ENTRANCE] = (mysmb_u8)((first & 0x38U) >> 3U);
-    game->ram[MYSMB_AREA_TIMER_SETTING] = (mysmb_u8)(first >> 6U);
-    game->ram[MYSMB_AREA_TERRAIN] = (mysmb_u8)(second & 0x0fU);
-    game->ram[MYSMB_AREA_BACKGROUND] = (mysmb_u8)((second & 0x30U) >> 4U);
-    value = (mysmb_u8)(second >> 6U);
-    game->ram[MYSMB_AREA_CLOUD_OVERRIDE] = value == 3U ? value : 0U;
-    game->ram[MYSMB_AREA_STYLE] = value == 3U ? 0U : value;
-    /* Static palettes are selected by ScreenRoutines and committed by NMI. */
-    address = (mysmb_u16)(address + 2U);
-    game->ram[MYSMB_AREA_DATA_LOW] = (mysmb_u8)address;
-    game->ram[MYSMB_AREA_DATA_HIGH] = (mysmb_u8)(0x80U + (address >> 8U));
     return 1U;
 }
 

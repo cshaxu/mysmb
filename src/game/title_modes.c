@@ -50,13 +50,9 @@ static mysmb_u8 mysmb_game_apply_title_area(struct mysmb_game *game)
     source.prg = game->area_prg;
     source.prg_size = game->area_prg_size;
     mode_task = game->ram[MYSMB_RAM_OPER_MODE_TASK];
+    if (mysmb_area_load_area_pointer(game, &source) == 0U) return 0U;
     mysmb_area_initialize(game);
     mysmb_game_move_all_sprites_offscreen(game);
-    if (mysmb_area_load_pointers(game, &source) == 0U ||
-        mysmb_area_parse_header(game, &source) == 0U) {
-        game->ram[MYSMB_RAM_OPER_MODE_TASK] = mode_task;
-        return 0U;
-    }
     /* ScreenRoutines task eight calls AreaParserTaskControl once per NMI
      * until ColumnSets underflows.  Keep that real two-column path and its
      * own ProcessAreaData state, rather than scanning a copied area stream
@@ -222,10 +218,6 @@ mysmb_u8 mysmb_game_begin_title_bootstrap(struct mysmb_game *game)
         return 0U;
     }
     mysmb_area_initialize(game);
-    if (mysmb_area_get_data_addresses(game, &source) == 0U ||
-        mysmb_area_parse_header(game, &source) == 0U) {
-        return 0U;
-    }
     return 1U;
 }
 
