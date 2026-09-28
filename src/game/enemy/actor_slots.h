@@ -17,6 +17,8 @@ void mysmb_objects_step_flying_cheep_cheeps_slot(struct mysmb_game *game, mysmb_
 void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_bowser_flames_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_fireworks_slot(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing EndAreaPoints tail; its source-order proof belongs to S6. */
+void mysmb_objects_end_area_points(struct mysmb_game *game);
 void mysmb_objects_step_star_flags_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_step_lakitus_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_step_spiny_eggs_slot(struct mysmb_game *game, mysmb_u8 slot);

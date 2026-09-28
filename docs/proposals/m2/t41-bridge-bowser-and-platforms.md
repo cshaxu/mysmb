@@ -868,3 +868,156 @@ Raw trace output: 16897247 bytes, below 32 MB.
 | mysmb16.exe | 255983 | 5e9d883c56be109eed0ad813b9fb5ee5d82ac1b9d0903833a3416fc7fe560234 |
 | mysmb32.exe | 349018 | a60038d9818ab24ff61c6e0ecdff7a2b8f73ea46501e4432ee76d0df07ddcf8c |
 | mysmb64.exe | 357360 | 9560f050e9fb049a3317e188369b0ebe698cf1d98c46e89714d03d720e2654a5 |
+
+## S5 admission: fireworks lifetime and score tail
+
+S4 closed in db21c96. Coordinator accepts transfer-201 under the continuing
+M2 mandate. Scope and expected-new set are the same three open nodes:
+`RunFireworks`, `SetupExpl`, `FireworksSoundScore`, in source order at
+$D295-$D2CC (lines 10438-10464). Baseline 1,202/1,992, maximum 1,205.
+
+Move the caller from endgame_objects.c to enemy/fireworks.c, restoring the
+exact timer decrement/wrap, expiry reset, graphics increment and unsigned
+termination gate. Drawing calls RelativeEnemyPosition, copies Y then X into
+fireball scratch and passes fresh frame/OAM values to DrawExplosion_Fireworks.
+Expiry clears the source enemy flag, assigns blast sound (not OR), writes
+DigitModifier+4=5 and tail-calls EndAreaPoints. No entry flag/ID guard or
+invented frame/timer rule. Legacy bulk eligibility remains outside this entry.
+
+Dependencies retain their owners. Extract the existing four-sprite rendering
+body into oam/fireworks_gfx.c with explicit frame/OAM arguments. Expose the
+existing endgame score tail as one shared child used by fireworks and star
+flag, retaining its current behavior; S6 owns EndAreaPoints/ELPGive migration.
+This wiring grants no descendant-node credit and does not permit generic
+explosion, score/HUD, star-flag or platform algorithm rewrites.
+
+Logic proof uses naturally reached original NMI RunFireworks routes, input-only
+controlled RAM when needed, source branches and complete child inputs before
+recorded-return diagnostics. Separate actual-child execution retains every
+remaining graphics/score discrepancy. No ROM/CPU/PC/stack/output patches.
+Operational proof covers mysmb.fireworks-lifetime-chain mutation contracts,
+initializer/endgame regression, strict C90 x86/x64, DOS16 link, platform purity,
+hidden-window response and all three EXEs once per P. Retain all 10,900 prior
+actual matches. DOS remains link-only. No credit before both proof tracks.
+
+Similar-issue sweep covers duplicate owners, timer/frame wrap, guard placement,
+post-child coordinates/arguments, sound assignment and duplicate score writes.
+S4 is the predecessor; planned S6 star-flag/score is the successor. Existing
+owner-ROM/listing provenance and local-only restrictions remain. Unique ignored
+build/m2-t41-s5 outputs have a 32-MB raw limit, up to 512 original cases,
+twenty-second per-record deadline and resumable checkpoints; coordinator owns
+cleanup and dependent-regression retention. Stop on scope expansion, hidden
+mismatches or execution patches.
+
+## S5 implementation checkpoint
+
+S5 remains active with no node credit or P closure. Direct ROM decoding
+identifies 24 instructions and two conditional branches in $D295-$D2CC;
+runtime source coverage is pending. RunFireworks now has one shared owner
+in enemy/fireworks.c. Its exact timer/frame and terminal branches replace
+the old guarded, combined endgame body. SetupExpl calls relative positioning,
+reloads the source ObjectOffset and copies Y then X before passing fresh
+frame/OAM arguments. FireworksSoundScore clears the flag, assigns sound eight,
+sets modifier five and calls the separated existing score tail.
+
+The old four-sprite body is extracted unchanged into oam/fireworks_gfx.c;
+its generic explosion semantics remain unproved. The existing score tail is
+shared with star-flag code, retaining its current score/coin HUD behavior
+until S6 proves EndAreaPoints. No descendant credit or silent child rewrite.
+Legacy bulk eligibility and its ObjectOffset preparation are outside the
+original entry. Host adapters have no changes.
+
+Thirty-two independent full-RAM/mutation cases pass per width, covering
+zero/one/hold timers, byte frame wrap, absent/active flags, live ObjectOffset
+and fresh drawing arguments, sound replacement and score handoff. All
+139,770 fireworks initializer footprints per width remain equal. Existing
+endgame test exit 6 remains unchanged. Strict C90 changed-owner compilation
+and platform purity pass.
+
+Next: naturally reached original RunFireworks snapshots and typed child
+arguments, full branch/input/return comparisons, separate actual-child gaps,
+retained cross-chain regression and a single three-target delivery pass.
+Counts remain 1,202/1,992; assets still belong to db21c96. Local source/native
+summaries stay below ignored build/m2-t41-s5. No P is committed yet.
+
+## S5 original fireworks lifetime proof
+
+S5 P1 closes all three expected caller nodes: 1,202 -> 1,205/1,992.
+No scoped node remains unfinished or transfers at closure. Dependency
+algorithms retain their separate proof state and current ledger receivers.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| RunFireworks | Byte timer decrement, reset to eight, graphics increment/wrap and unsigned termination branch. ROM-match complete. |
+| SetupExpl | Relative child, fresh X/ObjectOffset, Y-then-X scratch copies and explicit original A/Y drawing arguments. ROM-match complete. |
+| FireworksSoundScore | Flag clear, assigned blast sound, modifier five and EndAreaPoints tail call. ROM-match complete. |
+
+All 24 original instructions in $D295-$D2CC execute, with both sides of both
+conditional branches. The 512 routes start at the real NMI actor vector;
+declared RAM inputs apply at naturally reached RunFireworks independently of
+observer selection. No ROM, CPU/register, PC, stack or output patch is used.
+Every observer-free original frame equals the observed original frame; this
+does not assert native full-game frame equality.
+
+Caller comparisons match 1,024/1,024 across x86/x64. Complete child input RAM
+is checked before recorded-return diagnostics, including mapped $0109-$0139
+and OAM/VRAM/audio queues; only hardware stack storage is excluded. Recorder
+checks original relative-child returned X equals ObjectOffset. At explosion
+entry it verifies original A equals the fresh graphics counter and Y equals
+the fresh OAM offset; the C checker checks those explicit arguments against
+the original record. Coordinate copies precede the child in source order.
+Cases include slots zero/five, timer zero/one/hold/wrap, graphics wrap and
+termination, coordinates/OAM boundaries, both players and nonzero timer control.
+
+Actual roots match 472/1,024, with 552 descendant-affected differences.
+Independent original child-input isolation gives:
+
+- RelativeEnemyPosition: 472/944 exact full-RAM matches.
+- DrawExplosion_Fireworks: 944/944 exact full-RAM matches.
+- EndAreaPoints: 0/80 exact full-RAM matches.
+
+These are bounded child diagnostics, not new descendant-node credit. No
+recorded substitution occurs in actual comparisons. Relative scratch and
+generic explosion/score behavior retain their source-order responsibilities;
+EndAreaPoints/ELPGive belongs to planned S6. Passing a subset does not certify
+the full child algorithm or complete gameplay.
+
+RunFireworks has one shared owner in enemy/fireworks.c. The old combined
+endgame actor is removed; existing explosion layout is extracted into
+oam/fireworks_gfx.c with typed frame/OAM inputs. The pre-existing score tail
+is shared with star-flag code and keeps its existing score/coin HUD behavior
+until S6. Bulk eligibility and ObjectOffset setup remain outside the source
+entry. No host code or gameplay rule changes.
+
+Thirty-two independent full-RAM/mutation contracts pass per native width,
+including fresh child arguments, absent flags, timer/frame wrap, sound
+replacement and score handoff. All 139,770 fireworks initializer footprints
+per width remain equal; existing endgame exit 6 remains explicit. Fifteen
+initializer/platform suites per width and platform purity pass. The final
+actual matrix is 11,372/18,682: every prior 10,900 match remains, with 472 new
+root matches. The 7,310 remaining differences are sample counts, not nodes.
+
+All 105 shared units compile under strict C90 on x86/x64; self-tests and
+hidden-window response probes pass. DOS16 compiles/links with the existing
+OLDNAMES warning. DOS remains link-only, without graphical playability,
+resource-binding or physical 486SX certification. Three EXEs are refreshed.
+
+Similar-issue sweep covers owner duplication, guards, byte counters, fresh
+child state/register arguments, coordinate order, sound assignment and score
+modifier writes. Reproduce fireworks_lifetime_fixture.h cases 0..511 with
+--fixture=t41-fireworks-lifetime=N, --fireworks-lifetime-snapshot,
+--control-children and independent --pc-coverage. The caller checker is
+fireworks_lifetime_snapshot_check; enemy_loop_actual_check executes real
+children. Native target is mysmb.fireworks-lifetime-chain. Ignored
+build/m2-t41-s5 holds bounded inputs and resumable checkpoints with twenty-
+second per-record deadlines. Coordinator owns cleanup and dependent inputs.
+Existing provenance and local-only restrictions remain. S6 star-flag/score
+is next, not admitted by this closure.
+
+Raw trace output: 8418057 bytes, below 32 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256015 | a29d79b5554029ea297cb7d0660790f37afdd837340aa7b1fc5c04473ad79ffd |
+| mysmb32.exe | 350649 | 615526680f859d2a3c93ef8efd67cab400bf342c443855ddc4078d11765c9b6a |
+| mysmb64.exe | 358037 | c0d67b68232462f146a7a8dedf9451d5c61f949e44f4fc430764450d12ba8feb |

@@ -54,6 +54,9 @@ void mysmb_objects_draw_bowsers(struct mysmb_game *game);
 /* Existing EnemyGfxHandler Bowser rows, selected by BowserGfxFlag. */
 void mysmb_oam_draw_bowser_half(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot);
+/* DrawExplosion_Fireworks child takes source A and Y explicitly. */
+void mysmb_oam_draw_fireworks_explosion(struct mysmb_game *game,
+                                       mysmb_u8 frame, mysmb_u8 oam);
 void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM ProcHammerObj prepares relative coordinates and offscreen bits before
  * GetMiscBoundBox; the caller owns the intervening shared collision-box write. */

@@ -38,6 +38,8 @@ $sources = @(
     'game/enemy/lakitu.c',
     'game/enemy/bowser.c',
     'game/enemy/bowser_flame.c',
+    'game/enemy/fireworks.c',
+    'game/oam/fireworks_gfx.c',
     'game/enemy/firebar_children.c',
     'game/enemy/distance.c',
     'game/enemy/background.c',

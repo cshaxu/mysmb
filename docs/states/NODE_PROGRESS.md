@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1202 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1205 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 684 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 681 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,202 / 1,992 (60.34%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,205 / 1,992 (60.49%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S4 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s4-original-flame-actor-proof)
-closes nine flame actor nodes and retains three timer nodes with 2,048/2,048
-original caller comparisons. Actual roots match 8/2,048; position/offscreen
-child gaps remain explicit. All 10,892 prior actual matches remain.
+Latest task review: [T41 S5 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s5-original-fireworks-lifetime-proof)
+closes three fireworks lifetime caller nodes with 1,024/1,024 original caller
+comparisons. Actual roots match 472/1,024; descendant gaps remain explicit.
+All 10,900 prior actual matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1202)
+## Completed matches (1205)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1219,6 +1219,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10423 | `M2FOfs` |
 | 10429 | `M1FOfs` |
 | 10434 | `ExFlmeD` |
+| 10438 | `RunFireworks` |
+| 10447 | `SetupExpl` |
+| 10457 | `FireworksSoundScore` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

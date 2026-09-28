@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T41 S4 is closed at 1,202 / 1,992: nine new actor nodes, three retained timer nodes. S5 is next.**
+**M2 T41 S5 is closed at 1,205 / 1,992: three fireworks caller nodes complete. S6 is next.**
 
-## M2 T41 S4 Packet
+## M2 T41 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S4, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after f3617ca; coordinator accepts transfers-199/200. |
-| Objective | Twelve flame actor/timer nodes: nine open expected new, three retained. |
+| Identifier Mode | M2 T41 S5, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after db21c96; coordinator accepts transfer-201. |
+| Objective | Three open fireworks lifetime/score caller nodes, three expected new. |
 | Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
-| Reference Baseline | 1,193/1,992; twelve scoped, nine expected new, maximum 1,202. |
-| Candidate Proposal | [T41 S4 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s4-admission-flame-timer-and-full-flame-actor). |
-| Files And ABI Surface | enemy/bowser_flame.c, flame graphics tail, shared Y data, native/ROM tests, manifests and three EXEs. |
+| Reference Baseline | 1,202/1,992; three scoped/expected, maximum 1,205. |
+| Candidate Proposal | [T41 S5 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s5-admission-fireworks-lifetime-and-score-tail). |
+| Files And ABI Surface | enemy/fireworks.c, extracted explosion/score seams, tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
-| Expected Markers | Force/X/page borrow, Y target, scratch/relative writes, three sprite loop and four masks. |
+| Expected Markers | Timer/frame wrap, coordinate order, explicit child arguments and sound/score writes. |
 | Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Twelve exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Reporting Requirements | Three exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
 | Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Twelve nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Exit Criteria | Three nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
 | Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Duplicate table/owner, entry guards, scratch, borrow and OAM/mask addressing. |
+| Similar-Issue Sweep | Duplicate owner, guards, timer/frame wrap, post-child arguments and sound/score writes. |
+
+## S5 closure
+
+[Original fireworks lifetime proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s5-original-fireworks-lifetime-proof)
+closes three caller nodes with 1,024/1,024 matches. Actual roots match
+472/1,024; descendant gaps remain explicit. All prior 10,900 matches remain.
+Three EXEs refreshed; DOS link-only. S6 star-flag/score is next.
 
 ## S4 closure
 
@@ -31,7 +38,7 @@
 closes nine new and three retained nodes with 2,048/2,048 caller matches.
 Actual roots match 8/2,048; position/offscreen child gaps remain explicit.
 All 10,892 prior actual matches remain. Three EXEs refreshed; DOS link-only.
-S5 fireworks lifetime/score is next, not admitted by this closure.
+S5 is closed; its result is above.
 
 ## S3 closure
 

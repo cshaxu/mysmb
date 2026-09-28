@@ -38,69 +38,31 @@ static void mysmb_endgame_apply_digits(struct mysmb_game *game, mysmb_u8 offset)
 }
 
 
-static void mysmb_endgame_award_score(struct mysmb_game *game, mysmb_u8 amount)
+/* Existing EndAreaPoints child; original score/HUD migration is planned S6. */
+void mysmb_objects_end_area_points(struct mysmb_game *game)
 {
-    game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + 4U] = amount;
     mysmb_endgame_apply_digits(game,
         game->ram[MYSMB_ENDGAME_CURRENT_PLAYER] == 0U ? 0x0bU : 0x11U);
     (void)mysmb_area_queue_score_coin_status(game);
 }
 
-/* ROM RunFireworks / DrawExplosion_Fireworks. */
-void mysmb_objects_step_fireworks_slot(struct mysmb_game *game, mysmb_u8 slot)
+static void mysmb_endgame_award_score(struct mysmb_game *game, mysmb_u8 amount)
 {
-    static const mysmb_u8 tiles[3] = { 0x68U, 0x67U, 0x66U };
-    mysmb_u8 oam;
-    mysmb_u8 x;
-    mysmb_u8 y;
-    mysmb_u8 frame;
-
-    if (game->ram[MYSMB_ENDGAME_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENDGAME_ENEMY_ID + slot] != 22U) return;
-    game->ram[MYSMB_ENDGAME_ENEMY_Y_SPEED + slot]--;
-    if (game->ram[MYSMB_ENDGAME_ENEMY_Y_SPEED + slot] == 0U) {
-        game->ram[MYSMB_ENDGAME_ENEMY_Y_SPEED + slot] = 8U;
-        game->ram[MYSMB_ENDGAME_ENEMY_X_SPEED + slot]++;
-        if (game->ram[MYSMB_ENDGAME_ENEMY_X_SPEED + slot] >= 3U) {
-            game->ram[MYSMB_ENDGAME_ENEMY_FLAG + slot] = 0U;
-            game->ram[MYSMB_ENDGAME_SQUARE2_SOUND] = 0x08U;
-            mysmb_endgame_award_score(game, 5U);
-            return;
-        }
-    }
-    frame = game->ram[MYSMB_ENDGAME_ENEMY_X_SPEED + slot];
-    x = (mysmb_u8)(game->ram[MYSMB_ENDGAME_ENEMY_X + slot] -
-                   game->ram[MYSMB_ENDGAME_SCREEN_LEFT_X]);
-    y = game->ram[MYSMB_ENDGAME_ENEMY_Y + slot];
-    game->ram[0x03aeU] = x;
-    game->ram[0x03b9U] = y;
-    game->ram[0x03baU] = y;
-    game->ram[0x03afU] = x;
-    oam = game->ram[MYSMB_ENDGAME_ENEMY_SPRITE_OFFSET + slot];
-    game->ram[0x0200U + oam] = (mysmb_u8)(y - 4U);
-    game->ram[0x0204U + oam] = (mysmb_u8)(y + 4U);
-    game->ram[0x0208U + oam] = (mysmb_u8)(y - 4U);
-    game->ram[0x020cU + oam] = (mysmb_u8)(y + 4U);
-    game->ram[0x0201U + oam] = tiles[frame];
-    game->ram[0x0205U + oam] = tiles[frame];
-    game->ram[0x0209U + oam] = tiles[frame];
-    game->ram[0x020dU + oam] = tiles[frame];
-    game->ram[0x0202U + oam] = 2U;
-    game->ram[0x0206U + oam] = 0x82U;
-    game->ram[0x020aU + oam] = 0x42U;
-    game->ram[0x020eU + oam] = 0xc2U;
-    game->ram[0x0203U + oam] = (mysmb_u8)(x - 4U);
-    game->ram[0x0207U + oam] = (mysmb_u8)(x - 4U);
-    game->ram[0x020bU + oam] = (mysmb_u8)(x + 4U);
-    game->ram[0x020fU + oam] = (mysmb_u8)(x + 4U);
+    game->ram[MYSMB_ENDGAME_DIGIT_MODIFIER + 4U] = amount;
+    mysmb_objects_end_area_points(game);
 }
 
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_fireworks(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_fireworks_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENDGAME_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENDGAME_ENEMY_ID + slot] == 22U) {
+            game->ram[8U] = slot;
+            mysmb_objects_step_fireworks_slot(game, slot);
+        }
+    }
 }
 
 /* ROM RunStarFlagObj / DrawStarFlag. */
