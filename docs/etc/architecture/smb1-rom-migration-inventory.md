@@ -491,7 +491,7 @@ The labels and branches behind every line remain open until individually bound b
 | 3393 | `DecodeAreaData` | M2 T30 S11 shared area parser | ROM-match complete | [T30 S11/P1 corrected byte-index proof](../../proposals/m2/t30-area-object-rendering.md#s11p1-parser-index-wrap-rom-proof) |
 | 3397 | `Chk1stB` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk1stb) |
 | 3408 | `ChkRow14` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow14) |
-| 3416 | `ChkRow13` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrow13) |
+| 3416 | `ChkRow13` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
 | 3429 | `Mask2MSB` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mask2msb) |
 | 3431 | `ChkSRows` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chksrows) |
 | 3442 | `LrgObj` | T18 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrgobj) |
@@ -674,12 +674,12 @@ The labels and branches behind every line remain open until individually bound b
 | 4777 | `E_WaterArea1` | M2 T19 S5 accepted enemy-data consumer, transfer-115 | mapped; evidence incomplete | [T30 S15 binding and counterexample](../../proposals/m2/t30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt) |
 | 4783 | `E_WaterArea2` | M2 T19 S5 accepted enemy-data consumer, transfer-115 | mapped; evidence incomplete | [T30 S15 binding and counterexample](../../proposals/m2/t30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt) |
 | 4791 | `E_WaterArea3` | M2 T19 S5 accepted enemy-data consumer, transfer-115 | mapped; evidence incomplete | [T30 S15 binding and counterexample](../../proposals/m2/t30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt) |
-| 4799 | `L_CastleArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea1) |
-| 4814 | `L_CastleArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea2) |
-| 4832 | `L_CastleArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea3) |
-| 4849 | `L_CastleArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea4) |
-| 4865 | `L_CastleArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea5) |
-| 4884 | `L_CastleArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_castlearea6) |
+| 4799 | `L_CastleArea1` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
+| 4814 | `L_CastleArea2` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
+| 4832 | `L_CastleArea3` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
+| 4849 | `L_CastleArea4` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
+| 4865 | `L_CastleArea5` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
+| 4884 | `L_CastleArea6` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
 | 4900 | `L_GroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea1) |
 | 4915 | `L_GroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea2) |
 | 4931 | `L_GroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea3) |

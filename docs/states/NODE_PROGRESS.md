@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 506 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 512 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,349 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,343 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **506 / 1,992 (25.40%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **512 / 1,992 (25.70%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (506)
+## Completed matches (512)
 
 | ROM line | Node |
 | ---: | --- |
@@ -527,6 +527,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4528 | `AreaDataHOffsets` |
 | 4531 | `AreaDataAddrLow` |
 | 4539 | `AreaDataAddrHigh` |
+| 4799 | `L_CastleArea1` |
+| 4814 | `L_CastleArea2` |
+| 4832 | `L_CastleArea3` |
+| 4849 | `L_CastleArea4` |
+| 4865 | `L_CastleArea5` |
+| 4884 | `L_CastleArea6` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

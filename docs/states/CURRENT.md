@@ -4,32 +4,32 @@
 
 **Idle.**
 
-**M2 T30 S15 is closed at 506 / 1,992; 34 data bindings mapped, zero new matches.**
+**M2 T30 S16 is closed at 512 / 1,992; seven of seven scoped nodes complete.**
 
-All 34 enemy streams are bound and accepted with their unfinished consumer
-under T19 S5. S14 three EXEs remain unchanged and verified. No S is active;
-L_CastleArea1 starts the next scene-data chain.
+Six castle scene streams and restored ChkRow13 have source/ROM and native
+operational evidence. Three EXEs are refreshed; DOS remains link-only.
+No S is active. L_GroundArea1 begins the next unadmitted source chain.
 
-## M2 T30 S15 Packet (closed)
+## M2 T30 S16 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S15, audit-only source-order continuation. |
-| Admission And Approval | Owner-approved M2 continuation; coordinator admits concrete enemy-data consumer dependency audit. |
-| Objective | Bind all 34 enemy streams and transfer their unfinished consumer proof to existing T19 S5. |
-| Non-goals | No enemy runtime migration, scene data, dispatcher, platform logic or conformance credit. |
-| Reference Baseline | 506 / 1,992; 34 open labels; expected zero, maximum 506. |
-| Candidate Proposal | [T30 S15](../proposals/m2/t30-area-object-rendering.md#t30s15-admission-enemy-data-binding-and-consumer-handoff). |
-| Files And ABI Surface | Local binding checker, synthetic tests, neutral node records and accepted responsibility handoff; no runtime ABI changes. |
-| Applicable Rules | Task Reading Set, execution, coding, architecture, documentation, source policy and node ledger. |
-| Verification | Exact assembly/ROM spans, pointer bindings, record/terminator boundaries, consumer discrepancies; independent synthetic checker tests, purity and unchanged three-artifact checks. |
-| Expected Markers | 34 exact labels with byte spans and accepted consumer; no unproven completion marks. |
-| Asset Needs | Reuse unchanged S14 three EXEs with identity/self-test checks; DOS remains link-only. |
-| Reporting Requirements | Exact incomplete labels, source/C dependency, accepted receiver, neutral data metadata and dual-evidence limitations. |
-| Stop Conditions | Unexpected source layout, unknown record grammar, unbound pointer or unaccepted handoff. |
-| Exit Criteria | Every scoped data label has checked binding and an explicit accepted consumer proof obligation; no scope retained by this audit. |
-| Original Owner Request | Strict original-ROM graph and node equivalence in source order; avoid premature completion claims. |
-| Similar-Issue Sweep | All 34 enemy stream spans, all pointer-table entries and all row-0e area destinations; no implicit runtime certification. |
+| Identifier Mode | M2 T30 S16, source-order implementation. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-116 from T18 S4 and corrective transfer-117 for ChkRow13 from T29 S7. |
+| Objective | Complete six L_CastleArea scene nodes through full byte binding and parser consumption. |
+| Non-goals | No player/actor runtime, dispatcher, loopback or platform gameplay. |
+| Reference Baseline | Revised 505 / 1,992; six open scenes plus revoked ChkRow13, expected seven, maximum 512. |
+| Candidate Proposal | [T30 S16](../proposals/m2/t30-area-object-rendering.md#t30s16-admission-castle-scene-streams). |
+| Files And ABI Surface | Shared area consumer if needed, local binding/route harnesses, exact node records and three EXEs. |
+| Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
+| Verification | Whole source spans/pointers; original initialized ScreenRoutines parser traversal with terminator coverage; independent native tests, three builds, startup and purity. |
+| Expected Markers | Header-derived fields, every scene record, parser cursors, metatiles, block buffers and creation outputs. |
+| Asset Needs | Three EXEs per implementation P; DOS remains link-only. |
+| Reporting Requirements | Six exact node dispositions, source/ROM and independent runtime tracks, limits and artifact hashes. |
+| Stop Conditions | Unadmitted consumer discrepancy, missing record/terminator coverage or platform logic. |
+| Exit Criteria | Every scoped stream has both evidence tracks, or exact accepted unfinished disposition. |
+| Original Owner Request | Faithful original-ROM graph and every logic node in source order. |
+| Similar-Issue Sweep | Six castle streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
 
 ## Retained M2 T15 summary
 

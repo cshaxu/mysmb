@@ -20,6 +20,7 @@
 #include "../test/pipe_tail_fixture.h"
 #include "../test/block_address_fixture.h"
 #include "../test/area_pointer_fixture.h"
+#include "../test/castle_scene_fixture.h"
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -49,6 +50,24 @@
 static unsigned long mysmb_pc_hits[32768];
 static unsigned long mysmb_pc_fallthrough2[32768];
 static unsigned long mysmb_pc_other[32768];
+static unsigned long mysmb_area_read_hits[32768];
+
+static int mysmb_reference_write_area_reads(const char *path)
+{
+    FILE *output;
+    unsigned int offset;
+    int ok;
+    if (path == NULL) return 1;
+    output = fopen(path, "w");
+    if (output == NULL) return 0;
+    ok = fprintf(output, "address,reads\n") >= 0;
+    for (offset = 0u; offset < 32768u && ok; ++offset)
+        if (mysmb_area_read_hits[offset] != 0ul)
+            ok = fprintf(output, "%04x,%lu\n", offset + 0x8000u,
+                         mysmb_area_read_hits[offset]) >= 0;
+    if (fclose(output) != 0) ok = 0;
+    return ok;
+}
 
 static int mysmb_reference_write_coverage(const char *path)
 {
@@ -897,6 +916,7 @@ int main(int argument_count, char **arguments)
     int block_scenario;
     const char *script;
     const char *coverage_path;
+    const char *area_reads_path;
     struct mysmb_reference_ram_write ram_write;
     unsigned int t26_fixture;
     lib_bool direct_warp_text;
@@ -919,6 +939,7 @@ int main(int argument_count, char **arguments)
     warmup_frames = 0u;
     script = NULL;
     coverage_path = NULL;
+    area_reads_path = NULL;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
@@ -928,6 +949,11 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--area-read-coverage=", 21u) == 0) {
+            if (area_reads_path != NULL || arguments[recorded][21] == '\0') return 64;
+            area_reads_path = arguments[recorded] + 21;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--pc-coverage=", 14u) == 0) {
             if (coverage_path != NULL || arguments[recorded][14] == '\0')
                 return 64;
@@ -1318,6 +1344,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_castle_scene_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(547 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_area_pointer_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1446,6 +1478,7 @@ int main(int argument_count, char **arguments)
            step_count < total_frames * MYSMB_REFERENCE_MAX_STEPS_PER_FRAME) {
         core_run_result result;
         lib_u16 before_pc;
+        lib_u16 area_read_address = 0u;
 
         if (direct_warp_text && driver->machine->pc == 0x8001u) {
             if (!mysmb_reference_write_frame(output, driver->machine)) break;
@@ -1652,6 +1685,8 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 548u && t26_fixture <= 554u)
+                    mysmb_castle_scene_fixture(driver->machine->ram, (lib_u8)(t26_fixture - 548u));
                 else if (t26_fixture >= 477u && t26_fixture <= 547u)
                     mysmb_area_pointer_fixture(driver->machine->ram, (lib_u8)(t26_fixture - 477u));
                 else if (t26_fixture >= 429u && t26_fixture <= 476u)
@@ -1810,6 +1845,8 @@ int main(int argument_count, char **arguments)
                     direct_warp_text = LIB_TRUE;
                 }
             }
+            if (t26_fixture >= 548u && t26_fixture <= 554u && elapsed == warmup_frames + 1u)
+                mysmb_castle_scene_continue(driver->machine->ram);
             if (t22_flagpole_score_pending &&
                 elapsed == warmup_frames + 1u) {
                 mysmb_reference_apply_t22_flagpole_score_fixture(
@@ -1821,8 +1858,22 @@ int main(int argument_count, char **arguments)
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         before_pc = driver->machine->pc;
+        /* Observe successful LDA (AreaData),Y instructions without changing
+         * execution. Payload bytes never enter the aggregate report. */
+        if (area_reads_path != NULL && elapsed >= warmup_frames &&
+            before_pc >= 0x8000u && before_pc < 0xffffu &&
+            driver->machine->cartridge->prg_bytes == 32768u &&
+            driver->machine->cartridge->prg[before_pc - 0x8000u] == 0xb1u &&
+            driver->machine->cartridge->prg[before_pc - 0x8000u + 1u] == 0xe7u)
+            area_read_address = (lib_u16)(driver->machine->ram[0xe7u] +
+                ((lib_u16)driver->machine->ram[0xe8u] << 8u) + driver->machine->y);
         if (core_machine_debug_step(driver->machine, 1u, 1024u, &result) !=
             LIB_STATUS_OK || result.trap_valid) break;
+        /* An interrupt can redirect a debug step before the sampled opcode.
+         * Count only a completed two-byte LDA, never that redirected step. */
+        if (area_read_address >= 0x8000u && result.instructions == 1u &&
+            driver->machine->pc == (lib_u16)(before_pc + 2u))
+            ++mysmb_area_read_hits[area_read_address - 0x8000u];
         if (coverage_path != NULL && elapsed >= warmup_frames &&
             before_pc >= 0x8000u) {
             unsigned int offset = before_pc - 0x8000u;
@@ -1837,5 +1888,6 @@ int main(int argument_count, char **arguments)
     fclose(output);
     (void)core_driver_destroy(driver);
     if (recorded != requested_frames) return 68;
-    return mysmb_reference_write_coverage(coverage_path) ? 0 : 69;
+    return mysmb_reference_write_coverage(coverage_path) &&
+           mysmb_reference_write_area_reads(area_reads_path) ? 0 : 69;
 }

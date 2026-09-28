@@ -1847,6 +1847,13 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                         game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] = 1U;
                         game->ram[MYSMB_AREA_OBJECT_PAGE]++;
                     }
+                    /* CheckRear skips behind-page records before decoding.
+                     * Otherwise ChkRow13 recognizes the loop command before
+                     * NormObj/BackColC can reject its page or column. */
+                    if (row == 0x0dU && (second & 0x7fU) == 0x4bU &&
+                        game->ram[MYSMB_AREA_OBJECT_PAGE] >=
+                            game->ram[MYSMB_AREA_CURRENT_PAGE])
+                        game->ram[MYSMB_AREA_LOOP_COMMAND]++;
                     if (row == 0x0dU && (second & 0x40U) == 0U &&
                         game->ram[MYSMB_AREA_OBJECT_PAGE_SELECT] == 0U) {
                         game->ram[MYSMB_AREA_OBJECT_PAGE] = (mysmb_u8)(second & 0x1fU);
@@ -1900,6 +1907,9 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     }
                 }
                 else {
+                    /* A resident slot enters DecodeAreaData directly. */
+                    if (row == 0x0dU && (second & 0x7fU) == 0x4bU)
+                        game->ram[MYSMB_AREA_LOOP_COMMAND]++;
                     run_object = 1U;
                 }
                 if (run_object != 0U) {
@@ -1936,11 +1946,6 @@ mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game)
                     }
                     game->ram[0x0007U] = dispatch_offset;
                     game->ram[0x0000U] = object_id;
-                    /* Mask2MSB recognizes the special row-13 $4b command
-                     * before LoopCmdE returns.  Its later consumer owns the
-                     * loop behavior; this parser owns only the increment. */
-                    if (row == 0x0dU && (second & 0x7fU) == 0x4bU)
-                        game->ram[MYSMB_AREA_LOOP_COMMAND]++;
                     mysmb_area_apply_parser_object(game, slot, first, second);
                     if (game->ram[MYSMB_AREA_OBJECT_LENGTH + slot] < 0x80U)
                         game->ram[MYSMB_AREA_OBJECT_LENGTH + slot]--;

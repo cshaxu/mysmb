@@ -1637,3 +1637,156 @@ Expected/actual matches **0/0**; **506 / 1,992** remains unchanged. All 34
 scoped labels are now mapped but incomplete and accepted by T19 S5. Mapped
 incomplete is 137; open is 1,349. This audit retains no unfinished nodes.
 S15 is closed; T30 and M2 remain open. Scene data is the next unadmitted chain.
+
+## T30/S16 admission: castle scene streams
+
+Exact scope and expected matches, all open: `L_CastleArea1`,
+`L_CastleArea2`, `L_CastleArea3`, `L_CastleArea4`, `L_CastleArea5`,
+`L_CastleArea6`. Baseline **506 / 1,992**, expected **6**, maximum **512**.
+Entry is the six original header/table selections; exit is each stream's
+terminator after its last object. Shared runtime owner remains area/area_data.c
+and area.c. No copied scene payload or platform parser is permitted.
+
+Accept transfer-116 from T18 S4. Bind each entire literal span and pointer,
+then compare the existing original InitializeArea -> ScreenRoutines ->
+AreaParserTaskControl consumer. Controlled source-RAM routes start at pages
+zero and sixteen and request bounded repeated two-column screen parser sets;
+this covers both halves without requiring unadmitted player/actor runtime.
+The fixtures may change screen-task/column-set inputs after the original
+header initialization, never PC, stack, return addresses or ROM bytes.
+Require actual stream-cursor/terminator coverage and compare parser state,
+metatile/block-buffer output and original object-creation writes. Any gap
+must remain explicit; do not certify a whole stream from its first columns.
+
+Independent C checks cover data framing/binding and complete native parser
+traversals on x86/x64. Source-shaped repairs are limited to these admitted
+scene consumers; a contradictory previously completed helper requires
+explicit revocation and a corrective receipt before changing it. Other actor,
+player, dispatcher and loopback behavior stays with existing receivers.
+Each implementation P builds three EXEs and reports startup, purity and
+DOS link limits. Owner NROM/listing remain local-only research inputs.
+Raw trace budget: 20 MB under ignored build/m2-t30-s16; twenty-second process
+limits, up to 130 samples per route and twelve original/native route pairs.
+S16 retains cleanup responsibility through T review. No matches claimed yet.
+
+### S16 traversal-route calibration
+
+Exact literal spans bind: six streams, 700 unique bytes and 341 object
+records. Native continuous parser probes reach terminal offsets 94, 124,
+112, 106 and 136 for castles one through five from page zero. Castle six
+reaches offset 86 after the first sixteen pages, then terminal offset 110
+from its valid page-sixteen continuation. Both stages together cover its
+full stream. These are native diagnostic results only, not ROM matches.
+
+Replace the initial twelve-route estimate with seven routes: page zero for
+all six castles and page sixteen only for castle six. Starting castle one
+at page sixteen, beyond its scene end, stalls the current backloader; the
+bounded process was terminated after twenty seconds. Do not present that
+invalid-entry fixture as a proven ROM discrepancy. Preserve the diagnostic
+and compare valid entries first. The other five page-sixteen starts are not
+needed for complete stream coverage. The original-ROM comparison and
+independent cross-width tests remain outstanding; S16 remains active.
+
+### S16 admitted ChkRow13 correction
+
+Seven original-ROM routes expose only one persistent-RAM difference class:
+LoopCommand at $0745. First differences are samples 65, 35 and 26 for castle
+streams two, five and six. Original ChkRow13 increments when decoding the
+row-$0d loop selector, before NormObj checks page/column or InitRear returns.
+C incorrectly increments only inside run_object. Coordinator revokes
+`ChkRow13` and accepts transfer-117 from T29 S7 as this immediate consumer
+dependency. No ExecGameLoopback runtime repair is admitted.
+
+Revised baseline **505 / 1,992**; exact scope/expected set is ChkRow13 plus
+the six named L_CastleArea nodes, expected seven, maximum **512**. Repair
+only recognition timing in the shared parser and add focused pending-column,
+future-page, behind-page and active-slot checks. Full traversal remains the
+original-ROM gate. Initial visible-output baseline differences must be
+separated from parser output by matching ordinary boot initialization; do
+not mask a parser mismatch or claim full-frame equality without evidence.
+
+## S16/P1: castle stream consumption and loop-command order
+
+The original source chain is InitializeArea -> GetAreaDataAddrs ->
+ScreenRoutines -> AreaParserTaskControl -> ProcessAreaData -> DecodeAreaData.
+The shared C owners remain area/area_data.c and area.c; no platform code or
+runtime ABI changes. Owner ROM/listing remain local research inputs; tracked
+tests contain harness logic and neutral metadata, not scene payloads.
+
+| Node | Original CPU address | Bound bytes / object records | Final disposition |
+| --- | --- | --- | --- |
+| `ChkRow13` | `$95c3` | Recognition before NormObj/InitRear | ROM-match complete; restored |
+| `L_CastleArea1` | `0xa1af` | 97 / 47 | ROM-match complete |
+| `L_CastleArea2` | `0xa210` | 127 / 62 | ROM-match complete |
+| `L_CastleArea3` | `0xa28f` | 115 / 56 | ROM-match complete |
+| `L_CastleArea4` | `0xa302` | 109 / 53 | ROM-match complete |
+| `L_CastleArea5` | `0xa36f` | 139 / 68 | ROM-match complete |
+| `L_CastleArea6` | `0xa3fa` | 113 / 55 | ROM-match complete |
+
+Each scene's entire literal span, header, immutable PRG binding and terminator
+matches the original listing. Together they contain 700 bytes and 341 object
+records. The six page-zero routes plus castle six's page-sixteen continuation
+exercise all six streams. Original LDA (AreaData),Y read coverage confirms
+every byte was consumed; the observer counts only a completed two-byte LDA
+step and rejects interrupt-redirection steps. It does not modify execution.
+The first five terminal cursors are 94, 124, 112, 106 and 136. Castle six first
+reaches cursor 86, then reaches its terminal cursor 110 on the continuation.
+
+ChkRow13 increments LoopCommand before page/column rejection or InitRear.
+CheckRear skips inactive behind-page records before DecodeAreaData; resident
+slots enter DecodeAreaData directly. The C repair preserves these two entry
+paths and unsigned-byte wrap, and removes the late run_object-only increment.
+ExecGameLoopback behavior is unchanged and retains its existing receiver.
+Similar-issue sweep searched every area.c LoopCommand reference: one address
+declaration and exactly these two recognition writes remain. No platform
+logic was added; platform-purity verification passes.
+
+ROM-logic evidence: seven controlled original-ROM/native routes, each with
+129 NMI-return samples, compare all 1,782 persistent RAM bytes and complete
+recorded CIRAM, palette, OAM, audio and PPU output. All 903 samples match.
+Only scratch bytes 0..7, the CPU stack and two PPU RAM mirrors are excluded
+from RAM comparison; no output bytes are masked. Native --bootstrap-title
+uses the same ordinary cold-start baseline as the original recorder instead
+of applying precomputed title commands before the fixture. Fixtures seed
+source RAM only; no PC, stack, return-address or ROM patch is used.
+The reproducible checker is
+[verify_castle_scene_routes.py](../../../test/verify_castle_scene_routes.py).
+
+Independent operational evidence: 54 focused native executions pass across
+x86/x64, including complete castle traversals and 2,304 loop-command cases
+per width (all counter seeds, pending/matching columns, future/behind pages,
+page-MSB, backloading and all three resident slots). The prior S14 object set
+fails the new loop smoke and diverges at LoopCommand in castle two/five/six
+samples 65/35/26 respectively; the corrected implementation passes all seven
+routes. This negative control establishes that the tests detect the repaired
+defect. Existing unrelated legacy core/local timer-fixture failures remain
+documented debt; this is not an all-suite-green claim.
+
+Both Windows products pass self-test and a bounded hidden-window creation/
+message-response probe, repeated against the packaged assets themselves.
+The owner's earlier startup failure has not been reproduced or diagnosed;
+these checks do not establish a fix for it or whole-game playability.
+DOS16 compiles and links with OpenNT; the existing DOS root still lacks local
+PRG/CHR/title binding, so the MZ is link evidence, not DOS gameplay evidence.
+All generated inputs, traces and logs remain in ignored build output. Raw
+traces total 9,669,141 bytes, within the 20 MB budget; each recorded process
+has a twenty-second limit. S16 owns retention through the T review.
+
+All three existing tracked EXEs are refreshed under the owner's explicit
+artifact-commit instruction. No new ROM or derived source file is committed.
+
+Artifact `mysmb16.exe`: 252977 bytes; SHA-256 `98E1A618425B80AB8883375305A63208AB18CAD27A41FB7B6D0863AFC2B9FD21`.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `44A367EE80D7FF8D7B0F273F0B1E9FEC2255C55AE5561945B2CE2C7404FE3F62`.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `BA7DA53C53F3339EAD390F1D72D6B238F6DB1E92B5E1ADE044F4A811E822F074`.
+
+## S16 closure
+
+Expected/actual matches **7/7**: ChkRow13 restored and all six named castle
+scene nodes complete. Revised admission **505 / 1,992** becomes
+**512 / 1,992 (25.70%)**; this is six net new matches relative to S15's 506.
+Mapped incomplete is 137 and open is 1,343. No scoped node is deferred or
+retained unfinished. S16 is closed; T30 and M2 remain open. The next
+unadmitted source chain starts at L_GroundArea1, followed by the remaining
+ground, underground and water scene groups in original source order.
