@@ -153,10 +153,13 @@ int main(void)
     game.ram[0x071bU] = 2U;
     game.ram[0x071dU] = 0xf0U;
     game.ram[0x07a7U] = 0U;
+    game.ram[0x0417U] = 0x37U;
     mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 0U);
-    if (game.ram[0x0016U] != 11U || game.ram[0x000fU] != 1U ||
+    /* World2 is internal value one: low PRNG selects SwimCC_IDData[0]. */
+    if (game.ram[0x0016U] != 10U || game.ram[0x000fU] != 1U ||
         game.ram[0x0087U] != 0x10U || game.ram[0x006eU] != 3U ||
-        game.ram[0x00cfU] != 0x48U || game.ram[0x078fU] != 0x20U) return 101;
+        game.ram[0x00cfU] != 0x48U || game.ram[0x078fU] != 0x20U ||
+        game.ram[0x0417U] != 0U) return 101;
     /* Land route fires a Bill only when none is already active. */
     mysmb_game_initialize(&game);
     game.ram[0x074eU] = 1U;
@@ -166,6 +169,7 @@ int main(void)
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 8U;
     game.ram[0x000fU + 1U] = 0U;
+    game.ram[0x078fU] = 0U;
     mysmb_enemy_step_bullet_bill_cheep_frenzy(&game, 1U);
     if (game.ram[0x000fU + 1U] != 0U) return 103;
     return 0;

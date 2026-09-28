@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T39 S2 is closed at 995 / 1,992: all five fireworks nodes proven.**
+**M2 T39 S3 is closed at 1,009 / 1,992: all fourteen allocation nodes proven.**
 
-## M2 T39 S2 Packet
+## M2 T39 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S2, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after a14bbad; coordinator accepts transfer-174. |
-| Objective | Restore all five fireworks data/initializer/return nodes as one chain. |
-| Non-goals | No frenzy dispatcher, fireworks actor/drawing or platform gameplay repair. |
-| Reference Baseline | 990 / 1,992; five scoped open labels, five expected new, maximum 995. Exact names in S2 proposal and ledger. |
-| Candidate Proposal | [T39 S2 fireworks](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-admission-complete-fireworks-initialization). |
-| Files And ABI Surface | Shared enemy/frenzy.c, focused tests/recorder fixture, ledger and three EXEs. |
+| Identifier Mode | M2 T39 S3, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 020d87a; coordinator accepts transfer-175. |
+| Objective | Restore all fourteen Bullet Bill / swimming-fish allocation nodes as one chain. |
+| Non-goals | No containing frenzy dispatcher, movement, collision, graphics or platform gameplay repair. |
+| Reference Baseline | 995 / 1,992; fourteen scoped open labels, fourteen expected, maximum 1,009. Exact names in S3 plan and ledger. |
+| Candidate Proposal | [T39 S3 allocation](../proposals/m2/t39-special-initialization-and-dispatch.md#s3-admission-bullet-bill-and-swimming-fish-allocation). |
+| Files And ABI Surface | Shared enemy/frenzy.c, focused tests/recorder, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original data/branch/write/scan audit and actual NMI entry comparisons; native matrix, cross-width builds, DOS link and purity. |
-| Expected Markers | Timer gate, descending scan, scratch $00, counter/state index, X/page borrow/carry and explosion fields. |
+| Verification | Original data/branch/write/call audit and actual NMI comparisons; native matrix, cross-width builds, DOS link and purity. |
+| Expected Markers | Water/world/PRNG species, land active-slot scan, filter reset/rotation, common placement zero return and checkpoint tail. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Five exact dispositions, dual proof, retained downstream gaps and artifact hashes. |
+| Reporting Requirements | Fourteen exact dispositions, dual proof, retained downstream gaps and artifact hashes. |
 | Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | Five expected labels proven or exact accepted transfer; tracker/ledger and artifacts agree. |
+| Exit Criteria | Fourteen expected labels proven or exact accepted transfer; tracker/ledger and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Initializer/counter/star producers, both tables and explosion aliases. |
+| Similar-Issue Sweep | Filter/world/species consumers, active-slot checks, placement/finish return and checkpoint children. |
+
+## S3 closure
+
+[Original Bullet/swimming-fish proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s3-original-bullet-and-swimming-fish-proof)
+records fourteen new matches, 364/364 actual scoped comparisons and all 1,560
+previous matches retained. Three EXEs are refreshed. Earlier star-timer and
+Bowser-damage native-test failures remain; DOS16 is still link-only.
 
 ## S2 closure
 
@@ -49,7 +56,7 @@ EXEs; the existing Bowser test failures and DOS link-only limit remain.
 
 ## Current sequence
 
-T39 contains nine planned S chains; S1-S2 are closed; S3 is next, not yet admitted. Follow the
+T39 contains nine planned S chains; S1-S3 are closed; S4 is next, not yet admitted. Follow the
 [queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
 beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 

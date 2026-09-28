@@ -430,12 +430,13 @@ void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
  * water picks a unique height bit and land refuses a second frenzy bill. */
 void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot)
 {
+    static const mysmb_u8 masks[8] = { 1U,2U,4U,8U,16U,32U,64U,128U };
     static const mysmb_u8 heights[8] = { 0x40U,0x30U,0x90U,0x50U,0x20U,0x60U,0xa0U,0x70U };
+    static const mysmb_u8 swim_ids[2] = { 0x0aU, 0x0bU };
     mysmb_u8 index;
     mysmb_u8 scan;
-    mysmb_u8 old_x;
 
-    if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
     if (game->ram[MYSMB_AREA_TYPE] != 0U) {
         for (scan = 0U; scan < 5U; ++scan) {
             if (game->ram[MYSMB_ENEMY_FLAG + scan] != 0U &&
@@ -447,18 +448,18 @@ void mysmb_enemy_step_bullet_bill_cheep_frenzy(struct mysmb_game *game, mysmb_u8
     else {
         if (slot >= 3U) return;
         index = game->ram[0x07a7U + slot] >= 0xaaU ? 1U : 0U;
-        if (game->ram[MYSMB_WORLD_NUMBER] != 2U) ++index;
-        game->ram[MYSMB_ENEMY_ID + slot] = (index & 1U) == 0U ? 10U : 11U;
+        if (game->ram[MYSMB_WORLD_NUMBER] != 1U) ++index;
+        game->ram[MYSMB_ENEMY_ID + slot] = swim_ids[index & 1U];
     }
+    if (game->ram[MYSMB_BITM_FILTER] == 0xffU)
+        game->ram[MYSMB_BITM_FILTER] = 0U;
     index = (mysmb_u8)(game->ram[0x07a7U + slot] & 7U);
-    while ((game->ram[MYSMB_BITM_FILTER] & (mysmb_u8)(1U << index)) != 0U) index = (mysmb_u8)((index + 1U) & 7U);
-    game->ram[MYSMB_BITM_FILTER] |= (mysmb_u8)(1U << index);
-    old_x = game->ram[MYSMB_SCREEN_RIGHT_X];
-    game->ram[MYSMB_ENEMY_Y + slot] = heights[index];
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 0x20U);
-    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] + (game->ram[MYSMB_ENEMY_X + slot] < old_x ? 1U : 0U));
-    /* PutAtRightExtent tail reaches FinishFlame, returning A = $01. */
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 1U;
+    while ((game->ram[MYSMB_BITM_FILTER] & masks[index]) != 0U)
+        index = (mysmb_u8)((index + 1U) & 7U);
+    game->ram[MYSMB_BITM_FILTER] |= masks[index];
+    mysmb_enemy_put_at_right_extent(game, slot, heights[index]);
+    /* FinishFlame's final LSR leaves A = zero before the checkpoint tail. */
+    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
     mysmb_enemy_checkpoint_loaded(game, slot);
 }

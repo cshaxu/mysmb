@@ -23,14 +23,17 @@ int main(int argc,char **argv)
     if(fread(header,1,8,file)!=8 || (memcmp(header,"MSEP\1",5)!=0 &&
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
         memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0 &&
-        memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0)) return 66;
+        memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0 &&
+        memcmp(header,"MS3P\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[7]==0U && header[2]=='2')
+    if(header[7]==0U && header[2]=='3')
+        mysmb_enemy_step_bullet_bill_cheep_frenzy(&game,header[6]);
+    else if(header[7]==0U && header[2]=='2')
         mysmb_enemy_init_fireworks_frenzy(&game,header[6]);
     else if(header[7]==0U && header[2]=='O') {
         if(header[5]==1U) mysmb_enemy_init_bowser(&game,header[6]);

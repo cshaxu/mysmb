@@ -283,3 +283,121 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 255451 | 4f522661497aeb7dd6d667cea05a5bf65d11eec8e60a6e56477d6d60f4f55f35 |
 | mysmb32.exe | 338024 | 0d156c91540265ace9b750b20a7a36137c37cf4daaff874a6481f6bf09cd5cc3 |
 | mysmb64.exe | 345616 | 012f70bbbbec92be0b30330b3837b4d3e667481024db8f1dad5b4bc1f9c95771 |
+
+## S3 admission: Bullet Bill and swimming-fish allocation
+
+After S2 commit 020d87a, coordinator accepts transfer-175 from T19 S5 for
+all fourteen exact S3 table-row labels. All are open and expected new:
+baseline 995/1,992, maximum 1,009. The original $C68A-$C71A data/control
+chain is owned by shared enemy/frenzy.c. InitEnemyFrenzy is the containing
+caller; proven PutAtRightExtent/FinishFlame and CheckpointEnemyID with the
+Bullet Bill/swimming-fish initializers are dependencies, with no repeated credit.
+
+Restore timer-first gating, water slot limit, World2 constant one and original
+PRNG threshold/species table; land scans only slots zero through four for an
+active frenzy Bullet Bill before queuing blast sound. Common allocation resets
+an all-set filter, rotates through eight height bits, preserves ID-before-filter
+order, calls the shared right-edge/finish child, stores its zero return in the
+Y-force dummy, then sets the timer and tail-calls CheckpointEnemyID. No movement,
+collision, graphics or containing-frenzy-dispatch repair is admitted.
+
+The ROM-logic track audits all tables, branches, reads/writes and child order
+using original NMI/vector entry and return records, with only RAM fixtures;
+cover timer gates, water limits, PRNG/world species thresholds, active/inactive
+Bullet Bills in every scanned slot, ignored slot five, every filter/index,
+filter exhaustion and right-edge carry. Keep actual child failures visible.
+The operational track uses focused full-RAM contracts, strict C90 x86/x64,
+DOS16 link, platform purity, hidden-window probes and three authorized EXEs.
+Similar-issue sweep covers filter producers/consumers, World2 comparison,
+shared placement return semantics and initializer tail dependencies.
+
+Existing owner-ROM/listing provenance remains local; no new external material
+is imported. Temporary evidence stays below ignored build/m2-t39-s3, four-MB
+raw budget and twenty-second recorder timeout, with S3 cleanup ownership.
+Stop on unadmitted repair, source execution patching or hidden differences.
+S4-S9 remain planned and retain their current node receivers.
+
+## S3 original Bullet and swimming-fish proof
+
+All fourteen planned nodes close: 995 -> 1,009/1,992, no scoped transfer.
+T39 remains open; S4 grouped enemy records is next.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| Bitmasks | $C68A | All eight original mask bytes match; source consumers use every index; match |
+| Enemy17YPosData | $C692 | All eight original heights match; placement child outputs prove every consumer; match |
+| SwimCC_IDData | $C69A | Both species bytes match original and execute on both sides of world/PRNG selection; match |
+| BulletBillCheepCheep | $C69C | Timer-first gate, water slot limit and area branch; common shared child chain preserves exact writes; match |
+| ChkW2 | $C6B4 | World2 is one; increment selector only outside that world; match |
+| Get17ID | $C6BC | Mask selector to one bit and load the original species table; match |
+| Set17ID | $C6C3 | Write ID before all-set filter reset and random height selection; match |
+| GetRBit | $C6D1 | Read three PRNG low bits after optional filter reset; match |
+| ChkRBit | $C6D6 | Rotate through eight mask indexes with wrap; preserve occupied-bit loop; match |
+| AddFBit | $C6E6 | OR selected bit, call shared placement, store its zero return, set timer and tail-call checkpoint; match |
+| DoBulletBills | $C6FD | Enter land scan without changing state first; match |
+| BB_SLoop | $C6FF | Scan only slots zero through four; require both nonzero flag and frenzy Bullet Bill ID; match |
+| ExF17 | $C710 | Return on timer, water capacity or existing Bullet Bill without invented writes; match |
+| FireBulletBill | $C711 | OR blast sound and branch with constant ID eight into Set17ID; match |
+
+Actual original/native comparison passes 364/364 across x86/x64. The 182
+RAM-only NMI/vector routes execute the original caller and actual children;
+there is no PC/stack/ROM patch, child substitution or scratch masking. All
+eleven code labels and 58 instructions execute. Ten conditional branches
+exercise both outcomes; the final BNE follows LDA #8 and correctly never
+falls through. Eighteen table bytes match ROM, all eight mask/height indexes
+execute, and both swimming species have source consumers. Coverage without
+snapshot observers gives identical frame records in all 182 cases.
+
+Twenty-five captured roots take a gate; 157 allocate with the exact child
+sequence PutAtRightExtent -> CheckpointEnemyID. Child snapshots show shared
+FinishFlame writes before the dummy receives zero and the selected actor
+initializer runs. The full actual return comparison checks inherited caller
+scratch, preserved state and every RAM write; hardware stack storage is
+excluded while mapped $0109-$0139 game RAM remains included. No additional
+credit is taken for already proven positioning/vector/initializer children.
+
+Cases cover all caller slots, water rejection after slot two, World2 and
+other worlds, PRNG values below/equal/above $AA, all-set filter reset, bit
+rotation/wrap, land active/inactive/wrong-ID checks, ignored slot five and
+right-edge carry/page wrap. Native full-RAM contracts independently pass
+1,182,858 cases per width, including every filter byte and every PRNG byte.
+They also verify preserved state when gated and all ordinary world choices.
+
+The old Bullet Bill smoke first failed at exit 101 because it expected species
+11 for World2/low PRNG, contrary to source constant one and SwimCC_IDData[0].
+Its expectation is corrected to ten, dummy zero is checked from a sentinel,
+and the existing-Bullet-Bill check now expires the timer so it actually tests
+the active-slot gate. Both widths pass. No collision assertion is weakened.
+
+Ten focused initializer/stream regressions per width pass with final shared
+objects. The complete cross-chain matrix preserves all 1,560 prior matches,
+adds four previously failing full initializer-vector matches and 364 new
+roots: 1,928/2,144. The 216 remaining downstream differences stay explicit
+with their existing source-order owners. Other focused endgame/layout/mode/
+Bowser runs retain four passes and the four already established star-timer
+exit-six / Bowser-damage exit-four failures, one of each per width.
+
+Strict C90 builds compile all 85 shared units on x86/x64; self-tests, bounded
+hidden-window response and platform purity pass. DOS16 links with the existing
+OLDNAMES warning and remains link-only, with no runtime/graphics or physical
+486 certification. Gameplay changes are confined to shared enemy/frenzy.c.
+The similar-issue sweep found one filter allocation owner, checked its source
+reset/selection producers, World2 selection and both shared-child dependencies.
+No containing dispatcher, moving actor, collision or platform repair is added.
+
+Reproduce with bullet_swimming_fish_fixture.h cases 0..181 and recorder options
+--fixture=t39-bullet-swim=N, --bullet-swim-snapshot and --control-children;
+run --pc-coverage separately. The RAM fixture inverts the original single ROR
+step to exercise exact low/high PRNG values without changing source execution.
+enemy_loop_actual_check compares actual shared-C results. The native target is
+mysmb.bullet-swimming-fish-chain. Existing owner-local provenance is unchanged;
+all new evidence stays below ignored build/m2-t39-s3, under 2.9 MB raw output
+within the four-MB budget, with twenty-second per-recorder timeouts.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255285 | 1a26223929fe40e6089d68ce746e853e3129297f5ad157b00561d75d1e75cf3d |
+| mysmb32.exe | 338083 | 52d716fa0eb66b688e103fb624e710ac05046351070f82be7ed7405ef5a088c9 |
+| mysmb64.exe | 345152 | f9e0514c8e3c1ca80d3dacb3887bc666f7be519de0de205b40105025a1e4c255 |
