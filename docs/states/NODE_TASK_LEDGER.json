@@ -101063,9 +101063,15 @@
         "BublExit"
       ],
       "maximumComplete": 744,
-      "actualMatches": [],
+      "actualMatches": [
+        "ProcFireball_Bubble",
+        "ProcFireballs",
+        "ProcAirBubbles",
+        "BublLoop",
+        "BublExit"
+      ],
       "evidence": "docs/proposals/m2/fireball-dispatch-core.md",
-      "state": "admitted-fireball-dispatch-chain"
+      "state": "closed-P1-dispatch-chain-744"
     }
   ]
 }

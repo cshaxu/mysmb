@@ -43,69 +43,58 @@ static void mysmb_fireball_get_bounding_box(struct mysmb_game *game,
         game->ram[MYSMB_FIREBALL_PAGE + slot],
         game->ram[MYSMB_FIREBALL_X + slot]);
 }
-/* ROM FireballObjCore ($6352), excluding OAM.
- * Both objects use the original fixed slots. */
-void mysmb_fireball_step(struct mysmb_game *game)
+/* Existing FireballObjCore body exposed as a child boundary.
+ * State/initialization/explosion semantics retain T34 S2 proof ownership. */
+void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
     mysmb_u8 state;
     mysmb_u8 old_value;
+    state = game->ram[MYSMB_FIREBALL_STATE + slot];
+    if (state == 0U) return;
+    if ((state & 0x80U) != 0U) {
+        mysmb_u8 explosion_index;
 
-    /* ROM ProcFireball_Bubble first partitions by PlayerStatus. A
-     * non-fiery player jumps directly to ProcAirBubbles: existing fireball
-     * slots are neither moved nor drawn on that frame. */
-    if (game->ram[MYSMB_PLAYER_STATUS] >= 2U) {
-        mysmb_fireball_try_spawn(game);
-        for (slot = 0U; slot < 2U; ++slot) {
-            state = game->ram[MYSMB_FIREBALL_STATE + slot];
-            if (state == 0U) continue;
-            if ((state & 0x80U) != 0U) {
-                mysmb_u8 explosion_index;
-
-                explosion_index = (mysmb_u8)((state >> 1U) & 7U);
-                game->ram[MYSMB_FIREBALL_STATE + slot] = (mysmb_u8)(state + 1U);
-                if (explosion_index >= 3U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
-                else {
-                    mysmb_oam_relative_fireball_position(game, slot);
-                    mysmb_oam_draw_fireball_explosion(game, slot,
-                        (mysmb_u8)(0x68U - explosion_index));
-                }
-                continue;
-            }
-            if (state == 2U) {
-                old_value = game->ram[MYSMB_PLAYER_X];
-                game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + 4U);
-                game->ram[MYSMB_FIREBALL_PAGE + slot] =
-                    (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] +
-                                (game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U));
-                game->ram[MYSMB_FIREBALL_Y + slot] = game->ram[MYSMB_PLAYER_Y];
-                game->ram[MYSMB_FIREBALL_Y_HIGH + slot] = 1U;
-                game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
-                    game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0x40U : 0xc0U;
-                game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 4U;
-                game->ram[MYSMB_FIREBALL_BOUND_BOX + slot] = 7U;
-                game->ram[MYSMB_FIREBALL_STATE + slot] = 1U;
-            }
-            /* ROM FireballObjCore: TXA; ADC #$07 selects this fireball's
-             * SprObject fields, then delegates to ImposeGravity and
-             * MoveObjectHorizontally before restoring ObjectOffset. */
-            mysmb_world_impose_gravity_spr_object(game, (mysmb_u8)(7U + slot),
-                                                   0x50U, 3U);
-            mysmb_world_move_spr_object_horizontally(game, (mysmb_u8)(7U + slot));
-            /* FireballObjCore order: relative coordinates, offscreen bits and
-             * bounding box precede FireballBGCollision. */
+        explosion_index = (mysmb_u8)((state >> 1U) & 7U);
+        game->ram[MYSMB_FIREBALL_STATE + slot] = (mysmb_u8)(state + 1U);
+        if (explosion_index >= 3U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
+        else {
             mysmb_oam_relative_fireball_position(game, slot);
-            mysmb_oam_get_fireball_offscreen_bits(game, slot);
-            mysmb_fireball_get_bounding_box(game, slot);
-            mysmb_world_fireball_background_collision(game, slot);
-            if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] & 0xccU) != 0U) {
-                game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
-                continue;
-            }
-            mysmb_world_fireball_enemy_collision(game, slot);
-            /* FireballObjCore draws only after background and enemy collision. */
-            mysmb_oam_draw_fireball(game, slot);
+            mysmb_oam_draw_fireball_explosion(game, slot,
+                (mysmb_u8)(0x68U - explosion_index));
         }
+        return;
     }
-    mysmb_fireball_step_bubbles(game);
+    if (state == 2U) {
+        old_value = game->ram[MYSMB_PLAYER_X];
+        game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + 4U);
+        game->ram[MYSMB_FIREBALL_PAGE + slot] =
+            (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] +
+                        (game->ram[MYSMB_FIREBALL_X + slot] < old_value ? 1U : 0U));
+        game->ram[MYSMB_FIREBALL_Y + slot] = game->ram[MYSMB_PLAYER_Y];
+        game->ram[MYSMB_FIREBALL_Y_HIGH + slot] = 1U;
+        game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
+            game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0x40U : 0xc0U;
+        game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 4U;
+        game->ram[MYSMB_FIREBALL_BOUND_BOX + slot] = 7U;
+        game->ram[MYSMB_FIREBALL_STATE + slot] = 1U;
+    }
+    /* ROM FireballObjCore: TXA; ADC #$07 selects this fireball's
+     * SprObject fields, then delegates to ImposeGravity and
+     * MoveObjectHorizontally before restoring ObjectOffset. */
+    mysmb_world_impose_gravity_spr_object(game, (mysmb_u8)(7U + slot),
+                                           0x50U, 3U);
+    mysmb_world_move_spr_object_horizontally(game, (mysmb_u8)(7U + slot));
+    /* FireballObjCore order: relative coordinates, offscreen bits and
+     * bounding box precede FireballBGCollision. */
+    mysmb_oam_relative_fireball_position(game, slot);
+    mysmb_oam_get_fireball_offscreen_bits(game, slot);
+    mysmb_fireball_get_bounding_box(game, slot);
+    mysmb_world_fireball_background_collision(game, slot);
+    if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] & 0xccU) != 0U) {
+        game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
+        return;
+    }
+    mysmb_world_fireball_enemy_collision(game, slot);
+    /* FireballObjCore draws only after background and enemy collision. */
+    mysmb_oam_draw_fireball(game, slot);
 }

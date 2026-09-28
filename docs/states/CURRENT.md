@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T34 S1 is active at 739 / 1,992: five incomplete dispatch nodes, expected five, maximum 744.**
+**M2 T34 S1 is closed at 744 / 1,992: five caller nodes proven; S2 core admission is next.**
 
 T33 closed with 63/63 scoped nodes proven. Nineteen of 24 integrated routes
 match; five retained output/animation differences keep existing custody.

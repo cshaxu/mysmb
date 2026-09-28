@@ -120,48 +120,55 @@ static mysmb_u8 mysmb_bubble_y_offscreen(const struct mysmb_game *game,
     }
 }
 
-void mysmb_fireball_step_bubbles(struct mysmb_game *game)
+/* Existing bubble children split at original call boundaries.
+ * Their interior behavior retains its existing source-order ownership. */
+void mysmb_fireball_check_bubble(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
     mysmb_u8 random_bit;
     mysmb_u8 old_value;
     mysmb_u8 borrow;
-    mysmb_u8 oam;
+    random_bit = (mysmb_u8)(game->ram[MYSMB_BUBBLE_RANDOM + 1U + slot] & 1U);
+    if (game->ram[MYSMB_BUBBLE_Y + slot] == 0xf8U &&
+        game->ram[MYSMB_BUBBLE_TIMER] == 0U) {
+        game->ram[0x0007U] = random_bit;
+        mysmb_fireball_setup_bubble(game, slot);
+    }
+    if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U) {
+        old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];
+        game->ram[MYSMB_BUBBLE_Y_DUMMY + slot] = (mysmb_u8)(old_value -
+            (random_bit != 0U ? 0x50U : 0xffU));
+        borrow = old_value < (random_bit != 0U ? 0x50U : 0xffU) ? 1U : 0U;
+        game->ram[MYSMB_BUBBLE_Y + slot] = (mysmb_u8)(
+            game->ram[MYSMB_BUBBLE_Y + slot] - borrow);
+        if (game->ram[MYSMB_BUBBLE_Y + slot] < 0x20U) {
+            game->ram[MYSMB_BUBBLE_Y + slot] = 0xf8U;
+        }
+    }
+}
 
-    if (game->ram[MYSMB_BUBBLE_AREA_TYPE] != 0U) return;
-    slot = 2U;
-    do {
-        random_bit = (mysmb_u8)(game->ram[MYSMB_BUBBLE_RANDOM + 1U + slot] & 1U);
-        if (game->ram[MYSMB_BUBBLE_Y + slot] == 0xf8U &&
-            game->ram[MYSMB_BUBBLE_TIMER] == 0U) {
-            game->ram[0x0007U] = random_bit;
-            mysmb_fireball_setup_bubble(game, slot);
-        }
-        if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U) {
-            old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];
-            game->ram[MYSMB_BUBBLE_Y_DUMMY + slot] = (mysmb_u8)(old_value -
-                (random_bit != 0U ? 0x50U : 0xffU));
-            borrow = old_value < (random_bit != 0U ? 0x50U : 0xffU) ? 1U : 0U;
-            game->ram[MYSMB_BUBBLE_Y + slot] = (mysmb_u8)(
-                game->ram[MYSMB_BUBBLE_Y + slot] - borrow);
-            if (game->ram[MYSMB_BUBBLE_Y + slot] < 0x20U) {
-                game->ram[MYSMB_BUBBLE_Y + slot] = 0xf8U;
-            }
-        }
-        game->ram[MYSMB_BUBBLE_REL_X] = (mysmb_u8)(
-            game->ram[MYSMB_BUBBLE_X + slot] - game->ram[MYSMB_BUBBLE_SCREEN_LEFT_X]);
-        game->ram[MYSMB_BUBBLE_REL_Y] = game->ram[MYSMB_BUBBLE_Y + slot];
-        game->ram[MYSMB_BUBBLE_OFFSCREEN] = (mysmb_u8)(
-            (mysmb_bubble_y_offscreen(game, slot) << 4U) |
-            (mysmb_bubble_x_offscreen(game, slot) >> 4U));
-        if (game->ram[MYSMB_BUBBLE_PLAYER_Y_HIGH] == 1U &&
-            (game->ram[MYSMB_BUBBLE_OFFSCREEN] & 8U) == 0U) {
-            oam = game->ram[MYSMB_BUBBLE_SPRITE_OFFSET + slot];
-            game->ram[0x0200U + oam] = game->ram[MYSMB_BUBBLE_REL_Y];
-            game->ram[0x0201U + oam] = 0x74U;
-            game->ram[0x0202U + oam] = 2U;
-            game->ram[0x0203U + oam] = game->ram[MYSMB_BUBBLE_REL_X];
-        }
-        slot--;
-    } while (slot != 0xffU);
+void mysmb_fireball_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_BUBBLE_REL_X] = (mysmb_u8)(
+        game->ram[MYSMB_BUBBLE_X + slot] - game->ram[MYSMB_BUBBLE_SCREEN_LEFT_X]);
+    game->ram[MYSMB_BUBBLE_REL_Y] = game->ram[MYSMB_BUBBLE_Y + slot];
+}
+
+void mysmb_fireball_get_bubble_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[MYSMB_BUBBLE_OFFSCREEN] = (mysmb_u8)(
+        (mysmb_bubble_y_offscreen(game, slot) << 4U) |
+        (mysmb_bubble_x_offscreen(game, slot) >> 4U));
+}
+
+void mysmb_fireball_draw_bubble(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 oam;
+    if (game->ram[MYSMB_BUBBLE_PLAYER_Y_HIGH] == 1U &&
+        (game->ram[MYSMB_BUBBLE_OFFSCREEN] & 8U) == 0U) {
+        oam = game->ram[MYSMB_BUBBLE_SPRITE_OFFSET + slot];
+        game->ram[0x0200U + oam] = game->ram[MYSMB_BUBBLE_REL_Y];
+        game->ram[0x0201U + oam] = 0x74U;
+        game->ram[0x0202U + oam] = 2U;
+        game->ram[0x0203U + oam] = game->ram[MYSMB_BUBBLE_REL_X];
+    }
 }

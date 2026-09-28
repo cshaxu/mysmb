@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 739 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,118 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 744 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 134 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,114 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **739 / 1,992 (37.10%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **744 / 1,992 (37.35%)**. The 134 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T33 S4 P1](../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof)
-proves twelve animation/friction nodes with 256 actual-native comparisons.
-The cross-chain matrix has nineteen matching and five differing four-frame
-routes; no full-game completion is claimed. T33 final review remains pending.
+Latest task review: [T34 S1 P1](../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof)
+proves five dispatch caller nodes with 64 caller comparisons. Actual native
+children retain 30 failures versus 34 matches; core/graphics child proof is
+not implied by the dispatcher result.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (739)
+## Completed matches (744)
 
 | ROM line | Node |
 | ---: | --- |
@@ -708,6 +708,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6274 | `RghtFrict` |
 | 6285 | `XSpdSign` |
 | 6290 | `SetAbsSpd` |
+| 6298 | `ProcFireball_Bubble` |
+| 6330 | `ProcFireballs` |
+| 6336 | `ProcAirBubbles` |
+| 6340 | `BublLoop` |
+| 6347 | `BublExit` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |
@@ -790,7 +795,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (135)
+## Mapped but not yet matched (134)
 
 | ROM line | Node |
 | ---: | --- |
@@ -829,7 +834,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6702 | `Setup_Vine` |
 | 6730 | `VineObjectHandler` |

@@ -18,8 +18,7 @@ consumer transfers. Five earlier-node corrections also remain complete.
 T31 and T32 are closed. T32 proves its 48 received caller/data nodes at
 676 / 1,992, with eleven integrated routes retaining child/output failures.
 T33 is closed with all 63 received movement/physics nodes proven at 739 / 1,992.
-T34 S1 is active with five incomplete fireball/bubble dispatch nodes, expected
-five and maximum 744. Its eleven-node plan has two contiguous chains; S2
+T34 S1 is closed with five dispatch caller nodes proven at 744 / 1,992. Its eleven-node plan has two contiguous chains; S2
 core-state receipt is not yet admitted.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
