@@ -49,8 +49,8 @@ boundary.
 | T37 | Power-up actor tail, blocks and movement/gravity primitives; receives T36 PowerUpObjHandler boundary exception | 7201–7787; entry 7184 | 74 |
 | T38 | Enemy stream, records, slots and initialization; complete flying-fish tail | 7788–8528; loop and duplicate dependencies below | 88 + 6 dependencies |
 | T39 | Special initialization and actor dispatch; ends EraseEnemyObject | 8529–9211; flame timer dependency | 83 + 3 dependencies |
-| T40 | Complete Podoboo/Hammer Bro, normal, defeated and swimming movement | 9212–10100 | 122 |
-| T41 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
+| T40 | Podoboo/Hammer Bro, normal/swimming/flying movement, firebars and Lakitu distance | 9212–10091 | 120 |
+| T41 | Complete bridge/Bowser chain, platforms, flame, fireworks and remaining actors | 10092–11084 | 123 |
 | T42 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
 | T43 | Player terrain, head, foot, side and pipe collision | 12001–13000 | 136 |
 | T44 | Enemy terrain, landing, stun and side collision | 13001–14000 | 111 |
@@ -798,3 +798,7 @@ T39 admission keeps the complete movement phase from MovePodoboo (9212)
 with T40, removing the split Hammer Bro boundary. Its immediate flame timer
 dependency is admitted with S1; the later timer source slice reuses it without
 duplicate credit. [Exact T39 chains and receivers](../../history/M2-T39-special-initialization-and-dispatch.md).
+
+T40 admission keeps BridgeCollapseData (10092) and the complete BridgeCollapse
+entry (10098) with the following bridge/Bowser slice, replacing the old
+line-10100 cut. [Exact T40 chains and receivers](t40-enemy-movement-and-firebar.md).

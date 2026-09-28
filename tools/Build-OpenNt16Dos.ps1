@@ -25,6 +25,7 @@ $sources = @(
     'game/enemy/normal.c',
     'game/enemy/special_callers.c',
     'game/enemy/platform_callers.c',
+    'game/enemy/podoboo.c',
     'game/enemy/background.c',
     'game/enemy/side_collision.c',
     'game/area/block_buffer.c',

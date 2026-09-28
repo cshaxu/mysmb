@@ -887,38 +887,15 @@ void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game)
         mysmb_objects_step_swimming_cheep_cheeps_slot(game, slot);
 }
 
-/* ROM $af13-$af25 MovePodoboo through $bb38 ImposeGravitySprObj.  The
- * original uses enemy slot plus one as the shared sprite vertical arrays;
- * the translated RAM aliases already use the enemy slot directly. */
-void mysmb_objects_step_podoboos_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 random_value;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 12U) return;
-    if (game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] == 0U) {
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 2U;
-        game->ram[MYSMB_ENEMY_Y + slot] = 2U;
-        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 1U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        random_value = game->ram[0x07a8U + slot];
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = (mysmb_u8)(random_value | 0x80U);
-        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] =
-            (mysmb_u8)((random_value & 0x0fU) | 6U);
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xf9U;
-    }
-    mysmb_enemy_move_j_vertically(game, slot);
-}
-
-/* Temporary bulk caller while the engine vector is migrated. */
+/* Legacy aggregate filter; the source movement entry has no flag/ID gate. */
 void mysmb_objects_step_podoboos(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_podoboos_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 12U)
+            mysmb_objects_step_podoboos_slot(game, slot);
+    }
 }
 
 /* ROM $b004-$b09a MoveBloober and ProcSwimmingB.  BlooberMoveSpeed aliases
