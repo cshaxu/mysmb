@@ -138,6 +138,8 @@ add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c 
 add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/game/entry.c)
 add_executable(mysmb_player_control_chain_smoke test/player_control_chain_smoke.c src/game/player_control.c)
 target_include_directories(mysmb_player_control_chain_smoke PRIVATE src)
+add_executable(mysmb_player_control_caller_check test/player_control_caller_check.c src/game/player_control.c)
+target_include_directories(mysmb_player_control_caller_check PRIVATE src)
 target_include_directories(mysmb_player_entry_chain_smoke PRIVATE src)
 add_executable(mysmb_entrance_caller_snapshot_check test/entrance_caller_snapshot_check.c src/game/entry.c)
 target_include_directories(mysmb_entrance_caller_snapshot_check PRIVATE src)

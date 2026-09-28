@@ -83,7 +83,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `GameTimerExpired` — label lookup pending
   - [ ] `PlayerEndLevel` — ROM line 5856; C owner/evidence pending
 - [ ] **Player movement, physics, collision and size state**
-  - [ ] `PlayerCtrlRoutine` — ROM line 5583; C owner/evidence pending
+  - [x] `PlayerCtrlRoutine` - ROM line 5583; T32 S1 caller proof; actual child chain remains incomplete.
   - [ ] `MovePlayerHorizontally` — ROM line 7561; C owner/evidence pending
   - [ ] `PlayerBGCollision` — ROM line 11927; C owner/evidence pending
   - [ ] `PlayerHeadCollision` — ROM line 7244; C owner/evidence pending
@@ -739,19 +739,19 @@ The labels and branches behind every line remain open until individually bound b
 | 5567 | `PlayerRdy` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
 | 5575 | `ExitEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
 | 5580 | `AutoControlPlayer` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5583 | `PlayerCtrlRoutine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerctrlroutine) |
-| 5595 | `DisJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-disjoyp) |
-| 5597 | `SaveJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savejoyp) |
-| 5615 | `SizeChk` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sizechk) |
-| 5623 | `ChkMoveDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkmovedir) |
-| 5629 | `SetMoveDir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmovedir) |
-| 5630 | `PlayerSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playersubs) |
-| 5649 | `PlayerHole` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerhole) |
-| 5661 | `HoleDie` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holedie) |
-| 5670 | `HoleBottom` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-holebottom) |
-| 5672 | `ChkHoleX` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkholex) |
-| 5680 | `ExitCtrl` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitctrl) |
-| 5682 | `CloudExit` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cloudexit) |
+| 5583 | `PlayerCtrlRoutine` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5595 | `DisJoyp` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5597 | `SaveJoyp` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5615 | `SizeChk` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5623 | `ChkMoveDir` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5629 | `SetMoveDir` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5630 | `PlayerSubs` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5649 | `PlayerHole` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5661 | `HoleDie` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5670 | `HoleBottom` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5672 | `ChkHoleX` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5680 | `ExitCtrl` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
+| 5682 | `CloudExit` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
 | 5691 | `Vine_AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vine_autoclimb) |
 | 5697 | `AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autoclimb) |
 | 5702 | `SetEntr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setentr) |

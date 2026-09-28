@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 628 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 641 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,229 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,216 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **628 / 1,992 (31.53%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **641 / 1,992 (32.18%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S4 P1](../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof)
-completes ten entry/dispatch caller nodes. Production child calls retain 26
-failing comparisons with existing T23 S5 and T16 S4 owners. This is not a
-whole-game or whole-call equivalence claim.
+Latest task review: [T32 S1 P2](../proposals/m2/player-control-modes.md#s1p2-original-caller-proof)
+proves thirteen player-control caller nodes. All 100 actual-child boundary
+comparisons still fail; movement/terrain/OAM and transition children retain
+their separate incomplete status. This is not full-player conformance.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (628)
+## Completed matches (641)
 
 | ROM line | Node |
 | ---: | --- |
@@ -597,6 +597,19 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5567 | `PlayerRdy` |
 | 5575 | `ExitEntr` |
 | 5580 | `AutoControlPlayer` |
+| 5583 | `PlayerCtrlRoutine` |
+| 5595 | `DisJoyp` |
+| 5597 | `SaveJoyp` |
+| 5615 | `SizeChk` |
+| 5623 | `ChkMoveDir` |
+| 5629 | `SetMoveDir` |
+| 5630 | `PlayerSubs` |
+| 5649 | `PlayerHole` |
+| 5661 | `HoleDie` |
+| 5670 | `HoleBottom` |
+| 5672 | `ChkHoleX` |
+| 5680 | `ExitCtrl` |
+| 5682 | `CloudExit` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

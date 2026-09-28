@@ -94824,9 +94824,23 @@
         "CloudExit"
       ],
       "maximumComplete": 641,
-      "actualMatches": [],
+      "actualMatches": [
+        "PlayerCtrlRoutine",
+        "DisJoyp",
+        "SaveJoyp",
+        "SizeChk",
+        "ChkMoveDir",
+        "SetMoveDir",
+        "PlayerSubs",
+        "PlayerHole",
+        "HoleDie",
+        "HoleBottom",
+        "ChkHoleX",
+        "ExitCtrl",
+        "CloudExit"
+      ],
       "evidence": "docs/proposals/m2/player-control-modes.md",
-      "state": "admitted-player-control-chain"
+      "state": "P2-thirteen-caller-matches-review-pending-641"
     }
   ]
 }

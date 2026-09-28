@@ -1,5 +1,16 @@
 # M2 candidate: Player route
 
+## T32 S1 movement dependency receipt
+
+The coordinator records a concrete source mismatch under existing T23 S5
+PlayerMovementSubs custody: the native movement child lacks the original
+PlayerChangeSizeFlag early return after PlayerPhysicsSub, so frozen movement
+still changes ClimbSideTimer, motion forces and position. Fifty source-RAM
+control fixtures retain all production-call failures while independently
+proving caller contracts. Repair with the complete movement-state chain in
+source order; no extra dependency is admitted into T32 S1. See the
+[caller proof and retained failures](player-control-modes.md#s1p2-original-caller-proof).
+
 ## T31 S4 evidence receipt for existing T23 S5 custody
 
 The coordinator records additional failing-route evidence for the existing

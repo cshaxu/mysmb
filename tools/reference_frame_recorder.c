@@ -32,6 +32,7 @@
 #include "../test/engine_normal_fixture.h"
 #include "../test/scroll_fixture.h"
 #include "../test/entrance_fixture.h"
+#include "../test/player_control_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
 #include "core/driver.h"
@@ -934,7 +935,9 @@ int main(int argument_count, char **arguments)
     unsigned int movement_snapshot_phase;
     unsigned int background_snapshot;
     const char *entrance_children_path;
-    unsigned char entrance_children[4][4098];
+    unsigned char entrance_children[8][4098];
+    lib_u16 control_return;
+    lib_u8 control_stack;
     unsigned int entrance_child_count;
     unsigned int entrance_child_active;
     lib_u16 entrance_child_return;
@@ -970,6 +973,8 @@ int main(int argument_count, char **arguments)
     entrance_child_active = 0u;
     entrance_child_return = 0u;
     entrance_child_stack = 0u;
+    control_return = 0u;
+    control_stack = 0u;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
@@ -979,6 +984,17 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--control-snapshot=", 19u) == 0) {
+            if (movement_snapshot_path != NULL || arguments[recorded][19] == '\0') return 64;
+            movement_snapshot_path = arguments[recorded] + 19;
+            background_snapshot = 4u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--control-children=", 19u) == 0) {
+            if (entrance_children_path != NULL || arguments[recorded][19] == '\0') return 64;
+            entrance_children_path = arguments[recorded] + 19;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--entrance-children=", 20u) == 0) {
             if (entrance_children_path != NULL || arguments[recorded][20] == '\0') return 64;
             entrance_children_path = arguments[recorded] + 20;
@@ -1402,6 +1418,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_player_control_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(775 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_entrance_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1815,6 +1837,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 776u && t26_fixture <= 825u)
+                    mysmb_player_control_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 776u));
                 else if (t26_fixture >= 741u && t26_fixture <= 775u)
                     mysmb_entrance_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 741u));
@@ -2028,6 +2053,58 @@ int main(int argument_count, char **arguments)
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         before_pc = driver->machine->pc;
+        /* T32 observes the real control caller and immediate children.
+         * Return PCs/depths come only from the original hardware stack. */
+        if (background_snapshot == 4u && movement_snapshot_path != NULL &&
+            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 825u) {
+            if (movement_snapshot_phase == 0u && before_pc == 0xb0e9u) {
+                memcpy(movement_snapshots, driver->machine->ram, 2048u);
+                control_stack = driver->machine->s;
+                control_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u + (lib_u8)(control_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u + (lib_u8)(control_stack + 2u)]);
+                movement_snapshot_phase = 1u;
+            }
+            if (movement_snapshot_phase == 1u) {
+                if (entrance_child_active != 0u) {
+                    if (before_pc == entrance_child_return && driver->machine->s ==
+                        (lib_u8)(entrance_child_stack + 2u)) {
+                        memcpy(entrance_children[entrance_child_count] + 2050u,
+                               driver->machine->ram, 2048u);
+                        ++entrance_child_count;
+                        entrance_child_active = 0u;
+                    }
+                }
+                else if (entrance_children_path != NULL) {
+                    unsigned int child;
+                    child = before_pc == 0xb329u ? 1u :
+                        (before_pc == 0xaf93u ? 2u :
+                        (before_pc == 0xf180u ? 3u :
+                        (before_pc == 0xf12au ? 4u :
+                        (before_pc == 0xe29cu ? 5u :
+                        (before_pc == 0xdc64u ? 6u :
+                        (before_pc == 0xb1ddu ? 7u : 0u))))));
+                    if (child != 0u) {
+                        if (entrance_child_count >= 8u) return 69;
+                        entrance_children[entrance_child_count][0] = (unsigned char)child;
+                        entrance_children[entrance_child_count][1] = child == 5u ?
+                            driver->machine->x : driver->machine->a;
+                        memcpy(entrance_children[entrance_child_count] + 2u,
+                               driver->machine->ram, 2048u);
+                        entrance_child_stack = driver->machine->s;
+                        entrance_child_return = (lib_u16)(1u +
+                            driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 1u)] +
+                            256u * driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 2u)]);
+                        entrance_child_active = child;
+                    }
+                }
+                if (before_pc == control_return && driver->machine->s ==
+                    (lib_u8)(control_stack + 2u)) {
+                    memcpy(movement_snapshots + 2048u, driver->machine->ram, 2048u);
+                    movement_snapshot_phase = 2u;
+                }
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -2139,9 +2216,10 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        ok = fwrite(background_snapshot == 3u ? "MSEN\1\0\0\0" :
+        ok = fwrite(background_snapshot == 4u ? "MSPC\1\0\0\0" :
+                    (background_snapshot == 3u ? "MSEN\1\0\0\0" :
                     (background_snapshot == 2u ? "MSSC\1\0\0\0" :
-                    (background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0")),
+                    (background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0"))),
                     1u, 8u, snapshot) == 8u &&
              fwrite(movement_snapshots, 1u, 4096u, snapshot) == 4096u;
         if (fclose(snapshot) != 0) ok = 0;
@@ -2152,8 +2230,9 @@ int main(int argument_count, char **arguments)
         unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
         unsigned int child;
         int ok;
-        if (background_snapshot != 3u || movement_snapshot_phase != 2u ||
+        if ((background_snapshot != 3u && background_snapshot != 4u) || movement_snapshot_phase != 2u ||
             entrance_child_active != 0u) return 69;
+        if (background_snapshot == 4u) header[2] = 'P';
         header[5] = (unsigned char)entrance_child_count;
         children = fopen(entrance_children_path, "wb");
         if (children == NULL) return 69;

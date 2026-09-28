@@ -169,3 +169,47 @@ priority, high-Y hole and cloud branches; original child-entry/return audit
 and complete branch coverage. Do not absorb physics/OAM child repair or mark
 callback/native tests alone as ROM equivalence. All temporary outputs remain
 under the admitted ignored root; prior original recordings are reused read-only.
+
+## S1/P2: original caller proof
+
+Fifty controlled source-RAM routes enter PlayerCtrlRoutine naturally from
+GameRoutines, PlayerEntrance, FlagpoleSlide, PlayerEndLevel or SideExitPipeEntry.
+The read-only observer obtains actual return PCs and depths from the original
+stack, records each immediate child's entry and return, and never mutates
+execution. All fifty frame records equal both coverage-only and completely
+unobserved runs. Raw evidence is 2,872,371 bytes under the 4 MB cap.
+
+The [reproducible verifier](../../../test/verify_player_control_snapshots.py)
+decodes every instruction in `$b0e9-$b1c6`, checks both outcomes of all 23
+conditional branches and confirms all thirteen admitted entry labels execute.
+Fifty [caller-boundary checks](../../../test/player_control_caller_check.c)
+pass on each width: 100 matches over all 1,784 persistent bytes, including
+both PPU mirrors. Each child identity/order and entry RAM are compared before
+replaying the actual original child result. BoundingBoxCore also checks the
+original object offset zero and native coordinate/control arguments.
+
+The first 48 fixtures missed the mode-below-four priority branch and the
+still-playing death-music branch. A natural SideExitPipeEntry route and a
+death-event queue input exercise both; no PC/stack change or branch exclusion
+was used. Coverage is complete only after these two source-reachable cases.
+
+This establishes only the thirteen caller nodes' source contracts. The
+production checker executes real native children against the same original
+entry/return snapshots and retains **100 failing comparisons, zero matches**.
+The movement-freeze input exposes the existing PlayerMovementSubs failure to
+honor PlayerChangeSizeFlag (including ClimbSideTimer and downstream position
+changes). Movement/state work remains with T23 S5 for the next source chain;
+relative-position/OAM work remains with T16 S4; SetEntr remains planned S2.
+No child algorithm is certified or newly repaired to improve these counts.
+
+The operational track is P1's unchanged 63-source build, focused regressions,
+DOS16 link and three artifacts. The added caller checker compiles as strict
+C90 and passes all fifty cases on x86/x64. The reference recorder rebuilds;
+all original/production checks above use it and the same P1 game objects.
+The three packaged EXEs retain P1's listed hashes because no production
+source changed in P2. This evidence is not full-player or whole-game parity.
+
+S1 expected/actual caller matches: 13/13; global progress 628 -> 641 / 1,992.
+Exact completed labels: `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `PlayerHole`, `HoleDie`, `HoleBottom`, `ChkHoleX`, `ExitCtrl`, `CloudExit`.
+The actual-child failures above receive no credit. Final review remains
+pending under the current S1 packet.
