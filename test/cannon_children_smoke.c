@@ -11,9 +11,9 @@ void name(struct mysmb_game *game,mysmb_u8 slot) \
 { (void)game;(void)slot;++unexpected; }
 UNEXPECTED_SLOT(mysmb_objects_step_bowser_flames_slot)
 UNEXPECTED_SLOT(mysmb_objects_step_fireworks_slot)
-UNEXPECTED_SLOT(mysmb_objects_step_platforms_slot)
-UNEXPECTED_SLOT(mysmb_objects_step_bowsers_slot)
-UNEXPECTED_SLOT(mysmb_objects_draw_bowsers_slot)
+UNEXPECTED_SLOT(mysmb_enemy_run_large_platform)
+UNEXPECTED_SLOT(mysmb_enemy_run_small_platform)
+UNEXPECTED_SLOT(mysmb_enemy_run_bowser)
 UNEXPECTED_SLOT(mysmb_objects_step_star_flags_slot)
 UNEXPECTED_SLOT(mysmb_objects_step_jumpspring)
 #undef UNEXPECTED_SLOT
@@ -45,6 +45,9 @@ int main(void)
         memset(game.ram,0x5aU,sizeof(game.ram));
         game.ram[8U]=(mysmb_u8)slot;game.ram[0xfU+slot]=1U;game.ram[0x16U+slot]=ids[i];
         memcpy(before,game.ram,sizeof(before));
+        /* The actor vector writes JumpEngine scratch before NoRunCode. */
+        before[4U]=0x91U;before[5U]=0xc8U;
+        before[6U]=0xd6U;before[7U]=0xc8U;
         mysmb_enemy_core_step_slot(&game,0,(mysmb_u8)slot);
         if(unexpected||memcmp(before,game.ram,sizeof(before))!=0) return 1;
     }

@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T39 S6 is closed at 1,046 / 1,992: all twenty platform initialization nodes proven.**
+**M2 T39 S7 is closed at 1,049 / 1,992: three new caller matches plus retained NoRunCode.**
 
-## M2 T39 S6 Packet
+## M2 T39 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S6, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 0f73dcc; coordinator accepts transfer-178. |
-| Objective | Restore all twenty platform initialization and positioning nodes. |
-| Non-goals | No movement, collision, drawing or host-platform gameplay repair. |
-| Reference Baseline | 1,026 / 1,992; twenty scoped open labels, twenty expected, maximum 1,046. Exact names in S6 plan and ledger. |
-| Candidate Proposal | [T39 S6 platform initialization](../proposals/m2/t39-special-initialization-and-dispatch.md#s6-admission-platform-initialization-and-positioning). |
-| Files And ABI Surface | Shared enemy/init_targets.c; tests/recorder, node records and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branches/writes/table/call audit and actual NMI comparisons; native contracts, retained roots, builds, DOS link and purity. |
-| Expected Markers | Balance fallthrough, signed Y top/center, box selectors, lift +12 and three position offsets with page carry. |
+| Identifier Mode | M2 T39 S7, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after b2bb5ab; coordinator accepts transfers-179/180. |
+| Objective | Restore actor vector and retainer call boundaries; retain NoRunCode. |
+| Non-goals | No child movement/collision/graphics rewrite or host-platform gameplay. |
+| Reference Baseline | 1,046 / 1,992; four scoped, two audited mismatches and one open expected new, retained NoRunCode, maximum 1,049. |
+| Candidate Proposal | [T39 S7 actor boundaries](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-admission-actor-vector-and-retainer-call-boundaries). |
+| Files And ABI Surface | Shared enemy/core and dispatch_targets, retainer OAM boundary, build manifests, tests/recorder and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix; provisional source-entry seams explicitly bounded in proposal. |
+| Verification | Original vector/branch/call proof, full child-entry RAM comparison and recorded return substitution; separate actual-child diagnostics, native contracts, builds and purity. |
+| Expected Markers | ObjectOffset reload, original selector/scratch, distinct platform and Bowser edges, offscreen-relative-graphics retainer order. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Twenty exact dispositions, dual evidence, retained child gaps and artifact hashes. |
-| Stop Conditions | Unadmitted repair, patched source execution, hidden mismatch or host gameplay. |
-| Exit Criteria | Twenty expected labels proven or exact accepted transfer; inventory, ledger and artifacts agree. |
+| Reporting Requirements | Four named dispositions, caller-only proof versus actual-child failures, artifact hashes. |
+| Stop Conditions | Unadmitted repair, original CPU/stack/ROM patch, hidden child mismatch or host gameplay. |
+| Exit Criteria | Three expected nodes proven plus retained NoRunCode or exact accepted transfer; ledger, inventory and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | All platform initializer aliases, common-tail callers and legacy-default users. |
+| Similar-Issue Sweep | Actor callers, all vector aliases, retainer callers and combined-child tests. |
+
+## S7 closure
+
+[Original actor/retainer caller proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof)
+records three new matches plus retained NoRunCode, 360/360 caller comparisons
+and separate 42/360 actual-child matches. All 3,118 prior actual matches remain.
+Three EXEs are refreshed; child discrepancies and DOS link-only limits remain.
 
 ## S6 closure
 
@@ -77,7 +84,7 @@ EXEs; the existing Bowser test failures and DOS link-only limit remain.
 
 ## Current sequence
 
-T39 contains nine planned S chains; S1-S6 are closed; S7 is next, not yet admitted. Follow the
+T39 contains nine planned S chains; S1-S7 are closed; S8 is next, not yet admitted. Follow the
 [queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
 beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 

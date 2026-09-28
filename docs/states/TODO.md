@@ -71,3 +71,10 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
   fail at original lakitu_smoke.c line 76, before EndFrenzy. Preserve the
   existing Lakitu/Spiny source-order receivers. The nine initializer/frenzy
   matches grant no child or full-actor credit. [S5 proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof).
+
+- [ ] **Actor-vector and retainer actual-child gaps:** T39 S7 proves only the
+  four caller nodes (360/360); actual native children match 42/360, retaining
+  174 vector and 144 retainer failures. Keep source-order custody for S8/S9
+  and later actor/OAM nodes; replace the explicitly provisional large/small
+  platform seams in S9. GetEnemyOffscreenBits/RelativeEnemyPosition remain
+  with T16 S4 and EnemyGfxHandler with T17 S6. [Exact caller/child boundary](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof).

@@ -773,3 +773,142 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 254857 | 3afdf144b0265ac12a6d5cb6dcfc88e962eb4a2fb0f69bcffdab009ffc106517 |
 | mysmb32.exe | 338826 | 08c4151e2d786e6d95c022dd2302bad711c0f2dc400796566558cad65862a04b |
 | mysmb64.exe | 345378 | 3291a887195e110c96e24f75ec1bfaf07eaabc3863469591fe9e5b9f7e838573 |
+
+## S7 admission: Actor vector and retainer call boundaries
+
+After S6 commit b2bb5ab, coordinator accepts transfers-179/180. Scope is
+RunEnemyObjectsCore, JmpEO, NoRunCode and RunRetainerObj; the first, second
+and fourth are expected new: the two dispatch labels are audited mismatches,
+while RunRetainerObj is open. NoRunCode is a retained match. Baseline
+1,046/1,992, three expected new, maximum 1,049; four scoped receivers.
+Original range $C882-$C8DF contains the actor selector, 34 vector words, an
+empty return and the retainer's three ordered children.
+
+Restore ObjectOffset reload, ID-below-$15 selector zero or ID-minus-$14,
+source JumpEngine scratch and every vector entry. Split the existing platform
+child binding into distinct RunLargePlatform/RunSmallPlatform boundaries and
+combine Bowser's existing step/draw under its single RunBowser boundary.
+These pending child bodies remain under their S9/later source owners and earn
+no credit. A shared enemy/dispatch_targets.c owns these source entry seams;
+temporary platform forwarding seams are specifically allowed here to restore
+the original parent edges before S9 replaces their bodies. They are not new
+host abstractions or claims that the legacy platform child is correct.
+
+Separate RunRetainerObj into offscreen, relative-position and graphics calls
+in that order. Existing graphics moves to an explicitly named retainer OAM
+child without caller position/offscreen work; preserve its remaining behavior
+and record actual mismatches. This is boundary extraction, not an unadmitted
+graphics rewrite. CMake and DOS build manifests must include the new shared
+unit. No platform-specific gameplay or movement/collision repair is admitted.
+
+ROM proof compares all vector words, selector branches and source-reachable
+NMI live-slot routes. A caller-only harness may compare every immediate
+child's full RAM input and then substitute its recorded original return;
+this certifies only the four scoped call nodes. Separate full native-child
+runs must retain all actual differences, including OAM/relative/offscreen
+children. Do not mask scratch or patch original CPU/stack/ROM. NoRunCode
+retains its no-op body despite the caller's required scratch writes.
+
+Independent native call/write contracts, retained regressions, strict C90
+x86/x64, DOS16 link, platform purity and hidden-window checks precede three
+EXE delivery. Sweep all run-object callers, source vector aliases, retainer
+callers and tests relying on old combined child seams. Existing local ROM/
+listing provenance remains unchanged; no external implementation import.
+Raw evidence stays in ignored build/m2-t39-s7, eight-MB budget for vector and
+retainer roots/children, twenty-second per-recorder timeout, S7 ownership.
+Stop on unadmitted repair or concealed child discrepancies. S8/S9 stay planned.
+
+## S7 original actor-vector and retainer proof
+
+S7 closes three expected new caller nodes and retains NoRunCode:
+1,046 -> 1,049/1,992, four scoped, no unfinished scoped transfer. Admission
+confirms two audited mismatches (RunEnemyObjectsCore/JmpEO), one open target
+(RunRetainerObj), one retained match and maximum 1,049. Transfers-179/180
+register exact custody before implementation. S8 normal-actor/movement dispatch
+is next; T39 remains open.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| RunEnemyObjectsCore | $C882 | Reload ObjectOffset; below-$15 selector zero, otherwise ID minus $14; dispatch every original target with exact child input; new caller match |
+| JmpEO | $C88F | All 34 words bind original targets; JumpEngine stores $C891 and target in scratch before the child; new caller match |
+| NoRunCode | $C8D6 | Original RTS remains empty; all seven no-op IDs preserve child semantics after caller scratch; retained match |
+| RunRetainerObj | $C8D7 | GetEnemyOffscreenBits, RelativeEnemyPosition then EnemyGfxHandler with exact RAM handoffs; caller-only match; new caller match |
+
+**Caller equivalence is not child equivalence.** Original caller comparison
+passes 360/360 across x86/x64. The harness compares every immediate child's
+complete RAM input before applying its recorded original return; it certifies
+only the four scoped nodes. It never patches original ROM, PC, return stack
+or child execution, and does not mask scratch. Hardware-stack RAM is excluded
+while mapped $0109-$0139 variables remain compared. Actual native-child runs
+are separate and match only 42/360: 174 vector and 144 retainer mismatches
+remain visible. No child interior receives credit from the caller harness.
+
+All 54 actor IDs and 34 selectors execute through natural NMI live-slot paths;
+the two source selector-branch outcomes occur. All twelve scoped instructions
+execute and all 68 vector bytes match original. Ninety-two source vector child
+records verify target identity, current slot and $04-$07 before entry. The
+seven NoRunCode IDs have no child body; WarpZoneObject uses its previously
+proved native body with a closed source gate. Seventy-two retainer routes
+cover all six slots, both world-dependent drawings and position/offscreen
+variants, with 216 ordered original child records. All 180 observer-free
+coverage runs produce identical frame records.
+
+The parent now has separate large/small platform entry identities and one
+Bowser child entry. Their temporary shared-game seams preserve legacy child
+behavior until the already planned S9/later owners replace it. This narrow
+structural exception was explicit at admission; it grants no platform/Bowser
+conformance. RunRetainerObj now owns offscreen, relative and graphics order;
+the OAM function consumes completed relative/offscreen state and retains its
+existing unproven drawing body, including its old guard. No host gameplay
+logic or platform selection is introduced.
+
+Independent native checks cover every actor ID in all six slots, no-op scratch,
+source loop gates/high-bit references and WarpZoneObject combinations. Retainer
+call contracts cover 1,536 complete-RAM inputs per width with strict child
+order and argument checks. Cannon/no-op tests now expect the source caller's
+scratch writes instead of incorrectly demanding unchanged RAM. Fifteen full
+initializer/stream/retainer/platform regressions per width pass. The complete
+actual matrix is 3,164/3,606: all 3,118 prior matches remain, four old loop
+mismatches are fixed and 42 new actual routes match. Loop roots are now 192/192.
+The remaining 442 differences are the prior 124 Spiny differences plus 318
+newly exposed actor/retainer differences, not caller proof failures.
+
+Known child boundaries remain assigned without new transfers:
+RunNormalEnemies belongs to planned S8; RunBowserFlame, RunFirebarObj,
+RunSmallPlatform and RunLargePlatform belong to planned S9; RunBowser,
+RunFireworks and RunStarFlagObj retain their later source-order admission.
+These labels remain with T19 S5 until received. GetEnemyOffscreenBits and
+RelativeEnemyPosition remain with T16 S4; EnemyGfxHandler remains with T17 S6.
+Already proved caller nodes such as PowerUpObjHandler do not make their
+unproved graphics descendants complete. Preserve actual mismatch logs for
+those consumers rather than accepting an ancestor-wide match.
+
+All 86 shared units build in strict C90 on x86/x64; self-tests, bounded hidden
+window response and platform purity pass. DOS16 links with its existing
+OLDNAMES warning and remains link-only, without runtime/graphics, resource
+binding or physical 486 certification. Endgame/layout/mode/Bowser checks retain
+the four existing passes and four star-timer/Bowser-damage failures. The prior
+Lakitu/Spiny smoke gap stays open. Three test EXEs are refreshed together.
+
+Similar-issue sweep covers all run-object callers, all vector aliases,
+retainer callers and the three standalone tests that stubbed former combined
+entries. CMake and DOS manifests include dispatch_targets.c. The removed
+retainer position/offscreen calculation has one shared-game caller owner;
+no duplicate production path remains. No unrelated actor body is rewritten.
+
+Reproduce actor_dispatch_fixture.h cases 0..179, --fixture=t39-actor-dispatch=N,
+--actor-dispatch-snapshot and --control-children; run --pc-coverage separately.
+Cases 0..107 are vector roots; 108..179 are retainer roots. The caller checker
+links core/lifecycle for vector cases, or dispatch_targets with the test-only
+MYSMB_RETAINER_CALLER definition for retainer cases. enemy_loop_actual_check
+links all real shared children and must retain the separate failures above.
+Focused CTests are mysmb.enemy-dispatch-smoke and mysmb.retainer-call-chain.
+Existing local provenance is unchanged, no third-party implementation import;
+raw evidence is under 2.9 MB in ignored build/m2-t39-s7, within the admitted
+eight-MB and twenty-second per-recorder bounds, retained for T39 review.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255053 | d1a616a10ac7af748816067e0196b0f2456d88f478bbd675b4d1755a4e49c000 |
+| mysmb32.exe | 339368 | db9640d53c93d1f7b6cb7c3de532a1d1e259675cec372b43358876252f472e32 |
+| mysmb64.exe | 346463 | 46a52706949a9a8e163e3949fa21922279dc0e6cae172797eb3224e2b25a8418 |

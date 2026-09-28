@@ -43,6 +43,8 @@ mysmb_u8 mysmb_objects_draw_spiny(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing retainer graphics child; caller owns relative/offscreen work. */
+void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing EnemyGfxHandler jumpspring branch; actor prepares relative/bits. */
 void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot,

@@ -19,9 +19,9 @@ void name(struct mysmb_game *game,mysmb_u8 slot) { record(game,slot,id); }
 SLOT(mysmb_objects_step_normal_enemy,1U)
 SLOT(mysmb_objects_step_bowser_flames_slot,2U)
 SLOT(mysmb_objects_step_fireworks_slot,3U)
-SLOT(mysmb_objects_step_platforms_slot,5U)
-SLOT(mysmb_objects_step_bowsers_slot,6U)
-SLOT(mysmb_objects_draw_bowsers_slot,7U)
+SLOT(mysmb_enemy_run_large_platform,5U)
+SLOT(mysmb_enemy_run_small_platform,15U)
+SLOT(mysmb_enemy_run_bowser,6U)
 SLOT(mysmb_objects_step_star_flags_slot,11U)
 SLOT(mysmb_objects_step_jumpspring,12U)
 SLOT(mysmb_objects_draw_retainer,13U)
@@ -41,16 +41,23 @@ int main(void)
 {
     static struct mysmb_game game;
     static mysmb_u8 expected[2048];
-    /* Explicit ID-to-existing-child map; paired source platform targets are
-     * still one legacy child and do not earn parent conformance credit. */
+    /* Distinct original actor entry identities; child interiors are stubbed. */
     static const unsigned char target[54]={
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         1,1,1,1,1,2,3,0,0,0,0,4,4,4,4,4,
-        4,4,4,0,5,5,5,5,5,5,5,5,5,6,8,10,
+        4,4,4,0,5,5,5,5,5,5,5,15,15,6,8,10,
         0,11,12,0,0,13
     };
     static const unsigned int erased[8]={0xfU,0x16U,0x1eU,0x110U,0x796U,0x125U,0x3c5U,0x78aU};
+    static const unsigned short addresses[34]={
+        0xc8e0U,0xc935U,0xd295U,0xc8d6U,0xc8d6U,0xc8d6U,0xc8d6U,
+        0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,
+        0xc8d6U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,
+        0xc94dU,0xc94dU,0xd065U,0xbc85U,0xb94bU,0xc8d6U,0xd2d9U,
+        0xb8baU,0xc8d6U,0xb7a4U,0xc8d7U
+    };
     unsigned int slot,id,want,low,high,lock,j,flag,peer,live;
+    unsigned short address;
     /* Source high-bit references read all sixteen low-nibble offsets,
      * including the self-reference case. Only a dead peer clears the flag. */
     for(slot=0U;slot<6U;++slot) for(flag=0x80U;flag<256U;++flag)
@@ -79,12 +86,14 @@ int main(void)
         game.ram[0x16U+slot]=(mysmb_u8)id;
         game.ram[0x723U]=0U;
         memcpy(expected,game.ram,sizeof(expected));
+        address=addresses[id<21U?0U:id-20U];
+        expected[4]=0x91U;expected[5]=0xc8U;
+        expected[6]=(unsigned char)address;expected[7]=(unsigned char)(address>>8U);
         count=0U;bad_slot=0U;
         mysmb_enemy_run_objects(&game);
         want=target[id];
-        if(count!=(want==0U ? 0U : (want==6U ? 2U:1U))) return 1;
+        if(count!=(want==0U ? 0U : 1U)) return 1;
         if(want!=0U && calls[0]!=want) return 2;
-        if((want==6U) && calls[1]!=want+1U) return 3;
         if(bad_slot || memcmp(expected,game.ram,sizeof(expected))!=0) return 4;
     }
     /* Exhaust both Y bytes. Cycle all slots and include control wrap; compare
@@ -103,6 +112,8 @@ int main(void)
             expected[0x6d6U]=(mysmb_u8)(expected[0x6d6U]+1U);
             for(j=0U;j<8U;++j) expected[erased[j]+slot]=0U;
         }
+        expected[4]=0x91U;expected[5]=0xc8U;
+        expected[6]=0xa4U;expected[7]=0xb7U;
         count=0U;
         mysmb_enemy_run_objects(&game);
         if(count!=0U || memcmp(expected,game.ram,sizeof(expected))!=0) return 5;

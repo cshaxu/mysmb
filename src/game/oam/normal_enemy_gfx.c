@@ -222,8 +222,8 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
     return 0U;
 }
 
-/* ROM RunRetainerObj through EnemyGfxHandler for RetainerObject ($35). */
-void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
+/* Existing EnemyGfxHandler retainer branch; caller owns position/bits. */
+void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 princess[6] = { 0x7aU, 0x7bU, 0xdaU, 0xdbU, 0xd8U, 0xd8U };
     static const mysmb_u8 retainer[6] = { 0xcdU, 0xcdU, 0xceU, 0xceU, 0xcfU, 0xcfU };
@@ -234,22 +234,13 @@ void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 bits;
     mysmb_u8 x;
     mysmb_u8 attributes;
-    mysmb_u16 world;
-    mysmb_u16 screen;
 
     if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U ||
         game->ram[MYSMB_NORMAL_ID + slot] != 53U) return;
     tiles = game->ram[MYSMB_NORMAL_WORLD] < 7U ? retainer : princess;
     attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
-    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_PAGE + slot] << 8U) |
-                        game->ram[MYSMB_NORMAL_X + slot]);
-    screen = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_NORMAL_SCREEN_PAGE] << 8U) |
-                         game->ram[MYSMB_NORMAL_SCREEN_X]);
-    x = (mysmb_u8)(world - screen);
-    game->ram[MYSMB_NORMAL_REL_X] = x;
-    game->ram[MYSMB_NORMAL_REL_Y] = game->ram[MYSMB_NORMAL_Y + slot];
-    bits = mysmb_objects_get_enemy_offscreen_bits(game, slot);
-    game->ram[MYSMB_NORMAL_OFFSCREEN] = bits;
+    x = game->ram[MYSMB_NORMAL_REL_X];
+    bits = game->ram[MYSMB_NORMAL_OFFSCREEN];
     oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
         offset = (mysmb_u8)(oam + row * 8U);

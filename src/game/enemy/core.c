@@ -21,18 +21,32 @@ void mysmb_enemy_warp_zone(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_objects_erase_enemy(game, slot);
 }
 
-/* ROM $c882 RunEnemyObjectsCore / $c88f JmpEO, valid IDs $00-$35.
- * Select the source family at the current slot, never scan other actors.
- * Existing child interiors remain under recovery: in particular the platform
- * child still combines RunLargePlatform/RunSmallPlatform, and Bowser's two
- * entries do not yet reproduce the duplicate-slot source state. */
+/* Original $C892-$C8D5 vector, used only as JumpEngine scratch data.
+ * All runtime targets are native C; child interiors keep their own status. */
+static const mysmb_u16 actor_targets[34] = {
+    0xc8e0U,0xc935U,0xd295U,0xc8d6U,0xc8d6U,0xc8d6U,0xc8d6U,
+    0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,0xc947U,
+    0xc8d6U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,0xc965U,
+    0xc94dU,0xc94dU,0xd065U,0xbc85U,0xb94bU,0xc8d6U,0xd2d9U,
+    0xb8baU,0xc8d6U,0xb7a4U,0xc8d7U
+};
+
+/* ROM $C882 RunEnemyObjectsCore / $C88F JmpEO, valid IDs $00-$35. */
 void mysmb_enemy_run_objects(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     mysmb_u8 id;
+    mysmb_u8 selector;
+    mysmb_u16 target;
 
     slot = game->ram[0x0008U];
     id = game->ram[MYSMB_ENEMY_CORE_ID + slot];
+    selector = id < 0x15U ? 0U : (mysmb_u8)(id - 0x14U);
+    target = actor_targets[selector];
+    game->ram[4U] = 0x91U;
+    game->ram[5U] = 0xc8U;
+    game->ram[6U] = (mysmb_u8)target;
+    game->ram[7U] = (mysmb_u8)(target >> 8U);
     if (id < 0x15U) {
         mysmb_objects_step_normal_enemy(game, slot);
         return;
@@ -50,12 +64,13 @@ void mysmb_enemy_run_objects(struct mysmb_game *game)
         break;
     case 0x24U: case 0x25U: case 0x26U: case 0x27U:
     case 0x28U: case 0x29U: case 0x2aU:
+        mysmb_enemy_run_large_platform(game, slot);
+        break;
     case 0x2bU: case 0x2cU:
-        mysmb_objects_step_platforms_slot(game, slot);
+        mysmb_enemy_run_small_platform(game, slot);
         break;
     case 0x2dU:
-        mysmb_objects_step_bowsers_slot(game, slot);
-        mysmb_objects_draw_bowsers_slot(game, slot);
+        mysmb_enemy_run_bowser(game, slot);
         break;
     case 0x2eU:
         mysmb_objects_step_power_up(game);
