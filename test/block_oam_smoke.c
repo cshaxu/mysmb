@@ -1,3 +1,4 @@
+#include "game/dispatcher.h"
 #include "game/objects.h"
 
 int main(void)
@@ -15,7 +16,7 @@ int main(void)
     game.ram[0x03e8U] = 0xc4U;
     game.ram[0x06ecU] = 0x20U;
     game.ram[0x074eU] = 1U;
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     if (game.ram[0x0220U] != 0x20U || game.ram[0x0221U] != 0x87U ||
         game.ram[0x0222U] != 3U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0224U] != 0x20U || game.ram[0x0225U] != 0x87U ||
@@ -34,7 +35,7 @@ int main(void)
     game.ram[0x03e8U] = 0x51U;
     game.ram[0x06ecU] = 0x20U;
     game.ram[0x074eU] = 1U;
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     if (game.ram[0x0222U] != 3U || game.ram[0x0226U] != 3U ||
         game.ram[0x022aU] != 3U || game.ram[0x022eU] != 3U) return 2;
 
@@ -52,7 +53,7 @@ int main(void)
     game.ram[0x00d9U] = 0x28U;
     game.ram[0x03f1U] = 0x40U;
     game.ram[0x06ecU] = 0x20U;
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     if (game.ram[0x0220U] != 0x20U || game.ram[0x0221U] != 0x84U ||
         game.ram[0x0222U] != 0x43U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0227U] != 0x46U || game.ram[0x0228U] != 0x28U ||
@@ -68,7 +69,7 @@ int main(void)
     game.ram[0x041fU] = 0xb0U;
     game.ram[0x0420U] = 0U;
     game.ram[0x06ecU] = 0x20U;
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     return game.ram[0x00d7U] == 0x41U && game.ram[0x041fU] == 0U &&
         game.ram[0x0220U] == 0x41U ? 0 : 4;
 }

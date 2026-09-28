@@ -710,8 +710,8 @@ The labels and branches behind every line remain open until individually bound b
 | 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
 | 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
-| 5336 | `GameEngine` | M2 T31 S2 shared engine / engine_tail | audited; mismatch | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5339 | `ProcELoop` | M2 T31 S2 shared engine / engine_tail | mapped; evidence incomplete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5336 | `GameEngine` | M2 T31 S2 shared game/engine.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 5339 | `ProcELoop` | M2 T31 S2 shared game/engine_slots.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 5371 | `NoChgMus` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5377 | `CycleTwo` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5380 | `ClrPlrPal` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
@@ -874,14 +874,14 @@ The labels and branches behind every line remain open until individually bound b
 | 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
 | 6497 | `ExGTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exgtimer) |
 | 6501 | `WarpZoneObject` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-warpzoneobject) |
-| 6519 | `ProcessWhirlpools` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-processwhirlpools) |
-| 6526 | `WhLoop` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-whloop) |
-| 6546 | `NextWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextwh) |
-| 6548 | `ExitWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitwh) |
-| 6550 | `WhirlpoolActivate` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-whirlpoolactivate) |
-| 6577 | `LeftWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-leftwh) |
-| 6586 | `SetPWh` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setpwh) |
-| 6587 | `WhPull` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-whpull) |
+| 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6546 | `NextWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6548 | `ExitWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6550 | `WhirlpoolActivate` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6577 | `LeftWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6586 | `SetPWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6587 | `WhPull` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6598 | `FlagpoleScoreMods` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6601 | `FlagpoleScoreDigits` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6604 | `FlagpoleRoutine` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
@@ -905,20 +905,20 @@ The labels and branches behind every line remain open until individually bound b
 | 6760 | `KillVine` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killvine) |
 | 6766 | `WrCMTile` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrcmtile) |
 | 6780 | `ExitVH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvh) |
-| 6785 | `CannonBitmasks` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cannonbitmasks) |
-| 6788 | `ProcessCannons` | T22 responsibility; no scheduler/activation C owner found | audited; implementation missing | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-processcannons) |
-| 6792 | `ThreeSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-threeschk) |
-| 6809 | `FireCannon` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firecannon) |
-| 6832 | `Chk_BB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk_bb) |
-| 6840 | `Next3Slt` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-next3slt) |
-| 6842 | `ExCannon` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-excannon) |
-| 6846 | `BulletBillXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bulletbillxspddata) |
-| 6849 | `BulletBillHandler` | T22 responsibility; `src/game/objects.c`: `mysmb_objects_step_bullet_bills` (existing actor only, not the missing cannon scheduler) | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bulletbillhandler) |
-| 6862 | `SetupBB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupbb) |
-| 6876 | `ChkDSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkdste) |
-| 6880 | `BBFly` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bbfly) |
-| 6881 | `RunBBSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbbsubs) |
-| 6886 | `KillBB` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killbb) |
+| 6785 | `CannonBitmasks` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6788 | `ProcessCannons` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6792 | `ThreeSChk` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6809 | `FireCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6832 | `Chk_BB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6840 | `Next3Slt` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6842 | `ExCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6846 | `BulletBillXSpdData` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6849 | `BulletBillHandler` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6862 | `SetupBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6876 | `ChkDSte` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6880 | `BBFly` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6881 | `RunBBSubs` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6886 | `KillBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6891 | `HammerEnemyOfsData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerenemyofsdata) |
 | 6895 | `HammerXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerxspddata) |
 | 6898 | `SpawnHammerObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnhammerobj) |
@@ -1184,9 +1184,9 @@ The labels and branches behind every line remain open until individually bound b
 | 9010 | `PlatPosDataHigh` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platposdatahigh) |
 | 9013 | `PosPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posplatform) |
 | 9025 | `EndOfEnemyInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofenemyinitcode) |
-| 9030 | `RunEnemyObjectsCore` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runenemyobjectscore) |
-| 9038 | `JmpEO` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jmpeo) |
-| 9080 | `NoRunCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noruncode) |
+| 9030 | `RunEnemyObjectsCore` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9038 | `JmpEO` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9080 | `NoRunCode` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 9085 | `RunRetainerObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runretainerobj) |
 | 9092 | `RunNormalEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runnormalenemies) |
 | 9105 | `SkipMove` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipmove) |
@@ -1198,7 +1198,7 @@ The labels and branches behind every line remain open until individually bound b
 | 9168 | `RunLargePlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runlargeplatform) |
 | 9176 | `SkipPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skippt) |
 | 9182 | `LargePlatformSubroutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeplatformsubroutines) |
-| 9198 | `EraseEnemyObject` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-eraseenemyobject) |
+| 9198 | `EraseEnemyObject` | M2 T31 S2 shared game/enemy/lifecycle.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 9212 | `MovePodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movepodoboo) |
 | 9224 | `PdbM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pdbm) |
 | 9229 | `HammerThrowTmrData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerthrowtmrdata) |
@@ -1762,8 +1762,8 @@ The labels and branches behind every line remain open until individually bound b
 | 13636 | `JumpspringFrameOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringframeoffsets) |
 | 13639 | `EnemyGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemygfxhandler) |
 | 13661 | `CheckForRetainerObj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforretainerobj) |
-| 13674 | `CheckForBulletBillCV` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforbulletbillcv) |
-| 13682 | `SBBAt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sbbat) |
+| 13674 | `CheckForBulletBillCV` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 13682 | `SBBAt` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 13687 | `CheckForJumpspring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforjumpspring) |
 | 13694 | `CheckForPodoboo` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforpodoboo) |
 | 13704 | `CheckBowserGfxFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbowsergfxflag) |

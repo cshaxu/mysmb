@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 549 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 139 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,304 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 576 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 136 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,280 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **549 / 1,992 (27.56%)**. The 139 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **576 / 1,992 (28.92%)**. The 136 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S2 P1](../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery)
-completes seven engine-tail nodes. GameEngine and ProcELoop remain in the
-active S2 with explicit call-structure gaps; no S/T closure is claimed.
+Latest task review: [T31 S2 P2](../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery)
+completes 27 slot/environment/cannon-child labels. GameEngine, RunEnemyObjectsCore
+and JmpEO remain in active S2 with exact dispatch gaps; no S/T closure is claimed.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (549)
+## Completed matches (576)
 
 | ROM line | Node |
 | ---: | --- |
@@ -567,6 +567,7 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5299 | `L_WaterArea3` |
 | 5315 | `GameMode` |
 | 5326 | `GameCoreRoutine` |
+| 5339 | `ProcELoop` |
 | 5371 | `NoChgMus` |
 | 5377 | `CycleTwo` |
 | 5380 | `ClrPlrPal` |
@@ -574,6 +575,14 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5385 | `UpdScrollVar` |
 | 5398 | `RunParser` |
 | 5399 | `ExitEng` |
+| 6519 | `ProcessWhirlpools` |
+| 6526 | `WhLoop` |
+| 6546 | `NextWh` |
+| 6548 | `ExitWh` |
+| 6550 | `WhirlpoolActivate` |
+| 6577 | `LeftWh` |
+| 6586 | `SetPWh` |
+| 6587 | `WhPull` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |
@@ -581,6 +590,24 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6636 | `GiveFPScr` |
 | 6643 | `FPGfx` |
 | 6646 | `ExitFlagP` |
+| 6785 | `CannonBitmasks` |
+| 6788 | `ProcessCannons` |
+| 6792 | `ThreeSChk` |
+| 6809 | `FireCannon` |
+| 6832 | `Chk_BB` |
+| 6840 | `Next3Slt` |
+| 6842 | `ExCannon` |
+| 6846 | `BulletBillXSpdData` |
+| 6849 | `BulletBillHandler` |
+| 6862 | `SetupBB` |
+| 6876 | `ChkDSte` |
+| 6880 | `BBFly` |
+| 6881 | `RunBBSubs` |
+| 6886 | `KillBB` |
+| 9080 | `NoRunCode` |
+| 9198 | `EraseEnemyObject` |
+| 13674 | `CheckForBulletBillCV` |
+| 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
@@ -599,7 +626,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (139)
+## Mapped but not yet matched (136)
 
 | ROM line | Node |
 | ---: | --- |
@@ -639,15 +666,10 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
 | 5336 | `GameEngine` |
-| 5339 | `ProcELoop` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
-| 6519 | `ProcessWhirlpools` |
-| 6550 | `WhirlpoolActivate` |
 | 6702 | `Setup_Vine` |
 | 6730 | `VineObjectHandler` |
-| 6788 | `ProcessCannons` |
-| 6849 | `BulletBillHandler` |
 | 6928 | `ProcHammerObj` |
 | 6988 | `CoinBlock` |
 | 7000 | `SetupJumpCoin` |
@@ -671,6 +693,8 @@ counts and exact named lists. It does not validate semantics by itself.
 | 7468 | `BlockObjectsCore` |
 | 7506 | `BouncingBlockHandler` |
 | 7527 | `BlockObjMT_Updater` |
+| 9030 | `RunEnemyObjectsCore` |
+| 9038 | `JmpEO` |
 | 10509 | `StarFlagExit` |
 | 11085 | `FireballEnemyCollision` |
 | 11101 | `FireballEnemyCDLoop` |

@@ -81,11 +81,9 @@ void mysmb_game_routines(struct mysmb_game *game)
 void mysmb_game_engine(struct mysmb_game *game)
 {
     struct mysmb_area_source area_source;
-    if (game->area_prg != 0) {
-        area_source.prg = game->area_prg;
-        area_source.prg_size = game->area_prg_size;
-        mysmb_enemy_core_step(game, &area_source);
-    }
+    area_source.prg = game->area_prg;
+    area_source.prg_size = game->area_prg_size;
+    mysmb_game_engine_actors(game, &area_source);
     mysmb_objects_check_hazard_enemy_collision(game);
     mysmb_objects_check_bullet_bill_stomp(game);
     mysmb_objects_check_bloober_stomp(game);
@@ -117,8 +115,10 @@ void mysmb_game_engine(struct mysmb_game *game)
     mysmb_oam_render_player(game);
     mysmb_objects_step_vine(game);
     mysmb_area_apply_block_replacements(game);
-    mysmb_objects_step_blocks(game);
+    mysmb_game_engine_blocks(game);
     mysmb_objects_step_misc(game);
+    mysmb_game_process_cannons(game);
+    mysmb_game_process_whirlpools(game);
     /* ROM GameEngine calls FlagpoleRoutine after MiscObjectsCore and
      * before the timer tail, after this frame's player/scroll update. */
     mysmb_objects_step_flagpole(game);

@@ -2,10 +2,11 @@
 
 ## Current Work
 
-**M2 T31 S2 remains active at 549 / 1,992; seven tail nodes complete, GameEngine and ProcELoop pending.**
+**M2 T31 S2 remains active at 576 / 1,992; 34 of 37 received labels complete. GameEngine, RunEnemyObjectsCore and JmpEO remain incomplete.**
 
-S1 is committed as c9fe436. S2 is the sole active chain. P1 fixes the tail; remaining work is exact
-actor/block/cannon/whirlpool call structure, without child completion credit.
+S2 P2 combines slot scheduling, whirlpools, cannons and exact child corrections.
+The remaining work is full current-slot enemy-vector dispatch and removal of
+engine-wide actor passes. No parent completion or S/T closure is claimed.
 
 ## M2 T31 S2 Packet
 
@@ -14,17 +15,17 @@ actor/block/cannon/whirlpool call structure, without child completion credit.
 | Identifier Mode | M2 T31 S2, source-order implementation. |
 | Admission And Approval | Owner-approved goal continuation after committed S1; transfer-122 from T24 S2. |
 | Objective | Restore exact GameEngine caller sequence and its palette/music/parser tail. |
-| Non-goals | No completion credit for child interiors; no fake scheduler placeholders or platform game logic. |
-| Reference Baseline | 542 / 1,992; scope/expected nine open labels listed in proposal, maximum 551. |
+| Non-goals | No child repair outside the explicit 22-node environment and six-node cannon-child amendments; no fake scheduler placeholders or platform game logic. |
+| Reference Baseline | Original run: 542 / 1,992, nine expected. Environment amendment: 549, 22 expected. Cannon-child amendment: 549, six scope/four expected, maximum 553; combined forecast ceiling 577, with two extra dispatch labels retained incomplete pending their full implementation. |
 | Candidate Proposal | [T31 S2 chain](../proposals/m2/game-dispatcher.md#s2-admission-gameengine-caller-and-tail-chain). |
-| Files And ABI Surface | Shared engine and caller-owned helpers; relevant child call seams only; focused tests/recorders/build lists and three EXEs. |
+| Files And ABI Surface | Shared engine and caller helpers; admitted cannon/whirlpool game owners and relevant child call seams; focused tests/recorders/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Original source call/branch audit, controlled NMI routes, observable call-boundary tests, ordinary-route regressions and three builds. |
 | Expected Markers | Fireball, six enemy/floatey slots, player OAM, block order, misc/cannons/whirlpools, flagpole/timer/colors, music/star branches and parser tail. |
 | Asset Needs | Refresh all three existing EXEs per P; DOS remains link-only. |
-| Reporting Requirements | Nine exact node dispositions, two verification tracks, concrete missing callers and artifact hashes. |
+| Reporting Requirements | Original nine, environment 22 and cannon-child six exact node dispositions, separate two-track evidence, concrete missing callers and artifact hashes. |
 | Stop Conditions | Unadmitted child repair, suppressed mismatch, fake scheduler, source-order violation or unsupported credit. |
-| Exit Criteria | All nine nodes proven or exactly transferred; missing required call boundaries prevent GameEngine/ProcELoop completion. |
+| Exit Criteria | All 37 received nodes proven or exactly transferred; missing required call boundaries prevent GameEngine/ProcELoop completion. |
 | Original Owner Request | Complete original-ROM logic, call structure, shared portable C and node-accountable implementation. |
 | Similar-Issue Sweep | All game-engine callers, global actor passes, slot loops, palette/music writers, parser gates and platform boundaries. |
 

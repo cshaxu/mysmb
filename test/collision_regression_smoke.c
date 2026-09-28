@@ -1,3 +1,4 @@
+#include "game/dispatcher.h"
 #include <stdio.h>
 #include "game/objects.h"
 #include "game/world/world.h"
@@ -355,7 +356,7 @@ int main(void)
         mysmb_area_apply_block_replacements(&game);
         /* NMI has consumed the previous VRAM command before the next frame. */
         game.ram[0x0301U] = 0U;
-        mysmb_objects_step_blocks(&game);
+        mysmb_game_engine_blocks(&game);
     }
     if (game.ram[0x05f2U] != 0xc4U) return 15;
     /* PowerUpObjHandler calls RunPUSubs from state 6.  GameCore invokes this
@@ -571,12 +572,14 @@ int main(void)
     game.ram[0x0796U] = 2U;
     game.ram[0x0125U] = 3U;
     game.ram[0x03c5U] = 4U;
-    game.ram[0x078eU] = 5U;
+    game.ram[0x078aU] = 5U;
+    game.ram[0x078eU] = 0x55U;
     mysmb_objects_check_enemy_offscreen_bounds(&game, 0U);
     if (game.ram[0x000fU] != 0U || game.ram[0x0016U] != 0U ||
         game.ram[0x001eU] != 0U || game.ram[0x0110U] != 0U ||
         game.ram[0x0796U] != 0U || game.ram[0x0125U] != 0U ||
-        game.ram[0x03c5U] != 0U || game.ram[0x078eU] != 0U) return 18;
+        game.ram[0x03c5U] != 0U || game.ram[0x078aU] != 0U ||
+        game.ram[0x078eU] != 0x55U) return 18;
 
     /* Right-side piranha plants are a source exemption and must retain the
      * object record even when beyond ScreenRight + $48. */

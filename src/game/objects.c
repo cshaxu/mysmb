@@ -109,7 +109,6 @@ enum {
     MYSMB_STOMP_CHAIN_COUNTER = 0x0484U,
     MYSMB_STOMP_TIMER = 0x0791U,
     MYSMB_ENEMY_INTERVAL_TIMER = 0x0796U,
-    MYSMB_ENEMY_FRAME_TIMER = 0x078eU,
     MYSMB_SHELL_CHAIN_COUNTER = 0x0125U,
     MYSMB_AREA_TYPE = 0x074eU,
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU,
@@ -156,7 +155,6 @@ enum {
 
 static void mysmb_objects_apply_digit_modifier(struct mysmb_game *game,
                                                mysmb_u8 digit_offset);
-static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
                                             mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
@@ -164,9 +162,6 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                                mysmb_u8 slot,
                                                mysmb_u8 control);
-static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot,
-                                                            mysmb_u8 preserve_collision_boxes);
 static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
                                                  mysmb_u8 slot);
@@ -687,7 +682,7 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 
 /* ROM $dcfd-$ddcb PlayerEnemyCollision and $e069-$e08a EnemyStomped,
  * bounded to ordinary walking enemies. */
-static mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
+mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
                                                             mysmb_u8 slot,
                                                             mysmb_u8 preserve_collision_boxes)
 {
@@ -842,20 +837,6 @@ static void mysmb_objects_step_normal_enemy_core(struct mysmb_game *game, mysmb_
         mysmb_world_move_enemy_horizontally(game, slot);
 }
 
-/* ROM EraseEnemyObject.  Defeated Goombas reach this through the interval
- * timer path as well as through the ordinary offscreen-bounds owner; every
- * per-slot sprite and floating-score control byte is cleared together. */
-static void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot)
-{
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
-    game->ram[MYSMB_ENEMY_ID + slot] = 0U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = 0U;
-    game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0U;
-    game->ram[MYSMB_SHELL_CHAIN_COUNTER + slot] = 0U;
-    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
-    game->ram[MYSMB_ENEMY_FRAME_TIMER + slot] = 0U;
-}
 /* ROM EnemyToBGCollisionDet through DoEnemySideCheck, for the ordinary
  * walking-enemy route.  The block-address arithmetic remains in the shared
  * T17 world primitive; this actor route preserves the source state-machine
@@ -2597,45 +2578,41 @@ static void mysmb_objects_move_block_horizontally(struct mysmb_game *game,
 
 /* Translation of ROM $be70 BlockObjectsCore's bouncing-block and brick-chunk
  * branches, excluding relative positioning and drawing. */
-void mysmb_objects_step_blocks(struct mysmb_game *game)
+void mysmb_objects_step_block(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
     mysmb_u8 state;
 
-    for (slot = 2U; slot != 0U; ) {
-        --slot;
-        state = game->ram[MYSMB_BLOCK_STATE + slot];
-        if (state == 0U) continue;
-        state &= 0x0fU;
-        if (state == 1U) {
-            mysmb_world_impose_gravity_block(game, slot);
-            mysmb_oam_relative_block_position(game, slot);
-            mysmb_oam_get_block_offscreen_bits(game, slot);
-            mysmb_objects_draw_bouncing_block(game, slot);
-            if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
-                game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
+    state = game->ram[MYSMB_BLOCK_STATE + slot];
+    if (state == 0U) return;
+    state &= 0x0fU;
+    if (state == 1U) {
+        mysmb_world_impose_gravity_block(game, slot);
+        mysmb_oam_relative_block_position(game, slot);
+        mysmb_oam_get_block_offscreen_bits(game, slot);
+        mysmb_objects_draw_bouncing_block(game, slot);
+        if ((game->ram[MYSMB_BLOCK_Y + slot] & 0x0fU) < 5U) {
+            game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
+            state = 0U;
+        }
+    }
+    else {
+        mysmb_world_impose_gravity_block(game, slot);
+        mysmb_objects_move_block_horizontally(game, slot);
+        mysmb_world_impose_gravity_block(game, (mysmb_u8)(slot + 2U));
+        mysmb_objects_move_block_horizontally(game, (mysmb_u8)(slot + 2U));
+        mysmb_oam_relative_block_position(game, slot);
+        mysmb_oam_get_block_offscreen_bits(game, slot);
+        mysmb_objects_draw_brick_chunks(game, slot);
+        if (game->ram[MYSMB_BLOCK_Y_HIGH + slot] != 0U) {
+            if (game->ram[MYSMB_BLOCK_Y + slot + 2U] >= 0xf0U) {
+                game->ram[MYSMB_BLOCK_Y + slot + 2U] = 0xf0U;
+            }
+            if (game->ram[MYSMB_BLOCK_Y + slot] >= 0xf0U) {
                 state = 0U;
             }
         }
-        else {
-            mysmb_world_impose_gravity_block(game, slot);
-            mysmb_objects_move_block_horizontally(game, slot);
-            mysmb_world_impose_gravity_block(game, (mysmb_u8)(slot + 2U));
-            mysmb_objects_move_block_horizontally(game, (mysmb_u8)(slot + 2U));
-            mysmb_oam_relative_block_position(game, slot);
-            mysmb_oam_get_block_offscreen_bits(game, slot);
-            mysmb_objects_draw_brick_chunks(game, slot);
-            if (game->ram[MYSMB_BLOCK_Y_HIGH + slot] != 0U) {
-                if (game->ram[MYSMB_BLOCK_Y + slot + 2U] >= 0xf0U) {
-                    game->ram[MYSMB_BLOCK_Y + slot + 2U] = 0xf0U;
-                }
-                if (game->ram[MYSMB_BLOCK_Y + slot] >= 0xf0U) {
-                    state = 0U;
-                }
-            }
-        }
-        game->ram[MYSMB_BLOCK_STATE + slot] = state;
     }
+    game->ram[MYSMB_BLOCK_STATE + slot] = state;
 }
 
 static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile)

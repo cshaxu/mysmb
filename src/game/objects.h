@@ -5,7 +5,7 @@
 
 /* ROM $bed4 BlockObjMT_Updater. */
 /* ROM $be70 BlockObjectsCore, bounded to the bouncing-block state. */
-void mysmb_objects_step_blocks(struct mysmb_game *game);
+void mysmb_objects_step_block(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $bced-$bd9b PlayerHeadCollision through BumpBlock, for matched blocks. */
 mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
                                        mysmb_u8 metatile,
@@ -33,6 +33,11 @@ mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(const struct mysmb_game *game,
 mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game, mysmb_u8 slot);
 /* ROM OffscreenBoundsCheck / EraseEnemyObject. */
 void mysmb_objects_check_enemy_offscreen_bounds(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing collision child, with persistent caller-prepared boxes when set.
+ * General PlayerEnemyCollision equivalence remains a separate obligation. */
+mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 preserve_collision_boxes);
 /* ROM EnemiesCollision/ProcEnemyCollisions for the current ObjectOffset. */
 void mysmb_objects_step_enemy_collisions_current(struct mysmb_game *game,
                                                  mysmb_u8 slot);

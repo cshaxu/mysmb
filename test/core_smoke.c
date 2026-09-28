@@ -1,3 +1,4 @@
+#include "game/dispatcher.h"
 #include "game/game.h"
 #include "game/frame_root.h"
 #include "game/area.h"
@@ -350,7 +351,7 @@ int main(void)
         game.ram[0x07e2U] != 5U) {
         return 1;
     }
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     if (game.ram[0x0026U] != 2U || game.ram[0x008fU] != 0x1fU ||
         game.ram[0x0091U] != 0x1fU || game.ram[0x00d7U] != 0x2aU ||
         game.ram[0x00d9U] != 0x34U) {
@@ -1360,7 +1361,7 @@ int main(void)
     game.ram[0x043cU] = 0U;
     game.ram[0x03ecU] = 0U;
     for (index = 0U; index < 64U && game.ram[0x0026U] != 0U; ++index) {
-        mysmb_objects_step_blocks(&game);
+        mysmb_game_engine_blocks(&game);
     }
     if (game.ram[0x0026U] != 0U || game.ram[0x03ecU] != 1U) return 1;
     /* NMI UpdateScreen consumes the prior frame's buffered palette command. */

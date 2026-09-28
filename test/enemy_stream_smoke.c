@@ -1,3 +1,4 @@
+#include "game/dispatcher.h"
 #include "game/area.h"
 #include "game/enemy/stream.h"
 #include "game/enemy/core.h"
@@ -195,13 +196,13 @@ int main(void)
     game.ram[0x0013U] = 0U;
     game.ram[0x0014U] = 0U;
     game.ram[0x071fU] = 7U;
-    mysmb_enemy_core_step(&game, &source);
+    mysmb_game_engine_actors(&game, &source);
     if (game.ram[0x0739U] != 0U || game.ram[0x000fU] != 0U ||
         game.ram[0x0010U] != 0U || game.ram[0x0011U] != 0U ||
         game.ram[0x0012U] != 0U || game.ram[0x0013U] != 0U ||
         game.ram[0x0014U] != 0U) return 10;
     game.ram[0x071fU] = 6U;
-    mysmb_enemy_core_step(&game, &source);
+    mysmb_game_engine_actors(&game, &source);
     if (game.ram[0x0739U] != 2U || game.ram[0x000fU] != 1U ||
         game.ram[0x0016U] != 6U) return 11;
 

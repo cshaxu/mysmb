@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T31 open; S2 active at 549 / 1,992.** Closed T30 precedes this task in the
+**M2 T31 open; S2 active at 576 / 1,992.** Closed T30 precedes this task in the
 source-order recovery plan. S1 is closed; S2 is the only active chain.
 
 ## Exact task scope and chain plan
@@ -298,3 +298,318 @@ Artifact `mysmb16.exe`: 253057 bytes; SHA-256 `f4757046079a613846e1be3bf799d35c0
 Artifact `mysmb32.exe`: 310859 bytes; SHA-256 `13b6b3b9e2450a9590ecd017c9099db589e7e732844aa7555f03f45a805879bd`.
 
 Artifact `mysmb64.exe`: 317956 bytes; SHA-256 `906a95d138cd45792b9dd22a4410d7b4ce3c6d12d8854152d7eb7da69018db26`.
+
+## S2 continuation: combined caller-structure delivery in progress
+
+This is unfinished work within S2, not another admission, completed P or
+node-credit event. Keep the seven accepted tail matches and the two pending
+callers. Do not package ProcELoop alone; batch the remaining caller structure
+and its admitted dependencies before the next three-artifact delivery.
+
+The shared engine_slots owner now exposes fireball followed by six ordered
+enemy/floatey pairs, and block slot one followed by zero. Each caller writes
+ObjectOffset before its child. Enemy data availability no longer gates the
+whole actor phase. The child slot function no longer performs its caller's
+store; Victory supplies its own slot-zero store. The old whole-array wrappers
+are removed, and block body extraction changes no block-state algorithm.
+
+The independent engine_slots test observes all fifteen child calls, slot
+arguments, ObjectOffset and unconditional dispatch with absent source data.
+It and enemy-stream, block-OAM, object-array-layout and collision-regression
+tests pass on both widths (ten executions). Two controlled original-NMI
+routes exercise inactive enemy slots with inactive or active floatey numbers.
+Both native widths match all 1,782 persistent RAM bytes and complete output;
+the reference executes six enemy/floatey entries, five loop backedges, one
+loop exit and two block entries. The
+[slot verifier](../../../test/verify_engine_slots_routes.py) preserves exact
+counts and comparison exclusions. PC totals alone do not prove ordering;
+source audit and the independent native call observations establish that
+part. These routes do not certify active enemy child behavior.
+
+The two ordinary 600-frame Start/right and idle/demo routes remain identical
+to the accepted S1 native recordings and between widths. Original output
+retains only the documented cold-screen PPU-control residuals at Start
+samples 1/202 and idle sample 1. No new output exception is introduced.
+Evidence is contained in ignored build/m2-t31-s2-p2 under the existing
+twenty-second per-recorder and 20 MB trace limits; S2 owns cleanup. Existing
+assets are still P1 products, not a delivery of these uncommitted changes.
+
+The remaining structural audit identifies these concrete dependencies:
+
+- Original EnemiesAndLoopsCore is at $c047 in the corrected owner-ROM map.
+  Its active branch enters RunEnemyObjectsCore ($c882); the existing native
+  child still substitutes normal/retainer/power-up handling and omits the
+  high-bit duplicate-enemy branch. Caller-loop evidence does not certify it.
+- RunEnemyObjectsCore selects RunNormalEnemies for IDs below $15 and the
+  original special-object vector otherwise. RunNormalEnemies owns graphics,
+  bounds, terrain/enemy/player collisions, timer-gated movement and offscreen
+  cleanup for the current slot. Existing engine-wide actor scans do not
+  reproduce those boundaries; merely moving all scans inside the loop would
+  multiply work and still use the wrong dispatch.
+- ProcessCannons ($b9bc) and ProcessWhirlpools ($b7b8) have no production
+  entry. They must become real shared-game implementations at their source
+  call positions after MiscObjectsCore and before FlagpoleRoutine. Empty
+  wrappers and reuse of unrelated bullet movement are not acceptable.
+
+These child interiors retain their current receiving owners. Before repairing
+them, the coordinator must register the exact dependency scope and receiving
+acceptance, together with original branch routes; the current caller-seam
+authorization does not silently permit new child algorithms. S2 stays active
+through that work, and GameEngine/ProcELoop retain their incomplete status.
+
+## S2 admitted dependency amendment: cannons and whirlpools
+
+The coordinator accepts transfer-123 from T24 S2 under the owner's continuing
+M2 mandate. This is an explicit necessary-dependency exception to the original
+caller-only scope, inside the same active S and combined delivery; it creates
+no parallel S or future T number. The original nine-node run and its seven
+matches remain unchanged. The added run starts at 549 / 1,992, expects all
+22 named incomplete labels below and has a maximum of 571. If the two retained
+original callers also close, the combined ceiling is 573. No credit is yet
+assigned. The task's original 31-node plan remains, with these 22 explicitly
+added dependencies (combined task ceiling 593 from its baseline 540).
+
+- Water chain: `ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`,
+  `WhirlpoolActivate`, `LeftWh`, `SetPWh`, `WhPull`.
+- Cannon chain: `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`,
+  `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`,
+  `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`.
+
+ProcessWhirlpools, WhirlpoolActivate and ProcessCannons enter as audited
+implementation missing; BulletBillHandler is mapped with incomplete evidence;
+the other eighteen are open. Shared game owners implement the two original
+GameEngine successors after MiscObjectsCore and before FlagpoleRoutine.
+No platform files acquire decisions. The corrected ROM entry addresses are
+$b7b8 and $b9bc. Existing gravity, offscreen, collision and OAM children are
+reused only at their exact source call boundaries, without claiming their
+interiors. Enemy dispatch interiors are still outside this added scope.
+
+Source audit covers descending slot order, table bindings, eight-bit carry
+and signed-result branches, masked random selection, cannon timer and spawn
+writes, bullet initialization/kill/movement/collision/drawing, whirlpool
+extent/center selection, alternating horizontal pull and gravity handoff.
+Controlled original NMI source-RAM routes cover both branch families through
+the real engine, without PC/stack/ROM/output patching. Independent native
+tests check arithmetic boundary cases and observable child handoffs, followed
+by affected ordinary-route regressions. Original logic proof and operational
+proof remain separate. One combined build/package refresh delivers all three
+EXEs; DOS remains link-only. The existing provenance, ignored build containment,
+twenty-second run limit, 20 MB raw-trace budget and S2 cleanup ownership apply.
+
+The dependency admission gate passes with 22 unique incoming labels, expected
+delta 22 and ceiling 571 from 549. The existing two pending callers remain
+separately accounted; this is not an assertion that they are complete.
+
+Whirlpool implementation progress: shared game/whirlpool.c now implements
+ProcessWhirlpools through WhPull at the GameEngine call position. It preserves
+descending five-slot selection, disabled-area flag retention, water flag clear
+before timer exit, signed eight-bit page differences, right-extent and center
+carry, horizontal direction/phase/collision gates, and the tail gravity call
+with player offset zero, force $10 and maximum speed one. ObjectOffset is
+not changed by the source register-only X assignment. The existing shared
+gravity primitive is reused; no platform or player-state child is repaired.
+
+Independent tests execute 9,600 extent/position/length/phase/collision/area/timer
+combinations plus an overlapping-slot precedence case on each width. They
+observe gravity arguments, single-call behavior and ObjectOffset preservation.
+Twelve controlled original NMI routes take PlayerChangeSize's real idle-return
+branch and then reach the original GameEngine; no leaf-PC or stack injection
+is used. The NMI increments FrameCounter before the engine, so fixture phase
+inputs explicitly account for that increment. Every one of the nine source
+conditional branches has both outcomes in the reference PC evidence. All
+eight labels execute. Both native widths match all 1,782 persistent RAM bytes
+and the entire recorded output, with no output exceptions. The
+[environment verifier](../../../test/verify_engine_environment_routes.py)
+checks these claims against ignored evidence. This is controlled route proof,
+not an ordinary water-level playthrough. Three-target packaging, cannon
+implementation and the combined S2 delivery remain pending; no tracker
+completion credit or separate small P is claimed for this intermediate work.
+
+Cannon implementation progress: game/cannon.c now occupies the original
+post-MiscObjectsCore, pre-ProcessWhirlpools engine position. Its caller scans
+slots 2, 1, 0, stores ObjectOffset at each turn, selects the cannon from the
+source random-byte/mask pair, decrements a nonzero cannon timer even while
+TimerControl inhibits spawning, and skips handling a freshly spawned bullet.
+BulletBillHandler preserves the PlayerEnemyDiff page-SBC carry through its
+distance ADC, both kill branches, direction/speed/state/frame-timer/sound
+writes, defeated gravity before horizontal movement, and the offscreen,
+relative-position, bounding-box, player-collision and graphics child order.
+The reviewed ROM tables at $b9ba and $ba31 match the two mode masks and two
+direction speeds used here; the source-valid hard-mode selector is 0 or 1.
+
+Existing erase and player-collision children gain external linkage only;
+their bodies are unchanged and are not certified by this caller work. The
+old regular BulletBill movement path is a different enemy ID ($08); it is
+not used as a substitute for the cannon variant ($33).
+
+The independent cannon test passes on both widths: 512 random/mask cases,
+1,024 carry-dependent distance cases, shared-cannon descending-slot spawn
+and timer effects, and observable normal/defeated/paused child sequences.
+Sixteen controlled original NMI routes cover both outcomes of all fifteen
+cannon/handler conditionals. Eight area/random/timer/spawn routes match all
+1,782 persistent RAM bytes and complete output on both widths. Eight active
+bullet routes retain persistent RAM differences and are **not accepted**:
+motion, state, coordinates, velocity, bounding-control and frame-timer arrays
+match, but original object dispatch and child graphics do not. The current
+diagnostic preserves every difference in ignored cannon-current.json; it
+does not mask them into a whole-frame-equivalence claim.
+
+Concrete remaining child counterexamples:
+
+- The original RunEnemyObjectsCore vector selects NoRunCode for ID $33.
+  Native EnemiesAndLoopsCore instead calls the normal-enemy child, modifying
+  relative/offscreen bytes before a later cannon kill or bounds exit. This
+  is part of the retained enemy-dispatch dependency, not a cannon-distance
+  workaround.
+- Original CheckForBulletBillCV/SBBAt selects Y minus one, attributes 3 plus
+  priority while EnemyFrameTimer is nonzero, zero saved state and graphics
+  selector 8. Existing bullet graphics lacks this variant branch. Active
+  routes differ at $ef and OAM Y/attribute bytes; output-latch equality in
+  that sample does not excuse divergent OAM backing RAM.
+- Source EraseEnemyObject clears EnemyFrameTimer at $078a+slot. Existing
+  erase implementations use $078e+slot. The controlled routes do not yet
+  distinguish that stale-timer case; admit and exercise this exact child
+  before claiming kill-path equivalence.
+- Existing PlayerEnemyCollision remains restricted/simplified. The current
+  routes use the real PlayerChangeSize return and do not prove contact with
+  Mario. General collision fidelity remains a named dependency.
+
+After cannon integration, the twelve whirlpool routes still match the saved
+original traces on both widths. Ordinary Start/right and idle/demo recordings
+remain identical to the accepted native baseline, with only the previously
+documented original cold-screen output-latch residual. No new child repair
+outside the admitted scope, completion credit, artifact refresh or P commit
+is claimed. Continue the combined S2 work with exact child dependency intake.
+
+## S2 cannon-child dependency intake
+
+The coordinator accepts transfer-124 (RunEnemyObjectsCore, JmpEO, NoRunCode,
+EraseEnemyObject) from T19 S5 and transfer-125 (CheckForBulletBillCV, SBBAt)
+from T17 S6 under the continuing owner mandate. All six are open. Scope is
+these six labels; the initial expected subset is NoRunCode, EraseEnemyObject,
+CheckForBulletBillCV and SBBAt. Baseline 549, expected four, maximum 553 for
+this added run. The combined forecast across all S2 runs is 577. The two
+full enemy-vector dispatch nodes remain incomplete until their entire source
+target selection and per-slot adapters are implemented and proven; no credit
+is given for fixing only the cannon target. All 37 received S2 labels retain
+explicit custody. No additional S or separate small P is created.
+
+Implementation scope includes the original NoRunCode target selection in
+enemy/core.c, the single shared EraseEnemyObject and both callers, and the
+cannon-specific operand preparation, Y/attribute/state selection and working
+byte outputs in oam/bullet_bill_gfx.c. Other actor graphics and general player
+collision interiors remain outside this correction. Erase must clear the
+eight source arrays, including EnemyFrameTimer at $078a+slot, and preserve
+unrelated timer slots. The bounds path must use the same erase owner rather
+than a second copy. Cannon graphics takes prepared relative/offscreen values
+from its caller and reproduces the source branch through the existing drawing
+consumer; this does not certify the whole EnemyGfxHandler tree.
+
+Source audit uses the corrected original vector and $c998 erase entry,
+CheckForBulletBillCV/SBBAt and their source-defined operand/output handoffs.
+Controlled original NMI cannon routes add stale-timer and graphics-work-byte
+sentinels; independent tests observe exact erase writes and NoRunCode side
+effects. Compare persistent RAM and OAM backing as well as latched output.
+The existing dual-verification, provenance, build containment, run/trace
+limits and combined three-artifact delivery apply. No active-bullet mismatch
+may be converted into an output exception to achieve closure.
+
+## S2/P2: combined slot, environment and cannon-child delivery
+
+This combined P completes **27 additional labels**, advancing **549 -> 576 /
+1,992 (28.92%)**. S2 retains all 37 labels and remains active with 34 complete.
+GameEngine, RunEnemyObjectsCore and JmpEO are still audited mismatches: the
+complete enemy vector and current-slot adapters must replace the engine-wide
+actor passes. No S/T closure, transfer of unfinished callers or full-game
+conformance claim is made. Original run expected nine/actual eight; environment
+run expected 22/actual 22; child run expected four/actual four with two dispatch
+labels retained pending. This is one batch delivery, not a P for each leaf.
+
+| Completed node | Source line / shared owner |
+| --- | --- |
+| `ProcELoop` | 5339 / game/engine_slots.c |
+| `ProcessWhirlpools` | 6519 / game/whirlpool.c |
+| `WhLoop` | 6526 / game/whirlpool.c |
+| `NextWh` | 6546 / game/whirlpool.c |
+| `ExitWh` | 6548 / game/whirlpool.c |
+| `WhirlpoolActivate` | 6550 / game/whirlpool.c |
+| `LeftWh` | 6577 / game/whirlpool.c |
+| `SetPWh` | 6586 / game/whirlpool.c |
+| `WhPull` | 6587 / game/whirlpool.c |
+| `CannonBitmasks` | 6785 / game/cannon.c |
+| `ProcessCannons` | 6788 / game/cannon.c |
+| `ThreeSChk` | 6792 / game/cannon.c |
+| `FireCannon` | 6809 / game/cannon.c |
+| `Chk_BB` | 6832 / game/cannon.c |
+| `Next3Slt` | 6840 / game/cannon.c |
+| `ExCannon` | 6842 / game/cannon.c |
+| `BulletBillXSpdData` | 6846 / game/cannon.c |
+| `BulletBillHandler` | 6849 / game/cannon.c |
+| `SetupBB` | 6862 / game/cannon.c |
+| `ChkDSte` | 6876 / game/cannon.c |
+| `BBFly` | 6880 / game/cannon.c |
+| `RunBBSubs` | 6881 / game/cannon.c |
+| `KillBB` | 6886 / game/cannon.c |
+| `NoRunCode` | 9080 / game/enemy/core.c |
+| `EraseEnemyObject` | 9198 / game/enemy/lifecycle.c |
+| `CheckForBulletBillCV` | 13674 / game/oam/bullet_bill_gfx.c |
+| `SBBAt` | 13682 / game/oam/bullet_bill_gfx.c |
+
+ROM-logic evidence: two original slot routes, twelve whirlpool routes and 25
+cannon/child routes match 1,782 persistent RAM bytes and every recorded output
+byte on both widths. Zero-page scratch 0..7, CPU stack and the two RAM PPU
+mirrors are the explicit exclusions; there are no output exceptions in these
+controlled routes. Cannon coverage includes both outcomes of fifteen handler
+branches, both priority-timer branches, seven original NoRunCode vector targets,
+and erase counterexamples that clear $078a while preserving another slot's
+$078e timer. The source vector/table binding is checked against the owner ROM.
+Independent tests establish native callback order, exact argument/state inputs,
+all six erase-slot write sets and cannon-specific graphics working bytes.
+The prior fifteen tail routes also remain fully matched. Verifiers:
+[slots](../../../test/verify_engine_slots_routes.py),
+[whirlpools](../../../test/verify_engine_environment_routes.py),
+[cannons and child corrections](../../../test/verify_cannon_dispatch_routes.py).
+
+Implementation follows source owners: engine_slots supplies fireball and six
+enemy/floatey pairs, then explicit block slots 1/0; whirlpool.c and cannon.c
+provide real engine children. Seven NoRunCode targets return before normal
+enemy processing. A single enemy/lifecycle.c erase owner replaces both copies
+and clears the correct frame timer. Cannon graphics retains its original Y-1,
+timer-dependent priority, prepared relative/offscreen inputs and graphics work
+bytes. No platform file or gameplay fork is introduced. The unchanged generic
+player-collision child is called at its source position but remains uncertified
+for contact semantics; these controlled routes do not claim that child.
+
+Operational evidence: strict C90 builds, 60 existing focused executions and
+22 additional caller/child/affected regressions pass across x86/x64. The erase
+regression's old $078e expectation was corrected to the ROM's $078a and now
+also asserts $078e preservation. The legacy bullet test gains its missing
+frenzy declaration include, with unchanged assertions. New T31 cannon fixture
+and verifier names are separate from the preserved T30 cannon interfaces;
+both recorder versions accept and execute the original T30 fixture again.
+Ordinary 600-frame Start/right and idle/demo routes remain byte-identical to
+the accepted native baseline. The existing original cold-screen PPU-control
+residuals at Start 1/202 and idle 1 remain explicit and unrelated.
+
+Windows self-tests and hidden-window creation/message responsiveness pass.
+DOS16 links the same C sources as MZ with existing conversion and OLDNAMES
+warnings; it remains link-only because owner-resource binding is absent.
+No DOS gameplay or physical 486SX qualification is claimed. Historical
+core/local-area full-suite fixture debts remain; this is not a full-suite
+pass assertion. All three existing EXEs are refreshed under prior explicit
+owner authorization, with no raw ROM, generated C or traces committed.
+The owner-reported Windows startup failure remains unreproduced.
+
+Similar-issue sweep: both erase implementations now converge on one owner;
+no remaining $078e erase write exists in game sources. The cannon variant is
+separate from regular enemy ID $08. Source NoRunCode handles all seven targets,
+not just $33. Existing global actor scans and missing full-vector adapters are
+retained as the three named parent gaps. Platform purity and governance gates
+remain required before this P is committed. Raw evidence stays in the ignored
+S2 build directories under the declared run/trace limits; S2 owns cleanup.
+
+Artifact `mysmb16.exe`: 255633 bytes; SHA-256 `75ce99495598e186bf5c22edd84c30adaaebe2e0e4f9e985147a27ae193b11f3`.
+
+Artifact `mysmb32.exe`: 314547 bytes; SHA-256 `065978180e384958d3152fe8c9e682c73c3bb7c04c343cc623adfdd2a4ebb677`.
+
+Artifact `mysmb64.exe`: 321784 bytes; SHA-256 `0e0d766d14148d3601b744ac1c366319790c539d088305f2a5fd0efc2d0c0192`.

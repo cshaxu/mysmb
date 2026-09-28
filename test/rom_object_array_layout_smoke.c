@@ -1,3 +1,4 @@
+#include "game/dispatcher.h"
 #include "game/objects.h"
 
 int main(void)
@@ -14,7 +15,7 @@ int main(void)
     game.ram[0x041fU] = 0xb0U;
     game.ram[0x0420U] = 0U;
     game.ram[0x06ecU] = 0x20U;
-    mysmb_objects_step_blocks(&game);
+    mysmb_game_engine_blocks(&game);
     if (game.ram[0x00d7U] != 0x41U || game.ram[0x041fU] != 0U ||
         game.ram[0x0420U] != 0U) return 1;
 

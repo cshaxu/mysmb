@@ -27,9 +27,23 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
     offset = game->ram[MYSMB_BULLET_ENEMY_SPRITE_OFFSET + slot];
     x = (mysmb_u8)(game->ram[MYSMB_BULLET_ENEMY_X + slot] - game->ram[MYSMB_BULLET_SCREEN_LEFT_X]);
     y = game->ram[MYSMB_BULLET_ENEMY_Y + slot];
-    offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
     direction = game->ram[MYSMB_BULLET_ENEMY_MOVING_DIRECTION + slot];
     attributes = (mysmb_u8)(3U | game->ram[MYSMB_BULLET_ENEMY_ATTRIBUTES + slot]);
+    if (game->ram[0x0016U + slot] == 0x33U) {
+        /* CheckForBulletBillCV/SBBAt: cannon variant reuses graphics ID 8,
+         * zero state and its own priority attributes. The enclosing source
+         * graphics handoff keeps these working bytes, not just OAM tiles. */
+        y = (mysmb_u8)(y - 1U);
+        attributes = game->ram[0x078aU + slot] != 0U ? 0x23U : 3U;
+        x = game->ram[0x03aeU];
+        offscreen = game->ram[0x03d1U];
+        game->ram[0x00ebU] = offset;
+        game->ram[0x00ecU] = 0U;
+        game->ram[0x00edU] = 0U;
+        game->ram[0x00efU] = 8U;
+        game->ram[0x0109U] = 0U;
+    }
+    else offscreen = mysmb_objects_get_enemy_x_offscreen_bits(game, slot);
     for (row = 0U; row < 3U; ++row) {
         mysmb_u8 row_offset;
         mysmb_u8 left;

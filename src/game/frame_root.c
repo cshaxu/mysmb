@@ -203,6 +203,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
             game->area_prg != 0) {
             area_source.prg = game->area_prg;
             area_source.prg_size = game->area_prg_size;
+            game->ram[0x0008U] = 0U;
             mysmb_enemy_core_step_slot(game, &area_source, 0U);
         }
         /* ROM VictoryMode always ends at RelativePlayerPosition and
