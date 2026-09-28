@@ -1,5 +1,5 @@
-#include "game/blocks/head.h"
-#include "game/area.h"
+#include "game/blocks/bump.h"
+#include "game/objects.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>
@@ -18,7 +18,6 @@ static void compare(const unsigned char *actual,const unsigned char *expected)
 #ifdef MYSMB_CALLER_CHECK
 static unsigned char children[16][4098];
 static unsigned int child_count,child_calls;
-static struct mysmb_game *current;
 static unsigned char *child(struct mysmb_game *g,unsigned int id)
 {
     unsigned char *r;
@@ -27,24 +26,17 @@ static unsigned char *child(struct mysmb_game *g,unsigned int id)
     if(r[0]!=id) ++failures;
     compare(g->ram,r+2U);memcpy(g->ram,r+2050U,2048U);return r;
 }
-void mysmb_area_destroy_block_metatile(struct mysmb_game *g,mysmb_u8 slot,mysmb_u8 low,mysmb_u8 row)
+void mysmb_blocks_check_top(struct mysmb_game *g,mysmb_u8 slot,mysmb_u8 low,mysmb_u8 row)
 {
-    unsigned char *r;
     if(low!=g->ram[6U] || row!=g->ram[2U]) ++failures;
-    r=child(g,1U);if(slot!=r[1]) ++failures;
+    if(child(g,1U)[1]!=slot) ++failures;
 }
-mysmb_u8 mysmb_blocks_bumped_index(mysmb_u8 tile)
-{
-    mysmb_u16 address;
-    unsigned char *r;
-    address=(mysmb_u16)(((mysmb_u16)current->ram[7U]<<8U)+current->ram[6U]+current->ram[2U]);
-    if(tile!=current->ram[address]) ++failures;
-    r=child(current,2U);return r[1] != 0U ? 0U : 0xffU;
-}
-void mysmb_blocks_bump(struct mysmb_game *g,mysmb_u8 slot)
-{ if(child(g,3U)[1]!=slot) ++failures; }
-void mysmb_blocks_shatter(struct mysmb_game *g,mysmb_u8 slot)
-{ if(child(g,4U)[1]!=slot) ++failures; }
+void mysmb_objects_start_power_up(struct mysmb_game *g,mysmb_u8 slot)
+{ if(child(g,2U)[1]!=slot) ++failures; }
+void mysmb_objects_coin_block(struct mysmb_game *g,mysmb_u8 slot,mysmb_u8 carry)
+{ if(carry!=0U) ++failures;if(child(g,3U)[1]!=slot) ++failures; }
+void mysmb_objects_start_vine(struct mysmb_game *g,mysmb_u8 enemy,mysmb_u8 slot)
+{ if(enemy!=5U || slot!=g->ram[0x3eeU]) ++failures;if(child(g,4U)[1]!=enemy) ++failures; }
 #endif
 #ifdef MYSMB_CHILD_DIAGNOSTIC
 int main(int argc,char **argv)
@@ -53,24 +45,20 @@ int main(int argc,char **argv)
     static unsigned char record[4098];
     unsigned char header[8];
     unsigned int i,before;
-    mysmb_u16 address;
     FILE *f;
     if(argc!=2) return 64;
     f=fopen(argv[1],"rb");if(f==NULL) return 65;
-    if(fread(header,1,8,f)!=8 || memcmp(header,"MSHC\1",5)!=0 || header[5]>16U) return 66;
+    if(fread(header,1,8,f)!=8 || memcmp(header,"MSKC\1",5)!=0 || header[5]>16U) return 66;
     for(i=0U;i<header[5];++i) {
         if(fread(record,1,4098,f)!=4098) return 66;
         memset(&g,0,sizeof(g));memcpy(g.ram,record+2U,2048U);
         g.area_prg=mysmb_local_prg;g.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
         g.ppu_control_0=g.ram[0x778U];before=failures;
         switch(record[0]) {
-        case 1U: mysmb_area_destroy_block_metatile(&g,record[1],g.ram[6U],g.ram[2U]);break;
-        case 2U:
-            address=(mysmb_u16)(((mysmb_u16)g.ram[7U]<<8U)+g.ram[6U]+g.ram[2U]);
-            if((mysmb_blocks_bumped_index(g.ram[address])!=0xffU)!=record[1]) ++failures;
-            break;
-        case 3U: mysmb_blocks_bump(&g,record[1]);break;
-        case 4U: mysmb_blocks_shatter(&g,record[1]);break;
+        case 1U: mysmb_blocks_check_top(&g,record[1],g.ram[6U],g.ram[2U]);break;
+        case 2U: mysmb_objects_start_power_up(&g,record[1]);break;
+        case 3U: mysmb_objects_coin_block(&g,record[1],0U);break;
+        case 4U: mysmb_objects_start_vine(&g,record[1],g.ram[0x3eeU]);break;
         default: return 66;
         }
         compare(g.ram,record+2050U);
@@ -90,21 +78,21 @@ int main(int argc,char **argv)
     unsigned int i;
     if(argc!=3) return 64;
     f=fopen(argv[2],"rb");if(f==NULL) return 65;
-    if(fread(header,1,8,f)!=8 || memcmp(header,"MSHC\1",5)!=0 || header[5]>16U) return 66;
+    if(fread(header,1,8,f)!=8 || memcmp(header,"MSKC\1",5)!=0 || header[5]>16U) return 66;
     child_count=header[5];
     for(i=0;i<child_count;++i) if(fread(children[i],1,4098,f)!=4098) return 66;
     if(fgetc(f)!=EOF) return 66;
-    fclose(f);current=&g;
+    fclose(f);
 #else
     if(argc!=2) return 64;
 #endif
     f=fopen(argv[1],"rb");if(f==NULL) return 65;
-    if(fread(header,1,8,f)!=8 || memcmp(header,"MSHP\1",5)!=0) return 66;
+    if(fread(header,1,8,f)!=8 || memcmp(header,"MSKP\1",5)!=0) return 66;
     memset(&g,0,sizeof(g));
     if(fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF) return 66;
     fclose(f);g.area_prg=mysmb_local_prg;g.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     g.ppu_control_0=g.ram[0x778U];
-    mysmb_blocks_head_collision(&g,header[6]);compare(g.ram,expected);
+    mysmb_blocks_bump(&g,header[6]);compare(g.ram,expected);
 #ifdef MYSMB_CALLER_CHECK
     if(child_calls!=child_count) ++failures;
 #endif

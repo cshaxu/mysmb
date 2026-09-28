@@ -18,10 +18,10 @@ void mysmb_area_destroy_block_metatile(struct mysmb_game *g,
     g->ram[0x3eeU] = expected_slot;
     g->ram[0x550U] = replacement_tile;
 }
-mysmb_u8 mysmb_blocks_is_bumpable(mysmb_u8 tile)
+mysmb_u8 mysmb_blocks_bumped_index(mysmb_u8 tile)
 {
     if (calls++ != 1U || tile != replacement_tile) ++failures;
-    return tile == 0x51U ? 0U : 1U;
+    return tile == 0x51U ? 0xffU : 0U;
 }
 static void check_child(struct mysmb_game *g, mysmb_u8 slot, mysmb_u8 which)
 {

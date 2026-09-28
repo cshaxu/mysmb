@@ -973,17 +973,17 @@ The labels and branches behind every line remain open until individually bound b
 | 7308 | `Unbreak` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
 | 7309 | `InvOBit` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
 | 7316 | `InitBlock_XY_Pos` | M2 T37 S2 shared game/blocks/head.c | ROM-match complete | [S2 head-hit proof](../../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof) |
-| 7332 | `BumpBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bumpblock) |
-| 7349 | `BlockCode` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockcode) |
-| 7363 | `MushFlowerBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mushflowerblock) |
-| 7367 | `StarBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-starblock) |
-| 7371 | `ExtraLifeMushBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-extralifemushblock) |
-| 7376 | `VineBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineblock) |
-| 7381 | `ExitBlockChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitblockchk) |
-| 7386 | `BrickQBlockMetatiles` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-brickqblockmetatiles) |
-| 7393 | `BlockBumpedChk` | T22 responsibility; `objects.c`: metatile classifiers and `mysmb_objects_power_up_for_block` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockbumpedchk) |
-| 7395 | `BumpChkLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bumpchkloop) |
-| 7400 | `MatchBump` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-matchbump) |
+| 7332 | `BumpBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7349 | `BlockCode` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7363 | `MushFlowerBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7367 | `StarBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7371 | `ExtraLifeMushBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7376 | `VineBlock` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7381 | `ExitBlockChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7386 | `BrickQBlockMetatiles` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7393 | `BlockBumpedChk` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7395 | `BumpChkLoop` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
+| 7400 | `MatchBump` | M2 T37 S3 shared game/blocks/bump.c | ROM-match complete | [S3 block content proof](../../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof) |
 | 7404 | `BrickShatter` | T22 responsibility; `objects.c`: `mysmb_objects_start_head_bump`, `mysmb_objects_start_brick_chunks`, helpers | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-brickshatter) |
 | 7420 | `CheckTopOfBlock` | T22 responsibility; `objects.c`: `mysmb_objects_check_top_of_block`, `mysmb_objects_collect_coin`, `mysmb_objects_start_brick_chunks` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-checktopofblock) |
 | 7437 | `TopEx` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topex) |

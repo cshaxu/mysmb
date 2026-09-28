@@ -38,10 +38,10 @@ void mysmb_blocks_head_collision(struct mysmb_game *game, mysmb_u8 metatile)
     address = (mysmb_u16)(((mysmb_u16)game->ram[7U] << 8U) |
                            game->ram[6U]);
     tile = game->ram[(mysmb_u16)(address + game->ram[2U])];
-    matched = mysmb_blocks_is_bumpable(tile);
+    matched = mysmb_blocks_bumped_index(tile);
     game->ram[0U] = tile;
     replacement = game->ram[0x0754U] != 0U ? tile : 0U;
-    if (matched != 0U) {
+    if (matched != 0xffU) {
         game->ram[0x0026U + slot] = 0x11U;
         replacement = 0xc4U;
         if (tile == 0x58U || tile == 0x5dU) {

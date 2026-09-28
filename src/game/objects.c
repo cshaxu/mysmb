@@ -167,8 +167,7 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
-static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile);
-static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
+void mysmb_blocks_check_top(struct mysmb_game *game,
                                              mysmb_u8 slot,
                                              mysmb_u8 block_low,
                                              mysmb_u8 block_row);
@@ -2007,41 +2006,6 @@ void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
     if (address < 0x0800U) game->ram[address] = 0U;
     mysmb_area_remove_coin_axe(game, block_low, block_row);
 }
-/* ROM $bdf6 BlockBumpedChk's reviewed metatile table. */
-mysmb_u8 mysmb_blocks_is_bumpable(mysmb_u8 metatile)
-{
-    mysmb_u8 index;
-
-    for (index = 0U; index < sizeof(mysmb_brick_question_metatiles); ++index) {
-        if (metatile == mysmb_brick_question_metatiles[index]) return 1U;
-    }
-    return 0U;
-}
-
-/* ROM $bd8b BlockCode, restricted to the entries which invoke SetupPowerUp. */
-static mysmb_u8 mysmb_objects_power_up_for_block(mysmb_u8 metatile,
-                                                  mysmb_u8 *power_up_type)
-{
-    if (metatile == 0xc1U || metatile == 0x55U || metatile == 0x5aU) {
-        *power_up_type = 0U;
-        return 1U;
-    }
-    if (metatile == 0x57U || metatile == 0x5cU) {
-        *power_up_type = 2U;
-        return 1U;
-    }
-    if (metatile == 0x60U || metatile == 0x59U || metatile == 0x5eU) {
-        *power_up_type = 3U;
-        return 1U;
-    }
-    return 0U;
-}
-
-static mysmb_u8 mysmb_objects_is_vine_block(mysmb_u8 metatile)
-{
-    return metatile == 0x56U || metatile == 0x5bU ? 1U : 0U;
-}
-
 /* ROM $bd9b BrickShatter/SpawnBrickChunks, excluding draw and audio output. */
 static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
                                              mysmb_u8 slot)
@@ -2065,41 +2029,14 @@ static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
 }
 
-/* Existing child bodies extracted without conformance credit. Their
- * original BumpBlock/BrickShatter migrations belong to T37 S3/S4. */
-void mysmb_blocks_bump(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 metatile;
-    mysmb_u8 power_up_type;
-    mysmb_u8 is_bumpable;
-    metatile = game->ram[5U];
-    is_bumpable = mysmb_blocks_is_bumpable(metatile);
-    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
-    mysmb_objects_check_top_of_block(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
-                                      game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot]);
-    if (mysmb_objects_is_coin_block(metatile) != 0U) {
-        /* JumpEngine ASL clears carry for every legal BlockCode index. */
-        mysmb_objects_coin_block(game, slot, 0U);
-    }
-    else if (mysmb_objects_power_up_for_block(metatile, &power_up_type) != 0U) {
-        game->ram[MYSMB_POWER_UP_TYPE] = power_up_type;
-        mysmb_objects_start_power_up(game, slot);
-    }
-    else if (is_bumpable != 0U && mysmb_objects_is_vine_block(metatile) != 0U) {
-        mysmb_objects_start_vine(game, 5U, slot);
-    }
-}
-
+/* Existing BrickShatter body remains for the planned S4 migration. */
 void mysmb_blocks_shatter(struct mysmb_game *game, mysmb_u8 slot)
 {
     game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
     game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
     game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     game->ram[MYSMB_SQUARE1_SOUND] = 2U;
-    mysmb_objects_check_top_of_block(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
+    mysmb_blocks_check_top(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
                                       game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot]);
     mysmb_objects_start_brick_chunks(game, slot);
 }
@@ -2173,15 +2110,9 @@ void mysmb_objects_step_block(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_BLOCK_STATE + slot] = state;
 }
 
-static mysmb_u8 mysmb_objects_is_coin_block(mysmb_u8 metatile)
-{
-    return metatile == 0xc0U || metatile == 0x5fU ||
-        metatile == 0x58U || metatile == 0x5dU ? 1U : 0U;
-}
-
 /* ROM CheckTopOfBlock.  The source removes a coin directly over a bumped
  * block before it dispatches the bumped block's own CoinBlock behavior. */
-static void mysmb_objects_check_top_of_block(struct mysmb_game *game,
+void mysmb_blocks_check_top(struct mysmb_game *game,
                                              mysmb_u8 slot,
                                              mysmb_u8 block_low,
                                              mysmb_u8 block_row)

@@ -519,3 +519,158 @@ redistributable release or M2 closure evidence.
 | mysmb64.exe | 337416 | aa18e8e322e55da9c3090449110d481b8ab2abdc6b92839d61cd68491feea124 |
 
 Retained raw evidence: 3905357 bytes. S2 closes; S3 block bump/content/lookup is next, not yet admitted.
+
+
+## S3 admission: block bump, contents and lookup
+
+After S2 commit baae695, transfer-156 receives eleven incomplete labels from
+M2 T24 S2. Baseline 832 / 1,992; expected eleven, maximum 843. Shared owner:
+game/blocks/bump.c. S2 consumes the lookup through its declared interface;
+CheckTopOfBlock and shatter remain planned S4 dependencies. CoinBlock,
+SetupPowerUp and Setup_Vine retain their accepted shared owners.
+
+| Label | Incoming status | Expected disposition |
+| --- | --- | --- |
+| BumpBlock | mapped; evidence incomplete | Complete after both proof tracks |
+| BlockCode | mapped; evidence incomplete | Complete after both proof tracks |
+| MushFlowerBlock | open | Complete after both proof tracks |
+| StarBlock | open | Complete after both proof tracks |
+| ExtraLifeMushBlock | open | Complete after both proof tracks |
+| VineBlock | open | Complete after both proof tracks |
+| ExitBlockChk | open | Complete after both proof tracks |
+| BrickQBlockMetatiles | mapped; evidence incomplete | Complete after both proof tracks |
+| BlockBumpedChk | mapped; evidence incomplete | Complete after both proof tracks |
+| BumpChkLoop | open | Complete after both proof tracks |
+| MatchBump | open | Complete after both proof tracks |
+
+Audit $BD9B-$BE01, including the nine-word BlockCode vector, overlapping BIT
+entry bytes and fourteen table bytes. BumpBlock first calls CheckTopOfBlock,
+then initializes bump sound, block X speed, Y force, player Y speed and block
+Y speed. It reloads scratch $05 after that child, searches the original table
+backward from index thirteen and exits on carry-clear. Found indices >=9
+subtract five before dispatch. Preserve all nine dispatch entries, power-up
+type writes, coin carry zero and the vine slot-five/control-index contract.
+
+Replace duplicated metatile classifications with this lookup and vector;
+return the original index/no-match status explicitly to both head and bump
+callers. Move the existing table definition to the shared block owner without
+changing its area-parser consumers. Expose the existing top-of-block child
+without repairing its internals; record actual-child differences for S4.
+No shatter, gravity, platform or unadmitted graphics repair belongs here.
+
+ROM proof uses ordinary NMI source-RAM head-hit scenarios covering all table
+entries, no-match, both slots and coins above. Observe real child boundaries,
+lookup result/branches, dispatch and byte writes; do not set PC, stack, ROM,
+reference child returns or outputs. Separate caller proof from actual-child
+results and recheck the accepted S2 routes after the lookup API change.
+Native checks independently cover all 256 lookup inputs, child-call ordering,
+all dispatch targets and exact state writes; run focused regressions, strict
+C90 x86/x64, DOS16 link, platform purity, hidden-window probes and three EXEs.
+
+The owner-local ROM and reviewed listing remain ignored research inputs with
+no redistribution claim or imported implementation. All temporary outputs
+stay under build/m2-t37-s3. Recorder budgets: twenty seconds per process,
+four MB raw per batch; S3 retains cleanup responsibility through T review.
+Each node needs both tracks before inventory promotion. DOS remains link-only.
+
+### S3 implementation checkpoint, not closure
+
+Admission/ledger/documentation gates pass at 832, scope eleven, maximum 843.
+The shared bump owner now clears Block_X_Speed, performs CheckTopOfBlock
+before initialization and the $05 read, searches from index thirteen down,
+normalizes indices 9-13 and executes the complete nine-entry content vector.
+The former coin/power/vine metatile classifications are removed. The one
+fourteen-byte table definition moves from area/block_metatile.c to blocks/bump.c;
+existing parser consumers keep its shared declaration. Head collision uses
+the same lookup with explicit original Y/no-match result. The existing
+CheckTopOfBlock body is exposed unchanged for planned S4, not certified here.
+
+Owner-ROM data audit matches all fourteen bytes at $BDE8, all nine little-
+endian targets at $BDC0 and the overlapping BIT entry bytes at $BDD2-$BDD9.
+Strict C90 focused checks pass on both native widths: 256 lookup values and
+512 dispatch/full-RAM write cases per width. S2's 131,072 coordinate cases
+and sixteen child-order cases per width also pass after the lookup interface
+change. Platform purity passes. CMake/OpenNT source lists include the new
+owner, and CMake registers the focused bump test.
+
+Still required: source-reachable NMI proof for every table/dispatch branch
+and coin-above handoff, actual-child diagnostics, rechecking S2 original
+snapshots, final related regressions, three target builds/artifacts, window
+probes and node accounting. No node is promoted yet. Packaged EXEs remain
+the committed S2 baae695 versions, and S3 has no P commit yet.
+
+## S3 original block content and lookup proof
+
+S3/P1 completes all eleven received labels, expected eleven, no transfers.
+Conformance moves from 832 to 843 / 1,992. The shared owner is
+src/game/blocks/bump.c; original table consumers retain one data definition.
+
+| Complete node | Original address | Proven source contract |
+| --- | --- | --- |
+| BumpBlock | $BD9B | CheckTopOfBlock first, then sound/X-speed/force/player-speed/Y-speed writes, then reload $05 and lookup. |
+| BlockCode | $BDBD | Preserve original index; subtract five only for indices 9-13; nine dispatch words match original ROM. |
+| MushFlowerBlock | $BDD2 | Type zero entry and shared SetupPowerUp tail; BIT overlap bytes audited. |
+| StarBlock | $BDD5 | Type two entry with original shared tail. |
+| ExtraLifeMushBlock | $BDD8 | Type three entry and $39 write before SetupPowerUp. |
+| VineBlock | $BDDF | Enemy slot five, block index from SprDataOffset_Ctrl, then Setup_Vine. |
+| ExitBlockChk | $BDE7 | Original no-match and vine return behavior. |
+| BrickQBlockMetatiles | $BDE8 | All fourteen original bytes and their parser/bump consumers bind to one definition. |
+| BlockBumpedChk | $BDF6 | Start at original index thirteen and return index plus carry meaning. |
+| BumpChkLoop | $BDF8 | Descending compare/decrement loop; all fourteen matches and no-match covered. |
+| MatchBump | $BE01 | Match preserves carry-set meaning; exhausted lookup returns $FF/carry-clear. |
+
+Sixty source-RAM scenarios enter the original BumpBlock through ordinary
+NMI/player head collision, fixture IDs 1718-1777: fourteen table entries and
+one unmatched brick, both block slots, with and without a coin above. All ten
+code labels execute and all four conditional sites take both outcomes. Thirty
+coin-above scenarios increment the original coin tally. The original top
+child overwrites $05 in those scenarios; the caller's post-child lookup follows
+that value, rather than a cached entry metatile. Every direct child target is
+observed. Observer-enabled, coverage and unobserved frame outputs agree.
+
+Both native widths match all 120 caller comparisons, all 120 actual-child
+root comparisons and all 120 independent child snapshot checks. The compared
+1,791 persistent RAM bytes exclude scratch 0-7 and hardware stack except
+$0133-$0139. Source audit and focused write tests additionally verify the
+scratch-dependent lookup and argument handoffs. No reference PC, stack, ROM,
+child result or output is modified. Caller tests replay observed child results
+only at native seams; actual-child checks run the real shared implementations.
+Passing this bounded matrix gives no unrelated child-node completion credit.
+
+The accepted S2 snapshot matrix is rechecked after the lookup interface change:
+144 caller matches and 128 actual matches; the same sixteen BrickShatter
+failures remain byte-for-byte identical and stay assigned to planned S4.
+No S2 claim is silently replaced by a synthetic test.
+
+Native tests pass 256 lookup values and 512 dispatch/full-RAM write cases per
+width, plus S2's 131,072 coordinate and sixteen callback cases per width.
+Thirty-two related/surrounding regression runs pass. All 78 shared units
+compile under strict C90 for x86/x64, executable self-tests and bounded hidden
+window/WM_NULL probes pass, and platform purity passes. OpenNT DOS16 links
+with the retained OLDNAMES warning. DOS remains without resource binding and
+has no playable-runtime or 486SX qualification claim.
+
+The similar-issue sweep removes all separate coin/power/vine metatile
+classification helpers and the forward boolean lookup. Head and bump now use
+one reverse-index lookup, while parser consumers use the same relocated
+fourteen-byte table. Existing CheckTopOfBlock is exposed unchanged, and the
+shatter body stays for S4. No host adapter owns any part of this game logic.
+Prior full-frame/core and unrelated child debts remain open.
+
+Reproduction: build mysmb_block_bump_smoke, mysmb_block_bump_snapshot_check,
+mysmb_block_bump_caller_check and mysmb_block_bump_child_check. Record
+`--fixture=t37-bump=N` (0-59) with `--block-bump-snapshot=...` and
+`--control-children=...`; run coverage separately using `--pc-coverage=...`.
+Run `python test/verify_block_bump_snapshots.py <ignored-directory> <owner-rom>`.
+Raw snapshots remain ignored below build/m2-t37-s3 within the four-MB budget.
+
+The three owner-authorized local test EXEs are refreshed with this P; they
+are not redistributable release evidence or a claim that M2 is complete.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257089 | c617a5019b091600a2a3a4facba3f1c3cd5b96f90b441fec831e4b88b1f8eab5 |
+| mysmb32.exe | 330061 | 0ef6e50ae26799960750612036f042ba0ce9b9b475ec60d3ad9a4d7fda3308b3 |
+| mysmb64.exe | 337974 | d1b72a1b13b182e2536ee40de1358fc3426f7fd7970b803ec9a79097f683c5c6 |
+
+Retained raw evidence: 2834812 bytes. S3 closes; S4 shatter/coin-above/chunks is next, not yet admitted.

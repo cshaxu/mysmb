@@ -2,28 +2,32 @@
 
 ## Current Work
 
-**M2 T37 S2 is closed at 832 / 1,992: thirteen nodes proven; S3 block bump/content/lookup is next.**
+**M2 T37 S3 is closed at 843 / 1,992: eleven nodes proven; S4 shatter/coin-above/chunks is next.**
 
-## M2 T37 S2 Packet
+## M2 T37 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S1 commit d722829; coordinator accepts transfer-155. |
-| Objective | Complete the thirteen head-hit/table/position nodes named in the S2 proposal as one original chain. |
-| Non-goals | No bump-content, lookup or shatter child algorithm repair; no S3-S9 credit. |
-| Reference Baseline | 819 / 1,992; thirteen incomplete scope labels, thirteen expected, maximum 832. |
-| Candidate Proposal | [S2 head-hit and positioning](../proposals/m2/power-up-block-movement.md#s2-admission-head-hit-and-block-positioning). |
-| Files And ABI Surface | Shared blocks/head owner, unchanged child seams, player adapter, tests/recorder/build lists and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy, ledger and dual proof. |
-| Verification | Original branch/table/write/call order and NMI head-hit snapshots; separate native tests, regressions, three builds and platform purity. |
-| Expected Markers | VRAM blank before buffer read; lookup carry, coin timer, coordinate carry, blank-after-position, size/crouch and post-child control toggle. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Thirteen exact dispositions, two proof tracks, child failures, caller sweep, tracker/ledger and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, modified reference execution/output, concealed mismatch or platform gameplay. |
-| Exit Criteria | Every received node proven by both tracks or exact accepted unfinished transfer; accounting and artifacts agree. |
-| Original Owner Request | Faithful original ROM logic and call structure in shared C, original source order, chain-level delivery. |
-| Similar-Issue Sweep | Head-hit callers, block-position writers, duplicate child bodies, control/coordinate ownership and platform separation. |
+| Identifier Mode | M2 T37 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S2 commit baae695; coordinator accepts transfer-156. |
+| Objective | Complete eleven bump/content/lookup nodes named in the proposal as one original chain. |
+| Non-goals | No CheckTopOfBlock, shatter, gravity or platform algorithm repair; no unrelated node credit. |
+| Reference Baseline | 832 / 1,992; eleven incomplete labels, eleven expected, maximum 843. |
+| Candidate Proposal | [S3 block content and lookup](../proposals/m2/power-up-block-movement.md#s3-admission-block-bump-contents-and-lookup). |
+| Files And ABI Surface | Shared blocks/bump owner, head lookup interface, existing top child, area table consumer, tests/recorder/build lists and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
+| Verification | Original table/vector/branch/write/call audit and ordinary NMI paths; separate actual-child diagnostics and native delivery checks. |
+| Expected Markers | Top child before writes/read $05; X-speed clear; reverse lookup with carry/index; normalized nine-entry dispatch and power/vine/coin contracts. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Eleven exact dispositions, both proof tracks, child failures, similar-call sweep, tracker/ledger and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, altered reference CPU/output, concealed failures or platform gameplay. |
+| Exit Criteria | Every received node proven or exact accepted unfinished transfer; evidence, counts and artifacts agree. |
+| Original Owner Request | Faithful original-ROM logic/call structure in shared C, source order and chain-level delivery. |
+| Similar-Issue Sweep | Every head/bump lookup and table consumer, duplicate classifications, top-child call order and original dispatch entries. |
+
+S3 closure: [block content proof](../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof).
+120 caller, 120 actual and 120 independent child checks match. S2 retains
+its sixteen shatter failures; 32 regressions and all three builds pass.
 
 S2 closure: [head-hit proof](../proposals/m2/power-up-block-movement.md#s2-original-head-hit-and-positioning-proof).
 144 caller matches, 128 actual matches and 16 retained shatter-child failures;

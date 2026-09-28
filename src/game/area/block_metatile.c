@@ -1,12 +1,5 @@
 #include "game/area.h"
 
-/* ROM BrickQBlockMetatiles: question/hidden entries, ground bricks, then
- * alternate-area bricks. Selection and collision consume one data owner. */
-const mysmb_u8 mysmb_brick_question_metatiles[14] = {
-    0xc1U, 0xc0U, 0x5fU, 0x60U, 0x55U, 0x56U, 0x57U,
-    0x58U, 0x59U, 0x5aU, 0x5bU, 0x5cU, 0x5dU, 0x5eU
-};
-
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
     MYSMB_VRAM_BUFFER1_DATA = 0x0301U,
