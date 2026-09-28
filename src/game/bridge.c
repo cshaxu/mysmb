@@ -1,10 +1,12 @@
 #include "game/objects.h"
 #include "game/enemy/movement.h"
+#include "game/enemy/loop.h"
+#include "game/enemy/init_targets.h"
+#include "game/enemy/actor_slots.h"
 #include "game/area.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
-    MYSMB_VRAM_BUFFER1_DATA = 0x0301U,
     MYSMB_BOWSER_BODY_CONTROLS = 0x0363U,
     MYSMB_BOWSER_FEET_TIMER = 0x0364U,
     MYSMB_BOWSER_FRONT_SLOT = 0x0368U,
@@ -12,16 +14,12 @@ enum {
     MYSMB_EVENT_MUSIC = 0x00fcU,
     MYSMB_NOISE_SOUND = 0x00fdU,
     MYSMB_SQUARE2_SOUND = 0x00feU,
-    MYSMB_ENEMY_FLAG = 0x000fU,
     MYSMB_ENEMY_ID = 0x0016U,
     MYSMB_ENEMY_STATE = 0x001eU,
-    MYSMB_ENEMY_Y = 0x00cfU,
-    MYSMB_ENEMY_Y_SPEED = 0x00a0U,
-    MYSMB_ENEMY_Y_FORCE = 0x0434U,
-    MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
+    MYSMB_ENEMY_Y = 0x00cfU
 };
-/* ROM $d8aa-$d91d BridgeCollapse.  The collapse owns the first victory-mode
- * task: every fourth call it appends two two-tile blank rows to VRAM_Buffer1,
+/* ROM $CFDD-$D060 BridgeCollapseData / BridgeCollapse. The first victory
+ * task appends two two-tile blank rows to VRAM_Buffer1 every fourth call,
  * then lets the following NMI make that metatile removal visible. */
 mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game)
 {
@@ -36,41 +34,44 @@ mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game)
     mysmb_u8 index;
 
     slot = game->ram[MYSMB_BOWSER_FRONT_SLOT];
-    if (slot >= 5U || game->ram[MYSMB_ENEMY_ID + slot] != 45U) {
-        game->ram[MYSMB_EVENT_MUSIC] = 0x80U;
-        return 1U;
-    }
+    if (game->ram[MYSMB_ENEMY_ID + slot] != 45U) goto set_mode;
+    game->ram[8U] = slot;
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state != 0U) {
         if ((state & 0x40U) != 0U && game->ram[MYSMB_ENEMY_Y + slot] < 0xe0U) {
             mysmb_enemy_move_slow_vertically(game, slot);
+            mysmb_objects_draw_bowsers_slot(game, slot);
             return 0U;
         }
-        game->ram[MYSMB_EVENT_MUSIC] = 0x80U;
-        for (index = 0U; index < 5U; ++index) game->ram[MYSMB_ENEMY_FLAG + index] = 0U;
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-        return 1U;
+        goto set_mode;
     }
     game->ram[MYSMB_BOWSER_FEET_TIMER]--;
-    if (game->ram[MYSMB_BOWSER_FEET_TIMER] != 0U) return 0U;
-    index = game->ram[MYSMB_BRIDGE_COLLAPSE_OFFSET];
-    if (index >= 15U || game->ram[MYSMB_VRAM_BUFFER1] > 0xf5U) return 0U;
+    if (game->ram[MYSMB_BOWSER_FEET_TIMER] != 0U) goto draw_bowser;
     game->ram[MYSMB_BOWSER_FEET_TIMER] = 4U;
     game->ram[MYSMB_BOWSER_BODY_CONTROLS] ^= 1U;
-    offset = game->ram[MYSMB_VRAM_BUFFER1];
+    game->ram[0x0005U] = 0x22U;
+    index = game->ram[MYSMB_BRIDGE_COLLAPSE_OFFSET];
     low = collapse_low[index];
     game->ram[0x0004U] = low;
-    game->ram[0x0005U] = 0x22U;
+    offset = game->ram[MYSMB_VRAM_BUFFER1];
     mysmb_area_rem_bridge(game, 12U, (mysmb_u8)(offset + 1U), low, 0x22U);
-    game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(offset + 10U);
+    slot = game->ram[8U];
+    /* RemBridge preserves Y, independent of the current RAM buffer offset. */
+    mysmb_area_move_v_offset(game, (mysmb_u8)(offset + 1U));
     game->ram[MYSMB_SQUARE2_SOUND] = 8U;
     game->ram[MYSMB_NOISE_SOUND] = 1U;
     game->ram[MYSMB_BRIDGE_COLLAPSE_OFFSET]++;
     if (game->ram[MYSMB_BRIDGE_COLLAPSE_OFFSET] == 15U) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+        mysmb_enemy_init_vertical_state(game, slot);
         game->ram[MYSMB_ENEMY_STATE + slot] = 0x40U;
         game->ram[MYSMB_SQUARE2_SOUND] = 0x80U;
     }
+draw_bowser:
+    mysmb_objects_draw_bowsers_slot(game, slot);
     return 0U;
+set_mode:
+    game->ram[MYSMB_EVENT_MUSIC] = 0x80U;
+    ++game->ram[0x0772U];
+    mysmb_enemy_kill_all(game);
+    return 1U;
 }

@@ -75,8 +75,14 @@ static void mysmb_area_write_block_metatile(struct mysmb_game *game,
     buffer_offset = (mysmb_u8)(game->ram[MYSMB_VRAM_BUFFER1] + 1U);
     mysmb_area_put_block_metatile(game, graphics_set, buffer_offset, control,
                                   block_low, vertical_high);
-    /* MoveVOffset decrements Y then adds ten: buffer_offset was original+1. */
-    game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 9U);
+    mysmb_area_move_v_offset(game, buffer_offset);
+}
+
+/* ROM $8A8F MoveVOffset -> SetVRAMOffset; input is the preserved Y byte. */
+void mysmb_area_move_v_offset(struct mysmb_game *game, mysmb_u8 buffer_offset)
+{
+    --buffer_offset;
+    game->ram[MYSMB_VRAM_BUFFER1] = (mysmb_u8)(buffer_offset + 10U);
 }
 
 /* ROM $8a4d-$8a60 RemoveCoin_Axe -> WriteBlankMT. */

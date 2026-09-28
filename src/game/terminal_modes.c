@@ -194,8 +194,7 @@ void mysmb_game_step_victory(struct mysmb_game *game)
     mysmb_u16 fractional_sum;
 
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
-        if (mysmb_objects_step_bridge_collapse(game) != 0U)
-            game->ram[MYSMB_RAM_OPER_MODE_TASK] = 1U;
+        (void)mysmb_objects_step_bridge_collapse(game);
         return;
     }
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 1U) {

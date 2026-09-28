@@ -117,7 +117,9 @@ void mysmb_area_remove_coin_axe(struct mysmb_game *game, mysmb_u8 block_low,
 void mysmb_area_destroy_block_metatile(struct mysmb_game *game,
                                        mysmb_u8 control, mysmb_u8 block_low,
                                        mysmb_u8 vertical_high);
-/* ROM $8ad0 RemBridge, also called by BridgeCollapse. */
+/* ROM $8A8F MoveVOffset; takes Y, not the live VRAM offset in RAM. */
+void mysmb_area_move_v_offset(struct mysmb_game *game, mysmb_u8 buffer_offset);
+/* ROM RemBridge, also called by BridgeCollapse. */
 void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
                            mysmb_u8 buffer_offset, mysmb_u8 address_low,
                            mysmb_u8 address_high);

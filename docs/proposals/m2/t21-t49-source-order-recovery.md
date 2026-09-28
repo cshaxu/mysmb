@@ -802,3 +802,11 @@ duplicate credit. [Exact T39 chains and receivers](../../history/M2-T39-special-
 T40 admission keeps BridgeCollapseData (10092) and the complete BridgeCollapse
 entry (10098) with the following bridge/Bowser slice, replacing the old
 line-10100 cut. [Exact T40 chains and receivers](../../history/M2-T40-enemy-movement-and-firebar.md).
+
+## T41 admission boundary
+
+[T41 exact node and chain plan](t41-bridge-bowser-and-platforms.md) covers all
+123 labels in lines 10092-11084, with 118 expected new and five retained
+matches. Its thirteen S rows preserve source order and shared ownership.
+Only S1 receives its six bridge-collapse nodes at admission; all later
+labels retain their existing receivers until their exact S receipt.
