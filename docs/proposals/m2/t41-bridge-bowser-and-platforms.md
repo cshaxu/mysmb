@@ -358,3 +358,195 @@ Raw original records occupy 2910792 bytes, below the declared 16-MB bound.
 | mysmb16.exe | 256515 | f55328eb0ba71c6deacde47e179446e3f33e3564ad3a0d0568d07dba94942b0e |
 | mysmb32.exe | 348975 | 1ba445479a71827b6cd3ad86a131564f0c06542df0d19ad0de2fcc49ac84cb20 |
 | mysmb64.exe | 356587 | df175a55eb0d8932e602190f94bb4c2b99ce03d14c00c24c95763ab61e633234 |
+
+## S2 admission: Bowser control and defeated erasure
+
+S1 closed in 1211e9e. Coordinator accepts transfers-196/197 under the
+continuing M2 mandate. Source $D061-$D17A (lines 10156-10288) contains
+nineteen nodes: seventeen open expected new, two retained complete. Baseline
+1,172/1,992, maximum 1,189. Exact sets are listed below in source order.
+
+Expected new (all open): `PRandomRange`, `RunBowser`, `BowserControl`, `ChkMouth`, `FeetTmr`, `ResetMDr`, `B_FaceP`, `GetPRCmp`, `GetDToO`, `CompDToO`, `HammerChk`, `SetHmrTmr`, `SkipToFB`, `MakeBJump`, `ChkFireB`, `SpawnFBr`, `SetFBTmr`.
+
+Retained complete: `KillAllEnemies`, `KillLoop` (existing T38 S1 proof).
+
+Create one shared enemy/bowser.c owner for RunBowser and BowserControl.
+Remove the old approximate objects.c body and dispatch wrapper; legacy bulk
+eligibility remains in objects.c before calling the same original entry.
+Remove its invented inline player injury check; source collision belongs to
+ProcessBowserHalf under planned S3. No gameplay moves into a host adapter.
+
+Preserve defeat-height branch to MoveD_Bowser or full KillAllEnemies; frenzy
+clear; TimerControl jumping to flame checks; mouth sign jumping to HammerChk;
+feet toggle, facing reset and PlayerEnemyDiff returned page sign/scratch;
+$C8 movement bypass; frame-gated range/random walk using signed byte result;
+gravity then world/frame-gated hammer spawn; fresh Y/PRNG reads; InitVStf
+jump setup; worlds 6/7 flame exclusion and world 8 inclusion; flame-timer
+toggle loop, SetFlameTimer returned A and hard-mode subtraction; graphics tail.
+No extra flag/ID/front-slot store or invented collision branch at RunBowser.
+
+Reuse KillAllEnemies in enemy/loop.c, movement, hammer, distance and flame
+timer owners. Extract S1's existing two-call MoveD_Bowser into one named shared
+entry used by bridge and Bowser; this is dependency reuse, no extra node credit.
+Retain the existing BowserGfxHandler child pending S3 and report its actual
+output gaps separately. Keep typed live register returns at child seams;
+source child input and original slot-reload semantics must be explicit.
+
+Logic track: original NMI actor-vector RunBowser routes, controlled RAM inputs
+at naturally reached entries if needed, all feasible branches, four table
+bytes, scratch/queues and child call order. Preserve original ROM/CPU/PC/stack
+and outputs. Compare complete child inputs before any diagnostic return
+substitution and retain separate actual-child execution. Revalidate the two
+retained erase nodes and all 10,876 prior actual matches; no duplicate credit.
+
+Operational track: mysmb.bowser-control-chain native mutation contracts on
+x86/x64, strict C90 full builds, DOS16 link, platform purity, original bridge
+regression, actor dispatch, hidden-window response and three refreshed EXEs.
+S closure names every disposition and updates tracker/ledger only with proof.
+Existing graphics/collision gaps and DOS link-only limits remain explicit.
+
+Similar-issue sweep covers actor and legacy callers, duplicate drawing,
+defeated movement, world-number constants, timer/mouth gates, signed page/byte
+distance, post-child loads and non-source injury. Existing owner ROM/listing
+provenance and local-only restrictions remain. All temporary material stays
+under ignored build/m2-t41-s2; at most 1,024 original cases, 32 MB raw output,
+twenty-second per-record timeout and resumable unique checkpoints. Coordinator
+owns cleanup and retains inputs required by dependent regression. Stop on
+unadmitted child repair, source execution/output patches or hidden mismatch.
+
+## S2 source audit and implementation checkpoint
+
+S2 remains open with no new node credit. Direct owner-ROM inspection binds
+four PRandomRange bytes and 122 instructions in $D065-$D17A, including the
+retained erase loop. Original execution/branch coverage is still pending.
+
+The source RunBowser now has one body in enemy/bowser.c. The former objects.c
+approximation and dispatch wrapper are removed; only legacy bulk flag/ID
+eligibility remains outside the source entry. MoveD_Bowser is one shared
+slow-gravity/graphics tail in bridge.c. The source gravity child reloads X
+from ObjectOffset; the C tail and Bowser caller preserve that handoff.
+
+The implementation restores defeat-height erasure, TimerControl-to-flame and
+mouth-to-hammer edges, page-sign distance, the $C8 movement bypass, signed
+byte range comparison, hammer calls, post-child coordinate/PRNG reads and
+jump initialization. World6 and World8 are source indices five and seven.
+PRandomRange uses PseudoRandomBitReg at $07A7 plus slot, not the old off-by-one
+$07A8 address. Mouth toggling retains its backward flame-check edge and the
+SetFlameTimer return/hard-mode subtraction. Source graphics is called once;
+the invented inline player injury check is removed in favor of planned S3's
+ProcessBowserHalf collision responsibility. No graphics child body is repaired.
+
+Twelve independent full-RAM and call-order cases pass on both native widths,
+covering defeat, master timer, mouth state, world gates, post-hammer PRNG,
+signed distance, $C8 skip and flame toggling. S1's 319-case native contract and
+retainer contracts also pass on both widths. All 360 existing original bridge
+caller comparisons remain equal after the shared tail extraction. Changed
+owners compile under strict C90 on x86/x64; platform purity passes.
+
+Next action is unchanged original NMI RunBowser recording with branch/data
+coverage, caller and actual-child comparisons, followed by retained cross-chain
+regression and three-target artifact delivery. Counts remain 1,172/1,992;
+assets still belong to 1211e9e. This checkpoint is not a P or closure claim.
+Local structure/native/bridge regression summaries stay below ignored
+build/m2-t41-s2.
+
+## S2 original Bowser control proof
+
+S2 P1 closes seventeen expected new nodes and revalidates two retained nodes:
+1,172 -> 1,189/1,992. All nineteen scoped nodes are complete; none remains
+unfinished or transfers at closure. S3 is next for the four Bowser graphics
+orchestration nodes; its body is not certified by this caller proof.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| PRandomRange | $D061 | Four original bytes and both PRNG consumers; source base $07A7 plus slot. New ROM-match complete. |
+| RunBowser | $D065 | Defeat bit and $E0 height choose shared MoveD_Bowser or complete erasure. New ROM-match complete. |
+| KillAllEnemies | $D071 | Retained shared reverse-slot erase loop and frenzy clear; no duplicate credit. Retained ROM match. |
+| KillLoop | $D073 | All five original erase child inputs in descending slot order; retained proof. Retained ROM match. |
+| BowserControl | $D07F | Frenzy clear and master timer branch directly to flame checks. New ROM-match complete. |
+| ChkMouth | $D08C | Mouth sign chooses feet/movement or HammerChk, without skipping jump handling. New ROM-match complete. |
+| FeetTmr | $D094 | Byte decrement, expiry reset and body-bit toggle order. New ROM-match complete. |
+| ResetMDr | $D0A6 | Every-sixteenth-frame facing reset. New ROM-match complete. |
+| B_FaceP | $D0B0 | Timer gate, typed distance/page sign, facing/speed/timers and $C8 bypass. New ROM-match complete. |
+| GetPRCmp | $D0D1 | Every-fourth-frame and original-X gates select PRandomRange. New ROM-match complete. |
+| GetDToO | $D0EA | Byte X addition, facing branch and signed wrapped difference. New ROM-match complete. |
+| CompDToO | $D107 | Absolute byte range chooses original left/right movement speed. New ROM-match complete. |
+| HammerChk | $D10F | Timer priority, slow gravity and world/frame-gated hammer child. New ROM-match complete. |
+| SetHmrTmr | $D127 | Fresh post-child Y/PRNG reads and timer store. New ROM-match complete. |
+| SkipToFB | $D139 | Source jump to flame checks from timer hold or completed gravity phase. New ROM-match complete. |
+| MakeBJump | $D13C | Timer-one Y decrement, InitVStf then upward speed store. New ROM-match complete. |
+| ChkFireB | $D149 | World 8 inclusion and worlds 6/7 exclusion use zero-based constants. New ROM-match complete. |
+| SpawnFBr | $D154 | Breath timer, body toggle, backward edge and SetFlameTimer return. New ROM-match complete. |
+| SetFBTmr | $D173 | Hard-mode subtraction, breath timer, frenzy store and graphics fallthrough. New ROM-match complete. |
+
+All 122 instructions in $D065-$D17A execute; all 25 conditional branches
+have both outcomes. The four PRandomRange bytes bind directly to the local
+original ROM. The 1,024 routes start from the real NMI actor vector and apply
+declared RAM inputs at the naturally reached RunBowser entry. They cover
+slots zero/five, defeat heights, master timer, mouth/feet, frame gates,
+player/enemy pages, signed X/range, timers, worlds, PRNG and hard mode.
+Observer choice never controls inputs. No ROM, CPU/register, PC, stack or
+output patch is used. All 1,024 observer-free frames equal their observed
+original counterparts; this is not native full-game frame equality.
+
+Caller comparisons pass 2,048/2,048 across x86/x64, including source scratch,
+queue stores, complete child inputs and live distance/flame A returns.
+KillAllEnemies and MoveD_Bowser execute their actual shared C bodies in this
+caller check; recorded returns apply only at their observed descendant seams.
+Five descending erase calls preserve the retained KillAllEnemies/KillLoop
+proof. RAM comparisons include mapped $0109-$0139 and all VRAM/OAM/audio
+queue cells; only hardware-stack storage is excluded.
+
+Actual roots match 16/2,048. Per-child isolation on the same original input
+states proves EraseEnemyObject 80/80, MoveEnemySlowVert 516/516,
+PlayerEnemyDiff 744/744, SpawnHammerObj 92/92, InitVStf 368/368 and
+SetFlameTimer 512/512. BowserGfxHandler matches 0/2,032; every failed root
+contains this known approximate graphics child. Missing duplicate-slot,
+scratch, OAM and collision effects retain their S3/later-child responsibility.
+No recorded substitution is used in the actual-root or isolated-child runs.
+External nodes receive no incidental completion credit.
+
+RunBowser has one shared body in enemy/bowser.c. The old objects.c body and
+double-draw dispatch wrapper are removed; bulk eligibility stays outside the
+original entry. The shared MoveD_Bowser tail reloads the original ObjectOffset
+after gravity and is reused by bridge and Bowser. Timer/mouth/range branches,
+post-child reads, hammer spawning and the flame backward edge now follow
+source order. Random reads use $07A7 plus slot. The source graphics child
+replaces the fabricated inline proximity/injury check; its internal repair
+belongs to S3, so gameplay fidelity remains incomplete until that chain and
+its dependencies are proved. No platform algorithm changes.
+
+Independent native contracts pass twelve full-RAM/call-order cases on both
+widths. S1 native and retainer contracts pass, and all 360 prior original
+bridge caller comparisons remain equal after shared-tail extraction. Fifteen
+initializer/platform suites per width, mode/layout tests and platform purity
+pass. Existing Bowser damage exit 4 and endgame star-timer exit 6 persist.
+Final actual-root matrix: 10,892/14,586, retaining all 10,876 previous matches.
+The 3,694 differences are 1,662 retained cases plus 2,032 new graphics-child
+cases. These are sample counts, not unfinished-node counts.
+
+All 102 shared units compile under strict C90 for x86/x64. Self-tests and
+hidden-window message-response probes pass on both widths. DOS16 compiles
+and links with the existing OLDNAMES warning; it remains link-only without
+graphical playability, resource binding or 486SX performance certification.
+The three owner-authorized executable artifacts are refreshed together.
+
+Similar-issue sweep covers actor/bulk callers, duplicate drawing, world
+constants, PRNG base, signed page/byte differences, master/mouth gates,
+post-child X/PRNG reads and non-source injury. The source entry has no extra
+flag/ID/front-slot store. S3 remains the next original graphics boundary.
+Reproduce bowser_control_fixture.h cases 0..1023 using
+--fixture=t41-bowser-control=N, --bowser-control-snapshot, --control-children
+and separate --pc-coverage runs. bowser_control_snapshot_check checks caller
+handoffs; enemy_loop_actual_check executes real children. Native target is
+mysmb.bowser-control-chain. Local source/child/regression summaries stay under
+ignored build/m2-t41-s2. Raw inputs occupy 17,784,774 bytes under the 32-MB
+bound, with unique paths, twenty-second deadlines and resumable checkpoints.
+Coordinator retains required regression inputs and owns cleanup. Existing
+source provenance and local-only restrictions remain unchanged.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256131 | 5f144368ee82f50ab4bcfc0266acc5477b904ab732b05f9577f39b97f37457e5 |
+| mysmb32.exe | 348709 | d930ff6ade69f2c95805542ebb0e008577c093e210a8d93f34881588e9b72d07 |
+| mysmb64.exe | 356357 | d27da7a6362a533f5f65a90a7b21121bc9a6ed24e023e33cc98c4682577af635 |

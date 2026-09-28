@@ -15,7 +15,6 @@ void mysmb_objects_step_red_paratroopas_slot(struct mysmb_game *game, mysmb_u8 s
 void mysmb_objects_step_flying_green_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_flying_cheep_cheeps_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_bowser_flames_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_fireworks_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_star_flags_slot(struct mysmb_game *game, mysmb_u8 slot);

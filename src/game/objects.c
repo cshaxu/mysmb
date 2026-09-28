@@ -1310,98 +1310,15 @@ void mysmb_objects_step_platforms(struct mysmb_game *game)
         mysmb_objects_step_platforms_slot(game, slot);
 }
 
-/* ROM InitBowser/RunBowser.  The rear-half duplicate affects only OAM; the
- * front object owns all collision, movement, hit points, and flame state. */
-void mysmb_objects_step_bowsers_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    static const mysmb_u8 random_range[4] = { 0x21U, 0x41U, 0x11U, 0x31U };
-    mysmb_u8 difference;
-    mysmb_u8 direction;
-    mysmb_u8 old_x;
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 45U) return;
-    game->ram[0x0368U] = slot;
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_j_vertically(game, slot);
-        return;
-    }
-    game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0U) {
-        if ((game->ram[0x0363U] & 0x80U) == 0U) {
-            game->ram[0x0364U]--;
-            if (game->ram[0x0364U] == 0U) {
-                game->ram[0x0364U] = 0x20U;
-                game->ram[0x0363U] ^= 1U;
-            }
-            if ((game->ram[MYSMB_FRAME_COUNTER] & 0x0fU) == 0U) {
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-            }
-            player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                         game->ram[MYSMB_PLAYER_X]);
-            enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                                        game->ram[MYSMB_ENEMY_X + slot]);
-            if (game->ram[0x078aU + slot] != 0U && enemy_world < player_world) {
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
-                game->ram[0x0365U] = 2U;
-                game->ram[0x078aU + slot] = 0x20U;
-                game->ram[0x0790U] = 0x20U;
-            }
-            if ((game->ram[MYSMB_FRAME_COUNTER] & 3U) == 0U) {
-                if (game->ram[MYSMB_ENEMY_X + slot] == game->ram[0x0366U]) {
-                    game->ram[0x06dcU] = random_range[game->ram[0x07a8U + slot] & 3U];
-                }
-                old_x = game->ram[MYSMB_ENEMY_X + slot];
-                game->ram[MYSMB_ENEMY_X + slot] =
-                    (mysmb_u8)(old_x + game->ram[0x0365U]);
-                difference = game->ram[MYSMB_ENEMY_X + slot] >= game->ram[0x0366U] ?
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - game->ram[0x0366U]) :
-                    (mysmb_u8)(game->ram[0x0366U] - game->ram[MYSMB_ENEMY_X + slot]);
-                direction = game->ram[MYSMB_ENEMY_X + slot] >= game->ram[0x0366U] ? 0xffU : 1U;
-                if (game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] != 1U &&
-                    difference >= game->ram[0x06dcU]) game->ram[0x0365U] = direction;
-            }
-            if (game->ram[0x078aU + slot] == 0U) {
-                mysmb_enemy_move_slow_vertically(game, slot);
-                if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
-                    game->ram[0x078aU + slot] = random_range[game->ram[0x07a8U + slot] & 3U];
-                }
-            }
-            else if (game->ram[0x078aU + slot] == 1U) {
-                game->ram[MYSMB_ENEMY_Y + slot]--;
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfeU;
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            }
-        }
-        if (game->ram[0x075fU] < 6U && game->ram[0x0790U] == 0U) {
-            game->ram[0x0790U] = 0x20U;
-            game->ram[0x0363U] ^= 0x80U;
-            if ((game->ram[0x0363U] & 0x80U) == 0U) {
-                game->ram[0x0790U] = mysmb_enemy_set_flame_timer(game);
-                if (game->ram[MYSMB_SECONDARY_HARD] != 0U) game->ram[0x0790U] =
-                    (mysmb_u8)(game->ram[0x0790U] - 0x10U);
-                game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 21U;
-            }
-        }
-    }
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
-        game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
-        game->ram[MYSMB_PLAYER_X] + 16U >= game->ram[MYSMB_ENEMY_X + slot] &&
-        game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] + 24U &&
-        game->ram[MYSMB_PLAYER_Y] + 24U >= game->ram[MYSMB_ENEMY_Y + slot] &&
-        game->ram[MYSMB_PLAYER_Y] <= game->ram[MYSMB_ENEMY_Y + slot] + 24U) {
-        mysmb_objects_force_injury(game);
-    }
-}
-
-/* Temporary bulk caller while the engine vector is migrated. */
+/* Legacy bulk caller; eligibility is outside the original RunBowser entry. */
 void mysmb_objects_step_bowsers(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_bowsers_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 45U)
+            mysmb_enemy_run_bowser(game, slot);
+    }
 }
 
 /* Existing ProcBowserFlame child, including drawing. Internal semantics

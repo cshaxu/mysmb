@@ -18,6 +18,14 @@ enum {
     MYSMB_ENEMY_STATE = 0x001eU,
     MYSMB_ENEMY_Y = 0x00cfU
 };
+/* ROM $D00F MoveD_Bowser: shared by bridge collapse and RunBowser. */
+void mysmb_enemy_move_d_bowser(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_slow_vertically(game, slot);
+    slot = game->ram[8U];
+    mysmb_objects_draw_bowsers_slot(game, slot);
+}
+
 /* ROM $CFDD-$D060 BridgeCollapseData / BridgeCollapse. The first victory
  * task appends two two-tile blank rows to VRAM_Buffer1 every fourth call,
  * then lets the following NMI make that metatile removal visible. */
@@ -39,8 +47,7 @@ mysmb_u8 mysmb_objects_step_bridge_collapse(struct mysmb_game *game)
     state = game->ram[MYSMB_ENEMY_STATE + slot];
     if (state != 0U) {
         if ((state & 0x40U) != 0U && game->ram[MYSMB_ENEMY_Y + slot] < 0xe0U) {
-            mysmb_enemy_move_slow_vertically(game, slot);
-            mysmb_objects_draw_bowsers_slot(game, slot);
+            mysmb_enemy_move_d_bowser(game, slot);
             return 0U;
         }
         goto set_mode;
