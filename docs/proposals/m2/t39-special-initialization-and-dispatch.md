@@ -912,3 +912,101 @@ eight-MB and twenty-second per-recorder bounds, retained for T39 review.
 | mysmb16.exe | 255053 | d1a616a10ac7af748816067e0196b0f2456d88f478bbd675b4d1755a4e49c000 |
 | mysmb32.exe | 339368 | db9640d53c93d1f7b6cb7c3de532a1d1e259675cec372b43358876252f472e32 |
 | mysmb64.exe | 346463 | 46a52706949a9a8e163e3949fa21922279dc0e6cae172797eb3224e2b25a8418 |
+
+## S8 admission: Normal actor and movement vector
+
+After S7 commit df340c0, coordinator accepts transfer-181 for RunNormalEnemies,
+SkipMove, EnemyMovementSubs and NoMoveCode. All four are open and expected
+new: baseline 1,049/1,992, maximum 1,053. Shared owner is enemy/normal.c,
+source $C8E0-$C934. S7 supplies the actor-vector predecessor; S9 is next.
+
+Restore the 21-word movement vector and JumpEngine scratch. ID $0E must bind
+the existing MoveJumpingEnemy entry, not its legacy guarded bulk adapter.
+Keep the normal caller's attribute clear, offscreen/relative/graphics/box/
+background/enemy/player collision sequence, post-child TimerControl decision,
+optional movement and final OffscreenBoundsCheck. Move the existing Goomba
+selection into the normal graphics entry so the caller has one EnemyGfxHandler
+boundary; do not rewrite drawing children. Existing legacy aggregate interfaces
+retain their declared player-box setup behavior, outside this source entry.
+
+Prove all four caller nodes using unchanged original NMI live-slot routes,
+all normal IDs, both timer paths, exact table bytes, child order and RAM inputs.
+The caller harness may apply recorded original child returns only after full
+entry comparison. For RunNormalEnemies, keep EnemyMovementSubs native and
+observe its selected leaf, proving the two adjacent callers together. Separate
+actual-child comparisons retain downstream graphics/collision/movement gaps.
+No CPU/stack/ROM patching, scratch masking or child-body certification.
+
+Independent native checks cover child-mutated ID/timer/flags, no-op movement,
+all slots and source write footprints. Strict C90 x86/x64, DOS16 link, purity,
+hidden-window response and three EXEs complete the operational track. Sweep
+normal graphics callers, every movement alias and legacy jumping adapters.
+No host-platform gameplay or unrelated actor repair is admitted. Existing
+owner-local ROM/listing provenance is unchanged; no external import. Raw
+records stay in ignored build/m2-t39-s8, eight-MB budget, twenty-second recorder
+timeout and S8 cleanup ownership. Stop on unadmitted repair or hidden failures.
+
+## S8 original normal-actor and movement-vector proof
+
+S8 closes all four expected caller nodes: 1,049 -> 1,053/1,992.
+Transfer-181 registered all four open nodes before implementation; no scoped
+node remains unfinished or transferred. T39 stays open; S9 is next.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| RunNormalEnemies | $C8E0 | Clear sprite attributes; exact seven preprocessing children, post-child timer gate, native movement vector and terminal bounds; new caller match |
+| SkipMove | $C902 | Both timer branches reach the same final OffscreenBoundsCheck; no flag/handled-result early return; new caller match |
+| EnemyMovementSubs | $C905 | All 21 source words, aliases and JumpEngine scratch agree; current post-child ID selects the original movement entry; new caller match |
+| NoMoveCode | $C934 | Original empty RTS for IDs 9 and 19; vector scratch remains, no movement child is called; new caller match |
+
+The shared caller now binds one normal graphics entry, including Goomba
+selection inside that child, and retains all later collision/movement/bounds
+phases. The vector restores original $04-$07 scratch and calls MoveJumpingEnemy
+directly, removing its former guarded legacy adapter from this path. The
+aggregate test interface retains its existing box-preservation contract;
+it is not the source single-slot gameplay caller.
+
+Original-ROM caller comparisons pass 252/252 across x86/x64, covering 84
+normal roots and 42 movement roots (all 21 IDs, slots zero/five, paused and
+unpaused normal paths). The normal-root proof keeps EnemyMovementSubs native.
+Only its selected movement leaf is substituted, after exact full RAM input
+comparison. Recorded original children run unchanged; no ROM, CPU, return
+stack or scratch patch is used. Hardware-stack bytes are excluded while
+mapped $0109-$0139 state remains compared. Caller proof grants no child-body
+credit. All 126 observation-free frame records equal their observed records;
+this checks recorder noninterference, not native full-frame equivalence.
+
+All 16 scoped instructions execute; the timer branch takes both outcomes. The 42 vector bytes match the ROM. Child order/input records total 710 for normal roots and 38 for movement roots. Separate actual native-child comparisons match 58/252; remaining normal/movement failures are {'normal': 168, 'movement': 26}. These are retained child gaps, never masked or counted as caller failures.
+
+The final actual matrix matches 3222/3858 with all 3,164 previous matches retained. Fifteen full initializer/stream/platform/retainer regressions per width pass. Independent normal-caller tests cover 756 cases per width with child-mutated ID, timer and flag, source ordering, no-op aliases and complete 2,048-byte write footprints. Existing vector, retainer and cannon call-contract tests also pass.
+
+All 86 shared units compile in strict C90 on x86/x64. Both self-tests and
+bounded hidden-window response probes pass, as does platform purity. DOS16
+links with the existing OLDNAMES warning; it has no runtime/graphics, resource
+binding or physical 486 performance claim. The focused regression matrix
+retains the prior star-timer and Bowser-damage failures; Lakitu/Spiny debt is
+unchanged. Three EXEs are refreshed together.
+
+Similar-issue sweep finds one production normal-graphics caller, one movement
+vector, and the old guarded jumping adapter used only by its legacy aggregate.
+All 21 dispatch aliases and both no-op IDs are checked. No additional platform
+logic, child algorithm repair or duplicate gameplay path is introduced.
+Children retain their exact existing ledger owners: graphics/offscreen/relative,
+collision and movement bodies await their source-order admissions. S9 receives
+the following flame/firebar/platform wrappers; T40 begins MovePodoboo.
+
+Reproduce normal_actor_fixture.h cases 0..125 using --fixture=t39-normal-actor=N,
+--normal-actor-snapshot and --control-children; run --pc-coverage independently.
+normal_actor_snapshot_check links only enemy/normal.c and explicit child
+boundaries; enemy_loop_actual_check links every real child. The independent
+focused test is mysmb.normal-enemy-caller. Existing owner-local provenance
+is unchanged, with no imported third-party implementation. Raw recordings
+remain beneath ignored build/m2-t39-s8 for T39 review, within eight MB and
+20 seconds per recorder process. Independent cases run concurrently with
+unique output paths; production and comparison semantics are unchanged.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255159 | d8de51d91c324aa87312ec7b4e3efa77c65ea8a086cebc56f3b2080d0dd1d644 |
+| mysmb32.exe | 339440 | f0ff9837f43b039b69b3f92507c127cac31550d833b37dfae78a6d3a8f631dde |
+| mysmb64.exe | 347558 | 6c58fda9394ed85a05ddb8dab50f7c571f189ba0ac08d96b92ab21c908de7eeb |

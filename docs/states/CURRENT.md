@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T39 S7 is closed at 1,049 / 1,992: three new caller matches plus retained NoRunCode.**
+**M2 T39 S8 is closed at 1,053 / 1,992: all four expected caller nodes match.**
 
-## M2 T39 S7 Packet
+## M2 T39 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S7, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after b2bb5ab; coordinator accepts transfers-179/180. |
-| Objective | Restore actor vector and retainer call boundaries; retain NoRunCode. |
-| Non-goals | No child movement/collision/graphics rewrite or host-platform gameplay. |
-| Reference Baseline | 1,046 / 1,992; four scoped, two audited mismatches and one open expected new, retained NoRunCode, maximum 1,049. |
-| Candidate Proposal | [T39 S7 actor boundaries](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-admission-actor-vector-and-retainer-call-boundaries). |
-| Files And ABI Surface | Shared enemy/core and dispatch_targets, retainer OAM boundary, build manifests, tests/recorder and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix; provisional source-entry seams explicitly bounded in proposal. |
-| Verification | Original vector/branch/call proof, full child-entry RAM comparison and recorded return substitution; separate actual-child diagnostics, native contracts, builds and purity. |
-| Expected Markers | ObjectOffset reload, original selector/scratch, distinct platform and Bowser edges, offscreen-relative-graphics retainer order. |
+| Identifier Mode | M2 T39 S8, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after df340c0; coordinator accepts transfer-181. |
+| Objective | Restore four normal-actor/movement-vector caller nodes. |
+| Non-goals | No child movement/collision/graphics rewrite or host gameplay. |
+| Reference Baseline | 1,049 / 1,992; four scoped open, four expected new, maximum 1,053. |
+| Candidate Proposal | [T39 S8 normal actor/vector](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-admission-normal-actor-and-movement-vector). |
+| Files And ABI Surface | Shared enemy/normal.c, existing normal graphics selection boundary, tests/recorder, node records and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
+| Verification | Original table/branch/call proof, full child-input comparison with recorded return substitution; separate actual-child diagnostics, native mutation contracts, builds and purity. |
+| Expected Markers | Attribute clear, nine-phase caller sequence, post-child timer/ID, 21-way scratch/vector, no-op and terminal bounds. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Four named dispositions, caller-only proof versus actual-child failures, artifact hashes. |
+| Reporting Requirements | Four exact dispositions; caller proof versus actual-child failures; artifact hashes. |
 | Stop Conditions | Unadmitted repair, original CPU/stack/ROM patch, hidden child mismatch or host gameplay. |
-| Exit Criteria | Three expected nodes proven plus retained NoRunCode or exact accepted transfer; ledger, inventory and artifacts agree. |
+| Exit Criteria | Four expected caller nodes proven or exact accepted transfer; tracker, ledger and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Actor callers, all vector aliases, retainer callers and combined-child tests. |
+| Similar-Issue Sweep | Normal graphics callers, all movement aliases and guarded jumping adapters. |
+
+## S8 closure
+
+[Original normal-actor/vector proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof)
+records four new caller matches and 252/252 original caller comparisons.
+All 3,164 prior actual matches remain. Child-body mismatches are separately
+retained; three EXEs are refreshed and DOS16 remains link-only.
 
 ## S7 closure
 
@@ -74,17 +81,9 @@ records all fifteen dispositions. Actual comparisons pass 320/320; all 996
 prior matches remain. All five source branches take both outcomes. Three EXEs
 are refreshed; the broader Bowser damage failure and DOS link-only limit remain.
 
-## T38 closure summary
-
-[Aggregate review](../history/M2-T38-enemy-stream-initialization.md#t38-closure)
-closes all 94 unique target nodes across seven S chains. Final actual comparison
-is 996/1,220; all 692 previous matches remain. The 224 downstream differences
-stay assigned to their original source-order owners. S7 refreshed all three
-EXEs; the existing Bowser test failures and DOS link-only limit remain.
-
 ## Current sequence
 
-T39 contains nine planned S chains; S1-S7 are closed; S8 is next, not yet admitted. Follow the
+T39 contains nine planned S chains; S1-S8 are closed; S9 is next, not yet admitted. Follow the
 [queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
 beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 

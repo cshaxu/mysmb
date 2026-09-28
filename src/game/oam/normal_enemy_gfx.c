@@ -208,11 +208,15 @@ static mysmb_u8 mysmb_draw_lakitu(struct mysmb_game *g, mysmb_u8 n)
     else{q=(mysmb_u8)(o+16U);g->ram[0x0202U+q]&=0x81U;g->ram[0x0206U+q]|=0x41U;if(g->ram[0x078fU]<0x10U){g->ram[0x0202U+o+8U]=g->ram[0x0202U+q];g->ram[0x0206U+o+8U]=g->ram[0x0206U+q];}}
     mysmb_normal_apply_offscreen(g,o,b);return 1U;
 }
-/* Shared RunNormalEnemies graphics phase.  A return value of one means this
- * slot belongs to a separately scheduled movement owner. */
+/* Existing normal-ID EnemyGfxHandler branches. The caller ignores the legacy
+ * handled result and always continues its remaining source phases. */
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
                                                    mysmb_u8 slot)
 {
+    if (game->ram[MYSMB_NORMAL_ID + slot] == 6U) {
+        mysmb_objects_draw_goomba(game, slot);
+        return 1U;
+    }
     if (mysmb_objects_draw_special_enemy(game, slot) != 0U) return 1U;
     (void)mysmb_objects_draw_koopa_buzzy(game, slot);
     if (mysmb_objects_draw_hammer_bro(game, slot) != 0U) return 1U;

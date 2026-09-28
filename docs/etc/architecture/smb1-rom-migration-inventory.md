@@ -93,7 +93,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `PositionEnemyObj` — ROM line 7967; C owner/evidence pending
   - [ ] `CheckpointEnemyID` — ROM line 8080; C owner/evidence pending
   - [ ] `EnemiesAndLoopsCore` — ROM line 7788; C owner/evidence pending
-  - [ ] `RunNormalEnemies` — ROM line 9092; C owner/evidence pending
+  - [x] `RunNormalEnemies` — ROM line 9092; [S8 caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child interiors remain separate.
 - [ ] **Blocks, coins, power-ups, vines and miscellaneous objects**
   - [ ] `BlockObjMT_Updater` — ROM line 7527; C owner/evidence pending
   - [ ] `BumpBlock` — ROM line 7332; C owner/evidence pending
@@ -1188,10 +1188,10 @@ The labels and branches behind every line remain open until individually bound b
 | 9038 | `JmpEO` | M2 T39 S7 shared enemy/core.c and dispatch_targets.c | ROM-match complete | [S7 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof); child-input comparison, actual child failures retained |
 | 9080 | `NoRunCode` | M2 T39 S7 shared enemy/core.c and dispatch_targets.c | ROM-match complete | [S7 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof); child-input comparison, actual child failures retained |
 | 9085 | `RunRetainerObj` | M2 T39 S7 shared enemy/core.c and dispatch_targets.c | ROM-match complete | [S7 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof); child-input comparison, actual child failures retained |
-| 9092 | `RunNormalEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runnormalenemies) |
-| 9105 | `SkipMove` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipmove) |
-| 9107 | `EnemyMovementSubs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemymovementsubs) |
-| 9135 | `NoMoveCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nomovecode) |
+| 9092 | `RunNormalEnemies` | M2 T39 S8 shared enemy/normal.c | ROM-match complete | [S8 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child-input comparison, actual child failures retained |
+| 9105 | `SkipMove` | M2 T39 S8 shared enemy/normal.c | ROM-match complete | [S8 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child-input comparison, actual child failures retained |
+| 9107 | `EnemyMovementSubs` | M2 T39 S8 shared enemy/normal.c | ROM-match complete | [S8 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child-input comparison, actual child failures retained |
+| 9135 | `NoMoveCode` | M2 T39 S8 shared enemy/normal.c | ROM-match complete | [S8 original caller proof](../../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child-input comparison, actual child failures retained |
 | 9140 | `RunBowserFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runbowserflame) |
 | 9150 | `RunFirebarObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfirebarobj) |
 | 9156 | `RunSmallPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runsmallplatform) |

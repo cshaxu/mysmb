@@ -78,3 +78,9 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
   and later actor/OAM nodes; replace the explicitly provisional large/small
   platform seams in S9. GetEnemyOffscreenBits/RelativeEnemyPosition remain
   with T16 S4 and EnemyGfxHandler with T17 S6. [Exact caller/child boundary](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof).
+
+- [ ] **Normal actor/movement actual-child gaps:** T39 S8 proves its four
+  caller nodes with 252/252 original comparisons, while actual-child failures
+  remain separately recorded. Preserve movement, collision and graphics
+  descendants under their existing source-order ledger owners.
+  [Exact caller/child boundary](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof).

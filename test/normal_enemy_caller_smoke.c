@@ -32,7 +32,7 @@ SLOT(mysmb_objects_step_bullet_bills_slot,103U)
 SLOT(mysmb_objects_step_swimming_cheep_cheeps_slot,104U)
 SLOT(mysmb_objects_step_podoboos_slot,105U)
 SLOT(mysmb_objects_step_piranha_plants_slot,106U)
-SLOT(mysmb_objects_step_jumping_paratroopas_slot,107U)
+SLOT(mysmb_enemy_move_jumping,107U)
 SLOT(mysmb_objects_step_red_paratroopas_slot,108U)
 SLOT(mysmb_objects_step_flying_green_paratroopas_slot,109U)
 SLOT(mysmb_enemy_step_lakitus_slot,110U)
@@ -55,6 +55,11 @@ int main(void)
 {
     static const unsigned int target[21]={100,100,100,100,100,101,100,
         102,103,0,104,104,105,106,107,108,109,110,100,0,111};
+    static const unsigned short addresses[21]={
+        0xca77,0xca77,0xca77,0xca77,0xca77,0xc9d8,0xca77,
+        0xcb89,0xcc36,0xc934,0xcc4a,0xcc4a,0xc9b0,0xd3b0,
+        0xcaf9,0xcaff,0xcb25,0xcf28,0xca77,0xc934,0xcedf};
+    static unsigned char expected[2048];
     static struct mysmb_game game;
     unsigned int id,slot,paused,i,want;
     for(id=0U;id<21U;++id) for(slot=0U;slot<6U;++slot)
@@ -62,12 +67,25 @@ int main(void)
         memset(game.ram,0,sizeof(game.ram));
         game.ram[8U]=(mysmb_u8)slot;game.ram[0x16U+slot]=(mysmb_u8)id;
         game.ram[0x747U]=(mysmb_u8)paused;game.ram[0x3c5U+slot]=0xffU;
+        memcpy(expected,game.ram,2048U);
+        expected[0x3c5U+slot]=0U;expected[0x3d1U]=0x56U;
+        expected[0xfU+slot]=0U;
+        if(mutation==1U) expected[0x16U+slot]=17U;
+        if(mutation==2U) expected[0x747U]^=1U;
+        if(expected[0x747U]==0U) {
+            unsigned short address;
+            address=addresses[expected[0x16U+slot]];
+            expected[4U]=9U;expected[5U]=0xc9U;
+            expected[6U]=(unsigned char)address;
+            expected[7U]=(unsigned char)(address>>8U);
+        }
         count=0U;bad=0U;
         mysmb_objects_step_normal_enemy(&game,(mysmb_u8)slot);
         for(i=0U;i<7U;++i) if(events[i]!=i+1U) return 1;
         want=game.ram[0x747U]!=0U ? 0U:target[mutation==1U ? 17U:id];
         if(count!=(want ? 9U:8U) || events[count-1U]!=8U || bad) return 2;
         if(want && events[7U]!=want) return 3;
+        if(memcmp(expected,game.ram,2048U)!=0) return 4;
     }
     return 0;
 }
