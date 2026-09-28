@@ -3,6 +3,11 @@
 
 #include "game/game.h"
 
+/* ROM MoveNormalEnemy and its state/temporary-speed/revival branches. */
+void mysmb_enemy_move_normal(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_move_d_vertically(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_move_falling_platform(struct mysmb_game *game, mysmb_u8 slot);
+
 /* ROM SetHiMax/ImposeGravitySprObj and MoveD_EnemyVertically.  Actor routes
  * supply their original amount and maximum-speed literals. */
 void mysmb_enemy_move_downward(struct mysmb_game *game, mysmb_u8 slot,

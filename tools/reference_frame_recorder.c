@@ -28,6 +28,8 @@
 #include "../test/engine_tail_fixture.h"
 #include "../test/engine_slots_fixture.h"
 #include "../test/engine_environment_fixture.h"
+#include "../test/engine_warp_fixture.h"
+#include "../test/engine_normal_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
 #include "core/driver.h"
@@ -1352,6 +1354,18 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_engine_normal_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(651 + block_scenario);
+            continue;
+        }
+        block_scenario = mysmb_engine_warp_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(641 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_engine_cannon_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1741,6 +1755,12 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 652u && t26_fixture <= 707u)
+                    mysmb_engine_normal_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 652u));
+                else if (t26_fixture >= 642u && t26_fixture <= 651u)
+                    mysmb_engine_warp_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 642u));
                 else if (t26_fixture >= 617u && t26_fixture <= 641u)
                     mysmb_engine_cannon_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 617u));

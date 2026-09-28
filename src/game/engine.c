@@ -3,8 +3,6 @@
 #include "game/area.h"
 #include "game/player.h"
 #include "game/objects.h"
-#include "game/enemy/core.h"
-#include "game/enemy/frenzy.h"
 #include "game/oam/oam.h"
 
 enum {
@@ -84,36 +82,10 @@ void mysmb_game_engine(struct mysmb_game *game)
     area_source.prg = game->area_prg;
     area_source.prg_size = game->area_prg_size;
     mysmb_game_engine_actors(game, &area_source);
-    mysmb_objects_check_hazard_enemy_collision(game);
-    mysmb_objects_check_bullet_bill_stomp(game);
-    mysmb_objects_check_bloober_stomp(game);
-    mysmb_objects_check_lakitu_stomp(game);
-    mysmb_objects_check_hammer_bro_stomp(game);
-    mysmb_objects_check_paratroopa_stomp(game);
-    mysmb_objects_step_bullet_bills(game);
-    mysmb_objects_step_piranha_plants(game);
-    mysmb_objects_step_swimming_cheep_cheeps(game);
-    mysmb_objects_step_podoboos(game);
-    mysmb_objects_step_bloobers(game);
-    mysmb_objects_step_jumping_paratroopas(game);
-    mysmb_objects_step_red_paratroopas(game);
-    mysmb_objects_step_flying_green_paratroopas(game);
-    mysmb_objects_step_flying_cheep_cheeps(game);
-    mysmb_objects_step_firebars(game);
-    mysmb_objects_step_platforms(game);
-    mysmb_objects_step_bowsers(game);
-    mysmb_objects_draw_bowsers(game);
-    mysmb_objects_step_bowser_flames(game);
-    mysmb_objects_step_star_flags(game);
-    mysmb_objects_step_fireworks(game);
-    mysmb_enemy_step_lakitus(game);
-    mysmb_enemy_step_spiny_eggs(game);
-    mysmb_objects_step_hammer_bros(game);
     /* ROM GameEngine retains its own three-call player/OAM sequence. */
     mysmb_oam_get_player_offscreen_bits(game);
     mysmb_oam_relative_player_position(game);
     mysmb_oam_render_player(game);
-    mysmb_objects_step_vine(game);
     mysmb_area_apply_block_replacements(game);
     mysmb_game_engine_blocks(game);
     mysmb_objects_step_misc(game);

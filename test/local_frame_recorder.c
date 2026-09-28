@@ -24,6 +24,8 @@
 #include "engine_tail_fixture.h"
 #include "engine_slots_fixture.h"
 #include "engine_environment_fixture.h"
+#include "engine_warp_fixture.h"
+#include "engine_normal_fixture.h"
 #include "engine_cannon_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -1148,6 +1150,14 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-final-question-high") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 86U; }
+        else if ((block_scenario = mysmb_engine_normal_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(651 + block_scenario);
+        }
+        else if ((block_scenario = mysmb_engine_warp_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(641 + block_scenario);
+        }
         else if ((block_scenario = mysmb_engine_cannon_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(616 + block_scenario);
@@ -1380,6 +1390,10 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
+            else if (t26_fixture >= 652U && t26_fixture <= 707U)
+                mysmb_engine_normal_fixture(game.ram, (mysmb_u8)(t26_fixture - 652U));
+            else if (t26_fixture >= 642U && t26_fixture <= 651U)
+                mysmb_engine_warp_fixture(game.ram, (mysmb_u8)(t26_fixture - 642U));
             else if (t26_fixture >= 617U && t26_fixture <= 641U)
                 mysmb_engine_cannon_fixture(game.ram, (mysmb_u8)(t26_fixture - 617U));
             else if (t26_fixture >= 605U && t26_fixture <= 616U)

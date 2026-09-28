@@ -1,3 +1,4 @@
+#include "game/enemy/actor_slots.h"
 #include "game/enemy/frenzy.h"
 #include "game/enemy/movement.h"
 #include "game/enemy/init.h"
@@ -89,37 +90,42 @@ static mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game,
 
 /* ROM MoveLakitu and PlayerLakituDiff.  Enemy_X_Speed and
  * Enemy_Y_Speed are LakituMoveSpeed and LakituMoveDirection in this route. */
+void mysmb_enemy_step_lakitus_slot(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 speed;
+
+    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
+        game->ram[MYSMB_ENEMY_ID + slot] != 17U) return;
+    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
+        mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
+        return;
+    }
+    if (game->ram[MYSMB_ENEMY_STATE + slot] != 0U) {
+        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
+        speed = 0x10U;
+    }
+    else {
+        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
+        speed = mysmb_enemy_player_lakitu_difference(game, slot);
+        if (speed == 0U && game->ram[MYSMB_ENEMY_X_SPEED + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] != 0U) return;
+    }
+    game->ram[MYSMB_ENEMY_X_SPEED + slot] = speed;
+    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+    if ((game->ram[MYSMB_ENEMY_Y_SPEED + slot] & 1U) == 0U) {
+        game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(0U - speed);
+        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
+    }
+    mysmb_world_move_enemy_horizontally(game, slot);
+}
+
+/* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_enemy_step_lakitus(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    mysmb_u8 speed;
-
-    for (slot = 0U; slot < 5U; ++slot) {
-        if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-            game->ram[MYSMB_ENEMY_ID + slot] != 17U) continue;
-        if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-            mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
-            continue;
-        }
-        if (game->ram[MYSMB_ENEMY_STATE + slot] != 0U) {
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-            speed = 0x10U;
-        }
-        else {
-            game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
-            speed = mysmb_enemy_player_lakitu_difference(game, slot);
-            if (speed == 0U && game->ram[MYSMB_ENEMY_X_SPEED + slot] != 0U &&
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] != 0U) continue;
-        }
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = speed;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
-        if ((game->ram[MYSMB_ENEMY_Y_SPEED + slot] & 1U) == 0U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(0U - speed);
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-        }
-        mysmb_world_move_enemy_horizontally(game, slot);
-    }
+    for (slot = 0U; slot < 5U; ++slot)
+        mysmb_enemy_step_lakitus_slot(game, slot);
 }
 
 /* ROM LakituAndSpinyHandler.  InitEnemyFrenzy enters with the current
@@ -182,38 +188,43 @@ void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
 }
 
 /* ROM $bb28 MoveD_EnemyVertically, selected by Enemy_State=$05 for eggs. */
-void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game)
+void mysmb_enemy_step_spiny_eggs_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
     struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
 
-    for (slot = 0U; slot < 5U; ++slot) {
-        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
-            game->ram[MYSMB_ENEMY_ID + slot] == 18U &&
-            game->ram[MYSMB_ENEMY_STATE + slot] == 5U) {
-            /* EnemyToBGCollisionDet -> LandEnemyProperly ->
-             * ProcEnemyDirection.  A landed egg is reset to ordinary Spiny
-             * state before RunNormalEnemies takes ownership next frame. */
-            tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
-                                                   &terrain) != 0U ?
-                terrain.metatile : 0U;
-            if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x25U &&
-                tile != 0U && tile != 0x26U && tile != 0xc2U &&
-                tile != 0xc3U && tile != 0x5fU && tile != 0x60U &&
-                (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-                game->ram[MYSMB_ENEMY_Y + slot] =
-                    (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
-                game->ram[MYSMB_ENEMY_X_SPEED + slot] = 8U;
-                game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-                continue;
-            }
-            mysmb_enemy_move_downward(game, slot, 0x20U, 3U);
+    if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+        game->ram[MYSMB_ENEMY_ID + slot] == 18U &&
+        game->ram[MYSMB_ENEMY_STATE + slot] == 5U) {
+        /* EnemyToBGCollisionDet -> LandEnemyProperly ->
+         * ProcEnemyDirection.  A landed egg is reset to ordinary Spiny
+         * state before RunNormalEnemies takes ownership next frame. */
+        tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
+                                               &terrain) != 0U ?
+            terrain.metatile : 0U;
+        if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x25U &&
+            tile != 0U && tile != 0x26U && tile != 0xc2U &&
+            tile != 0xc3U && tile != 0x5fU && tile != 0x60U &&
+            (game->ram[MYSMB_ENEMY_Y + slot] & 0x0fU) <= 0x0cU) {
+            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+            game->ram[MYSMB_ENEMY_Y + slot] =
+                (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 8U;
+            game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+            return;
         }
+        mysmb_enemy_move_downward(game, slot, 0x20U, 3U);
     }
+}
+
+/* Temporary bulk caller while the engine vector is migrated. */
+void mysmb_enemy_step_spiny_eggs(struct mysmb_game *game)
+{
+    mysmb_u8 slot;
+    for (slot = 0U; slot < 5U; ++slot)
+        mysmb_enemy_step_spiny_eggs_slot(game, slot);
 }
 
 /* ROM InitEnemyFrenzy -> InitFlyingCheepCheep.  It receives the current

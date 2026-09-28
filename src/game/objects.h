@@ -24,6 +24,9 @@ void mysmb_objects_finish_power_up(struct mysmb_game *game);
 /* ROM EnemyToBGCollisionDet through DoEnemySideCheck. */
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_enemy_background_current(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
+                                        mysmb_u8 preserve_collision_boxes);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
 /* ROM RunRetainerObj through EnemyGfxHandler. */
 void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);

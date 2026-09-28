@@ -1,10 +1,26 @@
 #include "game/enemy/core.h"
 #include "game/enemy/stream.h"
+#include "game/enemy/actor_slots.h"
 #include "game/objects.h"
 #include "game/oam/oam.h"
 #include <string.h>
 
 static unsigned int unexpected;
+#define UNEXPECTED_SLOT(name) \
+void name(struct mysmb_game *game,mysmb_u8 slot) \
+{ (void)game;(void)slot;++unexpected; }
+UNEXPECTED_SLOT(mysmb_objects_step_bowser_flames_slot)
+UNEXPECTED_SLOT(mysmb_objects_step_fireworks_slot)
+UNEXPECTED_SLOT(mysmb_objects_step_platforms_slot)
+UNEXPECTED_SLOT(mysmb_objects_step_bowsers_slot)
+UNEXPECTED_SLOT(mysmb_objects_draw_bowsers_slot)
+UNEXPECTED_SLOT(mysmb_objects_step_star_flags_slot)
+UNEXPECTED_SLOT(mysmb_objects_step_jumpspring)
+#undef UNEXPECTED_SLOT
+mysmb_u8 mysmb_objects_step_firebars_slot(struct mysmb_game *game,mysmb_u8 slot)
+{ (void)game;(void)slot;++unexpected;return 0U; }
+void mysmb_objects_step_vine(struct mysmb_game *game)
+{ (void)game;++unexpected; }
 void mysmb_objects_draw_retainer(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++unexpected; }
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game,mysmb_u8 slot)

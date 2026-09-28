@@ -2,11 +2,13 @@
 
 ## Current Work
 
-**M2 T31 S2 remains active at 576 / 1,992; 34 of 37 received labels complete. GameEngine, RunEnemyObjectsCore and JmpEO remain incomplete.**
+**M2 T31 S2 remains active at 576 / 1,992; 34 of 68 received labels complete. Engine/vector/warp and the admitted normal-enemy caller, movement, vertical and background-entry chains remain incomplete.**
 
-S2 P2 combines slot scheduling, whirlpools, cannons and exact child corrections.
-The remaining work is full current-slot enemy-vector dispatch and removal of
-engine-wide actor passes. No parent completion or S/T closure is claimed.
+S2 P3 integrates current-slot actor dispatch and the admitted normal-enemy
+caller/movement/background entries, removing the late engine-wide actor passes.
+Three artifacts are refreshed; Windows self-tests and hidden-window response
+probes pass, while DOS remains link-only. Original-route graphics differences
+and named child/structural gaps remain; no new match or S/T closure is claimed.
 
 ## M2 T31 S2 Packet
 
@@ -15,17 +17,17 @@ engine-wide actor passes. No parent completion or S/T closure is claimed.
 | Identifier Mode | M2 T31 S2, source-order implementation. |
 | Admission And Approval | Owner-approved goal continuation after committed S1; transfer-122 from T24 S2. |
 | Objective | Restore exact GameEngine caller sequence and its palette/music/parser tail. |
-| Non-goals | No child repair outside the explicit 22-node environment and six-node cannon-child amendments; no fake scheduler placeholders or platform game logic. |
-| Reference Baseline | Original run: 542 / 1,992, nine expected. Environment amendment: 549, 22 expected. Cannon-child amendment: 549, six scope/four expected, maximum 553; combined forecast ceiling 577, with two extra dispatch labels retained incomplete pending their full implementation. |
+| Non-goals | No child repair outside the explicit environment, cannon-child, WarpZoneObject, normal-enemy caller/movement and background-entry amendments; no fake scheduler placeholders or platform game logic. |
+| Reference Baseline | Earlier runs retain their original forecasts and proofs. At 576 / 1,992: three engine/vector scope/expected labels, ceiling 579; WarpZoneObject, ceiling 577; seventeen normal-chain scope/expected labels, ceiling 593; three vertical-entry labels, ceiling 579; ten background-entry labels, ceiling 586. Exact sets are in the linked proposal and ledger; combined ceiling 610. |
 | Candidate Proposal | [T31 S2 chain](../proposals/m2/game-dispatcher.md#s2-admission-gameengine-caller-and-tail-chain). |
 | Files And ABI Surface | Shared engine and caller helpers; admitted cannon/whirlpool game owners and relevant child call seams; focused tests/recorders/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Original source call/branch audit, controlled NMI routes, observable call-boundary tests, ordinary-route regressions and three builds. |
 | Expected Markers | Fireball, six enemy/floatey slots, player OAM, block order, misc/cannons/whirlpools, flagpole/timer/colors, music/star branches and parser tail. |
 | Asset Needs | Refresh all three existing EXEs per P; DOS remains link-only. |
-| Reporting Requirements | Original nine, environment 22 and cannon-child six exact node dispositions, separate two-track evidence, concrete missing callers and artifact hashes. |
+| Reporting Requirements | Original nine, environment 22, cannon-child six, WarpZoneObject, normal-chain seventeen, vertical-entry three and background-entry ten exact node dispositions; separate two-track evidence, concrete missing callers and artifact hashes. |
 | Stop Conditions | Unadmitted child repair, suppressed mismatch, fake scheduler, source-order violation or unsupported credit. |
-| Exit Criteria | All 37 received nodes proven or exactly transferred; missing required call boundaries prevent GameEngine/ProcELoop completion. |
+| Exit Criteria | All 68 received nodes proven or exactly transferred; missing required call boundaries prevent GameEngine completion. |
 | Original Owner Request | Complete original-ROM logic, call structure, shared portable C and node-accountable implementation. |
 | Similar-Issue Sweep | All game-engine callers, global actor passes, slot loops, palette/music writers, parser gates and platform boundaries. |
 

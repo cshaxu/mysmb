@@ -613,3 +613,368 @@ Artifact `mysmb16.exe`: 255633 bytes; SHA-256 `75ce99495598e186bf5c22edd84c30ada
 Artifact `mysmb32.exe`: 314547 bytes; SHA-256 `065978180e384958d3152fe8c9e682c73c3bb7c04c343cc623adfdd2a4ebb677`.
 
 Artifact `mysmb64.exe`: 321784 bytes; SHA-256 `0e0d766d14148d3601b744ac1c366319790c539d088305f2a5fd0efc2d0c0192`.
+
+## S2 remaining dispatch run
+
+The three remaining received labels are GameEngine, RunEnemyObjectsCore and
+JmpEO, all audited mismatches. Register a continuation forecast at 576 /
+1,992: scope and expected set are those three, maximum 579. Custody remains
+S2; this does not create another S or reopen the 34 completed labels.
+
+First expose current-slot entries from the existing actor-array routines,
+preserving their bodies and temporary bulk callers until the original vector
+can replace those callers as a complete group. No child-body match credit or
+new actor algorithm follows from this extraction. Compare the extracted
+aggregate behavior with the committed P2 implementation and retain existing
+source proofs. Then bind all original vector targets and remove GameEngine's
+extra global passes; verify every target/slot at independent call boundaries
+and with controlled original NMI routes, plus ordinary integrated regressions.
+The current scope permits child call-seam extraction, not unadmitted repairs
+to collision, movement or graphics interiors. A missing vector target must
+receive explicit dependency intake before implementation; it cannot become
+a stub or silently borrow an unrelated child.
+
+The extraction must preserve bulk-loop early exits and inner-loop continues;
+simple text replacement across nested loops is not acceptable. Existing
+compatibility entry points are temporary integration scaffolding, not an
+additional gameplay path to retain after GameEngine migration. Keep the
+combined three-product P delivery and source/operational verification split.
+
+Current-slot preparation now exposes nineteen entries across objects,
+endgame_objects, enemy/frenzy and oam/bowser_gfx, declared by
+game/enemy/actor_slots.h. Seventeen movement/state families, firebar processing
+and Bowser drawing retain their existing aggregate callers until integration.
+Hammer Bros retains its sixth slot. Firebar's inner ball-loop continues remain
+local; its legacy injury return is represented by a temporary aggregate-stop
+result so extraction does not accidentally process later slots. That result
+is not claimed as an original register or source return convention.
+
+Operational extraction evidence in ignored build/m2-t31-s2-p3 compares all
+2,048 RAM bytes with committed P2 for 760 cases on each native width, covering
+nineteen entries, five active-slot masks (including six active slots), four
+phase/timer combinations and two states. Cases include player-contact inputs;
+all snapshots agree across predecessor/current and x86/x64. Strict C90
+compilation passes. In addition, 108 controlled native recordings and four
+600-frame Start/right or idle/demo recordings are byte-identical to P2.
+Raw snapshots and recordings total 17,285,036 bytes, within the 20 MB budget;
+each recorder invocation has a twenty-second limit. These are preservation
+checks, not new original-ROM equivalence claims or credit for child bodies.
+
+The source audit identifies remaining integration limits explicitly:
+RunFirebarObj dispatch covers IDs $1b-$22, whereas the legacy child filters
+out $20-$22 and treats only $1f as long. Original BowserGfxHandler writes the
+duplicate object's coordinates/state/direction/ID and switches ObjectOffset;
+the legacy direct two-half renderer does not reproduce that state path.
+WarpZoneObject has no implementation. Exact dependency intake precedes any
+repair of those child algorithms. No empty targets, borrowed unrelated actor
+paths, or passing predecessor snapshots can close these gaps. The three parent
+labels remain incomplete, the total remains 576, and the combined P has not
+been packaged or committed.
+
+## S2 missing-vector-target dependency intake
+
+The coordinator accepts WarpZoneObject from M2 Td S5 custody under the
+owner's continuing M2 mandate (transfer-126). This is the concrete missing
+target required by RunEnemyObjectsCore, not a new T or S. Its incoming state
+is open; scope and expected set contain only WarpZoneObject, baseline 576,
+maximum 577 for this added run. Together with the three retained parent
+labels, the combined ceiling is 580; S2 receives 38 labels, 34 complete.
+Other deferred timer/fireball nodes remain with their existing receivers.
+
+Implement source $b7a4: ScrollLock zero returns; otherwise the bitwise AND
+of Player_Y_Position and Player_Y_HighPos controls the return. On zero,
+clear ScrollLock, increment WarpZoneControl with eight-bit wrap, then call
+the existing EraseEnemyObject for the current slot. Do not replace this
+unusual AND with a guessed height comparison. Source/vector-byte audit and
+controlled NMI warp routes must prove the branches and erase handoff;
+independent tests vary both Y bytes, lock, control wrap and all six slots.
+The existing provenance, trace limits and combined delivery apply. No new
+match is granted until both verification tracks are complete.
+
+The original full vector may now call existing current-slot actor entries.
+Parent target-selection tests identify every original target, independently
+of unfinished child interiors. Remove each migrated special-object aggregate
+call from GameEngine in the same change to avoid double updates. Normal-enemy
+global movement/collision passes remain an explicit integration gap until
+RunNormalEnemies' source call chain replaces them; no parent completion is
+claimed from the special-object vector alone.
+
+The missing-target admission gate passes: one unique open label, expected
+delta one and ceiling 577. Current implementation reloads ObjectOffset in
+enemy/core.c and routes all source ID families through their current-slot
+entries. GameEngine no longer calls the firebar, platform, Bowser motion,
+Bowser drawing, Bowser flame, star flag, fireworks or vine aggregate passes.
+Vine's source slot-five rejection is retained. Large/small platform targets
+still enter the combined legacy body; Bowser still uses its legacy motion and
+drawing pair. Those are explicitly incomplete child-structure mappings, not
+proof of the original target bodies or complete parent topology.
+
+WarpZoneObject now implements the exact lock, bitwise-Y, wrapped increment
+and erase sequence in the shared game layer. The
+[dispatch test](../../../test/enemy_dispatch_smoke.c) checks all 54 valid IDs
+across six slots, current-slot arguments, the existing compound child calls,
+and 131,072 warp input combinations with full-RAM expected write sets.
+The existing cannon-child test keeps its NoRunCode assertions and adds only
+unexpected-call stubs for the newly linked child seams. Both tests pass on
+x86/x64 under strict C90. The eleven retained focused tests also pass on both
+widths. No platform source or host-specific gameplay branch changes.
+
+Ten controlled original NMI warp routes cover all six slots, zero lock,
+both bitwise-AND outcomes including a noncanonical high byte, control wrap,
+and exact EraseEnemyObject entry. Both original conditionals take both edges.
+All 1,782 persistent RAM bytes and the complete output match both native
+widths, with no output exception. The
+[warp verifier](../../../test/verify_engine_warp_routes.py) also binds all
+34 original enemy-vector entries to their reviewed target addresses in the
+owner ROM. That table check is not runtime evidence for every target.
+The fixture uses RAM inputs at NMI, never PC, stack, ROM or output patching.
+The 108 prior controlled native records and four ordinary 600-frame records
+remain byte-identical to accepted P2 after this dispatcher integration.
+
+Evidence remains in ignored build/m2-t31-s2-p3 under the admitted limits.
+This is ongoing work in the same combined P: three-platform delivery is
+pending, no tracker match is granted yet, and GameEngine/RunEnemyObjectsCore/
+JmpEO remain incomplete. Next integration must restore the normal-enemy
+current-slot call chain and the identified special-target structural gaps;
+it must not declare closure while the extra normal-actor passes remain.
+
+## S2 normal-enemy caller and movement dependency intake
+
+Transfer-127 accepts seventeen open labels from T19 S5 into the same active
+S2, under the continuing owner mandate: RunNormalEnemies, SkipMove,
+EnemyMovementSubs, NoMoveCode, XSpeedAdderData, RevivedXSpeed, MoveNormalEnemy,
+FallE, MEHor, SlowM, SteadM, AddHS, ReviveStunned, SetRSpd,
+MoveDefeatedEnemy, ChkKillGoomba and NKGmba. Baseline 576, scope/expected
+seventeen, added-run ceiling 593; combined remaining-run ceiling 597.
+S2 now receives 55 labels, with 34 complete. No separate S/P is created.
+
+This chain restores the ordinary-object entry sequence, movement-vector
+selection and its normal-movement target. The two tables are adjacent to
+ProcHammerBro in source but are consumed by this movement chain; Hammer Bro
+interiors remain outside this intake. Shared enemy/movement.c owns the
+normal-movement branch tree; caller/slot seams remain in shared game code.
+Retain eight-bit state priority (d6 before d7 before d5), vertical-before-
+horizontal calls, state-two direct horizontal entry, temporary speed adder
+and restoration, hard-mode revival table, and Goomba timer-specific erasure.
+Do not preserve the legacy defeated-enemy high-Y erasure as a substitute for
+OffscreenBoundsCheck. Existing collision/graphics child interiors remain
+uncertified and require separate exact intake for semantic repair.
+
+Source audit covers $c8e0-$c934 and $ca77-$caf8 plus table bytes $c9d0-$c9d7.
+Independent call-boundary tests exercise state precedence, timer/ID/frame/
+hard-mode cases, temporary speed and restoration. Original controlled NMI
+routes must reach these branches through the actual enemy loop; no leaf PC
+or stack injection. Ordinary Start/demo and existing engine routes remain
+regression gates, with every difference retained. The same combined build,
+three-artifact delivery, local provenance and trace limits apply. This
+intake grants no completion credit to the seventeen nodes or their children.
+
+The vertical call boundary additionally requires MoveD_EnemyVertically,
+MoveFallingPlatform and ContVMove from T17 S6 (transfer-128). The existing
+parameterized gravity primitive lacks this source entry's exact-state-five
+selection of force $20 instead of $3d. Accept those three open labels in the
+same S and combined P: baseline 576, expected three, added-run ceiling 579;
+combined ceiling 600, 58 received labels. The shared movement owner restores
+that selector and reuses the existing gravity arithmetic. No other vertical
+motion target or gravity-internal node receives match credit. The normal
+NMI state-five cases must lose their $0434 force mismatch; graphics-work-byte
+and OAM differences remain explicit unfinished child evidence.
+
+Implementation progress in the same P: enemy/movement.c now owns
+MoveNormalEnemy's full state-selection tree, both speed tables and the exact
+MoveD_EnemyVertically state-five force selector. The ordinary portion of
+objects.c calls terrain, enemy collision, player collision and timer-gated
+movement in source order, replacing its inline defeated/revival/movement
+approximation. It no longer erases a defeated actor merely because high Y is
+two. The legacy graphics/ID early returns and separately scheduled special
+normal-enemy movement remain explicitly pending caller integration.
+
+The independent [movement test](../../../test/normal_enemy_movement_smoke.c)
+passes 1,253,376 cases per native width: seventeen selected state combinations,
+six slots, all 256 horizontal speed bytes, four IDs, two hard-mode values,
+two frame phases and three interval timers. It observes gravity-before-
+horizontal handoff, exact temporary speed/restoration, state priority,
+revival writes, state-five force and erase/no-erase decisions. Both native
+builds use strict C90. ROM bytes independently confirm both four-byte tables.
+
+Thirty-two controlled original NMI routes execute all eleven movement-code
+labels and all three vertical-entry labels. The power-up equality edge at
+$caab is not exercised by these ordinary-enemy routes; the following BNE at
+$caad is unconditional after the failed equality comparison. Other executed
+movement conditionals take both outcomes. Native state, speed, force and
+coordinate arrays agree after correcting the source state-five selector.
+However **none of the 32 routes is accepted as whole-frame ROM equivalence**:
+all retain differences at graphics working bytes $eb/$ec/$ed/$ef, and some
+retain OAM backing differences. Complete latched output equality does not
+override those failures. No extra exclusion or tracker match is introduced.
+The diagnostic keeps full differences in normal-route-diagnostic.json and
+source coverage in normal-source-coverage.json below the existing build root.
+Raw snapshots, records and PC coverage occupy 18,414,084 bytes within the
+20 MB allowance. Existing eleven focused tests on each width pass; ordinary
+and prior controlled regression checks remain required after further edits.
+
+Similar-issue sweep: the old normal-core defeated high-Y erase, partial
+revival logic and direct movement block are removed from their production
+caller. Other actor families' distinct movement/graphics/collision bodies
+retain their own pending obligations. The new movement owner does not add
+a timer gate or platform decision; its caller owns the timer. The three
+vertical entries reuse existing gravity arithmetic, without claiming that
+arithmetic's entire source family. S2 remains active at 576 with combined
+delivery and caller/graphics dependencies unfinished.
+
+## S2 background-entry prerequisite for the normal caller
+
+Accept transfer-129 from T17 S6 for ten open labels: ExEBG,
+EnemyToBGCollisionDet, DoIDCheckBGColl, HBChk, CInvu, YesIn, ExEBGChk,
+SubtEnemyYPos, EnemyJump and DoSide. Scope/expected ten at baseline 576,
+added-run ceiling 586; combined ceiling 610, 68 received labels. This same-S
+dependency is necessary because the existing terrain function is only the
+walking-enemy body: calling it for every original normal ID would incorrectly
+probe flying enemies. Restore the source state/Y/ID entry gates, jump-enemy
+landing/bounce path and current-slot handoffs to the existing walking,
+hammer and side-check children. Those child interiors remain uncertified.
+
+The same integration extracts existing player-collision special cases to
+current-slot entries without changing their algorithms, moves their calls
+behind the caller's single PlayerEnemyCollision boundary, and removes the
+corresponding global scans. Keep each incomplete child contract explicit;
+this does not certify generic collision fidelity. Independent caller tests
+must observe complete ordering, timer decisions and post-collision ID reload.
+Original NMI and existing actor regressions must retain all discrepancies.
+No new P, output exception, platform gameplay or fake no-op child is allowed.
+
+Current integration adds enemy/normal.c as the single RunNormalEnemies and
+EnemyMovementSubs caller owner, shared by every target build list. It always
+performs attribute clear, offscreen, relative position, graphics, bounding
+box, background collision, enemy collision, player collision, timer-gated
+movement and final bounds checking. Graphics' legacy handled return no
+longer exits the caller. Movement reads the current ID after collision.
+Both NoMoveCode IDs ($09/$13) select no movement; $12 selects MoveNormalEnemy,
+including its exact state-five path, rather than a second late egg pass.
+
+The six existing special player-collision scans now have current-slot
+entries and one caller seam. Their aggregate compatibility interfaces keep
+their original early-stop contract but have no production GameEngine call.
+Walking terrain's side/bump bodies are extracted once and reused by EnemyJump.
+The new background entry rejects flying IDs before walking terrain and
+routes Hammer Bro to its existing terrain child. Bullet and Piranha graphics
+and Hammer Bro terrain are removed from movement entries; compatibility
+aggregate interfaces retain those old combined operations for existing tests.
+GameEngine loses eighteen remaining late normal-actor calls, in addition to
+the eight special-actor calls already removed. No global actor pass remains
+between ProcELoop and the player OAM sequence.
+
+The [normal caller test](../../../test/normal_enemy_caller_smoke.c) verifies
+756 combinations per native width: all 21 IDs, six slots, both initial timer
+states, and collision children that preserve state, change the movement ID,
+or change the timer. A graphics child returning handled and a collision child
+clearing the flag cannot skip the remaining caller sequence. Child callbacks
+observe order, arguments, attribute clear, offscreen handoff and both NoMove
+targets. Both strict C90 builds pass; the owner ROM's 21 movement vector words
+also match the reviewed address map. This proves those boundary tests, not
+the unfinished child algorithms. OpenNT large-model compilation of the new
+normal.c succeeds and emits an object; no new DOS runtime or link claim.
+
+All 108 accepted controlled native records and four 600-frame ordinary
+records remain byte-identical to P2. Eleven existing focused tests pass on
+both widths after integration. The 32 normal movement ROM routes retain
+their previously reported graphics-work-byte/OAM differences and remain
+unaccepted as whole-frame matches. Background-entry branch-specific ROM
+evidence and broader actor-family routes are still needed. Existing regular
+Bullet Bill movement differs from original MoveBulletBill; the specialized
+player-collision adapter is still not the complete original shared collision
+tree. Firebar, platform and Bowser child gaps remain explicit. They cannot
+be certified merely because this caller now reaches them in the right order.
+
+S2 remains at 576 with no additional completion credit, commit or artifact
+replacement. The combined delivery must finish the admitted proofs and
+resolve the named structural dependencies rather than retain a second
+frame-wide execution path or declare the old limited tests full-game proof.
+
+The [background-entry test](../../../test/enemy_background_entry_smoke.c)
+now exercises the production entry and children on both native widths under
+strict C90. Per width, 608,082 rejected-entry combinations cover six slots,
+all 54 vector IDs, every Y byte and eight state patterns. They require all
+2,048 RAM bytes to remain unchanged. A further 24,576 jumping-enemy cases
+cover every speed byte, six slots, empty/non-solid/solid/bumped-block samples
+and a side wall. Their expected landing, vertical-force, speed and direction
+writes are explicit, including the block-buffer pointer scratch writes.
+The wall lies on the pre-landing probe row: landing moves the probe upward,
+so reversing against that wall afterward would fail the call-order test.
+Both widths pass. Results are retained as background-entry-tests.json in
+the existing ignored P3 root; no raw ROM trace or larger trace budget is added.
+
+This is operational evidence for the admitted entry contract, not original
+NMI equivalence or certification of the walking/hammer/side child interiors.
+The source audit covers the wrapped Y gate ($06 through $c1), state d5,
+Spiny's $25 threshold, ID dispatch and EnemyJump's wrapped speed comparison.
+The ten labels remain incomplete pending their original-route evidence.
+No additional dependency intake or artifact replacement accompanies this
+test addition; S2 and the existing combined P remain open.
+
+Original-route follow-up extends the existing normal fixture to cases 32..55,
+without changing cases 0..31 or introducing a new fixture mechanism. These
+24 source-RAM setups execute through NMI, GameEngine and the real current-slot
+enemy caller. Original PC coverage reaches all ten admitted background labels:
+ExEBG, EnemyToBGCollisionDet, DoIDCheckBGColl, HBChk, CInvu, YesIn, ExEBGChk,
+SubtEnemyYPos, EnemyJump and DoSide. The state/Y/Spiny gates, jump speed gate,
+empty/non-solid probes and solid landing paths take both relevant outcomes.
+EnemyJump's repeated Y guard cannot take its rejection edge through this
+caller because the identical earlier gate has already passed. The power-up
+ID equality edge is not covered by these normal-enemy routes; it needs the
+existing power-up caller path, not injection into a normal-ID vector entry.
+
+All 24 scenarios run against both native widths. Their latched output agrees,
+but no whole-frame match is accepted: 23 scenarios retain graphics working
+byte/OAM differences, and the Bloober scenario (50) additionally differs at
+enemy Y $cf, relative Y $03b9 and bounding coordinates $04b1/$04b3. These are
+retained as observed whole-chain differences, not attributed to a repaired
+child or silently excluded. The green jumping-enemy routes have no additional
+persistent differences outside the reported graphics bytes/OAM. Full results
+and PC counts are in background-route-diagnostic.json in the P3 build root.
+Raw records and coverage now total 19,106,916 bytes, within the unchanged
+20 MB limit; each recorder call has a twenty-second timeout. Both native
+recorders and the reference recorder were rebuilt for the extended fixture.
+Global progress remains 576; original-route reachability does not itself
+grant completion credit or certify the unfinished children.
+
+## S2/P3: current-slot integration checkpoint
+
+This combined P delivers the actor-slot extraction, RunNormalEnemies and
+EnemyMovementSubs owner, admitted normal/vertical/background entries, warp
+handler, and removal of late engine-wide actor scans. It is an implementation
+checkpoint in the existing S, not S closure or whole-game certification.
+The previously described ROM differences remain visible and all 34 pending
+labels retain their status. Global progress remains 576 / 1,992; 34 of this
+S's 68 received labels are complete from earlier parts.
+
+Both Windows targets rebuild all 58 shared C sources with strict C90 warnings
+as errors, link successfully and pass their self-tests. Hidden two-second
+launch probes find a MySMB window and responsive message handling on x86 and
+x64 without user input injection. This does not reproduce or claim to fix
+the owner's earlier startup report. OpenNT large-model compilation and DOS
+link succeed with the existing conversion/OLDNAMES warnings. DOS still lacks
+owner-data binding and remains link-only, not a playable DOS validation.
+
+Eleven existing focused tests per native width pass. The previously recorded
+dispatch, movement, normal-caller and background-entry tests provide their
+bounded operational evidence. All 108 controlled native runs and four
+600-frame ordinary runs remain byte-identical to P2. The platform-purity
+gate passes; no platform file changes are included. Original normal and
+background routes retain every reported mismatch; their latched-output
+agreement is not substituted for persistent-RAM agreement.
+
+The three existing owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257897 | 9082c7172f12fb97a1bd628471ab900762c2c057b8a0a118c5c72a1270a85c7e |
+| mysmb32.exe | 320456 | 1341789e671f9e8895642b692179d04f6c86e6f80e39f74a2ca087c3e445e8c2 |
+| mysmb64.exe | 327180 | d1d5aae9f7d0d1e576822a76a8894b9afc0cb59ea573ca414e46b70af0b66ac4 |
+
+Builds, logs, raw comparisons and neutral result JSON remain under the
+existing ignored P3 root. This checkpoint adds no new S, dependency intake,
+trace exclusion or completion credit. Next work must distinguish the admitted
+caller's own proof from unfinished child contracts; platform/Bowser/firebar
+dispatch structure and the stated source-route coverage gaps still prevent
+claiming complete parent equivalence.

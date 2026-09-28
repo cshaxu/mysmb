@@ -1,5 +1,6 @@
 #include "game/oam/oam.h"
 #include "game/objects.h"
+#include "game/enemy/actor_slots.h"
 
 enum { F=0x000fU,I=0x0016U,S=0x001eU,D=0x0046U,P=0x006eU,X=0x0087U,Y=0x00cfU,
        RX=0x03aeU,RY=0x03b9U,O=0x03d1U,A=0x03c5U,SO=0x06e5U,ASO=0x06ecU,
@@ -45,31 +46,37 @@ static void draw_half(struct mysmb_game *g, const mysmb_u8 *t, mysmb_u8 o,
     hide(g,o,bits);
 }
 
-/* ROM BowserGfxHandler. The rear half is a transient original object, emitted
- * here into the alternate OAM group without adding a persistent C entity. */
-void mysmb_objects_draw_bowsers(struct mysmb_game *g)
+/* Legacy Bowser graphics child, extracted for current-slot dispatch.
+ * Original BowserGfxHandler writes the duplicate object slot; this existing
+ * direct two-half renderer does not yet reproduce those RAM writes. */
+void mysmb_objects_draw_bowsers_slot(struct mysmb_game *g, mysmb_u8 n)
 {
     static const mysmb_u8 front[6]={0xbfU,0xbeU,0xc1U,0xc0U,0xc2U,0xfcU};
     static const mysmb_u8 rear[6]={0xc4U,0xc3U,0xc6U,0xc5U,0xc8U,0xc7U};
     static const mysmb_u8 open[6]={0xbfU,0xbeU,0xcaU,0xc9U,0xc2U,0xfcU};
     static const mysmb_u8 step[6]={0xc4U,0xc3U,0xc6U,0xc5U,0xccU,0xcbU};
-    const mysmb_u8 *ft,*rt; mysmb_u16 w,z; mysmb_u8 n,fx,rx,fb,rb,delta,ro,state;
-    for (n=0U;n<5U;++n) {
-        if (g->ram[F+n]==0U || g->ram[I+n]!=45U) continue;
-        w=(mysmb_u16)(((mysmb_u16)g->ram[P+n]<<8U)|g->ram[X+n]);
-        z=(mysmb_u16)(((mysmb_u16)g->ram[SP]<<8U)|g->ram[SX]); fx=(mysmb_u8)(w-z);
-        g->ram[A+n]=0U; g->ram[RX+n]=fx; g->ram[RY+n]=g->ram[Y+n];
-        fb=mysmb_objects_get_enemy_x_offscreen_bits(g,n); g->ram[O+n]=fb;
-        delta=(g->ram[D+n]&1U)!=0U?0xf0U:0x10U; rx=(mysmb_u8)(fx+delta);
-        /* ProcessBowserHalf copies the front page and changes rear X only. */
-        g->ram[X+n]=(mysmb_u8)(g->ram[X+n]+delta);
-        rb=mysmb_objects_get_enemy_x_offscreen_bits(g,n);
-        g->ram[X+n]=(mysmb_u8)(g->ram[X+n]-delta);
-        ft=(g->ram[BC]&0x80U)!=0U?open:front; rt=(g->ram[BC]&1U)!=0U?step:rear;
-        ro=g->ram[ASO+g->ram[SC]]; state=g->ram[S+n];
-        draw_half(g,ft,g->ram[SO+n],fx,g->ram[RY+n],g->ram[D+n],state,fb);
-        draw_half(g,rt,ro,rx,(mysmb_u8)(g->ram[RY+n]+((state&0x20U)!=0U?0xf8U:8U)),
-                  g->ram[D+n],state,rb);
-    }
+    const mysmb_u8 *ft,*rt; mysmb_u16 w,z; mysmb_u8 fx,rx,fb,rb,delta,ro,state;
+    if (g->ram[F+n]==0U || g->ram[I+n]!=45U) return;
+    w=(mysmb_u16)(((mysmb_u16)g->ram[P+n]<<8U)|g->ram[X+n]);
+    z=(mysmb_u16)(((mysmb_u16)g->ram[SP]<<8U)|g->ram[SX]); fx=(mysmb_u8)(w-z);
+    g->ram[A+n]=0U; g->ram[RX+n]=fx; g->ram[RY+n]=g->ram[Y+n];
+    fb=mysmb_objects_get_enemy_x_offscreen_bits(g,n); g->ram[O+n]=fb;
+    delta=(g->ram[D+n]&1U)!=0U?0xf0U:0x10U; rx=(mysmb_u8)(fx+delta);
+    /* Legacy rear-position calculation; not the source duplicate-slot path. */
+    g->ram[X+n]=(mysmb_u8)(g->ram[X+n]+delta);
+    rb=mysmb_objects_get_enemy_x_offscreen_bits(g,n);
+    g->ram[X+n]=(mysmb_u8)(g->ram[X+n]-delta);
+    ft=(g->ram[BC]&0x80U)!=0U?open:front; rt=(g->ram[BC]&1U)!=0U?step:rear;
+    ro=g->ram[ASO+g->ram[SC]]; state=g->ram[S+n];
+    draw_half(g,ft,g->ram[SO+n],fx,g->ram[RY+n],g->ram[D+n],state,fb);
+    draw_half(g,rt,ro,rx,(mysmb_u8)(g->ram[RY+n]+((state&0x20U)!=0U?0xf8U:8U)),
+              g->ram[D+n],state,rb);
 }
 
+void mysmb_objects_draw_bowsers(struct mysmb_game *g)
+{
+    mysmb_u8 n;
+    for (n=0U;n<5U;++n) {
+        mysmb_objects_draw_bowsers_slot(g,n);
+    }
+}
