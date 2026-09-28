@@ -2,34 +2,37 @@
 
 ## Current Work
 
-**M2 T31 S2 remains active at 608 / 1,992; 66 of 72 received labels complete. Six enemy-vector and normal-caller labels remain incomplete.**
+**M2 T31 S3 is active at 608 / 1,992; ten scroll-chain labels received, all open. Expected ten, maximum 618.**
 
-S2 P6 completes fourteen background-entry/jump/side-loop labels in one batch.
-Original source and 33 natural entry/return snapshots match both native widths.
-Three artifacts are refreshed; Windows self-tests and hidden-window probes
-pass. DOS links but remains without owner-data binding or gameplay proof.
-Whole-frame graphics and remaining caller contracts stay open.
+S2 closed with 66 proven labels and six accepted unfinished transfers to
+M2 T19 S5 (transfer-131). P6 artifacts remain current. T31 remains open.
 
-## M2 T31 S2 Packet
+## M2 T31 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T31 S2, source-order implementation. |
-| Admission And Approval | Owner-approved goal continuation after committed S1; transfer-122 from T24 S2. |
-| Objective | Restore exact GameEngine caller sequence and its palette/music/parser tail. |
-| Non-goals | No child repair outside the explicit environment, cannon-child, WarpZoneObject, normal-enemy caller/movement, background-entry and four-label side-check amendments; no fake scheduler placeholders or platform game logic. |
-| Reference Baseline | Earlier runs retain their original forecasts and proofs. At 576 / 1,992: three engine/vector labels, ceiling 579; WarpZoneObject, ceiling 577; seventeen normal-chain labels, ceiling 593; three vertical-entry labels, ceiling 579; ten background-entry labels, ceiling 586. At 594 / 1,992: four open side-check labels, expected four, ceiling 598. Exact sets are in the proposal and ledger; combined ceiling 614. |
-| Candidate Proposal | [T31 S2 chain](../proposals/m2/game-dispatcher.md#s2-admission-gameengine-caller-and-tail-chain). |
-| Files And ABI Surface | Shared engine and caller helpers; admitted cannon/whirlpool game owners and relevant child call seams; focused tests/recorders/build lists and three EXEs. |
+| Identifier Mode | M2 T31 S3, source-order implementation. |
+| Admission And Approval | Coordinator continuation under owner-approved M2 goal; transfer-132 from T24 S2 after S2 closure. |
+| Objective | Restore ScrollHandler through the screen-edge/position chain using original branches and byte arithmetic. |
+| Non-goals | No player physics, enemy backlog, broad offscreen child repair, or S4 entry-mode implementation. |
+| Reference Baseline | 608 / 1,992; ten open labels, ten expected matches, maximum 618. Exact source-ordered names are in the proposal and ledger. |
+| Candidate Proposal | [S3 scroll chain](../proposals/m2/game-dispatcher.md#s3-admission-scroll-and-screen-edge-chain). |
+| Files And ABI Surface | Shared player scroll owner and declarations, callers/build lists, focused tests and recorders; three EXEs per implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original source call/branch audit, controlled NMI routes, observable call-boundary tests, ordinary-route regressions and three builds. |
-| Expected Markers | Fireball, six enemy/floatey slots, player OAM, block order, misc/cannons/whirlpools, flagpole/timer/colors, music/star branches and parser tail. |
-| Asset Needs | Refresh all three existing EXEs per P; DOS remains link-only. |
-| Reporting Requirements | Original nine, environment 22, cannon-child six, WarpZoneObject, normal-chain seventeen, vertical-entry three, background-entry ten and side-check four exact node dispositions; separate two-track evidence, concrete missing callers and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, suppressed mismatch, fake scheduler, source-order violation or unsupported credit. |
-| Exit Criteria | All 72 received nodes proven or exactly transferred; child gaps remain explicit and cannot inherit parent completion. |
-| Original Owner Request | Complete original-ROM logic, call structure, shared portable C and node-accountable implementation. |
-| Similar-Issue Sweep | All game-engine callers, global actor passes, slot loops, palette/music writers, parser gates and platform boundaries. |
+| Verification | Original source/ROM branch and table audit; natural NMI entry/return comparisons; independent native tests, three builds and platform purity. |
+| Expected Markers | DEY/BMI, thresholds $50/$70, carry/page arithmetic, mirror bit 0, screen-edge borrowing, controller equality and platform-force clear. |
+| Asset Needs | Existing owner-local ROM/listing for research and build; no imported source. Refresh three EXEs per implementation P; DOS link-only. |
+| Reporting Requirements | Ten exact node dispositions, separate ROM-equivalence and operational evidence, artifact hashes and concrete child gaps. |
+| Stop Conditions | Unadmitted child repair, PC/stack/ROM patching, suppressed mismatch, platform game logic or unsupported node credit. |
+| Exit Criteria | All ten received labels proven or exactly transferred with accepted responsibility; tracker and evidence agree. |
+| Original Owner Request | Complete original-ROM logic and call structure in shared 16/32/64-bit C, in planned source order. |
+| Similar-Issue Sweep | Every scroll/screen-boundary/mirror writer and direct scroll caller; host adapters remain presentation/input only. |
+
+## M2 T31 S2 closure
+
+Received 72, proven 66, transferred six unfinished labels to existing T19 S5.
+All original nine GameEngine labels complete; aggregate progress remains
+608 / 1,992. [Exact disposition](../proposals/m2/game-dispatcher.md#s2-closure-and-exact-enemy-caller-return).
 
 ## M2 T31 S1 Packet (closed)
 

@@ -238,3 +238,15 @@ second-byte-MSB/page-select counterexample, GroundArea9/10 shared terminator,
 record cursor wrap, area-destination records and initializer Enemy_Flag gate.
 The data must accompany their actual consumer tests, not a standalone hash
 comparison or a synthetic replacement stream. No runtime fix is admitted here.
+
+## T31/S2 accepted caller backlog
+
+The coordinator accepts transfer-131 into existing M2 T19 S5 under the
+owner-approved continuing M2 mandate: RunEnemyObjectsCore, JmpEO,
+RunNormalEnemies, SkipMove, EnemyMovementSubs and NoMoveCode. All six remain
+incomplete. [Exact contracts and evidence](game-dispatcher.md#s2-closure-and-exact-enemy-caller-return)
+specify the target/caller failures and retain the known ROM differences.
+This receipt is custody only; CURRENT remains the sole execution authority.
+Re-admit these labels with their original enemy-dispatch source slice and
+the declared platform, Bowser, specialized movement, graphics and collision
+dependencies. Do not treat dispatcher closure as proof of these children.

@@ -2,8 +2,8 @@
 
 ## Status
 
-**M2 T31 open; S2 active at 608 / 1,992.** Closed T30 precedes this task in the
-source-order recovery plan. S1 is closed; S2 is the only active chain.
+**M2 T31 open; S3 active at 608 / 1,992.** Closed T30 precedes this task in the
+source-order recovery plan. S1 and S2 are closed; S3 is the only active chain.
 
 ## Exact task scope and chain plan
 
@@ -1334,3 +1334,75 @@ These retain their original caller/vector obligations, including distinct
 platform/enemy target bindings and unresolved normal graphics/collision child
 contracts. No new dependency or S/T is admitted. Raw records remain under
 the existing P6 ignored root, 1 MB budget and S2 cleanup ownership.
+
+## S2 closure and exact enemy-caller return
+
+Coordinator closes S2 after P6 with 66 proven of 72 received labels and six
+explicitly accepted unfinished transfers. All original nine GameEngine
+labels are complete. The union of historical run actualMatches contains
+exactly those 66 proven labels; transfer-131 sends only the following six
+to the existing M2 T19 S5 enemy closure receiver. Global conformance stays
+608 / 1,992. This is responsibility transfer, not conformance credit.
+
+| Transferred labels | Concrete outstanding source contract | Follow-up source chain |
+| --- | --- | --- |
+| RunEnemyObjectsCore, JmpEO | Restore distinct RunLargePlatform/RunSmallPlatform and RunBowser entry contracts; current combined platform and two-part Bowser adapters are not original targets | Original lines 9030-9091, then platform/Bowser dependencies |
+| RunNormalEnemies, SkipMove | Complete the EnemyGfxHandler and PlayerEnemyCollision call contracts; retain recorded persistent graphics/OAM differences and the timer-controlled movement/offscreen order | Original lines 9092-9105 with collision/OAM owners |
+| EnemyMovementSubs, NoMoveCode | Prove all 21 original vector bindings at their real child boundaries; legacy specialized movement children remain uncertified, although both no-movement IDs and caller order pass focused tests | Original lines 9107-9136 with the later enemy movement chain |
+
+The receiver accepts these exact obligations under the continuing owner
+mandate. Their original source-order home is the planned enemy groups and
+dispatch slice (lines 8501-9300); it is not admitted early. The receiver must
+revisit source logic and native runtime proof separately and cannot infer
+completion from the 66 dispatcher/dependency matches. Existing collision,
+graphics, platform and Bowser children keep their registered owners.
+
+S2 closure uses P6's reviewed source, 33 original boundaries, focused tests,
+three builds/artifacts, platform purity, progress and documentation gates.
+No production file changed after P6 and no duplicate build is needed for
+this responsibility transition. No remaining S2 node is ownerless.
+
+## S3 admission: scroll and screen-edge chain
+
+Transfer-132 receives the ten planned labels from T24 S2, all open:
+ScrollHandler, ChkNearMid, ScrollScreen, InitScrlAmt, ChkPOffscr, KeepOnscr,
+InitPlatScrl, X_SubtracterData, OffscrJoypadBitsData, GetScreenPosition.
+Baseline 608 / 1,992; unique scope ten; expected ten; maximum 618.
+
+Entry is ScrollHandler from PlayerCtrlRoutine (plus the declared direct
+ScrollScreen caller); exit is InitPlatScrl's return. GetScreenPosition has
+its own callers and must preserve their contract. Shared owner starts in
+game/player.c; move the bounded chain to a focused shared owner if needed,
+with one implementation for all targets. GetXOffscreenBits is an existing
+child seam, not permission to repair all offscreen or player physics code.
+GameRoutines/PlayerEntrance remain planned S4.
+
+ROM-logic verification checks the wrapped platform-force addition, DEY/BMI
+gate, both scroll thresholds, carry/page arithmetic, mirror bit preservation,
+GetScreenPosition, left/right clamp borrowing, exact controller comparison,
+and final platform-force clear against the original listing and ROM bytes.
+Use a source-RAM-controlled ordinary NMI route and natural entry/return
+observations; no PC, stack or ROM patching. Every new mismatch is attributed
+to the responsible node before implementation is expanded.
+
+Operational verification adds one scroll-chain test, reuses player-route and
+horizontal-carry regressions, builds the three targets and checks platform
+purity. Every implementation P refreshes three artifacts. DOS remains
+link-only until its separate owner-data/runtime obligations are fulfilled.
+Owner ROM and its listing remain local, non-redistributable research inputs;
+no new third-party source is imported. All raw evidence lives under ignored
+build/m2-t31-s3, capped at 2 MB, twenty seconds per recorder invocation, with
+S3 cleanup ownership through T review.
+
+Initial source audit finds concrete discrepancies to resolve: DEY/BMI accepts
+force $80 but current C rejects it; the no-scroll branch currently rewrites
+screen edges/mirror; the mirror mask clears bit 1 although ROM changes only
+bit 0. These are audit findings, not yet implementation or completion claims.
+
+The transition gate verifies every S2 run's recorded actual set, the exact
+66-label union, and absence of unfinished S2 custody after transfer-131.
+S3 admission passes with ten unique open scope/expected labels at 608 and
+ceiling 618. The ledger and documentation gates pass. Existing player-route
+and horizontal-carry tests pass against the unchanged P6 game objects on
+both x86 and x64; these baseline tests do not cover the three source findings.
+No gameplay or executable content changes in this admission transition.

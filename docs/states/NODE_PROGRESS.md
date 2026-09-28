@@ -21,7 +21,8 @@ Verified conformance is **608 / 1,992 (30.52%)**. The 135 incomplete mappings re
 
 Latest task review: [T31 S2 P6](../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof)
 completes fourteen background-entry/jump/side-loop labels using source and
-natural original boundaries. Six parent/vector labels remain incomplete in S2.
+natural original boundaries. S2 closed after transferring six incomplete
+parent/vector labels to T19 S5; S3 now owns ten open scroll-chain labels.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
