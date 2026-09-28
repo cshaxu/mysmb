@@ -19,6 +19,10 @@ the conformance counts below.
 
 Verified conformance is **540 / 1,992 (27.11%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
+Latest task review: [T30 cross-chain closure](../history/M2-T30-area-object-rendering.md#t30-closure)
+adds no node credit. Its exact audit union has 116 complete and 35 accepted
+incomplete consumer transfers; all 151 labels remain individually accountable.
+
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
 checks all 1,992 labels for historical scope, C references, source address,

@@ -1251,7 +1251,7 @@ packaging; do not restore RendBBuf's invented mask to conceal it.
 
 ## S13/P1: block address and initial page proof
 
-Shared leaf: [area/block_buffer.c](../../../src/game/area/block_buffer.c)
+Shared leaf: [area/block_buffer.c](../../src/game/area/block_buffer.c)
 and its focused header. Both area.c and world/collision.c depend on it;
 it calls neither parent. CMake and OpenNT source lists include the leaf.
 
@@ -1401,7 +1401,7 @@ to all 188 owner-ROM bytes. This does not certify other historic bindings.
 
 ## S14/P1: pointer header and caller proof
 
-Shared owner: [area/area_data.c](../../../src/game/area/area_data.c).
+Shared owner: [area/area_data.c](../../src/game/area/area_data.c).
 Original table bytes remain local bound PRG, never copied into product C.
 `LoadAreaPointer -> FindAreaPointer -> GetAreaType` writes only $0750/$074e.
 `GetAreaDataAddrs -> GetAreaType -> StoreFore -> StoreStyle` freshly derives
@@ -1592,7 +1592,7 @@ E_GroundArea9 consumes E_GroundArea10's one-byte empty-stream terminator;
 its physical labeled span is shorter than its runtime stream. The checker
 preserves that shared boundary, not a copied or inserted terminator. Record
 counts above are byte framing, not a simulation of stateful page controls.
-The source/ROM checker is [smb_enemy_data_audit.py](../../../tools/smb_enemy_data_audit.py);
+The source/ROM checker is [smb_enemy_data_audit.py](../../tools/smb_enemy_data_audit.py);
 its report excludes payload bytes and stays in ignored build output.
 
 Concrete consumer counterexample: E_GroundArea8 at offset sixteen, initial
@@ -1750,7 +1750,7 @@ uses the same ordinary cold-start baseline as the original recorder instead
 of applying precomputed title commands before the fixture. Fixtures seed
 source RAM only; no PC, stack, return-address or ROM patch is used.
 The reproducible checker is
-[verify_castle_scene_routes.py](../../../test/verify_castle_scene_routes.py).
+[verify_castle_scene_routes.py](../../test/verify_castle_scene_routes.py).
 
 Independent operational evidence: 54 focused native executions pass across
 x86/x64, including complete castle traversals and 2,304 loop-command cases
@@ -1893,9 +1893,9 @@ reseeded between workloads. No PC, stack, return-address or ROM patch exists.
 The two failed route calibrations above remain fixture limits, not game fixes.
 
 The source-shaped fixture and independent native traversal test are
-[ground_scene_fixture.h](../../../test/ground_scene_fixture.h) and
-[ground_scene_stream_smoke.c](../../../test/ground_scene_stream_smoke.c).
-The existing [scene verifier](../../../test/verify_castle_scene_routes.py)
+[ground_scene_fixture.h](../../test/ground_scene_fixture.h) and
+[ground_scene_stream_smoke.c](../../test/ground_scene_stream_smoke.c).
+The existing [scene verifier](../../test/verify_castle_scene_routes.py)
 accepts --family ground and retains its castle mode; all seven prior castle
 routes revalidate successfully after that harness extension.
 
@@ -1992,12 +1992,12 @@ no continuation or pointer reseeding is needed. Source-RAM fixtures use
 ordinary initialization then bounded screen-parser workloads, never PC,
 stack, return-address or ROM-byte injection.
 
-The independent [underground stream test](../../../test/underground_scene_stream_smoke.c)
+The independent [underground stream test](../../test/underground_scene_stream_smoke.c)
 checks all three end cursors, terminal bytes, final page and underground
 area type on x86 and x64. Twelve focused executions pass: underground,
 ground and castle traversals plus parser-data, parser-boundary and special
 object smokes on both widths. The generalized
-[scene verifier](../../../test/verify_castle_scene_routes.py) adds
+[scene verifier](../../test/verify_castle_scene_routes.py) adds
 --family underground; its existing castle and ground modes revalidate all
 30 prior routes. Platform-purity passes and no production game/platform
 code changes in this P.
@@ -2092,12 +2092,12 @@ no continuation or pointer reseeding is needed. Source-RAM fixtures use
 ordinary initialization then bounded screen-parser workloads, never PC,
 stack, return-address or ROM-byte injection.
 
-The independent [water stream test](../../../test/water_scene_stream_smoke.c)
+The independent [water stream test](../../test/water_scene_stream_smoke.c)
 checks all three end cursors, terminal bytes, final page and water
 area type on x86 and x64. Fourteen focused executions pass: water,
 ground, underground and castle traversals plus parser-data, parser-boundary and special
 object smokes on both widths. The generalized
-[scene verifier](../../../test/verify_castle_scene_routes.py) adds
+[scene verifier](../../test/verify_castle_scene_routes.py) adds
 --family water; its existing castle, ground and underground modes revalidate all
 33 prior routes. Platform-purity passes and no production game/platform
 code changes in this P.
@@ -2129,3 +2129,271 @@ L_WaterArea2 and L_WaterArea3. Complete count advances from
 **537 to 540 / 1,992 (27.11%)**; mapped incomplete remains 137, open is
 1,315. No scoped node remains unfinished or transfers. S19 is closed;
 T30 and M2 remain open. T30 cross-chain closure review is next; GameMode is not yet admitted.
+
+## T30/S20 admission: cross-chain closure audit
+
+Baseline **540 / 1,992**; scope **151**, expected new matches **none (0)**,
+maximum **540**. This audit covers all 146 planned T30 source-range nodes
+and five earlier-node corrections explicitly received by T30. Of this exact
+union, 116 are complete and 35 remain incomplete with accepted T19 S5
+consumer custody. The audit does not implement those later enemy/loopback
+branches or certify their data by binding alone. No ownership changes or
+new node credit are intended.
+
+Entry/exit: closed S1-S19 evidence and accepted transfers -> reviewed T30
+cross-chain matrix and task disposition. Check every current row, prior run,
+receiver and receipt. Preserve prior valid member proofs; run one integrated
+area test/build pass and fresh current-native scene and pointer/header routes
+against the immutable original-ROM recordings. Shared game code must stay
+platform independent. The original recording fixtures and native inputs must
+match exactly; explain any residual before closure. A new discrepancy pauses
+its affected completion claim for explicit corrective admission.
+
+The reference inputs are owner-local non-redistributable ROM/listing and
+bounded recordings, retained in ignored build only. Budget under
+build/m2-t30-s20: 90 MB traces, twenty seconds per recorder process, up to
+257 samples per scene route. Audit owns cleanup through final T review.
+Operational evidence includes both Windows widths, DOS16 link, platform
+purity, hidden startup probes and all three refreshed existing EXEs. Existing
+owner authorization covers their local commits; DOS remains link-only.
+Successor is the GameMode dispatcher candidate after T30 disposition.
+
+### S20 exact audit scope
+
+| Source line | Node | Incoming state | Current receiver |
+| ---: | --- | --- | --- |
+| 2705 | `SetInitNTHigh` | ROM-match complete | M2 T30 S13 |
+| 3001 | `TerminateGame` | ROM-match complete | M2 T30 S14 |
+| 3393 | `DecodeAreaData` | ROM-match complete | M2 T30 S11 |
+| 3416 | `ChkRow13` | ROM-match complete | M2 T30 S16 |
+| 3900 | `DrawPipe` | ROM-match complete | M2 T30 S12 |
+| 3991 | `FlagpoleObject` | ROM-match complete | M2 T22 S5 |
+| 4018 | `EndlessRope` | ROM-match complete | M2 T30 S1 |
+| 4023 | `BalancePlatRope` | ROM-match complete | M2 T30 S1 |
+| 4034 | `DrawRope` | ROM-match complete | M2 T30 S1 |
+| 4039 | `CoinMetatileData` | ROM-match complete | M2 T30 S2 |
+| 4042 | `RowOfCoins` | ROM-match complete | M2 T30 S2 |
+| 4049 | `C_ObjectRow` | ROM-match complete | M2 T30 S3 |
+| 4052 | `C_ObjectMetatile` | ROM-match complete | M2 T30 S3 |
+| 4055 | `CastleBridgeObj` | ROM-match complete | M2 T30 S3 |
+| 4060 | `AxeObj` | ROM-match complete | M2 T30 S3 |
+| 4064 | `ChainObj` | ROM-match complete | M2 T30 S3 |
+| 4070 | `EmptyBlock` | ROM-match complete | M2 T30 S3 |
+| 4074 | `ColObj` | ROM-match complete | M2 T30 S3 |
+| 4079 | `SolidBlockMetatiles` | ROM-match complete | M2 T30 S4 |
+| 4082 | `BrickMetatiles` | ROM-match complete | M2 T30 S4 |
+| 4086 | `RowOfBricks` | ROM-match complete | M2 T30 S4 |
+| 4091 | `DrawBricks` | ROM-match complete | M2 T30 S4 |
+| 4094 | `RowOfSolidBlocks` | ROM-match complete | M2 T30 S4 |
+| 4097 | `GetRow` | ROM-match complete | M2 T30 S4 |
+| 4099 | `DrawRow` | ROM-match complete | M2 T30 S4 |
+| 4104 | `ColumnOfBricks` | ROM-match complete | M2 T30 S4 |
+| 4109 | `ColumnOfSolidBlocks` | ROM-match complete | M2 T30 S4 |
+| 4112 | `GetRow2` | ROM-match complete | M2 T30 S4 |
+| 4120 | `BulletBillCannon` | ROM-match complete | M2 T30 S5 |
+| 4135 | `SetupCannon` | ROM-match complete | M2 T30 S5 |
+| 4146 | `StrCOffset` | ROM-match complete | M2 T30 S5 |
+| 4151 | `StaircaseHeightData` | ROM-match complete | M2 T30 S6 |
+| 4154 | `StaircaseRowData` | ROM-match complete | M2 T30 S6 |
+| 4157 | `StaircaseObject` | ROM-match complete | M2 T30 S6 |
+| 4162 | `NextStair` | ROM-match complete | M2 T30 S6 |
+| 4172 | `Jumpspring` | ROM-match complete | M2 T30 S7 |
+| 4197 | `Hidden1UpBlock` | ROM-match complete | M2 T30 S8 |
+| 4204 | `QuestionBlock` | ROM-match complete | M2 T30 S8 |
+| 4208 | `BrickWithCoins` | ROM-match complete | M2 T30 S8 |
+| 4212 | `BrickWithItem` | ROM-match complete | M2 T30 S8 |
+| 4220 | `BWithL` | ROM-match complete | M2 T30 S8 |
+| 4223 | `DrawQBlk` | ROM-match complete | M2 T30 S8 |
+| 4228 | `GetAreaObjectID` | ROM-match complete | M2 T30 S8 |
+| 4233 | `ExitDecBlock` | ROM-match complete | M2 T30 S8 |
+| 4237 | `HoleMetatiles` | ROM-match complete | M2 T30 S9 |
+| 4240 | `Hole_Empty` | ROM-match complete | M2 T30 S9 |
+| 4265 | `StrWOffset` | ROM-match complete | M2 T30 S9 |
+| 4266 | `NoWhirlP` | ROM-match complete | M2 T30 S9 |
+| 4273 | `RenderUnderPart` | ROM-match complete | M2 T30 S9 |
+| 4289 | `DrawThisRow` | ROM-match complete | M2 T30 S9 |
+| 4290 | `WaitOneRow` | ROM-match complete | M2 T30 S9 |
+| 4296 | `ExitUPartR` | ROM-match complete | M2 T30 S9 |
+| 4300 | `ChkLrgObjLength` | ROM-match complete | M2 T30 S10 |
+| 4303 | `ChkLrgObjFixedLength` | ROM-match complete | M2 T30 S10 |
+| 4310 | `LenSet` | ROM-match complete | M2 T30 S10 |
+| 4313 | `GetLrgObjAttrib` | ROM-match complete | M2 T30 S10 |
+| 4326 | `GetAreaObjXPosition` | ROM-match complete | M2 T30 S10 |
+| 4336 | `GetAreaObjYPosition` | ROM-match complete | M2 T30 S10 |
+| 4349 | `BlockBufferAddr` | ROM-match complete | M2 T30 S13 |
+| 4353 | `GetBlockBufferAddr` | ROM-match complete | M2 T30 S13 |
+| 4376 | `AreaDataOfsLoopback` | open | M2 T19 S5 |
+| 4381 | `LoadAreaPointer` | ROM-match complete | M2 T30 S14 |
+| 4384 | `GetAreaType` | ROM-match complete | M2 T30 S14 |
+| 4392 | `FindAreaPointer` | ROM-match complete | M2 T30 S14 |
+| 4402 | `GetAreaDataAddrs` | ROM-match complete | M2 T30 S14 |
+| 4434 | `StoreFore` | ROM-match complete | M2 T30 S14 |
+| 4472 | `StoreStyle` | ROM-match complete | M2 T30 S14 |
+| 4485 | `WorldAddrOffsets` | ROM-match complete | M2 T30 S14 |
+| 4491 | `AreaAddrOffsets` | ROM-match complete | M2 T30 S14 |
+| 4492 | `World1Areas` | ROM-match complete | M2 T30 S14 |
+| 4493 | `World2Areas` | ROM-match complete | M2 T30 S14 |
+| 4494 | `World3Areas` | ROM-match complete | M2 T30 S14 |
+| 4495 | `World4Areas` | ROM-match complete | M2 T30 S14 |
+| 4496 | `World5Areas` | ROM-match complete | M2 T30 S14 |
+| 4497 | `World6Areas` | ROM-match complete | M2 T30 S14 |
+| 4498 | `World7Areas` | ROM-match complete | M2 T30 S14 |
+| 4499 | `World8Areas` | ROM-match complete | M2 T30 S14 |
+| 4509 | `EnemyAddrHOffsets` | ROM-match complete | M2 T30 S14 |
+| 4512 | `EnemyDataAddrLow` | ROM-match complete | M2 T30 S14 |
+| 4520 | `EnemyDataAddrHigh` | ROM-match complete | M2 T30 S14 |
+| 4528 | `AreaDataHOffsets` | ROM-match complete | M2 T30 S14 |
+| 4531 | `AreaDataAddrLow` | ROM-match complete | M2 T30 S14 |
+| 4539 | `AreaDataAddrHigh` | ROM-match complete | M2 T30 S14 |
+| 4550 | `E_CastleArea1` | mapped; evidence incomplete | M2 T19 S5 |
+| 4558 | `E_CastleArea2` | mapped; evidence incomplete | M2 T19 S5 |
+| 4565 | `E_CastleArea3` | mapped; evidence incomplete | M2 T19 S5 |
+| 4574 | `E_CastleArea4` | mapped; evidence incomplete | M2 T19 S5 |
+| 4583 | `E_CastleArea5` | mapped; evidence incomplete | M2 T19 S5 |
+| 4589 | `E_CastleArea6` | mapped; evidence incomplete | M2 T19 S5 |
+| 4598 | `E_GroundArea1` | mapped; evidence incomplete | M2 T19 S5 |
+| 4606 | `E_GroundArea2` | mapped; evidence incomplete | M2 T19 S5 |
+| 4613 | `E_GroundArea3` | mapped; evidence incomplete | M2 T19 S5 |
+| 4619 | `E_GroundArea4` | mapped; evidence incomplete | M2 T19 S5 |
+| 4627 | `E_GroundArea5` | mapped; evidence incomplete | M2 T19 S5 |
+| 4636 | `E_GroundArea6` | mapped; evidence incomplete | M2 T19 S5 |
+| 4643 | `E_GroundArea7` | mapped; evidence incomplete | M2 T19 S5 |
+| 4650 | `E_GroundArea8` | mapped; evidence incomplete | M2 T19 S5 |
+| 4656 | `E_GroundArea9` | mapped; evidence incomplete | M2 T19 S5 |
+| 4662 | `E_GroundArea10` | mapped; evidence incomplete | M2 T19 S5 |
+| 4666 | `E_GroundArea11` | mapped; evidence incomplete | M2 T19 S5 |
+| 4674 | `E_GroundArea12` | mapped; evidence incomplete | M2 T19 S5 |
+| 4679 | `E_GroundArea13` | mapped; evidence incomplete | M2 T19 S5 |
+| 4687 | `E_GroundArea14` | mapped; evidence incomplete | M2 T19 S5 |
+| 4695 | `E_GroundArea15` | mapped; evidence incomplete | M2 T19 S5 |
+| 4700 | `E_GroundArea16` | mapped; evidence incomplete | M2 T19 S5 |
+| 4704 | `E_GroundArea17` | mapped; evidence incomplete | M2 T19 S5 |
+| 4714 | `E_GroundArea18` | mapped; evidence incomplete | M2 T19 S5 |
+| 4722 | `E_GroundArea19` | mapped; evidence incomplete | M2 T19 S5 |
+| 4731 | `E_GroundArea20` | mapped; evidence incomplete | M2 T19 S5 |
+| 4738 | `E_GroundArea21` | mapped; evidence incomplete | M2 T19 S5 |
+| 4743 | `E_GroundArea22` | mapped; evidence incomplete | M2 T19 S5 |
+| 4751 | `E_UndergroundArea1` | mapped; evidence incomplete | M2 T19 S5 |
+| 4760 | `E_UndergroundArea2` | mapped; evidence incomplete | M2 T19 S5 |
+| 4769 | `E_UndergroundArea3` | mapped; evidence incomplete | M2 T19 S5 |
+| 4777 | `E_WaterArea1` | mapped; evidence incomplete | M2 T19 S5 |
+| 4783 | `E_WaterArea2` | mapped; evidence incomplete | M2 T19 S5 |
+| 4791 | `E_WaterArea3` | mapped; evidence incomplete | M2 T19 S5 |
+| 4799 | `L_CastleArea1` | ROM-match complete | M2 T30 S16 |
+| 4814 | `L_CastleArea2` | ROM-match complete | M2 T30 S16 |
+| 4832 | `L_CastleArea3` | ROM-match complete | M2 T30 S16 |
+| 4849 | `L_CastleArea4` | ROM-match complete | M2 T30 S16 |
+| 4865 | `L_CastleArea5` | ROM-match complete | M2 T30 S16 |
+| 4884 | `L_CastleArea6` | ROM-match complete | M2 T30 S16 |
+| 4900 | `L_GroundArea1` | ROM-match complete | M2 T30 S17 |
+| 4915 | `L_GroundArea2` | ROM-match complete | M2 T30 S17 |
+| 4931 | `L_GroundArea3` | ROM-match complete | M2 T30 S17 |
+| 4944 | `L_GroundArea4` | ROM-match complete | M2 T30 S17 |
+| 4963 | `L_GroundArea5` | ROM-match complete | M2 T30 S17 |
+| 4980 | `L_GroundArea6` | ROM-match complete | M2 T30 S17 |
+| 4995 | `L_GroundArea7` | ROM-match complete | M2 T30 S17 |
+| 5009 | `L_GroundArea8` | ROM-match complete | M2 T30 S17 |
+| 5027 | `L_GroundArea9` | ROM-match complete | M2 T30 S17 |
+| 5042 | `L_GroundArea10` | ROM-match complete | M2 T30 S17 |
+| 5048 | `L_GroundArea11` | ROM-match complete | M2 T30 S17 |
+| 5059 | `L_GroundArea12` | ROM-match complete | M2 T30 S17 |
+| 5066 | `L_GroundArea13` | ROM-match complete | M2 T30 S17 |
+| 5081 | `L_GroundArea14` | ROM-match complete | M2 T30 S17 |
+| 5096 | `L_GroundArea15` | ROM-match complete | M2 T30 S17 |
+| 5113 | `L_GroundArea16` | ROM-match complete | M2 T30 S17 |
+| 5123 | `L_GroundArea17` | ROM-match complete | M2 T30 S17 |
+| 5143 | `L_GroundArea18` | ROM-match complete | M2 T30 S17 |
+| 5160 | `L_GroundArea19` | ROM-match complete | M2 T30 S17 |
+| 5177 | `L_GroundArea20` | ROM-match complete | M2 T30 S17 |
+| 5191 | `L_GroundArea21` | ROM-match complete | M2 T30 S17 |
+| 5200 | `L_GroundArea22` | ROM-match complete | M2 T30 S17 |
+| 5210 | `L_UndergroundArea1` | ROM-match complete | M2 T30 S18 |
+| 5231 | `L_UndergroundArea2` | ROM-match complete | M2 T30 S18 |
+| 5252 | `L_UndergroundArea3` | ROM-match complete | M2 T30 S18 |
+| 5271 | `L_WaterArea1` | ROM-match complete | M2 T30 S19 |
+| 5282 | `L_WaterArea2` | ROM-match complete | M2 T30 S19 |
+| 5299 | `L_WaterArea3` | ROM-match complete | M2 T30 S19 |
+
+## S20/P1: integrated review and task closure
+
+The admitted 151-node table above is the final individual disposition list;
+no node changes conformance status in this audit. All 19 preceding runs have
+their actual-match rows still complete, and no T30 receiver retains an
+unfinished node. The 146 planned source-range nodes comprise 111 complete
+and 35 accepted incomplete transfers. Five earlier-source corrections are
+also complete: SetInitNTHigh, TerminateGame, DecodeAreaData, ChkRow13 and
+DrawPipe. Thus the audited union is 116 complete plus 35 incomplete, not 151
+completed nodes. Global progress remains **540 / 1,992 (27.11%)**.
+
+The two accepted receipts exactly cover the incomplete set: transfer-113
+assigns AreaDataOfsLoopback to its absent ExecGameLoopback consumer; transfer-115
+assigns all 34 E_CastleArea/E_GroundArea/E_UndergroundArea/E_WaterArea labels
+individually listed above to ProcessEnemyData and its collaborators. Existing
+T19 S5 accepts all 35; the planned enemy-stream source slice must receive
+them before implementation. Its [receipt](../proposals/m2/enemy-stream-actors.md)
+records the MSB/page-select counterexample, shared terminator, record cursor,
+destination and initialization gates. These are preserved obligations and
+receive zero T30 runtime-equivalence credit.
+
+### Final cross-chain matrix
+
+| Chain | Original-reference evidence | Current native operational evidence |
+| --- | --- | --- |
+| S1-S13 geometry, rows, columns, items, helpers and corrections | Accepted per-node source/ROM proofs above; full scene parser routes exercise their composition | All area smokes plus enemy block query and mode tests, both widths |
+| S14 pointers, headers and terminal caller | 71 retained original-ROM routes, 141 samples per width; persistent RAM compared directly | Fresh current C output exactly equals the accepted S14 baseline; no new full-output ROM claim |
+| S15 enemy-stream bindings | Exact immutable data binding and source counterexample retained | Consumer remains incomplete under accepted receiver |
+| S16 castle scenes | Seven routes, 903 samples, 700 consumed bytes | Fresh x86/x64 parser traces and independent stream tests |
+| S17 ground scenes | 23 routes, 3,095 samples, 1,994 consumed bytes | Fresh x86/x64 traces including uninterrupted area-17 extension |
+| S18 underground scenes | Three routes, 387 samples, 465 consumed bytes | Fresh x86/x64 traces and all three terminal cursors |
+| S19 water scenes | Three routes, 387 samples, 213 consumed bytes; trailing padding excluded | Fresh x86/x64 traces and all three terminal cursors |
+
+The reproducible [integrated checker](../../test/verify_area_chain_regression.py)
+runs current native executables against the retained immutable original
+recordings with exactly their source-RAM fixtures. Reference hashes and the
+recorder identity are recorded locally. All 36 scene routes compare 1,782
+persistent RAM bytes and complete recorded CIRAM/palette/OAM/audio/PPU output;
+only scratch, stack and two PPU mirrors are excluded from RAM comparison.
+All 3,372 scene bytes retain actual original-read coverage. The 71 pointer
+routes separately compare original persistent RAM and the previously accepted
+C output baseline, preserving that proof's existing output limitations.
+
+Both widths pass all 107 routes. Their complete native trace files are also
+byte-identical: 4,772 scene plus 141 pointer samples per width. Sixty focused
+executions pass across x86/x64. Strict C90 builds and OpenNT DOS16 link pass;
+Windows self-test and bounded hidden-window/message probes pass. Platform
+purity passes and no production game/platform code changes in this audit.
+No raw owner data is tracked. Local trace size is 85,405,762 bytes under the
+90 MB combined budget. Per-recorder limits are twenty seconds. The final
+matrix is retained for later M2 regression; no duplicate member lifecycle
+or node credit was created.
+
+### Limits and retained debt
+
+DOS16 remains link evidence because its root lacks local PRG/CHR/title binding.
+Windows startup failure previously reported by the owner remains unreproduced,
+not diagnosed as fixed. Known legacy timer-fixture failures and deferred
+dispatcher, enemy, actor and loopback mismatches remain in their existing
+records. This task's area evidence is not proof of full-game ROM equivalence,
+end-to-end playability or M2 closure.
+
+Similar-issue review checks all 151 dispositions, all earlier T30 actual-match
+claims, all T30 current receivers, exact 35-node transfer coverage, scene data
+boundaries and shared/platform ownership. Every reviewed case is complete or
+has the explicitly accepted incomplete receiver listed above; no orphaned
+T30 obligation remains. Existing owner authorization covers rebuilding and
+committing the three already tracked executable artifacts.
+
+Artifact `mysmb16.exe`: 252977 bytes; SHA-256 `98E1A618425B80AB8883375305A63208AB18CAD27A41FB7B6D0863AFC2B9FD21`.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `1791D67402E3422C5D3124EAEBA0EF3A5DA0649B1C198758CAF5DC7DDEF59035`.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `01CA457102CDBB0368CC9259E89708251536A11D183A219B23BF9DCB317F2C00`.
+
+## T30 closure
+
+S20 expected/actual new matches **0/0**. **T30 is closed with the 35 explicit
+consumer transfers retained as incomplete**, and its proposal/evidence is
+archived in history. M2 remains open at 540 complete, 137 mapped incomplete,
+1,315 open, total 1,992. The next unadmitted task candidate is the GameMode
+dispatcher source range 5315-5582; admission must declare its exact nodes and
+dependencies before any implementation. No next T is admitted by this closure.

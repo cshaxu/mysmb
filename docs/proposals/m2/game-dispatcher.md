@@ -33,7 +33,7 @@ Accept for the planned dispatcher chain: original GameCoreRoutine checks
 OperMode_Task after GameRoutines and returns when it is below three. Native
 frame_root still executes the enemy/graphics tail after PlayerLoseLife has
 changed that task to zero. The source-RAM life-loss counterexample retained
-by [T30 S14](t30-area-object-rendering.md#s14-admitted-dependency-correction)
+by [T30 S14](../../history/M2-T30-area-object-rendering.md#s14-admitted-dependency-correction)
 shows persistent actor state changes absent from ROM. Require a task-changing
 exit route and a normal task-three continuation at admission. This node
 remains open; S14 does not implement or certify the dispatcher.

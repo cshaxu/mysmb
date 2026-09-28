@@ -230,7 +230,7 @@ different ROM route.  The binding authority is
 
 Coordinator accepts transfer-115: all 34 E_CastleArea, E_GroundArea,
 E_UndergroundArea and E_WaterArea names listed individually in the
-[T30 S15 binding table](t30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt)
+[T30 S15 binding table](../../history/M2-T30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt)
 join existing T19 S5 ProcessEnemyData custody. The binding/framing audit is
 complete; runtime consumer proof remains required before any node match.
 At the planned enemy-stream admission, explicitly include the GroundArea8

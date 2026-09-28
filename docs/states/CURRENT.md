@@ -4,32 +4,33 @@
 
 **Idle.**
 
-**M2 T30 S19 is closed at 540 / 1,992; all three scoped water streams complete.**
+**M2 T30 is closed; S20 cross-chain audit leaves progress at 540 / 1,992.**
 
-Full original-ROM byte-consumption and parser-route evidence agrees with
-independent native traversals. Three EXEs are refreshed; DOS is link-only.
-No S is active. T30 cross-chain closure review precedes GameMode admission.
+The 151-node audit confirms 116 complete and 35 accepted incomplete consumer
+transfers; no unfinished T30 custody remains. Both widths pass 107 integrated
+routes and 60 focused executions. Three EXEs are rebuilt; DOS is link-only.
+The GameMode dispatcher candidate is next and is not yet admitted.
 
-## M2 T30 S19 Packet (closed)
+## M2 T30 S20 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S19, source-order implementation. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-120 from T18 S4. |
-| Objective | Complete three L_WaterArea scene nodes through full byte binding and parser consumption. |
-| Non-goals | No player/actor runtime, dispatcher, loopback or platform gameplay. |
-| Reference Baseline | 537 / 1,992; three open labels, expected three, maximum 540. |
-| Candidate Proposal | [T30 S19](../proposals/m2/t30-area-object-rendering.md#t30s19-admission-water-scene-streams). |
-| Files And ABI Surface | Shared area consumer if needed, local binding/route harnesses, exact node records and three EXEs. |
+| Identifier Mode | M2 T30 S20, cross-chain audit; zero new matches. |
+| Admission And Approval | Owner-approved M2 continuation following closed S19; no ownership transfer. |
+| Objective | Verify all 151 exact rows, dual evidence, 35 accepted incomplete receipts and integrated area regressions before T closure. |
+| Non-goals | No enemy/loopback repair, no dispatcher admission or new match credit. |
+| Reference Baseline | 540 / 1,992; 151 audit labels, 116 complete and 35 incomplete; expected zero, maximum 540. |
+| Candidate Proposal | [T30 S20 exact scope](../history/M2-T30-area-object-rendering.md#s20-exact-audit-scope). |
+| Files And ABI Surface | Audit records, integrated validation harness if needed and three EXEs; no production ABI change. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Whole source spans/pointers; original initialized ScreenRoutines parser traversal with terminator coverage; independent native tests, three builds, startup and purity. |
-| Expected Markers | Header-derived fields, every scene record, parser cursors, metatiles, block buffers and creation outputs. |
-| Asset Needs | Three EXEs per implementation P; DOS remains link-only. |
-| Reporting Requirements | Three exact node dispositions, source/ROM and independent runtime tracks, limits and artifact hashes. |
-| Stop Conditions | Unadmitted consumer discrepancy, missing record/terminator coverage or platform logic. |
-| Exit Criteria | Every scoped stream has both evidence tracks, or exact accepted unfinished disposition. |
-| Original Owner Request | Faithful original-ROM graph and every logic node in source order. |
-| Similar-Issue Sweep | Three water streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
+| Verification | Exact node/receipt audit; fresh native scene and pointer routes against original-ROM evidence; focused integrated tests and three builds. |
+| Expected Markers | Preserved source branches, full scene data consumption, unchanged pointer/header and terminal outputs, accepted incomplete ownership. |
+| Asset Needs | Refresh all three existing EXEs; DOS16 link evidence only. |
+| Reporting Requirements | 151 individual dispositions, current counts, route matrix, test/build results, limitations and hashes. |
+| Stop Conditions | Unexplained current-native mismatch, missing receipt/evidence, unsafe source dependency or platform game logic. |
+| Exit Criteria | All 151 rows accounted for, no unfinished T30 custody, integrated checks pass or documented failing track prevents closure. |
+| Original Owner Request | Faithful ROM nodes and graph in source order with dual verification and explicit bookkeeping. |
+| Similar-Issue Sweep | All admitted T30 chains, five corrective dependencies and every 35-node accepted consumer handoff. |
 
 ## Retained M2 T15 summary
 

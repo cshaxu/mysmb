@@ -12,9 +12,12 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-T30/S19 is closed at 540 / 1,992: all three water scene nodes are complete.
-T30 cross-chain closure review is next; the dispatcher is not yet admitted. Enemy-data consumer proof and AreaDataOfsLoopback remain
-with their accepted T19 S5 receiver; no new numeric task is admitted here.
+T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-rendering.md#t30-closure),
+with 111 of its 146 planned nodes complete and 35 accepted incomplete
+consumer transfers. Five earlier-node corrections also remain complete.
+Global progress is 540 / 1,992. The GameMode dispatcher candidate (source
+5315-5582) is next; no next T is admitted by closure. Enemy-data and loopback
+obligations remain with their accepted T19 S5 receiver until source admission.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This
