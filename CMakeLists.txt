@@ -749,6 +749,11 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_ground_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_ground_scene_stream_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.ground-scene-streams COMMAND mysmb_ground_scene_stream_smoke)
+    add_executable(mysmb_underground_scene_stream_smoke test/underground_scene_stream_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_underground_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_underground_scene_stream_smoke PRIVATE mysmb_game)
+    add_test(NAME mysmb.underground-scene-streams COMMAND mysmb_underground_scene_stream_smoke)
     add_executable(mysmb_block_graphics_smoke test/block_graphics_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_graphics_smoke PRIVATE src

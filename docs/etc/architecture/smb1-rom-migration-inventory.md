@@ -702,9 +702,9 @@ The labels and branches behind every line remain open until individually bound b
 | 5177 | `L_GroundArea20` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
 | 5191 | `L_GroundArea21` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
 | 5200 | `L_GroundArea22` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
-| 5210 | `L_UndergroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea1) |
-| 5231 | `L_UndergroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea2) |
-| 5252 | `L_UndergroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea3) |
+| 5210 | `L_UndergroundArea1` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
+| 5231 | `L_UndergroundArea2` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
+| 5252 | `L_UndergroundArea3` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
 | 5271 | `L_WaterArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea1) |
 | 5282 | `L_WaterArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea2) |
 | 5299 | `L_WaterArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea3) |

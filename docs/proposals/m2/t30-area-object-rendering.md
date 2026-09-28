@@ -1932,3 +1932,100 @@ advances from **512 to 534 / 1,992 (26.81%)**. Mapped incomplete remains 137;
 open is 1,321. No scoped node is retained unfinished or transferred.
 S17 is closed; T30 and M2 remain open. L_UndergroundArea1 begins the next
 unadmitted source-order scene group, followed by water scene data.
+
+## T30/S18 admission: underground scene streams
+
+Exact scope and expected matches, all open: `L_UndergroundArea1`,
+`L_UndergroundArea2`, `L_UndergroundArea3`. Baseline **534 / 1,992**, expected **3**, maximum **537**.
+Entry is the three original header/table selections; exit is each stream's
+terminator after its last object. Shared runtime owner remains area/area_data.c
+and area.c. No copied scene payload or platform parser is permitted.
+
+Accept transfer-119 from T18 S4. Bind each entire literal span and pointer,
+then compare the existing original InitializeArea -> ScreenRoutines ->
+AreaParserTaskControl consumer. Controlled source-RAM routes start at pages
+zero and request bounded repeated two-column screen parser sets;
+repeat the ordinary screen workload without resetting parser state if needed.
+No unadmitted player/actor runtime is required.
+The fixtures may change screen-task/column-set inputs after the original
+header initialization, never PC, stack, return addresses or ROM bytes.
+Require actual stream-cursor/terminator coverage and compare parser state,
+metatile/block-buffer output and original object-creation writes. Any gap
+must remain explicit; do not certify a whole stream from its first columns.
+
+Independent C checks cover data framing/binding and complete native parser
+traversals on x86/x64. Source-shaped repairs are limited to these admitted
+scene consumers; a contradictory previously completed helper requires
+explicit revocation and a corrective receipt before changing it. Other actor,
+player, dispatcher and loopback behavior stays with existing receivers.
+Each implementation P builds three EXEs and reports startup, purity and
+DOS link limits. Owner NROM/listing remain local-only research inputs.
+Predecessor: closed S17 ground scenes; successor: L_WaterArea1.
+Owner ROM/listing remain non-redistributable local-only evidence.
+Raw trace budget: 20 MB under ignored build/m2-t30-s18; twenty-second process
+limits, up to 257 samples per route and three original/native route pairs.
+S18 retains cleanup responsibility through T review. No matches claimed yet.
+
+## S18/P1: complete underground scene consumption
+
+Admission gate passed at 534 / 1,992: three open labels, three expected
+matches, maximum 537. All three immutable underground streams use the shared
+InitializeArea -> GetAreaDataAddrs -> ScreenRoutines -> AreaParserTaskControl
+-> ProcessAreaData chain. Existing area.c and area/area_data.c need no
+production repair. Exact pointer/header binding and whole literal spans
+match the owner ROM/listing: 465 bytes and 228 two-byte object records.
+
+| Node | CPU address | Bytes / object records | Terminal cursor | Disposition |
+| --- | --- | --- | --- | --- |
+| `L_UndergroundArea1` | `0xac35` | 163 / 80 | 160 | ROM-match complete |
+| `L_UndergroundArea2` | `0xacd8` | 161 / 79 | 158 | ROM-match complete |
+| `L_UndergroundArea3` | `0xad79` | 141 / 69 | 138 | ROM-match complete |
+
+ROM-logic evidence: three page-zero InitializeArea/ScreenRoutines routes
+produce 129 NMI-return samples each. Across all 387 samples, all 1,782
+persistent RAM bytes and all recorded CIRAM, palette, OAM, audio and PPU
+output match. Exclusions are scratch 0..7, CPU stack and two PPU RAM mirrors;
+no output is masked. Original LDA (AreaData),Y instruction coverage confirms
+all 465 bytes were read, including headers and each final terminator.
+All three cursors reach the table's terminal offsets within sixteen pages;
+no continuation or pointer reseeding is needed. Source-RAM fixtures use
+ordinary initialization then bounded screen-parser workloads, never PC,
+stack, return-address or ROM-byte injection.
+
+The independent [underground stream test](../../../test/underground_scene_stream_smoke.c)
+checks all three end cursors, terminal bytes, final page and underground
+area type on x86 and x64. Twelve focused executions pass: underground,
+ground and castle traversals plus parser-data, parser-boundary and special
+object smokes on both widths. The generalized
+[scene verifier](../../../test/verify_castle_scene_routes.py) adds
+--family underground; its existing castle and ground modes revalidate all
+30 prior routes. Platform-purity passes and no production game/platform
+code changes in this P.
+
+Both Windows products pass self-test and hidden-window creation/message
+response checks. OpenNT compiles the same C90 sources and links DOS16 MZ.
+The existing DOS root lacks local PRG/CHR/title binding, so this is link
+coverage, not DOS playability. Unrelated legacy timer-fixture failures remain
+recorded debt; a full-suite pass is not claimed. The owner's prior Windows
+startup failure remains unreproduced and is not claimed fixed.
+
+Similar-issue sweep covers all three bindings, source spans, headers,
+record boundaries, cursors, terminators and shared parser output; no new
+consumer mismatch is found. Raw traces remain ignored under build/m2-t30-s18,
+3,412,638 bytes within the 20 MB budget and twenty-second recorder limits.
+S18 owns cleanup through T review. Owner-specific authorization covers the
+three rebuilt existing EXEs; no standalone ROM or generated C is committed.
+
+Artifact `mysmb16.exe`: 252977 bytes; SHA-256 `98E1A618425B80AB8883375305A63208AB18CAD27A41FB7B6D0863AFC2B9FD21`.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `412BA4975ABCE27D5C4005073E6999B5DB55C6837AB1276F671668E61D50683A`.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `057A0AEFD848D73315565863B176D4941F27A95C5A693BEE2374CB5A737BF0ED`.
+
+## S18 closure
+
+Expected/actual matches **3/3**, exactly L_UndergroundArea1,
+L_UndergroundArea2 and L_UndergroundArea3. Complete count advances from
+**534 to 537 / 1,992 (26.96%)**; mapped incomplete remains 137, open is
+1,318. No scoped node remains unfinished or transfers. S18 is closed;
+T30 and M2 remain open. L_WaterArea1 begins the next source-order group.

@@ -27,13 +27,16 @@ def main():
     parser.add_argument('directory', type=Path)
     parser.add_argument('--rom', required=True, type=Path)
     parser.add_argument('--asm', required=True, type=Path)
-    parser.add_argument('--family', choices=['castle', 'ground'], default='castle')
+    families = {
+        'castle': ('L_CastleArea', 6, 'L_GroundArea1', 5),
+        'ground': ('L_GroundArea', 22, 'L_UndergroundArea1', 16),
+        'underground': ('L_UndergroundArea', 3, 'L_WaterArea1', None),
+    }
+    parser.add_argument('--family', choices=families, default='castle')
     args = parser.parse_args()
     ground = args.family == 'ground'
-    count = 22 if ground else 6
-    prefix = 'L_GroundArea' if ground else 'L_CastleArea'
-    successor = 'L_UndergroundArea1' if ground else 'L_GroundArea1'
-    continued = 16 if ground else 5
+    prefix, count, successor, continued = families[args.family]
+    route_count = count + (continued is not None)
     prg, _ = read_nrom(args.rom)
     labels, _, mismatch = index_listing(args.rom, args.asm)
     assert mismatch is None
@@ -52,7 +55,7 @@ def main():
     excluded = set(range(8)) | set(range(0x100, 0x200)) | {0x778, 0x779}
     coverage = [set() for _ in range(count)]
     result = []
-    for case in range(count+1):
+    for case in range(route_count):
         area = case if case < count else continued
         name, start, end = spans[area]
         samples = 257 if ground and case == count else 129
@@ -84,7 +87,7 @@ def main():
                    note='Controlled NMI-return samples; scratch, stack and two PPU mirrors excluded from RAM comparison.')
     (args.directory / 'route-summary.json').write_text(json.dumps(summary, indent=2)+'\n')
     print('%d %s routes / %d samples match; all %d scene bytes consumed' %
-          (count+1, args.family, summary['samples'], summary['bytesBoundAndConsumed']))
+          (route_count, args.family, summary['samples'], summary['bytesBoundAndConsumed']))
 
 
 if __name__ == '__main__':
