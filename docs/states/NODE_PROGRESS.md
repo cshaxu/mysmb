@@ -12,18 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 772 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 132 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,088 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 778 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 131 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,083 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **772 / 1,992 (38.76%)**. The 132 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **778 / 1,992 (39.06%)**. The 131 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T35 S4 P1](../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof)
-proves three vine initialization/data nodes with 32 actual original/native
-return matches. T35 closes its 38-label source slice (22 new, 16 retained).
-Final-core checks retain 66 known child failures versus 122 matches; full-frame
-output and the legacy core entry assertion remain incomplete.
+Latest task review: [T36 S1 P1](../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof)
+proves six vine actor caller nodes with 84 original/native caller matches;
+actual native children match 52 and retain 32 graphics failures. T36 remains
+open; child graphics, full-frame output and prior core-test debts remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (772)
+## Completed matches (778)
 
 | ROM line | Node |
 | ---: | --- |
@@ -758,6 +757,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6702 | `Setup_Vine` |
 | 6716 | `NextVO` |
 | 6727 | `VineHeightData` |
+| 6730 | `VineObjectHandler` |
+| 6746 | `RunVSubs` |
+| 6752 | `VDrawLoop` |
+| 6760 | `KillVine` |
+| 6766 | `WrCMTile` |
+| 6780 | `ExitVH` |
 | 6785 | `CannonBitmasks` |
 | 6788 | `ProcessCannons` |
 | 6792 | `ThreeSChk` |
@@ -824,7 +829,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (132)
+## Mapped but not yet matched (131)
 
 | ROM line | Node |
 | ---: | --- |
@@ -863,7 +868,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 6730 | `VineObjectHandler` |
 | 6928 | `ProcHammerObj` |
 | 6988 | `CoinBlock` |
 | 7000 | `SetupJumpCoin` |

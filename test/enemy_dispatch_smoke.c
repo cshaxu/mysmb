@@ -31,8 +31,8 @@ void mysmb_objects_step_power_up(struct mysmb_game *game)
 { record(game,game->ram[8U],8U); }
 void mysmb_objects_finish_power_up(struct mysmb_game *game)
 { record(game,game->ram[8U],9U); }
-void mysmb_objects_step_vine(struct mysmb_game *game)
-{ record(game,game->ram[8U],10U); }
+void mysmb_objects_step_vine(struct mysmb_game *game,mysmb_u8 slot)
+{ record(game,slot,10U); }
 mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
     const struct mysmb_area_source *source,mysmb_u8 slot)
 { (void)source;record(game,slot,14U);return 0U; }
@@ -60,7 +60,6 @@ int main(void)
         count=0U;bad_slot=0U;
         mysmb_enemy_run_objects(&game);
         want=target[id];
-        if(id==0x2fU && slot!=5U) want=0U;
         if(count!=(want==0U ? 0U : (want==6U || want==8U ? 2U:1U))) return 1;
         if(want!=0U && calls[0]!=want) return 2;
         if((want==6U || want==8U) && calls[1]!=want+1U) return 3;

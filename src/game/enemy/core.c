@@ -61,8 +61,7 @@ void mysmb_enemy_run_objects(struct mysmb_game *game)
         mysmb_objects_finish_power_up(game);
         break;
     case 0x2fU:
-        /* Source VineObjectHandler rejects every slot except five. */
-        if (slot == 5U) mysmb_objects_step_vine(game);
+        mysmb_objects_step_vine(game, slot);
         break;
     case 0x31U:
         mysmb_objects_step_star_flags_slot(game, slot);

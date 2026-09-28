@@ -1654,47 +1654,6 @@ void mysmb_objects_start_entrance_vine(struct mysmb_game *game)
     mysmb_objects_start_vine(game, 5U, 0U);
 }
 
-/* ROM $ba71 VineObjectHandler.  This retains growth and the authoritative
- * block-buffer metatile write; OAM drawing/offscreen retirement are renderer
- * responsibilities. */
-void mysmb_objects_step_vine(struct mysmb_game *game)
-{
-    const mysmb_u8 slot = 5U;
-    mysmb_u8 vine_slot;
-    struct mysmb_enemy_terrain terrain;
-
-    if (game->ram[MYSMB_ENEMY_ID + slot] != 0x2fU ||
-        game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_VINE_FLAG_OFFSET] == 0U) return;
-    vine_slot = (mysmb_u8)(game->ram[MYSMB_VINE_FLAG_OFFSET] - 1U);
-    if (vine_slot > 1U) vine_slot = 1U;
-    if (game->ram[MYSMB_VINE_HEIGHT] != mysmb_vine_height_data[vine_slot] &&
-        ((game->ram[MYSMB_FRAME_COUNTER] & 2U) != 0U)) {
-        game->ram[MYSMB_ENEMY_Y + slot]--;
-        game->ram[MYSMB_VINE_HEIGHT]++;
-    }
-    if (game->ram[MYSMB_VINE_HEIGHT] >= 8U) {
-        mysmb_u8 draw_index;
-        mysmb_u8 count;
-
-        count = game->ram[MYSMB_VINE_FLAG_OFFSET];
-        if (count > 2U) count = 2U;
-        for (draw_index = 0U; draw_index < count; ++draw_index) {
-            mysmb_u8 vine_slot;
-
-            vine_slot = game->ram[MYSMB_VINE_OBJECT_OFFSET + draw_index];
-            if (vine_slot < 6U &&
-                game->ram[MYSMB_ENEMY_ID + vine_slot] == 0x2fU) {
-                mysmb_objects_draw_vine(game, draw_index);
-            }
-        }
-    }
-    if (game->ram[MYSMB_VINE_HEIGHT] < 0x20U) return;
-    if (mysmb_world_query_enemy_block(game, slot, 0x1bU, 0U, &terrain) == 0U ||
-        terrain.block_row_offset >= 0xd0U) return;
-    if (terrain.metatile == 0U) game->ram[terrain.block_address] = 0x26U;
-}
-
 /* SetupFloateyNumber.  Rendering later consumes the saved position. */
 /* SetupFloateyNumber saves the current source-relative X coordinate. */
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,

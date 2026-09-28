@@ -21,8 +21,10 @@ T33 is closed with all 63 received movement/physics nodes proven at 739 / 1,992.
 T34 is closed with all eleven fireball dispatch/core nodes proven at 750 / 1,992.
 Its cross-chain review retains the existing graphics-child failures.
 T35 S1 closes eight bubble nodes at 758 / 1,992. Timer S2 closes four caller nodes at 762 / 1,992; S3 jumpspring closes seven data/state/caller nodes at 769 / 1,992; S4 closes three vine initialization/data nodes at 772 / 1,992; T35 is closed. The next source slice starts with VineObjectHandler at line 6730.
-[The T35 plan](../history/M2-T35-bubbles-timer-warp.md) groups the remaining
-22 nodes into four chains and preserves 16 previously accepted nodes.
+T36 S1 closes six vine actor caller nodes at 778 / 1,992; S2 hammer lifecycle is next.
+[The T36 plan](../proposals/m2/misc-object-chains.md) groups 41 incomplete labels
+into six chains, retains fourteen cannon matches, and keeps the trailing
+PowerUpObjHandler with its next-slice successors.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 

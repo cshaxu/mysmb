@@ -16,7 +16,7 @@ int main(void)
     game.ram[0x039aU] = 5U;
     game.ram[0x039dU] = 0x80U;
     game.ram[0x06e5U + 5U] = 0x20U;
-    mysmb_objects_step_vine(&game);
+    mysmb_objects_step_vine(&game, 5U);
     if (game.ram[0x0220U] != 0x80U || game.ram[0x0221U] != 0xe0U ||
         game.ram[0x0222U] != 0x21U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0224U] != 0x88U || game.ram[0x0225U] != 0xe1U ||

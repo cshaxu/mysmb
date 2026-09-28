@@ -19,8 +19,8 @@ UNEXPECTED_SLOT(mysmb_objects_step_jumpspring)
 #undef UNEXPECTED_SLOT
 mysmb_u8 mysmb_objects_step_firebars_slot(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++unexpected;return 0U; }
-void mysmb_objects_step_vine(struct mysmb_game *game)
-{ (void)game;++unexpected; }
+void mysmb_objects_step_vine(struct mysmb_game *game,mysmb_u8 slot)
+{ (void)game;(void)slot;++unexpected; }
 void mysmb_objects_draw_retainer(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++unexpected; }
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game,mysmb_u8 slot)

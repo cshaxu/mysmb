@@ -2,34 +2,34 @@
 
 ## Current Work
 
-**M2 T35 S4 and T35 are closed at 772 / 1,992: the 38-label slice has 22 new and 16 retained matches.**
+**M2 T36 S1 is closed at 778 / 1,992: six vine actor caller nodes proven; S2 hammer lifecycle is next.**
 
-## M2 T35 S4 Packet
+## M2 T36 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T35 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S3 commit d289365; coordinator accepts transfer-147. |
-| Objective | Complete Setup_Vine, NextVO and VineHeightData in original source order. |
-| Non-goals | No VineObjectHandler growth, offscreen or graphics algorithm repair. |
-| Reference Baseline | 769 / 1,992; one mapped and two open labels, expected three, maximum 772. |
-| Candidate Proposal | [Vine setup chain](../history/M2-T35-bubbles-timer-warp.md#s4-admission-vine-initialization-and-height-data). |
-| Files And ABI Surface | Shared vine owner, explicit original arguments, table declaration/caller/build updates, focused tests/recorder and three artifacts. |
+| Identifier Mode | M2 T36 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed T35 commit 23e4230; coordinator accepts transfer-148. |
+| Objective | Complete six vine actor caller/state nodes in original order. |
+| Non-goals | No graphics/collision/erase child algorithm repair or later hammer/coin work. |
+| Reference Baseline | 772 / 1,992; one mapped and five open labels, expected six, maximum 778. |
+| Candidate Proposal | [Vine actor chain](../proposals/m2/misc-object-chains.md#s1-admission-complete-vine-actor-chain). |
+| Files And ABI Surface | Shared vine actor, explicit slot gate/call seam, existing collision row output, tests/recorder and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original entry/return RAM, branch and data-byte proof; focused native tests, cross-chain regression and three builds. |
-| Expected Markers | ID/flag then page/X/Y; first-vine start Y; indexed registration, flag wrap, sound; shared height bytes. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Three exact node dispositions, both proof tracks, limits and artifact hashes. |
-| Stop Conditions | Unadmitted consumer repair, reference mutation, masked discrepancy or platform game logic. |
-| Exit Criteria | Every received node proven or accepted transfer; ledger, tracker, evidence and artifacts agree. |
-| Original Owner Request | Original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
-| Similar-Issue Sweep | Every Setup_Vine caller, vine registration/start-Y writer and height-table copy. |
+| Verification | Original branch/read/write/call proof and separate actual-child diagnostics; focused tests, regressions and three builds. |
+| Expected Markers | Slot gate; frame/height growth; relative/offscreen/draw; reverse erase; post-child reads; empty-block/row gate. |
+| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Six exact node dispositions, both proof tracks and child limits, tracker and hashes. |
+| Stop Conditions | Unadmitted child repair, reference mutation, masked mismatch or platform gameplay. |
+| Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
+| Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64, source order and chain delivery. |
+| Similar-Issue Sweep | Every vine caller/state writer, drawing retirement and collision query consumer. |
 
-## T35 S1-S3 closure summary
+## T35 closure summary
 
-Nineteen bubble, timer and jumpspring data/state/caller nodes are complete.
-Latest commit d289365 contains three EXEs. Graphics, injury and full-frame
-output differences remain explicit in the [T35 evidence](../history/M2-T35-bubbles-timer-warp.md).
+[T35 history](../history/M2-T35-bubbles-timer-warp.md) records 22 new and
+16 retained matches, final 772 / 1,992. Commit 23e4230 contains three EXEs;
+known child, full-frame and legacy core-test differences remain explicit.
 
 ## T34 closure summary
 

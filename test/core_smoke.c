@@ -1290,12 +1290,12 @@ int main(void)
         game.ram[0x039aU] != 5U || game.ram[0x0398U] != 1U) return 1;
     game.frame_number = 2UL;
     game.ram[0x0009U] = 2U;
-    mysmb_objects_step_vine(&game);
+    mysmb_objects_step_vine(&game, 5U);
     if (game.ram[0x00d4U] != 0x5fU || game.ram[0x0399U] != 1U) return 1;
     game.ram[0x0399U] = 0x1fU;
     game.ram[0x00d4U] = 0x60U;
     game.ram[0x0613U] = 0U;
-    mysmb_objects_step_vine(&game);
+    mysmb_objects_step_vine(&game, 5U);
     if (game.ram[0x0399U] != 0x20U || game.ram[0x00d4U] != 0x5fU ||
         game.ram[0x0613U] != 0x26U) return 1;
     game.ram[0x0754U] = 1U;

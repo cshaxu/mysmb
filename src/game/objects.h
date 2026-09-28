@@ -117,7 +117,8 @@ void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 enemy_slot,
                               mysmb_u8 block_slot);
 /* ROM $9180-$918b ChkOverR's InitBlock_XY_Pos/Setup_Vine call sequence. */
 void mysmb_objects_start_entrance_vine(struct mysmb_game *game);
-void mysmb_objects_step_vine(struct mysmb_game *game);
+/* ROM $B94B VineObjectHandler; the actor owns its slot-five gate. */
+void mysmb_objects_step_vine(struct mysmb_game *game, mysmb_u8 enemy_slot);
 /* ROM HandleCoinMetatile/GiveOneCoin. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
                                 mysmb_u8 block_row);

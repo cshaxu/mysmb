@@ -75,6 +75,9 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
         (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U)));
     y_sum = (mysmb_u8)(game->ram[0x00cfU + slot] + y_adder[adder_index]);
     row = (mysmb_u8)((y_sum & 0xf0U) - 0x20U);
+    /* Expose the computed original row even when it is outside the buffer.
+     * VineObjectHandler owns its row >= D0 branch after this child returns. */
+    terrain->block_row_offset = row;
     if (y_sum < 0x20U || row > 0xc0U) return 0U;
     terrain->block_address_low = (mysmb_u8)address;
     address = (mysmb_u16)(address + row);
@@ -82,7 +85,6 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
     terrain->block_address = address;
     terrain->metatile = game->ram[address];
     terrain->contact_low_nibble = horizontal_contact != 0U ? (mysmb_u8)(game->ram[0x0087U + slot] & 0x0fU) : (mysmb_u8)(game->ram[0x00cfU + slot] & 0x0fU);
-    terrain->block_row_offset = row;
     return 1U;
 }
 /* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */

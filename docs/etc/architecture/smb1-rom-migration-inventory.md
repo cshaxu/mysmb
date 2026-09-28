@@ -100,7 +100,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `CoinBlock` — ROM line 6988; C owner/evidence pending
   - [ ] `SetupPowerUp` — ROM line 7150; C owner/evidence pending
   - [ ] `PowerUpObjHandler` — ROM line 7184; C owner/evidence pending
-  - [ ] `VineObjectHandler` — ROM line 6730; C owner/evidence pending
+  - [x] `VineObjectHandler` — ROM line 6730; [S1 vine actor proof](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof)
 - [ ] **Fireballs, projectile collision and special hazards**
   - [x] `FireballObjCore` — ROM line 6352; [S2 core proof](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof)
   - [ ] `FireballBGCollision` — ROM line 12751; C owner/evidence pending
@@ -899,12 +899,12 @@ The labels and branches behind every line remain open until individually bound b
 | 6702 | `Setup_Vine` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
 | 6716 | `NextVO` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
 | 6727 | `VineHeightData` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
-| 6730 | `VineObjectHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-vineobjecthandler) |
-| 6746 | `RunVSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runvsubs) |
-| 6752 | `VDrawLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vdrawloop) |
-| 6760 | `KillVine` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killvine) |
-| 6766 | `WrCMTile` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrcmtile) |
-| 6780 | `ExitVH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvh) |
+| 6730 | `VineObjectHandler` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6746 | `RunVSubs` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6752 | `VDrawLoop` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6760 | `KillVine` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6766 | `WrCMTile` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
+| 6780 | `ExitVH` | M2 T36 S1 shared game/vine.c | ROM-match complete | [S1 vine actor caller proof; graphics gap retained](../../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof) |
 | 6785 | `CannonBitmasks` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6788 | `ProcessCannons` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6792 | `ThreeSChk` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |

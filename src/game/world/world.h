@@ -55,7 +55,9 @@ struct mysmb_enemy_terrain {
     mysmb_u8 block_row_offset;
     mysmb_u16 block_address;
 };
-/* ROM $e333 BlockBufferChk_Enemy -> BlockBufferCollision. */
+/* ROM BlockBufferChk_Enemy -> BlockBufferCollision. With valid slot/adder
+ * inputs, block_row_offset is available even when the row is out of bounds;
+ * other output fields require a successful return. */
 mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
                                        mysmb_u8 slot, mysmb_u8 adder_index,
                                        mysmb_u8 horizontal_contact,
