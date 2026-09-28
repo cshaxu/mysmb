@@ -1073,3 +1073,149 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 255089 | 20fd70eb82c4528c554e4c7ecbb1532ddaf7a7bfe93b080a903bf0e508d1c1a8 |
 | mysmb32.exe | 337962 | 3dbe7c6d63285fa32506ad941e61c4d00696474ae898836f0a614aac68d0662d |
 | mysmb64.exe | 345555 | 5bc98c329aaf99e5da997b2cf662b75943a30be0c26f879d2642972af1add01b |
+
+## S7 admission: complete flying-fish initializer
+
+After S6 commit d9921d3, coordinator accepts transfer-171 from T19 S5 for
+all ten exact labels in the S7 plan row. All are open: incoming 968/1,992,
+ten expected, maximum 978. Shared enemy/frenzy.c owns $C488-$C548, all three
+tables and InitFlyingCheepCheep through FinCCSt. Entry is the original frenzy
+vector, exit is the existing ChpChpEx return or completed spawn. SmallBBox
+is a proven S4 child and ChpChpEx is an S5 maintenance dependency, with no
+new credit for either. The frenzy dispatcher and moving fish actor remain
+separate, unadmitted interiors.
+
+Restore timer-first gating, SmallBBox before slot-limit rejection, random timer,
+secondary-hard limit in scratch $00, original $00/$01 random intermediates,
+player-speed classes and register-Y-dependent position selection. Moving
+players retain the speed-table index in Y; stationary players load Y from
+scratch $00. Preserve direction inversion, add/subtract carry/page wrap and
+final flag/high-Y/Y writes. Do not add an Enemy_ID write absent from source.
+
+ROM proof binds all 32 table bytes and every branch/write/call to original
+NMI RAM routes with varied slots, speed thresholds, PRNG and coordinates.
+Actual child comparisons remain separate from the surrounding dispatcher's
+known scratch debt. Native proof checks full-RAM footprints across the state
+matrix, then strict C90 x86/x64, DOS16 link, platform purity, hidden-window
+probes and three owner-authorized EXEs. Similar-issue sweep covers the sole
+frenzy entry, scratch producers/consumers, all table indexes and actor callers.
+
+Existing owner-local ROM/listing provenance is unchanged; no third-party
+implementation import. New records/logs/intermediates stay beneath ignored
+build/m2-t38-s7 with a four-MB raw budget, twenty-second recorder timeout and
+S7 cleanup ownership. Stop on reference PC/stack/ROM patch, hidden mismatch,
+unadmitted repair or platform gameplay. Close only with ten exact dispositions,
+both proof tracks, tracker/ledger agreement and all three artifacts.
+
+## S7 original flying-fish proof
+
+All ten planned flying-fish nodes close with actual original/native proof:
+968 -> 978/1,992, no scoped transfer. All seven S chains have completed their
+updated 94 unique T38 targets. The final aggregate review below closes T38; no later T is admitted by
+this S closure.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| FlyCCXPositionData | $C488 | All sixteen position bytes match original ROM and are consumed by recorded routes; match |
+| FlyCCXSpeedData | $C498 | All twelve speed bytes match original ROM and all offsets execute; match |
+| FlyCCTimerData | $C4A4 | All four timer bytes match original ROM and all offsets execute; match |
+| InitFlyingCheepCheep | $C4A8 | Timer-first gate; shared SmallBBox before random timer and capacity rejection, including slot five; match |
+| MaxCC | $C4C4 | Write three/four capacity to RAM $00 and compare the original current slot; match |
+| GSeed | $C4E4 | Preserve player-speed bias and first PRNG bits in $00/$01 before conditional third-byte replacement; match |
+| RSeed | $C4F8 | Recover speed-table index from saved bias plus $01, preserving Y for the moving-player position route; match |
+| D2XPos1 | $C51C | Stationary path reloads Y from $00; moving path keeps speed index; use Y bit one and original carry for addition; match |
+| D2XPos2 | $C530 | Subtract original position table value and propagate borrow to player page; match |
+| FinCCSt | $C53C | Write resulting page, flag/high-Y one and Y=$F8; no fabricated ID write; match |
+
+Actual original/native comparison passes 304/304 across x86/x64, with no
+child-return substitutions. The 152 controlled NMI RAM routes exercise all
+six slots, timer busy/expired, normal/hard limits, stationary/slow/fast/high-bit
+player speeds, every table index and page carry/borrow. All seven code labels
+execute; all 32 data bytes match both ROM and native constants; all nine
+conditional branches execute both outcomes. The SmallBBox call and FinCCSt
+jump retain their source order. Every position/speed/timer index has a recorded
+consumer. Observer-free coverage runs produce identical frame records.
+
+The independent full-RAM test passes 26,106 cases per width. It checks busy
+timer immutability, post-SmallBBox slot rejection and the complete low-bit PRNG
+combination matrix across player-speed thresholds and coordinate/page wrap.
+The old flying_cheep_smoke was first run unchanged on both old and new cores:
+both failed at its obsolete parser-with-null-source queue entry. Updating only
+that fixture to the original queue owner, ProcLoopCommand, makes both cores
+pass; no production parser change or weakened state assertion is included.
+
+The final S1-S7 cross-chain matrix preserves all 692 previously matching
+actual comparisons. It includes loop, parser, full initializer, S4 common,
+S5 Spiny, S6 firebar and S7 flying-fish roots. Existing child failures remain
+explicit in the matrix; successful caller proof does not certify descendants.
+The focused earlier initializer/stream/common/firebar/Lakitu and corrected
+flying-fish native tests all pass on both widths. Forty additional regression
+runs retain 38 passes and the two baseline Bowser exit-4 failures.
+
+Strict C90 builds compile all 85 shared units for x86/x64; self-tests, bounded
+hidden-window response probes and platform purity pass. DOS16 links with the
+existing OLDNAMES warning and remains link-only: no runtime, resource-binding,
+playability or physical 486 claim. All gameplay changes remain in the shared
+owner. The frenzy dispatcher's nested JumpEngine scratch and the moving actor
+are untouched and retain their planned later source slices.
+
+Similar-issue sweep covers the sole production frenzy entry, all three data
+consumers, scratch $00/$01 producers, stationary/moving Y selection, and the
+actor boundary. Existing SmallBBox and ChpChpEx dependencies are reused with
+no repeated node credit. No new external source or implementation is imported.
+
+Reproduce using flying_fish_fixture.h cases 0 through 151 and the recorder's
+--fixture=t38-fish=N, --flying-fish-snapshot and --control-children options;
+run --pc-coverage separately. enemy_loop_actual_check compares the actual
+shared chain without instrumentation/substitution. Native targets are
+mysmb.flying-fish-initialization-chain and mysmb.flying-cheep-smoke. New local
+records/logs/build summaries remain beneath ignored build/m2-t38-s7, with less
+than 1.9 MB raw output under the four-MB budget and twenty-second recorder
+timeouts. Earlier S records are reused in place. Hardware return-stack storage
+is excluded from snapshots, but mapped game RAM $0109-$0139 remains checked.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255585 | cc34d4af1cd1a96ec3a2cb442d09c1767728712afc21817603511ec14432f938 |
+| mysmb32.exe | 337962 | 2c0184a49a5f39da5e9f91d9bbe4b79c1549c0707a0069e05b5a34b3fde9f7e4 |
+| mysmb64.exe | 345555 | ea0eb8098a6631b03c02817ae3c1a34f738df676bb8b2e258242059aed277822 |
+
+## T38 closure
+
+The seven source-ordered S chains complete 94 unique original nodes:
+S1 19, S2 19, S3 3, S4 23, S5 13, S6 7 and S7 10. All expected labels are
+ROM-match complete, none are retained unfinished in T38, and no completion
+credit is inferred for unadmitted descendants. Global progress is 884 ->
+978/1,992. The initial 91-node forecast gained the three explicitly admitted
+DuplicateEnemyObj dependency nodes; the later Bowser slice reuses them.
+
+The final integrated cross-chain comparison uses ordinary shared C objects,
+without recorded child-return substitution:
+
+| Original route family | Actual matches | Remaining differences |
+| --- | ---: | ---: |
+| loop | 166/192 | 26 |
+| stream | 150/160 | 10 |
+| init | 156/220 | 64 |
+| common | 104/104 | 0 |
+| spiny | 36/160 | 124 |
+| firebar | 80/80 | 0 |
+| fish | 304/304 | 0 |
+
+Total 996/1,220 actual comparisons match; 224 remain. All 692 earlier matching
+roots are preserved. The 26 loop descendants, ten parser descendants, 64
+initializer descendants and 124 PlayerLakituDiff scratch cases retain their
+separate original-node ownership and planned source slices. Their failures
+are neither discarded nor certified by the caller proofs. The final matrix
+and prior S evidence are complementary: node-level source audits certify the
+94 scoped nodes; the integrated matrix exposes remaining downstream work.
+
+S7's final build, seven focused native targets per width, forty additional
+regressions, platform-purity check, hidden-window probes and the three recorded
+artifact hashes form the T-level delivery. Earlier accepted S proofs are reused
+rather than rerun as new paperwork units. Baseline Bowser native failures and
+DOS link-only limits remain explicit. This closes T38, not M2 or full-game
+certification. Next is the queued special-initialization/frenzy slice beginning
+InitBowser; it is not admitted by this closure.

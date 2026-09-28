@@ -288,30 +288,31 @@ void mysmb_enemy_init_flying_cheep_frenzy(struct mysmb_game *game, mysmb_u8 slot
     mysmb_u8 player_speed_bias;
     mysmb_u8 old_x;
 
-    if (slot >= 5U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
-
-    /* SmallBBox -> SetBBox -> InitVStf. */
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
+    if (game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    mysmb_enemy_init_small_box(game, slot);
     timer_index = (mysmb_u8)(game->ram[0x07a8U + slot] & 3U);
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = timer[timer_index];
-    if (slot >= (game->ram[MYSMB_SECONDARY_HARD] != 0U ? 4U : 3U)) return;
+    game->ram[0U] = game->ram[MYSMB_SECONDARY_HARD] != 0U ? 4U : 3U;
+    if (slot >= game->ram[0U]) return;
 
-    position_index = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
+    game->ram[0U] = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
+    game->ram[1U] = game->ram[0U];
+    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfbU;
     player_speed_bias = 0U;
     if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
         player_speed_bias = game->ram[MYSMB_PLAYER_X_SPEED] < 0x19U ? 4U : 8U;
     }
-    speed_index = (mysmb_u8)(player_speed_bias + position_index);
+    game->ram[0U] = (mysmb_u8)(player_speed_bias + game->ram[0U]);
     if ((game->ram[0x07a8U + slot] & 3U) != 0U) {
-        position_index = (mysmb_u8)(game->ram[0x07a9U + slot] & 0x0fU);
+        game->ram[0U] = (mysmb_u8)(game->ram[0x07a9U + slot] & 0x0fU);
     }
-    game->ram[MYSMB_ENEMY_ID + slot] = 20U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfbU;
+    speed_index = (mysmb_u8)(player_speed_bias + game->ram[1U]);
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = x_speed[speed_index];
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
+    /* RSeed leaves Y at the speed-table index. Only the stationary-player
+     * path reloads Y from scratch $00 before the D2XPos1 position lookup. */
+    position_index = game->ram[MYSMB_PLAYER_X_SPEED] == 0U ?
+        game->ram[0U] : speed_index;
     if (game->ram[MYSMB_PLAYER_X_SPEED] == 0U && (position_index & 2U) != 0U) {
         game->ram[MYSMB_ENEMY_X_SPEED + slot] =
             (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);

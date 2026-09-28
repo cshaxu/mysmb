@@ -21,14 +21,16 @@ int main(int argc,char **argv)
     file=fopen(argv[1],"rb");if(file==NULL) return 65;
     if(fread(header,1,8,file)!=8 || (memcmp(header,"MSEP\1",5)!=0 &&
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
-        memcmp(header,"MSAP\1",5)!=0)) return 66;
+        memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[7]==0U && header[2]=='A')
+    if(header[7]==0U && header[2]=='Y')
+        mysmb_enemy_init_flying_cheep_frenzy(&game,header[6]);
+    else if(header[7]==0U && header[2]=='A')
         mysmb_enemy_init_lakitu_spiny_frenzy(&game,header[6]);
     else if(header[7]==0U && header[2]=='Z')
         mysmb_enemy_checkpoint_loaded(&game,header[6]);

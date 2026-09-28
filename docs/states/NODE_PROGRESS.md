@@ -12,17 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 968 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 978 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 916 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 906 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **968 / 1,992 (48.59%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **978 / 1,992 (49.10%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T38 S6 P1](../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof)
-proves seven firebar/duplicate nodes with 100/100 actual scoped comparisons.
-All 580 prior actual matches remain; parser improves to 150/160 and the full
-initializer matrix to 156/220. Other child gaps remain explicit.
+Latest task review: [T38 S7 P1](../history/M2-T38-enemy-stream-initialization.md#s7-original-flying-fish-proof)
+closes the final ten flying-fish nodes; T38 is closed with 94 new matches.
+S7 has 304/304 actual comparisons and
+all data indexes/conditional branches exercised. All 692 previous matching
+roots remain; later dispatcher/actor and other child gaps stay explicit.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (968)
+## Completed matches (978)
 
 | ROM line | Node |
 | ---: | --- |
@@ -965,6 +966,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8397 | `FirebarSpinDirData` |
 | 8400 | `InitLongFirebar` |
 | 8403 | `InitShortFirebar` |
+| 8430 | `FlyCCXPositionData` |
+| 8436 | `FlyCCXSpeedData` |
+| 8441 | `FlyCCTimerData` |
+| 8444 | `InitFlyingCheepCheep` |
+| 8457 | `MaxCC` |
+| 8473 | `GSeed` |
+| 8483 | `RSeed` |
+| 8503 | `D2XPos1` |
+| 8513 | `D2XPos2` |
+| 8519 | `FinCCSt` |
 | 8551 | `DuplicateEnemyObj` |
 | 8553 | `FSLoop` |
 | 8569 | `FlmEx` |

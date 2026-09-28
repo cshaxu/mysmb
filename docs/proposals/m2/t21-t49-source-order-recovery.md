@@ -792,4 +792,4 @@ external dependency.  Existing historical S/P evidence stays immutable.
 T38 S6 admits DuplicateEnemyObj, FSLoop and FlmEx as the missing immediate
 InitLongFirebar dependency. The original T39 source span retains those three
 labels for reuse/maintenance, with no repeated completion credit. See the
-[T38 dependency receipt](t38-enemy-stream-initialization.md#s6-admission-firebar-initialization-and-duplicate-dependency).
+[T38 dependency receipt](../../history/M2-T38-enemy-stream-initialization.md#s6-admission-firebar-initialization-and-duplicate-dependency).
