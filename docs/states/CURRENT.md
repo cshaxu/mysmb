@@ -2,28 +2,32 @@
 
 ## Current Work
 
-**M2 T37 S4 is closed at 847 / 1,992: four local nodes proven; S5 block lifetime is next.**
+**M2 T37 S5 is closed at 852 / 1,992: five local lifetime nodes proven; S6 metatile replacement is next.**
 
-## M2 T37 S4 Packet
+## M2 T37 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S3 commit ae6fc0a; coordinator accepts transfer-157. |
-| Objective | Complete BrickShatter, CheckTopOfBlock, TopEx and SpawnBrickChunks as one connected source group. |
-| Non-goals | No score, coin allocation, VRAM, block lifetime, gravity or platform algorithm repair. |
-| Reference Baseline | 843 / 1,992; four incomplete labels, four expected, maximum 847. |
-| Candidate Proposal | [S4 shatter/top coin/chunks](../proposals/m2/power-up-block-movement.md#s4-admission-shatter-top-coin-and-chunk-creation). |
-| Files And ABI Surface | Shared blocks/chunks owner, head/bump child declarations, existing score/coin/VRAM collaborators, tests/recorder/build lists and three EXEs. |
+| Identifier Mode | M2 T37 S5, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S4 commit d6fb78f; coordinator accepts transfer-158. |
+| Objective | Complete BlockObjectsCore, ChkTop, BouncingBlockHandler, KillBlock and UpdSte as one lifetime chain. |
+| Non-goals | No gravity, horizontal primitive, drawing, metatile updater or platform algorithm repair. |
+| Reference Baseline | 847 / 1,992; five incomplete labels, five expected, maximum 852. |
+| Candidate Proposal | [S5 block lifetime](../proposals/m2/power-up-block-movement.md#s5-admission-block-and-brick-chunk-lifetime). |
+| Files And ABI Surface | Shared blocks/lifetime owner, existing movement/OAM children, step callers, tests/recorder/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
-| Verification | Original branch/write/call audit, ordinary NMI snapshots, S2/S3 revalidation; separate native tests and three-target delivery. |
-| Expected Markers | Noise sound and replacement flag, score after player speed, unconditional row subtraction, remove-before-coin spawn, second high-Y preserved. |
+| Verification | Original branch/write/call audit, ordinary NMI root and child snapshots; separate native tests and three-target delivery. |
+| Expected Markers | Saved state nibble, paired gravity/movement, ObjectOffset reload, relative/offscreen/draw order and exact retirement thresholds. |
 | Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Four exact dispositions, dual proof, resolved S2 failures, caller sweep, tracker/ledger and hashes. |
+| Reporting Requirements | Five exact dispositions, dual proof, retained child differences, caller sweep, tracker/ledger and hashes. |
 | Stop Conditions | Unadmitted child repair, modified reference execution/output, hidden differences or platform gameplay. |
-| Exit Criteria | All received nodes proven or exact accepted unfinished transfer; S2 debt rechecked and accounting/artifacts consistent. |
+| Exit Criteria | All received nodes proven or exact accepted unfinished transfer; accounting and artifacts consistent. |
 | Original Owner Request | Faithful original ROM logic/call structure in shared C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All top-coin and shatter callers, chunk writes, audio queues, score ordering and scratch dependencies. |
+| Similar-Issue Sweep | All block-step callers, duplicated movement, saved-state and live-slot behavior, relative/offscreen/draw sequencing. |
+
+S5 closure: [block lifetime proof](../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof).
+64 caller matches; 30 actual matches and 34 retained drawing failures.
+Focused checks, 32 regressions and three builds pass.
 
 S4 closure: [shatter and chunk proof](../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof).
 32 caller matches; expanded actual-child checks retain scratch differences.

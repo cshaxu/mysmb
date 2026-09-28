@@ -988,11 +988,11 @@ The labels and branches behind every line remain open until individually bound b
 | 7420 | `CheckTopOfBlock` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
 | 7437 | `TopEx` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
 | 7441 | `SpawnBrickChunks` | M2 T37 S4 shared game/blocks/chunks.c | ROM-match complete | [S4 shatter and chunk proof](../../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof) |
-| 7468 | `BlockObjectsCore` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockobjectscore) |
-| 7500 | `ChkTop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chktop) |
-| 7506 | `BouncingBlockHandler` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-bouncingblockhandler) |
-| 7519 | `KillBlock` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killblock) |
-| 7520 | `UpdSte` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updste) |
+| 7468 | `BlockObjectsCore` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7500 | `ChkTop` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7506 | `BouncingBlockHandler` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7519 | `KillBlock` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
+| 7520 | `UpdSte` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
 | 7527 | `BlockObjMT_Updater` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockobjmt_updater) |
 | 7529 | `UpdateLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updateloop) |
 | 7546 | `NextBUpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextbupd) |

@@ -815,3 +815,122 @@ release evidence or a claim that M2 is complete.
 | mysmb64.exe | 338219 | d4663710a7a83fb097120ef4b4180906f97622a010547f2076f784be9bf8990e |
 
 Retained raw evidence: 756772 bytes. S4 closes; S5 block lifetime is next, not yet admitted.
+
+
+## S5 admission: block and brick-chunk lifetime
+
+S4 closed in d6fb78f. Transfer-158 receives five incomplete labels from
+T24 S2: BlockObjectsCore, ChkTop, BouncingBlockHandler, KillBlock and UpdSte.
+Baseline 847 / 1,992; expected five, maximum 852. BlockObjectsCore and
+BouncingBlockHandler are mapped but incomplete; the other three are open.
+Shared owner: game/blocks/lifetime.c.
+
+Original $BE70-$BED3 preserves inactive-state store, the saved low nibble,
+and block-to-SprObject offset conversion. The chunk path calls gravity and
+horizontal movement for both objects, reloads ObjectOffset, then relative,
+offscreen and chunk drawing. High-Y zero retains saved state; otherwise
+clamp only a second Y greater than $F0, and retire when first Y >= $F0.
+Bounce calls gravity, reloads ObjectOffset, relative/offscreen/DrawBlock,
+then checks low-Y nibble: below five sets replacement and clears state.
+All returns store the selected state at the live block slot.
+
+Move the existing public step entry out of objects.c. Remove its duplicate
+horizontal algorithm in favor of the existing shared SprObject movement
+entry. This gives no movement or gravity credit: S7/S9 own those algorithms.
+Keep the existing block-relative/offscreen/draw children. If their register
+return contract needs representation, expose that seam without changing the
+child algorithm. Predecessors are block initialization/bump/shatter; next is
+S6 metatile replacement. Audit all block-step callers, slot reloads and
+movement/draw order. Platforms remain unchanged.
+
+Use ordinary NMI GameEngine block-slot routes with source-RAM fixtures for
+inactive, bounce, paired chunks, wrap, high-Y zero and threshold boundaries.
+Read-only root/direct-child observers reuse the existing recorder machinery.
+Separate caller proof from actual-child differences; no altered original PC,
+stack, ROM, return or output. Cover every original node and both outcomes of
+conditional branches. Independent native tests check full write footprint,
+call order, saved state and reload behavior. Run strict C90 x86/x64,
+applicable regressions, DOS16 link, platform purity, bounded hidden-window
+probes and refresh three owner-authorized EXEs at P closure.
+
+Existing owner-local ROM/listing are local research inputs without a
+redistribution claim; no third-party implementation import. All raw traces,
+logs and intermediate outputs stay below ignored build/m2-t37-s5, capped
+at four MB raw evidence and twenty seconds per recorder run. S5 owns cleanup.
+Record exact node disposition, both proof tracks, residual responsibilities,
+tracker/ledger and hashes. DOS remains link-only; child and full-game failures
+must remain explicit. No out-of-scope repair or completion credit.
+
+
+## S5 original block lifetime proof
+
+S5/P1 completes BlockObjectsCore, ChkTop, BouncingBlockHandler, KillBlock
+and UpdSte: expected five, actual five, no scoped transfers. Progress is
+847 -> 852 / 1,992. Caller/local control-flow proof does not certify child
+interiors or the complete game.
+
+| Node | Shared C mapping and original contract |
+| --- | --- |
+| BlockObjectsCore $BE70 | blocks/lifetime.c: inactive state store; saved low nibble; select bounce or paired chunk path; original gravity/movement calls with block/SprObject offsets and ObjectOffset reload. |
+| ChkTop $BEAA | First chunk Y >= $F0 retires; otherwise preserve saved low state. Second Y is clamped only above $F0 before this check. High-Y zero bypasses both checks and retains state. |
+| BouncingBlockHandler $BEB3 | Gravity, reload, relative, offscreen, DrawBlock; low Y nibble below five writes replacement flag and retires. |
+| KillBlock $BECF | Set selected state to zero without an additional replacement write on the chunk path. |
+| UpdSte $BED1 | Store selected state, including the inactive path, to the current block slot and return. |
+
+The original instruction stream $BE70-$BED3 is authoritative where comments
+misdescribe high-Y zero as killing the object. All original nodes are observed
+through 32 source-RAM ordinary NMI/GameEngine scenarios selecting both slots.
+Six conditional branches have both outcomes. BCS at $BEB1 is only reached
+after the preceding BCC falls through, with no intervening carry mutation;
+its taken-only observation is justified by the original bytes, not a missing
+scenario disguised as two-way coverage.
+
+Read-only root and direct-child observations use real stack returns, with no
+CPU/ROM/stack/output redirection. Separately observed and unobserved frame
+outputs and coverage snapshots are byte-identical. The x86/x64 caller checks
+match 64/64 across 1,791 persistent RAM bytes including OAM. Scratch $00-$07
+and CPU stack are outside this comparison; native tests verify this caller
+has no scratch write. Original child-return substitution is confined to the
+caller test executable, never reference execution or production.
+
+Actual native roots match 30/64 and retain 34 OAM-only failures. Independent
+child entries isolate DrawBlock in cases 4/6/8/10 and DrawBrickChunks in
+3/13/15/17/19/20/21/23/25/27/28/29/31, on both widths. Differences concern
+sprite hiding and mirrored X coordinates; no other compared RAM differs.
+Keep these exact failures with existing M2 T17 S6 drawing custody until
+source-order graphics admission. No graphics repair or child completion
+credit is claimed here. Existing scratch/score and full-frame debts remain.
+
+Independent strict-C90 tests pass 131,090 full state/write cases and two
+live-slot reload cases per width; engine-slot ordering passes both widths.
+All 32 surrounding regression runs pass. Final Windows builds compile 80
+shared source units, pass input self-test, create hidden windows and respond
+to bounded message probes. DOS16 links with the existing OLDNAMES warning;
+it remains link-only, without resource binding or physical 486SX qualification.
+Platform purity passes and platform source is unchanged.
+
+The similar-issue sweep finds the two engine-slot callers already writing
+ObjectOffset before the shared step. Move the public step to lifetime.c,
+remove the duplicated horizontal algorithm from objects.c and use existing
+world movement with slot+9/slot+11. Its carry propagation is no longer a
+separate block-only implementation. Gravity and drawing remain single-owner
+children; their full equivalence is not granted by this caller delivery.
+
+Reproduce with mysmb_block_lifetime_smoke and the snapshot/caller/child
+check targets. Record `--fixture=t37-lifetime=N` (0-31),
+`--block-lifetime-snapshot=...`, `--control-children=...`; record
+`--pc-coverage=...` separately. Run
+`python test/verify_block_lifetime_snapshots.py <ignored-directory> <owner-rom>`.
+The verifier retains actual failures and rejects non-OAM discrepancies.
+Raw evidence remains ignored below build/m2-t37-s5, within the four-MB budget.
+
+Three owner-authorized local test EXEs follow. They are not redistributable
+release evidence or a claim that M2 is complete.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256561 | 600878167653a10b2ec6fb121a9c46bd394f0eb26599993381e52178e3059b9d |
+| mysmb32.exe | 330411 | 2a32459cde26ce6a2f42aebafeafc5082db2b5948244161286910805e2f7f040 |
+| mysmb64.exe | 338397 | 3193cffb20e3f575a79502aa55f68ec43670748484ce66cd65d7fd723b189040 |
+
+Retained raw evidence: 1944726 bytes. S5 closes; S6 metatile replacement is next, not yet admitted.
