@@ -2,28 +2,34 @@
 
 ## Current Work
 
-**M2 T40 S6 is closed at 1,105 / 1,992: both expected nodes complete.**
+**M2 T40 S7 is closed at 1,112 / 1,992: all seven expected nodes complete.**
 
-## M2 T40 S6 Packet
+## M2 T40 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T40 S6, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 4155d2a; coordinator accepts transfer-190. |
-| Objective | Complete MoveBulletBill and NotDefB, both open and expected new. |
-| Non-goals | No cannon, swimming fish, child movement repair or host gameplay. |
-| Reference Baseline | 1,103/1,992; two open scoped/expected, maximum 1,105. |
-| Candidate Proposal | [T40 S6 exact scope and proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s6-admission-bullet-bill-movement). |
-| Files And ABI Surface | Shared Bullet Bill owner, bulk boundary, manifests, tests/recorder, records and three EXEs. |
+| Identifier Mode | M2 T40 S7, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 6a10b72; coordinator accepts transfer-191. |
+| Objective | Complete all seven exact swimming Cheep-Cheep labels in the linked proposal. |
+| Non-goals | No firebar, initializer/gravity/graphics repair or host gameplay. |
+| Reference Baseline | 1,105/1,992; seven open scoped/expected, maximum 1,112. |
+| Candidate Proposal | [T40 S7 exact scope and proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s7-admission-swimming-cheep-cheep-movement). |
+| Files And ABI Surface | Shared swimming-fish owner, bulk boundary, manifests, tests/recorder, records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branch/store/tail-call and actual children; independent native contracts/regressions/builds. |
-| Expected Markers | State bit $20 selects gravity; otherwise fixed speed $E8 then horizontal movement, without extra gates. |
+| Verification | Original table/branch/RAM/child-order and actual children; independent native contracts/regressions/builds. |
+| Expected Markers | Masked zero scratch $03, $02=$20; fractional X/Y carry and borrow; slot gate; signed wrapped height magnitude and flag. |
 | Asset Needs | Existing owner-local ROM/listing and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Both exact dispositions, two evidence tracks and three hashes. |
+| Reporting Requirements | Seven exact dispositions, two evidence tracks and three hashes. |
 | Stop Conditions | Unadmitted child repair, original execution patch, hidden mismatch or host gameplay. |
-| Exit Criteria | Both nodes proved or exact accepted transfer; tracker/ledger/artifacts agree. |
+| Exit Criteria | All seven nodes proved or exact accepted transfer; tracker/ledger/artifacts agree. |
 | Original Owner Request | Faithful original-ROM call graph and logic in shared 16/32/64-bit native C. |
-| Similar-Issue Sweep | Bullet actor/vector/bulk routes and tests of legacy facing/timer behavior. |
+| Similar-Issue Sweep | Swimming-fish inline/vector/bulk routes, masked state, scratch and direction behavior. |
+
+## S7 closure
+
+[Swimming Cheep-Cheep proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof)
+closes seven nodes with 1,024/1,024 actual-child and caller comparisons.
+All 6,276 prior matches remain; three EXEs are refreshed. DOS is link-only.
 
 ## S6 closure
 
@@ -71,7 +77,7 @@ all three EXEs; child/full-game gaps and DOS link-only limits remain explicit.
 
 ## Current sequence
 
-T40 has ten source-ordered S chains; S1-S6 are closed and S7 is next. Its 120-node scope ends
+T40 has ten source-ordered S chains; S1-S7 are closed and S8 is next. Its 120-node scope ends
 after PlayerLakituDiff. BridgeCollapseData and the whole bridge/Bowser chain
 remain with the next queued slice. Follow the [T40 plan](../proposals/m2/t40-enemy-movement-and-firebar.md).
 

@@ -799,65 +799,15 @@ void mysmb_objects_step_piranha_plants(struct mysmb_game *game)
     }
 }
 
-/* ROM $ad7b-$ae04 InitCheepCheep/MoveSwimmingCheepCheep. */
-void mysmb_objects_step_swimming_cheep_cheeps_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 old_value;
-    mysmb_u8 carry;
-    mysmb_u8 difference;
-    mysmb_u8 amount;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        (game->ram[MYSMB_ENEMY_ID + slot] != 10U &&
-         game->ram[MYSMB_ENEMY_ID + slot] != 11U)) return;
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        /* ROM MoveSwimmingCheepCheep -> MoveEnemySlowVert. */
-        mysmb_enemy_move_slow_vertically(game, slot);
-        return;
-    }
-    amount = game->ram[MYSMB_ENEMY_ID + slot] == 10U ? 0x40U : 0x80U;
-    old_value = game->ram[MYSMB_ENEMY_X_FORCE + slot];
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_value - amount);
-    carry = old_value < amount ? 1U : 0U;
-    old_value = game->ram[MYSMB_ENEMY_X + slot];
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_value - carry);
-    carry = old_value < carry ? 1U : 0U;
-    game->ram[MYSMB_ENEMY_PAGE + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] - carry);
-    if (slot < 2U) return;
-    if (game->ram[MYSMB_ENEMY_X_SPEED + slot] < 0x10U) {
-        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_value - 0x20U);
-        carry = old_value < 0x20U ? 1U : 0U;
-        amount = (mysmb_u8)(carry + game->ram[MYSMB_ENEMY_STATE + slot]);
-        old_value = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value - amount);
-        if (old_value < amount) game->ram[MYSMB_ENEMY_Y_HIGH + slot]--;
-    }
-    else {
-        old_value = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_value + 0x20U);
-        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_value ? 1U : 0U;
-        amount = (mysmb_u8)(carry + game->ram[MYSMB_ENEMY_STATE + slot]);
-        old_value = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_value + amount);
-        if (game->ram[MYSMB_ENEMY_Y + slot] < old_value) game->ram[MYSMB_ENEMY_Y_HIGH + slot]++;
-    }
-    difference = game->ram[MYSMB_ENEMY_Y + slot] > game->ram[MYSMB_ENEMY_Y_FORCE + slot] ?
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - game->ram[MYSMB_ENEMY_Y_FORCE + slot]) :
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_FORCE + slot] - game->ram[MYSMB_ENEMY_Y + slot]);
-    if (difference >= 0x0fU) {
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            game->ram[MYSMB_ENEMY_Y + slot] >= game->ram[MYSMB_ENEMY_Y_FORCE + slot] ? 0x10U : 0U;
-    }
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_swimming_cheep_cheeps(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     for (slot = 0U; slot < 5U; ++slot)
-        mysmb_objects_step_swimming_cheep_cheeps_slot(game, slot);
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            (game->ram[MYSMB_ENEMY_ID + slot] == 10U ||
+             game->ram[MYSMB_ENEMY_ID + slot] == 11U))
+            mysmb_objects_step_swimming_cheep_cheeps_slot(game, slot);
 }
 
 /* Legacy aggregate filter; the source movement entry has no flag/ID gate. */

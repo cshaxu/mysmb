@@ -77,6 +77,7 @@
 #include "../test/green_counter_fixture.h"
 #include "../test/bloober_movement_fixture.h"
 #include "../test/bullet_movement_fixture.h"
+#include "../test/swimming_cheep_movement_fixture.h"
 #include "../test/misc_lifetime_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
@@ -1039,6 +1040,12 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--swimming-cheep-snapshot=", 26u) == 0) {
+            if (movement_snapshot_path != NULL) return 64;
+            movement_snapshot_path = arguments[recorded] + 26u;
+            background_snapshot = 50u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--bullet-movement-snapshot=", 27u) == 0) {
             if (movement_snapshot_path != NULL) return 64;
             movement_snapshot_path = arguments[recorded] + 27u;
@@ -1743,6 +1750,13 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_swimming_cheep_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u32)(5559 + block_scenario);
+            transition_entry = 0xcc4au;
+            continue;
+        }
         block_scenario = mysmb_bullet_movement_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -2496,6 +2510,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 5560u && t26_fixture <= 6071u)
+                    mysmb_swimming_cheep_fixture(driver->machine->ram,
+                        (unsigned int)(t26_fixture - 5560u));
                 else if (t26_fixture >= 5432u && t26_fixture <= 5559u)
                     mysmb_bullet_movement_fixture(driver->machine->ram,
                         (unsigned int)(t26_fixture - 5432u));
@@ -2866,10 +2883,12 @@ int main(int argument_count, char **arguments)
             driver->machine->ram[0x16u + driver->machine->x] = 0x13u;
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
-        if ((background_snapshot >= 4u && background_snapshot <= 49u) && movement_snapshot_path != NULL &&
-            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 5559u) {
+        if ((background_snapshot >= 4u && background_snapshot <= 50u) && movement_snapshot_path != NULL &&
+            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 6071u) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&
+                (background_snapshot != 50u || driver->machine->ram[8u] ==
+                    mysmb_swimming_cheep_slot((unsigned int)(t26_fixture - 5560u))) &&
                 (background_snapshot != 49u || driver->machine->ram[8u] ==
                     mysmb_bullet_movement_slot((unsigned int)(t26_fixture - 5432u))) &&
                 (background_snapshot != 48u || driver->machine->ram[8u] ==
@@ -2950,7 +2969,8 @@ int main(int argument_count, char **arguments)
                 }
                 else if (entrance_children_path != NULL) {
                     unsigned int child;
-                    child = background_snapshot == 49u ?
+                    child = background_snapshot == 50u ? (before_pc == 0xbf8cu ? 1u : 0u) :
+                        background_snapshot == 49u ?
                         (before_pc == 0xbf92u ? 1u : (before_pc == 0xbf02u ? 2u : 0u)) :
                         background_snapshot == 48u ?
                         (before_pc == 0xe143u ? 1u : (before_pc == 0xbf8cu ? 2u : 0u)) :
@@ -3229,7 +3249,7 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        if (background_snapshot >= 5u && background_snapshot <= 49u) {
+        if (background_snapshot >= 5u && background_snapshot <= 50u) {
             unsigned char header[8] = {'M','S','T','P',1u,0u,0u,0u};
             header[5] = transition_entry == 0xb1c7u ? 1u :
                 (transition_entry == 0xb206u ? 2u : (transition_entry == 0xb1e5u ? 3u : 4u));
@@ -3261,6 +3281,7 @@ int main(int argument_count, char **arguments)
                 header[2] = 'B';
                 header[5] = transition_entry == 0xb6f9u ? 1u : 2u;
             }
+            if (background_snapshot == 50u) { header[2] = 'g'; header[5] = 1u; }
             if (background_snapshot == 49u) { header[2] = 'f'; header[5] = 1u; }
             if (background_snapshot == 48u) { header[2] = 'e'; header[5] = 1u; }
             if (background_snapshot == 47u) { header[2] = 'd'; header[5] = transition_entry == 0xcb25u ? 1u : 2u; header[7] = transition_entry == 0xcb47u ? coin_entry_carry : 0u; }
@@ -3426,7 +3447,7 @@ int main(int argument_count, char **arguments)
         unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
         unsigned int child;
         int ok;
-        if ((background_snapshot < 3u || background_snapshot > 49u) || movement_snapshot_phase != 2u ||
+        if ((background_snapshot < 3u || background_snapshot > 50u) || movement_snapshot_phase != 2u ||
             entrance_child_active != 0u) return 69;
         if (background_snapshot == 4u) header[2] = 'P';
         if (background_snapshot == 5u) header[2] = 'T';
@@ -3454,6 +3475,7 @@ int main(int argument_count, char **arguments)
         if (background_snapshot == 31u) header[2] = 'S';
         if (background_snapshot == 32u) header[2] = 'Z';
         if (background_snapshot == 33u) header[2] = 'A';
+        if (background_snapshot == 50u) header[2] = 'g';
         if (background_snapshot == 49u) header[2] = 'f';
         if (background_snapshot == 48u) header[2] = 'e';
         if (background_snapshot == 47u) header[2] = 'd';

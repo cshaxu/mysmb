@@ -836,3 +836,145 @@ differences retain their existing source-order owners.
 | mysmb16.exe | 255971 | f603e81307516cad0243be5d03547ad2ec2b2853fd006e4983f08d169c6f9611 |
 | mysmb32.exe | 345850 | 893bf46e91ed59e54551a8688844e6dc030d9c1ff70b2042c52c0c3994de0711 |
 | mysmb64.exe | 353791 | e23e6578e9f3205f8cc81daf678d1c72c3f48d766ea16c3b9f35389d29332089 |
+
+## S7 admission: Swimming Cheep-Cheep movement
+
+S6 closed in 6a10b72. Coordinator accepts transfer-191. All seven labels are
+open and expected new: SwimCCXMoveData, MoveSwimmingCheepCheep, CCSwim, CCSwimUpwards, ChkSwimYPos, YPDiff, ExSwCC.
+Baseline 1,105/1,992; maximum 1,112. Source $CC46-$CCC6 follows Bullet Bill
+and ends before the firebar tables. Shared owner is enemy/swimming_cheep.c.
+MoveEnemySlowVert remains the existing child dependency without new credit.
+
+Preserve the four-byte SwimCCXMoveData binding, including the unused trailing
+data, and ID-selected force subtraction with borrow through X/page. Store
+the state AND $20 result in scratch $03 (zero on the swimming branch), and
+scratch $02 first from the table, then $20 before the slot check. Slots zero
+and one skip vertical movement. Other slots add/subtract $20 in the Y fraction,
+carry/borrow through Y and Y-high, then take the sign of the wrapped difference
+from original Y. Negative difference selects $10 (down), nonnegative selects
+zero (up), changing the flag only when the magnitude is at least $0F.
+The defeated branch calls the real slow-gravity child. Retain eligibility
+filtering only at the legacy bulk boundary. Do not alter fish initializers,
+child gravity, graphics, firebars or host adapters.
+
+Logic proof maps each table, branch, RAM read/write and child edge first,
+then compares unchanged original NMI routes and actual children. Exercise
+both IDs, all slot classes, state bits, fractional carry/borrow, coordinate
+wrap, both sign paths, and magnitude $0E/$0F/$10 plus signed extremes.
+Controlled RAM input at a naturally reached entry is allowed only when a
+branch cannot be reached through ordinary NMI inputs; no ROM, CPU, PC, stack
+or output patch. Diagnostic child substitution requires full input comparison;
+real-child differences remain visible. Native full-RAM contracts independently
+check scratch, masked state, byte arithmetic and the turnaround rule.
+
+Preserve prior original matches; run strict C90 x86/x64, DOS16 link, platform
+purity, hidden-window probes and refresh three EXEs once for the chain.
+Individual node proof and tracker/ledger updates are required at closure.
+S8 firebar remains next. Similar-issue sweep covers the inline/source/vector/
+bulk swimming-fish routes, scratch aliases, state masking and direction tests.
+Existing owner-local ROM/listing provenance and redistribution limits remain;
+no third-party import. All outputs stay below ignored build/m2-t40-s7, with
+up to 512 original routes, sixteen-MB raw budget, twenty-second per-run timeout,
+unique paths and stable checkpoints. The coordinator owns local trace retention
+and cleanup once dependent admitted regressions no longer need the records.
+
+### S7 implementation checkpoint (not closure)
+
+The source actor now lives in shared enemy/swimming_cheep.c; the old inline
+body is removed and both build manifests use the shared owner. The source
+entry preserves masked-zero scratch $03 and $20 scratch $02 before its slot
+gate, instead of applying the raw state byte to Y. Height comparison uses
+the sign of byte subtraction and restores the original flag direction.
+The legacy bulk boundary alone retains the ID/eligibility filter.
+
+Eleven explicit full-RAM native boundary cases pass in strict C90 on x86/x64:
+slot zero/one Y preservation, X fraction/page borrow, Y fraction/high wrap,
+signed wrapped difference, exact magnitude threshold and defeated child.
+These contracts do not establish ROM equivalence. Original-route instruction/
+branch evidence, final regressions and three-target delivery remain pending;
+no node promotion or P commit is claimed at this checkpoint.
+
+## S7 original swimming Cheep-Cheep proof
+
+S7 P1 closes all seven expected nodes: 1,105 -> 1,112/1,992. No scoped
+unfinished node or transfer remains; S8 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| SwimCCXMoveData | $CC46 | Four original table bytes bound; both used ID-selected forces exercised; new ROM match |
+| MoveSwimmingCheepCheep | $CC4A | State bit $20 selects the original slow-gravity child without extra gates; new ROM match |
+| CCSwim | $CC53 | Masked-zero scratch, table force subtraction and page borrow precede slot gate; new ROM match |
+| CCSwimUpwards | $CC99 | Y fraction subtraction propagates borrow through Y and Y-high; new ROM match |
+| ChkSwimYPos | $CCAC | Y-high stored before wrapped anchor difference sign and magnitude; new ROM match |
+| YPDiff | $CCBF | Exact $0F threshold selects up zero or down $10 from original sign; new ROM match |
+| ExSwCC | $CCC6 | First two slots and below-threshold paths retain the prescribed RAM footprint; new ROM match |
+
+The 512 unchanged original NMI routes exercise both fish IDs (256 each),
+slots zero, one, two and five (128 each), state-mask branches, X fractional
+borrow, both Y fractional directions, wrapped height sign and the $0F
+magnitude threshold. All 62 instructions and both outcomes of all five
+conditional branches execute. The four bytes at SwimCCXMoveData match the
+bound C table; the first two are consumed by IDs ten/eleven and the trailing
+two remain explicitly unused source data. No extra algorithm is inferred.
+
+Caller diagnostics and actual-child comparisons each pass 1,024/1,024 across
+x86/x64. Sixty-four defeated cases reach the original $BF8C slow-gravity child;
+other paths have no external child. Diagnostic substitution follows complete
+child-input RAM comparison, while actual runs execute the shared gravity
+implementation. Scratch and mapped $0109-$0139 remain checked; only hardware
+stack bytes are excluded. No mid-entry input, ROM, CPU/register, PC, stack or
+output patch is used. All 512 observer-free frames equal the observed records;
+this proves observer noninterference, not full-game native frame conformance.
+The gravity child receives no additional node-completion credit.
+
+Shared enemy/swimming_cheep.c replaces the old inline actor. Its source entry
+has no eligibility guard; legacy bulk filtering remains at that boundary.
+The old implementation incorrectly added the raw state byte into vertical
+movement and omitted the source scratch stores. The original non-defeated
+path stores masked zero in $03 and ultimately $20 in $02, including slots
+zero/one before returning. Fractional carry/borrow propagates through X/page
+and Y/Y-high exactly. Height comparison uses the sign of wrapped subtraction,
+not an unsigned ordering of the coordinates; negative difference chooses
+$10 (down) and nonnegative chooses zero (up), only at magnitude >= $0F.
+The old direction assignment was reversed. The original state/table/child
+order now has one shared owner across all three targets.
+
+Eleven explicit full-RAM native cases per width independently cover early
+slot exit, X/page borrow, Y fraction/high wrap, raw state masking, exact
+threshold, wrapped signed differences including $80, and defeated child
+mutation. Earlier native contracts and focused suites pass. The combined
+original-snapshot matrix is 7,308/8,082, preserving all 6,276 prior matches
+and improving eight earlier comparisons. The remaining 774 downstream
+comparison differences retain their original source-order owners. Existing
+Bowser damage and endgame star-timer failures remain unchanged; the broad
+core smoke's earlier player-entrance failure is not claimed resolved.
+
+All 97 shared units compile in strict C90 for x86/x64, and both executable
+self-tests and hidden-window response probes pass. DOS16 links with the
+existing OLDNAMES warning and remains link-only; graphical playability,
+resource binding and physical 486 performance are unproven. Platform purity
+passes. All three test executables are refreshed.
+
+Similar-issue sweep covers the former inline actor, movement vector and
+legacy bulk route, force/dummy/anchor aliases, scratch writes and signed
+turnaround. The existing core swim checks already describe the applicable
+fractional movement and defeated child; they need no expectation change.
+No duplicate movement owner or host gameplay is introduced.
+
+Reproduce swimming_cheep_movement_fixture.h cases 0..511 using
+--fixture=t40-swimming-cheep=N, --swimming-cheep-snapshot,
+--control-children and a separate --pc-coverage run.
+swimming_cheep_movement_snapshot_check diagnoses child boundaries;
+enemy_loop_actual_check executes actual children. The native CTest is
+mysmb.swimming-cheep-movement. Local source-audit.json records exact
+instruction/branch and table-consumer evidence. Raw inputs use 4,631,168
+bytes, below the sixteen-MB budget, under ignored build/m2-t40-s7.
+Unique paths, twenty-second timeouts and checkpoints bound every run.
+The coordinator retains local inputs for dependent admitted regressions.
+Existing owner-ROM/listing provenance and redistribution limits remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255767 | 57053dff2c7759dbdc0cf2fe43051c0ce33fa51899d1e092269d927022545e0c |
+| mysmb32.exe | 346134 | 0368c97f6685376f4f9f505820e43c9b91f8daf6be161426c99c31470b9e92da |
+| mysmb64.exe | 353598 | c427eea7cead73dcd1974c7f32483f9069760a47c640ce3401d1e4ad6e1e673f |
