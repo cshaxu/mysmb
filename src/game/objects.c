@@ -171,10 +171,6 @@ static mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game,
 static void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
                                                  mysmb_u8 slot);
-static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
-static void mysmb_objects_check_enemy_side(struct mysmb_game *game, mysmb_u8 slot);
-static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
-                                              mysmb_u8 slot);
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
@@ -615,27 +611,6 @@ static void mysmb_objects_prepare_power_up_subs(struct mysmb_game *game)
     mysmb_objects_draw_power_up(game);
 }
 
-/* ROM EnemyJump.  This caller retains actor scheduling; the shared world
- * APIs own only the selected probe, landing bytes, and fixed-point movement. */
-static void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
-                                                  mysmb_u8 slot)
-{
-    struct mysmb_enemy_terrain terrain;
-    mysmb_u8 tile;
-
-    /* SubtEnemyYPos: the 6502 comparison is against the wrapped ADC byte. */
-    if ((mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) >= 0x44U &&
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + 2U) >= 3U) {
-        tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
-            terrain.metatile : 0U;
-        if (mysmb_objects_is_solid_terrain(tile) != 0U) {
-            mysmb_world_land_enemy(game, slot);
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
-        }
-    }
-    /* DoSide reaches the same side-check child on every return path. */
-    mysmb_objects_check_enemy_side(game, slot);
-}
 /* ROM $bbef-$bc15 GrowThePowerUp through the admitted PowerUpObjHandler
  * movement and EnemyToBGCollisionDet state paths. */
 void mysmb_objects_step_power_up(struct mysmb_game *game)
@@ -809,7 +784,7 @@ mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
 
 /* Existing walking-route bump and side-check children, extracted so the
  * admitted background entry shares them with the jumping-enemy route. */
-static void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot)
+void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
     /* ChkForBump_HammerBroJ -> RXSpd for this ordinary route. */
     if (slot != 5U && (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) != 0U) {
@@ -818,21 +793,6 @@ static void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_X_SPEED + slot] =
         (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
-}
-
-static void mysmb_objects_check_enemy_side(struct mysmb_game *game, mysmb_u8 slot)
-{
-    struct mysmb_enemy_terrain terrain;
-    mysmb_u8 direction;
-    mysmb_u8 tile;
-    /* DoEnemySideCheck inspects only the leading side, at $14 vertically. */
-    if (game->ram[MYSMB_ENEMY_Y + slot] < 0x20U) return;
-    direction = game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot];
-    tile = mysmb_world_query_enemy_block(game, slot,
-        direction == 1U ? 0x17U : 0x16U, 1U, &terrain) != 0U ? terrain.metatile : 0U;
-    if (mysmb_objects_is_solid_terrain(tile) == 0U) return;
-
-    mysmb_objects_bump_enemy(game, slot);
 }
 
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
@@ -954,25 +914,6 @@ bump:
 
 
 
-
-/* Original EnemyToBGCollisionDet entry: select the source terrain family
- * before entering existing child bodies. Their internal proofs are separate. */
-void mysmb_objects_enemy_background_current(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 id;
-
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) < 0x44U) return;
-    id = game->ram[MYSMB_ENEMY_ID + slot];
-    if (id == 18U && game->ram[MYSMB_ENEMY_Y + slot] < 0x25U) return;
-    if (id == 14U) {
-        /* Preserve EnemyJump's own repeated Y guard for both callers. */
-        mysmb_objects_step_enemy_jump_terrain(game, slot);
-    }
-    else if (id == 5U) mysmb_objects_step_hammer_terrain(game, slot);
-    else if (id < 7U || id == 18U || id == 0x2eU)
-        mysmb_objects_step_normal_enemy_terrain(game, slot);
-}
 
 /* Current-slot seam for the existing collision implementations. Source
  * PlayerEnemyCollision is one caller boundary; these legacy specialized
@@ -2260,7 +2201,7 @@ static void mysmb_objects_move_misc_horizontally(struct mysmb_game *game,
 
 /* The admitted background buffer stores these pass-through metatiles as in
  * EnemyToBGCollisionDet. */
-static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
+mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 {
     return tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
            tile != 0x5fU && tile != 0x60U;
@@ -2268,7 +2209,7 @@ static mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 
 /* ROM $d9bd HammerBroBGColl.  This is deliberately run before the Hammer
  * movement route, matching RunNormalEnemies' EnemyToBGCollisionDet order. */
-static void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
+void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {
     struct mysmb_enemy_terrain terrain;

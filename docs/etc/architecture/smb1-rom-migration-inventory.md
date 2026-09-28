@@ -1610,14 +1610,14 @@ The labels and branches behind every line remain open until individually bound b
 | 12396 | `CheckForCoinMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforcoinmtiles) |
 | 12403 | `CoinSd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinsd) |
 | 12407 | `GetMTileAttrib` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmtileattrib) |
-| 12415 | `ExEBG` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exebg) |
+| 12415 | `ExEBG` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12420 | `EnemyBGCStateData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcstatedata) |
 | 12423 | `EnemyBGCXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcxspddata) |
-| 12426 | `EnemyToBGCollisionDet` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemytobgcollisiondet) |
-| 12439 | `DoIDCheckBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doidcheckbgcoll) |
-| 12443 | `HBChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hbchk) |
-| 12446 | `CInvu` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cinvu) |
-| 12452 | `YesIn` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-yesin) |
+| 12426 | `EnemyToBGCollisionDet` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12439 | `DoIDCheckBGColl` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12443 | `HBChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12446 | `CInvu` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12452 | `YesIn` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12455 | `NoEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noetobgcollision) |
 | 12461 | `HandleEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleetobgcollision) |
 | 12476 | `GiveOEPoints` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-giveoepoints) |
@@ -1628,7 +1628,7 @@ The labels and branches behind every line remain open until individually bound b
 | 12504 | `SetNotW` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setnotw) |
 | 12509 | `ChkBBill` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbbill) |
 | 12515 | `NoCDirF` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocdirf) |
-| 12518 | `ExEBGChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exebgchk) |
+| 12518 | `ExEBGChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12523 | `LandEnemyProperly` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyproperly) |
 | 12535 | `SChkA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schka) |
 | 12537 | `ChkLandedEnemyState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklandedenemystate) |
@@ -1643,18 +1643,18 @@ The labels and branches behind every line remain open until individually bound b
 | 12603 | `Chk2MSBSt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2msbst) |
 | 12610 | `GetSteFromD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getstefromd) |
 | 12611 | `SetD6Ste` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setd6ste) |
-| 12617 | `DoEnemySideCheck` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doenemysidecheck) |
-| 12624 | `SdeCLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sdecloop) |
-| 12632 | `NextSdeC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextsdec) |
-| 12636 | `ExESdeC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exesdec) |
+| 12617 | `DoEnemySideCheck` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12624 | `SdeCLoop` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12632 | `NextSdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12636 | `ExESdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12638 | `ChkForBump_HammerBroJ` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforbump_hammerbroj) |
 | 12646 | `NoBump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobump) |
 | 12654 | `InvEnemyDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invenemydir) |
 | 12660 | `PlayerEnemyDiff` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerenemydiff) |
 | 12671 | `EnemyLanding` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemylanding) |
-| 12679 | `SubtEnemyYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-subtenemyypos) |
-| 12686 | `EnemyJump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemyjump) |
-| 12701 | `DoSide` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-doside) |
+| 12679 | `SubtEnemyYPos` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12686 | `EnemyJump` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12701 | `DoSide` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12705 | `HammerBroBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrobgcoll) |
 | 12711 | `KillEnemyAboveBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemyaboveblock) |
 | 12717 | `UnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-underhammerbro) |

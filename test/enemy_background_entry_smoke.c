@@ -62,6 +62,7 @@ int main(void)
         /* The final side query selects block-buffer column 5. */
         before[6]=5;
         before[7]=5;
+        before[0xeb]=wall && !land ? 1:0;
         if(land) {
             before[0xcf+slot]=0x68;
             before[0xa0+slot]=0xfd;

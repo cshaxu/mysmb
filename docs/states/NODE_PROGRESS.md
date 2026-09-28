@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 594 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 608 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,263 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,249 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **594 / 1,992 (29.82%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **608 / 1,992 (30.52%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S2 P5](../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof)
-completes sixteen normal-movement/table/vertical labels using original natural
-entry-to-return evidence. Sixteen received labels remain incomplete in S2.
+Latest task review: [T31 S2 P6](../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof)
+completes fourteen background-entry/jump/side-loop labels using source and
+natural original boundaries. Six parent/vector labels remain incomplete in S2.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (594)
+## Completed matches (608)
 
 | ROM line | Node |
 | ---: | --- |
@@ -624,6 +624,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9381 | `MoveDefeatedEnemy` |
 | 9385 | `ChkKillGoomba` |
 | 9392 | `NKGmba` |
+| 12415 | `ExEBG` |
+| 12426 | `EnemyToBGCollisionDet` |
+| 12439 | `DoIDCheckBGColl` |
+| 12443 | `HBChk` |
+| 12446 | `CInvu` |
+| 12452 | `YesIn` |
+| 12518 | `ExEBGChk` |
+| 12617 | `DoEnemySideCheck` |
+| 12624 | `SdeCLoop` |
+| 12632 | `NextSdeC` |
+| 12636 | `ExESdeC` |
+| 12679 | `SubtEnemyYPos` |
+| 12686 | `EnemyJump` |
+| 12701 | `DoSide` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

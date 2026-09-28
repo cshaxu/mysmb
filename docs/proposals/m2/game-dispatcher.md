@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T31 open; S2 active at 594 / 1,992.** Closed T30 precedes this task in the
+**M2 T31 open; S2 active at 608 / 1,992.** Closed T30 precedes this task in the
 source-order recovery plan. S1 is closed; S2 is the only active chain.
 
 ## Exact task scope and chain plan
@@ -1170,3 +1170,167 @@ Remaining exact labels: `RunEnemyObjectsCore`, `JmpEO`, `RunNormalEnemies`, `Ski
 Their dispatch/caller and background-entry obligations remain open, as do
 the separately owned whole-frame graphics differences. P5 raw evidence remains
 under its declared ignored root and 1 MB cap; no ROM/stack/PC mutation is used.
+
+Post-P5 same-S structure work moves the received EnemyToBGCollisionDet
+entry and shared EnemyJump/DoSide body into game/enemy/background.c.
+objects.c retains the existing walking, hammer, solid-tile and side-check
+children as declared shared-game interfaces. No child algorithm is changed,
+no wrapper-only owner is added, and both the normal and star paths use the
+same moved jump body. The shared CMake list, DOS16 source list and OpenNT
+compile-only list include the owner for every target.
+
+Both native widths compile the changed owners under strict C90. The existing
+background matrix (608,082 rejected entries and 24,576 jumping cases per
+width) and collision regression, including stars, pass. All 24 background
+records per width remain byte-identical to P3, preserving every known ROM
+difference. OpenNT large-model compilation of background.c also succeeds.
+This is extraction evidence, not new node credit or a full DOS link claim.
+Incremental build/log/result files use ignored build/m2-t31-s2-p6 with two
+reused 4,421-byte records, a 1 MB raw cap, twenty-second commands and S2
+cleanup ownership. The batch remains uncommitted; P5 artifacts and the
+594-node baseline remain current until combined delivery.
+
+The [background caller test](../../../test/enemy_background_caller_smoke.c)
+now verifies positive child dispatch as well as early returns: 663,552
+ID/state/Y/slot combinations select walking, hammer, jump-side or return.
+Another 2,359,296 direct EnemyJump combinations cover every Y/speed byte,
+six slots, empty/non-solid/solid samples and successful/failed probe results.
+Observed child events require bottom query, optional non-solid check,
+optional landing, then side check. The landing test child changes Y and
+speed so the final side call must observe its Y, while the caller must
+overwrite its speed with $fd afterward. Both native widths pass strict C90.
+
+This exposed a source-call discrepancy inside the admitted EnemyJump body:
+the C code called the solid predicate even when the sampled block was zero,
+whereas the original BEQ after ChkUnderEnemy skips ChkForNonSolids. The owner
+now tests nonzero before that call. The previous predicate happened to return
+false for zero, so state/output preservation alone had missed the incorrect
+call edge. A sweep finds one shared EnemyJump body, reached by normal/star
+callers; other terrain child interiors remain outside this repair. Existing
+background/star regressions pass again and all 48 background width records
+remain byte-identical to P3. These are caller and preservation results, not
+completion credit for the remaining ten background nodes.
+
+The same read-only snapshot observer now supports the background entry at
+$dfc1 and natural successors $c8f4 (normal caller) / $bcb0 (ShroomM), using
+normal fixtures 32..59. The existing native boundary checker accepts the
+separate MSNB record type and calls the production background owner. All 28
+reference frame outputs remain byte-identical with observation enabled.
+Eleven scenarios pass both native widths; seventeen fail both, exclusively
+at $eb. No byte is excluded to convert these failures to passes.
+
+This localizes the remaining observed mismatch to DoEnemySideCheck, which
+initializes $eb to two and decrements it while selecting direction probes.
+The existing native child queries only the leading side and omits this RAM
+counter. In the controlled routes, original $eb finishes at zero or one,
+while native retains the incoming graphics value $30. This is a side-check
+child discrepancy, not upstream graphics noise. The original loop and its
+hammer-bump successor remain separately owned; this step does not repair
+unreceived nodes or grant parent credit based on masked output.
+
+The expanded checker still passes all 72 prior movement boundary comparisons;
+one original movement observer replay also reproduces both prior frame and
+snapshot byte-for-byte. Background and regression results are retained under
+the existing P6 cap in background-boundary-results.json and boundary-summary.json.
+The ten background nodes remain incomplete at the 594-node baseline. Next
+review must distinguish the admitted entry's handoffs from the separate
+DoEnemySideCheck body without treating whole-call failures as successful runs.
+
+## S2 side-check dependency intake
+
+The coordinator accepts the complete bounded side-check loop from T17 S6
+under the continuing owner-approved M2 mandate: DoEnemySideCheck, SdeCLoop,
+NextSdeC and ExESdeC (transfer-130). All four are open. Baseline 594 / 1,992,
+scope/expected four, added-run ceiling 598. S2 receives 72 labels, 52 complete;
+combined remaining ceiling 614. This changes the earlier scope freeze for
+one explicitly identified child contract: original boundary comparisons
+prove its omitted direction loop causes the observed persistent $eb failures.
+It does not import the entire terrain or hammer movement subtree.
+
+The shared enemy/side_collision.c owner will preserve the source status-bar
+return, $eb=2 initialization, left/right probe order, direction equality,
+empty/non-solid decisions, decrement and solid-bump handoff. The existing
+bump child becomes a declared call boundary without changing its algorithm;
+its Hammer Bro successor remains uncertified. Independent callback tests
+must cover every direction byte and probe ordering. Existing natural NMI
+background snapshots must retain their full comparison, including $eb.
+The same bounded P6 root, 1 MB raw cap, twenty-second recorder limit and
+combined three-target P delivery apply. No completion credit is granted at
+intake and no new S/T is allocated.
+
+The intake gate passes with four unique open scope labels, four expected
+matches and ceiling 598 from baseline 594. The original loop now lives in
+enemy/side_collision.c: it retains $eb initialization/decrement, skips probes
+when neither direction matches, avoids the non-solid predicate for empty
+tiles, and preserves the current counter when tail-calling the declared
+bump child. The prior leading-side approximation is removed from objects.c;
+the bump child's algorithm is unchanged. All shared/DOS build lists include
+the new owner. The full source shape is restored rather than merely writing
+an expected final $eb value.
+
+All 28 original background entry/return snapshots now match both native
+widths, eliminating the seventeen $eb-only failures while keeping every
+persistent byte in the comparison. Existing background and star/collision
+tests pass. The [side caller test](../../../test/enemy_side_caller_smoke.c)
+passes 2,359,296 combinations per width, covering all Y/direction bytes,
+six slots, query success/failure, and empty/non-solid/solid tiles. It observes
+the probe index, source counter during the probe, predicate call ordering,
+and tail handoff; a mutating bump child verifies that the caller does not
+decrement $eb after the handoff. Original left-side hit and noncanonical
+direction route coverage still need review before completion credit.
+This remains one uncommitted P6 batch at 594; published artifacts remain P5.
+
+## S2/P6: background and side chain proof
+
+Completed labels: `ExEBG`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`, `CInvu`, `YesIn`, `ExEBGChk`, `SubtEnemyYPos`, `EnemyJump`, `DoSide`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`.
+
+The ten received background labels and four side-loop labels now have both
+verification tracks. Global progress rises from 594 to 608 / 1,992; S2 has
+66 complete of 72 received labels. S2 and T31 remain open. The earlier
+seventeen failing background cases remain recorded as pre-repair evidence.
+
+Source audit maps $dfc1-$dff2 to state/Y rejection, Spiny height, jumping,
+hammer and walking dispatch; $dfb8/$e066 are their returns. $e15b preserves
+the wrapped Y predicate. $e163-$e182 preserves bottom-query, nonzero gate,
+solid predicate, landing, $fd speed write and final side handoff. $e0fe-$e123
+preserves the status-bar return, $eb direction counter, probe indices,
+empty/non-solid branches, loop and bump handoff. Walking, hammer and bump
+child interiors are not newly certified by those handoffs.
+
+[The reproducible verifier](../../../test/verify_enemy_background_snapshots.py)
+checks 33 original NMI-reached boundaries and 66 native comparisons over
+1,782 persistent bytes, including OAM and graphics workspace. All fourteen
+labels execute. Every feasible conditional outcome in the admitted entry,
+jump and side bodies is observed; EnemyJump's repeated Y rejection cannot
+be taken through an entry that just accepted the unchanged Y predicate.
+Direct caller tests additionally cover that rejection. Observer-enabled
+frame records equal the corresponding unobserved records in all 33 cases.
+Cases 60..64 add left solid/non-solid, invalid direction zero/three, and
+status-bar return; the latter preserves the incoming $eb value.
+
+The source-call tests pass both widths: 663,552 background dispatch cases,
+2,359,296 direct jump cases and 2,359,296 side-loop cases per width. The
+production background matrix and star/collision regression also pass.
+These establish admitted node semantics, not whole-frame/game equivalence.
+The similar-issue sweep finds one shared jump body used by normal/star
+callers and one side-loop owner; objects.c retains unchanged declared child
+algorithms. No platform file or gameplay fork is introduced.
+
+All 60 shared sources compile under strict C90 for x86/x64. Both Windows
+self-tests and hidden window/message probes pass; platform purity passes.
+OpenNT DOS16 links with existing warnings. DOS has no owner-data binding,
+so this remains link evidence, not a playable-DOS or physical-486 claim.
+Three artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257529 | 4d50836662dbdb8ce2c364f9d1aa53d7bf2b45f4dbeaf38a6ed288d4b9659ae3 |
+| mysmb32.exe | 320888 | 47af6bf70001d81bc24532467f3801da4ce00b742803d516d74b8e31f987505e |
+| mysmb64.exe | 328196 | b7557509acc86fb77bda1f7fb0b949e99ce9945c2f2ca06f3977a877f43c8a7a |
+
+Remaining exact labels: `RunEnemyObjectsCore`, `JmpEO`, `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode`.
+
+These retain their original caller/vector obligations, including distinct
+platform/enemy target bindings and unresolved normal graphics/collision child
+contracts. No new dependency or S/T is admitted. Raw records remain under
+the existing P6 ignored root, 1 MB budget and S2 cleanup ownership.

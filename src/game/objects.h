@@ -25,6 +25,13 @@ void mysmb_objects_finish_power_up(struct mysmb_game *game);
 void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_normal_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_enemy_background_current(struct mysmb_game *game, mysmb_u8 slot);
+/* Shared EnemyJump entry and legacy child seams used by enemy/background.c.
+ * Exposing a child boundary does not certify its internal ROM equivalence. */
+void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_check_enemy_side(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_step_hammer_terrain(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
 void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
                                         mysmb_u8 preserve_collision_boxes);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);

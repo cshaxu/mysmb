@@ -53,7 +53,7 @@ static void mysmb_engine_normal_fixture(unsigned char *ram,unsigned char scenari
         if(which==22U) ram[0xcfU]=0xc2U;
         if(which==23U) ram[0xcfU]=0xffU;
     }
-    if(scenario>=56U) {
+    if(scenario>=56U && scenario<60U) {
         /* Real ShroomM caller, slot five: cover the power-up speed-adder
          * exemption with both directions and ordinary/1-up mushrooms. */
         ram[0xfU]=0U;ram[0x14U]=1U;ram[0x1bU]=0x2eU;
@@ -62,6 +62,18 @@ static void mysmb_engine_normal_fixture(unsigned char *ram,unsigned char scenari
         ram[0xa5U]=0U;ram[0x439U]=0x80U;ram[0x41cU]=0x80U;
         ram[0x5dU]=(scenario&1U)!=0U ? 0xf8U:8U;
         ram[0x4bU]=(scenario&1U)!=0U ? 2U:1U;
+    }
+    if(scenario>=60U) {
+        /* Natural normal-enemy side-loop routes: left hit/non-solid and
+         * two direction bytes which must select neither probe. */
+        for(i=0x500U;i<0x6a0U;++i) ram[i]=0U;
+        ram[0x16U]=14U;ram[0x1eU]=0U;
+        ram[0x87U]=0x40U;ram[0xcfU]=0x6fU;ram[0xa0U]=0U;
+        ram[0x58U]=0xf8U;
+        ram[0x46U]=scenario<62U ? 2U:(scenario==62U ? 0U:3U);
+        ram[0x634U]=scenario==61U ? 0x26U:0x51U;
+        /* Below the background entry guard, but inside the status bar. */
+        if(scenario==64U) ram[0xcfU]=0x1fU;
     }
 }
 static int mysmb_engine_normal_argument(const char *text)
@@ -72,7 +84,7 @@ static int mysmb_engine_normal_argument(const char *text)
     if(text[i]<'0'||text[i]>'9') return 0;
     value=(unsigned int)(text[i++]-'0');
     if(text[i]>='0'&&text[i]<='9') value=value*10U+(unsigned int)(text[i++]-'0');
-    if(text[i]!='\0'||value>59U) return 0;
+    if(text[i]!='\0'||value>64U) return 0;
     return (int)value+1;
 }
 #endif

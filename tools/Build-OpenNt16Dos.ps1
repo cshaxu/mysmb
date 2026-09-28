@@ -16,6 +16,8 @@ $sources = @(
     'game/cannon.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
+    'game/enemy/background.c',
+    'game/enemy/side_collision.c',
     'game/area/block_buffer.c',
     'game/area/area_data.c',
     'game/boot.c', 'game/dispatcher.c', 'game/engine.c', 'game/engine_slots.c', 'game/engine_tail.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/area/block_metatile.c', 'game/enemy/stream.c', 'game/enemy/init.c', 'game/enemy/core.c', 'game/enemy/movement.c', 'game/enemy/frenzy.c', 'game/player.c',

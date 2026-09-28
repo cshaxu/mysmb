@@ -20,6 +20,8 @@ list(APPEND MYSMB_GAME_SOURCES src/game/whirlpool.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/cannon.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/lifecycle.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/normal.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/enemy/background.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/enemy/side_collision.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -112,6 +114,10 @@ add_executable(mysmb_normal_enemy_movement_smoke test/normal_enemy_movement_smok
 target_include_directories(mysmb_normal_enemy_movement_smoke PRIVATE src)
 add_executable(mysmb_normal_enemy_caller_smoke test/normal_enemy_caller_smoke.c src/game/enemy/normal.c)
 target_include_directories(mysmb_normal_enemy_caller_smoke PRIVATE src)
+add_executable(mysmb_enemy_background_caller_smoke test/enemy_background_caller_smoke.c src/game/enemy/background.c)
+target_include_directories(mysmb_enemy_background_caller_smoke PRIVATE src)
+add_executable(mysmb_enemy_side_caller_smoke test/enemy_side_caller_smoke.c src/game/enemy/side_collision.c)
+target_include_directories(mysmb_enemy_side_caller_smoke PRIVATE src)
 add_executable(mysmb_area_helper_smoke test/area_helper_smoke.c)
 target_link_libraries(mysmb_area_helper_smoke PRIVATE mysmb_game)
 add_executable(mysmb_area_hole_underpart_smoke test/area_hole_underpart_smoke.c)
@@ -321,6 +327,18 @@ if(MYSMB_OPENNT_CL16)
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/normal.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/background.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/side_collision.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -571,6 +589,8 @@ add_test(NAME mysmb.cannon-children COMMAND mysmb_cannon_children_smoke)
 add_test(NAME mysmb.enemy-dispatch COMMAND mysmb_enemy_dispatch_smoke)
 add_test(NAME mysmb.normal-enemy-movement COMMAND mysmb_normal_enemy_movement_smoke)
 add_test(NAME mysmb.normal-enemy-caller COMMAND mysmb_normal_enemy_caller_smoke)
+add_test(NAME mysmb.enemy-background-caller COMMAND mysmb_enemy_background_caller_smoke)
+add_test(NAME mysmb.enemy-side-caller COMMAND mysmb_enemy_side_caller_smoke)
 add_test(NAME mysmb.area-helper-smoke COMMAND mysmb_area_helper_smoke)
 add_test(NAME mysmb.area-hole-underpart-smoke COMMAND mysmb_area_hole_underpart_smoke)
 add_test(NAME mysmb.area-initialize-smoke COMMAND mysmb_area_initialize_smoke)
