@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **739 / 1,992 (37.10%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T33 S4 P1](../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof)
+Latest task review: [T33 S4 P1](../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof)
 proves twelve animation/friction nodes with 256 actual-native comparisons.
 The cross-chain matrix has nineteen matching and five differing four-frame
 routes; no full-game completion is claimed. T33 final review remains pending.

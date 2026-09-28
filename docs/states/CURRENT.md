@@ -2,30 +2,37 @@
 
 ## Current Work
 
-**M2 T33 S4 has twelve proven nodes at 739 / 1,992; final S4/T33 review remains active.**
+**M2 T34 S1 is active at 739 / 1,992: five incomplete dispatch nodes, expected five, maximum 744.**
 
-S1-S3 are closed with 51 nodes proven. The final twelve-node chain follows.
+T33 closed with 63/63 scoped nodes proven. Nineteen of 24 integrated routes
+match; five retained output/animation differences keep existing custody.
 
-## M2 T33 S4 Packet
+## M2 T34 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T33 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S3; coordinator accepts transfer-141. |
-| Objective | Prove PlayerAnimTmrData through SetAbsSpd, restoring original animation and friction branches. |
-| Non-goals | No terrain, world movement, renderer or unadmitted child repairs. |
-| Reference Baseline | 727 / 1,992; twelve unique open labels, expected twelve, maximum 739. Exact names in proposal S4 and ledger. |
-| Candidate Proposal | [Animation/friction chain](../proposals/m2/player-movement-state.md#s4-admission-animation-timing-and-friction). |
-| Files And ABI Surface | Shared animation/friction helpers, focused tests/recorder, build registration, integrated matrix and three artifacts. |
+| Identifier Mode | M2 T34 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed T33; coordinator accepts transfer-142. |
+| Objective | Prove ProcFireball_Bubble through BublExit: spawn gates, two fireball calls and descending bubble caller loop. |
+| Non-goals | No fireball-core, collision, world movement, bubble leaf or rendering child repair. |
+| Reference Baseline | 739 / 1,992; five unique incomplete labels, expected five, maximum 744. Exact names/status in proposal and ledger. |
+| Candidate Proposal | [Fireball dispatch/core](../proposals/m2/fireball-dispatch-core.md#s1-admission-fireball-and-bubble-dispatch). |
+| Files And ABI Surface | Shared fireball dispatch/spawn/bubble caller owners and unchanged child seams; tests/recorders, build lists and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original tables/branches/read-write audit and natural NMI entry-return comparisons; independent native tests, builds and purity. |
-| Expected Markers | Timer data; skid and running state; collision input; fractional carries; wrapped CMP negative bit; absolute speed. |
+| Verification | Original gates/read-write/call-order proof at natural NMI boundaries; independent native tests, builds and purity. |
+| Expected Markers | PlayerStatus; new B; slot/high-Y/crouch/state gates; sound/timers/counter; two fireballs; three bubbles. |
 | Asset Needs | Existing owner-local ROM/listing; three local EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Twelve exact dispositions, dual verification, integrated residuals and three artifact identities. |
-| Stop Conditions | Unadmitted child repair, original PC/stack/ROM mutation, masked difference or platform gameplay. |
-| Exit Criteria | All received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
-| Original Owner Request | Complete original-ROM logic and structure in shared 16/32/64-bit C, source order and chain-level delivery. |
-| Similar-Issue Sweep | Every animation/friction definition/caller and speed-clamp path; original accumulator semantics. |
+| Reporting Requirements | Five exact dispositions, separate caller/actual-child results, dual verification and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, reference PC/stack/ROM mutation, masked output or platform gameplay. |
+| Exit Criteria | All five received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
+| Original Owner Request | Complete original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain-level delivery. |
+| Similar-Issue Sweep | Every spawn/dispatch and bubble loop, state/timer/sound writer and caller boundary. |
+
+## T33 closure summary
+
+[T33 history](../history/M2-T33-player-movement-state.md) retains exact node
+dispositions, both proof tracks, integrated residuals and final artifact hashes.
+Progress 676 -> 739; DOS remains link-only and M2 remains incomplete.
 
 ## T32 closure summary
 

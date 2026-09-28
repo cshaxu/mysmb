@@ -787,69 +787,69 @@ The labels and branches behind every line remain open until individually bound b
 | 5876 | `RdyNextA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
 | 5888 | `NextArea` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
 | 5895 | `ExitNA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
-| 5899 | `PlayerMovementSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5907 | `SetCrouch` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5908 | `ProcMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5916 | `MoveSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5923 | `NoMoveSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5928 | `OnGroundStateSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5933 | `GndMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5940 | `FallingSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5947 | `JumpSwimSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5959 | `DumpFall` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5961 | `ProcSwim` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5969 | `LRWater` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5972 | `LRAir` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5975 | `JSMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5982 | `ExitMov1` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
-| 5986 | `ClimbAdderLow` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 5988 | `ClimbAdderHigh` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 5991 | `ClimbingSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6000 | `MoveOnVine` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6019 | `ClimbFD` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6022 | `CSetFDir` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6032 | `ExitCSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6033 | `InitCSTimer` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6039 | `JumpMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6042 | `FallMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6045 | `PlayerYSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6048 | `InitMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6051 | `MaxLeftXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6054 | `MaxRightXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6058 | `FrictionData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6061 | `Climb_Y_SpeedData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6064 | `Climb_Y_MForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6067 | `PlayerPhysicsSub` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6079 | `ProcClimb` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6086 | `SetCAnim` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6089 | `CheckForJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6097 | `NoJump` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6099 | `ProcJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6109 | `InitJS` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6133 | `ChkWtr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6141 | `GetYPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6159 | `PJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6163 | `SJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6164 | `X_Physics` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6172 | `ProcPRun` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6184 | `ChkRFast` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6191 | `FastXSp` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6193 | `SetRTmr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6195 | `GetXPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6201 | `GetXPhy2` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6213 | `ExitPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
-| 6217 | `PlayerAnimTmrData` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6220 | `GetPlayerAnimSpeed` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6229 | `ChkSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6236 | `SetRunSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6238 | `ProcSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6246 | `SetAnimSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6252 | `ImposeFriction` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6260 | `JoypFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6262 | `LeftFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6274 | `RghtFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6285 | `XSpdSign` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6290 | `SetAbsSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../proposals/m2/player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 5899 | `PlayerMovementSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5907 | `SetCrouch` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5908 | `ProcMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5916 | `MoveSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5923 | `NoMoveSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5928 | `OnGroundStateSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5933 | `GndMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5940 | `FallingSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5947 | `JumpSwimSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5959 | `DumpFall` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5961 | `ProcSwim` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5969 | `LRWater` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5972 | `LRAir` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5975 | `JSMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5982 | `ExitMov1` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../history/M2-T33-player-movement-state.md#s1-original-movement-proof) |
+| 5986 | `ClimbAdderLow` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 5988 | `ClimbAdderHigh` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 5991 | `ClimbingSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6000 | `MoveOnVine` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6019 | `ClimbFD` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6022 | `CSetFDir` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6032 | `ExitCSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6033 | `InitCSTimer` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../history/M2-T33-player-movement-state.md#s2-original-climbing-proof) |
+| 6039 | `JumpMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6042 | `FallMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6045 | `PlayerYSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6048 | `InitMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6051 | `MaxLeftXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6054 | `MaxRightXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6058 | `FrictionData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6061 | `Climb_Y_SpeedData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6064 | `Climb_Y_MForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6067 | `PlayerPhysicsSub` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6079 | `ProcClimb` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6086 | `SetCAnim` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6089 | `CheckForJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6097 | `NoJump` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6099 | `ProcJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6109 | `InitJS` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6133 | `ChkWtr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6141 | `GetYPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6159 | `PJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6163 | `SJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6164 | `X_Physics` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6172 | `ProcPRun` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6184 | `ChkRFast` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6191 | `FastXSp` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6193 | `SetRTmr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6195 | `GetXPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6201 | `GetXPhy2` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6213 | `ExitPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../history/M2-T33-player-movement-state.md#s3-original-physics-proof) |
+| 6217 | `PlayerAnimTmrData` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6220 | `GetPlayerAnimSpeed` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6229 | `ChkSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6236 | `SetRunSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6238 | `ProcSkid` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6246 | `SetAnimSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6252 | `ImposeFriction` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6260 | `JoypFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6262 | `LeftFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6274 | `RghtFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6285 | `XSpdSign` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
+| 6290 | `SetAbsSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
 | 6298 | `ProcFireball_Bubble` | T20: `src/game/fireball/fireball_spawn.c` | audited; revalidation required | [D1 snapshot; current body changed](m2-t24-s1-full-node-census.md#node-procfireball_bubble) |
 | 6330 | `ProcFireballs` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procfireballs) |
 | 6336 | `ProcAirBubbles` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procairbubbles) |
