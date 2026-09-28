@@ -22,13 +22,25 @@ void mysmb_oam_draw_fireball(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[(mysmb_u16)(0x0202U + oam_offset)] = attributes;
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
 }
-/* ROM DrawExplosion_Fireball. */
+/* Existing DrawExplosion_Fireball child, including its state advance moved
+ * from the caller. Sprite layout retains the graphics owner's pending proof. */
 void mysmb_oam_draw_fireball_explosion(struct mysmb_game *game,
-                                                  mysmb_u8 slot, mysmb_u8 tile)
+                                                  mysmb_u8 slot)
 {
+    mysmb_u8 state;
+    mysmb_u8 explosion_index;
+    mysmb_u8 tile;
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
     mysmb_u8 y;
+    state = game->ram[0x0024U + slot];
+    explosion_index = (mysmb_u8)((state >> 1U) & 7U);
+    game->ram[0x0024U + slot] = (mysmb_u8)(state + 1U);
+    if (explosion_index >= 3U) {
+        game->ram[0x0024U + slot] = 0U;
+        return;
+    }
+    tile = (mysmb_u8)(0x68U - explosion_index);
     relative_x = game->ram[MYSMB_FIREBALL_RELATIVE_X];
     oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET + slot];
     y = (mysmb_u8)(game->ram[MYSMB_FIREBALL_RELATIVE_Y] - 4U);

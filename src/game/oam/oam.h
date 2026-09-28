@@ -19,7 +19,7 @@ void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slo
 void mysmb_oam_draw_player(struct mysmb_game *game);
 void mysmb_oam_draw_intermediate_player(struct mysmb_game *game);
 void mysmb_oam_draw_fireball(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_oam_draw_fireball_explosion(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 tile);
+void mysmb_oam_draw_fireball_explosion(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_relative_block_position(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM RelativeMiscPosition and GetMiscOffscreenBits. */

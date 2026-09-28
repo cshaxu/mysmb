@@ -21,6 +21,8 @@ void mysmb_world_move_enemy_horizontally(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_world_set_bounding_box(struct mysmb_game *game,
                                   mysmb_u16 address, mysmb_u8 control,
                                   mysmb_u8 x, mysmb_u8 y);
+/* Original GetFireballBoundBox child boundary. */
+void mysmb_world_get_fireball_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM CheckRightScreenBBox / CheckLeftScreenBBox. */
 void mysmb_world_clip_bounding_box_to_screen(struct mysmb_game *game,
                                                mysmb_u16 address,

@@ -102,10 +102,10 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `PowerUpObjHandler` — ROM line 7184; C owner/evidence pending
   - [ ] `VineObjectHandler` — ROM line 6730; C owner/evidence pending
 - [ ] **Fireballs, projectile collision and special hazards**
-  - [ ] `FireballObjCore` — ROM line 6352; C owner/evidence pending
+  - [x] `FireballObjCore` — ROM line 6352; [S2 core proof](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof)
   - [ ] `FireballBGCollision` — ROM line 12751; C owner/evidence pending
   - [ ] `FireballEnemyCollision` — ROM line 11085; C owner/evidence pending
-  - [x] `ProcFireball_Bubble` — ROM line 6298; [S1 dispatcher proof](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof)
+  - [x] `ProcFireball_Bubble` — ROM line 6298; [S1 dispatcher proof](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof)
 - [ ] **Object graphics, OAM construction and offscreen bits**
   - [ ] `PlayerGfxHandler` — ROM line 14460; C owner/evidence pending
   - [ ] `EnemyGraphicsEngine` — label lookup pending
@@ -850,17 +850,17 @@ The labels and branches behind every line remain open until individually bound b
 | 6274 | `RghtFrict` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
 | 6285 | `XSpdSign` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
 | 6290 | `SetAbsSpd` | M2 T33 S4 shared game/player.c | ROM-match complete | [S4 animation/friction proof](../../history/M2-T33-player-movement-state.md#s4-original-animation-and-friction-proof) |
-| 6298 | `ProcFireball_Bubble` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof) |
-| 6330 | `ProcFireballs` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof) |
-| 6336 | `ProcAirBubbles` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof) |
-| 6340 | `BublLoop` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof) |
-| 6347 | `BublExit` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../proposals/m2/fireball-dispatch-core.md#s1-original-dispatch-proof) |
-| 6349 | `FireballXSpdData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballxspddata) |
-| 6352 | `FireballObjCore` | T20/T16: `src/game/fireball/fireball_core.c` | audited; revalidation required | [Changed C owner; prior partial evidence](m2-t24-s1-full-node-census.md#node-fireballobjcore) |
-| 6380 | `RunFB` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runfb) |
-| 6401 | `EraseFB` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-erasefb) |
-| 6403 | `NoFBall` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofball) |
-| 6405 | `FireballExplosion` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballexplosion) |
+| 6298 | `ProcFireball_Bubble` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof) |
+| 6330 | `ProcFireballs` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof) |
+| 6336 | `ProcAirBubbles` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof) |
+| 6340 | `BublLoop` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof) |
+| 6347 | `BublExit` | M2 T34 S1 shared game/fireball/fireball_spawn.c | ROM-match complete | [S1 dispatch caller proof; child gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof) |
+| 6349 | `FireballXSpdData` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
+| 6352 | `FireballObjCore` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
+| 6380 | `RunFB` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
+| 6401 | `EraseFB` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
+| 6403 | `NoFBall` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
+| 6405 | `FireballExplosion` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
 | 6409 | `BubbleCheck` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubblecheck) |
 | 6419 | `SetupBubble` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupbubble) |
 | 6425 | `PosBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posbubl) |

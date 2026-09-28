@@ -28,43 +28,24 @@ enum {
     MYSMB_BOUNDING_BOX_PLAYER = 0x04acU,
     MYSMB_SQUARE1_SOUND = 0x00ffU
 };
-/* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use
- * controls $04a0/$04a1 and output boxes $04c8/$04cc; the relative source
- * inputs remain the fixed Fireball_Rel_* pair. */
-static void mysmb_fireball_get_bounding_box(struct mysmb_game *game,
-                                            mysmb_u8 slot)
-{
-    mysmb_world_set_bounding_box(
-        game, (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U),
-        game->ram[MYSMB_FIREBALL_BOUND_BOX + slot],
-        game->ram[MYSMB_FIREBALL_REL_X], game->ram[MYSMB_FIREBALL_REL_Y]);
-    mysmb_world_clip_bounding_box_to_screen(game,
-        (mysmb_u16)(MYSMB_BOUNDING_BOX_PLAYER + (7U + slot) * 4U),
-        game->ram[MYSMB_FIREBALL_PAGE + slot],
-        game->ram[MYSMB_FIREBALL_X + slot]);
-}
-/* Existing FireballObjCore body exposed as a child boundary.
- * State/initialization/explosion semantics retain T34 S2 proof ownership. */
+/* ROM $B687 FireballXSpdData; PlayerFacingDir is 1 (right) or 2 (left). */
+static const mysmb_u8 mysmb_fireball_x_speed[2] = { 0x40U, 0xc0U };
+
+/* ROM $B689-$B6F8 FireballObjCore/RunFB/EraseFB/NoFBall/FireballExplosion.
+ * Children retain their own original-source proof obligations. */
 void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 state;
     mysmb_u8 old_value;
+    game->ram[0x0008U] = slot;
     state = game->ram[MYSMB_FIREBALL_STATE + slot];
-    if (state == 0U) return;
     if ((state & 0x80U) != 0U) {
-        mysmb_u8 explosion_index;
-
-        explosion_index = (mysmb_u8)((state >> 1U) & 7U);
-        game->ram[MYSMB_FIREBALL_STATE + slot] = (mysmb_u8)(state + 1U);
-        if (explosion_index >= 3U) game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;
-        else {
-            mysmb_oam_relative_fireball_position(game, slot);
-            mysmb_oam_draw_fireball_explosion(game, slot,
-                (mysmb_u8)(0x68U - explosion_index));
-        }
+        mysmb_oam_relative_fireball_position(game, slot);
+        mysmb_oam_draw_fireball_explosion(game, slot);
         return;
     }
-    if (state == 2U) {
+    if (state == 0U) return;
+    if (state != 1U) {
         old_value = game->ram[MYSMB_PLAYER_X];
         game->ram[MYSMB_FIREBALL_X + slot] = (mysmb_u8)(old_value + 4U);
         game->ram[MYSMB_FIREBALL_PAGE + slot] =
@@ -73,10 +54,10 @@ void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_FIREBALL_Y + slot] = game->ram[MYSMB_PLAYER_Y];
         game->ram[MYSMB_FIREBALL_Y_HIGH + slot] = 1U;
         game->ram[MYSMB_FIREBALL_X_SPEED + slot] =
-            game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0x40U : 0xc0U;
+            mysmb_fireball_x_speed[(mysmb_u8)(game->ram[MYSMB_PLAYER_FACING] - 1U)];
         game->ram[MYSMB_FIREBALL_Y_SPEED + slot] = 4U;
         game->ram[MYSMB_FIREBALL_BOUND_BOX + slot] = 7U;
-        game->ram[MYSMB_FIREBALL_STATE + slot] = 1U;
+        --game->ram[MYSMB_FIREBALL_STATE + slot];
     }
     /* ROM FireballObjCore: TXA; ADC #$07 selects this fireball's
      * SprObject fields, then delegates to ImposeGravity and
@@ -84,11 +65,12 @@ void mysmb_fireball_step_object(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_world_impose_gravity_spr_object(game, (mysmb_u8)(7U + slot),
                                            0x50U, 3U);
     mysmb_world_move_spr_object_horizontally(game, (mysmb_u8)(7U + slot));
+    slot = game->ram[0x0008U];
     /* FireballObjCore order: relative coordinates, offscreen bits and
      * bounding box precede FireballBGCollision. */
     mysmb_oam_relative_fireball_position(game, slot);
     mysmb_oam_get_fireball_offscreen_bits(game, slot);
-    mysmb_fireball_get_bounding_box(game, slot);
+    mysmb_world_get_fireball_bounding_box(game, slot);
     mysmb_world_fireball_background_collision(game, slot);
     if ((game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] & 0xccU) != 0U) {
         game->ram[MYSMB_FIREBALL_STATE + slot] = 0U;

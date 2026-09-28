@@ -18,8 +18,9 @@ consumer transfers. Five earlier-node corrections also remain complete.
 T31 and T32 are closed. T32 proves its 48 received caller/data nodes at
 676 / 1,992, with eleven integrated routes retaining child/output failures.
 T33 is closed with all 63 received movement/physics nodes proven at 739 / 1,992.
-T34 S1 is closed with five dispatch caller nodes proven at 744 / 1,992. Its eleven-node plan has two contiguous chains; S2
-core-state receipt is not yet admitted.
+T34 is closed with all eleven fireball dispatch/core nodes proven at 750 / 1,992.
+Its cross-chain review retains the existing graphics-child failures. The next
+source-order candidate is bubbles, game timer and Warp Zone, lines 6409-6729.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 

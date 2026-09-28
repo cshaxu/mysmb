@@ -369,3 +369,19 @@ void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
     mysmb_objects_setup_floatey_from_relative(game, current_slot, score);
     game->ram[MYSMB_SQUARE1_SOUND] = 8U;
 }
+
+/* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use
+ * controls $04a0/$04a1 and output boxes $04c8/$04cc; the relative source
+ * inputs remain the fixed Fireball_Rel_* pair. */
+void mysmb_world_get_fireball_bounding_box(struct mysmb_game *game,
+                                            mysmb_u8 slot)
+{
+    mysmb_world_set_bounding_box(
+        game, (mysmb_u16)(0x04acU + (7U + slot) * 4U),
+        game->ram[0x04a0U + slot],
+        game->ram[0x03afU], game->ram[0x03baU]);
+    mysmb_world_clip_bounding_box_to_screen(game,
+        (mysmb_u16)(0x04acU + (7U + slot) * 4U),
+        game->ram[0x0074U + slot],
+        game->ram[0x008dU + slot]);
+}
