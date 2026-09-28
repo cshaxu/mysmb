@@ -444,3 +444,124 @@ local regression inputs for dependent admitted chains.
 | mysmb16.exe | 256273 | 5a97ff191aaf7e721446ad3dcbb8029a6b98a65ca48edcce59382f0cbc196213 |
 | mysmb32.exe | 344693 | 9810abe209c2cdb0f70606c5e85b2d0990ad6d9c62462920cd260e01bb9be628 |
 | mysmb64.exe | 352493 | da272948b484a2b8c6a45f10084ac113f7972768dc6601ef3b396b1c0910c18a |
+
+## S4 admission: Green Paratroopa and shared X counters
+
+S3 closed in 5d2a330. Coordinator accepts transfer-188. All ten labels in
+the S4 plan row are open and expected new: MoveFlyGreenPTroopa, YSway, NoMGPT, XMoveCntr_GreenPTroopa, XMoveCntr_Platform, NoIncXM, IncPXM, DecSeXM, MoveWithXMCntrs, XMRight.
+Baseline 1,077/1,992, maximum 1,087. Source $CB25-$CB86 follows the red
+Paratroopa chain and ends before BlooberBitmasks. Shared owners are
+enemy/paratroopa.c and enemy/x_counter.c with an explicit shared header.
+
+Restore the source calls XMoveCntr_GreenPTroopa -> XMoveCntr_Platform and
+MoveWithXMCntrs. The green entry supplies $13; the shared platform entry
+stores its input maximum in $01 even when frame phase skips the counter
+update. Preserve exact equality tests, byte overflow, primary bits zero/one,
+secondary increment/decrement, temporary two's complement, direction and
+the saved counter across the horizontal child. Store its returned A in $00.
+Then read the current frame again: only every fourth frame writes +/-1 to
+$00 and adds it to Y, without changing Y-high. The source entry has no
+extra flag/ID gate; bulk eligibility remains at its legacy boundary.
+
+Logic proof binds all ten labels to original branches, RAM writes and child
+order. Exercise zero/equal/adjacent/wrapped counters, phase bits, direction,
+Y wrap and actual horizontal children. Use original NMI routes plus explicit
+controlled RAM input at a naturally reached entry only if needed; never
+patch ROM, registers, PC, stack or outputs. Platform-specific maximum values
+may be tested through the shared entry, without claiming platform actor
+callers or child algorithms complete. Those callers keep their later owners.
+
+Native contracts cover every byte of the counters/maximum where useful,
+full RAM footprints, mutated child returns and frame/state changes. Preserve
+prior original matches, strict C90 x86/x64 and DOS16 link; run platform purity,
+hidden-window response and refresh all three EXEs. Scope closes only when
+exact node dispositions, both verification tracks, ledger/tracker and
+artifacts agree. S5 Bloober movement remains next in source order.
+
+Similar-issue sweep covers the old green inline algorithm, source/bulk
+callers, shared counter aliases and future platform entry seams. No host
+gameplay or unrelated platform actor repair is admitted. Existing owner-local
+ROM/listing provenance is unchanged; no third-party import. Temporary inputs,
+records, logs and builds stay in ignored build/m2-t40-s4. Begin with 256
+original routes, twelve-MB raw budget, twenty-second timeout per run, unique
+paths and stable checkpoints. Child failures remain visible separately.
+
+## S4 original green Paratroopa and counter proof
+
+S4 P1 closes all ten expected nodes: 1,077 -> 1,087/1,992. No scoped
+unfinished node or transfer remains; S5 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| MoveFlyGreenPTroopa | $CB25 | Calls counter then horizontal movement and reads post-child frame state; new ROM match |
+| YSway | $CB3B | Writes plus/minus one to scratch and wraps Y as one byte; new ROM match |
+| NoMGPT | $CB44 | Skipped phase preserves horizontal displacement in scratch; new ROM match |
+| XMoveCntr_GreenPTroopa | $CB45 | Presets maximum $13 before the shared counter entry; new ROM match |
+| XMoveCntr_Platform | $CB47 | Stores incoming maximum even on skipped phases; original platform caller supplies $0E; new ROM match |
+| NoIncXM | $CB5C | Off-phase counter return leaves primary and secondary unchanged; new ROM match |
+| IncPXM | $CB5D | Exact maximum or zero endpoint increments primary with byte wrap; new ROM match |
+| DecSeXM | $CB60 | Odd primary decrements nonzero secondary and reverses at zero; new ROM match |
+| MoveWithXMCntrs | $CB66 | Saves secondary across signed horizontal movement and restores it; new ROM match |
+| XMRight | $CB7C | Writes facing, calls horizontal child, stores returned A before restoration; new ROM match |
+
+Original NMI routes exercise 256 green-actor cases plus 32 real platform
+caller cases at the shared counter entry. All 53 scoped instructions and
+both outcomes of all seven branches execute. Green supplies maximum $13;
+the platform caller supplies $0E. No mid-entry RAM injection, ROM patch,
+register/PC/stack patch or output patch is used. Caller diagnostics and
+actual shared-child execution each pass 576/576 across x86/x64. Child-entry
+RAM is compared before recorded returns are substituted in diagnostics;
+actual runs execute the real horizontal child. Only hardware stack bytes
+are excluded; scratch and mapped $0109-$0139 remain compared. All 288
+observer-free frames equal observed records. This is observer noninterference,
+not a whole-game native frame-conformance claim. Platform actor callers and
+horizontal child nodes receive no additional credit.
+
+The old green inline algorithm is replaced by source-ordered calls into
+shared enemy/green_paratroopa.c and enemy/x_counter.c. A separate green
+owner keeps the existing red-Paratroopa standalone tests independent.
+Exact equality replaces the old saturating approximation; byte wrap,
+maximum scratch, saved secondary counter, horizontal returned A and
+post-child frame/Y behavior follow the source. The actor entry has no
+extra eligibility guard; the legacy bulk boundary retains flag/ID filtering.
+
+Independent native contracts pass 196,608 counter cases and 24,576
+child-mutation/actor cases per width. They cover all maximum bytes, all
+secondary bytes across movement cases, six slots, primary wrap, signed
+movement, phase/Y wrap and restoration after a child changes RAM. Retained
+Paratroopa/platform and earlier native contracts pass. The final original
+snapshot matrix is 4,990/5,778, preserving all 4,414 prior matches. Existing
+788 downstream differences retain their source-order owners; Bowser damage
+and endgame star-timer failures remain unchanged.
+
+All 94 shared units compile in strict C90 for x86/x64. Both executable
+self-tests and hidden-window response probes pass. Platform purity passes.
+DOS16 initially hit LINK L1049 as the shared source count grew. Local LINK
+5.60 help confirms /SEGMENTS support; adding /SEGMENTS:1024 increases the
+linker's table capacity without changing /AL or game behavior. The complete
+modified DOS build then links successfully, retaining the existing OLDNAMES
+warning. DOS remains link-only; no graphical playability, resource binding
+or physical 486 performance claim is made. All three EXEs are refreshed.
+
+Similar-issue sweep covers the old green inline body, source and bulk
+callers, primary/secondary aliases and shared platform seams. The green
+source path has one implementation; later platform actor approximations
+remain their existing obligations. No platform gameplay code was added.
+
+Reproduce green_counter_fixture.h cases 0..287 with
+--fixture=t40-green-counter=N, --green-counter-snapshot, --control-children
+and separate --pc-coverage. green_counter_snapshot_check compares caller
+boundaries; enemy_loop_actual_check executes shared children. The native
+CTest is mysmb.green-paratroopa-counters. Local source-audit.json records
+instruction/branch coverage and child ordering. There are 256 child records
+and 3,506,592 raw bytes below the twelve-MB budget in ignored
+build/m2-t40-s4. Each record has a unique path, stable checkpoint and
+twenty-second timeout. The coordinator retains these local regression
+inputs for dependent admitted chains. Existing owner-local provenance and
+redistribution limits remain; no new third-party import occurred.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256513 | 005cb1b17c4aef467551a017a2f0b60abeae3aedaa9889e682f86155b6550f73 |
+| mysmb32.exe | 345328 | cfdb77d1c8409cd9d8920acbe0ba8dc60b6e2e66cb166e1c44150be2a06e77a0 |
+| mysmb64.exe | 353197 | f3297ce2b5fa60d4071558b2359c333c855c200507d0b0604b365e861ba07e50 |

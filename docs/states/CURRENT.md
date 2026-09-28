@@ -2,28 +2,34 @@
 
 ## Current Work
 
-**M2 T40 S3 is closed at 1,077 / 1,992: all five expected nodes complete.**
+**M2 T40 S4 is closed at 1,087 / 1,992: all ten expected nodes complete.**
 
-## M2 T40 S3 Packet
+## M2 T40 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T40 S3, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 7618120; coordinator accepts transfer-187. |
-| Objective | Complete MoveJumpingEnemy, ProcMoveRedPTroopa, NoIncPT, MoveRedPTUpOrDown and MovPTDwn. |
-| Non-goals | No green flying actor, gravity child rewrite or host gameplay. |
-| Reference Baseline | 1,072/1,992; five open scoped/expected, maximum 1,077. |
-| Candidate Proposal | [T40 S3 exact scope and evidence](../proposals/m2/t40-enemy-movement-and-firebar.md#s3-admission-jumping-and-red-paratroopa-movement). |
-| Files And ABI Surface | Shared enemy movement/Paratroopa, source/bulk declarations, manifests, tests/recorder, records and three EXEs. |
+| Identifier Mode | M2 T40 S4, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 5d2a330; coordinator accepts transfer-188. |
+| Objective | Complete the ten green Paratroopa/shared X-counter labels in the exact proposal row. |
+| Non-goals | No Bloober or platform actor repair, no horizontal child rewrite or host gameplay. |
+| Reference Baseline | 1,077/1,992; ten open scoped/expected, maximum 1,087. |
+| Candidate Proposal | [T40 S4 exact scope and proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s4-admission-green-paratroopa-and-shared-x-counters). |
+| Files And ABI Surface | Shared Paratroopa/X-counter owners, bulk boundary, manifests, tests/recorder, records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branches/writes and actual shared-child proof; independent native contracts/regressions/builds. |
-| Expected Markers | Unconditional fractional reset on zero speed/force; anchor gate, eight-frame step, center up/down selection; jumping child order. |
+| Verification | Original branch/read/write/child-order and actual execution; independent native contracts/regressions/builds. |
+| Expected Markers | Shared maximum in $01; exact counter equality; temporary speed restored; horizontal A in $00; post-child frame/Y step. |
 | Asset Needs | Existing owner-local ROM/listing and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Five exact dispositions, original/native evidence and three hashes. |
-| Stop Conditions | Unadmitted child repair, original execution patch, hidden mismatch or platform gameplay. |
-| Exit Criteria | All five nodes proved or exact accepted transfers; tracker/ledger/artifacts agree. |
-| Original Owner Request | Original ROM logic/call graph in shared 16/32/64-bit C; source-order chain delivery. |
-| Similar-Issue Sweep | Jumping/red callers, redundant bulk wrappers, RAM aliases and reset/compare order. |
+| Reporting Requirements | Ten exact dispositions, both evidence tracks and three hashes. |
+| Stop Conditions | Unadmitted actor/child repair, original execution patch, hidden mismatch or host gameplay. |
+| Exit Criteria | All ten nodes proved or exact accepted transfer; tracker/ledger/artifacts agree. |
+| Original Owner Request | Faithful original-ROM call graph and logic in shared 16/32/64-bit native C. |
+| Similar-Issue Sweep | Green inline/source/bulk routes, shared counter aliases and future platform seams. |
+
+## S4 closure
+
+[Green Paratroopa/counter proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s4-original-green-paratroopa-and-counter-proof)
+closes ten nodes with 576/576 actual-child and caller comparisons. All
+4,414 prior matches remain; three EXEs are refreshed. DOS is link-only.
 
 ## S3 closure
 
@@ -53,7 +59,7 @@ all three EXEs; child/full-game gaps and DOS link-only limits remain explicit.
 
 ## Current sequence
 
-T40 has ten source-ordered S chains; S1-S3 are closed and S4 is next. Its 120-node scope ends
+T40 has ten source-ordered S chains; S1-S4 are closed and S5 is next. Its 120-node scope ends
 after PlayerLakituDiff. BridgeCollapseData and the whole bridge/Bowser chain
 remain with the next queued slice. Follow the [T40 plan](../proposals/m2/t40-enemy-movement-and-firebar.md).
 

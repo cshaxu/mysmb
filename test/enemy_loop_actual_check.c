@@ -2,6 +2,7 @@
 #include "game/enemy/platform.h"
 #include "game/enemy/actor_slots.h"
 #include "game/enemy/movement.h"
+#include "game/enemy/x_counter.h"
 #include "game/enemy/stream.h"
 #include "game/enemy/init.h"
 #include "game/enemy/init_targets.h"
@@ -28,14 +29,18 @@ int main(int argc,char **argv)
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
         memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0 &&
         memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0 &&
-        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0)) return 66;
+        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0 && memcmp(header,"MSdP\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[7]==0U && header[2]=='c') {
+    if(header[2]=='d') {
+        if(header[5]==1U) mysmb_objects_step_flying_green_paratroopas_slot(&game,header[6]);
+        else mysmb_enemy_x_counter_platform(&game,header[6],header[7]);
+    }
+    else if(header[7]==0U && header[2]=='c') {
         if(header[5]==1U) mysmb_enemy_move_jumping(&game,header[6]);
         else mysmb_objects_step_red_paratroopas_slot(&game,header[6]);
     }

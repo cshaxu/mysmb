@@ -28,6 +28,8 @@ $sources = @(
     'game/enemy/podoboo.c',
     'game/enemy/hammer_bro.c',
     'game/enemy/paratroopa.c',
+    'game/enemy/x_counter.c',
+    'game/enemy/green_paratroopa.c',
     'game/enemy/distance.c',
     'game/enemy/background.c',
     'game/enemy/side_collision.c',
@@ -69,7 +71,9 @@ try {
     $objectLine = (($objects + 'mysmb-stack.obj') -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
-    & $Linker /nologo /NOE '@mysmb-dos16.rsp'
+    # The default LINK 5.60 segment table overflows as shared translation
+    # units are split. Increase linker capacity; keep /AL and DOS layout.
+    & $Linker /nologo /NOE /SEGMENTS:1024 '@mysmb-dos16.rsp'
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 finally {
