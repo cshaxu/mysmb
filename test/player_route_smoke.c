@@ -198,7 +198,7 @@ int main(void)
     game.ram[0x0416U] = 0U;
     mysmb_player_step(&game, MYSMB_BUTTON_UP);
     if (game.ram[0x009fU] != 0xffU || game.ram[0x0433U] != 0x20U ||
-        game.ram[0x070cU] != 4U || game.ram[0x00ceU] != 0x2fU) {
+        game.ram[0x070cU] != 8U || game.ram[0x00ceU] != 0x2fU) {
         return 1;
     }
     game.ram[0x0490U] = MYSMB_BUTTON_RIGHT;

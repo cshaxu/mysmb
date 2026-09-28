@@ -277,3 +277,157 @@ rows above complete, with no received node deferred and no child credit.
 Progress increases 691 -> 699 / 1,992. Both verification tracks, platform
 purity, ledger closure and documentation checks pass. S2 closes; T33 remains
 open, and the planned 28-node physics S3 requires its next admission.
+
+## S3 admission: physics tables and initialization
+
+S2 is closed at 699 / 1,992. Transfer-140 receives the exact 28 open S3
+labels listed in the plan from T23 S5: scope 28, expected 28, maximum 727.
+The chain starts with JumpMForceData and ends with ExitPhy; the shared owner
+is game/player.c, entered by the proven movement dispatcher. Existing C
+helpers divide contiguous source phases without introducing new gameplay.
+S4 animation/friction algorithms and world movement/collision stay outside.
+
+First audit all nine source tables and original branches, byte reads/writes,
+jump eligibility, jump origin/force/sound, water-surface gate, climb animation
+and horizontal limits/friction setup. Observe original PlayerPhysicsSub
+entry and natural return under ordinary NMI execution; compare the real C
+physics routine directly, without substituting child returns. Include all
+speed thresholds, dry/swim/whirlpool, small/large, press/hold/release,
+jumpspring, climbing and running/skidding parameter branches. Track table
+bindings and node coverage individually; actual caller regressions validate
+integration without granting later-node credit.
+
+Independent operational tests exercise the admitted parameter contracts;
+strict C90 x86/x64, DOS16 compile/link, platform purity and three local EXEs
+complete one delivery. Owner ROM/listing remain local research inputs;
+no imported implementation. Raw recordings stay under ignored build/m2-t33-s3,
+limited to four MB per retained batch and twenty seconds per recorder run,
+with S3 cleanup ownership through T review. DOS remains link-only.
+
+Similar-issue sweep covers every physics helper definition/caller and the
+source table consumers. Initial source audit finds reversed climb animation
+selection (negative speed keeps 8, nonnegative selects 4) and missing swim
+surface speed clear at Y below $14. Both belong here; no child behavior is
+changed without original evidence. Closure requires all 28 exact dispositions,
+both verification tracks, ledger/tracker agreement and artifact identities.
+
+## S3 implementation checkpoint
+
+Source-first audit of PlayerPhysicsSub finds two missing/reversed original
+semantics. ProcClimb's BMI keeps animation eight for negative speed; the LSR
+fallthrough selects four for zero/positive speed. Previous C did the reverse.
+GetYPhy queues the swim sound, then clears vertical speed when Y is below
+$14 before X_Physics. Previous C queued the sound but omitted that gate.
+Both are now restored in their existing shared helpers. The horizontal-route
+address comment is corrected to $B51C-$B58B; its behavior is unchanged.
+
+The new independent physics test passes on both widths with 4,096 climbing
+input/mask cases and 1,536 combinations of jump eligibility, swim timer,
+vertical sign, jumpspring, current/previous A, surface threshold, whirlpool
+and player size. It also checks climbing returns before horizontal setup,
+ineligible jumps preserve jump state, and surface speed clearing preserves
+the swim sound queue. These tests are operational evidence, not node credit.
+
+Re-running all 37 prior S1 entry snapshots with the actual updated native
+physics and movement yields 74/74 matching comparisons across x86/x64.
+The eight former $070C mismatches are removed. This certifies only those
+prior scenarios, not all S3 branches or complete frames. All 28 S3 labels
+remain open at 699 / 1,992 pending their own table/branch/ROM proof, final
+three-target build/package, review and accounting. No new P is committed
+and the published artifacts remain the closed S2 delivery.
+
+## S3 original physics proof
+
+The admitted original slice is $B424-$B58B. All nine tables bind to the 44
+owner-ROM bytes; all nineteen code labels execute. Source audit maps each
+branch/read/write to the existing shared physics helpers, including fallthrough
+from jump initialization into X_Physics. There is one production caller for
+each helper, within PlayerPhysicsSub; the dispatcher calls that entry. No
+platform implementation or alternative physics owner is introduced.
+
+| Node | Address | Proven contract |
+| --- | --- | --- |
+| JumpMForceData | $B424 | Seven upward jump/swim force entries |
+| FallMForceData | $B42B | Seven downward force entries |
+| PlayerYSpdData | $B432 | Seven initial signed vertical speeds |
+| InitMForceData | $B439 | Seven initial fractional force entries |
+| MaxLeftXSpdData | $B440 | Three maximum left speeds |
+| MaxRightXSpdData | $B443 | Three right speeds and entrance override |
+| FrictionData | $B447 | Three friction coefficients |
+| Climb_Y_SpeedData | $B44A | Three signed climbing speeds |
+| Climb_Y_MForceData | $B44D | Three climbing fractional forces |
+| PlayerPhysicsSub | $B450 | State-three dispatch and collision-filtered vertical selector |
+| ProcClimb | $B465 | Climb force/speed loads and sign test |
+| SetCAnim | $B475 | Negative speed keeps eight; other speeds select four |
+| CheckForJumping | $B479 | Jumpspring and current/previous A gates |
+| NoJump | $B488 | No-jump edge to horizontal parameter setup |
+| ProcJumping | $B48B | Ground/swim/timer/vertical-sign eligibility |
+| InitJS | $B4A0 | Timer, origin, dummy/force clear, state and speed thresholds |
+| ChkWtr | $B4D2 | Minimum-height flag and swim/whirlpool selector |
+| GetYPhy | $B4E4 | Four table loads, swim sound and surface speed clear |
+| PJumpSnd | $B511 | Dry big/small jump sound selector |
+| SJumpSnd | $B51A | Selected dry jump sound write |
+| X_Physics | $B51C | Airborne speed threshold and ground-state split |
+| ProcPRun | $B52D | Area, direction, B and running-timer gates |
+| ChkRFast | $B545 | Slow-path speed/friction index and RunningSpeed test |
+| FastXSp | $B554 | Second friction increment |
+| SetRTmr | $B559 | Running timer reload to ten |
+| GetXPhy | $B55E | Left limit then entrance-mode right-index override |
+| GetXPhy2 | $B56C | Right limit, friction load and facing-dependent doubling |
+| ExitPhy | $B58B | Return after parameter initialization |
+
+Seventy-three ordinary-NMI scenarios record the actual physics entry and its
+hardware-stack return. Original children are never replaced or redirected.
+The native checker invokes actual PlayerPhysicsSub on the recorded input;
+146 comparisons match all 1,784 persistent RAM bytes across x86/x64. Scratch
+$00-$07 and hardware stack are outside the native ABI. All 31 conditional
+instructions are covered: 30 have both outcomes. The BCC at $B52B always
+branches because the preceding BCS at $B529 has already consumed carry-set;
+the verifier checks both original opcodes and retains this unreachable
+fallthrough explicitly, rather than fabricating coverage.
+
+Fixture cases 109-180 cover dry speed thresholds, both sizes, swim/whirlpool
+and surface boundaries, eligibility gates, air/ground/water, running/skidding,
+all climbing parameters and entrance speed override. Case 181 covers speed
+$21 with RunningSpeed clear. Initial entrance case 179 did not reach physics;
+setting original PlayerEntranceCtrl to six supplies the normal auto-control
+path, without patching the program counter or stack. Current retained runs
+all reach the declared entry and return.
+
+Reproduce using the source-RAM fixture in player_movement_fixture.h and
+`--fixture=t33-movement=N`, one frame and warmup one. Logical controller is A
+for cases 109-140 except case 139; cases 141-156 use B+right, cases 157-172
+right, cases 173-178 cycle zero/up/down, and remaining cases use right.
+Reverse that byte into the recorder's serial bit order. Record with
+`--movement-state-snapshot=...` and `--control-children=...`, repeat with PC
+coverage and without observers. Run the native player_physics_snapshot_check
+on each child record and verify_player_physics_snapshots.py on the whole batch.
+All observed/coverage/unobserved frame outputs match. Raw evidence totals
+2,694,614 bytes below the four-MB batch limit.
+
+Both widths pass the physics, climbing and player-route regression suites;
+all 67 shared units compile as strict C90, Windows self-tests and hidden
+startup/message probes pass, and DOS16 compiles/links. Player-route's obsolete
+upward-climb expectation was corrected from four to the ROM-proven eight.
+The additional core_smoke still fails at its entrance-loop assertion (source
+line 136); comparing the prior S2 objects shows the same first failure. It is
+retained legacy-suite debt, not a passing test or a newly introduced physics
+regression. No later assertions in that suite are claimed executed.
+
+The earlier S1 actual-child matrix now matches 74/74 comparisons, eliminating
+its eight $070C differences. This is scoped integration evidence, not full
+frame or whole-game certification. Source/code proof remains the basis for
+node completion. No downstream animation, friction or collision node receives
+credit. Platform purity passes; published DOS remains link-only.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258653 | 84ab7e70f2d09f32f130c3ad82a97ff4936855bd5502ba67f17054b9f99a041b |
+| mysmb32.exe | 325271 | fc95f7213db008f5763057a37027e0d497e824fbf7dcaf881f8df225f26f84a9 |
+| mysmb64.exe | 332810 | 2c2c632854ea2af591a12aeed2ef3e0a0ea3db2284561f4d76849fd6b443307a |
+
+Final review accepts 28/28 expected matches: every node in the S3 table above
+is complete, no received node is deferred, and no downstream node is credited.
+Progress increases 699 -> 727 / 1,992. Ledger and documentation checks pass.
+S3 closes; T33 remains open. Local artifacts use the owner-
+authorized delivery exception and are not redistribution/qualification claims.

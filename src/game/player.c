@@ -301,6 +301,10 @@ void mysmb_player_start_jump(struct mysmb_game *game, mysmb_u8 whirlpool)
      * SoundEngine consumes the queue later in this same frame. */
     if (game->ram[MYSMB_SWIMMING] != 0U) {
         game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x04U;
+        /* GetYPhy: the swim sound remains queued even when the surface
+         * gate clears vertical speed before X_Physics. */
+        if (game->ram[MYSMB_PLAYER_Y] < 0x14U)
+            game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
     } else {
         game->ram[MYSMB_SQUARE1_SOUND_QUEUE] =
             game->ram[MYSMB_PLAYER_SIZE] != 0U ? 0x80U : 0x01U;
@@ -374,7 +378,8 @@ void mysmb_player_configure_climb(struct mysmb_game *game)
     }
     game->ram[MYSMB_PLAYER_Y_FORCE] = move_force[index];
     game->ram[MYSMB_PLAYER_Y_SPEED] = speed[index];
-    game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = speed[index] >= 0x80U ? 4U : 8U;
+    /* BMI retains eight for negative speed; LSR selects four otherwise. */
+    game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = speed[index] >= 0x80U ? 8U : 4U;
 }
 
 /* ClimbAdderLow/High and ClimbingSub, ROM $b3c7-$b423.
@@ -427,7 +432,7 @@ void mysmb_player_climb(struct mysmb_game *game)
         (mysmb_u8)(game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] ^ 3U);
 }
 
-/* Translation of the X_Physics parameter route in ROM $b50b-$b5cb.
+/* Translation of the X_Physics parameter route in ROM $b51c-$b58b.
  * Player animation timing is owned by GetPlayerAnimSpeed. */
 void mysmb_player_configure_horizontal(struct mysmb_game *game)
 {

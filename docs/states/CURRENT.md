@@ -2,31 +2,31 @@
 
 ## Current Work
 
-**M2 T33 S2 is closed at 699 / 1,992: eight of eight climbing nodes proven; S3 admission is next.**
+**M2 T33 S3 is closed at 727 / 1,992: all 28 physics nodes proven; S4 admission is next.**
 
-S1 closed with fifteen caller nodes proven; eight actual physics-child failures
-remain with planned S3. Its three artifacts were delivered in S1 P1.
+S1 and S2 are closed with 23 nodes proven. Physics gaps retained by their
+actual-child regressions now belong to this admitted S3 chain.
 
-## M2 T33 S2 Packet
+## M2 T33 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T33 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S1; coordinator accepts transfer-139. |
-| Objective | Restore and prove ClimbAdderLow through InitCSTimer, including signed vertical carry and all four side-switch offsets. |
-| Non-goals | No S3 physics parameter, animation, friction, terrain or rendering repairs. |
-| Reference Baseline | 691 / 1,992; eight unique open labels, expected eight, maximum 699. Exact names in proposal S2 and ledger. |
-| Candidate Proposal | [Climbing chain](../proposals/m2/player-movement-state.md#s2-admission-climbing-movement-and-side-switching). |
-| Files And ABI Surface | Shared player climbing owner, focused tests/reference recorder, build registration and three artifacts. |
+| Identifier Mode | M2 T33 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S2; coordinator accepts transfer-140. |
+| Objective | Restore and prove JumpMForceData through ExitPhy: physics tables and climbing/jump/swim/horizontal parameter initialization. |
+| Non-goals | No S4 animation/friction algorithm, world movement, terrain or renderer repairs. |
+| Reference Baseline | 699 / 1,992; 28 unique open labels, expected 28, maximum 727. Exact names in proposal S3 and ledger. |
+| Candidate Proposal | [Physics chain](../proposals/m2/player-movement-state.md#s3-admission-physics-tables-and-initialization). |
+| Files And ABI Surface | Shared player physics helpers, focused tests/reference recorder, build registration and three local artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original data/branch/carry audit and natural NMI entry-return proof; independent native tests, builds and purity. |
-| Expected Markers | Fractional carry; signed Y page carry; collision-filtered direction; timer gates; four offsets; facing inversion. |
+| Verification | Original tables/branches/read-write audit and natural NMI entry-return comparisons; independent native tests, builds and purity. |
+| Expected Markers | Nine data tables; climb animation sign; jump eligibility and origin; water surface; sound; speed/friction thresholds and entrance override. |
 | Asset Needs | Existing owner-local ROM/listing; three local EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Eight exact dispositions, separate ROM and operational evidence, artifact hashes and retained child failures. |
-| Stop Conditions | Unadmitted physics repair, modified original PC/stack/ROM, masked discrepancy or platform gameplay. |
-| Exit Criteria | All eight received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
+| Reporting Requirements | 28 exact dispositions, separate ROM and operational evidence, retained failures and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, original PC/stack/ROM mutation, masked difference or platform gameplay. |
+| Exit Criteria | All received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
 | Original Owner Request | Complete original-ROM logic and structure in shared 16/32/64-bit C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All climbing definitions/callers, side-timer writers and offset consumers. |
+| Similar-Issue Sweep | All physics helper definitions/callers, table consumers and duplicate parameter/sound writers. |
 
 ## T32 closure summary
 

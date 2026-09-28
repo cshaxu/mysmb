@@ -2,6 +2,8 @@
 
 ## Translation Debt
 
+- [ ] **Legacy core entry fixture:** T33 S3's extra `core_smoke` run stops at the entrance-loop assertion in `test/core_smoke.c` (line 136). The prior S2 build fails at the identical first assertion. Retain under the existing entry-owner maintenance path (T31 S4); audit the fixture against original entry semantics before changing its expectation or production code. Later assertions were not reached. [Scoped evidence](../proposals/m2/player-movement-state.md#s3-original-physics-proof).
+
 - [ ] **T31 cross-chain residual receipt:** final four-frame game-entry 0/1 routes repeat the known cold-screen PPU-control bit difference at sample 2; game-entry 1 also differs at `MusicOffset_Square2` (`$f7`) at sample 1. NMI/snapshot review remains with the existing T24 S2 custody path, and music sequencing with M2 Td S4's existing audio custody until source-order admission. Pipe/vine failures remain with T23 S5 and T16 S4. These are investigation responsibilities, not new root-cause certificates or concurrent admissions. [Matrix and exact limits](../history/M2-T31-game-dispatcher.md#t31-cross-chain-results).
 
 - [x] **GameCoreRoutine post-child return:** T31 S1 restores the original task reload/early return; surviving/final life-loss NMI routes match. [Entry closure](../history/M2-T31-game-dispatcher.md#s1p1-entry-chain-closure).

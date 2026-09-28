@@ -810,34 +810,34 @@ The labels and branches behind every line remain open until individually bound b
 | 6022 | `CSetFDir` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
 | 6032 | `ExitCSub` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
 | 6033 | `InitCSTimer` | M2 T33 S2 shared game/player.c | ROM-match complete | [S2 original climbing proof](../../proposals/m2/player-movement-state.md#s2-original-climbing-proof) |
-| 6039 | `JumpMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpmforcedata) |
-| 6042 | `FallMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fallmforcedata) |
-| 6045 | `PlayerYSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeryspddata) |
-| 6048 | `InitMForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initmforcedata) |
-| 6051 | `MaxLeftXSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxleftxspddata) |
-| 6054 | `MaxRightXSpdData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-maxrightxspddata) |
-| 6058 | `FrictionData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-frictiondata) |
-| 6061 | `Climb_Y_SpeedData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climb_y_speeddata) |
-| 6064 | `Climb_Y_MForceData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climb_y_mforcedata) |
-| 6067 | `PlayerPhysicsSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerphysicssub) |
-| 6079 | `ProcClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procclimb) |
-| 6086 | `SetCAnim` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcanim) |
-| 6089 | `CheckForJumping` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforjumping) |
-| 6097 | `NoJump` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojump) |
-| 6099 | `ProcJumping` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procjumping) |
-| 6109 | `InitJS` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initjs) |
-| 6133 | `ChkWtr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkwtr) |
-| 6141 | `GetYPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getyphy) |
-| 6159 | `PJumpSnd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pjumpsnd) |
-| 6163 | `SJumpSnd` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sjumpsnd) |
-| 6164 | `X_Physics` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-x_physics) |
-| 6172 | `ProcPRun` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procprun) |
-| 6184 | `ChkRFast` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrfast) |
-| 6191 | `FastXSp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fastxsp) |
-| 6193 | `SetRTmr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrtmr) |
-| 6195 | `GetXPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxphy) |
-| 6201 | `GetXPhy2` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getxphy2) |
-| 6213 | `ExitPhy` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitphy) |
+| 6039 | `JumpMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6042 | `FallMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6045 | `PlayerYSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6048 | `InitMForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6051 | `MaxLeftXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6054 | `MaxRightXSpdData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6058 | `FrictionData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6061 | `Climb_Y_SpeedData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6064 | `Climb_Y_MForceData` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6067 | `PlayerPhysicsSub` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6079 | `ProcClimb` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6086 | `SetCAnim` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6089 | `CheckForJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6097 | `NoJump` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6099 | `ProcJumping` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6109 | `InitJS` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6133 | `ChkWtr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6141 | `GetYPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6159 | `PJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6163 | `SJumpSnd` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6164 | `X_Physics` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6172 | `ProcPRun` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6184 | `ChkRFast` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6191 | `FastXSp` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6193 | `SetRTmr` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6195 | `GetXPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6201 | `GetXPhy2` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
+| 6213 | `ExitPhy` | M2 T33 S3 shared game/player.c | ROM-match complete | [S3 original physics proof](../../proposals/m2/player-movement-state.md#s3-original-physics-proof) |
 | 6217 | `PlayerAnimTmrData` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playeranimtmrdata) |
 | 6220 | `GetPlayerAnimSpeed` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getplayeranimspeed) |
 | 6229 | `ChkSkid` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkskid) |
