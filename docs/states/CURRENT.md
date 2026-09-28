@@ -2,96 +2,39 @@
 
 ## Current Work
 
-**M2 T32 S4 has ten proven caller nodes at 676 / 1,992; final review and T32 integrated review remain pending.**
+**M2 T33 S1 is active at 676 / 1,992: fifteen open movement-state nodes, expected fifteen, maximum 691.**
 
-All nine source branches have both outcomes and 58 caller comparisons match.
-Actual native children yield 6 matches and 52 retained failures. Three
-artifacts were refreshed; DOS remains link-only. S4 is the sole active
-packet; S1-S3 are closed and T32 remains open.
+T32 is closed with all 48 admitted nodes proven within their own contracts.
+Its nineteen integrated routes have eight complete matches and eleven retained
+child/output failures. PlayerMovementSubs now transfers with its successors.
 
-## M2 T32 S4 Packet
-
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | M2 T32 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S3; coordinator accepts transfer-137. |
-| Objective | Restore FlagpoleSlide through ExitNA, including threshold data and shared NextArea. |
-| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
-| Reference Baseline | 666 / 1,992; ten unique open labels, expected ten, maximum 676. Exact names in proposal S4 and ledger. |
-| Candidate Proposal | [Flagpole/end-level chain](../proposals/m2/player-control-modes.md#s4-admission-flagpole-and-end-level-chain). |
-| Files And ABI Surface | Shared player-end-level owner, owned callers and declarations, build lists, tests/recorders, three artifacts. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
-| Expected Markers | Flag object/sound gates; forced input; post-child reads; coin threshold; pointer/mode/halfway/music order. |
-| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Ten exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
-| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
-| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
-| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
-| Similar-Issue Sweep | All flagpole/end-level/NextArea callers and owned state writers; host input stays physical mapping only. |
-
-## M2 T32 S3 Packet (closed)
+## M2 T33 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T32 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S2; coordinator accepts transfer-136. |
-| Objective | Restore PlayerChangeSize through ExitDeath as a shared timer/palette state chain. |
-| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
-| Reference Baseline | 652 / 1,992; fourteen unique open labels, expected fourteen, maximum 666. Exact names in proposal S3 and ledger. |
-| Candidate Proposal | [Timer/palette state chain](../proposals/m2/player-control-modes.md#s3-admission-size-injury-death-and-palette-chain). |
-| Files And ABI Surface | Shared player-modes owner, owned callers and declarations, build lists, tests/recorders, three artifacts. |
+| Identifier Mode | M2 T33 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed T32; coordinator accepts transfer-138. |
+| Objective | Restore PlayerMovementSubs through ExitMov1 with original state dispatch and ground/air caller semantics. |
+| Non-goals | No unadmitted physics-table, animation, friction, climbing, terrain or OAM child repair. |
+| Reference Baseline | 676 / 1,992; fifteen unique open labels, expected fifteen, maximum 691. Exact names in proposal S1 and ledger. |
+| Candidate Proposal | [Movement state chain](../proposals/m2/player-movement-state.md#s1-admission-movement-dispatch-and-ground-air-states). |
+| Files And ABI Surface | Shared player-movement owner, child seams, build lists, focused tests/recorders and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
-| Expected Markers | Exact timer equality/thresholds; guarded size change; task reset; ordered control child; palette masks and frame shift. |
+| Verification | Original branches, reads/writes and call order plus natural NMI boundaries; independent native tests, builds and purity. |
+| Expected Markers | Crouch gates; physics before freeze; four-way vector; climb timer; ground/air order; swim/jump thresholds; death force. |
 | Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Fourteen exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
-| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
-| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
-| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
-| Similar-Issue Sweep | All size/injury/death/flower/star palette callers; host input stays physical mapping only. |
+| Reporting Requirements | Fifteen exact dispositions; separate ROM/operational results; child failures and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, modified reference PC/stack/ROM, masked difference or platform gameplay logic. |
+| Exit Criteria | All received labels proven or transferred with acceptance; tracker, evidence and artifacts agree. |
+| Original Owner Request | Complete original ROM logic/call structure in shared native 16/32/64-bit C, source order and chain-level delivery. |
+| Similar-Issue Sweep | All movement-state callers, crouch/freeze/climb-timer writers and duplicated ground/air orchestration. |
 
-## M2 T32 S2 Packet (closed)
+## T32 closure summary
 
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | M2 T32 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S1; coordinator accepts transfer-135. |
-| Objective | Restore Vine_AutoClimb through RightPipe and the shared area-mode transition. |
-| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
-| Reference Baseline | 641 / 1,992; eleven unique open labels, expected eleven, maximum 652. Exact names in proposal S2 and ledger. |
-| Candidate Proposal | [Vine/pipe chain](../proposals/m2/player-control-modes.md#s2-admission-vine-and-pipe-transition-chain). |
-| Files And ABI Surface | Shared player-transition owner, owned callers and declarations, build lists, tests/recorders, three artifacts. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
-| Expected Markers | Up override; byte-wrap Y/timer; post-child selector reads; disable-screen increment and task/sprite-0 resets. |
-| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Eleven exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
-| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
-| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
-| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
-| Similar-Issue Sweep | All vine/pipe/SetEntr/area-mode/Y-axis callers; host input stays physical mapping only. |
-
-## M2 T32 S1 Packet (closed)
-
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | M2 T32 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed T31; coordinator accepts transfer-134. |
-| Objective | Restore PlayerCtrlRoutine through CloudExit as one shared caller chain. |
-| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
-| Reference Baseline | 628 / 1,992; thirteen unique open labels, expected thirteen, maximum 641. Exact names in proposal S1 and ledger. |
-| Candidate Proposal | [Player control chain](../proposals/m2/player-control-modes.md#s1-admission-playerctrlroutine-through-cloudexit). |
-| Files And ABI Surface | Shared player-control owner, player.c child extraction and declarations, build lists, tests/recorders, three artifacts. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
-| Expected Markers | Water/death input gates; byte masks; movement-before-size; zero-speed direction; ordered children; priority gates; signed hole/cloud/death thresholds. |
-| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
-| Reporting Requirements | Thirteen exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
-| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
-| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
-| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
-| Similar-Issue Sweep | All player-control callers/input decoders/bounding setup/hole exits; host input stays physical mapping only. |
+[T32 history](../history/M2-T32-player-control-modes.md) retains all four S
+proofs, exact node dispositions and three artifact hashes. Scope 48/48 proven;
+global count 628 -> 676. Actual-child and reload-PPU failures remain incomplete;
+DOS has no resource binding or playable-runtime claim.
 
 ## M2 T31 S4 Packet (closed)
 

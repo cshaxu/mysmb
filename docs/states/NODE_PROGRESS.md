@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **676 / 1,992 (33.94%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T32 S4 P1](../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof)
+Latest task review: [T32 S4 P1](../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof)
 proves ten end-level caller nodes with 58 caller comparisons. Actual native
 children yield 6 matches and 52 retained failures; movement and output
 dependencies remain incomplete. This is not full-player conformance.

@@ -28,6 +28,10 @@
 #include "engine_normal_fixture.h"
 #include "scroll_fixture.h"
 #include "entrance_fixture.h"
+#include "player_control_fixture.h"
+#include "player_transition_fixture.h"
+#include "player_modes_fixture.h"
+#include "player_end_level_fixture.h"
 #include "engine_cannon_fixture.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -1152,6 +1156,22 @@ int main(int argument_count, char **arguments)
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-castle") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 84U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-geometry-vertical-pipe") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 85U; }
         else if (mysmb_recorder_equals(arguments[index], "--fixture=t29-final-question-high") != 0U) { if (t26_fixture != 0U) return 64; t26_fixture = 86U; }
+        else if ((block_scenario = mysmb_player_control_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(775 + block_scenario);
+        }
+        else if ((block_scenario = mysmb_player_transition_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(825 + block_scenario);
+        }
+        else if ((block_scenario = mysmb_player_modes_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(853 + block_scenario);
+        }
+        else if ((block_scenario = mysmb_player_end_level_argument(arguments[index])) != 0) {
+            if (t26_fixture != 0U) return 64;
+            t26_fixture = (unsigned int)(875 + block_scenario);
+        }
         else if ((block_scenario = mysmb_entrance_argument(arguments[index])) != 0) {
             if (t26_fixture != 0U) return 64;
             t26_fixture = (unsigned int)(740 + block_scenario);
@@ -1400,6 +1420,16 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
+            else if (t26_fixture >= 776U && t26_fixture <= 904U) {
+                if (t26_fixture <= 825U)
+                    mysmb_player_control_fixture(game.ram,(mysmb_u8)(t26_fixture-776U));
+                else if (t26_fixture <= 853U)
+                    mysmb_player_transition_fixture(game.ram,(mysmb_u8)(t26_fixture-826U));
+                else if (t26_fixture <= 875U)
+                    mysmb_player_modes_fixture(game.ram,(mysmb_u8)(t26_fixture-854U));
+                else mysmb_player_end_level_fixture(game.ram,(mysmb_u8)(t26_fixture-876U),mysmb_local_prg);
+                game.ppu_control_0 = game.ram[0x0778U];
+            }
             else if (t26_fixture >= 741U && t26_fixture <= 775U) {
                 mysmb_entrance_fixture(game.ram, (mysmb_u8)(t26_fixture - 741U));
                 /* These source-RAM fixtures replace the NMI input mirror.

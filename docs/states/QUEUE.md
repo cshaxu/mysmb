@@ -15,10 +15,11 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-rendering.md#t30-closure),
 with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
-T31 is closed at 628 / 1,992 after the integrated matrix and explicit child
-receipts. T32 S1 is closed at 641 / 1,992; S2 is closed at 652 / 1,992; S3 is closed at 666 / 1,992; S4 has ten proven flagpole/end-level
-labels at 676 / 1,992 and awaits T32 integrated review. Actual-child failures remain incomplete. Later T32 chains remain plans; PlayerMovementSubs
-retains T23 S5 custody for the next complete movement-state source slice.
+T31 and T32 are closed. T32 proves its 48 received caller/data nodes at
+676 / 1,992, with eleven integrated routes retaining child/output failures.
+T33 S1 is active with fifteen open movement-state nodes, expected fifteen
+and maximum 691. Its complete plan has 63 labels in four source-order chains,
+including PlayerMovementSubs; later S receipts remain unadmitted.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 

@@ -9,7 +9,7 @@ still changes ClimbSideTimer, motion forces and position. Fifty source-RAM
 control fixtures retain all production-call failures while independently
 proving caller contracts. Repair with the complete movement-state chain in
 source order; no extra dependency is admitted into T32 S1. See the
-[caller proof and retained failures](player-control-modes.md#s1p2-original-caller-proof).
+[caller proof and retained failures](../../history/M2-T32-player-control-modes.md#s1p2-original-caller-proof).
 
 ## T31 S4 evidence receipt for existing T23 S5 custody
 
