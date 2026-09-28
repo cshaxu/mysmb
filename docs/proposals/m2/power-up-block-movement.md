@@ -934,3 +934,110 @@ release evidence or a claim that M2 is complete.
 | mysmb64.exe | 338397 | 3193cffb20e3f575a79502aa55f68ec43670748484ce66cd65d7fd723b189040 |
 
 Retained raw evidence: 1944726 bytes. S5 closes; S6 metatile replacement is next, not yet admitted.
+
+
+## S6 admission: two-slot block metatile replacement
+
+After S5 commit b22b97a, transfers 159/160 receive BlockObjMT_Updater from
+T24 S2 and UpdateLoop/NextBUpd from T18 S4. All three remain incomplete.
+Baseline 852 / 1,992; expected three, maximum 855. One contiguous chain at
+$BED4-$BF01 lives in game/blocks/replacement.c; entry retains the existing
+public updater ABI. Predecessors supply the flags and replacement bytes;
+ReplaceBlockMetatile remains an unchanged area-output child.
+
+Start X=1; store ObjectOffset at each loop even on skipped slots. Test
+VRAM_Buffer1 at $0301 (not the offset at $0300), then replacement flag.
+Write $06, $07=5 and $02 in source order, store the metatile through the
+pointer, call ReplaceBlockMetatile, then explicitly clear the flag. DEX/BPL
+visits slot zero and exits with ObjectOffset zero. Expose the existing child
+without importing its algorithm or giving it new credit. Audit every updater
+caller, replacement-flag writer and buffer-busy test; no platform gameplay.
+
+Prove original control/data writes and call boundaries through ordinary NMI
+GameEngine routes: busy/empty VRAM, either/both flags, nonunit flags, row and
+column boundaries. Reference recording is read-only, with no CPU/stack/ROM
+or output patching. Separate caller proof and actual child differences.
+Independent native tests check full writes, two-slot order, busy recheck,
+pointer scratch and post-child flag clear. Run strict C90 x86/x64, applicable
+regressions, DOS16 link, platform purity, hidden-window probes and three
+owner-authorized EXEs. Keep all temporary research, snapshots and builds
+below ignored build/m2-t37-s6; raw budget four MB, recorder timeout twenty
+seconds each, cleanup owner S6. Existing owner-local ROM/listing are research
+inputs, with no redistribution or third-party implementation import.
+
+Report all three labels, both proof tracks, residual ownership and artifact
+hashes. No gravity/movement/VRAM-child repair. DOS remains link-only and no
+complete-game equivalence follows from a caller match.
+
+
+## S6 original block replacement proof
+
+S6/P1 completes BlockObjMT_Updater, UpdateLoop and NextBUpd: expected three,
+actual three, no scoped transfers. Progress 852 -> 855 / 1,992. This proves
+the local loop and its child-call contract, not all VRAM-child interiors.
+
+| Node | Shared C mapping and original contract |
+| --- | --- |
+| BlockObjMT_Updater $BED4 | blocks/replacement.c retains the public updater entry and starts slot one. |
+| UpdateLoop $BED6 | ObjectOffset is written on every iteration, including skipped slots. Test command byte $0301, then flag; write $06, $07=5 and $02, store metatile through the pointer, call ReplaceBlockMetatile, explicitly clear flag afterwards. |
+| NextBUpd $BEFE | Decrement slot; signed BPL loop visits slot zero and then exits. Final ObjectOffset is zero. |
+
+Original $BED4-$BF01 instructions are compared to the shared implementation.
+Thirty-two source-RAM ordinary NMI/GameEngine scenarios reach every node,
+both slots at the child boundary and both outcomes of all three branches.
+They cover busy/empty VRAM, either/both/no flags, nonunit flags, row and
+column bounds. VRAM controller six selects the other command buffer during
+NMI so explicit busy-buffer cases survive to the ordinary updater call.
+The original has no range-clamping substitute for its indirect store; the
+native maximum address for byte inputs is $06FE, within shared RAM.
+
+Original root/direct-child observations are read-only real-stack boundaries.
+No CPU/stack/ROM/return/output is patched; observed/unobserved frame outputs
+and separately collected coverage snapshots are identical. On both widths,
+64 caller comparisons match across 1,794 RAM bytes, including scratch
+$02/$06/$07, OAM and VRAM. Scratch $00/$01/$03-$05 and CPU stack are excluded;
+the independent full-write test covers the loop's own complete footprint.
+Child-return substitution exists only in the isolated native caller checker.
+
+Actual native roots match 52/64. Cases 6/7/14/15/22/23 retain twelve failures
+across both widths, solely VRAM bytes $0301/$0306. Independent original
+ReplaceBlockMetatile entry/exit checks reproduce those same differences.
+High-row inputs yield original $20/native $24 or original $24/native $28.
+Keep this child and its deeper VRAM calculation with existing T28 S3
+maintenance custody; S6 does not silently repair, credit or suppress it.
+The exact deeper instruction remains a later admitted audit responsibility.
+
+Strict C90 focused native checks pass 131,072 full-pointer/write cases and
+nine gate/loop cases per width. They verify both-slot ordering, nonunit flag
+clear, ObjectOffset on skipped iterations and rechecking busy state after a
+child writes VRAM. All 36 surrounding regressions pass, including block
+graphics and engine caller ordering. Final Windows builds compile 81 shared
+units, pass input self-test and hidden-window creation/message probes.
+DOS16 links with the known OLDNAMES warning and remains link-only; there is
+no DOS resource-binding or physical 486SX qualification claim. Platform
+purity passes and platform source is unchanged.
+
+The caller sweep finds one production engine call in original order, before
+block lifetime. Remove the updater body from area/block_metatile.c, expose
+its existing ReplaceBlockMetatile child unchanged, and keep one replacement
+loop in game/blocks/replacement.c. Prior score/scratch, drawing and full-game
+mismatches remain open. No movement or graphics algorithms change.
+
+Reproduce with mysmb_block_replacement_smoke and snapshot/caller/child check
+targets. Record `--fixture=t37-replacement=N` (0-31),
+`--block-replacement-snapshot=...` and `--control-children=...`; collect
+`--pc-coverage=...` separately. Run
+`python test/verify_block_replacement_snapshots.py <ignored-directory> <owner-rom>`.
+The verifier retains the actual-child failures and rejects other changed RAM.
+Raw research remains below ignored build/m2-t37-s6 within four MB.
+
+Three owner-authorized test artifacts follow, without redistribution or
+complete-game equivalence claims.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256593 | 8cef2d07b0e08bd5034b4c884ab328ebee1f496884264579a037ab81d2764fd1 |
+| mysmb32.exe | 330627 | 31026a0162aff4199ee6cd7ad5b8c24d13b6c37ced2c106a43898d55f15bbc08 |
+| mysmb64.exe | 338649 | 7b83be2811032513d148c49e0c25897610f66774e59e503786da5a9ee27922be |
+
+Retained raw evidence: 1218036 bytes. S6 closes; S7 horizontal movement is next, not yet admitted.

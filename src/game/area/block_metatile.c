@@ -100,7 +100,7 @@ void mysmb_area_destroy_block_metatile(struct mysmb_game *game,
 }
 
 /* ROM $8a61-$8a68 ReplaceBlockMetatile. */
-static void mysmb_area_replace_block_metatile(struct mysmb_game *game,
+void mysmb_area_replace_block_metatile(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {
     mysmb_area_write_block_metatile(game, game->ram[MYSMB_BLOCK_METATILE + slot],
@@ -134,24 +134,4 @@ void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 9U] =
         mysmb_area_block_gfx(game, (mysmb_u8)(graphics_offset + 3U));
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 10U] = 0U;
-}
-
-/* Translation of ROM $bed4 BlockObjMT_Updater.  Its producer state remains
- * outside this S; the admitted ReplaceBlockMetatile tail is called verbatim. */
-void mysmb_area_apply_block_replacements(struct mysmb_game *game)
-{
-    mysmb_u8 slot;
-    mysmb_u8 index;
-    mysmb_u16 address;
-
-    for (slot = 2U; slot != 0U; --slot) {
-        index = (mysmb_u8)(slot - 1U);
-        if (game->ram[MYSMB_VRAM_BUFFER1_DATA] != 0U) continue;
-        if (game->ram[MYSMB_BLOCK_REPLACE_FLAG + index] == 0U) continue;
-        address = (mysmb_u16)(0x0500U + game->ram[MYSMB_BLOCK_BUFFER_LOW + index] +
-                              game->ram[MYSMB_BLOCK_ORIGINAL_Y + index]);
-        if (address < 0x0800U) game->ram[address] =
-            game->ram[MYSMB_BLOCK_METATILE + index];
-        mysmb_area_replace_block_metatile(game, index);
-    }
 }

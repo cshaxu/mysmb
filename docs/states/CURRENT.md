@@ -2,28 +2,33 @@
 
 ## Current Work
 
-**M2 T37 S5 is closed at 852 / 1,992: five local lifetime nodes proven; S6 metatile replacement is next.**
+**M2 T37 S6 is closed at 855 / 1,992: three replacement nodes proven; S7 horizontal movement is next.**
 
-## M2 T37 S5 Packet
+## M2 T37 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S5, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S4 commit d6fb78f; coordinator accepts transfer-158. |
-| Objective | Complete BlockObjectsCore, ChkTop, BouncingBlockHandler, KillBlock and UpdSte as one lifetime chain. |
-| Non-goals | No gravity, horizontal primitive, drawing, metatile updater or platform algorithm repair. |
-| Reference Baseline | 847 / 1,992; five incomplete labels, five expected, maximum 852. |
-| Candidate Proposal | [S5 block lifetime](../proposals/m2/power-up-block-movement.md#s5-admission-block-and-brick-chunk-lifetime). |
-| Files And ABI Surface | Shared blocks/lifetime owner, existing movement/OAM children, step callers, tests/recorder/build lists and three EXEs. |
+| Identifier Mode | M2 T37 S6, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S5 commit b22b97a; coordinator accepts transfers 159/160. |
+| Objective | Complete BlockObjMT_Updater, UpdateLoop and NextBUpd as one two-slot replacement chain. |
+| Non-goals | No gravity, horizontal primitive, drawing, VRAM-child or platform algorithm repair. |
+| Reference Baseline | 852 / 1,992; three incomplete labels, three expected, maximum 855. |
+| Candidate Proposal | [S6 block replacement](../proposals/m2/power-up-block-movement.md#s6-admission-two-slot-block-metatile-replacement). |
+| Files And ABI Surface | Shared blocks/replacement owner, exposed existing area child, tests/recorder/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
 | Verification | Original branch/write/call audit, ordinary NMI root and child snapshots; separate native tests and three-target delivery. |
-| Expected Markers | Saved state nibble, paired gravity/movement, ObjectOffset reload, relative/offscreen/draw order and exact retirement thresholds. |
+| Expected Markers | ObjectOffset on skipped slots, $0301 busy gate, $06/$07/$02 write order, buffer write before child and explicit flag clear. |
 | Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Five exact dispositions, dual proof, retained child differences, caller sweep, tracker/ledger and hashes. |
+| Reporting Requirements | Three exact dispositions, dual proof, retained child differences, caller sweep, tracker/ledger and hashes. |
 | Stop Conditions | Unadmitted child repair, modified reference execution/output, hidden differences or platform gameplay. |
 | Exit Criteria | All received nodes proven or exact accepted unfinished transfer; accounting and artifacts consistent. |
 | Original Owner Request | Faithful original ROM logic/call structure in shared C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All block-step callers, duplicated movement, saved-state and live-slot behavior, relative/offscreen/draw sequencing. |
+| Similar-Issue Sweep | All updater callers, replacement flag writers, VRAM busy gate and pointer/child ordering. |
+
+
+S6 closure: [block replacement proof](../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof).
+64 caller matches; 52 actual matches and 12 retained VRAM-child failures.
+Focused checks, 36 regressions and three builds pass.
 
 S5 closure: [block lifetime proof](../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof).
 64 caller matches; 30 actual matches and 34 retained drawing failures.

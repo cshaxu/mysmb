@@ -993,9 +993,9 @@ The labels and branches behind every line remain open until individually bound b
 | 7506 | `BouncingBlockHandler` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
 | 7519 | `KillBlock` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
 | 7520 | `UpdSte` | M2 T37 S5 shared game/blocks/lifetime.c | ROM-match complete | [S5 lifetime caller proof](../../proposals/m2/power-up-block-movement.md#s5-original-block-lifetime-proof) |
-| 7527 | `BlockObjMT_Updater` | T22 responsibility; `objects.c`: `mysmb_objects_step_blocks`; `area.c`: `mysmb_area_apply_block_replacements` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-blockobjmt_updater) |
-| 7529 | `UpdateLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-updateloop) |
-| 7546 | `NextBUpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextbupd) |
+| 7527 | `BlockObjMT_Updater` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
+| 7529 | `UpdateLoop` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
+| 7546 | `NextBUpd` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
 | 7555 | `MoveEnemyHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveenemyhorizontally) |
 | 7561 | `MovePlayerHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayerhorizontally) |
 | 7566 | `MoveObjectHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveobjecthorizontally) |

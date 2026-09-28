@@ -109,6 +109,8 @@ void mysmb_area_decode_object(struct mysmb_area_object *object);
 mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game);
 /* ROM BlockObjMT_Updater -> ReplaceBlockMetatile. */
 void mysmb_area_apply_block_replacements(struct mysmb_game *game);
+/* Existing ROM $8A61 child; block replacement owns the surrounding loop. */
+void mysmb_area_replace_block_metatile(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM $8a4d RemoveCoin_Axe / $8a69 DestroyBlockMetatile. */
 void mysmb_area_remove_coin_axe(struct mysmb_game *game, mysmb_u8 block_low,
                                  mysmb_u8 vertical_high);
