@@ -861,18 +861,18 @@ The labels and branches behind every line remain open until individually bound b
 | 6401 | `EraseFB` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
 | 6403 | `NoFBall` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
 | 6405 | `FireballExplosion` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
-| 6409 | `BubbleCheck` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6419 | `SetupBubble` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6425 | `PosBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6440 | `MoveBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6450 | `Y_Bubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6451 | `ExitBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6453 | `Bubble_MForceData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6456 | `BubbleTimerData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
-| 6461 | `RunGameTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
-| 6486 | `ResGTCtrl` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
-| 6494 | `TimeUpOn` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
-| 6497 | `ExGTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../proposals/m2/bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6409 | `BubbleCheck` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6419 | `SetupBubble` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6425 | `PosBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6440 | `MoveBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6450 | `Y_Bubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6451 | `ExitBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6453 | `Bubble_MForceData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6456 | `BubbleTimerData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../history/M2-T35-bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6461 | `RunGameTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../history/M2-T35-bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6486 | `ResGTCtrl` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../history/M2-T35-bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6494 | `TimeUpOn` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../history/M2-T35-bubbles-timer-warp.md#s2-original-timer-proof) |
+| 6497 | `ExGTimer` | M2 T35 S2 shared game/timer.c | ROM-match complete | [S2 timer caller proof; injury gap retained](../../history/M2-T35-bubbles-timer-warp.md#s2-original-timer-proof) |
 | 6501 | `WarpZoneObject` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P4 scoped dual evidence](../../history/M2-T31-game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
 | 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
@@ -889,16 +889,16 @@ The labels and branches behind every line remain open until individually bound b
 | 6636 | `GiveFPScr` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6643 | `FPGfx` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6646 | `ExitFlagP` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
-| 6650 | `Jumpspring_Y_PosData` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6653 | `JumpspringHandler` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6667 | `DownJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6669 | `PosJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6682 | `BounceJS` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6688 | `DrawJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6698 | `ExJSpring` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../proposals/m2/bubbles-timer-warp.md#s3-original-jumpspring-proof) |
-| 6702 | `Setup_Vine` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setup_vine) |
-| 6716 | `NextVO` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextvo) |
-| 6727 | `VineHeightData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineheightdata) |
+| 6650 | `Jumpspring_Y_PosData` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6653 | `JumpspringHandler` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6667 | `DownJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6669 | `PosJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6682 | `BounceJS` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6688 | `DrawJSpr` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6698 | `ExJSpring` | M2 T35 S3 shared game/jumpspring.c | ROM-match complete | [S3 jumpspring caller proof; graphics gap retained](../../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof) |
+| 6702 | `Setup_Vine` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
+| 6716 | `NextVO` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
+| 6727 | `VineHeightData` | M2 T35 S4 shared game/vine.c | ROM-match complete | [S4 actual vine setup proof](../../history/M2-T35-bubbles-timer-warp.md#s4-original-vine-setup-proof) |
 | 6730 | `VineObjectHandler` | T22 responsibility; `objects.c`: `mysmb_objects_start_vine`, `mysmb_objects_step_vine`; `oam/vine_gfx.c`: `mysmb_objects_draw_vine` | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-vineobjecthandler) |
 | 6746 | `RunVSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runvsubs) |
 | 6752 | `VDrawLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vdrawloop) |

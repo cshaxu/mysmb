@@ -42,6 +42,7 @@
 #include "../test/bubble_core_fixture.h"
 #include "../test/timer_fixture.h"
 #include "../test/jumpspring_core_fixture.h"
+#include "../test/vine_setup_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
 #include "core/driver.h"
@@ -949,6 +950,7 @@ int main(int argument_count, char **arguments)
     lib_u8 control_stack;
     lib_u16 transition_entry;
     lib_u8 transition_argument;
+    lib_u8 vine_block_slot;
     unsigned int entrance_child_count;
     unsigned int entrance_child_active;
     lib_u16 entrance_child_return;
@@ -988,6 +990,7 @@ int main(int argument_count, char **arguments)
     control_stack = 0u;
     transition_entry = 0u;
     transition_argument = 0u;
+    vine_block_slot = 0u;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
@@ -997,6 +1000,12 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--vine-setup-snapshot=", 22u) == 0) {
+            if (movement_snapshot_path != NULL || arguments[recorded][22] == '\0') return 64;
+            movement_snapshot_path = arguments[recorded] + 22;
+            background_snapshot = 14u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--jumpspring-snapshot=", 22u) == 0) {
             if (movement_snapshot_path != NULL || arguments[recorded][22] == '\0') return 64;
             movement_snapshot_path = arguments[recorded] + 22;
@@ -1485,6 +1494,13 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_vine_setup_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(1292 + block_scenario);
+            transition_entry = 0xb91eu;
+            continue;
+        }
         block_scenario = mysmb_jumpspring_core_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1972,6 +1988,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 1293u && t26_fixture <= 1308u)
+                    mysmb_vine_setup_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 1293u));
                 else if (t26_fixture >= 1261u && t26_fixture <= 1292u)
                     mysmb_jumpspring_core_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 1261u));
@@ -2217,14 +2236,15 @@ int main(int argument_count, char **arguments)
         before_pc = driver->machine->pc;
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
-        if ((background_snapshot >= 4u && background_snapshot <= 13u) && movement_snapshot_path != NULL &&
-            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 1292u) {
+        if ((background_snapshot >= 4u && background_snapshot <= 14u) && movement_snapshot_path != NULL &&
+            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 1308u) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&
                 (background_snapshot != 10u || driver->machine->x == (t26_fixture - 1183u) / 16u) &&
                 (background_snapshot != 11u || driver->machine->x ==
                     (t26_fixture < 1239u ? (t26_fixture - 1215u) / 8u : (t26_fixture - 1239u) / 2u))) {
                 memcpy(movement_snapshots, driver->machine->ram, 2048u);
+                if (background_snapshot == 14u) vine_block_slot = driver->machine->y;
                 transition_argument = background_snapshot >= 10u ? driver->machine->x : driver->machine->a;
                 control_stack = driver->machine->s;
                 control_return = (lib_u16)(1u +
@@ -2408,7 +2428,7 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        if (background_snapshot >= 5u && background_snapshot <= 13u) {
+        if (background_snapshot >= 5u && background_snapshot <= 14u) {
             unsigned char header[8] = {'M','S','T','P',1u,0u,0u,0u};
             header[5] = transition_entry == 0xb1c7u ? 1u :
                 (transition_entry == 0xb206u ? 2u : (transition_entry == 0xb1e5u ? 3u : 4u));
@@ -2439,6 +2459,11 @@ int main(int argument_count, char **arguments)
             if (background_snapshot == 11u) {
                 header[2] = 'B';
                 header[5] = transition_entry == 0xb6f9u ? 1u : 2u;
+            }
+            if (background_snapshot == 14u) {
+                header[2] = 'V';
+                header[5] = 1u;
+                header[7] = vine_block_slot;
             }
             if (background_snapshot == 13u) {
                 header[2] = 'J';

@@ -1283,7 +1283,7 @@ int main(void)
     game.ram[0x00d7U] = 0x60U;
     game.ram[0x0398U] = 0U;
     game.ram[0x0399U] = 0U;
-    mysmb_objects_start_vine(&game, 0U);
+    mysmb_objects_start_vine(&game, 5U, 0U);
     if (game.ram[0x001bU] != 0x2fU || game.ram[0x0014U] != 1U ||
         game.ram[0x0073U] != 1U || game.ram[0x008cU] != 0x30U ||
         game.ram[0x00d4U] != 0x60U || game.ram[0x039dU] != 0x60U ||

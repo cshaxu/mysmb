@@ -2,34 +2,34 @@
 
 ## Current Work
 
-**M2 T35 S3 is closed at 769 / 1,992: seven jumpspring data/state/caller nodes proven; S4 vine initialization is next.**
+**M2 T35 S4 and T35 are closed at 772 / 1,992: the 38-label slice has 22 new and 16 retained matches.**
 
-## M2 T35 S3 Packet
+## M2 T35 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T35 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S2 commit 56572b8; coordinator accepts transfer-146. |
-| Objective | Complete seven jumpspring data/state/caller nodes in original order. |
-| Non-goals | No offscreen, relative, bounds or graphics child algorithm repair; no vine work. |
-| Reference Baseline | 762 / 1,992; seven open labels, expected seven, maximum 769. |
-| Candidate Proposal | [Jumpspring chain](../proposals/m2/bubbles-timer-warp.md#s3-admission-jumpspring-state-and-caller-chain). |
-| Files And ABI Surface | Shared jumpspring actor and extracted graphics seam, headers/build lists, tests/recorder and three artifacts. |
+| Identifier Mode | M2 T35 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S3 commit d289365; coordinator accepts transfer-147. |
+| Objective | Complete Setup_Vine, NextVO and VineHeightData in original source order. |
+| Non-goals | No VineObjectHandler growth, offscreen or graphics algorithm repair. |
+| Reference Baseline | 769 / 1,992; one mapped and two open labels, expected three, maximum 772. |
+| Candidate Proposal | [Vine setup chain](../history/M2-T35-bubbles-timer-warp.md#s4-admission-vine-initialization-and-height-data). |
+| Files And ABI Surface | Shared vine owner, explicit original arguments, table declaration/caller/build updates, focused tests/recorder and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original table/branch/child-order/RAM proof; separate actual-child comparisons; focused native tests and three builds. |
-| Expected Markers | Offscreen first; timer/animation gates; Y wrap/table; rising A; launch/reset; relative/graphics/bounds; post-child timer step. |
-| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Seven exact node dispositions, caller/actual-child limits, both proof tracks and hashes. |
-| Stop Conditions | Unadmitted child repair, reference mutation, masked differences or platform game logic. |
-| Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
+| Verification | Original entry/return RAM, branch and data-byte proof; focused native tests, cross-chain regression and three builds. |
+| Expected Markers | ID/flag then page/X/Y; first-vine start Y; indexed registration, flag wrap, sound; shared height bytes. |
+| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Three exact node dispositions, both proof tracks, limits and artifact hashes. |
+| Stop Conditions | Unadmitted consumer repair, reference mutation, masked discrepancy or platform game logic. |
+| Exit Criteria | Every received node proven or accepted transfer; ledger, tracker, evidence and artifacts agree. |
 | Original Owner Request | Original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
-| Similar-Issue Sweep | Every spring handler, slot dispatch, timer/force/Y writer and inline bounds shortcut. |
+| Similar-Issue Sweep | Every Setup_Vine caller, vine registration/start-Y writer and height-table copy. |
 
-## T35 S1/S2 closure summary
+## T35 S1-S3 closure summary
 
-Eight bubble and four timer nodes are complete at 762. Latest commit
-56572b8 contains three EXEs. Injury-child and full-frame output differences
-remain explicit in the [T35 evidence](../proposals/m2/bubbles-timer-warp.md).
+Nineteen bubble, timer and jumpspring data/state/caller nodes are complete.
+Latest commit d289365 contains three EXEs. Graphics, injury and full-frame
+output differences remain explicit in the [T35 evidence](../history/M2-T35-bubbles-timer-warp.md).
 
 ## T34 closure summary
 

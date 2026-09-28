@@ -1636,27 +1636,6 @@ void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)
     }
 }
 
-/* ROM $ba55 Setup_Vine.  The original reserves enemy slot five for this
- * object, which is also the power-up slot and therefore cannot coexist. */
-void mysmb_objects_start_vine(struct mysmb_game *game, mysmb_u8 block_slot)
-{
-    const mysmb_u8 slot = 5U;
-    mysmb_u8 vine_slot;
-
-    game->ram[MYSMB_ENEMY_ID + slot] = 0x2fU;
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_BLOCK_PAGE + block_slot];
-    game->ram[MYSMB_ENEMY_X + slot] = game->ram[MYSMB_BLOCK_X + block_slot];
-    game->ram[MYSMB_ENEMY_Y + slot] = game->ram[MYSMB_BLOCK_Y + block_slot];
-    vine_slot = game->ram[MYSMB_VINE_FLAG_OFFSET];
-    if (vine_slot == 0U) {
-        game->ram[MYSMB_VINE_START_Y] = game->ram[MYSMB_ENEMY_Y + slot];
-    }
-    game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_slot] = slot;
-    game->ram[MYSMB_VINE_FLAG_OFFSET]++;
-    game->ram[MYSMB_SQUARE2_SOUND] = 4U;
-}
-
 /* Translation of ChkOverR's inline caller setup for InitBlock_XY_Pos,
  * followed by Setup_Vine with X=5/Y=0. This remains a shared game-object
  * helper: platform code neither manufactures the block coordinates nor
@@ -1672,7 +1651,7 @@ void mysmb_objects_start_entrance_vine(struct mysmb_game *game)
     game->ram[MYSMB_BLOCK_PAGE_COPY] = game->ram[MYSMB_BLOCK_PAGE];
     game->ram[MYSMB_BLOCK_Y_HIGH] = game->ram[MYSMB_PLAYER_Y_HIGH];
     game->ram[MYSMB_BLOCK_Y] = 0xf0U;
-    mysmb_objects_start_vine(game, 0U);
+    mysmb_objects_start_vine(game, 5U, 0U);
 }
 
 /* ROM $ba71 VineObjectHandler.  This retains growth and the authoritative
@@ -1680,7 +1659,6 @@ void mysmb_objects_start_entrance_vine(struct mysmb_game *game)
  * responsibilities. */
 void mysmb_objects_step_vine(struct mysmb_game *game)
 {
-    static const mysmb_u8 maximum_height[2] = { 0x30U, 0x60U };
     const mysmb_u8 slot = 5U;
     mysmb_u8 vine_slot;
     struct mysmb_enemy_terrain terrain;
@@ -1690,7 +1668,7 @@ void mysmb_objects_step_vine(struct mysmb_game *game)
         game->ram[MYSMB_VINE_FLAG_OFFSET] == 0U) return;
     vine_slot = (mysmb_u8)(game->ram[MYSMB_VINE_FLAG_OFFSET] - 1U);
     if (vine_slot > 1U) vine_slot = 1U;
-    if (game->ram[MYSMB_VINE_HEIGHT] != maximum_height[vine_slot] &&
+    if (game->ram[MYSMB_VINE_HEIGHT] != mysmb_vine_height_data[vine_slot] &&
         ((game->ram[MYSMB_FRAME_COUNTER] & 2U) != 0U)) {
         game->ram[MYSMB_ENEMY_Y + slot]--;
         game->ram[MYSMB_VINE_HEIGHT]++;
@@ -2559,7 +2537,7 @@ mysmb_u8 mysmb_objects_start_head_bump(struct mysmb_game *game,
         mysmb_objects_start_power_up(game, slot, power_up_type);
     }
     else if (is_bumpable != 0U && mysmb_objects_is_vine_block(metatile) != 0U) {
-        mysmb_objects_start_vine(game, slot);
+        mysmb_objects_start_vine(game, 5U, slot);
     }
     game->ram[MYSMB_BLOCK_SLOT_CONTROL] ^= 1U;
     return 1U;
