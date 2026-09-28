@@ -27,7 +27,7 @@ static void mysmb_engine_normal_fixture(unsigned char *ram,unsigned char scenari
     if(scenario==29U) ram[0x16U]=0U;
     if(scenario==30U) {ram[0x1eU]=4U;ram[0x796U]=1U;}
     if(scenario==31U) ram[0x1eU]=6U;
-    if(scenario>=32U) {
+    if(scenario>=32U && scenario<56U) {
         static const unsigned char ids[24]={14,14,14,14,14,14,14,14,
             14,14,14,14,14,14,14,14,18,18,7,5,6,14,14,14};
         static const unsigned char speeds[24]={0,1,0xfd,0xfe,0xff,1,1,1,
@@ -53,6 +53,16 @@ static void mysmb_engine_normal_fixture(unsigned char *ram,unsigned char scenari
         if(which==22U) ram[0xcfU]=0xc2U;
         if(which==23U) ram[0xcfU]=0xffU;
     }
+    if(scenario>=56U) {
+        /* Real ShroomM caller, slot five: cover the power-up speed-adder
+         * exemption with both directions and ordinary/1-up mushrooms. */
+        ram[0xfU]=0U;ram[0x14U]=1U;ram[0x1bU]=0x2eU;
+        ram[0x23U]=0xc0U;ram[0x39U]=scenario>=58U ? 3U:0U;
+        ram[0x73U]=7U;ram[0x8cU]=0x80U;ram[0xbbU]=1U;ram[0xd4U]=0x80U;
+        ram[0xa5U]=0U;ram[0x439U]=0x80U;ram[0x41cU]=0x80U;
+        ram[0x5dU]=(scenario&1U)!=0U ? 0xf8U:8U;
+        ram[0x4bU]=(scenario&1U)!=0U ? 2U:1U;
+    }
 }
 static int mysmb_engine_normal_argument(const char *text)
 {
@@ -62,7 +72,7 @@ static int mysmb_engine_normal_argument(const char *text)
     if(text[i]<'0'||text[i]>'9') return 0;
     value=(unsigned int)(text[i++]-'0');
     if(text[i]>='0'&&text[i]<='9') value=value*10U+(unsigned int)(text[i++]-'0');
-    if(text[i]!='\0'||value>55U) return 0;
+    if(text[i]!='\0'||value>59U) return 0;
     return (int)value+1;
 }
 #endif

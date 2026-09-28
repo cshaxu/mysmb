@@ -90838,8 +90838,22 @@
         "NKGmba"
       ],
       "maximumComplete": 593,
-      "actualMatches": [],
-      "state": "active-normal-enemy-chain",
+      "actualMatches": [
+        "XSpeedAdderData",
+        "RevivedXSpeed",
+        "MoveNormalEnemy",
+        "FallE",
+        "MEHor",
+        "SlowM",
+        "SteadM",
+        "AddHS",
+        "ReviveStunned",
+        "SetRSpd",
+        "MoveDefeatedEnemy",
+        "ChkKillGoomba",
+        "NKGmba"
+      ],
+      "state": "P5-movement-proof-recorded-S2-active",
       "evidence": "docs/proposals/m2/game-dispatcher.md"
     },
     {
@@ -91435,8 +91449,12 @@
         "ContVMove"
       ],
       "maximumComplete": 579,
-      "actualMatches": [],
-      "state": "active-normal-vertical-entry",
+      "actualMatches": [
+        "MoveD_EnemyVertically",
+        "MoveFallingPlatform",
+        "ContVMove"
+      ],
+      "state": "P5-movement-proof-recorded-S2-active",
       "evidence": "docs/proposals/m2/game-dispatcher.md"
     },
     {

@@ -2,12 +2,12 @@
 
 ## Current Work
 
-**M2 T31 S2 remains active at 578 / 1,992; 36 of 68 received labels complete. Enemy-vector and the admitted normal-enemy caller, movement, vertical and background-entry chains remain incomplete.**
+**M2 T31 S2 remains active at 594 / 1,992; 52 of 68 received labels complete. Sixteen enemy-vector, normal-caller and background-entry labels remain incomplete.**
 
-S2 P4 completes GameEngine's own scheduler contract and WarpZoneObject.
-EnemyJump now has one shared body for normal and star callers. All three
-artifacts are refreshed; Windows self-tests/window probes pass, DOS is link-only.
-The remaining 32 nodes retain their exact gaps; S2 and T31 remain open.
+S2 P5 completes sixteen normal-movement/table/vertical labels using naturally
+reached original entry/return snapshots and both native widths. Whole-frame
+graphics differences remain open. Three artifacts are refreshed; Windows
+checks pass, DOS remains link-only. S2 and T31 remain open.
 
 ## M2 T31 S2 Packet
 

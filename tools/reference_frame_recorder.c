@@ -927,6 +927,9 @@ int main(int argument_count, char **arguments)
     const char *script;
     const char *coverage_path;
     const char *area_reads_path;
+    const char *movement_snapshot_path;
+    unsigned char movement_snapshots[4096];
+    unsigned int movement_snapshot_phase;
     struct mysmb_reference_ram_write ram_write;
     unsigned int t26_fixture;
     lib_bool direct_warp_text;
@@ -950,6 +953,8 @@ int main(int argument_count, char **arguments)
     script = NULL;
     coverage_path = NULL;
     area_reads_path = NULL;
+    movement_snapshot_path = NULL;
+    movement_snapshot_phase = 0u;
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     direct_warp_text = LIB_FALSE;
@@ -959,6 +964,11 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--normal-movement-snapshot=", 27u) == 0) {
+            if (movement_snapshot_path != NULL || arguments[recorded][27] == '\0') return 64;
+            movement_snapshot_path = arguments[recorded] + 27;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--area-read-coverage=", 21u) == 0) {
             if (area_reads_path != NULL || arguments[recorded][21] == '\0') return 64;
             area_reads_path = arguments[recorded] + 21;
@@ -1755,7 +1765,7 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
-                else if (t26_fixture >= 652u && t26_fixture <= 707u)
+                else if (t26_fixture >= 652u && t26_fixture <= 711u)
                     mysmb_engine_normal_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 652u));
                 else if (t26_fixture >= 642u && t26_fixture <= 651u)
@@ -1962,6 +1972,22 @@ int main(int argument_count, char **arguments)
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         before_pc = driver->machine->pc;
+        /* Observe the real normal-enemy call and its natural successor.
+         * Never change PC, stack, registers, RAM, or the frame record. The
+         * fixed fixture family supplies one actor in the recorded NMI. */
+        if (movement_snapshot_path != NULL && elapsed >= warmup_frames &&
+            ((t26_fixture >= 652u && t26_fixture <= 683u) ||
+             (t26_fixture >= 708u && t26_fixture <= 711u))) {
+            if (movement_snapshot_phase == 0u && before_pc == 0xca77u) {
+                memcpy(movement_snapshots, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 1u;
+            }
+            else if (movement_snapshot_phase == 1u &&
+                     before_pc == (t26_fixture >= 708u ? 0xbcadu : 0xc902u)) {
+                memcpy(movement_snapshots + 2048u, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 2u;
+            }
+        }
         /* Observe successful LDA (AreaData),Y instructions without changing
          * execution. Payload bytes never enter the aggregate report. */
         if (area_reads_path != NULL && elapsed >= warmup_frames &&
@@ -1992,6 +2018,17 @@ int main(int argument_count, char **arguments)
     fclose(output);
     (void)core_driver_destroy(driver);
     if (recorded != requested_frames) return 68;
+    if (movement_snapshot_path != NULL) {
+        FILE *snapshot;
+        int ok;
+        if (movement_snapshot_phase != 2u) return 69;
+        snapshot = fopen(movement_snapshot_path, "wb");
+        if (snapshot == NULL) return 69;
+        ok = fwrite("MSNM\1\0\0\0", 1u, 8u, snapshot) == 8u &&
+             fwrite(movement_snapshots, 1u, 4096u, snapshot) == 4096u;
+        if (fclose(snapshot) != 0) ok = 0;
+        if (!ok) return 69;
+    }
     return mysmb_reference_write_coverage(coverage_path) &&
            mysmb_reference_write_area_reads(area_reads_path) ? 0 : 69;
 }

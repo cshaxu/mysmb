@@ -2,7 +2,7 @@
 
 ## Status
 
-**M2 T31 open; S2 active at 578 / 1,992.** Closed T30 precedes this task in the
+**M2 T31 open; S2 active at 594 / 1,992.** Closed T30 precedes this task in the
 source-order recovery plan. S1 is closed; S2 is the only active chain.
 
 ## Exact task scope and chain plan
@@ -1089,3 +1089,84 @@ The following exact labels remain unfinished in this S:
 Their previously recorded source/route gaps are not waived by parent credit.
 The P4 evidence stays below its ignored build root and bounded allowance;
 original PC/state are never redirected to a leaf routine.
+
+The next same-S proof step observes MoveNormalEnemy at $ca77 and its natural
+RunNormalEnemies successor $c902, using existing normal fixtures 0..31.
+The optional reference recorder observer captures RAM only; it never changes
+the reference PC, stack, registers, RAM or ordinary frame output. A native
+checker receives the observed entry state and calls the production movement
+owner, then compares the established 1,782 persistent-byte contract, including
+all graphics workspace and OAM. This isolates node behavior without repairing
+unadmitted upstream graphics or accepting a failing whole-frame comparison.
+Original whole-frame differences remain separate, unchanged evidence.
+
+Snapshots, logs and summaries for this proof stay in ignored
+build/m2-t31-s2-p5, capped at 1 MB raw data and twenty seconds per recorder
+invocation, with S2 cleanup ownership. Only the existing received normal/
+vertical nodes are under investigation; there is no new intake or credit.
+
+The boundary comparison now passes all 32 existing normal-enemy scenarios
+on both native widths. Each observed reference frame remains byte-identical
+to its P3 original record, demonstrating that the observer does not alter
+the original run. The new native checker uses the actual production movement
+and gravity implementations and compares the before/after boundary; its
+input retains the original graphics working bytes instead of clearing or
+excluding them. All 64 comparisons pass the full persistent-RAM contract.
+
+Four added source-RAM fixtures (normal 56..59) reach MoveNormalEnemy through
+the real PowerUpObjHandler -> ShroomM caller, using ordinary/1-up mushrooms
+and both horizontal directions in state $c0. Their natural successor is
+$bcad, before EnemyToBGCollisionDet. They execute the previously missing
+power-up equality edge at $caab. All eight native boundary comparisons pass.
+The observer still never redirects PC or replaces the original caller stack.
+These are movement-node proofs; the native PowerUpObjHandler's separate
+legacy movement body is not certified or changed by this fixture addition.
+
+The resulting 36 original entries and 72 native comparisons supplement the
+existing source branch/table audit and exhaustive movement test for the
+received normal/vertical chain. Whole-frame normal/graphics mismatches remain
+recorded and are not relabeled as passes. Completion accounting and the next
+combined three-artifact delivery remain pending; the current baseline is 578.
+
+## S2/P5: normal movement and vertical proof
+
+The completed exact labels are: `MoveD_EnemyVertically`, `MoveFallingPlatform`, `ContVMove`, `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`, `SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`, `ChkKillGoomba`, `NKGmba`, `XSpeedAdderData`, `RevivedXSpeed`.
+
+This combined proof delivery raises progress from 578 to 594 / 1,992.
+S2 now has 52 complete and sixteen incomplete received labels. No ownership
+transfer or S/T closure occurs. Production game code is unchanged from P4;
+the new work supplies missing original evidence for the already integrated
+shared movement owner, not a replacement gameplay implementation.
+
+[The reproducible verifier](../../../test/verify_normal_movement_snapshots.py)
+checks 36 naturally reached original entry/return snapshots against both
+native widths, validates both source speed tables, and checks all feasible
+movement conditional outcomes. The post-BEQ BNE at $caad cannot fall through
+because the same comparison left Z clear. All fourteen code labels execute;
+the two adjacent table labels match the owner ROM bytes. The 32 ordinary
+reference frame records remain byte-identical with the observer enabled.
+The four mushroom routes cover the power-up exemption through ShroomM.
+The same 1,782-byte contract includes graphics workspace and OAM: none of
+the earlier graphics differences is suppressed. These proofs cover this
+movement chain, not its callers, the full gravity family, graphics or the
+legacy native power-up movement path. Their earlier gaps stay recorded.
+
+The earlier 1,253,376-case movement test per width complements the original
+branch evidence. All 58 shared sources rebuild under strict C90 on x86/x64;
+Windows self-tests and hidden window/message probes pass. DOS16 builds and
+links with the existing warnings, still without owner-data binding or a
+playable-DOS claim. Platform purity passes; no platform/game source changes
+are included. Three artifacts are refreshed, with unchanged DOS bytes because
+this P changes validation and evidence rather than game implementation:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257465 | 69807ccd48e2e7df6564e82037b0863499aef40871a983711f46968f8ea71083 |
+| mysmb32.exe | 319944 | 3a0b0ef77e134a8ca144cbdbbd92061ff6689453cc3cc6e6f8909c086f3a8d9f |
+| mysmb64.exe | 327180 | 639f5a8380012bf4b06f209dd512949d440538166c5a34e1a3df265610a67a4c |
+
+Remaining exact labels: `RunEnemyObjectsCore`, `JmpEO`, `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode`, `ExEBG`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`, `CInvu`, `YesIn`, `ExEBGChk`, `SubtEnemyYPos`, `EnemyJump`, `DoSide`.
+
+Their dispatch/caller and background-entry obligations remain open, as do
+the separately owned whole-frame graphics differences. P5 raw evidence remains
+under its declared ignored root and 1 MB cap; no ROM/stack/PC mutation is used.

@@ -818,6 +818,10 @@ if(MYSMB_ROM_PATH)
         "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_enemy_background_entry_smoke PRIVATE mysmb_game)
     add_test(NAME mysmb.enemy-background-entry COMMAND mysmb_enemy_background_entry_smoke)
+    add_executable(mysmb_normal_movement_snapshot_check test/normal_movement_snapshot_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_normal_movement_snapshot_check PRIVATE src)
+    target_link_libraries(mysmb_normal_movement_snapshot_check PRIVATE mysmb_game)
     add_executable(mysmb_palette_rotation_smoke test/palette_rotation_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_palette_rotation_smoke PRIVATE src

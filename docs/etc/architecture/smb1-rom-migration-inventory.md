@@ -1004,9 +1004,9 @@ The labels and branches behind every line remain open until individually bound b
 | 7604 | `ExXMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxmove) |
 | 7611 | `MovePlayerVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayervertically) |
 | 7617 | `NoJSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojschk) |
-| 7624 | `MoveD_EnemyVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moved_enemyvertically) |
-| 7630 | `MoveFallingPlatform` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movefallingplatform) |
-| 7632 | `ContVMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-contvmove) |
+| 7624 | `MoveD_EnemyVertically` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 7630 | `MoveFallingPlatform` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 7632 | `ContVMove` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 7636 | `MoveRedPTroopaDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopadown) |
 | 7640 | `MoveRedPTroopaUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopaup) |
 | 7643 | `MoveRedPTroopa` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopa) |
@@ -1202,8 +1202,8 @@ The labels and branches behind every line remain open until individually bound b
 | 9212 | `MovePodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movepodoboo) |
 | 9224 | `PdbM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pdbm) |
 | 9229 | `HammerThrowTmrData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerthrowtmrdata) |
-| 9232 | `XSpeedAdderData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-xspeedadderdata) |
-| 9235 | `RevivedXSpeed` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-revivedxspeed) |
+| 9232 | `XSpeedAdderData` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9235 | `RevivedXSpeed` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 9238 | `ProcHammerBro` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prochammerbro) |
 | 9243 | `ChkJH` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkjh) |
 | 9260 | `DecHT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decht) |
@@ -1214,17 +1214,17 @@ The labels and branches behind every line remain open until individually bound b
 | 9301 | `MoveHammerBroXDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movehammerbroxdir) |
 | 9307 | `Shimmy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shimmy) |
 | 9316 | `SetShim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setshim) |
-| 9318 | `MoveNormalEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movenormalenemy) |
-| 9336 | `FallE` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-falle) |
-| 9347 | `MEHor` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-mehor) |
-| 9349 | `SlowM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slowm) |
-| 9350 | `SteadM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-steadm) |
-| 9355 | `AddHS` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addhs) |
-| 9363 | `ReviveStunned` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-revivestunned) |
-| 9377 | `SetRSpd` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setrspd) |
-| 9381 | `MoveDefeatedEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movedefeatedenemy) |
-| 9385 | `ChkKillGoomba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkkillgoomba) |
-| 9392 | `NKGmba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nkgmba) |
+| 9318 | `MoveNormalEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9336 | `FallE` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9347 | `MEHor` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9349 | `SlowM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9350 | `SteadM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9355 | `AddHS` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9363 | `ReviveStunned` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9377 | `SetRSpd` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9381 | `MoveDefeatedEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9385 | `ChkKillGoomba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9392 | `NKGmba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 9396 | `MoveJumpingEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movejumpingenemy) |
 | 9402 | `ProcMoveRedPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmoveredptroopa) |
 | 9414 | `NoIncPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noincpt) |

@@ -1390,7 +1390,7 @@ int main(int argument_count, char **arguments)
                 mysmb_recorder_apply_t29_geometry_vertical_pipe_fixture(&game);
             else if (t26_fixture == 86U)
                 mysmb_recorder_apply_t29_final_question_fixture(&game);
-            else if (t26_fixture >= 652U && t26_fixture <= 707U)
+            else if (t26_fixture >= 652U && t26_fixture <= 711U)
                 mysmb_engine_normal_fixture(game.ram, (mysmb_u8)(t26_fixture - 652U));
             else if (t26_fixture >= 642U && t26_fixture <= 651U)
                 mysmb_engine_warp_fixture(game.ram, (mysmb_u8)(t26_fixture - 642U));
