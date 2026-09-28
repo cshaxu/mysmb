@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 641 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 652 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 135 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,216 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,205 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **641 / 1,992 (32.18%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **652 / 1,992 (32.73%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T32 S1 P2](../proposals/m2/player-control-modes.md#s1p2-original-caller-proof)
-proves thirteen player-control caller nodes. All 100 actual-child boundary
-comparisons still fail; movement/terrain/OAM and transition children retain
-their separate incomplete status. This is not full-player conformance.
+Latest task review: [T32 S2 P1](../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof)
+proves eleven vine/pipe caller nodes with 56 caller comparisons. Actual native
+children yield 30 matches and 26 retained failures; movement and output
+dependencies remain incomplete. This is not full-player conformance.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (641)
+## Completed matches (652)
 
 | ROM line | Node |
 | ---: | --- |
@@ -610,6 +610,17 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5672 | `ChkHoleX` |
 | 5680 | `ExitCtrl` |
 | 5682 | `CloudExit` |
+| 5691 | `Vine_AutoClimb` |
+| 5697 | `AutoClimb` |
+| 5702 | `SetEntr` |
+| 5708 | `VerticalPipeEntry` |
+| 5722 | `MovePlayerYAxis` |
+| 5730 | `SideExitPipeEntry` |
+| 5733 | `ChgAreaPipe` |
+| 5736 | `ChgAreaMode` |
+| 5740 | `ExitCAPipe` |
+| 5742 | `EnterSidePipe` |
+| 5751 | `RightPipe` |
 | 6501 | `WarpZoneObject` |
 | 6519 | `ProcessWhirlpools` |
 | 6526 | `WhLoop` |

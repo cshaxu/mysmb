@@ -647,28 +647,6 @@ void mysmb_player_background_collision(struct mysmb_game *game)
     }
 }
 
-/* Existing SetEntr child, extracted without certifying transition details. */
-void mysmb_player_set_entrance(struct mysmb_game *game)
-{
-    game->ram[MYSMB_ALT_ENTRANCE] = 2U;
-    game->ram[MYSMB_DISABLE_SCREEN]++;
-    game->ram[MYSMB_OPER_MODE_TASK] = 0U;
-}
-
-/* Translation of ROM $b069-$b07c Vine_AutoClimb.  The vine object's growth
- * and drawing are owned by the object route; this is only the player-side
- * forced-up input and the area-transition handoff after reaching its top. */
-void mysmb_player_step_auto_climb(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] == 0U &&
-        game->ram[MYSMB_PLAYER_Y] < 0xe4U) {
-        mysmb_player_set_entrance(game);
-        return;
-    }
-    game->ram[MYSMB_PLAYER_STATE] = 3U;
-    mysmb_player_step(game, MYSMB_BUTTON_UP);
-}
-
 /* ROM $b0f4-$b113 PlayerChangeSize. */
 void mysmb_player_step_change_size(struct mysmb_game *game)
 {
@@ -837,57 +815,6 @@ mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
         game->ram[0x00fcU] = 0U;
     }
     return 1U;
-}
-
-/* Translation of VerticalPipeEntry through ChgAreaMode, excluding the
- * destination-pointer update that the area-transition owner performs. */
-void mysmb_player_step_vertical_pipe(struct mysmb_game *game)
-{
-    mysmb_u8 entrance;
-
-    mysmb_player_move_y_axis(game, 1U);
-    mysmb_player_update_scroll(game);
-    entrance = 0U;
-    if (game->ram[MYSMB_WARP_ZONE_CONTROL] == 0U) {
-        entrance = game->ram[MYSMB_AREA_TYPE] == 3U ? 2U : 1U;
-    }
-    if (game->ram[MYSMB_CHANGE_AREA_TIMER] != 0U) {
-        game->ram[MYSMB_CHANGE_AREA_TIMER]--;
-    }
-    if (game->ram[MYSMB_CHANGE_AREA_TIMER] == 0U) {
-        game->ram[MYSMB_ALT_ENTRANCE] = entrance;
-        game->ram[MYSMB_DISABLE_SCREEN]++;
-        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
-    }
-}
-
-/* Existing EnterSidePipe child, shared by both original pipe callers. */
-void mysmb_player_enter_side_pipe(struct mysmb_game *game)
-{
-    mysmb_u8 forced_buttons;
-
-    game->ram[MYSMB_PLAYER_X_SPEED] = 8U;
-    forced_buttons = MYSMB_BUTTON_RIGHT;
-    if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) == 0U) {
-        game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
-        forced_buttons = 0U;
-    }
-    mysmb_player_auto_control(game, forced_buttons);
-}
-
-/* Original SideExitPipeEntry caller; later transition semantics retain
- * their separate status. PlayerEntrance must not call this whole body. */
-void mysmb_player_step_side_pipe(struct mysmb_game *game)
-{
-    mysmb_player_enter_side_pipe(game);
-    if (game->ram[MYSMB_CHANGE_AREA_TIMER] != 0U) {
-        game->ram[MYSMB_CHANGE_AREA_TIMER]--;
-    }
-    if (game->ram[MYSMB_CHANGE_AREA_TIMER] == 0U) {
-        game->ram[MYSMB_ALT_ENTRANCE] = 2U;
-        game->ram[MYSMB_DISABLE_SCREEN]++;
-        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
-    }
 }
 
 /* Translation of ROM $dc64-$dd5a PlayerBGCollision's DoFootCheck through LandPlyr.
@@ -1070,12 +997,6 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
         mysmb_fireball_setup_bubble(game, bubble_slot);
     }
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
-}
-
-/* Original MovePlayerYAxis seam shared by the two admitted callers. */
-void mysmb_player_move_y_axis(struct mysmb_game *game, mysmb_u8 amount)
-{
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] + amount);
 }
 
 /* Existing inline GameRoutines children extracted without algorithm changes.

@@ -752,17 +752,17 @@ The labels and branches behind every line remain open until individually bound b
 | 5672 | `ChkHoleX` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
 | 5680 | `ExitCtrl` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
 | 5682 | `CloudExit` | M2 T32 S1 shared game/player_control.c | ROM-match complete | [S1 P2 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s1p2-original-caller-proof) |
-| 5691 | `Vine_AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vine_autoclimb) |
-| 5697 | `AutoClimb` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-autoclimb) |
-| 5702 | `SetEntr` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setentr) |
-| 5708 | `VerticalPipeEntry` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-verticalpipeentry) |
-| 5722 | `MovePlayerYAxis` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayeryaxis) |
-| 5730 | `SideExitPipeEntry` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sideexitpipeentry) |
-| 5733 | `ChgAreaPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgareapipe) |
-| 5736 | `ChgAreaMode` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgareamode) |
-| 5740 | `ExitCAPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitcapipe) |
-| 5742 | `EnterSidePipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-entersidepipe) |
-| 5751 | `RightPipe` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rightpipe) |
+| 5691 | `Vine_AutoClimb` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5697 | `AutoClimb` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5702 | `SetEntr` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5708 | `VerticalPipeEntry` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5722 | `MovePlayerYAxis` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5730 | `SideExitPipeEntry` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5733 | `ChgAreaPipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5736 | `ChgAreaMode` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5740 | `ExitCAPipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5742 | `EnterSidePipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
+| 5751 | `RightPipe` | M2 T32 S2 shared game/player_transition.c | ROM-match complete | [S2 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s2-p1-original-transition-proof) |
 | 5757 | `PlayerChangeSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerchangesize) |
 | 5762 | `EndChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endchgsize) |
 | 5765 | `ExitChgSize` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitchgsize) |

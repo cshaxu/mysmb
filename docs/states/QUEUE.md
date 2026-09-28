@@ -16,8 +16,8 @@ T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-render
 with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
 T31 is closed at 628 / 1,992 after the integrated matrix and explicit child
-receipts. T32 S1 has thirteen proven caller nodes at 641 / 1,992 and awaits final
-review/S2 admission; actual-child failures remain incomplete. Later T32 chains remain plans; PlayerMovementSubs
+receipts. T32 S1 is closed at 641 / 1,992; S2 is closed at 652 / 1,992; S3 is active with fourteen open timer-state
+labels, expected fourteen and maximum 666. Actual-child failures remain incomplete. Later T32 chains remain plans; PlayerMovementSubs
 retains T23 S5 custody for the next complete movement-state source slice.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.

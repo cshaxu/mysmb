@@ -25,6 +25,7 @@ list(APPEND MYSMB_GAME_SOURCES src/game/enemy/side_collision.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/scroll.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/entry.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_control.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/player_transition.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -138,6 +139,10 @@ add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c 
 add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/game/entry.c)
 add_executable(mysmb_player_control_chain_smoke test/player_control_chain_smoke.c src/game/player_control.c)
 target_include_directories(mysmb_player_control_chain_smoke PRIVATE src)
+add_executable(mysmb_player_transition_chain_smoke test/player_transition_chain_smoke.c src/game/player_transition.c)
+target_include_directories(mysmb_player_transition_chain_smoke PRIVATE src)
+add_executable(mysmb_player_transition_caller_check test/player_transition_caller_check.c src/game/player_transition.c)
+target_include_directories(mysmb_player_transition_caller_check PRIVATE src)
 add_executable(mysmb_player_control_caller_check test/player_control_caller_check.c src/game/player_control.c)
 target_include_directories(mysmb_player_control_caller_check PRIVATE src)
 target_include_directories(mysmb_player_entry_chain_smoke PRIVATE src)
@@ -389,6 +394,12 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_transition.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/objects.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
@@ -634,6 +645,7 @@ add_test(NAME mysmb.player-route-smoke COMMAND mysmb_player_route_smoke)
 add_test(NAME mysmb.player-scroll-chain COMMAND mysmb_player_scroll_chain_smoke)
 add_test(NAME mysmb.player-entry-chain COMMAND mysmb_player_entry_chain_smoke)
 add_test(NAME mysmb.player-control-chain COMMAND mysmb_player_control_chain_smoke)
+add_test(NAME mysmb.player-transition-chain COMMAND mysmb_player_transition_chain_smoke)
 add_test(NAME mysmb.player-friction-smoke COMMAND mysmb_player_friction_smoke)
 add_test(NAME mysmb.player-horizontal-carry-smoke COMMAND mysmb_player_horizontal_carry_smoke)
 add_test(NAME mysmb.player-bounding-box-smoke COMMAND mysmb_player_bounding_box_smoke)
@@ -888,6 +900,11 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_player_control_snapshot_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_player_control_snapshot_check PRIVATE mysmb_game)
+    add_executable(mysmb_player_transition_snapshot_check test/player_transition_snapshot_check.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_player_transition_snapshot_check PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_player_transition_snapshot_check PRIVATE mysmb_game)
     add_executable(mysmb_palette_rotation_smoke test/palette_rotation_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_palette_rotation_smoke PRIVATE src

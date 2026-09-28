@@ -122,11 +122,9 @@ void mysmb_game_next_area(struct mysmb_game *game)
     game->ram[MYSMB_RAM_AREA]++;
     mysmb_game_load_area_pointer(game);
     game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
-    game->ram[MYSMB_RAM_OPER_MODE_TASK] = 0U;
+    mysmb_player_change_area_mode(game);
     game->ram[MYSMB_RAM_HALFWAY_PAGE] = 0U;
     game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
-    game->ram[MYSMB_RAM_DISABLE_SCREEN]++;
-    game->ram[MYSMB_RAM_SPRITE0_HIT] = 0U;
 }
 
 /* ROM PlayerLoseLife.  The half-way table stays here because it is game-mode

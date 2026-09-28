@@ -2,7 +2,7 @@
 
 ## Status
 
-T32 admitted in source order after closed T31. S1 alone is active.
+T32 follows closed T31. S1 and S2 are closed with 24 caller matches; S3 alone is active.
 Task baseline 628 / 1,992. The source-range plan lists 49 open labels;
 48 are intended matches here, maximum 676. PlayerMovementSubs begins the
 next complete movement-state chain at line 5899; it retains T23 S5 custody
@@ -213,3 +213,182 @@ S1 expected/actual caller matches: 13/13; global progress 628 -> 641 / 1,992.
 Exact completed labels: `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `PlayerHole`, `HoleDie`, `HoleBottom`, `ChkHoleX`, `ExitCtrl`, `CloudExit`.
 The actual-child failures above receive no credit. Final review remains
 pending under the current S1 packet.
+
+## S1 closure review
+
+The coordinator closes S1 with all thirteen received nodes proven within
+their own caller contracts; none is transferred or left without disposition.
+Source-order audit, 23 two-outcome branches, 100 original caller comparisons,
+focused regressions, three builds/artifact hashes, purity and governance
+evidence were reviewed. Actual-child failures remain with their explicitly
+recorded existing owners and give no child credit. Global count is 641.
+
+## S2 admission: vine and pipe transition chain
+
+Scope/expected, all open: `Vine_AutoClimb`, `AutoClimb`, `SetEntr`, `VerticalPipeEntry`, `MovePlayerYAxis`, `SideExitPipeEntry`, `ChgAreaPipe`, `ChgAreaMode`, `ExitCAPipe`, `EnterSidePipe`, `RightPipe`.
+Baseline 641 / 1,992, unique scope eleven, expected eleven, maximum 652.
+Transfer-135 accepts these from T23 S5. Original source lines 5691-5753
+span Vine_AutoClimb through RightPipe. Entry routes are GameRoutines modes
+1/2/3, PlayerEntrance, CloudExit and NextArea; successors are AutoControlPlayer
+and ScrollHandler with their existing scoped proofs and child limitations.
+
+Create one shared game/player_transition.c owner. Restore the upward-control
+override, SetEntr -> ChgAreaMode handoff, wrapping Y addition, scroll-before-
+destination reads, unconditional area-timer decrement including zero-to-ff,
+post-child timer reads, disable-screen increment and task/sprite-0 clears.
+EnterSidePipe selects forced right/zero input from the low X nibble after
+setting horizontal speed. Replace duplicate owned bodies and expose the
+common transition entry; do not repair movement, terrain, rendering or music.
+No child receives completion credit from caller extraction.
+
+ROM logic track: exact source predicates, byte wraps and write/call order;
+source-RAM ordinary-NMI routes and read-only original boundaries. Operational
+track: exhaustive transition timer/coordinate/state tests with mutating child
+callbacks, existing control/entry/scroll regressions, strict C90 x86/x64,
+OpenNT DOS16, platform purity and three artifact results per implementation P.
+Shared child failures remain explicit, never converted into full-game proof.
+
+Use the existing owner-local ROM/listing only as non-redistributable research
+inputs, with no third-party implementation import. Temporary products stay
+under ignored build/m2-t32-s2, raw budget 4 MB, twenty-second recorder limit,
+S2 cleanup owner through T review. Existing owner authorization covers all
+three local EXEs; DOS remains link-only. Similar-issue sweep: every SetEntr,
+pipe exit, area-mode and Y-axis caller, including NextArea; platform sources
+remain host adaptation only.
+
+## S2 implementation checkpoint
+
+One shared player_transition.c now owns all eleven admitted labels. Duplicate
+vine/pipe/Y-axis bodies are removed from player.c. NextArea calls the shared
+ChgAreaMode at its original call position; its remaining music/area algorithm
+is not repaired or certified here. The NextArea zero-silence discrepancy
+remains planned S4 work. CloudExit and both original entrance callers use the
+same SetEntr and movement entries through their existing declarations.
+
+The implementation restores JoypadOverride before forced-up control, the
+SetEntr/pipe shared transition and sprite-0 clear, unconditional wrapping
+ChangeAreaTimer decrement, and destination/timer reads after child calls.
+No host code changed. The [transition test](../../../test/player_transition_chain_smoke.c)
+checks all 65,536 low-Y/addend pairs, all 65,536 high/low-Y vine pairs, every
+timer with the warp/area branches, and all 65,536 horizontal-position/timer
+pairs. Mutating scroll/auto-control children verify returned selectors and
+timer values are read after the child, not cached before it.
+
+Strict C90 tests pass on x86/x64: transition chain, control chain, entrance
+chain, production player-route and area initialization (ten executions).
+The three changed production modules compile on both widths; the new owner
+also compiles with OpenNT large model. Platform purity passes. CMake and the
+full DOS source list include the shared owner. Original-ROM branch/boundary
+proof, full three-target builds and P delivery are still pending. All eleven
+nodes remain open at 641 / 1,992; published assets remain S1/P1.
+
+## S2 P1 original transition proof
+
+The preceding checkpoint is superseded by the completed chain proof and
+three-target build. Original-ROM ordinary-NMI fixtures exercise 28 routes:
+six vine, eight side-pipe, twelve vertical-pipe and two upward entrance
+Y-movement routes. The observer reads original entry/return boundaries and
+immediate child calls; it does not change PC, stack, ROM or executing state.
+Observed, coverage-only and unobserved frame outputs agree for every route.
+Raw local evidence totals 950,079 bytes within the admitted 4 MB budget.
+
+| Original node | Address | Shared C semantic obligation proved |
+| --- | --- | --- |
+| Vine_AutoClimb | B1C7 | High-Y/low-Y exit predicate, otherwise forced-up control |
+| AutoClimb | B1D1 | Override 8, climbing state 3, AutoControlPlayer argument 8 |
+| SetEntr | B1DD | Alternate entrance 2 before common area-mode change |
+| VerticalPipeEntry | B1E5 | Low-Y increment, scroll, then warp/area reads |
+| MovePlayerYAxis | B200 | Wrapping low-byte addition without high-Y carry |
+| SideExitPipeEntry | B206 | EnterSidePipe returns before timer and mode 2 transition |
+| ChgAreaPipe | B20B | Unconditional wrapping decrement; only zero changes area |
+| ChgAreaMode | B213 | Increment disable-screen, clear mode task then sprite-0 flag |
+| ExitCAPipe | B21E | Return without additional writes |
+| EnterSidePipe | B21F | Speed 8 before testing low X nibble; aligned X clears speed/input |
+| RightPipe | B22E | AutoControlPlayer receives selected forced-right/zero input |
+
+All six conditional branches have both outcomes and all eleven labels execute.
+The [caller checker](../../../test/player_transition_caller_check.c) passes
+56 comparisons across x86/x64, covering child identity/order/argument,
+all 1,784 persistent RAM bytes at child entry and caller return. Only scratch
+bytes 0-7 and the hardware stack are excluded; PPU mirrors are included.
+The checker replays observed original child returns, so its proof is scoped
+to these callers, not the native child algorithms.
+
+The separate [production checker](../../../test/player_transition_snapshot_check.c)
+retains 30 matches and 26 failures. Matches cover the early vine exit, all
+vertical-pipe routes and both direct Y-movement routes; failures cover the
+other five vine routes and eight side-pipe routes on both widths. Player
+movement and relative/output dependencies remain with T23 S5 and T16 S4;
+their failures are not suppressed or credited. No full-player, whole-frame
+or whole-game equivalence is claimed by this boundary proof.
+
+Reproduce the original observation using the reference recorder's
+`--fixture=t32-transition=N` for N=0..27, `--transition-snapshot` and
+`--control-children`, followed by the
+[verification harness](../../../test/verify_player_transition_snapshots.py).
+Owner ROM, original traces, fixtures and generated data stay below ignored
+build outputs and are not committed. Tests contain neutral harness logic.
+
+Operational evidence: the five focused tests listed above pass on both
+widths, all 64 shared production units build under strict C90 on x86/x64,
+and the full OpenNT DOS16 link succeeds. Both Windows self-tests pass;
+bounded hidden-window probes create a responsive window without user input.
+These startup probes do not establish playability or performance. DOS16
+remains link-only, without owner PRG/CHR/title binding or 486 qualification.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257341 | 8919fa728f0bd2735015c40e151d123cbb7ea092043eca97e2f5c1ddfbac2dae |
+| mysmb32.exe | 323093 | 821a1e589abac163c27e4cc3b35ee3dfd31fee944d5a59ed6e9f787f746938f5 |
+| mysmb64.exe | 330532 | 157dfc158c36d43e7ab473badb0effd1c02857edf4f00289b91817663957fb5a |
+
+Similar-issue review covers every production vine/pipe/Y-axis/SetEntr and
+area-mode caller. The duplicate implementations were removed; NextArea uses
+the shared mode transition while its music discrepancy remains planned S4.
+No platform source changed and platform-purity verification passes.
+
+S2 expected/actual caller matches: 11/11; global progress 641 -> 652 / 1,992.
+Exact completed labels: `Vine_AutoClimb`, `AutoClimb`, `SetEntr`, `VerticalPipeEntry`, `MovePlayerYAxis`, `SideExitPipeEntry`, `ChgAreaPipe`, `ChgAreaMode`, `ExitCAPipe`, `EnterSidePipe`, `RightPipe`.
+No child receives credit. Final review and S3 admission remain pending.
+
+## S2 closure review
+
+All eleven received caller nodes have their own source/ROM and operational
+proof. Expected/actual matches are 11/11; none needs transfer. The coordinator
+reviewed production and observer changes, six two-outcome branches, 56 caller
+comparisons, the 30/26 actual-child match/failure result, focused native tests,
+three builds/artifacts, platform purity and passing progress/ledger/document
+gates. S2 closes at 652 / 1,992. The retained child failures do not receive
+credit and remain under their existing owners. T32 remains open.
+
+## S3 admission: size injury death and palette chain
+
+Scope/expected, all open: `PlayerChangeSize`, `EndChgSize`, `ExitChgSize`, `PlayerInjuryBlink`, `ExitBlink`, `InitChangeSize`, `ExitBoth`, `PlayerDeath`, `DonePlayerTask`, `PlayerFireFlower`, `CyclePlayerPalette`, `ResetPalFireFlower`, `ResetPalStar`, `ExitDeath`.
+Baseline 652 / 1,992; fourteen unique labels, expected fourteen, maximum 666.
+Transfer-136 accepts the exact set from T23 S5. Source lines 5757-5830 and
+addresses B233-B2A3 cover PlayerChangeSize through ExitDeath. GameRoutines
+selects size/injury/death/flower entries; their common timer/palette exits
+share this chain. PlayerCtrlRoutine is an existing child with retained
+movement/output gaps, not a new implementation receipt. Star-palette callers
+use the same shared reset/cycle primitives; no duplicate algorithm is added.
+
+Use a shared game/player_modes.c owner. Preserve exact TimerControl equality
+and unsigned threshold branches, InitChangeSize guard and write order,
+DonePlayerTask resets, PlayerCtrlRoutine calls, palette masks and frame shift.
+Audit all existing size/injury/death/flower/star palette callers; extract or
+replace only owned semantics, with no movement, terrain, audio or OAM repair.
+
+ROM logic track compares original predicates, reads/writes, entry/exit and
+child order on ordinary-NMI mode routes with source-RAM boundary fixtures.
+Reuse the existing control/transition observer mechanism and keep real-child
+failures separate from scoped caller evidence. Operational track covers all
+byte timer/palette/size branches, existing player regressions, strict C90
+x86/x64, OpenNT DOS16, platform purity and three EXEs once per implementation P.
+
+Existing owner-local ROM/listing are non-redistributable research inputs;
+no third-party translation is imported. Generated evidence stays in ignored
+build/m2-t32-s3, capped at 4 MB raw and twenty seconds per recorder run. S3
+owns cleanup through T review. DOS delivery remains link-only. Before credit,
+each exact label needs both evidence tracks; inherited child failures remain
+visible and receive no credit. Admission checks confirm 652, scope/expected
+14/14, maximum 666 and accepted responsibility for every label.
