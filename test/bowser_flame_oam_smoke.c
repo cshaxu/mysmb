@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/objects.h"
+#include "game/oam/oam.h"
 
 int main(void)
 {
@@ -17,7 +18,8 @@ int main(void)
     game.ram[0x071bU] = 1U;
     game.ram[0x071dU] = 0U;
     mysmb_objects_draw_bowser_flame(&game, 0U);
-    if (game.ram[0x03aeU] != 0x40U || game.ram[0x03b9U] != 0x70U ||
+    /* DrawFlameLoop advances the shared relative X three times. */
+    if (game.ram[0x03aeU] != 0x58U || game.ram[0x03b9U] != 0x70U ||
         game.ram[0x0220U] != 0x70U || game.ram[0x0221U] != 0x51U ||
         game.ram[0x0222U] != 0x02U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0224U] != 0x70U || game.ram[0x0225U] != 0x52U ||
@@ -41,8 +43,9 @@ int main(void)
     game.ram[0x0087U + 2U] = 0x60U;
     game.ram[0x00cfU + 2U] = 0x50U;
     game.ram[0x06e5U + 2U] = 0x40U;
+    game.ram[0x0008U] = 2U;
     mysmb_objects_draw_bowser_flame(&game, 2U);
-    if (game.ram[0x03aeU] != 0x60U || game.ram[0x03b9U] != 0x50U ||
+    if (game.ram[0x03aeU] != 0x78U || game.ram[0x03b9U] != 0x50U ||
         game.ram[0x03b0U] != 0U || game.ram[0x03bbU] != 0U) return 1;
     return 0;
 }

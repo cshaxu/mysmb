@@ -1321,34 +1321,6 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
     }
 }
 
-/* Existing ProcBowserFlame child, including drawing. Internal semantics
- * retain their pending proof; RunBowserFlame owns player collision. */
-void mysmb_enemy_proc_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
-{
-    static const mysmb_u8 target_y[4] = { 0x90U, 0x80U, 0x70U, 0x90U };
-    mysmb_u8 amount;
-    mysmb_u8 old_force;
-    mysmb_u8 borrow;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 21U) return;
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0U) {
-        amount = game->ram[MYSMB_SECONDARY_HARD] == 0U ? 0x40U : 0x60U;
-        old_force = game->ram[MYSMB_ENEMY_X_FORCE + slot];
-        game->ram[MYSMB_ENEMY_X_FORCE + slot] = (mysmb_u8)(old_force - amount);
-        borrow = old_force < amount ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_X + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - 1U - borrow);
-        if (game->ram[MYSMB_ENEMY_X + slot] > (mysmb_u8)(0xffU - 1U - borrow)) {
-            game->ram[MYSMB_ENEMY_PAGE + slot]--;
-        }
-        if (game->ram[MYSMB_ENEMY_Y + slot] != target_y[game->ram[MYSMB_ENEMY_Y_DUMMY + slot] & 3U]) {
-            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] +
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-        }
-    }
-    mysmb_objects_draw_bowser_flame(game, slot);
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
 {

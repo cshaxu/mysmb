@@ -702,3 +702,169 @@ Raw trace output: 10696545 bytes, below the 32-MB limit.
 | mysmb16.exe | 256099 | a67b78c8217779efc8f18b500d8b21f3ba1bfd8ae9d6ae42697461b0d9495d00 |
 | mysmb32.exe | 348823 | c79175ee05d1a0c87ccda83570e57e3b808b460ff21e7a1c4e66152852bb7055 |
 | mysmb64.exe | 356981 | a5a00641af5687c2195275c240cd402f5ffc401f135cfc3144339b1b27e78be2 |
+
+## S4 admission: flame timer and full flame actor
+
+S3 closed in f3617ca. Coordinator accepts transfers-199/200 under the continuing
+M2 mandate. Scope is twelve source-ordered nodes in $D1D1-$D294, lines
+10337-10434. Baseline 1,193/1,992; nine expected new, maximum 1,202.
+
+Retained complete: `FlameTimerData`, `SetFlameTimer`, `ExFl`.
+
+Expected new (all open): `ProcBowserFlame`, `SFlmX`, `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`, `ExFlmeD`.
+
+Move ProcBowserFlame out of objects.c into enemy/bowser_flame.c; keep the
+source SetGfxF-to-ExFlmeD tail in oam/bowser_flame_gfx.c. Reuse the timer owner
+in enemy/frenzy.c. Share the existing FlameYPosData binding with its initializer
+instead of another copied table; this is dependency reuse without new credit.
+Preserve timer bypass, hard-mode force, scratch zero, fractional/X/page borrow,
+unmasked source-valid PRNG index, Y target/force and RelativeEnemyPosition.
+The state gate precedes tile/attribute scratch; the three-sprite loop mutates
+relative X and scratch tile each iteration, wraps Y indexing as a byte, reloads
+ObjectOffset, calls GetEnemyOffscreenBits and applies all four low-bit masks,
+including the source residual fourth-sprite Y write. No new entry guards.
+Collision and terminal bounds stay in the existing RunBowserFlame caller.
+
+Dependencies: completed S3 precedes this source slice; S5 RunFireworks follows.
+Relative/offscreen and initializer/RunBowserFlame/timer bodies keep their own
+proof states. No unrelated graphics, collision, platform or frame-loop repair.
+Similar-issue sweep covers duplicate table/owner, flags/slot guards, scratch
+writes, byte/page borrow, OAM addressing and offscreen residual writes.
+
+Logic proof compares original naturally reached ProcBowserFlame and timer
+routes, all source branches and table consumers, child inputs and final RAM;
+separate actual-child comparisons retain lower-level gaps. No original ROM,
+CPU/register, PC, stack or output patches. Retain all 10,892 previous actual
+matches and the three timer nodes' existing evidence; no duplicate credit.
+Operational proof covers mysmb.bowser-flame-chain native cases, initializer
+and actor regression, strict C90 x86/x64, DOS16 link, platform purity, hidden
+window probes and all three EXEs once per P. DOS remains link-only.
+
+Existing local owner ROM/listing provenance and restrictions remain. Every
+temporary file stays under ignored build/m2-t41-s4. Original runs have unique
+paths, twenty-second per-record deadlines, up to 1,024 cases and 32 MB raw
+output, resumable checkpoints and coordinator cleanup ownership. Stop on
+unadmitted child repair, execution patches or hidden discrepancies. No node
+credit until original proof and operational delivery are complete.
+
+## S4 implementation checkpoint
+
+S4 remains active with no new credit or P closure. Original-ROM decoding
+identifies ninety instructions and ten branches in $D1D9-$D294, plus the eight
+FlameTimerData bytes. The four existing FlameYPosData dependency bytes are
+also directly bound to the owner ROM. Runtime coverage is still pending.
+
+ProcBowserFlame now has one owner in enemy/bowser_flame.c. The former guarded
+objects.c implementation is removed. Movement preserves scratch zero,
+fractional/X/page borrow, the source-valid unmasked Y index and Y force.
+Initializer and movement share one Y-data binding. The graphics tail calls
+RelativeEnemyPosition, reloads ObjectOffset, gates on fresh state, writes
+tile/attribute scratch and advances the shared relative X inside the three
+sprite loop. It reloads the source OAM offset after the offscreen child and
+preserves all four mask writes, including the residual fourth sprite.
+No platform changes or added gameplay rule.
+
+Independent native testing passes 4,096 combinations per width, using a
+24-bit fixed-point subtraction oracle for motion and covering both timer
+and hard-mode states, state-gated drawing, all sixteen masks and both flips.
+Existing 107,522 Bowser/flame initializer footprints per width and updated
+flame OAM tests pass. The old OAM expectation incorrectly retained the initial
+relative X; it now expects the source loop's +24 and supplies ObjectOffset
+for its direct slot-two call. Existing Bowser damage exit 4 remains explicit.
+Platform purity passes. Changed owners compile under strict C90 on x86/x64.
+
+Next action is original NMI ProcBowserFlame recording with source branch,
+child-input and final-state comparisons, timer proof retention, actual-child
+gap isolation and cross-chain regression, then one three-platform delivery.
+The legacy offscreen child's const API omits source scratch writes; it retains
+its own proof debt. Test-only child mutation checks the caller's preservation
+of those writes without claiming that dependency is fixed. Counts stay
+1,193/1,992; assets still belong to f3617ca. Local source/native summaries are
+under ignored build/m2-t41-s4. No implementation P has been committed yet.
+
+## S4 original flame actor proof
+
+S4 P1 closes nine expected new nodes and retains three timer nodes:
+1,193 -> 1,202/1,992. All twelve scoped nodes complete; none remains
+unfinished or transfers at closure. Unproved child bodies retain their owners.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| FlameTimerData | Retained original eight-byte binding and initializer consumers. Retained ROM match; no duplicate credit. |
+| SetFlameTimer | Unchanged original counter increment/mask and indexed return; retained initializer route proof. Retained ROM match; no duplicate credit. |
+| ExFl | Retained timer return and fresh actor non-normal-state return. Retained ROM match; no duplicate credit. |
+| ProcBowserFlame | Master timer bypass and hard-mode force selection with original source entry. New ROM-match complete. |
+| SFlmX | Scratch force, fractional/X/page borrow, Y data binding and unmasked source-valid index. New ROM-match complete. |
+| SetGfxF | Relative child handoff, live-X restoration and state gate. New ROM-match complete. |
+| FlmeAt | Original tile/attribute scratch and OAM start offset. New ROM-match complete. |
+| DrawFlameLoop | Three byte-indexed OAM entries, incremented tile scratch and shared relative X. New ROM-match complete. |
+| M3FOfs | Offscreen bit zero and residual fourth-sprite Y write. New ROM-match complete. |
+| M2FOfs | Offscreen bit one and third-sprite Y write. New ROM-match complete. |
+| M1FOfs | Offscreen bit two and second-sprite Y write. New ROM-match complete. |
+| ExFlmeD | Offscreen bit three and first-sprite write or unchanged return. New ROM-match complete. |
+
+Original execution covers all 83 actor instructions in $D1EB-$D294 and both
+sides of all ten branches, including the state jump to shared ExFl. The seven
+timer instructions retain T39 S1 execution proof; the timer C body is byte-for-
+byte unchanged. The eight timer and four Y-data bytes bind to the local ROM.
+All prior initializer matches remain after sharing the Y-data owner.
+
+The 1,024 routes start from the actual NMI actor vector and apply declared
+RAM inputs at naturally reached ProcBowserFlame. No ROM, CPU/register, PC,
+stack or output patches are used. Every observer-free original output frame
+equals its observed counterpart. This does not certify native whole-game
+frames. Source child returns verify live X equals ObjectOffset.
+
+Caller comparisons pass 2,048/2,048 on x86/x64, comparing full child inputs
+before diagnostic recorded returns and final RAM including mapped
+$0109-$0139, OAM/VRAM/audio queues. Only hardware stack storage is excluded.
+Cases cover slots zero/five, timer and hard mode, force borrow, page wrap,
+source Y indices/targets/force, state gates, both flips, OAM byte wrapping and
+all four mask branches. The residual fourth-sprite write remains intentional.
+
+Actual-child roots match 8/2,048. Independent original child-input checks:
+RelativeEnemyPosition 114/2048; GetEnemyOffscreenBits 0/1926.
+These helpers still omit original scratch effects; the offscreen adapter's
+returned byte/store contract does not repair its internals. No substitution
+is used in actual comparisons and no descendant gets incidental credit.
+The full gameplay path remains incomplete. Their existing ledger receivers
+retain responsibility rather than silently assigning their bodies to S4.
+
+ProcBowserFlame now has one shared owner in enemy/bowser_flame.c; its source
+graphics tail remains in oam/bowser_flame_gfx.c. Removed entry guards and
+restored scratch, borrow, shared relative-X and original child order replace
+the old objects.c approximation. Initializer and movement share one Y table.
+RunBowserFlame still owns collision/bounds. No host gameplay changes.
+The legacy bulk entry has no production callers and is not a new certified
+runtime path. Similar-issue sweep includes table/owner duplication, guards,
+scratch, borrow, OAM indexing, mask writes and direct-test ObjectOffset setup.
+
+Independent 24-bit movement/OAM contracts pass 4,096 combinations per width;
+107,522 initializer footprints per width and flame OAM tests pass. The direct
+OAM test now expects source relative X+24 and supplies its slot-two offset.
+Fifteen initializer/platform suites per width and platform purity pass.
+Existing Bowser damage exit 4 remains explicit. Final actual matrix is
+10,900/17,658: all prior 10,892 matches retained, plus eight new actor matches.
+The 6,758 differences remain explicit child-gap samples, not node counts.
+
+All 103 shared units compile as strict C90 for x86/x64. Self-tests and hidden
+window message probes pass. DOS16 compiles/links with the existing OLDNAMES
+warning; DOS is link-only, without graphical playability, resource-binding or
+physical 486SX certification. All three owner-authorized EXEs are refreshed.
+
+Reproduce flame_actor_fixture.h cases 0..1023 using
+--fixture=t41-flame-actor=N, --flame-actor-snapshot, --control-children and
+separate --pc-coverage. flame_actor_snapshot_check compares caller handoffs;
+enemy_loop_actual_check uses real children. Native target is
+mysmb.bowser-flame-chain. Ignored build/m2-t41-s4 holds bounded evidence,
+twenty-second recording deadlines and resumable checkpoints. Coordinator
+retains regression inputs and owns cleanup. Existing provenance/local-only
+restrictions remain. S5 fireworks lifetime and score tail is next.
+
+Raw trace output: 16897247 bytes, below 32 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255983 | 5e9d883c56be109eed0ad813b9fb5ee5d82ac1b9d0903833a3416fc7fe560234 |
+| mysmb32.exe | 349018 | a60038d9818ab24ff61c6e0ecdff7a2b8f73ea46501e4432ee76d0df07ddcf8c |
+| mysmb64.exe | 357360 | 9560f050e9fb049a3317e188369b0ebe698cf1d98c46e89714d03d720e2654a5 |

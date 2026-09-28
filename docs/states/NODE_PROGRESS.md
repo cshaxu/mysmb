@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1193 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1202 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 693 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 684 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,193 / 1,992 (59.89%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,202 / 1,992 (60.34%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S3 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-original-front-rear-proof)
-closes four Bowser front/rear caller nodes with 1,024/1,024 original caller
-comparisons. Actual roots match 0/1,024; drawing/bounds/player collision
+Latest task review: [T41 S4 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s4-original-flame-actor-proof)
+closes nine flame actor nodes and retains three timer nodes with 2,048/2,048
+original caller comparisons. Actual roots match 8/2,048; position/offscreen
 child gaps remain explicit. All 10,892 prior actual matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1193)
+## Completed matches (1202)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1210,6 +1210,15 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10337 | `FlameTimerData` |
 | 10340 | `SetFlameTimer` |
 | 10347 | `ExFl` |
+| 10349 | `ProcBowserFlame` |
+| 10356 | `SFlmX` |
+| 10374 | `SetGfxF` |
+| 10384 | `FlmeAt` |
+| 10388 | `DrawFlameLoop` |
+| 10417 | `M3FOfs` |
+| 10423 | `M2FOfs` |
+| 10429 | `M1FOfs` |
+| 10434 | `ExFlmeD` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

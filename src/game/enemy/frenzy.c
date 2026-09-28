@@ -302,13 +302,15 @@ mysmb_u8 mysmb_enemy_set_flame_timer(struct mysmb_game *game)
     return timer_data[index];
 }
 
+/* ROM FlameYPosData: one binding shared by initialization and movement. */
+const mysmb_u8 mysmb_enemy_flame_y_positions[4] = {0x90U,0x80U,0x70U,0x90U};
+
 /* ROM InitEnemyFrenzy -> InitBowserFlame.  The controller is the current
  * ObjectOffset supplied by CheckFrenzyBuffer, never a frame-root free-slot
  * search. */
 void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
                                           mysmb_u8 slot)
 {
-    static const mysmb_u8 target_y[4] = { 0x90U, 0x80U, 0x70U, 0x90U };
     static const mysmb_u8 y_force[2] = { 0xffU, 1U };
     mysmb_u8 bowser_slot;
     mysmb_u8 random;
@@ -326,7 +328,7 @@ void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
         random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
         game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
         game->ram[MYSMB_ENEMY_Y_FORCE + slot] =
-            y_force[target_y[random] < game->ram[MYSMB_ENEMY_Y + slot] ? 0U : 1U];
+            y_force[mysmb_enemy_flame_y_positions[random] < game->ram[MYSMB_ENEMY_Y + slot] ? 0U : 1U];
         game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
     }
     else {
@@ -338,7 +340,7 @@ void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
         }
         random = (mysmb_u8)(game->ram[0x07a7U + slot] & 3U);
         game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = random;
-        mysmb_enemy_put_at_right_extent(game, slot, target_y[random]);
+        mysmb_enemy_put_at_right_extent(game, slot, mysmb_enemy_flame_y_positions[random]);
         return;
     }
     mysmb_enemy_finish_flame(game, slot);

@@ -2,35 +2,43 @@
 
 ## Current Work
 
-**M2 T41 S3 is closed at 1,193 / 1,992: four front/rear caller nodes complete. S4 is next.**
+**M2 T41 S4 is closed at 1,202 / 1,992: nine new actor nodes, three retained timer nodes. S5 is next.**
 
-## M2 T41 S3 Packet
+## M2 T41 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S3, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after c8e1cf1; coordinator accepts transfer-198. |
-| Objective | Four open Bowser front/rear orchestration nodes, four expected new. |
+| Identifier Mode | M2 T41 S4, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after f3617ca; coordinator accepts transfers-199/200. |
+| Objective | Twelve flame actor/timer nodes: nine open expected new, three retained. |
 | Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
-| Reference Baseline | 1,189/1,992; four scoped/expected, maximum 1,193. |
-| Candidate Proposal | [T41 S3 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-admission-bowser-front-and-rear-orchestration). |
-| Files And ABI Surface | oam/bowser_gfx.c, retainer graphics seam, declarations, native/ROM tests, manifests and three EXEs. |
+| Reference Baseline | 1,193/1,992; twelve scoped, nine expected new, maximum 1,202. |
+| Candidate Proposal | [T41 S4 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s4-admission-flame-timer-and-full-flame-actor). |
+| Files And ABI Surface | enemy/bowser_flame.c, flame graphics tail, shared Y data, native/ROM tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
-| Expected Markers | Duplicate slot, byte offsets, two halves, state gate, bound/collision order and offset/flag restoration. |
+| Expected Markers | Force/X/page borrow, Y target, scratch/relative writes, three sprite loop and four masks. |
 | Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Four exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Reporting Requirements | Twelve exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
 | Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Four nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Exit Criteria | Twelve nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
 | Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Entry guards, duplicate/page writes, child state, double drawing and collision gates. |
+| Similar-Issue Sweep | Duplicate table/owner, entry guards, scratch, borrow and OAM/mask addressing. |
+
+## S4 closure
+
+[Original flame actor proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s4-original-flame-actor-proof)
+closes nine new and three retained nodes with 2,048/2,048 caller matches.
+Actual roots match 8/2,048; position/offscreen child gaps remain explicit.
+All 10,892 prior actual matches remain. Three EXEs refreshed; DOS link-only.
+S5 fireworks lifetime/score is next, not admitted by this closure.
 
 ## S3 closure
 
 [Original front/rear proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-original-front-rear-proof)
 closes four caller nodes with 1,024/1,024 matches. Actual roots match 0/1,024;
 graphics/bounds/collision descendants retain explicit gaps. All 10,892 prior
-actual matches remain. Three EXEs refreshed; DOS link-only. S4 is next.
+actual matches remain. Three EXEs refreshed; DOS link-only. S4 is closed; its result is above.
 
 ## S2 closure
 
