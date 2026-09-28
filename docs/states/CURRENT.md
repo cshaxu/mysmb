@@ -4,32 +4,32 @@
 
 **Idle.**
 
-**M2 T30 S16 is closed at 512 / 1,992; seven of seven scoped nodes complete.**
+**M2 T30 S17 is closed at 534 / 1,992; all 22 scoped ground streams complete.**
 
-Six castle scene streams and restored ChkRow13 have source/ROM and native
-operational evidence. Three EXEs are refreshed; DOS remains link-only.
-No S is active. L_GroundArea1 begins the next unadmitted source chain.
+Full original-ROM byte-consumption and parser-route evidence agrees with
+independent native traversals. Three EXEs are refreshed; DOS is link-only.
+No S is active. L_UndergroundArea1 begins the next unadmitted source chain.
 
-## M2 T30 S16 Packet (closed)
+## M2 T30 S17 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S16, source-order implementation. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-116 from T18 S4 and corrective transfer-117 for ChkRow13 from T29 S7. |
-| Objective | Complete six L_CastleArea scene nodes through full byte binding and parser consumption. |
+| Identifier Mode | M2 T30 S17, source-order implementation. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-118 from T18 S4. |
+| Objective | Complete twenty-two L_GroundArea scene nodes through full byte binding and parser consumption. |
 | Non-goals | No player/actor runtime, dispatcher, loopback or platform gameplay. |
-| Reference Baseline | Revised 505 / 1,992; six open scenes plus revoked ChkRow13, expected seven, maximum 512. |
-| Candidate Proposal | [T30 S16](../proposals/m2/t30-area-object-rendering.md#t30s16-admission-castle-scene-streams). |
+| Reference Baseline | 512 / 1,992; twenty-two open labels, expected twenty-two, maximum 534. |
+| Candidate Proposal | [T30 S17](../proposals/m2/t30-area-object-rendering.md#t30s17-admission-ground-scene-streams). |
 | Files And ABI Surface | Shared area consumer if needed, local binding/route harnesses, exact node records and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Whole source spans/pointers; original initialized ScreenRoutines parser traversal with terminator coverage; independent native tests, three builds, startup and purity. |
 | Expected Markers | Header-derived fields, every scene record, parser cursors, metatiles, block buffers and creation outputs. |
 | Asset Needs | Three EXEs per implementation P; DOS remains link-only. |
-| Reporting Requirements | Six exact node dispositions, source/ROM and independent runtime tracks, limits and artifact hashes. |
+| Reporting Requirements | Twenty-two exact node dispositions, source/ROM and independent runtime tracks, limits and artifact hashes. |
 | Stop Conditions | Unadmitted consumer discrepancy, missing record/terminator coverage or platform logic. |
 | Exit Criteria | Every scoped stream has both evidence tracks, or exact accepted unfinished disposition. |
 | Original Owner Request | Faithful original-ROM graph and every logic node in source order. |
-| Similar-Issue Sweep | Six castle streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
+| Similar-Issue Sweep | Twenty-two ground streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
 
 ## Retained M2 T15 summary
 

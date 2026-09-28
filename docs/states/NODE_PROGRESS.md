@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 512 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 534 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,343 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,321 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **512 / 1,992 (25.70%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **534 / 1,992 (26.81%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (512)
+## Completed matches (534)
 
 | ROM line | Node |
 | ---: | --- |
@@ -533,6 +533,28 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4849 | `L_CastleArea4` |
 | 4865 | `L_CastleArea5` |
 | 4884 | `L_CastleArea6` |
+| 4900 | `L_GroundArea1` |
+| 4915 | `L_GroundArea2` |
+| 4931 | `L_GroundArea3` |
+| 4944 | `L_GroundArea4` |
+| 4963 | `L_GroundArea5` |
+| 4980 | `L_GroundArea6` |
+| 4995 | `L_GroundArea7` |
+| 5009 | `L_GroundArea8` |
+| 5027 | `L_GroundArea9` |
+| 5042 | `L_GroundArea10` |
+| 5048 | `L_GroundArea11` |
+| 5059 | `L_GroundArea12` |
+| 5066 | `L_GroundArea13` |
+| 5081 | `L_GroundArea14` |
+| 5096 | `L_GroundArea15` |
+| 5113 | `L_GroundArea16` |
+| 5123 | `L_GroundArea17` |
+| 5143 | `L_GroundArea18` |
+| 5160 | `L_GroundArea19` |
+| 5177 | `L_GroundArea20` |
+| 5191 | `L_GroundArea21` |
+| 5200 | `L_GroundArea22` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

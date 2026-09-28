@@ -680,28 +680,28 @@ The labels and branches behind every line remain open until individually bound b
 | 4849 | `L_CastleArea4` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
 | 4865 | `L_CastleArea5` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
 | 4884 | `L_CastleArea6` | M2 T30 S16 shared area parser | ROM-match complete | [S16 source binding and full parser routes](../../proposals/m2/t30-area-object-rendering.md#s16p1-castle-stream-consumption-and-loop-command-order) |
-| 4900 | `L_GroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea1) |
-| 4915 | `L_GroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea2) |
-| 4931 | `L_GroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea3) |
-| 4944 | `L_GroundArea4` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea4) |
-| 4963 | `L_GroundArea5` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea5) |
-| 4980 | `L_GroundArea6` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea6) |
-| 4995 | `L_GroundArea7` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea7) |
-| 5009 | `L_GroundArea8` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea8) |
-| 5027 | `L_GroundArea9` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea9) |
-| 5042 | `L_GroundArea10` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea10) |
-| 5048 | `L_GroundArea11` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea11) |
-| 5059 | `L_GroundArea12` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea12) |
-| 5066 | `L_GroundArea13` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea13) |
-| 5081 | `L_GroundArea14` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea14) |
-| 5096 | `L_GroundArea15` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea15) |
-| 5113 | `L_GroundArea16` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea16) |
-| 5123 | `L_GroundArea17` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea17) |
-| 5143 | `L_GroundArea18` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea18) |
-| 5160 | `L_GroundArea19` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea19) |
-| 5177 | `L_GroundArea20` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea20) |
-| 5191 | `L_GroundArea21` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea21) |
-| 5200 | `L_GroundArea22` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_groundarea22) |
+| 4900 | `L_GroundArea1` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4915 | `L_GroundArea2` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4931 | `L_GroundArea3` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4944 | `L_GroundArea4` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4963 | `L_GroundArea5` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4980 | `L_GroundArea6` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 4995 | `L_GroundArea7` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5009 | `L_GroundArea8` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5027 | `L_GroundArea9` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5042 | `L_GroundArea10` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5048 | `L_GroundArea11` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5059 | `L_GroundArea12` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5066 | `L_GroundArea13` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5081 | `L_GroundArea14` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5096 | `L_GroundArea15` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5113 | `L_GroundArea16` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5123 | `L_GroundArea17` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5143 | `L_GroundArea18` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5160 | `L_GroundArea19` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5177 | `L_GroundArea20` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5191 | `L_GroundArea21` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
+| 5200 | `L_GroundArea22` | M2 T30 S17 shared area parser | ROM-match complete | [S17 full ground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s17p1-complete-ground-scene-consumption) |
 | 5210 | `L_UndergroundArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea1) |
 | 5231 | `L_UndergroundArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea2) |
 | 5252 | `L_UndergroundArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_undergroundarea3) |

@@ -1790,3 +1790,145 @@ Mapped incomplete is 137 and open is 1,343. No scoped node is deferred or
 retained unfinished. S16 is closed; T30 and M2 remain open. The next
 unadmitted source chain starts at L_GroundArea1, followed by the remaining
 ground, underground and water scene groups in original source order.
+
+## T30/S17 admission: ground scene streams
+
+Exact scope and expected matches, all open: `L_GroundArea1`,
+`L_GroundArea2`, `L_GroundArea3`, `L_GroundArea4`, `L_GroundArea5`,
+`L_GroundArea6`, `L_GroundArea7`, `L_GroundArea8`, `L_GroundArea9`,
+`L_GroundArea10`, `L_GroundArea11`, `L_GroundArea12`, `L_GroundArea13`,
+`L_GroundArea14`, `L_GroundArea15`, `L_GroundArea16`, `L_GroundArea17`,
+`L_GroundArea18`, `L_GroundArea19`, `L_GroundArea20`, `L_GroundArea21`,
+`L_GroundArea22`. Baseline **512 / 1,992**, expected **22**, maximum **534**.
+Entry is the twenty-two original header/table selections; exit is each stream's
+terminator after its last object. Shared runtime owner remains area/area_data.c
+and area.c. No copied scene payload or platform parser is permitted.
+
+Accept transfer-118 from T18 S4. Bind each entire literal span and pointer,
+then compare the existing original InitializeArea -> ScreenRoutines ->
+AreaParserTaskControl consumer. Controlled source-RAM routes start at pages
+zero and sixteen and request bounded repeated two-column screen parser sets;
+this covers both halves without requiring unadmitted player/actor runtime.
+The fixtures may change screen-task/column-set inputs after the original
+header initialization, never PC, stack, return addresses or ROM bytes.
+Require actual stream-cursor/terminator coverage and compare parser state,
+metatile/block-buffer output and original object-creation writes. Any gap
+must remain explicit; do not certify a whole stream from its first columns.
+
+Independent C checks cover data framing/binding and complete native parser
+traversals on x86/x64. Source-shaped repairs are limited to these admitted
+scene consumers; a contradictory previously completed helper requires
+explicit revocation and a corrective receipt before changing it. Other actor,
+player, dispatcher and loopback behavior stays with existing receivers.
+Each implementation P builds three EXEs and reports startup, purity and
+DOS link limits. Owner NROM/listing remain local-only research inputs.
+Predecessor: closed S16 castle scenes. Successor: L_UndergroundArea1.
+Source listing/owner ROM are non-redistributable local-only evidence.
+Raw trace budget: 60 MB under ignored build/m2-t30-s17; twenty-second process
+limits, up to 130 samples per route and up to forty-four original/native route pairs.
+S17 retains cleanup responsibility through T review. No matches claimed yet.
+
+### S17 traversal calibration
+
+Admission gate passes: 22 open scope labels, 22 expected matches, baseline
+512, maximum 534. Twenty-two page-zero routes match persistent RAM and all
+recorded output for 129 samples each. Ground area 17 alone needs a longer
+traversal. Direct page-sixteen initialization fails to finish even in the
+original ROM (one recorded initialization sample, bounded exit 68); this is
+an unsuitable fixture, not evidence of a native implementation defect.
+Replace that extra route with 257 samples from page zero, preserving parser
+state throughout. A ColumnSets=255 probe times out in the original ROM;
+the source uses a signed decrement branch, so that is not a legal longer
+screen workload. Instead request a second ordinary ColumnSets=127 screen
+workload after the first 128 parser ticks, without changing pointers, object
+slots, parser cursors or page state. Other routes retain 129 samples.
+The 60 MB and twenty-second per-process limits remain.
+The source branch order is unchanged; no complete-node claim is made yet.
+
+## S17/P1: complete ground scene consumption
+
+All 22 original ground streams retain one shared InitializeArea ->
+GetAreaDataAddrs -> ScreenRoutines -> AreaParserTaskControl -> ProcessAreaData
+consumer. Existing area/area_data.c and area.c require no production repair
+for these routes. The ROM's 22 pointer/header bindings, every original
+literal byte, two-byte record boundary and final terminator were checked.
+Source evidence contains 1,994 bytes and 964 object records; no payload is
+copied into tracked tests or documentation.
+
+| Node | CPU address | Bytes / object records | Terminal cursor | Disposition |
+| --- | --- | --- | --- | --- |
+| `L_GroundArea1` | `0xa46b` | 99 / 48 | 96 | ROM-match complete |
+| `L_GroundArea2` | `0xa4ce` | 105 / 51 | 102 | ROM-match complete |
+| `L_GroundArea3` | `0xa537` | 83 / 40 | 80 | ROM-match complete |
+| `L_GroundArea4` | `0xa58a` | 143 / 70 | 140 | ROM-match complete |
+| `L_GroundArea5` | `0xa619` | 117 / 57 | 114 | ROM-match complete |
+| `L_GroundArea6` | `0xa68e` | 101 / 49 | 98 | ROM-match complete |
+| `L_GroundArea7` | `0xa6f3` | 85 / 41 | 82 | ROM-match complete |
+| `L_GroundArea8` | `0xa748` | 133 / 65 | 130 | ROM-match complete |
+| `L_GroundArea9` | `0xa7cd` | 101 / 49 | 98 | ROM-match complete |
+| `L_GroundArea10` | `0xa832` | 9 / 3 | 6 | ROM-match complete |
+| `L_GroundArea11` | `0xa83b` | 63 / 30 | 60 | ROM-match complete |
+| `L_GroundArea12` | `0xa87a` | 21 / 9 | 18 | ROM-match complete |
+| `L_GroundArea13` | `0xa88f` | 103 / 50 | 100 | ROM-match complete |
+| `L_GroundArea14` | `0xa8f6` | 101 / 49 | 98 | ROM-match complete |
+| `L_GroundArea15` | `0xa95b` | 115 / 56 | 112 | ROM-match complete |
+| `L_GroundArea16` | `0xa9ce` | 49 / 23 | 46 | ROM-match complete |
+| `L_GroundArea17` | `0xa9ff` | 147 / 72 | 144 | ROM-match complete |
+| `L_GroundArea18` | `0xaa92` | 115 / 56 | 112 | ROM-match complete |
+| `L_GroundArea19` | `0xab05` | 121 / 59 | 118 | ROM-match complete |
+| `L_GroundArea20` | `0xab7e` | 89 / 43 | 86 | ROM-match complete |
+| `L_GroundArea21` | `0xabd7` | 43 / 20 | 40 | ROM-match complete |
+| `L_GroundArea22` | `0xac02` | 51 / 24 | 48 | ROM-match complete |
+
+ROM-logic evidence: 22 page-zero routes of 129 NMI-return samples and one
+257-sample continuous ground-area-17 route total 3,095 samples. All 1,782
+persistent RAM bytes and all recorded CIRAM, palette, OAM, audio and PPU
+output agree with the original ROM. Only scratch bytes 0..7, CPU stack and
+two PPU mirrors are excluded from RAM comparison; no output is masked.
+The actual-original-instruction read observer proves all 1,994 bytes were
+consumed, including every header and terminator. Area 17 reaches cursor 94
+in its first half and terminal cursor 144 after its uninterrupted second
+screen workload. Its area pointer, resident slots and parser cursor are not
+reseeded between workloads. No PC, stack, return-address or ROM patch exists.
+The two failed route calibrations above remain fixture limits, not game fixes.
+
+The source-shaped fixture and independent native traversal test are
+[ground_scene_fixture.h](../../../test/ground_scene_fixture.h) and
+[ground_scene_stream_smoke.c](../../../test/ground_scene_stream_smoke.c).
+The existing [scene verifier](../../../test/verify_castle_scene_routes.py)
+accepts --family ground and retains its castle mode; all seven prior castle
+routes revalidate successfully after that harness extension.
+
+Operational evidence: 56 focused executions pass across x86/x64, including
+all ground and castle traversals, parser/geometry regressions and counter
+boundaries. Both Windows products pass self-test and hidden-window creation/
+message-response probes. OpenNT compiles the shared C90 code and links the
+DOS16 MZ. Platform-purity passes; this P changes only validation/build wiring
+and records, with no game or platform production-code delta. Existing legacy
+timer-fixture debt remains outside this focused suite. DOS still lacks local
+PRG/CHR/title binding and is not claimed playable. The previously reported
+Windows startup failure remains unreproduced, not diagnosed as fixed.
+
+Similar-issue sweep covers all 22 stream pointers, header-derived fields,
+literal spans, cursor/terminator boundaries and actual read coverage. No new
+consumer mismatch or platform gameplay ownership was found. Deferred enemy
+stream logic and loopback consumers keep their existing receivers.
+All raw evidence stays in ignored build/m2-t30-s17: 27,292,262 trace bytes,
+below the 60 MB budget, with twenty-second per-process recorder limits.
+S17 retains cleanup responsibility through T review. The owner's explicit
+artifact instruction covers refreshing the three existing tracked EXEs;
+no standalone ROM or generated source is added.
+
+Artifact `mysmb16.exe`: 252977 bytes; SHA-256 `98E1A618425B80AB8883375305A63208AB18CAD27A41FB7B6D0863AFC2B9FD21`.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `D27D80934765ABDD428CAC9DA58EC91AC391E2AD74A1C822CE38E79B5E418BF8`.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `9197A4613A216F592166C2C8C33D6EDABF652CA43095FC1A649496C5C9A4829A`.
+
+## S17 closure
+
+Expected/actual matches **22/22**, exactly the 22 rows above. Complete count
+advances from **512 to 534 / 1,992 (26.81%)**. Mapped incomplete remains 137;
+open is 1,321. No scoped node is retained unfinished or transferred.
+S17 is closed; T30 and M2 remain open. L_UndergroundArea1 begins the next
+unadmitted source-order scene group, followed by water scene data.

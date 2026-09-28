@@ -1,4 +1,4 @@
-"""Validate local full castle parser traces and actual original data reads."""
+"""Validate local scene parser traces and actual original data reads."""
 import argparse
 import csv
 import json
@@ -14,11 +14,11 @@ from smb_rom_codegen import read_nrom
 SIZE = 4409
 
 
-def frames(path, magic):
+def frames(path, magic, expected=129):
     data = path.read_bytes()
     assert data[:8] == magic + bytes([2, 0, 0, 0]), path
     count = struct.unpack_from('<I', data, 8)[0]
-    assert count == 129 and len(data) == 12 + count * SIZE, path
+    assert count == expected and len(data) == 12 + count * SIZE, path
     return [data[12+i*SIZE:12+(i+1)*SIZE] for i in range(count)]
 
 
@@ -27,16 +27,22 @@ def main():
     parser.add_argument('directory', type=Path)
     parser.add_argument('--rom', required=True, type=Path)
     parser.add_argument('--asm', required=True, type=Path)
+    parser.add_argument('--family', choices=['castle', 'ground'], default='castle')
     args = parser.parse_args()
+    ground = args.family == 'ground'
+    count = 22 if ground else 6
+    prefix = 'L_GroundArea' if ground else 'L_CastleArea'
+    successor = 'L_UndergroundArea1' if ground else 'L_GroundArea1'
+    continued = 16 if ground else 5
     prg, _ = read_nrom(args.rom)
     labels, _, mismatch = index_listing(args.rom, args.asm)
     assert mismatch is None
     symbols = {name: (address, line) for name, address, line in labels}
     lines = args.asm.read_text(encoding='latin-1').splitlines()
     spans = []
-    for number in range(1, 7):
-        name = 'L_CastleArea%d' % number
-        following = 'L_CastleArea%d' % (number+1) if number < 6 else 'L_GroundArea1'
+    for number in range(1, count+1):
+        name = prefix + str(number)
+        following = prefix + str(number+1) if number < count else successor
         start, line = symbols[name]
         end, next_line = symbols[following]
         data = check_literal_span(prg, start, end, lines[line:next_line-1])
@@ -44,13 +50,14 @@ def main():
         assert all(data[i] != 253 for i in range(2, len(data)-1, 2))
         spans.append((name, start, end))
     excluded = set(range(8)) | set(range(0x100, 0x200)) | {0x778, 0x779}
-    coverage = [set() for _ in range(6)]
+    coverage = [set() for _ in range(count)]
     result = []
-    for case in range(7):
-        area = min(case, 5)
+    for case in range(count+1):
+        area = case if case < count else continued
         name, start, end = spans[area]
-        rom = frames(args.directory / ('rom-%d.msfr' % case), b'MSFR')
-        native = frames(args.directory / ('native-%d.msfn' % case), b'MSFN')
+        samples = 257 if ground and case == count else 129
+        rom = frames(args.directory / ('rom-%d.msfr' % case), b'MSFR', samples)
+        native = frames(args.directory / ('native-%d.msfn' % case), b'MSFN', samples)
         residual = set()
         for sample, (a, b) in enumerate(zip(rom, native)):
             delta = {i for i in range(2048) if a[4+i] != b[4+i]}
@@ -59,8 +66,8 @@ def main():
             residual |= delta
         first, last = rom[0][4:2052], rom[-1][4:2052]
         assert first[0xe7] | first[0xe8] << 8 == start+2
-        assert last[0x725] == (32 if case == 6 else 16)
-        if case != 5:
+        assert last[0x725] == (32 if case == count else 16)
+        if case != continued:
             assert last[0x72c] == end-start-3 and prg[start-0x8000+2+last[0x72c]] == 253
         with (args.directory / ('reads-%d.csv' % case)).open() as stream:
             coverage[area] |= {int(row['address'], 16) for row in csv.DictReader(stream) if int(row['reads'])}
@@ -68,15 +75,16 @@ def main():
             hits = {int(row['pc'], 16): int(row['hits']) for row in csv.DictReader(stream)}
         for node in ['GetAreaDataAddrs', 'AreaParserTaskControl', 'ProcessAreaData', 'DecodeAreaData', 'EndAParse']:
             assert hits.get(symbols[node][0], 0), (case, node)
-        result.append(dict(case=case, node=name, samples=129, persistentMismatches=0,
+        result.append(dict(case=case, node=name, samples=samples, persistentMismatches=0,
                            outputMismatches=0, scratchOrMirrorResiduals=[hex(x) for x in sorted(residual)]))
     for area, (name, start, end) in enumerate(spans):
         assert set(range(start, end)) <= coverage[area], (name, 'unread bytes')
     summary = dict(routes=result, bytesBoundAndConsumed=sum(end-start for _, start, end in spans),
-                   sceneNodes=[name for name, _, _ in spans], samples=903,
-                   note='129 NMI-return samples per controlled route; scratch, stack and two PPU mirrors excluded from RAM comparison.')
+                   sceneNodes=[name for name, _, _ in spans], samples=sum(x['samples'] for x in result),
+                   note='Controlled NMI-return samples; scratch, stack and two PPU mirrors excluded from RAM comparison.')
     (args.directory / 'route-summary.json').write_text(json.dumps(summary, indent=2)+'\n')
-    print('7 castle routes / 903 samples: persistent RAM and output match; all 700 scene bytes consumed')
+    print('%d %s routes / %d samples match; all %d scene bytes consumed' %
+          (count+1, args.family, summary['samples'], summary['bytesBoundAndConsumed']))
 
 
 if __name__ == '__main__':

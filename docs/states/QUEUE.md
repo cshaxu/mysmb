@@ -12,10 +12,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-T30/S16 is closed at 512 / 1,992: six castle scene nodes plus restored
-ChkRow13 are complete. The next unadmitted source chain starts at
-L_GroundArea1. Enemy-data consumer proof and AreaDataOfsLoopback remain with
-their accepted T19 S5 receiver; no new numeric task is admitted here.
+T30/S17 is closed at 534 / 1,992: all 22 ground scene nodes are complete.
+The next unadmitted source chain begins at L_UndergroundArea1, followed by
+water scene data. Enemy-data consumer proof and AreaDataOfsLoopback remain
+with their accepted T19 S5 receiver; no new numeric task is admitted here.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This
