@@ -116,16 +116,6 @@ static void mysmb_game_continue_game(struct mysmb_game *game)
     game->ram[MYSMB_RAM_OPER_MODE] = 1U;
 }
 
-/* ROM NextArea.  LoadAreaPointer remains the following mode-task zero owner. */
-void mysmb_game_next_area(struct mysmb_game *game)
-{
-    game->ram[MYSMB_RAM_AREA]++;
-    mysmb_game_load_area_pointer(game);
-    game->ram[MYSMB_RAM_FETCH_NEW_TIMER]++;
-    mysmb_player_change_area_mode(game);
-    game->ram[MYSMB_RAM_HALFWAY_PAGE] = 0U;
-    game->ram[MYSMB_RAM_EVENT_MUSIC] = 0U;
-}
 
 /* ROM PlayerLoseLife.  The half-way table stays here because it is game-mode
  * ownership, not an area renderer concern. */

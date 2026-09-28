@@ -777,16 +777,16 @@ The labels and branches behind every line remain open until individually bound b
 | 5821 | `ResetPalFireFlower` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
 | 5824 | `ResetPalStar` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
 | 5830 | `ExitDeath` | M2 T32 S3 shared game/player_modes.c | ROM-match complete | [S3 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s3-p1-original-timer-state-proof) |
-| 5835 | `FlagpoleSlide` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpoleslide) |
-| 5847 | `SlidePlayer` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slideplayer) |
-| 5848 | `NoFPObj` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nofpobj) |
-| 5853 | `Hidden1UpCoinAmts` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hidden1upcoinamts) |
-| 5856 | `PlayerEndLevel` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerendlevel) |
-| 5868 | `ChkStop` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkstop) |
-| 5874 | `InCastle` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-incastle) |
-| 5876 | `RdyNextA` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rdynexta) |
-| 5888 | `NextArea` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextarea) |
-| 5895 | `ExitNA` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitna) |
+| 5835 | `FlagpoleSlide` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5847 | `SlidePlayer` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5848 | `NoFPObj` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5853 | `Hidden1UpCoinAmts` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5856 | `PlayerEndLevel` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5868 | `ChkStop` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5874 | `InCastle` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5876 | `RdyNextA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5888 | `NextArea` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
+| 5895 | `ExitNA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../proposals/m2/player-control-modes.md#s4-p1-original-end-level-proof) |
 | 5899 | `PlayerMovementSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playermovementsubs) |
 | 5907 | `SetCrouch` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcrouch) |
 | 5908 | `ProcMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmove) |

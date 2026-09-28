@@ -2,10 +2,12 @@
 
 ## Current Work
 
-**M2 T32 S4 is active at 666 / 1,992: ten open flagpole/end-level nodes, expected ten, maximum 676.**
+**M2 T32 S4 has ten proven caller nodes at 676 / 1,992; final review and T32 integrated review remain pending.**
 
-S3 is closed with fourteen scoped matches; its ten actual-child failures
-remain with existing source owners. T32 remains open.
+All nine source branches have both outcomes and 58 caller comparisons match.
+Actual native children yield 6 matches and 52 retained failures. Three
+artifacts were refreshed; DOS remains link-only. S4 is the sole active
+packet; S1-S3 are closed and T32 remains open.
 
 ## M2 T32 S4 Packet
 

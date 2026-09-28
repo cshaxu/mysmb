@@ -956,23 +956,6 @@ void mysmb_player_initialize_entrance(struct mysmb_game *game)
     game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 7U;
 }
 
-/* Existing inline GameRoutines children extracted without algorithm changes.
- * Their source-node conformance remains a later player-state responsibility. */
-void mysmb_player_step_flagpole_slide(struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_PLAYER_Y] < 0x9eU)
-        mysmb_player_step(game, MYSMB_BUTTON_DOWN);
-    else game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 5U;
-}
-
-void mysmb_player_step_end_level(struct mysmb_game *game)
-{
-    mysmb_player_step(game, MYSMB_BUTTON_RIGHT);
-    if (game->ram[0x0746U] == 5U) {
-        ++game->ram[0x075cU];
-        mysmb_game_next_area(game);
-    }
-}
 
 
 /* Translation of ROM $df4b-$df7d ImpedePlayerMove. */

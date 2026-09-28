@@ -97043,9 +97043,20 @@
         "ExitNA"
       ],
       "maximumComplete": 676,
-      "actualMatches": [],
+      "actualMatches": [
+        "FlagpoleSlide",
+        "SlidePlayer",
+        "NoFPObj",
+        "Hidden1UpCoinAmts",
+        "PlayerEndLevel",
+        "ChkStop",
+        "InCastle",
+        "RdyNextA",
+        "NextArea",
+        "ExitNA"
+      ],
       "evidence": "docs/proposals/m2/player-control-modes.md",
-      "state": "admitted-flagpole-end-level-chain"
+      "state": "P1-ten-caller-matches-review-pending-676"
     }
   ]
 }

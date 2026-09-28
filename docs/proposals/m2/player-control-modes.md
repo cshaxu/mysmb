@@ -517,3 +517,80 @@ sweep covers all flagpole/end-level/NextArea callers and all writers of the
 owned sound, area-mode, priority and hidden-1up state. Admission gate must
 confirm exact scope/expected 10/10, baseline 666 and maximum 676. The later
 T32 integrated review is still required after this final planned chain.
+
+## S4 P1 original end-level proof
+
+Shared player_end_level.c now owns the ten received labels. The former
+flagpole/end-level simplifications in player.c and duplicate NextArea in
+terminal_modes.c are removed. Every existing entry/castle/area caller uses
+the same functions. No host adapter changed.
+
+| Node | Address | Proved original obligation |
+| --- | --- | --- |
+| FlagpoleSlide | B2A4 | Test special enemy ID 30; transfer and clear flagpole sound |
+| SlidePlayer | B2BC | AutoControlPlayer gets down below Y=9E, zero otherwise |
+| NoFPObj | B2BF | Increment engine subroutine with byte wrap, no control child |
+| Hidden1UpCoinAmts | B2C2 | Bind original eight world thresholds at PRG offset 32C2 |
+| PlayerEndLevel | B2CA | Forced-right control before reading returned Y and scroll lock |
+| ChkStop | B2E3 | Collision bit zero selects star-flag/priority path |
+| InCastle | B2F1 | Replace sprite attributes with priority 20, not an OR merge |
+| RdyNextA | B2F6 | Task exactly five; increment level; third-level coin threshold |
+| NextArea | B315 | Increment area, load pointer, increment timer flag, change mode, clear halfway, queue silence 80 |
+| ExitNA | B328 | Return without extra state writes |
+
+The original threshold bytes are consumed through the existing bound PRG,
+not copied into product source or fabricated for ROM-free runs. All eight
+worlds are checked at threshold minus one and exact threshold using original
+data. The implementation retains the original indexed address rather than
+clamping world to a made-up range. No PRG binding still means no table proof
+or playable DOS claim.
+
+Twenty-nine ordinary-NMI routes exercise four flagpole paths, twenty-four
+end-level paths and a direct NextArea call from PlayerEntrance. Read-only
+stack/entry/return observations reuse the existing recorder. All nine
+conditional branches take both outcomes, all nine code labels execute, and
+the data label is verified through its consumer and all eight boundaries.
+Observed, coverage-only and unobserved frame outputs agree. Raw local output
+is 1,137,227 bytes within the admitted budget.
+
+The [checker](../../../test/player_end_level_snapshot_check.c) passes 58
+caller-mode comparisons on x86/x64 over all 1,784 persistent RAM bytes, child
+identity/order and AutoControlPlayer argument. Original child returns are
+replayed only in this explicit caller mode; scratch 0-7 and hardware stack
+are excluded. The independent actual-native mode retains six matches and
+52 failures: both missing-flag routes and direct NextArea match; the two
+flag-present and all end-level routes still inherit PlayerCtrlRoutine
+movement/animation differences on both widths. Those descendants keep T23 S5
+and existing output custody, with no new completion credit. This is scoped
+caller equivalence, not complete flagpole motion or playable end-level proof.
+
+Reproduce using reference `--fixture=t32-end-level=N`, N=0..28, with
+`--end-level-snapshot`, `--control-children` and the
+[verification harness](../../../test/verify_player_end_level_snapshots.py).
+Fixtures read threshold inputs from the owner ROM without changing executed
+code, PC or stack. Raw traces/data and generated assets stay ignored/local.
+
+Operational evidence: six focused suites pass on x86/x64 (twelve executions):
+end-level, modes, engine-tail, control, transition and entrance. The new suite
+checks all enemy-ID/Y pairs; stop/priority states; every synthetic world/coin
+byte pair; wrapping area/timer/hidden-1up counters; and child mutations that
+prove subsequent reads use returned state. All 66 shared units build as strict
+C90 on both Windows widths, both self-tests pass, full OpenNT DOS16 linking
+succeeds, and platform purity passes. Two-second hidden-window probes confirm
+creation and message responsiveness only; DOS is still link-only and no
+performance/physical-486 or complete-game result is claimed.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258365 | b7823e04d63b97ae008a1c58bcaf02837028b2e331a62530ba3f4ebd0444ce6b |
+| mysmb32.exe | 324804 | 12566bff167fe99dc533c5323988d2befeb996f3104e39e419017bf0203e4b00 |
+| mysmb64.exe | 331799 | 0a4e102166801e1d3d3fa08821eb22de202fffbb0a55229ea5313d928924b9c2 |
+
+Similar-issue sweep checked the three owned routines and all their callers.
+It restores the missing flag-ID gate, sound transfer, stop/priority/coin
+branches and the original Silence selector, while leaving child algorithms
+with their existing owners. T32 cross-chain review remains required.
+
+S4 expected/actual caller matches: 10/10; global progress 666 -> 676 / 1,992.
+Exact completed labels: `FlagpoleSlide`, `SlidePlayer`, `NoFPObj`, `Hidden1UpCoinAmts`, `PlayerEndLevel`, `ChkStop`, `InCastle`, `RdyNextA`, `NextArea`, `ExitNA`.
+No child receives credit. Final review and T32 integrated review remain pending.
