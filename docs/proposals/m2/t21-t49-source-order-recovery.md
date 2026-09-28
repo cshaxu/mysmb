@@ -797,4 +797,4 @@ labels for reuse/maintenance, with no repeated completion credit. See the
 T39 admission keeps the complete movement phase from MovePodoboo (9212)
 with T40, removing the split Hammer Bro boundary. Its immediate flame timer
 dependency is admitted with S1; the later timer source slice reuses it without
-duplicate credit. [Exact T39 chains and receivers](t39-special-initialization-and-dispatch.md).
+duplicate credit. [Exact T39 chains and receivers](../../history/M2-T39-special-initialization-and-dispatch.md).

@@ -2,90 +2,44 @@
 
 ## Current Work
 
-**M2 T39 S8 is closed at 1,053 / 1,992: all four expected caller nodes match.**
+**M2 T39 is closed at 1,059 / 1,992. No later T is admitted.**
 
-## M2 T39 S8 Packet
+## M2 T39 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S8, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after df340c0; coordinator accepts transfer-181. |
-| Objective | Restore four normal-actor/movement-vector caller nodes. |
-| Non-goals | No child movement/collision/graphics rewrite or host gameplay. |
-| Reference Baseline | 1,049 / 1,992; four scoped open, four expected new, maximum 1,053. |
-| Candidate Proposal | [T39 S8 normal actor/vector](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-admission-normal-actor-and-movement-vector). |
-| Files And ABI Surface | Shared enemy/normal.c, existing normal graphics selection boundary, tests/recorder, node records and three EXEs. |
+| Identifier Mode | M2 T39 S9, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 01578a4; coordinator accepts transfers-182/183. |
+| Objective | Restore six special actor/platform caller nodes; retain shared erasure. |
+| Non-goals | No child-interior conformance by extraction, invented physics or host gameplay. |
+| Reference Baseline | 1,053 / 1,992; seven scoped, six open expected new, one retained, maximum 1,059. |
+| Candidate Proposal | [T39 S9 special actor/platform callers](../history/M2-T39-special-initialization-and-dispatch.md#s9-admission-special-actor-and-platform-callers). |
+| Files And ABI Surface | Shared game actor/platform/collision/OAM entries, lifecycle, tests/recorder, manifests, node records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original table/branch/call proof, full child-input comparison with recorded return substitution; separate actual-child diagnostics, native mutation contracts, builds and purity. |
-| Expected Markers | Attribute clear, nine-phase caller sequence, post-child timer/ID, 21-way scratch/vector, no-op and terminal bounds. |
+| Verification | Original table/branch/call proof and child-input comparison; separate actual-child comparisons, native mutation/erasure contracts, builds and purity. |
+| Expected Markers | Original phase order, second relative calculation, post-child timer/ID, seven-way vector scratch and eight erasure fields. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Four exact dispositions; caller proof versus actual-child failures; artifact hashes. |
-| Stop Conditions | Unadmitted repair, original CPU/stack/ROM patch, hidden child mismatch or host gameplay. |
-| Exit Criteria | Four expected caller nodes proven or exact accepted transfer; tracker, ledger and artifacts agree. |
+| Reporting Requirements | Seven exact dispositions, distinct caller/child results, artifact hashes and T39 combined review. |
+| Stop Conditions | Unadmitted child algorithm repair, original execution patching, hidden mismatch or host gameplay. |
+| Exit Criteria | Six expected caller nodes proven or exact accepted transfers; retained erasure; tracker/ledger/artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Normal graphics callers, all movement aliases and guarded jumping adapters. |
+| Similar-Issue Sweep | Every special actor vector entry, mixed platform/flame phases and legacy aggregate callers. |
 
-## S8 closure
 
-[Original normal-actor/vector proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof)
-records four new caller matches and 252/252 original caller comparisons.
-All 3,164 prior actual matches remain. Child-body mismatches are separately
-retained; three EXEs are refreshed and DOS16 remains link-only.
+## T39 closure summary
 
-## S7 closure
+[Aggregate review](../history/M2-T39-special-initialization-and-dispatch.md#t39-closure)
+closes all 86 scoped nodes: 81 new and five retained across nine S chains.
+Final actual comparison is 3,254/4,042; all 3,222 prior matches remain.
+The 788 downstream differences retain their source-order owners. S9 refreshed
+all three EXEs; child/full-game gaps and DOS link-only limits remain explicit.
 
-[Original actor/retainer caller proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof)
-records three new matches plus retained NoRunCode, 360/360 caller comparisons
-and separate 42/360 actual-child matches. All 3,118 prior actual matches remain.
-Three EXEs are refreshed; child discrepancies and DOS link-only limits remain.
+## Next source slice
 
-## S6 closure
-
-[Original platform initialization proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s6-original-platform-initialization-proof)
-records twenty new matches, 480/480 actual comparisons and all 2,602 prior
-matches retained. Original offsets, signed Y state and common tails agree.
-Three EXEs are refreshed; child failures and DOS link-only limits remain.
-
-## S5 closure
-
-[Original initializer/frenzy proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof)
-records nine new matches, 392/392 actual comparisons and all 2,168 previous
-matches retained. Residual NoFrenzyCode input is explicitly bounded. Three
-EXEs are refreshed; existing child failures and DOS link-only limits remain.
-
-## S4 closure
-
-[Original grouped-enemy proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof)
-records eight new matches, 230/230 actual comparisons and thirteen source
-entry gates. All 1,928 prior matches remain; the parser set now matches 160/160.
-Three EXEs are refreshed; existing downstream and DOS link-only limits remain.
-
-## S3 closure
-
-[Original Bullet/swimming-fish proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s3-original-bullet-and-swimming-fish-proof)
-records fourteen new matches, 364/364 actual scoped comparisons and all 1,560
-previous matches retained. Three EXEs are refreshed. Earlier star-timer and
-Bowser-damage native-test failures remain; DOS16 is still link-only.
-
-## S2 closure
-
-[Original fireworks proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-original-fireworks-proof)
-records five new matches, 240/240 scoped actual comparisons, and all 1,320
-prior matches retained. Three EXEs are refreshed. The existing star-timer and
-Bowser-damage test failures remain; DOS16 is still link-only.
-
-## S1 closure
-
-[Original Bowser/flame proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-original-bowser-and-flame-proof)
-records all fifteen dispositions. Actual comparisons pass 320/320; all 996
-prior matches remain. All five source branches take both outcomes. Three EXEs
-are refreshed; the broader Bowser damage failure and DOS link-only limit remain.
-
-## Current sequence
-
-T39 contains nine planned S chains; S1-S8 are closed; S9 is next, not yet admitted. Follow the
-[queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
-beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
+Follow the [queue](QUEUE.md) and its source-order recovery plan. The next
+slice begins MovePodoboo at line 9212 and keeps the complete Hammer Bro
+movement phase together. Publish exact nodes and S ownership before admission.
+Continue under the approved M2 mandate; this closed packet does not admit T40.
 
 ## Current Technical Baseline
 

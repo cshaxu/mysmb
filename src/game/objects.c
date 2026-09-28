@@ -1,3 +1,5 @@
+#include "game/enemy/platform.h"
+#include "game/enemy/core.h"
 #include "game/score.h"
 #include "game/blocks/head.h"
 #include "game/enemy/actor_slots.h"
@@ -1454,7 +1456,7 @@ void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
 /* ROM InitShortFirebar/InitLongFirebar, FirebarSpin, GetFirebarPosition, and
  * FirebarCollision.  The source's long-firebar duplicate only changes OAM
  * allocation, so every physical ball remains derived from the anchor slot. */
-mysmb_u8 mysmb_objects_step_firebars_slot(struct mysmb_game *game, mysmb_u8 slot)
+mysmb_u8 mysmb_enemy_proc_firebar(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 position[99] = {
         0U,1U,3U,4U,5U,6U,7U,7U,8U, 0U,3U,6U,9U,11U,13U,14U,15U,16U,
@@ -1569,24 +1571,13 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
     }
 }
 
-/* ROM RunLargePlatform through RunSmallPlatform.  Platforms are ordinary
- * enemy slots in the original program: their Y fraction shares the enemy
- * vertical workspace, while the player receives the resulting deck motion. */
-void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
+/* Existing platform child algorithms extracted from the mixed actor path.
+ * Their collision/physics interiors retain pending ROM conformance status.
+ * Source callers and the shared $03A2 collision handoff have separate owners. */
+static mysmb_u8 platform_legacy_contact(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 id;
-    mysmb_u8 old_y;
-    mysmb_u8 old_x;
-    mysmb_u8 old_player_x;
-    mysmb_u8 old_force;
-    mysmb_u8 carry;
-    mysmb_u8 landed;
-    mysmb_u8 peer;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) return;
     id = game->ram[MYSMB_ENEMY_ID + slot];
-    if (id < 36U || id > 44U) return;
-    landed = 0U;
     if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
         game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
         game->ram[MYSMB_PLAYER_X] + 16U >= game->ram[MYSMB_ENEMY_X + slot] &&
@@ -1599,23 +1590,42 @@ void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
         game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
         game->ram[MYSMB_PLAYER_STATE] = 0U;
-        landed = 1U;
+        return 1U;
     }
-    if (id >= 36U && id <= 42U) mysmb_objects_draw_large_platform(game, slot);
-    if (id == 43U || id == 44U) mysmb_objects_draw_small_platform(game, slot);
+    return 0U;
+}
+
+void mysmb_platform_collision_large(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[0x03a2U + slot] = 0xffU;
+    if (game->ram[MYSMB_TIMER_CONTROL] != 0U ||
+        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) != 0U) return;
+    if (platform_legacy_contact(game, slot) != 0U)
+        game->ram[0x03a2U + slot] = slot;
+}
+
+void mysmb_platform_collision_small(struct mysmb_game *game, mysmb_u8 slot)
+{
     if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-    if (id == 36U && landed != 0U) {
-        /* BalancePlatform: state is the partner slot selected by
-         * InitBalPlatform.  The rope is drawing-only; its two decks move
-         * oppositely by the shared falling-platform increment. */
+    game->ram[0x03a2U + slot] = 0U;
+    if (platform_legacy_contact(game, slot) != 0U)
+        game->ram[0x03a2U + slot] = 2U;
+}
+
+void mysmb_platform_move_balance(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 peer;
+    if ((game->ram[0x03a2U + slot] & 0x80U) != 0U) return;
         peer = game->ram[MYSMB_ENEMY_STATE + slot];
         game->ram[MYSMB_ENEMY_Y + slot]++;
         if (peer < 5U && game->ram[MYSMB_ENEMY_FLAG + peer] != 0U &&
             game->ram[MYSMB_ENEMY_ID + peer] == 36U) {
             game->ram[MYSMB_ENEMY_Y + peer]--;
         }
-    }
-    else if (id == 37U) {
+}
+
+void mysmb_platform_move_y(struct mysmb_game *game, mysmb_u8 slot)
+{
         /* YMovingPlatform: wait above its source top, then cycle between
          * top and centre using the native 8-bit vertical integrator. */
         if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
@@ -1630,8 +1640,13 @@ void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
                 game->ram[MYSMB_ENEMY_Y + slot] >=
                 game->ram[MYSMB_ENEMY_X_SPEED + slot] ? 1U : 0U);
         }
-    }
-    else if (id == 38U || id == 39U || id == 43U || id == 44U) {
+}
+
+static void platform_legacy_lift(struct mysmb_game *game, mysmb_u8 slot,
+                                  mysmb_u8 landed)
+{
+    mysmb_u8 old_force, carry, old_y;
+    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
         /* MoveLiftPlatforms: fractional force plus signed whole speed. */
         old_force = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
         game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_force +
@@ -1644,30 +1659,60 @@ void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
                 game->ram[MYSMB_ENEMY_Y + slot] - old_y);
         }
-    }
-    else if (id == 40U || id == 42U) {
+}
+void mysmb_platform_move_large_lift(struct mysmb_game *game, mysmb_u8 slot)
+{
+    platform_legacy_lift(game, slot,
+        (mysmb_u8)((game->ram[0x03a2U + slot] & 0x80U) == 0U));
+}
+void mysmb_platform_move_small(struct mysmb_game *game, mysmb_u8 slot)
+{
+    platform_legacy_lift(game, slot,
+        (mysmb_u8)(game->ram[0x03a2U + slot] != 0U));
+}
+
+static void platform_legacy_horizontal(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 old_x, old_player_x;
         /* XMovingPlatform/RightPlatform: preserve the exact native
          * whole-pixel delta for both player world position and scroll. */
         old_x = game->ram[MYSMB_ENEMY_X + slot];
         old_player_x = game->ram[MYSMB_PLAYER_X];
         mysmb_world_move_enemy_horizontally(game, slot);
-        if (landed != 0U) {
+        if ((game->ram[0x03a2U + slot] & 0x80U) == 0U) {
             game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_player_x +
                 game->ram[MYSMB_ENEMY_X + slot] - old_x);
             if (game->ram[MYSMB_PLAYER_X] < old_player_x) game->ram[MYSMB_PLAYER_PAGE]++;
             game->ram[0x03a1U] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - old_x);
         }
-    }
-    else if (id == 41U && landed != 0U) {
-        /* DropPlatform switches to its falling route only after contact. */
-        old_y = game->ram[MYSMB_ENEMY_Y + slot];
-        mysmb_enemy_move_drop_platform(game, slot);
-        game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
-            game->ram[MYSMB_ENEMY_Y + slot] - old_y);
-    }
+}
+void mysmb_platform_move_x(struct mysmb_game *game, mysmb_u8 slot)
+{
+    platform_legacy_horizontal(game, slot);
+}
+void mysmb_platform_move_right(struct mysmb_game *game, mysmb_u8 slot)
+{
+    platform_legacy_horizontal(game, slot);
+}
+void mysmb_platform_move_drop(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 old_y;
+    if ((game->ram[0x03a2U + slot] & 0x80U) != 0U) return;
+    old_y = game->ram[MYSMB_ENEMY_Y + slot];
+    mysmb_enemy_move_drop_platform(game, slot);
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
+        game->ram[MYSMB_ENEMY_Y + slot] - old_y);
 }
 
-/* Temporary bulk caller while the engine vector is migrated. */
+/* Legacy bulk interface selects the same native source caller as GameEngine. */
+void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 id;
+    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) return;
+    id = game->ram[MYSMB_ENEMY_ID + slot];
+    if (id >= 36U && id <= 42U) mysmb_enemy_run_large_platform(game, slot);
+    else if (id == 43U || id == 44U) mysmb_enemy_run_small_platform(game, slot);
+}
 void mysmb_objects_step_platforms(struct mysmb_game *game)
 {
     mysmb_u8 slot;
@@ -1769,8 +1814,9 @@ void mysmb_objects_step_bowsers(struct mysmb_game *game)
         mysmb_objects_step_bowsers_slot(game, slot);
 }
 
-/* ROM ProcBowserFlame, excluding OAM. */
-void mysmb_objects_step_bowser_flames_slot(struct mysmb_game *game, mysmb_u8 slot)
+/* Existing ProcBowserFlame child, including drawing. Internal semantics
+ * retain their pending proof; RunBowserFlame owns player collision. */
+void mysmb_enemy_proc_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 target_y[4] = { 0x90U, 0x80U, 0x70U, 0x90U };
     mysmb_u8 amount;
@@ -1794,14 +1840,6 @@ void mysmb_objects_step_bowser_flames_slot(struct mysmb_game *game, mysmb_u8 slo
         }
     }
     mysmb_objects_draw_bowser_flame(game, slot);
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
-        game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
-        game->ram[MYSMB_PLAYER_X] + 12U >= game->ram[MYSMB_ENEMY_X + slot] &&
-        game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] + 16U &&
-        game->ram[MYSMB_PLAYER_Y] + 16U >= game->ram[MYSMB_ENEMY_Y + slot] &&
-        game->ram[MYSMB_PLAYER_Y] <= game->ram[MYSMB_ENEMY_Y + slot] + 16U) {
-        mysmb_objects_force_injury(game);
-    }
 }
 
 /* Temporary bulk caller while the engine vector is migrated. */

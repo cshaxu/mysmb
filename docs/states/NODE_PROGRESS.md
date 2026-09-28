@@ -12,17 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1053 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1059 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 833 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 827 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,053 / 1,992 (52.86%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,059 / 1,992 (53.16%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T39 S8 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof)
-proves four new normal-actor/vector caller nodes with 252/252 original caller
-comparisons. Actual-child differences remain separately recorded; all 3,164
-previous actual matches remain.
+Latest task review: [T39 S9 P1](../history/M2-T39-special-initialization-and-dispatch.md#s9-original-special-actor-and-platform-proof)
+closes six new caller nodes and retains erasure; T39 is closed with 81 new
+and five retained matches. S9 has 184/184 original
+comparisons. Actual children match 32/184; all 3,222 prior actual matches
+remain. Child conformance is not inferred from caller proof.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1053)
+## Completed matches (1059)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1051,6 +1052,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9105 | `SkipMove` |
 | 9107 | `EnemyMovementSubs` |
 | 9135 | `NoMoveCode` |
+| 9140 | `RunBowserFlame` |
+| 9150 | `RunFirebarObj` |
+| 9156 | `RunSmallPlatform` |
+| 9168 | `RunLargePlatform` |
+| 9176 | `SkipPT` |
+| 9182 | `LargePlatformSubroutines` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |
 | 9235 | `RevivedXSpeed` |

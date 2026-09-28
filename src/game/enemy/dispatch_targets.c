@@ -3,18 +3,6 @@
 #include "game/objects.h"
 #include "game/oam/oam.h"
 
-/* Distinct original $C965/$C94D entry boundaries. Their legacy shared child
- * remains pending S9 replacement; these seams grant no child conformance. */
-void mysmb_enemy_run_large_platform(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_objects_step_platforms_slot(game, slot);
-}
-
-void mysmb_enemy_run_small_platform(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_objects_step_platforms_slot(game, slot);
-}
-
 /* Original $D065 RunBowser is one actor-vector child. Preserve the existing
  * child interior until its source-order task replaces the legacy behavior. */
 void mysmb_enemy_run_bowser(struct mysmb_game *game, mysmb_u8 slot)

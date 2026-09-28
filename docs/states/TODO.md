@@ -64,23 +64,29 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 
 - [ ] **PlayerLakituDiff original scratch and adjustment semantics:** T38 S5 caller proof retains 124/160 actual failures, all at RAM $00, while the child still uses a static adjustment table and simplified branches. Preserve its existing ledger receiver and later source-order admission; caller proof grants no child credit. [S5 evidence](../history/M2-T38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof).
 
-- [ ] **Star-flag timer native-test assertion:** T39 S2 runs the unchanged endgame timer-tick assertion against both S1 and S2 shared objects; both fail with exit six on x86/x64. Other endgame groups, including fireworks animation/initializer/stream, pass independently. Keep AwardGameTimerPoints/NoTTick with existing M2 T19 S5 custody until the planned T41 actor slice; compare the source behavior before deciding whether the fixture or implementation is wrong. [S2 evidence](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-original-fireworks-proof).
+- [ ] **Star-flag timer native-test assertion:** T39 S2 runs the unchanged endgame timer-tick assertion against both S1 and S2 shared objects; both fail with exit six on x86/x64. Other endgame groups, including fireworks animation/initializer/stream, pass independently. Keep AwardGameTimerPoints/NoTTick with existing M2 T19 S5 custody until the planned T41 actor slice; compare the source behavior before deciding whether the fixture or implementation is wrong. [S2 evidence](../history/M2-T39-special-initialization-and-dispatch.md#s2-original-fireworks-proof).
 
 - [ ] **Retained Lakitu smoke Spiny-generation failure:** T39 S5 compares the
   same diagnostic assertion with S4 and S5 shared objects on x86/x64; all four
   fail at original lakitu_smoke.c line 76, before EndFrenzy. Preserve the
   existing Lakitu/Spiny source-order receivers. The nine initializer/frenzy
-  matches grant no child or full-actor credit. [S5 proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof).
+  matches grant no child or full-actor credit. [S5 proof](../history/M2-T39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof).
 
 - [ ] **Actor-vector and retainer actual-child gaps:** T39 S7 proves only the
   four caller nodes (360/360); actual native children match 42/360, retaining
   174 vector and 144 retainer failures. Keep source-order custody for S8/S9
   and later actor/OAM nodes; replace the explicitly provisional large/small
   platform seams in S9. GetEnemyOffscreenBits/RelativeEnemyPosition remain
-  with T16 S4 and EnemyGfxHandler with T17 S6. [Exact caller/child boundary](../proposals/m2/t39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof).
+  with T16 S4 and EnemyGfxHandler with T17 S6. [Exact caller/child boundary](../history/M2-T39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof).
 
 - [ ] **Normal actor/movement actual-child gaps:** T39 S8 proves its four
   caller nodes with 252/252 original comparisons, while actual-child failures
   remain separately recorded. Preserve movement, collision and graphics
   descendants under their existing source-order ledger owners.
-  [Exact caller/child boundary](../proposals/m2/t39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof).
+  [Exact caller/child boundary](../history/M2-T39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof).
+
+- [ ] **Special actor/platform child gaps:** T39 S9 proves six callers and
+  retains erasure, with 184/184 original comparisons but 32/184 actual-child
+  matches. Extracted platform collision/physics entries retain their existing
+  source-order owners: balance peer/second small box, positioning, X/Right
+  movement and source scratch remain unproved. [S9 exact boundary](../history/M2-T39-special-initialization-and-dispatch.md#s9-original-special-actor-and-platform-proof).

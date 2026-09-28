@@ -23,6 +23,8 @@ $sources = @(
     'game/blocks/head.c', 'game/blocks/bump.c', 'game/blocks/chunks.c', 'game/blocks/lifetime.c', 'game/blocks/replacement.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
+    'game/enemy/special_callers.c',
+    'game/enemy/platform_callers.c',
     'game/enemy/background.c',
     'game/enemy/side_collision.c',
     'game/area/block_buffer.c',

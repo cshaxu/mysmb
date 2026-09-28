@@ -1010,3 +1010,228 @@ unique output paths; production and comparison semantics are unchanged.
 | mysmb16.exe | 255159 | d8de51d91c324aa87312ec7b4e3efa77c65ea8a086cebc56f3b2080d0dd1d644 |
 | mysmb32.exe | 339440 | f0ff9837f43b039b69b3f92507c127cac31550d833b37dfae78a6d3a8f631dde |
 | mysmb64.exe | 347558 | 6c58fda9394ed85a05ddb8dab50f7c571f189ba0ac08d96b92ab21c908de7eeb |
+
+## S9 admission: Special actor and platform callers
+
+After S8 commit 01578a4, coordinator accepts transfers-182/183. Scope is
+RunBowserFlame, RunFirebarObj, RunSmallPlatform, RunLargePlatform, SkipPT,
+LargePlatformSubroutines and EraseEnemyObject. The first six are open and
+expected new; EraseEnemyObject is a retained match. Baseline 1,053/1,992,
+maximum 1,059. Original range $C935-$C9AF follows the S8 movement vector;
+MovePodoboo begins the next source-order slice. T39 remains active.
+
+Shared owners are enemy/dispatch_targets.c, platform/actor child boundaries
+inside game/, existing collision/OAM entries and enemy/lifecycle.c. Host
+platform/ code is excluded. Replace the temporary large/small forwarders with
+the actual source caller phases; separate the existing mixed platform body
+into collision, movement and drawing responsibilities. Child interiors keep
+their own ledger status and actual comparisons. Do not promote a renamed or
+extracted legacy child as ROM-equivalent. Required extraction is structural,
+not permission to invent alternative platform physics or collision rules.
+
+The flame caller executes ProcBowserFlame, offscreen, relative, box, player
+collision and final bounds. Separate the legacy flame body's extra drawing
+and ad-hoc collision from its movement boundary; graphics remains a child of
+ProcBowserFlame in the source. Firebar always performs final bounds, including
+when its old injury return signal is nonzero. Small platforms do offscreen,
+relative, box, collision, relative again, draw, move and bounds. Large platforms
+do offscreen, relative, box, collision, post-child timer-gated movement vector,
+relative again, draw and bounds. The seven-entry vector uses post-child ID,
+subtracts $24 and reproduces original JumpEngine scratch. Shared erasure must
+still clear exactly eight fields for all six slots.
+
+Original logic evidence covers exact source edges/table words and both timer
+branches using bounded original-NMI live-slot records. Compare every child's
+entire RAM input before any recorded-return substitution; keep the large
+movement vector native while observing selected leaves. Keep separate actual
+native-child comparisons and preserve all prior matches. No original ROM,
+CPU, hardware-stack or scratch patching. Independent native mutation tests
+exercise child changes, ordering, terminal bounds and erasure write footprints.
+Operational evidence is strict C90 x86/x64, DOS16 link, hidden-window response,
+platform purity and the three test EXEs once for the chain. T39 closure then
+reviews its combined matrix and exact 86-node dispositions.
+
+Existing owner-local ROM/listing provenance and unreviewed redistribution
+status are unchanged; no external implementation import. Raw recordings and
+all generated material stay in ignored build/m2-t39-s9, with eight-MB raw
+budget and twenty seconds per recorder process. Use unique per-case paths and
+checkpoint summaries for concurrent independent observations; account bytes
+without racing deletion of other workers' temporary coverage files. S9 owns
+cleanup after T39 review. Stop on unadmitted child repair or masked failure.
+
+### S9 implementation checkpoint: flame and firebar boundaries
+
+Admission gate confirms seven scoped labels, six expected new, one retained,
+baseline 1,053 and maximum 1,059. No S9 node is complete yet. Shared
+enemy/special_callers.c now expresses $C935 and $C947; objects.c retains
+separate ProcBowserFlame ($D1EB) and ProcFirebar ($CD3C) child bodies with
+their prior unproved interiors. The flame caller replaces its old inline
+rectangle/injury shortcut with GetEnemyBoundBox and PlayerEnemyCollision.
+The firebar caller always executes OffscreenBoundsCheck; its legacy aggregate
+injury return is preserved only as an outward compatibility result.
+
+Strict C90 caller tests pass 3,072 scenarios on each of x86/x64, covering all
+six slots, every byte-valued legacy return, child flag/timer mutation, exact
+call order and complete RAM write footprint. Mode and object-array integration
+tests link the changed units with all other shared units and pass on both
+widths. Platform purity passes. Original-ROM comparisons, remaining platform
+implementation, full three-target delivery and S9 closure are still pending.
+The committed test EXEs remain the S8 artifacts until the complete S9 P.
+
+The remaining source boundaries are $C94D RunSmallPlatform, $C965
+RunLargePlatform, $C979 SkipPT and $C982 LargePlatformSubroutines. The vector
+words begin $C98A and end $C997; JumpEngine scratch must retain $C989 and
+the selected target. Targets are BalancePlatform ($D432), YMovingPlatform
+($D5D3), MoveLargeLiftPlat ($D64F, two aliases), XMovingPlatform ($D607),
+DropPlatform ($D631) and RightPlatform ($D63D). Erasure remains $C998.
+
+The current platform aggregate mixes collision, early drawing and movement,
+and has no separate SmallPlatformBoundBox ($E24C), LargePlatformBoundBox
+($E273), SmallPlatformCollision ($DB7B) or LargePlatformCollision ($DB45)
+entries. Extraction must preserve meaningful child responsibilities; a no-op
+box function or forwarding the entire aggregate at each phase is not an
+acceptable implementation. Source platform collision state is $03A2+slot:
+large uses $FF/no-contact or a slot index, while small uses zero/no-contact
+or its two-box counter. Audit those handoffs before replacing the temporary
+large/small wrappers. DrawSmallPlatform ($ED66), DrawLargePlatform ($E5C8)
+and MoveSmallPlatform ($D655) retain independent child status. Neither their
+existing coordinate recalculation nor legacy platform physics is certified
+by a future caller-only comparison.
+
+## S9 original special-actor and platform proof
+
+S9 closes six expected new caller nodes and retains EraseEnemyObject:
+1,053 -> 1,059/1,992. Transfers-182/183 establish exact receiving ownership.
+Seven scoped nodes are complete; no scoped unfinished transfer remains.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| RunBowserFlame | $C935 | ProcBowserFlame, offscreen, relative, box, player collision and bounds in exact source order; new caller match |
+| RunFirebarObj | $C947 | ProcFirebar always followed by bounds; injury return cannot truncate the caller; new caller match |
+| RunSmallPlatform | $C94D | Offscreen, relative, small box/collision, repeated relative, draw, move and bounds; new caller match |
+| RunLargePlatform | $C965 | Offscreen, relative, large box/collision, post-child timer gate and native movement vector; new caller match |
+| SkipPT | $C979 | Both timer branches join the repeated-relative, draw and bounds tail; new caller match |
+| LargePlatformSubroutines | $C982 | All seven source words, both lift aliases, post-child ID minus $24 and $C989/target scratch agree; new caller match |
+| EraseEnemyObject | $C998 | All eight original stores preserved in all six slots; retained actual ROM match |
+
+Original comparisons pass 184/184 across x86/x64: four flame, 32 firebar,
+eight small-platform, 28 large-platform, fourteen vector and six erasure
+roots per width. All forty scoped instructions execute, both timer outcomes
+occur, all fourteen vector bytes match, and 376 original child-entry records
+verify complete RAM handoffs. The large vector remains native inside its
+caller proof. Recorded child returns are used only after entry comparison;
+no ROM, CPU, hardware-stack or scratch patch is made. Hardware-stack bytes
+are excluded while mapped $0109-$0139 variables remain compared. All 92
+observation-free frames equal their observed records.
+
+**Caller proof is not child proof.** Actual native children match 32/184;
+152 differences remain. The final integrated matrix is 3,254/4,042, with all
+3,222 prior actual matches preserved. Earlier Spiny, graphics, collision and
+movement gaps remain assigned to their existing source-order receivers.
+
+Shared special_callers.c and platform_callers.c replace the mixed actor
+entry boundaries. Small-platform drawing precedes movement; large-platform
+movement precedes repeated relative positioning and drawing. The old collision
+and physics branches are extracted into explicitly unproved child entries,
+using $03A2+slot for their source collision handoff. Incomplete balance-partner,
+second-small-box, horizontal movement and player-positioning semantics remain
+child obligations. The retained X/Right legacy helper is a temporary child
+implementation seam, not a claim that the original algorithms are identical.
+
+Platform box entries use the existing shared box/clip primitives. Horizontal
+visibility now exposes the full original table byte for the large-platform
+$FE threshold while normal consumers retain its upper nibble. Independent
+comparison with the previous helper preserves all 1,966,080 legal-viewport
+values per width; focused checks distinguish $FC from $FE and small-platform
+horizontal masks from vertical bits. Missing original scratch and child box
+semantics remain unproved; no offscreen/helper node receives extra credit.
+
+Native caller contracts pass 3,072 flame/firebar cases, 324 platform cases
+and 1,536 erasure footprints per width, including child-mutated flags, timer
+and ID. Fifteen full initializer/stream/actor tests plus prior normal/vector/
+retainer/cannon caller tests pass on each width. The existing star-timer and
+Bowser-damage failures remain unchanged; the prior Lakitu/Spiny gap remains.
+All 88 shared units build in strict C90, both self-tests and hidden-window
+response probes pass, and platform purity passes. DOS16 links with its old
+OLDNAMES warning and remains link-only; no DOS gameplay or 486 claim is made.
+
+Similar-issue sweep covers every special actor caller, all platform vector
+aliases, legacy aggregate callers and shared bounding-box consumers. There
+is one shared gameplay caller path; no host gameplay or runtime emulator was
+added. Reproduce special_actor_fixture.h cases 0..91 with
+--fixture=t39-special-actor=N, --special-actor-snapshot, --control-children,
+and a separate --pc-coverage run. special_actor_snapshot_check links the real
+callers/vector/lifecycle and explicit child boundaries; enemy_loop_actual_check
+links real children. Focused targets include mysmb.special-actor-caller and
+mysmb.platform-caller. Provenance is unchanged; raw records occupy under
+2.4 MB in ignored build/m2-t39-s9, within eight MB and twenty seconds per run.
+The three required EXEs are refreshed together.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256621 | 2ad05c6c65ab3ee470272c402d62a47b85cf91354b8d24a87239a521a9e970cc |
+| mysmb32.exe | 343164 | a0aeee4e8588c1bdd5459669a14eb7442de659f644b862f2a3d079578a3cf868 |
+| mysmb64.exe | 350823 | 817bc7745604b80e1a6ebf83b726efd4fe91bf954bf1be9809e7d8308960f513 |
+
+## T39 closure
+
+All nine source-ordered S chains are closed. The complete scoped set contains
+86 unique original nodes: 81 new matches and five retained matches. Global
+progress is 978 -> 1,059/1,992. Each label is individually complete in the
+inventory and has an exact receiving S; no scoped unfinished node remains.
+Retained labels are DuplicateEnemyObj, FSLoop, FlmEx, NoRunCode and
+EraseEnemyObject. Dependency reuse receives no duplicate completion credit.
+
+| Chain | Scoped | New matches |
+| --- | ---: | ---: |
+| M2 T39 S1 | 15 | 12 |
+| M2 T39 S2 | 5 | 5 |
+| M2 T39 S3 | 14 | 14 |
+| M2 T39 S4 | 8 | 8 |
+| M2 T39 S5 | 9 | 9 |
+| M2 T39 S6 | 20 | 20 |
+| M2 T39 S7 | 4 | 3 |
+| M2 T39 S8 | 4 | 4 |
+| M2 T39 S9 | 7 | 6 |
+
+The final integrated matrix executes actual shared C children, with no
+recorded-return substitution. It complements the source-node caller/data
+proofs and continues to expose unproved downstream bodies.
+
+| Original route family | Actual matches | Remaining differences |
+| --- | ---: | ---: |
+| loop | 192/192 | 0 |
+| stream | 160/160 | 0 |
+| init | 220/220 | 0 |
+| common | 104/104 | 0 |
+| spiny | 36/160 | 124 |
+| firebar | 80/80 | 0 |
+| fish | 304/304 | 0 |
+| bowser-flame | 320/320 | 0 |
+| fireworks | 240/240 | 0 |
+| bullet-swim | 364/364 | 0 |
+| group | 230/230 | 0 |
+| small-init | 392/392 | 0 |
+| platform-init | 480/480 | 0 |
+| actor-dispatch | 42/360 | 318 |
+| normal-actor | 58/252 | 194 |
+| special-actor | 32/184 | 152 |
+
+Total 3,254/4,042 actual comparisons match; 788 remain. All 3,222 matches
+from the S8 baseline are retained. Differences remain within Spiny (124),
+actor/retainer children (318), normal-actor/movement children (194), and
+special actor/platform children (152). These are comparison cases, not node
+counts. They retain their original source-order responsibility; no ancestor
+closure certifies an unproved descendant or full-game equivalence.
+
+S9's final 88-unit strict C90 x86/x64 build, DOS16 link, native caller and
+cross-chain regressions, hidden-window probes, platform-purity check and
+three recorded executable hashes form this T-level delivery. Earlier accepted
+S proofs are reused without repeating each node's lifecycle. Legacy platform
+child seams, source scratch, graphics/collision/audio gaps, existing native
+star-timer/Bowser failures and DOS link-only limits remain explicit.
+
+T39 is closed, while M2 remains incomplete. The next queued source slice
+begins MovePodoboo at line 9212 and includes the whole Hammer Bro movement
+phase. No T40 packet is admitted by this closure; its exact nodes and S
+ownership must be registered under the continuing M2 mandate before editing.

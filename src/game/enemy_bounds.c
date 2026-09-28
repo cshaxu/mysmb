@@ -1,3 +1,4 @@
+#include "game/enemy/platform.h"
 #include "game/objects.h"
 #include "game/world/world.h"
 
@@ -14,59 +15,43 @@ enum {
     MYSMB_BOUNDING_BOX_ENEMY = 0x04b0U
 };
 
-/* ROM GetXOffscreenBits, restricted to the enemy coordinate arrays.  The
- * source divides the distance from each horizontal screen edge into eight
- * pixel bands and uses XOffscreenBitsData to hide only the affected sprite
- * columns. */
+/* Original horizontal table byte. LargePlatformBoundBox consumes the raw
+ * byte; the ordinary offscreen composition consumes its high nibble.
+ * This value helper retains the existing const ABI; original scratch writes
+ * remain the separately tracked GetXOffscreenBits obligation. */
+static mysmb_u8 enemy_x_offscreen_raw(const struct mysmb_game *game,
+                                     mysmb_u8 slot)
+{
+    static const mysmb_u8 bits[16] = {
+        0x7fU,0x3fU,0x1fU,0x0fU,7U,3U,1U,0U,
+        0x80U,0xc0U,0xe0U,0xf0U,0xf8U,0xfcU,0xfeU,0xffU
+    };
+    static const mysmb_u8 defaults[3] = {7U,15U,7U};
+    mysmb_u8 edge, difference, page, borrow, index, value;
+    for (edge = 1U;; --edge) {
+        difference = (mysmb_u8)(game->ram[0x071cU + edge] -
+                                  game->ram[MYSMB_ENEMY_X + slot]);
+        borrow = game->ram[0x071cU + edge] <
+                 game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U;
+        page = (mysmb_u8)(game->ram[0x071aU + edge] -
+                            game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
+        index = defaults[edge];
+        if ((page & 0x80U) == 0U) {
+            index = defaults[(mysmb_u8)(edge + 1U)];
+            if (page == 0U && difference < 0x38U) {
+                index = (mysmb_u8)(difference >> 3U);
+                if (edge == 0U) index = (mysmb_u8)(index + 8U);
+            }
+        }
+        value = bits[index];
+        if (value != 0U || edge == 0U) return value;
+    }
+}
+
 mysmb_u8 mysmb_objects_get_enemy_x_offscreen_bits(
     const struct mysmb_game *game, mysmb_u8 slot)
 {
-    static const mysmb_u8 right_bits[4] = { 0x07U, 0x03U, 0x01U, 0x00U };
-    /* RunOffscrBitsSubs shifts GetXOffscreenBits right four places before
-     * GetOffScreenBitsSet combines it with the vertical nybble. */
-    static const mysmb_u8 left_bits[8] = {
-        0x08U, 0x0cU, 0x0eU, 0x0fU, 0x0fU, 0x0fU, 0x0fU, 0x0fU
-    };
-    mysmb_u8 difference;
-    mysmb_u8 page_difference;
-    mysmb_u8 borrow;
-    mysmb_u8 index;
-
-    /* First pass: the ROM begins at ScreenRight. */
-    difference = (mysmb_u8)(game->ram[0x071dU] - game->ram[MYSMB_ENEMY_X + slot]);
-    borrow = game->ram[0x071dU] < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U;
-    page_difference = (mysmb_u8)(game->ram[0x071bU] -
-                                  game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
-    /* GetXOffscreenBits returns the source table byte; RunOffscrBitsSubs
-     * shifts its right-edge high nibble into the final low nibble. */
-    /* GetXOffscreenBits uses the right edge first.  A positive page
-     * difference means this object lies a page to its left: the ROM loads
-     * XOffscreenBitsData[$07] (zero) and continues with the left edge.
-     * Only a negative difference is beyond the right edge. */
-    if ((page_difference & 0x80U) != 0U) return 0x0fU;
-    if (page_difference == 0U) {
-        index = (mysmb_u8)(difference >> 3U);
-        if (index <= 3U && right_bits[index] != 0U) return right_bits[index];
-    }
-
-    /* The source only evaluates the left boundary when the right pass is
-     * fully onscreen. */
-    difference = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_X] -
-                             game->ram[MYSMB_ENEMY_X + slot]);
-    borrow = game->ram[MYSMB_SCREEN_LEFT_X] < game->ram[MYSMB_ENEMY_X + slot] ? 1U : 0U;
-    page_difference = (mysmb_u8)(game->ram[MYSMB_SCREEN_LEFT_PAGE] -
-                                  game->ram[MYSMB_ENEMY_PAGE + slot] - borrow);
-    if ((page_difference & 0x80U) != 0U) return 0U;
-    /* GetXOffscreenBits returns its source byte in A, but
-     * RunOffscrBitsSubs shifts that byte four places before it becomes the
-     * horizontal low nibble of SprObject_OffscrBits.  An object a complete
-     * page beyond the left edge therefore contributes $0f, never $ff:
-     * returning $ff here spuriously asserted the vertical $f0 mask and made
-     * an otherwise visible power-up ineligible for PlayerEnemyCollision. */
-    if (page_difference != 0U) return 0x0fU;
-    index = (mysmb_u8)(difference >> 3U);
-    if (index > 7U) index = 7U;
-    return left_bits[index];
+    return (mysmb_u8)(enemy_x_offscreen_raw(game, slot) >> 4U);
 }
 
 /* ROM GetEnemyOffscreenBits / GetOffScreenBitsSet.  The object RAM stores
@@ -111,8 +96,8 @@ mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(
 /* ROM GetEnemyBoundBox / GetMaskedOffScrBits.  It is kept in a separate
  * compilation unit so the 16-bit OpenNT compiler can retain objects.c below
  * its per-segment code limit. */
-void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
-                                             mysmb_u8 slot)
+static void enemy_masked_box(struct mysmb_game *game, mysmb_u8 slot,
+                              mysmb_u8 left_mask, mysmb_u8 right_mask)
 {
     mysmb_u8 x_difference;
     mysmb_u8 page_difference;
@@ -129,9 +114,9 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
     }
     page_difference = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + slot] -
                                   game->ram[MYSMB_SCREEN_LEFT_PAGE] - borrow);
-    mask = 0x44U;
+    mask = left_mask;
     if (page_difference < 0x80U && (page_difference != 0U || x_difference != 0U)) {
-        mask = 0x48U;
+        mask = right_mask;
     }
     masked = (mysmb_u8)(mask & game->ram[MYSMB_ENEMY_OFFSCREEN_BITS]);
     game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] = masked;
@@ -147,6 +132,39 @@ void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
         game->ram[0x03aeU], game->ram[0x03b9U]);
 
+    mysmb_world_clip_bounding_box_to_screen(game, address,
+        game->ram[MYSMB_ENEMY_PAGE + slot], game->ram[MYSMB_ENEMY_X + slot]);
+}
+
+/* Existing common box/clip children retain their own conformance status. */
+void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *game,
+                                             mysmb_u8 slot)
+{
+    enemy_masked_box(game, slot, 0x44U, 0x48U);
+}
+
+/* SmallPlatformBoundBox selects the original horizontal-only masks. */
+void mysmb_platform_box_small(struct mysmb_game *game, mysmb_u8 slot)
+{
+    enemy_masked_box(game, slot, 4U, 8U);
+}
+
+/* LargePlatformBoundBox uses the raw horizontal byte, never the composed
+ * nibble: $F0/$F8/$FC are still partial visibility, while $FE/$FF hide the box. */
+void mysmb_platform_box_large(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u16 address;
+    address = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
+    if (enemy_x_offscreen_raw(game, slot) >= 0xfeU) {
+        game->ram[address] = 0xffU;
+        game->ram[address + 1U] = 0xffU;
+        game->ram[address + 2U] = 0xffU;
+        game->ram[address + 3U] = 0xffU;
+        return;
+    }
+    mysmb_world_set_bounding_box(game, address,
+        game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
+        game->ram[0x03aeU], game->ram[0x03b9U]);
     mysmb_world_clip_bounding_box_to_screen(game, address,
         game->ram[MYSMB_ENEMY_PAGE + slot], game->ram[MYSMB_ENEMY_X + slot]);
 }
