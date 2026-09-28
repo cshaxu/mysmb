@@ -12,8 +12,9 @@ The contiguous slice has 88 labels. S1 also receives the already identified
 AreaDataOfsLoopback consumer dependency (original transfer-113), plus
 KillAllEnemies/KillLoop, required by ExecGameLoopback's immediate caller.
 The later Bowser slice retains their dependency and maintenance evidence,
-without counting them as new completions. Total scope is 91 unique labels,
-all currently open with M2 T19 S5. Expected new 91, maximum 975 / 1,992.
+without counting them as new completions. Initial scope was 91 unique labels,
+then open with M2 T19 S5, maximum 975 / 1,992. S6 subsequently receives
+three mandatory duplicate-child nodes: updated scope 94, maximum 978 / 1,992.
 Only S1 receives implementation custody now; future rows retain T19 S5
 until admission. Historical T19 work remains evidence, not this active plan.
 
@@ -32,7 +33,7 @@ its many child boundaries, rather than just three textual labels.
 | S3 | Initializer checkpoint and vector | enemy/init.c | 3 / 3 | `CheckpointEnemyID`, `InitEnemyRoutines`, `NoInitCode` |
 | S4 | Common enemy initializers and shared reset entries | enemy/init_targets.c | 23 / 23 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitVStf`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
 | S5 | Lakitu/Spiny allocation and movement setup | enemy/frenzy.c | 13 / 13 | `PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`, `RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`, `SpinyRte`, `ChpChpEx` |
-| S6 | Firebar initializer data and entries | enemy/init_targets.c | 4 / 4 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar` |
+| S6 | Firebar initializers and mandatory duplicate child | enemy/init_targets.c | 7 / 7 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx` |
 | S7 | Flying Cheep-Cheep complete initializer | enemy/frenzy.c | 10 / 10 | `FlyCCXPositionData`, `FlyCCXSpeedData`, `FlyCCTimerData`, `InitFlyingCheepCheep`, `MaxCC`, `GSeed`, `RSeed`, `D2XPos1`, `D2XPos2`, `FinCCSt` |
 
 ## Implementation and verification contracts
@@ -958,3 +959,117 @@ not full-game certification.
 | mysmb16.exe | 254769 | 82ccf7ec3012ff5952ad96b2129ce5f6830f1d6d65bdee710fd99f063996fbcf |
 | mysmb32.exe | 337896 | 63912054d168cfdfbd5cb41c2d711732cbc8ccd6dd4bb15590d9590a06fb6e17 |
 | mysmb64.exe | 344978 | 5bbbb2061c9398d361107af4d3fa8c117d23cff1a922e246b36e773ee68b987c |
+
+## S6 admission: firebar initialization and duplicate dependency
+
+After S5 commit 5d7ead6, coordinator accepts transfer-170 from T19 S5.
+The four original S6 labels are joined by DuplicateEnemyObj, FSLoop and FlmEx:
+InitLongFirebar directly calls this missing native child. These three dependency
+nodes are admitted here rather than adding a no-op or fabricated substitute.
+The later Bowser slice retains their original source position and maintenance
+obligation, reuses this child, and must not count them again. T38's initial
+91-node forecast becomes 94 unique labels, maximum 978/1,992; S7 remains ten.
+This is the same immediate-dependency rule already applied to the S1 loop.
+
+All seven labels in the updated S6 row are open: incoming 961/1,992, seven
+expected, maximum 968. Shared enemy/init_targets.c owns the firebar entries
+$C44F-$C487 and duplicate dependency $C575-$C59C (exact symbol/ROM bounds are
+checked before credit). Entry is the original initializer vector, IDs $1B-$1F;
+long entry calls the shared duplicate child before continuing the short entry.
+Exit uses the existing TallBBox2 box-only tail, with no new credit for that tail.
+
+Restore both five-byte data tables, ID-minus-$1B indexing after the child,
+low spin-state clear only, Y/X plus four with carry to page, and unchanged
+unrelated flags/state/vertical fields. The duplicate child scans source RAM
+with byte-sized Y, writes the duplicate offset and high-bit parent flag, copies
+coordinates, enables the parent and sets duplicate high-Y. Do not introduce a
+six-slot cap absent from the original. Bowser's caller and actor/OAM semantics
+remain outside this S; wire its child only during its own source admission.
+
+ROM proof uses the retained initializer records plus bounded NMI RAM variants
+for every firebar ID, fractional sentinels, coordinate carry/wrap and duplicate
+selection. Compare actual child results; no original PC/stack/ROM patching.
+Native proof independently checks full-RAM footprints and duplicate aliases,
+then cross-width C90 builds, DOS16 link, platform purity, hidden-window probes
+and three owner-authorized EXEs. Similar-issue sweep covers both source callers
+of DuplicateEnemyObj, vector firebar entries and the TallBBox2 consumers.
+
+The existing owner-local ROM/listing remains research/build input, with no
+third-party implementation import. New records, logs and intermediates stay
+below ignored build/m2-t38-s6 with a four-MB raw budget and twenty-second
+recorder timeouts; S6 owns cleanup. Stop on unadmitted repairs, hidden mismatch,
+reference mutation or platform game logic. Closure requires all seven exact
+node dispositions, both proof tracks, ledger/tracker and three artifact records.
+
+## S6 original firebar and duplicate proof
+
+All seven received nodes are complete: four planned firebar data/entry nodes
+and three admitted immediate-dependency nodes. Progress is 961 -> 968/1,992,
+with no scoped transfer. T38's updated total is 94, maximum 978; S7 retains
+ten flying-fish nodes. The later Bowser caller must reuse the duplicate child
+and cannot count these dependency nodes a second time.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| FirebarSpinSpdData | $C44F | All five speed bytes bound to original ROM and their five consuming IDs; match |
+| FirebarSpinDirData | $C454 | All five direction bytes bound to original ROM and their five consuming IDs; match |
+| InitLongFirebar | $C459 | Invoke original duplicate child before entering short initialization; duplicate retains pre-adjustment coordinates; match |
+| InitShortFirebar | $C45C | Clear only low spin state; index by post-child ID minus $1B, write spin fields, add four to Y/X with page carry, then box-only tail; match |
+| DuplicateEnemyObj | $C575 | Scan for zero flag, store duplicate offset/high-bit parent flag, copy page/X, enable parent, set duplicate high-Y and copy Y in exact order; match |
+| FSLoop | $C577 | Byte-sized ascending scan without an invented slot-count bound; both branch directions execute; match |
+| FlmEx | $C59C | Return preserves the caller slot and unrelated RAM; actual long-entry completion includes this shared child exit; match |
+
+Actual original/native comparison passes 100/100 across x86/x64: ten retained
+S3 firebar scenarios plus forty new RAM-only NMI scenarios, each on both
+widths. Every firebar ID, both initializer entries, coordinate wrap/page carry,
+fractional/vertical sentinels and different duplicate slots are covered. No
+child-return substitution is used. All five code labels execute, both five-byte
+tables match the original ROM and native constants, the duplicate scan's
+conditional branch executes both outcomes, and both call/tail edges are
+verified. Forty observer-free runs produce byte-identical frame records.
+
+The focused mysmb.firebar-initialization-chain test passes 9,216 independent
+full-RAM footprints per width: all five IDs, all six parent slots and all
+coordinate bytes, plus direct duplicate scans for all 256 byte-sized target
+indices. The latter are deliberate native boundary tests, not a claim that
+every such index occurs during ordinary gameplay. Original retained routes
+also exercise the scan beyond the normal five actor slots. Hardware return
+stack is excluded from reference comparison; mapped game RAM $0109-$0139 is
+retained. No original PC, stack, ROM or result is patched.
+
+All 580 prior actual matches remain. The cross-chain matrix now has 612
+matches: loop 166/192, parser 150/160 (was 138), full initializer 156/220
+(was 136), prior common cases 104/104 and Lakitu/Spiny 36/160. The latter's
+124 PlayerLakituDiff scratch differences are unchanged. Forty related native
+regression runs preserve 38 passes and the two existing Bowser exit-4 failures.
+This S does not claim full-game behavior or repair those other children.
+
+All 85 shared C units compile under strict C90 for x86/x64. Both self-tests,
+bounded hidden-window responsiveness checks and platform-purity checks pass.
+DOS16 links with the existing OLDNAMES warning; this remains link-only, without
+DOS runtime, resource-binding, playability or physical 486 certification.
+
+Similar-issue sweep finds four short and one long vector entry, two original
+DuplicateEnemyObj callers (long firebar and the future Bowser initializer),
+and the shared TallBBox2 consumers. The existing box-only tail is reused,
+without generic flag/state/vertical resets. Bowser's legacy initializer and
+both actors' later OAM/movement bodies remain for their planned source slices;
+no host adapter or unadmitted caller is changed.
+
+Reproduce with the extended enemy_init_fixture.h cases 162 through 201 and
+reference_frame_recorder --fixture=t38-init=N --enemy-init-snapshot plus
+--control-children; record --pc-coverage separately. Compare snapshots using
+enemy_loop_actual_check with ordinary shared objects, and run
+firebar_initialization_smoke. Retained S3 cases 54 through 63 cover the original
+five IDs in both normal/special slots. Logs, records, source audit and build
+summaries stay below ignored build/m2-t38-s6; raw evidence is below 0.6 MB of
+the four-MB budget, with twenty-second recorder timeouts. Existing owner-local
+ROM/listing provenance is unchanged; no third-party implementation is imported.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255089 | 20fd70eb82c4528c554e4c7ecbb1532ddaf7a7bfe93b080a903bf0e508d1c1a8 |
+| mysmb32.exe | 337962 | 3dbe7c6d63285fa32506ad941e61c4d00696474ae898836f0a614aac68d0662d |
+| mysmb64.exe | 345555 | 5bc98c329aaf99e5da997b2cf662b75943a30be0c26f879d2642972af1add01b |

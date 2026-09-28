@@ -2,33 +2,38 @@
 
 ## Current Work
 
-**M2 T38 S5 is closed at 961 / 1,992: thirteen Lakitu/Spiny caller nodes proven; child differences remain.**
+**M2 T38 S6 is closed at 968 / 1,992: all seven firebar/duplicate nodes proven by actual original comparisons.**
 
-## M2 T38 S5 Packet
+## M2 T38 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S5, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after S4 commit 608e036; coordinator accepts transfer-169. |
-| Objective | Restore the thirteen planned Lakitu/Spiny allocation, scratch-data and egg-setup nodes. |
-| Non-goals | No unadmitted child interior, frenzy dispatcher, actor movement or platform gameplay repair. |
-| Reference Baseline | 948 / 1,992; thirteen scoped open labels, thirteen expected, maximum 961. Exact names in S5 plan and ledger. |
-| Candidate Proposal | [S5 Lakitu/Spiny chain](../proposals/m2/t38-enemy-stream-initialization.md#s5-admission-lakitu-and-spiny-allocation-chain). |
-| Files And ABI Surface | Shared enemy/frenzy.c and child entries, focused tests and recorder, ledger and three EXEs. |
+| Identifier Mode | M2 T38 S6, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after S5 commit 5d7ead6; coordinator accepts transfer-170 including missing immediate dependency. |
+| Objective | Restore four firebar initializer/data nodes and the three-node DuplicateEnemyObj dependency. |
+| Non-goals | No Bowser caller, actor/OAM, flying fish or platform game logic repair. |
+| Reference Baseline | 961 / 1,992; seven scoped open labels, seven expected, maximum 968. Exact names in S6 plan and ledger. |
+| Candidate Proposal | [S6 firebar and duplicate chain](../proposals/m2/t38-enemy-stream-initialization.md#s6-admission-firebar-initialization-and-duplicate-dependency). |
+| Files And ABI Surface | Shared enemy/init_targets.c/h, focused tests and recorder fixtures, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original table/branch/write/call audit and NMI child boundaries; separate native tests, actual-child residuals, cross-width builds, DOS link and purity. |
-| Expected Markers | Descending scans, timer and counter wrap, scratch $01-$03 order, ObjectOffset, SetupLakitu/PutAtRightExtent/PlayerLakituDiff/SmallBBox calls and rightward egg state. |
+| Verification | Original data/write/call audit and actual NMI comparisons; independent full-RAM native tests, cross-width builds, DOS link and purity. |
+| Expected Markers | Original ID indexing, duplicate scan and parent flag, fractional clear, byte wrap/page carry and box-only tail. |
 | Asset Needs | Existing owner-local ROM/listing and retained records; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Thirteen exact dispositions, dual proof, named child gaps and artifact hashes. |
+| Reporting Requirements | Seven exact dispositions, dual proof, retained child gaps and artifact hashes. |
 | Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | All thirteen nodes proven or exact accepted transfer; dual evidence, tracker and ledger agree. |
+| Exit Criteria | All seven nodes proven or exact accepted transfer; dual evidence, tracker and ledger agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | All handler callers, both slot scans, PRNG scratch consumers and declared child boundaries. |
+| Similar-Issue Sweep | Firebar vector entries, both duplicate source callers, source spin aliases and TallBBox2 consumers. |
 
 
 
 
 
+
+
+S6 closure: [firebar and duplicate proof](../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
+100/100 actual scoped comparisons; parser 150/160, initializer 156/220.
+Three EXEs refreshed; all 580 prior actual matches retained; DOS link-only.
 
 S5 closure: [Lakitu/Spiny caller proof](../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof).
 160 caller matches, 36 actual matches and 124 retained distance-child differences.
@@ -47,7 +52,7 @@ S2 closure: [parser proof](../proposals/m2/t38-enemy-stream-initialization.md#s2
 
 S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
-T38 S5 is closed; S6 firebar initialization is next and not yet admitted.
+T38 S6 is closed; S7 flying-fish initialization is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.

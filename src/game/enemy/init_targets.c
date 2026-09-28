@@ -235,23 +235,42 @@ void mysmb_enemy_init_lakitu(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_enemy_setup_lakitu(game, slot);
 }
 
-/* Original $C459/$C45C entries; duplicate allocation remains pending. */
+/* ROM $C575-$C59C DuplicateEnemyObj / FSLoop / FlmEx. The source uses
+ * byte-sized Y and scans RAM until zero, without a six-slot clamp. */
+void mysmb_enemy_duplicate_object(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 duplicate;
+    duplicate = 0U;
+    while (game->ram[MYSMB_ENEMY_FLAG + duplicate] != 0U)
+        duplicate = (mysmb_u8)(duplicate + 1U);
+    game->ram[0x06cfU] = duplicate;
+    game->ram[MYSMB_ENEMY_FLAG + duplicate] = (mysmb_u8)(slot | 0x80U);
+    game->ram[MYSMB_ENEMY_PAGE + duplicate] = game->ram[MYSMB_ENEMY_PAGE + slot];
+    game->ram[MYSMB_ENEMY_X + duplicate] = game->ram[MYSMB_ENEMY_X + slot];
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y_HIGH + duplicate] = 1U;
+    game->ram[MYSMB_ENEMY_Y + duplicate] = game->ram[MYSMB_ENEMY_Y + slot];
+}
+
+/* ROM $C459/$C45C entries. Long falls through short after the shared child. */
 void mysmb_enemy_init_firebar_entry(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 long_entry)
 {
     static const mysmb_u8 spin_speed[5] = { 0x28U, 0x38U, 0x28U, 0x38U, 0x28U };
     static const mysmb_u8 spin_direction[5] = { 0U, 0U, 0x10U, 0x10U, 0U };
-    mysmb_u8 old_x = game->ram[MYSMB_ENEMY_X + slot];
-    mysmb_u8 index = long_entry != 0U ? 4U :
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_ID + slot] - 27U);
-    mysmb_enemy_init_legacy_defaults(game, slot);
+    mysmb_u8 old_x;
+    mysmb_u8 index;
+    if (long_entry != 0U) mysmb_enemy_duplicate_object(game, slot);
+    /* FirebarSpinState_Low aliases Enemy_X_Speed. Do not reset high spin
+     * state, vertical force, actor state or direction through generic defaults. */
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    index = (mysmb_u8)(game->ram[MYSMB_ENEMY_ID + slot] - 0x1bU);
     game->ram[MYSMB_FIREBAR_SPIN_SPEED + slot] = spin_speed[index];
     game->ram[MYSMB_FIREBAR_SPIN_DIRECTION + slot] = spin_direction[index];
     game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 4U);
+    old_x = game->ram[MYSMB_ENEMY_X + slot];
     game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
     if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    mysmb_enemy_init_tall_box_only(game, slot);
 }
 
 /* Legacy platform defaults: no ROM conformance credit. */

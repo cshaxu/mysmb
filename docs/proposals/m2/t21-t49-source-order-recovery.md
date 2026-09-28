@@ -47,7 +47,7 @@ boundary.
 | T35 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |
 | T36 | Blocks, coins, brick pieces and misc allocation | 6730–7200 | 56 |
 | T37 | Power-up actor tail, blocks and movement/gravity primitives; receives T36 PowerUpObjHandler boundary exception | 7201–7787; entry 7184 | 74 |
-| T38 | Enemy stream, records, slots and initialization; complete flying-fish tail | 7788–8528; loop dependencies below | 88 + 3 dependencies |
+| T38 | Enemy stream, records, slots and initialization; complete flying-fish tail | 7788–8528; loop and duplicate dependencies below | 88 + 6 dependencies |
 | T39 | Enemy groups, frenzy and special initialization; begins InitBowser | 8529–9300 | 95 |
 | T40 | Normal, defeated and swimming enemy movement | 9301–10100 | 110 |
 | T41 | Platforms, Bowser flame, fireworks and remaining actors | 10101–11084 | 121 |
@@ -788,3 +788,8 @@ completion subset.  The admitted packet and ledger run carry the same names
 and counts.  There is no standalone mapping, migration, audit, operations, or
 paperwork S unless it is an explicit zero-credit chain blocked by a named
 external dependency.  Existing historical S/P evidence stays immutable.
+
+T38 S6 admits DuplicateEnemyObj, FSLoop and FlmEx as the missing immediate
+InitLongFirebar dependency. The original T39 source span retains those three
+labels for reuse/maintenance, with no repeated completion credit. See the
+[T38 dependency receipt](t38-enemy-stream-initialization.md#s6-admission-firebar-initialization-and-duplicate-dependency).

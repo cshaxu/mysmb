@@ -4,7 +4,7 @@
 
 static unsigned char mysmb_enemy_init_slot(unsigned int n)
 {
-    return n < 2U ? 0U : (unsigned char)((n & 1U) ? 5U : 0U);
+    return n < 2U || n >= 162U ? 0U : (unsigned char)((n & 1U) ? 5U : 0U);
 }
 
 /* Controlled NMI RAM inputs. The original loop consumes EnemyFrenzyQueue;
@@ -16,7 +16,8 @@ static void mysmb_enemy_init_fixture(unsigned char *ram, unsigned int n)
     };
     unsigned char id, slot, i;
     mysmb_entrance_fixture(ram, 0U);
-    id = n < 110U ? (unsigned char)(n / 2U) : common_ids[(n - 110U) / 4U];
+    id = n >= 162U ? (unsigned char)(27U + (n - 162U) / 8U) :
+        (n < 110U ? (unsigned char)(n / 2U) : common_ids[(n - 110U) / 4U]);
     slot = mysmb_enemy_init_slot(n);
     ram[0x0eU] = 12U;
     ram[0x747U] = 0xffU;
@@ -49,7 +50,7 @@ static void mysmb_enemy_init_fixture(unsigned char *ram, unsigned int n)
         ram[0x6fU] = 4U;
         ram[0x6d7U] = 1U;
     }
-    if (n >= 110U) {
+    if (n >= 110U && n < 162U) {
         /* Added S4 cases retain original control flow while selecting both
          * Y signs, PRNG bit values and occupied/free frenzy at entry. */
         ram[0xcfU + slot] = ((n - 110U) & 2U) ? 0x78U : 0x70U;
@@ -60,6 +61,20 @@ static void mysmb_enemy_init_fixture(unsigned char *ram, unsigned int n)
         if (id == 17U) ram[0x6cbU] = ((n - 110U) & 2U) ? 0x11U : 0U;
         for (i = 0U; i < 8U; ++i)
             ram[0x7a7U + i] = ((n - 110U) & 2U) ? 0x20U : 0U;
+    }
+    if (n >= 162U) {
+        static const unsigned char positions[8] = {0U,1U,0xfbU,0xfcU,0xfdU,0xfeU,0xffU,0x80U};
+        unsigned int variant;
+        variant = (n - 162U) % 8U;
+        ram[0x0fU + 1U + variant % 5U] = 0U;
+        ram[0x87U + slot] = positions[variant];
+        ram[0xcfU + slot] = positions[7U - variant];
+        ram[0x6eU + slot] = (variant & 1U) ? 0xffU : 4U;
+        ram[0xa0U + slot] = 0x67U;
+        ram[0x434U + slot] = 0x39U;
+        ram[0x401U + slot] = 0x29U;
+        ram[0x1eU + slot] = 0x25U;
+        ram[0x46U + slot] = 0x41U;
     }
 }
 
@@ -91,7 +106,7 @@ static int mysmb_enemy_init_argument(const char *text)
         value = value * 10U + (unsigned int)(text[i++] - '0');
         ++digits;
     }
-    if (digits == 0U || text[i] != '\0' || value >= 162U) return 0;
+    if (digits == 0U || text[i] != '\0' || value >= 202U) return 0;
     return (int)value + 1;
 }
 #endif

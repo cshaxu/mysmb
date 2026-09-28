@@ -1641,7 +1641,7 @@ int main(int argument_count, char **arguments)
         block_scenario = mysmb_enemy_init_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
-            t26_fixture = (unsigned int)(2193 + block_scenario);
+            t26_fixture = (unsigned int)((block_scenario >= 163 ? 2273 : 2193) + block_scenario);
             transition_entry = 0xc26cu;
             continue;
         }
@@ -2266,6 +2266,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 2436u && t26_fixture <= 2475u)
+                    mysmb_enemy_init_fixture(driver->machine->ram,
+                        (unsigned int)(t26_fixture - 2274u));
                 else if (t26_fixture >= 2356u && t26_fixture <= 2435u)
                     mysmb_lakitu_spiny_fixture(driver->machine->ram,
                         (unsigned int)(t26_fixture - 2356u));
@@ -2572,13 +2575,14 @@ int main(int argument_count, char **arguments)
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
         if ((background_snapshot >= 4u && background_snapshot <= 33u) && movement_snapshot_path != NULL &&
-            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 2435u) {
+            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 2475u) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&
                 (background_snapshot != 33u || driver->machine->x ==
                     (t26_fixture == 2357u ? 5u : 0u)) &&
                 (background_snapshot != 32u || driver->machine->x ==
-                    mysmb_enemy_init_slot((unsigned int)(t26_fixture - 2194u))) &&
+                    mysmb_enemy_init_slot((unsigned int)(t26_fixture -
+                        (t26_fixture >= 2436u ? 2274u : 2194u)))) &&
                 (background_snapshot != 31u || driver->machine->x == ((t26_fixture-2114u)%8u==5u?5u:0u)) &&
                 (background_snapshot != 30u || driver->machine->x == 0u) &&
                 (background_snapshot != 29u || t26_fixture < 2010u || driver->machine->x == 1u) &&

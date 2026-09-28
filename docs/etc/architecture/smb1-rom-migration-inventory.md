@@ -1102,10 +1102,10 @@ The labels and branches behind every line remain open until individually bound b
 | 8377 | `SetSpSpd` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
 | 8383 | `SpinyRte` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
 | 8390 | `ChpChpEx` | M2 T38 S5 shared enemy/frenzy.c | ROM-match complete | [S5 Lakitu/Spiny caller proof](../../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof); child differences separately retained |
-| 8394 | `FirebarSpinSpdData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspinspddata) |
-| 8397 | `FirebarSpinDirData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspindirdata) |
-| 8400 | `InitLongFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initlongfirebar) |
-| 8403 | `InitShortFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initshortfirebar) |
+| 8394 | `FirebarSpinSpdData` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
+| 8397 | `FirebarSpinDirData` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
+| 8400 | `InitLongFirebar` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
+| 8403 | `InitShortFirebar` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
 | 8430 | `FlyCCXPositionData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccxpositiondata) |
 | 8436 | `FlyCCXSpeedData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccxspeeddata) |
 | 8441 | `FlyCCTimerData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flycctimerdata) |
@@ -1117,9 +1117,9 @@ The labels and branches behind every line remain open until individually bound b
 | 8513 | `D2XPos2` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-d2xpos2) |
 | 8519 | `FinCCSt` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-finccst) |
 | 8529 | `InitBowser` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbowser) |
-| 8551 | `DuplicateEnemyObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-duplicateenemyobj) |
-| 8553 | `FSLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fsloop) |
-| 8569 | `FlmEx` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flmex) |
+| 8551 | `DuplicateEnemyObj` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
+| 8553 | `FSLoop` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
+| 8569 | `FlmEx` | M2 T38 S6 shared enemy/init_targets.c | ROM-match complete | [S6 actual firebar/duplicate proof](../../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof); actual original RAM and full write footprints |
 | 8573 | `FlameYPosData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flameyposdata) |
 | 8576 | `FlameYMFAdderData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flameymfadderdata) |
 | 8579 | `InitBowserFlame` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initbowserflame) |

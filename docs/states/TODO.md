@@ -2,10 +2,10 @@
 
 ## Translation Debt
 
-- [ ] **Remaining initializer child bodies after S4:** Common initializers now match; the full vector still retains 84/220 actual child failures (piranha, frenzy generators, firebars, platforms and Bowser). Preserve source order: Lakitu/Spiny S5, firebars S6, flying fish S7; other children retain existing T19 S5 custody and later planned slices. [Current scope and evidence](../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof).
+- [ ] **Remaining initializer child bodies after S6:** Common and firebar initializers now match; the full vector retains 64/220 actual child failures (piranha, frenzy generators, platforms and Bowser). S7 handles flying fish; other bodies retain their existing source-order custody. [S6 evidence](../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
 
 
-- [ ] **Remaining parser descendants:** InitLakitu/KillLakitu rejection and vector scratch are fixed by S3/S4. Parser actual comparisons are now 138/160; 22 remaining initializer/group failures retain their existing custody and source slices. [Current proof and limits](../proposals/m2/t38-enemy-stream-initialization.md#s4-original-common-initializer-proof).
+- [ ] **Remaining parser descendants:** S6 improves actual parser comparisons to 150/160; ten remaining initializer/group failures retain their existing custody and source slices. [S6 evidence](../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
 
 
 - [ ] **Enemy successor scratch-state fidelity:** T38 S1 independently reproduces 180/192 integrated failures at $04-$07 in existing parser/initializer/actor-dispatch children. ProcessEnemyData and CheckpointEnemyID/InitEnemyRoutines await T38 S2/S3 admission; RunEnemyObjectsCore/JmpEO remain with existing T19 S5 for the later actor-dispatch slice. No child credit or waiver. The related bridge.c five-flag clear also remains with the later bridge caller slice; it must use the full kill-all semantics when migrated. [Exact scope and evidence](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).

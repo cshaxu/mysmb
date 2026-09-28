@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 961 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 968 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 923 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 916 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **961 / 1,992 (48.24%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **968 / 1,992 (48.59%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T38 S5 P1](../proposals/m2/t38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof)
-proves thirteen Lakitu/Spiny caller/data nodes with 160/160 caller comparisons.
-Actual children match 36/160; 124 scratch-distance differences remain with
-PlayerLakituDiff. All 544 prior actual matches are retained.
+Latest task review: [T38 S6 P1](../proposals/m2/t38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof)
+proves seven firebar/duplicate nodes with 100/100 actual scoped comparisons.
+All 580 prior actual matches remain; parser improves to 150/160 and the full
+initializer matrix to 156/220. Other child gaps remain explicit.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (961)
+## Completed matches (968)
 
 | ROM line | Node |
 | ---: | --- |
@@ -961,6 +961,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8377 | `SetSpSpd` |
 | 8383 | `SpinyRte` |
 | 8390 | `ChpChpEx` |
+| 8394 | `FirebarSpinSpdData` |
+| 8397 | `FirebarSpinDirData` |
+| 8400 | `InitLongFirebar` |
+| 8403 | `InitShortFirebar` |
+| 8551 | `DuplicateEnemyObj` |
+| 8553 | `FSLoop` |
+| 8569 | `FlmEx` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |
