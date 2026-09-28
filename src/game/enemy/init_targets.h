@@ -10,7 +10,6 @@ void mysmb_enemy_init_red_koopa(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_goomba(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_hammer_bro(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_bullet_bill(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_enemy_init_piranha_entry(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_podoboo(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_init_bloober(struct mysmb_game *game, mysmb_u8 slot);

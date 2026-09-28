@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T39 S4 is closed at 1,017 / 1,992: all eight grouped-enemy nodes proven.**
+**M2 T39 S5 is closed at 1,026 / 1,992: all nine initializer/frenzy nodes proven.**
 
-## M2 T39 S4 Packet
+## M2 T39 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S4, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after a44dd1a; coordinator accepts transfer-176. |
-| Objective | Restore all eight grouped enemy record nodes as one chain. |
-| Non-goals | No parser, movement, collision, graphics or platform gameplay repair. |
-| Reference Baseline | 1,009 / 1,992; eight scoped open labels, eight expected, maximum 1,017. Exact names in S4 plan and ledger. |
-| Candidate Proposal | [T39 S4 groups](../proposals/m2/t39-special-initialization-and-dispatch.md#s4-admission-grouped-enemy-records). |
-| Files And ABI Surface | Shared enemy/group.c, focused tests/recorder, ledger and three EXEs. |
+| Identifier Mode | M2 T39 S5, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 8f8a508; coordinator accepts transfer-177. |
+| Objective | Restore nine small-initializer and frenzy dispatch/stop nodes. |
+| Non-goals | No platform initializer, child actor/movement, collision, graphics or platform gameplay repair. |
+| Reference Baseline | 1,017 / 1,992; nine scoped open labels, nine expected, maximum 1,026. Exact names in S5 plan and ledger. |
+| Candidate Proposal | [T39 S5 initializers/frenzy](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-admission-small-initializers-and-frenzy-dispatch). |
+| Files And ABI Surface | Shared enemy/init_targets.c/h, init.c and frenzy.c; tests/recorder, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original scratch/branch/write/call audit and actual NMI comparisons; native matrix, cross-width builds, DOS link and purity. |
-| Expected Markers | Scratch $00-$03, species/Y/count selection, slots zero through four, coordinate carry, child order and one record advance. |
+| Verification | Original branch/write/vector/call audit; actual NMI and explicitly labeled residual RAM-input route; native matrix, builds, DOS link and purity. |
+| Expected Markers | Exact Piranha aliases, shared box-only tails, nested JumpEngine scratch, six selectors and Lakitu state writes. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Eight exact dispositions, dual proof, retained downstream gaps and artifact hashes. |
-| Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | Eight expected labels proven or exact accepted transfer; tracker/ledger and artifacts agree. |
+| Reporting Requirements | Nine exact dispositions, dual proof, residual-route boundary and retained child gaps, artifact hashes. |
+| Stop Conditions | Unadmitted repair, CPU/stack/ROM patch, hidden mismatches or platform gameplay. |
+| Exit Criteria | Nine expected labels proven or exact accepted transfer; tracker/ledger and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Group scratch/count users, record advancement and initializer child boundaries. |
+| Similar-Issue Sweep | Both Piranha callers, shared box tails, frenzy vector entries and state/flag consumers. |
+
+## S5 closure
+
+[Original initializer/frenzy proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof)
+records nine new matches, 392/392 actual comparisons and all 2,168 previous
+matches retained. Residual NoFrenzyCode input is explicitly bounded. Three
+EXEs are refreshed; existing child failures and DOS link-only limits remain.
 
 ## S4 closure
 
@@ -63,7 +70,7 @@ EXEs; the existing Bowser test failures and DOS link-only limit remain.
 
 ## Current sequence
 
-T39 contains nine planned S chains; S1-S4 are closed; S5 is next, not yet admitted. Follow the
+T39 contains nine planned S chains; S1-S5 are closed; S6 is next, not yet admitted. Follow the
 [queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
 beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 

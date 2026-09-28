@@ -48,6 +48,14 @@ enum {
     MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
 };
 
+/* ROM $C7DB SetBBox2: shared one-write tail. */
+static void mysmb_enemy_init_box_only(struct mysmb_game *game, mysmb_u8 slot,
+                                     mysmb_u8 box)
+{
+    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = box;
+}
+
+/* ROM $C787 InitPiranhaPlant, followed by SetBBox2. */
 void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
 {
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 1U;
@@ -56,7 +64,7 @@ void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
     game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
         (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
+    mysmb_enemy_init_box_only(game, slot, 9U);
 }
 /* Extracted legacy child bodies. Their write footprints are preserved for
  * S3 entry separation; later admitted initializer chains own ROM conformance.
@@ -118,10 +126,10 @@ void mysmb_enemy_init_normal(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_enemy_init_speed(game, slot, normal_x_speed[index]);
 }
 
-/* Existing external TallBBox2 tail $C7D9: one write, no new node credit. */
+/* ROM $C7D9 TallBBox2, selecting the shared SetBBox2 tail. */
 static void mysmb_enemy_init_tall_box_only(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    mysmb_enemy_init_box_only(game, slot, 3U);
 }
 
 /* Original InitRedKoopa entry $C31E. */
@@ -157,13 +165,6 @@ void mysmb_enemy_init_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
 }
 
-/* Original target entry $C787; extracted legacy body. */
-void mysmb_enemy_init_piranha_entry(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_enemy_init_legacy_defaults(game, slot);
-    mysmb_enemy_init_piranha_plant(game, slot);
-}
-
 /* Original target entry $C375. */
 void mysmb_enemy_init_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
 {
@@ -190,13 +191,12 @@ void mysmb_enemy_init_bloober(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_enemy_init_small_box(game, slot);
 }
 
-/* Original target entry $C7D1; extracted legacy body. */
+/* ROM $C7D1 InitJumpGPTroopa, followed by TallBBox2. */
 void mysmb_enemy_init_jump_green_ptroopa(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_enemy_init_legacy_defaults(game, slot);
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
     game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
+    mysmb_enemy_init_tall_box_only(game, slot);
 }
 
 /* Original target entry $C34A. */

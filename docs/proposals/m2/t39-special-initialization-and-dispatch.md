@@ -510,3 +510,132 @@ Three owner-authorized test artifacts are refreshed together:
 | mysmb16.exe | 255381 | 8b8ab34cb4db865ecabd9c27e87babe7f76b2daf93265e475341ce55cbd957c8 |
 | mysmb32.exe | 338083 | ca72eadfe0e50e3a4a52e79345d284ae0cbfe51b0c8e78afe0995f5bc8cad965 |
 | mysmb64.exe | 345664 | 3721e3bbcc654c3e7027a49579ba3b75dac022138432165cce2cc952f1090df1 |
+
+## S5 admission: Small initializers and frenzy dispatch
+
+After S4 commit 8f8a508, coordinator accepts transfer-177 from T19 S5 for the
+nine exact S5 table-row labels. All are open and expected new: baseline
+1,017/1,992, maximum 1,026. Shared owners are enemy/init_targets.c and
+frenzy.c, with narrow initializer-vector/header cleanup to remove the obsolete
+Piranha entry wrapper. The original range is $C787-$C7DE, including the six
+frenzy vector words and shared box-only tail.
+
+Restore Piranha's exact speed/state/move flag/down/up Y writes and shared
+SetBBox2 tail, without generic defaults. Jumping green Paratroopa sets direction
+and X speed before TallBBox2/SetBBox2 only. Frenzy dispatch writes its buffer,
+uses ID minus $12 and the original JumpEngine scratch/table before each child.
+EndFrenzy scans IDs in all six slots, sets matching Lakitu states to one even
+when inactive, then clears frenzy and only its own flag. No broader actors,
+platform initializers, moving/graphics/collision children or platform game
+logic are admitted.
+
+ROM proof audits branch/read/write/call order, all twelve vector bytes and
+actual entry/return RAM. Reuse earlier initializer/frenzy records and add
+bounded RAM-only cases for field preservation, Y wrap, all Lakitu patterns
+and all six dispatcher selectors. The $13 NoFrenzyCode selector is a residual
+vector entry: the outer initializer maps that ID to NoInitCode. To observe
+this original RTS without changing code, PC or stack, an explicitly labeled
+controlled-input case may replace only Enemy_ID at the naturally reached
+InitEnemyFrenzy boundary, before its first instruction and snapshot. It must
+run identically with and without observation and cannot be claimed as a natural
+outer-vector route. All other fixtures remain NMI RAM preparations. Child
+interiors such as PlayerLakituDiff retain their existing discrepancies.
+
+Operational proof uses full-RAM contracts, strict C90 x86/x64, DOS16 link,
+platform purity, hidden-window response and three authorized EXEs. Sweep both
+Piranha callers, shared box-only tails, all vector entries and EndFrenzy state/
+flag consumers. Existing owner-local provenance remains unchanged; no external
+implementation is imported. New records stay in ignored build/m2-t39-s5,
+four-MB raw budget, twenty-second timeout and S5 cleanup ownership. Stop on
+unadmitted repairs, hidden differences or CPU/ROM patching. S6-S9 retain custody.
+
+## S5 original small-initializer and frenzy proof
+
+All nine planned nodes close: 1,017 -> 1,026/1,992, no scoped transfer.
+T39 remains open; S6 platform initialization is next, not yet admitted.
+Admission gate confirms scope nine, expected nine, all incoming open and
+maximum 1,026. Transfer-177 registers each exact receiver before implementation.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| InitPiranhaPlant | $C787 | Exact speed/state/move flag/down/up Y writes, then SetBBox2; remove generic-default wrapper; match |
+| InitEnemyFrenzy | $C7A0 | Buffer write, six-way original vector and JumpEngine scratch before selected child; match |
+| NoFrenzyCode | $C7B7 | Original RTS reached with explicit residual RAM input at natural frenzy entry; no invented outer-vector route; match |
+| EndFrenzy | $C7B8 | Descending six-ID scan, Lakitu state writes, clear request and only controller flag; match |
+| LakituChk | $C7BA | Compare every slot ID with Lakitu, independently of its flag; match |
+| NextFSlot | $C7C6 | Decrement scan through zero, then clear buffer and controller flag; match |
+| InitJumpGPTroopa | $C7D1 | Direction two and speed $F8, then shared TallBBox2 tail without generic defaults; match |
+| TallBBox2 | $C7D9 | Load box three and enter shared SetBBox2 tail; match |
+| SetBBox2 | $C7DB | Single indexed box write, preserving every other RAM byte; match |
+
+Original/native actual comparison passes 392/392 across x86/x64, from 196
+controlled routes. All nine code labels and 37 instructions execute; both
+conditional branches take both outcomes. All twelve vector bytes match the
+owner ROM; each of six selectors has six original child-entry records with
+its exact $04-$07 JumpEngine scratch. The busy-timer routes isolate dispatch;
+previous initializer-family records retain actual child-body comparisons.
+No child-return substitution or scratch masking is used. Hardware-stack RAM
+is excluded while mapped $0109-$0139 variables remain compared.
+
+One residual source edge is explicitly bounded: outer InitEnemyRoutines maps
+ID $13 to NoInitCode, while the inner frenzy vector contains NoFrenzyCode.
+Six cases reach InitEnemyFrenzy naturally with ID $12, then supply $13 in its
+Enemy_ID RAM input before the first instruction and snapshot. This is a
+controlled function-input route, not a natural outer-vector or level-data
+claim. PC, return stack, ROM and jump table remain untouched. The same input
+is applied without observation; all 196 separate coverage runs produce equal
+frame records. Other cases use NMI RAM setup only.
+
+Piranha cases cover all six slots and eight boundary Y values, including
+subtraction underflow and checkpoint addition wrap. EndFrenzy records cover
+all 32 combinations of the five noncontroller Lakitu IDs; the sixth ID belongs
+to the stop controller in this natural queue route. Independent native tests
+cover all 64 ID masks and all 64 active/inactive flag masks in every controller
+slot, every Y byte, field preservation and all six busy-timer vector targets:
+27,684 complete-RAM contracts per width. These native inputs supplement,
+and do not replace, the original control-flow and write proof.
+
+Twelve focused initializer/stream tests per width pass with final objects.
+The full actual matrix is 2,602/2,766, retaining all 2,168 previous matches,
+adding 392 new roots and resolving 42 earlier caller differences. The remaining
+164 downstream differences retain their source-order owners.
+
+Endgame/layout/mode/Bowser regressions retain their established four passes
+and four star-timer exit-six / Bowser-damage exit-four failures. The additional
+Lakitu smoke still fails in its Spiny-generation assertion before EndFrenzy;
+the same diagnostic test against prior S4 and final S5 objects on both widths
+reports the identical failure (original test line 76). Only the source-invalid
+EndFrenzy expectation was corrected: Lakitu flags remain, states become one.
+No broader Lakitu/Spiny behavior is certified or repaired here.
+
+All 85 shared units pass strict C90 x86/x64 builds, self-tests and bounded
+hidden-window message probes. Platform purity passes. DOS16 links with the
+existing OLDNAMES warning and remains link-only, without runtime/graphics,
+resource binding or physical 486 certification. Gameplay changes are confined
+to shared enemy initialization and frenzy; platform code is unchanged.
+
+Similar-issue sweep: initializer-vector and area-object Piranha callers now
+share the exact existing body; the obsolete generic-default wrapper and its
+header declaration are removed. TallBBox2 callers (jumping green Paratroopa,
+SetupLakitu and firebar) share SetBBox2; existing common/firebar proofs stay
+valid. All five outer frenzy aliases share the six-entry nested vector; the
+residual sixth selector is documented above. EndFrenzy is called only by its
+initializer entry; the legacy smoke expectation is corrected without changing
+actor code. Remaining platform generic defaults stay with S6.
+
+Reproduce using small_initializers_fixture.h cases 0..195,
+--fixture=t39-small-init=N, --small-init-snapshot and --control-children;
+run --pc-coverage separately. Cases 166..171 are the explicitly controlled
+residual ID inputs. Feed root snapshots to enemy_loop_actual_check with final
+shared objects and original local PRG. Native target:
+mysmb.small-initializers-frenzy-chain. Provenance is unchanged; no third-party
+implementation is imported. Raw evidence stays in ignored build/m2-t39-s5,
+under 1.9 MB within the four-MB and twenty-second per-recorder budgets.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255377 | ef9a3a58a3b42046519a84f02fde29294d1ce1d4ed26c46cba328c07ccd0acb3 |
+| mysmb32.exe | 338112 | da2752dd7c677b4bce8dedc043cbb51b1ad6bf6a7c8656f25627cd045c11854a |
+| mysmb64.exe | 345692 | dcca155c00cf3a4309ad673c0e21a350cdf1478932ccf54ff801dbcbf95a41fb |

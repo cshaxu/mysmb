@@ -37,16 +37,28 @@ enum {
     MYSMB_SQUARE2_SOUND = 0x00feU,
     MYSMB_FIREWORKS_COUNTER = 0x06d7U
 };
-/* ROM InitEnemyFrenzy entry $C7A0. This extraction preserves the existing
- * child bodies; the nested JumpEngine scratch still requires its own audit. */
+/* ROM $C7AB frenzy vector: provenance data for JumpEngine scratch only. */
+static const mysmb_u16 frenzy_targets[6] = {
+    0xc3a4U, 0xc7b7U, 0xc4a8U, 0xc5a3U, 0xc63dU, 0xc69cU
+};
+
+/* ROM $C7A0 InitEnemyFrenzy. All declared selectors are $12 through $17. */
 void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 id;
+    mysmb_u16 target;
     id = game->ram[MYSMB_ENEMY_ID + slot];
     game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = id;
+    target = frenzy_targets[(mysmb_u8)(id - 0x12U)];
+    game->ram[4U] = 0xaaU;
+    game->ram[5U] = 0xc7U;
+    game->ram[6U] = (mysmb_u8)target;
+    game->ram[7U] = (mysmb_u8)(target >> 8U);
     switch (id) {
     case 0x12U:
         mysmb_enemy_init_lakitu_spiny_frenzy(game, slot);
+        break;
+    case 0x13U: /* NoFrenzyCode: original RTS without further writes. */
         break;
     case 0x14U:
         mysmb_enemy_init_flying_cheep_frenzy(game, slot);
@@ -411,8 +423,10 @@ void mysmb_enemy_init_bowser_flame_frenzy(struct mysmb_game *game,
         return;
     }
     mysmb_enemy_finish_flame(game, slot);
-}/* ROM EndFrenzy.  The stop controller clears every Lakitu, then clears its
- * persistent request and finally removes the controller object itself. */
+}
+
+/* ROM $C7B8 EndFrenzy: set every Lakitu state, including inactive slots,
+ * then clear the request and only the controller's own flag. */
 void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
 {
     mysmb_u8 slot;
@@ -420,11 +434,11 @@ void mysmb_enemy_end_frenzy(struct mysmb_game *game, mysmb_u8 controller_slot)
     for (slot = 6U; slot != 0U; ) {
         --slot;
         if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
-            game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
+            game->ram[MYSMB_ENEMY_STATE + slot] = 1U;
         }
     }
     game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-    if (controller_slot < 6U) game->ram[MYSMB_ENEMY_FLAG + controller_slot] = 0U;
+    game->ram[MYSMB_ENEMY_FLAG + controller_slot] = 0U;
 }
 /* ROM BulletBillCheepCheep.  The controller slot becomes the spawned actor;
  * water picks a unique height bit and land refuses a second frenzy bill. */

@@ -98,7 +98,7 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
         mysmb_enemy_init_bullet_bill(game, slot);
         return;
     case 13U:
-        mysmb_enemy_init_piranha_entry(game, slot);
+        mysmb_enemy_init_piranha_plant(game, slot);
         return;
     case 10U:
     case 11U:

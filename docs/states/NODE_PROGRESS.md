@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1017 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1026 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 867 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 858 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,017 / 1,992 (51.05%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,026 / 1,992 (51.51%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T39 S4 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s4-original-grouped-enemy-proof)
-proves eight grouped-enemy nodes with 230/230 actual comparisons and thirteen
-separately verified source entry gates. All 1,928 previous matches remain;
-the ten earlier parser differences are resolved. Downstream gaps stay open.
+Latest task review: [T39 S5 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof)
+proves nine initializer/frenzy nodes with 392/392 actual comparisons. All
+2,168 prior matches remain. Residual vector input and downstream failures
+are explicit in the proof; no platform gameplay changes are present.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1017)
+## Completed matches (1026)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1014,6 +1014,15 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8809 | `GrLoop` |
 | 8810 | `GSltLp` |
 | 8835 | `NextED` |
+| 8839 | `InitPiranhaPlant` |
+| 8855 | `InitEnemyFrenzy` |
+| 8872 | `NoFrenzyCode` |
+| 8877 | `EndFrenzy` |
+| 8879 | `LakituChk` |
+| 8884 | `NextFSlot` |
+| 8893 | `InitJumpGPTroopa` |
+| 8898 | `TallBBox2` |
+| 8899 | `SetBBox2` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

@@ -65,3 +65,9 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 - [ ] **PlayerLakituDiff original scratch and adjustment semantics:** T38 S5 caller proof retains 124/160 actual failures, all at RAM $00, while the child still uses a static adjustment table and simplified branches. Preserve its existing ledger receiver and later source-order admission; caller proof grants no child credit. [S5 evidence](../history/M2-T38-enemy-stream-initialization.md#s5-original-lakitu-spiny-proof).
 
 - [ ] **Star-flag timer native-test assertion:** T39 S2 runs the unchanged endgame timer-tick assertion against both S1 and S2 shared objects; both fail with exit six on x86/x64. Other endgame groups, including fireworks animation/initializer/stream, pass independently. Keep AwardGameTimerPoints/NoTTick with existing M2 T19 S5 custody until the planned T41 actor slice; compare the source behavior before deciding whether the fixture or implementation is wrong. [S2 evidence](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-original-fireworks-proof).
+
+- [ ] **Retained Lakitu smoke Spiny-generation failure:** T39 S5 compares the
+  same diagnostic assertion with S4 and S5 shared objects on x86/x64; all four
+  fail at original lakitu_smoke.c line 76, before EndFrenzy. Preserve the
+  existing Lakitu/Spiny source-order receivers. The nine initializer/frenzy
+  matches grant no child or full-actor credit. [S5 proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s5-original-small-initializer-and-frenzy-proof).
