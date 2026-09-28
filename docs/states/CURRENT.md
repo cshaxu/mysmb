@@ -4,6 +4,10 @@
 
 **M2 T32 S1 is active at 628 / 1,992: thirteen open player-control nodes, expected thirteen, maximum 641.**
 
+S1/P1 delivers the shared control owner and three refreshed EXEs with zero
+new node credit. Native tests/builds pass; actual original control-boundary
+comparisons retain child differences. Complete source branch proof is next.
+
 T31 is closed: its 31 planned nodes have scoped proof; 88 of 94 received
 labels are proven and six accepted unfinished enemy callers remain with
 T19 S5. Cross-chain child/output failures and DOS limitations remain recorded.

@@ -95,3 +95,77 @@ children from the caller, then restores the one common continuation. Tests
 must mutate child-return state to prove post-child reads and verify that
 climbing cannot bypass the common caller tail. These are source-derived
 requirements; the retained T31 vine failures are regression evidence only.
+
+## S1 implementation checkpoint: common player-control continuation
+
+PlayerCtrlRoutine now has one shared player_control.c owner. The movement
+and terrain children are extracted from player.c without admitting their
+full algorithm repair. Input decoding writes the original SavedJoypadBits
+on water suppression; crouch calculation moves to the movement child.
+All movement returns, including climbing, use one size/direction/scroll/
+offscreen/relative/bounding/terrain continuation. The duplicate post-terrain
+relative-position call is removed. Priority predicates and both wrapped
+CMP/BMI hole tests follow the source; CloudExit clears override, calls the
+extracted SetEntr child, then increments its returned alternate-entry byte.
+SetEntr's missing sprite-0 transition remains explicitly S2 work.
+
+The [independent caller test](../../../test/player_control_chain_smoke.c)
+passes under strict C90 on x86/x64: all 256 inputs in four states, all 65,536
+water high-Y/low-Y pairs, thirteen mode priority gates across every Y byte,
+and every high-Y value with cloud/timer/music/death combinations. Mutating
+child callbacks verify post-movement size/direction, post-terrain priority
+reads, exact six-child order and SetEntr-before-increment behavior.
+Production-linked player-route and area-initialization regressions plus the
+prior entry-chain callback suite pass on both widths. OpenNT large-model
+compilation passes for both changed shared modules (player.c retains its
+existing integral-conversion warning). Platform purity passes.
+
+Similar-issue sweep checks entry.c's normal/auto-control paths, player.c's
+vine/injury/flagpole/end-level/death callers and terminal_modes.c's automatic
+walk caller. All still enter the single shared control routine; no platform
+source changes. The full DOS and CMake source lists include the new owner.
+Original-ROM boundary proof and three-executable P delivery remain pending;
+all thirteen labels remain open and the count remains 628 / 1,992. Published
+assets are unchanged from T31; these uncommitted changes are not a release.
+
+## S1/P1: shared control owner and partial runtime delivery
+
+This P delivers the reviewed structural separation and caller repairs above,
+with all thirteen expected nodes still open. Expected S matches remain 13;
+actual newly certified matches for this P are zero (628 / 1,992 unchanged).
+S1 remains active until its original branch/caller proof is complete.
+
+The prior twenty-two original entrance snapshots are unchanged. Against the
+new shared core, 18 width comparisons match and 26 still fail. The vine
+cases no longer differ in bounding control `$0499` or the four box bytes;
+remaining differences include animation timer `$070c` and early scroll-position
+write `$0755`. Normal/pipe cases still expose `$00eb`, and NextArea still
+exposes its known silence-queue difference. These are retained failures,
+not evidence that the entrance route is fully correct.
+
+The new [production control checker](../../../test/player_control_snapshot_check.c)
+reads actual PlayerCtrlRoutine child entries/returns from the prior read-only
+ROM observer, binds local program data and runs the real native child chain.
+Seven original boundaries across both widths produce fourteen comparisons;
+all fourteen retain the documented `$00eb`, `$070c` and/or `$0755` differences.
+No scratch exclusion is broadened and no child return is substituted in this
+checker. The current evidence does not yet certify any S1 label.
+
+All 63 shared sources compile under strict C90 on x86/x64. Independent caller,
+production player-route, area-initialization and entry-chain tests pass in
+both widths. Full OpenNT DOS16 linking succeeds with its existing warnings;
+both Windows self-tests and two-second hidden-window/message probes pass.
+DOS remains link-only with no owner-data or 486 runtime claim. Platform purity
+and documentation governance pass. The three artifacts are refreshed:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257357 | 567dfcc5db5f63f0d385ee411bef6fc16e5e1d78145096494e2bb8543fc9c572 |
+| mysmb32.exe | 322723 | 7639f54632fa8d16ddcbdc60d91e83c1bcc186de3f537b5f4b4a5a52a2bb8cce |
+| mysmb64.exe | 330128 | e3b10754d60ab7bdd44ae92591e559b4d4d3999f797b8647ad451ed8e5e72c39 |
+
+Next within the same S: source-RAM control-entry fixtures for water/death,
+priority, high-Y hole and cloud branches; original child-entry/return audit
+and complete branch coverage. Do not absorb physics/OAM child repair or mark
+callback/native tests alone as ROM equivalence. All temporary outputs remain
+under the admitted ignored root; prior original recordings are reused read-only.

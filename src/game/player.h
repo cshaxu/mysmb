@@ -24,6 +24,10 @@ void mysmb_player_configure_horizontal(struct mysmb_game *game);
 void mysmb_player_update_animation_speed(struct mysmb_game *game,
                                          mysmb_u8 buttons);
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
+/* Original child boundaries; extraction alone does not certify interiors. */
+void mysmb_player_movement_subs(struct mysmb_game *game);
+void mysmb_player_background_collision(struct mysmb_game *game);
+void mysmb_player_set_entrance(struct mysmb_game *game);
 /* ROM $b069-$b07c Vine_AutoClimb. */
 void mysmb_player_step_auto_climb(struct mysmb_game *game);
 /* ROM $b0f4-$b138 PlayerChangeSize and $b139-$b154 PlayerFireFlower. */

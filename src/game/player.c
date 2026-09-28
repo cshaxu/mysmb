@@ -358,33 +358,6 @@ void mysmb_player_impose_friction(struct mysmb_game *game)
         (mysmb_u8)(0U - speed) : speed;
 }
 
-/* Translation of PlayerCtrlRoutine's input partition and ground crouch gate. */
-void mysmb_player_latch_input(struct mysmb_game *game, mysmb_u8 buttons)
-{
-    mysmb_u8 left_right;
-    mysmb_u8 up_down;
-
-    if (game->ram[MYSMB_AREA_TYPE] == 0U &&
-        (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-         game->ram[MYSMB_PLAYER_Y] >= 0xd0U)) {
-        buttons = 0U;
-    }
-    game->ram[MYSMB_PLAYER_A_B_BUTTONS] =
-        (mysmb_u8)(buttons & (MYSMB_BUTTON_A | MYSMB_BUTTON_B));
-    left_right = (mysmb_u8)(buttons & (MYSMB_BUTTON_LEFT | MYSMB_BUTTON_RIGHT));
-    up_down = (mysmb_u8)(buttons & (MYSMB_BUTTON_UP | MYSMB_BUTTON_DOWN));
-    if ((up_down & MYSMB_BUTTON_DOWN) != 0U &&
-        game->ram[MYSMB_PLAYER_STATE] == 0U && left_right != 0U) {
-        left_right = 0U;
-        up_down = 0U;
-    }
-    game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] = left_right;
-    game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] = up_down;
-    game->ram[MYSMB_PLAYER_CROUCHING] =
-        game->ram[MYSMB_PLAYER_SIZE] == 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        (up_down & MYSMB_BUTTON_DOWN) != 0U ? 4U : 0U;
-}
-
 /* Translation of PlayerPhysicsSub's Player_State == $03 branch. */
 void mysmb_player_configure_climb(struct mysmb_game *game)
 {
@@ -545,81 +518,21 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
 }
 
-/* Translation of PlayerCtrlRoutine's PlayerHole tail.  The falling player
- * reaches GameEngineSubroutine 6 only after the source's vertical threshold
- * and event-music gate, where GameCoreRoutine dispatches PlayerLoseLife. */
-static void mysmb_player_handle_hole(struct mysmb_game *game)
-{
-    mysmb_u8 threshold;
-    mysmb_u8 death_route;
-
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] < 2U) return;
-    game->ram[MYSMB_SCROLL_LOCK] = 1U;
-    threshold = 4U;
-    death_route = 0U;
-    if (game->ram[MYSMB_TIMER_EXPIRED] != 0U ||
-        game->ram[MYSMB_CLOUD_TYPE_OVERRIDE] == 0U) {
-        death_route = 1U;
-        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
-            if (game->ram[MYSMB_DEATH_MUSIC_LOADED] == 0U) {
-                game->ram[MYSMB_EVENT_MUSIC_QUEUE] = 1U;
-                game->ram[MYSMB_DEATH_MUSIC_LOADED] = 1U;
-            }
-            threshold = 6U;
-        }
-    }
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] < threshold) return;
-    if (death_route == 0U) {
-        game->ram[MYSMB_JOYPAD_OVERRIDE] = 0U;
-        game->ram[MYSMB_ALT_ENTRANCE] = 3U;
-        game->ram[MYSMB_DISABLE_SCREEN]++;
-        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_EVENT_MUSIC_BUFFER] != 0U) return;
-    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 6U;
-}
-
-/* PlayerCtrlRoutine -> PlayerMovementSubs ground/jump path currently admitted. */
-void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
+/* Existing movement child extracted from the combined control routine.
+ * Its physics/state algorithms retain the next source chain's proof status. */
+void mysmb_player_movement_subs(struct mysmb_game *game)
 {
     mysmb_u8 a_b;
     mysmb_u8 a_held;
     mysmb_u8 jump_height;
     mysmb_u8 player_state;
-    mysmb_u8 collision_result;
-
-    /* PlayerDeath jumps into PlayerCtrlRoutine after its engine-$0b guard,
-     * which deliberately skips the controller partition.  Death motion uses
-     * the input latched by the collision frame rather than a new host sample. */
-    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
-        mysmb_player_latch_input(game, buttons);
-    }
+    game->ram[MYSMB_PLAYER_CROUCHING] =
+        game->ram[MYSMB_PLAYER_SIZE] == 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
+        (game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] & MYSMB_BUTTON_DOWN) != 0U ? 4U : 0U;
     a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
     if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
         mysmb_player_configure_climb(game);
         mysmb_player_climb(game);
-        if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
-            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] >= 4U &&
-            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
-            if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
-                game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
-                if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
-                    collision_result = mysmb_player_check_head(game);
-                    if (collision_result != 2U) {
-                        collision_result = mysmb_player_check_feet(game);
-                        if (collision_result != 2U && collision_result != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE) {
-                            (void)mysmb_player_check_sides(game);
-                        }
-                    }
-                }
-            }
-        }
-        mysmb_oam_relative_player_position(game);
-        mysmb_world_set_bounding_box(game, MYSMB_PLAYER_BOUNDING_BOX,
-                                     game->ram[MYSMB_PLAYER_BOUND_BOX],
-                                     game->ram[MYSMB_PLAYER_RELATIVE_X],
-                                     game->ram[MYSMB_PLAYER_RELATIVE_Y]);
         return;
     }
     /* PlayerMovementSubs reloads this before dispatching every non-climbing
@@ -641,7 +554,7 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
      * ImposeFriction and movement. */
     mysmb_player_configure_horizontal(game);
     if (game->ram[MYSMB_PLAYER_STATE] == 0U || game->ram[MYSMB_SWIMMING] != 0U) {
-        mysmb_player_update_animation_speed(game, buttons);
+        mysmb_player_update_animation_speed(game, game->ram[0x06fcU]);
     }
     player_state = game->ram[MYSMB_PLAYER_STATE];
     if (player_state == 0U) {
@@ -699,26 +612,12 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
         mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
                                     0U, 4U, 0U);
     }
-    game->ram[MYSMB_PLAYER_BOUND_BOX] = 1U;
-    if (game->ram[MYSMB_PLAYER_SIZE] == 0U) {
-        game->ram[MYSMB_PLAYER_BOUND_BOX] =
-            game->ram[MYSMB_PLAYER_CROUCHING] != 0U ? 2U : 0U;
-    }
-    /* PlayerCtrlRoutine leaves Player_MovingDir untouched at zero speed;
-     * only a nonzero Y register reaches SetMoveDir before ScrollHandler.
-     * That retained direction selects the first input frame's friction. */
-    if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U) {
-        game->ram[MYSMB_PLAYER_MOVING_DIRECTION] =
-            game->ram[MYSMB_PLAYER_X_SPEED] >= 0x80U ? 2U : 1U;
-    }
-    mysmb_player_update_scroll(game);
-    /* PlayerCtrlRoutine computes this collision box before PlayerBGCollision.
-     * The relative coordinates are refreshed again below for later drawing. */
-    mysmb_oam_relative_player_position(game);
-    mysmb_world_set_bounding_box(game, MYSMB_PLAYER_BOUNDING_BOX,
-                                 game->ram[MYSMB_PLAYER_BOUND_BOX],
-                                 game->ram[MYSMB_PLAYER_RELATIVE_X],
-                                 game->ram[MYSMB_PLAYER_RELATIVE_Y]);
+}
+
+/* Existing common terrain child; algorithm proof remains terrain-owned. */
+void mysmb_player_background_collision(struct mysmb_game *game)
+{
+    mysmb_u8 collision_result;
     /* PlayerBGCollision is disabled for the control/pipe routines below 4,
      * player death (0x0b), and explicit collision suppression. */
     if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
@@ -746,8 +645,14 @@ void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)
                 }
             }
     }
-    mysmb_oam_relative_player_position(game);
-    mysmb_player_handle_hole(game);
+}
+
+/* Existing SetEntr child, extracted without certifying transition details. */
+void mysmb_player_set_entrance(struct mysmb_game *game)
+{
+    game->ram[MYSMB_ALT_ENTRANCE] = 2U;
+    game->ram[MYSMB_DISABLE_SCREEN]++;
+    game->ram[MYSMB_OPER_MODE_TASK] = 0U;
 }
 
 /* Translation of ROM $b069-$b07c Vine_AutoClimb.  The vine object's growth
@@ -757,9 +662,7 @@ void mysmb_player_step_auto_climb(struct mysmb_game *game)
 {
     if (game->ram[MYSMB_PLAYER_Y_HIGH] == 0U &&
         game->ram[MYSMB_PLAYER_Y] < 0xe4U) {
-        game->ram[MYSMB_ALT_ENTRANCE] = 2U;
-        game->ram[MYSMB_DISABLE_SCREEN]++;
-        game->ram[MYSMB_OPER_MODE_TASK] = 0U;
+        mysmb_player_set_entrance(game);
         return;
     }
     game->ram[MYSMB_PLAYER_STATE] = 3U;
