@@ -41,7 +41,7 @@ boundary.
 | T29 | Area object parsing and large-object geometry | 2796–3990 | 157 |
 | T30 | Area rendering, metatiles, attributes and block buffer | 3991–5314 | 146 |
 | T31 | Game dispatcher and entry modes | 5315–5582 | 31 |
-| T32 | Player control, friction, jump and swim | 5583–5900 | 49 |
+| T32 | Player control and mode transitions; movement entry belongs with its next-chain successors | 5583–5900 | 49 |
 | T33 | Player state, scrolling, pipes, vines and block actions | 5901–6297 | 62 |
 | T34 | Fireball dispatch, active core and explosion | 6298–6408 | 11 |
 | T35 | Bubbles, game timer and Warp Zone object | 6409–6729 | 38 |

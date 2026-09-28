@@ -4,7 +4,7 @@
 
 The coordinator records entrance-route evidence for RelativePlayerPosition,
 which remains with T16 S4; no transfer or concurrent admission is implied.
-See the [entry-chain checkpoint](game-dispatcher.md#s4-original-boundary-checkpoint).
+See the [entry-chain checkpoint](../../history/M2-T31-game-dispatcher.md#s4-original-boundary-checkpoint).
 Production pipe/vine calls prematurely change `$0755` from `$40` to the
 current player X (`$41`, `$47` or `$48`). Audit this write against its original
 RenderPlayerSub owner and the relative-position child boundary. Keep the

@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **628 / 1,992 (31.53%)**. The 135 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T31 S4 P1](../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof)
+Latest task review: [T31 S4 P1](../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof)
 completes ten entry/dispatch caller nodes. Production child calls retain 26
 failing comparisons with existing T23 S5 and T16 S4 owners. This is not a
 whole-game or whole-call equivalence claim.

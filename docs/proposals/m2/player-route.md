@@ -5,7 +5,7 @@
 The coordinator records additional failing-route evidence for the existing
 PlayerCtrlRoutine and NextArea responsibility; no node changes receiver and
 no implementation is admitted by this receipt. See the
-[entry-chain checkpoint](game-dispatcher.md#s4-original-boundary-checkpoint).
+[entry-chain checkpoint](../../history/M2-T31-game-dispatcher.md#s4-original-boundary-checkpoint).
 The ordinary NMI entrance fixtures retain full production-call failures:
 low-Y/pipe control produces `$00eb=$00` instead of `$13`; vine routes differ
 in animation, bounding-box and movement fields; NextArea leaves `$00fc=$00`

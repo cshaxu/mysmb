@@ -2,16 +2,34 @@
 
 ## Current Work
 
-**M2 T31 S4 has ten proven caller nodes at 628 / 1,992. The cross-chain review is complete; its packet remains active until task closure and successor admission.**
+**M2 T32 S1 is active at 628 / 1,992: thirteen open player-control nodes, expected thirteen, maximum 641.**
 
-All three artifacts are refreshed. The original vector and entrance caller
-contracts are proven; 26 production whole-call failures remain explicitly
-with T23 S5 and T16 S4. DOS remains link-only. T31 still requires its
-closure/next-admission transition; no next task is admitted. The final matrix
-has nine fully matching routes and four retained child/output diagnostics;
-all thirteen are byte-identical across x86/x64.
+T31 is closed: its 31 planned nodes have scoped proof; 88 of 94 received
+labels are proven and six accepted unfinished enemy callers remain with
+T19 S5. Cross-chain child/output failures and DOS limitations remain recorded.
 
-## M2 T31 S4 Packet
+## M2 T32 S1 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | M2 T32 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed T31; coordinator accepts transfer-134. |
+| Objective | Restore PlayerCtrlRoutine through CloudExit as one shared caller chain. |
+| Non-goals | No broad physics/collision/OAM/audio child repair or platform game logic. |
+| Reference Baseline | 628 / 1,992; thirteen unique open labels, expected thirteen, maximum 641. Exact names in proposal S1 and ledger. |
+| Candidate Proposal | [Player control chain](../proposals/m2/player-control-modes.md#s1-admission-playerctrlroutine-through-cloudexit). |
+| Files And ABI Surface | Shared player-control owner, player.c child extraction and declarations, build lists, tests/recorders, three artifacts. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
+| Verification | Original branch/read/write/call audit and natural NMI boundaries; independent callback/native tests, three builds and purity. |
+| Expected Markers | Water/death input gates; byte masks; movement-before-size; zero-speed direction; ordered children; priority gates; signed hole/cloud/death thresholds. |
+| Asset Needs | Existing owner-local ROM/listing; three EXEs per implementation P; DOS link-only. |
+| Reporting Requirements | Thirteen exact dispositions, separate ROM and operational evidence, three hashes and retained child gaps. |
+| Stop Conditions | Unadmitted child repair, PC/stack/ROM patch, masked discrepancy or platform gameplay logic. |
+| Exit Criteria | Every received label proven or explicitly transferred with acceptance; tracker and artifacts agree. |
+| Original Owner Request | Faithful original ROM logic and call structure in shared 16/32/64-bit C, original source order and chain-level delivery. |
+| Similar-Issue Sweep | All player-control callers/input decoders/bounding setup/hole exits; host input stays physical mapping only. |
+
+## M2 T31 S4 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
@@ -20,7 +38,7 @@ all thirteen are byte-identical across x86/x64.
 | Objective | Restore the GameRoutines vector and complete PlayerEntrance/AutoControlPlayer chain. |
 | Non-goals | No broad player physics, terminal, vine-object or enemy repair; child seam extraction gives no child credit. |
 | Reference Baseline | 618 / 1,992; ten unique open labels, ten expected matches, maximum 628. Exact names in the proposal and ledger. |
-| Candidate Proposal | [S4 entry-mode chain](../proposals/m2/game-dispatcher.md#s4-admission-game-routine-vector-and-player-entrance). |
+| Candidate Proposal | [S4 entry-mode chain](../history/M2-T31-game-dispatcher.md#s4-admission-game-routine-vector-and-player-entrance). |
 | Files And ABI Surface | Shared entry owner, engine/player callers and headers, build lists, tests/recorders, three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Original vector/branch/write/call audit and natural NMI boundaries; independent callback tests, native regressions, three builds and platform purity. |
@@ -41,7 +59,7 @@ all thirteen are byte-identical across x86/x64.
 | Objective | Restore ScrollHandler through the screen-edge/position chain using original branches and byte arithmetic. |
 | Non-goals | No player physics, enemy backlog, broad offscreen child repair, or S4 entry-mode implementation. |
 | Reference Baseline | 608 / 1,992; ten open labels, ten expected matches, maximum 618. Exact source-ordered names are in the proposal and ledger. |
-| Candidate Proposal | [S3 scroll chain](../proposals/m2/game-dispatcher.md#s3-admission-scroll-and-screen-edge-chain). |
+| Candidate Proposal | [S3 scroll chain](../history/M2-T31-game-dispatcher.md#s3-admission-scroll-and-screen-edge-chain). |
 | Files And ABI Surface | Shared player scroll owner and declarations, callers/build lists, focused tests and recorders; three EXEs per implementation P. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Original source/ROM branch and table audit; natural NMI entry/return comparisons; independent native tests, three builds and platform purity. |
@@ -57,7 +75,7 @@ all thirteen are byte-identical across x86/x64.
 
 Received 72, proven 66, transferred six unfinished labels to existing T19 S5.
 All original nine GameEngine labels complete; aggregate progress remains
-608 / 1,992. [Exact disposition](../proposals/m2/game-dispatcher.md#s2-closure-and-exact-enemy-caller-return).
+608 / 1,992. [Exact disposition](../history/M2-T31-game-dispatcher.md#s2-closure-and-exact-enemy-caller-return).
 
 ## M2 T31 S1 Packet (closed)
 
@@ -68,7 +86,7 @@ All original nine GameEngine labels complete; aggregate progress remains
 | Objective | Translate GameMode and GameCoreRoutine entry semantics and separate them from NMI orchestration. |
 | Non-goals | No completion credit or behavior repair for GameEngine, scrolling or player child interiors. |
 | Reference Baseline | 540 / 1,992; two open scope labels, two expected matches, maximum 542. |
-| Candidate Proposal | [T31 entry chain](../proposals/m2/game-dispatcher.md#s1-admission-gamemode-and-gamecoreroutine). |
+| Candidate Proposal | [T31 entry chain](../history/M2-T31-game-dispatcher.md#s1-admission-gamemode-and-gamecoreroutine). |
 | Files And ABI Surface | Shared dispatcher, frame-root child extraction, build lists, focused tests/recorders and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Exact vector and source-order audit; source-RAM original NMI entry/return routes; independent call-boundary tests and native regressions; three builds. |

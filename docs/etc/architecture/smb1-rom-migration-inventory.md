@@ -708,37 +708,37 @@ The labels and branches behind every line remain open until individually bound b
 | 5271 | `L_WaterArea1` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5282 | `L_WaterArea2` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../history/M2-T30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
-| 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
-| 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../proposals/m2/game-dispatcher.md#s1p1-entry-chain-closure) |
-| 5336 | `GameEngine` | M2 T31 S2 shared game/engine.c | ROM-match complete | [S2 P4 scoped dual evidence](../../proposals/m2/game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
-| 5339 | `ProcELoop` | M2 T31 S2 shared game/engine_slots.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 5371 | `NoChgMus` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5377 | `CycleTwo` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5380 | `ClrPlrPal` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5381 | `SaveAB` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5385 | `UpdScrollVar` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5398 | `RunParser` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5399 | `ExitEng` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5403 | `ScrollHandler` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5422 | `ChkNearMid` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5427 | `ScrollScreen` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5451 | `InitScrlAmt` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5453 | `ChkPOffscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5463 | `KeepOnscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5475 | `InitPlatScrl` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5479 | `X_SubtracterData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5482 | `OffscrJoypadBitsData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5487 | `GetScreenPosition` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
-| 5499 | `GameRoutines` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5519 | `PlayerEntrance` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5532 | `ChkBehPipe` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5536 | `IntroEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5541 | `EntrMode2` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5549 | `VineEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5562 | `OffVine` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5567 | `PlayerRdy` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5575 | `ExitEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
-| 5580 | `AutoControlPlayer` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../proposals/m2/game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5315 | `GameMode` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../history/M2-T31-game-dispatcher.md#s1p1-entry-chain-closure) |
+| 5326 | `GameCoreRoutine` | M2 T31 S1 shared dispatcher.c | ROM-match complete | [S1 entry dual evidence](../../history/M2-T31-game-dispatcher.md#s1p1-entry-chain-closure) |
+| 5336 | `GameEngine` | M2 T31 S2 shared game/engine.c | ROM-match complete | [S2 P4 scoped dual evidence](../../history/M2-T31-game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
+| 5339 | `ProcELoop` | M2 T31 S2 shared game/engine_slots.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 5371 | `NoChgMus` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5377 | `CycleTwo` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5380 | `ClrPlrPal` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5381 | `SaveAB` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5385 | `UpdScrollVar` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5398 | `RunParser` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5399 | `ExitEng` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../history/M2-T31-game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
+| 5403 | `ScrollHandler` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5422 | `ChkNearMid` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5427 | `ScrollScreen` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5451 | `InitScrlAmt` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5453 | `ChkPOffscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5463 | `KeepOnscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5475 | `InitPlatScrl` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5479 | `X_SubtracterData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5482 | `OffscrJoypadBitsData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5487 | `GetScreenPosition` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../history/M2-T31-game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5499 | `GameRoutines` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5519 | `PlayerEntrance` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5532 | `ChkBehPipe` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5536 | `IntroEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5541 | `EntrMode2` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5549 | `VineEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5562 | `OffVine` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5567 | `PlayerRdy` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5575 | `ExitEntr` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
+| 5580 | `AutoControlPlayer` | M2 T31 S4 shared game/entry.c | ROM-match complete | [S4 P1 caller proof; child failures retained](../../history/M2-T31-game-dispatcher.md#s4p1-entry-chain-proof) |
 | 5583 | `PlayerCtrlRoutine` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerctrlroutine) |
 | 5595 | `DisJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-disjoyp) |
 | 5597 | `SaveJoyp` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savejoyp) |
@@ -873,15 +873,15 @@ The labels and branches behind every line remain open until individually bound b
 | 6486 | `ResGTCtrl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resgtctrl) |
 | 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
 | 6497 | `ExGTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exgtimer) |
-| 6501 | `WarpZoneObject` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P4 scoped dual evidence](../../proposals/m2/game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
-| 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6546 | `NextWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6548 | `ExitWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6550 | `WhirlpoolActivate` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6577 | `LeftWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6586 | `SetPWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6587 | `WhPull` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6501 | `WarpZoneObject` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P4 scoped dual evidence](../../history/M2-T31-game-dispatcher.md#s2p4-parent-scheduler-and-warp-proof) |
+| 6519 | `ProcessWhirlpools` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6526 | `WhLoop` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6546 | `NextWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6548 | `ExitWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6550 | `WhirlpoolActivate` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6577 | `LeftWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6586 | `SetPWh` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6587 | `WhPull` | M2 T31 S2 shared game/whirlpool.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6598 | `FlagpoleScoreMods` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6601 | `FlagpoleScoreDigits` | T20 responsibility (implementation not certified) | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
 | 6604 | `FlagpoleRoutine` | T22 responsibility; `area.c`: object decode; `oam/flagpole_gfx.c`: start/step | ROM-match complete | [T22 S5/P1 flagpole-chain evidence](../../proposals/m2/blocks-items-misc.md#s5p1-flagpole-parser-score-and-graphics-route) |
@@ -905,20 +905,20 @@ The labels and branches behind every line remain open until individually bound b
 | 6760 | `KillVine` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killvine) |
 | 6766 | `WrCMTile` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-wrcmtile) |
 | 6780 | `ExitVH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitvh) |
-| 6785 | `CannonBitmasks` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6788 | `ProcessCannons` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6792 | `ThreeSChk` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6809 | `FireCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6832 | `Chk_BB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6840 | `Next3Slt` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6842 | `ExCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6846 | `BulletBillXSpdData` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6849 | `BulletBillHandler` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6862 | `SetupBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6876 | `ChkDSte` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6880 | `BBFly` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6881 | `RunBBSubs` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6886 | `KillBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6785 | `CannonBitmasks` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6788 | `ProcessCannons` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6792 | `ThreeSChk` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6809 | `FireCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6832 | `Chk_BB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6840 | `Next3Slt` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6842 | `ExCannon` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6846 | `BulletBillXSpdData` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6849 | `BulletBillHandler` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6862 | `SetupBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6876 | `ChkDSte` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6880 | `BBFly` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6881 | `RunBBSubs` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 6886 | `KillBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6891 | `HammerEnemyOfsData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerenemyofsdata) |
 | 6895 | `HammerXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerxspddata) |
 | 6898 | `SpawnHammerObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnhammerobj) |
@@ -1004,9 +1004,9 @@ The labels and branches behind every line remain open until individually bound b
 | 7604 | `ExXMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxmove) |
 | 7611 | `MovePlayerVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayervertically) |
 | 7617 | `NoJSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojschk) |
-| 7624 | `MoveD_EnemyVertically` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 7630 | `MoveFallingPlatform` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 7632 | `ContVMove` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 7624 | `MoveD_EnemyVertically` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 7630 | `MoveFallingPlatform` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 7632 | `ContVMove` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 7636 | `MoveRedPTroopaDown` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopadown) |
 | 7640 | `MoveRedPTroopaUp` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopaup) |
 | 7643 | `MoveRedPTroopa` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveredptroopa) |
@@ -1184,9 +1184,9 @@ The labels and branches behind every line remain open until individually bound b
 | 9010 | `PlatPosDataHigh` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-platposdatahigh) |
 | 9013 | `PosPlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posplatform) |
 | 9025 | `EndOfEnemyInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-endofenemyinitcode) |
-| 9030 | `RunEnemyObjectsCore` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 9038 | `JmpEO` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 9080 | `NoRunCode` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9030 | `RunEnemyObjectsCore` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9038 | `JmpEO` | M2 T31 S2 shared game/enemy/core.c | audited; mismatch | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9080 | `NoRunCode` | M2 T31 S2 shared game/enemy/core.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 9085 | `RunRetainerObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runretainerobj) |
 | 9092 | `RunNormalEnemies` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runnormalenemies) |
 | 9105 | `SkipMove` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipmove) |
@@ -1198,12 +1198,12 @@ The labels and branches behind every line remain open until individually bound b
 | 9168 | `RunLargePlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runlargeplatform) |
 | 9176 | `SkipPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skippt) |
 | 9182 | `LargePlatformSubroutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-largeplatformsubroutines) |
-| 9198 | `EraseEnemyObject` | M2 T31 S2 shared game/enemy/lifecycle.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 9198 | `EraseEnemyObject` | M2 T31 S2 shared game/enemy/lifecycle.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 9212 | `MovePodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movepodoboo) |
 | 9224 | `PdbM` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pdbm) |
 | 9229 | `HammerThrowTmrData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerthrowtmrdata) |
-| 9232 | `XSpeedAdderData` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9235 | `RevivedXSpeed` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9232 | `XSpeedAdderData` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9235 | `RevivedXSpeed` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 9238 | `ProcHammerBro` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prochammerbro) |
 | 9243 | `ChkJH` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkjh) |
 | 9260 | `DecHT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-decht) |
@@ -1214,17 +1214,17 @@ The labels and branches behind every line remain open until individually bound b
 | 9301 | `MoveHammerBroXDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movehammerbroxdir) |
 | 9307 | `Shimmy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shimmy) |
 | 9316 | `SetShim` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setshim) |
-| 9318 | `MoveNormalEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9336 | `FallE` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9347 | `MEHor` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9349 | `SlowM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9350 | `SteadM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9355 | `AddHS` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9363 | `ReviveStunned` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9377 | `SetRSpd` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9381 | `MoveDefeatedEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9385 | `ChkKillGoomba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
-| 9392 | `NKGmba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../proposals/m2/game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9318 | `MoveNormalEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9336 | `FallE` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9347 | `MEHor` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9349 | `SlowM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9350 | `SteadM` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9355 | `AddHS` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9363 | `ReviveStunned` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9377 | `SetRSpd` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9381 | `MoveDefeatedEnemy` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9385 | `ChkKillGoomba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
+| 9392 | `NKGmba` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |
 | 9396 | `MoveJumpingEnemy` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movejumpingenemy) |
 | 9402 | `ProcMoveRedPTroopa` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmoveredptroopa) |
 | 9414 | `NoIncPT` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noincpt) |
@@ -1610,14 +1610,14 @@ The labels and branches behind every line remain open until individually bound b
 | 12396 | `CheckForCoinMTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforcoinmtiles) |
 | 12403 | `CoinSd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-coinsd) |
 | 12407 | `GetMTileAttrib` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmtileattrib) |
-| 12415 | `ExEBG` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12415 | `ExEBG` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12420 | `EnemyBGCStateData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcstatedata) |
 | 12423 | `EnemyBGCXSpdData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemybgcxspddata) |
-| 12426 | `EnemyToBGCollisionDet` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12439 | `DoIDCheckBGColl` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12443 | `HBChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12446 | `CInvu` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12452 | `YesIn` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12426 | `EnemyToBGCollisionDet` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12439 | `DoIDCheckBGColl` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12443 | `HBChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12446 | `CInvu` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12452 | `YesIn` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12455 | `NoEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noetobgcollision) |
 | 12461 | `HandleEToBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-handleetobgcollision) |
 | 12476 | `GiveOEPoints` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-giveoepoints) |
@@ -1628,7 +1628,7 @@ The labels and branches behind every line remain open until individually bound b
 | 12504 | `SetNotW` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setnotw) |
 | 12509 | `ChkBBill` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbbill) |
 | 12515 | `NoCDirF` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocdirf) |
-| 12518 | `ExEBGChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12518 | `ExEBGChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12523 | `LandEnemyProperly` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyproperly) |
 | 12535 | `SChkA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schka) |
 | 12537 | `ChkLandedEnemyState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklandedenemystate) |
@@ -1643,18 +1643,18 @@ The labels and branches behind every line remain open until individually bound b
 | 12603 | `Chk2MSBSt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2msbst) |
 | 12610 | `GetSteFromD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getstefromd) |
 | 12611 | `SetD6Ste` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setd6ste) |
-| 12617 | `DoEnemySideCheck` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12624 | `SdeCLoop` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12632 | `NextSdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12636 | `ExESdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12617 | `DoEnemySideCheck` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12624 | `SdeCLoop` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12632 | `NextSdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12636 | `ExESdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12638 | `ChkForBump_HammerBroJ` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforbump_hammerbroj) |
 | 12646 | `NoBump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobump) |
 | 12654 | `InvEnemyDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invenemydir) |
 | 12660 | `PlayerEnemyDiff` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerenemydiff) |
 | 12671 | `EnemyLanding` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemylanding) |
-| 12679 | `SubtEnemyYPos` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12686 | `EnemyJump` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12701 | `DoSide` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../proposals/m2/game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12679 | `SubtEnemyYPos` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12686 | `EnemyJump` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
+| 12701 | `DoSide` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12705 | `HammerBroBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrobgcoll) |
 | 12711 | `KillEnemyAboveBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemyaboveblock) |
 | 12717 | `UnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-underhammerbro) |
@@ -1762,8 +1762,8 @@ The labels and branches behind every line remain open until individually bound b
 | 13636 | `JumpspringFrameOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpspringframeoffsets) |
 | 13639 | `EnemyGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemygfxhandler) |
 | 13661 | `CheckForRetainerObj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforretainerobj) |
-| 13674 | `CheckForBulletBillCV` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 13682 | `SBBAt` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../proposals/m2/game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 13674 | `CheckForBulletBillCV` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
+| 13682 | `SBBAt` | M2 T31 S2 shared game/oam/bullet_bill_gfx.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 13687 | `CheckForJumpspring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforjumpspring) |
 | 13694 | `CheckForPodoboo` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforpodoboo) |
 | 13704 | `CheckBowserGfxFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkbowsergfxflag) |

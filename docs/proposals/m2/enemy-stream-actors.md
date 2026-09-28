@@ -244,7 +244,7 @@ comparison or a synthetic replacement stream. No runtime fix is admitted here.
 The coordinator accepts transfer-131 into existing M2 T19 S5 under the
 owner-approved continuing M2 mandate: RunEnemyObjectsCore, JmpEO,
 RunNormalEnemies, SkipMove, EnemyMovementSubs and NoMoveCode. All six remain
-incomplete. [Exact contracts and evidence](game-dispatcher.md#s2-closure-and-exact-enemy-caller-return)
+incomplete. [Exact contracts and evidence](../../history/M2-T31-game-dispatcher.md#s2-closure-and-exact-enemy-caller-return)
 specify the target/caller failures and retain the known ROM differences.
 This receipt is custody only; CURRENT remains the sole execution authority.
 Re-admit these labels with their original enemy-dispatch source slice and

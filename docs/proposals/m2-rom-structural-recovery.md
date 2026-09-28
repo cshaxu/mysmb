@@ -31,7 +31,7 @@ Each candidate has an audited admission S plan. These are implementation bluepri
 2. [Title and terminal modes](m2/title-terminal-modes.md)
 3. [Screen, text and status](m2/screen-status.md)
 4. [Area graphics and parser](m2/area-parser.md)
-5. [Game frame dispatcher](m2/game-dispatcher.md)
+5. [Game frame dispatcher](../history/M2-T31-game-dispatcher.md)
 6. [Player route](m2/player-route.md)
 7. [Fireballs and bubbles](m2/fireballs-bubbles.md)
 8. [Blocks, items and misc](m2/blocks-items-misc.md)
