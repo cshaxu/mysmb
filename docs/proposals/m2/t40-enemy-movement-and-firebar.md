@@ -565,3 +565,160 @@ redistribution limits remain; no new third-party import occurred.
 | mysmb16.exe | 256513 | 005cb1b17c4aef467551a017a2f0b60abeae3aedaa9889e682f86155b6550f73 |
 | mysmb32.exe | 345328 | cfdb77d1c8409cd9d8920acbe0ba8dc60b6e2e66cb166e1c44150be2a06e77a0 |
 | mysmb64.exe | 353197 | f3297ce2b5fa60d4071558b2359c333c855c200507d0b0604b365e861ba07e50 |
+
+## S5 admission: Bloober movement and swimming
+
+S4 closed in 17c144f. Coordinator accepts transfer-189. All sixteen labels
+are open and expected new: BlooberBitmasks, MoveBloober, FBLeft, SBMDir, BlooberSwim, SwimX, LeftSwim, MoveDefeatedBloober, ProcSwimmingB, BSwimE, SlowSwim, NoSSw, ChkForFloatdown, Floatdown, NoFD, ChkNearPlayer.
+Baseline 1,087/1,992, maximum 1,103. The contiguous source chain starts at
+BlooberBitmasks ($CB87), includes MoveBloober and ProcSwimmingB, and ends
+before MoveBulletBill. Shared owner is enemy/bloober.c. Legacy bulk callers
+retain eligibility filtering; the source actor entry has no extra gate.
+
+Preserve defeated movement, PRNG/hard-mode mask data, odd-slot player
+moving direction and even-slot PlayerEnemyDiff, scratch and sign semantics.
+Keep the original swim counter/force/speed aliases, eight-frame acceleration
+and deceleration, exact endpoint equality, two-tick float timer and continued
+float-down after timer expiry while below the player threshold. ChkNearPlayer
+uses inherited carry in its ADC: trace that carry through the original
+JumpEngine and direction paths instead of assuming Y+16. Vertical movement
+subtracts modulo 256 before the $20 comparison. Horizontal movement preserves
+page carry/borrow. Existing distance and slow-gravity children are dependencies;
+this S neither repairs nor credits their nodes.
+
+Logic proof first maps each label, branch, RAM read/write and call edge, then
+compares unchanged original NMI actor routes and actual native children.
+Exercise both masks, slot parities, signed/page differences, all swim phases,
+counter/force byte wrap, threshold adjacency, expired/nonexpired timer and
+defeated tail. Explicit controlled RAM inputs at naturally reached entries
+are allowed only if ordinary routes miss a branch; never patch ROM, CPU,
+PC, hardware stack or outputs. Child substitutions are diagnostic only,
+following complete input comparison; actual child failures remain visible.
+
+The independent operational track uses native full-RAM contracts, retained
+original matches, strict C90 x86/x64 builds, DOS16 link, platform purity,
+hidden-window response and three refreshed EXEs. Each label receives an
+individual disposition. No unmatched node is silently closed. S6 Bullet
+Bill remains next. Similar-issue sweep covers the inline/bulk/source Bloober
+routes, direction carry, counter/force aliases and float-down fallback.
+
+Existing owner-local ROM/listing provenance and redistribution limits remain;
+there is no third-party import. Temporary scripts, research, traces and builds
+stay in ignored build/m2-t40-s5. Start with up to 512 original input routes,
+a sixteen-MB raw budget, twenty-second per-run timeout, unique output paths
+and stable checkpoints. The coordinator owns trace retention/cleanup after
+dependent admitted regressions no longer require these local inputs.
+
+### S5 implementation checkpoint (not closure)
+
+The shared Bloober owner has replaced the old inline actor. Eligibility
+checks remain at the legacy bulk boundary. Source review identified missing
+float-down after timer expiry, an extra pre-subtraction Y-underflow guard,
+unsigned world comparison instead of PlayerEnemyDiff's page-result sign,
+and lost carry at ChkNearPlayer. The implementation now follows these source
+paths. JumpEngine's ASL of ID seven establishes initial carry zero; odd-slot
+direction selection establishes carry one; even slots obtain the final
+subtraction carry from the page operands and low-byte borrow. The source
+distance child remains the scratch/result owner and receives no node credit.
+
+Ten explicit full-RAM boundary contracts pass in strict C90 on x86/x64,
+including timer-expired drift, inherited-carry threshold, signed page result,
+vertical underflow, horizontal page wrap and the defeated child. These are
+native contracts only. Original-ROM route/branch coverage, final regressions,
+DOS link and delivery are still pending. No S5 label is promoted and no P
+commit or executable refresh is claimed at this checkpoint.
+
+## S5 original Bloober swimming proof
+
+S5 P1 closes all sixteen expected nodes: 1,087 -> 1,103/1,992. No scoped
+unfinished node or transfer remains; S6 is next in the existing plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| BlooberBitmasks | $CB87 | Original two-byte masks bound to both hard-mode consumer paths; new ROM match |
+| MoveBloober | $CB89 | Defeat gate and random-mask direction selection match original; new ROM match |
+| FBLeft | $CBA2 | Even-slot distance child preserves scratch and page-result sign; new ROM match |
+| SBMDir | $CBAA | Odd/even direction stores and inherited carry preserved; new ROM match |
+| BlooberSwim | $CBAC | Swim child precedes modulo-byte Y subtraction and status-bar comparison; new ROM match |
+| SwimX | $CBBB | Direction selects horizontal add or subtract with page carry; new ROM match |
+| LeftSwim | $CBCE | Left movement preserves byte subtraction and page borrow; new ROM match |
+| MoveDefeatedBloober | $CBDC | Defeated tail executes the real slow vertical child; new ROM match |
+| ProcSwimmingB | $CBDF | Counter phase selects float, acceleration or deceleration; new ROM match |
+| BSwimE | $CC03 | Acceleration phase skips or returns after exact force-two endpoint; new ROM match |
+| SlowSwim | $CC04 | Deceleration writes force/speed and exact-zero counter/timer changes; new ROM match |
+| NoSSw | $CC1B | Deceleration skipped phase and nonzero force return preserve state; new ROM match |
+| ChkForFloatdown | $CC1C | Timer zero reaches player comparison, nonzero reaches float-down; new ROM match |
+| Floatdown | $CC21 | Even frame increments Y with byte wrap; new ROM match |
+| NoFD | $CC28 | Odd frame skips float increment; new ROM match |
+| ChkNearPlayer | $CC29 | Inherited ADC carry and wrapped threshold choose continued float or reset; new ROM match |
+
+The 512 unchanged original NMI routes cover both hard-mode masks, both edge
+slots/parities, PRNG direction gates, distance sign, swimming counter phases,
+force byte endpoints/wrap, expired/nonexpired timers and defeated movement.
+All 90 instructions and fifteen conditional branches execute on both paths.
+The sixteenth branch at $CBA0 is structurally unconditional: the preceding
+BCC only falls through with carry set, and LDY preserves carry before BCS.
+No impossible fallthrough is claimed as exercised. Both original table bytes
+are checked and each hard-mode consumer occurs in 256 entry snapshots.
+
+Caller-boundary and actual-child runs each pass 1,024/1,024 across x86/x64.
+There are 120 recorded PlayerEnemyDiff calls and 32 defeated slow-gravity
+calls. Caller diagnostics compare child-entry RAM before substituting original
+returns; actual runs execute the existing shared children. All RAM including
+scratch and mapped $0109-$0139 is checked except the hardware stack. No ROM,
+CPU/register, PC, stack or output patch or mid-entry RAM injection is used.
+512 observer-free frame records equal the observed originals. This proves
+observer noninterference, not full-game native frame conformance. No distance,
+gravity or caller node receives incidental completion credit.
+
+Source review and implementation remove the old unsigned direction comparison,
+extra actor eligibility gate, missing expired-timer float-down path and extra
+Y-underflow rejection. The shared enemy/bloober.c owner preserves the original
+call order and byte operations. Initial carry is zero from JumpEngine's ASL
+of ID seven. An odd slot establishes carry one; an even slot derives the
+PlayerEnemyDiff final subtraction carry from its page operands and low-byte
+borrow. The child owns its original scratch/result. ChkNearPlayer therefore
+adds sixteen plus inherited carry before its wrapped-byte player comparison.
+The original routes exercise this threshold with carry zero in 80 snapshots
+and carry one in 48. Source entry has no extra flag/ID guard; only the legacy
+bulk boundary keeps those eligibility checks.
+
+Independent full-RAM native contracts cover ten explicit boundary cases per
+width, including signed page-result direction, inherited-carry threshold,
+continued float-down, vertical underflow, force endpoint/wrap, page carry/
+borrow and defeated child writes. Prior native contracts and focused suites
+pass. The combined final original-snapshot matrix is 6,016/6,802. All 4,990
+previous matches remain; two existing comparisons improve with this actor
+repair. The 786 remaining downstream differences retain their original
+source-order owners. Existing Bowser damage and endgame star-timer failures
+remain explicit and unchanged.
+
+All 95 shared units compile in strict C90 on x86/x64; executable self-tests
+and hidden-window response probes pass. DOS16 links using the existing large
+model and segment capacity, retaining the OLDNAMES warning. Platform purity
+passes. DOS remains link-only; graphical playability, resource binding and
+physical 486 performance are not established. Three test EXEs are refreshed.
+
+Similar-issue sweep covers source/bulk/vector Bloober callers, direction and
+carry, force/counter byte aliases, timer/player fallthrough and vertical
+subtraction order. The old actor body is removed from objects.c; the shared
+owner is present in both manifests. No game logic enters host adapters.
+
+Reproduce bloober_movement_fixture.h cases 0..511 using --fixture=t40-bloober=N,
+--bloober-snapshot, --control-children and a separate --pc-coverage run.
+bloober_movement_snapshot_check diagnoses caller boundaries;
+enemy_loop_actual_check executes actual children. The native CTest is
+mysmb.bloober-movement. Source-audit and input-audit scripts remain local.
+Initial input phases missed acceleration/deceleration after NMI increment;
+those records are retained separately, and corrected ordinary input phases
+cover both paths without changing execution. Each set uses 4,991,792 raw
+bytes, together below the sixteen-MB budget, under ignored build/m2-t40-s5.
+Unique paths, twenty-second timeouts and stable checkpoints bound each run.
+The coordinator retains these local inputs for dependent regressions.
+Existing owner-ROM/listing provenance and redistribution limits remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256371 | bba6308aa8a52daf41f73464a15da74036b107162d5c79ceffe7bc823e13d410 |
+| mysmb32.exe | 345634 | c962aa591fe08b19840f24842b70672cb2faff18a8f33075d8a700b27f6c33ee |
+| mysmb64.exe | 353539 | 5790311c229b49514b0149ab0e58df054d6c171fe8e2d71a38379c7aa7fbfa25 |

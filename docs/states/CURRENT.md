@@ -2,28 +2,34 @@
 
 ## Current Work
 
-**M2 T40 S4 is closed at 1,087 / 1,992: all ten expected nodes complete.**
+**M2 T40 S5 is closed at 1,103 / 1,992: all sixteen expected nodes complete.**
 
-## M2 T40 S4 Packet
+## M2 T40 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T40 S4, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 5d2a330; coordinator accepts transfer-188. |
-| Objective | Complete the ten green Paratroopa/shared X-counter labels in the exact proposal row. |
-| Non-goals | No Bloober or platform actor repair, no horizontal child rewrite or host gameplay. |
-| Reference Baseline | 1,077/1,992; ten open scoped/expected, maximum 1,087. |
-| Candidate Proposal | [T40 S4 exact scope and proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s4-admission-green-paratroopa-and-shared-x-counters). |
-| Files And ABI Surface | Shared Paratroopa/X-counter owners, bulk boundary, manifests, tests/recorder, records and three EXEs. |
+| Identifier Mode | M2 T40 S5, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 17c144f; coordinator accepts transfer-189. |
+| Objective | Complete the sixteen exact Bloober labels in the linked proposal. |
+| Non-goals | No Bullet Bill, distance/gravity child repair or host gameplay. |
+| Reference Baseline | 1,087/1,992; sixteen open scoped/expected, maximum 1,103. |
+| Candidate Proposal | [T40 S5 exact scope and proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s5-admission-bloober-movement-and-swimming). |
+| Files And ABI Surface | Shared Bloober owner, bulk boundary, manifests, tests/recorder, records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branch/read/write/child-order and actual execution; independent native contracts/regressions/builds. |
-| Expected Markers | Shared maximum in $01; exact counter equality; temporary speed restored; horizontal A in $00; post-child frame/Y step. |
+| Verification | Original branch/read/write/carry/child-order audit and comparison; independent native contracts/regressions/builds. |
+| Expected Markers | PRNG mask and direction; inherited ADC carry; counter endpoints; timer/player float-down; modulo Y and page X. |
 | Asset Needs | Existing owner-local ROM/listing and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Ten exact dispositions, both evidence tracks and three hashes. |
-| Stop Conditions | Unadmitted actor/child repair, original execution patch, hidden mismatch or host gameplay. |
-| Exit Criteria | All ten nodes proved or exact accepted transfer; tracker/ledger/artifacts agree. |
+| Reporting Requirements | Sixteen exact dispositions, both verification tracks and three hashes. |
+| Stop Conditions | Unadmitted child repair, original execution patch, hidden mismatch or host gameplay. |
+| Exit Criteria | All sixteen nodes proved or exact accepted transfer; tracker/ledger/artifacts agree. |
 | Original Owner Request | Faithful original-ROM call graph and logic in shared 16/32/64-bit native C. |
-| Similar-Issue Sweep | Green inline/source/bulk routes, shared counter aliases and future platform seams. |
+| Similar-Issue Sweep | Bloober inline/source/bulk routes, carry and float-down fallback. |
+
+## S5 closure
+
+[Bloober swimming proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s5-original-bloober-swimming-proof)
+closes sixteen nodes with 1,024/1,024 actual-child and caller comparisons.
+All 4,990 prior matches remain; three EXEs are refreshed. DOS is link-only.
 
 ## S4 closure
 
@@ -59,7 +65,7 @@ all three EXEs; child/full-game gaps and DOS link-only limits remain explicit.
 
 ## Current sequence
 
-T40 has ten source-ordered S chains; S1-S4 are closed and S5 is next. Its 120-node scope ends
+T40 has ten source-ordered S chains; S1-S5 are closed and S6 is next. Its 120-node scope ends
 after PlayerLakituDiff. BridgeCollapseData and the whole bridge/Bowser chain
 remain with the next queued slice. Follow the [T40 plan](../proposals/m2/t40-enemy-movement-and-firebar.md).
 

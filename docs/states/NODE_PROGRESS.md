@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1087 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1103 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 799 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 783 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,087 / 1,992 (54.57%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,103 / 1,992 (55.37%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T40 S4 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s4-original-green-paratroopa-and-counter-proof)
-closes ten green Paratroopa/shared-counter nodes with 576/576 original caller
-and actual-child comparisons. All 4,414 prior matches remain.
+Latest task review: [T40 S5 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s5-original-bloober-swimming-proof)
+closes sixteen Bloober movement/swimming nodes with 1,024/1,024 original
+caller and actual-child comparisons. All 4,990 prior matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1087)
+## Completed matches (1103)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1098,6 +1098,22 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9463 | `DecSeXM` |
 | 9468 | `MoveWithXMCntrs` |
 | 9481 | `XMRight` |
+| 9490 | `BlooberBitmasks` |
+| 9493 | `MoveBloober` |
+| 9506 | `FBLeft` |
+| 9510 | `SBMDir` |
+| 9512 | `BlooberSwim` |
+| 9520 | `SwimX` |
+| 9532 | `LeftSwim` |
+| 9542 | `MoveDefeatedBloober` |
+| 9545 | `ProcSwimmingB` |
+| 9565 | `BSwimE` |
+| 9567 | `SlowSwim` |
+| 9579 | `NoSSw` |
+| 9581 | `ChkForFloatdown` |
+| 9585 | `Floatdown` |
+| 9590 | `NoFD` |
+| 9592 | `ChkNearPlayer` |
 | 10167 | `KillAllEnemies` |
 | 10169 | `KillLoop` |
 | 10337 | `FlameTimerData` |
