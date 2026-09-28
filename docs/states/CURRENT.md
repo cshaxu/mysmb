@@ -2,37 +2,42 @@
 
 ## Current Work
 
-**M2 T38 S2 is closed at 922 / 1,992: nineteen parser caller nodes proven; initializer/group gaps remain.**
+**M2 T38 S3 is closed at 925 / 1,992: all three vector caller nodes proven; initializer children remain incomplete.**
 
-## M2 T38 S2 Packet
+## M2 T38 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S1 commit 3c322d5; coordinator accepts transfer-166. |
-| Objective | Restore nineteen enemy record/parser nodes with exact original continuation and byte arithmetic. |
-| Non-goals | No initializer/group actor interiors, rendering, actor dispatch or platform gameplay. |
-| Reference Baseline | 903 / 1,992; nineteen open scoped labels, nineteen expected, maximum 922. |
-| Candidate Proposal | [T38 S2 parser](../proposals/m2/t38-enemy-stream-initialization.md#s2-admission-enemy-records-and-parser-continuation). |
-| Files And ABI Surface | Shared enemy stream, loop and initializer handoffs; headers, tests, recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T38 S3, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after S2 commit 52ccb53; coordinator accepts transfer-167. |
+| Objective | Restore CheckpointEnemyID, all 55 InitEnemyRoutines entries and NoInitCode. |
+| Non-goals | No unadmitted initializer interiors, actor movement, rendering or platform gameplay. |
+| Reference Baseline | 922 / 1,992; three scoped open labels, three expected, maximum 925. |
+| Candidate Proposal | [S3 initializer vector](../proposals/m2/t38-enemy-stream-initialization.md#s3-admission-checkpoint-and-full-initializer-vector). |
+| Files And ABI Surface | Shared enemy initialization owner and explicit child entry contracts, tests, recorder, build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branch/write/call audit and ordinary NMI snapshots; independent native checks, affected regressions, three-target builds and platform purity. |
-| Expected Markers | Slot-five gate, $06/$07 bounds, page-control order, Y/cursor wrap, row-$0E selection, hard-mode mutation, child return flags. |
+| Verification | Exact original 55-entry byte/target/write audit and NMI routes; native full-ID/Y/slot checks, cross-width builds, DOS link and platform purity. |
+| Expected Markers | Below-$15 Y addition and mask, $C281 jump-table pointer, selected target bytes, no-init return, 31 distinct child entries. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Exact nineteen dispositions, two proof tracks, actual child differences, tracker/ledger and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, patched original execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | All received labels proven or exactly transferred with acceptance; both tracks, inventory and ledger agree. |
-| Original Owner Request | Faithful original ROM call graph and native C semantics in source order on all three platforms. |
-| Similar-Issue Sweep | All stream current/slot/next callers, page-control continuations, frenzy handling, initializer returns and group cursor ownership. |
+| Reporting Requirements | Three exact dispositions, both proof tracks, explicit child/residual gaps, ledger and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, patched reference execution, hidden mismatches or platform gameplay. |
+| Exit Criteria | All three nodes proven or exact accepted transfer; both tracks, tracker and ledger agree. |
+| Original Owner Request | Faithful source call graph and logic in native shared 16/32/64-bit C, in original order. |
+| Similar-Issue Sweep | Every checkpoint/initializer caller, all 55 vector entries and aliases, no-init IDs and early special-ID bypasses. |
 
 
+
+
+S3 closure: [initializer-vector proof](../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof).
+220 caller matches; 128/220 actual matches, 92 child failures retained.
+Three EXEs refreshed; DOS remains link-only.
 
 S2 closure: [parser proof](../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof).
 160 caller matches; 72 actual-child failures retained, three artifacts refreshed.
 
 S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
-T38 S2 is closed; S3 initializer vector is next and not yet admitted.
+T38 S3 is closed; S4 common initializers is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.

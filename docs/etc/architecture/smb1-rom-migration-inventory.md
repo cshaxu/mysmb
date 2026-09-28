@@ -1063,9 +1063,9 @@ The labels and branches behind every line remain open until individually bound b
 | 8066 | `CheckThreeBytes` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
 | 8072 | `Inc3B` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
 | 8073 | `Inc2B` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
-| 8080 | `CheckpointEnemyID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkpointenemyid) |
-| 8092 | `InitEnemyRoutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyroutines) |
-| 8158 | `NoInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noinitcode) |
+| 8080 | `CheckpointEnemyID` | M2 T38 S3 shared enemy/init.c | ROM-match complete | [S3 vector proof](../../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof); exact caller boundaries, child gaps retained |
+| 8092 | `InitEnemyRoutines` | M2 T38 S3 shared enemy/init.c | ROM-match complete | [S3 vector proof](../../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof); exact caller boundaries, child gaps retained |
+| 8158 | `NoInitCode` | M2 T38 S3 shared enemy/init.c | ROM-match complete | [S3 vector proof](../../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof); exact caller boundaries, child gaps retained |
 | 8163 | `InitGoomba` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initgoomba) |
 | 8169 | `InitPodoboo` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initpodoboo) |
 | 8181 | `InitRetainerObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initretainerobj) |

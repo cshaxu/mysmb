@@ -36,6 +36,34 @@ enum {
     MYSMB_SQUARE2_SOUND = 0x00feU,
     MYSMB_FIREWORKS_COUNTER = 0x06d7U
 };
+/* ROM InitEnemyFrenzy entry $C7A0. This extraction preserves the existing
+ * child bodies; the nested JumpEngine scratch still requires its own audit. */
+void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 id;
+    id = game->ram[MYSMB_ENEMY_ID + slot];
+    game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = id;
+    switch (id) {
+    case 0x12U:
+        mysmb_enemy_init_lakitu_spiny_frenzy(game, slot);
+        break;
+    case 0x14U:
+        mysmb_enemy_init_flying_cheep_frenzy(game, slot);
+        break;
+    case 0x15U:
+        mysmb_enemy_init_bowser_flame_frenzy(game, slot);
+        break;
+    case 0x16U:
+        mysmb_enemy_init_fireworks_frenzy(game, slot);
+        break;
+    case 0x17U:
+        mysmb_enemy_step_bullet_bill_cheep_frenzy(game, slot);
+        break;
+    default:
+        break;
+    }
+}
+
 /* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
  * and then intentionally retains only the low byte for its speed table. */
 static mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game,

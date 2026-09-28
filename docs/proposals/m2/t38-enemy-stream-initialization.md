@@ -30,9 +30,9 @@ its many child boundaries, rather than just three textual labels.
 | S1 | Enemy flags, castle loops and frenzy handoff | enemy/core.c and enemy/loop.c | 19 / 19 | `EnemiesAndLoopsCore`, `ChkAreaTsk`, `ChkBowserF`, `ExitELCore`, `LoopCmdWorldNumber`, `LoopCmdPageNumber`, `LoopCmdYPosition`, `ExecGameLoopback`, `ProcLoopCommand`, `FindLoop`, `IncMLoop`, `WrongChk`, `DoLpBack`, `InitMLp`, `InitLCmd`, `ChkEnemyFrenzy`, `AreaDataOfsLoopback`, `KillAllEnemies`, `KillLoop` |
 | S2 | Enemy records, page controls and parser continuation | enemy/stream.c | 19 / 19 | `ProcessEnemyData`, `CheckEndofBuffer`, `CheckRightBounds`, `CheckPageCtrlRow`, `PositionEnemyObj`, `CheckRightExtBounds`, `CheckForEnemyGroup`, `BuzzyBeetleMutate`, `StrID`, `CheckFrenzyBuffer`, `StrFre`, `InitEnemyObject`, `ExEPar`, `DoGroup`, `ParseRow0e`, `NotUse`, `CheckThreeBytes`, `Inc3B`, `Inc2B` |
 | S3 | Initializer checkpoint and vector | enemy/init.c | 3 / 3 | `CheckpointEnemyID`, `InitEnemyRoutines`, `NoInitCode` |
-| S4 | Common enemy initializers and shared reset entries | enemy/init.c | 23 / 23 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitVStf`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
+| S4 | Common enemy initializers and shared reset entries | enemy/init_targets.c | 23 / 23 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitVStf`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
 | S5 | Lakitu/Spiny allocation and movement setup | enemy/frenzy.c | 13 / 13 | `PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`, `RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`, `SpinyRte`, `ChpChpEx` |
-| S6 | Firebar initializer data and entries | enemy/init.c | 4 / 4 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar` |
+| S6 | Firebar initializer data and entries | enemy/init_targets.c | 4 / 4 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar` |
 | S7 | Flying Cheep-Cheep complete initializer | enemy/frenzy.c | 10 / 10 | `FlyCCXPositionData`, `FlyCCXSpeedData`, `FlyCCTimerData`, `InitFlyingCheepCheep`, `MaxCC`, `GSeed`, `RSeed`, `D2XPos1`, `D2XPos2`, `FinCCSt` |
 
 ## Implementation and verification contracts
@@ -462,3 +462,220 @@ artifacts, not full-game certification.
 | mysmb16.exe | 253491 | 223fbf7727b720d228237a38cead9b47681e7c3fa4eb4ca0bbcdcd8698d1a45d |
 | mysmb32.exe | 332541 | 9917dd3c2d4f321442eab7c62e9afaeae54538275cb852de9a14bef1344a2f37 |
 | mysmb64.exe | 340139 | 3664b90010ad299347cb06cfc82d9f290b7452ebb256cd4064c51874bc351a1f |
+
+## S3 admission: checkpoint and full initializer vector
+
+After S2 commit 52ccb53, coordinator accepts transfer-167 from T19 S5 for
+CheckpointEnemyID, InitEnemyRoutines and NoInitCode. All three are open;
+incoming 922/1,992, expected three, maximum 925. S2 remains closed.
+The three labels cover a complete 55-entry vector and 31 distinct targets,
+not three isolated leaf changes. Shared enemy/init.c owns the checkpoint
+and vector; existing initializer/frenzy/platform/vine/power-up successors
+retain their separate responsibilities. Child extraction may expose original
+entry contracts but earns no child credit and must preserve existing results.
+
+The original CMP $15 leaves carry clear on the below-$15 arm, so ADC $08
+is exactly a byte-wrapped eight-pixel Y addition, followed by the masked
+offscreen write. Larger IDs skip both writes. JumpEngine saves $C281 into
+$04/$05 and the selected original target into $06/$07, then tail-dispatches.
+NoInitCode performs no subsequent game-state mutation. The native port must
+select native C entries; it must not execute original instructions at runtime.
+Audit the 55 original entries and all aliases, not a visually similar ID
+classification or unconditional shared actor setup.
+
+Two tracks: original source/control/data/write/target-entry comparison using
+ordinary NMI routes and read-only child snapshots; independent C90 tests of
+all valid IDs, Y wrap, all slots and no-init write footprints, x86/x64 builds,
+DOS16 link, platform purity and three EXEs. Reuse S2 original child snapshots
+to measure actual improvements and preserve unrelated failures. Reference
+inputs are the already admitted owner-local ROM/listing; no third-party
+implementation import. Temporary data stays under ignored build/m2-t38-s3,
+raw budget four MB, twenty-second recorder timeout, cleanup owner S3.
+Stop for unadmitted child repair, changed reference PC/stack/ROM/output,
+concealed mismatches or platform gameplay. Completion requires exact scoped
+node dispositions, both verification tracks, updated tracker/ledger and
+three local artifacts; node credit remains zero at admission.
+
+### S3 initial vector audit
+
+All 110 vector bytes at $C282-$C2EF match the 55 source label addresses.
+Fourteen IDs select NoInitCode. Current C incorrectly sends these through
+ordinary initialization, omits vector scratch writes and bypasses the common
+vector path for the power-up entry. The below-$15 Y/masked-bit prefix is
+already present and must not be duplicated when child bodies are separated.
+The source table below is an entry/alias inventory, not child completion.
+
+The first implementation checkpoint restores vector scratch before every
+declared target, places the existing power-up path after this common prefix,
+and returns immediately for all fourteen NoInitCode aliases. Both widths
+pass 21,504 full-RAM no-init cases (all aliases, slots and Y bytes). Reusing
+S2's eighty original roots, actual matches improve from 88/160 to 106/160,
+with eighteen new matches and no regression of a previously matching root.
+Strict C90 compilation and platform purity pass. The existing large child
+initializer body remains uncredited: explicit native target dispatch and
+its 31 successor contracts still require completion, followed by original
+target-entry proof, final builds and three-EXE delivery. No S3 node credit,
+P commit or replacement of the S2 assets is claimed at this checkpoint.
+
+The next structural checkpoint exposes InitEnemyFrenzy as one shared entry
+in enemy/frenzy.c. All five initializer-vector aliases now call that entry;
+the buffer write and existing nested selection move with it. Its child
+bodies and missing nested JumpEngine scratch are unchanged and uncredited.
+Before/after extraction checks cover all 55 IDs, six slots and four bounded
+state configurations: 1,320 full-RAM results per width are identical. These
+are native preservation checks, not original-ROM equivalence evidence.
+Recompiled S2 actual comparisons retain 106/160 matches, and the 21,504
+NoInit cases per width still pass. Remaining S3 work is the other target
+entry boundaries, original target-entry comparisons and final delivery.
+The general actor-default block still belongs to unfinished legacy child
+implementation; it must not be attributed to CheckpointEnemyID as proven
+original behavior. No new node credit or artifact replacement is made.
+
+The residual $2F vector entry now calls the existing Setup_Vine owner with
+the original JumpEngine Y output, $60: ASL doubles ID, then two INY
+instructions advance to the target high byte. Entry $36 now returns at
+EndOfEnemyInitCode instead of
+performing general actor initialization. Neither child body is changed.
+The focused enemy-init-handoff harness checks nine entries, all six slots
+and every Y byte: 13,824 cases per width verify the full child-entry RAM,
+callee/slot/Y selection and return continuation with explicit child mocks.
+It does not certify those child implementations. Actual S2 ROM roots now
+match 110/160, retaining all previous 106 matches; cases 23 and 55 newly
+match on both widths. NoInit retains 21,504 passing cases per width.
+The full vector still awaits the remaining entry extraction and original
+boundary proof; three-artifact delivery and S3 closure remain pending.
+
+### S3 complete native entry separation, pending original boundary proof
+
+The checkpoint now selects explicit native entries for every declared vector
+ID. Existing ordinary actor, firebar, platform and Bowser child bodies move
+to enemy/init_targets.c, declared in init_targets.h. Both product build lists
+include this shared unit. The firebar entry parameter distinguishes $C459
+from $C45C without fabricating an empty forwarding function. Direct piranha
+callers retain their existing entry; the vector's legacy default writes stay
+inside its separate, still-unverified child entry. The retainer entry likewise
+retains its old writes until S4, rather than claiming its missing Y write fixed.
+Frenzy, power-up and vine keep their existing subsystem owners. No host code
+changes, no child-node transfer and no initializer-interior conformance credit.
+
+All 55 IDs, six slots and four bounded native configurations retain identical
+complete RAM output across the extraction: 1,320 cases per width. The initial
+extraction misplaced the upward-lift body for IDs $26/$2B; this check caught
+both before delivery, and their original legacy force/speed writes were
+restored. The complete rerun passes. Actual S2 ROM comparisons still match
+110/160; the remaining 50 mismatches are retained.
+
+The handoff harness now covers all 55 entries, six slots and 256 Y values:
+84,480 cases per width verify full entry RAM, target identity, slot/required
+Y arguments, no-init/end returns and child-return propagation. These explicit
+child mocks prove native caller boundaries, not child interiors. All prior
+NoInit cases also pass. Original read-only target-entry observations, final
+cross-target builds, three EXEs and closure remain required; global node
+progress stays 922/1,992. Future S4/S6 owner paths above reflect this source
+move without changing their node sets or admission order.
+
+| Original target | Address | IDs |
+| --- | --- | --- |
+| InitNormalEnemy | $C30E | $00, $01, $02 |
+| InitRedKoopa | $C31E | $03 |
+| NoInitCode | $C2F0 | $04, $09, $13, $19, $1A, $20, $21, $22, $23, $30, $31, $32, $33, $34 |
+| InitHammerBro | $C328 | $05 |
+| InitGoomba | $C2F1 | $06 |
+| InitBloober | $C342 | $07 |
+| InitBulletBill | $C36B | $08 |
+| InitCheepCheep | $C375 | $0A, $0B |
+| InitPodoboo | $C2F7 | $0C |
+| InitPiranhaPlant | $C787 | $0D |
+| InitJumpGPTroopa | $C7D1 | $0E |
+| InitRedPTroopa | $C34A | $0F |
+| InitHorizFlySwimEnemy | $C33D | $10 |
+| InitLakitu | $C385 | $11 |
+| InitEnemyFrenzy | $C7A0 | $12, $14, $15, $16, $17 |
+| EndFrenzy | $C7B8 | $18 |
+| InitShortFirebar | $C45C | $1B, $1C, $1D, $1E |
+| InitLongFirebar | $C459 | $1F |
+| InitBalPlatform | $C7DF | $24 |
+| InitVertPlatform | $C812 | $25 |
+| LargeLiftUp | $C83F | $26 |
+| LargeLiftDown | $C845 | $27 |
+| InitHoriPlatform | $C80B | $28, $2A |
+| InitDropPlatform | $C803 | $29 |
+| PlatLiftUp | $C84B | $2B |
+| PlatLiftDown | $C857 | $2C |
+| InitBowser | $C549 | $2D |
+| PwrUpJmp | $BC60 | $2E |
+| Setup_Vine | $B91E | $2F |
+| InitRetainerObj | $C307 | $35 |
+| EndOfEnemyInitCode | $C881 | $36 |
+
+## S3 original initializer vector proof
+
+S3 closes all three received and expected labels, with no scoped transfer:
+922 -> 925 / 1,992. This proves checkpoint/vector caller semantics; it does
+not certify the initialization children, their internal call graphs or full
+playability. S4 remains next, with its original 23-node common initializer set.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| CheckpointEnemyID | $C26C | Below-$15 Y+8 byte wrap and masked-offscreen write; both original branch outcomes and target entry RAM match; match |
+| InitEnemyRoutines | $C27F | All 55 entries/31 targets, exact vector scratch and native handoffs including residual vine Y=$60; child interiors excluded; match |
+| NoInitCode | $C2F0 | All fourteen aliases return without extra game writes; 28 original observations and exhaustive native preservation cases; match |
+
+One hundred ten controlled original NMI routes cover all 55 IDs and all 31
+selected addresses. ID zero uses an unchanged ordinary enemy record; other
+IDs use the original queued-frenzy predecessor. Slot-zero and slot-five
+entries, hard-mode and wrapped Y configurations are explicit fixture inputs.
+Two initial fireworks cases lacked the star-flag partner and timed out; their
+source-RAM setup was corrected to satisfy the original scan, with no ROM,
+PC, stack or output patch. All 110 then returned normally. Each record checks
+the reached target and original Y=(ID*2)+2. All 110 observer-free coverage
+runs produce byte-identical frame records. The checkpoint branch executes
+44 lower-ID and 68 upper-ID outcomes; NoInitCode executes 28 times. All 110
+vector bytes also match the original listing labels and ROM.
+
+The two widths provide 220/220 caller matches: compare entry RAM and native
+target/arguments before explicitly substituting the observed child return.
+No-init and terminal return entries are compared directly. This comparison
+excludes hardware-stack bytes except mapped game RAM $0133-$0139; scratch
+$00-$07 is included. It is not a CPU-stack-emulation claim. Actual execution
+without child substitution matches 128/220 and retains 92 child failures.
+Those failures affect IDs $0C, $0D, $12, $14-$17, $1B-$1F, $24-$2D and $35;
+their existing T19 S5 custody and scheduled source slices remain responsible.
+S4 handles common initializer semantics, S5/S7 their admitted frenzy bodies,
+S6 firebar initialization; later source slices handle the other initializers.
+No child node receives completion credit from this S.
+
+Native vector tests cover 84,480 cases per width, NoInit tests 21,504, and
+pre/post extraction preservation 1,320. The preservation check caught and
+corrected a transient upward-lift extraction error before delivery. The
+power-up dispatch regression previously omitted source vector scratch;
+its expected $04-$07 writes now match the original entry, while its existing
+72 child-write cases per width remain intact. Final focused stream tests pass.
+Thirty-eight of forty related regressions pass; the two existing Bowser
+exit-four failures remain. Earlier actual matrices retain 166/192 loop
+matches and improve parser matches from 88/160 at S2 closure to 110/160.
+None of the previously matching loop or parser roots is lost.
+
+All 85 shared units compile as strict C90 on x86/x64; self-tests and bounded
+hidden-window responsiveness probes pass. DOS16 links with the existing
+OLDNAMES warning, without DOS runtime/resource/physical-486 qualification.
+Platform purity passes; no platform source changes. Original raw records
+are contained under build/m2-t38-s3 (1,402,307 bytes, below the four-MB budget,
+with twenty-second process timeouts). Reproduce with enemy_init_fixture.h,
+reference_frame_recorder, enemy_init_snapshot_check and the integrated
+enemy_loop_actual_check; child substitution and actual modes are separate.
+
+The similar-issue sweep covers all 55 table aliases, every checkpoint caller,
+ordinary/frenzy/power-up/vine/terminal paths and both build source lists.
+The dispatcher now owns only original checkpoint/dispatch work. Existing
+child bodies have explicit shared entries in enemy/init_targets.c and their
+existing subsystem owners; this move preserves child behavior and does not
+endorse their legacy defaults or missing internal calls. Future S4/S6 owner
+paths are updated without changing scope or order. Three owner-authorized
+EXEs below are test deliveries, not a claim that the game is ROM-complete.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 254897 | 10d2c9dcdcf92beb87cf3586d93cc6d9a3455c0e2f0aa92a49e9d702fd5e1e18 |
+| mysmb32.exe | 336622 | 7fb00dc1a4e9f9e2e1fb45e38eb57bcb183ba33e9eb4de3cde39c5a7bd5af821 |
+| mysmb64.exe | 344229 | d8e379d7ca8e1b8182d8f75d81e6b610ff275895a5646173765506582cd94651 |

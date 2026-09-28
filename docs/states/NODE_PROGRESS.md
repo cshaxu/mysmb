@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 922 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 925 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 962 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 959 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **922 / 1,992 (46.29%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **925 / 1,992 (46.44%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T38 S2 P1](../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof)
-proves nineteen parser caller nodes, with 160/160 caller matches and three
-explicit static/native branch exceptions. Actual checks remain 88/160;
-seventy-two child failures and flag-dependent continuation remain open.
+Latest task review: [T38 S3 P1](../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof)
+proves three initializer-vector caller nodes across all 55 entries and 31
+targets, with 220/220 caller matches. Actual initialization matches 128/220;
+92 child failures remain under their existing custody and planned slices.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (922)
+## Completed matches (925)
 
 | ROM line | Node |
 | ---: | --- |
@@ -922,6 +922,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8066 | `CheckThreeBytes` |
 | 8072 | `Inc3B` |
 | 8073 | `Inc2B` |
+| 8080 | `CheckpointEnemyID` |
+| 8092 | `InitEnemyRoutines` |
+| 8158 | `NoInitCode` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

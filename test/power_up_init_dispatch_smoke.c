@@ -14,6 +14,9 @@ int main(void)
         game.ram[0x16U+slot]=0x2eU;game.ram[0x39U]=(mysmb_u8)type;
         game.ram[0x756U]=(mysmb_u8)status;
         memcpy(expected,game.ram,2048U);
+        /* CheckpointEnemyID reaches PwrUpJmp through the original vector. */
+        expected[4U]=0x81U;expected[5U]=0xc2U;
+        expected[6U]=0x60U;expected[7U]=0xbcU;
         expected[0x23U]=1U;expected[0x14U]=1U;expected[0x49fU]=3U;
         expected[0x3caU]=0x20U;expected[0xfeU]=2U;
         if(type<2U) expected[0x39U]=(mysmb_u8)(status==2U?1U:status);

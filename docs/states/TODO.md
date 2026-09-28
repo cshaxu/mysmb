@@ -2,6 +2,9 @@
 
 ## Translation Debt
 
+- [ ] **Initializer child bodies after complete vector recovery:** T38 S3 proves the 55-entry caller but retains 92/220 actual failures (IDs $0C, $0D, $12, $14-$17, $1B-$1F, $24-$2D and $35). Legacy common defaults and missing child calls remain in shared enemy/init_targets.c and existing frenzy owners. Keep original source order: common initializers S4, Lakitu/Spiny S5, firebars S6, flying fish S7; other children retain existing T19 S5 custody and later planned slices. [Caller proof and exact limitations](../proposals/m2/t38-enemy-stream-initialization.md#s3-original-initializer-vector-proof).
+
+
 - [ ] **InitLakitu nonzero-frenzy rejection and parser descendants:** T38 S2 exposes 72/160 actual-child failures. InitLakitu fails to erase its slot when frenzy is occupied; the parser then consumes a record the original retains. Ten root differences are this proven flag-dependent continuation, not a new parser workaround. Repair with InitLakitu/KillLakitu in planned T38 S4; checkpoint/vector scratch remains for S3, group and other initializers retain existing T19 S5 custody. [Exact proof and limitations](../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof).
 
 

@@ -1,56 +1,31 @@
 #include "game/objects.h"
 #include "game/enemy/init.h"
+#include "game/enemy/init_targets.h"
 #include "game/enemy/frenzy.h"
 
 enum {
-    MYSMB_AREA_SCREEN_RIGHT_PAGE = 0x071bU,
-    MYSMB_AREA_SCREEN_RIGHT_X = 0x071dU,
-    MYSMB_AREA_POINTER = 0x0750U,
-    MYSMB_AREA_ENTRANCE_PAGE = 0x0751U,
-    MYSMB_AREA_TYPE = 0x074eU,
-    MYSMB_ENEMY_DATA_LOW = 0x00e9U,
-    MYSMB_ENEMY_DATA_HIGH = 0x00eaU,
-    MYSMB_WORLD_NUMBER = 0x075fU,
-    MYSMB_ENEMY_DATA_OFFSET = 0x0739U,
-    MYSMB_ENEMY_OBJECT_PAGE = 0x073aU,
-    MYSMB_ENEMY_OBJECT_PAGE_SELECT = 0x073bU,
     MYSMB_ENEMY_FLAG = 0x000fU,
     MYSMB_ENEMY_ID = 0x0016U,
     MYSMB_ENEMY_STATE = 0x001eU,
-    MYSMB_ENEMY_MOVING_DIRECTION = 0x0046U,
-    MYSMB_ENEMY_X_SPEED = 0x0058U,
-    MYSMB_ENEMY_PAGE = 0x006eU,
-    MYSMB_ENEMY_X = 0x0087U,
-    MYSMB_ENEMY_Y_SPEED = 0x00a0U,
     MYSMB_ENEMY_Y_HIGH = 0x00b6U,
-    MYSMB_ENEMY_Y = 0x00cfU,
-    MYSMB_ENEMY_X_FORCE = 0x0401U,
-    MYSMB_ENEMY_Y_DUMMY = 0x0417U,
-    MYSMB_ENEMY_Y_FORCE = 0x0434U,
-    MYSMB_ENEMY_BOUND_BOX = 0x049aU,
-    MYSMB_FIREBAR_SPIN_SPEED = 0x0388U,
-    MYSMB_FIREBAR_SPIN_DIRECTION = 0x0034U,
-    MYSMB_BOWSER_BODY_CONTROLS = 0x0363U,
-    MYSMB_BOWSER_FEET_TIMER = 0x0364U,
-    MYSMB_BOWSER_MOVE_SPEED = 0x0365U,
-    MYSMB_BOWSER_ORIGIN_X = 0x0366U,
-    MYSMB_BOWSER_FLAME_TIMER = 0x0367U,
-    MYSMB_BOWSER_BREATH_TIMER = 0x0790U,
-    MYSMB_BOWSER_FRONT_SLOT = 0x0368U,
-    MYSMB_BOWSER_HIT_POINTS = 0x0483U,
-    MYSMB_ENEMY_INTERVAL_TIMER = 0x078aU,
-    MYSMB_BALANCE_PLATFORM_ALIGNMENT = 0x03a0U,
-    MYSMB_PLATFORM_COLLISION_FLAG = 0x03a2U,
-    MYSMB_PLATFORM_TOP_Y = 0x0401U,
-    MYSMB_PLATFORM_CENTER_Y = 0x0058U,
-    MYSMB_PRIMARY_HARD = 0x076aU,
-    MYSMB_SECONDARY_HARD = 0x06ccU,
-    MYSMB_ENEMY_FRENZY_BUFFER = 0x06cbU
+    MYSMB_ENEMY_Y = 0x00cfU
 };
 
-/* ROM InitEnemyObject positions a stream-loaded object, then enters
- * CheckpointEnemyID.  Special spawners call the latter after their own
- * source-defined position setup. */
+/* ROM $C282-$C2EF: initializer target provenance for JumpEngine scratch.
+ * These addresses are data only; native C implements every runtime path. */
+static const mysmb_u16 mysmb_enemy_init_addresses[55] = {
+    0xc30eU, 0xc30eU, 0xc30eU, 0xc31eU, 0xc2f0U, 0xc328U, 0xc2f1U, 0xc342U,
+    0xc36bU, 0xc2f0U, 0xc375U, 0xc375U, 0xc2f7U, 0xc787U, 0xc7d1U, 0xc34aU,
+    0xc33dU, 0xc385U, 0xc7a0U, 0xc2f0U, 0xc7a0U, 0xc7a0U, 0xc7a0U, 0xc7a0U,
+    0xc7b8U, 0xc2f0U, 0xc2f0U, 0xc45cU, 0xc45cU, 0xc45cU, 0xc45cU, 0xc459U,
+    0xc2f0U, 0xc2f0U, 0xc2f0U, 0xc2f0U, 0xc7dfU, 0xc812U, 0xc83fU, 0xc845U,
+    0xc80bU, 0xc803U, 0xc80bU, 0xc84bU, 0xc857U, 0xc549U, 0xbc60U, 0xb91eU,
+    0xc2f0U, 0xc2f0U, 0xc2f0U, 0xc2f0U, 0xc2f0U, 0xc307U, 0xc881U
+};
+
+/* Legacy convenience entry for supplied row/ID data. The original parser
+ * owns position setup and InitEnemyObject separately in stream.c; this
+ * helper is not the source InitEnemyObject implementation. */
 void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
                                    mysmb_u8 row, mysmb_u8 id)
 {
@@ -61,23 +36,11 @@ void mysmb_enemy_initialize_loaded(struct mysmb_game *game, mysmb_u8 slot,
     game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
     mysmb_enemy_checkpoint_loaded(game, slot);
 }
-void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot)
-{
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 1U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x18U);
-    game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-}
 void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
 {
-    /* InitEnemyRoutines entry $2E is the residual PwrUpJmp tail. */
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 0x2eU) {
-        mysmb_objects_initialize_power_up(game);
-        return;
-    }
+    mysmb_u8 id;
+    mysmb_u16 target;
+    id = game->ram[MYSMB_ENEMY_ID + slot];
     /* ROM CheckpointEnemyID, not the stream parser, owns this add.  Group
      * and frenzy producers enter here after supplying their own Y value. */
     if (game->ram[MYSMB_ENEMY_ID + slot] < 0x15U) {
@@ -85,206 +48,123 @@ void mysmb_enemy_checkpoint_loaded(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 8U);
         game->ram[0x03d8U + slot] = 1U;
     }
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 21U) {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 21U;
-        mysmb_enemy_init_bowser_flame_frenzy(game, slot);
+    /* Preserve the original dispatch scratch before any target executes.
+     * Only the declared vector IDs $00-$36 are certified by this binding. */
+    if (id < 55U) {
+        target = mysmb_enemy_init_addresses[id];
+        game->ram[4U] = 0x81U;
+        game->ram[5U] = 0xc2U;
+        game->ram[6U] = (mysmb_u8)target;
+        game->ram[7U] = (mysmb_u8)(target >> 8U);
+        if (target == 0xc2f0U) return; /* NoInitCode. */
+        if (target == 0xc881U) return; /* EndOfEnemyInitCode. */
+    }
+    /* InitEnemyRoutines entry $2E is the residual PwrUpJmp tail. */
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 0x2eU) {
+        mysmb_objects_initialize_power_up(game);
         return;
     }
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 22U) {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 22U;
-        mysmb_enemy_init_fireworks_frenzy(game, slot);
+    if (id == 0x2fU) {
+        /* JumpEngine leaves Y = (ID << 1) + 2 after reading target high.
+         * Preserve that register input even for this residual table entry. */
+        mysmb_objects_start_vine(game, slot, 0x60U);
         return;
     }
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 20U) {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 20U;
-        mysmb_enemy_init_flying_cheep_frenzy(game, slot);
-        return;
-    }
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 18U) {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
-        mysmb_enemy_init_lakitu_spiny_frenzy(game, slot);
-        return;
-    }
-    /* IDs $17/$18 dispatch InitEnemyFrenzy/EndFrenzy directly from
-     * CheckpointEnemyID; they must not enter ordinary actor setup. */
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 23U) {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 23U;
-        mysmb_enemy_step_bullet_bill_cheep_frenzy(game, slot);
+    /* Five vector aliases enter the same original frenzy dispatcher. */
+    if (id == 0x12U || (id >= 0x14U && id <= 0x17U)) {
+        mysmb_enemy_init_frenzy(game, slot);
         return;
     }
     if (game->ram[MYSMB_ENEMY_ID + slot] == 24U) {
         mysmb_enemy_end_frenzy(game, slot);
         return;
     }
-    /* ROM CheckpointEnemyID marks ordinary objects before their first
-     * RunNormalEnemies pass. */
-        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_ENEMY_ID + slot] == 3U ? 1U : 0U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = game->ram[MYSMB_PRIMARY_HARD] != 0U ? 0xf4U : 0xf8U;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-        game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        /* InitGoomba calls InitNormalEnemy, then SmallBBox. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 6U) {
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        }
-        /* ROM InitHammerBro.  Its independent movement route owns the
-         * jump/throw timers after this source-side object initialization. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 5U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[0x03a2U + slot] = 0U;
-            game->ram[0x0796U + slot] =
-                game->ram[MYSMB_SECONDARY_HARD] != 0U ? 0x50U : 0x80U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 0x0bU;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 8U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 13U) {
-            mysmb_enemy_init_piranha_plant(game, slot);
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 10U ||
-            game->ram[MYSMB_ENEMY_ID + slot] == 11U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 12U) {
-            game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 2U;
-            game->ram[MYSMB_ENEMY_Y + slot] = 2U;
-            game->ram[0x0796U + slot] = 1U;
-            game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 7U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 9U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 14U) {
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0xf8U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 15U) {
-            game->ram[MYSMB_ENEMY_X_FORCE + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(
-                game->ram[MYSMB_ENEMY_Y + slot] +
-                (game->ram[MYSMB_ENEMY_Y + slot] < 0x80U ? 0x30U : 0xe0U));
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        }
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 16U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        }
-        /* ROM InitLakitu -> SetupLakitu -> InitHorizFlySwimEnemy/TallBBox2. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 17U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[0x06d1U] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        }
-        /* ROM InitShortFirebar/InitLongFirebar.  The long variant's
-         * duplicate slot is OAM-only; its physical balls share this anchor. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] >= 27U &&
-            game->ram[MYSMB_ENEMY_ID + slot] <= 31U) {
-            static const mysmb_u8 spin_speed[5] = { 0x28U, 0x38U, 0x28U, 0x38U, 0x28U };
-            static const mysmb_u8 spin_direction[5] = { 0U, 0U, 0x10U, 0x10U, 0U };
-            mysmb_u8 old_x = game->ram[MYSMB_ENEMY_X + slot];
-            mysmb_u8 index = (mysmb_u8)(game->ram[MYSMB_ENEMY_ID + slot] - 27U);
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_FIREBAR_SPIN_SPEED + slot] = spin_speed[index];
-            game->ram[MYSMB_FIREBAR_SPIN_DIRECTION + slot] = spin_direction[index];
-            game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 4U);
-            game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 4U);
-            if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 3U;
-        }
-        /* ROM InitBalPlatform through InitSmallPlatform.  The drawing-only
-         * rope partner is absent; each physical deck keeps its 6502 state. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] >= 36U &&
-            game->ram[MYSMB_ENEMY_ID + slot] <= 44U) {
-            mysmb_u8 platform_id;
-            mysmb_u8 old_x;
-
-            platform_id = game->ram[MYSMB_ENEMY_ID + slot];
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-            game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] =
-                (platform_id == 43U || platform_id == 44U) ? 4U : 5U;
-            if (platform_id != 43U && platform_id != 44U &&
-                game->ram[MYSMB_AREA_TYPE] != 3U &&
-                game->ram[MYSMB_SECONDARY_HARD] == 0U) {
-                game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 6U;
-            }
-            if (platform_id == 38U || platform_id == 39U) {
-                game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 5U;
-            }
-            if (platform_id == 36U) {
-                old_x = game->ram[MYSMB_ENEMY_X + slot];
-                game->ram[MYSMB_ENEMY_Y + slot] =
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-                if (game->ram[MYSMB_SECONDARY_HARD] == 0U) {
-                    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x - 8U);
-                    if (old_x < 8U) game->ram[MYSMB_ENEMY_PAGE + slot]--;
-                    old_x = game->ram[MYSMB_ENEMY_X + slot];
-                }
-                game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(old_x + 8U);
-                if (game->ram[MYSMB_ENEMY_X + slot] < old_x) game->ram[MYSMB_ENEMY_PAGE + slot]++;
-                game->ram[MYSMB_ENEMY_STATE + slot] = game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT];
-                game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] =
-                    game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] >= 0x80U ? slot : 0xffU;
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0U;
-            }
-            else if (platform_id == 37U) {
-                game->ram[MYSMB_PLATFORM_TOP_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-                game->ram[MYSMB_PLATFORM_CENTER_Y + slot] =
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x40U);
-                if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x80U) {
-                    game->ram[MYSMB_ENEMY_Y + slot] = 0xc0U;
-                }
-            }
-            else if (platform_id == 38U || platform_id == 43U) {
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
-            }
-            else if (platform_id == 39U || platform_id == 44U) {
-                game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
-                game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-            }
-            else if (platform_id == 40U || platform_id == 42U) {
-                game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0x10U;
-                game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-            }
-            else if (platform_id == 41U) {
-                game->ram[MYSMB_PLATFORM_COLLISION_FLAG + slot] = 0xffU;
-            }
-        }
-        /* ROM InitBowser, excluding its OAM-only duplicate rear half. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 45U) {
-            game->ram[MYSMB_BOWSER_BODY_CONTROLS] = 0U;
-            game->ram[MYSMB_BOWSER_ORIGIN_X] = game->ram[MYSMB_ENEMY_X + slot];
-            game->ram[MYSMB_BOWSER_FLAME_TIMER] = 0U;
-            game->ram[MYSMB_BOWSER_BREATH_TIMER] = 0xdfU;
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0xdfU;
-            game->ram[MYSMB_BOWSER_FEET_TIMER] = 0x20U;
-            game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] = 0x20U;
-            game->ram[MYSMB_BOWSER_HIT_POINTS] = 5U;
-            game->ram[MYSMB_BOWSER_MOVE_SPEED] = 2U;
-            game->ram[MYSMB_BOWSER_FRONT_SLOT] = slot;
-            game->ram[MYSMB_ENEMY_BOUND_BOX + slot] = 10U;
-        }
-
+    switch (id) {
+    case 0U:
+    case 1U:
+    case 2U:
+        mysmb_enemy_init_normal(game, slot);
+        return;
+    case 3U:
+        mysmb_enemy_init_red_koopa(game, slot);
+        return;
+    case 6U:
+        mysmb_enemy_init_goomba(game, slot);
+        return;
+    case 5U:
+        mysmb_enemy_init_hammer_bro(game, slot);
+        return;
+    case 8U:
+        mysmb_enemy_init_bullet_bill(game, slot);
+        return;
+    case 13U:
+        mysmb_enemy_init_piranha_entry(game, slot);
+        return;
+    case 10U:
+    case 11U:
+        mysmb_enemy_init_cheep_cheep(game, slot);
+        return;
+    case 12U:
+        mysmb_enemy_init_podoboo(game, slot);
+        return;
+    case 7U:
+        mysmb_enemy_init_bloober(game, slot);
+        return;
+    case 14U:
+        mysmb_enemy_init_jump_green_ptroopa(game, slot);
+        return;
+    case 15U:
+        mysmb_enemy_init_red_ptroopa(game, slot);
+        return;
+    case 16U:
+        mysmb_enemy_init_horizontal_fly_swim(game, slot);
+        return;
+    case 17U:
+        mysmb_enemy_init_lakitu(game, slot);
+        return;
+    case 36U:
+        mysmb_enemy_init_balance_platform(game, slot);
+        return;
+    case 37U:
+        mysmb_enemy_init_vertical_platform(game, slot);
+        return;
+    case 38U:
+        mysmb_enemy_init_large_lift_up(game, slot);
+        return;
+    case 39U:
+        mysmb_enemy_init_large_lift_down(game, slot);
+        return;
+    case 40U:
+    case 42U:
+        mysmb_enemy_init_horizontal_platform(game, slot);
+        return;
+    case 41U:
+        mysmb_enemy_init_drop_platform(game, slot);
+        return;
+    case 43U:
+        mysmb_enemy_init_small_lift_up(game, slot);
+        return;
+    case 44U:
+        mysmb_enemy_init_small_lift_down(game, slot);
+        return;
+    case 27U:
+    case 28U:
+    case 29U:
+    case 30U:
+        mysmb_enemy_init_firebar_entry(game, slot, 0U);
+        return;
+    case 31U:
+        mysmb_enemy_init_firebar_entry(game, slot, 1U);
+        return;
+    case 45U:
+        mysmb_enemy_init_bowser(game, slot);
+        return;
+    case 53U:
+        mysmb_enemy_init_retainer(game, slot);
+        return;
+    default:
+        break;
+    }
+    /* IDs outside the original vector retain the unverified legacy fallback. */
+    mysmb_enemy_init_normal(game, slot);
 }
