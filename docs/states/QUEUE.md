@@ -15,9 +15,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 T30 is closed after its [cross-chain audit](../history/M2-T30-area-object-rendering.md#t30-closure),
 with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
-Global progress is 608 / 1,992. T31 S2 is closed with 66 proven labels and
-six accepted incomplete enemy-caller transfers to T19 S5. T31 S3 is active
-for the ten planned scroll-chain labels; expected ten, maximum 618. Enemy-data and loopback obligations
+Global progress is 618 / 1,992 after T31 S3 P1 proves all ten planned
+scroll-chain labels. S3 is closed; planned S4 entry modes
+are next, not yet admitted. S2's six incomplete enemy-caller transfers
+remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 
 Every later M2 admission uses the source-order chain table defined by the

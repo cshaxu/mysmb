@@ -719,16 +719,16 @@ The labels and branches behind every line remain open until individually bound b
 | 5385 | `UpdScrollVar` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5398 | `RunParser` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
 | 5399 | `ExitEng` | M2 T31 S2 shared engine / engine_tail | ROM-match complete | [S2 P1 dual proof and retained gaps](../../proposals/m2/game-dispatcher.md#s2p1-verified-tail-partial-delivery) |
-| 5403 | `ScrollHandler` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollhandler) |
-| 5422 | `ChkNearMid` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chknearmid) |
-| 5427 | `ScrollScreen` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scrollscreen) |
-| 5451 | `InitScrlAmt` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initscrlamt) |
-| 5453 | `ChkPOffscr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkpoffscr) |
-| 5463 | `KeepOnscr` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-keeponscr) |
-| 5475 | `InitPlatScrl` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initplatscrl) |
-| 5479 | `X_SubtracterData` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-x_subtracterdata) |
-| 5482 | `OffscrJoypadBitsData` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-offscrjoypadbitsdata) |
-| 5487 | `GetScreenPosition` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getscreenposition) |
+| 5403 | `ScrollHandler` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5422 | `ChkNearMid` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5427 | `ScrollScreen` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5451 | `InitScrlAmt` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5453 | `ChkPOffscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5463 | `KeepOnscr` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5475 | `InitPlatScrl` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5479 | `X_SubtracterData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5482 | `OffscrJoypadBitsData` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
+| 5487 | `GetScreenPosition` | M2 T31 S3 shared game/scroll.c | ROM-match complete | [S3 P1 scroll-chain proof](../../proposals/m2/game-dispatcher.md#s3p1-scroll-chain-proof) |
 | 5499 | `GameRoutines` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameroutines) |
 | 5519 | `PlayerEntrance` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerentrance) |
 | 5532 | `ChkBehPipe` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkbehpipe) |

@@ -2,8 +2,8 @@
 
 ## Status
 
-**M2 T31 open; S3 active at 608 / 1,992.** Closed T30 precedes this task in the
-source-order recovery plan. S1 and S2 are closed; S3 is the only active chain.
+**M2 T31 open; S3 closed with ten proven labels at 618 / 1,992.** Closed T30 precedes this task in the
+source-order recovery plan. S1 through S3 are closed; planned S4 is next and not yet admitted.
 
 ## Exact task scope and chain plan
 
@@ -1406,3 +1406,96 @@ ceiling 618. The ledger and documentation gates pass. Existing player-route
 and horizontal-carry tests pass against the unchanged P6 game objects on
 both x86 and x64; these baseline tests do not cover the three source findings.
 No gameplay or executable content changes in this admission transition.
+
+## S3 implementation checkpoint: shared scroll owner
+
+The admitted chain now lives in game/scroll.c. player.c's duplicate scroll
+bodies and world-coordinate clamp are removed. InitializeArea and the scroll
+path call one GetScreenPosition owner. The existing raw GetXOffscreenBits
+function is exposed without changing its algorithm; this child keeps its
+separate proof status. All shared and OpenNT build lists include scroll.c.
+
+The translated gate tests the wrapped DEY sign, including accepted $80;
+InitScrlAmt changes only ScrollAmount before the clamp tail. ScrollScreen
+uses the RAM mirror as authority and changes only bit 0. The clamp consumes
+raw offscreen bits $80/$20 with left priority, performs the original borrow,
+compares the full controller byte, and clears Platform_X_Scroll last. Visible
+PPU state is not changed by this gameplay routine. Existing game mirror
+caches are synchronized only after the source ScrollScreen write path.
+
+[The scroll-chain caller test](../../../test/player_scroll_chain_smoke.c)
+passes strict C90 x86/x64 builds: source boundary cases, all 65,536 low-X/
+scroll-amount pairs, and 131,072 offscreen/controller/borrow combinations.
+The unscrolled path compares all RAM bytes so accidental edge/mirror writes
+cannot hide. OpenNT large-model compilation of the new owner and platform
+purity pass. Area initialization and horizontal-carry regressions pass on
+both Windows widths.
+
+The original player-route fixture failed after the change because it set
+left edge $0100 but left the right edge $0000. The old no-scroll rewrite
+silently repaired that inconsistent setup. Its fixture now supplies $01ff,
+as InitializeArea/GetScreenPosition would; both widths pass with unchanged
+gameplay assertions. Pre-correction failures remain in the local evidence.
+
+Similar-issue sweep found the two ScrollScreen implementations and the
+InitializeArea copy of GetScreenPosition; they now share the bounded owner.
+No enemy, physics or platform implementation was changed. Original natural
+entry/return comparisons, full three-artifact delivery and P1 commit are
+still pending. All ten labels remain open at 608; artifacts still identify
+S2/P6. This checkpoint grants no ROM-match credit from native tests alone.
+
+## S3/P1: scroll chain proof
+
+Completed exact labels: `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition`.
+
+Expected ten, actual ten: progress rises from 608 to 618 / 1,992. The
+shared game/scroll.c owner replaces the legacy player.c copies and both
+GetScreenPosition call sites now use it. The original offscreen child is
+exposed without alteration. No host code or platform-specific game branch
+is added. The earlier source audit, caller tests and fixture correction form
+the implementation review; this section supplies the original-ROM proof.
+
+[The reproducible verifier](../../../test/verify_scroll_snapshots.py) checks
+the four bytes at $b034-$b037 and all nine conditional branches in $af93-$b049.
+Both outcomes of every branch execute across 24 ordinary NMI routes through
+GameRoutines -> VerticalPipeEntry -> ScrollHandler. This source caller keeps
+the saved horizontal force, allowing $80 and carry/wrap states without
+patching a leaf PC, stack, registers or ROM. Samples are read-only at $af93
+and the real JSR successor $b1ed. Each observed frame equals the corresponding
+unobserved frame. The native boundary checker compares all 1,784 persistent
+RAM bytes, including both PPU mirrors; only CPU scratch and the hardware
+call-stack page are outside its native ABI contract. All 48 width comparisons
+pass. Both speed-preserving controller equalities and right-edge borrow are
+exercised. The earlier right-side fixture used a position already beyond the
+right edge, producing $ff bits and taking the left-priority branch; its raw
+records are retained. The corrected fixture reaches $7f and the missing right
+branch. No comparison byte or failed source branch was excluded.
+
+This establishes the ten nodes' source control/data/caller contracts. It
+does not certify all player physics, every GetXOffscreenBits caller, or full
+game output. Direct ScrollScreen amount-zero behavior and the initialization
+GetScreenPosition caller also have independent native regression coverage.
+
+All 61 shared sources compile under strict C90 on x86/x64; both Windows
+self-tests and hidden-window message probes pass. The final linked sources
+pass player-route, horizontal-carry and area-initialization regressions in
+both widths. The recorder compiles in both widths. Platform purity passes.
+The new owner compiles under OpenNT and the full DOS16 executable links with
+the existing warnings. DOS still lacks owner-data binding and playable/486
+runtime evidence; no such claim is made. Three artifacts are refreshed:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257149 | 45849f33bb558a9d0cead8657c3d5211cd57fdbc580f9d4a41ca414953945fe9 |
+| mysmb32.exe | 320744 | f6c40bad8e3abaa54f3c22ba902d5754d1e0b78bf6cf5079e5f0aa90a8e89db5 |
+| mysmb64.exe | 328085 | 83dab2321b0965bd596f6844ae13956dac6ef5f3d7871573cce9b4f66eee7797 |
+
+All ten S3 labels are complete without additional transfers. S4 remains
+unadmitted. S3 raw evidence stays within its 2 MB ignored-root budget and
+S3 cleanup responsibility; no original bytes or traces enter the commit.
+
+Closure review passes: the exact ten expected/actual labels agree across
+inventory, census, progress and ledger; no unfinished node remains in S3
+custody. The closure, progress and documentation gates pass. Actual raw
+evidence is 620,968 bytes within the 2 MB cap. S3 closes with P1; T31 remains
+open for its planned S4 chain and final cross-chain review.

@@ -26,6 +26,10 @@ int main(void)
     game.ram[0x006dU] = 1U;
     game.ram[0x071aU] = 1U;
     game.ram[0x071cU] = 0U;
+    /* InitializeArea/GetScreenPosition establishes both edges. A blocked
+     * ScrollHandler does not repair an uninitialized right edge. */
+    game.ram[0x071bU] = 1U;
+    game.ram[0x071dU] = 0xffU;
     game.ram[0x0086U] = 0x20U;
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x30U;

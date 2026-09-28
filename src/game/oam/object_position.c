@@ -65,7 +65,7 @@ void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)
 }
 /* ROM GetXOffscreenBits.  Returns the source table byte before
  * RunOffscrBitsSubs moves its high nybble to the final low nybble. */
-static mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,
+mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,
                                                 mysmb_u8 page, mysmb_u8 x)
 {
     static const mysmb_u8 data[16] = {

@@ -1,4 +1,5 @@
 #include "game/area.h"
+#include "game/player.h"
 #include "game/enemy/init.h"
 #include "game/objects.h"
 #include "game/status.h"
@@ -209,15 +210,7 @@ void mysmb_area_initialize(struct mysmb_game *game)
     game->ram[MYSMB_AREA_CURRENT_PAGE] = start_page;
     game->ram[MYSMB_AREA_BACKLOADING] = start_page;
     game->ram[MYSMB_AREA_SCREEN_LEFT_X] = 0U;
-    /* GetScreenPosition: left X plus $ff, and the resulting carry advances
-     * the right page.  A fresh page therefore has right edge $xxff. */
-    game->ram[MYSMB_AREA_SCREEN_RIGHT_X] =
-        (mysmb_u8)(game->ram[MYSMB_AREA_SCREEN_LEFT_X] + 0xffU);
-    game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] = start_page;
-    if (game->ram[MYSMB_AREA_SCREEN_RIGHT_X] <
-        game->ram[MYSMB_AREA_SCREEN_LEFT_X]) {
-        game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE]++;
-    }
+    mysmb_player_get_screen_position(game);
     game->ram[MYSMB_AREA_NT_HIGH] = (start_page & 1U) != 0U ? 0x24U : 0x20U;
     game->ram[MYSMB_AREA_NT_LOW] = 0x80U;
     /* SetInitNTHigh shifts the parity already selected by StartPage. */

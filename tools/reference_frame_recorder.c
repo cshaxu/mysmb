@@ -30,6 +30,7 @@
 #include "../test/engine_environment_fixture.h"
 #include "../test/engine_warp_fixture.h"
 #include "../test/engine_normal_fixture.h"
+#include "../test/scroll_fixture.h"
 #include "../test/engine_cannon_fixture.h"
 
 #include "core/driver.h"
@@ -966,6 +967,12 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--scroll-snapshot=", 18u) == 0) {
+            if (movement_snapshot_path != NULL || arguments[recorded][18] == '\0') return 64;
+            movement_snapshot_path = arguments[recorded] + 18;
+            background_snapshot = 2u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--enemy-background-snapshot=", 28u) == 0) {
             if (movement_snapshot_path != NULL || arguments[recorded][28] == '\0') return 64;
             movement_snapshot_path = arguments[recorded] + 28;
@@ -1372,6 +1379,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_scroll_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(716 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_engine_normal_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1773,6 +1786,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 717u && t26_fixture <= 740u)
+                    mysmb_scroll_fixture(driver->machine->ram,
+                        (lib_u8)(t26_fixture - 717u));
                 else if (t26_fixture >= 652u && t26_fixture <= 716u)
                     mysmb_engine_normal_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 652u));
@@ -1980,11 +1996,24 @@ int main(int argument_count, char **arguments)
             core_controller_set_buttons(&driver->machine->controller, (lib_u8)buttons);
         }
         before_pc = driver->machine->pc;
+        /* Read-only ScrollHandler boundary from the real pipe caller.
+         * $b1ed is its JSR successor; no synthetic return is installed. */
+        if (movement_snapshot_path != NULL && background_snapshot == 2u &&
+            elapsed >= warmup_frames && t26_fixture >= 717u && t26_fixture <= 740u) {
+            if (movement_snapshot_phase == 0u && before_pc == 0xaf93u) {
+                memcpy(movement_snapshots, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 1u;
+            }
+            else if (movement_snapshot_phase == 1u && before_pc == 0xb1edu) {
+                memcpy(movement_snapshots + 2048u, driver->machine->ram, 2048u);
+                movement_snapshot_phase = 2u;
+            }
+        }
         /* Observe the real normal-enemy call and its natural successor.
          * Never change PC, stack, registers, RAM, or the frame record. The
          * fixed fixture family supplies one actor in the recorded NMI. */
         if (movement_snapshot_path != NULL && elapsed >= warmup_frames &&
-            ((background_snapshot && t26_fixture >= 684u && t26_fixture <= 716u) ||
+            ((background_snapshot == 1u && t26_fixture >= 684u && t26_fixture <= 716u) ||
              (!background_snapshot && ((t26_fixture >= 652u && t26_fixture <= 683u) ||
               (t26_fixture >= 708u && t26_fixture <= 711u))))) {
             if (movement_snapshot_phase == 0u &&
@@ -2036,7 +2065,8 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        ok = fwrite(background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0",
+        ok = fwrite(background_snapshot == 2u ? "MSSC\1\0\0\0" :
+                    (background_snapshot ? "MSNB\1\0\0\0" : "MSNM\1\0\0\0"),
                     1u, 8u, snapshot) == 8u &&
              fwrite(movement_snapshots, 1u, 4096u, snapshot) == 4096u;
         if (fclose(snapshot) != 0) ok = 0;

@@ -22,6 +22,7 @@ list(APPEND MYSMB_GAME_SOURCES src/game/enemy/lifecycle.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/normal.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/background.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/side_collision.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/scroll.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -131,6 +132,10 @@ target_link_libraries(mysmb_parser_schedule_smoke PRIVATE mysmb_game)
 add_executable(mysmb_parser_buffer_commit_smoke test/parser_buffer_commit_smoke.c)
 target_link_libraries(mysmb_parser_buffer_commit_smoke PRIVATE mysmb_game)
 add_executable(mysmb_player_route_smoke test/player_route_smoke.c)
+add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c src/game/scroll.c)
+target_include_directories(mysmb_player_scroll_chain_smoke PRIVATE src)
+add_executable(mysmb_scroll_snapshot_check test/scroll_snapshot_check.c src/game/scroll.c src/game/oam/object_position.c)
+target_include_directories(mysmb_scroll_snapshot_check PRIVATE src)
 target_link_libraries(mysmb_player_route_smoke PRIVATE mysmb_game)
 add_executable(mysmb_player_friction_smoke test/player_friction_smoke.c)
 target_link_libraries(mysmb_player_friction_smoke PRIVATE mysmb_game)
@@ -351,6 +356,12 @@ if(MYSMB_OPENNT_CL16)
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player.c"
+            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
+            -Compiler "${MYSMB_OPENNT_CL16}"
+            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/scroll.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -598,6 +609,7 @@ add_test(NAME mysmb.enemy-stream-smoke COMMAND mysmb_enemy_stream_smoke)
 add_test(NAME mysmb.parser-schedule-smoke COMMAND mysmb_parser_schedule_smoke)
 add_test(NAME mysmb.parser-buffer-commit-smoke COMMAND mysmb_parser_buffer_commit_smoke)
 add_test(NAME mysmb.player-route-smoke COMMAND mysmb_player_route_smoke)
+add_test(NAME mysmb.player-scroll-chain COMMAND mysmb_player_scroll_chain_smoke)
 add_test(NAME mysmb.player-friction-smoke COMMAND mysmb_player_friction_smoke)
 add_test(NAME mysmb.player-horizontal-carry-smoke COMMAND mysmb_player_horizontal_carry_smoke)
 add_test(NAME mysmb.player-bounding-box-smoke COMMAND mysmb_player_bounding_box_smoke)

@@ -2,12 +2,14 @@
 
 ## Current Work
 
-**M2 T31 S3 is active at 608 / 1,992; ten scroll-chain labels received, all open. Expected ten, maximum 618.**
+**M2 T31 S3 is closed at 618 / 1,992: all ten received scroll-chain labels are proven. T31 remains open; planned S4 is next and not yet admitted.**
 
-S2 closed with 66 proven labels and six accepted unfinished transfers to
-M2 T19 S5 (transfer-131). P6 artifacts remain current. T31 remains open.
+The source tables and all nine conditional outcomes are proven; 24 original
+entry/return boundaries match both native widths. Three artifacts are
+refreshed; Windows startup checks pass. DOS remains link-only. S2's six
+unfinished enemy-caller transfers remain with T19 S5.
 
-## M2 T31 S3 Packet
+## M2 T31 S3 Packet (closed)
 
 | Field | Required record |
 | --- | --- |

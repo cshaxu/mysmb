@@ -93403,8 +93403,19 @@
         "GetScreenPosition"
       ],
       "maximumComplete": 618,
-      "actualMatches": [],
-      "state": "active-scroll-chain",
+      "actualMatches": [
+        "ScrollHandler",
+        "ChkNearMid",
+        "ScrollScreen",
+        "InitScrlAmt",
+        "ChkPOffscr",
+        "KeepOnscr",
+        "InitPlatScrl",
+        "X_SubtracterData",
+        "OffscrJoypadBitsData",
+        "GetScreenPosition"
+      ],
+      "state": "closed-P1-ten-matches",
       "evidence": "docs/proposals/m2/game-dispatcher.md"
     }
   ]
