@@ -674,3 +674,144 @@ are not redistributable release evidence or a claim that M2 is complete.
 | mysmb64.exe | 337974 | d1b72a1b13b182e2536ee40de1358fc3426f7fd7970b803ec9a79097f683c5c6 |
 
 Retained raw evidence: 2834812 bytes. S3 closes; S4 shatter/coin-above/chunks is next, not yet admitted.
+
+
+## S4 admission: shatter, top coin and chunk creation
+
+After S3 commit ae6fc0a, accepted transfer-157 receives four incomplete labels
+from M2 T24 S2. Baseline 843 / 1,992; expected four, maximum 847. Shared owner:
+game/blocks/chunks.c. This connected source group also resolves the S2
+BrickShatter child debt; no separate corrective S is allocated.
+
+| Label | Incoming status | Expected disposition |
+| --- | --- | --- |
+| BrickShatter | mapped; evidence incomplete | Complete after both proof tracks |
+| CheckTopOfBlock | mapped; evidence incomplete | Complete after both proof tracks |
+| TopEx | open | Complete after both proof tracks |
+| SpawnBrickChunks | mapped; evidence incomplete | Complete after both proof tracks |
+
+Original range $BE02-$BE6F: BrickShatter first checks the top coin, writes
+replacement flag and NoiseSoundQueue=$01, spawns chunks, sets player Y speed
+$FE before the five-point-digit modifier and AddToScore, then reloads control.
+CheckTopOfBlock reloads control, returns at row zero, otherwise subtracts $10
+and writes scratch $02 even without a coin. It reads through the original
+$06/$07 pointer, removes only $C2 before RemoveCoin_Axe, reloads control and
+calls SetupJumpCoin. No cached pre-child scratch may replace the live values.
+SpawnBrickChunks retains its exact coordinate/speed/force writes and redundant
+$FA write; it does not copy the second chunk's Y high byte.
+
+Remove the old merged shatter implementation from objects.c. Keep score,
+coin allocation and VRAM children in their existing owners; no child repair
+or new credit belongs here. Audit every head/bump top-coin caller, chunk field
+writer, sound write and score ordering. Platform code stays unchanged.
+
+ROM proof uses source-RAM ordinary NMI/head-hit routes and real root/direct-
+child observations. Cover both slots, no-coin/coin/top-row-zero paths and
+coordinate wrapping. Revalidate the complete accepted S2/S3 matrices, retain
+unexplained differences and require the sixteen known shatter differences to
+resolve rather than weaken their expectations. Separate actual-child proof
+from caller seams. Native checks verify the full write footprint, preservation
+of second Y high, scratch and child order; run focused regressions, strict
+C90 x86/x64, DOS16 link, platform purity, bounded window probes and three EXEs.
+
+Owner-local ROM/listing remain ignored research inputs with no redistribution
+claim or imported implementation. Keep all temporary artifacts below
+build/m2-t37-s4; limit each recorder to twenty seconds and each raw batch to
+four MB. S4 owns cleanup through T review. Never alter reference PC, stack,
+ROM, child returns or outputs. Four exact node dispositions, both tracks,
+tracker/ledger and artifact hashes are required before closure. DOS remains
+link-only; unrelated/full-game failures remain open.
+
+### S4 implementation checkpoint, not closure
+
+Admission, ledger and documentation gates pass at 843, scope/expected four,
+maximum 847. The original shatter/top-coin/chunk group now has one shared
+blocks/chunks.c owner. It replaces the merged approximations in objects.c.
+The original noise sound, replacement flag, player-speed-before-score order,
+row-offset write on misses, full pointer read and second Y-high preservation
+are restored. Bump/head callers retain the same declared child contracts.
+
+Strict C90 focused tests pass on x86/x64: 512 full-RAM chunk footprints,
+64 no-coin/zero-row paths and four coin/shatter child-order cases per width.
+Actual original-root revalidation now matches all 144 S2 and all 120 S3
+comparisons. The sixteen prior S2 BrickShatter differences are gone without
+changing their recorded original expectations. This is a concrete resolution
+candidate, not S4 closure: the dedicated S4 original-node coverage, final
+regressions and all three delivered artifacts are still required.
+
+Platform purity passes. No node count is changed yet; completion remains
+843 / 1,992. Assets still contain the committed S3 ae6fc0a executables.
+
+
+## S4 original shatter, top-coin and chunk proof
+
+S4/P1 proves the four received caller/local nodes: BrickShatter,
+CheckTopOfBlock, TopEx and SpawnBrickChunks. Expected four, actual four;
+no scoped node transfers. Progress 843 -> 847 / 1,992. This credits the
+local branches, writes and calls, not equivalence of their child interiors.
+
+| Original node | Shared C mapping and source contract |
+| --- | --- |
+| BrickShatter $BE02-$BE1E | blocks/chunks.c: check top first, replacement/noise=1, spawn, player speed=$FE before digit modifier=5 and score; caller reloads control at its continuation. |
+| CheckTopOfBlock $BE1F-$BE3F | Reload control; row-zero return; subtract $10 into $02 even on a miss; full $06/$07 indirect read; only $C2 cleared, before RemoveCoin_Axe then SetupJumpCoin with reloaded slot. |
+| TopEx $BE40 | Shared return reached by zero-row, noncoin and coin paths. |
+| SpawnBrickChunks $BE41-$BE6F | Original position/page, speed/force writes including repeated $FA; low-Y plus eight wraps without writing either high-Y byte. |
+
+Sixteen ordinary NMI/head-hit scenarios cover both slots, byte wrap,
+zero-row/noncoin/coin paths. All four original PCs are reached; both branch
+sites have taken and fallthrough observations. Observed and unobserved frame
+outputs and separately collected coverage snapshots are byte-identical.
+No original PC, stack, child return or output is patched. Native caller
+checks consume separately recorded original child returns; that seam proof
+is explicitly separate from native actual-child execution.
+
+Both widths yield 32 caller matches comparing 1,794 RAM bytes (including
+scratch $02/$06/$07). All 32 actual executions match the previous 1,791-byte
+persistent comparison, but all 32 FAIL the expanded comparison at $02.
+Independent child snapshots isolate AddToScore in all sixteen cases and
+SetupJumpCoin additionally in cases 8-11. No other compared byte differs.
+This is retained evidence, not a green full-chain result. Existing score
+(T36 S5), coin (T36 S3) and status-output (T28 S7) maintenance responsibilities
+remain; the deeper faulty instruction is not established by these boundaries.
+
+Rechecking the final build against the unchanged S2/S3 original snapshots
+matches all 144 head-hit and all 120 bump/content roots. The sixteen prior
+S2 BrickShatter differences are resolved; earlier narrower evidence does
+not certify the newly checked child scratch bytes.
+
+Operational evidence: strict C90 x86/x64 focused checks pass 512 full-RAM
+chunk footprints, 64 row paths and four child-order cases per width. All
+head/bump focused regressions also pass on both widths: 131,072 coordinate
+cases, 16 head child-order cases, 256 lookups and 512 bump dispatch/write cases.
+All
+32 surrounding regression runs pass. Both final Windows builds compile 79
+shared units, pass input self-test, create a hidden window and respond to a
+bounded message probe. DOS16 links with the existing OLDNAMES warning and
+remains link-only, with no playable or physical 486SX qualification claim.
+Platform purity passes; no platform implementation changes.
+
+The similar-issue sweep covers all head/bump top-coin callers, old shatter
+and chunk writers, sound queues and score order. Remove the old merged
+bodies from objects.c; one chunks.c owns the original group. Block lifetime,
+gravity, score, coin and graphics interiors remain their declared successors.
+Known full-frame and unrelated child debts remain open.
+
+Reproduce using mysmb_block_chunks_smoke and the snapshot/caller/child
+check targets. Record `--fixture=t37-chunks=N` (0-15),
+`--block-chunks-snapshot=...`, and `--control-children=...`; collect
+`--pc-coverage=...` separately. Run
+`python test/verify_block_chunks_snapshots.py <ignored-directory> <owner-rom>`.
+The verifier reports expanded failures rather than suppressing them. Final
+S2/S3 checkers consume the original retained head/bump snapshots. All raw
+research and build evidence stays below ignored build/m2-t37-s4.
+
+Three owner-authorized test artifacts follow. They are not redistributable
+release evidence or a claim that M2 is complete.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256977 | 9c69b77766cc0c34e5440aa396f908ac58198e61a73179a38b9ee59f7d396b45 |
+| mysmb32.exe | 330270 | f83c2d3f86dd230e1657f129d35e2e9f9f78ee439f25781a5cfae1621968ac0f |
+| mysmb64.exe | 338219 | d4663710a7a83fb097120ef4b4180906f97622a010547f2076f784be9bf8990e |
+
+Retained raw evidence: 756772 bytes. S4 closes; S5 block lifetime is next, not yet admitted.

@@ -167,10 +167,7 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_blocks_check_top(struct mysmb_game *game,
-                                             mysmb_u8 slot,
-                                             mysmb_u8 block_low,
-                                             mysmb_u8 block_row);
+
 
 /* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
  * here so a small player enters the death route rather than becoming immune. */
@@ -2006,41 +2003,6 @@ void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
     if (address < 0x0800U) game->ram[address] = 0U;
     mysmb_area_remove_coin_axe(game, block_low, block_row);
 }
-/* ROM $bd9b BrickShatter/SpawnBrickChunks, excluding draw and audio output. */
-static void mysmb_objects_start_brick_chunks(struct mysmb_game *game,
-                                             mysmb_u8 slot)
-{
-    game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot] = 1U;
-    game->ram[MYSMB_BLOCK_ORIGINAL_X + slot] = game->ram[MYSMB_BLOCK_X + slot];
-    game->ram[MYSMB_BLOCK_X_SPEED + slot] = 0xf0U;
-    game->ram[MYSMB_BLOCK_X_SPEED + slot + 2U] = 0xf0U;
-    game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfaU;
-    game->ram[MYSMB_BLOCK_Y_SPEED + slot + 2U] = 0xfcU;
-    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_BLOCK_Y_FORCE + slot + 2U] = 0U;
-    game->ram[MYSMB_BLOCK_PAGE + slot + 2U] = game->ram[MYSMB_BLOCK_PAGE + slot];
-    game->ram[MYSMB_BLOCK_X + slot + 2U] = game->ram[MYSMB_BLOCK_X + slot];
-    game->ram[MYSMB_BLOCK_Y_HIGH + slot + 2U] =
-        game->ram[MYSMB_BLOCK_Y_HIGH + slot];
-    game->ram[MYSMB_BLOCK_Y + slot + 2U] =
-        (mysmb_u8)(game->ram[MYSMB_BLOCK_Y + slot] + 8U);
-    game->ram[MYSMB_DIGIT_MODIFIER + 5U] = 5U;
-    (void)mysmb_score_add(game);
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfeU;
-}
-
-/* Existing BrickShatter body remains for the planned S4 migration. */
-void mysmb_blocks_shatter(struct mysmb_game *game, mysmb_u8 slot)
-{
-    game->ram[MYSMB_BLOCK_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_BLOCK_Y_SPEED + slot] = 0xfeU;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
-    mysmb_blocks_check_top(game, slot, game->ram[MYSMB_BLOCK_BUFFER_LOW + slot],
-                                      game->ram[MYSMB_BLOCK_ORIGINAL_Y + slot]);
-    mysmb_objects_start_brick_chunks(game, slot);
-}
-
 /* ROM $c076 MoveObjectHorizontally for the block-object array. */
 static void mysmb_objects_move_block_horizontally(struct mysmb_game *game,
                                                   mysmb_u8 slot)
@@ -2108,26 +2070,4 @@ void mysmb_objects_step_block(struct mysmb_game *game, mysmb_u8 slot)
         }
     }
     game->ram[MYSMB_BLOCK_STATE + slot] = state;
-}
-
-/* ROM CheckTopOfBlock.  The source removes a coin directly over a bumped
- * block before it dispatches the bumped block's own CoinBlock behavior. */
-void mysmb_blocks_check_top(struct mysmb_game *game,
-                                             mysmb_u8 slot,
-                                             mysmb_u8 block_low,
-                                             mysmb_u8 block_row)
-{
-    mysmb_u8 top_row;
-    mysmb_u16 address;
-
-    if (block_row == 0U) return;
-    top_row = (mysmb_u8)(block_row - 0x10U);
-    address = (mysmb_u16)(0x0500U + block_low + top_row);
-    if (address >= 0x0800U || game->ram[address] != 0xc2U) return;
-    game->ram[address] = 0U;
-    mysmb_area_remove_coin_axe(game, block_low, top_row);
-    /* Original CheckTopOfBlock supplies the saved block-buffer inputs. */
-    game->ram[6U] = block_low;
-    game->ram[2U] = top_row;
-    mysmb_objects_setup_jump_coin(game, slot);
 }

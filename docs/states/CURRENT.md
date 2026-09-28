@@ -2,28 +2,32 @@
 
 ## Current Work
 
-**M2 T37 S3 is closed at 843 / 1,992: eleven nodes proven; S4 shatter/coin-above/chunks is next.**
+**M2 T37 S4 is closed at 847 / 1,992: four local nodes proven; S5 block lifetime is next.**
 
-## M2 T37 S3 Packet
+## M2 T37 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T37 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S2 commit baae695; coordinator accepts transfer-156. |
-| Objective | Complete eleven bump/content/lookup nodes named in the proposal as one original chain. |
-| Non-goals | No CheckTopOfBlock, shatter, gravity or platform algorithm repair; no unrelated node credit. |
-| Reference Baseline | 832 / 1,992; eleven incomplete labels, eleven expected, maximum 843. |
-| Candidate Proposal | [S3 block content and lookup](../proposals/m2/power-up-block-movement.md#s3-admission-block-bump-contents-and-lookup). |
-| Files And ABI Surface | Shared blocks/bump owner, head lookup interface, existing top child, area table consumer, tests/recorder/build lists and three EXEs. |
+| Identifier Mode | M2 T37 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S3 commit ae6fc0a; coordinator accepts transfer-157. |
+| Objective | Complete BrickShatter, CheckTopOfBlock, TopEx and SpawnBrickChunks as one connected source group. |
+| Non-goals | No score, coin allocation, VRAM, block lifetime, gravity or platform algorithm repair. |
+| Reference Baseline | 843 / 1,992; four incomplete labels, four expected, maximum 847. |
+| Candidate Proposal | [S4 shatter/top coin/chunks](../proposals/m2/power-up-block-movement.md#s4-admission-shatter-top-coin-and-chunk-creation). |
+| Files And ABI Surface | Shared blocks/chunks owner, head/bump child declarations, existing score/coin/VRAM collaborators, tests/recorder/build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
-| Verification | Original table/vector/branch/write/call audit and ordinary NMI paths; separate actual-child diagnostics and native delivery checks. |
-| Expected Markers | Top child before writes/read $05; X-speed clear; reverse lookup with carry/index; normalized nine-entry dispatch and power/vine/coin contracts. |
+| Verification | Original branch/write/call audit, ordinary NMI snapshots, S2/S3 revalidation; separate native tests and three-target delivery. |
+| Expected Markers | Noise sound and replacement flag, score after player speed, unconditional row subtraction, remove-before-coin spawn, second high-Y preserved. |
 | Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Eleven exact dispositions, both proof tracks, child failures, similar-call sweep, tracker/ledger and artifact hashes. |
-| Stop Conditions | Unadmitted child repair, altered reference CPU/output, concealed failures or platform gameplay. |
-| Exit Criteria | Every received node proven or exact accepted unfinished transfer; evidence, counts and artifacts agree. |
-| Original Owner Request | Faithful original-ROM logic/call structure in shared C, source order and chain-level delivery. |
-| Similar-Issue Sweep | Every head/bump lookup and table consumer, duplicate classifications, top-child call order and original dispatch entries. |
+| Reporting Requirements | Four exact dispositions, dual proof, resolved S2 failures, caller sweep, tracker/ledger and hashes. |
+| Stop Conditions | Unadmitted child repair, modified reference execution/output, hidden differences or platform gameplay. |
+| Exit Criteria | All received nodes proven or exact accepted unfinished transfer; S2 debt rechecked and accounting/artifacts consistent. |
+| Original Owner Request | Faithful original ROM logic/call structure in shared C, source order and chain-level delivery. |
+| Similar-Issue Sweep | All top-coin and shatter callers, chunk writes, audio queues, score ordering and scratch dependencies. |
+
+S4 closure: [shatter and chunk proof](../proposals/m2/power-up-block-movement.md#s4-original-shatter-top-coin-and-chunk-proof).
+32 caller matches; expanded actual-child checks retain scratch differences.
+All 264 prior head/bump roots, 32 regressions and three builds pass.
 
 S3 closure: [block content proof](../proposals/m2/power-up-block-movement.md#s3-original-block-content-and-lookup-proof).
 120 caller, 120 actual and 120 independent child checks match. S2 retains

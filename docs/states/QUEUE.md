@@ -25,10 +25,10 @@ T36 S1 closes six vine actor caller nodes at 778 / 1,992; S2 closes ten hammer l
 [The T36 plan](../history/M2-T36-misc-object-chains.md) groups 41 incomplete labels
 into six chains, retains fourteen cannon matches, and keeps the trailing
 PowerUpObjHandler with its next-slice successors.
-T37 S1 closes six power-up actor nodes at 819 / 1,992; S2 closes thirteen head-hit/position nodes at 832 / 1,992; S3 closes eleven block content/lookup nodes at 843 / 1,992; S4 shatter/coin-above/chunks is next.
+T37 S1 closes six power-up actor nodes at 819 / 1,992; S2 closes thirteen head-hit/position nodes at 832 / 1,992; S3 closes eleven block content/lookup nodes at 843 / 1,992; S4 closes four local shatter/top-coin/chunk nodes at 847 / 1,992; S5 block lifetime is next.
 [The T37 plan](../proposals/m2/power-up-block-movement.md) assigns all 74
 labels to nine source-order chains: 71 expected new and three retained,
-maximum 884. S1-S3 are closed; S4 has not yet received implementation custody.
+maximum 884. S1-S4 are closed; S5 has not yet received implementation custody.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.
 

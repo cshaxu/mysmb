@@ -20,7 +20,7 @@ $sources = @(
     'game/hammer.c',
     'game/coin.c',
     'game/misc.c', 'game/score.c', 'game/power_up_init.c', 'game/power_up.c',
-    'game/blocks/head.c', 'game/blocks/bump.c',
+    'game/blocks/head.c', 'game/blocks/bump.c', 'game/blocks/chunks.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
     'game/enemy/background.c',
