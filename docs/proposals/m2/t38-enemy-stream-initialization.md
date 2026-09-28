@@ -266,3 +266,199 @@ these are test deliveries, not certification of full game fidelity.
 | mysmb16.exe | 253619 | 6048063830bed98bdbda0fa8a2e81dbf16f91ae09f3f85071f2be40fba02a8da |
 | mysmb32.exe | 331681 | fc2402082e3e1e7e33c7e134e4a09d6e2e293f5ccfde7f8e2c05b53812b07955 |
 | mysmb64.exe | 339245 | f04faf2de1b4418daef4e57c4ec2271bd4de01083eeca3a6f26d3a771ee79978 |
+
+## S2 admission: enemy records and parser continuation
+
+After S1 commit 3c322d5, coordinator accepts transfer-166 from T19 S5 for
+all nineteen S2 labels in the source-ordered chain table. Incoming 903/1,992;
+all nineteen are open and expected, maximum 922. S1 remains closed and no
+other S is active. Shared enemy/stream.c owns the parser; predecessor loop.c
+and initializer/group successors retain their separate node obligations.
+
+Source $C144 through Inc2B preserves slot-five eligibility, scratch $06/$07
+extended bounds and page carry, second-byte page increment before row-$0F
+control, page-control return to ProcLoopCommand, position-before-bounds,
+row-$0E third-byte selection, hard-mode skip/mutation, group tail handoff,
+frenzy/vine fallback, state-zero initialization and post-initializer flag
+check before cursor advancement. All byte cursors wrap as original Y/RAM
+bytes; host arithmetic must not replace these semantics.
+
+Initial audit finds the current implementation omits scratch $06/$07,
+processes row-$0F before the second-byte page increment, continues locally
+instead of returning through ProcLoopCommand, conflates ChkEnemyFrenzy with
+ProcessEnemyData and advances the cursor even if initialization clears the
+flag. These are hypotheses grounded in the source comparison; each repaired
+branch must receive original-ROM proof. Group/initializer internals and
+RunEnemyObjectsCore scratch debt are outside S2. Existing child bodies may
+be exposed as explicit handoffs without granting them credit.
+
+Two verification tracks: source byte/branch/write/call audit and controlled
+original NMI routes with read-only entry/return capture; separately strict
+C90 native boundary tests, affected regressions, x86/x64 builds and hidden
+probes, DOS16 link, platform purity and three local EXEs per P. Reuse S1's
+88 loop snapshots to detect continuation regressions and independently
+attribute remaining child failures. No forced PC/stack/ROM/output edits.
+Owner-local ROM/listing are the existing research/build inputs; no third-party
+implementation is imported. Temporary outputs remain under ignored
+build/m2-t38-s2, raw budget four MB and recorder timeout twenty seconds;
+cleanup owner S2. No node credit until both tracks and ledger agree.
+
+### S2 parser migration checkpoint
+
+Admission and documentation gates pass. The parser now writes original
+extended-boundary scratch bytes with byte/page carry and low-nibble masking;
+processes the second-byte page increment before row-$0F; returns through
+ProcLoopCommand after page-control records; wraps Y record offsets; keeps
+position writes before bounds; and consumes a normal record only if its
+initializer returns with the enemy flag still set. Queued frenzy is no
+longer duplicated inside ProcessEnemyData. Group and initializer interiors
+remain unchanged and uncredited. The loop/parser continuation is an explicit
+source tail edge, not a platform path.
+
+Reusing all 96 original S1 snapshots without child substitution, both widths
+improve from 6/96 to 83/96 full portable-RAM matches. The thirteen remaining
+failures have identical x86/x64 outputs and retain only $04-$07 differences
+in initializer/actor-dispatch successors. This is predecessor regression
+evidence, not coverage of every new S2 parser branch.
+
+The existing enemy-stream smoke initially stopped at exit five: its queued
+frenzy case incorrectly called ProcessEnemyData directly despite naming
+ChkEnemyFrenzy. The case now enters the actual loop-command predecessor and
+keeps all expected queue/ID/flag writes; both widths pass the whole smoke.
+The parser compiles under strict C90 on both widths. S2 original record/page
+boundary fixtures, branch coverage, full builds and delivery remain pending;
+no new node credit, P commit or replacement of S1 artifacts yet.
+
+### S2 native boundaries and first record-route evidence
+
+The registered enemy-stream boundary test passes 66,560 cases per width:
+all 65,536 right-page/right-X pairs and 1,024 cursor/order/initializer-return
+cases. It checks full portable RAM, eight-bit INY/cursor wrap, rejected
+initializers preserving records, and page-bit-before-row-$0F behavior.
+The initializer and loop continuation are explicit native test substitutes;
+this test grants no original-ROM child credit.
+
+The reference recorder now observes ProcessEnemyData at $C144 and its
+CheckpointEnemyID, ProcLoopCommand and HandleGroupEnemies boundaries.
+Sixty-four controlled NMI cases use eight original enemy-record addresses
+covering Goomba, hard-mode, both page-control forms, area-entry rows, groups,
+terminator and ordinary records. Variants include near/behind/far bounds,
+hard flags, slot five, wrapped source Y and vine fallback. Record bytes,
+CPU entry and stack are never patched. All 64 record successfully; the
+initial x64 integrated comparison matches 44/64. Twenty differences remain
+unresolved pending individual child-entry/return attribution; no parser
+completion claim follows from these results. Eight representative families
+produce identical frame bytes with and without the observers. Raw outputs
+remain below the admitted four-MB budget in build/m2-t38-s2.
+
+### S2 successor attribution and coverage checkpoint
+
+The existing group body is moved unchanged into enemy/group.c, with an
+explicit header; its old caller-side cursor increment now uses the shared
+Inc2B tail at the group's original exit. This exposes the original DoGroup
+boundary without claiming group-body fidelity. Both product source lists
+include it, while the isolated boundary test rejects unexpected group calls.
+The original group child argument is recorded from A; other child arguments
+are recorded from X. Native pre-call RAM and each argument are checked before
+any recorded successor state is substituted.
+
+All 128 parser caller comparisons match across x86/x64. Fully integrated
+execution remains 88/128, and every x64 output is byte-identical to its
+pre-extraction result. Fifty-two independent actual child checks reproduce
+their enclosing parser result exactly, including all forty failures. Those
+failures belong to checkpoint/initializer, group and loop-to-initializer
+successors; their scratch, vine and actor-state differences remain failures.
+The two native boundary suites still pass all 66,560 cases per width.
+
+The first complete 64-route observer-free coverage sweep preserves all frame
+bytes and identifies 23 conditional branches. Six lack one outcome:
+$C161 slot-five power-up eligibility, $C1EF secondary-hard acceptance,
+$C1FB ID-at-least-$3F, $C213 initializer-cleared flag, $C219 nonzero frenzy
+buffer and $C259 row-$0E at CheckThreeBytes. More original fixtures or an
+explicit source-reachability proof are required for these paths before S2
+closure. In particular CheckThreeBytes is entered only after its caller has
+excluded row-$0E; no fabricated reference PC/stack will create that edge.
+
+## S2 original enemy parser proof
+
+S2 closes all nineteen received and expected labels, no scoped transfer;
+903 -> 922 / 1,992. Each match is the node/caller obligation below, not a
+claim that initializer/group/actor descendants or the full game match.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| ProcessEnemyData | $C144 | Eight-bit record offset, original data pointer and terminator fallback; match |
+| CheckEndofBuffer | $C150 | Row-$0E exception and slot-five $2E gate; residual gate has explicit native/static proof; match |
+| CheckRightBounds | $C164 | Right-X plus $30, masked low nibble, carried page in scratch $06/$07; match |
+| CheckPageCtrlRow | $C189 | Second-byte page increment precedes row-$0F and ProcLoopCommand continuation; match |
+| PositionEnemyObj | $C1AB | Page/X writes before ordinary right-boundary comparison; match |
+| CheckRightExtBounds | $C1CB | Extended-boundary borrow semantics then high-Y/Y positioning; match |
+| CheckForEnemyGroup | $C1F1 | Hard-mode and group-ID selection; ID $3F arm has native/static proof; match |
+| BuzzyBeetleMutate | $C1FD | Goomba changes to Buzzy only with PrimaryHardMode; match |
+| StrID | $C208 | ID/flag installation, state-zero initialization and flag-dependent record consumption; match |
+| CheckFrenzyBuffer | $C216 | Frenzy-buffer priority then exact vine-offset equality gate; match |
+| StrFre | $C224 | Fallback ID write without inventing an activation flag; match |
+| InitEnemyObject | $C226 | Zero state then CheckpointEnemyID, independent of record consumption; match |
+| ExEPar | $C22D | Original return with no extra cursor write; match |
+| DoGroup | $C22E | Exact group argument and tail handoff through shared Inc2B; no group-body credit; match |
+| ParseRow0e | $C231 | Wrapped third-byte access, world filter and area/entrance writes; match |
+| NotUse | $C24D | Unmatched world still consumes exactly three bytes; match |
+| CheckThreeBytes | $C250 | Only incoming source edge excludes row-$0E; redundant reread/branch audited; match |
+| Inc3B | $C25B | One extra cursor increment before the common two-byte tail; match |
+| Inc2B | $C25E | Two byte-wrapped increments then page-select clear, including group tail; match |
+
+The final eighty original NMI fixtures give 160/160 caller matches at both
+widths. Every child argument and portable RAM entry is checked before its
+recorded return is substituted. Actual execution, without substitution or
+scratch masking, gives 88/160 matches and 72 retained failures. Of 84
+independent child checks, 74 reproduce the exact root output. Ten additional
+root differences are the proven continuation of InitLakitu failing to clear
+the flag: the native parser consequently advances $0739 by two and clears
+$073B, while the original retains both. The independent diagnostic confirms
+all other differences match the child output. No parser fix suppresses this
+failed child contract. InitLakitu/KillLakitu remain for S4; checkpoint/vector
+scratch for S3; group and remaining initializer interiors keep their existing
+T19 S5 custody and planned source slices. No descendant earns credit here.
+
+Twenty of 23 original conditional branches execute both outcomes. The three
+exceptions are explicit static/native proof, not fabricated execution:
+all 34 original symbol-named enemy streams (502 records) contain no ordinary
+ID $2E or $3F record; focused native cases prove slot-five power-up and
+non-group $3F handoffs with child substitutes. This does not certify behavior
+for arbitrary corrupt pointers or the $3F initializer itself. CheckThreeBytes
+has one symbolic incoming jump, immediately after its caller excludes row
+$0E; its other outcome cannot occur on that original edge. The row-$0E
+ParseRow0e/Inc3B route is independently executed. Source tables, control
+conditions and immutable PRG reads justify these exact exceptions.
+
+All eighty observer-free coverage runs produce identical frame records.
+The predecessor S1 matrix improves from 12/192 to 166/192 actual matches;
+remaining successor failures remain explicit. Native boundary tests pass
+66,562 cases per width, plus the complete existing stream smoke. All 84
+shared units compile as strict C90 on x86/x64; self-tests and bounded hidden
+window probes pass. DOS16 links with the existing OLDNAMES warning, without
+runtime/resource/486 qualification. Thirty-eight of forty selected regression
+runs pass; the same two Bowser exit-four failures remain. Platform purity
+passes; raw trace files remain beneath the admitted four-MB build budget.
+
+Similar-issue sweep covers current/slot/next parser APIs, normal record and
+fallback initialization, group tail advancement and loop-page continuation.
+Queued frenzy now belongs only to its predecessor, so the legacy smoke's
+queued case uses that original entry with its same state assertions. Group
+extraction preserves every prior actual result; its implementation is not
+silently repaired. Shared Inc2B is used by both ordinary and group exits.
+The stream header now records the correct source range. Both build lists
+include group.c; platform source contains no gameplay changes.
+
+Reproduce diagnostics from the project-owned enemy_stream_snapshot_check.c,
+enemy_loop_actual_check.c and enemy_stream_boundary_smoke.c against the
+admitted owner-local snapshots and PRG. Caller and actual modes remain
+separate. Local runners/results are under build/m2-t38-s2; no raw trace or
+ROM data is committed. The three owner-authorized EXEs below are test
+artifacts, not full-game certification.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 253491 | 223fbf7727b720d228237a38cead9b47681e7c3fa4eb4ca0bbcdcd8698d1a45d |
+| mysmb32.exe | 332541 | 9917dd3c2d4f321442eab7c62e9afaeae54538275cb852de9a14bef1344a2f37 |
+| mysmb64.exe | 340139 | 3664b90010ad299347cb06cfc82d9f290b7452ebb256cd4064c51874bc351a1f |

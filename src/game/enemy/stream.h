@@ -3,7 +3,10 @@
 
 #include "game/area.h"
 
-/* ROM $c0f7-$c1f4 ProcessEnemyData, called once for the current ObjectOffset. */
+/* ROM Inc2B, shared tail of parser and HandleGroupEnemies. */
+void mysmb_enemy_stream_advance_record(struct mysmb_game *game);
+
+/* ROM $C144-$C26B ProcessEnemyData, current ObjectOffset and loop continuation. */
 mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
                                              const struct mysmb_area_source *source,
                                              mysmb_u8 slot);

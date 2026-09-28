@@ -1044,25 +1044,25 @@ The labels and branches behind every line remain open until individually bound b
 | 7888 | `InitMLp` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
 | 7891 | `InitLCmd` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
 | 7896 | `ChkEnemyFrenzy` | M2 T38 S1 shared enemy/core.c and enemy/loop.c | ROM-match complete | [S1 loop proof](../../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof); caller scope, child failures retained |
-| 7911 | `ProcessEnemyData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-processenemydata) |
-| 7918 | `CheckEndofBuffer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkendofbuffer) |
-| 7931 | `CheckRightBounds` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightbounds) |
-| 7950 | `CheckPageCtrlRow` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkpagectrlrow) |
-| 7967 | `PositionEnemyObj` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-positionenemyobj) |
-| 7983 | `CheckRightExtBounds` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightextbounds) |
-| 8006 | `CheckForEnemyGroup` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkforenemygroup) |
-| 8014 | `BuzzyBeetleMutate` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-buzzybeetlemutate) |
-| 8020 | `StrID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strid) |
-| 8028 | `CheckFrenzyBuffer` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkfrenzybuffer) |
-| 8035 | `StrFre` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-strfre) |
-| 8037 | `InitEnemyObject` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyobject) |
-| 8041 | `ExEPar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exepar) |
-| 8043 | `DoGroup` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dogroup) |
-| 8046 | `ParseRow0e` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-parserow0e) |
-| 8064 | `NotUse` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notuse) |
-| 8066 | `CheckThreeBytes` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkthreebytes) |
-| 8072 | `Inc3B` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inc3b) |
-| 8073 | `Inc2B` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inc2b) |
+| 7911 | `ProcessEnemyData` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 7918 | `CheckEndofBuffer` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 7931 | `CheckRightBounds` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 7950 | `CheckPageCtrlRow` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 7967 | `PositionEnemyObj` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 7983 | `CheckRightExtBounds` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8006 | `CheckForEnemyGroup` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8014 | `BuzzyBeetleMutate` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8020 | `StrID` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8028 | `CheckFrenzyBuffer` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8035 | `StrFre` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8037 | `InitEnemyObject` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8041 | `ExEPar` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8043 | `DoGroup` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8046 | `ParseRow0e` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8064 | `NotUse` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8066 | `CheckThreeBytes` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8072 | `Inc3B` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
+| 8073 | `Inc2B` | M2 T38 S2 shared enemy/stream.c | ROM-match complete | [S2 parser proof](../../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof); scoped caller proof, child gaps retained |
 | 8080 | `CheckpointEnemyID` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkpointenemyid) |
 | 8092 | `InitEnemyRoutines` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initenemyroutines) |
 | 8158 | `NoInitCode` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noinitcode) |

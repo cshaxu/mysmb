@@ -1,5 +1,7 @@
 #include "game/enemy/stream.h"
 #include "game/enemy/init.h"
+#include "game/enemy/loop.h"
+#include "game/enemy/group.h"
 
 enum {
     MYSMB_AREA_SCREEN_RIGHT_PAGE = 0x071bU,
@@ -50,48 +52,15 @@ enum {
     MYSMB_VINE_FLAG_OFFSET = 0x0398U
 };
 
-/* ROM HandleGroupEnemies.  Group records scan regular slots zero through
- * four and enter CheckpointEnemyID for every allocated member. */
-static void mysmb_enemy_stream_handle_group(struct mysmb_game *game,
-                                            mysmb_u8 group_id)
+/* ROM $C25E Inc2B, also the group handler's tail successor. */
+void mysmb_enemy_stream_advance_record(struct mysmb_game *game)
 {
-    mysmb_u8 group;
-    mysmb_u8 enemy_id;
-    mysmb_u8 y;
-    mysmb_u8 page;
-    mysmb_u8 x;
-    mysmb_u8 count;
-    mysmb_u8 slot;
-    mysmb_u8 old_x;
-
-    group = (mysmb_u8)(group_id - 0x37U);
-    enemy_id = group < 4U ?
-        (game->ram[MYSMB_PRIMARY_HARD] == 0U ? 6U : 2U) : 0U;
-    y = (group & 2U) == 0U ? 0xb0U : 0x70U;
-    page = game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE];
-    x = game->ram[MYSMB_AREA_SCREEN_RIGHT_X];
-    count = (mysmb_u8)(2U + (group & 1U));
-    game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
-    while (count != 0U) {
-        for (slot = 0U; slot < 5U; ++slot) {
-            if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) break;
-        }
-        if (slot >= 5U) break;
-        game->ram[MYSMB_ENEMY_ID + slot] = enemy_id;
-        game->ram[MYSMB_ENEMY_PAGE + slot] = page;
-        game->ram[MYSMB_ENEMY_X + slot] = x;
-        old_x = x;
-        x = (mysmb_u8)(x + 0x18U);
-        if (x < old_x) page++;
-        game->ram[MYSMB_ENEMY_Y + slot] = y;
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-        mysmb_enemy_checkpoint_loaded(game, slot);
-        count--;
-        game->ram[MYSMB_GROUP_ENEMY_COUNT] = count;
-    }
+    ++game->ram[MYSMB_ENEMY_DATA_OFFSET];
+    ++game->ram[MYSMB_ENEMY_DATA_OFFSET];
+    game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
 }
-/* ROM ChkEnemyFrenzy and CheckFrenzyBuffer. */
+
+/* ROM CheckFrenzyBuffer -> StrFre -> InitEnemyObject. */
 static mysmb_u8 mysmb_enemy_stream_activate_fallback(struct mysmb_game *game,
                                                       mysmb_u8 slot)
 {
@@ -107,11 +76,8 @@ static mysmb_u8 mysmb_enemy_stream_activate_fallback(struct mysmb_game *game,
     mysmb_enemy_checkpoint_loaded(game, slot);
     return 1U;
 }
-/* ROM $c0f7-$c1f4 ProcessEnemyData through InitNormalEnemy, limited to
- * ordinary enemy IDs.  Special objects retain their dedicated initializers. */
-/* ProcessEnemyData is called with the current ObjectOffset.  This adapter
- * keeps the original public stream probe while reserving earlier empty slots
- * so a GameEngine pass can initialize exactly the requested normal slot. */
+/* Local probe adapter; production enters the current source slot. */
+/* The restricted slot probe preserves its legacy five-slot API. */
 mysmb_u8 mysmb_enemy_stream_process_slot(struct mysmb_game *game,
                                          const struct mysmb_area_source *source,
                                          mysmb_u8 slot)
@@ -120,115 +86,93 @@ mysmb_u8 mysmb_enemy_stream_process_slot(struct mysmb_game *game,
     return mysmb_enemy_stream_process_current(game, source, slot);
 }
 
-mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
-                                             const struct mysmb_area_source *source,
-                                             mysmb_u8 slot)
+/* ROM $C144-$C26B. Reads use an eight-bit Y offset, including INY wrap. */
+static mysmb_u8 mysmb_enemy_stream_read(const struct mysmb_game *game,
+    const struct mysmb_area_source *source, mysmb_u8 offset)
 {
     mysmb_u16 address;
-    mysmb_u16 world;
-    mysmb_u16 right;
-    mysmb_u8 first;
-    mysmb_u8 second;
-    mysmb_u8 third;
-    mysmb_u8 row;
-    mysmb_u8 id;
+    address = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_DATA_HIGH] << 8U) |
+        game->ram[MYSMB_ENEMY_DATA_LOW]);
+    address = (mysmb_u16)(address + offset);
+    if (address < 0x8000U || (mysmb_u16)(address - 0x8000U) >= source->prg_size)
+        return 0xffU;
+    return source->prg[(mysmb_u16)(address - 0x8000U)];
+}
 
-    if (game->ram[MYSMB_ENEMY_FRENZY_QUEUE] != 0U) {
-        game->ram[MYSMB_ENEMY_ID + slot] = game->ram[MYSMB_ENEMY_FRENZY_QUEUE];
-        game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-        game->ram[MYSMB_ENEMY_FRENZY_QUEUE] = 0U;
-        mysmb_enemy_checkpoint_loaded(game, slot);
+mysmb_u8 mysmb_enemy_stream_process_current(struct mysmb_game *game,
+    const struct mysmb_area_source *source, mysmb_u8 slot)
+{
+    mysmb_u8 first, second, third, row, id, offset;
+    mysmb_u16 extended;
+    mysmb_u16 world, right;
+    if (source == 0 || source->prg == 0 ||
+        game->ram[MYSMB_ENEMY_DATA_HIGH] < 0x80U) return 0U;
+    offset = game->ram[MYSMB_ENEMY_DATA_OFFSET];
+    first = mysmb_enemy_stream_read(game, source, offset);
+    if (first == 0xffU) goto frenzy;
+    row = (mysmb_u8)(first & 0x0fU);
+    second = mysmb_enemy_stream_read(game, source, (mysmb_u8)(offset + 1U));
+    if (row != 0x0eU && slot >= 5U && (second & 0x3fU) != 0x2eU)
+        return 0U;
+    extended = (mysmb_u16)(game->ram[MYSMB_AREA_SCREEN_RIGHT_X] + 0x30U);
+    game->ram[7U] = (mysmb_u8)(extended & 0xf0U);
+    game->ram[6U] = (mysmb_u8)(game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] +
+        (extended > 0xffU ? 1U : 0U));
+    if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
+        ++game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT];
+        ++game->ram[MYSMB_ENEMY_OBJECT_PAGE];
+    }
+    if (row == 0x0fU && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
+        game->ram[MYSMB_ENEMY_OBJECT_PAGE] = (mysmb_u8)(second & 0x3fU);
+        ++game->ram[MYSMB_ENEMY_DATA_OFFSET];
+        ++game->ram[MYSMB_ENEMY_DATA_OFFSET];
+        ++game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT];
+        /* Original tail JMP re-enters loop commands before the next record. */
+        mysmb_enemy_process_loop_command(game, source, slot);
+        return game->ram[MYSMB_ENEMY_FLAG + slot] != 0U ? 1U : 0U;
+    }
+    game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
+    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
+    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
+        game->ram[MYSMB_ENEMY_X + slot]);
+    right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) |
+        game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
+    if (world < right) {
+        if (row == 0x0eU) goto parse_row;
+        goto increment_two;
+    }
+    extended = (mysmb_u16)(((mysmb_u16)game->ram[6U] << 8U) | game->ram[7U]);
+    if (world > extended) goto frenzy;
+    game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
+    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(first << 4U);
+    if (row == 0x0eU) goto parse_row;
+    if ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U)
+        goto increment_two;
+    id = (mysmb_u8)(second & 0x3fU);
+    if (id >= 0x37U && id < 0x3fU) {
+        /* Existing group body retains its separate semantic obligation. */
+        mysmb_enemy_stream_handle_group(game, id);
         return 1U;
     }
-    if (source == 0 || source->prg == 0 || game->ram[MYSMB_ENEMY_DATA_HIGH] < 0x80U) return 0U;
-    address = (mysmb_u16)(((mysmb_u16)(game->ram[MYSMB_ENEMY_DATA_HIGH] - 0x80U) << 8U) |
-                          game->ram[MYSMB_ENEMY_DATA_LOW]);
-    address = (mysmb_u16)(address + game->ram[MYSMB_ENEMY_DATA_OFFSET]);
-    while (address < source->prg_size && source->prg[address] != 0xffU) {
-        first = source->prg[address];
-        /* ROM CheckEndofBuffer permits only power-up ID 0x2e in slot five. */
-        if ((first & 0x0fU) != 0x0eU && slot == 5U) {
-            if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
-            if ((source->prg[address + 1U] & 0x3fU) != 0x2eU) return 0U;
-        }
-        if ((first & 0x0fU) == 0x0fU && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
-            if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE] = (mysmb_u8)(source->prg[address + 1U] & 0x3fU);
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 1U;
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-            address = (mysmb_u16)(address + 2U);
-            continue;
-        }
-        if ((mysmb_u16)(address + 1U) >= source->prg_size) return 0U;
-        second = source->prg[address + 1U];
-        if ((second & 0x80U) != 0U && game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] == 0U) {
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT]++;
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE]++;
-        }
-        row = (mysmb_u8)(first & 0x0fU);
-        /* ROM PositionEnemyObj executes before the row-$0e parser.  Even an
-         * area-entry row therefore leaves its page/X in the current inactive
-         * ObjectOffset, and an in-range row also writes YHigh/Y before
-         * ParseRow0e consumes its third byte. */
-        game->ram[MYSMB_ENEMY_PAGE + slot] = game->ram[MYSMB_ENEMY_OBJECT_PAGE];
-        game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(first & 0xf0U);
-        world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_OBJECT_PAGE] << 8U) | (first & 0xf0U));
-        right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_AREA_SCREEN_RIGHT_PAGE] << 8U) | game->ram[MYSMB_AREA_SCREEN_RIGHT_X]);
-        if (world < right) {
-            if (row == 0x0eU) {
-                if ((mysmb_u16)(address + 2U) >= source->prg_size) return 0U;
-                third = source->prg[(mysmb_u16)(address + 2U)];
-                if ((third >> 5U) == game->ram[MYSMB_WORLD_NUMBER]) {
-                    game->ram[MYSMB_AREA_POINTER] = second;
-                    game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
-                }
-                game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 3U);
-            }
-            else {
-                game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                    (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-            }
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-            return 0U;
-        }
-        if (world > (mysmb_u16)(right + 0x30U))
-            return mysmb_enemy_stream_activate_fallback(game, slot);
-        game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(row << 4U);
-        if (row == 0x0eU) {
-            if ((mysmb_u16)(address + 2U) >= source->prg_size) return 0U;
-            third = source->prg[(mysmb_u16)(address + 2U)];
-            if ((third >> 5U) == game->ram[MYSMB_WORLD_NUMBER]) {
-                game->ram[MYSMB_AREA_POINTER] = second;
-                game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
-            }
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 3U);
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-            return 0U;
-        }
-        if ((second & 0x40U) != 0U && game->ram[MYSMB_SECONDARY_HARD] == 0U) {
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-            return 0U;
-        }
-        if ((second & 0x3fU) >= 0x37U && (second & 0x3fU) < 0x3fU) {
-            mysmb_enemy_stream_handle_group(game, (mysmb_u8)(second & 0x3fU));
-            game->ram[MYSMB_ENEMY_DATA_OFFSET] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-            game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-            return 1U;
-        }
-        id = (mysmb_u8)(second & 0x3fU);
-        if (id == 6U && game->ram[MYSMB_PRIMARY_HARD] != 0U) id = 2U;
-        mysmb_enemy_initialize_loaded(game, slot, row, id);
-        game->ram[MYSMB_ENEMY_DATA_OFFSET] = (mysmb_u8)(game->ram[MYSMB_ENEMY_DATA_OFFSET] + 2U);
-        game->ram[MYSMB_ENEMY_OBJECT_PAGE_SELECT] = 0U;
-        return 1U;
+    if (id == 6U && game->ram[MYSMB_PRIMARY_HARD] != 0U) id = 2U;
+    game->ram[MYSMB_ENEMY_ID + slot] = id;
+    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
+    mysmb_enemy_checkpoint_loaded(game, slot);
+    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U) return 0U;
+    mysmb_enemy_stream_advance_record(game);
+    return 1U;
+parse_row:
+    third = mysmb_enemy_stream_read(game, source, (mysmb_u8)(offset + 2U));
+    if ((third >> 5U) == game->ram[MYSMB_WORLD_NUMBER]) {
+        game->ram[MYSMB_AREA_POINTER] = second;
+        game->ram[MYSMB_AREA_ENTRANCE_PAGE] = (mysmb_u8)(third & 0x1fU);
     }
+    ++game->ram[MYSMB_ENEMY_DATA_OFFSET];
+increment_two:
+    mysmb_enemy_stream_advance_record(game);
+    return 0U;
+frenzy:
     return mysmb_enemy_stream_activate_fallback(game, slot);
 }
 /* Convenience probe for isolated tests.  GameEngine must enter the current

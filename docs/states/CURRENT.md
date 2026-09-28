@@ -2,33 +2,37 @@
 
 ## Current Work
 
-**M2 T38 S1 is closed at 903 / 1,992: nineteen loop/slot caller nodes proven; successor scratch differences remain open.**
+**M2 T38 S2 is closed at 922 / 1,992: nineteen parser caller nodes proven; initializer/group gaps remain.**
 
-## M2 T38 S1 Packet
+## M2 T38 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T38 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after T37 commit 4b07a7a; coordinator accepts transfer-165 and documented function/dependency boundaries. |
-| Objective | Restore and prove nineteen enemy flag/loop/frenzy labels, including original loopback data and kill-all dependency. |
-| Non-goals | No stream parser/initializer child repair, actor movement, rendering or platform gameplay. |
-| Reference Baseline | 884 / 1,992; nineteen open labels, expected nineteen, maximum 903. T38 scope91, maximum975. |
-| Candidate Proposal | [T38 S1 enemy loops](../proposals/m2/t38-enemy-stream-initialization.md#s1-admission-complete-enemy-flag-and-loop-command-chain). |
-| Files And ABI Surface | Shared enemy core/loop/stream handoff and headers, tests/recorder/builds, three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation and ledger. |
-| Verification | Original flag/loop/data/child-order audit and ordinary NMI snapshots; independent native tests, three-target builds and platform purity. |
-| Expected Markers | Duplicate-slot high bit, parser-task mask, eleven loop entries, world-seven counters, page rewind, erase order and frenzy handoff. |
-| Asset Needs | Existing owner-local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Nineteen exact dispositions, expected/actual new matches, original/native evidence, children and artifacts. |
-| Stop Conditions | Unadmitted child repair, modified reference PC/stack/ROM/output, hidden mismatches or platform game logic. |
-| Exit Criteria | All received nodes proven or exact accepted unfinished transfers; tracker, ledger and artifacts agree. |
-| Original Owner Request | Faithful original ROM call structure and node semantics in shared portable C, source order and chain-level delivery. |
-| Similar-Issue Sweep | All enemy slot dispatches, duplicate flags, loop/page/cursor updates, kill-all callers and frenzy activation paths. |
+| Identifier Mode | M2 T38 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S1 commit 3c322d5; coordinator accepts transfer-166. |
+| Objective | Restore nineteen enemy record/parser nodes with exact original continuation and byte arithmetic. |
+| Non-goals | No initializer/group actor interiors, rendering, actor dispatch or platform gameplay. |
+| Reference Baseline | 903 / 1,992; nineteen open scoped labels, nineteen expected, maximum 922. |
+| Candidate Proposal | [T38 S2 parser](../proposals/m2/t38-enemy-stream-initialization.md#s2-admission-enemy-records-and-parser-continuation). |
+| Files And ABI Surface | Shared enemy stream, loop and initializer handoffs; headers, tests, recorder, build lists and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
+| Verification | Original branch/write/call audit and ordinary NMI snapshots; independent native checks, affected regressions, three-target builds and platform purity. |
+| Expected Markers | Slot-five gate, $06/$07 bounds, page-control order, Y/cursor wrap, row-$0E selection, hard-mode mutation, child return flags. |
+| Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
+| Reporting Requirements | Exact nineteen dispositions, two proof tracks, actual child differences, tracker/ledger and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, patched original execution, hidden mismatches or platform gameplay. |
+| Exit Criteria | All received labels proven or exactly transferred with acceptance; both tracks, inventory and ledger agree. |
+| Original Owner Request | Faithful original ROM call graph and native C semantics in source order on all three platforms. |
+| Similar-Issue Sweep | All stream current/slot/next callers, page-control continuations, frenzy handling, initializer returns and group cursor ownership. |
 
+
+
+S2 closure: [parser proof](../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof).
+160 caller matches; 72 actual-child failures retained, three artifacts refreshed.
 
 S1 closure: [loop and slot proof](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 Nineteen new nodes; actual successor failures remain, three artifacts refreshed.
-T38 S2 parser chain is next and not yet admitted.
+T38 S2 is closed; S3 initializer vector is next and not yet admitted.
 
 T37 final review: [cross-chain closure](../history/M2-T37-power-up-block-movement.md#t37-closure).
 750/844 actual comparisons match; 94 prior child failures remain unchanged.

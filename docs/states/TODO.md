@@ -2,6 +2,9 @@
 
 ## Translation Debt
 
+- [ ] **InitLakitu nonzero-frenzy rejection and parser descendants:** T38 S2 exposes 72/160 actual-child failures. InitLakitu fails to erase its slot when frenzy is occupied; the parser then consumes a record the original retains. Ten root differences are this proven flag-dependent continuation, not a new parser workaround. Repair with InitLakitu/KillLakitu in planned T38 S4; checkpoint/vector scratch remains for S3, group and other initializers retain existing T19 S5 custody. [Exact proof and limitations](../proposals/m2/t38-enemy-stream-initialization.md#s2-original-enemy-parser-proof).
+
+
 - [ ] **Enemy successor scratch-state fidelity:** T38 S1 independently reproduces 180/192 integrated failures at $04-$07 in existing parser/initializer/actor-dispatch children. ProcessEnemyData and CheckpointEnemyID/InitEnemyRoutines await T38 S2/S3 admission; RunEnemyObjectsCore/JmpEO remain with existing T19 S5 for the later actor-dispatch slice. No child credit or waiver. The related bridge.c five-flag clear also remains with the later bridge caller slice; it must use the full kill-all semantics when migrated. [Exact scope and evidence](../proposals/m2/t38-enemy-stream-initialization.md#s1-original-loop-and-slot-proof).
 
 

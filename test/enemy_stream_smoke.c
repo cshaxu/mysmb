@@ -2,6 +2,7 @@
 #include "game/area.h"
 #include "game/enemy/stream.h"
 #include "game/enemy/core.h"
+#include "game/enemy/loop.h"
 
 int main(void)
 {
@@ -137,8 +138,8 @@ int main(void)
     game.ram[0x06cdU] = 23U;
     game.ram[0x0014U] = 0U;
     game.ram[0x001bU] = 0U;
-    if (mysmb_enemy_stream_process_current(&game, &source, 5U) != 1U ||
-        game.ram[0x06cdU] != 0U || game.ram[0x001bU] != 23U ||
+    mysmb_enemy_process_loop_command(&game, &source, 5U);
+    if (game.ram[0x06cdU] != 0U || game.ram[0x001bU] != 23U ||
         game.ram[0x0014U] != 1U) return 5;
     /* CheckFrenzyBuffer runs when the source has reached EOD. */
     prg[0x20U] = 0xffU;
