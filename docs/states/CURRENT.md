@@ -2,83 +2,46 @@
 
 ## Current Work
 
-**M2 T40 S9 is closed at 1,150 / 1,992: all six expected nodes complete.**
+**M2 T40 is closed at 1,166 / 1,992. No later T is admitted.**
 
-## M2 T40 S9 Packet
+## M2 T40 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T40 S9, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 9b621d5; coordinator accepts transfer-193. |
-| Objective | Six exact flying-fish movement/data nodes listed in proposal. |
-| Non-goals | No Lakitu, unrelated child repair or host gameplay. |
-| Reference Baseline | 1,144/1,992; six open scoped/expected; maximum 1,150. |
-| Candidate Proposal | [S9 checklist](../proposals/m2/t40-enemy-movement-and-firebar.md#s9-admission-flying-cheep-cheep-movement). |
-| Files And ABI Surface | Shared flying-fish movement, legacy aggregate, manifests, recorder/tests, records and three EXEs. |
+| Identifier Mode | M2 T40 S10, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after 3a59dca; coordinator accepts transfer-194. |
+| Objective | Sixteen exact Lakitu movement/distance nodes listed in proposal. |
+| Non-goals | No bridge/Bowser, unrelated child repair or host gameplay. |
+| Reference Baseline | 1,150/1,992; sixteen open scoped/expected; maximum 1,166. |
+| Candidate Proposal | [S10 checklist](../history/M2-T40-enemy-movement-and-firebar.md#s10-admission-lakitu-movement-and-distance). |
+| Files And ABI Surface | Shared Lakitu owner and existing frenzy consumers, manifests, recorder/tests, records and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branches/data/child input and root RAM; independent native tests and three builds. |
-| Expected Markers | Defeat attribute clear, horizontal/gravity order, signed threshold, force wrap and priority. |
-| Asset Needs | Existing local owner ROM/listing; immutable lookup binding; owner-authorized three EXEs; DOS link-only. |
-| Reporting Requirements | Six node dispositions, separate logic/operational evidence and hashes. |
+| Verification | Original branches/data/child inputs, returned A and RAM; independent tests/builds and T40 cross-chain review. |
+| Expected Markers | Scratch adjusters, capped byte distance, delayed turn returned speed, source horizontal/gravity calls. |
+| Asset Needs | Existing local owner ROM/listing; owner-authorized three EXEs; DOS link-only. |
+| Reporting Requirements | Sixteen dispositions, two evidence tracks, artifact hashes and final T40 scope accounting. |
 | Stop Conditions | Unadmitted repair, original execution/output patch, hidden mismatch or host gameplay. |
-| Exit Criteria | Scoped nodes proved or accepted exact transfer; tracker and ledger agree. |
+| Exit Criteria | Scoped nodes proved or accepted exact transfer; tracker/ledger and T40 cross-chain review agree. |
 | Original Owner Request | Faithful ROM call graph and semantics in shared DOS16/x86/x64 C. |
-| Similar-Issue Sweep | Flying fish inline/aggregate, vector, aliases, initializer and tests. |
+| Similar-Issue Sweep | Lakitu and Spiny consumers, distance child, scratch, aliases and native tests. |
 
-## S9 closure
 
-[Flying Cheep-Cheep proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s9-original-flying-cheep-movement-proof)
-closes six nodes with 1,024/1,024 caller and actual-child comparisons.
-All 7,600 prior matches remain; three EXEs are refreshed. DOS is link-only.
+## T40 closure summary
 
-## S8 closure
+[Aggregate review](../history/M2-T40-enemy-movement-and-firebar.md#t40-closure)
+closes all 120 scoped nodes: 107 new and thirteen retained across ten chains.
+S10 closes sixteen Lakitu movement/distance nodes with 2,048/2,048 original
+caller and actual-child comparisons. Final integrated comparison is
+10,804/12,178; all 8,628 prior matches remain. The 1,374 downstream differences
+retain their source-order owners. All three EXEs are refreshed; DOS is link-only.
 
-[Firebar caller/data proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof)
-closes 32 nodes with 1,024/1,024 caller comparisons; real children match
-292/1,024 with named dependency gaps. All 7,308 prior matches remain.
-Three EXEs are refreshed. DOS is link-only.
+## Next source slice
 
-## S7 closure
-
-[Swimming Cheep-Cheep proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof)
-closes seven nodes with 1,024/1,024 actual-child and caller comparisons.
-All 6,276 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## S6 closure
-
-[Bullet Bill movement proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s6-original-bullet-bill-movement-proof)
-closes two nodes with 256/256 actual-child and caller comparisons.
-All 6,016 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## S5 closure
-
-[Bloober swimming proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s5-original-bloober-swimming-proof)
-closes sixteen nodes with 1,024/1,024 actual-child and caller comparisons.
-All 4,990 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## S4 closure
-
-[Green Paratroopa/counter proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s4-original-green-paratroopa-and-counter-proof)
-closes ten nodes with 576/576 actual-child and caller comparisons. All
-4,414 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## S3 closure
-
-[Jumping/red Paratroopa proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s3-original-jumping-and-red-paratroopa-proof)
-closes five nodes with 320/320 actual-child and caller comparisons. All
-4,094 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## S2 closure
-
-[Hammer Bro/normal proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s2-original-hammer-bro-and-normal-proof)
-closes all 24 scoped nodes with 712/712 actual-child and caller comparisons.
-All 3,382 prior matches remain; three EXEs are refreshed. DOS is link-only.
-
-## Current sequence
-
-T40 has ten source-ordered S chains; S1-S9 are closed and S10 is next. Its 120-node scope ends
-after PlayerLakituDiff. BridgeCollapseData and the whole bridge/Bowser chain
-remain with the next queued slice. Follow the [T40 plan](../proposals/m2/t40-enemy-movement-and-firebar.md).
+Follow the [queue](QUEUE.md) and source-order plan. The next slice begins
+BridgeCollapseData at line 10092 and BridgeCollapse at line 10098, keeping
+the complete bridge/Bowser chain together. Publish exact nodes and S ownership
+before admission. Continue under the approved M2 mandate; this packet does
+not admit T41.
 
 ## Current Technical Baseline
 

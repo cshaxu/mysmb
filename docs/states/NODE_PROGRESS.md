@@ -12,16 +12,19 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1150 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1166 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 736 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 720 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,150 / 1,992 (57.73%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,166 / 1,992 (58.53%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T40 S9 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s9-original-flying-cheep-movement-proof)
-closes six flying Cheep-Cheep nodes with 1,024/1,024 original
-caller and actual-child comparisons. All 7,600 prior matches remain.
+Latest task review: [T40 S10 P1](../history/M2-T40-enemy-movement-and-firebar.md#s10-original-lakitu-movement-and-distance-proof)
+closes sixteen Lakitu movement/distance nodes with 2,048/2,048 original
+caller and actual-child comparisons. All 8,628 prior matches remain.
+[T40 aggregate closure](../history/M2-T40-enemy-movement-and-firebar.md#t40-closure)
+records 107 new and thirteen retained nodes, with 10,804/12,178 actual
+comparisons and 1,374 explicitly retained downstream differences.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +34,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1150)
+## Completed matches (1166)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1161,6 +1164,22 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9954 | `FlyCC` |
 | 9971 | `AddCCF` |
 | 9982 | `BPGet` |
+| 9990 | `LakituDiffAdj` |
+| 9993 | `MoveLakitu` |
+| 9998 | `ChkLS` |
+| 10005 | `Fr12S` |
+| 10008 | `LdLDa` |
+| 10013 | `SetLSpd` |
+| 10024 | `SetLMov` |
+| 10027 | `PlayerLakituDiff` |
+| 10037 | `ChkLakDif` |
+| 10053 | `SetLMovD` |
+| 10055 | `ChkPSpeed` |
+| 10073 | `ChkSpinyO` |
+| 10078 | `ChkEmySpd` |
+| 10081 | `SubDifAdj` |
+| 10083 | `SPixelLak` |
+| 10087 | `ExMoveLak` |
 | 10167 | `KillAllEnemies` |
 | 10169 | `KillLoop` |
 | 10337 | `FlameTimerData` |

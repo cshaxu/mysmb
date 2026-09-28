@@ -1,4 +1,5 @@
 #include "game/enemy/core.h"
+#include "game/enemy/frenzy.h"
 #include "game/enemy/platform.h"
 #include "game/enemy/actor_slots.h"
 #include "game/enemy/movement.h"
@@ -15,28 +16,35 @@
 #include <string.h>
 
 /* Integrated diagnostic: no child substitutions or scratch-byte masking. */
-int main(int argc,char **argv)
+static int check_one(const char *path)
 {
     static struct mysmb_game game;
     static unsigned char expected[2048];
     struct mysmb_area_source source;
     unsigned char header[8];
-    unsigned int i,failures;
+    unsigned int i,failures,register_failure;
     FILE *file;
-    if(argc!=2) return 64;
-    file=fopen(argv[1],"rb");if(file==NULL) return 65;
+    memset(&game,0,sizeof(game));
+    file=fopen(path,"rb");if(file==NULL) return 65;
     if(fread(header,1,8,file)!=8 || (memcmp(header,"MSEP\1",5)!=0 &&
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
         memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0 &&
         memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0 &&
-        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0 && memcmp(header,"MSdP\1",5)!=0 && memcmp(header,"MSeP\1",5)!=0 && memcmp(header,"MSfP\1",5)!=0 && memcmp(header,"MSgP\1",5)!=0 && memcmp(header,"MShP\1",5)!=0 && memcmp(header,"MSiP\1",5)!=0)) return 66;
+        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0 && memcmp(header,"MSdP\1",5)!=0 && memcmp(header,"MSeP\1",5)!=0 && memcmp(header,"MSfP\1",5)!=0 && memcmp(header,"MSgP\1",5)!=0 && memcmp(header,"MShP\1",5)!=0 && memcmp(header,"MSiP\1",5)!=0 && memcmp(header,"MSjP\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
+    register_failure=0U;
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[2]=='i') mysmb_objects_step_flying_cheep_cheeps_slot(&game,header[6]);
+    if(header[2]=='j') {
+        if(header[5]==1U) mysmb_enemy_step_lakitus_slot(&game,header[6]);
+        else if(mysmb_enemy_player_lakitu_difference(&game,header[6])!=header[7]) {
+            puts("return A mismatch"); register_failure=1U;
+        }
+    }
+    else if(header[2]=='i') mysmb_objects_step_flying_cheep_cheeps_slot(&game,header[6]);
     else if(header[2]=='h') (void)mysmb_enemy_proc_firebar(&game,header[6]);
     else if(header[2]=='g') mysmb_objects_step_swimming_cheep_cheeps_slot(&game,header[6]);
     else if(header[2]=='f') mysmb_objects_step_bullet_bills_slot(&game,header[6]);
@@ -134,7 +142,7 @@ int main(int argc,char **argv)
         default:return 66;
         }
     } else return 66;
-    failures=0U;
+    failures=register_failure;
     for(i=0U;i<2048U;++i) {
         /* Original game variables include floatey numbers and shell chains,
          * not only DigitModifier. Retain their whole $0109-$0139 region. */
@@ -146,4 +154,25 @@ int main(int argc,char **argv)
         }
     }
     return failures?1:0;
+}
+
+int main(int argc, char **argv)
+{
+    char path[1024];
+    size_t length;
+    unsigned int n;
+    int result, bad;
+    if (argc != 2) return 64;
+    if (strcmp(argv[1], "--batch") != 0) return check_one(argv[1]);
+    n = 0U; bad = 0;
+    while (fgets(path, sizeof(path), stdin) != NULL) {
+        length = strlen(path);
+        while (length && (path[length - 1U] == '\n' || path[length - 1U] == '\r')) path[--length] = '\0';
+        if (!length) return 64;
+        printf("BEGIN %u\n", n);
+        result = check_one(path);
+        printf("END %u %d\n", n++, result);
+        if (result != 0 && result != 1) bad = 1;
+    }
+    return bad;
 }

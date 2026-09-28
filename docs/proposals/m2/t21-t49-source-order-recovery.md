@@ -801,4 +801,4 @@ duplicate credit. [Exact T39 chains and receivers](../../history/M2-T39-special-
 
 T40 admission keeps BridgeCollapseData (10092) and the complete BridgeCollapse
 entry (10098) with the following bridge/Bowser slice, replacing the old
-line-10100 cut. [Exact T40 chains and receivers](t40-enemy-movement-and-firebar.md).
+line-10100 cut. [Exact T40 chains and receivers](../../history/M2-T40-enemy-movement-and-firebar.md).

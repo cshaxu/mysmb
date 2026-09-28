@@ -77,96 +77,15 @@ void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot)
     }
 }
 
-/* ROM PlayerLakituDiff.  The 6502 compares the signed page difference
- * and then intentionally retains only the low byte for its speed table. */
-mysmb_u8 mysmb_enemy_player_lakitu_difference(struct mysmb_game *game,
-                                                        mysmb_u8 slot)
-{
-    static const mysmb_u8 lakitu_adjustment[3] = { 0x15U, 0x30U, 0x40U };
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-    mysmb_u16 difference;
-    mysmb_u8 distance;
-    mysmb_u8 direction;
-    mysmb_u8 adjustment_index;
-
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + slot]);
-    difference = (mysmb_u16)(enemy_world - player_world);
-    direction = 0U;
-    distance = (mysmb_u8)difference;
-    if (difference >= 0x8000U) {
-        direction = 1U;
-        distance = (mysmb_u8)(0U - distance);
-    }
-    if (distance >= 0x3cU) {
-        distance = 0x3cU;
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 17U &&
-            direction != game->ram[MYSMB_ENEMY_Y_SPEED + slot]) {
-            if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] != 0U) {
-                game->ram[MYSMB_ENEMY_X_SPEED + slot]--;
-                if (game->ram[MYSMB_ENEMY_X_SPEED + slot] != 0U) return 0U;
-            }
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] = direction;
-        }
-    }
-    distance = (mysmb_u8)((distance & 0x3cU) >> 2U);
-    adjustment_index = 0U;
-    if (game->ram[MYSMB_PLAYER_X_SPEED] != 0U &&
-        game->ram[MYSMB_SCROLL_AMOUNT] != 0U) {
-        adjustment_index = 1U;
-        if (game->ram[MYSMB_PLAYER_X_SPEED] >= 0x19U &&
-            game->ram[MYSMB_SCROLL_AMOUNT] >= 2U) adjustment_index = 2U;
-    }
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 18U &&
-        game->ram[MYSMB_PLAYER_X_SPEED] == 0U &&
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U) {
-        adjustment_index = 0U;
-    }
-    /* SPixelLak subtracts once before decrementing Y, hence distance + 1. */
-    return (mysmb_u8)(lakitu_adjustment[adjustment_index] - distance - 1U);
-}
-
-/* ROM MoveLakitu and PlayerLakituDiff.  Enemy_X_Speed and
- * Enemy_Y_Speed are LakituMoveSpeed and LakituMoveDirection in this route. */
-void mysmb_enemy_step_lakitus_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 speed;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 17U) return;
-    if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) {
-        mysmb_enemy_move_downward(game, slot, 0x3dU, 3U);
-        return;
-    }
-    if (game->ram[MYSMB_ENEMY_STATE + slot] != 0U) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 0U;
-        speed = 0x10U;
-    }
-    else {
-        game->ram[MYSMB_ENEMY_FRENZY_BUFFER] = 18U;
-        speed = mysmb_enemy_player_lakitu_difference(game, slot);
-        if (speed == 0U && game->ram[MYSMB_ENEMY_X_SPEED + slot] != 0U &&
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] != 0U) return;
-    }
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = speed;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 1U;
-    if ((game->ram[MYSMB_ENEMY_Y_SPEED + slot] & 1U) == 0U) {
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = (mysmb_u8)(0U - speed);
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 2U;
-    }
-    mysmb_world_move_enemy_horizontally(game, slot);
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_enemy_step_lakitus(struct mysmb_game *game)
 {
     mysmb_u8 slot;
-    for (slot = 0U; slot < 5U; ++slot)
-        mysmb_enemy_step_lakitus_slot(game, slot);
+    for (slot = 0U; slot < 5U; ++slot) {
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 17U)
+            mysmb_enemy_step_lakitus_slot(game, slot);
+    }
 }
 
 /* ROM LakituAndSpinyHandler.  InitEnemyFrenzy enters with the current

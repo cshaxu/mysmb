@@ -1380,3 +1380,244 @@ Existing owner-ROM/listing provenance and redistribution limits remain.
 | mysmb16.exe | 256643 | 3ff8f4059c64aba06081f2630ea6f892c9e973c6bd81b19f21d71b575553d64e |
 | mysmb32.exe | 348669 | 46b236ef19cf0e16648274c7bd2b409b035da19a29a466540b424b69b60205cd |
 | mysmb64.exe | 356246 | ad5c0abd18d0e1958ed0c32f2b88a5308c768456ce24f7988aa46fc36c6bfdf8 |
+
+## S10 admission: Lakitu movement and distance
+
+S9 closed in 3a59dca. Coordinator accepts transfer-194 under the approved
+source-order plan. Baseline 1,150/1,992; all sixteen scoped labels below are
+open and expected new, maximum 1,166. Source $CF25-$CFDC ends before the
+bridge/Bowser slice. This is T40's final chain; its closure also assembles
+T40's cross-chain evidence and exact 120-node disposition without duplicating
+already accepted proof or inventing another S.
+
+| Node | Original address | Required individual proof |
+| --- | --- | --- |
+| LakituDiffAdj | $CF25 | Three table values copied to scratch in reverse-index order |
+| MoveLakitu | $CF28 | Defeated bit selects the MoveD_EnemyVertically tail |
+| ChkLS | $CF31 | Nonzero live state clears frenzy/direction and sets speed $10 |
+| Fr12S | $CF40 | Zero state requests Spiny before scratch/table setup |
+| LdLDa | $CF47 | Populate $01-$03 before the shared distance child |
+| SetLSpd | $CF53 | Store returned speed including delayed-turn result, no extra exit |
+| SetLMov | $CF67 | Direction bit chooses sign, then horizontal child |
+| PlayerLakituDiff | $CF6C | PlayerEnemyDiff page sign and low scratch determine byte distance |
+| ChkLakDif | $CF7D | Clamp at $3C and compare full direction byte for Lakitu |
+| SetLMovD | $CF9C | Commit new direction only at the original delay boundary |
+| ChkPSpeed | $CF9F | Mask/divide scratch distance; preserve speed/scroll gates |
+| ChkSpinyO | $CFC1 | Spiny-specific bypass of vertical-state adjustment reset |
+| ChkEmySpd | $CFCB | Zero vertical state resets adjustment index only on this path |
+| SubDifAdj | $CFD1 | Read caller-provided $01-$03, never hardcode Lakitu data here |
+| SPixelLak | $CFD6 | Subtract once plus masked distance with byte wrap |
+| ExMoveLak | $CFDC | Return original accumulator, including decremented speed |
+
+Create shared enemy/lakitu.c and remove the old duplicate bodies from frenzy.c.
+Use the existing PlayerEnemyDiff typed return/scratch seam; its node retains
+its own later receiver. Existing horizontal/gravity children are reused.
+Lakitu movement loads its own table; Spiny continues supplying its distinct
+adjusters through the same shared helper. Preserve source scratch writes and
+call order, remove the fabricated zero return and caller early exit, and keep
+flag/ID eligibility only on the legacy aggregate. No platform game logic.
+
+Prove source branches, scratch, returned A, node/control/data relationships
+against original NMI movement and helper entry routes, plus retained Spiny
+caller samples. Compare child input before any diagnostic substitution and
+run real children separately. Controlled RAM inputs at naturally reached
+entries are allowed for branch coverage; ROM, CPU/register, PC, stack and
+output patches are forbidden. Native contracts independently cover full RAM
+footprints, custom adjusters, capped signed byte distance, turnaround delay,
+unsigned speed gates, subtract-one loop and child mutations. Recheck all
+previous matching routes, strict C90 x86/x64, DOS16 link, hidden-window probes,
+platform purity, governance and the three EXEs once for S10 P1.
+
+The validation harness may batch existing snapshot inputs in one process
+provided every case resets all native state; this reduces process-launch
+cost without reducing comparisons. Similar-issue review covers both consumers,
+existing helper seams, scratch and speed/direction aliases, initializers and
+tests. Owner-local ROM/listing provenance and redistribution limits remain.
+All temporary/generated material stays under ignored build/m2-t40-s10, with
+at most 1,024 new original cases, 32-MB raw budget, unique paths, twenty-second
+per-run deadlines and checkpoints. Coordinator retains inputs for dependent
+regressions and owns cleanup. No completion credit before both proof tracks.
+
+## S10 original Lakitu movement and distance proof
+
+S10 P1 closes all sixteen expected nodes: 1,150 -> 1,166/1,992. No scoped
+unfinished node or transfer remains; T40 cross-chain review follows.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| LakituDiffAdj | $CF25 | Three table values copied to scratch in reverse-index order; new ROM match |
+| MoveLakitu | $CF28 | Defeated bit selects the MoveD_EnemyVertically tail; new ROM match |
+| ChkLS | $CF31 | Nonzero live state clears frenzy/direction and sets speed $10; new ROM match |
+| Fr12S | $CF40 | Zero state requests Spiny before scratch/table setup; new ROM match |
+| LdLDa | $CF47 | Populate $01-$03 before the shared distance child; new ROM match |
+| SetLSpd | $CF53 | Store returned speed including delayed-turn result, no extra exit; new ROM match |
+| SetLMov | $CF67 | Direction bit chooses sign, then horizontal child; new ROM match |
+| PlayerLakituDiff | $CF6C | PlayerEnemyDiff page sign and low scratch determine byte distance; new ROM match |
+| ChkLakDif | $CF7D | Clamp at $3C and compare full direction byte for Lakitu; new ROM match |
+| SetLMovD | $CF9C | Commit new direction only at the original delay boundary; new ROM match |
+| ChkPSpeed | $CF9F | Mask/divide scratch distance; preserve speed/scroll gates; new ROM match |
+| ChkSpinyO | $CFC1 | Spiny-specific bypass of vertical-state adjustment reset; new ROM match |
+| ChkEmySpd | $CFCB | Zero vertical state resets adjustment index only on this path; new ROM match |
+| SubDifAdj | $CFD1 | Read caller-provided $01-$03, never hardcode Lakitu data here; new ROM match |
+| SPixelLak | $CFD6 | Subtract once plus masked distance with byte wrap; new ROM match |
+| ExMoveLak | $CFDC | Return original accumulator, including decremented speed; new ROM match |
+The 1,024 original NMI routes comprise 512 MoveLakitu entries and 512
+PlayerLakituDiff entries. Declared RAM inputs at naturally reached entries
+vary page/low distance, full-byte direction, current speed, player speed,
+scroll amount, caller-supplied adjustment values and Lakitu/Spiny/other IDs.
+Helper cases change the ID/adjusters only at the reached helper entry;
+observation mode never controls those inputs. No ROM, CPU/register, PC,
+stack or output patch is used. All 1,024 observer-free frames equal their
+observed counterparts; this is not a native full-game frame claim.
+
+All 92 scoped instructions and sixteen label/data consumers are covered.
+Seventeen conditional branches have both outcomes. BNE at $CF3E follows
+LDA #$10 and cannot fall through. BNE at $CFC9 cannot fall through because
+zero Player_X_Speed already branches to SubDifAdj at $CFAB and no intervening
+instruction changes that memory. Both infeasible sides are explicitly
+recorded rather than forced with execution patches. The three LakituDiffAdj
+bytes match the native table and the reversed copy loop executes all entries.
+
+Caller-boundary and actual-child comparisons each pass 2,048/2,048 on x86/x64,
+including the helper's returned accumulator. Complete child inputs are
+compared before diagnostic substitution; real children run separately. All
+scratch and mapped $0109-$0139 RAM remain checked; hardware-stack storage
+alone is excluded. The scoped code has no other output surface. Existing
+PlayerEnemyDiff remains an external dependency with no incidental node credit.
+
+Shared enemy/lakitu.c replaces both old frenzy.c bodies and preserves the
+original copy/subtraction loops. PlayerEnemyDiff's page-byte sign selects the
+low-byte absolute difference, followed by cap and original delayed turn.
+The delay returns the decremented speed, not zero; MoveLakitu always stores
+that result and reaches horizontal motion. The shared helper reads $01-$03,
+so Spiny retains its own adjustment set. The speed/scroll gates and Spiny
+exception control the index reset exactly; scratch $00 remains original.
+Flag/ID eligibility stays only on the legacy aggregate. Initializer logic,
+other child algorithms and host adapters are unchanged.
+
+Independent full-RAM native contracts pass seventeen cases per width,
+including custom adjusters, cap, byte overflow, delayed-turn return, unsigned
+player speed, direction values beyond one and source child order. The old
+Lakitu integration smoke also passes after correcting its missing original
+current-slot ID/ObjectOffset preconditions and its stale direction-two
+expectation: SmallBBox returns A=0, so SetSpSpd stores direction one.
+That test failed identically before this S; no gameplay code was changed to
+satisfy its old assumptions. Existing original Spiny comparisons improve
+from 36/160 to 160/160 under the shared distance repair.
+
+The final actual-root matrix is 10,804/12,178, retaining all 8,628 previous
+matches and improving 128 prior failures. Remaining 1,374 differences keep
+their source-order owners. Fifteen initializer/platform smokes per width,
+earlier native contracts, layout/mode tests, platform purity and governance
+pass. Existing Bowser/endgame smoke failures remain; broad player-entrance
+failure is not claimed repaired. Batch validation resets the entire native
+state for every case and cross-checks spaced cases against separate process
+execution, retaining identical per-case results and full difference output.
+
+All 101 shared units compile in strict C90 for x86/x64; both self-tests and
+hidden-window response probes pass. DOS16 links with the existing OLDNAMES
+warning and remains link-only. Resource binding, graphical playability and
+physical 486 performance remain unproven. All three test EXEs are refreshed.
+
+Similar-issue review covers both original consumers, PlayerEnemyDiff's typed
+seam, speed/direction aliases, scratch arrays, existing Spiny setup and tests.
+There is one shared distance owner and no platform gameplay. Reproduce
+lakitu_movement_fixture.h cases 0..1023 using --fixture=t40-lakitu-movement=N,
+--lakitu-movement-snapshot, --control-children and --pc-coverage separately.
+lakitu_movement_snapshot_check verifies caller inputs/returns;
+enemy_loop_actual_check runs real bodies, including optional --batch with
+one snapshot path per input line. Native contracts are
+mysmb.lakitu-movement-distance and mysmb.lakitu-smoke.
+
+Source-audit, original-results, actual-results, native-chain, retained-proof
+and final-root-regressions stay below ignored build/m2-t40-s10. Raw original
+records use 14,770,048 bytes, below 32 MB. Unique paths, twenty-second recorder
+deadlines and checkpoints bound runs; the coordinator retains inputs for
+dependent regressions and owns cleanup. Existing local owner-ROM/listing
+provenance and redistribution limits remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256563 | 34c9cc45af08acf5f91d5909c0ccccfa50c8dc8bfc705ecab62c8b09d287519a |
+| mysmb32.exe | 348913 | 816b265f334b7ae62e03a5700c161b9eaceef69331bacc76621d601623539bba |
+| mysmb64.exe | 356526 | ef5ce4215bcc0a4640f71a7575f8afe8295d750163408d2bd1f30ccd123788fa |
+
+## T40 closure
+
+All ten source-ordered S chains are closed. All 120 unique scoped nodes are
+individually ROM-match complete: 107 new and thirteen retained, bringing the
+canonical count from 1,059 to 1,166/1,992. No scoped unfinished node remains
+and no closure transfer is required. Each label keeps its exact maintenance
+receiver. Reused external dependencies receive no duplicate credit.
+
+| Chain | Scoped | New matches |
+| --- | ---: | ---: |
+| M2 T40 S1 | 2 | 2 |
+| M2 T40 S2 | 24 | 11 |
+| M2 T40 S3 | 5 | 5 |
+| M2 T40 S4 | 10 | 10 |
+| M2 T40 S5 | 16 | 16 |
+| M2 T40 S6 | 2 | 2 |
+| M2 T40 S7 | 7 | 7 |
+| M2 T40 S8 | 32 | 32 |
+| M2 T40 S9 | 6 | 6 |
+| M2 T40 S10 | 16 | 16 |
+
+Retained matches: XSpeedAdderData, RevivedXSpeed, MoveNormalEnemy, FallE, MEHor, SlowM, SteadM, AddHS, ReviveStunned, SetRSpd, MoveDefeatedEnemy, ChkKillGoomba, NKGmba.
+
+The integrated matrix below runs actual shared C children without recorded
+return substitution. It complements the individual source/caller/data proofs;
+a caller's completed status does not certify an unproved descendant.
+
+| Original route family | Actual matches | Remaining differences |
+| --- | ---: | ---: |
+| loop | 192/192 | 0 |
+| stream | 160/160 | 0 |
+| init | 220/220 | 0 |
+| common | 104/104 | 0 |
+| spiny | 160/160 | 0 |
+| firebar | 80/80 | 0 |
+| fish | 304/304 | 0 |
+| bowser-flame | 320/320 | 0 |
+| fireworks | 240/240 | 0 |
+| bullet-swim | 364/364 | 0 |
+| group | 230/230 | 0 |
+| small-init | 392/392 | 0 |
+| platform-init | 480/480 | 0 |
+| actor-dispatch | 42/360 | 318 |
+| normal-actor | 80/252 | 172 |
+| special-actor | 32/184 | 152 |
+| podoboo | 128/128 | 0 |
+| hammer-movement | 712/712 | 0 |
+| paratroopa | 320/320 | 0 |
+| green-counter | 576/576 | 0 |
+| bloober | 1024/1024 | 0 |
+| bullet-movement | 256/256 | 0 |
+| swimming-cheep | 1024/1024 | 0 |
+| firebar-chain | 292/1024 | 732 |
+| flying-cheep-movement | 1024/1024 | 0 |
+| lakitu-movement | 2048/2048 | 0 |
+
+Total 10,804/12,178 actual comparisons match. All 8,628 S9 matches remain;
+128 former differences now match, including all 124 prior Spiny failures.
+S10 contributes 2,048 additional matching comparisons. The remaining 1,374
+differences are actor-dispatch (318), normal-actor (172), special-actor (152)
+and firebar-chain (732). These are sample counts, not node counts. Existing
+offscreen, relative-coordinate, collision/injury, graphics and other child
+obligations retain their exact ledger receivers and source-order admission.
+This review neither hides those differences nor certifies full-game equality.
+
+S10's final 101-unit strict C90 x86/x64 builds, independent native contracts,
+cross-chain comparisons, DOS16 link, platform-purity check, self-tests and
+hidden-window response probes supply this integrated T delivery. Its three
+executable sizes and hashes above are verified against assets/. Earlier
+accepted chain proofs are reused without repeating their node lifecycles.
+Existing Bowser/endgame and broad player-entrance smoke gaps remain explicit.
+DOS16 is link-only: no graphical playability, resource binding or physical
+486SX performance claim is made. Platform adapters contain no new gameplay.
+
+T40 is closed; M2 remains incomplete. The next queued source slice begins
+BridgeCollapseData at line 10092 and BridgeCollapse at line 10098, preserving
+the complete bridge/Bowser chain. This closure does not admit T41; publish
+its exact node scope and S ownership before implementation under the continuing
+approved M2 mandate.

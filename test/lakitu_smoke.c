@@ -69,11 +69,15 @@ int main(void)
     game.ram[0x0072U] = 1U;
     game.ram[0x008bU] = 0x90U;
     game.ram[0x00d3U] = 0x80U;
+    game.ram[0x0019U] = 18U; /* InitEnemyFrenzy supplies the current-slot ID. */
+    game.ram[0x0008U] = 3U;
     mysmb_enemy_init_lakitu_spiny_frenzy(&game, 3U);
+    /* SetSpSpd's SmallBBox returns A=0, so the original BMI is not taken
+     * and DEY selects direction one, regardless of the earlier difference. */
     if (game.ram[0x0012U] != 1U || game.ram[0x0019U] != 18U ||
         game.ram[0x0021U] != 5U || game.ram[0x0071U] != 1U ||
         game.ram[0x008aU] != 0x90U || game.ram[0x00d2U] != 0x78U ||
-        game.ram[0x00a3U] != 0xfdU || game.ram[0x0049U] != 2U) return 1;
+        game.ram[0x00a3U] != 0xfdU || game.ram[0x0049U] != 1U) return 1;
 
     /* Spiny eggs select the same routine with the original $20 force. */
     mysmb_game_initialize_memory(&game, 0xfeU);
