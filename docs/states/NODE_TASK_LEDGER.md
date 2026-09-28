@@ -104,8 +104,9 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T33 S4 | 12 | `PlayerAnimTmrData`, `GetPlayerAnimSpeed`, `ChkSkid`, `SetRunSpd`, `ProcSkid`, `SetAnimSpd`, `ImposeFriction`, `JoypFrict`, `LeftFrict`, `RghtFrict`, `XSpdSign`, `SetAbsSpd` |
 | M2 T34 S1 | 5 | `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit` |
 | M2 T34 S2 | 6 | `FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall`, `FireballExplosion` |
+| M2 T35 S1 | 8 | `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData` |
 | M2 Td S4 | 203 | `SoundEngine`, `SndOn`, `InPause`, `PTone1F`, `ContPau`, `PTone2F`, `PTRegC`, `DecPauC`, `SkipPIn`, `RunSoundSubroutines`, `SkipSoundSubroutines`, `NoIncDAC`, `StrWave`, `Dump_Squ1_Regs`, `PlaySqu1Sfx`, `SetFreq_Squ1`, `Dump_Freq_Regs`, `NoTone`, `Dump_Sq2_Regs`, `PlaySqu2Sfx`, `SetFreq_Squ2`, `SetFreq_Tri`, `SwimStompEnvelopeData`, `PlayFlagpoleSlide`, `PlaySmallJump`, `PlayBigJump`, `JumpRegContents`, `ContinueSndJump`, `N2Prt`, `FPS2nd`, `DmpJpFPS`, `PlayFireballThrow`, `PlayBump`, `Fthrow`, `ContinueBumpThrow`, `DecJpFPS`, `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL`, `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2`, `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick`, `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems`, `BrickShatterFreqData`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic`, `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader`, `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1`, `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad`, `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg`, `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler`, `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData`, `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr`, `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData`, `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
-| M2 Td S5 | 12 | `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData`, `RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer` |
+| M2 Td S5 | 4 | `RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer` |
 
 ## Future admission packages and queued plans
 
@@ -119,7 +120,7 @@ transfer existing ownership or allocate a numeric T.
 | screen-status | 0 | not decomposed here | [record](../../docs/proposals/m2/screen-status.md); T27 S1 is admitted for the screen-task root; later T27 chains remain queued and their nodes retain T24 S2 custody until individual admission. |
 | game-dispatcher | 0 | not decomposed here | [record](../../docs/history/M2-T31-game-dispatcher.md); Candidate has no allocated implementation T/S yet. |
 | audio-engine-deferred | 203 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
-| fireball-bubble-timer-warp-deferred | 12 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
+| fireball-bubble-timer-warp-deferred | 4 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
 | t22-nmi-ppu-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission. |
 
 ## Every node
@@ -849,14 +850,14 @@ transfer existing ownership or allocate a numeric T.
 | 6401 | `EraseFB` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T21 S6; M2 T24 S1 |
 | 6403 | `NoFBall` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T21 S6; M2 T24 S1 |
 | 6405 | `FireballExplosion` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T16 S3; M2 T21 S6; M2 T24 S1 |
-| 6409 | `BubbleCheck` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T20 S1; M2 T21 S6; M2 T24 S1 |
-| 6419 | `SetupBubble` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6425 | `PosBubl` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6440 | `MoveBubl` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6450 | `Y_Bubl` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6451 | `ExitBubl` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6453 | `Bubble_MForceData` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
-| 6456 | `BubbleTimerData` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
+| 6409 | `BubbleCheck` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T20 S1; M2 T21 S6; M2 T24 S1 |
+| 6419 | `SetupBubble` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6425 | `PosBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6440 | `MoveBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6450 | `Y_Bubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6451 | `ExitBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6453 | `Bubble_MForceData` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
+| 6456 | `BubbleTimerData` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
 | 6461 | `RunGameTimer` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T15 S3; M2 T19 S5; M2 T21 S6; M2 T24 S1 |
 | 6486 | `ResGTCtrl` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
 | 6494 | `TimeUpOn` | M2 Td S5 | fireball-bubble-timer-warp-deferred; deferred until source-order T32/T33 admission | M2 T21 S6; M2 T24 S1 |
@@ -2321,6 +2322,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T34 | 0 | - | [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
 | M2 T34 S1 | 0 | 5 | owner-approved-source-order, fireball-dispatch-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
 | M2 T34 S2 | 0 | 6 | owner-approved-source-order, fireball-core-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
+| M2 T35 | 0 | - | [record](../../docs/proposals/m2/bubbles-timer-warp.md) |
+| M2 T35 S1 | 0 | 8 | owner-approved-source-order, bubble-setup-movement-chain; [record](../../docs/proposals/m2/bubbles-timer-warp.md) |
 | M2 T4 | 0 | - | [record](../../docs/history/M2-T4-player-route-and-collision.md); S not recorded |
 | M2 T5 | 2 | - | [record](../../docs/history/M2-T5-object-routes.md); S not recorded |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
@@ -2331,7 +2334,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 Td S3 | 0 | 0 | explicit-reference; [record](../../docs/proposals/m2-rom-structural-recovery.md) |
 | M2 Td S2 | 0 | 0 | explicit-reference; [record](../../docs/states/QUEUE.md) |
 | M2 Td S4 | 0 | 203 | out-of-order-custody; [record](../../docs/proposals/m2/audio-engine.md) |
-| M2 Td S5 | 0 | 12 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 Td S5 | 0 | 4 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S6 | 0 | 0 | future-source-order-custody; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S7 | 0 | 0 | source-order-identifier-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M2 Td S8 | 0 | 0 | owner-approved-governance-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2510,6 +2513,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-141-t23-s5-to-t33-s3-physics | M2 T23 S5 | M2 T33 S4 | 12 | Coordinator under continuing owner-approved M2 source-order mandate.; [record](../../docs/history/M2-T33-player-movement-state.md) |
 | transfer-142-td-s5-to-t34-s1-fireball-dispatch | M2 Td S5 | M2 T34 S1 | 5 | Coordinator under continuing owner-approved M2 source-order mandate.; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
 | transfer-143-td-s5-to-t34-s2-fireball-core | M2 Td S5 | M2 T34 S2 | 6 | Coordinator under continuing owner-approved M2 source-order mandate.; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
+| transfer-144-td-s5-to-t35-s1-bubbles | M2 Td S5 | M2 T35 S1 | 8 | Coordinator under continuing owner-approved M2 source-order mandate.; [record](../../docs/proposals/m2/bubbles-timer-warp.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -2649,3 +2653,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T33 S4 | 12 | 727 | `PlayerAnimTmrData`, `GetPlayerAnimSpeed`, `ChkSkid`, `SetRunSpd`, `ProcSkid`, `SetAnimSpd`, `ImposeFriction`, `JoypFrict`, `LeftFrict`, `RghtFrict`, `XSpdSign`, `SetAbsSpd` / 12 | `PlayerAnimTmrData`, `GetPlayerAnimSpeed`, `ChkSkid`, `SetRunSpd`, `ProcSkid`, `SetAnimSpd`, `ImposeFriction`, `JoypFrict`, `LeftFrict`, `RghtFrict`, `XSpdSign`, `SetAbsSpd` / 12 | closed-P2-final-review-739; [record](../../docs/history/M2-T33-player-movement-state.md) |
 | M2 T34 S1 | 5 | 739 | `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit` / 5 | `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit` / 5 | closed-P1-dispatch-chain-744; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
 | M2 T34 S2 | 6 | 744 | `FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall`, `FireballExplosion` / 6 | `FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall`, `FireballExplosion` / 6 | closed-P1-core-chain-750; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
+| M2 T35 S1 | 8 | 750 | `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData` / 8 | `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData` / 8 | closed-P1-bubble-chain-758; [record](../../docs/proposals/m2/bubbles-timer-warp.md) |

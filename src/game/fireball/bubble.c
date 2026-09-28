@@ -1,7 +1,7 @@
 #include "game/fireball/fireball.h"
 
-/* ROM lines 6336-6456: ProcAirBubbles, BublLoop, BublExit, BubbleCheck,
- * SetupBubble, PosBubl, MoveBubl, Y_Bubl, ExitBubl and their two data tables.
+/* ROM $B6F9-$B74E: BubbleCheck, SetupBubble, PosBubl, MoveBubl,
+ * Y_Bubl, ExitBubl and their two data tables.
  * The later relative-position/offscreen/OAM leaves consume these fixed bubble
  * arrays without introducing a platform-specific game path. */
 enum {
@@ -63,6 +63,24 @@ static mysmb_u8 mysmb_bubble_x_offscreen(const struct mysmb_game *game,
     }
 }
 
+/* Original $B74B/$B74D movement-force and timer data, indexed by $07. */
+static const mysmb_u8 mysmb_bubble_force[2] = { 0xffU, 0x50U };
+static const mysmb_u8 mysmb_bubble_timer[2] = { 0x40U, 0x20U };
+
+/* MoveBubl/Y_Bubl: SetupBubble falls through here even if initial Y is F8. */
+static void mysmb_bubble_move(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 force;
+    mysmb_u8 old_value;
+    mysmb_u8 y;
+    force = mysmb_bubble_force[game->ram[0x0007U]];
+    old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];
+    game->ram[MYSMB_BUBBLE_Y_DUMMY + slot] = (mysmb_u8)(old_value - force);
+    y = (mysmb_u8)(game->ram[MYSMB_BUBBLE_Y + slot] -
+                   (old_value < force ? 1U : 0U));
+    game->ram[MYSMB_BUBBLE_Y + slot] = y < 0x20U ? 0xf8U : y;
+}
+
 /* Direct entry used by Entrance_GameTimerSetup and by BubbleCheck after the
  * timer permits a new bubble. The caller supplies the ROM X register slot;
  * RAM $07 remains the exact random-bit input selected by BubbleCheck. */
@@ -83,8 +101,8 @@ void mysmb_fireball_setup_bubble(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_BUBBLE_Y + slot] =
         (mysmb_u8)(game->ram[MYSMB_BUBBLE_PLAYER_Y] + 8U);
     game->ram[MYSMB_BUBBLE_Y_HIGH + slot] = 1U;
-    game->ram[MYSMB_BUBBLE_TIMER] = (game->ram[0x0007U] & 1U) != 0U ?
-        0x20U : 0x40U;
+    game->ram[MYSMB_BUBBLE_TIMER] = mysmb_bubble_timer[game->ram[0x0007U]];
+    mysmb_bubble_move(game, slot);
 }
 
 static mysmb_u8 mysmb_bubble_y_offscreen(const struct mysmb_game *game,
@@ -120,30 +138,17 @@ static mysmb_u8 mysmb_bubble_y_offscreen(const struct mysmb_game *game,
     }
 }
 
-/* Existing bubble children split at original call boundaries.
- * Their interior behavior retains its existing source-order ownership. */
+/* Original BubbleCheck: always publish the selected random bit, then either
+ * move, return while the creation timer is live, or enter SetupBubble. */
 void mysmb_fireball_check_bubble(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 random_bit;
-    mysmb_u8 old_value;
-    mysmb_u8 borrow;
     random_bit = (mysmb_u8)(game->ram[MYSMB_BUBBLE_RANDOM + 1U + slot] & 1U);
-    if (game->ram[MYSMB_BUBBLE_Y + slot] == 0xf8U &&
-        game->ram[MYSMB_BUBBLE_TIMER] == 0U) {
-        game->ram[0x0007U] = random_bit;
+    game->ram[0x0007U] = random_bit;
+    if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U)
+        mysmb_bubble_move(game, slot);
+    else if (game->ram[MYSMB_BUBBLE_TIMER] == 0U)
         mysmb_fireball_setup_bubble(game, slot);
-    }
-    if (game->ram[MYSMB_BUBBLE_Y + slot] != 0xf8U) {
-        old_value = game->ram[MYSMB_BUBBLE_Y_DUMMY + slot];
-        game->ram[MYSMB_BUBBLE_Y_DUMMY + slot] = (mysmb_u8)(old_value -
-            (random_bit != 0U ? 0x50U : 0xffU));
-        borrow = old_value < (random_bit != 0U ? 0x50U : 0xffU) ? 1U : 0U;
-        game->ram[MYSMB_BUBBLE_Y + slot] = (mysmb_u8)(
-            game->ram[MYSMB_BUBBLE_Y + slot] - borrow);
-        if (game->ram[MYSMB_BUBBLE_Y + slot] < 0x20U) {
-            game->ram[MYSMB_BUBBLE_Y + slot] = 0xf8U;
-        }
-    }
 }
 
 void mysmb_fireball_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot)

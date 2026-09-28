@@ -2,38 +2,34 @@
 
 ## Current Work
 
-**M2 T34 S2 and T34 are closed at 750 / 1,992: all eleven scoped caller/data nodes proven.**
+**M2 T35 S1 is closed at 758 / 1,992: all eight bubble nodes proven; timer S2 admission is next.**
 
-Both chains pass 128 caller comparisons; actual native children retain
-12 graphics failures versus 116 matches. Three final EXEs are refreshed.
-The next source-order candidate is bubbles, timer and Warp Zone.
-
-## M2 T34 S2 Packet
+## M2 T35 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T34 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after S1 commit 23327e3; coordinator accepts transfer-143. |
-| Objective | Prove FireballXSpdData through FireballExplosion: six core state/dispatch nodes. |
-| Non-goals | No child collision, movement, offscreen or graphics algorithm repair; necessary child seam extraction gives no child credit. |
-| Reference Baseline | 744 / 1,992; scope six incomplete labels, expected six, maximum 750; exact incoming states in proposal. |
-| Candidate Proposal | [Fireball core chain](../history/M2-T34-fireball-dispatch-core.md#s2-admission-fireball-core-state-chain). |
-| Files And ABI Surface | Shared fireball core and original child seams, headers, focused tests/recorder, build lists and three artifacts. |
+| Identifier Mode | M2 T35 S1, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after T34 commit 4142bd0; coordinator accepts transfer-144. |
+| Objective | Complete eight bubble creation/movement/data nodes, BubbleCheck through BubbleTimerData. |
+| Non-goals | No timer, jumpspring, vine, relative/offscreen or graphics child repair. |
+| Reference Baseline | 750 / 1,992; eight unique open labels, expected eight, maximum 758. T35 has 22 incomplete and 16 previously complete labels, maximum 772. |
+| Candidate Proposal | [Bubble chain](../proposals/m2/bubbles-timer-warp.md#s1-admission-bubble-creation-and-movement). |
+| Files And ABI Surface | Shared bubble owner and declarations, focused tests/recorder, build lists and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original table/branch/read/write/call-order evidence at natural NMI boundaries; independent native tests, builds and purity. |
-| Expected Markers | ObjectOffset; state partition; carry/page; speed table; DEC state; movement and child sequence; CC mask; explosion tail. |
-| Asset Needs | Existing owner-local ROM/listing research inputs; bounded ignored evidence; owner-authorized three local EXEs, DOS link-only. |
-| Reporting Requirements | Six exact node dispositions; separate caller and actual-child results; dual evidence and three artifact hashes. |
-| Stop Conditions | Unadmitted child repair, reference mutation, masked differences, platform gameplay or unsupported node credit. |
-| Exit Criteria | All six received nodes proven or accepted transfers; tracker, evidence and artifacts agree; T cross-chain review follows. |
-| Original Owner Request | Complete original-ROM logic and call structure in shared native 16/32/64-bit C in source order with chain delivery. |
-| Similar-Issue Sweep | All fireball state/initialization writers, movement and graphics callers, erase and offscreen decisions. |
+| Verification | Original source/table/entry-return RAM and branch proof; independent native tests, builds, purity and bounded window probes. |
+| Expected Markers | Random scratch; inactive/timer gates; facing/page/Y carry; setup fallthrough; force borrow; status-bar threshold. |
+| Asset Needs | Existing owner-local ROM/listing, ignored bounded traces; owner-authorized three EXEs, DOS link-only. |
+| Reporting Requirements | Eight exact dispositions, two proof tracks, table/branch results and three artifact hashes. |
+| Stop Conditions | Unadmitted child repair, reference mutation, masked differences or platform gameplay. |
+| Exit Criteria | All received nodes proven or accepted transfers; tracker/evidence/artifacts agree. |
+| Original Owner Request | Complete original-ROM logic and call structure in shared native 16/32/64-bit C, source order and chain delivery. |
+| Similar-Issue Sweep | Every setup caller, bubble movement body, scratch/random, timer and coordinate writer. |
 
-## T34 S1 closure summary
+## T34 closure summary
 
-Five dispatch caller nodes proven and committed as 23327e3; three EXEs
-refreshed. The actual-child run retains core and graphics differences; see
-[exact evidence](../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof).
+[T34 history](../history/M2-T34-fireball-dispatch-core.md) records 11/11
+scoped nodes, 128 caller matches and 12 retained graphics-child failures.
+Progress 739 -> 750; three EXEs committed as 4142bd0.
 
 ## T33 closure summary
 

@@ -861,14 +861,14 @@ The labels and branches behind every line remain open until individually bound b
 | 6401 | `EraseFB` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
 | 6403 | `NoFBall` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
 | 6405 | `FireballExplosion` | M2 T34 S2 shared game/fireball/fireball_core.c | ROM-match complete | [S2 core caller proof; graphics gaps retained](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof) |
-| 6409 | `BubbleCheck` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubblecheck) |
-| 6419 | `SetupBubble` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupbubble) |
-| 6425 | `PosBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-posbubl) |
-| 6440 | `MoveBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movebubl) |
-| 6450 | `Y_Bubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-y_bubl) |
-| 6451 | `ExitBubl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitbubl) |
-| 6453 | `Bubble_MForceData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubble_mforcedata) |
-| 6456 | `BubbleTimerData` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bubbletimerdata) |
+| 6409 | `BubbleCheck` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6419 | `SetupBubble` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6425 | `PosBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6440 | `MoveBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6450 | `Y_Bubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6451 | `ExitBubl` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6453 | `Bubble_MForceData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
+| 6456 | `BubbleTimerData` | M2 T35 S1 shared game/fireball/bubble.c | ROM-match complete | [S1 actual bubble-chain proof](../../proposals/m2/bubbles-timer-warp.md#s1-original-bubble-proof) |
 | 6461 | `RunGameTimer` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-rungametimer) |
 | 6486 | `ResGTCtrl` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resgtctrl) |
 | 6494 | `TimeUpOn` | T20 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-timeupon) |
