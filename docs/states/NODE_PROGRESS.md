@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 778 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 131 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,083 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 788 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 130 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,074 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **778 / 1,992 (39.06%)**. The 131 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **788 / 1,992 (39.56%)**. The 130 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T36 S1 P1](../proposals/m2/misc-object-chains.md#s1-original-vine-actor-proof)
-proves six vine actor caller nodes with 84 original/native caller matches;
-actual native children match 52 and retain 32 graphics failures. T36 remains
-open; child graphics, full-frame output and prior core-test debts remain.
+Latest task review: [T36 S2 P1](../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof)
+proves ten hammer lifecycle nodes with 126 original/native caller matches
+and 126 actual-child matches across both Windows widths. T36 remains open;
+prior child, full-frame and core-test debts remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (778)
+## Completed matches (788)
 
 | ROM line | Node |
 | ---: | --- |
@@ -777,6 +777,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 6880 | `BBFly` |
 | 6881 | `RunBBSubs` |
 | 6886 | `KillBB` |
+| 6891 | `HammerEnemyOfsData` |
+| 6895 | `HammerXSpdData` |
+| 6898 | `SpawnHammerObj` |
+| 6904 | `SetMOfs` |
+| 6919 | `NoHammer` |
+| 6928 | `ProcHammerObj` |
+| 6952 | `SetHSpd` |
+| 6962 | `SetHPos` |
+| 6977 | `RunAllH` |
+| 6978 | `RunHSubs` |
 | 7624 | `MoveD_EnemyVertically` |
 | 7630 | `MoveFallingPlatform` |
 | 7632 | `ContVMove` |
@@ -829,7 +839,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (131)
+## Mapped but not yet matched (130)
 
 | ROM line | Node |
 | ---: | --- |
@@ -868,7 +878,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 6928 | `ProcHammerObj` |
 | 6988 | `CoinBlock` |
 | 7000 | `SetupJumpCoin` |
 | 7014 | `JCoinC` |

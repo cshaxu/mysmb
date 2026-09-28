@@ -3,6 +3,15 @@
 
 #include "game/game.h"
 
+/* ROM $BA89-$BB37: hammer allocation and actor caller chain. */
+extern const mysmb_u8 mysmb_hammer_enemy_offsets[9];
+extern const mysmb_u8 mysmb_hammer_x_speeds[2];
+mysmb_u8 mysmb_objects_spawn_hammer(struct mysmb_game *game);
+void mysmb_objects_step_hammer(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing children exposed without claiming their internal equivalence. */
+void mysmb_objects_check_hammer_collision(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_get_hammer_bounding_box(struct mysmb_game *game, mysmb_u8 slot);
+
 /* ROM $bed4 BlockObjMT_Updater. */
 /* ROM $be70 BlockObjectsCore, bounded to the bouncing-block state. */
 void mysmb_objects_step_block(struct mysmb_game *game, mysmb_u8 slot);

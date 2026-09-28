@@ -5,7 +5,7 @@
 The original lines 6730-7200 contain 56 labels. Fourteen cannon/bullet nodes
 retain T31 S2 accepted proof. The six chains below target 41 incomplete labels,
 maximum 813 from incoming 772. Their current receiver is T24 S2 until each S
-is admitted. S1 is closed; S2 hammer lifecycle admission is next. Numeric S entries below are a plan within
+is admitted. S1 and S2 are closed; S3 coin allocation is next. Numeric S entries below are a plan within
 this T; only individual receipt enables implementation.
 
 PowerUpObjHandler (line 7184) begins a state machine continuing into the next
@@ -214,3 +214,145 @@ Final owner-authorized local P1 artifacts:
 
 Retained raw evidence: 2046157 bytes, below four MB.
 Six received labels complete within their caller contracts, six expected; no received-node transfers. Progress 772 -> 778 / 1,992. T36 remains open for S2-S6 and its explicit next-slice consumer boundary.
+
+## S2 admission: hammer allocation and actor lifetime
+
+Transfer-149 receives ten labels, nine open and ProcHammerObj mapped with
+incomplete evidence. Scope and expected matches are exactly HammerEnemyOfsData,
+HammerXSpdData, SpawnHammerObj, SetMOfs, NoHammer, ProcHammerObj, SetHSpd,
+SetHPos, RunAllH and RunHSubs. Baseline 778 / 1,992, maximum 788.
+Original tables start at $BA89/$BA92; SpawnHammerObj spans $BA94-$BAC2,
+and ProcHammerObj spans $BAC3-$BB37. One shared game/hammer.c owner receives
+both entries from the existing hammer-bro and misc dispatch callers.
+
+Preserve the fixed second LSFR byte, the original enemy-flag indexed read
+including offset six, success carry as the returned byte, and exactly three
+spawn writes. Preserve freeze, attachment/countdown, release speed table,
+ObjectOffset reloads, carry/page arithmetic and child order: gravity,
+horizontal motion, player collision, offscreen, relative, bounding box, draw.
+No invented parent-active or slot clamp. Legal facing values are one and two.
+Original shared movement and position primitives provide child boundaries;
+existing player-hammer collision and bounding-box algorithms retain their
+separate obligations. Interface extraction gives no child conformance credit.
+
+The ROM track uses ordinary NMI source-RAM fixtures through hammer-bro spawn
+and misc dispatch, observing original root/child entry and return without
+patching CPU, stack, ROM or outputs. Compare tables, every branch, persistent
+writes and ordered child arguments; report actual-child differences separately
+from caller comparisons. Native tests cover all allocation candidates,
+occupied flags, untouched collision flags, countdown/release/freeze/motion,
+page wrapping and child sequencing. Reuse existing recorder and build paths.
+One final operational pass runs focused tests, relevant regressions, strict
+C90 x86/x64 builds, DOS16 link, platform purity, hidden-window probes and
+three owner-authorized local EXEs. DOS remains link-only, not playable proof.
+
+Existing owner ROM and reviewed listing are local research/build inputs only;
+no third-party implementation import. Temporary outputs stay under ignored
+build/m2-t36-s2, twenty seconds per reference run and four MB retained raw
+batch; S2 owns containment through T review. Sweep all spawn/actor callers,
+slot ownership, hammer collision and graphics preparation consumers. S3 coin
+allocation and child algorithm repair remain outside this receipt. Closure
+requires exact dispositions, both proof tracks, tracker/ledger and hashes.
+
+### S2 implementation checkpoint (not closure)
+
+Admission gate passes: Total 1992, Complete 778, MappedPending 131,
+Open 1083, ScopeCount 10, ExpectedDelta 10, MaximumComplete 788. All ten
+received names above remain incomplete; no progress credit is added.
+Shared game/hammer.c now owns the two tables and allocation/actor entries.
+The legacy misc caller supplies ObjectOffset at the hammer child boundary;
+the rest of MiscLoop remains with S4. The existing bounding-box child is
+exposed unchanged, with its missing screen-edge clipping still requiring
+separate child proof. The existing collision child is exposed unchanged.
+Motion and position use the already-declared shared primitives.
+
+Both original ROM table bindings match (eleven bytes). Strict C90 compilation
+of changed game units and the independent hammer-chain test passes on x86
+and x64: 9,984 cases per width cover every random byte, allocation rejection,
+untouched RAM, all byte states, freeze, facing, slot, page carry and child
+order, including a child-mutated ObjectOffset reload. Documentation governance
+passes. These are preliminary checks, not ROM caller equivalence or P delivery.
+Original natural-entry/return comparisons, actual-child diagnostics, final
+three-target builds and artifact refresh remain required before S2 closure.
+
+## S2 original hammer lifecycle proof
+
+All ten received nodes are proven; progress 778 -> 788 / 1,992. One shared
+game/hammer.c owner supplies both production entries. The old objects.c
+allocation/actor bodies and private horizontal movement copy are removed.
+The original fixed LSFR address, indexed enemy flag (including offset six),
+three spawn writes, carry result, state branches, reloads and child order
+replace the extra parent checks, slot clamp and collision-flag clear.
+
+| Node | Address | Proven original contract |
+| --- | --- | --- |
+| HammerEnemyOfsData | $BA89 | Nine allocation dependency offsets; all candidates exercised |
+| HammerXSpdData | $BA92 | Two released speeds; both legal directions exercised |
+| SpawnHammerObj | $BA94 | Fixed second LSFR byte, low-three-bit selection and bit-three fallback |
+| SetMOfs | $BAA0 | Misc and indexed enemy occupancy checks, ObjectOffset parent, three writes and success carry |
+| NoHammer | $BABF | No persistent writes and clear carry on either allocation rejection |
+| ProcHammerObj | $BAC3 | Timer gate, masked state, parent read, gravity and horizontal motion with original object offset |
+| SetHSpd | $BAF3 | Vertical speed FE, parent state bit-three clear, indexed facing speed and ObjectOffset reload |
+| SetHPos | $BB09 | Byte countdown, parent X+2 with page carry, Y-0A and high byte one |
+| RunAllH | $BB28 | PlayerHammerCollision after movement, using reloaded misc slot |
+| RunHSubs | $BB2B | Offscreen, relative position, bounding box and drawing in original order |
+
+Sixty-three source-RAM cases enter through ordinary NMI/GameEngine. Cases
+0-26 exercise all nine allocation candidates, occupied misc slots and occupied
+enemy flags through the actual hammer-bro spawn caller. Cases 27-62 cover
+attachment, release, flight and freeze across all nine misc slots with both
+directions and coordinate carry/wrap. The LSFR initialization accounts for
+the original NMI rotation; no CPU, stack, ROM or output is modified. Original
+stack depth/return address determines root and child observation boundaries.
+Spawn return carry is captured from the original processor status.
+
+Both ROM data tables match, eleven bytes total. Six conditional branch sites
+execute both outcomes; BNE at BB26 follows LDA #1 and takes its sole reachable
+outcome. Every code label executes. Observed, coverage-enabled and unobserved
+frame outputs are byte-identical. Root snapshots also match between observed
+and coverage runs. Reproduce with hammer_chain_fixture.h cases 0-62, one frame,
+warmup one, zero buttons, --fixture=t36-hammer=N, --hammer-chain-snapshot and
+--control-children; repeat with --pc-coverage and without observers.
+
+The isolated caller comparison replays observed original direct-child returns,
+checks child identity/slot plus 1,791 persistent RAM bytes, and checks spawn
+carry separately. It excludes scratch 0-7 and hardware stack except digit
+data 0133-0139. All 126 x86/x64 caller checks match. The independent actual-child
+build also matches all 126 entries and returns for these scenarios. This is
+bounded root evidence; child interiors, untested screen-edge clipping and
+whole-frame/game equivalence are not newly certified. The existing misc box
+child still lacks the original screen-edge clipping; its receipt remains
+with the later collision slice. No child node receives completion credit.
+
+Independent native tests pass 9,984 cases per width: every random byte,
+rejection path, untouched RAM, byte state, freeze, facing, slot, page carry
+and child order, plus a child-mutated ObjectOffset reload. Both hammer-bro
+behavior and OAM regressions pass on both widths, alongside fourteen retained
+bubble/fireball/player/status/mode/vine regressions. The OAM test now includes
+its existing declared header, fixing its strict-C90 implicit declaration.
+
+All 71 shared C units compile in strict C90 for x86/x64; both executable
+self-tests and bounded two-second hidden-window/message probes pass. DOS16
+compiles/links with the known OLDNAMES warning. It remains link-only, without
+resource binding, DOS playability or 486 performance qualification. Platform
+sources are untouched and the platform-purity gate passes.
+
+The caller sweep finds the existing hammer-bro spawn entry and misc actor
+dispatch. Misc dispatch supplies the original ObjectOffset input at the
+hammer child boundary; remaining MiscLoop behavior belongs to S4. Normal
+enemy dispatch already receives ObjectOffset from the engine. Legacy whole
+hammer-bro test wrappers remain compatibility callers. Existing player-hammer
+collision and bounding-box bodies are exposed unchanged; movement and position
+use the shared original primitives. The old combined prepare_hammer helper
+has no production caller after this migration and receives no credit.
+
+Final owner-authorized local P1 artifacts:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258041 | 0e80153ae9a269ba8e779322a1bc75ebb73133b894a130d12e9c901688b294b2 |
+| mysmb32.exe | 327976 | d1d2cf59a9955edd4991537024d983754c2e936b145816327e69665b23f78b9f |
+| mysmb64.exe | 335135 | e7c22215c5206953d1b79bc37deeb8679d4fb600044750e5d669c162c554a417 |
+
+Retained raw evidence: 3005766 bytes, below four MB.
+Ten received labels complete, ten expected; no received-node transfers. Progress 778 -> 788 / 1,992. T36 remains open for S3-S6 and its next-slice consumer exception.

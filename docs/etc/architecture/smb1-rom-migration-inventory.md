@@ -919,16 +919,16 @@ The labels and branches behind every line remain open until individually bound b
 | 6880 | `BBFly` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6881 | `RunBBSubs` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
 | 6886 | `KillBB` | M2 T31 S2 shared game/cannon.c | ROM-match complete | [S2 P2 dual evidence and remaining dispatch](../../history/M2-T31-game-dispatcher.md#s2p2-combined-slot-environment-and-cannon-child-delivery) |
-| 6891 | `HammerEnemyOfsData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerenemyofsdata) |
-| 6895 | `HammerXSpdData` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerxspddata) |
-| 6898 | `SpawnHammerObj` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spawnhammerobj) |
-| 6904 | `SetMOfs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmofs) |
-| 6919 | `NoHammer` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohammer) |
-| 6928 | `ProcHammerObj` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-prochammerobj) |
-| 6952 | `SetHSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethspd) |
-| 6962 | `SetHPos` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethpos) |
-| 6977 | `RunAllH` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runallh) |
-| 6978 | `RunHSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runhsubs) |
+| 6891 | `HammerEnemyOfsData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6895 | `HammerXSpdData` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6898 | `SpawnHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6904 | `SetMOfs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6919 | `NoHammer` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6928 | `ProcHammerObj` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6952 | `SetHSpd` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6962 | `SetHPos` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6977 | `RunAllH` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
+| 6978 | `RunHSubs` | M2 T36 S2 shared game/hammer.c | ROM-match complete | [S2 hammer lifecycle proof](../../proposals/m2/misc-object-chains.md#s2-original-hammer-lifecycle-proof) |
 | 6988 | `CoinBlock` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-coinblock) |
 | 7000 | `SetupJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-setupjumpcoin) |
 | 7014 | `JCoinC` | T22 responsibility; `objects.c`: `mysmb_objects_start_jump_coin`; callers in head-bump/top-of-block paths | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-jcoinc) |

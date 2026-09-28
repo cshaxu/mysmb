@@ -2,28 +2,30 @@
 
 ## Current Work
 
-**M2 T36 S1 is closed at 778 / 1,992: six vine actor caller nodes proven; S2 hammer lifecycle is next.**
+**M2 T36 S2 is closed at 788 / 1,992: ten hammer lifecycle nodes proven; S3 coin allocation is next.**
 
-## M2 T36 S1 Packet
+## M2 T36 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed T35 commit 23e4230; coordinator accepts transfer-148. |
-| Objective | Complete six vine actor caller/state nodes in original order. |
-| Non-goals | No graphics/collision/erase child algorithm repair or later hammer/coin work. |
-| Reference Baseline | 772 / 1,992; one mapped and five open labels, expected six, maximum 778. |
-| Candidate Proposal | [Vine actor chain](../proposals/m2/misc-object-chains.md#s1-admission-complete-vine-actor-chain). |
-| Files And ABI Surface | Shared vine actor, explicit slot gate/call seam, existing collision row output, tests/recorder and three artifacts. |
+| Identifier Mode | M2 T36 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after closed S1 commit db949fa; coordinator accepts transfer-149. |
+| Objective | Complete ten hammer allocation and actor caller/data nodes in original order. |
+| Non-goals | No collision/graphics child algorithm repair or later coin work. |
+| Reference Baseline | 778 / 1,992; nine open and one mapped label; expected ten, maximum 788. Exact sets in proposal and admission JSON. |
+| Candidate Proposal | [Hammer lifecycle](../proposals/m2/misc-object-chains.md#s2-admission-hammer-allocation-and-actor-lifetime). |
+| Files And ABI Surface | Shared hammer owner, original child seams and callers, tests/recorder, build lists and three artifacts. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original branch/read/write/call proof and separate actual-child diagnostics; focused tests, regressions and three builds. |
-| Expected Markers | Slot gate; frame/height growth; relative/offscreen/draw; reverse erase; post-child reads; empty-block/row gate. |
-| Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact node dispositions, both proof tracks and child limits, tracker and hashes. |
-| Stop Conditions | Unadmitted child repair, reference mutation, masked mismatch or platform gameplay. |
+| Verification | Original source branches/data/writes/calls and natural NMI entry/return; separate actual-child diagnostics, focused tests and three builds. |
+| Expected Markers | Fixed LSFR; indexed enemy flag; exact spawn writes; freeze/countdown/release; carry/page; motion/collision/offscreen/relative/box/draw order. |
+| Asset Needs | Existing local ROM/listing, bounded ignored traces and three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Ten exact dispositions, both proof tracks, child limits, tracker and hashes. |
+| Stop Conditions | Unadmitted child algorithm repair, reference mutation, masked mismatch or platform gameplay. |
 | Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
-| Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64, source order and chain delivery. |
-| Similar-Issue Sweep | Every vine caller/state writer, drawing retirement and collision query consumer. |
+| Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64; source order and chain delivery. |
+| Similar-Issue Sweep | Every hammer spawn/actor caller, slot writer, collision and graphics preparation consumer. |
+
+T36 S1 closed six vine actor caller nodes in db949fa; actual drawing-child differences remain recorded in the proposal and TODO.
 
 ## T35 closure summary
 
