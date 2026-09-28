@@ -31,6 +31,7 @@ def main():
         'castle': ('L_CastleArea', 6, 'L_GroundArea1', 5),
         'ground': ('L_GroundArea', 22, 'L_UndergroundArea1', 16),
         'underground': ('L_UndergroundArea', 3, 'L_WaterArea1', None),
+        'water': ('L_WaterArea', 3, 'GameMode', None),
     }
     parser.add_argument('--family', choices=families, default='castle')
     args = parser.parse_args()
@@ -49,6 +50,11 @@ def main():
         start, line = symbols[name]
         end, next_line = symbols[following]
         data = check_literal_span(prg, start, end, lines[line:next_line-1])
+        if args.family == 'water' and number == count:
+            # The final stream is followed by one unused byte before code.
+            assert data[-2:] == bytes([253, 255])
+            data = data[:-1]
+            end -= 1
         assert len(data) % 2 == 1 and data[-1] == 253
         assert all(data[i] != 253 for i in range(2, len(data)-1, 2))
         spans.append((name, start, end))

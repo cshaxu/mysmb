@@ -705,9 +705,9 @@ The labels and branches behind every line remain open until individually bound b
 | 5210 | `L_UndergroundArea1` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
 | 5231 | `L_UndergroundArea2` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
 | 5252 | `L_UndergroundArea3` | M2 T30 S18 shared area parser | ROM-match complete | [S18 full underground-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s18p1-complete-underground-scene-consumption) |
-| 5271 | `L_WaterArea1` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea1) |
-| 5282 | `L_WaterArea2` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea2) |
-| 5299 | `L_WaterArea3` | T18 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-l_waterarea3) |
+| 5271 | `L_WaterArea1` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
+| 5282 | `L_WaterArea2` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
+| 5299 | `L_WaterArea3` | M2 T30 S19 shared area parser | ROM-match complete | [S19 full water-stream evidence](../../proposals/m2/t30-area-object-rendering.md#s19p1-complete-water-scene-consumption) |
 | 5315 | `GameMode` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamemode) |
 | 5326 | `GameCoreRoutine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gamecoreroutine) |
 | 5336 | `GameEngine` | dispatcher candidate / historical T8 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gameengine) |

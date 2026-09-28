@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 537 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 540 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,318 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 1,315 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **537 / 1,992 (26.96%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **540 / 1,992 (27.11%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -27,7 +27,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (537)
+## Completed matches (540)
 
 | ROM line | Node |
 | ---: | --- |
@@ -558,6 +558,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 5210 | `L_UndergroundArea1` |
 | 5231 | `L_UndergroundArea2` |
 | 5252 | `L_UndergroundArea3` |
+| 5271 | `L_WaterArea1` |
+| 5282 | `L_WaterArea2` |
+| 5299 | `L_WaterArea3` |
 | 6598 | `FlagpoleScoreMods` |
 | 6601 | `FlagpoleScoreDigits` |
 | 6604 | `FlagpoleRoutine` |

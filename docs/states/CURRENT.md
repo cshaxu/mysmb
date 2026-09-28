@@ -4,22 +4,22 @@
 
 **Idle.**
 
-**M2 T30 S18 is closed at 537 / 1,992; all three scoped underground streams complete.**
+**M2 T30 S19 is closed at 540 / 1,992; all three scoped water streams complete.**
 
 Full original-ROM byte-consumption and parser-route evidence agrees with
 independent native traversals. Three EXEs are refreshed; DOS is link-only.
-No S is active. L_WaterArea1 begins the next unadmitted source chain.
+No S is active. T30 cross-chain closure review precedes GameMode admission.
 
-## M2 T30 S18 Packet (closed)
+## M2 T30 S19 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S18, source-order implementation. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-119 from T18 S4. |
-| Objective | Complete three L_UndergroundArea scene nodes through full byte binding and parser consumption. |
+| Identifier Mode | M2 T30 S19, source-order implementation. |
+| Admission And Approval | Owner-approved M2 continuation; transfer-120 from T18 S4. |
+| Objective | Complete three L_WaterArea scene nodes through full byte binding and parser consumption. |
 | Non-goals | No player/actor runtime, dispatcher, loopback or platform gameplay. |
-| Reference Baseline | 534 / 1,992; three open labels, expected three, maximum 537. |
-| Candidate Proposal | [T30 S18](../proposals/m2/t30-area-object-rendering.md#t30s18-admission-underground-scene-streams). |
+| Reference Baseline | 537 / 1,992; three open labels, expected three, maximum 540. |
+| Candidate Proposal | [T30 S19](../proposals/m2/t30-area-object-rendering.md#t30s19-admission-water-scene-streams). |
 | Files And ABI Surface | Shared area consumer if needed, local binding/route harnesses, exact node records and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture, coding, documentation, source policy and ledger. |
 | Verification | Whole source spans/pointers; original initialized ScreenRoutines parser traversal with terminator coverage; independent native tests, three builds, startup and purity. |
@@ -29,7 +29,7 @@ No S is active. L_WaterArea1 begins the next unadmitted source chain.
 | Stop Conditions | Unadmitted consumer discrepancy, missing record/terminator coverage or platform logic. |
 | Exit Criteria | Every scoped stream has both evidence tracks, or exact accepted unfinished disposition. |
 | Original Owner Request | Faithful original-ROM graph and every logic node in source order. |
-| Similar-Issue Sweep | Three underground streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
+| Similar-Issue Sweep | Three water streams, shared framing/pointer/parser consumers, alias and byte-index boundaries. |
 
 ## Retained M2 T15 summary
 

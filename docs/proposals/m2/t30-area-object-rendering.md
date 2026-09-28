@@ -2029,3 +2029,103 @@ L_UndergroundArea2 and L_UndergroundArea3. Complete count advances from
 **534 to 537 / 1,992 (26.96%)**; mapped incomplete remains 137, open is
 1,318. No scoped node remains unfinished or transfers. S18 is closed;
 T30 and M2 remain open. L_WaterArea1 begins the next source-order group.
+
+## T30/S19 admission: water scene streams
+
+Exact scope and expected matches, all open: `L_WaterArea1`,
+`L_WaterArea2`, `L_WaterArea3`. Baseline **537 / 1,992**, expected **3**, maximum **540**.
+Entry is the three original header/table selections; exit is each stream's
+terminator after its last object. Shared runtime owner remains area/area_data.c
+and area.c. No copied scene payload or platform parser is permitted.
+
+Accept transfer-120 from T18 S4. Bind each entire literal span and pointer,
+then compare the existing original InitializeArea -> ScreenRoutines ->
+AreaParserTaskControl consumer. Controlled source-RAM routes start at pages
+zero and request bounded repeated two-column screen parser sets;
+repeat the ordinary screen workload without resetting parser state if needed.
+No unadmitted player/actor runtime is required.
+The fixtures may change screen-task/column-set inputs after the original
+header initialization, never PC, stack, return addresses or ROM bytes.
+Require actual stream-cursor/terminator coverage and compare parser state,
+metatile/block-buffer output and original object-creation writes. Any gap
+must remain explicit; do not certify a whole stream from its first columns.
+
+Independent C checks cover data framing/binding and complete native parser
+traversals on x86/x64. Source-shaped repairs are limited to these admitted
+scene consumers; a contradictory previously completed helper requires
+explicit revocation and a corrective receipt before changing it. Other actor,
+player, dispatcher and loopback behavior stays with existing receivers.
+Each implementation P builds three EXEs and reports startup, purity and
+DOS link limits. Owner NROM/listing remain local-only research inputs.
+Predecessor: closed S18 underground scenes; successor: GameMode dispatcher
+after T30 cross-chain closure review. Final unused padding is not scene data.
+Owner ROM/listing remain non-redistributable local-only evidence.
+Raw trace budget: 20 MB under ignored build/m2-t30-s19; twenty-second process
+limits, up to 257 samples per route and three original/native route pairs.
+S19 retains cleanup responsibility through T review. No matches claimed yet.
+
+## S19/P1: complete water scene consumption
+
+Admission gate passed at 537 / 1,992: three open labels, three expected
+matches, maximum 540. All three immutable water streams use the shared
+InitializeArea -> GetAreaDataAddrs -> ScreenRoutines -> AreaParserTaskControl
+-> ProcessAreaData chain. Existing area.c and area/area_data.c need no
+production repair. Exact pointer/header binding and whole literal spans
+match the owner ROM/listing: 213 bytes and 102 two-byte object records.
+Water area three ends at $aeda; the unused $ff at $aedb is verified against
+the listing but excluded from scene consumption. GameMode begins at $aedc.
+
+| Node | CPU address | Bytes / object records | Terminal cursor | Disposition |
+| --- | --- | --- | --- | --- |
+| `L_WaterArea1` | `0xae06` | 63 / 30 | 60 | ROM-match complete |
+| `L_WaterArea2` | `0xae45` | 123 / 60 | 120 | ROM-match complete |
+| `L_WaterArea3` | `0xaec0` | 27 / 12 | 24 | ROM-match complete |
+
+ROM-logic evidence: three page-zero InitializeArea/ScreenRoutines routes
+produce 129 NMI-return samples each. Across all 387 samples, all 1,782
+persistent RAM bytes and all recorded CIRAM, palette, OAM, audio and PPU
+output match. Exclusions are scratch 0..7, CPU stack and two PPU RAM mirrors;
+no output is masked. Original LDA (AreaData),Y instruction coverage confirms
+all 213 bytes were read, including headers and each final terminator.
+All three cursors reach the table's terminal offsets within sixteen pages;
+no continuation or pointer reseeding is needed. Source-RAM fixtures use
+ordinary initialization then bounded screen-parser workloads, never PC,
+stack, return-address or ROM-byte injection.
+
+The independent [water stream test](../../../test/water_scene_stream_smoke.c)
+checks all three end cursors, terminal bytes, final page and water
+area type on x86 and x64. Fourteen focused executions pass: water,
+ground, underground and castle traversals plus parser-data, parser-boundary and special
+object smokes on both widths. The generalized
+[scene verifier](../../../test/verify_castle_scene_routes.py) adds
+--family water; its existing castle, ground and underground modes revalidate all
+33 prior routes. Platform-purity passes and no production game/platform
+code changes in this P.
+
+Both Windows products pass self-test and hidden-window creation/message
+response checks. OpenNT compiles the same C90 sources and links DOS16 MZ.
+The existing DOS root lacks local PRG/CHR/title binding, so this is link
+coverage, not DOS playability. Unrelated legacy timer-fixture failures remain
+recorded debt; a full-suite pass is not claimed. The owner's prior Windows
+startup failure remains unreproduced and is not claimed fixed.
+
+Similar-issue sweep covers all three bindings, source spans, headers,
+record boundaries, cursors, terminators and shared parser output; no new
+consumer mismatch is found. Raw traces remain ignored under build/m2-t30-s19,
+3,412,638 bytes within the 20 MB budget and twenty-second recorder limits.
+S19 owns cleanup through T review. Owner-specific authorization covers the
+three rebuilt existing EXEs; no standalone ROM or generated C is committed.
+
+Artifact `mysmb16.exe`: 252977 bytes; SHA-256 `98E1A618425B80AB8883375305A63208AB18CAD27A41FB7B6D0863AFC2B9FD21`.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `967B8F8A0CC72DAE06511DEF505D9CA99BDC25DA34D19683F3F915F349167263`.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `A1FB06694082367303D51885A32BD96B04F40283BFE92CA3488449F776233D21`.
+
+## S19 closure
+
+Expected/actual matches **3/3**, exactly L_WaterArea1,
+L_WaterArea2 and L_WaterArea3. Complete count advances from
+**537 to 540 / 1,992 (27.11%)**; mapped incomplete remains 137, open is
+1,315. No scoped node remains unfinished or transfers. S19 is closed;
+T30 and M2 remain open. T30 cross-chain closure review is next; GameMode is not yet admitted.

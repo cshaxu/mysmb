@@ -23,6 +23,7 @@
 #include "../test/castle_scene_fixture.h"
 #include "../test/ground_scene_fixture.h"
 #include "../test/underground_scene_fixture.h"
+#include "../test/water_scene_fixture.h"
 
 #include "core/driver.h"
 #include "core/machine.h"
@@ -1346,6 +1347,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_water_scene_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (unsigned int)(580 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_underground_scene_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -1699,6 +1706,8 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 581u && t26_fixture <= 583u)
+                    mysmb_water_scene_fixture(driver->machine->ram, (lib_u8)(t26_fixture - 581u));
                 else if (t26_fixture >= 578u && t26_fixture <= 580u)
                     mysmb_underground_scene_fixture(driver->machine->ram, (lib_u8)(t26_fixture - 578u));
                 else if (t26_fixture >= 555u && t26_fixture <= 577u)
@@ -1863,6 +1872,8 @@ int main(int argument_count, char **arguments)
                     direct_warp_text = LIB_TRUE;
                 }
             }
+            if (t26_fixture >= 581u && t26_fixture <= 583u && elapsed == warmup_frames + 1u)
+                mysmb_water_scene_continue(driver->machine->ram);
             if (t26_fixture >= 578u && t26_fixture <= 580u && elapsed == warmup_frames + 1u)
                 mysmb_underground_scene_continue(driver->machine->ram);
             if ((t26_fixture >= 555u && t26_fixture <= 577u && elapsed == warmup_frames + 1u) ||
