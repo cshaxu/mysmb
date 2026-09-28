@@ -17,8 +17,8 @@ with 111 of its 146 planned nodes complete and 35 accepted incomplete
 consumer transfers. Five earlier-node corrections also remain complete.
 T31 and T32 are closed. T32 proves its 48 received caller/data nodes at
 676 / 1,992, with eleven integrated routes retaining child/output failures.
-T33 S1 is active with fifteen open movement-state nodes, expected fifteen
-and maximum 691. Its complete plan has 63 labels in four source-order chains,
+T33 S1 is closed with fifteen proven movement-state nodes at 691 / 1,992.
+The eight-node climbing chain S2 is next. Its complete plan has 63 labels in four source-order chains,
 including PlayerMovementSubs; later S receipts remain unadmitted.
 The six unfinished enemy callers remain with T19 S5. Enemy-data and loopback obligations
 remain with their accepted T19 S5 receiver until source admission.

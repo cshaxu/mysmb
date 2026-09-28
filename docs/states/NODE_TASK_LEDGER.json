@@ -97821,9 +97821,25 @@
         "ExitMov1"
       ],
       "maximumComplete": 691,
-      "actualMatches": [],
+      "actualMatches": [
+        "PlayerMovementSubs",
+        "SetCrouch",
+        "ProcMove",
+        "MoveSubs",
+        "NoMoveSub",
+        "OnGroundStateSub",
+        "GndMove",
+        "FallingSub",
+        "JumpSwimSub",
+        "DumpFall",
+        "ProcSwim",
+        "LRWater",
+        "LRAir",
+        "JSMove",
+        "ExitMov1"
+      ],
       "evidence": "docs/proposals/m2/player-movement-state.md",
-      "state": "admitted-movement-state-chain"
+      "state": "closed-P1-movement-state-chain-691"
     }
   ]
 }

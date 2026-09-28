@@ -518,26 +518,16 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
     game->ram[MYSMB_PLAYER_ANIM_TIMER_SET] = timer[index];
 }
 
-/* Existing movement child extracted from the combined control routine.
- * Its physics/state algorithms retain the next source chain's proof status. */
-void mysmb_player_movement_subs(struct mysmb_game *game)
+/* Existing PlayerPhysicsSub child extracted without certifying interiors.
+ * Its source-order table/branch audit belongs to T33 S3. */
+void mysmb_player_physics_sub(struct mysmb_game *game)
 {
     mysmb_u8 a_b;
-    mysmb_u8 a_held;
-    mysmb_u8 jump_height;
-    mysmb_u8 player_state;
-    game->ram[MYSMB_PLAYER_CROUCHING] =
-        game->ram[MYSMB_PLAYER_SIZE] == 0U && game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        (game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] & MYSMB_BUTTON_DOWN) != 0U ? 4U : 0U;
     a_b = game->ram[MYSMB_PLAYER_A_B_BUTTONS];
     if (game->ram[MYSMB_PLAYER_STATE] == 3U) {
         mysmb_player_configure_climb(game);
-        mysmb_player_climb(game);
         return;
     }
-    /* PlayerMovementSubs reloads this before dispatching every non-climbing
-     * state.  A later HandleClimbing therefore begins with the delay active. */
-    game->ram[MYSMB_CLIMB_SIDE_TIMER] = 0x18U;
     if (game->ram[MYSMB_JUMPSPRING_ANIM] == 0U &&
         (a_b & MYSMB_BUTTON_A) != 0U &&
         (game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U) {
@@ -548,70 +538,14 @@ void mysmb_player_movement_subs(struct mysmb_game *game)
             mysmb_player_start_jump(game, game->ram[MYSMB_WHIRLPOOL]);
         }
     }
-    /* PlayerPhysicsSub reaches X_Physics before OnGroundStateSub updates
-     * PlayerFacingDir.  Horizontal setup must therefore see the preceding
-     * facing direction; the ground branch changes it immediately before
-     * ImposeFriction and movement. */
     mysmb_player_configure_horizontal(game);
-    if (game->ram[MYSMB_PLAYER_STATE] == 0U || game->ram[MYSMB_SWIMMING] != 0U) {
-        mysmb_player_update_animation_speed(game, game->ram[0x06fcU]);
-    }
-    player_state = game->ram[MYSMB_PLAYER_STATE];
-    if (player_state == 0U) {
-        if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
-            game->ram[MYSMB_PLAYER_FACING] = game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
-        }
-        /* OnGroundStateSub always calls ImposeFriction and
-         * MovePlayerHorizontally. */
-        mysmb_player_impose_friction(game);
-    }
-    else if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
-        /* JumpSwimSub/FallingSub reach LRAir: friction is conditional on
-         * held left/right, while horizontal movement itself is unconditional. */
-        mysmb_player_impose_friction(game);
-    }
-    game->ram[MYSMB_PLAYER_X_SCROLL] = mysmb_player_move_horizontally(game);
-    if (player_state != 0U) {
-        if (game->ram[MYSMB_PLAYER_STATE] == 2U ||
-            game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
-            /* FallingSub and JumpSwimSub's non-rising branch both select
-             * the downward force before vertical movement. */
-            game->ram[MYSMB_VERTICAL_FORCE] =
-                game->ram[MYSMB_VERTICAL_FORCE_DOWN];
-        }
-        else {
-            /* JumpSwimSub switches after a released A button has carried
-             * the player beyond the minimum jump height. */
-            a_held = (mysmb_u8)(a_b & game->ram[MYSMB_PREVIOUS_A_B_BUTTONS] &
-                                 MYSMB_BUTTON_A);
-            if (a_held == 0U) {
-                jump_height = (mysmb_u8)(game->ram[MYSMB_JUMP_ORIGIN_Y] -
-                                          game->ram[MYSMB_PLAYER_Y]);
-                if (jump_height >= game->ram[MYSMB_DIFF_HALT_JUMP]) {
-                    game->ram[MYSMB_VERTICAL_FORCE] =
-                        game->ram[MYSMB_VERTICAL_FORCE_DOWN];
-                }
-            }
-        }
-        if (game->ram[MYSMB_SWIMMING] != 0U) {
-            if (game->ram[MYSMB_PLAYER_Y] < 0x14U) {
-                game->ram[MYSMB_VERTICAL_FORCE] = 0x18U;
-            }
-            if (game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS] != 0U) {
-                game->ram[MYSMB_PLAYER_FACING] =
-                    game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS];
-            }
-        }
-        /* LRAir forces the death fall rate before MovePlayerVertically. */
-        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU) {
-            game->ram[MYSMB_VERTICAL_FORCE] = 0x28U;
-        }
-        /* MovePlayerVertically enters ImposeGravity through
-         * ImposeGravitySprObj: VerticalForce is the downward force and the
-         * generic upward-force branch is disabled. */
-        mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
-                                    0U, 4U, 0U);
-    }
+}
+
+/* Existing MovePlayerVertically child; original world movement keeps custody. */
+void mysmb_player_move_vertically(struct mysmb_game *game)
+{
+    mysmb_player_impose_gravity(game, game->ram[MYSMB_VERTICAL_FORCE],
+                                0U, 4U, 0U);
 }
 
 /* Existing common terrain child; algorithm proof remains terrain-owned. */

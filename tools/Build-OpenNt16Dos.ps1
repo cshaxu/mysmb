@@ -20,7 +20,7 @@ $sources = @(
     'game/enemy/side_collision.c',
     'game/area/block_buffer.c',
     'game/area/area_data.c',
-    'game/boot.c', 'game/dispatcher.c', 'game/engine.c', 'game/engine_slots.c', 'game/engine_tail.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/area/block_metatile.c', 'game/enemy/stream.c', 'game/enemy/init.c', 'game/enemy/core.c', 'game/enemy/movement.c', 'game/enemy/frenzy.c', 'game/player.c', 'game/player_control.c', 'game/player_transition.c', 'game/player_modes.c', 'game/player_end_level.c', 'game/scroll.c', 'game/entry.c',
+    'game/boot.c', 'game/dispatcher.c', 'game/engine.c', 'game/engine_slots.c', 'game/engine_tail.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/area/block_metatile.c', 'game/enemy/stream.c', 'game/enemy/init.c', 'game/enemy/core.c', 'game/enemy/movement.c', 'game/enemy/frenzy.c', 'game/player.c', 'game/player_control.c', 'game/player_transition.c', 'game/player_modes.c', 'game/player_end_level.c', 'game/player_movement.c', 'game/scroll.c', 'game/entry.c',
     'game/objects.c', 'game/fireball/fireball_spawn.c', 'game/fireball/fireball_core.c', 'game/world/movement.c', 'game/world/collision.c', 'game/bridge.c', 'game/oam/bullet_bill_gfx.c', 'game/oam/hammer_gfx.c', 'game/oam/firebar_gfx.c', 'game/oam/vine_gfx.c', 'game/enemy_bounds.c',
     'game/oam/power_up_gfx.c', 'game/oam/object_position.c', 'game/oam/player_gfx.c', 'game/oam/fireball_gfx.c', 'game/oam/block_gfx.c', 'game/oam/goomba_gfx.c',
     'game/fireball/bubble.c', 'game/oam/piranha_gfx.c', 'game/oam/cheep_gfx.c',

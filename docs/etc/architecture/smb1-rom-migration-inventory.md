@@ -787,21 +787,21 @@ The labels and branches behind every line remain open until individually bound b
 | 5876 | `RdyNextA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
 | 5888 | `NextArea` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
 | 5895 | `ExitNA` | M2 T32 S4 shared game/player_end_level.c | ROM-match complete | [S4 P1 caller proof; actual-child failures retained](../../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof) |
-| 5899 | `PlayerMovementSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playermovementsubs) |
-| 5907 | `SetCrouch` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setcrouch) |
-| 5908 | `ProcMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procmove) |
-| 5916 | `MoveSubs` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movesubs) |
-| 5923 | `NoMoveSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nomovesub) |
-| 5928 | `OnGroundStateSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-ongroundstatesub) |
-| 5933 | `GndMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gndmove) |
-| 5940 | `FallingSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fallingsub) |
-| 5947 | `JumpSwimSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpswimsub) |
-| 5959 | `DumpFall` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpfall) |
-| 5961 | `ProcSwim` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procswim) |
-| 5969 | `LRWater` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrwater) |
-| 5972 | `LRAir` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lrair) |
-| 5975 | `JSMove` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jsmove) |
-| 5982 | `ExitMov1` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitmov1) |
+| 5899 | `PlayerMovementSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5907 | `SetCrouch` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5908 | `ProcMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5916 | `MoveSubs` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5923 | `NoMoveSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5928 | `OnGroundStateSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5933 | `GndMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5940 | `FallingSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5947 | `JumpSwimSub` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5959 | `DumpFall` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5961 | `ProcSwim` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5969 | `LRWater` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5972 | `LRAir` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5975 | `JSMove` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
+| 5982 | `ExitMov1` | M2 T33 S1 shared game/player_movement.c | ROM-match complete | [S1 original movement proof; child gaps retained](../../proposals/m2/player-movement-state.md#s1-original-movement-proof) |
 | 5986 | `ClimbAdderLow` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderlow) |
 | 5988 | `ClimbAdderHigh` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbadderhigh) |
 | 5991 | `ClimbingSub` | T23 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-climbingsub) |

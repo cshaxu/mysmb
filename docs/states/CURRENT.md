@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T33 S1 is active at 676 / 1,992: fifteen open movement-state nodes, expected fifteen, maximum 691.**
+**M2 T33 S1 is closed at 691 / 1,992: fifteen of fifteen admitted caller nodes proven; S2 admission is next.**
 
 T32 is closed with all 48 admitted nodes proven within their own contracts.
 Its nineteen integrated routes have eight complete matches and eleven retained

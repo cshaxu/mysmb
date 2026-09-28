@@ -26,6 +26,9 @@ void mysmb_player_update_animation_speed(struct mysmb_game *game,
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons);
 /* Original child boundaries; extraction alone does not certify interiors. */
 void mysmb_player_movement_subs(struct mysmb_game *game);
+/* Original child seams; their algorithm proof remains separately owned. */
+void mysmb_player_physics_sub(struct mysmb_game *game);
+void mysmb_player_move_vertically(struct mysmb_game *game);
 void mysmb_player_background_collision(struct mysmb_game *game);
 void mysmb_player_set_entrance(struct mysmb_game *game);
 void mysmb_player_change_area_mode(struct mysmb_game *game);
