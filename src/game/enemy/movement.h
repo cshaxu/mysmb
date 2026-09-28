@@ -7,6 +7,7 @@
 /* ROM $CAF9 MoveJumpingEnemy: shared star/paratroopa child. */
 void mysmb_enemy_move_jumping(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_move_normal(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_enemy_move_defeated(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_move_d_vertically(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_move_falling_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_enemy_move_drop_platform(struct mysmb_game *game, mysmb_u8 slot);

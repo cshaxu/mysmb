@@ -2,28 +2,34 @@
 
 ## Current Work
 
-**M2 T40 S1 is closed at 1,061 / 1,992: both expected nodes complete.**
+**M2 T40 S2 is closed at 1,072 / 1,992: eleven new and thirteen retained matches.**
 
-## M2 T40 S1 Packet
+## M2 T40 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T40 S1, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after fa80503; coordinator accepts transfer-184. |
-| Objective | Restore MovePodoboo and PdbM using existing initializer and gravity entries. |
-| Non-goals | No initializer/gravity child rewrite, Hammer Bro work or host gameplay. |
-| Reference Baseline | 1,059 / 1,992; two open scoped/expected, maximum 1,061. T40: 107 new of 120 scoped, maximum 1,166. |
-| Candidate Proposal | [T40 S1 Podoboo movement](../proposals/m2/t40-enemy-movement-and-firebar.md#s1-admission-podoboo-movement). |
-| Files And ABI Surface | Shared enemy/podoboo.c, legacy aggregate boundary, manifests, tests/recorder, node records and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original branch/read/write and actual-child proof, native mutation contracts, prior regressions and builds. |
-| Expected Markers | Timer branch, real initialization, post-child PRNG, three byte writes and unconditional gravity tail. |
-| Asset Needs | Existing owner-local ROM/listing and three authorized test EXEs; DOS link-only. |
-| Reporting Requirements | Two exact dispositions, original/native evidence and three artifact hashes. |
-| Stop Conditions | Unadmitted child repair, original execution patch, hidden mismatch or host gameplay. |
-| Exit Criteria | Two expected nodes proved or explicit accepted transfer; tracker/ledger/artifacts agree. |
-| Original Owner Request | Faithful original-ROM logic and graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Podoboo source/bulk callers, copied initializer state and gravity ordering. |
+| Identifier Mode | M2 T40 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after 3f77065; coordinator accepts transfers-185/186. |
+| Objective | Complete the 24-node Hammer Bro/normal-motion chain: eleven new plus thirteen retained. |
+| Non-goals | No S3 actor, unrelated child repair, later PlayerEnemyDiff credit or host gameplay. |
+| Reference Baseline | 1,061/1,992; eleven open expected, thirteen complete retained, maximum 1,072. |
+| Candidate Proposal | [T40 S2 exact labels and proof contract](../proposals/m2/t40-enemy-movement-and-firebar.md#s2-admission-hammer-bro-and-normal-movement). |
+| Files And ABI Surface | Shared enemy Hammer Bro/movement owners and explicit distance boundary, legacy bulk caller, manifests, tests/recorder, records and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture/coding, source policy, documentation, ledger and validation matrix. |
+| Verification | Original branches/tables/child handoffs and actual execution; independent native regression/build/purity/response checks. |
+| Expected Markers | Secondary hard mode, offscreen gate, spawn carry, jump PRNG/scratch, signed difference and normal/defeated tails. |
+| Asset Needs | Existing owner-local ROM/listing and three authorized EXEs; DOS remains link-only. |
+| Reporting Requirements | Twenty-four exact dispositions; eleven possible new matches; both proof tracks and artifact hashes. |
+| Stop Conditions | Unadmitted child repair, patched original execution, masked mismatch, or platform gameplay. |
+| Exit Criteria | All scoped nodes proved or exact accepted transfers; retained claims revalidated, records and artifacts agree. |
+| Original Owner Request | Original ROM logic and call graph in shared portable C; source-order chain delivery. |
+| Similar-Issue Sweep | Source/bulk guards, hard-mode aliases, spawn carry, defeated entry and normal-motion aliases. |
+
+## S2 closure
+
+[Hammer Bro/normal proof](../proposals/m2/t40-enemy-movement-and-firebar.md#s2-original-hammer-bro-and-normal-proof)
+closes all 24 scoped nodes with 712/712 actual-child and caller comparisons.
+All 3,382 prior matches remain; three EXEs are refreshed. DOS is link-only.
 
 ## S1 closure
 
@@ -41,7 +47,7 @@ all three EXEs; child/full-game gaps and DOS link-only limits remain explicit.
 
 ## Current sequence
 
-T40 has ten source-ordered S chains; S1 is closed and S2 is next. Its 120-node scope ends
+T40 has ten source-ordered S chains; S1-S2 are closed and S3 is next. Its 120-node scope ends
 after PlayerLakituDiff. BridgeCollapseData and the whole bridge/Bowser chain
 remain with the next queued slice. Follow the [T40 plan](../proposals/m2/t40-enemy-movement-and-firebar.md).
 

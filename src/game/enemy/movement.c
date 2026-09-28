@@ -26,8 +26,7 @@ void mysmb_enemy_move_normal(struct mysmb_game *game, mysmb_u8 slot)
     if ((state & 0x40U) != 0U) goto fall;
     if ((state & 0x80U) != 0U) goto steady;
     if ((state & 0x20U) != 0U) {
-        mysmb_enemy_move_d_vertically(game, slot);
-        mysmb_world_move_enemy_horizontally(game, slot);
+        mysmb_enemy_move_defeated(game, slot);
         return;
     }
     state &= 7U;
@@ -63,6 +62,14 @@ steady:
     game->ram[0x0058U + slot] = (mysmb_u8)(speed + speed_adder[index]);
     mysmb_world_move_enemy_horizontally(game, slot);
     game->ram[0x0058U + slot] = speed;
+}
+
+/* ROM $CAE5 MoveDefeatedEnemy: shared defeated tail, irrespective of
+ * other state bits that MoveNormalEnemy would examine first. */
+void mysmb_enemy_move_defeated(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_enemy_move_d_vertically(game, slot);
+    mysmb_world_move_enemy_horizontally(game, slot);
 }
 
 /* ROM MoveD_EnemyVertically falls through MoveFallingPlatform only for

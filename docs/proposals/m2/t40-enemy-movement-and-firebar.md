@@ -158,3 +158,175 @@ The three owner-authorized EXEs are refreshed together.
 | mysmb16.exe | 256429 | eff523d19aa55fb250274b9fff7a2be620277cdc61e9ce587be0fa20adb4dced |
 | mysmb32.exe | 343892 | 6469c8a3b414adedaf9a1051505fa20409b07d3c6f032547ff9961ff272a2d9e |
 | mysmb64.exe | 351075 | 713251f563349d18dc59f6f9d469f0e9815f33dc1853773b61d048c42730f4b6 |
+
+## S2 admission: Hammer Bro and normal movement
+
+S1 closed in 3f77065. Coordinator accepts transfers-185/186. S2 receives
+the entire source-ordered 24-node row above, $C9CE-$CAF8 (lines 9229-9395).
+Baseline 1,061/1,992; eleven expected new, thirteen retained; maximum 1,072.
+
+Expected new (all open): `HammerThrowTmrData`, `ProcHammerBro`, `ChkJH`, `DecHT`, `HammerBroJumpLData`, `HammerBroJumpCode`, `SetHJ`, `HJump`, `MoveHammerBroXDir`, `Shimmy`, `SetShim`.
+
+Retained ROM matches: `XSpeedAdderData`, `RevivedXSpeed`, `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`, `SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`, `ChkKillGoomba`, `NKGmba`.
+
+Entry is ProcHammerBro ($C9D8), with its preceding throw/speed tables and
+internal jump-length table. Both normal and defeated movement tails stay
+in the same S; exit is the native movement return after NKGmba. S1 Podoboo
+is complete; S3 jumping/red Paratroopa is the next chain, not part of S2.
+Shared owners are enemy/hammer_bro.c and enemy/movement.c. Extract the
+source actor from objects.c, retaining only bulk eligibility there. Expose
+the real defeated entry instead of copying its two-child tail. Do not
+duplicate MoveNormalEnemy or silently retain the approximate local tail.
+
+Logic track: bind all four tables to original bytes; cover defeat, jump
+timer decrement, offscreen throw skip, existing throw timer, spawn carry
+success/failure, vertical thresholds $70/$80, both PRNG bits and secondary
+hard mode. Preserve scratch $00, post-child reads, signed page subtraction,
+walking timer/facing and the original unconditional normal-motion fallthrough.
+Use unchanged NMI routes with actual child execution and complete input/order
+diagnostics; no original CPU/stack/ROM patch or scratch masking.
+
+Dependencies: SpawnHammerObj and shared movement/gravity/erasure have
+existing proofs. PlayerEnemyDiff is still an open later-source dependency;
+its former inline arithmetic must have an explicit shared child boundary.
+Record that seam separately, preserve its current receiving owner and grant
+no child-node credit here. Any reused source arithmetic, carry/negative
+result and scratch effects must be visible in the child-input and actual
+comparison evidence. Unrelated callers/child algorithm repairs are not
+implicitly admitted. If a child prevents actual closure, report the exact
+gap instead of declaring caller tests to be end-to-end fidelity.
+
+Operational track: focused Hammer Bro, normal-motion and child-order/mutation
+tests on both native widths; retain prior original-snapshot matches; strict
+C90 builds, DOS16 link, purity, hidden-window response and three refreshed
+EXEs. Revalidate the thirteen retained nodes without duplicate credit. The
+existing Bowser/endgame/Spiny gaps remain separate obligations.
+
+Similar-issue sweep covers the source/bulk actor guards, both hard-mode
+aliases, hammer spawn carry consumers, the defeated entry and normal-motion
+aliases. No presentation adapter may gain gameplay. Existing owner-local
+ROM/listing provenance is unchanged, with no third-party import. Temporary
+research, bounded records, logs and generated artifacts stay below ignored
+build/m2-t40-s2. Declare fixture count and raw-byte/time budgets before
+recording; independent records use unique paths and resumable checkpoints.
+S2 closes only after exact node dispositions, both evidence tracks, ledger,
+tracker and all three artifact records agree.
+
+## S2 original Hammer Bro and normal proof
+
+S2 P1 closes eleven expected new nodes and revalidates thirteen retained
+matches: 1,061 -> 1,072/1,992. All 24 scoped nodes are complete; no scoped
+unfinished transfer remains. PlayerEnemyDiff keeps its later-source owner
+and receives no node credit. S3 is next in the existing source-order plan.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| HammerThrowTmrData | $C9CE | Both secondary-mode throw timer bytes and consumers; new match |
+| XSpeedAdderData | $C9D0 | All four signed temporary speed-adder bytes and consumers; retained match |
+| RevivedXSpeed | $C9D4 | All four primary-mode revival speed bytes and consumers; retained match |
+| ProcHammerBro | $C9D8 | Defeated priority and complete throw/jump/movement sequence; new match |
+| ChkJH | $C9E1 | Jump timer decrement and offscreen throw gate; new match |
+| DecHT | $CA0A | Existing/failed-spawn timer decrement; successful spawn bypasses it; new match |
+| HammerBroJumpLData | $CA10 | Both jump length bytes selected by secondary mode and PRNG mask; new match |
+| HammerBroJumpCode | $CA12 | Jumping-state guard and Y sign/$70 thresholds; new match |
+| SetHJ | $CA37 | Vertical speed, jump bit and scratch-selected PRNG index; new match |
+| HJump | $CA4B | Jump frame length and PRNG OR $C0 jump timer; new match |
+| MoveHammerBroXDir | $CA58 | Frame bit $40 selects shimmy speed before distance child; new match |
+| Shimmy | $CA62 | Distance child input and page-sign facing decision; new match |
+| SetShim | $CA75 | Post-distance interval timer, facing write and normal tail; new match |
+| MoveNormalEnemy | $CA77 | Retained state priority and normal/defeated shared entries; retained match |
+| FallE | $CA98 | Vertical child followed by fresh state read; retained match |
+| MEHor | $CAAF | State two horizontal direct tail; retained match |
+| SlowM | $CAB2 | Falling non-power-up slow index; retained match |
+| SteadM | $CAB4 | Saved input speed restored only on temporary-speed path; retained match |
+| AddHS | $CABB | Sign index, source adder and exact horizontal child inputs; retained match |
+| ReviveStunned | $CAC8 | Stunned timer zero/nonzero and state reset; retained match |
+| SetRSpd | $CADF | Frame parity and primary mode select revival speed; retained match |
+| MoveDefeatedEnemy | $CAE5 | Shared vertical then horizontal tail, including mixed defeat bits; retained match |
+| ChkKillGoomba | $CAEB | Timer $0E and Goomba tests; actual erasure child; retained match |
+| NKGmba | $CAF8 | Source return reached with no extra stores; retained match |
+
+The source audit binds twelve bytes in four tables and executes all 138
+instructions in $C9D8-$CA0F and $CA12-$CAF8. Both outcomes of every feasible
+conditional branch occur. The only untaken side is $CAAD BNE: its preceding
+BEQ already handles equality without changing flags, so fallthrough there
+is structurally impossible. This is an explicit source proof, not a masked
+coverage gap. Both scoped entry families reach their original successors.
+
+Original caller diagnostics and real shared-child execution each pass
+712/712 across x86/x64. Full RAM is compared, including scratch and mapped
+$0109-$0139; only hardware-stack bytes are excluded. Recorded child returns
+are used only after their complete original input comparison. Spawn carry
+and distance A/sign returns are explicit observer ABI, and ordinary/defeated
+movement remains real C inside the caller proof. All 356 independently
+observed/unobserved frame pairs agree; this proves observer noninterference,
+not full-game native graphics/audio conformance.
+
+Route scope is explicit: 316 cases are ordinary NMI fixture routes. Forty
+use controlled input RAM at a naturally reached entry: cases 256..287 set
+Hammer Bro state/jump timer/Y/secondary mode/two PRNG bytes before $C9D8;
+cases 300..307 set primary mode/interval timer and one Koopa ID before
+$CA77. Graphics/background phases otherwise replace these branch inputs
+before observation. Inputs apply identically without observers; original
+ROM bytes, PC, registers, hardware stack and output state are never patched.
+The four final power-up speed-exemption cases use the original ShroomM route.
+No controlled-case result is represented as an unmodified end-to-end game.
+
+The actor body moves from objects.c to enemy/hammer_bro.c; source flag/ID
+and master-timer gates are removed, with eligibility retained only by the
+legacy bulk caller. Throw success sets the current state bit and skips the
+decrement; failure decrements the current timer. Secondary hard mode replaces
+the wrong primary flag. The jump selection preserves scratch and both PRNG
+reads. MoveDefeatedEnemy now has one shared entry, preserving vertical then
+horizontal movement even when the defeat bit coexists with other state bits.
+Normal movement remains the existing owner and source state-priority logic.
+
+enemy/distance.c exposes the source dependency boundary: low subtraction
+in $00 and wrapped page subtraction returned as A. It replaces the actor's
+unsigned world comparison. That child remains separately uncredited. Other
+legacy inline distance consumers are not silently migrated or certified by
+this task; their existing ownership remains. No host adapter was changed.
+
+Native tests pass per width: 12,288 mutated-spawn/distance caller cases plus
+12,288 defeated-tail cases; the existing Hammer Bro integration test; 9,984
+hammer child contracts; and 1,253,376 normal movement cases spanning all
+six slots, all speeds, state priority, timer, hard mode and power-up aliases.
+Fifteen earlier full native suites and normal/vector/retainer/cannon contracts
+also pass. The integrated original-snapshot matrix is 4,094/4,882, preserving
+all 3,382 previous passing comparisons. The existing 788 differences retain
+their source-order owners. Known Bowser damage and endgame star-timer failures
+remain unchanged; no general playability or full-ROM completion is claimed.
+
+All 91 shared units build with strict C90 on both native widths. Self-tests,
+hidden-window response and platform purity pass. DOS16 links with the old
+OLDNAMES warning and remains link-only; no DOS graphics/resource binding or
+physical 486 performance claim is made. Three EXEs are refreshed together.
+
+Similar-issue sweep checks every Hammer Bro source/bulk caller, primary and
+secondary difficulty use, jump PRNG addresses, throw carry consumer, defeat
+entry and normal-motion alias. One source actor and one normal/defeated
+movement owner remain. Hammer terrain and graphics are unchanged. The
+distance seam is visible and uncredited rather than hidden inside the actor.
+
+Reproduce hammer_movement_fixture.h cases 0..355 with
+--fixture=t40-hammer-movement=N, --hammer-movement-snapshot,
+--control-children and an independent --pc-coverage run.
+hammer_movement_snapshot_check links real actor/movement with explicit child
+diagnostics; enemy_loop_actual_check uses real children. Focused targets are
+mysmb.hammer-movement-caller and mysmb.normal-enemy-movement. An initial
+incorrect gravity observer address was corrected to $BFAD before evidence
+acceptance; affected records were regenerated, without a production patch.
+The local checkpoint/coverage audit records exact inputs and branch hits.
+Source provenance is unchanged; artifacts remain owner-local inputs/outputs.
+
+Final raw records occupy 6,766,928 bytes with 910 child handoffs, below the
+16-MB declared budget in ignored build/m2-t40-s2; each run has a twenty-
+second timeout and unique checkpoint/output paths. Superseded diagnostic
+raw records are removed after acceptance. Current records remain inputs for
+dependent admitted regressions.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256337 | 3a6eb3f128033be4f54084730fb6a134d3cb5b2d8e9b1e8cbbabec8fa6d55f20 |
+| mysmb32.exe | 344558 | fcccb5a530645e07ec7bb9f93e336517721ecba20f4252eee4dc96e7a086f327 |
+| mysmb64.exe | 351809 | 3013f8bf34fe1dfe35a62528258c4045b4701b904f1665e2aca17b4e5a69c2ea |
