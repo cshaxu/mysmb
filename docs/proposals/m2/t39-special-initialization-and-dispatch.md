@@ -182,3 +182,104 @@ no third-party implementation is imported.
 | mysmb16.exe | 255515 | 4d6eafd6ca9119a584142e38d74336f9275d91b6b4b69c3fad6088a5619fa639 |
 | mysmb32.exe | 338024 | d60b9f30eae8f84609ca0ad9821b07f328d08bd1c1add0be1883b51736e7d931 |
 | mysmb64.exe | 345616 | ee207536c5c46bd234cb172aaa03ccb77d27554eb70c9a52efdc65fa5a9351b1 |
+
+## S2 admission: Complete fireworks initialization
+
+After S1 commit a14bbad, coordinator accepts transfer-174 from T19 S5 for
+FireworksXPosData, FireworksYPosData, InitFireworks, StarFChk and ExitFWk.
+All five are open and expected new: baseline 990/1,992, maximum 995. This is
+one complete data/initializer chain, original $C631-$C689, owned by shared
+enemy/frenzy.c. The original frenzy vector calls InitFireworks; later drawing,
+explosion stepping and the containing dispatcher remain outside this S.
+
+Preserve timer-first gating, counter decrement, byte-Y descending star-ID
+scan without fabricated fallback, scratch $00 page subtraction, saved X,
+state-adjusted table index, carry propagation and explosion aliases. Normal
+source producers constrain the table index to 0..5. Reuse the existing source
+NMI/vector recording mechanism, preparing only original RAM and observing
+actual entry/return. Cover all six table indexes, both timer outcomes, star
+scan outcomes, all caller slots, counter/state combinations, X borrow/carry
+and page wrap. A missing-star diagnostic is bounded by the external harness;
+do not add a gameplay fallback or declare nontermination a successful spawn.
+
+The separate operational track uses full-RAM native footprints, strict C90
+x86/x64 builds, existing cross-chain regressions, DOS16 link, platform purity,
+hidden-window response and the three owner-authorized EXEs. Similar-issue
+sweep covers the sole initializer, star partner/counter producers, table
+consumers and explosion aliases. Source policy and owner-local provenance
+are unchanged, with no new third-party import. All temporary records remain
+in ignored build/m2-t39-s2; raw budget four MB, twenty-second recorder timeout,
+cleanup owned by S2. Stop on unadmitted repairs or hidden differences. S3-S9
+remain planned, with no change to their custody.
+
+## S2 original fireworks proof
+
+All five planned fireworks nodes close: 990 -> 995/1,992, no scoped transfer.
+T39 remains open; S3 Bullet Bill / swimming-fish frenzy allocation is next.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| FireworksXPosData | $C631 | Six horizontal offsets match original ROM; all indexes have original execution and carry cases; match |
+| FireworksYPosData | $C637 | Six vertical positions match original ROM; all indexes have original execution; match |
+| InitFireworks | $C63D | Timer-first gate; counter decrement, original scratch $00 page borrow, indexed X/page carry, Y/flag and explosion writes; match |
+| StarFChk | $C64C | Byte-Y descending scan starts at five, preserves first-match priority and has no invented missing-partner return; match |
+| ExitFWk | $C689 | Return for both busy timer and completed initialization with unrelated RAM preserved; match |
+
+Actual original/native comparison passes 240/240 on x86/x64. The 120 original
+NMI/vector routes prepare only RAM; no CPU PC, return stack, ROM patch, child
+substitution or scratch masking is used. All three code labels and 38
+instructions execute. Both conditional branches take both outcomes; all twelve
+data bytes match ROM and all six indexes have recorded consumers. Coverage
+runs without snapshot observers produce identical frame records in all cases.
+The initializer has no child calls. Hardware stack storage is excluded while
+mapped game RAM $0109-$0139 remains included.
+
+Routes cover all six caller and star slots, descending scan priority, timer
+busy/expired, each counter/state index combination, counter byte wrap, X
+subtraction borrow, offset addition carry and page wrap. The source producers
+GameTimerFireworks/SetFWC choose counter/state pairs 1/5, 3/3 or 6/0; the
+SetoffF gate excludes zero and negative counters. These constrain ordinary
+consumer indexes to 0..5; additional controlled RAM combinations check byte
+semantics without claiming they are natural full-game states. Missing-partner
+behavior follows the original byte scan with no fabricated fallback; no claim
+of a successful spawn is made for a nonterminating scan.
+
+Independent full-RAM tests pass 139,770 cases per native width, including all
+256 X values and preserved unrelated fields. Nine focused initializer/stream
+regressions per width pass with the final shared objects. The cross-chain
+matrix retains all 1,320 previous actual matches and adds 240:
+1,560/1,780. The 220 existing downstream differences remain assigned to their
+original source-order owners, including frenzy JumpEngine scratch for S5.
+
+Focused endgame, object-layout, mode and Bowser regressions retain four passes
+and four explicit failures: endgame exit six and Bowser exit four, each on both
+widths. Comparing the unmodified endgame test functions against the previous
+S1 objects confirms identical results: star timer tick fails, while fireworks
+animation, initializer and stream-record checks pass. A local diagnostic runs
+each original assertion group separately; the committed test is not weakened.
+Star timing remains with T19 S5 custody pending its planned T41 source slice;
+its failing assertion is not presented as a newly proven ROM discrepancy.
+Bowser damage retains its existing later collision ownership.
+
+All 85 shared units build with strict C90 for x86/x64; self-tests, hidden-window
+response and platform purity pass. DOS16 links with the existing OLDNAMES
+warning and remains link-only, with no graphical/runtime or 486 claim. The
+only gameplay change is in shared enemy/frenzy.c. The two data consumers,
+star/counter producers, explosion aliases and initializer callers were swept;
+no outside-scope actor repair or platform gameplay change is included.
+
+Reproduce using fireworks_fixture.h cases 0..119, recorder options
+--fixture=t39-fireworks=N, --fireworks-snapshot and --control-children, with
+--pc-coverage run separately. enemy_loop_actual_check compares the unmodified
+shared initializer against actual source entry/return RAM. The focused native
+target is mysmb.fireworks-initialization-chain. Existing owner-local provenance
+is unchanged. Evidence remains under ignored build/m2-t39-s2, below 1.1 MB raw
+output within the four-MB budget; each recorder has a twenty-second timeout.
+
+Three owner-authorized test artifacts are refreshed together:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255451 | 4f522661497aeb7dd6d667cea05a5bf65d11eec8e60a6e56477d6d60f4f55f35 |
+| mysmb32.exe | 338024 | 0d156c91540265ace9b750b20a7a36137c37cf4daaff874a6481f6bf09cd5cc3 |
+| mysmb64.exe | 345616 | 012f70bbbbec92be0b30330b3837b4d3e667481024db8f1dad5b4bc1f9c95771 |

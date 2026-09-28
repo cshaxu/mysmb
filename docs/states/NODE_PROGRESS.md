@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 990 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 995 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 108 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 894 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 889 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **990 / 1,992 (49.70%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **995 / 1,992 (49.95%)**. The 108 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T39 S1 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-original-bowser-and-flame-proof)
-proves twelve new Bowser/flame initialization nodes and retains three duplicate
-dependencies. Actual root comparisons pass 320/320; all 996 prior matching
-comparisons remain. Broader dispatcher, actor and collision gaps remain open.
+Latest task review: [T39 S2 P1](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-original-fireworks-proof)
+proves five fireworks initializer/data nodes with 240/240 actual comparisons.
+All 1,320 prior matching roots remain; later dispatcher, actor and collision
+gaps stay explicit, including the unchanged star-timer native-test failure.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (990)
+## Completed matches (995)
 
 | ROM line | Node |
 | ---: | --- |
@@ -987,6 +987,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 8615 | `SpawnFromMouth` |
 | 8635 | `SetMF` |
 | 8640 | `FinishFlame` |
+| 8653 | `FireworksXPosData` |
+| 8656 | `FireworksYPosData` |
+| 8659 | `InitFireworks` |
+| 8666 | `StarFChk` |
+| 8697 | `ExitFWk` |
 | 9080 | `NoRunCode` |
 | 9198 | `EraseEnemyObject` |
 | 9232 | `XSpeedAdderData` |

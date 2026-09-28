@@ -471,23 +471,21 @@ void mysmb_enemy_init_fireworks_frenzy(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 star;
     mysmb_u8 index;
     mysmb_u8 x_before;
-    mysmb_u8 page;
 
-    if (slot >= 6U || game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
+    if (game->ram[MYSMB_FRENZY_ENEMY_TIMER] != 0U) return;
     game->ram[MYSMB_FRENZY_ENEMY_TIMER] = 0x20U;
     game->ram[MYSMB_FIREWORKS_COUNTER]--;
-    for (star = 6U; star != 0U; ) {
-        --star;
-        if (game->ram[MYSMB_ENEMY_ID + star] == 49U) break;
-    }
-    if (game->ram[MYSMB_ENEMY_ID + star] != 49U) return;
+    star = 6U;
+    do {
+        star = (mysmb_u8)(star - 1U);
+    } while (game->ram[MYSMB_ENEMY_ID + star] != 49U);
+    x_before = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + star] - 0x30U);
+    game->ram[0U] = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + star] -
+        (game->ram[MYSMB_ENEMY_X + star] < 0x30U ? 1U : 0U));
     index = (mysmb_u8)(game->ram[MYSMB_FIREWORKS_COUNTER] +
                        game->ram[MYSMB_ENEMY_STATE + star]);
-    x_before = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + star] - 0x30U);
-    page = (mysmb_u8)(game->ram[MYSMB_ENEMY_PAGE + star] -
-        (game->ram[MYSMB_ENEMY_X + star] < 0x30U ? 1U : 0U));
     game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)(x_before + x_data[index]);
-    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(page +
+    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(game->ram[0U] +
         (game->ram[MYSMB_ENEMY_X + slot] < x_before ? 1U : 0U));
     game->ram[MYSMB_ENEMY_Y + slot] = y_data[index];
     game->ram[MYSMB_ENEMY_Y_HIGH + slot] = 1U;

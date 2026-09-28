@@ -2,28 +2,35 @@
 
 ## Current Work
 
-**M2 T39 S1 is closed at 990 / 1,992: twelve new nodes and three retained matches.**
+**M2 T39 S2 is closed at 995 / 1,992: all five fireworks nodes proven.**
 
-## M2 T39 S1 Packet
+## M2 T39 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T39 S1, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after T38 commit 328aae6; coordinator accepts transfers 172 and 173. |
-| Objective | Restore Bowser/flame initializers and timer dependency: twelve new nodes plus three retained duplicate nodes. |
-| Non-goals | No broader Bowser actor, frenzy dispatcher, graphics/collision or platform gameplay repair. |
-| Reference Baseline | 978 / 1,992; fifteen scoped labels, twelve expected new, maximum 990. Exact sets in S1 plan and ledger. |
-| Candidate Proposal | [T39 S1 Bowser/flame chain](../proposals/m2/t39-special-initialization-and-dispatch.md#s1-admission-bowser-and-flame-initialization). |
-| Files And ABI Surface | Shared enemy/init_targets.c, enemy/frenzy.c/h, narrow objects.c timer-call deduplication, tests/recorder, ledger and three EXEs. |
+| Identifier Mode | M2 T39 S2, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after a14bbad; coordinator accepts transfer-174. |
+| Objective | Restore all five fireworks data/initializer/return nodes as one chain. |
+| Non-goals | No frenzy dispatcher, fireworks actor/drawing or platform gameplay repair. |
+| Reference Baseline | 990 / 1,992; five scoped open labels, five expected new, maximum 995. Exact names in S2 proposal and ledger. |
+| Candidate Proposal | [T39 S2 fireworks](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-admission-complete-fireworks-initialization). |
+| Files And ABI Surface | Shared enemy/frenzy.c, focused tests/recorder fixture, ledger and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, source policy, documentation, ledger and validation matrix. |
-| Verification | Original table/branch/write/call audit and actual NMI comparisons; native matrix, cross-width builds, DOS link and purity. |
-| Expected Markers | Duplicate-before-Bowser setup, exact frame/bridge fields, noise queue, timer counter/table, PRNG aliases, mouth/right-edge coordinates and final writes. |
+| Verification | Original data/branch/write/scan audit and actual NMI entry comparisons; native matrix, cross-width builds, DOS link and purity. |
+| Expected Markers | Timer gate, descending scan, scratch $00, counter/state index, X/page borrow/carry and explosion fields. |
 | Asset Needs | Existing owner-local ROM/listing; three owner-authorized EXEs per P; DOS link-only. |
-| Reporting Requirements | Fifteen dispositions with twelve expected new, dual proof, retained downstream gaps and artifact hashes. |
+| Reporting Requirements | Five exact dispositions, dual proof, retained downstream gaps and artifact hashes. |
 | Stop Conditions | Unadmitted repair, patched reference execution, hidden mismatches or platform gameplay. |
-| Exit Criteria | Twelve expected labels proven or exact accepted transfer, three retained matches, tracker/ledger and artifacts agree. |
+| Exit Criteria | Five expected labels proven or exact accepted transfer; tracker/ledger and artifacts agree. |
 | Original Owner Request | Faithful original-ROM logic and call graph in shared 16/32/64-bit C, in source order. |
-| Similar-Issue Sweep | Both timer callers, duplicate entry consumers, noise queue and shared flame-position finish users. |
+| Similar-Issue Sweep | Initializer/counter/star producers, both tables and explosion aliases. |
+
+## S2 closure
+
+[Original fireworks proof](../proposals/m2/t39-special-initialization-and-dispatch.md#s2-original-fireworks-proof)
+records five new matches, 240/240 scoped actual comparisons, and all 1,320
+prior matches retained. Three EXEs are refreshed. The existing star-timer and
+Bowser-damage test failures remain; DOS16 is still link-only.
 
 ## S1 closure
 
@@ -42,7 +49,7 @@ EXEs; the existing Bowser test failures and DOS link-only limit remain.
 
 ## Current sequence
 
-T39 contains nine planned S chains; S1 is closed and S2 is next, not yet admitted. Follow the
+T39 contains nine planned S chains; S1-S2 are closed; S3 is next, not yet admitted. Follow the
 [queue](QUEUE.md) and T39 proposal. T40 receives the complete movement phase
 beginning MovePodoboo; the old line-9300 cut no longer splits Hammer Bro.
 
