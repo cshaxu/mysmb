@@ -47,9 +47,7 @@ void mysmb_objects_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing EnemyGfxHandler jumpspring branch; actor prepares relative/bits. */
 void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot);
-void mysmb_objects_draw_firebar_ball(struct mysmb_game *game, mysmb_u8 slot,
-                                     mysmb_u8 ball, mysmb_u8 x, mysmb_u8 y,
-                                     mysmb_u8 anchor_y);
+
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_bowsers(struct mysmb_game *game);

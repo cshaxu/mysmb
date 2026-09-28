@@ -1265,38 +1265,38 @@ The labels and branches behind every line remain open until individually bound b
 | 9671 | `ChkSwimYPos` | M2 T40 S7 shared enemy/swimming_cheep.c | ROM-match complete | [S7 original/actual proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof); Y-high stored before wrapped anchor difference sign and magnitude |
 | 9682 | `YPDiff` | M2 T40 S7 shared enemy/swimming_cheep.c | ROM-match complete | [S7 original/actual proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof); Exact $0F threshold selects up zero or down $10 from original sign |
 | 9686 | `ExSwCC` | M2 T40 S7 shared enemy/swimming_cheep.c | ROM-match complete | [S7 original/actual proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof); First two slots and below-threshold paths retain the prescribed RAM footprint |
-| 9703 | `FirebarPosLookupTbl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarposlookuptbl) |
-| 9716 | `FirebarMirrorData` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarmirrordata) |
-| 9719 | `FirebarTblOffsets` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebartbloffsets) |
-| 9723 | `FirebarYPos` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarypos) |
-| 9726 | `ProcFirebar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procfirebar) |
-| 9737 | `SusFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-susfbar) |
-| 9745 | `SkpFSte` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skpfste) |
-| 9748 | `SetupGFB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setupgfb) |
-| 9766 | `SetMFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setmfbar) |
-| 9769 | `DrawFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfbar) |
-| 9778 | `NextFbar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextfbar) |
-| 9782 | `SkipFBar` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skipfbar) |
-| 9784 | `DrawFirebar_Collision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar_collision) |
-| 9793 | `AddHA` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addha) |
-| 9803 | `SubtR1` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-subtr1) |
-| 9805 | `ChkFOfs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfofs) |
-| 9809 | `VAHandl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vahandl) |
-| 9817 | `AddVA` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-addva) |
-| 9819 | `SetVFbr` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setvfbr) |
-| 9822 | `FirebarCollision` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarcollision) |
-| 9838 | `AdjSm` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-adjsm) |
-| 9844 | `BigJp` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bigjp) |
-| 9845 | `FBCLoop` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fbcloop) |
-| 9851 | `ChkVFBD` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkvfbd) |
-| 9866 | `ChkFBCl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfbcl) |
-| 9868 | `Chk2Ofs` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2ofs) |
-| 9877 | `ChgSDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chgsdir) |
-| 9882 | `SetSDir` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setsdir) |
-| 9889 | `NoColFB` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocolfb) |
-| 9896 | `GetFirebarPosition` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getfirebarposition) |
-| 9904 | `GetHAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethadder) |
-| 9922 | `GetVAdder` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getvadder) |
+| 9703 | `FirebarPosLookupTbl` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); All 99 bytes bound and consumed; original $CD0B value restored by immutable binding |
+| 9716 | `FirebarMirrorData` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Bind quadrant mirror values and exact indexed reads including residual-call addresses |
+| 9719 | `FirebarTblOffsets` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Bind all twelve offsets; retain source byte indexing and adjacency |
+| 9723 | `FirebarYPos` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Bind the two additional big-player vertical collision probes |
+| 9726 | `ProcFirebar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Offscreen-before-spin, timer gate, original child order and center/outer iteration |
+| 9737 | `SusFbar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Paused spin state is read without speed update |
+| 9745 | `SkpFSte` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Long-bar phases eight/twenty-four increment once |
+| 9748 | `SetupGFB` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Save phase, relative child return/scratch, residual lookup and center coordinates |
+| 9766 | `SetMFbar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Store short/long maximum after center collision |
+| 9769 | `DrawFbar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Lookup and collision/draw repeated in original sequence |
+| 9778 | `NextFbar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Increment index and compare to $ED after duplicate-OAM switch |
+| 9782 | `SkipFBar` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Offscreen branch returns before motion or drawing |
+| 9784 | `DrawFirebar_Collision` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Preserve mirror scratch and coordinate-to-OAM order |
+| 9793 | `AddHA` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Horizontal signed adder plus relative X with byte wrap |
+| 9803 | `SubtR1` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Unsigned ordering selects non-wrapped absolute horizontal distance |
+| 9805 | `ChkFOfs` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); $59 distance gate hides Y while preserving sprite X |
+| 9809 | `VAHandl` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Anchor Y $F8 short-circuits vertical mirror handling |
+| 9817 | `AddVA` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Vertical signed adder plus relative Y with byte wrap |
+| 9819 | `SetVFbr` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Store OAM Y and scratch $07 before collision entry |
+| 9822 | `FirebarCollision` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Draw child first, saved Y and star/timer/high-Y gates |
+| 9838 | `AdjSm` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Small or crouching probe counter two and Y plus $18 |
+| 9844 | `BigJp` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Preserve big standing initial Y probe |
+| 9845 | `FBCLoop` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Signed byte vertical difference and absolute magnitude |
+| 9851 | `ChkVFBD` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Vertical eight-pixel and far-right X gates |
+| 9866 | `ChkFBCl` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Player sprite-one X plus four and signed horizontal threshold |
+| 9868 | `Chk2Ofs` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Advance big-player probe table or exit at counter two |
+| 9877 | `ChgSDir` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Choose injury direction from modded sprite X comparison |
+| 9882 | `SetSDir` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Slot-zero direction, injury child, saved $00 and resumed source loop |
+| 9889 | `NoColFB` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Saved OAM offset plus four and ObjectOffset restoration |
+| 9896 | `GetFirebarPosition` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Preserve caller A through both triangular lookups and mirror selection |
+| 9904 | `GetHAdder` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Horizontal oscillation plus original per-ball table index |
+| 9922 | `GetVAdder` | M2 T40 S8 shared enemy/firebar.c | ROM-match complete | [S8 original caller/data proof](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof); Vertical oscillation plus original per-ball table index and mirror output |
 | 9941 | `PRandomSubtracter` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-prandomsubtracter) |
 | 9944 | `FlyCCBPriority` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flyccbpriority) |
 | 9947 | `MoveFlyingCheepCheep` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveflyingcheepcheep) |
@@ -1389,7 +1389,7 @@ The labels and branches behind every line remain open until individually bound b
 | 10632 | `SetupToMovePPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setuptomovepplant) |
 | 10638 | `RiseFallPiranhaPlant` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-risefallpiranhaplant) |
 | 10656 | `PutinPipe` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-putinpipe) |
-| 10664 | `FirebarSpin` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspin) |
+| 10664 | `FirebarSpin` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firebarspin); [S8 child diagnostic](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): typed child seam; no node credit |
 | 10677 | `SpinCounterClockwise` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-spincounterclockwise) |
 | 10692 | `BalancePlatform` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-balanceplatform) |
 | 10697 | `DoBPl` | T19 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dobpl) |
@@ -1483,7 +1483,7 @@ The labels and branches behind every line remain open until individually bound b
 | 11405 | `ChkInj` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkinj) |
 | 11413 | `ChkETmrs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chketmrs) |
 | 11421 | `TInjE` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-tinje) |
-| 11426 | `InjurePlayer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-injureplayer) |
+| 11426 | `InjurePlayer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-injureplayer); [S8 child diagnostic](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): powered injury sound/palette-buffer differences |
 | 11430 | `ForceInjury` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forceinjury) |
 | 11440 | `SetKRout` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setkrout) |
 | 11441 | `SetPRout` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setprout) |
@@ -1827,7 +1827,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14242 | `ChnkOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chnkofs) |
 | 14250 | `ExBCDr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exbcdr) |
 | 14254 | `DrawFireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D3](m2-t24-s1-node-verification.md#node-drawfireball) |
-| 14261 | `DrawFirebar` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar) |
+| 14261 | `DrawFirebar` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar); [S8 child diagnostic](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): typed child seam; no node credit |
 | 14275 | `FireA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firea) |
 | 14280 | `ExplosionTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-explosiontiles) |
 | 14283 | `DrawExplosion_Fireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D4](m2-t24-s1-node-verification.md#node-drawexplosion_fireball) |
@@ -1893,7 +1893,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14797 | `RelativeFireballPosition` | T16: `src/game/oam/object_position.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-relativefireballposition) |
 | 14801 | `RelWOfs` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relwofs) |
 | 14805 | `RelativeMiscPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativemiscposition) |
-| 14811 | `RelativeEnemyPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeenemyposition) |
+| 14811 | `RelativeEnemyPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeenemyposition); [S8 child diagnostic](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): missing original slot scratch |
 | 14816 | `RelativeBlockPosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-relativeblockposition) |
 | 14825 | `VariableObjOfsRelPos` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-variableobjofsrelpos) |
 | 14834 | `GetObjRelativePosition` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getobjrelativeposition) |
@@ -1903,7 +1903,7 @@ The labels and branches behind every line remain open until individually bound b
 | 14863 | `GetMiscOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscoffscreenbits) |
 | 14869 | `ObjOffsetData` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-objoffsetdata) |
 | 14872 | `GetProperObjOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getproperobjoffset) |
-| 14879 | `GetEnemyOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyoffscreenbits) |
+| 14879 | `GetEnemyOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getenemyoffscreenbits); [S8 child diagnostic](../../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): missing original scratch writes |
 | 14884 | `GetBlockOffscreenBits` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getblockoffscreenbits) |
 | 14888 | `SetOffscrBitsOffset` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setoffscrbitsoffset) |
 | 14894 | `GetOffScreenBitsSet` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getoffscreenbitsset) |

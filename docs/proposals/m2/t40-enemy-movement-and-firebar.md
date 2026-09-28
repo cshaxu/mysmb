@@ -978,3 +978,276 @@ Existing owner-ROM/listing provenance and redistribution limits remain.
 | mysmb16.exe | 255767 | 57053dff2c7759dbdc0cf2fe43051c0ce33fa51899d1e092269d927022545e0c |
 | mysmb32.exe | 346134 | 0368c97f6685376f4f9f505820e43c9b91f8daf6be161426c99c31470b9e92da |
 | mysmb64.exe | 353598 | c427eea7cead73dcd1974c7f32483f9069760a47c640ce3401d1e4ad6e1e673f |
+
+## S8 admission: Firebar position, drawing and collision
+
+S7 closed in 524cf36. Coordinator accepts transfer-192. The 32 exact labels
+below are all open and expected new; baseline 1,112/1,992, maximum 1,144.
+Source $CCC7-$CED4 follows swimming Cheep-Cheep and ends before
+PRandomSubtracter. This remains one bounded source chain in the approved
+plan. Shared owners will be enemy/firebar.c and the game OAM boundary.
+No platform adapter receives gameplay or coordinate logic.
+
+### Original sequence and implementation boundary
+
+ProcFirebar calls GetEnemyOffscreenBits before any spin, tests only bit $08,
+then conditionally calls FirebarSpin using its returned high byte. Long bars
+adjust phase $08/$18, save $EF, call RelativeEnemyPosition and retain the
+apparently residual GetFirebarPosition call. RelativeEnemyPosition's source
+return A is relative X, and its $00 write is the slot; do not silently omit
+that boundary or substitute a phase value. Initialize the center sprite and
+collide it before setting $ED to five/eleven and iterating the outer balls.
+After outer index four, change OAM allocation through DuplicateObj_Offset.
+
+DrawFirebar_Collision preserves byte sign/coordinate operations and the
+non-wrapped absolute X separation threshold $59; Y=$F8 remains offscreen.
+FirebarCollision first calls DrawFirebar, saves returned Y, and skips damage
+on star/timer or player high-Y gates. Small/crouched Mario uses the +$18
+probe; big standing Mario uses zero, +$0C and +$18. Differences use signed
+byte subtraction/negation. Player X comes from sprite one X plus four,
+not a world-coordinate approximation. Set Enemy_MovingDir for slot zero,
+save/restore $00 across InjurePlayer, restore OAM offset plus four, and
+continue drawing the chain after injury. Compatibility injury reporting
+must not truncate the source loop or the already-proved RunFirebarObj tail.
+
+GetFirebarPosition preserves its A input, triangular X/Y lookup, $00-based
+table offset and $01/$02/$03 writes. The preliminary residual call can read
+outside the named arrays due to relative-X input; audit the exact immutable
+ROM data addresses rather than clamp, skip, invent a default, or allow C
+array overflow. Such bounded table-data access is not instruction execution.
+All executable program behavior remains native shared C.
+
+External child nodes GetEnemyOffscreenBits, FirebarSpin,
+RelativeEnemyPosition, DrawFirebar and InjurePlayer retain their existing
+receivers/status. Add narrowly typed shared child entry seams only where
+needed to expose original A/Y/scratch contracts; do not silently certify or
+rewrite unrelated callers. Record each existing child discrepancy separately.
+The later DrawFirebar node is distinct from the in-scope DrawFbar loop and
+DrawFirebar_Collision. The current force-injury helper omits original injury
+sound/palette behavior; its actual-child gap must not be hidden or patched
+by the firebar caller. Similar scrutiny applies to relative-position scratch.
+
+### Node checklist and proof targets
+
+| Node | Original address | Required individual proof |
+| --- | --- | --- |
+| FirebarPosLookupTbl | $CCC7 | Bind all 99 lookup bytes and consumer indices; row eight currently has a copied value mismatch |
+| FirebarMirrorData | $CD2A | Bind quadrant mirror values and exact indexed reads including residual-call addresses |
+| FirebarTblOffsets | $CD2E | Bind all twelve offsets; retain source byte indexing and adjacency |
+| FirebarYPos | $CD3A | Bind the two additional big-player vertical collision probes |
+| ProcFirebar | $CD3C | Offscreen-before-spin, timer gate, original child order and center/outer iteration |
+| SusFbar | $CD55 | Paused spin state is read without speed update |
+| SkpFSte | $CD65 | Long-bar phases eight/twenty-four increment once |
+| SetupGFB | $CD6A | Save phase, relative child return/scratch, residual lookup and center coordinates |
+| SetMFbar | $CD96 | Store short/long maximum after center collision |
+| DrawFbar | $CD9C | Lookup and collision/draw repeated in original sequence |
+| NextFbar | $CDB2 | Increment index and compare to $ED after duplicate-OAM switch |
+| SkipFBar | $CDBA | Offscreen branch returns before motion or drawing |
+| DrawFirebar_Collision | $CDBB | Preserve mirror scratch and coordinate-to-OAM order |
+| AddHA | $CDCB | Horizontal signed adder plus relative X with byte wrap |
+| SubtR1 | $CDE2 | Unsigned ordering selects non-wrapped absolute horizontal distance |
+| ChkFOfs | $CDE6 | $59 distance gate hides Y while preserving sprite X |
+| VAHandl | $CDEE | Anchor Y $F8 short-circuits vertical mirror handling |
+| AddVA | $CDFF | Vertical signed adder plus relative Y with byte wrap |
+| SetVFbr | $CE03 | Store OAM Y and scratch $07 before collision entry |
+| FirebarCollision | $CE08 | Draw child first, saved Y and star/timer/high-Y gates |
+| AdjSm | $CE28 | Small or crouching probe counter two and Y plus $18 |
+| BigJp | $CE31 | Preserve big standing initial Y probe |
+| FBCLoop | $CE32 | Signed byte vertical difference and absolute magnitude |
+| ChkVFBD | $CE3C | Vertical eight-pixel and far-right X gates |
+| ChkFBCl | $CE58 | Player sprite-one X plus four and signed horizontal threshold |
+| Chk2Ofs | $CE5C | Advance big-player probe table or exit at counter two |
+| ChgSDir | $CE6F | Choose injury direction from modded sprite X comparison |
+| SetSDir | $CE78 | Slot-zero direction, injury child, saved $00 and resumed source loop |
+| NoColFB | $CE85 | Saved OAM offset plus four and ObjectOffset restoration |
+| GetFirebarPosition | $CE8E | Preserve caller A through both triangular lookups and mirror selection |
+| GetHAdder | $CE9A | Horizontal oscillation plus original per-ball table index |
+| GetVAdder | $CEBA | Vertical oscillation plus original per-ball table index and mirror output |
+
+### Verification and containment
+
+First migrate this mapped chain, then use unchanged original NMI routes
+with both bar lengths, all phases, spin directions/speeds, paused state,
+edge coordinates, duplicate OAM, player sizes/crouching/probes, star/timer
+and damage outcomes. Observe child inputs before any diagnostic substitution;
+run actual children separately and retain every difference under its owner.
+Controlled RAM inputs at naturally reached entries are allowed when ordinary
+routes miss a source branch; no ROM, CPU/register, PC, stack or output patch.
+No claimed closure is based on visible resemblance or native tests alone.
+
+Independent native contracts cover exact RAM/OAM footprints, modulo and
+non-modulo distinctions, child order/mutations, saved loop/OAM state and
+continued processing after injury. Reuse earlier passing original matches;
+run strict C90 x86/x64, DOS16 link, platform purity, hidden-window probes and
+three-EXE refresh once for this chain. Report every scoped disposition.
+Only source-proved caller/table nodes may be credited; actual child gaps
+remain explicit. Unfinished scoped nodes require accepted named transfer.
+S9 flying Cheep-Cheep remains next, without any invented task number.
+
+Similar-issue sweep covers objects.c, firebar OAM helper, special caller,
+source child seams, initializers and firebar tests. Existing owner-local
+ROM/listing provenance and redistribution limits remain; no third-party
+import. All investigation, generated data and traces remain below ignored
+build/m2-t40-s8. Start with at most 512 original routes and a 64-MB raw budget
+because each frame can contain twelve repeated collision/draw calls. Use
+unique output paths, twenty-second per-run timeout, checkpoints and a bounded
+child-record count verified against the chain. The coordinator retains local
+inputs for dependent admitted regressions and owns cleanup afterward.
+
+### S8 implementation checkpoint (not closure)
+
+The old approximate actor has been replaced by shared enemy/firebar.c,
+with explicit position, coordinate/draw and collision entries. The source
+offscreen, spin, relative and OAM child contracts have typed boundaries;
+the existing injury helper remains a separately tracked dependency. The
+obsolete per-ball OAM API has no remaining callers and is removed. The
+legacy aggregate retains eligibility and compatibility injury reporting,
+while the source actor continues all balls after injury.
+
+Position lookups use the existing immutable area_prg binding, including
+table-adjacent bytes reached by the residual call. The source data address
+range requires at least $4E2E bytes from the PRG base. Missing data is an
+explicit unmet resource prerequisite: the actor stops after the offscreen
+check rather than fabricating lookup values. This does not establish DOS
+resource binding or graphical playability. ROM proof must provide the owner
+data binding; unit contracts use synthetic project-owned data instead.
+
+Native chain contracts pass on x86/x64 for center plus five/eleven outer
+balls, the duplicate OAM switch, saved child-return Y, phase-eight adjustment,
+continued drawing after injury mutates scratch, offscreen early exit and
+residual indexed data reads. These are not original-ROM equivalence proof.
+Instruction/branch recordings and actual-child comparisons remain pending;
+no S8 node is promoted and no P commit is claimed at this checkpoint.
+
+Recorder sizing must allow up to 27 immediate child records: three setup
+children plus twelve draws and twelve injury calls when injury invincibility
+causes the injury child to return without setting TimerControl. The existing
+64-record storage is sufficient, but this mode's current sixteen-record
+admission limit must be raised explicitly before recording. Never truncate
+the tail of a long-bar route to fit a diagnostic buffer.
+
+## S8 original firebar chain proof
+
+S8 P1 closes all 32 expected caller/data nodes: 1,112 -> 1,144/1,992.
+No scoped unfinished node or transfer remains. External-child gaps remain
+with their existing receivers; S9 is next in the approved source sequence.
+
+| Node | Original address | Individual evidence and disposition |
+| --- | --- | --- |
+| FirebarPosLookupTbl | $CCC7 | All 99 bytes bound and consumed; original $CD0B value restored by immutable binding; new ROM match |
+| FirebarMirrorData | $CD2A | Bind quadrant mirror values and exact indexed reads including residual-call addresses; new ROM match |
+| FirebarTblOffsets | $CD2E | Bind all twelve offsets; retain source byte indexing and adjacency; new ROM match |
+| FirebarYPos | $CD3A | Bind the two additional big-player vertical collision probes; new ROM match |
+| ProcFirebar | $CD3C | Offscreen-before-spin, timer gate, original child order and center/outer iteration; new ROM match |
+| SusFbar | $CD55 | Paused spin state is read without speed update; new ROM match |
+| SkpFSte | $CD65 | Long-bar phases eight/twenty-four increment once; new ROM match |
+| SetupGFB | $CD6A | Save phase, relative child return/scratch, residual lookup and center coordinates; new ROM match |
+| SetMFbar | $CD96 | Store short/long maximum after center collision; new ROM match |
+| DrawFbar | $CD9C | Lookup and collision/draw repeated in original sequence; new ROM match |
+| NextFbar | $CDB2 | Increment index and compare to $ED after duplicate-OAM switch; new ROM match |
+| SkipFBar | $CDBA | Offscreen branch returns before motion or drawing; new ROM match |
+| DrawFirebar_Collision | $CDBB | Preserve mirror scratch and coordinate-to-OAM order; new ROM match |
+| AddHA | $CDCB | Horizontal signed adder plus relative X with byte wrap; new ROM match |
+| SubtR1 | $CDE2 | Unsigned ordering selects non-wrapped absolute horizontal distance; new ROM match |
+| ChkFOfs | $CDE6 | $59 distance gate hides Y while preserving sprite X; new ROM match |
+| VAHandl | $CDEE | Anchor Y $F8 short-circuits vertical mirror handling; new ROM match |
+| AddVA | $CDFF | Vertical signed adder plus relative Y with byte wrap; new ROM match |
+| SetVFbr | $CE03 | Store OAM Y and scratch $07 before collision entry; new ROM match |
+| FirebarCollision | $CE08 | Draw child first, saved Y and star/timer/high-Y gates; new ROM match |
+| AdjSm | $CE28 | Small or crouching probe counter two and Y plus $18; new ROM match |
+| BigJp | $CE31 | Preserve big standing initial Y probe; new ROM match |
+| FBCLoop | $CE32 | Signed byte vertical difference and absolute magnitude; new ROM match |
+| ChkVFBD | $CE3C | Vertical eight-pixel and far-right X gates; new ROM match |
+| ChkFBCl | $CE58 | Player sprite-one X plus four and signed horizontal threshold; new ROM match |
+| Chk2Ofs | $CE5C | Advance big-player probe table or exit at counter two; new ROM match |
+| ChgSDir | $CE6F | Choose injury direction from modded sprite X comparison; new ROM match |
+| SetSDir | $CE78 | Slot-zero direction, injury child, saved $00 and resumed source loop; new ROM match |
+| NoColFB | $CE85 | Saved OAM offset plus four and ObjectOffset restoration; new ROM match |
+| GetFirebarPosition | $CE8E | Preserve caller A through both triangular lookups and mirror selection; new ROM match |
+| GetHAdder | $CE9A | Horizontal oscillation plus original per-ball table index; new ROM match |
+| GetVAdder | $CEBA | Vertical oscillation plus original per-ball table index and mirror output; new ROM match |
+The 512 original NMI routes cover short/long bars, all phases, both spin
+directions, timer pause, slot zero/five, duplicate OAM, wrap/edge coordinates,
+player probe forms and injury. Cases zero through three supply Player_Y_HighPos
+as two at the naturally reached actor entry; cases four through seven align
+sprite-one X/Y with the center ball and set powered-player status there.
+The other 504 cases need no mid-entry inputs. All changes are declared RAM
+inputs independent of observation; ROM, CPU registers, PC, stack and outputs
+are never patched. All 512 observer-free frames equal observed records.
+This is observer noninterference, not native full-frame conformance.
+
+All 205 scoped instructions and both feasible outcomes of 26 conditional
+branches execute. The remaining BNE at $CDEC follows LDA #$F8 and cannot
+fall through. All 28 code labels have entry coverage. The four immutable
+tables bind exactly to the owner PRG; all 99 position bytes and four mirror
+bytes are consumed, along with the eleven operative offsets. The twelfth
+offset is retained source data beyond the eleven-ball loop. The two Y
+probe bytes are consumed by the original big-standing-player probe loop.
+The 4,032 position calls include the residual relative-X call. Bounded
+adjacent reads are preserved rather than clamped; all byte inputs are
+bounded by $CE2D. No instruction bytes are executed by the game.
+
+Caller-boundary comparisons pass 1,024/1,024 on x86/x64. Each complete child
+input is compared before its recorded return is substituted. Root exit RAM,
+all scratch and mapped $0109-$0139 are checked; only hardware-stack storage
+is excluded. The scoped code reads bound data and writes original RAM/OAM,
+with no other output surface. Real-child root comparisons are separately
+292/1,024: these failures are preserved, not accepted as full-chain matches.
+
+| External child | Actual entry/return comparisons | Difference and existing receiver |
+| --- | ---: | --- |
+| GetEnemyOffscreenBits | 0/1,024 | Missing $04-$07 scratch writes, plus $00 in 192 comparisons; M2 T16 S4 |
+| FirebarSpin | 640/640 | Current seam matches these inputs; node remains with M2 T19 S5 |
+| RelativeEnemyPosition | 416/896 | Missing $00 slot write in 480 comparisons; M2 T16 S4 |
+| DrawFirebar | 8,064/8,064 | RAM and returned Y match these inputs; node remains with M2 T17 S6 |
+| InjurePlayer | 12/20 | Powered injury misses $00, Square1SoundQueue and $0300-$0307 palette-buffer writes in eight comparisons; M2 T17 S6 |
+
+No external child receives completion credit. The combined actual-root
+matrix is 7,600/9,106, retaining all 7,308 previous matches. Its 1,506
+comparison failures remain explicit dependencies, not deferred scoped nodes.
+
+Shared enemy/firebar.c replaces the former approximate actor. Its source
+sequence retains the preliminary lookup, center collision, five/eleven outer
+balls, duplicate-OAM switch, original byte/nonwrapped distance operations,
+sprite-one player X, source probe loop, slot-zero injury direction and saved
+loop/OAM state. Injury does not stop the remaining balls. The old copied
+position value at $CD0B was wrong; immutable binding removes that divergence.
+Only typed child seams are introduced; their known gaps are not patched in
+the caller. OAM allocation has one owner. The old per-ball drawing API is
+removed; existing RunFirebarObj still reaches its bounds tail after injury.
+
+Independent native chain contracts and the corrected integration smoke pass
+on both widths. The latter now supplies synthetic data, valid viewport state
+and source sprite/probe inputs; it is not a ROM fixture. Earlier focused
+contracts and fifteen initialization/platform smokes per width pass.
+Existing Bowser damage and endgame star-timer failures remain unchanged;
+the broad core smoke's earlier player-entrance failure is not claimed fixed.
+All 99 shared units compile under strict C90 for x86/x64. Self-tests and
+hidden-window response probes pass without foreground input. DOS16 links
+with the existing OLDNAMES warning and remains link-only: resource binding,
+graphical playability and physical 486 performance are not established.
+Platform purity passes and all three owner-authorized test EXEs are refreshed.
+
+Similar-issue review covers the former inline owner, special caller, five
+child seams, OAM, initializers and firebar tests. The legacy aggregate is
+only used by its smoke test; runtime dispatch supplies the original slot.
+The separate fireball drawing routine and external child interiors retain
+their original ownership and are not silently rewritten here.
+
+Reproduce firebar_chain_fixture.h cases 0..511 with --fixture=t40-firebar-chain=N,
+--firebar-chain-snapshot, --control-children and a separate --pc-coverage run.
+firebar_chain_snapshot_check provides caller proof; enemy_loop_actual_check
+runs real children; firebar_children_actual_check isolates each real child's
+recorded entry. Native tests are mysmb.firebar-chain and mysmb.firebar-smoke.
+Local source-audit, data-binding-audit, child-actual-summary, final-root-regressions
+and retained-proof summaries remain under ignored build/m2-t40-s8. Raw inputs
+including superseded controlled-input records use 26,640,124 bytes, below the
+64-MB budget. Unique paths, twenty-second timeouts and checkpoints bound runs;
+the coordinator retains inputs for dependent regressions and owns cleanup.
+Owner-local ROM/listing provenance and redistribution restrictions remain.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256195 | 41a74ca38113d8786d21871fe80af05b5e26ebeb9ac0101bde60ae3445d1924e |
+| mysmb32.exe | 347941 | 0cd01bc18cf4ba83c13184078739ac6681c4c32310f964784c1657589fcabeed |
+| mysmb64.exe | 355482 | 73fa296205f27e2a904faea65b52a0827411a552a1cdac88905479bc13d430ef |

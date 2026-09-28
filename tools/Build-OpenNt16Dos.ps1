@@ -33,6 +33,8 @@ $sources = @(
     'game/enemy/bloober.c',
     'game/enemy/bullet_bill.c',
     'game/enemy/swimming_cheep.c',
+    'game/enemy/firebar.c',
+    'game/enemy/firebar_children.c',
     'game/enemy/distance.c',
     'game/enemy/background.c',
     'game/enemy/side_collision.c',

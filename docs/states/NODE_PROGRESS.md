@@ -12,16 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1112 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1144 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 106 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 774 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 742 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,112 / 1,992 (55.82%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,144 / 1,992 (57.43%)**. The 106 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T40 S7 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s7-original-swimming-cheep-proof)
-closes seven swimming Cheep-Cheep nodes with 1,024/1,024 original
-caller and actual-child comparisons. All 6,276 prior matches remain.
+Latest task review: [T40 S8 P1](../proposals/m2/t40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof)
+closes 32 firebar caller/data nodes with 1,024/1,024 original caller
+comparisons. Actual-child roots match 292/1,024; dependencies remain explicit.
+All 7,308 prior matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1112)
+## Completed matches (1144)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1123,6 +1124,38 @@ of equivalent native nodes. No product repair is part of this audit.
 | 9671 | `ChkSwimYPos` |
 | 9682 | `YPDiff` |
 | 9686 | `ExSwCC` |
+| 9703 | `FirebarPosLookupTbl` |
+| 9716 | `FirebarMirrorData` |
+| 9719 | `FirebarTblOffsets` |
+| 9723 | `FirebarYPos` |
+| 9726 | `ProcFirebar` |
+| 9737 | `SusFbar` |
+| 9745 | `SkpFSte` |
+| 9748 | `SetupGFB` |
+| 9766 | `SetMFbar` |
+| 9769 | `DrawFbar` |
+| 9778 | `NextFbar` |
+| 9782 | `SkipFBar` |
+| 9784 | `DrawFirebar_Collision` |
+| 9793 | `AddHA` |
+| 9803 | `SubtR1` |
+| 9805 | `ChkFOfs` |
+| 9809 | `VAHandl` |
+| 9817 | `AddVA` |
+| 9819 | `SetVFbr` |
+| 9822 | `FirebarCollision` |
+| 9838 | `AdjSm` |
+| 9844 | `BigJp` |
+| 9845 | `FBCLoop` |
+| 9851 | `ChkVFBD` |
+| 9866 | `ChkFBCl` |
+| 9868 | `Chk2Ofs` |
+| 9877 | `ChgSDir` |
+| 9882 | `SetSDir` |
+| 9889 | `NoColFB` |
+| 9896 | `GetFirebarPosition` |
+| 9904 | `GetHAdder` |
+| 9922 | `GetVAdder` |
 | 10167 | `KillAllEnemies` |
 | 10169 | `KillLoop` |
 | 10337 | `FlameTimerData` |

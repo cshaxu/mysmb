@@ -1158,121 +1158,16 @@ void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
         mysmb_objects_step_flying_cheep_cheeps_slot(game, slot);
 }
 
-/* ROM InitShortFirebar/InitLongFirebar, FirebarSpin, GetFirebarPosition, and
- * FirebarCollision.  The source's long-firebar duplicate only changes OAM
- * allocation, so every physical ball remains derived from the anchor slot. */
-mysmb_u8 mysmb_enemy_proc_firebar(struct mysmb_game *game, mysmb_u8 slot)
-{
-    static const mysmb_u8 position[99] = {
-        0U,1U,3U,4U,5U,6U,7U,7U,8U, 0U,3U,6U,9U,11U,13U,14U,15U,16U,
-        0U,4U,9U,13U,16U,19U,22U,23U,24U, 0U,6U,12U,18U,22U,26U,29U,31U,32U,
-        0U,7U,15U,22U,28U,33U,37U,39U,40U, 0U,9U,18U,27U,33U,39U,44U,47U,48U,
-        0U,11U,21U,31U,39U,46U,51U,55U,56U, 0U,12U,24U,36U,45U,51U,59U,62U,64U,
-        0U,14U,27U,40U,50U,59U,66U,70U,72U, 0U,15U,31U,45U,56U,66U,74U,78U,80U,
-        0U,17U,34U,49U,62U,73U,81U,86U,88U
-    };
-    static const mysmb_u8 table_offset[12] = {
-        0U,9U,18U,27U,36U,45U,54U,63U,72U,81U,90U,99U
-    };
-    static const mysmb_u8 mirror[4] = { 1U, 3U, 2U, 0U };
-    mysmb_u8 phase;
-    mysmb_u8 phase_part;
-    mysmb_u8 vertical_phase;
-    mysmb_u8 ball;
-    mysmb_u8 maximum;
-    mysmb_u8 horizontal;
-    mysmb_u8 vertical;
-    mysmb_u8 mirror_bits;
-    mysmb_u8 anchor_x;
-    mysmb_u8 anchor_y;
-    mysmb_u8 ball_x;
-    mysmb_u8 ball_y;
-    mysmb_u8 player_x;
-    mysmb_u8 player_y;
-    mysmb_u8 candidate;
-    mysmb_u8 old_low;
-    mysmb_u8 carry;
-    mysmb_u16 enemy_world;
-    mysmb_u16 screen_world;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] < 27U ||
-        game->ram[MYSMB_ENEMY_ID + slot] > 31U) return 0U;
-    if (game->ram[MYSMB_TIMER_CONTROL] == 0U) {
-        old_low = game->ram[MYSMB_ENEMY_X_SPEED + slot];
-        if (game->ram[0x0034U + slot] == 0U) {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-                (mysmb_u8)(old_low + game->ram[0x0388U + slot]);
-            carry = game->ram[MYSMB_ENEMY_X_SPEED + slot] < old_low ? 1U : 0U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        }
-        else {
-            game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-                (mysmb_u8)(old_low - game->ram[0x0388U + slot]);
-            carry = old_low < game->ram[0x0388U + slot] ? 1U : 0U;
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-                (mysmb_u8)(game->ram[MYSMB_ENEMY_Y_SPEED + slot] - carry);
-        }
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] &= 0x1fU;
-    }
-    phase = game->ram[MYSMB_ENEMY_Y_SPEED + slot];
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 31U && (phase == 8U || phase == 24U)) {
-        phase++;
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = phase;
-    }
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (enemy_world < screen_world || (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
-    anchor_x = (mysmb_u8)(enemy_world - screen_world);
-    anchor_y = game->ram[MYSMB_ENEMY_Y + slot];
-    maximum = game->ram[MYSMB_ENEMY_ID + slot] == 31U ? 11U : 5U;
-    for (ball = 0U; ball < maximum; ++ball) {
-        phase_part = (mysmb_u8)(phase & 0x0fU);
-        if (phase_part >= 9U) phase_part = (mysmb_u8)(16U - phase_part);
-        vertical_phase = (mysmb_u8)((phase + 8U) & 0x0fU);
-        if (vertical_phase >= 9U) vertical_phase = (mysmb_u8)(16U - vertical_phase);
-        horizontal = position[(mysmb_u16)table_offset[ball] + phase_part];
-        vertical = position[(mysmb_u16)table_offset[ball] + vertical_phase];
-        mirror_bits = mirror[phase >> 3U];
-        ball_x = (mysmb_u8)(anchor_x + ((mirror_bits & 1U) != 0U ? horizontal :
-                                         (mysmb_u8)(0U - horizontal)));
-        ball_y = (mysmb_u8)(anchor_y + ((mirror_bits & 2U) != 0U ? vertical :
-                                         (mysmb_u8)(0U - vertical)));
-        mysmb_objects_draw_firebar_ball(game, slot, ball, ball_x, ball_y, anchor_y);
-        if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U ||
-            game->ram[MYSMB_TIMER_CONTROL] != 0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-            ball_x >= 0xf0U) continue;
-        player_x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] + 4U - game->ram[MYSMB_SCREEN_LEFT_X]);
-        if (game->ram[MYSMB_PLAYER_SIZE] == 0U || game->ram[MYSMB_PLAYER_CROUCHING] != 0U) {
-            candidate = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] + 0x18U);
-            if ((mysmb_u8)(candidate > ball_y ? candidate - ball_y : ball_y - candidate) >= 8U) continue;
-        }
-        else {
-            player_y = game->ram[MYSMB_PLAYER_Y];
-            if ((mysmb_u8)(player_y > ball_y ? player_y - ball_y : ball_y - player_y) >= 8U &&
-                ((mysmb_u8)(((mysmb_u8)(player_y + 0x0cU) > ball_y) ?
-                 (mysmb_u8)(player_y + 0x0cU) - ball_y : ball_y - (mysmb_u8)(player_y + 0x0cU)) >= 8U) &&
-                ((mysmb_u8)(((mysmb_u8)(player_y + 0x18U) > ball_y) ?
-                 (mysmb_u8)(player_y + 0x18U) - ball_y : ball_y - (mysmb_u8)(player_y + 0x18U)) >= 8U)) continue;
-        }
-        if ((mysmb_u8)(player_x > ball_x ? player_x - ball_x : ball_x - player_x) >= 8U) continue;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION] = player_x >= ball_x ? 1U : 2U;
-        mysmb_objects_force_injury(game);
-        return 1U;
-    }
-    return 0U;
-}
-
 /* Temporary aggregate caller preserves the legacy injury early exit.
  * The slot result is a compatibility signal, not a ROM return register. */
 void mysmb_objects_step_firebars(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_step_firebars_slot(game, slot) != 0U) return;
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] >= 27U &&
+            game->ram[MYSMB_ENEMY_ID + slot] <= 31U &&
+            mysmb_objects_step_firebars_slot(game, slot) != 0U) return;
     }
 }
 

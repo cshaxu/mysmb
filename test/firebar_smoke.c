@@ -3,6 +3,18 @@
 #include "game/game.h"
 #include "game/objects.h"
 
+/* Synthetic lookup data tests binding and integration, not ROM equality. */
+static unsigned char firebar_data[0x5000];
+static void initialize(struct mysmb_game *game)
+{
+    mysmb_game_initialize_memory(game, 0xfeU);
+    game->area_prg = firebar_data;
+    game->area_prg_size = sizeof(firebar_data);
+    game->ram[0x071bU] = 1U;
+    game->ram[0x00b6U] = 1U;
+    firebar_data[0x4ccfU] = 8U;
+}
+
 int main(void)
 {
     struct mysmb_game game;
@@ -21,7 +33,7 @@ int main(void)
         game.ram[0x0034U] != 0U || game.ram[0x049aU] != 3U) return 1;
 
     /* FirebarSpin uses the low-byte carry to advance the five-bit phase. */
-    mysmb_game_initialize_memory(&game, 0xfeU);
+    initialize(&game);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 27U;
     game.ram[0x006eU] = 0U;
@@ -43,7 +55,7 @@ int main(void)
 
     /* A ball at phase zero injures the player through the original shared
      * damage state handoff. */
-    mysmb_game_initialize_memory(&game, 0xfeU);
+    initialize(&game);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 27U;
     game.ram[0x006eU] = 0U;
@@ -55,7 +67,8 @@ int main(void)
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x3cU;
     game.ram[0x00b5U] = 1U;
-    game.ram[0x00ceU] = 0x48U;
+    game.ram[0x00ceU] = 0x38U;
+    game.ram[0x0207U] = 0x3cU;
     game.ram[0x0754U] = 1U;
     game.ram[0x0756U] = 1U;
     game.ram[0x000eU] = 8U;
@@ -63,9 +76,9 @@ int main(void)
     if (game.ram[0x0756U] != 0U || game.ram[0x079eU] != 8U ||
         game.ram[0x000eU] != 10U || game.ram[0x001dU] != 1U ||
         game.ram[0x0747U] != 0xffU) return 4;
-    /* The native draw helper reserves the original OAM slot and writes the
-     * first short-firebar ball eight pixels above its phase-zero anchor. */
-    mysmb_game_initialize_memory(&game, 0xfeU);
+    /* With this synthetic lookup, the first outer ball is eight pixels
+     * above the anchor. The source owns allocation; the child draws tiles. */
+    initialize(&game);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 27U;
     game.ram[0x006eU] = 0U;
