@@ -16,8 +16,8 @@ static void record(struct mysmb_game *g, unsigned int id, mysmb_u8 slot)
 }
 void mysmb_world_impose_gravity_block(struct mysmb_game *g, mysmb_u8 slot)
 { record(g, 1U, slot); }
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *g, mysmb_u8 slot)
-{ record(g, 2U, slot); }
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *g, mysmb_u8 slot)
+{ record(g, 2U, slot); return 0U; }
 void mysmb_oam_relative_block_position(struct mysmb_game *g, mysmb_u8 slot)
 { record(g, 3U, slot); }
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *g, mysmb_u8 slot)

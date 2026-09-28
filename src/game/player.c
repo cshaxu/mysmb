@@ -168,45 +168,13 @@ static mysmb_u8 mysmb_player_collision_base(const struct mysmb_game *game)
     return game->ram[MYSMB_SWIMMING] != 0U ? 7U : 0U;
 }
 
-/* Translation of ROM MovePlayerHorizontally/MoveObjectHorizontally.
- * X speed is signed 4.4 fixed point; the low nibble accumulates in X force. */
+/* ROM $BF09-$BF0E MovePlayerHorizontally. The blocked path returns the
+ * animation control unchanged; the fallthrough shares MoveObjectHorizontally. */
 mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game)
 {
-    mysmb_u8 speed;
-    mysmb_u8 fraction;
-    mysmb_u8 integer;
-    mysmb_u8 carry_force;
-    mysmb_u8 carry_x;
-    mysmb_u16 x_sum;
-    mysmb_u8 old_force;
-    mysmb_u8 old_x;
-    mysmb_u8 page_delta;
-
-    if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
+    if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U)
         return game->ram[MYSMB_JUMPSPRING_ANIM];
-    }
-    speed = game->ram[MYSMB_PLAYER_X_SPEED];
-    fraction = (mysmb_u8)((speed & 0x0fU) << 4U);
-    integer = (mysmb_u8)(speed >> 4U);
-    if (integer >= 8U) {
-        integer = (mysmb_u8)(integer | 0xf0U);
-        page_delta = 0xffU;
-    }
-    else {
-        page_delta = 0U;
-    }
-    old_force = game->ram[MYSMB_PLAYER_X_MOVE_FORCE];
-    game->ram[MYSMB_PLAYER_X_MOVE_FORCE] =
-        (mysmb_u8)(old_force + fraction);
-    carry_force = game->ram[MYSMB_PLAYER_X_MOVE_FORCE] < old_force ? 1U : 0U;
-    old_x = game->ram[MYSMB_PLAYER_X];
-    x_sum = (mysmb_u16)old_x + (mysmb_u16)integer +
-        (mysmb_u16)carry_force;
-    game->ram[MYSMB_PLAYER_X] = (mysmb_u8)x_sum;
-    carry_x = x_sum > 0x00ffU ? 1U : 0U;
-    game->ram[MYSMB_PLAYER_PAGE] =
-        (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta + carry_x);
-    return (mysmb_u8)(integer + carry_force);
+    return mysmb_world_move_spr_object_horizontally(game, 0U);
 }
 
 /* Translation of ROM ImposeGravity for player offset zero. */

@@ -20,11 +20,11 @@ void mysmb_world_impose_gravity_spr_object(struct mysmb_game *g,
     record('G'); slot_check((mysmb_u8)(slot - 7U));
     if (g->ram[8U] != selected || force != 0x50U || maximum != 3U) ++errors;
 }
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *g, mysmb_u8 slot)
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *g, mysmb_u8 slot)
 {
     record('M'); slot_check((mysmb_u8)(slot - 7U));
     if (mutate != 0U) { selected ^= 1U; g->ram[8U] = selected; }
-}
+return 0U; }
 void mysmb_oam_relative_fireball_position(struct mysmb_game *g, mysmb_u8 slot)
 { (void)g; record('R'); slot_check(slot); }
 void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *g, mysmb_u8 slot)

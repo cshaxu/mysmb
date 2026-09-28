@@ -38,8 +38,8 @@ void mysmb_world_impose_gravity_spr_object(struct mysmb_game *g,mysmb_u8 slot,my
     if(force!=children[child_calls][2U] || maximum!=children[child_calls][4U]) ++failures;
     child(g,1U,slot);
 }
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
-{child(g,2U,slot);}
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
+{child(g,2U,slot);return 0U; }
 void mysmb_oam_relative_fireball_position(struct mysmb_game *g,mysmb_u8 slot)
 {child(g,3U,slot);}
 void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)

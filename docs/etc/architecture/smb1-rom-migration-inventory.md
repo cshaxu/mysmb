@@ -996,12 +996,12 @@ The labels and branches behind every line remain open until individually bound b
 | 7527 | `BlockObjMT_Updater` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
 | 7529 | `UpdateLoop` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
 | 7546 | `NextBUpd` | M2 T37 S6 shared game/blocks/replacement.c | ROM-match complete | [S6 replacement caller proof](../../proposals/m2/power-up-block-movement.md#s6-original-block-replacement-proof) |
-| 7555 | `MoveEnemyHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveenemyhorizontally) |
-| 7561 | `MovePlayerHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayerhorizontally) |
-| 7566 | `MoveObjectHorizontally` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveobjecthorizontally) |
-| 7581 | `SaveXSpd` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-savexspd) |
-| 7586 | `UseAdder` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-useadder) |
-| 7604 | `ExXMove` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exxmove) |
+| 7555 | `MoveEnemyHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7561 | `MovePlayerHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7566 | `MoveObjectHorizontally` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7581 | `SaveXSpd` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7586 | `UseAdder` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
+| 7604 | `ExXMove` | M2 T37 S7 shared game/world/movement.c and player.c | ROM-match complete | [S7 horizontal proof](../../proposals/m2/power-up-block-movement.md#s7-original-horizontal-movement-proof) |
 | 7611 | `MovePlayerVertically` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveplayervertically) |
 | 7617 | `NoJSChk` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nojschk) |
 | 7624 | `MoveD_EnemyVertically` | M2 T31 S2 shared game/enemy/movement.c | ROM-match complete | [S2 P5 movement boundary proof](../../history/M2-T31-game-dispatcher.md#s2p5-normal-movement-and-vertical-proof) |

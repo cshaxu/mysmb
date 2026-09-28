@@ -30,8 +30,8 @@ static unsigned char *child(struct mysmb_game *g,unsigned int id)
 }
 void mysmb_world_impose_gravity_block(struct mysmb_game *g,mysmb_u8 slot)
 { if(child(g,1U)[1]!=(mysmb_u8)(slot+9U)) ++failures; }
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
-{ if(child(g,2U)[1]!=slot) ++failures; }
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
+{ if(child(g,2U)[1]!=slot) ++failures; return 0U; }
 void mysmb_oam_relative_block_position(struct mysmb_game *g,mysmb_u8 slot)
 { if(child(g,3U)[1]!=slot) ++failures; }
 void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)

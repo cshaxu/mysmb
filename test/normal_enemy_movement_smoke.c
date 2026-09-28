@@ -4,14 +4,14 @@
 #include <string.h>
 
 static unsigned int horizontal_calls,erase_calls,observed_speed,observed_y;
-void mysmb_world_move_enemy_horizontally(struct mysmb_game *game,mysmb_u8 slot)
+mysmb_u8 mysmb_world_move_enemy_horizontally(struct mysmb_game *game,mysmb_u8 slot)
 {
     ++horizontal_calls;
     observed_speed=game->ram[0x58U+slot];observed_y=game->ram[0xcfU+slot];
     /* A caller saving speed must restore its input even across a mutating
      * test child; direct tail callers must leave the child's result intact. */
     game->ram[0x58U+slot]=0x55U;
-}
+return 0U; }
 void mysmb_objects_erase_enemy(struct mysmb_game *game,mysmb_u8 slot)
 { (void)game;(void)slot;++erase_calls; }
 

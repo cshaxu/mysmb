@@ -30,8 +30,8 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_enemy_move_downward(struct mysmb_game *game,mysmb_u8 slot,
     mysmb_u8 amount,mysmb_u8 maximum)
 { record(game,slot,7U); if(amount!=0x3dU||maximum!=3U) failed=1U; }
-void mysmb_world_move_enemy_horizontally(struct mysmb_game *game,mysmb_u8 slot)
-{ record(game,slot,8U); }
+mysmb_u8 mysmb_world_move_enemy_horizontally(struct mysmb_game *game,mysmb_u8 slot)
+{ record(game,slot,8U); return 0U; }
 
 int main(void)
 {

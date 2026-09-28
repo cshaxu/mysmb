@@ -17,11 +17,11 @@ void mysmb_world_impose_gravity_spr_object(struct mysmb_game *g,
     if (force != 0x10U || max_speed != 4U || g->ram[0] != 0x10U ||
         g->ram[1] != 0x0fU || g->ram[2] != 4U) ++errors;
 }
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *g,mysmb_u8 slot)
 {
     record(2U, slot);
     if (mutate != 0U) g->ram[8] = 7U;
-}
+return 0U; }
 void mysmb_objects_check_hammer_collision(struct mysmb_game *g,mysmb_u8 slot)
 { (void)g; record(3U, slot); }
 void mysmb_oam_get_misc_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)

@@ -1041,3 +1041,122 @@ complete-game equivalence claims.
 | mysmb64.exe | 338649 | 7b83be2811032513d148c49e0c25897610f66774e59e503786da5a9ee27922be |
 
 Retained raw evidence: 1218036 bytes. S6 closes; S7 horizontal movement is next, not yet admitted.
+
+
+## S7 admission: horizontal movement primitive and entries
+
+S6 closed in 7a18044. Transfer-161 receives six incomplete labels from
+T17 S6: MoveEnemyHorizontally, MovePlayerHorizontally, MoveObjectHorizontally,
+SaveXSpd, UseAdder and ExXMove. Baseline 855 / 1,992; expected six, maximum
+861. Original $BF02-$BF4C has one shared owner in game/world/movement.c.
+
+Preserve enemy INX and ObjectOffset return contract; player loads
+JumpspringAnimCtrl, returns it without writes when nonzero, otherwise selects
+SprObject offset zero. The common routine writes fraction to $01, signed
+integer to $00 and page adder to $02. Fractional ADC carry feeds X-position
+ADC; that carry feeds page ADC. Return original fractional carry plus signed
+integer in A. Do not infer carry by comparing only the wrapped result.
+ExXMove is also a later vertical-adapter return target; S7 proves its return
+semantics through the horizontal entries, without crediting S8 interiors.
+
+Remove duplicate player arithmetic and expose the common/ enemy displacement
+as portable byte return values. Audit production call sites and update test
+stubs for the declared ABI; represent source X restoration through the
+existing caller slot/ObjectOffset contract, never an emulated CPU at runtime.
+No vertical movement, friction, collision, drawing or platform algorithm
+repair belongs here. S8/S9 retain vertical and gravity responsibilities.
+
+ROM proof compares original entry/return RAM plus returned displacement on
+ordinary NMI player, enemy and other SprObject paths, including jumpspring
+blocked/unblocked cases and positive/negative fractional/page carries.
+No PC, stack, ROM or reference output patching. Independent native arithmetic
+checks enumerate all speed/fraction bytes with boundary positions/pages and
+valid object offsets, verify whole write footprint and zero-write early exit.
+Run relevant actor/player/lifetime regressions, strict C90 x86/x64, DOS16 link,
+platform purity and bounded window probes; refresh three owner-authorized
+EXEs at P closure. Keep child, full-frame and unrelated failures explicit.
+
+Use existing owner-local ROM/listing as local research only; no third-party
+implementation import or redistribution claim. All temporary research and
+builds belong under ignored build/m2-t37-s7. Raw trace budget four MB, each
+recorder timeout twenty seconds; cleanup owner S7. Before closure, record all
+six dispositions, both verification tracks, tracker/ledger and artifact
+hashes. DOS remains link-only. No completion credit from compilation alone.
+
+
+## S7 original horizontal movement proof
+
+S7/P1 completes MoveEnemyHorizontally, MovePlayerHorizontally,
+MoveObjectHorizontally, SaveXSpd, UseAdder and ExXMove: expected six,
+actual six, no scoped transfers. Progress 855 -> 861 / 1,992.
+
+| Node | Shared mapping and original contract |
+| --- | --- |
+| MoveEnemyHorizontally $BF02 | world/movement.c increments enemy slot to SprObject offset and returns the common byte displacement. Original X restoration is a caller/ObjectOffset contract, not a runtime CPU register. |
+| MovePlayerHorizontally $BF09 | player.c keeps the jumpspring gate; nonzero control returns unchanged with no writes; otherwise delegates offset zero to the common primitive. |
+| MoveObjectHorizontally $BF0F | world/movement.c writes fraction $01, accumulates force, carries into X, then carries into page; retains the original fractional carry for its return. |
+| SaveXSpd $BF23 | Signed integer nibble is written to $00, including negative extension. |
+| UseAdder $BF2C | Zero or $FF page adder goes to $02 before movement. |
+| ExXMove $BF4C | Return the byte displacement, or the blocked player's loaded control. The later vertical entry shares this RTS but receives no S7 implementation credit. |
+
+The original $BF02-$BF4C stream defines source order and byte arithmetic.
+Remove the duplicate player arithmetic: player and enemy wrappers now reach
+one common implementation. Generic/enemy APIs return mysmb_u8 instead of
+void; existing callers may ignore it, while player movement keeps storing
+the actual result in Player_X_Scroll. No vertical/friction/collision or
+platform algorithm changes. Source C uses no emulated CPU at runtime.
+
+Ninety-six ordinary NMI routes provide 32 original entries each for player,
+enemy and direct block SprObject movement. All six nodes are reached; all
+three conditional branches have both outcomes. Positive, negative and zero
+returns are observed, with blocked/unblocked player gates. The read-only
+observer captures original A at the real stack return; it also checks enemy
+X against ObjectOffset and direct movement X against its entry offset.
+No original PC, stack, ROM or output is patched. Observed/unobserved frame
+outputs and separately observed coverage snapshots are byte-identical.
+
+Both final widths match all 192 original roots across 1,799 RAM bytes,
+including every zero-page scratch byte, plus all 192 original return-A
+values. CPU stack is excluded except original digit modifiers. This is
+actual execution of the whole horizontal group with no child-return
+substitution, not a mock-child proof. It does not certify upstream enemy
+or player logic or unrelated full-game output.
+
+Independent native checks use signed fixed-point world-position arithmetic,
+not a copied instruction sequence. Per width, 2,360,832 cases cover all speed
+and fractional bytes, boundary positions/pages, seven object offsets,
+player and all six enemy entries, the entire RAM write footprint and return.
+All 255 nonzero jumpspring values return unchanged without any RAM write.
+The tests use host-only wide arithmetic; production remains portable C90.
+
+Ten ABI-focused actor/lifetime regressions and 36 surrounding regressions
+pass. The changed caller-test stubs match the byte-return ABI; callers that
+discard A retain their original behavior. All 81 shared source files compile
+under strict C90 on x86/x64; Windows self-tests and hidden-window message
+probes pass. DOS16 links with the known OLDNAMES warning and remains
+link-only, without resource-binding or physical 486SX qualification.
+Platform purity passes and no platform source changed.
+
+The similar-issue sweep covers every production horizontal call: player
+movement, normal/jumping/frenzy enemies, cannon, fireballs, hammers, block
+lifetime and remaining legacy object entries. Only player/common duplicate
+arithmetic is consolidated here. Callers that are still awaiting source-order
+migration, including platform-object consumers, receive no completion credit;
+the now-available return value does not itself repair those callers. Prior
+score scratch, drawing, VRAM high-row and full-frame debts remain open.
+
+Reproduce with mysmb_horizontal_movement_smoke and
+mysmb_horizontal_snapshot_check. Record `--fixture=t37-horizontal=N` (0-95)
+with `--horizontal-snapshot=...`; collect `--pc-coverage=...` separately.
+Run `python test/verify_horizontal_snapshots.py <ignored-directory> <owner-rom>`.
+Raw evidence stays under ignored build/m2-t37-s7, below four MB. The three
+owner-authorized local test artifacts below are not redistribution or full
+M2 completion evidence.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256369 | cdaf06338de6411e669e83ee82b8c463ee4c6e4f61d43d7c83a6858e91a02abd |
+| mysmb32.exe | 330115 | 676c48db51eede4db9646a1a1909d906219a4857a10575cd10de8371dc16722a |
+| mysmb64.exe | 338649 | 560f3a11d43077b70a7671f9d166ee8b31df4b27e29e221a906a1d3bcc8f50b0 |
+
+Retained raw evidence: 3638691 bytes. S7 closes; S8 vertical adapters is next, not yet admitted.

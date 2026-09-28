@@ -11,9 +11,9 @@ void mysmb_world_impose_gravity_misc(struct mysmb_game *game, mysmb_u8 slot, mys
 /* ROM ImposeGravity/MoveObjectHorizontally with a caller-selected SprObject offset. */
 void mysmb_world_impose_gravity_spr_object(struct mysmb_game *game, mysmb_u8 offset,
                                             mysmb_u8 downward_force, mysmb_u8 maximum_speed);
-void mysmb_world_move_spr_object_horizontally(struct mysmb_game *game, mysmb_u8 offset);
+mysmb_u8 mysmb_world_move_spr_object_horizontally(struct mysmb_game *game, mysmb_u8 offset);
 /* ROM MoveEnemyHorizontally: increments to the enemy SprObject offset. */
-void mysmb_world_move_enemy_horizontally(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_world_move_enemy_horizontally(struct mysmb_game *game, mysmb_u8 slot);
 
 /* ROM $dc71 BoundingBoxCore and $dcf6 PlayerCollisionCore.  These are
  * shared game-state primitives: actor routes select their boxes and act on
