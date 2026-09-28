@@ -2,30 +2,30 @@
 
 ## Current Work
 
-**M2 T36 S3 is closed at 794 / 1,992: six coin allocation caller nodes proven; S4 misc lifetime is next.**
+**M2 T36 S4 is closed at 800 / 1,992: six misc lifetime nodes proven; S5 score and HUD handoff is next.**
 
-## M2 T36 S3 Packet
+## M2 T36 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T36 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 execution after closed S2 commit ecf4ca1; coordinator accepts transfer-150. |
-| Objective | Complete six coin creation and misc allocation nodes in original order. |
-| Non-goals | No score-child algorithm repair or misc actor lifetime implementation. |
-| Reference Baseline | 788 / 1,992; four mapped and two open labels; six expected matches, maximum 794. Exact names in proposal and admission JSON. |
-| Candidate Proposal | [Coin allocation chain](../proposals/m2/misc-object-chains.md#s3-admission-coin-creation-and-misc-allocation). |
-| Files And ABI Surface | Shared coin owner, creation/score child call boundaries, tests/recorder, build lists and three EXEs. |
+| Identifier Mode | M2 T36 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 execution after S3 commit 254e339; coordinator accepts transfer-151. |
+| Objective | Complete six misc dispatch and jumping coin lifetime nodes in original order. |
+| Non-goals | No drawing/collision child algorithm repair, score or power-up work. |
+| Reference Baseline | 794 / 1,992; two mapped and four open labels; six expected, maximum 800. Exact names in proposal and admission JSON. |
+| Candidate Proposal | [Misc lifetime chain](../proposals/m2/misc-object-chains.md#s4-admission-misc-dispatch-and-jumping-coin-lifetime). |
+| Files And ABI Surface | Shared misc owner, existing graphics/box child seams, tests/recorder, build lists and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and ledger. |
-| Verification | Original branches/carry/reads/writes/calls at natural NMI entries; separate actual-child comparisons, native focused tests and three builds. |
-| Expected Markers | Slot 8/7/6 scan and fallback; CPY/SBC/ASL/ADC carry; source coordinates; untouched fractions; sound/ObjectOffset/score/1-up tally order. |
+| Verification | Original branch/read/write/call proof from ordinary NMI root and children; separate actual-child diagnostics, native tests and three builds. |
+| Expected Markers | Every-slot ObjectOffset; descending high-bit dispatch; state-one gravity; speed-five transition; state30 retirement; scroll carry and child order. |
 | Asset Needs | Existing local ROM/listing, bounded ignored traces, three owner-authorized EXEs; DOS link-only. |
 | Reporting Requirements | Six exact dispositions, both proof tracks, child limits, tracker and hashes. |
-| Stop Conditions | Unadmitted algorithm repair, reference mutation, masked mismatch or platform gameplay. |
+| Stop Conditions | Unadmitted child repair, reference mutation, masked mismatch or platform gameplay. |
 | Exit Criteria | Every received node proven or accepted transfer; tracker, evidence and artifacts agree. |
 | Original Owner Request | Faithful original logic and call structure in shared native C for DOS16/Win32/x64; source order and chain delivery. |
-| Similar-Issue Sweep | Every coin creation/allocation caller, score call and 1-up tally mutation. |
+| Similar-Issue Sweep | Every misc dispatcher caller, state/slot writer, gravity and graphics/box consumer. |
 
-T36 S2 closed ten hammer lifecycle nodes in ecf4ca1; 126 caller and 126 actual-child matches. Prior debts remain explicit.
+T36 S3 closed six coin creation/allocation caller nodes in 254e339; the GiveOneCoin extra-life sound gap remains with planned S5.
 
 ## T35 closure summary
 

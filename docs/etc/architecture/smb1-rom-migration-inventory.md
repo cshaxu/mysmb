@@ -935,12 +935,12 @@ The labels and branches behind every line remain open until individually bound b
 | 7025 | `FindEmptyMiscSlot` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
 | 7027 | `FMiscLoop` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
 | 7033 | `UseMiscS` | M2 T36 S3 shared game/coin.c | ROM-match complete | [S3 coin allocation caller proof](../../proposals/m2/misc-object-chains.md#s3-original-coin-allocation-proof) |
-| 7038 | `MiscObjectsCore` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-miscobjectscore) |
-| 7040 | `MiscLoop` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscloop) |
-| 7053 | `ProcJumpCoin` | T22 responsibility; `objects.c`: `mysmb_objects_step_misc`, `mysmb_objects_step_hammer`; game OAM helper | mapped; evidence incomplete | [T24 historical/current owner audit](m2-t24-s1-full-node-census.md#node-procjumpcoin) |
-| 7071 | `JCoinRun` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jcoinrun) |
-| 7088 | `RunJCSubs` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-runjcsubs) |
-| 7093 | `MiscLoopBack` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-miscloopback) |
+| 7038 | `MiscObjectsCore` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7040 | `MiscLoop` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7053 | `ProcJumpCoin` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7071 | `JCoinRun` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7088 | `RunJCSubs` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
+| 7093 | `MiscLoopBack` | M2 T36 S4 shared game/misc.c | ROM-match complete | [S4 misc lifetime proof](../../proposals/m2/misc-object-chains.md#s4-original-misc-lifetime-proof) |
 | 7100 | `CoinTallyOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cointallyoffsets) |
 | 7103 | `ScoreOffsets` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-scoreoffsets) |
 | 7106 | `StatusBarNybbles` | T22 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-statusbarnybbles) |

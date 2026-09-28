@@ -163,7 +163,6 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
 static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                                mysmb_u8 slot,
                                                mysmb_u8 control);
-static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot);
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
@@ -449,7 +448,7 @@ void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
 }
 
 /* ROM JCoinGfxHandler / DrawFloateyNumber_Coin. */
-static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
+void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 oam_offset;
     mysmb_u8 relative_x;
@@ -482,60 +481,18 @@ static void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
     game->ram[(mysmb_u16)(0x0207U + oam_offset)] = relative_x;
 }
-/* ROM $bb96-$bbd0 ProcJumpCoin and $bac4 ProcHammerObj, excluding OAM.
- * Misc_State d7 selects the hammer route exactly as MiscObjectsCore does. */
-void mysmb_objects_step_misc(struct mysmb_game *game)
+/* Existing clipped GetMiscBoundBox path used by jumping coins.
+ * Exposing this boundary does not certify or alter its child algorithms. */
+void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 slot;
-
-    /* ROM MiscObjectsCore starts with X=$08 and decrements through zero.
-     * Relative/offscreen results are fixed scratch cells, so the final active
-     * object must be the lowest occupied slot. */
-    for (slot = 8U;; --slot) {
-        if (game->ram[MYSMB_MISC_STATE + slot] == 0U) {
-            if (slot == 0U) break;
-            continue;
-        }
-        if ((game->ram[MYSMB_MISC_STATE + slot] & 0x80U) != 0U) {
-            /* MiscLoop supplies X through ObjectOffset before this child. */
-            game->ram[0x0008U] = slot;
-            mysmb_objects_step_hammer(game, slot);
-            if (slot == 0U) break;
-            continue;
-        }
-        if (game->ram[MYSMB_MISC_STATE + slot] == 1U) {
-            mysmb_world_impose_gravity_misc(game, slot, 0x50U, 6U);
-            if (game->ram[MYSMB_MISC_Y_SPEED + slot] == 5U) game->ram[MYSMB_MISC_STATE + slot]++;
-        }
-        else {
-            mysmb_u8 old_x;
-            mysmb_u8 scroll_amount;
-
-            game->ram[MYSMB_MISC_STATE + slot]++;
-            old_x = game->ram[MYSMB_MISC_X + slot];
-            scroll_amount = game->ram[MYSMB_SCROLL_AMOUNT];
-            game->ram[MYSMB_MISC_X + slot] =
-                (mysmb_u8)(old_x + scroll_amount);
-            /* ROM ProcJumpCoin: carry from X + ScrollAmount advances page. */
-            if (game->ram[MYSMB_MISC_X + slot] < old_x)
-                game->ram[MYSMB_MISC_PAGE + slot]++;
-            if (game->ram[MYSMB_MISC_STATE + slot] == 0x30U) game->ram[MYSMB_MISC_STATE + slot] = 0U;
-        }
-        if (game->ram[MYSMB_MISC_STATE + slot] != 0U) {
-            mysmb_oam_relative_misc_position(game, slot);
-            mysmb_oam_get_misc_offscreen_bits(game, slot);
-            mysmb_world_set_bounding_box(game,
-                (mysmb_u16)(0x04d0U + slot * 4U),
-                game->ram[MYSMB_MISC_BOUND_BOX + slot],
-                game->ram[0x03b3U], game->ram[0x03beU]);
-            mysmb_world_clip_bounding_box_to_screen(game,
-                (mysmb_u16)(0x04d0U + slot * 4U),
-                game->ram[MYSMB_MISC_PAGE + slot],
-                game->ram[MYSMB_MISC_X + slot]);
-            mysmb_objects_draw_jump_coin(game, slot);
-        }
-        if (slot == 0U) break;
-    }
+    mysmb_world_set_bounding_box(game,
+        (mysmb_u16)(0x04d0U + slot * 4U),
+        game->ram[MYSMB_MISC_BOUND_BOX + slot],
+        game->ram[0x03b3U], game->ram[0x03beU]);
+    mysmb_world_clip_bounding_box_to_screen(game,
+        (mysmb_u16)(0x04d0U + slot * 4U),
+        game->ram[MYSMB_MISC_PAGE + slot],
+        game->ram[MYSMB_MISC_X + slot]);
 }
 
 /* ROM $bbc5 SetupPowerUp.  Slot five is reserved by the original object

@@ -19,6 +19,7 @@ $sources = @(
     'game/vine.c',
     'game/hammer.c',
     'game/coin.c',
+    'game/misc.c',
     'game/enemy/lifecycle.c',
     'game/enemy/normal.c',
     'game/enemy/background.c',

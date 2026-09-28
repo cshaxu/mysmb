@@ -5,7 +5,7 @@
 The original lines 6730-7200 contain 56 labels. Fourteen cannon/bullet nodes
 retain T31 S2 accepted proof. The six chains below target 41 incomplete labels,
 maximum 813 from incoming 772. Their current receiver is T24 S2 until each S
-is admitted. S1-S3 are closed; S4 misc lifetime is next. Numeric S entries below are a plan within
+is admitted. S1-S4 are closed; S5 score and HUD handoff is next. Numeric S entries below are a plan within
 this T; only individual receipt enables implementation.
 
 PowerUpObjHandler (line 7184) begins a state machine continuing into the next
@@ -499,3 +499,131 @@ Final owner-authorized local P1 artifacts:
 
 Retained raw evidence: 2182652 bytes, below four MB.
 Six received labels complete, six expected; no received-node transfers. Progress 788 -> 794 / 1,992. T36 remains open for S4-S6 and its next-slice consumer exception.
+
+## S4 admission: misc dispatch and jumping coin lifetime
+
+Transfer-151 receives MiscObjectsCore and ProcJumpCoin (mapped; evidence
+incomplete), MiscLoop, JCoinRun, RunJCSubs and MiscLoopBack (open). Scope
+and expected matches are those six labels. Baseline 794 / 1,992, maximum 800.
+Original MiscObjectsCore entry $BB96 through MiscLoopBack ends at $BBF7.
+Shared game/misc.c owns the complete descending dispatcher and coin states;
+the proven S2 hammer entry and S3-created coin state are its dependencies.
+
+Preserve ObjectOffset on every slot including empty entries, zero/high-bit
+dispatch, exact state-one gravity and speed-five transition, floatey-state
+increment/scroll carry and exact 30 retirement, then relative/offscreen/box/
+graphics order. Restore source gravity scratch 00=50,01=03,02=06 and the
+ObjectOffset reload. Child return-slot contracts govern the descending loop.
+Expose existing coin graphics and its existing clipped bounding-box path
+without changing child algorithms. Hammer and coin currently use differing
+legacy box children; their eventual unification belongs to the collision
+receipt, not an unadmitted algorithm repair here.
+
+ROM proof uses source RAM at ordinary NMI/GameEngine -> MiscObjectsCore,
+with empty, single and mixed active arrays, both high-bit states, speed and
+state boundaries, scroll carry and retirement. Observe the real root and
+direct-child entry/return from actual stack state, never patch CPU, stack,
+ROM or outputs. Record direct call arguments, persistent writes, branch
+outcomes and separate actual-child differences. Native focused tests cover
+all byte states, slot/loop order, scratch and reload contracts, page carry
+and child sequencing. One final operational pass runs relevant regressions,
+x86/x64 strict C90 builds, DOS16 link, platform purity, hidden-window probes
+and three owner-authorized local EXEs. DOS remains link-only.
+
+The existing owner ROM and reviewed listing remain local research inputs;
+no third-party implementation is imported. Temporary outputs stay below
+ignored build/m2-t36-s4, twenty seconds per reference run and four MB raw
+batch; S4 owns containment through T review. S5 score and S6 power-up work
+remain unadmitted. Sweep all misc dispatcher callers, state/slot writers,
+gravity users and drawing/box consumers. Closure requires six exact node
+dispositions, both proof tracks, tracker/ledger and artifact hashes.
+
+### S4 implementation checkpoint (not closure)
+
+Admission gate passes: Total 1992, Complete 794, MappedPending 126, Open 1072,
+ScopeCount 6, ExpectedDelta 6, MaximumComplete 800. All six labels remain
+incomplete. The original descending misc loop now has one game/misc.c owner;
+objects.c retains the unchanged graphics and clipped box child algorithms
+behind declared interfaces. Every visited slot supplies ObjectOffset. Coin
+gravity now uses the shared sprite-object primitive with the original scratch
+parameters and reload, while retirement and graphics retain source ordering.
+
+Strict C90 compilation of changed units passes on x86/x64. Independent misc
+lifetime tests pass 13,825 cases per width, covering all byte states, all
+nine slots, speed 4/5/6, zero/nonzero scroll carry, exact state30 retirement,
+timer-independent coin dispatch, every-slot ObjectOffset and mixed descending
+child order. Original ROM root/child comparisons, actual-child diagnostics,
+final builds and three artifact updates remain pending before S4 closure.
+
+## S4 original misc lifetime proof
+
+All six received dispatcher/coin caller nodes are proven, 794 -> 800 / 1,992.
+One shared game/misc.c owns the complete descending loop; the former loop
+body is removed from objects.c. It writes ObjectOffset for empty as well as
+active slots, uses the original gravity scratch parameters and slot reload,
+and preserves state-one, speed-five and exact-state30 decisions.
+
+| Node | Address | Proven original contract |
+| --- | --- | --- |
+| MiscObjectsCore | $BB96 | Start the loop at slot eight |
+| MiscLoop | $BB98 | Store every slot; skip zero state; high bit selects the existing hammer child |
+| ProcJumpCoin | $BBA7 | State-one split; increment floating state; scroll addition with page carry; retire only at 30 |
+| JCoinRun | $BBC9 | Sprite offset +0D; force50/up03/max06; gravity; ObjectOffset reload; exact speed-five transition |
+| RunJCSubs | $BBE8 | Relative, offscreen, bounding box, coin graphics in source order |
+| MiscLoopBack | $BBF4 | Decrement restored misc slot and repeat while nonnegative |
+
+Forty-two controlled source-RAM scenarios use ordinary NMI/GameEngine. The
+original vertical-pipe caller runs ScrollHandler before MiscObjectsCore,
+providing both zero and one-pixel scroll without mid-call state writes. Cases
+include each slot independently, jumping/floating/retiring/hammer states,
+an empty array, nine floating objects, nine jumping coins, mixed arrays,
+state7F/30 boundaries and frozen hammer behavior. Both scroll carry outcomes
+are observed. All six conditional branch sites execute both outcomes and all
+six scoped labels execute. Real stack return addresses/depths delimit the
+root and direct children; no CPU, stack, ROM or output is patched.
+
+All 84 x86/x64 caller comparisons pass. They check child identity/slot and
+1,791 persistent RAM bytes, excluding scratch 0-7 and hardware stack except
+digit data 0133-0139. Original scratch constants are separately source-audited
+and asserted by the native gravity boundary test. Caller mode replays observed
+original child returns; separate builds execute the actual shared children.
+All 84 actual-child comparisons also match for these scenarios. This is
+bounded misc-root evidence, not new child-internal or whole-game certification.
+
+The recorder's contained child capacity is 64 for this nine-slot root (a full
+jumping array invokes 45 direct children); existing modes retain their prior
+16-child limit. Empty-array capture has zero children. Observed, coverage-enabled
+and unobserved frame outputs are byte-identical; observed/coverage root snapshots
+also agree. Reproduce misc_lifetime_fixture.h cases 0-41, one frame, warmup one,
+zero buttons, --fixture=t36-misc=N, --misc-lifetime-snapshot and --control-children;
+repeat with --pc-coverage and without observers. Both modes of
+misc_lifetime_snapshot_check.c and verify_misc_lifetime_snapshots.py check
+the declared node/branch/child/carry contracts without masking differences.
+
+Independent native tests pass 13,825 cases per width: every byte state, all
+nine slots, returned speeds 4/5/6, both scroll carry outcomes, exact retirement,
+timer-independent coin processing and mixed descending child order. Twenty
+block-array/OAM, hammer, bubble/fireball, player/status/mode and vine regressions
+pass. All 73 shared units compile in strict C90 on x86/x64; executable self-tests,
+two-second hidden-window/message probes and platform purity pass. DOS16 compiles
+and links with its known OLDNAMES warning, remaining link-only without resource
+binding, DOS playability or 486 qualification.
+
+The production dispatcher has one engine caller. Existing coin graphics and
+the coin-specific clipped bounding-box body are exposed unchanged. Hammer
+dispatch uses S2's original actor entry; no child conformance credit is added.
+The older specialized misc gravity helper now has no production caller;
+the dispatcher uses the shared sprite-object primitive. The previously recorded
+hammer/misc bounding-box difference and S3 GiveOneCoin sound defect remain
+explicit. No platform source or other object lifetime is modified.
+
+Final owner-authorized local P1 artifacts:
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258345 | 431697e1e6095f26b0b815adecf7e7c81af9a101d0e515d0d5d57a46458ed496 |
+| mysmb32.exe | 328676 | 32646c7353541430b5c707d9414bfba0de9dd67034a8a2df4ac5826a68ed6374 |
+| mysmb64.exe | 336927 | d9fd0f699fd642449f1b7e62f0d6da50e3c1009e7c1d747c2293a9a5bdae688c |
+
+Retained raw evidence: 2315854 bytes, below four MB.
+Six received labels complete, six expected; no received-node transfers. Progress 794 -> 800 / 1,992. T36 remains open for S5-S6 and its next-slice consumer exception.
