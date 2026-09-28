@@ -594,6 +594,8 @@ add_test(NAME mysmb.rom-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_rom_codegen.py)
 add_test(NAME mysmb.asm-index
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_asm_index.py)
+add_test(NAME mysmb.enemy-data-bindings-synthetic
+         COMMAND ${Python3_EXECUTABLE} -B ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_enemy_data_audit.py)
 add_test(NAME mysmb.boot-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_boot_codegen.py)
 add_test(NAME mysmb.title-codegen

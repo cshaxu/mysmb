@@ -4,33 +4,32 @@
 
 **Idle.**
 
-**M2 T30 S14 is closed at 506 / 1,992; all 23 scoped nodes match.**
+**M2 T30 S15 is closed at 506 / 1,992; 34 data bindings mapped, zero new matches.**
 
-The pointer/header chain is complete and TerminateGame is restored. Three
-EXEs are refreshed. No S is active; level-stream data begins the next
-unadmitted source chain. DOS link is not playability; legacy timer-smoke
-failures and dispatcher/NextArea gaps remain recorded.
+All 34 enemy streams are bound and accepted with their unfinished consumer
+under T19 S5. S14 three EXEs remain unchanged and verified. No S is active;
+L_CastleArea1 starts the next scene-data chain.
 
-## M2 T30 S14 Packet (closed)
+## M2 T30 S15 Packet (closed)
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T30 S14, continuation in original source order. |
-| Admission And Approval | Owner-approved M2 continuation; transfer-112 receives 22 nodes; transfer-113 joins loopback data with its existing consumer owner; corrective transfer-114 receives TerminateGame from T29 S4. |
-| Objective | Complete the 22-node pointer/header chain and restore its TerminateGame caller Silence write; source-index tool correction is admitted. |
-| Non-goals | No loopback runtime, GameCoreRoutine repair, level-stream certification, actor policy or platform logic; parent credit only for admitted TerminateGame. |
-| Reference Baseline | Revised 483 / 1,992; 22 open labels and revoked TerminateGame; expected 23, maximum 506. |
-| Candidate Proposal | [T30 area objects](../proposals/m2/t30-area-object-rendering.md#t30s14-admission-area-pointer-and-header-chain). |
-| Files And ABI Surface | Shared area data owner, original initialization/title/terminal callers, tests/recorders, node records and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture, coding, documentation, source policy and node ledger. |
-| Verification | Source table/control/write/call-order audit; 36 world entries and 34 legal area-slot original-ROM routes; independent native matrix, x86/x64, DOS16 link, purity, startup and package. |
-| Expected Markers | Pointer/type ownership, byte indexing, stale-state replacement, conditional header stores, pointer carry and source caller order. |
-| Asset Needs | Refresh three tracked EXEs under owner mandate; DOS remains link evidence only. |
-| Reporting Requirements | Exact labels/counts, table bindings, dual evidence, consumer handoff and hashes. |
-| Stop Conditions | Unmatched source branch/write/order, missing route, unadmitted dependency or platform gameplay. |
-| Exit Criteria | All scoped labels have both evidence tracks or exact unfinished disposition; loopback table remains explicitly open with its consumer. |
-| Original Owner Request | Full original-ROM structure and semantics, shared portable C and node-level chain delivery. |
-| Similar-Issue Sweep | Every pointer/header consumer, stale cached type/offset, duplicate header calls and conditional state clearing. |
+| Identifier Mode | M2 T30 S15, audit-only source-order continuation. |
+| Admission And Approval | Owner-approved M2 continuation; coordinator admits concrete enemy-data consumer dependency audit. |
+| Objective | Bind all 34 enemy streams and transfer their unfinished consumer proof to existing T19 S5. |
+| Non-goals | No enemy runtime migration, scene data, dispatcher, platform logic or conformance credit. |
+| Reference Baseline | 506 / 1,992; 34 open labels; expected zero, maximum 506. |
+| Candidate Proposal | [T30 S15](../proposals/m2/t30-area-object-rendering.md#t30s15-admission-enemy-data-binding-and-consumer-handoff). |
+| Files And ABI Surface | Local binding checker, synthetic tests, neutral node records and accepted responsibility handoff; no runtime ABI changes. |
+| Applicable Rules | Task Reading Set, execution, coding, architecture, documentation, source policy and node ledger. |
+| Verification | Exact assembly/ROM spans, pointer bindings, record/terminator boundaries, consumer discrepancies; independent synthetic checker tests, purity and unchanged three-artifact checks. |
+| Expected Markers | 34 exact labels with byte spans and accepted consumer; no unproven completion marks. |
+| Asset Needs | Reuse unchanged S14 three EXEs with identity/self-test checks; DOS remains link-only. |
+| Reporting Requirements | Exact incomplete labels, source/C dependency, accepted receiver, neutral data metadata and dual-evidence limitations. |
+| Stop Conditions | Unexpected source layout, unknown record grammar, unbound pointer or unaccepted handoff. |
+| Exit Criteria | Every scoped data label has checked binding and an explicit accepted consumer proof obligation; no scope retained by this audit. |
+| Original Owner Request | Strict original-ROM graph and node equivalence in source order; avoid premature completion claims. |
+| Similar-Issue Sweep | All 34 enemy stream spans, all pointer-table entries and all row-0e area destinations; no implicit runtime certification. |
 
 ## Retained M2 T15 summary
 

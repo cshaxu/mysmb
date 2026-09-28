@@ -13,11 +13,11 @@ the conformance counts below.
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
 | ROM-match complete | 506 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 103 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 1,383 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Mapped / audited, not complete | 137 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 1,349 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **506 / 1,992 (25.40%)**. The 103 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **506 / 1,992 (25.40%)**. The 137 incomplete mappings remain individually listed below and in the canonical inventory.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -552,11 +552,45 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (103)
+## Mapped but not yet matched (137)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
+| 4550 | `E_CastleArea1` |
+| 4558 | `E_CastleArea2` |
+| 4565 | `E_CastleArea3` |
+| 4574 | `E_CastleArea4` |
+| 4583 | `E_CastleArea5` |
+| 4589 | `E_CastleArea6` |
+| 4598 | `E_GroundArea1` |
+| 4606 | `E_GroundArea2` |
+| 4613 | `E_GroundArea3` |
+| 4619 | `E_GroundArea4` |
+| 4627 | `E_GroundArea5` |
+| 4636 | `E_GroundArea6` |
+| 4643 | `E_GroundArea7` |
+| 4650 | `E_GroundArea8` |
+| 4656 | `E_GroundArea9` |
+| 4662 | `E_GroundArea10` |
+| 4666 | `E_GroundArea11` |
+| 4674 | `E_GroundArea12` |
+| 4679 | `E_GroundArea13` |
+| 4687 | `E_GroundArea14` |
+| 4695 | `E_GroundArea15` |
+| 4700 | `E_GroundArea16` |
+| 4704 | `E_GroundArea17` |
+| 4714 | `E_GroundArea18` |
+| 4722 | `E_GroundArea19` |
+| 4731 | `E_GroundArea20` |
+| 4738 | `E_GroundArea21` |
+| 4743 | `E_GroundArea22` |
+| 4751 | `E_UndergroundArea1` |
+| 4760 | `E_UndergroundArea2` |
+| 4769 | `E_UndergroundArea3` |
+| 4777 | `E_WaterArea1` |
+| 4783 | `E_WaterArea2` |
+| 4791 | `E_WaterArea3` |
 | 6298 | `ProcFireball_Bubble` |
 | 6352 | `FireballObjCore` |
 | 6519 | `ProcessWhirlpools` |

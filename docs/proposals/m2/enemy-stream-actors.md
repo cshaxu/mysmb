@@ -225,3 +225,16 @@ recreate those gates for each leaf.  A chain may not cross an unadmitted
 dependency, a different shared-owner boundary, or a branch family requiring a
 different ROM route.  The binding authority is
 [the M2 chain-delivery rule](../../rules/EXECUTION.md#m2-chain-based-s-delivery).
+
+## T30/S15 enemy-data receipt
+
+Coordinator accepts transfer-115: all 34 E_CastleArea, E_GroundArea,
+E_UndergroundArea and E_WaterArea names listed individually in the
+[T30 S15 binding table](t30-area-object-rendering.md#s15p1-enemy-data-bindings-and-accepted-consumer-debt)
+join existing T19 S5 ProcessEnemyData custody. The binding/framing audit is
+complete; runtime consumer proof remains required before any node match.
+At the planned enemy-stream admission, explicitly include the GroundArea8
+second-byte-MSB/page-select counterexample, GroundArea9/10 shared terminator,
+record cursor wrap, area-destination records and initializer Enemy_Flag gate.
+The data must accompany their actual consumer tests, not a standalone hash
+comparison or a synthetic replacement stream. No runtime fix is admitted here.

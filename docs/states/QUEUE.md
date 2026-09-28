@@ -12,10 +12,10 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 
 ## Current-chain transition
 
-T30/S14 is closed at 506 / 1,992: the pointer/header chain and its terminal
-caller are complete. The next unadmitted source chain starts at E_CastleArea1
-and level-stream data. AreaDataOfsLoopback stays open with its accepted
-ExecGameLoopback consumer owner, T19 S5.
+T30/S15 is closed at 506 / 1,992 with zero new matches. All 34 enemy data
+labels have exact bindings and an accepted T19 S5 consumer-proof obligation.
+The next unadmitted source chain starts at L_CastleArea1 (scene data).
+AreaDataOfsLoopback likewise remains with its T19 S5 runtime consumer.
 
 Every later M2 admission uses the source-order chain table defined by the
 recovery plan; it may not revive the retired fixed five-stage pattern. This

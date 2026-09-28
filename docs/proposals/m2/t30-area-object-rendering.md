@@ -1507,3 +1507,133 @@ node is unfinished. Revised **483 -> 506 / 1,992**, net 22 versus the original
 T30 remain open. No S is active; the next unadmitted source chain starts at
 E_CastleArea1 and the level-stream data, with the accepted loopback dependency
 remaining outside this completed chain.
+
+## T30/S15 admission: enemy-data binding and consumer handoff
+
+Audit-only continuation in source order, entry E_CastleArea1, exit
+E_WaterArea3 before the L_CastleArea1 scene-data boundary. Exact scope, all
+open, is:
+
+`E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3`.
+
+Baseline **506 / 1,992**; expected matches **none (0)**; maximum **506**.
+These data are read by ProcessEnemyData and its initialization/group/loop
+collaborators, still open under T19 S5. Concrete source/C differences include
+page-control versus second-byte-MSB processing order and unconditional C
+cursor advance after initialization instead of original Enemy_Flag gating.
+No enemy-runtime repair is admitted ahead of its source-order slice. A byte
+match alone cannot certify these consumers; that is the explicit zero-credit
+audit boundary allowed by the chain rule.
+
+Verify all 34 spans from the corrected assembly index, all byte literals
+against owner ROM, every two/three-byte record and terminator, all enemy
+pointer-table bindings, and every row-$0e destination against legal area
+slots. Add a reusable local-only binding checker with project-owned synthetic
+positive/negative tests. Report only neutral metadata, never stream bytes.
+Accept the exact data names into existing T19 S5 with ProcessEnemyData for
+planned enemy-stream admission, using an append-only transfer event. Scene
+data and dispatcher remain unadmitted. No platform/game runtime edits.
+
+Owner NROM and reviewed listing remain local research inputs; no third-party
+code is imported. Generated reports/fixtures remain under ignored
+build/m2-t30-s15, 1 MB output budget and twenty-second command limits.
+Operational checks: checker synthetic tests, source-policy containment,
+platform purity, existing x86/x64 self-tests and DOS MZ structural inspection;
+reuse S14's unchanged three binaries with hashes, rather than claim a new
+runtime build. All 34 nodes remain incomplete with an accepted consumer owner.
+
+## S15/P1: enemy data bindings and accepted consumer debt
+
+All 34 enemy labels bind to the original listing/ROM: **1,087 unique bytes**,
+34 low/high pointer entries and all four type-base indices. Enemy pointer
+order is castle/ground/underground/water; area type order is
+water/ground/underground/castle. The checker verifies the mapping rather
+than assuming those orders coincide. All row-$0e destination indices are
+within the original legal area slots.
+
+| Node | CPU start | Runtime end (exclusive) | Storage / consumed bytes | Ordinary / row-0f / row-0e records | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| `E_CastleArea1` | `0x9d70` | `0x9d97` | 39 / 39 | 18 / 1 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_CastleArea2` | `0x9d97` | `0x9db0` | 25 / 25 | 9 / 3 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_CastleArea3` | `0x9db0` | `0x9ddf` | 47 / 47 | 23 / 0 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_CastleArea4` | `0x9ddf` | `0x9e0a` | 43 / 43 | 19 / 2 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_CastleArea5` | `0x9e0a` | `0x9e1f` | 21 / 21 | 8 / 2 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_CastleArea6` | `0x9e1f` | `0x9e59` | 58 / 58 | 13 / 5 / 7 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea1` | `0x9e59` | `0x9e7e` | 37 / 37 | 18 / 0 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea2` | `0x9e7e` | `0x9e9b` | 29 / 29 | 11 / 3 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea3` | `0x9e9b` | `0x9ea9` | 14 / 14 | 3 / 2 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea4` | `0x9ea9` | `0x9ed0` | 39 / 39 | 10 / 3 / 4 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea5` | `0x9ed0` | `0x9f01` | 49 / 49 | 21 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea6` | `0x9f01` | `0x9f1f` | 30 / 30 | 11 / 2 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea7` | `0x9f1f` | `0x9f3c` | 29 / 29 | 14 / 0 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea8` | `0x9f3c` | `0x9f51` | 21 / 21 | 7 / 3 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea9` | `0x9f51` | `0x9f7c` | 42 / 43 | 18 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea10` | `0x9f7b` | `0x9f7c` | 1 / 1 | 0 / 0 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea11` | `0x9f7c` | `0x9fa0` | 36 / 36 | 15 / 1 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea12` | `0x9fa0` | `0x9fa9` | 9 / 9 | 1 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea13` | `0x9fa9` | `0x9fce` | 37 / 37 | 17 / 1 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea14` | `0x9fce` | `0x9ff1` | 35 / 35 | 16 / 1 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea15` | `0x9ff1` | `0x9ffa` | 9 / 9 | 2 / 2 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea16` | `0x9ffa` | `0x9ffb` | 1 / 1 | 0 / 0 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea17` | `0x9ffb` | `0xa035` | 58 / 58 | 25 / 2 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea18` | `0xa035` | `0xa060` | 43 / 43 | 18 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea19` | `0xa060` | `0xa08e` | 46 / 46 | 19 / 2 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea20` | `0xa08e` | `0xa0aa` | 28 / 28 | 10 / 2 / 1 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea21` | `0xa0aa` | `0xa0b3` | 9 / 9 | 1 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_GroundArea22` | `0xa0b3` | `0xa0d8` | 37 / 37 | 17 / 1 / 0 | Incomplete; accepted T19 S5 consumer proof |
+| `E_UndergroundArea1` | `0xa0d8` | `0xa105` | 45 / 45 | 18 / 1 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_UndergroundArea2` | `0xa105` | `0xa133` | 46 / 46 | 17 / 1 / 3 | Incomplete; accepted T19 S5 consumer proof |
+| `E_UndergroundArea3` | `0xa133` | `0xa160` | 45 / 45 | 0 / 4 / 12 | Incomplete; accepted T19 S5 consumer proof |
+| `E_WaterArea1` | `0xa160` | `0xa171` | 17 / 17 | 5 / 0 / 2 | Incomplete; accepted T19 S5 consumer proof |
+| `E_WaterArea2` | `0xa171` | `0xa19b` | 42 / 42 | 14 / 2 / 3 | Incomplete; accepted T19 S5 consumer proof |
+| `E_WaterArea3` | `0xa19b` | `0xa1af` | 20 / 20 | 8 / 0 / 1 | Incomplete; accepted T19 S5 consumer proof |
+
+E_GroundArea9 consumes E_GroundArea10's one-byte empty-stream terminator;
+its physical labeled span is shorter than its runtime stream. The checker
+preserves that shared boundary, not a copied or inserted terminator. Record
+counts above are byte framing, not a simulation of stateful page controls.
+The source/ROM checker is [smb_enemy_data_audit.py](../../../tools/smb_enemy_data_audit.py);
+its report excludes payload bytes and stays in ignored build output.
+
+Concrete consumer counterexample: E_GroundArea8 at offset sixteen, initial
+EnemyObjectPageLoc=0, EnemyObjectPageSel=0 and ScreenRight_PageLoc=255.
+Original CheckRightBounds first processes the second-byte MSB, increments
+page to one and sets page-select; CheckPageCtrlRow therefore branches to
+PositionEnemyObj. Behind the right boundary, CheckThreeBytes/Inc2B consumes
+one record, leaving page=1, cursor=18 and current-slot page=1. Current C
+handles the row-$0f control first, sets page ten, continues to the next record
+and leaves page=10, cursor=20 and current-slot page=10. A bounded native
+probe with immutable owner PRG confirms those C outputs. This is source-branch
+and native counterexample evidence, not a completed dynamic ROM-route claim.
+The existing initializer cursor-advance gate must also be audited with the
+consumer: original StrID advances only when initialization retains Enemy_Flag;
+current C advances unconditionally.
+
+Coordinator accepts transfer-115 from T18 S4 to existing T19 S5 for all 34
+names, with ProcessEnemyData. The planned enemy-stream slice must cover the
+MSB/page-select order, shared terminator, two/three-byte cursor behavior,
+initialization result and group/loop collaborators before certifying data.
+No future numeric task is admitted by this receipt. The next T30 source
+chain is L_CastleArea1 through scene data.
+
+Operational evidence: project-owned synthetic checker validates all 34
+pointer entries, shared terminator and destination framing, and rejects
+fourteen malformed framing/literal/pointer/base cases. The existing indexer
+synthetic test and platform-purity test pass. No runtime source or ABI changed.
+Three S14 products are intentionally unchanged: x86/x64 PE self-tests pass;
+DOS MZ declared size, relocations and header bounds agree. No fresh build or
+DOS playability is claimed for this audit P. Existing owner authorization
+covers retention of the three tracked products; no ROM/research byte is added.
+
+Artifact `mysmb16.exe`: 252913 bytes; SHA-256 `890EE21514B3C0EEED59D7BF4BBEBAEA57C0104D038A7F99F05D37C24B919C84`; MZ structure only.
+
+Artifact `mysmb32.exe`: 309473 bytes; SHA-256 `C0A3F43FCFA48C02CD97827020A08A71D95A7ACE0E9100E278CE37536CC114DD`; PE self-test passed.
+
+Artifact `mysmb64.exe`: 316466 bytes; SHA-256 `82A14582D72DEDB887B1B5CD551F31DC73E4DF4AB3917929F21FC9E0CF861D2B`; PE self-test passed.
+
+## S15 closure
+
+Expected/actual matches **0/0**; **506 / 1,992** remains unchanged. All 34
+scoped labels are now mapped but incomplete and accepted by T19 S5. Mapped
+incomplete is 137; open is 1,349. This audit retains no unfinished nodes.
+S15 is closed; T30 and M2 remain open. Scene data is the next unadmitted chain.
