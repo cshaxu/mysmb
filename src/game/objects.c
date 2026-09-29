@@ -625,13 +625,16 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
     mysmb_objects_check_enemy_side(game, slot);
 }
 
-/* Existing GetMiscBoundBox child seam. Screen-edge clipping remains an
- * independent child obligation; this extraction does not certify it. */
+/* ROM $E235 GetMiscBoundBox: the hammer shares the misc relative fields and
+ * takes the same BoundingBoxCore -> CheckRightScreenBBox route as a coin. */
 void mysmb_objects_get_hammer_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_world_set_bounding_box(game, (mysmb_u16)(0x04d0U + slot * 4U),
         game->ram[MYSMB_MISC_BOUND_BOX + slot], game->ram[0x03b3U],
         game->ram[0x03beU]);
+    mysmb_world_clip_bounding_box_to_screen(game,
+        (mysmb_u16)(0x04d0U + slot * 4U), game->ram[MYSMB_MISC_PAGE + slot],
+        game->ram[MYSMB_MISC_X + slot]);
 }
 /* ROM PlayerCollisionCore receives relative X coordinates.  Keep every
  * special-object path on the active 256-pixel screen before comparing its

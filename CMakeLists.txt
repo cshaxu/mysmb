@@ -1512,3 +1512,15 @@ target_link_libraries(mysmb_enemy_ground_query_actual_check PRIVATE mysmb_game)
 add_executable(mysmb_fireball_background_actual_check
     test/fireball_background_actual_check.c)
 target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_bounding_box_entry_actual_check
+    test/bounding_box_entry_actual_check.c)
+target_link_libraries(mysmb_bounding_box_entry_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_enemy_bounding_box_entry_actual_check
+    test/enemy_bounding_box_entry_actual_check.c)
+target_link_libraries(mysmb_enemy_bounding_box_entry_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_platform_bounding_box_entry_actual_check
+    test/platform_bounding_box_entry_actual_check.c)
+target_link_libraries(mysmb_platform_bounding_box_entry_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_misc_bounding_box_entry_actual_check
+    test/misc_bounding_box_entry_actual_check.c)
+target_link_libraries(mysmb_misc_bounding_box_entry_actual_check PRIVATE mysmb_game)

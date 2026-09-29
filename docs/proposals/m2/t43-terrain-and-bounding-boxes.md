@@ -372,6 +372,23 @@ Expected-new subset: `BoundBoxCtrlData`, `GetFireballBoundBox`, `GetMiscBoundBox
 | 12857 | `SetupEOffsetFBBox` | open | M2 T17 S6 |
 | 12866 | `MoveBoundBoxOffscreen` | open | M2 T17 S6 |
 
+
+#### S13 closure: Object bounding-box entry
+
+All eleven source-adjacent entry nodes are ROM-match complete. The shared
+`GetMiscBoundBox` route now applies `CheckRightScreenBBox` for hammers as the
+original does. Original entry/return records match 22 fireball calls, 16 normal
+enemy calls plus six controlled screen-edge vectors, 48 misc calls, and twelve
+small/large platform calls including their controlled edge vectors. These cover
+the left and right masks, whole-box offscreen branch, table binding and box
+writes. Focused fireball, hammer, platform-caller, terrain-chain and platform
+purity CTests pass. Strict Win32 x86/x64 builds self-test, and DOS16 links as
+an MZ image. Artifact SHA-256 values are
+`cbb0473990551c33047dcb624528528969edada1f77cb8eb6ee5eacf21cb5a55`
+(DOS16), `2f8a2699bd277eaf693500bb9bb67c8941f284aee3e16b2ef1b91f015254b279`
+(Win32 x86), and `5715ebbbc6a57a11e6325c4dd5b9ec1e2fd097e0eec8dd2d7f4487e1486e1768`
+(Win32 x64). Completion moves 1,492/1,992 to 1,503/1,992.
+
 ### S14: Bounding-box coordinates and edge clipping
 
 Source lines12878-12955; entry `BoundingBoxCore`; final label `NoOfs2`. Shared owner: `src/game/world/bounding_box.c`.

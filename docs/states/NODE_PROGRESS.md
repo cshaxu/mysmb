@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1492 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 414 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 1503 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 404 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1492 / 1,992 (74.90%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1503 / 1,992 (75.45%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S12 fireball background collision](../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-closure-fireball-background-collision)
-closes three source-adjacent collision nodes. Five controlled original routes
-and 22 retained core child records match owned writes; all three target builds
-pass their applicable validation.
+Latest task review: [T43 S13 object bounding-box entry](../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-closure-object-bounding-box-entry)
+closes eleven source-adjacent entry nodes. Original fireball, misc, enemy and
+platform calls including controlled edge routes match shared C box writes; all
+three target builds pass their applicable validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1492)
+## Completed matches (1503)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1523,12 +1523,23 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12751 | `FireballBGCollision` |
 | 12772 | `ClearBounceFlag` |
 | 12777 | `InitFireballExplode` |
+| 12791 | `BoundBoxCtrlData` |
+| 12805 | `GetFireballBoundBox` |
+| 12813 | `GetMiscBoundBox` |
+| 12819 | `FBallB` |
+| 12822 | `GetEnemyBoundBox` |
+| 12828 | `SmallPlatformBoundBox` |
+| 12833 | `GetMaskedOffScrBits` |
+| 12844 | `CMBits` |
+| 12850 | `LargePlatformBoundBox` |
+| 12857 | `SetupEOffsetFBBox` |
+| 12866 | `MoveBoundBoxOffscreen` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
-## Mapped but not yet matched (86)
+## Mapped but not yet matched (85)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1568,7 +1579,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 12805 | `GetFireballBoundBox` |
 | 14254 | `DrawFireball` |
 | 14283 | `DrawExplosion_Fireball` |
 | 14424 | `PlayerGraphicsTable` |

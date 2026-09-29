@@ -2,29 +2,29 @@
 
 ## Current Work
 
-**M2 T43 S12 is closed at 1,492/1,992: 3 scoped, 3 completed.**
+**M2 T43 S13 is closed at 1,503/1,992: 11 scoped, 11 ROM-match complete.**
 T43 covers 150 nodes; revised global maximum 1,517 retains the KillEnemies debt.
 
-## M2 T43 S12 Packet
+## M2 T43 S13 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S12, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer 232. |
-| Objective | `FireballBGCollision`, `ClearBounceFlag`, and `InitFireballExplode`. |
-| Non-goals | No fireball core/offscreen rewrite, no bounding-box entry work, no platform gameplay. |
-| Reference Baseline | 1,489/1,992; scope 3/expected 3, maximum 1,492. |
-| Candidate Proposal | [S12 fireball background collision](../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-fireball-background-collision). |
-| Files And ABI Surface | Shared world collision owner, fireball caller seam, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S13, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer 233. |
+| Objective | `BoundBoxCtrlData` through `MoveBoundBoxOffscreen`, including all source-adjacent bounding-box entries. |
+| Non-goals | No bounding-box coordinate-core rewrite, no collision geometry, no platform gameplay. |
+| Reference Baseline | 1,492/1,992; scope 11/expected 11, maximum 1,503. |
+| Candidate Proposal | [S13 object bounding-box entry selection](../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-object-bounding-box-entry-selection). |
+| Files And ABI Surface | Shared world bounding-box owner, affected caller seams, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original fireball Y/probe/Z paths, bounce/explosion writes and call order; separate native operational proof. |
-| Expected Markers | Original ordered Y gate, bottom probe, non-solid branch, bounce alignment and explosion tail. |
+| Verification | Original entry selection, control-table binding, offscreen mask/writes and call order; separate native operational proof. |
+| Expected Markers | Original fireball/misc/enemy/platform entries, masked offscreen bits and offscreen box move. |
 | Asset Needs | Owner-local nonredistributable ROM/listing; bounded records below ignored build. Three owner-authorized EXEs. |
-| Reporting Requirements | Three named dispositions, dual proof, retained dependency results and artifact hashes. |
+| Reporting Requirements | Eleven named dispositions, dual proof, retained dependency results and artifact hashes. |
 | Stop Conditions | Forced original CPU path, concealed descendant mismatch, unadmitted algorithm rewrite or platform gameplay. |
-| Exit Criteria | Met: three proved nodes, both proof tracks and three artifacts. |
+| Exit Criteria | Met: eleven proved nodes, both proof tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | Fireball collision callers, duplicate non-solid checks, bounce/explosion RAM writes and direct platform references. |
+| Similar-Issue Sweep | All bounding-box entry callers, control-data bindings, offscreen-bit masks, OAM box writes and direct platform references. |
 
 ## S8 closure
 
