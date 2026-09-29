@@ -81,6 +81,12 @@ void mysmb_world_fireball_enemy_collision(struct mysmb_game *game, mysmb_u8 slot
 void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 
+/* ROM ShellOrBlockDefeat: also entered directly by later contact callers. */
+void mysmb_world_shell_or_block_defeat(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing ChkToStunEnemies dependency; its body awaits source-order proof. */
+void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
+                            mysmb_u8 source_a);
+
 /* ROM CheckForClimbMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);
 mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,

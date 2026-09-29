@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1290 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 99 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1301 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 88 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 603 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,290 / 1,992 (64.76%)**. The 99 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,301 / 1,992 (65.31%)**. The 88 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S1 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s1-original-fireball-scan-proof)
-closes six scan nodes: 2,048/2,048 original caller comparisons; actual children
-match 920/2,048 with 1,128 explicit descendant differences. Prior 18,928
-actual matches remain. T42 is open; hit response is the next chain.
+Latest task review: [T42 S2 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s2-original-fireball-hit-proof)
+closes eleven hit-response nodes: 1,024/1,024 caller comparisons; all1,024
+actual-root comparisons retain a named $00 child scratch difference. Prior
+18,928 actor and920 scan matches remain. T42 is open; hammer contact is next.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1290)
+## Completed matches (1301)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1307,6 +1307,17 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11120 | `NotGoomba` |
 | 11135 | `NoFToECol` |
 | 11141 | `ExitFBallEnemy` |
+| 11145 | `BowserIdentities` |
+| 11148 | `HandleEnemyFBallCol` |
+| 11160 | `ChkBuzzyBeetle` |
+| 11167 | `HurtBowser` |
+| 11182 | `SetDBSte` |
+| 11189 | `ChkOtherEnemies` |
+| 11197 | `ShellOrBlockDefeat` |
+| 11204 | `StnE` |
+| 11215 | `GoombaPoints` |
+| 11220 | `EnemySmackScore` |
+| 11224 | `ExHCF` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |
@@ -1341,7 +1352,7 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (99)
+## Mapped but not yet matched (88)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1380,17 +1391,6 @@ counts and exact named lists. It does not validate semantics by itself.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 11145 | `BowserIdentities` |
-| 11148 | `HandleEnemyFBallCol` |
-| 11160 | `ChkBuzzyBeetle` |
-| 11167 | `HurtBowser` |
-| 11182 | `SetDBSte` |
-| 11189 | `ChkOtherEnemies` |
-| 11197 | `ShellOrBlockDefeat` |
-| 11204 | `StnE` |
-| 11215 | `GoombaPoints` |
-| 11220 | `EnemySmackScore` |
-| 11224 | `ExHCF` |
 | 11228 | `PlayerHammerCollision` |
 | 11256 | `ClHCol` |
 | 11258 | `ExPHC` |

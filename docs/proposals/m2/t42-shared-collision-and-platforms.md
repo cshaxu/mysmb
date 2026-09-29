@@ -36,7 +36,7 @@ caller regressions, DOS16 link, platform purity and three refreshed EXEs.
 ### S2: Fireball hit and defeat
 
 11 nodes; source lines 11145-11227; entry `BowserIdentities`, last label
-`ExHCF`. Sole shared owner: `src/game/world/fireball_enemy.c`.
+`ExHCF`. Sole shared owner: `src/game/world/fireball_hit.c`.
 Dependency boundary: S1 -> relative position, vertical initialization, stun and floating score.
 Original-ROM route/logic exit: Bowser duplicate selection, health and world identity, immunity, Piranha carry, state and score; downstream stun retains its owner.
 Operational exit: focused native chain cases on x86/x64, prior affected
@@ -331,3 +331,133 @@ Raw trace bytes: 24425273, below the admitted 90 MB budget.
 | mysmb16.exe | 259321 | 2cbf3eb0319cdced29685c782820bb89dd75c57e5ae54df4922c9b43c8ecb8d2 |
 | mysmb32.exe | 354449 | cb992e8ff35eef96bd3b67e68a681557d7d31bf2b71ed0a6f85e911e5af5d01f |
 | mysmb64.exe | 363070 | ba4c471be69a64b93fd06a06ff92f4d978f21691ee3639300241704de8473dd9 |
+
+## S2 admission: fireball hit response
+
+S1 closed in 34bac77. Coordinator accepts transfer-211 from M2 T17 S6.
+Baseline 1,290/1,992; eleven scoped/expected-new labels, maximum 1,301:
+
+`BowserIdentities` (audited; evidence incomplete), `HandleEnemyFBallCol` (audited; evidence incomplete), `ChkBuzzyBeetle` (audited; evidence incomplete), `HurtBowser` (audited; evidence incomplete), `SetDBSte` (audited; evidence incomplete), `ChkOtherEnemies` (audited; evidence incomplete), `ShellOrBlockDefeat` (audited; evidence incomplete), `StnE` (audited; evidence incomplete), `GoombaPoints` (audited; mismatch), `EnemySmackScore` (audited; evidence incomplete), `ExHCF` (audited; evidence incomplete).
+
+Original data $D736-$D73D and code $D73E-$D7C3. Extract the hit response
+into world/fireball_hit.c (separate from the scan caller so each keeps one
+bounded owner); expose ShellOrBlockDefeat for later source callers.
+Keep the unproved ChkToStunEnemies body in world/collision.c behind its
+named typed seam, without repairing it. Reuse existing relative-coordinate,
+InitVStf and floating-score owners. Prove their full input RAM and arguments;
+the source InitVStf returns A=0 and stun preserves X. Restore live $01 after
+relative position and Bowser defeat, exact immunity/defeat flow and Goomba
+score selection. Bowser table uses original world index without &7 aliasing;
+local bound PRG supplies out-of-table reads, legal table constants remain
+available to resource-free primitive tests. Missing resource is not a ROM
+equivalence case. No platform or unadmitted child algorithm changes.
+
+Logic route: naturally reached FireballEnemyCollision -> HandleEnemyFBallCol,
+bounded entry inputs for normal/duplicate actors, health zero/one/multiple,
+all worlds, immunity, Piranha carry and score branches. Full child input,
+source return contracts, instruction/branch coverage and separate actual-root
+comparison. Native route: mysmb.fireball-hit-chain, scan/core and affected
+collision tests on both widths, strict C90 builds, DOS16 link, platform
+purity, hidden windows and three refreshed EXEs. Preserve prior actual matches;
+report descendant differences separately. Per-node evidence remains required.
+
+Existing owner-local ROM/listing provenance and nonredistributable containment
+continue. Ignored build/m2-t42-s2: at most 1,024 fixtures, 90 MB raw records,
+twenty-second process deadlines and resumable checkpoints; coordinator owns
+cleanup after dependent regressions. Owner-authorized EXEs remain the standing
+delivery exception. DOS link-only; no whole-game equivalence assertion.
+Similar-issue sweep: duplicate hit/defeat owners, live slot reloads, source
+ID constants, ADC carry, Bowser table binding and child return values.
+All eleven nodes must be proved or explicitly transferred before closure.
+
+## S2 original fireball hit proof
+
+S2 P1 closes all eleven expected nodes: 1,290 -> 1,301/1,992. No scoped
+node is deferred or transferred. S3 hammer contact is next; T42 stays open.
+Admission gate confirmed eleven received incomplete labels and maximum1,301.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| BowserIdentities | Original $D736 table binding, all eight world consumers, no &7 alias; native bound-PRG tests cover all byte indices. ROM-match complete. |
+| HandleEnemyFBallCol | Relative-position call precedes live $01 reload; duplicate low-nibble selection falls back to the original live slot. ROM-match complete. |
+| ChkBuzzyBeetle | Buzzy immunity follows duplicate selection; direct Bowser enters the same health path. ROM-match complete. |
+| HurtBowser | Byte decrement including zero wrap, nonfatal exit and InitVStf X/A contract on lethal hit. ROM-match complete. |
+| SetDBSte | World < 3 selects state23, other worlds state20; original sound and live score slot. ROM-match complete. |
+| ChkOtherEnemies | Bullet Bill frenzy, Podoboo and IDs >=21 exit before stun/defeat. ROM-match complete. |
+| ShellOrBlockDefeat | Piranha CMP carry enters ADC18, producing Y+25 modulo256 and the original stun A input. ROM-match complete. |
+| StnE | Stun child preserves X; returned state low five bits are ORed with20. ROM-match complete. |
+| GoombaPoints | Post-stun ID5 earns control6, ID6 earns control1, other IDs control2. ROM-match complete. |
+| EnemySmackScore | Floating-score child receives original slot/control before Square1SoundQueue=8. ROM-match complete. |
+| ExHCF | Immunity, nonfatal Bowser and score paths retain exact return footprints. ROM-match complete. |
+
+Original code $D73E-$D7C3 and eight data bytes $D736-$D73D are checked
+directly against the owner-local PRG and reviewed listing. All 64 instructions
+execute. Both outcomes of twelve conditional branches execute; $D787 follows
+LDA #9 and therefore always takes its BNE, as in C. All eight Bowser identity
+consumers execute. 512 bounded routes reach HandleEnemyFBallCol through real
+NMI, FireballObjCore and FireballEnemyCollision, with entry-only RAM inputs.
+Normal and duplicate Bowser, duplicate non-Bowser fallback, immunity, health
+0/1/2, worlds0..7, Piranha carry/wrap, post-stun score and live $01 are covered.
+
+Full-input caller comparison passes 1,024/1,024 on x86/x64. Children are
+RelativeEnemyPosition, InitVStf, ChkToStunEnemies and SetupFloateyNumber.
+Original X/slot and A/score inputs are validated before recorded child RAM
+returns; relative position restores X from ObjectOffset (then the caller
+replaces it with $01), InitVStf preserves X and returns A0, and stun preserves
+X. Hardware return-stack storage is excluded; mapped $0109-$0139, scratch,
+queues and OAM backing are compared. No original code, CPU, PC, stack or
+output patch. Observer-free original frames equal observed originals; this
+does not compare native whole frames or certify child implementations.
+
+Actual-child comparison is deliberately reported separately: 0/1,024 exact
+RAM matches. Every difference is solely $00 in these fixtures: original
+RelativeEnemyPosition stores the input slot there, and the later original
+PlayerEnemyDiff child can overwrite it. Current relative-position and legacy
+stun descendants omit those scratch writes. RelativeEnemyPosition remains
+with M2 T16 S4; ChkToStunEnemies remains with M2 T17 S6 until its planned
+source admission. No other byte differs in this bounded matrix, and the
+former score-control mismatch is gone. This does not prove those children
+for other inputs or make the complete hit path ROM-equal.
+
+The production response moves to world/fireball_hit.c, leaving the scan
+owner independent. ShellOrBlockDefeat is a shared entry for later callers;
+no extra runtime path replaces it. The existing stun body is only exposed as
+an explicitly unproved dependency and is otherwise unchanged. Original
+InitVStf replaces duplicated initialization writes. Bowser's world index is
+unmasked; bound PRG supports the source indexed read, while the eight legal
+constants support resource-free primitive tests. An unbound out-of-domain
+read is not an equivalence case. No platform or emulator code is introduced.
+
+Similar-issue sweep covers live cached slots, duplicate Bowser selection,
+source ID constants, carry into Piranha Y, score selection, table indexing
+and all hit call sites. One old direct-call test omitted the source caller's
+$01=2 precondition and expected Goomba control2; it now supplies $01 and
+expects original control1. Existing collision/OAM suites then pass on both
+widths. Unadmitted terrain/contact approximations remain with their owners.
+
+Native proof passes 69,632 ID/Y/health/world combinations per width, plus
+relative-child live-slot mutation and all256 unmasked bound-PRG indices.
+Five CTests pass: hit, scan, dispatcher, core and platform purity. Fifteen
+initializer/platform suites per width pass. Prior actual matrix retains all
+18,928/29,434 matches; S1 independently retains all920/2,048, with no losses.
+These sample counts remain distinct from node completion counts.
+
+All112 shared C files compile under strict C90 for x86/x64; self-tests and
+hidden responsive windows pass. DOS16 compiles/links with the preexisting
+OLDNAMES warning. All three EXEs are refreshed. DOS remains link-only, with
+no claim of graphical playability, resource binding or 486SX performance.
+
+Reproduce fireball_hit_fixture.h cases0..511 using --fixture=t42-fireball-hit=N,
+--fireball-hit-snapshot, --control-children and --pc-coverage. The
+fireball_hit_snapshot_check caller harness checks child input/return contracts;
+enemy_loop_actual_check uses actual children. Native CTest is
+mysmb.fireball-hit-chain. Ignored build/m2-t42-s2 contains bounded records,
+case checkpoints and evidence summaries; coordinator owns later cleanup.
+
+Raw trace bytes: 9745484, below90 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 259497 | 19b9361640e0740d3632d94fe742a36adb5821b66090f09f2aca8030734f4479 |
+| mysmb32.exe | 356409 | 1c3e61fd893ce9ddda0f9361cabc3b8a4784652bebb222e9a7d90e8aaf4ad9d9 |
+| mysmb64.exe | 364039 | 5ff9cc3f857a73f1867d7eb634ffecd5e8301e0a6015a9f2a3f12820b85d447c |

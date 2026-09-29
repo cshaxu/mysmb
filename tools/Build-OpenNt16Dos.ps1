@@ -45,6 +45,7 @@ $sources = @(
     'game/enemy/platform.c',
     'game/enemy/actor_slots.c',
     'game/world/fireball_enemy.c',
+    'game/world/fireball_hit.c',
     'game/oam/fireworks_gfx.c',
     'game/enemy/firebar_children.c',
     'game/enemy/distance.c',

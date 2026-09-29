@@ -251,7 +251,7 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
 }
 /* ROM ChkToStunEnemies.  A is the source identifier except on the piranha
  * path, where the preceding ADC has deliberately made it the adjusted Y. */
-static void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
+void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
                                    mysmb_u8 source_a)
 {
     mysmb_u8 id;
@@ -277,63 +277,6 @@ static void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
     }
     game->ram[(mysmb_u16)(0x0058U + slot)] =
         (direction & 0x80U) == 0U ? 0x10U : 0xf0U;
-}
-
-/* ROM $d747 HandleEnemyFBallCol through EnemySmackScore.  This source node
- * owns the collision result's actor-state decisions; the only collaborators
- * are T16's fixed relative scratch and the Floatey consumer of that scratch. */
-void mysmb_world_handle_fireball_enemy_hit(struct mysmb_game *game,
-                                           mysmb_u8 enemy_slot)
-{
-    static const mysmb_u8 bowser_identities[8] =
-        { 6U, 0U, 2U, 18U, 17U, 7U, 5U, 45U };
-    mysmb_u8 current_slot;
-    mysmb_u8 target_slot;
-    mysmb_u8 id;
-    mysmb_u8 score;
-
-    current_slot = enemy_slot;
-    mysmb_oam_relative_enemy_position(game, current_slot);
-    target_slot = current_slot;
-    if ((game->ram[(mysmb_u16)(0x000fU + current_slot)] & 0x80U) != 0U) {
-        target_slot = (mysmb_u8)(game->ram[(mysmb_u16)(0x000fU + current_slot)] & 0x0fU);
-        if (game->ram[(mysmb_u16)(0x0016U + target_slot)] != 45U) {
-            target_slot = current_slot;
-        }
-    }
-    id = game->ram[(mysmb_u16)(0x0016U + target_slot)];
-    if (id == 2U) return;
-    if (id == 45U) {
-        game->ram[0x0483U]--;
-        if (game->ram[0x0483U] != 0U) return;
-        game->ram[(mysmb_u16)(0x00a0U + target_slot)] = 0U;
-        game->ram[(mysmb_u16)(0x0434U + target_slot)] = 0U;
-        game->ram[(mysmb_u16)(0x0058U + target_slot)] = 0U;
-        game->ram[0x06cbU] = 0U;
-        game->ram[(mysmb_u16)(0x00a0U + target_slot)] = 0xfeU;
-        game->ram[(mysmb_u16)(0x0016U + target_slot)] =
-            bowser_identities[game->ram[0x075fU] & 7U];
-        game->ram[(mysmb_u16)(0x001eU + target_slot)] =
-            game->ram[0x075fU] < 3U ? 0x23U : 0x20U;
-        game->ram[MYSMB_SQUARE2_SOUND] = 0x80U;
-        mysmb_objects_setup_floatey_from_relative(game, current_slot, 9U);
-        game->ram[MYSMB_SQUARE1_SOUND] = 8U;
-        return;
-    }
-    if (id == 8U || id == 12U || id >= 0x15U) return;
-    if (id == 13U) {
-        /* CMP #PiranhaPlant left carry set before ADC #$18. */
-        game->ram[(mysmb_u16)(0x00cfU + current_slot)] =
-            (mysmb_u8)(game->ram[(mysmb_u16)(0x00cfU + current_slot)] + 0x19U);
-        id = game->ram[(mysmb_u16)(0x00cfU + current_slot)];
-    }
-    mysmb_world_stun_enemy(game, current_slot, id);
-    game->ram[(mysmb_u16)(0x001eU + current_slot)] =
-        (mysmb_u8)((game->ram[(mysmb_u16)(0x001eU + current_slot)] & 0x1fU) | 0x20U);
-    id = game->ram[(mysmb_u16)(0x0016U + current_slot)];
-    score = id == 5U ? 6U : (id == 0U ? 1U : 2U);
-    mysmb_objects_setup_floatey_from_relative(game, current_slot, score);
-    game->ram[MYSMB_SQUARE1_SOUND] = 8U;
 }
 
 /* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use

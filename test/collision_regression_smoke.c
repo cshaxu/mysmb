@@ -671,13 +671,14 @@ int main(void)
     game.ram[0x001eU + 2U] = 0U;
     game.ram[0x0087U + 2U] = 0x60U;
     game.ram[0x00cfU + 2U] = 0x70U;
+    game.ram[0x0001U] = 2U; /* FireballEnemyCDLoop's live enemy offset. */
     mysmb_world_handle_fireball_enemy_hit(&game, 2U);
     if (game.ram[0x001eU + 2U] != 0x22U ||
         game.ram[0x00cfU + 2U] != 0x6eU ||
         game.ram[0x00a0U + 2U] != 0xfdU ||
         game.ram[0x0046U + 2U] != 1U ||
         game.ram[0x0058U + 2U] != 0x10U ||
-        game.ram[0x0110U + 2U] != 2U ||
+        game.ram[0x0110U + 2U] != 1U ||
         game.ram[0x0117U + 2U] != 0x40U ||
         game.ram[0x011eU + 2U] != 0x6eU ||
         game.ram[0x012cU + 2U] != 0x30U || game.ram[0x00ffU] != 8U) return 26;
