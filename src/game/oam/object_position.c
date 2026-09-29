@@ -25,9 +25,12 @@ enum {
     MYSMB_FIREBALL_RELATIVE_Y = 0x03baU,
     MYSMB_FIREBALL_OFFSCREEN_BITS = 0x03d2U,
     MYSMB_ENEMY_X = 0x0087U,
+    MYSMB_ENEMY_PAGE = 0x006eU,
+    MYSMB_ENEMY_Y_HIGH = 0x00b6U,
     MYSMB_ENEMY_Y = 0x00cfU,
     MYSMB_ENEMY_RELATIVE_X = 0x03aeU,
-    MYSMB_ENEMY_RELATIVE_Y = 0x03b9U
+    MYSMB_ENEMY_RELATIVE_Y = 0x03b9U,
+    MYSMB_ENEMY_OFFSCREEN_BITS = 0x03d1U
 };
 
 /* ROM RelativePlayerPosition.  This belongs with the other
@@ -109,7 +112,8 @@ mysmb_u8 mysmb_oam_get_x_offscreen_bits(struct mysmb_game *game,
 }
 
 /* ROM GetYOffscreenBits. */
-static mysmb_u8 mysmb_oam_get_y_offscreen_bits(mysmb_u8 high, mysmb_u8 y)
+static mysmb_u8 mysmb_oam_get_y_offscreen_bits(struct mysmb_game *game,
+                                              mysmb_u8 high, mysmb_u8 y)
 {
     static const mysmb_u8 data[9] = { 0U, 8U, 12U, 14U, 15U, 7U, 3U, 1U, 0U };
     static const mysmb_u8 default_on_screen[3] = { 4U, 0U, 4U };
@@ -124,11 +128,16 @@ static mysmb_u8 mysmb_oam_get_y_offscreen_bits(mysmb_u8 high, mysmb_u8 y)
     edge = 1U;
     for (;;) {
         difference = (mysmb_u8)(high_position[edge] - y);
+        game->ram[7U] = difference;
         borrow = high_position[edge] < y ? 1U : 0U;
         page_difference = (mysmb_u8)(1U - high - borrow);
         index = default_on_screen[edge];
         if ((page_difference & 0x80U) == 0U) {
             index = default_on_screen[(mysmb_u8)(edge + 1U)];
+            if (page_difference == 0U) {
+                game->ram[6U] = 0x20U;
+                game->ram[5U] = 4U;
+            }
             if (page_difference == 0U && difference < 0x20U) {
                 index = (mysmb_u8)(difference >> 3U);
                 if (edge == 0U) index = (mysmb_u8)(index + 4U);
@@ -138,6 +147,23 @@ static mysmb_u8 mysmb_oam_get_y_offscreen_bits(mysmb_u8 high, mysmb_u8 y)
         if (bits != 0U || edge == 0U) return bits;
         edge = 0U;
     }
+}
+
+/* ROM GetEnemyOffscreenBits -> GetOffScreenBitsSet.  The value-only helper
+ * remains for callers not yet migrated to the source scratch contract. */
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 x_bits;
+    mysmb_u8 y_bits;
+
+    x_bits = mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 1U),
+        game->ram[MYSMB_ENEMY_PAGE + slot], game->ram[MYSMB_ENEMY_X + slot]);
+    game->ram[0U] = (mysmb_u8)(x_bits >> 4U);
+    y_bits = mysmb_oam_get_y_offscreen_bits(game,
+        game->ram[MYSMB_ENEMY_Y_HIGH + slot],
+        game->ram[MYSMB_ENEMY_Y + slot]);
+    game->ram[0U] = (mysmb_u8)(game->ram[0U] | (mysmb_u8)(y_bits << 4U));
+    game->ram[MYSMB_ENEMY_OFFSCREEN_BITS] = game->ram[0U];
 }
 
 /* ROM GetFireballOffscreenBits -> GetProperObjOffset ->
@@ -151,7 +177,7 @@ void mysmb_oam_get_fireball_offscreen_bits(struct mysmb_game *game, mysmb_u8 slo
     x_bits = mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 7U),
         game->ram[MYSMB_FIREBALL_PAGE + slot],
         game->ram[MYSMB_FIREBALL_X + slot]);
-    y_bits = mysmb_oam_get_y_offscreen_bits(
+    y_bits = mysmb_oam_get_y_offscreen_bits(game,
         game->ram[MYSMB_FIREBALL_Y_HIGH + slot],
         game->ram[MYSMB_FIREBALL_Y + slot]);
     game->ram[MYSMB_FIREBALL_OFFSCREEN_BITS] =
@@ -181,7 +207,8 @@ void mysmb_oam_get_block_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
 
     x_bits = mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 9U),
         game->ram[MYSMB_BLOCK_PAGE + slot], game->ram[MYSMB_BLOCK_X + slot]);
-    y_bits = mysmb_oam_get_y_offscreen_bits(game->ram[MYSMB_BLOCK_Y_HIGH + slot],
+    y_bits = mysmb_oam_get_y_offscreen_bits(game,
+        game->ram[MYSMB_BLOCK_Y_HIGH + slot],
         game->ram[MYSMB_BLOCK_Y + slot]);
     game->ram[MYSMB_BLOCK_OFFSCREEN_BITS] =
         (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));
@@ -207,7 +234,8 @@ void mysmb_oam_get_misc_offscreen_bits(struct mysmb_game *game, mysmb_u8 slot)
 
     x_bits = mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 13U),
         game->ram[MYSMB_MISC_PAGE + slot], game->ram[MYSMB_MISC_X + slot]);
-    y_bits = mysmb_oam_get_y_offscreen_bits(game->ram[MYSMB_MISC_Y_HIGH + slot],
+    y_bits = mysmb_oam_get_y_offscreen_bits(game,
+        game->ram[MYSMB_MISC_Y_HIGH + slot],
         game->ram[MYSMB_MISC_Y + slot]);
     game->ram[MYSMB_MISC_OFFSCREEN_BITS] =
         (mysmb_u8)((x_bits >> 4U) | (y_bits << 4U));

@@ -22,32 +22,7 @@ static void hide(struct mysmb_game *g, mysmb_u8 o, mysmb_u8 b)
     }
 }
 
-/* ROM DrawEnemyObject, DrawSpriteObject, and CheckDefeatedState. */
-static void draw_half(struct mysmb_game *g, const mysmb_u8 *t, mysmb_u8 o,
-                      mysmb_u8 x, mysmb_u8 y, mysmb_u8 d, mysmb_u8 s,
-                      mysmb_u8 bits)
-{
-    mysmb_u8 r,q,l,rr,a,sl,sr;
-    for (r=0U; r<3U; ++r) {
-        q=(mysmb_u8)(o+r*8U); l=t[r*2U]; rr=t[r*2U+1U]; a=2U;
-        if ((d&2U)!=0U) { g->ram[0x0201U+q]=rr; g->ram[0x0205U+q]=l;
-            a|=0x40U; } else { g->ram[0x0201U+q]=l; g->ram[0x0205U+q]=rr; }
-        g->ram[0x0202U+q]=a; g->ram[0x0206U+q]=a;
-        g->ram[0x0200U+q]=(mysmb_u8)(y+r*8U); g->ram[0x0204U+q]=g->ram[0x0200U+q];
-        g->ram[0x0203U+q]=x; g->ram[0x0207U+q]=(mysmb_u8)(x+8U);
-    }
-    if ((s&0x20U)!=0U) {
-        for (r=0U; r<3U; ++r) { q=(mysmb_u8)(o+r*8U);
-            g->ram[0x0202U+q]|=0x80U; g->ram[0x0206U+q]|=0x80U; }
-        sl=g->ram[0x0201U+o]; sr=g->ram[0x0205U+o];
-        g->ram[0x0201U+o]=g->ram[0x0211U+o]; g->ram[0x0205U+o]=g->ram[0x0215U+o];
-        g->ram[0x0211U+o]=sl; g->ram[0x0215U+o]=sr;
-    }
-    hide(g,o,bits);
-}
-
-/* Existing EnemyGfxHandler Bowser rows. Orchestration owns the two slots;
- * generic graphics scratch/flip semantics retain their separate proof debt. */
+/* ROM $e87d-$eaf2 EnemyGfxHandler, front/rear Bowser route. */
 void mysmb_oam_draw_bowser_half(struct mysmb_game *g, mysmb_u8 n)
 {
     static const mysmb_u8 front[6]={0xbfU,0xbeU,0xc1U,0xc0U,0xc2U,0xfcU};
@@ -55,11 +30,79 @@ void mysmb_oam_draw_bowser_half(struct mysmb_game *g, mysmb_u8 n)
     static const mysmb_u8 open[6]={0xbfU,0xbeU,0xcaU,0xc9U,0xc2U,0xfcU};
     static const mysmb_u8 step[6]={0xc4U,0xc3U,0xc6U,0xc5U,0xccU,0xcbU};
     const mysmb_u8 *tiles;
-    if (g->ram[0x036aU] == 1U)
+    mysmb_u8 frame_offset, state, oam, offset, row, y, x, attributes;
+    mysmb_u8 first, third;
+
+    g->ram[2U] = g->ram[Y+n];
+    g->ram[5U] = g->ram[RX];
+    g->ram[0x00ebU] = g->ram[SO+n];
+    g->ram[0x0109U] = 0U;
+    g->ram[3U] = g->ram[D+n];
+    g->ram[4U] = g->ram[A+n];
+    state = g->ram[S+n];
+    g->ram[0x00edU] = state;
+    g->ram[0x00ecU] = (mysmb_u8)(state & 0x1fU);
+    attributes = (mysmb_u8)(g->ram[4U] | 1U);
+    g->ram[4U] = attributes;
+    if (g->ram[0x036aU] == 1U) {
+        g->ram[0x00efU] = 0x16U;
+        frame_offset = (g->ram[BC] & 0x80U) != 0U ? 0xdeU : 0xd2U;
         tiles = (g->ram[BC] & 0x80U) != 0U ? open : front;
-    else tiles = (g->ram[BC] & 1U) != 0U ? step : rear;
-    draw_half(g,tiles,g->ram[SO+n],g->ram[RX],g->ram[RY],
-              g->ram[D+n],g->ram[S+n],g->ram[O]);
+    }
+    else {
+        g->ram[0x00efU] = 0x17U;
+        frame_offset = (g->ram[BC] & 1U) != 0U ? 0xe4U : 0xd8U;
+        tiles = (g->ram[BC] & 1U) != 0U ? step : rear;
+    }
+    if ((state & 0x20U) != 0U) {
+        if (g->ram[0x036aU] != 1U)
+            g->ram[2U] = (mysmb_u8)(g->ram[2U] - 0x10U);
+        g->ram[0x0109U] = frame_offset;
+    }
+    oam = g->ram[SO+n];
+    y = g->ram[2U];
+    x = g->ram[5U];
+    for (row = 0U; row < 3U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        g->ram[0U] = tiles[row * 2U];
+        g->ram[1U] = tiles[row * 2U + 1U];
+        if ((g->ram[3U] & 2U) != 0U) {
+            g->ram[0x0201U + offset] = g->ram[1U];
+            g->ram[0x0205U + offset] = g->ram[0U];
+            g->ram[0x0202U + offset] = (mysmb_u8)(attributes | 0x40U);
+            g->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
+        }
+        else {
+            g->ram[0x0201U + offset] = g->ram[0U];
+            g->ram[0x0205U + offset] = g->ram[1U];
+            g->ram[0x0202U + offset] = attributes;
+            g->ram[0x0206U + offset] = attributes;
+        }
+        g->ram[0x0200U + offset] = y;
+        g->ram[0x0204U + offset] = y;
+        g->ram[0x0203U + offset] = x;
+        g->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
+        y = (mysmb_u8)(y + 8U);
+    }
+    g->ram[2U] = y;
+    if (g->ram[0x0109U] != 0U) {
+        for (row = 0U; row < 3U; ++row) {
+            offset = (mysmb_u8)(oam + row * 8U);
+            g->ram[0x0202U + offset] |= 0x80U;
+            g->ram[0x0206U + offset] |= 0x80U;
+        }
+        first = g->ram[0x0201U + oam];
+        third = g->ram[0x0211U + oam];
+        g->ram[0x0201U + oam] = third;
+        g->ram[0x0211U + oam] = first;
+        first = g->ram[0x0205U + oam];
+        third = g->ram[0x0215U + oam];
+        g->ram[0x0205U + oam] = third;
+        g->ram[0x0215U + oam] = first;
+    }
+    hide(g, oam, g->ram[O]);
+    if ((g->ram[O] & 0x80U) != 0U && g->ram[0x00b6U+n] == 2U)
+        mysmb_objects_erase_enemy(g, n);
 }
 
 /* ROM $D1BC ProcessBowserHalf; the source graphics child reloads X from

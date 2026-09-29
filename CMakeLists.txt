@@ -424,6 +424,9 @@ target_link_libraries(mysmb_jumpspring_oam_smoke PRIVATE mysmb_game)
 add_executable(mysmb_jumpspring_graphics_snapshot_check
     test/jumpspring_graphics_snapshot_check.c)
 target_link_libraries(mysmb_jumpspring_graphics_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_bowser_half_graphics_snapshot_check
+    test/bowser_half_graphics_snapshot_check.c)
+target_link_libraries(mysmb_bowser_half_graphics_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_platform_smoke test/platform_smoke.c)
 target_link_libraries(mysmb_platform_smoke PRIVATE mysmb_game)
 add_executable(mysmb_mode_smoke test/mode_smoke.c)

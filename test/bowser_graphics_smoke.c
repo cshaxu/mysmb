@@ -11,6 +11,8 @@ static void mark(mysmb_u8 id, mysmb_u8 slot)
     if (calls >= 8U) { ++bad; return; }
     trace[calls] = id; slots[calls++] = slot;
 }
+void mysmb_objects_erase_enemy(struct mysmb_game *g, mysmb_u8 s)
+{ (void)g; (void)s; ++bad; }
 void mysmb_objects_draw_retainer(struct mysmb_game *g, mysmb_u8 s)
 {
     mark(1U,s);

@@ -472,3 +472,46 @@ branch records during this active S8 tree. This checkpoint grants no node
 credit: the shared `EnemyGfxHandler` label and its remaining branch families
 must be proven together before S8 closes. The node tracker stays at
 **1,582 / 1,992**.
+
+#### S8 P2 checkpoint: Bowser front/rear graphics route
+
+The shared `ProcessBowserHalf -> RunRetainerObj -> EnemyGfxHandler` route now
+uses the ROM's front/rear graphics offsets, mouth and feet frame choices,
+attribute selection, three-row sprite writes, defeated vertical flip and
+offscreen tail. The four frame tables, two offsets and two attributes were
+checked against the owner-local ROM bytes. `GetEnemyOffscreenBits` now leaves
+the original work-RAM values and final offscreen byte for this route before
+relative positioning and graphics. The value-only offscreen helper remains
+for other callers until their own source routes are audited.
+
+The ROM-logic track compared every non-stack RAM byte in the 768 original
+Bowser graphics child records with a nonzero `BowserGfxFlag`: **768/768
+zero-difference on both x86 and x64**. The same original record set has 256
+zero-flag calls which enter the ordinary enemy graphics branch; that branch
+remains open in this S8 tree. Raw snapshots and comparison output stay under
+ignored `build/m2-t44-s8/` and `build/m2-t41-s3/`.
+
+The operational track built the complete x86 and x64 product/test targets and
+the OpenNT DOS16 MZ target. The focused offscreen, retainer, Bowser OAM,
+normal-enemy OAM and platform-purity tests pass on both Windows widths (5/5
+each), as do both product self-tests. The revised Bowser OAM smoke fixture
+provides a distinct rear slot and checks the ROM-bound tiles and attributes.
+The final full suite reaches **222/233 on each width**. All seven Python
+synthetic tests pass after resetting access only in the ignored build
+temporary directory; the corrected Bowser OAM fixture also passes. The same
+remaining eleven smoke tests fail against a separately built copy of the P1
+commit, with the owner-local ROM enabled for the two ROM-dependent cases.
+Thus P2 adds no full-suite failures, but the broader suite is not claimed as
+passing. Baseline build and test logs remain under ignored `build/m2-t44-s8/`.
+
+Refreshed executable artifacts are `mysmb16.exe` (260571 bytes, SHA-256
+`6cfd4d4ee58ddc021df4e8f9985b6df9f0851053f020acb14315813953394f7b`),
+`mysmb32.exe` (358145 bytes, SHA-256
+`d1db4b2929564456787fdc613a5337b864b7ef333e1aba51eb4feccf6b3e5512`),
+and `mysmb64.exe` (372657 bytes, SHA-256
+`39d8b1630ec851866cfa37eaa396df5f075e09f5a3da6037620f3c708fa2703f`).
+The similar-issue sweep identified the fireball, block and misc offscreen
+callers as still having value-only final-byte assembly and the zero-flag
+Bowser child calls as requiring the ordinary handler branch. This checkpoint
+grants no node credit; the tracker remains **1,582 / 1,992** until the whole
+S8 handler tree is proven.

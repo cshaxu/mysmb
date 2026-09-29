@@ -8,8 +8,8 @@ static unsigned int calls, failures;
 static mysmb_u8 expected_slot;
 static void check(mysmb_u8 slot,unsigned int order)
 { if (slot!=expected_slot || ++calls!=order) ++failures; }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)
-{ (void)g;check(s,1U);return 0x63U; }
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
+{ check(s,1U);g->ram[0x3d1U]=0x63U; }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s)
 { if (g->ram[0x3d1U]!=0x63U) ++failures;check(s,2U);g->ram[0x3aeU]=0x24U; }
 void mysmb_oam_draw_retainer(struct mysmb_game *g,mysmb_u8 s)
