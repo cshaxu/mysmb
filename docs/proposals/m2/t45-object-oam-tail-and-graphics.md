@@ -162,6 +162,41 @@ brick-shatter caller, covering repeated rows, mirrored attributes, wrapped
 column hiding and each chunk. Recheck the recorded T37 S5 edge-output gap.
 Operational proof follows the common dual-track build/artifact contract.
 
+### S2 admission record
+
+The continuing owner-approved M2 source-order mandate admits **M2 T45 S2**
+at **1,637 / 1,992**. The fourteen exact labels from
+`DefaultBlockObjTiles` through `ExBCDr` are all open, received from
+M2 T17 S6; expected new matches are all fourteen, maximum **1,651 / 1,992**.
+The caller route is original `BlockObjectsCore -> DrawBlock` and
+`BlockObjectsCore -> DrawBrickChunks`, with both slots and source-RAM
+controlled area, replacement, offscreen and chunk state. T37 S5 already
+isolated 34/64 root OAM-only failures to these child graphics entries;
+those are the first regression targets, not authority for new behavior.
+The owner-local ROM and reviewed listing are for bounded local comparison
+only. Raw records, generated probes, logs and intermediates remain under
+ignored `build/m2-t45-s2/`. PC, registers, stack and ROM bytes are not
+forced. Each label requires source control/read/write mapping and original
+child proof; native x86/x64, DOS16 link, purity and three EXEs form the
+separate operational track.
+
+| ROM line | Label | Incoming |
+| ---: | --- | --- |
+| 14119 | `DefaultBlockObjTiles` | open |
+| 14122 | `DrawBlock` | open |
+| 14133 | `DBlkLoop` | open |
+| 14147 | `ChkRep` | open |
+| 14159 | `SetBFlip` | open |
+| 14167 | `BlkOffscr` | open |
+| 14174 | `PullOfsB` | open |
+| 14175 | `ChkLeftCo` | open |
+| 14178 | `MoveColOffscreen` | open |
+| 14182 | `ExDBlk` | open |
+| 14187 | `DrawBrickChunks` | open |
+| 14197 | `DChunks` | open |
+| 14242 | `ChnkOfs` | open |
+| 14250 | `ExBCDr` | open |
+
 ## S3: fireball, firebar and explosions
 
 Entry `DrawFireball`; exit `KillFireBall`. Exact labels:
