@@ -1288,33 +1288,6 @@ void mysmb_objects_get_hammer_bounding_box(struct mysmb_game *game, mysmb_u8 slo
         game->ram[MYSMB_MISC_BOUND_BOX + slot], game->ram[0x03b3U],
         game->ram[0x03beU]);
 }
-/* ROM $ceee PlayerHammerCollision.  Misc bounding boxes occupy offsets
- * nine through seventeen after the player box at $04ac. */
-void mysmb_objects_check_hammer_collision(struct mysmb_game *game,
-                                                 mysmb_u8 slot)
-{
-    mysmb_u16 hammer_box;
-
-    /* ROM PlayerHammerCollision uses only FrameCounter and the prepared
-     * TimerControl|Misc_OffscreenBits gate. Its box is from the preceding
-     * RunHSubs pass; do not substitute world-coordinate clipping or a box
-     * rebuilt from this frame's position. */
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U ||
-        game->ram[MYSMB_TIMER_CONTROL] != 0U ||
-        game->ram[0x03d6U] != 0U) return;
-    hammer_box = (mysmb_u16)(0x04d0U + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, hammer_box) == 0U) {
-        game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 0U;
-        return;
-    }
-    if (game->ram[MYSMB_MISC_COLLISION_FLAG + slot] != 0U) return;
-    game->ram[MYSMB_MISC_COLLISION_FLAG + slot] = 1U;
-    game->ram[MYSMB_MISC_X_SPEED + slot] =
-        (mysmb_u8)(0U - game->ram[MYSMB_MISC_X_SPEED + slot]);
-    if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U) return;
-    mysmb_objects_force_injury(game);
-}
-
 /* ROM PlayerCollisionCore receives relative X coordinates.  Keep every
  * special-object path on the active 256-pixel screen before comparing its
  * one-byte boxes, otherwise equal low bytes on adjacent pages would collide. */

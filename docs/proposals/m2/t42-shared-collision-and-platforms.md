@@ -461,3 +461,110 @@ Raw trace bytes: 9745484, below90 MB.
 | mysmb16.exe | 259497 | 19b9361640e0740d3632d94fe742a36adb5821b66090f09f2aca8030734f4479 |
 | mysmb32.exe | 356409 | 1c3e61fd893ce9ddda0f9361cabc3b8a4784652bebb222e9a7d90e8aaf4ad9d9 |
 | mysmb64.exe | 364039 | 5ff9cc3f857a73f1867d7eb634ffecd5e8301e0a6015a9f2a3f12820b85d447c |
+
+## S3 admission: player hammer contact
+
+S2 closed in 25a4ce6. Coordinator accepts transfer-212 from M2 T17 S6.
+Baseline 1,301/1,992; three scoped/expected-new labels, maximum 1,304:
+
+`PlayerHammerCollision` (audited; evidence incomplete), `ClHCol` (audited; evidence incomplete), `ExPHC` (audited; evidence incomplete).
+
+Original $D7C4-$D7FF is one complete hammer contact chain. Extract only
+this body from objects.c to world/hammer_collision.c, preserving its API.
+Restore the live ObjectOffset reload after PlayerCollisionCore and byte-sized
+box index. Preserve odd-frame, timer/offscreen, latch, byte negation and star
+gates, then InjurePlayer tail. Keep existing geometry and injury children as
+explicit dependencies; S5 owns injury. Do not repair their algorithms here.
+
+Original route reaches PlayerHammerCollision through ordinary NMI/ProcHammerObj.
+Entry-only RAM fixtures cover all nine misc slots, gates, hit/miss, latch,
+speed sign/zero/wrap, star and injury inputs. Check all source branches,
+full child input RAM/arguments and carry; report actual-child results separately.
+Native test mysmb.hammer-contact-chain additionally changes ObjectOffset in
+the geometry child to prove both miss and hit reloads. One chain validation
+and three-target build/package pass per P; previous scan/hit/hammer roots and
+known actual matches remain regression baselines. No host gameplay changes.
+
+Source and research provenance remains the existing owner-local ROM/listing;
+unreviewed/nonredistributable data stays ignored. build/m2-t42-s3 has at most
+576 cases, 50 MB raw records, twenty-second process limits and checkpoints;
+coordinator owns dependent retention/cleanup. Owner-authorized EXE delivery
+continues; DOS remains link-only. Every node needs both proof tracks, with
+unproved descendants named rather than counted as complete.
+Similar-issue sweep covers misc-slot caches, wrapped indices, collision
+latches, injury handoffs and duplicate hammer collision owners.
+
+## S3 original hammer contact proof
+
+S3 P1 closes all three audited-incomplete expected nodes: 1,301 ->
+1,304/1,992. Admission/closure gates confirm exact received scope; no
+scoped node remains incomplete or transfers. T42 remains open; S4 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| PlayerHammerCollision | Odd-frame and timer/offscreen gates; wrapped box Y; geometry carry; live ObjectOffset; latch, byte negation, star gate and injury tail. ROM-match complete. |
+| ClHCol | Carry-clear path reloads ObjectOffset and clears that misc collision latch only. ROM-match complete. |
+| ExPHC | Parity, timer/offscreen, latched/star and miss exits preserve source return footprint. ROM-match complete. |
+
+All 30 original instructions in $D7C4-$D7FF and both outcomes of five
+branches execute. 288 entry-input fixtures reach the root through ordinary
+NMI/ProcHammerObj across all nine misc slots, parity, timer/offscreen, box
+hit/miss, collision latch, speed extrema, star immunity and injury states.
+No source ROM, CPU, PC, stack or output mutation. Observed and observer-free
+original frames agree; this is not a native full-frame comparison.
+
+Caller comparison passes 576/576 across x86/x64. PlayerCollisionCore's
+original Y box argument, complete child-input RAM and returned carry are
+checked; its initial X is overwritten by the source child. On return, the
+caller reloads ObjectOffset for both carry results. InjurePlayer's tail
+receives the same RAM and misc X; its original return is observed at the
+parent's hardware return address. Stack return storage is excluded but
+mapped $0109-$0139, scratch, queues and OAM backing remain compared.
+
+Separate actual-child comparison matches 54/576. Every remaining sample
+differs at $06 because current geometry omits the source scratch store; 18
+also differ at $07. Among the failing samples, 234 have missing injury sound
+$FF and palette-command bytes $0300-$0307; 104 differ at $00. Geometry stays
+with its M2 T17 S6 receiver until source-order admission, and InjurePlayer
+is planned for T42 S5 (still M2 T17 S6 custody). The current injury child
+omits original sound/palette work. Those algorithms are not repaired or
+certified here; this caller proof is not whole-hit or gameplay equality.
+
+The sole hammer contact body moves from objects.c to world/hammer_collision.c.
+Its address comment, byte-sized box offset and post-geometry ObjectOffset
+reload are restored. Similar-issue sweep covers every production hammer
+caller, duplicated body, misc slot cache, box index, latch, negation and
+injury handoff. ProcHammerObj already supplies the source ObjectOffset;
+geometry and injury remain separate shared-game owners. Platform diff is
+empty and no emulator is linked into the runtime.
+
+Native proof passes 18,432 gate/latch/speed cases per width, child-mutated
+ObjectOffset on hit and miss, and all 256 wrapped box indices. Five CTests
+pass: contact, hammer lifecycle, fireball scan/hit and platform purity.
+Existing collision/OAM suites pass on both widths. The prior hammer lifecycle
+retains 126/126 actual-parent comparisons under its original persistent-RAM
+contract, which excludes scratch0..7; no broader claim is inferred. The
+actor matrix retains all 18,928/29,434 matches. S1's 2,048 and S2's 1,024
+actual results are unchanged from the latest S2 baseline, including known
+failures. Fifteen initializer/platform native suites per width also pass.
+
+All 113 shared files pass strict C90 x86/x64 and product self-tests; hidden
+windows create/respond without desktop input. DOS16 compiles/links with the
+preexisting OLDNAMES warning. Three EXEs are refreshed. DOS stays link-only;
+no DOS graphics, resource binding or physical 486SX performance is certified.
+
+Reproduce hammer_contact_fixture.h cases0..287 using
+--fixture=t42-hammer-contact=N, --hammer-contact-snapshot, --control-children
+and --pc-coverage. hammer_contact_snapshot_check verifies the caller;
+enemy_loop_actual_check exercises actual children. Native CTest:
+mysmb.hammer-contact-chain. Ignored build/m2-t42-s3 retains bounded records
+and checkpoints with twenty-second process deadlines and coordinator cleanup
+ownership after dependent verification.
+
+Raw records: 4494547 bytes, below 50 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 259513 | 1c44dee115434c57c617117c8f2fede699c8da641c012acfe43c8c78fcc67460 |
+| mysmb32.exe | 356625 | a291a8b53371da47647764869459af460cad41b5495e34a983f25f5a05176ca1 |
+| mysmb64.exe | 364291 | f5703a930a65475e5580986d5e048a6c4066dafd40f3629caa0b35d50ab61b9a |
