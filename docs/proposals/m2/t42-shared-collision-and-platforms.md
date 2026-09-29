@@ -1191,3 +1191,118 @@ Raw records: 4978600 bytes, below50 MB.
 | mysmb16.exe | 257097 | 11c7c9d6dc359a7cd3e26fd85c614cf123aa1c7b3f1d9e29323e2136e4ea50b7 |
 | mysmb32.exe | 357461 | a8286842ba3346eca4b7a41af3551a930a9012251be3dd837317ce548a56b549 |
 | mysmb64.exe | 364780 | 9337dba3ee07979f650a8bb137d341d336539b236463e5d76edb22d8e78e1e89 |
+
+## S9 admission: collision preflight
+
+S8 closed in7d3c9da. Coordinator accepts transfer-218 from M2 T17 S6.
+Baseline1,378/1,992;4 scoped and expected-new nodes, maximum1,382:
+CheckPlayerVertical, ExCPV, GetEnemyBoundBoxOfs, GetEnemyBoundBoxOfsArg
+(all open). Original DC41 through the return preceding PlayerBGUpperExtent.
+Sole shared owner src/game/world/collision.c. Player/platform collision callers
+are predecessors; generic geometry and terrain remain independent successors.
+
+Restore original carry: offscreen >=F0 returns1; otherwise high-Y !=1 returns0;
+only high-Y1 compares low Y with D0. Preserve byte-wrapped box-index multiply
+and add, entry ObjectOffset versus argument, low offscreen nibble and its
+compare carry. Audit every consumer and any intentionally dead A/Y/flags.
+No geometry, movement or side-response repair is admitted.
+
+Logic evidence requires original control-flow/read/write/register audit and
+controlled original NMI platform/contact routes, unmodified ROM outputs and
+both-width comparisons. Native evidence covers all preflight bytes, unchanged
+RAM, caller regressions, strict C90 x86/x64, DOS16 link, purity and three EXEs.
+Focused CTest: mysmb.collision-preflight-chain. Four labels need both tracks;
+admission gives no credit. Existing source provenance: owner-local ROM and
+local listing are nonredistributable research inputs only. Raw outputs remain
+in ignored build/m2-t42-s9, bounded to2,048 fixtures/100 MB with20-second
+process deadlines and checkpoints; coordinator owns cleanup after regressions.
+Owner-authorized three EXEs remain the delivery exception. DOS link-only.
+Similar-issue sweep covers all carry/offset consumers and duplicate preflight.
+
+S9 admission gate passes: scope4, expected4, baseline1378, maximum1382;
+CheckPlayerVertical, ExCPV, GetEnemyBoundBoxOfs and GetEnemyBoundBoxOfsArg
+are individually confirmed open with S9 receiving ownership.
+
+## S9 implementation checkpoint (not closure)
+
+CheckPlayerVertical now preserves the clear CMP-F0 carry on high-Y exits.
+All three production caller sites use the same shared helper: player contact,
+large-platform and small-platform collision. No platform adapter changed.
+The two box-offset consumers without a mask (player contact and enemy pair)
+overwrite the original A/carry before use; platform consumers request the low
+nibble explicitly. Their full entry/exit audit remains pending.
+
+Both widths compile all118 shared C90 files and pass product self-tests.
+Native preflight tests pass16,842,752 byte-input cases per width.
+The existing S7 original child captures were compared directly against real
+preflight helpers, without substituting child outputs: 2112 calls per width
+pass returned carry/index/mask and mapped RAM checks. The recorded argument
+entry Y is independently checked by the original recorder. This reuse does
+not yet establish complete branch coverage or the ObjectOffset entry proof.
+The existing S7 actual matrix retains28/1,568 matches and loses none; remaining
+geometry scratch masks prevent whole-call match credit for repaired carry.
+
+S9 stays active at1,378/1,992. No new node credit or P is claimed. Outstanding:
+complete original entry/register/control-flow proof, affected and integrated
+regressions, DOS link, focused CTest, refreshed three EXEs and closure gates.
+
+## S9 original collision preflight proof
+
+S9 P1 closes all four expected nodes:1,378 ->1,382/1,992. No transfer or
+unfinished scoped label remains. T42 cross-chain closure is still pending.
+
+| Node | Evidence and disposition |
+| --- | --- |
+| CheckPlayerVertical | Offscreen compare carry, high-Y early exit and low-Y compare follow original branches. ROM-match complete. |
+| ExCPV | Return preserves RAM and returns original carry; A/Y are dead at every native consumer. ROM-match complete. |
+| GetEnemyBoundBoxOfs | ObjectOffset entry returns original wrapped Y index; proven by original contact callers. ROM-match complete. |
+| GetEnemyBoundBoxOfsArg | Argument entry preserves wrapped multiply/add and low offscreen nibble; final carry is dead in callers. ROM-match complete. |
+
+Original DC41-DC61 contains19 instructions and two branches. Six ordinary NMI
+platform routes execute all19 instructions and4 branch outcomes; observation
+leaves original output frames unchanged. Existing S7/S5 child captures compare
+3,648 original calls per width directly against the actual C helpers, including
+both argument and ObjectOffset entries. No child output substitution occurs.
+RAM is unchanged, excluding hardware stack return storage while retaining
+mapped0109-0139. S7 recorder independently asserts original argument-entry Y;
+S5 records the original ObjectOffset-entry Y. Six fresh routes repeat the
+comparison and preserve their original code/register/stack/output state.
+
+The original CMP-F0 carry survives LDY/DEY and the high-Y early exit. C now
+returns0 there; only on-screen high-Y1 reaches CMP-D0. This repairs missing
+landing/state writes in S7 cases384/1408 on both widths. Their remaining RAM6/7
+geometry differences stay with the existing geometry owner. The actual S7
+matrix keeps28/1,568 matches; this change does not claim geometry completion.
+
+Box offset entries wrap byte multiply-by-four plus4, with RAM8 loaded only at
+the ObjectOffset entry. The argument helper returns the low offscreen nibble.
+Original final CMP-0F carry is dead: large platforms overwrite it in geometry,
+small platforms use AND2 then CMP or CLC, player contact overwrites in geometry,
+and enemy pairs overwrite before their comparison. Vertical A/Y are dead at
+all three consumers; X and RAM are preserved. The similar-issue sweep found
+only these shared helpers and their player-contact, enemy-pair and platform
+consumers; no duplicate host gameplay or unrelated collision repair was added.
+
+Native exhaustive preflight tests pass16,842,752 cases per width; these are
+separate from original-ROM evidence. Four CTests pass, including platform
+purity, and eight affected suites pass on both widths. All21,544 prior actual
+actor matches remain out of29,434, and all earlier collision matches remain.
+No whole-game equivalence claim follows from these scoped results.
+
+All118 shared C90 sources compile on x86/x64; self-tests and hidden-window
+response probes pass. DOS16 compiles/links with the pre-existing OLDNAMES
+warning. Three EXEs are refreshed. DOS graphics/resource binding and physical
+486SX performance remain unproved. Source-derived inputs and traces remain
+ignored under build; no ROM or raw trace is committed.
+
+Reproduce native test mysmb.collision-preflight-chain. Original checks use
+collision_preflight_snapshot_check with S7 platform and S5 contact child files;
+for fresh routes use t42-platform-collision cases0,384,385,512,1024,1536 with
+platform-collision-snapshot, control-children and pc-coverage. Ignored
+build/m2-t42-s9 holds bounded evidence and checkpoints; coordinator owns cleanup.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257097 | 4b900ebd7e178bb376c1a1db771d2e636761f46f29b33ab3d397e61f2564e2d8 |
+| mysmb32.exe | 357461 | 56e6eb623e78829b2cc0533f1fa97ffc5f0d0d171ef921f678efad908334b0b8 |
+| mysmb64.exe | 364780 | 18db2d672ad004f57f2d1688037bc5b0b180a5ac709e8243c1ebbd745caf1d6c |

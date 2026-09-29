@@ -1454,3 +1454,6 @@ add_test(NAME mysmb.platform-collision-chain COMMAND mysmb_platform_collision_sm
 add_executable(mysmb_platform_position_smoke test/platform_position_smoke.c src/game/enemy/platform_position.c)
 target_include_directories(mysmb_platform_position_smoke PRIVATE src)
 add_test(NAME mysmb.platform-positioning-chain COMMAND mysmb_platform_position_smoke)
+add_executable(mysmb_collision_preflight_smoke test/collision_preflight_smoke.c)
+target_link_libraries(mysmb_collision_preflight_smoke PRIVATE mysmb_game)
+add_test(NAME mysmb.collision-preflight-chain COMMAND mysmb_collision_preflight_smoke)

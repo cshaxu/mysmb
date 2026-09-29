@@ -301,12 +301,13 @@ void mysmb_world_get_fireball_bounding_box(struct mysmb_game *game,
         game->ram[0x008dU + slot]);
 }
 
-/* Existing contact preflight semantics exposed as S9 dependencies. The
- * high-Y gate is retained here, not certified by the contact caller proof. */
+/* ROM $DC41 CheckPlayerVertical / ExCPV. LDY/DEY do not change carry:
+ * the high-Y exit retains the clear carry from offscreen CMP #$f0. */
 mysmb_u8 mysmb_world_player_vertical_carry(struct mysmb_game *game)
 {
-    return game->ram[0x03d0U] >= 0xf0U || game->ram[0x00b5U] != 1U ||
-        game->ram[0x00ceU] >= 0xd0U ? 1U : 0U;
+    if (game->ram[0x03d0U] >= 0xf0U) return 1U;
+    if (game->ram[0x00b5U] != 1U) return 0U;
+    return game->ram[0x00ceU] >= 0xd0U ? 1U : 0U;
 }
 
 /* GetEnemyBoundBoxOfs Y output; A/carry are overwritten by collision core. */
