@@ -755,47 +755,15 @@ void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
     }
 }
 
-/* ROM $aa9f-$aae8 InitPiranhaPlant/MovePiranhaPlant.  Its dedicated arrays
- * alias the normal enemy X-speed/Y-speed and vertical-physics arrays. */
-void mysmb_objects_step_piranha_plants_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 distance;
-    mysmb_u8 target;
-
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 13U ||
-        game->ram[MYSMB_ENEMY_STATE + slot] != 0U ||
-        game->ram[0x078aU + slot] != 0U) return;
-    if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] < 0x80U) {
-        distance = game->ram[MYSMB_ENEMY_X + slot] > game->ram[MYSMB_PLAYER_X] ?
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - game->ram[MYSMB_PLAYER_X]) :
-            (mysmb_u8)(game->ram[MYSMB_PLAYER_X] - game->ram[MYSMB_ENEMY_X + slot]);
-        if (distance < 0x21U) return;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot]++;
-    }
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) == 0U ||
-        game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-    target = game->ram[MYSMB_ENEMY_X_SPEED + slot] >= 0x80U ?
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] :
-        game->ram[MYSMB_ENEMY_Y_FORCE + slot];
-    game->ram[MYSMB_ENEMY_Y + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + game->ram[MYSMB_ENEMY_X_SPEED + slot]);
-    if (game->ram[MYSMB_ENEMY_Y + slot] == target) {
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-        game->ram[0x078aU + slot] = 0x40U;
-    }
-}
-
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_piranha_plants(struct mysmb_game *game)
 {
     mysmb_u8 slot;
     for (slot = 0U; slot < 5U; ++slot) {
         mysmb_objects_draw_piranha(game, slot);
-        mysmb_objects_step_piranha_plants_slot(game, slot);
+        if (game->ram[MYSMB_ENEMY_FLAG + slot] != 0U &&
+            game->ram[MYSMB_ENEMY_ID + slot] == 13U)
+            mysmb_objects_step_piranha_plants_slot(game, slot);
     }
 }
 

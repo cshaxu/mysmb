@@ -1160,3 +1160,110 @@ Raw trace output: 11262160 bytes, below 32 MB.
 | mysmb16.exe | 255929 | 1b66417bddea1bbdce7a63daac884ed930abf4d754807ae94190cdb14e5926c0 |
 | mysmb32.exe | 350797 | 57198aa82843b65a3d19616ee3788badfab514f566ad6e05c5a2b612d06f5d09 |
 | mysmb64.exe | 358735 | c9278a722428d24582b4aa580a9fd00bb6e2b862a40f563b21d68ffbb1c4ec3a |
+
+## S7 admission: Piranha movement and pipe priority
+
+S6 closed in 7e00445. Coordinator accepts transfer-203 under the continuing
+M2 mandate. Six scoped and expected-new labels, all open at admission:
+`MovePiranhaPlant`, `ChkPlayerNearPipe`, `ReversePlantSpeed`,
+`SetupToMovePPlant`, `RiseFallPiranhaPlant`, `PutinPipe`.
+Baseline 1,225/1,992; maximum 1,231. Entry $D3B0 through $D40F,
+lines 10602-10660, one shared enemy/piranha.c owner replacing objects.c.
+
+Restore state/frame-timer gates, movement flag and signed-speed branch,
+PlayerEnemyDiff page-result sign and low-byte negation, 21 proximity gate,
+speed reversal, target scratch before frame/timer gates, byte Y motion,
+endpoint delay and unconditional final attribute assignment. Flag/ID
+eligibility stays at the legacy bulk caller. PlayerEnemyDiff retains its
+existing owner and typed return; no child-node credit or graphics rewrite.
+Predecessor S6 star flag; successor S8 FirebarSpin.
+
+Logic proof uses naturally reached original NMI movement dispatch, bounded
+input-only root fixtures, all original branch/read/write and child arguments.
+Caller comparisons check full child input before recorded returns; actual-child
+runs remain separate. Retain all 12,928 existing actual matches. No original
+CPU/register, PC, stack, ROM or output patches. Operational proof: focused
+mysmb.piranha-movement-chain, existing actor regressions, strict C90 x86/x64,
+DOS16 link, platform purity, hidden-window probes and three EXEs once per P.
+No node credit before both tracks. DOS remains link-only.
+
+Similar-issue sweep: duplicate owner, entry eligibility versus source gates,
+page/sign distance, negative-speed reversal, scratch timing, byte movement,
+endpoint timer and priority assignment on all exits. Existing owner-ROM/listing
+provenance and local-only restrictions apply. Unique ignored build/m2-t41-s7
+records have 32-MB raw budget, up to 512 routes, twenty-second per-record
+timeout and resumable checkpoints. Coordinator owns cleanup/dependent records.
+Stop on unadmitted repair, hidden mismatch, execution patch or host gameplay.
+
+## S7 original Piranha movement proof
+
+S7 P1 closes all six expected nodes: 1,225 -> 1,231/1,992. No scoped node
+remains unfinished or transfers at closure. PlayerEnemyDiff keeps its own
+ledger responsibility; this bounded chain proof grants it no separate credit.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| MovePiranhaPlant | State/frame-timer gates, movement flag, signed speed and original PlayerEnemyDiff call order. ROM-match complete. |
+| ChkPlayerNearPipe | Returned page-result sign controls low-byte negation; unsigned 21 proximity boundary. ROM-match complete. |
+| ReversePlantSpeed | Byte negation and movement-flag increment, including pre-existing negative speed. ROM-match complete. |
+| SetupToMovePPlant | Speed sign selects exact down/up endpoint before frame/timer gates. ROM-match complete. |
+| RiseFallPiranhaPlant | Target scratch, odd-frame/master-timer gates, byte Y addition and endpoint delay. ROM-match complete. |
+| PutinPipe | Every path assigns sprite attributes 20, including all early exits. ROM-match complete. |
+
+All 47 original instructions in $D3B0-$D40F execute, with both outcomes of all
+ten conditional branches. The 512 original NMI movement routes exercise
+slots zero/five, state and frame-timer exits, idle/moving flags, positive and
+negative speeds, both distance signs and the 20/21 boundary, page differences,
+odd/even frames, timer-control gates, byte Y wrap and exact/nonexact endpoints.
+Input-only root fixtures are independent of observer selection. Every original
+observer-free frame equals the observed original frame; this does not claim
+native full-game frame equality. No ROM, CPU/register, PC, stack or output patch.
+
+Caller comparisons and separate actual-child comparisons both pass 1,024/1,024
+across x86/x64. The caller harness compares full input RAM at original
+PlayerEnemyDiff ($E143) before applying recorded returns, including mapped
+$0109-$0139 and all VRAM/OAM/audio queues; hardware return-stack storage is
+excluded. The observer validates input X and preserved returned X and records
+returned A. Native arguments and the A sign drive the same subsequent branch.
+Actual comparisons use the real shared distance implementation without any
+recorded substitution. No unexplained difference remains in this S route set.
+
+The old approximate owner in objects.c is removed. Shared enemy/piranha.c owns
+the source body. The existing normal-enemy vector keeps its entry; flag/ID
+eligibility stays outside it in the legacy bulk caller. Source state/timer gates
+still execute PutinPipe. No graphics-child or platform behavior is rewritten.
+Similar-issue sweep covers the removed low-byte-only absolute distance formula,
+missing negative-speed reversal, lost scratch writes, misplaced frame/timer
+checks and missing priority assignment. The same-source entry is unique;
+initializer endpoints and unrelated physics aliases keep their existing owners.
+
+Independent native tests pass 1,282 cases per width: every nonzero state/timer,
+all low-byte distances under both page signs, all byte speeds and Y wrap,
+exact endpoint delays, near-player exit, odd/even/frozen frames, absent entry
+flags and changed ObjectOffset with source-preserved X. Focused CTest passes;
+platform purity and fifteen prior initializer/platform suites per width pass.
+Final actual matrix: 13,956/21,754. All 12,928 prior matches remain, plus all
+1,024 new Piranha roots and four improved prior cases. Remaining 7,798 sample
+differences retain prior descendant responsibilities; they are not node counts.
+
+All 107 shared sources pass strict C90 x86/x64 builds and self-tests; both
+hidden Win32 windows create and answer messages. DOS16 compiles/links with the
+existing OLDNAMES warning. DOS remains link-only, without graphical playability,
+resource-binding or physical 486SX certification. Three EXEs are refreshed.
+
+Reproduce piranha_movement_fixture.h cases 0..511 using
+--fixture=t41-piranha-movement=N, --piranha-movement-snapshot,
+--control-children and independent --pc-coverage. piranha_movement_snapshot_check
+checks source calls; enemy_loop_actual_check executes actual dependencies.
+Native target is mysmb.piranha-movement-chain. Ignored build/m2-t41-s7 holds
+bounded records and checkpoints, twenty-second per-record deadlines and
+coordinator-owned dependent regression retention/cleanup. Existing local-only
+source restrictions remain. S8 FirebarSpin is next, not admitted by this closure.
+
+Raw trace output: 5549120 bytes, below 32 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255865 | 76aeb212ce0bc8fb3710e7188142be30108ec31fa29dc02905d7d9b4b5ee870a |
+| mysmb32.exe | 351013 | 7d7973abc7fd499d74cba0bad62b1742945e444a460a287b1af7fc404549f1c7 |
+| mysmb64.exe | 358987 | b470b4e6935dbcd85db5c7456b54731e048346d98f5f1690f0f5f1ae78276c42 |

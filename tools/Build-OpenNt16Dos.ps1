@@ -40,6 +40,7 @@ $sources = @(
     'game/enemy/bowser_flame.c',
     'game/enemy/fireworks.c',
     'game/enemy/star_flag.c',
+    'game/enemy/piranha.c',
     'game/oam/fireworks_gfx.c',
     'game/enemy/firebar_children.c',
     'game/enemy/distance.c',

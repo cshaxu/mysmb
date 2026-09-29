@@ -12,17 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1225 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1231 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 662 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 656 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,225 / 1,992 (61.50%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,231 / 1,992 (61.80%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S6 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s6-original-star-flag-and-score-proof)
-closes twenty star-flag/score caller and data nodes with 2,048/2,048 original
-caller comparisons. Actual roots match 1,552/2,048; 496 descendant differences
-remain explicit. All 11,372 prior actual matches remain.
+Latest task review: [T41 S7 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s7-original-piranha-movement-proof)
+closes all six Piranha movement nodes: 1,024/1,024 original caller and
+actual-child comparisons. All 12,928 prior actual matches remain.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1225)
+## Completed matches (1231)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1242,6 +1241,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10585 | `IncrementSFTask2` |
 | 10589 | `DelayToAreaEnd` |
 | 10596 | `StarFlagExit2` |
+| 10602 | `MovePiranhaPlant` |
+| 10619 | `ChkPlayerNearPipe` |
+| 10624 | `ReversePlantSpeed` |
+| 10632 | `SetupToMovePPlant` |
+| 10638 | `RiseFallPiranhaPlant` |
+| 10656 | `PutinPipe` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |
