@@ -14,20 +14,21 @@ static void check_under(const unsigned char *r)
     struct mysmb_game game;
     struct mysmb_enemy_terrain terrain;
     const unsigned char *after;
-    mysmb_u8 result;
 
     memset(&game, 0, sizeof(game));
     memcpy(game.ram, r + 16U, 2048U);
-    result = mysmb_world_query_enemy_under(&game, r[3], &terrain);
+    (void)mysmb_world_query_enemy_under(&game, r[3], &terrain);
     after = r + 2064U;
-    if (result == 0U || terrain.metatile != r[6] ||
+    /* BlockBufferChk_Enemy returns the metatile in A.  Zero is therefore a
+     * successful, empty-block result rather than an unavailable C call. */
+    if (terrain.metatile != r[6] ||
         terrain.block_row_offset != after[2U] ||
         terrain.contact_low_nibble != after[4U] ||
         terrain.block_address_low != after[6U] ||
         terrain.block_address != (mysmb_u16)(after[6U] +
             256U * after[7U] + after[2U])) {
-        if (failures == 0U) printf("under got=%u,%u,%u,%u,%u expected=%u,%u,%u,%u,%u\n",
-            result, terrain.metatile, terrain.block_row_offset,
+        if (failures == 0U) printf("under got=%u,%u,%u,%u expected=%u,%u,%u,%u,%u\n",
+            terrain.metatile, terrain.block_row_offset,
             terrain.contact_low_nibble, terrain.block_address_low, r[6], after[2U],
             after[4U], after[6U], after[7U]);
         ++failures;

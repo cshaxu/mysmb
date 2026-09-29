@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     unsigned char header[8];
     struct mysmb_player_terrain terrain;
     unsigned int i, n, id, failures, abi;
-    mysmb_u8 index, result;
+    mysmb_u8 index;
     FILE *file;
     if (argc != 2) return 64;
     file = fopen(argv[1], "rb"); if (!file) return 65;
@@ -29,9 +29,11 @@ int main(int argc, char **argv)
         if (id <= 3U) {
             index = record[1];
             memset(&terrain, 0, sizeof(terrain));
-            result = mysmb_world_query_player_probe(&game, &index,
+            (void)mysmb_world_query_player_probe(&game, &index,
                 (mysmb_u8)(id - 1U), &terrain);
-            if (!result || index != (mysmb_u8)(record[1] + (id == 2U ? 1U : 0U)) ||
+            /* The original A return is the metatile itself.  A zero tile is
+             * a successful empty probe, not an unavailable C call. */
+            if (index != (mysmb_u8)(record[1] + (id == 2U ? 1U : 0U)) ||
                 terrain.metatile != record[2053U] ||
                 terrain.contact_low_nibble != record[2054U] ||
                 terrain.block_address_low != record[2056U] ||

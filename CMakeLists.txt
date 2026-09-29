@@ -1238,6 +1238,11 @@ if(MYSMB_ROM_PATH)
         src/game/fireball/fireball_core.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_fireball_core_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_fireball_core_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
+    add_executable(mysmb_block_buffer_player_actual_check
+        test/block_buffer_player_actual_check.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_block_buffer_player_actual_check PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_block_buffer_player_actual_check PRIVATE mysmb_game)
     add_executable(mysmb_timer_snapshot_check test/timer_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_timer_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
