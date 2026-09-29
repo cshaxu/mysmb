@@ -34,3 +34,29 @@ void mysmb_player_handle_axe_metatile(struct mysmb_game *game,
     game->ram[0x0057U] = 0x18U;
     erase_metatile(game, block_low, block_row);
 }
+
+/* ROM $DEBD-$DEC3 ChkInvisibleMTiles. Both callers consume only Z;
+ * the metatile argument remains unchanged across this predicate. */
+mysmb_u8 mysmb_player_invisible_metatile(mysmb_u8 metatile)
+{
+    if (metatile == 0x5fU) return 1U;
+    return metatile == 0x60U ? 1U : 0U;
+}
+
+/* ROM $DEDD-$DEE7 ChkJumpspringMetatiles. The native return carries
+ * the source C flag; neither input nor RAM is changed. */
+mysmb_u8 mysmb_player_jumpspring_metatile(mysmb_u8 metatile)
+{
+    if (metatile == 0x67U) return 1U;
+    return metatile == 0x68U ? 1U : 0U;
+}
+
+/* ROM $DEC4-$DEDC ChkForLandJumpSpring: predicate before all stores. */
+void mysmb_player_land_jumpspring(struct mysmb_game *game, mysmb_u8 metatile)
+{
+    if (mysmb_player_jumpspring_metatile(metatile) == 0U) return;
+    game->ram[0x0709U] = 0x70U;
+    game->ram[0x06dbU] = 0xf9U;
+    game->ram[0x0786U] = 3U;
+    game->ram[0x070eU] = 1U;
+}

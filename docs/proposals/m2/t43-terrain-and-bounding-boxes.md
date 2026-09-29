@@ -891,3 +891,128 @@ capture or temporary research output is committed.
 | mysmb16.exe | 257063 | a10925a41b4e94e92162902389eff2d69e7e84544577ae3c442bc9a70643f60d |
 | mysmb32.exe | 358232 | 66792dbce565297c6bdb6b7bcea067cbaf70077869a9527d0ce95291ed6955aa |
 | mysmb64.exe | 366185 | 4191e42e90f3a79e71cdc5be29bf009459b4f7679669fe364f561ca66a68baca |
+
+## S4 admission
+
+Continuation after34fa4e9. Transfer-222 accepts all seven open S4 labels from
+M2 T17 S6. Scope and expected-new sets are exactly ChkInvisibleMTiles, ExCInvT,
+ChkForLandJumpSpring, ExCJSp, ChkJumpspringMetatiles, JSFnd and NoJSFnd.
+Baseline1,429/1,992, maximum1,436. DEBD-DEE7 has the two predicates and landing
+activation; player/terrain_metatiles.c is the sole shared owner. Climbing S3
+precedes this group; pipe-entry S5 follows. Terrain callers consume invisible Z
+and spring C; activation invokes the spring predicate before its four stores.
+
+Replace inline terrain predicates with named source helpers and move the
+unchanged activation body from player.c. No generic fireball/background helper
+or unrelated node is admitted. Source audit covers every caller and consumed
+flag; ROM proof records the naturally reached helper entries and returns from
+512 ordinary NMI foot/side metatile routes. Do not modify CPU, PC, stack, ROM or
+outputs. Owner-local inputs stay nonredistributable. Keep raw records below
+ignored build/m2-t43-s4,50 MB,20-second process deadlines; coordinator owns
+cleanup after regression use.
+
+Native operational proof uses mysmb.hidden-spring-chain, retained terrain and
+177 original landing-child calls per width, affected collision/player tests,
+strict C90 x86/x64, DOS16 link, purity and three owner-authorized EXEs per P.
+The similar-issue sweep distinguishes the source leaf predicates from generic
+legacy fireball exclusions and checks both spring identities, no-write exits,
+field widths, duplicate activation bodies and actual callers. No platform
+business logic or descendant rewrite is admitted.
+
+## S4 hidden and spring proof
+
+S4 P1 completes all seven expected nodes:1,429 ->1,436/1,992. No scoped node
+is deferred or transferred. This group has direct actual-native proof, with
+no original child-return substitution. Other previously recorded whole-game
+and descendant gaps remain open; T43 and M2 are incomplete.
+
+Admission validated seven unique open labels, seven expected matches and
+accepted transfer-222. The source-order set and individual dispositions are:
+
+| Node | Original address | Logic and disposition |
+| --- | --- | --- |
+| ChkInvisibleMTiles | DEBD | Compare hidden coin5F first, then hidden1-up60; expose the original consumed Z. ROM-match complete. |
+| ExCInvT | DEC3 | Both comparison exits preserve the input metatile and all RAM. ROM-match complete. |
+| ChkForLandJumpSpring | DEC4 | Invoke spring predicate before writing force70, spring forceF9, timer3 and animation1. ROM-match complete. |
+| ExCJSp | DEDC | Non-spring return performs no writes; spring return follows the four original stores. ROM-match complete. |
+| ChkJumpspringMetatiles | DEDD | Compare top67 then bottom68; return the original C without changing input or RAM. ROM-match complete. |
+| JSFnd | DEE6 | Either matched spring metatile sets the consumed carry result. ROM-match complete. |
+| NoJSFnd | DEE7 | All other metatiles return cleared carry; both paths preserve RAM. ROM-match complete. |
+
+### Original logic track
+
+DEBD-DEE7 contains22 instructions and four conditional branches. All22 and all
+eight branch directions execute in512 ordinary NMI routes: the existing player
+terrain fixture cases328-839 exhaust256 foot and256 side tile inputs. RAM is
+controlled only at the naturally reached terrain root. No original ROM, CPU
+register, PC, stack or output is changed. Observer-free and observed frames
+are identical in all512 cases. Primary raw records total4,281,382 bytes below
+the50 MB budget; each process has a20-second deadline.
+
+The recorder observes actual child inputs and returns. Invisible returns
+must preserve A and expose Z; spring predicates must preserve A and expose C.
+All source callers are audited: two invisible BEQ consumers, one side spring
+BCC consumer and the landing activation's spring BCC consumer. Other CPU flags
+are not consumed across these calls. Native Boolean results represent those
+specific original flags; no emulated CPU state enters the product.
+
+Both widths independently execute each real C entry from original input RAM,
+comparing consumed flags and complete RAM except hardware return-stack storage,
+while retaining mapped0109-0139. There is no child replay or difference mask.
+
+| Entry | Calls per width | Distinct original input tiles | Exact results |
+| --- | ---: | ---: | ---: |
+| ChkInvisibleMTiles | 348 | 255 | 348/348 |
+| ChkForLandJumpSpring | 91 | 91 | 91/91 |
+| ChkJumpspringMetatiles, direct side calls | 92 | 92 | 92/92 |
+
+The nested spring predicate also executes in all91 landing calls; its branches
+are included in PC coverage, while landing's actual full-RAM result proves the
+composed activation. The direct-entry total is531/531 per width. Empty tile0
+is skipped by the original terrain caller before the invisible helper; its
+simple comparison semantics are source-audited and covered by the exhaustive
+native predicate test, not misreported as original execution.
+
+Reproduce using reference_frame_recorder with fixture=t43-player-terrain
+cases328-839, hidden-spring-snapshot, entrance-children and pc-coverage.
+hidden_spring_snapshot_check validates every captured real entry and original
+return flag. The recorder also asserts preserved A before writing each pure
+predicate record.
+
+### Operational track and review
+
+One owner, game/player/terrain_metatiles.c, now contains the two predicates
+and spring landing activation. The activation body leaves player.c, and the
+two invisible caller sites plus the side spring site call the source-named
+helpers. Landing calls the same spring helper before its four stores. No
+separate algorithm or platform-specific gameplay is introduced.
+
+The similar-issue sweep checks all original predicate callers, both spring
+identities, consumed flags, no-write exits and duplicate activation stores.
+The legacy fireball coordinate collision helper has its own generic exclusion
+list and does not represent either source leaf; its algorithm is unchanged
+and receives no S4 credit. Isolated terrain-root tests retain explicit pure
+predicate contracts; the actual leaf proof above is independently executed.
+
+Native tests exhaust all256 predicate inputs and1,024 full-RAM initial-state
+cases per width. All pass. S1 retains all1,034 caller results and the exact same
+59 actual-root matches per width; all177 retained original landing-child calls
+also match. Collision regression, player route, friction, hazard and platform
+suites pass on both widths. Bounding-box retains its known baseline failure.
+Selected CTests pass6/7, including the new hidden-spring test and the three
+prior chain tests, player route and purity. Core-smoke still fails the existing
+entrance loop; HEAD and current source reproduce line137 on both widths.
+Neither old failure is counted as a pass.
+
+All121 shared units compile as strict C90 on x86/x64; product self-tests and
+hidden own-window creation/message probes pass. DOS16 compiles and links with
+the existing OLDNAMES warning. DOS graphical runtime, resource binding and
+physical486SX performance remain unproved. All three owner-authorized EXEs are
+refreshed; no ROM, generated resource source, raw capture or temporary research
+artifact is committed. Platform files remain unchanged.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257175 | cf1f1e127c5de7a06342a970d48012ae67f18652c010ec55029c07058dedf81c |
+| mysmb32.exe | 358371 | 795153c55053fc18d29fc0563de094010b4332328c86d7951569e00a59f5ad24 |
+| mysmb64.exe | 366834 | 9c5710ad69cca93ef57a9c2efd97e17fb536df47f033e71377a9d2603f93541b |

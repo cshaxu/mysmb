@@ -1469,3 +1469,7 @@ add_test(NAME mysmb.terrain-metatile-chain COMMAND mysmb_terrain_metatile_smoke)
 add_executable(mysmb_climbing_smoke test/climbing_smoke.c src/game/player/climbing.c)
 target_include_directories(mysmb_climbing_smoke PRIVATE src)
 add_test(NAME mysmb.climbing-chain COMMAND mysmb_climbing_smoke)
+
+add_executable(mysmb_hidden_spring_smoke test/hidden_spring_smoke.c src/game/player/terrain_metatiles.c)
+target_include_directories(mysmb_hidden_spring_smoke PRIVATE src)
+add_test(NAME mysmb.hidden-spring-chain COMMAND mysmb_hidden_spring_smoke)

@@ -117,3 +117,10 @@ int main(void)
     printf("terrain foot call-order errors=%u\n", (unsigned int)errors);
     return errors ? 1 : 0;
 }
+
+/* Isolated terrain caller contracts. The real pure leaves are verified
+ * independently by the S4 original-ROM and native predicate checks. */
+mysmb_u8 mysmb_player_invisible_metatile(mysmb_u8 tile)
+{ return tile == 0x5fU || tile == 0x60U ? 1U : 0U; }
+mysmb_u8 mysmb_player_jumpspring_metatile(mysmb_u8 tile)
+{ return tile == 0x67U || tile == 0x68U ? 1U : 0U; }

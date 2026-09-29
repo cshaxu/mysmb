@@ -1065,6 +1065,12 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--hidden-spring-snapshot=", 25u) == 0) {
+            if (movement_snapshot_path != NULL) return 64;
+            movement_snapshot_path = arguments[recorded] + 25u;
+            background_snapshot = 77u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--climbing-snapshot=", 20u) == 0) {
             if (movement_snapshot_path != NULL) return 64;
             movement_snapshot_path = arguments[recorded] + 20u;
@@ -3459,7 +3465,7 @@ int main(int argument_count, char **arguments)
                 (unsigned int)(t26_fixture - 23372u));
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
-        if ((background_snapshot >= 4u && background_snapshot <= 76u) && movement_snapshot_path != NULL &&
+        if ((background_snapshot >= 4u && background_snapshot <= 77u) && movement_snapshot_path != NULL &&
             elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 26141u) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&
@@ -3685,13 +3691,22 @@ int main(int argument_count, char **arguments)
                             entrance_children[entrance_child_count][1] = driver->machine->a;
                         if (background_snapshot == 22u && entrance_child_active == 2u)
                             entrance_children[entrance_child_count][1] = (unsigned char)(driver->machine->p & 1u);
+                        if (background_snapshot == 77u && entrance_child_active != 2u) {
+                            if (driver->machine->a != entrance_children[entrance_child_count][1]) return 69;
+                            entrance_children[entrance_child_count][0] |= (unsigned char)(
+                                (entrance_child_active == 1u ? ((driver->machine->p >> 1u) & 1u) :
+                                (driver->machine->p & 1u)) << 7u);
+                        }
                         ++entrance_child_count;
                         entrance_child_active = 0u;
                     }
                 }
                 else if (entrance_children_path != NULL) {
                     unsigned int child;
-                    child = background_snapshot == 76u ? (before_pc == 0x9716u ? 1u : 0u) :
+                    child = background_snapshot == 77u ?
+                        (before_pc == 0xdebdu ? 1u : (before_pc == 0xdec4u ? 2u :
+                        (before_pc == 0xdeddu ? 3u : 0u))) :
+                        background_snapshot == 76u ? (before_pc == 0x9716u ? 1u : 0u) :
                         background_snapshot == 75u ?
                         (before_pc == 0x8a4du ? 1u : (before_pc == 0xbbfeu ? 2u : 0u)) :
                         background_snapshot == 74u ?
@@ -3928,7 +3943,7 @@ int main(int argument_count, char **arguments)
                         if (background_snapshot == 15u && child == 5u &&
                             (driver->machine->x != 6u || driver->machine->a != 1u)) return 69;
                         entrance_children[entrance_child_count][1] =
-                            background_snapshot == 76u ? driver->machine->a :
+                            (background_snapshot == 76u || background_snapshot == 77u) ? driver->machine->a :
                             background_snapshot == 74u ? (child <= 3u ? driver->machine->y :
                                 (child == 11u ? driver->machine->ram[0u] : driver->machine->a)) :
                             background_snapshot == 72u && child == 2u ? (before_pc == 0xdc52u ? driver->machine->ram[8u] : driver->machine->a) :
@@ -4099,7 +4114,7 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        if (background_snapshot >= 5u && background_snapshot <= 76u) {
+        if (background_snapshot >= 5u && background_snapshot <= 77u) {
             unsigned char header[8] = {'M','S','T','P',1u,0u,0u,0u};
             header[5] = transition_entry == 0xb1c7u ? 1u :
                 (transition_entry == 0xb206u ? 2u : (transition_entry == 0xb1e5u ? 3u : 4u));
@@ -4131,6 +4146,7 @@ int main(int argument_count, char **arguments)
                 header[2] = 'B';
                 header[5] = transition_entry == 0xb6f9u ? 1u : 2u;
             }
+            if (background_snapshot == 77u) { header[2] = '$'; header[5] = 1u; }
             if (background_snapshot == 76u) { header[2] = '&'; header[5] = 1u; header[7] = coin_entry_carry; }
             if (background_snapshot == 75u) { header[2] = '%'; header[5] = transition_entry == 0xde05u ? 1u : 2u; }
             if (background_snapshot == 74u) { header[2] = '$'; header[5] = 1u; }
@@ -4323,7 +4339,7 @@ int main(int argument_count, char **arguments)
         unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
         unsigned int child;
         int ok;
-        if ((background_snapshot < 3u || background_snapshot > 76u) || movement_snapshot_phase != 2u ||
+        if ((background_snapshot < 3u || background_snapshot > 77u) || movement_snapshot_phase != 2u ||
             entrance_child_active != 0u) return 69;
         if (background_snapshot == 4u) header[2] = 'P';
         if (background_snapshot == 5u) header[2] = 'T';
@@ -4351,6 +4367,7 @@ int main(int argument_count, char **arguments)
         if (background_snapshot == 31u) header[2] = 'S';
         if (background_snapshot == 32u) header[2] = 'Z';
         if (background_snapshot == 33u) header[2] = 'A';
+        if (background_snapshot == 77u) header[2] = '(';
         if (background_snapshot == 76u) header[2] = '&';
         if (background_snapshot == 75u) header[2] = '%';
         if (background_snapshot == 74u) header[2] = '$';

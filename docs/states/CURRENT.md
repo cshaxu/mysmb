@@ -2,30 +2,38 @@
 
 ## Current Work
 
-**M2 T43 S3 is closed at1,429/1,992:14 new matches and one old claim revoked. S4 is next, not yet admitted.**
-T43 covers150 nodes:136 expected new,14 retained; original maximum1,518,
-revised global maximum1,517 after the independent KillEnemies revocation.
+**M2 T43 S4 is closed at1,436/1,992:all seven expected nodes complete. S5 is next, not yet admitted.**
+T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
-## M2 T43 S3 Packet
+## M2 T43 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after60162e3; accepted transfer-221. |
-| Objective | The14 exact open S3 climbing labels; all14 expected new. |
-| Non-goals | No KillEnemies algorithm rewrite, unrelated nodes or platform gameplay. |
-| Reference Baseline |1,416/1,992;14 expected; maximum1,430. S1 climbing captures are the baseline. |
-| Candidate Proposal | [S3 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-admission). |
-| Files And ABI Surface | Shared climbing.c, old player owner, area child visibility/header, manifests, tests/recorder and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after34fa4e9; accepted transfer-222. |
+| Objective | The seven exact open S4 invisible/spring labels; all seven expected new. |
+| Non-goals | No generic fireball collision rewrite, unrelated nodes or platform gameplay. |
+| Reference Baseline |1,429/1,992;seven expected; maximum1,436. S1 landing captures supply the retained baseline. |
+| Candidate Proposal | [S4 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s4-admission). |
+| Files And ABI Surface | Shared terrain_metatiles.c, old player owner, terrain callers/header, tests, recorder and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original branch/table/state and child ABI proof; separate actual-child and operational checks. |
-| Expected Markers | DE25-DEBC data/control chain, one climbing owner and one existing KillEnemies child owner. |
-| Asset Needs | Owner-local ROM/listing;1,024 routes/50 MB/20-second deadlines; ignored build containment. Authorized three EXEs, DOS link-only. |
-| Reporting Requirements | All14 exact dispositions, dual proof, descendant limits and artifact hashes. |
-| Stop Conditions | Unadmitted child rewrite, altered original outputs, hidden mismatch or platform gameplay. |
-| Exit Criteria |14 nodes proved or accepted transfers, both verification tracks and three artifacts. |
+| Verification | Original consumed Z/C, input preservation and full RAM writes; separate native operational proof. |
+| Expected Markers | Complete DEBD-DEE7 chain, one predicate/activation owner and source-equivalent terrain callers. |
+| Asset Needs | Owner-local ROM/listing;512 routes/50 MB/20-second deadlines; ignored build containment. Authorized three EXEs, DOS link-only. |
+| Reporting Requirements | Seven exact dispositions, dual proof, retained limits and artifact hashes. |
+| Stop Conditions | Unadmitted rewrite, altered original outputs, hidden mismatch or platform gameplay. |
+| Exit Criteria | Seven nodes proved or accepted transfers, both verification tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | Kill-loop duplication, metatile gates, facing/table indices, byte carry and page selection. |
+| Similar-Issue Sweep | Predicate callers, consumed flags, both spring identities, no-write exits and duplicate stores. |
+
+## S4 closure
+
+[Hidden/spring proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s4-hidden-and-spring-proof)
+closes all seven scoped nodes. Both widths match531 actual original entries
+from512 NMI routes, including consumed flags and full RAM. All22 instructions
+and eight branch directions execute. S1 retains1,034 caller,59 actual and177
+landing-child matches per width. Six selected CTests pass; legacy core and
+bounding-box failures remain. Three EXEs refreshed; DOS remains link-only.
 
 ## S3 closure
 

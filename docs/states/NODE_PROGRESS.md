@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1429 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1436 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 477 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 470 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,429 / 1,992 (71.74%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,436 / 1,992 (72.09%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S3 climbing](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-climbing-proof)
-completes14 nodes with1,024 original caller matches per width;960 actual roots
-match. Independent child proof revokes the old KillEnemies completion for its
-missing RAM00 store, leaving maintenance with M2 T29 S8. Net progress is13:
-1,416 ->1,429. Prior terrain/climbing match sets remain intact.
+Latest task review: [T43 S4 hidden/spring](../proposals/m2/t43-terrain-and-bounding-boxes.md#s4-hidden-and-spring-proof)
+completes seven nodes with531 actual original-entry matches per width from512
+NMI routes. All consumed flags, full RAM,22 instructions and eight branch
+directions are covered. Previous terrain and landing matches remain intact;
+other descendant and whole-game gaps, including KillEnemies, remain open.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1429)
+## Completed matches (1436)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1447,6 +1447,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12231 | `PutPlayerOnVine` |
 | 12244 | `SetVXPl` |
 | 12259 | `ExPVne` |
+| 12263 | `ChkInvisibleMTiles` |
+| 12267 | `ExCInvT` |
+| 12273 | `ChkForLandJumpSpring` |
+| 12284 | `ExCJSp` |
+| 12286 | `ChkJumpspringMetatiles` |
+| 12292 | `JSFnd` |
+| 12293 | `NoJSFnd` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

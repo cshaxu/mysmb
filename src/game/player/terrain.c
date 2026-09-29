@@ -4,7 +4,7 @@
 #include "game/world/world.h"
 
 /* ROM $DC64-$DE02 PlayerBGCollision and its head/feet/side control chain.
- * Child conformance remains separately owned; full S1 proof is pending. */
+ * Root proof is recorded in T43 S1; child conformance is separately owned. */
 enum {
     MYSMB_PLAYER_X = 0x0086U,
     MYSMB_JUMPSPRING_ANIM = 0x070eU,
@@ -141,7 +141,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
             right.block_row_offset);
         return 2U;
     }
-    if (tile == 0x5fU || tile == 0x60U) return 0U;
+    if (mysmb_player_invisible_metatile(tile) != 0U) return 0U;
     if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
         game->ram[MYSMB_PLAYER_STATE] = 0U;
         return 1U;
@@ -169,7 +169,7 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
     struct mysmb_game *game, const struct mysmb_player_terrain *terrain,
     mysmb_u8 collision_side)
 {
-    if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U) {
+    if (mysmb_player_invisible_metatile(terrain->metatile) != 0U) {
         return 1U;
     }
     if (mysmb_world_is_climbable(terrain->metatile) != 0U) {
@@ -181,7 +181,7 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
                                    terrain->block_row_offset);
         return 1U;
     }
-    if (terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
+    if (mysmb_player_jumpspring_metatile(terrain->metatile) != 0U) {
         /* ChkJumpspringMetatiles reaches StopPlayerMove unless animation
          * has already claimed this metatile. */
         if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) return 1U;

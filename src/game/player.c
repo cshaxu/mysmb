@@ -510,17 +510,6 @@ mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
     return 1U;
 }
 
-/* Existing jumpspring effect remains S4-owned. */
-void mysmb_player_land_jumpspring(struct mysmb_game *game, mysmb_u8 metatile)
-{
-    if (metatile == 0x67U || metatile == 0x68U) {
-        game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
-        game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
-        game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
-        game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
-    }
-}
-
 /* Translation of HandlePipeEntry, excluding the separate warp destination
  * tables owned by the area-transition route. */
 mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
