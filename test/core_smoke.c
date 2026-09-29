@@ -1337,7 +1337,7 @@ int main(void)
     game.ram[0x001bU] = 0x2eU;
     game.ram[0x07e0U] = 0U;
     game.ram[0x07e1U] = 0U;
-    mysmb_objects_collect_power_up(&game);
+    mysmb_objects_collect_power_up(&game, 5U);
     if (game.ram[0x0014U] != 0U || game.ram[0x001bU] != 0U ||
         game.ram[0x0756U] != 1U || game.ram[0x000eU] != 9U ||
         game.ram[0x0747U] != 0xffU || game.ram[0x07e0U] != 0U ||
@@ -1349,7 +1349,7 @@ int main(void)
     if (game.ram[0x07e0U] != 1U || game.ram[0x0131U] != 0x2aU) return 1;
     game.ram[0x0039U] = 3U;
     game.ram[0x075aU] = 2U;
-    mysmb_objects_collect_power_up(&game);
+    mysmb_objects_collect_power_up(&game, 5U);
     if (game.ram[0x0115U] != 0x0bU || game.ram[0x0131U] != 0x30U ||
         game.ram[0x075aU] != 2U) return 1;
     for (index = 0U; index < 5U; ++index) {
@@ -1360,7 +1360,7 @@ int main(void)
     if (game.ram[0x075aU] != 3U) return 1;
     game.ram[0x0039U] = 2U;
     game.ram[0x079fU] = 0U;
-    mysmb_objects_collect_power_up(&game);
+    mysmb_objects_collect_power_up(&game, 5U);
     if (game.ram[0x079fU] != 0x23U) return 1;
     game.ram[0x0300U] = 0U;
     game.ram[0x0026U] = 0x11U;

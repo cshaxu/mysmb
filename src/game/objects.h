@@ -118,8 +118,11 @@ void mysmb_objects_check_hammer_bro_stomp(struct mysmb_game *game);
 void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game);
 /* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
-/* ROM $ddcd HandlePowerUpCollision state effect. */
-void mysmb_objects_collect_power_up(struct mysmb_game *game);
+/* ROM $D800 HandlePowerUpCollision, with original enemy-slot input. */
+void mysmb_objects_collect_power_up(struct mysmb_game *game, mysmb_u8 slot);
+/* Existing SetPRout state effect; caller passes source A/Y. */
+void mysmb_objects_set_player_routine(struct mysmb_game *game,
+                                       mysmb_u8 routine, mysmb_u8 state);
 /* ROM FloateyNumbersRoutine, excluding OAM output. */
 /* ROM SetupFloateyNumber when RelativeEnemyPosition has prepared $03ae. */
 void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,

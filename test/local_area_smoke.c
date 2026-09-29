@@ -356,7 +356,7 @@ int main(void)
     game.ram[0x0753U] = 0U;
     game.ram[0x0756U] = 1U;
     game.ram[0x0039U] = 0U;
-    mysmb_objects_collect_power_up(&game);
+    mysmb_objects_collect_power_up(&game, 5U);
     if (game.ram[0x0756U] != 2U || game.ram[0x000eU] != 12U ||
         game.ram[0x0300U] != 7U || game.ram[0x0301U] != 0x3fU ||
         game.ram[0x0302U] != 0x10U || game.ram[0x0303U] != 4U ||

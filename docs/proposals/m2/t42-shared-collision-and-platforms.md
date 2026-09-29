@@ -568,3 +568,114 @@ Raw records: 4494547 bytes, below 50 MB.
 | mysmb16.exe | 259513 | 1c44dee115434c57c617117c8f2fede699c8da641c012acfe43c8c78fcc67460 |
 | mysmb32.exe | 356625 | a291a8b53371da47647764869459af460cad41b5495e34a983f25f5a05176ca1 |
 | mysmb64.exe | 364291 | f5703a930a65475e5580986d5e048a6c4066dafd40f3629caa0b35d50ab61b9a |
+
+## S4 admission: power-up pickup
+
+S3 closed in 2fb45bd. Coordinator accepts transfer-213 from M2 T17 S6.
+Baseline 1,304/1,992; six scoped/expected-new labels, maximum 1,310:
+
+`HandlePowerUpCollision` (open), `Shroom_Flower_PUp` (open), `SetFor1Up` (open), `UpToSuper` (open), `UpToFiery` (open), `NoPUp` (open).
+
+Original $D800-$D84C. Extract the pickup body into world/powerup_collision.c.
+Give the existing collection API its source enemy-slot argument and update
+its sole gameplay caller plus direct tests. Restore EraseEnemyObject then
+SetupFloateyNumber(control6), pickup sound, fresh PowerUpType, star timer AND
+music, 1UP control overwrite, player status and palette/SetPRout sequence.
+The old inline SetPRout effect becomes one named shared objects.c dependency;
+its original node remains S5-owned, with no credit here. Existing erasure,
+floating-score and palette implementations remain their own dependencies.
+
+Logic proof: ordinary NMI PowerUpObjHandler -> PlayerEnemyCollision reaches
+the pickup root; input fixtures cover types, player statuses, source order,
+score overwrite, music, live child state and child arguments. Separate actual
+child comparisons from full-input caller contracts. Native proof includes all
+byte types/statuses and source child mutation; CTest mysmb.powerup-pickup-chain,
+affected power-up and collision tests, strict C90 x86/x64, DOS16 link,
+platform purity, hidden-window response and three EXEs once per P.
+
+Existing owner-local ROM/listing provenance and nonredistributable containment
+remain; ignored build/m2-t42-s4 allows at most 384 fixtures, 50 MB raw records,
+twenty-second process deadlines and resumable checkpoints. Coordinator owns
+cleanup after dependent regressions. Owner-authorized three EXEs remain the
+standing delivery exception. DOS link-only; no complete-game claim.
+Similar-issue sweep covers partial erasure, early type caching, world-coordinate
+score substitution, absent star music, direct-call preconditions and duplicate
+pickup effects. No unadmitted child repair or platform gameplay is authorized.
+Every scoped node needs dual proof or exact accepted transfer before closure.
+
+## S4 original power-up pickup proof
+
+S4 P1 closes all six expected open labels: 1,304 -> 1,310/1,992.
+No scoped label remains incomplete or transfers. T42 stays open; S5 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| HandlePowerUpCollision | EraseEnemyObject, score control6, pickup sound and fresh type dispatch in original order. ROM-match complete. |
+| Shroom_Flower_PUp | Fresh PlayerStatus dispatch: small, super and already-fiery exits. ROM-match complete. |
+| SetFor1Up | Overwrite only the source slot floating-score control with 0B after common setup. ROM-match complete. |
+| UpToSuper | Store super status and call SetPRout with A9/Y0. ROM-match complete. |
+| UpToFiery | Call SetPRout with A12/Y0 after fiery status and GetPlayerColors. ROM-match complete. |
+| NoPUp | Preserve the source no-upgrade return footprint. ROM-match complete. |
+
+All 35 original instructions in $D800-$D84C and both outcomes of four
+branches execute. 128 controlled input fixtures enter through ordinary NMI,
+PowerUpObjHandler and PlayerEnemyCollision. Types, statuses, player/area
+palette settings and command offsets cover the common path and each tail.
+Only entry RAM inputs change; original code, PC, stack and outputs do not.
+Observed and observer-free original frames agree, not native full frames.
+
+Caller comparison passes 256/256 on x86/x64. Complete child input RAM,
+erase/score slot X, score A6, palette entry X and SetPRout A/Y are checked
+before replaying recorded child results. Erase/score preserve X; SetPRout
+returns ObjectOffset. Palette and SetPRout do not consume incoming X.
+Hardware return storage is excluded; mapped $0109-$0139 remains compared.
+Separate actual-child comparison passes 240/256. The sixteen fiery cases
+differ only at $00 (original FF, native78), from GetPlayerColors. That child
+keeps receiver M2 T27 S1 and its existing scratch gap; this S does not repair
+or certify its implementation. SetPRout and SetupFloateyNumber remain S5
+dependencies. This proves the six caller labels, not whole-game equality.
+
+The single pickup body now lives in game/world/powerup_collision.c with an
+explicit enemy-slot argument. Its existing caller and direct tests use slot5.
+Full erasure replaces partial field clearing; score setup uses prepared
+relative coordinates, then sound and fresh type/status reads. Star music is
+restored; 1UP overwrites score control after common setup. The old SetPRout
+effects have one named dependency seam pending S5. Similar-issue review covers
+all collection call sites, duplicate effects, type caching, score coordinates,
+erasure and star music. No platform gameplay changes or runtime emulator.
+
+Native checks pass 393,216 type/status/slot combinations on each width and
+child-mutated type/status checks. Four CTests pass: pickup, actor, initializer
+and platform purity. Collision/OAM suites pass on both widths. Existing
+core_smoke and local_area_smoke still fail at lines136 (entrance) and450
+(warp rendering), respectively: instrumented baseline S3 and current S4
+fail at exactly the same assertions on both widths. Their pickup API changes
+do not certify these broad tests; no assertion is weakened or removed.
+
+Old actual power-up actor comparisons improve from84/100 to86/100: star
+case46 now matches on both widths. All prior matches remain; fourteen prior
+OAM/graphics failures remain unchanged. The actor matrix retains18,928/29,434
+matches, and S1/S2/S3 retain all3,648 prior actual outcomes including failures.
+Fifteen initializer/platform native suites also pass on both widths.
+
+All114 shared files compile as strict C90 for x86/x64. Both product self-tests
+pass and hidden windows create/respond without desktop input. DOS16 links
+with the existing OLDNAMES warning; DOS graphics, resource binding and 486SX
+performance remain unverified. Three owner-authorized test EXEs are refreshed.
+
+Reproduce powerup_pickup_fixture.h cases0..127 with
+--fixture=t42-powerup-pickup=N, --powerup-pickup-snapshot, --control-children
+and --pc-coverage. powerup_pickup_snapshot_check validates callers;
+enemy_loop_actual_check runs actual children. Native CTest is
+mysmb.powerup-pickup-chain. Ignored build/m2-t42-s4 holds bounded records and
+checkpoints with twenty-second process deadlines; coordinator owns cleanup
+after dependent verification. A corrected fixture uses slot5 box $04C4-$04C7;
+the rejected earlier box fixture never produced closure evidence.
+
+Raw records: 2260491 bytes, below50 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 259513 | c1122e366fbd4bec4821876d8d6a90ec0a8183e8d9e69112c5f37b0c8c5610e0 |
+| mysmb32.exe | 356931 | fb78427c6dd5e1b8a005808237eec073cc3f4fb31f9047cd7730baaef775a0ef |
+| mysmb64.exe | 365144 | 3095b200d1125ff37305d98f07493d26a57e23d9421f62e1006fe1f6c3ccb18f |

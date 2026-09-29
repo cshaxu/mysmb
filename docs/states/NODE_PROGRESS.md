@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1304 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1310 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 603 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 597 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,304 / 1,992 (65.46%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,310 / 1,992 (65.76%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S3 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s3-original-hammer-contact-proof)
-closes three hammer contact nodes: 576/576 caller comparisons; actual
-children match 54/576 with named geometry/injury gaps. Prior hammer, actor
-and fireball results remain unchanged. T42 is open; power-up pickup is next.
+Latest task review: [T42 S4 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s4-original-power-up-pickup-proof)
+closes six pickup caller labels:256/256 caller and240/256 actual matches.
+Palette scratch gaps remain. Power-up actor matches improve84 ->86/100;
+prior actor/collision matches remain. T42 is open; player contact S5 is next.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1304)
+## Completed matches (1310)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1321,6 +1321,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11228 | `PlayerHammerCollision` |
 | 11256 | `ClHCol` |
 | 11258 | `ExPHC` |
+| 11262 | `HandlePowerUpCollision` |
+| 11279 | `Shroom_Flower_PUp` |
+| 11292 | `SetFor1Up` |
+| 11297 | `UpToSuper` |
+| 11302 | `UpToFiery` |
+| 11305 | `NoPUp` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

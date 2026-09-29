@@ -935,43 +935,16 @@ void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
     enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
     if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
                                     enemy_box)) {
-        mysmb_objects_collect_power_up(game);
+        mysmb_objects_collect_power_up(game, slot);
     }
 }
-/* ROM $ddcd HandlePowerUpCollision.  The score or 1-up is deliberately
- * deferred to FloateyNumbersRoutine, as in the original. */
-void mysmb_objects_collect_power_up(struct mysmb_game *game)
+/* Existing SetPRout effect extracted from the pickup caller. Its source
+ * node is owned by T42 S5; this seam makes the dependency explicit. */
+void mysmb_objects_set_player_routine(struct mysmb_game *game,
+                                       mysmb_u8 routine, mysmb_u8 state)
 {
-    const mysmb_u8 slot = 5U;
-    mysmb_u8 type;
-
-    type = game->ram[MYSMB_POWER_UP_TYPE];
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 0U;
-    game->ram[MYSMB_ENEMY_ID + slot] = 0U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_ATTRIBUTES + slot] = 0U;
-    mysmb_objects_setup_floatey_number(game, slot,
-                                       type == 3U ? 0x0bU : 6U);
-    /* ROM HandlePowerUpCollision queues Sfx_PowerUpGrab. */
-    game->ram[MYSMB_SQUARE2_SOUND] = 0x20U;
-    if (type == 2U) {
-        game->ram[MYSMB_STAR_INVINCIBLE_TIMER] = 0x23U;
-        return;
-    }
-    if (type == 3U) return;
-    if (game->ram[MYSMB_PLAYER_STATUS] == 0U) {
-        game->ram[MYSMB_PLAYER_STATUS] = 1U;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 9U;
-    }
-    else if (game->ram[MYSMB_PLAYER_STATUS] == 1U) {
-        game->ram[MYSMB_PLAYER_STATUS] = 2U;
-        /* ROM HandlePowerUpCollision calls GetPlayerColors immediately
-         * after setting fiery status, before UpToFiery/SetPRout. */
-        (void)mysmb_area_queue_player_palette(game);
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 12U;
-    }
-    else return;
-    game->ram[MYSMB_PLAYER_STATE] = 0U;
+    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = routine;
+    game->ram[MYSMB_PLAYER_STATE] = state;
     game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
     game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
 }
