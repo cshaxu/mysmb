@@ -54,7 +54,7 @@ boundary.
 | T42 | Shared collision, bounding boxes and movement primitives | 11085–11923 | 98 |
 | T43 | Player/enemy terrain, fireball background and bounding boxes | 11924–13022 | 150 |
 | T44 | Block-buffer and subsequent source routines | 13023–14000 | 109 |
-| T45 | Projectile, powerup and player/enemy collision completion | 14001–14459 | 45 |
+| T45 | Enemy OAM tail, block/projectile/platform graphics and player data | 14001–14459 | 45 |
 | T46 | Relative positions, offscreen bits and player/enemy OAM | 14460–14780 | 43 |
 | T47 | Object OAM, sprite tables and graphics attributes | 14781–15069 | 40 |
 | T48 | Sound-effect queue and square/noise handlers | 15070–15500 | 74 |
