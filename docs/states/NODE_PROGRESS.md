@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1664 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 83 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 245 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 1669 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 81 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 242 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1664 / 1,992 (83.53%)**. The 83 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1669 / 1,992 (83.79%)**. The 81 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T45 S4 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) completes six small-platform OAM labels. Original control/read/write and full child RAM/OAM proof, x86/x64 builds, DOS16 link, purity and three EXEs provide separate validation.
+Latest task review: [T45 closure](../history/M2-T45-object-oam-tail-and-graphics.md#t45-closure) completes all 45 object OAM/graphics labels in five source-ordered chains. S5 proves five bubble/player graphics labels with original control/table reads and full child RAM/OAM parity; x86/x64 builds, DOS16 link, purity and three EXEs are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1664)
+## Completed matches (1669)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1694,11 +1694,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14379 | `SOfs` |
 | 14386 | `SOfs2` |
 | 14392 | `ExSPl` |
+| 14397 | `DrawBubble` |
+| 14413 | `ExDBub` |
+| 14418 | `PlayerGfxTblOffsets` |
+| 14424 | `PlayerGraphicsTable` |
+| 14457 | `SwimKickTileNum` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
 
-## Mapped but not yet matched (83)
+## Mapped but not yet matched (81)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1738,8 +1743,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14424 | `PlayerGraphicsTable` |
-| 14457 | `SwimKickTileNum` |
 | 14460 | `PlayerGfxHandler` |
 | 14466 | `CntPl` |
 | 14489 | `SwimKT` |

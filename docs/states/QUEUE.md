@@ -21,7 +21,7 @@ children keep their ledger receivers and original source-order slices.
 
 [T44](../history/M2-T44-block-buffer-and-object-graphics.md#t44-closure) is closed: 109/109 scoped labels, 107 new and two retained/rechecked completions, ending at 1,624 / 1,992. T45 is the next unadmitted source-order candidate, beginning at `CheckToMirrorLakitu` after the `EggExc` boundary.
 
-[T45 object OAM tail and graphics](../proposals/m2/t45-object-oam-tail-and-graphics.md) is the next 45-label source-order candidate. It divides the real 14007–14457 label span into five contiguous S chains and retains exact T16/T17 custody until each S is admitted.
+[T45 object OAM tail and graphics](../history/M2-T45-object-oam-tail-and-graphics.md#t45-closure) is closed: 45/45 scoped labels match, ending at 1,669 / 1,992. T46 is the next unadmitted source-order candidate, beginning with `PlayerGfxHandler`; its labels retain their registered custody until admission.
 
 ## M1 Candidates
 

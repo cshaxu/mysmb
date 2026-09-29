@@ -12,6 +12,7 @@ enum {
     MYSMB_PLAYER_X_SPEED_ABSOLUTE = 0x0700U,
     MYSMB_SWIMMING = 0x0704U,
     MYSMB_PLAYER_CHANGE_SIZE = 0x070bU,
+    MYSMB_FIREBALL_THROWING_TIMER = 0x0711U,
     MYSMB_PLAYER_ANIM_TIMER_SET = 0x070cU,
     MYSMB_PLAYER_ANIMATION = 0x070dU,
     MYSMB_PLAYER_CROUCHING = 0x0714U,
@@ -30,10 +31,15 @@ enum {
     MYSMB_PLAYER_SPRITE_OFFSET = 0x06e4U,
     MYSMB_PLAYER_INJURY_TIMER = 0x079eU,
     MYSMB_PLAYER_ANIM_TIMER = 0x0781U,
+    MYSMB_JUMP_SWIM_TIMER = 0x0782U,
+    MYSMB_A_B_BUTTONS = 0x000aU,
     MYSMB_PLAYER_FRAME_COUNTER = 0x0009U,
     MYSMB_PLAYER_GFX_TABLE_OFFSETS = 0x6e07U,
     MYSMB_PLAYER_GRAPHICS_TABLE = 0x6e17U,
-    MYSMB_PLAYER_GRAPHICS_TABLE_END = 0x6ee7U
+    MYSMB_PLAYER_GRAPHICS_TABLE_END = 0x6ee7U,
+    MYSMB_SWIM_KICK_TILE_NUM = 0x6ee7U,
+    MYSMB_SWIM_KICK_TABLE_END = 0x6ee9U,
+    MYSMB_SWIM_TILE_REP_OFFSET = 0x6eb5U
 };
 /* ROM $ee35-$ef25 action selection.  The source table remains in the
  * owner-local PRG binding, rather than becoming tracked C data. */
@@ -121,6 +127,14 @@ static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
     if (game->ram[MYSMB_PLAYER_STATE] == 2U) {
         return (mysmb_u8)(offset + game->ram[MYSMB_PLAYER_ANIMATION] * 8U);
     }
+    /* ActionSwimming goes to GetCurrentAnimOffset without advancing the
+     * animation unless JumpSwimTimer, PlayerAnimCtrl or button A is set. */
+    if (game->ram[MYSMB_PLAYER_STATE] == 1U &&
+        game->ram[MYSMB_SWIMMING] != 0U &&
+        game->ram[MYSMB_JUMP_SWIM_TIMER] == 0U &&
+        game->ram[MYSMB_PLAYER_ANIMATION] == 0U &&
+        (game->ram[MYSMB_A_B_BUTTONS] & MYSMB_BUTTON_A) == 0U)
+        return offset;
     if (animated == 0U) {
         game->ram[MYSMB_PLAYER_ANIMATION] = 0U;
         return offset;
@@ -239,6 +253,41 @@ void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game)
         mysmb_oam_player_get_offscreen_bits(game);
 }
 
+/* ROM RenderPlayerSub/DrawPlayerLoop: consume a selected graphics offset and
+ * publish the source scratch while drawing the requested top rows. */
+static void mysmb_oam_player_render_rows(struct mysmb_game *game,
+                                         mysmb_u8 graphics_offset,
+                                         mysmb_u8 row_count)
+{
+    mysmb_u8 row;
+    mysmb_u8 oam_offset;
+    mysmb_u8 y;
+    mysmb_u8 attributes;
+    oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
+    y = game->ram[MYSMB_PLAYER_RELATIVE_Y];
+    attributes = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
+    /* RenderPlayerSub publishes these source scratch bytes before
+     * DrawPlayerLoop consumes the indexed PlayerGraphicsTable rows. */
+    game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_RELATIVE_X];
+    game->ram[5U] = game->ram[MYSMB_PLAYER_RELATIVE_X];
+    game->ram[2U] = y;
+    game->ram[3U] = game->ram[MYSMB_PLAYER_FACING];
+    game->ram[4U] = attributes;
+    game->ram[7U] = row_count;
+    for (row = 0U; row < row_count; ++row) {
+        game->ram[0U] = game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + graphics_offset + row * 2U)];
+        game->ram[1U] = game->area_prg[(mysmb_u16)(
+            MYSMB_PLAYER_GRAPHICS_TABLE + graphics_offset + row * 2U + 1U)];
+        mysmb_oam_player_draw_row(game, &oam_offset, &y,
+            game->ram[MYSMB_PLAYER_RELATIVE_X],
+            game->ram[0U], game->ram[1U],
+            attributes, game->ram[MYSMB_PLAYER_FACING]);
+        game->ram[2U] = y;
+        game->ram[7U]--;
+    }
+}
+
 /* ROM PlayerGfxHandler and its PlayerGfxProcessing/RenderPlayerSub tail.
  * The caller owns the source-order relative-position and offscreen-bit calls. */
 void mysmb_oam_render_player(struct mysmb_game *game)
@@ -246,8 +295,6 @@ void mysmb_oam_render_player(struct mysmb_game *game)
     mysmb_u8 graphics_offset;
     mysmb_u8 row;
     mysmb_u8 oam_offset;
-    mysmb_u8 y;
-    mysmb_u8 attributes;
     mysmb_u8 offscreen;
 
     if (game->area_prg == 0 ||
@@ -256,33 +303,11 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 1U) != 0U) return;
     graphics_offset = mysmb_oam_player_select_gfx(game);
     game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
+    mysmb_oam_player_render_rows(game, graphics_offset, 4U);
     oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
-    y = game->ram[MYSMB_PLAYER_RELATIVE_Y];
-    attributes = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
-    for (row = 0U; row < 4U; ++row) {
-        mysmb_oam_player_draw_row(game, &oam_offset, &y,
-            game->ram[MYSMB_PLAYER_RELATIVE_X],
-            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE +
-                                        graphics_offset + row * 2U)],
-            game->area_prg[(mysmb_u16)(MYSMB_PLAYER_GRAPHICS_TABLE +
-                                        graphics_offset + row * 2U + 1U)],
-            attributes, game->ram[MYSMB_PLAYER_FACING]);
-    }
-    /* PlayerOffscreenChk consumes the vertical nibble prepared by the source
-     * offscreen route.  Preserve its one-row-at-a-time mask when present. */
-    offscreen = (mysmb_u8)(game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >> 4U);
-    oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
-    for (row = 0U; row < 4U; ++row) {
-        if ((offscreen & 1U) != 0U) {
-            game->ram[(mysmb_u16)(0x0200U + oam_offset)] = 0xf8U;
-            game->ram[(mysmb_u16)(0x0204U + oam_offset)] = 0xf8U;
-        }
-        offscreen >>= 1U;
-        oam_offset = (mysmb_u8)(oam_offset - 8U);
-    }
     if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 0x0bU ||
         graphics_offset == 0xc8U) {
-        oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 16U);
+        oam_offset = (mysmb_u8)(oam_offset + 16U);
         game->ram[(mysmb_u16)(0x0202U + oam_offset)] &= 0x3fU;
         game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
             (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
@@ -296,6 +321,58 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         game->ram[(mysmb_u16)(0x0206U + oam_offset)] =
             (mysmb_u8)((game->ram[(mysmb_u16)(0x0206U + oam_offset)] & 0x3fU) |
                       0x40U);
+    }
+    if (game->ram[MYSMB_FIREBALL_THROWING_TIMER] != 0U) {
+        mysmb_u8 animation_timer;
+        mysmb_u8 throw_timer;
+        mysmb_u8 rows;
+        animation_timer = game->ram[MYSMB_PLAYER_ANIM_TIMER];
+        throw_timer = game->ram[MYSMB_FIREBALL_THROWING_TIMER];
+        game->ram[MYSMB_FIREBALL_THROWING_TIMER] = 0U;
+        if (animation_timer < throw_timer) {
+            game->ram[MYSMB_FIREBALL_THROWING_TIMER] = animation_timer;
+            graphics_offset = game->area_prg[MYSMB_PLAYER_GFX_TABLE_OFFSETS + 7U];
+            game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
+            rows = (game->ram[MYSMB_PLAYER_X_SPEED] |
+                    game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS]) == 0U ? 4U : 3U;
+            mysmb_oam_player_render_rows(game, graphics_offset, rows);
+        }
+    }
+    /* PlayerOffscreenChk consumes the vertical nibble prepared by the source
+     * offscreen route.  Preserve its one-row-at-a-time mask when present. */
+    offscreen = (mysmb_u8)(game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >> 4U);
+    game->ram[0U] = offscreen;
+    oam_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U);
+    for (row = 0U; row < 4U; ++row) {
+        if ((offscreen & 1U) != 0U) {
+            game->ram[(mysmb_u16)(0x0200U + oam_offset)] = 0xf8U;
+            game->ram[(mysmb_u16)(0x0204U + oam_offset)] = 0xf8U;
+        }
+        offscreen >>= 1U;
+        game->ram[0U] = offscreen;
+        oam_offset = (mysmb_u8)(oam_offset - 8U);
+    }
+    /* PlayerGfxHandler's swimming continuation follows FindPlayerAction,
+     * not the ordinary render return path.  The two source bytes at $eee7
+     * select the seventh/eighth sprite kick tile. */
+    if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU &&
+        game->ram[MYSMB_PLAYER_CHANGE_SIZE] == 0U &&
+        game->ram[MYSMB_SWIMMING] != 0U &&
+        game->ram[MYSMB_PLAYER_STATE] != 0U &&
+        (game->ram[MYSMB_PLAYER_FRAME_COUNTER] & 4U) == 0U &&
+        game->area_prg_size >= MYSMB_SWIM_KICK_TABLE_END) {
+        mysmb_u8 kick_offset;
+        mysmb_u8 tile_index;
+        kick_offset = (mysmb_u8)(game->ram[MYSMB_PLAYER_SPRITE_OFFSET] + 24U +
+            ((game->ram[MYSMB_PLAYER_FACING] & 1U) == 0U ? 4U : 0U));
+        tile_index = 0U;
+        if (game->ram[MYSMB_PLAYER_SIZE] != 0U) {
+            if (game->ram[(mysmb_u16)(0x0201U + kick_offset)] ==
+                game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) return;
+            tile_index = 1U;
+        }
+        game->ram[(mysmb_u16)(0x0201U + kick_offset)] =
+            game->area_prg[MYSMB_SWIM_KICK_TILE_NUM + tile_index];
     }
 }
 

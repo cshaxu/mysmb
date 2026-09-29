@@ -1799,51 +1799,51 @@ The labels and branches behind every line remain open until individually bound b
 | 13979 | `SpnySC` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
 | 13982 | `MirrorEnemyGfx` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
 | 13994 | `EggExc` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
-| 14007 | `CheckToMirrorLakitu` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14026 | `NVFLak` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14033 | `CheckToMirrorJSpring` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14044 | `SprObjectOffscrChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14054 | `LcChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14060 | `Row3C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14067 | `Row23C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14073 | `AllRowC` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14085 | `ExEGHandler` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14088 | `DrawEnemyObjRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14093 | `DrawOneSpriteRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14097 | `MoveESprRowOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14104 | `MoveESprColOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14119 | `DefaultBlockObjTiles` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14122 | `DrawBlock` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14133 | `DBlkLoop` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14147 | `ChkRep` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14159 | `SetBFlip` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14167 | `BlkOffscr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14174 | `PullOfsB` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14175 | `ChkLeftCo` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14178 | `MoveColOffscreen` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14182 | `ExDBlk` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14187 | `DrawBrickChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14197 | `DChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14242 | `ChnkOfs` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14250 | `ExBCDr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14254 | `DrawFireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14261 | `DrawFirebar` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14275 | `FireA` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14280 | `ExplosionTiles` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14283 | `DrawExplosion_Fireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14292 | `DrawExplosion_Fireworks` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14327 | `KillFireBall` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
-| 14334 | `DrawSmallPlatform` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14361 | `TopSP` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14369 | `BotSP` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14379 | `SOfs` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14386 | `SOfs2` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14392 | `ExSPl` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
-| 14397 | `DrawBubble` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbubble) |
-| 14413 | `ExDBub` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdbub) |
-| 14418 | `PlayerGfxTblOffsets` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playergfxtbloffsets) |
-| 14424 | `PlayerGraphicsTable` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-playergraphicstable) |
-| 14457 | `SwimKickTileNum` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-swimkicktilenum) |
+| 14007 | `CheckToMirrorLakitu` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14026 | `NVFLak` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14033 | `CheckToMirrorJSpring` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14044 | `SprObjectOffscrChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14054 | `LcChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14060 | `Row3C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14067 | `Row23C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14073 | `AllRowC` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14085 | `ExEGHandler` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14088 | `DrawEnemyObjRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14093 | `DrawOneSpriteRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14097 | `MoveESprRowOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14104 | `MoveESprColOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14119 | `DefaultBlockObjTiles` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14122 | `DrawBlock` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14133 | `DBlkLoop` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14147 | `ChkRep` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14159 | `SetBFlip` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14167 | `BlkOffscr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14174 | `PullOfsB` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14175 | `ChkLeftCo` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14178 | `MoveColOffscreen` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14182 | `ExDBlk` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14187 | `DrawBrickChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14197 | `DChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14242 | `ChnkOfs` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14250 | `ExBCDr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14254 | `DrawFireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14261 | `DrawFirebar` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14275 | `FireA` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14280 | `ExplosionTiles` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14283 | `DrawExplosion_Fireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14292 | `DrawExplosion_Fireworks` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14327 | `KillFireBall` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14334 | `DrawSmallPlatform` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14361 | `TopSP` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14369 | `BotSP` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14379 | `SOfs` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14386 | `SOfs2` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14392 | `ExSPl` | M2 T45 S4 shared src/game/oam/ | ROM-match complete | [T45 S4 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) |
+| 14397 | `DrawBubble` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
+| 14413 | `ExDBub` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
+| 14418 | `PlayerGfxTblOffsets` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
+| 14424 | `PlayerGraphicsTable` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
+| 14457 | `SwimKickTileNum` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
 | 14460 | `PlayerGfxHandler` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-playergfxhandler) |
 | 14466 | `CntPl` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-cntpl) |
 | 14489 | `SwimKT` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-swimkt) |

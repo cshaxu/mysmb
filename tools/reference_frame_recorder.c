@@ -142,6 +142,9 @@ static unsigned long mysmb_pc_hits[32768];
 static unsigned long mysmb_pc_fallthrough2[32768];
 static unsigned long mysmb_pc_other[32768];
 static unsigned long mysmb_area_read_hits[32768];
+static unsigned long mysmb_player_table_reads[208];
+static unsigned long mysmb_player_offset_reads[16];
+static unsigned long mysmb_swim_kick_reads[2];
 
 static int mysmb_reference_write_area_reads(const char *path)
 {
@@ -1008,6 +1011,8 @@ int main(int argument_count, char **arguments)
     const char *script;
     const char *coverage_path;
     const char *area_reads_path;
+    const char *player_table_reads_path;
+    const char *player_offset_reads_path;
     const char *metatile_path = NULL;
     const char *enemy_background_path = NULL;
     const char *enemy_landing_path = NULL;
@@ -1038,6 +1043,12 @@ int main(int argument_count, char **arguments)
     char *projectile_frame_end;
     unsigned int small_platform_variant;
     char *small_platform_variant_end;
+    unsigned int bubble_player_variant;
+    char *bubble_player_variant_end;
+    unsigned int bubble_draw_variant;
+    char *bubble_draw_variant_end;
+    unsigned int player_table_variant;
+    char *player_table_variant_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1049,7 +1060,7 @@ int main(int argument_count, char **arguments)
     unsigned int buttons;
     const unsigned char magic[8] = { 'M', 'S', 'F', 'R', 2u, 0u, 0u, 0u };
 
-    if (argument_count < 5 || argument_count > 10) return 64;
+    if (argument_count < 5 || argument_count > 11) return 64;
     parsed_frames = strtoul(arguments[3], LIB_NULL, 10);
     buttons = (unsigned int)strtoul(arguments[4], LIB_NULL, 0);
     if (parsed_frames == 0u || parsed_frames > 600u || buttons > 0xffu)
@@ -1059,6 +1070,8 @@ int main(int argument_count, char **arguments)
     script = NULL;
     coverage_path = NULL;
     area_reads_path = NULL;
+    player_table_reads_path = NULL;
+    player_offset_reads_path = NULL;
     movement_snapshot_path = NULL;
     movement_snapshot_phase = 0u;
     background_snapshot = 0u;
@@ -1080,6 +1093,9 @@ int main(int argument_count, char **arguments)
     block_graphics_variant = 0xffffffffu;
     projectile_frame = 0xffffffffu;
     small_platform_variant = 0xffffffffu;
+    bubble_player_variant = 0xffffffffu;
+    bubble_draw_variant = 0xffffffffu;
+    player_table_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1087,6 +1103,46 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--player-offset-reads=", 22u) == 0) {
+            if (player_offset_reads_path != NULL || arguments[recorded][22] == '\0') return 64;
+            player_offset_reads_path = arguments[recorded] + 22u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--player-table-variant=", 23u) == 0) {
+            unsigned long value;
+            if (player_table_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 23u,
+                            &player_table_variant_end, 10);
+            if (player_table_variant_end == arguments[recorded] + 23u ||
+                *player_table_variant_end != '\0' || value >= 26u) return 64;
+            player_table_variant = (unsigned int)value;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--player-table-reads=", 21u) == 0) {
+            if (player_table_reads_path != NULL || arguments[recorded][21] == '\0') return 64;
+            player_table_reads_path = arguments[recorded] + 21;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--bubble-draw-variant=", 22u) == 0) {
+            unsigned long value;
+            if (bubble_draw_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 22u,
+                            &bubble_draw_variant_end, 10);
+            if (bubble_draw_variant_end == arguments[recorded] + 22u ||
+                *bubble_draw_variant_end != '\0' || value >= 4u) return 64;
+            bubble_draw_variant = (unsigned int)value;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--bubble-player-variant=", 24u) == 0) {
+            unsigned long value;
+            if (bubble_player_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 24u,
+                            &bubble_player_variant_end, 10);
+            if (bubble_player_variant_end == arguments[recorded] + 24u ||
+                *bubble_player_variant_end != '\0' || value >= 16u) return 64;
+            bubble_player_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--small-platform-variant=", 25u) == 0) {
             unsigned long value;
             if (small_platform_variant != 0xffffffffu) return 64;
@@ -3652,6 +3708,79 @@ int main(int argument_count, char **arguments)
         if (elapsed >= warmup_frames && projectile_frame != 0xffffffffu &&
             (before_pc == 0xecdeu || before_pc == 0xecedu))
             driver->machine->ram[9u] = (lib_u8)projectile_frame;
+        /* T45 S5: vary only PlayerGfxHandler input RAM after its natural
+         * GameEngine call. Preserve original PC, registers, stack and PRG. */
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            bubble_player_variant != 0xffffffffu && before_pc == 0xeee9u) {
+            driver->machine->ram[0x001du] =
+                (lib_u8)((bubble_player_variant & 8u) != 0u ? 0u : 1u);
+            driver->machine->ram[0x0704u] = 1u;
+            driver->machine->ram[0x0033u] =
+                (lib_u8)((bubble_player_variant & 1u) != 0u ? 2u : 1u);
+            driver->machine->ram[0x0754u] =
+                (lib_u8)((bubble_player_variant & 2u) != 0u ? 1u : 0u);
+            driver->machine->ram[9u] =
+                (lib_u8)((bubble_player_variant & 4u) != 0u ? 4u : 0u);
+            driver->machine->ram[0x070bu] = 0u;
+            driver->machine->ram[0x079eu] = 0u;
+            driver->machine->ram[0x070du] = 0u;
+            driver->machine->ram[0x0781u] = 0u;
+        }
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            bubble_draw_variant != 0xffffffffu && before_pc == 0xede1u) {
+            driver->machine->ram[0x00b5u] =
+                (lib_u8)(bubble_draw_variant == 0u ? 0u :
+                         (bubble_draw_variant == 3u ? 2u : 1u));
+            driver->machine->ram[0x03d3u] =
+                (lib_u8)(bubble_draw_variant == 1u ? 8u : 0u);
+        }
+        /* T45 S5: one naturally called PlayerGfxHandler for each of the
+         * 26 eight-tile PlayerGraphicsTable poses. Only input RAM changes. */
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            player_table_variant != 0xffffffffu && before_pc == 0xeee9u) {
+            lib_u8 *ram = driver->machine->ram;
+            unsigned int pose = player_table_variant;
+            ram[0x001du] = 0u; ram[0x0704u] = 0u; ram[0x0754u] = 0u;
+            ram[0x0714u] = 0u; ram[0x0057u] = 0u; ram[0x000cu] = 0u;
+            ram[0x0700u] = 0u; ram[0x0045u] = 1u; ram[0x0033u] = 1u;
+            ram[0x070du] = 0u; ram[0x0781u] = 1u; ram[0x0782u] = 0u;
+            ram[0x000au] = 0u; ram[0x0711u] = 0u; ram[0x070bu] = 0u;
+            ram[0x000eu] = 8u; ram[0x079eu] = 0u; ram[9u] = 1u;
+            ram[0x009fu] = 0u;
+            if (pose <= 2u || (pose >= 12u && pose <= 14u)) {
+                ram[0x0057u] = 1u;
+                ram[0x000cu] = 1u;
+                ram[0x070du] = (lib_u8)(pose <= 2u ? pose : pose - 12u);
+            }
+            if (pose == 3u || pose == 15u) {
+                ram[0x0057u] = 1u;
+                ram[0x000cu] = 1u;
+                ram[0x0700u] = 9u;
+                ram[0x0045u] = 2u;
+            }
+            if (pose == 4u || pose == 16u) ram[0x001du] = 1u;
+            if ((pose >= 5u && pose <= 7u) ||
+                (pose >= 17u && pose <= 19u)) {
+                ram[0x001du] = 1u;
+                ram[0x0704u] = 1u;
+                ram[0x0782u] = 1u;
+                ram[0x070du] = (lib_u8)(pose <= 7u ? pose - 5u : pose - 17u);
+            }
+            if ((pose >= 8u && pose <= 9u) ||
+                (pose >= 20u && pose <= 21u)) {
+                ram[0x001du] = 3u;
+                ram[0x009fu] = 1u;
+                ram[0x070du] = (lib_u8)(pose == 9u || pose == 21u ? 1u : 0u);
+            }
+            if (pose == 10u) ram[0x0714u] = 1u;
+            if (pose == 11u) ram[0x0711u] = 2u;
+            if (pose >= 12u && pose <= 23u) ram[0x0754u] = 1u;
+            if (pose == 22u) ram[0x000eu] = 0x0bu;
+            if (pose == 24u) {
+                ram[0x070bu] = 1u;
+                ram[0x070du] = 1u;
+            }
+        }
         /* T45 S4: vary the ROM graphics consumer's input RAM only after the
          * original actor reaches DrawSmallPlatform. */
         if (elapsed >= warmup_frames && background_snapshot == 43u &&
@@ -4280,6 +4409,34 @@ int main(int argument_count, char **arguments)
                 }
             }
         }
+        /* T45 S5: after BubbleCheck returns to the original GameEngine
+         * frame, observe DrawBubble and PlayerGfxHandler as real JSR children.
+         * The existing BubbleCheck snapshot ends before these calls. */
+        if (entrance_children_path != NULL && background_snapshot == 11u &&
+            movement_snapshot_phase == 2u && elapsed >= warmup_frames) {
+            if (entrance_child_active != 0u) {
+                if (before_pc == entrance_child_return && driver->machine->s ==
+                    (lib_u8)(entrance_child_stack + 2u)) {
+                    memcpy(entrance_children[entrance_child_count] + 2050u,
+                           driver->machine->ram, 2048u);
+                    ++entrance_child_count;
+                    entrance_child_active = 0u;
+                }
+            }
+            else if (before_pc == 0xede1u || before_pc == 0xeee9u) {
+                if (entrance_child_count >= 16u) return 69;
+                entrance_children[entrance_child_count][0] =
+                    (unsigned char)(before_pc == 0xede1u ? 1u : 2u);
+                entrance_children[entrance_child_count][1] = driver->machine->x;
+                memcpy(entrance_children[entrance_child_count] + 2u,
+                       driver->machine->ram, 2048u);
+                entrance_child_stack = driver->machine->s;
+                entrance_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u + (lib_u8)(entrance_child_stack + 2u)]);
+                entrance_child_active = entrance_children[entrance_child_count][0];
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -4364,6 +4521,22 @@ int main(int argument_count, char **arguments)
             driver->machine->cartridge->prg[before_pc - 0x8000u + 1u] == 0xe7u)
             area_read_address = (lib_u16)(driver->machine->ram[0xe7u] +
                 ((lib_u16)driver->machine->ram[0xe8u] << 8u) + driver->machine->y);
+        /* ROM $efdc loads a pair of PlayerGraphicsTable bytes with X as
+         * its source table offset. Record only offsets, never payload. */
+        if (player_table_reads_path != NULL && elapsed >= warmup_frames &&
+            before_pc == 0xefdcu && driver->machine->x < 207u) {
+            ++mysmb_player_table_reads[driver->machine->x];
+            ++mysmb_player_table_reads[driver->machine->x + 1u];
+        }
+        if (player_offset_reads_path != NULL && elapsed >= warmup_frames) {
+            if ((before_pc == 0xef42u || before_pc == 0xef67u ||
+                 before_pc == 0xf030u || before_pc == 0xf0d3u ||
+                 before_pc == 0xf0e5u) &&
+                driver->machine->y < 16u)
+                ++mysmb_player_offset_reads[driver->machine->y];
+            if (before_pc == 0xef2du && driver->machine->x < 2u)
+                ++mysmb_swim_kick_reads[driver->machine->x];
+        }
         if (core_machine_debug_step(driver->machine, 1u, 1024u, &result) !=
             LIB_STATUS_OK || result.trap_valid) break;
         /* An interrupt can redirect a debug step before the sampled opcode.
@@ -4631,6 +4804,7 @@ int main(int argument_count, char **arguments)
         if (background_snapshot == 7u) header[2] = 'L';
         if (background_snapshot == 8u) header[2] = 'W';
         if (background_snapshot == 9u) header[2] = 'D';
+        if (background_snapshot == 11u) header[2] = 'B';
         if (background_snapshot == 10u) header[2] = 'F';
         if (background_snapshot == 12u) header[2] = 'G';
         if (background_snapshot == 13u) header[2] = 'J';
@@ -4702,6 +4876,36 @@ int main(int argument_count, char **arguments)
         for (child = 0u; child < entrance_child_count; ++child)
             if (fwrite(entrance_children[child], 1u, 4098u, children) != 4098u) ok = 0;
         if (fclose(children) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (player_table_reads_path != NULL) {
+        FILE *reads = fopen(player_table_reads_path, "w");
+        unsigned int offset;
+        int ok;
+        if (reads == NULL) return 69;
+        ok = fprintf(reads, "offset,reads\n") >= 0;
+        for (offset = 0u; offset < 208u && ok; ++offset)
+            if (mysmb_player_table_reads[offset] != 0ul)
+                ok = fprintf(reads, "%u,%lu\n", offset,
+                             mysmb_player_table_reads[offset]) >= 0;
+        if (fclose(reads) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (player_offset_reads_path != NULL) {
+        FILE *reads = fopen(player_offset_reads_path, "w");
+        unsigned int index;
+        int ok;
+        if (reads == NULL) return 69;
+        ok = fprintf(reads, "source,index,reads\n") >= 0;
+        for (index = 0u; index < 16u && ok; ++index)
+            if (mysmb_player_offset_reads[index] != 0ul)
+                ok = fprintf(reads, "offset,%u,%lu\n", index,
+                             mysmb_player_offset_reads[index]) >= 0;
+        for (index = 0u; index < 2u && ok; ++index)
+            if (mysmb_swim_kick_reads[index] != 0ul)
+                ok = fprintf(reads, "kick,%u,%lu\n", index,
+                             mysmb_swim_kick_reads[index]) >= 0;
+        if (fclose(reads) != 0) ok = 0;
         if (!ok) return 69;
     }
     return mysmb_reference_write_coverage(coverage_path) &&
