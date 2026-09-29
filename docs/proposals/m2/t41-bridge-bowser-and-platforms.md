@@ -1021,3 +1021,142 @@ Raw trace output: 8418057 bytes, below 32 MB.
 | mysmb16.exe | 256015 | a29d79b5554029ea297cb7d0660790f37afdd837340aa7b1fc5c04473ad79ffd |
 | mysmb32.exe | 350649 | 615526680f859d2a3c93ef8efd67cab400bf342c443855ddc4078d11765c9b6a |
 | mysmb64.exe | 358037 | c0d67b68232462f146a7a8dedf9451d5c61f949e44f4fc430764450d12ba8feb |
+
+## S6 admission: star flag and end-area score chain
+
+S5 closed in ae621ce. Coordinator accepts transfer-202 under the continuing
+M2 mandate. Baseline 1,205/1,992; all twenty S6 checklist labels above are in
+scope and expected new, maximum 1,225. StarFlagExit enters as audited with
+incomplete evidence; the other nineteen are open. The exact source-order set:
+
+`StarFlagYPosAdder`, `StarFlagXPosAdder`, `StarFlagTileData`, `RunStarFlagObj`, `GameTimerFireworks`, `SetFWC`, `IncrementSFTask1`, `StarFlagExit`, `AwardGameTimerPoints`, `NoTTick`, `EndAreaPoints`, `ELPGive`, `RaiseFlagSetoffFWorks`, `SetoffF`, `DrawStarFlag`, `DSFLoop`, `DrawFlagSetTimer`, `IncrementSFTask2`, `DelayToAreaEnd`, `StarFlagExit2`.
+
+Entry RunStarFlagObj ($D2D9), three preceding tables ($D2CD-$D2D8), through
+StarFlagExit2 ($D3AF), including the shared EndAreaPoints entry ($D336).
+One shared owner enemy/star_flag.c replaces the approximate endgame caller.
+Restore JumpEngine scratch, five task paths, timer/fireworks choices, per-frame
+50-point conversion, fresh post-child player/slot reads, reverse four-sprite
+loop with byte OAM wrap, draw-before-delay writes and EventMusicBuffer gate.
+Keep bulk eligibility outside original entries. Fireworks S5 is the predecessor;
+Piranha S7 is the successor. RelativeEnemyPosition, DigitsMathRoutine and
+UpdateNumber remain external dependencies; this S grants no child credit.
+
+Logic proof: naturally reached original NMI actor route, bounded input-only
+fixtures at the root, all branches/tables and full child inputs before recorded
+returns. Record real-child comparisons independently and preserve all 11,372
+previous actual matches. No execution, stack, ROM, PC or output patches.
+Operational proof: mysmb.star-flag-chain native mutation contracts, prior
+fireworks/endgame regression, C90 x86/x64, DOS16 link, platform purity and
+hidden-window response. Refresh all three owner-authorized EXEs once per P.
+DOS remains link-only; node credit needs both tracks.
+
+Similar-issue sweep: duplicate score/draw owner, task guards, frame/sound gate,
+modifier index, fresh child state, byte OAM wrap and music queue/buffer choice.
+Existing local ROM/listing provenance and redistribution limits remain.
+Unique ignored build/m2-t41-s6 outputs: at most 1,024 original cases, 32-MB raw
+budget, twenty-second per-record deadline, resumable checkpoints. Coordinator
+owns cleanup and dependent-regression retention. Stop on unadmitted child
+repair, hidden differences, execution patches or platform gameplay logic.
+
+## S6 original star-flag and score proof
+
+S6 P1 closes all twenty expected caller/data nodes: 1,205 -> 1,225/1,992.
+No scoped node remains unfinished or transfers at closure. External child
+algorithms retain their individual proof boundaries and ledger receivers.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| StarFlagYPosAdder | Original four bytes bound to reverse-index draw loop; every index exercised. ROM-match complete. |
+| StarFlagXPosAdder | Original four bytes bound to reverse-index draw loop; byte coordinate carry wraps. ROM-match complete. |
+| StarFlagTileData | Original four tiles emitted in source reverse-index order. ROM-match complete. |
+| RunStarFlagObj | Frenzy clear, unsigned task gate, original JumpEngine scratch and all five native targets. ROM-match complete. |
+| GameTimerFireworks | Last digit 1/3/6 versus other digits selects exact count and state. ROM-match complete. |
+| SetFWC | Fireworks counter and source enemy state stores precede task increment. ROM-match complete. |
+| IncrementSFTask1 | Task byte increment reached from setup or all-zero game timer. ROM-match complete. |
+| StarFlagExit | Task zero and task >=5 exit without drawing; scratch differs as original. ROM-match complete. |
+| AwardGameTimerPoints | OR of all timer digits, frame bit gates only tick sound, not arithmetic. ROM-match complete. |
+| NoTTick | Modifier+5=-1 and math Y=23, then modifier+5=5 and score tail. ROM-match complete. |
+| EndAreaPoints | CurrentPlayer zero/nonzero selects score offset 0B/11 after timer math. ROM-match complete. |
+| ELPGive | Math child precedes fresh CurrentPlayer shift/OR4 and typed UpdateNumber tail. ROM-match complete. |
+| RaiseFlagSetoffFWorks | Unsigned Y >=72 decrements once then draws, including 72->71 boundary. ROM-match complete. |
+| SetoffF | Zero/negative fireworks draws then delays; positive count requests fireworks. ROM-match complete. |
+| DrawStarFlag | Relative child precedes fresh ObjectOffset/OAM reads; no alternative world-position formula. ROM-match complete. |
+| DSFLoop | Four reverse table indices, fresh relative fields, absolute indexed stores and byte OAM increment. ROM-match complete. |
+| DrawFlagSetTimer | Draw finishes before fresh returned-slot interval timer store of six. ROM-match complete. |
+| IncrementSFTask2 | Task increment after timer setup or fully completed delay. ROM-match complete. |
+| DelayToAreaEnd | Draw first, then fresh interval timer and EventMusicBuffer (not queue). ROM-match complete. |
+| StarFlagExit2 | Delay exits preserve task when interval or music remains. ROM-match complete. |
+
+All 92 original instructions in $D2D9-$D3AF execute (excluding the ten-byte
+JumpEngine vector); both sides of thirteen conditional branches execute.
+All twelve bytes in the three data tables match the owner PRG and every index
+is exercised. The five native task branches preserve original JumpEngine
+scratch; this is data provenance, not CPU emulation or runtime ROM dispatch.
+
+The 1,024 original NMI actor routes cover slots zero/five, all five tasks and
+unsigned invalid-task exits, timer zero/nonzero and last-digit choices, both
+frame-bit outcomes/players, Y=71/72/73 and byte boundaries, positive/zero/
+negative fireworks, OAM FC wrap and interval/music combinations. Controlled
+RAM inputs are applied at naturally reached RunStarFlagObj independently of
+observer selection. Every observer-free original frame matches its observed
+original frame. No CPU/register, PC, stack, ROM or output execution patches.
+This does not claim native full-frame equivalence.
+
+Original caller comparisons pass 2,048/2,048 across x86/x64. Child input RAM
+and typed arguments are compared before any recorded-return substitution:
+RelativeEnemyPosition ($F152, X), DigitsMathRoutine ($8F5F, Y) and UpdateNumber
+($BC36, A). The observer verifies returned relative X equals ObjectOffset.
+Mapped stack-page RAM $0109-$0139 is included; hardware return-stack storage
+is excluded. All VRAM/OAM/audio-queue RAM changes are compared. Source edges
+and the exact child entry addresses are reconciled against owner PRG bytes.
+
+Separate actual-child roots pass 1,552/2,048. Independent child tests from
+original inputs give RelativeEnemyPosition 256/512, DigitsMathRoutine 480/480,
+and UpdateNumber 0/240 exact RAM footprints. The 496 failed actual roots
+split into 256 relative-scratch and 240 number-output descendant cases.
+RelativeEnemyPosition remains with M2 T16 S4; UpdateNumber remains M2 T36 S5,
+with PrintStatusBarNumbers/OutputNumbers under M2 T28 S7. No new descendant
+credit is claimed, no mismatch is suppressed, and no generic child is rewritten.
+EndAreaPoints now uses the correct score/timer tail; the S5 fireworks roots
+still show score-output child differences, rather than claiming they are fixed.
+
+Implementation has one shared owner, enemy/star_flag.c. Legacy bulk eligibility
+and ObjectOffset setup remain outside source entries in endgame_objects.c.
+There is no platform gameplay branch or host-code change. Similar-issue sweep
+found and replaced the old task-1 default state, whole-arithmetic frame gate,
+wrong modifier slot, post-task extra drawing, inline relative calculation,
+nonwrapping OAM progression, delay writes before drawing and music queue gate.
+Both star flag and fireworks now call one EndAreaPoints owner.
+
+Operational proof passes 779 native mutation/branch cases per width, all
+32 fireworks lifetime contracts per width, 139,770 fireworks initializer
+footprints per width and the endgame smoke. The latter's historical exit-6
+fixture used title OperMode=0, where the original deliberately locks digits;
+setting gameplay OperMode=1 now checks 100->099 and +50 points and passes.
+Mutation cases prove fresh post-child player/slot/OAM reads and draw-before-
+delay ordering. Fifteen initializer/platform suites per width remain green.
+CTest star-flag-chain, fireworks-lifetime-chain and platform-purity pass 3/3.
+
+Final actual matrix: 12,928/20,730; all previous 11,372 exact matches remain,
+plus 1,552 star-flag roots and four improved actor-dispatch cases. The 7,802
+remaining sample differences are not node counts or a playability percentage.
+All 106 shared sources compile under strict C90 x86/x64; hidden-window response
+and self-tests pass. DOS16 compiles/links with the existing OLDNAMES warning.
+DOS remains link-only, without graphical, resource-binding or 486SX certification.
+All three owner-authorized EXEs are refreshed; raw ROM/derived resources stay ignored.
+
+Reproduce star_flag_fixture.h cases 0..1023 with --fixture=t41-star-flag=N,
+--star-flag-snapshot, --control-children and independent --pc-coverage.
+star_flag_snapshot_check checks the caller; enemy_loop_actual_check runs real
+children. Native CTest target: mysmb.star-flag-chain. Ignored build/m2-t41-s6
+holds bounded records/checkpoints with twenty-second per-record deadlines.
+Coordinator retains only dependent regression inputs and owns cleanup.
+S7 Piranha movement is next and is not admitted by this closure.
+
+Raw trace output: 11262160 bytes, below 32 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255929 | 1b66417bddea1bbdce7a63daac884ed930abf4d754807ae94190cdb14e5926c0 |
+| mysmb32.exe | 350797 | 57198aa82843b65a3d19616ee3788badfab514f566ad6e05c5a2b612d06f5d09 |
+| mysmb64.exe | 358735 | c9278a722428d24582b4aa580a9fd00bb6e2b862a40f563b21d68ffbb1c4ec3a |
