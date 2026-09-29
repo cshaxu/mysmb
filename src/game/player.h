@@ -86,7 +86,7 @@ void mysmb_player_update_scroll(struct mysmb_game *game);
 void mysmb_player_get_screen_position(struct mysmb_game *game);
 /* ROM ScrollScreen: apply a caller-owned explicit horizontal scroll amount. */
 void mysmb_player_scroll_screen(struct mysmb_game *game, mysmb_u8 amount);
-/* ROM $df4b-$df7d ImpedePlayerMove, with SideCheckLoop's physical side counter. */
+/* ROM $df4b-$df8a ImpedePlayerMove; collision_side is the caller's RAM $00. */
 void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side);
 /* ROM $DD5E-$DE02 side chain; caller supplies root guards, mask and $EB. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game);

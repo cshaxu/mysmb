@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1439 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1444 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 467 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 462 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,439 / 1,992 (72.24%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,444 / 1,992 (72.49%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S5 pipe entry](../proposals/m2/t43-terrain-and-bounding-boxes.md#s5-pipe-entry-proof)
-completes three nodes with512 actual original-route matches per width. All46
-instructions and12 branch directions execute. Destination lookup, silence and
-raw program-data indices are restored. Previous terrain and pipe-child matches
-remain intact; other descendant and whole-game gaps remain open.
+Latest task review: [T43 S6 impede](../proposals/m2/t43-terrain-and-bounding-boxes.md#s6-impede-proof)
+completes five nodes with 1,024 actual original matches per width. All 33
+instructions and eight branch directions execute. Scratch high adder and
+speed80 behavior are restored; all 242 retained impede calls match.
+Terrain/platform caller matches remain intact; other M2 gaps remain open.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1439)
+## Completed matches (1444)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1457,6 +1457,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12295 | `HandlePipeEntry` |
 | 12326 | `GetWNum` |
 | 12341 | `ExPipeE` |
+| 12343 | `ImpedePlayerMove` |
+| 12354 | `RImpd` |
+| 12358 | `NXSpd` |
+| 12365 | `PlatF` |
+| 12372 | `ExIPM` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

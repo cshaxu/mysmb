@@ -1130,3 +1130,109 @@ research output is committed.
 | mysmb16.exe | 257355 | ecc41e0f31f3589ec6ffa8bf9feaaa062b26b326ab7706298dc40663fd4f556d |
 | mysmb32.exe | 359106 | 7fd005aefc8de86181614c4573e5738670a66307c5668eb87d17e311d6b82911 |
 | mysmb64.exe | 367084 | 329c0a5192bdd024c5e3c2e110883e7133105917a079b5a3690f6d30d6ad0755 |
+
+## S6 admission
+
+Continuation afterb9bfd6e. Transfer-224 accepts the five open labels
+ImpedePlayerMove, RImpd, NXSpd, PlatF and ExIPM from M2 T17 S6.
+All five are expected new:1,439/1,992, maximum1,444. One player/impede.c owner
+replaces the legacy body. S5 pipe entry precedes it; S7 classifiers follow.
+Terrain and platform callers keep their owners and receive regression checks.
+
+Preserve side1 versus every other source byte, CPY result sign (especially
+right-side speed80), timer/speed stores, RAM00 high adder, low-byte carry into
+page and collision-mask write on every exit. Existing code omits RAM00, treats
+80 as a rightward correction and rejects non1/2 sides. No parent algorithm
+rewrite or guessed threshold is admitted.
+
+Original proof controls RAM only at a naturally reached ImpedePlayerMove
+inside ordinary NMI terrain flow. Budget1,024 routes,50 MB and20-second process
+deadlines below ignored build/m2-t43-s6; no CPU/ROM/PC/stack/output patch.
+Owner-local ROM/listing are nonredistributable. Coordinator owns cleanup after
+regression use. Compare actual full RAM and audit all source branches/stores.
+
+Operational proof uses mysmb.impede-chain, exhaustive native speed/side and
+page-edge cases, retained242 original terrain impede calls, terrain and
+platform caller regressions, strict C90 x86/x64, DOS16 link, purity and three
+owner-authorized EXEs. Similar-issue sweep covers every impede caller, scratch
+handoff, signed byte comparisons, carry/page wrap and duplicate owners.
+
+## S6 impede proof
+
+S6 P1 completes all five expected nodes: 1,439 -> 1,444 / 1,992.
+No scoped node is deferred or transferred. Transfer-224 is accepted;
+other M2 discrepancies retain their existing receivers. This is one source
+chain and one delivery, with individual node evidence below.
+
+| Node | Original address | Logic and disposition |
+| --- | --- | --- |
+| ImpedePlayerMove | DF4B | Read speed and the caller RAM00 side; only side1 selects the left branch, whose negative-speed exit clears the collision bit without position stores. ROM-match complete. |
+| RImpd | DF5E | All other side bytes select mask02; BPL tests the byte result of speed minus one, so speed80 exits without correction. ROM-match complete. |
+| NXSpd | DF66 | On correction, store timer10 then speed00; derive the signed high adder without changing skipped-path scratch. ROM-match complete. |
+| PlatF | DF74 | Store the high adder to RAM00; add correction to X with cleared carry, then add high byte and carry to page, with byte wrap. ROM-match complete. |
+| ExIPM | DF81 | Invert side mask and AND/store collision bits on every path, then return. ROM-match complete. |
+
+### Original logic track
+
+The chain spans DF4B-DF8A: 33 instructions and four conditional branches.
+All instructions and all eight branch directions execute in 1,024 controlled
+ordinary NMI routes. Fixture t43-impede uses the existing terrain case681 to
+reach the original entry. Only RAM inputs are controlled; original ROM, CPU,
+PC, hardware stack and computed outputs are untouched. Observed and
+observer-free original frames match in all 1,024 cases. Raw primary snapshots
+total 4,202,496 bytes below the 50 MB budget; process deadlines are 20 seconds.
+
+Cases0-511 cover both physical sides with all 256 speed bytes. Cases512-767
+cover every possible side byte with boundary speeds; cases768-1023 cover all
+X bytes under correction. Page00/FF, both X edges, collision masks and dirty
+timer/scratch values are included. Both native widths match all 1,024 actual
+original results across every one of the 2,048 RAM bytes, including the stack.
+No child-output substitution or state mask is used. There are no child calls,
+external data tables, CIRAM/palette/OAM-register/PPU/audio accesses in this
+leaf; its write footprint is exactly RAM00,0057,006D,0086,0490,0785.
+
+Reproduce using reference_frame_recorder with fixture=t43-impede cases0-1023,
+impede-snapshot and pc-coverage; compare with impede_snapshot_check linked to
+the actual shared owner. The original return registers are not consumed by
+the admitted terrain/platform callers; their RAM handoff is verified below.
+
+### Operational track and review
+
+Shared player/impede.c replaces the old player.c body. The repair restores the
+RAM00 high-adder store, the CPY speed80 boundary and the original non1 side
+branch. Low-byte carry and page wrap follow the original two additions.
+There is one owner for DOS16, Win32 x86 and x64; no host adapter was changed.
+
+The similar-issue sweep covers every production caller: four terrain call
+sites and one platform-response call. Each supplies the source RAM00 value,
+including the foot path's explicit MovingDir copy. Side scratch, signed-byte
+comparisons, timer/speed order, carry/page edges and mask-only exits were
+reviewed. No unrelated parent implementation or duplicate impede body remains.
+
+Native tests pass 262,144 full-RAM cases per width, covering all side/speed
+pairs at four page/X boundaries. All 242 independently captured original
+terrain impede calls now match all 2,048 RAM bytes on both widths. S1 retains
+all 1,034 caller matches and the same 59 actual-root matches per width.
+The platform matrix retains all 784 caller and 14 actual-root matches per
+width. Against HEAD, the remaining platform actual differences at RAM00,
+0057,0086,0785 are eliminated; only the existing RAM06/07 child discrepancies
+remain. These unresolved parent results are not claimed as complete gameplay.
+
+Mode, collision, player route, friction, hazard and platform suites pass on
+both widths. Bounding-box retains its recorded failure. Selected CTests pass
+9/10: the six T43 chains, mode, player route and purity pass; core-smoke still
+fails at source line137 on both HEAD and current, on both widths. Both legacy
+failures remain explicit. No broader equivalence is inferred from these tests.
+
+All 123 shared units compile under strict C90 on x86/x64. Product self-tests
+and hidden own-window creation/message probes pass. DOS16 compiles and links
+with the existing OLDNAMES warning. DOS graphical runtime, resource binding
+and physical 486SX performance remain unproved. The owner-authorized three
+EXEs are refreshed; no ROM, generated data, raw traces or research output is
+committed.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257307 | b61a7f6cb1cb828e0f4bde9e7a39439b63c404b6a75873365b882ece9a862cea |
+| mysmb32.exe | 359322 | 23db30f3998571eda5be64c11e180aee58f61288e0773ce908f824d31d16a860 |
+| mysmb64.exe | 367336 | 7eeefaa17b728ce01a8f4890f51803e4cc80eb42c41c6d29db5c8d797b846eb8 |
