@@ -515,3 +515,45 @@ callers as still having value-only final-byte assembly and the zero-flag
 Bowser child calls as requiring the ordinary handler branch. This checkpoint
 grants no node credit; the tracker remains **1,582 / 1,992** until the whole
 S8 handler tree is proven.
+
+#### S8 P3 checkpoint: ordinary enemy graphics control tree
+
+The product's `RunNormalEnemies -> EnemyGfxHandler` route now follows the
+original ordinary-enemy branches in shared C: work-RAM setup, source ID and
+state remapping, animation timing, shell and defeated states, six-sprite rows,
+vertical and horizontal flips, Lakitu and jumpspring attributes, and the
+offscreen/erase tail. Two superseded file-local Paratroopa/Lakitu renderers
+were removed. The zero-flag `ProcessBowserHalf -> RunRetainerObj` route now
+falls through the same ordinary handler. Its source-visible indexed reads
+past the named offset/attribute tables use the actual contiguous ROM bytes,
+not C out-of-bounds access or a fabricated index clamp.
+
+The ROM-logic track binds all 43 six-tile graphics rows, the 27 named offsets,
+the 27 named attribute values, animation mask and jumpspring offsets to one
+contiguous owner-ROM PRG span. The additional indexed spill bytes used by the
+zero-flag route were also checked against that ROM span. Original
+`RunNormalEnemies` child snapshots now match every non-stack RAM byte on
+**84/84 calls** for both x86 and x64. Original Bowser graphics child snapshots
+now match **1,024/1,024 calls** on both widths, including the 256 zero-flag
+ordinary-handler calls left open by P2. The records and table check remain in
+ignored `build/m2-t39-s8/`, `build/m2-t41-s3/` and `build/m2-t44-s8/`.
+
+The operational track built all x86 and x64 targets, both products, and the
+OpenNT DOS16 MZ target from the same shared C. Each Windows full suite reaches
+**222/233**; the same eleven failures were independently reproduced against
+the P1 baseline at P2 and this P has no new full-suite failures. Both product
+self-tests and the platform-purity check pass within those suites. Refreshed
+artifacts are `mysmb16.exe` (261835 bytes, SHA-256
+`a5cd7d6535404e1ad80ef00203e0b0ede527994fb9e3785f9d8b727aadd6cc17`),
+`mysmb32.exe` (347776 bytes, SHA-256
+`eb01acc8592c4121620d070901abf4558960358647f53bec8c7b00fa6e271697`),
+and `mysmb64.exe` (361586 bytes, SHA-256
+`7e0519ebdee364c1df221b3bc7ee87f9ddd7c95d95059c0b94ae793f745436ee`).
+
+The similar-issue sweep found legacy direct-test graphics helpers for Koopa,
+Goomba, Spiny, hammer bro, aquatic enemies and Podoboo; they are no longer
+selected by the normal-enemy product path, but need source-route audit and
+cleanup with the remaining S8 families. The retainer/princess branch and
+other unproven handler states remain open. This checkpoint grants no node
+credit; the tracker remains **1,582 / 1,992** until the complete S8 tree
+and its node-level checklist close.

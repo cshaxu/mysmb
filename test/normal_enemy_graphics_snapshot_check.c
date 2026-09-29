@@ -1,47 +1,47 @@
 #include "game/objects.h"
+#include "game/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 
-/* ProcessBowserHalf -> RunRetainerObj original child records.  This covers
- * both Bowser graphics flag branches and the ordinary handler fallthrough. */
+/* Original RunNormalEnemies -> EnemyGfxHandler child records.  Compare every
+ * non-stack RAM byte, including all six OAM sprite entries. */
 static struct mysmb_game game;
 static unsigned char record[4098];
 
 int main(int argc, char **argv)
 {
-    unsigned int scenario, count, index, slot, byte, differences;
-    unsigned int cases = 0U;
-    unsigned int failures = 0U;
+    unsigned int scenario, index, slot, byte, differences, cases, failures;
     unsigned char header[8];
     FILE *stream;
     char path[1024];
 
     if (argc != 2 || strlen(argv[1]) + 40U >= sizeof(path)) return 64;
-    for (scenario = 0U; scenario < 512U; ++scenario) {
-        sprintf(path, "%s/bowser-graphics-%u.calls", argv[1], scenario);
+    cases = failures = 0U;
+    for (scenario = 0U; scenario < 126U; ++scenario) {
+        sprintf(path, "%s/normal-actor-%u.calls", argv[1], scenario);
         stream = fopen(path, "rb");
         if (stream == NULL) return 65;
         if (fread(header, 1U, 8U, stream) != 8U ||
-            memcmp(header, "MSmC\1", 5U) != 0) return 66;
-        count = header[5];
-        for (index = 0U; index < count; ++index) {
+            memcmp(header, "MS8C\1", 5U) != 0) return 66;
+        for (index = 0U; index < header[5]; ++index) {
             if (fread(record, 1U, sizeof(record), stream) != sizeof(record))
                 return 66;
-            if (record[0] != 1U) continue;
+            if (record[0] != 3U) continue;
             ++cases;
             slot = record[1];
             memset(&game, 0, sizeof(game));
             memcpy(game.ram, record + 2U, 2048U);
-            mysmb_objects_draw_retainer(&game, (mysmb_u8)slot);
+            (void)mysmb_objects_draw_normal_enemy_graphics(&game,
+                                                             (mysmb_u8)slot);
             differences = 0U;
             for (byte = 0U; byte < 2048U; ++byte) {
                 if (byte >= 0x100U && byte < 0x200U) continue;
                 if (game.ram[byte] != record[2050U + byte]) {
                     ++differences;
-                    if (differences <= 8U && failures < 8U)
-                        printf("scenario=%u child=%u slot=%u RAM=%04x ROM=%02x native=%02x\n",
-                            scenario, index, slot, byte,
-                            record[2050U + byte], game.ram[byte]);
+                    if (differences <= 6U && failures < 8U)
+                        printf("scenario=%u slot=%u RAM=%04x ROM=%02x native=%02x\n",
+                            scenario, slot, byte, record[2050U + byte],
+                            game.ram[byte]);
                 }
             }
             if (differences != 0U) ++failures;
@@ -49,6 +49,6 @@ int main(int argc, char **argv)
         if (fgetc(stream) != EOF) return 66;
         fclose(stream);
     }
-    printf("Bowser child comparisons=%u differing=%u\n", cases, failures);
-    return cases == 1024U && failures == 0U ? 0 : 1;
+    printf("Normal enemy graphics cases=%u differing=%u\n", cases, failures);
+    return cases == 84U && failures == 0U ? 0 : 1;
 }
