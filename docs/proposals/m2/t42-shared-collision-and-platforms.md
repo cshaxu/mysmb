@@ -840,3 +840,122 @@ Raw records: 41311722 bytes, below150 MB.
 | mysmb16.exe | 256233 | 3217e11afc45cc9039be1dfac8c286e5456eefc0450472f20ab38457c5513bfa |
 | mysmb32.exe | 354516 | 80a3784a553a857a27a060e21684b4bb5b42b02af32de18be043d614b73f7f04 |
 | mysmb64.exe | 362755 | 9334617e30843e02917fb00eb0b11e9932573c1b71b12d0a33464765be818072 |
+
+## S6 admission: enemy pair collision
+
+S5 closed in0f2626c. Coordinator accepts transfer-215 from M2 T17 S6.
+Baseline1,344/1,992;16 scoped and expected-new nodes, maximum1,360:
+
+`SetBitsMask` (open), `ClearBitsMask` (open), `EnemiesCollision` (open), `ECLoop` (open), `YesEC` (open), `NoEnemyCollision` (open), `ReadyNextEnemy` (open), `ExitECRoutine` (open), `ProcEnemyCollisions` (open), `ShellCollisions` (open), `ExitProcessEColl` (open), `ProcSecondEnemyColl` (open), `MoveEOfs` (open), `EnemyTurnAround` (open), `RXSpd` (open), `ExTA` (open).
+
+Original $DA25-$DB44 is one contiguous pair-scan/response chain, including
+both seven-byte mask tables and EnemyTurnAround. Shared owner is
+world/enemy_collision.c. RunNormalEnemies supplies prepared boxes; child
+boundaries are GetEnemyBoundBoxOfs, SprObjectCollisionCore, ShellOrBlockDefeat
+and SetupFloateyNumber. Preserve descending scan, RAM1 and ObjectOffset
+reloads, candidate-first geometry arguments, latch masks, shell combinations,
+chain score wrapping and turnaround eligibility. Remove the old pair body;
+terrain-only legacy defeat remains pending its own admitted source slice.
+
+Logic proof compares original controlled NMI enemy-pair entries, branches,
+tables and full child input/consumed argument contracts before replaying
+child results. Actual-child integration is reported separately with named
+differences; child algorithms outside S6 are not silently repaired or credited.
+Operational proof uses mysmb.enemy-pair-chain, affected contact/actor tests,
+strict C90 x86/x64, DOS16 link, platform purity and three refreshed EXEs
+once per P. Prior S5 evidence is the incoming regression baseline.
+
+Owner-local ROM/listing provenance and nonredistributable containment are
+unchanged. Ignored build/m2-t42-s6 permits4,096 fixtures and150 MB raw records,
+twenty-second process deadlines and resumable checkpoints. Coordinator owns
+cleanup after dependent regressions. Three owner-authorized EXEs remain the
+delivery exception; DOS link-only and no whole-game equality claim.
+Similar-issue sweep covers cached offsets, box argument order, duplicated
+defeat/score effects, latch updates and byte-table indexing. All16 nodes need
+dual proof or accepted exact transfers before closure; admission is no credit.
+
+## S6 original enemy pair proof
+
+S6 P1 closes all16 expected open nodes:1,344 ->1,360/1,992.
+No scoped label remains incomplete or transfers. T42 remains open; S7 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| SetBitsMask | Seven set-mask bytes bound to original PRG; original unmasked indexing retained. ROM-match complete. |
+| ClearBitsMask | Seven clear-mask bytes bound to original PRG; source miss path uses the clear table. ROM-match complete. |
+| EnemiesCollision | Parity, area, current ID and mask gates; source box child and incoming-X decrement. ROM-match complete. |
+| ECLoop | Store candidate in RAM1, preserve first box and filter each descending candidate. ROM-match complete. |
+| YesEC | State-bit bypass or newly set latch enters the same pair response. ROM-match complete. |
+| NoEnemyCollision | Clear the live current-slot mask in the live candidate collision bits. ROM-match complete. |
+| ReadyNextEnemy | Restore first box and reload/decrement RAM1 after every child path. ROM-match complete. |
+| ExitECRoutine | Source return has no extra RAM effect; returned X is unused by the C caller. ROM-match complete. |
+| ProcEnemyCollisions | Combined defeated-state guard precedes current-shell and second-shell dispatch. ROM-match complete. |
+| ShellCollisions | Second defeat, live current chain read, live score slot and live chain increment. ROM-match complete. |
+| ExitProcessEColl | Defeated-state and Hammer Bro suppression return without extra writes. ROM-match complete. |
+| ProcSecondEnemyColl | Second-shell defeat, RAM1 chain lookup, live ObjectOffset score and live RAM1 increment. ROM-match complete. |
+| MoveEOfs | Turn the candidate then reload ObjectOffset before turning the current enemy. ROM-match complete. |
+| EnemyTurnAround | Preserve ID13/17/5 exemptions, ID18/14 turns and other ID>=7 exemption. ROM-match complete. |
+| RXSpd | Byte-negate X speed and XOR direction with3 without additional scratch writes. ROM-match complete. |
+| ExTA | Turnaround return preserves the original RAM footprint. ROM-match complete. |
+
+All134 original instructions in $DA33-$DB44 execute. Both adjacent mask
+tables bind all14 source bytes. Twenty-six of28 branches execute both ways.
+The taken ID13/17 exits at $DB20/$DB24 cannot occur from this pair root:
+both objects are filtered before EnemyTurnAround. Their exact source tests
+are retained and full-byte native ID tests cover those leaf exits. Thus
+54/54 feasible root outcomes execute; the two excluded edges are not called
+ROM-executed. No PC, stack, code or output modification obtains coverage.
+
+1,024 controlled entry-RAM fixtures reach EnemiesCollision through ordinary
+NMI/RunNormalEnemies. Original frames with and without observers agree.
+The caller comparison passes2,048/2,048 on x86/x64. Full child input RAM and
+consumed registers are checked before replaying child outputs: box-offset Y
+and X preservation, candidate-first geometry X/Y and returned carry, defeat
+slot/X preservation, and floating-score X/A and X preservation. Hardware
+return storage is excluded; all mapped $0109-$0139 variables remain compared.
+Turnaround and pair response are implemented directly, not child substitutions.
+
+Actual children match696/2,048. The remaining1352 comparisons differ only
+at $00/$06/$07, the existing SetStun/distance and geometry scratch omissions.
+
+Those descendants retain M2 T17 S6 custody and their later source slices.
+GetEnemyBoundBoxOfs remains T42 S9-owned. Source-relative score and the
+already translated ShellOrBlockDefeat are used without changing their child
+algorithms. This S proves its sixteen nodes, not full-game equivalence.
+
+One shared world/enemy_collision.c replaces the legacy pair and turnaround
+bodies. It restores RAM1 writes/reloads, live ObjectOffset after children,
+candidate-first box order, both source latch tables and shared defeat/score
+calls. The now-unused world-coordinate score helper is removed. The old
+terrain-only simplified defeat helper stays with the terrain owner. The
+similar-issue sweep reviews all production pair/turnaround callers, both
+score implementations, cached offsets, child argument order and latch paths.
+Platform files are unchanged; no emulator is linked into the product.
+
+Native tests pass393,472 state/latch/chain/ID/speed/direction combinations
+per width, plus child-mutated offsets, miss masks and gates. Three CTests
+pass: pair chain, prior contact chain and platform purity. Six affected
+suites pass on both widths. All18,936 prior actual actor matches remain;
+five preceding collision matrices retain920/2,048,0/1,024,54/576,240/256 and
+1,184/3,200 matches respectively. Existing descendant failures are not hidden
+or credited. The broad core/local-area baseline limitations remain unchanged.
+
+All116 shared files compile as strict C90 for x86/x64. Both product self-tests
+and hidden-window creation/response probes pass. DOS16 compiles/links with
+the known OLDNAMES warning. Three owner-authorized EXEs are refreshed. DOS
+graphics, resource binding and physical486SX performance remain unproved.
+
+Reproduce enemy_pair_fixture.h cases0..1023 with --fixture=t42-enemy-pair=N,
+--enemy-pair-snapshot, --control-children and --pc-coverage. Use
+enemy_pair_snapshot_check for callers and enemy_loop_actual_check for actual
+children. Native CTest is mysmb.enemy-pair-chain. Ignored build/m2-t42-s6
+contains resumable checkpoints and bounded raw records; per-process limit
+is20 seconds. Coordinator owns cleanup after dependent regression.
+
+Raw records: 32202654 bytes, below150 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256329 | 39021432fed66a7957199ef9c4807e08ed9dffbef504d42292f8ec979877a0c7 |
+| mysmb32.exe | 355274 | 586ce58cb7e7ecb73fdd4d67e73ec8b2ae953fc82454b579a6c12c1edc62e342 |
+| mysmb64.exe | 363036 | 2f5f377b2cfe577911aec5a1424d9f1378e98b9f64208481ac70cbec667dea4a |

@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1344 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1360 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 563 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 547 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,344 / 1,992 (67.47%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,360 / 1,992 (68.27%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S5 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s5-original-player-contact-proof)
-closes34 contact/response/score nodes:3,200/3,200 caller comparisons,
-1,184/3,200 actual matches with named scratch gaps. Actor matches improve
-18,928 ->18,936 with none lost. T42 remains open; enemy pairs S6 are next.
+Latest task review: [T42 S6 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s6-original-enemy-pair-proof)
+closes16 enemy-pair nodes:2,048/2,048 caller comparisons,
+696/2,048 actual matches with named scratch gaps. All18,936 prior actor
+matches remain. T42 remains open; platform collision S7 is next.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1344)
+## Completed matches (1360)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1361,6 +1361,22 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11554 | `SFcRt` |
 | 11558 | `SetupFloateyNumber` |
 | 11566 | `ExSFN` |
+| 11571 | `SetBitsMask` |
+| 11574 | `ClearBitsMask` |
+| 11577 | `EnemiesCollision` |
+| 11595 | `ECLoop` |
+| 11629 | `YesEC` |
+| 11632 | `NoEnemyCollision` |
+| 11637 | `ReadyNextEnemy` |
+| 11644 | `ExitECRoutine` |
+| 11648 | `ProcEnemyCollisions` |
+| 11667 | `ShellCollisions` |
+| 11680 | `ExitProcessEColl` |
+| 11683 | `ProcSecondEnemyColl` |
+| 11701 | `MoveEOfs` |
+| 11707 | `EnemyTurnAround` |
+| 11721 | `RXSpd` |
+| 11729 | `ExTA` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

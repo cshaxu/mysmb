@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T42 S5 is closed at1,344/1,992:all34 expected nodes complete. S6 is next.**
+**M2 T42 S6 is closed at1,360/1,992:all16 expected nodes complete. S7 is next.**
 T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 
-## M2 T42 S5 Packet
+## M2 T42 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T42 S5, source-order implementation. |
-| Admission And Approval | Continuing M2 mandate after92c925a; coordinator accepts transfer-214. |
-| Objective | All34 open contact/response/score nodes named in S5 admission, all expected new. |
-| Non-goals | No unadmitted geometry, stun, turnaround or palette child repair; no host gameplay. |
-| Reference Baseline | 1,310/1,992;34 expected, maximum1,344; T42 maximum1,382. |
-| Candidate Proposal | [T42 S5 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s5-admission-player-enemy-response-and-score). |
-| Files And ABI Surface | world/player_enemy_collision.c, child dependency seams, unified callers/tests, source audit, build manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T42 S6, source-order implementation. |
+| Admission And Approval | Continuing M2 mandate after0f2626c; coordinator accepts transfer-215. |
+| Objective | All16 open enemy-pair nodes named in S6 admission, all expected new. |
+| Non-goals | No unadmitted geometry, stun, box-offset or terrain child repair; no host gameplay. |
+| Reference Baseline | 1,344/1,992;16 expected, maximum1,360; T42 maximum1,382. |
+| Candidate Proposal | [T42 S6 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s6-admission-enemy-pair-collision). |
+| Files And ABI Surface | world/enemy_collision.c, old pair and turnaround bodies, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Source branches/tables and child input contracts; separate actual-child and native evidence; three-target build. |
-| Expected Markers | Unified contact gates, kick/stomp/score, live slot, injury sound/palette and forced death. |
+| Verification | Source branches/tables and full child inputs; separate actual-child and native evidence; three-target build. |
+| Expected Markers | Descending scan, live offsets, candidate-first boxes, masks, shared defeat/score and turnaround. |
 | Asset Needs | Existing owner-local ROM/listing; bounded ignored records; owner-authorized EXEs. DOS link-only. |
-| Reporting Requirements | All34 exact node dispositions, two proof tracks, remaining child gaps, ledger and hashes. |
+| Reporting Requirements | All16 exact dispositions, dual proof, named child gaps, ledger and hashes. |
 | Stop Conditions | Unadmitted child rewrite, patched source outputs, hidden mismatch or host gameplay. |
-| Exit Criteria |34 exact nodes proved or accepted transfers, dual proof and three artifacts. |
+| Exit Criteria |16 exact nodes proved or accepted transfers, dual proof and three artifacts. |
 | Original Owner Request | Faithful ROM call graph and nodes in shared DOS16/x86/x64 C. |
-| Similar-Issue Sweep | Duplicate ID dispatch, guarded/forced injury, slot reloads, score coordinates and byte tables. |
+| Similar-Issue Sweep | Cached slots, geometry argument order, duplicate defeat/score, latch masks and byte wrapping. |
+
+## S6 closure
+
+[Enemy-pair proof](../proposals/m2/t42-shared-collision-and-platforms.md#s6-original-enemy-pair-proof)
+closes16 nodes with2,048/2,048 caller comparisons. Actual children match
+696/2,048; geometry/stun scratch differences retain their owners.
+All18,936 prior actor matches and five prior collision matrices remain.
+Three EXEs refreshed; DOS link-only. S7 platform collision is next, not yet
+admitted. T42 remains open.
 
 ## S5 closure
 
@@ -33,7 +42,7 @@ closes34 caller/data nodes with3,200/3,200 comparisons. Actual children match
 1,184/3,200; geometry/stun/palette scratch differences retain their owners.
 Actor matches improve18,928 ->18,936 with none lost. Timer32/32, hammer126/126
 and prior collision matches remain. Three EXEs refreshed; DOS link-only.
-S6 enemy-pair collision is next, not yet admitted. T42 remains open.
+S6 is closed above. T42 remains open.
 
 ## S4 closure
 

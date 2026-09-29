@@ -153,7 +153,7 @@ void mysmb_objects_handle_player_enemy_contact(struct mysmb_game *game,
     mysmb_u8 slot, mysmb_u8 id);
 void mysmb_objects_enemy_stomped(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_enemy_face_player(struct mysmb_game *game, mysmb_u8 slot);
-/* Unchanged EnemyTurnAround dependency, awaiting S6 source proof. */
+/* ROM $DB1C EnemyTurnAround; shared enemy-pair collision owner. */
 void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 extern const mysmb_u8 mysmb_residual_x_speeds[2];
 
