@@ -2,29 +2,40 @@
 
 ## Current Work
 
-**M2 T43 S2 is closed at1,416/1,992:three expected nodes complete. S3 is next, not yet admitted.**
-T43 covers150 nodes:136 expected new,14 retained; maximum1,518.
+**M2 T43 S3 is closed at1,429/1,992:14 new matches and one old claim revoked. S4 is next, not yet admitted.**
+T43 covers150 nodes:136 expected new,14 retained; original maximum1,518,
+revised global maximum1,517 after the independent KillEnemies revocation.
 
-## M2 T43 S2 Packet
+## M2 T43 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after7825a0b; accepted transfer-220. |
-| Objective | HandleCoinMetatile, HandleAxeMetatile, ErACM; all three open and expected new. |
-| Non-goals | No VRAM/status child rewrites, whole-game claim or platform gameplay. |
-| Reference Baseline |1,413/1,992;three expected; maximum1,416. S1 actual child captures are the baseline. |
-| Candidate Proposal | [S2 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-admission). |
-| Files And ABI Surface | Shared terrain_metatiles.c, old objects/player owners, headers, manifests, tests/recorder and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after60162e3; accepted transfer-221. |
+| Objective | The14 exact open S3 climbing labels; all14 expected new. |
+| Non-goals | No KillEnemies algorithm rewrite, unrelated nodes or platform gameplay. |
+| Reference Baseline |1,416/1,992;14 expected; maximum1,430. S1 climbing captures are the baseline. |
+| Candidate Proposal | [S3 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-admission). |
+| Files And ABI Surface | Shared climbing.c, old player owner, area child visibility/header, manifests, tests/recorder and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original entries, pointer/tally/mode stores and child ABI; separate actual-child and operational proof. |
-| Expected Markers | Complete DE05-DE24 chain, one common erase tail and no hard-coded pointer high byte. |
-| Asset Needs | Owner-local ROM/listing;512 routes/50 MB/20-second budgets; ignored build containment. Authorized three EXEs, DOS link-only. |
-| Reporting Requirements | Three exact dispositions, dual proof, independent child gaps and artifact hashes. |
+| Verification | Original branch/table/state and child ABI proof; separate actual-child and operational checks. |
+| Expected Markers | DE25-DEBC data/control chain, one climbing owner and one existing KillEnemies child owner. |
+| Asset Needs | Owner-local ROM/listing;1,024 routes/50 MB/20-second deadlines; ignored build containment. Authorized three EXEs, DOS link-only. |
+| Reporting Requirements | All14 exact dispositions, dual proof, descendant limits and artifact hashes. |
 | Stop Conditions | Unadmitted child rewrite, altered original outputs, hidden mismatch or platform gameplay. |
-| Exit Criteria | Three nodes proved or accepted transfers, both verification tracks and three artifacts. |
+| Exit Criteria |14 nodes proved or accepted transfers, both verification tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | Both erase paths, pointer construction, tally wrap, duplicate owners and terminal calls. |
+| Similar-Issue Sweep | Kill-loop duplication, metatile gates, facing/table indices, byte carry and page selection. |
+
+## S3 closure
+
+[Climbing proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-climbing-proof)
+closes all14 scoped nodes. Both widths match1,024 original caller routes;
+all71 instructions and24 branch directions execute. Actual roots match960;
+64 KillEnemies calls omit RAM00. Its old completion is revoked, with M2 T29 S8
+maintenance retained. S1's1,034 caller,59 actual and159 climbing matches remain.
+Five focused CTests pass; legacy core/bounding-box failures remain explicit.
+All121 shared units and three EXEs are refreshed; DOS remains link-only.
 
 ## S2 closure
 

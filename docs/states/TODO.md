@@ -2,6 +2,9 @@
 
 ## Translation Debt
 
+- [ ] **KillEnemies entry store:** T43 S3 independently proves64/64 original child calls differ at RAM00: original stores incoming33, existing area helper retains02. Its historical completion is revoked; maintenance receiver remains M2 T29 S8. Repair requires that original store plus both warp and flagpole callers in a separately admitted maintenance chain. No extra S3 child algorithm change. [Evidence](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-climbing-proof).
+
+
 - [ ] **Terrain descendant scratch:** T43 S1 independently compares8,049 original child calls per width. Query metadata and consumed returns match, but block queries omit RAM02-05; coin/axe/head/impede descendants retain RAM00-07 differences. Full native root matches59/1,034. S2 completes the coin/axe caller contract with128/128 matches, while actual roots match16/128 and independent VRAM/status children retain RAM00/02/03 gaps ([S2 proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-coin-and-axe-proof)). Impede belongs to S6, classifiers S7, queries the following source slice; block-head/VRAM children retain existing ledger maintenance custody. No out-of-order admission or descendant credit. [Exact child matrix](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof).
 
 

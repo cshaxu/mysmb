@@ -756,3 +756,138 @@ raw record or temporary research output enters the commit.
 | mysmb16.exe | 257015 | 0f6cf557302e17c7bfbd5859f4046460dd431d71db59725bd7f0bb08361d4b46 |
 | mysmb32.exe | 358007 | d93a053bc60cf112b52967cb6c5d1c79dc1091e4f5051a280cc58c660379623c |
 | mysmb64.exe | 365922 | d5cf6d7f53dab58e28f49f18a5045bf1a078b7754a01b22f80275f9af1434354 |
+
+## S3 admission
+
+Continuation after60162e3 under the continuing M2 mandate. Transfer-221 accepts
+the14 exact open nodes in the S3 source-order table above from M2 T17 S6.
+Scope and expected-new sets are identical; baseline1,416/1,992, maximum1,430.
+DE25-DE2D contains three bound tables; DE2E-DEBC is HandleClimbing through
+ExPVne. One shared player/climbing.c owner replaces the legacy player body.
+
+The S1 terrain caller is the predecessor; hidden/jumpspring S4 is next.
+Preserve every contact/metatile/engine gate, flagpole score, sound, state and
+byte/page adjustment. Remove the duplicated KillEnemies loop and expose its
+existing area owner without changing that child's algorithm. Independently
+compare child inputs and actual outputs; no descendant credit or hidden gap.
+
+Original-ROM proof uses controlled RAM inputs at naturally reached climbing
+entries, all source branches and all three table consumers. Preserve CPU,
+ROM, stack and outputs. Allow1,024 bounded routes,50 MB raw output and20-second
+process deadlines below ignored build/m2-t43-s3; coordinator owns cleanup after
+regression use. Owner-local ROM/listing are nonredistributable research inputs.
+
+Operational proof uses mysmb.climbing-chain, retained S1 actual climbing and
+root routes, affected collision/player tests, strict C90 x86/x64 builds,
+DOS16 link, platform purity and three owner-authorized EXEs per P. Similar-issue
+sweep covers duplicated kill loops, invented metatile guards, raw facing/table
+indices, byte wrap and page adjustment. No platform gameplay is admitted.
+
+## S3 climbing proof
+
+S3 P1 completes all14 expected climbing nodes. Incoming1,416 plus14 new
+matches minus one invalidated historical KillEnemies claim gives1,429/1,992.
+No S3 node is deferred or transferred. This corrects the maximum1,430 forecast
+by an independently demonstrated out-of-scope baseline defect; it does not
+conceal a missed S3 node. T43's original1,518 global forecast consequently
+becomes1,517 unless that maintenance defect is separately repaired and proved.
+T43 and M2 remain incomplete.
+
+Admission gate validated14 unique open labels,14 expected matches and accepted
+transfer-221; the exact scoped set is the S3 table above. Both verification
+tracks and final node dispositions follow.
+
+| Node | Original address | Logic and disposition |
+| --- | --- | --- |
+| ClimbXPosAdder | DE25 | Bound X adders use the original absolute address plus raw facing byte. ROM-match complete. |
+| ClimbPLocAdder | DE27 | Bound page adders retain the independent wrapped page sum. ROM-match complete. |
+| FlagpoleYPosData | DE29 | All original table bytes bind; score reads indices4 through1 and falls to default0. ROM-match complete. |
+| HandleClimbing | DE2E | Contact scratch below6 or at least10 returns before any state mutation. ROM-match complete. |
+| ExHC | DE38 | Both contact rejection paths preserve RAM. ROM-match complete. |
+| ChkForFlagpole | DE39 | Metatiles24 and25 select flagpole; all other admitted values follow VineCollision. ROM-match complete. |
+| FlagpoleCollision | DE41 | Engine5 skips flag setup; facing and scroll lock precede engine4 gate and KillEnemies33. ROM-match complete. |
+| ChkFlagpoleYPosLoop | DE68 | Descending Y threshold comparisons preserve both compare and decrement exits. ROM-match complete. |
+| MtchF | DE70 | Store the selected score only after flag setup and threshold scan. ROM-match complete. |
+| RunFR | DE73 | Store engine4 and transfer directly to common positioning. ROM-match complete. |
+| VineCollision | DE7A | Only metatile26 above the status threshold selects automatic climbing. ROM-match complete. |
+| PutPlayerOnVine | DE88 | Set climbing state, zero horizontal speed/force, then compare wrapped relative X. ROM-match complete. |
+| SetVXPl | DEA1 | Raw facing selects X table; page updates only when the original block low byte is zero. ROM-match complete. |
+| ExPVne | DEBC | Both page-update and nonzero-block returns end the same positioning chain. ROM-match complete. |
+
+### Original logic track
+
+DE2E-DEBC decodes to71 instructions and12 conditional branches. All71 and all24
+branch directions execute in1,024 controlled ordinary NMI routes. The three
+adjacent DE25-DE2D tables bind to the original PRG; raw facing-byte reads use
+the original absolute-indexed addresses. The flagpole score loop consumes
+indices4 through1; reaching0 exits without reading the table's first entry.
+That byte is bound and audited, not falsely reported as an executed read.
+
+Only RAM inputs at naturally reached terrain and climbing entries are
+controlled. CPU registers, ROM, PC, stack and outputs are unchanged. Fixtures
+cover all256 contact bytes, all256 facing bytes, all256 block-low bytes,
+engine gates, score thresholds, relative-X edge, scroll-lock wrap, page wrap
+and matching/nonmatching enemy slots including untouched slot5. Observed and
+observer-free original frames match in all1,024 final cases. After the source
+constant review,64 cases were rerecorded to add matching cannon-enemy IDs;
+unchanged cases retain identical inputs. Accepted raw records total4,472,960
+bytes, under50 MB; every process has a20-second deadline.
+
+The native caller check validates KillEnemies' input A and complete RAM before
+installing the original return. Hardware-stack storage is excluded, while
+mapped0109-0139 is retained. Both widths match1,024/1,024 caller results.
+With real native children,960/1,024 full RAM results match. The64 paths that
+invoke KillEnemies differ only at RAM00; independent child execution confirms
+that same one-byte difference in all64 calls per width. No difference is masked.
+The child defines its own X/Y and the caller immediately reloads A/X after
+return, so no CPU-register return is consumed by this chain.
+
+**Historical claim corrected:** original KillEnemies at9716 begins by storing
+its incoming A in RAM00. The existing area helper omits that write. Original
+captures have33; the independently executed child retains02. KillEnemies is
+therefore changed from ROM-match complete to mapped, with current maintenance
+receiver M2 T29 S8 retained. Its algorithm is not rewritten in S3. KillELoop
+and NoKillE retain their separate earlier proofs; the discovered missing store
+belongs to the entry node. The historical T29 record remains immutable, and
+this current audit supersedes its aggregate claim for that node.
+
+Reproduce with reference_frame_recorder fixture=t43-climbing cases0-1023,
+climbing-snapshot, entrance-children and pc-coverage; compare using
+climbing_snapshot_check in caller, actual and independent-child modes.
+
+### Operational track and review
+
+The sole shared player/climbing.c owner replaces the legacy player body.
+The duplicated ascending enemy-kill loop is removed in favor of the existing
+descending area child. Its visibility changes, but its body is unchanged.
+Source review and original captures correct the old cannon-enemy ID12 to33.
+The invented non-26 rejection is removed: the original alternate branch
+continues to PutPlayerOnVine. Raw facing indices replace boolean normalization,
+and bound PRG supplies the three original data tables. No platform file changes.
+
+The similar-issue sweep checks every production climbing/kill call, duplicate
+loops, metatile exclusions, score loop order, source constants, index width and
+byte/page arithmetic. The area-warp caller remains unchanged. The focused
+native test passes515 scenarios per width, including entry no-write guards,
+engine4/5 skips, child-before-score ordering and synthetic bound-table indexing.
+
+S1 retains all1,034 caller matches and the exact same59 actual-root matches
+per width. All159 captured real climbing-child calls still match per width.
+Collision regression, player route, friction, hazard and platform suites pass
+on both widths. Bounding-box retains its baseline failure. Selected CTests
+pass5/6: climbing, terrain-metatile, terrain, player route and platform purity;
+core-smoke still fails the pre-existing entrance loop. HEAD and current code
+both reproduce line137 on both widths. These failures are not reported as passes.
+
+All121 shared units compile as strict C90 on x86/x64; product self-tests and
+hidden own-window creation/message probes pass. DOS16 compiles and links the
+same shared sources with the existing OLDNAMES warning. DOS graphical runtime,
+resource binding and physical486SX performance remain unproved. The three
+owner-authorized EXEs are refreshed. No ROM, generated resource source, raw
+capture or temporary research output is committed.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257063 | a10925a41b4e94e92162902389eff2d69e7e84544577ae3c442bc9a70643f60d |
+| mysmb32.exe | 358232 | 66792dbce565297c6bdb6b7bcea067cbaf70077869a9527d0ce95291ed6955aa |
+| mysmb64.exe | 366185 | 4191e42e90f3a79e71cdc5be29bf009459b4f7679669fe364f561ca66a68baca |

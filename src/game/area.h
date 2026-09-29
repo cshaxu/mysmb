@@ -135,4 +135,7 @@ mysmb_u8 mysmb_area_check_large_length(struct mysmb_game *game,
 mysmb_u8 mysmb_area_object_x_position(const struct mysmb_game *game);
 mysmb_u8 mysmb_area_object_y_position(const struct mysmb_game *game);
 
+/* ROM $9716 KillEnemies; shared by area warp and player flagpole. */
+void mysmb_area_kill_enemies(struct mysmb_game *game, mysmb_u8 id);
+
 #endif

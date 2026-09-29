@@ -521,69 +521,6 @@ void mysmb_player_land_jumpspring(struct mysmb_game *game, mysmb_u8 metatile)
     }
 }
 
-/* Translation of HandleClimbing through PutPlayerOnVine.  The caller passes
- * the collision helper's $04 and $06 values as terrain metadata. */
-mysmb_u8 mysmb_player_handle_climbing(struct mysmb_game *game,
-                                              const struct mysmb_player_terrain *terrain)
-{
-    static const mysmb_u8 x_adder[2] = { 0xf9U, 0x07U };
-    static const mysmb_u8 page_adder[2] = { 0xffU, 0U };
-    static const mysmb_u8 flagpole_y[5] = { 0x18U, 0x22U, 0x50U, 0x68U, 0x90U };
-    mysmb_u8 facing_index;
-    mysmb_u8 relative_x;
-    mysmb_u8 score_index;
-    mysmb_u8 enemy_slot;
-
-    if (terrain->contact_low_nibble < 6U ||
-        terrain->contact_low_nibble >= 0x0aU) {
-        return 0U;
-    }
-    if (terrain->metatile == 0x24U || terrain->metatile == 0x25U) {
-        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 5U) goto put_player_on_vine;
-        game->ram[MYSMB_PLAYER_FACING] = MYSMB_BUTTON_RIGHT;
-        game->ram[MYSMB_SCROLL_LOCK]++;
-        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 4U) {
-            /* ROM KillEnemies(BulletBill_CannonVar), slots 0 through 4. */
-            for (enemy_slot = 0U; enemy_slot < 5U; ++enemy_slot) {
-                if (game->ram[0x0016U + enemy_slot] == 12U)
-                    game->ram[0x000fU + enemy_slot] = 0U;
-            }
-            game->ram[MYSMB_EVENT_MUSIC_QUEUE] = 0x80U;
-            game->ram[MYSMB_FLAGPOLE_SOUND_QUEUE] = 0x40U;
-            game->ram[MYSMB_FLAGPOLE_COLLISION_Y] = game->ram[MYSMB_PLAYER_Y];
-            score_index = 4U;
-            while (score_index != 0U && game->ram[MYSMB_PLAYER_Y] < flagpole_y[score_index])
-                --score_index;
-            game->ram[MYSMB_FLAGPOLE_SCORE] = score_index;
-        }
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 4U;
-    }
-    else if (terrain->metatile == 0x26U &&
-             game->ram[MYSMB_PLAYER_Y] < 0x20U) {
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 1U;
-    }
-    else if (terrain->metatile != 0x26U) {
-        return 0U;
-    }
-put_player_on_vine:
-    game->ram[MYSMB_PLAYER_STATE] = 3U;
-    game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
-    game->ram[MYSMB_PLAYER_X_FORCE] = 0U;
-    relative_x = (mysmb_u8)(game->ram[MYSMB_PLAYER_X] -
-                            game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (relative_x < 0x10U) {
-        game->ram[MYSMB_PLAYER_FACING] = MYSMB_BUTTON_LEFT;
-    }
-    facing_index = game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT ? 0U : 1U;
-    game->ram[MYSMB_PLAYER_X] =
-        (mysmb_u8)((terrain->block_address_low << 4U) + x_adder[facing_index]);
-    if (terrain->block_address_low == 0U) {
-        game->ram[MYSMB_PLAYER_PAGE] =
-            (mysmb_u8)(game->ram[MYSMB_SCREEN_RIGHT_PAGE] + page_adder[facing_index]);
-    }
-    return 1U;
-}
-
 /* Translation of HandlePipeEntry, excluding the separate warp destination
  * tables owned by the area-transition route. */
 mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,

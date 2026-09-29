@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1416 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 491 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 1429 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 477 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,416 / 1,992 (71.08%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,429 / 1,992 (71.74%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S2 coin/axe](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-coin-and-axe-proof)
-closes three nodes with128 original caller routes per width. Actual root
-matches16/128; VRAM/status child scratch gaps retain existing owners.
-S1 retains all1,034 caller and59 actual matches. This is scoped caller
-conformance, not whole-game equivalence.
+Latest task review: [T43 S3 climbing](../proposals/m2/t43-terrain-and-bounding-boxes.md#s3-climbing-proof)
+completes14 nodes with1,024 original caller matches per width;960 actual roots
+match. Independent child proof revokes the old KillEnemies completion for its
+missing RAM00 store, leaving maintenance with M2 T29 S8. Net progress is13:
+1,416 ->1,429. Prior terrain/climbing match sets remain intact.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1416)
+## Completed matches (1429)
 
 | ROM line | Node |
 | ---: | --- |
@@ -405,7 +405,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 3591 | `ScrollLockObject_Warp` |
 | 3600 | `WarpNum` |
 | 3606 | `ScrollLockObject` |
-| 3615 | `KillEnemies` |
 | 3619 | `KillELoop` |
 | 3623 | `NoKillE` |
 | 3629 | `FrenzyIDData` |
@@ -1434,6 +1433,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12147 | `HandleCoinMetatile` |
 | 12152 | `HandleAxeMetatile` |
 | 12159 | `ErACM` |
+| 12169 | `ClimbXPosAdder` |
+| 12172 | `ClimbPLocAdder` |
+| 12175 | `FlagpoleYPosData` |
+| 12178 | `HandleClimbing` |
+| 12184 | `ExHC` |
+| 12186 | `ChkForFlagpole` |
+| 12192 | `FlagpoleCollision` |
+| 12212 | `ChkFlagpoleYPosLoop` |
+| 12217 | `MtchF` |
+| 12218 | `RunFR` |
+| 12222 | `VineCollision` |
+| 12231 | `PutPlayerOnVine` |
+| 12244 | `SetVXPl` |
+| 12259 | `ExPVne` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |
@@ -1468,11 +1481,12 @@ responsibility evidence; unnamed descendants remain in the full census.
 The accounting checker validates row uniqueness, recognized states, aggregate
 counts and exact named lists. It does not validate semantics by itself.
 
-## Mapped but not yet matched (85)
+## Mapped but not yet matched (86)
 
 | ROM line | Node |
 | ---: | --- |
 | 764 | `NonMaskableInterrupt` |
+| 3615 | `KillEnemies` |
 | 4550 | `E_CastleArea1` |
 | 4558 | `E_CastleArea2` |
 | 4565 | `E_CastleArea3` |

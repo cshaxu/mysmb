@@ -1106,7 +1106,7 @@ static void mysmb_area_bullet_bill_cannon(struct mysmb_game *game)
 /* ROM $96f2-$9737 ScrollLockObject_Warp through AreaFrenzy.  These entries
  * are selected from the row-13 JumpEngine after DecodeAreaData has placed
  * the low-six-bit selector in $00. */
-static void mysmb_area_kill_enemies(struct mysmb_game *game, mysmb_u8 id)
+void mysmb_area_kill_enemies(struct mysmb_game *game, mysmb_u8 id)
 {
     mysmb_u8 slot;
 
