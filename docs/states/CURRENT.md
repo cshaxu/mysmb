@@ -2,35 +2,42 @@
 
 ## Current Work
 
-**M2 T41 S10 is closed at 1,265 / 1,992: all six expected nodes complete. S11 is next.**
+**M2 T41 S11 is closed at 1,274 / 1,992: all nine expected nodes complete. S12 is next.**
 
-## M2 T41 S10 Packet
+## M2 T41 S11 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S10, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 430a24f; coordinator accepts transfer-206. |
-| Objective | Six open vertical-platform nodes, six expected new. |
+| Identifier Mode | M2 T41 S11, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after f4d73f8; coordinator accepts transfer-207. |
+| Objective | Nine open horizontal/drop/right-platform nodes, nine expected new. |
 | Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
-| Reference Baseline | 1,259/1,992; six scoped/expected, maximum 1,265. |
-| Candidate Proposal | [T41 S10 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s10-admission-vertical-oscillating-platforms). |
+| Reference Baseline | 1,265/1,992; nine scoped/expected, maximum 1,274. |
+| Candidate Proposal | [T41 S11 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s11-admission-horizontal-drop-and-right-platforms). |
 | Files And ABI Surface | enemy/platform.c and existing dependency seams, tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
-| Expected Markers | Dummy clear, top/center comparisons, frame gate, live slot and rider child. |
+| Expected Markers | Counter order, displacement return, page carry/borrow, scroll, drop snap and right speed. |
 | Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Reporting Requirements | Nine exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
 | Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Six nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Exit Criteria | Nine nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
 | Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Ownership, missing writes, unsigned comparisons, frame gate and child order. |
+| Similar-Issue Sweep | Ownership, missing children, signed page arithmetic, live slots and speed timing. |
+
+## S11 closure
+
+[Original horizontal platform proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s11-original-horizontal-platform-proof)
+closes nine nodes with 1,536/1,536 caller matches; actual roots 768/1,536.
+Placement child gap remains explicit; all 15,560 previous matches remain.
+Three EXEs refreshed; DOS link-only. S12 lift platforms is next.
 
 ## S10 closure
 
 [Original vertical platform proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s10-original-vertical-platform-proof)
 closes six nodes with 1,024/1,024 caller matches; actual roots 512/1,024.
 Placement child gap remains explicit; all 15,048 previous matches remain.
-Three EXEs refreshed; DOS link-only. S11 horizontal/drop/right platforms is next.
+Three EXEs refreshed; DOS link-only. S11 is closed; its result is above.
 
 ## S9 closure
 
@@ -75,13 +82,6 @@ closes nine new and three retained nodes with 2,048/2,048 caller matches.
 Actual roots match 8/2,048; position/offscreen child gaps remain explicit.
 All 10,892 prior actual matches remain. Three EXEs refreshed; DOS link-only.
 S5 is closed; its result is above.
-
-## S3 closure
-
-[Original front/rear proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s3-original-front-rear-proof)
-closes four caller nodes with 1,024/1,024 matches. Actual roots match 0/1,024;
-graphics/bounds/collision descendants retain explicit gaps. All 10,892 prior
-actual matches remain. Three EXEs refreshed; DOS link-only. S4 is closed; its result is above.
 
 ## Current Technical Baseline
 

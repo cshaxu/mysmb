@@ -1206,39 +1206,6 @@ void mysmb_platform_move_small(struct mysmb_game *game, mysmb_u8 slot)
         (mysmb_u8)(game->ram[0x03a2U + slot] != 0U));
 }
 
-static void platform_legacy_horizontal(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 old_x, old_player_x;
-        /* XMovingPlatform/RightPlatform: preserve the exact native
-         * whole-pixel delta for both player world position and scroll. */
-        old_x = game->ram[MYSMB_ENEMY_X + slot];
-        old_player_x = game->ram[MYSMB_PLAYER_X];
-        mysmb_world_move_enemy_horizontally(game, slot);
-        if ((game->ram[0x03a2U + slot] & 0x80U) == 0U) {
-            game->ram[MYSMB_PLAYER_X] = (mysmb_u8)(old_player_x +
-                game->ram[MYSMB_ENEMY_X + slot] - old_x);
-            if (game->ram[MYSMB_PLAYER_X] < old_player_x) game->ram[MYSMB_PLAYER_PAGE]++;
-            game->ram[0x03a1U] = (mysmb_u8)(game->ram[MYSMB_ENEMY_X + slot] - old_x);
-        }
-}
-void mysmb_platform_move_x(struct mysmb_game *game, mysmb_u8 slot)
-{
-    platform_legacy_horizontal(game, slot);
-}
-void mysmb_platform_move_right(struct mysmb_game *game, mysmb_u8 slot)
-{
-    platform_legacy_horizontal(game, slot);
-}
-void mysmb_platform_move_drop(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 old_y;
-    if ((game->ram[0x03a2U + slot] & 0x80U) != 0U) return;
-    old_y = game->ram[MYSMB_ENEMY_Y + slot];
-    mysmb_enemy_move_drop_platform(game, slot);
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
-        game->ram[MYSMB_ENEMY_Y + slot] - old_y);
-}
-
 /* Legacy bulk interface selects the same native source caller as GameEngine. */
 void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
 {

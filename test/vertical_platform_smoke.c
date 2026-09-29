@@ -4,6 +4,15 @@
 #include <string.h>
 static unsigned int moves,placements,failures,cases;
 static mysmb_u8 expected_slot,expected_up,returned_slot,placement_slot;
+/* Other entries in the shared platform unit must not run in this suite. */
+void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 m)
+{ (void)g;(void)s;(void)m;++failures; }
+void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s)
+{ (void)g;(void)s;++failures; }
+void mysmb_enemy_move_drop_platform(struct mysmb_game *g,mysmb_u8 s)
+{ (void)g;(void)s;++failures; }
+mysmb_u8 mysmb_world_move_enemy_horizontally(struct mysmb_game *g,mysmb_u8 s)
+{ (void)g;(void)s;++failures;return 0U; }
 void mysmb_world_move_platform_vertically(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 up)
 {
     ++moves;

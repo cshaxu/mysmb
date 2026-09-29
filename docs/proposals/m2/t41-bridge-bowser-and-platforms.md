@@ -1640,3 +1640,126 @@ Raw trace output: 6598208 bytes, below 24 MB.
 | mysmb16.exe | 258745 | b142de399c10e7928b23397150b4d1242b674c7c24902d990a8f423d0b1d86db |
 | mysmb32.exe | 353896 | 61a9032bbcf2e03af95edfc66564fee348ca75f8f20f4c0a2335d91cf07c2a11 |
 | mysmb64.exe | 362447 | 716ec1e18ea248f085542d5f37165295ecd7e24c33099747173df4fe47c2b02f |
+
+## S11 admission: horizontal drop and right platforms
+
+S10 closed in f4d73f8. Coordinator accepts transfer-207 under the continuing
+M2 mandate. Baseline 1,265/1,992; nine open scoped/expected-new nodes, maximum
+1,274. Exact source-ordered labels:
+
+`XMovingPlatform`, `PositionPlayerOnHPlat`, `PPHSubt`, `SetPVar`, `ExXMP`, `DropPlatform`, `ExDPl`, `RightPlatform`, `ExRPl`.
+
+Original $D607-$D64E, XMovingPlatform through ExRPl. S10 vertical platforms
+is predecessor; S12 lifts is successor. One shared enemy/platform.c owns this
+contiguous three-entry chain and its shared horizontal-rider tail. Replace
+the approximate objects.c horizontal/drop/right bodies. Preserve counter
+maximum 0E, counter/movement call order, saved displacement, signed page
+carry/borrow, scroll handoff, drop collision gate, right-platform returned A
+and post-collision speed 10. Reload ObjectOffset exactly after source children
+that restore X; horizontal positioning retains its incoming current slot.
+
+Reuse XMoveCntr_Platform, MoveWithXMCntrs, MoveEnemyHorizontally,
+MoveDropPlatform and PositionPlayerOnVPlat as typed dependencies. These keep
+their individual ownership/status; the known placement-child gap is explicit.
+No child algorithm or host gameplay repair is admitted. Logic proof observes
+the three original NMI large-platform entries with bounded input fixtures,
+complete child-input RAM/argument checks before recorded returns, original
+branches and separate actual-child roots. Assert returned A and source X
+contracts. Preserve all 15,560 prior root matches; no ROM/CPU/PC/stack/output
+execution patches. Operational proof: mysmb.horizontal-platform-chain,
+cross-chain regressions, strict C90 x86/x64, DOS16 link, platform purity,
+hidden-window response and three EXEs once per P. DOS remains link-only.
+
+Similar-issue sweep covers duplicate owners, missing counter/rider calls,
+signed displacement versus unsigned carry, source slot reload, drop snap
+and right-speed timing. Existing owner-local ROM/listing provenance and
+nonredistributable research containment apply. Ignored build/m2-t41-s11 uses
+at most 768 routes, 40-MB raw budget, twenty-second record deadlines and
+resumable checkpoints; coordinator owns dependent retention/cleanup.
+Stop on unadmitted child changes, source execution patches or unexplained
+proof gaps. Every scoped node must be proved or explicitly transferred.
+
+## S11 original horizontal platform proof
+
+S11 P1 closes all nine expected nodes: 1,265 -> 1,274/1,992. No scoped
+node remains incomplete or transfers; dependencies retain their owners.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| XMovingPlatform | Counter maximum 0E, counter then movement call order and live collision slot. ROM-match complete. |
+| PositionPlayerOnHPlat | Saved signed displacement moves player X and keeps source carry. ROM-match complete. |
+| PPHSubt | Negative displacement uses SBC zero with the preceding X-add carry. ROM-match complete. |
+| SetPVar | Page result, Platform_X_Scroll and vertical placement child order. ROM-match complete. |
+| ExXMP | Horizontal no-collision and shared placement paths return. ROM-match complete. |
+| DropPlatform | Signed collision gate precedes drop child and live-slot placement. ROM-match complete. |
+| ExDPl | No-collision drop exits without writes or movement. ROM-match complete. |
+| RightPlatform | Horizontal returned A stored in scratch; only collision sets speed 10. ROM-match complete. |
+| ExRPl | Right-platform exit preserves no-collision speed and scratch return. ROM-match complete. |
+
+All 32 instructions in $D607-$D64E and both outcomes of all four branches
+execute. The 768 original NMI large-platform routes divide equally among
+XMovingPlatform, DropPlatform and RightPlatform. They exercise slots zero/
+five, counter phase/frame/secondary boundaries, positive/negative fractional
+displacement, player X/page edges, collision gates, drop gravity and speed
+assignment after rightward movement. Root input fixtures are independent of
+observer selection. Observer-free original frames equal observed originals;
+this is not native full-frame equality. No ROM/CPU/PC/stack/output patch.
+
+Caller proof passes 1,536/1,536 across x86/x64, comparing full RAM and typed
+child arguments before recorded returns. Mapped $0109-$0139, scratch and
+queues are included; hardware return-stack storage is excluded. Observer
+assertions prove counter A=0E, restored X after movement/drop, preserved X
+for counter and placement, and record MoveEnemyHorizontally's returned A
+after verifying its input X equals ObjectOffset. Native code stores that A
+before collision checks and retains the original horizontal-tail arithmetic.
+
+Independent actual roots pass 768/1,536. Isolated actual children match:
+XMoveCntr_Platform 512/512, MoveWithXMCntrs 512/512, MoveDropPlatform 256/256,
+MoveEnemyHorizontally 512/512 (including returned A). All 768 placement
+children differ; this is the existing PositionPlayerOnVPlat missing guards/
+high-byte borrow and extra Player_State clear. Its separate ledger owner
+remains responsible; this S grants no child completion or whole-game claim.
+
+The approximate horizontal/drop/right bodies are removed from objects.c.
+Shared enemy/platform.c now owns the contiguous source entries and common
+horizontal rider tail. Signed byte displacement uses the original page
+carry/borrow, drop calls absolute placement, and rightward speed changes
+after movement. The similar-issue sweep covers duplicate ownership, missing
+counter/placement calls, left-crossing page increments, source slot reloads
+and acceleration timing; all same-chain hits use the new body. Child
+algorithms and platform adapters are unchanged.
+
+Native tests pass 393,728 cases per width: all X/displacement bytes with
+page zero/255 wrap, no-collision preservation, changed ObjectOffset, typed
+child order and right-speed timing; drop checks both gate outcomes. The
+previous vertical suite also passes after linkage-only fail-fast stubs for
+the added sibling entries. The old horizontal platform smoke now supplies
+source counter phase two and a non-counter frame for its expected +1 pixel.
+Focused CTests, platform purity and fifteen prior initializer/platform suites
+per width pass. Final actual-root matrix: 16,332/26,362; all 15,560 prior
+matches remain, plus 768 new and four improved special-actor cases. Remaining
+10,030 sample differences retain descendant debt and are not node counts.
+
+All 109 shared sources pass strict C90 x86/x64 builds and self-tests. Both
+hidden Win32 windows create and respond to messages. DOS16 compiles/links
+with the existing OLDNAMES warning; it remains link-only without graphical
+playability, resource binding or physical 486SX certification. Three
+owner-authorized local test EXEs are refreshed for this P.
+
+Reproduce horizontal_platform_fixture.h cases 0..767 with
+--fixture=t41-horizontal-platform=N, --horizontal-platform-snapshot,
+--control-children and --pc-coverage. horizontal_platform_snapshot_check
+checks caller contracts; enemy_loop_actual_check executes actual children.
+Native CTest: mysmb.horizontal-platform-chain; retained vertical test:
+mysmb.vertical-platform-chain. Ignored build/m2-t41-s11 retains bounded
+records/checkpoints under twenty-second deadlines and coordinator-owned
+dependent regression retention/cleanup. S12 lift platforms is next, not
+admitted by this closure.
+
+Raw trace output: 11798784 bytes, below 40 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258809 | a0478c5759cb7149deb3e60ae3f2e421e36d72199c9c21fb530caf809c76d6bc |
+| mysmb32.exe | 353896 | 17f169e6ff75edb38e412840e18b3f6454db038d9a41e49a927445d4709c7bef |
+| mysmb64.exe | 362447 | 0fc1888fc28c47a2678bfca5d565034e2f8bf26a9d669b7230696e7b3feea593 |

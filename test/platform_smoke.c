@@ -39,8 +39,8 @@ int main(void)
     if (game.ram[0x00cfU] != 0x7fU || game.ram[0x00ceU] != 0x5fU ||
         game.ram[0x009fU] != 0U || game.ram[0x0433U] != 0U) return 2;
 
-    /* Horizontal decks move a standing player and expose the scroll delta
-     * consumed by the native player route on its following frame. */
+    /* Horizontal counter phase two moves right. A non-counter frame keeps
+     * secondary speed $10 and exposes the rider's one-pixel scroll delta. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 40U;
@@ -49,6 +49,8 @@ int main(void)
     game.ram[0x00b6U] = 1U;
     game.ram[0x00cfU] = 0x80U;
     game.ram[0x0058U] = 0x10U;
+    game.ram[0x00a0U] = 2U;
+    game.ram[0x0009U] = 1U;
     game.ram[0x006dU] = 0U;
     game.ram[0x0086U] = 0x40U;
     game.ram[0x00b5U] = 1U;
