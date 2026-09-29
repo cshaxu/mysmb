@@ -8,11 +8,48 @@ enum {
     MYSMB_ENEMY_Y = 0x00cfU,
     MYSMB_ENEMY_ATTRIBUTES = 0x03c5U,
     MYSMB_ENEMY_SPRITE_OFFSET = 0x06e5U,
+    MYSMB_ENEMY_OFFSCREEN = 0x03d1U,
     MYSMB_POWER_UP_SLOT = 5U,
     MYSMB_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_SCREEN_LEFT_X = 0x071cU,
     MYSMB_FRAME_COUNTER = 0x0009U
 };
+
+/* DrawPowerUp falls through PUpOfs into SprObjectOffscrChk.  That routine
+ * has a three-row enemy layout even though this caller draws two rows: its
+ * third-row stores still clear stale OAM exactly as the original jump does. */
+static void mysmb_power_up_apply_offscreen(struct mysmb_game *game,
+                                           mysmb_u8 oam, mysmb_u8 bits)
+{
+    if ((bits & 0x04U) != 0U) {
+        game->ram[(mysmb_u16)(0x0200U + oam + 4U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
+    }
+    if ((bits & 0x08U) != 0U) {
+        game->ram[(mysmb_u16)(0x0200U + oam)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
+    }
+    if ((bits & 0x20U) != 0U) {
+        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
+    }
+    if ((bits & 0x40U) != 0U) {
+        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
+    }
+    if ((bits & 0x80U) != 0U) {
+        game->ram[(mysmb_u16)(0x0200U + oam)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 4U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
+        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
+    }
+}
 /* ROM DrawPowerUp. */
 void mysmb_objects_draw_power_up(struct mysmb_game *game)
 {
@@ -33,7 +70,6 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     mysmb_u8 graphics_offset;
 
     type = game->ram[MYSMB_POWER_UP_TYPE];
-    if (type > 3U) return;
     /* RunPUSubs has just populated the fixed Enemy_Rel_* scratch cells. */
     x = game->ram[0x03aeU];
     y = (mysmb_u8)(game->ram[0x03b9U] + 8U);
@@ -60,14 +96,21 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
         game->ram[(mysmb_u16)(0x0206U + offset)] = (mysmb_u8)(phase_attributes | 0x40U);
         if (type == 2U) {
             game->ram[(mysmb_u16)(0x020aU + offset)] = phase_attributes;
-            game->ram[(mysmb_u16)(0x020eU + offset)] = (mysmb_u8)(phase_attributes | 0x40U);
+            game->ram[(mysmb_u16)(0x020eU + offset)] = phase_attributes;
         }
+        /* FlipPUpRightSide runs for both flower and star.  For the flower
+         * its lower row retains the base palette before this OR, which is
+         * why the source still changes that otherwise undrawn-looking byte. */
+        game->ram[(mysmb_u16)(0x020eU + offset)] = (mysmb_u8)(
+            game->ram[(mysmb_u16)(0x020eU + offset)] | 0x40U);
     }
     game->ram[(mysmb_u16)(0x0203U + offset)] = x;
     game->ram[(mysmb_u16)(0x020bU + offset)] = x;
     x = (mysmb_u8)(x + 8U);
     game->ram[(mysmb_u16)(0x0207U + offset)] = x;
     game->ram[(mysmb_u16)(0x020fU + offset)] = x;
+    mysmb_power_up_apply_offscreen(game, offset,
+                                   game->ram[MYSMB_ENEMY_OFFSCREEN]);
 }
 
 

@@ -1,23 +1,25 @@
-#include "game/objects.h"
+#include "game/game.h"
+#include "game/oam/oam.h"
+
+static void prepare(struct mysmb_game *game, mysmb_u8 type,
+                    mysmb_u8 frame, mysmb_u8 offscreen)
+{
+    mysmb_game_initialize_memory(game, 0U);
+    game->ram[0x0039U] = type;
+    game->ram[0x0009U] = frame;
+    game->ram[0x03aeU] = 0x40U;
+    game->ram[0x03b9U] = 0x50U;
+    game->ram[0x03c5U + 5U] = 0x20U;
+    game->ram[0x03d1U] = offscreen;
+    game->ram[0x06e5U + 5U] = 0x20U;
+}
 
 int main(void)
 {
     struct mysmb_game game;
 
-    mysmb_game_initialize_memory(&game, 0xfeU);
-    game.frame_number = 2UL;
-    game.ram[0x0009U] = (mysmb_u8)(2UL);
-    game.ram[0x0747U] = 0xffU;
-    game.ram[0x0039U] = 2U;
-    game.ram[0x071aU] = 0U;
-    game.ram[0x071cU] = 0U;
-    game.ram[0x0073U] = 0U;
-    game.ram[0x008cU] = 0x40U;
-    game.ram[0x00d4U] = 0x50U;
-    game.ram[0x03caU] = 0x20U;
-    game.ram[0x0023U] = 0x80U;
-    game.ram[0x06eaU] = 0x20U;
-    mysmb_objects_step_power_up(&game);
+    prepare(&game, 2U, 2U, 0U);
+    mysmb_objects_draw_power_up(&game);
     if (game.ram[0x0220U] != 0x58U || game.ram[0x0221U] != 0x8dU ||
         game.ram[0x0222U] != 0x21U || game.ram[0x0223U] != 0x40U ||
         game.ram[0x0224U] != 0x58U || game.ram[0x0225U] != 0x8dU ||
@@ -27,41 +29,19 @@ int main(void)
         game.ram[0x022cU] != 0x60U || game.ram[0x022dU] != 0xe4U ||
         game.ram[0x022eU] != 0x61U || game.ram[0x022fU] != 0x48U) return 1;
 
-    game.frame_number = 6UL;
-    game.ram[0x0009U] = (mysmb_u8)(6UL);
-    game.ram[0x0039U] = 1U;
-    mysmb_objects_step_power_up(&game);
+    prepare(&game, 1U, 2U, 0U);
+    mysmb_objects_draw_power_up(&game);
     if (game.ram[0x0221U] != 0xd6U || game.ram[0x0225U] != 0xd6U ||
         game.ram[0x0229U] != 0xd9U || game.ram[0x022dU] != 0xd9U ||
-        game.ram[0x0222U] != 0x23U || game.ram[0x0226U] != 0x63U ||
-        game.ram[0x022aU] != 0x21U || game.ram[0x022eU] != 0x21U) return 2;
+        game.ram[0x0222U] != 0x21U || game.ram[0x0226U] != 0x61U ||
+        game.ram[0x022aU] != 0x21U || game.ram[0x022eU] != 0x61U) return 2;
 
-    mysmb_game_initialize_memory(&game, 0xfeU);
-    game.frame_number = 0UL;
-    game.ram[0x0009U] = (mysmb_u8)(0UL);
-    game.ram[0x0747U] = 0U;
-    game.ram[0x0039U] = 0U;
-    game.ram[0x071aU] = 0U;
-    game.ram[0x071cU] = 0U;
-    game.ram[0x0073U] = 0U;
-    game.ram[0x008cU] = 0x40U;
-    game.ram[0x00d4U] = 0x50U;
-    game.ram[0x03caU] = 0x20U;
-    game.ram[0x0023U] = 5U;
-    game.ram[0x06eaU] = 0x20U;
-    mysmb_objects_step_power_up(&game);
-    if (game.ram[0x0023U] != 6U) return 3;
-    if (game.ram[0x0220U] != 0x57U || game.ram[0x0221U] != 0x76U ||
-        game.ram[0x0222U] != 0x22U || game.ram[0x0223U] != 0x40U) return 4;
-    if (game.ram[0x0228U] != 0x5fU || game.ram[0x0229U] != 0x78U ||
-        game.ram[0x022fU] != 0x48U) return 5;
-    /* ROM RunPUSubs executes on all post-emergence frames, not only on
-     * GrowThePowerUp's every-fourth-frame Y update. */
-    game.frame_number = 1UL;
-    game.ram[0x0009U] = 1U;
-    mysmb_objects_step_power_up(&game);
-    if (game.ram[0x0023U] != 6U || game.ram[0x00d4U] != 0x4fU) return 6;
-    if (game.ram[0x0220U] != 0x57U || game.ram[0x0221U] != 0x76U ||
-        game.ram[0x0222U] != 0x22U || game.ram[0x0223U] != 0x40U) return 7;
+    /* PUpOfs enters the three-row SprObjectOffscrChk tail. */
+    prepare(&game, 3U, 0U, 0x80U);
+    mysmb_objects_draw_power_up(&game);
+    if (game.ram[0x0220U] != 0xf8U || game.ram[0x0224U] != 0xf8U ||
+        game.ram[0x0228U] != 0xf8U || game.ram[0x022cU] != 0xf8U ||
+        game.ram[0x0230U] != 0xf8U || game.ram[0x0234U] != 0xf8U ||
+        game.ram[0x0221U] != 0x76U || game.ram[0x022dU] != 0x79U) return 3;
     return 0;
 }
