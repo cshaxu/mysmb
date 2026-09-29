@@ -49,7 +49,7 @@
 - [ ] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T16/T23 owns RelativePlayerPosition versus RenderPlayerSub ordering. Evidence: [paired seeded-write probe](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [OAM](../proposals/m2/oam-graphics.md).
 - [ ] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** Every unfinished label, responsibility, historical S/P reference and evidence gap is named in the [full census](../etc/architecture/m2-t24-s1-full-node-census.md); the [progress ledger](NODE_PROGRESS.md) owns counts. Each responsible source-slice proposal must admit exact names and expected completions before implementation. A passing whole-route or CTest count cannot close unexecuted or unaudited nodes.
 
-- [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.
+- [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.
 
 - [ ] **Vine OAM wrapped clipping (`TODO(High)`):** T36 S1 proves the six vine caller nodes, while actual-child comparison retains 32 failures at OAM Y bytes 0200/020C/0210/0214. DrawVine/ChkFTop/NextVSp retain M2 T17 S6 custody; repair the original wrapped subtraction and recheck all source rows when that graphics slice is admitted. [Evidence](../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof).
 
@@ -57,7 +57,7 @@
 
 - [x] **GiveOneCoin extra-life sound:** Resolved in T36 S5 and rechecked on the T36 final build. The original hundred-coin transition queues sound40; all 96 S3 actual-child comparisons now match. Historical 48 sound-only failures remain recorded as the pre-fix evidence. [Resolution](../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof).
 
-- [x] **Power-up drawing attributes and offscreen hiding:** Resolved by T44 S7. `DrawPowerUp` now follows `PUpDrawLoop`, `FlipPUpRightSide` and `PUpOfs`, including flower flip `$40` and inherited third-row hiding; all 50 original child records and root snapshots match on both Windows widths. [Closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s7-closure-power-up-graphics).
+- [x] **Power-up drawing attributes and offscreen hiding:** Resolved by T44 S7. `DrawPowerUp` now follows `PUpDrawLoop`, `FlipPUpRightSide` and `PUpOfs`, including flower flip `$40` and inherited third-row hiding; all 50 original child records and root snapshots match on both Windows widths. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s7-closure-power-up-graphics).
 
 - [ ] **Star pickup music:** T37 S1 case 46 isolates PlayerEnemyCollision/HandlePowerUpCollision leaving AreaMusicQueue $FB=$00 instead of original $40 on both widths. Keep existing M2 T17 S6 collision custody until source-order admission. [Proof](../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof).
 
@@ -89,7 +89,7 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
   large/small platform seams in their receiving slice.
   GetEnemyOffscreenBits/RelativeEnemyPosition remain with T16 S4.
   [Original gap](../history/M2-T39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof),
-  [graphics closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation).
+  [graphics closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation).
 
 - [ ] **Normal actor/movement actual-child gaps:** T39 S8 proves its four
   caller nodes with 252/252 original comparisons, while actual-child failures

@@ -19,6 +19,8 @@ children keep their ledger receivers and original source-order slices.
 
 [T43](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) is closed: 150/150 scoped nodes, 136 new and 14 retained/rechecked completions, ending at 1,517 / 1,992. Its S3 review revoked the task-external historical KillEnemies claim; that node remains assigned to M2 T29 S8 and is not a T43 scope debt. The next unadmitted source slice begins BlockBufferChk_Enemy at13023 with109 nodes.
 
+[T44](../history/M2-T44-block-buffer-and-object-graphics.md#t44-closure) is closed: 109/109 scoped labels, 107 new and two retained/rechecked completions, ending at 1,624 / 1,992. T45 is the next unadmitted source-order candidate, beginning at `CheckToMirrorLakitu` after the `EggExc` boundary.
+
 ## M1 Candidates
 
 1. [Win32 and 16-bit-compatible platform foundation](../proposals/m1-win32-platform-foundation.md) — closed in M1.

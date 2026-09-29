@@ -719,3 +719,47 @@ graphics tests pass. The three P5 executables remain the S8 closure artifacts:
 `7cef4bfa1e9ee1ea7c34ca0d8b1cf4e393129a9950b22eeb427a4b37ead57469`,
 and `mysmb64.exe`
 `756643c51701aabb7d24418aaa6166e36166f1a140742c41969ae6f9f66b9b3b`.
+
+## T44 closure
+
+T44 closes its entire source-order span `BlockBufferChk_Enemy` through
+`EggExc` (source lines 13023-13994). Its eight S chains own **109 unique
+labels**: **107 new ROM matches** and **two retained/rechecked bullet labels**.
+The task started at **1,517 / 1,992** and ends at **1,624 / 1,992**. No T44
+label is deferred or transferred. Every S closure above records its exact
+node dispositions and separate ROM-logic and operational evidence.
+
+| Chain | Scope | New / retained | Original-ROM route and shared owner |
+| --- | ---: | ---: | --- |
+| S1 block buffer | 14 | 14 / 0 | Enemy, fireball and player block-address calls; `game/world/block_buffer.c` |
+| S2 vine | 6 | 6 / 0 | Vine actor and six-sprite row calls; shared game OAM |
+| S3 hammer and stacker | 14 | 14 / 0 | Six-sprite stacker and Hammer graphics children; shared game OAM |
+| S4 flagpole and dumps | 9 | 9 / 0 | Flagpole handler and two/four/six-sprite dump paths; shared game OAM |
+| S5 large platform | 11 | 11 / 0 | Large-platform row and shrinking branches; shared game OAM |
+| S6 number and coin | 5 | 5 / 0 | Floatey score and jumping-coin graphics; shared game OAM |
+| S7 power-up | 6 | 6 / 0 | Power-up graphics and clipping child; shared game OAM |
+| S8 enemy graphics | 44 | 42 / 2 | Ordinary, retainer, spring and Bowser handler branches; shared game OAM |
+| **Total** | **109** | **107 / 2** | **One source-ordered block/OAM slice** |
+
+The cross-chain review follows the original call tree: S1 supplies common
+background block queries; S2-S7 consume relative/OAM and sprite-dump work
+state; S8 consumes the same six-sprite and offscreen conventions while
+choosing ROM enemy tiles, attributes and animation. Each chain's child proof
+compares the original RAM/OAM boundary rather than borrowing a parent-only
+success. The next source label `CheckToMirrorLakitu` is outside T44 and retains
+its receiving task; this closure assigns it no credit. Legacy direct-test
+graphics helpers have no live product call edge and grant no match.
+
+Final integrated validation uses the S8 P5 product build: x86 and x64 each
+complete 222/233 CTests with precisely the eleven failures already present
+before S8; product self-tests, source-table binding and platform purity pass.
+The same C90 game source links as an OpenNT DOS16 MZ executable. Final
+artifact hashes remain DOS16
+`a7a8c7791a936df9b6c264392eb7aae67348dfeec37e1ab9a48e67858cfec7cb`,
+Win32 x86
+`7cef4bfa1e9ee1ea7c34ca0d8b1cf4e393129a9950b22eeb427a4b37ead57469`,
+and Win32 x64
+`756643c51701aabb7d24418aaa6166e36166f1a140742c41969ae6f9f66b9b3b`.
+These are link and source-route results; they do not claim whole-game frame
+equivalence or physical 486SX performance. T44 is closed; the next planned
+source slice starts at line 14001 and needs its own T45 packet.

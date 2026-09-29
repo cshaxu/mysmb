@@ -3726,13 +3726,13 @@
     {
       "id": "M2 T44",
       "evidence": [
-        "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+        "docs/history/M2-T44-block-buffer-and-object-graphics.md"
       ],
       "subtasks": [
         {
           "id": "M2 T44 S1",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3745,7 +3745,7 @@
         {
           "id": "M2 T44 S2",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3758,7 +3758,7 @@
         {
           "id": "M2 T44 S3",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3771,7 +3771,7 @@
         {
           "id": "M2 T44 S4",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3784,7 +3784,7 @@
         {
           "id": "M2 T44 S5",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3797,7 +3797,7 @@
         {
           "id": "M2 T44 S6",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3810,7 +3810,7 @@
         {
           "id": "M2 T44 S7",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3823,7 +3823,7 @@
         {
           "id": "M2 T44 S8",
           "evidence": [
-            "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+            "docs/history/M2-T44-block-buffer-and-object-graphics.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -64063,7 +64063,7 @@
         "RetYC"
       ],
       "acceptedBy": "Coordinator accepts this contiguous source-order block-buffer core chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-237-to-t44-s2",
@@ -64079,7 +64079,7 @@
         "NextVSp"
       ],
       "acceptedBy": "Coordinator accepts this contiguous source-order vine graphics chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-238-to-t44-s3",
@@ -64103,7 +64103,7 @@
         "NoHOffscr"
       ],
       "acceptedBy": "Coordinator accepts this contiguous source-order shared OAM and hammer graphics chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-239-to-t44-s4",
@@ -64122,7 +64122,7 @@
         "ExitDumpSpr"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order flagpole graphics and generic OAM dump-helper chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-240-to-t44-s5",
@@ -64143,7 +64143,7 @@
         "ExDLPl"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order large-platform graphics chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-241-to-t44-s6",
@@ -64158,7 +64158,7 @@
         "ExJCGfx"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order floatey-number and jumping-coin graphics chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-242-to-t44-s7",
@@ -64174,7 +64174,7 @@
         "PUpOfs"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order power-up graphics chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-243-to-t44-s8",
@@ -64226,7 +64226,7 @@
         "EggExc"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order EnemyGfxHandler tree under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     },
     {
       "id": "transfer-244-to-t44-s8",
@@ -64238,7 +64238,7 @@
         "SBBAt"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order EnemyGfxHandler tree under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md"
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md"
     }
   ],
   "runs": [
@@ -201957,7 +201957,7 @@
         "RetXC",
         "RetYC"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-block-buffer-core"
     },
     {
@@ -203522,7 +203522,7 @@
         "ChkFTop",
         "NextVSp"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-vine-object-graphics"
     },
     {
@@ -205117,7 +205117,7 @@
         "RenderH",
         "NoHOffscr"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-six-sprite-hammer-graphics"
     },
     {
@@ -206711,7 +206711,7 @@
         "DumpTwoSpr",
         "ExitDumpSpr"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-flagpole-oam-dump-helpers"
     },
     {
@@ -208320,7 +208320,7 @@
         "SLChk",
         "ExDLPl"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-large-platform-graphics"
     },
     {
@@ -209922,7 +209922,7 @@
         "JCoinGfxHandler",
         "ExJCGfx"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-floatey-jumping-coin-graphics"
     },
     {
@@ -211532,7 +211532,7 @@
         "FlipPUpRightSide",
         "PUpOfs"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-power-up-graphics"
     },
     {
@@ -213258,7 +213258,7 @@
         "MirrorEnemyGfx",
         "EggExc"
       ],
-      "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
+      "evidence": "docs/history/M2-T44-block-buffer-and-object-graphics.md",
       "state": "closed-enemy-graphics-animation"
     }
   ]

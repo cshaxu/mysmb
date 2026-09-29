@@ -19,7 +19,7 @@ the conformance counts below.
 
 Verified conformance is **1624 / 1,992 (81.53%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T44 S8 closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) closes 42 enemy-graphics labels and rechecks two retained bullet labels. Original per-label PC routes, table binding and x86/x64 non-stack RAM/OAM comparison are backed by DOS16 link, purity and three executable artifacts.
+Latest task review: [T44 closure](../history/M2-T44-block-buffer-and-object-graphics.md#t44-closure) completes 109 source-order labels: 107 new ROM matches and two retained/rechecked bullet labels. All eight S chains have original-ROM logic and three-target operational evidence; M2 remains at 1,624 / 1,992.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
