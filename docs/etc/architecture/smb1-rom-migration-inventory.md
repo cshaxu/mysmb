@@ -1733,17 +1733,17 @@ The labels and branches behind every line remain open until individually bound b
 | 13345 | `DumpThreeSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
 | 13348 | `DumpTwoSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
 | 13352 | `ExitDumpSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
-| 13357 | `DrawLargePlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawlargeplatform) |
-| 13374 | `ShrinkPlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shrinkplatform) |
-| 13377 | `SetLast2Platform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlast2platform) |
-| 13386 | `SetPlatformTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setplatformtilenum) |
-| 13402 | `SChk2` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk2) |
-| 13408 | `SChk3` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk3) |
-| 13414 | `SChk4` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk4) |
-| 13420 | `SChk5` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk5) |
-| 13426 | `SChk6` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schk6) |
-| 13431 | `SLChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-slchk) |
-| 13435 | `ExDLPl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdlpl) |
+| 13357 | `DrawLargePlatform` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13374 | `ShrinkPlatform` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13377 | `SetLast2Platform` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13386 | `SetPlatformTilenum` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13402 | `SChk2` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13408 | `SChk3` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13414 | `SChk4` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13420 | `SChk5` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13426 | `SChk6` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13431 | `SLChk` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
+| 13435 | `ExDLPl` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
 | 13439 | `DrawFloateyNumber_Coin` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfloateynumber_coin) |
 | 13444 | `NotRsNum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notrsnum) |
 | 13460 | `JumpingCoinTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpingcointiles) |

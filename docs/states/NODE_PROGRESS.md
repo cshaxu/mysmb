@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1560 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1571 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 347 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 336 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1560 / 1,992 (78.31%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1571 / 1,992 (78.87%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 closure](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) closes all 150 scoped nodes in fifteen chains. Direct original route evidence remains node-specific; integrated x86/x64 self-tests, DOS16 link, purity and all three refreshed artifacts pass.
+Latest task review: [T44 S5 closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) closes the eleven-node large-platform graphics chain. Parent-route ROM evidence, x86/x64 replay and tests, DOS16 link, purity and all three refreshed artifacts pass.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -1588,6 +1588,17 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13345 | `DumpThreeSpr` |
 | 13348 | `DumpTwoSpr` |
 | 13352 | `ExitDumpSpr` |
+| 13357 | `DrawLargePlatform` |
+| 13374 | `ShrinkPlatform` |
+| 13377 | `SetLast2Platform` |
+| 13386 | `SetPlatformTilenum` |
+| 13402 | `SChk2` |
+| 13408 | `SChk3` |
+| 13414 | `SChk4` |
+| 13420 | `SChk5` |
+| 13426 | `SChk6` |
+| 13431 | `SLChk` |
+| 13435 | `ExDLPl` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

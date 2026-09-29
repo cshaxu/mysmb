@@ -16,7 +16,9 @@ static int mysmb_check_file(const char *path, unsigned int *matches)
     file = fopen(path, "rb");
     if (file == NULL) return 1;
     if (fread(header, 1U, 8U, file) != 8U ||
-        memcmp(header, "MS9C\1", 5U) != 0 ||
+        header[0] != 'M' || header[1] != 'S' || header[3] != 'C' ||
+        header[4] != 1U ||
+        (header[2] != '9' && header[2] != 'P') ||
         header[5] > 16U) {
         fclose(file);
         return 2;

@@ -352,3 +352,13 @@ admitted because it has a different caller and route.
 All remaining source labels from `EnemyGraphicsTable` through `EggExc`,
 including retained `CheckForBulletBillCV` and `SBBAt`. Its admission will list
 the exact 44 labels and re-estimate its new-match subset.
+
+#### S5 closure: large-platform graphics
+
+S5 closes all eleven received labels, moving M2 from **1,560** to **1,571 / 1,992**. `src/game/oam/small_platform_gfx.c` remains the sole owner; no host adapter contains platform, clipping, tile, or OAM policy.
+
+The ROM-logic track replays 28 ordinary `RunLargePlatform -> DrawLargePlatform` records plus ten controlled parent-route records. Those ten cover castle and secondary-hard tail suppression, cloud tile override, whole-object d7 removal, and raw `GetXOffscreenBits` masks `$80`, `$c0`, `$e0`, `$f0`, `$f8`, `$fc` for `SChk2` through `SChk6`. The snapshot comparator reports zero non-6502-stack RAM differences on both x86 and x64 for all 38 records.
+
+`DrawLargePlatform` preserves the source six-X stack, four-plus-two Y dumps, `$5b/$75` tile selection, `$02` scratch write, six successive offscreen checks and `SLChk` six-row removal. `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, and `ExDLPl` are all covered by those parent routes.
+
+Operational proof passes the seven focused x86/x64 tests, both product self-tests, platform-purity audit, and OpenNT DOS16 MZ link. Refreshed artifacts are `mysmb16.exe` `c4ddf61a9378b38916710798429b8dde2a880ff6d44c59b5030c92156ad38ff0`, `mysmb32.exe` `16ccc4939fc5c8093d9cc27e6ad09bbe662ce896d9ce5dcebba5adfd5f352048`, and `mysmb64.exe` `88109e4596cc7f4c0a1951538dcc309f563686cbb5628bc365c9efafda58a236`. No S5 label is deferred.

@@ -71,6 +71,7 @@
 #include "../test/actor_dispatch_fixture.h"
 #include "../test/normal_actor_fixture.h"
 #include "../test/special_actor_fixture.h"
+#include "../test/large_platform_graphics_fixture.h"
 #include "../test/podoboo_movement_fixture.h"
 #include "../test/hammer_movement_fixture.h"
 #include "../test/paratroopa_movement_fixture.h"
@@ -1311,6 +1312,12 @@ int main(int argument_count, char **arguments)
             background_snapshot = 43u;
             continue;
         }
+        if (strncmp(arguments[recorded], "--large-platform-graphics-snapshot=", 35u) == 0) {
+            if (movement_snapshot_path != NULL) return 64;
+            movement_snapshot_path = arguments[recorded] + 35u;
+            background_snapshot = 80u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--normal-actor-snapshot=", 24u) == 0) {
             if (movement_snapshot_path != NULL) return 64;
             movement_snapshot_path = arguments[recorded] + 24u;
@@ -2237,6 +2244,13 @@ int main(int argument_count, char **arguments)
             transition_entry = (lib_u16)mysmb_special_actor_entry((unsigned int)(block_scenario-1));
             continue;
         }
+        block_scenario = mysmb_large_platform_graphics_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u32)(39999 + block_scenario);
+            transition_entry = 0xc965u;
+            continue;
+        }
         block_scenario = mysmb_normal_actor_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -3048,6 +3062,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 4052u && t26_fixture <= 4115u)
                     mysmb_podoboo_fixture(driver->machine->ram,
                         (unsigned int)(t26_fixture - 4052u));
+                else if (t26_fixture >= 40000u && t26_fixture <= 40009u)
+                    mysmb_large_platform_graphics_fixture(driver->machine->ram,
+                        (unsigned int)(t26_fixture - 40000u));
                 else if (t26_fixture >= 3960u && t26_fixture <= 4051u)
                     mysmb_special_actor_fixture(driver->machine->ram,
                         (unsigned int)(t26_fixture - 3960u));
@@ -3569,8 +3586,11 @@ int main(int argument_count, char **arguments)
                 driver->machine->p, driver->machine->s)) return 69;
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
-        if ((background_snapshot >= 4u && background_snapshot <= 79u) && movement_snapshot_path != NULL &&
-            elapsed >= warmup_frames && t26_fixture >= 776u && t26_fixture <= 27677u) {
+        if ((((background_snapshot >= 4u && background_snapshot <= 79u) &&
+              t26_fixture >= 776u && t26_fixture <= 27677u) ||
+             (background_snapshot == 80u && t26_fixture >= 40000u &&
+              t26_fixture <= 40009u)) && movement_snapshot_path != NULL &&
+            elapsed >= warmup_frames) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&
                 (background_snapshot != 73u || driver->machine->x ==
@@ -3893,6 +3913,8 @@ int main(int argument_count, char **arguments)
                         background_snapshot == 44u ?
                         mysmb_podoboo_target(before_pc) :
                         background_snapshot == 43u ?
+                        mysmb_special_actor_target(before_pc) :
+                        background_snapshot == 80u ?
                         mysmb_special_actor_target(before_pc) :
                         background_snapshot == 42u ?
                         mysmb_normal_actor_target(before_pc) :
@@ -4221,7 +4243,8 @@ int main(int argument_count, char **arguments)
         if (movement_snapshot_phase != 2u) return 69;
         snapshot = fopen(movement_snapshot_path, "wb");
         if (snapshot == NULL) return 69;
-        if (background_snapshot >= 5u && background_snapshot <= 79u) {
+        if ((background_snapshot >= 5u && background_snapshot <= 79u) ||
+            background_snapshot == 80u) {
             unsigned char header[8] = {'M','S','T','P',1u,0u,0u,0u};
             header[5] = transition_entry == 0xb1c7u ? 1u :
                 (transition_entry == 0xb206u ? 2u : (transition_entry == 0xb1e5u ? 3u : 4u));
@@ -4254,6 +4277,7 @@ int main(int argument_count, char **arguments)
                 header[5] = transition_entry == 0xb6f9u ? 1u : 2u;
             }
             if (background_snapshot == 79u) { header[2] = '*'; header[5] = 1u; }
+            if (background_snapshot == 80u) { header[2] = 'P'; header[5] = 1u; }
             if (background_snapshot == 78u) { header[2] = ')'; header[5] = 1u; }
             if (background_snapshot == 77u) { header[2] = '$'; header[5] = 1u; }
             if (background_snapshot == 76u) { header[2] = '&'; header[5] = 1u; header[7] = coin_entry_carry; }
@@ -4448,7 +4472,7 @@ int main(int argument_count, char **arguments)
         unsigned char header[8] = { 'M','S','E','C',1u,0u,0u,0u };
         unsigned int child;
         int ok;
-        if ((background_snapshot < 3u || background_snapshot > 79u) || movement_snapshot_phase != 2u ||
+        if ((background_snapshot < 3u || background_snapshot > 80u) || movement_snapshot_phase != 2u ||
             entrance_child_active != 0u) return 69;
         if (background_snapshot == 4u) header[2] = 'P';
         if (background_snapshot == 5u) header[2] = 'T';
@@ -4509,6 +4533,7 @@ int main(int argument_count, char **arguments)
         if (background_snapshot == 46u) header[2] = 'c';
         if (background_snapshot == 45u) header[2] = 'b';
         if (background_snapshot == 44u) header[2] = 'a';
+        if (background_snapshot == 80u) header[2] = 'P';
         if (background_snapshot == 43u) header[2] = '9';
         if (background_snapshot == 42u) header[2] = '8';
         if (background_snapshot == 41u) header[2] = '7';

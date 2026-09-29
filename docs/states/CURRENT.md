@@ -2,9 +2,9 @@
 
 ## Current Work
 
-**M2 T44 S5 is admitted at 1,560 / 1,992.** It owns the eleven-node
-`DrawLargePlatform` through `ExDLPl` large-platform graphics chain, with a
-maximum closure count of 1,571.
+**M2 T44 S5 closed at 1,571 / 1,992.** It completed the eleven-node
+`DrawLargePlatform` through `ExDLPl` large-platform graphics chain. The next
+source-order S requires a separate admission packet.
 
 ## M2 T44 S5 Packet
 
@@ -14,7 +14,7 @@ maximum closure count of 1,571.
 | Admission And Approval | Continuing owner-approved M2 mandate; exact transfer 240 from M2 T17 S6. |
 | Objective | Translate and prove the large-platform OAM graphics chain. |
 | Non-goals | No platform host gameplay, no coin/floatey implementation, no child completion by association. |
-| Reference Baseline | 1,560/1,992; scope 11/expected 11, maximum 1,571. |
+| Reference Baseline | 1,560/1,992; scope 11/actual 11, closed at 1,571. |
 | Candidate Proposal | [T44 block-buffer and object graphics](../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-large-platform-graphics). |
 | Files And ABI Surface | Shared game large-platform OAM owner, focused recorder/test, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
