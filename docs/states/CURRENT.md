@@ -2,93 +2,38 @@
 
 ## Current Work
 
-**M2 T42 S9 is closed at1,382/1,992:all four expected nodes complete. T42 cross-chain closure is next.**
-T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
+**M2 T42 is closed at1,382/1,992:98/98 planned nodes complete.**
+Next is the source-order player terrain slice, not yet admitted.
 
 ## M2 T42 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T42 S9, source-order implementation. |
-| Admission And Approval | Continuing M2 mandate after7d3c9da; coordinator accepts transfer-218. |
-| Objective | All4 open collision preflight nodes named in S9 admission, all expected new. |
-| Non-goals | No side-response, geometry or movement algorithm repair; no host gameplay. |
-| Reference Baseline | 1,378/1,992;4 expected, maximum1,382; T42 maximum1,382. |
-| Candidate Proposal | [T42 S9 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s9-admission-collision-preflight). |
-| Files And ABI Surface | world/collision.c, preflight helpers and caller ABI, tests/recorder, manifests and three EXEs. |
-| Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Direct original carry/index/mask and RAM comparison, entry/exit audit and native evidence; three-target build. |
-| Expected Markers | Offscreen/high-Y carry, wrapped index and masked offscreen output; unchanged RAM. |
-| Asset Needs | Existing owner-local ROM/listing; bounded ignored records; owner-authorized EXEs. DOS link-only. |
-| Reporting Requirements | All4 exact dispositions, dual proof, named child gaps, ledger and hashes. |
-| Stop Conditions | Unadmitted child rewrite, patched source outputs, hidden mismatch or host gameplay. |
-| Exit Criteria |4 exact nodes proved or accepted transfers, dual proof and three artifacts. |
-| Original Owner Request | Faithful ROM call graph and nodes in shared DOS16/x86/x64 C. |
-| Similar-Issue Sweep | Carry/offset consumers, dead register outputs and duplicate preflight. |
+| Identifier Mode | T42 S9 P2 task-wide closure; no new node credit. |
+| Admission And Approval | Continuing approved M2 mandate after b89f02e. |
+| Objective | Audit all98 T42 labels, nine chains and final integrated evidence. |
+| Non-goals | No implementation changes or external child certification. |
+| Reference Baseline | 1,382/1,992, unchanged by task closure. |
+| Candidate Proposal | [T42 record](../history/M2-T42-shared-collision-and-platforms.md#t42-closure). |
+| Files And ABI Surface | History, links, queue, ledger and progress records only. |
+| Applicable Rules | Task Reading Set, execution, documentation, source policy and ledger. |
+| Verification | Exact plan/scope/status equality; dual-proof matrix; ten integrated tests; final artifact hashes. |
+| Expected Markers | 98 unique complete nodes, nine closed chains, no scoped unfinished labels. |
+| Asset Needs | Reuse unchanged S9 three-target delivery; owner-local evidence stays ignored. |
+| Reporting Requirements | Scoped closure and independent child gaps, without whole-game claim. |
+| Stop Conditions | Missing node proof, lost prior match or mismatched delivered artifact. |
+| Exit Criteria | All98 disposition records and integrated proof reviewed; links and gates pass. |
+| Original Owner Request | Native shared ROM-faithful C on DOS16 and Win32 x86/x64. |
+| Similar-Issue Sweep | Duplicate credit, missing receivers, stale queue scope and hidden child gaps. |
 
-## S9 closure
+## T42 closure
 
-[Preflight proof](../proposals/m2/t42-shared-collision-and-platforms.md#s9-original-collision-preflight-proof)
-closes four nodes with3,648 original calls compared per width. All19 original
-instructions and4 branch outcomes execute. All21,544 prior actor matches
-remain. Three EXEs refreshed; DOS link-only. T42 cross-chain closure is next.
-
-## S8 closure
-
-[Positioning proof](../proposals/m2/t42-shared-collision-and-platforms.md#s8-original-platform-positioning-proof)
-closes four nodes with1,168/1,168 direct original RAM comparisons and no child
-substitution. Actual actor matches improve18,936 ->21,544 with none lost.
-Three EXEs refreshed; DOS link-only. S9 is closed above. T42 remains open.
-
-## S7 closure
-
-[Platform collision proof](../proposals/m2/t42-shared-collision-and-platforms.md#s7-original-platform-collision-proof)
-closes14 nodes with1,568/1,568 caller comparisons. Actual children match
-28/1,568; geometry scratch, vertical carry and side speed80 differences remain
-with their existing owners. All18,936 prior actor matches and six collision
-matrices remain. Three EXEs refreshed; DOS link-only. S8 is closed above. T42 remains open.
-
-## S6 closure
-
-[Enemy-pair proof](../proposals/m2/t42-shared-collision-and-platforms.md#s6-original-enemy-pair-proof)
-closes16 nodes with2,048/2,048 caller comparisons. Actual children match
-696/2,048; geometry/stun scratch differences retain their owners.
-All18,936 prior actor matches and five prior collision matrices remain.
-Three EXEs refreshed; DOS link-only. S7 is closed above. T42 remains open.
-
-## S5 closure
-
-[Player contact proof](../proposals/m2/t42-shared-collision-and-platforms.md#s5-original-player-contact-proof)
-closes34 caller/data nodes with3,200/3,200 comparisons. Actual children match
-1,184/3,200; geometry/stun/palette scratch differences retain their owners.
-Actor matches improve18,928 ->18,936 with none lost. Timer32/32, hammer126/126
-and prior collision matches remain. Three EXEs refreshed; DOS link-only.
-S6 is closed above. T42 remains open.
-
-## S4 closure
-
-[Pickup proof](../proposals/m2/t42-shared-collision-and-platforms.md#s4-original-power-up-pickup-proof)
-closes six caller nodes:256/256 comparisons,240/256 with actual children.
-Palette scratch differences remain; old actor matches improve84 ->86/100.
-Prior actor/collision results remain. Two broad smoke failures reproduce at
-the same baseline assertions. Three EXEs refreshed; DOS link-only.
-S5 is closed above. T42 remains open.
-
-## S3 closure
-
-[Original contact proof](../proposals/m2/t42-shared-collision-and-platforms.md#s3-original-hammer-contact-proof)
-closes three caller nodes, 576/576 comparisons. Actual children match54/576;
-522 geometry/injury differences retain named owners. Prior actor, hammer and
-fireball results remain unchanged. Three EXEs refreshed; DOS link-only.
-S4 is closed above; T42 remains open.
-
-## S2 closure
-
-[Original hit proof](../proposals/m2/t42-shared-collision-and-platforms.md#s2-original-fireball-hit-proof)
-closes eleven caller/data nodes, 1,024/1,024 comparisons. Actual roots retain
-$00 child scratch differences in all1,024 comparisons. Prior18,928 actor and
-920 scan matches remain. Three EXEs refreshed; DOS link-only. T42 stays open;
-S3 is closed above.
+[Task-wide proof](../history/M2-T42-shared-collision-and-platforms.md#t42-closure)
+closes98 planned nodes. All nine chain tests plus purity pass10/10.
+Actual actor comparisons match21,544/29,434, retaining all prior matches;
+remaining child differences retain their owners. Three S9 EXEs are unchanged
+and verified. DOS remains link-only. The next player terrain slice contains148
+nodes; it is not yet admitted. M2 remains incomplete.
 
 ## Current Technical Baseline
 

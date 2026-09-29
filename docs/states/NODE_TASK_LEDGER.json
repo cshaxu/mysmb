@@ -3398,13 +3398,13 @@
     {
       "id": "M2 T42",
       "evidence": [
-        "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+        "docs/history/M2-T42-shared-collision-and-platforms.md"
       ],
       "subtasks": [
         {
           "id": "M2 T42 S1",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3417,7 +3417,7 @@
         {
           "id": "M2 T42 S2",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3430,7 +3430,7 @@
         {
           "id": "M2 T42 S3",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3443,7 +3443,7 @@
         {
           "id": "M2 T42 S4",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3456,7 +3456,7 @@
         {
           "id": "M2 T42 S5",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3469,7 +3469,7 @@
         {
           "id": "M2 T42 S6",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3482,7 +3482,7 @@
         {
           "id": "M2 T42 S7",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3495,7 +3495,7 @@
         {
           "id": "M2 T42 S8",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3508,7 +3508,7 @@
         {
           "id": "M2 T42 S9",
           "evidence": [
-            "docs/proposals/m2/t42-shared-collision-and-platforms.md"
+            "docs/history/M2-T42-shared-collision-and-platforms.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -63238,7 +63238,7 @@
         "ExitFBallEnemy"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63259,7 +63259,7 @@
         "ExHCF"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63272,7 +63272,7 @@
         "ExPHC"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63288,7 +63288,7 @@
         "NoPUp"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63332,7 +63332,7 @@
         "ExSFN"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63358,7 +63358,7 @@
         "ExTA"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63382,7 +63382,7 @@
         "NoSideC"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63396,7 +63396,7 @@
         "ExPlPos"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63410,7 +63410,7 @@
         "GetEnemyBoundBoxOfsArg"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "from": "M2 T17 S6"
     }
   ],
@@ -166005,7 +166005,7 @@
         "NoFToECol",
         "ExitFBallEnemy"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-fireball-enemy-scan-1290"
     },
     {
@@ -167344,7 +167344,7 @@
         "EnemySmackScore",
         "ExHCF"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-fireball-hit-1301"
     },
     {
@@ -168670,7 +168670,7 @@
         "ClHCol",
         "ExPHC"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-hammer-contact-1304"
     },
     {
@@ -170008,7 +170008,7 @@
         "UpToFiery",
         "NoPUp"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-powerup-pickup-1310"
     },
     {
@@ -171436,7 +171436,7 @@
         "SetupFloateyNumber",
         "ExSFN"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-player-enemy-contact-1344"
     },
     {
@@ -172844,7 +172844,7 @@
         "RXSpd",
         "ExTA"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-enemy-pair-1360"
     },
     {
@@ -174262,7 +174262,7 @@
         "SideC",
         "NoSideC"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-platform-collision-1374"
     },
     {
@@ -175664,7 +175664,7 @@
         "PositionPlayerOnVPlat",
         "ExPlPos"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-platform-positioning-1378"
     },
     {
@@ -177070,7 +177070,7 @@
         "GetEnemyBoundBoxOfs",
         "GetEnemyBoundBoxOfsArg"
       ],
-      "evidence": "docs/proposals/m2/t42-shared-collision-and-platforms.md",
+      "evidence": "docs/history/M2-T42-shared-collision-and-platforms.md",
       "state": "closed-P1-collision-preflight-1382"
     }
   ]

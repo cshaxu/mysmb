@@ -19,9 +19,9 @@ the conformance counts below.
 
 Verified conformance is **1,382 / 1,992 (69.38%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S9 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s9-original-collision-preflight-proof)
-closes four preflight nodes with3,648 original calls per width.
-All21,544 prior actor matches remain. T42 cross-chain closure is next.
+Latest task review: [T42 closure](../history/M2-T42-shared-collision-and-platforms.md#t42-closure)
+closes98/98 scoped nodes across nine chains. Final actual actor matches
+21,544/29,434; external child differences retain their owners.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

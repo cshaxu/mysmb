@@ -812,5 +812,5 @@ Only S1 receives its six bridge-collapse nodes at admission; all later
 labels retain their existing receivers until their exact S receipt.
 
 T42 admission keeps the twelve PlayerBGUpperExtent-through-DoFootCheck nodes
-with the following complete terrain chain. [T42 exact chain plan](t42-shared-collision-and-platforms.md)
+with the following complete terrain chain. [T42 exact chain plan](../../history/M2-T42-shared-collision-and-platforms.md)
 therefore covers 98 nodes through line 11923; the next slice starts at 11924.

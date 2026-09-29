@@ -1306,3 +1306,105 @@ build/m2-t42-s9 holds bounded evidence and checkpoints; coordinator owns cleanup
 | mysmb16.exe | 257097 | 4b900ebd7e178bb376c1a1db771d2e636761f46f29b33ab3d397e61f2564e2d8 |
 | mysmb32.exe | 357461 | 56e6eb623e78829b2cc0533f1fa97ffc5f0d0d171ef921f678efad908334b0b8 |
 | mysmb64.exe | 364780 | 18db2d672ad004f57f2d1688037bc5b0b180a5ac709e8243c1ebbd745caf1d6c |
+
+## T42 closure
+
+T42 S9 P2 completes the task-wide review following b89f02e; no new S,
+node credit or implementation change is introduced. All nine chains close
+all98 planned nodes, bringing conformance from1,284 to1,382/1,992. The exact
+plan labels equal the union of S scopes, each expected label equals its actual
+match, and every label remains with its explicit maintenance receiver.
+No scoped unfinished node or transfer remains. External dependencies receive
+no credit; their original source-order owners retain responsibility.
+
+| Chain | Planned / completed nodes | Original logic evidence |
+| --- | ---: | --- |
+| S1 fireball scan | 6/6 | 2,048 caller comparisons |
+| S2 fireball hit | 11/11 | 1,024 caller comparisons |
+| S3 hammer contact | 3/3 | 576 caller comparisons |
+| S4 pickup | 6/6 | 256 caller comparisons |
+| S5 player contact | 34/34 | 3,200 caller comparisons |
+| S6 enemy pairs | 16/16 | 2,048 caller comparisons |
+| S7 platform collision | 14/14 | 1,568 caller comparisons |
+| S8 rider positioning | 4/4 | 1,168 direct comparisons |
+| S9 preflight | 4/4 | 3,648 direct original calls per width |
+
+Accepted individual branch/table/read/write/call proofs above are retained.
+Caller substitution proves only a caller after complete input checks; it does
+not certify a descendant. The actual-child matrix on the final S9 source is:
+
+| Collision chain | Actual matches / comparisons |
+| --- | ---: |
+| fireball-enemy-scan | 920/2048 |
+| fireball-hit | 0/1024 |
+| hammer-contact | 54/576 |
+| powerup-pickup | 240/256 |
+| player-enemy-contact | 1184/3200 |
+| enemy-pair | 696/2048 |
+| platform-collision | 28/1,568 |
+
+Remaining collision differences retain geometry RAM6/7, stun/palette RAM0,
+side-response and other recorded child ownership. S9 fixed four high-Y carry
+samples' landing/state writes, but geometry scratch still prevents those
+whole calls matching. These sample counts are not unfinished node counts.
+
+| Actor route family | Actual matches / comparisons |
+| --- | ---: |
+| loop | 192/192 |
+| stream | 160/160 |
+| init | 220/220 |
+| common | 104/104 |
+| spiny | 160/160 |
+| firebar | 80/80 |
+| fish | 304/304 |
+| bowser-flame | 320/320 |
+| fireworks | 240/240 |
+| bullet-swim | 364/364 |
+| group | 230/230 |
+| small-init | 392/392 |
+| platform-init | 480/480 |
+| actor-dispatch | 46/360 |
+| normal-actor | 88/252 |
+| special-actor | 56/184 |
+| podoboo | 128/128 |
+| hammer-movement | 712/712 |
+| paratroopa | 320/320 |
+| green-counter | 576/576 |
+| bloober | 1024/1024 |
+| bullet-movement | 256/256 |
+| swimming-cheep | 1024/1024 |
+| firebar-chain | 300/1024 |
+| flying-cheep-movement | 1024/1024 |
+| lakitu-movement | 2048/2048 |
+| bridge-collapse | 72/360 |
+| bowser-control | 16/2048 |
+| bowser-graphics | 0/1024 |
+| flame-actor | 8/2048 |
+| fireworks-lifetime | 472/1024 |
+| star-flag | 1552/2048 |
+| piranha-movement | 1024/1024 |
+| balance-platform | 1920/2048 |
+| vertical-platform | 1024/1024 |
+| horizontal-platform | 1536/1536 |
+| lift-platform | 1024/1024 |
+| offscreen-bounds | 2048/2048 |
+
+Total21,544/29,434 actual actor comparisons match. All18,928 matches at T41
+closure remain, with2,616 additional matches in T42. The7,890 remaining sample
+differences retain independently owned graphics, relative/offscreen, geometry,
+status and actor-child gaps. Whole-game and full-native-frame equivalence
+remain unproved. Scope closure does not close M2 or conceal those dependencies.
+
+Final integrated evidence reuses the S9 source/artifacts: all118 shared C90
+units compile on x86/x64, both self-tests and hidden-window probes pass,
+DOS16 links, eight affected suites pass per width, and the final actual actor
+matrix plus prior collision matrices retain all previous matches. The nine
+T42 native chain CTests and platform purity pass together10/10 in the task-wide
+run. No gameplay implementation changed after this delivery; hashes in the S9
+artifact table match assets. No extra compile cycle is needed for this record.
+DOS graphics/resource binding and physical486SX performance remain unproved.
+
+T42 is closed. M2 remains active at1,382/1,992. The next source slice is
+PlayerBGUpperExtent through line13000:148 player terrain nodes. It receives
+its exact S plan and admission before implementation. Historical labels and
+numbers are preserved; no later T is admitted by this closure.
