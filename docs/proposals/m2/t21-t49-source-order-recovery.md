@@ -805,7 +805,7 @@ line-10100 cut. [Exact T40 chains and receivers](../../history/M2-T40-enemy-move
 
 ## T41 admission boundary
 
-[T41 exact node and chain plan](t41-bridge-bowser-and-platforms.md) covers all
+[T41 exact node and chain plan](../../history/M2-T41-bridge-bowser-and-platforms.md) covers all
 123 labels in lines 10092-11084, with 118 expected new and five retained
 matches. Its thirteen S rows preserve source order and shared ownership.
 Only S1 receives its six bridge-collapse nodes at admission; all later

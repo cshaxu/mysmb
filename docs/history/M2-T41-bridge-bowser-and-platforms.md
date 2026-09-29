@@ -1887,3 +1887,206 @@ Raw trace output: 5417984 bytes, below 24 MB.
 | mysmb16.exe | 259289 | 31408c06837a3dfc1a6a0745e8b3a5bc735f0520e9b4083794cdb25235120637 |
 | mysmb32.exe | 354017 | 68ee2fe68a13a3fd48648feeeca911dc3f9c387b76fa3289d5f387528353c8cf |
 | mysmb64.exe | 362566 | a54bb858632c4bd80baa0aa8e534955ca7af9e19972b8e962c500183d32f391e |
+
+## S13 admission: extended offscreen bounds
+
+S12 closed in ce394b9. Coordinator accepts transfer-209 under the continuing
+M2 mandate. Baseline 1,279/1,992; five open scoped/expected-new nodes, maximum
+1,284. Exact source-ordered labels:
+
+`OffscreenBoundsCheck`, `LimitB`, `ExtendLB`, `TooFar`, `ExScrnBd`.
+
+Original $D67A-$D6D5, OffscreenBoundsCheck through ExScrnBd, is the final
+T41 chain; three unused bytes precede the following collision source slice.
+Extract the existing enemy_bounds.c routine and its private subtraction
+helper into planned enemy/actor_slots.c. Restore original $00-$03 boundary
+scratch and remove the invented slot-range gate; preserve the actual source
+carry chain, sign-bit page comparisons and ID/state erasure exceptions.
+EraseEnemyObject is the existing certified dependency; keep its own owner.
+No relative/offscreen-bits, boxes, collision or host algorithm rewrite.
+
+Logic proof uses naturally reached NMI OffscreenBoundsCheck with bounded
+entry input fixtures: every source branch, ID/state exceptions, boundary
+equality, low-byte carry/borrow and page sign/wrap. Check full child inputs
+before recorded returns and independently compare real erasure. Preserve
+all 16,860 prior actual matches. No ROM/CPU/PC/stack/output execution patches.
+Operational proof: mysmb.offscreen-bounds-chain, previous actor/platform
+suites, strict C90 x86/x64, DOS16 link, platform purity, hidden-window
+response and three EXEs once per P. DOS remains link-only.
+
+Similar-issue sweep covers unique owner, missing source scratch, invented
+entry gates, CPY/ADC/SBC carry continuity, signed-page versus host ordering,
+and left/right-specific exceptions. Existing owner-local ROM/listing
+provenance and nonredistributable research containment remain unchanged.
+Ignored build/m2-t41-s13 allows at most 1,024 routes, 40-MB raw output,
+twenty-second deadlines and resumable checkpoints; coordinator owns
+dependent trace retention/cleanup. Every scoped node must be proved or
+explicitly transferred. After S13, audit all 123 T41 scoped nodes and
+cross-chain evidence before closing T41; no milestone completion is implied.
+
+## S13 original offscreen bounds proof
+
+S13 P1 closes all five expected nodes: 1,279 -> 1,284/1,992. No scoped
+node remains incomplete or transfers; erasure keeps its own maintenance owner.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| OffscreenBoundsCheck | Flying-fish early exit, source ID comparisons and ordered boundary scratch. ROM-match complete. |
+| LimitB | Special-ID low-byte +38 consumes CPY carry before subtraction. ROM-match complete. |
+| ExtendLB | Left borrow and right carry flow continuously through all four boundary bytes. ROM-match complete. |
+| TooFar | Left/right erasure decisions call the original EraseEnemyObject input. ROM-match complete. |
+| ExScrnBd | Inside-screen and each original state/ID exception return without erasure. ROM-match complete. |
+
+All 44 instructions in $D67A-$D6D5 and both outcomes of all ten branches
+execute. The 1,024 original NMI routes cover slots zero/five, flying-fish
+exit, ordinary and special left bounds, left/right page sign wrap, boundary
+carry/borrow and all right-edge state/ID exceptions. Inputs are patched only
+at the naturally reached root. Observer-free original frames equal observed
+originals, not native full frames. No ROM, CPU/PC, stack or output patch.
+
+Caller and separate actual-child comparisons both pass 2,048/2,048 across
+x86/x64. Full RAM and original erasure-slot inputs are checked before any
+recorded return; actual comparisons use the real erasure implementation.
+Mapped $0109-$0139, scratch, queues and OAM backing are included; hardware
+return-stack storage is excluded. Erasure preserves source X. No unexplained
+root difference remains in this S, and no extra credit is given to erasure.
+
+The existing body and its private subtraction helper move from enemy_bounds.c
+to planned enemy/actor_slots.c. Original $00-$03 scratch stores are restored
+in source order and the invented slot-range exit is removed. Existing exact
+carry arithmetic and special cases are preserved. The similar-issue sweep
+covers duplicate ownership, invented gates, missing scratch, CPY/ADC/SBC
+carry continuity, wrapped page sign versus host signed ordering and left/
+right exception asymmetry. Every product caller selects this shared body;
+relative/offscreen-bit, bounds-box and collision owners remain unchanged.
+
+Native tests pass 524,288 cases per width using a word-domain oracle: all
+IDs and left-X bytes, page-zero/255 wrap, both boundary equalities, adjacent
+positions, half-range sign changes, erasure input footprint and early-return
+preservation. Slots five/seven also prove absence of an invented native
+range guard. All thirteen T41 chain CTests and platform purity pass together;
+fifteen existing initializer/platform suites pass per width. Final actual
+matrix is 18,928/29,434: all 16,860 prior matches remain, plus 2,048 new and
+twenty improved older samples (sixteen special actor, four normal actor).
+Remaining 10,506 samples retain unrelated descendant debt, not node counts.
+
+All 110 shared sources pass strict C90 x86/x64 and self-tests. Both hidden
+Win32 windows create/respond. DOS16 compiles/links with the existing
+OLDNAMES warning. Three owner-authorized EXEs are refreshed. DOS remains
+link-only: no graphical playability, resource binding or physical 486SX
+certification. No platform gameplay or runtime emulator is introduced.
+
+Reproduce offscreen_bounds_fixture.h cases 0..1023 using
+--fixture=t41-offscreen-bounds=N, --offscreen-bounds-snapshot,
+--control-children and --pc-coverage. offscreen_bounds_snapshot_check checks
+caller contracts; enemy_loop_actual_check executes real erasure. Native
+CTest: mysmb.offscreen-bounds-chain. Ignored build/m2-t41-s13 holds bounded
+records/checkpoints with twenty-second deadlines and coordinator-owned
+dependent regression retention/cleanup. T41 aggregate audit follows.
+
+Raw trace output: 11065456 bytes, below 40 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 259305 | de7e0710a344b06ea4dd1787a44fcb63297c6da9693f1821a28258b3849b0ac3 |
+| mysmb32.exe | 354233 | 5f9956630f2b637b1ea1a6a5e07e5f6affbb935279c9eace8fa21572337c3739 |
+| mysmb64.exe | 362818 | 824d561514e82dcffe2386f4227eb8cfaaac847f855bc22773dc8fd0d6c41299 |
+
+## T41 closure
+
+All thirteen source-ordered S chains are closed. All 123 unique planned
+nodes are individually ROM-match complete: 118 new and five retained,
+bringing the canonical count from 1,166 to 1,284/1,992. Exact plan rows equal
+the union of admitted S scopes. Every expected-new label equals its recorded
+actual match; no scoped unfinished node or closure transfer remains. Each
+label retains its maintenance receiver. External child nodes get no credit.
+
+| Chain | Scoped nodes | New matches |
+| --- | ---: | ---: |
+| M2 T41 S1 | 6 | 6 |
+| M2 T41 S2 | 19 | 17 |
+| M2 T41 S3 | 4 | 4 |
+| M2 T41 S4 | 12 | 9 |
+| M2 T41 S5 | 3 | 3 |
+| M2 T41 S6 | 20 | 20 |
+| M2 T41 S7 | 6 | 6 |
+| M2 T41 S8 | 2 | 2 |
+| M2 T41 S9 | 26 | 26 |
+| M2 T41 S10 | 6 | 6 |
+| M2 T41 S11 | 9 | 9 |
+| M2 T41 S12 | 5 | 5 |
+| M2 T41 S13 | 5 | 5 |
+
+Retained labels: KillAllEnemies, KillLoop, FlameTimerData, SetFlameTimer, ExFl.
+
+The integrated matrix executes current shared C and actual children without
+recorded-return substitution. It complements the node-level source and
+caller/data proofs; completed callers do not certify unfinished descendants.
+S8 FirebarSpin additionally retains its 640 original RAM/A comparisons and
+1,572,864 native combinations per width; its native suite passes in the
+final T41 run and its enclosing firebar routes are included below.
+
+| Original route family | Actual matches | Remaining sample differences |
+| --- | ---: | ---: |
+| loop | 192/192 | 0 |
+| stream | 160/160 | 0 |
+| init | 220/220 | 0 |
+| common | 104/104 | 0 |
+| spiny | 160/160 | 0 |
+| firebar | 80/80 | 0 |
+| fish | 304/304 | 0 |
+| bowser-flame | 320/320 | 0 |
+| fireworks | 240/240 | 0 |
+| bullet-swim | 364/364 | 0 |
+| group | 230/230 | 0 |
+| small-init | 392/392 | 0 |
+| platform-init | 480/480 | 0 |
+| actor-dispatch | 46/360 | 314 |
+| normal-actor | 88/252 | 164 |
+| special-actor | 56/184 | 128 |
+| podoboo | 128/128 | 0 |
+| hammer-movement | 712/712 | 0 |
+| paratroopa | 320/320 | 0 |
+| green-counter | 576/576 | 0 |
+| bloober | 1024/1024 | 0 |
+| bullet-movement | 256/256 | 0 |
+| swimming-cheep | 1024/1024 | 0 |
+| firebar-chain | 292/1024 | 732 |
+| flying-cheep-movement | 1024/1024 | 0 |
+| lakitu-movement | 2048/2048 | 0 |
+| bridge-collapse | 72/360 | 288 |
+| bowser-control | 16/2048 | 2032 |
+| bowser-graphics | 0/1024 | 1024 |
+| flame-actor | 8/2048 | 2040 |
+| fireworks-lifetime | 472/1024 | 552 |
+| star-flag | 1552/2048 | 496 |
+| piranha-movement | 1024/1024 | 0 |
+| balance-platform | 1088/2048 | 960 |
+| vertical-platform | 512/1024 | 512 |
+| horizontal-platform | 768/1536 | 768 |
+| lift-platform | 528/1024 | 496 |
+| offscreen-bounds | 2048/2048 | 0 |
+
+Total: 18,928/29,434 actual comparisons match. All 16,860 pre-S13 matches
+remain; S13 adds 2,048 matches and improves twenty older samples. Remaining
+10,506 sample differences retain explicit child owners: graphics, relative/
+offscreen bits, boxes/collision, status output and platform positioning are
+not certified by their callers. In particular, the small-platform legacy
+delta bridge remains incomplete; its native old-Y metadata is no ROM
+implementation claim. No full-game or full-frame equality claim is made.
+
+S13 supplies the integrated delivery: 110 shared C90 units for x86/x64,
+both self-tests and hidden-window response probes, DOS16 compile/link, all
+thirteen T41 chain CTests and platform purity in one final run, and the
+actual-root matrix on both widths. Fifteen preceding initializer/platform
+suites per width also pass. Final EXE sizes/hashes above match assets/.
+Accepted original node proofs are reused without repeating every lifecycle.
+All gameplay remains in shared game code; no host algorithm or runtime
+NES emulator was introduced. DOS remains link-only, without graphical
+playability, resource binding or physical 486SX qualification.
+
+T41 is closed; M2 remains incomplete at 1,284/1,992. The next queued source
+slice starts FireballEnemyCollision at line 11085 and covers shared collision,
+bounding boxes and movement primitives. No later T is admitted by this
+closure; publish its exact nodes and S ownership before implementation under
+the continuing approved M2 mandate.
