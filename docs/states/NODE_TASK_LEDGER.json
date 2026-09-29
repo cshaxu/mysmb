@@ -3523,13 +3523,13 @@
     {
       "id": "M2 T43",
       "evidence": [
-        "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+        "docs/history/M2-T43-terrain-and-bounding-boxes.md"
       ],
       "subtasks": [
         {
           "id": "M2 T43 S1",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3542,7 +3542,7 @@
         {
           "id": "M2 T43 S2",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3555,7 +3555,7 @@
         {
           "id": "M2 T43 S3",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3568,7 +3568,7 @@
         {
           "id": "M2 T43 S4",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3581,7 +3581,7 @@
         {
           "id": "M2 T43 S5",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3594,7 +3594,7 @@
         {
           "id": "M2 T43 S6",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3607,7 +3607,7 @@
         {
           "id": "M2 T43 S7",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3620,7 +3620,7 @@
         {
           "id": "M2 T43 S8",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3633,7 +3633,7 @@
         {
           "id": "M2 T43 S9",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3646,7 +3646,7 @@
         {
           "id": "M2 T43 S10",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3659,7 +3659,7 @@
         {
           "id": "M2 T43 S11",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3672,7 +3672,7 @@
         {
           "id": "M2 T43 S12",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3685,7 +3685,7 @@
         {
           "id": "M2 T43 S13",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3698,7 +3698,7 @@
         {
           "id": "M2 T43 S14",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -3711,7 +3711,7 @@
         {
           "id": "M2 T43 S15",
           "evidence": [
-            "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+            "docs/history/M2-T43-terrain-and-bounding-boxes.md"
           ],
           "recordKinds": [
             "owner-approved-source-order",
@@ -63654,7 +63654,7 @@
         "AreaChangeTimerData"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63667,7 +63667,7 @@
         "ErACM"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63691,7 +63691,7 @@
         "ExPVne"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63708,7 +63708,7 @@
         "NoJSFnd"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63721,7 +63721,7 @@
         "ExPipeE"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63736,7 +63736,7 @@
         "ExIPM"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63753,7 +63753,7 @@
         "GetMTileAttrib"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63764,7 +63764,7 @@
         "ExEBG"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T31 S2"
     },
     {
@@ -63786,7 +63786,7 @@
         "NoCDirF"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T17 S6"
     },
     {
@@ -63802,7 +63802,7 @@
         "ExEBGChk"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "from": "M2 T31 S2"
     },
     {
@@ -63827,7 +63827,7 @@
         "SetD6Ste"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-230-to-t43-s10",
@@ -63846,7 +63846,7 @@
         "NoUnderHammerBro"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-231-to-t43-s11",
@@ -63859,7 +63859,7 @@
         "NSFnd"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-232-to-t43-s12",
@@ -63872,7 +63872,7 @@
         "InitFireballExplode"
       ],
       "acceptedBy": "Coordinator under continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-233-to-t43-s13",
@@ -63893,7 +63893,7 @@
         "MoveBoundBoxOffscreen"
       ],
       "acceptedBy": "Coordinator accepts the contiguous source-order bounding-box entry chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-234-to-t43-s14",
@@ -63910,7 +63910,7 @@
         "NoOfs2"
       ],
       "acceptedBy": "Coordinator accepts this contiguous source-order chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     },
     {
       "id": "transfer-235-to-t43-s15",
@@ -63927,7 +63927,7 @@
         "CollisionFound"
       ],
       "acceptedBy": "Coordinator accepts this contiguous source-order collision geometry chain under the continuing owner-approved M2 mandate.",
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md"
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md"
     }
   ],
   "runs": [
@@ -179077,7 +179077,7 @@
         "ExCSM",
         "AreaChangeTimerData"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-terrain-control-1413"
     },
     {
@@ -180515,7 +180515,7 @@
         "HandleAxeMetatile",
         "ErACM"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-coin-axe-1416"
     },
     {
@@ -181989,7 +181989,7 @@
         "SetVXPl",
         "ExPVne"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-climbing-1429-one-baseline-claim-revoked"
     },
     {
@@ -183455,7 +183455,7 @@
         "JSFnd",
         "NoJSFnd"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-hidden-spring-1436"
     },
     {
@@ -184916,7 +184916,7 @@
         "GetWNum",
         "ExPipeE"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-pipe-entry-1439"
     },
     {
@@ -186386,7 +186386,7 @@
         "PlatF",
         "ExIPM"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-impede-1444"
     },
     {
@@ -187868,7 +187868,7 @@
         "CoinSd",
         "GetMTileAttrib"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-P1-metatiles-1451"
     },
     {
@@ -189377,7 +189377,7 @@
         "ChkBBill",
         "NoCDirF"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-enemy-background-stun"
     },
     {
@@ -190898,7 +190898,7 @@
         "GetSteFromD",
         "SetD6Ste"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-enemy-landing-grounded"
     },
     {
@@ -192418,7 +192418,7 @@
         "UnderHammerBro",
         "NoUnderHammerBro"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-enemy-side-jump-hammer"
     },
     {
@@ -193929,7 +193929,7 @@
         "ChkForNonSolids",
         "NSFnd"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-enemy-ground-query-nonsolids"
     },
     {
@@ -195443,7 +195443,7 @@
         "ClearBounceFlag",
         "InitFireballExplode"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-fireball-background-collision"
     },
     {
@@ -196984,7 +196984,7 @@
         "SetupEOffsetFBBox",
         "MoveBoundBoxOffscreen"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-object-bounding-box-entry"
     },
     {
@@ -198524,7 +198524,7 @@
         "SOLft",
         "NoOfs2"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-bounding-box-core-clipping"
     },
     {
@@ -200071,7 +200071,7 @@
         "NoCollisionFound",
         "CollisionFound"
       ],
-      "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
+      "evidence": "docs/history/M2-T43-terrain-and-bounding-boxes.md",
       "state": "closed-shared-box-collision-geometry"
     }
   ]

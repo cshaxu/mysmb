@@ -19,10 +19,7 @@ the conformance counts below.
 
 Verified conformance is **1517 / 1,992 (76.15%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S15 shared box collision](../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry)
-closes seven shared geometry nodes. Direct original player, enemy and platform
-child records match complete RAM/carry state on x86/x64; strict C90, DOS16
-link, purity and all three refreshed artifacts pass.
+Latest task review: [T43 closure](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) closes all 150 scoped nodes in fifteen chains. Direct original route evidence remains node-specific; integrated x86/x64 self-tests, DOS16 link, purity and all three refreshed artifacts pass.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)

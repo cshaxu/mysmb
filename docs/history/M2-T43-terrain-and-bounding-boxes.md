@@ -1641,3 +1641,57 @@ remain ignored below `build/m2-t43-s9`.
 | mysmb16.exe | 257517 | 73a6024f442ad4bab49f5854eeb7fc488e90f52d6515a41c35028ee610bc2e46 |
 | mysmb32.exe | 360956 | 8e49f54efe8605b2489642728c30f4e877fb9a63e41baa1696d47cbb51375c7c |
 | mysmb64.exe | 369012 | 27de764688fa6963b2abfb9a39b47628100a9bc25d1475a3c529c99404eeb289 |
+
+## T43 closure
+
+T43 closes after S15 P1 at 1,517 / 1,992. Its exact task scope is 150
+labels in fifteen source-ordered chains: all 150 have accepted ROM-logic and
+operational evidence. Of those, 136 became new ROM-match completions and 14
+were retained, rechecked completions. The admission baseline was 1,382; S3
+independently revoked the task-external historical `KillEnemies` completion,
+so the correct resulting total is 1,517 rather than the forecast 1,518.
+`KillEnemies` remains incomplete with its pre-existing maintenance receiver
+M2 T29 S8; it was never a T43 scope label. No scoped label is deferred or
+transferred.
+
+| Chain | Scope | New / retained | ROM-logic route |
+| --- | ---: | ---: | --- |
+| S1 player terrain root | 31 | 31 / 0 | Player background control, head, feet and side paths |
+| S2 coin and axe | 3 | 3 / 0 | Terrain coin and axe effects |
+| S3 climbing | 14 | 14 / 0 | Flagpole, vine and climbing paths |
+| S4 hidden and spring tiles | 7 | 7 / 0 | Hidden metatile and jumpspring paths |
+| S5 pipe entry | 3 | 3 / 0 | Player pipe and warp setup |
+| S6 side impediment | 5 | 5 / 0 | Directional side collision response |
+| S7 metatile classification | 8 | 7 / 1 | Solid, climb and coin classifiers |
+| S8 enemy terrain dispatch | 18 | 12 / 6 | Enemy background and stun dispatch |
+| S9 enemy landing | 14 | 14 / 0 | Grounded state and direction transitions |
+| S10 enemy side/jump/hammer | 16 | 9 / 7 | Side, jump and Hammer terrain paths |
+| S11 enemy ground query | 3 | 3 / 0 | Under-enemy and non-solid query |
+| S12 fireball background | 3 | 3 / 0 | Fireball tile, bounce and explosion path |
+| S13 box entry selection | 11 | 11 / 0 | Actor box selection and masked offscreen path |
+| S14 box coordinates/clipping | 7 | 7 / 0 | Box construction and screen-edge clipping |
+| S15 shared box collision | 7 | 7 / 0 | Player, sprite and platform box comparison |
+| **Total** | **150** | **136 / 14** | **All task call roots and successors** |
+
+Each chain's closure records its source branch, table/read/write/call-order
+comparison and its bounded original-ROM route. The matrix crosses the player
+terrain root into classifiers, pipe, impede and climbing chains; enemy
+background dispatch into landing, side/jump and ground-query chains; and
+fireball/background and bounding-box entries into the shared collision core.
+External child gaps retain their own receivers and receive no completion by
+association.
+
+Final integrated operational evidence uses the S15 source and artifacts:
+x86 and x64 product self-tests pass, the shared platform-purity audit passes,
+and the OpenNT DOS16 shared-core link is an MZ image with only the established
+OLDNAMES warning. The three artifacts hash to
+`4acb78964330041c41f82d56c36bbc414fbae943f00bacc4cced2ba3ce71c5ba`
+(DOS16), `a767b1f521d8dbaf4e5558725cd8218d5bc5cdceb3088bb555c9424d9f3f7d53`
+(Win32 x86), and `9525a53fbde41aa6a93280a8e79495035b46d15591e4b4a973f1cc6b0b3e3f22`
+(Win32 x64). This is build/link and self-test evidence, not a claim of DOS
+VGA playability, ROM-resource binding, physical 486SX performance, or
+whole-game frame equivalence.
+
+T43 is closed. M2 remains active at 1,517 / 1,992. The next source-order
+candidate begins `BlockBufferChk_Enemy` at line 13023 and requires its own
+T44 admission before implementation.

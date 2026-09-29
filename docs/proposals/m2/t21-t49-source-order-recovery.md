@@ -816,6 +816,6 @@ with the following complete terrain chain. [T42 exact chain plan](../../history/
 therefore covers 98 nodes through line 11923; the next slice starts at 11924.
 
 T43 keeps both collision-core terminal labels with their caller, through13022.
-[T43 exact chain plan](t43-terrain-and-bounding-boxes.md) partitions150 labels
+[T43 exact chain plan](../../history/M2-T43-terrain-and-bounding-boxes.md) partitions150 labels
 into15 source-ordered chains;136 are expected new and14 retained. The next
 slice begins BlockBufferChk_Enemy at13023, preserving every node exactly once.

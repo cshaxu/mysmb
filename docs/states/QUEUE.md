@@ -17,11 +17,7 @@ Every future M2 admission follows the [chain-based S delivery rule](../rules/EXE
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved
 children keep their ledger receivers and original source-order slices.
 
-[T43](../proposals/m2/t43-terrain-and-bounding-boxes.md) is admitted:150 nodes
-in15 source-ordered chains,136 expected new and14 retained. S1 receives31
-open player terrain-root nodes and closes all31 at1,413. S2 coin/axe closes all three nodes at1,416. S3 climbing closes14 nodes; one historical KillEnemies claim is revoked, giving1,429. S4 hidden/jumpspring closes all seven at1,436. S5 pipe entry closes all three at1,439. S6 side impediment closes all five at1,444. S7 classifiers closes seven new and retains ExEBG at1,451. S8 enemy terrain dispatch/stun closes12 new and retains six at1,463. S9 landing/grounded state is active:14 scoped,14 expected new, maximum1,477. Later S chains
-retain their prior receivers until admitted. T43 ends with CollisionFound;
-next unnumbered slice starts BlockBufferChk_Enemy at13023 with109 nodes.
+[T43](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) is closed: 150/150 scoped nodes, 136 new and 14 retained/rechecked completions, ending at 1,517 / 1,992. Its S3 review revoked the task-external historical KillEnemies claim; that node remains assigned to M2 T29 S8 and is not a T43 scope debt. The next unadmitted source slice begins BlockBufferChk_Enemy at13023 with109 nodes.
 
 ## M1 Candidates
 
