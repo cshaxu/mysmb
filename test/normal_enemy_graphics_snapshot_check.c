@@ -11,14 +11,26 @@ static unsigned char record[4098];
 int main(int argc, char **argv)
 {
     unsigned int scenario, index, slot, byte, differences, cases, failures;
+    unsigned int scenario_count, expected_cases;
     unsigned char header[8];
     FILE *stream;
     char path[1024];
 
-    if (argc != 2 || strlen(argv[1]) + 40U >= sizeof(path)) return 64;
+    if (argc == 2) {
+        if (strlen(argv[1]) + 40U >= sizeof(path)) return 64;
+        scenario_count = 126U;
+        expected_cases = 84U;
+    } else if (argc >= 3 && strcmp(argv[1], "--files") == 0) {
+        scenario_count = (unsigned int)(argc - 2);
+        expected_cases = scenario_count;
+    } else return 64;
     cases = failures = 0U;
-    for (scenario = 0U; scenario < 126U; ++scenario) {
-        sprintf(path, "%s/normal-actor-%u.calls", argv[1], scenario);
+    for (scenario = 0U; scenario < scenario_count; ++scenario) {
+        if (argc == 2) sprintf(path, "%s/normal-actor-%u.calls", argv[1], scenario);
+        else {
+            if (strlen(argv[scenario + 2U]) >= sizeof(path)) return 64;
+            strcpy(path, argv[scenario + 2U]);
+        }
         stream = fopen(path, "rb");
         if (stream == NULL) return 65;
         if (fread(header, 1U, 8U, stream) != 8U ||
@@ -50,5 +62,5 @@ int main(int argc, char **argv)
         fclose(stream);
     }
     printf("Normal enemy graphics cases=%u differing=%u\n", cases, failures);
-    return cases == 84U && failures == 0U ? 0 : 1;
+    return cases == expected_cases && failures == 0U ? 0 : 1;
 }

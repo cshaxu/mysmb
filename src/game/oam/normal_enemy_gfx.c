@@ -277,7 +277,7 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
         ++game->ram[0x0109U];
     if (game->ram[0x036aU] != 0U) return 0U;
 
-    if (code == 6U && state < 2U && (state & 0x20U) == 0U &&
+    if (code == 6U && (state & 0x20U) == 0U &&
         game->ram[MYSMB_NORMAL_TIMER_CONTROL] == 0U &&
         (game->ram[MYSMB_NORMAL_FRAME_COUNTER] & 8U) == 0U)
         game->ram[3U] ^= 3U;
@@ -370,9 +370,9 @@ defeated:
         game->ram[0x0215U+first]=a;
     }
     if (code != 8U && code != 5U) {
-        if (code == 7U || code == 13U || code == 12U ||
-            (code == 18U && game->ram[0x00ecU] == 5U) ||
-            game->ram[0x00ecU] >= 2U) {
+        if ((code != 18U || game->ram[0x00ecU] == 5U) &&
+            (code == 7U || code == 13U || code == 12U ||
+             game->ram[0x00ecU] >= 2U)) {
             a=(mysmb_u8)(game->ram[0x0202U+first] & 0xa3U);
             for (row=0U;row<3U;++row) {
                 y=(mysmb_u8)(first+row*8U);

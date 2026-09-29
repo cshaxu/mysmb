@@ -590,3 +590,42 @@ The same-handler sweep found no other retainer-specific product renderer.
 Separate direct-test helpers for other enemy types remain within S8 audit
 scope. This P grants no partial handler-node credit; the tracker stays at
 **1,582 / 1,992** pending the complete 44-label S8 checklist.
+
+#### S8 P5 checkpoint: controlled ordinary-enemy branch states
+
+The original recorder now accepts a bounded `--enemy-graphics-variant=0..15`
+only with the normal-actor fixture and snapshot. It changes RAM at the
+original `$e87d` `EnemyGfxHandler` entry; the CPU PC, registers, stack and
+program bytes remain untouched. This supplies state, timer, animation and
+movement-direction conditions missing from the earlier idle-state records.
+The tracked comparison test accepts individual child-record files while
+retaining its original 126-fixture mode.
+
+Two source-order mismatches were found and corrected in shared C. At
+`GmbaAnim`, the ROM flips Goomba direction on an eligible frame even when the
+state is at least `$02`; the previous C condition incorrectly required state
+below `$02`. At `ContES`/`ESRtnr`, a Spiny whose alternate state is not `$05`
+skips `MirrorEnemyGfx` regardless of whether that state is at least `$02`;
+the previous C path wrongly reset its left-column attributes. These are
+control-flow corrections from the original listing, not output patches.
+
+The ROM-logic track now compares **33/33 controlled child calls** with every
+non-stack 2 KB RAM/OAM byte equal on each of x86 and x64. The original
+84/84 ordinary-enemy calls also remain zero-difference on both widths.
+Records and fixture scripts stay under ignored `build/m2-t44-s8/variants/`.
+The operational track rebuilt all x86 and x64 targets, the DOS16 MZ target,
+and all three product executables. Each full Windows suite is **222/233**
+with exactly the same eleven preexisting failures listed in P4; platform
+purity and both product self-tests pass. The test runner's randomized
+temporary directories require the owner-approved elevated execution context;
+`TEMP` and `TMP` were constrained to ignored `build/m2-t44-s8/ctest-temp/`.
+
+Refreshed artifacts are `mysmb16.exe` (260895 bytes, SHA-256
+`a7a8c7791a936df9b6c264392eb7aae67348dfeec37e1ab9a48e67858cfec7cb`),
+`mysmb32.exe` (347202 bytes,
+`7cef4bfa1e9ee1ea7c34ca0d8b1cf4e393129a9950b22eeb427a4b37ead57469`),
+and `mysmb64.exe` (360502 bytes,
+`756643c51701aabb7d24418aaa6166e36166f1a140742c41969ae6f9f66b9b3b`).
+The node ledger remains **1,582 / 1,992**: branch families and duplicate
+file-local renderers still require S8 audit before its 44-label checklist can
+close.
