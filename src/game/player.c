@@ -510,40 +510,6 @@ mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
     return 1U;
 }
 
-/* Translation of HandlePipeEntry, excluding the separate warp destination
- * tables owned by the area-transition route. */
-mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
-                                           mysmb_u8 left, mysmb_u8 right)
-{
-    static const mysmb_u8 warp_zone_numbers[12] = {
-        4U, 3U, 2U, 0U, 0x24U, 5U, 0x24U, 0U, 8U, 7U, 6U, 0U
-    };
-    mysmb_u8 warp_index;
-
-    if ((game->ram[MYSMB_PLAYER_UP_DOWN_BUTTONS] & MYSMB_BUTTON_DOWN) == 0U ||
-        left != 0x10U || right != 0x11U) return 0U;
-    game->ram[MYSMB_CHANGE_AREA_TIMER] = 0x30U;
-    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 3U;
-    game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x10U;
-    game->ram[MYSMB_PLAYER_ATTRIBUTES] = 0x20U;
-    if (game->ram[MYSMB_WARP_ZONE_CONTROL] != 0U) {
-        warp_index = (mysmb_u8)((game->ram[MYSMB_WARP_ZONE_CONTROL] & 3U) << 2U);
-        if (game->ram[MYSMB_PLAYER_X] >= 0x60U) warp_index++;
-        if (game->ram[MYSMB_PLAYER_X] >= 0xa0U) warp_index++;
-        game->ram[0x075fU] = (mysmb_u8)(warp_zone_numbers[warp_index] - 1U);
-        game->ram[0x0751U] = 0U;
-        game->ram[0x0760U] = 0U;
-        game->ram[0x075cU] = 0U;
-        game->ram[MYSMB_ALT_ENTRANCE] = 0U;
-        game->ram[0x075dU]++;
-        game->ram[0x0757U]++;
-        game->ram[0x00fcU] = 0U;
-    }
-    return 1U;
-}
-
-
-
 /* Translation of ROM $9131-$9196 Entrance_GameTimerSetup. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game)
 {

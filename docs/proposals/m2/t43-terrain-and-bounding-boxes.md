@@ -1016,3 +1016,117 @@ artifact is committed. Platform files remain unchanged.
 | mysmb16.exe | 257175 | cf1f1e127c5de7a06342a970d48012ae67f18652c010ec55029c07058dedf81c |
 | mysmb32.exe | 358371 | 795153c55053fc18d29fc0563de094010b4332328c86d7951569e00a59f5ad24 |
 | mysmb64.exe | 366834 | 9c5710ad69cca93ef57a9c2efd97e17fb536df47f033e71377a9d2603f93541b |
+
+## S5 admission
+
+Continuation after2a1988e. Transfer-223 accepts HandlePipeEntry, GetWNum and
+ExPipeE from M2 T17 S6. All three are open and expected new:1,436/1,992,
+maximum1,439. DEE8-DF4A is one shared player/pipe_entry.c owner. S4 hidden/spring
+precedes it; S6 impediment follows. External data tables retain their existing
+owners; this chain must read their bound PRG addresses without inventing limits.
+
+Source audit identifies three existing gaps: missing WorldAddrOffsets and
+AreaAddrOffsets lookup/store, zero instead of Silence80, and a12-byte local
+warp table indexed beyond its extent for some source control values. Preserve
+down/right/left gate order, timer/sound/priority writes, raw warp selectors,
+X thresholds60/A0, byte-decremented world number, area pointer before resets,
+entry resets and byte-wrapped hidden/timer increments. No extra area-loader
+call or AreaType side effect is permitted. No child algorithm is rewritten.
+
+Original proof uses512 controlled RAM input routes at naturally reached pipe
+entry inside ordinary NMI terrain calls, with no ROM/CPU/PC/stack/output patch.
+Owner-local ROM/listing remain nonredistributable. All raw material stays below
+ignored build/m2-t43-s5,50 MB,20-second process deadlines; coordinator owns
+cleanup after dependent regression use. Compare actual full RAM on both widths,
+with branch/store and three table-read audit; no child replay is needed.
+
+Operational proof: mysmb.pipe-entry-chain, retained177 original pipe-child
+calls, terrain caller/actual baselines, affected tests, strict C90 x86/x64,
+DOS16 link, purity and three owner-authorized EXEs. Resource-free warp tests
+must explicitly supply synthetic bound PRG rather than rely on incomplete
+hard-coded production tables. Similar-issue sweep covers all pipe callers,
+lookup bounds, silence, reset order, byte wrap and duplicate legacy bodies.
+
+## S5 pipe entry proof
+
+S5 P1 completes HandlePipeEntry, GetWNum and ExPipeE:1,436 ->1,439/1,992.
+All three expected nodes have direct actual-native proof; none is deferred
+or transferred. Other M2 gaps, including KillEnemies and the legacy runtime
+failures, remain open. Admission validated the three exact open labels,
+maximum1,439 and accepted transfer-223.
+
+| Node | Original address | Logic and disposition |
+| --- | --- | --- |
+| HandlePipeEntry | DEE8 | Down/right/left gates precede timer, mode, sound and priority; nonzero warp then selects the original raw table index. ROM-match complete. |
+| GetWNum | DF22 | Read warp number, decrement the world byte, read world and area offsets, store destination then silence and entry resets; increment both flags with byte wrap. ROM-match complete. |
+| ExPipeE | DF4A | All rejected and non-warp exits preserve their proper write footprint; warp exit follows the complete lookup/reset chain. ROM-match complete. |
+
+### Original logic track
+
+DEE8-DF4A has46 instructions and six conditional branches. All46 and all12
+branch directions execute in512 controlled ordinary NMI routes. Only RAM at
+naturally reached terrain/pipe entries is controlled; original CPU, ROM, PC,
+stack and outputs are untouched. Observed and observer-free original frames
+match in all512 cases. Primary raw records total2,101,248 bytes below50 MB;
+process deadlines are20 seconds.
+
+The routes exercise down/right/left failures, non-warp entry, every possible
+warp-control byte, both60/A0 X boundaries, raw table indices including12-14,
+nonzero high-bit selectors whose low bits are zero, priority replacement,
+entry-field reset and hidden/timer byte wrap. All512 actual native full-RAM
+results match on each width, excluding hardware return-stack storage while
+retaining mapped0109-0139. There are no external child calls, original-return
+substitutions or masked game-state differences in this chain.
+
+Source reads bind WarpZoneNumbers at87F2, WorldAddrOffsets at9CB4 and
+AreaAddrOffsets at9CBC. The world byte is decremented before indexing; the
+area lookup uses the original world offset alone, before AreaNumber is reset.
+Raw indices can select neighboring original data, as the ROM does. The table
+nodes keep their existing owners and receive no duplicate credit here. The
+terrain caller discards the native acceptance Boolean and overwrites CPU
+register results in the original sequence; RAM is the consumed output contract.
+
+Reproduce with reference_frame_recorder fixture=t43-pipe-entry cases0-511,
+pipe-entry-snapshot and pc-coverage, then pipe_entry_snapshot_check using the
+bound original PRG and the real linked game objects.
+
+### Operational track and review
+
+Shared player/pipe_entry.c replaces the legacy player body. The repair restores
+both destination lookups and AreaPointer store, replaces the wrong zero music
+queue with Silence80, and removes the out-of-bounds12-entry local warp array.
+It preserves right-foot before left-foot guards, source store order, raw byte
+indices and wraps. No area-loader child is invented, so AreaType is unchanged.
+The reader consumes bound program data; no partial copied production table
+substitutes for it. Resource-free tests explicitly bind synthetic data.
+
+The similar-issue sweep checks all pipe callers, raw indexing, table binding,
+silence, pointer/reset order, both byte increments and duplicate owners. The
+production terrain caller remains the sole caller and supplies the original
+RAM01/RAM00 foot values. Platform files are unchanged. The mode regression
+fixture now supplies explicit synthetic warp/world/area bytes and checks the
+destination pointer and silence, retaining its original world/mode/timer checks.
+
+Native tests pass1,044 full-RAM cases per width, including all directional
+bytes, failed tile combinations, position thresholds, adjacent-table indices
+and a synthetic zero warp byte that must decrement toFF. S1 retains all1,034
+caller results and the exact same59 actual-root matches per width. All177
+previously captured pipe-child calls still match. Mode, collision regression,
+player route, friction, hazard and platform suites pass on both widths.
+Bounding-box retains its baseline failure. Selected CTests pass8/9: all five
+T43 chains, mode, player route and purity pass; core-smoke retains the existing
+entrance-loop failure. HEAD and current source reproduce line137 on both
+widths. Neither legacy failure is reported as a pass.
+
+All122 shared units compile as strict C90 on x86/x64; product self-tests and
+hidden own-window creation/message probes pass. DOS16 compiles and links with
+the existing OLDNAMES warning. DOS graphical runtime, resource binding and
+physical486SX performance remain unproved. All three owner-authorized EXEs
+are refreshed; no ROM, generated resource source, raw capture or temporary
+research output is committed.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257355 | ecc41e0f31f3589ec6ffa8bf9feaaa062b26b326ab7706298dc40663fd4f556d |
+| mysmb32.exe | 359106 | 7fd005aefc8de86181614c4573e5738670a66307c5668eb87d17e311d6b82911 |
+| mysmb64.exe | 367084 | 329c0a5192bdd024c5e3c2e110883e7133105917a079b5a3690f6d30d6ad0755 |

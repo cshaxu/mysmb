@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T43 S4 is closed at1,436/1,992:all seven expected nodes complete. S5 is next, not yet admitted.**
+**M2 T43 S5 is closed at1,439/1,992:all three expected nodes complete. S6 is next, not yet admitted.**
 T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
-## M2 T43 S4 Packet
+## M2 T43 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S4, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after34fa4e9; accepted transfer-222. |
-| Objective | The seven exact open S4 invisible/spring labels; all seven expected new. |
-| Non-goals | No generic fireball collision rewrite, unrelated nodes or platform gameplay. |
-| Reference Baseline |1,429/1,992;seven expected; maximum1,436. S1 landing captures supply the retained baseline. |
-| Candidate Proposal | [S4 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s4-admission). |
-| Files And ABI Surface | Shared terrain_metatiles.c, old player owner, terrain callers/header, tests, recorder and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S5, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after2a1988e; accepted transfer-223. |
+| Objective | HandlePipeEntry, GetWNum, ExPipeE: three open nodes, all expected new. |
+| Non-goals | No table-owner rewrite, extra area-loader side effect or platform gameplay. |
+| Reference Baseline |1,436/1,992;three expected; maximum1,439. S1 pipe captures are retained. |
+| Candidate Proposal | [S5 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s5-admission). |
+| Files And ABI Surface | Shared pipe_entry.c, old player owner, manifests, fixtures/tests, recorder and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original consumed Z/C, input preservation and full RAM writes; separate native operational proof. |
-| Expected Markers | Complete DEBD-DEE7 chain, one predicate/activation owner and source-equivalent terrain callers. |
+| Verification | Original guards, data reads and full RAM writes; separate native operational proof. |
+| Expected Markers | Complete DEE8-DF4A chain with three original table reads and exact reset/queue stores. |
 | Asset Needs | Owner-local ROM/listing;512 routes/50 MB/20-second deadlines; ignored build containment. Authorized three EXEs, DOS link-only. |
-| Reporting Requirements | Seven exact dispositions, dual proof, retained limits and artifact hashes. |
+| Reporting Requirements | Three exact dispositions, dual proof, retained limits and artifact hashes. |
 | Stop Conditions | Unadmitted rewrite, altered original outputs, hidden mismatch or platform gameplay. |
-| Exit Criteria | Seven nodes proved or accepted transfers, both verification tracks and three artifacts. |
+| Exit Criteria | Three nodes proved or accepted transfers, both verification tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | Predicate callers, consumed flags, both spring identities, no-write exits and duplicate stores. |
+| Similar-Issue Sweep | Pipe callers, raw lookup indices, silence, reset order, wrap and duplicate bodies. |
+
+## S5 closure
+
+[Pipe-entry proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s5-pipe-entry-proof)
+closes all three nodes with512 actual original full-RAM matches per width.
+All46 instructions and12 branch directions execute. Missing destination reads,
+silence and raw-index semantics are restored. S1 retains1,034 caller,59 actual
+and177 pipe-child matches per width. Eight CTests pass; legacy core/bounding-box
+failures remain explicit. Three EXEs refreshed; DOS remains link-only.
 
 ## S4 closure
 

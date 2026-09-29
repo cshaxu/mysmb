@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    static unsigned char pipe_prg[32768];
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
@@ -266,12 +267,19 @@ int main(void)
     /* HandlePipeEntry selects the original middle-pipe destination before
      * VerticalPipeEntry starts its 48-frame transition. */
     mysmb_game_initialize(&game);
+    /* Explicit synthetic binding for the three source table reads. */
+    pipe_prg[0x07f7U] = 5U;
+    pipe_prg[0x1cb8U] = 0x12U;
+    pipe_prg[0x1cceU] = 0x42U;
+    game.area_prg = pipe_prg;
+    game.area_prg_size = sizeof(pipe_prg);
     game.ram[0x000bU] = MYSMB_BUTTON_DOWN;
     game.ram[0x06d6U] = 1U;
     game.ram[0x0086U] = 0x80U;
     game.ram[0x075fU] = 0U;
     if (mysmb_player_handle_vertical_pipe(&game, 0x10U, 0x11U) == 0U ||
         game.ram[0x075fU] != 4U || game.ram[0x0760U] != 0U ||
+        game.ram[0x0750U] != 0x42U || game.ram[0x00fcU] != 0x80U ||
         game.ram[0x075cU] != 0U || game.ram[0x000eU] != 3U ||
         game.ram[0x06deU] != 0x30U) return 9;
     return 0;
