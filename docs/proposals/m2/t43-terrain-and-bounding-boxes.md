@@ -1367,3 +1367,115 @@ are refreshed. ROM, generated resource sources and raw records remain local.
 | mysmb16.exe | 257595 | a2d61b604734325d41ae89cf0b2962c82010d45c4065cb75d1dabe58f6f9b909 |
 | mysmb32.exe | 360230 | a4de9eae32fb3e7fed9223e019b6dcaa6043e5737a0ac63169325941d5d10e73 |
 | mysmb64.exe | 368276 | 32de22538b8973df01002bbd40527913e782dcd0af479e1944bf9032a5aeac91 |
+
+## S8 admission
+
+Continuation after b02ae38. Transfers227/228 accept18 scoped nodes:
+EnemyBGCStateData, EnemyBGCXSpdData, EnemyToBGCollisionDet, DoIDCheckBGColl,
+HBChk, CInvu, YesIn, NoEToBGCollision, HandleEToBGCollision, GiveOEPoints,
+ChkToStunEnemies, Demote, SetStun, SetWYSpd, SetNotW, ChkBBill, NoCDirF,
+ExEBGChk. Retained complete: EnemyToBGCollisionDet, DoIDCheckBGColl, HBChk,
+CInvu, YesIn, ExEBGChk. All other12 are open and expected new.
+Admission baseline1,451/1,992; scope18/expected12, maximum1,463.
+
+One enemy/background.c owner covers the admitted dispatch, block-hit and
+stun chain, preserving original child boundaries. S7 classifiers precedes
+this chain; S9 landing/grounded-state, S10 side/jump/hammer and S11 queries
+remain separate. Their implementations may be exposed as child seams without
+certifying or repairing their internal algorithms here. Table ownership moves
+with its actual consumer binding; table proof cannot certify later consumers.
+
+Source audit already identifies wrong Demote input (Enemy_ID instead of A),
+missing PlayerEnemyDiff RAM00 store, and duplicate block-hit stun logic with
+missing Bloober/bullet distinctions. Restore the admitted original stores,
+branches and order, including both vertical decrements and the source sound/
+score/defeat child calls. Eliminate duplicate admitted logic rather than add
+another parallel path. SetupFloateyNumber returns Enemy_Rel_XPos as A; verify
+that handoff before demotion. Unmatched query/landing/side child effects stay
+explicit and retain their own source-order responsibility.
+
+Original proof uses retained entry/collision matrices plus bounded ordinary
+NMI routes reaching enemy terrain/block-hit/stun entries. Only RAM inputs may
+be controlled at a naturally reached entry; no CPU/register, ROM, PC, stack
+or computed-output patch. Compare complete child inputs and consumed returns,
+and separately execute actual native descendants. Bound both state/speed
+tables to original program data; verify consumer routes and all branches.
+Owner-local ROM/listing are nonredistributable. Maximum2,048 new routes,
+100 MB raw records,20-second process deadlines, ignored build/m2-t43-s8
+containment and coordinator cleanup after active regressions.
+
+Operational proof uses mysmb.enemy-background-stun-chain, exhaustive native
+source-A/demotion and movement-edge tests, existing enemy-background dispatch,
+fireball-hit/player-contact caller and actual regressions, strict C90 x86/x64,
+DOS16 link, platform purity and three owner-authorized EXEs. Review every
+stun/block-hit caller, scratch handoff, duplicate implementation, table index,
+child-call order and slot/return semantics. No platform gameplay changes.
+
+## S8 enemy terrain dispatch and stun proof
+
+S8 closes its twelve expected nodes and retains six dispatch nodes:
+1,451 -> 1,463 / 1,992. Landing, jump/hammer, and ground-query child interiors
+remain open with S9, S10, and S11; this closure credits only the admitted
+parent/data/stun chain.
+
+| Node | Original address | Disposition |
+| --- | --- | --- |
+| EnemyBGCStateData | DFB9 | Six original state bytes bind through the shared owner. ROM-match complete. |
+| EnemyBGCXSpdData | DFBF | Both original direction-speed bytes bind through the shared owner. ROM-match complete. |
+| NoEToBGCollision | DFF7 | Zero-query route hands off to the existing grounded-state seam. ROM-match complete. |
+| HandleEToBGCollision | DFFA | Non-solid, landing, and $23 block-hit dispatch order matches. ROM-match complete. |
+| GiveOEPoints | E016 | Score one enters the float-number child and consumes its returned relative X. ROM-match complete. |
+| ChkToStunEnemies | E01B | Original A range and exclusions select demotion. ROM-match complete. |
+| Demote | E02B | Source A bit zero reaches Enemy_ID; Enemy_ID is not substituted. ROM-match complete. |
+| SetStun | E02F | State low nibble two and two Y decrements match. ROM-match complete. |
+| SetWYSpd | E048 | Bloober/water and ordinary speed paths match. ROM-match complete. |
+| SetNotW | E04A | Player difference, direction and speed-table selection match. ROM-match complete. |
+| ChkBBill | E054 | Only IDs $33 and $08 retain moving direction. ROM-match complete. |
+| NoCDirF | E060 | Direction minus one selects the original two-byte speed table. ROM-match complete. |
+
+The logic track records 1,642 source-reachable ordinary NMI routes from the
+2,048 bounded fixture inputs; 406 inputs are excluded because their original
+parent does not reach the entry. Observed and observer-free frames are equal in
+all 1,642 records. The source interval has 79 instructions and 23 conditional
+branches; every reachable instruction and both outcomes of each reachable
+conditional branch execute. Replayed child entries, input RAM and return RAM
+give 1,642 / 1,642 caller matches on x86 and x64. The real descendant run
+matches 1,090 / 1,642 routes; the remaining 552 differences are inside the
+separately owned S9/S10/S11 child interiors. Direct admitted stun execution
+separately matches 98,304 full-RAM native cases per width and 322 retained
+original fireball/contact calls.
+
+One shared `game/enemy/background.c` owner now holds data readers, block-hit
+parent, demotion and stun. `objects.c` exposes unchanged later-owned landing,
+no-ground and kill-above-block seams; `jump_terrain.c` holds the unchanged jump
+child body. No platform adapter receives a gameplay branch. Strict C90 product
+builds contain 125 shared units on x86 and x64; self-tests and own-window
+message probes pass. DOS16 links the identical core. Focused chain, dispatch,
+player-route and platform-purity CTests pass. The known core source-line-137
+failure reproduces in baseline and current builds and is not waived. DOS
+graphical runtime, ROM-resource binding and physical 486SX performance remain
+unproved.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257517 | 73a6024f442ad4bab49f5854eeb7fc488e90f52d6515a41c35028ee610bc2e46 |
+| mysmb32.exe | 360834 | 889061d782ee2b4793ed64efd4bb8de4eaec3d5e29d5479eb0d7315b70b1cc1a |
+| mysmb64.exe | 368892 | 42eb8f8abb6d3e0c848536f60aa7d051d46d915665b04214fd2ec2294c7c61ab |
+
+## S9 admission
+
+Continuation after S8 closure. Transfer229 accepts all fourteen open landing
+nodes listed in the S9 source-order table: LandEnemyProperly through SetD6Ste.
+Baseline1,463/1,992; scope14/expected14, maximum1,477. `LandEnemyProperly`
+is the entry and `SetD6Ste` the exit. S8 is its predecessor; S10 side/jump/
+hammer and S11 ground query remain successors. The shared owner is
+`game/enemy/background.c`; existing object seams may move unchanged but no
+successor algorithm is credited or repaired here.
+
+The logic track will use at most2,048 source-reachable ordinary NMI routes,
+controlled only through RAM fixtures at natural landing entries. It compares
+state-table reads, nibble gates, state/direction writes and child call order;
+parent and real child results remain separate. The operational track will run
+the focused landing chain, retained S8 paths, strict x86/x64 C90 builds, DOS16
+link, platform purity and refreshed three artifacts. Raw records remain below
+ignored build/m2-t43-s9 with100MB and20-second process bounds.

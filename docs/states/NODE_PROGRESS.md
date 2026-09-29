@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1451 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1463 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 455 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 443 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,451 / 1,992 (72.84%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,463 / 1,992 (73.44%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S7 classifiers](../proposals/m2/t43-terrain-and-bounding-boxes.md#s7-metatile-classification-proof)
-completes seven nodes and retains ExEBG through actual classifier captures
-in 1,034 ordinary original routes. All 23 instructions and four branch
-outcomes execute. Tables and predicates have one shared owner; terrain
-caller and actual-root baselines remain intact. Other M2 gaps remain open.
+Latest task review: [T43 S8 enemy terrain dispatch/stun](../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof)
+completes twelve nodes and retains six dispatch exits through 1,642 observed,
+ordinary original routes. All 79 instructions and the reachable branch outcomes
+execute. Parent call order matches with children replayed; direct stun calls
+also match. Landing, jump/hammer, and query interiors retain their own scopes.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1451)
+## Completed matches (1463)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1488,6 +1488,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
+| 12420 | `EnemyBGCStateData` |
+| 12423 | `EnemyBGCXSpdData` |
+| 12455 | `NoEToBGCollision` |
+| 12461 | `HandleEToBGCollision` |
+| 12476 | `GiveOEPoints` |
+| 12480 | `ChkToStunEnemies` |
+| 12489 | `Demote` |
+| 12491 | `SetStun` |
+| 12503 | `SetWYSpd` |
+| 12504 | `SetNotW` |
+| 12509 | `ChkBBill` |
+| 12515 | `NoCDirF` |
 
 ## Accounting audit, 2026-09-26
 

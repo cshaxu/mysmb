@@ -2,29 +2,37 @@
 
 ## Current Work
 
-**M2 T43 S7 is closed at 1,451/1,992: seven new matches and ExEBG retained. S8 is next, not yet admitted.**
+**M2 T43 S9 is active at 1,463/1,992:14 scoped,14 expected new, maximum1,477.**
 T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
-## M2 T43 S7 Packet
+## M2 T43 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S7, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after e0e816c; accepted transfers225/226. |
-| Objective | SolidMTileUpperExt, CheckForSolidMTiles, ClimbMTileUpperExt, CheckForClimbMTiles, CheckForCoinMTiles, CoinSd, GetMTileAttrib: seven open expected new; ExEBG retained complete. |
-| Non-goals | No parent terrain/enemy rewrite or platform gameplay. |
-| Reference Baseline | 1,444/1,992; scope8/expected7, maximum1,451; S6 terrain baselines retained. |
-| Candidate Proposal | [S7 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s7-admission). |
-| Files And ABI Surface | Shared world/metatiles.c, former bodies and classifier callers, manifests, tests/recorder and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S9, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after S8 closure; accepted transfer229. |
+| Objective | LandEnemyProperly, SChkA, ChkLandedEnemyState, SetForStn, ExSteChk, ProcEnemyDirection, InvtD, CNwCDir, LandEnemyInitState, NMovShellFallBit, ChkForRedKoopa, Chk2MSBSt, GetSteFromD and SetD6Ste. |
+| Non-goals | No unadmitted side/jump/hammer or ground-query algorithm repair; no platform gameplay. |
+| Reference Baseline | 1,463/1,992; scope14/expected14, maximum1,477; S8 caller/actual child split retained. |
+| Candidate Proposal | [S9 landing chain](../proposals/m2/t43-terrain-and-bounding-boxes.md#s9-enemy-landing-and-grounded-state). |
+| Files And ABI Surface | Shared enemy/background.c and object landing child seam, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Threshold binding, original branch/flag/write semantics; separate native operational proof. |
-| Expected Markers | Single classifier owner and explicit native consumed-return contract, retained parent matches. |
-| Asset Needs | Owner-local nonredistributable ROM/listing;1,034 routes/100 MB/20-second deadlines; ignored build containment. Three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Eight exact dispositions, dual proof, retained callers and artifact hashes. |
-| Stop Conditions | Unadmitted parent rewrite, forced CPU path, hidden mismatch or platform gameplay. |
-| Exit Criteria | Seven newly proved nodes and retained ExEBG, both tracks and three artifacts. |
+| Verification | Original landing-state transitions, state-table binding, red-koopa edge and branch/write order; separate native operational proof. |
+| Expected Markers | One shared landing-state owner with exact S8 parent handoff and explicit S10/S11 successors. |
+| Asset Needs | Owner-local nonredistributable ROM/listing; at most2,048 new routes/100 MB/20-second deadlines; ignored build containment. Three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements |14 named dispositions, dual proof, retained caller/actual results and artifact hashes. |
+| Stop Conditions | Forced original CPU path, concealed descendant mismatch, unadmitted algorithm rewrite or platform gameplay. |
+| Exit Criteria |14 newly proved nodes, both proof tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | All classifier callers, duplicate tables, metatile group, carry consumption and coin sound stores. |
+| Similar-Issue Sweep | All landing callers, state-table users, red-koopa edges, nibble windows, direction transitions and duplicate owners. |
+
+## S8 closure
+
+[Enemy terrain dispatch/stun proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof)
+closes twelve expected nodes and retains six dispatch nodes:1,451 ->1,463.
+The observed original route set has1,642 reachable entries; caller replay
+matches on x86/x64 and direct stun matches retained calls. Real child gaps stay
+with S9/S10/S11. All three EXEs are refreshed; DOS remains link-only.
 
 ## S7 closure
 
@@ -89,15 +97,6 @@ and109 reachable branch outcomes execute; three dominated outcomes are audited.
 Actual root matches59/1,034; independent children3,047/8,049. Scratch gaps retain
 their existing owners.12/13 selected CTests pass; core and bounding-box baseline
 failures remain explicit. Three EXEs refreshed; DOS link-only. S2 coin/axe is next.
-
-## T42 closure
-
-[Task-wide proof](../history/M2-T42-shared-collision-and-platforms.md#t42-closure)
-closes98 planned nodes. All nine chain tests plus purity pass10/10.
-Actual actor comparisons match21,544/29,434, retaining all prior matches;
-remaining child differences retain their owners. Three S9 EXEs are unchanged
-and verified. DOS remains link-only. T43 is admitted above with the complete
-collision-core boundary included. M2 remains incomplete.
 
 ## Current Technical Baseline
 

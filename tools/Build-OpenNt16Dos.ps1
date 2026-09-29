@@ -56,7 +56,7 @@ $sources = @(
     'game/oam/fireworks_gfx.c',
     'game/enemy/firebar_children.c',
     'game/enemy/distance.c',
-    'game/enemy/background.c',
+    'game/enemy/background.c', 'game/enemy/jump_terrain.c',
     'game/enemy/side_collision.c',
     'game/area/block_buffer.c',
     'game/area/area_data.c',

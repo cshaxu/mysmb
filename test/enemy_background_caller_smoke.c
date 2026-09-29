@@ -1,15 +1,14 @@
 #include "game/objects.h"
 #include "game/world/world.h"
+#include "game/enemy/background.h"
 #include <string.h>
 
-static unsigned int events[5],count,bad,query_result,tile_value,side_y;
+static unsigned int events[5],count,bad,query_result,tile_value,side_y,jump_phase;
 static void record(struct mysmb_game *game,mysmb_u8 slot,unsigned int event)
 {
     if(slot!=game->ram[8] || count>=5U) {bad=1U;return;}
     events[count++]=event;
 }
-void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,mysmb_u8 slot)
-{record(game,slot,1U);}
 void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,mysmb_u8 slot)
 {record(game,slot,2U);}
 void mysmb_objects_check_enemy_side(struct mysmb_game *game,mysmb_u8 slot)
@@ -18,7 +17,7 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,mysmb_u8 slot,
     mysmb_u8 index,mysmb_u8 horizontal,struct mysmb_enemy_terrain *terrain)
 {
     if(index!=0x15U || horizontal!=0U) bad=1U;
-    record(game,slot,3U);terrain->metatile=(mysmb_u8)tile_value;
+    record(game,slot,jump_phase ? 3U : 1U);terrain->metatile=(mysmb_u8)tile_value;
     return (mysmb_u8)query_result;
 }
 mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
@@ -33,6 +32,17 @@ void mysmb_world_land_enemy(struct mysmb_game *game,mysmb_u8 slot)
     game->ram[0xcfU+slot]=0x5aU;
     game->ram[0xa0U+slot]=0xabU;
 }
+
+void mysmb_objects_enemy_no_ground(struct mysmb_game *game, mysmb_u8 slot)
+{ if (slot != game->ram[8]) bad = 1U; }
+void mysmb_objects_enemy_land_from_probe(struct mysmb_game *game, mysmb_u8 slot,
+    const struct mysmb_enemy_terrain *terrain)
+{ (void)game; (void)slot; (void)terrain; bad = 1U; }
+void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game, mysmb_u8 slot)
+{ (void)game; (void)slot; bad = 1U; }
+void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 control)
+{ (void)game; (void)slot; (void)control; bad = 1U; }
 
 int main(void)
 {
@@ -56,6 +66,7 @@ int main(void)
         if(bad || count!=(expected!=0U ? 1U:0U)) return 1;
         if(expected && events[0]!=expected) return 2;
     }
+    jump_phase = 1U;
     for(slot=0;slot<6U;++slot) for(y=0;y<256U;++y)
     for(speed=0;speed<256U;++speed) for(tile=0;tile<3U;++tile)
     for(query_result=0;query_result<2U;++query_result) {

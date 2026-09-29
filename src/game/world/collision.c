@@ -271,42 +271,6 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     game->ram[(mysmb_u16)(0x003aU + slot)] = 1U;
     game->ram[(mysmb_u16)(0x00d5U + slot)] &= 0xf8U;
 }
-/* ROM ChkToStunEnemies.  A is the source identifier except on the piranha
- * path, where the preceding ADC has deliberately made it the adjusted Y. */
-void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
-                                   mysmb_u8 source_a)
-{
-    if (source_a >= 9U && source_a < 17U &&
-        (source_a == 9U || source_a >= 13U)) {
-        game->ram[(mysmb_u16)(0x0016U + slot)] &= 1U;
-    }
-    mysmb_world_set_stun(game, slot);
-}
-
-/* Existing SetStun body separated from the demotion prelude. Its scratch
- * and ID differences remain with the later terrain-node owner. */
-void mysmb_world_set_stun(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 id;
-    mysmb_u8 direction;
-    game->ram[(mysmb_u16)(0x001eU + slot)] =
-        (mysmb_u8)((game->ram[(mysmb_u16)(0x001eU + slot)] & 0xf0U) | 2U);
-    game->ram[(mysmb_u16)(0x00cfU + slot)] =
-        (mysmb_u8)(game->ram[(mysmb_u16)(0x00cfU + slot)] - 2U);
-    id = game->ram[(mysmb_u16)(0x0016U + slot)];
-    game->ram[(mysmb_u16)(0x00a0U + slot)] =
-        id == 7U || game->ram[0x074eU] == 0U ? 0xffU : 0xfdU;
-    direction = (mysmb_u8)(game->ram[(mysmb_u16)(0x006eU + slot)] -
-        game->ram[0x006dU] -
-        (game->ram[(mysmb_u16)(0x0087U + slot)] < game->ram[0x0086U] ? 1U : 0U));
-    if (id != 8U && id != 9U) {
-        game->ram[(mysmb_u16)(0x0046U + slot)] =
-            (direction & 0x80U) == 0U ? 1U : 2U;
-    }
-    game->ram[(mysmb_u16)(0x0058U + slot)] =
-        (direction & 0x80U) == 0U ? 0x10U : 0xf0U;
-}
-
 /* ROM GetFireballBoundBox.  GetProperObjOffset makes slot zero/one use
  * controls $04a0/$04a1 and output boxes $04c8/$04cc; the relative source
  * inputs remain the fixed Fireball_Rel_* pair. */

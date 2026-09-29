@@ -103,6 +103,8 @@
 #include "../test/pipe_entry_fixture.h"
 #include "../test/impede_fixture.h"
 #include "reference_metatile_observer.h"
+#include "../test/enemy_background_fixture.h"
+#include "reference_enemy_background_observer.h"
 #include "../test/platform_collision_fixture.h"
 #include "../test/enemy_pair_fixture.h"
 #include "../test/player_enemy_contact_fixture.h"
@@ -1005,6 +1007,7 @@ int main(int argument_count, char **arguments)
     const char *coverage_path;
     const char *area_reads_path;
     const char *metatile_path = NULL;
+    const char *enemy_background_path = NULL;
     const char *movement_snapshot_path;
     unsigned char movement_snapshots[4096];
     unsigned int movement_snapshot_phase;
@@ -1069,6 +1072,11 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--enemy-background-calls=", 25u) == 0) {
+            if (enemy_background_path != NULL) return 64;
+            enemy_background_path = arguments[recorded] + 25u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--metatile-calls=", 17u) == 0) {
             if (metatile_path != NULL) return 64;
             metatile_path = arguments[recorded] + 17u;
@@ -1958,6 +1966,12 @@ int main(int argument_count, char **arguments)
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-ground") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 87u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-world-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 88u; continue; }
         if (strcmp(arguments[recorded], "--fixture=t29-special-warp-zero-water") == 0) { if (t26_fixture != 0u) return 64; t26_fixture = 89u; continue; }
+        block_scenario = mysmb_background_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u32)(27677 + block_scenario);
+            continue;
+        }
         block_scenario = mysmb_impede_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
@@ -2914,6 +2928,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 86u && t26_fixture <= 89u)
                     mysmb_reference_apply_t29_warp_selector_fixture(
                         driver->machine->ram, (lib_u8)(t26_fixture - 86u));
+                else if (t26_fixture >= 27678u && t26_fixture <= 29725u)
+                    mysmb_background_fixture(driver->machine->ram,
+                        (unsigned int)(t26_fixture - 27678u));
                 else if (t26_fixture >= 26654u && t26_fixture <= 27677u)
                     mysmb_player_terrain_fixture(driver->machine->ram, 0u);
                 else if (t26_fixture >= 26142u && t26_fixture <= 26653u)
@@ -3512,6 +3529,15 @@ int main(int argument_count, char **arguments)
             driver->machine->x == mysmb_platform_position_slot((unsigned int)(t26_fixture - 23372u)))
             mysmb_platform_position_inputs(driver->machine->ram,
                 (unsigned int)(t26_fixture - 23372u));
+        if (elapsed >= warmup_frames && t26_fixture >= 27678u && t26_fixture <= 29725u) {
+            mysmb_background_inputs(driver->machine->ram, before_pc,
+                driver->machine->x, (unsigned int)(t26_fixture - 27678u));
+            if (enemy_background_path != NULL &&
+                !background_observe(driver->machine->ram, before_pc,
+                    driver->machine->a, driver->machine->x, driver->machine->y,
+                    driver->machine->p, driver->machine->s,
+                    (unsigned int)(t26_fixture - 27678u))) return 69;
+        }
         if (metatile_path != NULL && elapsed >= warmup_frames &&
             !metatile_observe(driver->machine->ram, before_pc,
                 driver->machine->a, driver->machine->x, driver->machine->y,
@@ -4161,6 +4187,7 @@ int main(int argument_count, char **arguments)
     fclose(output);
     (void)core_driver_destroy(driver);
     if (recorded != requested_frames) return 68;
+    if (enemy_background_path != NULL && !background_write(enemy_background_path)) return 69;
     if (metatile_path != NULL && !metatile_write(metatile_path)) return 69;
     if (movement_snapshot_path != NULL) {
         FILE *snapshot;

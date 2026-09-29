@@ -1,3 +1,4 @@
+#include "game/enemy/background.h"
 #include "game/enemy/platform.h"
 #include "game/enemy/core.h"
 #include "game/score.h"
@@ -164,7 +165,7 @@ void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
                                             mysmb_u8 slot);
 static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game *game,
                                                                 mysmb_u8 slot);
-static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
+void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
 void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 
@@ -306,62 +307,15 @@ void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] ^= 3U;
 }
 
-void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
-                                            mysmb_u8 slot)
+/* Existing LandEnemyProperly interior, exposed for the S8 caller.
+ * Low-nibble/state and direction semantics remain S9 obligations. */
+void mysmb_objects_enemy_land_from_probe(struct mysmb_game *game,
+    mysmb_u8 slot, const struct mysmb_enemy_terrain *terrain)
 {
-    struct mysmb_enemy_terrain terrain;
-    static const mysmb_u8 collision_state_data[6] = { 1U, 1U, 2U, 2U, 2U, 5U };
-    mysmb_u8 tile;
-    mysmb_u8 state;
-    mysmb_u8 direction;
-    mysmb_u8 id;
-    mysmb_u8 relative_x;
+    mysmb_u8 state, direction;
     mysmb_u16 difference;
-
-    /* EnemyToBGCollisionDet: d5 actors and objects above the source gate
-     * never enter any terrain probe. */
     state = game->ram[MYSMB_ENEMY_STATE + slot];
-    if ((state & 0x20U) != 0U ||
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] + 0x3eU) < 0x44U) return;
-
-    /* ChkUnderEnemy / HandleEToBGCollision / LandEnemyProperly. */
-    tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
-        terrain.metatile : 0U;
-    if (tile == 0x23U) {
-        /* HandleEToBGCollision: a block that was bumped beneath this actor
-         * is consumed before the original defeat/score/stun chain. */
-        game->ram[terrain.block_address] = 0U;
-        id = game->ram[MYSMB_ENEMY_ID + slot];
-        if (id < 0x15U) {
-            if (id == 6U) mysmb_objects_defeat_by_shell(game, slot);
-            mysmb_objects_setup_floatey_from_relative(game, slot, 1U);
-            relative_x = game->ram[0x03aeU]; /* Enemy_Rel_XPos */
-        }
-        else relative_x = id;
-        /* ChkToStunEnemies uses the accumulator left by SetupFloateyNumber
-         * (Enemy_Rel_XPos), including its unusual $09/$0d-$10 demotion.
-         */
-        if (relative_x == 9U || (relative_x >= 13U && relative_x < 17U)) {
-            game->ram[MYSMB_ENEMY_ID + slot] &= 1U;
-        }
-        game->ram[MYSMB_ENEMY_STATE + slot] =
-            (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + slot] & 0xf0U) | 2U);
-        game->ram[MYSMB_ENEMY_Y + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] =
-            game->ram[MYSMB_AREA_TYPE] == 0U ? 0xffU : 0xfdU;
-        difference = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                                 game->ram[MYSMB_ENEMY_X + slot]);
-        difference = (mysmb_u16)(difference -
-            (((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-             game->ram[MYSMB_PLAYER_X]));
-        direction = (difference & 0x8000U) != 0U ? 2U : 1U;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = direction;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] = direction == 1U ? 0x10U : 0xf0U;
-        return;
-    }
-    if (mysmb_objects_is_solid_terrain(tile) != 0U && tile != 0x23U &&
-        terrain.contact_low_nibble < 0x0dU) {
+    if (terrain->contact_low_nibble < 0x0dU) {
         if ((state & 0x40U) != 0U) {
             mysmb_world_land_enemy(game, slot);
             state = game->ram[MYSMB_ENEMY_STATE + slot];
@@ -404,27 +358,29 @@ void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
         goto side_check;
     }
 
+    mysmb_objects_enemy_no_ground(game, slot);
+    return;
+side_check:
+    mysmb_objects_check_enemy_side(game, slot);
+}
+
+/* Existing ChkForRedKoopa interior; state-range repair remains S9. */
+void mysmb_objects_enemy_no_ground(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 state;
     /* ChkForRedKoopa runs both after an empty/non-solid bottom sample and
      * after a solid sample outside the landing low-nibble interval. */
     state = game->ram[MYSMB_ENEMY_STATE + slot];
-    if (game->ram[MYSMB_ENEMY_ID + slot] == 3U && state == 0U) goto bump;
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 3U && state == 0U) { mysmb_objects_bump_enemy(game, slot); return; }
     if ((state & 0x80U) != 0U) {
         game->ram[MYSMB_ENEMY_STATE + slot] = (mysmb_u8)(state | 0x40U);
     }
     else if (state < 6U) {
-        game->ram[MYSMB_ENEMY_STATE + slot] = collision_state_data[state];
+        game->ram[MYSMB_ENEMY_STATE + slot] = mysmb_enemy_background_state_data(game, state);
     }
 
-side_check:
     mysmb_objects_check_enemy_side(game, slot);
-    return;
-bump:
-    mysmb_objects_bump_enemy(game, slot);
 }
-
-
-
-
 
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
@@ -693,8 +649,9 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
         mysmb_objects_step_bowser_flames_slot(game, slot);
 }
 
-/* ROM $d7a9 ShellOrBlockDefeat, excluding audio. */
-static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
+/* Legacy KillEnemyAboveBlock dependency. This existing approximation is
+ * exposed without changing its body; S10 owns its original child semantics. */
+void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot)
 {
     if (game->ram[MYSMB_ENEMY_ID + enemy_slot] == 13U) game->ram[MYSMB_ENEMY_Y + enemy_slot] =
