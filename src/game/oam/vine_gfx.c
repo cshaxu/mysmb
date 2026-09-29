@@ -25,13 +25,14 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
     oam = game->ram[MYSMB_VINE_ENEMY_SPRITE_OFFSET + sprite_slot];
     x = game->ram[MYSMB_VINE_RELATIVE_X];
     y = (mysmb_u8)(game->ram[MYSMB_VINE_RELATIVE_Y] + y_adder[vine_index]);
+    mysmb_oam_stack_six_sprite_data(game, y, oam);
 
     for (row = 0U; row < 6U; ++row) {
         mysmb_u8 row_oam;
         mysmb_u8 row_y;
 
         row_oam = (mysmb_u8)(oam + row * 4U);
-        row_y = (mysmb_u8)(y + row * 8U);
+        row_y = game->ram[(mysmb_u16)(0x0200U + row_oam)];
         if ((mysmb_u8)(game->ram[MYSMB_VINE_START_Y] - row_y) >= 0x64U) {
             row_y = 0xf8U;
         }

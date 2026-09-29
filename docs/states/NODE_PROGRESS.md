@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1537 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1551 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 370 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 356 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1537 / 1,992 (77.16%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1551 / 1,992 (77.86%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T43 closure](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) closes all 150 scoped nodes in fifteen chains. Direct original route evidence remains node-specific; integrated x86/x64 self-tests, DOS16 link, purity and all three refreshed artifacts pass.
 
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1537)
+## Completed matches (1551)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1565,6 +1565,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13169 | `SkpVTop` |
 | 13170 | `ChkFTop` |
 | 13177 | `NextVSp` |
+| 13187 | `SixSpriteStacker` |
+| 13189 | `StkLp` |
+| 13203 | `FirstSprXPos` |
+| 13206 | `FirstSprYPos` |
+| 13209 | `SecondSprXPos` |
+| 13212 | `SecondSprYPos` |
+| 13215 | `FirstSprTilenum` |
+| 13218 | `SecondSprTilenum` |
+| 13221 | `HammerSprAttrib` |
+| 13224 | `DrawHammer` |
+| 13232 | `ForceHPose` |
+| 13234 | `GetHPose` |
+| 13239 | `RenderH` |
+| 13268 | `NoHOffscr` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

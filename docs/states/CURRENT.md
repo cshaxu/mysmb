@@ -2,26 +2,26 @@
 
 ## Current Work
 
-**M2 T44 S2 is closing at 1,537 / 1,992.** It completed the six-node
-`VineYPosAdder` through `NextVSp` shared vine-object graphics chain; closure
-evidence and package verification are the remaining recorded work.
+**M2 T44 S3 is closing at 1,551 / 1,992.** It completed the fourteen-node
+`SixSpriteStacker` through `NoHOffscr` shared OAM and hammer graphics chain;
+the final target package and recorded checks are the remaining closure work.
 
-## M2 T44 S2 Packet
+## M2 T44 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T44 S2, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate; exact transfer 237 from M2 T17 S6. |
-| Objective | Translate and prove the shared two-offset vine OAM graphics chain through its six-sprite clip loop. |
-| Non-goals | No platform gameplay, no S3 graphics-chain implementation, no child completion by association. |
-| Reference Baseline | 1,531/1,992; scope 6/expected 6, maximum 1,537. |
-| Candidate Proposal | [T44 block-buffer and object graphics](../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-vine-object-graphics). |
-| Files And ABI Surface | Shared game `src/game/oam/vine_gfx.c` owner, focused recorder/test, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T44 S3, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; exact transfer 238 from M2 T17 S6. |
+| Objective | Translate and prove the shared six-sprite stacker and hammer OAM graphics chain. |
+| Non-goals | No platform gameplay, no S4 dump-helper implementation, no child completion by association. |
+| Reference Baseline | 1,537/1,992; scope 14/expected 14, maximum 1,551. |
+| Candidate Proposal | [T44 block-buffer and object graphics](../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-six-sprite-and-hammer-graphics). |
+| Files And ABI Surface | Shared game `src/game/oam/hammer_gfx.c` and OAM stacker seam, focused recorder/test, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original `VDrawLoop` table/scratch/OAM/clip comparison, followed separately by focused native tests and three-target operational proof. |
-| Expected Markers | Two-entry Y table, vine-object and OAM offsets, six tiles, top tile branch and `$64` clip. |
+| Verification | Original `ProcHammerObj` and `VDrawLoop` table/branch/OAM comparison, followed separately by focused native tests and three-target operational proof. |
+| Expected Markers | Six-sprite stride, eight pose-table bytes, timer/state pose selection, cumulative coordinates and offscreen dump. |
 | Asset Needs | Owner-local ROM/listing and bounded ignored-build records; three owner-authorized EXEs. |
-| Reporting Requirements | Six named dispositions, dual proof, dependency results and artifact hashes. |
+| Reporting Requirements | Fourteen named dispositions, dual proof, dependency results and artifact hashes. |
 | Stop Conditions | Forced CPU path, unadmitted dependency, invented graphics policy or platform gameplay. |
 | Exit Criteria | Every scoped node has source-route proof, focused test evidence, x86/x64 builds, DOS16 link, purity proof and refreshed EXEs. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |

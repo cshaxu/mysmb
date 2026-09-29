@@ -62,5 +62,8 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot);
  * GetMiscBoundBox; the caller owns the intervening shared collision-box write. */
 void mysmb_objects_prepare_hammer(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index);
+/* ROM SixSpriteStacker; caller owns its saved OAM offset and return state. */
+void mysmb_oam_stack_six_sprite_data(struct mysmb_game *game,
+                                     mysmb_u8 value, mysmb_u8 oam);
 
 #endif

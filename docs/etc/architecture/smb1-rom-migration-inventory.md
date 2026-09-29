@@ -1710,20 +1710,20 @@ The labels and branches behind every line remain open until individually bound b
 | 13169 | `SkpVTop` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
 | 13170 | `ChkFTop` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
 | 13177 | `NextVSp` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
-| 13187 | `SixSpriteStacker` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sixspritestacker) |
-| 13189 | `StkLp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stklp) |
-| 13203 | `FirstSprXPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprxpos) |
-| 13206 | `FirstSprYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprypos) |
-| 13209 | `SecondSprXPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprxpos) |
-| 13212 | `SecondSprYPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprypos) |
-| 13215 | `FirstSprTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprtilenum) |
-| 13218 | `SecondSprTilenum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondsprtilenum) |
-| 13221 | `HammerSprAttrib` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammersprattrib) |
-| 13224 | `DrawHammer` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawhammer) |
-| 13232 | `ForceHPose` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-forcehpose) |
-| 13234 | `GetHPose` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-gethpose) |
-| 13239 | `RenderH` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-renderh) |
-| 13268 | `NoHOffscr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohoffscr) |
+| 13187 | `SixSpriteStacker` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13189 | `StkLp` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13203 | `FirstSprXPos` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13206 | `FirstSprYPos` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13209 | `SecondSprXPos` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13212 | `SecondSprYPos` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13215 | `FirstSprTilenum` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13218 | `SecondSprTilenum` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13221 | `HammerSprAttrib` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13224 | `DrawHammer` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13232 | `ForceHPose` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13234 | `GetHPose` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13239 | `RenderH` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
+| 13268 | `NoHOffscr` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
 | 13277 | `FlagpoleScoreNumTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescorenumtiles) |
 | 13284 | `FlagpoleGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolegfxhandler) |
 | 13326 | `ChkFlagOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkflagoffscreen) |

@@ -1,8 +1,8 @@
 #include "game/oam/oam.h"
 #include "game/game.h"
 
-/* ROM $c2d2-$c322: GetMiscOffscreenBits, RelativeMiscPosition and
- * DrawHammer.  Kept separate from motion for the 16-bit DOS link. */
+/* ROM helper inputs are prepared by GetMiscOffscreenBits and
+ * RelativeMiscPosition; DrawHammer itself is $e4dc-$e540. */
 enum {
     MYSMB_HAMMER_MISC_STATE = 0x002aU,
     MYSMB_HAMMER_MISC_PAGE = 0x007aU,
@@ -15,6 +15,7 @@ enum {
     MYSMB_HAMMER_SPRITE_OFFSET = 0x06f3U,
     MYSMB_HAMMER_FRAME_COUNTER = 0x0009U,
     MYSMB_HAMMER_TIMER_CONTROL = 0x0747U,
+    MYSMB_HAMMER_OBJECT_OFFSET = 0x0008U,
     MYSMB_HAMMER_SCREEN_LEFT_PAGE = 0x071aU,
     MYSMB_HAMMER_SCREEN_RIGHT_PAGE = 0x071bU,
     MYSMB_HAMMER_SCREEN_LEFT_X = 0x071cU,
@@ -133,6 +134,7 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[(mysmb_u16)(0x0205U + oam)] = second_tile[pose];
     game->ram[(mysmb_u16)(0x0202U + oam)] = attribute[pose];
     game->ram[(mysmb_u16)(0x0206U + oam)] = attribute[pose];
+    slot = game->ram[MYSMB_HAMMER_OBJECT_OFFSET];
     if ((offscreen & 0xfcU) != 0U) {
         game->ram[MYSMB_HAMMER_MISC_STATE + slot] = 0U;
         game->ram[(mysmb_u16)(0x0200U + oam)] = 0xf8U;

@@ -158,9 +158,53 @@ No S2 label is deferred.
 
 ### S3: Six-sprite and hammer graphics
 
-`SixSpriteStacker`, `StkLp`, `FirstSprXPos`, `FirstSprYPos`, `SecondSprXPos`,
-`SecondSprYPos`, `FirstSprTilenum`, `SecondSprTilenum`, `HammerSprAttrib`,
-`DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`, `NoHOffscr`.
+Entry `SixSpriteStacker`; exit `NoHOffscr`; shared owner
+`src/game/oam/hammer_gfx.c` plus the reusable OAM stacker seam. Predecessor:
+S2 vine graphics. Successors: S4 dump helpers and all hammer callers. Scope:
+`SixSpriteStacker`, `StkLp`, `FirstSprXPos`, `FirstSprYPos`,
+`SecondSprXPos`, `SecondSprYPos`, `FirstSprTilenum`, `SecondSprTilenum`,
+`HammerSprAttrib`, `DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`,
+`NoHOffscr`.
+
+All fourteen incoming labels are open and expected to become matches. The
+ROM-logic route is original `ProcHammerObj` through `DrawHammer`, using
+timer-control and state/pose variants; `VDrawLoop` supplies the independent
+six-sprite stacker consumer. It compares the eight source table bytes, pose
+branch, cumulative coordinates, tile/attribute writes, offscreen state clear
+and two-sprite dump. The operational track runs the hammer-graphics snapshot
+check plus focused vine and stacker tests, strict C90 x86/x64 builds, DOS16
+link, platform-purity audit and three fresh
+target artifacts. Admission baseline is 1,537/1,992; scope and expected set
+are both 14 labels, with maximum 1,551/1,992.
+
+#### S3 closure: six-sprite and hammer graphics
+
+S3 closes all fourteen received labels, moving M2 from **1,537** to
+**1,551 / 1,992**. Shared OAM code owns the translated writes; Windows and
+DOS only consume the resulting OAM store.
+
+| ROM labels | Exact C/ROM disposition |
+| --- | --- |
+| `SixSpriteStacker`, `StkLp` | `mysmb_oam_stack_six_sprite_data` performs exactly six `Sprite_Data,Y` stores, adds `$08` after each store, and advances one four-byte OAM record. `DrawVine` now invokes it before its own cap/clip work. |
+| `FirstSprXPos`, `FirstSprYPos`, `SecondSprXPos`, `SecondSprYPos` | The four original pose entries are bound in source order and the second X/Y positions use the ROM's cumulative addition from the first coordinate. |
+| `FirstSprTilenum`, `SecondSprTilenum`, `HammerSprAttrib` | The exact `$80/$82/$81/$83`, `$81/$83/$80/$82`, and `$03/$03/$c3/$c3` tables drive both hammer OAM rows. |
+| `DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`, `NoHOffscr` | Timer control or non-one state forces pose zero; otherwise `FrameCounter >> 2 & 3` selects the pose. Rendering writes two OAM rows, reloads `ObjectOffset` before the `$fc` offscreen test, clears that source-selected misc state and emits the `$f8` dump only when required. |
+
+The ROM-logic track aggregates original records that execute `DrawHammer` 54
+times, all pose-branch paths and the offscreen path. A graphics-specific
+replay of all 63 original hammer records passes at zero differences on both
+x64 and x86; it deliberately masks only `$04d0-$04f2`, the separately owned
+`GetMiscBoundBox` dependency, whose 18 known records remain outside this
+chain. The hammer-graphics snapshot check compares all 63 records after
+excluding only the declared bounding-box dependency; focused vine and stacker
+tests exercise the shared six-sprite consumer, including 8-bit OAM-offset
+wraparound. The refreshed package is `mysmb16.exe` 258165
+bytes `074723d5a169c7a9fe535b7b8867ff6f8fa8192cba3272d5a1062d5b37aacb22`,
+`mysmb32.exe` 364658 bytes
+`a6a99292d8963842a63b70a156a5d846d504123c6535b21889dc570bf88860c7`, and
+`mysmb64.exe` 372856 bytes
+`b36762adb84e00c100416441b49465a080e81533035f2a7e0948159bf60f479a`.
+No S3 label is deferred.
 
 ### S4: Flagpole graphics and sprite dumps
 
