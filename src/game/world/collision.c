@@ -1,5 +1,4 @@
 #include "game/world/world.h"
-#include "game/area/block_buffer.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
 
@@ -11,75 +10,6 @@ enum {
     MYSMB_SQUARE1_SOUND = 0x00ffU
 };
 
-/* ROM BlockBufferCollision: add the X probe with ADC, then use the carry
- * to select the page-local block buffer. */
-mysmb_u8 mysmb_world_collision_page(mysmb_u8 page, mysmb_u8 object_x,
-                                    mysmb_u8 probed_x)
-{
-    return (mysmb_u8)(page + (probed_x < object_x ? 1U : 0U));
-}
-
-/* Translation of BlockBufferCollision address construction for player offset zero. */
-mysmb_u8 mysmb_world_query_player_block(struct mysmb_game *game,
-                                  mysmb_u8 x_adder, mysmb_u8 y_adder,
-                                  mysmb_u8 horizontal_contact,
-                                  struct mysmb_player_terrain *terrain)
-{
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 column;
-    mysmb_u8 y;
-    mysmb_u16 address;
-
-    if (terrain == 0) return 0U;
-    x = (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_X] + x_adder);
-    page = (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_PAGE] +
-                      (x < game->ram[MYSMB_WORLD_PLAYER_X] ? 1U : 0U));
-    column = (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U));
-    address = mysmb_area_get_block_buffer_address(game, column);
-    y = (mysmb_u8)(((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) & 0xf0U) - 0x20U);
-    if ((game->ram[MYSMB_WORLD_PLAYER_Y] + y_adder) < 0x20U || y > 0xc0U) return 0U;
-    terrain->block_address_low = (mysmb_u8)(address & 0x00ffU);
-    address = (mysmb_u16)(address + y);
-    if (address >= 0x0800U) return 0U;
-    terrain->metatile = game->ram[address];
-    terrain->contact_low_nibble = horizontal_contact != 0U ?
-        (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_X] & 0x0fU) :
-        (mysmb_u8)(game->ram[MYSMB_WORLD_PLAYER_Y] & 0x0fU);
-    terrain->block_row_offset = y;
-    return 1U;
-}
-
-static const mysmb_u8 x_adder[28] = {
-        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
-        0U, 0x10U, 4U, 0x14U, 4U, 4U
-    };
-static const mysmb_u8 y_adder[28] = {
-        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
-        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
-    };
-/* Transitional native seam for BlockBufferColli_Head/Feet/Side. Preserve
- * entry Y and the feet increment; the existing coordinate child below this
- * seam retains its separately tracked scratch/range conformance gaps. */
-mysmb_u8 mysmb_world_query_player_probe(struct mysmb_game *game,
-    mysmb_u8 *index, mysmb_u8 entry, struct mysmb_player_terrain *terrain)
-{
-    mysmb_u8 dx, dy;
-    if (entry == MYSMB_TERRAIN_FEET) ++*index;
-    if (game->area_prg != 0 && game->area_prg_size > 0x64cbU) {
-        dx = game->area_prg[0x63b0U + *index];
-        dy = game->area_prg[0x63ccU + *index];
-    }
-    else {
-        dx = *index < 28U ? x_adder[*index] : 0U;
-        dy = *index < 28U ? y_adder[*index] : 0U;
-    }
-    return mysmb_world_query_player_block(game, dx, dy,
-        entry == MYSMB_TERRAIN_SIDE ? 1U : 0U, terrain);
-}
-
 /* ROM EnemyLanding -> InitVStf. */
 void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
@@ -89,42 +19,6 @@ void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x00cfU + slot] = (mysmb_u8)((game->ram[0x00cfU + slot] & 0xf0U) | 8U);
 }
 
-/* ROM BlockBufferChk_Enemy -> BlockBufferCollision. */
-mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
-                                       mysmb_u8 slot, mysmb_u8 adder_index,
-                                       mysmb_u8 horizontal_contact,
-                                       struct mysmb_enemy_terrain *terrain)
-{
-    static const mysmb_u8 x_adder[28] = { 0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x03U,0x0cU,0x02U,0x02U,0x0dU,0x0dU,0x08U,0x00U,0x10U,0x04U,0x14U,0x04U,0x04U };
-    static const mysmb_u8 y_adder[28] = { 0x04U,0x20U,0x20U,0x08U,0x18U,0x08U,0x18U,0x02U,0x20U,0x20U,0x08U,0x18U,0x08U,0x18U,0x12U,0x20U,0x20U,0x18U,0x18U,0x18U,0x18U,0x18U,0x14U,0x14U,0x06U,0x06U,0x08U,0x10U };
-    mysmb_u8 x; mysmb_u8 y_sum; mysmb_u8 row; mysmb_u8 page; mysmb_u16 address;
-    if (terrain == 0 || slot >= 6U || adder_index >= 28U) return 0U;
-    x = (mysmb_u8)(game->ram[0x0087U + slot] + x_adder[adder_index]);
-    page = mysmb_world_collision_page(game->ram[0x006eU + slot], game->ram[0x0087U + slot], x);
-    address = mysmb_area_get_block_buffer_address(game,
-        (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U)));
-    y_sum = (mysmb_u8)(game->ram[0x00cfU + slot] + y_adder[adder_index]);
-    row = (mysmb_u8)((y_sum & 0xf0U) - 0x20U);
-    /* Expose the computed original row even when it is outside the buffer.
-     * VineObjectHandler owns its row >= D0 branch after this child returns. */
-    terrain->block_row_offset = row;
-    if (y_sum < 0x20U || row > 0xc0U) return 0U;
-    terrain->block_address_low = (mysmb_u8)address;
-    address = (mysmb_u16)(address + row);
-    if (address >= 0x0800U) return 0U;
-    terrain->block_address = address;
-    terrain->metatile = game->ram[address];
-    terrain->contact_low_nibble = horizontal_contact != 0U ? (mysmb_u8)(game->ram[0x0087U + slot] & 0x0fU) : (mysmb_u8)(game->ram[0x00cfU + slot] & 0x0fU);
-    return 1U;
-}
-
-/* ROM $E1AE ChkUnderEnemy: fixed bottom-middle probe, with the original
- * BlockBufferChk_Enemy output contract retained by the shared child. */
-mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
-                                       struct mysmb_enemy_terrain *terrain)
-{
-    return mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain);
-}
 /* ROM CheckForSolidMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
                                            mysmb_u8 metatile, mysmb_u8 contact)
@@ -161,25 +55,15 @@ static void mysmb_world_init_fireball_explode(struct mysmb_game *game,
 void mysmb_world_fireball_background_collision(struct mysmb_game *game,
                                                 mysmb_u8 slot)
 {
-    mysmb_u8 x;
-    mysmb_u8 page;
-    mysmb_u8 row;
-    mysmb_u16 address;
+    struct mysmb_enemy_terrain terrain;
     mysmb_u8 tile;
 
     if (game->ram[(mysmb_u16)(0x00d5U + slot)] < 0x18U) {
         mysmb_world_clear_fireball_bounce(game, slot);
         return;
     }
-    x = (mysmb_u8)(game->ram[(mysmb_u16)(0x008dU + slot)] + 4U);
-    page = mysmb_world_collision_page(game->ram[(mysmb_u16)(0x0074U + slot)],
-                                      game->ram[(mysmb_u16)(0x008dU + slot)], x);
-    address = mysmb_area_get_block_buffer_address(game,
-        (mysmb_u8)(((page & 1U) << 4U) | (x >> 4U)));
-    row = (mysmb_u8)(((game->ram[(mysmb_u16)(0x00d5U + slot)] + 8U) & 0xf0U) -
-                     0x20U);
-    address = (mysmb_u16)(address + row);
-    tile = address < 0x0800U ? game->ram[address] : 0U;
+    tile = mysmb_world_query_fireball_block(game, slot, &terrain) != 0U ?
+        terrain.metatile : 0U;
     if (tile == 0U || mysmb_world_enemy_metatile_is_non_solid(tile) != 0U) {
         mysmb_world_clear_fireball_bounce(game, slot);
         return;

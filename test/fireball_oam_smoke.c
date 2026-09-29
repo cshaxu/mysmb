@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    struct mysmb_game game;
+    static struct mysmb_game game;
 
     /* ProcFireball_Bubble queues Sfx_Fireball only on a new valid fireball. */
     mysmb_game_initialize_memory(&game, 0U);

@@ -1,6 +1,8 @@
 #include "game/world/world.h"
+#include <string.h>
 int main(void) {
  struct mysmb_game game; struct mysmb_enemy_terrain terrain;
+ memset(&game,0,sizeof(game));
  mysmb_game_initialize_memory(&game,0U);
  game.ram[0x006eU]=1U; game.ram[0x0087U]=0xf8U; game.ram[0x00cfU]=0x40U;
  game.ram[0x0500U+0x00U+0x30U]=0x61U;
