@@ -3210,6 +3210,9 @@ int main(int argument_count, char **arguments)
                             entrance_children[entrance_child_count][1] != driver->machine->y) return 69;
                         if (background_snapshot == 53u && entrance_child_active == 3u)
                             entrance_children[entrance_child_count][1] = driver->machine->a;
+                        if (background_snapshot == 51u && entrance_child_active == 2u &&
+                            (driver->machine->x != entrance_children[entrance_child_count][2u+8u] ||
+                             driver->machine->y != (entrance_children[entrance_child_count][2u+0x34u+driver->machine->x] == 0u ? 0x18u : 8u))) return 69;
                         if (background_snapshot == 51u && (entrance_child_active == 2u || entrance_child_active == 3u))
                             entrance_children[entrance_child_count][1] = driver->machine->a;
                         if (background_snapshot == 51u && entrance_child_active == 4u &&
@@ -3391,6 +3394,9 @@ int main(int argument_count, char **arguments)
                              driver->machine->a != driver->machine->ram[0x58u + driver->machine->x] ||
                              driver->machine->y != driver->machine->ram[0x6e5u + driver->machine->x])) return 69;
                         if (background_snapshot == 60u && driver->machine->x != driver->machine->ram[8u]) return 69;
+                        if (background_snapshot == 51u && child == 2u &&
+                            (driver->machine->x != driver->machine->ram[8u] ||
+                             driver->machine->a != driver->machine->ram[0x388u+driver->machine->x])) return 69;
                         entrance_children[entrance_child_count][0] = (unsigned char)child;
                         if (background_snapshot == 15u && child == 5u &&
                             (driver->machine->x != 6u || driver->machine->a != 1u)) return 69;

@@ -2,35 +2,42 @@
 
 ## Current Work
 
-**M2 T41 S7 is closed at 1,231 / 1,992: six Piranha movement nodes complete. S8 is next.**
+**M2 T41 S8 is closed at 1,233 / 1,992: both Firebar spin nodes complete. S9 is next.**
 
-## M2 T41 S7 Packet
+## M2 T41 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S7, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 7e00445; coordinator accepts transfer-203. |
-| Objective | Six open Piranha movement nodes, six expected new. |
+| Identifier Mode | M2 T41 S8, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after e199ada; coordinator accepts transfer-204. |
+| Objective | Two open Firebar spin nodes, two expected new. |
 | Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
-| Reference Baseline | 1,225/1,992; six scoped/expected, maximum 1,231. |
-| Candidate Proposal | [T41 S7 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s7-admission-piranha-movement-and-pipe-priority). |
-| Files And ABI Surface | enemy/piranha.c, objects.c bulk seam, tests, manifests and three EXEs. |
+| Reference Baseline | 1,231/1,992; two scoped/expected, maximum 1,233. |
+| Candidate Proposal | [T41 S8 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s8-admission-firebar-angular-primitive). |
+| Files And ABI Surface | enemy/firebar_children.c provenance and test ABI, tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
-| Expected Markers | State/timer gates, page/sign distance, reversal, target scratch, Y motion and priority. |
+| Expected Markers | Scratch 07, direction, low wrap, high carry/borrow return and caller-owned mask. |
 | Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Six exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Reporting Requirements | Two exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
 | Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Six nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Exit Criteria | Two nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
 | Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Duplicate owner, gates, page/sign distance, reversal, scratch timing, Y wrap and priority. |
+| Similar-Issue Sweep | Spin ownership, arithmetic width, high-state stores and scratch order. |
+
+## S8 closure
+
+[Original Firebar spin proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s8-original-firebar-spin-proof)
+closes two nodes with 640/640 original RAM/A matches and 1,572,864 native
+combinations per width. All 13,956 previous root matches remain.
+Three EXEs refreshed; DOS link-only. S9 balanced platforms is next.
 
 ## S7 closure
 
 [Original Piranha movement proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s7-original-piranha-movement-proof)
 closes six nodes with 1,024/1,024 caller and actual-child matches. All prior
 12,928 actual matches remain. Three EXEs refreshed; DOS link-only.
-S8 FirebarSpin is next.
+S8 is closed; its result is above.
 
 ## S6 closure
 
@@ -77,15 +84,6 @@ closes six caller/data nodes with 360/360 original comparisons. Actual roots
 match 72/360, with all 288 failures isolated to the planned S3 graphics child.
 All 10,804 prior actual matches remain; three EXEs refreshed, DOS link-only.
 S2 is closed; its result is above.
-
-## T40 closure summary
-
-[Aggregate review](../history/M2-T40-enemy-movement-and-firebar.md#t40-closure)
-closes all 120 scoped nodes: 107 new and thirteen retained across ten chains.
-S10 closes sixteen Lakitu movement/distance nodes with 2,048/2,048 original
-caller and actual-child comparisons. Final integrated comparison is
-10,804/12,178; all 8,628 prior matches remain. The 1,374 downstream differences
-retain their source-order owners. All three EXEs are refreshed; DOS is link-only.
 
 ## Current Technical Baseline
 

@@ -1267,3 +1267,108 @@ Raw trace output: 5549120 bytes, below 32 MB.
 | mysmb16.exe | 255865 | 76aeb212ce0bc8fb3710e7188142be30108ec31fa29dc02905d7d9b4b5ee870a |
 | mysmb32.exe | 351013 | 7d7973abc7fd499d74cba0bad62b1742945e444a460a287b1af7fc404549f1c7 |
 | mysmb64.exe | 358987 | b470b4e6935dbcd85db5c7456b54731e048346d98f5f1690f0f5f1ae78276c42 |
+
+## S8 admission: Firebar angular primitive
+
+S7 closed in e199ada. Coordinator accepts transfer-204 under the continuing
+M2 mandate. FirebarSpin and SpinCounterClockwise are both open, both scoped
+and expected new. Baseline 1,231/1,992; maximum 1,233. Original $D410-$D431,
+source lines 10664-10687, shared enemy/firebar_children.c owner. S7 is the
+predecessor; S9 balanced platforms is the successor.
+
+Review the existing typed leaf against source: speed store to scratch 07,
+zero/nonzero direction, byte low update, carry/borrow high return without
+storing or masking high state. ProcFirebar owns the high-state mask/store.
+No new gameplay algorithm, sibling leaf or platform changes are admitted.
+Original unused Y loads are accounted for against the caller's live inputs.
+
+Logic proof reuses bounded T40 S8 original child records, compares complete
+input/output RAM and returned A, and freshly reproduces representative original
+NMI routes with instruction/branch coverage. Recorded source inputs are never
+native expected fixtures or tracked data. No child substitution is needed by
+this leaf. Validate original entry speed/slot and source reachability. Native
+proof exhausts low-byte/speed pairs, zero/nonzero direction, high-byte boundary
+and slot variants; keep original caller/actual-root regressions separate.
+Retain all 13,956 prior actual matches. No CPU/PC/stack/ROM/output patches.
+
+Operational proof: mysmb.firebar-spin-chain, prior firebar callers and actual
+matrix, strict C90 x86/x64, DOS16 link, platform purity and hidden-window probes.
+Refresh three EXEs once per P. DOS remains link-only. Similar-issue sweep covers
+spin-owner duplication, carry/borrow width, high-state write ownership and
+scratch/order across caller and leaf. Existing local owner-ROM/listing source
+policy applies. Unique ignored build/m2-t41-s8 output has 16-MB raw budget,
+up to sixteen fresh routes with twenty-second deadlines/checkpoints;
+coordinator owns dependent-record retention and cleanup. Stop on scope growth,
+hidden differences, execution patches or platform gameplay.
+
+## S8 original Firebar spin proof
+
+S8 P1 closes both expected leaf nodes: 1,231 -> 1,233/1,992. No scoped node
+remains unfinished or transfers. Existing production arithmetic already agrees
+with source and is retained; only its provenance comment and proof are updated.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| FirebarSpin | Scratch 07 receives speed, zero direction adds low byte with carry, returns high byte without storing it. ROM-match complete. |
+| SpinCounterClockwise | Nonzero direction subtracts low byte with borrow, returns high byte without storing it; byte wrap preserved. ROM-match complete. |
+
+Source reconciliation fixes the exact boundary at $D410-$D431: BalancePlatform
+starts at $D432 and remains S9. All nineteen spin instructions execute, with
+both outcomes of the direction branch. Original Y loads (18/08) are checked
+by the observer; ProcFirebar overwrites Y with Enemy_ID before any use. The
+native ABI therefore returns only live A, preserving input slot X. The caller
+masks A with 1F and stores high state; the leaf never assumes that responsibility.
+
+The original T40 S8 512 NMI route records contain 320 executed spin calls;
+the remaining 192 skip the leaf at caller timer/offscreen gates. Both native
+widths independently execute the leaf from those original inputs: 640/640
+full RAM and returned-A comparisons match. No recorded child substitution is
+used by this leaf. Hardware return-stack storage is excluded; mapped
+$0109-$0139 and all VRAM/OAM/audio queue RAM remain included. The 384 no-call
+records across widths are not inflated into spin matches.
+
+Eight fresh original NMI routes (0,1,4,5,8,9,12,13) reproduce prior frame,
+root and child records byte-for-byte. Independent observer-free frames match
+the observed frames, and PC coverage proves all instructions/branch outcomes.
+At spin entry the observer checks X=ObjectOffset and A=FirebarSpinSpeed[X];
+at return it checks preserved X and source direction-dependent Y and records A.
+No original CPU/register, PC, stack, ROM or output is patched. Source listing,
+PRG instruction boundaries, and native reads/writes/returned result agree.
+
+Native tests pass 1,572,864 exact RAM/A combinations per width: all 65,536
+low-byte/speed pairs, high bytes 00/01/7F/FF, slots zero/five, and directions
+00/01/FF. Independent 16-bit phase arithmetic checks carry/borrow and wrap;
+expected RAM permits only scratch 07 and low-state writes. Full memcmp also
+checks that high state and all unrelated RAM remain unchanged. CTest spin
+and platform-purity pass 2/2. Fifteen prior initializer/platform suites per
+width remain green. The integrated root matrix remains 13,956/21,754 with
+zero lost matches; its existing 7,798 descendant sample differences are not
+new failures or node counts. Spin child tests are not added again as roots.
+
+Similar-issue review finds one production spin owner, one caller mask/store,
+no platform gameplay, and safe 16-bit intermediate ranges (low plus speed at
+most 510). Unrelated offscreen/relative functions in the same source file
+are unchanged and retain their own proof state. No speculative repair.
+
+All 107 shared units pass strict C90 x86/x64 compilation and self-tests;
+both hidden Win32 windows respond. DOS16 compiles/links with the existing
+OLDNAMES warning; it remains link-only, without graphical/resource-binding
+or physical 486SX certification. Three EXEs are rebuilt and refreshed; DOS16
+is byte-identical to S7, consistent with unchanged gameplay instructions.
+
+Reproduce existing firebar_chain_fixture.h routes with the original recorder's
+--fixture=t40-firebar-chain=N, --firebar-chain-snapshot, --control-children
+and independent --pc-coverage. firebar_spin_snapshot_check consumes only child
+2 records; firebar_spin_smoke provides the independent exhaustive native proof.
+Ignored build/m2-t41-s8 contains fresh bounded records and neutral summaries;
+T40 S8 records remain retained dependent inputs. Deadlines are twenty seconds
+per route; coordinator owns retention/cleanup. Existing local-only source
+restrictions remain. S9 balanced platforms is next, not admitted by this closure.
+
+Fresh raw trace output: 371516 bytes, below 16 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 255865 | 76aeb212ce0bc8fb3710e7188142be30108ec31fa29dc02905d7d9b4b5ee870a |
+| mysmb32.exe | 351013 | 6f42e218f0e99a434028c61e906090b339ecf87be59551c8aad26cd4f0799eee |
+| mysmb64.exe | 358987 | 9dc2900483b339a12c8cfae63af0a1f094dbaf32ade57e59c76d5806203a252f |

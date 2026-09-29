@@ -14,9 +14,9 @@ mysmb_u8 mysmb_firebar_relative(struct mysmb_game *game, mysmb_u8 slot)
     return game->ram[0x03aeU];
 }
 
-/* ROM $D410 FirebarSpin seam extracted from the former inline actor.
- * Return high spin A; the caller alone masks/stores it. This is not a
- * completion claim for the later FirebarSpin/SpinCounterClockwise nodes. */
+/* ROM $D410-$D431 FirebarSpin / SpinCounterClockwise. Return high spin A;
+ * ProcFirebar alone masks/stores it. Source Y=18/08 is not live at the
+ * caller boundary. T41 S8 records original RAM/A and arithmetic proof. */
 mysmb_u8 mysmb_firebar_spin(struct mysmb_game *game, mysmb_u8 slot, mysmb_u8 speed)
 {
     mysmb_u8 low, carry;
