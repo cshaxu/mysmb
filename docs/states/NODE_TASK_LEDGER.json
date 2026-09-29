@@ -211447,9 +211447,16 @@
         "PUpOfs"
       ],
       "maximumComplete": 1582,
-      "actualMatches": [],
+      "actualMatches": [
+        "PowerUpGfxTable",
+        "PowerUpAttributes",
+        "DrawPowerUp",
+        "PUpDrawLoop",
+        "FlipPUpRightSide",
+        "PUpOfs"
+      ],
       "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
-      "state": "admitted-power-up-graphics"
+      "state": "closed-power-up-graphics"
     }
   ]
 }

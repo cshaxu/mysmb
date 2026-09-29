@@ -57,7 +57,7 @@
 
 - [x] **GiveOneCoin extra-life sound:** Resolved in T36 S5 and rechecked on the T36 final build. The original hundred-coin transition queues sound40; all 96 S3 actual-child comparisons now match. Historical 48 sound-only failures remain recorded as the pre-fix evidence. [Resolution](../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof).
 
-- [ ] **Power-up drawing attributes and offscreen hiding:** T37 S1 actual-child cases 29/33/37/41/45 lack flower OAM flip bit $40; cases 48/49 fail to hide six OAM Y bytes to $F8. Independent child snapshots isolate DrawPowerUp. Keep existing M2 T17 S6 custody until source-order graphics admission. [Proof](../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof).
+- [x] **Power-up drawing attributes and offscreen hiding:** Resolved by T44 S7. `DrawPowerUp` now follows `PUpDrawLoop`, `FlipPUpRightSide` and `PUpOfs`, including flower flip `$40` and inherited third-row hiding; all 50 original child records and root snapshots match on both Windows widths. [Closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s7-closure-power-up-graphics).
 
 - [ ] **Star pickup music:** T37 S1 case 46 isolates PlayerEnemyCollision/HandlePowerUpCollision leaving AreaMusicQueue $FB=$00 instead of original $40 on both widths. Keep existing M2 T17 S6 collision custody until source-order admission. [Proof](../history/M2-T37-power-up-block-movement.md#s1-original-power-up-actor-proof).
 

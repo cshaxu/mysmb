@@ -372,3 +372,11 @@ The ROM-logic track will use original `MiscLoop` parent-route records to compare
 #### S6 closure: floatey-number and jumping-coin graphics
 
 S6 closes all five labels, moving M2 from **1,571** to **1,576 / 1,992**. Original `MiscLoop` parent-route records reach the graphics leaf 54 times. They cover the state split, float Y parity, and all four `$60-$63` jumping-coin tiles. The shared C leaf is zero-difference against every record on x64 and x86, excluding only the 6502 stack. Focused floatey/misc OAM and platform-purity tests pass on both widths; the shared source links to DOS16 MZ. Artifacts: mysmb16 `c4ddf61a9378b38916710798429b8dde2a880ff6d44c59b5030c92156ad38ff0`, mysmb32 `c829902e38ce66278652215d525bc3e3efdec551fe92e1981dab4952299a03d6`, mysmb64 `88109e4596cc7f4c0a1951538dcc309f563686cbb5628bc365c9efafda58a236`.
+
+#### S7 closure: power-up graphics
+
+S7 closes all six received labels, moving M2 from **1,576** to **1,582 / 1,992**. Shared `src/game/oam/power_up_gfx.c` is the sole owner of the power-up OAM path; platform adapters contain no object, palette, clipping or gameplay policy.
+
+`PowerUpGfxTable` and `PowerUpAttributes` preserve the source tables. `DrawPowerUp` selects the source table row and drives `PUpDrawLoop` across the two visible rows. `FlipPUpRightSide` preserves the flower lower-right `$40` flip and the star lower-row palette-before-flip sequence. `PUpOfs` uses the inherited `SprObjectOffscrChk` tail so its d2–d7 masks also hide the stale third OAM row exactly as the source route requires.
+
+All 50 original `PowerUpObjHandler -> DrawPowerUp` child records have zero differences on both x86 and x64; the 50 corresponding root snapshots also have zero differences. Focused power-up OAM and platform-purity checks pass on both widths, and the shared source links as an OpenNT DOS16 MZ executable. Refreshed artifacts are `mysmb16.exe` SHA-256 `6B9CD8B7379380EA88AFDC3C735C57709DF1F7B6BAC78775A5BD87F523DB2802`, `mysmb32.exe` `3A4D3EFF69B04A25A5019D8265524444E96E01F561D3454F19FA429630A3A8B7`, and `mysmb64.exe` `00EED8F1065F5EC28F137D6D9F8587098D7CD2FC16FD4C076F8E18CEAF7FC69F`. No S7 label is deferred.
