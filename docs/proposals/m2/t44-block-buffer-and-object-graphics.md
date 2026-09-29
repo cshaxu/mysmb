@@ -362,3 +362,9 @@ The ROM-logic track replays 28 ordinary `RunLargePlatform -> DrawLargePlatform` 
 `DrawLargePlatform` preserves the source six-X stack, four-plus-two Y dumps, `$5b/$75` tile selection, `$02` scratch write, six successive offscreen checks and `SLChk` six-row removal. `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, and `ExDLPl` are all covered by those parent routes.
 
 Operational proof passes the seven focused x86/x64 tests, both product self-tests, platform-purity audit, and OpenNT DOS16 MZ link. Refreshed artifacts are `mysmb16.exe` `c4ddf61a9378b38916710798429b8dde2a880ff6d44c59b5030c92156ad38ff0`, `mysmb32.exe` `16ccc4939fc5c8093d9cc27e6ad09bbe662ce896d9ce5dcebba5adfd5f352048`, and `mysmb64.exe` `88109e4596cc7f4c0a1951538dcc309f563686cbb5628bc365c9efafda58a236`. No S5 label is deferred.
+
+#### S6 admission: floatey-number and jumping-coin graphics
+
+S6 receives five open labels: `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`, `JCoinGfxHandler`, and `ExJCGfx`. It begins at **1,571 / 1,992**, expects all five to become ROM-match complete, and therefore has a maximum of **1,576 / 1,992**. The entry is `MiscLoop -> ProcJumpCoin -> JCoinGfxHandler`; the exit is `ExJCGfx`. The predecessor is S5's OAM helper seam and the successor is S7 power-up graphics. Its one shared owner will be the misc OAM path; host adapters remain consumers only.
+
+The ROM-logic track will use original `MiscLoop` parent-route records to compare state split, frame-parity Y decrement, exact `$60-$63` tile table, two-sprite Y/X/tile/attribute stores and restored `ObjectOffset`. The operational track will add a focused coin/floatey graphics check, replay those records on x86 and x64, build DOS16, audit platform purity and refresh the three required artifacts.
