@@ -2,6 +2,9 @@
 
 ## Translation Debt
 
+- [ ] **Terrain descendant scratch:** T43 S1 independently compares8,049 original child calls per width. Query metadata and consumed returns match, but block queries omit RAM02-05; coin/axe/head/impede descendants retain RAM00-07 differences. Full native root matches59/1,034. Coin/axe belongs to planned S2, impede S6, classifiers S7, queries the following source slice; block-head/VRAM children retain existing ledger maintenance custody. No out-of-order admission or descendant credit. [Exact child matrix](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof).
+
+
 - [x] **Platform vertical preflight carry:** T42 S9 restores original carry for high-Y exits. Four cross-width S7 cases now retain only independently owned geometry scratch differences. [Proof](../history/M2-T42-shared-collision-and-platforms.md#s9-original-collision-preflight-proof).
 - [ ] **Side response speed80 and scratch (`TODO(High)`):** T42 S7 exposes ImpedePlayerMove/RImpd treating80 as negative instead of preserving the original CPY #1/BPL result. Forty cross-width samples alter X speed/position/timer; ordinary paths also omit RAM0's high-adder write. Existing M2 T17 S6 custody; following source-order player-terrain slice. [Evidence](../history/M2-T42-shared-collision-and-platforms.md#s7-original-platform-collision-proof).
 

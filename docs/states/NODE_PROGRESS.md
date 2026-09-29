@@ -12,16 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1382 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1413 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 525 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 494 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,382 / 1,992 (69.38%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,413 / 1,992 (70.93%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 closure](../history/M2-T42-shared-collision-and-platforms.md#t42-closure)
-closes98/98 scoped nodes across nine chains. Final actual actor matches
-21,544/29,434; external child differences retain their owners.
+Latest task review: [T43 S1 terrain caller](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof)
+closes31 nodes with1,034 original caller routes per width. Actual full-root
+matches remain59/1,034; independently tested child scratch gaps retain their
+owners. This is scoped caller conformance, not whole-game equivalence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1382)
+## Completed matches (1413)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1398,6 +1399,37 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11901 | `ExCPV` |
 | 11905 | `GetEnemyBoundBoxOfs` |
 | 11908 | `GetEnemyBoundBoxOfsArg` |
+| 11924 | `PlayerBGUpperExtent` |
+| 11927 | `PlayerBGCollision` |
+| 11942 | `SetFallS` |
+| 11943 | `SetPSte` |
+| 11944 | `ChkOnScr` |
+| 11952 | `ExPBGCol` |
+| 11954 | `ChkCollSize` |
+| 11964 | `GBBAdr` |
+| 11971 | `HeadChk` |
+| 11992 | `SolidOrClimb` |
+| 11997 | `NYSpd` |
+| 12000 | `DoFootCheck` |
+| 12019 | `AwardTouchedCoin` |
+| 12022 | `ChkFootMTile` |
+| 12030 | `ContChk` |
+| 12040 | `LandPlyr` |
+| 12049 | `InitSteP` |
+| 12052 | `DoPlayerSideCheck` |
+| 12059 | `SideCheckLoop` |
+| 12075 | `BHalf` |
+| 12086 | `ExSCH` |
+| 12088 | `CheckSideMTiles` |
+| 12094 | `ContSChk` |
+| 12101 | `ChkPBtm` |
+| 12111 | `PipeDwnS` |
+| 12115 | `PlyrPipe` |
+| 12124 | `SetCATmr` |
+| 12126 | `ChkGERtn` |
+| 12140 | `StopPlayerMove` |
+| 12142 | `ExCSM` |
+| 12144 | `AreaChangeTimerData` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

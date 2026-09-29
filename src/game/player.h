@@ -67,7 +67,8 @@ void mysmb_player_step_side_pipe(struct mysmb_game *game);
 /* Internal C control result for ChkFootMTile's terminal JMP ImpedePlayerMove. */
 #define MYSMB_PLAYER_FEET_TERMINAL_IMPEDE 3U
 
-/* ROM $dc64-$dd5a PlayerBGCollision DoFootCheck through LandPlyr. */
+/* ROM DoFootCheck through InitSteP. Direct fragment callers supply GBBAdr's
+ * RAM $EB cursor; production enters through PlayerBGCollision. */
 mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game);
 /* ROM $9131-$9196 Entrance_GameTimerSetup, excluding palette/object owners. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game);
@@ -87,9 +88,9 @@ void mysmb_player_get_screen_position(struct mysmb_game *game);
 void mysmb_player_scroll_screen(struct mysmb_game *game, mysmb_u8 amount);
 /* ROM $df4b-$df7d ImpedePlayerMove, with SideCheckLoop's physical side counter. */
 void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side);
-/* ROM $dd5e-$de46 side samples, restricted to solid metatile blocking. */
+/* ROM $DD5E-$DE02 side chain; caller supplies root guards, mask and $EB. */
 mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game);
-/* ROM $dcba-$dcf5 head sample, restricted to solid-metatile velocity stop. */
+/* ROM $DCBA-$DCF5 head chain; caller supplies root guards and $EB. */
 mysmb_u8 mysmb_player_check_head(struct mysmb_game *game);
 
 #endif

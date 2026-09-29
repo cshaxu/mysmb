@@ -50,6 +50,36 @@ mysmb_u8 mysmb_world_query_player_block(struct mysmb_game *game,
     return 1U;
 }
 
+static const mysmb_u8 x_adder[28] = {
+        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
+        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
+        0U, 0x10U, 4U, 0x14U, 4U, 4U
+    };
+static const mysmb_u8 y_adder[28] = {
+        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
+        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
+        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
+    };
+/* Transitional native seam for BlockBufferColli_Head/Feet/Side. Preserve
+ * entry Y and the feet increment; the existing coordinate child below this
+ * seam retains its separately tracked scratch/range conformance gaps. */
+mysmb_u8 mysmb_world_query_player_probe(struct mysmb_game *game,
+    mysmb_u8 *index, mysmb_u8 entry, struct mysmb_player_terrain *terrain)
+{
+    mysmb_u8 dx, dy;
+    if (entry == MYSMB_TERRAIN_FEET) ++*index;
+    if (game->area_prg != 0 && game->area_prg_size > 0x64cbU) {
+        dx = game->area_prg[0x63b0U + *index];
+        dy = game->area_prg[0x63ccU + *index];
+    }
+    else {
+        dx = *index < 28U ? x_adder[*index] : 0U;
+        dy = *index < 28U ? y_adder[*index] : 0U;
+    }
+    return mysmb_world_query_player_block(game, dx, dy,
+        entry == MYSMB_TERRAIN_SIDE ? 1U : 0U, terrain);
+}
+
 /* ROM EnemyLanding -> InitVStf. */
 void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {

@@ -1,3 +1,4 @@
+#include "terrain_entry.h"
 #include "game/dispatcher.h"
 #include <stdio.h>
 #include "game/objects.h"
@@ -73,7 +74,7 @@ int main(void)
     mysmb_player_step(&game, 0U);
     if (game.ram[0x0490U] != 0xffU) return 45;
     /* ROM small-Mario feet use probe entries $0f/$10: X+3 and X+12,
-     * with Y+32/Y+24.  At the 1-1 landing reproduced from the ROM trace,
+     * with Y+32 for both.  At the 1-1 landing reproduced from the ROM trace,
      * the right probe lands on the brick while the left probe remains empty. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
@@ -85,6 +86,7 @@ int main(void)
     game.ram[0x001dU] = 1U;
     game.ram[0x0754U] = 1U;
     game.ram[0x0644U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 0U) return 10;
     /* ChkInvisibleMTiles handles a hidden coin or 1-up sampled by either
@@ -99,9 +101,11 @@ int main(void)
     game.ram[0x001dU] = 1U;
     game.ram[0x0754U] = 1U;
     game.ram[0x0644U] = 0x5fU;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 29;
     game.ram[0x0644U] = 0x60U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 1U ||
         game.ram[0x00ceU] != 0x70U || game.ram[0x009fU] != 2U) return 30;
     /* CheckForCoinMTiles queues the coin-grab sound before HandleCoinMetatile
@@ -117,11 +121,11 @@ int main(void)
     game.ram[0x0754U] = 1U;
     game.ram[0x0644U] = 0xc2U;
     game.ram[0x00feU] = 0U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) != 2U || game.ram[0x0644U] != 0U ||
         game.ram[0x00feU] != 1U) return 37;
-    /* HandleAxeMetatile enters from the left foot before LandPlyr, clears
-     * its collision tile, and delegates ErACM -> RemoveCoin_Axe's fixed
-     * VRAM_Buffer2 command. */
+    /* Original DC64 route with only left C5 keeps that tile: HandleAxeMetatile
+     * consumes the last (right) query coordinates, producing VRAM column 48. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     mysmb_clear_block_buffers(&game);
     game.ram[0x00b5U] = 1U;
@@ -134,10 +138,12 @@ int main(void)
     game.ram[0x074eU] = 1U;
     game.ram[0x0643U] = 0xc5U;
     game.ram[0x034bU] = 0U;
-    if (mysmb_player_check_feet(&game) != 2U || game.ram[0x0643U] != 0U ||
+    mysmb_test_terrain_entry(&game);
+    if (mysmb_player_check_feet(&game) != 2U || game.ram[0x0643U] != 0xc5U ||
+        game.ram[0x0644U] != 0U ||
         game.ram[0x0772U] != 0U || game.ram[0x0770U] != 2U ||
         game.ram[0x0057U] != 0x18U || game.ram[0x0773U] != 6U ||
-        game.ram[0x0341U] != 0x26U || game.ram[0x0342U] != 0x46U ||
+        game.ram[0x0341U] != 0x26U || game.ram[0x0342U] != 0x48U ||
         game.ram[0x0343U] != 2U || game.ram[0x0344U] != 0x24U ||
         game.ram[0x0348U] != 2U || game.ram[0x0349U] != 0x24U) return 38;
     /* ChkForLandJumpSpring initializes the shared spring handoff before
@@ -156,6 +162,7 @@ int main(void)
     game.ram[0x06dbU] = 0xaaU;
     game.ram[0x0786U] = 0xaaU;
     game.ram[0x070eU] = 0U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0709U] != 0x70U ||
         game.ram[0x06dbU] != 0xf9U || game.ram[0x0786U] != 3U ||
         game.ram[0x070eU] != 1U || game.ram[0x001dU] != 0U ||
@@ -170,6 +177,7 @@ int main(void)
     game.ram[0x06dbU] = 0xf9U;
     game.ram[0x0786U] = 2U;
     game.ram[0x070eU] = 2U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
         game.ram[0x00ceU] != 0x73U || game.ram[0x009fU] != 3U ||
         game.ram[0x0433U] != 0x55U || game.ram[0x0709U] != 0x88U ||
@@ -190,6 +198,7 @@ int main(void)
     game.ram[0x0754U] = 1U;
     game.ram[0x0490U] = 0xffU;
     game.ram[0x0644U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE ||
         game.ram[0x0086U] != 0x33U ||
         game.ram[0x0057U] != 0U || game.ram[0x0785U] != 0x10U ||
@@ -209,6 +218,7 @@ int main(void)
     game.ram[0x0705U] = 0x80U;
     game.ram[0x000eU] = 8U;
     game.ram[0x0522U] = 0x61U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U) return 11;
     if (game.ram[0x0086U] != 0x20U || game.ram[0x0057U] != 0x10U ||
         game.ram[0x0490U] != 0xfdU || game.ram[0x0705U] != 0x80U) return 12;
@@ -218,10 +228,12 @@ int main(void)
     game.ram[0x070eU] = 0U;
     game.ram[0x0490U] = 0U;
     game.ram[0x0522U] = 0x67U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U ||
         game.ram[0x0490U] != 0xfdU || game.ram[0x0057U] != 0x10U) return 32;
     game.ram[0x070eU] = 1U;
     game.ram[0x0490U] = 0U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U ||
         game.ram[0x0490U] != 0xffU || game.ram[0x0057U] != 0x10U) return 33;
 
@@ -242,6 +254,7 @@ int main(void)
     game.ram[0x000eU] = 8U;
     game.ram[0x00ffU] = 0U;
     game.ram[0x0522U] = 0x6cU;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U ||
         game.ram[0x03c4U] != 0x20U || game.ram[0x00ffU] != 0x10U ||
         game.ram[0x06deU] != 0xa0U || game.ram[0x000eU] != 2U) return 31;
@@ -261,6 +274,7 @@ int main(void)
     /* Small Mario selects BlockBufferAdderData[$02]=$0e, whose head probe
      * is X+8,Y+18.  At (X,Y)=(20,34), this is block-buffer $05f2. */
     game.ram[0x05f2U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U ||
         game.ram[0x0026U] != 0x11U || game.ram[0x03e8U] != 0x51U ||
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||
@@ -277,6 +291,7 @@ int main(void)
     game.ram[0x00ceU] = 0x34U;
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x05f2U] = 0xc2U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) != 2U || game.ram[0x05f2U] != 0U ||
         game.ram[0x00feU] != 1U) return 46;
     /* HeadChk branches through NYSpd in water before PlayerHeadCollision:
@@ -293,6 +308,7 @@ int main(void)
     game.ram[0x0026U] = 0U;
     game.ram[0x0784U] = 0U;
     game.ram[0x05f2U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
         game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U ||
         game.ram[0x0784U] != 0U) return 31;
@@ -311,6 +327,7 @@ int main(void)
     game.ram[0x0784U] = 1U;
     game.ram[0x0026U] = 0U;
     game.ram[0x05f2U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
         game.ram[0x0026U] != 0U || game.ram[0x05f2U] != 0x51U) return 35;
 
@@ -327,6 +344,7 @@ int main(void)
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x00ffU] = 0U;
     game.ram[0x05f2U] = 0x61U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U ||
         game.ram[0x00ffU] != 2U) return 34;
 
@@ -357,6 +375,7 @@ int main(void)
     game.ram[0x00ceU] = 0x34U;
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x05f2U] = 0x5fU;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U ||
         game.ram[0x0026U] != 0x11U || game.ram[0x03e8U] != 0xc4U ||
         game.ram[0x05f2U] != 0x23U || game.ram[0x009fU] != 0U ||

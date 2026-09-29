@@ -8,6 +8,7 @@ param(
 )
 
 $toolDirectory = Split-Path -Parent $Compiler
+$librarian = Join-Path $toolDirectory 'lib16.exe'
 $runtimeLibrary = Join-Path $RuntimeDirectory 'LLIBCE.LIB'
 $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
@@ -59,7 +60,7 @@ $sources = @(
     'game/enemy/side_collision.c',
     'game/area/block_buffer.c',
     'game/area/area_data.c',
-    'game/boot.c', 'game/dispatcher.c', 'game/engine.c', 'game/engine_slots.c', 'game/engine_tail.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/area/block_metatile.c', 'game/enemy/stream.c', 'game/enemy/group.c', 'game/enemy/init.c', 'game/enemy/init_targets.c', 'game/enemy/loop.c', 'game/enemy/core.c', 'game/enemy/dispatch_targets.c', 'game/enemy/movement.c', 'game/enemy/frenzy.c', 'game/player.c', 'game/player_control.c', 'game/player_transition.c', 'game/player_modes.c', 'game/player_end_level.c', 'game/player_movement.c', 'game/scroll.c', 'game/entry.c',
+    'game/boot.c', 'game/dispatcher.c', 'game/engine.c', 'game/engine_slots.c', 'game/engine_tail.c', 'game/frame_root.c', 'game/title_modes.c', 'game/terminal_modes.c', 'game/game.c', 'game/audio.c', 'game/area.c', 'game/area/block_metatile.c', 'game/enemy/stream.c', 'game/enemy/group.c', 'game/enemy/init.c', 'game/enemy/init_targets.c', 'game/enemy/loop.c', 'game/enemy/core.c', 'game/enemy/dispatch_targets.c', 'game/enemy/movement.c', 'game/enemy/frenzy.c', 'game/player.c', 'game/player/terrain.c', 'game/player_control.c', 'game/player_transition.c', 'game/player_modes.c', 'game/player_end_level.c', 'game/player_movement.c', 'game/scroll.c', 'game/entry.c',
     'game/objects.c', 'game/fireball/fireball_spawn.c', 'game/fireball/fireball_core.c', 'game/world/movement.c', 'game/world/gravity.c', 'game/world/collision.c', 'game/bridge.c', 'game/oam/bullet_bill_gfx.c', 'game/oam/hammer_gfx.c', 'game/oam/firebar_gfx.c', 'game/oam/vine_gfx.c', 'game/enemy_bounds.c',
     'game/oam/power_up_gfx.c', 'game/oam/object_position.c', 'game/oam/player_gfx.c', 'game/oam/fireball_gfx.c', 'game/oam/block_gfx.c', 'game/oam/goomba_gfx.c',
     'game/fireball/bubble.c', 'game/oam/piranha_gfx.c', 'game/oam/cheep_gfx.c',
@@ -92,7 +93,30 @@ try {
     # LINK 5.60 has a short physical-line limit even inside response files.
     # Keep every continuation line short and stage the stack object locally.
     Copy-Item -LiteralPath $stackObject -Destination 'mysmb-stack.obj' -Force
-    $objectLine = (($objects + 'mysmb-stack.obj') -join "+`n")
+    # LINK 5.60 rejects the runtime library once the direct input set grows
+    # past the observed object-file threshold. Group compiled objects into
+    # small OMF libraries; keep the main object explicit as the entry root.
+    if (!(Test-Path -LiteralPath $librarian)) {
+        throw 'The configured compiler directory lacks lib16.exe.'
+    }
+    $entryObject = 'platform_dos16_main_dos16.c'
+    $members = @($objects | Where-Object { $_ -ne $entryObject })
+    $libraries = @()
+    for ($first = 0; $first -lt $members.Count; $first += 16) {
+        # LIB treats '-' as a member-removal operator even in a filename.
+        $library = 'smbgrp{0:D2}.lib' -f ($first / 16)
+        if (Test-Path -LiteralPath $library) {
+            Remove-Item -LiteralPath $library -Force
+        }
+        $last = [Math]::Min($first + 15, $members.Count - 1)
+        $libraryArgs = @('/NOLOGO', $library)
+        $libraryArgs += @($members[$first..$last] | ForEach-Object { '+' + $_ })
+        $libraryArgs += ';'
+        & $librarian @libraryArgs
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        $libraries += $library
+    }
+    $objectLine = ((@($entryObject, 'mysmb-stack.obj') + $libraries) -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
     # The default LINK 5.60 segment table overflows as shared translation

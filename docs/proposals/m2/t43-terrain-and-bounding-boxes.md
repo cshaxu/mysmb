@@ -1,0 +1,641 @@
+# M2 T43: terrain collision and bounding boxes
+
+## Task contract
+
+Admitted under the continuing owner-approved M2 mandate after cd70ae9.
+Baseline1,382/1,992. Scope150 unique nodes:136 expected new and14 retained
+matches, maximum1,518/1,992. Exact labels, current receivers and per-S expected
+subsets are listed below. Only S1 is admitted now; later S groups keep their
+current receivers until explicit admission. No investigation-only credit.
+
+The old13000 boundary split SprObjectCollisionCore before its two return
+labels. Include NoCollisionFound and CollisionFound, ending at13022 before
+BlockBufferChk_Enemy. The following slice starts13023, reducing its111 nodes
+to109. Source order is unchanged. This slice includes player and enemy terrain,
+fireball background and bounding boxes; its title reflects actual source.
+
+## Delivery and proof rules
+
+Each S implements one complete listed control/data chain. Map all branches,
+reads, writes, tables, entry/return registers and call/tail order first. Move
+its single production owner out of mixed legacy code as needed; remove old
+bodies after wiring the original caller. Do not build a parallel algorithm.
+Platform code contains no gameplay and no runtime emulator is introduced.
+
+Original proof uses naturally reached or controlled-input original NMI roots,
+with no ROM/PC/stack/register/output patch. Compare complete child inputs and
+used return state before any child replay. Verify the same root separately
+with real native descendants and name every remaining child discrepancy.
+Local passing tests or observed gameplay do not replace this logic track.
+Retained matches are rechecked at relevant changed boundaries, never recounted.
+
+Each S runs its focused native CTest, affected caller tests, strict C90 x86/x64,
+DOS16 compile/link, platform purity and refreshed three EXEs once per P.
+Each label's row receives both proof tracks or an accepted exact transfer.
+T closure adds a cross-chain matrix and final integrated delivery. No isolated
+caller result claims descendant or whole-game equivalence.
+
+Owner-local ROM and listing remain nonredistributable research/build inputs.
+Generated resources, raw records and logs stay in ignored build. S1 permits
+2,048 controlled cases and100 MB raw records, with20-second process deadlines
+and checkpoints. Coordinator owns cleanup after dependent regressions.
+Three owner-authorized EXEs are the delivery exception; DOS remains link-only.
+
+## Source-ordered S chains
+
+### S1: Player terrain root: head, feet and sides
+
+Source lines11924-12146; entry `PlayerBGCollision`; final label `AreaChangeTimerData`. Shared owner: `src/game/player/terrain.c`.
+31 scoped nodes; 31 expected new; 0 retained.
+Logic route and dependency boundary: Coin/axe, climbing, pipe, impede, metatile classification, block-buffer and head-hit children remain separate; verify their complete inputs and terminal tail transfers.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `PlayerBGUpperExtent`, `PlayerBGCollision`, `SetFallS`, `SetPSte`, `ChkOnScr`, `ExPBGCol`, `ChkCollSize`, `GBBAdr`, `HeadChk`, `SolidOrClimb`, `NYSpd`, `DoFootCheck`, `AwardTouchedCoin`, `ChkFootMTile`, `ContChk`, `LandPlyr`, `InitSteP`, `DoPlayerSideCheck`, `SideCheckLoop`, `BHalf`, `ExSCH`, `CheckSideMTiles`, `ContSChk`, `ChkPBtm`, `PipeDwnS`, `PlyrPipe`, `SetCATmr`, `ChkGERtn`, `StopPlayerMove`, `ExCSM`, `AreaChangeTimerData`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 11924 | `PlayerBGUpperExtent` | open | M2 T17 S6 |
+| 11927 | `PlayerBGCollision` | open | M2 T17 S6 |
+| 11942 | `SetFallS` | open | M2 T17 S6 |
+| 11943 | `SetPSte` | open | M2 T17 S6 |
+| 11944 | `ChkOnScr` | open | M2 T17 S6 |
+| 11952 | `ExPBGCol` | open | M2 T17 S6 |
+| 11954 | `ChkCollSize` | open | M2 T17 S6 |
+| 11964 | `GBBAdr` | open | M2 T17 S6 |
+| 11971 | `HeadChk` | open | M2 T17 S6 |
+| 11992 | `SolidOrClimb` | open | M2 T17 S6 |
+| 11997 | `NYSpd` | open | M2 T17 S6 |
+| 12000 | `DoFootCheck` | open | M2 T17 S6 |
+| 12019 | `AwardTouchedCoin` | open | M2 T17 S6 |
+| 12022 | `ChkFootMTile` | open | M2 T17 S6 |
+| 12030 | `ContChk` | open | M2 T17 S6 |
+| 12040 | `LandPlyr` | open | M2 T17 S6 |
+| 12049 | `InitSteP` | open | M2 T17 S6 |
+| 12052 | `DoPlayerSideCheck` | open | M2 T17 S6 |
+| 12059 | `SideCheckLoop` | open | M2 T17 S6 |
+| 12075 | `BHalf` | open | M2 T17 S6 |
+| 12086 | `ExSCH` | open | M2 T17 S6 |
+| 12088 | `CheckSideMTiles` | open | M2 T17 S6 |
+| 12094 | `ContSChk` | open | M2 T17 S6 |
+| 12101 | `ChkPBtm` | open | M2 T17 S6 |
+| 12111 | `PipeDwnS` | open | M2 T17 S6 |
+| 12115 | `PlyrPipe` | open | M2 T17 S6 |
+| 12124 | `SetCATmr` | open | M2 T17 S6 |
+| 12126 | `ChkGERtn` | open | M2 T17 S6 |
+| 12140 | `StopPlayerMove` | open | M2 T17 S6 |
+| 12142 | `ExCSM` | open | M2 T17 S6 |
+| 12144 | `AreaChangeTimerData` | open | M2 T17 S6 |
+
+### S2: Coin and axe metatile effects
+
+Source lines12147-12168; entry `HandleCoinMetatile / HandleAxeMetatile`; final label `ErACM`. Shared owner: `src/game/player/terrain_metatiles.c`.
+3 scoped nodes; 3 expected new; 0 retained.
+Logic route and dependency boundary: Erase block-buffer tile, award coin and axe mode transition; existing coin award and bridge setup are children.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `HandleCoinMetatile`, `HandleAxeMetatile`, `ErACM`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12147 | `HandleCoinMetatile` | open | M2 T17 S6 |
+| 12152 | `HandleAxeMetatile` | open | M2 T17 S6 |
+| 12159 | `ErACM` | open | M2 T17 S6 |
+
+### S3: Flagpole and vine climbing
+
+Source lines12169-12262; entry `HandleClimbing`; final label `ExPVne`. Shared owner: `src/game/player/climbing.c`.
+14 scoped nodes; 14 expected new; 0 retained.
+Logic route and dependency boundary: Bind positioning and score tables; flagpole/vine state, facing, page carry, sound and score; preserve caller exits.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `ClimbXPosAdder`, `ClimbPLocAdder`, `FlagpoleYPosData`, `HandleClimbing`, `ExHC`, `ChkForFlagpole`, `FlagpoleCollision`, `ChkFlagpoleYPosLoop`, `MtchF`, `RunFR`, `VineCollision`, `PutPlayerOnVine`, `SetVXPl`, `ExPVne`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12169 | `ClimbXPosAdder` | open | M2 T17 S6 |
+| 12172 | `ClimbPLocAdder` | open | M2 T17 S6 |
+| 12175 | `FlagpoleYPosData` | open | M2 T17 S6 |
+| 12178 | `HandleClimbing` | open | M2 T17 S6 |
+| 12184 | `ExHC` | open | M2 T17 S6 |
+| 12186 | `ChkForFlagpole` | open | M2 T17 S6 |
+| 12192 | `FlagpoleCollision` | open | M2 T17 S6 |
+| 12212 | `ChkFlagpoleYPosLoop` | open | M2 T17 S6 |
+| 12217 | `MtchF` | open | M2 T17 S6 |
+| 12218 | `RunFR` | open | M2 T17 S6 |
+| 12222 | `VineCollision` | open | M2 T17 S6 |
+| 12231 | `PutPlayerOnVine` | open | M2 T17 S6 |
+| 12244 | `SetVXPl` | open | M2 T17 S6 |
+| 12259 | `ExPVne` | open | M2 T17 S6 |
+
+### S4: Invisible tiles and jumpspring landing
+
+Source lines12263-12294; entry `ChkInvisibleMTiles / ChkForLandJumpSpring`; final label `NoJSFnd`. Shared owner: `src/game/player/terrain_metatiles.c`.
+7 scoped nodes; 7 expected new; 0 retained.
+Logic route and dependency boundary: Invisible comparison flags, spring identities and activation; reached from player head/foot routes.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `ChkInvisibleMTiles`, `ExCInvT`, `ChkForLandJumpSpring`, `ExCJSp`, `ChkJumpspringMetatiles`, `JSFnd`, `NoJSFnd`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12263 | `ChkInvisibleMTiles` | open | M2 T17 S6 |
+| 12267 | `ExCInvT` | open | M2 T17 S6 |
+| 12273 | `ChkForLandJumpSpring` | open | M2 T17 S6 |
+| 12284 | `ExCJSp` | open | M2 T17 S6 |
+| 12286 | `ChkJumpspringMetatiles` | open | M2 T17 S6 |
+| 12292 | `JSFnd` | open | M2 T17 S6 |
+| 12293 | `NoJSFnd` | open | M2 T17 S6 |
+
+### S5: Vertical pipe entry and warp selection
+
+Source lines12295-12342; entry `HandlePipeEntry`; final label `ExPipeE`. Shared owner: `src/game/player/pipe_entry.c`.
+3 scoped nodes; 3 expected new; 0 retained.
+Logic route and dependency boundary: Two foot tiles, directional input, timers, world lookup and area transition; original pipe route.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `HandlePipeEntry`, `GetWNum`, `ExPipeE`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12295 | `HandlePipeEntry` | open | M2 T17 S6 |
+| 12326 | `GetWNum` | open | M2 T17 S6 |
+| 12341 | `ExPipeE` | open | M2 T17 S6 |
+
+### S6: Player side impediment
+
+Source lines12343-12379; entry `ImpedePlayerMove`; final label `ExIPM`. Shared owner: `src/game/player/impede.c`.
+5 scoped nodes; 5 expected new; 0 retained.
+Logic route and dependency boundary: Direction-dependent CPY/ADC/SBC carry, speed80 edge, page wrap and collision latch; called by terrain/platforms.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `ImpedePlayerMove`, `RImpd`, `NXSpd`, `PlatF`, `ExIPM`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12343 | `ImpedePlayerMove` | open | M2 T17 S6 |
+| 12354 | `RImpd` | open | M2 T17 S6 |
+| 12358 | `NXSpd` | open | M2 T17 S6 |
+| 12365 | `PlatF` | open | M2 T17 S6 |
+| 12372 | `ExIPM` | open | M2 T17 S6 |
+
+### S7: Metatile classification
+
+Source lines12380-12419; entry `CheckForSolidMTiles / CheckForClimbMTiles / CheckForCoinMTiles`; final label `ExEBG`. Shared owner: `src/game/world/metatiles.c`.
+8 scoped nodes; 7 expected new; 1 retained.
+Logic route and dependency boundary: Bind threshold tables, attribute rotation, coin sound and exact flags; shared ExEBG remains retained evidence.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `SolidMTileUpperExt`, `CheckForSolidMTiles`, `ClimbMTileUpperExt`, `CheckForClimbMTiles`, `CheckForCoinMTiles`, `CoinSd`, `GetMTileAttrib`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12380 | `SolidMTileUpperExt` | open | M2 T17 S6 |
+| 12383 | `CheckForSolidMTiles` | open | M2 T17 S6 |
+| 12388 | `ClimbMTileUpperExt` | open | M2 T17 S6 |
+| 12391 | `CheckForClimbMTiles` | open | M2 T17 S6 |
+| 12396 | `CheckForCoinMTiles` | open | M2 T17 S6 |
+| 12403 | `CoinSd` | open | M2 T17 S6 |
+| 12407 | `GetMTileAttrib` | open | M2 T17 S6 |
+| 12415 | `ExEBG` | ROM-match complete | M2 T31 S2 |
+
+### S8: Enemy terrain dispatch and stun
+
+Source lines12420-12522; entry `EnemyToBGCollisionDet / ChkToStunEnemies`; final label `ExEBGChk`. Shared owner: `src/game/enemy/background.c`.
+18 scoped nodes; 12 expected new; 6 retained.
+Logic route and dependency boundary: Preserve certified dispatch; bind state/speed data, block-hit effects and A-based demotion/stun; landing remains next child.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `EnemyBGCStateData`, `EnemyBGCXSpdData`, `NoEToBGCollision`, `HandleEToBGCollision`, `GiveOEPoints`, `ChkToStunEnemies`, `Demote`, `SetStun`, `SetWYSpd`, `SetNotW`, `ChkBBill`, `NoCDirF`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12420 | `EnemyBGCStateData` | open | M2 T17 S6 |
+| 12423 | `EnemyBGCXSpdData` | open | M2 T17 S6 |
+| 12426 | `EnemyToBGCollisionDet` | ROM-match complete | M2 T31 S2 |
+| 12439 | `DoIDCheckBGColl` | ROM-match complete | M2 T31 S2 |
+| 12443 | `HBChk` | ROM-match complete | M2 T31 S2 |
+| 12446 | `CInvu` | ROM-match complete | M2 T31 S2 |
+| 12452 | `YesIn` | ROM-match complete | M2 T31 S2 |
+| 12455 | `NoEToBGCollision` | open | M2 T17 S6 |
+| 12461 | `HandleEToBGCollision` | open | M2 T17 S6 |
+| 12476 | `GiveOEPoints` | open | M2 T17 S6 |
+| 12480 | `ChkToStunEnemies` | open | M2 T17 S6 |
+| 12489 | `Demote` | open | M2 T17 S6 |
+| 12491 | `SetStun` | open | M2 T17 S6 |
+| 12503 | `SetWYSpd` | open | M2 T17 S6 |
+| 12504 | `SetNotW` | open | M2 T17 S6 |
+| 12509 | `ChkBBill` | open | M2 T17 S6 |
+| 12515 | `NoCDirF` | open | M2 T17 S6 |
+| 12518 | `ExEBGChk` | ROM-match complete | M2 T31 S2 |
+
+### S9: Enemy landing and grounded state
+
+Source lines12523-12616; entry `LandEnemyProperly`; final label `SetD6Ste`. Shared owner: `src/game/enemy/background.c`.
+14 scoped nodes; 14 expected new; 0 retained.
+Logic route and dependency boundary: Vertical nibble windows, state tables, red-koopa edge, direction and falling transitions; original ground route.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `LandEnemyProperly`, `SChkA`, `ChkLandedEnemyState`, `SetForStn`, `ExSteChk`, `ProcEnemyDirection`, `InvtD`, `CNwCDir`, `LandEnemyInitState`, `NMovShellFallBit`, `ChkForRedKoopa`, `Chk2MSBSt`, `GetSteFromD`, `SetD6Ste`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12523 | `LandEnemyProperly` | open | M2 T17 S6 |
+| 12535 | `SChkA` | open | M2 T17 S6 |
+| 12537 | `ChkLandedEnemyState` | open | M2 T17 S6 |
+| 12552 | `SetForStn` | open | M2 T17 S6 |
+| 12556 | `ExSteChk` | open | M2 T17 S6 |
+| 12558 | `ProcEnemyDirection` | open | M2 T17 S6 |
+| 12571 | `InvtD` | open | M2 T17 S6 |
+| 12575 | `CNwCDir` | open | M2 T17 S6 |
+| 12580 | `LandEnemyInitState` | open | M2 T17 S6 |
+| 12589 | `NMovShellFallBit` | open | M2 T17 S6 |
+| 12597 | `ChkForRedKoopa` | open | M2 T17 S6 |
+| 12603 | `Chk2MSBSt` | open | M2 T17 S6 |
+| 12610 | `GetSteFromD` | open | M2 T17 S6 |
+| 12611 | `SetD6Ste` | open | M2 T17 S6 |
+
+### S10: Enemy side, jump and hammer terrain
+
+Source lines12617-12731; entry `DoEnemySideCheck / EnemyJump / HammerBroBGColl`; final label `NoUnderHammerBro`. Shared owner: `src/game/enemy/background.c`.
+16 scoped nodes; 9 expected new; 7 retained.
+Logic route and dependency boundary: Retain certified side/jump leaves; complete bump response, distance borrow, landing and hammer underside path.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `ChkForBump_HammerBroJ`, `NoBump`, `InvEnemyDir`, `PlayerEnemyDiff`, `EnemyLanding`, `HammerBroBGColl`, `KillEnemyAboveBlock`, `UnderHammerBro`, `NoUnderHammerBro`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12617 | `DoEnemySideCheck` | ROM-match complete | M2 T31 S2 |
+| 12624 | `SdeCLoop` | ROM-match complete | M2 T31 S2 |
+| 12632 | `NextSdeC` | ROM-match complete | M2 T31 S2 |
+| 12636 | `ExESdeC` | ROM-match complete | M2 T31 S2 |
+| 12638 | `ChkForBump_HammerBroJ` | open | M2 T17 S6 |
+| 12646 | `NoBump` | open | M2 T17 S6 |
+| 12654 | `InvEnemyDir` | open | M2 T17 S6 |
+| 12660 | `PlayerEnemyDiff` | open | M2 T17 S6 |
+| 12671 | `EnemyLanding` | open | M2 T17 S6 |
+| 12679 | `SubtEnemyYPos` | ROM-match complete | M2 T31 S2 |
+| 12686 | `EnemyJump` | ROM-match complete | M2 T31 S2 |
+| 12701 | `DoSide` | ROM-match complete | M2 T31 S2 |
+| 12705 | `HammerBroBGColl` | open | M2 T17 S6 |
+| 12711 | `KillEnemyAboveBlock` | open | M2 T17 S6 |
+| 12717 | `UnderHammerBro` | open | M2 T17 S6 |
+| 12726 | `NoUnderHammerBro` | open | M2 T17 S6 |
+
+### S11: Enemy ground query and pass-through tiles
+
+Source lines12732-12750; entry `ChkUnderEnemy / ChkForNonSolids`; final label `NSFnd`. Shared owner: `src/game/enemy/background.c`.
+3 scoped nodes; 3 expected new; 0 retained.
+Logic route and dependency boundary: Exact query adder and returned metatile/flags, non-solid identities; common ground caller.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `ChkUnderEnemy`, `ChkForNonSolids`, `NSFnd`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12732 | `ChkUnderEnemy` | open | M2 T17 S6 |
+| 12737 | `ChkForNonSolids` | open | M2 T17 S6 |
+| 12747 | `NSFnd` | open | M2 T17 S6 |
+
+### S12: Fireball background collision
+
+Source lines12751-12790; entry `FireballBGCollision`; final label `InitFireballExplode`. Shared owner: `src/game/world/fireball_background.c`.
+3 scoped nodes; 3 expected new; 0 retained.
+Logic route and dependency boundary: Offscreen/Y gates, ground query, bounce flag and explosion; retain source order.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `FireballBGCollision`, `ClearBounceFlag`, `InitFireballExplode`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12751 | `FireballBGCollision` | open | M2 T17 S6 |
+| 12772 | `ClearBounceFlag` | open | M2 T17 S6 |
+| 12777 | `InitFireballExplode` | open | M2 T17 S6 |
+
+### S13: Object bounding-box entry selection
+
+Source lines12791-12877; entry `GetFireballBoundBox / GetEnemyBoundBox`; final label `MoveBoundBoxOffscreen`. Shared owner: `src/game/world/bounding_box.c`.
+11 scoped nodes; 11 expected new; 0 retained.
+Logic route and dependency boundary: Bind control data, miscellaneous/platform entries, masked offscreen computation and offscreen box writes; core is next child.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `BoundBoxCtrlData`, `GetFireballBoundBox`, `GetMiscBoundBox`, `FBallB`, `GetEnemyBoundBox`, `SmallPlatformBoundBox`, `GetMaskedOffScrBits`, `CMBits`, `LargePlatformBoundBox`, `SetupEOffsetFBBox`, `MoveBoundBoxOffscreen`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12791 | `BoundBoxCtrlData` | open | M2 T17 S6 |
+| 12805 | `GetFireballBoundBox` | audited; evidence incomplete | M2 T17 S6 |
+| 12813 | `GetMiscBoundBox` | open | M2 T17 S6 |
+| 12819 | `FBallB` | open | M2 T17 S6 |
+| 12822 | `GetEnemyBoundBox` | open | M2 T17 S6 |
+| 12828 | `SmallPlatformBoundBox` | open | M2 T17 S6 |
+| 12833 | `GetMaskedOffScrBits` | open | M2 T17 S6 |
+| 12844 | `CMBits` | open | M2 T17 S6 |
+| 12850 | `LargePlatformBoundBox` | open | M2 T17 S6 |
+| 12857 | `SetupEOffsetFBBox` | open | M2 T17 S6 |
+| 12866 | `MoveBoundBoxOffscreen` | open | M2 T17 S6 |
+
+### S14: Bounding-box coordinates and edge clipping
+
+Source lines12878-12955; entry `BoundingBoxCore`; final label `NoOfs2`. Shared owner: `src/game/world/bounding_box.c`.
+7 scoped nodes; 7 expected new; 0 retained.
+Logic route and dependency boundary: Original table offsets, byte additions, horizontal screen wrap and clipping; full RAM/returned-register proof.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `BoundingBoxCore`, `CheckRightScreenBBox`, `SORte`, `NoOfs`, `CheckLeftScreenBBox`, `SOLft`, `NoOfs2`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12878 | `BoundingBoxCore` | open | M2 T17 S6 |
+| 12916 | `CheckRightScreenBBox` | open | M2 T17 S6 |
+| 12935 | `SORte` | open | M2 T17 S6 |
+| 12936 | `NoOfs` | open | M2 T17 S6 |
+| 12939 | `CheckLeftScreenBBox` | open | M2 T17 S6 |
+| 12948 | `SOLft` | open | M2 T17 S6 |
+| 12949 | `NoOfs2` | open | M2 T17 S6 |
+
+### S15: Shared box collision geometry
+
+Source lines12956-13022; entry `PlayerCollisionCore / SprObjectCollisionCore`; final label `CollisionFound`. Shared owner: `src/game/world/geometry.c`.
+7 scoped nodes; 7 expected new; 0 retained.
+Logic route and dependency boundary: Both entries, two-axis loop, equality/wrapping branches, carry/Y return and RAM6/7; include both terminal labels.
+Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
+Expected-new subset: `PlayerCollisionCore`, `SprObjectCollisionCore`, `CollisionCoreLoop`, `SecondBoxVerticalChk`, `FirstBoxGreater`, `NoCollisionFound`, `CollisionFound`.
+
+| Line | Node | Incoming status | Current receiver |
+| --- | --- | --- | --- |
+| 12956 | `PlayerCollisionCore` | open | M2 T17 S6 |
+| 12959 | `SprObjectCollisionCore` | open | M2 T17 S6 |
+| 12964 | `CollisionCoreLoop` | open | M2 T17 S6 |
+| 12979 | `SecondBoxVerticalChk` | open | M2 T17 S6 |
+| 12989 | `FirstBoxGreater` | open | M2 T17 S6 |
+| 13002 | `NoCollisionFound` | open | M2 T17 S6 |
+| 13007 | `CollisionFound` | open | M2 T17 S6 |
+
+## S1 admission
+
+All31 S1 labels above are open and expected new, from PlayerBGUpperExtent
+through AreaChangeTimerData. Baseline1,382, maximum1,413. Coordinator accepts
+transfer-219 from M2 T17 S6. Focused test: mysmb.player-terrain-chain.
+Original NMI player background route supplies the root; head/feet/sides remain
+one state phase, including early exits and terminal coin/axe/impede transfers.
+Metatile classifiers, block query, head-hit, climb/pipe and award children keep
+their existing responsibility until their respective admissions.
+
+First audit compares the existing split native helpers with original branch,
+scratch and call order, then replaces the root in shared player/terrain.c.
+The same single path serves DOS16, x86 and x64. All31 exact dispositions,
+complete child inputs, data binding and separate actual-child gaps are needed
+before credit. Similar-issue sweep covers duplicate head/feet/side paths,
+climbing-to-falling state, returned probe scratch, terminal call handling,
+masked table indexing, flag lifetimes and hidden host gameplay.
+
+## S1 initial source audit (no completion credit)
+
+Admission gate passes:31 scope,31 expected-new, all open, baseline1,382,
+maximum1,413, accepted S1 ownership. Documentation governance also passes.
+Direct owner-ROM decoding maps DC64-DE02 to192 instructions and56 conditional
+branches; table bytes DC62-DC63 and DE03-DE04 are adjacent data. Coverage is
+pending, not inferred from decoding. The ignored source-audit record lists
+all control targets against the original symbols and marks external children.
+
+Three verified translation differences guide the full root migration:
+
+- Original normal or climbing Player_State (0 or3) becomes falling2 before
+  the on-screen check when not swimming. The old native root handles only0.
+- Original HeadChk tests returned query scratch RAM04; the old native head
+  helper substitutes Player_Y_Position low nibble. Child outputs must become
+  the sole source for the root's decisions.
+- Original upper-extent index is PlayerSize, incremented when crouching;
+  the old native helper reduces both to booleans. Bind source bytes and exact
+  byte indexing instead of inventing saturation behavior.
+
+The source also uses one live EB probe cursor and RAM00/01 foot/side scratch
+across all three phases. Existing native split helpers recompute tables and
+retain copied terrain structures. They require a complete ABI/write-footprint
+comparison before reuse. No production fix or new conformance credit has yet
+been claimed for S1. The next action is to establish exact child seams and
+replace this single root/phase chain, preserving separately owned children.
+
+## S1 structural migration checkpoint (not closure)
+
+Six existing functions moved verbatim from player.c to player/terrain.c:
+collision base, background root, head, feet, sides and side-metatile handling.
+Their single production definitions are verified; function-body hashes are
+recorded locally. Existing coin/climb children remain in player.c and expose
+an internal terrain_children.h seam. No original-ROM semantic repair or new
+node credit is claimed by this move. Build manifests include the new owner.
+
+All119 shared files compile with strict C90 on x86/x64 and product self-tests
+pass. Five affected suites pass per width: player route, friction, collision
+regression, hazard and platform. The sixth, player bounding-box smoke, fails
+identically against both the previous118-file object set and the new119-file
+set. It remains a known pre-existing failure, not a relaxed test assertion.
+An initial test link ran before x86 compilation finished; that harness run was
+discarded and all twelve suite results were rerun after the build completed.
+
+DOS compilation passes. LINK5.60 rejects the existing LLIBCE.LIB with L1104
+on the new object set. Link-only retries with a larger segment table and an
+identical locally staged library reproduce the error; no sibling files were
+modified. DOS link is pending diagnosis. Delivered assets remain unchanged;
+no P commit or three-target completion is claimed. All temporary build and
+research outputs remain ignored below build/m2-t43-s1.
+
+S1 remains active. Next: resolve the linker failure and establish exact
+original child interfaces for the complete terrain chain, then migrate its
+branch/call/scratch semantics and perform original-ROM proof before closure.
+
+## S1 linker recovery and entry-state checkpoint (not closure)
+
+The prior L1104 failure is resolved. A control link of the previous object set
+against the same unchanged runtime succeeds. The123-source-object set plus
+stack fails as direct inputs, but grouping the two player objects in an OMF
+library succeeds. This isolates sensitivity to direct linker input count;
+no claim is made about an unmeasured internal file-handle limit.
+
+The DOS build now groups up to16 compiled objects per OMF library, leaving
+main and stack explicit. All119 shared sources still compile; no source is
+omitted or moved into the platform. LIB filenames avoid hyphens, which the old
+librarian parses as removal operators. Grouping and linking were checked first,
+then the complete checked-in build script passed end to end. Only the existing
+OLDNAMES warning remains. The final MZ header file size agrees with the output;
+the linker reports no unresolved symbols. Runtime inputs were read-only;
+local OMF libraries stay below ignored build.
+
+The terrain root now also performs the original state3-to2 transition on the
+non-swimming path before checking high Y. Both widths pass262,144 guard/state
+combinations with full RAM comparison and offscreen inputs that invoke no
+children. This is native/static branch evidence only, not original execution
+coverage or certification of the complete31-node chain. Original child ABI,
+head/foot/side state migration and dual closure proof remain unfinished.
+Assets remain the last committed delivery; this is not a new P or node credit.
+
+## S1 foot-phase checkpoint (not closure)
+
+The duplicated left/right landing paths now share DoFootCheck-ChkFootMTile-
+LandPlyr-InitSteP order. A left coin returns before the right query. Otherwise
+RAM00 receives right and RAM01 left; nonzero left selects the decision tile,
+while coordinate metadata comes from the last right query. Both feet reach
+the same axe branch. The invented metatile-minimum solid gate is removed;
+pipe processing follows Y alignment and precedes speed/force/stomp resets.
+Impede's terminal path stores MovingDir in RAM00 before invoking the child.
+Existing axe and spring effects are exposed as separately owned S2/S4 child
+bodies, with no proof credit for those descendants.
+
+The new focused player-terrain-chain native test checks nine call-order and
+state scenarios across both widths: early coin, right coin, either-foot axe,
+both selection paths landing, last-query contact nibble, terminal impede,
+spring-animation exit and hidden tiles. Test children assert ordering and
+metadata, including distinct left/right coordinates. Both widths pass; this
+is not original execution proof. The two changed production units compile
+under strict C90. Original192-instruction/56-branch root proof remains pending.
+
+Affected runs expose two additional existing assumptions, left unfixed in
+tracked tests pending original-ROM replay: collision_regression_smoke exits38
+because its isolated left axe expects left-address erasure, whereas original
+ErACM consumes the last query; player_route_smoke first fails its second climb
+step at line212 because state3 no longer persists through empty background.
+The pre-existing bounding-box failure remains. Friction, hazard and platform
+suites still pass on both widths. These failures are explicit open validation
+work, not waived or counted as success. No S1 node or P is closed, and assets
+remain unchanged. Next work completes the original root/child ABI and records
+these exact counterexamples in the original ROM before deciding test changes.
+
+## S1 original terrain control proof
+
+S1 P1 closes all31 expected control/data nodes:1,382 ->1,413/1,992.
+No scoped node is deferred or transferred. This certifies the terrain caller
+against its original child contracts, not the still-incomplete descendant
+implementations or whole-game behavior. T43 and M2 remain open.
+
+| Node | Original entry | Evidence and disposition |
+| --- | --- | --- |
+| PlayerBGUpperExtent | DC62 | Bound upper-extent data uses raw byte size plus wrapped crouch increment. ROM-match complete. |
+| PlayerBGCollision | DC64 | Disable, engine, swimming and vertical guards retain original order. ROM-match complete. |
+| SetFallS | DC82 | Normal and climbing non-swim states select falling state2. ROM-match complete. |
+| SetPSte | DC84 | Swimming stores1; falling selection stores2 before the screen guard. ROM-match complete. |
+| ChkOnScr | DC86 | High-Y1 gate precedes FF collision-mask initialization and low-Y guard. ROM-match complete. |
+| ExPBGCol | DC97 | Every entry early return leaves the appropriate prior writes intact. ROM-match complete. |
+| ChkCollSize | DC98 | Crouch, size and swimming choose the original three adder entries. ROM-match complete. |
+| GBBAdr | DCAB | Bound adder read initializes the single EB cursor shared by all phases. ROM-match complete. |
+| HeadChk | DCBA | Head query, coin, rising-speed, contact-nibble, solid/water/bounce and head-child order. ROM-match complete. |
+| SolidOrClimb | DCEA | Solid head contact suppresses bump sound only for metatile26. ROM-match complete. |
+| NYSpd | DCF2 | Head velocity stop stores1 and continues into the feet phase. ROM-match complete. |
+| DoFootCheck | DCF6 | Left coin returns before right query; otherwise both feet preserve original cursor order. ROM-match complete. |
+| AwardTouchedCoin | DD1A | All three coin sites perform the classifier sound before the terminal coin child. ROM-match complete. |
+| ChkFootMTile | DD1D | Left tile has priority; last right query supplies metadata; climb/speed/axe order is exact. ROM-match complete. |
+| ContChk | DD2D | Hidden and spring gates precede the last-query nibble and terminal impede branch. ROM-match complete. |
+| LandPlyr | DD44 | Spring child precedes Y alignment, then pipe child and vertical/stomp resets. ROM-match complete. |
+| InitSteP | DD5A | Spring-active and landed paths both store normal state0 before side checks. ROM-match complete. |
+| DoPlayerSideCheck | DD5E | Sides start at EB+2 and initialize RAM00 to2 without resetting the collision mask. ROM-match complete. |
+| SideCheckLoop | DD66 | Upper probes store EB, preserve exclusions and run both sides in source order. ROM-match complete. |
+| BHalf | DD85 | Lower probes reload the upper cursor, enforce vertical bounds and decrement RAM00. ROM-match complete. |
+| ExSCH | DD9B | Side early and exhausted-loop returns retain the original scratch state. ROM-match complete. |
+| CheckSideMTiles | DD9C | Hidden check precedes climb tail transfer. ROM-match complete. |
+| ContSChk | DDA9 | Coin and spring checks precede ordinary wall/pipe classification. ROM-match complete. |
+| ChkPBtm | DDBB | Normal state and facing-right gates precede the two pipe metatile comparisons. ROM-match complete. |
+| PipeDwnS | DDCE | Zero sprite attributes alone enqueue the pipe sound. ROM-match complete. |
+| PlyrPipe | DDD7 | Priority bit is ORed; aligned X skips the area timer write. ROM-match complete. |
+| SetCATmr | DDEA | Screen-left page selects one of the two bound timer values. ROM-match complete. |
+| ChkGERtn | DDF0 | Engine7 returns; engine8 changes to2; other engines retain their value. ROM-match complete. |
+| StopPlayerMove | DDFF | Impede receives the current RAM00 physical-side counter before returning. ROM-match complete. |
+| ExCSM | DE02 | Side terminal paths stop the root without another probe. ROM-match complete. |
+| AreaChangeTimerData | DE03 | Both original area-timer entries are consumed by the pipe route. ROM-match complete. |
+
+### Logic track and child boundary
+
+The original DC64-DE02 control range has192 instructions and56 conditional
+branches.1,034 controlled-input ordinary NMI routes execute all192 and109 of
+112 branch outcomes. DCFC's Y>=CF and DD71/DD90's Y>=E4/D0 exits are dominated
+by the root Y<CF guard for valid original object-slot inputs: head descendants
+do not increase Player_Y_Position, and LandPlyr only masks its low nibble;
+spring and pipe children do not change that coordinate. Those three outcomes
+are audited as unreachable from this root, not reported as executed. All31
+labels are accounted for, including both data consumers. Both timer entries
+and the raw, wrapped upper-extent index are checked against the bound PRG.
+
+Only RAM inputs at the naturally reached DC64 entry are controlled. ROM, PC,
+registers, stack and outputs are untouched. Observer-free original frames are
+identical in all1,034 cases. Metatile values0-255 are each exercised at head,
+selected foot and side, followed by state, cursor, size/crouch, nibble, spring
+and pipe-edge scenarios. Raw evidence occupies37,236,610 bytes, below100 MB;
+process deadlines are20 seconds. Original frame/OAM/palette/audio effects here
+are queued through RAM; the root does not directly write PPU/APU ports.
+
+The caller checker compares every child input RAM byte, excluding hardware
+stack return storage but retaining mapped0109-0139. Query entry kind and Y,
+metatile arguments, selected coordinates, side counter and pipe inputs are
+checked before installing any original child return. The passive recorder
+asserts query return Y and A against the original returned scratch. Coin carry
+and each consumed return are preserved. All1,034 caller results match on both
+widths. Pure metatile classifications are audited against their original
+four-group tables and exhaustive metatile routes; S4/S7 retain ownership of
+their leaf bodies and final organization.
+
+Separately, the real native root matches59/1,034 full RAM snapshots per width.
+No difference is masked to raise that count. Independent execution of every
+captured real child produces the following identical x86/x64 results. All
+consumed query metadata and coin carry match; remaining differences are only
+RAM00-07, and retain the named existing child owners.
+
+| Original child | Exact RAM matches / calls per width | Remaining owner / differences |
+| --- | ---: | --- |
+| BlockBufferColli_Head | 0/959 | Following block-buffer slice; RAM02-05 |
+| BlockBufferColli_Feet | 0/1928 | Following block-buffer slice; RAM02-05 |
+| BlockBufferColli_Side | 812/2600 | Following block-buffer slice; RAM02-05 |
+| CheckForCoinMTiles | 1722/1722 | Retained S7 classifier responsibility; no credit here |
+| PlayerHeadCollision | 0/59 | Existing block-head/VRAM descendant maintenance; RAM00,02-07 |
+| HandleCoinMetatile | 0/23 | S2 and its VRAM descendant; RAM00,02,03 |
+| HandleAxeMetatile | 0/3 | S2; RAM00 |
+| HandleClimbing | 159/159 | S3; no credit here |
+| ChkForLandJumpSpring | 177/177 | S4; no credit here |
+| HandlePipeEntry | 177/177 | S5; no credit here |
+| ImpedePlayerMove | 0/242 | S6; RAM00 |
+
+Total independent child matches are3,047/8,049 per width. This fresh evidence
+is available to the planned successor chains; it does not admit or close them.
+No child algorithm was rewritten to make the caller comparison pass. The
+transitional query adapter exposes the source cursor and entry kind while
+retaining the coordinate child's explicitly incomplete scratch/range behavior.
+Coin sound moved to its actual classifier boundary; the redundant coin
+forwarder was removed, leaving one existing effect implementation.
+
+### Operational track and review
+
+The terrain root now has one owner in game/player/terrain.c. Head, feet and
+sides consume one EB cursor; root guards and collision-mask initialization
+are not duplicated in fragments. The old asymmetric foot paths are replaced
+by the source left-priority/last-query sequence, and side predicates retain
+hidden/climb/coin/spring/state/facing/pipe order. Shared platform code is
+unchanged; all game semantics remain common to all three targets.
+
+Similar-issue sweep covered all three terrain phases, all production query
+call sites, duplicate table/base selection, terminal child exits, state reset,
+and direct fragment tests. The old generic coordinate helper and enemy query
+remain separate existing children; they receive no new certification. The
+legacy world landing helper has only a direct test caller and is not a
+production terrain owner or part of this conformance claim. Direct
+fragment tests explicitly supply the root's cursor/mask preconditions.
+
+Original cases0 and3 establish the two disputed regression expectations:
+an isolated left axe retains the left tile and erases the last right query's
+coordinate; climbing through empty background falls to state2. Case329 also
+confirms metatile1 reaches LandPlyr; the invented minimum-solid expectation
+was removed. The independent horizontal-climb fixture now explicitly restores
+its required state3. Assertions were changed only after those original runs.
+
+Focused player-terrain-chain, player-route and platform-purity tests pass;
+all nine retained T42 chain tests pass. The selected CTest set is12/13:
+core-smoke still stops at its old entrance-loop assertion. HEAD code with T42
+objects reproduces the identical assertion on both widths. The separate
+bounding-box suite also retains its independently reproduced baseline failure.
+Neither is waived as a pass. Five other affected suites, including collision,
+player route, friction, hazard and platforms, pass on both widths.
+
+All119 shared units compile as strict C90 on x86/x64. Both products pass
+self-tests and hidden-window creation/response probes without desktop input.
+DOS16 compiles and links the same shared sources using the recovered OMF
+library grouping; only the existing OLDNAMES warning remains. DOS graphical
+playability, resource binding and physical486SX performance are still unproved.
+An intermediate checker link overlapped object rebuilding and failed; that run
+was discarded. Final comparisons use the completed object sets and pass both
+widths. All temporary material stays below ignored build/m2-t43-s1.
+
+Reproduce the original routes using t43-player-terrain cases0-1033 with
+player-terrain-snapshot, entrance-children and pc-coverage. Compare using
+player_terrain_snapshot_check (caller), enemy_loop_actual_check (actual root)
+and player_terrain_children_check (independent actual children). Native CTest
+is mysmb.player-terrain-chain. The owner-authorized three EXEs are refreshed;
+no ROM, generated source, raw snapshot or research artifact is committed.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257063 | 39b332ca740e54520a6454ece92e9fa1aea68367d84d7509eb0859137105209d |
+| mysmb32.exe | 357781 | 43dd675a2db2632d5c09e3f8da773559f44a98b3084510d5d186c011aa0bbfd8 |
+| mysmb64.exe | 365660 | 80da88d761dcfd28e1ee342e2f1b1cbfc0a35210385c36ba65dca2f8a6bbd043 |

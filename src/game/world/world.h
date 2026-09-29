@@ -55,6 +55,13 @@ mysmb_u8 mysmb_world_query_player_block(struct mysmb_game *game,
                                         mysmb_u8 x_adder, mysmb_u8 y_adder,
                                         mysmb_u8 horizontal_contact,
                                         struct mysmb_player_terrain *terrain);
+enum {
+    MYSMB_TERRAIN_HEAD = 0,
+    MYSMB_TERRAIN_FEET = 1,
+    MYSMB_TERRAIN_SIDE = 2
+};
+mysmb_u8 mysmb_world_query_player_probe(struct mysmb_game *game,
+    mysmb_u8 *index, mysmb_u8 entry, struct mysmb_player_terrain *terrain);
 /* ROM EnemyLanding -> InitVStf. */
 void mysmb_world_land_enemy(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM BlockBufferChk_Enemy output. */

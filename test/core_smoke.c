@@ -1,3 +1,4 @@
+#include "terrain_entry.h"
 #include "game/dispatcher.h"
 #include "game/game.h"
 #include "game/frame_root.h"
@@ -252,6 +253,7 @@ int main(void)
     game.ram[0x0057U] = 2U;
     game.ram[0x0045U] = 1U;
     game.ram[0x05f2U] = 0x61U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U || game.ram[0x0086U] != 0x23U ||
         game.ram[0x0057U] != 2U || game.ram[0x0490U] != 0xfdU) {
         return 1;
@@ -263,6 +265,7 @@ int main(void)
     game.ram[0x0086U] = 0x23U;
     game.ram[0x0057U] = 2U;
     game.ram[0x05f2U] = 0xc2U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U || game.ram[0x05f2U] != 0U ||
         game.ram[0x075eU] != 1U || game.ram[0x0748U] != 1U ||
         game.ram[0x0057U] != 2U) {
@@ -279,6 +282,7 @@ int main(void)
     game.ram[0x00ceU] = 0x34U;
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x05f2U] = 0x61U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x009fU] != 1U) {
         return 1;
     }
@@ -287,6 +291,7 @@ int main(void)
     game.ram[0x0748U] = 0U;
     game.ram[0x009fU] = 0U;
     game.ram[0x05f2U] = 0xc3U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x05f2U] != 0U ||
         game.ram[0x075eU] != 1U || game.ram[0x0748U] != 1U ||
         game.ram[0x009fU] != 0U) {
@@ -311,6 +316,7 @@ int main(void)
     game.ram[0x0784U] = 0U;
     game.ram[0x03eeU] = 0U;
     game.ram[0x05f2U] = 0xc0U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x0026U] != 0x11U ||
         game.ram[0x05f2U] != 0x23U || game.ram[0x03e4U] != 0x20U ||
         game.ram[0x03e6U] != 0xd2U || game.ram[0x03e8U] != 0xc4U ||
@@ -321,6 +327,7 @@ int main(void)
     game.ram[0x0784U] = 0U;
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x05f2U] = 0xc1U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x001bU] != 0x2eU ||
         game.ram[0x0023U] != 1U || game.ram[0x0014U] != 1U ||
         game.ram[0x0039U] != 0U) {
@@ -329,6 +336,7 @@ int main(void)
     game.ram[0x0784U] = 0U;
     game.ram[0x009fU] = 0xf0U;
     game.ram[0x05f2U] = 0x56U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x001bU] != 0x2fU ||
         game.ram[0x0014U] != 1U || game.ram[0x0398U] != 1U) {
         return 1;
@@ -343,6 +351,7 @@ int main(void)
     game.ram[0x07e1U] = 0U;
     game.ram[0x07e2U] = 0U;
     game.ram[0x05e2U] = 0x51U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_head(&game) == 0U || game.ram[0x0026U] != 0x12U ||
         game.ram[0x05e2U] != 0x23U || game.ram[0x03ecU] != 1U ||
         game.ram[0x0060U] != 0xf0U || game.ram[0x0062U] != 0xf0U ||
@@ -381,6 +390,7 @@ int main(void)
     game.ram[0x075eU] = 0U;
     game.ram[0x0748U] = 0U;
     game.ram[0x0602U] = 0xc2U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x0602U] != 0U ||
         game.ram[0x075eU] != 1U || game.ram[0x0748U] != 1U) {
         return 1;

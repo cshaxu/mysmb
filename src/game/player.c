@@ -1,4 +1,5 @@
 #include "game/player.h"
+#include "game/player/terrain_children.h"
 #include "game/frame_root.h"
 #include "game/objects.h"
 #include "game/fireball/fireball.h"
@@ -155,18 +156,7 @@ enum {
     MYSMB_OPER_MODE_TASK = 0x0772U
 };
 
-/* ROM PlayerBGCollision selects BlockBufferAdderData before entering the
- * head, feet, and side probes.  The bases are normal big=$00, swimming
- * big=$07, and small or crouching=$0e.  The $0e selection is required for
- * small Mario's shorter collision body; using $07 makes his head probe the
- * swimming-big one and lets him pass through bricks, including hidden $5f
- * blocks. */
-static mysmb_u8 mysmb_player_collision_base(const struct mysmb_game *game)
-{
-    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U ||
-        game->ram[MYSMB_PLAYER_SIZE] != 0U) return 0x0eU;
-    return game->ram[MYSMB_SWIMMING] != 0U ? 7U : 0U;
-}
+
 
 /* ROM $BF09-$BF0E MovePlayerHorizontally. The blocked path returns the
  * animation control unchanged; the fallthrough shares MoveObjectHorizontally. */
@@ -485,38 +475,7 @@ void mysmb_player_move_vertically(struct mysmb_game *game)
     mysmb_world_impose_gravity_spr_object(game, 0U, game->ram[0U], 4U);
 }
 
-/* Existing common terrain child; algorithm proof remains terrain-owned. */
-void mysmb_player_background_collision(struct mysmb_game *game)
-{
-    mysmb_u8 collision_result;
-    /* PlayerBGCollision is disabled for the control/pipe routines below 4,
-     * player death (0x0b), and explicit collision suppression. */
-    if (game->ram[MYSMB_DISABLE_COLLISION] == 0U &&
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] >= 4U &&
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 0x0bU) {
-        /* PlayerBGCollision establishes falling/swimming before its
-         * on-screen guard, so an eligible player leaving the visible
-         * vertical range cannot retain the ground state. */
-        if (game->ram[MYSMB_SWIMMING] != 0U) {
-            game->ram[MYSMB_PLAYER_STATE] = 1U;
-        }
-        else if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
-            game->ram[MYSMB_PLAYER_STATE] = 2U;
-        }
-        if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U) {
-                game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
-                if (game->ram[MYSMB_PLAYER_Y] < 0xcfU) {
-                    collision_result = mysmb_player_check_head(game);
-                    if (collision_result != 2U) {
-                        collision_result = mysmb_player_check_feet(game);
-                        if (collision_result != 2U && collision_result != MYSMB_PLAYER_FEET_TERMINAL_IMPEDE) {
-                            (void)mysmb_player_check_sides(game);
-                        }
-                    }
-                }
-            }
-    }
-}
+
 
 
 /* Snapshot only translated RAM state; no platform state participates. */
@@ -542,17 +501,38 @@ void mysmb_player_checkpoint(const struct mysmb_game *game,
 /* ROM CheckForCoinMTiles -> HandleCoinMetatile.  Coins emitted from bumped
  * blocks use their own JumpCoin sound producer; this helper is only for the
  * player head, foot, and side collision paths that reached CheckForCoinMTiles. */
-static void mysmb_player_collect_metatile_coin(struct mysmb_game *game,
-                                               mysmb_u8 block_low,
-                                               mysmb_u8 block_row)
+/* Existing coin predicate and sound extracted to their source call boundary.
+ * Coin/axe effects and classifier proof remain T43 S2/S7-owned. */
+mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
 {
+    if (tile != 0xc2U && tile != 0xc3U) return 0U;
     game->ram[MYSMB_SQUARE2_SOUND_QUEUE] = 1U;
-    mysmb_objects_collect_coin(game, block_low, block_row);
+    return 1U;
+}
+
+/* Existing child effects exposed for the terrain root; S2/S4 own proof. */
+void mysmb_player_handle_axe_metatile(struct mysmb_game *game,
+    mysmb_u8 block_low, mysmb_u8 block_row)
+{
+    game->ram[0x0772U] = 0U;
+    game->ram[0x0770U] = 2U;
+    game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
+    mysmb_objects_remove_axe(game, block_low, block_row);
+}
+
+void mysmb_player_land_jumpspring(struct mysmb_game *game, mysmb_u8 metatile)
+{
+    if (metatile == 0x67U || metatile == 0x68U) {
+        game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
+        game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
+        game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
+        game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
+    }
 }
 
 /* Translation of HandleClimbing through PutPlayerOnVine.  The caller passes
  * the collision helper's $04 and $06 values as terrain metadata. */
-static mysmb_u8 mysmb_player_handle_climbing(struct mysmb_game *game,
+mysmb_u8 mysmb_player_handle_climbing(struct mysmb_game *game,
                                               const struct mysmb_player_terrain *terrain)
 {
     static const mysmb_u8 x_adder[2] = { 0xf9U, 0x07U };
@@ -645,129 +625,7 @@ mysmb_u8 mysmb_player_handle_vertical_pipe(struct mysmb_game *game,
     return 1U;
 }
 
-/* Translation of ROM $dc64-$dd5a PlayerBGCollision's DoFootCheck through LandPlyr.
- * The original selects an adder from size/crouch/swim state, but both feet
- * ultimately use X+3/X+12 and Y+32.  It reads left first for the landing
- * decision after sampling both positions. */
-mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
-{
-    static const mysmb_u8 x_adder[28] = {
-        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
-        0U, 0x10U, 4U, 0x14U, 4U, 4U
-    };
-    static const mysmb_u8 y_adder[28] = {
-        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
-        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
-    };
-    struct mysmb_player_terrain left;
-    struct mysmb_player_terrain right;
-    mysmb_u8 have_left;
-    mysmb_u8 have_right;
-    mysmb_u8 base;
 
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xcfU) {
-        return 0U;
-    }
-    if (game->ram[MYSMB_PLAYER_STATE] == 0U) {
-        game->ram[MYSMB_PLAYER_STATE] =
-            game->ram[MYSMB_SWIMMING] != 0U ? 1U : 2U;
-    }
-    base = mysmb_player_collision_base(game);
-    have_left = mysmb_world_query_player_block(game, x_adder[(mysmb_u8)(base + 1U)],
-                                         y_adder[(mysmb_u8)(base + 1U)], 0U, &left);
-    have_right = mysmb_world_query_player_block(game, x_adder[(mysmb_u8)(base + 2U)],
-                                          y_adder[(mysmb_u8)(base + 2U)], 0U, &right);
-    /* ChkFootMTile consumes the left sample when it is nonzero; it visits
-     * the right sample only when the left is empty.  A climbable sample
-     * hands off to the side route instead of becoming a landing surface. */
-    if (have_left != 0U && (left.metatile == 0xc2U || left.metatile == 0xc3U)) {
-        mysmb_player_collect_metatile_coin(game, left.block_address_low,
-                                   left.block_row_offset);
-        return 2U;
-    }
-    if (have_left != 0U && left.metatile != 0U) {
-        if (mysmb_world_is_climbable(left.metatile) != 0U) return 0U;
-        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-        /* ChkInvisibleMTiles branches directly to DoPlayerSideCheck.  Hidden
-         * coin and 1-up blocks are neither floor nor a landing correction. */
-        if (left.metatile == 0x5fU || left.metatile == 0x60U) return 0U;
-        /* ROM HandleAxeMetatile runs from the foot sample before ordinary
-         * landing, then ErACM/RemoveCoin_Axe updates the shared VRAM list. */
-        if (left.metatile == 0xc5U && game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
-            game->ram[0x0772U] = 0U;
-            game->ram[0x0770U] = 2U;
-            game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
-            mysmb_objects_remove_axe(game, left.block_address_low,
-                                     left.block_row_offset);
-            return 2U;
-        }
-        /* ChkFootMTile reaches InitSteP while JumpspringHandler owns the
-         * animation; it resets only Player_State and must not land Mario. */
-        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
-            game->ram[MYSMB_PLAYER_STATE] = 0U;
-            return 1U;
-        }
-        /* At contact nibble $05-$0f, ChkFootMTile calls ImpedePlayerMove
-         * with Player_MovingDir instead of taking LandPlyr. */
-        if (left.contact_low_nibble >= 5U) {
-            mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
-            /* ChkFootMTile JMPs to ImpedePlayerMove, which returns from
-             * PlayerBGCollision.  Keep that terminal control transfer
-             * distinct from an ordinary landed-foot result. */
-            return MYSMB_PLAYER_FEET_TERMINAL_IMPEDE;
-        }
-        /* ChkForLandJumpSpring initializes the object-owned animation before
-         * LandPlyr aligns Mario to the metatile boundary. */
-        if ((left.metatile == 0x67U || left.metatile == 0x68U) &&
-            left.contact_low_nibble < 5U) {
-            game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
-            game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
-            game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
-            game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
-        }
-        if (mysmb_world_land_player_on_solid(game, left.metatile,
-                                       left.contact_low_nibble) == 0U) {
-            return 0U;
-        }
-        (void)mysmb_player_handle_vertical_pipe(game, left.metatile,
-                                                have_right != 0U ? right.metatile : 0U);
-        return 1U;
-    }
-    if (have_right != 0U && (right.metatile == 0xc2U || right.metatile == 0xc3U)) {
-        mysmb_player_collect_metatile_coin(game, right.block_address_low,
-                                   right.block_row_offset);
-        return 2U;
-    }
-    if (have_right != 0U && right.metatile != 0U) {
-        if (mysmb_world_is_climbable(right.metatile) != 0U) return 0U;
-        if (game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-        if (right.metatile == 0x5fU || right.metatile == 0x60U) return 0U;
-        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) {
-            game->ram[MYSMB_PLAYER_STATE] = 0U;
-            return 1U;
-        }
-        if (right.contact_low_nibble >= 5U) {
-            mysmb_player_impede_move(game, game->ram[MYSMB_PLAYER_MOVING_DIRECTION]);
-            /* ChkFootMTile JMPs to ImpedePlayerMove, which returns from
-             * PlayerBGCollision.  Keep that terminal control transfer
-             * distinct from an ordinary landed-foot result. */
-            return MYSMB_PLAYER_FEET_TERMINAL_IMPEDE;
-        }
-        if ((right.metatile == 0x67U || right.metatile == 0x68U) &&
-            right.contact_low_nibble < 5U) {
-            game->ram[MYSMB_VERTICAL_FORCE] = 0x70U;
-            game->ram[MYSMB_JUMPSPRING_FORCE] = 0xf9U;
-            game->ram[MYSMB_JUMPSPRING_TIMER] = 3U;
-            game->ram[MYSMB_JUMPSPRING_ANIM] = 1U;
-        }
-        return mysmb_world_land_player_on_solid(game, right.metatile,
-                                          right.contact_low_nibble);
-    }
-    return 0U;
-}
 
 /* Translation of ROM $9131-$9196 Entrance_GameTimerSetup. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game)
@@ -869,167 +727,4 @@ void mysmb_player_impede_move(struct mysmb_game *game, mysmb_u8 collision_side)
         (mysmb_u8)(game->ram[MYSMB_PLAYER_PAGE] + page_delta);
 clear_collision_bit:
     game->ram[MYSMB_PLAYER_COLLISION_BITS] &= collision_mask;
-}
-
-/* Translation of CheckSideMTiles.  Coins and jumpsprings have their own
- * object route, but they still consume this collision without a wall stop. */
-static mysmb_u8 mysmb_player_handle_side_metatile(
-    struct mysmb_game *game, const struct mysmb_player_terrain *terrain,
-    mysmb_u8 collision_side)
-{
-    if (terrain->metatile == 0xc2U || terrain->metatile == 0xc3U) {
-        mysmb_player_collect_metatile_coin(game, terrain->block_address_low,
-                                   terrain->block_row_offset);
-        return 1U;
-    }
-    if (terrain->metatile == 0x5fU || terrain->metatile == 0x60U) {
-        return 1U;
-    }
-    if (mysmb_world_is_climbable(terrain->metatile) != 0U) {
-        (void)mysmb_player_handle_climbing(game, terrain);
-        return 1U;
-    }
-    if (terrain->metatile == 0x67U || terrain->metatile == 0x68U) {
-        /* ChkJumpspringMetatiles reaches StopPlayerMove unless animation
-         * has already claimed this metatile. */
-        if (game->ram[MYSMB_JUMPSPRING_ANIM] != 0U) return 1U;
-        mysmb_player_impede_move(game, collision_side);
-        return 1U;
-    }
-    if ((terrain->metatile == 0x6cU || terrain->metatile == 0x1fU) &&
-        game->ram[MYSMB_PLAYER_STATE] == 0U &&
-        game->ram[MYSMB_PLAYER_FACING] == MYSMB_BUTTON_RIGHT) {
-        /* PipeDwnS queues the sound only when Player_SprAttrib was clear. */
-        if (game->ram[MYSMB_PLAYER_ATTRIBUTES] == 0U) {
-            game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x10U;
-        }
-        game->ram[MYSMB_PLAYER_ATTRIBUTES] |= 0x20U;
-        if ((game->ram[MYSMB_PLAYER_X] & 0x0fU) != 0U) {
-            game->ram[MYSMB_CHANGE_AREA_TIMER] =
-                game->ram[MYSMB_SCREEN_LEFT_PAGE] == 0U ? 0xa0U : 0x34U;
-        }
-        if (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] == 8U) {
-            game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 2U;
-        }
-        return 1U;
-    }
-    mysmb_player_impede_move(game, collision_side);
-    return 1U;
-}
-
-/* Translation of ROM $dd5e-$de46 SideCheckLoop.  Each upper sample can
- * defer to the lower half, which prevents a thin vine or pipe cap from
- * producing a side collision on its own. */
-mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
-{
-    static const mysmb_u8 x_adder[28] = {
-        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
-        0U, 0x10U, 4U, 0x14U, 4U, 4U
-    };
-    static const mysmb_u8 y_adder[28] = {
-        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
-        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
-    };
-    struct mysmb_player_terrain terrain;
-    mysmb_u8 index;
-    mysmb_u8 base;
-
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U) {
-        return 0U;
-    }
-    game->ram[MYSMB_PLAYER_COLLISION_BITS] = 0xffU;
-    base = mysmb_player_collision_base(game);
-    for (index = 0U; index < 2U; ++index) {
-        mysmb_u8 top;
-
-        top = (mysmb_u8)(base + 3U + index * 2U);
-        if (game->ram[MYSMB_PLAYER_Y] >= 0xe4U) return 0U;
-        if (game->ram[MYSMB_PLAYER_Y] >= 0x20U &&
-            mysmb_world_query_player_block(game, x_adder[top], y_adder[top], 1U,
-                                     &terrain) != 0U && terrain.metatile != 0U &&
-            terrain.metatile != 0x1cU && terrain.metatile != 0x6bU &&
-            mysmb_world_is_climbable(terrain.metatile) == 0U) {
-            return mysmb_player_handle_side_metatile(game, &terrain, (mysmb_u8)(2U - index));
-        }
-        if (game->ram[MYSMB_PLAYER_Y] < 8U ||
-            game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return 0U;
-        top++;
-        if (mysmb_world_query_player_block(game, x_adder[top], y_adder[top], 1U,
-                                     &terrain) != 0U && terrain.metatile != 0U) {
-            return mysmb_player_handle_side_metatile(game, &terrain, (mysmb_u8)(2U - index));
-        }
-    }
-    return 0U;
-}
-
-/* Translation of ROM $dcba-$dcf5 HeadChk through NYSpd.  Matched bumpable
- * blocks hand their original collision coordinates to the object owner. */
-mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
-{
-    static const mysmb_u8 x_adder[28] = {
-        8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U,
-        2U, 0x0dU, 0x0dU, 8U, 3U, 0x0cU, 2U, 2U, 0x0dU, 0x0dU, 8U,
-        0U, 0x10U, 4U, 0x14U, 4U, 4U
-    };
-    static const mysmb_u8 y_adder[28] = {
-        4U, 0x20U, 0x20U, 8U, 0x18U, 8U, 0x18U, 2U, 0x20U, 0x20U,
-        8U, 0x18U, 8U, 0x18U, 0x12U, 0x20U, 0x20U, 0x18U, 0x18U,
-        0x18U, 0x18U, 0x18U, 0x14U, 0x14U, 6U, 6U, 8U, 0x10U
-    };
-    static const mysmb_u8 upper_extent[2] = { 0x20U, 0x10U };
-    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
-    struct mysmb_player_terrain terrain;
-    mysmb_u8 extent_index;
-    mysmb_u8 group;
-    mysmb_u8 base;
-
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] != 1U) return 0U;
-    extent_index = game->ram[MYSMB_PLAYER_SIZE] != 0U ? 1U : 0U;
-    if (game->ram[MYSMB_PLAYER_CROUCHING] != 0U) extent_index = 1U;
-    if (game->ram[MYSMB_PLAYER_Y] < upper_extent[extent_index]) {
-        return 0U;
-    }
-    base = mysmb_player_collision_base(game);
-    if (mysmb_world_query_player_block(game, x_adder[base], y_adder[base],
-                                 0U, &terrain) == 0U || terrain.metatile == 0U) {
-        return 0U;
-    }
-    if (terrain.metatile == 0xc2U || terrain.metatile == 0xc3U) {
-        mysmb_player_collect_metatile_coin(game, terrain.block_address_low,
-                                   terrain.block_row_offset);
-        return 2U;
-    }
-    if (game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U ||
-        (game->ram[MYSMB_PLAYER_Y] & 0x0fU) < 4U) {
-        return 0U;
-    }
-    group = (mysmb_u8)(terrain.metatile >> 6U);
-    if (terrain.metatile >= solid_upper[group]) {
-        /* SolidOrClimb suppresses only the climbing metatile bump sound. */
-        if (terrain.metatile != 0x26U) {
-            game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x02U;
-        }
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
-        return 1U;
-    }
-    /* ROM HeadChk tests AreaType before PlayerHeadCollision.  In water,
-     * NYSpd consumes a non-solid head hit without changing the block. */
-    if (game->ram[MYSMB_AREA_TYPE] == 0U) {
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
-        return 1U;
-    }
-    if (game->ram[0x0784U] != 0U) {
-        /* HeadChk takes NYSpd while a previous block is bouncing. */
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 1U;
-        return 1U;
-    }
-    if (mysmb_objects_start_head_bump(game, terrain.metatile,
-                                      terrain.block_address_low,
-                                      terrain.block_row_offset) != 0U) {
-        return 1U;
-    }
-    return 0U;
 }

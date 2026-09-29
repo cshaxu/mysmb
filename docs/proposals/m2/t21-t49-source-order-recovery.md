@@ -52,8 +52,8 @@ boundary.
 | T40 | Podoboo/Hammer Bro, normal/swimming/flying movement, firebars and Lakitu distance | 9212–10091 | 120 |
 | T41 | Complete bridge/Bowser chain, platforms, flame, fireworks and remaining actors | 10092–11084 | 123 |
 | T42 | Shared collision, bounding boxes and movement primitives | 11085–11923 | 98 |
-| T43 | Player terrain, head, foot, side and pipe collision | 11924–13000 | 148 |
-| T44 | Enemy terrain, landing, stun and side collision | 13001–14000 | 111 |
+| T43 | Player/enemy terrain, fireball background and bounding boxes | 11924–13022 | 150 |
+| T44 | Block-buffer and subsequent source routines | 13023–14000 | 109 |
 | T45 | Projectile, powerup and player/enemy collision completion | 14001–14459 | 45 |
 | T46 | Relative positions, offscreen bits and player/enemy OAM | 14460–14780 | 43 |
 | T47 | Object OAM, sprite tables and graphics attributes | 14781–15069 | 40 |
@@ -814,3 +814,8 @@ labels retain their existing receivers until their exact S receipt.
 T42 admission keeps the twelve PlayerBGUpperExtent-through-DoFootCheck nodes
 with the following complete terrain chain. [T42 exact chain plan](../../history/M2-T42-shared-collision-and-platforms.md)
 therefore covers 98 nodes through line 11923; the next slice starts at 11924.
+
+T43 keeps both collision-core terminal labels with their caller, through13022.
+[T43 exact chain plan](t43-terrain-and-bounding-boxes.md) partitions150 labels
+into15 source-ordered chains;136 are expected new and14 retained. The next
+slice begins BlockBufferChk_Enemy at13023, preserving every node exactly once.

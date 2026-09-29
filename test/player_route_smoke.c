@@ -1,3 +1,4 @@
+#include "terrain_entry.h"
 #include "game/game.h"
 #include "game/player.h"
 
@@ -201,6 +202,10 @@ int main(void)
         game.ram[0x070cU] != 8U || game.ram[0x00ceU] != 0x2fU) {
         return 1;
     }
+    /* The preceding UP step reached empty background and fell out of climb.
+     * Establish the independent horizontal-climb case's entry state. */
+    if (game.ram[0x001dU] != 2U) return 1;
+    game.ram[0x001dU] = 3U;
     game.ram[0x0490U] = MYSMB_BUTTON_RIGHT;
     game.ram[0x0086U] = 0x20U;
     game.ram[0x006dU] = 1U;
@@ -295,20 +300,24 @@ int main(void)
     game.ram[0x00ceU] = 0x30U;
     game.ram[0x009fU] = 0U;
     game.ram[0x0603U] = 0x61U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U) {
         return 1;
     }
     game.ram[0x001dU] = 2U;
     game.ram[0x009fU] = 2U;
     game.ram[0x0603U] = 0x26U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
         return 1;
     }
-    /* Both foot probes must be non-solid: the ROM consumes the left
-     * metatile before it considers the right probe. */
+    /* Original DoFootCheck has no invented minimum-solid threshold:
+     * metatile 1 reaches LandPlyr (also checked by the original-ROM route). */
     game.ram[0x0603U] = 1U;
     game.ram[0x0602U] = 1U;
-    if (mysmb_player_check_feet(&game) != 0U || game.ram[0x001dU] != 2U) {
+    mysmb_test_terrain_entry(&game);
+    if (mysmb_player_check_feet(&game) == 0U || game.ram[0x001dU] != 0U ||
+        game.ram[0x009fU] != 0U) {
         return 1;
     }
     game.ram[0x0603U] = 0x61U;
@@ -359,6 +368,7 @@ int main(void)
     game.ram[0x071cU] = 0U;
     game.ram[0x05f3U] = 0x26U;
     game.ram[0x05f2U] = 0x26U;
+    mysmb_test_terrain_entry(&game);
     if (mysmb_player_check_sides(&game) == 0U || game.ram[0x001dU] != 3U ||
         game.ram[0x0086U] != 0x19U || game.ram[0x0057U] != 0U ||
         game.ram[0x0705U] != 0U) {
