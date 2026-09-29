@@ -380,3 +380,60 @@ S7 closes all six received labels, moving M2 from **1,576** to **1,582 / 1,992**
 `PowerUpGfxTable` and `PowerUpAttributes` preserve the source tables. `DrawPowerUp` selects the source table row and drives `PUpDrawLoop` across the two visible rows. `FlipPUpRightSide` preserves the flower lower-right `$40` flip and the star lower-row palette-before-flip sequence. `PUpOfs` uses the inherited `SprObjectOffscrChk` tail so its d2–d7 masks also hide the stale third OAM row exactly as the source route requires.
 
 All 50 original `PowerUpObjHandler -> DrawPowerUp` child records have zero differences on both x86 and x64; the 50 corresponding root snapshots also have zero differences. Focused power-up OAM and platform-purity checks pass on both widths, and the shared source links as an OpenNT DOS16 MZ executable. Refreshed artifacts are `mysmb16.exe` SHA-256 `6B9CD8B7379380EA88AFDC3C735C57709DF1F7B6BAC78775A5BD87F523DB2802`, `mysmb32.exe` `3A4D3EFF69B04A25A5019D8265524444E96E01F561D3454F19FA429630A3A8B7`, and `mysmb64.exe` `00EED8F1065F5EC28F137D6D9F8587098D7CD2FC16FD4C076F8E18CEAF7FC69F`. No S7 label is deferred.
+
+#### S8 admission: enemy graphics and animation
+
+S8 receives the complete contiguous `EnemyGraphicsTable -> EggExc` source tree at **1,582 / 1,992**: 44 scoped labels, 42 open labels expected to become ROM-match complete, two previously complete bullet-bill labels retained for integrated recheck, and maximum **1,624 / 1,992**. The exact source-order register is:
+
+| ROM line | Label | Incoming status |
+| ---: | --- | --- |
+| 13576 | `EnemyGraphicsTable` | open |
+| 13621 | `EnemyGfxTableOffsets` | open |
+| 13627 | `EnemyAttributeData` | open |
+| 13633 | `EnemyAnimTimingBMask` | open |
+| 13636 | `JumpspringFrameOffsets` | open |
+| 13639 | `EnemyGfxHandler` | open |
+| 13661 | `CheckForRetainerObj` | open |
+| 13674 | `CheckForBulletBillCV` | ROM-match complete |
+| 13682 | `SBBAt` | ROM-match complete |
+| 13687 | `CheckForJumpspring` | open |
+| 13694 | `CheckForPodoboo` | open |
+| 13704 | `CheckBowserGfxFlag` | open |
+| 13711 | `SBwsrGfxOfs` | open |
+| 13713 | `CheckForGoomba` | open |
+| 13722 | `GmbaAnim` | open |
+| 13732 | `CheckBowserFront` | open |
+| 13746 | `ChkFrontSte` | open |
+| 13750 | `FlipBowserOver` | open |
+| 13753 | `DrawBowser` | open |
+| 13756 | `CheckBowserRear` | open |
+| 13761 | `ChkRearSte` | open |
+| 13770 | `CheckForSpiny` | open |
+| 13780 | `NotEgg` | open |
+| 13782 | `CheckForLakitu` | open |
+| 13792 | `NoLAFr` | open |
+| 13794 | `CheckUpsideDownShell` | open |
+| 13807 | `CheckRightSideUpShell` | open |
+| 13819 | `CheckForDefdGoomba` | open |
+| 13829 | `CheckForHammerBro` | open |
+| 13841 | `CheckForBloober` | open |
+| 13856 | `CheckToAnimateEnemy` | open |
+| 13878 | `CheckForSecondFrame` | open |
+| 13883 | `CheckAnimationStop` | open |
+| 13893 | `CheckDefeatedState` | open |
+| 13905 | `DrawEnemyObject` | open |
+| 13916 | `SkipToOffScrChk` | open |
+| 13919 | `CheckForVerticalFlip` | open |
+| 13943 | `FlipEnemyVertically` | open |
+| 13957 | `CheckForESymmetry` | open |
+| 13965 | `ContES` | open |
+| 13975 | `ESRtnr` | open |
+| 13979 | `SpnySC` | open |
+| 13982 | `MirrorEnemyGfx` | open |
+| 13994 | `EggExc` | open |
+
+The shared `src/game/oam/` game component owns the handler, tables, branch decisions, animation, six-sprite OAM writes, flips and offscreen tail. S7 `PUpOfs` and the existing enemy relative-position/offscreen children are predecessors; the next audio slice is the successor. The two retained labels are rechecked without duplicate node credit. No platform adapter may select enemy graphics or write object policy.
+
+The ROM-logic track uses the owner-local SMB1 ROM and reviewed `SMBDIS.ASM` listing as nonredistributable research inputs. Its reproducible route is ordinary `RunNormalEnemies -> EnemyGfxHandler`, with bounded RAM-only enemy-ID/state/frame fixtures on the original CPU path to cover the handler's branch families. Each source label is checked for table binding, condition, state/scratch read and write, successor, sprite tile/attribute/OAM effect, and exit. Raw records and derived data stay below ignored `build/m2-t44-s8/`; tracked proof contains neutral conclusions only. Existing public translations are not implementation inputs.
+
+The separate operational track runs focused enemy OAM tests for normal enemies, Goomba, retainer, jumpspring, piranha, aquatic enemies, Podoboo, hammer bro, Bowser and bullet bill; compares original parent-route records on x86 and x64; builds both Windows executables and the OpenNT DOS16 MZ target; runs platform purity; and refreshes all three executable artifacts. A passing existing smoke test does not grant a node match.
