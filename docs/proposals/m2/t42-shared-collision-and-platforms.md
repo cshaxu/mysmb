@@ -1086,3 +1086,108 @@ Raw records: 20125007 bytes, below150 MB.
 | mysmb16.exe | 256905 | 2b61637abc7f2343d1e72ba2e7b6180d2c36e9a09c8e9a5f9f1556485a841a09 |
 | mysmb32.exe | 356145 | fcd4a63edad4d5abd68a03d74af2815a87993b49acb6a589bf98eaeb92d5ff51 |
 | mysmb64.exe | 363941 | efffc377962c8bc4e8fd64c37dc2c44455625cb6696c0aff572eb633d6c96cb2 |
+
+## S8 admission: platform positioning
+
+S7 closed in9b02973. Coordinator accepts transfer-217 from M2 T17 S6.
+Baseline1,374/1,992;4 scoped and expected-new nodes, maximum1,378:
+
+`PlayerPosSPlatData` (open), `PositionPlayerOnS_Plat` (open), `PositionPlayerOnVPlat` (open), `ExPlPos` (open).
+
+Original $DC17-$DC40: bind the two-byte PlayerPosSPlatData, small-entry
+counter offset, overlapping BIT/LDA entries and common vertical placement.
+Sole owner enemy/platform_position.c. Preserve engine11 and enemy-high-Y
+exits, byte-wrapped table addition, subtraction borrow into player high Y,
+vertical speed/force reset and unchanged Player_State. Replace both legacy
+bodies and remove old_y compatibility metadata from the small API/caller and
+test stubs. Existing movement algorithms remain independently owned.
+
+Logic proof directly compares original leaf RAM output, with no child replay,
+using ordinary NMI large/small lift routes. Capture the incoming small counter
+from A. Audit both entry decodings of the BIT-overlap bytes, table binding,
+branches and full RAM footprint. Native proof covers coordinate/guard/counter
+boundaries, all affected platform parent contracts and actual integrations,
+strict C90 x86/x64, DOS16 link, platform purity and three refreshed EXEs.
+
+Owner-local ROM/listing provenance and nonredistributable containment remain.
+Ignored build/m2-t42-s8 permits1,024 fixtures and50 MB raw records,20-second
+process deadlines and checkpoints. Coordinator owns cleanup after dependent
+regressions. Three owner-authorized EXEs are the delivery exception; DOS
+link-only, no whole-game claim. Similar-issue sweep covers duplicate rider
+placement, stale delta metadata, high-byte borrow, unintended state clearing,
+entry guards and unmasked table indices. Four exact nodes need both tracks
+or accepted transfers; admission is no credit.
+
+## S8 original platform positioning proof
+
+S8 P1 closes all four expected open nodes: 1,374 -> 1,378/1,992.
+No scoped node remains incomplete or transfers. T42 remains open; S9 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| PlayerPosSPlatData | Both source bytes bound at DC17; unmasked counter-minus-one indexing retains source PRG reads. ROM-match complete. |
+| PositionPlayerOnS_Plat | Counter-selected wrapped height addition enters the shared tail without reloading enemy Y. ROM-match complete. |
+| PositionPlayerOnVPlat | Engine11/enemy-high-Y guards, subtract20 with high-byte borrow, speed/force reset; Player_State unchanged. ROM-match complete. |
+| ExPlPos | Guarded exits preserve all RAM; successful return adds no extra state or scratch writes. ROM-match complete. |
+
+All 22 original instructions across both DC19/DC21 entry decodings execute,
+with both outcomes of both branches. The DC20 BIT consumes DC21/DC22 as
+its absolute operand, skipping the vertical entry's LDA for the small path.
+The operand reads PRG, and BIT flags are not consumed by the placement tail.
+Both table bytes at DC17 are bound. This overlapping code is audited as two
+entry paths, not an incorrect single linear instruction stream.
+
+584 controlled RAM-input cases enter through ordinary NMI large/small lift
+movement. Inputs are applied before the original movement caller; it supplies
+the small entry's actual A counter. No code, PC, stack, registers or output is
+patched. The snapshot records incoming X/A. Original frames with and without
+observers agree. Direct original-versus-native RAM comparison passes
+1,168/1,168 across x86/x64, with no child substitution. Hardware return storage
+is excluded; mapped $0109-$0139 remains compared. There is no remaining
+scoped RAM mismatch, but this is not full-game or full-native-frame proof.
+
+Shared enemy/platform_position.c replaces both legacy placement bodies.
+Small counter1 selects +80 and counter2 +0 before wrapped height subtraction.
+Engine11 and enemy-high-Y guards preserve prior player values. The subtraction
+borrow updates player high Y; only Y, high Y, Y speed and move force change.
+Player_State is preserved. The small API carries its original collision
+counter; old_y metadata and the delta heuristic are removed from the caller
+and test stubs. Source caller RAM/slot/counter assertions remain intact.
+The similar-issue sweep covers every placement call, guards, borrow, table
+indexing, unintended state clearing and both old duplicate bodies. Platform
+adapters remain unchanged; no product emulator is introduced.
+
+Native tests pass 393,216 full-RAM guard/height/counter cases per width.
+Synthetic test-owned PRG bytes exercise every unmasked counter index, while
+original-ROM cases cover both legal table entries and eight extended values.
+Eight CTests pass: positioning, collision, platform caller, four movement
+chains and platform purity. Eight affected suites pass on both widths.
+The renamed small-child API retains 64 representative original lift-caller
+contracts across both widths, including both slots and large/small paths.
+
+The complete actual actor matrix improves 18,936 -> 21,544/29,434 without
+losing a prior match. Vertical platforms now match1,024/1,024; horizontal
+platforms1,536/1,536; lifts1,024/1,024. Balance platforms improve to1,920/2,048;
+their 128 other child differences keep existing owners. All seven earlier
+collision matrices retain their complete outcomes, including S7's vertical,
+geometry and side-response gaps. Broad core/local-area limits remain.
+
+All118 shared files compile as strict C90 for x86/x64. Product self-tests and
+hidden-window response probes pass. DOS16 compiles/links with the existing
+OLDNAMES warning. Three EXEs are refreshed; DOS graphics/resource binding and
+physical486SX performance remain unproved.
+
+Reproduce platform_position_fixture.h cases0..583 with
+--fixture=t42-platform-position=N, --platform-position-snapshot and
+--pc-coverage. enemy_loop_actual_check compares both entries directly.
+Native CTest: mysmb.platform-positioning-chain. Ignored build/m2-t42-s8 holds
+bounded records and checkpoints with20-second process limits; coordinator
+owns cleanup after dependent regressions.
+
+Raw records: 4978600 bytes, below50 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257097 | 11c7c9d6dc359a7cd3e26fd85c614cf123aa1c7b3f1d9e29323e2136e4ea50b7 |
+| mysmb32.exe | 357461 | a8286842ba3346eca4b7a41af3551a930a9012251be3dd837317ce548a56b549 |
+| mysmb64.exe | 364780 | 9337dba3ee07979f650a8bb137d341d336539b236463e5d76edb22d8e78e1e89 |

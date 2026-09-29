@@ -658,29 +658,6 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
     }
 }
 
-/* Existing platform child algorithms extracted from the mixed actor path.
- * Their collision/physics interiors retain pending ROM conformance status.
- * Source callers and the shared $03A2 collision handoff have separate owners. */
-void mysmb_platform_position_player_vertical(struct mysmb_game *game, mysmb_u8 slot)
-{
-    /* Extracted legacy contact placement. Source guards and high-byte borrow
-     * remain with PositionPlayerOnVPlat's later conformance owner. */
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x20U);
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-    game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
-    game->ram[MYSMB_PLAYER_STATE] = 0U;
-}
-
-void mysmb_platform_legacy_position_small(struct mysmb_game *game, mysmb_u8 slot,
-    mysmb_u8 collision, mysmb_u8 old_y)
-{
-    /* Preserve the previous small-lift compensation expression only.
-     * The collision counter's two-deck source table is not translated here. */
-    (void)collision;
-    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
-        game->ram[MYSMB_ENEMY_Y + slot] - old_y);
-}
-
 /* Legacy bulk interface selects the same native source caller as GameEngine. */
 void mysmb_objects_step_platforms_slot(struct mysmb_game *game, mysmb_u8 slot)
 {

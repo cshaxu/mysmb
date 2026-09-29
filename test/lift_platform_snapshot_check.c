@@ -31,10 +31,9 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot)
     if(r[0]!=id || slot!=r[1]) ++failures;
     compare(g->ram,r+2U);memcpy(g->ram,r+2050U,2048U);return r[1];
 }
-static mysmb_u8 root_old_y;
 void mysmb_platform_position_player_vertical(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,1U,s); }
-void mysmb_platform_legacy_position_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c,mysmb_u8 old_y)
-{ if(old_y!=root_old_y || c!=g->ram[0x3a2U+s])++failures;(void)child(g,2U,s); }
+void mysmb_platform_position_player_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c)
+{ if(c!=g->ram[0x3a2U+s])++failures;(void)child(g,2U,s); }
 void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 max) { (void)g;(void)s;(void)max;++failures; }
 void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s) { (void)g;(void)s;++failures; }
 void mysmb_enemy_move_drop_platform(struct mysmb_game *g,mysmb_u8 s) { (void)g;(void)s;++failures; }
@@ -51,7 +50,7 @@ int main(int argc,char **argv)
     fclose(f);f=fopen(argv[1],"rb");if(!f)return 65;
     if(fread(h,1,8,f)!=8 || memcmp(h,"MSuP\1",5) ||
         fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF)return 66;
-    fclose(f);root_old_y=g.ram[0xcfU+h[6]];
+    fclose(f);
     if(g.ram[0x16U+h[6]]<43U)mysmb_platform_move_large_lift(&g,h[6]);
     else mysmb_platform_move_small(&g,h[6]);
     compare(g.ram,expected);

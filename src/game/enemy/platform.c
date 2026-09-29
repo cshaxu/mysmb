@@ -49,16 +49,14 @@ void mysmb_platform_move_large_lift(struct mysmb_game *g, mysmb_u8 slot)
 }
 
 /* $D655 MoveSmallPlatform / $D671 ChkSmallPlatCollision / $D679 ExLiftP.
- * old_y is native compatibility metadata for the uncertified legacy child;
- * the source child argument is the nonzero collision counter. */
+ * The source child argument is the nonzero collision counter. */
 void mysmb_platform_move_small(struct mysmb_game *g, mysmb_u8 slot)
 {
-    mysmb_u8 old_y, collision;
-    old_y = g->ram[0x00cfU + slot];
+    mysmb_u8 collision;
     move_lift(g, slot);
     collision = g->ram[0x03a2U + slot];
     if (collision != 0U)
-        mysmb_platform_legacy_position_small(g, slot, collision, old_y);
+        mysmb_platform_position_player_small(g, slot, collision);
 }
 
 /* $D614-$D630 PositionPlayerOnHPlat / PPHSubt / SetPVar / ExXMP.

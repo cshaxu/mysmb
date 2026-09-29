@@ -6,8 +6,8 @@
 #include <string.h>
 static unsigned int failures,cases,step,kind,collision;
 static mysmb_u8 input_slot,live_slot,delta,want_x,want_page;
-void mysmb_platform_legacy_position_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c,mysmb_u8 old_y)
-{ (void)g;(void)s;(void)c;(void)old_y;++failures; }
+void mysmb_platform_position_player_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c)
+{ (void)g;(void)s;(void)c;++failures; }
 void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 max)
 { (void)g;if(kind!=0U || step++!=0U || s!=input_slot || max!=14U)++failures; }
 void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s)

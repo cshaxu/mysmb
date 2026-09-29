@@ -8,8 +8,8 @@ static void check(struct mysmb_game *g,mysmb_u8 slot)
 { ++calls;if(slot!=expected_slot || memcmp(g->ram,expected,2048U))++failures; }
 void mysmb_platform_position_player_vertical(struct mysmb_game *g,mysmb_u8 s)
 { if(small)++failures;check(g,s); }
-void mysmb_platform_legacy_position_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c,mysmb_u8 old_y)
-{ if(!small || old_y!=expected_old_y || c!=expected[0x3a2U+s])++failures;check(g,s); }
+void mysmb_platform_position_player_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c)
+{ if(!small || c!=expected[0x3a2U+s])++failures;check(g,s); }
 void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 m)
 { (void)g;(void)s;(void)m;++failures; }
 void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s)

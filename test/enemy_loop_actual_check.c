@@ -31,7 +31,7 @@ static int check_one(const char *path)
         memcmp(header,"MSSP\1",5)!=0 && memcmp(header,"MSZP\1",5)!=0 &&
         memcmp(header,"MSAP\1",5)!=0 && memcmp(header,"MSYP\1",5)!=0 &&
         memcmp(header,"MSOP\1",5)!=0 && memcmp(header,"MS2P\1",5)!=0 &&
-        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0 && memcmp(header,"MSdP\1",5)!=0 && memcmp(header,"MSeP\1",5)!=0 && memcmp(header,"MSfP\1",5)!=0 && memcmp(header,"MSgP\1",5)!=0 && memcmp(header,"MShP\1",5)!=0 && memcmp(header,"MSiP\1",5)!=0 && memcmp(header,"MSjP\1",5)!=0 && memcmp(header,"MSkP\1",5)!=0 && memcmp(header,"MSlP\1",5)!=0 && memcmp(header,"MSmP\1",5)!=0 && memcmp(header,"MSnP\1",5)!=0 && memcmp(header,"MSoP\1",5)!=0 && memcmp(header,"MSpP\1",5)!=0 && memcmp(header,"MSqP\1",5)!=0 && memcmp(header,"MSrP\1",5)!=0 && memcmp(header,"MSsP\1",5)!=0 && memcmp(header,"MStP\1",5)!=0 && memcmp(header,"MSuP\1",5)!=0 && memcmp(header,"MSvP\1",5)!=0 && memcmp(header,"MSwP\1",5)!=0 && memcmp(header,"MSxP\1",5)!=0 && memcmp(header,"MSyP\1",5)!=0 && memcmp(header,"MSzP\1",5)!=0 && memcmp(header,"MS~P\1",5)!=0 && memcmp(header,"MS!P\1",5)!=0 && memcmp(header,"MS@P\1",5)!=0)) return 66;
+        memcmp(header,"MS3P\1",5)!=0 && memcmp(header,"MS4P\1",5)!=0 && memcmp(header,"MS5P\1",5)!=0 && memcmp(header,"MS6P\1",5)!=0 && memcmp(header,"MS7P\1",5)!=0 && memcmp(header,"MS8P\1",5)!=0 && memcmp(header,"MS9P\1",5)!=0 && memcmp(header,"MSaP\1",5)!=0 && memcmp(header,"MSbP\1",5)!=0 && memcmp(header,"MScP\1",5)!=0 && memcmp(header,"MSdP\1",5)!=0 && memcmp(header,"MSeP\1",5)!=0 && memcmp(header,"MSfP\1",5)!=0 && memcmp(header,"MSgP\1",5)!=0 && memcmp(header,"MShP\1",5)!=0 && memcmp(header,"MSiP\1",5)!=0 && memcmp(header,"MSjP\1",5)!=0 && memcmp(header,"MSkP\1",5)!=0 && memcmp(header,"MSlP\1",5)!=0 && memcmp(header,"MSmP\1",5)!=0 && memcmp(header,"MSnP\1",5)!=0 && memcmp(header,"MSoP\1",5)!=0 && memcmp(header,"MSpP\1",5)!=0 && memcmp(header,"MSqP\1",5)!=0 && memcmp(header,"MSrP\1",5)!=0 && memcmp(header,"MSsP\1",5)!=0 && memcmp(header,"MStP\1",5)!=0 && memcmp(header,"MSuP\1",5)!=0 && memcmp(header,"MSvP\1",5)!=0 && memcmp(header,"MSwP\1",5)!=0 && memcmp(header,"MSxP\1",5)!=0 && memcmp(header,"MSyP\1",5)!=0 && memcmp(header,"MSzP\1",5)!=0 && memcmp(header,"MS~P\1",5)!=0 && memcmp(header,"MS!P\1",5)!=0 && memcmp(header,"MS@P\1",5)!=0 && memcmp(header,"MS#P\1",5)!=0)) return 66;
     if(fread(game.ram,1,2048,file)!=2048 || fread(expected,1,2048,file)!=2048 ||
         fgetc(file)!=EOF) return 66;
     fclose(file);
@@ -39,7 +39,11 @@ static int check_one(const char *path)
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
     game.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
-    if(header[2]=='@') {
+    if(header[2]=='#') {
+        if(header[5]==1U)mysmb_platform_position_player_vertical(&game,header[6]);
+        else mysmb_platform_position_player_small(&game,header[6],header[7]);
+    }
+    else if(header[2]=='@') {
         if(header[5]==1U)mysmb_platform_collision_large(&game,header[6]);
         else mysmb_platform_collision_small(&game,header[6]);
     }

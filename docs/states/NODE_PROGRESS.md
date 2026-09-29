@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1374 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1378 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 533 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 529 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,374 / 1,992 (68.98%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,378 / 1,992 (69.18%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S7 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s7-original-platform-collision-proof)
-closes14 platform collision nodes:1,568/1,568 caller comparisons,
-28/1,568 actual matches with named geometry, vertical and side-response
-child gaps. All18,936 prior actor matches remain. T42 stays open; S8 is next.
+Latest task review: [T42 S8 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s8-original-platform-positioning-proof)
+closes four positioning nodes:1,168/1,168 direct original RAM comparisons.
+Actor matches improve18,936 ->21,544 without losing a prior match.
+T42 remains open; S9 collision preflight is next.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1374)
+## Completed matches (1378)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1391,6 +1391,10 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11841 | `PlatformSideCollisions` |
 | 11855 | `SideC` |
 | 11856 | `NoSideC` |
+| 11861 | `PlayerPosSPlatData` |
+| 11864 | `PositionPlayerOnS_Plat` |
+| 11871 | `PositionPlayerOnVPlat` |
+| 11888 | `ExPlPos` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

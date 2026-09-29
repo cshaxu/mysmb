@@ -31,8 +31,8 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot)
     if(r[0]!=id || slot!=(id==4U?r[2U+8U]:r[1])) ++failures;
     compare(g->ram,r+2U);memcpy(g->ram,r+2050U,2048U);return r[1];
 }
-void mysmb_platform_legacy_position_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c,mysmb_u8 old_y)
-{ (void)g;(void)s;(void)c;(void)old_y;++failures; }
+void mysmb_platform_position_player_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c)
+{ (void)g;(void)s;(void)c;++failures; }
 void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 max) { if(max!=14U)++failures;(void)child(g,1U,s); }
 void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,2U,s); }
 void mysmb_enemy_move_drop_platform(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,3U,s); }

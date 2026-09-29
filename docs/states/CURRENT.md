@@ -2,29 +2,37 @@
 
 ## Current Work
 
-**M2 T42 S7 is closed at1,374/1,992:all14 expected nodes complete. S8 is next.**
+**M2 T42 S8 is closed at1,378/1,992:all four expected nodes complete. S9 is next.**
 T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 
-## M2 T42 S7 Packet
+## M2 T42 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T42 S7, source-order implementation. |
-| Admission And Approval | Continuing M2 mandate after16c21d3; coordinator accepts transfer-216. |
-| Objective | All14 open platform collision nodes named in S7 admission, all expected new. |
-| Non-goals | No unadmitted geometry, vertical gate, side-response or rider-placement repair; no host gameplay. |
-| Reference Baseline | 1,360/1,992;14 expected, maximum1,374; T42 maximum1,382. |
-| Candidate Proposal | [T42 S7 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s7-admission-platform-collision). |
-| Files And ABI Surface | enemy/platform_collision.c, old platform collision bodies and box child seams, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T42 S8, source-order implementation. |
+| Admission And Approval | Continuing M2 mandate after9b02973; coordinator accepts transfer-217. |
+| Objective | All4 open platform positioning nodes named in S8 admission, all expected new. |
+| Non-goals | No collision preflight, side-response, geometry or movement algorithm repair; no host gameplay. |
+| Reference Baseline | 1,374/1,992;4 expected, maximum1,378; T42 maximum1,382. |
+| Candidate Proposal | [T42 S8 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s8-admission-platform-positioning). |
+| Files And ABI Surface | enemy/platform_position.c, old placement bodies, small caller ABI, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Source branches/tables and full child inputs; separate actual-child and native evidence; three-target build. |
-| Expected Markers | Balanced partner/current checks, two-box small platform, underside/top/side response and flags. |
+| Verification | Direct original leaf RAM comparison, both entry decodings, table binding and native evidence; three-target build. |
+| Expected Markers | Counter-selected height, guards, borrow, speed/force reset and unchanged player state. |
 | Asset Needs | Existing owner-local ROM/listing; bounded ignored records; owner-authorized EXEs. DOS link-only. |
-| Reporting Requirements | All14 exact dispositions, dual proof, named child gaps, ledger and hashes. |
+| Reporting Requirements | All4 exact dispositions, dual proof, named child gaps, ledger and hashes. |
 | Stop Conditions | Unadmitted child rewrite, patched source outputs, hidden mismatch or host gameplay. |
-| Exit Criteria |14 exact nodes proved or accepted transfers, dual proof and three artifacts. |
+| Exit Criteria |4 exact nodes proved or accepted transfers, dual proof and three artifacts. |
 | Original Owner Request | Faithful ROM call graph and nodes in shared DOS16/x86/x64 C. |
-| Similar-Issue Sweep | World-coordinate shortcuts, rider placement, partner slots, box wrapping and side carry. |
+| Similar-Issue Sweep | Rider placement, stale delta metadata, guards, high-Y borrow and state clearing. |
+
+## S8 closure
+
+[Positioning proof](../proposals/m2/t42-shared-collision-and-platforms.md#s8-original-platform-positioning-proof)
+closes four nodes with1,168/1,168 direct original RAM comparisons and no child
+substitution. Actual actor matches improve18,936 ->21,544 with none lost.
+Three EXEs refreshed; DOS link-only. S9 collision preflight is next, not yet
+admitted. T42 remains open.
 
 ## S7 closure
 
@@ -32,8 +40,7 @@ T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 closes14 nodes with1,568/1,568 caller comparisons. Actual children match
 28/1,568; geometry scratch, vertical carry and side speed80 differences remain
 with their existing owners. All18,936 prior actor matches and six collision
-matrices remain. Three EXEs refreshed; DOS link-only. S8 rider positioning is
-next, not yet admitted. T42 remains open.
+matrices remain. Three EXEs refreshed; DOS link-only. S8 is closed above. T42 remains open.
 
 ## S6 closure
 
@@ -84,13 +91,6 @@ closes six caller nodes, 2,048/2,048 comparisons. Actual children match
 920/2,048; 1,128 geometry-scratch/hit-score differences retain their named
 owners. All 18,928 prior actual matches remain. Three EXEs refreshed;
 DOS link-only. T42 remains open; S2 is closed above.
-
-## Previous closure
-
-[T41](../history/M2-T41-bridge-bowser-and-platforms.md#t41-closure) closed
-123 scoped nodes: 118 new and five retained, at 1,284/1,992. Its final
-actual matrix is 18,928/29,434 with 10,506 explicit descendant differences.
-All prior 16,860 matches remain. This does not certify whole-game equivalence.
 
 ## Current Technical Baseline
 
