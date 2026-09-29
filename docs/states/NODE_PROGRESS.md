@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1658 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1664 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 83 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 251 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 245 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1658 / 1,992 (83.23%)**. The 83 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1664 / 1,992 (83.53%)**. The 83 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T45 S3 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) completes seven projectile/explosion OAM labels. Original control/data and full child RAM/OAM proof, x86/x64 builds, DOS16 link, purity and three EXEs provide separate validation.
+Latest task review: [T45 S4 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s4-closure-small-platform-graphics) completes six small-platform OAM labels. Original control/read/write and full child RAM/OAM proof, x86/x64 builds, DOS16 link, purity and three EXEs provide separate validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1658)
+## Completed matches (1664)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1688,6 +1688,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14283 | `DrawExplosion_Fireball` |
 | 14292 | `DrawExplosion_Fireworks` |
 | 14327 | `KillFireBall` |
+| 14334 | `DrawSmallPlatform` |
+| 14361 | `TopSP` |
+| 14369 | `BotSP` |
+| 14379 | `SOfs` |
+| 14386 | `SOfs2` |
+| 14392 | `ExSPl` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |

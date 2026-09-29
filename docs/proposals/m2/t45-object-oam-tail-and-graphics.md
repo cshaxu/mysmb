@@ -361,6 +361,83 @@ All six are open under T17 S6 until admission. Shared owner:
 must cover top/bottom rows, horizontal offscreen clipping and terminal
 offset state. T41 actor movement/position is an input, not part of S4.
 
+### S4 admission record
+
+The continuing owner-approved M2 source-order mandate admits **M2 T45 S4**
+at **1,658 / 1,992**. The six labels below are all open and transfer from
+M2 T17 S6. All six are expected to become ROM-match complete, giving a
+maximum **1,664 / 1,992**. `DrawSmallPlatform` is the entry and `ExSPl`
+the exit. Shared `src/game/oam/small_platform_gfx.c` owns the graphics
+decisions; S3 projectile graphics precedes it and S5 bubble/player data
+follows. The T41 small-platform caller supplies relative position and
+offscreen scratch, so that producer is an input rather than S4 logic.
+
+| ROM line / PC | Label | Incoming |
+| --- | --- | --- |
+| 14334 / `$ed66` | `DrawSmallPlatform` | open |
+| 14361 / `$ed9c` | `TopSP` | open |
+| 14369 / `$edaa` | `BotSP` | open |
+| 14379 / `$edc3` | `SOfs` | open |
+| 14386 / `$edd1` | `SOfs2` | open |
+| 14392 / `$edde` | `ExSPl` | open |
+
+The ROM-logic track starts from original `RunSmallPlatform` actor calls,
+then varies only bounded input RAM at the naturally reached graphics entry
+to cover vertical status-bar clipping and all d3/d2/d1 column masks.
+It compares control PCs, OAM and all non-stack RAM after the graphics child,
+including the caller-produced scratch. The separate operational track runs
+focused small-platform and caller tests, strict C90 x86/x64 builds, OpenNT
+DOS16 MZ link, platform purity and refreshed three owner-authorized EXEs.
+The owner-local ROM and reviewed listing remain local inputs only. Raw
+records, probes, logs and intermediates stay under ignored `build/m2-t45-s4/`;
+the original PC, registers, stack and ROM bytes are never modified.
+
+### S4 closure: small-platform graphics
+
+All **6 / 6** scoped labels are ROM-match complete. M2 advances from
+**1,658** to **1,664 / 1,992**, with no deferred S4 label. The original
+`RunSmallPlatform` route reaches `DrawSmallPlatform` naturally in both slot
+zero and slot five. Eight unmodified child records and 64 bounded RAM-only
+entry variants match the native x86 and x64 implementation over every
+non-stack 2 KB RAM/OAM byte, with zero differences. The variants change
+only source input RAM after the original actor reaches `$ed66`; CPU PC,
+registers, stack and ROM are untouched. Original PC coverage reaches each
+of the six scoped labels in all 64 variants. The top and bottom status-bar
+branches reach both successors **16/48** each; the three column-mask
+branches each reach both successors **32/32**.
+
+| Source label | Original control, data and write binding | Witness |
+| --- | --- | --- |
+| `DrawSmallPlatform` | Reads caller-produced `Enemy_Rel_XPos` and `Enemy_OffscreenBits`, indexed `Enemy_Y_Position` and sprite offset; writes tile `$5b`, attribute `$02`, and X columns at +0/+8/+16 for two rows. `small_platform_gfx.c` consumes these inputs without recomputing them. | Original `RunSmallPlatform` child; both slots; 64 input variants. |
+| `TopSP` | Selects real top-row Y when `Enemy_Y_Position >= $20`, otherwise `$f8`; writes all three top entries. | Original `$ed98` branch both outcomes 16/48. |
+| `BotSP` | Adds `$80` modulo 256 to the original Y, selecting `$f8` on status-bar wrap; writes all three bottom entries. | Original `$eda6` branch both outcomes 16/48. |
+| `SOfs` | Offscreen bit d3 hides the first and fourth sprites, then tests d2. | Original `$edb9` branch both outcomes 32/32. |
+| `SOfs2` | Offscreen bit d2 hides the second and fifth sprites, then tests d1. | Original `$edc7` branch both outcomes 32/32. |
+| `ExSPl` | Offscreen bit d1 hides the third and sixth sprites, then restores `ObjectOffset` as X at return. | Original `$edd4` branch both outcomes 32/32; child exit state. |
+
+The prior draw function recomputed relative X/Y and offscreen bits from
+world state, overwriting the caller's source scratch. Replaying an original
+child against that version gives a RAM difference at `$0243` (ROM X `$30`,
+C X `$50`); the corrected version matches the same record. The existing
+smoke test now supplies the caller-produced offscreen byte and checks all
+six sprite Y entries. The similar-issue sweep covered this graphics leaf,
+its actor caller and the adjacent large-platform leaf; the latter already
+consumes relative scratch and retains its earlier owner. No platform
+adapter or gameplay source changed.
+
+The separate operational track passes focused small-platform graphics,
+special-actor and platform-purity checks, strict C90 x86/x64 builds,
+OpenNT DOS16 MZ link and both Win32 product self-tests. The full x86 and
+x64 suites each pass **222/233**, with precisely the eleven pre-existing
+failures and no new failure. DOS remains link-only; no physical 486SX
+timing claim is made. Owner-authorized refreshed products:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `0de19e7146029f0320b4ef027fe9c21ac6e58981b995f8c5c163c2b0f9ad1e30` |
+| `assets/mysmb32.exe` | `d4889fb61630eb63dfa622fae2f2d4fa27cca388cb44c23d42ae09f393037363` |
+| `assets/mysmb64.exe` | `6b419748c49eb9f527b49dc724b505cbdf078e9a69ee04ed336a8738dc079e6d` |
+
 ## S5: bubble and player graphics data
 
 Entry `DrawBubble`; exit `SwimKickTileNum`. Exact labels:

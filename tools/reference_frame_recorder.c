@@ -1036,6 +1036,8 @@ int main(int argument_count, char **arguments)
     char *block_graphics_variant_end;
     unsigned int projectile_frame;
     char *projectile_frame_end;
+    unsigned int small_platform_variant;
+    char *small_platform_variant_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1077,6 +1079,7 @@ int main(int argument_count, char **arguments)
     enemy_graphics_variant = 0xffffffffu;
     block_graphics_variant = 0xffffffffu;
     projectile_frame = 0xffffffffu;
+    small_platform_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1084,6 +1087,16 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--small-platform-variant=", 25u) == 0) {
+            unsigned long value;
+            if (small_platform_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 25u,
+                            &small_platform_variant_end, 10);
+            if (small_platform_variant_end == arguments[recorded] + 25u ||
+                *small_platform_variant_end != '\0' || value >= 64u) return 64;
+            small_platform_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--projectile-frame=", 19u) == 0) {
             unsigned long value;
             if (projectile_frame != 0xffffffffu) return 64;
@@ -3639,6 +3652,24 @@ int main(int argument_count, char **arguments)
         if (elapsed >= warmup_frames && projectile_frame != 0xffffffffu &&
             (before_pc == 0xecdeu || before_pc == 0xecedu))
             driver->machine->ram[9u] = (lib_u8)projectile_frame;
+        /* T45 S4: vary the ROM graphics consumer's input RAM only after the
+         * original actor reaches DrawSmallPlatform. */
+        if (elapsed >= warmup_frames && background_snapshot == 43u &&
+            small_platform_variant != 0xffffffffu && before_pc == 0xed66u &&
+            driver->machine->x == driver->machine->ram[8u]) {
+            static const lib_u8 y_values[8] = {
+                0x10u, 0x1fu, 0x20u, 0x7fu,
+                0x80u, 0x9fu, 0xa0u, 0xffu
+            };
+            lib_u8 slot = driver->machine->x;
+            driver->machine->ram[0x00cfu + slot] =
+                y_values[small_platform_variant & 7u];
+            driver->machine->ram[0x03d1u] =
+                (lib_u8)((small_platform_variant >> 3u) << 1u);
+            driver->machine->ram[0x03aeu] =
+                (lib_u8)((small_platform_variant & 1u) != 0u ? 0xf8u : 0x30u);
+            driver->machine->ram[0x03b9u] = 0x7du;
+        }
         /* T44 S8: controlled RAM at the original EnemyGfxHandler entry.
          * CPU registers, PC, stack, code and parent call order are untouched. */
         if (elapsed >= warmup_frames && background_snapshot == 42u &&

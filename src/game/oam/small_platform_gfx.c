@@ -9,8 +9,7 @@ enum {
     MYSMB_SMALL_PLATFORM_REL_X = 0x03aeU,
     MYSMB_SMALL_PLATFORM_REL_Y = 0x03b9U,
     MYSMB_SMALL_PLATFORM_OFFSCREEN = 0x03d1U,
-    MYSMB_SMALL_PLATFORM_SPRITE_OFFSET = 0x06e5U,
-    MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X = 0x071cU
+    MYSMB_SMALL_PLATFORM_SPRITE_OFFSET = 0x06e5U
 };
 
 void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
@@ -21,16 +20,9 @@ void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 offscreen;
     mysmb_u8 column;
 
-    game->ram[MYSMB_SMALL_PLATFORM_REL_X] = (mysmb_u8)(
-        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot] -
-        game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X]);
-    game->ram[MYSMB_SMALL_PLATFORM_REL_Y] =
-        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
-    game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN] =
-        mysmb_objects_get_enemy_offscreen_bits(game, slot);
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
     x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
-    y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
+    y = game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
     offscreen = game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN];
 
     for (column = 0U; column < 3U; ++column) {

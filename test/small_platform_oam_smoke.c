@@ -28,11 +28,12 @@ int main(void)
     for (i = 0U; i < 24U; ++i) {
         if (game.ram[0x0220U + i] != expected[i]) return 1;
     }
-    game.ram[0x0087U] = 0x30U;
-    game.ram[0x006eU] = 1U;
+    /* DrawSmallPlatform consumes the caller-computed offscreen bits. */
+    game.ram[0x03d1U] = 0x0eU;
     mysmb_objects_draw_small_platform(&game, 0U);
     if (game.ram[0x0220U] != 0xf8U || game.ram[0x0224U] != 0xf8U ||
-        game.ram[0x0228U] != 0xf8U || game.ram[0x022cU] != 0xf8U) return 2;
+        game.ram[0x0228U] != 0xf8U || game.ram[0x022cU] != 0xf8U ||
+        game.ram[0x0230U] != 0xf8U || game.ram[0x0234U] != 0xf8U) return 2;
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0x30U;
     game.ram[0x00cfU] = 0x40U;
