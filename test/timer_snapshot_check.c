@@ -35,8 +35,9 @@ void mysmb_status_apply_digit_modifier(struct mysmb_game *g,mysmb_u8 digit)
 {child(g,1U,digit);}
 mysmb_u8 mysmb_status_queue_timer(struct mysmb_game *g)
 {child(g,2U,0xa4U);return 1U;}
-void mysmb_objects_force_injury(struct mysmb_game *g)
-{child(g,3U,0U);}
+void mysmb_objects_force_injury_entry(struct mysmb_game *g, mysmb_u8 a)
+{
+    child(g,3U,a);}
 #endif
 
 int main(int argc,char **argv)

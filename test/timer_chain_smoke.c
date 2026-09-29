@@ -14,9 +14,9 @@ mysmb_u8 mysmb_status_queue_timer(struct mysmb_game *g)
     if(calls!=1U || g->ram[0x139U]!=0U) ++errors;
     calls=2U;return 0U;
 }
-void mysmb_objects_force_injury(struct mysmb_game *g)
+void mysmb_objects_force_injury_entry(struct mysmb_game *g, mysmb_u8 a)
 {
-    if(calls!=0U || g->ram[0x756U]!=0U) ++errors;
+    if(a!=0U || calls!=0U || g->ram[0x756U]!=0U) ++errors;
     calls=3U;
     if(mutate!=0U) g->ram[0x759U]=0xffU;
 }

@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T42 S4 is closed at 1,310/1,992: all six expected nodes complete. S5 is next.**
+**M2 T42 S5 is closed at1,344/1,992:all34 expected nodes complete. S6 is next.**
 T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 
-## M2 T42 S4 Packet
+## M2 T42 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T42 S4, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after 2fb45bd; coordinator accepts transfer-213. |
-| Objective | Six power-up pickup labels and incoming states in S4 admission; all expected new. |
-| Non-goals | No erasure/score/palette/SetPRout child algorithm repair or host gameplay. |
-| Reference Baseline | 1,304/1,992; six scoped/expected, maximum 1,310. T42 maximum 1,382. |
-| Candidate Proposal | [T42 exact nodes and S4 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s4-admission-power-up-pickup). |
-| Files And ABI Surface | world/powerup_collision.c extraction, explicit slot API and SetPRout dependency seam, native/reference harnesses, manifests, ledger and three EXEs. |
-| Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original branches, complete child inputs/arguments and live scratch; actual-child results separately; native tests and three targets. |
-| Expected Markers | Erasure/score/sound ordering, fresh type/status, star music, 1UP and palette/routine calls. |
-| Asset Needs | Existing owner-local ROM/listing, ignored bounded traces; provenance and budgets in proposal. Owner-authorized three EXEs; DOS link-only. |
-| Reporting Requirements | Six exact node dispositions, dual proof, named child gaps, tracker/ledger and hashes. |
-| Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Six nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
-| Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Partial erasure, type caching, score coordinates, star music and duplicate pickup effects. |
+| Identifier Mode | Continuation M2 T42 S5, source-order implementation. |
+| Admission And Approval | Continuing M2 mandate after92c925a; coordinator accepts transfer-214. |
+| Objective | All34 open contact/response/score nodes named in S5 admission, all expected new. |
+| Non-goals | No unadmitted geometry, stun, turnaround or palette child repair; no host gameplay. |
+| Reference Baseline | 1,310/1,992;34 expected, maximum1,344; T42 maximum1,382. |
+| Candidate Proposal | [T42 S5 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s5-admission-player-enemy-response-and-score). |
+| Files And ABI Surface | world/player_enemy_collision.c, child dependency seams, unified callers/tests, source audit, build manifests and three EXEs. |
+| Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
+| Verification | Source branches/tables and child input contracts; separate actual-child and native evidence; three-target build. |
+| Expected Markers | Unified contact gates, kick/stomp/score, live slot, injury sound/palette and forced death. |
+| Asset Needs | Existing owner-local ROM/listing; bounded ignored records; owner-authorized EXEs. DOS link-only. |
+| Reporting Requirements | All34 exact node dispositions, two proof tracks, remaining child gaps, ledger and hashes. |
+| Stop Conditions | Unadmitted child rewrite, patched source outputs, hidden mismatch or host gameplay. |
+| Exit Criteria |34 exact nodes proved or accepted transfers, dual proof and three artifacts. |
+| Original Owner Request | Faithful ROM call graph and nodes in shared DOS16/x86/x64 C. |
+| Similar-Issue Sweep | Duplicate ID dispatch, guarded/forced injury, slot reloads, score coordinates and byte tables. |
+
+## S5 closure
+
+[Player contact proof](../proposals/m2/t42-shared-collision-and-platforms.md#s5-original-player-contact-proof)
+closes34 caller/data nodes with3,200/3,200 comparisons. Actual children match
+1,184/3,200; geometry/stun/palette scratch differences retain their owners.
+Actor matches improve18,928 ->18,936 with none lost. Timer32/32, hammer126/126
+and prior collision matches remain. Three EXEs refreshed; DOS link-only.
+S6 enemy-pair collision is next, not yet admitted. T42 remains open.
 
 ## S4 closure
 
@@ -33,7 +42,7 @@ closes six caller nodes:256/256 comparisons,240/256 with actual children.
 Palette scratch differences remain; old actor matches improve84 ->86/100.
 Prior actor/collision results remain. Two broad smoke failures reproduce at
 the same baseline assertions. Three EXEs refreshed; DOS link-only.
-S5 player contact is next, not yet admitted. T42 remains open.
+S5 is closed above. T42 remains open.
 
 ## S3 closure
 

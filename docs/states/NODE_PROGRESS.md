@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1310 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1344 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 597 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 563 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,310 / 1,992 (65.76%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,344 / 1,992 (67.47%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T42 S4 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s4-original-power-up-pickup-proof)
-closes six pickup caller labels:256/256 caller and240/256 actual matches.
-Palette scratch gaps remain. Power-up actor matches improve84 ->86/100;
-prior actor/collision matches remain. T42 is open; player contact S5 is next.
+Latest task review: [T42 S5 P1](../proposals/m2/t42-shared-collision-and-platforms.md#s5-original-player-contact-proof)
+closes34 contact/response/score nodes:3,200/3,200 caller comparisons,
+1,184/3,200 actual matches with named scratch gaps. Actor matches improve
+18,928 ->18,936 with none lost. T42 remains open; enemy pairs S6 are next.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1310)
+## Completed matches (1344)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1327,6 +1327,40 @@ of equivalent native nodes. No product repair is part of this audit.
 | 11297 | `UpToSuper` |
 | 11302 | `UpToFiery` |
 | 11305 | `NoPUp` |
+| 11309 | `ResidualXSpdData` |
+| 11312 | `KickedShellXSpdData` |
+| 11315 | `DemotedKoopaXSpdData` |
+| 11318 | `PlayerEnemyCollision` |
+| 11339 | `NoPECol` |
+| 11341 | `CheckForPUpCollision` |
+| 11346 | `EColl` |
+| 11350 | `KickedShellPtsData` |
+| 11353 | `HandlePECollisions` |
+| 11398 | `KSPts` |
+| 11399 | `ExPEC` |
+| 11401 | `ChkForPlayerInjury` |
+| 11405 | `ChkInj` |
+| 11413 | `ChkETmrs` |
+| 11421 | `TInjE` |
+| 11426 | `InjurePlayer` |
+| 11430 | `ForceInjury` |
+| 11440 | `SetKRout` |
+| 11441 | `SetPRout` |
+| 11448 | `ExInjColRoutines` |
+| 11452 | `KillPlayer` |
+| 11461 | `StompedEnemyPtsData` |
+| 11464 | `EnemyStomped` |
+| 11490 | `EnemyStompedPts` |
+| 11506 | `ChkForDemoteKoopa` |
+| 11521 | `RevivalRateData` |
+| 11524 | `HandleStompedShellE` |
+| 11536 | `SBnce` |
+| 11540 | `ChkEnemyFaceRight` |
+| 11545 | `LInj` |
+| 11549 | `EnemyFacePlayer` |
+| 11554 | `SFcRt` |
+| 11558 | `SetupFloateyNumber` |
+| 11566 | `ExSFN` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

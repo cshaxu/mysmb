@@ -254,13 +254,19 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
 void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
                                    mysmb_u8 source_a)
 {
-    mysmb_u8 id;
-    mysmb_u8 direction;
-
     if (source_a >= 9U && source_a < 17U &&
         (source_a == 9U || source_a >= 13U)) {
         game->ram[(mysmb_u16)(0x0016U + slot)] &= 1U;
     }
+    mysmb_world_set_stun(game, slot);
+}
+
+/* Existing SetStun body separated from the demotion prelude. Its scratch
+ * and ID differences remain with the later terrain-node owner. */
+void mysmb_world_set_stun(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 id;
+    mysmb_u8 direction;
     game->ram[(mysmb_u16)(0x001eU + slot)] =
         (mysmb_u8)((game->ram[(mysmb_u16)(0x001eU + slot)] & 0xf0U) | 2U);
     game->ram[(mysmb_u16)(0x00cfU + slot)] =
@@ -293,4 +299,18 @@ void mysmb_world_get_fireball_bounding_box(struct mysmb_game *game,
         (mysmb_u16)(0x04acU + (7U + slot) * 4U),
         game->ram[0x0074U + slot],
         game->ram[0x008dU + slot]);
+}
+
+/* Existing contact preflight semantics exposed as S9 dependencies. The
+ * high-Y gate is retained here, not certified by the contact caller proof. */
+mysmb_u8 mysmb_world_player_vertical_carry(struct mysmb_game *game)
+{
+    return game->ram[0x03d0U] >= 0xf0U || game->ram[0x00b5U] != 1U ||
+        game->ram[0x00ceU] >= 0xd0U ? 1U : 0U;
+}
+
+/* GetEnemyBoundBoxOfs Y output; A/carry are overwritten by collision core. */
+mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *game)
+{
+    return (mysmb_u8)(game->ram[8U] * 4U + 4U);
 }

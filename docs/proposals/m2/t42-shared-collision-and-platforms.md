@@ -679,3 +679,164 @@ Raw records: 2260491 bytes, below50 MB.
 | mysmb16.exe | 259513 | c1122e366fbd4bec4821876d8d6a90ec0a8183e8d9e69112c5f37b0c8c5610e0 |
 | mysmb32.exe | 356931 | fb78427c6dd5e1b8a005808237eec073cc3f4fb31f9047cd7730baaef775a0ef |
 | mysmb64.exe | 365144 | 3095b200d1125ff37305d98f07493d26a57e23d9421f62e1006fe1f6c3ccb18f |
+
+## S5 admission: player enemy response and score
+
+S4 closed in92c925a. Coordinator accepts transfer-214 from M2 T17 S6.
+Baseline1,310/1,992;34 scoped/expected-new labels, maximum1,344:
+
+`ResidualXSpdData` (open), `KickedShellXSpdData` (open), `DemotedKoopaXSpdData` (open), `PlayerEnemyCollision` (open), `NoPECol` (open), `CheckForPUpCollision` (open), `EColl` (open), `KickedShellPtsData` (open), `HandlePECollisions` (open), `KSPts` (open), `ExPEC` (open), `ChkForPlayerInjury` (open), `ChkInj` (open), `ChkETmrs` (open), `TInjE` (open), `InjurePlayer` (open), `ForceInjury` (open), `SetKRout` (open), `SetPRout` (open), `ExInjColRoutines` (open), `KillPlayer` (open), `StompedEnemyPtsData` (open), `EnemyStomped` (open), `EnemyStompedPts` (open), `ChkForDemoteKoopa` (open), `RevivalRateData` (open), `HandleStompedShellE` (open), `SBnce` (open), `ChkEnemyFaceRight` (open), `LInj` (open), `EnemyFacePlayer` (open), `SFcRt` (open), `SetupFloateyNumber` (open), `ExSFN` (open).
+
+Original $D84D-$DA24 forms the complete contact/response/score chain.
+Consolidate specialized legacy collision bodies into shared
+world/player_enemy_collision.c. Preserve source gates, live ObjectOffset,
+box child arguments, power-up/star tails, collision latches, kick scoring,
+injury/death, stomp/demotion/revival and facing/score writes. Distinguish
+InjurePlayer from ForceInjury(A); update timer's direct forced entry.
+Move SetPRout and SetupFloateyNumber to this owner. ResidualXSpdData is
+unreferenced in the original listing: bind its two source bytes and record
+that fact, never invent a gameplay consumer to obtain coverage.
+
+Source children CheckPlayerVertical/GetEnemyBoundBoxOfs, generic geometry,
+EnemyTurnAround, SetStun, PlayerEnemyDiff, GetPlayerColors, InitVStf and S2/S4
+retain independent ownership. Expose legacy child boundaries as needed,
+without silently repairing their algorithms or awarding their nodes.
+Remove duplicated production contact rules; old aggregate testing interfaces
+may prepare inputs and call the same core, but cannot retain separate responses.
+
+Logic proof uses controlled original NMI contact routes plus directly reached
+injury/score entries, checking source branches, data binding, complete child
+inputs/arguments and live state. Record actual-child comparisons separately.
+Operational proof uses mysmb.player-enemy-contact-chain, existing caller and
+power-up/hammer/firebar/timer regressions, strict C90 x86/x64 and DOS16 link,
+platform purity and three owner-authorized EXEs once per completed P.
+Known baseline core/local-area smoke failures retain their S4 evidence.
+
+Owner-local ROM/listing provenance and nonredistributable containment remain
+unchanged. Ignored build/m2-t42-s5 permits at most4,096 original fixtures,
+150 MB raw output, twenty-second process limits and resumable checkpoints.
+Coordinator owns cleanup after dependent verification. No product emulator,
+platform gameplay or whole-game/DOS graphics certification. Similar-issue
+sweep covers duplicate ID-dispatch collision bodies, source slot reloads,
+forced versus guarded injury, scratch/score coordinates and byte-wrap tables.
+Each exact label needs both proof tracks before closure; admission is no credit.
+
+## S5 original player contact proof
+
+S5 P1 closes all34 expected open labels:1,310 ->1,344/1,992.
+No scoped label remains incomplete or transfers. T42 stays open; S6 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| ResidualXSpdData | Unreferenced original two-byte table bound exactly; no invented consumer. ROM-match complete. |
+| KickedShellXSpdData | Two direction-selected shell speeds bound to source bytes. ROM-match complete. |
+| DemotedKoopaXSpdData | Two direction-selected demoted speeds bound to source bytes. ROM-match complete. |
+| PlayerEnemyCollision | Parity, vertical, mask, engine and state gates; prepared boxes; live ObjectOffset and contact tails. ROM-match complete. |
+| NoPECol | Gate/miss return preserves source footprint after optional latch clear. ROM-match complete. |
+| CheckForPUpCollision | Power-up ID selects the S4 tail before star logic. ROM-match complete. |
+| EColl | Star timer selects defeat; zero selects ordinary response. ROM-match complete. |
+| KickedShellPtsData | Three near-revival kick scores bound to source bytes and indexed by interval timer. ROM-match complete. |
+| HandlePECollisions | Collision latch, enemy type, water and state branches precede kick or injury. ROM-match complete. |
+| KSPts | Choose chain-plus-three or interval-indexed score, then SetupFloateyNumber. ROM-match complete. |
+| ExPEC | Latched, masked and defeated-Goomba exits retain their source writes. ROM-match complete. |
+| ChkForPlayerInjury | Y-speed sign/zero dispatch selects stomp or injury checks. ROM-match complete. |
+| ChkInj | ID threshold and byte-wrapped player Y plus12 select top contact. ROM-match complete. |
+| ChkETmrs | Stomp and injury timers precede relative-X facing decisions. ROM-match complete. |
+| TInjE | Left-side contact tests moving direction before turn/injury. ROM-match complete. |
+| InjurePlayer | InjuryTimer guard precedes ForceInjury. ROM-match complete. |
+| ForceInjury | PlayerStatus selects death or status/sound/palette injury sequence; consumes source A. ROM-match complete. |
+| SetKRout | Injury/death select player state1 before SetPRout. ROM-match complete. |
+| SetPRout | Write engine/state, halt timers and zero scroll in source order. ROM-match complete. |
+| ExInjColRoutines | Reload ObjectOffset at injury return; no RAM side effect. ROM-match complete. |
+| KillPlayer | Zero X speed, death music, FC Y speed, engine11 and state1. ROM-match complete. |
+| StompedEnemyPtsData | Four stomp scores bound to source bytes and original ID dispatch. ROM-match complete. |
+| EnemyStomped | Spiny injury and stomp sound precede source ID/points branches. ROM-match complete. |
+| EnemyStompedPts | Score, saved direction, SetStun, state20, InitVStf and FD bounce in order. ROM-match complete. |
+| ChkForDemoteKoopa | ID demotion, normal state, score3, InitVStf, facing and demoted speed. ROM-match complete. |
+| RevivalRateData | Two hard-mode revival intervals bound to source bytes. ROM-match complete. |
+| HandleStompedShellE | State4, byte stomp-chain increment, score, stomp timer and interval writes. ROM-match complete. |
+| SBnce | FC player bounce and return. ROM-match complete. |
+| ChkEnemyFaceRight | Right-side direction check selects direct injury or turnaround. ROM-match complete. |
+| LInj | EnemyTurnAround precedes guarded injury. ROM-match complete. |
+| EnemyFacePlayer | PlayerEnemyDiff sign selects direction and returned speed-table index. ROM-match complete. |
+| SFcRt | Store direction and decrement index without extra scratch writes. ROM-match complete. |
+| SetupFloateyNumber | Store score control, timer30, enemy Y and prepared relative X. ROM-match complete. |
+| ExSFN | Score return has no additional RAM writes. ROM-match complete. |
+
+All210 original instructions in $D84D-$DA24 execute. Six tables (15 bytes)
+match the original; ResidualXSpdData is unreferenced original data. Of41
+branches,39 execute both ways. $D963 follows LDA #0B and must take BNE;
+$D985 cannot take its Podoboo branch from this root because the earlier
+ID check routes Podoboo to injury before every EnemyStomped incoming edge.
+Thus80/80 feasible outcomes are covered; no infeasible edge is called tested.
+
+1,600 controlled RAM-input cases reach PlayerEnemyCollision from ordinary
+NMI/PowerUpObjHandler. Original ROM code, PC, stack and outputs are unchanged.
+Observed and observer-free frames agree. Full caller comparison passes
+3,200/3,200 across x86/x64. Complete child input RAM and consumed arguments
+are checked before replaying child outputs: vertical carry, box Y, geometry
+Y/carry, pickup/defeat slots, palette input, stun, initialization, distance
+slot/sign and turnaround. Register inputs overwritten before use are excluded
+explicitly; source X preservation is checked where the caller consumes it.
+Hardware return storage is excluded; mapped $0109-$0139 remains compared.
+
+Actual children match1,184/3,200. All2,016 differences include $06;96 also
+include $07 and1,156 include $00. There are no other differing RAM addresses
+in this matrix. Geometry and SetStun keep M2 T17 S6 custody; GetPlayerColors
+keeps M2 T27 S1. Their known scratch omissions remain unresolved. Vertical,
+box-offset and turnaround dependency seams retain S9/S6 responsibility;
+this caller proof does not certify their implementations or full gameplay.
+
+One shared player_enemy_collision.c replaces the separate enemy-type
+responses. Collision callbacks consume prepared boxes; compatibility test
+adapters only select/prepare inputs and call that owner. SetPRout and source
+SetupFloateyNumber move here. Guarded InjurePlayer and direct ForceInjury(A)
+are distinguished, and RunGameTimer uses the latter. Injury sound/palette,
+kick interval scoring, byte-wrapped stomps, demotion and source facing order
+are restored. Existing SetStun is split from its demotion prelude without
+changing its algorithm. Legacy terrain/pair world-coordinate score preparation
+stays with its original pending owners, not this source-relative entry.
+
+Similar-issue review covers every collision dispatch/caller, duplicated
+response, timer address, forced/guarded injury and score coordinate. The
+first source comparison caught an interval/frame-timer address transcription
+error; it was corrected to $0796 before final verification and rebuild.
+Pre-correction native outputs are explicitly retained only as rejected
+local diagnostics. Platform diff is empty; no runtime emulator is linked.
+
+Native tests pass460,288 kick/injury/stomp combinations per width plus
+live-slot mutation and gate contracts. Three focused CTests pass: contact,
+timer and platform purity. Six affected suites pass on both widths.
+Old bullet/Hammer Bro/paratroopa tests had omitted the AreaType=land input;
+two also left the C structure or preserved NES RAM uninitialized. Those
+inputs are corrected without weakening assertions, following the original
+water-injury branch and InitializeMemory's partial-clear contract.
+Known broad core/local-area smoke failures retain the S4 baseline record.
+
+The actual actor matrix improves18,928 ->18,936/29,434 with no lost prior
+match. Earlier fireball scan/hit, hammer-contact and pickup matrices retain
+all prior matches:920/2,048,0/1,024,54/576 and240/256, respectively. Timer
+parents pass32/32 and hammer lifecycle126/126. Power-up parents retain86/100
+with the existing fourteen OAM failures. These retained parent contracts do
+not enlarge their original scratch/output coverage.
+
+All115 shared files compile as strict C90 for x86/x64; both product self-tests
+and hidden-window response probes pass. DOS16 compiles/links with the known
+OLDNAMES warning. Three owner-authorized EXEs are refreshed after the final
+correction. DOS graphics/resource binding and486SX performance remain unproved.
+
+Reproduce player_enemy_contact_fixture.h cases0..1599 with
+--fixture=t42-player-enemy-contact=N, --player-enemy-contact-snapshot,
+--control-children and --pc-coverage. player_enemy_contact_snapshot_check
+proves callers; enemy_loop_actual_check runs actual children. Recorder permits
+the combined observation options; per-process deadlines remain20 seconds.
+Ignored build/m2-t42-s5 has resumable checkpoints; coordinator owns cleanup
+after dependent regressions. Native CTest:mysmb.player-enemy-contact-chain.
+
+Raw records: 41311722 bytes, below150 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256233 | 3217e11afc45cc9039be1dfac8c286e5456eefc0450472f20ab38457c5513bfa |
+| mysmb32.exe | 354516 | 80a3784a553a857a27a060e21684b4bb5b42b02af32de18be043d614b73f7f04 |
+| mysmb64.exe | 362755 | 9334617e30843e02917fb00eb0b11e9932573c1b71b12d0a33464765be818072 |

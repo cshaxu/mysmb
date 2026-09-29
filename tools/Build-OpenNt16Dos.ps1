@@ -48,6 +48,7 @@ $sources = @(
     'game/world/fireball_hit.c',
     'game/world/hammer_collision.c',
     'game/world/powerup_collision.c',
+    'game/world/player_enemy_collision.c',
     'game/oam/fireworks_gfx.c',
     'game/enemy/firebar_children.c',
     'game/enemy/distance.c',

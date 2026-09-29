@@ -77,6 +77,8 @@ int main(void)
     game.ram[0x049bU] = 9U;
     game.ram[0x005aU] = 0x18U;
     source_player_box(&game);
+    /* HandlePECollisions takes the injury tail in water; this is a land stomp. */
+    game.ram[0x074eU] = 1U;
     mysmb_objects_check_bullet_bill_stomp(&game);
     if (game.ram[0x0020U] != 0x20U || game.ram[0x00d1U] != 0x6eU ||
         game.ram[0x00a2U] != 0U || game.ram[0x0436U] != 0U ||
@@ -97,6 +99,8 @@ int main(void)
     game.ram[0x049bU] = 9U;
     game.ram[0x005aU] = 1U;
     source_player_box(&game);
+    /* HandlePECollisions takes the injury tail in water; this is a land stomp. */
+    game.ram[0x074eU] = 1U;
     mysmb_objects_check_bloober_stomp(&game);
     if (game.ram[0x0020U] != 0x20U || game.ram[0x00d1U] != 0x6eU ||
         game.ram[0x00a2U] != 0U || game.ram[0x0436U] != 0U ||
@@ -117,6 +121,8 @@ int main(void)
     game.ram[0x00d1U] = 0x70U;
     game.ram[0x049bU] = 9U;
     source_player_box(&game);
+    /* HandlePECollisions takes the injury tail in water; this is a land stomp. */
+    game.ram[0x074eU] = 1U;
     mysmb_objects_check_bullet_bill_stomp(&game);
     if (game.ram[0x0020U] != 0U || game.ram[0x009fU] != 1U || game.ram[0x0493U] != 0U) return 1;
     mysmb_game_initialize(&game);
@@ -140,6 +146,8 @@ int main(void)
     game.ram[0x00cfU] = 0x70U;
     game.ram[0x049aU] = 3U;
     source_player_box(&game);
+    /* HandlePECollisions takes the injury tail in water; this is a land stomp. */
+    game.ram[0x074eU] = 1U;
     mysmb_objects_check_lakitu_stomp(&game);
     if (game.ram[0x001eU] != 0x20U || game.ram[0x00cfU] != 0x6eU ||
         game.ram[0x00a0U] != 0U || game.ram[0x0434U] != 0U ||

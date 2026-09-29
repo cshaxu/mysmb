@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "game/objects.h"
+#include <string.h>
 /* PlayerCtrlRoutine has already run before source object collisions.  These
  * direct object tests therefore provide the control-0 primary box that the
  * ROM left in $04ac-$04af (relative X + 2/+14, Y + 8/+32). */
@@ -31,6 +32,8 @@ int main(void)
 {
     struct mysmb_game game;
 
+    /* InitializeMemory clears selected NES RAM, not the host C structure. */
+    memset(&game, 0, sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.frame_number = 0UL;
     game.ram[0x000fU] = 1U;
@@ -57,6 +60,8 @@ int main(void)
     if (game.ram[0x0046U] != 2U) return 15;
     if (game.ram[0x0058U] != 4U) return 16;
 
+    /* InitializeMemory clears selected NES RAM, not the host C structure. */
+    memset(&game, 0, sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 1U;
@@ -100,6 +105,8 @@ int main(void)
 
     /* ROM DrawHammer still emits its forced first pose while TimerControl
      * freezes object movement.  This isolates its two OAM entries. */
+    /* InitializeMemory clears selected NES RAM, not the host C structure. */
+    memset(&game, 0, sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x002aU] = 0U;
     game.ram[0x002bU] = 0U;
@@ -136,6 +143,8 @@ int main(void)
     if (game.ram[0x002aU] != 0U || game.ram[0x0220U] != 0xf8U ||
         game.ram[0x0224U] != 0xf8U) return 67;
 
+    /* InitializeMemory clears selected NES RAM, not the host C structure. */
+    memset(&game, 0, sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x071aU] = 0U;
     game.ram[0x071bU] = 1U;
@@ -176,6 +185,8 @@ int main(void)
         game.ram[0x000eU] != 10U || game.ram[0x001dU] != 1U ||
         game.ram[0x0747U] != 0xffU) return 6;
 
+    /* InitializeMemory clears selected NES RAM, not the host C structure. */
+    memset(&game, 0, sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 5U;
@@ -192,6 +203,8 @@ int main(void)
     game.ram[0x000eU] = 8U;
     game.frame_number = 0U;
     source_player_box(&game);
+    /* HandlePECollisions takes the injury tail in water; this is a land stomp. */
+    game.ram[0x074eU] = 1U;
     mysmb_objects_check_hammer_bro_stomp(&game);
     if (game.ram[0x001eU] != 0x20U || game.ram[0x00cfU] != 0x6eU ||
         game.ram[0x00a0U] != 0U || game.ram[0x0058U] != 0U ||

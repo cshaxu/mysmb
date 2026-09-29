@@ -15,7 +15,7 @@ mysmb_u8 mysmb_game_run_timer(struct mysmb_game *game)
          game->ram[0x07f8U + 1U] |
          game->ram[0x07f8U + 2U]) == 0U) {
         game->ram[0x0756U] = 0U;
-        mysmb_objects_force_injury(game);
+        mysmb_objects_force_injury_entry(game, 0U);
         game->ram[0x0759U]++;
         return 0U;
     }

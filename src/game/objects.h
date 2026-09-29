@@ -47,6 +47,8 @@ void mysmb_objects_check_enemy_side(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_hammer_terrain(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile);
+/* ROM $D853 PlayerEnemyCollision; consumes prepared boxes. The final
+ * parameter is retained only for existing caller ABI compatibility. */
 void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
                                         mysmb_u8 preserve_collision_boxes);
 void mysmb_objects_step_normal_enemies(struct mysmb_game *game);
@@ -59,8 +61,7 @@ mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game, m
 /* ROM OffscreenBoundsCheck / EraseEnemyObject. */
 void mysmb_objects_check_enemy_offscreen_bounds(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_erase_enemy(struct mysmb_game *game, mysmb_u8 slot);
-/* Existing collision child, with persistent caller-prepared boxes when set.
- * General PlayerEnemyCollision equivalence remains a separate obligation. */
+/* Legacy cannon/test adapter to the same PlayerEnemyCollision owner. */
 mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
     mysmb_u8 slot, mysmb_u8 preserve_collision_boxes);
 /* ROM EnemiesCollision/ProcEnemyCollisions for the current ObjectOffset. */
@@ -106,27 +107,27 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game);
 /* ROM ProcHammerBro through MoveHammerBroXDir, before hammer misc objects. */
 void mysmb_objects_step_hammer_bros(struct mysmb_game *game);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);
-/* ROM ForceInjury: shared by collision and timer-expiry routes. */
+/* ROM $D92C InjurePlayer, guarded by InjuryTimer; historical API name. */
 void mysmb_objects_force_injury(struct mysmb_game *game);
 void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game);
 void mysmb_objects_check_bloober_stomp(struct mysmb_game *game);
-/* ROM $dcfd-$ddcb EnemyStomped, bounded to Lakitu (ID $11). */
+/* Legacy aggregate test adapter for Lakitu (ID $11). */
 void mysmb_objects_check_lakitu_stomp(struct mysmb_game *game);
-/* ROM $dcfd-$ddcb EnemyStomped, bounded to Hammer Bro (ID $05). */
+/* Legacy aggregate test adapter for Hammer Bro (ID $05). */
 void mysmb_objects_check_hammer_bro_stomp(struct mysmb_game *game);
-/* ROM $dcfd-$ddcb / $e06a ChkForDemoteKoopa, IDs $0e-$10. */
+/* Legacy aggregate test adapter for paratroopas, IDs $0e-$10. */
 void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game);
-/* ROM $dcfd-$ddcb PlayerEnemyCollision, bounded to power-up slot five. */
+/* Legacy slot-five test adapter to PlayerEnemyCollision. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game);
 /* ROM $D800 HandlePowerUpCollision, with original enemy-slot input. */
 void mysmb_objects_collect_power_up(struct mysmb_game *game, mysmb_u8 slot);
-/* Existing SetPRout state effect; caller passes source A/Y. */
+/* ROM $D948 SetPRout; caller passes source A/Y. */
 void mysmb_objects_set_player_routine(struct mysmb_game *game,
                                        mysmb_u8 routine, mysmb_u8 state);
-/* ROM FloateyNumbersRoutine, excluding OAM output. */
-/* ROM SetupFloateyNumber when RelativeEnemyPosition has prepared $03ae. */
+/* ROM $DA11 SetupFloateyNumber consumes prepared $03ae. */
 void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
                                              mysmb_u8 slot, mysmb_u8 control);
+/* ROM FloateyNumbersRoutine, excluding OAM output. */
 void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_floatey_numbers(struct mysmb_game *game);
 /* ROM $B91E Setup_Vine and $B949 VineHeightData. */
@@ -144,6 +145,17 @@ void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
  * handoff used by HandleAxeMetatile. */
 void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
                               mysmb_u8 block_row);
+
+/* ROM $D931 ForceInjury with source A, bypassing the InjuryTimer guard. */
+void mysmb_objects_force_injury_entry(struct mysmb_game *game, mysmb_u8 a);
+/* ROM $D895, $D969, $DA05 shared contact-chain entries. */
+void mysmb_objects_handle_player_enemy_contact(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 id);
+void mysmb_objects_enemy_stomped(struct mysmb_game *game, mysmb_u8 slot);
+mysmb_u8 mysmb_objects_enemy_face_player(struct mysmb_game *game, mysmb_u8 slot);
+/* Unchanged EnemyTurnAround dependency, awaiting S6 source proof. */
+void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
+extern const mysmb_u8 mysmb_residual_x_speeds[2];
 
 #endif
 

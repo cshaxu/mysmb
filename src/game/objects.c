@@ -169,281 +169,72 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
                                                mysmb_u8 control);
 static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot);
-static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
+void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot);
 
 
-/* ROM InjurePlayer/ForceInjury/KillPlayer.  Every object collision converges
- * here so a small player enters the death route rather than becoming immune. */
-void mysmb_objects_force_injury(struct mysmb_game *game)
+/* Retained aggregate test adapters. Production enters PlayerEnemyCollision
+ * with one current slot and prepared boxes. These adapters only prepare
+ * legacy test inputs; every response goes through that same shared owner. */
+static void legacy_player_contact(struct mysmb_game *game, mysmb_u8 slot)
 {
-    if (game->ram[MYSMB_INJURY_TIMER] != 0U) return;
-    if (game->ram[MYSMB_PLAYER_STATUS] == 0U) {
-        game->ram[MYSMB_PLAYER_X_SPEED] = 0U;
-        game->ram[0x00fcU] = 1U;
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 11U;
-    }
-    else {
-        game->ram[MYSMB_PLAYER_STATUS] = 0U;
-        game->ram[MYSMB_INJURY_TIMER] = 8U;
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = 10U;
-    }
-    game->ram[MYSMB_PLAYER_STATE] = 1U;
-    game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
-    game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
-}
-
-/* ROM $dcfd-$dd4b PlayerEnemyCollision direct-injury branches: Podoboo,
- * Piranha Plant, and Spiny.  The ROM literal #$15 is hexadecimal: the
- * Paratroopas and Lakitu below it still reach the stomp path. */
-static mysmb_u8 mysmb_objects_check_hazard_enemy_collision_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U || game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U || game->ram[MYSMB_INJURY_TIMER] != 0U) return 0U;
     if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        (game->ram[MYSMB_ENEMY_ID + slot] != 10U && game->ram[MYSMB_ENEMY_ID + slot] != 11U &&
-         game->ram[MYSMB_ENEMY_ID + slot] != 12U && game->ram[MYSMB_ENEMY_ID + slot] != 13U &&
-         game->ram[MYSMB_ENEMY_ID + slot] != 18U) ||
-        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    mysmb_objects_force_injury(game);
-    return 1U;
-    return 0U;
+        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return;
+    game->ram[8U] = slot;
+    mysmb_oam_relative_enemy_position(game, slot);
+    mysmb_objects_player_enemy_current(game, slot, 1U);
 }
 
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_hazard_enemy_collision_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 10U || id == 11U || id == 12U || id == 13U || id == 18U) legacy_player_contact(game, slot);
     }
 }
 
-/* ROM $dcfd PlayerEnemyCollision and $e069 SetStun, bounded to ID 8. */
-static mysmb_u8 mysmb_objects_check_bullet_bill_stomp_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U || game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U || game->ram[MYSMB_PLAYER_Y_SPEED] == 0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 8U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0x20U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
-    return 1U;
-    return 0U;
-}
-
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_bullet_bill_stomp(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_bullet_bill_stomp_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 8U) legacy_player_contact(game, slot);
     }
 }
 
-/* ROM $dcfd PlayerEnemyCollision and $e069 EnemyStomped, bounded to ID 7. */
-static mysmb_u8 mysmb_objects_check_bloober_stomp_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U || game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U || game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U || game->ram[MYSMB_PLAYER_Y_SPEED] == 0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 7U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0x20U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
-    return 1U;
-    return 0U;
-}
-
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_bloober_stomp(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_bloober_stomp_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 7U) legacy_player_contact(game, slot);
     }
 }
 
-/* ROM $dcfd-$ddcb PlayerEnemyCollision and EnemyStomped, bounded to Lakitu.
- * EnemyStomped preserves Lakitu's direction, calls SetStun, then replaces its
- * state with d5 and clears movement physics through InitVStf. */
-static mysmb_u8 mysmb_objects_check_lakitu_stomp_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 17U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    mysmb_objects_setup_floatey_number(game, slot, 5U);
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0x20U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
-    return 1U;
-    return 0U;
-}
-
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_lakitu_stomp(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_lakitu_stomp_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 17U) legacy_player_contact(game, slot);
     }
 }
 
-/* ROM $dcfd-$ddcb EnemyStomped, bounded to Hammer Bro (ID $05). */
-static mysmb_u8 mysmb_objects_check_hammer_bro_stomp_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U || game->ram[MYSMB_ENEMY_ID + slot] != 5U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
-        mysmb_objects_set_player_enemy_collision_boxes(game, slot) == 0U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    mysmb_objects_setup_floatey_number(game, slot, 6U);
-    game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0x20U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfdU;
-    return 1U;
-    return 0U;
-}
-
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_hammer_bro_stomp(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_hammer_bro_stomp_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 5U) legacy_player_contact(game, slot);
     }
 }
 
-/* ROM $dcfd-$ddcb PlayerEnemyCollision and $e06a ChkForDemoteKoopa. */
-static mysmb_u8 mysmb_objects_check_paratroopa_stomp_slot(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-    mysmb_u16 screen_world;
-    mysmb_u16 enemy_box;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U || game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
-        game->ram[MYSMB_PLAYER_Y_SPEED] == 0U || game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (player_world < screen_world || (mysmb_u16)(player_world - screen_world) >= 0x100U) return 0U;
-    if (game->ram[MYSMB_ENEMY_FLAG + slot] == 0U ||
-        (game->ram[MYSMB_ENEMY_ID + slot] != 14U &&
-         game->ram[MYSMB_ENEMY_ID + slot] != 15U &&
-         game->ram[MYSMB_ENEMY_ID + slot] != 16U) ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U) return 0U;
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + slot]);
-    if (enemy_world < screen_world || (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    mysmb_world_set_bounding_box(game, enemy_box, game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
-        (mysmb_u8)(enemy_world - screen_world), game->ram[MYSMB_ENEMY_Y + slot]);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    game->ram[MYSMB_ENEMY_ID + slot] &= 1U;
-    game->ram[MYSMB_ENEMY_STATE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_X_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
-        enemy_world >= player_world ? 1U : 2U;
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 8U : 0xf8U;
-    mysmb_objects_setup_floatey_number(game, slot, 3U);
-    game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
-    return 1U;
-    return 0U;
-}
-
-/* Legacy aggregate interface; production uses the current-slot boundary. */
 void mysmb_objects_check_paratroopa_stomp(struct mysmb_game *game)
 {
-    mysmb_u8 slot;
+    mysmb_u8 slot, id;
     for (slot = 0U; slot < 5U; ++slot) {
-        if (mysmb_objects_check_paratroopa_stomp_slot(game, slot) != 0U) return;
+        id = game->ram[MYSMB_ENEMY_ID + slot];
+        if (id == 14U || id == 15U || id == 16U) legacy_player_contact(game, slot);
     }
 }
 
@@ -495,96 +286,14 @@ void mysmb_objects_get_coin_bounding_box(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_MISC_X + slot]);
 }
 
-/* ROM $dcfd-$ddcb PlayerEnemyCollision and $e069-$e08a EnemyStomped,
- * bounded to ordinary walking enemies. */
+/* Legacy ABI used by the cannon caller and aggregate tests. All response
+ * logic belongs to the canonical current-slot PlayerEnemyCollision. */
 mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
-                                                            mysmb_u8 slot,
-                                                            mysmb_u8 preserve_collision_boxes)
+    mysmb_u8 slot, mysmb_u8 preserve_collision_boxes)
 {
-    mysmb_u16 player_world;
-    mysmb_u16 enemy_world;
-    mysmb_u16 screen_world;
-    mysmb_u16 enemy_box;
-    mysmb_u8 state;
-
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U) return 0U;
-    player_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_PLAYER_PAGE] << 8U) |
-                                game->ram[MYSMB_PLAYER_X]);
-    enemy_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_ENEMY_PAGE + slot] << 8U) |
-                               game->ram[MYSMB_ENEMY_X + slot]);
-    screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
-                                game->ram[MYSMB_SCREEN_LEFT_X]);
-    if (player_world < screen_world || enemy_world < screen_world ||
-        (mysmb_u16)(player_world - screen_world) >= 0x100U ||
-        (mysmb_u16)(enemy_world - screen_world) >= 0x100U) return 0U;
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    /* PlayerEnemyCollision consumes the persistent bounding boxes produced
-     * by PlayerGfxHandler and GetEnemyBoundBox.  The standalone owner test
-     * path has no preceding PlayerGfxHandler, so it initializes its boxes. */
-    if (preserve_collision_boxes == 0U) {
-        mysmb_world_set_bounding_box(game, MYSMB_BOUNDING_BOX_PLAYER,
-                                       game->ram[MYSMB_PLAYER_BOUND_BOX],
-                                       (mysmb_u8)(player_world - screen_world),
-                                       game->ram[MYSMB_PLAYER_Y]);
-        mysmb_world_set_bounding_box(game, enemy_box,
-                                       game->ram[MYSMB_ENEMY_BOUND_BOX + slot],
-                                       (mysmb_u8)(enemy_world - screen_world),
-                                       game->ram[MYSMB_ENEMY_Y + slot]);
-    }
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER, enemy_box) == 0U) {
-        game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] &= 0xfeU;
-        return 0U;
-    }
-    if ((game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] & 1U) != 0U) return 0U;
-    game->ram[MYSMB_ENEMY_COLLISION_BITS + slot] |= 1U;
-    if (game->ram[MYSMB_STAR_INVINCIBLE_TIMER] != 0U) {
-        game->ram[MYSMB_ENEMY_STATE + slot] =
-            (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + slot] & 0x10U) | 0x22U);
-        game->ram[MYSMB_ENEMY_Y + slot] =
-            (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
-        game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xfdU;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
-            enemy_world > player_world ? 1U : 2U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x10U : 0xf0U;
-        mysmb_objects_setup_floatey_number(game, slot,
-            game->ram[MYSMB_ENEMY_ID + slot] == 6U ? 1U : 2U);
-        return 1U;
-    }
-    state = (mysmb_u8)(game->ram[MYSMB_ENEMY_STATE + slot] & 7U);
-    if (state >= 2U && game->ram[MYSMB_ENEMY_ID + slot] != 6U) {
-        /* ROM HandlePECollisions: a defeated Goomba has no shell to kick. */
-        if (game->ram[MYSMB_ENEMY_ID + slot] == 0U) return 1U;
-        game->ram[MYSMB_ENEMY_STATE + slot] |= 0x80U;
-        game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] =
-            enemy_world > player_world ? 2U : 1U;
-        game->ram[MYSMB_ENEMY_X_SPEED + slot] =
-            game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] == 1U ? 0x30U : 0xd0U;
-        mysmb_objects_setup_floatey_number(game, slot,
-            (mysmb_u8)(game->ram[MYSMB_STOMP_CHAIN_COUNTER] + 3U));
-        return 1U;
-    }
-    if (game->ram[MYSMB_PLAYER_Y_SPEED] != 0U &&
-        game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U) {
-        /* ROM EnemyStomped queues Sfx_EnemyStomp before it changes the
-         * defeated object state or allocates its floatey score. */
-        game->ram[MYSMB_SQUARE1_SOUND] = 4U;
-        game->ram[MYSMB_ENEMY_STATE + slot] = 4U;
-        game->ram[MYSMB_ENEMY_INTERVAL_TIMER + slot] =
-            game->ram[MYSMB_PRIMARY_HARD] == 0U ? 0x10U : 0x0bU;
-        game->ram[MYSMB_STOMP_CHAIN_COUNTER]++;
-        mysmb_objects_setup_floatey_number(game, slot,
-            (mysmb_u8)(game->ram[MYSMB_STOMP_CHAIN_COUNTER] + game->ram[MYSMB_STOMP_TIMER]));
-        game->ram[MYSMB_STOMP_TIMER]++;
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 0xfcU;
-        return 1U;
-    }
-    mysmb_objects_force_injury(game);
-    return 1U;
+    if (preserve_collision_boxes == 0U) legacy_player_contact(game, slot);
+    else mysmb_objects_player_enemy_current(game, slot, 1U);
+    return (mysmb_u8)(game->ram[0x0491U + game->ram[8U]] & 1U);
 }
 
 /* Existing walking-route bump and side-check children, extracted so the
@@ -719,29 +428,6 @@ bump:
 
 
 
-
-/* Current-slot seam for the existing collision implementations. Source
- * PlayerEnemyCollision is one caller boundary; these legacy specialized
- * bodies remain explicitly uncertified, without frame-wide scans. */
-void mysmb_objects_player_enemy_current(struct mysmb_game *game, mysmb_u8 slot,
-                                        mysmb_u8 preserve_collision_boxes)
-{
-    switch (game->ram[MYSMB_ENEMY_ID + slot]) {
-    case 0x2eU: mysmb_objects_check_power_up_collision(game); break;
-    case 5U: (void)mysmb_objects_check_hammer_bro_stomp_slot(game, slot); break;
-    case 7U: (void)mysmb_objects_check_bloober_stomp_slot(game, slot); break;
-    case 8U: (void)mysmb_objects_check_bullet_bill_stomp_slot(game, slot); break;
-    case 10U: case 11U: case 12U: case 13U: case 18U:
-        (void)mysmb_objects_check_hazard_enemy_collision_slot(game, slot); break;
-    case 14U: case 15U: case 16U:
-        (void)mysmb_objects_check_paratroopa_stomp_slot(game, slot); break;
-    case 17U: (void)mysmb_objects_check_lakitu_stomp_slot(game, slot); break;
-    default:
-        (void)mysmb_objects_check_normal_enemy_collision(game, slot,
-                                                         preserve_collision_boxes);
-        break;
-    }
-}
 
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_bullet_bills(struct mysmb_game *game)
@@ -912,41 +598,12 @@ void mysmb_objects_step_flying_green_paratroopas(struct mysmb_game *game)
     }
 }
 
-/* ROM $dcfd-$ddcb PlayerEnemyCollision, narrowed to the reserved power-up
- * slot.  The original uses screen-relative one-byte boxes; the same entries
- * are retained in RAM so later enemy-object routes can share them. */
+/* Legacy slot-five test entry. PowerUpObjHandler uses the canonical
+ * current-slot contact function directly. */
 void mysmb_objects_check_power_up_collision(struct mysmb_game *game)
 {
-    const mysmb_u8 slot = 5U;
-    mysmb_u16 enemy_box;
-
-    /* ROM PlayerEnemyCollision rejects the source vertical player mask and
-     * GetEnemyBoundBox masked result.  It consumes screen-relative RAM boxes,
-     * not an invented host world-coordinate visibility range. */
-    if ((game->ram[MYSMB_FRAME_COUNTER] & 1U) != 0U ||
-        game->ram[MYSMB_ENEMY_ID + slot] != 0x2eU ||
-        game->ram[MYSMB_ENEMY_STATE + slot] < 6U ||
-        game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] != 8U ||
-        game->ram[MYSMB_PLAYER_OFFSCREEN_BITS] >= 0xf0U ||
-        game->ram[MYSMB_PLAYER_Y_HIGH] != 1U ||
-        game->ram[MYSMB_PLAYER_Y] >= 0xd0U ||
-        game->ram[MYSMB_ENEMY_OFFSCREEN_BITS_MASKED + slot] != 0U) return;
-
-    enemy_box = (mysmb_u16)(MYSMB_BOUNDING_BOX_ENEMY + slot * 4U);
-    if (mysmb_world_boxes_collide(game, MYSMB_BOUNDING_BOX_PLAYER,
-                                    enemy_box)) {
-        mysmb_objects_collect_power_up(game, slot);
-    }
-}
-/* Existing SetPRout effect extracted from the pickup caller. Its source
- * node is owned by T42 S5; this seam makes the dependency explicit. */
-void mysmb_objects_set_player_routine(struct mysmb_game *game,
-                                       mysmb_u8 routine, mysmb_u8 state)
-{
-    game->ram[MYSMB_GAME_ENGINE_SUBROUTINE] = routine;
-    game->ram[MYSMB_PLAYER_STATE] = state;
-    game->ram[MYSMB_TIMER_CONTROL] = 0xffU;
-    game->ram[MYSMB_SCROLL_AMOUNT] = 0U;
+    game->ram[8U] = 5U;
+    mysmb_objects_player_enemy_current(game, 5U, 1U);
 }
 
 /* ROM $84c3 FloateyNumbersRoutine.  GameEngine invokes this once immediately
@@ -1063,18 +720,6 @@ static void mysmb_objects_setup_floatey_number(struct mysmb_game *game,
     screen_world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_LEFT_PAGE] << 8U) |
                                 game->ram[MYSMB_SCREEN_LEFT_X]);
     game->ram[MYSMB_FLOATEY_NUM_X + slot] = (mysmb_u8)(enemy_world - screen_world);
-}
-/* ROM SetupFloateyNumber after RelativeEnemyPosition.  This public cross-
- * owner seam consumes the source fixed scratch pair instead of rebuilding a
- * world coordinate; ordinary legacy callers retain their existing helper. */
-void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
-                                                mysmb_u8 slot,
-                                                mysmb_u8 control)
-{
-    game->ram[MYSMB_FLOATEY_NUM_CONTROL + slot] = control;
-    game->ram[MYSMB_FLOATEY_NUM_TIMER + slot] = 0x30U;
-    game->ram[MYSMB_FLOATEY_NUM_Y + slot] = game->ram[MYSMB_ENEMY_Y + slot];
-    game->ram[MYSMB_FLOATEY_NUM_X + slot] = game->ram[0x03aeU];
 }
 /* Temporary bulk caller while the engine vector is migrated. */
 void mysmb_objects_step_flying_cheep_cheeps(struct mysmb_game *game)
@@ -1209,7 +854,7 @@ static void mysmb_objects_defeat_by_shell(struct mysmb_game *game,
 }
 
 /* ROM $dd04 EnemyTurnAround. */
-static void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot)
+void mysmb_objects_turn_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 id;
 
