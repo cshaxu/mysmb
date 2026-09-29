@@ -197,6 +197,60 @@ separate operational track.
 | 14242 | `ChnkOfs` | open |
 | 14250 | `ExBCDr` | open |
 
+### S2 closure: block and brick-chunk OAM
+
+All **14 / 14** scoped labels become ROM-match complete. M2 moves from
+**1,637** to **1,651 / 1,992**, with no deferred S2 label. The original
+four-byte `DefaultBlockObjTiles` binding at `$ebcd` is `85 85 86 86`;
+all thirteen executable labels have original-PC witnesses. Across the
+`$ebd1-$ecdd` chain, all ten conditional branches have both outcomes in
+the original T37 lifetime caller and eight bounded RAM-only variants.
+No variant changes original PC, CPU registers, stack or ROM bytes.
+
+| Source label | Original decision or write and shared C binding | PC witness |
+| --- | --- | --- |
+| `DefaultBlockObjTiles` | Four ROM bytes bind the two row tile pairs; `block_gfx.c` array | ROM byte check |
+| `DrawBlock` | Copy block relative X/Y into `$05/$02`, palette `$03` into `$04`, flip control `$01` into `$03`; `mysmb_objects_draw_bouncing_block` | lifetime 10 |
+| `DBlkLoop` | Two `DrawOneSpriteRow` calls store four OAM entries and increment scratch Y; same function | lifetime 10 |
+| `ChkRep` | Area type chooses lined top brick; metatile `$c4` selects used-block tiles; same function | lifetime 10, variants 0-3 |
+| `SetBFlip` | Area palette and `$40/$80/$c0` attributes for used block; same function | lifetime 10, variants 0/2 |
+| `BlkOffscr` | Read original `Block_OffscreenBits` `$03d4`; d2 hides right column; same function | lifetime 10, variant 2 |
+| `PullOfsB` | Restore saved bits before d3 check; same function | lifetime 10 |
+| `ChkLeftCo` | d3 hides left column for block and chunk callers; both functions | lifetime 10/12 |
+| `MoveColOffscreen` | Write `$f8` to two left-column Y entries; both functions and S1 enemy tail | lifetime 10 |
+| `ExDBlk` | Return after either column branch; same functions | lifetime 10 |
+| `DrawBrickChunks` | Engine subroutine 5 selects `$75`/palette 2, otherwise `$84`/palette 3; `mysmb_objects_draw_brick_chunks` | lifetime 12, variant 4 |
+| `DChunks` | Four tile/attribute stores, row Y and reflected X with both 6502 ADC carries; same function | lifetime 12, variants 4-7 |
+| `ChnkOfs` | Signed original relative X and unsigned X comparison select right-column hide; same function | lifetime 12, variants 5-7 |
+| `ExBCDr` | Return with `$00` holding original relative X; same function | lifetime 12 |
+
+The shared C leaf uses the original `$03bc/$03b1` relative positions and
+`$03d4` offscreen bits instead of recalculating clipping from world X.
+It preserves `SEC/SBC/ADC/ADC` carries for both chunk X positions and
+applies d7 to the first two sprite Y entries. The T37 S5 original child
+records now match **30/30** on each width, and the eight new branch cases
+match **8/8**, comparing every non-stack 2 KB RAM/OAM byte. The full T37
+block lifetime outputs move from 30/64 matches to **64/64** on both widths;
+the 34 previously retained OAM failures are resolved. The similar-issue
+sweep found one live block graphics owner for both original child calls;
+the old world-X clipping helper was removed. No platform code changed.
+
+The separate operational track passes the block OAM smoke, platform purity,
+both product self-tests, full x86/x64 builds and OpenNT DOS16 MZ link.
+The full suites each pass **222/233**, retaining exactly the same eleven
+unrelated failures as S1. Three refreshed owner-authorized artifacts:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `1de8eeff0226b9970c79289248128f15bfb491ed548d5b5d2f020d3b8981e431` |
+| `assets/mysmb32.exe` | `a2d2451deda16baf37689bfe03457bf64e5352b38a3d65f8ab091fcbc500e247` |
+| `assets/mysmb64.exe` | `199c5f0ec19cb2af6d781e752783aae4dfd04f76f30bb60c8bfc9ef70e6f272b` |
+
+The owner ROM is outside the repository. Raw child records, coverage,
+diagnostic probes, build intermediates and logs remain under ignored
+`build/`. This closes the block/chunk graphics chain, not whole-game
+frame equivalence or physical DOS 486SX performance.
+
 ## S3: fireball, firebar and explosions
 
 Entry `DrawFireball`; exit `KillFireBall`. Exact labels:

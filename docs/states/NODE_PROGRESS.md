@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1637 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1651 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 270 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 256 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1637 / 1,992 (82.18%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1651 / 1,992 (82.88%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T45 S1 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) completes 13 enemy OAM tail labels. Every label has original PC-route and shared-C branch/write evidence; RAM/OAM comparison, DOS16 link, platform purity and three EXEs provide separate validation.
+Latest task review: [T45 S2 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) completes 14 block/chunk OAM labels. Original child and full-root x86/x64 matches, source branch coverage, DOS16 link, purity and three EXEs provide separate validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1637)
+## Completed matches (1651)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1667,6 +1667,20 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14093 | `DrawOneSpriteRow` |
 | 14097 | `MoveESprRowOffscreen` |
 | 14104 | `MoveESprColOffscreen` |
+| 14119 | `DefaultBlockObjTiles` |
+| 14122 | `DrawBlock` |
+| 14133 | `DBlkLoop` |
+| 14147 | `ChkRep` |
+| 14159 | `SetBFlip` |
+| 14167 | `BlkOffscr` |
+| 14174 | `PullOfsB` |
+| 14175 | `ChkLeftCo` |
+| 14178 | `MoveColOffscreen` |
+| 14182 | `ExDBlk` |
+| 14187 | `DrawBrickChunks` |
+| 14197 | `DChunks` |
+| 14242 | `ChnkOfs` |
+| 14250 | `ExBCDr` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |

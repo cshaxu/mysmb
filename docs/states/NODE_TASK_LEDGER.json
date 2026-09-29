@@ -216697,9 +216697,24 @@
         "ExBCDr"
       ],
       "maximumComplete": 1651,
-      "actualMatches": [],
+      "actualMatches": [
+        "DefaultBlockObjTiles",
+        "DrawBlock",
+        "DBlkLoop",
+        "ChkRep",
+        "SetBFlip",
+        "BlkOffscr",
+        "PullOfsB",
+        "ChkLeftCo",
+        "MoveColOffscreen",
+        "ExDBlk",
+        "DrawBrickChunks",
+        "DChunks",
+        "ChnkOfs",
+        "ExBCDr"
+      ],
       "evidence": "docs/proposals/m2/t45-object-oam-tail-and-graphics.md",
-      "state": "admitted-block-and-chunk-oam"
+      "state": "closed-block-and-chunk-oam"
     }
   ]
 }

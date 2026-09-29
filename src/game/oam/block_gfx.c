@@ -1,131 +1,140 @@
 #include "game/oam/oam.h"
-#include "game/game.h"
 
 enum {
-    MYSMB_AREA_TYPE = 0x074eU,
-    MYSMB_BLOCK_ORIGINAL_X = 0x03f1U,
     MYSMB_BLOCK_METATILE = 0x03e8U,
-    MYSMB_BLOCK_PAGE = 0x0076U,
-    MYSMB_BLOCK_X = 0x008fU,
-    MYSMB_BLOCK_Y_HIGH = 0x00beU,
-    MYSMB_BLOCK_Y = 0x00d7U,
-    MYSMB_BLOCK_SPRITE_OFFSET = 0x06ecU,
-    MYSMB_SCREEN_EDGE_PAGE = 0x071aU,
-    MYSMB_SCREEN_EDGE_X = 0x071cU,
+    MYSMB_BLOCK_ORIGINAL_X = 0x03f1U,
+    MYSMB_BLOCK_RELATIVE_X = 0x03b1U,
+    MYSMB_BLOCK_RELATIVE_Y = 0x03bcU,
+    MYSMB_BLOCK_OFFSCREEN = 0x03d4U,
+    MYSMB_BLOCK_SPRITE = 0x06ecU,
+    MYSMB_SCREEN_LEFT_X = 0x071cU,
+    MYSMB_AREA_TYPE = 0x074eU,
+    MYSMB_ENGINE_SUBROUTINE = 0x000eU,
     MYSMB_FRAME_COUNTER = 0x0009U
 };
 
-static void mysmb_block_hide_columns(struct mysmb_game *game, mysmb_u8 offset,
-                                     mysmb_u8 slot)
+/* Source SEC/SBC, then two ADC instructions with no intervening CLC.
+ * Both carries are observable at wrapped chunk/screen positions. */
+static mysmb_u8 mysmb_block_reflected_chunk_x(mysmb_u8 original,
+                                               mysmb_u8 current)
 {
-    mysmb_u16 world;
-    mysmb_u16 left;
-    mysmb_u16 right;
+    mysmb_u16 sum;
+    mysmb_u8 carry;
+    mysmb_u8 value;
 
-    world = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_BLOCK_PAGE + slot] << 8U) |
-                         game->ram[MYSMB_BLOCK_X + slot]);
-    left = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_EDGE_PAGE] << 8U) |
-                        game->ram[MYSMB_SCREEN_EDGE_X]);
-    right = (mysmb_u16)(((mysmb_u16)game->ram[MYSMB_SCREEN_EDGE_PAGE + 1U] << 8U) |
-                         game->ram[MYSMB_SCREEN_EDGE_X + 1U]);
-    if (world < left) {
-        game->ram[0x0200U + offset] = 0xf8U;
-        game->ram[0x0208U + offset] = 0xf8U;
-    }
-    if (world >= right) {
-        game->ram[0x0204U + offset] = 0xf8U;
-        game->ram[0x020cU + offset] = 0xf8U;
-    }
+    carry = original >= current ? 1U : 0U;
+    value = (mysmb_u8)(original - current);
+    sum = (mysmb_u16)value + original + carry;
+    carry = sum > 0xffU ? 1U : 0U;
+    value = (mysmb_u8)sum;
+    sum = (mysmb_u16)value + 6U + carry;
+    return (mysmb_u8)sum;
 }
 
+/* ROM DrawBlock -> DBlkLoop/ChkRep/BlkOffscr/MoveColOffscreen.
+ * DrawOneSpriteRow enters DrawSpriteObject with X=0,2 and Y=base,base+8. */
 void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 offset;
-    mysmb_u8 x;
-    mysmb_u8 y;
-    mysmb_u8 attributes;
-    mysmb_u8 tile0;
-    mysmb_u8 tile1;
+    static const mysmb_u8 default_tiles[4] = {0x85U,0x85U,0x86U,0x86U};
+    mysmb_u8 oam, row, offset, attributes, bits;
 
-    offset = game->ram[MYSMB_BLOCK_SPRITE_OFFSET + slot];
-    x = game->ram[0x03b1U];
-    y = game->ram[MYSMB_BLOCK_Y + slot];
-    tile0 = 0x85U;
-    tile1 = 0x86U;
-    if (game->ram[MYSMB_AREA_TYPE] != 1U) tile0 = 0x86U;
-    attributes = 3U;
+    oam = game->ram[MYSMB_BLOCK_SPRITE + slot];
+    game->ram[2U] = game->ram[MYSMB_BLOCK_RELATIVE_Y];
+    game->ram[5U] = game->ram[MYSMB_BLOCK_RELATIVE_X];
+    game->ram[4U] = 3U;
+    game->ram[3U] = 1U;
+    for (row = 0U; row < 2U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        game->ram[0U] = default_tiles[row * 2U];
+        game->ram[1U] = default_tiles[row * 2U + 1U];
+        game->ram[0x0200U + offset] = game->ram[2U];
+        game->ram[0x0204U + offset] = game->ram[2U];
+        game->ram[0x0201U + offset] = game->ram[0U];
+        game->ram[0x0205U + offset] = game->ram[1U];
+        game->ram[0x0202U + offset] = game->ram[4U];
+        game->ram[0x0206U + offset] = game->ram[4U];
+        game->ram[0x0203U + offset] = game->ram[5U];
+        game->ram[0x0207U + offset] = (mysmb_u8)(game->ram[5U] + 8U);
+        game->ram[2U] = (mysmb_u8)(game->ram[2U] + 8U);
+    }
+    if (game->ram[MYSMB_AREA_TYPE] != 1U) {
+        game->ram[0x0201U + oam] = 0x86U;
+        game->ram[0x0205U + oam] = 0x86U;
+    }
     if (game->ram[MYSMB_BLOCK_METATILE + slot] == 0xc4U) {
-        tile0 = 0x87U;
-        tile1 = 0x87U;
         attributes = game->ram[MYSMB_AREA_TYPE] == 1U ? 3U : 1U;
+        for (row = 0U; row < 2U; ++row) {
+            offset = (mysmb_u8)(oam + row * 8U);
+            game->ram[0x0201U + offset] = 0x87U;
+            game->ram[0x0205U + offset] = 0x87U;
+        }
+        game->ram[0x0202U + oam] = attributes;
+        game->ram[0x0206U + oam] = (mysmb_u8)(attributes | 0x40U);
+        game->ram[0x020aU + oam] = (mysmb_u8)(attributes | 0x80U);
+        game->ram[0x020eU + oam] = (mysmb_u8)(attributes | 0xc0U);
     }
-    game->ram[0x0200U + offset] = y;
-    game->ram[0x0204U + offset] = y;
-    game->ram[0x0208U + offset] = (mysmb_u8)(y + 8U);
-    game->ram[0x020cU + offset] = (mysmb_u8)(y + 8U);
-    game->ram[0x0201U + offset] = tile0;
-    game->ram[0x0205U + offset] = tile0;
-    game->ram[0x0209U + offset] = tile1;
-    game->ram[0x020dU + offset] = tile1;
-    /* ROM DrawSpriteObject emits the same attribute byte for both rows of
-     * a normal block.  Only DrawBlock's $c4 replacement branch subsequently
-     * assigns its horizontal and vertical mirror bits. */
-    game->ram[0x0202U + offset] = attributes;
-    game->ram[0x0206U + offset] = attributes;
-    game->ram[0x020aU + offset] = attributes;
-    game->ram[0x020eU + offset] = attributes;
-    game->ram[0x0203U + offset] = x;
-    game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
-    game->ram[0x020bU + offset] = x;
-    game->ram[0x020fU + offset] = (mysmb_u8)(x + 8U);
-    if (game->ram[MYSMB_BLOCK_METATILE + slot] == 0xc4U) {
-        game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
-        game->ram[0x020aU + offset] = (mysmb_u8)(attributes | 0x80U);
-        game->ram[0x020eU + offset] = (mysmb_u8)(attributes | 0xc0U);
+    bits = game->ram[MYSMB_BLOCK_OFFSCREEN];
+    if ((bits & 4U) != 0U) {
+        game->ram[0x0204U + oam] = 0xf8U;
+        game->ram[0x020cU + oam] = 0xf8U;
     }
-    mysmb_block_hide_columns(game, offset, slot);
+    if ((bits & 8U) != 0U) {
+        game->ram[0x0200U + oam] = 0xf8U;
+        game->ram[0x0208U + oam] = 0xf8U;
+    }
 }
 
+/* ROM DrawBrickChunks -> DChunks/ChkLeftCo/ChnkOfs/ExBCDr. */
 void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
 {
-    mysmb_u8 offset;
-    mysmb_u8 attributes;
-    mysmb_u8 x0;
-    mysmb_u8 x1;
-    mysmb_u8 y0;
-    mysmb_u8 y1;
-    mysmb_u8 original_x;
+    mysmb_u8 oam, tile, attributes, original, first_x, second_x, bits;
+    mysmb_u8 row, offset;
 
-    offset = game->ram[MYSMB_BLOCK_SPRITE_OFFSET + slot];
+    oam = game->ram[MYSMB_BLOCK_SPRITE + slot];
+    if (game->ram[MYSMB_ENGINE_SUBROUTINE] == 5U) {
+        game->ram[0U] = 2U;
+        tile = 0x75U;
+    } else {
+        game->ram[0U] = 3U;
+        tile = 0x84U;
+    }
     attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] << 4U) & 0xc0U) |
-        (game->ram[MYSMB_AREA_TYPE] == 5U ? 2U : 3U));
-    x0 = game->ram[0x03b1U];
-    x1 = game->ram[0x03b2U];
-    original_x = (mysmb_u8)(game->ram[MYSMB_BLOCK_ORIGINAL_X + slot] -
-        game->ram[MYSMB_SCREEN_EDGE_X]);
-    y0 = game->ram[MYSMB_BLOCK_Y + slot];
-    y1 = game->ram[MYSMB_BLOCK_Y + slot + 2U];
-    game->ram[0x0200U + offset] = y0;
-    game->ram[0x0204U + offset] = y0;
-    game->ram[0x0208U + offset] = y1;
-    game->ram[0x020cU + offset] = y1;
-    game->ram[0x0201U + offset] = game->ram[MYSMB_AREA_TYPE] == 5U ? 0x75U : 0x84U;
-    game->ram[0x0205U + offset] = game->ram[0x0201U + offset];
-    game->ram[0x0209U + offset] = game->ram[0x0201U + offset];
-    game->ram[0x020dU + offset] = game->ram[0x0201U + offset];
-    game->ram[0x0202U + offset] = attributes;
-    game->ram[0x0206U + offset] = attributes;
-    game->ram[0x020aU + offset] = attributes;
-    game->ram[0x020eU + offset] = attributes;
-    game->ram[0x0203U + offset] = x0;
-    game->ram[0x0207U + offset] = (mysmb_u8)(original_x - x0 + original_x + 6U);
-    game->ram[0x020bU + offset] = x1;
-    game->ram[0x020fU + offset] = (mysmb_u8)(original_x - x1 + original_x + 6U);
-    mysmb_block_hide_columns(game, offset, slot);
+                             game->ram[0U]);
+    for (row = 0U; row < 2U; ++row) {
+        offset = (mysmb_u8)(oam + row * 8U);
+        game->ram[0x0201U + offset] = tile;
+        game->ram[0x0205U + offset] = tile;
+        game->ram[0x0202U + offset] = attributes;
+        game->ram[0x0206U + offset] = attributes;
+    }
+    game->ram[0x0200U + oam] = game->ram[MYSMB_BLOCK_RELATIVE_Y];
+    game->ram[0x0204U + oam] = game->ram[MYSMB_BLOCK_RELATIVE_Y];
+    game->ram[0x0208U + oam] = game->ram[MYSMB_BLOCK_RELATIVE_Y + 1U];
+    game->ram[0x020cU + oam] = game->ram[MYSMB_BLOCK_RELATIVE_Y + 1U];
+    first_x = game->ram[MYSMB_BLOCK_RELATIVE_X];
+    second_x = game->ram[MYSMB_BLOCK_RELATIVE_X + 1U];
+    game->ram[0x0203U + oam] = first_x;
+    original = (mysmb_u8)(game->ram[MYSMB_BLOCK_ORIGINAL_X + slot] -
+                          game->ram[MYSMB_SCREEN_LEFT_X]);
+    game->ram[0U] = original;
+    game->ram[0x0207U + oam] =
+        mysmb_block_reflected_chunk_x(original, first_x);
+    game->ram[0x020bU + oam] = second_x;
+    game->ram[0x020fU + oam] =
+        mysmb_block_reflected_chunk_x(original, second_x);
+
+    bits = game->ram[MYSMB_BLOCK_OFFSCREEN];
+    if ((bits & 8U) != 0U) {
+        game->ram[0x0200U + oam] = 0xf8U;
+        game->ram[0x0208U + oam] = 0xf8U;
+    }
+    if ((bits & 0x80U) != 0U) {
+        game->ram[0x0200U + oam] = 0xf8U;
+        game->ram[0x0204U + oam] = 0xf8U;
+    }
+    if ((original & 0x80U) != 0U &&
+        game->ram[0x0203U + oam] >= game->ram[0x0207U + oam]) {
+        game->ram[0x0204U + oam] = 0xf8U;
+        game->ram[0x020cU + oam] = 0xf8U;
+    }
 }
-
-
-
-
-
-

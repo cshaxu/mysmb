@@ -1032,6 +1032,8 @@ int main(int argument_count, char **arguments)
     unsigned int t26_fixture;
     unsigned int enemy_graphics_variant;
     char *enemy_graphics_variant_end;
+    unsigned int block_graphics_variant;
+    char *block_graphics_variant_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1071,6 +1073,7 @@ int main(int argument_count, char **arguments)
     ram_write.present = LIB_FALSE;
     t26_fixture = 0u;
     enemy_graphics_variant = 0xffffffffu;
+    block_graphics_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1086,6 +1089,16 @@ int main(int argument_count, char **arguments)
             if (enemy_graphics_variant_end == arguments[recorded] + 25u ||
                 *enemy_graphics_variant_end != '\0' || value >= 20u) return 64;
             enemy_graphics_variant = (unsigned int)value;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--block-graphics-variant=", 25u) == 0) {
+            unsigned long value;
+            if (block_graphics_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 25u,
+                            &block_graphics_variant_end, 10);
+            if (block_graphics_variant_end == arguments[recorded] + 25u ||
+                *block_graphics_variant_end != '\0' || value >= 8u) return 64;
+            block_graphics_variant = (unsigned int)value;
             continue;
         }
         if (strncmp(arguments[recorded], "--enemy-background-calls=", 25u) == 0) {
@@ -2732,6 +2745,9 @@ int main(int argument_count, char **arguments)
     if (enemy_graphics_variant != 0xffffffffu &&
         (background_snapshot != 42u || t26_fixture < 3834u ||
          t26_fixture > 3959u)) return 64;
+    if (block_graphics_variant != 0xffffffffu &&
+        (background_snapshot != 25u || t26_fixture < 1794u ||
+         t26_fixture > 1825u)) return 64;
     total_frames = requested_frames + warmup_frames;
     if (total_frames < requested_frames || total_frames > 4200u ||
         (t26_fixture >= 35u && t26_fixture <= 52u && requested_frames != 1u)) return 64;
@@ -3638,6 +3654,35 @@ int main(int argument_count, char **arguments)
                     (lib_u8)(enemy_graphics_variant == 16u ? 0x20u :
                     (enemy_graphics_variant == 17u ? 0x40u :
                     (enemy_graphics_variant == 18u ? 0x80u : 0xccu)));
+        }
+        /* T45 S2: vary RAM only when the original block/chunk graphics
+         * entry is reached by BlockObjectsCore.  CPU/stack/ROM are intact. */
+        if (elapsed >= warmup_frames && background_snapshot == 25u &&
+            block_graphics_variant != 0xffffffffu &&
+            driver->machine->x == driver->machine->ram[8u]) {
+            lib_u8 slot = driver->machine->x;
+            if (before_pc == 0xebd1u && block_graphics_variant < 4u) {
+                driver->machine->ram[0x074eu] =
+                    block_graphics_variant < 2u ? 1u : 0u;
+                driver->machine->ram[0x03e8u + slot] =
+                    (block_graphics_variant & 1u) != 0u ? 0x51u : 0xc4u;
+                driver->machine->ram[0x03d4u] =
+                    block_graphics_variant == 2u ? 0x0cu :
+                    (block_graphics_variant == 3u ? 0x04u : 0u);
+            }
+            if (before_pc == 0xec53u && block_graphics_variant >= 4u) {
+                driver->machine->ram[0x000eu] =
+                    block_graphics_variant == 4u ? 5u : 8u;
+                if (block_graphics_variant >= 5u) {
+                    driver->machine->ram[0x03d4u] =
+                        block_graphics_variant == 5u ? 0x88u : 0u;
+                    driver->machine->ram[0x03f1u + slot] = 0u;
+                    driver->machine->ram[0x071cu] = 0x20u;
+                    driver->machine->ram[0x03b1u] =
+                        block_graphics_variant == 6u ? 0xf0u : 0x10u;
+                    driver->machine->ram[0x03b2u] = 0x10u;
+                }
+            }
         }
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */

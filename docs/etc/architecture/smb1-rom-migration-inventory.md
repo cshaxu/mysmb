@@ -1812,20 +1812,20 @@ The labels and branches behind every line remain open until individually bound b
 | 14093 | `DrawOneSpriteRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
 | 14097 | `MoveESprRowOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
 | 14104 | `MoveESprColOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
-| 14119 | `DefaultBlockObjTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultblockobjtiles) |
-| 14122 | `DrawBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawblock) |
-| 14133 | `DBlkLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblkloop) |
-| 14147 | `ChkRep` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkrep) |
-| 14159 | `SetBFlip` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setbflip) |
-| 14167 | `BlkOffscr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blkoffscr) |
-| 14174 | `PullOfsB` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-pullofsb) |
-| 14175 | `ChkLeftCo` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkleftco) |
-| 14178 | `MoveColOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movecoloffscreen) |
-| 14182 | `ExDBlk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exdblk) |
-| 14187 | `DrawBrickChunks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawbrickchunks) |
-| 14197 | `DChunks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dchunks) |
-| 14242 | `ChnkOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chnkofs) |
-| 14250 | `ExBCDr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exbcdr) |
+| 14119 | `DefaultBlockObjTiles` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14122 | `DrawBlock` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14133 | `DBlkLoop` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14147 | `ChkRep` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14159 | `SetBFlip` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14167 | `BlkOffscr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14174 | `PullOfsB` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14175 | `ChkLeftCo` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14178 | `MoveColOffscreen` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14182 | `ExDBlk` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14187 | `DrawBrickChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14197 | `DChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14242 | `ChnkOfs` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
+| 14250 | `ExBCDr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
 | 14254 | `DrawFireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D3](m2-t24-s1-node-verification.md#node-drawfireball) |
 | 14261 | `DrawFirebar` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar); [S8 child diagnostic](../../history/M2-T40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): typed child seam; no node credit |
 | 14275 | `FireA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firea) |
