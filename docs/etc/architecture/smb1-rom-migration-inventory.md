@@ -1690,20 +1690,20 @@ The labels and branches behind every line remain open until individually bound b
 | 12989 | `FirstBoxGreater` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../history/M2-T43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
 | 13002 | `NoCollisionFound` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../history/M2-T43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
 | 13007 | `CollisionFound` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../history/M2-T43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
-| 13023 | `BlockBufferChk_Enemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_enemy) |
-| 13032 | `ResidualMiscObjectCode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualmiscobjectcode) |
-| 13040 | `BlockBufferChk_FBall` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_fball) |
-| 13046 | `ResJmpM` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-resjmpm) |
-| 13047 | `BBChk_E` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-bbchk_e) |
-| 13052 | `BlockBufferAdderData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferadderdata) |
-| 13055 | `BlockBuffer_X_Adder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffer_x_adder) |
-| 13061 | `BlockBuffer_Y_Adder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffer_y_adder) |
-| 13067 | `BlockBufferColli_Feet` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_feet) |
-| 13070 | `BlockBufferColli_Head` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_head) |
-| 13074 | `BlockBufferColli_Side` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercolli_side) |
-| 13078 | `BlockBufferCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbuffercollision) |
-| 13111 | `RetXC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-retxc) |
-| 13112 | `RetYC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-retyc) |
+| 13023 | `BlockBufferChk_Enemy` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13032 | `ResidualMiscObjectCode` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13040 | `BlockBufferChk_FBall` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13046 | `ResJmpM` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13047 | `BBChk_E` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13052 | `BlockBufferAdderData` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13055 | `BlockBuffer_X_Adder` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13061 | `BlockBuffer_Y_Adder` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13067 | `BlockBufferColli_Feet` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13070 | `BlockBufferColli_Head` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13074 | `BlockBufferColli_Side` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13078 | `BlockBufferCollision` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13111 | `RetXC` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
+| 13112 | `RetYC` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
 | 13126 | `VineYPosAdder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineyposadder) |
 | 13129 | `DrawVine` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawvine) |
 | 13156 | `VineTL` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vinetl) |

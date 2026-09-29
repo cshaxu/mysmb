@@ -65,6 +65,40 @@ link to the OpenNT DOS16 MZ program. Checkpoint artifacts are `mysmb16.exe`
 This checkpoint awards no node credit. The remaining ROM-logic track must
 observe original selector entries and return state before S1 can close.
 
+#### S1 closure: block-buffer probe and coordinate core
+
+S1 closes all fourteen received labels, moving the M2 count from **1,517** to
+**1,531 / 1,992**. The shared owner is
+`src/game/world/block_buffer.c`; no platform adapter contains selector,
+collision, object-coordinate or return-path policy.
+
+| ROM labels | Exact C/ROM disposition |
+| --- | --- |
+| `BlockBufferChk_Enemy`, `BBChk_E` | Enemy entry changes the slot to `X + 1`, invokes the common core, restores the object slot and returns the metatile comparison result. Original execution reaches `$e388`, `$e3a5`, `$e3f0`, `$e429` and `$e42b` through `ChkUnderEnemy`/side-check routes. |
+| `ResidualMiscObjectCode`, `ResJmpM` | Misc entry uses `X + $0d`, `Y = $1b` and A=0 for the vertical return. The complete local control graph has no inbound source edge to this residual entry; it is therefore verified by its exact static sequence and bound-data focused test, without inventing a CPU route. |
+| `BlockBufferChk_FBall` | Fireball entry uses its distinct common-sprite arrays, `X + 7`, `Y = $1a` and the vertical return. Original `FireballBGCollision` reaches `$e39c`, `$e3a3`, `$e3a5`, `$e3f0` and `$e42b`. |
+| `BlockBufferAdderData`, `BlockBuffer_X_Adder`, `BlockBuffer_Y_Adder` | The production path binds the original PRG bytes at `$e3ad`, `$e3b0` and `$e3cc`; the resource-free fallback has the exact 3+28+28 byte tables. The local-ROM test compares every byte before exercising recorded probes. |
+| `BlockBufferColli_Feet`, `BlockBufferColli_Head`, `BlockBufferColli_Side` | Feet increments Y; head selects A=0; side selects A=1 and X=0. Original player records reach `$e3e8`, `$e3e9`, `$e3f0` and `$e42b`; the native checker compares row, metatile, contact nibble and scratch `$02-$07`. |
+| `BlockBufferCollision`, `RetXC`, `RetYC` | The common core preserves selector state in `$04`, carries X into the page/column calculation, reads the block buffer, and returns X or Y low nibble exactly as selected. |
+
+The ROM-logic evidence is produced by ordinary one-frame NMI execution of the
+local original ROM with RAM-only fixtures, preserving the ROM CPU, stack and
+program counter. Records under `build/m2-t44-s1/` cover player terrain,
+enemy background and fireball background entries. The x64 and x86 native
+`mysmb_block_buffer_player_actual_check` replay matches all recorded player
+child state; the focused enemy and fireball checks match their recorded
+states. Strict C90 x86/x64 product builds, the OpenNT DOS16 link and
+`test_platform_purity.py` pass.
+
+The three required MZ products were freshly built as DOS16, Win32 x86 and
+Win32 x64. The committed asset package remains `assets/mysmb16.exe` (258117
+bytes, `e7fe9194ff667ff47631539b2e6cf021ea5197f26e60523a10d80f09f08d33a0`),
+`assets/mysmb32.exe` (364373 bytes,
+`3b981815e3ff0c70488fe0cfbd0999d4af37833211798a93c09d00c8b8d321f1`) and
+`assets/mysmb64.exe` (372536 bytes,
+`9fa393d68c084d00109037ce64fb7e58cd91372dd8649aa1978d52611980e88e`). No
+S1 node is deferred.
+
 ### S2: Vine object graphics
 
 `VineYPosAdder`, `DrawVine`, `VineTL`, `SkpVTop`, `ChkFTop`, `NextVSp`.

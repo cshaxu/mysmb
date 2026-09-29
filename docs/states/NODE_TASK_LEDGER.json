@@ -201675,9 +201675,24 @@
         "RetYC"
       ],
       "maximumComplete": 1531,
-      "actualMatches": [],
+      "actualMatches": [
+        "BlockBufferChk_Enemy",
+        "ResidualMiscObjectCode",
+        "BlockBufferChk_FBall",
+        "ResJmpM",
+        "BBChk_E",
+        "BlockBufferAdderData",
+        "BlockBuffer_X_Adder",
+        "BlockBuffer_Y_Adder",
+        "BlockBufferColli_Feet",
+        "BlockBufferColli_Head",
+        "BlockBufferColli_Side",
+        "BlockBufferCollision",
+        "RetXC",
+        "RetYC"
+      ],
       "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
-      "state": "admitted-block-buffer-core"
+      "state": "closed-block-buffer-core"
     }
   ]
 }
