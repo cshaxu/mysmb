@@ -14,9 +14,10 @@ object-state or sprite-selection policy.
 | S2 | Vine object graphics | 6 | 6 |
 | S3 | Six-sprite and hammer graphics | 14 | 14 |
 | S4 | Flagpole graphics and sprite dumps | 9 | 9 |
-| S5 | Platform, floatey and jumping-coin graphics | 16 | 16 |
-| S6 | Power-up graphics | 6 | 6 |
-| S7 | Enemy graphics and animation | 44 | 42 |
+| S5 | Large-platform graphics | 11 | 11 |
+| S6 | Floatey-number and jumping-coin graphics | 5 | 5 |
+| S7 | Power-up graphics | 6 | 6 |
+| S8 | Enemy graphics and animation | 44 | 42 |
 | **Total** | **13023-13994** | **109** | **107** |
 
 All incoming open labels currently retain M2 T17 S6 custody until their
@@ -258,19 +259,37 @@ The refreshed required package is `mysmb16.exe` 258661 bytes
 `b36762adb84e00c100416441b49465a080e81533035f2a7e0948159bf60f479a`.
 No S4 node is deferred.
 
-### S5: Platform, floatey and jumping-coin graphics
+### S5: Large-platform graphics
 
 `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`,
 `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`,
-`ExDLPl`, `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`,
+`ExDLPl`.
+
+The platform route is a single contiguous `LargePlatform` caller through
+`DrawLargePlatform` and its six-column offscreen branch. It remains separate
+from coin/floatey graphics because those routines enter from `MiscLoop` and
+need a distinct original-ROM route. The shared owner is
+`src/game/oam/small_platform_gfx.c`; it must consume the already-produced
+relative coordinates and offscreen mask, without moving platform policy into
+a host adapter. Admission baseline is 1,560/1,992; all eleven open labels are
+expected to match, for a maximum 1,571/1,992.
+
+### S6: Floatey-number and jumping-coin graphics
+
+`DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`,
 `JCoinGfxHandler`, `ExJCGfx`.
 
-### S6: Power-up graphics
+This is the distinct `MiscLoop` coin/floatey graphics route, after relative
+position, offscreen and bounding-box children. It consumes the S4 generic
+two-sprite dump helper. It follows S5 in source order but is independently
+admitted because it has a different caller and route.
+
+### S7: Power-up graphics
 
 `PowerUpGfxTable`, `PowerUpAttributes`, `DrawPowerUp`, `PUpDrawLoop`,
 `FlipPUpRightSide`, `PUpOfs`.
 
-### S7: Enemy graphics and animation
+### S8: Enemy graphics and animation
 
 All remaining source labels from `EnemyGraphicsTable` through `EggExc`,
 including retained `CheckForBulletBillCV` and `SBBAt`. Its admission will list
