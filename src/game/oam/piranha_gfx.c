@@ -45,9 +45,7 @@ void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot)
     for (row = 0U; row < 3U; ++row) {
         mysmb_u8 offset;
         y = (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_Y] + row * 8U);
-        if ((offscreen & 0x80U) != 0U ||
-            ((offscreen & 0x40U) != 0U && row >= 1U) ||
-            ((offscreen & 0x20U) != 0U && row == 2U)) y = 0xf8U;
+        if ((offscreen & (0x80U >> row)) != 0U) y = 0xf8U;
         offset = (mysmb_u8)(oam + row * 8U);
         game->ram[0x0200U + offset] = (offscreen & 8U) != 0U ? 0xf8U : y;
         game->ram[0x0201U + offset] = tiles[row * 2U];

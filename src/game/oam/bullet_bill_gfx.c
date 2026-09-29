@@ -65,9 +65,7 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
         }
         left_y = (mysmb_u8)(y + row * 8U);
         right_y = left_y;
-        if ((offscreen & 0x80U) != 0U ||
-            ((offscreen & 0x40U) != 0U && row >= 1U) ||
-            ((offscreen & 0x20U) != 0U && row == 2U)) {
+        if ((offscreen & (0x80U >> row)) != 0U) {
             left_y = 0xf8U;
             right_y = 0xf8U;
         } else {

@@ -93,6 +93,62 @@ diagnostic patches and logs remain under ignored `build/m2-t45-s1/` with
 per-process time limits and no raw trace commit. The source-policy review
 permits this local verification use; it grants no redistributability.
 
+### S1 closure: enemy OAM tail
+
+All **13 / 13** scoped labels become ROM-match complete. M2 moves from
+**1,624** to **1,637 / 1,992**; none is deferred. Original PC coverage from
+the T44 normal/Bowser child routes plus five new RAM-controlled original
+normal calls reaches every executable label. The new Lakitu state `$20`
+reaches `NVFLak` at `$eb3e`. Four d5-d7 mask cases reach
+`MoveESprRowOffscreen` at `$ebb7` without forcing PC, registers, stack or
+ROM. Original `DumpTwoSpr` writes exactly one two-sprite row per call. The
+prior C translation wrongly treated d6 as two rows and d7 as all three;
+the corrected shared game OAM tail maps d7/d6/d5 to first/second/third row,
+and d3/d2 to left/right columns across all rows.
+
+| Source label | Original decision or write and shared C binding | PC witness |
+| --- | --- | --- |
+| `CheckToMirrorLakitu` | ID `$11`, vertical flag and frenzy timer select lower-row attributes; `normal_enemy_gfx.c` Lakitu branch | `g0v2` |
+| `NVFLak` | Vertical flag selects first-row masks `$81` and `$41`; same Lakitu branch | `lakitu-v5` |
+| `CheckToMirrorJSpring` | IDs `>= $18` write `$82/$c2` to lower rows; `mysmb_oam_draw_jumpspring` and normal handler | `g0v2` |
+| `SprObjectOffscrChk` | Reload object offset, shift d2 into carry; `enemy_offscreen_tail.h` | `g0v2` |
+| `LcChk` | d3 hides left column of three rows; same tail | `g0v2` |
+| `Row3C` | d5 calls row mover at offset `$10`; same tail | `goomba-v16` |
+| `Row23C` | d6 calls row mover at offset `$08`; same tail | `goomba-v17` |
+| `AllRowC` | d7 calls row mover at offset `$00`, then conditional erase; same tail and normal handler | `goomba-v18` |
+| `ExEGHandler` | Return after offscreen processing or erase exception; normal/Bowser/spring callers | `g0v2` |
+| `DrawEnemyObjRow` | Read adjacent source tile bytes into `$00/$01`; `mysmb_enemy_draw_row` | `g0v2` |
+| `DrawOneSpriteRow` | Tail jump to `DrawSpriteObject`; `mysmb_enemy_draw_row` | `g0v2` |
+| `MoveESprRowOffscreen` | Add sprite offset and write `$f8` through `DumpTwoSpr`, one row only; shared tail | `goomba-v16` |
+| `MoveESprColOffscreen` | Add sprite offset, hide three entries in one column; shared tail | `b0` |
+
+The five new original child snapshots compare every non-stack 2 KB RAM/OAM
+byte with shared C at **5/5 zero differences on x86 and x64**. The preceding
+normal **84/84**, Bowser **1,024/1,024**, retainer **72/72** and spring
+**32/32** child calls remain zero-difference on both widths. The similar-issue
+sweep covered all production copies of the mistaken row policy: normal,
+Bowser, hammer bro, Spiny, Podoboo, power-up and the older directly callable
+Bloober, Cheep, Bullet Bill, Goomba and Piranha OAM helpers. They now use the
+original row mapping. The power-up OAM smoke assertion was corrected to
+expect only the first row hidden for d7.
+
+The separate operational track passes **17/17 focused CTests** on each
+Windows width, including platform purity and product self-tests. Full x86
+and x64 suites each pass **222/233**; their identical eleven failures are
+the T44 baseline, with no new failure. Strict x86/x64 builds and the OpenNT
+DOS16 MZ link pass. Three refreshed owner-authorized executable artifacts:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `dde34d66ccc8d62ba351584b154193b746a15252b315681218fc124be7a3e0bc` |
+| `assets/mysmb32.exe` | `965350a02e25519523dacceaea05fd1aa746f40208c5669ebffe46d06ee29eb6` |
+| `assets/mysmb64.exe` | `4d0ee05f2b31da7f9f716983e836e77b99e5d54fe5034ab0d33060a4f6dbc32a` |
+
+ROM-derived child snapshots, PC traces and generated intermediate files
+remain only in ignored `build/`; the owner ROM remains outside this repo.
+This verifies the bounded S1 chain, not whole-game frame equivalence or a
+physical DOS 486SX performance result.
+
 ## S2: block and brick-chunk graphics
 
 Entry `DefaultBlockObjTiles`; exit `ExBCDr`. Exact labels:

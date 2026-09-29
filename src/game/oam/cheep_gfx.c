@@ -62,9 +62,7 @@ mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
     for (row = 0U; row < 3U; ++row) {
         row_offset = (mysmb_u8)(oam + row * 8U);
         y = (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_Y] + row * 8U);
-        if ((offscreen & 0x80U) != 0U ||
-            ((offscreen & 0x40U) != 0U && row >= 1U) ||
-            ((offscreen & 0x20U) != 0U && row == 2U)) y = 0xf8U;
+        if ((offscreen & (0x80U >> row)) != 0U) y = 0xf8U;
         left = tiles[row * 2U];
         right = tiles[row * 2U + 1U];
         if ((direction & 2U) != 0U) {

@@ -1,4 +1,5 @@
 #include "game/oam/oam.h"
+#include "game/oam/enemy_offscreen_tail.h"
 #include "game/objects.h"
 
 enum {
@@ -25,22 +26,7 @@ enum {
 static void mysmb_normal_apply_offscreen(struct mysmb_game *game,
                                          mysmb_u8 oam, mysmb_u8 bits)
 {
-    mysmb_u8 row;
-    mysmb_u8 offset;
-
-    for (row = 0U; row < 3U; ++row) {
-        offset = (mysmb_u8)(oam + row * 8U);
-        if ((bits & 0x80U) != 0U ||
-            ((bits & 0x40U) != 0U && row >= 1U) ||
-            ((bits & 0x20U) != 0U && row == 2U)) {
-            game->ram[0x0200U + offset] = 0xf8U;
-            game->ram[0x0204U + offset] = 0xf8U;
-        }
-        else {
-            if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
-            if ((bits & 4U) != 0U) game->ram[0x0204U + offset] = 0xf8U;
-        }
-    }
+    mysmb_oam_enemy_offscreen_tail(game, oam, bits);
 }
 
 /* ROM EnemyGfxHandler/DrawEnemyObject for walking Koopas and Buzzy Beetles. */

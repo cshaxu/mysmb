@@ -1799,19 +1799,19 @@ The labels and branches behind every line remain open until individually bound b
 | 13979 | `SpnySC` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
 | 13982 | `MirrorEnemyGfx` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
 | 13994 | `EggExc` | M2 T44 S8 enemy graphics | ROM-match complete | [T44 S8 closure](../../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) |
-| 14007 | `CheckToMirrorLakitu` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checktomirrorlakitu) |
-| 14026 | `NVFLak` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nvflak) |
-| 14033 | `CheckToMirrorJSpring` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checktomirrorjspring) |
-| 14044 | `SprObjectOffscrChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprobjectoffscrchk) |
-| 14054 | `LcChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-lcchk) |
-| 14060 | `Row3C` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-row3c) |
-| 14067 | `Row23C` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-row23c) |
-| 14073 | `AllRowC` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-allrowc) |
-| 14085 | `ExEGHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exeghandler) |
-| 14088 | `DrawEnemyObjRow` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawenemyobjrow) |
-| 14093 | `DrawOneSpriteRow` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawonespriterow) |
-| 14097 | `MoveESprRowOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveesprrowoffscreen) |
-| 14104 | `MoveESprColOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-moveesprcoloffscreen) |
+| 14007 | `CheckToMirrorLakitu` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14026 | `NVFLak` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14033 | `CheckToMirrorJSpring` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14044 | `SprObjectOffscrChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14054 | `LcChk` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14060 | `Row3C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14067 | `Row23C` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14073 | `AllRowC` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14085 | `ExEGHandler` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14088 | `DrawEnemyObjRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14093 | `DrawOneSpriteRow` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14097 | `MoveESprRowOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
+| 14104 | `MoveESprColOffscreen` | M2 T45 S1 enemy OAM tail | ROM-match complete | [T45 S1 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) |
 | 14119 | `DefaultBlockObjTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-defaultblockobjtiles) |
 | 14122 | `DrawBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawblock) |
 | 14133 | `DBlkLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dblkloop) |

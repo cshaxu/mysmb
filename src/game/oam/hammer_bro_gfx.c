@@ -1,4 +1,5 @@
 #include "game/oam/oam.h"
+#include "game/oam/enemy_offscreen_tail.h"
 #include "game/objects.h"
 
 enum { F=0x000fU,I=0x0016U,S=0x001eU,D=0x0046U,P=0x006eU,X=0x0087U,Y=0x00cfU,
@@ -7,12 +8,7 @@ enum { F=0x000fU,I=0x0016U,S=0x001eU,D=0x0046U,P=0x006eU,X=0x0087U,Y=0x00cfU,
 
 static void hide(struct mysmb_game *g,mysmb_u8 o,mysmb_u8 b)
 {
-    mysmb_u8 r,q;
-    for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);
-        if((b&0x80U)!=0U||((b&0x40U)!=0U&&r>=1U)||((b&0x20U)!=0U&&r==2U)){
-            g->ram[0x0200U+q]=0xf8U;g->ram[0x0204U+q]=0xf8U;
-        }else{if((b&8U)!=0U)g->ram[0x0200U+q]=0xf8U;if((b&4U)!=0U)g->ram[0x0204U+q]=0xf8U;}
-    }
+    mysmb_oam_enemy_offscreen_tail(g, o, b);
 }
 
 /* ROM EnemyGfxHandler, CheckForHammerBro, and DrawEnemyObject for ID $05. */

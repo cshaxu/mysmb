@@ -17,6 +17,7 @@ static void prepare(struct mysmb_game *game, mysmb_u8 type,
 int main(void)
 {
     struct mysmb_game game;
+    mysmb_u8 third_left, third_right;
 
     prepare(&game, 2U, 2U, 0U);
     mysmb_objects_draw_power_up(&game);
@@ -38,10 +39,12 @@ int main(void)
 
     /* PUpOfs enters the three-row SprObjectOffscrChk tail. */
     prepare(&game, 3U, 0U, 0x80U);
+    third_left = game.ram[0x0230U];
+    third_right = game.ram[0x0234U];
     mysmb_objects_draw_power_up(&game);
     if (game.ram[0x0220U] != 0xf8U || game.ram[0x0224U] != 0xf8U ||
-        game.ram[0x0228U] != 0xf8U || game.ram[0x022cU] != 0xf8U ||
-        game.ram[0x0230U] != 0xf8U || game.ram[0x0234U] != 0xf8U ||
+        game.ram[0x0228U] != 0x60U || game.ram[0x022cU] != 0x60U ||
+        game.ram[0x0230U] != third_left || game.ram[0x0234U] != third_right ||
         game.ram[0x0221U] != 0x76U || game.ram[0x022dU] != 0x79U) return 3;
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "game/oam/oam.h"
+#include "game/oam/enemy_offscreen_tail.h"
 #include "game/objects.h"
 
 enum {
@@ -24,22 +25,7 @@ static void mysmb_bloober_hide_offscreen_rows(struct mysmb_game *game,
                                                 mysmb_u8 oam,
                                                 mysmb_u8 offscreen)
 {
-    mysmb_u8 row;
-
-    for (row = 0U; row < 3U; ++row) {
-        mysmb_u8 offset;
-        if ((offscreen & 0x80U) == 0U &&
-            !((offscreen & 0x40U) != 0U && row >= 1U) &&
-            !((offscreen & 0x20U) != 0U && row == 2U)) continue;
-        offset = (mysmb_u8)(oam + row * 8U);
-        game->ram[0x0200U + offset] = 0xf8U;
-        game->ram[0x0204U + offset] = 0xf8U;
-    }
-    for (row = 0U; row < 3U; ++row) {
-        mysmb_u8 offset = (mysmb_u8)(oam + row * 8U);
-        if ((offscreen & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
-        if ((offscreen & 4U) != 0U) game->ram[0x0204U + offset] = 0xf8U;
-    }
+    mysmb_oam_enemy_offscreen_tail(game, oam, offscreen);
 }
 
 /* ROM EnemyGfxHandler/DrawEnemyObject Bloober branch. */

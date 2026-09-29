@@ -1084,7 +1084,7 @@ int main(int argument_count, char **arguments)
             value = strtoul(arguments[recorded] + 25u,
                             &enemy_graphics_variant_end, 10);
             if (enemy_graphics_variant_end == arguments[recorded] + 25u ||
-                *enemy_graphics_variant_end != '\0' || value >= 16u) return 64;
+                *enemy_graphics_variant_end != '\0' || value >= 20u) return 64;
             enemy_graphics_variant = (unsigned int)value;
             continue;
         }
@@ -3610,9 +3610,10 @@ int main(int argument_count, char **arguments)
         if (elapsed >= warmup_frames && background_snapshot == 42u &&
             enemy_graphics_variant != 0xffffffffu && before_pc == 0xe87du &&
             driver->machine->x == driver->machine->ram[8u]) {
-            static const lib_u8 states[16] = {
+            static const lib_u8 states[20] = {
                 0u, 2u, 4u, 5u, 8u, 0x20u, 0x40u, 0x80u,
-                0xa0u, 1u, 0u, 0u, 0u, 0u, 0u, 0u
+                0xa0u, 1u, 0u, 0u, 0u, 0u, 0u, 0u,
+                0u, 0u, 0u, 0u
             };
             lib_u8 slot = driver->machine->x;
             driver->machine->ram[0x001eu + slot] =
@@ -3630,6 +3631,13 @@ int main(int argument_count, char **arguments)
             driver->machine->ram[0x0058u + slot] =
                 enemy_graphics_variant == 11u ? 0x80u : 0u;
             driver->machine->ram[0x00a0u + slot] = 0u;
+            /* T45 S1: preserve the ROM-computed offscreen bits unless a
+             * controlled row-mask case is selected at this original entry. */
+            if (enemy_graphics_variant >= 16u)
+                driver->machine->ram[0x03d1u] =
+                    (lib_u8)(enemy_graphics_variant == 16u ? 0x20u :
+                    (enemy_graphics_variant == 17u ? 0x40u :
+                    (enemy_graphics_variant == 18u ? 0x80u : 0xccu)));
         }
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */

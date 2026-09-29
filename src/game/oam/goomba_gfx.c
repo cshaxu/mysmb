@@ -108,9 +108,7 @@ static void mysmb_draw_goombas_mask_impl(struct mysmb_game *game,
             }
             left_y = (mysmb_u8)(y + row * 8U);
             right_y = left_y;
-            if ((offscreen & 0x80U) != 0U ||
-                ((offscreen & 0x40U) != 0U && row >= 1U) ||
-                ((offscreen & 0x20U) != 0U && row == 2U)) {
+            if ((offscreen & (0x80U >> row)) != 0U) {
                 left_y = 0xf8U;
                 right_y = 0xf8U;
             }

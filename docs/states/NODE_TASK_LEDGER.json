@@ -214966,9 +214966,23 @@
         "MoveESprColOffscreen"
       ],
       "maximumComplete": 1637,
-      "actualMatches": [],
+      "actualMatches": [
+        "CheckToMirrorLakitu",
+        "NVFLak",
+        "CheckToMirrorJSpring",
+        "SprObjectOffscrChk",
+        "LcChk",
+        "Row3C",
+        "Row23C",
+        "AllRowC",
+        "ExEGHandler",
+        "DrawEnemyObjRow",
+        "DrawOneSpriteRow",
+        "MoveESprRowOffscreen",
+        "MoveESprColOffscreen"
+      ],
       "evidence": "docs/proposals/m2/t45-object-oam-tail-and-graphics.md",
-      "state": "admitted-enemy-graphics-oam-tail"
+      "state": "closed-enemy-oam-tail"
     }
   ]
 }

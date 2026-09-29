@@ -1,4 +1,5 @@
 #include "game/oam/oam.h"
+#include "game/oam/enemy_offscreen_tail.h"
 #include "game/game.h"
 
 enum {
@@ -21,34 +22,7 @@ enum {
 static void mysmb_power_up_apply_offscreen(struct mysmb_game *game,
                                            mysmb_u8 oam, mysmb_u8 bits)
 {
-    if ((bits & 0x04U) != 0U) {
-        game->ram[(mysmb_u16)(0x0200U + oam + 4U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
-    }
-    if ((bits & 0x08U) != 0U) {
-        game->ram[(mysmb_u16)(0x0200U + oam)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
-    }
-    if ((bits & 0x20U) != 0U) {
-        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
-    }
-    if ((bits & 0x40U) != 0U) {
-        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
-    }
-    if ((bits & 0x80U) != 0U) {
-        game->ram[(mysmb_u16)(0x0200U + oam)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 4U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 8U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 12U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 16U)] = 0xf8U;
-        game->ram[(mysmb_u16)(0x0200U + oam + 20U)] = 0xf8U;
-    }
+    mysmb_oam_enemy_offscreen_tail(game, oam, bits);
 }
 /* ROM DrawPowerUp. */
 void mysmb_objects_draw_power_up(struct mysmb_game *game)

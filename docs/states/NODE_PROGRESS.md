@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1624 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1637 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 283 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 270 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1624 / 1,992 (81.53%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1637 / 1,992 (82.18%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T44 closure](../history/M2-T44-block-buffer-and-object-graphics.md#t44-closure) completes 109 source-order labels: 107 new ROM matches and two retained/rechecked bullet labels. All eight S chains have original-ROM logic and three-target operational evidence; M2 remains at 1,624 / 1,992.
+Latest task review: [T45 S1 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s1-closure-enemy-oam-tail) completes 13 enemy OAM tail labels. Every label has original PC-route and shared-C branch/write evidence; RAM/OAM comparison, DOS16 link, platform purity and three EXEs provide separate validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1624)
+## Completed matches (1637)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1654,6 +1654,19 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13979 | `SpnySC` |
 | 13982 | `MirrorEnemyGfx` |
 | 13994 | `EggExc` |
+| 14007 | `CheckToMirrorLakitu` |
+| 14026 | `NVFLak` |
+| 14033 | `CheckToMirrorJSpring` |
+| 14044 | `SprObjectOffscrChk` |
+| 14054 | `LcChk` |
+| 14060 | `Row3C` |
+| 14067 | `Row23C` |
+| 14073 | `AllRowC` |
+| 14085 | `ExEGHandler` |
+| 14088 | `DrawEnemyObjRow` |
+| 14093 | `DrawOneSpriteRow` |
+| 14097 | `MoveESprRowOffscreen` |
+| 14104 | `MoveESprColOffscreen` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
