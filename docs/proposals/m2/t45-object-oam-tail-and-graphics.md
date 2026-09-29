@@ -61,6 +61,38 @@ snapshots and affected OAM tests on both Windows widths, DOS16 link, purity
 and three EXEs. Admission baseline 1,624; expected completion 13; maximum
 1,637 / 1,992.
 
+### S1 admission record
+
+The continuing owner-approved M2 mandate admits **M2 T45 S1** at
+**1,624 / 1,992**. All thirteen labels transfer from M2 T17 S6. The prior
+T44 original-PC records reach eleven labels in this exact span. `NVFLak`
+and `MoveESprRowOffscreen` have no captured entry yet; S1 must produce
+bounded original-route witnesses for both before claiming a complete chain.
+
+| ROM line / PC | Label | Incoming | Prior original-PC witness |
+| --- | --- | --- | --- |
+| 14007 / `$eb12` | `CheckToMirrorLakitu` | open | ordinary graphics |
+| 14026 / `$eb3e` | `NVFLak` | open | missing |
+| 14033 / `$eb4e` | `CheckToMirrorJSpring` | open | ordinary graphics |
+| 14044 / `$eb64` | `SprObjectOffscrChk` | open | ordinary graphics |
+| 14054 / `$eb74` | `LcChk` | open | ordinary graphics |
+| 14060 / `$eb7e` | `Row3C` | open | ordinary graphics |
+| 14067 / `$eb89` | `Row23C` | open | ordinary graphics |
+| 14073 / `$eb93` | `AllRowC` | open | ordinary graphics |
+| 14085 / `$eba9` | `ExEGHandler` | open | ordinary graphics |
+| 14088 / `$ebaa` | `DrawEnemyObjRow` | open | ordinary graphics |
+| 14093 / `$ebb2` | `DrawOneSpriteRow` | open | ordinary graphics |
+| 14097 / `$ebb7` | `MoveESprRowOffscreen` | open | missing |
+| 14104 / `$ebc1` | `MoveESprColOffscreen` | open | Bowser graphics |
+
+The ROM input is the owner-local `smb1.nes` revision already used by T44;
+the reviewed `SMBDIS.ASM` listing supplies label and branch meaning. Original
+CPU PC/stack/registers and ROM bytes stay unmodified. Only bounded RAM at a
+naturally reached call entry may vary. Recorder outputs, derived coverage,
+diagnostic patches and logs remain under ignored `build/m2-t45-s1/` with
+per-process time limits and no raw trace commit. The source-policy review
+permits this local verification use; it grants no redistributability.
+
 ## S2: block and brick-chunk graphics
 
 Entry `DefaultBlockObjTiles`; exit `ExBCDr`. Exact labels:
