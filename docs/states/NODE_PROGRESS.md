@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1582 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1624 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 325 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 283 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1582 / 1,992 (79.42%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1624 / 1,992 (81.53%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T44 S7 closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s7-closure-power-up-graphics) closes the six-node power-up graphics chain. Original parent-route replay, x86/x64 comparison and tests, DOS16 link, purity and all three refreshed artifacts pass.
+Latest task review: [T44 S8 closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation) closes 42 enemy-graphics labels and rechecks two retained bullet labels. Original per-label PC routes, table binding and x86/x64 non-stack RAM/OAM comparison are backed by DOS16 link, purity and three executable artifacts.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1582)
+## Completed matches (1624)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1610,8 +1610,50 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13530 | `PUpDrawLoop` |
 | 13555 | `FlipPUpRightSide` |
 | 13562 | `PUpOfs` |
+| 13576 | `EnemyGraphicsTable` |
+| 13621 | `EnemyGfxTableOffsets` |
+| 13627 | `EnemyAttributeData` |
+| 13633 | `EnemyAnimTimingBMask` |
+| 13636 | `JumpspringFrameOffsets` |
+| 13639 | `EnemyGfxHandler` |
+| 13661 | `CheckForRetainerObj` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
+| 13687 | `CheckForJumpspring` |
+| 13694 | `CheckForPodoboo` |
+| 13704 | `CheckBowserGfxFlag` |
+| 13711 | `SBwsrGfxOfs` |
+| 13713 | `CheckForGoomba` |
+| 13722 | `GmbaAnim` |
+| 13732 | `CheckBowserFront` |
+| 13746 | `ChkFrontSte` |
+| 13750 | `FlipBowserOver` |
+| 13753 | `DrawBowser` |
+| 13756 | `CheckBowserRear` |
+| 13761 | `ChkRearSte` |
+| 13770 | `CheckForSpiny` |
+| 13780 | `NotEgg` |
+| 13782 | `CheckForLakitu` |
+| 13792 | `NoLAFr` |
+| 13794 | `CheckUpsideDownShell` |
+| 13807 | `CheckRightSideUpShell` |
+| 13819 | `CheckForDefdGoomba` |
+| 13829 | `CheckForHammerBro` |
+| 13841 | `CheckForBloober` |
+| 13856 | `CheckToAnimateEnemy` |
+| 13878 | `CheckForSecondFrame` |
+| 13883 | `CheckAnimationStop` |
+| 13893 | `CheckDefeatedState` |
+| 13905 | `DrawEnemyObject` |
+| 13916 | `SkipToOffScrChk` |
+| 13919 | `CheckForVerticalFlip` |
+| 13943 | `FlipEnemyVertically` |
+| 13957 | `CheckForESymmetry` |
+| 13965 | `ContES` |
+| 13975 | `ESRtnr` |
+| 13979 | `SpnySC` |
+| 13982 | `MirrorEnemyGfx` |
+| 13994 | `EggExc` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |

@@ -49,7 +49,7 @@
 - [ ] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T16/T23 owns RelativePlayerPosition versus RenderPlayerSub ordering. Evidence: [paired seeded-write probe](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [OAM](../proposals/m2/oam-graphics.md).
 - [ ] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** Every unfinished label, responsibility, historical S/P reference and evidence gap is named in the [full census](../etc/architecture/m2-t24-s1-full-node-census.md); the [progress ledger](NODE_PROGRESS.md) owns counts. Each responsible source-slice proposal must admit exact names and expected completions before implementation. A passing whole-route or CTest count cannot close unexecuted or unaudited nodes.
 
-- [ ] **Jumpspring graphics child (`TODO(High)`):** T35 S3 restores and proves the seven caller/state nodes, but all 64 actual-child comparisons retain EnemyGfxHandler work-byte/OAM differences, including animation tile selection, flip attributes and the existing slot-five drawing guard. EnemyGfxHandler retains M2 T17 S6 custody; admission path is the source-order OAM slice. [Evidence](../history/M2-T35-bubbles-timer-warp.md#s3-original-jumpspring-proof). The old inline spring distance erase has been replaced by the shared bounds child; the earlier pre-parser screen-origin route still needs integrated revalidation.
+- [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.
 
 - [ ] **Vine OAM wrapped clipping (`TODO(High)`):** T36 S1 proves the six vine caller nodes, while actual-child comparison retains 32 failures at OAM Y bytes 0200/020C/0210/0214. DrawVine/ChkFTop/NextVSp retain M2 T17 S6 custody; repair the original wrapped subtraction and recheck all source rows when that graphics slice is admitted. [Evidence](../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof).
 
@@ -83,15 +83,20 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 
 - [ ] **Actor-vector and retainer actual-child gaps:** T39 S7 proves only the
   four caller nodes (360/360); actual native children match 42/360, retaining
-  174 vector and 144 retainer failures. Keep source-order custody for S8/S9
-  and later actor/OAM nodes; replace the explicitly provisional large/small
-  platform seams in S9. GetEnemyOffscreenBits/RelativeEnemyPosition remain
-  with T16 S4 and EnemyGfxHandler with T17 S6. [Exact caller/child boundary](../history/M2-T39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof).
+  174 vector and 144 retainer failures in that historical build. T44 S8 now
+  proves the 72 retainer graphics children at zero differences; other vector
+  and actor descendants retain source-order custody. Replace the provisional
+  large/small platform seams in their receiving slice.
+  GetEnemyOffscreenBits/RelativeEnemyPosition remain with T16 S4.
+  [Original gap](../history/M2-T39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof),
+  [graphics closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation).
 
 - [ ] **Normal actor/movement actual-child gaps:** T39 S8 proves its four
   caller nodes with 252/252 original comparisons, while actual-child failures
-  remain separately recorded. Preserve movement, collision and graphics
-  descendants under their existing source-order ledger owners.
+  remain separately recorded. T44 S8 now proves the 84 original ordinary
+  graphics children and 33 additional controlled graphics children at zero
+  differences on both widths. Preserve the separate movement and collision
+  descendants under their source-order ledger owners.
   [Exact caller/child boundary](../history/M2-T39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof).
 
 - [ ] **Special actor/platform child gaps:** T39 S9 proves six callers and

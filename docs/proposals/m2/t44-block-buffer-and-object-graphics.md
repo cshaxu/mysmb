@@ -629,3 +629,93 @@ and `mysmb64.exe` (360502 bytes,
 The node ledger remains **1,582 / 1,992**: branch families and duplicate
 file-local renderers still require S8 audit before its 44-label checklist can
 close.
+
+#### S8 closure: enemy graphics and animation
+
+S8 closes its 44-label source span with **42 new matches and two retained
+matches**, moving M2 from **1,582** to **1,624 / 1,992**. The original CPU's
+`RunNormalEnemies -> EnemyGfxHandler` route supplies 84 ordinary and 33
+controlled child calls; the integrated Bowser route supplies 1,024 calls,
+`RunRetainerObj` supplies 72, and jumpspring supplies 32. After P5, every
+non-stack RAM/OAM byte matches on **both x86 and x64** for all five groups.
+The original PC coverage of the 33 controlled normal cases and ten Bowser
+cases reaches all 38 executable labels in this S except retained `SBBAt`.
+The five data labels are bound to one **319-byte owner-ROM PRG span**, checked
+by `tools/Verify-EnemyGraphicsTables.py`; `SBBAt` retains its T31 S2 proof.
+The first and alternate Bowser front/rear states, Goomba defeated-state
+animation, Spiny non-egg and egg states, Lakitu frenzy timing, shell poses,
+Bloober interval timing and vertical flip are represented in those routes.
+
+The node checklist below names the source-level rule, C owner and witness for
+each label. `N` means the ordinary shared handler in
+`src/game/oam/normal_enemy_gfx.c`; `B` means Bowser's shared handler in
+`src/game/oam/bowser_gfx.c`; `J` means the jumpspring branch in the former;
+`R` means the retainer call into the ordinary handler. Sample names refer to
+bounded original-PC coverage under ignored `build/m2-t44-s8/variants/`.
+`D` denotes the exact ROM/listing/C table binding. The two `T31` rows were
+already complete and receive no new credit.
+
+| ROM label | C owner / witness | Source rule verified |
+| --- | --- | --- |
+| `EnemyGraphicsTable` | N, D | Forty-three six-tile rows and indexed spill bytes preserve the ROM order. |
+| `EnemyGfxTableOffsets` | N, D | Twenty-seven named offsets plus contiguous indexed spill match PRG. |
+| `EnemyAttributeData` | N, D | Twenty-seven attributes plus contiguous indexed spill match PRG. |
+| `EnemyAnimTimingBMask` | N, D; `g0v2` | `$08` active frame mask and residual `$18` byte are bound. |
+| `JumpspringFrameOffsets` | J, D; spring 32 | `$18,$19,$1a,$19,$18` selects the original spring rows. |
+| `EnemyGfxHandler` | N/B/J; `g0v2`,`b0` | Writes work bytes, branches on Piranha motion/timer, then dispatches source ID. |
+| `CheckForRetainerObj` | N/R; `g0v2`, retainer 72 | Retainer ID replaces code and direction while retaining state read. |
+| `CheckForBulletBillCV` | T31 retained | Cannon bullet Y/priority and code rewrite retain prior proof. |
+| `SBBAt` | T31 retained | Bullet attribute/state commit retains prior proof. |
+| `CheckForJumpspring` | N/J; `g0v2`, spring 32 | Spring control indexes the five-frame offset sequence. |
+| `CheckForPodoboo` | N; `g48v6` | Non-upward Podoboo sets the vertical-flip work flag. |
+| `CheckBowserGfxFlag` | N/B; `g0v2`,`b0` | Zero uses ordinary graphics; nonzero selects front/rear. |
+| `SBwsrGfxOfs` | B; `b0` | Selects source `$16/$17` front/rear graphics code. |
+| `CheckForGoomba` | N; `g24v2` | State at least `$02` sets defeated alternate state `$04`. |
+| `GmbaAnim` | N; `g24v0` | State bit 5, timer control and frame bit 3 gate direction XOR `$03`. |
+| `CheckBowserFront` | N/B; `b0` | ORs source attributes and loads the graphics table offset. |
+| `ChkFrontSte` | B; `b0` | Mouth control selects closed or open front row. |
+| `FlipBowserOver` | B; `b4` | Defeated front/rear state writes vertical-flip flag. |
+| `DrawBowser` | B; `b0` | Bowser selection joins the common six-sprite draw. |
+| `CheckBowserRear` | B; `b12` | Foot control selects rear row and defeated state subtracts 16 Y pixels. |
+| `ChkRearSte` | B; `b12` | Rear defeated-bit test selects normal draw or flip. |
+| `CheckForSpiny` | N; `g72v3` | State `$05` selects egg offset `$30` and reversed direction. |
+| `NotEgg` | N; `g72v1` | Non-egg Spiny skips Lakitu and shell selection. |
+| `CheckForLakitu` | N; `g68v14` | Frenzy timer and defeated bit select `$90/$96` frame. |
+| `NoLAFr` | N; `g68v14` | Lakitu bypasses the shell-state branch. |
+| `CheckUpsideDownShell` | N; `g8v2` | IDs below four use upside-down shell; Buzzy raises Y by one. |
+| `CheckRightSideUpShell` | N; `g8v4` | Alternate state four selects upright shell and source Y adjustments. |
+| `CheckForDefdGoomba` | N; `g24v2` | Goomba state bit 5 selects normal or defeated tile offset. |
+| `CheckForHammerBro` | N; `g20v5` | State bit 3 chooses the special frame or skips animation. |
+| `CheckForBloober` | N; `g28v12` | Interval timer gates frame; Bloober adds three Y pixels when allowed. |
+| `CheckToAnimateEnemy` | N/R; `g0v2`, retainer 72 | Exempt IDs and world-eight retainer bypass ordinary animation. |
+| `CheckForSecondFrame` | N; `g0v2` | Frame counter AND source `$08` mask selects animation edge. |
+| `CheckAnimationStop` | N; `g0v2` | State bits 7/5 or timer control suppress the six-byte row advance. |
+| `CheckDefeatedState` | N; `g20v5` | Defeated non-shell objects set flip flag and clear alternate state. |
+| `DrawEnemyObject` | N/B/J; `g0v2`,`b0`, spring 32 | Three successive two-sprite rows write the original OAM/work bytes. |
+| `SkipToOffScrChk` | B; `b0` | Special path bypasses ordinary flip/mirror before offscreen tail. |
+| `CheckForVerticalFlip` | N/B; `g20v5`,`b4` | Writes six vertical-flip attributes before tile exchange. |
+| `FlipEnemyVertically` | N/B; `g20v5`,`b4` | Exchanges selected upper/middle pair with third-row tile pair. |
+| `CheckForESymmetry` | N/B; `g0v2`,`b0` | Bowser bypasses the ordinary symmetry selection. |
+| `ContES` | N; `g72v1` | Bloober/Piranha/Podoboo mirror; Spiny non-egg bypasses mirror. |
+| `ESRtnr` | N/R; `g0v2`, retainer 72 | Retainer writes `$42` on bottom-right before state test. |
+| `SpnySC` | N; `g0v2` | Alternate state below two skips symmetrical attribute rewrite. |
+| `MirrorEnemyGfx` | N; `g72v3` | Left attributes mask `$a3`; right adds flip and egg vertical bit. |
+| `EggExc` | N; `g72v3` | Commits right-column attributes and state-four lower-row flip. |
+
+The similar-issue sweep found no species-specific graphics helper called by
+the live `GameEngine -> RunNormalEnemies` path. Older helper entry points and
+the unused bulk Piranha adapter are retained only for legacy direct tests;
+they do not select tiles or states in the product path. No platform file
+contains graphics policy. All scoped labels close with no deferral; the next
+source-order branch begins `CheckToMirrorLakitu` outside S8.
+
+The operational closure uses the P5 x86/x64 full builds and OpenNT DOS16 MZ
+link. Both full CTest suites are **222/233** with the same eleven independently
+baselined failures, while platform purity, both Win32 self-tests and focused
+graphics tests pass. The three P5 executables remain the S8 closure artifacts:
+`mysmb16.exe` SHA-256
+`a7a8c7791a936df9b6c264392eb7aae67348dfeec37e1ab9a48e67858cfec7cb`,
+`mysmb32.exe`
+`7cef4bfa1e9ee1ea7c34ca0d8b1cf4e393129a9950b22eeb427a4b37ead57469`,
+and `mysmb64.exe`
+`756643c51701aabb7d24418aaa6166e36166f1a140742c41969ae6f9f66b9b3b`.
