@@ -274,6 +274,32 @@ relative coordinates and offscreen mask, without moving platform policy into
 a host adapter. Admission baseline is 1,560/1,992; all eleven open labels are
 expected to match, for a maximum 1,571/1,992.
 
+#### S5 P1 implementation checkpoint
+
+`DrawLargePlatform` now follows the source order: stack six X positions from
+the caller-written `Enemy_Rel_XPos`, dump four Y rows, always overwrite the
+last two rows with either the ordinary Y value or `$f8`, dump the six tile and
+attribute rows, then apply the six successive d7..d2 offscreen tests from the
+next source enemy slot. The final `Enemy_OffscreenBits` d7 branch dispatches
+the shared six-row `$f8` dump. It no longer recomputes relative coordinates or
+duplicates `GetXOffscreenBits`.
+
+The focused large-platform regression covers every d7..d2 column, normal
+tail-row replacement over stale OAM, castle and secondary-hard tail
+suppression, cloud tile `$75`, and whole-object offscreen removal. It passes
+on Win32 x86 and x64 together with the existing platform OAM and platform
+purity tests. The same source list links as a DOS16 MZ executable. The P1
+package is `mysmb16.exe` 258197 bytes
+`017ae570e903c96176a80809b50a233d96f1d816c5fca7f415f366bffbc13a29`,
+`mysmb32.exe` 361878 bytes
+`9993f7b00531140be239a4c400201fd3d6fea039b4cf055ebf44ccf8b0cab0a3`, and
+`mysmb64.exe` 370520 bytes
+`dcb91fbbd44a1c03ba1895352b8e9496d8e327df3c5051d5cb92b16ffc7233f0`.
+
+This checkpoint grants no node credit. The required original-ROM normal
+`RunLargePlatform → DrawLargePlatform` route record has not yet been captured;
+the static source comparison and focused native test do not replace it.
+
 ### S6: Floatey-number and jumping-coin graphics
 
 `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`,

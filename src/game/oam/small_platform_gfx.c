@@ -59,42 +59,6 @@ void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0203U + row_offset] = column_x;
     }
 }
-/* ROM DrawLargePlatform.  GetXOffscreenBits is repeated here because this
- * owner consumes its unshifted six-column mask directly. */
-static mysmb_u8 mysmb_large_platform_x_offscreen(const struct mysmb_game *game,
-                                                  mysmb_u8 slot)
-{
-    static const mysmb_u8 bits[16] = {
-        0x7fU, 0x3fU, 0x1fU, 0x0fU, 0x07U, 0x03U, 0x01U, 0x00U,
-        0x80U, 0xc0U, 0xe0U, 0xf0U, 0xf8U, 0xfcU, 0xfeU, 0xffU
-    };
-    mysmb_u8 edge;
-    mysmb_u8 difference;
-    mysmb_u8 borrow;
-    mysmb_u8 page_difference;
-    mysmb_u8 index;
-
-    edge = 1U;
-    for (;;) {
-        difference = (mysmb_u8)(game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X + edge] -
-                                game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot]);
-        borrow = game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X + edge] <
-            game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot] ? 1U : 0U;
-        page_difference = (mysmb_u8)(game->ram[0x071aU + edge] -
-            game->ram[0x006eU + slot] - borrow);
-        index = edge != 0U ? 15U : 7U;
-        if ((page_difference & 0x80U) == 0U) {
-            index = edge != 0U ? 7U : 15U;
-            if (page_difference == 0U && difference < 0x38U) {
-                index = (mysmb_u8)(difference >> 3U);
-                if (edge == 0U) index = (mysmb_u8)(index + 8U);
-            }
-        }
-        if (bits[index] != 0U || edge == 0U) return bits[index];
-        edge = 0U;
-    }
-}
-
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 oam;
@@ -104,31 +68,32 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 offscreen;
     mysmb_u8 column;
 
-    game->ram[MYSMB_SMALL_PLATFORM_REL_X] = (mysmb_u8)(
-        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot] -
-        game->ram[MYSMB_SMALL_PLATFORM_SCREEN_LEFT_X]);
-    game->ram[MYSMB_SMALL_PLATFORM_REL_Y] =
-        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_Y + slot];
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
     x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
     y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
     tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
-    offscreen = mysmb_large_platform_x_offscreen(game, slot);
+    mysmb_oam_stack_six_sprite_data(game, x, (mysmb_u8)(oam + 3U));
+    mysmb_oam_dump_four_sprites(game, y, oam);
+    /* SetLast2Platform is reached by both paths.  The source leaves A as
+     * Enemy_Y_Position for the ordinary path, and replaces it with $f8 for
+     * castle/secondary-hard mode before storing both final rows. */
+    if (game->ram[0x074eU] == 3U || game->ram[0x06ccU] != 0U)
+        y = 0xf8U;
+    mysmb_oam_dump_two_sprites(game, y, (mysmb_u8)(oam + 16U));
+    mysmb_oam_dump_six_sprites(game, tile, (mysmb_u8)(oam + 1U));
+    mysmb_oam_dump_six_sprites(game, 2U, (mysmb_u8)(oam + 2U));
+    offscreen = mysmb_oam_get_x_offscreen_bits(game,
+        game->ram[0x006eU + slot + 1U],
+        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot + 1U]);
 
     for (column = 0U; column < 6U; ++column) {
         mysmb_u8 row_offset;
-        mysmb_u8 column_y;
 
         row_offset = (mysmb_u8)(oam + column * 4U);
-        column_y = y;
-        if (column >= 4U &&
-            (game->ram[0x074eU] == 3U || game->ram[0x06ccU] != 0U)) {
-            column_y = 0xf8U;
-        }
-        if ((offscreen & (mysmb_u8)(0x80U >> column)) != 0U) column_y = 0xf8U;
-        game->ram[0x0200U + row_offset] = column_y;
-        game->ram[0x0201U + row_offset] = tile;
-        game->ram[0x0202U + row_offset] = 2U;
-        game->ram[0x0203U + row_offset] = (mysmb_u8)(x + column * 8U);
+        if ((offscreen & 0x80U) != 0U)
+            game->ram[0x0200U + row_offset] = 0xf8U;
+        offscreen = (mysmb_u8)(offscreen << 1U);
     }
+    if ((game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN] & 0x80U) != 0U)
+        mysmb_oam_move_six_sprites_offscreen(game, oam);
 }
