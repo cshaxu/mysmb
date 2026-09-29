@@ -2,9 +2,8 @@
 
 ## Current Work
 
-**M2 T44 S6 is admitted at 1,571 / 1,992.** It owns the five-node
-`DrawFloateyNumber_Coin` through `ExJCGfx` MiscLoop graphics chain, with a
-maximum closure count of 1,576.
+**M2 T44 S6 closed at 1,576 / 1,992.** It completed the five-node
+`DrawFloateyNumber_Coin` through `ExJCGfx` MiscLoop graphics chain.
 
 ## M2 T44 S6 Packet
 

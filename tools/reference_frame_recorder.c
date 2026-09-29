@@ -2436,7 +2436,9 @@ int main(int argument_count, char **arguments)
         block_scenario = mysmb_misc_lifetime_argument(arguments[recorded]);
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
-            t26_fixture = (unsigned int)(1461 + block_scenario);
+            t26_fixture = block_scenario <= 42 ?
+                (unsigned int)(1461 + block_scenario) :
+                (unsigned int)(41000 + block_scenario - 43);
             transition_entry = 0xbb96u;
             continue;
         }
@@ -3140,10 +3142,13 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 1560u && t26_fixture <= 1595u)
                     mysmb_power_up_init_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 1560u));
+                else if (t26_fixture >= 41000u && t26_fixture <= 41005u)
+                    mysmb_misc_lifetime_fixture(driver->machine->ram,
+                        (lib_u8)(42u + t26_fixture - 41000u));
                 else if (t26_fixture >= 1504u && t26_fixture <= 1559u)
                     mysmb_score_hud_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 1504u));
-                else if (t26_fixture >= 1462u && t26_fixture <= 1503u)
+                else if (t26_fixture >= 1462u && t26_fixture <= 1509u)
                     mysmb_misc_lifetime_fixture(driver->machine->ram,
                         (lib_u8)(t26_fixture - 1462u));
                 else if (t26_fixture >= 1414u && t26_fixture <= 1461u)
@@ -3587,9 +3592,11 @@ int main(int argument_count, char **arguments)
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
         if ((((background_snapshot >= 4u && background_snapshot <= 79u) &&
-              t26_fixture >= 776u && t26_fixture <= 27677u) ||
+             t26_fixture >= 776u && t26_fixture <= 27677u) ||
              (background_snapshot == 80u && t26_fixture >= 40000u &&
-              t26_fixture <= 40009u)) && movement_snapshot_path != NULL &&
+              t26_fixture <= 40009u) ||
+             (background_snapshot == 18u && t26_fixture >= 41000u &&
+              t26_fixture <= 41005u)) && movement_snapshot_path != NULL &&
             elapsed >= warmup_frames) {
             if (movement_snapshot_phase == 0u &&
                 before_pc == (background_snapshot == 4u ? 0xb0e9u : transition_entry) &&

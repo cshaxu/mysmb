@@ -209809,9 +209809,15 @@
         "ExJCGfx"
       ],
       "maximumComplete": 1576,
-      "actualMatches": [],
+      "actualMatches": [
+        "DrawFloateyNumber_Coin",
+        "NotRsNum",
+        "JumpingCoinTiles",
+        "JCoinGfxHandler",
+        "ExJCGfx"
+      ],
       "evidence": "docs/proposals/m2/t44-block-buffer-and-object-graphics.md",
-      "state": "admitted-floatey-jumping-coin-graphics"
+      "state": "closed-floatey-jumping-coin-graphics"
     }
   ]
 }

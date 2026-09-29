@@ -1744,11 +1744,11 @@ The labels and branches behind every line remain open until individually bound b
 | 13426 | `SChk6` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
 | 13431 | `SLChk` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
 | 13435 | `ExDLPl` | M2 T44 S5 large-platform graphics | ROM-match complete | [T44 S5 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) |
-| 13439 | `DrawFloateyNumber_Coin` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfloateynumber_coin) |
-| 13444 | `NotRsNum` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-notrsnum) |
-| 13460 | `JumpingCoinTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jumpingcointiles) |
-| 13463 | `JCoinGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-jcoingfxhandler) |
-| 13489 | `ExJCGfx` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exjcgfx) |
+| 13439 | `DrawFloateyNumber_Coin` | M2 T44 S6 coin/floatey graphics | ROM-match complete | [T44 S6 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s6-closure-floatey-number-and-jumping-coin-graphics) |
+| 13444 | `NotRsNum` | M2 T44 S6 coin/floatey graphics | ROM-match complete | [T44 S6 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s6-closure-floatey-number-and-jumping-coin-graphics) |
+| 13460 | `JumpingCoinTiles` | M2 T44 S6 coin/floatey graphics | ROM-match complete | [T44 S6 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s6-closure-floatey-number-and-jumping-coin-graphics) |
+| 13463 | `JCoinGfxHandler` | M2 T44 S6 coin/floatey graphics | ROM-match complete | [T44 S6 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s6-closure-floatey-number-and-jumping-coin-graphics) |
+| 13489 | `ExJCGfx` | M2 T44 S6 coin/floatey graphics | ROM-match complete | [T44 S6 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s6-closure-floatey-number-and-jumping-coin-graphics) |
 | 13500 | `PowerUpGfxTable` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-powerupgfxtable) |
 | 13506 | `PowerUpAttributes` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-powerupattributes) |
 | 13509 | `DrawPowerUp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawpowerup) |

@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1571 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1576 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 336 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 331 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1571 / 1,992 (78.87%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1576 / 1,992 (79.12%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T44 S5 closure](../proposals/m2/t44-block-buffer-and-object-graphics.md#s5-closure-large-platform-graphics) closes the eleven-node large-platform graphics chain. Parent-route ROM evidence, x86/x64 replay and tests, DOS16 link, purity and all three refreshed artifacts pass.
 
@@ -1599,6 +1599,11 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13426 | `SChk6` |
 | 13431 | `SLChk` |
 | 13435 | `ExDLPl` |
+| 13439 | `DrawFloateyNumber_Coin` |
+| 13444 | `NotRsNum` |
+| 13460 | `JumpingCoinTiles` |
+| 13463 | `JCoinGfxHandler` |
+| 13489 | `ExJCGfx` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |
