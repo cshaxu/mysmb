@@ -273,13 +273,16 @@ void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x0216U + oam] = 0x42U;
 }
 
-/* Existing EnemyGfxHandler branch for JumpspringObject ($32).
- * State, relative positioning and bounds are owned by JumpspringHandler. */
+/* ROM $e87d-$eaf2 EnemyGfxHandler, spring route through EggExc.
+ * DrawJSpr has already written relative position and offscreen bits. */
 void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
 {
-    static const mysmb_u8 frame0[6] = { 0xf0U, 0xf0U, 0xfcU, 0xfcU, 0xfcU, 0xfcU };
-    static const mysmb_u8 frame1[6] = { 0xf2U, 0xf2U, 0xf3U, 0xf3U, 0xf2U, 0xf2U };
-    static const mysmb_u8 frame2[6] = { 0xf1U, 0xf1U, 0xf1U, 0xf1U, 0xfcU, 0xfcU };
+    static const mysmb_u8 graphics[18] = {
+        0xf2U, 0xf2U, 0xf3U, 0xf3U, 0xf2U, 0xf2U,
+        0xf1U, 0xf1U, 0xf1U, 0xf1U, 0xfcU, 0xfcU,
+        0xf0U, 0xf0U, 0xfcU, 0xfcU, 0xfcU, 0xfcU
+    };
+    static const mysmb_u8 frame_offsets[5] = { 0U, 1U, 2U, 1U, 0U };
     const mysmb_u8 *tiles;
     mysmb_u8 animation;
     mysmb_u8 row;
@@ -289,21 +292,42 @@ void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 left;
     mysmb_u8 right;
     mysmb_u8 x;
+    mysmb_u8 y;
+    mysmb_u8 state;
+    mysmb_u8 direction;
+    mysmb_u8 first;
+    mysmb_u8 last;
 
-    if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U ||
-        game->ram[MYSMB_NORMAL_ID + slot] != 50U) return;
+    /* EnemyGfxHandler entry and CheckForJumpspring use these work bytes. */
+    game->ram[2U] = game->ram[MYSMB_NORMAL_Y + slot];
+    game->ram[5U] = game->ram[MYSMB_NORMAL_REL_X];
+    game->ram[0x00ebU] = game->ram[MYSMB_NORMAL_SPRITE + slot];
+    game->ram[0x0109U] = 0U;
+    game->ram[3U] = game->ram[MYSMB_NORMAL_DIRECTION + slot];
+    game->ram[4U] = game->ram[MYSMB_NORMAL_ATTRIBUTES + slot];
+    state = game->ram[MYSMB_NORMAL_STATE + slot];
+    game->ram[0x00edU] = state;
     animation = game->ram[0x070eU];
-    if (animation == 2U) tiles = frame2;
-    else if (animation == 1U || animation == 3U) tiles = frame1;
-    else tiles = frame0;
-    x = game->ram[MYSMB_NORMAL_REL_X];
+    game->ram[0x00efU] = (mysmb_u8)(0x18U + frame_offsets[animation]);
+    game->ram[0x00ecU] = 3U;
+    tiles = graphics + frame_offsets[animation] * 6U;
+    x = game->ram[5U];
+    y = game->ram[2U];
     bits = game->ram[MYSMB_NORMAL_OFFSCREEN];
-    attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
+    attributes = (mysmb_u8)(game->ram[4U] | 2U);
+    game->ram[4U] = attributes;
+    direction = game->ram[3U];
+    if ((state & 0x20U) != 0U) {
+        game->ram[0x0109U] = 1U;
+        game->ram[0x00ecU] = 0U;
+    }
     offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
     for (row = 0U; row < 3U; ++row) {
         left = tiles[row * 2U];
         right = tiles[row * 2U + 1U];
-        if ((game->ram[0x0046U + slot] & 2U) != 0U) {
+        game->ram[0U] = left;
+        game->ram[1U] = right;
+        if ((direction & 2U) != 0U) {
             game->ram[0x0201U + offset] = right;
             game->ram[0x0205U + offset] = left;
             game->ram[0x0202U + offset] = (mysmb_u8)(attributes | 0x40U);
@@ -314,16 +338,46 @@ void mysmb_oam_draw_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
             game->ram[0x0202U + offset] = attributes;
             game->ram[0x0206U + offset] = attributes;
         }
-        game->ram[0x0200U + offset] = (mysmb_u8)(game->ram[MYSMB_NORMAL_Y + slot] + row * 8U);
+        game->ram[0x0200U + offset] = y;
         game->ram[0x0204U + offset] = game->ram[0x0200U + offset];
         game->ram[0x0203U + offset] = x;
         game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
+        y = (mysmb_u8)(y + 8U);
         offset = (mysmb_u8)(offset + 8U);
     }
+    game->ram[2U] = y;
     offset = game->ram[MYSMB_NORMAL_SPRITE + slot];
+    if (game->ram[0x0109U] != 0U) {
+        for (row = 0U; row < 3U; ++row) {
+            mysmb_u8 row_offset = (mysmb_u8)(offset + row * 8U);
+            game->ram[0x0202U + row_offset] |= 0x80U;
+            game->ram[0x0206U + row_offset] |= 0x80U;
+        }
+        first = game->ram[0x0201U + offset];
+        last = game->ram[0x0211U + offset];
+        game->ram[0x0201U + offset] = last;
+        game->ram[0x0211U + offset] = first;
+        first = game->ram[0x0205U + offset];
+        last = game->ram[0x0215U + offset];
+        game->ram[0x0205U + offset] = last;
+        game->ram[0x0215U + offset] = first;
+    }
+    if (game->ram[0x00ecU] >= 2U && game->ram[0x036aU] == 0U) {
+        attributes = (mysmb_u8)(game->ram[0x0202U + offset] & 0xa3U);
+        for (row = 0U; row < 3U; ++row) {
+            mysmb_u8 row_offset = (mysmb_u8)(offset + row * 8U);
+            game->ram[0x0202U + row_offset] = attributes;
+            game->ram[0x0206U + row_offset] = (mysmb_u8)(attributes | 0x40U);
+        }
+    }
+    /* CheckToMirrorJSpring overwrites the lower two attribute rows. */
     game->ram[0x020aU + offset] = 0x82U;
     game->ram[0x0212U + offset] = 0x82U;
     game->ram[0x020eU + offset] = 0xc2U;
     game->ram[0x0216U + offset] = 0xc2U;
     mysmb_normal_apply_offscreen(game, game->ram[MYSMB_NORMAL_SPRITE + slot], bits);
+    if ((bits & 0x80U) != 0U && game->ram[MYSMB_NORMAL_ID + slot] != 12U &&
+        game->ram[0x00b5U + slot] == 2U) {
+        mysmb_objects_erase_enemy(game, slot);
+    }
 }

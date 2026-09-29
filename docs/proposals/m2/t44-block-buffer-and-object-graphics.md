@@ -437,3 +437,38 @@ The shared `src/game/oam/` game component owns the handler, tables, branch decis
 The ROM-logic track uses the owner-local SMB1 ROM and reviewed `SMBDIS.ASM` listing as nonredistributable research inputs. Its reproducible route is ordinary `RunNormalEnemies -> EnemyGfxHandler`, with bounded RAM-only enemy-ID/state/frame fixtures on the original CPU path to cover the handler's branch families. Each source label is checked for table binding, condition, state/scratch read and write, successor, sprite tile/attribute/OAM effect, and exit. Raw records and derived data stay below ignored `build/m2-t44-s8/`; tracked proof contains neutral conclusions only. Existing public translations are not implementation inputs.
 
 The separate operational track runs focused enemy OAM tests for normal enemies, Goomba, retainer, jumpspring, piranha, aquatic enemies, Podoboo, hammer bro, Bowser and bullet bill; compares original parent-route records on x86 and x64; builds both Windows executables and the OpenNT DOS16 MZ target; runs platform purity; and refreshes all three executable artifacts. A passing existing smoke test does not grant a node match.
+
+#### S8 P1 checkpoint: jumpspring graphics route
+
+The shared enemy OAM owner now follows the original `EnemyGfxHandler ->
+DrawEnemyObject -> CheckToMirrorJSpring -> SprObjectOffscrChk` jumpspring
+route. The spring frame offset, graphics tile, and attribute tables were bound
+directly against the owner-local iNES ROM; the implementation preserves the
+source work-byte writes, three-row OAM dump, vertical flip, mirror attributes,
+and offscreen tail. The earlier slot-five guard had no source counterpart and
+was removed. The smoke test now enters through `JumpspringHandler` and checks
+the original frame order.
+
+The ROM-logic track compares 32 original `DrawJSpr -> EnemyGfxHandler` child
+records with every non-stack RAM byte: 32/32 zero-difference on each of x86
+and x64. The corresponding 32 complete actor records also match on each
+width. This repairs the 64 child-route differences recorded by the earlier
+jumpspring investigation. Raw records remain in ignored build output.
+
+The operational track passes the jumpspring chain, jumpspring and normal enemy
+OAM smoke tests, platform-purity check, and product self-test on each Windows
+width (5/5 each). Both Windows products build, and the shared source links as
+the OpenNT DOS16 MZ target. Refreshed artifacts are `mysmb16.exe` (259803
+bytes, SHA-256 `c7219923615b86efb5e8db3c90054e2113e8825878677b667788bcd8c1ca6d2a`),
+`mysmb32.exe` (357608 bytes, SHA-256
+`5b19a57fb06da6ac40e95e3d7378e811c360ba526876b3e3eea81ca10816ae90`),
+and `mysmb64.exe` (372120 bytes, SHA-256
+`272371d19cd55e949a1a81e4c2b800f4e33cc2ded3a9d0e97994bc4759c7ded6`).
+
+The similar-issue sweep searched the enemy OAM owner for slot guards and
+object-ID gates. `goomba_gfx.c` and the retainer branch of
+`normal_enemy_gfx.c` retain comparable guards; they need their own original
+branch records during this active S8 tree. This checkpoint grants no node
+credit: the shared `EnemyGfxHandler` label and its remaining branch families
+must be proven together before S8 closes. The node tracker stays at
+**1,582 / 1,992**.

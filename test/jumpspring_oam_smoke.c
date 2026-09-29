@@ -22,9 +22,9 @@ int main(void)
     game.ram[0x06e5U] = 0x40U;
     game.ram[0x03c5U] = 0x20U;
 
-    mysmb_objects_step_normal_enemy(&game, 0U);
-    if (game.ram[0x0240U] != 0xa0U || game.ram[0x0241U] != 0xf0U ||
-        game.ram[0x0245U] != 0xf0U || game.ram[0x0249U] != 0xfcU ||
+    mysmb_objects_step_jumpspring(&game, 0U);
+    if (game.ram[0x0240U] != 0xa0U || game.ram[0x0241U] != 0xf2U ||
+        game.ram[0x0245U] != 0xf2U || game.ram[0x0249U] != 0xf3U ||
         game.ram[0x0242U] != 0x22U || game.ram[0x024aU] != 0x82U ||
         game.ram[0x024eU] != 0xc2U || game.ram[0x0252U] != 0x82U ||
         game.ram[0x0256U] != 0xc2U) {
@@ -33,9 +33,9 @@ int main(void)
 
     game.ram[0x070eU] = 2U;
     game.ram[0x00ceU] = 0x80U;
-    mysmb_objects_step_normal_enemy(&game, 0U);
+    mysmb_objects_step_jumpspring(&game, 0U);
     if (game.ram[0x00ceU] != 0x82U || game.ram[0x00cfU] != 0xb0U ||
-        game.ram[0x0241U] != 0xf1U || game.ram[0x0245U] != 0xf1U ||
+        game.ram[0x0241U] != 0xf0U || game.ram[0x0245U] != 0xf0U ||
         game.ram[0x0786U] != 4U || game.ram[0x070eU] != 3U) {
         return 2;
     }
