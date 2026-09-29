@@ -4,9 +4,11 @@
 
 static mysmb_u8 returned_bits;
 static unsigned int calls;
-mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,
+mysmb_u8 mysmb_oam_get_x_offscreen_bits(struct mysmb_game *game,
+                                       mysmb_u8 source_offset,
                                        mysmb_u8 page, mysmb_u8 x)
 {
+    (void)source_offset;
     if (page != game->ram[0x6dU] || x != game->ram[0x86U]) return 0xffU;
     ++calls;
     return returned_bits;

@@ -300,6 +300,38 @@ This checkpoint grants no node credit. The required original-ROM normal
 `RunLargePlatform → DrawLargePlatform` route record has not yet been captured;
 the static source comparison and focused native test do not replace it.
 
+#### S5 P2 source-child correction checkpoint
+
+The source-route replay is now in place.  Twenty-eight child records from the
+ordinary original-ROM `RunLargePlatform → DrawLargePlatform` route (actor
+slots zero and five) replay with zero non-stack RAM differences in both x86
+and x64.  The comparison excludes only `$0100-$01ff`, because the 6502 JSR/RTS
+stack traffic has no counterpart in the native C call.
+
+That route exposed three observable omissions in P1, which are now corrected
+in the shared OAM owner: `DrawLargePlatform` saves `Enemy_SprDataOffset` in
+`$02`; `GetXOffscreenBits` now preserves the source `$04-$07` scratch effects;
+and the source `INX` changes the common `SprObject` index, so its page/X read
+is `Enemy_PageLoc[slot]` / `Enemy_X_Position[slot]`, rather than the next
+enemy slot.  The ordinary tail rows are also overwritten on every path, so
+stale OAM cannot survive a normal large-platform draw.
+
+The focused large-platform graphics, small-platform OAM, player-scroll,
+fireball-OAM, block-OAM, miscellaneous-OAM and platform-purity checks pass on
+both Windows widths.  Both product self-tests pass and the shared source links
+to the OpenNT DOS16 MZ program.  The refreshed P2 package is `mysmb16.exe`
+258325 bytes SHA-256
+`c4ddf61a9378b38916710798429b8dde2a880ff6d44c59b5030c92156ad38ff0`,
+`mysmb32.exe` 361878 bytes SHA-256
+`16ccc4939fc5c8093d9cc27e6ad09bbe662ce896d9ce5dcebba5adfd5f352048`, and
+`mysmb64.exe` 370520 bytes SHA-256
+`88109e4596cc7f4c0a1951538dcc309f563686cbb5628bc365c9efafda58a236`.
+
+This remains a checkpoint with no node credit.  The normal branch is proven;
+castle, secondary-hard, cloud override and whole-object-offscreen branch
+families still require controlled original-ROM parent-route records before
+S5 can close.
+
 ### S6: Floatey-number and jumping-coin graphics
 
 `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`,

@@ -23,8 +23,6 @@ int main(void)
     game.ram[0x00cfU] = 0x40U;
     game.ram[0x03aeU] = 0x30U;
     game.ram[0x03b9U] = 0x40U;
-    game.ram[0x006fU] = 0U;
-    game.ram[0x0088U] = 0x30U;
     game.ram[0x06e5U] = 0x20U;
     mysmb_objects_draw_small_platform(&game, 0U);
     for (i = 0U; i < 24U; ++i) {

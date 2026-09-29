@@ -9,10 +9,10 @@ static void mysmb_large_platform_fixture(struct mysmb_game *game)
     game->ram[0x071cU] = 0U;
     game->ram[0x071dU] = 0U;
     game->ram[0x06e5U] = 0x20U;
-    /* DrawLargePlatform increments the source X slot before GetXOffscreenBits.
-     * This ordinary fixture keeps that next slot wholly on screen. */
-    game->ram[0x006fU] = 0U;
-    game->ram[0x0088U] = 0x30U;
+    /* DrawLargePlatform increments the common SprObject index; relative to
+     * Enemy arrays this still selects the current platform slot. */
+    game->ram[0x006eU] = 0U;
+    game->ram[0x0087U] = 0x30U;
     game->ram[0x03aeU] = 0x30U;
     game->ram[0x03b9U] = 0x40U;
     game->ram[0x03d1U] = 0U;
@@ -74,9 +74,9 @@ static int mysmb_check_column_masks(void)
             mysmb_u8 bits;
 
             mysmb_large_platform_fixture(&game);
-            game.ram[0x006fU] = page;
-            game.ram[0x0088U] = x;
-            bits = mysmb_oam_get_x_offscreen_bits(&game, page, x);
+            game.ram[0x006eU] = page;
+            game.ram[0x0087U] = x;
+            bits = mysmb_oam_get_x_offscreen_bits(&game, 1U, page, x);
             mysmb_objects_draw_large_platform(&game, 0U);
             if (mysmb_check_six_rows(&game, bits, 0x40U, 0x5bU) != 0)
                 return 1;

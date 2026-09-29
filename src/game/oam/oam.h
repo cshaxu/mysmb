@@ -8,8 +8,10 @@
  * work bytes.  Motion, collision and mode decisions remain outside this API. */
 /* ROM RelativeBlockPosition and GetBlockOffscreenBits. */
 void mysmb_oam_relative_player_position(struct mysmb_game *game);
-/* Raw source table byte; exposing this seam does not change its algorithm. */
-mysmb_u8 mysmb_oam_get_x_offscreen_bits(const struct mysmb_game *game,
+/* ROM GetXOffscreenBits.  source_offset is the source X register value;
+ * the routine preserves its $04-$07 scratch side effects as well as A. */
+mysmb_u8 mysmb_oam_get_x_offscreen_bits(struct mysmb_game *game,
+                                       mysmb_u8 source_offset,
                                        mysmb_u8 page, mysmb_u8 x);
 void mysmb_oam_get_player_offscreen_bits(struct mysmb_game *game);
 void mysmb_oam_render_player(struct mysmb_game *game);

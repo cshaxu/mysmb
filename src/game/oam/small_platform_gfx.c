@@ -69,6 +69,9 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 column;
 
     oam = game->ram[MYSMB_SMALL_PLATFORM_SPRITE_OFFSET + slot];
+    /* DrawLargePlatform saves the source OAM offset in $02 before changing
+     * Y to the X-coordinate byte.  Later code may observe that ROM scratch. */
+    game->ram[2U] = oam;
     x = game->ram[MYSMB_SMALL_PLATFORM_REL_X];
     y = game->ram[MYSMB_SMALL_PLATFORM_REL_Y];
     tile = game->ram[0x0743U] != 0U ? 0x75U : 0x5bU;
@@ -82,9 +85,12 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_oam_dump_two_sprites(game, y, (mysmb_u8)(oam + 16U));
     mysmb_oam_dump_six_sprites(game, tile, (mysmb_u8)(oam + 1U));
     mysmb_oam_dump_six_sprites(game, 2U, (mysmb_u8)(oam + 2U));
-    offscreen = mysmb_oam_get_x_offscreen_bits(game,
-        game->ram[0x006eU + slot + 1U],
-        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot + 1U]);
+    /* INX changes the source SprObject index from the enemy base ($6e/$87)
+     * to its common-array index ($6d/$86).  It therefore still reads this
+     * platform's Enemy_PageLoc and Enemy_X_Position, not slot + 1. */
+    offscreen = mysmb_oam_get_x_offscreen_bits(game, (mysmb_u8)(slot + 1U),
+        game->ram[0x006eU + slot],
+        game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot]);
 
     for (column = 0U; column < 6U; ++column) {
         mysmb_u8 row_offset;

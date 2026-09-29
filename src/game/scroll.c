@@ -21,7 +21,7 @@ static void clamp_screen_edge(struct mysmb_game *game)
     mysmb_u8 edge;
     mysmb_u8 x;
 
-    bits = mysmb_oam_get_x_offscreen_bits(game, game->ram[0x006dU],
+    bits = mysmb_oam_get_x_offscreen_bits(game, 0U, game->ram[0x006dU],
                                          game->ram[0x0086U]);
     game->ram[0U] = bits;
     edge = (bits & 0x80U) != 0U ? 0U : 1U;
