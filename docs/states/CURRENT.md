@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T43 S1 is closed at1,413/1,992:all31 expected caller nodes complete. S2 is next, not yet admitted.**
+**M2 T43 S2 is closed at1,416/1,992:three expected nodes complete. S3 is next, not yet admitted.**
 T43 covers150 nodes:136 expected new,14 retained; maximum1,518.
 
-## M2 T43 S1 Packet
+## M2 T43 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M2 T43 S1, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after cd70ae9; accepted transfer-219. |
-| Objective | All31 open terrain root nodes listed in S1, all expected new. |
-| Non-goals | No unadmitted child rewrites, whole-game certification or host gameplay. |
-| Reference Baseline | 1,382/1,992;31 expected, maximum1,413; T43 maximum1,518. |
-| Candidate Proposal | [T43 exact plan and S1 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-admission). |
-| Files And ABI Surface | Shared player/terrain.c, mixed player.c, child seams, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S2, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after7825a0b; accepted transfer-220. |
+| Objective | HandleCoinMetatile, HandleAxeMetatile, ErACM; all three open and expected new. |
+| Non-goals | No VRAM/status child rewrites, whole-game claim or platform gameplay. |
+| Reference Baseline |1,413/1,992;three expected; maximum1,416. S1 actual child captures are the baseline. |
+| Candidate Proposal | [S2 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-admission). |
+| Files And ABI Surface | Shared terrain_metatiles.c, old objects/player owners, headers, manifests, tests/recorder and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original branch/table/call/scratch proof, child inputs and independent actual integration; native and three-target proof. |
-| Expected Markers | Complete head/foot/side chain, guards and tail exits; no invented shortcuts. |
-| Asset Needs | Owner-local ROM/listing; bounded ignored evidence; authorized three EXEs. DOS link-only. |
-| Reporting Requirements |31 exact dispositions, dual proof, child-gap owners and artifact hashes. |
-| Stop Conditions | Unadmitted child algorithm, altered original outputs, hidden mismatches or platform gameplay. |
-| Exit Criteria |31 nodes proved or accepted transfers; both verification tracks and three artifacts. |
-| Original Owner Request | Faithful original ROM nodes/call structure in shared native C for all targets. |
-| Similar-Issue Sweep | Duplicate terrain paths, state transitions, probe scratch, terminal transfers and table indices. |
+| Verification | Original entries, pointer/tally/mode stores and child ABI; separate actual-child and operational proof. |
+| Expected Markers | Complete DE05-DE24 chain, one common erase tail and no hard-coded pointer high byte. |
+| Asset Needs | Owner-local ROM/listing;512 routes/50 MB/20-second budgets; ignored build containment. Authorized three EXEs, DOS link-only. |
+| Reporting Requirements | Three exact dispositions, dual proof, independent child gaps and artifact hashes. |
+| Stop Conditions | Unadmitted child rewrite, altered original outputs, hidden mismatch or platform gameplay. |
+| Exit Criteria | Three nodes proved or accepted transfers, both verification tracks and three artifacts. |
+| Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
+| Similar-Issue Sweep | Both erase paths, pointer construction, tally wrap, duplicate owners and terminal calls. |
+
+## S2 closure
+
+[Coin/axe proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-coin-and-axe-proof)
+closes HandleCoinMetatile, HandleAxeMetatile and ErACM. Both widths match128
+original caller routes; actual-root matches16/128, with independently measured
+VRAM/status child gaps retained. Native6,144 cases pass per width; S1 retains
+all1,034 caller and59 actual matches. Four focused CTests pass; legacy core
+and bounding-box failures remain explicit. Three EXEs refreshed; DOS link-only.
 
 ## S1 closure
 

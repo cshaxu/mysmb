@@ -12,17 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1413 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1416 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 494 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 491 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,413 / 1,992 (70.93%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,416 / 1,992 (71.08%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S1 terrain caller](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof)
-closes31 nodes with1,034 original caller routes per width. Actual full-root
-matches remain59/1,034; independently tested child scratch gaps retain their
-owners. This is scoped caller conformance, not whole-game equivalence.
+Latest task review: [T43 S2 coin/axe](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-coin-and-axe-proof)
+closes three nodes with128 original caller routes per width. Actual root
+matches16/128; VRAM/status child scratch gaps retain existing owners.
+S1 retains all1,034 caller and59 actual matches. This is scoped caller
+conformance, not whole-game equivalence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1413)
+## Completed matches (1416)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1430,6 +1431,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12140 | `StopPlayerMove` |
 | 12142 | `ExCSM` |
 | 12144 | `AreaChangeTimerData` |
+| 12147 | `HandleCoinMetatile` |
+| 12152 | `HandleAxeMetatile` |
+| 12159 | `ErACM` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

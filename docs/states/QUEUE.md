@@ -19,8 +19,7 @@ children keep their ledger receivers and original source-order slices.
 
 [T43](../proposals/m2/t43-terrain-and-bounding-boxes.md) is admitted:150 nodes
 in15 source-ordered chains,136 expected new and14 retained. S1 receives31
-open player terrain-root nodes and closes all31 at1,413. S2 coin/axe is next,
-not yet admitted. Later S chains
+open player terrain-root nodes and closes all31 at1,413. S2 coin/axe closes all three nodes at1,416. S3 climbing is next, not yet admitted. Later S chains
 retain their prior receivers until admitted. T43 ends with CollisionFound;
 next unnumbered slice starts BlockBufferChk_Enemy at13023 with109 nodes.
 

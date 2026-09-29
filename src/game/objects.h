@@ -141,11 +141,6 @@ void mysmb_objects_step_vine(struct mysmb_game *game, mysmb_u8 enemy_slot);
 /* ROM HandleCoinMetatile/GiveOneCoin. */
 void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
                                 mysmb_u8 block_row);
-/* ROM ErACM -> RemoveCoin_Axe.  This is also the exact visual-update
- * handoff used by HandleAxeMetatile. */
-void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
-                              mysmb_u8 block_row);
-
 /* ROM $D931 ForceInjury with source A, bypassing the InjuryTimer guard. */
 void mysmb_objects_force_injury_entry(struct mysmb_game *game, mysmb_u8 a);
 /* ROM $D895, $D969, $DA05 shared contact-chain entries. */

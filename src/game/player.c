@@ -510,16 +510,7 @@ mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
     return 1U;
 }
 
-/* Existing child effects exposed for the terrain root; S2/S4 own proof. */
-void mysmb_player_handle_axe_metatile(struct mysmb_game *game,
-    mysmb_u8 block_low, mysmb_u8 block_row)
-{
-    game->ram[0x0772U] = 0U;
-    game->ram[0x0770U] = 2U;
-    game->ram[MYSMB_PLAYER_X_SPEED] = 0x18U;
-    mysmb_objects_remove_axe(game, block_low, block_row);
-}
-
+/* Existing jumpspring effect remains S4-owned. */
 void mysmb_player_land_jumpspring(struct mysmb_game *game, mysmb_u8 metatile)
 {
     if (metatile == 0x67U || metatile == 0x68U) {

@@ -639,3 +639,120 @@ no ROM, generated source, raw snapshot or research artifact is committed.
 | mysmb16.exe | 257063 | 39b332ca740e54520a6454ece92e9fa1aea68367d84d7509eb0859137105209d |
 | mysmb32.exe | 357781 | 43dd675a2db2632d5c09e3f8da773559f44a98b3084510d5d186c011aa0bbfd8 |
 | mysmb64.exe | 365660 | 80da88d761dcfd28e1ee342e2f1b1cbfc0a35210385c36ba65dca2f8a6bbd043 |
+
+## S2 admission
+
+Continuation after7825a0b. Scope and expected-new set are the same three open
+nodes: HandleCoinMetatile, HandleAxeMetatile, ErACM. Baseline1,413/1,992;
+maximum1,416. Coordinator accepts transfer-220 from M2 T17 S6. Source DE05-DE24
+forms two entries sharing the erase tail, followed by GiveOneCoin or the
+RemoveCoin_Axe tail. Move the sole owner to player/terrain_metatiles.c, removing
+the old objects/player bodies. Preserve complete pointer high/low/row, byte
+coin-tally wrap, mode/task/speed stores and original call order.
+
+The S1 original captures supply the incoming actual-child baseline. Fresh
+ordinary NMI terrain routes will record the two entries and their immediate
+children, compare complete child inputs before any replay, and run the actual
+native descendants separately. No child algorithms are admitted for rewrite;
+VRAM/status scratch gaps retain their existing owners. Focused native test:
+mysmb.terrain-metatile-chain. Repeat S1 caller proof and affected collision/route
+tests, compile all shared sources on both Windows widths, link DOS16, check
+platform purity and deliver all three owner-authorized EXEs in the P.
+
+Owner-local ROM and reviewed listing remain nonredistributable inputs. This
+S permits512 controlled routes,50 MB raw records,20-second process deadlines,
+and ignored build/m2-t43-s2 containment; coordinator owns cleanup after dependent
+regression use. No emulator enters the product. Similar-issue sweep covers
+both erasure paths, hard-coded pointer high bytes and duplicate coin/axe owners.
+
+S2 admission gate validates3 unique scoped labels,3 expected matches, all open;
+1,413 incoming and1,416 maximum. Ledger registration and accepted custody pass.
+
+## S2 coin and axe proof
+
+S2 P1 closes the three expected nodes: 1,413 -> 1,416 / 1,992.
+No scoped node is deferred or transferred. This certifies these handlers
+against their original child contracts; real descendant mismatches below
+remain open with existing owners. T43 and M2 remain incomplete.
+
+| Node | ROM entry | Disposition and logic |
+| --- | --- | --- |
+| HandleCoinMetatile | DE05 | ROM-match complete. Erase child returns before wrapped CoinTallyFor1Ups increment and terminal GiveOneCoin. |
+| HandleAxeMetatile | DE0E | ROM-match complete. Zero OperMode_Task, set OperMode to2 and Player_X_Speed to18, then enter common erase tail. |
+| ErACM | DE1C | ROM-match complete. Zero the full RAM06/07 pointer plus RAM02 row, then tail-transfer to RemoveCoin_Axe. |
+
+### Original logic track
+
+The DE05-DE24 range decodes from the owner ROM to13 instructions, with no
+conditional branches. All13 execute in128 controlled ordinary NMI routes.
+ROM, CPU registers, PC, stack and outputs are untouched. RAM inputs are set
+only at naturally reached terrain/coin/axe entries. The cases vary pointer
+high byte4-6, low byte, row and page carry, tally wrap, area type, coin count,
+current player and life count. Observer-free and observed original frame
+outputs are identical in all128 cases. Raw evidence is1,313,152 bytes within
+the admitted50 MB budget; each process has a20-second deadline.
+
+The caller checker validates every immediate child's input RAM and the
+low/row arguments before installing its original return. RAM comparison
+excludes hardware stack storage while retaining mapped0109-0139. Both widths
+match128/128 caller results. The same native chain with real children matches
+16/128 full RAM results per width. These counts are separate; descendant
+outputs are not masked to improve the actual-native result.
+
+Independent native execution of the192 captured children per width confirms:
+
+| Child | Exact RAM matches / calls | Remaining differences and owner |
+| --- | ---: | --- |
+| RemoveCoin_Axe | 32/128 | RAM00 for nonzero AreaType; existing M2 T28 S3 VRAM maintenance |
+| GiveOneCoin | 0/64 | RAM02/03 and, in56 calls, RAM00; existing score/status descendant owners |
+
+The independently observed child gaps explain the actual root differences.
+No VRAM or score child algorithm is changed by S2. All consumed child returns
+and call order are checked at the root contract; neither child consumes its
+entry CPU A/X/Y before defining the registers it uses. Effects in this range
+are RAM writes and queued VRAM/status work, with no direct PPU/APU port write.
+
+Reproduce with reference_frame_recorder options fixture=t43-coin-axe cases0-127,
+terrain-metatile-snapshot, entrance-children and pc-coverage; compare using
+terrain_metatile_snapshot_check in caller, actual and independent-child modes.
+The recorder's child-file final range check initially rejected the new mode75;
+extending that observer-only guard and rerunning the entire matrix resolved
+it. An earlier option-prefix length typo was corrected before the accepted
+runs. No failed capture is used as proof.
+
+### Operational track and review
+
+One shared owner, game/player/terrain_metatiles.c, replaces the legacy
+objects/player bodies and the redundant axe wrapper. Both handlers use the
+same erase tail. The old hard-coded0500 pointer base and invented range gate
+are removed; all production callers supply original query RAM pointers.
+CMake and the DOS manifest compile the same120 shared units. Platform files
+are unchanged, and platform-purity passes.
+
+The similar-issue sweep checks both erasures, every production coin/axe call,
+full pointer carry, tally ordering/wrap and duplicate owners. The focused
+native test passes6,144 cases on each width, including a child that changes
+the tally toFF before return, proving the increment occurs after that return.
+Direct core-test fixtures now supply the original pointer preconditions.
+
+The retained S1 caller matrix remains1,034/1,034 per width; actual-root matches
+remain59/1,034, with no loss of previously matching cases. Collision regression,
+player route, friction, hazard and platform suites pass on x86/x64. The
+bounding-box baseline failure remains unchanged. Selected CTests pass4/5:
+coin/axe chain, terrain chain, player route and platform purity pass; core-smoke
+retains its entrance-loop failure. Both HEAD and current source reproduce
+line137 on each width, before the changed coin fixtures. Neither baseline
+failure is counted as a pass.
+
+Strict C90 builds and product self-tests pass on x86/x64. Hidden own-process
+window probes confirm creation and message responsiveness without desktop
+input. DOS16 compiles and links; only the existing OLDNAMES warning remains.
+DOS graphics, resource binding and physical486SX performance remain unproved.
+Owner-authorized three EXEs are refreshed; no ROM, generated resource source,
+raw record or temporary research output enters the commit.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257015 | 0f6cf557302e17c7bfbd5859f4046460dd431d71db59725bd7f0bb08361d4b46 |
+| mysmb32.exe | 358007 | d93a053bc60cf112b52967cb6c5d1c79dc1091e4f5051a280cc58c660379623c |
+| mysmb64.exe | 365922 | d5cf6d7f53dab58e28f49f18a5045bf1a078b7754a01b22f80275f9af1434354 |

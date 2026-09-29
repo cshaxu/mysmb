@@ -2,7 +2,7 @@
 
 ## Translation Debt
 
-- [ ] **Terrain descendant scratch:** T43 S1 independently compares8,049 original child calls per width. Query metadata and consumed returns match, but block queries omit RAM02-05; coin/axe/head/impede descendants retain RAM00-07 differences. Full native root matches59/1,034. Coin/axe belongs to planned S2, impede S6, classifiers S7, queries the following source slice; block-head/VRAM children retain existing ledger maintenance custody. No out-of-order admission or descendant credit. [Exact child matrix](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof).
+- [ ] **Terrain descendant scratch:** T43 S1 independently compares8,049 original child calls per width. Query metadata and consumed returns match, but block queries omit RAM02-05; coin/axe/head/impede descendants retain RAM00-07 differences. Full native root matches59/1,034. S2 completes the coin/axe caller contract with128/128 matches, while actual roots match16/128 and independent VRAM/status children retain RAM00/02/03 gaps ([S2 proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s2-coin-and-axe-proof)). Impede belongs to S6, classifiers S7, queries the following source slice; block-head/VRAM children retain existing ledger maintenance custody. No out-of-order admission or descendant credit. [Exact child matrix](../proposals/m2/t43-terrain-and-bounding-boxes.md#s1-original-terrain-control-proof).
 
 
 - [x] **Platform vertical preflight carry:** T42 S9 restores original carry for high-Y exits. Four cross-width S7 cases now retain only independently owned geometry scratch differences. [Proof](../history/M2-T42-shared-collision-and-platforms.md#s9-original-collision-preflight-proof).

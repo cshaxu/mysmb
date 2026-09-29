@@ -776,27 +776,3 @@ static mysmb_u8 mysmb_objects_set_player_enemy_collision_boxes(struct mysmb_game
 #ifdef MYSMB_DOS16_TARGET
 #pragma code_seg("MYSMB_BLOCK")
 #endif
-
-
-/* ROM $dedd HandleCoinMetatile. */
-void mysmb_objects_collect_coin(struct mysmb_game *game, mysmb_u8 block_low,
-                                mysmb_u8 block_row)
-{
-    mysmb_u16 address;
-
-    address = (mysmb_u16)(0x0500U + block_low + block_row);
-    if (address < 0x0800U) game->ram[address] = 0U;
-    mysmb_area_remove_coin_axe(game, block_low, block_row);
-    game->ram[MYSMB_COIN_TALLY_FOR_1UPS]++;
-    mysmb_objects_give_one_coin(game);
-}
-
-void mysmb_objects_remove_axe(struct mysmb_game *game, mysmb_u8 block_low,
-                              mysmb_u8 block_row)
-{
-    mysmb_u16 address;
-
-    address = (mysmb_u16)(0x0500U + block_low + block_row);
-    if (address < 0x0800U) game->ram[address] = 0U;
-    mysmb_area_remove_coin_axe(game, block_low, block_row);
-}

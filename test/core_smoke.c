@@ -1058,6 +1058,8 @@ int main(void)
     game.ram[0x05f2U] = 0xc2U;
     game.ram[0x0300U] = 0U;
     game.ram[0x0301U] = 0U;
+    /* Original ErACM receives the complete block-buffer pointer. */
+    game.ram[7U] = 5U; game.ram[6U] = 0xd2U; game.ram[2U] = 0x20U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
     if (game.ram[0x05f2U] != 0U || game.ram[0x0748U] != 1U ||
         game.ram[0x075eU] != 1U || game.ram[0x07eeU] != 1U ||
@@ -1090,11 +1092,15 @@ int main(void)
     game.ram[0x0301U] = 0U;
     game.ram[0x075eU] = 99U;
     game.ram[0x075aU] = 2U;
+    /* Original ErACM receives the complete block-buffer pointer. */
+    game.ram[7U] = 5U; game.ram[6U] = 0xd2U; game.ram[2U] = 0x20U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
     if (game.ram[0x075eU] != 0U || game.ram[0x075aU] != 3U ||
         game.ram[0x07eeU] != 2U || game.ram[0x07e1U] != 4U) return 1;
     game.ram[0x07e0U] = 0U;
     game.ram[0x07e1U] = 9U;
+    /* Original ErACM receives the complete block-buffer pointer. */
+    game.ram[7U] = 5U; game.ram[6U] = 0xd2U; game.ram[2U] = 0x20U;
     mysmb_objects_collect_coin(&game, 0xd2U, 0x20U);
     if (game.ram[0x07e0U] != 1U || game.ram[0x07e1U] != 1U ||
         game.ram[0x075eU] != 1U || game.ram[0x07eeU] != 3U) return 1;
