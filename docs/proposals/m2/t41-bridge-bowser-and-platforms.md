@@ -1533,3 +1533,110 @@ Raw trace output: 15294592 bytes, below 48 MB.
 | mysmb16.exe | 258585 | 777f189d11275382c5f922830273b7346b14a1c75c3206f7c9eb154c84c73ffb |
 | mysmb32.exe | 353680 | 391256309bde51c5aa1fb3cd9c4508dc1cd8f8d5dfebc35c772a42b350bc34ba |
 | mysmb64.exe | 362195 | 05fbc951679a53151efd56aff43da0265084ef6a0872445129b6da22359cc5b3 |
+
+## S10 admission: vertical oscillating platforms
+
+S9 closed in 430a24f. Coordinator accepts transfer-206 under the continuing
+approved M2 mandate. Baseline 1,259/1,992; six open scoped/expected-new nodes,
+maximum 1,265. Exact source-ordered labels:
+
+`YMovingPlatform`, `SkipIY`, `ChkYCenterPos`, `YMDown`, `ChkYPCollision`, `ExYPl`.
+
+Original $D5D3-$D606, YMovingPlatform through ExYPl. S9 balance/rope is
+predecessor; S11 horizontal/drop/right platforms is successor. One shared
+enemy/platform.c owner replaces the approximate objects.c body. Restore the
+stationary dummy clear, unsigned top/center tests, eight-frame increment,
+up/down child order and the final signed collision gate for rider positioning.
+Gravity returns X=ObjectOffset; placement preserves X. Do not replace the
+current slot with the collision flag or add caller-level timer/flag guards.
+
+Dependencies MovePlatformUp/Down and PositionPlayerOnVPlat keep their owners.
+Reuse existing typed seams unchanged; placement gaps from S9 remain explicit.
+Logic proof uses original NMI large-platform entry and bounded input fixtures,
+complete child-input comparison before recorded returns, original branch
+coverage, then independent actual-child comparisons. Preserve all 15,048 prior
+root matches. No ROM/CPU/PC/stack/output execution patches or child repairs.
+Operational proof uses mysmb.vertical-platform-chain, previous platform suites,
+strict C90 x86/x64 builds, DOS16 link, platform purity, hidden-window response
+and all three EXEs per P. DOS remains link-only.
+
+Similar-issue sweep: unique owner, missing dummy reset/placement, unsigned
+comparisons, frame gate, live slot and source child ordering. Existing owner
+ROM/listing provenance and nonredistributable local research containment apply.
+Ignored build/m2-t41-s10: at most 512 routes, 24-MB raw budget, twenty-second
+record deadlines and resumable checkpoints; coordinator owns retention and
+cleanup. Stop on unexplained proof gaps, unadmitted dependency changes or host
+gameplay. Every scoped node must be proved or explicitly transferred at closure.
+
+## S10 original vertical platform proof
+
+S10 P1 closes all six expected nodes: 1,259 -> 1,265/1,992. No scoped
+node remains incomplete or transfers. Dependencies retain their owners.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| YMovingPlatform | Speed/force OR, stationary dummy clear and unsigned top comparison. ROM-match complete. |
+| SkipIY | Eight-frame increment path goes directly to rider collision gate. ROM-match complete. |
+| ChkYCenterPos | Unsigned current-Y/center comparison selects up or down child. ROM-match complete. |
+| YMDown | Down child returns live ObjectOffset before collision evaluation. ROM-match complete. |
+| ChkYPCollision | Signed collision gate calls placement with current slot, not flag value. ROM-match complete. |
+| ExYPl | No-collision and placement return share the original exit. ROM-match complete. |
+
+All 22 instructions in $D5D3-$D606 and both outcomes of all five branches
+execute. The 512 original NMI platform routes cover slots zero/five, all
+frame residues, stationary/nonzero speed/nonzero force, unsigned top/center
+boundaries, negative/positive gravity, fractional carry and rider gates.
+Root input fixtures are independent of observer selection. Observer-free
+original frames equal observed original frames; this is not native full-frame
+equivalence. No ROM, CPU/register, PC, stack or output execution patch.
+
+Caller comparisons pass 1,024/1,024 across x86/x64. Each child input RAM and
+slot/direction argument is checked before recorded-return substitution.
+Mapped $0109-$0139, scratch and queues are included; hardware return-stack
+storage is excluded. Gravity's returned X=ObjectOffset and placement's
+preserved X are asserted against the original instructions and observer.
+
+Independent actual roots pass 512/1,024. Isolated actual up calls pass
+360/360 and down calls pass 216/216. All 512 placement calls differ: the
+legacy child retains missing original guards/high-byte borrow and extra
+Player_State clear. That existing dependency stays incomplete with its own
+ledger receiver; this S grants no child credit or full-game equivalence.
+
+Shared enemy/platform.c replaces the approximate objects.c movement body.
+It restores stationary dummy clearing and the final rider call, preserves
+the original rest-path slot and reloads ObjectOffset after gravity. No timer,
+flag or collision-value eligibility filter is added. Similar-issue review
+covers duplicate owners, unsigned thresholds, missing writes, frame gates
+and source call order; unrelated platform children retain scheduled owners.
+
+Native tests pass 204,800 cases per width: all byte Y/top and Y/center pairs,
+speed-only/force-only movement, all frame residues, slot zero/five, changed
+ObjectOffset and collision flags distinct from the current slot. They check
+full caller RAM footprint and ordered typed-child arguments. Focused CTest,
+platform purity and fifteen previous initializer/platform suites pass per
+width. Final actual-root matrix: 15,560/24,826, retaining all 15,048 prior
+matches and adding 512. The remaining 9,266 sample differences remain
+explicit descendant debt, not node counts.
+
+All 109 shared sources compile in strict C90 x86/x64; both self-tests and
+hidden-window creation/message-response probes pass. DOS16 compiles/links
+with the existing OLDNAMES warning. DOS is link-only, without graphical
+playability, resource binding or physical 486SX certification. All three
+owner-authorized test EXEs are refreshed.
+
+Reproduce vertical_platform_fixture.h cases 0..511 with
+--fixture=t41-vertical-platform=N, --vertical-platform-snapshot,
+--control-children and --pc-coverage. vertical_platform_snapshot_check checks
+caller inputs; enemy_loop_actual_check executes actual children. Native
+CTest: mysmb.vertical-platform-chain. Ignored build/m2-t41-s10 retains bounded
+records/checkpoints under twenty-second deadlines and coordinator-owned
+dependent regression retention/cleanup. S11 horizontal/drop/right platforms
+is next, not admitted by this closure.
+
+Raw trace output: 6598208 bytes, below 24 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258745 | b142de399c10e7928b23397150b4d1242b674c7c24902d990a8f423d0b1d86db |
+| mysmb32.exe | 353896 | 61a9032bbcf2e03af95edfc66564fee348ca75f8f20f4c0a2335d91cf07c2a11 |
+| mysmb64.exe | 362447 | 716ec1e18ea248f085542d5f37165295ecd7e24c33099747173df4fe47c2b02f |

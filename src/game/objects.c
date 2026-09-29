@@ -1177,24 +1177,6 @@ void mysmb_platform_collision_small(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x03a2U + slot] = 2U;
 }
 
-void mysmb_platform_move_y(struct mysmb_game *game, mysmb_u8 slot)
-{
-        /* YMovingPlatform: wait above its source top, then cycle between
-         * top and centre using the native 8-bit vertical integrator. */
-        if (game->ram[MYSMB_ENEMY_Y_SPEED + slot] == 0U &&
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot] == 0U &&
-            game->ram[MYSMB_ENEMY_Y + slot] < game->ram[MYSMB_ENEMY_X_FORCE + slot]) {
-            if ((game->ram[MYSMB_FRAME_COUNTER] & 7U) == 0U) game->ram[MYSMB_ENEMY_Y + slot]++;
-        }
-        else {
-            /* ChkYCenterPos selects the original platform gravity entry.
-             * Parent collision/positioning remains separately owned. */
-            mysmb_world_move_platform_vertically(game, slot,
-                game->ram[MYSMB_ENEMY_Y + slot] >=
-                game->ram[MYSMB_ENEMY_X_SPEED + slot] ? 1U : 0U);
-        }
-}
-
 static void platform_legacy_lift(struct mysmb_game *game, mysmb_u8 slot,
                                   mysmb_u8 landed)
 {

@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1259 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1265 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 628 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 622 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,259 / 1,992 (63.20%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,265 / 1,992 (63.50%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S9 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s9-original-balanced-platform-proof)
-closes all 26 balanced-platform nodes: 2,048/2,048 original caller matches;
-1,088/2,048 actual roots. All 13,956 previous matches remain; child gaps explicit.
+Latest task review: [T41 S10 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s10-original-vertical-platform-proof)
+closes six vertical-platform nodes: 1,024/1,024 original caller matches;
+512/1,024 actual roots. All 15,048 prior matches remain; placement gap explicit.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1259)
+## Completed matches (1265)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1275,6 +1275,12 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10898 | `StopPlatforms` |
 | 10904 | `PlatformFall` |
 | 10916 | `ExPF` |
+| 10921 | `YMovingPlatform` |
+| 10933 | `SkipIY` |
+| 10935 | `ChkYCenterPos` |
+| 10941 | `YMDown` |
+| 10943 | `ChkYPCollision` |
+| 10947 | `ExYPl` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |
