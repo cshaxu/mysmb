@@ -2,15 +2,14 @@
 #include "game/objects.h"
 
 enum {
-    MYSMB_VINE_ENEMY_X = 0x0087U,
-    MYSMB_VINE_ENEMY_Y = 0x00cfU,
     MYSMB_VINE_ENEMY_SPRITE_OFFSET = 0x06e5U,
     MYSMB_VINE_OBJECT_OFFSET = 0x039aU,
     MYSMB_VINE_START_Y = 0x039dU,
-    MYSMB_VINE_SCREEN_LEFT_X = 0x071cU
+    MYSMB_VINE_RELATIVE_X = 0x03aeU,
+    MYSMB_VINE_RELATIVE_Y = 0x03b9U
 };
 
-/* ROM DrawVine ($d69f-$d6fc).  Each active vine stack owns six consecutive
+/* ROM $e433 VineYPosAdder and $e435 DrawVine through $e4a2 NextVSp.  Each active vine stack owns six consecutive
  * OAM entries.  The top stack has the distinct $e0 cap; the remaining leaves
  * are $e1 with the original alternating horizontal position and flip bit. */
 void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
@@ -22,13 +21,10 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
     mysmb_u8 y;
     mysmb_u8 row;
 
-    if (vine_index >= 2U) return;
     sprite_slot = game->ram[MYSMB_VINE_OBJECT_OFFSET + vine_index];
-    if (sprite_slot >= 6U) return;
     oam = game->ram[MYSMB_VINE_ENEMY_SPRITE_OFFSET + sprite_slot];
-    x = (mysmb_u8)(game->ram[MYSMB_VINE_ENEMY_X + 5U] -
-                    game->ram[MYSMB_VINE_SCREEN_LEFT_X]);
-    y = (mysmb_u8)(game->ram[MYSMB_VINE_ENEMY_Y + 5U] + y_adder[vine_index]);
+    x = game->ram[MYSMB_VINE_RELATIVE_X];
+    y = (mysmb_u8)(game->ram[MYSMB_VINE_RELATIVE_Y] + y_adder[vine_index]);
 
     for (row = 0U; row < 6U; ++row) {
         mysmb_u8 row_oam;
@@ -36,8 +32,7 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
 
         row_oam = (mysmb_u8)(oam + row * 4U);
         row_y = (mysmb_u8)(y + row * 8U);
-        if (row_y <= game->ram[MYSMB_VINE_START_Y] &&
-            (mysmb_u8)(game->ram[MYSMB_VINE_START_Y] - row_y) >= 0x64U) {
+        if ((mysmb_u8)(game->ram[MYSMB_VINE_START_Y] - row_y) >= 0x64U) {
             row_y = 0xf8U;
         }
         game->ram[(mysmb_u16)(0x0200U + row_oam)] = row_y;

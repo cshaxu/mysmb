@@ -19,9 +19,18 @@ int main(void)
     mysmb_objects_step_vine(&game, 5U);
     if (game.ram[0x0220U] != 0x80U || game.ram[0x0221U] != 0xe0U ||
         game.ram[0x0222U] != 0x21U || game.ram[0x0223U] != 0x40U ||
-        game.ram[0x0224U] != 0x88U || game.ram[0x0225U] != 0xe1U ||
+        game.ram[0x0224U] != 0xf8U || game.ram[0x0225U] != 0xe1U ||
         game.ram[0x0226U] != 0x61U || game.ram[0x0227U] != 0x46U ||
-        game.ram[0x0234U] != 0xa8U || game.ram[0x0235U] != 0xe1U ||
+        game.ram[0x0234U] != 0xf8U || game.ram[0x0235U] != 0xe1U ||
         game.ram[0x0236U] != 0x61U || game.ram[0x0237U] != 0x46U) return 1;
+    game.ram[0x0398U] = 2U;
+    game.ram[0x039aU] = 5U;
+    game.ram[0x03aeU] = 0x40U;
+    game.ram[0x03b9U] = 0x20U;
+    mysmb_objects_draw_vine(&game, 1U);
+    if (game.ram[0x0220U] != 0x50U || game.ram[0x0221U] != 0xe1U ||
+        game.ram[0x0222U] != 0x21U || game.ram[0x0223U] != 0x40U ||
+        game.ram[0x0224U] != 0x58U || game.ram[0x0225U] != 0xe1U ||
+        game.ram[0x0226U] != 0x61U || game.ram[0x0227U] != 0x46U) return 1;
     return 0;
 }

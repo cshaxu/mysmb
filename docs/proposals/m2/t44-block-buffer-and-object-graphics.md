@@ -101,7 +101,60 @@ S1 node is deferred.
 
 ### S2: Vine object graphics
 
+Entry `VineYPosAdder`; exit `NextVSp`; shared owner
+`src/game/oam/vine_gfx.c`. Predecessor: S1 block-buffer core. Successors: S3
+shared six-sprite graphics and the existing vine object handler. Scope:
 `VineYPosAdder`, `DrawVine`, `VineTL`, `SkpVTop`, `ChkFTop`, `NextVSp`.
+
+All six incoming labels are open and expected to become matches. The ROM-logic
+route is the original `VDrawLoop` caller through both vine offsets: it verifies
+the `$00/$02` scratch, relative Y plus the two-entry table, vine object/OAM
+offset selection, six tile writes, top-tile branch and 100-pixel clip. The
+operational route is a focused vine-OAM trace/replay, strict C90 x86/x64
+builds, DOS16 link, platform-purity audit and all three target artifacts.
+Admission baseline is 1,531/1,992, with a maximum 1,537/1,992.
+
+#### S2 implementation checkpoint
+
+`vine_gfx.c` now consumes the fixed `Enemy_Rel_XPos`/`Enemy_Rel_YPos` scratch
+written by the ROM caller rather than recomputing world coordinates. It also
+uses the original wrapped eight-bit `VineStart_Y_Position - Sprite_Y_Position`
+comparison for `ChkFTop`; the prior extra ordering condition was removed.
+The focused vine OAM smoke check passes, and 42 original vine-actor snapshots
+match in both x64 and x86. This is a checkpoint only: S2 still needs the
+individual node evidence, three-target package and closure accounting.
+
+#### S2 closure: vine object graphics
+
+S2 closes all six received labels, moving M2 from **1,531** to
+**1,537 / 1,992**. The shared owner remains
+`src/game/oam/vine_gfx.c`; no Windows or DOS adapter selects a tile, OAM slot,
+clip result, or object state.
+
+| ROM label | Exact translated behavior and evidence |
+| --- | --- |
+| `VineYPosAdder` | The bound two-byte table is `{ $00, $30 }`; both offsets are asserted by the focused OAM check. |
+| `DrawVine` | Consumes caller-written `Enemy_Rel_XPos` and `Enemy_Rel_YPos`, selects `VineObjOffset` and `Enemy_SprDataOffset`, and emits the same six four-byte OAM entries. |
+| `VineTL` | Writes six `$e1` body tiles at four-byte OAM strides. |
+| `SkpVTop` | Replaces only offset-zero row zero with cap tile `$e0`; the offset-one route retains `$e1`. |
+| `ChkFTop` | Performs the source unsigned eight-bit subtraction and `$64` comparison, replacing clipped Y values with `$f8`; no invented coordinate-order condition remains. |
+| `NextVSp` | Advances four OAM bytes per iteration, completes six rows, then restores the caller's vine-offset Y value. |
+
+The ROM-logic track uses 42 local original-ROM `VDrawLoop` actor records. Their
+source PC aggregate reaches `DrawVine` 50 times, `VineTL` 300 times,
+`SkpVTop` 50 times, `ChkFTop` 300 times, and `NextVSp` 300 times; the C actor
+snapshot replay has zero mismatches on both x64 and x86. The focused native
+OAM check covers both Y-table offsets, cap/body selection, horizontal
+alternation, attributes and wrapped clipping. The operational track passes
+strict C90 x86/x64 product builds and self-tests, the OpenNT DOS16 link,
+platform-purity audit, and the refreshed three-executable package recorded in
+the artifact manifest: `mysmb16.exe` 258021 bytes
+`7d86df167a3303d23feb54740c634c9cdf5a5606b7282e2d8dc96658749d9911`,
+`mysmb32.exe` 364373 bytes
+`35f1810372eed6c65029b8c588691b2832e2941fa570201d7f9643db834c7618`, and
+`mysmb64.exe` 372536 bytes
+`c807a969d546246b3e427ad70300a5cd54ce26d89228874999fba04e11c8bc9e`.
+No S2 label is deferred.
 
 ### S3: Six-sprite and hammer graphics
 

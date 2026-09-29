@@ -1704,12 +1704,12 @@ The labels and branches behind every line remain open until individually bound b
 | 13078 | `BlockBufferCollision` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
 | 13111 | `RetXC` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
 | 13112 | `RetYC` | M2 T44 S1 shared block-buffer core | ROM-match complete | [S1 source/actual proof](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s1-closure-block-buffer-probe-and-coordinate-core) |
-| 13126 | `VineYPosAdder` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vineyposadder) |
-| 13129 | `DrawVine` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawvine) |
-| 13156 | `VineTL` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-vinetl) |
-| 13169 | `SkpVTop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-skpvtop) |
-| 13170 | `ChkFTop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkftop) |
-| 13177 | `NextVSp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nextvsp) |
+| 13126 | `VineYPosAdder` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
+| 13129 | `DrawVine` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
+| 13156 | `VineTL` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
+| 13169 | `SkpVTop` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
+| 13170 | `ChkFTop` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
+| 13177 | `NextVSp` | M2 T44 S2 shared vine OAM graphics | ROM-match complete | [T44 S2 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics) |
 | 13187 | `SixSpriteStacker` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sixspritestacker) |
 | 13189 | `StkLp` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-stklp) |
 | 13203 | `FirstSprXPos` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstsprxpos) |
