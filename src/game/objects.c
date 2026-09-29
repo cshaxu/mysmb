@@ -1132,6 +1132,16 @@ void mysmb_objects_step_firebars(struct mysmb_game *game)
 /* Existing platform child algorithms extracted from the mixed actor path.
  * Their collision/physics interiors retain pending ROM conformance status.
  * Source callers and the shared $03A2 collision handoff have separate owners. */
+void mysmb_platform_position_player_vertical(struct mysmb_game *game, mysmb_u8 slot)
+{
+    /* Extracted legacy contact placement. Source guards and high-byte borrow
+     * remain with PositionPlayerOnVPlat's later conformance owner. */
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x20U);
+    game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
+    game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
+    game->ram[MYSMB_PLAYER_STATE] = 0U;
+}
+
 static mysmb_u8 platform_legacy_contact(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 id;
@@ -1144,10 +1154,7 @@ static mysmb_u8 platform_legacy_contact(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U &&
         game->ram[MYSMB_PLAYER_Y] + 0x20U >= game->ram[MYSMB_ENEMY_Y + slot] &&
         game->ram[MYSMB_PLAYER_Y] + 0x20U <= game->ram[MYSMB_ENEMY_Y + slot] + 6U) {
-        game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 0x20U);
-        game->ram[MYSMB_PLAYER_Y_SPEED] = 0U;
-        game->ram[MYSMB_PLAYER_Y_FORCE] = 0U;
-        game->ram[MYSMB_PLAYER_STATE] = 0U;
+        mysmb_platform_position_player_vertical(game, slot);
         return 1U;
     }
     return 0U;
@@ -1168,18 +1175,6 @@ void mysmb_platform_collision_small(struct mysmb_game *game, mysmb_u8 slot)
     game->ram[0x03a2U + slot] = 0U;
     if (platform_legacy_contact(game, slot) != 0U)
         game->ram[0x03a2U + slot] = 2U;
-}
-
-void mysmb_platform_move_balance(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 peer;
-    if ((game->ram[0x03a2U + slot] & 0x80U) != 0U) return;
-        peer = game->ram[MYSMB_ENEMY_STATE + slot];
-        game->ram[MYSMB_ENEMY_Y + slot]++;
-        if (peer < 5U && game->ram[MYSMB_ENEMY_FLAG + peer] != 0U &&
-            game->ram[MYSMB_ENEMY_ID + peer] == 36U) {
-            game->ram[MYSMB_ENEMY_Y + peer]--;
-        }
 }
 
 void mysmb_platform_move_y(struct mysmb_game *game, mysmb_u8 slot)

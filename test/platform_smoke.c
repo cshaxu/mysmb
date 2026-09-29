@@ -58,14 +58,15 @@ int main(void)
     if (game.ram[0x0087U] != 0x41U || game.ram[0x0086U] != 0x41U ||
         game.ram[0x03a1U] != 1U) return 3;
 
-    /* The paired balance platforms move in opposite directions on contact. */
+    /* BalancePlatform accumulates fractional speed on first contact; its
+     * paired, negative-state deck does not run a second movement owner. */
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0010U] = 1U;
     game.ram[0x0016U] = 36U;
     game.ram[0x0017U] = 36U;
     game.ram[0x001eU] = 1U;
-    game.ram[0x001fU] = 0U;
+    game.ram[0x001fU] = 0xffU;
     game.ram[0x006eU] = 0U;
     game.ram[0x006fU] = 0U;
     game.ram[0x0087U] = 0x40U;
@@ -79,6 +80,11 @@ int main(void)
     game.ram[0x00b5U] = 1U;
     game.ram[0x00ceU] = 0x60U;
     game.ram[0x009fU] = 0U;
+    mysmb_objects_step_platforms(&game);
+    if (game.ram[0x00cfU] != 0x80U || game.ram[0x00d0U] != 0x80U ||
+        game.ram[0x0434U] != 5U) return 4;
+    /* A whole-pixel speed moves the rider's deck down and the peer up. */
+    game.ram[0x00a0U] = 1U;
     mysmb_objects_step_platforms(&game);
     if (game.ram[0x00cfU] != 0x81U) return 4;
     if (game.ram[0x00d0U] != 0x7fU) return 5;

@@ -2,35 +2,42 @@
 
 ## Current Work
 
-**M2 T41 S8 is closed at 1,233 / 1,992: both Firebar spin nodes complete. S9 is next.**
+**M2 T41 S9 is closed at 1,259 / 1,992: all 26 expected nodes complete. S10 is next.**
 
-## M2 T41 S8 Packet
+## M2 T41 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M2 T41 S8, source-order implementation. |
-| Admission And Approval | Continuing approved M2 mandate after e199ada; coordinator accepts transfer-204. |
-| Objective | Two open Firebar spin nodes, two expected new. |
+| Identifier Mode | M2 T41 S9, source-order implementation. |
+| Admission And Approval | Continuing approved M2 mandate after ae0d120; coordinator accepts transfer-205. |
+| Objective | 26 open balanced-platform/rope/fall nodes, 26 expected new. |
 | Non-goals | No generic graphics/collision algorithm rewrite or host gameplay. |
-| Reference Baseline | 1,231/1,992; two scoped/expected, maximum 1,233. |
-| Candidate Proposal | [T41 S8 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s8-admission-firebar-angular-primitive). |
-| Files And ABI Surface | enemy/firebar_children.c provenance and test ABI, tests, manifests and three EXEs. |
+| Reference Baseline | 1,233/1,992; 26 scoped/expected, maximum 1,259. |
+| Candidate Proposal | [T41 S9 contract](../proposals/m2/t41-bridge-bowser-and-platforms.md#s9-admission-balanced-platforms-and-ropes). |
+| Files And ABI Surface | enemy/balance_platform.c, extracted dependency seams, tests, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set; execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Original branches, child inputs and live-X contract; separate actual-child/native proof and three targets. |
-| Expected Markers | Scratch 07, direction, low wrap, high carry/borrow return and caller-owned mask. |
+| Expected Markers | Pair limits/inertia, live slots, inverse motion, rope carries/buffer, falling and child order. |
 | Asset Needs | Existing local owner ROM/listing, bounded ignored traces and owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements | Two exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
+| Reporting Requirements | 26 exact node dispositions, dual proof, remaining child gaps, ledger/tracker and hashes. |
 | Stop Conditions | Unadmitted child repair, source execution/output patches, hidden mismatch or host gameplay. |
-| Exit Criteria | Two nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
+| Exit Criteria | 26 nodes proved or accepted exact transfers; dual proof and three artifacts recorded. |
 | Original Owner Request | Faithful ROM call graph and logic nodes in one shared DOS16/x86/x64 C implementation. |
-| Similar-Issue Sweep | Spin ownership, arithmetic width, high-state stores and scratch order. |
+| Similar-Issue Sweep | Ownership, invented guards, carries, live slots, rope writes and dependency order. |
+
+## S9 closure
+
+[Original balanced platform proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s9-original-balanced-platform-proof)
+closes 26 nodes with 2,048/2,048 caller matches; actual roots 1,088/2,048.
+Placement/offscreen child gaps remain explicit; all 13,956 prior matches remain.
+Three EXEs refreshed; DOS link-only. S10 vertical platforms is next.
 
 ## S8 closure
 
 [Original Firebar spin proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s8-original-firebar-spin-proof)
 closes two nodes with 640/640 original RAM/A matches and 1,572,864 native
 combinations per width. All 13,956 previous root matches remain.
-Three EXEs refreshed; DOS link-only. S9 balanced platforms is next.
+Three EXEs refreshed; DOS link-only. S9 is closed; its result is above.
 
 ## S7 closure
 
@@ -76,14 +83,6 @@ closes seventeen new and two retained nodes with 2,048/2,048 caller matches.
 Actual roots match 16/2,048; all 2,032 failures isolate to the planned S3
 graphics child. Prior 10,876 matches remain; three EXEs refreshed, DOS link-only.
 S3 is closed; its result is above.
-
-## S1 closure
-
-[Bridge proof](../proposals/m2/t41-bridge-bowser-and-platforms.md#s1-original-bridge-collapse-proof)
-closes six caller/data nodes with 360/360 original comparisons. Actual roots
-match 72/360, with all 288 failures isolated to the planned S3 graphics child.
-All 10,804 prior actual matches remain; three EXEs refreshed, DOS link-only.
-S2 is closed; its result is above.
 
 ## Current Technical Baseline
 

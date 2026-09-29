@@ -12,16 +12,16 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1233 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1259 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 105 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 654 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 628 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,233 / 1,992 (61.90%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,259 / 1,992 (63.20%)**. The 105 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T41 S8 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s8-original-firebar-spin-proof)
-closes both Firebar spin leaves: 640/640 original RAM/A comparisons and
-1,572,864 native combinations per width. All 13,956 prior root matches remain.
+Latest task review: [T41 S9 P1](../proposals/m2/t41-bridge-bowser-and-platforms.md#s9-original-balanced-platform-proof)
+closes all 26 balanced-platform nodes: 2,048/2,048 original caller matches;
+1,088/2,048 actual roots. All 13,956 previous matches remain; child gaps explicit.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -31,7 +31,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1233)
+## Completed matches (1259)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1249,6 +1249,32 @@ of equivalent native nodes. No product repair is part of this audit.
 | 10656 | `PutinPipe` |
 | 10664 | `FirebarSpin` |
 | 10677 | `SpinCounterClockwise` |
+| 10692 | `BalancePlatform` |
+| 10697 | `DoBPl` |
+| 10701 | `CheckBalPlatform` |
+| 10709 | `ChkForFall` |
+| 10720 | `MakePlatformFall` |
+| 10723 | `ChkOtherForFall` |
+| 10733 | `ChkToMoveBalPlat` |
+| 10750 | `ColFlg` |
+| 10752 | `PlatUp` |
+| 10754 | `PlatSt` |
+| 10756 | `PlatDn` |
+| 10758 | `DoOtherPlatform` |
+| 10771 | `DrawEraseRope` |
+| 10796 | `EraseR1` |
+| 10800 | `OtherRope` |
+| 10819 | `EraseR2` |
+| 10822 | `EndRp` |
+| 10828 | `ExitRp` |
+| 10831 | `SetupPlatformRope` |
+| 10840 | `GetLRp` |
+| 10857 | `GetHRp` |
+| 10883 | `ExPRp` |
+| 10885 | `InitPlatformFall` |
+| 10898 | `StopPlatforms` |
+| 10904 | `PlatformFall` |
+| 10916 | `ExPF` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

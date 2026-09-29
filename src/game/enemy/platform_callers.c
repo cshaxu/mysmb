@@ -3,6 +3,12 @@
 #include "game/objects.h"
 #include "game/oam/oam.h"
 
+/* Shared existing offscreen child seam; source scratch remains child-owned. */
+void mysmb_platform_get_offscreen(struct mysmb_game *game, mysmb_u8 slot)
+{
+    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+}
+
 /* ROM $C982 LargePlatformSubroutines, valid IDs $24-$2A. */
 void mysmb_platform_movement_dispatch(struct mysmb_game *game, mysmb_u8 slot)
 {

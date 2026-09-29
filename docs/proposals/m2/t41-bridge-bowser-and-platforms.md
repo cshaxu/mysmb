@@ -1372,3 +1372,164 @@ Fresh raw trace output: 371516 bytes, below 16 MB.
 | mysmb16.exe | 255865 | 76aeb212ce0bc8fb3710e7188142be30108ec31fa29dc02905d7d9b4b5ee870a |
 | mysmb32.exe | 351013 | 6f42e218f0e99a434028c61e906090b339ecf87be59551c8aad26cd4f0799eee |
 | mysmb64.exe | 358987 | 9dc2900483b339a12c8cfae63af0a1f094dbaf32ade57e59c76d5806203a252f |
+
+## S9 admission: balanced platforms and ropes
+
+S8 closed in ae0d120. Coordinator accepts transfer-205 under the continuing
+M2 mandate. Baseline 1,233/1,992; 26 open scoped/expected-new nodes, maximum
+1,259. Exact source-ordered labels:
+
+`BalancePlatform`, `DoBPl`, `CheckBalPlatform`, `ChkForFall`, `MakePlatformFall`, `ChkOtherForFall`, `ChkToMoveBalPlat`, `ColFlg`, `PlatUp`, `PlatSt`, `PlatDn`, `DoOtherPlatform`, `DrawEraseRope`, `EraseR1`, `OtherRope`, `EraseR2`, `EndRp`, `ExitRp`, `SetupPlatformRope`, `GetLRp`, `GetHRp`, `ExPRp`, `InitPlatformFall`, `StopPlatforms`, `PlatformFall`, `ExPF`.
+
+Original $D432-$D5D2, from BalancePlatform through ExPF; the successor
+YMovingPlatform begins at $D5D3. One shared enemy/balance_platform.c owner
+replaces the approximate objects.c body. S8 spin is predecessor; S10 vertical
+platform motion is successor. Keep the complete pair/rope/fall graph in one S.
+
+Restore signed pair-state eligibility, high-Y erasure, both top limits,
+collision/inertia choice, original up/down/stop order, inverse pair movement,
+player-placement child, two rope writes and buffer gates, exact horizontal
+carry resets and vertical rotations, falling score/init and dual gravity.
+Track live X/Y across calls explicitly: offscreen restores ObjectOffset and
+Y=1; InitVStf preserves Y and returns zero. No extra peer flag/ID/range filters.
+
+Dependencies retain their node owners: EraseEnemyObject, MovePlatformUp/Down,
+MoveFallingPlatform, InitVStf, GetEnemyOffscreenBits, SetupFloateyNumber and
+PositionPlayerOnVPlat. Existing up/down, falling, init and score typed seams
+are reused. An offscreen adapter owns the existing returned-bit store. Extract
+only the four existing legacy-contact player-placement writes into one shared
+objects.c child seam; the collision caller invokes that same body unchanged.
+The newly explicit placement boundary retains missing source guards/high-byte
+semantics and extra legacy state clear for its future owner. This is no child
+algorithm rewrite or child completion credit. Actual-child failures stay visible.
+
+Logic proof: original naturally reached NMI large-platform dispatch, bounded
+input-only root cases, all feasible source branch/write paths and rope addresses.
+Compare complete child inputs and explicit arguments before recorded-return
+caller diagnostics, then independently run actual children and preserve all
+13,956 prior exact root matches. No CPU/PC/stack/ROM/output execution patches.
+Operational proof: mysmb.balance-platform-chain mutation/rope contracts,
+prior platform suites, strict C90 x86/x64, DOS16 link, platform purity,
+hidden-window response and all three EXEs once per P. DOS remains link-only.
+
+Similar-issue review covers duplicate owner, invented eligibility, carry/borrow,
+live slots, stack-saved values, player-placement boundary, rope buffer writes
+and source child order. Existing owner-local ROM/listing restrictions remain.
+Unique ignored build/m2-t41-s9 records: at most 1,024 routes, 48-MB raw budget,
+twenty-second per-record deadlines and resumable checkpoints; coordinator owns
+retention/cleanup. Stop on unadmitted child repair, unexplained proof gaps,
+source execution patches or platform gameplay.
+
+## S9 original balanced platform proof
+
+S9 P1 closes all 26 expected nodes: 1,233 -> 1,259/1,992. No scoped
+node remains unfinished or transfers. Dependency nodes retain their owners.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| BalancePlatform | High-Y equals three erases through the original child. ROM-match complete. |
+| DoBPl | Signed pair-state gate exits without invented eligibility filters. ROM-match complete. |
+| CheckBalPlatform | Pair offset and collision scratch precede the falling flag. ROM-match complete. |
+| ChkForFall | Current-deck top comparison and collision-peer test. ROM-match complete. |
+| MakePlatformFall | Tail transfer into the original falling initializer. ROM-match complete. |
+| ChkOtherForFall | Peer-deck top comparison and collision-current test. ROM-match complete. |
+| ChkToMoveBalPlat | Saved old Y, collision choice and force-plus-five carry chain. ROM-match complete. |
+| ColFlg | Collision flag compared with live ObjectOffset. ROM-match complete. |
+| PlatUp | Upward child followed by inverse-peer update. ROM-match complete. |
+| PlatSt | Stop child preserves the source peer register. ROM-match complete. |
+| PlatDn | Downward child falls through to inverse-peer update. ROM-match complete. |
+| DoOtherPlatform | Byte old-minus-new displacement added to peer; placement child ordering. ROM-match complete. |
+| DrawEraseRope | Live ObjectOffset, movement and VRAM offset gates precede rope writes. ROM-match complete. |
+| EraseR1 | Negative first speed writes two blank tiles. ROM-match complete. |
+| OtherRope | Saved speed XOR FF selects the peer address calculation. ROM-match complete. |
+| EraseR2 | Nonnegative original speed erases the second rope. ROM-match complete. |
+| EndRp | Null terminator and ten-byte buffer advance. ROM-match complete. |
+| ExitRp | Rope early exits preserve queues and restore source slot semantics. ROM-match complete. |
+| SetupPlatformRope | Eight-pixel X addition and normal-mode carry reset before adding sixteen. ROM-match complete. |
+| GetLRp | Page carry and masked horizontal address contribution. ROM-match complete. |
+| GetHRp | Y rotations, page bit, vertical contribution and E8 bottom adjustment. ROM-match complete. |
+| ExPRp | Address return preserves buffer offset and scratch contract. ROM-match complete. |
+| InitPlatformFall | Offscreen then score child; restored X and Y=1 drive initialization. ROM-match complete. |
+| StopPlatforms | InitVStf zero return clears peer speed and force. ROM-match complete. |
+| PlatformFall | Saved peer survives first gravity; live collision flag selects placement. ROM-match complete. |
+| ExPF | Falling exit restores ObjectOffset semantics. ROM-match complete. |
+
+All 201 instructions in $D432-$D5D2 execute. All 43 feasible conditional
+outcomes execute; the sole impossible outcome is fallthrough at $D492:
+the preceding CMP #0B / BCC admits this BCS only with carry set.
+The 1,024 original NMI routes cover slots zero/five, both top limits,
+collision/no-collision inertia, force carry and speed sign, pair inversion,
+both falling calls, buffer boundaries, X/page carries, hard-mode carry reset,
+Y rotation/wrap and both rope directions. Inputs are patched only at the
+original root entry; ROM, CPU/PC, stack and output are never patched.
+Observer-free original frames equal observed frames, not native full frames.
+
+Caller RAM and child-input proof passes 2,048/2,048 across x86/x64. Each
+recorded return is applied only after complete input RAM and argument checks.
+Mapped $0109-$0139, queues and scratch are included; hardware return-stack
+storage is excluded. Observer contracts check live/restored X, preserved X,
+offscreen/score Y=1, InitVStf A=0 and score control six. Native locals preserve
+the source stack-saved old Y, peer and two speed copies without an emulator.
+
+Independent actual-child roots pass 1,088/2,048. Child isolation gives:
+
+| Existing dependency | Exact / tested calls, both widths |
+| --- | ---: |
+| EraseEnemyObject | 64 / 64 |
+| MovePlatformUp | 704 / 704 |
+| MovePlatformDown | 640 / 640 |
+| InitVStf | 448 / 448 |
+| PositionPlayerOnVPlat | 0 / 832 |
+| GetEnemyOffscreenBits | 0 / 128 |
+| SetupFloateyNumber | 128 / 128 |
+| MoveFallingPlatform | 256 / 256 |
+
+The 960 failing actual roots correspond to the placement and offscreen
+children. Placement still lacks original guards/high-byte borrow and clears
+Player_State unnecessarily; offscreen still lacks original scratch writes.
+These dependencies remain incomplete under their existing ledger owners.
+Caller proof grants no child completion or full-game equivalence claim.
+
+The approximate balance body is removed from objects.c. Shared
+enemy/balance_platform.c owns the complete pair/rope/fall chain. The four
+legacy player-placement writes are extracted unchanged and reused by the
+legacy collision path. Offscreen adapts the existing return value only.
+No platform adapter changes or child algorithm repairs are included.
+The similar-issue sweep covers duplicate ownership, invented peer guards,
+lost carry resets, live slot reloads, saved peer/speed, VRAM offset/terminator
+and call order; all same-chain hits now use this source body. Unrelated
+platform movement and collision interiors retain their scheduled owners.
+
+Native rope/mutation contracts pass 262,150 cases per width, including all
+X/Y bytes, both difficulty and speed signs, buffer offsets and child slot
+mutation. Focused CTest and platform purity pass. Fifteen prior initializer/
+platform suites pass per width. The old platform smoke incorrectly required
+an immediate pixel step on contact and made both decks movement owners; it
+now checks first-frame fractional acceleration, negative-state peer gating,
+and subsequent inverse displacement at whole-pixel speed.
+Final actual-root matrix: 15,048/23,802; all 13,956 previous matches remain,
+plus 1,088 new matches and four special-actor improvements. The remaining
+8,754 sample differences retain descendant debt; these are not node counts.
+
+All 108 shared sources build with strict C90 x86/x64 and pass self-tests.
+Both hidden Win32 windows create and respond to messages. DOS16 compiles/
+links with the existing OLDNAMES warning; it remains link-only, without
+graphical playability, resource binding or physical 486SX certification.
+The three owner-authorized local test EXEs are refreshed for this P.
+
+Reproduce balance_platform_fixture.h cases 0..1023 using
+--fixture=t41-balance-platform=N, --balance-platform-snapshot,
+--control-children and --pc-coverage. balance_platform_snapshot_check checks
+caller contracts; enemy_loop_actual_check executes actual dependencies.
+Native CTest: mysmb.balance-platform-chain. Ignored build/m2-t41-s9 contains
+bounded traces, child isolation and checkpoints with twenty-second record
+deadlines and coordinator-owned dependent regression retention/cleanup.
+S10 vertical oscillating platforms is next, not admitted by this closure.
+
+Raw trace output: 15294592 bytes, below 48 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258585 | 777f189d11275382c5f922830273b7346b14a1c75c3206f7c9eb154c84c73ffb |
+| mysmb32.exe | 353680 | 391256309bde51c5aa1fb3cd9c4508dc1cd8f8d5dfebc35c772a42b350bc34ba |
+| mysmb64.exe | 362195 | 05fbc951679a53151efd56aff43da0265084ef6a0872445129b6da22359cc5b3 |
