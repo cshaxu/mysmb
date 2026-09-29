@@ -96,5 +96,9 @@ mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
 void mysmb_world_set_stun(struct mysmb_game *game, mysmb_u8 slot);
 mysmb_u8 mysmb_world_player_vertical_carry(struct mysmb_game *game);
 mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *game);
+/* GetEnemyBoundBoxOfsArg dependency: Y offset and A's low offscreen nibble.
+ * The S9 node proof remains separate from the platform caller. */
+mysmb_u8 mysmb_world_enemy_box_offset_arg(struct mysmb_game *game,
+                                         mysmb_u8 slot, mysmb_u8 *mask);
 
 #endif

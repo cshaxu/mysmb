@@ -2,6 +2,9 @@
 
 ## Translation Debt
 
+- [ ] **Platform vertical preflight carry (`TODO(High)`):** T42 S7 cases384/1408 show CheckPlayerVertical returning carry1 for Player_Y_High=0, while the original leaves carry0. Four cross-width samples lose landing/state writes. Existing M2 T17 S6 custody; repair at the planned T42 S9 admission. [Evidence](../proposals/m2/t42-shared-collision-and-platforms.md#s7-original-platform-collision-proof).
+- [ ] **Side response speed80 and scratch (`TODO(High)`):** T42 S7 exposes ImpedePlayerMove/RImpd treating80 as negative instead of preserving the original CPY #1/BPL result. Forty cross-width samples alter X speed/position/timer; ordinary paths also omit RAM0's high-adder write. Existing M2 T17 S6 custody; following source-order player-terrain slice. [Evidence](../proposals/m2/t42-shared-collision-and-platforms.md#s7-original-platform-collision-proof).
+
 - [ ] **Remaining initializer child bodies after S6:** Common and firebar initializers now match; the full vector retains 64/220 actual child failures (piranha, frenzy generators, platforms and Bowser). S7 has proven the flying-fish child; the containing frenzy dispatcher still has nested JumpEngine scratch debt. Other bodies retain their existing source-order custody. [S6 evidence](../history/M2-T38-enemy-stream-initialization.md#s6-original-firebar-and-duplicate-proof).
 
 

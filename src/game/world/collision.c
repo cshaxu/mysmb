@@ -314,3 +314,11 @@ mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *game)
 {
     return (mysmb_u8)(game->ram[8U] * 4U + 4U);
 }
+
+/* Argument/result seam for the platform caller; S9 owns full preflight proof. */
+mysmb_u8 mysmb_world_enemy_box_offset_arg(struct mysmb_game *game,
+                                         mysmb_u8 slot, mysmb_u8 *mask)
+{
+    *mask = (mysmb_u8)(game->ram[0x03d1U] & 0x0fU);
+    return (mysmb_u8)(slot * 4U + 4U);
+}

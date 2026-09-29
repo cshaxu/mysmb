@@ -959,3 +959,130 @@ Raw records: 32202654 bytes, below150 MB.
 | mysmb16.exe | 256329 | 39021432fed66a7957199ef9c4807e08ed9dffbef504d42292f8ec979877a0c7 |
 | mysmb32.exe | 355274 | 586ce58cb7e7ecb73fdd4d67e73ec8b2ae953fc82454b579a6c12c1edc62e342 |
 | mysmb64.exe | 363036 | 2f5f377b2cfe577911aec5a1424d9f1378e98b9f64208481ac70cbec667dea4a |
+
+## S7 admission: platform collision
+
+S6 closed in16c21d3. Coordinator accepts transfer-216 from M2 T17 S6.
+Baseline1,360/1,992;14 scoped and expected-new nodes, maximum1,374:
+
+`LargePlatformCollision` (open), `ChkForPlayerC_LargeP` (open), `ExLPC` (open), `SmallPlatformCollision` (open), `ChkSmallPlatLoop` (open), `MoveBoundBox` (open), `ExSPC` (open), `ProcSPlatCollisions` (open), `ProcLPlatCollisions` (open), `ChkForTopCollision` (open), `SetCollisionFlag` (open), `PlatformSideCollisions` (open), `SideC` (open), `NoSideC` (open).
+
+Original $DB45-$DC16 covers large and small platform collision plus the
+shared underside/top/side response. Sole owner: enemy/platform_collision.c.
+Preserve timer/state gates, balance-partner-first then current checks, stack
+slot preservation, small-platform two-box Y wrapping, live RAM0/ObjectOffset,
+collision flags and the right-side SBC's clear carry. Remove the legacy
+world-coordinate contact/placement shortcut. Rider positioning stays in S8.
+
+Dependencies are CheckPlayerVertical, GetEnemyBoundBoxOfs/Arg, geometry and
+ImpedePlayerMove. Expose the box-offset argument and A-mask result needed by
+this caller, keeping S9 ownership and explicit proof separation. No other
+child algorithm repair or credit. Logic proof compares controlled original
+NMI platform entries, full child inputs/arguments and ordered RAM writes.
+Report actual-child differences separately. Operational proof uses
+mysmb.platform-collision-chain, affected platform/contact regressions,
+strict C90 x86/x64, DOS16 link, platform purity and three refreshed EXEs.
+
+Owner-local ROM/listing provenance and nonredistributable containment remain.
+Ignored build/m2-t42-s7 permits4,096 fixtures and150 MB raw records,20-second
+process limits and resumable checkpoints. Coordinator owns cleanup after
+dependent regressions. Owner-authorized three EXEs are the delivery exception;
+DOS link-only and no complete-game claim. Similar-issue sweep covers replaced
+coordinate heuristics, premature rider placement, linked-platform slots,
+two-box restoration, side subtraction carry and live child state. All14
+nodes need dual proof or accepted exact transfers; admission is no credit.
+
+## S7 original platform collision proof
+
+S7 P1 closes all14 expected open nodes:1,360 ->1,374/1,992.
+No scoped label remains incomplete or transfers. T42 stays open; S8 is next.
+
+| Node | Individual evidence and disposition |
+| --- | --- |
+| LargePlatformCollision | Initialize FF collision flag, timer/state gates, balance partner before live current slot. ROM-match complete. |
+| ChkForPlayerC_LargeP | Vertical gate, explicit box argument, saved Y position and stack-preserved platform slot. ROM-match complete. |
+| ExLPC | Return reloads ObjectOffset; caller uses the live slot for the balance second check. ROM-match complete. |
+| SmallPlatformCollision | Timer preserves prior flag; otherwise clear flag, vertical gate and counter2. ROM-match complete. |
+| ChkSmallPlatLoop | Reload ObjectOffset, consume box/mask outputs, skip offscreen or top-above20 boxes. ROM-match complete. |
+| MoveBoundBox | Add80 with byte wrapping to both Y corners and decrement live RAM0. ROM-match complete. |
+| ExSPC | Return after gate or two misses without restoring a box prematurely. ROM-match complete. |
+| ProcSPlatCollisions | Reload ObjectOffset before entering the common small-platform response. ROM-match complete. |
+| ProcLPlatCollisions | Wrapped underside difference under4 and upward speed select jump cancellation. ROM-match complete. |
+| ChkForTopCollision | Wrapped top difference under6 and nonnegative speed select rider collision. ROM-match complete. |
+| SetCollisionFlag | Small IDs43/44 use counter, other IDs use checked slot; store to live owner and clear player state. ROM-match complete. |
+| PlatformSideCollisions | Left difference under8, then right difference minus an extra1 under9. ROM-match complete. |
+| SideC | Call the existing ImpedePlayerMove with the source RAM0 side counter. ROM-match complete. |
+| NoSideC | No-side return reloads ObjectOffset without extra player movement. ROM-match complete. |
+
+All100 original instructions in $DB45-$DC16 execute, with both outcomes of
+all19 branches (38/38). No adjacent data table belongs to this chain.
+784 controlled entry-RAM fixtures reach the two platform collision entries
+through ordinary NMI/RunLargePlatform/RunSmallPlatform. ROM code, PC, stack
+and outputs are unchanged; observed and observer-free original frames agree.
+Caller comparisons pass1,568/1,568 across x86/x64. Full child input RAM and
+consumed box argument, geometry Y, returned carry/Y and RAM0 side counter
+are checked before replaying child results. The box argument's returned Y
+and low offscreen nibble are checked. CheckPlayerVertical preserves X;
+geometry preserves Y; the large caller preserves its own X on the stack.
+Hardware return storage is excluded; mapped $0109-$0139 remains compared.
+
+Actual children match28/1,568. All1,540 mismatches include the existing
+geometry scratch omissions at $06/$07;132 also differ at $00. Two further
+semantic child gaps are explicitly retained, not hidden as scratch-only:
+
+- Cases384 and1408 on both widths: CheckPlayerVertical incorrectly rejects
+  Player_Y_High=0. Original carry remains clear on that branch. Player_State
+  and PlatformCollisionFlag differ. Four comparisons; M2 T17 S6 custody,
+  planned T42 S9 source admission.
+- Twenty cases per width: right-side ImpedePlayerMove treats speed80 as
+  negative, whereas original CPY #1 produces7F and BPL skips movement.
+  Native X speed, X position and SideCollisionTimer differ. Forty comparisons;
+  M2 T17 S6 custody, following player-terrain source slice. Ordinary side
+  paths also retain this child's missing RAM0 high-adder write.
+
+Neither dependency receives credit here. Generic geometry keeps its original
+receiver. The box argument/result seam is exposed for this caller; S9 still
+owns GetEnemyBoundBoxOfs/Arg proof. These results certify the fourteen caller
+nodes, not actual whole-game equivalence or completed platform integration.
+
+One shared enemy/platform_collision.c replaces world-coordinate contact and
+premature rider-placement heuristics. Large balance decks check partner then
+current; small platforms inspect two Y boxes with original wrapping. Both
+use the original underside/top/side response and collision-flag rules. Rider
+placement remains S8. Similar-issue review covers all callers, linked slots,
+byte differences, carry, live RAM0/ObjectOffset, flags and duplicate placement.
+Platform adapters are unchanged; no runtime emulator is introduced.
+
+Native tests pass196,608 top/underside/side boundary combinations per width,
+plus two-box restoration, second-deck landing, gates and child-mutated slots.
+Seven focused CTests pass: collision, caller, four platform movement chains
+and platform purity. Eight affected suites pass on both widths. The legacy
+platform smoke lacked prepared player bounds, screen edges and object box
+controls and used an uninitialized C structure. Its inputs now supply those
+engine preconditions; all original movement assertions remain unchanged.
+The small-platform OAM smoke receives its declaration header and fixes one
+misleadingly indented return; its assertions remain unchanged.
+
+All18,936 prior actual actor matches remain. Six previous collision matrices
+retain every match:920/2,048,0/1,024,54/576,240/256,1,184/3,200 and696/2,048.
+Known child and broad core/local-area failures remain explicit. All117 shared
+files compile as strict C90 for x86/x64; self-tests and hidden-window response
+pass. DOS16 compiles/links with the existing OLDNAMES warning. Three EXEs are
+refreshed; DOS graphics/resource binding and physical486SX speed are unproved.
+
+Reproduce platform_collision_fixture.h with --fixture=t42-platform-collision=N,
+--platform-collision-snapshot, --control-children and --pc-coverage. Selected
+inclusive case ranges are0-129,256-257,384-385,512-513,640-799,896-1153,
+1280-1281,1408-1409,1536-1537,1664-1695,1792-1983 (784 total). Gated cases
+avoid redundant geometry combinations. platform_collision_snapshot_check
+proves callers; enemy_loop_actual_check tests actual children. Ignored
+build/m2-t42-s7 holds bounded records and resumable checkpoints with20-second
+process deadlines. Coordinator owns cleanup after dependent regressions.
+
+Raw records: 20125007 bytes, below150 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 256905 | 2b61637abc7f2343d1e72ba2e7b6180d2c36e9a09c8e9a5f9f1556485a841a09 |
+| mysmb32.exe | 356145 | fcd4a63edad4d5abd68a03d74af2815a87993b49acb6a589bf98eaeb92d5ff51 |
+| mysmb64.exe | 363941 | efffc377962c8bc4e8fd64c37dc2c44455625cb6696c0aff572eb633d6c96cb2 |

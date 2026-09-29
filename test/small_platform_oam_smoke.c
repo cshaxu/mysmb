@@ -1,4 +1,5 @@
 #include "game/objects.h"
+#include "game/oam/oam.h"
 
 int main(void)
 {
@@ -47,5 +48,6 @@ int main(void)
     game.ram[0x0743U] = 3U;
     mysmb_objects_draw_large_platform(&game, 0U);
     if (game.ram[0x0230U] != 0xf8U || game.ram[0x0234U] != 0xf8U ||
-        game.ram[0x0221U] != 0x75U || game.ram[0x0235U] != 0x75U) return 4;    return 0;
+        game.ram[0x0221U] != 0x75U || game.ram[0x0235U] != 0x75U) return 4;
+    return 0;
 }

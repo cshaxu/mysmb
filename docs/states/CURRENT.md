@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T42 S6 is closed at1,360/1,992:all16 expected nodes complete. S7 is next.**
+**M2 T42 S7 is closed at1,374/1,992:all14 expected nodes complete. S8 is next.**
 T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 
-## M2 T42 S6 Packet
+## M2 T42 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T42 S6, source-order implementation. |
-| Admission And Approval | Continuing M2 mandate after0f2626c; coordinator accepts transfer-215. |
-| Objective | All16 open enemy-pair nodes named in S6 admission, all expected new. |
-| Non-goals | No unadmitted geometry, stun, box-offset or terrain child repair; no host gameplay. |
-| Reference Baseline | 1,344/1,992;16 expected, maximum1,360; T42 maximum1,382. |
-| Candidate Proposal | [T42 S6 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s6-admission-enemy-pair-collision). |
-| Files And ABI Surface | world/enemy_collision.c, old pair and turnaround bodies, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T42 S7, source-order implementation. |
+| Admission And Approval | Continuing M2 mandate after16c21d3; coordinator accepts transfer-216. |
+| Objective | All14 open platform collision nodes named in S7 admission, all expected new. |
+| Non-goals | No unadmitted geometry, vertical gate, side-response or rider-placement repair; no host gameplay. |
+| Reference Baseline | 1,360/1,992;14 expected, maximum1,374; T42 maximum1,382. |
+| Candidate Proposal | [T42 S7 admission](../proposals/m2/t42-shared-collision-and-platforms.md#s7-admission-platform-collision). |
+| Files And ABI Surface | enemy/platform_collision.c, old platform collision bodies and box child seams, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
 | Verification | Source branches/tables and full child inputs; separate actual-child and native evidence; three-target build. |
-| Expected Markers | Descending scan, live offsets, candidate-first boxes, masks, shared defeat/score and turnaround. |
+| Expected Markers | Balanced partner/current checks, two-box small platform, underside/top/side response and flags. |
 | Asset Needs | Existing owner-local ROM/listing; bounded ignored records; owner-authorized EXEs. DOS link-only. |
-| Reporting Requirements | All16 exact dispositions, dual proof, named child gaps, ledger and hashes. |
+| Reporting Requirements | All14 exact dispositions, dual proof, named child gaps, ledger and hashes. |
 | Stop Conditions | Unadmitted child rewrite, patched source outputs, hidden mismatch or host gameplay. |
-| Exit Criteria |16 exact nodes proved or accepted transfers, dual proof and three artifacts. |
+| Exit Criteria |14 exact nodes proved or accepted transfers, dual proof and three artifacts. |
 | Original Owner Request | Faithful ROM call graph and nodes in shared DOS16/x86/x64 C. |
-| Similar-Issue Sweep | Cached slots, geometry argument order, duplicate defeat/score, latch masks and byte wrapping. |
+| Similar-Issue Sweep | World-coordinate shortcuts, rider placement, partner slots, box wrapping and side carry. |
+
+## S7 closure
+
+[Platform collision proof](../proposals/m2/t42-shared-collision-and-platforms.md#s7-original-platform-collision-proof)
+closes14 nodes with1,568/1,568 caller comparisons. Actual children match
+28/1,568; geometry scratch, vertical carry and side speed80 differences remain
+with their existing owners. All18,936 prior actor matches and six collision
+matrices remain. Three EXEs refreshed; DOS link-only. S8 rider positioning is
+next, not yet admitted. T42 remains open.
 
 ## S6 closure
 
@@ -32,8 +41,7 @@ T42 plans 98 incomplete nodes in nine chains, maximum 1,382.
 closes16 nodes with2,048/2,048 caller comparisons. Actual children match
 696/2,048; geometry/stun scratch differences retain their owners.
 All18,936 prior actor matches and five prior collision matrices remain.
-Three EXEs refreshed; DOS link-only. S7 platform collision is next, not yet
-admitted. T42 remains open.
+Three EXEs refreshed; DOS link-only. S7 is closed above. T42 remains open.
 
 ## S5 closure
 

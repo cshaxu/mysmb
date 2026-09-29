@@ -671,41 +671,6 @@ void mysmb_platform_position_player_vertical(struct mysmb_game *game, mysmb_u8 s
     game->ram[MYSMB_PLAYER_STATE] = 0U;
 }
 
-static mysmb_u8 platform_legacy_contact(struct mysmb_game *game, mysmb_u8 slot)
-{
-    mysmb_u8 id;
-    id = game->ram[MYSMB_ENEMY_ID + slot];
-    if (game->ram[MYSMB_PLAYER_Y_HIGH] == 1U &&
-        game->ram[MYSMB_PLAYER_PAGE] == game->ram[MYSMB_ENEMY_PAGE + slot] &&
-        game->ram[MYSMB_PLAYER_X] + 16U >= game->ram[MYSMB_ENEMY_X + slot] &&
-        game->ram[MYSMB_PLAYER_X] <= game->ram[MYSMB_ENEMY_X + slot] +
-                                    (id == 43U || id == 44U ? 16U : 32U) &&
-        game->ram[MYSMB_PLAYER_Y_SPEED] < 0x80U &&
-        game->ram[MYSMB_PLAYER_Y] + 0x20U >= game->ram[MYSMB_ENEMY_Y + slot] &&
-        game->ram[MYSMB_PLAYER_Y] + 0x20U <= game->ram[MYSMB_ENEMY_Y + slot] + 6U) {
-        mysmb_platform_position_player_vertical(game, slot);
-        return 1U;
-    }
-    return 0U;
-}
-
-void mysmb_platform_collision_large(struct mysmb_game *game, mysmb_u8 slot)
-{
-    game->ram[0x03a2U + slot] = 0xffU;
-    if (game->ram[MYSMB_TIMER_CONTROL] != 0U ||
-        (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) != 0U) return;
-    if (platform_legacy_contact(game, slot) != 0U)
-        game->ram[0x03a2U + slot] = slot;
-}
-
-void mysmb_platform_collision_small(struct mysmb_game *game, mysmb_u8 slot)
-{
-    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-    game->ram[0x03a2U + slot] = 0U;
-    if (platform_legacy_contact(game, slot) != 0U)
-        game->ram[0x03a2U + slot] = 2U;
-}
-
 void mysmb_platform_legacy_position_small(struct mysmb_game *game, mysmb_u8 slot,
     mysmb_u8 collision, mysmb_u8 old_y)
 {
