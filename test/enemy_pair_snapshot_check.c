@@ -30,7 +30,7 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot,mysmb_u
 }
 mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *g)
 { return child(g,1U,0U,0U); }
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *g,mysmb_u16 first,mysmb_u16 second)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *g,mysmb_u16 first,mysmb_u16 second)
 {
     if(first!=0x4acU+(mysmb_u8)(g->ram[1U]*4U+4U) || second<0x4acU || second>0x5abU)++failures;
     return child((struct mysmb_game *)g,2U,0U,(mysmb_u8)(second-0x4acU));

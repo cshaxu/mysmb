@@ -33,7 +33,7 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot)
     if(r[0]!=id || (id==2U && slot!=r[1])) ++failures;
     compare(g->ram,r+2U);memcpy(g->ram,r+2050U,2048U);return r[1];
 }
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *g,mysmb_u16 a,mysmb_u16 b)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *g,mysmb_u16 a,mysmb_u16 b)
 {
     if(a!=0x4acU+(mysmb_u8)(g->ram[1U]*4U+4U) ||
        b!=0x4acU+(mysmb_u8)(root_slot*4U+0x1cU)) ++failures;

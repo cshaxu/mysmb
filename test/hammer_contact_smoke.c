@@ -5,7 +5,7 @@
 static struct mysmb_game game;
 static unsigned int failures,boxes,injuries,hit,change;
 static mysmb_u8 root_slot;
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *g,mysmb_u16 a,mysmb_u16 b)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *g,mysmb_u16 a,mysmb_u16 b)
 {
     if(a!=0x4acU||b!=0x4acU+(mysmb_u8)(root_slot*4U+0x24U))++failures;
     ++boxes;

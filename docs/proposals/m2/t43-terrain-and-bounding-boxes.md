@@ -453,13 +453,50 @@ Expected-new subset: `PlayerCollisionCore`, `SprObjectCollisionCore`, `Collision
 
 | Line | Node | Incoming status | Current receiver |
 | --- | --- | --- | --- |
-| 12956 | `PlayerCollisionCore` | open | M2 T17 S6 |
-| 12959 | `SprObjectCollisionCore` | open | M2 T17 S6 |
-| 12964 | `CollisionCoreLoop` | open | M2 T17 S6 |
-| 12979 | `SecondBoxVerticalChk` | open | M2 T17 S6 |
-| 12989 | `FirstBoxGreater` | open | M2 T17 S6 |
-| 13002 | `NoCollisionFound` | open | M2 T17 S6 |
-| 13007 | `CollisionFound` | open | M2 T17 S6 |
+| 12956 | `PlayerCollisionCore` | ROM-match complete | M2 T43 S15 |
+| 12959 | `SprObjectCollisionCore` | ROM-match complete | M2 T43 S15 |
+| 12964 | `CollisionCoreLoop` | ROM-match complete | M2 T43 S15 |
+| 12979 | `SecondBoxVerticalChk` | ROM-match complete | M2 T43 S15 |
+| 12989 | `FirstBoxGreater` | ROM-match complete | M2 T43 S15 |
+| 13002 | `NoCollisionFound` | ROM-match complete | M2 T43 S15 |
+| 13007 | `CollisionFound` | ROM-match complete | M2 T43 S15 |
+
+
+
+#### S15 closure: Shared box collision geometry
+
+All seven nodes are ROM-match complete: 1,510 -> 1,517 / 1,992. The shared
+`world/geometry.c` owner preserves both original entries, the X/Y two-axis
+loop, equality and byte-wrap comparison branches, and terminal carry/Y state
+through RAM `$06/$07`. Callers select their own boxes and reactions; no
+platform adapter contains collision policy.
+
+The original logic track directly replays 152 captured natural collision-child
+records from player-contact, enemy-pair and platform-collision NMI routes. For
+each record, C receives the original pre-call 2 KiB RAM image and matches the
+original post-call 2 KiB RAM image and carry result on x86 and x64. Focused
+vectors separately exercise terminal paths, equality and vertical wrap.
+
+The operational track passes focused core/world-movement checks, strict C90
+builds on x86/x64, platform purity and the shared OpenNT DOS16 MZ link. Product
+self-tests pass during the Win32 links. The DOS linker retains its existing
+OLDNAMES warning; no DOS graphical runtime claim is made.
+
+| Node | Original address | Disposition |
+| --- | --- | --- |
+| PlayerCollisionCore | DCF6 | Player-box entry initializes source scratch `$06/$07`. |
+| SprObjectCollisionCore | DCF9 | Sprite-box entry retains the shared two-axis contract. |
+| CollisionCoreLoop | DCFE | X/Y comparison loop and source counter progression match. |
+| SecondBoxVerticalChk | DD0F | Lower-first branch and wrapped vertical test match. |
+| FirstBoxGreater | DD19 | Upper-first equality/range branches match. |
+| NoCollisionFound | DD26 | Clear-carry return restores source Y/scratch offset. |
+| CollisionFound | DD2B | Set-carry terminal restores source Y/scratch offset. |
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257805 | 4acb78964330041c41f82d56c36bbc414fbae943f00bacc4cced2ba3ce71c5ba |
+| mysmb32.exe | 362805 | a767b1f521d8dbaf4e5558725cd8218d5bc5cdceb3088bb555c9424d9f3f7d53 |
+| mysmb64.exe | 370426 | 9525a53fbde41aa6a93280a8e79495035b46d15591e4b4a973f1cc6b0b3e3f22 |
 
 ## S1 admission
 

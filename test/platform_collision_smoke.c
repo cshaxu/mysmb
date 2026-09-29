@@ -25,7 +25,7 @@ mysmb_u8 mysmb_world_enemy_box_offset_arg(struct mysmb_game *game,mysmb_u8 slot,
     (void)game;if(offsets<4U)slots[offsets]=slot;++offsets;
     *mask=mask_value;return (mysmb_u8)(slot*4U+4U);
 }
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,mysmb_u16 first,mysmb_u16 second)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *game,mysmb_u16 first,mysmb_u16 second)
 {
     (void)game;check(first==0x4acU && second==0x4b0U+slots[offsets-1U]*4U);
     ++boxes;if(mutate&&boxes==1U)g.ram[8U]=4U;return hit;

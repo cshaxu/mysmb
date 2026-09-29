@@ -38,7 +38,7 @@ mysmb_u8 mysmb_world_player_vertical_carry(struct mysmb_game *g)
 { return child(g,1U,0U); }
 mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *g)
 { return child(g,2U,0U); }
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *g,mysmb_u16 first,mysmb_u16 second)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *g,mysmb_u16 first,mysmb_u16 second)
 {
     if(first!=0x4acU || second<0x4acU || second>0x5abU)++failures;
     return child((struct mysmb_game *)g,3U,(mysmb_u8)(second-0x4acU));

@@ -14,7 +14,7 @@ static void reset(void)
 }
 mysmb_u8 mysmb_world_enemy_box_offset(struct mysmb_game *game)
 { return (mysmb_u8)(game->ram[8U]*4U+4U); }
-mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,mysmb_u16 first,mysmb_u16 second)
+mysmb_u8 mysmb_world_boxes_collide(struct mysmb_game *game,mysmb_u16 first,mysmb_u16 second)
 {
     check(first==0x4c0U && second==0x4c4U);++boxes;
     if(mutation==1U){g.ram[8U]=2U;g.ram[1U]=0U;}

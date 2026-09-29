@@ -1683,13 +1683,13 @@ The labels and branches behind every line remain open until individually bound b
 | 12939 | `CheckLeftScreenBBox` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
 | 12948 | `SOLft` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
 | 12949 | `NoOfs2` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
-| 12956 | `PlayerCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playercollisioncore) |
-| 12959 | `SprObjectCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprobjectcollisioncore) |
-| 12964 | `CollisionCoreLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-collisioncoreloop) |
-| 12979 | `SecondBoxVerticalChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-secondboxverticalchk) |
-| 12989 | `FirstBoxGreater` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firstboxgreater) |
-| 13002 | `NoCollisionFound` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nocollisionfound) |
-| 13007 | `CollisionFound` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-collisionfound) |
+| 12956 | `PlayerCollisionCore` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 12959 | `SprObjectCollisionCore` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 12964 | `CollisionCoreLoop` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 12979 | `SecondBoxVerticalChk` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 12989 | `FirstBoxGreater` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 13002 | `NoCollisionFound` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
+| 13007 | `CollisionFound` | M2 T43 S15 shared box-collision geometry chain | ROM-match complete | [S15 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s15-closure-shared-box-collision-geometry) |
 | 13023 | `BlockBufferChk_Enemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_enemy) |
 | 13032 | `ResidualMiscObjectCode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-residualmiscobjectcode) |
 | 13040 | `BlockBufferChk_FBall` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-blockbufferchk_fball) |
