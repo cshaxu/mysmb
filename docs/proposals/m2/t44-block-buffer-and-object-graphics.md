@@ -557,3 +557,36 @@ cleanup with the remaining S8 families. The retainer/princess branch and
 other unproven handler states remain open. This checkpoint grants no node
 credit; the tracker remains **1,582 / 1,992** until the complete S8 tree
 and its node-level checklist close.
+
+#### S8 P4 checkpoint: retainer and princess graphics route
+
+`RunRetainerObj -> EnemyGfxHandler` now enters the same ordinary source branch
+used by `RunNormalEnemies` whenever `BowserGfxFlag` is zero. The older
+retainer/princess six-sprite renderer was removed; the ROM handler itself
+selects the world-dependent tiles, state, mirroring and final attributes.
+This removes a second product implementation of the same handler.
+
+The ROM-logic track compared every non-stack RAM and OAM byte in the original
+T39 `RunRetainerObj` graphics child records: **72/72 zero-difference** on both
+x86 and x64, across world, object position and slot variants. Before this
+change all 72 differed. The P3 ordinary enemy 84/84 and integrated Bowser
+1,024/1,024 comparisons continue to pass on both widths. The raw records
+remain under ignored `build/m2-t39-s7/`, `build/m2-t39-s8/` and
+`build/m2-t41-s3/`.
+
+The operational track rebuilt all x86 and x64 targets and the OpenNT DOS16 MZ
+target. The retainer OAM smoke test now expects attribute `$62` after the
+source mirroring branch rather than the old renderer's `$42`; it passes. Both
+Windows full suites remain at **222/233**, with the same eleven previously
+baselined failures and no new failure. Product self-tests and platform purity
+pass. Refreshed artifacts are `mysmb16.exe` (260911 bytes, SHA-256
+`9a55069016e028c624e0d2c41317ac2b98f249436a9daf6f11ec427362631052`),
+`mysmb32.exe` (347202 bytes, SHA-256
+`e2ad516c1bf5738a5e833126cbd19c8a5892c8516c71a54e0d9c91c3d4ed05d9`),
+and `mysmb64.exe` (360502 bytes, SHA-256
+`af5619c822a1d6e7bfb87ab338e9500277d377561a7a2191ac21335777fe955c`).
+
+The same-handler sweep found no other retainer-specific product renderer.
+Separate direct-test helpers for other enemy types remain within S8 audit
+scope. This P grants no partial handler-node credit; the tracker stays at
+**1,582 / 1,992** pending the complete 44-label S8 checklist.

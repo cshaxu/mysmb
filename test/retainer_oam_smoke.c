@@ -26,7 +26,7 @@ int main(void)
         game.ram[0x0245U] != 0xcdU || game.ram[0x0249U] != 0xceU ||
         game.ram[0x024dU] != 0xceU || game.ram[0x0251U] != 0xcfU ||
         game.ram[0x0255U] != 0xcfU || game.ram[0x0242U] != 0x22U ||
-        game.ram[0x0256U] != 0x42U ||
+        game.ram[0x0256U] != 0x62U ||
         game.ram[0x0243U] != 0x50U || game.ram[0x0247U] != 0x58U) {
         return 1;
     }

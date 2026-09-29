@@ -416,54 +416,13 @@ defeated:
     return 1U;
 }
 
-/* Existing EnemyGfxHandler retainer branch; caller owns position/bits. */
+/* ROM EnemyGfxHandler: RunRetainerObj reaches the same branch tree. */
 void mysmb_oam_draw_retainer(struct mysmb_game *game, mysmb_u8 slot)
 {
-    static const mysmb_u8 princess[6] = { 0x7aU, 0x7bU, 0xdaU, 0xdbU, 0xd8U, 0xd8U };
-    static const mysmb_u8 retainer[6] = { 0xcdU, 0xcdU, 0xceU, 0xceU, 0xcfU, 0xcfU };
-    const mysmb_u8 *tiles;
-    mysmb_u8 oam;
-    mysmb_u8 row;
-    mysmb_u8 offset;
-    mysmb_u8 bits;
-    mysmb_u8 x;
-    mysmb_u8 attributes;
-
-    if (game->ram[0x036aU] != 0U) {
-        mysmb_oam_draw_bowser_half(game,slot);
-        return;
-    }
-    if (game->ram[MYSMB_NORMAL_ID + slot] != 53U) {
+    if (game->ram[0x036aU] != 0U)
+        mysmb_oam_draw_bowser_half(game, slot);
+    else
         (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
-        return;
-    }
-    if (slot >= 5U || game->ram[MYSMB_NORMAL_FLAG + slot] == 0U) return;
-    tiles = game->ram[MYSMB_NORMAL_WORLD] < 7U ? retainer : princess;
-    attributes = (mysmb_u8)(game->ram[MYSMB_NORMAL_ATTRIBUTES + slot] | 2U);
-    x = game->ram[MYSMB_NORMAL_REL_X];
-    bits = game->ram[MYSMB_NORMAL_OFFSCREEN];
-    oam = game->ram[MYSMB_NORMAL_SPRITE + slot];
-    for (row = 0U; row < 3U; ++row) {
-        offset = (mysmb_u8)(oam + row * 8U);
-        game->ram[0x0200U + offset] = (mysmb_u8)(game->ram[MYSMB_NORMAL_Y + slot] + row * 8U);
-        game->ram[0x0204U + offset] = game->ram[0x0200U + offset];
-        game->ram[0x0201U + offset] = tiles[row * 2U];
-        game->ram[0x0205U + offset] = tiles[row * 2U + 1U];
-        game->ram[0x0202U + offset] = attributes;
-        game->ram[0x0206U + offset] = attributes;
-        game->ram[0x0203U + offset] = x;
-        game->ram[0x0207U + offset] = (mysmb_u8)(x + 8U);
-        if ((bits & 0x80U) != 0U ||
-            ((bits & 0x40U) != 0U && row >= 1U) ||
-            ((bits & 0x20U) != 0U && row == 2U)) {
-            game->ram[0x0200U + offset] = 0xf8U;
-            game->ram[0x0204U + offset] = 0xf8U;
-        } else {
-            if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
-            if ((bits & 4U) != 0U) game->ram[0x0204U + offset] = 0xf8U;
-        }
-    }
-    game->ram[0x0216U + oam] = 0x42U;
 }
 
 /* ROM $e87d-$eaf2 EnemyGfxHandler, spring route through EggExc.
