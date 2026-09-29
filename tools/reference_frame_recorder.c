@@ -1049,6 +1049,8 @@ int main(int argument_count, char **arguments)
     char *bubble_draw_variant_end;
     unsigned int player_table_variant;
     char *player_table_variant_end;
+    unsigned int player_control_variant;
+    char *player_control_variant_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1096,6 +1098,7 @@ int main(int argument_count, char **arguments)
     bubble_player_variant = 0xffffffffu;
     bubble_draw_variant = 0xffffffffu;
     player_table_variant = 0xffffffffu;
+    player_control_variant = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1103,6 +1106,16 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--player-control-variant=", 25u) == 0) {
+            unsigned long value;
+            if (player_control_variant != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 25u,
+                            &player_control_variant_end, 10);
+            if (player_control_variant_end == arguments[recorded] + 25u ||
+                *player_control_variant_end != '\0' || value >= 12u) return 64;
+            player_control_variant = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--player-offset-reads=", 22u) == 0) {
             if (player_offset_reads_path != NULL || arguments[recorded][22] == '\0') return 64;
             player_offset_reads_path = arguments[recorded] + 22u;
@@ -3725,6 +3738,39 @@ int main(int argument_count, char **arguments)
             driver->machine->ram[0x079eu] = 0u;
             driver->machine->ram[0x070du] = 0u;
             driver->machine->ram[0x0781u] = 0u;
+        }
+        /* T46 S1: vary only the naturally reached player handler's input
+         * RAM to expose its dispatch and offscreen branch successors. */
+        if (elapsed >= warmup_frames && background_snapshot == 11u &&
+            player_control_variant != 0xffffffffu && before_pc == 0xeee9u) {
+            lib_u8 *ram = driver->machine->ram;
+            unsigned int choice = player_control_variant;
+            ram[0x070bu] = 0u;
+            ram[0x079eu] = 0u;
+            if (choice == 1u || choice == 2u) {
+                ram[0x079eu] = 2u;
+                ram[9u] = (lib_u8)(choice == 1u ? 1u : 0u);
+            }
+            if (choice == 3u) ram[0x000eu] = 0x0bu;
+            if (choice == 4u) {
+                ram[0x070bu] = 1u;
+                ram[0x070du] = 1u;
+                ram[9u] = 1u;
+            }
+            if (choice == 5u || choice == 6u) {
+                ram[0x001du] = 1u;
+                ram[0x0704u] = 1u;
+                ram[0x0754u] = (lib_u8)(choice == 6u ? 1u : 0u);
+                ram[9u] = 0u;
+            }
+            if (choice >= 7u && choice <= 9u) {
+                ram[0x0711u] = (lib_u8)(choice == 9u ? 2u : 5u);
+                ram[0x0781u] = (lib_u8)(choice == 9u ? 5u : 2u);
+                ram[0x0057u] = (lib_u8)(choice == 8u ? 1u : 0u);
+                ram[0x000cu] = 0u;
+            }
+            if (choice == 10u) ram[0x03d0u] = 0xf0u;
+            if (choice == 11u) ram[0x03d0u] = 0x50u;
         }
         if (elapsed >= warmup_frames && background_snapshot == 11u &&
             bubble_draw_variant != 0xffffffffu && before_pc == 0xede1u) {

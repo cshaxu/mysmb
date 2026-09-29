@@ -107,7 +107,7 @@ The labels and branches behind every line remain open until individually bound b
   - [ ] `FireballEnemyCollision` — ROM line 11085; C owner/evidence pending
   - [x] `ProcFireball_Bubble` — ROM line 6298; [S1 dispatcher proof](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof)
 - [ ] **Object graphics, OAM construction and offscreen bits**
-  - [ ] `PlayerGfxHandler` — ROM line 14460; C owner/evidence pending
+  - [x] `PlayerGfxHandler` — ROM line 14460; [T46 S1 dispatch proof](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen)
   - [ ] `EnemyGraphicsEngine` — label lookup pending
   - [ ] `MiscObjOffset` — label lookup pending
   - [ ] `GetEnemyOffscreenBits` — ROM line 14879; C owner/evidence pending
@@ -1844,19 +1844,19 @@ The labels and branches behind every line remain open until individually bound b
 | 14418 | `PlayerGfxTblOffsets` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
 | 14424 | `PlayerGraphicsTable` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
 | 14457 | `SwimKickTileNum` | M2 T45 S5 shared src/game/fireball/ and src/game/oam/; owner PRG tables | ROM-match complete | [T45 S5 closure](../../history/M2-T45-object-oam-tail-and-graphics.md#s5-closure-bubble-and-player-graphics-data) |
-| 14460 | `PlayerGfxHandler` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-playergfxhandler) |
-| 14466 | `CntPl` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-cntpl) |
-| 14489 | `SwimKT` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-swimkt) |
-| 14495 | `BigKTS` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D5](m2-t24-s1-node-verification.md#node-bigkts) |
-| 14497 | `ExPGH` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-expgh) |
-| 14499 | `FindPlayerAction` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-findplayeraction) |
-| 14503 | `DoChangeSize` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-dochangesize) |
-| 14507 | `PlayerKilled` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-playerkilled) |
-| 14511 | `PlayerGfxProcessing` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-playergfxprocessing) |
-| 14532 | `SUpdR` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D6](m2-t24-s1-node-verification.md#node-supdr) |
-| 14535 | `PlayerOffscreenChk` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-playeroffscreenchk) |
-| 14547 | `PROfsLoop` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-profsloop) |
-| 14551 | `NPROffscr` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-nproffscr) |
+| 14460 | `PlayerGfxHandler` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14466 | `CntPl` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14489 | `SwimKT` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14495 | `BigKTS` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14497 | `ExPGH` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14499 | `FindPlayerAction` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14503 | `DoChangeSize` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14507 | `PlayerKilled` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14511 | `PlayerGfxProcessing` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14532 | `SUpdR` | M2 T46 S1 shared src/game/oam/player_gfx.c | ROM-match complete | [T46 S1 closure](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14535 | `PlayerOffscreenChk` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-playeroffscreenchk); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14547 | `PROfsLoop` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-profsloop); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
+| 14551 | `NPROffscr` | T16: `src/game/oam/player_gfx.c` | ROM-match complete | [T24 S1: complete](m2-t24-s1-node-verification.md#node-nproffscr); [T46 S1 recheck](../../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) |
 | 14561 | `IntermediatePlayerData` | T16: `src/game/oam/player_gfx.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-intermediateplayerdata) |
 | 14564 | `DrawPlayer_Intermediate` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-drawplayer_intermediate) |
 | 14566 | `PIntLoop` | T16: `src/game/oam/player_gfx.c` | audited; mismatch | [T24 S1: D7](m2-t24-s1-node-verification.md#node-pintloop) |

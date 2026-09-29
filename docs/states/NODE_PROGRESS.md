@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1669 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 81 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| ROM-match complete | 1679 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 71 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
 | Open / unmatched | 242 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1669 / 1,992 (83.79%)**. The 81 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1679 / 1,992 (84.29%)**. The 71 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T45 closure](../history/M2-T45-object-oam-tail-and-graphics.md#t45-closure) completes all 45 object OAM/graphics labels in five source-ordered chains. S5 proves five bubble/player graphics labels with original control/table reads and full child RAM/OAM parity; x86/x64 builds, DOS16 link, purity and three EXEs are separate operational evidence.
+Latest task review: [T46 S1 closure](../proposals/m2/t46-player-graphics-control.md#s1-closure-dispatch-kick-throw-and-offscreen) completes ten new player-graphics control labels and rechecks three retained offscreen labels. Original branch PCs and 54 source-reached player children match full non-stack RAM/OAM on x86/x64; focused tests, DOS16 link, purity and three EXEs are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1669)
+## Completed matches (1679)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1699,11 +1699,21 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14418 | `PlayerGfxTblOffsets` |
 | 14424 | `PlayerGraphicsTable` |
 | 14457 | `SwimKickTileNum` |
+| 14460 | `PlayerGfxHandler` |
+| 14466 | `CntPl` |
+| 14489 | `SwimKT` |
+| 14495 | `BigKTS` |
+| 14497 | `ExPGH` |
+| 14499 | `FindPlayerAction` |
+| 14503 | `DoChangeSize` |
+| 14507 | `PlayerKilled` |
+| 14511 | `PlayerGfxProcessing` |
+| 14532 | `SUpdR` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
 
-## Mapped but not yet matched (81)
+## Mapped but not yet matched (71)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1743,16 +1753,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14460 | `PlayerGfxHandler` |
-| 14466 | `CntPl` |
-| 14489 | `SwimKT` |
-| 14495 | `BigKTS` |
-| 14497 | `ExPGH` |
-| 14499 | `FindPlayerAction` |
-| 14503 | `DoChangeSize` |
-| 14507 | `PlayerKilled` |
-| 14511 | `PlayerGfxProcessing` |
-| 14532 | `SUpdR` |
 | 14561 | `IntermediatePlayerData` |
 | 14564 | `DrawPlayer_Intermediate` |
 | 14566 | `PIntLoop` |
