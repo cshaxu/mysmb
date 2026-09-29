@@ -22,28 +22,28 @@ The current aggregate and the named unfinished set are maintained in the [M2 ROM
 
 ```text
 Start / ColdBoot
-â”œâ”€ InitializeMemory, InitializeNameTables, title bootstrap
-â””â”€ NonMaskableInterrupt â€” once per frame
-   â”œâ”€ InitScroll(0,0) â†’ OAM DMA â†’ UpdateScreen
-   â”œâ”€ SoundEngine â†’ ReadJoypads â†’ PauseRoutine â†’ UpdateTopScore
-   â”œâ”€ timer bank / FrameCounter / LFSR
-   â”œâ”€ sprite-0 split: MoveSpritesOffscreen + SpriteShuffler â†’ scene scroll
-   â””â”€ OperModeExecutionTree
-      â”œâ”€ TitleScreenMode
-      â”œâ”€ GameMode
-      â”‚  â”œâ”€ InitializeArea
-      â”‚  â”œâ”€ ScreenRoutines
-      â”‚  â”œâ”€ SecondaryGameSetup
-      â”‚  â””â”€ GameCoreRoutine
-      â”‚     â”œâ”€ GameRoutines[GameEngineSubroutine]
-      â”‚     â””â”€ GameEngine
-      â”‚        â”œâ”€ ProcFireball_Bubble
-      â”‚        â”œâ”€ six Ã— (EnemiesAndLoopsCore â†’ FloateyNumbersRoutine)
-      â”‚        â”œâ”€ player relative position / PlayerGfxHandler
-      â”‚        â”œâ”€ block objects â†’ misc objects â†’ cannon/whirlpool/flagpole
-      â”‚        â””â”€ timer/palette/parser/save-input tail
-      â”œâ”€ VictoryMode
-      â””â”€ GameOverMode
+├─ InitializeMemory, InitializeNameTables, title bootstrap
+└─ NonMaskableInterrupt — once per frame
+   ├─ InitScroll(0,0) → OAM DMA → UpdateScreen
+   ├─ SoundEngine → ReadJoypads → PauseRoutine → UpdateTopScore
+   ├─ timer bank / FrameCounter / LFSR
+   ├─ sprite-0 split: MoveSpritesOffscreen + SpriteShuffler → scene scroll
+   └─ OperModeExecutionTree
+      ├─ TitleScreenMode
+      ├─ GameMode
+      │  ├─ InitializeArea
+      │  ├─ ScreenRoutines
+      │  ├─ SecondaryGameSetup
+      │  └─ GameCoreRoutine
+      │     ├─ GameRoutines[GameEngineSubroutine]
+      │     └─ GameEngine
+      │        ├─ ProcFireball_Bubble
+      │        ├─ six × (EnemiesAndLoopsCore → FloateyNumbersRoutine)
+      │        ├─ player relative position / PlayerGfxHandler
+      │        ├─ block objects → misc objects → cannon/whirlpool/flagpole
+      │        └─ timer/palette/parser/save-input tail
+      ├─ VictoryMode
+      └─ GameOverMode
 ```
 
 The labels and branches behind every line remain open until individually bound below. Source anchors: `NonMaskableInterrupt` line 764, `OperModeExecutionTree` line 954, `GameMode` line 5310, `GameCoreRoutine` line 5318, `GameEngine` line 5336, and `GameRoutines` line 5583.
@@ -51,79 +51,79 @@ The labels and branches behind every line remain open until individually bound b
 ## Logical tree and module gates
 
 - [ ] **Boot, reset, NMI, timing and input**
-  - [ ] `Start` â€” ROM line 699; C owner/evidence pending
-  - [ ] `ColdBoot` â€” ROM line 721; C owner/evidence pending
-  - [ ] `NonMaskableInterrupt` â€” ROM line 764; C owner/evidence pending
-  - [ ] `PauseRoutine` â€” ROM line 876; C owner/evidence pending
-  - [ ] `OperModeExecutionTree` â€” ROM line 954; C owner/evidence pending
+  - [ ] `Start` — ROM line 699; C owner/evidence pending
+  - [ ] `ColdBoot` — ROM line 721; C owner/evidence pending
+  - [ ] `NonMaskableInterrupt` — ROM line 764; C owner/evidence pending
+  - [ ] `PauseRoutine` — ROM line 876; C owner/evidence pending
+  - [ ] `OperModeExecutionTree` — ROM line 954; C owner/evidence pending
 - [ ] **Title, demo, selection and victory modes**
-  - [ ] `TitleScreenMode` â€” ROM line 982; C owner/evidence pending
-  - [ ] `GameMenuRoutine` â€” ROM line 996; C owner/evidence pending
-  - [ ] `DemoEngine` â€” ROM line 1119; C owner/evidence pending
-  - [ ] `VictoryMode` â€” ROM line 1137; C owner/evidence pending
-  - [ ] `PlayerEndWorld` â€” ROM line 1256; C owner/evidence pending
+  - [ ] `TitleScreenMode` — ROM line 982; C owner/evidence pending
+  - [ ] `GameMenuRoutine` — ROM line 996; C owner/evidence pending
+  - [ ] `DemoEngine` — ROM line 1119; C owner/evidence pending
+  - [ ] `VictoryMode` — ROM line 1137; C owner/evidence pending
+  - [ ] `PlayerEndWorld` — ROM line 1256; C owner/evidence pending
 - [ ] **Screen sequencing, text, status and PPU buffers**
-  - [ ] `ScreenRoutines` â€” ROM line 1386; C owner/evidence pending
-  - [ ] `InitScreen` â€” ROM line 1408; C owner/evidence pending
-  - [ ] `WriteTopStatusLine` â€” ROM line 1517; C owner/evidence pending
-  - [ ] `WriteBottomStatusLine` â€” ROM line 1524; C owner/evidence pending
-  - [ ] `AreaParserTaskControl` â€” ROM line 1595; C owner/evidence pending
-  - [x] `WriteGameText` â€” ROM line 1719; T27 S2 P21 controlled ROM-entry proof
+  - [ ] `ScreenRoutines` — ROM line 1386; C owner/evidence pending
+  - [ ] `InitScreen` — ROM line 1408; C owner/evidence pending
+  - [ ] `WriteTopStatusLine` — ROM line 1517; C owner/evidence pending
+  - [ ] `WriteBottomStatusLine` — ROM line 1524; C owner/evidence pending
+  - [ ] `AreaParserTaskControl` — ROM line 1595; C owner/evidence pending
+  - [x] `WriteGameText` — ROM line 1719; T27 S2 P21 controlled ROM-entry proof
 - [ ] **Area parser, metatile/attribute rendering and scrolling**
-  - [ ] `RenderAreaGraphics` â€” ROM line 1825; C owner/evidence pending
-  - [ ] `RenderAttributeTables` â€” ROM line 1920; C owner/evidence pending
-  - [ ] `AreaParserTaskHandler` â€” ROM line 3060; C owner/evidence pending
-  - [ ] `AreaParserCore` â€” ROM line 3179; C owner/evidence pending
-  - [ ] `AreaParserTasks` â€” ROM line 3073; C owner/evidence pending
-  - [ ] `ScrollScreen` â€” ROM line 5427; C owner/evidence pending
+  - [ ] `RenderAreaGraphics` — ROM line 1825; C owner/evidence pending
+  - [ ] `RenderAttributeTables` — ROM line 1920; C owner/evidence pending
+  - [ ] `AreaParserTaskHandler` — ROM line 3060; C owner/evidence pending
+  - [ ] `AreaParserCore` — ROM line 3179; C owner/evidence pending
+  - [ ] `AreaParserTasks` — ROM line 3073; C owner/evidence pending
+  - [ ] `ScrollScreen` — ROM line 5427; C owner/evidence pending
 - [ ] **Game engine, mode transitions and timers**
   - [x] `GameCoreRoutine` - ROM line 5326; T31 S1 dispatcher entry proof (child interiors remain open).
-  - [ ] `GameEngine` â€” ROM line 5336; C owner/evidence pending
+  - [ ] `GameEngine` — ROM line 5336; C owner/evidence pending
   - [x] `GameRoutines` - ROM line 5499; T31 S4 thirteen-target caller proof; child interiors retain separate status.
-  - [ ] `GameTimerExpired` â€” label lookup pending
-  - [ ] `PlayerEndLevel` â€” ROM line 5856; C owner/evidence pending
+  - [ ] `GameTimerExpired` — label lookup pending
+  - [ ] `PlayerEndLevel` — ROM line 5856; C owner/evidence pending
 - [ ] **Player movement, physics, collision and size state**
   - [x] `PlayerCtrlRoutine` - ROM line 5583; T32 S1 caller proof; actual child chain remains incomplete.
-  - [ ] `MovePlayerHorizontally` â€” ROM line 7561; C owner/evidence pending
-  - [ ] `PlayerBGCollision` â€” ROM line 11927; C owner/evidence pending
-  - [ ] `PlayerHeadCollision` â€” ROM line 7244; C owner/evidence pending
-  - [ ] `PlayerChangeSize` â€” ROM line 5757; C owner/evidence pending
+  - [ ] `MovePlayerHorizontally` — ROM line 7561; C owner/evidence pending
+  - [ ] `PlayerBGCollision` — ROM line 11927; C owner/evidence pending
+  - [ ] `PlayerHeadCollision` — ROM line 7244; C owner/evidence pending
+  - [ ] `PlayerChangeSize` — ROM line 5757; C owner/evidence pending
 - [ ] **Enemy stream, object initialization and enemy behavior**
-  - [ ] `ProcessEnemyData` â€” ROM line 7911; C owner/evidence pending
-  - [ ] `PositionEnemyObj` â€” ROM line 7967; C owner/evidence pending
-  - [ ] `CheckpointEnemyID` â€” ROM line 8080; C owner/evidence pending
-  - [ ] `EnemiesAndLoopsCore` â€” ROM line 7788; C owner/evidence pending
-  - [x] `RunNormalEnemies` â€” ROM line 9092; [S8 caller proof](../../history/M2-T39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child interiors remain separate.
+  - [ ] `ProcessEnemyData` — ROM line 7911; C owner/evidence pending
+  - [ ] `PositionEnemyObj` — ROM line 7967; C owner/evidence pending
+  - [ ] `CheckpointEnemyID` — ROM line 8080; C owner/evidence pending
+  - [ ] `EnemiesAndLoopsCore` — ROM line 7788; C owner/evidence pending
+  - [x] `RunNormalEnemies` — ROM line 9092; [S8 caller proof](../../history/M2-T39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof); child interiors remain separate.
 - [ ] **Blocks, coins, power-ups, vines and miscellaneous objects**
-  - [ ] `BlockObjMT_Updater` â€” ROM line 7527; C owner/evidence pending
-  - [ ] `BumpBlock` â€” ROM line 7332; C owner/evidence pending
-  - [x] `CoinBlock` â€” ROM line 6988; [S2 hammer proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof)
-  - [x] `SetupPowerUp` â€” ROM line 7150; [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof)
-  - [ ] `PowerUpObjHandler` â€” ROM line 7184; C owner/evidence pending
-  - [x] `VineObjectHandler` â€” ROM line 6730; [S1 vine actor proof](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof)
+  - [ ] `BlockObjMT_Updater` — ROM line 7527; C owner/evidence pending
+  - [ ] `BumpBlock` — ROM line 7332; C owner/evidence pending
+  - [x] `CoinBlock` — ROM line 6988; [S2 hammer proof](../../history/M2-T36-misc-object-chains.md#s3-original-coin-allocation-proof)
+  - [x] `SetupPowerUp` — ROM line 7150; [S6 power-up initialization proof](../../history/M2-T36-misc-object-chains.md#s6-original-power-up-initialization-proof)
+  - [ ] `PowerUpObjHandler` — ROM line 7184; C owner/evidence pending
+  - [x] `VineObjectHandler` — ROM line 6730; [S1 vine actor proof](../../history/M2-T36-misc-object-chains.md#s1-original-vine-actor-proof)
 - [ ] **Fireballs, projectile collision and special hazards**
-  - [x] `FireballObjCore` â€” ROM line 6352; [S2 core proof](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof)
-  - [ ] `FireballBGCollision` â€” ROM line 12751; C owner/evidence pending
-  - [ ] `FireballEnemyCollision` â€” ROM line 11085; C owner/evidence pending
-  - [x] `ProcFireball_Bubble` â€” ROM line 6298; [S1 dispatcher proof](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof)
+  - [x] `FireballObjCore` — ROM line 6352; [S2 core proof](../../history/M2-T34-fireball-dispatch-core.md#s2-original-core-proof)
+  - [ ] `FireballBGCollision` — ROM line 12751; C owner/evidence pending
+  - [ ] `FireballEnemyCollision` — ROM line 11085; C owner/evidence pending
+  - [x] `ProcFireball_Bubble` — ROM line 6298; [S1 dispatcher proof](../../history/M2-T34-fireball-dispatch-core.md#s1-original-dispatch-proof)
 - [ ] **Object graphics, OAM construction and offscreen bits**
-  - [ ] `PlayerGfxHandler` â€” ROM line 14460; C owner/evidence pending
-  - [ ] `EnemyGraphicsEngine` â€” label lookup pending
-  - [ ] `MiscObjOffset` â€” label lookup pending
-  - [ ] `GetEnemyOffscreenBits` â€” ROM line 14879; C owner/evidence pending
-  - [ ] `GetFireballOffscreenBits` â€” ROM line 14851; C owner/evidence pending
+  - [ ] `PlayerGfxHandler` — ROM line 14460; C owner/evidence pending
+  - [ ] `EnemyGraphicsEngine` — label lookup pending
+  - [ ] `MiscObjOffset` — label lookup pending
+  - [ ] `GetEnemyOffscreenBits` — ROM line 14879; C owner/evidence pending
+  - [ ] `GetFireballOffscreenBits` — ROM line 14851; C owner/evidence pending
 - [ ] **Audio engine, music and sound effects**
-  - [ ] `SoundEngine` â€” ROM line 15070; C owner/evidence pending
-  - [ ] `Square1SfxHandler` â€” ROM line 15256; C owner/evidence pending
-  - [ ] `Square2SfxHandler` â€” ROM line 15455; C owner/evidence pending
-  - [ ] `NoiseSfxHandler` â€” ROM line 15600; C owner/evidence pending
-  - [ ] `MusicHandler` â€” ROM line 15635; C owner/evidence pending
+  - [ ] `SoundEngine` — ROM line 15070; C owner/evidence pending
+  - [ ] `Square1SfxHandler` — ROM line 15256; C owner/evidence pending
+  - [ ] `Square2SfxHandler` — ROM line 15455; C owner/evidence pending
+  - [ ] `NoiseSfxHandler` — ROM line 15600; C owner/evidence pending
+  - [ ] `MusicHandler` — ROM line 15635; C owner/evidence pending
 - [ ] **Shared arithmetic, RNG, VRAM and utility primitives**
-  - [ ] `InitializeMemory` â€” ROM line 2795; C owner/evidence pending
-  - [ ] `GetPlayerOffscreenBits` â€” ROM line 14846; C owner/evidence pending
-  - [ ] `RelativePlayerPosition` â€” ROM line 14786; C owner/evidence pending
-  - [ ] `MoveObjectHorizontally` â€” ROM line 7566; C owner/evidence pending
-  - [ ] `ImposeGravity` â€” ROM line 7729; C owner/evidence pending
+  - [ ] `InitializeMemory` — ROM line 2795; C owner/evidence pending
+  - [ ] `GetPlayerOffscreenBits` — ROM line 14846; C owner/evidence pending
+  - [ ] `RelativePlayerPosition` — ROM line 14786; C owner/evidence pending
+  - [ ] `MoveObjectHorizontally` — ROM line 7566; C owner/evidence pending
+  - [ ] `ImposeGravity` — ROM line 7729; C owner/evidence pending
 
 ## Mandatory conformance gates
 
@@ -134,7 +134,7 @@ The labels and branches behind every line remain open until individually bound b
 - [ ] x86 and x64 native traces are byte-identical for every approved route.
 - [ ] DOS backend consumes the same game frame contract; its adapter has no game-state write.
 
-## Complete ROM label index â€” unclassified items remain open
+## Complete ROM label index — unclassified items remain open
 
 | ROM source line | label | owner | status | evidence |
 |---:|---|---|---|---|
