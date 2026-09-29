@@ -1647,18 +1647,18 @@ The labels and branches behind every line remain open until individually bound b
 | 12624 | `SdeCLoop` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12632 | `NextSdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12636 | `ExESdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12638 | `ChkForBump_HammerBroJ` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforbump_hammerbroj) |
-| 12646 | `NoBump` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nobump) |
-| 12654 | `InvEnemyDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invenemydir) |
-| 12660 | `PlayerEnemyDiff` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playerenemydiff) |
-| 12671 | `EnemyLanding` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-enemylanding) |
+| 12638 | `ChkForBump_HammerBroJ` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12646 | `NoBump` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12654 | `InvEnemyDir` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12660 | `PlayerEnemyDiff` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12671 | `EnemyLanding` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
 | 12679 | `SubtEnemyYPos` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12686 | `EnemyJump` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12701 | `DoSide` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12705 | `HammerBroBGColl` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-hammerbrobgcoll) |
-| 12711 | `KillEnemyAboveBlock` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killenemyaboveblock) |
-| 12717 | `UnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-underhammerbro) |
-| 12726 | `NoUnderHammerBro` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nounderhammerbro) |
+| 12705 | `HammerBroBGColl` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12711 | `KillEnemyAboveBlock` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12717 | `UnderHammerBro` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
+| 12726 | `NoUnderHammerBro` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
 | 12732 | `ChkUnderEnemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkunderenemy) |
 | 12737 | `ChkForNonSolids` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfornonsolids) |
 | 12747 | `NSFnd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nsfnd) |

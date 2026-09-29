@@ -1,7 +1,7 @@
 #include "game/enemy/distance.h"
 
-/* ROM $E143 PlayerEnemyDiff dependency boundary. Its node retains its
- * later source-order owner; introducing this seam does not certify it. */
+/* ROM $E143 PlayerEnemyDiff.  Preserve the low-byte subtraction borrow for
+ * the page subtraction and retain the low result in source scratch $00. */
 mysmb_u8 mysmb_enemy_player_difference(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 borrow;

@@ -272,6 +272,22 @@ Expected-new subset: `ChkForBump_HammerBroJ`, `NoBump`, `InvEnemyDir`, `PlayerEn
 | 12717 | `UnderHammerBro` | open | M2 T17 S6 |
 | 12726 | `NoUnderHammerBro` | open | M2 T17 S6 |
 
+#### S10 closure: enemy side, jump and Hammer terrain
+
+All nine expected nodes close: `ChkForBump_HammerBroJ`, `NoBump`,
+`InvEnemyDir`, `PlayerEnemyDiff`, `EnemyLanding`, `HammerBroBGColl`,
+`KillEnemyAboveBlock`, `UnderHammerBro`, and `NoUnderHammerBro`.
+The shared C path preserves the original slot-five sound gate, Hammer Bro
+`SetHJ` tail, low-byte subtraction borrow, landing alignment, `$23` defeat
+tail, and the nonzero-tile Hammer terrain branches. Controlled original child
+records match 759/759 `PlayerEnemyDiff` entries and 1/1 Hammer terrain entry.
+The focused chain, landing and platform-purity CTests pass; strict C90 x86/x64
+builds self-test and the OpenNT large-model DOS link produces an MZ image.
+Refreshed artifact SHA-256 values are `b542801ddde07c0f840c93590bdf795f30e188e41f11e90e76ab96d7839672eb`
+(DOS16), `e0941f0fdddf41aba6cb74cbb37e8254bc574ebf41be57334b5eee02d0ea33d7`
+(Win32 x86), and `3fd5d4f73cb92c1e4824b46864b1182a47d80e2d1062b62607fb6dd706e20f76`
+(Win32 x64). Completion moves 1,477/1,992 to 1,486/1,992.
+
 ### S11: Enemy ground query and pass-through tiles
 
 Source lines12732-12750; entry `ChkUnderEnemy / ChkForNonSolids`; final label `NSFnd`. Shared owner: `src/game/enemy/background.c`.

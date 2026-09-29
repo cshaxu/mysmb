@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1477 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1486 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 429 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 420 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1477 / 1,992 (74.15%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1486 / 1,992 (74.60%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T43 S8 enemy terrain dispatch/stun](../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof)
 completes twelve nodes and retains six dispatch exits through 1,642 observed,
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1477)
+## Completed matches (1486)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1506,9 +1506,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12624 | `SdeCLoop` |
 | 12632 | `NextSdeC` |
 | 12636 | `ExESdeC` |
+| 12638 | `ChkForBump_HammerBroJ` |
+| 12646 | `NoBump` |
+| 12654 | `InvEnemyDir` |
+| 12660 | `PlayerEnemyDiff` |
+| 12671 | `EnemyLanding` |
 | 12679 | `SubtEnemyYPos` |
 | 12686 | `EnemyJump` |
 | 12701 | `DoSide` |
+| 12705 | `HammerBroBGColl` |
+| 12711 | `KillEnemyAboveBlock` |
+| 12717 | `UnderHammerBro` |
+| 12726 | `NoUnderHammerBro` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

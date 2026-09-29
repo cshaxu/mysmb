@@ -119,9 +119,12 @@ try {
     $objectLine = ((@($entryObject, 'mysmb-stack.obj') + $libraries) -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
-    # The default LINK 5.60 segment table overflows as shared translation
-    # units are split. Increase linker capacity; keep /AL and DOS layout.
-    & $Linker /nologo /NOE /SEGMENTS:1024 '@mysmb-dos16.rsp'
+    # LINK 5.60 reads response-file fields through its interactive input
+    # parser.  Redirecting stdin to NUL supplies the required terminal EOF;
+    # otherwise the linker waits after the final library name.  Its segment
+    # table also needs room for the fully split shared core.
+    $linkCommand = '"' + $Linker + '" /nologo /NOE /SEGMENTS:2048 @mysmb-dos16.rsp < NUL'
+    & cmd.exe /d /c $linkCommand
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 finally {

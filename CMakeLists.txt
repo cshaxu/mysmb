@@ -1495,3 +1495,9 @@ add_executable(mysmb_enemy_landing_smoke test/enemy_landing_smoke.c
     src/game/enemy/background.c)
 target_include_directories(mysmb_enemy_landing_smoke PRIVATE src)
 add_test(NAME mysmb.enemy-landing-grounded-chain COMMAND mysmb_enemy_landing_smoke)
+add_executable(mysmb_enemy_side_jump_hammer_smoke test/enemy_side_jump_hammer_smoke.c)
+target_link_libraries(mysmb_enemy_side_jump_hammer_smoke PRIVATE mysmb_game)
+add_test(NAME mysmb.enemy-side-jump-hammer-chain COMMAND mysmb_enemy_side_jump_hammer_smoke)
+add_executable(mysmb_enemy_side_jump_hammer_actual_check
+    test/enemy_side_jump_hammer_actual_check.c)
+target_link_libraries(mysmb_enemy_side_jump_hammer_actual_check PRIVATE mysmb_game)

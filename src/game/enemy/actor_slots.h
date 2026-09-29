@@ -11,6 +11,9 @@ void mysmb_objects_step_swimming_cheep_cheeps_slot(struct mysmb_game *game, mysm
 void mysmb_objects_step_podoboos_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_bloobers_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_hammer_bros_slot(struct mysmb_game *game, mysmb_u8 slot);
+/* ROM SetHJ tail.  Callers set RAM $00 and select the source Y speed. */
+void mysmb_enemy_hammer_bro_set_jump(struct mysmb_game *game, mysmb_u8 slot,
+                                     mysmb_u8 vertical_speed);
 void mysmb_objects_step_red_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_flying_green_paratroopas_slot(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_objects_step_flying_cheep_cheeps_slot(struct mysmb_game *game, mysmb_u8 slot);

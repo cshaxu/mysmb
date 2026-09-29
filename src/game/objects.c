@@ -298,9 +298,15 @@ mysmb_u8 mysmb_objects_check_normal_enemy_collision(struct mysmb_game *game,
  * admitted background entry shares them with the jumping-enemy route. */
 void mysmb_objects_bump_enemy(struct mysmb_game *game, mysmb_u8 slot)
 {
-    /* ChkForBump_HammerBroJ -> RXSpd for this ordinary route. */
+    /* ROM ChkForBump_HammerBroJ.  Slot five suppresses bump SFX, while an
+     * actual Hammer Bro takes SetHJ instead of the ordinary RXSpd tail. */
     if (slot != 5U && (game->ram[MYSMB_ENEMY_STATE + slot] & 0x80U) != 0U) {
         game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+    }
+    if (game->ram[MYSMB_ENEMY_ID + slot] == 5U) {
+        game->ram[0U] = 0U;
+        mysmb_enemy_hammer_bro_set_jump(game, slot, 0xfaU);
+        return;
     }
     game->ram[MYSMB_ENEMY_X_SPEED + slot] =
         (mysmb_u8)(0U - game->ram[MYSMB_ENEMY_X_SPEED + slot]);
@@ -574,18 +580,13 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
         mysmb_objects_step_bowser_flames_slot(game, slot);
 }
 
-/* Legacy KillEnemyAboveBlock dependency. This existing approximation is
- * exposed without changing its body; S10 owns its original child semantics. */
+/* ROM $E164 KillEnemyAboveBlock: ShellOrBlockDefeat precedes the upward
+ * velocity write.  This stays shared game logic for every target. */
 void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot)
 {
-    if (game->ram[MYSMB_ENEMY_ID + enemy_slot] == 13U) game->ram[MYSMB_ENEMY_Y + enemy_slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + enemy_slot] + 0x18U);
-    game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfdU;
-    game->ram[MYSMB_ENEMY_Y_DUMMY + enemy_slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + enemy_slot] = 0U;
-    game->ram[MYSMB_ENEMY_STATE + enemy_slot] =
-        (mysmb_u8)((game->ram[MYSMB_ENEMY_STATE + enemy_slot] & 0x1fU) | 0x20U);
+    mysmb_world_shell_or_block_defeat(game, enemy_slot);
+    game->ram[MYSMB_ENEMY_Y_SPEED + enemy_slot] = 0xfcU;
 }
 
 /* The admitted background buffer stores these pass-through metatiles as in
@@ -608,17 +609,21 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
         game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
     tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
                                            &terrain) != 0U ? terrain.metatile : 0U;
-    if (mysmb_objects_is_solid_terrain(tile) == 0U) {
+    if (tile == 0U) {
         game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
         return;
     }
-    if (game->ram[0x078aU + slot] != 0U) return;
+    if (tile == 0x23U) {
+        mysmb_objects_kill_enemy_above_block(game, slot);
+        return;
+    }
+    if (game->ram[0x078aU + slot] != 0U) {
+        game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
+        return;
+    }
     game->ram[MYSMB_ENEMY_STATE + slot] &= 0x88U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
-    game->ram[MYSMB_ENEMY_Y + slot] =
-        (mysmb_u8)((game->ram[MYSMB_ENEMY_Y + slot] & 0xf0U) | 8U);
+    mysmb_world_land_enemy(game, slot);
+    mysmb_objects_check_enemy_side(game, slot);
 }
 
 /* Existing GetMiscBoundBox child seam. Screen-edge clipping remains an

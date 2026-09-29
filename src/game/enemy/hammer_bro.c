@@ -6,11 +6,24 @@
 /* ROM $C9CE HammerThrowTmrData, $CA10 HammerBroJumpLData and
  * $C9D8-$CA76 ProcHammerBro through SetShim. Original fallthroughs share
  * the normal/defeated movement owners rather than copying their bodies. */
+void mysmb_enemy_hammer_bro_set_jump(struct mysmb_game *game, mysmb_u8 slot,
+                                     mysmb_u8 vertical_speed)
+{
+    static const mysmb_u8 jump_lengths[2] = {0x20U, 0x37U};
+    mysmb_u8 index;
+
+    game->ram[0x00a0U + slot] = vertical_speed;
+    game->ram[0x001eU + slot] |= 1U;
+    index = (mysmb_u8)(game->ram[0U] & game->ram[0x07a9U + slot]);
+    if (game->ram[0x06ccU] == 0U) index = 0U;
+    game->ram[0x078aU + slot] = jump_lengths[index];
+    game->ram[0x003cU + slot] = (mysmb_u8)(game->ram[0x07a8U + slot] | 0xc0U);
+}
+
 void mysmb_objects_step_hammer_bros_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 throw_timers[2] = {0x30U, 0x1cU};
-    static const mysmb_u8 jump_lengths[2] = {0x20U, 0x37U};
-    mysmb_u8 speed, index, direction;
+    mysmb_u8 speed, direction;
 
     if ((game->ram[0x001eU + slot] & 0x20U) != 0U) {
         mysmb_enemy_move_defeated(game, slot);
@@ -40,12 +53,7 @@ void mysmb_objects_step_hammer_bros_slot(struct mysmb_game *game, mysmb_u8 slot)
                 if ((game->ram[0x07a8U + slot] & 1U) == 0U) speed = 0xfaU;
             }
         }
-        game->ram[0x00a0U + slot] = speed;
-        game->ram[0x001eU + slot] |= 1U;
-        index = (mysmb_u8)(game->ram[0U] & game->ram[0x07a9U + slot]);
-        if (game->ram[0x06ccU] == 0U) index = 0U;
-        game->ram[0x078aU + slot] = jump_lengths[index];
-        game->ram[0x003cU + slot] = (mysmb_u8)(game->ram[0x07a8U + slot] | 0xc0U);
+        mysmb_enemy_hammer_bro_set_jump(game, slot, speed);
     }
 move:
     game->ram[0x0058U + slot] = (game->ram[9U] & 0x40U) != 0U ? 0xfcU : 4U;

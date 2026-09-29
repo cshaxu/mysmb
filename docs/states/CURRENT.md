@@ -2,27 +2,27 @@
 
 ## Current Work
 
-**M2 T43 S9 is closed at 1,477/1,992:14 scoped,14 ROM-match complete.**
+**M2 T43 S10 is active at 1,477/1,992:9 scoped,9 expected new, maximum1,486.**
 T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
-## M2 T43 S9 Packet
+## M2 T43 S10 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S9, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate after S8 closure; accepted transfer229. |
-| Objective | LandEnemyProperly, SChkA, ChkLandedEnemyState, SetForStn, ExSteChk, ProcEnemyDirection, InvtD, CNwCDir, LandEnemyInitState, NMovShellFallBit, ChkForRedKoopa, Chk2MSBSt, GetSteFromD and SetD6Ste. |
-| Non-goals | No unadmitted side/jump/hammer or ground-query algorithm repair; no platform gameplay. |
-| Reference Baseline | 1,463/1,992; scope14/expected14, maximum1,477; S8 caller/actual child split retained. |
-| Candidate Proposal | [S9 landing chain](../proposals/m2/t43-terrain-and-bounding-boxes.md#s9-enemy-landing-and-grounded-state). |
-| Files And ABI Surface | Shared enemy/background.c and object landing child seam, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S10, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer230. |
+| Objective | ChkForBump_HammerBroJ, NoBump, InvtD, PlayerEnemyDiff, EnemyLanding, HammerBroBGColl, KillEnemyAboveBlock, UnderHammerBro and NoUnderHammerBro. |
+| Non-goals | No recertification of existing side/jump leaves, no ground-query repair and no platform gameplay. |
+| Reference Baseline | 1,477/1,992; scope9/expected9, maximum1,486; retained S31 side/jump leaves stay dependencies. |
+| Candidate Proposal | [S10 side/jump/hammer chain](../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-enemy-side-jump-and-hammer-terrain). |
+| Files And ABI Surface | Shared enemy/background.c and object child seams, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original landing-state transitions, state-table binding, red-koopa edge and branch/write order; separate native operational proof. |
-| Expected Markers | One shared landing-state owner with exact S8 parent handoff and explicit S10/S11 successors. |
-| Asset Needs | Owner-local nonredistributable ROM/listing; at most2,048 new routes/100 MB/20-second deadlines; ignored build containment. Three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements |14 named dispositions, dual proof, retained caller/actual results and artifact hashes. |
+| Verification | Original bump/distance/landing/hammer branch and RAM-write order; separate native operational proof. |
+| Expected Markers | One shared side/jump/hammer owner with explicit S9 and S11 boundaries. |
+| Asset Needs | Owner-local nonredistributable ROM/listing; bounded records below ignored build. Three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements |9 named dispositions, dual proof, retained dependency results and artifact hashes. |
 | Stop Conditions | Forced original CPU path, concealed descendant mismatch, unadmitted algorithm rewrite or platform gameplay. |
-| Exit Criteria |14 newly proved nodes, both proof tracks and three artifacts. |
+| Exit Criteria |9 newly proved nodes, both proof tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
 | Similar-Issue Sweep | All landing callers, state-table users, red-koopa edges, nibble windows, direction transitions and duplicate owners. |
 
