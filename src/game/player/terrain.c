@@ -134,7 +134,7 @@ mysmb_u8 mysmb_player_check_feet(struct mysmb_game *game)
     }
     /* ChkFootMTile has one shared decision path, regardless of selected foot.
      * Probe metadata is from the last (right) call, as in the original RAM. */
-    if (mysmb_world_is_climbable(tile) != 0U ||
+    if (mysmb_world_is_climbable(game, tile) != 0U ||
         game->ram[MYSMB_PLAYER_Y_SPEED] >= 0x80U) return 0U;
     if (tile == 0xc5U) {
         mysmb_player_handle_axe_metatile(game, right.block_address_low,
@@ -172,7 +172,7 @@ static mysmb_u8 mysmb_player_handle_side_metatile(
     if (mysmb_player_invisible_metatile(terrain->metatile) != 0U) {
         return 1U;
     }
-    if (mysmb_world_is_climbable(terrain->metatile) != 0U) {
+    if (mysmb_world_is_climbable(game, terrain->metatile) != 0U) {
         (void)mysmb_player_handle_climbing(game, terrain);
         return 1U;
     }
@@ -234,7 +234,7 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
             mysmb_world_query_player_probe(game, &top, MYSMB_TERRAIN_SIDE,
                                      &terrain) != 0U && terrain.metatile != 0U &&
             terrain.metatile != 0x1cU && terrain.metatile != 0x6bU &&
-            mysmb_world_is_climbable(terrain.metatile) == 0U) {
+            mysmb_world_is_climbable(game, terrain.metatile) == 0U) {
             return mysmb_player_handle_side_metatile(game, &terrain, game->ram[0U]);
         }
         if (game->ram[MYSMB_PLAYER_Y] < 8U ||
@@ -253,10 +253,8 @@ mysmb_u8 mysmb_player_check_sides(struct mysmb_game *game)
  * blocks hand their original collision coordinates to the object owner. */
 mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
 {
-    static const mysmb_u8 solid_upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
     struct mysmb_player_terrain terrain;
     mysmb_u8 extent_index;
-    mysmb_u8 group;
     mysmb_u8 base;
 
     extent_index = game->ram[MYSMB_PLAYER_SIZE];
@@ -279,8 +277,7 @@ mysmb_u8 mysmb_player_check_head(struct mysmb_game *game)
         terrain.contact_low_nibble < 4U) {
         return 0U;
     }
-    group = (mysmb_u8)(terrain.metatile >> 6U);
-    if (terrain.metatile >= solid_upper[group]) {
+    if (mysmb_world_is_solid(game, terrain.metatile) != 0U) {
         /* SolidOrClimb suppresses only the climbing metatile bump sound. */
         if (terrain.metatile != 0x26U) {
             game->ram[MYSMB_SQUARE1_SOUND_QUEUE] = 0x02U;

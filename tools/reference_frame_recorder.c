@@ -102,6 +102,7 @@
 #include "../test/climbing_fixture.h"
 #include "../test/pipe_entry_fixture.h"
 #include "../test/impede_fixture.h"
+#include "reference_metatile_observer.h"
 #include "../test/platform_collision_fixture.h"
 #include "../test/enemy_pair_fixture.h"
 #include "../test/player_enemy_contact_fixture.h"
@@ -1003,6 +1004,7 @@ int main(int argument_count, char **arguments)
     const char *script;
     const char *coverage_path;
     const char *area_reads_path;
+    const char *metatile_path = NULL;
     const char *movement_snapshot_path;
     unsigned char movement_snapshots[4096];
     unsigned int movement_snapshot_phase;
@@ -1067,6 +1069,11 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--metatile-calls=", 17u) == 0) {
+            if (metatile_path != NULL) return 64;
+            metatile_path = arguments[recorded] + 17u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--impede-snapshot=", 18u) == 0) {
             if (movement_snapshot_path != NULL) return 64;
             movement_snapshot_path = arguments[recorded] + 18u;
@@ -3505,6 +3512,10 @@ int main(int argument_count, char **arguments)
             driver->machine->x == mysmb_platform_position_slot((unsigned int)(t26_fixture - 23372u)))
             mysmb_platform_position_inputs(driver->machine->ram,
                 (unsigned int)(t26_fixture - 23372u));
+        if (metatile_path != NULL && elapsed >= warmup_frames &&
+            !metatile_observe(driver->machine->ram, before_pc,
+                driver->machine->a, driver->machine->x, driver->machine->y,
+                driver->machine->p, driver->machine->s)) return 69;
         /* T32 observes the real control caller and immediate children.
          * Return PCs/depths come only from the original hardware stack. */
         if ((background_snapshot >= 4u && background_snapshot <= 79u) && movement_snapshot_path != NULL &&
@@ -4150,6 +4161,7 @@ int main(int argument_count, char **arguments)
     fclose(output);
     (void)core_driver_destroy(driver);
     if (recorded != requested_frames) return 68;
+    if (metatile_path != NULL && !metatile_write(metatile_path)) return 69;
     if (movement_snapshot_path != NULL) {
         FILE *snapshot;
         int ok;

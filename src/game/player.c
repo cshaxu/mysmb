@@ -498,18 +498,6 @@ void mysmb_player_checkpoint(const struct mysmb_game *game,
     checkpoint->screen_left_x = game->ram[MYSMB_SCREEN_LEFT_X];
 }
 
-/* ROM CheckForCoinMTiles -> HandleCoinMetatile.  Coins emitted from bumped
- * blocks use their own JumpCoin sound producer; this helper is only for the
- * player head, foot, and side collision paths that reached CheckForCoinMTiles. */
-/* Existing coin predicate and sound extracted to their source call boundary.
- * Coin/axe effects and classifier proof remain T43 S2/S7-owned. */
-mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
-{
-    if (tile != 0xc2U && tile != 0xc3U) return 0U;
-    game->ram[MYSMB_SQUARE2_SOUND_QUEUE] = 1U;
-    return 1U;
-}
-
 /* Translation of ROM $9131-$9196 Entrance_GameTimerSetup. */
 void mysmb_player_initialize_entrance(struct mysmb_game *game)
 {

@@ -12,18 +12,18 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1444 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1451 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 462 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 455 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,444 / 1,992 (72.49%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1,451 / 1,992 (72.84%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S6 impede](../proposals/m2/t43-terrain-and-bounding-boxes.md#s6-impede-proof)
-completes five nodes with 1,024 actual original matches per width. All 33
-instructions and eight branch directions execute. Scratch high adder and
-speed80 behavior are restored; all 242 retained impede calls match.
-Terrain/platform caller matches remain intact; other M2 gaps remain open.
+Latest task review: [T43 S7 classifiers](../proposals/m2/t43-terrain-and-bounding-boxes.md#s7-metatile-classification-proof)
+completes seven nodes and retains ExEBG through actual classifier captures
+in 1,034 ordinary original routes. All 23 instructions and four branch
+outcomes execute. Tables and predicates have one shared owner; terrain
+caller and actual-root baselines remain intact. Other M2 gaps remain open.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1444)
+## Completed matches (1451)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1462,6 +1462,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12358 | `NXSpd` |
 | 12365 | `PlatF` |
 | 12372 | `ExIPM` |
+| 12380 | `SolidMTileUpperExt` |
+| 12383 | `CheckForSolidMTiles` |
+| 12388 | `ClimbMTileUpperExt` |
+| 12391 | `CheckForClimbMTiles` |
+| 12396 | `CheckForCoinMTiles` |
+| 12403 | `CoinSd` |
+| 12407 | `GetMTileAttrib` |
 | 12415 | `ExEBG` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |

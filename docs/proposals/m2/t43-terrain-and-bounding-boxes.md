@@ -1236,3 +1236,134 @@ committed.
 | mysmb16.exe | 257307 | b61a7f6cb1cb828e0f4bde9e7a39439b63c404b6a75873365b882ece9a862cea |
 | mysmb32.exe | 359322 | 23db30f3998571eda5be64c11e180aee58f61288e0773ce908f824d31d16a860 |
 | mysmb64.exe | 367336 | 7eeefaa17b728ce01a8f4890f51803e4cc80eb42c41c6d29db5c8d797b846eb8 |
+
+## S7 admission
+
+Continuation after e0e816c. Transfers225/226 receive SolidMTileUpperExt,
+CheckForSolidMTiles, ClimbMTileUpperExt, CheckForClimbMTiles,
+CheckForCoinMTiles, CoinSd, GetMTileAttrib and ExEBG. The first seven are open
+and expected new; ExEBG is retained complete. Baseline 1,444/1,992, maximum
+1,451. Scope8/expected7; one common world/metatiles.c owner replaces the
+scattered classifier bodies and the head caller's duplicate solid table.
+S6 impediment precedes it; S8 enemy terrain dispatch follows.
+
+Logic proof binds the two four-byte original threshold tables, metatile group
+extraction, comparison carry, unchanged metatile inputs and coin sound write.
+The existing terrain caller uses carry and preserves the metatile argument;
+no CPU interpreter or platform game logic is introduced. Parent algorithms
+retain their owners; only the classifier call boundary changes.
+
+Use the retained 1,034 ordinary NMI terrain fixtures with passive classifier
+entry/return capture. Only existing RAM fixture inputs are controlled; no
+CPU/register, ROM, PC, stack or output patch. Explicitly audit inputs excluded
+by the original parent gates rather than forcing an unreachable call. Capture
+full RAM and consumed return flags; separately run real native descendants.
+Owner-local ROM/listing are nonredistributable. Budget1,034 routes/100 MB,
+20-second process deadlines and ignored build/m2-t43-s7 containment;
+coordinator owns cleanup after regression use.
+
+Operational proof: mysmb.metatile-classification-chain, every byte against
+all classifier predicates and table groups, retained terrain caller/actual
+baselines, affected native tests, strict C90 x86/x64, DOS16 link, platform
+purity and three owner-authorized EXEs. Review all classifier callers,
+duplicate threshold owners, table binding, group index and coin sound writes.
+
+## S7 metatile classification proof
+
+S7 P1 completes all seven expected nodes and retains ExEBG: 1,444 ->
+1,451 / 1,992. All eight scoped dispositions are recorded below. No member
+is deferred or transferred at closure; other M2 gaps retain their receivers.
+Admission passed scope8/expected7, maximum1,451 with transfers225/226.
+
+| Node | Original address | Logic and disposition |
+| --- | --- | --- |
+| SolidMTileUpperExt | DF8B | All four threshold bytes bind original DF8B through DF8E and are selected by the metatile high-bit group. ROM-match complete. |
+| CheckForSolidMTiles | DF8F | Call the common group extractor, compare the unchanged metatile against the selected solid threshold, return comparison carry without RAM writes. ROM-match complete. |
+| ClimbMTileUpperExt | DF96 | All four threshold bytes bind original DF96 through DF99 and retain group order. ROM-match complete. |
+| CheckForClimbMTiles | DF9A | Call the common group extractor, compare the unchanged metatile against the climb threshold and return carry without RAM writes. ROM-match complete. |
+| CheckForCoinMTiles | DFA1 | Compare C2 then C3; either match takes CoinSd, otherwise clear carry and preserve RAM. ROM-match complete. |
+| CoinSd | DFAB | Load coin sound01 and store RAMFE; successful comparison carry remains set. ROM-match complete. |
+| GetMTileAttrib | DFB0 | Preserve the metatile while extracting bits7-6 to group0-3; equivalent to the original ASL/ROL/ROL sequence. ROM-match complete. |
+| ExEBG | DFB8 | Retained common RTS; the classifier register/RAM contract and existing enemy return ownership are preserved. Retained ROM-match complete. |
+
+### Original logic track
+
+The classifier code has 23 instructions and two conditional branches; all
+instructions and all four branch directions execute. Both four-byte tables
+are read in all groups. The existing 1,034 ordinary NMI terrain routes are
+reused with a passive observer at DF8F, DF9A, DFA1 and DFB0. Entry/return
+records use the real stack-derived return PC and depth, including the nested
+GetMTileAttrib call. No CPU/register, ROM, PC, stack or output is modified.
+Observed and observer-free original frames match in every route.
+
+The routes contain 5,050 captured classifier calls; every call matches
+on each native width. Raw records total 20,773,872 bytes, below the
+100 MB bound; each process has a 20-second deadline.
+
+| Entry | Captured calls per width | Input bytes absent from these original routes |
+| --- | ---: | --- |
+| DF8F | 257 | 00, C2, C3 |
+| DF9A | 1407 | 00 |
+| DFA1 | 1722 | None |
+| DFB0 | 1664 | 00 |
+
+Original parent gates determine the absent inputs; zero metatiles bypass
+solid/climb checks, and head coins are consumed before the solid call.
+The exhaustive native byte tests separately cover the complete predicate
+domains. No unreachable original call is forced to inflate coverage.
+
+Comparisons use the actual native predicate carry and group extractor. They
+also check original A/X/Y preservation and the N/Z/C contract against the
+source operation; native callers retain arguments rather than storing CPU
+registers. Full RAM is compared except exactly the two hardware return-address
+bytes written by JSR GetMTileAttrib in solid/climb records. Coin and direct
+attribute records compare all 2,048 RAM bytes. No child result is replayed.
+Only CoinSd writes game RAM (FE); there are no PPU/CIRAM/palette/OAM-register
+or audio-register accesses in this chain. The sound queue store is compared.
+
+Reproduce with reference_frame_recorder fixture=t43-player-terrain cases0-1033,
+metatile-calls and pc-coverage, then metatile_classification_snapshot_check
+bound to the owner-local original PRG. Retained terrain caller comparisons
+remain separately distinguished from real native descendant execution.
+
+### Operational track and review
+
+One world/metatiles.c owns the solid/climb tables, group extractor and coin
+predicate. The old player.c coin body, world/collision.c climb body and
+player/terrain.c solid table are removed. Classifier call boundaries now use
+the shared owner; parent branch order and side effects are unchanged.
+The native Boolean returns carry, not a replacement collision policy.
+
+The same owner serves DOS16 and Win32 x86/x64. Bound games read original
+threshold addresses; the existing resource-free threshold values are retained
+only at this common owner and verified against the original eight bytes.
+Synthetic rebound tables prove the native classifiers actually read their
+binding. No new copied resource corpus or runtime emulator is introduced.
+
+The similar-issue sweep covers all three terrain climb sites, the head solid
+site, the legacy landing seam and all four terrain coin sites. Group extraction,
+threshold duplicates, table binding, unchanged argument/RAM and coin sound
+writes have explicit dispositions in the table above. The legacy landing
+parent remains unmodified apart from passing game to its classifier and gains
+no conformance credit. Platform files are unchanged and purity passes.
+
+Each width passes 768 native cases: all 256 bytes with resource-free tables,
+original-value bound tables and synthetic bound tables. S1 retains all 1,034
+caller matches and the same 59 actual-root matches per width. Mode, collision,
+player route, friction, hazard and platform tests pass on both widths.
+Bounding-box retains its baseline failure. Selected CTests pass10/11; the
+seven T43 chains, mode, player route and purity pass. Core-smoke still fails
+at source line137 in HEAD and current on both widths. Both legacy failures
+and the unmatched full terrain descendants remain explicit.
+
+All 124 shared units compile as strict C90 on both Win32 widths. Self-tests
+and hidden own-window creation/message probes pass. DOS16 compiles and links
+with the existing OLDNAMES warning; DOS graphical runtime, resource binding
+and physical 486SX performance remain unproved. Three owner-authorized EXEs
+are refreshed. ROM, generated resource sources and raw records remain local.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257595 | a2d61b604734325d41ae89cf0b2962c82010d45c4065cb75d1dabe58f6f9b909 |
+| mysmb32.exe | 360230 | a4de9eae32fb3e7fed9223e019b6dcaa6043e5737a0ac63169325941d5d10e73 |
+| mysmb64.exe | 368276 | 32de22538b8973df01002bbd40527913e782dcd0af479e1944bf9032a5aeac91 |

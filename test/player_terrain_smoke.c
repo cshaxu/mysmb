@@ -35,8 +35,13 @@ void mysmb_objects_collect_coin(struct mysmb_game *g,
     if (low != 15U + probes || row != 63U + probes) ++errors;
     event = 1U;
 }
-mysmb_u8 mysmb_world_is_climbable(mysmb_u8 tile)
-{ return tile == 0x26U ? 1U : 0U; }
+mysmb_u8 mysmb_world_is_climbable(const struct mysmb_game *game, mysmb_u8 tile)
+{ (void)game; return tile == 0x26U ? 1U : 0U; }
+mysmb_u8 mysmb_world_is_solid(const struct mysmb_game *game, mysmb_u8 tile)
+{
+    static const mysmb_u8 upper[4] = { 0x10U, 0x61U, 0x88U, 0xc4U };
+    (void)game; return tile >= upper[tile >> 6U] ? 1U : 0U;
+}
 void mysmb_player_handle_axe_metatile(struct mysmb_game *g,
     mysmb_u8 low, mysmb_u8 row)
 {

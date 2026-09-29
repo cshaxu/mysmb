@@ -95,7 +95,9 @@ void mysmb_world_stun_enemy(struct mysmb_game *game, mysmb_u8 slot,
                             mysmb_u8 source_a);
 
 /* ROM CheckForClimbMTiles and LandPlyr. */
-mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile);
+mysmb_u8 mysmb_world_metatile_attribute(mysmb_u8 metatile);
+mysmb_u8 mysmb_world_is_solid(const struct mysmb_game *game, mysmb_u8 metatile);
+mysmb_u8 mysmb_world_is_climbable(const struct mysmb_game *game, mysmb_u8 metatile);
 mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
                                            mysmb_u8 metatile, mysmb_u8 contact);
 

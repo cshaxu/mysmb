@@ -2,29 +2,38 @@
 
 ## Current Work
 
-**M2 T43 S6 is closed at 1,444/1,992: all five expected nodes complete. S7 is next, not yet admitted.**
+**M2 T43 S7 is closed at 1,451/1,992: seven new matches and ExEBG retained. S8 is next, not yet admitted.**
 T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
-## M2 T43 S6 Packet
+## M2 T43 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S6, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate afterb9bfd6e; accepted transfer-224. |
-| Objective | ImpedePlayerMove, RImpd, NXSpd, PlatF, ExIPM: five open nodes, all expected new. |
-| Non-goals | No parent terrain/platform rewrite or platform gameplay. |
-| Reference Baseline |1,439/1,992;five expected; maximum1,444. S1 impede captures and T42 platform routes are retained. |
-| Candidate Proposal | [S6 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s6-admission). |
-| Files And ABI Surface | Shared impede.c, old player owner, manifests, tests/recorder and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S7, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate after e0e816c; accepted transfers225/226. |
+| Objective | SolidMTileUpperExt, CheckForSolidMTiles, ClimbMTileUpperExt, CheckForClimbMTiles, CheckForCoinMTiles, CoinSd, GetMTileAttrib: seven open expected new; ExEBG retained complete. |
+| Non-goals | No parent terrain/enemy rewrite or platform gameplay. |
+| Reference Baseline | 1,444/1,992; scope8/expected7, maximum1,451; S6 terrain baselines retained. |
+| Candidate Proposal | [S7 admission](../proposals/m2/t43-terrain-and-bounding-boxes.md#s7-admission). |
+| Files And ABI Surface | Shared world/metatiles.c, former bodies and classifier callers, manifests, tests/recorder and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original signed compare, scratch/carry and mask stores; separate native operational proof. |
-| Expected Markers | One source-equivalent impede owner with RAM00 and speed80 behavior restored. |
-| Asset Needs | Owner-local ROM/listing;1,024 routes/50 MB/20-second deadlines; ignored build containment. Authorized three EXEs, DOS link-only. |
-| Reporting Requirements | Five exact dispositions, dual proof, parent regressions and artifact hashes. |
-| Stop Conditions | Unadmitted rewrite, altered original outputs, hidden mismatch or platform gameplay. |
-| Exit Criteria | Five nodes proved or accepted transfers, both verification tracks and three artifacts. |
+| Verification | Threshold binding, original branch/flag/write semantics; separate native operational proof. |
+| Expected Markers | Single classifier owner and explicit native consumed-return contract, retained parent matches. |
+| Asset Needs | Owner-local nonredistributable ROM/listing;1,034 routes/100 MB/20-second deadlines; ignored build containment. Three owner-authorized EXEs; DOS link-only. |
+| Reporting Requirements | Eight exact dispositions, dual proof, retained callers and artifact hashes. |
+| Stop Conditions | Unadmitted parent rewrite, forced CPU path, hidden mismatch or platform gameplay. |
+| Exit Criteria | Seven newly proved nodes and retained ExEBG, both tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | All impede callers, scratch handoff, byte-sign tests, carry/page wrap and duplicate owners. |
+| Similar-Issue Sweep | All classifier callers, duplicate tables, metatile group, carry consumption and coin sound stores. |
+
+## S7 closure
+
+[Classifier proof](../proposals/m2/t43-terrain-and-bounding-boxes.md#s7-metatile-classification-proof)
+closes all seven expected nodes and retains ExEBG using 1,034 original routes.
+All 23 instructions and four branch directions execute; actual captured
+classifier calls match on both widths. A single shared table/predicate owner
+replaces duplicates. Terrain baselines remain intact. Ten CTests pass; legacy
+failures remain explicit. Three EXEs refreshed; DOS remains link-only.
 
 ## S6 closure
 

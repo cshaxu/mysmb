@@ -52,8 +52,10 @@ mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
 { return child(game, 4U, tile); }
 /* GetMTileAttrib changes only registers; this classifier has no RAM effects.
  * The bound original table supplies all four groups, without fixture copies. */
-mysmb_u8 mysmb_world_is_climbable(mysmb_u8 tile)
-{ return tile >= mysmb_local_prg[0x5f96U + (tile >> 6U)] ? 1U : 0U; }
+mysmb_u8 mysmb_world_is_climbable(const struct mysmb_game *game, mysmb_u8 tile)
+{ (void)game; return tile >= mysmb_local_prg[0x5f96U + (tile >> 6U)] ? 1U : 0U; }
+mysmb_u8 mysmb_world_is_solid(const struct mysmb_game *game, mysmb_u8 tile)
+{ (void)game; return tile >= mysmb_local_prg[0x5f8bU + (tile >> 6U)] ? 1U : 0U; }
 static void coordinates(struct mysmb_game *game, mysmb_u8 low, mysmb_u8 row)
 {
     if (low != game->ram[6U] || row != game->ram[2U]) ++failures;

@@ -216,19 +216,11 @@ mysmb_u8 mysmb_world_boxes_collide(const struct mysmb_game *game,
     }
     return 1U;
 }
-/* ROM CheckForClimbMTiles. */
-mysmb_u8 mysmb_world_is_climbable(mysmb_u8 metatile)
-{
-    static const mysmb_u8 upper[4] = { 0x24U, 0x6dU, 0x8aU, 0xc6U };
-
-    return metatile >= upper[(mysmb_u8)(metatile >> 6U)] ? 1U : 0U;
-}
-
 /* ROM CheckForSolidMTiles and LandPlyr. */
 mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
                                            mysmb_u8 metatile, mysmb_u8 contact)
 {
-    if (metatile < 0x10U || mysmb_world_is_climbable(metatile) != 0U ||
+    if (metatile < 0x10U || mysmb_world_is_climbable(game, metatile) != 0U ||
         game->ram[0x009fU] >= 0x80U || contact >= 5U) {
         return 0U;
     }
