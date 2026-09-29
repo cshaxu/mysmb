@@ -3,6 +3,13 @@
 #include "game/enemy/x_counter.h"
 #include "game/enemy/movement.h"
 
+/* $D5FE ChkYPCollision, shared by YMovingPlatform and MoveLargeLiftPlat. */
+static void position_large_rider(struct mysmb_game *g, mysmb_u8 slot)
+{
+    if ((g->ram[0x03a2U + slot] & 0x80U) == 0U)
+        mysmb_platform_position_player_vertical(g, slot);
+}
+
 /* ROM $D5D3-$D606 YMovingPlatform through ExYPl. Gravity returns
  * X=ObjectOffset; the rest path preserves its incoming enemy slot. */
 void mysmb_platform_move_y(struct mysmb_game *g, mysmb_u8 slot)
@@ -12,16 +19,46 @@ void mysmb_platform_move_y(struct mysmb_game *g, mysmb_u8 slot)
         if (g->ram[0x00cfU + slot] < g->ram[0x0401U + slot]) {
             if ((g->ram[0x0009U] & 7U) == 0U)
                 ++g->ram[0x00cfU + slot];
-            if ((g->ram[0x03a2U + slot] & 0x80U) == 0U)
-                mysmb_platform_position_player_vertical(g, slot);
+            position_large_rider(g, slot);
             return;
         }
     }
     mysmb_world_move_platform_vertically(g, slot,
         g->ram[0x00cfU + slot] >= g->ram[0x0058U + slot] ? 1U : 0U);
     slot = g->ram[8U];
-    if ((g->ram[0x03a2U + slot] & 0x80U) == 0U)
-        mysmb_platform_position_player_vertical(g, slot);
+    position_large_rider(g, slot);
+}
+
+/* $D65B-$D670 MoveLiftPlatforms. Only the fractional and low Y bytes
+ * change; TimerControl skips motion but not either caller's rider tail. */
+static void move_lift(struct mysmb_game *g, mysmb_u8 slot)
+{
+    mysmb_u16 sum;
+    if (g->ram[0x0747U] != 0U) return;
+    sum = (mysmb_u16)g->ram[0x0417U + slot] + g->ram[0x0434U + slot];
+    g->ram[0x0417U + slot] = (mysmb_u8)sum;
+    g->ram[0x00cfU + slot] = (mysmb_u8)(g->ram[0x00cfU + slot] +
+        g->ram[0x00a0U + slot] + (sum > 255U ? 1U : 0U));
+}
+
+/* $D64F MoveLargeLiftPlat tails into the shared $D5FE collision gate. */
+void mysmb_platform_move_large_lift(struct mysmb_game *g, mysmb_u8 slot)
+{
+    move_lift(g, slot);
+    position_large_rider(g, slot);
+}
+
+/* $D655 MoveSmallPlatform / $D671 ChkSmallPlatCollision / $D679 ExLiftP.
+ * old_y is native compatibility metadata for the uncertified legacy child;
+ * the source child argument is the nonzero collision counter. */
+void mysmb_platform_move_small(struct mysmb_game *g, mysmb_u8 slot)
+{
+    mysmb_u8 old_y, collision;
+    old_y = g->ram[0x00cfU + slot];
+    move_lift(g, slot);
+    collision = g->ram[0x03a2U + slot];
+    if (collision != 0U)
+        mysmb_platform_legacy_position_small(g, slot, collision, old_y);
 }
 
 /* $D614-$D630 PositionPlayerOnHPlat / PPHSubt / SetPVar / ExXMP.

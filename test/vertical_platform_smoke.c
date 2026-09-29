@@ -5,6 +5,8 @@
 static unsigned int moves,placements,failures,cases;
 static mysmb_u8 expected_slot,expected_up,returned_slot,placement_slot;
 /* Other entries in the shared platform unit must not run in this suite. */
+void mysmb_platform_legacy_position_small(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 c,mysmb_u8 old_y)
+{ (void)g;(void)s;(void)c;(void)old_y;++failures; }
 void mysmb_enemy_x_counter_platform(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 m)
 { (void)g;(void)s;(void)m;++failures; }
 void mysmb_enemy_move_with_x_counters(struct mysmb_game *g,mysmb_u8 s)

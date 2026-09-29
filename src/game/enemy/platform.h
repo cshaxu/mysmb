@@ -9,6 +9,9 @@ void mysmb_platform_move_balance(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_platform_get_offscreen(struct mysmb_game *game, mysmb_u8 slot);
 /* Existing legacy placement body; its source guards/high-byte proof is pending. */
 void mysmb_platform_position_player_vertical(struct mysmb_game *game, mysmb_u8 slot);
+/* Legacy rider delta only; PositionPlayerOnS_Plat is not certified. */
+void mysmb_platform_legacy_position_small(struct mysmb_game *game, mysmb_u8 slot,
+    mysmb_u8 collision, mysmb_u8 old_y);
 void mysmb_platform_move_y(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_platform_move_large_lift(struct mysmb_game *game, mysmb_u8 slot);
 void mysmb_platform_move_small(struct mysmb_game *game, mysmb_u8 slot);

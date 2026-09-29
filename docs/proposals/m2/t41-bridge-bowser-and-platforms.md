@@ -1763,3 +1763,127 @@ Raw trace output: 11798784 bytes, below 40 MB.
 | mysmb16.exe | 258809 | a0478c5759cb7149deb3e60ae3f2e421e36d72199c9c21fb530caf809c76d6bc |
 | mysmb32.exe | 353896 | 17f169e6ff75edb38e412840e18b3f6454db038d9a41e49a927445d4709c7bef |
 | mysmb64.exe | 362447 | 0fc1888fc28c47a2678bfca5d565034e2f8bf26a9d669b7230696e7b3feea593 |
+
+## S12 admission: large and small lifts
+
+S11 closed in 45ab618. Coordinator accepts transfer-208 under the continuing
+M2 mandate. Baseline 1,274/1,992; five open scoped/expected-new nodes, maximum
+1,279. Exact source-ordered labels:
+
+`MoveLargeLiftPlat`, `MoveSmallPlatform`, `MoveLiftPlatforms`, `ChkSmallPlatCollision`, `ExLiftP`.
+
+Original $D64F-$D679 covers the two lift entries, shared movement and small
+collision tail. The large lift reuses ChkYPCollision ($D5FE), already owned
+by S10; retain that proof without duplicate node credit. S11 is predecessor,
+S13 bounds is successor. Shared enemy/platform.c replaces the approximate
+objects.c lift body: timer gates movement only, fractional addition carries
+into low Y without touching high Y, then large signed/small nonzero collision
+gates call their distinct placement children with preserved X.
+
+PositionPlayerOnVPlat remains an existing child. PositionPlayerOnS_Plat is
+still unimplemented; extract only the existing small-rider delta expression
+into an explicitly legacy child seam in objects.c. A native old-Y argument
+preserves that existing behavior; it is not a ROM argument or certified child
+implementation. The actual source collision value A is also passed and must
+be checked by the original caller harness. The recorded-child proof verifies
+input RAM/slot/A before applying original returns. Separate actual-child
+comparisons report the legacy small delta and known large-placement gaps;
+neither child gains credit or new source semantics in this S.
+
+Logic evidence: two naturally reached original NMI lift roots, timer on/off,
+fractional carry, signed speed/wrap, large/small collision outcomes, complete
+child inputs and original branch coverage; preserve all 16,332 prior actual
+root matches. No ROM/CPU/PC/stack/output patches. Operational evidence:
+mysmb.lift-platform-chain, retained platform chains, strict C90 x86/x64,
+DOS16 link, platform purity, hidden-window response and three EXEs per P.
+DOS remains link-only. Similar-issue sweep: shared movement ownership,
+misplaced timer gate, carry width, accidental Y-high writes, player-delta
+mixing and distinct placement arguments. No unadmitted child repair.
+
+Owner-local ROM/listing provenance and nonredistributable research policy
+remain unchanged. Ignored build/m2-t41-s12 allows at most 512 routes, 24-MB
+raw output, twenty-second record deadlines and resumable checkpoints.
+Coordinator owns dependent trace retention/cleanup. Stop on unexplained
+proof gaps or source execution patches. Every scoped node must be proved
+or explicitly transferred before closure.
+
+## S12 original lift platform proof
+
+S12 P1 closes all five expected nodes: 1,274 -> 1,279/1,992. No scoped
+node remains incomplete or transfers. Placement dependencies retain their owners.
+
+| Node | Individual ROM evidence and disposition |
+| --- | --- |
+| MoveLargeLiftPlat | Movement precedes the retained signed large-rider collision tail. ROM-match complete. |
+| MoveSmallPlatform | Movement precedes the nonzero small-rider collision tail. ROM-match complete. |
+| MoveLiftPlatforms | Timer gates movement only; fractional ADC carry feeds low Y without high-Y mutation. ROM-match complete. |
+| ChkSmallPlatCollision | Nonzero collision counter is the source A input to the small positioning child. ROM-match complete. |
+| ExLiftP | Timer and small-no-collision exits preserve the source footprint. ROM-match complete. |
+
+All eighteen instructions in $D64F-$D679 and both outcomes of its two
+branches execute. The reused $D5FE-$D606 large-rider tail also executes all
+four instructions and both collision outcomes; it retains S10 ownership
+without duplicate credit. The 512 original NMI routes cover both lift roots,
+slots zero/five, timer on/off, fractional carry, byte speed/Y wrap, large
+signed and small nonzero collision gates, and small collision counters one/
+two. Root input fixtures are independent of observer selection; observer-free
+original frames equal observed originals, not native frames. No ROM, CPU,
+PC, stack or output execution patches.
+
+Caller comparisons pass 1,024/1,024 across x86/x64, checking complete RAM
+and slot/collision arguments before recorded-return substitution. Mapped
+$0109-$0139, scratch and queues are included; hardware return-stack storage
+is excluded. Original child input/return X is asserted against ObjectOffset;
+small-child input A is asserted equal to the collision flag. Native old-Y
+compatibility metadata is checked against root input, not claimed as a ROM
+argument. It exists solely to preserve the old incomplete child's behavior.
+
+Independent actual roots pass 528/1,024. Isolated large-position child
+matches 0/256; the legacy small-position child matches 16/256. Thus 256 large
+and 240 small differences remain explicit. Large positioning lacks original
+guards/high-byte handling and has an extra Player_State clear. Small
+positioning still uses the previous player delta instead of the original
+two-deck table and vertical placement. Those nodes remain incomplete with
+their ledger owners. No child or whole-game completion credit is granted.
+
+Shared enemy/platform.c owns both source entries and MoveLiftPlatforms.
+The large collision tail is shared with YMovingPlatform rather than copied.
+The old mixed lift body is removed from objects.c; only its unchanged small
+player-delta expression remains behind an explicitly legacy child seam.
+TimerControl skips motion but still reaches the positioning gate. Arithmetic
+updates dummy and low Y only, preserving high Y and incoming slot. The
+similar-issue sweep covers duplicate movement ownership, misplaced timer
+gate, carry width, high-byte writes and mixed player compensation. Related
+placement algorithms remain scheduled dependencies; host adapters unchanged.
+
+Native tests pass 1,048,576 cases per width: every pair of fractional bytes,
+positive/negative speed, Y wrap, timer state, both roots, both rider gates,
+collision arguments, old-Y metadata, preserved slot and full RAM footprint.
+Vertical and horizontal suites retain their assertions with fail-fast link
+seams for the added sibling entry. Four focused CTests (including platform
+purity) and fifteen previous initializer/platform suites per width pass.
+Final actual-root matrix: 16,860/27,386. All 16,332 prior exact matches remain,
+plus 528 new. Remaining 10,526 sample differences retain descendant debt;
+they are not node counts.
+
+All 109 shared sources pass strict C90 x86/x64 builds and self-tests. Both
+hidden Win32 windows create and respond. DOS16 compiles/links with its
+existing OLDNAMES warning. DOS remains link-only without graphical
+playability, resource binding or physical 486SX certification. Three
+owner-authorized local test EXEs are refreshed.
+
+Reproduce lift_platform_fixture.h cases 0..511 with --fixture=t41-lift-platform=N,
+--lift-platform-snapshot, --control-children and --pc-coverage.
+lift_platform_snapshot_check checks caller contracts; enemy_loop_actual_check
+executes actual dependencies. Native CTest: mysmb.lift-platform-chain.
+Ignored build/m2-t41-s12 contains bounded traces/checkpoints under twenty-
+second deadlines and coordinator-owned dependent regression retention/cleanup.
+S13 extended offscreen bounds is next, not admitted by this closure.
+
+Raw trace output: 5417984 bytes, below 24 MB.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 259289 | 31408c06837a3dfc1a6a0745e8b3a5bc735f0520e9b4083794cdb25235120637 |
+| mysmb32.exe | 354017 | 68ee2fe68a13a3fd48648feeeca911dc3f9c387b76fa3289d5f387528353c8cf |
+| mysmb64.exe | 362566 | a54bb858632c4bd80baa0aa8e534955ca7af9e19972b8e962c500183d32f391e |

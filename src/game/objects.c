@@ -1177,33 +1177,14 @@ void mysmb_platform_collision_small(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x03a2U + slot] = 2U;
 }
 
-static void platform_legacy_lift(struct mysmb_game *game, mysmb_u8 slot,
-                                  mysmb_u8 landed)
+void mysmb_platform_legacy_position_small(struct mysmb_game *game, mysmb_u8 slot,
+    mysmb_u8 collision, mysmb_u8 old_y)
 {
-    mysmb_u8 old_force, carry, old_y;
-    if (game->ram[MYSMB_TIMER_CONTROL] != 0U) return;
-        /* MoveLiftPlatforms: fractional force plus signed whole speed. */
-        old_force = game->ram[MYSMB_ENEMY_Y_DUMMY + slot];
-        game->ram[MYSMB_ENEMY_Y_DUMMY + slot] = (mysmb_u8)(old_force +
-            game->ram[MYSMB_ENEMY_Y_FORCE + slot]);
-        carry = game->ram[MYSMB_ENEMY_Y_DUMMY + slot] < old_force ? 1U : 0U;
-        old_y = game->ram[MYSMB_ENEMY_Y + slot];
-        game->ram[MYSMB_ENEMY_Y + slot] = (mysmb_u8)(old_y +
-            game->ram[MYSMB_ENEMY_Y_SPEED + slot] + carry);
-        if (landed != 0U) {
-            game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
-                game->ram[MYSMB_ENEMY_Y + slot] - old_y);
-        }
-}
-void mysmb_platform_move_large_lift(struct mysmb_game *game, mysmb_u8 slot)
-{
-    platform_legacy_lift(game, slot,
-        (mysmb_u8)((game->ram[0x03a2U + slot] & 0x80U) == 0U));
-}
-void mysmb_platform_move_small(struct mysmb_game *game, mysmb_u8 slot)
-{
-    platform_legacy_lift(game, slot,
-        (mysmb_u8)(game->ram[0x03a2U + slot] != 0U));
+    /* Preserve the previous small-lift compensation expression only.
+     * The collision counter's two-deck source table is not translated here. */
+    (void)collision;
+    game->ram[MYSMB_PLAYER_Y] = (mysmb_u8)(game->ram[MYSMB_PLAYER_Y] +
+        game->ram[MYSMB_ENEMY_Y + slot] - old_y);
 }
 
 /* Legacy bulk interface selects the same native source caller as GameEngine. */
