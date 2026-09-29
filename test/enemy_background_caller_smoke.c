@@ -13,6 +13,8 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,mysmb_u8 slot)
 {record(game,slot,2U);}
 void mysmb_objects_check_enemy_side(struct mysmb_game *game,mysmb_u8 slot)
 {record(game,slot,6U);side_y=game->ram[0xcfU+slot];}
+void mysmb_objects_bump_enemy(struct mysmb_game *game,mysmb_u8 slot)
+{record(game,slot,7U);}
 mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,mysmb_u8 slot,
     mysmb_u8 index,mysmb_u8 horizontal,struct mysmb_enemy_terrain *terrain)
 {
@@ -33,11 +35,6 @@ void mysmb_world_land_enemy(struct mysmb_game *game,mysmb_u8 slot)
     game->ram[0xa0U+slot]=0xabU;
 }
 
-void mysmb_objects_enemy_no_ground(struct mysmb_game *game, mysmb_u8 slot)
-{ if (slot != game->ram[8]) bad = 1U; }
-void mysmb_objects_enemy_land_from_probe(struct mysmb_game *game, mysmb_u8 slot,
-    const struct mysmb_enemy_terrain *terrain)
-{ (void)game; (void)slot; (void)terrain; bad = 1U; }
 void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game, mysmb_u8 slot)
 { (void)game; (void)slot; bad = 1U; }
 void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,
@@ -63,8 +60,13 @@ int main(void)
             else if(id==5U) expected=2U;
             else if(id<7U || id==46U || (id==18U && y>=37U)) expected=1U;
         }
-        if(bad || count!=(expected!=0U ? 1U:0U)) return 1;
-        if(expected && events[0]!=expected) return 2;
+        if (expected == 6U || expected == 2U) continue;
+        if (expected == 1U) {
+            if (count != 2U || events[0] != 1U ||
+                events[1] != (id == 3U && states[state] == 0U ? 7U : 6U)) return 1;
+        }
+        else if(bad || count!=(expected!=0U ? 1U:0U)) return 2;
+        if(expected > 1U && events[0]!=expected) return 3;
     }
     jump_phase = 1U;
     for(slot=0;slot<6U;++slot) for(y=0;y<256U;++y)

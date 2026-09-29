@@ -1490,3 +1490,8 @@ add_executable(mysmb_enemy_stun_smoke test/enemy_stun_smoke.c)
 target_include_directories(mysmb_enemy_stun_smoke PRIVATE src)
 target_link_libraries(mysmb_enemy_stun_smoke PRIVATE mysmb_game)
 add_test(NAME mysmb.enemy-background-stun-chain COMMAND mysmb_enemy_stun_smoke)
+
+add_executable(mysmb_enemy_landing_smoke test/enemy_landing_smoke.c
+    src/game/enemy/background.c)
+target_include_directories(mysmb_enemy_landing_smoke PRIVATE src)
+add_test(NAME mysmb.enemy-landing-grounded-chain COMMAND mysmb_enemy_landing_smoke)

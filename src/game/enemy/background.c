@@ -111,3 +111,88 @@ void mysmb_objects_step_normal_enemy_terrain(struct mysmb_game *game,
     }
     mysmb_enemy_handle_background(game, slot, &terrain);
 }
+
+/* ROM $E067-$E0FF LandEnemyProperly through SetD6Ste. Side-check, bump and
+ * physical landing bodies remain explicit S10 dependencies. */
+static void background_land_init(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 state;
+    mysmb_world_land_enemy(game, slot);
+    state = game->ram[0x001eU + slot];
+    if ((state & 0x80U) != 0U)
+        game->ram[0x001eU + slot] = (mysmb_u8)(state & 0xbfU);
+    else
+        game->ram[0x001eU + slot] = 0U;
+}
+
+static void background_enemy_direction(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 direction;
+    if (game->ram[0x0016U + slot] == 6U) {
+        background_land_init(game, slot);
+        return;
+    }
+    if (game->ram[0x0016U + slot] == 18U) {
+        game->ram[0x0046U + slot] = 1U;
+        game->ram[0x0058U + slot] = 8U;
+        if ((game->ram[9U] & 7U) == 0U) {
+            background_land_init(game, slot);
+            return;
+        }
+    }
+    direction = (mysmb_enemy_player_difference(game, slot) & 0x80U) != 0U ? 2U : 1U;
+    if (direction != game->ram[0x0046U + slot])
+        background_land_init(game, slot);
+    else
+        mysmb_objects_bump_enemy(game, slot);
+}
+
+void mysmb_objects_enemy_land_from_probe(struct mysmb_game *game,
+    mysmb_u8 slot, const struct mysmb_enemy_terrain *terrain)
+{
+    mysmb_u8 state;
+    if (terrain->contact_low_nibble >= 0x0dU) {
+        mysmb_objects_enemy_no_ground(game, slot);
+        return;
+    }
+    state = game->ram[0x001eU + slot];
+    if ((state & 0x40U) != 0U) {
+        background_land_init(game, slot);
+        return;
+    }
+    if ((state & 0x80U) != 0U) {
+        mysmb_objects_check_enemy_side(game, slot);
+        return;
+    }
+    if (state == 0U) {
+        mysmb_objects_check_enemy_side(game, slot);
+        return;
+    }
+    if (state == 5U) {
+        background_enemy_direction(game, slot);
+        return;
+    }
+    if (state >= 3U) return;
+    if (state == 2U) {
+        game->ram[0x0796U + slot] = game->ram[0x0016U + slot] == 18U ? 0U : 0x10U;
+        game->ram[0x001eU + slot] = 3U;
+        mysmb_world_land_enemy(game, slot);
+        return;
+    }
+    background_enemy_direction(game, slot);
+}
+
+void mysmb_objects_enemy_no_ground(struct mysmb_game *game, mysmb_u8 slot)
+{
+    mysmb_u8 state;
+    state = game->ram[0x001eU + slot];
+    if (game->ram[0x0016U + slot] == 3U && state == 0U) {
+        mysmb_objects_bump_enemy(game, slot);
+        return;
+    }
+    if ((state & 0x80U) != 0U)
+        game->ram[0x001eU + slot] = (mysmb_u8)(state | 0x40U);
+    else
+        game->ram[0x001eU + slot] = mysmb_enemy_background_state_data(game, state);
+    mysmb_objects_check_enemy_side(game, slot);
+}

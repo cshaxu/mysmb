@@ -230,20 +230,20 @@ Expected-new subset: `LandEnemyProperly`, `SChkA`, `ChkLandedEnemyState`, `SetFo
 
 | Line | Node | Incoming status | Current receiver |
 | --- | --- | --- | --- |
-| 12523 | `LandEnemyProperly` | open | M2 T17 S6 |
-| 12535 | `SChkA` | open | M2 T17 S6 |
-| 12537 | `ChkLandedEnemyState` | open | M2 T17 S6 |
-| 12552 | `SetForStn` | open | M2 T17 S6 |
-| 12556 | `ExSteChk` | open | M2 T17 S6 |
-| 12558 | `ProcEnemyDirection` | open | M2 T17 S6 |
-| 12571 | `InvtD` | open | M2 T17 S6 |
-| 12575 | `CNwCDir` | open | M2 T17 S6 |
-| 12580 | `LandEnemyInitState` | open | M2 T17 S6 |
-| 12589 | `NMovShellFallBit` | open | M2 T17 S6 |
-| 12597 | `ChkForRedKoopa` | open | M2 T17 S6 |
-| 12603 | `Chk2MSBSt` | open | M2 T17 S6 |
-| 12610 | `GetSteFromD` | open | M2 T17 S6 |
-| 12611 | `SetD6Ste` | open | M2 T17 S6 |
+| 12523 | `LandEnemyProperly` | ROM-match complete | M2 T43 S9 |
+| 12535 | `SChkA` | ROM-match complete | M2 T43 S9 |
+| 12537 | `ChkLandedEnemyState` | ROM-match complete | M2 T43 S9 |
+| 12552 | `SetForStn` | ROM-match complete | M2 T43 S9 |
+| 12556 | `ExSteChk` | ROM-match complete | M2 T43 S9 |
+| 12558 | `ProcEnemyDirection` | ROM-match complete | M2 T43 S9 |
+| 12571 | `InvtD` | ROM-match complete | M2 T43 S9 |
+| 12575 | `CNwCDir` | ROM-match complete | M2 T43 S9 |
+| 12580 | `LandEnemyInitState` | ROM-match complete | M2 T43 S9 |
+| 12589 | `NMovShellFallBit` | ROM-match complete | M2 T43 S9 |
+| 12597 | `ChkForRedKoopa` | ROM-match complete | M2 T43 S9 |
+| 12603 | `Chk2MSBSt` | ROM-match complete | M2 T43 S9 |
+| 12610 | `GetSteFromD` | ROM-match complete | M2 T43 S9 |
+| 12611 | `SetD6Ste` | ROM-match complete | M2 T43 S9 |
 
 ### S10: Enemy side, jump and hammer terrain
 
@@ -1479,3 +1479,25 @@ parent and real child results remain separate. The operational track will run
 the focused landing chain, retained S8 paths, strict x86/x64 C90 builds, DOS16
 link, platform purity and refreshed three artifacts. Raw records remain below
 ignored build/m2-t43-s9 with100MB and20-second process bounds.
+
+## S9 enemy landing and grounded state proof
+
+S9 closes all fourteen admitted nodes:1,463 ->1,477 /1,992. The shared
+`game/enemy/background.c` owner follows the original nibble gate, state-table
+read, red-koopa edge, spiny `$12` identity, timer writes, direction decision
+and falling-bit clearing order. It delegates side collision, bump and physical
+landing to S10-owned seams and credits none of those child interiors.
+
+The original-ROM matrix injects only at natural `DoEnemyToBGCollisionDet`
+entries. 1,024 bounded inputs yielded 2,144 root/child stack records. Observer
+and observer-free ROM frame outputs are byte-identical. Captured
+`LandEnemyProperly` and `ChkForRedKoopa` entries give 2,048 /2,048 matching
+`Enemy_State` outcomes in each x64 and x86 replay. Focused landing-chain,
+retained caller and platform-purity tests pass. Raw captures and replay reports
+remain ignored below `build/m2-t43-s9`.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257517 | 73a6024f442ad4bab49f5854eeb7fc488e90f52d6515a41c35028ee610bc2e46 |
+| mysmb32.exe | 360956 | 8e49f54efe8605b2489642728c30f4e877fb9a63e41baa1696d47cbb51375c7c |
+| mysmb64.exe | 369012 | 27de764688fa6963b2abfb9a39b47628100a9bc25d1475a3c529c99404eeb289 |

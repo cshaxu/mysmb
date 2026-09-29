@@ -2,7 +2,7 @@
 
 ## Current Work
 
-**M2 T43 S9 is active at 1,463/1,992:14 scoped,14 expected new, maximum1,477.**
+**M2 T43 S9 is closed at 1,477/1,992:14 scoped,14 ROM-match complete.**
 T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
 
 ## M2 T43 S9 Packet

@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1463 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1477 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 443 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 429 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1,463 / 1,992 (73.44%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1477 / 1,992 (74.15%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T43 S8 enemy terrain dispatch/stun](../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof)
 completes twelve nodes and retains six dispatch exits through 1,642 observed,
@@ -33,7 +33,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1463)
+## Completed matches (1477)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1470,12 +1470,38 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12403 | `CoinSd` |
 | 12407 | `GetMTileAttrib` |
 | 12415 | `ExEBG` |
+| 12420 | `EnemyBGCStateData` |
+| 12423 | `EnemyBGCXSpdData` |
 | 12426 | `EnemyToBGCollisionDet` |
 | 12439 | `DoIDCheckBGColl` |
 | 12443 | `HBChk` |
 | 12446 | `CInvu` |
 | 12452 | `YesIn` |
+| 12455 | `NoEToBGCollision` |
+| 12461 | `HandleEToBGCollision` |
+| 12476 | `GiveOEPoints` |
+| 12480 | `ChkToStunEnemies` |
+| 12489 | `Demote` |
+| 12491 | `SetStun` |
+| 12503 | `SetWYSpd` |
+| 12504 | `SetNotW` |
+| 12509 | `ChkBBill` |
+| 12515 | `NoCDirF` |
 | 12518 | `ExEBGChk` |
+| 12523 | `LandEnemyProperly` |
+| 12535 | `SChkA` |
+| 12537 | `ChkLandedEnemyState` |
+| 12552 | `SetForStn` |
+| 12556 | `ExSteChk` |
+| 12558 | `ProcEnemyDirection` |
+| 12571 | `InvtD` |
+| 12575 | `CNwCDir` |
+| 12580 | `LandEnemyInitState` |
+| 12589 | `NMovShellFallBit` |
+| 12597 | `ChkForRedKoopa` |
+| 12603 | `Chk2MSBSt` |
+| 12610 | `GetSteFromD` |
+| 12611 | `SetD6Ste` |
 | 12617 | `DoEnemySideCheck` |
 | 12624 | `SdeCLoop` |
 | 12632 | `NextSdeC` |
@@ -1488,33 +1514,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
-| 12420 | `EnemyBGCStateData` |
-| 12423 | `EnemyBGCXSpdData` |
-| 12455 | `NoEToBGCollision` |
-| 12461 | `HandleEToBGCollision` |
-| 12476 | `GiveOEPoints` |
-| 12480 | `ChkToStunEnemies` |
-| 12489 | `Demote` |
-| 12491 | `SetStun` |
-| 12503 | `SetWYSpd` |
-| 12504 | `SetNotW` |
-| 12509 | `ChkBBill` |
-| 12515 | `NoCDirF` |
-
-## Accounting audit, 2026-09-26
-
-The interrupted tally used rows rather than unique labels: duplicate open rows
-for PlayerHammerCollision, ClHCol and ExPHC inflated 1,992 to 1,995. They were
-removed without dropping unique nodes, and malformed evidence cells repaired.
-All 1,992 label/line pairs match the hash-pinned listing. The old baseline of
-zero complete / 77 mapped was the pre-verification snapshot, not current status.
-The subsequent audit found 90 additional historical/current C mappings and three missing entries. Every source
-slice and every retained prior M2 history/proposal section was checked for
-responsibility evidence; unnamed descendants remain in the full census.
-
-The accounting checker validates row uniqueness, recognized states, aggregate
-counts and exact named lists. It does not validate semantics by itself.
-
 ## Mapped but not yet matched (86)
 
 | ROM line | Node |

@@ -190704,9 +190704,24 @@
         "SetD6Ste"
       ],
       "maximumComplete": 1477,
-      "actualMatches": [],
+      "actualMatches": [
+        "LandEnemyProperly",
+        "SChkA",
+        "ChkLandedEnemyState",
+        "SetForStn",
+        "ExSteChk",
+        "ProcEnemyDirection",
+        "InvtD",
+        "CNwCDir",
+        "LandEnemyInitState",
+        "NMovShellFallBit",
+        "ChkForRedKoopa",
+        "Chk2MSBSt",
+        "GetSteFromD",
+        "SetD6Ste"
+      ],
       "evidence": "docs/proposals/m2/t43-terrain-and-bounding-boxes.md",
-      "state": "admitted-enemy-landing-grounded"
+      "state": "closed-enemy-landing-grounded"
     }
   ]
 }

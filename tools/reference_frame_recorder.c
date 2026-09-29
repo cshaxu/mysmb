@@ -104,6 +104,7 @@
 #include "../test/impede_fixture.h"
 #include "reference_metatile_observer.h"
 #include "../test/enemy_background_fixture.h"
+#include "../test/enemy_landing_fixture.h"
 #include "reference_enemy_background_observer.h"
 #include "../test/platform_collision_fixture.h"
 #include "../test/enemy_pair_fixture.h"
@@ -1008,6 +1009,7 @@ int main(int argument_count, char **arguments)
     const char *area_reads_path;
     const char *metatile_path = NULL;
     const char *enemy_background_path = NULL;
+    const char *enemy_landing_path = NULL;
     const char *movement_snapshot_path;
     unsigned char movement_snapshots[4096];
     unsigned int movement_snapshot_phase;
@@ -1073,8 +1075,13 @@ int main(int argument_count, char **arguments)
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
         if (strncmp(arguments[recorded], "--enemy-background-calls=", 25u) == 0) {
-            if (enemy_background_path != NULL) return 64;
+            if (enemy_background_path != NULL || enemy_landing_path != NULL) return 64;
             enemy_background_path = arguments[recorded] + 25u;
+            continue;
+        }
+        if (strncmp(arguments[recorded], "--enemy-landing-calls=", 22u) == 0) {
+            if (enemy_background_path != NULL || enemy_landing_path != NULL) return 64;
+            enemy_landing_path = arguments[recorded] + 22u;
             continue;
         }
         if (strncmp(arguments[recorded], "--metatile-calls=", 17u) == 0) {
@@ -1970,6 +1977,12 @@ int main(int argument_count, char **arguments)
         if (block_scenario != 0) {
             if (t26_fixture != 0u) return 64;
             t26_fixture = (lib_u32)(27677 + block_scenario);
+            continue;
+        }
+        block_scenario = mysmb_landing_argument(arguments[recorded]);
+        if (block_scenario != 0) {
+            if (t26_fixture != 0u) return 64;
+            t26_fixture = (lib_u32)(29725 + block_scenario);
             continue;
         }
         block_scenario = mysmb_impede_argument(arguments[recorded]);
@@ -2931,6 +2944,9 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture >= 27678u && t26_fixture <= 29725u)
                     mysmb_background_fixture(driver->machine->ram,
                         (unsigned int)(t26_fixture - 27678u));
+                else if (t26_fixture >= 29726u && t26_fixture <= 30749u)
+                    mysmb_landing_fixture(driver->machine->ram,
+                        (unsigned int)(t26_fixture - 29726u));
                 else if (t26_fixture >= 26654u && t26_fixture <= 27677u)
                     mysmb_player_terrain_fixture(driver->machine->ram, 0u);
                 else if (t26_fixture >= 26142u && t26_fixture <= 26653u)
@@ -3537,6 +3553,15 @@ int main(int argument_count, char **arguments)
                     driver->machine->a, driver->machine->x, driver->machine->y,
                     driver->machine->p, driver->machine->s,
                     (unsigned int)(t26_fixture - 27678u))) return 69;
+        }
+        if (elapsed >= warmup_frames && t26_fixture >= 29726u && t26_fixture <= 30749u) {
+            mysmb_landing_inputs(driver->machine->ram, before_pc,
+                driver->machine->x, (unsigned int)(t26_fixture - 29726u));
+            if (enemy_landing_path != NULL &&
+                !background_observe(driver->machine->ram, before_pc,
+                    driver->machine->a, driver->machine->x, driver->machine->y,
+                    driver->machine->p, driver->machine->s,
+                    (unsigned int)(t26_fixture - 29726u))) return 69;
         }
         if (metatile_path != NULL && elapsed >= warmup_frames &&
             !metatile_observe(driver->machine->ram, before_pc,
@@ -4188,6 +4213,7 @@ int main(int argument_count, char **arguments)
     (void)core_driver_destroy(driver);
     if (recorded != requested_frames) return 68;
     if (enemy_background_path != NULL && !background_write(enemy_background_path)) return 69;
+    if (enemy_landing_path != NULL && !background_write(enemy_landing_path)) return 69;
     if (metatile_path != NULL && !metatile_write(metatile_path)) return 69;
     if (movement_snapshot_path != NULL) {
         FILE *snapshot;

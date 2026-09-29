@@ -1629,20 +1629,20 @@ The labels and branches behind every line remain open until individually bound b
 | 12509 | `ChkBBill` | M2 T43 S8 shared game/enemy/background.c | ROM-match complete | [S8 chain proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof); Preserve moving direction only for IDs $33 and $08. |
 | 12515 | `NoCDirF` | M2 T43 S8 shared game/enemy/background.c | ROM-match complete | [S8 chain proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s8-enemy-terrain-dispatch-and-stun-proof); Select speed table index direction minus one. |
 | 12518 | `ExEBGChk` | M2 T31 S2 shared game/enemy/background.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
-| 12523 | `LandEnemyProperly` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyproperly) |
-| 12535 | `SChkA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schka) |
-| 12537 | `ChkLandedEnemyState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklandedenemystate) |
-| 12552 | `SetForStn` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setforstn) |
-| 12556 | `ExSteChk` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exstechk) |
-| 12558 | `ProcEnemyDirection` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procenemydirection) |
-| 12571 | `InvtD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invtd) |
-| 12575 | `CNwCDir` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cnwcdir) |
-| 12580 | `LandEnemyInitState` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyinitstate) |
-| 12589 | `NMovShellFallBit` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nmovshellfallbit) |
-| 12597 | `ChkForRedKoopa` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforredkoopa) |
-| 12603 | `Chk2MSBSt` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2msbst) |
-| 12610 | `GetSteFromD` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getstefromd) |
-| 12611 | `SetD6Ste` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setd6ste) |
+| 12523 | `LandEnemyProperly` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyproperly) |
+| 12535 | `SChkA` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-schka) |
+| 12537 | `ChkLandedEnemyState` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chklandedenemystate) |
+| 12552 | `SetForStn` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setforstn) |
+| 12556 | `ExSteChk` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exstechk) |
+| 12558 | `ProcEnemyDirection` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-procenemydirection) |
+| 12571 | `InvtD` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-invtd) |
+| 12575 | `CNwCDir` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-cnwcdir) |
+| 12580 | `LandEnemyInitState` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-landenemyinitstate) |
+| 12589 | `NMovShellFallBit` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nmovshellfallbit) |
+| 12597 | `ChkForRedKoopa` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkforredkoopa) |
+| 12603 | `Chk2MSBSt` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chk2msbst) |
+| 12610 | `GetSteFromD` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getstefromd) |
+| 12611 | `SetD6Ste` | T17 responsibility (implementation not certified) | ROM-match complete | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setd6ste) |
 | 12617 | `DoEnemySideCheck` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12624 | `SdeCLoop` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
 | 12632 | `NextSdeC` | M2 T31 S2 shared game/enemy/side_collision.c | ROM-match complete | [S2 P6 scoped chain proof](../../history/M2-T31-game-dispatcher.md#s2p6-background-and-side-chain-proof) |
