@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1489 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1492 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 86 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 417 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 414 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1489 / 1,992 (74.75%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1492 / 1,992 (74.90%)**. The 86 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S11 enemy ground query](../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles)
-closes three source-adjacent query/predicate nodes. Controlled original child
-records match 549 bottom-middle probes and 1,013 Z-flag predicate outcomes;
-the shared caller path and all three target builds pass.
+Latest task review: [T43 S12 fireball background collision](../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-closure-fireball-background-collision)
+closes three source-adjacent collision nodes. Five controlled original routes
+and 22 retained core child records match owned writes; all three target builds
+pass their applicable validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1489)
+## Completed matches (1492)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1520,6 +1520,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12732 | `ChkUnderEnemy` |
 | 12737 | `ChkForNonSolids` |
 | 12747 | `NSFnd` |
+| 12751 | `FireballBGCollision` |
+| 12772 | `ClearBounceFlag` |
+| 12777 | `InitFireballExplode` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

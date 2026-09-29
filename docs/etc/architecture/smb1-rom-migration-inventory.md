@@ -1662,9 +1662,9 @@ The labels and branches behind every line remain open until individually bound b
 | 12732 | `ChkUnderEnemy` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
 | 12737 | `ChkForNonSolids` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
 | 12747 | `NSFnd` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
-| 12751 | `FireballBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballbgcollision) |
-| 12772 | `ClearBounceFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearbounceflag) |
-| 12777 | `InitFireballExplode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initfireballexplode) |
+| 12751 | `FireballBGCollision` | M2 T43 S12 shared fireball-background chain | ROM-match complete | [S12 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-closure-fireball-background-collision) |
+| 12772 | `ClearBounceFlag` | M2 T43 S12 shared fireball-background chain | ROM-match complete | [S12 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-closure-fireball-background-collision) |
+| 12777 | `InitFireballExplode` | M2 T43 S12 shared fireball-background chain | ROM-match complete | [S12 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-closure-fireball-background-collision) |
 | 12791 | `BoundBoxCtrlData` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-boundboxctrldata) |
 | 12805 | `GetFireballBoundBox` | T20/T16: `src/game/fireball/fireball_core.c` | audited; evidence incomplete | [T24 S1: partial](m2-t24-s1-node-verification.md#node-getfireballboundbox) |
 | 12813 | `GetMiscBoundBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-getmiscboundbox) |

@@ -322,7 +322,7 @@ a `d7da920dfef2023dd93f88cf76f591706c24ea419f744ec42dbc23242449c25a`
 
 ### S12: Fireball background collision
 
-Source lines12751-12790; entry `FireballBGCollision`; final label `InitFireballExplode`. Shared owner: `src/game/world/fireball_background.c`.
+Source lines12751-12790; entry `FireballBGCollision`; final label `InitFireballExplode`. Shared owner: `src/game/world/collision.c`.
 3 scoped nodes; 3 expected new; 0 retained.
 Logic route and dependency boundary: Offscreen/Y gates, ground query, bounce flag and explosion; retain source order.
 Operational exit: focused chain CTest, affected caller and actual-child comparisons, cross-width build, DOS16 link, purity and three artifacts.
@@ -333,6 +333,22 @@ Expected-new subset: `FireballBGCollision`, `ClearBounceFlag`, `InitFireballExpl
 | 12751 | `FireballBGCollision` | open | M2 T17 S6 |
 | 12772 | `ClearBounceFlag` | open | M2 T17 S6 |
 | 12777 | `InitFireballExplode` | open | M2 T17 S6 |
+
+#### S12 closure: Fireball background collision
+
+All three source-adjacent nodes are ROM-match complete. `FireballBGCollision`
+retains the original Y gate, bottom probe, non-solid branch, bounce alignment
+and explosion tail; `ClearBounceFlag` and `InitFireballExplode` retain their
+respective RAM writes. Five controlled original-record cases cover blank,
+solid bounce, upward explosion, existing-bounce explosion and non-solid tile
+routes; the shared C checker matches every owned write in all five. It also
+matches 22 retained original fireball-core child records. Focused fireball,
+platform-purity and ground-query CTests pass. Strict Win32 x86/x64 builds
+self-test, and DOS16 links as an MZ image. Artifact SHA-256 values are
+`13dadada9e06778380526ef21ef53b9acfca39e30482788150dc8083c94644b8`
+(DOS16), `c387d05f9bb89e17d894944478fbb235b2c37a6a2e17fb90a0f3256d994e1d75`
+(Win32 x86), and `0b49207fbfe5ee79effdea9af7b99b4bae188261046bafd35282c7ff0850e770`
+(Win32 x64). Completion moves 1,489/1,992 to 1,492/1,992.
 
 ### S13: Object bounding-box entry selection
 

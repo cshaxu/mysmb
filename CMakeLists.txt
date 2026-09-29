@@ -1509,3 +1509,6 @@ add_test(NAME mysmb.enemy-ground-query-nonsolids-chain
 add_executable(mysmb_enemy_ground_query_actual_check
     test/enemy_ground_query_actual_check.c)
 target_link_libraries(mysmb_enemy_ground_query_actual_check PRIVATE mysmb_game)
+add_executable(mysmb_fireball_background_actual_check
+    test/fireball_background_actual_check.c)
+target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_game)

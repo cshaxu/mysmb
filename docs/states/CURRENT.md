@@ -2,29 +2,29 @@
 
 ## Current Work
 
-**M2 T43 S11 closed at 1,489/1,992: 3 scoped, 3 ROM-match complete.**
+**M2 T43 S12 is closed at 1,492/1,992: 3 scoped, 3 completed.**
 T43 covers 150 nodes; revised global maximum 1,517 retains the KillEnemies debt.
 
-## M2 T43 S11 Packet
+## M2 T43 S12 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S11, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer 231. |
-| Objective | `ChkUnderEnemy`, `ChkForNonSolids`, and `NSFnd`. |
-| Non-goals | No fireball background-collision implementation, no Hammer Bro branch rewrite, no platform gameplay. |
-| Reference Baseline | 1,486/1,992; scope 3/expected 3, maximum 1,489. |
-| Candidate Proposal | [S11 enemy ground query](../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-enemy-ground-query-and-pass-through-tiles). |
-| Files And ABI Surface | Shared world query/classification owner, caller seams, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S12, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer 232. |
+| Objective | `FireballBGCollision`, `ClearBounceFlag`, and `InitFireballExplode`. |
+| Non-goals | No fireball core/offscreen rewrite, no bounding-box entry work, no platform gameplay. |
+| Reference Baseline | 1,489/1,992; scope 3/expected 3, maximum 1,492. |
+| Candidate Proposal | [S12 fireball background collision](../proposals/m2/t43-terrain-and-bounding-boxes.md#s12-fireball-background-collision). |
+| Files And ABI Surface | Shared world collision owner, fireball caller seam, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original A/Y query setup, output RAM/flags, exact five-tile comparisons; separate native operational proof. |
-| Expected Markers | One shared ground-query entry and one exact non-solid predicate, with Hammer Bro's direct nonzero test retained. |
+| Verification | Original fireball Y/probe/Z paths, bounce/explosion writes and call order; separate native operational proof. |
+| Expected Markers | Original ordered Y gate, bottom probe, non-solid branch, bounce alignment and explosion tail. |
 | Asset Needs | Owner-local nonredistributable ROM/listing; bounded records below ignored build. Three owner-authorized EXEs. |
 | Reporting Requirements | Three named dispositions, dual proof, retained dependency results and artifact hashes. |
 | Stop Conditions | Forced original CPU path, concealed descendant mismatch, unadmitted algorithm rewrite or platform gameplay. |
-| Exit Criteria | Met: three newly proved nodes, both proof tracks and three artifacts. |
+| Exit Criteria | Met: three proved nodes, both proof tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | All enemy and fireball ground-query callers, pass-through tile predicates, page/row boundaries and duplicate owners. |
+| Similar-Issue Sweep | Fireball collision callers, duplicate non-solid checks, bounce/explosion RAM writes and direct platform references. |
 
 ## S8 closure
 

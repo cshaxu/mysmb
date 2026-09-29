@@ -240,7 +240,22 @@ mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
     return 1U;
 }
 
-/* ROM $cdbf FireballBGCollision.  This owns the source bottom probe and
+/* ROM $E1E0 ClearBounceFlag. */
+static void mysmb_world_clear_fireball_bounce(struct mysmb_game *game,
+                                              mysmb_u8 slot)
+{
+    game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
+}
+
+/* ROM $E1E7 InitFireballExplode. */
+static void mysmb_world_init_fireball_explode(struct mysmb_game *game,
+                                              mysmb_u8 slot)
+{
+    game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
+    game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+}
+
+/* ROM $E1C8 FireballBGCollision.  This owns the source bottom probe and
  * bounce/explosion decision; FireballObjCore retains only its call order. */
 void mysmb_world_fireball_background_collision(struct mysmb_game *game,
                                                 mysmb_u8 slot)
@@ -252,7 +267,7 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
     mysmb_u8 tile;
 
     if (game->ram[(mysmb_u16)(0x00d5U + slot)] < 0x18U) {
-        game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
+        mysmb_world_clear_fireball_bounce(game, slot);
         return;
     }
     x = (mysmb_u8)(game->ram[(mysmb_u16)(0x008dU + slot)] + 4U);
@@ -264,15 +279,13 @@ void mysmb_world_fireball_background_collision(struct mysmb_game *game,
                      0x20U);
     address = (mysmb_u16)(address + row);
     tile = address < 0x0800U ? game->ram[address] : 0U;
-    if (tile == 0U || tile == 0x26U || tile == 0xc2U || tile == 0xc3U ||
-        tile == 0x5fU || tile == 0x60U) {
-        game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
+    if (tile == 0U || mysmb_world_enemy_metatile_is_non_solid(tile) != 0U) {
+        mysmb_world_clear_fireball_bounce(game, slot);
         return;
     }
     if (game->ram[(mysmb_u16)(0x00a6U + slot)] >= 0x80U ||
         game->ram[(mysmb_u16)(0x003aU + slot)] != 0U) {
-        game->ram[(mysmb_u16)(0x0024U + slot)] = 0x80U;
-        game->ram[MYSMB_SQUARE1_SOUND] = 2U;
+        mysmb_world_init_fireball_explode(game, slot);
         return;
     }
     game->ram[(mysmb_u16)(0x00a6U + slot)] = 0xfdU;
