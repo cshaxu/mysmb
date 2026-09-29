@@ -104,6 +104,7 @@ void mysmb_objects_step_star_flags(struct mysmb_game *game);
 void mysmb_objects_start_flagpole(struct mysmb_game *game, mysmb_u8 page,
                                   mysmb_u8 x);
 void mysmb_objects_step_flagpole(struct mysmb_game *game);
+void mysmb_objects_draw_flagpole_graphics(struct mysmb_game *game);
 /* ROM ProcHammerBro through MoveHammerBroXDir, before hammer misc objects. */
 void mysmb_objects_step_hammer_bros(struct mysmb_game *game);
 void mysmb_objects_check_hazard_enemy_collision(struct mysmb_game *game);

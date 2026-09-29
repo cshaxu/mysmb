@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1551 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1560 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 356 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 347 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1551 / 1,992 (77.86%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1560 / 1,992 (78.31%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T43 closure](../history/M2-T43-terrain-and-bounding-boxes.md#t43-closure) closes all 150 scoped nodes in fifteen chains. Direct original route evidence remains node-specific; integrated x86/x64 self-tests, DOS16 link, purity and all three refreshed artifacts pass.
 
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1551)
+## Completed matches (1560)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1579,6 +1579,15 @@ of equivalent native nodes. No product repair is part of this audit.
 | 13234 | `GetHPose` |
 | 13239 | `RenderH` |
 | 13268 | `NoHOffscr` |
+| 13277 | `FlagpoleScoreNumTiles` |
+| 13284 | `FlagpoleGfxHandler` |
+| 13326 | `ChkFlagOffscreen` |
+| 13335 | `MoveSixSpritesOffscreen` |
+| 13338 | `DumpSixSpr` |
+| 13342 | `DumpFourSpr` |
+| 13345 | `DumpThreeSpr` |
+| 13348 | `DumpTwoSpr` |
+| 13352 | `ExitDumpSpr` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

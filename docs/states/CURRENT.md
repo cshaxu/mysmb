@@ -2,30 +2,30 @@
 
 ## Current Work
 
-**M2 T44 S3 is closing at 1,551 / 1,992.** It completed the fourteen-node
-`SixSpriteStacker` through `NoHOffscr` shared OAM and hammer graphics chain;
-the final target package and recorded checks are the remaining closure work.
+**M2 T44 S4 closed at 1,560 / 1,992.** It completed the nine-node
+`FlagpoleScoreNumTiles` through `ExitDumpSpr` flagpole graphics and shared OAM
+dump-helper chain. T44 S5 is the next source-order admission.
 
-## M2 T44 S3 Packet
+## M2 T44 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T44 S3, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate; exact transfer 238 from M2 T17 S6. |
-| Objective | Translate and prove the shared six-sprite stacker and hammer OAM graphics chain. |
-| Non-goals | No platform gameplay, no S4 dump-helper implementation, no child completion by association. |
-| Reference Baseline | 1,537/1,992; scope 14/expected 14, maximum 1,551. |
-| Candidate Proposal | [T44 block-buffer and object graphics](../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-six-sprite-and-hammer-graphics). |
-| Files And ABI Surface | Shared game `src/game/oam/hammer_gfx.c` and OAM stacker seam, focused recorder/test, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T44 S4, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; exact transfer 239 from M2 T17 S6. |
+| Objective | Translate and prove flagpole graphics plus generic OAM dump helpers. |
+| Non-goals | No platform gameplay, no S5 platform/floatey implementation, no child completion by association. |
+| Reference Baseline | Closed at 1,560/1,992; nine scoped nodes match, no deferrals. |
+| Candidate Proposal | [T44 block-buffer and object graphics](../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-flagpole-graphics-and-sprite-dumps). |
+| Files And ABI Surface | Shared game flagpole/OAM helpers, focused recorder/test, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original `ProcHammerObj` and `VDrawLoop` table/branch/OAM comparison, followed separately by focused native tests and three-target operational proof. |
-| Expected Markers | Six-sprite stride, eight pose-table bytes, timer/state pose selection, cumulative coordinates and offscreen dump. |
+| Verification | Original `FlagpoleRoutine`/`FPGfx` and dump-helper routes, followed separately by focused native tests and three-target operational proof. |
+| Expected Markers | Five score-tile pairs, flag/number OAM rows, bit-1..3 offscreen branch, and fall-through dump strides. |
 | Asset Needs | Owner-local ROM/listing and bounded ignored-build records; three owner-authorized EXEs. |
-| Reporting Requirements | Fourteen named dispositions, dual proof, dependency results and artifact hashes. |
-| Stop Conditions | Forced CPU path, unadmitted dependency, invented graphics policy or platform gameplay. |
-| Exit Criteria | Every scoped node has source-route proof, focused test evidence, x86/x64 builds, DOS16 link, purity proof and refreshed EXEs. |
+| Reporting Requirements | Nine named dispositions, dual proof, dependency results and artifact hashes. |
+| Stop Conditions | Forced CPU path, unadmitted dependency, invented OAM policy or platform gameplay. |
+| Exit Criteria | Met: every scoped node has source-route proof, focused test evidence, x86/x64 builds, DOS16 link, purity proof and refreshed EXEs. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | All vine callers, table offsets, OAM slots, clip branch and platform references. |
+| Similar-Issue Sweep | All flagpole callers, generic dump-helper callers, OAM offsets and offscreen branches. |
 
 ## Current Technical Baseline
 

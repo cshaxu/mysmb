@@ -1724,15 +1724,15 @@ The labels and branches behind every line remain open until individually bound b
 | 13234 | `GetHPose` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
 | 13239 | `RenderH` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
 | 13268 | `NoHOffscr` | M2 T44 S3 shared OAM and hammer graphics | ROM-match complete | [T44 S3 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s3-closure-six-sprite-and-hammer-graphics) |
-| 13277 | `FlagpoleScoreNumTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolescorenumtiles) |
-| 13284 | `FlagpoleGfxHandler` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-flagpolegfxhandler) |
-| 13326 | `ChkFlagOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkflagoffscreen) |
-| 13335 | `MoveSixSpritesOffscreen` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-movesixspritesoffscreen) |
-| 13338 | `DumpSixSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpsixspr) |
-| 13342 | `DumpFourSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpfourspr) |
-| 13345 | `DumpThreeSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumpthreespr) |
-| 13348 | `DumpTwoSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-dumptwospr) |
-| 13352 | `ExitDumpSpr` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-exitdumpspr) |
+| 13277 | `FlagpoleScoreNumTiles` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13284 | `FlagpoleGfxHandler` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13326 | `ChkFlagOffscreen` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13335 | `MoveSixSpritesOffscreen` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13338 | `DumpSixSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13342 | `DumpFourSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13345 | `DumpThreeSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13348 | `DumpTwoSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
+| 13352 | `ExitDumpSpr` | M2 T44 S4 flagpole graphics and OAM dumps | ROM-match complete | [T44 S4 closure](../../proposals/m2/t44-block-buffer-and-object-graphics.md#s4-closure-flagpole-graphics-and-sprite-dumps) |
 | 13357 | `DrawLargePlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawlargeplatform) |
 | 13374 | `ShrinkPlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-shrinkplatform) |
 | 13377 | `SetLast2Platform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-setlast2platform) |

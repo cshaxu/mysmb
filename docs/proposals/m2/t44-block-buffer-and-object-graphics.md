@@ -208,9 +208,55 @@ No S3 label is deferred.
 
 ### S4: Flagpole graphics and sprite dumps
 
-`FlagpoleScoreNumTiles`, `FlagpoleGfxHandler`, `ChkFlagOffscreen`,
-`MoveSixSpritesOffscreen`, `DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`,
-`DumpTwoSpr`, `ExitDumpSpr`.
+Entry `FlagpoleScoreNumTiles`; exit `ExitDumpSpr`; shared owners
+`src/game/oam/flagpole_gfx.c` and the shared OAM helper seam. Predecessor: S3
+OAM stacker. Successors: S5 platform/floatey graphics, fire attempts, death
+and enemy graphics callers. Scope: `FlagpoleScoreNumTiles`,
+`FlagpoleGfxHandler`, `ChkFlagOffscreen`, `MoveSixSpritesOffscreen`,
+`DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`, `DumpTwoSpr`, `ExitDumpSpr`.
+
+All nine incoming labels are open and expected to become matches. The
+ROM-logic route is `FlagpoleRoutine`/`FPGfx` through the flagpole handler,
+covering its fixed flag OAM rows, optional score row, `$0e` offscreen mask and
+the dump-helper fall-throughs. Additional original fire-attempt and death
+routes cover helper counts that flagpole does not enter. The operational track
+runs focused flagpole/OAM checks, x86/x64 C90 builds, DOS16 link,
+platform-purity audit and three refreshed target artifacts. Admission baseline
+is 1,551/1,992; this nine-node scope expects nine new matches and a maximum
+of 1,560/1,992.
+
+#### S4 closure: flagpole graphics and sprite dumps
+
+S4 closes all nine received labels, moving M2 from **1,551** to **1,560 /
+1,992**. `src/game/oam/flagpole_gfx.c` owns the complete source-order
+flagpole graphics chain; `src/game/oam/sprite_dump.c` owns the generic OAM
+dump fall-through. Neither Win32 nor DOS code selects tiles, score rows,
+offscreen masks, or sprite counts.
+
+| ROM labels | Exact translated behavior and evidence |
+| --- | --- |
+| `FlagpoleScoreNumTiles` | The bound table is the exact five source pairs: `$f9/$50`, `$f7/$50`, `$fa/$fb`, `$f8/$fb`, `$f6/$fb`. |
+| `FlagpoleGfxHandler` | Reloads `ObjectOffset` and `Enemy_SprDataOffset`, draws the three fixed flag rows, initializes `$02/$03/$04` before the collision gate, and invokes the existing child-row seam only for the score pair. |
+| `ChkFlagOffscreen` | Reloads the source slot and applies exactly `Enemy_OffscreenBits & $0e`; any set bit dispatches the six-row dump. |
+| `MoveSixSpritesOffscreen`, `DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`, `DumpTwoSpr`, `ExitDumpSpr` | The shared helpers preserve the original fall-through stores at `+20`, `+16`, `+12`, `+8`, `+4`, and `+0`; `MoveSixSpritesOffscreen` supplies `$f8`. |
+
+The original flagpole source-PC aggregate reaches every handler instruction
+from `$e54b` through `$e5c7`, including all five dump helper entries. The
+focused `mysmb_flagpole_gfx_smoke` checks each score pair, the no-score scratch
+initialization, three flag OAM rows, the `$0e` mask, and the six-row dump;
+`mysmb_sprite_dump_smoke` independently checks every fall-through endpoint.
+Both checks, plus `mysmb_flagpole_oam_smoke`, pass in x86 and x64. Strict C90
+product builds pass for both Windows widths; the shared sources link to the
+OpenNT DOS16 MZ program. `test_platform_purity.py` remains the architecture
+guard for the shared game/platform boundary.
+
+The refreshed required package is `mysmb16.exe` 258661 bytes
+`670fe2c1bd4b98032a11cd940aec299ebf75384e6766e7c3a7a44aa84cb1b00e`,
+`mysmb32.exe` 365793 bytes
+`35246454709cebcad9500c1c1720ee9a3d6ad1e8dd7ebfb4b56bf7a7d0b101fd`, and
+`mysmb64.exe` 372856 bytes
+`b36762adb84e00c100416441b49465a080e81533035f2a7e0948159bf60f479a`.
+No S4 node is deferred.
 
 ### S5: Platform, floatey and jumping-coin graphics
 

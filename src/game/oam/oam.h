@@ -65,5 +65,16 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index);
 /* ROM SixSpriteStacker; caller owns its saved OAM offset and return state. */
 void mysmb_oam_stack_six_sprite_data(struct mysmb_game *game,
                                      mysmb_u8 value, mysmb_u8 oam);
+/* ROM $e5b3 MoveSixSpritesOffscreen through $e5c7 ExitDumpSpr. */
+void mysmb_oam_move_six_sprites_offscreen(struct mysmb_game *game,
+                                          mysmb_u8 oam);
+void mysmb_oam_dump_six_sprites(struct mysmb_game *game,
+                                 mysmb_u8 value, mysmb_u8 oam);
+void mysmb_oam_dump_four_sprites(struct mysmb_game *game,
+                                  mysmb_u8 value, mysmb_u8 oam);
+void mysmb_oam_dump_three_sprites(struct mysmb_game *game,
+                                   mysmb_u8 value, mysmb_u8 oam);
+void mysmb_oam_dump_two_sprites(struct mysmb_game *game,
+                                 mysmb_u8 value, mysmb_u8 oam);
 
 #endif
