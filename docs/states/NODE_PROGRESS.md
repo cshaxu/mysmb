@@ -12,17 +12,17 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1503 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1510 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 404 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 397 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1503 / 1,992 (75.45%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1510 / 1,992 (75.80%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T43 S13 object bounding-box entry](../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-closure-object-bounding-box-entry)
-closes eleven source-adjacent entry nodes. Original fireball, misc, enemy and
-platform calls including controlled edge routes match shared C box writes; all
-three target builds pass their applicable validation.
+Latest task review: [T43 S14 bounding-box core](../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core)
+closes seven shared table/coordinate/clipping nodes. Original enemy, platform
+and misc caller records match on x86/x64; strict C90 and DOS16 link evidence
+pass, and all three artifacts are refreshed.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -32,7 +32,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1503)
+## Completed matches (1510)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1534,6 +1534,13 @@ of equivalent native nodes. No product repair is part of this audit.
 | 12850 | `LargePlatformBoundBox` |
 | 12857 | `SetupEOffsetFBBox` |
 | 12866 | `MoveBoundBoxOffscreen` |
+| 12878 | `BoundingBoxCore` |
+| 12916 | `CheckRightScreenBBox` |
+| 12935 | `SORte` |
+| 12936 | `NoOfs` |
+| 12939 | `CheckLeftScreenBBox` |
+| 12948 | `SOLft` |
+| 12949 | `NoOfs2` |
 | 13674 | `CheckForBulletBillCV` |
 | 13682 | `SBBAt` |
 | 14535 | `PlayerOffscreenChk` |

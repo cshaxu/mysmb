@@ -1676,13 +1676,13 @@ The labels and branches behind every line remain open until individually bound b
 | 12850 | `LargePlatformBoundBox` | M2 T43 S13 shared bounding-box entry chain | ROM-match complete | [S13 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-closure-object-bounding-box-entry) |
 | 12857 | `SetupEOffsetFBBox` | M2 T43 S13 shared bounding-box entry chain | ROM-match complete | [S13 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-closure-object-bounding-box-entry) |
 | 12866 | `MoveBoundBoxOffscreen` | M2 T43 S13 shared bounding-box entry chain | ROM-match complete | [S13 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s13-closure-object-bounding-box-entry) |
-| 12878 | `BoundingBoxCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-boundingboxcore) |
-| 12916 | `CheckRightScreenBBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkrightscreenbbox) |
-| 12935 | `SORte` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sorte) |
-| 12936 | `NoOfs` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noofs) |
-| 12939 | `CheckLeftScreenBBox` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-checkleftscreenbbox) |
-| 12948 | `SOLft` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-solft) |
-| 12949 | `NoOfs2` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-noofs2) |
+| 12878 | `BoundingBoxCore` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12916 | `CheckRightScreenBBox` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12935 | `SORte` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12936 | `NoOfs` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12939 | `CheckLeftScreenBBox` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12948 | `SOLft` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
+| 12949 | `NoOfs2` | M2 T43 S14 shared bounding-box core/clipping chain | ROM-match complete | [S14 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s14-closure-bounding-box-core) |
 | 12956 | `PlayerCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-playercollisioncore) |
 | 12959 | `SprObjectCollisionCore` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sprobjectcollisioncore) |
 | 12964 | `CollisionCoreLoop` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-collisioncoreloop) |

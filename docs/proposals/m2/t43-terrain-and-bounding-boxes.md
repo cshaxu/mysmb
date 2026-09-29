@@ -399,13 +399,49 @@ Expected-new subset: `BoundingBoxCore`, `CheckRightScreenBBox`, `SORte`, `NoOfs`
 
 | Line | Node | Incoming status | Current receiver |
 | --- | --- | --- | --- |
-| 12878 | `BoundingBoxCore` | open | M2 T17 S6 |
-| 12916 | `CheckRightScreenBBox` | open | M2 T17 S6 |
-| 12935 | `SORte` | open | M2 T17 S6 |
-| 12936 | `NoOfs` | open | M2 T17 S6 |
-| 12939 | `CheckLeftScreenBBox` | open | M2 T17 S6 |
-| 12948 | `SOLft` | open | M2 T17 S6 |
-| 12949 | `NoOfs2` | open | M2 T17 S6 |
+| 12878 | `BoundingBoxCore` | ROM-match complete | M2 T43 S14 |
+| 12916 | `CheckRightScreenBBox` | ROM-match complete | M2 T43 S14 |
+| 12935 | `SORte` | ROM-match complete | M2 T43 S14 |
+| 12936 | `NoOfs` | ROM-match complete | M2 T43 S14 |
+| 12939 | `CheckLeftScreenBBox` | ROM-match complete | M2 T43 S14 |
+| 12948 | `SOLft` | ROM-match complete | M2 T43 S14 |
+| 12949 | `NoOfs2` | ROM-match complete | M2 T43 S14 |
+
+
+#### S14 closure: Bounding-box core and edge clipping
+
+All seven nodes are ROM-match complete: 1,503 -> 1,510 / 1,992. One shared
+`world/bounding_box.c` owner follows `BoundBoxCtrlData`, the four byte-addition
+writes, `CMP`/`SBC` screen-middle decision, and the right/left clipping stores.
+The original valid control domain 0 through 11 is exercised with byte-wrap
+vectors. The source-only `$80-$9f` near-left no-clip interval, full left clip,
+right clip, and early right-edge return are all separately tested.
+
+Original caller records replay without a native mismatch on both widths:
+16 ordinary enemy plus 6 controlled edge calls, 4 ordinary platform plus 8
+controlled platform-edge calls, and 48 misc calls. Those records exercise the
+shared entry/return box output; the existing fireball entry route remains a
+retained S13 boundary because its available archived snapshot records do not
+contain a captured bounding-box child. Focused core and clipping checks pass,
+platform purity passes, strict C90 x86/x64 builds and self-tests pass, and the
+shared DOS16 source links as an MZ image. No platform adapter contains box or
+collision gameplay.
+
+| Node | Original address | Disposition |
+| --- | --- | --- |
+| BoundingBoxCore | DC71 | Four source table-relative byte additions and box writes match. |
+| CheckRightScreenBBox | DC9F | Source middle-page comparison and right-half selection match. |
+| SORte | DCC7 | Right corner receives `$ff`; left is changed only when positive. |
+| NoOfs | DCCD | Negative right edge returns with both horizontal coordinates retained. |
+| CheckLeftScreenBBox | DCD0 | `$80-$9f` retains and `$a0-$ff` clips as in source. |
+| SOLft | DCE6 | Positive right edge preserves while left becomes zero. |
+| NoOfs2 | DCEC | Left-side no-clip exit preserves coordinates. |
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 257709 | 0681013f83d1d02751b36655d7e75fbeb841647079b7e8476917dbf3907ce05e |
+| mysmb32.exe | 362077 | 9ab8e1c671364a01061301112b17d78202cb02b8d09ba02c479e254ba60db013 |
+| mysmb64.exe | 370174 | b6f96e20724f0a4d54f822b8519d4be581d7d66de18cf72a51fb4c7ee51955e1 |
 
 ### S15: Shared box collision geometry
 
