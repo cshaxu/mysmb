@@ -15,15 +15,15 @@ void mysmb_oam_draw_fireball(struct mysmb_game *game, mysmb_u8 slot)
     mysmb_u8 attributes;
     relative_x = game->ram[MYSMB_FIREBALL_RELATIVE_X];
     oam_offset = game->ram[MYSMB_FIREBALL_SPRITE_OFFSET + slot];
-    attributes = (game->ram[MYSMB_FRAME_COUNTER] & 0x10U) != 0U ? 0xc2U : 2U;
+    attributes = (game->ram[MYSMB_FRAME_COUNTER] & 0x08U) != 0U ? 0xc2U : 2U;
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_FIREBALL_RELATIVE_Y];
     game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
         (mysmb_u8)(0x64U ^ ((game->ram[MYSMB_FRAME_COUNTER] >> 2U) & 1U));
     game->ram[(mysmb_u16)(0x0202U + oam_offset)] = attributes;
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] = relative_x;
 }
-/* Existing DrawExplosion_Fireball child, including its state advance moved
- * from the caller. Sprite layout retains the graphics owner's pending proof. */
+/* DrawExplosion_Fireball increments state before choosing the shared
+ * ExplosionTiles/four-sprite path or KillFireBall. */
 void mysmb_oam_draw_fireball_explosion(struct mysmb_game *game,
                                                   mysmb_u8 slot)
 {
@@ -45,9 +45,9 @@ void mysmb_oam_draw_fireball_explosion(struct mysmb_game *game,
     oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET + slot];
     y = (mysmb_u8)(game->ram[MYSMB_FIREBALL_RELATIVE_Y] - 4U);
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
-    game->ram[(mysmb_u16)(0x0204U + oam_offset)] = y;
-    y = (mysmb_u8)(y + 8U);
     game->ram[(mysmb_u16)(0x0208U + oam_offset)] = y;
+    y = (mysmb_u8)(y + 8U);
+    game->ram[(mysmb_u16)(0x0204U + oam_offset)] = y;
     game->ram[(mysmb_u16)(0x020cU + oam_offset)] = y;
     game->ram[(mysmb_u16)(0x0201U + oam_offset)] = tile;
     game->ram[(mysmb_u16)(0x0205U + oam_offset)] = tile;

@@ -1826,13 +1826,13 @@ The labels and branches behind every line remain open until individually bound b
 | 14197 | `DChunks` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
 | 14242 | `ChnkOfs` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
 | 14250 | `ExBCDr` | M2 T45 S2 block/chunk OAM | ROM-match complete | [T45 S2 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) |
-| 14254 | `DrawFireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D3](m2-t24-s1-node-verification.md#node-drawfireball) |
-| 14261 | `DrawFirebar` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawfirebar); [S8 child diagnostic](../../history/M2-T40-enemy-movement-and-firebar.md#s8-original-firebar-chain-proof): typed child seam; no node credit |
-| 14275 | `FireA` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-firea) |
-| 14280 | `ExplosionTiles` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-explosiontiles) |
-| 14283 | `DrawExplosion_Fireball` | T16: `src/game/oam/fireball_gfx.c` | audited; mismatch | [T24 S1: D4](m2-t24-s1-node-verification.md#node-drawexplosion_fireball) |
-| 14292 | `DrawExplosion_Fireworks` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawexplosion_fireworks) |
-| 14327 | `KillFireBall` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-killfireball) |
+| 14254 | `DrawFireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14261 | `DrawFirebar` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14275 | `FireA` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14280 | `ExplosionTiles` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14283 | `DrawExplosion_Fireball` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14292 | `DrawExplosion_Fireworks` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
+| 14327 | `KillFireBall` | M2 T45 S3 shared src/game/oam/ | ROM-match complete | [T45 S3 closure](../../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) |
 | 14334 | `DrawSmallPlatform` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawsmallplatform) |
 | 14361 | `TopSP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-topsp) |
 | 14369 | `BotSP` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-botsp) |

@@ -96,7 +96,7 @@ int main(void)
     game.ram[0x00d5U] = 0x50U;
     mysmb_fireball_step(&game);
     if (game.ram[0x0220U] != 0x50U || game.ram[0x0221U] != 0x64U ||
-        game.ram[0x0222U] != 0xc2U || game.ram[0x0223U] != 0x50U) return 2;
+        game.ram[0x0222U] != 2U || game.ram[0x0223U] != 0x50U) return 2;
     /* FireballObjCore clears only when FBall_OffscreenBits & $cc is set.
      * The source permits anchors from $08 through $f7; both outer eight-pixel
      * bands are discarded by the source mask. */
@@ -190,12 +190,24 @@ int main(void)
     game.ram[0x06ecU] = 0x30U;
     mysmb_fireball_step(&game);
     if (game.ram[0x0024U] != 0x81U || game.ram[0x0230U] != 0x3cU ||
-        game.ram[0x0234U] != 0x3cU || game.ram[0x0238U] != 0x44U ||
+        game.ram[0x0234U] != 0x44U || game.ram[0x0238U] != 0x3cU ||
         game.ram[0x023cU] != 0x44U || game.ram[0x0231U] != 0x68U ||
         game.ram[0x023dU] != 0x68U || game.ram[0x0232U] != 2U ||
         game.ram[0x0236U] != 0x82U || game.ram[0x023aU] != 0x42U ||
         game.ram[0x023eU] != 0xc2U || game.ram[0x0233U] != 0x3cU ||
         game.ram[0x0237U] != 0x3cU || game.ram[0x023bU] != 0x44U ||
         game.ram[0x023fU] != 0x44U) return 3;
+    /* ROM DrawFirebar's second LSR pair carries original FrameCounter bit 3.
+     * Frame 8 flips both axes; frame 16 has the unflipped palette byte. */
+    mysmb_game_initialize_memory(&game, 0U);
+    game.ram[0x06f1U] = 0x20U;
+    game.ram[0x03afU] = 0x50U;
+    game.ram[0x03baU] = 0x60U;
+    game.ram[0x0009U] = 8U;
+    mysmb_oam_draw_fireball(&game, 0U);
+    if (game.ram[0x0221U] != 0x64U || game.ram[0x0222U] != 0xc2U) return 25;
+    game.ram[0x0009U] = 16U;
+    mysmb_oam_draw_fireball(&game, 0U);
+    if (game.ram[0x0221U] != 0x64U || game.ram[0x0222U] != 2U) return 26;
     return 0;
 }

@@ -264,6 +264,94 @@ phase, tile order and OAM comparisons. Explicitly recheck T24 D3/D4 rather
 than changing expected output. Fireball game motion/collision remains with
 its own prior source owner; S3 selects graphics and lifetime tail only.
 
+### S3 admission record
+
+The continuing owner-approved M2 source-order mandate admits **M2 T45 S3**
+at **1,651 / 1,992**. Seven exact labels are in scope and all seven are
+expected to become ROM-match complete, for a maximum **1,658 / 1,992**.
+`DrawFireball` and `DrawExplosion_Fireball` transfer from M2 T16 S4 with
+audited T24 D3/D4 mismatches; the other five transfer from M2 T17 S6 with
+open status. Shared `src/game/oam/` owns the chain. S2 block/chunk graphics
+precedes it, and S4 small-platform graphics follows it.
+
+| ROM line / PC | Label | Incoming |
+| --- | --- | --- |
+| 14254 / `$ecde` | `DrawFireball` | audited; mismatch D3 |
+| 14261 / `$eced` | `DrawFirebar` | open |
+| 14275 / `$ed02` | `FireA` | open |
+| 14280 / `$ed06` | `ExplosionTiles` | open |
+| 14283 / `$ed09` | `DrawExplosion_Fireball` | audited; mismatch D4 |
+| 14292 / `$ed17` | `DrawExplosion_Fireworks` | open |
+| 14327 / `$ed61` | `KillFireBall` | open |
+
+The ROM-logic track compares source-reachable original `FireballObjCore`,
+`ProcFirebar` and `FireworksObj` child calls with bounded RAM-only frame,
+state and relative-coordinate variants. It covers tile phase, attribute flip,
+all three explosion tiles, kill transition, four-sprite order, branches and
+non-stack RAM/OAM. D3/D4 expected output remains unchanged. The separate
+operational track runs focused fireball/firebar/fireworks OAM tests, strict
+x86/x64 builds, OpenNT DOS16 MZ link, platform purity and refreshed three
+owner-authorized EXEs. The owner-local ROM and reviewed listing are local
+verification inputs only. Raw snapshots, probes, logs and intermediates stay
+under ignored `build/m2-t45-s3/`; no original PC, register, stack or ROM
+modification is permitted.
+
+### S3 closure: projectile and explosion OAM
+
+All **7 / 7** scoped labels are ROM-match complete. M2 advances from
+**1,651** to **1,658 / 1,992** with no deferred S3 label. The owner ROM
+contains `68 67 66` at the `ExplosionTiles` table. Original PC coverage
+reaches each executable label from its normal parent: `FireballObjCore`,
+the firebar actor, or the fireworks actor. In 78 bounded original-route
+coverage runs, `DrawFireball` enters 12 times, `DrawFirebar` 108,
+`FireA` 108, `DrawExplosion_Fireball` eight,
+`DrawExplosion_Fireworks` 34 and `KillFireBall` four. The explosion kill
+branch at `$ed15` takes and falls through four times each.
+
+| Source label | Original control, data and write binding | PC/data witness |
+| --- | --- | --- |
+| `DrawFireball` | `FBall_SprDataOffset,x` selects Y/X OAM stores from relative scratch, then falls into the shared tile/attribute code; `fireball_gfx.c` | original core; 32 controlled phases |
+| `DrawFirebar` | `FrameCounter >> 2` chooses `$64/$65` tile for both direct firebar and fireball callers; `firebar_gfx.c` and `fireball_gfx.c` | original firebar/core; 32 phases |
+| `FireA` | Carry from the second shift pair selects `$02/$c2` attribute. Original `$ecfe` branch reaches both successors **112/112** under RAM-only frame variants; both C leaves use bit 3. | original core/firebar phases |
+| `ExplosionTiles` | Original three bytes `68 67 66` feed the explosion consumer; fireworks original calls cover indexes 0/1/2 in **158/158/156** cases; fireball C uses the same three-value order. | ROM bytes and original actor calls |
+| `DrawExplosion_Fireball` | Alternate OAM offset, old state to three-value index, state increment before branch; `fireball_gfx.c` | original core states `$80/$85/$86/$ff` |
+| `DrawExplosion_Fireworks` | Four equal tiles, Y positions top at entries 0/8 and bottom at 4/12, X positions left at 0/4 and right at 8/12, attributes `02/82/42/c2`; shared fireball/fireworks OAM leaves | original core/fireworks children |
+| `KillFireBall` | Index >= 3 clears the indexed state and returns without four-sprite writes; `fireball_gfx.c` | original core states `$86/$ff`; `$ed15` branch |
+
+The T24 D3/D4 mismatches are resolved by changing the shared fireball
+attribute selector from frame bit 4 to bit 3 and restoring the second/third
+explosion sprite Y order. The existing smoke expectation that had encoded
+both mistakes was corrected and now asserts frames eight and sixteen.
+The similar-issue sweep covered all three projectile OAM owners and their
+production callers: fireball core, firebar actor and fireworks actor. The
+firebar leaf already used bit 3, and the fireworks leaf already used the
+original four-sprite order; they required proof, not another policy.
+No platform gameplay source changed.
+
+The ROM-logic track compared every non-stack 2 KB RAM/OAM byte for
+**25** fireball, **448** firebar and **472** fireworks original child
+record streams on each native width, with zero mismatches. Those streams
+contain **4,529** natural graphics child calls per width. The separate
+32-phase fireball and 32-phase firebar original routes compare another
+**224** child calls per width with zero mismatches. Original CPU PC,
+registers, stack and ROM bytes were never changed; the phase variant writes
+only FrameCounter RAM at the naturally reached graphics entry. Raw streams,
+intermediate probes and logs remain in ignored `build/m2-t45-s3/`.
+
+The operational track passes the focused fireball/firebar/fireworks OAM and
+platform-purity tests, strict C90 x86/x64 builds, OpenNT DOS16 MZ link and
+both Win32 product self-tests. The full x86 and x64 suites each pass
+**222/233** with exactly the eleven pre-existing failures from S2 and no
+new failure. Python validation was rerun with its temporary directory under
+ignored `build/` after the initial sandbox Temp denial. DOS remains link-only;
+no physical 486SX timing claim is made. Three owner-authorized artifacts:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `1afa4400013394ca7dd0575461f848ea8e8b4bb76777fe239482ebbe1d4b5595` |
+| `assets/mysmb32.exe` | `d6317184cc6514f51884860169e8297d5c17ba4cc83711b6fc093b28a0ebe4d0` |
+| `assets/mysmb64.exe` | `c2448d735c4c1c493d0d34a98c4263ad2a5925cda945b80d9e5f274aa7ee1b09` |
+
 ## S4: small-platform graphics
 
 Entry `DrawSmallPlatform`; exit `ExSPl`. Exact labels:

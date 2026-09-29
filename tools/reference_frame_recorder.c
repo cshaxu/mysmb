@@ -1034,6 +1034,8 @@ int main(int argument_count, char **arguments)
     char *enemy_graphics_variant_end;
     unsigned int block_graphics_variant;
     char *block_graphics_variant_end;
+    unsigned int projectile_frame;
+    char *projectile_frame_end;
     lib_bool direct_warp_text;
     lib_bool t28_vram_pending;
     lib_bool t29_vertical_pipe_pending;
@@ -1074,6 +1076,7 @@ int main(int argument_count, char **arguments)
     t26_fixture = 0u;
     enemy_graphics_variant = 0xffffffffu;
     block_graphics_variant = 0xffffffffu;
+    projectile_frame = 0xffffffffu;
     direct_warp_text = LIB_FALSE;
     t28_vram_pending = LIB_FALSE;
     t29_vertical_pipe_pending = LIB_FALSE;
@@ -1081,6 +1084,16 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--projectile-frame=", 19u) == 0) {
+            unsigned long value;
+            if (projectile_frame != 0xffffffffu) return 64;
+            value = strtoul(arguments[recorded] + 19u,
+                            &projectile_frame_end, 10);
+            if (projectile_frame_end == arguments[recorded] + 19u ||
+                *projectile_frame_end != '\0' || value >= 32u) return 64;
+            projectile_frame = (unsigned int)value;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--enemy-graphics-variant=", 25u) == 0) {
             unsigned long value;
             if (enemy_graphics_variant != 0xffffffffu) return 64;
@@ -3621,6 +3634,11 @@ int main(int argument_count, char **arguments)
             !metatile_observe(driver->machine->ram, before_pc,
                 driver->machine->a, driver->machine->x, driver->machine->y,
                 driver->machine->p, driver->machine->s)) return 69;
+        /* T45 S3: vary only the input FrameCounter at a naturally reached
+         * projectile graphics entry. CPU state and ROM remain untouched. */
+        if (elapsed >= warmup_frames && projectile_frame != 0xffffffffu &&
+            (before_pc == 0xecdeu || before_pc == 0xecedu))
+            driver->machine->ram[9u] = (lib_u8)projectile_frame;
         /* T44 S8: controlled RAM at the original EnemyGfxHandler entry.
          * CPU registers, PC, stack, code and parent call order are untouched. */
         if (elapsed >= warmup_frames && background_snapshot == 42u &&

@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1651 | Exact labels listed below and in the canonical inventory. |
-| Mapped / audited, not complete | 85 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 256 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| ROM-match complete | 1658 | Exact labels listed below and in the canonical inventory. |
+| Mapped / audited, not complete | 83 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
+| Open / unmatched | 251 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1651 / 1,992 (82.88%)**. The 85 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1658 / 1,992 (83.23%)**. The 83 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T45 S2 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s2-closure-block-and-brick-chunk-oam) completes 14 block/chunk OAM labels. Original child and full-root x86/x64 matches, source branch coverage, DOS16 link, purity and three EXEs provide separate validation.
+Latest task review: [T45 S3 closure](../proposals/m2/t45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam) completes seven projectile/explosion OAM labels. Original control/data and full child RAM/OAM proof, x86/x64 builds, DOS16 link, purity and three EXEs provide separate validation.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1651)
+## Completed matches (1658)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1681,11 +1681,18 @@ of equivalent native nodes. No product repair is part of this audit.
 | 14197 | `DChunks` |
 | 14242 | `ChnkOfs` |
 | 14250 | `ExBCDr` |
+| 14254 | `DrawFireball` |
+| 14261 | `DrawFirebar` |
+| 14275 | `FireA` |
+| 14280 | `ExplosionTiles` |
+| 14283 | `DrawExplosion_Fireball` |
+| 14292 | `DrawExplosion_Fireworks` |
+| 14327 | `KillFireBall` |
 | 14535 | `PlayerOffscreenChk` |
 | 14547 | `PROfsLoop` |
 | 14551 | `NPROffscr` |
 
-## Mapped but not yet matched (85)
+## Mapped but not yet matched (83)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1725,8 +1732,6 @@ of equivalent native nodes. No product repair is part of this audit.
 | 4777 | `E_WaterArea1` |
 | 4783 | `E_WaterArea2` |
 | 4791 | `E_WaterArea3` |
-| 14254 | `DrawFireball` |
-| 14283 | `DrawExplosion_Fireball` |
 | 14424 | `PlayerGraphicsTable` |
 | 14457 | `SwimKickTileNum` |
 | 14460 | `PlayerGfxHandler` |
