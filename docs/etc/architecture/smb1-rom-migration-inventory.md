@@ -1659,9 +1659,9 @@ The labels and branches behind every line remain open until individually bound b
 | 12711 | `KillEnemyAboveBlock` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
 | 12717 | `UnderHammerBro` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
 | 12726 | `NoUnderHammerBro` | M2 T43 S10 shared side/jump/hammer chain | ROM-match complete | [S10 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-closure-enemy-side-jump-and-hammer-terrain) |
-| 12732 | `ChkUnderEnemy` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkunderenemy) |
-| 12737 | `ChkForNonSolids` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-chkfornonsolids) |
-| 12747 | `NSFnd` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nsfnd) |
+| 12732 | `ChkUnderEnemy` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
+| 12737 | `ChkForNonSolids` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
+| 12747 | `NSFnd` | M2 T43 S11 shared ground-query/non-solid chain | ROM-match complete | [S11 source/actual proof](../../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-closure-enemy-ground-query-and-pass-through-tiles) |
 | 12751 | `FireballBGCollision` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-fireballbgcollision) |
 | 12772 | `ClearBounceFlag` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-clearbounceflag) |
 | 12777 | `InitFireballExplode` | T17 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-initfireballexplode) |

@@ -45,3 +45,11 @@ mysmb_u8 mysmb_player_coin_metatile(struct mysmb_game *game, mysmb_u8 tile)
     game->ram[0xfeU] = 1U;
     return 1U;
 }
+
+/* ROM $E1B5 ChkForNonSolids through NSFnd.  Each source CMP leaves Z set
+ * only on equality; the C predicate exposes that exact branch condition. */
+mysmb_u8 mysmb_world_enemy_metatile_is_non_solid(mysmb_u8 metatile)
+{
+    return metatile == 0x26U || metatile == 0xc2U || metatile == 0xc3U ||
+           metatile == 0x5fU || metatile == 0x60U;
+}

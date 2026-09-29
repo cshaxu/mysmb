@@ -22,6 +22,11 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,mysmb_u8 slot,
     record(game,slot,jump_phase ? 3U : 1U);terrain->metatile=(mysmb_u8)tile_value;
     return (mysmb_u8)query_result;
 }
+mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
+    struct mysmb_enemy_terrain *terrain)
+{
+    return mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain);
+}
 mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 {
     if(count>=5U || tile==0U) {bad=1U;return 0U;}

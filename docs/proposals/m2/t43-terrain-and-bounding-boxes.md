@@ -302,6 +302,24 @@ Expected-new subset: `ChkUnderEnemy`, `ChkForNonSolids`, `NSFnd`.
 | 12737 | `ChkForNonSolids` | open | M2 T17 S6 |
 | 12747 | `NSFnd` | open | M2 T17 S6 |
 
+#### S11 closure: enemy ground query and pass-through tiles
+
+All three expected nodes close: `ChkUnderEnemy`, `ChkForNonSolids`, and
+`NSFnd`. The shared C wrapper fixes the source A=`$00`, Y=`$15` bottom-middle
+probe; the predicate retains the five exact CMP identities `$26`, `$c2`,
+`$c3`, `$5f`, and `$60`, with its boolean value representing the original Z
+branch. The old common callers now use the wrapper, while Hammer terrain keeps
+its source-specific nonzero test. Controlled original child records match
+549/549 query entries for returned metatile, row, address and contact nibble,
+and 1,013/1,013 predicate entries for the Z result. Focused caller, terrain,
+platform-purity and exact predicate CTests pass. Strict C90 Win32 x86/x64
+builds self-test; the shared source list also links into an OpenNT large-model
+DOS MZ image. Refreshed artifact SHA-256 values are
+a `d7da920dfef2023dd93f88cf76f591706c24ea419f744ec42dbc23242449c25a`
+(DOS16), `4fb1a4c22f72317164a47bf4c3548b6e8d8aca39cda0cdcda2e90c560379407f`
+(Win32 x86), and `dc37ee92a9b729776a4ed4b25cbbbfd1e0f57171017ec155da5995cf3aabe4f8`
+(Win32 x64). Completion moves 1,486/1,992 to 1,489/1,992.
+
 ### S12: Fireball background collision
 
 Source lines12751-12790; entry `FireballBGCollision`; final label `InitFireballExplode`. Shared owner: `src/game/world/fireball_background.c`.

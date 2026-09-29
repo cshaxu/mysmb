@@ -23,6 +23,9 @@ mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game, mysmb_u8 slot,
     mysmb_u8 adder, mysmb_u8 side, struct mysmb_enemy_terrain *terrain)
 { (void)game; (void)slot; (void)adder; (void)side; (void)terrain; return 0U; }
+mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
+    struct mysmb_enemy_terrain *terrain)
+{ return mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain); }
 void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game, mysmb_u8 slot)
 { (void)game; (void)slot; }
 void mysmb_objects_setup_floatey_from_relative(struct mysmb_game *game,

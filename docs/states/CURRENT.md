@@ -2,29 +2,29 @@
 
 ## Current Work
 
-**M2 T43 S10 is active at 1,477/1,992:9 scoped,9 expected new, maximum1,486.**
-T43 covers150 nodes; revised global maximum1,517 retains the KillEnemies debt.
+**M2 T43 S11 closed at 1,489/1,992: 3 scoped, 3 ROM-match complete.**
+T43 covers 150 nodes; revised global maximum 1,517 retains the KillEnemies debt.
 
-## M2 T43 S10 Packet
+## M2 T43 S11 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M2 T43 S10, source-order implementation. |
-| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer230. |
-| Objective | ChkForBump_HammerBroJ, NoBump, InvtD, PlayerEnemyDiff, EnemyLanding, HammerBroBGColl, KillEnemyAboveBlock, UnderHammerBro and NoUnderHammerBro. |
-| Non-goals | No recertification of existing side/jump leaves, no ground-query repair and no platform gameplay. |
-| Reference Baseline | 1,477/1,992; scope9/expected9, maximum1,486; retained S31 side/jump leaves stay dependencies. |
-| Candidate Proposal | [S10 side/jump/hammer chain](../proposals/m2/t43-terrain-and-bounding-boxes.md#s10-enemy-side-jump-and-hammer-terrain). |
-| Files And ABI Surface | Shared enemy/background.c and object child seams, tests/recorder, manifests and three EXEs. |
+| Identifier Mode | Continuation M2 T43 S11, source-order implementation. |
+| Admission And Approval | Continuing owner-approved M2 mandate; accepted transfer 231. |
+| Objective | `ChkUnderEnemy`, `ChkForNonSolids`, and `NSFnd`. |
+| Non-goals | No fireball background-collision implementation, no Hammer Bro branch rewrite, no platform gameplay. |
+| Reference Baseline | 1,486/1,992; scope 3/expected 3, maximum 1,489. |
+| Candidate Proposal | [S11 enemy ground query](../proposals/m2/t43-terrain-and-bounding-boxes.md#s11-enemy-ground-query-and-pass-through-tiles). |
+| Files And ABI Surface | Shared world query/classification owner, caller seams, tests/recorder, manifests and three EXEs. |
 | Applicable Rules | Task Reading Set, execution, architecture/coding, documentation, source policy, ledger and validation matrix. |
-| Verification | Original bump/distance/landing/hammer branch and RAM-write order; separate native operational proof. |
-| Expected Markers | One shared side/jump/hammer owner with explicit S9 and S11 boundaries. |
-| Asset Needs | Owner-local nonredistributable ROM/listing; bounded records below ignored build. Three owner-authorized EXEs; DOS link-only. |
-| Reporting Requirements |9 named dispositions, dual proof, retained dependency results and artifact hashes. |
+| Verification | Original A/Y query setup, output RAM/flags, exact five-tile comparisons; separate native operational proof. |
+| Expected Markers | One shared ground-query entry and one exact non-solid predicate, with Hammer Bro's direct nonzero test retained. |
+| Asset Needs | Owner-local nonredistributable ROM/listing; bounded records below ignored build. Three owner-authorized EXEs. |
+| Reporting Requirements | Three named dispositions, dual proof, retained dependency results and artifact hashes. |
 | Stop Conditions | Forced original CPU path, concealed descendant mismatch, unadmitted algorithm rewrite or platform gameplay. |
-| Exit Criteria |9 newly proved nodes, both proof tracks and three artifacts. |
+| Exit Criteria | Met: three newly proved nodes, both proof tracks and three artifacts. |
 | Original Owner Request | Faithful original ROM logic in shared native C for DOS16, x86 and x64. |
-| Similar-Issue Sweep | All landing callers, state-table users, red-koopa edges, nibble windows, direction transitions and duplicate owners. |
+| Similar-Issue Sweep | All enemy and fireball ground-query callers, pass-through tile predicates, page/row boundaries and duplicate owners. |
 
 ## S8 closure
 

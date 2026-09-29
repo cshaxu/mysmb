@@ -171,8 +171,7 @@ void mysmb_enemy_step_spiny_eggs_slot(struct mysmb_game *game, mysmb_u8 slot)
         /* EnemyToBGCollisionDet -> LandEnemyProperly ->
          * ProcEnemyDirection.  A landed egg is reset to ordinary Spiny
          * state before RunNormalEnemies takes ownership next frame. */
-        tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
-                                               &terrain) != 0U ?
+        tile = mysmb_world_query_enemy_under(game, slot, &terrain) != 0U ?
             terrain.metatile : 0U;
         if (game->ram[MYSMB_ENEMY_Y + slot] >= 0x25U &&
             tile != 0U && tile != 0x26U && tile != 0xc2U &&

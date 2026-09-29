@@ -79,6 +79,11 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
                                        mysmb_u8 slot, mysmb_u8 adder_index,
                                        mysmb_u8 horizontal_contact,
                                        struct mysmb_enemy_terrain *terrain);
+/* ROM ChkUnderEnemy: A=0 and Y=$15 before BlockBufferChk_Enemy. */
+mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
+                                       struct mysmb_enemy_terrain *terrain);
+/* ROM ChkForNonSolids / NSFnd: true only for its five equality matches. */
+mysmb_u8 mysmb_world_enemy_metatile_is_non_solid(mysmb_u8 metatile);
 /* ROM FireballBGCollision / BlockBufferChk_FBall / ChkForNonSolids. */
 void mysmb_world_fireball_background_collision(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM FireballEnemyCollision: scans every source enemy slot, applies each

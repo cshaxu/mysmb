@@ -60,6 +60,11 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *g, mysmb_u8 slot,
     terrain_from_ram(terrain, r[6]);
     return 1U;
 }
+mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *g, mysmb_u8 slot,
+    struct mysmb_enemy_terrain *terrain)
+{
+    return mysmb_world_query_enemy_block(g, slot, 0x15U, 0U, terrain);
+}
 mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 {
     unsigned char *r;

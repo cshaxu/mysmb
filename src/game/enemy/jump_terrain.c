@@ -12,7 +12,7 @@ void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
     /* SubtEnemyYPos compares the wrapped ADC byte, not a host-width sum. */
     if ((mysmb_u8)(game->ram[0x00cfU + slot] + 0x3eU) >= 0x44U &&
         (mysmb_u8)(game->ram[0x00a0U + slot] + 2U) >= 3U) {
-        tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, &terrain) != 0U ?
+        tile = mysmb_world_query_enemy_under(game, slot, &terrain) != 0U ?
             terrain.metatile : 0U;
         if (tile != 0U && mysmb_objects_is_solid_terrain(tile) != 0U) {
             mysmb_world_land_enemy(game, slot);

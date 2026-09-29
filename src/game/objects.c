@@ -593,8 +593,7 @@ void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game,
  * EnemyToBGCollisionDet. */
 mysmb_u8 mysmb_objects_is_solid_terrain(mysmb_u8 tile)
 {
-    return tile != 0U && tile != 0x26U && tile != 0xc2U && tile != 0xc3U &&
-           tile != 0x5fU && tile != 0x60U;
+    return tile != 0U && mysmb_world_enemy_metatile_is_non_solid(tile) == 0U;
 }
 
 /* ROM $d9bd HammerBroBGColl.  This is deliberately run before the Hammer
@@ -607,8 +606,8 @@ void mysmb_objects_step_hammer_terrain(struct mysmb_game *game,
 
     if ((game->ram[MYSMB_ENEMY_STATE + slot] & 0x20U) != 0U ||
         game->ram[MYSMB_ENEMY_Y + slot] < 6U) return;
-    tile = mysmb_world_query_enemy_block(game, slot, 0x15U, 0U,
-                                           &terrain) != 0U ? terrain.metatile : 0U;
+    tile = mysmb_world_query_enemy_under(game, slot, &terrain) != 0U ?
+        terrain.metatile : 0U;
     if (tile == 0U) {
         game->ram[MYSMB_ENEMY_STATE + slot] |= 1U;
         return;

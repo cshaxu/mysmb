@@ -117,6 +117,14 @@ mysmb_u8 mysmb_world_query_enemy_block(struct mysmb_game *game,
     terrain->contact_low_nibble = horizontal_contact != 0U ? (mysmb_u8)(game->ram[0x0087U + slot] & 0x0fU) : (mysmb_u8)(game->ram[0x00cfU + slot] & 0x0fU);
     return 1U;
 }
+
+/* ROM $E1AE ChkUnderEnemy: fixed bottom-middle probe, with the original
+ * BlockBufferChk_Enemy output contract retained by the shared child. */
+mysmb_u8 mysmb_world_query_enemy_under(struct mysmb_game *game, mysmb_u8 slot,
+                                       struct mysmb_enemy_terrain *terrain)
+{
+    return mysmb_world_query_enemy_block(game, slot, 0x15U, 0U, terrain);
+}
 /* ROM $e2a5 BoundBoxCtrlData and $dc71 BoundingBoxCore. */
 void mysmb_world_set_bounding_box(struct mysmb_game *game,
                                     mysmb_u16 address, mysmb_u8 control,
