@@ -51,8 +51,8 @@ boundary.
 | T39 | Special initialization and actor dispatch; ends EraseEnemyObject | 8529–9211; flame timer dependency | 83 + 3 dependencies |
 | T40 | Podoboo/Hammer Bro, normal/swimming/flying movement, firebars and Lakitu distance | 9212–10091 | 120 |
 | T41 | Complete bridge/Bowser chain, platforms, flame, fireworks and remaining actors | 10092–11084 | 123 |
-| T42 | Shared collision, bounding boxes and movement primitives | 11085–12000 | 110 |
-| T43 | Player terrain, head, foot, side and pipe collision | 12001–13000 | 136 |
+| T42 | Shared collision, bounding boxes and movement primitives | 11085–11923 | 98 |
+| T43 | Player terrain, head, foot, side and pipe collision | 11924–13000 | 148 |
 | T44 | Enemy terrain, landing, stun and side collision | 13001–14000 | 111 |
 | T45 | Projectile, powerup and player/enemy collision completion | 14001–14459 | 45 |
 | T46 | Relative positions, offscreen bits and player/enemy OAM | 14460–14780 | 43 |
@@ -810,3 +810,7 @@ line-10100 cut. [Exact T40 chains and receivers](../../history/M2-T40-enemy-move
 matches. Its thirteen S rows preserve source order and shared ownership.
 Only S1 receives its six bridge-collapse nodes at admission; all later
 labels retain their existing receivers until their exact S receipt.
+
+T42 admission keeps the twelve PlayerBGUpperExtent-through-DoFootCheck nodes
+with the following complete terrain chain. [T42 exact chain plan](t42-shared-collision-and-platforms.md)
+therefore covers 98 nodes through line 11923; the next slice starts at 11924.
