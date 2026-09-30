@@ -976,3 +976,8 @@ branches.
 ### Cohort I — B15b platform runner integration
 
 `RunSmallPlatform` through `LargePlatformSubroutines` now has four node contracts, all incident calls, timer branches, tail-jumps, returns and movement-vector edges, and five feasible material handoffs. Static source review matches small-platform draw-before-move, large-platform timer-gated move-before-draw, post-move relative-position refresh and the ID-$24 seven-entry dispatch table. All entries remain `needs-evidence` until the corresponding controlled ROM/x86/x64 paths run.
+
+
+### Cohort I — B15c lifecycle and Podoboo integration
+
+`EraseEnemyObject`, `MovePodoboo` and `PdbM` now have node contracts, all incident control relations and four feasible state handoffs. Static review matches all eight erase fields and both Podoboo timer paths. It also found one graph-only discrepancy: `control-01711` falsely treats a JumpEngine pointer table as fall-through into `EraseEnemyObject`; candidate H7 records the extractor repair, with no shared-C change. The three nodes otherwise remain `needs-evidence`.

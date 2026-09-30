@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 179,
+    "enumeratedCount": 183,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2519,6 +2519,62 @@
       "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00180",
+      "producer": "MovePodoboo",
+      "consumer": "InitPodoboo",
+      "storage": "EnemyIntervalTimer zero predicate and current slot",
+      "feasiblePath": "Timer expiry selects initialization before random-byte sampling.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_podoboos_slot",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00181",
+      "producer": "InitPodoboo",
+      "consumer": "MovePodoboo",
+      "storage": "reset Podoboo Y/page/state/interval/box and LFSR byte $07a8+slot",
+      "feasiblePath": "Podoboo caller reads random source only after initialization returns.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_podoboo then slot caller",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00182",
+      "producer": "MovePodoboo",
+      "consumer": "PdbM",
+      "storage": "Y force, interval timer and Y speed",
+      "feasiblePath": "Expired-timer writes complete before the common gravity tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_podoboos_slot",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00183",
+      "producer": "EraseEnemyObject",
+      "consumer": "RunEnemyObjectsCore",
+      "storage": "eight cleared current-slot lifecycle fields",
+      "feasiblePath": "Later actor dispatch observes cleared object flag/ID/state/timers/attributes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_erase_enemy",
+      "semanticContract": "Preserves source producer-to-consumer state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -16485,31 +16541,40 @@
       "label": "EraseEnemyObject",
       "asmLine": 9198,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
+      "currentCounterpart": "shared lifecycle and Podoboo slot path",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears exactly Enemy_Flag, Enemy_ID, Enemy_State, FloateyNum_Control, EnemyIntervalTimer, ShellChainCounter, Enemy_SprAttrib and EnemyFrameTimer for the current slot, then returns."
     },
     {
       "label": "MovePodoboo",
       "asmLine": 9212,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
+      "currentCounterpart": "shared lifecycle and Podoboo slot path",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When interval timer is zero, calls InitPodoboo, reads LFSR byte, sets Y force bit seven, derives interval (low nibble OR six), writes Y speed $f9; both paths tail-jump to vertical gravity."
     },
     {
       "label": "PdbM",
       "asmLine": 9224,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
+      "currentCounterpart": "shared lifecycle and Podoboo slot path",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to MoveJ_EnemyVertically after either nonzero-timer branch or completed Podoboo reinitialization."
     },
     {
       "label": "HammerThrowTmrData",
@@ -43804,12 +43869,12 @@
       "id": "control-01118",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original jump relation WarpZoneObject -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "ProcessWhirlpools",
@@ -44778,12 +44843,12 @@
       "id": "control-01180",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation KillVine -> EraseEnemyObject with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation KillVine -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "KillVine",
@@ -45466,12 +45531,12 @@
       "id": "control-01223",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation KillBB -> EraseEnemyObject with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation KillBB -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "SpawnHammerObj",
@@ -50314,12 +50379,12 @@
       "id": "control-01526",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation KillLakitu -> EraseEnemyObject with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original jump relation KillLakitu -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "LakituAndSpinyHandler",
@@ -53273,13 +53338,13 @@
       "instruction": "jsr",
       "id": "control-01711",
       "cohort": "J",
-      "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "status": "mismatch",
+      "currentCounterpart": "none: extracted pointer-table fall-through is infeasible",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c source graph audit: SMB1 lines 9182-9197 and JumpEngine lines 2395-2408 prove the pointer table is dispatch data, not a sequential control path."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation LargePlatformSubroutines -> EraseEnemyObject with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "No executable fall-through exists from LargePlatformSubroutines into EraseEnemyObject; JumpEngine consumes the return and indirect-jumps through the following pointer words."
     },
     {
       "from": "MovePodoboo",
@@ -53289,10 +53354,13 @@
       "instruction": "bne",
       "id": "control-01712",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation MovePodoboo -> PdbM with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "MovePodoboo",
@@ -53302,10 +53370,13 @@
       "instruction": "jsr",
       "id": "control-01713",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation MovePodoboo -> InitPodoboo with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "MovePodoboo",
@@ -53315,10 +53386,13 @@
       "instruction": "sta",
       "id": "control-01714",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation MovePodoboo -> PdbM with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "PdbM",
@@ -53328,10 +53402,13 @@
       "instruction": "jmp",
       "id": "control-01715",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PdbM -> MoveJ_EnemyVertically with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "ProcHammerBro",
@@ -53978,10 +54055,13 @@
       "instruction": "jsr",
       "id": "control-01765",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ChkKillGoomba -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "ChkKillGoomba",
@@ -56435,10 +56515,13 @@
       "instruction": "jsr",
       "id": "control-01954",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation KillLoop -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "KillLoop",
@@ -58128,10 +58211,13 @@
       "instruction": "jmp",
       "id": "control-02084",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation BalancePlatform -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "DoBPl",
@@ -59493,10 +59579,13 @@
       "instruction": "jsr",
       "id": "control-02189",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation TooFar -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "TooFar",
@@ -60208,10 +60297,13 @@
       "instruction": "jsr",
       "id": "control-02244",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation HandlePowerUpCollision -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "HandlePowerUpCollision",
@@ -69659,10 +69751,13 @@
       "instruction": "jsr",
       "id": "control-02971",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation AllRowC -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "AllRowC",
@@ -79536,12 +79631,12 @@
       "id": "control-03694",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared vine branch/call/return and state-handoff counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillVine with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillVine with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "BlockBufferCollision",
@@ -79728,12 +79823,12 @@
       "id": "control-03706",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared cannon/Bullet Bill branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillBB with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillBB with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "ImposeGravity",
@@ -81616,12 +81711,12 @@
       "id": "control-03824",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InitPodoboo -> MovePodoboo with its mode/slot predicate, exact write ordering and call/tail/return handoff."
+      "semanticContract": "Preserves original return relation InitPodoboo -> MovePodoboo with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "SpawnHammerObj",
@@ -81708,10 +81803,13 @@
       "instruction": "rts/rti",
       "id": "control-03830",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> ChkKillGoomba with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "MoveJ_EnemyVertically",
@@ -82038,10 +82136,13 @@
       "instruction": "rts/rti",
       "id": "control-03854",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillLoop with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -82675,10 +82776,13 @@
       "instruction": "rts/rti",
       "id": "control-03900",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> TooFar with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "SprObjectCollisionCore",
@@ -82782,10 +82886,13 @@
       "instruction": "rts/rti",
       "id": "control-03908",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> HandlePowerUpCollision with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -84250,10 +84357,13 @@
       "instruction": "rts/rti",
       "id": "control-04020",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> AllRowC with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "MoveColOffscreen",
@@ -89026,12 +89136,12 @@
       "id": "control-04322",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePodoboo with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePodoboo with current slot, timer predicate and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
