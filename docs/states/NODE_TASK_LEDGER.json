@@ -254912,9 +254912,20 @@
         "LoadHeader"
       ],
       "maximumComplete": 1859,
-      "actualMatches": [],
+      "actualMatches": [
+        "MusicHandler",
+        "LoadEventMusic",
+        "NoStopSfx",
+        "LoadAreaMusic",
+        "NoStop1",
+        "GMLoopB",
+        "HandleAreaMusicLoopB",
+        "FindAreaMusicHeader",
+        "FindEventMusicHeader",
+        "LoadHeader"
+      ],
       "evidence": "docs/proposals/m2/t49-music-engine-and-channel-handlers.md",
-      "state": "active"
+      "state": "closed-rom-match-complete"
     }
   ]
 }

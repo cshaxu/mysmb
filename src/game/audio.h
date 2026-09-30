@@ -8,6 +8,11 @@
  * produce host audio later. */
 void mysmb_audio_step(struct mysmb_game *game);
 
+/* ROM MusicHandler's queue-selection prefix ($f694-$f733).  This leaves the
+ * game at the HandleSquare2Music entry state; SoundEngine then continues the
+ * channel handlers through mysmb_audio_step(). */
+void mysmb_audio_select_music(struct mysmb_game *game);
+
 /* ROM Dump_Squ1_Regs through SetFreq_Tri. The input bytes are the
  * original A/X/Y values at each entry; all writes stay in shared output. */
 void mysmb_audio_dump_squ1_regs(struct mysmb_game *game, mysmb_u8 x,

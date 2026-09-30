@@ -3,8 +3,14 @@
 
 int main(void)
 {
+    static mysmb_u8 prg[0x8000U];
     struct mysmb_game game;
 
+    /* Source selector $08 is SilenceHdr; its stream terminates immediately. */
+    prg[0x7914U] = 0x40U;
+    prg[0x794dU] = 0x08U;
+    prg[0x794eU] = 0U;
+    prg[0x794fU] = 0x80U;
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 1U;
 
@@ -56,6 +62,7 @@ int main(void)
     game.ram[0x00f3U] = 0x02U;
     /* Silence is an event selector during PlayerLoseLife and must terminate
      * in its dispatch pass, before the following area initialization. */
+    mysmb_game_bind_area_source(&game, prg, (mysmb_u16)sizeof(prg));
     game.ram[0x00fcU] = 0x80U;
     game.ram[0x07b4U] = 9U;
     game.ram[0x07b7U] = 0x28U;

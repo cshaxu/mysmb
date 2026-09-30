@@ -149,3 +149,41 @@ values are recorded in the active packet closure update.
 S3 receives the next **10** source-order labels from `MusicHandler` through `LoadHeader`: `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, and `LoadHeader`. Baseline is **1,849 / 1,992**; all ten are expected matches, for a maximum **1,859 / 1,992**. Shared owner is `src/game/audio.c`; predecessor is S2 `ContinueMusic`, successor is S4 `HandleSquare2Music`.
 
 The ROM-logic track uses bounded original-ROM `SoundEngine` invocations for event and area music selection. It compares queue-bit priority, `NoStopSfx` and `NoStop1` exits, loop-B resolution, header-table pointer selection, RAM music offsets/counters and direct APU reset writes. The operational track runs focused dispatch tests plus x86/x64 builds and self-tests, OpenNT DOS16 link, platform-purity check and refreshed three target EXEs. No stream-parsing label from S4 or later is credited.
+
+## S3 closure: music selection and header loading
+
+All **10** admitted labels are ROM-match complete: **1,849 -> 1,859 / 1,992**.
+The one shared owner, `src/game/audio.c`, now follows the source queue-priority
+prefix through the `HandleSquare2Music` entry boundary. No Win32 or DOS16
+adapter selects music, changes a queue, or writes music RAM/APU state.
+
+| Source PC | Labels | Shared-C equivalence |
+| --- | --- | --- |
+| `$f694-$f6a3` | `MusicHandler` | `mysmb_audio_select_music` preserves event-first selection and the no-queue continuation boundary. |
+| `$f6a4-$f6c7` | `LoadEventMusic`, `NoStopSfx` | Event buffer, DeathMusic square-effect stop sequence, interrupted-area preservation, time-running length adder and source bit scan are in source order. |
+| `$f6c8-$f6d3` | `LoadAreaMusic`, `NoStop1`, `GMLoopB` | Underground-only square-one stop and `$10` ground selector seeding are preserved. |
+| `$f6d4-$f6ec` | `HandleAreaMusicLoopB`, `FindAreaMusicHeader` | Area buffer/event clear, ground `$11..$31` loop progression and the residual square-two offset write precede header selection. |
+| `$f6f1-$f6f4` | `FindEventMusicHeader` | The source `INY; LSR; BCC` carry order supplies the header selector. |
+| `$f6f5-$f733` | `LoadHeader` | Owner-ROM offset table/header bytes initialize all music offsets/counters and perform `$4015=$0b,$0f`. |
+
+ROM logic evidence used five controlled, source-reachable `SoundEngine` routes:
+DeathMusic, TimeRunningOutMusic, GroundMusic, UndergroundMusic and WaterMusic.
+Each route supplied eight original calls, for **40 entry states per width**.
+The x86 and x64 checkers compare queue-derived selector/header fields, music
+RAM outputs and master-control output at the S3/S4 boundary: **zero
+differences in all 80 comparisons**. Raw records remain under ignored
+`build/m2-t49-s3/`; the checker derives its expected header bytes directly
+from the owner-local ROM table and does not copy those bytes into the product.
+
+Operational evidence: focused `music-header-smoke`, `audio-smoke` and
+`platform-purity` pass; full x86 and x64 CTest each remain **224/235**, with
+only the same eleven registered baseline failures. The original OpenNT16
+`cl16` route compiles the shared source and links a **263,957-byte MZ** image
+(with its established `OLDNAMES.LIB` warning). Packaged owner-authorized
+artifacts are `mysmb16.exe` `F21B3C6398C2DA655382281B601797EEF91E0FE4C9C7FCC14D76B54E567D609E`,
+`mysmb32.exe` `260DBA9CF997551D60FEFEB6FCB030ECB435E50E6A3CAC2C9753A2BDBB83E782`,
+and `mysmb64.exe` `A3FAEBD5F716BEB0D1818372116DBFC7AD1E22DDCE9B3C4D1D4BA9E15CC50896`.
+
+Similar-issue sweep: all music queue/buffer, selector, header-reset and
+loop-B production paths are in `audio.c`; no platform-layer hit exists. S4
+stream parsing and later header/data ownership remain uncredited.

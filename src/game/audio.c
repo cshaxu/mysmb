@@ -42,6 +42,7 @@ enum {
     MYSMB_RAM_MUSIC_OFFSET_TRIANGLE = 0x00f9U,
     MYSMB_RAM_MUSIC_OFFSET_NOISE = 0x07b0U,
     MYSMB_RAM_NOISE_LOOPBACK_OFFSET = 0x07c1U,
+    MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER = 0x07c4U,
     MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET = 0x07c7U,
     MYSMB_RAM_ALT_REGISTER_CONTENT = 0x07caU,
     MYSMB_RAM_SQUARE2_NOTE_LENGTH = 0x07b3U,
@@ -55,20 +56,25 @@ enum {
     MYSMB_RAM_DAC_COUNTER = 0x07c0U
 };
 
+static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
+                                  mysmb_u8 value);
+
 /* ROM HandleSquare2Music's death-event stream.  The existing audio command
  * model owns presentation elsewhere, but PlayerHole observes EventMusicBuffer
  * as real gameplay state.  Advance the original Square 2 length stream until
  * its terminator clears that buffer, exactly as EndOfMusicData does. */
-/* ROM LoadHeader. Header selectors address MusicHeaderData directly, while
- * each byte in that table is an offset from the same PRG base. */
+/* ROM LoadHeader.  MusicHeaderOffsetData is deliberately one byte before
+ * MusicHeaderData, so callers supply the source Y value after its initial
+ * increment and bit scan. */
 static mysmb_u8 mysmb_audio_load_header(struct mysmb_game *game,
                                         mysmb_u8 selector)
 {
     mysmb_u16 table_offset;
     mysmb_u16 header_offset;
 
-    if (game->area_prg == 0 || selector >= 0x40U) return 0U;
-    table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA + selector);
+    if (game->area_prg == 0 || selector == 0U || selector >= 0x40U)
+        return 0U;
+    table_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA - 1U + selector);
     if (table_offset >= game->area_prg_size) return 0U;
     header_offset = (mysmb_u16)(MYSMB_ROM_MUSIC_HEADER_DATA +
                                  game->area_prg[table_offset]);
@@ -91,19 +97,25 @@ static mysmb_u8 mysmb_audio_load_header(struct mysmb_game *game,
     game->ram[MYSMB_RAM_TRIANGLE_NOTE_COUNTER] = 1U;
     game->ram[MYSMB_RAM_NOISE_BEAT_COUNTER] = 1U;
     game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0U;
+    mysmb_audio_write_apu(game, 21U, 0x0bU);
+    mysmb_audio_write_apu(game, 21U, 0x0fU);
     return 1U;
 }
 
+/* ROM FindEventMusicHeader.  Y is incremented before each LSR, including
+ * the first bit test.  The caller only supplies nonzero music masks. */
 static mysmb_u8 mysmb_audio_find_header_selector(mysmb_u8 music,
                                                    mysmb_u8 base)
 {
     mysmb_u8 selector;
+    mysmb_u8 carry;
 
     selector = base;
-    while ((music & 1U) == 0U) {
+    do {
+        carry = (mysmb_u8)(music & 1U);
         music >>= 1U;
         selector++;
-    }
+    } while (carry == 0U && music != 0U);
     return selector;
 }
 /* ROM $ff00 FreqRegLookupTbl: a zero low frequency byte makes SetFreq
@@ -189,6 +201,8 @@ static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
 static mysmb_u8 mysmb_audio_read_cpu(const struct mysmb_game *game,
                                      mysmb_u16 address);
 static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game);
+static void mysmb_audio_handle_area_music_loop(struct mysmb_game *game,
+                                                mysmb_u8 area);
 static void mysmb_audio_square2_play_coin_timer(struct mysmb_game *game,
                                                   mysmb_u8 timer);
 static void mysmb_audio_square2_continue_coin_timer(struct mysmb_game *game);
@@ -517,19 +531,7 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
             game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
             return 1U;
         }
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
-        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-        if (area == 1U) {
-            game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
-            if (game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] == 0x32U)
-                game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x11U;
-            (void)mysmb_audio_load_header(game, (mysmb_u8)(
-                game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] - 1U));
-        }
-        else {
-            (void)mysmb_audio_load_header(game,
-                mysmb_audio_find_header_selector(area, 8U));
-        }
+        mysmb_audio_handle_area_music_loop(game, area);
         return mysmb_audio_step_square2_music(game);
     }
     if ((data & 0x80U) != 0U) {
@@ -675,7 +677,71 @@ static mysmb_u8 mysmb_audio_continue_music(struct mysmb_game *game)
     return mysmb_audio_step_square2_music(game);
 }
 
-static void mysmb_audio_step_music(struct mysmb_game *game)
+/* ROM StopSquare1Sfx and StopSquare2Sfx.  The first owns Square1's buffer;
+ * the second only cycles the master control register. */
+static void mysmb_audio_stop_square1_sfx(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
+    mysmb_audio_write_apu(game, 21U, 0x0eU);
+    mysmb_audio_write_apu(game, 21U, 0x0fU);
+}
+
+static void mysmb_audio_stop_square2_sfx(struct mysmb_game *game)
+{
+    mysmb_audio_write_apu(game, 21U, 0x0dU);
+    mysmb_audio_write_apu(game, 21U, 0x0fU);
+}
+
+/* ROM GMLoopB -> HandleAreaMusicLoopB.  The loop counter is itself the
+ * LoadHeader selector for ground music. */
+static void mysmb_audio_handle_area_music_loop(struct mysmb_game *game,
+                                                mysmb_u8 area)
+{
+    game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
+    game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
+    if (area != 1U) {
+        /* FindAreaMusicHeader's residual store precedes the shared bit scan.
+         * LoadHeader subsequently initializes the offset back to zero. */
+        game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 8U;
+        (void)mysmb_audio_load_header(game,
+            mysmb_audio_find_header_selector(area, 8U));
+        return;
+    }
+    game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
+    if (game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] == 0x32U)
+        game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x11U;
+    (void)mysmb_audio_load_header(game,
+        game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]);
+}
+
+/* ROM LoadEventMusic -> NoStopSfx -> FindEventMusicHeader -> LoadHeader. */
+static void mysmb_audio_load_event_music(struct mysmb_game *game,
+                                         mysmb_u8 event)
+{
+    game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = event;
+    if (event == MYSMB_EVENT_DEATH_MUSIC) {
+        mysmb_audio_stop_square1_sfx(game);
+        mysmb_audio_stop_square2_sfx(game);
+    }
+    game->ram[MYSMB_RAM_AREA_MUSIC_ALT] =
+        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER];
+    game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER] =
+        event == 0x40U ? 8U : 0U;
+    game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
+    (void)mysmb_audio_load_header(game,
+        mysmb_audio_find_header_selector(event, 0U));
+}
+
+/* ROM LoadAreaMusic -> NoStop1 -> GMLoopB. */
+static void mysmb_audio_load_area_music(struct mysmb_game *game,
+                                        mysmb_u8 area)
+{
+    if (area == 4U) mysmb_audio_stop_square1_sfx(game);
+    game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x10U;
+    mysmb_audio_handle_area_music_loop(game, area);
+}
+
+void mysmb_audio_select_music(struct mysmb_game *game)
 {
     mysmb_u8 event;
     mysmb_u8 area;
@@ -683,47 +749,19 @@ static void mysmb_audio_step_music(struct mysmb_game *game)
     event = game->ram[MYSMB_RAM_EVENT_MUSIC_QUEUE];
     area = game->ram[MYSMB_RAM_AREA_MUSIC_QUEUE];
     if (event != 0U) {
-        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = event;
-        if (event == MYSMB_EVENT_DEATH_MUSIC) {
-            /* StopSquare1Sfx clears its own buffer. StopSquare2Sfx only
-             * writes APU control registers, so Square2SoundBuffer survives. */
-            game->ram[MYSMB_RAM_SQUARE1_BUFFER] = 0U;
-        }
-        (void)mysmb_audio_load_header(game,
-            mysmb_audio_find_header_selector(event, 0U));
-        game->ram[MYSMB_RAM_AREA_MUSIC_ALT] = game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER];
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
-        /* ROM Silence's Square 2 stream ends immediately.  EndOfMusicData
-         * therefore clears the event buffer in this SoundEngine pass, before
-         * InitializeArea has a chance to queue the replacement area header. */
-        if (event == 0x80U) {
-            /* The initialized counter is consumed by Silence's zero datum
-             * before EndOfMusicData returns from SoundEngine. */
-            game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] = 0U;
-            game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-            return;
-        }
+        mysmb_audio_load_event_music(game, event);
     }
     else if (area != 0U) {
-        /* ROM LoadAreaMusic seeds this counter before selecting any area
-         * header, including the Silence header used by setup transitions. */
-        game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x10U;
-        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] = 0U;
-        game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = area;
-        if (area == 1U) {
-            game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
-            (void)mysmb_audio_load_header(game, (mysmb_u8)(
-                game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] - 1U));
-        }
-        else {
-            (void)mysmb_audio_load_header(game,
-                mysmb_audio_find_header_selector(area, 8U));
-        }
+        mysmb_audio_load_area_music(game, area);
     }
+}
+
+static void mysmb_audio_step_music(struct mysmb_game *game)
+{
+    mysmb_audio_select_music(game);
     /* SoundEngine leaves the music-channel tasks once both queues and both
      * active music buffers are clear.  This also retains final envelopes. */
-    if (event == 0U && area == 0U &&
-        game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
+    if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == 0U &&
         game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] == 0U) return;
     if (game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] == MYSMB_EVENT_DEATH_MUSIC) {
         if (mysmb_audio_step_death_music(game) != 0U) return;

@@ -1216,7 +1216,7 @@ int main(int argument_count, char **arguments)
             unsigned long value = strtoul(arguments[recorded] + 13u,
                                           &end, 10);
             if (end == arguments[recorded] + 13u || *end != '\0' ||
-                value > 95ul) return 64;
+                value > 100ul) return 64;
             sound_case = (unsigned int)value;
             continue;
         }
@@ -5068,7 +5068,8 @@ int main(int argument_count, char **arguments)
                     ram[0x07c6u] = 0u;
                     ram[0x00fau] = 0u;
                     ram[0x07b2u] = 0u;
-                    ram[0x00f1u] = sound_case >= 37u && sound_case <= 40u ?
+                    ram[0x00f1u] = sound_case == 99u ? 0x80u :
+                        sound_case >= 37u && sound_case <= 40u ?
                         0x80u : sound_case == 41u || sound_case == 42u ?
                         0x02u : sound_case == 43u || sound_case == 44u ?
                         0x20u : sound_case == 45u ||
@@ -5094,9 +5095,12 @@ int main(int argument_count, char **arguments)
                         sound_case == 93u ? 0x02u : 0u;
                     ram[0x00f4u] = sound_case == 95u ? 0x01u : 0u;
                     ram[0x07b1u] = 0u;
-                    ram[0x00fbu] = sound_case >= 29u && sound_case <= 36u ?
+                    ram[0x00fbu] = sound_case == 98u ? 0x01u :
+                        sound_case == 99u ? 0x04u : sound_case == 100u ?
+                        0x02u : sound_case >= 29u && sound_case <= 36u ?
                         (lib_u8)(1u << (sound_case - 29u)) : 0u;
-                    ram[0x00fcu] = 0u;
+                    ram[0x00fcu] = sound_case == 96u ? 0x01u :
+                        sound_case == 97u ? 0x40u : 0u;
                     ram[0x00ffu] = sound_case <= 20u ?
                         (lib_u8)(1u << (sound_case - 13u)) :
                         sound_case == 59u ? 0x03u :
