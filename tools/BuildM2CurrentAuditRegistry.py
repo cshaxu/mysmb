@@ -72,8 +72,12 @@ def main():
         record = dict(edge)
         record["id"] = "control-%05d" % identity
         # A control edge belongs to its executable source.  Vector edges have
-        # no source label and are reviewed by the target's cohort.
+        # no source label and are reviewed by the target's cohort.  Return
+        # records point callee -> caller, but their source instruction is the
+        # caller's JSR, so the caller owns that integration edge.
         if edge["from"] == "<vector>":
+            record["cohort"] = cohort_for(node_lines[edge["to"]])
+        elif edge["type"] == "return":
             record["cohort"] = cohort_for(node_lines[edge["to"]])
         else:
             record["cohort"] = cohort_for(node_lines[edge["from"]])

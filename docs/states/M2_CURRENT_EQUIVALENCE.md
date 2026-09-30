@@ -62,25 +62,26 @@ explicitly forbidden because it would count impossible paths as integrations.
 ### Control-edge allocation
 
 The registry allocates **all 4,342 control edges** once, by the source label
-that emits the edge (vectors are owned by their target label's cohort). This
+that emits the edge (vectors are owned by their target label's cohort; return
+records use the caller cohort because the original `JSR` is the source). This
 is the integration-audit denominator for the first edge pass.
 
 | Cohort | Nodes | Control edges |
 | --- | ---: | ---: |
-| A | 97 | 221 |
-| B | 67 | 117 |
-| C | 260 | 531 |
-| D | 146 | 137 |
-| E | 80 | 219 |
-| F | 62 | 119 |
-| G | 49 | 119 |
-| H | 129 | 332 |
-| I | 165 | 411 |
-| J | 497 | 1,231 |
-| K | 154 | 335 |
-| L | 83 | 217 |
-| M | 126 | 293 |
-| N | 77 | 60 |
+| A | 97 | 239 |
+| B | 67 | 122 |
+| C | 260 | 521 |
+| D | 146 | 111 |
+| E | 80 | 239 |
+| F | 62 | 122 |
+| G | 49 | 133 |
+| H | 129 | 344 |
+| I | 165 | 420 |
+| J | 497 | 1,261 |
+| K | 154 | 313 |
+| L | 83 | 165 |
+| M | 126 | 296 |
+| N | 77 | 56 |
 | **Total** | **1,992** | **4,342** |
 
 ## Source-order cohort plan
