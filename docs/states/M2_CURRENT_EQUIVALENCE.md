@@ -966,3 +966,8 @@ branches.
 ### Cohort I — B14v vertical and lift-platform integration
 
 `InitVertPlatform` through `CommonSmallLift` now has eight independent node contracts, all incident control relations (including dispatch, branch, fall-through, call, tail-jump and return) and five feasible material handoffs. The static shared-C audit matches signed top/center construction, force/speed ordering, position-before-box ordering and the large-lift box continuation. They remain `needs-evidence` until controlled original-ROM/x86/x64 routes cover both signed vertical branches and both lift directions.
+
+
+### Cohort I — B15a enemy-object dispatcher integration
+
+`EndOfEnemyInitCode` through `RunFirebarObj` now has eleven node contracts and every incident control relation recorded, including actor-vector and movement-vector dispatch selectors, calls, timer branches, terminal jumps and synthetic returns. Seven feasible material handoffs cover selector scratch, timer gating, vector selection and child-produced rendering/collision state. Static review found no shared-C order or selector discrepancy; all remain `needs-evidence` pending controlled original-ROM/x86/x64 paths.

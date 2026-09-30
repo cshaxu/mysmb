@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 167,
+    "enumeratedCount": 174,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2351,6 +2351,104 @@
       "semanticContract": "Preserves source write/table selection, consumer ordering and feasible state handoff.",
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00168",
+      "producer": "RunEnemyObjectsCore",
+      "consumer": "JmpEO",
+      "storage": "ObjectOffset, Enemy_ID and selector/JumpEngine scratch $0004-$0007",
+      "feasiblePath": "Actor ID chooses selector zero below $15, otherwise ID-$14, before vector dispatch.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_objects actor_targets and scratch stores",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00169",
+      "producer": "JmpEO",
+      "consumer": "RunNormalEnemies",
+      "storage": "actor target vector selector zero",
+      "feasiblePath": "IDs $00-$14 select the normal-enemy entry through the original vector.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_run_objects id<0x15 path",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00170",
+      "producer": "RunNormalEnemies",
+      "consumer": "EnemyMovementSubs",
+      "storage": "TimerControl and current slot state",
+      "feasiblePath": "Movement dispatch runs only after all collision calls when TimerControl is zero.",
+      "status": "needs-evidence",
+      "currentCounterpart": "run_normal timer-gated mysmb_enemy_movement_dispatch",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00171",
+      "producer": "EnemyMovementSubs",
+      "consumer": "MoveNormalEnemy",
+      "storage": "movement vector target and JumpEngine scratch $0004-$0007",
+      "feasiblePath": "Movement selector maps IDs to the original target vector before native child selection.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_movement_dispatch movement_targets",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00172",
+      "producer": "RunRetainerObj",
+      "consumer": "EnemyGfxHandler",
+      "storage": "offscreen bits and relative position RAM",
+      "feasiblePath": "Retainer graphics consumes position state produced by the preceding two calls.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_draw_retainer",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00173",
+      "producer": "RunBowserFlame",
+      "consumer": "OffscreenBoundsCheck",
+      "storage": "flame movement/collision state and offscreen bits",
+      "feasiblePath": "Bowser flame terminal bounds sees all prior caller updates.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_bowser_flames_slot",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00174",
+      "producer": "RunFirebarObj",
+      "consumer": "OffscreenBoundsCheck",
+      "storage": "firebar processing state",
+      "feasiblePath": "Firebar path reaches bounds regardless of firebar processing result.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_objects_step_firebars_slot",
+      "semanticContract": "Preserves source producer-to-consumer selection/state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -16122,111 +16220,144 @@
       "label": "EndOfEnemyInitCode",
       "asmLine": 9025,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns immediately when the initializer jump-engine vector selects its terminal entry."
     },
     {
       "label": "RunEnemyObjectsCore",
       "asmLine": 9030,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads ObjectOffset, derives selector zero for IDs below $15 or ID-$14 otherwise, preserves JumpEngine scratch, then dispatches the original actor vector."
     },
     {
       "label": "JmpEO",
       "asmLine": 9038,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Invokes JumpEngine on the actor target vector; selector and target scratch are already established by the source predecessor."
     },
     {
       "label": "NoRunCode",
       "asmLine": 9080,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns with no actor work for each vector alias that selects this terminal entry."
     },
     {
       "label": "RunRetainerObj",
       "asmLine": 9085,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls enemy offscreen calculation, relative position, then tail-jumps to the retainer graphics handler in that order."
     },
     {
       "label": "RunNormalEnemies",
       "asmLine": 9092,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears sprite attributes, then executes offscreen, relative position, graphics, box, terrain, enemy collision, player collision, timer-gated movement and terminal bounds in source order."
     },
     {
       "label": "SkipMove",
       "asmLine": 9105,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps to terminal enemy offscreen bounds after the timer-gated movement decision."
     },
     {
       "label": "EnemyMovementSubs",
       "asmLine": 9107,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches IDs $00-$14 through the original movement vector and preserves JumpEngine scratch before the selected movement child."
     },
     {
       "label": "NoMoveCode",
       "asmLine": 9135,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns with no movement for the original dummy movement-vector entries."
     },
     {
       "label": "RunBowserFlame",
       "asmLine": 9140,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs Bowser flame processing before offscreen, relative position, box, player collision and terminal bounds in source order."
     },
     {
       "label": "RunFirebarObj",
       "asmLine": 9150,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
+      "currentCounterpart": "shared enemy object dispatcher/caller path",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs firebar processing and always tail-jumps to terminal offscreen bounds."
     },
     {
       "label": "RunSmallPlatform",
@@ -48581,12 +48712,12 @@
       "id": "control-01431",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation EnemiesAndLoopsCore -> RunEnemyObjectsCore with source predicate, slot/page state handoff and return semantics."
+      "semanticContract": "Preserves original jump relation EnemiesAndLoopsCore -> RunEnemyObjectsCore with object selector, slot and source call/return ordering."
     },
     {
       "from": "ChkAreaTsk",
@@ -52308,10 +52439,13 @@
       "instruction": "bcc",
       "id": "control-01664",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunEnemyObjectsCore -> JmpEO with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunEnemyObjectsCore",
@@ -52321,10 +52455,13 @@
       "instruction": "sbc",
       "id": "control-01665",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunEnemyObjectsCore -> JmpEO with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -52334,10 +52471,13 @@
       "instruction": "jsr",
       "id": "control-01666",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation JmpEO -> JumpEngine with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -52347,10 +52487,13 @@
       "instruction": "jsr",
       "id": "control-01667",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunRetainerObj",
@@ -52360,10 +52503,13 @@
       "instruction": "jsr",
       "id": "control-01668",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunRetainerObj -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunRetainerObj",
@@ -52373,10 +52519,13 @@
       "instruction": "jsr",
       "id": "control-01669",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunRetainerObj -> RelativeEnemyPosition with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunRetainerObj",
@@ -52386,10 +52535,13 @@
       "instruction": "jmp",
       "id": "control-01670",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunRetainerObj -> EnemyGfxHandler with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52399,10 +52551,13 @@
       "instruction": "jsr",
       "id": "control-01671",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52412,10 +52567,13 @@
       "instruction": "jsr",
       "id": "control-01672",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> RelativeEnemyPosition with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52425,10 +52583,13 @@
       "instruction": "jsr",
       "id": "control-01673",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyGfxHandler with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52438,10 +52599,13 @@
       "instruction": "jsr",
       "id": "control-01674",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyBoundBox with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52451,10 +52615,13 @@
       "instruction": "jsr",
       "id": "control-01675",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyToBGCollisionDet with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52464,10 +52631,13 @@
       "instruction": "jsr",
       "id": "control-01676",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemiesCollision with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52477,10 +52647,13 @@
       "instruction": "jsr",
       "id": "control-01677",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> PlayerEnemyCollision with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52490,10 +52663,13 @@
       "instruction": "bne",
       "id": "control-01678",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunNormalEnemies -> SkipMove with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52503,10 +52679,13 @@
       "instruction": "jsr",
       "id": "control-01679",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunNormalEnemies -> EnemyMovementSubs with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunNormalEnemies",
@@ -52516,10 +52695,13 @@
       "instruction": "jsr",
       "id": "control-01680",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunNormalEnemies -> SkipMove with object selector, slot and source call/return ordering."
     },
     {
       "from": "SkipMove",
@@ -52529,10 +52711,13 @@
       "instruction": "jmp",
       "id": "control-01681",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SkipMove -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -52542,10 +52727,13 @@
       "instruction": "jsr",
       "id": "control-01682",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation EnemyMovementSubs -> JumpEngine with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -52555,10 +52743,13 @@
       "instruction": "jsr",
       "id": "control-01683",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52568,10 +52759,13 @@
       "instruction": "jsr",
       "id": "control-01684",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBowserFlame -> ProcBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52581,10 +52775,13 @@
       "instruction": "jsr",
       "id": "control-01685",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52594,10 +52791,13 @@
       "instruction": "jsr",
       "id": "control-01686",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBowserFlame -> RelativeEnemyPosition with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52607,10 +52807,13 @@
       "instruction": "jsr",
       "id": "control-01687",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyBoundBox with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52620,10 +52823,13 @@
       "instruction": "jsr",
       "id": "control-01688",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunBowserFlame -> PlayerEnemyCollision with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunBowserFlame",
@@ -52633,10 +52839,13 @@
       "instruction": "jmp",
       "id": "control-01689",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunBowserFlame -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunFirebarObj",
@@ -52646,10 +52855,13 @@
       "instruction": "jsr",
       "id": "control-01690",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation RunFirebarObj -> ProcFirebar with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunFirebarObj",
@@ -52659,10 +52871,13 @@
       "instruction": "jmp",
       "id": "control-01691",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation RunFirebarObj -> OffscreenBoundsCheck with object selector, slot and source call/return ordering."
     },
     {
       "from": "RunSmallPlatform",
@@ -56715,10 +56930,13 @@
       "instruction": "jsr",
       "id": "control-02003",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ProcessBowserHalf -> RunRetainerObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "ProcessBowserHalf",
@@ -80727,10 +80945,13 @@
       "instruction": "rts/rti",
       "id": "control-03791",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation JumpEngine -> JmpEO with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -80740,10 +80961,13 @@
       "instruction": "rts/rti",
       "id": "control-03792",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunRetainerObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -80753,10 +80977,13 @@
       "instruction": "rts/rti",
       "id": "control-03793",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunRetainerObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -80766,10 +80993,13 @@
       "instruction": "rts/rti",
       "id": "control-03794",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -80779,10 +81009,13 @@
       "instruction": "rts/rti",
       "id": "control-03795",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyGfxHandler",
@@ -80792,10 +81025,13 @@
       "instruction": "rts/rti",
       "id": "control-03796",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyGfxHandler -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -80805,10 +81041,13 @@
       "instruction": "rts/rti",
       "id": "control-03797",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyToBGCollisionDet",
@@ -80818,10 +81057,13 @@
       "instruction": "rts/rti",
       "id": "control-03798",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyToBGCollisionDet -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemiesCollision",
@@ -80831,10 +81073,13 @@
       "instruction": "rts/rti",
       "id": "control-03799",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemiesCollision -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -80844,10 +81089,13 @@
       "instruction": "rts/rti",
       "id": "control-03800",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -80857,10 +81105,13 @@
       "instruction": "rts/rti",
       "id": "control-03801",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyMovementSubs -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "JumpEngine",
@@ -80870,10 +81121,13 @@
       "instruction": "rts/rti",
       "id": "control-03802",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation JumpEngine -> EnemyMovementSubs with object selector, slot and source call/return ordering."
     },
     {
       "from": "ProcBowserFlame",
@@ -80883,10 +81137,13 @@
       "instruction": "rts/rti",
       "id": "control-03803",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcBowserFlame -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -80896,10 +81153,13 @@
       "instruction": "rts/rti",
       "id": "control-03804",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyOffscreenBits -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "RelativeEnemyPosition",
@@ -80909,10 +81169,13 @@
       "instruction": "rts/rti",
       "id": "control-03805",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RelativeEnemyPosition -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -80922,10 +81185,13 @@
       "instruction": "rts/rti",
       "id": "control-03806",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetEnemyBoundBox -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "PlayerEnemyCollision",
@@ -80935,10 +81201,13 @@
       "instruction": "rts/rti",
       "id": "control-03807",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerEnemyCollision -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "ProcFirebar",
@@ -80948,10 +81217,13 @@
       "instruction": "rts/rti",
       "id": "control-03808",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation ProcFirebar -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyOffscreenBits",
@@ -81692,10 +81964,13 @@
       "instruction": "rts/rti",
       "id": "control-03862",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation RunRetainerObj -> ProcessBowserHalf with object selector, slot and source call/return ordering."
     },
     {
       "from": "GetEnemyBoundBox",
@@ -87663,12 +87938,12 @@
       "id": "control-04269",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-stream/init branch, call, dispatch and return counterpart",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
-        "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndOfEnemyInitCode with source predicate, record/slot state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyRoutines -> EndOfEnemyInitCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "InitEnemyFrenzy",
@@ -87781,10 +88056,13 @@
       "selector": 0,
       "id": "control-04276",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunNormalEnemies with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87795,10 +88073,13 @@
       "selector": 1,
       "id": "control-04277",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowserFlame with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87809,10 +88090,13 @@
       "selector": 2,
       "id": "control-04278",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFireworks with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87823,10 +88107,13 @@
       "selector": 3,
       "id": "control-04279",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87837,10 +88124,13 @@
       "selector": 4,
       "id": "control-04280",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87851,10 +88141,13 @@
       "selector": 5,
       "id": "control-04281",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87865,10 +88158,13 @@
       "selector": 6,
       "id": "control-04282",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87879,10 +88175,13 @@
       "selector": 7,
       "id": "control-04283",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87893,10 +88192,13 @@
       "selector": 8,
       "id": "control-04284",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87907,10 +88209,13 @@
       "selector": 9,
       "id": "control-04285",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87921,10 +88226,13 @@
       "selector": 10,
       "id": "control-04286",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87935,10 +88243,13 @@
       "selector": 11,
       "id": "control-04287",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87949,10 +88260,13 @@
       "selector": 12,
       "id": "control-04288",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87963,10 +88277,13 @@
       "selector": 13,
       "id": "control-04289",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87977,10 +88294,13 @@
       "selector": 14,
       "id": "control-04290",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunFirebarObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -87991,10 +88311,13 @@
       "selector": 15,
       "id": "control-04291",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88005,10 +88328,13 @@
       "selector": 16,
       "id": "control-04292",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88019,10 +88345,13 @@
       "selector": 17,
       "id": "control-04293",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88033,10 +88362,13 @@
       "selector": 18,
       "id": "control-04294",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88047,10 +88379,13 @@
       "selector": 19,
       "id": "control-04295",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88061,10 +88396,13 @@
       "selector": 20,
       "id": "control-04296",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88075,10 +88413,13 @@
       "selector": 21,
       "id": "control-04297",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88089,10 +88430,13 @@
       "selector": 22,
       "id": "control-04298",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunLargePlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88103,10 +88447,13 @@
       "selector": 23,
       "id": "control-04299",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88117,10 +88464,13 @@
       "selector": 24,
       "id": "control-04300",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunSmallPlatform with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88131,10 +88481,13 @@
       "selector": 25,
       "id": "control-04301",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowser with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88145,10 +88498,13 @@
       "selector": 26,
       "id": "control-04302",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> PowerUpObjHandler with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88159,10 +88515,13 @@
       "selector": 27,
       "id": "control-04303",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> VineObjectHandler with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88173,10 +88532,13 @@
       "selector": 28,
       "id": "control-04304",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88187,10 +88549,13 @@
       "selector": 29,
       "id": "control-04305",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunStarFlagObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88201,10 +88566,13 @@
       "selector": 30,
       "id": "control-04306",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> JumpspringHandler with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88215,10 +88583,13 @@
       "selector": 31,
       "id": "control-04307",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> NoRunCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88229,10 +88600,13 @@
       "selector": 32,
       "id": "control-04308",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> WarpZoneObject with object selector, slot and source call/return ordering."
     },
     {
       "from": "JmpEO",
@@ -88243,10 +88617,13 @@
       "selector": 33,
       "id": "control-04309",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunRetainerObj with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88257,10 +88634,13 @@
       "selector": 0,
       "id": "control-04310",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88271,10 +88651,13 @@
       "selector": 1,
       "id": "control-04311",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88285,10 +88668,13 @@
       "selector": 2,
       "id": "control-04312",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88299,10 +88685,13 @@
       "selector": 3,
       "id": "control-04313",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88313,10 +88702,13 @@
       "selector": 4,
       "id": "control-04314",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88327,10 +88719,13 @@
       "selector": 5,
       "id": "control-04315",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcHammerBro with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88341,10 +88736,13 @@
       "selector": 6,
       "id": "control-04316",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88355,10 +88753,13 @@
       "selector": 7,
       "id": "control-04317",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBloober with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88369,10 +88770,13 @@
       "selector": 8,
       "id": "control-04318",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveBulletBill with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88383,10 +88787,13 @@
       "selector": 9,
       "id": "control-04319",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88397,10 +88804,13 @@
       "selector": 10,
       "id": "control-04320",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88411,10 +88821,13 @@
       "selector": 11,
       "id": "control-04321",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveSwimmingCheepCheep with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88425,10 +88838,13 @@
       "selector": 12,
       "id": "control-04322",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePodoboo with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88439,10 +88855,13 @@
       "selector": 13,
       "id": "control-04323",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MovePiranhaPlant with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88453,10 +88872,13 @@
       "selector": 14,
       "id": "control-04324",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveJumpingEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88467,10 +88889,13 @@
       "selector": 15,
       "id": "control-04325",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> ProcMoveRedPTroopa with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88481,10 +88906,13 @@
       "selector": 16,
       "id": "control-04326",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyGreenPTroopa with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88495,10 +88923,13 @@
       "selector": 17,
       "id": "control-04327",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveLakitu with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88509,10 +88940,13 @@
       "selector": 18,
       "id": "control-04328",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveNormalEnemy with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88523,10 +88957,13 @@
       "selector": 19,
       "id": "control-04329",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> NoMoveCode with object selector, slot and source call/return ordering."
     },
     {
       "from": "EnemyMovementSubs",
@@ -88537,10 +88974,13 @@
       "selector": 20,
       "id": "control-04330",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "semanticEvidence": [
+        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation EnemyMovementSubs -> MoveFlyingCheepCheep with object selector, slot and source call/return ordering."
     },
     {
       "from": "LargePlatformSubroutines",
