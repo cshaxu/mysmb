@@ -1011,3 +1011,8 @@ branches.
 ### Cohort I — B15i Bullet Bill and swimming Cheep integration
 
 `MoveBulletBill` through `ExSwCC` now has nine node contracts, all incident dispatches, branches, tails and returns, plus six feasible state/table handoffs. Static review matches Bullet Bill's defeated/normal split, the Cheep type-force table, consecutive X/page borrow propagation, slot gate, vertical flag reversal and `$0f` distance threshold. Entries remain `needs-evidence` pending controlled ROM/x86/x64 movement paths.
+
+
+### Cohort I — B15j Firebar state-preparation integration
+
+`FirebarPosLookupTbl` through `SkipFBar` now has twelve node contracts, all incident control relations and seven feasible table/state handoffs. Static review matches bit-three return, timer-gated spin, short-firebar 8/24 axis skip, anchor ordering, five/eleven loop bounds and fifth-part OAM source switch. Entries remain `needs-evidence` pending controlled ROM/x86/x64 short/long Firebar routes.
