@@ -143,3 +143,9 @@ mutates translated game state.
 
 The three owner-authorized artifacts were refreshed at closure; their SHA-256
 values are recorded in the active packet closure update.
+
+## S3 admission: music selection and header loading
+
+S3 receives the next **10** source-order labels from `MusicHandler` through `LoadHeader`: `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, and `LoadHeader`. Baseline is **1,849 / 1,992**; all ten are expected matches, for a maximum **1,859 / 1,992**. Shared owner is `src/game/audio.c`; predecessor is S2 `ContinueMusic`, successor is S4 `HandleSquare2Music`.
+
+The ROM-logic track uses bounded original-ROM `SoundEngine` invocations for event and area music selection. It compares queue-bit priority, `NoStopSfx` and `NoStop1` exits, loop-B resolution, header-table pointer selection, RAM music offsets/counters and direct APU reset writes. The operational track runs focused dispatch tests plus x86/x64 builds and self-tests, OpenNT DOS16 link, platform-purity check and refreshed three target EXEs. No stream-parsing label from S4 or later is credited.
