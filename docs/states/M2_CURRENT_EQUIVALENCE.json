@@ -7371,231 +7371,300 @@
       "label": "AreaDataOfsLoopback",
       "asmLine": 4376,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "LoadAreaPointer",
       "asmLine": 4381,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "GetAreaType",
       "asmLine": 4384,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "FindAreaPointer",
       "asmLine": 4392,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "GetAreaDataAddrs",
       "asmLine": 4402,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "StoreFore",
       "asmLine": 4434,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "StoreStyle",
       "asmLine": 4472,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "WorldAddrOffsets",
       "asmLine": 4485,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "AreaAddrOffsets",
       "asmLine": 4491,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World1Areas",
       "asmLine": 4492,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World2Areas",
       "asmLine": 4493,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World3Areas",
       "asmLine": 4494,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World4Areas",
       "asmLine": 4495,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World5Areas",
       "asmLine": 4496,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World6Areas",
       "asmLine": 4497,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World7Areas",
       "asmLine": 4498,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "World8Areas",
       "asmLine": 4499,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "EnemyAddrHOffsets",
       "asmLine": 4509,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "EnemyDataAddrLow",
       "asmLine": 4512,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "EnemyDataAddrHigh",
       "asmLine": 4520,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "AreaDataHOffsets",
       "asmLine": 4528,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "AreaDataAddrLow",
       "asmLine": 4531,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "AreaDataAddrHigh",
       "asmLine": 4539,
       "cohort": "D",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area/area_data.c",
+      "currentCounterpart": "mysmb_area_load_area_pointer / mysmb_area_get_data_addresses and source-bound tables",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
     },
     {
       "label": "E_CastleArea1",
@@ -34819,10 +34888,13 @@
       "instruction": "jsr",
       "id": "control-00763",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source call relation LoadAreaPointer -> FindAreaPointer.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call order and pointer/header handoff."
     },
     {
       "from": "LoadAreaPointer",
@@ -34832,10 +34904,13 @@
       "instruction": "sta",
       "id": "control-00764",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source fallthrough relation LoadAreaPointer -> GetAreaType.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
     },
     {
       "from": "GetAreaDataAddrs",
@@ -34845,10 +34920,13 @@
       "instruction": "jsr",
       "id": "control-00765",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source call relation GetAreaDataAddrs -> GetAreaType.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call order and pointer/header handoff."
     },
     {
       "from": "GetAreaDataAddrs",
@@ -34858,10 +34936,13 @@
       "instruction": "bcc",
       "id": "control-00766",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source branch relation GetAreaDataAddrs -> StoreFore.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch order and pointer/header handoff."
     },
     {
       "from": "GetAreaDataAddrs",
@@ -34871,10 +34952,13 @@
       "instruction": "lda",
       "id": "control-00767",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source fallthrough relation GetAreaDataAddrs -> StoreFore.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
     },
     {
       "from": "StoreFore",
@@ -34884,10 +34968,13 @@
       "instruction": "bne",
       "id": "control-00768",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source branch relation StoreFore -> StoreStyle.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source branch order and pointer/header handoff."
     },
     {
       "from": "StoreFore",
@@ -34897,10 +34984,13 @@
       "instruction": "lda",
       "id": "control-00769",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source fallthrough relation StoreFore -> StoreStyle.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
     },
     {
       "from": "GameMode",
@@ -37165,10 +37255,13 @@
       "instruction": "jsr",
       "id": "control-00943",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source call relation NextArea -> LoadAreaPointer.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source call order and pointer/header handoff."
     },
     {
       "from": "NextArea",
@@ -71090,10 +71183,13 @@
       "instruction": "rts/rti",
       "id": "control-03539",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source return relation LoadAreaPointer -> ClrSndLoop.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return order and pointer/header handoff."
     },
     {
       "from": "InitializeMemory",
@@ -71129,10 +71225,13 @@
       "instruction": "rts/rti",
       "id": "control-03542",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source return relation GetAreaDataAddrs -> SetInitNTHigh.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return order and pointer/header handoff."
     },
     {
       "from": "GetAreaMusic",
@@ -72212,10 +72311,13 @@
       "instruction": "rts/rti",
       "id": "control-03614",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source return relation FindAreaPointer -> LoadAreaPointer.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return order and pointer/header handoff."
     },
     {
       "from": "GetAreaType",
@@ -72225,10 +72327,13 @@
       "instruction": "rts/rti",
       "id": "control-03615",
       "cohort": "D",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source return relation GetAreaType -> GetAreaDataAddrs.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return order and pointer/header handoff."
     },
     {
       "from": "JumpEngine",
@@ -72777,10 +72882,13 @@
       "instruction": "rts/rti",
       "id": "control-03657",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area-data C preserves source return relation LoadAreaPointer -> NextArea.",
+      "semanticEvidence": [
+        "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves source return order and pointer/header handoff."
     },
     {
       "from": "ChgAreaMode",
