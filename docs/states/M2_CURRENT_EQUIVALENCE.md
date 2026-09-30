@@ -1242,3 +1242,7 @@ branches.
 ### Cohort K — K9 enemy animation and row-draw integration
 
 `CheckForHammerBro` through `DrawEnemyObject` now has seven node contracts and all local Hammer Bro, Bloober/Cheep, animation, defeated-state and three-row control relations. Static review matches Hammer Bro d3 handling, interval gates and Bloober Y adjustment, retainer WorldNumber path, timing masks, d7/d5/timer animation suppression, defeated flip setup and the ordered three-row writes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 Hammer Bro, Cheep, Bloober, retainer, defeated and Bullet Bill routes.
+
+### Cohort K — K10 enemy OAM flip, mirror and offscreen integration
+
+`SkipToOffScrChk` through `AllRowC` now has seventeen node contracts and every local vertical-flip, symmetry, Lakitu/jumpspring and d2/d3/d5/d6/d7 offscreen relation. Static review matches row-pair exchanges, egg and shell attribute transforms, Lakitu timer branches, spring row attributes, ordered column/row hiding and the Podoboo/high-Y erase exception. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 flip, mirror, Lakitu, spring, every offscreen-bit and erase route.

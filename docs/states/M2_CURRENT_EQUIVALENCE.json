@@ -27193,171 +27193,222 @@
       "label": "SkipToOffScrChk",
       "asmLine": 13916,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tail-jumps directly to shared enemy offscreen processing."
     },
     {
       "label": "CheckForVerticalFlip",
       "asmLine": 13919,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies source vertical attribute bits, then selects first/second row exchange rules by actor code."
     },
     {
       "label": "FlipEnemyVertically",
       "asmLine": 13943,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Exchanges selected top/middle row tile pairs with the bottom row."
     },
     {
       "label": "CheckForESymmetry",
       "asmLine": 13957,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Bypasses symmetry for Bowser/Hammer and routes actor/state combinations to mirroring or later special handling."
     },
     {
       "label": "ContES",
       "asmLine": 13965,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects Bloober, Piranha and Podoboo mirror paths and Spiny egg/retainer handling."
     },
     {
       "label": "ESRtnr",
       "asmLine": 13975,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies retainer bottom-right flip and routes low alternate states."
     },
     {
       "label": "SpnySC",
       "asmLine": 13979,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects mirror for qualifying Spiny alternate state or proceeds to Lakitu handling."
     },
     {
       "label": "MirrorEnemyGfx",
       "asmLine": 13982,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Normalizes left attributes and sets right horizontal/egg vertical flips, including shell-state four row flips."
     },
     {
       "label": "EggExc",
       "asmLine": 13994,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Completes egg/right-column attribute writes and routes state-four adjustment."
     },
     {
       "label": "CheckToMirrorLakitu",
       "asmLine": 14007,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies Lakitu-specific third/second row attributes based on vertical flip and FrenzyEnemyTimer."
     },
     {
       "label": "NVFLak",
       "asmLine": 14026,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the vertically-flipped Lakitu first-row attribute path."
     },
     {
       "label": "CheckToMirrorJSpring",
       "asmLine": 14033,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies jumpspring second/third-row vertical and horizontal flips or enters offscreen processing."
     },
     {
       "label": "SprObjectOffscrChk",
       "asmLine": 14044,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Consumes Enemy_OffscreenBits d2,d3,d5,d6,d7 in source order for column/row hides and bottom erase decision."
     },
     {
       "label": "LcChk",
       "asmLine": 14054,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes the source d3 left-column hide after the d2 right-column decision."
     },
     {
       "label": "Row3C",
       "asmLine": 14060,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes d5 third-row hide after both column decisions."
     },
     {
       "label": "Row23C",
       "asmLine": 14067,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes d6 second-and-third-row hide before all-row handling."
     },
     {
       "label": "AllRowC",
       "asmLine": 14073,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/normal_enemy_gfx.c and enemy_offscreen_tail.h",
+      "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics / mysmb_oam_enemy_offscreen_tail",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes d7 all-row hide, exempts Podoboo and erases only when high Y equals two."
     },
     {
       "label": "ExEGHandler",
@@ -76583,12 +76634,12 @@
       "id": "control-02919",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy animation/row-draw path and specialized actor OAM owners",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
       "semanticEvidence": [
-        "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required."
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM branch relation DrawEnemyObject -> CheckForVerticalFlip with source actor/state predicate, graphics-offset handoff and row ordering."
+      "semanticContract": "Preserves ROM branch relation DrawEnemyObject -> CheckForVerticalFlip with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawEnemyObject",
@@ -76598,10 +76649,13 @@
       "instruction": "bne",
       "id": "control-02920",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawEnemyObject -> SkipToOffScrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SkipToOffScrChk",
@@ -76611,10 +76665,13 @@
       "instruction": "jmp",
       "id": "control-02921",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation SkipToOffScrChk -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76624,10 +76681,13 @@
       "instruction": "beq",
       "id": "control-02922",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForVerticalFlip -> CheckForESymmetry with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76637,10 +76697,13 @@
       "instruction": "jsr",
       "id": "control-02923",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation CheckForVerticalFlip -> DumpSixSpr with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76650,10 +76713,13 @@
       "instruction": "beq",
       "id": "control-02924",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForVerticalFlip -> FlipEnemyVertically with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76663,10 +76729,13 @@
       "instruction": "beq",
       "id": "control-02925",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForVerticalFlip -> FlipEnemyVertically with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76676,10 +76745,13 @@
       "instruction": "bcs",
       "id": "control-02926",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForVerticalFlip -> FlipEnemyVertically with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForVerticalFlip",
@@ -76689,10 +76761,13 @@
       "instruction": "tax",
       "id": "control-02927",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckForVerticalFlip -> FlipEnemyVertically with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "FlipEnemyVertically",
@@ -76702,10 +76777,13 @@
       "instruction": "sta",
       "id": "control-02928",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation FlipEnemyVertically -> CheckForESymmetry with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForESymmetry",
@@ -76715,10 +76793,13 @@
       "instruction": "bne",
       "id": "control-02929",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForESymmetry -> SkipToOffScrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForESymmetry",
@@ -76728,10 +76809,13 @@
       "instruction": "bne",
       "id": "control-02930",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckForESymmetry -> ContES with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckForESymmetry",
@@ -76741,10 +76825,13 @@
       "instruction": "jmp",
       "id": "control-02931",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM jump relation CheckForESymmetry -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76754,10 +76841,13 @@
       "instruction": "beq",
       "id": "control-02932",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ContES -> MirrorEnemyGfx with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76767,10 +76857,13 @@
       "instruction": "beq",
       "id": "control-02933",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ContES -> MirrorEnemyGfx with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76780,10 +76873,13 @@
       "instruction": "beq",
       "id": "control-02934",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ContES -> MirrorEnemyGfx with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76793,10 +76889,13 @@
       "instruction": "bne",
       "id": "control-02935",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ContES -> ESRtnr with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76806,10 +76905,13 @@
       "instruction": "bne",
       "id": "control-02936",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ContES -> CheckToMirrorLakitu with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ContES",
@@ -76819,10 +76921,13 @@
       "instruction": "bne",
       "id": "control-02937",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ContES -> ESRtnr with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ESRtnr",
@@ -76832,10 +76937,13 @@
       "instruction": "bne",
       "id": "control-02938",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ESRtnr -> SpnySC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "ESRtnr",
@@ -76845,10 +76953,13 @@
       "instruction": "sta",
       "id": "control-02939",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ESRtnr -> SpnySC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SpnySC",
@@ -76858,10 +76969,13 @@
       "instruction": "bcc",
       "id": "control-02940",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SpnySC -> CheckToMirrorLakitu with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SpnySC",
@@ -76871,10 +76985,13 @@
       "instruction": "bcc",
       "id": "control-02941",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SpnySC -> MirrorEnemyGfx with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MirrorEnemyGfx",
@@ -76884,10 +77001,13 @@
       "instruction": "bne",
       "id": "control-02942",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation MirrorEnemyGfx -> CheckToMirrorLakitu with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MirrorEnemyGfx",
@@ -76897,10 +77017,13 @@
       "instruction": "bne",
       "id": "control-02943",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation MirrorEnemyGfx -> EggExc with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MirrorEnemyGfx",
@@ -76910,10 +77033,13 @@
       "instruction": "ora",
       "id": "control-02944",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation MirrorEnemyGfx -> EggExc with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "EggExc",
@@ -76923,10 +77049,13 @@
       "instruction": "bne",
       "id": "control-02945",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation EggExc -> CheckToMirrorLakitu with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "EggExc",
@@ -76936,10 +77065,13 @@
       "instruction": "sta",
       "id": "control-02946",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation EggExc -> CheckToMirrorLakitu with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorLakitu",
@@ -76949,10 +77081,13 @@
       "instruction": "bne",
       "id": "control-02947",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToMirrorLakitu -> CheckToMirrorJSpring with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorLakitu",
@@ -76962,10 +77097,13 @@
       "instruction": "bne",
       "id": "control-02948",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToMirrorLakitu -> NVFLak with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorLakitu",
@@ -76975,10 +77113,13 @@
       "instruction": "bcs",
       "id": "control-02949",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToMirrorLakitu -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorLakitu",
@@ -76988,10 +77129,13 @@
       "instruction": "bcc",
       "id": "control-02950",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToMirrorLakitu -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorLakitu",
@@ -77001,10 +77145,13 @@
       "instruction": "bcc",
       "id": "control-02951",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckToMirrorLakitu -> NVFLak with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "NVFLak",
@@ -77014,10 +77161,13 @@
       "instruction": "sta",
       "id": "control-02952",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation NVFLak -> CheckToMirrorJSpring with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorJSpring",
@@ -77027,10 +77177,13 @@
       "instruction": "bcc",
       "id": "control-02953",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation CheckToMirrorJSpring -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "CheckToMirrorJSpring",
@@ -77040,10 +77193,13 @@
       "instruction": "sta",
       "id": "control-02954",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation CheckToMirrorJSpring -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SprObjectOffscrChk",
@@ -77053,10 +77209,13 @@
       "instruction": "bcc",
       "id": "control-02955",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation SprObjectOffscrChk -> LcChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SprObjectOffscrChk",
@@ -77066,10 +77225,13 @@
       "instruction": "jsr",
       "id": "control-02956",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation SprObjectOffscrChk -> MoveESprColOffscreen with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "SprObjectOffscrChk",
@@ -77079,10 +77241,13 @@
       "instruction": "jsr",
       "id": "control-02957",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation SprObjectOffscrChk -> LcChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "LcChk",
@@ -77092,10 +77257,13 @@
       "instruction": "bcc",
       "id": "control-02958",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation LcChk -> Row3C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "LcChk",
@@ -77105,10 +77273,13 @@
       "instruction": "jsr",
       "id": "control-02959",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation LcChk -> MoveESprColOffscreen with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "LcChk",
@@ -77118,10 +77289,13 @@
       "instruction": "jsr",
       "id": "control-02960",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation LcChk -> Row3C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row3C",
@@ -77131,10 +77305,13 @@
       "instruction": "bcc",
       "id": "control-02961",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation Row3C -> Row23C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row3C",
@@ -77144,10 +77321,13 @@
       "instruction": "jsr",
       "id": "control-02962",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation Row3C -> MoveESprRowOffscreen with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row3C",
@@ -77157,10 +77337,13 @@
       "instruction": "jsr",
       "id": "control-02963",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation Row3C -> Row23C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row23C",
@@ -77170,10 +77353,13 @@
       "instruction": "bcc",
       "id": "control-02964",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation Row23C -> AllRowC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row23C",
@@ -77183,10 +77369,13 @@
       "instruction": "jsr",
       "id": "control-02965",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation Row23C -> MoveESprRowOffscreen with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "Row23C",
@@ -77196,10 +77385,13 @@
       "instruction": "jsr",
       "id": "control-02966",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation Row23C -> AllRowC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77209,10 +77401,13 @@
       "instruction": "bcc",
       "id": "control-02967",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation AllRowC -> ExEGHandler with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77222,10 +77417,13 @@
       "instruction": "jsr",
       "id": "control-02968",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation AllRowC -> MoveESprRowOffscreen with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77235,10 +77433,13 @@
       "instruction": "beq",
       "id": "control-02969",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation AllRowC -> ExEGHandler with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77248,10 +77449,13 @@
       "instruction": "bne",
       "id": "control-02970",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation AllRowC -> ExEGHandler with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77262,12 +77466,12 @@
       "id": "control-02971",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation AllRowC -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves ROM call relation AllRowC -> EraseEnemyObject with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "AllRowC",
@@ -77277,10 +77481,13 @@
       "instruction": "jsr",
       "id": "control-02972",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation AllRowC -> ExEGHandler with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "DrawEnemyObjRow",
@@ -92155,10 +92362,13 @@
       "instruction": "rts/rti",
       "id": "control-04014",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpSixSpr -> CheckForVerticalFlip with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveESprColOffscreen",
@@ -92168,10 +92378,13 @@
       "instruction": "rts/rti",
       "id": "control-04015",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveESprColOffscreen -> SprObjectOffscrChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveESprColOffscreen",
@@ -92181,10 +92394,13 @@
       "instruction": "rts/rti",
       "id": "control-04016",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveESprColOffscreen -> LcChk with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveESprRowOffscreen",
@@ -92194,10 +92410,13 @@
       "instruction": "rts/rti",
       "id": "control-04017",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveESprRowOffscreen -> Row3C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveESprRowOffscreen",
@@ -92207,10 +92426,13 @@
       "instruction": "rts/rti",
       "id": "control-04018",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveESprRowOffscreen -> Row23C with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveESprRowOffscreen",
@@ -92220,10 +92442,13 @@
       "instruction": "rts/rti",
       "id": "control-04019",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
+      "semanticEvidence": [
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation MoveESprRowOffscreen -> AllRowC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "EraseEnemyObject",
@@ -92234,12 +92459,12 @@
       "id": "control-04020",
       "cohort": "K",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy OAM flip/mirror/offscreen path",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> AllRowC with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves ROM return relation EraseEnemyObject -> AllRowC with source actor/offscreen predicate, OAM handoff and return ordering."
     },
     {
       "from": "MoveColOffscreen",
