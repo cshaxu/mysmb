@@ -1091,3 +1091,8 @@ branches.
 ### Cohort J — B15y Piranha Plant integration
 
 `MovePiranhaPlant` through `PutinPipe` now has six node contracts, all incident state/timer/distance/endpoint branches, child call and return relations, plus four feasible handoffs. Static review matches the `$21` absolute-distance gate, two's-complement reversal, speed-sign endpoint selection, alternate-frame plus TimerControl move gate, endpoint `$40` delay and unconditional pipe-priority attribute. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 near/far, up/down and endpoint routes.
+
+
+### Cohort J — B15z Firebar spin integration
+
+`FirebarSpin` and `SpinCounterClockwise` now have node contracts, all incident direction/return relations and two feasible phase handoffs. Static review matches scratch `$07`, clockwise low-byte carry into high byte and counterclockwise low-byte borrow through `SBC #0`, with returned high phase preserved for `ProcFirebar`. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 carry and borrow routes.
