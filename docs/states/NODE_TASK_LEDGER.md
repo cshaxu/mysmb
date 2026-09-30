@@ -16,7 +16,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 
 | Receiving S | Exact node count | Exact node set |
 | --- | ---: | --- |
-| M2 T19 S5 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
 | M2 T22 S14 | 7 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` |
 | M2 T22 S15 | 3 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset` |
 | M2 T22 S23 | 1 | `InitBuffer` |
@@ -225,6 +224,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S1 | 1 | `NonMaskableInterrupt` |
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T51 S3 | 1 | `KillEnemies` |
+| M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
 
 ## Future admission packages and queued plans
 
@@ -747,40 +747,40 @@ transfer existing ownership or allocate a numeric T.
 | 4528 | `AreaDataHOffsets` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4531 | `AreaDataAddrLow` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4539 | `AreaDataAddrHigh` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4550 | `E_CastleArea1` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4558 | `E_CastleArea2` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4565 | `E_CastleArea3` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4574 | `E_CastleArea4` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4583 | `E_CastleArea5` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4589 | `E_CastleArea6` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4598 | `E_GroundArea1` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4606 | `E_GroundArea2` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4613 | `E_GroundArea3` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4619 | `E_GroundArea4` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4627 | `E_GroundArea5` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4636 | `E_GroundArea6` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4643 | `E_GroundArea7` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4650 | `E_GroundArea8` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4656 | `E_GroundArea9` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4662 | `E_GroundArea10` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4666 | `E_GroundArea11` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4674 | `E_GroundArea12` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4679 | `E_GroundArea13` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4687 | `E_GroundArea14` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4695 | `E_GroundArea15` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4700 | `E_GroundArea16` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4704 | `E_GroundArea17` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4714 | `E_GroundArea18` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4722 | `E_GroundArea19` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4731 | `E_GroundArea20` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4738 | `E_GroundArea21` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4743 | `E_GroundArea22` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4751 | `E_UndergroundArea1` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4760 | `E_UndergroundArea2` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4769 | `E_UndergroundArea3` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4777 | `E_WaterArea1` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4783 | `E_WaterArea2` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4791 | `E_WaterArea3` | M2 T19 S5 | existing closure backlog; Accepted transfer-115: enemy stream data and consumer proof. | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4550 | `E_CastleArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4558 | `E_CastleArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4565 | `E_CastleArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4574 | `E_CastleArea4` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4583 | `E_CastleArea5` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4589 | `E_CastleArea6` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4598 | `E_GroundArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4606 | `E_GroundArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4613 | `E_GroundArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4619 | `E_GroundArea4` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4627 | `E_GroundArea5` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4636 | `E_GroundArea6` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4643 | `E_GroundArea7` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4650 | `E_GroundArea8` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4656 | `E_GroundArea9` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4662 | `E_GroundArea10` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4666 | `E_GroundArea11` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4674 | `E_GroundArea12` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4679 | `E_GroundArea13` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4687 | `E_GroundArea14` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4695 | `E_GroundArea15` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4700 | `E_GroundArea16` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4704 | `E_GroundArea17` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4714 | `E_GroundArea18` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4722 | `E_GroundArea19` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4731 | `E_GroundArea20` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4738 | `E_GroundArea21` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4743 | `E_GroundArea22` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4751 | `E_UndergroundArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4760 | `E_UndergroundArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4769 | `E_UndergroundArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4777 | `E_WaterArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4783 | `E_WaterArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4791 | `E_WaterArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
 | 4799 | `L_CastleArea1` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
 | 4814 | `L_CastleArea2` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
 | 4832 | `L_CastleArea3` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
@@ -2290,7 +2290,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T19 S2 | 6 | 0 | declared-plan, recorded-section, explicit-reference; [record](../../docs/proposals/m2/enemy-stream-actors.md); [record](../../docs/states/CURRENT.md) |
 | M2 T19 S3 | 21 | 0 | declared-plan, recorded-section, explicit-reference; [record](../../docs/proposals/m2/enemy-stream-actors.md); [record](../../docs/states/CURRENT.md) |
 | M2 T19 S4 | 19 | 0 | declared-plan, recorded-section; [record](../../docs/proposals/m2/enemy-stream-actors.md) |
-| M2 T19 S5 | 69 | 34 | declared-plan, recorded-section, explicit-reference, declared-closure-plan; [record](../../docs/proposals/m2/enemy-stream-actors.md); [record](../../docs/states/CURRENT.md) |
+| M2 T19 S5 | 69 | 0 | declared-plan, recorded-section, explicit-reference, declared-closure-plan; [record](../../docs/proposals/m2/enemy-stream-actors.md); [record](../../docs/states/CURRENT.md) |
 | M2 T2 | 3 | - | [record](../../docs/history/M2-T2-title-start-checkpoint.md); S not recorded |
 | M2 T20 | 12 | - | [record](../../docs/proposals/m2/fireballs-bubbles.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T20 S1 | 4 | 0 | declared-plan, recorded-section; [record](../../docs/proposals/m2/fireballs-bubbles.md) |
@@ -2584,6 +2584,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T51 S1 | 0 | 1 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 0 | 4 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S3 | 0 | 1 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S4 | 0 | 34 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T6 | 12 | - | [record](../../docs/history/M2-T6-mode-routes.md); S not recorded |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
@@ -2909,6 +2910,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-279-to-t51-s1 | M2 T24 S2 | M2 T51 S1 | 1 | Coordinator under the continuing owner-approved M2 completion mandate; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | transfer-280-to-t51-s2 | M2 T24 S2 | M2 T51 S2 | 4 | Coordinator accepts the source-contiguous screen/parser output chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | transfer-281-to-t51-s3 | M2 T29 S8 | M2 T51 S3 | 1 | Coordinator accepts the residual KillEnemies primitive under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| transfer-282-to-t51-s4 | M2 T19 S5 | M2 T51 S4 | 34 | Coordinator accepts the residual original enemy-stream data chain under the continuing owner-approved M2 completion mandate.; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3173,3 +3175,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T51 S1 | 1 | 1952 | `NonMaskableInterrupt` / 1 | `NonMaskableInterrupt` / 1 | closed-nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 4 | 1953 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` / 4 | closed-screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S3 | 1 | 1957 | `KillEnemies` / 1 | `KillEnemies` / 1 | closed-kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S4 | 34 | 1958 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` / 34 | none / 0 | admitted-enemy-stream-data-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |

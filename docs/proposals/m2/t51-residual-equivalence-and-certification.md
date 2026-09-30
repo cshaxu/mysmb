@@ -197,3 +197,30 @@ Artifacts: `mysmb16.exe`
 `D3FE87771AFA2EA86435F41EA954055A21750A59151F76491B972BC11E175C2C`,
 `mysmb32.exe` `A1CA95022E329C65F16255409BACBB2BE7357EF06BA056E4CB38E981336505CF`,
 and `mysmb64.exe` `60C17F2C44CE5DF9D4AE62EF5D37C52559F5476848C0D328A04BD6255D421FCD`.
+
+## T51 S4 admission: original enemy-stream data and consumer chain
+
+S4 receives exactly 34 mapped-but-incomplete original data labels through
+`transfer-282-to-t51-s4`: `E_CastleArea1` through `E_CastleArea6`,
+`E_GroundArea1` through `E_GroundArea22`, `E_UndergroundArea1` through
+`E_UndergroundArea3`, and `E_WaterArea1` through `E_WaterArea3`. They are in
+their original source order from `$a3a3` through `$a747`; each is expected to
+become a match. The baseline is **1,958 / 1,992**, the maximum closing result
+is **1,992 / 1,992**, and every incoming label is `mapped; evidence
+incomplete`.
+
+The chain begins at the first castle stream and ends at the final water stream.
+`GetAreaDataAddrs` selects the corresponding pointer-table entry into `$e9/$ea`;
+the shared `src/game/enemy/stream.c` owner then performs the source-current
+stream read, record dispatch, cursor movement and terminator handoff. The
+completed pointer tables are the predecessor; `ProcessEnemyData` and its actor
+children are the successor dependencies. The original-ROM route selects each
+family/area pointer, consumes every record with the current-stream owner, and
+checks the resulting cursor and terminator behavior.
+
+ROM-logic evidence must separately establish exact local ROM/assembly bytes,
+family pointer-table selection, record framing, end markers, the
+`E_GroundArea9`/`E_GroundArea10` shared-terminator alias, and the consumer's
+source read/call ordering. Operational evidence is the enemy-data audit plus a
+local-ROM current-stream consumer check on x86 and x64, platform purity, the
+existing OpenNT DOS16 compile/link, and refreshed three-target artifacts.
