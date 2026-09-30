@@ -868,3 +868,22 @@ They are recorded in an unnumbered graph-governance candidate, not as a shared
 C game-logic repair. All other entries remain `needs-evidence` pending
 controlled original-ROM/x86/x64 stream, boundary, hard-mode, group, fallback
 and vector routes.
+
+
+### Cohort I — B14k ordinary enemy initializer integration
+
+`NoInitCode` through `InitCheepCheep` now has twenty-one node contracts,
+thirty-four control/call/tail/return relations and four feasible material
+handoffs. The node pass records all normal, Goomba, Podoboo, retainer, red
+Koopa, Hammer Brother, Bloober, paratroopa, Bullet Bill and Cheep Cheep
+write footprints; it also records both mode-indexed tables and the inherited
+carry at the red-paratroopa center calculation. The integration pass covers
+every shared initializer tail and all later consumers of the persistent
+paratroopa and Cheep Cheep state.
+
+It found one graph-ledger discrepancy: `control-01515` treats `SmallBBox` as
+falling through to `InitRedPTroopa`, although `LDA #$09; BNE SetBBox` makes
+that not-taken path impossible. This is an extractor/registry repair
+candidate, not a shared-C game-logic defect. All other entries remain
+`needs-evidence` pending controlled original-ROM/x86/x64 routes for each
+mode table, direct target, common-tail and persistent-state consumer path.

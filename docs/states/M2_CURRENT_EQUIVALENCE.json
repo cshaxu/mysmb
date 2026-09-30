@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 123,
+    "enumeratedCount": 127,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1735,6 +1735,62 @@
       "semanticContract": "Preserves source data selection, consuming predicate/dispatch and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00124",
+      "producer": "NormalXSpdData",
+      "consumer": "GetESpd",
+      "storage": "NormalXSpdData[Y]",
+      "feasiblePath": "InitNormalEnemy establishes Y from PrimaryHardMode; GetESpd reads exactly that table byte before SetESpd.",
+      "status": "needs-evidence",
+      "currentCounterpart": "normal_x_speed[index] in mysmb_enemy_init_normal",
+      "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00125",
+      "producer": "HBroWalkingTimerData",
+      "consumer": "InitHammerBro",
+      "storage": "HBroWalkingTimerData[SecondaryHardMode]",
+      "feasiblePath": "InitHammerBro uses the legal secondary-mode index to select its walking interval before the common box tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "hammer_walking_timer[index] in mysmb_enemy_init_hammer_bro",
+      "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00126",
+      "producer": "InitRedPTroopa",
+      "consumer": "MoveRedPTUpOrDown",
+      "storage": "RedPTroopaOrigXPos and RedPTroopaCenterYPos",
+      "feasiblePath": "The initializer writes the original and center Y values later compared by the red-paratroopa movement path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "0x0401 and 0x0058 RAM aliases written by mysmb_enemy_init_red_ptroopa",
+      "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00127",
+      "producer": "InitCheepCheep",
+      "consumer": "SlowSwimCC",
+      "storage": "CheepCheepMoveMFlag and CheepCheepOrigYPos",
+      "feasiblePath": "The initializer writes random movement d4 and original Y that the Cheep Cheep swim path later consumes.",
+      "status": "needs-evidence",
+      "currentCounterpart": "0x0058 and 0x0434 RAM aliases written by mysmb_enemy_init_cheep_cheep",
+      "semanticContract": "Preserves source table/RAM value, consumer predicate and feasible producer-to-consumer handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -13975,211 +14031,274 @@
       "label": "NoInitCode",
       "asmLine": 8158,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns immediately for every initializer-vector entry intentionally bound to no initialization."
     },
     {
       "label": "InitGoomba",
       "asmLine": 8163,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the normal speed/tall-box initializer, then tail-selects the small-box initializer."
     },
     {
       "label": "InitPodoboo",
       "asmLine": 8169,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets both Y coordinates to two, interval timer to one and state to zero before tail-selecting the small box."
     },
     {
       "label": "InitRetainerObj",
       "asmLine": 8181,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets only the retainer Y coordinate to $b8 and returns."
     },
     {
       "label": "NormalXSpdData",
       "asmLine": 8188,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the exact two normal-enemy X speeds $f8 and $f4 selected by PrimaryHardMode."
     },
     {
       "label": "InitNormalEnemy",
       "asmLine": 8191,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects normal speed index zero or one from PrimaryHardMode and enters the shared speed tail."
     },
     {
       "label": "GetESpd",
       "asmLine": 8196,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads NormalXSpdData at the selected mode index and falls through to the X-speed store."
     },
     {
       "label": "SetESpd",
       "asmLine": 8197,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores selected X speed and tail-selects TallBBox."
     },
     {
       "label": "InitRedKoopa",
       "asmLine": 8202,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls normal initialization, then changes only enemy state to one before returning."
     },
     {
       "label": "HBroWalkingTimerData",
       "asmLine": 8210,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the exact Hammer Brother walking-delay bytes $80 and $50 by SecondaryHardMode."
     },
     {
       "label": "InitHammerBro",
       "asmLine": 8213,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears hammer timer and X speed, selects walking delay, then tail-selects SetBBox with $0b."
     },
     {
       "label": "InitHorizFlySwimEnemy",
       "asmLine": 8225,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies zero X speed to the shared SetESpd tail."
     },
     {
       "label": "InitBloober",
       "asmLine": 8231,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears BlooperMoveSpeed and falls through to the small-box path."
     },
     {
       "label": "SmallBBox",
       "asmLine": 8234,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads box control $09 and takes the always-true BNE branch to SetBBox."
     },
     {
       "label": "InitRedPTroopa",
       "asmLine": 8239,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores original Y, chooses central-Y addend $30 or $e0 by Y sign, retains dispatch carry, then enters tall-box setup."
     },
     {
       "label": "GetCent",
       "asmLine": 8245,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Adds the selected central-Y addend with inherited carry and stores RedPTroopaCenterYPos before TallBBox."
     },
     {
       "label": "TallBBox",
       "asmLine": 8248,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads box control $03 and falls through to the common box/state setup."
     },
     {
       "label": "SetBBox",
       "asmLine": 8249,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores box control, sets left moving direction and falls through to vertical-state reset."
     },
     {
       "label": "InitVStf",
       "asmLine": 8252,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears only vertical speed and vertical movement force, then returns."
     },
     {
       "label": "InitBulletBill",
       "asmLine": 8259,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets left moving direction and small box control, preserving all other fields."
     },
     {
       "label": "InitCheepCheep",
       "asmLine": 8268,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared enemy initializer target core",
+      "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls small-box setup, copies random bit d4 into CheepCheepMoveMFlag and preserves original Y in CheepCheepOrigYPos."
     },
     {
       "label": "InitLakitu",
@@ -48765,10 +48884,13 @@
       "instruction": "jsr",
       "id": "control-01503",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitGoomba -> InitNormalEnemy with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitGoomba",
@@ -48778,10 +48900,13 @@
       "instruction": "jmp",
       "id": "control-01504",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitGoomba -> SmallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitPodoboo",
@@ -48791,10 +48916,13 @@
       "instruction": "jmp",
       "id": "control-01505",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitPodoboo -> SmallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitNormalEnemy",
@@ -48804,10 +48932,13 @@
       "instruction": "bne",
       "id": "control-01506",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitNormalEnemy -> GetESpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitNormalEnemy",
@@ -48817,10 +48948,13 @@
       "instruction": "dey",
       "id": "control-01507",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitNormalEnemy -> GetESpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "GetESpd",
@@ -48830,10 +48964,13 @@
       "instruction": "lda",
       "id": "control-01508",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetESpd -> SetESpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SetESpd",
@@ -48843,10 +48980,13 @@
       "instruction": "jmp",
       "id": "control-01509",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation SetESpd -> TallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitRedKoopa",
@@ -48856,10 +48996,13 @@
       "instruction": "jsr",
       "id": "control-01510",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitRedKoopa -> InitNormalEnemy with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitHammerBro",
@@ -48869,10 +49012,13 @@
       "instruction": "jmp",
       "id": "control-01511",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitHammerBro -> SetBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitHorizFlySwimEnemy",
@@ -48882,10 +49028,13 @@
       "instruction": "jmp",
       "id": "control-01512",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation InitHorizFlySwimEnemy -> SetESpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitBloober",
@@ -48895,10 +49044,13 @@
       "instruction": "sta",
       "id": "control-01513",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitBloober -> SmallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SmallBBox",
@@ -48908,10 +49060,13 @@
       "instruction": "bne",
       "id": "control-01514",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SmallBBox -> SetBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SmallBBox",
@@ -48921,10 +49076,13 @@
       "instruction": "bne",
       "id": "control-01515",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "none: false fall-through relation in current extracted graph; shared C calls common box setup directly",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "SmallBBox loads A=$09 immediately before BNE, so its not-taken fall-through into InitRedPTroopa is infeasible. The only ROM control edge is the taken branch to SetBBox."
     },
     {
       "from": "InitRedPTroopa",
@@ -48934,10 +49092,13 @@
       "instruction": "bpl",
       "id": "control-01516",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitRedPTroopa -> GetCent with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitRedPTroopa",
@@ -48947,10 +49108,13 @@
       "instruction": "ldy",
       "id": "control-01517",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitRedPTroopa -> GetCent with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "GetCent",
@@ -48960,10 +49124,13 @@
       "instruction": "sta",
       "id": "control-01518",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetCent -> TallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "TallBBox",
@@ -48973,10 +49140,13 @@
       "instruction": "lda",
       "id": "control-01519",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation TallBBox -> SetBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SetBBox",
@@ -48986,10 +49156,13 @@
       "instruction": "sta",
       "id": "control-01520",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetBBox -> InitVStf with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitCheepCheep",
@@ -48999,10 +49172,13 @@
       "instruction": "jsr",
       "id": "control-01521",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitCheepCheep -> SmallBBox with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitLakitu",
@@ -78938,10 +79114,13 @@
       "instruction": "rts/rti",
       "id": "control-03770",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitNormalEnemy -> InitGoomba with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitNormalEnemy",
@@ -78951,10 +79130,13 @@
       "instruction": "rts/rti",
       "id": "control-03771",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitNormalEnemy -> InitRedKoopa with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SmallBBox",
@@ -78964,10 +79146,13 @@
       "instruction": "rts/rti",
       "id": "control-03772",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SmallBBox -> InitCheepCheep with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "InitHorizFlySwimEnemy",
@@ -78977,10 +79162,13 @@
       "instruction": "rts/rti",
       "id": "control-03773",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitHorizFlySwimEnemy -> SetupLakitu with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SetupLakitu",
@@ -79029,10 +79217,13 @@
       "instruction": "rts/rti",
       "id": "control-03777",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SmallBBox -> SetSpSpd with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "DuplicateEnemyObj",
@@ -79055,10 +79246,13 @@
       "instruction": "rts/rti",
       "id": "control-03779",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SmallBBox -> InitFlyingCheepCheep with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "DuplicateEnemyObj",
@@ -79162,10 +79356,13 @@
       "instruction": "rts/rti",
       "id": "control-03787",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> CommonPlatCode with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "PlatLiftUp",
@@ -79643,10 +79840,13 @@
       "instruction": "rts/rti",
       "id": "control-03824",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitPodoboo -> MovePodoboo with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SpawnHammerObj",
@@ -80047,10 +80247,13 @@
       "instruction": "rts/rti",
       "id": "control-03853",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> RemoveBridge with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "EraseEnemyObject",
@@ -80118,10 +80321,13 @@
       "instruction": "rts/rti",
       "id": "control-03858",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> MakeBJump with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SetFlameTimer",
@@ -80449,10 +80655,13 @@
       "instruction": "rts/rti",
       "id": "control-03883",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> StopPlatforms with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "MoveFallingPlatform",
@@ -80740,10 +80949,13 @@
       "instruction": "rts/rti",
       "id": "control-03904",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> HurtBowser with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "ChkToStunEnemies",
@@ -80948,10 +81160,13 @@
       "instruction": "rts/rti",
       "id": "control-03920",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> EnemyStompedPts with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SetupFloateyNumber",
@@ -80974,10 +81189,13 @@
       "instruction": "rts/rti",
       "id": "control-03922",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> ChkForDemoteKoopa with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "EnemyFacePlayer",
@@ -81770,10 +81988,13 @@
       "instruction": "rts/rti",
       "id": "control-03983",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy-initializer call, tail, branch, fall-through or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation InitVStf -> EnemyLanding with its mode/slot predicate, exact write ordering and call/tail/return handoff."
     },
     {
       "from": "SubtEnemyYPos",
