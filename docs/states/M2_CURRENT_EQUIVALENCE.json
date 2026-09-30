@@ -25243,43 +25243,52 @@
       "asmLine": 11971,
       "cohort": "J",
       "status": "needs-evidence",
-      "currentOwner": "src/game/player/terrain.c",
-      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
-        "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses size/crouch upper extent to choose head collision versus feet path."
+      "semanticContract": "Gates head probe by size/crouch extent; handles coin, upward low-nibble, solid/climb and block-bounce paths before foot check."
     },
     {
       "label": "SolidOrClimb",
       "asmLine": 11992,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_background_collision head path",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Suppresses bump sound for climbing tile; otherwise queues bump before vertical-speed nullification."
     },
     {
       "label": "NYSpd",
       "asmLine": 11997,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_background_collision head path",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes upward-nullifying player Y speed one then joins foot check."
     },
     {
       "label": "DoFootCheck",
       "asmLine": 12000,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/player/terrain.c and terrain children",
+      "currentCounterpart": "mysmb_player_background_collision head path",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Begins feet collision stage after head-stage completion or bypass."
     },
     {
       "label": "AwardTouchedCoin",
@@ -71666,10 +71675,13 @@
       "instruction": "bcc",
       "id": "control-02444",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71680,12 +71692,12 @@
       "id": "control-02445",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation HeadChk -> BlockBufferColli_Head with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves head-probe call relation HeadChk → BlockBufferColli_Head including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71695,10 +71707,13 @@
       "instruction": "beq",
       "id": "control-02446",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71708,10 +71723,13 @@
       "instruction": "jsr",
       "id": "control-02447",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe call relation HeadChk → CheckForCoinMTiles including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71721,10 +71739,13 @@
       "instruction": "bcs",
       "id": "control-02448",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → AwardTouchedCoin including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71734,10 +71755,13 @@
       "instruction": "bpl",
       "id": "control-02449",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71747,10 +71771,13 @@
       "instruction": "bcc",
       "id": "control-02450",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71760,10 +71787,13 @@
       "instruction": "jsr",
       "id": "control-02451",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe call relation HeadChk → CheckForSolidMTiles including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71773,10 +71803,13 @@
       "instruction": "bcs",
       "id": "control-02452",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → SolidOrClimb including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71786,10 +71819,13 @@
       "instruction": "beq",
       "id": "control-02453",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → NYSpd including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71799,10 +71835,13 @@
       "instruction": "bne",
       "id": "control-02454",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation HeadChk → NYSpd including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71812,10 +71851,13 @@
       "instruction": "jsr",
       "id": "control-02455",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe call relation HeadChk → PlayerHeadCollision including probe result, speed and sound ordering."
     },
     {
       "from": "HeadChk",
@@ -71825,10 +71867,13 @@
       "instruction": "jmp",
       "id": "control-02456",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe jump relation HeadChk → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "SolidOrClimb",
@@ -71838,10 +71883,13 @@
       "instruction": "beq",
       "id": "control-02457",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe branch relation SolidOrClimb → NYSpd including probe result, speed and sound ordering."
     },
     {
       "from": "SolidOrClimb",
@@ -71851,10 +71899,13 @@
       "instruction": "sta",
       "id": "control-02458",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe fallthrough relation SolidOrClimb → NYSpd including probe result, speed and sound ordering."
     },
     {
       "from": "NYSpd",
@@ -71864,10 +71915,13 @@
       "instruction": "sta",
       "id": "control-02459",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe fallthrough relation NYSpd → DoFootCheck including probe result, speed and sound ordering."
     },
     {
       "from": "DoFootCheck",
@@ -94811,12 +94865,12 @@
       "id": "control-03946",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferColli_Head -> HeadChk with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves head-probe return relation BlockBufferColli_Head → HeadChk including probe result, speed and sound ordering."
     },
     {
       "from": "CheckForCoinMTiles",
@@ -94826,10 +94880,13 @@
       "instruction": "rts/rti",
       "id": "control-03947",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe return relation CheckForCoinMTiles → HeadChk including probe result, speed and sound ordering."
     },
     {
       "from": "CheckForSolidMTiles",
@@ -94839,10 +94896,13 @@
       "instruction": "rts/rti",
       "id": "control-03948",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves head-probe return relation CheckForSolidMTiles → HeadChk including probe result, speed and sound ordering."
     },
     {
       "from": "PlayerHeadCollision",
@@ -94853,12 +94913,12 @@
       "id": "control-03949",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared player/block branch, call, dispatch and return counterpart",
+      "currentCounterpart": "src/game/player/terrain.c head probe and child calls",
       "semanticEvidence": [
-        "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerHeadCollision -> HeadChk with its predicate, ordered state handoff and return/dispatch semantics."
+      "semanticContract": "Preserves head-probe return relation PlayerHeadCollision → HeadChk including probe result, speed and sound ordering."
     },
     {
       "from": "BlockBufferColli_Feet",
