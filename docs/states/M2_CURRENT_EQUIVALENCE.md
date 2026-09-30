@@ -146,6 +146,12 @@ ColdBoot -> EndlessLoop`, with the adjacent `VRAM_AddrTable_Low`,
 20 control edges are `needs-evidence`, never exact: current static review
 maps the reset sequence to `boot.c` and the table consumers to `frame_root.c`,
 including all two VBlank branches, warm/cold branches, calls and return paths.
-The x86/x64 boot-NMI smoke passes, but the fresh original-ROM route has not
-yet captured the reset-only boundary and selector matrix. The linked JSON
-ledger names all 29 stable identities and their current counterparts.
+The fresh cold route now records the original reset through its first NMI
+return: it reaches the two VBlank loops and exits, checks all six score digits,
+takes the cold-marker branch, completes ColdBoot and enters the idle boundary.
+Current x86/x64 frames are byte-identical and have no persistent RAM, CIRAM,
+palette, OAM, audio or PPU difference from that record after the explicit
+sequence/CPU-stack exclusions. This remains `needs-evidence`: the warm-marker
+outcome, invalid-score outcome and complete 19-selector VRAM matrix are not
+yet exercised. The linked JSON ledger names all 29 stable identities and their
+current counterparts.
