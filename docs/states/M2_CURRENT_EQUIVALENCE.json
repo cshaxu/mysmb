@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 249,
+    "enumeratedCount": 252,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3499,6 +3499,48 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, byte order and call ordering.",
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00250",
+      "producer": "PRandomRange",
+      "consumer": "RunBowser",
+      "storage": "two-low-bit random selector to Bowser movement range",
+      "feasiblePath": "Only the source every-fourth-frame origin-position path indexes the four-byte range table.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser.c:random_range[index]",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00251",
+      "producer": "RunBowser",
+      "consumer": "MoveD_Bowser",
+      "storage": "Enemy_State d5 and Enemy_Y to defeated falling path",
+      "feasiblePath": "d5-set with Y<$e0 moves and draws; this path returns without normal Bowser control.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser.c -> bridge.c:mysmb_enemy_move_d_bowser",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00252",
+      "producer": "RunBowser",
+      "consumer": "KillAllEnemies",
+      "storage": "Enemy_State d5 and Enemy_Y to terminal clear loop",
+      "feasiblePath": "d5-set with Y>=$e0 falls through to the common enemy clear loop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/bowser.c -> enemy/loop.c:mysmb_enemy_kill_all",
+      "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19116,21 +19158,27 @@
       "label": "PRandomRange",
       "asmLine": 10156,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/bowser.c",
+      "currentCounterpart": "src/game/enemy/bowser.c:random_range",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $D061 four-byte range table remains ordered $21,$41,$11,$31 and is indexed only from the two low random bits in the Bowser control continuation."
     },
     {
       "label": "RunBowser",
       "asmLine": 10159,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/bowser.c",
+      "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser defeated-state front gate",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Tests d5 first; the defeated Y<$e0 path moves/draws Bowser while Y>=$e0 clears enemies, and only d5-clear enters BowserControl without an accidental bridge-collapse or normal-control path."
     },
     {
       "label": "KillAllEnemies",
@@ -58458,10 +58506,13 @@
       "instruction": "beq",
       "id": "control-01950",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation RunBowser -> BowserControl with defeated-state predicate, slot handoff and source dispatch/tail or return ordering."
     },
     {
       "from": "RunBowser",
@@ -58472,12 +58523,12 @@
       "id": "control-01951",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "enemy/bowser.c defeated d5/Y path -> mysmb_enemy_move_d_bowser",
+      "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original branch relation RunBowser -> MoveD_Bowser with its source predicate, slot/scratch handoff, child ordering and return or tail behavior."
+      "semanticContract": "Preserves original branch relation RunBowser -> MoveD_Bowser with defeated-state predicate, slot handoff and source dispatch/tail or return ordering."
     },
     {
       "from": "RunBowser",
@@ -58487,10 +58538,13 @@
       "instruction": "bcc",
       "id": "control-01952",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
+      "semanticEvidence": [
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation RunBowser -> KillAllEnemies with defeated-state predicate, slot handoff and source dispatch/tail or return ordering."
     },
     {
       "from": "KillAllEnemies",
@@ -90846,12 +90900,12 @@
       "id": "control-04301",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
+      "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
       "semanticEvidence": [
-        "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowser with object selector, slot and source call/return ordering."
+      "semanticContract": "Preserves original jump-engine-dispatch relation JmpEO -> RunBowser with defeated-state predicate, slot handoff and source dispatch/tail or return ordering."
     },
     {
       "from": "JmpEO",

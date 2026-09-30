@@ -1036,3 +1036,8 @@ branches.
 ### Cohort J — B15n Bowser bridge-collapse integration
 
 `BridgeCollapseData` through `NoBFall` now has six node contracts, every incident state branch, call, tail-jump, fall-through, return and victory-mode dispatch relation, plus seven feasible RAM/table handoffs. Static review matches the 15-byte collapse order, Bowser ID/state/Y terminal gates, four-call feet cadence, `$04/$05` staging, preserved VRAM-offset handoff, fifteenth-step falling transition, sound queue writes, and common Bowser graphics tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 routes for every terminal, bridge-removal and falling path.
+
+
+### Cohort J — B15o Bowser dispatcher-front integration
+
+`PRandomRange` and `RunBowser` now have node contracts and every incident dispatch, branch, fall-through and return relation, plus three feasible table/state handoffs. Static review matches d5-first defeated handling, the `$e0` falling-versus-clear split, and the ordered four-byte range binding used by the later Bowser control route. No static shared-C discrepancy was found. These entries remain `needs-evidence` pending controlled original-ROM/x86/x64 defeated/falling/terminal routes.
