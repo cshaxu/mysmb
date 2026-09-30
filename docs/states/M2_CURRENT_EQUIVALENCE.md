@@ -20,9 +20,9 @@ incomplete node/control-edge identities.
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
 | Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 266 | Current source audit exists but the current original-ROM route is incomplete. |
+| Needs evidence | 286 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,679 | Not yet processed by this re-audit. |
+| Unclassified | 1,659 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 499 control; 51 material RAM/table |
+| Needs evidence | 544 control; 52 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 3,757 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,712 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -515,3 +515,17 @@ and follows the ROM's unconditional call. No static production-route mismatch
 was found. These eight nodes, four newly classified control relations and
 seven data paths remain `needs-evidence` pending original-ROM/x86/x64 scenery,
 terrain and backloading route captures.
+
+### Cohort C — B10e scenery construction and block-buffer handoff
+
+`RenderSceneryTerrain` through `BlockBuffLowBounds` (lines 3184–3318) now
+have individual contracts, and all 43 internal control relations plus two
+return handoffs are independently registered. The audit covers staged-column
+clear, modulo-three background selection, bounded background overlay,
+zero-preserving foreground overlay, water/world/cloud/underground terrain
+exceptions, both terrain-mask bytes, object-stream-before-buffer ordering,
+and all thirteen qualified physical block-buffer stores. The threshold-table
+producer-to-consumer path is recorded separately. No static discrepancy was
+found; these 20 nodes, 45 relations and the new material path remain
+`needs-evidence` pending controlled original-ROM/x86/x64 scenery and block
+buffer route comparisons.

@@ -785,6 +785,20 @@
         "Td S9 B10d scenery-data/parser-core static node-and-edge audit: SMB1 lines 3106-3183 was compared with area.c; controlled original-ROM/x86/x64 scenery, terrain and backloading routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00056",
+      "producer": "BlockBuffLowBounds",
+      "consumer": "ChkMTLow",
+      "storage": "metatile high-two-bit indexed collision threshold to physical block-buffer write",
+      "feasiblePath": "After ProcessAreaData mutates the staged column, every row selects one bound before StrBlock writes the physical block buffer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column bound-index comparison",
+      "semanticContract": "Each source threshold is selected after object processing and determines zero-versus-metatile storage for the corresponding physical row.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5108,201 +5122,261 @@
       "label": "RenderSceneryTerrain",
       "asmLine": 3184,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds one staged 13-row column, processes area objects, collision-qualifies resulting rows, then writes the physical block-buffer column."
     },
     {
       "label": "ClrMTBuf",
       "asmLine": 3187,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears all thirteen staged rows before scenery overlays."
     },
     {
       "label": "ThirdP",
       "asmLine": 3193,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reduces CurrentPageLoc modulo three by repeated subtraction."
     },
     {
       "label": "RendBack",
       "asmLine": 3198,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Combines page phase, background-family offset and column to select one packed background entry."
     },
     {
       "label": "SceLoop1",
       "asmLine": 3223,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Overlays no more than three selected background metatiles without crossing staged row eleven."
     },
     {
       "label": "RendFore",
       "asmLine": 3231,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates the thirteen-row foreground overlay by ForegroundScenery."
     },
     {
       "label": "SceLoop2",
       "asmLine": 3235,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads exactly thirteen foreground entries and conditionally overwrites staged rows."
     },
     {
       "label": "NoFore",
       "asmLine": 3238,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves staged rows for zero foreground entries and advances the foreground loop."
     },
     {
       "label": "RendTerr",
       "asmLine": 3242,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the World 8 water castle-wall terrain exception only in its source conditions."
     },
     {
       "label": "TerMTile",
       "asmLine": 3249,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects AreaType terrain and then applies the cloud override."
     },
     {
       "label": "StoreMT",
       "asmLine": 3253,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores terrain value and initializes the two-byte terrain-mask scan."
     },
     {
       "label": "TerrLoop",
       "asmLine": 3258,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Loads each terrain mask byte and applies cloud masking only to the second byte."
     },
     {
       "label": "NoCloud2",
       "asmLine": 3269,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Enters the least-significant-bit-first terrain bit scan."
     },
     {
       "label": "TerrBChk",
       "asmLine": 3270,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected terrain only for a set source bitmask."
     },
     {
       "label": "NextTBit",
       "asmLine": 3275,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances the staged row and applies only the underground bottom-row terrain substitution."
     },
     {
       "label": "EndUChk",
       "asmLine": 3285,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Continues the current byte scan or switches to the saved second-byte index."
     },
     {
       "label": "RendBBuf",
       "asmLine": 3290,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Processes objects before resolving and writing the physical block-buffer column."
     },
     {
       "label": "ChkMTLow",
       "asmLine": 3295,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects collision bound from metatile high bits and replaces only below-bound values with zero."
     },
     {
       "label": "StrBlock",
       "asmLine": 3306,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores qualified values at row stride sixteen through all thirteen physical rows."
     },
     {
       "label": "BlockBuffLowBounds",
       "asmLine": 3319,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_render_scenery_terrain_column",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds source threshold bytes $10/$51/$88/$c0 to high-bit collision classes."
     },
     {
       "label": "ProcessAreaData",
@@ -29698,10 +29772,13 @@
       "instruction": "lda",
       "id": "control-00484",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RenderSceneryTerrain -> ClrMTBuf at source line 3186.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RenderSceneryTerrain -> ClrMTBuf at source line 3186."
     },
     {
       "from": "ClrMTBuf",
@@ -29711,10 +29788,13 @@
       "instruction": "bpl",
       "id": "control-00485",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> ClrMTBuf at source line 3189.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> ClrMTBuf at source line 3189."
     },
     {
       "from": "ClrMTBuf",
@@ -29724,10 +29804,13 @@
       "instruction": "beq",
       "id": "control-00486",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> RendFore at source line 3191.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ClrMTBuf -> RendFore at source line 3191."
     },
     {
       "from": "ClrMTBuf",
@@ -29737,10 +29820,13 @@
       "instruction": "lda",
       "id": "control-00487",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ClrMTBuf -> ThirdP at source line 3192.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ClrMTBuf -> ThirdP at source line 3192."
     },
     {
       "from": "ThirdP",
@@ -29750,10 +29836,13 @@
       "instruction": "bmi",
       "id": "control-00488",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> RendBack at source line 3194.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> RendBack at source line 3194."
     },
     {
       "from": "ThirdP",
@@ -29763,10 +29852,13 @@
       "instruction": "bpl",
       "id": "control-00489",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> ThirdP at source line 3197.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ThirdP -> ThirdP at source line 3197."
     },
     {
       "from": "ThirdP",
@@ -29776,10 +29868,13 @@
       "instruction": "bpl",
       "id": "control-00490",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ThirdP -> RendBack at source line 3197.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ThirdP -> RendBack at source line 3197."
     },
     {
       "from": "RendBack",
@@ -29789,10 +29884,13 @@
       "instruction": "beq",
       "id": "control-00491",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendBack -> RendFore at source line 3206.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendBack -> RendFore at source line 3206."
     },
     {
       "from": "RendBack",
@@ -29802,10 +29900,13 @@
       "instruction": "sta",
       "id": "control-00492",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBack -> SceLoop1 at source line 3222.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBack -> SceLoop1 at source line 3222."
     },
     {
       "from": "SceLoop1",
@@ -29815,10 +29916,13 @@
       "instruction": "beq",
       "id": "control-00493",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> RendFore at source line 3228.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> RendFore at source line 3228."
     },
     {
       "from": "SceLoop1",
@@ -29828,10 +29932,13 @@
       "instruction": "bne",
       "id": "control-00494",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> SceLoop1 at source line 3230.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop1 -> SceLoop1 at source line 3230."
     },
     {
       "from": "SceLoop1",
@@ -29841,10 +29948,13 @@
       "instruction": "bne",
       "id": "control-00495",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop1 -> RendFore at source line 3230.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop1 -> RendFore at source line 3230."
     },
     {
       "from": "RendFore",
@@ -29854,10 +29964,13 @@
       "instruction": "beq",
       "id": "control-00496",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendFore -> RendTerr at source line 3232.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendFore -> RendTerr at source line 3232."
     },
     {
       "from": "RendFore",
@@ -29867,10 +29980,13 @@
       "instruction": "ldx",
       "id": "control-00497",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendFore -> SceLoop2 at source line 3234.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendFore -> SceLoop2 at source line 3234."
     },
     {
       "from": "SceLoop2",
@@ -29880,10 +29996,13 @@
       "instruction": "beq",
       "id": "control-00498",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop2 -> NoFore at source line 3236.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation SceLoop2 -> NoFore at source line 3236."
     },
     {
       "from": "SceLoop2",
@@ -29893,10 +30012,13 @@
       "instruction": "sta",
       "id": "control-00499",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop2 -> NoFore at source line 3237.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation SceLoop2 -> NoFore at source line 3237."
     },
     {
       "from": "NoFore",
@@ -29906,10 +30028,13 @@
       "instruction": "bne",
       "id": "control-00500",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NoFore -> SceLoop2 at source line 3241.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NoFore -> SceLoop2 at source line 3241."
     },
     {
       "from": "NoFore",
@@ -29919,10 +30044,13 @@
       "instruction": "bne",
       "id": "control-00501",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoFore -> RendTerr at source line 3241.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoFore -> RendTerr at source line 3241."
     },
     {
       "from": "RendTerr",
@@ -29932,10 +30060,13 @@
       "instruction": "bne",
       "id": "control-00502",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3243.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3243."
     },
     {
       "from": "RendTerr",
@@ -29945,10 +30076,13 @@
       "instruction": "bne",
       "id": "control-00503",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3246.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation RendTerr -> TerMTile at source line 3246."
     },
     {
       "from": "RendTerr",
@@ -29958,10 +30092,13 @@
       "instruction": "jmp",
       "id": "control-00504",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original jump relation RendTerr -> StoreMT at source line 3248.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original jump relation RendTerr -> StoreMT at source line 3248."
     },
     {
       "from": "TerMTile",
@@ -29971,10 +30108,13 @@
       "instruction": "beq",
       "id": "control-00505",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerMTile -> StoreMT at source line 3251.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerMTile -> StoreMT at source line 3251."
     },
     {
       "from": "TerMTile",
@@ -29984,10 +30124,13 @@
       "instruction": "lda",
       "id": "control-00506",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerMTile -> StoreMT at source line 3252.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerMTile -> StoreMT at source line 3252."
     },
     {
       "from": "StoreMT",
@@ -29997,10 +30140,13 @@
       "instruction": "tay",
       "id": "control-00507",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation StoreMT -> TerrLoop at source line 3257.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation StoreMT -> TerrLoop at source line 3257."
     },
     {
       "from": "TerrLoop",
@@ -30010,10 +30156,13 @@
       "instruction": "beq",
       "id": "control-00508",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3263.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3263."
     },
     {
       "from": "TerrLoop",
@@ -30023,10 +30172,13 @@
       "instruction": "beq",
       "id": "control-00509",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3265.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrLoop -> NoCloud2 at source line 3265."
     },
     {
       "from": "TerrLoop",
@@ -30036,10 +30188,13 @@
       "instruction": "sta",
       "id": "control-00510",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrLoop -> NoCloud2 at source line 3268.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrLoop -> NoCloud2 at source line 3268."
     },
     {
       "from": "NoCloud2",
@@ -30049,10 +30204,13 @@
       "instruction": "ldy",
       "id": "control-00511",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoCloud2 -> TerrBChk at source line 3269.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NoCloud2 -> TerrBChk at source line 3269."
     },
     {
       "from": "TerrBChk",
@@ -30062,10 +30220,13 @@
       "instruction": "beq",
       "id": "control-00512",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrBChk -> NextTBit at source line 3272.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation TerrBChk -> NextTBit at source line 3272."
     },
     {
       "from": "TerrBChk",
@@ -30075,10 +30236,13 @@
       "instruction": "sta",
       "id": "control-00513",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrBChk -> NextTBit at source line 3274.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation TerrBChk -> NextTBit at source line 3274."
     },
     {
       "from": "NextTBit",
@@ -30088,10 +30252,13 @@
       "instruction": "beq",
       "id": "control-00514",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> RendBBuf at source line 3277.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> RendBBuf at source line 3277."
     },
     {
       "from": "NextTBit",
@@ -30101,10 +30268,13 @@
       "instruction": "bne",
       "id": "control-00515",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3280.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3280."
     },
     {
       "from": "NextTBit",
@@ -30114,10 +30284,13 @@
       "instruction": "bne",
       "id": "control-00516",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3282.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation NextTBit -> EndUChk at source line 3282."
     },
     {
       "from": "NextTBit",
@@ -30127,10 +30300,13 @@
       "instruction": "sta",
       "id": "control-00517",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NextTBit -> EndUChk at source line 3284.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation NextTBit -> EndUChk at source line 3284."
     },
     {
       "from": "EndUChk",
@@ -30140,10 +30316,13 @@
       "instruction": "bne",
       "id": "control-00518",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrBChk at source line 3287.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrBChk at source line 3287."
     },
     {
       "from": "EndUChk",
@@ -30153,10 +30332,13 @@
       "instruction": "bne",
       "id": "control-00519",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrLoop at source line 3289.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation EndUChk -> TerrLoop at source line 3289."
     },
     {
       "from": "EndUChk",
@@ -30166,10 +30348,13 @@
       "instruction": "bne",
       "id": "control-00520",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation EndUChk -> RendBBuf at source line 3289.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation EndUChk -> RendBBuf at source line 3289."
     },
     {
       "from": "RendBBuf",
@@ -30179,10 +30364,13 @@
       "instruction": "jsr",
       "id": "control-00521",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> ProcessAreaData at source line 3290.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> ProcessAreaData at source line 3290."
     },
     {
       "from": "RendBBuf",
@@ -30192,10 +30380,13 @@
       "instruction": "jsr",
       "id": "control-00522",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> GetBlockBufferAddr at source line 3292.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original call relation RendBBuf -> GetBlockBufferAddr at source line 3292."
     },
     {
       "from": "RendBBuf",
@@ -30205,10 +30396,13 @@
       "instruction": "ldy",
       "id": "control-00523",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBBuf -> ChkMTLow at source line 3294.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation RendBBuf -> ChkMTLow at source line 3294."
     },
     {
       "from": "ChkMTLow",
@@ -30218,10 +30412,13 @@
       "instruction": "bcs",
       "id": "control-00524",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ChkMTLow -> StrBlock at source line 3304.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation ChkMTLow -> StrBlock at source line 3304."
     },
     {
       "from": "ChkMTLow",
@@ -30231,10 +30428,13 @@
       "instruction": "lda",
       "id": "control-00525",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ChkMTLow -> StrBlock at source line 3305.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original fallthrough relation ChkMTLow -> StrBlock at source line 3305."
     },
     {
       "from": "StrBlock",
@@ -30244,10 +30444,13 @@
       "instruction": "bcc",
       "id": "control-00526",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation StrBlock -> ChkMTLow at source line 3314.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c:mysmb_area_render_scenery_terrain_column preserves original branch relation StrBlock -> ChkMTLow at source line 3314."
     },
     {
       "from": "ProcessAreaData",
@@ -69879,10 +70082,13 @@
       "instruction": "rts/rti",
       "id": "control-03558",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves the source return handoff ProcessAreaData -> RendBBuf before the following RenderSceneryTerrain phase.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves the source return handoff ProcessAreaData -> RendBBuf before the following RenderSceneryTerrain phase."
     },
     {
       "from": "GetBlockBufferAddr",
@@ -69892,10 +70098,13 @@
       "instruction": "rts/rti",
       "id": "control-03559",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "area.c preserves the source return handoff GetBlockBufferAddr -> RendBBuf before the following RenderSceneryTerrain phase.",
+      "semanticEvidence": [
+        "Td S9 B10e static node-and-edge audit: SMB1 lines 3184-3318 compared with area.c and area/block_buffer.c; ROM/x86/x64 terrain and block-buffer routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "area.c preserves the source return handoff GetBlockBufferAddr -> RendBBuf before the following RenderSceneryTerrain phase."
     },
     {
       "from": "DecodeAreaData",
