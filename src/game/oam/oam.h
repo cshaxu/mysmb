@@ -8,6 +8,9 @@
  * work bytes.  Motion, collision and mode decisions remain outside this API. */
 /* ROM RelativeBlockPosition and GetBlockOffscreenBits. */
 void mysmb_oam_relative_player_position(struct mysmb_game *game);
+void mysmb_oam_draw_sprite_object(struct mysmb_game *game,
+                                  mysmb_u8 *graphics_index,
+                                  mysmb_u8 *oam_offset);
 void mysmb_oam_relative_bubble_position(struct mysmb_game *game, mysmb_u8 slot);
 /* ROM GetXOffscreenBits.  source_offset is the source X register value;
  * the routine preserves its $04-$07 scratch side effects as well as A. */

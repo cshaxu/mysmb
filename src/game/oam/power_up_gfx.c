@@ -42,6 +42,8 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     mysmb_u8 x;
     mysmb_u8 y;
     mysmb_u8 graphics_offset;
+    mysmb_u8 row;
+    mysmb_u8 row_offset;
 
     type = game->ram[MYSMB_POWER_UP_TYPE];
     /* RunPUSubs has just populated the fixed Enemy_Rel_* scratch cells. */
@@ -50,19 +52,18 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
     base_attributes = (mysmb_u8)(attributes[type] | game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
     graphics_offset = (mysmb_u8)(type << 2U);
-    game->ram[(mysmb_u16)(0x0200U + offset)] = y;
-    game->ram[(mysmb_u16)(0x0204U + offset)] = y;
-    y = (mysmb_u8)(y + 8U);
-    game->ram[(mysmb_u16)(0x0208U + offset)] = y;
-    game->ram[(mysmb_u16)(0x020cU + offset)] = y;
-    game->ram[(mysmb_u16)(0x0201U + offset)] = graphics[graphics_offset];
-    game->ram[(mysmb_u16)(0x0205U + offset)] = graphics[(mysmb_u8)(graphics_offset + 1U)];
-    game->ram[(mysmb_u16)(0x0209U + offset)] = graphics[(mysmb_u8)(graphics_offset + 2U)];
-    game->ram[(mysmb_u16)(0x020dU + offset)] = graphics[(mysmb_u8)(graphics_offset + 3U)];
-    game->ram[(mysmb_u16)(0x0202U + offset)] = base_attributes;
-    game->ram[(mysmb_u16)(0x0206U + offset)] = base_attributes;
-    game->ram[(mysmb_u16)(0x020aU + offset)] = base_attributes;
-    game->ram[(mysmb_u16)(0x020eU + offset)] = base_attributes;
+    game->ram[2U] = y;
+    game->ram[5U] = x;
+    game->ram[4U] = base_attributes;
+    game->ram[7U] = 1U;
+    game->ram[3U] = 1U;
+    row_offset = offset;
+    for (row = 0U; row < 2U; ++row) {
+        game->ram[0U] = graphics[graphics_offset];
+        game->ram[1U] = graphics[(mysmb_u8)(graphics_offset + 1U)];
+        mysmb_oam_draw_sprite_object(game, &graphics_offset, &row_offset);
+        game->ram[7U]--;
+    }
     if (type == 1U || type == 2U) {
         phase_attributes = (mysmb_u8)(((game->ram[MYSMB_FRAME_COUNTER] >> 1U) & 3U) |
                                        game->ram[MYSMB_ENEMY_ATTRIBUTES + slot]);
@@ -78,11 +79,6 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
         game->ram[(mysmb_u16)(0x020eU + offset)] = (mysmb_u8)(
             game->ram[(mysmb_u16)(0x020eU + offset)] | 0x40U);
     }
-    game->ram[(mysmb_u16)(0x0203U + offset)] = x;
-    game->ram[(mysmb_u16)(0x020bU + offset)] = x;
-    x = (mysmb_u8)(x + 8U);
-    game->ram[(mysmb_u16)(0x0207U + offset)] = x;
-    game->ram[(mysmb_u16)(0x020fU + offset)] = x;
     mysmb_power_up_apply_offscreen(game, offset,
                                    game->ram[MYSMB_ENEMY_OFFSCREEN]);
 }

@@ -193,36 +193,6 @@ static mysmb_u8 mysmb_oam_player_select_gfx(struct mysmb_game *game)
     return mysmb_oam_process_player_action(game);
 }
 
-/* ROM DrawSpriteObject: write a two-sprite OAM row and advance the row. */
-static void mysmb_oam_player_draw_row(struct mysmb_game *game, mysmb_u8 *oam_offset,
-                                  mysmb_u8 *y, mysmb_u8 x, mysmb_u8 left_tile,
-                                  mysmb_u8 right_tile, mysmb_u8 attributes,
-                                  mysmb_u8 facing)
-{
-    mysmb_u16 first;
-    mysmb_u16 second;
-
-    first = (mysmb_u16)(0x0200U + *oam_offset);
-    second = (mysmb_u16)(first + 4U);
-    if (facing == MYSMB_BUTTON_LEFT) {
-        game->ram[(mysmb_u16)(first + 1U)] = right_tile;
-        game->ram[(mysmb_u16)(second + 1U)] = left_tile;
-        attributes = (mysmb_u8)(attributes | 0x40U);
-    }
-    else {
-        game->ram[(mysmb_u16)(first + 1U)] = left_tile;
-        game->ram[(mysmb_u16)(second + 1U)] = right_tile;
-    }
-    game->ram[first] = *y;
-    game->ram[second] = *y;
-    game->ram[(mysmb_u16)(first + 2U)] = attributes;
-    game->ram[(mysmb_u16)(second + 2U)] = attributes;
-    game->ram[(mysmb_u16)(first + 3U)] = x;
-    game->ram[(mysmb_u16)(second + 3U)] = (mysmb_u8)(x + 8U);
-    *y = (mysmb_u8)(*y + 8U);
-    *oam_offset = (mysmb_u8)(*oam_offset + 8U);
-}
-
 /* ROM GetPlayerOffscreenBits.  Keep this entry distinct from the graphics
  * handler: VictoryMode reaches RelativePlayerPosition and PlayerGfxHandler
  * without this GameEngine-only predecessor. */
@@ -239,29 +209,23 @@ static void mysmb_oam_player_render_rows(struct mysmb_game *game,
 {
     mysmb_u8 row;
     mysmb_u8 oam_offset;
-    mysmb_u8 y;
-    mysmb_u8 attributes;
+    mysmb_u8 tile_index;
     oam_offset = game->ram[MYSMB_PLAYER_SPRITE_OFFSET];
-    y = game->ram[MYSMB_PLAYER_RELATIVE_Y];
-    attributes = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
+    tile_index = graphics_offset;
     /* RenderPlayerSub publishes these source scratch bytes before
      * DrawPlayerLoop consumes the indexed PlayerGraphicsTable rows. */
     game->ram[MYSMB_PLAYER_POS_FOR_SCROLL] = game->ram[MYSMB_PLAYER_RELATIVE_X];
     game->ram[5U] = game->ram[MYSMB_PLAYER_RELATIVE_X];
-    game->ram[2U] = y;
+    game->ram[2U] = game->ram[MYSMB_PLAYER_RELATIVE_Y];
     game->ram[3U] = game->ram[MYSMB_PLAYER_FACING];
-    game->ram[4U] = attributes;
+    game->ram[4U] = game->ram[MYSMB_PLAYER_SPRITE_ATTRIBUTES];
     game->ram[7U] = row_count;
     for (row = 0U; row < row_count; ++row) {
         game->ram[0U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + graphics_offset + row * 2U)];
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
         game->ram[1U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + graphics_offset + row * 2U + 1U)];
-        mysmb_oam_player_draw_row(game, &oam_offset, &y,
-            game->ram[MYSMB_PLAYER_RELATIVE_X],
-            game->ram[0U], game->ram[1U],
-            attributes, game->ram[MYSMB_PLAYER_FACING]);
-        game->ram[2U] = y;
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)];
+        mysmb_oam_draw_sprite_object(game, &tile_index, &oam_offset);
         game->ram[7U]--;
     }
 }
@@ -378,7 +342,7 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
 {
     mysmb_u8 row;
     mysmb_u8 oam_offset;
-    mysmb_u8 y;
+    mysmb_u8 tile_index;
 
     if (game->area_prg == 0 ||
         game->area_prg_size < MYSMB_INTERMEDIATE_PLAYER_DATA_END) return;
@@ -390,16 +354,13 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
             game->area_prg[(mysmb_u16)(MYSMB_INTERMEDIATE_PLAYER_DATA + row)];
     }
     oam_offset = 4U;
-    y = game->ram[2U];
+    tile_index = 0xb8U;
     for (row = 0U; row < 4U; ++row) {
         game->ram[0U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U + row * 2U)];
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index)];
         game->ram[1U] = game->area_prg[(mysmb_u16)(
-            MYSMB_PLAYER_GRAPHICS_TABLE + 0xb8U + row * 2U + 1U)];
-        mysmb_oam_player_draw_row(game, &oam_offset, &y, game->ram[5U],
-            game->ram[0U], game->ram[1U],
-            game->ram[4U], game->ram[3U]);
-        game->ram[2U] = y;
+            MYSMB_PLAYER_GRAPHICS_TABLE + tile_index + 1U)];
+        mysmb_oam_draw_sprite_object(game, &tile_index, &oam_offset);
         game->ram[7U]--;
     }
     /* The source reads the next sprite's attribute at +36 and stores its

@@ -1924,9 +1924,9 @@ The labels and branches behind every line remain open until individually bound b
 | 15003 | `DividePDiff` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
 | 15015 | `SetOscrO` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
 | 15016 | `ExDivPD` | M2 T47 S4 shared `src/game/oam/object_position.c` | ROM-match complete | [T47 S4 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) |
-| 15025 | `DrawSpriteObject` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-drawspriteobject) |
-| 15036 | `NoHFlip` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-nohflip) |
-| 15040 | `SetHFAt` | T16 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sethfat) |
+| 15025 | `DrawSpriteObject` | M2 T47 S5 shared `src/game/oam/sprite_row.c` | ROM-match complete | [T47 S5 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s5-closure-shared-sprite-row-writer) |
+| 15036 | `NoHFlip` | M2 T47 S5 shared `src/game/oam/sprite_row.c` | ROM-match complete | [T47 S5 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s5-closure-shared-sprite-row-writer) |
+| 15040 | `SetHFAt` | M2 T47 S5 shared `src/game/oam/sprite_row.c` | ROM-match complete | [T47 S5 closure](../../proposals/m2/t47-object-position-and-sprite-output.md#s5-closure-shared-sprite-row-writer) |
 | 15070 | `SoundEngine` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-soundengine) |
 | 15075 | `SndOn` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-sndon) |
 | 15084 | `InPause` | T21 responsibility (implementation not certified) | open | [T24 S1 evidence audit](m2-t24-s1-full-node-census.md#node-inpause) |

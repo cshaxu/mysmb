@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1746 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1749 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 210 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 207 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1746 / 1,992 (87.65%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1749 / 1,992 (87.80%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T47 S4 closure](../proposals/m2/t47-object-position-and-sprite-output.md#s4-closure-shared-offscreen-bit-chain) proves 26 exact shared offscreen labels, including six ROM-bound data tables, on 32 original actor child calls with 64 matching x86/x64 full RAM/OAM comparisons and separate three-target operational checks.
+Latest task review: [T47 closure](../history/M2-T47-object-position-and-sprite-output.md#t47-closure) proves all 40 exact source-order labels through `SetHFAt`; S5 adds three sprite-row labels with 38 original child calls and 76 matching x86/x64 full RAM/OAM comparisons, plus separate three-target operational checks.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1746)
+## Completed matches (1749)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1779,6 +1779,9 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15003 | `DividePDiff` |
 | 15015 | `SetOscrO` |
 | 15016 | `ExDivPD` |
+| 15025 | `DrawSpriteObject` |
+| 15036 | `NoHFlip` |
+| 15040 | `SetHFAt` |
 
 ## Mapped but not yet matched (36)
 

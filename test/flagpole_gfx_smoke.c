@@ -21,7 +21,7 @@ int main(void)
     game.ram[0x010dU] = 0x60U;
     mysmb_objects_draw_flagpole_graphics(&game);
     if (game.ram[0x0002U] != 0x60U || game.ram[0x0003U] != 1U ||
-        game.ram[0x0004U] != 1U) return 1;
+        game.ram[0x0004U] != 1U || game.ram[0x0005U] != 0x54U) return 1;
 
     for (score = 0U; score < 5U; ++score) {
         memset(&game, 0, sizeof(game));
@@ -43,7 +43,8 @@ int main(void)
             game.ram[0x0291U] != score_tiles[score * 2U + 1U] ||
             game.ram[0x028fU] != 0x54U || game.ram[0x0293U] != 0x5cU ||
             game.ram[0x0000U] != score_tiles[score * 2U] ||
-            game.ram[0x0002U] != 0x60U || game.ram[0x0003U] != 1U ||
+            game.ram[0x0001U] != score_tiles[score * 2U + 1U] ||
+            game.ram[0x0002U] != 0x68U || game.ram[0x0003U] != 1U ||
             game.ram[0x0004U] != 1U || game.ram[0x0005U] != 0x54U) return 2;
     }
     game.ram[0x03d1U] = 2U;

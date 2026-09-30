@@ -198,25 +198,9 @@ static const mysmb_u8 mysmb_enemy_attribute_data[54] = {
 static void mysmb_enemy_draw_row(struct mysmb_game *g, mysmb_u8 *oam,
                                  mysmb_u8 *tile_offset)
 {
-    mysmb_u8 a;
-    mysmb_u8 l = mysmb_enemy_graphics_table[*tile_offset];
-    mysmb_u8 r = mysmb_enemy_graphics_table[(mysmb_u8)(*tile_offset+1U)];
-    g->ram[0U] = l; g->ram[1U] = r;
-    if ((g->ram[3U] & 2U) != 0U) {
-        g->ram[0x0201U+*oam] = r; g->ram[0x0205U+*oam] = l;
-        a = (mysmb_u8)(g->ram[4U] | 0x40U);
-    } else {
-        g->ram[0x0201U+*oam] = l; g->ram[0x0205U+*oam] = r;
-        a = g->ram[4U];
-    }
-    g->ram[0x0202U+*oam] = a; g->ram[0x0206U+*oam] = a;
-    g->ram[0x0200U+*oam] = g->ram[2U];
-    g->ram[0x0204U+*oam] = g->ram[2U];
-    g->ram[0x0203U+*oam] = g->ram[5U];
-    g->ram[0x0207U+*oam] = (mysmb_u8)(g->ram[5U]+8U);
-    g->ram[2U] = (mysmb_u8)(g->ram[2U]+8U);
-    *oam = (mysmb_u8)(*oam+8U);
-    *tile_offset = (mysmb_u8)(*tile_offset+2U);
+    g->ram[0U] = mysmb_enemy_graphics_table[*tile_offset];
+    g->ram[1U] = mysmb_enemy_graphics_table[(mysmb_u8)(*tile_offset + 1U)];
+    mysmb_oam_draw_sprite_object(g, tile_offset, oam);
 }
 
 /* ROM $e87d-$eaf2 ordinary EnemyGfxHandler control flow and OAM tail.

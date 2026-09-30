@@ -1045,6 +1045,13 @@ int main(int argument_count, char **arguments)
     lib_u16 relative_child_entry;
     lib_u16 relative_child_return;
     lib_u8 relative_child_stack;
+    const char *sprite_row_child_path;
+    unsigned char sprite_row_children[8][4100];
+    unsigned int sprite_row_child_count;
+    unsigned int sprite_row_child_active;
+    lib_u16 sprite_row_child_return;
+    lib_u8 sprite_row_child_stack;
+    unsigned int sprite_row_flip_variant;
     lib_u16 control_return;
     lib_u8 control_stack;
     lib_u16 transition_entry;
@@ -1131,6 +1138,12 @@ int main(int argument_count, char **arguments)
     relative_child_entry = 0u;
     relative_child_return = 0u;
     relative_child_stack = 0u;
+    sprite_row_child_path = NULL;
+    sprite_row_child_count = 0u;
+    sprite_row_child_active = 0u;
+    sprite_row_child_return = 0u;
+    sprite_row_child_stack = 0u;
+    sprite_row_flip_variant = 0u;
     control_return = 0u;
     control_stack = 0u;
     transition_entry = 0u;
@@ -1159,6 +1172,18 @@ int main(int argument_count, char **arguments)
     t28_vram_phase = 0u;
     t29_area_entry_phase = 0u;
     for (recorded = 5u; recorded < (lib_u32)argument_count; ++recorded) {
+        if (strncmp(arguments[recorded], "--sprite-row-child=", 19u) == 0) {
+            if (sprite_row_child_path != NULL ||
+                arguments[recorded][19] == '\0') return 64;
+            sprite_row_child_path = arguments[recorded] + 19u;
+            continue;
+        }
+        if (strcmp(arguments[recorded],
+                   "--sprite-row-flip-variant=1") == 0) {
+            if (sprite_row_flip_variant != 0u) return 64;
+            sprite_row_flip_variant = 1u;
+            continue;
+        }
         if (strncmp(arguments[recorded], "--relative-child=", 17u) == 0) {
             if (relative_child_path != NULL ||
                 arguments[recorded][17] == '\0') return 64;
@@ -2973,6 +2998,8 @@ int main(int argument_count, char **arguments)
     }
     if ((relative_child_path == NULL) !=
         (relative_kind == 0xffffffffu)) return 64;
+    if (sprite_row_flip_variant != 0u &&
+        sprite_row_child_path == NULL) return 64;
     if (relative_coordinate_variant != 0xffffffffu &&
         relative_child_path == NULL) return 64;
     if (relative_child_path != NULL) {
@@ -4885,6 +4912,49 @@ int main(int argument_count, char **arguments)
                 relative_child_active = 1u;
             }
         }
+        /* T47 S5: observe naturally reached DrawSpriteObject and its
+         * stack-derived return.  The optional variant changes only RAM
+         * scratch after the original caller has entered the routine. */
+        if (sprite_row_flip_variant != 0u && before_pc == 0xf282u) {
+            lib_u8 *ram = driver->machine->ram;
+            ram[0u] = 0x12u;
+            ram[1u] = 0x34u;
+            ram[2u] = 0xf9u;
+            ram[3u] = (lib_u8)(ram[3u] | 2u);
+            ram[4u] = 0x85u;
+            ram[5u] = 0xfcu;
+        }
+        if (sprite_row_child_path != NULL && elapsed >= warmup_frames) {
+            if (sprite_row_child_active != 0u) {
+                if (before_pc == sprite_row_child_return &&
+                    driver->machine->s ==
+                    (lib_u8)(sprite_row_child_stack + 2u)) {
+                    sprite_row_children[sprite_row_child_count][2] =
+                        driver->machine->x;
+                    sprite_row_children[sprite_row_child_count][3] =
+                        driver->machine->y;
+                    memcpy(sprite_row_children[sprite_row_child_count] + 2052u,
+                           driver->machine->ram, 2048u);
+                    ++sprite_row_child_count;
+                    sprite_row_child_active = 0u;
+                }
+            }
+            else if (sprite_row_child_count < 8u && before_pc == 0xf282u) {
+                sprite_row_children[sprite_row_child_count][0] =
+                    driver->machine->x;
+                sprite_row_children[sprite_row_child_count][1] =
+                    driver->machine->y;
+                memcpy(sprite_row_children[sprite_row_child_count] + 4u,
+                       driver->machine->ram, 2048u);
+                sprite_row_child_stack = driver->machine->s;
+                sprite_row_child_return = (lib_u16)(1u +
+                    driver->machine->ram[0x100u +
+                        (lib_u8)(sprite_row_child_stack + 1u)] +
+                    256u * driver->machine->ram[0x100u +
+                        (lib_u8)(sprite_row_child_stack + 2u)]);
+                sprite_row_child_active = 1u;
+            }
+        }
         /* Observe declared child entry/return states while the original
          * PlayerEntrance executes. Read the real return address and stack
          * depth; never replace the original child or alter CPU state. */
@@ -5343,6 +5413,23 @@ int main(int argument_count, char **arguments)
                 ok = fprintf(reads, "%u,%lu\n", offset,
                              mysmb_player_table_reads[offset]) >= 0;
         if (fclose(reads) != 0) ok = 0;
+        if (!ok) return 69;
+    }
+    if (sprite_row_child_path != NULL) {
+        FILE *children;
+        unsigned char header[8] = { 'M', 'S', 'S', 'O', 1u, 0u, 0u, 0u };
+        unsigned int child;
+        int ok;
+        if (sprite_row_child_count == 0u ||
+            sprite_row_child_active != 0u) return 69;
+        header[5] = (unsigned char)sprite_row_child_count;
+        children = fopen(sprite_row_child_path, "wb");
+        if (children == NULL) return 69;
+        ok = fwrite(header, 1u, 8u, children) == 8u;
+        for (child = 0u; child < sprite_row_child_count; ++child)
+            if (fwrite(sprite_row_children[child], 1u, 4100u, children) !=
+                4100u) ok = 0;
+        if (fclose(children) != 0) ok = 0;
         if (!ok) return 69;
     }
     if (player_action_child_path != NULL) {

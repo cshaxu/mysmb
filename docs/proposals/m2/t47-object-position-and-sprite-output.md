@@ -319,3 +319,72 @@ no new failures. The owner-authorized three EXEs were refreshed:
 | `assets/mysmb64.exe` | `31caa48109875babd74ab1ea575f6818a30db3d7954c43c8395a776d423a5909` |
 
 S5 begins at `DrawSpriteObject` and remains unadmitted here.
+
+## S5 admission: two-sprite row writer
+
+The final T47 source-order chain owns exactly three **open** labels:
+`DrawSpriteObject` (15025), `NoHFlip` (15036), and `SetHFAt`
+(15040). All three are intended ROM matches, **1,746 → 1,749 /
+1,992** maximum. M2 T16 S4 transfers them to T47 S5. S4
+`ExDivPD` is the predecessor; `SoundEngine` is the next source
+label and belongs to a later T. The shared game OAM owner will expose
+one `DrawSpriteObject`-equivalent row writer; existing player/block
+and other row callers must use or be checked against that owner.
+
+Capture source-reachable `$f282` calls with CPU X/Y, complete RAM/OAM
+before and after the stack-derived return. Compare horizontal flip
+and no-flip successors at `$f296`/`$f2a0`, tile order, attributes,
+coordinates, `$02` increment, and X/Y return increments against the
+shared C routine on x86/x64. Test both branch families, including
+an edge-coordinate/attribute RAM variant at a natural entry. The
+independent operational track builds DOS16, Win32 x86/x64, checks
+focused OAM and platform-purity tests, and refreshes all three EXEs.
+T47 closure then combines its five S results in a cross-chain route
+matrix and integrated three-target regression.
+
+### S5 closure: shared sprite-row writer
+
+All three expected labels are **ROM-match complete**, with no S5
+deferral: **1,746 → 1,749 / 1,992**. Original GameEngine routes
+entered `$f282` through player, ordinary enemy and bouncing-block
+callers. Natural and bounded flip/coordinate variants supplied 38
+stack-returned child calls. On both x86 and x64 the shared C writer
+matched return X/Y and every non-stack RAM/OAM byte after each call:
+**76 comparisons, zero differences**. The source PC coverage reaches
+both the `$f296` no-flip branch and `$f2a0` common attribute/writer
+tail. The recorder did not alter ROM, CPU PC or the call stack; raw
+records were deleted after the diagnostic comparison. The neutral
+proof summary stays under ignored `build/m2-t47-s5/`.
+
+| Source PC | Label | Control, read/write and native mapping |
+| --- | --- | --- |
+| `$f282` | `DrawSpriteObject` | Read `$03` bit 1 for tile order, `$00/$01` tile pair; write OAM row and `$02`; return X+2, Y+8. Shared `mysmb_oam_draw_sprite_object`. |
+| `$f296` | `NoHFlip` | Write `$00` left and `$01` right, clear additional flip attribute; verified by natural player, enemy and block routes. |
+| `$f2a0` | `SetHFAt` | OR selected flip bit with `$04`, write both OAM attributes, Y=`$02`, X=`$05` and X+8, then advance `$02`, X and Y; verified on both flip branches. |
+
+The similar-issue sweep found earlier inlined copies at the original
+`DrawOneSpriteRow` callers: player, block, power-up and flagpole score.
+It also found the ordinary enemy `DrawEnemyObjRow` copy, whose flip
+tile order differed from the source. All now call the shared writer;
+the flagpole setup also writes `$05` on its no-score branch, as the
+original does. The separate unused Koopa/Buzzy drawing function and
+other actor-specific OAM arrangements do not call this original row
+entry, so this S leaves their distinct source owners in place. Host
+adapters are unchanged.
+
+The independent operational track rebuilt the full x86 and x64 target
+sets and linked a 258,517-byte DOS16 MZ executable. Player, block,
+power-up, ordinary-enemy and flagpole OAM tests plus platform purity
+passed on both Windows widths. Both Win32 `--self-test` runs passed.
+Full CTest was **222/233 on each width**, with precisely the same 11
+previously recorded baseline failures and no new failure. The three
+owner-authorized executable artifacts were refreshed:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `a71c286349d91fb74496e4a75ef2b1a20fd693787b6cb730130d0a333270f930` |
+| `assets/mysmb32.exe` | `c67a9ff1b597285a68da61e4668e21b16b19b5121feed9630ef5829d969ee72b` |
+| `assets/mysmb64.exe` | `00403e4c7b79b8e21ccb2f6667fea296b1f7ca79432be72015737b0c06d2ce96` |
+
+T47's cross-chain proof matrix is recorded in the
+[task closure](../../history/M2-T47-object-position-and-sprite-output.md#t47-closure).

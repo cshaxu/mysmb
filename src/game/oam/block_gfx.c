@@ -36,26 +36,19 @@ static mysmb_u8 mysmb_block_reflected_chunk_x(mysmb_u8 original,
 void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot)
 {
     static const mysmb_u8 default_tiles[4] = {0x85U,0x85U,0x86U,0x86U};
-    mysmb_u8 oam, row, offset, attributes, bits;
+    mysmb_u8 oam, row, offset, graphics_index, attributes, bits;
 
     oam = game->ram[MYSMB_BLOCK_SPRITE + slot];
     game->ram[2U] = game->ram[MYSMB_BLOCK_RELATIVE_Y];
     game->ram[5U] = game->ram[MYSMB_BLOCK_RELATIVE_X];
     game->ram[4U] = 3U;
     game->ram[3U] = 1U;
+    offset = oam;
+    graphics_index = 0U;
     for (row = 0U; row < 2U; ++row) {
-        offset = (mysmb_u8)(oam + row * 8U);
-        game->ram[0U] = default_tiles[row * 2U];
-        game->ram[1U] = default_tiles[row * 2U + 1U];
-        game->ram[0x0200U + offset] = game->ram[2U];
-        game->ram[0x0204U + offset] = game->ram[2U];
-        game->ram[0x0201U + offset] = game->ram[0U];
-        game->ram[0x0205U + offset] = game->ram[1U];
-        game->ram[0x0202U + offset] = game->ram[4U];
-        game->ram[0x0206U + offset] = game->ram[4U];
-        game->ram[0x0203U + offset] = game->ram[5U];
-        game->ram[0x0207U + offset] = (mysmb_u8)(game->ram[5U] + 8U);
-        game->ram[2U] = (mysmb_u8)(game->ram[2U] + 8U);
+        game->ram[0U] = default_tiles[graphics_index];
+        game->ram[1U] = default_tiles[(mysmb_u8)(graphics_index + 1U)];
+        mysmb_oam_draw_sprite_object(game, &graphics_index, &offset);
     }
     if (game->ram[MYSMB_AREA_TYPE] != 1U) {
         game->ram[0x0201U + oam] = 0x86U;
