@@ -34267,10 +34267,13 @@
       "instruction": "jsr",
       "id": "control-00080",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> C switch dispatch owners",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original call TitleScreenMode → JumpEngine: inputs are handed to the child before the caller continuation resumes."
     },
     {
       "from": "TitleScreenMode",
@@ -34280,10 +34283,13 @@
       "instruction": "jsr",
       "id": "control-00081",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original sequential fall-through TitleScreenMode → WSelectBufferTemplate: prior source writes and flags reach the successor in instruction order."
     },
     {
       "from": "GameMenuRoutine",
@@ -46181,10 +46187,13 @@
       "instruction": "jsr",
       "id": "control-00821",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_oam_get_x_offscreen_bits, mysmb_oam_get_y_offscreen_bits and mysmb_oam_divide_pixel_diff with owner-local constant tables",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original call ChkPOffscr → GetXOffscreenBits: inputs are handed to the child before the caller continuation resumes."
     },
     {
       "from": "ChkPOffscr",
@@ -46194,10 +46203,13 @@
       "instruction": "bcs",
       "id": "control-00822",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkPOffscr → KeepOnscr: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkPOffscr",
@@ -46207,10 +46219,13 @@
       "instruction": "beq",
       "id": "control-00823",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkPOffscr → InitPlatScrl: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkPOffscr",
@@ -46220,10 +46235,13 @@
       "instruction": "beq",
       "id": "control-00824",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original sequential fall-through ChkPOffscr → KeepOnscr: prior source writes and flags reach the successor in instruction order."
     },
     {
       "from": "KeepOnscr",
@@ -46233,10 +46251,13 @@
       "instruction": "beq",
       "id": "control-00825",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch KeepOnscr → InitPlatScrl: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "KeepOnscr",
@@ -46246,10 +46267,13 @@
       "instruction": "sta",
       "id": "control-00826",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original sequential fall-through KeepOnscr → InitPlatScrl: prior source writes and flags reach the successor in instruction order."
     },
     {
       "from": "GameRoutines",
@@ -75155,10 +75179,13 @@
       "instruction": "beq",
       "id": "control-02632",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState → SChkA: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -75168,10 +75195,13 @@
       "instruction": "beq",
       "id": "control-02633",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState → ProcEnemyDirection: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -75181,10 +75211,13 @@
       "instruction": "bcs",
       "id": "control-02634",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState → ExSteChk: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -75194,10 +75227,13 @@
       "instruction": "bne",
       "id": "control-02635",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState → ProcEnemyDirection: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -75207,10 +75243,13 @@
       "instruction": "bne",
       "id": "control-02636",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original conditional branch ChkLandedEnemyState → SetForStn: the source comparison/flag predicate selects this successor before any later state mutation."
     },
     {
       "from": "ChkLandedEnemyState",
@@ -75220,10 +75259,13 @@
       "instruction": "lda",
       "id": "control-02637",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers -> landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original sequential fall-through ChkLandedEnemyState → SetForStn: prior source writes and flags reach the successor in instruction order."
     },
     {
       "from": "SetForStn",
@@ -88985,10 +89027,13 @@
       "instruction": "rts/rti",
       "id": "control-03497",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> mysmb_frame_root_step title mode/task dispatch",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → TitleScreenMode: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "DemoEngine",
@@ -89648,10 +89693,13 @@
       "instruction": "rts/rti",
       "id": "control-03538",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_initialize_memory -> mysmb_game_begin_title_bootstrap",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation InitializeMemory → InitializeGame: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "LoadAreaPointer",
@@ -89677,10 +89725,13 @@
       "instruction": "rts/rti",
       "id": "control-03540",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_initialize_memory -> mysmb_area_initialize",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation InitializeMemory → InitializeArea: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetScreenPosition",
@@ -89690,10 +89741,13 @@
       "instruction": "rts/rti",
       "id": "control-03541",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetScreenPosition → StartPage: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetAreaDataAddrs",
@@ -89719,10 +89773,13 @@
       "instruction": "rts/rti",
       "id": "control-03543",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_get_area_music -> shared initialization owner",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetAreaMusic → ClearVRLoop: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "DoNothing2",
@@ -90036,10 +90093,13 @@
       "instruction": "rts/rti",
       "id": "control-03563",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> mysmb_area_apply_parser_object / shared object helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → RunAObj: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "WriteGameText",
@@ -90049,10 +90109,13 @@
       "instruction": "rts/rti",
       "id": "control-03564",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_area_queue_game_text -> mysmb_area_apply_parser_object / shared object helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation WriteGameText → WarpNum: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "KillEnemies",
@@ -90078,10 +90141,13 @@
       "instruction": "rts/rti",
       "id": "control-03566",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → AreaStyleObject: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -90091,10 +90157,13 @@
       "instruction": "rts/rti",
       "id": "control-03567",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → TreeLedge: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ChkLrgObjLength",
@@ -90104,10 +90173,13 @@
       "instruction": "rts/rti",
       "id": "control-03568",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjLength → MushroomLedge: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ChkLrgObjLength",
@@ -90117,10 +90189,13 @@
       "instruction": "rts/rti",
       "id": "control-03569",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjLength → PulleyRopeObject: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -90130,10 +90205,13 @@
       "instruction": "rts/rti",
       "id": "control-03570",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → CastleObject: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -90143,10 +90221,13 @@
       "instruction": "rts/rti",
       "id": "control-03571",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → CastleObject: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetAreaObjXPosition",
@@ -90156,10 +90237,13 @@
       "instruction": "rts/rti",
       "id": "control-03572",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetAreaObjXPosition → NotTall: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "FindEmptyEnemySlot",
@@ -90185,10 +90269,13 @@
       "instruction": "rts/rti",
       "id": "control-03574",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → WaterPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -90198,10 +90285,13 @@
       "instruction": "rts/rti",
       "id": "control-03575",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → IntroPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "RenderSidewaysPipe",
@@ -90227,10 +90317,13 @@
       "instruction": "rts/rti",
       "id": "control-03577",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → ExitPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -90240,10 +90333,13 @@
       "instruction": "rts/rti",
       "id": "control-03578",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → ExitPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "RenderUnderPart",
@@ -90253,10 +90349,13 @@
       "instruction": "rts/rti",
       "id": "control-03579",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation RenderUnderPart → RenderSidewaysPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetPipeHeight",
@@ -90298,10 +90397,13 @@
       "instruction": "rts/rti",
       "id": "control-03582",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetAreaObjXPosition → WarpPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetAreaObjYPosition",
@@ -90311,10 +90413,13 @@
       "instruction": "rts/rti",
       "id": "control-03583",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetAreaObjYPosition → WarpPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "InitPiranhaPlant",
@@ -90340,10 +90445,13 @@
       "instruction": "rts/rti",
       "id": "control-03585",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChkLrgObjFixedLength → GetPipeHeight: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetLrgObjAttrib",
@@ -90353,10 +90461,13 @@
       "instruction": "rts/rti",
       "id": "control-03586",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared area parser/render helper -> mysmb_area_apply_parser_object / shared area helper",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetLrgObjAttrib → GetPipeHeight: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ChkLrgObjLength",
@@ -90830,10 +90941,13 @@
       "instruction": "rts/rti",
       "id": "control-03616",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → GameMode: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GameRoutines",
@@ -90843,10 +90957,13 @@
       "instruction": "rts/rti",
       "id": "control-03617",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GameRoutines → GameCoreRoutine: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ProcFireball_Bubble",
@@ -91096,10 +91213,13 @@
       "instruction": "rts/rti",
       "id": "control-03633",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_get_area_music -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetAreaMusic → ProcELoop: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "CyclePlayerPalette",
@@ -91109,10 +91229,13 @@
       "instruction": "rts/rti",
       "id": "control-03634",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation CyclePlayerPalette → CycleTwo: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ResetPalStar",
@@ -91122,10 +91245,13 @@
       "instruction": "rts/rti",
       "id": "control-03635",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ResetPalStar → ClrPlrPal: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "AreaParserTaskHandler",
@@ -91135,10 +91261,13 @@
       "instruction": "rts/rti",
       "id": "control-03636",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_area_parser_task_step -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation AreaParserTaskHandler → RunParser: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetScreenPosition",
@@ -91148,10 +91277,13 @@
       "instruction": "rts/rti",
       "id": "control-03637",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation GetScreenPosition → ScrollScreen: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetXOffscreenBits",
@@ -91177,10 +91309,13 @@
       "instruction": "rts/rti",
       "id": "control-03639",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → GameRoutines: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "EnterSidePipe",
@@ -91190,10 +91325,13 @@
       "instruction": "rts/rti",
       "id": "control-03640",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation EnterSidePipe → IntroEntr: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "MovePlayerYAxis",
@@ -91203,10 +91341,13 @@
       "instruction": "rts/rti",
       "id": "control-03641",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation MovePlayerYAxis → EntrMode2: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "AutoControlPlayer",
@@ -91216,10 +91357,13 @@
       "instruction": "rts/rti",
       "id": "control-03642",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation AutoControlPlayer → OffVine: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "PlayerMovementSubs",
@@ -91229,10 +91373,13 @@
       "instruction": "rts/rti",
       "id": "control-03643",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation PlayerMovementSubs → SizeChk: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ScrollHandler",
@@ -91242,10 +91389,13 @@
       "instruction": "rts/rti",
       "id": "control-03644",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ScrollHandler → PlayerSubs: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetPlayerOffscreenBits",
@@ -91303,10 +91453,13 @@
       "instruction": "rts/rti",
       "id": "control-03648",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation PlayerBGCollision → PlayerSubs: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "SetEntr",
@@ -91316,10 +91469,13 @@
       "instruction": "rts/rti",
       "id": "control-03649",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation SetEntr → CloudExit: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "MovePlayerYAxis",
@@ -91329,10 +91485,13 @@
       "instruction": "rts/rti",
       "id": "control-03650",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation MovePlayerYAxis → VerticalPipeEntry: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "ScrollHandler",
@@ -91342,10 +91501,13 @@
       "instruction": "rts/rti",
       "id": "control-03651",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ScrollHandler → VerticalPipeEntry: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "EnterSidePipe",
@@ -91355,10 +91517,13 @@
       "instruction": "rts/rti",
       "id": "control-03652",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation EnterSidePipe → SideExitPipeEntry: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "AutoControlPlayer",
@@ -91368,10 +91533,13 @@
       "instruction": "rts/rti",
       "id": "control-03653",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation AutoControlPlayer → RightPipe: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "DonePlayerTask",
@@ -91381,10 +91549,13 @@
       "instruction": "rts/rti",
       "id": "control-03654",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation DonePlayerTask → EndChgSize: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "DonePlayerTask",
@@ -91394,10 +91565,13 @@
       "instruction": "rts/rti",
       "id": "control-03655",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation DonePlayerTask → ResetPalFireFlower: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "AutoControlPlayer",
@@ -91407,10 +91581,13 @@
       "instruction": "rts/rti",
       "id": "control-03656",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation AutoControlPlayer → PlayerEndLevel: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "LoadAreaPointer",
@@ -91436,10 +91613,13 @@
       "instruction": "rts/rti",
       "id": "control-03658",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "pipe, vine, size, flagpole and end-level transition helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation ChgAreaMode → NextArea: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "PlayerPhysicsSub",
@@ -91449,10 +91629,13 @@
       "instruction": "rts/rti",
       "id": "control-03659",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation PlayerPhysicsSub → ProcMove: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "JumpEngine",
@@ -91462,10 +91645,13 @@
       "instruction": "rts/rti",
       "id": "control-03660",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "C switch dispatch owners -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation JumpEngine → MoveSubs: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetPlayerAnimSpeed",
@@ -97523,10 +97709,13 @@
       "instruction": "rts/rti",
       "id": "control-04039",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_oam_dump_*_sprites -> mysmb_oam_render_player and its player graphics selection/rendering helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation DumpTwoSpr → PROfsLoop: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "DrawPlayerLoop",
@@ -97552,10 +97741,13 @@
       "instruction": "rts/rti",
       "id": "control-04041",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_draw_row + src/game/oam/sprite_row.c:mysmb_oam_draw_sprite_object -> mysmb_oam_player_render_rows shared by mysmb_oam_render_player and mysmb_oam_draw_intermediate_player",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original return continuation DrawOneSpriteRow → DrawPlayerLoop: child completion restores the caller’s next source phase without an extra dispatch."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -98415,10 +98607,13 @@
       "instruction": "vector",
       "id": "control-04095",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "ROM vector table -> src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original interrupt-vector entry <vector> → NonMaskableInterrupt, including the NMI frame-root entry convention."
     },
     {
       "from": "OperModeExecutionTree",
@@ -98500,10 +98695,13 @@
       "selector": 0,
       "id": "control-04100",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_game_begin_title_bootstrap",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch TitleScreenMode → InitializeGame, including the selected target and continuation convention."
     },
     {
       "from": "TitleScreenMode",
@@ -98531,10 +98729,13 @@
       "selector": 2,
       "id": "control-04102",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch -> mysmb_game_primary_setup",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch TitleScreenMode → PrimaryGameSetup, including the selected target and continuation convention."
     },
     {
       "from": "TitleScreenMode",
@@ -99941,10 +100142,13 @@
       "selector": 0,
       "id": "control-04185",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_area_initialize",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch GameMode → InitializeArea, including the selected target and continuation convention."
     },
     {
       "from": "GameMode",
@@ -99972,10 +100176,13 @@
       "selector": 2,
       "id": "control-04187",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_secondary_setup",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch GameMode → SecondaryGameSetup, including the selected target and continuation convention."
     },
     {
       "from": "GameMode",
@@ -99986,10 +100193,13 @@
       "selector": 3,
       "id": "control-04188",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail -> mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch GameMode → GameCoreRoutine, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100000,10 +100210,13 @@
       "selector": 0,
       "id": "control-04189",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_player_initialize_entrance",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch GameRoutines → Entrance_GameTimerSetup, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100014,10 +100227,13 @@
       "selector": 1,
       "id": "control-04190",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 1 dispatch GameRoutines → Vine_AutoClimb, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100028,10 +100244,13 @@
       "selector": 2,
       "id": "control-04191",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch GameRoutines → SideExitPipeEntry, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100042,10 +100261,13 @@
       "selector": 3,
       "id": "control-04192",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch GameRoutines → VerticalPipeEntry, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100056,10 +100278,13 @@
       "selector": 4,
       "id": "control-04193",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 4 dispatch GameRoutines → FlagpoleSlide, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100070,10 +100295,13 @@
       "selector": 5,
       "id": "control-04194",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 5 dispatch GameRoutines → PlayerEndLevel, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100084,10 +100312,13 @@
       "selector": 6,
       "id": "control-04195",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_lose_life",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 6 dispatch GameRoutines → PlayerLoseLife, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100098,10 +100329,13 @@
       "selector": 7,
       "id": "control-04196",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 7 dispatch GameRoutines → PlayerEntrance, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100112,10 +100346,13 @@
       "selector": 8,
       "id": "control-04197",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> mysmb_game_routines and player entry/control helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 8 dispatch GameRoutines → PlayerCtrlRoutine, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100126,10 +100363,13 @@
       "selector": 9,
       "id": "control-04198",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 9 dispatch GameRoutines → PlayerChangeSize, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100140,10 +100380,13 @@
       "selector": 10,
       "id": "control-04199",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 10 dispatch GameRoutines → PlayerInjuryBlink, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100154,10 +100397,13 @@
       "selector": 11,
       "id": "control-04200",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 11 dispatch GameRoutines → PlayerDeath, including the selected target and continuation convention."
     },
     {
       "from": "GameRoutines",
@@ -100168,10 +100414,13 @@
       "selector": 12,
       "id": "control-04201",
       "cohort": "E",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_game_routines and player entry/control helpers -> pipe, vine, size, flagpole and end-level transition helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 12 dispatch GameRoutines → PlayerFireFlower, including the selected target and continuation convention."
     },
     {
       "from": "MoveSubs",
@@ -100182,10 +100431,13 @@
       "selector": 0,
       "id": "control-04202",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 0 dispatch MoveSubs → OnGroundStateSub, including the selected target and continuation convention."
     },
     {
       "from": "MoveSubs",
@@ -100196,10 +100448,13 @@
       "selector": 1,
       "id": "control-04203",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 1 dispatch MoveSubs → JumpSwimSub, including the selected target and continuation convention."
     },
     {
       "from": "MoveSubs",
@@ -100210,10 +100465,13 @@
       "selector": 2,
       "id": "control-04204",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 2 dispatch MoveSubs → FallingSub, including the selected target and continuation convention."
     },
     {
       "from": "MoveSubs",
@@ -100224,10 +100482,13 @@
       "selector": 3,
       "id": "control-04205",
       "cohort": "F",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "player movement, physics and climbing helpers -> player movement, physics and climbing helpers",
+      "semanticEvidence": [
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves the original JumpEngine selector 3 dispatch MoveSubs → ClimbingSub, including the selected target and continuation convention."
     },
     {
       "from": "BlockCode",

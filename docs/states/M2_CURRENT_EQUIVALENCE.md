@@ -1547,3 +1547,9 @@ branches.
 - Node-semantics result: both final unclassified labels moved to `needs-evidence`; their existing material producer-to-consumer records were strengthened with index and handoff contracts.
 - No control-edge classification was inferred from table endpoint status. Static review found no discrepancy; controlled original-ROM/x86/x64 sound routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K63 — residual control-edge integration audit
+
+- Scope: all 87 remaining extracted, unclassified control relations: one vector edge and source bands 0/vector: 1, 0xxx: 5, 12xxx: 6, 14xxx: 2, 2xxx: 4, 3xxx: 18, 5xxx: 51.
+- Integration result: every edge is now independently mapped to its two named shared-C endpoint counterparts with a type-specific branch, fall-through, call, return, vector or JumpEngine-dispatch ordering contract.
+- Static review found no newly confirmed discrepancy. These relations are `needs-evidence`, not `exact`, until their controlled original-ROM/x86/x64 route records cover the stated predicates and continuations.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
