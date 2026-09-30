@@ -54,7 +54,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 878 control; 63 material RAM/table |
+| Needs evidence | 878 control; 70 material RAM/table |
 | Mismatch | 10 control; 1 material RAM/table |
 | Unclassified | 3,378 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |

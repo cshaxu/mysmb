@@ -953,6 +953,104 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00068",
+      "producer": "WorldAddrOffsets",
+      "consumer": "FindAreaPointer",
+      "storage": "WorldNumber-indexed world-to-area-offset byte",
+      "feasiblePath": "FindAreaPointer reads WorldAddrOffsets,WorldNumber before byte-truncated addition of AreaNumber.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:WORLD_OFFSETS -> mysmb_area_find_area_pointer",
+      "semanticContract": "The same world offset reaches 8-bit area-table indexing.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00069",
+      "producer": "AreaAddrOffsets/World1Areas-World8Areas",
+      "consumer": "FindAreaPointer",
+      "storage": "area-indexed AreaPointer byte",
+      "feasiblePath": "FindAreaPointer consumes the WorldAddrOffsets-derived plus AreaNumber index at AreaAddrOffsets.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:AREA_OFFSETS -> mysmb_area_find_area_pointer",
+      "semanticContract": "The same selected byte becomes AreaPointer.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00070",
+      "producer": "EnemyAddrHOffsets",
+      "consumer": "GetAreaDataAddrs",
+      "storage": "AreaType-indexed enemy-stream base byte",
+      "feasiblePath": "GetAreaDataAddrs adds EnemyAddrHOffsets,AreaType to the low-five-bit area offset.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:ENEMY_BASES -> mysmb_area_get_data_addresses",
+      "semanticContract": "The same 8-bit sum indexes enemy pointer tables.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00071",
+      "producer": "EnemyDataAddrLow/EnemyDataAddrHigh",
+      "consumer": "GetAreaDataAddrs",
+      "storage": "enemy-stream pointer low/high table pair",
+      "feasiblePath": "The enemy index selects both low and high bytes before EnemyData pointer consumption.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:ENEMY_LOW/ENEMY_HIGH -> mysmb_area_get_data_addresses",
+      "semanticContract": "The same selected pair is stored as EnemyDataLow/High.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00072",
+      "producer": "AreaDataHOffsets",
+      "consumer": "GetAreaDataAddrs",
+      "storage": "AreaType-indexed area-stream base byte",
+      "feasiblePath": "GetAreaDataAddrs adds AreaDataHOffsets,AreaType to the low-five-bit area offset.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:AREA_BASES -> mysmb_area_get_data_addresses",
+      "semanticContract": "The same 8-bit sum indexes area pointer tables.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00073",
+      "producer": "AreaDataAddrLow/AreaDataAddrHigh",
+      "consumer": "GetAreaDataAddrs",
+      "storage": "area-stream pointer low/high table pair",
+      "feasiblePath": "The area index selects both low and high bytes before header consumption.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area_data.c:AREA_LOW/AREA_HIGH -> mysmb_area_get_data_addresses",
+      "semanticContract": "The same selected pair is stored as AreaDataLow/High then advanced after header.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00074",
+      "producer": "AreaDataOfsLoopback",
+      "consumer": "ProcessAreaData",
+      "storage": "area-data loopback offset table",
+      "feasiblePath": "The parser uses the table only on its source-defined page/control loopback path.",
+      "status": "needs-evidence",
+      "currentCounterpart": "area parser shared C owner",
+      "semanticContract": "The table remains a distinct source-selected loopback input.",
+      "semanticEvidence": [
+        "Td S9 B11e area-address material-flow audit: SMB1 lines 4381-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
