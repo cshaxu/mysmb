@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 139,
+    "enumeratedCount": 143,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -1959,6 +1959,62 @@
       "semanticContract": "Preserves exact source producer write, later consumer predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00140",
+      "producer": "FlameYPosData",
+      "consumer": "SetFrT",
+      "storage": "FlameYPosData[random&3]",
+      "feasiblePath": "Right-extent path stores random offset then reads exact Y entry before PutAtRightExtent.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_flame_y_positions[random]",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00141",
+      "producer": "FlameYPosData",
+      "consumer": "SpawnFromMouth",
+      "storage": "FlameYPosData[random&3]",
+      "feasiblePath": "Mouth path compares exact target Y against the copied Bowser-relative flame Y.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_flame_y_positions[random]",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00142",
+      "producer": "FlameYMFAdderData",
+      "consumer": "SetMF",
+      "storage": "FlameYMFAdderData[comparison result]",
+      "feasiblePath": "Mouth path uses the target/current-Y comparison to select force $ff or $01.",
+      "status": "needs-evidence",
+      "currentCounterpart": "y_force[condition]",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00143",
+      "producer": "SetFrT",
+      "consumer": "PutAtRightExtent",
+      "storage": "FrenzyEnemyTimer and selected random Y",
+      "feasiblePath": "Right-extent setup retains timer/random selection before positional carry and FinishFlame.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_init_bowser_flame_frenzy else path",
+      "semanticContract": "Preserves source table/RAM selection, consumer predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -14914,81 +14970,105 @@
       "label": "FlameYPosData",
       "asmLine": 8573,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four exact Bowser flame vertical target values $90,$80,$70,$90."
     },
     {
       "label": "FlameYMFAdderData",
       "asmLine": 8576,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the exact two signed vertical-force values $ff and $01."
     },
     {
       "label": "InitBowserFlame",
       "asmLine": 8579,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates timer, clears Y force, queues flame sound, then selects mouth or right-extent generation by Bowser front object ID."
     },
     {
       "label": "SetFrT",
       "asmLine": 8597,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores SetFlameTimer plus $20, subtracting $10 only in secondary hard mode, then selects random flame height."
     },
     {
       "label": "PutAtRightExtent",
       "asmLine": 8604,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores supplied Y, adds $20 to screen-right X with page carry and tail-jumps FinishFlame."
     },
     {
       "label": "SpawnFromMouth",
       "asmLine": 8615,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Copies Bowser-relative X/page/Y, selects random force direction against target Y and clears the frenzy buffer."
     },
     {
       "label": "SetMF",
       "asmLine": 8635,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the selected FlameYMFAdderData value before falling through to FinishFlame."
     },
     {
       "label": "FinishFlame",
       "asmLine": 8640,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bowser flame frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes box $08, activates Y-high/flag, and clears X force/state through the source LSR result."
     },
     {
       "label": "FireworksXPosData",
@@ -49731,12 +49811,12 @@
       "id": "control-01539",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation CreateL -> PutAtRightExtent with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original call relation CreateL -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "CreateL",
@@ -50355,12 +50435,12 @@
       "id": "control-01578",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser/duplicate call, loop, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation InitBowserFlame -> FlmEx with selected-slot, copied-field and return ordering."
+      "semanticContract": "Preserves original branch relation InitBowserFlame -> FlmEx with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitBowserFlame",
@@ -50370,10 +50450,13 @@
       "instruction": "beq",
       "id": "control-01579",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitBowserFlame -> SpawnFromMouth with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitBowserFlame",
@@ -50383,10 +50466,13 @@
       "instruction": "jsr",
       "id": "control-01580",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation InitBowserFlame -> SetFlameTimer with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitBowserFlame",
@@ -50396,10 +50482,13 @@
       "instruction": "beq",
       "id": "control-01581",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InitBowserFlame -> SetFrT with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitBowserFlame",
@@ -50409,10 +50498,13 @@
       "instruction": "sbc",
       "id": "control-01582",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InitBowserFlame -> SetFrT with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "SetFrT",
@@ -50422,10 +50514,13 @@
       "instruction": "lda",
       "id": "control-01583",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetFrT -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "PutAtRightExtent",
@@ -50435,10 +50530,13 @@
       "instruction": "jmp",
       "id": "control-01584",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PutAtRightExtent -> FinishFlame with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "SpawnFromMouth",
@@ -50448,10 +50546,13 @@
       "instruction": "bcc",
       "id": "control-01585",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation SpawnFromMouth -> SetMF with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "SpawnFromMouth",
@@ -50461,10 +50562,13 @@
       "instruction": "iny",
       "id": "control-01586",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SpawnFromMouth -> SetMF with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "SetMF",
@@ -50474,10 +50578,13 @@
       "instruction": "sta",
       "id": "control-01587",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetMF -> FinishFlame with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitFireworks",
@@ -50708,10 +50815,13 @@
       "instruction": "jsr",
       "id": "control-01605",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation AddFBit -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "AddFBit",
@@ -79636,12 +79746,12 @@
       "id": "control-03775",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Lakitu/Spiny call, branch, loop, tail, dispatch or return counterpart",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PutAtRightExtent -> CreateL with controller slot, timer/flag predicate, scratch/RAM handoff and call/return ordering."
+      "semanticContract": "Preserves original return relation PutAtRightExtent -> CreateL with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "PlayerLakituDiff",
@@ -79731,10 +79841,13 @@
       "instruction": "rts/rti",
       "id": "control-03781",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation SetFlameTimer -> InitBowserFlame with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "PutAtRightExtent",
@@ -79744,10 +79857,13 @@
       "instruction": "rts/rti",
       "id": "control-03782",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PutAtRightExtent -> AddFBit with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "CheckpointEnemyID",
@@ -86867,10 +86983,13 @@
       "selector": 3,
       "id": "control-04273",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> InitBowserFlame with timer, front-slot, random/table, carry and activation handoff."
     },
     {
       "from": "InitEnemyFrenzy",

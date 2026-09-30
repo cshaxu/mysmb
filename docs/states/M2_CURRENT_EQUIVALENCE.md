@@ -926,3 +926,8 @@ branches.
 ### Cohort I — B14n Bowser initializer and object-duplication integration
 
 `InitBowser` through `FlmEx` now has four node contracts, all incident call, loop, fall-through, return and dispatch relations, and three feasible material handoffs. The audit records the byte-wrapping free-slot scan and exact rear-object copy footprint separately from Bowser persistent control/timer initialization. No static shared-C discrepancy was found; entries remain `needs-evidence` pending controlled original-ROM/x86/x64 routes.
+
+
+### Cohort I — B14o Bowser-flame generation integration
+
+`FlameYPosData` through `FinishFlame` now has eight node contracts, every incident branch/call/tail/return/dispatch relation, and four feasible table/state handoffs. The audit records both generation paths, hard-mode timer adjustment, random height/force selection, right-edge page carry and shared activation tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes for timer gate, both generators, both force directions and X page carry.
