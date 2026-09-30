@@ -1161,3 +1161,8 @@ branches.
 ### Cohort J — B16m player injury and death response integration
 
 `ChkForPlayerInjury` through `LInj` now has twelve node contracts, every incident contact/timer caller, signed speed and adjusted-Y branch, relative-facing jump, guarded injury/death/timer route, palette/movement child and return relation, plus seven feasible response handoffs. Static review matches the signed speed split, Bloober threshold adjusted-Y test, StompTimer/InjuryTimer order, facing reversal conditions, second injury guard, downgrade/death state writes, `$0a/$0b` routine selection, timer `$ff`, scroll clear and ObjectOffset restoration. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 stomp, timer suppression, turn/no-turn injury, downgrade and death routes.
+
+
+### Cohort J — B16n enemy stomp, demotion and score integration
+
+`EnemyStomped` through `ExSFN` now has nine node contracts, every incident injury, ID-class, score/stun/init, shell/demotion, direction, table, caller and return relation, plus seven feasible producer-to-consumer handoffs. Static review matches Spiny injury routing, all four fixed stomp-score classes, movement-direction preservation across stun, d5 defeat, `$fd/$fc` bounce split, ID-nine demotion threshold, low-bit Koopa conversion, hard-mode revival table, signed player-facing direction and all four floatey-number writes. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 fixed class, demotion, shell, normal/hard revival and direction routes.
