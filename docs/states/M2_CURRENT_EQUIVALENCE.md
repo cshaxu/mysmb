@@ -22,7 +22,7 @@ incomplete node/control-edge identities.
 | Exact | 19 | Current source audit and original-ROM route both prove the label. |
 | Needs evidence | 31 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,983 | Not yet processed by this re-audit. |
+| Unclassified | 1,939 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
 
 The fresh T31 replay is preflight evidence, not a node classification: all
@@ -56,7 +56,7 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Exact | 41 control; 3 material RAM/table |
 | Needs evidence | 87 |
 | Mismatch | 2 |
-| Unclassified | 4,322 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 4,212 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
