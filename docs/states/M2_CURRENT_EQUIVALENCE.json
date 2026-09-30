@@ -29310,91 +29310,118 @@
       "label": "Dump_Squ1_Regs",
       "asmLine": 15155,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes square-one control register one from Y before control register zero from X."
     },
     {
       "label": "PlaySqu1Sfx",
       "asmLine": 15160,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls square-one control-register writer, then enters square-one frequency writer."
     },
     {
       "label": "SetFreq_Squ1",
       "asmLine": 15163,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets base APU frequency-register offset zero before common frequency lookup/output."
     },
     {
       "label": "Dump_Freq_Regs",
       "asmLine": 15166,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads FreqRegLookupTbl low byte at index plus one; on nonzero writes divider low then high-byte-or-length bit at selected channel base."
     },
     {
       "label": "NoTone",
       "asmLine": 15174,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns without frequency-divider writes when the lookup low byte is zero."
     },
     {
       "label": "Dump_Sq2_Regs",
       "asmLine": 15176,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes square-two control register zero from X before control register one from Y."
     },
     {
       "label": "PlaySqu2Sfx",
       "asmLine": 15181,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls square-two control-register writer, then enters square-two frequency writer."
     },
     {
       "label": "SetFreq_Squ2",
       "asmLine": 15184,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets base APU frequency-register offset four and tail-transfers to common frequency lookup/output."
     },
     {
       "label": "SetFreq_Tri",
       "asmLine": 15188,
       "cohort": "M",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/audio.c",
+      "currentCounterpart": "mysmb_audio_dump_squ1_regs / mysmb_audio_dump_sq2_regs / mysmb_audio_dump_freq_regs and channel wrappers",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets base APU frequency-register offset eight and tail-transfers to common frequency lookup/output."
     },
     {
       "label": "SwimStompEnvelopeData",
@@ -81606,10 +81633,13 @@
       "instruction": "jsr",
       "id": "control-03195",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlaySqu1Sfx → Dump_Squ1_Regs completes its APU register writes before the caller frequency continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -81619,10 +81649,13 @@
       "instruction": "jsr",
       "id": "control-03196",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlaySqu1Sfx → SetFreq_Squ1 preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "SetFreq_Squ1",
@@ -81632,10 +81665,13 @@
       "instruction": "ldx",
       "id": "control-03197",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetFreq_Squ1 → Dump_Freq_Regs preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "Dump_Freq_Regs",
@@ -81645,10 +81681,13 @@
       "instruction": "beq",
       "id": "control-03198",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch Dump_Freq_Regs → NoTone preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition."
     },
     {
       "from": "Dump_Freq_Regs",
@@ -81658,10 +81697,13 @@
       "instruction": "sta",
       "id": "control-03199",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through Dump_Freq_Regs → NoTone preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "PlaySqu2Sfx",
@@ -81671,10 +81713,13 @@
       "instruction": "jsr",
       "id": "control-03200",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source call PlaySqu2Sfx → Dump_Sq2_Regs completes its APU register writes before the caller frequency continuation."
     },
     {
       "from": "PlaySqu2Sfx",
@@ -81684,10 +81729,13 @@
       "instruction": "jsr",
       "id": "control-03201",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through PlaySqu2Sfx → SetFreq_Squ2 preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "SetFreq_Squ2",
@@ -81697,10 +81745,13 @@
       "instruction": "bne",
       "id": "control-03202",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch SetFreq_Squ2 → Dump_Freq_Regs preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition."
     },
     {
       "from": "SetFreq_Squ2",
@@ -81710,10 +81761,13 @@
       "instruction": "bne",
       "id": "control-03203",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetFreq_Squ2 → SetFreq_Tri preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "SetFreq_Tri",
@@ -81723,10 +81777,13 @@
       "instruction": "bne",
       "id": "control-03204",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source branch SetFreq_Tri → Dump_Freq_Regs preserves its frequency-lookup zero/nonzero or unconditional channel-selection condition."
     },
     {
       "from": "SetFreq_Tri",
@@ -81736,10 +81793,13 @@
       "instruction": "bne",
       "id": "control-03205",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through SetFreq_Tri → SwimStompEnvelopeData preserves prior channel-base/control-register setup before the successor."
     },
     {
       "from": "PlayFlagpoleSlide",
@@ -94349,10 +94409,13 @@
       "instruction": "rts/rti",
       "id": "control-04061",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → PTRegC exposes completed channel register state to its caller continuation."
     },
     {
       "from": "Square1SfxHandler",
@@ -94414,10 +94477,13 @@
       "instruction": "rts/rti",
       "id": "control-04066",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Dump_Squ1_Regs → PlaySqu1Sfx exposes completed channel register state to its caller continuation."
     },
     {
       "from": "Dump_Sq2_Regs",
@@ -94427,10 +94493,13 @@
       "instruction": "rts/rti",
       "id": "control-04067",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Dump_Sq2_Regs → PlaySqu2Sfx exposes completed channel register state to its caller continuation."
     },
     {
       "from": "SetFreq_Squ1",
@@ -94440,10 +94509,13 @@
       "instruction": "rts/rti",
       "id": "control-04068",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation SetFreq_Squ1 → PlayFlagpoleSlide exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -94453,10 +94525,13 @@
       "instruction": "rts/rti",
       "id": "control-04069",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → JumpRegContents exposes completed channel register state to its caller continuation."
     },
     {
       "from": "Dump_Squ1_Regs",
@@ -94466,10 +94541,13 @@
       "instruction": "rts/rti",
       "id": "control-04070",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Dump_Squ1_Regs → DmpJpFPS exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -94479,10 +94557,13 @@
       "instruction": "rts/rti",
       "id": "control-04071",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → Fthrow exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -94492,10 +94573,13 @@
       "instruction": "rts/rti",
       "id": "control-04072",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → PlaySwimStomp exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -94505,10 +94589,13 @@
       "instruction": "rts/rti",
       "id": "control-04073",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → PlaySmackEnemy exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu1Sfx",
@@ -94518,10 +94605,13 @@
       "instruction": "rts/rti",
       "id": "control-04074",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu1Sfx → ContinuePipeDownInj exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu2Sfx",
@@ -94531,10 +94621,13 @@
       "instruction": "rts/rti",
       "id": "control-04075",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu2Sfx → CGrab_TTickRegL exposes completed channel register state to its caller continuation."
     },
     {
       "from": "PlaySqu2Sfx",
@@ -94544,10 +94637,13 @@
       "instruction": "rts/rti",
       "id": "control-04076",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation PlaySqu2Sfx → LoadSqu2Regs exposes completed channel register state to its caller continuation."
     },
     {
       "from": "SetFreq_Squ2",
@@ -94557,10 +94653,13 @@
       "instruction": "rts/rti",
       "id": "control-04077",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation SetFreq_Squ2 → ContinueGrowItems exposes completed channel register state to its caller continuation."
     },
     {
       "from": "StopSquare1Sfx",
@@ -94622,10 +94721,13 @@
       "instruction": "rts/rti",
       "id": "control-04082",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation SetFreq_Squ2 → Squ2NoteHandler exposes completed channel register state to its caller continuation."
     },
     {
       "from": "LoadControlRegs",
@@ -94648,10 +94750,13 @@
       "instruction": "rts/rti",
       "id": "control-04084",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Dump_Sq2_Regs → Rest exposes completed channel register state to its caller continuation."
     },
     {
       "from": "LoadEnvelopeData",
@@ -94687,10 +94792,13 @@
       "instruction": "rts/rti",
       "id": "control-04087",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation SetFreq_Squ1 → Squ1NoteHandler exposes completed channel register state to its caller continuation."
     },
     {
       "from": "LoadControlRegs",
@@ -94713,10 +94821,13 @@
       "instruction": "rts/rti",
       "id": "control-04089",
       "cohort": "M",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation Dump_Squ1_Regs → SkipCtrlL exposes completed channel register state to its caller continuation."
     },
     {
       "from": "LoadEnvelopeData",
@@ -94752,10 +94863,13 @@
       "instruction": "rts/rti",
       "id": "control-04092",
       "cohort": "N",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/audio.c register and frequency helper control flow",
+      "semanticEvidence": [
+        "Td S9 K25 audio register/frequency primitive node-semantics and independent control-edge audit: SMB1 lines 15155-15190 compared with shared src/game/audio.c APU write and frequency helpers; controlled original-ROM/x86/x64 zero/nonzero frequency, square-one, square-two and triangle routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation SetFreq_Tri → TriNoteHandler exposes completed channel register state to its caller continuation."
     },
     {
       "from": "AlternateLengthHandler",

@@ -1322,3 +1322,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering title mute, APU initialization, pause state, square-tone timing, SFX/music dispatch, queue clearing and DAC tail behavior.
 - Independent integration result: 32 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 title/pause/normal/DAC routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K25 — audio register and frequency primitive audit
+
+- Source range: `Dump_Squ1_Regs` through `SetFreq_Tri` (`SMBDIS.ASM` lines 15155–15190).
+- Node-semantics result: nine labels moved from `unclassified` to `needs-evidence`, covering channel-specific control write order, shared frequency lookup and zero-frequency suppression.
+- Independent integration result: 29 outgoing control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 channel and zero/nonzero lookup routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
