@@ -118,23 +118,10 @@ static mysmb_u8 mysmb_audio_find_header_selector(mysmb_u8 music,
     } while (carry == 0U && music != 0U);
     return selector;
 }
-/* ROM $ff00 FreqRegLookupTbl: a zero low frequency byte makes SetFreq
- * return through NoTone, so LoadControlRegs must not set an envelope. */
-static mysmb_u8 mysmb_audio_note_is_audible(const struct mysmb_game *game,
-                                            mysmb_u8 data)
+/* ROM LoadControlRegs.  Callers reach this helper only after SetFreq has
+ * returned nonzero; it supplies A plus the fixed X/Y control-register pair. */
+static mysmb_u8 mysmb_audio_envelope_control(const struct mysmb_game *game)
 {
-    mysmb_u16 address;
-
-    address = (mysmb_u16)(0x7f00U + (data & 0x3eU) + 1U);
-    if (game->area_prg == 0 || address >= game->area_prg_size) return 0U;
-    return game->area_prg[address] != 0U ? 1U : 0U;
-}
-/* ROM LoadControlRegs: a rest retains no envelope.  Audible event music
- * follows the water/event branch ($28); end-castle has its dedicated $04. */
-static mysmb_u8 mysmb_audio_envelope_control(const struct mysmb_game *game,
-                                              mysmb_u8 data)
-{
-    if (mysmb_audio_note_is_audible(game, data) == 0U) return 0U;
     if ((game->ram[MYSMB_RAM_EVENT_MUSIC_BUFFER] & 0x08U) != 0U) return 4U;
     if ((game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] & 0x7dU) == 0U) return 0x28U;
     return 8U;
@@ -561,7 +548,7 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
                 envelope = 0U;
             }
             else {
-                envelope = mysmb_audio_envelope_control(game, data);
+                envelope = mysmb_audio_envelope_control(game);
                 control_x = 0x82U;
                 control_y = 0x7fU;
             }
@@ -672,7 +659,7 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
             control_x = 0U;
             control_y = (mysmb_u8)(data & 0x3eU);
             if (mysmb_audio_set_freq_squ1(game, control_y) != 0U) {
-                envelope = mysmb_audio_envelope_control(game, data);
+                envelope = mysmb_audio_envelope_control(game);
                 control_x = 0x82U;
                 control_y = 0x7fU;
             }

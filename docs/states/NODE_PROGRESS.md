@@ -12,12 +12,12 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1892 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1901 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 64 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 55 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1892 / 1,992 (94.98%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1901 / 1,992 (95.43%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
 Latest task review: [T49 S7 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s7-closure-noise-beat-stream-and-exit) closes eight noise beat labels on six bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
 
@@ -1927,6 +1927,16 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15926 | `PlayBeat` |
 | 15931 | `ExitMusicHandler` |
 
+
+| 15934 | `AlternateLengthHandler` |
+| 15942 | `ProcessLengthData` |
+| 15951 | `LoadControlRegs` |
+| 15957 | `NotECstlM` |
+| 15962 | `WaterMus` |
+| 15963 | `AllMus` |
+| 15967 | `LoadEnvelopeData` |
+| 15974 | `LoadUsualEnvData` |
+| 15981 | `LoadWaterEventMusEnvData` |
 
 ## Mapped but not yet matched (36)
 

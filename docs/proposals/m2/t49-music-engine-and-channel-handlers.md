@@ -371,3 +371,21 @@ links the same shared C image. Refreshed artifacts: mysmb16
 `181FBACF36E268BFA96881A39C95872897C41A2735B7C91CA4EB95D7142045DF`, mysmb32
 `887DFBD4D34ED1F7301150AC68E04F3084B106666556A9C19635EF7E59297F65`, and mysmb64
 `FC0949910C662162115BC24EFAA42963A2497FCBF1E1DE2C332086C86A8B7595`.
+
+
+## S8 admission: shared length, control and envelope helpers
+
+S8 receives **9** source-order labels: `AlternateLengthHandler`,
+`ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`,
+`LoadEnvelopeData`, `LoadUsualEnvData`, and `LoadWaterEventMusEnvData`.
+Baseline is **1,892 / 1,992**; all nine are expected matches, for a maximum
+**1,901 / 1,992**. Shared owner is `src/game/audio.c`; predecessor is S7
+`ExitMusicHandler`, successor is S9 `MusicHeaderData`. ROM proof compares
+rotation-derived length indexes, table lookup index, control A/X/Y triples, and
+all three envelope table selection paths. Operational proof uses x86/x64,
+OpenNT DOS16, purity and refreshed artifacts.
+
+
+## S8 closure: shared length, control and envelope helpers
+
+All **9** labels are ROM-match complete: **1,892 -> 1,901 / 1,992**. Shared `audio.c` now preserves the source helper boundary. Square2 default, water and Win-Castle records plus Square1 and noise paths compare RAM/APU outputs at zero difference on x86/x64.
