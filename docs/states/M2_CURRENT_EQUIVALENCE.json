@@ -1423,11 +1423,14 @@
       "label": "DecNumTimer",
       "asmLine": 1320,
       "cohort": "A",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/objects.c",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number timer/score section",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: SMB1 line 1320 executes DEC FloateyNum_Timer,x then CMP #$2b. Current objects.c tests timer == 0x2b before decrementing it, shifting the score/one-up event by one frame."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM DecNumTimer decrements FloateyNum_Timer before comparing the decremented value to $2b; only that post-decrement value invokes LoadNumTiles/one-up effects."
     },
     {
       "label": "LoadNumTiles",
@@ -23349,10 +23352,13 @@
       "instruction": "bne",
       "id": "control-00176",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number timer/score section",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DecNumTimer -> ChkTallEnemy is taken when the decremented timer is not $2b; current C instead bases this score/non-score choice on the pre-decrement timer."
     },
     {
       "from": "DecNumTimer",
@@ -23362,10 +23368,13 @@
       "instruction": "bne",
       "id": "control-00177",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number timer/score section",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DecNumTimer -> LoadNumTiles is selected at decremented timer $2b for non-$0b control; current C selects the score table one frame early."
     },
     {
       "from": "DecNumTimer",
@@ -23375,10 +23384,13 @@
       "instruction": "sta",
       "id": "control-00178",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number timer/score section",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original DecNumTimer -> LoadNumTiles fall-through follows the $0b one-up writes at decremented timer $2b; current C performs the same effects one frame early."
     },
     {
       "from": "LoadNumTiles",
@@ -23388,10 +23400,13 @@
       "instruction": "jsr",
       "id": "control-00179",
       "cohort": "A",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/objects.c:mysmb_objects_step_floatey_number timer/score section",
+      "semanticEvidence": [
+        "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original LoadNumTiles -> AddToScore occurs only after the post-decrement $2b gate; current C invokes mysmb_score_add on the pre-decrement $2b gate."
     },
     {
       "from": "LoadNumTiles",

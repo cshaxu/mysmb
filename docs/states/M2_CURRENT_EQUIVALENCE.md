@@ -326,3 +326,15 @@ current route evidence is an active-timer return, ordinary next-world
 transition, World 8 no-B, and B from each controller latch. It must compare
 area/level/world/task/mode order, fetch-timer flag, both controller latches,
 world-select/lives writes, and the complete `TerminateGame` handoff.
+
+### Cohort A — A7 Floatey timer-gate discrepancy
+
+The next source label, `DecNumTimer`, has a confirmed shared-core timing
+mismatch. The ROM decrements `FloateyNum_Timer` before comparing its result to
+`$2b`; current `mysmb_objects_step_floatey_number` performs the comparison
+before decrement. The registry marks `DecNumTimer` and four affected score
+gate/call relations as `mismatch`: the non-score branch, both score/one-up
+paths to `LoadNumTiles`, and `LoadNumTiles -> AddToScore`. The ordered
+unnumbered repair record is [A7 Floatey timer-gate repair]
+(../proposals/m2/a7-floatey-timer-gate-repair-candidate.md). It must receive a
+later numeric task before any production source change.

@@ -29,6 +29,12 @@ T allocation for accepted implementation work.
    mismatch when the demo timer is zero and world-select B is latched. This is
    an unnumbered candidate, not an admitted task.
 
+3. [A7 Floatey timer-gate repair](../proposals/m2/a7-floatey-timer-gate-repair-candidate.md)
+   — confirmed shared `objects.c` `DecNumTimer -> LoadNumTiles -> AddToScore`
+   timing mismatch: current C checks `$2b` before decrement while the ROM
+   checks it after decrement. This is an unnumbered candidate, not an admitted
+   task.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved
