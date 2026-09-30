@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 302,
+    "enumeratedCount": 306,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -4241,6 +4241,62 @@
       "semanticContract": "Preserves source producer-to-consumer phase handoff and carry/borrow ordering.",
       "semanticEvidence": [
         "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00303",
+      "producer": "BalancePlatform",
+      "consumer": "DoBPl",
+      "storage": "Enemy Y high byte to erase/continue gate",
+      "feasiblePath": "Only high byte equal three erases immediately.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c entry gate",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00304",
+      "producer": "DoBPl",
+      "consumer": "CheckBalPlatform",
+      "storage": "nonnegative Enemy_State paired-slot offset",
+      "feasiblePath": "Signed state chooses balance peer versus immediate return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c peer assignment",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00305",
+      "producer": "CheckBalPlatform",
+      "consumer": "ChkForFall",
+      "storage": "PlatformCollisionFlag and moving direction",
+      "feasiblePath": "Direction zero checks height threshold; nonzero takes existing paired fall.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c entry state machine",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00306",
+      "producer": "ChkForFall",
+      "consumer": "ChkOtherForFall",
+      "storage": "current/peer Y and collision selector",
+      "feasiblePath": "Both current and peer threshold checks use the same selector to choose fall or clamp/stop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "balance_platform.c threshold paths",
+      "semanticContract": "Preserves source producer-to-consumer paired-platform state handoff and ordering.",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -20713,61 +20769,79 @@
       "label": "BalancePlatform",
       "asmLine": 10692,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Erases only when Y high equals three; otherwise enters balance handling."
     },
     {
       "label": "DoBPl",
       "asmLine": 10697,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Treats negative Enemy_State as non-balance and returns; nonnegative state is the paired platform offset."
     },
     {
       "label": "CheckBalPlatform",
       "asmLine": 10701,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Saves peer offset, collision flag and falling direction; falling direction enters paired fall, otherwise tests current platform threshold."
     },
     {
       "label": "ChkForFall",
       "asmLine": 10709,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For current Y <=$2d, matching peer/collision selector initializes fall; otherwise clamps current Y to $2f and stops both."
     },
     {
       "label": "MakePlatformFall",
       "asmLine": 10720,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Is the no-extra-write tail jump to paired fall initialization."
     },
     {
       "label": "ChkOtherForFall",
       "asmLine": 10723,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/balance_platform.c",
+      "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies the same <=$2d matching-selector fall/clamp-stop logic to peer Y, otherwise joins coupled movement."
     },
     {
       "label": "ChkToMoveBalPlat",
@@ -61523,10 +61597,13 @@
       "instruction": "bne",
       "id": "control-02083",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BalancePlatform -> DoBPl with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "BalancePlatform",
@@ -61537,12 +61614,12 @@
       "id": "control-02084",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation BalancePlatform -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original jump relation BalancePlatform -> EraseEnemyObject with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "DoBPl",
@@ -61552,10 +61629,13 @@
       "instruction": "bpl",
       "id": "control-02085",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation DoBPl -> CheckBalPlatform with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "CheckBalPlatform",
@@ -61565,10 +61645,13 @@
       "instruction": "beq",
       "id": "control-02086",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation CheckBalPlatform -> ChkForFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "CheckBalPlatform",
@@ -61578,10 +61661,13 @@
       "instruction": "jmp",
       "id": "control-02087",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation CheckBalPlatform -> PlatformFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkForFall",
@@ -61591,10 +61677,13 @@
       "instruction": "bcc",
       "id": "control-02088",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForFall -> ChkOtherForFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkForFall",
@@ -61604,10 +61693,13 @@
       "instruction": "beq",
       "id": "control-02089",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForFall -> MakePlatformFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkForFall",
@@ -61617,10 +61709,13 @@
       "instruction": "jmp",
       "id": "control-02090",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkForFall -> StopPlatforms with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "MakePlatformFall",
@@ -61630,10 +61725,13 @@
       "instruction": "jmp",
       "id": "control-02091",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation MakePlatformFall -> InitPlatformFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkOtherForFall",
@@ -61643,10 +61741,13 @@
       "instruction": "bcc",
       "id": "control-02092",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkOtherForFall -> ChkToMoveBalPlat with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkOtherForFall",
@@ -61656,10 +61757,13 @@
       "instruction": "beq",
       "id": "control-02093",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkOtherForFall -> MakePlatformFall with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkOtherForFall",
@@ -61669,10 +61773,13 @@
       "instruction": "jmp",
       "id": "control-02094",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
+      "semanticEvidence": [
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkOtherForFall -> StopPlatforms with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "ChkToMoveBalPlat",
@@ -92731,12 +92838,12 @@
       "id": "control-04331",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/balance_platform.c entry and threshold state machine",
       "semanticEvidence": [
-        "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> BalancePlatform with current slot, timer predicate, platform state and call/return order."
+      "semanticContract": "Preserves original jump-engine-dispatch relation LargePlatformSubroutines -> BalancePlatform with high-Y/state/peer/collision predicate and tail ordering."
     },
     {
       "from": "LargePlatformSubroutines",

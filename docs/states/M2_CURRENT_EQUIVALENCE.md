@@ -1096,3 +1096,8 @@ branches.
 ### Cohort J — B15z Firebar spin integration
 
 `FirebarSpin` and `SpinCounterClockwise` now have node contracts, all incident direction/return relations and two feasible phase handoffs. Static review matches scratch `$07`, clockwise low-byte carry into high byte and counterclockwise low-byte borrow through `SBC #0`, with returned high phase preserved for `ProcFirebar`. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 carry and borrow routes.
+
+
+### Cohort J — B16a balance-platform entry integration
+
+`BalancePlatform` through `ChkOtherForFall` now has six node contracts, all incident dispatch, high-Y/state/peer/collision branches and fall/stop tails, plus four feasible paired-platform handoffs. Static review matches high-byte-three erase, signed peer-state exit, `$2d/$2f` threshold behavior and selector-matched fall versus clamp/stop behavior for both platforms. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 normal, current-threshold, peer-threshold and falling routes.
