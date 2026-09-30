@@ -1031,3 +1031,8 @@ branches.
 ### Cohort I — B15m Lakitu integration
 
 `LakituDiffAdj` through `ExMoveLak` now has sixteen node contracts, all incident dispatches, branches, calls, loopbacks, fall-throughs, tails and returns, plus seven feasible adjustment/state handoffs. Static review matches defeated handling, Spiny request setup, descending adjustment copy, signed `$3c` saturated difference, turn/slowdown rule, player speed/scroll/Spiny index selection, pixel loop and final signed horizontal move. Entries remain `needs-evidence` pending controlled ROM/x86/x64 Lakitu and Spiny routes.
+
+
+### Cohort J — B15n Bowser bridge-collapse integration
+
+`BridgeCollapseData` through `NoBFall` now has six node contracts, every incident state branch, call, tail-jump, fall-through, return and victory-mode dispatch relation, plus seven feasible RAM/table handoffs. Static review matches the 15-byte collapse order, Bowser ID/state/Y terminal gates, four-call feet cadence, `$04/$05` staging, preserved VRAM-offset handoff, fifteenth-step falling transition, sound queue writes, and common Bowser graphics tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 routes for every terminal, bridge-removal and falling path.
