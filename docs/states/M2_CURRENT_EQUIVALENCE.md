@@ -1517,3 +1517,9 @@ branches.
 - Node-semantics result: two labels moved from `unclassified` to `needs-evidence`.
 - Independent integration result: 4 predicate relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K58 — enemy landing state audit
+
+- Source range: `SetForStn` through `SetD6Ste` (`SMBDIS.ASM` lines 12552–12611).
+- Node-semantics result: eleven labels moved from `unclassified` to `needs-evidence`, covering landing state transitions, player-facing and red-koopa exception.
+- Independent integration result: 25 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

@@ -26446,111 +26446,144 @@
       "label": "SetForStn",
       "asmLine": 12552,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores stunned enemy interval timer and transitions state two to three."
     },
     {
       "label": "ExSteChk",
       "asmLine": 12556,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns from landed-state checks."
     },
     {
       "label": "ProcEnemyDirection",
       "asmLine": 12558,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses ID-specific direction initialization or player-facing decision before landing."
     },
     {
       "label": "InvtD",
       "asmLine": 12571,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Builds inverted desired facing from player/enemy difference."
     },
     {
       "label": "CNwCDir",
       "asmLine": 12575,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Compares desired and current direction and bumps only when equal."
     },
     {
       "label": "LandEnemyInitState",
       "asmLine": 12580,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Lands enemy then clears state or retains moving-shell fall bit semantics."
     },
     {
       "label": "NMovShellFallBit",
       "asmLine": 12589,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears d6 while retaining remaining moving-shell state bits."
     },
     {
       "label": "ChkForRedKoopa",
       "asmLine": 12597,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies red-koopa normal-state side check exception."
     },
     {
       "label": "Chk2MSBSt",
       "asmLine": 12603,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Dispatches old state by high-bit into falling/state-table update."
     },
     {
       "label": "GetSteFromD",
       "asmLine": 12610,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads new state from EnemyBGCStateData by old state index."
     },
     {
       "label": "SetD6Ste",
       "asmLine": 12611,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/enemy/background.c",
+      "currentCounterpart": "landing state/direction helpers",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores computed enemy state."
     },
     {
       "label": "DoEnemySideCheck",
@@ -75113,10 +75146,13 @@
       "instruction": "jsr",
       "id": "control-02638",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state call relation SetForStn → EnemyLanding with state/facing ordering."
     },
     {
       "from": "SetForStn",
@@ -75126,10 +75162,13 @@
       "instruction": "jsr",
       "id": "control-02639",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation SetForStn → ExSteChk with state/facing ordering."
     },
     {
       "from": "ProcEnemyDirection",
@@ -75139,10 +75178,13 @@
       "instruction": "beq",
       "id": "control-02640",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection → LandEnemyInitState with state/facing ordering."
     },
     {
       "from": "ProcEnemyDirection",
@@ -75152,10 +75194,13 @@
       "instruction": "bne",
       "id": "control-02641",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection → InvtD with state/facing ordering."
     },
     {
       "from": "ProcEnemyDirection",
@@ -75165,10 +75210,13 @@
       "instruction": "beq",
       "id": "control-02642",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation ProcEnemyDirection → LandEnemyInitState with state/facing ordering."
     },
     {
       "from": "ProcEnemyDirection",
@@ -75178,10 +75226,13 @@
       "instruction": "beq",
       "id": "control-02643",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation ProcEnemyDirection → InvtD with state/facing ordering."
     },
     {
       "from": "InvtD",
@@ -75191,10 +75242,13 @@
       "instruction": "jsr",
       "id": "control-02644",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state call relation InvtD → PlayerEnemyDiff with state/facing ordering."
     },
     {
       "from": "InvtD",
@@ -75204,10 +75258,13 @@
       "instruction": "bpl",
       "id": "control-02645",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation InvtD → CNwCDir with state/facing ordering."
     },
     {
       "from": "InvtD",
@@ -75217,10 +75274,13 @@
       "instruction": "iny",
       "id": "control-02646",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation InvtD → CNwCDir with state/facing ordering."
     },
     {
       "from": "CNwCDir",
@@ -75230,10 +75290,13 @@
       "instruction": "bne",
       "id": "control-02647",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation CNwCDir → LandEnemyInitState with state/facing ordering."
     },
     {
       "from": "CNwCDir",
@@ -75243,10 +75306,13 @@
       "instruction": "jsr",
       "id": "control-02648",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state call relation CNwCDir → ChkForBump_HammerBroJ with state/facing ordering."
     },
     {
       "from": "CNwCDir",
@@ -75256,10 +75322,13 @@
       "instruction": "jsr",
       "id": "control-02649",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation CNwCDir → LandEnemyInitState with state/facing ordering."
     },
     {
       "from": "LandEnemyInitState",
@@ -75269,10 +75338,13 @@
       "instruction": "jsr",
       "id": "control-02650",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state call relation LandEnemyInitState → EnemyLanding with state/facing ordering."
     },
     {
       "from": "LandEnemyInitState",
@@ -75282,10 +75354,13 @@
       "instruction": "bne",
       "id": "control-02651",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation LandEnemyInitState → NMovShellFallBit with state/facing ordering."
     },
     {
       "from": "ChkForRedKoopa",
@@ -75295,10 +75370,13 @@
       "instruction": "bne",
       "id": "control-02652",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation ChkForRedKoopa → Chk2MSBSt with state/facing ordering."
     },
     {
       "from": "ChkForRedKoopa",
@@ -75308,10 +75386,13 @@
       "instruction": "beq",
       "id": "control-02653",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation ChkForRedKoopa → ChkForBump_HammerBroJ with state/facing ordering."
     },
     {
       "from": "ChkForRedKoopa",
@@ -75321,10 +75402,13 @@
       "instruction": "beq",
       "id": "control-02654",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation ChkForRedKoopa → Chk2MSBSt with state/facing ordering."
     },
     {
       "from": "Chk2MSBSt",
@@ -75334,10 +75418,13 @@
       "instruction": "bcc",
       "id": "control-02655",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state branch relation Chk2MSBSt → GetSteFromD with state/facing ordering."
     },
     {
       "from": "Chk2MSBSt",
@@ -75347,10 +75434,13 @@
       "instruction": "jmp",
       "id": "control-02656",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state jump relation Chk2MSBSt → SetD6Ste with state/facing ordering."
     },
     {
       "from": "GetSteFromD",
@@ -75360,10 +75450,13 @@
       "instruction": "lda",
       "id": "control-02657",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation GetSteFromD → SetD6Ste with state/facing ordering."
     },
     {
       "from": "SetD6Ste",
@@ -75373,10 +75466,13 @@
       "instruction": "sta",
       "id": "control-02658",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state fallthrough relation SetD6Ste → DoEnemySideCheck with state/facing ordering."
     },
     {
       "from": "DoEnemySideCheck",
@@ -96213,10 +96309,13 @@
       "instruction": "rts/rti",
       "id": "control-03977",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state return relation EnemyLanding → SetForStn with state/facing ordering."
     },
     {
       "from": "PlayerEnemyDiff",
@@ -96226,10 +96325,13 @@
       "instruction": "rts/rti",
       "id": "control-03978",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state return relation PlayerEnemyDiff → InvtD with state/facing ordering."
     },
     {
       "from": "ChkForBump_HammerBroJ",
@@ -96239,10 +96341,13 @@
       "instruction": "rts/rti",
       "id": "control-03979",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state return relation ChkForBump_HammerBroJ → CNwCDir with state/facing ordering."
     },
     {
       "from": "EnemyLanding",
@@ -96252,10 +96357,13 @@
       "instruction": "rts/rti",
       "id": "control-03980",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves enemy landing-state return relation EnemyLanding → LandEnemyInitState with state/facing ordering."
     },
     {
       "from": "BlockBufferChk_Enemy",
