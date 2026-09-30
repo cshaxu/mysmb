@@ -1041,3 +1041,8 @@ branches.
 ### Cohort J — B15o Bowser dispatcher-front integration
 
 `PRandomRange` and `RunBowser` now have node contracts and every incident dispatch, branch, fall-through and return relation, plus three feasible table/state handoffs. Static review matches d5-first defeated handling, the `$e0` falling-versus-clear split, and the ordered four-byte range binding used by the later Bowser control route. No static shared-C discrepancy was found. These entries remain `needs-evidence` pending controlled original-ROM/x86/x64 defeated/falling/terminal routes.
+
+
+### Cohort J — B15p common enemy-clear-loop integration
+
+`KillAllEnemies` and `KillLoop` now have node contracts, all incident call, loop, fall-through and return relations, and four feasible state handoffs. Static review matches initial slot four, exactly five descending erase calls, byte-wrap termination after slot zero, post-loop frenzy clear and caller-slot restoration semantics. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending a controlled original-ROM/x86/x64 terminal-clear route.

@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 252,
+    "enumeratedCount": 256,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -3541,6 +3541,62 @@
       "semanticContract": "Preserves source table/state producer-to-consumer handoff, predicate and ordering.",
       "semanticEvidence": [
         "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00253",
+      "producer": "KillAllEnemies",
+      "consumer": "KillLoop",
+      "storage": "initial slot constant $04 to loop index",
+      "feasiblePath": "The loop starts at source slot four before any erase operation.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/loop.c slot = 4U",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00254",
+      "producer": "KillLoop",
+      "consumer": "EraseEnemyObject",
+      "storage": "current enemy slot to eight-field lifecycle clear",
+      "feasiblePath": "Each iteration passes the same descending slot to the erase primitive before decrement.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/loop.c mysmb_objects_erase_enemy(game, slot)",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00255",
+      "producer": "KillLoop",
+      "consumer": "KillAllEnemies",
+      "storage": "post-decrement sign result to loop termination",
+      "feasiblePath": "Only decrement from zero produces the high-bit termination state.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/loop.c --slot / slot < $80 loop predicate",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00256",
+      "producer": "KillAllEnemies",
+      "consumer": "RunBowser",
+      "storage": "cleared enemy slots and EnemyFrenzyBuffer to caller return",
+      "feasiblePath": "Terminal Bowser path returns after all five clears with frenzy zeroed.",
+      "status": "needs-evidence",
+      "currentCounterpart": "enemy/loop.c mysmb_enemy_kill_all caller return",
+      "semanticContract": "Preserves source producer-to-consumer state handoff, slot ordering and termination predicate.",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -19184,21 +19240,27 @@
       "label": "KillAllEnemies",
       "asmLine": 10167,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/loop.c",
+      "currentCounterpart": "src/game/enemy/loop.c:mysmb_enemy_kill_all",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Initializes slot four exactly once, enters the erase loop, clears EnemyFrenzyBuffer after the final slot, and preserves the C equivalent of the source ObjectOffset restore for each caller."
     },
     {
       "label": "KillLoop",
       "asmLine": 10169,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared game core: enemy/loop.c",
+      "currentCounterpart": "src/game/enemy/loop.c:mysmb_enemy_kill_all do/while body",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls the erase primitive once per slot in descending order 4,3,2,1,0; byte wrap after zero ends rather than restarts the loop."
     },
     {
       "label": "BowserControl",
@@ -50555,12 +50617,12 @@
       "id": "control-01453",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation DoLpBack -> KillAllEnemies with source predicate, slot/page state handoff and return semantics."
+      "semanticContract": "Preserves original call relation DoLpBack -> KillAllEnemies with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "DoLpBack",
@@ -58347,12 +58409,12 @@
       "id": "control-01940",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "bridge.c set_mode tail -> mysmb_enemy_kill_all",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the original jump relation SetM2 -> KillAllEnemies with its source predicate, slot/scratch handoff, child ordering and return or tail behavior."
+      "semanticContract": "Preserves original jump relation SetM2 -> KillAllEnemies with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "MoveD_Bowser",
@@ -58539,12 +58601,12 @@
       "id": "control-01952",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser dispatch front in enemy/bowser.c with named bridge/loop child",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original fallthrough relation RunBowser -> KillAllEnemies with defeated-state predicate, slot handoff and source dispatch/tail or return ordering."
+      "semanticContract": "Preserves original fallthrough relation RunBowser -> KillAllEnemies with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "KillAllEnemies",
@@ -58554,10 +58616,13 @@
       "instruction": "ldx",
       "id": "control-01953",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation KillAllEnemies -> KillLoop with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "KillLoop",
@@ -58568,12 +58633,12 @@
       "id": "control-01954",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation KillLoop -> EraseEnemyObject with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original call relation KillLoop -> EraseEnemyObject with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "KillLoop",
@@ -58583,10 +58648,13 @@
       "instruction": "bpl",
       "id": "control-01955",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
+      "semanticEvidence": [
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation KillLoop -> KillLoop with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "BowserControl",
@@ -82844,12 +82912,12 @@
       "id": "control-03766",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared enemy-core/loop branch, call, tail and return counterpart",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B14i enemy-loop core node-semantics and independent integration audit: SMB1 lines 7788-7910 compared with shared enemy core, loop, stream and initialization owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation KillAllEnemies -> DoLpBack with source predicate, slot/page state handoff and return semantics."
+      "semanticContract": "Preserves original return relation KillAllEnemies -> DoLpBack with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "InitEnemyObject",
@@ -84252,12 +84320,12 @@
       "id": "control-03854",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared lifecycle/Podoboo branch, child-call, tail-jump and return counterpart",
+      "currentCounterpart": "shared enemy/loop.c:mysmb_enemy_kill_all with lifecycle erase child",
       "semanticEvidence": [
-        "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillLoop with current slot, timer predicate and source call/return ordering."
+      "semanticContract": "Preserves original return relation EraseEnemyObject -> KillLoop with descending slot order, source state handoff and call/return behavior."
     },
     {
       "from": "PlayerEnemyDiff",
