@@ -32,6 +32,24 @@ edge records its C integration counterpart and both evidence tracks.
 rejects an `exact` disposition lacking either track and rejects duplicate or
 incomplete node/control-edge identities.
 
+## Source-anchor resolvability finding
+
+Td S9's independent counterpart-resolvability pass found that the existing
+semantic descriptions are not yet uniformly machine-locatable: 1,445 of 1,992
+node records, 3,361 of 4,342 control-edge records and 408 of 487 material-edge
+records can currently be tied to one or more concrete `src/...` C files from
+their recorded owner/counterpart text.  The remaining **547 nodes, 981 control
+edges and 79 material edges** use aggregate owner descriptions (most often
+ROM area-stream data, shared movement families or selector tables) and require
+a precise data-consumer or shared-owner path before their source comparison is
+reviewable at node/edge granularity.
+
+This is an audit-metadata gap, not a new claim about game behavior and does not
+change any `exact`, `needs-evidence` or `mismatch` disposition.  It is now a
+mandatory normalization step of the source-order audit: no unresolved aggregate
+description can receive current-exact credit until its concrete shared-C
+owner/data consumer and integration counterpart are recorded.
+
 ## Current evidence boundary
 
 The retired baseline tables below the static checkpoint have been removed:
