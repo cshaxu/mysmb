@@ -1286,3 +1286,9 @@ branches.
 - Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`: state dispatch, ground-action dispatch, non-animated selection, falling/walk/climb/swim action paths and the common animation control sequence.
 - Independent control integration result: 33 outgoing relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 route evidence remains required for every action family and timer boundary.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K19 — player size-change, offset and attribute audit
+
+- Source range: `GetGfxOffsetAdder` through `ExPlyrAt` (`SMBDIS.ASM` lines 14705–14781).
+- Node-semantics result: thirteen labels moved from `unclassified` to `needs-evidence`, covering size adjustment, growth/shrink frame selection, graphics-table offset construction, and death/crouch/intermediate OAM attribute correction.
+- Independent integration result: 25 outgoing control relations and the feasible `ChangeSizeOffsetAdder → HandleChangeSize` material edge received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.

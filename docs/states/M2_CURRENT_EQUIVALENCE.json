@@ -6035,6 +6035,20 @@
         "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00431",
+      "producer": "ChangeSizeOffsetAdder",
+      "consumer": "HandleChangeSize",
+      "storage": "ROM ChangeSizeOffsetAdder indexed grow/shrink animation table to graphics-offset selection",
+      "feasiblePath": "HandleChangeSize indexes the table with the current grow frame or shrink frame plus ten before selecting its PlayerGfxTblOffsets base.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c MYSMB_CHANGE_SIZE_OFFSET_ADDER owner-local PRG reads",
+      "semanticContract": "The source animation index selects the identical ordered offset-adder byte before grow/shrink graphics-table selection.",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -28367,131 +28381,170 @@
       "label": "GetGfxOffsetAdder",
       "asmLine": 14705,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Leaves a big-player action index unchanged and adds eight for a small player before table lookup."
     },
     {
       "label": "SzOfs",
       "asmLine": 14712,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the size-adjusted action index to the requesting action path."
     },
     {
       "label": "ChangeSizeOffsetAdder",
       "asmLine": 14714,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds twenty ordered grow/shrink animation offset-adder bytes."
     },
     {
       "label": "HandleChangeSize",
       "asmLine": 14718,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Advances PlayerAnimCtrl only each fourth frame, clears the size-change flag on the ten-frame wrap, then dispatches grow versus shrink selection."
     },
     {
       "label": "CSzNext",
       "asmLine": 14728,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores the valid next size-change animation frame before common grow/shrink logic."
     },
     {
       "label": "GorSLog",
       "asmLine": 14729,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects big-player grow offset calculation or transfers to small-player shrink calculation based on PlayerSize."
     },
     {
       "label": "GetOffsetFromAnimCtrl",
       "asmLine": 14734,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Converts the animation selector to an eight-byte graphics-table displacement and adds the selected PlayerGfxTblOffsets base."
     },
     {
       "label": "ShrinkPlayer",
       "asmLine": 14741,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Offsets the animation selector by ten, uses ChangeSizeOffsetAdder and selects the applicable big/small swimming graphics base."
     },
     {
       "label": "ShrPlF",
       "asmLine": 14750,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_handle_change_size and graphics-offset helpers",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns the selected shrink graphics-table base after the zero/nonzero offset-adder choice."
     },
     {
       "label": "ChkForPlayerAttrib",
       "asmLine": 14753,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_check_player_attributes",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Selects the third-row and/or fourth-row OAM flip corrections from GameEngineSubroutine and PlayerGfxOffset values."
     },
     {
       "label": "KilledAtt",
       "asmLine": 14767,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_check_player_attributes",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears flip bits in third-row first tile and sets horizontal flip in the paired tile before fourth-row handling."
     },
     {
       "label": "C_S_IGAtt",
       "asmLine": 14774,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_check_player_attributes",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears flip bits in fourth-row first tile and sets horizontal flip in the paired tile."
     },
     {
       "label": "ExPlyrAt",
       "asmLine": 14781,
       "cohort": "L",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "mysmb_oam_check_player_attributes",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after the applicable player OAM attribute corrections."
     },
     {
       "label": "RelativePlayerPosition",
@@ -79745,10 +79798,13 @@
       "instruction": "beq",
       "id": "control-03097",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch GetGfxOffsetAdder → SzOfs preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -79758,10 +79814,13 @@
       "instruction": "tay",
       "id": "control-03098",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GetGfxOffsetAdder → SzOfs preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "HandleChangeSize",
@@ -79771,10 +79830,13 @@
       "instruction": "bne",
       "id": "control-03099",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch HandleChangeSize → GorSLog preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "HandleChangeSize",
@@ -79784,10 +79846,13 @@
       "instruction": "bcc",
       "id": "control-03100",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch HandleChangeSize → CSzNext preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "HandleChangeSize",
@@ -79797,10 +79862,13 @@
       "instruction": "sty",
       "id": "control-03101",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through HandleChangeSize → CSzNext preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "CSzNext",
@@ -79810,10 +79878,13 @@
       "instruction": "sty",
       "id": "control-03102",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through CSzNext → GorSLog preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "GorSLog",
@@ -79823,10 +79894,13 @@
       "instruction": "bne",
       "id": "control-03103",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch GorSLog → ShrinkPlayer preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "GorSLog",
@@ -79836,10 +79910,13 @@
       "instruction": "ldy",
       "id": "control-03104",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through GorSLog → GetOffsetFromAnimCtrl preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "ShrinkPlayer",
@@ -79849,10 +79926,13 @@
       "instruction": "bne",
       "id": "control-03105",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ShrinkPlayer → ShrPlF preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ShrinkPlayer",
@@ -79862,10 +79942,13 @@
       "instruction": "ldy",
       "id": "control-03106",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ShrinkPlayer → ShrPlF preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79875,10 +79958,13 @@
       "instruction": "beq",
       "id": "control-03107",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ChkForPlayerAttrib → KilledAtt preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79888,10 +79974,13 @@
       "instruction": "beq",
       "id": "control-03108",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ChkForPlayerAttrib → C_S_IGAtt preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79901,10 +79990,13 @@
       "instruction": "beq",
       "id": "control-03109",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ChkForPlayerAttrib → C_S_IGAtt preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79914,10 +80006,13 @@
       "instruction": "beq",
       "id": "control-03110",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ChkForPlayerAttrib → C_S_IGAtt preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79927,10 +80022,13 @@
       "instruction": "bne",
       "id": "control-03111",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source conditional branch ChkForPlayerAttrib → ExPlyrAt preserves its size/frame/graphics-offset predicate before the alternate path."
     },
     {
       "from": "ChkForPlayerAttrib",
@@ -79940,10 +80038,13 @@
       "instruction": "bne",
       "id": "control-03112",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through ChkForPlayerAttrib → KilledAtt preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "KilledAtt",
@@ -79953,10 +80054,13 @@
       "instruction": "sta",
       "id": "control-03113",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through KilledAtt → C_S_IGAtt preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "C_S_IGAtt",
@@ -79966,10 +80070,13 @@
       "instruction": "sta",
       "id": "control-03114",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source fall-through C_S_IGAtt → ExPlyrAt preserves all preceding size or OAM-attribute writes before entering the successor."
     },
     {
       "from": "RelativePlayerPosition",
@@ -93337,10 +93444,13 @@
       "instruction": "rts/rti",
       "id": "control-04035",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation HandleChangeSize → DoChangeSize exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "RenderPlayerSub",
@@ -93366,10 +93476,13 @@
       "instruction": "rts/rti",
       "id": "control-04037",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation ChkForPlayerAttrib → PlayerGfxProcessing exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "RenderPlayerSub",
@@ -93437,10 +93550,13 @@
       "instruction": "rts/rti",
       "id": "control-04042",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetGfxOffsetAdder → NonAnimatedActs exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -93450,10 +93566,13 @@
       "instruction": "rts/rti",
       "id": "control-04043",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetGfxOffsetAdder → ActionFalling exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -93463,10 +93582,13 @@
       "instruction": "rts/rti",
       "id": "control-04044",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetGfxOffsetAdder → ActionWalkRun exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -93476,10 +93598,13 @@
       "instruction": "rts/rti",
       "id": "control-04045",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetGfxOffsetAdder → ActionClimbing exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "GetGfxOffsetAdder",
@@ -93489,10 +93614,13 @@
       "instruction": "rts/rti",
       "id": "control-04046",
       "cohort": "L",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c size-change, offset and attribute helper control flow",
+      "semanticEvidence": [
+        "Td S9 K19 player size-change, graphics-offset and attribute-control node-semantics and independent control/material-edge audit: SMB1 lines 14705-14781 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 big/small grow, shrink, death, crouch and intermediate-frame OAM-attribute routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "The source return relation GetGfxOffsetAdder → ActionSwimming exposes the selected offset or corrected OAM attributes to the caller continuation."
     },
     {
       "from": "GetCurrentAnimOffset",
