@@ -85,6 +85,62 @@
         "Td S9 A7 Floatey static data-edge audit: SMB1 lines 1287-1299 and 1363-1378 map the table and its control*2 consumer to objects.c tile_data."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00006",
+      "producer": "AreaPalette",
+      "consumer": "GetAreaPalette",
+      "storage": "AreaType-indexed four-byte ROM selector table",
+      "feasiblePath": "GetAreaPalette loads AreaPalette[AreaType] into X before SetVRAMAddr_A.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:case 9 AreaType + 1 selector",
+      "semanticContract": "Every valid AreaType selects the same final palette address-control entry before task handoff.",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00007",
+      "producer": "BGColorCtrl_Addr",
+      "consumer": "GetBackgroundColor",
+      "storage": "BackgroundColorCtrl-4 indexed four-byte ROM address-control table",
+      "feasiblePath": "Nonzero BackgroundColorCtrl values 4-7 index BGColorCtrl_Addr-4 before NoBGColor.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:background_controls indexed by BackgroundColorCtrl - 4",
+      "semanticContract": "Controls 4-7 select ordered address-control values 0,9,10,4 before the shared palette handoff.",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00008",
+      "producer": "PlayerColors",
+      "consumer": "GetPlayerColors",
+      "storage": "CurrentPlayer/PlayerStatus selected player palette table to VRAM_Buffer1",
+      "feasiblePath": "GetPlayerColors selects Mario, Luigi or fiery bytes before its four-byte copy loop.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette color_offset lookup",
+      "semanticContract": "Every valid CurrentPlayer/PlayerStatus combination selects the same ordered player palette bytes.",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00009",
+      "producer": "BackgroundColors",
+      "consumer": "GetPlayerColors",
+      "storage": "BackgroundColorCtrl-or-AreaType indexed background color table to VRAM_Buffer1",
+      "feasiblePath": "After the player bytes, GetPlayerColors selects BackgroundColors by nonzero BackgroundColorCtrl or AreaType.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background_index lookup",
+      "semanticContract": "Every valid selector produces the same universal background color in the queued palette command.",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -1249,7 +1305,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83da: on worlds 1–7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
+      "semanticContract": "ROM $83da: on worlds 1\u20137, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
     },
     {
       "label": "ThankPlayer",
@@ -1275,7 +1331,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1–7, choosing ordinary message, counter-only, or end-timer paths."
+      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1\u20137, choosing ordinary message, counter-only, or end-timer paths."
     },
     {
       "label": "EvalForMusic",
@@ -1366,7 +1422,7 @@
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1–7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
+      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1\u20137 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
     },
     {
       "label": "EndExitOne",
@@ -1580,151 +1636,196 @@
       "label": "AreaPalette",
       "asmLine": 1436,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9 AreaType + 1 selector",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8577: four-byte AreaType-indexed address-control selector table."
     },
     {
       "label": "GetAreaPalette",
       "asmLine": 1439,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $857b: reads AreaType, selects AreaPalette[AreaType], writes VRAM address control, then increments ScreenRoutineTask."
     },
     {
       "label": "SetVRAMAddr_A",
       "asmLine": 1442,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine cases 0 and 9 selector write",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $857f: writes selected X value to VRAM_Buffer_AddrCtrl then falls into common screen-task increment."
     },
     {
       "label": "NextSubtask",
       "asmLine": 1443,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task handoff",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8582: tail-jumps to IncSubtask after its predecessor writes are complete."
     },
     {
       "label": "BGColorCtrl_Addr",
       "asmLine": 1448,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:background_controls[4] in case 10",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8585: BackgroundColorCtrl values 4-7 select address-control bytes 0,9,10,4."
     },
     {
       "label": "BackgroundColors",
       "asmLine": 1451,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background-index lookup",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8589: selects the universal sprite/background color by BackgroundColorCtrl when nonzero, otherwise AreaType."
     },
     {
       "label": "PlayerColors",
       "asmLine": 1455,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette player color lookup",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8591: Mario, Luigi and fiery player palette triples are selected by CurrentPlayer and PlayerStatus."
     },
     {
       "label": "GetBackgroundColor",
       "asmLine": 1460,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
+      "semanticEvidence": [
+        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8594: if BackgroundColorCtrl is nonzero, selects BGColorCtrl_Addr-4 then increments ScreenRoutineTask; both zero and nonzero paths unconditionally fall into GetPlayerColors. Current C omits that palette command for controls 4-7."
     },
     {
       "label": "NoBGColor",
       "asmLine": 1465,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentOwner": "src/game/game.c",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
+      "semanticEvidence": [
+        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8599: increments ScreenRoutineTask and unconditionally falls into GetPlayerColors; current C exits case 10 after the control-4-7 address-control write."
     },
     {
       "label": "GetPlayerColors",
       "asmLine": 1467,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $859d: builds one $3f10 length-4 VRAM command using player and background palette data, then advances Buffer1 offset by seven."
     },
     {
       "label": "ChkFiery",
       "asmLine": 1473,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus color_offset selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85a3: PlayerStatus $02 overrides Mario/Luigi offset with the fiery palette offset."
     },
     {
       "label": "StartClrGet",
       "asmLine": 1477,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette four ordered color writes",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85ac: initializes exactly four palette-byte fetches."
     },
     {
       "label": "ClrGetLoop",
       "asmLine": 1479,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette ordered palette stores",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85b0: copies the four selected player bytes in ascending table order."
     },
     {
       "label": "SetBGColor",
       "asmLine": 1489,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background_index selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85bc: chooses BackgroundColorCtrl when nonzero and AreaType otherwise before writing the universal entry."
     },
     {
       "label": "SetVRAMOffset",
       "asmLine": 1502,
       "cohort": "B",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette offset update",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $85d8: stores the Buffer1 offset after the seven-byte palette command."
     },
     {
       "label": "GetAlternatePalette1",
@@ -22935,7 +23036,7 @@
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1–7 message threshold path only after the secondary/primary gates."
+      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1\u20137 message threshold path only after the secondary/primary gates."
     },
     {
       "from": "PrintVictoryMessages",
@@ -22978,12 +23079,12 @@
       "id": "control-00148",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary < 2 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u20137 primary < 2 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1–7 before their second message."
+      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1\u20137 before their second message."
     },
     {
       "from": "MRetainerMsg",
@@ -22994,12 +23095,12 @@
       "id": "control-00149",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 primary >= 2 fall-through",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u20137 primary >= 2 fall-through",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1–7."
+      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1\u20137."
     },
     {
       "from": "ThankPlayer",
@@ -23090,12 +23191,12 @@
       "id": "control-00155",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index >= 4 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u20137 transformed index >= 4 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1–7 messaging at transformed index four."
+      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1\u20137 messaging at transformed index four."
     },
     {
       "from": "SecondPartMsg",
@@ -23106,7 +23207,7 @@
       "id": "control-00156",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index == 3 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u20137 transformed index == 3 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -23122,7 +23223,7 @@
       "id": "control-00157",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1–7 transformed index < 3 continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u20137 transformed index < 3 continuation",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -23282,7 +23383,7 @@
       "id": "control-00167",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 mysmb_game_load_area_pointer call",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u20137 mysmb_game_load_area_pointer call",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -23298,7 +23399,7 @@
       "id": "control-00168",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1–7 next-world continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u20137 next-world continuation",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -23825,10 +23926,13 @@
       "instruction": "ldx",
       "id": "control-00201",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:case 9 selector write",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "GetAreaPalette selects AreaPalette[AreaType], then reaches the common selector write."
     },
     {
       "from": "SetVRAMAddr_A",
@@ -23838,10 +23942,13 @@
       "instruction": "stx",
       "id": "control-00202",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:case 9 task increment",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "SetVRAMAddr_A selector write precedes the common ScreenRoutineTask increment."
     },
     {
       "from": "NextSubtask",
@@ -23851,10 +23958,13 @@
       "instruction": "jmp",
       "id": "control-00203",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:case 9 task increment",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "NextSubtask advances ScreenRoutineTask after its predecessor side effect."
     },
     {
       "from": "GetBackgroundColor",
@@ -23864,10 +23974,13 @@
       "instruction": "beq",
       "id": "control-00204",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/game.c:case 10 BackgroundColorCtrl zero path",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "GetBackgroundColor zero branch skips the address-control table then reaches the shared task increment and palette producer."
     },
     {
       "from": "GetBackgroundColor",
@@ -23877,10 +23990,13 @@
       "instruction": "sta",
       "id": "control-00205",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
+      "semanticEvidence": [
+        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM nonzero BackgroundColorCtrl path writes BGColorCtrl_Addr-4 then still reaches NoBGColor and falls into GetPlayerColors; current case 10 exits after the control-4-7 selector write."
     },
     {
       "from": "NoBGColor",
@@ -23890,10 +24006,13 @@
       "instruction": "inc",
       "id": "control-00206",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "mismatch",
+      "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
+      "semanticEvidence": [
+        "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM NoBGColor increments ScreenRoutineTask and always falls through to GetPlayerColors; current case 10 has no player-palette producer for BackgroundColorCtrl 4-7."
     },
     {
       "from": "GetPlayerColors",
@@ -23903,10 +24022,13 @@
       "instruction": "beq",
       "id": "control-00207",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette CurrentPlayer selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "GetPlayerColors chooses Mario offset for CurrentPlayer zero before PlayerStatus test."
     },
     {
       "from": "GetPlayerColors",
@@ -23916,10 +24038,13 @@
       "instruction": "ldy",
       "id": "control-00208",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette CurrentPlayer selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "GetPlayerColors chooses Luigi offset for nonzero CurrentPlayer before PlayerStatus test."
     },
     {
       "from": "ChkFiery",
@@ -23929,10 +24054,13 @@
       "instruction": "bne",
       "id": "control-00209",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus != 2",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ChkFiery retains Mario/Luigi offset unless PlayerStatus equals 2."
     },
     {
       "from": "ChkFiery",
@@ -23942,10 +24070,13 @@
       "instruction": "ldy",
       "id": "control-00210",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus == 2",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ChkFiery replaces the offset with fiery palette bytes when PlayerStatus equals 2."
     },
     {
       "from": "StartClrGet",
@@ -23955,10 +24086,13 @@
       "instruction": "sta",
       "id": "control-00211",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette palette command construction",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "StartClrGet begins four ordered selected player-color writes."
     },
     {
       "from": "ClrGetLoop",
@@ -23968,10 +24102,13 @@
       "instruction": "bpl",
       "id": "control-00212",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette palette command construction",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ClrGetLoop repeats until exactly four color bytes are written."
     },
     {
       "from": "ClrGetLoop",
@@ -23981,10 +24118,13 @@
       "instruction": "bne",
       "id": "control-00213",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After four player bytes, nonzero BackgroundColorCtrl selects its background color index."
     },
     {
       "from": "ClrGetLoop",
@@ -23994,10 +24134,13 @@
       "instruction": "ldy",
       "id": "control-00214",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background selection",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "After four player bytes, zero BackgroundColorCtrl selects AreaType background index."
     },
     {
       "from": "SetBGColor",
@@ -24007,10 +24150,13 @@
       "instruction": "adc",
       "id": "control-00215",
       "cohort": "B",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette offset update",
+      "semanticEvidence": [
+        "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "SetBGColor writes header, terminator and falls into the seven-byte Buffer1 offset update."
     },
     {
       "from": "GetAlternatePalette1",

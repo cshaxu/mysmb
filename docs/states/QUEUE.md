@@ -35,6 +35,12 @@ T allocation for accepted implementation work.
    checks it after decrement. This is an unnumbered candidate, not an admitted
    task.
 
+4. [B2 palette fall-through repair](../proposals/m2/b2-palette-fallthrough-repair-candidate.md)
+   — confirmed shared `game.c` / `area.c` `GetBackgroundColor -> NoBGColor ->
+   GetPlayerColors` mismatch: controls 4–7 select the address-control byte but
+   current C omits the ROM's unconditional palette-producer fall-through. This
+   is an unnumbered candidate, not an admitted task.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved

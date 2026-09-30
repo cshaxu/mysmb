@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 177 control; 1 material RAM/table |
-| Mismatch | 7 control; 1 material RAM/table |
-| Unclassified | 4,082 control edges; material edge denominator pending feasible-path enumeration |
+| Needs evidence | 190 control; 5 material RAM/table |
+| Mismatch | 9 control; 2 material RAM/table |
+| Unclassified | 4,067 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -365,3 +365,14 @@ B1 routes must separately exercise title and non-title `InitScreen`, plus
 `SetupIntermediate` with non-default PlayerStatus and BackgroundColorCtrl, and
 compare the pre-helper temporary values, restored values, VRAM selector and
 task handoff.
+
+### Cohort B — B2 palette chain
+
+`AreaPalette` through `SetVRAMOffset` are now individually mapped, including
+four feasible table-to-consumer paths. The static edge pass identifies a
+confirmed shared-core mismatch at `GetBackgroundColor -> NoBGColor ->
+GetPlayerColors`: the ROM always falls into the palette producer after the
+task increment, while current case 10 exits early for BackgroundColorCtrl
+4–7. `GetBackgroundColor`, `NoBGColor`, `control-00205`, `control-00206` and
+the `BGColorCtrl_Addr -> GetBackgroundColor` material path therefore remain
+explicitly non-exact; the repair candidate records the required route matrix.
