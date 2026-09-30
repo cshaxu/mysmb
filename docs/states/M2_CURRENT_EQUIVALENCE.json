@@ -5979,6 +5979,48 @@
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00427",
+      "producer": "PlayerGfxTblOffsets",
+      "consumer": "PlayerGfxHandler",
+      "storage": "ROM PlayerGfxTblOffsets indexed action/size selection to player graphics offset",
+      "feasiblePath": "PlayerGfxHandler reaches ProcessPlayerAction, HandleChangeSize, death and throw selections that index PlayerGfxTblOffsets before PlayerGfxProcessing.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c MYSMB_PLAYER_GFX_TABLE_OFFSETS reads in selection helpers and render continuation",
+      "semanticContract": "The same selected table byte becomes PlayerGfxOffset before row rendering, preserving the source branches and index choices.",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00428",
+      "producer": "PlayerGraphicsTable",
+      "consumer": "DrawPlayerLoop",
+      "storage": "ROM PlayerGraphicsTable tile-pair rows to DrawPlayerLoop OAM scratch",
+      "feasiblePath": "RenderPlayerSub and DrawPlayer_Intermediate load adjacent tile bytes from the selected PlayerGraphicsTable row before each DrawPlayerLoop iteration.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c mysmb_oam_player_render_rows and mysmb_oam_draw_intermediate_player owner-local PRG reads",
+      "semanticContract": "Each selected source row supplies its adjacent tile pair in row order before the shared sprite-object draw.",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00429",
+      "producer": "SwimKickTileNum",
+      "consumer": "BigKTS",
+      "storage": "ROM SwimKickTileNum indexed replacement tile to swimming foot OAM tile",
+      "feasiblePath": "The swimming continuation reaches BigKTS only after its frame, facing, size and existing-tile predicates, then indexes SwimKickTileNum into sprite 7/8.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/player_gfx.c swimming continuation using MYSMB_SWIM_KICK_TILE_NUM",
+      "semanticContract": "The guarded size-derived index selects the same replacement tile and writes the corresponding foot sprite tile.",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -27869,31 +27911,40 @@
       "label": "PlayerGfxTblOffsets",
       "asmLine": 14418,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "MYSMB_PLAYER_GFX_TABLE_OFFSETS owner-local PRG binding read by graphics selection helpers",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds sixteen ordered player-action/size offsets; source-selected index determines the PlayerGraphicsTable row offset."
     },
     {
       "label": "PlayerGraphicsTable",
       "asmLine": 14424,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "MYSMB_PLAYER_GRAPHICS_TABLE owner-local PRG binding read by mysmb_oam_player_render_rows and intermediate rendering",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the ordered big, small and intermediate player tile-pair rows consumed two bytes per OAM row."
     },
     {
       "label": "SwimKickTileNum",
       "asmLine": 14457,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/player_gfx.c",
+      "currentCounterpart": "MYSMB_SWIM_KICK_TILE_NUM owner-local PRG binding read by swimming kick continuation",
+      "semanticEvidence": [
+        "Td S9 K15 player-graphics data-table node-semantics and independent material-edge audit: SMB1 lines 14418-14501 compared with shared src/game/oam/player_gfx.c owner-local PRG bindings; controlled original-ROM/x86/x64 player action, death, size-change, throw and swim-kick routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the two ordered swim-kick replacement tile numbers selected by player size after the source sprite-tile guard."
     },
     {
       "label": "PlayerGfxHandler",

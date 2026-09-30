@@ -1262,3 +1262,9 @@ branches.
 ### Cohort K — K14 small-platform and bubble OAM integration
 
 `DrawSmallPlatform` through `ExDBub` now has eight node contracts and all local helper, status-bar, offscreen, bubble-gate and return relations. Static review matches the six-sprite rows, top/bottom wrapped clipping, d3/d2/d1 column hides, and the exact Player_Y_HighPos-one plus bubble d3 gate. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 platform clipping/columns and bubble visible/hidden routes.
+## K15 — player graphics data-table audit
+
+- Source range: `PlayerGfxTblOffsets` through `SwimKickTileNum` (`SMBDIS.ASM` lines 14418–14459).
+- Node-semantics result: three labels moved from `unclassified` to `needs-evidence`: `PlayerGfxTblOffsets`, `PlayerGraphicsTable`, and `SwimKickTileNum`. The current owner-local PRG bindings preserve their source offsets and consumers, but controlled original-ROM/x86/x64 routes are still required before any `exact` promotion.
+- Independent material integration result: recorded `PlayerGfxTblOffsets → PlayerGfxHandler`, `PlayerGraphicsTable → DrawPlayerLoop`, and `SwimKickTileNum → BigKTS` as `needs-evidence`; no discrepancy is claimed from this static pass.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
