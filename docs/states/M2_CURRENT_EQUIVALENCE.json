@@ -4845,6 +4845,62 @@
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00346",
+      "producer": "PlayerHammerCollision",
+      "consumer": "PlayerCollisionCore",
+      "storage": "misc slot-derived bounding-box offset to geometry",
+      "feasiblePath": "Odd-frame, on-screen active hammer computes slot*4+$24 and compares player box against that misc box.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/hammer_collision.c box argument to mysmb_world_boxes_collide",
+      "semanticContract": "The geometry child receives the source-selected player and hammer box addresses before ObjectOffset reload.",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00347",
+      "producer": "PlayerCollisionCore",
+      "consumer": "ClHCol",
+      "storage": "carry-equivalent collision result and restored ObjectOffset",
+      "feasiblePath": "Carry-clear geometry result reloads ObjectOffset then clears Misc_Collision_Flag for that slot.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/hammer_collision.c hit result followed by slot=RAM[8]",
+      "semanticContract": "A miss clears exactly the reloaded source misc slot latch.",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00348",
+      "producer": "PlayerHammerCollision",
+      "consumer": "ExPHC",
+      "storage": "Misc_Collision_Flag, negated Misc_X_Speed and StarInvincibleTimer",
+      "feasiblePath": "A new hit latches collision, two-complement reverses horizontal speed, then checks star timer before injury tail.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/hammer_collision.c latch, speed negation and star guard",
+      "semanticContract": "A latched hit reverses speed once and star invincibility suppresses injury after that response.",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00349",
+      "producer": "PlayerHammerCollision",
+      "consumer": "InjurePlayer",
+      "storage": "new hammer collision after speed reversal and zero star timer",
+      "feasiblePath": "Only a new active hammer hit with StarInvincibleTimer zero enters guarded InjurePlayer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/hammer_collision.c mysmb_objects_force_injury",
+      "semanticContract": "The injury child is entered after latch/speed updates and retains its own InjuryTimer guard.",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -4921,15 +4977,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1264,
+    "needs-evidence": 1267,
     "mismatch": 9,
-    "unclassified": 681
+    "unclassified": 678
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2726,
+    "needs-evidence": 2735,
     "mismatch": 25,
-    "unclassified": 1515
+    "unclassified": 1506
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -22179,31 +22235,40 @@
       "label": "PlayerHammerCollision",
       "asmLine": 11228,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/hammer_collision.c",
+      "currentCounterpart": "src/game/world/hammer_collision.c:mysmb_objects_check_hammer_collision",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Runs only on odd frame-counter values with TimerControl and hammer offscreen bits both clear; selects misc box slot*4+$24, reloads ObjectOffset after geometry, latches/reverses only a new hit, and tails to guarded injury unless StarInvincibleTimer is set."
     },
     {
       "label": "ClHCol",
       "asmLine": 11256,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/hammer_collision.c",
+      "currentCounterpart": "src/game/world/hammer_collision.c:mysmb_objects_check_hammer_collision",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears the current hammer collision latch on a carry-clear player/hammer box result before common return."
     },
     {
       "label": "ExPHC",
       "asmLine": 11258,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/hammer_collision.c",
+      "currentCounterpart": "src/game/world/hammer_collision.c:mysmb_objects_check_hammer_collision",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision node-semantics and independent integration audit: SMB1 lines 11228-11260 compared with shared world/hammer_collision.c, world/geometry.c and guarded injury owner; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after every frame/timer/offscreen gate, already-latched hit, star-invincibility path or collision-latch clear without changing an unrelated misc slot."
     },
     {
       "label": "HandlePowerUpCollision",
@@ -48774,12 +48839,12 @@
       "id": "control-01237",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation RunAllH -> PlayerHammerCollision with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation RunAllH -> PlayerHammerCollision with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "RunAllH",
@@ -64757,10 +64822,13 @@
       "instruction": "bcc",
       "id": "control-02236",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHammerCollision -> ExPHC with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64770,10 +64838,13 @@
       "instruction": "bne",
       "id": "control-02237",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHammerCollision -> ExPHC with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64783,10 +64854,13 @@
       "instruction": "jsr",
       "id": "control-02238",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation PlayerHammerCollision -> PlayerCollisionCore with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64796,10 +64870,13 @@
       "instruction": "bcc",
       "id": "control-02239",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHammerCollision -> ClHCol with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64809,10 +64886,13 @@
       "instruction": "bne",
       "id": "control-02240",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHammerCollision -> ExPHC with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64822,10 +64902,13 @@
       "instruction": "bne",
       "id": "control-02241",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation PlayerHammerCollision -> ExPHC with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "PlayerHammerCollision",
@@ -64835,10 +64918,13 @@
       "instruction": "jmp",
       "id": "control-02242",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation PlayerHammerCollision -> InjurePlayer with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "ClHCol",
@@ -64848,10 +64934,13 @@
       "instruction": "sta",
       "id": "control-02243",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ClHCol -> ExPHC with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "HandlePowerUpCollision",
@@ -84453,12 +84542,12 @@
       "id": "control-03709",
       "cohort": "H",
       "status": "needs-evidence",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
       "semanticEvidence": [
-        "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PlayerHammerCollision -> RunAllH with source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation PlayerHammerCollision -> RunAllH with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "GetMiscOffscreenBits",
@@ -87620,10 +87709,13 @@
       "instruction": "rts/rti",
       "id": "control-03907",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "semanticEvidence": [
+        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation PlayerCollisionCore -> PlayerHammerCollision with source predicate, selected misc slot and collision/injury handoff ordering."
     },
     {
       "from": "EraseEnemyObject",

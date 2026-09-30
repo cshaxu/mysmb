@@ -1141,3 +1141,8 @@ branches.
 ### Cohort J — B16i fireball-hit response integration
 
 `BowserIdentities` through `ExHCF` now has eleven node contracts, every incident paired-slot, immunity, Bowser-health, world-table, eligibility, stun, score and return relation, plus six feasible producer-to-consumer handoffs. Static review matches live `$01` restoration, paired-slot substitution only for Bowser, Buzzy immunity, terminal-only Bowser replacement, direct WorldNumber table selection, `$23/$20` state split, Piranha CMP-carry `ADC #$18` result, defeat-state d5 and the Hammer/Goomba/default score modifiers. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 Buzzy, paired-Bowser, nonterminal/terminal Bowser, excluded-ID and Piranha/Hammer/Goomba routes.
+
+
+### Cohort J — B16j hammer-player collision integration
+
+`PlayerHammerCollision` through `ExPHC` now has three node contracts, every incident frame/timer/offscreen gate, geometry call, collision/latch branch, injury tail and return relation, plus four feasible collision-state handoffs. Static review matches odd-frame execution, combined timer/offscreen zero gate, misc box `slot*4+$24`, post-geometry ObjectOffset reload, one-hit latch/reversal, star-only injury suppression and miss latch clear. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 gated, miss, new-hit, repeated-hit and star-invincible routes.
