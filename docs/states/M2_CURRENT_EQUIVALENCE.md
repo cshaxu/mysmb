@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 352 control; 32 material RAM/table |
+| Needs evidence | 382 control; 34 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,904 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,874 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -439,3 +439,13 @@ feasible stream-to-NMI data edges are recorded. No new static discrepancy is
 confirmed. Route proof must cover selectors 8–18, both controller ports and
 Select/Start repeat suppression, packet increment/repeat variants, empty and
 multi-packet buffers, plus both cleared name tables.
+
+### Cohort B — B9a status numbers, BCD arithmetic and top-score comparison
+
+`StatusBarData` through `NoTopSc` are now mapped. The independent edge pass
+covers dual-nybble number output, selector rejection, digit loops,
+title-mode modifier clearing, BCD borrow/carry paths, and Mario/Luigi
+top-score comparison/copy. Two feasible data edges cover status command and
+digit-offset tables. Static source comparison found no new discrepancy; route
+proof must cover every valid/invalid selector, title/non-title arithmetic,
+borrow/carry chains and both player high-score outcomes.
