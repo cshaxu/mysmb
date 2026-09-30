@@ -26836,31 +26836,40 @@
       "label": "FireballBGCollision",
       "asmLine": 12751,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "mysmb_world_fireball_background_collision",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Checks status-bar Y first, probes the fireball bottom, clears bounce for no/non-solid tile, explodes on upward speed or a set bounce flag, otherwise assigns speed $fd, sets bounce and aligns Y to an $f8 boundary."
     },
     {
       "label": "ClearBounceFlag",
       "asmLine": 12772,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "mysmb_world_clear_fireball_bounce",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears FireballBouncingFlag and returns."
     },
     {
       "label": "InitFireballExplode",
       "asmLine": 12777,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/collision.c",
+      "currentCounterpart": "mysmb_world_init_fireball_explode",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets Fireball_State to $80, queues Sfx_Bump on Square1SoundQueue, and returns."
     },
     {
       "label": "BoundBoxCtrlData",
@@ -76195,10 +76204,13 @@
       "instruction": "bcc",
       "id": "control-02700",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision → ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76209,12 +76221,12 @@
       "id": "control-02701",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation FireballBGCollision -> BlockBufferChk_FBall with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves FireballBGCollision call relation FireballBGCollision → BlockBufferChk_FBall, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76224,10 +76236,13 @@
       "instruction": "beq",
       "id": "control-02702",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision → ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76237,10 +76252,13 @@
       "instruction": "jsr",
       "id": "control-02703",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision call relation FireballBGCollision → ChkForNonSolids, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76250,10 +76268,13 @@
       "instruction": "beq",
       "id": "control-02704",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision → ClearBounceFlag, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76263,10 +76284,13 @@
       "instruction": "bmi",
       "id": "control-02705",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision → InitFireballExplode, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "FireballBGCollision",
@@ -76276,10 +76300,13 @@
       "instruction": "bne",
       "id": "control-02706",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision branch relation FireballBGCollision → InitFireballExplode, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "GetFireballBoundBox",
@@ -96699,12 +96726,12 @@
       "id": "control-03991",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/block_buffer.c query path",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
       "semanticEvidence": [
-        "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation BlockBufferChk_FBall -> FireballBGCollision with source query offset, table and scratch-state ordering."
+      "semanticContract": "Preserves FireballBGCollision return relation BlockBufferChk_FBall → FireballBGCollision, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "ChkForNonSolids",
@@ -96714,10 +96741,13 @@
       "instruction": "rts/rti",
       "id": "control-03992",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/world/collision.c fireball background collision helpers",
+      "semanticEvidence": [
+        "Td S9 K60 FireballBGCollision node and integration audit: SMB1 lines 12751-12777 compared with src/game/world/collision.c and src/game/fireball/fireball_core.c; controlled original-ROM/x86/x64 fireball bounce, non-solid and explosion routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves FireballBGCollision return relation ChkForNonSolids → FireballBGCollision, including source tile/Z or signed-speed predicate and ordered state/sound handoff."
     },
     {
       "from": "BoundingBoxCore",

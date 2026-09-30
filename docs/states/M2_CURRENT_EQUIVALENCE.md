@@ -1529,3 +1529,9 @@ branches.
 - Node-semantics result: nineteen labels moved from `unclassified` to `needs-evidence`, covering directional side probes, bump/Hammer Bro dispatch, enemy/player subtraction, landing, jump terrain, under-probe and non-solid predicates.
 - Independent integration result: 51 control relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 side-probe, jumping and Hammer Bro routes remain required.
 - No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
+## K60 — fireball background collision audit
+
+- Source range: `FireballBGCollision` through `InitFireballExplode` (`SMBDIS.ASM` lines 12751–12777).
+- Node-semantics result: three labels moved from `unclassified` to `needs-evidence`, covering the status-bar/bottom-probe gate, bounce assignment and explosion state/sound handoff.
+- Independent integration result: 9 relations received `needs-evidence` contracts. Static review found no discrepancy; controlled original-ROM/x86/x64 bounce, non-solid and explosion routes remain required.
+- No production source, platform adapter, ROM, executable, trace, or generated artifact changed.
