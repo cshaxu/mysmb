@@ -13,6 +13,12 @@ void mysmb_audio_step(struct mysmb_game *game);
  * channel handlers through mysmb_audio_step(). */
 void mysmb_audio_select_music(struct mysmb_game *game);
 
+/* ROM LoadHeader ($f6f5).  The selector is the source Y value after the
+ * event/area bit scan or ground-layout loop.  The header bytes are always
+ * read through the owner-local PRG binding. */
+mysmb_u8 mysmb_audio_load_music_header(struct mysmb_game *game,
+                                       mysmb_u8 selector);
+
 /* ROM Dump_Squ1_Regs through SetFreq_Tri. The input bytes are the
  * original A/X/Y values at each entry; all writes stay in shared output. */
 void mysmb_audio_dump_squ1_regs(struct mysmb_game *game, mysmb_u8 x,

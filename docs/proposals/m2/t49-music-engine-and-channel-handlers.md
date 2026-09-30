@@ -389,3 +389,57 @@ OpenNT DOS16, purity and refreshed artifacts.
 ## S8 closure: shared length, control and envelope helpers
 
 All **9** labels are ROM-match complete: **1,892 -> 1,901 / 1,992**. Shared `audio.c` now preserves the source helper boundary. Square2 default, water and Win-Castle records plus Square1 and noise paths compare RAM/APU outputs at zero difference on x86/x64.
+
+## S9 admission: music header table and records
+
+S9 receives **23** source-order labels: `MusicHeaderData`,
+`TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`,
+`UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`,
+`GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`,
+`GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`,
+`GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`,
+`GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, and
+`DeathMusHdr`. Baseline is **1,901 / 1,992**; all 23 are expected matches, for
+a maximum **1,924 / 1,992**. The contiguous chain is owned solely by
+`src/game/audio.c`; its predecessor is S8 `LoadWaterEventMusEnvData`, and its
+successor is the music-data region after `DeathMusHdr`.
+
+The ROM-logic track compares the `MusicHeaderOffsetData,Y` indirection and the
+six source-order reads beginning at `MusicHeaderData,Y`: length-table offset,
+music-data pointer, triangle/square-one/noise offsets, noise loopback, counters,
+alternate register and `$4015` writes. Controlled original-ROM `SoundEngine`
+records cover each event/area selector family and ground-layout selectors, with
+each header's bytes kept owner-local in the ROM binding. The operational track
+uses the focused header snapshot check, audio smoke, platform-purity audit,
+Win32 x86/x64 build and self-test, the existing OpenNT DOS16 compile/link, and
+all three refreshed executable artifacts. DOS16 remains an active required
+target; no DOSBox route or DOS deferral is introduced.
+
+
+## S9 closure: music header table and records
+
+All **23** admitted labels are ROM-match complete: **1,901 -> 1,924 / 1,992**.
+The shared `mysmb_audio_load_music_header` is the direct portable owner of ROM
+`LoadHeader` at `$f6f5`: it indexes `MusicHeaderOffsetData,Y`, reads the six
+source bytes in order, initializes channel counters and loopback state, and writes
+`$4015` as the source does. Header bytes remain owner-local ROM input; no platform
+adapter selects music, reads the table, or mutates audio state.
+
+The focused table checker enumerates all **63** legal selectors, recomputes each
+header location from the original ROM offset table, and compares all header-derived
+RAM/APU writes. Win32 x86 and x64 each report `selectors=63 failures=0`. The
+existing audio smoke and both product `--self-test` runs exit zero; platform purity
+passes. OpenNT16 compiles the same shared `audio.c` and emits a valid 264,149-byte
+MZ image. Link 5.60 retains its established optional `OLDNAMES.LIB` warning but
+produces the executable successfully; DOS16 remains an active P target and DOSBox
+is not used.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `assets/mysmb16.exe` | `BC29D277B101470596389E82B575D7D32F0ECDE2048722D5047DAA1E99C2A0DB` |
+| `assets/mysmb32.exe` | `61511329829DB30935A9EA8C2B8FEF47B8FD3744D8066A8FFC11ED4BAFFD839C` |
+| `assets/mysmb64.exe` | `A5DE24E79172D57923486E1B7603465D1EB6F6CFD5927B12ED778195BC832D8B` |
+
+Similar-issue sweep: all three `LoadHeader` callers in the shared music event/area
+selection path call the one ROM-mapped owner; all header records are covered by the
+selector sweep. The following music-data region remains outside this chain.

@@ -480,6 +480,9 @@ target_link_libraries(mysmb_sound_music_handoff_snapshot_check PRIVATE mysmb_gam
 add_executable(mysmb_sound_music_selection_snapshot_check
                test/sound_music_selection_snapshot_check.c)
 target_link_libraries(mysmb_sound_music_selection_snapshot_check PRIVATE mysmb_game)
+add_executable(mysmb_sound_music_header_table_check
+               test/sound_music_header_table_check.c)
+target_link_libraries(mysmb_sound_music_header_table_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square2_music_snapshot_check
                test/sound_square2_music_snapshot_check.c)
 target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_game)
@@ -1100,6 +1103,9 @@ add_test(NAME mysmb.complete-analysis
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_complete_analysis.py)
 
 if(MYSMB_ROM_PATH)
+    add_test(NAME mysmb.music-header-table
+        COMMAND mysmb_sound_music_header_table_check "${MYSMB_ROM_PATH}")
+
     set(MYSMB_LOCAL_ROM_DIR "${CMAKE_BINARY_DIR}/generated/smb1-local")
     add_custom_command(
         OUTPUT

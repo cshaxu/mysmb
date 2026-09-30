@@ -66,8 +66,8 @@ static void mysmb_audio_write_apu(struct mysmb_game *game, mysmb_u8 index,
 /* ROM LoadHeader.  MusicHeaderOffsetData is deliberately one byte before
  * MusicHeaderData, so callers supply the source Y value after its initial
  * increment and bit scan. */
-static mysmb_u8 mysmb_audio_load_header(struct mysmb_game *game,
-                                        mysmb_u8 selector)
+mysmb_u8 mysmb_audio_load_music_header(struct mysmb_game *game,
+                                       mysmb_u8 selector)
 {
     mysmb_u16 table_offset;
     mysmb_u16 header_offset;
@@ -788,14 +788,14 @@ static void mysmb_audio_handle_area_music_loop(struct mysmb_game *game,
         /* FindAreaMusicHeader's residual store precedes the shared bit scan.
          * LoadHeader subsequently initializes the offset back to zero. */
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2] = 8U;
-        (void)mysmb_audio_load_header(game,
+        (void)mysmb_audio_load_music_header(game,
             mysmb_audio_find_header_selector(area, 8U));
         return;
     }
     game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]++;
     if (game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] == 0x32U)
         game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET] = 0x11U;
-    (void)mysmb_audio_load_header(game,
+    (void)mysmb_audio_load_music_header(game,
         game->ram[MYSMB_RAM_GROUND_MUSIC_HEADER_OFFSET]);
 }
 
@@ -813,7 +813,7 @@ static void mysmb_audio_load_event_music(struct mysmb_game *game,
     game->ram[MYSMB_RAM_NOTE_LENGTH_TABLE_ADDER] =
         event == 0x40U ? 8U : 0U;
     game->ram[MYSMB_RAM_AREA_MUSIC_BUFFER] = 0U;
-    (void)mysmb_audio_load_header(game,
+    (void)mysmb_audio_load_music_header(game,
         mysmb_audio_find_header_selector(event, 0U));
 }
 

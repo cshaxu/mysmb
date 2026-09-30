@@ -12,14 +12,14 @@ the conformance counts below.
 
 | ROM-match state | Nodes | Named source |
 | --- | ---: | --- |
-| ROM-match complete | 1901 | Exact labels listed below and in the canonical inventory. |
+| ROM-match complete | 1924 | Exact labels listed below and in the canonical inventory. |
 | Mapped / audited, not complete | 36 | Exact labels listed below: the retained known mismatches, missing implementations, changed-body revalidations, and evidence gaps. |
-| Open / unmatched | 55 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
+| Open / unmatched | 32 | Exact open rows in the inventory; responsibility/evidence gaps are linked individually. |
 | **Total** | **1,992** | Unique label/source-line pairs. |
 
-Verified conformance is **1901 / 1,992 (95.43%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
+Verified conformance is **1924 / 1,992 (96.59%)**. The 36 incomplete mappings remain individually listed below and in the canonical inventory.
 
-Latest task review: [T49 S7 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s7-closure-noise-beat-stream-and-exit) closes eight noise beat labels on six bounded original-ROM SoundEngine routes, eight calls each per route and width, with zero-difference RAM/APU parity; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
+Latest task review: [T49 S9 closure](../proposals/m2/t49-music-engine-and-channel-handlers.md#s9-closure-music-header-table-and-records) closes 23 contiguous music-header labels. The original-ROM selector table is checked for all 63 legal selectors with zero failures on both Windows widths; OpenNT DOS16 link and refreshed three-target artifacts are separate operational evidence.
 
 The owner expanded scope to all integrated nodes and all prior T/S responsibilities.
 The [full evidence census](../etc/architecture/m2-t24-s1-full-node-census.md)
@@ -29,7 +29,7 @@ full semantic audit of every implementation. Its 435 exact C-name references
 and 857 executed ROM code labels are separate evidence dimensions, not counts
 of equivalent native nodes. No product repair is part of this audit.
 
-## Completed matches (1870)
+## Completed matches (1924)
 
 | ROM line | Node |
 | ---: | --- |
@@ -1937,6 +1937,30 @@ of equivalent native nodes. No product repair is part of this audit.
 | 15967 | `LoadEnvelopeData` |
 | 15974 | `LoadUsualEnvData` |
 | 15981 | `LoadWaterEventMusEnvData` |
+
+| 15989 | `MusicHeaderData` |
+| 16027 | `TimeRunningOutHdr` |
+| 16028 | `Star_CloudHdr` |
+| 16029 | `EndOfLevelMusHdr` |
+| 16030 | `ResidualHeaderData` |
+| 16031 | `UndergroundMusHdr` |
+| 16032 | `SilenceHdr` |
+| 16033 | `CastleMusHdr` |
+| 16034 | `VictoryMusHdr` |
+| 16035 | `GameOverMusHdr` |
+| 16036 | `WaterMusHdr` |
+| 16037 | `WinCastleMusHdr` |
+| 16038 | `GroundLevelPart1Hdr` |
+| 16039 | `GroundLevelPart2AHdr` |
+| 16040 | `GroundLevelPart2BHdr` |
+| 16041 | `GroundLevelPart2CHdr` |
+| 16042 | `GroundLevelPart3AHdr` |
+| 16043 | `GroundLevelPart3BHdr` |
+| 16044 | `GroundLevelLeadInHdr` |
+| 16045 | `GroundLevelPart4AHdr` |
+| 16046 | `GroundLevelPart4BHdr` |
+| 16047 | `GroundLevelPart4CHdr` |
+| 16048 | `DeathMusHdr` |
 
 ## Mapped but not yet matched (36)
 
