@@ -19,8 +19,8 @@ incomplete node/control-edge identities.
 
 | Current-equivalence state | Labels | Meaning |
 | --- | ---: | --- |
-| Exact | 23 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 27 | Current source audit exists but the current original-ROM route is incomplete. |
+| Exact | 29 | Current source audit and original-ROM route both prove the label. |
+| Needs evidence | 21 | Current source audit exists but the current original-ROM route is incomplete. |
 | Mismatch | 3 | Current route or source audit finds a concrete semantic difference. |
 | Unclassified | 1,939 | Not yet processed by this re-audit. |
 | **Total** | **1,992** | Canonical inventory labels. |
@@ -53,8 +53,8 @@ explicitly forbidden because it would count impossible paths as integrations.
 
 | Current-equivalence edge state | Edges |
 | --- | ---: |
-| Exact | 47 control; 3 material RAM/table |
-| Needs evidence | 82 |
+| Exact | 60 control; 3 material RAM/table |
+| Needs evidence | 69 |
 | Mismatch | 2 |
 | Unclassified | 4,211 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
@@ -237,11 +237,14 @@ original-ROM route now enters through the ordinary NMI mode dispatcher, reaches
 match current x86/x64 on their title-owned state. The complete world-select B
 subchain is exact: `GoContinue`, `IncWorldSel`, `UpdateShroom` and
 `NullJoypad`, plus its six individual call/return, loop and fall-through
-relations.
+relations. Start, A+Start and expired-demo Start additionally prove the exact
+`StartGame -> ChkContinue -> StartWorld1 -> InitScores -> ExitMenu` chain,
+its A+Start continuation call, its `LoadAreaPointer` return, and the
+expired-demo `ChkContinue -> ResetTitle` branch.
 
 The remaining title labels and relations stay `needs-evidence`. In particular,
 `TitleScreenMode` must still prove all four dispatch vectors; `GameMenuRoutine`,
-`ChkSelect`, `ChkWorldSel` and `SelectBLogic` need their unobserved Start,
-debounce, disabled/enabled and reset branches; and `RunDemo` with its
-post-`GameCoreRoutine` reset condition remains a separate route family. Demo
+`ChkSelect`, `ChkWorldSel` and `SelectBLogic` need their remaining debounce,
+disabled/enabled and reset branches; and `RunDemo` with its post-
+`GameCoreRoutine` reset condition remains a separate route family. Demo
 action/timing data is also deferred to that route family.

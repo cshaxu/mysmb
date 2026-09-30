@@ -761,13 +761,15 @@
       "label": "StartGame",
       "asmLine": 1004,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_start_from_title",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Transfers exact Start/A+Start input to ChkContinue without a separate title-side mutation."
     },
     {
@@ -868,65 +870,75 @@
       "label": "ResetTitle",
       "asmLine": 1053,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_reset_title",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Clears OperMode, OperMode_Task and Sprite0HitDetectFlag, increments DisableScreenFlag, then returns."
     },
     {
       "label": "ChkContinue",
       "asmLine": 1059,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_chk_continue",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Rejects Start when DemoTimer is zero; otherwise uses the A-bit carry condition to choose continuation world or StartWorld1."
     },
     {
       "label": "StartWorld1",
       "asmLine": 1065,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_start_world1",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Loads the area pointer, increments the two hidden-1UP flags and new-timer flag, advances mode, applies hard mode and clears task/demo timer before score initialization."
     },
     {
       "label": "InitScores",
       "asmLine": 1077,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_init_scores",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Clears the exact 24-byte ScoreAndCoinDisplay range in descending source order."
     },
     {
       "label": "ExitMenu",
       "asmLine": 1080,
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/title_modes.c",
       "currentCounterpart": "mysmb_game_exit_menu",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 controlled title-menu start pass: original ROM entered GameMenuRoutine through the ordinary NMI dispatcher and took Start, A+Start and expired-demo Start routes. Current x86/x64 used the same title-owned RAM and PRG binding. The compared route boundaries prove continuation selection, area-pointer load, mode transition, 24-byte descending score clear, reset state and exit behavior."
+      ],
       "semanticContract": "Returns without additional state mutation."
     },
     {
@@ -21680,12 +21692,14 @@
       "instruction": "beq",
       "id": "control-00082",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original branch relation GameMenuRoutine -> StartGame at source line 1001 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -21712,12 +21726,14 @@
       "instruction": "bne",
       "id": "control-00084",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original fallthrough relation GameMenuRoutine -> StartGame at source line 1003 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -21728,12 +21744,14 @@
       "instruction": "jmp",
       "id": "control-00085",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original jump relation StartGame -> ChkContinue at source line 1004 (jmp) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22075,12 +22093,14 @@
       "instruction": "beq",
       "id": "control-00107",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original branch relation ChkContinue -> ResetTitle at source line 1060 (beq) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22091,12 +22111,14 @@
       "instruction": "bcc",
       "id": "control-00108",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original branch relation ChkContinue -> StartWorld1 at source line 1062 (bcc) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22107,12 +22129,14 @@
       "instruction": "jsr",
       "id": "control-00109",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original call relation ChkContinue -> GoContinue at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22123,12 +22147,14 @@
       "instruction": "jsr",
       "id": "control-00110",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original fallthrough relation ChkContinue -> StartWorld1 at source line 1064 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22139,12 +22165,14 @@
       "instruction": "jsr",
       "id": "control-00111",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original call relation StartWorld1 -> LoadAreaPointer at source line 1065 (jsr) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22155,12 +22183,14 @@
       "instruction": "lda",
       "id": "control-00112",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original fallthrough relation StartWorld1 -> InitScores at source line 1076 (lda) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22171,12 +22201,14 @@
       "instruction": "bpl",
       "id": "control-00113",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original branch relation InitScores -> InitScores at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -22187,12 +22219,14 @@
       "instruction": "bpl",
       "id": "control-00114",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original fallthrough relation InitScores -> ExitMenu at source line 1079 (bpl) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -66295,12 +66329,14 @@
       "instruction": "rts/rti",
       "id": "control-03502",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original return relation GoContinue -> ChkContinue at source line 1064 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
@@ -66311,12 +66347,14 @@
       "instruction": "rts/rti",
       "id": "control-03503",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/title_modes.c:mysmb_game_title_step and title helpers",
       "semanticEvidence": [
         "Td S9 A6 title-menu integration static pass: source edge identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "Td S9 A6 independent integration pass: controlled original-ROM Start, A+Start and expired-demo Start routes and current x86/x64 counterparts proved this individual branch, jump, call, return, loop or fallthrough relation, including its ordering and title-owned state handoff."
+      ],
       "semanticContract": "Original return relation LoadAreaPointer -> StartWorld1 at source line 1065 (rts/rti) must preserve the title-menu predicate, ordered helper call/return and state handoff."
     },
     {
