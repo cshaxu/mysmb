@@ -54,9 +54,9 @@ explicitly forbidden because it would count impossible paths as integrations.
 | Current-equivalence edge state | Edges |
 | --- | ---: |
 | Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 322 control; 21 material RAM/table |
+| Needs evidence | 352 control; 32 material RAM/table |
 | Mismatch | 10 control; 2 material RAM/table |
-| Unclassified | 3,934 control edges; material edge denominator pending feasible-path enumeration |
+| Unclassified | 3,904 control edges; material edge denominator pending feasible-path enumeration |
 | **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
 
 ### Control-edge allocation
@@ -428,3 +428,14 @@ new feasible material paths cover BlockGfxData and the four static palette
 streams. No static discrepancy is confirmed; required routes include each
 block graphics selector, water/non-water blank replacement, both name-table
 halves and palette controls one through four.
+
+### Cohort B — B8 special palettes, PPU packet path and controller serialization
+
+The audit maps every node from `DaySnowPaletteData` through `WritePPUReg1`.
+It covers special palettes and seven selector-driven message streams,
+JumpEngine dispatch, name-table clearing, input serialisation/debounce and
+the VRAM packet decoder/scroll tail. Thirty control relations and eleven
+feasible stream-to-NMI data edges are recorded. No new static discrepancy is
+confirmed. Route proof must cover selectors 8–18, both controller ports and
+Select/Start repeat suppression, packet increment/repeat variants, empty and
+multi-packet buffers, plus both cleared name tables.

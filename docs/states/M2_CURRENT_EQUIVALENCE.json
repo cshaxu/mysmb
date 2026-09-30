@@ -365,6 +365,160 @@
         "Td S9 B7 block-metatile static node/edge pass: SMB1 lines 2034-2309 was compared with src/game/area/block_metatile.c, area.c and frame_root.c; controlled original-ROM/x86/x64 block and palette routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00026",
+      "producer": "BowserPaletteData",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 8 ROM stream to NMI palette consumer",
+      "feasiblePath": "VRAM address control 8 selects BowserPaletteData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 8",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00027",
+      "producer": "DaySnowPaletteData",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 9 ROM stream to NMI palette consumer",
+      "feasiblePath": "VRAM address control 9 selects DaySnowPaletteData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 9",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00028",
+      "producer": "NightSnowPaletteData",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 10 ROM stream to NMI palette consumer",
+      "feasiblePath": "VRAM address control 10 selects NightSnowPaletteData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 10",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00029",
+      "producer": "MushroomPaletteData",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 11 ROM stream to NMI palette consumer",
+      "feasiblePath": "VRAM address control 11 selects MushroomPaletteData.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_special_palette control 11",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00030",
+      "producer": "MarioThanksMessage",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 12 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 12 selects MarioThanksMessage.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 12",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00031",
+      "producer": "LuigiThanksMessage",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 13 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 13 selects LuigiThanksMessage.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 13",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00032",
+      "producer": "MushroomRetainerSaved",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 14 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 14 selects MushroomRetainerSaved.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 14",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00033",
+      "producer": "PrincessSaved1",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 15 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 15 selects PrincessSaved1.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 15",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00034",
+      "producer": "PrincessSaved2",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 16 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 16 selects PrincessSaved2.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 16",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00035",
+      "producer": "WorldSelectMessage1",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 17 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 17 selects WorldSelectMessage1.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 17",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00036",
+      "producer": "WorldSelectMessage2",
+      "consumer": "NonMaskableInterrupt",
+      "storage": "selector 18 ROM message stream to NMI consumer",
+      "feasiblePath": "VRAM address control 18 selects WorldSelectMessage2.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_message control 18",
+      "semanticContract": "Selected stream bytes match.",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -3199,281 +3353,365 @@
       "label": "DaySnowPaletteData",
       "asmLine": 2311,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_special_palette control 9",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cce: day snow special palette stream."
     },
     {
       "label": "NightSnowPaletteData",
       "asmLine": 2316,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_special_palette control 10",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cd4: night snow special palette stream."
     },
     {
       "label": "MushroomPaletteData",
       "asmLine": 2321,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_special_palette control 11",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cda: mushroom special palette stream."
     },
     {
       "label": "BowserPaletteData",
       "asmLine": 2326,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_special_palette control 8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ce0: Bowser special palette stream."
     },
     {
       "label": "MarioThanksMessage",
       "asmLine": 2331,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 12",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ce6: Mario victory message stream."
     },
     {
       "label": "LuigiThanksMessage",
       "asmLine": 2339,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 13",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8cfb: Luigi victory message stream."
     },
     {
       "label": "MushroomRetainerSaved",
       "asmLine": 2347,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 14",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d10: retainer-saved message stream."
     },
     {
       "label": "PrincessSaved1",
       "asmLine": 2358,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 15",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d35: first princess-saved message stream."
     },
     {
       "label": "PrincessSaved2",
       "asmLine": 2366,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 16",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d4b: second princess-saved message stream."
     },
     {
       "label": "WorldSelectMessage1",
       "asmLine": 2375,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 17",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d6b: first world-select message stream."
     },
     {
       "label": "WorldSelectMessage2",
       "asmLine": 2382,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/area.c",
+      "currentCounterpart": "mysmb_area_apply_message control 18",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d7d: second world-select message stream."
     },
     {
       "label": "JumpEngine",
       "asmLine": 2395,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/dispatcher.c",
+      "currentCounterpart": "C switch dispatch owners",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8d91: selector-indexed inline jump-table dispatch preserving caller return continuation."
     },
     {
       "label": "InitializeNameTables",
       "asmLine": 2412,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e19: clears two nametables/attributes, resets Buffer1 and scroll, and establishes pattern-table control state."
     },
     {
       "label": "WriteNTAddr",
       "asmLine": 2421,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables nametable sequence",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e2a: writes one nametable PPU address then falls into tile clear loop."
     },
     {
       "label": "InitNTLoop",
       "asmLine": 2427,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables 0x3c0 tile loops",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e30: writes 768 blank tiles per nametable."
     },
     {
       "label": "InitATLoop",
       "asmLine": 2436,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables 64-byte attribute clear",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e39: clears 64 attributes and scroll bytes before InitScroll."
     },
     {
       "label": "ReadJoypads",
       "asmLine": 2446,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_read_joypads",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e5c: strobes controller ports then serializes and debounces two decoded port images."
     },
     {
       "label": "ReadPortBits",
       "asmLine": 2454,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_read_port_bits and save_port_bits",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e66: reads eight serial bits for one port then applies Select/Start debounce."
     },
     {
       "label": "PortLoop",
       "asmLine": 2455,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_read_port_bits eight-bit loop",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e67: rotates exactly eight port bits into the saved image."
     },
     {
       "label": "Save8Bits",
       "asmLine": 2474,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_frame_root_save_port_bits",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e80: stores a button image into JoypadBitMask when Select/Start are not held across frames."
     },
     {
       "label": "WriteBufferToScreen",
       "asmLine": 2482,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_apply_vram_commands",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8e92: decodes one VRAM packet header, increment/repeat mode and payload length."
     },
     {
       "label": "SetupWrites",
       "asmLine": 2495,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_apply_vram_commands packet mode decode",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ea7: commits $2000 increment mode then selects repeat/nonrepeat length behavior."
     },
     {
       "label": "GetLength",
       "asmLine": 2501,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_apply_vram_commands packet mode decode",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8eb2: recovers packet length and repeat flag."
     },
     {
       "label": "OutputToVRAM",
       "asmLine": 2504,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_apply_vram_commands payload loop",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8eb5: emits packet payload until count expires."
     },
     {
       "label": "RepeatByte",
       "asmLine": 2506,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_apply_vram_commands repeat/nonrepeat source selection",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8eb7: loads repeated or advancing source byte then continues packet output."
     },
     {
       "label": "UpdateScreen",
       "asmLine": 2523,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/frame_root.c",
+      "currentCounterpart": "mysmb_game_commit_vram_buffer",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ece: selects next packet until zero terminator, otherwise reaches InitScroll."
     },
     {
       "label": "InitScroll",
       "asmLine": 2527,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables and frame display commit",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8ed6: writes zero/current accumulator to both scroll registers."
     },
     {
       "label": "WritePPUReg1",
       "asmLine": 2533,
       "cohort": "C",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_initialize_name_tables PPU control mirror write",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "ROM $8edb: writes PPU control register and its mirror."
     },
     {
       "label": "StatusBarData",
@@ -26446,10 +26684,13 @@
       "instruction": "jsr",
       "id": "control-00328",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeNameTables -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitializeNameTables",
@@ -26459,10 +26700,13 @@
       "instruction": "jsr",
       "id": "control-00329",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeNameTables -> WriteNTAddr call relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitializeNameTables",
@@ -26472,10 +26716,13 @@
       "instruction": "lda",
       "id": "control-00330",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitializeNameTables -> WriteNTAddr fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "WriteNTAddr",
@@ -26485,10 +26732,13 @@
       "instruction": "lda",
       "id": "control-00331",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteNTAddr -> InitNTLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitNTLoop",
@@ -26498,10 +26748,13 @@
       "instruction": "bne",
       "id": "control-00332",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitNTLoop",
@@ -26511,10 +26764,13 @@
       "instruction": "bne",
       "id": "control-00333",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitNTLoop -> InitNTLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitNTLoop",
@@ -26524,10 +26780,13 @@
       "instruction": "sta",
       "id": "control-00334",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitNTLoop -> InitATLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitATLoop",
@@ -26537,10 +26796,13 @@
       "instruction": "bne",
       "id": "control-00335",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitATLoop -> InitATLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "InitATLoop",
@@ -26550,10 +26812,13 @@
       "instruction": "jmp",
       "id": "control-00336",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original InitATLoop -> InitScroll jump relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "ReadJoypads",
@@ -26563,10 +26828,13 @@
       "instruction": "jsr",
       "id": "control-00337",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ReadJoypads -> ReadPortBits call relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "ReadJoypads",
@@ -26576,10 +26844,13 @@
       "instruction": "inx",
       "id": "control-00338",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ReadJoypads -> ReadPortBits fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "ReadPortBits",
@@ -26589,10 +26860,13 @@
       "instruction": "ldy",
       "id": "control-00339",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ReadPortBits -> PortLoop fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "PortLoop",
@@ -26602,10 +26876,13 @@
       "instruction": "bne",
       "id": "control-00340",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PortLoop -> PortLoop branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "PortLoop",
@@ -26615,10 +26892,13 @@
       "instruction": "beq",
       "id": "control-00341",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original PortLoop -> Save8Bits branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "WriteBufferToScreen",
@@ -26628,10 +26908,13 @@
       "instruction": "bcs",
       "id": "control-00342",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBufferToScreen -> SetupWrites branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "WriteBufferToScreen",
@@ -26641,10 +26924,13 @@
       "instruction": "and",
       "id": "control-00343",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteBufferToScreen -> SetupWrites fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "SetupWrites",
@@ -26654,10 +26940,13 @@
       "instruction": "jsr",
       "id": "control-00344",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupWrites -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "SetupWrites",
@@ -26667,10 +26956,13 @@
       "instruction": "bcc",
       "id": "control-00345",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupWrites -> GetLength branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "SetupWrites",
@@ -26680,10 +26972,13 @@
       "instruction": "iny",
       "id": "control-00346",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original SetupWrites -> GetLength fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "GetLength",
@@ -26693,10 +26988,13 @@
       "instruction": "tax",
       "id": "control-00347",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original GetLength -> OutputToVRAM fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "OutputToVRAM",
@@ -26706,10 +27004,13 @@
       "instruction": "bcs",
       "id": "control-00348",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputToVRAM -> RepeatByte branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "OutputToVRAM",
@@ -26719,10 +27020,13 @@
       "instruction": "iny",
       "id": "control-00349",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original OutputToVRAM -> RepeatByte fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "RepeatByte",
@@ -26732,10 +27036,13 @@
       "instruction": "bne",
       "id": "control-00350",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RepeatByte -> OutputToVRAM branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "RepeatByte",
@@ -26745,10 +27052,13 @@
       "instruction": "sta",
       "id": "control-00351",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original RepeatByte -> UpdateScreen fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "UpdateScreen",
@@ -26758,10 +27068,13 @@
       "instruction": "bne",
       "id": "control-00352",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original UpdateScreen -> WriteBufferToScreen branch relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "UpdateScreen",
@@ -26771,10 +27084,13 @@
       "instruction": "bne",
       "id": "control-00353",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original UpdateScreen -> InitScroll fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "PrintStatusBarNumbers",
@@ -68266,10 +68582,13 @@
       "instruction": "rts/rti",
       "id": "control-03532",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WritePPUReg1 -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "WriteNTAddr",
@@ -68279,10 +68598,13 @@
       "instruction": "rts/rti",
       "id": "control-03533",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WriteNTAddr -> InitializeNameTables return relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "ReadPortBits",
@@ -68292,10 +68614,13 @@
       "instruction": "rts/rti",
       "id": "control-03534",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original ReadPortBits -> ReadJoypads return relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "WritePPUReg1",
@@ -68305,10 +68630,13 @@
       "instruction": "rts/rti",
       "id": "control-03535",
       "cohort": "C",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared C PPU/input owner named by Td S9 B8",
+      "semanticEvidence": [
+        "Td S9 B8 PPU/input static node/edge pass: SMB1 lines 2311-2543 was compared with src/game/area.c, boot.c and frame_root.c; controlled original-ROM/x86/x64 NMI and input routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Original WritePPUReg1 -> SetupWrites return relation must preserve source predicate, register/RAM handoff and successor or return behavior."
     },
     {
       "from": "OutputNumbers",
