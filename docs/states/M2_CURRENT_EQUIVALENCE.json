@@ -70,7 +70,8 @@
       "semanticEvidence": [
         "Td S9 A7 static mismatch: ROM DEC-before-CMP gate at lines 1320-1337 versus current C pre-decrement test changes feasible table-consumption frames."
       ],
-      "operationalEvidence": []
+      "operationalEvidence": [],
+      "repairCandidate": "A7"
     },
     {
       "id": "material-00005",
@@ -7077,7 +7078,8 @@
       "operationalEvidence": [
         "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree and proves the physical-control phase mismatch ($10 ROM versus $90 x86/x64) inside the shared NMI parent."
       ],
-      "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail."
+      "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
+      "repairCandidate": "A2"
     },
     {
       "label": "ScreenOff",
@@ -7191,7 +7193,8 @@
       "operationalEvidence": [
         "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM has $00=$02 after the LFSR sequence; current x86/x64 both leave $00=$01 from the earlier VRAM-pointer selection. The current local-variable implementation omits the source scratch write."
       ],
-      "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing."
+      "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
+      "repairCandidate": "A2"
     },
     {
       "label": "Sprite0Clr",
@@ -7245,7 +7248,8 @@
       "operationalEvidence": [
         "Td S9 A2 controlled cold-boot NMI-prefix route stops immediately before OperModeExecutionTree: ROM physical $2000 is $10, while current x86/x64 visible control is $90. The current owner restores d7 before the source dispatch boundary."
       ],
-      "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7."
+      "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7.",
+      "repairCandidate": "A2"
     },
     {
       "label": "SkipMainOper",
@@ -7547,7 +7551,8 @@
       "operationalEvidence": [
         "Td S9 A6 controlled title-menu mismatch route: with DemoTimer=0, WorldSelectEnableFlag=1 and B pressed, original ROM takes ChkSelect -> DemoEngine before ChkWorldSel; current x86/x64 takes the world-select branch and ResetTitle. The first divergent title-owned field is OperMode_Task (ROM 3, C 0) at the common post-menu boundary."
       ],
-      "semanticContract": "When Start did not match, selects Select processing, active-demo/world-select processing, or DemoEngine at demo timeout."
+      "semanticContract": "When Start did not match, selects Select processing, active-demo/world-select processing, or DemoEngine at demo timeout.",
+      "repairCandidate": "A6"
     },
     {
       "label": "ChkWorldSel",
@@ -8181,7 +8186,8 @@
         "Td S9 A7 static mismatch: FloateyNumbersRoutine contains DecNumTimer timing behavior that differs at initial timer $2c and $2b; see A7 Floatey timer-gate repair candidate."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $84c3: dispatches the current ObjectOffset floatey control through clamp, timer, score, OAM-offset selection, vertical motion and two-sprite output; the current entry has a confirmed timer-gate mismatch."
+      "semanticContract": "ROM $84c3: dispatches the current ObjectOffset floatey control through clamp, timer, score, OAM-offset selection, vertical motion and two-sprite output; the current entry has a confirmed timer-gate mismatch.",
+      "repairCandidate": "A7"
     },
     {
       "label": "ChkNumTimer",
@@ -8207,7 +8213,8 @@
         "Td S9 A7 static mismatch: SMB1 line 1320 executes DEC FloateyNum_Timer,x then CMP #$2b. Current objects.c tests timer == 0x2b before decrementing it, shifting the score/one-up event by one frame."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM DecNumTimer decrements FloateyNum_Timer before comparing the decremented value to $2b; only that post-decrement value invokes LoadNumTiles/one-up effects."
+      "semanticContract": "ROM DecNumTimer decrements FloateyNum_Timer before comparing the decremented value to $2b; only that post-decrement value invokes LoadNumTiles/one-up effects.",
+      "repairCandidate": "A7"
     },
     {
       "label": "LoadNumTiles",
@@ -8415,7 +8422,8 @@
         "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8594: if BackgroundColorCtrl is nonzero, selects BGColorCtrl_Addr-4 then increments ScreenRoutineTask; both zero and nonzero paths unconditionally fall into GetPlayerColors. Current C omits that palette command for controls 4-7."
+      "semanticContract": "ROM $8594: if BackgroundColorCtrl is nonzero, selects BGColorCtrl_Addr-4 then increments ScreenRoutineTask; both zero and nonzero paths unconditionally fall into GetPlayerColors. Current C omits that palette command for controls 4-7.",
+      "repairCandidate": "B2"
     },
     {
       "label": "NoBGColor",
@@ -8428,7 +8436,8 @@
         "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8599: increments ScreenRoutineTask and unconditionally falls into GetPlayerColors; current C exits case 10 after the control-4-7 address-control write."
+      "semanticContract": "ROM $8599: increments ScreenRoutineTask and unconditionally falls into GetPlayerColors; current C exits case 10 after the control-4-7 address-control write.",
+      "repairCandidate": "B2"
     },
     {
       "label": "GetPlayerColors",
@@ -8584,7 +8593,8 @@
         "Td S9 B3 confirmed mismatch: after an expired timer, ROM DisplayTimeUp returns from OutputInter with ScreenRoutineTask still 4; the next task-4 invocation takes NoTimeUp and advances directly to task 6. Current game.c case 4 writes task 5 in the expired branch, so case 5 waits for ScreenTimer expiry before reaching task 6."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8603: expired path clears GameTimerExpiredFlag and reaches OutputInter without changing ScreenRoutineTask; its following non-expired visit reaches task 6 through NoTimeUp/IncSubtask. Current C enters task 5 immediately and adds a timer wait."
+      "semanticContract": "ROM $8603: expired path clears GameTimerExpiredFlag and reaches OutputInter without changing ScreenRoutineTask; its following non-expired visit reaches task 6 through NoTimeUp/IncSubtask. Current C enters task 5 immediately and adds a timer wait.",
+      "repairCandidate": "B3"
     },
     {
       "label": "NoTimeUp",
@@ -27767,7 +27777,8 @@
         "Confirmed K3 discrepancy: ROM line 13366 reads Enemy_Y_Position,x for DumpFourSpr; current small_platform_gfx.c reads MYSMB_SMALL_PLATFORM_REL_Y (0x03b9) instead of Enemy_Y_Position (0x00cf)+slot."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses Enemy_Rel_XPos for six X records, Enemy_Y_Position,x for the first four Y records, then executes the platform tile/attribute/offscreen chain."
+      "semanticContract": "Uses Enemy_Rel_XPos for six X records, Enemy_Y_Position,x for the first four Y records, then executes the platform tile/attribute/offscreen chain.",
+      "repairCandidate": "H9"
     },
     {
       "label": "ShrinkPlatform",
@@ -33609,7 +33620,8 @@
       "operationalEvidence": [
         "Td S9 A2 controlled NMI-prefix route executes the source branch and stops before mode dispatch: ROM handoff has $00=$02 while current x86/x64 have $00=$01."
       ],
-      "semanticContract": "The RotPRandomBit -> SkipSprite0 branch must hand off the source scratch $00 written by the LFSR prefix before sprite-zero selection."
+      "semanticContract": "The RotPRandomBit -> SkipSprite0 branch must hand off the source scratch $00 written by the LFSR prefix before sprite-zero selection.",
+      "repairCandidate": "A2"
     },
     {
       "from": "RotPRandomBit",
@@ -33803,7 +33815,8 @@
       "operationalEvidence": [
         "Td S9 A2 controlled NMI-prefix route stops at the source JSR boundary: ROM physical $2000=$10 while current x86/x64 visible control=$90 before the counterpart dispatch."
       ],
-      "semanticContract": "The unpaused SkipSprite0 -> OperModeExecutionTree call must enter mode dispatch with physical $2000 equal to the saved mirror with d7 clear; RTI alone re-enables d7."
+      "semanticContract": "The unpaused SkipSprite0 -> OperModeExecutionTree call must enter mode dispatch with physical $2000 equal to the saved mirror with d7 clear; RTI alone re-enables d7.",
+      "repairCandidate": "A2"
     },
     {
       "from": "SkipSprite0",
@@ -34393,7 +34406,8 @@
       "operationalEvidence": [
         "Td S9 A6 independent integration mismatch: source ChkSelect branches to ChkWorldSel only when DemoTimer is nonzero. Current title_modes.c evaluates enabled B world selection before the source DemoTimer gate, so it takes this edge on an impossible source path."
       ],
-      "semanticContract": "Original branch relation ChkSelect -> ChkWorldSel at source line 1008 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff."
+      "semanticContract": "Original branch relation ChkSelect -> ChkWorldSel at source line 1008 (bne) must preserve the title-menu predicate, ordered helper call/return and state handoff.",
+      "repairCandidate": "A6"
     },
     {
       "from": "ChkSelect",
@@ -35867,7 +35881,8 @@
         "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DecNumTimer -> ChkTallEnemy is taken when the decremented timer is not $2b; current C instead bases this score/non-score choice on the pre-decrement timer."
+      "semanticContract": "Original DecNumTimer -> ChkTallEnemy is taken when the decremented timer is not $2b; current C instead bases this score/non-score choice on the pre-decrement timer.",
+      "repairCandidate": "A7"
     },
     {
       "from": "DecNumTimer",
@@ -35883,7 +35898,8 @@
         "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DecNumTimer -> LoadNumTiles is selected at decremented timer $2b for non-$0b control; current C selects the score table one frame early."
+      "semanticContract": "Original DecNumTimer -> LoadNumTiles is selected at decremented timer $2b for non-$0b control; current C selects the score table one frame early.",
+      "repairCandidate": "A7"
     },
     {
       "from": "DecNumTimer",
@@ -35899,7 +35915,8 @@
         "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original DecNumTimer -> LoadNumTiles fall-through follows the $0b one-up writes at decremented timer $2b; current C performs the same effects one frame early."
+      "semanticContract": "Original DecNumTimer -> LoadNumTiles fall-through follows the $0b one-up writes at decremented timer $2b; current C performs the same effects one frame early.",
+      "repairCandidate": "A7"
     },
     {
       "from": "LoadNumTiles",
@@ -35915,7 +35932,8 @@
         "Td S9 A7 static mismatch: source DEC-before-CMP timing and current C CMP-before-decrement timing select this relation on different timer values."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original LoadNumTiles -> AddToScore occurs only after the post-decrement $2b gate; current C invokes mysmb_score_add on the pre-decrement $2b gate."
+      "semanticContract": "Original LoadNumTiles -> AddToScore occurs only after the post-decrement $2b gate; current C invokes mysmb_score_add on the pre-decrement $2b gate.",
+      "repairCandidate": "A7"
     },
     {
       "from": "LoadNumTiles",
@@ -36331,7 +36349,8 @@
         "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM nonzero BackgroundColorCtrl path writes BGColorCtrl_Addr-4 then still reaches NoBGColor and falls into GetPlayerColors; current case 10 exits after the control-4-7 selector write."
+      "semanticContract": "ROM nonzero BackgroundColorCtrl path writes BGColorCtrl_Addr-4 then still reaches NoBGColor and falls into GetPlayerColors; current case 10 exits after the control-4-7 selector write.",
+      "repairCandidate": "B2"
     },
     {
       "from": "NoBGColor",
@@ -36347,7 +36366,8 @@
         "Td S9 B2 confirmed mismatch: ROM GetBackgroundColor increments ScreenRoutineTask then always falls into GetPlayerColors; game.c case 10 omits the player-palette producer when BackgroundColorCtrl is 4-7."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM NoBGColor increments ScreenRoutineTask and always falls through to GetPlayerColors; current case 10 has no player-palette producer for BackgroundColorCtrl 4-7."
+      "semanticContract": "ROM NoBGColor increments ScreenRoutineTask and always falls through to GetPlayerColors; current case 10 has no player-palette producer for BackgroundColorCtrl 4-7.",
+      "repairCandidate": "B2"
     },
     {
       "from": "GetPlayerColors",
@@ -36651,7 +36671,8 @@
         "Td S9 B3 confirmed mismatch: after an expired timer, ROM DisplayTimeUp returns from OutputInter with ScreenRoutineTask still 4; the next task-4 invocation takes NoTimeUp and advances directly to task 6. Current game.c case 4 writes task 5 in the expired branch, so case 5 waits for ScreenTimer expiry before reaching task 6."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original expired DisplayTimeUp reaches OutputInter without changing ScreenRoutineTask; current branch writes task 5 before the next frame."
+      "semanticContract": "Original expired DisplayTimeUp reaches OutputInter without changing ScreenRoutineTask; current branch writes task 5 before the next frame.",
+      "repairCandidate": "B3"
     },
     {
       "from": "NoTimeUp",
@@ -54497,7 +54518,8 @@
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The byte sequence after JSR JumpEngine is a pointer table, not a reachable fall-through to MushFlowerBlock. JumpEngine removes the return address and indirect-jumps to the selected vector target."
+      "semanticContract": "The byte sequence after JSR JumpEngine is a pointer table, not a reachable fall-through to MushFlowerBlock. JumpEngine removes the return address and indirect-jumps to the selected vector target.",
+      "repairCandidate": "G0"
     },
     {
       "from": "MushFlowerBlock",
@@ -55553,7 +55575,8 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "MoveDropPlatform loads Y=$7f then BNE is always taken to SetMdMax; there is no feasible fall-through to MoveEnemySlowVert."
+      "semanticContract": "MoveDropPlatform loads Y=$7f then BNE is always taken to SetMdMax; there is no feasible fall-through to MoveEnemySlowVert.",
+      "repairCandidate": "G0"
     },
     {
       "from": "MoveEnemySlowVert",
@@ -55601,7 +55624,8 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "SetMdMax loads A=$02 then BNE is always taken to SetXMoveAmt; there is no feasible fall-through to MoveJ_EnemyVertically."
+      "semanticContract": "SetMdMax loads A=$02 then BNE is always taken to SetXMoveAmt; there is no feasible fall-through to MoveJ_EnemyVertically.",
+      "repairCandidate": "G0"
     },
     {
       "from": "MoveJ_EnemyVertically",
@@ -55713,7 +55737,8 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "MovePlatformDown enters via BIT opcode and skips the LDA #$01 at MovePlatformUp; it joins the shared body after that instruction, not the full target-label entry."
+      "semanticContract": "MovePlatformDown enters via BIT opcode and skips the LDA #$01 at MovePlatformUp; it joins the shared body after that instruction, not the full target-label entry.",
+      "repairCandidate": "G0"
     },
     {
       "from": "MovePlatformUp",
@@ -57105,7 +57130,8 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The bytes after JSR JumpEngine are initializer vector words, not a reachable fall-through to NoInitCode. JumpEngine removes the return address and indirect-jumps to the selected entry."
+      "semanticContract": "The bytes after JSR JumpEngine are initializer vector words, not a reachable fall-through to NoInitCode. JumpEngine removes the return address and indirect-jumps to the selected entry.",
+      "repairCandidate": "G0"
     },
     {
       "from": "InitGoomba",
@@ -57313,7 +57339,8 @@
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "SmallBBox loads A=$09 immediately before BNE, so its not-taken fall-through into InitRedPTroopa is infeasible. The only ROM control edge is the taken branch to SetBBox."
+      "semanticContract": "SmallBBox loads A=$09 immediately before BNE, so its not-taken fall-through into InitRedPTroopa is infeasible. The only ROM control edge is the taken branch to SetBBox.",
+      "repairCandidate": "G0"
     },
     {
       "from": "InitRedPTroopa",
@@ -57665,7 +57692,8 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "After ChkNoEn decrements an active slot, BPL has already taken every nonnegative case back to ChkNoEn; reaching BMI requires X=$ff, so the sequential fall-through to CreateL is infeasible."
+      "semanticContract": "After ChkNoEn decrements an active slot, BPL has already taken every nonnegative case back to ChkNoEn; reaching BMI requires X=$ff, so the sequential fall-through to CreateL is infeasible.",
+      "repairCandidate": "G0"
     },
     {
       "from": "CreateL",
@@ -57905,7 +57933,8 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "SmallBBox returns through InitVStf with A=$00. SetSpSpd then executes CMP #$00, so BMI SpinyRte is infeasible; the real path decrements Y and falls through to SpinyRte."
+      "semanticContract": "SmallBBox returns through InitVStf with A=$00. SetSpSpd then executes CMP #$00, so BMI SpinyRte is infeasible; the real path decrements Y and falls through to SpinyRte.",
+      "repairCandidate": "G0"
     },
     {
       "from": "SetSpSpd",
@@ -59185,7 +59214,8 @@
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The bytes after JSR JumpEngine are the six frenzy pointer words, not reachable fall-through to NoFrenzyCode."
+      "semanticContract": "The bytes after JSR JumpEngine are the six frenzy pointer words, not reachable fall-through to NoFrenzyCode.",
+      "repairCandidate": "G0"
     },
     {
       "from": "EndFrenzy",
@@ -60449,7 +60479,8 @@
         "Td S9 B15c source graph audit: SMB1 lines 9182-9197 and JumpEngine lines 2395-2408 prove the pointer table is dispatch data, not a sequential control path."
       ],
       "operationalEvidence": [],
-      "semanticContract": "No executable fall-through exists from LargePlatformSubroutines into EraseEnemyObject; JumpEngine consumes the return and indirect-jumps through the following pointer words."
+      "semanticContract": "No executable fall-through exists from LargePlatformSubroutines into EraseEnemyObject; JumpEngine consumes the return and indirect-jumps through the following pointer words.",
+      "repairCandidate": "G0"
     },
     {
       "from": "MovePodoboo",
@@ -65649,7 +65680,8 @@
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer."
+      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
+      "repairCandidate": "G0"
     },
     {
       "from": "GameTimerFireworks",
@@ -92979,7 +93011,8 @@
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "JumpEngine does not return to BlockCode: it removes the JSR return address and indirect-jumps to a content handler, whose RTS returns to BumpBlock caller context."
+      "semanticContract": "JumpEngine does not return to BlockCode: it removes the JSR return address and indirect-jumps to a content handler, whose RTS returns to BumpBlock caller context.",
+      "repairCandidate": "G0"
     },
     {
       "from": "Setup_Vine",
@@ -93395,7 +93428,8 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "JumpEngine does not return to InitEnemyRoutines: it removes the JSR return address and indirect-jumps through the initializer vector, whose target RTS resumes InitEnemyObject caller context."
+      "semanticContract": "JumpEngine does not return to InitEnemyRoutines: it removes the JSR return address and indirect-jumps through the initializer vector, whose target RTS resumes InitEnemyObject caller context.",
+      "repairCandidate": "G0"
     },
     {
       "from": "InitNormalEnemy",
@@ -93635,7 +93669,8 @@
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "JumpEngine removes the JSR return address and indirect-jumps to the selected frenzy target; it does not return to InitEnemyFrenzy."
+      "semanticContract": "JumpEngine removes the JSR return address and indirect-jumps to the selected frenzy target; it does not return to InitEnemyFrenzy.",
+      "repairCandidate": "G0"
     },
     {
       "from": "PosPlatform",
@@ -94979,7 +95014,8 @@
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer."
+      "semanticContract": "The extracted sequential fall-through/return is impossible because JumpEngine consumes the JSR return and jumps through the selected pointer.",
+      "repairCandidate": "G0"
     },
     {
       "from": "DigitsMathRoutine",

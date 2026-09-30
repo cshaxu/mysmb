@@ -50,6 +50,9 @@ T allocation for accepted implementation work.
 6. [H9 large-platform Y-source repair](../proposals/m2/h9-large-platform-y-source-repair-candidate.md)
    — confirmed shared `small_platform_gfx.c` mismatch: the first four platform OAM Y records read relative Y rather than ROM `Enemy_Y_Position,x`. This is an unnumbered candidate, not an admitted task.
 
+7. [G0 extracted-control false-relation correction](../proposals/m2/g0-extracted-control-false-relation-correction-candidate.md)
+   — confirmed audit-graph defect: fifteen extracted edges cross non-executable indirect-jump, table or non-returning boundaries. This is an unnumbered governance candidate, not an admitted implementation task.
+
 [T42](../history/M2-T42-shared-collision-and-platforms.md#t42-closure) is closed:
 98/98 scoped nodes, total1,382/1,992. Its nine chains end at
 GetEnemyBoundBoxOfsArg. Final actual actor matches21,544/29,434; unresolved
