@@ -53,10 +53,13 @@ else {
 }
 
 $queue = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $docs 'states/QUEUE.md')
-$proposalFiles = @(Get-ChildItem -LiteralPath (Join-Path $docs 'proposals') -File -Filter '*.md')
-Require ($proposalFiles.Count -gt 0) 'At least one proposal is required.'
-foreach ($proposal in $proposalFiles) {
-    Require ($queue -match [regex]::Escape("../proposals/$($proposal.Name)")) "Queue does not link proposal $($proposal.Name)."
+Require ($queue -match '(?m)^## To-Do\r?$') 'QUEUE.md must identify its pending-work section.'
+Require ($queue -notmatch '(?im)\bclosed\s+in\s+M\d+\b|\bT\d+\s+is\s+closed\b') 'QUEUE.md must not retain completed-task records.'
+$queueLinks = @([regex]::Matches($queue, '\]\((\.\./[^)#]+\.md)(?:#[^)]+)?\)') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
+Require ($queueLinks.Count -gt 0) 'QUEUE.md must link at least one pending-work authority.'
+foreach ($link in $queueLinks) {
+    $resolved = Join-Path (Join-Path $docs 'states') $link
+    Require (Test-Path -LiteralPath $resolved) "QUEUE.md links missing pending-work authority: $link"
 }
 
 & (Join-Path $RepositoryRoot 'tools/Verify-NodeProgress.ps1') -RepositoryRoot $RepositoryRoot
