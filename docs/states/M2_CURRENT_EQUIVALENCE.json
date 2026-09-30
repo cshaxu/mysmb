@@ -5097,6 +5097,104 @@
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00364",
+      "producer": "ChkForPlayerInjury",
+      "consumer": "ChkInj",
+      "storage": "Player_Y_Speed signed result and active enemy ID",
+      "feasiblePath": "Negative/zero vertical-speed route reaches ID-specific adjusted-Y injury/stomp comparison.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c check_player_injury",
+      "semanticContract": "The child sees the source player speed and current enemy slot before any response change.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00365",
+      "producer": "ChkInj",
+      "consumer": "ChkETmrs",
+      "storage": "Player_Y_Position+$0c versus Enemy_Y_Position comparison result",
+      "feasiblePath": "For eligible large IDs, only strict player-above-enemy comparison branches to stomp; all other cases test timers.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c adjusted-Y predicate",
+      "semanticContract": "Timer/facing logic receives exactly the source non-stomp position cases.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00366",
+      "producer": "ChkETmrs",
+      "consumer": "TInjE",
+      "storage": "zero StompTimer, zero InjuryTimer and relative X comparison",
+      "feasiblePath": "Only live non-stomp, non-invulnerable contact forwards relative-X relation to the left-side facing test.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c relative X branch",
+      "semanticContract": "Facing logic consumes source live-contact coordinates after both timer guards.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00367",
+      "producer": "TInjE",
+      "consumer": "LInj",
+      "storage": "Enemy_MovingDir and active current enemy slot",
+      "feasiblePath": "Player-left/right cases decide whether EnemyTurnAround is required before injury.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c turn predicate",
+      "semanticContract": "Turnaround is performed only for the source-facing combinations before guarded injury.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00368",
+      "producer": "ForceInjury",
+      "consumer": "SetKRout",
+      "storage": "PlayerStatus, InjuryTimer, Square1 sound and routine value $0a",
+      "feasiblePath": "Non-small injury writes downgrade/timer/audio/palette effects before common state-one route.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury_entry",
+      "semanticContract": "The routine tail consumes completed injury state after palette routing.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00369",
+      "producer": "KillPlayer",
+      "consumer": "SetKRout",
+      "storage": "Player X/Y speed, EventMusicQueue and routine value $0b",
+      "feasiblePath": "Small-player death initializes movement/music then joins state-one route.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_force_injury_entry",
+      "semanticContract": "Death shares the routine setter only after source death-motion and music writes.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00370",
+      "producer": "SetPRout",
+      "consumer": "ExInjColRoutines",
+      "storage": "GameEngineSubroutine, Player_State, TimerControl, ScrollAmount and restored ObjectOffset",
+      "feasiblePath": "Transformation/injury/death route writes state then restores ObjectOffset before return.",
+      "status": "needs-evidence",
+      "currentCounterpart": "world/player_enemy_collision.c mysmb_objects_set_player_routine",
+      "semanticContract": "Return observes the source timer halt/scroll initialization and current enemy restoration.",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -5173,15 +5271,15 @@
   ],
   "nodeCounts": {
     "exact": 38,
-    "needs-evidence": 1280,
+    "needs-evidence": 1292,
     "mismatch": 9,
-    "unclassified": 665
+    "unclassified": 653
   },
   "controlEdgeCounts": {
     "exact": 76,
-    "needs-evidence": 2781,
+    "needs-evidence": 2809,
     "mismatch": 25,
-    "unclassified": 1460
+    "unclassified": 1432
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -22679,101 +22777,131 @@
       "label": "ChkForPlayerInjury",
       "asmLine": 11401,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses signed player Y speed to choose upward/neutral versus downward stomp logic; delegates nonzero positive speed to EnemyStomped and otherwise enters the ID/vertical overlap path."
     },
     {
       "label": "ChkInj",
       "asmLine": 11405,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "For IDs below Bloober, skips adjusted-Y comparison; for IDs at/above Bloober, only adjusted player Y strictly above the enemy produces the stomp path."
     },
     {
       "label": "ChkETmrs",
       "asmLine": 11413,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "StompTimer forces stomp; InjuryTimer suppresses response; otherwise compares relative X and selects the matching facing/turnaround injury tail."
     },
     {
       "label": "TInjE",
       "asmLine": 11421,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "When player is left of enemy, an enemy not moving right goes directly to injury; a right-moving enemy is turned before injury."
     },
     {
       "label": "InjurePlayer",
       "asmLine": 11426,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Guards ForceInjury with a second zero-InjuryTimer test, preserving the active ObjectOffset on suppression."
     },
     {
       "label": "ForceInjury",
       "asmLine": 11430,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Uses PlayerStatus: small Mario takes KillPlayer; other status consumes input A as new small status, sets InjuryTimer eight, queues injury sound, updates palette and selects subroutine ten/state one."
     },
     {
       "label": "SetKRout",
       "asmLine": 11440,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Supplies player state one to the shared routine setter for injury and death tails."
     },
     {
       "label": "SetPRout",
       "asmLine": 11441,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes selected GameEngineSubroutine and Player_State, then sets TimerControl $ff and clears ScrollAmount before restoring ObjectOffset and returning."
     },
     {
       "label": "ExInjColRoutines",
       "asmLine": 11448,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reloads ObjectOffset and returns from injury, transformation and death response tails."
     },
     {
       "label": "KillPlayer",
       "asmLine": 11452,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Clears player horizontal speed through X=PlayerStatus zero, queues death event music one, writes vertical speed $fc and selects subroutine eleven/state one."
     },
     {
       "label": "StompedEnemyPtsData",
@@ -22849,21 +22977,27 @@
       "label": "ChkEnemyFaceRight",
       "asmLine": 11540,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Turns a right-moving enemy before injury; other directions fall to the common turnaround tail."
     },
     {
       "label": "LInj",
       "asmLine": 11545,
       "cohort": "J",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/world/player_enemy_collision.c",
+      "currentCounterpart": "src/game/world/player_enemy_collision.c:check_player_injury / mysmb_objects_force_injury_entry / mysmb_objects_set_player_routine",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Calls EnemyTurnAround when needed, then unconditionally routes to guarded InjuryPlayer."
     },
     {
       "label": "EnemyFacePlayer",
@@ -47124,12 +47258,12 @@
       "id": "control-01114",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original call relation TimeUpOn -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "TimeUpOn",
@@ -59458,12 +59592,12 @@
       "id": "control-01886",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation SetSDir -> InjurePlayer with Firebar OAM, mirror, player probe and source call/return ordering."
+      "semanticContract": "Preserves original call relation SetSDir -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "SetSDir",
@@ -65154,12 +65288,12 @@
       "id": "control-02242",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/hammer_collision.c with geometry and guarded injury children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16j hammer-player collision integration audit: source branch/call/jump/return endpoint, predicate, ObjectOffset reload and collision-latch ordering compared with shared hammer_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original jump relation PlayerHammerCollision -> InjurePlayer with source predicate, selected misc slot and collision/injury handoff ordering."
+      "semanticContract": "Preserves original jump relation PlayerHammerCollision -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ClHCol",
@@ -65330,12 +65464,12 @@
       "id": "control-02253",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation UpToFiery -> SetPRout with source type/status predicate and score/status/routine handoff ordering."
+      "semanticContract": "Preserves original call relation UpToFiery -> SetPRout with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "UpToFiery",
@@ -65602,12 +65736,12 @@
       "id": "control-02270",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65618,12 +65752,12 @@
       "id": "control-02271",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65634,12 +65768,12 @@
       "id": "control-02272",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65650,12 +65784,12 @@
       "id": "control-02273",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65666,12 +65800,12 @@
       "id": "control-02274",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65682,12 +65816,12 @@
       "id": "control-02275",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65698,12 +65832,12 @@
       "id": "control-02276",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65714,12 +65848,12 @@
       "id": "control-02277",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/player_enemy_collision.c with named geometry/power-up/defeat/injury/score children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16l player-enemy contact front integration audit: source endpoint, gate/ID/state predicate, active slot and collision/score handoff ordering compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source predicate, current slot and collision/state handoff ordering."
+      "semanticContract": "Preserves original branch relation HandlePECollisions -> ChkForPlayerInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "HandlePECollisions",
@@ -65825,10 +65959,13 @@
       "instruction": "bmi",
       "id": "control-02284",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForPlayerInjury -> ChkInj with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkForPlayerInjury",
@@ -65838,10 +65975,13 @@
       "instruction": "bne",
       "id": "control-02285",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkForPlayerInjury -> EnemyStomped with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkForPlayerInjury",
@@ -65851,10 +65991,13 @@
       "instruction": "bne",
       "id": "control-02286",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkForPlayerInjury -> ChkInj with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkInj",
@@ -65864,10 +66007,13 @@
       "instruction": "bcc",
       "id": "control-02287",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkInj -> ChkETmrs with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkInj",
@@ -65877,10 +66023,13 @@
       "instruction": "bcc",
       "id": "control-02288",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkInj -> EnemyStomped with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkInj",
@@ -65890,10 +66039,13 @@
       "instruction": "bcc",
       "id": "control-02289",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkInj -> ChkETmrs with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkETmrs",
@@ -65903,10 +66055,13 @@
       "instruction": "bne",
       "id": "control-02290",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkETmrs -> EnemyStomped with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkETmrs",
@@ -65916,10 +66071,13 @@
       "instruction": "bne",
       "id": "control-02291",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkETmrs -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkETmrs",
@@ -65929,10 +66087,13 @@
       "instruction": "bcc",
       "id": "control-02292",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkETmrs -> TInjE with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkETmrs",
@@ -65942,10 +66103,13 @@
       "instruction": "jmp",
       "id": "control-02293",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkETmrs -> ChkEnemyFaceRight with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "TInjE",
@@ -65955,10 +66119,13 @@
       "instruction": "bne",
       "id": "control-02294",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation TInjE -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "TInjE",
@@ -65968,10 +66135,13 @@
       "instruction": "jmp",
       "id": "control-02295",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation TInjE -> LInj with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "InjurePlayer",
@@ -65981,10 +66151,13 @@
       "instruction": "bne",
       "id": "control-02296",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation InjurePlayer -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "InjurePlayer",
@@ -65994,10 +66167,13 @@
       "instruction": "bne",
       "id": "control-02297",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation InjurePlayer -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ForceInjury",
@@ -66007,10 +66183,13 @@
       "instruction": "beq",
       "id": "control-02298",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ForceInjury -> KillPlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ForceInjury",
@@ -66020,10 +66199,13 @@
       "instruction": "jsr",
       "id": "control-02299",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation ForceInjury -> GetPlayerColors with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ForceInjury",
@@ -66033,10 +66215,13 @@
       "instruction": "lda",
       "id": "control-02300",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ForceInjury -> SetKRout with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "SetKRout",
@@ -66046,10 +66231,13 @@
       "instruction": "ldy",
       "id": "control-02301",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetKRout -> SetPRout with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "SetPRout",
@@ -66059,10 +66247,13 @@
       "instruction": "sty",
       "id": "control-02302",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation SetPRout -> ExInjColRoutines with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "KillPlayer",
@@ -66072,10 +66263,13 @@
       "instruction": "bne",
       "id": "control-02303",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation KillPlayer -> SetKRout with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "KillPlayer",
@@ -66085,10 +66279,13 @@
       "instruction": "bne",
       "id": "control-02304",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation KillPlayer -> StompedEnemyPtsData with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "EnemyStomped",
@@ -66098,10 +66295,13 @@
       "instruction": "beq",
       "id": "control-02305",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation EnemyStomped -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "EnemyStomped",
@@ -66345,10 +66545,13 @@
       "instruction": "bne",
       "id": "control-02324",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkEnemyFaceRight -> LInj with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "ChkEnemyFaceRight",
@@ -66358,10 +66561,13 @@
       "instruction": "jmp",
       "id": "control-02325",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkEnemyFaceRight -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "LInj",
@@ -66371,10 +66577,13 @@
       "instruction": "jsr",
       "id": "control-02326",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original call relation LInj -> EnemyTurnAround with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "LInj",
@@ -66384,10 +66593,13 @@
       "instruction": "jmp",
       "id": "control-02327",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation LInj -> InjurePlayer with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "EnemyFacePlayer",
@@ -84459,12 +84671,12 @@
       "id": "control-03682",
       "cohort": "G",
       "status": "needs-evidence",
-      "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with its source predicate, ordering and state handoff."
+      "semanticContract": "Preserves original return relation ForceInjury -> TimeUpOn with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "AddToScore",
@@ -87067,12 +87279,12 @@
       "id": "control-03845",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation InjurePlayer -> SetSDir with Firebar OAM, mirror, player probe and source call/return ordering."
+      "semanticContract": "Preserves original return relation InjurePlayer -> SetSDir with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "MoveEnemyHorizontally",
@@ -88123,12 +88335,12 @@
       "id": "control-03911",
       "cohort": "J",
       "status": "needs-evidence",
-      "currentCounterpart": "shared world/powerup_collision.c with named erase/score/palette/routine children",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation SetPRout -> UpToFiery with source type/status predicate and score/status/routine handoff ordering."
+      "semanticContract": "Preserves original return relation SetPRout -> UpToFiery with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "CheckPlayerVertical",
@@ -88218,10 +88430,13 @@
       "instruction": "rts/rti",
       "id": "control-03917",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation GetPlayerColors -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "SetupFloateyNumber",
@@ -88328,10 +88543,13 @@
       "instruction": "rts/rti",
       "id": "control-03925",
       "cohort": "J",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
+      "semanticEvidence": [
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original return relation EnemyTurnAround -> LInj with source signed/timer/status predicate and current-slot state handoff ordering."
     },
     {
       "from": "PlayerEnemyDiff",

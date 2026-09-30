@@ -1156,3 +1156,8 @@ branches.
 ### Cohort J — B16l player-enemy contact front integration
 
 `PlayerEnemyCollision` through `ExPEC` now has seven node contracts, every incident caller, frame/vertical/offscreen/control/state gate, geometry, pickup/star/response branch, injury/stomp/score child and return relation, plus eight feasible collision/state handoffs. Static review matches even-frame gating, prepared-box use, current-slot reload, miss d0 clear, PowerUpObject dispatch, star defeat bypass, first-contact latch, source hazard order, shell conversion, direction speed and timer-dependent kick score tables. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 gate, miss, pickup, star, direct hazard, stomp and kicked-shell interval routes.
+
+
+### Cohort J — B16m player injury and death response integration
+
+`ChkForPlayerInjury` through `LInj` now has twelve node contracts, every incident contact/timer caller, signed speed and adjusted-Y branch, relative-facing jump, guarded injury/death/timer route, palette/movement child and return relation, plus seven feasible response handoffs. Static review matches the signed speed split, Bloober threshold adjusted-Y test, StompTimer/InjuryTimer order, facing reversal conditions, second injury guard, downgrade/death state writes, `$0a/$0b` routine selection, timer `$ff`, scroll clear and ObjectOffset restoration. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 stomp, timer suppression, turn/no-turn injury, downgrade and death routes.
