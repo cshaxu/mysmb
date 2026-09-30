@@ -279,7 +279,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "compound/raw producer assigned to its source-order consumer family"
+      "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00015",
@@ -333,7 +336,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "compound/raw producer assigned to its source-order consumer family"
+      "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00018",
@@ -1216,7 +1222,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00064",
@@ -1232,7 +1241,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00065",
@@ -1248,7 +1260,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00066",
@@ -1264,7 +1279,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00067",
@@ -1280,7 +1298,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "id": "material-00068",
@@ -1296,7 +1317,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "id": "material-00069",
@@ -1331,7 +1355,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "id": "material-00071",
@@ -1366,7 +1393,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "id": "material-00073",
@@ -1401,7 +1431,11 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "id": "material-00075",
@@ -2124,7 +2158,10 @@
       ],
       "operationalEvidence": [],
       "cohort": "D",
-      "cohortBasis": "producer inventory label"
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "id": "material-00120",
@@ -15012,7 +15049,11 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Writes ball, shaft and base metatiles, then initializes slot five as the flag using object X minus eight with source borrow into page."
+      "semanticContract": "Writes ball, shaft and base metatiles, then initializes slot five as the flag using object X minus eight with source borrow into page.",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "label": "EndlessRope",
@@ -15025,7 +15066,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Tail-enters the common rope renderer at row zero with fifteen-row extent."
+      "semanticContract": "Tail-enters the common rope renderer at row zero with fifteen-row extent.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BalancePlatRope",
@@ -15038,7 +15082,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Clears rows one through fifteen, restores parser slot, decodes low-nibble extent and tail-enters rope at row one."
+      "semanticContract": "Clears rows one through fifteen, restores parser slot, decodes low-nibble extent and tail-enters rope at row one.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "DrawRope",
@@ -15051,7 +15098,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Tail-enters RenderUnderPart with rope metatile $40 and caller-selected row and extent."
+      "semanticContract": "Tail-enters RenderUnderPart with rope metatile $40 and caller-selected row and extent.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "CoinMetatileData",
@@ -15064,7 +15114,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Supplies $c3 for water and $c2 for the other three area types."
+      "semanticContract": "Supplies $c3 for water and $c2 for the other three area types.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "RowOfCoins",
@@ -15077,7 +15130,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selects the area-type coin metatile and tail-enters the shared horizontal row renderer."
+      "semanticContract": "Selects the area-type coin metatile and tail-enters the shared horizontal row renderer.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "C_ObjectRow",
@@ -15090,7 +15146,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Maps row-13 selector values two through four to rows six through eight."
+      "semanticContract": "Maps row-13 selector values two through four to rows six through eight.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "C_ObjectMetatile",
@@ -15103,7 +15162,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Maps the paired row-13 selector values to $c5, $0c and $89."
+      "semanticContract": "Maps the paired row-13 selector values to $c5, $0c and $89.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "CastleBridgeObj",
@@ -15116,7 +15178,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Installs fixed length twelve, then tail-enters the chained row-13 column renderer."
+      "semanticContract": "Installs fixed length twelve, then tail-enters the chained row-13 column renderer.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "AxeObj",
@@ -15129,7 +15194,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Sets VRAM address selector eight and falls through to the chained column renderer."
+      "semanticContract": "Sets VRAM address selector eight and falls through to the chained column renderer.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ChainObj",
@@ -15142,7 +15210,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses decoder selector minus two to select the paired chain row and metatile before tail-entering one-column rendering."
+      "semanticContract": "Uses decoder selector minus two to select the paired chain row and metatile before tail-entering one-column rendering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "EmptyBlock",
@@ -15155,7 +15226,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Decodes object row, selects $c4 and falls through to one-column rendering."
+      "semanticContract": "Decodes object row, selects $c4 and falls through to one-column rendering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ColObj",
@@ -15168,7 +15242,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Tail-enters RenderUnderPart with zero vertical extent for exactly one selected column metatile."
+      "semanticContract": "Tail-enters RenderUnderPart with zero vertical extent for exactly one selected column metatile.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "SolidBlockMetatiles",
@@ -15181,7 +15258,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Maps the four area types to $69, $61, $61 and $62."
+      "semanticContract": "Maps the four area types to $69, $61, $61 and $62.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BrickMetatiles",
@@ -15194,7 +15274,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Maps area types to brick values and retains $88 solely for the cloud row override."
+      "semanticContract": "Maps area types to brick values and retains $88 solely for the cloud row override.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "RowOfBricks",
@@ -15207,7 +15290,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selects BrickMetatiles by area type except CloudTypeOverride forces index four, then enters DrawBricks."
+      "semanticContract": "Selects BrickMetatiles by area type except CloudTypeOverride forces index four, then enters DrawBricks.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "DrawBricks",
@@ -15220,7 +15306,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Loads the caller-selected brick metatile and tail-enters the shared horizontal row path."
+      "semanticContract": "Loads the caller-selected brick metatile and tail-enters the shared horizontal row path.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "RowOfSolidBlocks",
@@ -15233,7 +15322,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Loads SolidBlockMetatiles by area type and falls through to the horizontal row path."
+      "semanticContract": "Loads SolidBlockMetatiles by area type and falls through to the horizontal row path.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetRow",
@@ -15246,7 +15338,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves metatile across low-nibble length decode and falls through to one-row rendering at RAM $07."
+      "semanticContract": "Preserves metatile across low-nibble length decode and falls through to one-row rendering at RAM $07.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "DrawRow",
@@ -15259,7 +15354,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Reloads decoded row, uses zero extent and tail-enters RenderUnderPart with the preserved metatile."
+      "semanticContract": "Reloads decoded row, uses zero extent and tail-enters RenderUnderPart with the preserved metatile.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ColumnOfBricks",
@@ -15272,7 +15370,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selects BrickMetatiles by area type without cloud override and tail-enters vertical rendering."
+      "semanticContract": "Selects BrickMetatiles by area type without cloud override and tail-enters vertical rendering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ColumnOfSolidBlocks",
@@ -15285,7 +15386,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selects SolidBlockMetatiles by area type and falls through to vertical rendering."
+      "semanticContract": "Selects SolidBlockMetatiles by area type and falls through to vertical rendering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetRow2",
@@ -15298,7 +15402,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves metatile across attribute decode, reloads RAM $07 and tail-enters RenderUnderPart with decoded vertical extent."
+      "semanticContract": "Preserves metatile across attribute decode, reloads RAM $07 and tail-enters RenderUnderPart with decoded vertical extent.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BulletBillCannon",
@@ -15311,7 +15418,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Decodes row and height, writes top $64 and optional middle $65, fills base $66 only when height remains, then registers cannon."
+      "semanticContract": "Decodes row and height, writes top $64 and optional middle $65, fills base $66 only when height remains, then registers cannon.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "SetupCannon",
@@ -15324,7 +15434,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores object Y, current page and object X in the six-entry cannon ring before increment/wrap."
+      "semanticContract": "Stores object Y, current page and object X in the six-entry cannon ring before increment/wrap.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "StrCOffset",
@@ -15337,7 +15450,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Stores the post-increment cannon ring offset and returns."
+      "semanticContract": "Stores the post-increment cannon ring offset and returns.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "StaircaseHeightData",
@@ -15350,7 +15466,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Provides the nine descending staircase vertical extents."
+      "semanticContract": "Provides the nine descending staircase vertical extents.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "StaircaseRowData",
@@ -15363,7 +15482,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Provides the paired nine staircase start rows."
+      "semanticContract": "Provides the paired nine staircase start rows.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "StaircaseObject",
@@ -15376,7 +15498,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Initializes control to nine only on first length decode, decrements before paired table lookup, and renders $61."
+      "semanticContract": "Initializes control to nine only on first length decode, decrements before paired table lookup, and renders $61.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "NextStair",
@@ -15389,7 +15514,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Consumes decremented staircase control as both table index and shared renderer input."
+      "semanticContract": "Consumes decremented staircase control as both table index and shared renderer input.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "Jumpspring",
@@ -15402,7 +15530,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses the empty-slot result even when full, initializes the jumpspring actor and writes $67/$68 at decoded row."
+      "semanticContract": "Uses the empty-slot result even when full, initializes the jumpspring actor and writes $67/$68 at decoded row.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "Hidden1UpBlock",
@@ -15415,7 +15546,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns while hidden flag is zero; otherwise clears it and shares BrickWithItem."
+      "semanticContract": "Returns while hidden flag is zero; otherwise clears it and shares BrickWithItem.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "QuestionBlock",
@@ -15428,7 +15562,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves decoded ID then tail-enters question/brick metatile selection."
+      "semanticContract": "Preserves decoded ID then tail-enters question/brick metatile selection.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BrickWithCoins",
@@ -15441,7 +15578,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Clears multi-coin timer before falling through to BrickWithItem."
+      "semanticContract": "Clears multi-coin timer before falling through to BrickWithItem.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BrickWithItem",
@@ -15454,7 +15594,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Chooses the area-dependent metatile offset and falls into DrawQBlk."
+      "semanticContract": "Chooses the area-dependent metatile offset and falls into DrawQBlk.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BWithL",
@@ -15467,7 +15610,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Adds preserved object ID to the selected metatile base before DrawQBlk."
+      "semanticContract": "Adds preserved object ID to the selected metatile base before DrawQBlk.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "DrawQBlk",
@@ -15480,7 +15626,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves selected metatile across attribute decode and tail-enters DrawRow."
+      "semanticContract": "Preserves selected metatile across attribute decode and tail-enters DrawRow.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetAreaObjectID",
@@ -15493,7 +15642,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Copies parser ID from $00 to Y through source SEC/SBC identity operation."
+      "semanticContract": "Copies parser ID from $00 to Y through source SEC/SBC identity operation.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ExitDecBlock",
@@ -15506,7 +15658,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Returns from disabled hidden block or completed object-ID decode."
+      "semanticContract": "Returns from disabled hidden block or completed object-ID decode.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "HoleMetatiles",
@@ -15519,7 +15674,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "Hole_Empty",
@@ -15532,7 +15690,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "StrWOffset",
@@ -15545,7 +15706,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "NoWhirlP",
@@ -15558,7 +15722,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "RenderUnderPart",
@@ -15571,7 +15738,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "DrawThisRow",
@@ -15584,7 +15754,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "WaitOneRow",
@@ -15597,7 +15770,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ExitUPartR",
@@ -15610,7 +15786,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ChkLrgObjLength",
@@ -15623,7 +15802,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "ChkLrgObjFixedLength",
@@ -15636,7 +15818,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "LenSet",
@@ -15649,7 +15834,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetLrgObjAttrib",
@@ -15662,7 +15850,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetAreaObjXPosition",
@@ -15675,7 +15866,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetAreaObjYPosition",
@@ -15688,7 +15882,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "BlockBufferAddr",
@@ -15701,7 +15898,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GetBlockBufferAddr",
@@ -15714,7 +15914,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper."
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "label": "AreaDataOfsLoopback",
@@ -15727,7 +15930,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "LoadAreaPointer",
@@ -15740,7 +15946,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "GetAreaType",
@@ -15753,7 +15962,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "FindAreaPointer",
@@ -15766,7 +15978,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "GetAreaDataAddrs",
@@ -15779,7 +15994,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "StoreFore",
@@ -15792,7 +16010,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "StoreStyle",
@@ -15805,7 +16026,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "WorldAddrOffsets",
@@ -15818,7 +16042,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "AreaAddrOffsets",
@@ -15831,7 +16058,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World1Areas",
@@ -15844,7 +16074,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World2Areas",
@@ -15857,7 +16090,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World3Areas",
@@ -15870,7 +16106,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World4Areas",
@@ -15883,7 +16122,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World5Areas",
@@ -15896,7 +16138,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World6Areas",
@@ -15909,7 +16154,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World7Areas",
@@ -15922,7 +16170,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "World8Areas",
@@ -15935,7 +16186,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "EnemyAddrHOffsets",
@@ -15948,7 +16202,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "EnemyDataAddrLow",
@@ -15961,7 +16218,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "EnemyDataAddrHigh",
@@ -15974,7 +16234,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "AreaDataHOffsets",
@@ -15987,7 +16250,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "AreaDataAddrLow",
@@ -16000,7 +16266,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "AreaDataAddrHigh",
@@ -16013,7 +16282,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff."
+      "semanticContract": "Preserves ROM byte-indexed table selection, header-field extraction and pointer state handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "label": "E_CastleArea1",
@@ -16026,7 +16298,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_CastleArea2",
@@ -16039,7 +16315,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_CastleArea3",
@@ -16052,7 +16332,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_CastleArea4",
@@ -16065,7 +16349,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_CastleArea5",
@@ -16078,7 +16366,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_CastleArea6",
@@ -16091,7 +16383,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea1",
@@ -16104,7 +16400,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea2",
@@ -16117,7 +16417,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea3",
@@ -16130,7 +16434,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea4",
@@ -16143,7 +16451,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea5",
@@ -16156,7 +16468,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea6",
@@ -16169,7 +16485,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea7",
@@ -16182,7 +16502,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea8",
@@ -16195,7 +16519,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea9",
@@ -16208,7 +16536,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea10",
@@ -16221,7 +16553,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea11",
@@ -16234,7 +16570,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea12",
@@ -16247,7 +16587,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea13",
@@ -16260,7 +16604,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea14",
@@ -16273,7 +16621,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea15",
@@ -16286,7 +16638,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea16",
@@ -16299,7 +16655,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea17",
@@ -16312,7 +16672,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea18",
@@ -16325,7 +16689,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea19",
@@ -16338,7 +16706,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea20",
@@ -16351,7 +16723,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea21",
@@ -16364,7 +16740,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_GroundArea22",
@@ -16377,7 +16757,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_UndergroundArea1",
@@ -16390,7 +16774,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_UndergroundArea2",
@@ -16403,7 +16791,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_UndergroundArea3",
@@ -16416,7 +16808,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_WaterArea1",
@@ -16429,7 +16825,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_WaterArea2",
@@ -16442,7 +16842,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "E_WaterArea3",
@@ -16455,7 +16859,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/enemy/stream.c"
+      ]
     },
     {
       "label": "L_CastleArea1",
@@ -16468,7 +16876,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_CastleArea2",
@@ -16481,7 +16893,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_CastleArea3",
@@ -16494,7 +16910,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_CastleArea4",
@@ -16507,7 +16927,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_CastleArea5",
@@ -16520,7 +16944,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_CastleArea6",
@@ -16533,7 +16961,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea1",
@@ -16546,7 +16978,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea2",
@@ -16559,7 +16995,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea3",
@@ -16572,7 +17012,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea4",
@@ -16585,7 +17029,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea5",
@@ -16598,7 +17046,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea6",
@@ -16611,7 +17063,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea7",
@@ -16624,7 +17080,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea8",
@@ -16637,7 +17097,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea9",
@@ -16650,7 +17114,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea10",
@@ -16663,7 +17131,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea11",
@@ -16676,7 +17148,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea12",
@@ -16689,7 +17165,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea13",
@@ -16702,7 +17182,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea14",
@@ -16715,7 +17199,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea15",
@@ -16728,7 +17216,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea16",
@@ -16741,7 +17233,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea17",
@@ -16754,7 +17250,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea18",
@@ -16767,7 +17267,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea19",
@@ -16780,7 +17284,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea20",
@@ -16793,7 +17301,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea21",
@@ -16806,7 +17318,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_GroundArea22",
@@ -16819,7 +17335,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_UndergroundArea1",
@@ -16832,7 +17352,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_UndergroundArea2",
@@ -16845,7 +17369,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_UndergroundArea3",
@@ -16858,7 +17386,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_WaterArea1",
@@ -16871,7 +17403,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_WaterArea2",
@@ -16884,7 +17420,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "L_WaterArea3",
@@ -16897,7 +17437,11 @@
         "Td S9 B11f level-stream static data audit: E_/L_ labels lines 4550-5299 compared with source-bound shared parsers; routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules."
+      "semanticContract": "Selected raw ROM stream remains locally bound and consumed with source byte order and terminator rules.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c",
+        "src/game/area.c"
+      ]
     },
     {
       "label": "GameMode",
@@ -48609,7 +49153,11 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "FlagpoleObject",
@@ -48625,7 +49173,11 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "EndlessRope",
@@ -48641,7 +49193,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BalancePlatRope",
@@ -48657,7 +49212,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BalancePlatRope",
@@ -48673,7 +49231,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BalancePlatRope",
@@ -48689,7 +49250,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawRope",
@@ -48705,7 +49269,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RowOfCoins",
@@ -48721,7 +49288,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "CastleBridgeObj",
@@ -48737,7 +49307,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "CastleBridgeObj",
@@ -48753,7 +49326,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "AxeObj",
@@ -48769,7 +49345,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChainObj",
@@ -48785,7 +49364,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "EmptyBlock",
@@ -48801,7 +49383,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "EmptyBlock",
@@ -48817,7 +49402,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ColObj",
@@ -48833,7 +49421,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RowOfBricks",
@@ -48849,7 +49440,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source branch handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source branch handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RowOfBricks",
@@ -48865,7 +49459,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawBricks",
@@ -48881,7 +49478,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RowOfSolidBlocks",
@@ -48897,7 +49497,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetRow",
@@ -48913,7 +49516,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetRow",
@@ -48929,7 +49535,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawRow",
@@ -48945,7 +49554,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ColumnOfBricks",
@@ -48961,7 +49573,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ColumnOfSolidBlocks",
@@ -48977,7 +49592,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source fallthrough handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetRow2",
@@ -48993,7 +49611,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source call handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetRow2",
@@ -49009,7 +49630,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source jump handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BulletBillCannon",
@@ -49025,7 +49649,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BulletBillCannon",
@@ -49041,7 +49668,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BulletBillCannon",
@@ -49057,7 +49687,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BulletBillCannon",
@@ -49073,7 +49706,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BulletBillCannon",
@@ -49089,7 +49725,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "SetupCannon",
@@ -49105,7 +49744,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "SetupCannon",
@@ -49121,7 +49763,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "SetupCannon",
@@ -49137,7 +49782,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "SetupCannon",
@@ -49153,7 +49801,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "StaircaseObject",
@@ -49169,7 +49820,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "StaircaseObject",
@@ -49185,7 +49839,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "StaircaseObject",
@@ -49201,7 +49858,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "NextStair",
@@ -49217,7 +49877,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Jumpspring",
@@ -49233,7 +49896,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Jumpspring",
@@ -49249,7 +49915,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Jumpspring",
@@ -49265,7 +49934,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Jumpspring",
@@ -49281,7 +49953,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hidden1UpBlock",
@@ -49297,7 +49972,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hidden1UpBlock",
@@ -49313,7 +49991,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "QuestionBlock",
@@ -49329,7 +50010,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "QuestionBlock",
@@ -49345,7 +50029,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BrickWithCoins",
@@ -49361,7 +50048,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BrickWithItem",
@@ -49377,7 +50067,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BrickWithItem",
@@ -49393,7 +50086,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source branch ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BrickWithItem",
@@ -49409,7 +50105,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "BWithL",
@@ -49425,7 +50124,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawQBlk",
@@ -49441,7 +50143,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source call ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawQBlk",
@@ -49458,7 +50163,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source jump ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjectID",
@@ -49474,7 +50182,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source fallthrough ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49490,7 +50201,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call predicate, state handoff and ordering."
+      "semanticContract": "Preserves source call predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49506,7 +50220,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49522,7 +50239,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49538,7 +50258,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call predicate, state handoff and ordering."
+      "semanticContract": "Preserves source call predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49554,7 +50277,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "Hole_Empty",
@@ -49570,7 +50296,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "StrWOffset",
@@ -49586,7 +50315,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "NoWhirlP",
@@ -49602,7 +50334,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49618,7 +50353,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49634,7 +50372,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49650,7 +50391,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49666,7 +50410,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49682,7 +50429,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49698,7 +50448,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49714,7 +50467,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -49730,7 +50486,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "DrawThisRow",
@@ -49746,7 +50505,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "WaitOneRow",
@@ -49762,7 +50524,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "WaitOneRow",
@@ -49778,7 +50543,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "WaitOneRow",
@@ -49794,7 +50562,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjLength",
@@ -49810,7 +50581,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call predicate, state handoff and ordering."
+      "semanticContract": "Preserves source call predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjLength",
@@ -49826,7 +50600,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -49842,7 +50619,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch predicate, state handoff and ordering."
+      "semanticContract": "Preserves source branch predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -49858,7 +50638,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering."
+      "semanticContract": "Preserves source fallthrough predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "LoadAreaPointer",
@@ -49874,7 +50657,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call order and pointer/header handoff."
+      "semanticContract": "Preserves source call order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "LoadAreaPointer",
@@ -49890,7 +50676,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "GetAreaDataAddrs",
@@ -49906,7 +50695,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source call order and pointer/header handoff."
+      "semanticContract": "Preserves source call order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "GetAreaDataAddrs",
@@ -49922,7 +50714,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch order and pointer/header handoff."
+      "semanticContract": "Preserves source branch order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "GetAreaDataAddrs",
@@ -49938,7 +50733,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "StoreFore",
@@ -49954,7 +50752,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source branch order and pointer/header handoff."
+      "semanticContract": "Preserves source branch order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "StoreFore",
@@ -49970,7 +50771,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source fallthrough order and pointer/header handoff."
+      "semanticContract": "Preserves source fallthrough order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "GameMode",
@@ -95536,7 +96340,11 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "GetAreaObjXPosition",
@@ -95552,7 +96360,11 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/oam/flagpole_gfx.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -95568,7 +96380,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95584,7 +96399,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjFixedLength",
@@ -95600,7 +96418,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95616,7 +96437,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjLength",
@@ -95632,7 +96456,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95648,7 +96475,10 @@
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering."
+      "semanticContract": "Preserves the source return handoff and its selected metatile, row, length and return ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95664,7 +96494,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "RenderUnderPart",
@@ -95680,7 +96513,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjYPosition",
@@ -95696,7 +96532,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjXPosition",
@@ -95712,7 +96551,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjLength",
@@ -95728,7 +96570,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95744,7 +96589,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "FindEmptyEnemySlot",
@@ -95760,7 +96608,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjXPosition",
@@ -95776,7 +96627,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjYPosition",
@@ -95792,7 +96646,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjectID",
@@ -95808,7 +96665,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjectID",
@@ -95824,7 +96684,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95840,7 +96703,10 @@
         "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff."
+      "semanticContract": "Preserves source return ordering and parser row, length, slot or metatile handoff.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "ChkLrgObjLength",
@@ -95856,7 +96722,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return predicate, state handoff and ordering."
+      "semanticContract": "Preserves source return predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetAreaObjXPosition",
@@ -95872,7 +96741,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return predicate, state handoff and ordering."
+      "semanticContract": "Preserves source return predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "GetLrgObjAttrib",
@@ -95888,7 +96760,10 @@
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return predicate, state handoff and ordering."
+      "semanticContract": "Preserves source return predicate, state handoff and ordering.",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     },
     {
       "from": "FindAreaPointer",
@@ -95904,7 +96779,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff."
+      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "GetAreaType",
@@ -95920,7 +96798,10 @@
         "Td S9 B11d area-address/header static node-and-edge audit: SMB1 lines 4376-4545 compared with src/game/area/area_data.c; controlled original-ROM/x86/x64 area routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves source return order and pointer/header handoff."
+      "semanticContract": "Preserves source return order and pointer/header handoff.",
+      "currentSourcePaths": [
+        "src/game/area/area_data.c"
+      ]
     },
     {
       "from": "JumpEngine",

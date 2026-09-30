@@ -50,11 +50,14 @@ mandatory normalization step of the source-order audit: no unresolved aggregate
 description can receive current-exact credit until its concrete shared-C
 owner/data consumer and integration counterpart are recorded.
 
-Cohorts A through C are now normalized: all 424 nodes, 882 control edges and
-65 material edges in those source-order slices carry validated
-`currentSourcePaths` entries.  This records only where the current shared
-implementation resides; it does not change those cohorts' semantic
-dispositions or their pending route obligations.
+Cohorts A through D are now normalized: all 570 nodes, 993 control edges and
+77 material edges in those source-order slices carry validated
+`currentSourcePaths` entries.  Cohort D includes the 68 `E_*` and `L_*` area
+PRG-data labels: `area_data.c` selects their ROM pointer, then `enemy/stream.c`
+consumes `E_*` enemy records and `area.c` consumes `L_*` area-object records.
+This records only where the current shared implementation resides; it does not
+change those cohorts' semantic dispositions or their pending route
+obligations.
 
 ## Current evidence boundary
 
