@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 146,
+    "enumeratedCount": 150,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort"
   },
   "materialEdges": [
@@ -2057,6 +2057,62 @@
       "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
       "semanticEvidence": [
         "Td S9 B14p fireworks frenzy node-semantics and independent integration audit: SMB1 lines 8653-8697 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00147",
+      "producer": "SwimCC_IDData",
+      "consumer": "Get17ID",
+      "storage": "SwimCC_IDData[world/random selector]",
+      "feasiblePath": "Water path constructs one-bit selector before exact ID table read.",
+      "status": "needs-evidence",
+      "currentCounterpart": "swim_ids[index & 1]",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00148",
+      "producer": "Bitmasks",
+      "consumer": "ChkRBit",
+      "storage": "Bitmasks[random/retry index]",
+      "feasiblePath": "Retry loop reads mask and tests BitMFilter until it proves height unused.",
+      "status": "needs-evidence",
+      "currentCounterpart": "masks[index]",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00149",
+      "producer": "Enemy17YPosData",
+      "consumer": "AddFBit",
+      "storage": "Enemy17YPosData[unique height index]",
+      "feasiblePath": "Selected unused bit index drives exact Y passed to PutAtRightExtent.",
+      "status": "needs-evidence",
+      "currentCounterpart": "heights[index]",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00150",
+      "producer": "AddFBit",
+      "consumer": "CheckpointEnemyID",
+      "storage": "BitMFilter, actor ID/position and timer",
+      "feasiblePath": "After positioning, source clears dummy, arms timer and tail-enters initializer.",
+      "status": "needs-evidence",
+      "currentCounterpart": "mysmb_enemy_checkpoint_loaded after shared fields",
+      "semanticContract": "Preserves source table/RAM selection, consuming predicate and feasible handoff order.",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
     }
@@ -15181,131 +15237,170 @@
       "label": "Bitmasks",
       "asmLine": 8701,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds eight one-hot height-filter masks."
     },
     {
       "label": "Enemy17YPosData",
       "asmLine": 8704,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds eight exact frenzy height values."
     },
     {
       "label": "SwimCC_IDData",
       "asmLine": 8707,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds Cheep Cheep IDs $0a/$0b selected by random threshold and world."
     },
     {
       "label": "BulletBillCheepCheep",
       "asmLine": 8710,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Gates frenzy timer then selects water Cheep or land Bullet Bill path."
     },
     {
       "label": "ChkW2",
       "asmLine": 8722,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Applies world-two exception to the water ID selector."
     },
     {
       "label": "Get17ID",
       "asmLine": 8726,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Masks selector to one bit and reads SwimCC_IDData."
     },
     {
       "label": "Set17ID",
       "asmLine": 8730,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Stores actor ID and resets full BitMFilter before unique-height selection."
     },
     {
       "label": "GetRBit",
       "asmLine": 8736,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Masks first random register to height index 0..7."
     },
     {
       "label": "ChkRBit",
       "asmLine": 8738,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Finds an unset one-hot height bit by wrapped retry."
     },
     {
       "label": "AddFBit",
       "asmLine": 8746,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Sets selected filter bit, positions/activates actor, clears dummy, arms timer and tail-initializes actor."
     },
     {
       "label": "DoBulletBills",
       "asmLine": 8755,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Begins land route scan for an existing frenzy Bullet Bill."
     },
     {
       "label": "BB_SLoop",
       "asmLine": 8757,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Scans slots zero through four, exits if found, otherwise reaches FireBulletBill after all slots."
     },
     {
       "label": "ExF17",
       "asmLine": 8765,
       "cohort": "I",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "shared Bullet Bill/Cheep frenzy core",
+      "currentCounterpart": "enemy/frenzy.c",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns on timer, capacity or existing-bill gate."
     },
     {
       "label": "FireBulletBill",
@@ -50715,10 +50810,13 @@
       "instruction": "bne",
       "id": "control-01592",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BulletBillCheepCheep",
@@ -50728,10 +50826,13 @@
       "instruction": "bne",
       "id": "control-01593",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> DoBulletBills with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BulletBillCheepCheep",
@@ -50741,10 +50842,13 @@
       "instruction": "bcs",
       "id": "control-01594",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BulletBillCheepCheep",
@@ -50754,10 +50858,13 @@
       "instruction": "bcc",
       "id": "control-01595",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BulletBillCheepCheep -> ChkW2 with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BulletBillCheepCheep",
@@ -50767,10 +50874,13 @@
       "instruction": "iny",
       "id": "control-01596",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BulletBillCheepCheep -> ChkW2 with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "ChkW2",
@@ -50780,10 +50890,13 @@
       "instruction": "beq",
       "id": "control-01597",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkW2 -> Get17ID with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "ChkW2",
@@ -50793,10 +50906,13 @@
       "instruction": "iny",
       "id": "control-01598",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation ChkW2 -> Get17ID with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "Get17ID",
@@ -50806,10 +50922,13 @@
       "instruction": "lda",
       "id": "control-01599",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Get17ID -> Set17ID with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "Set17ID",
@@ -50819,10 +50938,13 @@
       "instruction": "bne",
       "id": "control-01600",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation Set17ID -> GetRBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "Set17ID",
@@ -50832,10 +50954,13 @@
       "instruction": "sta",
       "id": "control-01601",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation Set17ID -> GetRBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "GetRBit",
@@ -50845,10 +50970,13 @@
       "instruction": "and",
       "id": "control-01602",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation GetRBit -> ChkRBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "ChkRBit",
@@ -50858,10 +50986,13 @@
       "instruction": "beq",
       "id": "control-01603",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation ChkRBit -> AddFBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "ChkRBit",
@@ -50871,10 +51002,13 @@
       "instruction": "jmp",
       "id": "control-01604",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation ChkRBit -> ChkRBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "AddFBit",
@@ -50885,12 +51019,12 @@
       "id": "control-01605",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original call relation AddFBit -> PutAtRightExtent with timer, front-slot, random/table, carry and activation handoff."
+      "semanticContract": "Preserves original call relation AddFBit -> PutAtRightExtent with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "AddFBit",
@@ -50900,10 +51034,13 @@
       "instruction": "jmp",
       "id": "control-01606",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump relation AddFBit -> CheckpointEnemyID with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "DoBulletBills",
@@ -50913,10 +51050,13 @@
       "instruction": "ldy",
       "id": "control-01607",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation DoBulletBills -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BB_SLoop",
@@ -50926,10 +51066,13 @@
       "instruction": "bcs",
       "id": "control-01608",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BB_SLoop -> FireBulletBill with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BB_SLoop",
@@ -50939,10 +51082,13 @@
       "instruction": "beq",
       "id": "control-01609",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BB_SLoop -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BB_SLoop",
@@ -50952,10 +51098,13 @@
       "instruction": "bne",
       "id": "control-01610",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation BB_SLoop -> BB_SLoop with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "BB_SLoop",
@@ -50965,10 +51114,13 @@
       "instruction": "bne",
       "id": "control-01611",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original fallthrough relation BB_SLoop -> ExF17 with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "FireBulletBill",
@@ -50978,10 +51130,13 @@
       "instruction": "bne",
       "id": "control-01612",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original branch relation FireBulletBill -> Set17ID with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "FireBulletBill",
@@ -79927,12 +80082,12 @@
       "id": "control-03782",
       "cohort": "I",
       "status": "needs-evidence",
-      "currentCounterpart": "shared Bowser-flame branch, call, tail, fall-through, dispatch or return counterpart",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
       "semanticEvidence": [
-        "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Preserves original return relation PutAtRightExtent -> AddFBit with timer, front-slot, random/table, carry and activation handoff."
+      "semanticContract": "Preserves original return relation PutAtRightExtent -> AddFBit with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "CheckpointEnemyID",
@@ -87086,10 +87241,13 @@
       "selector": 5,
       "id": "control-04275",
       "cohort": "I",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "shared Bullet Bill/Cheep branch, loop, call, tail, dispatch or return counterpart",
+      "semanticEvidence": [
+        "Td S9 B14q Bullet Bill/Cheep frenzy node-semantics and independent integration audit: SMB1 lines 8701-8772 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves original jump-engine-dispatch relation InitEnemyFrenzy -> BulletBillCheepCheep with area/slot predicate, random/world selection, filter state and actor handoff."
     },
     {
       "from": "JmpEO",

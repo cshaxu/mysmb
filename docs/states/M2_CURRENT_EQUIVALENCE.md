@@ -936,3 +936,8 @@ branches.
 ### Cohort I — B14p fireworks frenzy integration
 
 `FireworksXPosData` through `ExitFWk` now has five node contracts, all incident timer, loop, dispatch and return relations, and three feasible data handoffs. The audit records the source reverse star-flag scan, decrement/index order, subtract/add carry propagation, matched X/Y tables and final actor state. No static shared-C discrepancy was found; entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes.
+
+
+### Cohort I — B14q Bullet Bill/Cheep frenzy integration
+
+`Bitmasks` through `ExF17` now has thirteen node contracts, all incident timer, area, capacity, loop, call, tail, dispatch and return relations, plus four feasible data handoffs. The audit records water ID selection, land duplicate-bill suppression, full-filter reset, wrapped unique-height retry and final initialization. No static shared-C discrepancy was found; entries remain `needs-evidence` pending matched original-ROM/x86/x64 routes.
