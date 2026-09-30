@@ -32,81 +32,49 @@ edge records its C integration counterpart and both evidence tracks.
 rejects an `exact` disposition lacking either track and rejects duplicate or
 incomplete node/control-edge identities.
 
-## Baseline
+## Current evidence boundary
 
-| Current-equivalence state | Labels | Meaning |
-| --- | ---: | --- |
-| Exact | 38 | Current source audit and original-ROM route both prove the label. |
-| Needs evidence | 757 | Current source audit exists but the current original-ROM route is incomplete. |
-| Mismatch | 9 | Current route or source audit finds a concrete semantic difference. |
-| Unclassified | 1,188 | Not yet processed by this re-audit. |
-| **Total** | **1,992** | Canonical inventory labels. |
+The retired baseline tables below the static checkpoint have been removed:
+they described an earlier partial pass and are not current evidence. The
+machine-readable registry is the authority for live counts.
 
-The fresh T31 replay is preflight evidence, not a node classification: all
-thirteen routes are output/RAM-exact on current x86/x64, but only their
-executed chain may be credited after the relevant cohort's source audit.
+The control graph is fixed at **4,342** edges: 611 calls, 247 direct jumps,
+1,566 branches, 1,058 fall-through relations, 611 returns, two vectors and
+247 `JumpEngine` selector edges. Material edges are different: the registry
+currently contains **487 proven feasible** RAM/table producer-to-consumer
+relations. Each is assigned once to a cohort; a later source-path audit may
+add a relation only when it proves feasibility. Writer-reader Cartesian
+products are forbidden.
 
-## Edge baseline
+Nodes, control edges and material edges retain independent dispositions. A
+node is not current-exact merely because its output matches: its owned control
+and feasible material connections must have their own source and route
+evidence.
 
-The re-audit also owns the original ROM graph. Its first operation extracts a
-canonical, deduplicated edge registry and records the total before any edge is
-classified. It includes control edges (`JSR`, `JMP`, conditional branch,
-fall-through, return and vector dispatch) plus material game-state edges
-(source RAM/table producer to consuming node). The current edge count is
-therefore intentionally **not estimated** in advance.
-
-The reproducible control-graph extractor is
-[`Extract-M2RomGraph.py`](../../tools/Extract-M2RomGraph.py). The companion
-[`BuildM2CurrentAuditRegistry.py`](../../tools/BuildM2CurrentAuditRegistry.py)
-turns that graph and the label inventory into the neutral audit baseline. Its
-current owner-local listing run reads all 1,992 inventory labels and establishes
-the control subledger at **4,342** edges: 611 calls, 247 direct jumps, 1,566
-branches, 1,058 fall-through relations, 611 return relations, two vector
-entries and 247 `JumpEngine` selector edges. Every control edge has a stable
-identity and exactly one source-order cohort. This is a fixed subledger, not
-the final edge denominator: material RAM/table producer-consumer edges are
-enumerated only after source-path review. A writer-reader Cartesian product is
-explicitly forbidden because it would count impossible paths as integrations.
-
-| Current-equivalence edge state | Edges |
-| --- | ---: |
-| Exact | 76 control; 3 material RAM/table |
-| Needs evidence | 1,446 control; 99 material RAM/table |
-| Mismatch | 10 control; 1 material RAM/table |
-| Unclassified | 2,810 control edges; material edge denominator pending feasible-path enumeration |
-| **Total** | 4,342 control edges; material edge denominator pending feasible-path enumeration |
-
-The two ledgers are separate acceptance requirements. A node is not
-current-exact merely because its own outputs look right: its source contract
-and every owned incoming/outgoing control connection must be accounted for.
-Likewise, a control or feasible material edge is not exact merely because its
-endpoints are mapped. Its predicate, ordering, state handoff and return or
-dispatch behavior must have their own counterpart and route evidence.
-
-### Control-edge allocation
+### Cohort allocation
 
 The registry allocates **all 4,342 control edges** once, by the source label
 that emits the edge (vectors are owned by their target label's cohort; return
 records use the caller cohort because the original `JSR` is the source). This
 is the integration-audit denominator for the first edge pass.
 
-| Cohort | Nodes | Control edges |
-| --- | ---: | ---: |
-| A | 97 | 239 |
-| B | 67 | 122 |
-| C | 260 | 521 |
-| D | 146 | 111 |
-| E | 80 | 239 |
-| F | 62 | 122 |
-| G | 49 | 133 |
-| H | 129 | 344 |
-| I | 165 | 420 |
-| J | 497 | 1,261 |
-| K | 154 | 313 |
-| L | 83 | 165 |
-| M | 126 | 296 |
-| N | 77 | 56 |
-| **Total** | **1,992** | **4,342** |
+| Cohort | Nodes | Control edges | Proven material edges |
+| --- | ---: | ---: | ---: |
+| A | 97 | 239 | 6 |
+| B | 67 | 122 | 8 |
+| C | 260 | 521 | 51 |
+| D | 146 | 111 | 12 |
+| E | 80 | 239 | 1 |
+| F | 62 | 122 | 12 |
+| G | 49 | 133 | 8 |
+| H | 129 | 344 | 19 |
+| I | 165 | 420 | 60 |
+| J | 497 | 1,261 | 245 |
+| K | 154 | 313 | 21 |
+| L | 83 | 165 | 9 |
+| M | 126 | 296 | 5 |
+| N | 77 | 56 | 30 |
+| **Total** | **1,992** | **4,342** | **487** |
 
 ## Source-order cohort plan
 
