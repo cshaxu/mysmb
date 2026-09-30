@@ -5727,6 +5727,104 @@
         "Td S9 B16s shared bounding-box and rectangle-core node-semantics and independent integration audit: SMB1 lines 12791 and 12878-13016 compared with shared world/bounding_box.c and world/geometry.c; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": []
+    },
+    {
+      "id": "material-00409",
+      "producer": "FirstSprXPos",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed FirstSprXPos table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprXPos, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected FirstSprXPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00410",
+      "producer": "FirstSprYPos",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed FirstSprYPos table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprYPos, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected FirstSprYPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00411",
+      "producer": "SecondSprXPos",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed SecondSprXPos table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprXPos, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected SecondSprXPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00412",
+      "producer": "SecondSprYPos",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed SecondSprYPos table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprYPos, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected SecondSprYPos byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00413",
+      "producer": "FirstSprTilenum",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed FirstSprTilenum table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads FirstSprTilenum, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected FirstSprTilenum byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00414",
+      "producer": "SecondSprTilenum",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed SecondSprTilenum table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads SecondSprTilenum, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected SecondSprTilenum byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
+    },
+    {
+      "id": "material-00415",
+      "producer": "HammerSprAttrib",
+      "consumer": "DrawHammer",
+      "storage": "ROM pose-indexed HammerSprAttrib table to DrawHammer OAM write",
+      "feasiblePath": "DrawHammer selects X from TimerControl/Misc_State/FrameCounter and reads HammerSprAttrib, then writes the corresponding hammer OAM byte.",
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c static pose table consumed by mysmb_objects_draw_hammer",
+      "semanticContract": "The selected HammerSprAttrib byte is consumed at the same source pose index before its corresponding OAM write.",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": []
     }
   ],
   "cohorts": [
@@ -6871,7 +6969,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83da: on worlds 1\u00e2\u20ac\u201c7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
+      "semanticContract": "ROM $83da: on worlds 1â€“7, branches to counter increment while PrimaryMsgCounter is below two and otherwise enters ThankPlayer."
     },
     {
       "label": "ThankPlayer",
@@ -6897,7 +6995,7 @@
         "Td S9 A7 PrintVictoryMessages static node-semantics pass: SMB1 lines 1201-1252 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1\u00e2\u20ac\u201c7, choosing ordinary message, counter-only, or end-timer paths."
+      "semanticContract": "ROM $83e8: maps the message index differently for World 8 and worlds 1â€“7, choosing ordinary message, counter-only, or end-timer paths."
     },
     {
       "label": "EvalForMusic",
@@ -6988,7 +7086,7 @@
         "Td S9 A7 PlayerEndWorld static node-semantics pass: SMB1 lines 1256-1281 was compared with the named shared-C owner; controlled original-ROM/x86/x64 branch routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1\u00e2\u20ac\u201c7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
+      "semanticContract": "ROM $8427: returns while WorldEndTimer is nonzero; for worlds 1â€“7 resets area/level/task, increments world, calls LoadAreaPointer, raises FetchNewGameTimerFlag and switches to GameMode; for World 8 it delegates the two-controller B check."
     },
     {
       "label": "EndExitOne",
@@ -17367,7 +17465,7 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUp\u00e2\u20ac\u2122s LDA-one instruction."
+      "semanticContract": "Uses the BIT-overlap entry to preserve direction zero while skipping MovePlatformUpâ€™s LDA-one instruction."
     },
     {
       "label": "MovePlatformUp",
@@ -17445,7 +17543,7 @@
         "Td S9 B14h shared movement and gravity node-semantics and independent integration audit: SMB1 lines 7555-7785 compared with shared world movement/gravity, player and enemy owners; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Handles no-upward exit and the two\u00e2\u20ac\u2122s-complement upward clamp after downward update."
+      "semanticContract": "Handles no-upward exit and the twoâ€™s-complement upward clamp after downward update."
     },
     {
       "label": "ExVMove",
@@ -25954,121 +26052,157 @@
       "label": "FirstSprXPos",
       "asmLine": 13203,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source first-sprite X pose adders (04,00,04,00) used by DrawHammer."
     },
     {
       "label": "FirstSprYPos",
       "asmLine": 13206,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source first-sprite Y pose adders (00,04,00,04) used by DrawHammer."
     },
     {
       "label": "SecondSprXPos",
       "asmLine": 13209,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source second-sprite X pose adders (00,08,00,08) used by DrawHammer."
     },
     {
       "label": "SecondSprYPos",
       "asmLine": 13212,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source second-sprite Y pose adders (08,00,08,00) used by DrawHammer."
     },
     {
       "label": "FirstSprTilenum",
       "asmLine": 13215,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source first-sprite hammer tiles (80,82,81,83)."
     },
     {
       "label": "SecondSprTilenum",
       "asmLine": 13218,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source second-sprite hammer tiles (81,83,80,82)."
     },
     {
       "label": "HammerSprAttrib",
       "asmLine": 13221,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "static pose table in mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Binds the four source shared hammer attributes (03,03,c3,c3)."
     },
     {
       "label": "DrawHammer",
       "asmLine": 13224,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Reads timer/state/frame and prepared relative/offscreen bytes, selects source pose, writes two OAM records and clears state/hides both rows only for offscreen bits d2-d7."
     },
     {
       "label": "ForceHPose",
       "asmLine": 13232,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Forces pose zero for nonzero TimerControl or a masked Misc_State other than one, then transfers to rendering."
     },
     {
       "label": "GetHPose",
       "asmLine": 13234,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Derives the source pose from FrameCounter bits d3-d2 when TimerControl is clear and masked Misc_State is one."
     },
     {
       "label": "RenderH",
       "asmLine": 13239,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Writes Y/X/tile/attribute bytes in source order for both hammer OAM records, then performs the d2-d7 offscreen nullify/hide path."
     },
     {
       "label": "NoHOffscr",
       "asmLine": 13268,
       "cohort": "K",
-      "status": "unclassified",
-      "currentOwner": null,
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentOwner": "src/game/oam/hammer_gfx.c",
+      "currentCounterpart": "mysmb_objects_draw_hammer",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Returns after visible rendering or after the two OAM Y bytes have been hidden."
     },
     {
       "label": "FlagpoleScoreNumTiles",
@@ -32569,7 +32703,7 @@
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1\u00e2\u20ac\u201c7 message threshold path only after the secondary/primary gates."
+      "semanticContract": "Original PrintVictoryMessages -> MRetainerMsg selects the worlds 1â€“7 message threshold path only after the secondary/primary gates."
     },
     {
       "from": "PrintVictoryMessages",
@@ -32612,12 +32746,12 @@
       "id": "control-00148",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 primary < 2 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 primary < 2 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1\u00e2\u20ac\u201c7 before their second message."
+      "semanticContract": "Original MRetainerMsg -> IncMsgCounter selects counter-only behavior for worlds 1â€“7 before their second message."
     },
     {
       "from": "MRetainerMsg",
@@ -32628,12 +32762,12 @@
       "id": "control-00149",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 primary >= 2 fall-through",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 primary >= 2 fall-through",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1\u00e2\u20ac\u201c7."
+      "semanticContract": "Original MRetainerMsg -> ThankPlayer preserves the primary-derived message index for worlds 1â€“7."
     },
     {
       "from": "ThankPlayer",
@@ -32724,12 +32858,12 @@
       "id": "control-00155",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index >= 4 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index >= 4 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
       "operationalEvidence": [],
-      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1\u00e2\u20ac\u201c7 messaging at transformed index four."
+      "semanticContract": "Original SecondPartMsg -> SetEndTimer terminates worlds 1â€“7 messaging at transformed index four."
     },
     {
       "from": "SecondPartMsg",
@@ -32740,7 +32874,7 @@
       "id": "control-00156",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index == 3 branch",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index == 3 branch",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32756,7 +32890,7 @@
       "id": "control-00157",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1\u00e2\u20ac\u201c7 transformed index < 3 continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_print_victory_messages worlds 1â€“7 transformed index < 3 continuation",
       "semanticEvidence": [
         "Td S9 A7 PrintVictoryMessages independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32916,7 +33050,7 @@
       "id": "control-00167",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u00e2\u20ac\u201c7 mysmb_game_load_area_pointer call",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1â€“7 mysmb_game_load_area_pointer call",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -32932,7 +33066,7 @@
       "id": "control-00168",
       "cohort": "A",
       "status": "needs-evidence",
-      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1\u00e2\u20ac\u201c7 next-world continuation",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory final PlayerEndWorld branch worlds 1â€“7 next-world continuation",
       "semanticEvidence": [
         "Td S9 A7 PlayerEndWorld independent integration static pass: source endpoint, predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
       ],
@@ -73803,10 +73937,13 @@
       "instruction": "bne",
       "id": "control-02774",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawHammer -> ForceHPose with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "DrawHammer",
@@ -73816,10 +73953,13 @@
       "instruction": "beq",
       "id": "control-02775",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation DrawHammer -> GetHPose with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "DrawHammer",
@@ -73829,10 +73969,13 @@
       "instruction": "beq",
       "id": "control-02776",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation DrawHammer -> ForceHPose with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "ForceHPose",
@@ -73842,10 +73985,13 @@
       "instruction": "beq",
       "id": "control-02777",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation ForceHPose -> RenderH with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "ForceHPose",
@@ -73855,10 +74001,13 @@
       "instruction": "beq",
       "id": "control-02778",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation ForceHPose -> GetHPose with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "GetHPose",
@@ -73868,10 +74017,13 @@
       "instruction": "tax",
       "id": "control-02779",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation GetHPose -> RenderH with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "RenderH",
@@ -73881,10 +74033,13 @@
       "instruction": "beq",
       "id": "control-02780",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM branch relation RenderH -> NoHOffscr with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "RenderH",
@@ -73894,10 +74049,13 @@
       "instruction": "jsr",
       "id": "control-02781",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM call relation RenderH -> DumpTwoSpr with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "RenderH",
@@ -73907,10 +74065,13 @@
       "instruction": "jsr",
       "id": "control-02782",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM fallthrough relation RenderH -> NoHOffscr with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "FlagpoleGfxHandler",
@@ -91021,10 +91182,13 @@
       "instruction": "rts/rti",
       "id": "control-03999",
       "cohort": "K",
-      "status": "unclassified",
-      "currentCounterpart": null,
-      "semanticEvidence": [],
-      "operationalEvidence": []
+      "status": "needs-evidence",
+      "currentCounterpart": "src/game/oam/hammer_gfx.c:mysmb_objects_draw_hammer and src/game/oam/sprite_dump.c:mysmb_oam_dump_two_sprites",
+      "semanticEvidence": [
+        "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required."
+      ],
+      "operationalEvidence": [],
+      "semanticContract": "Preserves ROM return relation DumpTwoSpr -> RenderH with the source predicate, OAM write order and return handoff."
     },
     {
       "from": "DumpTwoSpr",

@@ -1203,6 +1203,10 @@ branches.
 `BlockBufferChk_Enemy` through `RetYC` now has fourteen node contracts and every incident entry, table, query, coordinate-return and return relation. Static review matches enemy/misc/fireball object-offset transforms, `$1b/$1a` adders, 28-entry X/Y tables, wrapped page construction, status-bar row subtraction and low-nibble contact selection. No static shared-C discrepancy was found; entries remain `needs-evidence` pending controlled original-ROM/x86/x64 query routes.
 
 
-### Cohort J � B16v vine OAM integration
+### Cohort J — B16v vine OAM integration
 
 `VineYPosAdder` through `StkLp` now has eight node contracts and all incident OAM stack, tile, attribute, hide-loop and return relations. Static review matches two stack offsets, six-sprite Y stack, alternating X/flip attributes, `$e0` top cap, `$e1` leaves and `$f8` hide threshold. No static shared-C discrepancy was found; entries remain `needs-evidence` pending controlled original-ROM/x86/x64 routes.
+
+### Cohort K — K1 hammer OAM pose integration
+
+`FirstSprXPos` through `NoHOffscr` now has twelve node contracts, every incident timer/state pose-selection, render/offscreen, helper-call and return relation, plus seven feasible pose-table-to-OAM handoffs. Static review matches all four X/Y/tile/attribute pose rows, the TimerControl and masked-state force-zero conditions, FrameCounter d3-d2 selection, source chained additions for the second record, and the `Misc_OffscreenBits & $fc` state-clear/two-Y-hide tail. No static shared-C discrepancy was found. Entries remain `needs-evidence` pending controlled original-ROM/x86/x64 forced-pose, animated-pose, visible and offscreen routes.
